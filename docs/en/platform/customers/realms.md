@@ -9,15 +9,28 @@ Realms are a group of users with similar characteristics that are subject to the
 
 Each realm has its own settings for login, registration, integrations, forms, segments, and messaging. Keep in mind that creating any of these items in a realm will only affect users in that realm and will not affect users in other realms.
 
+## Roundup
+
+This section shows a summary of the main elements of the realm, including the amount of:
+
+- Users
+- Segments
+- Forms 
+- Campaigns
+
+It also provides a chronological record of all activities carried out in the realm.
+
+On the right side of the screen you will find some of the most important settings in the realm, such as the sites where the realm is used, identity providers, and identifiers. 
+
 ## Users
 
 In the Users section, you can view and modify the system's external users. These are users who register on the platform and access Modyo sites, answer forms, or can receive email campaigns.
 
 ### About the interface
 
-In the main view, you will find a table with all the registered users on the platform, paginated if you have more than 30 records.
+In the main view you will find a table with all the users registered on the platform, paginated if you have more than 30 records.
 
-At the top of the table, you have filters to quickly find groups of users. The available filters are:
+At the top of the table you have filters to quickly find groups of users. The available filters are:
 
 - **Status**: Active and inactive users.
 - **Verification**: Users who have confirmed their data on the platform.
@@ -27,27 +40,27 @@ At the top of the table, you have filters to quickly find groups of users. The a
 
 
 
-:::tip Tip
-Next to the **Apply** button, there is the **Save as Segment** button. This saves the filters you applied in a new Segment. Give your new segment a title and description. Afterwards you can find it in the [Segments](/en/platform/customers/segments.html) section.
-:::
+:: :tip Tip
+Next to the **Apply** button, there is the **Save as Segment** button. It will save the filters you applied to a new Segment, to which you must give it a title and description. Later you can find it in the [Segments] section (/en/platform/customers/segments.html)
+::
 
-In the table you can also sort users by their respective values; to do so click on the headers of the following columns:
-- **Name**: User's name
+In the table you can also sort the users by their respective values, to do so, click on the headers of the following columns:
+- **Name**: User's name.
 - **Registration Date**: Date of registration in the user database
-- **Last login**: Most recent date when the user accessed the platform.
-- **Sessions**: Number of logins made to the platform
+- **Last input**: Most recent date of entry to the platform
+- **Sessions**: Number of logins into the platform
 
-To execute mass actions, check the box next to the name of one or more users and click the **Bulk Actions** button below the list of users. Then, select one of the following options:
+To execute bulk actions, check the box next to the name of one or more users and click the **Bulk Actions** button below the list of users. Then, select one of the following options:
 - **Deactivate**: Deactivate users
 - **Activate**: Activate users
-- **Export**: Exports the list of users in Excel or CSV format
+- **Export**: Export the list of users in Excel or CSV format
 - **Add or remove tags**: Create new tags and assign or remove existing tags from selected users.
 
 ### Add a user
 
-To add a new user, click the**+ New User** button at the top right of the screen and fill in the following fields:
+To add a new user, click the**+ New User** button at the top right of the screen and complete the following fields:
 
-When you select "Add User", the platform will ask you to complete the following fields:
+When you select to add a user, the platform will ask you to complete the following fields:
 
 - **Name**: ** [Required] ** Legal name of the user.
 - **Last Name**: Last name of the user.
@@ -58,24 +71,24 @@ When you select "Add User", the platform will ask you to complete the following 
 - **Password Confirmation**: ** [Required] ** Repeat the password entered in the previous field.
 - **Tag**s: Tags to identify the user.
 
-:::tip Tip
+:: :tip Tip
 To send the password to the user's email, check the box below the email field. When saving, the platform sends an email to the new user with their password. The user can change the password once they access the platform.
-:::
+::
 
-The user creation view can contain more fields depending on their configuration in the platform. In the [Realm Configuration] section (/en/platform/customers/realms.html #configuracion -of-kingdom) you can modify the fields of the new user form.
+The user creation view can contain more fields depending on your configuration on the platform. In the [Realm Configuration] section (/en/platform/customers/realms.html #configuracion -of-kingdom) you can modify the fields of the new user form.
 
-Some special fields, such as second surname, avatar, or date of birth, can be activated in the [Registration Form] section (/en/platform/customers/realms.html #formulario -de-registration). You can also create and modify custom fields in the [Custom Fields] section (/en/platform/customers/realms.html #custom -fields).
+Some special fields, such as second surname, avatar or date of birth, can be activated in the [Registration Form] section (/en/platform/customers/realms.html #formulario -de-registration). You can also create and modify custom fields in the [Custom Fields] section (/es/platform/customers/realms.html #custom -fields).
 
 
 ### Users tab
 
-Click on the side menu below the action column to view the details of a specific user or to deactivate the user. Select the view option to open that user's file. In the file, you can see:
+Click on the side menu below the action column to view the details of a specific user or to deactivate the user. Select the view option to open that user's file. In the file you can see:
 
 - **Profile**: General user information.
-- **Activity**: Log of user activity on the site.
+- **Activity**: User's activity log on the site.
 - **Responses to forms**: Information collected from forms sent to the user.
 - **Notes**: Space to record additional user information, if required.
-- **Devices**: Devices and dates that the user has accessed the site.
+- **Devices**: Devices and dates from which the user accessed the site.
 
 
 #### Profile
@@ -93,13 +106,13 @@ In this section you can see general user data:
 
 In this section you can see a record of all the actions that the user has performed within the platform.
 
-:::tip Tip
+:: :tip Tip
 This section shows the main interactions that the user has had on the platform. These records cannot be deleted or edited.
-:::
+::
 
-#### Form responses
+#### Answers to forms
 
-This section shows you all the forms that the user has filled out on the platform. Clicking on a form takes you to the user's answers in that form. To learn more about forms, go to the [Forms] section (/en/platform/customers/forms.html).
+This section shows you all the forms that the user has filled out on the platform. Clicking on a form takes you to see the user's answers in that form. To learn more about forms, go to the [Forms] section (/en/platform/customers/forms.html).
 
 #### Notes
 
@@ -115,13 +128,13 @@ In the menu in the upper right section, you can also execute these actions:
 
 * **Edit**: Opens the user editing modal. To add more fields to the form, go to [Custom Fields] (/en/platform/customers/realms.html #custom -fields).
 * **Deactivate**: Deactivates a user and prevents them from logging in.
-* **Delete**: Once a user is deactivated, you can delete the user. You must be an administrator to delete a user. Also, the user can delete their account from the additional options in their profile.
+* **Delete**: Once a user is deactivated, you can delete the user. You must be an administrator to delete a user. Also, the user himself can delete his account from the additional options in his profile.
 
-:::tip Tip
+:: :tip Tip
 Modifying a user may result in the list of segments that user belongs to being modified.
 :::
 
-## Realm Configuration
+## Realm settings
 
 In the Realm Settings section, you can customize the interaction between users and the Modyo platform.
 
@@ -129,20 +142,22 @@ Here you will find options for both the visual user experience, such as the sele
 
 ### General
 
-Here you can set up general aspects of the realms, such as:
+Here, you can set up general aspects of the realm, such as:
 
 - **Name**
-- **Identifier**: Allows you to modify the URL of the realm's profile, login, registration, and password recovery views.
+- **Identifier**: Allows you to modify the URL of the kingdom's profile, login, registration, and password recovery views.
 - **Enable/Disable Credentials**: Allows you to deactivate Modyo credentials in this realm and only allow access through SSO. Before you enable this option, make sure that you have an SSO identity provider configured.
+- **After login, redirect to**: Allows you to choose a specific URL to which to direct the user, once they have entered the kingdom. If you do not activate the “Force Redirection” option, the user will be redirected to the entered URL only if it is not possible to return to the URL from which they logged in.
+- **Force redirection to**: By activating this option, the user will always be redirected to the URL specified in the login redirect field, regardless of where they started the session.
 - **Account Activation**:
   - Direct: Users who register can log in directly.
   - Activation email: Users who register must activate their account by clicking on a link sent to their email before being able to log in.
-  - Moderated: Users who register must wait for a realm administrator to activate their account before they can log in.
+  - Moderate: Users who register must wait for a kingdom administrator to activate their account before they can log in.
   - Disabled: New users cannot be registered in the kingdom. Already registered and activated users can still log in.
 - **Default Avatar Image**: Image shown on the avatar of users who do not have a custom image.
-- **Additional attributes for the registration form**:
-  - Enable second surname
-  - Require second surname
+- **Extra attributes of the registration form**:
+  - Enable second last name
+  - Require second last name
   - Enable email confirmation: Enables an additional email field that the user must fill in and that must match the primary email field.
   - Enable user avatar
   - Enable date of birth
@@ -156,15 +171,15 @@ When deactivating Modyo credentials in the realm, make sure that you have set up
 
 ### Appearance
 
-In this section you can modify the primary color and the logo, in addition to adding custom CSS for the registration, login and profile views of users of the realm.
+In this section you can modify the primary color and the logo, in addition to adding custom CSS for the registration, login and profile views of users of the kingdom.
 
 #### Primary Color
 
 The primary color is the one shown on the main session management buttons, such as login, registration, password modifications, and other attributes. To modify it, enter the HEX code of the desired color and click the **Save** button located at the top of the screen.
 
-#### Show account logo
+#### Show the account logo
 
-This option allows you to display the logo configured for the account, in the session views. The logo will be displayed on the respective forms of these views. To change the logo, go to the [Modyo Interface] (/en/platform/core/the-modyo-interface.html).
+This option allows you to show the logo configured for the account, in the session views. The logo will be displayed on the respective forms of these views. To change the logo, access the [Modyo Interface] (/en/platform/core/the-modyo-interface.html).
 
 #### Custom CSS
 
@@ -178,7 +193,7 @@ Click the [File Manager] icon (/en/platform/content/asset-manager.html) to uploa
 
 It's important to note that the editor doesn't automatically generate the link to the file after uploading it. After uploading the file, click the paste button on the side of each file to generate its link. Then, copy this link and paste it into the CSS code.
 
-:::tip Tip
+:: :tip Tip
 If you have problems with the keyboard codes when editing the CSS, click the keyboard icon above the editor. This displays a series of button shortcuts that make editing easier.
 :::
 
@@ -192,7 +207,7 @@ To redirect the login follow these steps:
 3. Choose the site where you want to work.
 4. In the side menu, click Templates.
 5. In the header template, look for the line that contains the login information.
-6. Redirects to the desired page using this code: 
+6. Redirect to the desired page using this code: 
 `login? redirect_to=/your-page` where “/your-page” is the URL of the page you want to redirect the login to.
 7. Click **Save**.
 8. Click **Publish**.
@@ -201,15 +216,15 @@ To redirect the login follow these steps:
 Modyo is programmed so that the login information is in the header of the site. If your site is programmed differently, use the magnifying glass icon to find the term login in your templates. 
 :::
 
-:::warning Attention
+:: :warning Attention
 The login address must be a page within your account. You cannot redirect the login to an external URL.
 :::
 
-### Emails
+### Mails
 
-Modyo allows you to configure the sender address and the appearance of the emails you send to users within the realm.
+Modyo allows you to configure the sending address and the appearance of the emails you send to users in the realm.
 
-To adjust the sender's address of your email, enter the address in the **"Default Email"** field and click the **Save** button.
+To adjust the address of the sender who sends your email, enter the address in the **"Default Email"** field and click the **Save** button.
 
 Here you can also enable, disable and customize the sending of automatic emails in response to specific actions carried out by users. The options are: 
 
@@ -224,14 +239,14 @@ Here you can also enable, disable and customize the sending of automatic emails 
 
 To enable or disable sending an email, click the Enabled/Disabled button next to each function and click the **Save** button.
 
-#### Custom emails
+#### Personalize emails
 
-You can include customizable codes in each email, these codes allow the platform to include the user's information in the designated field, at the time of sending.
+You can enter customizable codes in each email, these codes allow the platform to include the user's information in the designated field, at the time of sending.
 
-:::danger Danger
-It is essential that each email includes the customizable codes that allow the platform to include the random data of the user requesting the sending.
+:: :danger Danger
+It is essential that each email includes the customizable codes that allow the platform to include the random data of the user requesting the shipment.
 
-To do this, insert the attributes that are below the editor into the code and paste it in the corresponding part of the code.
+To do this, insert the attributes below the editor into the code, and paste them into the corresponding part of the code.
 :::
 
 Every time you make a change to the code, you must click on the**Save** button located at the top of the screen.
@@ -292,7 +307,7 @@ To remove an administrator from the realm, check the box to the left of their na
 
 ### Custom fields
 
-In this section, you can create custom fields to distinguish the user's profile. It is important that these fields are correctly identified for best use.
+In this section, you can create custom fields to distinguish the user's profile. For best use, it is important that these fields are correctly identified.
 
 The types of custom fields you can add are:
 
@@ -338,7 +353,7 @@ In addition to saving specific values to users, you can use the values of the cu
 
 #### Password Policy
 
-The available options for setting a password policy in the Modyo platform are:
+The options available to set a password policy on the Modyo platform are:
 
 - Minimum password length value: Sets the minimum number of characters a password must have, between 12 and 128 characters.
 - Require at least one lowercase letter (a - z)
