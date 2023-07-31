@@ -134,6 +134,8 @@ Aquí puedes configurar aspectos generales del reino, como:
 - **Nombre**
 - **Identificador**: Permite modificar la URL de las vistas de perfil, inicio de sesión, registro y recuperación de contraseña del reino.
 - **Habilitar/deshabilitar credenciales**: Permite desactivar las credenciales de Modyo en este reino y permitir únicamente el acceso a través de SSO. Antes de habilitar esta opción, asegúrate de tener configurado un proveedor de identidad SSO.
+- **Después del inicio de sesión, redirige a**: Permite elegir una URL específica a la cual dirigir al usuario, una vez que haya ingresado al reino. Si no activas la opción de "Forzar redirección", el usuario será redirigido a la URL ingresada solo si no es posible volver a la URL desde la que inició sesión.
+- **Forzar la redirección a**: Al activar esta opción, el usuario siempre será redirigido a la URL especificada en el campo de redirección del inicio de sesión, sin importar desde dónde inició la sesión.
 - **Activación de la cuenta**:
   - Directa: Los usuarios que se registren pueden iniciar sesión directamente.
   - E-mail de activación: Los usuarios que se registren deben activar su cuenta mediante un enlace enviado a su correo electrónico previo a poder iniciar sesión.
