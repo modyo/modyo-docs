@@ -13,7 +13,7 @@ search: true
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
-* Fix problem when saving variables in widgets from Modyo CLI
+* Fixes issue when saving variables in widgets from the Modyo CLI
 
 <Badge text="Content" type="content" vertical="middle"/>
 
