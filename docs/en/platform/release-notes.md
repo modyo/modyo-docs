@@ -23,7 +23,7 @@ search: true
 ### 9.2.42
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* Fix error in authentication flow with identity providers 
+* Fixes error in authentication flow with identity providers 
 
 ### 9.2.41 - July 26, 2023
 <Badge text="Core" type="core" vertical="middle"/>
