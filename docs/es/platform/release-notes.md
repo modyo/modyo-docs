@@ -17,7 +17,7 @@ search: true
 
 <Badge text="Content" type="content" vertical="middle"/>
 
-* Mejoras en el listado de entradas de contenido, ahora las acciones en bulk se muestran segun los elementos seleccionados
+* Mejoras en el listado de entradas de contenido, ahora las acciones en bulk se muestran según los elementos seleccionados
 * Mejoras en la validación de tipo de assets subidos a la plataforma
 
 ### 9.2.42
