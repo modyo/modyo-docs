@@ -6,6 +6,25 @@ search: true
 
 ## 9.2
 
+### 9.2.43
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Corrige problema al guardar variables en widgets provenientes de Modyo CLI
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Mejoras en el listado de entradas de contenido, ahora las acciones en bulk se muestran según los elementos seleccionados
+* Mejoras en la validación de tipo de assets subidos a la plataforma
+
+### 9.2.42
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Corrige error en flujo de autenticación con identity providers 
+
 ### 9.2.41 - 26 de julio de 2023
 <Badge text="Core" type="core" vertical="middle"/>
 
