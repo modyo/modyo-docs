@@ -84,6 +84,7 @@ module.exports = {
                 },
                 "/en/platform/core/webhooks",
                 "/en/platform/core/api",
+                "/es/platform/core/activity-logs",
                 "/en/platform/core/roles",
                 "/en/platform/core/security",
               ],
@@ -133,6 +134,7 @@ module.exports = {
               children: [
                 "/en/platform/customers/realms",
                 "/en/platform/customers/profile",
+                "/en/platform/customers/events",
                 "/en/platform/customers/segments",
                 "/en/platform/customers/forms",
                 "/en/platform/customers/messaging",
@@ -334,6 +336,7 @@ module.exports = {
                 },
                 "/es/platform/core/webhooks",
                 "/es/platform/core/api",
+                "/es/platform/core/activity-logs",
                 "/es/platform/core/roles",
                 "/es/platform/core/security",
               ],
@@ -383,6 +386,7 @@ module.exports = {
               children: [
                 "/es/platform/customers/realms",
                 "/es/platform/customers/profile",
+                "/es/platform/customers/events",
                 "/es/platform/customers/segments",
                 "/es/platform/customers/forms",
                 "/es/platform/customers/messaging",
