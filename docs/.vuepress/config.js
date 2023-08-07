@@ -84,7 +84,7 @@ module.exports = {
                 },
                 "/en/platform/core/webhooks",
                 "/en/platform/core/api",
-                "/es/platform/core/activity-logs",
+                "/en/platform/core/activity-logs",
                 "/en/platform/core/roles",
                 "/en/platform/core/security",
               ],
