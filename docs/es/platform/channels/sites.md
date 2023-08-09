@@ -42,12 +42,12 @@ En la pantalla de revisión y publicación conjunta puedes ver todos los cambios
 Para hacer una publicación en conjunto en tu sitio, sigue estos pasos:
 
 1. En el menú principal de Modyo Platform, expande **Channels** y haz click en **Sitios**.
-1. Da click en tu sitio.
+1. Haz click en tu sitio.
 1. En la pantalla de Resumen, haz click en **Publicar**.
 1. Aquí podrás ver todos los cambios pendientes. Selecciona lo que quieres publicar y haz click en **Publicar**.
 
 :::tip Tip
-Si haces click en Publicar en un artículo en particular (e.g. publicar una página), se abrirá la ventana de Revisar y Publicar con este artículo seleccionado para ver los cambios pendientes.
+Si haces click en **Publicar** en un artículo en particular (e.g. publicar una página), se abrirá la ventana de Revisar y Publicar con este artículo seleccionado para ver los cambios pendientes.
 ::: 
 
 ## Buscador
@@ -121,7 +121,7 @@ La hora en el contenido es manejada en la Configuración de la Cuenta.
 - **ID de Google Tag Manager**: Te permite añadir un identificador de Google Tag Manager para insertar fácilmente los scripts para poder hacer uso de la herramienta de registro de eventos de Google.
 - **Favicon**: Imagen que aparece al costado de la barra de dirección.
 - **Icono de Apple**: Imagen que se ve en los dispositivos móviles al usar el sitio como aplicación.
-- **Borrar**:  Eliminar definitivamente un sitio y todo sus elementos.
+- **Borrar**: Eliminar definitivamente un sitio y todo sus elementos.
 
 :::danger Peligro
 Borrar es irreversible, por lo que debes estar completamente seguro al ejecutar esta acción. 
@@ -133,7 +133,7 @@ Al presionar el botón de eliminado, el sistema te pedirá que ingreses el nombr
 
 Por defecto, los nuevos temas de Modyo incluyen los snippets necesarios para inyectar automáticamente los scripts de Google Tag Manager tanto en el _head_ como en el _body_ de los sitios. Puedes encontrar estos snippets en la sección _snippets>general_ de [Plantillas](/es/platform/channels/templates.html) y se incrustan tanto en el snippet del _head_ como en las vistas _home_ y _base_.
 
-::: tip Tip
+:::tip Tip
 Si tienes instalado el último tema disponible y aún no cuentas con estos snippets, dirigirte a la sección "Temas" en la parte superior derecha y haz click en la opción "Cargar templates" de las opciones adicionales en la parte superior derecha. 
 
 Esta opción cargará todos los templates que han sido añadidos al tema, pero que no están presentes en la versión que tienes instalada.
@@ -184,10 +184,14 @@ Con esta configuración completada, cuando haya un valor asociado al campo **Ide
 Esta sección te permite configurar las restricciones de privacidad de tu sitio.
 
 - Si el sitio es público: Todos los visitantes pueden ver el sitio sin necesidad de iniciar sesión. El contenido del sitio es accesible para cualquier usuario.
-- Si el sitio es privado: Solo los usuarios con una sesión de Modyo pueden ver el sitio. 
+- Si el sitio es privado: Solo los usuarios con una sesión de Modyo pueden ver el sitio.
 - Si el sitio es privado, pero el home es público: La página de inicio del sitio se muestra a todos los visitantes, incluso aquellos que no hayan iniciado sesión. Sin embargo, al navegar a cualquier otra página del sitio, se les solicitará a los usuarios que se registren o inicien sesión.
 - Redirigir a home cuando no se encuentra una URL: Por defecto, el sitio muestra una respuesta 404 (página no encontrada) cuando se accede a una URL que no existe. Sin embargo, si marcas esta opción, en lugar de recibir un 404, el usuario será redirigido a la página de inicio del sitio. 
 - Habilitar búsqueda: Si marcas esta opción, habilitas la función de búsqueda en el sitio. 
+
+:::tip Tip
+Si habilitas la búsqueda en tu sitio y usas el parámetro multi=true desde otros sitios, podrás también buscar en tu sitio actual. 
+:::
 
 
 #### Zona de Peligro
@@ -231,7 +235,7 @@ En la sección de configuración del sitio, solo los usuarios con rol de adminis
 
 #### SEO en-página vs. fuera-de-página (On-Page vs. Off-Page)
 
-También conocido como SEO en-sitio y fuera-de-sitio, se refieren a las acciones que se pueden tomar dentro o fuera de una página para aumentar la visibilidad de tu sitio para los motores de búsqueda. Para obtener los mejores resultados, recomendamos hacer uso de ambas estrategias para obtener un mejor posicionamiento en los buscadores.
+También conocidos como SEO en-sitio y fuera-de-sitio, estos términos se refieren a las acciones que puedes llevar a cabo dentro y fuera de una página web para mejorar la visibilidad de tu sitio en los motores de búsqueda. Para lograr los mejores resultados, recomendamos utilizar ambas estrategias de manera conjunta, lo que contribuirá a un posicionamiento más sólido en los resultados de búsqueda.
 
 ##### SEO en-página
 
@@ -390,7 +394,7 @@ Las ventajas principales de tener distintos stages en tus sitios son:
 - Cada sitio tiene un máximo de cuatro stages.
 - Los cambios que realices en un stage solo se reflejan en ese stage.
 - Esta funcionalidad solo se puede usar en sitios.
-- Al utilizar stages, los PWAs y redirecciones personalizadas serán deshabilitadas. Solo puedes hacer uso de PWAs y redirecciones personalizadas en el stage `main`.
+- Al utilizar stages, las PWAs y redirecciones personalizadas serán deshabilitadas. Solo puedes hacer uso de PWAs y redirecciones personalizadas en el stage `main`.
 - Los stages tienen una sección de Miembros de Equipos separada del stage `main`. Por lo que tendrás que agregar a los miembros para habilitar la funcionalidad de Revisión de Equipo. Así, puedes tener los mismos miembros con diferentes roles y permisos para cada stage.
 :::
 
@@ -401,16 +405,16 @@ Las ventajas principales de tener distintos stages en tus sitios son:
 Para agregar un nuevo stage a tu sitio, sigue estos pasos:
 
 1. Desde el menú lateral, haz click en **Channels**.
-1. Da click en **Sitios**.
+1. Haz click en **Sitios**.
 1. Selecciona tu sitio.
 1. Expande la sección **Configuración del sitio**.
-1. Da click en **Stages**.
+1. Haz click en **Stages**.
 1. Haz click en **+ Nuevo Stage**.
 1. Selecciona la base del stage y escribe su nombre.
 1. Haz click en **Crear**.
 
 :::tip Tip
-Cuando tienes más de un stage en tu sitio, la página de "Overview" muestra los detalles del stage actual y un botón para sincronizar cambios entre stages.
+Cuando tienes más de un stage en tu sitio, la página de **Overview** muestra los detalles del stage actual y un botón para sincronizar cambios entre stages.
 
 En la barra lateral, puedes ver en qué stage te encuentras actualmente. Al hacer click en el menú desplegable puedes ver una lista de todos los stages de tu sitio.
 :::
@@ -426,7 +430,7 @@ En la pantalla de sincronizaciones puedes ver todos los cambios que se realizar�
 Para sincronizar un stage, sigue estos pasos:
 
 1. En el menú lateral, haz click en **Channels**.
-1. Da click en **Sitios**.
+1. Haz click en **Sitios**.
 1. Selecciona tu sitio.
 1. En **Overview**, en el apartado de **Sincronización**, selecciona el stage que quieres sincronizar.
 1. En la ventana emergente verás todos los elementos con diferencias entre los stages seleccionados. Haz click en _Ver_ para obtener más detalles sobre los cambios.
@@ -434,7 +438,7 @@ Para sincronizar un stage, sigue estos pasos:
 1. Haz click en **Sincronizar**.
 
 :::tip Tip
-Al hacer click en **Sincronizar**, puedes seleccionar qué cambios tomar de un stage. Si quieres sincronizar  cambios a `main`, debes estar en `main` al hacer click en **Sincronizar**.
+Al hacer click en **Sincronizar** puedes seleccionar de que stage vas a traer los cambios. Si quieres sincronizar cambios a `main`, debes estar en `main` al hacer click en **Sincronizar**.
 :::
 
 :::warning Atención
@@ -446,11 +450,11 @@ La plataforma no permite sincronizar cambios que todavía no están publicados. 
 Para eliminar un stage, sigue estos pasos:
 
 1. En el menú lateral, haz click en **Channels**.
-1. Da click en **Sitios**.
+1. Haz click en **Sitios**.
 1. Selecciona tu sitio.
 1. Abre el menú desplegable junto al nombre de tu sitio y selecciona el stage que quieres eliminar.
 1. Haz click en **Configuración de Sitio**.
-1. Da click en **General**.
+1. Haz click en **General**.
 1. En la sección zona peligrosa haz click en **Eliminar Stage**.
 
 <img src="/assets/img/channels/sites/delete-stage.png" alt="Delete stage." width="500" style="margin-top: 40px; border: 1px solid #EEE;" >
@@ -475,14 +479,6 @@ Una vez que hayas habilitado la revisión en equipo, puedes realizar las siguien
 - **Requerir todos** - Con esta opción activa, exiges que todos los usuarios designados como revisores aprueben el elemento antes de que este pueda ser publicado.
 
 
-:::warning Atención
-En el listado aparecen todos los elementos que tienen cambios pendientes por publicar. Si un elemento no aparece en el listado, es porque aún no tiene cambios por publicar.
-
-Si tienes la revisión en equipo habilitada, en el listado solo aparecerán los elementos que ya están aprobados.
-
-En el caso que necesites publicar rápidamente un elemento, los usuarios administradores pueden saltarse el proceso de aprobación mediante la opción "Forzar publicación" permitiendo que el elemento pase directamente a la vista de publicación.
-:::
-
 ### Miembros del Equipo
 
 <img src="/assets/img/channels/sites/members-site.jpg" alt="The members and their roles in a site." width="500" style="margin-top: 40px; border: 1px solid #EEE;" >
@@ -505,12 +501,13 @@ Para agregar un nuevo miembro para tu sitio, sigue estos pasos:
 
 #### Modificar un rol
 Para modificar el rol de un administrador, sigue estos pasos:
-1. Da click en el nombre del administrador.
+1. Haz click en el nombre del administrador.
 1. En el modal que se abre, selecciona el nuevo rol.
 1. Presiona **Actualizar** para confirmar el cambio.
 
 Los roles disponibles son:
 
+- **Viewer**: Este usuario puede ver entradas, ver diferencias entre versiones y dejar comentarios. También puede acceder a la vista de sincronización y ver los cambios pendientes de sincronizar. Este rol no tiene autorización para realizar ninguna acción que implique un cambio en la plataforma.
 - **Developer** :Este usuario está a cargo del desarrollo estructural de los recursos. Puede crear, modificar y enviar a revisión páginas, widgets, el menú y los templates. Todas las acciones realizadas por un Developer deben pasar por un proceso de revisión antes de su publicación. Este rol no tiene permisos para publicar, eliminar recursos, realizar un rollback a versiones anteriores de los mismos, ni para modificar la configuración del sitio. Existe una variante de este rol llamada CLI, que además de los permisos de un Developer, permite realizar push de widgets desde aplicaciones externas, como el [modyo-cli](/es/platform/channels/widgets.html#modyo-cli).
 - **Developer CLI**: Puede crear, modificar y enviar a revisión páginas, widgets, el menú y los templates. Además, puede empujar widgets desde aplicaciones externas.
 - **Reviewer**: Este rol permite corregir y aprobar o desechar el trabajo realizado por los Developers. Puede crear, modificar, enviar a revisión y aprobar páginas, widgets, el menú y los templates. También puede realizar la publicación cuando se cumplen las condiciones de revisión. No puede editar la configuración del sitio.
@@ -533,7 +530,7 @@ Para crear una nueva redirección, haz click en el botón **Nuevo** en la esquin
 La tabla de redirecciones es la penúltima en precedencia, de tal forma que si existe una URL en el sitio que apunta a una [página](/es/platform/channels/pages.html) o una vista por defecto, verás esa vista en vez de ser redirigido mediante la tabla de redirecciones personalizadas.
 :::
 
-Además de crear redirecciones una por una, puedes importar un [archivo CSV](/assets/examples/custom-redirections.csv) con hasta 1,000 redirecciones.
+Además de crear redirecciones una por una, puedes importar un [archivo CSV](/assets/examples/custom-redirections.csv) con hasta 1000 redirecciones.
 
 :::warning Atención
 Las columnas requeridas para importar redirecciones son origen y destino.
