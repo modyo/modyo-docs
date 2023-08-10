@@ -9,7 +9,7 @@ Un sitio es donde se despliega el contenido creado en [Content](/es/platform/con
 
 <img src="/assets/img/channels/sites/sites-index.jpg" alt="The main page for the Sites module" style="border: 1px solid #EEE;" />
 
-Un sitio puede estar en uno de estos tres estados: 
+Un sitio puede estar en uno de estos tres estados:
 
 - **Habilitado**: Estado por defecto de los sitios recién creados y aquellos que están habilitados para uso.
 - **Cambios pendientes**: Este estado aparece cuando hay modificaciones pendientes en el sitio. Un administrador puede hacer click en **Publicar** para acceder a la sección de **Revisar y Publicar**, para verificar los cambios y publicar el sitio.
@@ -48,33 +48,31 @@ Para hacer una publicación en conjunto en tu sitio, sigue estos pasos:
 
 :::tip Tip
 Si haces click en **Publicar** en un artículo en particular (e.g. publicar una página), se abrirá la ventana de Revisar y Publicar con este artículo seleccionado para ver los cambios pendientes.
-::: 
+:::
 
 ## Buscador
- 
-En Modyo, los usuarios pueden realizar búsquedas en tus sitios y en todo su contenido a través de search. Para ello deben ingresar un término dentro de la caja de búsqueda y dar click en **Search**. 
 
-Los resultados de una búsqueda se ordenan así: en primer lugar, se muestran los resultados que contienen el término buscado en su título; luego, aquellos que lo contienen dentro del resumen o excerpt de la entrada; y finalmente, aquellos donde aparece el término dentro del contenido.
+Al crear un sitio con Modyo, tus usuarios pueden realizar búsquedas en tus sitios y en todo su contenido mediante la función de búsqueda. Esto puede hacerse utilizando la URL `/search` o accediendo a la página de búsqueda dedicada.
 
 ### Habilitar Búsqueda
 
-Para habilitar o deshabilitar la funcionalidad de búsqueda en un sitio sigue estos pasos: 
+Para habilitar o deshabilitar la funcionalidad de búsqueda en un sitio sigue estos pasos:
 
-1. En el menú lateral, haz click en **Site Settings**.
-1. Haz click en **General**
+1. En el menú lateral, haz click en **Configuración del sitio**.
+1. Haz click en **General**.
 1. En la sección **Privacidad** deshabilita la casilla **Habilitar búsqueda**.
 1. Haz click en **Guardar**.
 
 
 ### Plantilla de búsqueda
 
-Puedes controlar la apariencia y funcionalidades de búsqueda en tu sitio utilizando la [plantilla](/es/platform/channels/templates/) search.
+Puedes controlar la apariencia y funcionalidades de búsqueda en tu sitio utilizando la [plantilla](/es/platform/channels/templates/) _search_.
 
-Esta plantilla se encuentra en la vista predeterminada de Modyo, en la categoría "Vistas/Search/show". Contiene todo el código Liquid que necesitas para realizar consultas en tu sitio, incluyendo la información del módulo Content vinculado a este sitio.
+Esta plantilla está disponible de forma predeterminada en la sección de Plantillas, en la categoría "Vistas/Search/Show". Contiene todo el código Liquid que necesitas para llevar a cabo consultas en tu sitio.
 
-Puedes acceder a ella mediante la URL de tu sitio y anexando "search" o "search.json". Por ejemplo:
- - test.modyo.com/miSitio/search
- - test.modyo.com/miSitio/search.json
+Puedes acceder a ella mediante la URL de tu sitio y anexando _search_ o _search.json_. Por ejemplo:
+ - `test.modyo.com/miSitio/search`
+ - `test.modyo.com/miSitio/search.json`
 
 <img src="/assets/img/channels/sites/searchshow.jpg" alt="The location on where to find the search  template" width="250" />
 
@@ -108,11 +106,11 @@ La configuración del sitio te permite abrir las opciones de la plataforma, de m
 En esta sección puedes configurar los siguientes datos de tu sitio:
 
 - **Nombre del sitio**: El nombre de tu sitio, este campo se usa como título por defecto para el SEO de tu sitio.
-- **Descripción**: Una breve descripción de tu sitio. Se usa, además, como valor por defecto para el SEO del sitio.
+- **Descripción**: Una breve descripción de tu sitio.
 - **Logo del sitio**: Imagen que se muestra en la parte superior izquierda como logo del sitio.
 - **Idioma**: El idioma en el que está disponible tu sitio. Las opciones son: español, inglés y portugués.
 - **[Revisión en Equipo](/es/platform/core/key-concepts.html)**
-- **Zona Horaria**: La zona horaria en que se muestran los campos de fecha y hora dentro del sitio. Esta configuración afecta a todas las secciones del sitio, incluyendo Pages, Navigation y Plantillas, así como las llamadas de Liquid a datos del sitio.
+- **Zona Horaria**: La zona horaria en que se muestran los campos de fecha y hora dentro del sitio. Esta configuración afecta a todas las secciones del sitio, incluyendo Pages, Navegación y Plantillas, así como las llamadas de Liquid a datos del sitio.
 
 :::warning Atención
 La hora en el contenido es manejada en la Configuración de la Cuenta.
@@ -124,22 +122,22 @@ La hora en el contenido es manejada en la Configuración de la Cuenta.
 - **Borrar**: Eliminar definitivamente un sitio y todo sus elementos.
 
 :::danger Peligro
-Borrar es irreversible, por lo que debes estar completamente seguro al ejecutar esta acción. 
+Borrar es irreversible, por lo que debes estar completamente seguro al ejecutar esta acción.
 
 Al presionar el botón de eliminado, el sistema te pedirá que ingreses el nombre textual del sitio que deseas eliminar para confirmar la acción. Una vez confirmada, no podrás volver a acceder al sitio ni a sus elementos.
 :::
 
 #### Google Tag Manager
 
-Por defecto, los nuevos temas de Modyo incluyen los snippets necesarios para inyectar automáticamente los scripts de Google Tag Manager tanto en el _head_ como en el _body_ de los sitios. Puedes encontrar estos snippets en la sección _snippets>general_ de [Plantillas](/es/platform/channels/templates.html) y se incrustan tanto en el snippet del _head_ como en las vistas _home_ y _base_.
+Por defecto, los nuevos temas de Modyo incluyen los snippets necesarios para inyectar automáticamente los scripts de Google Tag Manager tanto en el tag `<head>` como en el tag `<body>` de los sitios. Puedes encontrar estos snippets en la sección [Plantillas](/es/platform/channels/templates.html), categoría _Snippets/General_ y se incrustan tanto en el snippet _head_ como en las vistas _home_ y _base_.
 
 :::tip Tip
-Si tienes instalado el último tema disponible y aún no cuentas con estos snippets, dirigirte a la sección "Temas" en la parte superior derecha y haz click en la opción "Cargar templates" de las opciones adicionales en la parte superior derecha. 
+Si tienes instalado el último tema disponible y aún no cuentas con estos snippets, dirigirte a la sección "Temas" en la parte superior derecha y haz click en la opción "Cargar templates" de las opciones adicionales en la parte superior derecha.
 
 Esta opción cargará todos los templates que han sido añadidos al tema, pero que no están presentes en la versión que tienes instalada.
 :::
 
-Si tienes instalado un tema antiguo y no cuentas con estos snippets, puedes crear un snippet personalizado para luego incrustar Google Tag Manager a tu sitio.
+Si no cuentas con estos snippets, puedes crear un snippet personalizado para luego incrustar Google Tag Manager en tu sitio.
 
 1. Crea un snippet personalizado con el siguiente código y luego incrusta el snippet en el head del sitio usando `{% snippet "gtm-head" %}`, reemplazando "gtm-head" por el nombre que le diste al snippet.
 
@@ -175,7 +173,7 @@ style="display:none;visibility:hidden">
 {% endif %}
 ```
 
-Con esta configuración completada, cuando haya un valor asociado al campo **Identificador de Google Tag Manager** en la sección Configuración General del sitio, los scripts se inyectarán automáticamente y podrás comenzar a crear eventos en Google Tag Manager para registrar las acciones de tus usuarios.
+Con esta configuración completada, cuando haya un valor asociado al campo **ID de Google Tag Manager** en la sección Configuración General del sitio, los scripts se inyectarán automáticamente y podrás comenzar a crear eventos en Google Tag Manager para registrar las acciones de tus usuarios.
 
 #### Privacidad
 
@@ -183,14 +181,14 @@ Con esta configuración completada, cuando haya un valor asociado al campo **Ide
 
 Esta sección te permite configurar las restricciones de privacidad de tu sitio.
 
-- Si el sitio es público: Todos los visitantes pueden ver el sitio sin necesidad de iniciar sesión. El contenido del sitio es accesible para cualquier usuario.
-- Si el sitio es privado: Solo los usuarios con una sesión de Modyo pueden ver el sitio.
-- Si el sitio es privado, pero el home es público: La página de inicio del sitio se muestra a todos los visitantes, incluso aquellos que no hayan iniciado sesión. Sin embargo, al navegar a cualquier otra página del sitio, se les solicitará a los usuarios que se registren o inicien sesión.
-- Redirigir a home cuando no se encuentra una URL: Por defecto, el sitio muestra una respuesta 404 (página no encontrada) cuando se accede a una URL que no existe. Sin embargo, si marcas esta opción, en lugar de recibir un 404, el usuario será redirigido a la página de inicio del sitio. 
-- Habilitar búsqueda: Si marcas esta opción, habilitas la función de búsqueda en el sitio. 
+- **Público**: Todos los visitantes pueden ver el sitio sin necesidad de iniciar sesión. El contenido del sitio es accesible para cualquier usuario.
+- **Privado**: Solo los usuarios con una sesión iniciada de Modyo pueden ver el sitio.
+- **Mostrar home a visitas públicas**: La página de inicio del sitio se muestra a todos los visitantes, incluso aquellos que no hayan iniciado sesión. Sin embargo, al navegar a cualquier otra página del sitio, se les solicitará a los usuarios que se registren o inicien sesión.
+- **Redireccionar a home cuando una URL no se encuentra**:  Por defecto, el sitio muestra una respuesta 404 (página no encontrada) cuando se accede a una URL que no existe. Sin embargo, si marcas esta opción, en lugar de recibir un 404, el usuario será redirigido a la página de inicio del sitio.
+- **Habilitar búsqueda**: Si marcas esta opción, habilitas la función de búsqueda en el sitio.
 
 :::tip Tip
-Si habilitas la búsqueda en tu sitio y usas el parámetro multi=true desde otros sitios, podrás también buscar en tu sitio actual. 
+Si habilitas la búsqueda en tu sitio y usas el parámetro`multi=true` desde otros sitios, podrás también buscar en tu sitio actual.
 :::
 
 
@@ -216,7 +214,7 @@ El SEO (Search Engine Optimization) es fundamental para aparecer en los distinto
 
 Las opciones a configurar son:
 
-- **Tagline**: Descripción que aparece en los motores de búsqueda, debajo del nombre del sitio
+- **Tagline**: Descripción que aparece en los motores de búsqueda, debajo del nombre del sitio.
 - **Actualizar automáticamente el archivo sitemap.xml para mí**: Esta opción permite a Modyo crear y mantener automáticamente el archivo sitemap.xml. Si deseas mantener un mapa de sitio personalizado, deshabilita esta opción.
 - **Sitemap**: Este archivo XML permite a los motores de búsqueda indexar el contenido del sitio.
 - **Actualizar automáticamente el archivo robots.xml para mí**: Al habilitar esta opción, Modyo se encargará de crear y mantener el archivo robots.txt automáticamente. Deshabilita esta opción para proporcionar instrucciones personalizadas a los rastreadores de sitios.
@@ -307,8 +305,7 @@ La sección Dominios te permite conocer la ubicación pública de tu sitio, por 
 Las variables que puedes cambiar en esta sección son:
 
 - **Host**: Donde se encuentra el sitio dentro del servidor.
-- **Activar dominios personalizados**:Al activar esta opción, puedes tener sitios con URLs personalizadas o "custom host" dentro del dominio.
-- **Habilitar SSL en el sitio**: Para habilitar SSL (Secure Socket Layer) en tu sitio, necesitas tener un certificado instalado en el servidor.
+- **Activar dominios personalizados**: Al activar esta opción, puedes tener sitios con URLs personalizadas o _custom hosts_ dentro del dominio.
 - **Dominio primario**: Dirección del sitio.
 - **Dominio alternativo**: Dirección secundaria para redireccionar en caso de que falle la primera.
 
@@ -395,7 +392,7 @@ Las ventajas principales de tener distintos stages en tus sitios son:
 - Los cambios que realices en un stage solo se reflejan en ese stage.
 - Esta funcionalidad solo se puede usar en sitios.
 - Al utilizar stages, las PWAs y redirecciones personalizadas serán deshabilitadas. Solo puedes hacer uso de PWAs y redirecciones personalizadas en el stage `main`.
-- Los stages tienen una sección de Miembros de Equipos separada del stage `main`. Por lo que tendrás que agregar a los miembros para habilitar la funcionalidad de Revisión de Equipo. Así, puedes tener los mismos miembros con diferentes roles y permisos para cada stage.
+- Los stages tienen una sección de Miembros del Equipos independientemente del stage `main`. Por lo que tendrás que agregar a los miembros para habilitar la funcionalidad de Revisión de equipo. Así, puedes tener los mismos miembros con diferentes roles y permisos para cada stage.
 :::
 
 #### Agregar un nuevo stage
@@ -432,13 +429,13 @@ Para sincronizar un stage, sigue estos pasos:
 1. En el menú lateral, haz click en **Channels**.
 1. Haz click en **Sitios**.
 1. Selecciona tu sitio.
-1. En **Overview**, en el apartado de **Sincronización**, selecciona el stage que quieres sincronizar.
-1. En la ventana emergente verás todos los elementos con diferencias entre los stages seleccionados. Haz click en _Ver_ para obtener más detalles sobre los cambios.
+1. En la vista resumen haz click en **Sincronizar**.
+1. En la vista de sincronizaciones puedes ver todos los elementos con diferencias entre los stages seleccionados. Haz click en _Ver_ para obtener más detalles sobre los cambios.
 1. Selecciona los elementos que quieres sincronizar.
 1. Haz click en **Sincronizar**.
 
 :::tip Tip
-Al hacer click en **Sincronizar** puedes seleccionar de que stage vas a traer los cambios. Si quieres sincronizar cambios a `main`, debes estar en `main` al hacer click en **Sincronizar**.
+Al hacer click en **Sincronizar** puedes seleccionar desde cuál stage vas a traer los cambios. Si quieres sincronizar cambios a `main`, debes estar en `main` al hacer click en **Sincronizar**.
 :::
 
 :::warning Atención
@@ -473,9 +470,9 @@ Al activar la Revisión en Equipo mediante la casilla de **Habilitar revisión e
 
 Una vez que hayas habilitado la revisión en equipo, puedes realizar las siguientes acciones:
 
-- Definir el **número de aprobaciones** necesarias para que un elemento pueda ser publicado. 
-- **Restringir la selección de revisores** - Solo quien envía a revisión puede seleccionar quien debe revisar el contenido y únicamente esos revisores podrán aprobar el contenido.
-- **Forzar revisión** - Al activar está casilla, al menos uno de los usuarios designados como revisores tiene que aprobar el elemento antes de la publicación.
+- Definir el **número de aprobaciones** necesarias para que un elemento pueda ser publicado.
+- **Restringir la selección de revisores** - Solo quien envía a revisión puede seleccionar quién debe revisar el contenido y únicamente esos revisores podrán aprobar el contenido.
+- **Forzar revisión** - Al activar está opción, al menos uno de los usuarios designados como revisores tiene que aprobar el elemento antes de la publicación.
 - **Requerir todos** - Con esta opción activa, exiges que todos los usuarios designados como revisores aprueben el elemento antes de que este pueda ser publicado.
 
 
@@ -508,15 +505,15 @@ Para modificar el rol de un administrador, sigue estos pasos:
 Los roles disponibles son:
 
 - **Viewer**: Este usuario puede ver entradas, ver diferencias entre versiones y dejar comentarios. También puede acceder a la vista de sincronización y ver los cambios pendientes de sincronizar. Este rol no tiene autorización para realizar ninguna acción que implique un cambio en la plataforma.
-- **Developer** :Este usuario está a cargo del desarrollo estructural de los recursos. Puede crear, modificar y enviar a revisión páginas, widgets, el menú y los templates. Todas las acciones realizadas por un Developer deben pasar por un proceso de revisión antes de su publicación. Este rol no tiene permisos para publicar, eliminar recursos, realizar un rollback a versiones anteriores de los mismos, ni para modificar la configuración del sitio. Existe una variante de este rol llamada CLI, que además de los permisos de un Developer, permite realizar push de widgets desde aplicaciones externas, como el [modyo-cli](/es/platform/channels/widgets.html#modyo-cli).
+- **Developer**: Este usuario está a cargo del desarrollo estructural de los recursos. Puede crear, modificar y enviar a revisión páginas, widgets, menús y plantillas. Todas las acciones realizadas por un Developer deben pasar por un proceso de revisión antes de su publicación. Este rol no tiene permisos para publicar, eliminar o realizar un _rollback_ a versiones anteriores de los recursos, ni tampoco para modificar la configuración del sitio. Existe una variante de este rol llamada Developer CLI, que además de los permisos de un Developer, permite actualizar widgets desde aplicaciones externas, como el [modyo-cli](/es/platform/channels/widgets.html#modyo-cli).
 - **Developer CLI**: Puede crear, modificar y enviar a revisión páginas, widgets, el menú y los templates. Además, puede empujar widgets desde aplicaciones externas.
-- **Reviewer**: Este rol permite corregir y aprobar o desechar el trabajo realizado por los Developers. Puede crear, modificar, enviar a revisión y aprobar páginas, widgets, el menú y los templates. También puede realizar la publicación cuando se cumplen las condiciones de revisión. No puede editar la configuración del sitio.
-- **Admin**: El Administrador del sitio posee los mismos privilegios que los roles anteriores y tiene la capacidad de configurar todo el sitio. Esto incluye la creación, modificación, envío a revisión y aprobación de páginas, widgets, menús y plantillas. Además, puede publicar sin requerir la validación de revisión en equipo. Se diferencia del Default Admin, ya que un Site Admin puede configurar el sitio externo, pero no tiene la capacidad de realizar cambios en la plataforma en sí.
+- **Reviewer**: Este rol permite corregir, aprobar o desechar el trabajo realizado por los Developers. Puede crear, modificar, enviar a revisión y aprobar páginas, widgets, menús y plantillas. También puede publicar cuando se cumplen las condiciones de revisión. No puede editar la configuración del sitio.
+- **Admin**: El Administrador del sitio posee los mismos privilegios que los roles anteriores y tiene la capacidad de configurar todo el sitio. Esto incluye la creación, modificación, envío a revisión y aprobación de páginas, widgets, menús y plantillas. Además, puede publicar sin requerir la validación de revisión en equipo.
 
 #### Eliminar a un administrador
 Para eliminar a un administrador del sitio, sigue estos pasos:
 1. Marca la casilla junto al nombre del administrador.
-2. Haz click en el botón **Borrar** al final de la lista, en la parte inferior izquierda de la pantalla. 
+2. Haz click en el botón **Borrar** al final de la lista, en la parte inferior izquierda de la pantalla.
 
 ### Redirecciones personalizadas
 
@@ -663,7 +660,7 @@ Para crear una variable en sitios, sigue estos pasos:
 
 1. Desde el menú lateral principal, haz click en **Channels**.
 1. Selecciona tu **Sitio**.
-1. En **Configuración del sitio**, haz click en **Variables del Sitio**. Aquí puedes ver el listado de todas las variables globales y las variables del sitio, su información general y un botón para copiar su código en Liquid markup. 
+1. En **Configuración del sitio**, haz click en **Variables del Sitio**. Aquí puedes ver el listado de todas las variables globales y las variables del sitio, su información general y un botón para copiar su código en Liquid markup.
 1. Haz click en **+ Nueva Variable**.
 1. Completa los campos **Nombre** y **Valor** de la variable.
 1. Haz click en **Guardar**.
