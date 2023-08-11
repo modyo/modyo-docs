@@ -131,12 +131,6 @@ Al presionar el botón de eliminado, el sistema te pedirá que ingreses el nombr
 
 Por defecto, los nuevos temas de Modyo incluyen los snippets necesarios para inyectar automáticamente los scripts de Google Tag Manager tanto en el tag `<head>` como en el tag `<body>` de los sitios. Puedes encontrar estos snippets en la sección [Plantillas](/es/platform/channels/templates.html), categoría _Snippets/General_ y se incrustan tanto en el snippet _head_ como en las vistas _home_ y _base_.
 
-:::tip Tip
-Si tienes instalado el último tema disponible y aún no cuentas con estos snippets, dirigirte a la sección "Temas" en la parte superior derecha y haz click en la opción "Cargar templates" de las opciones adicionales en la parte superior derecha.
-
-Esta opción cargará todos los templates que han sido añadidos al tema, pero que no están presentes en la versión que tienes instalada.
-:::
-
 Si no cuentas con estos snippets, puedes crear un snippet personalizado para luego incrustar Google Tag Manager en tu sitio.
 
 1. Crea un snippet personalizado con el siguiente código y luego incrusta el snippet en el head del sitio usando `{% snippet "gtm-head" %}`, reemplazando "gtm-head" por el nombre que le diste al snippet.
