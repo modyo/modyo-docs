@@ -2,29 +2,17 @@
 search: true
 ---
 # Dashboard Payments
-<img src="/assets/img/dynamic/experiences/retail/dashboard-payments.jpg" style="border: 1px solid #EEE; margin-top: 40px; max-width:900px;">
 
+### Descripción
 El Dashboard de pagos ofrece una vista centralizada de las distintas obligaciones que tiene un usuario, permitiendo un acceso rápido para realizar los pagos. Cuenta con un panel lateral que permite ver los pagos que han sido programados. 
 
-```bash
-modyo-cli get modyo-widget-retail-dashboard-payments
-```
+### Previsualización
 
-Este widget usa el paquete `modyo-service-retail` para conectarse con el repositorio de productos del tipo `loan`.
+<img src="/assets/img/dynamic/experiences/retail/dashboard-payments.jpg" style="border: 1px solid #EEE; margin-top: 40px; max-width:600px;">
 
 
-<!--
-### Componentes del Design System
-- MApp
-- MButton
-- MIcon
-- MQuickAction
-- MSkeleton
+### Instalación
 
-### Variables de Liquid
-- products-path
-- api-user-id
-- api-path
-- mock-products
-- mock-categories
--->
+:::warning Próximamente
+Esta plantilla se encuentra en sus últimas etapas de implementación y pronto estará disponible.
+:::

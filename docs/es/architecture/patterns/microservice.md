@@ -69,6 +69,25 @@ Los microservicios desarrollados en Modyo Connect pueden integrarse a otros sist
 - **Manejo de errores:** Los errores originados en servicios externos deben ser correctamente manejados a nivel del microservicio para asegurar una buena experiencia de los usuarios.
 - **Timeouts y bloqueos:** Servicios externos con problemas de rendimiento o conectividad pueden ocasionar bloqueos en la experiencia de usuario o un consumo excesivo de recursos dentro del microservicio. Se recomienda siempre definir timeouts razonables en cada llamada.
 
+### Arquitectura Héxagonal
+La arquitectura hexagonal, también conocida como Arquitectura Puertos y Adaptadores, es un patrón de arquitectura de software que se enfoca en la separación de las preocupaciones (SoC, por sus siglas en inglés) y en la independencia del hardware y del software en una aplicación. Esta arquitectura se enfoca en la idea de que las aplicaciones deben estar estructuradas de manera que el núcleo de la lógica de negocio se encuentre en el centro de la arquitectura, con la interfaz de usuario y las capas de infraestructura ubicadas en la periferia.
+
+La arquitectura hexagonal se compone de tres capas principales:
+
+- **Capa de Dominio:** Contiene la lógica de negocio de la aplicación y representa el núcleo de la arquitectura. Esta capa es independiente de la interfaz de usuario y de la capa de infraestructura.
+- **Capa de Adaptadores de Infraestructura:** Contiene los adaptadores que conectan la capa de dominio con las capas de infraestructura. Los adaptadores se encargan de transformar los datos entre los formatos de la capa de dominio y los formatos específicos de la infraestructura (por ejemplo, bases de datos, servicios web, etc.).
+- **Capa de Infraestructura:** Contiene los componentes específicos de la infraestructura que se utilizan en la aplicación, como bases de datos, servicios web, sistemas de archivos, etc.
+
+La arquitectura hexagonal tiene varios beneficios, entre ellos:
+
+- Permite la separación de las preocupaciones y la independencia del hardware y del software en una aplicación.
+- Simplifica la integración de nuevos componentes de infraestructura.
+- Facilita la prueba y la depuración de la lógica de negocio de la aplicación.
+- Mejora la modularidad y la capacidad de reutilización del código.
+
+Los microservicios de Dynamic Framework se encuentran desarrollados utilizando los principios de la arquitectura héxagonal.
+
+
 ### Otras consideraciones
 
 - **Tareas pesadas:** Se recomienda también usar procesamiento en segundo plano, vía [colas de mensajería](../components/infrastructure.md#colas-de-mensajeria), para servicios que sean lentos o muy sensibles a las fluctuaciones de tráfico.

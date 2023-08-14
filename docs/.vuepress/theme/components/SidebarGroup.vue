@@ -115,7 +115,6 @@ export default {
     &.active
       font-weight 600
       color $accentColor
-      border-left-color $accentColor
     &:hover
       color $accentColor
 

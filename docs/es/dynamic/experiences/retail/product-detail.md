@@ -19,5 +19,5 @@ El widget es versátil para mostrar la información de 4 tipos de productos (cue
 Para comentazar a trabajar con esta plantilla, ejecuta el siguiente comando del Modyo CLI:
 
 ```bash
-modyo-cli get modyo-widget-retail-product-detail
+modyo-cli get dynamic-retail-product-detail-template
 ```

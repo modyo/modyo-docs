@@ -13,7 +13,7 @@ Modyo Commons es una librería que permite tomar control de tareas comunes y rep
 - Soporte para estandarización de control de error y propagación de eventos al frontend
 
 
-## Modyo SDK
+### Modyo SDK
 
 La librería Modyo SDK de Dynamic permite contar con acceso a als funcionalidades de API administrativa de Mdoyo, las cuales otorgan acceso a funcionalidades básicas y avanzadas de la plataforma, principalmente con los siguientes objetivos:
 - Acceso al API de notificaciones y mensajería de la plataforma

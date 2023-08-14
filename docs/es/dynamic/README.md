@@ -43,7 +43,7 @@ Las plantillas de experiencia presentes en el frameowrk han sido diseñadas para
 :::
 
 
-## ¿Cómo comenzar?
+## Instalación
 Primero lo primero. Para comenzar a utilizar Dynamic framework te recomendamos [crear un ambiente de pruebas](https://www.modyo.com/get-started) (sandbox) en Modyo. Una vez que te familiarices con los conceptos básicos de la plataforma, estarás listo para partir.
 
 ``` shell
@@ -60,9 +60,6 @@ Usa tu editor de código favorito para explorar el código del micro frontend, m
 
 A partir de este momento tendrás dos opciones: Seguir explorando otras plantillas o aventurarte a desplegar tu plantilla dentro de tu ambiente de pruebas utilizando el modyo-cli.
  
-
-
-
 
 ### Contribuciones
 

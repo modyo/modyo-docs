@@ -407,26 +407,26 @@ module.exports = {
             title: "Dynamic Framework",
             collapsable: false,
             children: [
-              "/es/dynamic/",
-              "/es/dynamic/architecture",              
+              "/es/dynamic/",         
               "/es/dynamic/release-notes"
             ],
           },
             {
               title: "Dynamic UI",
-              path: "/es/dynamic/ui/",
               collapsable: true,
               children: [
+                "/es/dynamic/ui/",
                 "/es/dynamic/ui/components",
                 "/es/dynamic/ui/theming",
+                "/es/dynamic/ui/i18n",
                 "/es/dynamic/ui/accessibility"                
               ],
             },
             {
-              title: "Plantillas",
-              path: "/es/dynamic/experiences/",
+              title: "Experiencias",
               collapsable: true,
               children: [
+                ["/es/dynamic/experiences/", "Plantillas"],
                 {
                   title: "Banca Retail",
                   collapsable: true,
@@ -460,9 +460,9 @@ module.exports = {
             },
             {
               title: "Integraciones",
-              path: "/es/dynamic/integrations/",
               collapsable: true,
               children: [
+                "/es/dynamic/integrations/",
                 "/es/dynamic/integrations/modyo",
                 "/es/dynamic/integrations/aws",
                 "/es/dynamic/integrations/mambu",

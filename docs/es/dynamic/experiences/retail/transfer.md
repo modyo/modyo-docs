@@ -4,40 +4,18 @@ search: true
 
 # Transfer
 
-<img src="/assets/img/dynamic/experiences/retail/transfer.jpg" style="border: 1px solid #EEE; margin-top: 40px; max-width:900px;">
+### Descripción
+Permite realizar transferencias entre las cuentas de depósito activas que tenga un cliente, generando un movimiento de entrada o salida en cada una de las cuentas. También permite compartir el resultado de la transacción exitosa por medio de una imagen o un pdf.### Instalación
 
-Permite realizar transferencias entre las cuentas de depósito activas que tenga un cliente, generando un movimiento de entrada o salida en cada una de las cuentas. También permite compartir el resultado de la transacción exitosa por medio de una imagen o un pdf.
+
+### Previsualización
+
+<img src="/assets/img/dynamic/experiences/retail/transfer.jpg" style="border: 1px solid #EEE; margin-top: 40px; max-width:600px;">
+
+### Instalación
+
+Para comentazar a trabajar con esta plantilla, ejecuta el siguiente comando del Modyo CLI:
 
 ```bash
-modyo-cli get modyo-widget-retail-transfer
+modyo-cli get dynamic-retail-transfer-template
 ```
-
-El widget está vinculado con el paquete `modyo-service-retail` donde se conecta con el repositorio de productos, transferencias y contactos (Mocked)
-
-
-
-<!--
-### Componentes del Design System
-
-- MApp
-- MButton
-- MIcon
-- MSkeleton
-- MListItem
-- MQuickAction
-- MModal
-- MCurrency
-- MCalendar
-- MFormSwitch
-- MSelect
-
-### Variables de liquid
-
-- api-path
-- use-authentication
-- mock-products
-- mock-banks
-- mock-contacts
-- mock-transfers
-- dashboard-path
--->
