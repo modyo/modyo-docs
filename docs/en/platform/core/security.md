@@ -42,7 +42,7 @@ Once the user is marked as inactive, they cannot log in. The default inactivity 
 - 180 days
 - 360 days
 
-If you check the box to forward an email to the user considering it inactive, the user will receive an email notification. From this email, you will be able to reactivate your account.
+If you check the box to send an email to a user when they are considered inactive, the user will receive an email notification. From this email, they will be able to reactivate their account.
 
 :: :tip Tip
 Account owners can change a user's status between inactive and active using the “Login disabled due to inactivity” checkbox.
