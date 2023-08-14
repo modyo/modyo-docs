@@ -62,7 +62,7 @@ This key or _secret_ is used by Modyo to sign user JWTs so that they can access 
 
 :: :warning Attention
 If you generate a new key, all requests for private content must go through Modyo. This is because JWTs signed by Modyo with the old key will no longer be valid.
-::
+:::
 
 The key or _secret_ has a specified duration in seconds. You can set this time in the field provided; by default, the duration is one hour (3600 seconds). It is recommended to avoid a very short period of duration, as it may affect the performance of the platform.
 
@@ -76,7 +76,7 @@ By enabling mandatory two-step authentication for team members, the next time a 
 
 :: :warning Attention
 The **Set Time Zone Automatically Option** must be active when using two-factor authentication on your mobile device.
-::
+:::
 
 ### Enable two-factor authentication for a user
 
