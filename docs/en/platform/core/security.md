@@ -6,7 +6,7 @@ tags:
 
 # Security
 
-For Modyo, safety is a key priority. For this reason, we have developed this page that will serve as a comprehensive guide to ensure the installation of Modyo.
+For Modyo, safety is a key priority. For this reason, we have developed this page that will serve as a comprehensive guide to ensure the secure installation of Modyo.
 
 Both Modyo Cloud and Enterprise Cloud, our cloud solutions, offer an excellent level of security by default. In addition, platform administrators have the ability to implement additional measures to strengthen the protection of their organizations.
 
