@@ -4,7 +4,7 @@ search: true
 
 # Componentes
 
-Los componentes Web son una tecnología web estándar que permite la creación de elementos reutilizables y personalizables para aplicaciones Web. Los componentes Web de Dynamic framework se encuentran implementados con la ayuda de [Stencil](https://stenciljs.com/).
+Los componentes Web son una tecnología web estándar que permite la creación de elementos reutilizables y personalizables para aplicaciones Web. Los componentes Web de Dynamic Framework se encuentran implementados con la ayuda de [Stencil](https://stenciljs.com/).
 
 
 ### Stencil

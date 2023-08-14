@@ -4,7 +4,7 @@ search: true
 
 # Plantillas de Experiencias
 
-El catálogo de plantillas de Dynamic framework contiene un conjunto de experiencias financieras completas e integradas a un API de referencia. Las plantillas se desarrollarán pensando en los siguientes grupos de experiencias:
+El catálogo de plantillas de Dynamic Framework contiene un conjunto de experiencias financieras completas e integradas a un API de referencia. Las plantillas se desarrollarán pensando en los siguientes grupos de experiencias:
 
 - Banca Personal
 - Banca Empresas
