@@ -29,7 +29,7 @@ En esta sección puedes configurar el tiempo que permanecerá activa una sesión
 
 **Expiración de sesión**: Al concluirse el tiempo seleccionado, Modyo cierra la sesión del usuario automáticamente.
 
-**Período de inactividad de usuario**: Cuando un usuario está inactivo se cierra la sesión automáticamente, una vez transcurrido el tiempo seleccionado. Se considera acciones de navegación, teclado y ratón como actividades de usuario. Esta opción protege al usuario en caso de dejar su estación de trabajo desatendida.
+**Período de inactividad de usuario**: Cuando un usuario está inactivo se cierra la sesión automáticamente, una vez transcurrido el tiempo seleccionado. Se considera acciones de navegación, teclado y mouse como actividades de usuario. Esta opción protege al usuario en caso de dejar su estación de trabajo desatendida.
 
 ## Política de periodo de inactividad de los usuarios
 
