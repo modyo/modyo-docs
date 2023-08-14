@@ -6,99 +6,89 @@ tags:
 
 # Seguridad
 
-En Modyo, todo lo referente a seguridad es muy importante para nosotros. Es por ello que creamos esta página que servirá de guía en todo lo necesario para asegurar una instalación de Modyo. Mientras que nuestras soluciones en la nube, Modyo Cloud y Enterprise Cloud, proveen un excelente nivel de seguridad por defecto, los administradores de la plataforma pueden tomar medidas adicionales de protección para incrementar la seguridad de sus organizaciones. En esta guía se presentan las recomendaciones más importantes para conseguirlo.
+Para Modyo la seguridad es una prioridad fundamental. Por este motivo, hemos desarrollado esta página que servirá como guía integral para asegurar la instalación de Modyo.
+
+Tanto Modyo Cloud como Enterprise Cloud, nuestras soluciones en la nube, ofrecen un excelente nivel de seguridad de manera predeterminada. Además, los administradores de la plataforma tienen la capacidad de aplicar medidas adicionales para fortalecer la protección de sus organizaciones.
+
+Esta guía te presenta las recomendaciones más relevantes para lograr este objetivo.
 
 ## Política de Contraseñas
 
-Estas son las opciones disponibles para establecer una política de contraseña para Modyo Platform:
+En esta sección puedes establecer la política de seguridad de contraseñas para los miembros del equipo.  Las opciones disponibles son:
 
-- Valor mínimo de longitud de contraseña: Este número dicta cual es el mínimo número de caracteres que una contraseña debe tener. Una contraseña debe tener entre 12 a 128 caracteres.
-- Requerir por lo menos una letra minúscula (a - z)
-- Requerir por lo menos una letra mayúscula (A - Z)
-- Requerir por lo menos un caracter no alfanumérico (! @ # $ % ^ & * () _ + - = [] {} |)
+- **Valor mínimo de longitud de contraseña**: Este valor determina la longitud mínima que debe tener una contraseña, debe tener entre 12 y 128 caracteres.
+- **Requerir por lo menos una letra minúscula (a - z)**: Esta opción garantiza que la contraseña contenga al menos una letra minúscula.
+- **Requerir por lo menos una letra mayúscula (A - Z)**: Esta opción garantiza que la contraseña contenga al menos una letra mayúscula.
+- **Requerir por lo menos un carácter no alfanumérico (! @ # $ % ^ & * () _ + - = [] {} |)**: Esta opción exige que las contraseñas de los miembros del equipo contengan al menos uno de los caracteres especiales indicados.
+
+Al guardar esta configuración, los usuarios deberán cumplir con estas condiciones al momento de cambiar su contraseña.
 
 ## Política de expiración de sesiones
 
-Selecciona un valor en esta opción para que la plataforma automáticamente expire una sesión al estar inactiva. Podrás seleccionar entre estos valores:
+En esta sección puedes configurar el tiempo que permanecerá activa una sesión.
 
-- 5 minutos
-- 10 minutos
-- 15 minutos
-- 20 minutos
-- 25 minutos
-- 30 minutos
-- 45 minutos
-- 1 hora
-- 1 hora 30 minutos
-- 2 horas
-- 4 horas
-- 8 horas
-- 16 horas
-- 1 días
-- 2 días
-- 3 días
-- 4 días
-- 5 días
-- 6 días
-- 1 semanas
-- 2 semanas
+**Expiración de sesión**: Al concluirse el tiempo seleccionado, Modyo cierra la sesión del usuario automáticamente.
+
+**Período de inactividad de usuario**: Cuando un usuario está inactivo se cierra la sesión automáticamente, una vez transcurrido el tiempo seleccionado. Se considera acciones de navegación, teclado y mouse como actividades de usuario. Esta opción protege al usuario en caso de dejar su estación de trabajo desatendida.
 
 ## Política de periodo de inactividad de los usuarios
 
-Con esta opción, la plataforma automáticamente cambia el estado de un usuario a inactivo. Transcurrido un tiempo determinado sin interacción con la plataforma, el usuario ya no va a poder iniciar sesión. Podrás seleccionar entre estos valores:
+Al activar esta opción, y una vez transcurrido el tiempo seleccionad sin interacción del usuario en la plataforma, Modyo realizará automáticamente un cambio en el estado del usuario a _inactivo_.
+
+Una vez que el usuario es marcado como inactivo, no puede iniciar sesión. El periodo de inactividad predeterminado es de 90 días y puedes modificarlo a:
 
 - 30 días
 - 90 días
 - 180 días
 - 360 días
 
->El periodo de inactividad por defecto es de 90 días.
+Si marcas la casilla para reenviar un correo al usuario al considerarlo inactivo, el usuario recibirá una notificación por correo electrónico. Desde este correo, tendrá la capacidad de reactivar su cuenta.
 
-Existe un checkbox adicional que envía email de activación por desactivación del usuario por inactividad.
+:::tip Tip
+Los dueños de las cuentas pueden cambiar el estado de un usuario entre inactivo y activo utilizando la casilla de verificación "Inicio de sesión desactivado por inactividad".
 
-:::tip Nota
-Los Owners pueden cambiar el estado de un usuario entre inactivo y activo con el checkbox "Inicio de sesión desactivado por inactivad". Este lo puedes encontrar al modificar un usuario en **Equipo**, pestaña **Editar**. Con el checkbox activado, el usuario estará inactivo, y vice-versa con el checkbox desactivado, el usuarió estará activo.
+Puedes localizar esta opción al editar un usuario en la sección **Equipo**, en la pestaña de **Editar**. Si seleccionas la casilla, el usuario es marcado como inactivo y al desactivarla el usuario estará activo.
 :::
 
 ## Control de acceso HTTP (Cross-Origin Resource Sharing CORS)
 
-Activa Cross-Origin Resource Sharing (CORS) para poder acceder a los recursos de Modyo desde otras páginas web.
+Habilita la funcionalidad de Compartir Recursos de Origen Cruzado (CORS) para permitir el acceso a los recursos de Modyo desde otras páginas web.
 
-Por defecto, los dominios personalizados de tus sitios se incluyen una vez que CORS está habilitado. Para darle acceso a dominios externos, escríbelos separados por comas, por ejemplo `http://api.mydomain.com, http://mysubdomain.mydomain.com`. Los comodines o wildcards no están permitidos en esta sección.
+Por defecto, los dominios personalizados de tus sitios ya están incluidos una vez que CORS está activado. Para darle acceso a dominios externos, escríbelos separados por comas, por ejemplo `http://api.mydomain.com, http://mysubdomain.mydomain.com`. Los comodines o _wildcards_ no están permitidos en esta sección.
 
 ## Token de entrega de contenido (JWT - JSON Web Token)
 
-Esta clave o _secret_ es usado por Modyo para firmar los JWT de los usuarios y así poder acceder al [contenido privado a través de la API](/es/platform/content/public-api-reference.html#contenido-privado).
+Esta clave o _secret_ es usada por Modyo para firmar los JWT de los usuarios y así poder acceder al [contenido privado a través de la API](/es/platform/content/public-api-reference.html#contenido-privado).
 
 :::warning Atención
-Generar una nueva clave forzará a que todas las request de contenido privado pasen por Modyo, dado que los JWT firmados por Modyo con la clave antigua ya no serán válidos.
+Si generas una nueva clave, todas las solicitudes de contenido privado deberán pasar por Modyo. Esto se debe a que los JWT firmados por Modyo con la clave anterior ya no serán válidos.
 :::
 
-La clave o _secret_ tiene un tiempo determinado de duración en segundos que se puede configurar en la caja debajo. Por defecto, la duración es 1 hora (3600 segundos). No es recomendable usar una duración muy pequeña, dado que podría afectar el rendimiento de la plataforma.
+La clave o _secret_ tiene un tiempo determinado de duración en segundos. Puedes configurar este tiempo en el campo proporcionado; por defecto, la duración es una hora (3600 segundos). Se recomienda evitar un período de duración muy corto, ya que puede afectar el rendimiento de la plataforma.
 
 ## Autenticación de dos pasos 2FA
 
-La autenticación en dos pasos añade una capa de seguridad extra a tu cuenta. Cada vez que los miembros del equipo inicien sesión, tendrán que ingresar tanto su contraseña como una clave dinámica provista por la aplicación Google Authenticator desde sus teléfonos.
+La autenticación en dos pasos añade una capa de seguridad a tu cuenta y reduce el riesgo de acceso no autorizado. Al activarla, cada vez que los miembros del equipo inician sesión, tendrán que ingresar su contraseña y una clave dinámica proporcionada por la aplicación Google Authenticator desde sus teléfonos.
 
-Cada miembro del equipo podrá activar la autenticación en dos pasos desde su perfil, pero además, como administrador, puedes forzar la autenticación en dos pasos para todos los miembros del equipo. 
+Cada miembro del equipo puede activar la autenticación en dos pasos desde su perfil. Además, el administrador puede forzar la autenticación en dos pasos para todos los miembros del equipo.
 
-Al forzar la autenticación en dos pasos para los miembros del equipo, la siguiente vez que un miembro del equipo inicie sesión, se le va a exigir que configure su dispositivo de autenticación en dos pasos. Una vez configurado, deberá iniciar sesión usando su contraseña y el código provisto por _Google Authenticator_.
+Al habilitar la autenticación en dos pasos de forma obligatoria para los miembros del equipo, la próxima vez que un miembro inicie sesión, se le exigirá que configure su dispositivo de autenticación en dos pasos. Una vez configurado, debe iniciar sesión utilizando su contraseña y el código proporcionado por Google Authenticator.
 
 :::warning Atención
-En tu dispositivo móvil, la opción **Establecer zona horaria automáticamente** debe permanecer activada al usar autenticación de dos factores.
+La opción **Establecer zona horaria automáticamente** tiene que estar activa cuando utilices autenticación de dos factores en tu dispositivo móvil.
 :::
 
-### Habilita autenticación de dos factores para un usuario 
+### Habilita autenticación de dos factores para un usuario
 
-Neutraliza el riesgo de contraseñas comprometidas usando autenticación de dos factores.
+Para habilitar la autenticación de dos factores para un usuario y neutralizar el riesgo de contraseñas comprometidas, sigue estos pasos:
 
 1. En Modyo Platform, en el menú del usuario, haz click en **Perfil**.
 2. Dentro de la configuración de perfil de un usuario, en el menú superior, selecciona los 3 puntos y haz click en **Configurar Autenticador**.
-3. En la pantalla que aparece, escanea el código usando tu dispositivo móvil para ligar tu autenticador con Modyo Platform.
-- Se agregará un campo nuevo con el nombre del dominio, tu nivel de usuario, y tu nombre de usuario. 
-4. Usa la combinación de números que aparece en tu móvil en el campo de la contraseña y haz click en **Guardar**.
+3. Escanea el código que aparece en la pantalla con tu dispositivo móvil para enlazar tu autenticador con Modyo Platform.
+Esto agrega un campo nuevo con el nombre del dominio, tu nivel de usuario y tu nombre de usuario.
+4. Ingresa los números que aparecen en tu móvil en el campo de la contraseña y haz click en **Guardar**.
 
-> En caso de ya contar con autenticación de dos factores, el botón dirá **Eliminar autenticador**.
+Una vez que ya tengas la autenticación de dos factores habilitada, el botón dirá **Eliminar autenticador**.
 
 
 ### Eliminar autenticador para un usuario
@@ -106,79 +96,72 @@ Neutraliza el riesgo de contraseñas comprometidas usando autenticación de dos 
 En caso de extravío o robo del autenticador, no será posible entrar a la cuenta. En este caso, un administrador de Modyo Platform puede auxiliar eliminando el autenticador ligado al usuario siguiendo estos pasos:
 
 1. En el menú lateral, expande **Configuración** y haz click en **Equipo**.
-1. Haga click en el nombre del miembro.
-1. En la barra superior, haga click en el botón de más opciones **...** y selecciona **Eliminar autenticador**.
+1. Haz click en el nombre del miembro.
+1. En la barra superior, haz click en el botón de más opciones, representado por tres puntos, y selecciona **Eliminar autenticador**.
 
 :::warning Atención
-Si la opción de forzar autenticación está activada, la próxima vez que el usuario intente iniciar sesión tendrá que inicializar el autenticador primero. Al tener un autenticador activo, el usuario debe volver a iniciar sesión.
+Si has activado la opción de forzar autenticación, la próxima vez que el usuario intente iniciar sesión, será necesario que primero inicialice el autenticador. Una vez que el autenticador esté activo, el usuario puede proceder con el proceso de inicio de sesión.
 :::
 
 ## Mejores Prácticas
 
 ### Conceptos importantes
 * **Limitar accesos:** Reducir las posibilidades de que un actor malicioso obtenga acceso al sistema.
-
-* **Contención:** El sistema debe estar configurado de tal forma que minimice la cantidad de daño que un mal actor pueda ocasionar en caso de que sea vulnerado.
-
-* **Preparación y conocimiento:** Mantener copias de seguridad y procedimientos para estar preparados en el caso de que una catástrofe ocurra.
-
-* **Fuentes confiables:** Evitar implementar Widgets o código de fuentes poco confiables. Asegurar que todas las dependencias que se cargan en un sitio provengan de una fuente confiable.
+* **Contención:** Configurar el sistema de manera que minimice el daño posible en caso de ser vulnerado por un actor malintencionado.
+* **Preparación y conocimiento:**  Mantener copias de seguridad y procedimientos para estar preparados en el caso de posibles desastres.
+* **Fuentes confiables:** Evitar implementar widgets o código de fuentes poco confiables. Asegurar que todas las dependencias cargadas en el sitio provengan de fuentes confiables.
 
 ### Vulnerabilidades Locales
-Asegurar que el equipamiento computacional de todos los usuarios administradores de la plataforma se encuentre libre de spyware, malware, o infecciones de virus.
-
-Asegurar que los accesos provengan siempre desde un equipo actualizado mediante navegadores de Internet confiables y actualizados.
+* Asegúrate que los equipos de cómputo de todos los usuarios administradores estén libres de spyware, malware o virus.
+* Asegúrate que los accesos siempre provengan de equipos actualizados y a través de navegadores web confiables y actualizados.
 
 ### Actualizar Modyo con Regularidad
-Recomendamos actualizar periódicamente Modyo para asegurar siempre estar en el último parche disponible. Esto asegurará que tu instalación posee todos los parches de seguridad al día. Los parches de seguridad se realizan de tal forma que pueden ser aplicados sin afectar mayormente a los equipos de trabajo (ejemplo: pasar de la versión 9.1.10 a la 9.1.12).
+Te recomendamos actualizar Modyo periódicamente para asegurar que tu instalación tenga las últimas correcciones de seguridad y que todos los parches de seguridad están al día. Estos parches están diseñados para aplicarse sin causar interrupciones significativas en el flujo de trabajo; por ejemplo: pasar de la versión 9.1.10 a la 9.1.12.
 
-Recomendamos realizar _upgrades_ de _releases_ mayores al menos dos veces al año (ejemplo: pasar de la versión 9.1.14 a la 9.2.2). Haciendo esto podrás garantizar que no sólo estás en la última versión con soporte, sino también que posees las últimas funcionalidades.
+Además, te recomendamos realizar actualizaciones de versiones mayores al menos dos veces al año, pasando, por ejemplo, de la versión 9.1.14 a la 9.2.2. Esto no solo te mantendrá en la última versión con soporte, sino que también te proporcionará las últimas características y funcionalidades.
 
 ### Configurar una Contraseña Segura en el Panel de Administración
-El Panel de Administración es la más poderosa herramienta de administración de Modyo. En él es posible tomar control de muchas de las configuraciones y acciones más relevantes en la operación de Modyo, además de brindar una puerta de acceso administrativa a todas las organizaciones definidas dentro de la plataforma. Recomendamos establecer una contraseña segura y rotarla con regularidad (ejemplo: después de cada actualización importante de la plataforma).
+El Panel de Administración es la herramienta de administración más potente de Modyo. A través de él, puedes tener control sobre diversas configuraciones y acciones fundamentales en la operación de Modyo. Además, te proporciona acceso administrativo a todas las organizaciones definidas en la plataforma.
+
+Te recomendamos establecer una contraseña segura y cambiarla regularmente, por ejemplo, después de cada actualización importante de la plataforma.
 
 ### Habilitar Transport Layer Security (TLS)
-Forzar las conexiones a que sean sólo TLS en tu instalación asegura que todo el tráfico entrante y saliente esté encriptado. Además, recomendamos utilizar sólo versiones modernas del protocolo, en particular las versiones 1.2 o 1.3.
+Forzar las conexiones a que sean sólo TLS en tu instalación asegura que todo el tráfico entrante y saliente esté encriptado. Además, recomendamos utilizar solo versiones modernas del protocolo, en particular las versiones 1.2 o 1.3.
 
 ### Diferenciar Subdominios
-La diferenciación de subdominios es muy importante, ya que existen múltiples lugares en donde Modyo admite desarrollo mediante HTML. Si esto no se encuentra activo, el HTML de los sitios desarrollados sobre Modyo se puede volver un vector de ataque que podría impactar a otros componentes de Modyo vía cross-site _scripting_.
+La diferenciación de subdominios es esencial, ya que existen múltiples lugares en donde Modyo admite desarrollo mediante HTML. Si no está activado, el HTML de los sitios desarrollados sobre Modyo puede convertirse en un punto de entrada para ataques que podrían afectar a otros componentes de Modyo mediante la técnica de cross-site scripting (XSS).
 
 ### Revisar los Proceso de Respaldo
-Ejecutar procesos de respaldo de forma regular es muy importante en una implementación segura de Modyo. En el caso de Cloud y Enterprise Cloud esto se realiza de forma automática. En el caso de Enterprise On Premise es el equipo de operación de cada cliente responsable de esta actividad.
+Ejecutar procesos de respaldo de forma regular es muy importante en una implementación segura de Modyo.
+
+En el caso de Cloud y Enterprise Cloud esto se realiza de forma automática. Para Enterprise On Premise, el equipo de operaciones de cada cliente es responsable de llevar a cabo esta actividad.
 
 Los respaldos de Modyo contemplan tanto a la base de datos como a los directorios compartidos de archivos, en donde se almacena el contenido estático.
 
 ### Utilizar un Servidor Proxy de Salida
-Modyo puede efectuar comunicaciones hacia Internet, en lo que refiere a las funcionalidades de proveedores de identidad o Webhooks de integración. Para poder controlar la comunicación de salida se debe establecer un proxy de salida o esquema de NAT de red en donde las IPs de origen de la comunicación no queden expuestas.
+Modyo puede establecer comunicaciones con Internet, especialmente en lo que respecta a proveedores de identidad o Webhooks de integración. Para gestionar y controlar estas comunicaciones de salida, es esencial implementar un servidor proxy de salida o configurar un esquema de Network Address Translation (NAT) en el que las direcciones IP de origen no queden expuestas.
 
 ### Restringir los Puertos Públicos de Entrada
-Los usuarios de Modyo deberán acceder de forma exclusiva por el puerto 443, detrás de un balanceador de carga que reparta el tráfico a las diferentes instancias de la plataforma. Entre el balanceador de carga y las instancias de la plataforma el tráfico podrá ir por el puerto 443 o 80 dependiendo de la seguridad interna de la red (ejemplo: redes aisladas y protegidas como el caso de las VPC de Amazon AWS podrían no requerir de encriptación interna).
+Los usuarios de Modyo deben acceder de forma exclusiva por el puerto 443, detrás de un balanceador de carga que distribuya el tráfico a las diferentes instancias de la plataforma.
+
+El tráfico entre el balanceador de carga y las instancias de la plataforma puede utilizar los puertos 443 o 80, dependiendo de la seguridad interna de la red. Por ejemplo, en redes aisladas y protegidas como las VPC de Amazon AWS, es posible que no sea necesario encriptar el tráfico interno.
 
 ### Registros de actividad
 
-La plataforma guarda un registro de todas las acciones realizadas por los usuarios administradores dentro de ella, los cuales se pueden revisar dentro de la sección "Registros de actividad". Recomendamos revisar estos registros de forma periódica para verificar el correcto comportamiento de los usuarios dentro del sistema. Estos registros de actividad están disponibles también por medio del API administrativa de Modyo.
+La plataforma guarda un registro de todas las acciones realizadas por los usuarios administradores dentro de ella. Puedes revisar estos registros en la sección "Registros de actividad".
+
+Te recomendamos revisar estos registros de forma periódica para verificar el correcto comportamiento de los usuarios dentro del sistema. Los registros de actividad también están disponibles a través del API administrativo de Modyo.
 
 ### Revisar Permisos de Administración
 
-Los administradores de una organización o sitio poseen un alto nivel de acceso a contenido y configuraciones que deben ser privadas. Impersonar a uno de estos administradores puede representar un gran riesgo de seguridad. Es por ello que recomendamos mantener un número pequeño y muy controlado de usuarios con rol de administración general y asegurar que estos usuarios mantengan activos niveles de protección adicionales como el segundo factor de autenticación.
+Los administradores de una organización o sitio tienen un alto nivel de acceso a contenido y configuraciones que deben ser privadas. Impersonar a uno de estos administradores puede representar un gran riesgo de seguridad. Por esta razón, recomendamos mantener un número pequeño y muy controlado de usuarios con rol de administración general y asegurar que estos usuarios mantengan activos niveles de protección adicionales como el segundo factor de autenticación.
 
-Además los administradores pueden crear tokens para el acceso a las APIs de administración de la plataforma. Estos tokens en muchas ocasiones son usados para automatizar tareas comunes de administración, por lo que es importante asegurar que sólo se usen dentro de sistemas seguros que garanticen su protección.
-
-### Habilitar el Segundo Factor de Autenticación
-
-Considera habilitar el segundo factor de autenticación siempre que tu servidor de identidad lo permita. En el caso que uses el sistema de credenciales de Modyo, te recomendamos activar esta protección. Recomendamos encarecidamente habilitar esta funcionalidad para una mejor postura de seguridad.
-
-### Política de contraseña
-
-Esta sección te permitirá configurar la política de seguridad de contraseñas para los miembros del equipo. Dentro de las opciones puedes elegir las siguientes:
-
-* **Forzar largo mínimo**: Por defecto el largo mínimo requerido por Modyo es 8 caracteres, pero si lo requieres, puedes forzar a que el largo mínimo de las contraseñas de los miembros del equipo sea de un tamaño mayor.
-* **Requerir por lo menos una letra minúscula (a - z)**: Con esta opción aseguras que por lo menos exista una letra minúscula dentro de la contraseña de los miembros del equipo.
-* **Requerir por lo menos una letra mayúscula (A - Z)**: Con esta opción aseguras que por lo menos exista una letra mayúscula dentro de la contraseña de los miembros del equipo.
-* **Requerir por lo menos un carácter no alfanumérico (! @ # $ % ^ & * () _ + - = [] {} |)**: Con esta opción obligas a que la contraseña de los miembros del equipo contenga por lo menos uno de los caracteres especiales indicados en la lista.
-
-Al guardar esta configuración, los usuarios deberán cumplir con estas condiciones al momento de cambiar su contraseña.
+Además, los administradores pueden generar tokens para acceder a las APIs de administración de la plataforma. Estos tokens frecuentemente se utilizan para automatizar tareas administrativas comunes, por lo que es importante asegurar que solo se usen dentro de sistemas seguros que garanticen su protección.
 
 ## Reportar una vulnerabilidad
 
-Si piensas que encontraste una vulnerabilidad de seguridad en Modyo, ayúdanos por favor reportando el problema. Modyo posee canales seguros y confidenciales de reporte de incidencias de seguridad por medio de nuestro [centro de soporte](https://support.modyo.com/hc/es) o del correo electrónico <a href="mailto:security@modyo.com">security@modyo.com</a>.
+Si crees que has identificado una vulnerabilidad de seguridad en Modyo, por favor, ayúdanos reportando el problema.
+
+Modyo ofrece canales seguros y confidenciales para informar incidentes de seguridad a través de nuestro [centro de soporte](https://support.modyo.com/hc/es) o enviando un correo electrónico a <a href="mailto:security@modyo.com">security@modyo.com</a>.
+
+Tu colaboración es fundamental para mantener la integridad y la seguridad de la plataforma.
