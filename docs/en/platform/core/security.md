@@ -101,7 +101,7 @@ If the authenticator is lost or stolen, it will not be possible to access the ac
 
 :: :warning Attention
 If you have activated the option to force authentication, the next time the user tries to log in, they will need to initialize the authenticator first. Once the authenticator is active, the user can proceed with the login process.
-::
+:::
 
 ## Best Practices
 
