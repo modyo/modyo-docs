@@ -4,7 +4,7 @@ search: true
 
 # Support
 
-If you have questions or problems with the experience and integration templates provided by Modyo Dynamic, you can request help directly from the platform using the help action, which can be accessed from the Web administration panel. In the event that more comprehensive assistance is required, a support case must be created.
+If you have questions or problems with the experience and integration templates provided by Dynamic Framework, you can request help directly from the platform using the help action, which can be accessed from the Web administration panel. In the event that more comprehensive assistance is required, a support case must be created.
 
 The creation of support cases is done from the [Modyo Support Center](https://support.modyo.com). In the event that a timely response is not obtained, each customer can make use of the established escalation protocol.
 

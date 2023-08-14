@@ -40,13 +40,18 @@ export default {
     padding-bottom 0.3rem
   .theme-default-content 
     img
-      margin-top 30px
+      margin-top 60px
       margin-bottom 30px
       display block
       margin-left auto
       margin-right auto
-  .custom-block.tip .custom-block.warning .custom-block.danger
-    margin-top 35px
-    margin-bottom 35px
+      align center
+      max-width 900px
+    .custom-block
+      margin-top 35px
+      margin-bottom 35px
+    .language-shell
+      margin-top 35px
+      margin-bottom 35px
 
 </style>

@@ -4,6 +4,8 @@ search: true
 
 # Entitlements
 
+<img src="/assets/img/dynamic/experiences/business/entitlements.jpg" style="border: 1px solid #EEE; margin-top: 40px; max-width:900px;">
+
 El listado de roles muestra los perfiles preestablecidos sugeridos para operar sobre el portal empresarial. Contiene la descripción de cada rol y el nivel de permisos por grupo de operación. Los permisos están clasificados en 3 grupos:
 
 1. Operación del portal (reglas asociadas al acceso al portal)
@@ -12,4 +14,3 @@ El listado de roles muestra los perfiles preestablecidos sugeridos para operar s
 
 También es posible descartar los roles sugeridos y configurar roles desde cero. 
 
-<img src="/assets/img/dynamic/experiences/business/entitlements.jpg" style="border: 1px solid #EEE; margin-top: 40px">

@@ -2,35 +2,22 @@
 search: true
 ---
 
-# Sistema de Diseño
+# Principios de Diseño
 
-El sistema de diseño Dynamic UI corresponde a las definiciones gráficas y de experiencia de usuario que se usan en todos los Widgets que son parte de la iniciativa Dynamic.
+Dynamic framework ayuda a los diseñadores y desarrolladores a construir aplicaciones Web con un diseño agradable, moderno y personalizable, sin el esfuerzo de escribir y mantener código a medida. Dynamic framework ha sido diseñado utilizando patrones de interacción reconocibles y con un fuerte foco en la industria financiera y sus problemas únicos con respecto a la experiencia. El sistema ha sido diseñado con los siguientes principios:
+- **Claridad:** Reducir la ambigüedad, dando a los usuarios confianza y entendimiento en el uso de la aplicación.
+- **Simplicidad:** Con nuestro catálogo de componentes y funcionalidades será mucho más fácil construir experiencias, enfoque sus esfuerzo en decisiones importantes para el negocio.
+- **Eficiencia:** Flujos de trabajo que se anteponen a las necesidades pensadas en acciones comunes en la industria financiera.
+- **Consistencia:** Interfaces consistentes y familiares al usuario final, que permiten utilizar las aplicaciones con más intuición, independiente al dispositivo que se use.
+- **Estética:** Prestamos atención a los detalles para entregar a los usuarios componentes, que además de facilitar la funcionalidad los deleiten con interfaces agradables.
 
-Es un sistema de diseño modular y extensible, que permite no sólo crear una base común para el desarrollo de Widgets actuales y futuros que clientes y partners de Modyo deseen implementar.
-
-Este sistema de diseño es una iniciativa en constante evolución que tiene como clara intención permitir que la comunidad de clientes y partners propongan mejoras que puedan ser incorporadas dentro de un ciclo de releases continuo en el tiempo. Para eso es versionado, para que los usuarios siempre sepan que versión están utilizando y comprendan los cambios que implica cambiar de versión.
-
-Dentro de Modyo, funciona para que todas las áreas que trabajen con iniciativas que se enmarquen dentro del concepto de Dynamic sean, evitando la proliferación de estándares paralelos que no cumplan con las definiciones y principios ya establecidos.
-
-El sistema de diseño es controlado por el área de producto, pero en la definición de él participan transversalmente las demás áreas de Modyo. Existe un comité compuesto por líderes y expertos de diferentes áreas que se encargan de aprobar las modificaciones y de mantener la integridad conceptual de la iniciativa.
-
-El sistema de diseño tiene dos implementaciones, la primera de ellas en Figma, y la segunda en código, siguiendo el modelo de Web Components de Stencil, teniendo siempre como prioridad asegurar la consistencia entre ambas implementaciones. 
-
-El sistema de diseño está basado en estándares reconocidos de industria, con un fuerte foco en generar experiencias de usuario intuitivas, accesibles, omnicanales y compatibles con dispositivos móviles y de escritorio.
-
-Además, es un sistema de diseño personalizable, lo que permite que un cliente o partner lo adapte a la imagen corporativa deseada, pudiendo alterar elementos claves como colores, tipografías e iconografías presentes en él, sin poner en riesgo la integridad de los componentes. Si un cliente o partner desea hacer cambios significativos a los elementos, Modyo ofrece un acceso a los repositorios y plantillas de diseño para que éstas sirvan como punto de inicio en el desarrollo quedando en completo control del partner o cliente.
+Dynamic framework provee una experiencia de usuario unificada y flujos de trabajo optimizados, con una interfaz limpia que permite a los equipos de trabajo ocuparse del diseño y la lógica detrás de la implementación de cada componente.
 
 
-### Consideraciones
+### Figma Kit
+El Figma Kit de Dynamic framework es un conjunto de herramientas de diseño que incluye una biblioteca de componentes, estilos y patrones de diseño basados en el sistema de diseño de Dynamic framework. Este kit está diseñado para ser utilizado en Figma, una herramienta popular de diseño colaborativo basada en la nube.
+El Figma Kit de Dynamic framework permite a los diseñadores trabajar de manera más eficiente y consistente al proporcionar una colección de componentes predefinidos que pueden ser reutilizados en diferentes partes de una aplicación web. Además, los estilos y patrones de diseño definidos en el kit garantizan la coherencia visual en toda la aplicación.
 
-Cuando se utiliza el sistema de diseño de Dynamic UI, es importante tener en cuenta las siguientes consideraciones:
+El kit también incluye elementos de diseño para ayudar a los diseñadores a crear diseños de alta calidad de manera rápida y sencilla. Estos elementos incluyen iconos, tipografía y otros elementos visuales que se pueden personalizar y ajustar según las necesidades específicas de cada proyecto.
 
-- Comprender las limitaciones y alcances del sistema de diseño.
-
-- Adaptar el sistema de diseño a las necesidades del proyecto: esto puede incluir la adición de nuevos componentes o la modificación de los existentes.
-
-- Evitar el uso excesivo de componentes prediseñados que puede llevar a una apariencia genérica y poco distintiva para la aplicación web. Es importante utilizar los componentes de manera estratégica y personalizarlos para que se adapten a la marca y necesidades del proyecto.
-
-- Mantener la consistencia visual: utilizarlo de manera consistente en toda la aplicación web para garantizar una experiencia de usuario coherente.
-
-- Realizar pruebas de usabilidad evaluando la eficacia del sistema de diseño en la experiencia de usuario. Esto ayudará a identificar áreas de mejora y asegurará que el sistema de diseño esté funcionando de manera óptima.
+Puedes acceder al Figma Kit de Dynamic framework desde [el siguiente link](https://dynamicframework.dev).

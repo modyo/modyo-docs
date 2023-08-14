@@ -152,10 +152,10 @@ module.exports = {
             },
           ],
           "/en/dynamic/": [{
-            title: "Modyo Dynamic",
+            title: "Dynamic Framework",
             collapsable: false,
             children: [
-              ["/en/dynamic/", "What is Modyo Dynamic?"],
+              ["/en/dynamic/", "What is Dynamic Framework?"],
               "/en/dynamic/architecture",
               "/en/dynamic/activation",
               "/en/dynamic/support"
@@ -404,13 +404,12 @@ module.exports = {
             },
           ],
           "/es/dynamic/": [{
-            title: "Modyo Dynamic",
+            title: "Dynamic Framework",
             collapsable: false,
             children: [
-              ["/es/dynamic/", "¿Qué es Modyo Dynamic?"],
-              "/es/dynamic/architecture",
-              "/es/dynamic/activation",
-              "/es/dynamic/support"
+              "/es/dynamic/",
+              "/es/dynamic/architecture",              
+              "/es/dynamic/release-notes"
             ],
           },
             {
@@ -418,33 +417,30 @@ module.exports = {
               path: "/es/dynamic/ui/",
               collapsable: true,
               children: [
-                "/es/dynamic/ui/",
-                "/es/dynamic/ui/design-kit",
-                "/es/dynamic/ui/components"
+                "/es/dynamic/ui/components",
+                "/es/dynamic/ui/theming",
+                "/es/dynamic/ui/accessibility"                
               ],
             },
             {
-              title: "Dynamic Experiences",
+              title: "Plantillas",
               path: "/es/dynamic/experiences/",
               collapsable: true,
               children: [
                 {
                   title: "Banca Retail",
-                  path: "/es/dynamic/experiences/retail/",
                   collapsable: true,
                   children: [
                     "/es/dynamic/experiences/retail/dashboard",
-                    "/es/dynamic/experiences/retail/dashboard-payments",
+                    "/es/dynamic/experiences/retail/product-detail",
                     "/es/dynamic/experiences/retail/pay-debt",
                     "/es/dynamic/experiences/retail/loan-application",
                     "/es/dynamic/experiences/retail/loan-approval",
-                    "/es/dynamic/experiences/retail/product-detail",
                     "/es/dynamic/experiences/retail/transfer",
                   ],
                 },
                 {
                   title: "Banca Empresas",
-                  path: "/es/dynamic/experiences/business/",
                   collapsable: true,
                   children: [
                     "/es/dynamic/experiences/business/dashboard",
@@ -453,42 +449,22 @@ module.exports = {
                     "/es/dynamic/experiences/business/entitlement-management",
                   ],
                 },
-                {
-                  title: "Inversiones",
-                  path: "/es/dynamic/experiences/investments/",
-                  collapsable: true,
-                  children: [
-                    "/es/dynamic/experiences/investments/accounts",
-                    "/es/dynamic/experiences/investments/general-summary",
-                    "/es/dynamic/experiences/investments/detailed-summary",
-                    "/es/dynamic/experiences/investments/investments-transfers",
-                    "/es/dynamic/experiences/investments/investments-transfer",
-                    "/es/dynamic/experiences/investments/deposits",
-                    "/es/dynamic/experiences/investments/documents",
-                    "/es/dynamic/experiences/investments/mutual-funds",
-                    "/es/dynamic/experiences/investments/stocks",
-                  ],
-                },
-                {
-                  title: "Seguros",
-                  path: "/es/dynamic/experiences/insurance/",
-                  collapsable: true,
-                  children: [
-                    "/es/dynamic/experiences/insurance/dashboard",
-                    "/es/dynamic/experiences/insurance/quote",
-                    "/es/dynamic/experiences/insurance/quote2",
-                    "/es/dynamic/experiences/insurance/detailed-view",
-                    "/es/dynamic/experiences/insurance/detailed-view2",
-                    "/es/dynamic/experiences/insurance/issue-policy",
-                  ],
-                }
+                // {
+                //   title: "Onboarding Digital",
+                //   collapsable: true,
+                //   children: [
+                //     "/es/dynamic/experiences/onboarding/accounts",
+                //   ],
+                // }
               ],
             },
             {
-              title: "Dynamic Integrations",
+              title: "Integraciones",
               path: "/es/dynamic/integrations/",
               collapsable: true,
               children: [
+                "/es/dynamic/integrations/modyo",
+                "/es/dynamic/integrations/aws",
                 "/es/dynamic/integrations/mambu",
                 "/es/dynamic/integrations/jumio",
                 "/es/dynamic/integrations/salesforce"

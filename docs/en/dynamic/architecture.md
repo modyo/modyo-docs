@@ -4,7 +4,7 @@ search: true
 
 # Architecture
 
-Modyo Dynamic is based on a decoupled architecture of micro frontends and microservices built in a modular way and that can be deployed independently.
+Dynamic Framework is based on a decoupled architecture of micro frontends and microservices built in a modular way and that can be deployed independently.
 
 In this type of architecture, micro frontends are user experience components that run independently in the user's browser. Each micro frontend is designed to represent a specific part of the user interface and, like a microservice, can be developed, tested and deployed independently.
 
@@ -19,7 +19,7 @@ The combination of micro frontends and microservices allows each service and exp
 
 In addition, the decoupled architecture based on micro frontends and microservices also allows greater independence between development teams, since each team can focus on their specific service or UI component without having to worry about the rest of the system. This makes collaboration easier and accelerates the development process.
 
-Modyo Dynamic is implemented on industry-recognized technologies that minimize vendor lock-in and ensure the future maintainability of the code, such as React for frontend experiences and Spring Boot for backend integrations.
+Dynamic Framework is implemented on industry-recognized technologies that minimize vendor lock-in and ensure the future maintainability of the code, such as React for frontend experiences and Spring Boot for backend integrations.
 
 ### Integration to Core Systems
 
@@ -27,19 +27,19 @@ The integration into the customer's core systems can be done in two ways. The fi
 
 #### APIs in Modyo Connect
 
-[Modyo Connect](/en/connect) is a managed infrastructure service provided by Modyo on which the different integration templates available within Modyo Dynamic can be directly deployed, as shown in the following figure:
+[Modyo Connect](/en/connect) is a managed infrastructure service provided by Modyo on which the different integration templates available within Dynamic Framework can be directly deployed, as shown in the following figure:
 
 <img src="/assets/img/dynamic/dynamic_architecture.png" alt="Dynamic structure" style="margin-top: 40px; max-width: 700px;" />
 
 #### Customer Provided APIs
 
-The Micro Frontends available in Modyo Dynamic can be integrated directly into each client's APIs, increasing the flexibility of how they can be used.
+The Micro Frontends available in Dynamic Framework can be integrated directly into each client's APIs, increasing the flexibility of how they can be used.
 
 <img src="/assets/img/dynamic/dynamic_architecture2.png" alt="Dynamic structure" style="margin-top: 40px; max-width: 700px;" />
 
 To do this, there are two options:
 
-- Alter the code of the communication intermediary component, adjusting the API calls and the results to the Modyo Dynamic structure, following the [repository architecture pattern] (https://martinfowler.com/eaaCatalog/repository.html), but altering the source of the data.
+- Alter the code of the communication intermediary component, adjusting the API calls and the results to the Dynamic Framework structure, following the [repository architecture pattern] (https://martinfowler.com/eaaCatalog/repository.html), but altering the source of the data.
 - Make calls to the APIs directly from the Micro Frontends, thus eliminating the intermediary component provided by Modyo.
 
 :::warning Integration APIs
@@ -56,9 +56,9 @@ The main advantage of an architecture based on micro frontends is the ability to
 
 Another advantage is the ability to reuse micro frontends in different projects and web applications, which reduces development time and cost.
 
-Modyo Dynamic uses a proven and mature architecture based on micro frontends to build web applications that divide the user interface into small modular and independent parts. The micro frontends are offered in the form of code templates that can be downloaded independently. Each template depends on common libraries, such as the design system, and the JavaScript frameworks used.
+Dynamic Framework uses a proven and mature architecture based on micro frontends to build web applications that divide the user interface into small modular and independent parts. The micro frontends are offered in the form of code templates that can be downloaded independently. Each template depends on common libraries, such as the design system, and the JavaScript frameworks used.
 
-The Modyo Dynamic micro frontends are designed to be deployed on the Modyo Platform and it is not guaranteed that they can be used outside of it.
+The Dynamic Framework micro frontends are designed to be deployed on the Modyo Platform and it is not guaranteed that they can be used outside of it.
 
 :::tip Modyo Platform
 For more information about the Modyo Platform and its functionalities, please refer to its [official documentation](/en/platform).
@@ -68,7 +68,7 @@ For more information about the Modyo Platform and its functionalities, please re
 
 Web Components are a web technology that allows the creation of reusable custom components in web applications. These components encapsulate HTML, CSS and JavaScript and can be used in different projects and web applications.
 
-In the micro frontends of Modyo Dynamic, the web components allow you to create reusable and easy to maintain components. By using web components in a micro frontend, the functionalities and responsibilities of each component can be separated, making it easier to develop and maintain the application.
+In the micro frontends of Dynamic Framework, the web components allow you to create reusable and easy to maintain components. By using web components in a micro frontend, the functionalities and responsibilities of each component can be separated, making it easier to develop and maintain the application.
 
 One of the pillars of the Modyo Design System are the Web Components, or more specifically, Custom Elements, attached to standards, which work as low-level abstractions that can be used in a specific framework.
 These are compiled with Stencil JS that allows us to use the definitions of a design system in different implementations such as React, Angular or Vue.
@@ -88,26 +88,26 @@ React is an excellent choice for building micro frontends due to the following r
 - React has a large developer community and a wide range of complementary tools and libraries, making it easy to develop and implement micro frontend web applications.
 - React is compatible with the “Client-Side Rendering” approach, which allows the creation of fast and highly interactive web applications, which is very important in micro frontend applications.
 
-Modyo Dynamic uses React as it is an excellent option for building micro frontends due to its ability to create reusable components, its flexibility, performance, developer community and compatibility with client-side rendering.
+Dynamic Framework uses React as it is an excellent option for building micro frontends due to its ability to create reusable components, its flexibility, performance, developer community and compatibility with client-side rendering.
 
 
 ### Internationalization
 
 Internationalization (i18n) in a micro frontend refers to the adaptation of the application's user interface to different languages and cultures. In other words, the application must be able to display texts and images in different languages.
 
-Within Modyo Dynamic, internationalization is implemented with the following practices:
+Within Dynamic Framework, internationalization is implemented with the following practices:
 - An internationalization library is used that allows the management of different languages. Some popular options are react-i18next, ngx-translate, and i18next.
 - Text string identifiers are used to identify user interface texts in the source code, rather than using the texts directly in the code. This will allow texts to be translated into different languages without the need to modify the source code.
 - Translation files are created for each language that you want to use in the application. These files must contain the translations of the text string identifiers used in the source code.
 - The functionality is implemented in the application to change the language of the user interface. This can be done using a language selector or similar functionality.
 - Internationalization tests are performed to ensure that the application is displayed correctly in different languages and cultures.
 
-By implementing these practices, Modyo Dynamic ensures that the application is easily adaptable to different languages and cultures, which will improve the user experience for people from different countries and regions.
+By implementing these practices, Dynamic Framework ensures that the application is easily adaptable to different languages and cultures, which will improve the user experience for people from different countries and regions.
 
 
 ### Accessibility
 
-Accessibility within the Modyo Dynamic micro frontends is an important aspect to consider to ensure that all people, including those with disabilities, can use and navigate the user interface effectively.
+Accessibility within the Dynamic Framework micro frontends is an important aspect to consider to ensure that all people, including those with disabilities, can use and navigate the user interface effectively.
 
 To implement accessibility, the following practices are followed:
 - An appropriate semantic structure is used in the HTML code to ensure that assistive technologies, such as screen readers, can correctly interpret information.
@@ -131,7 +131,7 @@ The Repository pattern has several benefits, including:
 - It simplifies code maintenance, since changes to the data access layer can be made without affecting business logic.
 - It makes it easy to unit test the code, since the Repository can be simulated to test business logic without actually accessing the data.
 
-Modyo Dynamic's micro frontends use the repository pattern to facilitate communication tasks towards integration APIs, whether implemented with or without Modyo Connect.
+Dynamic Framework's micro frontends use the repository pattern to facilitate communication tasks towards integration APIs, whether implemented with or without Modyo Connect.
 
 ## Microservices
 Integration microservices are a software architecture that focuses on creating small, autonomous, and independent services that can communicate with each other to provide system integration functionality. These microservices are implemented in containers and run independently, making them highly scalable and flexible.
@@ -140,7 +140,7 @@ Integration microservices allow organizations to connect heterogeneous applicati
 
 Integration microservices can also be used to implement common integration patterns, such as ESB (Enterprise Service Bus), API Gateway, service orchestration, among others. By using integration microservices, organizations can create more scalable, agile and adaptable integration solutions as business needs change and technologies evolve.
 
-The Modyo Dynamic integration microservices have been developed using the principles of hexagonal architecture, based on the Spring Boot development framework and are intended to be deployed primarily on Modyo Connect.
+The Dynamic Framework integration microservices have been developed using the principles of hexagonal architecture, based on the Spring Boot development framework and are intended to be deployed primarily on Modyo Connect.
 
 ### Hexagonal Architecture
 The hexagonal architecture, also known as the Ports and Adapters Architecture, is a software architecture pattern that focuses on separation of concerns (SoC) and on the independence of hardware and software in an application. This architecture focuses on the idea that applications should be structured in such a way that the core of business logic is at the center of the architecture, with the user interface and infrastructure layers located at the edge.
@@ -158,7 +158,7 @@ The hexagonal architecture has several benefits, including:
 - It makes it easy to test and debug the application's business logic.
 - It improves the modularity and reusability of the code.
 
-Modyo Dynamic's microservices are developed using the principles of hexagonal architecture.
+Dynamic Framework's microservices are developed using the principles of hexagonal architecture.
 
 ### Spring Boot
 Spring Boot is a Java application development framework that is based on the popular Spring framework. Spring Boot focuses on simplifying the process of developing and configuring Spring applications by providing a default configuration out of the box.
@@ -168,7 +168,7 @@ With Spring Boot, developers can quickly and easily build web applications, micr
 In addition, Spring Boot integrates well with other technologies on the Java platform, allowing developers to create highly scalable and efficient applications. In short, Spring Boot is a powerful and popular tool for developing modern Java applications.
 
 ### Modyo Connect
-The Modyo Dynamic microservices have been designed to be deployed on the managed infrastructure service of [Modyo Connect](/en/connect), however, they can be adapted for any type of cloud or physical infrastructure.
+The Dynamic Framework microservices have been designed to be deployed on the managed infrastructure service of [Modyo Connect](/en/connect), however, they can be adapted for any type of cloud or physical infrastructure.
 
 :::tip Modyo Connect
 For more information on Modyo Connect and its components, please refer to its [official documentation](“/en/connect”).
