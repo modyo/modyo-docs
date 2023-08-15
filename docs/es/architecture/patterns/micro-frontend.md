@@ -12,14 +12,14 @@ Según la [definición oficial](https://micro-frontends.org), un micro frontend 
 
 Los micro frontends otorgan a los equipos la capacidad de trabajar con más autonomía, ya que operan con una responsabilidad limitada a su contexto, lo que les obliga a definir contratos de operación entre ellos, sin requerir que estén implementados con la misma tecnología.
 
-### Características
+#### Características
 
 - **Ser agnósticos a la tecnología:** Cada equipo puede trabajar con tecnologías o versiones diferentes, ya que los micro frontend no dependen de nada entre sí. Por ejemplo, en una misma aplicación Web un micro frontends puede estar desarrollado en React y otro en Angular.
 - **Aislar el código del equipo:** Aplicaciones independientes y autónomas que no compartan cosas entre sí. Los códigos son independientes en cada equipo y se versionan por separado.
 - **APIs nativas:** Los micro frontends buscan favorecer las funciones nativas del navegador sobre APIs personalizadas. Por ejemplo, emplear controles nativos de geolocalización en lugar de un desarrollo a medida.
 - **Construir un sitio resiliente:** En caso de que un micro frontend falle, su estado no contamina a los demás, ya que se cargan de forma asincrónica e independiente.
 
-### Beneficios
+#### Beneficios
 
 - **Actualizaciones incrementales:** Al ser componentes independientes, sus cambios y despliegues a producción también lo son. Para muchas organizaciones, este es el motivo principal en la adopción de los micro frontends.
 - **Código desacoplado, más simple:** El código de cada micro frontend será más pequeño que el código completo de la aplicación. Los repositorios de código pequeños son más fáciles de trabajar para los desarrolladores.
