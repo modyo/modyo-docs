@@ -31,4 +31,4 @@ Desventajas del SSG:
 
 ### ¿Cómo se implementa SSG en Modyo?
 
-Dentor de Modyo se pueden implementar sitios que se ven estáticos a ojos del visitante, pero que mantienen sus características dinámicas a la hora de modificar el contenido. Esto se logra mediante el uso de capas de caché y sistemas de distribución de contenidos que hacen posible igualar las ventajas del SSG, sin perder la capacidad de publicar cambios de forma fácil y rápida, invalidando las copias cacheadas de la información en tiempo real.
+Dentro de Modyo se pueden implementar sitios que se ven estáticos a ojos del visitante, pero que mantienen sus características dinámicas a la hora de modificar el contenido. Esto se logra mediante el uso de capas de caché y sistemas de distribución de contenidos que hacen posible igualar las ventajas del SSG, sin perder la capacidad de publicar cambios de forma fácil y rápida, invalidando las copias cacheadas de la información en tiempo real.
