@@ -15,7 +15,7 @@ Esta práctica puede tener varias ventajas, como:
 Hay varias maneras de reutilizar el código en el desarrollo de aplicaciones Web. Esto puede implicar el uso de librerías o frameworks, la creación de componentes reutilizables, o incluso simplemente la organización del código de manera que se pueda referenciar y reutilizar fácilmente partes del mismo en diferentes partes de una aplicación.
 
 
-### Formas de reusar código con Modyo
+### ¿Cómo se implementa el reuso de código con Modyo?
 
 Hay diversas alternativas en Modyo para reutilizar código que no implican necesariamente el uso de Web Components. Dependiendo del tipo de proyecto en desarrollo, algunas de estas opciones pueden incluir:
 

@@ -30,8 +30,14 @@ Polymer y Stencil son dos herramientas populares para desarrollar Web Components
 
 Ambas herramientas son poderosas y adecuadas para diferentes casos de uso. Si buscas una biblioteca completa y madura con muchas características, Polymer puede ser una buena opción. Si te preocupa el rendimiento y quieres generar componentes web optimizados y nativos, Stencil puede ser la elección adecuada.
 
-::: tip Web Components en Modyo
-Modyo utiliza Web Components en su framework de desarrollo Dynamic, utilizando Stencil para la definición de componentes y React para su implementación, en conjunto con otras librerías que aceleran y facilitan el desarrollo de Micro frontends.
-:::
+### ¿Cómo se implementan Web Components con Modyo?
+Los Web Components son una tecnología que aún carece de soporte consistente dentro de los diferentes navegadores utilizados por los usuarios, es por ello que su adopción debe ser consciente de ello.
 
+Dentro de Modyo, la forma más natural de adoptar Web Components se da en el desarrollo de [micro frontends](/es/architecture/patterns/micro-frontend), ya que al poseer un entorno de construcción nativo a las herramientas tradicionales de Javascript, se podrán incorporar librerías como [StencilJS](https://stenciljs.com) o [Lit](https://lit.dev). Este tipo de librerías otorgará definiciones de componentes que podrán ser empaquetadas en conjunto con el micro frontend para su despliegue dentro de la plataforma.
+
+Con respecto a los sitios o aplicaciones Web más sencillas que se administran íntegramente dentro de Modyo, el uso de los Web Components podría estar más restringido, ya que al actuar sobre definiciones estáticas de HTML procesadas [desde el lado del servidor (SSR)](/es/architecture/patterns/ssr), la inyección de las librerías mencionadas anteriormente no será tan efectiva y se requerirá de algunos trucos para hacerlas operar, con el riesgo de gener sitios difíciles de mantener o con una arquitectura más compleja que el problema que buscan resolver. Sin embargo,  utilizando las capacidades SSR de la plataforma, se podrán crear elementos reutilizables con el uso de Snippets de Liquid y variables, lo que permite resolver problemas comunes, de una forma más eficiente y limpia de mantener.
+
+::: tip Dynamic Framework
+Modyo utiliza Web Components en su framework de desarrollo [Dynamic](/es/dynamic), utilizando Stencil para la definición de componentes y React para su implementación, en conjunto con otras librerías que aceleran y facilitan su adopción.
+:::
 

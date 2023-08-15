@@ -22,3 +22,10 @@ Desventajas de las SPAs:
 
 Es importante evaluar cuidadosamente las necesidades del proyecto y los requisitos específicos antes de optar por desarrollar una SPA. Si bien las SPAs pueden ofrecer muchas ventajas, también presentan desafíos adicionales que deben considerarse.
 
+### ¿Cómo se implementa una SPA con Modyo?
+
+Para implementar una SPA con Modyo actualmente, se debe hacer uso de las capacidades de [Modyo Connect](/es/connect), dentro del cual se pueden configurar repositorios de objetos y redes de distribución de contenidos (CDNs) que permitirán  el despliegue y posterior mantención de la SPA. Los cambios en este caso, son gestionados directamente por el repositorio de código del servicio, y mediante el uso de automatizaciones, se podrán realizar despliegues e invalidaciones de caché al momento de incorporar o mezclar los cambios en él.
+
+:::tip Modyo 10
+En Modyo 10, la futura versión de la plataforma, existirá soporte directo desde la consola de administración Web para el despliegue de módulos estáticos en la CDN. Esto otorgará un sistema de hospedaje estático para trabajar con SPA y otro tipo de librerías, dejando a la plataforma en control de los despliegues y las invalidaciones de cachés.
+:::

@@ -55,5 +55,3 @@ Algunas consideraciones con el uso del Modyo CLI:
 - Asegurar que el proceso de Modyo CLI se ejecuta en un pipeline de automatización y no desde un ambiente local.
 - Asegurar que los tokens de acceso a las APIs administrativas de Modyo se almacenan dentro de un repositorio de secretos, como es el caso de GitHub Secrets.
 
-
-

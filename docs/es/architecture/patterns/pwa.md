@@ -52,3 +52,15 @@ Sin embargo, Apple ha introducido características y mejoras en iOS para mejorar
 - **Service Workers (Trabajadores de servicio):** Los Service Workers son una tecnología que permite el almacenamiento en caché de recursos, la funcionalidad sin conexión y la mejora del rendimiento de una PWA. Aunque Apple ha introducido limitaciones en la ejecución de Service Workers en segundo plano en iOS, aún se pueden aprovechar para mejorar la experiencia de la PWA mientras está activa en el navegador Safari.
 
 Si bien estas características no son una solución idéntica a TWA, ofrecen opciones para mejorar la experiencia de las PWAs en dispositivos iOS. Es importante tener en cuenta que las tecnologías y las capacidades pueden evolucionar con el tiempo, y Apple podría introducir cambios o nuevas funcionalidades en futuras actualizaciones de iOS. Es recomendable seguir las actualizaciones y las directrices de desarrollo de Apple para aprovechar al máximo las capacidades de las PWAs en iOS.
+
+### ¿Cómo se implementa una PWA con Modyo?
+
+La plataforma Modyo posee soporte nativo para el trabajo con PWA, permitiendo a cualquier aplicación Web desarrollada en ella, tomar control de los habilitadores tecnológicos requeridos cómo son el Service Worker y el archivo de manifiesto PWA. Modyo otorga un ambiente de edición para dichos habilitadores y se encarga de la actualización de las modificaciones en los diferentes dispositivos.
+
+Más allá del control de estos habilitadores, el resto de la PWA será una aplicación Web común, por lo que la experiencia de usuario y la adaptación de éstas en diferentes dispositivos y tamaños de pantalla, dependen directamente de quién las implementa.
+
+:::tip App Shells Nativas
+Las aplicaciones Web creadas en Modyo, podrán ser implementadas como aplicaciones nativas dentro de una cáscara o App Shell desarrollada para cada plataforma. El uso de App Shells nativas permitirá también la inclusión de las aplicaciones en las tiendas oficiales, cómo es el caso del Google Play Store o el Apple App Store. Las App Shells se implementan como proyectos de código a medida y podrán hacer uso de SDKs nativos del dispositivo, incrementando con ello sus capacidades con respecto a las PWA tradicionales.
+
+Si deseas recibir más información acerca de esta técnica de empaquetamiento y cómo un experto nuestro podría asesorar o colaborar con tu desarrollo, no dudes en contactar a un ejecutivo comercial o de clientes de Modyo.
+:::
