@@ -26,7 +26,8 @@ Los micro frontends otorgan a los equipos la capacidad de trabajar con más auto
 - **Despliegues indpendientes:** Al igual que en los microservicios, los despliegues independientes son un componente clave en la arquitectura de micro frontends. Esto reduce el alcance de cada despliegue, disminuyendo con ello el riesgo asociado. Cada micro frontend deberá tener su propia línea de construcción, testeo, y despliegue hacia producción.
 - **Equipos independientes**: Los equipos independientes ganan más sentido de propiedad y control de los productos que mantienen, lo que permite que trabajen más rápido y de forma más eficiente.
 
-### Desarrollo
+
+### ¿Cómo se implementan micro frontends con Modyo?
 
 El trabajo con micro frontends se realiza utilizando herramientas y frameworks abiertos para facilitar su proceso de desarrollo. Una vez que el componente ha sido creado, su despliegue se realiza directamente hacia la Plataforma Modyo mediante el uso del Modyo Command Line Interface o CLI.
 
@@ -34,7 +35,7 @@ El trabajo con micro frontends se realiza utilizando herramientas y frameworks a
 Modyo Connect no es requerido para el desarrollo y despliegue de micro frontends dentro de la Plataforma Modyo, pero sí ayuda con los [repositorio de código](/es/connect/components/development.md#repositorio-de-codigo) y automatizaciones de [integración continua](/es/connect/components/development.md#integracion-continua) requeridas para un flujo de trabajo eficiente.
 :::
 
-### Consideraciones generales
+#### Consideraciones generales
 
 A continuación presentamos algunas consideraciones que deben tenerse en cuenta a la hora de desarrollar micro frontends sobre la Plataforma Modyo:
 
@@ -48,7 +49,7 @@ A continuación presentamos algunas consideraciones que deben tenerse en cuenta 
 - Utilizar las herramientas del navegador para medir la accesibilidad y el rendimiento en la carga.
 - Evaluar si se requiere una carga síncrona vs una carga asíncrona del micro frontend.
 
-### Uso de Modyo CLI
+#### Uso de Modyo CLI
 
 Algunas consideraciones con el uso del Modyo CLI:
 

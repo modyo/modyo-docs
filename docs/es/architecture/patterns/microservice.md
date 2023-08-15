@@ -32,13 +32,13 @@ Con una arquitectura de microservicios, una aplicación se crea con componentes 
 - **Código reutilizable:** La división del software en módulos pequeños y bien definidos les permite a los equipos usar funciones para diferentes propósitos. Un servicio escrito para una determinada función se puede usar como un componente básico para otra característica. Esto permite que una aplicación arranque por sí sola, ya que los desarrolladores pueden crear nuevas capacidades sin tener que escribir código desde cero.
 - **Resistencia:** La independencia del servicio aumenta la resistencia de una aplicación a los errores. En una arquitectura monolítica, un error en un solo componente, puede provocar un error en toda la aplicación. Con los microservicios, si hay un error en todo el servicio, las aplicaciones lo manejan degradando la funcionalidad sin bloquear toda la aplicación.
 
-### Desarrollo
+### ¿Cómo se implementan microservicios con Modyo?
 
-Modyo Connect permite el desarrollo y despliegue de microservicios en la nube sobre su plataforma de [contenedores](/es/connect/components/infrastructure.md#contenedores). Para ello, se debe contar con un [repositorio de código](/es/connect/components/development.md#repositorio-de-codigo) y sus procesos de [integración continua](/es/connect/components/development.md#integracion-continua) activos.
+[Modyo Connect](/es/connect) permite el desarrollo y despliegue de microservicios en la nube sobre su plataforma de [contenedores](/es/connect/components/infrastructure.md#contenedores). Para ello, se debe contar con un [repositorio de código](/es/connect/components/development.md#repositorio-de-codigo) y sus procesos de [integración continua](/es/connect/components/development.md#integracion-continua) activos.
 
 Los microservicios desarrollados en Modyo Connect tienen la capacidad de escalar horizontalmente incrementando automáticamente el número de instancias cuando es requerido y reemplazando aquellas que presenten algún tipo de problema. Además, los microservicios se pueden desplegar sobre múltiples regiones y zonas de disponibilidad para garantizar su resiliencia ante fallas de infraestructura.
 
-### Consideraciones generales
+## Consideraciones generales
 
 A continuación presentamos algunas consideraciones que deben tenerse en cuenta a la hora de desarrollar microservicios sobre Modyo Connect.
 
@@ -50,7 +50,7 @@ A continuación presentamos algunas consideraciones que deben tenerse en cuenta 
   o [Yeoman](https://yeoman.io/generators) para dar una estándar al código fuente. Se recomienda además, seguir el
   estilo de código recomendado por [Google](https://google.github.io/styleguide/javaguide.html).
 
-### Uso de bases de datos
+## Uso de bases de datos
 
 Los microservicios que requieran de persistencia relacional de datos deberán tener las siguientes consideraciones:
 
@@ -60,7 +60,7 @@ Los microservicios que requieran de persistencia relacional de datos deberán te
 - **Migraciones y versionamiento:** Asegurar el [versionamiento y la automatización](https://flywaydb.org) de tareas que operan sobre el esquema de datos.
 - **Pool de conexiones:** Asegurar una configuración correcta del [pool de conexiones](https://www.baeldung.com/java-connection-pooling). Asegurar también el correcto dimensionamiento del motor de base de datos, según la concurrencia, y escalabilidad esperada.
 
-### Conexión con servicios externos
+## Conexión con servicios externos
 
 Los microservicios desarrollados en Modyo Connect pueden integrarse a otros sistemas, como APIs y Web Services externos. En estos casos se deberán tener presentes las siguientes consideraciones:
 
@@ -69,7 +69,7 @@ Los microservicios desarrollados en Modyo Connect pueden integrarse a otros sist
 - **Manejo de errores:** Los errores originados en servicios externos deben ser correctamente manejados a nivel del microservicio para asegurar una buena experiencia de los usuarios.
 - **Timeouts y bloqueos:** Servicios externos con problemas de rendimiento o conectividad pueden ocasionar bloqueos en la experiencia de usuario o un consumo excesivo de recursos dentro del microservicio. Se recomienda siempre definir timeouts razonables en cada llamada.
 
-### Arquitectura Héxagonal
+## Arquitectura Héxagonal
 La arquitectura hexagonal, también conocida como Arquitectura Puertos y Adaptadores, es un patrón de arquitectura de software que se enfoca en la separación de las preocupaciones (SoC, por sus siglas en inglés) y en la independencia del hardware y del software en una aplicación. Esta arquitectura se enfoca en la idea de que las aplicaciones deben estar estructuradas de manera que el núcleo de la lógica de negocio se encuentre en el centro de la arquitectura, con la interfaz de usuario y las capas de infraestructura ubicadas en la periferia.
 
 La arquitectura hexagonal se compone de tres capas principales:
@@ -88,7 +88,7 @@ La arquitectura hexagonal tiene varios beneficios, entre ellos:
 Los microservicios de Dynamic Framework se encuentran desarrollados utilizando los principios de la arquitectura héxagonal.
 
 
-### Otras consideraciones
+## Otras consideraciones
 
 - **Tareas pesadas:** Se recomienda también usar procesamiento en segundo plano, vía [colas de mensajería](../components/infrastructure.md#colas-de-mensajeria), para servicios que sean lentos o muy sensibles a las fluctuaciones de tráfico.
 - **Programación de tareas:** Se recomienda el uso de [Quartz](https://www.baeldung.com/spring-quartz-schedule) en los microservicios que requieran agendamiento de tareas programadas.
