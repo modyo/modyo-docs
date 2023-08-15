@@ -32,3 +32,14 @@ Con los microservicios, DDD se aplica de manera similar. Cada microservicio debe
 
 
 La aplicación de DDD en ambos contextos implica dividir el sistema en componentes más pequeños (ya sean micro frontends o microservicios) que se centran en un aspecto específico del dominio del negocio, y diseñar cada componente de acuerdo con las necesidades y reglas de ese dominio. Esto puede ayudar a crear sistemas más coherentes, escalables y mantenibles.
+
+### ¿Cómo se implementa el DDD con Modyo?
+Existen diversas formas de implementar DDD con Modyo, pero la más común nace del entendimiento del negocio sobre el cuál se desea implementar la solución. Una vez que se identifican las diferentes áreas de negocio (dominio) y cómo éstas se dividen (sub-dominios) se podrán tomar decisiones relevantes cómo por ejemplo:
+- Separación en diferentes organizaciones de Modyo independientes entre sí
+- Separación de múltiples sitios o aplicaciones Web, con usuarios y roles de administración diferenciados
+- Separación de espacios de contenidos, con usuarios y roles de administracións diferenciados
+- Alcance de los Widgets que serán desarrollados como [micro frontends](/es/architecture/patterns/micro-frontend), buscando siempre unificar 
+
+Aplicando los criterios anteriores, lo que se busca es que las cosas que se modifiquen juntas, se estructuren juntas, mientras que las cosas que no dependen una de otra, se implementen por separado. De esta forma se crean contextos delimitados dentro de la implementación, dónde un usuario resuelve operaciones de negocio completas con el mínimo intercambio de contextos posible.
+
+El DDD es una gran técnica de arquitectura para ayudar a la definición de la estructura de iniciativas complejas, y resulta especialmente útil cuando se trabaja sobre la arquitectura de referencia de Modyo.

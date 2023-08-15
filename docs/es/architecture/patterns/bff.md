@@ -19,6 +19,15 @@ Beneficios del patrón Backend for Frontend:
 
 El patrón BFF se utiliza ampliamente en el desarrollo de aplicaciones web y móviles, ya que permite una clara separación entre las capas de frontend y backend. Su objetivo es abstraer la capa de backend en una interfaz especializada para cada tipo de frontend específico. Siguiendo el principio de responsabilidad única, el backend generado se encarga de manejar las solicitudes y proporcionar respuestas específicas para cada frontend, lo que permite una mayor especialización y adaptación a las necesidades de visualización.
 
-:::tip BFF y Modyo
-Dentro de Modyo, el patrón BFF se implementa de dos formas: mediante el uso de APIs desplegadas dentro de Modyo Connect, o mediante APIs provistas por el mismo cliente.
+
+### ¿Cómo se implementa el BFF con Modyo?
+
+Dentro de Modyo, el patrón BFF se puede implementar de dos formas. La primera de ellas es mediante el uso de APIs desplegadas dentro de [Modyo Connect](/es/connect) en las cuales se podrán definir microservicios livianos de integración a los sistemas o servicios core de cada cliente, generando una interfaz de APIs diseñada especialmente para las necesidades del frontend. Las APIs desplegadas en Modyo Connect utilizan la tecnología de API Gateway de [Amazon AWS](https://aws.amazon.com) y se integran a sistemas de [Single Sign On (SSO)](/es/architecture/patterns/sso) para poder asegurar la autenticación de los usuarios en los casos en que transiten datos privados sobre ellas.
+
+La segunda forma para implementar BFF sobre Modyo, es utilizando APIs provistas por el propio cliente, o por terceros. De esta forma, los [micro frontends](/es/architecture/patterns/micro-frontend) desplegados en la plataforma, accederán a las API alojadas en la infraestructura del cliente (o del tercero) de forma directa, utilizando o no algún sistema de autenticación, según se requiera en cada caso.
+
+:::tip Desacoplamiento de APIs
+La arquitectura de referencia de Modyo hace especial énfasis en el desacoplamiento de las capas frontend y backend. De esta forma, las APIs son independientes de definir la forma en cómo serán desplegadas, pudiendo estar en nubes o infraestructuras totalmente diferentes a la de la plataforma. El protocolo que une la comunicación entre Modyo, las APIs y el usuario final es HTTP.
 :::
+
+

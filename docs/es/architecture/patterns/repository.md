@@ -19,3 +19,14 @@ Es importante tener en cuenta que, aunque el patrón de repositorio puede ser mu
 ### ¿Cómo se implementa el patrón de repositorio con Modyo?
 
 El patrón de repositorio en Modyo puede aplicarse tanto a micro frontends como a microservicios. Esto se lleva a cabo mediante la implementación de repositorios intermedios a través de [Modyo Connect](/es/connect). Desde estos repositorios, se pueden generar componentes versionados que quedan disponibles en un sistema de registro de artefactos. Desde allí, pueden ser invocados según se necesiten en distintos contextos.
+
+Para ello, Modyo Connect utiliza la tecnología de [GitHub Enterprise](https://github.com), sobre la cual se tienen acceso a tres componentes fundamentales para activar este patrón:
+- Repositorio dónde se almacena y versiona la librería, con [GitHub Repositories](https://github.com/features)
+- Sistema de automatización de flujos de trabajo, con [GitHub Actions](https://github.com/features/actions)
+- Sistema de publicación de artefactos para su distribución, con [GitHub Registry](https://github.com/features/packages)
+
+El último de ellos es particularmente importante, ya que desde él los demás proyectos tendrán acceso a la librerías que conforman el patrón, pudiendo obtener código reusable bajo un esquema de versionamiento que permita obtener mejoras de la forma más controlada posible.
+
+:::tip Versionado Semántico
+La administración de librerías intermedias de forma central, requerirá la aplicación de algún criterio para etiquetar las versiones que se irán generando. Modyo recomienda el uso del [versionado semántico](https://semver.org/lang/es/).
+::: 

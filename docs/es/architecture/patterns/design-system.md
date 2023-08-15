@@ -61,6 +61,14 @@ Recuerda, un sistema de diseño es más que solo un conjunto de componentes UI y
 
 ### ¿Cómo se implementa un sistema de diseño con Modyo?
 
-En Modyo existen diferentes formas de implementar sistemas de diseño, dependiendo del caso de uso.
+En Modyo existen diferentes formas de implementar sistemas de diseño, dependiendo del caso de uso con el que se requiera trabajar. Si bien, un buen sistema de diseño comienza su existencia alejado del desarrollo, en plataformas como Figma o Sketch, en esta guía nos referiremos sólo a las implementaciones técnicas de éstos.
 
+La primera de ellas, y la más simple, es en el escenario de [sitios públicos](/es/architecture/patterns/public-site). En este escenario, el sistema de diseño puede ser implementado dentro de la plataforma mediante el uso de las librerías de [Bootstrap](https://getbootstrap.com/) con las que se inicializa cada nuevo proyecto, más el soporte de variables que se encuentra presente en el. De esta forma, el sistema de diseño se podrá implementar con una serie de variables que tomen control de los aspectos más importantes del sitio, las cuales se propagan de forma inmediata a todos los componentes CSS, logrando un gran nivel de consistencia entre los componentes.
 
+Una variante de este primer escenario, podría ser la externalización del sistema de diseño a una librería externa, que no esté gobernada directamente en el sitio. A esto se le conoce como inyección dinámica o en el “runtime” de estilos y para lograrla, el sistema de diseño se debe incorporar en los sitios como una librería externa, alojada en algún servidor al cual los desarrolladores del sistema de diseño tengan acceso y puedan publicar sus cambios. Debido a la naturaleza de cómo opera la Web, en este caso será necesario tener un buen control de versiones mediante URL bien definidas, ya que el propio caché del navegador o los sistemas de CDN podría generar problemas a la hora de invalidar y propagar los cambios.
+
+Un segundo caso de uso de sistema de diseño se aplica cuando se trabaja con [sitios privados](/es/architecture/patterns/private-site). Si bien, la técnica explicada anteriormente aplica de igual forma acá, en el caso de los sitios privados más sofisticados dentro de Modyo posiblemente se hará uso de [micro frontends](/es/architecture/patterns/micro-frontend). En el caso de los micro frontends, la implementación del sistema de diseño puede implementarse directamente dentro del componente, inyectando las definiciones de forma estática o en el “build time”, por medio de librerías versionadas del sistema de diseño que deben vivir dentro de algún repositorio intermediario. Estas librerías se importan como dependencia dentro del micro frontend y se empaquetan junto con él, lo que permite que cada micro frontend cuente con versiones diferentes de la librería, adaptando los cambios en ella de forma progresiva.
+
+:::tip Técnica híbrida
+Un buen sistema de diseño, se podría empaquetar de diferentes maneras, considerando una librería de inyección dinámica y otra estática, reutilizando código en un nivel superior y generando artefactos ubicuos según la necesidad de los equipos de desarrollo.
+:::

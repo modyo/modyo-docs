@@ -17,12 +17,21 @@ Ventajas de usar un SSO:
 
 El SSO simplifica el proceso de inicio de sesión para los usuarios, mejora la usabilidad y reduce la carga de recordar múltiples conjuntos de credenciales. También ayuda a mejorar la seguridad, ya que los proveedores de servicios pueden confiar en la autenticación realizada por el proveedor de identidad centralizado, que suele tener controles de seguridad más robustos.
 
-:::warning Seguridad
+:::danger Seguridad
 Es importante tener en cuenta que mientras SSO tiene muchos beneficios, también puede presentar riesgos si no se implementa correctamente. Por ejemplo, si las credenciales de SSO de un usuario se ven comprometidas, el atacante potencialmente tendría acceso a todas las aplicaciones a las que el usuario tiene acceso. Por lo tanto, es fundamental implementar medidas de seguridad robustas, como la autenticación de dos factores y políticas de contraseñas fuertes.
 :::
 
 ### ¿Cómo se implementa el SSO con Modyo?
 
 El SSO en Modyo se puede implementar de dos formas: mediante el uso del [componente de SSO](/es/connect/components/infrastructure.html#single-sign-on-sso) de [Modyo Connect](/es/connect), o mediante la integración a un sistema de SSO del cliente. Ambas formas se benefician de las capacidades nativas de integración que posee la plataforma , las cuales entregan compatibilidad con OpenID Connect (OIDC), SAML, Azure AD, Google, OAuth2, entre otros.
+
+Al activar el SSO dentro de Modyo, la autenticación de los usuarios se delega completamente al sistema escogido, permitiendo aplicar políticas de seguridad específicas de forma centralizada sobre el sistema de SSO. Una vez que el usuario sea dado de baja en el sistema central, Modyo ya no podrá autenticarlo por lo que el cambio se refleja de forma inmediata en el siguiente intento de autenticación.
+
+La plataforma Modyo soporta la delegación a sistemas de SSO de dos formas principales. La primera de ellas es hacia los usuarios administradores con acceso a la consola Web. La segunda de ellas es hacia usuarios finales mediante las configuraciones presentes en los [reinos de usuarios](/es/platform/customers/realms). Ambas formas de integración son independientes entre sí, por lo que se podrán definir topologías específicas para cada cliente con bastante flexibilidad, por ejemplo: Azure AD (SAML) para los administradores, KeyCloak (OIDC) para el reino de los usuarios con acceso a la aplicación transaccional, Azure AD (OIDC) para el reino de los agentes con acceso a la aplicación interna de ventas.
+
+:::warning Tiempos de sesión
+Una vez que los usuarios son dados de baja en el SSO o sistema de origen, los cambios en Modyo se verán reflejados en el siguiente interno de autenticación, lo que puede ocurrir en un tiempo más largo en el cuál el usuario eliminado seguirá teniendo acceso al sistema. Para evitar esto, se recomienda usar tiempos de expiración de la sesión acordes a los requerimientos de seguridad del negocio, o implementar flujos de términos de sesión más sofisticados (Single Logout).
+:::
+
 
 

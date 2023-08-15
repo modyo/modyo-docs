@@ -23,5 +23,5 @@ El servicio Modyo Expert proporciona consultoría y acompañamiento que abarca t
 Los Modyo Experts son profesionales con alto nivel de capacitación no solo en la tecnología de Modyo, sino también en seguridad y rendimiento. Están preparados para guiarte asegurando que se cumplan tanto tus requisitos funcionales como los no funcionales.
 
 :::tip Contacto
-Si necesitas más información sobre nuestros servicios de Modyo Expert, no dudes en ponerte en contacto con tu ejecutivo comercial asignado.
+Si necesitas más información sobre nuestros servicios de Modyo Expert, no dudes en ponerte en contacto con un ejecutivo comercial o de clientes de Modyo.
 :::
