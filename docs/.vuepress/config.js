@@ -412,7 +412,7 @@ module.exports = {
             ],
           },
             {
-              title: "Dynamic UI",
+              title: "Sistema de Diseño",
               collapsable: true,
               children: [
                 "/es/dynamic/ui/",
@@ -426,7 +426,6 @@ module.exports = {
               title: "Experiencias",
               collapsable: true,
               children: [
-                ["/es/dynamic/experiences/", "Plantillas"],
                 {
                   title: "Banca Retail",
                   collapsable: true,
@@ -461,8 +460,8 @@ module.exports = {
             {
               title: "Integraciones",
               collapsable: true,
-              children: [
-                "/es/dynamic/integrations/",
+              path: "/es/dynamic/integrations/",
+              children: [                
                 "/es/dynamic/integrations/modyo",
                 "/es/dynamic/integrations/aws",
                 "/es/dynamic/integrations/mambu",
