@@ -94,3 +94,9 @@ La idea es lograr una combinación equilibrada de elementos estáticos y dinámi
 :::warning Sobre-ingeniería
 Al igual que en el caso de los micro frontends, el uso de frameworks de Javascript dentro de un sitio público podría implicar complejidad adicional, por lo que no recomendamos su uso en escenarios dónde los beneficios no se encuentren plenamente justificados.
 :::
+
+
+#### Web Components
+Los [web components](/es/architecture/patterns/web-components) son una técnica de modularización basada en estándares de HTML, CSS y JS. Actualmente los Web Components carecen de soporte transversal en los navegadores, pero esto es algo que va mejorando año a año. Para poder hacer una implementación segura de Web Components, se requerirá hacer uso de alguna librería de Javascript que tome control de estas incompatibilidades. Es por ello que en el caso de los sitios públicos, el uso de Web Components podría no aportar mayores beneficios que los problemas que potencialmente generaría, aludiendo también a los argumentos de las secciones anteriores.
+
+Como alternativa al uso de los Web Components, los sitios públicos se podrán beneficiar de alternativas más livianas y estándares, cómo es el caso del framework de CSS Bootstrap, el cuál viene incorporado nativamente dentro de la plataforma Modyo.
