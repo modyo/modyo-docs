@@ -65,7 +65,7 @@ Cada plantillas al que le hagas click en la barra lateral derecha, se abre en el
 
 La barra de plantillas a la derecha tiene dos pestañas: vistas y snippets.
 
-## Layouts personalizados
+## Layouts
 
 Modyo cuenta con tres layouts por defecto: 
 * **Home**: Se usa exclusivamente en la página home del sitio.
