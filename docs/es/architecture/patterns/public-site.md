@@ -157,7 +157,14 @@ Otro elemento a considerar, es el uso de tags de Liquid para la incrustación de
 
 
 ### Internacionalización
-(progreso)
+La [internacionalización](/es/architecture/patterns/internationalization) dentro de un sitio público es un requerimiento para el cual la plataforma hoy en día no ofrece una solución en particular. Si bien los contenidos pueden definirse indicando un idioma en específico, al momento de configurar un sitio, éstos soportan sólo un lenguaje. Es por ello que para implementar un segundo o tercer lenguaje, la única opción soportada hoy es clonar el sitio y modificarlo para que se adapte al lenguaje deseado. 
+
+Es importante mencionar que al implementar lenguajes con clonación de sitios, no se están duplicando los contenidos de los espacios, ya que éstos sí tienen soporte para múltiples idiomas. Por otro lado, también es importante mencionar que cualquier técnica Javascript o dinámica para alterar el lenguaje de un sitio sin seguir nuestra recomendación podría impactar en muchos de los atributos mencionados dentro de esta guía, como accesibilidad o indexación.
+
+:::tip Modyo 10
+La próxima versión de Modyo contendrá un soporte mejorado de internacionalización el cual permitirá trabajar con múltiples lenguajes sobre un mismo sitio, dejando la opción de que este pueda cambiar de forma dinámica sin necesidad de duplicar el trabajo.
+:::
+
 
 ### Búsqueda
 Dentro de un sitio público, la búsqueda de contenido es un elemento importante a considerar. Para ello la plataforma cuenta con un buscador interno, que indexa el contenido presente en el sitio y otorga una interfaz simple para entregar los resultados. El buscador de la plataforma utiliza criterios internos para determinar la relevancia de un resultado, basados principalmente en prácticas comunes de indexación (títulos por sobre descripciones, frecuencia, palabras claves, etc).
@@ -175,6 +182,7 @@ Otra alternativa a considerar, podría ser [ElasticSerch](https://www.elastic.co
 Modyo recomienda el uso de indexadores externos sólo en casos en dónde se pueda justificar su incorporación, ya que estas herramientas generan costos adicionales que pueden ser elevados según el volumen de búsquedas que se realicen en ellas.
 :::
 
+
 #### Optimización para Motores de Búsqueda (SEO)
 Otro tema importante a la hora de considerar la búsqueda e indexación de contenidos, son los motores de búsqueda públicos, como es el caso de [Google](https://developers.google.com/search/docs/fundamentals/seo-starter-guide). Estos motores son claves en la implementación de un sitio público ya que permiten obtener tráfico orgánico derivado de las búsquedas que los usuarios hacen en ellos. Aplicando técnicas estructuradas es posible acceder a las primeras páginas de resultados, siempre y cuando el motor considere que la información presente en el sitio para ese término de búsqueda sea relevante.
 
@@ -190,13 +198,18 @@ La optimización para motores de búsqueda puede ser un tema muy relevante para 
 
 
 ### Analítica
-(progreso)
-Marcaje
-SEO y gestión de headers
-Uso de Liquid para sacar máximo provecho
-Medición con Google Tag Manager
-Herramientas de analítica de terceros
+La analítica Web, del punto de vista de los equipos de marketing, es posiblemente el punto más importante a considerar dentro de la implementación de un sitio público, por la sencilla razón que es la única forma  de poder medir que el resto de los atributos del sitio funcionen y se puedan cumplir con los objetivos del negocio.
 
+:::tip Integración
+Para efectos de analítica en sitio público, Modyo no ofrece dentro de su plataforma ningún tipo de herramienta propia para tomar métricas de tráfico público. Esto debido a que en la industria ya existen actores consolidados, que además, ofrecen excelentes formas de integración, como es el caso de [Google Analytics](https://marketingplatform.google.com).
+:::
+
+#### Marcaje
+El marcaje para Google Analytics se refiere a la implementación de código en un sitio web o aplicación para recopilar datos y métricas de seguimiento que luego se analizan en la plataforma de Google Analytics. Este proceso implica incrustar el código de seguimiento proporcionado por Google en las páginas web o en el flujo de la aplicación. Una vez que el código está en su lugar, Google Analytics comienza a recopilar información sobre el tráfico del sitio, el comportamiento de los usuarios y otros datos relevantes.
+
+El marcaje para Google Analytics es esencial para el seguimiento y la evaluación del rendimiento del sitio o la aplicación. Permite a los propietarios y administradores del sitio entender cómo los usuarios interactúan con su contenido, qué páginas son más populares, cuánto tiempo pasan en el sitio, las fuentes de tráfico, las conversiones y otros detalles importantes. Estos datos son valiosos para tomar decisiones informadas sobre estrategias de marketing, diseño de sitio y optimización de la experiencia del usuario.
+
+Para implementar el marcaje con Modyo, se deberán primero definir los objetivos de negocio que se desean medir y luego implementar el código y etiquetas dentro de las plantillas de los sitios. El marcaje permitirá capturar los eventos que suceden en el sitio, correlacionarlos con otros datos y obtener valiosa información acerca de cómo los usuarios interactúan con él. 
 
 
 
