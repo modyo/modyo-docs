@@ -8,6 +8,12 @@ En la plataforma Modyo, los sitios híbridos se caracterizan por su combinación
 
 Los sitios híbridos suelen ser especialmente útiles en contextos de comercio electrónico o incorporación digital. Sin embargo, también aportan valor en situaciones en las que se busca personalizar la experiencia de navegación y el contenido visualizado por el usuario tras iniciar sesión.
 
+### ¿Cómo se implementan sitios híbridos con Modyo?
+
+La implementación de sitios híbridos dentro de Modyo se realiza utilizando una técnica combinada de sitio público con la adición de un reino de usuarios, el cual será activado en secciones específicas del sitio (zona privada). Una vez que el usuario inicie sesión, se le podrán activar nuevas opciones en el menú, que lo pueden conducir a páginas marcadas como “privadas” sobre las cuales se puede desplegar información relevante al usuario en sesión, o hacer llamadas mediante un API de integración externa.
+
+Los sitios híbridos, al tener la presencia de un reino de usuario, no permiten el mismo nivel de caché que los sitios 100% públicos. Es por ello que su uso debe estar justificado y que permitan ofrecer una funcionalidad diferenciadora real a los usuarios que se autentican.
+
 ### Segmentación de Contenidos
 
 La segmentación de contenidos es una estrategia enfocada en personalizar y adaptar el contenido que se muestra a los usuarios, basándose en determinados criterios o "segmentos". Esta estrategia se fundamenta en la comprensión de las distintas audiencias o grupos de usuarios y en proporcionarles una experiencia más pertinente y personalizada.
@@ -32,8 +38,4 @@ La implementación de una Progressive Web App (PWA) en sitios híbridos puede re
 Una PWA, siendo una aplicación instalable en el dispositivo, debe presentar contenido adaptado y relevante para la sesión del usuario. En lugar de replicar la apariencia de un sitio público convencional, debería ofrecer una experiencia personalizada que se ajuste a las preferencias y necesidades del usuario. De lo contrario, sería similar a convertir un sitio público en una aplicación, lo cual podría desembocar en una experiencia de usuario insatisfactoria.
 
 
-### ¿Cómo se implementan sitios híbridos con Modyo?
 
-La implementación de sitios híbridos dentro de Modyo se realiza utilizando una técnica combinada de sitio público con la adición de un reino de usuarios, el cual será activado en secciones específicas del sitio (zona privada). Una vez que el usuario inicie sesión, se le podrán activar nuevas opciones en el menú, que lo pueden conducir a páginas marcadas como “privadas” sobre las cuales se puede desplegar información relevante al usuario en sesión, o hacer llamadas mediante un API de integración externa.
-
-Los sitios híbridos, al tener la presencia de un reino de usuario, no permiten el mismo nivel de caché que los sitios 100% públicos. Es por ello que su uso debe estar justificado y que permitan ofrecer una funcionalidad diferenciadora real a los usuarios que se autentican.

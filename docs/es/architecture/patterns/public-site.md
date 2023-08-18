@@ -142,7 +142,7 @@ El uso de stages permite obtener entornos separados y aislados para construir, p
 
 Los stages podrán definir ciertas configuraciones de forma independiente, como por ejemplo, las variables del sitio, lo que permitirá alterar algunos comportamientos entre un ambiente y otro, por ejemplo la URL de un API que despliegue información en el sitio. Cuando los stages se usan en conjunto con los espacios de contenido, y existe algún grado de acoplamiento entre ambos, la recomendación será clonar el espacio y realizar las modificaciones sobre la copia. Luego, cuando el sitio sea promovido a producción, aplicar los mismos cambios al espacio de contenido original.
 
-### Uso de Sistemas de Diseño
+#### Uso de Sistemas de Diseño
 Modyo posee diferentes formas de implementar [sistemas de diseño](/es/architecture/patterns/design-system), las cuales varían en complejidad según el escenario en el que se desean aplicar.
 
 Para el caso de un sitio público, el sistema de diseño se puede implementar sin ningún problema usando sus formas más simples, como librerías o frameworks de CSS que incorporen reglas consistentes para todos los elementos que lo componen. Los sitios creados dentro de Modyo utilizan [Bootstrap](https://getbootstrap.com) como framework CSS por defecto, sobre el cual se pueden realizar personalizaciones sobre todas las variables habilitadas para ello.
