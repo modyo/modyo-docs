@@ -99,4 +99,135 @@ Al igual que en el caso de los micro frontends, el uso de frameworks de Javascri
 #### Web Components
 Los [web components](/es/architecture/patterns/web-components) son una técnica de modularización basada en estándares de HTML, CSS y JS. Actualmente los Web Components carecen de soporte transversal en los navegadores, pero esto es algo que va mejorando año a año. Para poder hacer una implementación segura de Web Components, se requerirá hacer uso de alguna librería de Javascript que tome control de estas incompatibilidades. Es por ello que en el caso de los sitios públicos, el uso de Web Components podría no aportar mayores beneficios que los problemas que potencialmente generaría, aludiendo también a los argumentos de las secciones anteriores.
 
-Como alternativa al uso de los Web Components, los sitios públicos se podrán beneficiar de alternativas más livianas y estándares, cómo es el caso del framework de CSS Bootstrap, el cuál viene incorporado nativamente dentro de la plataforma Modyo.
+Como alternativa al uso de los Web Components, los sitios públicos se podrán beneficiar de alternativas más livianas y estándares, cómo es el caso del framework de CSS [Bootstrap](https://getbootstrap.com), el cuál viene incorporado nativamente dentro de la plataforma Modyo.
+
+### Gobernabilidad de contenido y códigos fuente
+En cada proyecto de sitio público el gobierno del contenido y código fuente deben ser un elemento central a considerar. La implementación debe estar acorde a las expectativas del negocio en cuanto a cómo se harán las mantenciones futuras del sitio, respetando los flujos de aprobación de cambios y el correcto nivel de desacoplamiento entre el contenido y su lógica de implementación. A continuación, revisaremos las principales funcionalidades de la plataforma que permiten una correcta gobernabilidad de los sitios públicos.
+
+#### Grupos y permisos
+Modyo permite la creación de múltiples espacios de contenidos y sitios con roles y grupos de permisos definidos específicos para cada usuario. Esto permite asignar a un mismo usuario permisos elevados en un primer sitio, con otros más reducidos en un segundo.
+
+Los roles y grupos se definen a nivel de la organización, y luego pueden ser asignados de forma particular a cada espacio y a cada sitio. En Modyo recomendamos asegurar siempre que los usuarios tengan el mínimo de permisos requeridos para realizar sus funciones, evitando así que los sitios sufran modificaciones no deseadas de forma accidental o intencional.
+
+#### Múltiples espacio de contenido
+La plataforma ofrece un ambiente de gestión de contenidos del tipo híbrido, en el cual los contenidos gestionados dentro de un espacio podrán ser acceder de forma descabezada por medio del API, beneficiando del máximo nivel de desacoplamiento, o mediante el uso de content pages, un tipo especial de página que se integra de forma automática con el espacio configurado y que está disponible dentro de cada sitio.
+
+:::tip Experiencia de CMS tradicional 
+Al usar los espacios de contenido en conjunto con las páginas de contenidos, se logra una experiencia de uso muy similar a la de un CMS tradicional, en la que cada contenido está ligado a una representación. Adicionalmente a esto, en Modyo un mismo contenido puede ser desplegado en más de una página, de formas diferentes, permitiendo su previsualización en la página que escoja el usuario editor.
+:::
+
+#### Uso de Team Review
+El [team review](/es/platform/core/key-concepts.md#revision-en-equipo) o revisión de equipos es una funcionalidad de la plataforma Modyo que permite configurar de forma simple y flexible quiénes serán los usuarios que deberán revisar algo previo a su publicación. Los usuarios del team review podrán en todo momento previsualizar el cambio o contenido y hacer comentarios para corregir cosas que no les parezcan. Desde la configuración de los espacios de contenido y los sitios, se podrá acceder al menú de team review.
+
+El uso de team review es muy recomendable en escenarios de sitios públicos en los que se desee mantener la máxima agilidad posible en la publicación, pero con controles mínimos de aprobación para hacer revisiones simples.
+
+#### Ambientes de desarrollo
+Normalmente, dentro de un sitio público los cambios más comunes serán cambios en contenido como noticias, promociones, información de tarifas, ubicación de sucursales, o anuncios situados en las páginas principales. Estos cambios, por su naturaleza, serán frecuentes y reducidos en tamaño, reservando los cambios de mayor complejidad cuando sea necesario hacer ajustes de diseño, los cuales serán menos frecuentes. Es por ello que para la mayoría de los cambios, un flujo de aprobación de cambios bien configurado será más que suficiente para controlar el sitio, reservando el uso de técnicas más complejas para los que sean más estructurales. 
+
+Para trabajar con ambientes previos separados del flujo normal de cambios a producción, Modyo ofrece diversas alternativas. La más directa, y muy adecuada cuando se trata de probar cambios más riesgosos o experimentales se basa en el uso de ambientes físicos del tipo pre-productivo, los cuales se incluyen por defecto en las versiones empresariales de la plataforma. Este tipo de ambiente no es recomendado para el trabajo del día a día con sitios públicos, debido a las dificultades de mantener el contenido sincronizado entre las diferentes infraestructuras. 
+
+Otra forma de trabajar con ambientes previos, pero virtualizados dentro de la misma plataforma corresponde al uso de stages, cómo se verá en la siguiente sección.
+
+:::tip Pruebas de nuevas versiones
+Modyo recomienda el uso de ambientes físicos para pruebas de las nuevas versiones de la plataforma, en dónde el riesgo de generar una compatibilidad tendrá un impacto menor. 
+:::
+
+#### Uso de Stages
+En el caso de los sitios públicos, Modyo recomienda manejar los ambientes previos mediante la funcionalidad de [stages](/es/platform/channels/sites.md#stages), la cual permite virtualizar un ambiente pre-productivo, dentro del mismo despliegue de producción. Con esta técnica, se evita tener que mover cambios y archivos entre ambientes, lo cual resulta en una tarea compleja que puede generar errores al momento de publicar.
+
+El uso de stages permite obtener entornos separados y aislados para construir, probar y verificar el funcionamiento del sitio antes de ser desplegado en un entorno de producción, evitando errores o fallos que afecten directamente a los usuarios finales. Para el caso de sitios públicos, se podrán definir por ejemplo los siguientes stages:
+- **Develop:** donde ocurre el desarrollo y la integración de los cambios
+- **Certification:** donde se hacen las pruebas, previo al paso a producción
+- **Main:** donde reside el sitio productivo
+
+Los stages podrán definir ciertas configuraciones de forma independiente, como por ejemplo, las variables del sitio, lo que permitirá alterar algunos comportamientos entre un ambiente y otro, por ejemplo la URL de un API que despliegue información en el sitio. Cuando los stages se usan en conjunto con los espacios de contenido, y existe algún grado de acoplamiento entre ambos, la recomendación será clonar el espacio y realizar las modificaciones sobre la copia. Luego, cuando el sitio sea promovido a producción, aplicar los mismos cambios al espacio de contenido original.
+
+### Uso de Sistemas de Diseño
+Modyo posee diferentes formas de implementar [sistemas de diseño](/es/architecture/patterns/design-system), las cuales varían en complejidad según el escenario en el que se desean aplicar.
+
+Para el caso de un sitio público, el sistema de diseño se puede implementar sin ningún problema usando sus formas más simples, como librerías o frameworks de CSS que incorporen reglas consistentes para todos los elementos que lo componen. Los sitios creados dentro de Modyo utilizan [Bootstrap](https://getbootstrap.com) como framework CSS por defecto, sobre el cual se pueden realizar personalizaciones sobre todas las variables habilitadas para ello.
+
+
+### Accesiblidad
+Dentro de un sitio público, la [accesibilidad](/es/architecture/patterns/accessibility) se considera un atributo importante a tener presente con el propósito de ofrecer la mejor experiencia posible a personas que requieran de alguna ayuda especial.
+
+Para implementar un sitio público accesible con Modyo, el primer paso es aprovechar las [capacidades de accesibilidad nativas](https://getbootstrap.com/docs/5.2/getting-started/accessibility) del toolkit [Bootstrap](https://getbootstrap.com), en el cual se definen controles y estándares para muchos de elementos base que deben tenerse presente. Un segundo paso podría ser identificar el objetivo de accesibilidad, hasta qué punto se desea incluir facilidades de acceso, y en base a eso seguir implementando ayudas que podrían ser cambio de colores a mayor contraste, tamaños, versiones simplificadas del contenido, entre otras.
+
+Otro elemento a considerar, es el uso de tags de Liquid para la incrustación de elementos desde el Media Library de Modyo. Con esto aseguramos que cada imagen incrustada en el sitio posee correctamente definidos sus textos alternativos y descripciones, además de asegurarse que éstas podrán ser mantenidas de una forma centralizada.
+
+
+### Internacionalización
+(progreso)
+
+### Búsqueda
+Dentro de un sitio público, la búsqueda de contenido es un elemento importante a considerar. Para ello la plataforma cuenta con un buscador interno, que indexa el contenido presente en el sitio y otorga una interfaz simple para entregar los resultados. El buscador de la plataforma utiliza criterios internos para determinar la relevancia de un resultado, basados principalmente en prácticas comunes de indexación (títulos por sobre descripciones, frecuencia, palabras claves, etc).
+
+En el caso de que se requieran funcionalidades más avanzadas de búsqueda, se pueden implementar soluciones externas de indexación.
+
+#### Implementación de búsqueda externa
+Dentro del mercado, existen varias alternativas para implementar búsqueda dentro de un sitio. Una de las más populares es [Algolia](https://www.algolia.com). Algolia es una solución completa de indexación y de búsqueda, que permite activar funcionalidades avanzadas como criterios de relevancia, A/B testing, funcionalidades de AI, búsqueda en tiempo real, entre muchas otras.
+
+La integración entre Algolia y Modyo se puede realizar de diferentes formas, pero en el caso de los sitios públicos, basta con un crawler de indexación, similar a cómo Google indexa información de los sitios que visita.
+
+Otra alternativa a considerar, podría ser [ElasticSerch](https://www.elastic.co/web-crawler), el cual posee un producto específico de indexación y búsqueda en sitios públicos.
+
+:::tip Uso de indexadores externos
+Modyo recomienda el uso de indexadores externos sólo en casos en dónde se pueda justificar su incorporación, ya que estas herramientas generan costos adicionales que pueden ser elevados según el volumen de búsquedas que se realicen en ellas.
+:::
+
+#### Optimización para Motores de Búsqueda (SEO)
+Otro tema importante a la hora de considerar la búsqueda e indexación de contenidos, son los motores de búsqueda públicos, como es el caso de [Google](https://developers.google.com/search/docs/fundamentals/seo-starter-guide). Estos motores son claves en la implementación de un sitio público ya que permiten obtener tráfico orgánico derivado de las búsquedas que los usuarios hacen en ellos. Aplicando técnicas estructuradas es posible acceder a las primeras páginas de resultados, siempre y cuando el motor considere que la información presente en el sitio para ese término de búsqueda sea relevante.
+
+Modyo posee diferentes habilitadores que permiten incorporar elementos de estructura que facilita la indexación por parte de estos motores. Dentro de las más utilizadas podemos mencionar:
+- Uso de meta tags dinámicos en páginas de contenido
+- Uso de meta tags generales para el sitio, con la opción de modificarlos en casos específicos
+- Uso de [SSR](/es/architecture/patterns/ssr) para asegurar que los buscadores encuentren lo que necesitan de forma rápida, directamente en el HTML (sin la necesidad de construir el contenido en base a APIs externas y Javascript)
+- Rendimiento de los sitios públicos
+
+:::tip Expertos de Modyo
+La optimización para motores de búsqueda puede ser un tema muy relevante para cumplir con los objetivos de negocio, y a su vez bastante complejo de abordar. Modyo ofrece servicios profesionales con expertos en SEO que pueden ayudar a definir e implementar estrategias para maximizar los resultados. Si deseas recibir más información, contáctate con un ejecutivo comercial o de clientes de Modyo.
+:::
+
+
+### Analítica
+(progreso)
+Marcaje
+SEO y gestión de headers
+Uso de Liquid para sacar máximo provecho
+Medición con Google Tag Manager
+Herramientas de analítica de terceros
+
+
+
+
+### Rendimiento
+El [rendimiento](/es/architecture/resources/web-performance) es uno de los requerimientos más importantes a considerar a la hora de implementar un sitio público, no solo para una buena experiencia del usuario, sino que también para mejorar el posicionamiento en buscadores y las tasas de conversión dentro del sitio.
+
+El rendimiento de un sitio Web se ve afectado por múltiples factores, algunos de ellos fuera del control de quién implementa como podría ser el caso de problemas de conectividad o en el dispositivo del visitante. Otros factores si serán responsabilidad del implementador, entre ellos podemos mencionar los referidos a la complejidad de renderización de la página, la cual se afecta principalmente por el Javascript que se ejecuta desde el lado del cliente, uso de imágenes no optimizadas en peso y dimensiones, servidores Web lejanos al usuario, entre muchos otros.
+
+Modyo Cloud y Enterprise Cloud poseen características únicas que permiten implementar las mejores prácticas de desarrollo y favorecer una excelente experiencia de usuario. Entre ellas podemos mencionar las más relevantes:
+- Uso de redes de distribución globales de contenido
+- Optimización de imágenes dinámica
+- Uso de estándares modernos de compresión de imágenes
+- Uso de HTTP3 en conjunto con TLS 1.3
+- Uso de rutas optimizadas de Internet entre los usuarios finales y el servidor de origen
+- [Server side rendering (SSR)](/es/architecture/patterns/ssr) con Liquid
+
+:::tip Modyo Enterprise On Premise
+En el caso de Modyo Enterprise On Premise, se pueden implementar características similares con la configuración de proveedores similares a los utilizados en Cloud.
+:::
+
+### Privacidad
+Finalmente, dentro de los requerimientos más importantes que todo sitio público debe considerar, se encuentran los de privacidad sobre los datos de los usuarios. El cuidado de la privacidad no sólo es importante desde un punto de vista legal y regulatorio, si no que demuestra el cuidado que tiene la organización en hacer las cosas de forma correcta y transparente.
+
+Dentro de un sitio público, se maneja una cantidad reducida de información de usuario, pero eso no quita que se deban cumplir con requerimientos tales como:
+- **Cookie Banners:** Corresponden a los banners que presentan al usuario la opción de desactivar el tracking de ciertas cookies dentro del sitio, de forma completa o individual. El banner debe ser capaz de detallar la razón de cada cookie que se desea instalar en el navegador del usuario.
+- **Cookie Policy:** Corresponde a la política que mantiene el sitio sobre el tipo de cookies utilizadas y su propósito, además de lo que eventualmente podría suceder con la experiencia del usuario en caso de no aceptarlas. La cookie policy generalmente se aceptan en el cookie banner.
+- **Privacy Policy:** Corresponde a la política de la organización con respecto a la privacidad de los datos del usuario dentro del contexto del sitio. En el caso que el sitio público sea la antesala de un sistema privado o transaccional, esta política puede tener un alcance que le dé cobertura al sistema por completo.
+- **Gestión de consentimiento:** Se trata de almacenar diligentemente los consentimientos derivados de cualquier aceptación de condiciones por parte del usuario. Los registros de consentimiento deben almacenarse durante un tiempo, dependiendo de la regulación vigente en cada país.
+
+### Otros requerimientos
+Finalmente, reservamos algunos requerimientos en específico que conviene tener en cuenta a la hora de implementar un sitio público.
+
+#### Uso de PWA
+En el caso de los sitios públicos, el uso de las técnicas de PWA no se recomienda como sí se hace en los sitios privados, ya que los sitios públicos generalmente no se asocian al concepto de “aplicación” y en general no prestarán un valor o una experiencia personalizada al usuario por instalarlo.
