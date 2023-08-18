@@ -8,7 +8,7 @@ search: true
 ### 9.2.45 - 17 de agosto de 2023
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* Corrige problemas en el guardado de templates de correo, ahora templates antiguos se pueden volver a guardar, admeás los tags html ya no pierden sus atributos
+* Corrige problemas en el guardado de templates de correo, ahora templates antiguos se pueden volver a guardar, además los tags html ya no pierden sus atributos
 
 ### 9.2.44 - 10 de agosto de 2023
 <Badge text="Core" type="core" vertical="middle"/>
