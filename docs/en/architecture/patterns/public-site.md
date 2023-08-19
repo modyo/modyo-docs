@@ -224,7 +224,7 @@ Modyo Cloud and Enterprise Cloud have unique features that allow implementing be
 - Using modern image compression standards
 - Using HTTP3 in conjunction with TLS 1.3
 - Using optimized Internet routes between end users and the origin server
-- [Server side rendering (SSR)](/en/architecture/patterns/ssr) with Liquid
+- [Server Side Rendering (SSR)](/en/architecture/patterns/ssr) with Liquid
 
 :::tip Modyo Enterprise On Premise
 In the case of Modyo Enterprise On Premise, similar features can be implemented with the configuration of providers similar to those used in the Cloud.
