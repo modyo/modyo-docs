@@ -3,7 +3,7 @@ search: true
 ---
 
 # Private Site
-By private site we mean sites that require user authentication and that, unlike [public sites] (/es/architecture/patterns/public-site), act like a true Web application. A private site must offer relevant functionality to the user and keep track of what the user does on it, so that logging in through credentials or a possible installation on the device with [PWA] (/es/architecture/patterns/pwa) makes sense to him.
+By private site we mean sites that require user authentication and that, unlike [public sites](/en/architecture/patterns/public-site), act like a true Web application. A private site must offer relevant functionality to the user and keep track of what the user does on it, so that logging in through credentials or a possible installation on the device with [PWA](/en/architecture/patterns/pwa) makes sense to him.
 
 Some common examples of private sites could be:
 - Digital banking application
