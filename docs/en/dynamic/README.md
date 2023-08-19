@@ -27,7 +27,7 @@ Some of the main features of Dynamic Framework are:
 ### Structure
 The Dynamic Framework structure is mainly composed of the following elements:
 
- <img src="/assets/img/dynamic/dynamic_components.png" style="max-width: 700px;"/> 
+<img src="/assets/img/dynamic/dynamic_components.png" style="max-width: 700px;"/>
 
 All components of the framework have been designed to work together, offering the best possible experience to the developers in charge of the implementation.
 
