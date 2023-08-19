@@ -161,7 +161,7 @@ Another element to consider is the use of Liquid tags for embedding elements fro
 
 It is important to mention that when implementing languages with site cloning, the contents of the spaces are not being duplicated, since they do have support for multiple languages. On the other hand, it is also important to mention that any Javascript or dynamic technique to alter the language of a site without following our recommendation could impact many of the attributes mentioned within this guide, such as accessibility or indexing.
 
-:: :tip Modyo 10
+:::tip Modyo 10
 The next version of Modyo will contain improved internationalization support, which will allow working with multiple languages on the same site, leaving the option that it can change dynamically without the need to duplicate work.
 :::
 
