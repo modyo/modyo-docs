@@ -184,7 +184,7 @@ Modyo recommends the use of external indexers only in cases where their incorpor
 
 
 #### Search Engine Optimization (SEO)
-Another important topic when considering the search and indexing of content is public search engines, such as [Google] (https://developers.google.com/search/docs/fundamentals/seo-starter-guide). These engines are key to the implementation of a public site because they allow obtaining organic traffic derived from the searches that users do on them. By applying structured techniques, it is possible to access the first pages of results, as long as the engine considers that the information present on the site for that search term is relevant.
+Another important topic when considering the search and indexing of content is public search engines, such as [Google](https://developers.google.com/search/docs/fundamentals/seo-starter-guide). These engines are key to the implementation of a public site because they allow obtaining organic traffic derived from the searches that users do on them. By applying structured techniques, it is possible to access the first pages of results, as long as the engine considers that the information present on the site for that search term is relevant.
 
 Modyo has different enablers that allow the incorporation of structural elements that facilitate indexing by these engines. Among the most used, we can mention:
 - Using dynamic meta tags on content pages
