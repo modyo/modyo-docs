@@ -14,7 +14,7 @@ It is also possible to discard the suggested roles and configure roles from scra
 
 ### Preview
 
- <img src="/assets/img/dynamic/experiences/business/entitlements.jpg" style="border: 1px solid #EEE; margin-top: 40px; max-width:600px;"> 
+<img src="/assets/img/dynamic/experiences/business/entitlements.jpg" style="border: 1px solid #EEE; margin-top: 40px; max-width:600px;">
 
 
 ### Installation
