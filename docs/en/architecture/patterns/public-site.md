@@ -46,7 +46,7 @@ The pages, on the other hand, can be grouped into hierarchies, which will ensure
 
 #### Using Templates and Snippets
 [templates](/en/platform/channels/templates) correspond to Liquid documents that are dynamically rendered within the platform. These templates can correspond to HTML pages, layouts, CSS style sheets, or Javascript files.
-On the other hand, snippets are a very convenient way to organize source codes using [snippets] (/es/platform/channels/templates.md #snippets), which can be referenced from different Liquid templates on the same site. 
+On the other hand, snippets are a very convenient way to organize source codes using [snippets](/es/platform/channels/templates.md #snippets), which can be referenced from different Liquid templates on the same site. 
 
 Snippets make it possible to modularize and reuse functions, allowing complex functionalities to be broken down into simpler ones. Snippets are rendered dynamically when the page is rendered.
 
