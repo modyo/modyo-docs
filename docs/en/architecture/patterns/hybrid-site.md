@@ -20,7 +20,7 @@ Content segmentation is a strategy focused on customizing and adapting the conte
 
 Segments can be defined by a variety of criteria, including:
 
-- **User Behavior**: What the user has done on the site or application, such as the pages they have visited, the purchases they have made, or their previous interactions with the site or application.
+- **User behavior**: What the user has done on the site or application, such as the pages they have visited, the purchases they have made, or their previous interactions with the site or application.
 - **Demographic information**: details such as the user's age, gender, location, education, and other demographics.
 - **User Interests**: What is known or inferred to interest the user, based on their past behaviors or on the information they have provided.
 - **Stage in the customer journey**: point where the user is in the customer journey or in the sales funnel. For example, a user could be in the discovery, consideration, decision, or loyalty stage.
