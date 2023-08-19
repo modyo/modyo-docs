@@ -4,9 +4,9 @@ search: true
 
 # First Steps
 
-Welcome to the official [Dynamic Framework] documentation (https://dynamicframework.dev). This guide presents the different features of the framework, as well as key definitions and useful information about how to start working with it.
+Welcome to the official [Dynamic Framework](https://dynamicframework.dev) documentation. This guide presents the different features of the framework, as well as key definitions and useful information about how to start working with it.
 
- <img src="/assets/img/dynamic/dynamic-logo.png"/> 
+<img src="/assets/img/dynamic/dynamic-logo.png"/>
 
 ## What is Dynamic Framework?
 
