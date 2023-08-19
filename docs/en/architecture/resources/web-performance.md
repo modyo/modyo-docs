@@ -28,7 +28,7 @@ The performance of a web page or web application can be measured through several
 - **Largest Content Paint Time (LCP):** This is a Google metric that measures how long it takes for the largest piece of content visible on the screen, such as an image or block of text, to load.
 - **Cumulative Design Displacement (CLS):** Another Google metric measures how much the elements of a page move while it is loading.
 - **Speed Index:** This metric indicates how long it takes for a page to be displayed visually to the user.
-- **Performance Score: ** Tools like Google's Lighthouse provide an overall performance score based on several performance metrics.
+- **Performance Score:** Tools like Google's Lighthouse provide an overall performance score based on several performance metrics.
 
 In addition to these metrics, other factors such as ease of use and design responsiveness (how the site looks and behaves on different devices and screen sizes) are also important for the overall perception of user performance.
 
