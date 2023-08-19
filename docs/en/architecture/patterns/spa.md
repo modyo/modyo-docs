@@ -16,8 +16,8 @@ Advantages of SPAs:
 Disadvantages of SPAs:
 
 - **Increased initial complexity:** SPAs development may have a steeper learning curve due to the need to understand and work with additional frameworks and tools.
-- **Higher memory consumption: ** SPAs may require more memory in the browser due to the need to keep the entire state of the application in memory while browsing.
-- **SEO and social sharing: ** SPAs can often present challenges related to SEO (search engine optimization) and link sharing on social networks, as search crawlers and link previews may not correctly interpret dynamic content.
+- **Higher memory consumption:** SPAs may require more memory in the browser due to the need to keep the entire state of the application in memory while browsing.
+- **SEO and social sharing:** SPAs can often present challenges related to SEO (search engine optimization) and link sharing on social networks, as search crawlers and link previews may not correctly interpret dynamic content.
 - **JavaScript dependency: ** SPAs require users to have JavaScript enabled in their browser for them to work properly. If JavaScript is disabled or not supported, the application may not be usable.
 
 It's important to carefully evaluate project needs and specific requirements before choosing to develop a SPA. While SPAs can offer many advantages, they also present additional challenges that must be considered.
