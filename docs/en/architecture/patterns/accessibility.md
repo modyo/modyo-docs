@@ -10,9 +10,9 @@ Web accessibility is based on the principle of universal design, which seeks to 
 
 Some key aspects of web accessibility include:
 
-- **Assistive technology compatibility: ** Ensure that people using assistive technologies, such as screen readers or special keyboards, can effectively navigate and access content.
-- **Semantic tagging: ** Use HTML tags correctly to structure and describe content clearly, allowing people with visual or cognitive disabilities to understand the information presented.
-- **Contrast and readability: ** Ensure that the content has adequate contrast between the text and the background, making it easier to read for people with visual disabilities or difficulties with perception.
+- **Assistive technology compatibility:** Ensure that people using assistive technologies, such as screen readers or special keyboards, can effectively navigate and access content.
+- **Semantic tagging:** Use HTML tags correctly to structure and describe content clearly, allowing people with visual or cognitive disabilities to understand the information presented.
+- **Contrast and readability:** Ensure that the content has adequate contrast between the text and the background, making it easier to read for people with visual disabilities or difficulties with perception.
 - **Ease of navigation and use: ** Design intuitive and navigable interfaces, with controls and interactive elements that are easy to use with both the mouse and the keyboard.
 - **Alternatives for non-textual content: ** Providing textual alternatives for non-textual elements, such as images or videos, allowing people with visual or hearing disabilities to understand the content.
 
