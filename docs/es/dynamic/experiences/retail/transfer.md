@@ -14,7 +14,7 @@ Permite realizar transferencias entre las cuentas de depósito activas que tenga
 
 ### Instalación
 
-Para comentazar a trabajar con esta plantilla, ejecuta el siguiente comando del Modyo CLI:
+Para comenzar a trabajar con esta plantilla, ejecuta el siguiente comando del Modyo CLI:
 
 ```bash
 modyo-cli get dynamic-retail-transfer-template

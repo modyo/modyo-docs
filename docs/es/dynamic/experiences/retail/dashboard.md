@@ -16,7 +16,7 @@ Adicionalmente, cuenta con un panel de transferencias rápidas a contactos, que 
 
 ### Instalación 
 
-Para comentazar a trabajar con esta plantilla, ejecuta el siguiente comando del Modyo CLI:
+Para comenzar a trabajar con esta plantilla, ejecuta el siguiente comando del Modyo CLI:
 
 ```bash
 modyo-cli get dynamic-retail-dashboard-template
