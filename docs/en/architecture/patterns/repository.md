@@ -8,8 +8,8 @@ The repository pattern is a software design pattern that provides a way to encap
 
 The repository pattern has three main purposes:
 
-- **Separate application logic from database logic: ** This allows application code to be written and maintained more efficiently, as it doesn't need to contain much logic for database manipulation.
-- **Allow easier testing: ** By using the repository pattern, you can swap the real repository with a fictitious implementation for testing without affecting the real database.
+- **Separate application logic from database logic:** This allows application code to be written and maintained more efficiently, as it doesn't need to contain much logic for database manipulation.
+- **Allow easier testing:** By using the repository pattern, you can swap the real repository with a fictitious implementation for testing without affecting the real database.
 - **Provide a consistent interface for data access: ** Regardless of where the data is stored or how database operations are implemented, the application always interacts with a repository through a consistent interface.
 
 A potential disadvantage of the repository pattern is that it can add an additional layer of complexity to your code. However, in many cases, the benefits of separation of concerns, improved testing, and consistency in data access can outweigh this cost.
