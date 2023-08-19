@@ -178,7 +178,7 @@ The integration between Algolia and Modyo can be done in different ways, but in 
 
 Another alternative to consider could be [ElasticSerch] (https://www.elastic.co/web-crawler), which has a specific indexing and search product on public sites.
 
-:: :tip Using external indexers
+:::tip Using external indexers
 Modyo recommends the use of external indexers only in cases where their incorporation can be justified, since these tools generate additional costs that can be high depending on the volume of searches carried out in them.
 :::
 
