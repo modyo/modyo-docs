@@ -26,7 +26,7 @@ The performance of a web page or web application can be measured through several
 - **Time to First Byte (TTFB):** This metric measures the time from when the user initiates a request until they receive the first byte of information from the server. The shorter this time, the better.
 - **User Interaction Time (TBT):** This metric refers to the time it takes for a page to be loaded enough for the user to interact with it.
 - **Largest Content Paint Time (LCP):** This is a Google metric that measures how long it takes for the largest piece of content visible on the screen, such as an image or block of text, to load.
-- **Cumulative Design Displacement (CLS) :** Another Google metric measures how much the elements of a page move while it is loading.
+- **Cumulative Design Displacement (CLS):** Another Google metric measures how much the elements of a page move while it is loading.
 - **Speed Index :** This metric indicates how long it takes for a page to be displayed visually to the user.
 - **Performance Score: ** Tools like Google's Lighthouse provide an overall performance score based on several performance metrics.
 
