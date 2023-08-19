@@ -47,8 +47,8 @@ Here are some considerations to keep in mind when developing microservices on Mo
   authentication, etc.
 - **Swagger:** Standard for the definition and publication of APIs in API Gateway
 - **Code structure and style:** The use of the [Spring Boot] initializer (https://start.spring.io) is recommended
-  or [Yeoman] (https://yeoman.io/generators) to give a standard to the source code. It is also recommended to follow the
-  code style recommended by [Google] (https://google.github.io/styleguide/javaguide.html).
+  or [Yeoman](https://yeoman.io/generators) to give a standard to the source code. It is also recommended to follow the
+  code style recommended by [Google](https://google.github.io/styleguide/javaguide.html).
 
 #### Use of databases
 
