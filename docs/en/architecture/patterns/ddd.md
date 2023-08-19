@@ -38,7 +38,7 @@ There are several ways to implement DDD with Modyo, but the most common one stem
 - Separation into different independent Modyo organizations
 - Separation of multiple Web sites or applications, with different users and administration roles
 - Separation of content spaces, with different users and administrative roles
-- Scope of the Widgets that will be developed as [micro frontends] (/es/architecture/patterns/micro-frontend), always seeking to unify 
+- Scope of the Widgets that will be developed as [micro frontends](/en/architecture/patterns/micro-frontend), always seeking to unify 
 
 Applying the above criteria, what is sought is that things that are modified together, are structured together, while things that do not depend on each other, are implemented separately. In this way, delimited contexts are created within the implementation, where a user solves complete business operations with as little context exchange as possible.
 
