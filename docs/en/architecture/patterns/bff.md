@@ -13,8 +13,8 @@ The BFF pattern addresses this problem by introducing an additional backend laye
 Benefits of the Backend for Frontend pattern:
 
 - **Adaptability:** It allows you to adapt the logic and capabilities of the backend to each client or user interface, thus optimizing the user experience.
-- **Frontend independence: ** It allows frontend and backend teams to work more independently, as they can evolve and make changes to their logic without affecting the other components.
-- **Performance improvement: ** By having a specific backend for each user interface, data queries and responses can be optimized to meet the particular needs of each customer, thus improving the overall performance of the application.
+- **Frontend independence:** It allows frontend and backend teams to work more independently, as they can evolve and make changes to their logic without affecting the other components.
+- **Performance improvement:** By having a specific backend for each user interface, data queries and responses can be optimized to meet the particular needs of each customer, thus improving the overall performance of the application.
 - **Facilitates evolution: ** By separating responsibilities between the backend and the BFFs, the evolution and maintenance of the application is simplified, since changes to a specific user interface can be made without affecting other parts of the system.
 
 The BFF pattern is widely used in the development of web and mobile applications, as it allows a clear separation between the frontend and backend layers. It aims to abstract the backend layer into a specialized interface for each specific type of frontend. Following the principle of single responsibility, the generated backend is responsible for handling requests and providing specific answers for each frontend, allowing greater specialization and adaptation to visualization needs.
