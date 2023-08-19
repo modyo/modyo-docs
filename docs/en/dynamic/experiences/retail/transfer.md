@@ -14,7 +14,7 @@ It allows transfers to be made between the active deposit accounts that a custom
 
 ### Installation
 
-To comment on working with this template, run the following command from the Modyo CLI:
+To start working with this template, run the following Modyo CLI command:
 
 ```bash
 modyo-cli get dynamic-retail-transfer-template
