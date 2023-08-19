@@ -22,6 +22,6 @@ The Modyo Expert service provides consulting and support that covers all stages 
 
 Modyo Experts are professionals with a high level of training not only in Modyo technology, but also in safety and performance. They are prepared to guide you by ensuring that both your functional and non-functional requirements are met.
 
-:: :tip Contact
+:::tip Contact
 If you need more information about our Modyo Expert services, don't hesitate to contact a Modyo sales or customer executive.
 :::
