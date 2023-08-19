@@ -27,6 +27,6 @@ Server-Side Rendering is a technique that can be especially useful in scenarios 
 
 In Modyo, SSR is implemented using Liquid as a template language. Liquid is a template language created by Shopify that is commonly used to generate dynamic content in web applications and online stores. Within Modyo, Liquid is used as the base template language for all code processing within the platform.
 
-:: :tip Liquid Performance
+:::tip Liquid Performance
 The templates processed with Liquid within Modyo are stored in different cache layers, making it possible to always deliver reduced response times, maintaining an excellent user experience and preserving the dynamic nature of the use of this type of template.
 :::
