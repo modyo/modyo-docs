@@ -5,8 +5,22 @@ search: true
 # Release Notes
 
 ## 9.2
+### 9.2.45 - August 17, 2023
+<Badge text="Customers" type="customers" vertical="middle"/>
 
-### 9.2.43
+* Fixes problems in saving email templates, now old templates can be saved again, and html tags no longer lose their attributes
+
+### 9.2.44 - August 10, 2023
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Security improvements
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Correct the logout redirection loop between realm and identity provider under certain circumstances
+* Add read-only role in realms
+
+### 9.2.43 - August 03, 2023
 <Badge text="Core" type="core" vertical="middle"/>
 
 * Security improvements
@@ -20,7 +34,7 @@ search: true
 * Improvements in the list of content entries, now bulk actions are shown according to the selected items
 * Improvements in the validation of the type of assets uploaded to the platform
 
-### 9.2.42
+### 9.2.42 - July 28, 2023
 <Badge text="Customers" type="customers" vertical="middle"/>
 
 * Fixes error in authentication flow with identity providers 
@@ -215,7 +229,7 @@ search: true
 
 ### 9.2.31 - April 06, 2023
 
- <Badge text="Core" type="core" vertical="middle"/> 
+<Badge text="Core" type="core" vertical="middle"/>
 
 * Security improvements
 * Password policies are added when creating new accounts
@@ -246,7 +260,7 @@ search: true
 
 ### 9.2.28 - March 21, 2023
 
-<Badge text="Core" type="core" vertical="middle"/>
+ <Badge text="Core" type="core" vertical="middle"/> 
 
 * Security improvements
 
@@ -263,7 +277,7 @@ search: true
 
 ### 9.2.27 - March 10, 2023
 
- <Badge text="Core" type="core" vertical="middle"/> 
+<Badge text="Core" type="core" vertical="middle"/>
 
 * Security improvements
 * The trial period is increased to 30 days
@@ -552,7 +566,7 @@ search: true
 
 ### 9.2.9 - May 03, 2022
 
- <Badge text="Core" type="core" vertical="middle"/> 
+<Badge text="Core" type="core" vertical="middle"/>
 
 * Security improvements
 * Error 500 is controlled at the application level when using invalid HTTP verbs
@@ -629,7 +643,7 @@ search: true
 * Content Pages are incorporated
 * Problems with the preview bar are fixed
 
- <Badge text="Content" type="content" vertical="middle"/> 
+<Badge text="Content" type="content" vertical="middle"/>
 * Improvements and fixes in the Entries editor
 
 <Badge text="Core" type="core" vertical="middle"/>
@@ -713,7 +727,7 @@ Problem with allowing tag style with MODYO_HTML_ALLOWED_ATTRS environment variab
 
 ### 9.1.33 - November 5, 2021
 
- <Badge text="Core" type="core" vertical="middle"/> 
+<Badge text="Core" type="core" vertical="middle"/>
 * Discovery service call is prevented in OIDC callback
 
 <Badge text="Content" type="content" vertical="middle"/>
@@ -730,7 +744,7 @@ Problem with allowing tag style with MODYO_HTML_ALLOWED_ATTRS environment variab
 
 ### 9.1.31 - October 7, 2021
 
- <Badge text="Core" type="core" vertical="middle"/> 
+<Badge text="Core" type="core" vertical="middle"/>
 * SAML response validation for Azure AD is repaired
 
 ### 9.1.30 - September 24, 2021
@@ -751,7 +765,7 @@ Problem with allowing tag style with MODYO_HTML_ALLOWED_ATTRS environment variab
 <Badge text="Core" type="core" vertical="middle"/>
 * Multiple enhancements to Security Headers.
 
- <Badge text="Channels" type="channels" vertical="middle"/> 
+<Badge text="Channels" type="channels" vertical="middle"/>
 * Additional Liquid tags are allowed.
 
 ### 9.1.27 - August 27, 2021
@@ -768,7 +782,7 @@ Problem with allowing tag style with MODYO_HTML_ALLOWED_ATTRS environment variab
 
 ### 9.1.26 - August 11, 2021
 
- <Badge text="Channels" type="channels" vertical="middle"/> 
+<Badge text="Channels" type="channels" vertical="middle"/>
 * Redirect expired sessions are fixed.
 * Bug that prevented reversing parent-child page order has been fixed.
 
@@ -824,7 +838,7 @@ Problem with allowing tag style with MODYO_HTML_ALLOWED_ATTRS environment variab
 
 ### 9.1.19 - May 19, 2021
 
- <Badge text="Core" type="core" vertical="middle"/> 
+<Badge text="Core" type="core" vertical="middle"/>
 * Multiple bugs resolved.
 
 ### 9.1.18 - May 18, 2021
@@ -879,7 +893,7 @@ Problem with allowing tag style with MODYO_HTML_ALLOWED_ATTRS environment variab
 - Multiple security improvements.
 - Multiple JS libraries with vulnerabilities are updated
 
- <Badge text="Content" type="content" vertical="middle"/> 
+<Badge text="Content" type="content" vertical="middle"/>
 * Dynamic filters are added for field values in the entry index.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
@@ -915,7 +929,7 @@ Problem with allowing tag style with MODYO_HTML_ALLOWED_ATTRS environment variab
 
 ### 9.1.10 - February 23, 2021
 
- <Badge text="Core" type="core" vertical="middle"/> 
+<Badge text="Core" type="core" vertical="middle"/>
 
 - Multiple bugs resolved.
 - Multiple performance enhancements.
