@@ -87,7 +87,7 @@ Some reasons why we avoid using JavaScript frameworks on public sites are:
 - **Performance: ** every time a visitor loads a page, the browser must download and execute the JavaScript code in order to display and manipulate the elements of the page. Excessive use of JavaScript can slow down page loading, especially on devices with slow connections or limited resources.
 - **Accessibility: ** Some people may have difficulty accessing and using interactive JavaScript-based content. This can include people with visual disabilities who use screen readers, users with slow connections or older devices, or people who have JavaScript turned off for security reasons or personal preference.
 - **Maintenance and compatibility: ** Reducing JavaScript dependencies simplifies site maintenance. In addition, these solutions are often more compatible with different browsers and devices.
-- **Security: ** By limiting the use of JavaScript, the potential attack surface is reduced and the security of the site is improved.
+- **Security:** By limiting the use of JavaScript, the potential attack surface is reduced and the security of the site is improved.
 
 The idea is to achieve a balanced combination of static and dynamic elements to provide an optimal experience for users. 
 
