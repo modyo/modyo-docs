@@ -91,7 +91,7 @@ Some reasons why we avoid using JavaScript frameworks on public sites are:
 
 The idea is to achieve a balanced combination of static and dynamic elements to provide an optimal experience for users. 
 
-:: :warning about -Engineering
+:::warning about -Engineering
 As in the case of micro frontends, the use of Javascript frameworks within a public site could involve additional complexity, so we do not recommend using them in scenarios where the benefits are not fully justified.
 :::
 
