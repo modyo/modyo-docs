@@ -23,7 +23,7 @@ It's important to note that while SSO has many benefits, it can also present ris
 
 ### How do you implement SSO with Modyo?
 
-SSO in Modyo can be implemented in two ways: by using the [SSO component] (/es/connect/components/infrastructure.html #single -sign-on-sto) of [Modyo Connect] (/es/connect), or by integrating into a customer SSO system. Both forms benefit from the platform's native integration capabilities, which provide compatibility with OpenID Connect (OIDC), SAML, Azure AD, Google, OAuth2, among others.
+SSO in Modyo can be implemented in two ways: by using the [SSO component](/en/connect/components/infrastructure.html #single-sign-on) of [Modyo Connect](/en/connect), or by integrating into a customer SSO system. Both forms benefit from the platform's native integration capabilities, which provide compatibility with OpenID Connect (OIDC), SAML, Azure AD, Google, OAuth2, among others.
 
 By activating SSO within Modyo, user authentication is completely delegated to the chosen system, allowing specific security policies to be applied centrally to the SSO system. Once the user is unsubscribed from the central system, Modyo will no longer be able to authenticate them, so the change is immediately reflected in the next authentication attempt.
 
