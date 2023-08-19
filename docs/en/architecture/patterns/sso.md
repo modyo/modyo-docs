@@ -29,7 +29,7 @@ By activating SSO within Modyo, user authentication is completely delegated to t
 
 The Modyo platform supports delegation to SSO systems in two main ways. The first of these is for administrator users with access to the web console. The second of these is towards end users through the configurations present in the [user realms](/en/platform/customers/realms). Both forms of integration are independent of each other, so specific topologies can be defined for each customer with considerable flexibility, for example: Azure AD (SAML) for administrators, KeyCloak (OIDC) for the realm of users with access to the transactional application, Azure AD (OIDC) for the realm of agents with access to the internal sales application.
 
-:: :warning Session Times
+:::warning Session Times
 Once users are unsubscribed from the SSO or source system, the changes in Modyo will be reflected in the next internal authentication, which can happen over a longer time in which the deleted user will continue to have access to the system. To avoid this, it is recommended to use session expiration times in accordance with business security requirements, or to implement more sophisticated session term flows (Single Logout).
 :::
 
