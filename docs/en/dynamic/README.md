@@ -21,7 +21,7 @@ Some of the main features of Dynamic Framework are:
 - [Component Catalog](/en/dynamic/ui/components) implemented in React and available in Storybook.
 - [Design kit](/en/dynamic/ui) for rapid prototyping available for Figma.
 - [Experience templates](/en/dynamic/experiences) financial ready to download and modify, with sample data in mock APIs.
-- [Integration templates] (/en/dynamic/integrations) to common systems, available as Java and Spring Boot projects.
+- [Integration templates](/en/dynamic/integrations) to common systems, available as Java and Spring Boot projects.
 
 
 ### Structure
