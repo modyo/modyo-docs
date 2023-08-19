@@ -58,7 +58,7 @@ Once you've downloaded the CLI, you're ready to start downloading the first expe
 modyo-cli get dynamic-retail-dashboard-template
 ```
 
-The above command will download a fully functional template, which you can run and modify in your local environment. Use your favorite code editor to explore the code, play with it and see for yourself how the different [components] (/en/dynamic/ui/components) of the design system are used.
+The above command will download a fully functional template, which you can run and modify in your local environment. Use your favorite code editor to explore the code, play with it and see for yourself how the different [components](/en/dynamic/ui/components) of the design system are used.
 
 From now on, you'll have two options: Continue exploring other templates or venturing to deploy your template within your sandbox environment using modyo-cli with a valid API token.
 
