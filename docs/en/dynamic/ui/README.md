@@ -8,8 +8,8 @@ Dynamic Framework helps designers and developers build Web applications with a p
 - **Clarity:** Reduce ambiguity, giving users confidence and understanding in using the application.
 - **Simplicity: ** With our catalog of components and functionalities, it will be much easier to build experiences, focus your efforts on important business decisions.
 - **Efficiency:** Workflows that take precedence over the needs considered in common actions in the financial industry.
-- **Consistency: ** Consistent and familiar interfaces to the end user, allowing applications to be used more intuitively, regardless of the device being used.
-- **Aesthetics: ** We pay attention to detail to provide users with components, which, in addition to facilitating functionality, delight them with pleasant interfaces.
+- **Consistency:** Consistent and familiar interfaces to the end user, allowing applications to be used more intuitively, regardless of the device being used.
+- **Aesthetics:** We pay attention to detail to provide users with components, which, in addition to facilitating functionality, delight them with pleasant interfaces.
 
 Dynamic Framework provides a unified user experience and optimized workflows, with a clean interface that allows work teams to deal with the design and logic behind the implementation of each component.
 
