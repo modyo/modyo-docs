@@ -26,7 +26,7 @@ Within Modyo, the BFF pattern can be implemented in two ways. The first of these
 
 The second way to implement BFF on Modyo is to use APIs provided by the customer, or by third parties. In this way, the [micro frontends] (/es/architecture/patterns/micro-frontend) deployed on the platform, will directly access the APIs hosted in the client's (or third party) infrastructure, using or not using an authentication system, as required in each case.
 
-:: :tip API decoupling
+:::tip API decoupling
 The Modyo reference architecture places special emphasis on decoupling the frontend and backend layers. In this way, the APIs are independent of defining the way in which they will be deployed, and may be in clouds or infrastructures that are totally different from that of the platform. The protocol that unites communication between Modyo, the APIs and the end user is HTTP.
 :::
 
