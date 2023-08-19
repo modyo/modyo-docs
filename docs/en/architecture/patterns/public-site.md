@@ -226,7 +226,7 @@ Modyo Cloud and Enterprise Cloud have unique features that allow implementing be
 - Using optimized Internet routes between end users and the origin server
 - [Server side rendering (SSR)] (/es/architecture/patterns/ssr) with Liquid
 
-:: :tip Modyo Enterprise On Premise
+:::tip Modyo Enterprise On Premise
 In the case of Modyo Enterprise On Premise, similar features can be implemented with the configuration of providers similar to those used in the Cloud.
 :::
 
