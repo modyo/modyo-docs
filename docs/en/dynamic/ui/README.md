@@ -21,4 +21,4 @@ The Dynamic Framework Figma Kit allows designers to work more efficiently and co
 
 The kit also includes design elements to help designers create high-quality designs quickly and easily. These elements include icons, typography and other visual elements that can be customized and adjusted to the specific needs of each project.
 
-You can access the Dynamic Framework Figma Kit from [the following link] (https://www.figma.com/community/file/1274095451173638903).
+You can access the Dynamic Framework Figma Kit from [the following link](https://www.figma.com/community/file/1274095451173638903).
