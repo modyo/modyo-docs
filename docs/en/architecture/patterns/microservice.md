@@ -93,7 +93,7 @@ Dynamic Framework microservices are developed using the principles of hexagonal 
 - **Heavy tasks:** It is also recommended to use background processing, via [messaging queues](../components/infrastructure.md#messaging-queues), for services that are slow or very sensitive to traffic fluctuations.
 - **Task scheduling:** The use of [Quartz](https://www.baeldung.com/spring-quartz-schedule) is recommended for microservices that require scheduling of scheduled tasks.
 - **Workflows and state machines:** The use of [state machines](https://www.baeldung.com/spring-state-machine) is recommended for the orchestration of complex processes. Workflow technologies can also be integrated into Spring Boot for this purpose.
-- **Hexagon architecture: ** A software design pattern that separates the business logic of an application from its external services, allowing for more flexible development, testing and maintenance focused on the application domain.
+- **Hexagon architecture:** A software design pattern that separates the business logic of an application from its external services, allowing for more flexible development, testing and maintenance focused on the application domain.
 - **Modyo API**: We recommend using the Modyo platform's administrative API for common tasks, such as sending messages to users or integrating with managed content.
 
 
