@@ -5,7 +5,7 @@ search: true
 # Transfer
 
 ### Description
-It allows transfers to be made between the active deposit accounts that a customer has, generating an entry or exit movement in each of the accounts. It also allows you to share the result of the successful transaction through an image or a pdf.### Installation
+It allows transfers to be made between the active deposit accounts that a customer has, generating an entry or exit movement in each of the accounts. It also allows you to share the result of the successful transaction by means of an image or a PDF.
 
 
 ### Preview
