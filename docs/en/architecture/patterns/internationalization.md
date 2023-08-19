@@ -22,6 +22,6 @@ Within Modyo, internationalization can be implemented in different ways. The fir
 
 From the latter, a second way of implementing internationalization within Modyo emerges, through micro frontends. Microfrontends, when developed externally, must be prepared to be injected into Web sites or applications that may have different languages configured. That is why in this case it is recommended to develop micro frontends considering the inclusion of an i18n library that allows modifying the language and the location using a variable that is dynamically injected when loading the component. In this way, the same micro frontend can be reused in different sites or Web applications, changing its language according to the configuration of the site.
 
-:: :tip Maintaining language files
+:::tip Maintaining language files
 In complex initiatives, with the presence of multiple microservices in several languages, managing language keys within different repositories can be complex. To solve this problem, Modyo recommends the inclusion in projects of a language automation system, which takes control of the files in each repository and presents them in a management interface to the people who will be in charge of keeping them up to date. Within these types of systems, we can mention Transifex, Lokalise, Crowdin, WebTranslate, among others. All of them have direct integration capabilities to repositories.
 :::
