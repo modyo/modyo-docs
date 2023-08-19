@@ -11,7 +11,7 @@ This guide seeks to explore the various software architecture patterns that are 
 The goal is to provide solid guidance and a reference resource for web developers, software architects, and all interested parties seeking to address the challenges of modern web development, and to take full advantage of software architecture patterns to build robust, scalable, and future-oriented applications.
 
 :::tip High Level Approach
-This guide contains high-level patterns and is intended for software architects and technical leaders. For a review of more specific programming patterns, we recommend the book [“Design Patterns: Elements of Reusable Object-Oriented Software”] (https://en.wikipedia.org/wiki/Design_Patterns) by Erich Gamma, Ralph Johnson, Richard Helm and John Vlissides. 
+This guide contains high-level patterns and is intended for software architects and technical leaders. For a review of more specific programming patterns, we recommend the book [“Design Patterns: Elements of Reusable Object-Oriented Software”](https://en.wikipedia.org/wiki/Design_Patterns) by Erich Gamma, Ralph Johnson, Richard Helm and John Vlissides. 
 :::
 
 ## Reference Architecture
@@ -20,7 +20,7 @@ Micro frontends are high-level user experience components, orchestrated by the M
 
 The following figure shows the Modyo reference architecture, where micro frontends are deployed within the Modyo Platform, while microservices do so in a decoupled way within an independent container infrastructure.
 
- <img src="/assets/img/infrastructure/reference_architecture.png" alt="Reference architecture" /> 
+<img src="/assets/img/infrastructure/reference_architecture.png" alt="Reference architecture" />
 
 This architecture represents several advantages compared to a monolithic one, since it allows each component to be updated and scaled independently, without affecting the rest of the system. This results in greater modularity, flexibility, maintainability and scalability in the architecture design.
 
