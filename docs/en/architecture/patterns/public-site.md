@@ -12,7 +12,7 @@ Public sites can serve a variety of purposes. Some common examples could be:
 - Marketing and promotion sites
 - News sites and blogs
 
- <!-- Hack to avoid this title to be displayed in the TOC element --> 
+<!-- Hack to avoid this title to be displayed in the TOC element -->
  <h3> <a href="#how-to-implement-public-sites-with-modyo" class="header-anchor">#</a> How to implement public sites with Modyo?</h3> 
 
 Modyo offers all the tools necessary to create and maintain public sites in an agile, safe and efficient way. Through the combination of their content applications and channels, you will be able to access all the functionality required at each stage of the site's life cycle.
