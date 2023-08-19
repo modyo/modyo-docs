@@ -19,7 +19,7 @@ Modyo offers all the tools necessary to create and maintain public sites in an a
 
 At the level of architectural pattern, the public site is one of the most common and easiest to implement on Modyo, but not without multiple details that we must consider to ensure its success, among which we can mention:
 
-[[knock]]
+[[toc]]
 
 Depending on the desired result, these requirements may impact implementation decisions in different ways. In this guide, we will explain the most relevant concepts of each of them.
 
