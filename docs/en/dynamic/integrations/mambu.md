@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Mambu
+# Mambu SDK
 
 Mambu is a cloud banking platform that offers a complete banking software solution for financial companies. Founded in 2011, Mambu offers a highly scalable and flexible cloud banking platform that allows financial companies around the world to offer digital financial services to their customers.
 
