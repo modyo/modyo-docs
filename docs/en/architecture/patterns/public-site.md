@@ -157,7 +157,7 @@ Another element to consider is the use of Liquid tags for embedding elements fro
 
 
 ### Internationalization
-[internationalization] (/en/architecture/patterns/internationalization) within a public site is a requirement for which the platform today does not offer a particular solution. Although the contents can be defined by indicating a specific language, when configuring a site, they only support one language. That is why to implement a second or third language, the only option supported today is to clone the site and modify it to adapt to the desired language. 
+[internationalization](/en/architecture/patterns/internationalization) within a public site is a requirement for which the platform today does not offer a particular solution. Although the contents can be defined by indicating a specific language, when configuring a site, they only support one language. That is why to implement a second or third language, the only option supported today is to clone the site and modify it to adapt to the desired language. 
 
 It is important to mention that when implementing languages with site cloning, the contents of the spaces are not being duplicated, since they do have support for multiple languages. On the other hand, it is also important to mention that any Javascript or dynamic technique to alter the language of a site without following our recommendation could impact many of the attributes mentioned within this guide, such as accessibility or indexing.
 
