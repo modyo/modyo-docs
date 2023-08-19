@@ -26,6 +26,6 @@ It's important to carefully evaluate project needs and specific requirements bef
 
 To implement an SPA with Modyo today, you must make use of the capabilities of [Modyo Connect](/en/connect), within which you can configure object repositories and content distribution networks (CDNs) that will allow the deployment and subsequent maintenance of the SPA. The changes, in this case, are managed directly by the service's code repository, and through the use of automations, cache deployments and validations can be carried out when incorporating or mixing changes into it.
 
-:: :tip Modyo 10
+:::tip Modyo 10
 In Modyo 10, the future version of the platform, there will be direct support from the Web administration console for the deployment of static modules in the CDN. This will provide a static hosting system to work with SPA and other types of libraries, leaving the platform in control of cache deployments and invalidations.
 :::
