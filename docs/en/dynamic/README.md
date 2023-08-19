@@ -52,7 +52,7 @@ The next step is to install the Modyo CLI. To do this, you must execute the foll
 npm -i modyo-cli
 ```
 
-Once you've downloaded the CLI, you're ready to start downloading the first experience templates. We recommend starting with the following, corresponding to the [People Bank] (/en/dynamic/experiences/retail/dashboard):
+Once you've downloaded the CLI, you're ready to start downloading the first experience templates. We recommend starting with the following, corresponding to the [Retail Banking](/en/dynamic/experiences/retail/dashboard):
 
 ```shell
 modyo-cli get dynamic-retail-dashboard-template
