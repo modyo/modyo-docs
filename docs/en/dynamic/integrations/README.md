@@ -4,7 +4,7 @@ The integration into the customer's core systems can be done in two ways. The fi
 
 #### APIs deployed in Modyo Connect
 
-[Modyo Connect] (/es/connect) is a managed infrastructure service provided by Modyo on which the different integration templates available within the Dynamic Framework can be directly deployed, as shown in the following figure:
+[Modyo Connect](/en/connect) is a managed infrastructure service provided by Modyo on which the different integration templates available within the Dynamic Framework can be directly deployed, as shown in the following figure:
 
 <img src="/assets/img/dynamic/dynamic_architecture.png" alt="Dynamic structure" style="margin-top: 40px; max-width: 700px;" />
 
