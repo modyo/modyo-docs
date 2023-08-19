@@ -9,8 +9,8 @@ Single-Page Applications (SPAs) are web applications that are loaded once in the
 Advantages of SPAs:
 
 - **Smooth user experience:** By preventing full page reloads, SPAs provide a faster and smoother experience for users, as content updates are performed dynamically and without interruption.
-- **Interactivity and fast navigation: ** SPAs allow for faster and smoother navigation within the application, as only the necessary components are updated without the need to load additional pages.
-- **Performance improvement: ** By reducing the amount of data and resources that must be transmitted and processed in each interaction, SPAs can improve overall application performance and reduce load times.
+- **Interactivity and fast navigation:** SPAs allow for faster and smoother navigation within the application, as only the necessary components are updated without the need to load additional pages.
+- **Performance improvement:** By reducing the amount of data and resources that must be transmitted and processed in each interaction, SPAs can improve overall application performance and reduce load times.
 - **More efficient development: ** SPAs allow for more efficient development by using modern frameworks and libraries, such as React, Angular or Vue.js, which offer a component-based approach and facilitate code reuse.
 
 Disadvantages of SPAs:
