@@ -47,7 +47,7 @@ Currently, Apple does not have functionality directly equivalent to Trusted Web 
 
 However, Apple has introduced features and improvements to iOS to improve the web application experience on iOS devices. Some of these features are:
 
-- **Add to Home Screen :** iOS allows users to add a shortcut to a PWA on their device's home screen, providing an experience similar to that of a native application. When you open the shortcut from the home screen, the PWA will run in the Safari browser in full screen.
+- **Add to Home Screen:** iOS allows users to add a shortcut to a PWA on their device's home screen, providing an experience similar to that of a native application. When you open the shortcut from the home screen, the PWA will run in the Safari browser in full screen.
 - **Web App Manifest :** The Web App Manifest is a JSON file that describes the PWA and its characteristics, such as name, icons, thematic colors, and orientation. By correctly defining the manifest, you can improve the appearance and experience of the PWA on iOS.
 - **Service Workers :** Service Workers are a technology that enables resource caching, offline functionality, and the improvement of the performance of a PWA. Although Apple has introduced limitations on running Service Workers in the background on iOS, they can still be used to improve the PWA experience while active in the Safari browser.
 
