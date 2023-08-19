@@ -172,7 +172,7 @@ Within a public site, searching for content is an important element to consider.
 If more advanced search functionality is required, external indexing solutions can be implemented.
 
 #### Implementing external search
-Within the market, there are several alternatives for implementing search within a site. One of the most popular is [Algolia] (https://www.algolia.com). Algolia is a complete indexing and search solution, which allows you to activate advanced features such as relevance criteria, A/B testing, AI functionalities, real-time search, among many others.
+Within the market, there are several alternatives for implementing search within a site. One of the most popular is [Algolia](https://www.algolia.com). Algolia is a complete indexing and search solution, which allows you to activate advanced features such as relevance criteria, A/B testing, AI functionalities, real-time search, among many others.
 
 The integration between Algolia and Modyo can be done in different ways, but in the case of public sites, an indexing crawler is sufficient, similar to how Google indexes information from the sites you visit.
 
