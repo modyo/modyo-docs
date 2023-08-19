@@ -5,8 +5,22 @@ search: true
 # Notas del release
 
 ## 9.2
+### 9.2.45 - 17 de agosto de 2023
+<Badge text="Customers" type="customers" vertical="middle"/>
 
-### 9.2.43
+* Corrige problemas en el guardado de templates de correo, ahora templates antiguos se pueden volver a guardar, además los tags html ya no pierden sus atributos
+
+### 9.2.44 - 10 de agosto de 2023
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Corrige loop de redirecciones en logout entre reino e identity provider bajo ciertas circunstancias
+* Agrega rol de solo lectura en los reinos
+
+### 9.2.43 - 03 de agosto de 2023
 <Badge text="Core" type="core" vertical="middle"/>
 
 * Mejoras de seguridad
@@ -20,7 +34,7 @@ search: true
 * Mejoras en el listado de entradas de contenido, ahora las acciones en bulk se muestran según los elementos seleccionados
 * Mejoras en la validación de tipo de assets subidos a la plataforma
 
-### 9.2.42
+### 9.2.42 - 28 de julio de 2023
 <Badge text="Customers" type="customers" vertical="middle"/>
 
 * Corrige error en flujo de autenticación con identity providers 
