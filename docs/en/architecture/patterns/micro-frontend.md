@@ -21,7 +21,7 @@ Micro frontends give teams the ability to work with more autonomy, since they op
 
 #### Benefits
 
-- **Incremental updates: ** As they are independent components, their changes and deployments to production are also independent components. For many organizations, this is the main reason for the adoption of micro frontends.
+- **Incremental updates:** As they are independent components, their changes and deployments to production are also independent components. For many organizations, this is the main reason for the adoption of micro frontends.
 - **Decoupled, simpler code:** The code of each micro frontend will be smaller than the full code of the application. Small code repositories are easier for developers to work with.
 - **Independent deployments:** As with microservices, independent deployments are a key component in the microfrontend architecture. This reduces the scope of each deployment, thereby reducing the associated risk. Each micro frontend must have its own line of construction, testing, and deployment to production.
 - **Independent teams:** Independent teams gain a greater sense of ownership and control over the products they maintain, allowing them to work faster and more efficiently.
