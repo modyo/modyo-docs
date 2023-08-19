@@ -145,7 +145,7 @@ The stages will be able to define certain configurations independently, such as 
 #### Using Design Systems
 Modyo has different ways of implementing [design systems] (/es/architecture/patterns/design-system), which vary in complexity depending on the scenario in which they are to be applied.
 
-In the case of a public site, the design system can be implemented without any problem using its simplest forms, such as libraries or CSS frameworks that incorporate consistent rules for all the elements that compose it. Sites created within Modyo use [Bootstrap] (https://getbootstrap.com) as the default CSS framework, on which customizations can be made to all the variables enabled for this purpose.
+In the case of a public site, the design system can be implemented without any problem using its simplest forms, such as libraries or CSS frameworks that incorporate consistent rules for all the elements that compose it. Sites created within Modyo use [Bootstrap](https://getbootstrap.com) as the default CSS framework, on which customizations can be made to all the variables enabled for this purpose.
 
 
 ### Accessibility
