@@ -22,7 +22,7 @@ The BFF pattern is widely used in the development of web and mobile applications
 
 ### How do you implement BFF with Modyo?
 
-Within Modyo, the BFF pattern can be implemented in two ways. The first of these is through the use of APIs deployed within [Modyo Connect] (/es/connect) in which lightweight microservices can be defined to integrate with each customer's core systems or services, generating an API interface designed especially for the needs of the frontend. The APIs deployed in Modyo Connect use the [Amazon AWS] API Gateway technology (https://aws.amazon.com) and are integrated with [Single Sign On (SSO)] systems (/es/architecture/patterns/esso) in order to ensure user authentication in cases where private data is transferred over them.
+Within Modyo, the BFF pattern can be implemented in two ways. The first of these is through the use of APIs deployed within [Modyo Connect](/en/connect) in which lightweight microservices can be defined to integrate with each customer's core systems or services, generating an API interface designed especially for the needs of the frontend. The APIs deployed in Modyo Connect use the [Amazon AWS](https://aws.amazon.com) API Gateway technology and are integrated with [Single Sign On (SSO)](/en/architecture/patterns/sso) systems in order to ensure user authentication in cases where private data is transferred over them.
 
 The second way to implement BFF on Modyo is to use APIs provided by the customer, or by third parties. In this way, the [micro frontends] (/es/architecture/patterns/micro-frontend) deployed on the platform, will directly access the APIs hosted in the client's (or third party) infrastructure, using or not using an authentication system, as required in each case.
 
