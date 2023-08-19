@@ -28,8 +28,8 @@ Below are the different features of Modyo that are important to understand when 
 
 [[toc]]
 
-:: :tip Similarities with Public Sites
-In working with private sites, we can find similarities that are shared with [public sites] (/en/architecture/patterns/public-site). The purpose of this guide is not to repeat them all, but rather to complement them in cases where the implementation is different.
+:::tip Similarities with Public Sites
+In working with private sites, we can find similarities that are shared with [public sites](/en/architecture/patterns/public-site). The purpose of this guide is not to repeat them all, but rather to complement them in cases where the implementation is different.
 :::
 
 
