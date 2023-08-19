@@ -8,7 +8,7 @@ The Payment Dashboard offers a centralized view of the different obligations a u
 
 ### Preview
 
- <img src="/assets/img/dynamic/experiences/retail/dashboard-payments.jpg" style="border: 1px solid #EEE; margin-top: 40px; max-width:600px;"> 
+<img src="/assets/img/dynamic/experiences/retail/dashboard-payments.jpg" style="border: 1px solid #EEE; margin-top: 40px; max-width:600px;">
 
 
 ### Installation
