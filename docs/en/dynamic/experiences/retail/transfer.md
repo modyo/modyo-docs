@@ -10,7 +10,7 @@ It allows transfers to be made between the active deposit accounts that a custom
 
 ### Preview
 
- <img src="/assets/img/dynamic/experiences/retail/transfer.jpg" style="border: 1px solid #EEE; margin-top: 40px; max-width:600px;"> 
+<img src="/assets/img/dynamic/experiences/retail/transfer.jpg" style="border: 1px solid #EEE; margin-top: 40px; max-width:600px;">
 
 ### Installation
 
