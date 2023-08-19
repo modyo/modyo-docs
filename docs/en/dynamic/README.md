@@ -44,7 +44,7 @@ The experience templates present in the framework have been designed to be compa
 
 
 ## Installation
-First things first. To start using Dynamic Framework, we recommend [creating a test environment] (https://www.modyo.com/get-started) (sandbox) in Modyo. Once you familiarize yourself with the basic concepts of the platform, you're ready to go.
+First things first. To start using Dynamic Framework, we recommend [creating a test environment](https://www.modyo.com/get-started) (sandbox) in Modyo. Once you familiarize yourself with the basic concepts of the platform, you're ready to go.
 
 The next step is to install the Modyo CLI. To do this, you must execute the following command:
 
