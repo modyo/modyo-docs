@@ -117,7 +117,7 @@ By using content spaces in conjunction with content pages, a user experience ver
 :::
 
 #### Using Team Review
-The [team review](/en/platform/core/key-concepts.md #revision -in-team) or team review is a feature of the Modyo platform that allows you to configure in a simple and flexible way who will be the users who will have to review something prior to its publication. Users of the review team will be able to preview the change or content at any time and make comments to correct things that don't seem to them. From the configuration of the content spaces and the sites, you can access the team review menu.
+The [team review](/en/platform/core/key-concepts.md#team-review) or team review is a feature of the Modyo platform that allows you to configure in a simple and flexible way who will be the users who will have to review something prior to its publication. Users of the review team will be able to preview the change or content at any time and make comments to correct things that don't seem to them. From the configuration of the content spaces and the sites, you can access the team review menu.
 
 The use of team review is highly recommended in scenarios of public sites where you want to maintain the maximum possible agility in publishing, but with minimal approval controls to make simple revisions.
 
