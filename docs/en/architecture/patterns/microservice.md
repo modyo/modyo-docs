@@ -34,7 +34,7 @@ With a microservices architecture, an application is built with independent comp
 
 ### How do you implement microservices with Modyo?
 
-[Modyo Connect] (/es/connect) allows the development and deployment of microservices in the cloud on its [container] platform (/es/connect/components/infrastructure.md #contenedores). To do this, you must have a [code repository] (/es/connect/components/development.md #repositorio -de-code) and its [continuous integration] processes (/en/connect/components/development.md #integracion -continuous) active.
+[Modyo Connect](/en/connect) allows the development and deployment of microservices in the cloud on its [container](/en/connect/components/infrastructure.md#conteiners) platform. To do this, you must have a [code repository](/en/connect/components/development.md#code-repository) and its [continuous integration](/en/connect/components/development.md#continuous-) processes active.
 
 Microservices developed in Modyo Connect have the ability to scale horizontally by automatically increasing the number of instances when required and replacing those that present a problem. In addition, microservices can be deployed over multiple regions and availability zones to ensure resiliency to infrastructure failures.
 
@@ -43,7 +43,7 @@ Microservices developed in Modyo Connect have the ability to scale horizontally 
 Here are some considerations to keep in mind when developing microservices on Modyo Connect.
 
 - **Spring Boot:** Framework used for development
-- **Modyo Commons Library: ** Support library for common tasks such as error management, log records,
+- **Modyo Commons Library:** Support library for common tasks such as error management, log records,
   authentication, etc.
 - **Swagger:** Standard for the definition and publication of APIs in API Gateway
 - **Code structure and style: ** The use of the [Spring Boot] initializer (https://start.spring.io) is recommended
