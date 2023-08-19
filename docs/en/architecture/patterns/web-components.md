@@ -10,7 +10,7 @@ Web components consist of three main technologies:
 
 - **Custom Elements:** Allows the creation of custom HTML elements. These elements can have their own functionality and behavior defined in JavaScript.
 - **Shadow DOM:** Provides an encapsulation scope for the styles and structure of a component. The Shadow DOM allows the styles and internal elements of a component to not affect or be affected by the rest of the page.
-- **HTML Templates: ** They allow you to define fragments of HTML code that can be cloned and used multiple times. Templates are used to define the initial structure of a component.
+- **HTML Templates:** They allow you to define fragments of HTML code that can be cloned and used multiple times. Templates are used to define the initial structure of a component.
 
 By combining these technologies, web components offer the ability to create custom components with their own behavior and appearance, which can be used in different parts of a web application or even in different projects.
 
