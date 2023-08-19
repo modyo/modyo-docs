@@ -8,7 +8,7 @@ Developing modern user experiences can be challenging. The heterogeneity of tool
 
 ### What is a micro frontend?
 
-According to the [official definition] (https://micro-frontends.org), a micro frontend is the extension of the concept of [microservices] (microservice.md) to the frontend. Micro frontends seek to generate a modular architecture in scenarios that would otherwise become frontend monoliths, such as Single-Page Applications (SPAs).
+According to the [official definition](https://micro-frontends.org), a micro frontend is the extension of the concept of [microservices](microservice.md) to the frontend. Micro frontends seek to generate a modular architecture in scenarios that would otherwise become frontend monoliths, such as Single-Page Applications (SPAs).
 
 Micro frontends give teams the ability to work with more autonomy, since they operate with a responsibility limited to their context, which forces them to define operating contracts among themselves, without requiring that they be implemented with the same technology.
 
