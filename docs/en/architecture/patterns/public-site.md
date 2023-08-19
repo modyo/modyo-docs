@@ -50,7 +50,7 @@ On the other hand, snippets are a very convenient way to organize source codes u
 
 Snippets make it possible to modularize and reuse functions, allowing complex functionalities to be broken down into simpler ones. Snippets are rendered dynamically when the page is rendered.
 
-:: :warning Recursion and performance
+:::warning Recursion and performance
 A common mistake when using snippets is to recursively invoke circular references, that is, to call themselves. In this case, the platform will cut off the execution of the fragment rendering to avoid saturating system resources. Another common problem could be the excess of snippets within a site, since use involves a bit of additional processing that, when added together, could slow down the page load.
 :::
 
