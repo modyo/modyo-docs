@@ -59,7 +59,7 @@ A common mistake when using snippets is to recursively invoke circular reference
 
 The widget builder is a tool within the Modyo administration console that, like the template editor, allows you to take control of the entire development cycle of the widget, including its preview, versioning and deployment.
 
-Widgets, together with the use of snippet and its builder, are an excellent way to work with low or medium complexity functionality, in which the use of Javascript is not intensive. In the case of public places, they are the most recommended way to work. In more complex scenarios, the use of [micro frontends] (/es/architecture/patterns/micro-frontend) is recommended.
+Widgets, together with the use of snippet and its builder, are an excellent way to work with low or medium complexity functionality, in which the use of Javascript is not intensive. In the case of public places, they are the most recommended way to work. In more complex scenarios, the use of [micro frontends](/en/architecture/patterns/micro-frontend) is recommended.
 
 #### Using Micro Frontends
 [micro frontends](/en/architecture/patterns/micro-frontend) are a special type of widget that supports a more sophisticated workflow, in which code is developed from outside the platform and “pushed” to it by means of a command line agent called Modyo CLI. The micro frontends are built statically prior to their upload to Modo, which allows the use of advanced libraries and frameworks, in addition to allowing the incorporation of static code review flows for its quality and security.
