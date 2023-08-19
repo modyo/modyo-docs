@@ -4,7 +4,7 @@ search: true
 
 # Components
 
-Web components are a standard web technology that allows the creation of reusable and customizable elements for web applications. The Dynamic Framework web components are implemented with the help of [Stencil] (https://stenciljs.com/).
+Web components are a standard web technology that allows the creation of reusable and customizable elements for web applications. The Dynamic Framework web components are implemented with the help of [Stencil](https://stenciljs.com/).
 
 
 ### Stencil
