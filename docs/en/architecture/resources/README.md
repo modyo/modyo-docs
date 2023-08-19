@@ -10,7 +10,7 @@ Modyo's [Learning Paths] (https://help.modyo.com) offer interactive and guided l
 
 ### Community
 
-Join the [Modyo Community] (https://www.modyo.com/community), where you'll find valuable learning resources, invitations to exclusive events, and the unconditional support of our experts to answer any questions you may have about the platform.
+Join the [Modyo Community](https://www.modyo.com/community), where you'll find valuable learning resources, invitations to exclusive events, and the unconditional support of our experts to answer any questions you may have about the platform.
 
 ### Official Documentation
 
