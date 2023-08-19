@@ -17,7 +17,7 @@ Benefits of using an SSO:
 
 SSO simplifies the login process for users, improves usability, and reduces the burden of remembering multiple sets of credentials. It also helps improve security, as service providers can rely on the authentication performed by the centralized identity provider, which usually has stronger security controls.
 
-:: :danger Security
+:::danger Security
 It's important to note that while SSO has many benefits, it can also present risks if it's not implemented correctly. For example, if a user's SSO credentials are compromised, the attacker would potentially have access to all the applications that the user has access to. Therefore, it is critical to implement robust security measures, such as two-factor authentication and strong password policies.
 :::
 
