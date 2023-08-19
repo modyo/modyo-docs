@@ -214,7 +214,7 @@ To implement branding with Modyo, you must first define the business objectives 
 
 
 ### Performance
-[performance] (/en/architecture/resources/web-performance) is one of the most important requirements to consider when implementing a public site, not only for a good user experience, but also to improve search engine rankings and conversion rates within the site.
+[performance](/en/architecture/resources/web-performance) is one of the most important requirements to consider when implementing a public site, not only for a good user experience, but also to improve search engine rankings and conversion rates within the site.
 
 The performance of a website is affected by multiple factors, some of which are beyond the control of the implementing party, such as connectivity issues or problems with the visitor's device. Other factors will be the responsibility of the implementer, including those related to the complexity of rendering the page, which is mainly affected by Javascript running from the client side, the use of images that are not optimized in weight and dimensions, Web servers far from the user, among many others.
 
