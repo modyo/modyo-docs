@@ -16,7 +16,7 @@ Micro frontends give teams the ability to work with more autonomy, since they op
 
 - **Being technology agnostic:** Each team can work with different technologies or versions, since micro frontends don't depend on anything on each other. For example, in the same Web application, a micro frontends can be developed in React and another in Angular.
 - **Isolate computer code:** Standalone, standalone applications that don't share things with each other. The codes are independent on each computer and are versioned separately.
-- **Native APIs: ** Micro frontends seek to favor native browser functions over custom APIs. For example, using native geolocation controls instead of custom development.
+- **Native APIs:** Micro frontends seek to favor native browser functions over custom APIs. For example, using native geolocation controls instead of custom development.
 - **Build a resilient site: ** In the event that a micro frontend fails, its state doesn't contaminate the others, as they load asynchronously and independently.
 
 #### Benefits
