@@ -69,6 +69,6 @@ A variant of this first scenario could be the outsourcing of the design system t
 
 A second design system use case applies when working with [private sites] (/en/architecture/patterns/private-site). Although the technique explained above applies in the same way here, in the case of more sophisticated private sites within Modyo, [micro frontends] (/es/architecture/patterns/micro-frontend) will probably be used. In the case of micro frontends, the implementation of the design system can be implemented directly within the component, injecting the definitions statically or at “build time”, through versioned libraries of the design system that must live within an intermediate repository. These libraries are imported as a dependency within the micro frontend and are packaged together with it, allowing each micro frontend to have different versions of the library, adapting changes to it progressively.
 
-:: :tip Hybrid technique
+:::tip Hybrid technique
 A good design system could be packaged in different ways, considering a dynamic and a static injection library, reusing code at a higher level and generating ubiquitous artifacts according to the needs of the development teams.
 :::
