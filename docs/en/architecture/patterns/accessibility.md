@@ -22,8 +22,8 @@ Web accessibility is a fundamental aspect to ensure inclusion and equal access t
 
 Web accessibility is measured using different techniques and evaluations that focus on verifying whether a website or application meets established accessibility standards and guidelines. Some of the most common ways to measure web accessibility include the following:
 
-- **Manual evaluation: ** This consists of manually reviewing the website or application to identify possible accessibility barriers. This involves verifying the structure of the content, the appropriate tags, contrast, navigability, the availability of alternatives for non-textual content, among other key aspects.
-- **Automatic evaluation tools: ** There are automated tools that analyze the code and content of a website for accessibility issues. These tools can detect missing or incorrect elements, provide recommendations, and generate reports on the level of accessibility of the site.
+- **Manual evaluation:** This consists of manually reviewing the website or application to identify possible accessibility barriers. This involves verifying the structure of the content, the appropriate tags, contrast, navigability, the availability of alternatives for non-textual content, among other key aspects.
+- **Automatic evaluation tools:** There are automated tools that analyze the code and content of a website for accessibility issues. These tools can detect missing or incorrect elements, provide recommendations, and generate reports on the level of accessibility of the site.
 - **Testing with real users: ** Involves involving people with disabilities or limitations to test and evaluate the accessibility of the website. Real users can provide valuable feedback on the barriers they encounter when interacting with the site and help identify areas for improvement.
 - **Compliance with standards and guidelines: ** It is evaluated if the website complies with established accessibility standards and guidelines, such as the W3C Web Content Accessibility Guidelines (WCAG). These guidelines provide specific criteria and recommendations for achieving web accessibility.
 
