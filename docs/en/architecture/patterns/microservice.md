@@ -74,8 +74,8 @@ The hexagonal architecture, also known as the Ports and Adapters Architecture, i
 
 The hexagonal architecture is made up of three main layers:
 
-- **Domain Layer: ** Contains the business logic of the application and represents the core of the architecture. This layer is independent of the user interface and the infrastructure layer.
-- **Infrastructure Adapter Layer: ** Contains the adapters that connect the domain layer to the infrastructure layers. Adapters are responsible for transforming data between domain layer formats and infrastructure-specific formats (for example, databases, web services, etc.).
+- **Domain Layer:** Contains the business logic of the application and represents the core of the architecture. This layer is independent of the user interface and the infrastructure layer.
+- **Infrastructure Adapter Layer:** Contains the adapters that connect the domain layer to the infrastructure layers. Adapters are responsible for transforming data between domain layer formats and infrastructure-specific formats (for example, databases, web services, etc.).
 - **Infrastructure Layer: ** Contains the specific components of the infrastructure that are used in the application, such as databases, web services, file systems, etc.
 
 The hexagonal architecture has several benefits, including:
