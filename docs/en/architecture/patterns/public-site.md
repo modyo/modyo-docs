@@ -236,7 +236,7 @@ Finally, among the most important requirements that every public site must consi
 Within a public site, a small amount of user information is managed, but that does not mean that requirements must be met such as:
 - **Cookie Banners: ** These are banners that present the user with the option to disable the tracking of certain cookies within the site, completely or individually. The banner must be able to detail the reason for each cookie that you want to install in the user's browser.
 - **Cookie Policy: ** Corresponds to the policy maintained by the site on the type of cookies used and their purpose, in addition to what could eventually happen to the user's experience if they do not accept them. The cookie policy is generally accepted in the cookie banner.
-- **Privacy Policy: ** Corresponds to the organization's policy regarding the privacy of user data within the context of the site. If the public site is the prelude to a private or transactional system, this policy can have a scope that fully covers the system.
+- **Privacy Policy:** Corresponds to the organization's policy regarding the privacy of user data within the context of the site. If the public site is the prelude to a private or transactional system, this policy can have a scope that fully covers the system.
 - **Consent management:** This is a matter of diligently storing the consents derived from any acceptance of conditions by the user. Consent records must be stored for a period of time, depending on the regulations in force in each country.
 
 ### Other requirements
