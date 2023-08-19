@@ -16,7 +16,7 @@ In addition, it has a panel for quick transfers to contacts, which redirects to 
 
 ### Installation 
 
-To comment on working with this template, run the following command from the Modyo CLI:
+To start working with this template, run the following Modyo CLI command:
 
 ```bash
 modyo-cli get dynamic-retail-dashboard-template
