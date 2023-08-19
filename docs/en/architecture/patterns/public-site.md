@@ -143,7 +143,7 @@ The use of stages allows obtaining separate and isolated environments to build, 
 The stages will be able to define certain configurations independently, such as site variables, which will allow some behaviors to be altered between one environment and another, for example the URL of an API that displays information on the site. When stages are used in conjunction with content spaces, and there is some degree of coupling between the two, the recommendation is to clone the space and make changes to the copy. Then, when the site is promoted to production, apply the same changes to the original content space.
 
 #### Using Design Systems
-Modyo has different ways of implementing [design systems] (/es/architecture/patterns/design-system), which vary in complexity depending on the scenario in which they are to be applied.
+Modyo has different ways of implementing [design systems](/en/architecture/patterns/design-system), which vary in complexity depending on the scenario in which they are to be applied.
 
 In the case of a public site, the design system can be implemented without any problem using its simplest forms, such as libraries or CSS frameworks that incorporate consistent rules for all the elements that compose it. Sites created within Modyo use [Bootstrap](https://getbootstrap.com) as the default CSS framework, on which customizations can be made to all the variables enabled for this purpose.
 
