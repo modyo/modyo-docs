@@ -254,8 +254,6 @@ module.exports = {
                           title: "Resources",
                           collapsable: true,
                           children: [
-                              "/en/connect/resources/microfrontends",
-                              "/en/connect/resources/microservices",
                               "/en/connect/resources/mrus",
                               "/en/connect/resources/faq",
                           ],
@@ -337,7 +335,6 @@ module.exports = {
                       text: "Connect",
                       link: "/es/connect/"
                   },
-                  // { text: "Dynamic", link: "/es/dynamic/" },
                   {
                       text: "Modyo",
                       link: "https://es.modyo.com"
@@ -538,8 +535,6 @@ module.exports = {
                           title: "Recursos",
                           collapsable: true,
                           children: [
-                              "/es/connect/resources/microfrontends",
-                              "/es/connect/resources/microservices",
                               "/es/connect/resources/mrus",
                               "/es/connect/resources/faq",
                           ],
