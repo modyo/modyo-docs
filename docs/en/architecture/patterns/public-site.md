@@ -55,7 +55,7 @@ A common mistake when using snippets is to recursively invoke circular reference
 :::
 
 #### Using Widgets
-[widgets] (/en/platform/channels/widgets) are one of the most organized ways within Modyo to modularize business functionality. Widgets allow you to package HTML, CSS and Javascript code, which are modified and deployed together, without affecting the rest of the site.
+[widgets](/en/platform/channels/widgets) are one of the most organized ways within Modyo to modularize business functionality. Widgets allow you to package HTML, CSS and Javascript code, which are modified and deployed together, without affecting the rest of the site.
 
 The widget builder is a tool within the Modyo administration console that, like the template editor, allows you to take control of the entire development cycle of the widget, including its preview, versioning and deployment.
 
