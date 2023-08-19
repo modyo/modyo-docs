@@ -15,7 +15,7 @@ The Static Site Generation process involves the following steps:
 Advantages of the SSG:
 
 - **Fast performance:** By serving pre-generated static HTML pages, pre-generated static sites have fast performance and reduced load time, as they do not require real-time processing on the server.
-- **Improved security: ** By eliminating the need for a run-time application server, static sites reduce the attack surface and improve security by not allowing server-side code execution.
+- **Improved security:** By eliminating the need for a run-time application server, static sites reduce the attack surface and improve security by not allowing server-side code execution.
 - **Scalability and resiliency: ** Static sites can be easily served from a CDN (content delivery network), allowing for efficient global scalability and distribution. In addition, by not relying on dynamic resources, static sites can handle large volumes of traffic without degrading their performance.
 - **Ease of maintenance: ** By generating content in advance, the development and maintenance process is simplified, as changes to the content or structure of the site can be made without requiring server or database operations.
 
