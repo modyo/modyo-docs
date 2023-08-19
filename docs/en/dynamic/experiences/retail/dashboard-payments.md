@@ -13,6 +13,6 @@ The Payment Dashboard offers a centralized view of the different obligations a u
 
 ### Installation
 
-:: :warning Coming Soon
+:::warning Coming Soon
 This template is in its final stages of implementation and will be available soon.
 :::
