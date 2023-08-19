@@ -16,7 +16,7 @@ Disadvantages of the DDD:
 
 - **Complexity:** DDD can be complex and can require considerable time and effort to implement correctly. It may not be suitable for simpler applications or for teams with less experience in software design.
 - **Requires Domain Knowledge:** To effectively use DDD, developers need to have or acquire a good understanding of the business domain, which can be a challenge in some contexts.
-- **Not Suitable for All Applications: ** DDD is more useful in complex business applications. In applications with simple business logic, DDD overhead may not justify the benefits.
+- **Not Suitable for All Applications:** DDD is more useful in complex business applications. In applications with simple business logic, DDD overhead may not justify the benefits.
 
 Overall, DDD can be a valuable tool for developing high-quality software that aligns closely with a business's needs, but it's important to consider carefully whether it's the right approach for your particular situation.
 
