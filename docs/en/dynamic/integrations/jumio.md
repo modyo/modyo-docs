@@ -1,4 +1,8 @@
-# Jumio
+---
+search: true
+---
+
+# Jumio SDK
 
 Jumio is a financial technology (fintech) company that specializes in online identity verification solutions and document authentication services. Founded in 2010, Jumio has developed an artificial intelligence (AI) platform that allows companies to quickly and accurately verify the identity of their customers online.
 
