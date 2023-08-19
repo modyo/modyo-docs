@@ -9,7 +9,7 @@ This widget allows the approval of a previously requested consumer credit. The c
 
 ### Preview
 
- <img src="/assets/img/dynamic/experiences/retail/loan-approval.jpg" style="border: 1px solid #EEE; margin-top: 40px; max-width:600px;"> 
+<img src="/assets/img/dynamic/experiences/retail/loan-approval.jpg" style="border: 1px solid #EEE; margin-top: 40px; max-width:600px;">
 
 
 ### Installation
