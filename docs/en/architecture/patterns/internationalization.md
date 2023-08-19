@@ -12,7 +12,7 @@ Internationalization involves considering aspects such as:
 - **Date and time format:** Applications must be able to present dates and times in formats that are understandable and acceptable in different regions. This includes using different date formats, timestamps, and time zone options.
 - **Numerical and monetary format:** Numbering systems and currency symbols vary from country to country. Web applications must be able to adapt the way numbers and monetary values are displayed according to the cultural preferences of users.
 - **Character and encoding support:** Different languages use different character sets and encodings. Web applications must be able to correctly handle and display special characters and accented letters corresponding to different languages.
-- **Interface Design: ** The interface design must be flexible to adapt to different text lengths and grammatical structures. For example, languages written from right to left require a reverse interface design compared to languages written from left to right.
+- **Interface Design:** The interface design must be flexible to adapt to different text lengths and grammatical structures. For example, languages written from right to left require a reverse interface design compared to languages written from left to right.
 
 By applying internationalization practices in the development of web applications, the translation, localization and adaptation of the application to different languages and cultures is facilitated. This expands the reach of the application, allows it to reach wider audiences and improves the user experience by offering relevant content adapted to their local context.
 
