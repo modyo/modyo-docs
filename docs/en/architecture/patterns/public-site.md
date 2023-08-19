@@ -189,7 +189,7 @@ Another important topic when considering the search and indexing of content is p
 Modyo has different enablers that allow the incorporation of structural elements that facilitate indexing by these engines. Among the most used, we can mention:
 - Using dynamic meta tags on content pages
 - Use of general meta tags for the site, with the option to modify them in specific cases
-- Using [SSR] (/en/architecture/patterns/ssr) to ensure that search engines find what they need quickly, directly in the HTML (without the need to build content based on external APIs and Javascript)
+- Using [SSR](/en/architecture/patterns/ssr) to ensure that search engines find what they need quickly, directly in the HTML (without the need to build content based on external APIs and Javascript)
 - Performance of public sites
 
 :::tip Modyo Experts
