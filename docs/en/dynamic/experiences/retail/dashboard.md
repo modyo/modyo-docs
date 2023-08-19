@@ -11,7 +11,7 @@ In addition, it has a panel for quick transfers to contacts, which redirects to 
 
 ### Preview
 
- <img src="/assets/img/dynamic/experiences/retail/dashboard.jpg" style="border: 1px solid #EEE; margin-top: 40px; max-width:600px;"> 
+<img src="/assets/img/dynamic/experiences/retail/dashboard.jpg" style="border: 1px solid #EEE; margin-top: 40px; max-width:600px;">
 
 
 ### Installation 
