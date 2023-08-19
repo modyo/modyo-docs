@@ -21,7 +21,7 @@ With a microservices architecture, an application is built with independent comp
 #### Features
 
 - **Autonomous:** Each component service in a microservices architecture can be developed, implemented, operated, and scaled without affecting the operation of other services. Services don't need to share any of their code or implementations with other services. Any communication between individual components occurs through well-defined APIs.
-- **Specialized: ** Each service is designed for a set of capabilities and focuses on solving a specific problem. If developers contribute more code to a service over time and the service becomes more complex, it can be broken down into smaller services.
+- **Specialized:** Each service is designed for a set of capabilities and focuses on solving a specific problem. If developers contribute more code to a service over time and the service becomes more complex, it can be broken down into smaller services.
 
 #### Benefits
 
