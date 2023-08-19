@@ -192,7 +192,7 @@ Modyo has different enablers that allow the incorporation of structural elements
 - Using [SSR] (/en/architecture/patterns/ssr) to ensure that search engines find what they need quickly, directly in the HTML (without the need to build content based on external APIs and Javascript)
 - Performance of public sites
 
-:: :tip Modyo Experts
+:::tip Modyo Experts
 Search engine optimization can be a very relevant topic for meeting business objectives, and at the same time quite complex to address. Modyo offers professional services with SEO experts who can help define and implement strategies to maximize results. If you want to receive more information, contact a Modyo sales or customer executive.
 :::
 
