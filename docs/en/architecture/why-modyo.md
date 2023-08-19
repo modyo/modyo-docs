@@ -4,7 +4,7 @@ search: true
 
 # Why use Modyo?
 
-[Modyo] (https://www.modyo.com) is a component development platform that allows you to create, manage and customize websites and web applications quickly and efficiently. With a balanced approach between ease of use and flexibility, Modyo provides tools for creating content, customizing appearance and functionality, and centralized management of multiple sites and applications. Modyo gives companies the ability to create high-quality digital products and adapt to changing business needs. There are several reasons why someone might consider using Modyo as a digital development platform, some of which we explain below.
+[Modyo](https://www.modyo.com) is a component development platform that allows you to create, manage and customize websites and web applications quickly and efficiently. With a balanced approach between ease of use and flexibility, Modyo provides tools for creating content, customizing appearance and functionality, and centralized management of multiple sites and applications. Modyo gives companies the ability to create high-quality digital products and adapt to changing business needs. There are several reasons why someone might consider using Modyo as a digital development platform, some of which we explain below.
 
 ### All in one place
 
