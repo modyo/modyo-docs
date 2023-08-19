@@ -26,7 +26,7 @@ This architecture represents several advantages compared to a monolithic one, si
 
 In addition, the decoupled architecture based on micro frontends and microservices also allows for greater independence between development teams, as each team can focus on its specific service or component without having to worry about the rest of the system. This makes collaboration easier and accelerates the development process.
 
-To model micro frontends and microservices from a business perspective, Modyo recommends using the [Domain Driven Design (DDD)] technique (/es/architecture/patterns/ddd).
+To model micro frontends and microservices from a business perspective, Modyo recommends using the [Domain Driven Design (DDD)](/en/architecture/patterns/ddd) technique.
 
 
 ### Modyo Connect
