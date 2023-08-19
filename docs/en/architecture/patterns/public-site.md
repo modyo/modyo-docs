@@ -31,7 +31,7 @@ Modyo has a multi-site and multi-organization architecture, which can be used to
 
 They are usually separated by independent subsidiary or subsidiary organizations that do not share any kind of administration between their sites, creating implementation silos that are not related in any logical way, but that do share the physical infrastructure of the platform.
 
-:: :warning Organizations and licensing
+:::warning Organizations and licensing
 When considering the use of organizations, the limits allowed by the subscribed license must be taken into account. The maximum limit of organizations can always be extended, after commercial validation.
 :::
 
