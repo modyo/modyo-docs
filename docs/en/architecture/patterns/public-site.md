@@ -112,7 +112,7 @@ Roles and groups are defined at the organization level, and can then be assigned
 #### Multiple content spaces
 The platform offers a hybrid content management environment, in which content managed within a space can be accessed headlessly through the API, benefiting from the maximum level of decoupling, or through the use of content pages, a special type of page that is automatically integrated with the configured space and is available within each site.
 
-:: :tip Traditional CMS experience 
+:::tip Traditional CMS experience 
 By using content spaces in conjunction with content pages, a user experience very similar to that of a traditional CMS is achieved, in which each content is linked to a representation. In addition to this, in Modyo, the same content can be displayed on more than one page, in different ways, allowing it to be previewed on the page chosen by the editor user.
 :::
 
