@@ -128,7 +128,7 @@ To work with previous environments separate from the normal flow of changes to p
 
 Another way of working with previous, but virtualized environments within the same platform corresponds to the use of stages, as will be seen in the next section.
 
-:: :tip Testing new versions
+:::tip Testing new versions
 Modyo recommends the use of physical environments for testing new versions of the platform, where the risk of generating compatibility will have a minor impact. 
 :::
 
