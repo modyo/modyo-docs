@@ -10,7 +10,7 @@ To use, you must send the `ID` of the product to be paid in the URL with the fol
 
 ### Preview
 
- <img src="/assets/img/dynamic/experiences/retail/pay-debt.jpg" style="border: 1px solid #EEE; margin-top: 40px; max-width:600px;"> 
+<img src="/assets/img/dynamic/experiences/retail/pay-debt.jpg" style="border: 1px solid #EEE; margin-top: 40px; max-width:600px;">
 
 
 ### Installation
