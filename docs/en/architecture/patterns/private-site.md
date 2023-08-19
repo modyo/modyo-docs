@@ -45,7 +45,7 @@ In working with private sites, we can find similarities that are shared with [pu
 
 ### Structure and Modularity
 #### Micro frontends and Microservices
-The amount of functionality to be implemented within an application will depend on the business problem to be solved, which is why it is especially important to use techniques such as [Domain Driven Design (DDD)] (/es/architecture/patterns/ddd) in order to determine the best structure and separation of high-level modules such as pages and micro frontends.
+The amount of functionality to be implemented within an application will depend on the business problem to be solved, which is why it is especially important to use techniques such as [Domain Driven Design (DDD)](/en/architecture/patterns/ddd) in order to determine the best structure and separation of high-level modules such as pages and micro frontends.
 
 #### Using Javascript Frameworks
 
