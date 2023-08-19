@@ -4,7 +4,7 @@ search: true
 
 # Release Notes
 
-:: :warning Experimental version
+:::warning Experimental version
 Dynamic Framework is still in an experimental stage on which we are capturing feedback from its first user groups. The release of the first official version is scheduled for Q4 2023.
 :::
 
