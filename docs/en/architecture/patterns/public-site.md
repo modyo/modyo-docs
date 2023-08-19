@@ -200,8 +200,8 @@ Search engine optimization can be a very relevant topic for meeting business obj
 ### Analytics
 Web analytics, from the point of view of marketing teams, is possibly the most important point to consider when implementing a public site, for the simple reason that it is the only way to measure that the rest of the site's attributes work and can be met with business objectives.
 
-:: :tip Integration
-For the purpose of analytics on a public site, Modyo does not offer within its platform any type of own tool for taking public traffic metrics. This is because there are already established players in the industry, who also offer excellent forms of integration, such as [Google Analytics] (https://marketingplatform.google.com).
+:::tip Integration
+For the purpose of analytics on a public site, Modyo does not offer within its platform any type of own tool for taking public traffic metrics. This is because there are already established players in the industry, who also offer excellent forms of integration, such as [Google Analytics](https://marketingplatform.google.com).
 :::
 
 #### Marcaje
