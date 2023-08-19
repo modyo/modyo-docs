@@ -31,8 +31,8 @@ Micro frontends give teams the ability to work with more autonomy, since they op
 
 The work with micro frontends is done using open tools and frameworks to facilitate the development process. Once the component has been created, it is deployed directly to the Modyo Platform using the Modyo Command Line Interface or CLI.
 
-:: :tip Modyo Platform
-Modyo Connect is not required for the development and deployment of micro frontends within the Modyo Platform, but it does help with the [code repository] (/es/connect/components/development.md #repositorio -code) and [continuous integration] automations (/es/connect/components/development.md #integracion -continuous) required for an efficient workflow.
+:::tip Modyo Platform
+Modyo Connect is not required for the development and deployment of micro frontends within the Modyo Platform, but it does help with the [code repository](/en/connect/components/development.md#code-repository) and [continuous integration](/en/connect/components/development.md#continuous-integration) automations required for an efficient workflow.
 :::
 
 #### General considerations
