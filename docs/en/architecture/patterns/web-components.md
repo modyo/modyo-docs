@@ -38,6 +38,6 @@ Within Modyo, the most natural way to adopt Web Components occurs in the develop
 With respect to simpler Web sites or applications that are managed entirely within Modyo, the use of Web Components could be more restricted, since by acting on static HTML definitions processed [from the server side (SSR)](/en/architecture/patterns/ssr), injecting the libraries mentioned above will not be as effective and will require some tricks to make them work, with the risk of generating sites that are difficult to maintain or with a more complex architecture than the problem they seek to solve. However, using the platform's SSR capabilities, you can create reusable elements using Liquid Snippets and variables, allowing you to solve common problems, in a more efficient and cleaner way to maintain.
 
 :::tip Dynamic Framework
-Modyo uses Web Components in its [Dynamic] development framework (/es/dynamic), using Stencil for the definition of components and React for their implementation, together with other libraries that accelerate and facilitate their adoption.
+Modyo uses Web Components in its [Dynamic](/en/dynamic) development framework, using Stencil for the definition of components and React for their implementation, together with other libraries that accelerate and facilitate their adoption.
 :::
 
