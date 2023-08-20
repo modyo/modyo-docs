@@ -3,7 +3,8 @@ search: true
 ---
 
 # Development
-The development components comprise all the access and tools required by a team of developers to securely collaborate and work on [microfrontends](../resources/microfrontends.md) and [microservices](../resources/microservices.md) initiatives.
+
+Development components comprise all the accesses and tools required by a team of developers to collaborate and work securely on [micro frontends](/en/architecture/patterns/micro-frontend) and [microservices](/en/architecture/patterns/microservice) initiatives.
 
 ## Developer Access
 Developer Access is the starting point for starting to use Modyo Connect services. Once enabled, the developer will be able to interact with the [created repositories](#code-repository) in the version control system and the [Modyo Support Center](https://support.modyo.com) to activate the rest of the services. In addition, developer access grants permissions to access cloud systems, metrics, monitoring and logs.
@@ -37,10 +38,10 @@ The activation of a Code Repository is done by means of a request ticket in the 
 ## Continuous Integration
 The continuous integration configuration is used to automate common processes within the software development cycle. Within these processes we find mainly code inspection, dependency review, artifact packaging, deployments, among others.
 
-Modyo uses the continuous integration systems of GitHub Enterprise and Amazon. All activities related to the development cycle, such as inspections, reviews or generation of intermediate artifacts are performed on GitHub Actions. All automations related to [microfrontends](../resources/microfrontends.md), such as deployment to the Modyo platform using the Modyo CLI, are also performed on GitHub Actions. Activities related to the generation of container-based artifacts and their deployment on AWS ECS are performed using AWS CodePipeline.
+Modyo uses GitHub Enterprise and Amazon's continuous integration systems. All activities related to the development cycle, such as inspections, revisions or the generation of intermediate artifacts, are performed on GitHub Actions. All automations related to [micro frontends](/en/architecture/patterns/micro-frontend) are also performed on GitHub Actions, such as deployment to the Modyo platform using the Modyo CLI. Activities related to the generation of container-based artifacts and their deployment on AWS ECS are performed using AWS CodePipeline.
 
 :::warning Important
-Integrations based on AWS CodePipeline will be migrated to GitHub Actions during the first half of 2023.
+AWS CodePipeline-based integrations will be migrated to GitHub Actions during the first half of 2023.
 :::
 
 ### Steps to activate
