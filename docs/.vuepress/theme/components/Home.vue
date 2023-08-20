@@ -153,17 +153,11 @@
           <div class="col-12 col-md-6">
             <div class="m-0 m-md-3">
               <h3 class="m-0 mb-3 w-100">Modyo 
-                <span class="text-primary">{{data.tutorials}}</span>
+                <span class="text-primary">{{data.architecture}}</span>
               </h3>
-              <h5 class="text-muted mt-0 mb-5">{{data.tutorialsText}}</h5>
+              <h5 class="text-muted mt-0 mb-5">{{data.architectureText}}</h5>
               <div class="a_arrow">
-                <a :href="data.tutorial1Url" class="text-dark">{{data.tutorial1Title}} <img
-                    src="https://cloud.modyocdn.com/uploads/320ed6bc-5f00-4203-af7f-7ba55f2294c1/original/mdi_arrow_right_alt.png"></a>
-                <a :href="data.tutorial2Url" class="text-dark">{{data.tutorial2Title}} <img
-                    src="https://cloud.modyocdn.com/uploads/320ed6bc-5f00-4203-af7f-7ba55f2294c1/original/mdi_arrow_right_alt.png"></a>
-                <a :href="data.tutorial3Url" class="text-dark">{{data.tutorial3Title}} <img
-                    src="https://cloud.modyocdn.com/uploads/320ed6bc-5f00-4203-af7f-7ba55f2294c1/original/mdi_arrow_right_alt.png"></a>
-                <a :href="data.tutorial4Url" class="text-dark">{{data.tutorial4Title}} <img
+                <a :href="data.architectureUrl" class="text-dark">{{data.architectureTitle}} <img
                     src="https://cloud.modyocdn.com/uploads/320ed6bc-5f00-4203-af7f-7ba55f2294c1/original/mdi_arrow_right_alt.png"></a>
               </div>
             </div>

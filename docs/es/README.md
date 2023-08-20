@@ -52,11 +52,11 @@ FirstSteps3Img: https://cloud.modyocdn.com/uploads/9b68c3ae-ca6e-4fce-8097-5c4a5
 FirstSteps3Url: /es/platform/key-concepts
 FirstSteps3Alt: Una lista de todos los conceptos y términos clave que usamos para la plataforma.
 
-FirstSteps4Title: Experiencias Financieras
-FirstSteps4Text: Modyo Dynamic catálogo que ofrece diferentes experiencias financieras a tus necesidades.
+FirstSteps4Title: Dynamic Framework
+FirstSteps4Text: Dynamic Framework te permite implementar diferentes experiencias financieras ajustadas a tus necesidades, de forma rápida y flexible.
 FirstSteps4Img: https://cloud.modyocdn.com/uploads/566b72a5-2c53-481f-a1b8-5f6bde01278a/original/Widget.png
 FirstSteps4Url: /es/dynamic/
-FirstSteps4Alt: Un catálogo que ofrece diferentes experiencias financieras a tus necesidades.
+FirstSteps4Alt: Dynamic Framework te permite implementar diferentes experiencias financieras ajustadas a tus necesidades, de forma rápida y flexible.
 
 
 FirstSteps5Title: Modyo Training
@@ -68,17 +68,11 @@ FirstSteps5Alt: Aprende acerca de Modyo y sus principales características. Revi
 search: Buscar en
 
 
-tutorials: Tutoriales
-tutorialsText: Conozce los diferentes aspectos de la plataforma a su propio ritmo.
+architecture: Arquitectura
+architectureText: Aprende sobre las técnicas y patrones avanzados de implementación de Modyo y su arquitectura de referencia.
 
-tutorial1Title: Creación y Publicación de Contenido
-tutorial1Url: /es/platform/tutorials/how-to-create-content.html
-tutorial2Title: Crear un Sitio básico
-tutorial2Url: /es/platform/tutorials/how-to-create-home.html
-tutorial3Title: Crear una Página de Contenido
-tutorial3Url: /es/platform/tutorials/how-to-create-a-content-page.html
-tutorial4Title: Crear un Sitio Privado
-tutorial4Url: /es/platform/tutorials/how-to-create-private-site.html
+architectureTitle: Visita nuestra guía de arquitectura
+architectureUrl: /es/architecture
 
 DontMiss: No te pierdas nada de
 DontMissText: Mantente actualizado sobre los nuevos lanzamientos y sepa hacia dónde vamos.

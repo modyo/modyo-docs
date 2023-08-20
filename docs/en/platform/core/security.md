@@ -6,97 +6,89 @@ tags:
 
 # Security
 
-At Modyo, everything related to security is very important to us. That's why we created this page that will guide you through everything you need to secure a Modyo installation. While our cloud solutions, Modyo Cloud and Enterprise Cloud, provide an excellent level of security by default, platform administrators can take additional protective measures to increase the security of their organizations. This guide presents the most important recommendations for achieving this.
+For Modyo, safety is a key priority. For this reason, we have developed this page that will serve as a comprehensive guide to ensure the secure installation of Modyo.
+
+Both Modyo Cloud and Enterprise Cloud, our cloud solutions, offer an excellent level of security by default. In addition, platform administrators have the ability to implement additional measures to strengthen the protection of their organizations.
+
+This guide presents the most relevant recommendations for achieving this goal.
 
 ## Password Policy
 
-These are the options available for setting a password policy for Modyo Platform:
+In this section, you can set the password security policy for team members. The available options are:
 
-- Minimum password length value: This number dictates the minimum number of characters a password must have. A password must be between 12 and 128 characters long.
-- Require at least one lowercase letter (a - z)
-- Require at least one capital letter (A - Z)
-- Require at least one non-alphanumeric character (! @ # $% ^ & * () _ + - = [] {} |)
+- **Minimum password length value**: This value determines the minimum length that a password must have, it must be between 12 and 128 characters.
+- **Require at least one lowercase letter (a - z) **: This option ensures that the password contains at least one lowercase letter.
+- **Require at least one capital letter (A - Z) **: This option ensures that the password contains at least one capital letter.
+- **Require at least one non-alphanumeric character (! @ # $% ^ & * () _ + - = [] {} |) **: This option requires that team members' passwords contain at least one of the specified special characters.
+
+When saving this configuration, existing users will have to comply with these conditions whenever they change their passwords.
 
 ## Session expiration policy
 
-Select a value in this option so that the platform automatically expires a session when it is inactive. You can select from these values:
+In this section you can configure how long a session will remain active.
 
-- 5 minutes
-- 10 minutes
-- 15 minutes
-- 20 minutes
-- 25 minutes
-- 30 minutes
-- 45 minutes
-- 1 hour
-- 1 hour 30 minutes
-- 2 hours
-- 4 hours
-- 8 hours
-- 16 hours
-- 1 days
-- 2 days
-- 3 days
-- 4 days
-- 5 days
-- 6 days
-- 1 weeks
-- 2 weeks
+**Session Expiration**: At the end of the selected time, Modyo automatically closes the user's session.
+
+**User inactivity period**: When a user is inactive, the session is automatically closed after the selected time has elapsed. Navigation, keyboard, and mouse actions are considered user activities. This option protects the user if they leave their workstation unattended.
 
 ## User inactivity period policy
 
-With this option, the platform automatically changes the status of a user to inactive. After a certain period of time without interaction with the platform, the user will no longer be able to log in. You can choose between these values:
+When this option is activated, and once the selected time has elapsed without user interaction on the platform, Modyo will automatically make a change in the user's status to _inactive_.
+
+Once the user is marked as inactive, they cannot log in. The default inactivity period is 90 days and you can change it to:
 
 - 30 days
-- 60 days
+- 90 days
 - 180 days
 - 360 days
 
-There is an additional checkbox that sends an activation email when the user is deactivated due to inactivity.
+If you check the box to send an email to a user when they are considered inactive, the user will receive an email notification. From this email, they will be able to reactivate their account.
 
-:::tip Note
-Administrators can change the status of a user between inactive and active with the "Login disabled for inactivity" checkbox. This can be found when modifying a user in the **Edit** tab inside **Teams**. With the checkbox enabled, the user will be inactive, and vice-versa with the checkbox disabled, the user will be active.
-:::
+:: :tip Tip
+Account owners can change a user's status between inactive and active using the “Login disabled due to inactivity” checkbox.
+
+You can locate this option when editing a user in the **Team** section, in the **Edit** tab. If you select the box, the user is marked as inactive and when it is deactivated, the user will be active.
+::
 
 ## HTTP access control (Cross-Origin Resource Sharing CORS)
 
-Activate Cross-Origin Resource Sharing (CORS) to be able to access Modyo resources from other websites.
+Enables the Cross-Origin Resource Sharing (CORS) functionality to allow access to Modyo resources from other websites.
 
-By default, custom domains for your sites are included once CORS is enabled. To give you access to external domains, type them separated by commas, for example `http://api.mydomain.com, http://mysubdomain.mydomain.com`. Wildcards are not allowed in this section.
+By default, your sites' custom domains are already included once CORS is activated. To give you access to external domains, type them separated by commas, for example `http://api.mydomain.com, http://mysubdomain.mydomain.com`. Wildcards or _wildcards_ are not allowed in this section.
 
 ## Content Delivery Token (JWT - JSON Web Token)
 
-This key or _secret_ is used by Modyo to sign users' JWTs in order to access [private content through the API](/en/platform/content/public-api-reference.html#private-content).
+This key or _secret_ is used by Modyo to sign user JWTs so that they can access [private content through the API] (/es/platform/content/public-api-reference.html #contenido -private).
 
-:::warning Attention
-Generating a new key will force all requests for private content to go through Modyo, since JWTs signed by Modyo with the old key will no longer be valid.
+:: :warning Attention
+If you generate a new key, all requests for private content must go through Modyo. This is because JWTs signed by Modyo with the old key will no longer be valid.
 :::
 
-The key or _secret_ has a specific duration in seconds that can be configured in the box below. By default, the duration is 1 hour (3600 seconds). It is not recommended to use a very short duration, as it could affect the performance of the platform.
+The key or _secret_ has a specified duration in seconds. You can set this time in the field provided; by default, the duration is one hour (3600 seconds). It is recommended to avoid a very short period of duration, as it may affect the performance of the platform.
 
 ## Two-Factor Authentication (2FA)
 
-Two-step authentication adds an extra layer of security to your account. Every time team members sign in, they'll need to enter both their password and a dynamic key provided by the Google Authenticator app from their phones.
+Two-step authentication adds a layer of security to your account and reduces the risk of unauthorized access. When activated, each time team members log in, they will have to enter their password and a dynamic key provided by the Google Authenticator application from their phones.
 
-Each team member will be able to enable two-step authentication from their profile, but as an administrator, you can also enforce two-step authentication for all team members.
+Each team member can activate two-step authentication from their profile. In addition, the administrator can force two-step authentication for all team members.
 
-By enforcing two-step authentication for team members, the next time a team member logs in, they will be required to set up their two-step authentication device. Once set up, they will need to sign in using their password and the code provided by _Google Authenticator_.
+By enabling mandatory two-step authentication for team members, the next time a member logs in, they will be required to set up their two-step authentication device. Once set up, you must log in using your password and the code provided by Google Authenticator.
 
-:::warning Warning
-On your mobile device, the **Set time zone automatically** option must remain enabled when using two-factor authentication.
+:: :warning Attention
+The **Set Time Zone Automatically Option** must be active when using two-factor authentication on your mobile device.
 :::
 
-### Enable two-factor authentication for a user 
+### Enable two-factor authentication for a user
 
-Neutralize the risk of compromised passwords using two-factor authentication.
+To enable two-factor authentication for a user and neutralize the risk of compromised passwords, follow these steps:
 
 1. In Modyo Platform, in the user menu, click **Profile**.
 2. In profile settings, in the top menu, click the 3 dots and click **Configure Authenticator**.
-3. On the screen that appears, scan the code using your mobile device to link your authenticator to Modyo Platform.
-- A new field will be added with the domain name, your user level, and your username. 
-4. Use the number combination that appears on your mobile phone in the password field and click **Save**.
+3. Scan the code that appears on the screen with your mobile device to link your authenticator to Modyo Platform.
+This adds a new field with the domain name, your user level, and your username.
+4. Enter the numbers that appear on your mobile phone in the password field and click **Save**.
 
-> If you already have two-factor authentication, the button will say **Delete authenticator**.
+Once you have two-factor authentication enabled, the button will say **Remove authenticator**.
 
 
 ### Delete Authenticator for a User
@@ -105,78 +97,71 @@ If the authenticator is lost or stolen, it will not be possible to access the ac
 
 1. In the side menu, expand **Settings** and click **Teams**.
 1. Click on the member's name.
-1. In the top bar, click on the more options button **... ** and select **Remove authenticator**.
+1. In the top bar, click on the more options button, represented by three dots, and select **Remove authenticator**.
 
-:::warning Warning
-If the option to force authentication is enabled, the next time the user attempts to log in, the user will need to initialize the authenticator first. When you have an active authenticator, the user must log in again.
+:: :warning Attention
+If you have activated the option to force authentication, the next time the user tries to log in, they will need to initialize the authenticator first. Once the authenticator is active, the user can proceed with the login process.
 :::
 
 ## Best Practices
 
 ### Important Concepts
 * **Limit access:** Reduce the chances of a malicious actor gaining access to the system.
-
-* **Containment:** The system must be configured in such a way as to minimize the amount of damage a bad actor may cause.
-
-* **Preparation and knowledge:** Maintain backups and procedures to be prepared in the event of a catastrophe.
-
-* **Trusted Sources:** Avoid deploying Widgets or code from unreliable sources. Ensure that all dependencies that are loaded into a site come from a trusted source.
+* **Containment: ** Configure the system in a way that minimizes possible damage if it is breached by a malicious actor.
+* **Preparation and knowledge: ** Maintain backups and procedures to be prepared in the event of potential disasters.
+* **Trusted sources: ** Avoid implementing widgets or code from untrustworthy sources. Ensure that all dependencies loaded on the site come from reliable sources.
 
 ### Local Vulnerabilities
-Ensure that the computer equipment of all platform administrator users is free of spyware, malware, or virus infections.
-
-Ensure access always comes from an up-to-date computer using reliable and up-to-date Internet browsers.
+* Make sure that the computers of all administrator users are free of spyware, malware, or viruses.
+* Make sure that access always comes from updated computers and through reliable and updated web browsers.
 
 ### Update Modyo Regularly
-We recommend updating Modyo periodically to ensure you are always on the last patch available. This will ensure that your installation has all security patches up to date. Security patches are performed in such a way that they can be applied without mostly affecting work computers (example: moving from 9.1.10 to 9.1.12).
+We recommend that you update Modyo regularly to ensure that your installation has the latest security fixes and that all security patches are up to date. These patches are designed to be applied without causing significant interruptions to the workflow, for example: moving from version 9.1.10 to 9.1.12.
 
-We recommend performing _upgrades_ of _releases_ older at least twice a year (example: moving from 9.1.14 to 9.2.2). By doing this you will be able to ensure that you are not only in the latest version with support, but also that you have the latest features.
+In addition, we recommend that you update major versions at least twice a year, moving, for example, from version 9.1.14 to 9.2.2. This will not only keep you in the latest supported version, but it will also provide you with the latest features and functionality.
 
 ### Set up a Strong Password in the Admin Panel
-The Admin Panel is Modyo's most powerful management tool. It is possible to take control of many of the most relevant configurations and actions in Modyo's operation, as well as providing an administrative gateway to all organizations defined within the platform. We recommend setting a strong password and rotating it regularly (example: after each important platform update).
+The Administration Panel is Modyo's most powerful management tool. Through it, you can have control over various configurations and actions that are fundamental to the operation of Modyo. In addition, it provides you with administrative access to all the organizations defined on the platform.
+
+We recommend that you set a secure password and change it regularly, for example, after every major platform update.
 
 ### Enable Transport Layer Security (TLS)
-Forcing connections to be TLS only in your installation ensures that all inbound and outbound traffic is encrypted. In addition, we recommend using only modern versions of the protocol, in particular versions 1.2 or 1.3.
+Forcing connections to be TLS only in your installation ensures that all incoming and outgoing traffic is encrypted. In addition, we recommend using only modern versions of the protocol, in particular versions 1.2 or 1.3.
 
 ### Differentiate Subdomains
-Subdomain differentiation is very important, as there are multiple places where Modyo supports HTML development. If this is not active, the HTML of sites developed on Modyo can become an attack vector that could impact other Modyo components via cross-site _scripting_.
+Differentiating subdomains is essential, since there are multiple places where Modyo supports HTML development. If not activated, the HTML of sites developed on Modyo can become an entry point for attacks that could affect other Modyo components through the cross-site scripting (XSS) technique.
 
 ### Review the Backup Processors
-Running backup processes on a regular basis is very important in a secure Modyo deployment. For Cloud and Enterprise Cloud, this is done automatically. In the case of Enterprise On Premise, it is the customer's operation team that is responsible for this activity.
+Running backup processes on a regular basis is very important in a secure Modyo implementation.
+
+In the case of Cloud and Enterprise Cloud, this is done automatically. For Enterprise On Premise, each customer's operations team is responsible for carrying out this activity.
 
 Modyo backups cover both the database and file shared directories, where static content is stored.
 
 ### Using an Exit Proxy Server
-Modyo may make communications to the Internet, with regard to the capabilities of identity providers or integration Webhooks. In order to control outbound communication, you must establish an outbound proxy or network NAT scheme where the source IPs of the communication are not exposed.
+Modyo can establish communications with the Internet, especially with regard to identity providers or integration Webhooks. To manage and control these outbound communications, it is essential to implement an outbound proxy server or to set up a Network Address Translation (NAT) scheme in which the source IP addresses are not exposed.
 
 ### Restrict Public Ports of Entry
-Modyo users will have to access through port 443 exclusively, behind a load balancer that distributes traffic to different instances of the platform. Between the load balancer and the platform instances, traffic can go through port 443 or 80 depending on the internal security of your network (example: ∑ networks that are isolated and protected such as Amazon AWS VPCs may not require internal encryption).
+Modyo users must access exclusively through port 443, behind a load balancer that distributes traffic to the different instances of the platform.
+
+Traffic between the load balancer and the platform instances can use ports 443 or 80, depending on the internal security of the network. For example, in isolated, protected networks such as Amazon AWS VPCs, internal traffic may not need to be encrypted.
 
 ### Activity logs
 
-The platform keeps a record of all actions taken by admin users within it, which can be reviewed within the “Activity Logs” section. We recommend reviewing these logs periodically to verify the correct behavior of users within the system. These activity logs are also available through the Modyo administrative API.
+The platform keeps a record of all actions performed by administrator users within it. You can review these logs in the “Activity Logs” section.
+
+We recommend that you review these logs periodically to verify the correct behavior of users within the system. Activity logs are also available through Modyo's administrative API.
 
 ### Review Administration Permissions
 
-Administrators of an organization or site have a high level of access to content and settings that must be private. Impersonating one of these administrators can pose a major security risk. That's why we recommend keeping a small and tightly controlled number of users with a general management role and ensuring that these users maintain additional levels of protection active as the second factor of authentication.
+The administrators of an organization or site have a high level of access to content and settings that must be private. Impersonating one of these administrators can pose a major security risk. For this reason, we recommend keeping a small and very controlled number of users with a general administration role and ensuring that these users keep additional levels of protection active, such as the second factor of authentication.
 
-Administrators can also create tokens for access to platform management APIs. These tokens are often used to automate common management tasks, it is important to ensure that they are only used within secure systems that ensure their protection.
-
-### Enable the Second Factor of Authentication
-
-Consider enabling the second authentication factor whenever your identity server allows it. If you use Modyo's credentials system, we recommend that you enable this protection. We strongly recommend enabling this functionality for better security posture.
-
-### Password policy
-
-This section will allow you to set the password security policy for team members. Within the options you can choose the following:
-
-* **Enforce minimum password length**: By default the minimum length required by Modyo is 8 characters, but if you require it, you can force the minimum length of team members' passwords to be longer.
-* **Require at least one lowercase letter (a - z)**: This option ensures that at least one lowercase letter exists within the team members' password.
-* **Require at least one capital letter (A - Z)**: This option ensures that at least one capital letter exists within the team members' password.
-* **Require at least one non-alphanumeric character (! @ # $ % ^ & * () _ + - = [] {} |)**: With this option you force your team members to use at least one of the special characters indicated in the list in their passwords.
-
-When saving this configuration, existing users will have to comply with these conditions whenever they change their passwords.
+In addition, administrators can generate tokens to access the platform's management APIs. These tokens are often used to automate common administrative tasks, so it is important to ensure that they are only used within secure systems that guarantee their protection.
 
 ## Report a vulnerability
 
-If you think you found a security vulnerability in Modyo, please help us by reporting the problem. Modyo has secure and confidential security incident reporting channels through our [support center](https://support.modyo.com/hc/en-us) or email <a href="mailto:security@modyo.com">security@modyo.com</a>.
+If you think you have identified a security vulnerability in Modyo, please help us by reporting the problem.
+
+Modyo provides secure and confidential channels for reporting security incidents through our [support center] (https://support.modyo.com/hc/es) or by sending an email to <a href="mailto:security@modyo.com"> security@modyo.com </a> .
+
+Your collaboration is critical to maintaining the integrity and security of the platform.

@@ -5,6 +5,193 @@ search: true
 # Notas del release
 
 ## 9.2
+### 9.2.45 - 17 de agosto de 2023
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Corrige problemas en el guardado de templates de correo, ahora templates antiguos se pueden volver a guardar, además los tags html ya no pierden sus atributos
+
+### 9.2.44 - 10 de agosto de 2023
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Corrige loop de redirecciones en logout entre reino e identity provider bajo ciertas circunstancias
+* Agrega rol de solo lectura en los reinos
+
+### 9.2.43 - 03 de agosto de 2023
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Corrige problema al guardar variables en widgets provenientes de Modyo CLI
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Mejoras en el listado de entradas de contenido, ahora las acciones en bulk se muestran según los elementos seleccionados
+* Mejoras en la validación de tipo de assets subidos a la plataforma
+
+### 9.2.42 - 28 de julio de 2023
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Corrige error en flujo de autenticación con identity providers 
+
+### 9.2.41 - 26 de julio de 2023
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Corrige problemas al mostrar el preview de un sitio público sin reino y con un custom domain configurado
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Mejoras en las campañas de correo
+* Mejora comportamiento de la URL post login de los reinos, ahora la URL queda como redirección por defecto y por una opción se puede forzar a llegar siempre a esa URL
+* Agrega FPay como medio de pago soportado
+* Mejoras en segmentos
+  
+
+### 9.2.40 - 14 de julio de 2023
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Mejoras en la validación de formulario anónimo
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+* Actualización de dependencias
+* Corregir migraciones para permitir que cliente migre a version actual
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Permitir publicar y despublicar entradas a pesar de que existan referencias nulas en versiones anteriores
+
+
+### 9.2.39 - 11 de julio de 2023
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Se solicita ingresar password antes de eliminar una cuenta de usuario
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Se corrige error en el flujo OAuth2
+
+### 9.2.38 - 07 de julio de 2023
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad.
+* Mejora la información mostrada en los logs de actividades
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Corrige problemas de acceso a la edición de headers de seguridad
+* Agrega el rol viewer a los miembros del equipo. Este rol incluso puede ver elementos a sicronizar o en un release.
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Agrega el rol viewer a los miembros del equipo.
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Agrega configuración de una página inicial post-login. Luego de un inicio de sesión exitoso en el reino se redirigirá a esta página.
+
+
+### 9.2.37 - 30 de junio de 2023
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad.
+* Mejoras en la configuración de politicas de expiración e inactividad.
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Agrega configuración de nuevos headers de seguridad, Cross-Origin-Embedder-Policy, Cross-Origin-Opener-Policy, Cross-Origin-Resource-Policy.
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Corrige problema al leer una notificacion en el profile, ahora se marca correctamente como leido.
+* Agrega nuevo parametro (redirect_to) en la url de login de un sitio para rederigir a una vista en particular o a algún sitio dentro de la organización.
+* Se modifica las campañas de correo, se reemplaza los multiples envios por el clonado de campaña para nuevos envios para mayor simplicidad en su gestión.
+
+
+### 9.2.36 - 19 de junio de 2023
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad.
+* Agrega valdiacióon de permisoos administradores a los endpoints de la doocumentación swagger del API.
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Corrige problema de diferencias vacias despues de sincronizar stages.
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Corrige problema de listado de spaces repetidos para usuarios en un grupo de permisos.
+* Corrige problema de publicacion de páginas cuando provienen de la sincronización de stages.
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Se valida correctamente el campo default email sender en las configuraciones del reino, ahora tampoco puede estar vacío.
+
+<Badge text="Insights" type="insights" vertical="middle"/>
+
+* Corrige valor inicial del filtro de fecha, ahora muestra correctamente el rango seleccionado.
+
+
+
+### 9.2.35 - 30 de mayo de 2023
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+* Corrije en sistema de permisos de los grupos de usuarios.
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Mejora la referencia de widgets entre stages, ahora no es necesario crear el widget en otros stages mediante la sincronización.
+* Corrije problemas en la búsqueda en los sitios con palabras con tilde.
+* Corrije diferencias en páginas, ahora se muestra la opción de rutas delegadas.
+* Agrega botón de inicio de sesión al previsualizar un widget.
+* Se limita la diferencias de widgets grandes o provenientes desde el CLI. Ahora muestran un mensaje informativo si existen diferencias.
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Agrega opción para habilitar/deshabilitar el uso de imágenes SVG
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Mejora la búsqueda en el listado de ordenes.
+* Mejora en la edición de los medios de pago.
+
+
+
+### 9.2.34 - 16 de mayo de 2023
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras en la visualización de tags en el selector cuando los valores son muy largos
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Mejoras en la búsqueda de sitios, ahora se contemplan las categorías en los links generados a páginas de contenido
+* Corrige error que evitaba despublicar paginas pase a no tener dependencias en un contexto con stages
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Agrega fecha de despublicación a la metadata de un contenido
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Corrige problemas de permisos en el acceso a la edición de formularios
+
+<Badge text="Insights" type="insights" vertical="middle"/>
+
+* Corrige problemas visuales y de métricas en los gráficos
+* Corrige problemas de acceso a la visualización de gráficos
+
 
 ### 9.2.33 - 05 de mayo de 2023
 
@@ -142,7 +329,7 @@ search: true
 <Badge text="Customers" type="customers" vertical="middle"/>
 
 * Se acepta parámetro <span v-pre>{{order.uuid}}</span> en el campo redirect_url al momento de crear una  orden de Payments
- 
+
 
 ### 9.2.24 - 20 de enero de 2023
 
@@ -161,27 +348,27 @@ search: true
 * Separación de Logs
 * Corrige botón "Revisar" en correos de Team Review
 * Se separaran visualmente el item archivado de los demás en los filtros de estados
-* Rutas password y signup dejan de responder a  extensiones que no correspondan 
+* Rutas password y signup dejan de responder a extensiones que no correspondan
 * Las cuentas de administración que no se accedan en un tiempo determinado se deshabilitarán
 * Agrega validación de formato para MODYO_PAPERCLIP_FOG_CREDENTIALS
-* Las URLs de vistas de tablas del backend de Modyo se pueden compartir manteniendo los filtros elegidos 
+* Las URLs de vistas de tablas del backend de Modyo se pueden compartir manteniendo los filtros elegidos
 
 <Badge text="Content" type="content" vertical="middle"/>
 
-* Corrige error que impedia aprobar a usuario con rol default user y admin de un space 
+* Corrige error que impedia aprobar a usuario con rol default user y admin de un space
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
 * Agrega timezone del sitio a site drop
 * Agrega drops de liquid para formularios contestados
 * Se agrega drop de liquid para los formularios contestados por los usuarios de un reino
-* Corrige duplicación stages en el selector en lista de sitios 
+* Corrige duplicación stages en el selector en lista de sitios
 
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
 * Agrega Integración con Zendesk
-* Implementa politica de seguridad de contraseñas para reinos 
+* Implementa politica de seguridad de contraseñas para reinos
 * Se migran los Payments a nivel de Reinos
 
 
@@ -343,7 +530,7 @@ search: true
 * Se corrige enlace de los breadcrumbs conel scope del stage
 * Se corrige el overflow de la columna nombre en el listado de sitios
 * Se mejora la plantilla base del service worker
-* Se mejora la experiencia al generar un manifest para el PWA 
+* Se mejora la experiencia al generar un manifest para el PWA
 * Se corrige listado de diferencias sin cambios despues de la creación de un stage
 
 
@@ -367,7 +554,7 @@ search: true
 
 * Se corrige error al sincronizar content pages migradas en sitios con stages
 * Se excluye el ID de google tag manager al crear un nuevo stage
- 
+
 <Badge text="Customers" type="customers" vertical="middle"/>
 
 * Se corrigen links a documentación en segmentos
@@ -393,7 +580,7 @@ search: true
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* Se incorpora el uso de reCAPTCHA para Realms 
+* Se incorpora el uso de reCAPTCHA para Realms
 
 
 ### 9.2.8 - 8 de abril 2022
@@ -416,7 +603,7 @@ search: true
 ### 9.2.7 - 10 de marzo de 2022
 <Badge text="Core" type="core" vertical="middle"/>
 
-* Actualizar version liquidjs
+* Actualizar version liquidJS
 * Actualizar nombre de categorias no se refleja en entries
 * Atributos del request drop no considera el slug de la entry en content pages
 * Migración IntegrationsToIdps falla por nuevo atributo openidc_userinfo_enabled

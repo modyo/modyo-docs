@@ -4,7 +4,7 @@ search: true
 
 # Training
 
-Training on the Modyo Platform is a key aspect for any user who plays a role within the platform and correspond to the learning activities leading to generating the minimum skills necessary to be able to effectively use the product. Training activities include reviewing [Modyo documentation](/en/platform), [explanatory videos](https://www.youtube.com/channel/UCfss-k1zmkszMoNKzYRoGew), [self-learning tutorials](/en/platform/tutorials), among others.
+Training on the Modyo Platform is a key aspect for any user who plays a role within the platform and it corresponds to driver learning activities to generate the minimum skills necessary to be able to use the Modyo Platform effectively. The training activities include reviewing [Modyo documentation](/en/platform), [videos](https://www.youtube.com/channel/UCfss-k1zmkszMoNKzYRoGew), [Learning Paths](https://help.modyo.com/en/articles/6928873-learning-how-to-use-modyo), among others.
 
 ### Modyo Platform
 
@@ -27,32 +27,23 @@ Modyo has the following main modules, which you will know in your training proce
 - [**Modyo Insights:**](/en/platform/insights) Application specialized in the representation of statistical data from both the users of your sites and the team that creates content and digital channels.
 
 #### Tutorials
-The [tutorials](/en/platform/tutorials) are the easiest way to get started on the Modyo Platform. It only takes a [test environment](/en/platform/training.html#test-environment) and some time to go step by step learning the fundamental concepts.
-We recommend you to perform the tutorials in order, following all the steps presented in them.
+The [tutorials] (https://help.modyo.com/es/collections/4032221-tutoriales) are the easiest way to get started on the Modyo Platform. You only need a [testing environment] (/en/platform/training.html #ambiente -de-tests) and some time to learn the fundamental concepts step by step.
+We recommend that you do the tutorials in order, following all the steps presented in them.
 
-#### Certification Program
-Modyo has a [certification program](https://training.modyo.com/catalog) for customers and business partners consisting of training courses for three different profiles:
-- Content Manager
-- Frontend Developer
-- System Administrator (security settings, organizations, realms, sites, and content spaces)
+#### Learning Paths
+Modyo has different [Learning Paths](https://help.modyo.com/en/articles/6928873-learning-how-to-use-modyo) for customers and business partners. They consist of more dynamic alternatives to learn how to use our tools at your own pace.
 
-These trainings consist of courses with videos and a test at the end of each course, which if approved will give you a respective certificate.
+Take the courses you need according to your needs according to the role you play, or take them all to become a true Modyo specialist. The only requirement to start our Learning Paths is an environment.
 
-For account activation you must send an email to [success@modyo.com](mailto:success@modyo.com) indicating the following information for each person who will perform the courses:
-- Full name
-- Corporate mail
-- Role
-
-Access will be granted for the period of one month, during which you will have the freedom to train yourself at your own pace. If you require an extension of the specified period, you must request it to the above email.
 
 #### Test environment
-To understand how the Modyo platform works it is very important that you can test what you have learned. To do this, you will have access to create a temporary account where you can implement an example project to learn more about the platform.
+To understand how the Modyo Platform works, it is very important that you can have access to all the features we provide. To do this, you will have access to create a temporary account where you can implement an example project to learn more about the platform.
 
-To create a trial account you must go to [this link](https://platform.modyo.cloud/try) and complete the form by entering your data and those of your organization.
+To create the test account, you must go to the [following link](https://platform.modyo.cloud/try) and complete the form by entering your details and those of your organization.
 
-You will automatically be assigned the account administrator role, granting you privileges to invite other users on your team to participate in it.
+You will automatically be assigned the role of account administrator, which will grant you the permissions to invite other users on your team to the platform.
 
-This environment will be available for the limited period of time. Once the deadline has expired, the account will be automatically deactivated. If you require an extension of the indicated period, you must request it to [success@modyo.com](mailto:success@modyo.com), indicating the additional time you need.
+This environment will be available for a limited period of time. Once the deadline has expired, the account will be automatically canceled. If you require an extension of the indicated period, you must request it to the email [success@modyo.com](mailto: success@modyo.com), indicating the additional time you need.
 
 ### How to ask for help?
 

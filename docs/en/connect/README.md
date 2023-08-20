@@ -3,15 +3,15 @@ search: true
 ---
 # What is Modyo Connect?
 
-Modyo Connect is a managed infrastructure and devops service on the Amazon AWS cloud exclusively for Modyo Enterprise Cloud customers. Modyo Connect is designed for organizations that need to implement a secure and scalable layer of integration APIs, which allow data to be fed to the [micro frontends](resources/microfrontends.md) deployed as Widgets on Modyo.
+Modyo Connect is a managed infrastructure and devops service on the Amazon AWS cloud exclusively for Modyo Enterprise Cloud customers. Modyo Connect is designed for organizations that need to implement a secure and scalable layer of integration APIs, allowing data to be fed to the [micro frontends](/en/architecture/patterns/micro-frontend) deployed as Widgets on Modyo.
 
-Modyo Connect allows the implementation of services such as: Single Sign-On, API Gateway, container infrastructure for [microservices](resources/microservices.md), databases, messaging queues, object repositories, among other components designed to cover all the common requirements present in a complex integration initiative.
+Modyo Connect allows the implementation of services such as: Single Sign-On, API Gateway, container infrastructure for [microservices](/en/architecture/patterns/microservice), databases, messaging queues, object repositories, among other components designed to cover all the common requirements present in a complex integration initiative.
 
-Modyo Connect was born in response to the need of some customers to have a managed layer of API management services that would securely integrate with their business systems. The service is completely optional and, in many cases, is not required, since the client itself can have its own API and Single Sign-On architecture to which the [microfrontends](resources/microfrontends.md) developed on top of Modyo can be integrated.
+Modyo Connect was born in response to the need of some customers to have a managed layer of API management services that would securely integrate with their business systems. The service is completely optional and, in many cases, is not required, since the client itself can have its own API and Single Sign-On architecture to which the [micro frontends](/en/architecture/patterns/micro-frontend) developed on top of Modyo can be integrated.
 
 The following diagram corresponds to the Modyo implementation reference architecture. The managed Modyo Connect services are on the right in the diagram and are completely decoupled from the platform, so they can be replaced by APIs that the customer already has or that are developed by a third party.
 
-<img src="/assets/img/infrastructure/reference_architecture.png" alt="Partner Badge" style="margin-top: 40px;" />
+<img src="/assets/img/infrastructure/reference_architecture.png" alt="Partner Badge" />
 
 The APIs developed in Modyo Connect are consumed directly by the end user from their web browser. Modyo Platform does not take part in the communication with the APIs, thus preventing sensitive information from passing through it. With this architecture, it is possible to completely decouple the presentation from the business logic, establishing delimited responsibilities in separate systems, thus increasing the modularity and efficiency of the developments.
 
@@ -21,7 +21,7 @@ The APIs developed in Modyo Connect are consumed directly by the end user from t
 The Modyo Connect managed service includes the following capabilities:
 
 - Secure source code repositories
-- Automation pipelines for [micro frontends](resources/microfrontends.md) and [microservices](resources/microservices.md)
+- Automation pipelines for [micro frontends](/en/architecture/patterns/micro-frontend) and [microservices](/en/architecture/patterns/microservice)
 - Container deployment platform
 - Productive and pre-productive environments
 - Centralized log log management

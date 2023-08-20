@@ -4,7 +4,7 @@ search: true
 
 # Templates
 
-One of the most important aspects when creating the site is the base architecture and appearance of the site. In Templates, you can modify the base templates, along with the global JavaScript, and CSS to use in your pages and change their structure as required.
+One of the most important aspects when creating the site is the base architecture and appearance of the site. In Templates, you can modify the base templates, along with the JavaScript, and global CSS to use on your pages and change their structure as needed.
 
 When creating a Site, it will be filled with different templates to generate the Minimal theme and you can start creating your digital channel. If necessary, you can also create Snippets of HTML, JS, and CSS code to extend the functionality of your site.
 
@@ -14,72 +14,71 @@ Once inside Templates, you can see that the main menu is hidden to optimize the 
 
 
 - **Published**: When a published version already exists and its editable version is the same.
-- **Pending Changes**: When there is a published version, but your editable version has changes that are not published yet.
-- **In review**: This status appears when [Team review](/en/platform/core/key-concepts.html) is enabled and the editable version of your templates has changes that have been submitted for review.
-- **Approved**: When [Team Review](/en/platform/core/key-concepts.html) is enabled and if the item's review conditions were met. If you're in this state, your templates are ready to be published.
+- **Pending changes**: When there is a published version, but there are changes pending publication in your editable version.
+- **In review**: When [team review] (/en/platform/core/key-concepts.html) is enabled and the editable version has been submitted for review.
+- **Approved**: When [team review] (/en/platform/core/key-concepts.html) is enabled and if the item review conditions were met. If you're in this state, your templates are ready to be published.
 
-On the bar in the upper-right, you will find the latest publication date and the available actions:
+At the top right, you can find the last publication date and the available actions:
 
-**Preview** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5c-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0a9.821 9.821 0 0 0-17.64 0z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Clicking this icon opens a new tab with the template preview mode, in which you will see how it looks as if they were published, with all the changes you have in your templates.
+**Preview** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M12 9a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5c-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0a9.821 9.821 0 0 0-17.64 0z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg> : Clicking on this icon opens a new tab with the template preview mode, in which you can see, as if they were published, all the changes you have in your templates.
 
 :::warning Attention
-You can preview the changes as a user without a session, or with Modyo a session. For this, it's recommended to log in or log out of Modyo from your site before entering preview mode, because if you log out while in preview mode you might encounter security errors like _x-frame-options_ or _mixed-content_, depending on your site's SSL and custom domain settings.
+You can preview the changes as a user without a session or a user with a Modyo session. For this, it is advisable to start or close the Modyo session on the site before entering preview mode, since if you log in or out in preview mode, you may encounter security errors such as _x-frame-options_ or _mixed-content_, depending on the configuration of custom domains and SSL of the site
 :::
 
 <img src="/assets/img/channels/template_builder/differences.jpg" style="border: 1px solid #EEEEEE" width="700" alt="The version differences window">
 
-**Differences** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/> </svg>: Clicking this icon will take you to the [difference view](/en/platform/channels/sites.html#review-and-joint-publication), in which you can compare changes between multiple versions of your templates. 
+**Differences** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/> </svg> : By clicking on this icon, you will go to the [difference view] (/en/platform/channels/sites.html #rjoint-review-and-publication), where you can compare the changes that exist between multiple versions of your templates. 
 
-By default, you start by comparing the published version to the editable version. Using the version selectors, you can also compare with backup versions.
+By default, you start by comparing the published version with the editable version, but by making use of the version selectors, you can also compare with the backup versions.
 
 :::tip Tip
 Every time you publish a version, the version that was published becomes a backup version. By default, up to 20 backups are saved, so that the twenty most recent backups can be compared, restored, and rolled back. 
-For more information on versioning, see [versioning](/en/platform/core/key-concepts.html#versions).
+For more information on versioning, see [versioning] (/en/platform/core/key-concepts.html #versions).
 :::
 
-**Search in templates** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M9 13a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3a3 3 0 0 0-3 3m11 6.59V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12c.45 0 .85-.15 1.19-.4l-4.43-4.43c-.8.52-1.76.83-2.76.83a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5c0 1-.31 1.96-.83 2.75L20 19.59z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Deploys a sidebar with a text finder that searches all editable templates. 
+**Search in templates** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M9 13a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3a3 3 0 0 0-3 3m11 6.59V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12c.45 0 .85-.15 1.19-.4l-4.43-4.43c-.8.52-1.76.83-2.76.83a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5c0 1-.31 1.96-.83 2.75L20 19.59z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg> : Display a sidebar with a text search engine that searches all editable templates. 
 
 <img src="/assets/img/channels/template_builder/conversation.jpg" style="border: 1px solid #EEEEEE" width="700" alt="The activity window">
 
-**Activity/Comments** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 23a1 1 0 0 1-1-1v-3H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4.1l-3.7 3.71c-.2.18-.44.29-.7.29H12m1-6v3.08L16.08 17H21V7H7v10h6M3 15H1V3a2 2 0 0 1 2-2h16v2H3v12m6-6h10v2H9V9m0 4h8v2H9v-2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Deploys a sidebar with the activity history and comments of the templates. 
+**Activity/Comments** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M12 23a1 1 0 0 1-1-1v-3H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4.1l-3.7 3.71c-.2.18-.44.29-.7.29H12m1-6v3.08L16.08 17H21V7H7v10h6M3 15H1V3a2 2 0 0 1 2-2h16v2H3v12m6-6h10v2H9V9m0 4h8v2H9v-2z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg> : Display a sidebar with the activity history and comments of the templates. 
 
-You can add new comments at the bottom of the sidebar. Next to each activity, you can also click on **see detail** to show the complete information of an activity log.
+At the bottom of the sidebar, you see a text box where you can type a comment. Next to each activity, you can click on **see detail** to show the full information of that activity log.
 
-**More actions** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M12 16a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg>:
+**More actions** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M12 16a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg> :
 
-- **Restore all**: Restore templates to their original values.
+- **Restore all**: Restore the templates to their original value.
 
-**Main Actions**
+**Main Action**
 
-- **Save**: Saves all changes to all templates.
-- **Send for Review**: Change the status of templates to “Waiting for Review”. In this state you can continue to make changes, but each change will be notified via email to the assigned reviewers.
-- **Reject**: Returns the status to "Pending changes" and notifies reviewers that the item was rejected.
-- **Publish**: Once the templates are approved, you can go to the [co-publish](/en/platform/channels/sites.html#review-and-joint-publication) view and publish your templates.
+- **Save**: Save all changes to all templates.
+- **Submit for review**: Changes the status of the templates to “Awaiting review”. In this state, you can continue to make changes, but each change will be notified via email to the assigned reviewers.
+- **Reject**: Returns to the “In Editing” state, notifying reviewers that the item was rejected.
+- **Publish**: Once the templates have been approved, you can go to the [joint publication] view (/es/platform/channels/sites.html #revision -y-and-joint-publication) and publish your templates.
 
-In the main work area, there are two sections:
+In the main workspace, you can see two sections:
 
-- The central work area.
+- The work area.
 - The template selection area.
 
-Each template you click on the right sidebar, opens a text editor in the middle area. If you open multiple templates, they are opened as tabs in the workspace.
+Each template that you click on in the right sidebar opens in the central area with a text editor. If you open multiple templates, they are open as tabs in the workspace.
 
 The template bar on the right has two tabs: views and snippets.
 
-## Custom Layouts
+## Layouts
 
-Modyo has three default layouts:
-* **Home**: Used exclusively on the home page of the site.
-* **Base**: All pages except the home page use this default layout.
-* **Error**: The error views use this clean layout (404, 401)
+Modyo has three default layouts: 
+* **Home**: Used exclusively on the site's home page.
+* **Base**: All pages except the home page use this layout by default.
+* **Error**: Error views use this clean layout (404, 401)
 
-You can create new Layouts from Templates, by clicking on “Add Layout” in the “Views” tab, which will allow you to define a new base structure to use in the pages.
+You can create new Layouts from Templates, by clicking on “Add Layout” in the “Views” tab, which will allow you to define a new base structure to use on the pages.
 
-You can use this code as a base, this contains everything you need to make your pages use all the necessary elements of the site, such as the head, header, footer, service worker, and Google Tag Manager settings, but keep in mind that you can modify it as much as you want:
+You can use this code as a base, which contains everything necessary for your pages to use all the necessary elements of the site, such as the head, header, footer, service worker, and the Google Tag Manager configuration, but keep in mind that you can modify it as much as you want:
 
 ```liquid
-{% html5 %}
-<head>
-  {% snippet 'shared/general/head' %}
+{% HTML5 %}
+<head>{% snippet 'shared/general/head' %}
 </head>
 
 {% body %}
@@ -91,109 +90,109 @@ You can use this code as a base, this contains everything you need to make your 
 {{ content_for_layout }}
 </div>
 
-<script>{% snippet "shared/serviceworker/register_js" %}</script>
+<script>{% snippet “shared/serviceworker/register_js” %}</script>
 {% snippet 'shared/general/footer' %}
 
 {% endbody %}
-{% endhtml5 %}
+{% endHTML5 %}
 ```
 
-After you have created your new layout, you can start using it by going to the page editing view and changing it from the properties tab.
+Once you have created your new layout, you can start using it by going to the page editing view and changing it from the properties tab.
 
 
 ## Errors in Views
 
-In the views section, you will find 4 error types available for customization:
+In the views section, you'll find 4 types of errors available to customize:
 
-* **Disabled**: You'll see this error if the site you're trying to access has been [disabled](/en/platform/channels/sites.html).
-* **404**: You'll see this view if you enter a site URL that isn't defined and if in the [site restrictions](/en/platform/channels/sites.html#privacy) settings you decide to display the 404 and not redirect to the home page.
-* **Privacy**: You'll see this error view if you don't have permission to access the [site](/en/platform/channels/sites.html#privacy) or one of its [pages](/en/platform/channels/pages.html#privacy).
-* **Template**: You'll see this error view when the page of the site you're loading has a liquid syntax error. It's unlikely that you'll ever see this view, given that from modyo 8.1 onwards we have a feature that checks the syntax of liquid before we can save and publish changes to Templates.
+* **Disabled**: You'll see this error view if the site you're trying to access has been [disabled] (/en/platform/channels/sites.html).
+* **404**: You will see this view if you enter a site URL that is not defined and if, in the configuration of [site restrictions] (/en/platform/channels/sites.html #privacidad), you decide to show the 404 and not redirect to the home page.
+* **Privacy**: You'll see this error view if you don't have permission to access the [site] (/en/platform/channels/sites.html #privacidad) or one of its [pages] (/en/platform/channels/pages.html #privacy).
+* **Template**: You'll see this error view when the page on the site you're loading has a liquid syntax error. It is unlikely that you will ever see this view, since from modyo 8.1 onwards we have a functionality that checks the liquid syntax before being able to save and publish changes to Templates.
 
 ## CSS and JavaScript
 
-You can create custom CSS and JavaScript templates by clicking the **+** buttons in the CSS and JavaScript sections respectively at the bottom of the Views tab.
+It is possible to create custom CSS and JavaScript code templates by clicking on the**+** buttons, in the CSS and JavaScript sections respectively, at the bottom of the Views tab.
 
 ### Add CSS or Javascript
 
 Custom CSS and Javascript views are the way in which you can import your libraries to Modyo Platform. Follow these steps to create a CSS or Javascript view:
 
-1. In Modyo Platform, expand **Channels**, and click **Sites**.
+1. On Modyo Platform, expand **Channels**, and click **Sites**.
 1. Click on your site.
 1. In the side menu, click **Templates**.
 1. In the Views section, click the **Add Style Sheet** (or Javascript) button.
-1. Add the Path and click **Add**.
-1. Once you have finished editing the Style Sheet or Javascript, it should be included in your Layout as follows.
+1. Add the Route and click **Add**.
+1. Once you've finished editing the Style Sheet or Javascript, it should be included in your Layout as follows.
 
 
-To include any of these views, there are different Liquid filters available: `asset_url` to define the file type, `stylesheet_tag`, and `script_tag` to generate the corresponding tags, the following example adds: 
+To include any of these views, there are different Liquid filters available: `asset_url` to define the type of file, `stylesheet_tag`, and `script_tag` to generate the corresponding tags, in the following example it is added: 
 
-- A custom CSS view with media: screen
+- A custom view of CSS with media: screen
 - A custom Javascript view with asynchronous loading
 
 ```html
 <head>
-  {{ 'my-css' | asset_url: 'css' | stylesheet_tag: media: 'screen', title: 'color style' }}
-  {{ 'my-js'  | asset_url: 'js'  | script_tag: async: 'async', defer: 'defer' }} 
+ {{ 'my-css' | asset_url: 'css' | stylesheet_tag: media: 'screen', title: 'color style' }}
+ {{ 'my-js' | asset_url: 'js' | script_tag: async: 'async', defer: 'defer' }} 
 </head>
 ```
 
-Once saved and published, it is translated into the following HTML code:
+Once it has been saved and published, it is translated to the following HTML code:
 
 ```html
 <link href='my-css' rel='stylesheet' type='text/css' media='screen' title='color style' />
-<script src='my-js' type='text/javascript' async='async' defer='defer'></script>
+ <script src='my-js' type='text/javascript' async='async' defer='defer'></script>
 ```
 
-To learn more about the parameters supported by these filters, see [Liquid filters](/en/platform/channels/liquid-markup.html#standard-filters).
+To learn more about the parameters supported by these filters, go to [Liquid filters] (/en/platform/channels/liquid-markup.html #filtros -standard).
 
 
 ## Snippets
 
-Snippets are pieces of HTML, JS, or CSS code that can be reused on your sites. Next to each custom snippet, you'll find an icon (<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg>) to copy its reference path. The code will look similar to this: <span v-pre> `{% snippet “snippet name”%}` </span>. This Liquid code must be pasted where you want to call this Snippet.
+Snippets are pieces of HTML, JS, or CSS code that can be reused on your sites. Next to each custom snippet, you'll find an icon (<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg>) to copy your reference path. The code will look like this: <span v-pre> `{% snippet “snippet-name”%}` </span>. This Liquid code must be pasted wherever you want to call this Snippet.
 
-You can add custom snippets to the bottom of the platform's snippet list by clicking on the **+** button.
+You can add custom snippets at the bottom of the platform's list of snippets, by clicking on the**+** button.
 
 <img src="/assets/img/channels/template_builder/custom-snippet.jpg" style="border: 1px solid #EEEEEE" width="300" alt="The custom snippet window">
 
 :::tip Tip
-In order for the system to recognize the programming language type of the snippet, place an underscore followed by the language type at the end of the snippet name i.e. **"front_css"** or **"library_js"**. Without this naming syntax, the Template Builder assumes the snippet is HTML by default.
+For the system to recognize the type of programming language to which the snippet belongs, an ending with an underscore must be added, i.e. **"front_css"** or**"library_js"** will recognize the snippet as an HTML language by default.
 :::
 
 :::tip Tip
-All elements of the Template Builder use Liquid as a templating engine.
+All elements of the Template Builder use Liquid as a template engine.
 
-For more information on what Liquid is and how to get the most out of it, check out the [Liquid Markup](/en/platform/channels/liquid-markup.html) page
+For more information on what Liquid is and how to get best take advantage of it, check out the [Liquid Markup] page (/en/platform/channels/liquid-markup.html)
 :::
 
-In the work area, under the tabs, you will find a bar with useful elements:
+In the work area, below the tabs, you'll find a bar with useful items:
 
 <img src="/assets/img/channels/template_builder/bar-templates.jpg" style="border: 1px solid #EEEEEE" width="700" alt="Action bar inside templates">
 
-**Asset manager**: Opens a modal that lists all account files and provides filtering and search capabilities. Clicking on the image preview or file name opens an editor where you can resize/crop the image and change its attributes, such as the title or alternate text. Selecting the copy icon provides you with a URL you can paste and you can click on the "Upload files" tab to upload files.
+**File Manager**: A modal is shown where you can access all the files in the account and copy their URL. If you access the second tab, you can upload new files.
 
 :::tip Tip
-For more information on the benefits and features of the Asset Manager, go to [Asset Manager](/en/platform/content/asset-manager.html)
+For more information on the benefits and features of File Manager, go to [File Manager] (/es/platform/content/asset-manager.html)
 :::
 
-**Keyboard shortcuts**: A small pop-up appears with some of the useful keyboard shortcuts to use in Templates.
+**Keyboard Shortcuts**: A small pop-up is shown with some of the useful keyboard shortcuts to use in Templates.
 
 <img src="/assets/img/channels/template_builder/keywords.jpg" width="400" alt="Keyboard shortcuts inside the templates module">
 
-**Snippets**: Displays a list of custom snippets along with the option to copy the reference code of each snippet to insert them in a template.
+**Snippets**: A list with all the snippets is displayed, along with the option to copy your reference code.
 
 <img src="/assets/img/channels/template_builder/snippets.jpg" width="300" alt="The list with all your custom snippets">
 
-**Changes**: A list of every "Saved" state of a template since it was last published. Click on any of these saved states to change the content of the template you are working on to that particular saved state. If you decide to do so, all your current changes will be lost.
+**Changes**: A list of all the times and states in which you have done the “Save” action in this version. By clicking on any of the sub-versions, you change the content of the template you are working on to that sub-version.
 
 <img src="/assets/img/channels/template_builder/changes.jpg" style="border: 1px solid #EEE" width="300" alt="The latest changes in your template">
 
 :::tip Tip
-If you publish a version, you can see that the changelog disappears, that is because the new editable version does not have any changes.
+If you publish a version, you will see that the list of changes disappears, this is because the new editable version has not had any changes.
 :::
 
 :::tip Tip
-Sub-versions are for each template, so for some you may notice that there are changes and for others you won't see the change selector. Likewise, if you go back to a previous sub-version of a template, you won't affect the rest of the templates.
+The sub-versions are for each template, so for some you may notice that there are changes and for others you won't see the change selector. In the same way, if you go back to a previous sub-version of a template, it doesn't affect the rest of the templates.
 :::
 
 :::tip Tip

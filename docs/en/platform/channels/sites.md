@@ -182,14 +182,13 @@ These options involve some risk to the site experience and your users, please pr
 
 ### SEO
 
-<img src="/assets/img/channels/sites/seo-site.jpg" alt="The options for configuring SEO within a site." width="400" style="margin-top: 40px; border: 1px solid #EEE;" >
+ <img src="/assets/img/channels/sites/seo.png" alt="The options for configuring SEO within a site." width="400" style="margin-top: 40px; border: 1px solid #EEE;" > 
 
 SEO (Search Engine Optimization) is the key to appearing in different search engines. Users rely on a good SEO setup to get to the site.
 
 The options listed in this section help improve your SEO across a particular channel:
 
 - **Tagline**: General description that appears in search results, listed under the name or "title" of your site.
-- **Keywords**: Words that users search for and that you want the site to use. This field accepts a maximum of 255 characters.
 - **Automatically update the sitemap.xml file for me**: Allows Modyo to create and update the sitemap.xml file. Disable this option to maintain a custom sitemap.
 - **Sitemap**: This XML file allows search engines to index the content of the site.
 - **Automatically update the robots.xml file for me**: Allows Modyo to create and update the robots.txt file. Disable this option to provide personalized instructions to site crawlers.
@@ -206,7 +205,7 @@ The robots.txt and sitemap.xml files are only visible on the site if custom doma
 In site settings, only users with the site administrator role will be able to add meta tags. Within a site, the developers role will be able to add and remove meta tags page by page.
 :::
 
-#### On-page SEO vs. Off-page
+#### On-page SEO vs. Off-page SEO
 
 Also known as On-Site and Off-Site SEO, they refer to actions that can be taken on or off a page to increase your site's visibility to search engines. For the best results, we recommend using both strategies to get better search engine rankings.
 
@@ -278,7 +277,7 @@ The Domains section is where you configure where and how your site is publicly l
 
 The options you configure here are:
 
-- **Host**: This name designates where your site is located within the server, e.g. the host name 'my-site' would be located at https://example.modyo.cloud/my-site. This option only accepts alphanumeric characters, and a few other valid non-space characters, such as dashes "-" and underscores "_".
+- **Host**: Where your site is located within the server, e.g. the host name 'my-site' would be located at https://example.modyo.cloud/my-site. This option only accepts alphanumeric characters, and a few other valid non-space characters, such as dashes "-" and underscores "_".
 - **Enable custom domains**: Select this option if you have a registered custom domain, and want to configure it here. Make sure to follow the instructions in the description.
 - **Enable SSL on this site**: You are required to have a valid SSL certificate installed in order to enable this setting.
 - **Primary domain**: This is the main address of your site. Alternative domains redirect to this domain through HTTP 302.
@@ -405,9 +404,24 @@ When you click on sync, you will be able to select which changes to take from an
 :::
 
 :::warning Attention
-The platform does not allow to synchronize changes that are not yet published.
+The platform does not allow synchronization of changes that are not yet published.
 :::
 
+### Delete a Stage
+
+To delete a Stage, follow these steps:
+
+1. From the side menu, click **Channels**, then select your **Site**.
+2. In the Site selector, select the Stage you want to delete.
+
+<img src="/assets/img/channels/sites/delete-stage.jpg" alt="Site and stage selector." width="500" style="margin-top: 40px; border: 1px solid #EEE;" >
+
+3. Click **Site Settings**, and select **General**.
+4. In the **Danger Zone** section, click **Delete Stage**.
+
+:::warning Warning
+An alert will appear asking for confirmation. When you click delete, the platform will start an asynchronous process and you will not be able to re-enter the Stage. All information relevant to the Stage will be deleted, including Site elements such as Pages and Widgets, as well as the Team configuration, Roles, etc.
+:::
 
 ### Team Review
 
@@ -427,7 +441,7 @@ In case you need to publish an element quickly, administrator users can skip the
 
 <img src="/assets/img/channels/sites/members-site.jpg" alt="The members and their roles in a site." width="500" style="margin-top: 40px; border: 1px solid #EEE;" >
 
-The Team members section of your Site settings allows you to select eligible users from your main Team (set at the account level), and assign them roles to work under within your site. The basic role just includes editing privileges, and you can additionally include reviewing, publishing, and configuring site settings privileges.
+The Team members section of your Site settings allows you to select eligible users from your main Team (set at the account level), and assign them roles to work under within your site. The basic role includes editing privileges, and you can additionally include reviewing, publishing, and configuring site settings privileges.
 
 To do this, the administrator who created the site must manually assign team members and their roles. Once the site creator adds other admins, these too can add more team members.
 
@@ -502,29 +516,32 @@ The precedence of locations on Modyo sites is as follows:
 1. Custom redirects
 1. [Site 404 error settings](/en/platform/channels/sites.html#privacy)
 
+:::warning Conditions for a redirect
+The source route must not exist or be unpublished for the redirection to be successful. If the source is a published page with children, you must unpublish the children first before unpublishing the parent page.
+:::
+
 ### Security headers
 
-Configure HTTP security headers by enabling this module for your site.
-This action cannot be undone. When enabled, you'll have full control over the headers you want to use.
+Enable this module for your site to configure HTTP security headers. Please note that this action cannot be undone. Once enabled, you'll have full control over the headers you want to use.
 
 #### HTTP Strict Transport Security (HSTS)
 
-Instructs the browser that your site should be accessed using HTTPS only.
-* **Duration**: Sets how long the browser should remember that your site is only accessed by using HTTPS.
-* **Preload**: Include the preload directive. See [HSTS Preload List Submission](https://hstspreload.org/) for more details.
-* **Include subdomains**: Use this HSTS rule for all the site subdomains as well.
+Tells the browser that it can only access the site using HTTPS.
+* **Duration**: Sets the time that the browser accesses the site via HTTPS only.
+* **Preload**: Includes the preload policy. For more information, see [HSTS Preload List Submission] (https://hstspreload.org/).
+* **Include subdomains**: Applies the HSTS rule to all subdomains on the site.
 
 #### Referrer-Policy
 
-The `Referer` _header_ contains information about the previous web page that is linked to the resource being requested. You can control how much information should be included in the `Referer` _header_ with the `Referrer-Policy` _header_.
+The _header_ `Referer` contains information from the previous web page from which it is linking, with the _header_ `Referer-Policy` you can control how much information should be included in the _header_ `Referer`.
 
-* **no-referrer**: No _referrer_ information is sent.
+* **no-referrer**: Does not send _referrer_ information.
 * **no-referrer-when-downgrade**: Don't send _referrer_ information to a less secure destination.
-* **origin**: Send the origin domain only and strip out the paths and _query string_.
-* **origin-when-cross-origin**: Send _referrer_ information for same origin _requests_ and strip out the paths and _query string_ to other destinations.
+* **origin**: Send only the source domain, remove the paths and _query string_.
+* **origin-when-cross-origin**: Send _referrer_ information for _requests_ from the same source. Delete the routes and _query string_ for other destinations.
 * **same-origin**: Send _referrer_ information for same origin _requests_ only.
 * **strict-origin**: Send the origin domain only for same security level _requests_, and don't send _referrer_ information to less secure destinations.
-* **strict-origin-when-cross-origin**: Send _referrer_ information to same-origin _requests_. Send the origin only to same protocol security level and don't send _referrer_ information to less secure destinations.
+* **strict-origin-when-cross-origin**: Sends _referrer_ a _requests_  information from the same source. Sends the source only if the security level is the same, and does not send _referrer_ information to less secure destinations.
 * **unsafe-url**: Always send _referrer_ information.
 
 #### X-Frame-Options
@@ -537,23 +554,23 @@ Indicate whether your site can be included in a `frame`, `iframe`, `embed`, or `
 
 It indicates that _MIME types_ announced in the _header_ `Content-Type` must be followed to avoid _MIME type sniffing_.
 
-#### Content-Security-Policy
+#### Content-Security-Policy (CSP)
 
 Controls what resources the browser can load on the site to mitigate data injection attacks and _cross site scripting_. The default value of *allows you to load resources from anywhere*, so it's important to design a content security policy that's right for your site.
 
-Freely specify your content security policy in the text area; for a complete guide on how to write your policy, see [MDN Content Security Policy (CSP)](https://developer.mozilla.org/en/docs/Web/HTTP/CSP)
+Freely specify your content security policy in the text area. For a complete guide on how to write your policy, see [Content Security Policy (CSP) from Mozilla Developer Network.] (https://developer.mozilla.org/es/docs/Web/HTTP/CSP)
 
 :::warning Warning
-A very strict value can interfere with features such as [Google tag manager](/en/platform/channels/sites.html#google-tag-manager), [PWA](/en/platform/channels/sites.html#pwa), [Widgets](/en/platform/channels/widgets.html), and [Asset Manager](/en/platform/content/asset-manager.html).
+A very strict value can interfere with some features like [Google tag manager](/en/platform/channels/sites.html#google-tag-manager), [PWA](/en/platform/channels/sites.html#pwa), [Widgets](/en/platform/channels/widgets.html) and [Asset Manager](/en/platform/content/asset-manager.html).
 :::
 
-A production-friendly policy must ensure that all assets, such as images and style sheets, are loaded from trusted sources and requires that all scripts be safe and reliable for the application. For example, a strict policy for the _minimal template_ would look like this:
+A production-ready policy must ensure that all resources, such as images and style sheets, are loaded from reliable sources and requires that all scripts be secure and reliable for the application. For example, a strict policy for the _minimal template_ would look like this:
 
 ```
 default-src 'self'; img-src 'self' https://cloud.modyocdn.com; font-src 'self' https://cloud.modyocdn.com http://cdn.materialdesignicons.com; style-src 'self' http://cdn.materialdesignicons.com; script-src 'self'
 ```
 
-Your policy should include a `default-src 'self'` directive, which is a _fallback_ for any other resource type. It also needs to include `script-src` and `style-src` directives to prevent evaluation of the `script` and `style` _inline_ tags.
+The policy must include a `default-src 'self'` directive, which serves as a _fallback_ for any other type of resource. You should also include `script-src` and `style-src` directives to avoid evaluating _inline_ `style` and `script` tags.
 
 * **Nonce**: A CSP nonce will be added automatically by the server to the `script-src` and `style-src` directives if present.
 
@@ -565,37 +582,62 @@ If you have the nonce present in your policy then you can add the `script` and `
 </script>
 ```
 
-There are several tools to help you design a strong security policy:
+These tools can help you design a strong security policy:
 * [Google CSP evaluator](https://csp-evaluator.withgoogle.com)
 * [ReportURI](https://report-uri.com/home/analyse)
 * [CSP validator](https://cspvalidator.org)
 
 #### Permissions-Policy
 
-It allows or denies the use of browser features and APIs for the site. For example, you can restrict privacy sensitive APIs, like the camera or microphone, and video autoplay. For a complete list of the features supported by browsers see [Feature Policy from MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Feature_Policy).
+Allows or denies the use of browser features and APIs for the site; for example, you can restrict privacy-sensitive APIs such as the camera or microphone and the automatic playback of videos.
+
+For a full list of browser-compatible features, see the [MDN Feature Policy] (https://developer.mozilla.org/en-US/docs/Web/HTTP/Feature_Policy).
+
+#### Cross Origin Embedder Policy (COEP)
+
+Configure the insertion of cross-source resources into the document. For example, if your document has a COEP header with a value of Require-Corp or Credentialless, you can only access certain functions, such as SharedArrayBuffer or Performance.now () objects, with unrestricted timers.
+
+For more information, see the [MDN Cross-Origin-Embedder-Policy] (https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy).
+
+#### Cross Origin Opener Policy (COOP)
+
+It allows you to ensure that a top-level document doesn't share a browsing context group with cross-source documents.
+
+COOP isolates the processing of your document, so potential attackers won't be able to access your global object if they open it in a popup, preventing a set of cross-origin attacks.
+
+For more information, review the [MDN Cross-Origin-Opener-Policy] (https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy).
+
+#### Cross Origin Resource Policy
+
+Conveys the desire to block cross-origin/cross-site requests without cors to the specified resource by the browser.
+
+For more information, see the [MDN Cross-Origin-Resource-Policy] (https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Resource-Policy).
+
 
 ### Site variables
 
-Modyo has [global variables](/en/platform/core/key-concepts.html#global-variables) that you can use across multiple sites. However, you can create site-specific variables or override the value of an already created global variable with a specific value for the particular site.
+Modyo has [global variables] (/es/platform/core/key-concepts.html #variables -global) that you can use on multiple sites. However, you can also create specific variables for a particular site or overwrite the value of an existing global variable, with a value specific to the particular site.
 
-Using variables allows you to reuse HTML, JS, CSS, or text across different sites, widgets, or templates. If you have code that you use repeatedly in different parts of your account, you can assign this value to a variable and thus simplify your processes. When you edit the value of the variable, this will be reflected everywhere the variable is currently used.
+Using variables allows you to reuse HTML, JS, CSS, or text code across different sites, widgets, or templates. If you have code that is repeated in several parts of your account, you can assign that value to a variable to simplify your processes and if you edit the value of the variable, the change will be reflected everywhere the variable is in use.
 
-:::tip Tip
-You can use plain text, HTML, JavaScript, and CSS within global variables, however you can't use Liquid code inside them. Please note that content has a maximum of 65,535 characters.
+:::tip Tip In global variables, you can use plain text, HTML, JavaScript and CSS. However, it's important to note that you can't use Liquid code inside these variables. It is also important to remember that the content of global variables has a maximum limit of 65,535 characters.
 
-To get the value of the variable anywhere that accepts Liquid markup, use: <span v-pre> `{{vars.Name}}` </span> 
+To get the value of the variable anywhere that accepts Liquid markup, use:<span v-pre>`{{vars.Name}}`</span>
 :::
 
 #### Create a variable in sites
 
-To create a variable in sites, follow these steps:
+To create a variable on sites, follow these steps:
 
-1. From the main side menu, click on **Channels**, then select your **Site**.
-1. Under **Site settings**, click **Site variables**.
-1. Here you can see the list of all global variables and site variables, their general information, and a button to copy their code in Liquid markup. Click **+ New Variable**.
-1. Fill in the **Name** and **Value** of the variable.
+1. From the main side menu, click **Channels**.
+1. Select your**Site**.
+1. Under **Site Configuration**, click **Site Variables**. Here you can see the list of all the global variables and variables on the site, their general information and a button to copy their code into Liquid Markup. 
+1. Click on**+ New Variable**.
+1. Complete the **Name** and **Value** fields of the variable.
 1. Click **Save**.
 
-:::warning Warning
-When using variables, variables defined at the lowest level will always be preferred, with variables defined in the widget first, then those defined in the site, and finally variables defined at the account level, so be careful when defining variables in widgets or the site with the same name as account variables.
+:::warning Attention When using variables, Modyo follows a hierarchy of preference, where variables defined at the lowest level have priority. The variables defined in the widget will take precedence over the variables defined on the site, and in turn, the variables defined on the site will take precedence over the variables defined at the account level.
+
+Therefore, it's important to use caution when defining variables in widgets or on the site, especially if you use the same name as the variables defined at the account level.
+
 :::

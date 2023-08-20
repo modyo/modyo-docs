@@ -4,7 +4,7 @@ search: true
 
 # Infrastructura
 
-Los componentes de infraestructura permiten disponibilizar un ambiente de ejecución seguro y escalable para las APIs y [microservicios](../resources/microservices.md) desarrollados sobre Modyo Connect, en la nube de [Amazon AWS](https://aws.amazon.com). 
+Los componentes de infraestructura permiten disponibilizar un ambiente de ejecución seguro y escalable para las APIs y [microservicios](/es/architecture/patterns/microservice) desarrollados sobre Modyo Connect, en la nube de [Amazon AWS](https://aws.amazon.com). 
 
 Los componentes de infraestructura son completamente gestionados por el servicio de Modyo Connect y los usuarios solo se preocupan por el código que se despliega en ellos. Un equipo de expertos de nube de Modyo se encarga de parametrizar, automatizar, monitorear, y asegurar la continuidad del servicio según los niveles acordados.
 
@@ -148,12 +148,12 @@ Para solicitar la creación de un contenedor en la nube de AWS, se debe crear un
 Cada contenedor debe estar asociado a un [repositorio único de código](development.md#repositorio-de-codigo). Una misma rama no puede apuntar a más de un ambiente (productivo o pre productivo).
 
 :::tip Aprender más
-Para más información, favor referirse a la guía de [desarrollo de microservicios](../resources/microservices.md).
+Para más información, favor referirse a la guía de desarrollo de [microservicios](/es/architecture/patterns/microservice).
 :::
 
 ## Gestión de Secretos
 
-Modyo Connect permite la gestión segura de secretos para el manejo de información sensible en los [microservicios](../resources/microservices.md) mediante el uso de [AWS Secret Manager](https://aws.amazon.com/secrets-manager). AWS Secret Manager genera un almacén centralizado y seguro de parámetros, de forma de que estos no se almacenen en el código ni como variables de entorno en el ambiente, por ejemplo: credenciales de bases de datos, tokens de acceso a APIs, credenciales de servicios externos, etc.
+Modyo Connect permite la gestión segura de secretos para el manejo de información sensible en los [microservicios](/es/architecture/patterns/microservice) mediante el uso de [AWS Secret Manager](https://aws.amazon.com/secrets-manager). AWS Secret Manager genera un almacén centralizado y seguro de parámetros, de forma de que estos no se almacenen en el código ni como variables de entorno en el ambiente, por ejemplo: credenciales de bases de datos, tokens de acceso a APIs, credenciales de servicios externos, etc.
 
 Adicionalmente, existe una gestión de secretos en el mismo repositorio de [GitHub Empresarial](https://github.com/enterprise) de Modyo, la que se utiliza de forma interna para compartir detalles de tokens de accesos con los scripts de integración continua de [GitHub Actions](https://github.com/features/actions). Si se requiere incorporar un secreto dentro del proceso de GitHub Action, este puede ser solicitado mediante un ticket de activación.
 

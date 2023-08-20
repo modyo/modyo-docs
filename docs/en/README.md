@@ -41,30 +41,24 @@ FirstSteps3Text: A list of all the definitions and key concepts that we use in t
 FirstSteps3Img: https://cloud.modyocdn.com/uploads/9b68c3ae-ca6e-4fce-8097-5c4a5c559277/original/Key_concepts.png
 FirstSteps3Url: /en/platform/key-concepts
 
-FirstSteps4Title: Financial Experiences
-FirstSteps4Text: Modyo Dynamic is a catalogue with different financial experiences tailored to your needs.
+FirstSteps4Title: Dynamic Framework
+FirstSteps4Text: Dynamic Framework allows you to implement different financial experiences tailored to your needs, quickly and flexibly.
 FirstSteps4Img: https://cloud.modyocdn.com/uploads/566b72a5-2c53-481f-a1b8-5f6bde01278a/original/Widget.png
 FirstSteps4Url: /en/dynamic/
 
 FirstSteps5Title: Modyo Training
 FirstSteps5Text: Obtain your certifications in our training programs at your own pace.
 FirstSteps5Img: https://cloud.modyocdn.com/uploads/4853c725-b765-4770-add1-d4cd4184ae10/original/Training.png
-FirstSteps5Url: https://training.modyo.com/
+FirstSteps5Url: https://help.modyo.com/
 
 search: Search in
 
 
-tutorials: Tutorials
-tutorialsText: Learn more about the different aspects in the platform at your own pace.
+architecture: Architecture
+architectureText: Learn about Modyo's advanced implementation techniques and patterns and its reference architecture.
 
-tutorial1Title: Creating and Publishing Content
-tutorial1Url: /en/platform/tutorials/how-to-create-content.html
-tutorial2Title: Creating a Basic Site
-tutorial2Url: /en/platform/tutorials/how-to-create-home.html
-tutorial3Title: Creating a Content Page
-tutorial3Url: /en/platform/tutorials/how-to-create-a-content-page.html
-tutorial4Title: Creating a Private Site
-tutorial4Url: /en/platform/tutorials/how-to-create-private-site.html
+architectureTitle: Visit our architecture guide
+architectureUrl: /en/architecture
 
 DontMiss: Don't miss anything
 DontMissText: Keep updated about our latest updates and know what's in our newest releases.

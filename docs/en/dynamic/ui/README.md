@@ -2,35 +2,23 @@
 search: true
 ---
 
-# Design System
+# Design Principles
 
-The Dynamic UI design system corresponds to the graphic and user experience definitions used in all the Widgets that are part of the Dynamic initiative.
+Dynamic Framework helps designers and developers build Web applications with a pleasant, modern and customizable design, without the effort of writing and maintaining custom code. Dynamic Framework has been designed using recognizable interaction patterns and with a strong focus on the financial industry and its unique problems with respect to experience. The system has been designed with the following principles:
+- **Clarity:** Reduce ambiguity, giving users confidence and understanding in using the application.
+- **Simplicity:** With our catalog of components and functionalities, it will be much easier to build experiences, focus your efforts on important business decisions.
+- **Efficiency:** Workflows that take precedence over the needs considered in common actions in the financial industry.
+- **Consistency:** Consistent and familiar interfaces to the end user, allowing applications to be used more intuitively, regardless of the device being used.
+- **Aesthetics:** We pay attention to detail to provide users with components, which, in addition to facilitating functionality, delight them with pleasant interfaces.
 
-It is a modular and extensible design system, which allows not only to create a common base for the development of current and future Widgets that Modyo customers and partners want to implement.
-
-This design system is a constantly evolving initiative that clearly intends to allow the community of customers and partners to propose improvements that can be incorporated into a continuous release cycle over time. That's what versioning is for, so that users always know what version they are using and understand the changes involved in changing versions.
-
-Within Modyo, it works so that all areas that work with initiatives that fall within the Dynamic concept are, avoiding the proliferation of parallel standards that do not comply with the definitions and principles already established.
-
-The design system is controlled by the product area, but the other areas of Modyo participate transversely in its definition. There is a committee composed of leaders and experts from different areas who are responsible for approving the modifications and maintaining the conceptual integrity of the initiative.
-
-The design system has two implementations, the first of them in Figma, and the second in code, following the Stencil Web Components model, always having consistency as a priority between both implementations. 
-
-The design system is based on recognized industry standards, with a strong focus on generating intuitive, accessible, omnichannel, user experiences compatible with mobile and desktop devices.
-
-In addition, it is a customizable design system, which allows a customer or partner to adapt it to the desired corporate image, being able to alter key elements such as colors, fonts, and iconographies present in it, without jeopardizing the integrity of the components. If a customer or partner wants to make significant changes to the elements, Modyo offers access to repositories and design templates so that they serve as a starting point in development, leaving the partner or client in complete control.
+Dynamic Framework provides a unified user experience and optimized workflows, with a clean interface that allows work teams to deal with the design and logic behind the implementation of each component.
 
 
-### Considerations
+### Figma Kit
+The Dynamic Framework Figma Kit is a set of design tools that includes a library of components, styles, and design patterns based on the Dynamic Framework design system. This kit is designed to be used in Figma, a popular cloud-based collaborative design tool.
 
-When using the Dynamic UI design system, it's important to consider the following:
+The Dynamic Framework Figma Kit allows designers to work more efficiently and consistently by providing a collection of predefined components that can be reused in different parts of a web application. In addition, the design styles and patterns defined in the kit ensure visual consistency across the application.
 
-- Understand the limitations and scope of the design system.
+The kit also includes design elements to help designers create high-quality designs quickly and easily. These elements include icons, typography and other visual elements that can be customized and adjusted to the specific needs of each project.
 
-- Adapt the design system to the needs of the project: this may include adding new components or modifying existing ones.
-
-- Avoid the excessive use of predesigned component, it can lead to a generic and bland appearance for the web application. It is important to use the components strategically and customize them to fit the brand and needs of the project.
-
-- Maintain visual consistency: use it consistently throughout the web application to ensure a consistent user experience.
-
-- Perform usability tests evaluating the effectiveness of the design system in the user experience. This will help identify areas for improvement and ensure that the design system is working optimally.
+You can access the Dynamic Framework Figma Kit from [the following link](https://www.figma.com/community/file/1274095451173638903).

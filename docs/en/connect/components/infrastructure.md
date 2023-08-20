@@ -4,7 +4,7 @@ search: true
 
 # Infrastructure
 
-The infrastructure components provide a secure and scalable execution environment for APIs and [microservices](../resources/microservices.md) developed on top of Modyo Connect, in the [Amazon AWS](https://aws.amazon.com) cloud. 
+The infrastructure components provide a secure and scalable execution environment for APIs and [microservices](/en/architecture/patterns/microservice) developed on top of Modyo Connect, in the [Amazon AWS](https://aws.amazon.com) cloud. 
 
 The infrastructure components are fully managed by Modyo Connect and users are only concerned with the code that is deployed on them. A team of Modyo cloud experts is responsible for parameterizing, automating, monitoring, and ensuring service continuity according to agreed-upon levels.
 
@@ -147,13 +147,13 @@ To request the creation of a container in the AWS cloud, a request ticket must b
 
 Each container must be associated to a [single code repository](development.md#code-repository). The same branch cannot point to more than one environment (productive or pre-productive).
 
-:::tip Learn more
-For more information, please refer to the [microservices development](../resources/microservices.md) guide.
+:: :tip Learn more
+For more information, please refer to the [microservices](/en/architecture/patterns/microservice) development guide.
 :::
 
 ## Secret Management
 
-Modyo Connect enables secure secret management for handling sensitive information in [microservices](../resources/microservices.md) through the use of [AWS Secret Manager](https://aws.amazon.com/secrets-manager). AWS Secret Manager generates a centralized and secure store of parameters so that they are not stored in code or as environment variables in the environment, e.g. database credentials, API access tokens, external service credentials, etc.
+Modyo Connect allows the secure management of secrets for handling sensitive information in [microservices](/en/architecture/patterns/microservice) using [AWS Secret Manager](https://aws.amazon.com/secrets-manager). AWS Secret Manager generates a centralized and secure store of parameters, so that they are not stored in the code or as environmental variables in the environment, for example: database credentials, API access tokens, external service credentials, etc.
 
 Additionally, there is a secret management within Modyo's [GitHub Enterprise](https://github.com/enterprise) repository itself, which is used internally to share access token details with [GitHub Actions](https://github.com/features/actions) continuous integration scripts. If a secret is required to be incorporated within the GitHub Action process, this can be requested via an activation ticket.
 

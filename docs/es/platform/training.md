@@ -4,7 +4,7 @@ search: true
 
 # Entrenamiento
 
-El entrenamiento en la Plataforma Modyo es un aspecto clave para cualquier usuario que desempeñe un rol de dentro de la plataforma y corresponden a las actividades de aprendizaje de conducentes a generar las habilidades mínimas necesarias para poder utilizar de forma efectiva el product. Las actividades de entrenamiento incluyen la revisión de [documentación de Modyo](/es/platform), [videos explicativos](https://www.youtube.com/channel/UCfss-k1zmkszMoNKzYRoGew), [tutoriales de auto aprendizaje](/es/platform/tutorials), entre otras.
+El entrenamiento en la Plataforma Modyo es un aspecto clave para cualquier usuario que desempeñe un rol de dentro de la plataforma y corresponden a las actividades de aprendizaje de conducentes a generar las habilidades mínimas necesarias para poder utilizar la Plataforma Modyo de forma efectiva. Las actividades de entrenamiento incluyen la revisión de [documentación de Modyo](/es/platform), [videos explicativos](https://www.youtube.com/channel/UCfss-k1zmkszMoNKzYRoGew), [Learning Paths](https://help.modyo.com/es/articles/6928873-como-aprender-a-usar-modyo), entre otras.
 
 ### Plataforma Modyo
 
@@ -27,32 +27,23 @@ Modyo cuenta con los siguientes módulos principales, los que irás conociendo e
 - [**Modyo Insights:**](/es/platform/insights) Aplicación especializada en la representación de datos estadísticos tanto de los usuarios de tus sitios, como del equipo de trabajo que crea el contenido y los canales digitales.
 
 #### Tutoriales
-Los [tutoriales](/es/platform/tutorials) son la forma más fácil de iniciarte en la Plataforma Modyo. Sólo se requiere de un [ambiente de pruebas](/es/platform/training.html#ambiente-de-pruebas) y algo de tiempo para ir paso por paso aprendiendo los conceptos fundamentales.
+Los [tutoriales](https://help.modyo.com/es/collections/4032221-tutoriales) son la forma más fácil de iniciarte en la Plataforma Modyo. Sólo se requiere de un [ambiente de pruebas](/es/platform/training.html#ambiente-de-pruebas) y algo de tiempo para ir paso por paso aprendiendo los conceptos fundamentales.
 Te recomendamos realizar los tutoriales en orden, siguiendo todos los pasos que se presentan en ellos.
 
-#### Programa de certificación
-Modyo cuenta con un [programa de certificación](https://training.modyo.com/catalog) para clientes y socios de negocio que consiste en cursos de capacitación para tres perfiles diferentes:
-- Content Manager
-- Frontend Developer
-- Administrador del sistema (configuración de seguridad, organizaciones, reinos, sitios, y espacios de contenidos)
+#### Learning Paths
+Modyo cuenta con distintos [Learning Paths](https://help.modyo.com/es/articles/6928873-como-aprender-a-usar-modyo) para clientes y socios de negocio. Consisten en alternativas más dinámicas para aprender a usar nuestras herramientas a tu ritmo.
 
-La modalidad de estas capacitaciones son cursos con videos y un test al finalizar cada curso, los que de ser aprobados te otorgarán un respectivo certificado.
+Toma los cursos que necesites según tus necesidades de acuerdo al rol que desempeñas o tómalos todos para convertirte en un autentico especialista en Modyo. El único requisito para empezar nuestros Learning Paths es un ambiente.
  
-Para la activación de cuentas debes enviar un correo a [success@modyo.com](mailto:success@modyo.com) indicando la siguiente información por cada persona que realizará los cursos:
-- Nombre completo
-- Correo corporativo
-- Rol
- 
-El acceso se otorgará por el período de un mes, durante el cual tendrás la libertad de capacitarte a tu propio ritmo. En caso de requerir una extensión del período indicado, deberás solicitarlo al correo anteriormente mencionado.
 
 #### Ambiente de pruebas
-Para entender cómo funciona la plataforma Modyo es muy importante que puedas realizar pruebas de lo aprendido. Para ello, tendrás acceso a crear una cuenta temporal donde podrás implementar un proyecto de ejemplo para conocer en mayor profundidad la plataforma.
+Para entender cómo funciona la Plataforma Modyo es muy importante que puedas tener acceso a todas las funcionalidades que proveemos. Para ello, tendrás acceso a crear una cuenta temporal donde podrás implementar un proyecto de ejemplo para conocer la plataforma a profundidad.
 
-Para crear la cuenta de prueba deberás ingresar al [siguiente link](https://platform.modyo.cloud/try) y completar el formulario ingresando tus datos y los de la organización.
+Para crear la cuenta de prueba, deberás ingresar al [siguiente link](https://platform.modyo.cloud/try) y completar el formulario ingresando tus datos y los de tu organización.
 
-Automáticamente se te asignará el rol de administrador de la cuenta, lo que te otorgará privilegios para invitar a otros usuarios de tu equipo a participar en ella.
+Automáticamente se te asignará el rol de administrador de la cuenta, lo que te otorgará los permisos para invitar a otros usuarios de tu equipo a la plataforma.
 
-Este ambiente estará disponible por el período de tiempo limitado. Una vez vencido el plazo la cuenta será dada de baja automáticamente. En caso de requerir una extensión del período indicado, deberás solicitarlo al correo [success@modyo.com](mailto:success@modyo.com), indicando el tiempo adicional que necesitas.
+Este ambiente estará disponible por el período de tiempo limitado. Una vez vencido el plazo, la cuenta será dada de baja automáticamente. En caso de requerir una extensión del período indicado, deberás solicitarlo al correo [success@modyo.com](mailto:success@modyo.com), indicando el tiempo adicional que necesitas.
 
 ### ¿Cómo pedir ayuda?
 

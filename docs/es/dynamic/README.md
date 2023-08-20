@@ -2,42 +2,84 @@
 search: true
 ---
 
-# ¿Qué es Modyo Dynamic?
+# Primeros Pasos
 
-Modyo Dynamic es un conjunto de experiencias de usuario, basado en componentes Web e integraciones, que permiten la aceleración en el desarrollo de soluciones en la banca digital e industria financiera en general, de una forma rápida y eficiente. Entrega a los desarrolladores un framework de trabajo común basado en estándares modernos y abiertos, que puede ser fácilmente adaptado a las necesidades particulares de cada cliente.
+Bienvenido a la documentación oficial de [Dynamic Framework](https://dynamicframework.dev). En esta guía se presentan las diferentes características del framework, además de las definiciones claves e información útil acerca de cómo comenzar a trabajar con él.
 
-Modyo Dynamic abarca las necesidades de experiencia digital comunes para entidades financieras de todo tipo, con especial enfoque tanto en gerentes de productos y canales digitales, como en los equipos de desarrollo que buscan una solución que los ayude a acelerar la implementación de forma modular, flexible, reutilizable y mantenible.
+<img src="/assets/img/dynamic/dynamic-logo.png"/>
 
-:::tip Modyo Platform
-Modyo Dynamic requiere de una suscripción activa de la [Plataforma Modyo](/es/platform). Los componentes aceleradores de la experiencia digital descritos en esta guía están diseñados para ser desplegados dentro de ella.
-:::
+## ¿Qué es Dynamic Framework?
+
+Dynamic Framework es un conjunto de experiencias de usuario basado en componentes web e integraciones diseñado para impulsar el desarrollo ágil de soluciones en el ámbito de la banca digital y la industria financiera en general. Esta plataforma ofrece una forma rápida y eficiente de crear soluciones robustas.
+
+Dirigido a desarrolladores, Dynamic Framework proporciona un marco de trabajo unificado basado en estándares modernos y de código abierto. Este marco puede ser fácilmente adaptado para satisfacer las necesidades únicas de cada cliente.
+
+Dynamic Framework aborda las necesidades digitales comunes en diversas entidades financieras. Se enfoca tanto en gerentes de productos y canales digitales como en equipos de desarrollo. Este enfoque busca agilizar la implementación a través de un enfoque modular, flexible, reutilizable y fácilmente mantenible.
+
+###  Características principales
+Algunas de las características principales de Dynamic Framework son:
+- [Catálogo de componentes](/es/dynamic/ui/components) implementados en React y disponibles en Storybook.
+- [Kit de diseño](/es/dynamic/ui) para prototipado rápido disponibles para Figma.
+- [Plantillas de experiencias](/es/dynamic/experiences) financieras listas para descargar y modificar, con datos de ejemplo en APIs mocks.
+- [Plantillas de integración](/es/dynamic/integrations) a sistemas comunes, disponibles como proyectos en Java y Spring Boot.
+
 
 ### Estructura
+La estructura de Dynamic Framework se compone principalmente de los siguientes elementos:
 
-La estructura de Modyo Dynamic se compone de tres elementos fundamentales, cada uno de ellos pensado para cada fase de implementación de un producto financiero digital completo. En la siguiente figura, se muestran los diferentes componentes dentro de cada elemento de Modyo Dynamic.
+<img src="/assets/img/dynamic/dynamic_components.png" style="max-width: 700px;"/>
 
-<img src="/assets/img/dynamic/dynamic_components.png" alt="Dynamic structure" style="margin-top: 40px; max-width: 700px;" />
+Todos los componentes del framework han sido diseñados para trabajar entre sí, ofreciendo la mejor experiencia posible a los desarrolladores a cargo de la implementación.
 
-### Dynamic Design System
 
-El Design System de Modyo Dynamic permite componer interfaces orientadas en la industria financiera de una forma fácil y rápida, tomando ventaja de un catálogo de componentes prefabricados que resuelven los problemas comunes en la experiencia de usuarios.
 
-El sistema de diseño de Modyo Dynamic se compone de un kit de diseño en Figma y una completa implementación de componentes web hechos en ReactJS, distribuido en un paquete listo para ser incluido en cualquier proyecto JavaScript.
+### Pre-requisitos
+Para poder aprovechar al máximo las capacidades de Dynamic Framework, es recomendable tener una base de conocimientos mínima de Javascript, React, HTML y CSS, además de nociones básicas de arquitectura de [micro frontends](/es/architecture/patterns/micro-frontend) Web.
 
-### Dynamic Financial Experiences
+En el caso de las plantillas de integración, se requiere de conocimientos de programación de backend, principalmente en el lenguaje Java y el framework Spring Boot, además de nociones básicas de arquitectura de [microservicios](/es/architecture/patterns/microservice).
 
-Dynamic Financial Experiences son un conjunto de flujos y experiencias de usuarios pre-hechas, personalizables y listas para ser desplegadas.
+:::tip Modyo Platform
+Las plantillas de experiencia presentes en el frameowrk han sido diseñadas para ser compatibles con Modyo. Para más información de la plataforma Modyo favor visitar su [documentación oficial](/es/platform).
+:::
 
-Estas interfaces están implementadas como [micro frontends](/es/connect/resources/microfrontends.html), usando los componentes web de nuestro Sistema de Diseño Dynamic, lo que facilita su personalización y modificación.
 
-### Dynamic Integrations
+## Instalación
+Primero lo primero. Para comenzar a utilizar Dynamic Framework te recomendamos [crear un ambiente de pruebas](https://www.modyo.com/get-started) (sandbox) en Modyo. Una vez que te familiarices con los conceptos básicos de la plataforma, estarás listo para partir.
 
-Dynamic Integrations corresponden plantillas de [microservicios](/es/connect/resources/microservices.html) y APIs de integración listas para ser usadas en el ecosistema financiero. Actualmente existe soporte para Mambu, Jumio, Docusign y Salesforce. 
+Lo siguiente será instalar el Modyo CLI. Para ello debes ejecutar el siguiente comando:
 
-### ¿Quieres contribuir?
+``` shell
+npm -i modyo-cli
+```
 
-Si te interesa contribuir a Modyo Dynamic como usuario, hay varias maneras en las que puedes ayudar:
-- Utiliza el framework dentro de nuestros ambientes de prueba y proporciona retroalimentación acerca de problemas y posibles mejoras que crees que podemos realizar.
-- Participa en la comunidad, sumándote a nuestros webinars y eventos digitales que realizamos de forma periódica.
+Una vez descargado el CLI, estarás listo para comenzar a descargar las primeras plantillas de experiencia. Te recomendamos partir con la siguiente, correspondiente a la [Banca Personas](/es/dynamic/experiences/retail/dashboard):
+
+``` shell
+modyo-cli get dynamic-retail-dashboard-template
+```
+
+El comando anterior descargará una plantilla completamente funcional, la cual podrás ejecutar y modificar en tu ambiente local. Usa tu editor de código favorito para explorar el código , jugar con ella y ver por tí mismo cómo los diferentes [componentes](/es/dynamic/ui/components) del sistema de diseño son utilizados.
+
+A partir de este momento tendrás dos opciones: Seguir explorando otras plantillas o aventurarte a desplegar tu plantilla dentro de tu ambiente sandbox utilizando el modyo-cli con un API token válido.
+ 
+
+### Contribuciones
+
+Si te interesa contribuir a Dynamic Framework como usuario, hay varias maneras en las que puedes ayudar:
+- Utilizando el framework dentro de nuestros ambientes de prueba y proporciona retroalimentación acerca de problemas y posibles mejoras que crees que podemos realizar.
+- Contribuyendo directamente a los repositorios de código
+- Sugiriendo mejoras a la redacción de la documentación
+- Participando en la comunidad, sumándote a nuestros webinars y eventos digitales que realizamos de forma periódica.
 
 Para comunicarte con el equipo, reportar un problema o sugerir una funcionalidad puedes realizarlo mediante nuestro [Centro de Soporte de Modyo](https://support.modyo.com).
+
+
+### Soporte
+
+En el caso de presentar dudas o problemas con las plantillas de experiencia e integración provistas por Dynamic Framework, se puede pedir ayuda directamente desde la plataforma mediante el uso la acción de ayuda la cual se accede desde el panel de administración Web. En el caso de que se requiera de una asistencia más completa, se deberá crear un caso de soporte.
+
+La creación de casos de soporte se realiza desde el [Centro de Soporte de Modyo](https://support.modyo.com). En caso de que no se obtenga una respuesta oportuna, cada cliente puede hacer uso del protocolo de escalamiento establecido.
+
+:::warning Alcance del Soporte
+Las consultas y requerimiento de soporte solo contemplan las plantillas y las formas cómo estas se integran con la plataforma Modyo. Las modificaciones y el código a medida que se desarrollen sobre ellas quedan excluidas. Para estos casos, Modyo ofrece servicios profesionales de acompañamiento experto y apoyo a clientes.
+:::

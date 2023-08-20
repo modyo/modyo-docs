@@ -5,95 +5,95 @@ search: true
 # Tipos de contenido
 
 
-Los Tipos de Contenido son la base para tus Entradas. Los Tipos definen qué campos y validaciones son requeridas para las Entradas, contando con más de 15 tipos de campos.
+Los Tipos de contenido son la base para tus Entradas. Los Tipos definen qué campos y validaciones son requeridas para las Entradas, contando con más de 15 tipos de campos.
 
-A estos Tipos de Contenido se les puede asignar una cardinalidad, una variable que define cuantas Entradas pueden existir para este Tipo. Se pueden agregar idiomas al repositorio y podrás generar Entradas de varios idiomas, resguardadas desde un solo lugar. También puedes crear Usuarios, con varios roles y permisos, logrando una división de trabajo que llamamos Revisión de Equipo.
+A los Tipos de contenido se les puede asignar una cardinalidad. Esta variable indica cuantas Entradas pueden existir para este Tipo. Puedes agregar idiomas al repositorio y generar Entradas en varios idiomas, almacenadas en un solo lugar. Además, puedes crear Usuarios, con diferentes roles y permisos, logrando así una división de trabajo llamada Revisión de Equipo.
 
 <img src="/assets/img/content/types/types.jpg" alt="The UI for the Content Type module.">
 
 ## Sobre la Interfaz
 
-A primera vista, podrás encontrar en la parte superior un botón verde que, al hacer click ahí, te permitirá crear un Tipo.
+Al ingresar por primera vez en la sección Tipos, haz click en el botón verde **+Nuevo Tipo** para crear un nuevo Tipo.
 
-Más abajo, podrás ver la barra de búsqueda de Tipos, que te permitirá filtrar por cualquier palabra que se encuentre dentro del campo Nombre.
+Una vez que has creado tu primer Tipo, podrás crear tipos adicionales, dando click en el botón **+Nuevo Tipo** en la parte superior derecha.
 
-Después, encontrarás la tabla con los Tipos ya creados, que estarán ordenados de manera predeterminada de acuerdo a la fecha y hora actualizada, partiendo desde el elemento más reciente hacia atrás.
+La barra de búsqueda te permite buscar y filtrar tus tipos por cualquier palabra que aparezca en el campo Nombre.
 
-Para reordenarla, solo debes hacer click en los símbolos que se encuentran a un costado de cada categoría.
+La tabla debajo de la barra de búsqueda muestra los Tipos ya creados, ordenados de manera predeterminada de acuerdo a la fecha y hora actualizada, comenzando desde el elemento más reciente y retrocediendo.
 
-Las categorías por las cuales puedes reordenar son cuatro:
+Para reordenar la tabla, haz click en los símbolos al costado de cada categoría. Las categorías por las cuales puedes reordenar son:
 
 - **Nombre**
 - **Identificador (UID)**
 - **Fecha de Creación**
 - **Fecha de Actualización**
 
-Si quieres entrar a cualquier Tipo, debes hacer clic en el Nombre de éste para que se abra el editor correspondiente.
+Haz click en el nombre de un Tipo para abrir el editor correspondiente.
 
 ## Crear un Tipo
 
-Crea un tipo de contenido que servirá como una base para las entradas futuras.
+Para crear un nuevo tipo de contenido que servirá como base para tus entradas, sigue estos pasos:
 
-1. Desde el menú principal, haz click en **Contenido**, luego selecciona **Tipos**.
-2. Haz click en **+ Nuevo Tipo**.
+1. Desde el menú principal, haz click en **Contenido**.
+2. Selecciona el espacio donde quieres crear un nuevo Tipo.
+3. Haz click en **Tipos**.
+2. Haz click en el botón **+ Nuevo Tipo**.
 3. Escribe el nombre e identificador (UID).
 4. Selecciona la cardinalidad del tipo.
 5. Haz click en **Crear**.
 
 :::tip Tip
-Recomendamos escribir el formato de las entradas dentro del identificador, por ejemplo, videos, posts, etc. De esta manera, cualquier compañero de equipo sabrá de qué tipo de contenido se trata y podrá usarlo como plantilla para sus entradas sin generar una nueva.
+Recomendamos escribir el formato de las entradas dentro del identificador, por ejemplo, videos, posts, etc. De esta manera, cualquier miembro del equipo sabrá de qué tipo de contenido se trata y podrá usarlo como plantilla para sus entradas sin necesidad de crear una nueva.
 
-La cardinalidad se refiere al número de entradas que pueden existir para este tipo de contenido. Cardinalidad single significa que solamente una entrada de ese tipo puede existir. Seleccionar cardinalidad múltiple no te limita en el número de entradas.
+La cardinalidad se refiere al número de entradas que pueden existir para ese tipo de contenido. Si seleccionas "cardinalidad individual", solo se permite una entrada de ese tipo. Si eliges "cardinalidad múltiple", no hay límite en el número de entradas permitidas.
 :::
 
 :::warning Atención
-Hay un límite de 50 Tipos de Contenido dentro de un Espacio.
+Es importante tener en cuenta que existe un límite de 50 Tipos de Contenido por Espacio.
 :::
 
-
-En la interfaz de creación, podrás ver al centro de tu pantalla una plantilla vacía, mientras que al costado derecho, puedes ver una tabla con tres pestañas. 
+En la interfaz de creación, encontrarás una plantilla vacía en el centro de la pantalla y al lado derecho, una tabla con tres pestañas: 
 
 - **Añadir campos**
 - **Configuración del campo**
 - **Configuración**
 
-Esta interfaz sirve para crear cada uno de los tipos, dándoles el formato que sea requerido.
+Esta interfaz te permite crear cada uno de los tipos y darles el formato necesario, según tus requisitos.
 
 ## Campos
 
 :::tip Tip
-El nombre del campo es de suma importancia porque será mediante lo que se podrá acceder a su valor en los SDK de Liquid y JS. Para acceder al valor de un campo de una entrada puedes usar por ejemplo <span v-pre>`{{entry["nombre del campo"]}}`</span>. 
+El nombre del campo es de suma importancia, ya que será utilizado para acceder a su valor en los SDK de Liquid y JS. Para acceder al valor de un campo de una entrada puedes utilizar la sintaxis <span v-pre>`{{entry["nombre del campo"]}}`</span>. 
 
 Para más información ve a la [referencia de la API](/es/platform/content/public-api-reference.html)
 :::
 
 Todos los campos que se pueden añadir en un tipo, tienen un nombre, y la posibilidad de ser requeridos.
 
-Cuando un campo es requerido, al momento de crear o modificar una entrada, debe haber un valor asociado para ese campo, de lo contrario, no se podrán guardar los cambios.
+Cuando un campo es marcado como requerido, al crear o modificar una entrada, se debes proporcionar un valor para ese campo. De lo contrario, no podrás guardar los cambios realizados.
 
 ### Texto de una línea
 
-Este campo te permite ingresar textos de una sola linea. y cuenta con las siguientes restricciones:
+Este campo te permite ingresar textos de una sola linea. Cuenta con las siguientes restricciones:
 
-- **Largo mínimo**: Permite exigir un largo mínimo al texto ingresado.
-- **Largo máximo**: Permite limitar el largo máximo al texto ingresado.
-- **Validación por expresión regular**: Te permite añadir una expresión regular para validar que el texto que se ingresa al momento de crear/modificar una entrada coincida con un formato determinado. 
-
+- **Largo mínimo**: Permite exigir un mínimo de caracteres para el texto ingresado.
+- **Largo máximo**: Permite  limitar la cantidad máxima de caracteres para el texto ingresado.
+- **Validación por expresión regular**: Te permite añadir una expresión regular para validar que el texto ingresado, al crear o modificar una entrada, cumpla con un formato determinado.
 
 ### Texto enriquecido
 
-Este campo se traduce en un editor WYSIWYG de texto de múltiples líneas que también te permite modificar el código HTML del mismo. Este campo cuenta con las siguientes restricciones:
+Este campo se traduce en un editor WYSIWYG de texto de múltiples líneas que también te permite modificar el código HTML del texto. Este campo cuenta con las siguientes restricciones:
 
-- **Largo mínimo**: Permite exigir un largo mínimo al texto ingresado.
-- **Largo máximo**: Permite limitar el largo máximo al texto ingresado.
+- **Largo mínimo**: Establece el mínimo de caracteres para el texto ingresado.
+- **Largo máximo**: Limita la cantidad máxima de caracteres para el texto ingresado.
 
 ### Dropdown
 
-Este campo te permite agregar una lista desplegable para seleccionar sólo una opción.
+Este campo te permite agregar una lista desplegable donde solo se puede seleccionar una opción.
 
 ### Radio
 
-Este campo te permite agregar una lista fija de elementos para seleccionar sólo una opción.
+Utiliza este campo para agregar una lista fija de elementos para seleccionar solo una opción.
 
 ### Checkbox
 
@@ -101,39 +101,39 @@ Este campo te permite agregar una lista de la cual puedes seleccionar más de un
 
 ### Opciones Múltiples
 
-Este campo te permite agregar un campo en el cual puedes escribir para seleccionar una opción que puede ser predeterminada o propuesta.
+Este campo te permite agregar un campo de texto en el cual puedes escribir para seleccionar una opción; puede ser predeterminada o propuesta.
 
 ### Booleano
 
-Este campo te permite agregar una pregunta o afirmación (Verdadero/True oo Falso/False).
+Este campo te permite agregar una pregunta o afirmación (Verdadero/True o Falso/False).
 
 ### Entero
 
-Este campo te permite agregar un número entero que debe ser de manera predeterminada entre los números `-65325` y `+65325`. Sin embargo, se puede acotar haciendo uso de las restricciones:
+Este campo te permite agregar un número entero.  Por defecto, el valor debe estar en el rango de `-65325`a `+65325`. Sin embargo, puedes ajustar estos límites aplicando las siguientes restricciones:
 
-- **Largo mínimo**: Permite exigir un largo mínimo al texto ingresado.
-- **Largo máximo**: Permite limitar el largo máximo al texto ingresado.
+- **Largo mínimo**: Establece el número mínimo de caracteres para el texto ingresado.
+- **Largo máximo**: Establece el número máximo de caracteres para el texto ingresado.
 
 ### Decimal
 
-Este campo te permite agregar un número decimal que debe estar de manera predeterminada entre los números `-65325` y `+65325`. Sin embargo, se puede acotar haciendo uso de las restricciones:
+Utiliza este campo para ingresar un número decimal. El número debe ser, obligatoriamente, entre `-65325` y `+65325`. Sin embargo, se puede acotar haciendo uso de las restricciones:
 
-- **Largo mínimo**: Permite exigir un largo mínimo al texto ingresado.
-- **Largo máximo**: Permite limitar el largo máximo al texto ingresado.
+- **Largo mínimo**: Permite establecer un mínimo de caracteres para el texto ingresado.
+- **Largo máximo**: Permite limitar la cantidad máxima de caracteres para el texto ingresado.
 
 ### Fecha
 
-Te permite agregar un selector de fechas. Puedes restringir los valores de fechas que se pueden elegir, haciendo uso de las restricciones:
+Utiliza este campo para agregar un selector de fechas. Limita las fechas seleccionables aplicando las siguientes restricciones:
 
-- **Desde**: Permite limitar la menor seleccionable.
-- **Hasta**: Permite limitar la mayor fecha seleccionable.
+- **Desde**: Establece la fecha más temprana que se puede elegir.
+- **Hasta**: Establece la fecha más tardía que se puede elegir.
 
 ### Ubicación
 
-Te permite agregar un campo que en el que puedes seleccionar una dirección geográfica, según los campos de Google Maps, o en el caso de que no cuentes con una _API key_ de google, te permitirá ingresar a mano el nombre, latitud, longitud y las cinco limitaciones políticas de la ubicación. Estas áreas de administración no son estándar y dependen de cada país. En el caso de Chile estas son: Región, Provincia, Comuna y Ciudad.
+Utiliza este campo para seleccionar una dirección geográfica, según los campos de Google Maps. En caso de que no dispongas de una clave de API de Google, puedes ingresar manualmente el nombre, la latitud, la longitud y las divisiones políticas de la ubicación. Estas divisiones administrativas no son estándar y varían según cada país. En el caso de Chile, las divisiones son: Región, Provincia, Comuna y Ciudad.
 
 :::warning Atención
-Para que los mapas de ubicación funcionen correctamente con la API key de Google configurada en la cuenta, la key debe tener permisos para acceder a:
+Para garantizar el correcto funcionamiento de los mapas de ubicación con la clave de API de Google configurada en tu cuenta, la clave tiene que tener permisos para acceder a:
 
 * API de mapas a través de JavaScript
 * API de lugares
@@ -142,33 +142,53 @@ Para que los mapas de ubicación funcionen correctamente con la API key de Googl
 
 ### Archivo
 
-Este campo te permite adjuntar un sólo archivo a la entrada haciendo uso del gestor de archivos.
+Este campo te permite adjuntar un solo archivo a la entrada, utilizando el gestor de archivos.
 
 ### Listado de Archivos
 
-Este campo te permite adjuntar múltiples archivos a la entrada haciendo uso del gestor de archivos.
+Este campo te permite adjuntar múltiples archivos a la entrada, usando el gestor de archivos.
 
-### Contenido (link a una)
+### Contenido (enlace a una)
 
-Este campo te permite vincular una Entrada a otra Entrada que ya se encuentre creada y publicada dentro del Espacio. Este campo cuenta con las siguientes restricciones:
+Utiliza este campo para vincular una Entrada a otra Entrada existente y publicada dentro del Espacio. Este campo tiene las siguientes restricciones:
 
-- **Restringir tipo**: Te permite seleccionar un tipo predeterminado para que las entradas que se puedan seleccionar como enlace, solo sean del tipo seleccionado.
+- **Restringir tipo**: Te permite seleccionar un tipo predeterminado para que solo se puedan seleccionar, como enlace, entradas del tipo especificado.
 
-### Listado de Contenido (link a muchas)
+### Listado de Contenido (enlace a varias)
 
-Este campo te permite vincular muchas Entradas que ya se encuentren creadas dentro del Espacio a otra Entrada. Este campo cuenta con las siguientes restricciones:
+Este campo te permite vincular más de una Entrada existente dentro del Espacio a otra Entrada. Este campo tiene las siguientes restricciones:
 
-- **Restringir tipo**: Te permite seleccionar un tipo predeterminado para que las entradas que se puedan seleccionar como enlace, solo sean del tipo seleccionado.
+- **Restringir tipo**: Te permite seleccionar un tipo predeterminado para solo se puedan seleccionar, como enlace, entradas del tipo seleccionado.
+
+### Grupo `(coming soon)`
+
+Utiliza el campo Grupo para albergar otro campo dentro él. Puedes asignar un nombre al grupo según tus necesidades, así como nombrar los campos dentro del grupo. En casilla pista, incluye el texto que deseas mostrar para ayudar a tus usuarios a completar correctamente el campo. 
+
+Una vez que tengas más de un tipo de campo dentro de un grupo, puedes arrastrarlos y ordenarlos según requieras. 
+
+No hay límite en la cantidad de campos que puedes incluir dentro de un grupo. 
+
+Puedes validar el contenido de los campos de la siguiente forma: 
+
+- **Requerido**: Marca la casilla **Requirido** para obligar a que se complete el grupo o campo.
+  - Si marcas el grupo como requerido, al menos un elemento dentro del grupo deberá ser completado. 
+  - Si marcas un elemento como requerido, ese elemento tiene que tener contenido.
+- **Unique**: Cuando marcas una entrada como única, no puede repetirse su contenido dentro del mismo grupo. 
+
+:::tip Tip
+Un grupo puede albergar cualquier tipo de campo, menos otro grupo. 
+:::
+
 
 ## Propiedades
 
-En esta pestaña, puedes ver el nombre del tipo, junto con su UID. El UID es importante ya que será como se llame al tipo desde los SDK de Liquid, Javascript y API. A continuación verás un botón que puede estar en 2 estados:
+En esta pestaña, puedes ver el nombre y UID del tipo. El UID es importante, ya que se utiliza para referirse al tipo desde los SDK de Liquid, JavaScript y la API. A continuación, verás un botón que puede estar en 2 estados:
 
-- **Reindexar**: Te permite reindexar el modelo si es que te encontraste con algún problema con tu API pública.
-- **Cancelar reindexación**: Si es que ya hay una reindexación en curso, podrás cancelar el proceso  haciendo click en este botón. 
+- **Reindexar**: Te permite volver a indexar el modelo en caso de problemas con la API pública.
+- **Cancelar reindexación**: Si hay una reindexación en curso, puedes cancelar el proceso haciendo click en este botón. 
 
 :::warning Atención
-Cuando reindexas alguno de tus tipos, el modelo que estaba reindexado anteriormente quedará disponible hasta que el nuevo indice esté completo. Al finalizar la nueva reindexación, se sobreescribirá el indice antiguo con el nuevo indice.
+Al reindexar uno de tus tipos, el modelo previamente indexado seguirá disponible hasta que se complete la nueva indexación. Una vez finalizada la reindexación, el antiguo índice se sobrescribirá con el nuevo índice.
 :::
 
 :::warning Atención
