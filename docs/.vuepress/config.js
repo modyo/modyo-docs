@@ -556,7 +556,7 @@ module.exports = {
                       collapsable: false,
                       children: [
                           ["/es/legal/", "Acuerdo de Licencia"],
-                          ["/es/legal/dpa"],
+                          "/es/legal/dpa",
                       ],
                   }, ],
                   "/es/architecture/": [{
