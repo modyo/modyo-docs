@@ -7,9 +7,9 @@ search: true
 The Modyo Connect managed service is activated as a separate contract or annex independent of the Modyo Enterprise Cloud subscription licensing. To start the Modyo Connect service, the following considerations must be taken into account:
 
 - Number of developers who should have access to the code repositories.
-- Number of [microfrontends](resources/microfrontends.md) to be developed using Modyo's Command Line Interface (CLI).
+- Number of [micro frontends](/en/architecture/patterns/micro-frontend) that will be developed using Modyo's Command Line Interface (CLI).
 - Number of pre-production environments to be used as part of the development.
-- Number of [microservices](resources/microservices.md) to be developed. 
+- Number of [microservices](/en/architecture/patterns/microservice) that will be developed. 
 - Number of intermediate repositories that might be required in case of building shared artifacts (e.g. NPM packages or Java libraries for Maven or Gradle).
 - VPN links that must be activated to access business services.
 - Single Sign-On authentication requirements.
