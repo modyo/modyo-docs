@@ -13,7 +13,7 @@ Public sites can serve a variety of purposes. Some common examples could be:
 - News sites and blogs
 
 <!-- Hack to avoid this title to be displayed in the TOC element -->
- <h3> <a href="#how-to-implement-public-sites-with-modyo" class="header-anchor">#</a> How to implement public sites with Modyo?</h3> 
+<h3> <a href="#how-to-implement-public-sites-with-modyo" class="header-anchor">#</a> How to implement public sites with Modyo?</h3> 
 
 Modyo offers all the tools necessary to create and maintain public sites in an agile, safe and efficient way. Through the combination of their content applications and channels, you will be able to access all the functionality required at each stage of the site's life cycle.
 
@@ -204,12 +204,12 @@ Web analytics, from the point of view of marketing teams, is possibly the most i
 For the purpose of analytics on a public site, Modyo does not offer within its platform any type of own tool for taking public traffic metrics. This is because there are already established players in the industry, who also offer excellent forms of integration, such as [Google Analytics](https://marketingplatform.google.com).
 :::
 
-#### Marcaje
-Markup for Google Analytics refers to the implementation of code on a website or application to collect data and tracking metrics that are then analyzed on the Google Analytics platform. This process involves embedding the tracking code provided by Google in web pages or in the application flow. Once the code is in place, Google Analytics starts collecting information about site traffic, user behavior, and other relevant data.
+#### Tagging
+Tagging in Google Analytics refers to the implementation of code on a website or application to collect data and tracking metrics that are then analyzed on the Google Analytics platform. This process involves embedding the tracking code provided by Google in web pages or in the application flow. Once the code is in place, Google Analytics starts collecting information about site traffic, user behavior, and other relevant data.
 
-Markup for Google Analytics is essential for monitoring and evaluating the performance of the site or application. It allows site owners and administrators to understand how users interact with their content, which pages are most popular, how much time they spend on the site, traffic sources, conversions, and other important details. This data is valuable for making informed decisions about marketing strategies, site design, and user experience optimization.
+Tagging in Google Analytics is essential for monitoring and evaluating the performance of the site or application. It allows site owners and administrators to understand how users interact with their content, which pages are most popular, how much time they spend on the site, traffic sources, conversions, and other important details. This data is valuable for making informed decisions about marketing strategies, site design, and user experience optimization.
 
-To implement branding with Modyo, you must first define the business objectives you want to measure and then implement the code and tags within the templates of the sites. Tagging will capture the events that happen on the site, correlate them with other data and obtain valuable information about how users interact with it. 
+To implement tagging with Modyo, you must first define the business objectives you want to measure and then implement the code and tags within the templates of the sites. Tagging will capture the events that happen on the site, correlate them with other data and obtain valuable information about how users interact with it. 
 
 
 
