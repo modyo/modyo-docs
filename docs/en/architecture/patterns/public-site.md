@@ -209,7 +209,7 @@ Markup for Google Analytics refers to the implementation of code on a website or
 
 Tagging in Google Analytics is essential for monitoring and evaluating the performance of the site or application. It allows site owners and administrators to understand how users interact with their content, which pages are most popular, how much time they spend on the site, traffic sources, conversions, and other important details. This data is valuable for making informed decisions about marketing strategies, site design, and user experience optimization.
 
-To implement branding with Modyo, you must first define the business objectives you want to measure and then implement the code and tags within the templates of the sites. Tagging will capture the events that happen on the site, correlate them with other data and obtain valuable information about how users interact with it. 
+To implement tagging with Modyo, you must first define the business objectives you want to measure and then implement the code and tags within the templates of the sites. Tagging will capture the events that happen on the site, correlate them with other data and obtain valuable information about how users interact with it. 
 
 
 
