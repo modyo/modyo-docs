@@ -71,7 +71,7 @@ In the next version of Modyo, a functionality called “code splitting” has be
 
 On the other hand, support for the development of microservices is offered from [Modyo Connect](/en/connect). Modyo Connect is a managed cloud infrastructure service, which allows you to have all the resources necessary to set up an integration structure to business systems, from lightweight integration microservices.
 
-The integration between micro frontends and microservices is done through well-defined APIs which are directly exposed to the Internet, adding layers of authentication and authorization through the use of [Single Sign On (SSO)] (/es/architecture/patterns/esso) and using an architectural pattern called [Backend for Frontend (BFF)] (/es/architecture/patterns/bff).
+The integration between micro frontends and microservices is done through well-defined APIs which are directly exposed to the Internet, adding layers of authentication and authorization through the use of [Single Sign On (SSO)](/en/architecture/patterns/esso) and using an architectural pattern called [Backend for Frontend (BFF)](/en/architecture/patterns/bff).
 
 
 #### Using Javascript Frameworks
