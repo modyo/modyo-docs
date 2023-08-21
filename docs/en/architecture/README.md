@@ -13,7 +13,7 @@ Our goal is to provide a solid guide and reference resource for web developers, 
 :: :tip High Level Approach
 This guide contains high-level patterns and is designed for software architects and technical leaders.
 
-For a review of more specific programming patterns, we recommend the book [“Design Patterns: Elements of Reusable Object-Oriented Software”] (https://en.wikipedia.org/wiki/Design_Patterns) by Erich Gamma, Ralph Johnson, Richard Helm and John Vlissides.
+For a more specific review of programming patterns, we recommend the book [“Design Patterns: Elements of Reusable Object-Oriented Software”] (https://en.wikipedia.org/wiki/Design_Patterns) by Erich Gamma, Ralph Johnson, Richard Helm and John Vlissides.
 :::
 
 ## Reference Architecture
