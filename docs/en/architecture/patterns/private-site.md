@@ -107,11 +107,11 @@ In the development of private sites on Modyo, design systems can be implemented 
 
 
 ### Progressive Web Application (PWA)
-[Progressive Web Applications (PWA)] (/es/architecture/patterns/pwa) are web applications that offer an experience similar to a native application on mobile and desktop devices. They use modern web technologies to offer features such as offline work, push notifications, and fast access, even on slow networks. The value of PWAs lies in their ability to provide a more attractive and fluid user experience without the need to install an application from a store, making them accessible and efficient for both developers and users. In addition, they facilitate updating and maintenance, allowing greater consistency and availability across different platforms and devices.
+[Progressive Web Applications (PWA)](/en/architecture/patterns/pwa) are web applications that offer an experience similar to a native application on mobile and desktop devices. They use modern web technologies to offer features such as offline work, push notifications, and fast access, even on slow networks. The value of PWAs lies in their ability to provide a more attractive and fluid user experience without the need to install an application from a store, making them accessible and efficient for both developers and users. In addition, they facilitate updating and maintenance, allowing greater consistency and availability across different platforms and devices.
 
 Modyo offers the ability to activate sites as PWAs, providing access to the main settings that enable this technology. These enablers allow you to interact with native components of the device, incorporate shortcuts from the application menu, and access advanced features such as the camera or biometrics of the device. A simple, but relevant example of these enablers, is the activation of basic cache on the device to control the experience on unstable connections (offline mode)
 
-:: :tip Uses of PWA
+:::tip Uses of PWA
 To learn more about the capabilities of the PWA and tutorials on how these enablers are activated within the Modyo platform, visit our [learning paths] (https://help.modyo.com).
 :::
 
