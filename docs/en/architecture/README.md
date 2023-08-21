@@ -37,7 +37,7 @@ Modyo reference architecture completely decouples the frontend from the backend,
 Modyo Connect is an infrastructure service managed in a platform as a service (PaaS) mode. This service is managed by Modyo and is deployed in a secure environment in the Modyo business cloud.
 
 :: :tip More info
-For more information about Modyo Connect and its managed infrastructure components, see the [official documentation] (/es/connect).
+For more information about Modyo Connect and its managed infrastructure components, see the [official documentation] (/en/connect).
 :::
 
 
