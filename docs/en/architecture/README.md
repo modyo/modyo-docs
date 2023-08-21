@@ -4,7 +4,7 @@ search: true
 
 # Architecture
 
-In the current context of the digital era, web development has assumed a central role in the creation of software solutions. As modern web applications become more complex and scalable, it becomes imperative to adopt effective and efficient software architecture patterns. These patterns ensure the scalability, maintainability and efficiency of our solutions.
+In the current context of the digital era, web development has assumed a central role in the creation of software solutions. As modern web applications become more complex and scalable, it is imperative to adopt effective and efficient software architecture patterns. These patterns ensure the scalability, maintainability and efficiency of our solutions.
 
 This guide aims to explore various software architecture patterns that shape the way we develop and understand web applications. From modular, component-oriented architecture, to more contemporary approaches, such as architecture based on micro frontends, microservices and Domain-Driven Design, we will address each of these patterns in detail. We'll look at their principles, advantages, disadvantages, and ideal usage scenarios. In addition, we will examine its implementation with Modyo.
 
