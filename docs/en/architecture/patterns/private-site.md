@@ -37,7 +37,7 @@ This document contains explanations that will be copied to the official Modyo do
 
 
 ### User Management
-User management is essential within a private site and is the main differentiator compared to a private site. To manage users, Modyo has a feature called [user realms] (/en/platform/customers/realms). User realms are completely independent of each other, and can have their own settings, such as how users are authenticated within it.
+User management is essential within a private site and is the main differentiator compared to a private site. To manage users, Modyo has a feature called [user realms](/en/platform/customers/realms). User realms are completely independent of each other, and can have their own settings, such as how users are authenticated within it.
 
 #### User events
 User kingdoms store user events and allow the definition of segments based on information from the user's profile, or their behavior within the system.
