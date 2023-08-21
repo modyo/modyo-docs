@@ -78,7 +78,7 @@ The integration between micro frontends and microservices is done through well-d
 Unlike public sites, the use of Javascript frameworks on private sites can be highly recommended in cases where advanced functionality is required, such as consuming external APIs, components with complex interaction flows, reusing code or using Web Components. In these cases, the recommended way to do this will be through the use of [micro frontends](/en/architecture/patterns/miro-frontend).
 
 #### Using Web Components
-By making use of micro frontends, private sites can benefit from the use of [Web Components] (/es/architecture/patterns/web-components) in a cleaner and more direct way than in the case of public sites, as long as they reach only the micro frontends themselves and not the rest of the site.
+By making use of micro frontends, private sites can benefit from the use of [Web Components](/en/architecture/patterns/web-components) in a cleaner and more direct way than in the case of public sites, as long as they reach only the micro frontends themselves and not the rest of the site.
 
 
 
