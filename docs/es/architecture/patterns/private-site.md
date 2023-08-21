@@ -33,9 +33,6 @@ En el trabajo con sitios privados, podemos encontrar similitudes que se comparte
 :::
 
 
-Este documento contiene explicaciones que serán copiadas a la documentación oficial de Modyo, en https://docs.modyo.com. El propósito de este documento es colaborar en la redacción de las secciones más importantes.
-
-
 ### Gestión de Usuarios
 La gestión de usuarios es esencial dentro de un sitio privado y es el principal diferenciados con respecto a un sitio privado. Para gestionar usuarios, Modyo dispone de una funcionalidad llamada [reinos de usuarios](/es/platform/customers/realms). Los reinos de usuarios son completamente independientes entre sí, y pueden poseer configuraciones propias como por ejemplo cómo los usuarios son autenticados dentro de él.
 

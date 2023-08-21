@@ -57,16 +57,16 @@ Si bien estas características no son una solución idéntica a TWA, ofrecen opc
 ### Ejemplos de PWAs
 A continuación, algunos ejemplos destacados de Progressive Web Applications (PWA) que demuestran la versatilidad y eficacia de esta tecnología:
 
-- **Twitter Lite**: Esta versión ligera de Twitter fue diseñada para ser rápida y eficiente en el consumo de datos. Ofrece una experiencia similar a la aplicación nativa, con características como notificaciones push y acceso offline.
-- **Pinterest**: La PWA de Pinterest logró aumentar significativamente la tasa de participación de los usuarios y el tiempo que pasan en la plataforma. Proporciona una experiencia de usuario fluida con tiempos de carga rápidos.
-- **Spotify Web Player**: Spotify ofrece una PWA que permite a los usuarios escuchar música y acceder a sus playlists sin necesidad de descargar una aplicación separada. Funciona en diferentes plataformas y navegadores.
-- **Starbucks**: La PWA de Starbucks permite a los clientes ver el menú, personalizar sus pedidos y agregarlos a la cesta, incluso cuando están offline. Una vez que se restaura la conexión, pueden completar la compra.
-- **Uber**: La versión web de Uber es una PWA que ofrece una experiencia de usuario similar a la aplicación nativa pero con un tiempo de carga más rápido y un consumo de datos menor. Es útil en áreas con conexiones a Internet limitadas o lentas.
-- **Forbes**: La revista Forbes implementó una PWA para ofrecer una experiencia de lectura más rápida y atractiva. La aplicación carga rápidamente los contenidos y permite a los lectores continuar leyendo offline.
-- **Alibaba**: El gigante del comercio electrónico chino desarrolló una PWA para mejorar la experiencia móvil de sus usuarios. Lograron aumentar las conversiones y la participación de los usuarios en dispositivos móviles.
-- **OLX**: OLX es un mercado global en línea que utiliza una PWA para ofrecer una experiencia de navegación más rápida y eficiente. Esto resultó en un aumento en la participación y la retención de usuarios.
-- **Flipkart**: Flipkart, uno de los mayores minoristas en línea de la India, creó una PWA llamada "Flipkart Lite". Ofrece una experiencia de compra eficiente con acceso offline y notificaciones push.
-- **The Washington Post**: El periódico The Washington Post ofrece una PWA que proporciona una experiencia de lectura rápida y fluida. Los lectores pueden acceder a los artículos y continuar leyendo incluso cuando están offline.
+- **Twitter Lite:** Esta versión ligera de Twitter fue diseñada para ser rápida y eficiente en el consumo de datos. Ofrece una experiencia similar a la aplicación nativa, con características como notificaciones push y acceso offline.
+- **Pinterest:** La PWA de Pinterest logró aumentar significativamente la tasa de participación de los usuarios y el tiempo que pasan en la plataforma. Proporciona una experiencia de usuario fluida con tiempos de carga rápidos.
+- **Spotify Web Player:** Spotify ofrece una PWA que permite a los usuarios escuchar música y acceder a sus playlists sin necesidad de descargar una aplicación separada. Funciona en diferentes plataformas y navegadores.
+- **Starbucks:** La PWA de Starbucks permite a los clientes ver el menú, personalizar sus pedidos y agregarlos a la cesta, incluso cuando están offline. Una vez que se restaura la conexión, pueden completar la compra.
+- **Uber:** La versión web de Uber es una PWA que ofrece una experiencia de usuario similar a la aplicación nativa pero con un tiempo de carga más rápido y un consumo de datos menor. Es útil en áreas con conexiones a Internet limitadas o lentas.
+- **Forbes:** La revista Forbes implementó una PWA para ofrecer una experiencia de lectura más rápida y atractiva. La aplicación carga rápidamente los contenidos y permite a los lectores continuar leyendo offline.
+- **Alibaba:** El gigante del comercio electrónico chino desarrolló una PWA para mejorar la experiencia móvil de sus usuarios. Lograron aumentar las conversiones y la participación de los usuarios en dispositivos móviles.
+- **OLX:** OLX es un mercado global en línea que utiliza una PWA para ofrecer una experiencia de navegación más rápida y eficiente. Esto resultó en un aumento en la participación y la retención de usuarios.
+- **Flipkart:** Flipkart, uno de los mayores minoristas en línea de la India, creó una PWA llamada "Flipkart Lite". Ofrece una experiencia de compra eficiente con acceso offline y notificaciones push.
+- **The Washington Post:** El periódico The Washington Post ofrece una PWA que proporciona una experiencia de lectura rápida y fluida. Los lectores pueden acceder a los artículos y continuar leyendo incluso cuando están offline.
 
 Estos ejemplos muestran cómo diferentes industrias y empresas están utilizando las PWA para mejorar la experiencia de usuario, aumentar la participación y lograr otros objetivos comerciales clave. Las PWA pueden ser una solución eficaz para diversas necesidades y contextos.
 
