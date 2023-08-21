@@ -65,7 +65,7 @@ The number of functionalities to be implemented within an application, as well a
 
 For the specific case of micro frontends, Modyo has all the relevant tools that will be required to manage their life cycle, including support for the Modyo CLI, which will allow development to be integrated into custom flows from the client's repositories. In this context, micro frontends will vary depending on the amount of functionality being considered to be implemented, and can be very simple or very complex. In the case of complex micro frontends, which encompass functionality that should not be decoupled, the final size of the module could affect the user experience.
 
-:: :tip Code splitting
+:::tip Code splitting
 In the next version of Modyo, a functionality called “code splitting” has been incorporated, which will allow the decomposition of highly complex micro frontends into modules that are downloaded dynamically, improving load times and preventing the user from downloading code that will not be used. This technique will be especially useful for large micro frontends whose functionality should not be kept separately.
 :::
 
