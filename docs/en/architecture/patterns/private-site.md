@@ -101,7 +101,7 @@ The use of [stages](/en/platform/channels/sites.md#stages) within Modyo is recom
 
 
 #### Using Design Systems
-The use of [design systems] (/es/architecture/patterns/design-system) in the architecture of an application improves its governance by providing a coherent structure and guidelines for development. This translates into greater consistency in the user interface, improved collaboration between teams, faster development, more efficient maintenance and scalability, guaranteed accessibility and usability, and strengthening testing and quality. Together, these factors contribute to more efficient control and management of the application, which is reflected in greater effectiveness in its design and operation.
+The use of [design systems](/en/architecture/patterns/design-system) in the architecture of an application improves its governance by providing a coherent structure and guidelines for development. This translates into greater consistency in the user interface, improved collaboration between teams, faster development, more efficient maintenance and scalability, guaranteed accessibility and usability, and strengthening testing and quality. Together, these factors contribute to more efficient control and management of the application, which is reflected in greater effectiveness in its design and operation.
 
 In the development of private sites on Modyo, design systems can be implemented programmatically within the micro frontend, through the use of a versioned library from which the artifacts are published. Once deployed in Modyo, the micro frontend could receive CSS or Liquid parameters that allow it to alter any of its design or behavior definitions if required.
 
