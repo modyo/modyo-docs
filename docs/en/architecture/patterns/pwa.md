@@ -57,7 +57,7 @@ While these features are not an identical solution to TWA, they offer options to
 ### Examples of PWAs
 Here are some outstanding examples of Progressive Web Applications (PWA) that demonstrate the versatility and effectiveness of this technology:
 
-- **Twitter Lite: ** This lightweight version of Twitter was designed to be fast and efficient in consuming data. It offers an experience similar to the native application, with features such as push notifications and offline access.
+- **Twitter Lite:** This lightweight version of Twitter was designed to be fast and efficient in consuming data. It offers an experience similar to the native application, with features such as push notifications and offline access.
 - **Pinterest: ** Pinterest's PWA was able to significantly increase the user engagement rate and the time they spend on the platform. It provides a smooth user experience with fast loading times.
 - **Spotify Web Player: ** Spotify offers a PWA that allows users to listen to music and access their playlists without the need to download a separate application. It works on different platforms and browsers.
 - **Starbucks: ** The Starbucks PWA allows customers to view the menu, customize their orders and add them to the cart, even when they are offline. Once the connection is restored, they can complete the purchase.
