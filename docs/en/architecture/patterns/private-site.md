@@ -48,7 +48,7 @@ Within a user realm, you can define forms that can be completed by users within 
 #### Messaging and notifications
 Within a realm, it is also possible to define communication channels with the user, which may be through email messaging.
 
-:: :tip Messaging channels
+:::tip Messaging channels
 In the next version of Modyo, more messaging channels will be available to send notifications to users.
 :::
 
