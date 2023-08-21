@@ -204,7 +204,7 @@ Web analytics, from the point of view of marketing teams, is possibly the most i
 For the purpose of analytics on a public site, Modyo does not offer within its platform any type of own tool for taking public traffic metrics. This is because there are already established players in the industry, who also offer excellent forms of integration, such as [Google Analytics](https://marketingplatform.google.com).
 :::
 
-#### Marcaje
+#### Tagging
 Markup for Google Analytics refers to the implementation of code on a website or application to collect data and tracking metrics that are then analyzed on the Google Analytics platform. This process involves embedding the tracking code provided by Google in web pages or in the application flow. Once the code is in place, Google Analytics starts collecting information about site traffic, user behavior, and other relevant data.
 
 Markup for Google Analytics is essential for monitoring and evaluating the performance of the site or application. It allows site owners and administrators to understand how users interact with their content, which pages are most popular, how much time they spend on the site, traffic sources, conversions, and other important details. This data is valuable for making informed decisions about marketing strategies, site design, and user experience optimization.
