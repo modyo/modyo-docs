@@ -95,7 +95,7 @@ Private sites where it is necessary, by some policy, to be developed in separate
 On the other hand, if what is required is to keep the base dependencies of the platform continuously synchronized between the different micro frontends, it will be more recommended to work on previous virtualized environments using stages, as explained in the next section.
 
 #### Using Stages
-The use of [stages] (/en/platform/channels/sites.md #stages) within Modyo is recommended when micro frontends or [widgets] (/en/platform/channels/widgets) require sharing dependencies that are resolved from the base of the platform (Javascript or [snippets] (/en/platform/channels/templates.md #snippets) managed from it). In these cases, you can count on a complete virtualized pre-productive environment, which synchronizes changes with each other and allows you to define more direct publishing workflows. 
+The use of [stages](/en/platform/channels/sites.md#stages) within Modyo is recommended when micro frontends or [widgets](/en/platform/channels/widgets) require sharing dependencies that are resolved from the base of the platform (Javascript or [snippets](/en/platform/channels/templates.md#snippets) managed from it). In these cases, you can count on a complete virtualized pre-productive environment, which synchronizes changes with each other and allows you to define more direct publishing workflows. 
 
 
 
