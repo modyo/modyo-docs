@@ -18,7 +18,7 @@ We invite you to explore our [official documentation](/en/platform) to deepen yo
 
 ### Modyo Expert
 
-The Modyo Expert service provides consulting and support that covers all stages of the development of your digital product, based on the Modyo reference architecture. By having a Modyo Expert in your team, you will have constant support for architectural and implementation decisions affecting the platform, micro frontends or integration microservices.
+Modyo Expert service provides consulting and support that covers all stages of the development of your digital product, based on Modyo reference architecture. By having a Modyo Expert in your team, you will have constant support for architectural and implementation decisions affecting the platform, micro frontends or integration microservices.
 
 Modyo Experts are professionals with a high level of training not only in Modyo technology, but also in safety and performance. They are prepared to guide you by ensuring that both your functional and non-functional requirements are met.
 
