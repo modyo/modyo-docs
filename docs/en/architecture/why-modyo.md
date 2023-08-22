@@ -28,7 +28,7 @@ Modyo allows you to deploy changes in a modular way, with the option to preview 
 
 ### Centralized management
 
-Modyo makes it easy to manage and manage multiple websites and applications on a single centralized platform. This is especially valuable for companies with a presence in multiple locations or that need to centrally manage and control their digital content.
+Modyo makes it easy to manage and administer multiple websites and applications on a single centralized platform. This is especially valuable for companies with multiple locations or that need to centrally manage and control their digital content.
 
 ### Scalability
 
