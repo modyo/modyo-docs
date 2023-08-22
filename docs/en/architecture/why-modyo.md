@@ -40,4 +40,4 @@ Modyo provides technical support and regular updates to ensure stable and secure
 
 ### Constant evolution
 
-The Modyo platform is constantly evolving. We support all of our customers to keep up to date with the latest versions, ensuring that they always have access to the best technology and standards we can provide.
+The Modyo platform is constantly evolving. We support all of our customers so that they can keep up to date with the latest versions, ensuring that they always have access to the best technology and standards we can provide.
