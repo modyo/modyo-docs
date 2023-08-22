@@ -10,7 +10,7 @@ Modyo gives companies the ability to create high-quality digital products and to
 
 ### All in one place
 
-With Modyo, everything you need to launch and develop your digital products, you have it in one place. Thanks to its centralized and scalable management of content, applications and users, Modyo allows you to significantly reduce market launch times.
+With Modyo, you have everything you need to launch and develop your digital products, in one place. Thanks to its centralized and scalable management of content, applications and users, Modyo allows you to significantly reduce market launch times.
 
 ### Ease of use
 
