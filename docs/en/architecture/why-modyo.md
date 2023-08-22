@@ -6,7 +6,7 @@ search: true
 
 [Modyo] (https://www.modyo.com) is a component development platform that allows you to create, manage and customize websites and web applications quickly and efficiently. With a balanced approach between ease of use and flexibility, Modyo provides you with tools to create content, customize appearance and functionality, and manage multiple sites and applications in a centralized way.
 
-Modyo gives companies the ability to create high-quality digital products and adapt to changing business needs. There are many reasons to use Modyo as a digital development platform, some of them are explained below.
+Modyo gives companies the ability to create high-quality digital products and to adapt to changing business needs. There are many reasons to use Modyo as a digital development platform, some of them are explained below.
 
 ### All in one place
 
