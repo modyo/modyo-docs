@@ -6,7 +6,9 @@ search: true
 
 ### Learning Paths
 
-Los [Learning Paths](https://help.modyo.com) de Modyo ofrecen un aprendizaje interactivo y guiado acerca de las principales funcionalidades de la plataforma. Brindan acceso a cursos, contenido y videos diseñados para explorar en profundidad temas específicos. Desde conceptos básicos hasta funcionalidades avanzadas, los Learning Paths te ayudarán a maximizar tu uso de la plataforma Modyo.
+Los [Learning Paths](https://help.modyo.com) de Modyo ofrecen un aprendizaje interactivo y guiado para aprender sobre las principales funcionalidades de la plataforma. Te ofrecen acceso a cursos, contenido y videos diseñados para explorar a fondo temas específicos.
+
+Desde conceptos básicos hasta funcionalidades avanzadas, los Learning Paths están diseñados para ayudarte a aprovechar al máximo la plataforma Modyo.
 
 ### Comunidad
 
@@ -14,14 +16,14 @@ Los [Learning Paths](https://help.modyo.com) de Modyo ofrecen un aprendizaje int
 
 ### Documentación Oficial
 
-Te invitamos a explorar nuestra [documentación oficial](/es/platform) para profundizar tus conocimientos sobre nuestro producto y sus principales funcionalidades.
+Te invitamos a explorar nuestra [documentación oficial](/es/platform) para profundizar tus conocimientos de nuestro producto y sus principales funcionalidades.
 
 ### Modyo Expert
 
-El servicio Modyo Expert proporciona consultoría y acompañamiento que abarca todas las etapas del desarrollo de tu producto digital, basándose en la arquitectura de referencia de Modyo. Al contar con un Modyo Expert en tu equipo, tendrás el apoyo constante para las decisiones de arquitectura e implementación que afectan a la plataforma, los micro frontends o los microservicios de integración.
+El servicio Modyo Expert ofrece consultoría y acompañamiento que abarca todas las etapas del desarrollo de tu producto digital, basándose en la arquitectura de referencia de Modyo. Al contar con un Modyo Expert en tu equipo, tendrás apoyo constante para las decisiones de arquitectura e implementación que afectan a la plataforma, los micro frontends y los microservicios de integración.
 
-Los Modyo Experts son profesionales con alto nivel de capacitación no solo en la tecnología de Modyo, sino también en seguridad y rendimiento. Están preparados para guiarte asegurando que se cumplan tanto tus requisitos funcionales como los no funcionales.
+Los Modyo Experts son profesionales altamente capacitados, no solo en la tecnología de Modyo, sino también en seguridad y rendimiento. Están preparados para guiarte asegurando que se cumplan tanto tus requisitos funcionales como los no funcionales.
 
 :::tip Contacto
-Si necesitas más información sobre nuestros servicios de Modyo Expert, no dudes en ponerte en contacto con un ejecutivo comercial o de clientes de Modyo.
+Si necesitas más información sobre nuestros servicios de Modyo Expert, no dudes en ponerte en contacto con un ejecutivo comercial o un representante de atención al cliente de Modyo.
 :::
