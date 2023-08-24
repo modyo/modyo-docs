@@ -8,12 +8,24 @@ En el corazón de Dynamic Framework se encuentra el objetivo de no solo simplifi
 
 Para lograr esta misión, estamos comprometidos con una serie de prácticas clave, constantemente afinadas para optimizar nuestros resultados:
 
-- **Marcado estructural**: Nuestro enfoque en la semántica y la organización del HTML de cada componente aborda de manera proactiva los desafíos de accesibilidad potenciales.
-- **Componentes Interactivos**: Hemos diseñado nuestros componentes para funcionar sin problemas con gestos en dispositivos móviles y con el ratón/teclado en entornos de escritorio. Además, mediante el empleo de roles y atributos pertinentes de (WAI-ARIA)[https://www.w3.org/WAI/standards-guidelines/aria/], aseguramos que estos componentes sean comprensibles y operables incluso para tecnologías asistivas, como lectores de pantalla.
-- **Contraste de color**: La paleta por defecto de Dynamic Framework fue minuciosamente elaborada para cumplir con ratios de contraste de (4.5:1 para texto)[https://www.w3.org/TR/WCAG/#contrast-minimum] y (3:1 para no texto)[https://www.w3.org/TR/WCAG/#non-text-contrast], tal como recomendado por WCAG 2.1. Esto garantiza una legibilidad excepcional, incluso en situaciones de alta demanda visual, como variaciones de botones, alertas y validaciones de formularios.
-- **Contenido oculto visualmente**: Basados en la estructura de Bootstrap, aconsejamos seguir sus directrices para ocultar contenido o controles interactivos de manera que sean accesibles para tecnologías asistivas. Esto se logra mediante clases como `.visually-hidden` o `.visually-hidden-focusable`, entre otras.
-- **Alternativas textuales**: Damos especial atención a las personas con discapacidad visual, proporcionando descripciones alternativas para imágenes, videos y otros elementos multimedia, asegurando que puedan acceder a la información sin dificultades.
-- **Pruebas de accesibilidad**: Realizamos evaluaciones rigurosas de accesibilidad mediante herramientas especializadas como Lighthouse, lo que nos permite identificar y resolver cualquier inconveniente de accesibilidad, reafirmando nuestro compromiso con la excelencia inclusiva.
+- **Uso semántico del HTML**: Dynamic Framework utiliza etiquetas semánticas de HTML5 para estructurar el contenido de manera significativa, lo que ayuda a los lectores de pantalla y otros dispositivos a comprender la organización de la página.
+
+- **Etiquetas de encabezado**: Dynamic Framework utiliza etiquetas de encabezado (<h1> a <h6>) en orden jerárquico y coherente donde sea posible, para proporcionar una estructura lógica y una jerarquía de contenido. Esto ayuda a los usuarios a comprender la relación entre diferentes secciones.
+
+- **Teclado y navegación**: Dynamic Framework asegura que los componentes interactivos, como los menús desplegables y los botones, sean accesibles mediante el teclado, permitiendo a los usuarios navegar y acceder a la funcionalidad sin necesidad de un ratón.
+
+- **Contraste de color**: Dynamic Framework sigue pautas de alto contraste en sus estilos por defecto, asegurando que el texto sea legible y que los elementos interactivos sean claramente distinguibles.
+
+- **Etiquetas ARIA**: El framework utiliza atributos ARIA (Accessible Rich Internet Applications) para mejorar la experiencia de usuarios con discapacidad, al proporcionar información adicional para lectores de pantalla y tecnologías de asistencia.
+
+- **Contenido oculto y alternativo**: Dynamic Framework ofrece clases como `.sr-only` y `.visually-hidden` para esconder contenido visualmente pero que sigue siendo accesible para tecnologías asistivas. También promueve el uso de atributos alt en imágenes y texto alternativo en medios.
+
+- **Enfoque visual y de teclado**: Dynamic Framework asegura que los elementos enfocables, como botones y enlaces, tengan un estilo visual de foco claro, lo que ayuda a los usuarios a saber dónde se encuentra su posición actual mientras navegan por la página utilizando el teclado.
+
+- **Validación de formularios**: Los componentes de formulario en Dynamic Framework incluyen indicadores de estado y errores, lo que ayuda a los usuarios con discapacidad a comprender y corregir los campos de manera efectiva.
+
+- **Compatibilidad con lectores de pantalla**: Dynamic Framework es compatible con lectores de pantalla como JAWS y NVDA, garantizando que la información importante se transmita de manera adecuada a los usuarios que dependen de estos dispositivos.
+
 
 
 
