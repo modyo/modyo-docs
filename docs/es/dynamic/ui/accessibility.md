@@ -18,7 +18,7 @@ Para lograr esta misión, estamos comprometidos con una serie de prácticas clav
 
 - **Etiquetas ARIA**: El framework utiliza atributos ARIA (Accessible Rich Internet Applications) para mejorar la experiencia de usuarios con discapacidad, al proporcionar información adicional para lectores de pantalla y tecnologías de asistencia.
 
-- **Contenido oculto y alternativo**: Dynamic Framework ofrece clases como `.sr-only` y `.visually-hidden` para esconder contenido visualmente pero que sigue siendo accesible para tecnologías asistivas. También promueve el uso de atributos alt en imágenes y texto alternativo en medios.
+- **Contenido oculto y alternativo**: Dynamic Framework ofrece clases como `.sr-only` y `.visually-hidden` para esconder contenido visualmente pero que sigue siendo accesible para tecnologías asistivas. También promueve el uso de atributos `alt` en imágenes y texto alternativo en medios.
 
 - **Enfoque visual y de teclado**: Dynamic Framework asegura que los elementos enfocables, como botones y enlaces, tengan un estilo visual de foco claro, lo que ayuda a los usuarios a saber dónde se encuentra su posición actual mientras navegan por la página utilizando el teclado.
 
