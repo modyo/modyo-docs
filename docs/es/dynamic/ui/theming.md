@@ -34,3 +34,11 @@ Algo que hay que tener en cuenta es que por diseño, las definiciones CSS tienen
 :::
 
 La idea es identificar las variables disponibles y las que deseas modificar. Las variables se agrupan en categorías como colores, tipografía, espaciado, bordes, etc., y luego, sobrescribir las que deseas modificar. Por ejemplo, si deseas cambiar los colores principales, cambia la variable `$primary` con el nuevo valor de color.
+
+### Variables CSS
+
+Bootstrap ofrece una extensa lista de variables CSS que se aplican al elemento `:root` de un documento. Estas variables están debidamente (documentadas en su sitio web)[https://getbootstrap.com/docs/5.3/customize/css-variables/].
+
+Por su parte, Dynamic Framework introduce clases específicas para cada componente, siguiendo la misma convención de nomenclatura que Bootstrap, que utiliza el prefijo `bs-`. Este enfoque evita posibles conflictos con librerías de terceros. Puedes consultar las variables disponibles para cada componente (documentadas en el Storybook de Dynamic Framework)[https://react.dynamicframework.dev/].
+
+Mediante este enfoque, es posible agregar nuevas variables al elemento `:root` para controlar aspectos más específicos. Esto resulta especialmente útil cuando se requiere incorporar dichas variables dentro del contexto del tema.
