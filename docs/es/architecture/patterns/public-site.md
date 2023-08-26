@@ -35,7 +35,6 @@ Generalmente, se separan por organizaciones filiales o subsidiarias independient
 Al usar organizaciones, considera los límites de tu licencia. El límite máximo de organizaciones puede ampliarse previa validación comercial.
 :::
 
-
 #### Uso de Páginas y Layouts
 Los [layouts](/es/platform/channels/templates.md#layouts) son una excelente forma para diferenciar contextos dentro de un sitio. Un layouts puede ser compartido por múltiples [páginas](/es/platform/channels/pages) y cada página puede tener un solo layout. Dentro del layout puedes definir elementos reutilizables entre las diferentes páginas, como Headers, Footers, Meta Tags, etc.
 
@@ -43,9 +42,8 @@ Los layouts aseguran coherencia visual entre las páginas, aunque casos como una
 
 A la vez, puedes agrupar las páginas en jerarquías, asegurando una estructura organizada para los diferentes elementos del sitio.
 
-
 #### Uso de Templates y Snippets
-Los [templates](/es/platform/channels/templates) o plantillas son documentos Liquid que se renderizan dinámicamente en la plataforma. Pueden representar páginas HTML, layouts, hojas de estilo CSS o archivos JavaScript.
+Los [templates](/es/platform/channels/templates) o plantillas son documentos en lenguaje Liquid que se renderizan dinámicamente en la plataforma. Pueden representar páginas HTML, layouts, hojas de estilo CSS o archivos JavaScript.
 
 A la vez, los [snippets](/es/platform/channels/templates.md#snippets) o fragmentos son útiles para organizar códigos fuente y se pueden referenciar desde diferentes plantillas Liquid de un mismo sitio. Los snippets te permiten modularizar y reutilizar funciones, lo que facilita descomponer funcionalidades complejas en partes más simples. Los snippets se renderizan dinámicamente al cargar la página.
 
@@ -53,7 +51,6 @@ A la vez, los [snippets](/es/platform/channels/templates.md#snippets) o fragment
 Un error común al utilizar snippets es llamar recursivamente referencias circulares, es decir, que se llamen a sí mismas. En caso de hacerlo, la plataforma detiene la ejecución del snippet para evitar saturar los recursos del sistema.
 
 Otro problema frecuente es el exceso de snippets dentro de un sitio, lo que puede alentar la carga de la página al requerir procesamiento adicional.
-
 :::
 
 #### Uso de Widgets
@@ -66,9 +63,9 @@ El widget builder en la consola de administración de Modyo, al igual que el edi
 Los widgets, en conjunto con el uso de snippet y su builder, son una excelente forma de trabajar con funcionalidad de baja o mediana complejidad, donde el uso de Javascript no es intenso. En escenarios más complejos, recomendamos el uso de [micro frontends](/es/architecture/patterns/micro-frontend).
 
 #### Uso de Micro Frontends
-Los [micro frontend](/es/architecture/patterns/micro-frontend) son un tipo especial de widgets que permiten un flujo de trabajo más sofisticado. Con los micro frontends, desarrollas el código fuera de la plataforma y lo introduces mediante el agente de línea de comandos llamado Modyo CLI.
+Los [micro frontends](/es/architecture/patterns/micro-frontend) son un tipo especial de widgets que permiten un flujo de trabajo más sofisticado. Con los micro frontends, desarrollas el código fuera de la plataforma y lo introduces mediante la línea de comandos de Modyo (CLI).
 
-Los micro frontends se construyen de forma estática antes de ser cargados en Modyo. Esto te permite hacer uso de librerías y frameworks avanzados, además de permitirte incorporar flujos de revisión estática de código para garantizar su calidad y seguridad.
+Los micro frontends se compilan de forma estática antes de ser cargados en Modyo. Esto te permite hacer uso de librerías y frameworks avanzados, además de permitirte incorporar flujos de revisión estática de código para garantizar su calidad y seguridad.
 
 :::warning Sobre-ingeniería
 La implementación de micro frontends en un sitio público puede añadir complejidad adicional, incluyendo la administración de flujos de integración continua y procesos de DevOps. Generalmente, esta complejidad adicional requiere de apoyo de las áreas de IT dentro de la organización, por lo que debe considerarse si esta complejidad adicional está justificada.
@@ -79,14 +76,14 @@ En el contexto de sitios públicos, recomendamos minimizar la dependencia de Jav
 
 Esta recomendación es tanto por la inherente complejidad en el código de cada dependencia que puede afectar las características esenciales que un sitio web debe tener, como por la tendencia a incurrir en costos adicionales al implementar sitios públicos con frameworks avanzados de Javascript.
 
-Adicional a esas razones, algunos motivos adicionales para evitar el uso de frameworks de Javascript en sitios públicos son:
+Otras razones para evitar usar frameworks de JavaScript en sitios públicos son:
 
 - **Rendimiento:** Cada vez que un visitante carga una página, el navegador debe descargar y ejecutar el código JavaScript para mostrar y manipular los elementos de la página. El uso excesivo de JavaScript puede alentar la carga de la página, especialmente en dispositivos con conexiones lentas o recursos limitados.
 - **Accesibilidad:** Algunos usuarios pueden tener dificultades para acceder y usar contenido interactivo basado en Javascript. Esto incluye personas con discapacidades visuales que emplean lectores de pantalla, usuarios con conexiones lentas o dispositivos antiguos, y aquellos que desactivan Javascript por seguridad o preferencia personal.
 - **Mantenimiento y compatibilidad:** Reducir las dependencias de Javascript simplifica el mantenimiento del sitio. Además, estas soluciones tienden a tener mayor compatibilidad con diversos navegadores y dispositivos.
 - **Seguridad:** Limitar el uso de Javascript disminuye la superficie de ataque potencial y mejora la seguridad del sitio.
 
-En lugar de usar frameworks de Javascript, te sugerimos optar por HTML estático y, si en caso de requerirlo, aprovechar el uso de Liquid.
+En lugar de usar frameworks de Javascript, te sugerimos optar por HTML estático y, en caso de requerirlo, aprovechar el uso de del lenguaje Liquid.
 
 No obstante, en situaciones donde se requieren componentes complejos específicos para un sitio público, como simuladores, buscadores de sucursales cercanas o resúmenes de indicadores financieros, el uso de un framework puede ser indicado y la estrategia de implementación recomendada es utilizar micro frontends.
 
