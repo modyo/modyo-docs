@@ -37,7 +37,7 @@ Al momento de considerar el uso de organizaciones, se deben tener en cuenta los 
 
 
 #### Uso de Páginas y Layouts
-Los [layouts](/es/platform/channels/templates.md#layouts) son una excelente forma para diferenciar contextos dentro de un sitio. Un layouts puede ser compartido por múltiples [páginas](/es/platform/channels/pages) y cada página puede tener un solo layouts. Dentro del layouts, se podrán definir elementos reutilizables entre las diferentes páginas, como Headers, Footers, Meta Tags, etc. 
+Los [layouts](/es/platform/channels/templates.md#layouts) son una excelente forma para diferenciar contextos dentro de un sitio. Un layout puede ser compartido por múltiples [páginas](/es/platform/channels/pages) y cada página puede tener un solo layout. Dentro del layout, se podrán definir elementos reutilizables entre las diferentes páginas, como Headers, Footers, Meta Tags, etc. 
 
 Los layouts definen la experiencia general del sitio y garantizan que las diferentes páginas se visualizan con consistencia, pero existen casos en los que se requerirá tener un Layout diferente para una página o un grupo de páginas, por ejemplo una página landing de una promoción especial en la que no queremos distraer al visitante con la navegación del sitio.
 
@@ -46,7 +46,7 @@ Las páginas por otro lado, se podrán agrupar en jerarquías, que permitirán a
 
 #### Uso de Templates y Snippets
 Los [templates](/es/platform/channels/templates) o plantillas corresponden a documentos Liquid que se renderizan de forma dinámica dentro de la plataforma. Estos templates pueden corresponder a páginas HTML, layouts, hojas de estilo CSS o archivos de Javascript.
-Por otro lado, los snippets son una forma muy conveniente de organizar códigos fuente es el uso de [snippets](/es/platform/channels/templates.md#snippets), los cuales pueden ser referenciados desde diferentes plantillas Liquid de un mismo sitio. 
+Por otro lado, los [snippets](/es/platform/channels/templates.md#snippets) son una forma muy conveniente de organizar códigos fuente, ya que pueden ser referenciados desde diferentes plantillas, dentro de un mismo sitio. 
 
 Los snippets permiten modularizar y reutilizar funciones, permitiendo descomponer funcionalidades complejas, en otras más simples. Los snippets se renderizan de forma dinámica al momento de renderizar la página.
 
@@ -62,7 +62,7 @@ El widget builder es una herramienta dentro de la consola de administración de 
 Los widgets, en conjunto con el uso de snippet y su builder, son una excelente forma de trabajar con funcionalidad de baja o mediana complejidad, en la que el uso de Javascript no es intensivo. Para el caso de los sitios públicos son la forma más recomendada de trabajar. En escenarios de más complejidad, se recomienda el uso de [micro frontends](/es/architecture/patterns/micro-frontend).
 
 #### Uso de Micro Frontends
-Los [micro frontend](/es/architecture/patterns/micro-frontend) son un tipo especial de widget que soporta un flujo de trabajo más sofisticado, en el cual el código es desarrollado desde fuera de la plataforma y “empujado” hacia ella por medio de un agente de línea de comando llamado Modyo CLI. Los micro frontend se construyen de forma estática previo a su subida a Modo, lo que permite hacer uso de librería y frameworks avanzados, además de permitir incorporar flujos de revisión estática de código para la calidad y seguridad del mismo.
+Los [micro frontend](/es/architecture/patterns/micro-frontend) son un tipo especial de widget que soporta un flujo de trabajo más sofisticado, en el cual el código es desarrollado desde fuera de la plataforma y “empujado” hacia ella por medio de un agente de línea de comando llamado Modyo CLI. Los micro frontend se construyen de forma estática previo a su subida a Modo, lo que permite hacer uso de librerías y frameworks avanzados, además de permitir incorporar flujos de revisión estática de código para la calidad y seguridad del mismo.
 
 :::warning Sobre-ingeniería
 El uso de micro frontends dentro de un sitio público podría implicar complejidad adicional sumando la mantención de pipelines de integración continua y procesos de devops. En general esto requiere de apoyo de las áreas de IT dentro de la organización, por lo que debe considerarse esta complejidad adicional esté justificada.
@@ -110,7 +110,7 @@ Modyo permite la creación de múltiples espacios de contenidos y sitios con rol
 Los roles y grupos se definen a nivel de la organización, y luego pueden ser asignados de forma particular a cada espacio y a cada sitio. En Modyo recomendamos asegurar siempre que los usuarios tengan el mínimo de permisos requeridos para realizar sus funciones, evitando así que los sitios sufran modificaciones no deseadas de forma accidental o intencional.
 
 #### Múltiples espacio de contenido
-La plataforma ofrece un ambiente de gestión de contenidos del tipo híbrido, en el cual los contenidos gestionados dentro de un espacio podrán ser acceder de forma descabezada por medio del API, beneficiando del máximo nivel de desacoplamiento, o mediante el uso de content pages, un tipo especial de página que se integra de forma automática con el espacio configurado y que está disponible dentro de cada sitio.
+La plataforma ofrece un ambiente de gestión de contenidos del tipo híbrido, en el cual los contenidos dentro de un espacio, podrán ser accedidos de forma descabezada mediante un API, o mediante el uso de content pages, las cuales se integran de forma automática dentro del sitio con el espacio configurado y que está disponible dentro de cada sitio.
 
 :::tip Experiencia de CMS tradicional 
 Al usar los espacios de contenido en conjunto con las páginas de contenidos, se logra una experiencia de uso muy similar a la de un CMS tradicional, en la que cada contenido está ligado a una representación. Adicionalmente a esto, en Modyo un mismo contenido puede ser desplegado en más de una página, de formas diferentes, permitiendo su previsualización en la página que escoja el usuario editor.
