@@ -20,7 +20,7 @@ Para una revisión de patrones de programación más específicos de programaci�
 
 Los micro frontends son componentes de experiencia de usuario de alto nivel, orquestados por la plataforma Modyo. Los micro frontends se se ejecutan directamente desde el navegador del usuario final e interactúan por medio de APIs con los microservicios. Cada micro frontend y microservicio está diseñado para representar una parte específica de la funcionalidad del negocio y se desarrollan, prueban y despliegan de manera independiente.
 
-La siguiente figura muestra la arquitectura de referencia de Modyo, en dónde los micro frontends se despliegan dentro de la Plataforma Modyo, mientras que los microservicios se despliegan de forma desacoplada dentro una infraestructura de contenedores independiente.
+La siguiente figura muestra la arquitectura de referencia de Modyo, en la cual, los micro frontends se despliegan dentro de la Plataforma Modyo, mientras que los microservicios se despliegan en una infraestructura separada, exponiendo su funcionalidad mediante APIs.
 
 <img src="/assets/img/infrastructure/reference_architecture.png" alt="Reference architecture" />
 

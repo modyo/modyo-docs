@@ -45,7 +45,7 @@ A continuación presentamos algunas consideraciones que deben tenerse en cuenta 
 - **Spring Boot:** Framework utilizado para el desarrollo
 - **Modyo Commons Library:** Librería de apoyo para tareas comunes como la gestión de errores, registros de logs,
   autenticación, etc.
-- **Swagger:** Estándar para la definición y publicación de APIs en el API Gateway
+- **OpenAPI:** Estándar para la definición y publicación de APIs en el API Gateway
 - **Estructura y estilo de código:** Se recomienda el uso del inicializador de [Spring Boot](https://start.spring.io)
   o [Yeoman](https://yeoman.io/generators) para dar una estándar al código fuente. Se recomienda además, seguir el
   estilo de código recomendado por [Google](https://google.github.io/styleguide/javaguide.html).
@@ -67,7 +67,7 @@ Los microservicios desarrollados en Modyo Connect pueden integrarse a otros sist
 - **Conectividad:** Asegurar que la conectividad desde las redes de AWS hacia los endpoints del servicio estén definidos y sean estables.
 - **Seguridad:** Asegurar que el enlace a los servicios externos se establezca mediante un canal seguro, mediante VPNs o [mTLS](https://www.cloudflare.com/learning/access-management/what-is-mutual-tls/).
 - **Manejo de errores:** Los errores originados en servicios externos deben ser correctamente manejados a nivel del microservicio para asegurar una buena experiencia de los usuarios.
-- **Timeouts y bloqueos:** Servicios externos con problemas de rendimiento o conectividad pueden ocasionar bloqueos en la experiencia de usuario o un consumo excesivo de recursos dentro del microservicio. Se recomienda siempre definir timeouts razonables en cada llamada.
+- **Timeouts y bloqueos:** Servicios externos con problemas de rendimiento o conectividad pueden ocasionar bloqueos en la experiencia de usuario o un consumo excesivo de recursos dentro del microservicio. Se recomienda siempre definir timeouts razonables en cada llamada los cuales se alineen con los definidos en el API Gateway. Además, se recomienda hacer uso de invocaciones asíncronas cuando los tiempos de respuesta no sean predecibles.
 
 #### Arquitectura Héxagonal
 La arquitectura hexagonal, también conocida como Arquitectura Puertos y Adaptadores, es un patrón de arquitectura de software que se enfoca en la separación de las preocupaciones (SoC, por sus siglas en inglés) y en la independencia del hardware y del software en una aplicación. Esta arquitectura se enfoca en la idea de que las aplicaciones deben estar estructuradas de manera que el núcleo de la lógica de negocio se encuentre en el centro de la arquitectura, con la interfaz de usuario y las capas de infraestructura ubicadas en la periferia.
@@ -91,7 +91,7 @@ Los microservicios de Dynamic Framework se encuentran desarrollados utilizando l
 #### Otras consideraciones
 
 - **Tareas pesadas:** Se recomienda también usar procesamiento en segundo plano, vía [colas de mensajería](../components/infrastructure.md#colas-de-mensajeria), para servicios que sean lentos o muy sensibles a las fluctuaciones de tráfico.
-- **Programación de tareas:** Se recomienda el uso de [Quartz](https://www.baeldung.com/spring-quartz-schedule) en los microservicios que requieran agendamiento de tareas programadas.
+- **Programación de tareas:** Se recomienda el uso de [ShedLock](https://www.baeldung.com/shedlock-spring) en los microservicios que requieran agendamiento de tareas programadas.
 - **Workflows y máquina de estado:** Se recomienda el uso de [máquinas de estados](https://www.baeldung.com/spring-state-machine) para la orquestación de procesos complejos. Tecnologías de workflows también pueden ser integradas a Spring Boot para este propósito.
 - **Arquitectura hexagonal:** Patrón de diseño de software que separa la lógica de negocio de una aplicación de sus servicios externos, permitiendo un desarrollo, pruebas y mantenimiento más flexibles y centrados en el dominio de la aplicación.
 - **API de Modyo:** Recomendamos usar el API administrativa de la plataforma Modyo para tareas comunes, como el envío de mensajes a usuarios o la integración al contenido administrado.
