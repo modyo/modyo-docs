@@ -6,7 +6,7 @@ search: true
 
 ### Learning Paths
 
-Los [Learning Paths](https://help.modyo.com) de Modyo ofrecen un aprendizaje interactivo y guiado para aprender sobre las principales funcionalidades de la plataforma. Te ofrecen acceso a cursos, contenido y videos diseñados para explorar a fondo temas específicos.
+Los [Learning Paths](https://help.modyo.com/es/collections/3962662-learning-paths) de Modyo ofrecen un aprendizaje interactivo y guiado para aprender sobre las principales funcionalidades de la plataforma. Te ofrecen acceso a cursos, contenido y videos diseñados para explorar a fondo temas específicos.
 
 Desde conceptos básicos hasta funcionalidades avanzadas, los Learning Paths están diseñados para ayudarte a aprovechar al máximo la plataforma Modyo.
 
