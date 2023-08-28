@@ -40,7 +40,7 @@ La gestión de usuarios es esencial dentro de un sitio privado y es el principal
 Los reinos de usuarios almacenan los eventos de éstos y permiten la definición de segmentos a partir de información del perfil de los usuarios, o el comportamiento que estos tienen dentro del sistema.
 
 #### Formularios
-Dentro de un reino de usuario, se podrán definir formularios que podrán ser completados por los usuarios dentro de él. Las respuestas a los formularios 
+Dentro de un reino, se podrán definir formularios que podrán ser completados por los usuarios dentro de él. Las respuestas a los formularios se procesan internamente dentro de la plataforma, complementando la información disponible para generar segmentos de usuarios basados en su perfil.
 
 #### Mensajería y notificaciones
 Dentro de un reino también es posible definir canales de comunicación con el usuario, los cuales podrán ser a través de mensajería por correo electrónico.

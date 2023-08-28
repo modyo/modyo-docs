@@ -45,7 +45,7 @@ A continuación presentamos algunas consideraciones que deben tenerse en cuenta 
 - **Spring Boot:** Framework utilizado para el desarrollo
 - **Modyo Commons Library:** Librería de apoyo para tareas comunes como la gestión de errores, registros de logs,
   autenticación, etc.
-- **Swagger:** Estándar para la definición y publicación de APIs en el API Gateway
+- **OpenAPI:** Estándar para la definición y publicación de APIs en el API Gateway
 - **Estructura y estilo de código:** Se recomienda el uso del inicializador de [Spring Boot](https://start.spring.io)
   o [Yeoman](https://yeoman.io/generators) para dar una estándar al código fuente. Se recomienda además, seguir el
   estilo de código recomendado por [Google](https://google.github.io/styleguide/javaguide.html).
