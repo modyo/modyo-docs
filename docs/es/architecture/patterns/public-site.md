@@ -55,7 +55,7 @@ Un error común al utilizar snippets es el de invocar recursivamente referencias
 :::
 
 #### Uso de Widgets
-Los [widgets](/es/platform/channels/widgets) son una de las formas más organizadas dentro de Modyo para modularizar funcionalidad de negocio. Los widgets permiten empaquetar código HTML, CSS y Javascript los cuales se modifican y despliegan juntos, sin afectar al resto del sitio.
+Los [widgets](/es/platform/channels/widgets) son una de las formas más organizadas dentro de Modyo para modularizar funcionalidad de negocio. Los widgets permiten empaquetar código HTML, CSS y Javascript los cuales se modifican y despliegan juntos, sin afectar al resto del sitio. Los widgets se diferencian de las plantillas y snippets en que poseen un ámbito de ejecución independiente. Esto significa que encapsulan código autocontenido que se ejecuta de manera autónoma, sin ejercer impacto en el resto del entorno del sitio web.
 
 El widget builder es una herramienta dentro de la consola de administración de Modyo que, al igual que el editor de plantillas, permite tomar control del ciclo completo de desarrollo del widget, incluyendo su previsualización, versionamiento y despliegue.
 
@@ -99,7 +99,7 @@ Al igual que en el caso de los micro frontends, el uso de frameworks de Javascri
 #### Web Components
 Los [web components](/es/architecture/patterns/web-components) son una técnica de modularización basada en estándares de HTML, CSS y JS. Actualmente los Web Components carecen de soporte transversal en los navegadores, pero esto es algo que va mejorando año a año. Para poder hacer una implementación segura de Web Components, se requerirá hacer uso de alguna librería de Javascript que tome control de estas incompatibilidades. Es por ello que en el caso de los sitios públicos, el uso de Web Components podría no aportar mayores beneficios que los problemas que potencialmente generaría, aludiendo también a los argumentos de las secciones anteriores.
 
-Como alternativa al uso de los Web Components, los sitios públicos se podrán beneficiar de alternativas más livianas y estándares, cómo es el caso del framework de CSS [Bootstrap](https://getbootstrap.com), el cuál viene incorporado nativamente dentro de la plataforma Modyo.
+Como alternativa al uso de los Web Components, los sitios públicos se podrán beneficiar de alternativas más livianas y estándares, cómo es el caso del framework de CSS [Bootstrap](https://getbootstrap.com), el cuál viene incorporado de forma nativa dentro de la plataforma Modyo. Además, se puede emplear la funcionalidad de snippets, que facilita la reutilización de código de manera análoga a los Web Components.
 
 ### Gobernabilidad de contenido y códigos fuente
 En cada proyecto de sitio público el gobierno del contenido y código fuente deben ser un elemento central a considerar. La implementación debe estar acorde a las expectativas del negocio en cuanto a cómo se harán las mantenciones futuras del sitio, respetando los flujos de aprobación de cambios y el correcto nivel de desacoplamiento entre el contenido y su lógica de implementación. A continuación, revisaremos las principales funcionalidades de la plataforma que permiten una correcta gobernabilidad de los sitios públicos.
@@ -209,7 +209,7 @@ El marcaje para Google Analytics se refiere a la implementación de código en u
 
 El marcaje para Google Analytics es esencial para el seguimiento y la evaluación del rendimiento del sitio o la aplicación. Permite a los propietarios y administradores del sitio entender cómo los usuarios interactúan con su contenido, qué páginas son más populares, cuánto tiempo pasan en el sitio, las fuentes de tráfico, las conversiones y otros detalles importantes. Estos datos son valiosos para tomar decisiones informadas sobre estrategias de marketing, diseño de sitio y optimización de la experiencia del usuario.
 
-Para implementar el marcaje con Modyo, se deberán primero definir los objetivos de negocio que se desean medir y luego implementar el código y etiquetas dentro de las plantillas de los sitios. El marcaje permitirá capturar los eventos que suceden en el sitio, correlacionarlos con otros datos y obtener valiosa información acerca de cómo los usuarios interactúan con él. 
+Para implementar el marcaje con Modyo, se deberán primero definir los objetivos de negocio que se desean medir y luego implementar el código y etiquetas dentro de las plantillas de los sitios. Además, se podrá utilizar Google Tag Manager, desde dónde se pueden administrar definiciones de marcaje de forma externa al sitio. El marcaje permitirá capturar los eventos que suceden en el sitio, correlacionarlos con otros datos y obtener valiosa información acerca de cómo los usuarios interactúan con él.
 
 
 
@@ -243,4 +243,4 @@ Dentro de un sitio público, se maneja una cantidad reducida de información de 
 Finalmente, reservamos algunos requerimientos en específico que conviene tener en cuenta a la hora de implementar un sitio público.
 
 #### Uso de PWA
-En el caso de los sitios públicos, el uso de las técnicas de PWA no se recomienda como sí se hace en los sitios privados, ya que los sitios públicos generalmente no se asocian al concepto de “aplicación” y en general no prestarán un valor o una experiencia personalizada al usuario por instalarlo.
+En el caso de los sitios públicos, el uso de las técnicas de PWA no se recomienda de la misma forma como sí se hace en los sitios privados, ya que los sitios públicos generalmente no se asocian al concepto de “aplicación” y en general no prestarán un valor o una experiencia personalizada al usuario por instalarlo. Existen algunas excepciones a esto como el uso del modo offline y definiciones de metadata aplicativa que ayudarán con la experiencia y benefician un mejor SEO, respectivamente.
