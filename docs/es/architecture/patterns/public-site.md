@@ -63,7 +63,7 @@ El widget builder en la consola de administración de Modyo, al igual que el edi
 Los widgets, en conjunto con el uso de snippet y su builder, son una excelente forma de trabajar con funcionalidad de baja o mediana complejidad, donde el uso de Javascript no es intenso. En escenarios más complejos, recomendamos el uso de [micro frontends](/es/architecture/patterns/micro-frontend).
 
 #### Uso de Micro Frontends
-Los [micro frontends](/es/architecture/patterns/micro-frontend) son un tipo especial de widgets que permiten un flujo de trabajo más sofisticado. Con los micro frontends, desarrollas el código fuera de la plataforma y lo introduces mediante la línea de comandos de Modyo (CLI).
+Los [micro frontends](/es/architecture/patterns/micro-frontend) son un tipo especial de widgets que permiten un flujo de trabajo más sofisticado. Con los micro frontends, desarrollas el código fuera de la plataforma y lo introduces mediante la línea de comandos de Modyo.
 
 Los micro frontends se compilan de forma estática antes de ser cargados en Modyo. Esto te permite hacer uso de librerías y frameworks avanzados, además de permitirte incorporar flujos de revisión estática de código para garantizar su calidad y seguridad.
 
