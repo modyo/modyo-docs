@@ -20,7 +20,7 @@ For a more specific review of programming patterns, we recommend the book [“De
 
 Micro frontends are high-level user experience components, orchestrated by the Modyo platform. Micro frontends run directly from the end user's browser and interact through APIs with microservices. Each micro frontend and microservice is designed to represent a specific part of the business's functionality and are developed, tested, and deployed independently.
 
-The following figure shows the Modyo reference architecture, where micro frontends are deployed within the Modyo Platform, while microservices are deployed decoupled within a separate container infrastructure.
+The following figure shows the Modyo reference architecture, in which micro frontends are deployed within the Modyo Platform, while microservices are deployed on a separate infrastructure, exposing their functionality through APIs.
 
 <img src="/assets/img/infrastructure/reference_architecture.png" alt="Reference architecture" />
 
