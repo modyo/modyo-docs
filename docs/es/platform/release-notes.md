@@ -5,6 +5,24 @@ search: true
 # Notas del release
 
 ## 9.2
+### 9.2.46 - 29 de agosto de 2023
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Corrige problema con el linter al agregar el tag raw de liquid en los templates
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Agrega sanitizador para imagenes de tipo SVGs
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Corrige problema en la visualización de respuestas de pago con Bancard
+* Corrige problema de cruce de redirecciones en inicios de sesión concurrentes en distintos reinos de usuarios
+
 ### 9.2.45 - 17 de agosto de 2023
 <Badge text="Customers" type="customers" vertical="middle"/>
 
@@ -84,13 +102,13 @@ search: true
 ### 9.2.38 - 07 de julio de 2023
 <Badge text="Core" type="core" vertical="middle"/>
 
-* Mejoras de seguridad.
+* Mejoras de seguridad
 * Mejora la información mostrada en los logs de actividades
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
 * Corrige problemas de acceso a la edición de headers de seguridad
-* Agrega el rol viewer a los miembros del equipo. Este rol incluso puede ver elementos a sicronizar o en un release.
+* Agrega el rol viewer a los miembros del equipo. Este rol incluso puede ver elementos a sicronizar o en un release
 
 <Badge text="Content" type="content" vertical="middle"/>
 
@@ -98,40 +116,40 @@ search: true
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* Agrega configuración de una página inicial post-login. Luego de un inicio de sesión exitoso en el reino se redirigirá a esta página.
+* Agrega configuración de una página inicial post-login. Luego de un inicio de sesión exitoso en el reino se redirigirá a esta página
 
 
 ### 9.2.37 - 30 de junio de 2023
 <Badge text="Core" type="core" vertical="middle"/>
 
-* Mejoras de seguridad.
-* Mejoras en la configuración de politicas de expiración e inactividad.
+* Mejoras de seguridad
+* Mejoras en la configuración de políticas de expiración e inactividad
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
-* Agrega configuración de nuevos headers de seguridad, Cross-Origin-Embedder-Policy, Cross-Origin-Opener-Policy, Cross-Origin-Resource-Policy.
+* Agrega configuración de nuevos headers de seguridad, Cross-Origin-Embedder-Policy, Cross-Origin-Opener-Policy, Cross-Origin-Resource-Policy
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* Corrige problema al leer una notificacion en el profile, ahora se marca correctamente como leido.
-* Agrega nuevo parametro (redirect_to) en la url de login de un sitio para rederigir a una vista en particular o a algún sitio dentro de la organización.
-* Se modifica las campañas de correo, se reemplaza los multiples envios por el clonado de campaña para nuevos envios para mayor simplicidad en su gestión.
+* Corrige problema al leer una notificacion en el profile, ahora se marca correctamente como leido
+* Agrega nuevo parametro (redirect_to) en la url de login de un sitio para rederigir a una vista en particular o a algún sitio dentro de la organización
+* Se modifica las campañas de correo, se reemplaza los multiples envios por el clonado de campaña para nuevos envios para mayor simplicidad en su gestión
 
 
 ### 9.2.36 - 19 de junio de 2023
 <Badge text="Core" type="core" vertical="middle"/>
 
-* Mejoras de seguridad.
-* Agrega valdiacióon de permisoos administradores a los endpoints de la doocumentación swagger del API.
+* Mejoras de seguridad
+* Agrega validación de permisos administradores a los endpoints de la documentación swagger del API
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
-* Corrige problema de diferencias vacias despues de sincronizar stages.
+* Corrige problema de diferencias vacías después de sincronizar stages
 
 <Badge text="Content" type="content" vertical="middle"/>
 
-* Corrige problema de listado de spaces repetidos para usuarios en un grupo de permisos.
-* Corrige problema de publicacion de páginas cuando provienen de la sincronización de stages.
+* Corrige problema de listado de spaces repetidos para usuarios en un grupo de permisos
+* Corrige problema de publicacion de páginas cuando provienen de la sincronización de stages
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
