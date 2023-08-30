@@ -5,6 +5,24 @@ search: true
 # Notas del release
 
 ## 9.2
+### 9.2.46 - 29 de agosto de 2023
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Corrige problema con el linter al agregar el tag raw de liquid en los templates
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Agrega sanitizador para imagenes de tipo SVGs
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Corrige problema en la visualización de respuestas de pago con Bancard
+* Corrige problema de cruce de redirecciones en inicios de sesión concurrentes en distintos reinos de usuarios.
+
 ### 9.2.45 - 17 de agosto de 2023
 <Badge text="Customers" type="customers" vertical="middle"/>
 
