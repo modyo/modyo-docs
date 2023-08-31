@@ -8,7 +8,7 @@ Por sitio privado nos referimos a los sitios que requieren autenticación por pa
 Algunos ejemplos de sitios privados son:
 - Aplicación de banca digital
 - Plataformas financieras
-- Carteras digitales
+- Billeteras digitales
 - Onboarding digital
 - Plataformas de comercio electrónico
 - Plataformas de salud en línea
@@ -22,7 +22,7 @@ Los sitios privados, tradicionalmente, se mantienen separados de los públicos, 
 <!-- Hack to avoid this title to be displayed in the TOC element -->
 <h3><a href="#¿como-implementar-sitios-privados-con-modyo" class="header-anchor">#</a> ¿Cómo implementar sitios privados con Modyo?</h3>
 
-La implementación de sitios privados en Modyo es uno de los casos de uso más completos que se pueden trabajar en la plataforma. Esta implementación incluye herramientas para resolver tareas comunes, como autenticación de usuarios mediante credenciales internas o a través de sistemas de identidad externos, consumir información de usuarios desde APIs en sistemas externos, emplear componentes avanzados de Javascript, [micro frontends](/es/architecture/patterns/micro-frontend),  [microservicios](/es/architecture/patterns/microservice),  mensajería, notificaciones, segmentación de contenido y páginas basada en perfiles, entre otras funciones.
+La implementación de sitios privados en Modyo es uno de los casos de uso más completos que se pueden trabajar en la plataforma. Esta implementación incluye herramientas para resolver tareas comunes, como autenticación de usuarios mediante credenciales internas o a través de sistemas de identidad externos, consumir información de usuarios desde APIs en sistemas externos, emplear componentes avanzados de Javascript, [micro frontends](/es/architecture/patterns/micro-frontend), [microservicios](/es/architecture/patterns/microservice), mensajería, notificaciones, segmentación de contenido y páginas basada en perfiles, entre otras funciones.
 
 Las diferentes características de Modyo que son importantes de comprender al implementar proyectos de sitios privados, son:
 
