@@ -33,7 +33,7 @@ La accesibilidad web se mide mediante diferentes técnicas y evaluaciones. Algun
 La accesibilidad web es un proceso continuo que debes realizar periódicamente para garantizar que un sitio web o aplicación sean siempre accesible para los usuarios, especialmente durante fases de desarrollo y actualizaciones. Además, es esencial considerar las necesidades y los comentarios de usuarios con discapacidades, ya que son quienes mejor pueden evaluar la accesibilidad del sitio.
 
 
-### ¿Cómo se implementa accesibilidad con Modyo?
+### Accesibilidad en Modyo
 
 La implementación de accesibilidad en Modyo depende de cada tipo de iniciativa y de los objetivos que se deseen lograr con ellas. Sin embargo, recomendamos seguir estos criterios generales:
 
