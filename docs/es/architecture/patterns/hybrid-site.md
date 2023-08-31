@@ -10,7 +10,7 @@ Los sitios híbridos son útiles en comercio electrónico, incorporación digita
 
 ### Implementación de Sitios Híbridos en Modyo
 
-Para implementar un sitio híbrido en Modyo, debes utilizar una técnica que combina un sitio público con la adición de un reino de usuarios activado en áreas específicas del sitio (zona privada).  Una vez que el usuario inicie sesión, le puedes activar nuevas opciones en el menú, que lo conducen a páginas marcadas como “privadas” con información relevante al usuario en sesión o hacer llamadas mediante un API de integración externa.
+Para implementar un sitio híbrido en Modyo, debes utilizar una técnica que combina un sitio público con la adición de un reino de usuarios activado en áreas específicas del sitio (zona privada).  Una vez que el usuario inicie sesión, le puedes activar nuevas opciones en el menú, que lo conducen a páginas marcadas como _privadas_ con información relevante al usuario en sesión o hacer llamadas mediante un API de integración externa.
 
 Los sitios híbridos, al tener la presencia de un reino de usuario, no permiten el mismo nivel de caché que los sitios públicos, por lo cual su uso debe estar justificado y debe brindar funcionalidades distintivas a usuarios autenticados.
 
