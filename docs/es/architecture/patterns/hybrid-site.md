@@ -17,19 +17,19 @@ Los sitios híbridos, al tener la presencia de un reino de usuario, no permiten 
 
 ### Segmentación de Contenidos
 
-La segmentación de contenidos personaliza y adapta el contenido que se muestra a los usuarios, según criterios o "segmentos". Esta estrategia se fundamenta en la comprensión de las distintas audiencias o grupos de usuarios y busca proporcionarles una experiencia más pertinente y personalizada.
+La segmentación de contenidos personaliza y adapta el contenido que se muestra a los usuarios, según criterios o _segmentos_. Esta estrategia se fundamenta en la comprensión de las distintas audiencias o grupos de usuarios y busca proporcionarles una experiencia más pertinente y personalizada.
 
 Los segmentos pueden estar definidos por diversos criterios, incluyendo:
 
 - **Comportamiento del usuario**: páginas visitadas, compras realizadas o interacciones anteriores con el sitio o la aplicación.
 - **Información demográfica**: detalles como edad, género, ubicación, educación y otros datos demográficos del usuario.
-- **Intereses del usuario**:  lo que se conoce o infiere que le interesa al usuario, basado en sus comportamientos pasados o en la información proporcionada.
+- **Intereses del usuario**: lo que se conoce o infiere que le interesa al usuario, basado en sus comportamientos pasados o en la información proporcionada.
 - **Etapa en el viaje del cliente**: punto en el que se encuentra el usuario en el recorrido del cliente o en el embudo de ventas. Por ejemplo, un usuario podría estar en la etapa de descubrimiento, consideración, decisión o fidelización.
 
 En Modyo, los segmentos se definen de manera individual para cada dominio de usuarios, lo que permite crear varios segmentos en paralelo. Posteriormente, estos segmentos se pueden aplicar tanto a los contenidos como a las aplicaciones web.
 
 :::tip Segmentos
-Para más información sobre la creación de segmentos en Modyo, visita su [documentación oficial](/es/platform/customers/segments).
+Para más información sobre la creación de segmentos en Modyo, revisa la sección [segmentos](/es/platform/customers/segments).
 :::
 
 ### Uso de PWA
@@ -37,6 +37,3 @@ Para más información sobre la creación de segmentos en Modyo, visita su [docu
 La implementación de una Progressive Web App (PWA) en sitios híbridos puede ser un reto, ya que es necesario diferenciar las partes del sitio que son de acceso público de aquellas que son solamente para usuarios registrados.
 
 Una PWA es una app instalable en dispositivos y debe mostrar contenido adaptado y relevante para la sesión del usuario. En lugar de replicar la apariencia de un sitio público convencional, debe brindar una experiencia personalizada que se ajuste a las preferencias y necesidades del usuario. De lo contrario, sería similar a convertir un sitio público en una aplicación, lo cual puede conllevar a una experiencia de usuario insatisfactoria.
-
-
-
