@@ -40,7 +40,7 @@ The implementation of accessibility in Modyo depends on each type of initiative 
 - Determine the degree of accessibility necessary for the project.
 - Establish a method for measuring accessibility and evaluating compliance with standards
 - Ensure that you comply with the basic accessibility standards of the Bootstrap framework, which provides guidelines and
-  components accessible by default.
+  accessible components by default.
 - Confirm that media files, such as photos and videos, in Modyo Content include appropriate alternative descriptions to help people with visual disabilities understand multimedia content.
 - Use the Liquid language tag instead of a fixed URL when embedding media files in a page or widget in Modyo, to ensure the correct representation of alternative descriptions and to allow easy updates by the content management team.
 
