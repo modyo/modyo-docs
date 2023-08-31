@@ -20,7 +20,7 @@ Los sitios privados, tradicionalmente, se mantienen separados de los públicos, 
 :::
 
 <!-- Hack to avoid this title to be displayed in the TOC element -->
-<h3><a href="#¿como-implementar-sitios-privados-con-modyo" class="header-anchor">#</a> ¿Cómo implementar sitios privados con Modyo?</h3>
+<h3><a href="#Implementación de sitios privados en Modyo">#</a> Implementación de sitios privados en Modyo</h3>
 
 La implementación de sitios privados en Modyo es uno de los casos de uso más completos que se pueden trabajar en la plataforma. Esta implementación incluye herramientas para resolver tareas comunes, como autenticación de usuarios mediante credenciales internas o a través de sistemas de identidad externos, consumir información de usuarios desde APIs en sistemas externos, emplear componentes avanzados de Javascript, [micro frontends](/es/architecture/patterns/micro-frontend), [microservicios](/es/architecture/patterns/microservice), mensajería, notificaciones, segmentación de contenido y páginas basada en perfiles, entre otras funciones.
 
