@@ -36,7 +36,7 @@ Al usar organizaciones, considera los límites de tu licencia. El límite máxim
 :::
 
 #### Uso de Páginas y Layouts
-Los [layouts](/es/platform/channels/templates.md#layouts) son una excelente forma para diferenciar contextos dentro de un sitio. Un layouts puede ser compartido por múltiples [páginas](/es/platform/channels/pages) y cada página puede tener un solo layout. Dentro del layout puedes definir elementos reutilizables entre las diferentes páginas, como Headers, Footers, Meta Tags, etc.
+Los [layouts](/es/platform/channels/templates.md#layouts) son una excelente forma para diferenciar contextos dentro de un sitio. Un layout puede ser compartido por múltiples [páginas](/es/platform/channels/pages) y cada página puede tener un solo layout. Dentro del layout puedes definir elementos reutilizables entre las diferentes páginas, como Headers, Footers, Meta Tags, etc.
 
 Los layouts aseguran coherencia visual entre las páginas, aunque casos como una página de promoción especial pueden requerir layouts diferentes.
 
@@ -56,7 +56,7 @@ Otro problema frecuente es el exceso de snippets dentro de un sitio, lo que pued
 #### Uso de Widgets
 En Modyo, los [widgets](/es/platform/channels/widgets) te permiten organizar y modularizar la funcionalidad de negocio.
 
-Los widgets contienen código HTML, CSS y Javascript que se modifica y despliega en conjunto, sin afectar al sitio.
+Los widgets contienen código HTML, CSS y Javascript que se modifica y despliega en conjunto, sin afectar al sitio. Los widgets se diferencian de las plantillas y snippets en que poseen un ámbito de ejecución independiente. Esto significa que encapsulan código autocontenido que se ejecuta de manera autónoma, sin ejercer impacto en el resto del entorno del sitio web.
 
 El widget builder en la consola de administración de Modyo, al igual que el editor de plantillas, te da control del ciclo completo de desarrollo del widget, con previsualización, versionamiento y despliegue.
 
@@ -97,7 +97,7 @@ Al igual que en el caso de los micro frontends, el uso de frameworks de Javascri
 #### Web Components
 Los [web components](/es/architecture/patterns/web-components) son una técnica de modularización basada en estándares de HTML, CSS y JS. Actualmente, los web components carecen de soporte uniforme en los navegadores, aunque esta situación mejora gradualmente con el tiempo. Para implementar los web components de manera segura, es necesario utilizar una librería de JavaScript que aborde estas incompatibilidades. Es por ello que en el caso de los sitios públicos, el uso de Web Components puede generar más problemas de los beneficios que aportaría, como se menciona en secciones anteriores.
 
-Como alternativa al uso de los Web Components, los sitios públicos se pueden beneficiar de alternativas más livianas y estándares, cómo es el caso del framework de CSS [Bootstrap](https://getbootstrap.com) y que está integrado nativamente dentro de la plataforma Modyo.
+Como alternativa al uso de los Web Components, los sitios públicos se pueden beneficiar de alternativas más livianas y estándares, cómo es el caso del framework de CSS [Bootstrap](https://getbootstrap.com) y que está integrado nativamente dentro de la plataforma Modyo. Además, se puede emplear la funcionalidad de snippets, que facilita la reutilización de código de manera análoga a los Web Components.
 
 ### Gobernabilidad de contenido y códigos fuente
 En cada proyecto de sitio público el gobierno del contenido y código fuente deben ser un elemento central a considerar.La implementación debe alinearse con las expectativas del negocio respecto a cómo se gestionarán las actualizaciones futuras del sitio, respetando los flujos de aprobación de cambios y el nivel adecuado de separación entre el contenido y su lógica de implementación.
@@ -217,7 +217,7 @@ Para Google Analytics, marcaje se refiere a la implementación de código en un 
 
 El marcaje para Google Analytics es esencial para el seguimiento y la evaluación del rendimiento del sitio o la aplicación. Permite a los propietarios y administradores del sitio entender cómo los usuarios interactúan con su contenido, qué páginas son más populares, cuánto tiempo pasan en el sitio, las fuentes de tráfico, las conversiones y otros detalles importantes. Estos datos son valiosos para tomar decisiones informadas sobre estrategias de marketing, diseño de sitio y optimización de la experiencia del usuario.
 
-Para implementar el marcaje con Modyo, se deberán primero definir los objetivos de negocio que se desean medir y luego implementar el código y etiquetas dentro de las plantillas de los sitios. El marcaje te permite capturar los eventos que suceden en el sitio, correlacionarlos con otros datos y obtener información valiosa sobre la interacción de los usuarios con el sitio.
+Para implementar el marcaje con Modyo, se deberán primero definir los objetivos de negocio que se desean medir y luego implementar el código y etiquetas dentro de las plantillas de los sitios. Además, se podrá utilizar Google Tag Manager, desde dónde se pueden administrar definiciones de marcaje de forma externa al sitio. El marcaje te permite capturar los eventos que suceden en el sitio, correlacionarlos con otros datos y obtener información valiosa sobre la interacción de los usuarios con el sitio.
 
 
 
@@ -251,4 +251,4 @@ En un sitio público, se maneja una cantidad limitada de información de usuario
 Finalmente, reservamos algunos requerimientos en específico que conviene tener en cuenta a la hora de implementar un sitio público.
 
 #### Uso de PWA
-En el caso de los sitios públicos, no recomendamos utilizar las técnicas de Progressive Web App (PWA) como sí se hace en los sitios privados. Los sitios públicos generalmente no están asociados al concepto de _aplicación_ y, por lo general, no brindan un valor o experiencia personalizada al usuario mediante su instalación.
+En el caso de los sitios públicos, no recomendamos utilizar las técnicas de Progressive Web App (PWA) como sí se hace en los sitios privados. Los sitios públicos generalmente no están asociados al concepto de _aplicación_ y, por lo general, no brindan un valor o experiencia personalizada al usuario mediante su instalación. Existen algunas excepciones a esto como el uso del modo offline y definiciones de metadata aplicativa que ayudarán con la experiencia y benefician un mejor SEO, respectivamente.
