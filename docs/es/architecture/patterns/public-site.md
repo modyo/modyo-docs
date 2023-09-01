@@ -217,7 +217,7 @@ Para Google Analytics, marcaje se refiere a la implementación de código en un 
 
 El marcaje para Google Analytics es esencial para el seguimiento y la evaluación del rendimiento del sitio o la aplicación. Permite a los propietarios y administradores del sitio entender cómo los usuarios interactúan con su contenido, qué páginas son más populares, cuánto tiempo pasan en el sitio, las fuentes de tráfico, las conversiones y otros detalles importantes. Estos datos son valiosos para tomar decisiones informadas sobre estrategias de marketing, diseño de sitio y optimización de la experiencia del usuario.
 
-Para implementar el marcaje con Modyo, se deberán primero definir los objetivos de negocio que se desean medir y luego implementar el código y etiquetas dentro de las plantillas de los sitios. Además, se podrá utilizar Google Tag Manager, desde dónde se pueden administrar definiciones de marcaje de forma externa al sitio. El marcaje te permite capturar los eventos que suceden en el sitio, correlacionarlos con otros datos y obtener información valiosa sobre la interacción de los usuarios con el sitio.
+Para implementar el marcaje con Modyo, se deberán primero definir los objetivos de negocio que se desean medir y luego implementar el código y etiquetas dentro de las plantillas de los sitios. Además, puedes utilizar Google Tag Manager, desde dónde podrás administrar definiciones de marcaje de forma externa al sitio. El marcaje te permite capturar los eventos que suceden en el sitio, correlacionarlos con otros datos y obtener información valiosa sobre la interacción de los usuarios con el sitio.
 
 
 
@@ -251,4 +251,4 @@ En un sitio público, se maneja una cantidad limitada de información de usuario
 Finalmente, reservamos algunos requerimientos en específico que conviene tener en cuenta a la hora de implementar un sitio público.
 
 #### Uso de PWA
-En el caso de los sitios públicos, no recomendamos utilizar las técnicas de Progressive Web App (PWA) como sí se hace en los sitios privados. Los sitios públicos generalmente no están asociados al concepto de _aplicación_ y, por lo general, no brindan un valor o experiencia personalizada al usuario mediante su instalación. Existen algunas excepciones a esto como el uso del modo offline y definiciones de metadata aplicativa que ayudarán con la experiencia y benefician un mejor SEO, respectivamente.
+En el caso de los sitios públicos, no recomendamos utilizar las técnicas de Progressive Web App (PWA) como sí se hace en los sitios privados. Los sitios públicos generalmente no están asociados al concepto de _aplicación_ y, por lo general, no brindan un valor o experiencia personalizada al usuario mediante su instalación. Algunas excepciones a esto son el uso del modo offline y la optimización del SEO a través de metadatos aplicativos. Estas medidas mejoran la experiencia del usuario y aumentan la visibilidad en motores de búsqueda, respectivamente.
