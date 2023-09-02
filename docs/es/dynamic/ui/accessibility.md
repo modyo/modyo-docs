@@ -10,7 +10,7 @@ Para lograr esta misión, estamos comprometidos con una serie de prácticas clav
 
 - **Uso semántico del HTML**: Dynamic Framework utiliza etiquetas semánticas de HTML5 para estructurar el contenido de manera significativa, lo que ayuda a los lectores de pantalla y otros dispositivos a comprender la organización de la página.
 
-- **Etiquetas de encabezado**: Dynamic Framework utiliza etiquetas de encabezado (<h1> a <h6>) en orden jerárquico y coherente donde sea posible, para proporcionar una estructura lógica y una jerarquía de contenido. Esto ayuda a los usuarios a comprender la relación entre diferentes secciones.
+- **Etiquetas de encabezado**: Dynamic Framework utiliza etiquetas de encabezado (h1 a h6) en orden jerárquico y coherente donde sea posible, para proporcionar una estructura lógica y una jerarquía de contenido. Esto ayuda a los usuarios a comprender la relación entre diferentes secciones.
 
 - **Teclado y navegación**: Dynamic Framework asegura que los componentes interactivos, como los menús desplegables y los botones, sean accesibles mediante el teclado, permitiendo a los usuarios navegar y acceder a la funcionalidad sin necesidad de un ratón.
 
