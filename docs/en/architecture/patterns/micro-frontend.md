@@ -4,55 +4,56 @@ search: true
 
 # Micro Frontend
 
-Developing modern user experiences can be challenging. The heterogeneity of tools and techniques must coexist with the constant natural evolution of the Web. In this scenario, micro frontends emerge as a technique to increase the effectiveness and efficiency of development teams by breaking down complex applications into smaller, more manageable parts.
+Developing modern user experiences can be a challenge. The heterogeneity of tools and techniques must coexist with the constant natural evolution of the web. In this scenario, micro frontends emerge as a technique to increase the effectiveness and efficiency of development teams by breaking down complex applications into smaller, more manageable parts.
 
-### What is a micro frontend?
+### Definition of micro frontend
 
-According to the [official definition](https://micro-frontends.org), a micro frontend is the extension of the concept of [microservices](microservice.md) to the frontend. Micro frontends seek to generate a modular architecture in scenarios that would otherwise become frontend monoliths, such as Single-Page Applications (SPAs).
+According to the [official definition] (https://micro-frontends.org), a micro frontend is the extension of the concept of [microservices] (microservice.md) to the frontend. Its objective is to create a modular architecture in scenarios that would otherwise become frontend monoliths, such as single-page applications (SPAs).
 
-Micro frontends give teams the ability to work with more autonomy, since they operate with a responsibility limited to their context, which forces them to define operating contracts among themselves, without requiring that they be implemented with the same technology.
+Micro frontends allow teams to work with greater autonomy, since they operate with a responsibility limited to their context, this forces them to define operating contracts between them, without the need for them to be implemented with the same technology.
 
 #### Features
 
-- **Being technology agnostic:** Each team can work with different technologies or versions, since micro frontends don't depend on anything on each other. For example, in the same Web application, a micro frontends can be developed in React and another in Angular.
-- **Isolate computer code:** Standalone, standalone applications that don't share things with each other. The codes are independent on each computer and are versioned separately.
-- **Native APIs:** Micro frontends seek to favor native browser functions over custom APIs. For example, using native geolocation controls instead of custom development.
-- **Build a resilient site:** In the event that a micro frontend fails, its state doesn't contaminate the others, as they load asynchronously and independently.
+- **They are technologically agnostic: ** Each team can work with different technologies or versions, since micro frontends don't depend on each other. For example, in the same web application, one micro frontend can be developed in React and another in Angular.
+- **They isolate the computer's code: ** They are separate applications that do not share resources with each other. Codes are independent for each team and are versioned separately.
+- **They use native APIs: ** Micro frontends favor native browser functions rather than developing custom APIs. For example, they use native geolocation controls instead of custom developments.
+- **They build a resilient site: ** In the event that a micro frontend fails, its state doesn't contaminate the others, as they load asynchronously and independently.
 
 #### Benefits
 
-- **Incremental updates:** As they are independent components, their changes and deployments to production are also independent components. For many organizations, this is the main reason for the adoption of micro frontends.
-- **Decoupled, simpler code:** The code of each micro frontend will be smaller than the full code of the application. Small code repositories are easier for developers to work with.
-- **Independent deployments:** As with microservices, independent deployments are a key component in the microfrontend architecture. This reduces the scope of each deployment, thereby reducing the associated risk. Each micro frontend must have its own line of construction, testing, and deployment to production.
-- **Independent teams:** Independent teams gain a greater sense of ownership and control over the products they maintain, allowing them to work faster and more efficiently.
+- **Incremental updates: ** As they are independent components, changes and deployments to production are also independent components. For many organizations, this is the primary reason for adopting micro frontends.
+- **Decoupled and simpler code: ** The code of each micro frontend is smaller than that of the entire application, making it easier for developers to work.
+- **Independent deployments: ** As with microservices, independent deployments are a key component in the micro frontends architecture. Each micro frontend has its own building, testing, and deployment process. By reducing the scope of each deployment, the associated risk decreases.
+- **Independent teams**: Independent teams have a greater sense of ownership and control over the products they maintain, encouraging faster and more efficient work.
 
 
-### How do you implement micro frontends with Modyo?
+### Implementing micro frontends with Modyo
 
-The work with micro frontends is done using open tools and frameworks to facilitate the development process. Once the component has been created, it is deployed directly to the Modyo Platform using the Modyo Command Line Interface or CLI.
+Working with micro frontends is done using open tools and frameworks to facilitate development. Once you have created the component, it is deployed directly to the Modyo Platform using the Modyo Command Line Interface or CLI.
 
 :::tip Modyo Platform
-Modyo Connect is not required for the development and deployment of micro frontends within the Modyo Platform, but it does help with the [code repository](/en/connect/components/development.md#code-repository) and [continuous integration](/en/connect/components/development.md#continuous-integration) automations required for an efficient workflow.
+Modyo Connect is not required for the development and deployment of micro frontends within the Modyo Platform, but it does help with the [code repositories] (/en/connect/components/development.md #code-repository) and [continuous integration] automations (/en/connect/components/development.md #continuous-integration) required for an efficient workflow.
 :::
 
 #### General considerations
 
-The following are some considerations that should be taken into account when developing micro frontends on the Modyo Platform:
+Some considerations that must be taken into account when developing micro frontends on the Modyo Platform are:
 
-- Define an appropriate scope according to the business subdomain. A micro frontend shouldn't be too small, not too small
+- Define an appropriate scope according to the business subdomain. A micro frontend shouldn't be too small, nor too
   big.
 - Define the framework to work on (React, VueJS, Angular, etc.).
-- Avoid packaging dependencies in the micro frontend that are not absolutely necessary.
-- Ensure that the micro frontend does not generate any conflict with the resources displayed on the page.
-- Ensure omni-channel is considered as part of the micro frontend design.
-- If external APIs are consumed, ensure proper error handling.
-- Use browser tools to measure accessibility and loading performance.
-- Evaluate whether synchronous vs. asynchronous loading of the micro frontend is required.
+- Avoid packaging unnecessary dependencies.
+- Ensure that the micro frontend does not generate conflicts with the page's resources.
+- Consider omnichannel design.
+- In case of consuming external APIs, handle errors properly.
+- Measure accessibility and loading performance with browser tools
+- Evaluate if synchronous or asynchronous loading of the micro frontend is required.
 
 #### Using the Modyo CLI
 
 Some considerations with the use of the Modyo CLI:
 
-- Ensure that the Modyo CLI process runs in an automation pipeline and not from a local environment.
-- Ensure that access tokens to Modyo's administrative APIs are stored within a secrets repository, such as GitHub Secrets.
+- Run the Modyo CLI process in an automation pipeline and not from a local environment.
+- Store access tokens to Modyo's administrative APIs securely, such as on GitHub Secrets.
+
 
