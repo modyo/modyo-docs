@@ -5,6 +5,11 @@ search: true
 # Notas del release
 
 ## 9.2
+### 9.2.48 - 04 de septiembre de 2023
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Corrige modal para cambiar imágenes en el editor de templates de correos de campañas
+
 ### 9.2.47 - 01 de septiembre de 2023
 <Badge text="Core" type="core" vertical="middle"/>
 
