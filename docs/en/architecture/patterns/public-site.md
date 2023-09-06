@@ -36,7 +36,7 @@ When using organizations, consider the limits of your license. The maximum limit
 :::
 
 #### Using Pages and Layouts
-[layouts] (/en/platform/channels/templates.md #layouts) are an excellent way to differentiate contexts within a site. A layout can be shared by multiple [pages] (/en/platform/channels/pages) and each page can have only one layout. Within the layout you can define reusable elements between the different pages, such as Headers, Footers, Meta Tags, etc.
+[Layouts] (/en/platform/channels/templates.md #layouts) are an excellent way to differentiate contexts within a site. A layout can be shared by multiple [pages] (/en/platform/channels/pages) and each page can have only one layout. Within the layout you can define reusable elements between the different pages, such as Headers, Footers, Meta Tags, etc.
 
 The layouts ensure visual consistency between pages, although cases such as a special promotion page may require different layouts.
 
@@ -56,7 +56,7 @@ Another common problem is excessive snippets within a site, which can slow page 
 #### Using Widgets
 In Modyo, [widgets] (/en/platform/channels/widgets) allow you to organize and modularize business functionality.
 
-Widgets contain HTML, CSS, and Javascript code that is modified and deployed together, without affecting the site.
+The widgets contain HTML, CSS and Javascript code that is modified and deployed together, without affecting the site. Widgets differ from templates and snippets in that they have a separate execution scope. This means that they encapsulate self-contained code that runs autonomously, without impacting the rest of the website environment.
 
 The widget builder in the Modyo administration console, like the template editor, gives you control over the entire development cycle of the widget, with preview, versioning and deployment.
 
@@ -97,7 +97,7 @@ As with micro frontends, using Javascript frameworks on a public site can involv
 #### Web Components
 [web components] (/en/architecture/patterns/web-components) are a modularization technique based on HTML, CSS and JS standards. Currently, web components lack consistent support in browsers, although this situation gradually improves over time. To implement web components safely, you need to use a JavaScript library that addresses these incompatibilities. That is why in the case of public sites, the use of Web Components can create more problems than the benefits it would bring, as mentioned in previous sections.
 
-As an alternative to using Web Components, public sites can benefit from lighter and more standard alternatives, such as the CSS [Bootstrap] framework (https://getbootstrap.com), which is natively integrated into the Modyo platform.
+As an alternative to using Web Components, public sites can benefit from lighter and more standard alternatives, such as the CSS [Bootstrap] framework (https://getbootstrap.com), which is natively integrated into the Modyo platform. In addition, you can use the snippets functionality, which makes it easier to reuse code in a manner analogous to Web Components.
 
 ### Content and source code governance
 In every public site project, content governance and source code must be a central element to consider. The implementation must align with business expectations regarding how future updates to the site will be managed, respecting change approval flows and the appropriate level of separation between content and its implementation logic.
@@ -217,7 +217,7 @@ For Google Analytics, tagging refers to the implementation of code on a website 
 
 Markup for Google Analytics is essential for monitoring and evaluating the performance of the site or application. It allows site owners and administrators to understand how users interact with their content, which pages are most popular, how much time they spend on the site, traffic sources, conversions, and other important details. This data is valuable for making informed decisions about marketing strategies, site design, and user experience optimization.
 
-To implement branding with Modyo, you must first define the business objectives you want to measure and then implement the code and tags within the templates of the sites. Tagging allows you to capture events that happen on the site, correlate them with other data, and gain valuable information about user interaction with the site.
+To implement tagging with Modyo, you must first define the business objectives you want to measure and then implement the code and tags within the templates of the sites. In addition, you can use Google Tag Manager, from where you can manage branding definitions outside the site. Tagging allows you to capture events that happen on the site, correlate them with other data, and gain valuable information about user interaction with the site.
 
 
 
@@ -251,4 +251,4 @@ In a public place, a limited amount of user information is handled, but this doe
 Finally, we reserved some specific requirements that should be taken into account when implementing a public site.
 
 #### Using PWA
-For public sites, we don't recommend using Progressive Web App (PWA) techniques as it's done on private sites. Public sites are generally not associated with the concept of _application_ and generally do not provide a value or personalized experience to the user through their installation.
+For public sites, we don't recommend using Progressive Web App (PWA) techniques as you do on private sites. Public sites are generally not associated with the concept of _application_ and generally do not provide a value or personalized experience to the user through their installation. Some exceptions to this are the use of offline mode and the optimization of SEO through application metadata. These measures improve the user experience and increase visibility in search engines, respectively.
