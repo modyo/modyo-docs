@@ -60,7 +60,7 @@ Algunas consideraciones importantes al desarrollar microservicios en Modyo Conne
 Los microservicios que requieren de persistencia relacional de datos deben considerar las siguientes pautas:
 
 - **Bloqueos:** Evitar consultas que puedan generar [bloqueos](https://www.baeldung.com/jpa-pessimistic-locking) en las tablas de la base de datos durante momentos de alta demanda.
-- **Eficiencia:** Traer unicamente la información requerida de la base de datos. En ocasiones puede ser beneficiosos utilizar [lazy loading](https://www.baeldung.com/hibernate-lazy-eager-loading) para evitar consultas innecesarios a la base de datos en cada iteración dentro de un bucle.
+- **Eficiencia:** Traer únicamente la información requerida de la base de datos. En ocasiones puede ser beneficiosos utilizar [lazy loading](https://www.baeldung.com/hibernate-lazy-eager-loading) para evitar consultas innecesarias a la base de datos en cada iteración dentro de un bucle.
 - **Índices:** Asegurar que los índices aplicados al esquema sean efectivos. Usar el comando [“explain”](https://dev.mysql.com/doc/refman/8.0/en/using-explain.html) de forma local para verificar su uso.
 - **Migraciones y versionamiento:** Asegurar el [versionamiento y la automatización](https://flywaydb.org) de tareas que operan sobre el esquema de datos.
 - **Pool de conexiones:** Asegurar una configuración correcta del [pool de conexiones](https://www.baeldung.com/java-connection-pooling)y dimensionar adecuadamente el motor de base de datos, según la concurrencia y escalabilidad esperada.
