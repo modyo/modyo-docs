@@ -6,7 +6,7 @@ search: true
 
 Dynamic Framework is based on design principles that help create beautiful, modern, and customizable web applications without the need to write and maintain custom code.
 
-Dynamic Framework has been designed using recognizable interaction patterns; oriented to the financial industry and its unique challenges in the user experience.
+Dynamic Framework has been designed using recognizable interaction patterns; oriented to the financial industry and its unique challenges in user experience.
 
 The design principles in Dynamic Framework are:
 - **Clarity: ** Reduce ambiguity and give users confidence and understanding in using the application.
