@@ -46,21 +46,32 @@ Las plantillas de experiencia presentes en el frameowrk han sido diseñadas para
 ## Instalación
 Primero lo primero. Para comenzar a utilizar Dynamic Framework te recomendamos [crear un ambiente de pruebas](https://www.modyo.com/get-started) (sandbox) en Modyo. Una vez que te familiarices con los conceptos básicos de la plataforma, estarás listo para partir.
 
-Lo siguiente será instalar el Modyo CLI. Para ello debes ejecutar el siguiente comando:
+Recomendamos iniciar un nuevo proyecto con Dynamic Framework utilizando el comando NPX, que configura todo automáticamente::
 
 ``` shell
-npm -i modyo-cli
+npx @modyo/cli@latest get dynamic-react-base-template <nombre-de-tu-proyecto>
+```
+Si aún no tienes instalado el CLI de Modyo, se te preguntará si quieres instalarlo:
+```shell
+Need to install the following packages:
+  @modyo/cli@3.3.0
+```
+Una vez instalado, se descarga la plantilla dynamic-react-base-template, así que solo necesitarás instalar las dependencias y levantar el proyecto:
+```shell
+cd <nombre-de-tu-proyecto>
+npm i
+npm run start
 ```
 
-Una vez descargado el CLI, estarás listo para comenzar a descargar las primeras plantillas de experiencia. Te recomendamos partir con la siguiente, correspondiente a la [Banca Personas](/es/dynamic/experiences/retail/dashboard):
+Usa tu editor de código favorito para explorar el código , jugar con ella y ver por tí mismo cómo los diferentes [componentes](/es/dynamic/ui/components) del sistema de diseño son utilizados.
 
-``` shell
-modyo-cli get dynamic-retail-dashboard-template
+### Instalación manual
+Para crear manualmente un nuevo proyecto con Dynamic Framework o agregarlo a un proyecto React, puedes instalar los paquetes requeridos:
+```shell
+npm i @modyo/cli@latest @dynamic-framework/ui-react@latest
 ```
 
-El comando anterior descargará una plantilla completamente funcional, la cual podrás ejecutar y modificar en tu ambiente local. Usa tu editor de código favorito para explorar el código , jugar con ella y ver por tí mismo cómo los diferentes [componentes](/es/dynamic/ui/components) del sistema de diseño son utilizados.
-
-A partir de este momento tendrás dos opciones: Seguir explorando otras plantillas o aventurarte a desplegar tu plantilla dentro de tu ambiente sandbox utilizando el modyo-cli con un API token válido.
+A partir de este momento tendrás dos opciones: Seguir [explorando otras plantillas](/es/dynamic/experiences/retail/dashboard.html) o aventurarte a [desplegar tu plantilla](/es/platform/channels/cli.html#modyo-cli-push-name) dentro de tu ambiente sandbox utilizando el modyo-cli con un API token válido.
  
 
 ### Contribuciones
