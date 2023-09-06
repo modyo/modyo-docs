@@ -35,7 +35,7 @@ Cada servicio se crea para manejar capacidades empresariales específicas y se c
 - **Implementación sencilla:** Los microservicios permiten la integración y entrega continua, lo que facilita probar nuevas ideas y revertirlas si algo no funciona. El bajo costo de los errores permite experimentar, facilita la actualización del código y acelera el tiempo de comercialización de las nuevas características.
 - **Libertad tecnológica:** No siguen un enfoque de "diseño único". Los equipos tienen la libertad de elegir la mejor herramienta para resolver cada tarea o situación.
 - **Código reutilizable:** La división del software en módulos pequeños y bien definidos permite a los equipos usar funciones para diferentes propósitos. Un servicio desarrollado para una función específica puede ser utilizado como componente básico para otra característica. Esto facilita el inicio de una aplicación, ya que los desarrolladores pueden crear nuevas capacidades sin tener que escribir código desde cero.
-- **Resistencia:** La independencia del servicio aumenta la resistencia a los errores. En caso de existir un error en un servicio, las aplicaciones pueden degradar la funcionalidad sin afectar toda la aplicación.
+- **Resiliencia:** La independencia del servicio aumenta la resistencia a los errores. En caso de existir un error en un servicio, las aplicaciones pueden degradar la funcionalidad sin afectar toda la aplicación.
 
 ### Implementación de microservicios con Modyo
 
