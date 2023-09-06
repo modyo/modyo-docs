@@ -9,7 +9,7 @@ Dynamic Framework is based on design principles that help create beautiful, mode
 Dynamic Framework has been designed using recognizable interaction patterns; oriented to the financial industry and its unique challenges in user experience.
 
 The design principles in Dynamic Framework are:
-- **Clarity: ** Reduce ambiguity and give users confidence and understanding in using the application.
+- **Clarity: ** Reduce ambiguity and give users confidence and understanding when using the application.
 - **Simplicity: ** Facilitate the construction of experiences by providing a catalog of components and functionalities, allowing you to concentrate on crucial business decisions.
 - **Efficiency: ** Prioritize workflows that anticipate common needs in the financial industry.
 - **Consistency: ** Present consistent and familiar interfaces to end users, regardless of the device they are using, making it easier to intuitively use applications.
