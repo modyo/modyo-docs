@@ -7,7 +7,7 @@ En el desarrollo de experiencias de usuarios, la apariencia y el estilo de una a
 
 Dynamic Framework ofrece dos niveles de personalización:
 - **Temas:** Una lista de variables que definen el estilo de los componentes y que constituyen lo que entendemos como un _tema_.
-- **A nivel de componente:** Personalización de los componentes de Dynamic Framework a través de parámetros, propiedades o marcado personalizado.
+- **Componentes:** Personalización de los componentes de Dynamic Framework a través de parámetros, propiedades o marcado personalizado.
 
 En esta sección profundizaremos en el primer nivel. Explicaremos el concepto de tema y las variables que lo hacen posible.
 
@@ -26,7 +26,7 @@ Con un tema podremos obtener:
 
 ### Estructura de un Tema
 
-- **Variables globales:** Además de las variables proporcionadas por Bootstrap, que se utiliza como base, Dynamic Framework agrega un conjunto adicional de variables CSS globales en el archivo `_variables.css`. Estas variables controlan distintos aspectos como colores, tipografía, espaciado, tamaños de fuente y más, que modificaran todos los componentes.
+- **Variables globales:** Además de las variables que entrega la librería Bootstrap, que se utiliza como base, Dynamic Framework agrega un conjunto adicional de variables CSS globales en el archivo `_variables.css`. Estas variables controlan distintos aspectos como colores, tipografía, espaciado, tamaños de fuente y más, que modificaran todos los componentes.
 - **Sobrescritura de variables:** Para personalizar el framework, puedes sobrescribir las variables globales. Al modificar estas variables, cambias los estilos en toda la librería que se basan en ellas.
 
 Las variables se organizan en categorías como colores, tipografía, espaciado y bordes, lo que te permite identificar cuáles variables están disponibles y modificarlas según tus necesidades. Por ejemplo, para cambiar los colores principales, modifica la variable `$primary` con el nuevo valor de color.
@@ -34,7 +34,6 @@ Las variables se organizan en categorías como colores, tipografía, espaciado y
 :::tip Orden de precedencia
 Es importante tener en cuenta que, por diseño, las definiciones CSS tienen un orden de precedencia. Por lo que si un Micro frontend cambia el valor de una variable global, esta nueva definición tendrá prioridad sobre la definida en el tema.
 :::
-
 
 ### Variables CSS
 
