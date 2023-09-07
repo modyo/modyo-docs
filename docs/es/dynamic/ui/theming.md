@@ -6,7 +6,7 @@ search: true
 En el desarrollo de experiencias de usuarios, la apariencia y el estilo de una aplicación desempeñan un papel crucial. Sin embargo, diseñar y mantener un conjunto coherente de estilos puede ser una tarea compleja y laboriosa. Es por eso que resulta crítico contar con formas eficientes de personalizar la estética de una aplicación de manera consistente y eficiente.
 
 Dynamic Framework ofrece dos niveles de personalización:
-- **Temas:** Una lista de variables que definen el estilo de los componentes y que constituyen lo que entendemos como un _Tema_.
+- **Temas:** Una lista de variables que definen el estilo de los componentes y que constituyen lo que entendemos como un _tema_.
 - **A nivel de componente:** Personalización de los componentes de Dynamic Framework a través de parámetros, propiedades o marcado personalizado.
 
 En esta sección profundizaremos en el primer nivel. Explicaremos el concepto de tema y las variables que lo hacen posible.
