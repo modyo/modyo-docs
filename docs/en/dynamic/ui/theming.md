@@ -3,7 +3,7 @@ search: true
 ---
 
 # Themes
-In developing user experiences, the look and feel of an application play a crucial role. However, designing and maintaining a coherent set of styles can be a complex and laborious task. That's why it's critical to have efficient ways to customize the aesthetics of an application in a consistent and efficient way.
+In developing user experiences, the look and feel of an application plays a crucial role. However, designing and maintaining a coherent set of styles can be a complex and laborious task. That's why it's critical to have efficient ways to customize the aesthetics of an application in a consistent and efficient way.
 
 Dynamic Framework offers two levels of customization:
 - **Themes: ** A list of variables that define the style of the components and that constitute what we understand as a _theme_.
