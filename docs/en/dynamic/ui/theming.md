@@ -31,7 +31,7 @@ With a theme we can get:
 
 The variables are organized into categories such as colors, typography, spacing and borders, allowing you to identify which variables are available and modify them according to your needs. For example, to change the main colors, modify the `$firstary` variable with the new color value.
 
-:: :tip Order of Precedence
+:::tip Order of Precedence
 It's important to note that, by design, CSS definitions have an order of precedence. Therefore, if a Micro frontend changes the value of a global variable, this new definition will take precedence over the one defined in the theme.
 :::
 
