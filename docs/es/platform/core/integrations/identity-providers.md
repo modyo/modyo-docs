@@ -49,7 +49,7 @@ Además de los valores necesarios, puedes configurar algunos datos extra para co
 
 ### Requisitos
 
-Para lograr una conexión exitosa entre SAML y Modyo, debes configurar los siguientes atributos en el Proveedor de Identidad:
+Para lograr una conexión exitosa entre SAML y Modyo, configura los siguientes atributos en el Proveedor de Identidad:
 
 - **givenName** o (En la versión 9.2.22 en adelante también puede ser `givenname`). Corresponde al nombre del usuario.
 - **sn** (En la versión 9.2.22 en adelante también puede ser `surname`). Corresponde al apellido del usuario.
