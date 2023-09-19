@@ -106,7 +106,7 @@ Los usuarios con los permisos necesarios pueden hacer click en el botón **Aprob
 
 Al aprobar el elemento, la aprobación de ese usuario queda registrada y se muestra un check verde junto a su nombre en el listado de revisores.
 
-Al habilitar la revisión en equipo, en la barra de acciones del elemento, a la izquierda del botón principal de color verde y a la derecha del botón de diferencias, aparece un ícono ( <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 23a1 1 0 0 1-1-1v-3H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4.1l-3.7 3.71c-.2.18-.44.29-.7.29H12m1-6v3.08L16.08 17H21V7H7v10h6M3 15H1V3a2 2 0 0 1 2-2h16v2H3v12m6-6h10v2H9V9m0 4h8v2H9v-2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg> ) para abrir la pestaña de actividad del elemento.
+Al habilitar la revisión en equipo, en la barra de acciones del elemento, a la izquierda del botón principal de color verde y a la derecha del botón de diferencias, puede encontrár la opción para abrir la pestaña de actividad del elemento.
 
 Al abrir esta pestaña, se muestra una lista cronológica de las acciones realizadas en el elemento, con la opción de ver los detalles de cada acción. Al final de la pestaña, está la opción de dejar un comentario.
 
@@ -255,7 +255,7 @@ Tras tomar el control, el Administrador solo tiene dos horas para hacer cambios 
 
 ## Modo vista previa
 
-El modo vista previa te permite previsualizar los cambios realizados a elementos publicables como las Entradas, Pages, Navigation, Widgets o Plantillas. El acceso a este modo está en la parte superior derecha del sitio con el ícono <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5c-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0a9.821 9.821 0 0 0-17.64 0z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>. Puedes reconocer que estás en modo vista previa, cuando veas la barra en la parte superior del sitio.
+El modo vista previa te permite previsualizar los cambios realizados a elementos publicables como las Entradas, Pages, Navigation, Widgets o Plantillas. El acceso a este modo está en la parte superior derecha del sitio. Puedes reconocer que estás en modo vista previa, cuando veas la barra en la parte superior del sitio.
 
 ![Barra de vista previa](/assets/img/platform/preview-bar.png)
 
