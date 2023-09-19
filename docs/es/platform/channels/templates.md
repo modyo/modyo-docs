@@ -18,32 +18,33 @@ Una vez dentro de Plantillas, puedes ver que el menú principal se esconde para 
 - **En revisión**: Cuando se habilita la [revisión en equipo](/es/platform/core/key-concepts.html) y se ha enviado a revisión la versión editable.
 - **Aprobado**: Cuando se habilita la [revisión en equipo](/es/platform/core/key-concepts.html) y si es que se cumplieron las condiciones de revisión del elemento. Si estás en este estado, tus plantillas están listos para ser publicados.
 
-En la parte superior derecha, encuentras la última fecha de publicación y las acciones disponibles:
+En la parte superior derecha, puedes ver la última fecha de publicación y las acciones disponibles:
 
-**Vista previa** : Al hacer click en este icono se abre una nueva pestaña con el modo vista previa de los plantillas, en el cual podrás ver como si estuvieran publicados, todos los cambios que tienes en tus plantillas.
+**Vista previa**: Da click en este icono para abrir una nueva pestaña con el modo de vista previa de las plantillas. En esta vista puedes ver todos los cambios en tus plantillas, como si estuvieran publicados.
 
 :::warning Atención
-Puedes previsualizar los cambios como usuario sin sesión o usuario con sesión de Modyo. Para esto, es recomendable iniciar o cerrar la sesión de Modyo en el sitio antes de entrar al modo vista previa, dado que si se inicia o cierra sesión dentro del modo vista previa, podrías encontrarte con errores de seguridad del tipo _x-frame-options_ o _mixed-content_, dependiendo de la configuración de dominios personalizados y SSL del sitio
+Puedes previsualizar los cambios como usuario sin sesión o usuario con sesión de Modyo. Para esto, es recomendable iniciar o cerrar la sesión de Modyo en el sitio antes de entrar al modo vista previa, dado que si se inicia o cierra sesión dentro del modo vista previa. Esto se debe a que iniciar o cerrar sesión dentro del modo de vista previa puede generar errores de seguridad como _x-frame-options_ o _mixed-content_, dependiendo de la configuración de dominios personalizados y SSL del sitio.
 :::
 
 <img src="/assets/img/channels/template_builder/differences.jpg" style="border: 1px solid #EEEEEE" width="700" alt="The version differences window">
 
-**Diferencias**: Te llevará a la [vista de diferencias](/es/platform/channels/sites.html#revision-y-publicacion-conjunta), en la cual podrás comparar los cambios que hay entre múltiples versiones de tus plantillas. 
+**Diferencias**: Te lleva a la [vista de diferencias](/es/platform/channels/sites.html#revision-y-publicacion-conjunta), en la cual puedes comparar los cambios que hay entre múltiples versiones de tus plantillas.
 
-Por defecto, comienzas comparando la versión publicada con la versión editable, pero al hacer uso de los selectores de versiones, puedes comparar además con las versiones de respaldo.
+Por defecto, comienzas comparando la versión publicada con la versión editable. Usa los selectores de versiones para comparar con versiones de respaldo.
 
 :::tip Tip
-Cada vez que publicas una versión, la versión que estaba publicada pasa a ser una versión de respaldo. Por defecto, se guardan hasta 20 respaldos, de tal forma que los veinte respaldos más recientes se pueden comparar, restaurar, y hacer rollback. 
+Cada vez que publicas una versión, la versión que estaba publicada pasa a ser una versión de respaldo. Por defecto, se guardan hasta 20 respaldos, de tal forma que los veinte respaldos más recientes se pueden comparar, restaurar, y hacer rollback.
+
 Para más información sobre el versionamiento, ve [versionado](/es/platform/core/key-concepts.html#versionado).
 :::
 
-**Buscar en plantillas**: Despliega una barra lateral con un buscador de texto que busca en todas las plantillas editables. 
+**Buscar en plantillas**: Despliega una barra lateral con un buscador de texto que busca en todas las plantillas editables.
 
 <img src="/assets/img/channels/template_builder/conversation.jpg" style="border: 1px solid #EEEEEE" width="700" alt="The activity window">
 
-**Actividad/Comentarios**: Despliega una barra lateral con el historial de actividad y comentarios de las plantillas. 
+**Actividad/Comentarios**: Despliega una barra lateral que muestra el historial de actividad y comentarios de las plantillas.
 
-Al final de la barra lateral, ves una caja de texto donde puedes escribir un comentario. Junto a cada actividad, puedes hacer click en **ver detalle** para mostrar la información completa de ese registro de actividad.
+Al final de la barra lateral, hay una caja de texto donde puedes escribir un comentario. Junto a cada actividad, puedes hacer click en **ver detalle** para mostrar la información completa de ese registro de actividad.
 
 **Más acciones**:
 
@@ -67,7 +68,7 @@ La barra de plantillas a la derecha tiene dos pestañas: vistas y snippets.
 
 ## Layouts
 
-Modyo cuenta con tres layouts por defecto: 
+Modyo cuenta con tres layouts por defecto:
 * **Home**: Se usa exclusivamente en la página home del sitio.
 * **Base**: Todas las páginas excepto el home usan este layout por defecto.
 * **Error**: Las vistas de error usan este layout limpio (404, 401)
@@ -126,7 +127,7 @@ Las vistas personalizadas de CSS y Javascript son la manera en la cual podrás i
 1. Una vez que hayas terminado de editar la Hoja de Estilo o Javascript, se debe incluir en tu Layout de la siguiente manera.
 
 
-Para incluir cualquiera de estas vistas, existen distintos filtros de Liquid disponibles: `asset_url` para definir el tipo de archivo, `stylesheet_tag`, y `script_tag` para generar los tags correspondientes, en el siguiente ejemplo se agrega: 
+Para incluir cualquiera de estas vistas, existen distintos filtros de Liquid disponibles: `asset_url` para definir el tipo de archivo, `stylesheet_tag`, y `script_tag` para generar los tags correspondientes, en el siguiente ejemplo se agrega:
 
 - Una vista personalizada de CSS con media: screen
 - Una vista personalizada de Javascript con carga asíncrona
@@ -134,7 +135,7 @@ Para incluir cualquiera de estas vistas, existen distintos filtros de Liquid dis
 ```html
 <head>
   {{ 'my-css' | asset_url: 'css' | stylesheet_tag: media: 'screen', title: 'color style' }}
-  {{ 'my-js'  | asset_url: 'js'  | script_tag: async: 'async', defer: 'defer' }} 
+  {{ 'my-js'  | asset_url: 'js'  | script_tag: async: 'async', defer: 'defer' }}
 </head>
 ```
 
@@ -150,7 +151,7 @@ Para conocer a detalle y los parámetros soportados por estos filtros, dirígete
 
 ## Snippets
 
-Los snippets son pedazos de código HTML, JS, o CSS que pueden ser reutilizados en tus sitios. Puedes copiar la ruta de referencia de cada snippet personalizado. El código lucirá similar a este: <span v-pre>`{% snippet "nombre-del-snippet" %}`</span>. Este código Liquid se debe pegar en donde se quiera llamar a este Snippet.
+Los snippets son fragmentos de código HTML, JS o CSS que puedes reutilizar en tus sitios. Puedes copiar la ruta de referencia de cada snippet personalizado. El código Liquid será similar a: <span v-pre>`{% snippet "nombre-del-snippet" %}`</span>. Pega este código donde quieras llamar a este Snippet.
 
 Puedes añadir snippets personalizados al final del listado de snippets de la plataforma, haciendo click en el botón **+**.
 
@@ -197,15 +198,15 @@ Las sub-versiones son por cada plantilla, por lo que para algunos puedes observa
 :::
 
 :::tip Tip
-Si se reestablece una versión anterior a la versión editable, podrás acceder a las sub-versiones de cada template de esa versión. 
+Si se reestablece una versión anterior a la versión editable, podrás acceder a las sub-versiones de cada template de esa versión.
 Puedes aprender más sobre el [versionado aquí](/platform/core/key-concepts.html#versionado).
 :::
 
-Al igual que cada template, puedes restaurar todos los templates a su versión original haciendo click en la acción secundaria de la barra superior "Restaurar todo". Para que esos cambios tengan efecto, debes publicar los templates.
+Al igual que cada plantilla, puedes restaurar todas las plantillas a su versión original haciendo click en la acción secundaria de la barra superior "Restaurar todo". Para que los cambios tengan efecto, debes publicar las plantillas.
 
 ## SEO
 
-El SEO [(Search Engine Optimization)](/es/platform/channels/sites.html#seo) es uno de los tópicos más importantes del sitio y del contenido. 
+El SEO [(Search Engine Optimization)](/es/platform/channels/sites.html#seo) es uno de los tópicos más importantes del sitio y del contenido.
 
 En Modyo existe una forma de controlar la forma en que los motores de búsqueda leen tu sitio y contenido, añadiendo meta tags de forma dinámica dependiendo de los atributos que añadas a tus páginas y contenidos.
 
@@ -235,7 +236,7 @@ Puedes añadir este snippet de código en Plantillas y luego llamar a este snipp
 
 Este snippet utiliza Liquid para agregar meta tags a nivel Sitio. También agrega meta tags específicos cuando el usuario navega a una Página de Widget o de Contenido.
 
-Si es que lo requieres, puedes personalizar este snippet, definiendo qué meta tags quieres que aparezcan para URLs o tipos específicos. 
+Si es que lo requieres, puedes personalizar este snippet, definiendo qué meta tags quieres que aparezcan para URLs o tipos específicos.
 
 ## Ejemplos de SEO
 
@@ -257,13 +258,13 @@ Por ejemplo, si quieres usar meta tags específicas cuando un usuario visita una
 <meta property="og:description" content="{{ entry.meta.excerpt }}" />
 {% if entry.type_uid = 'posts'%}
 <meta property="og:type" content="article" />
-{endif} 
+{endif}
 {% if entry.type_uid = 'place'%}
 <meta property="og:type" content="place" />
 <meta property="place:latitude" content="{{ entry.location.first.latitude }}" />
 <meta property="place:longitude" content="{{ entry.location.first.longitude }}" />
-{% endif %} 
-{% endif %} 
+{% endif %}
+{% endif %}
 ...
 ```
 
@@ -275,7 +276,7 @@ En caso de tener meta tags específicas cuando muestras Entradas que pertenecen 
 
 ```html
 {% assign category_name = category_path | split: '/' | last | capitalize %}
- 
+
 {% case category_name %}
   {% when 'Category 1' %}
      {% assign category_description = 'This is the meta description for Category 1' %}

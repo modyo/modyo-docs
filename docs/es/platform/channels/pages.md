@@ -6,13 +6,13 @@ search: true
 
 Las Páginas (o pages) son lo que te permite crear una estructura para tu sitio, donde puedes añadir contenido no estructurado y personalizar las rutas de donde se muestra ese contenido.
 
-Puedes crear dos tipos de páginas, de widgets o de contenido. Las páginas de widgets se basan en un esquema modular para que puedas crear tu sitio a la medida usando HTML, JS, y CSS. Podrás arrastrar y acomodar diferentes widgets que ofrecemos o widgets personalizados creados por tu equipo. 
+Puedes crear dos tipos de páginas, de widgets o de contenido. Las páginas de widgets se basan en un esquema modular para que puedas crear tu sitio a la medida usando HTML, JS, y CSS. Podrás arrastrar y acomodar diferentes widgets que ofrecemos o widgets personalizados creados por tu equipo.
 
 Las páginas de contenido son nuestra solución para conectar los módulos de Content con Channels. Aquí podrás crear el índice que contiene las entradas y la estructura para todas las entradas usando HTML, JS, CSS, y Liquid.
 
 <img src="/assets/img/platform/page-index.png" alt="The index page for all the pages in your site">
 
-Para editar una página, debes hacer click en el ícono de edición o en el nombre de la página para ir a la vista de edición.
+Para editar una página, haz click en el ícono de edición o en el nombre de la página para ir a la vista de edición.
 
 En la vista de edición, encuentras una barra superior con acciones, una grilla central y una barra lateral con pestañas.
 
@@ -20,29 +20,29 @@ En la barra superior, encuentras distintas acciones e información:
 
 **Título**: Se encuentra en la parte superior izquierda, e indica el nombre de la página que estás modificando. A la derecha el nombre, encontrarás el estado actual de la página. Esos pueden ser "Borrador", "En revisión", "Aprobado", "Cambios pendientes", "Publicado". Para aprender más sobre estos estados, puedes revisar la sección de [Versionado y Revisión en Equipo](/es/platform/core/key-concepts.html).
 
-**Fecha de publicación**: Si es que la página ha sido publicada, se indicará la fecha de la última publicación.
+**Fecha de publicación**: Si la página ha sido publicada, indicará la fecha de la última publicación.
 
-**Vista previa** : Este ícono te permite abrir una pestaña nueva con el modo Vista Previa para poder visualizar los cambios que se han hecho en la página sin necesidad de publicarla.
+**Vista previa**: Este ícono te permite abrir una pestaña nueva con el modo Vista Previa para visualizar los cambios que se han hecho en la página sin necesidad de publicarla.
 
 :::warning Atención
-Puedes previsualizar las páginas como usuario sin sesión o usuario con sesión de Modyo. Para esto, es recomendable iniciar o cerrar la sesión de Modyo en el sitio antes de entrar al modo vista previa, dado que si se inicia o cierra sesión dentro del modo vista previa, podrías encontrarte con errores de seguridad del tipo _x-frame-options_ o _mixed-content_, dependiendo de la configuración de dominios personalizados y SSL del sitio
+Puedes previsualizar las páginas como usuario sin sesión o usuario con sesión de Modyo. Para esto, es recomendable iniciar o cerrar la sesión de Modyo en el sitio antes de entrar al modo vista previa. Esto se debe a que iniciar o cerrar sesión dentro del modo de vista previa puede generar errores de seguridad como _x-frame-options_ o _mixed-content_, dependiendo de la configuración de dominios personalizados y SSL del sitio.
 :::
 
-**Diferencias**: Al hacer click en el ícono de diferencias, irás a la vista de diferencias de la página que te permite seleccionar dos versiones a comparar, permitiendo ejecutar las acciones [reestablecer y rollback](/es/platform/core/key-concepts.html#revertir-un-cambio)
+**Diferencias**: Al hacer click en el ícono de diferencias,  accedes a la vista de diferencias de la página, donde puede seleccionar dos versiones a comparar, permitiendo ejecutar las acciones [reestablecer y rollback](/es/platform/core/key-concepts.html#revertir-un-cambio)
 
 :::tip Tip
-Si tu página está en estado "Borrador" no aparece el icono de diferencias, dado que no hay nada con que comparar la versión editable actual. Para aprender más sobre las diferencias y respaldos, revisa la sección de [versionado](/es/platform/core/key-concepts.html#versionado)
+Si tu página está en estado _borrador_ no aparecerá el icono de diferencias, dado que no hay nada con que comparar la versión editable actual. Para aprender más sobre las diferencias y respaldos, revisa la sección de [versionado](/es/platform/core/key-concepts.html#versionado)
 :::
 
-**Actividad**: Despliega una barra lateral que te muestra la actividad asociada a la página, como las modificaciones, publicaciones y comentarios. En la parte inferior de esta barra, puedes escribir comentarios asociados. En caso de que la página esté en revisión, todos quienes estén asignados como revisores recibirán una notificación con el comentario.
+**Actividad**: Despliega una barra lateral que muestra la actividad asociada a la página, como las modificaciones, publicaciones y comentarios. En la parte inferior de esta barra, puedes escribir comentarios asociados. En caso de que la página esté en revisión, todos los revisores asignados recibirán una notificación con el comentario.
 
-**Otras acciones** :
+**Otras acciones**:
 
-- Archivar: Si una página no se encuentra publicada, esta acción te permite archivarla. Cuando una página se encuentra archivada, por defecto no aparece en el índice de página y permite mantener la estructura del sitio limpia.
-- Duplicar: Esta acción te permite copiar la versión editable de la página en la que estás. La versión copiada queda en estado "Borrador".
+- Archivar: Si una página no está publicada, esta acción te permite archivarla. Cuando una página está archivada, por defecto, no aparece en el índice de página, lo que permite mantener la estructura del sitio limpia.
+- Duplicar: Esta acción te permite copiar la versión editable de la página en la que estás. La versión copiada queda en estado _borrador_.
 
 :::warning Atención
-Una vez terminada la acción de copiado, te dirige a la nueva página, por lo que es importante guardar todos los cambios antes de usar esta acción, de lo contrario podrías perder información importante.
+Una vez que completes la acción de copiado, serás redirigido a la nueva página, por lo que es importante guardar todos los cambios antes de usar esta acción para evitar la pérdida de información importante.
 :::
 
 ## Crear una página
@@ -79,9 +79,9 @@ Para conocer más acerca de páginas de contenido, ve [Página de Contenido](/es
 
 <img src="/assets/img/platform/page-builder.png" alt="The page builder screen">
 
-La grilla central es el lugar donde puedes posicionar tus widgets. Puedes mover los widgets de un lado a otro haciendo uso de la funcionalidad _drag-and-drop_.
+La grilla central es donde puedes posicionar tus widgets. Puedes mover los widgets de un lado a otro utilizando la funcionalidad _drag-and-drop_.
 
-En la sección lateral derecha encontrarás tres pestañas:
+En la sección lateral derecha hay tres pestañas:
 
 - Añadir widgets: Te permite seleccionar dentro de un listado de widgets para añadirlos a la grilla.
 - Editar widget: Te permite cambiar distintas propiedades y filtros para cada uno de los widgets.
@@ -89,7 +89,7 @@ En la sección lateral derecha encontrarás tres pestañas:
 
 ## Página de Widget
 
-Aquí puedes personalizar tu página usando widgets preestablecidos de la siguiente lista: 
+Aquí puedes personalizar tu página usando widgets preestablecidos de la siguiente lista:
 
 
 - **HTML**: Te permite ingresar código HTML y CSS sin validaciones. No te permitirá ingresar código Javascript.
@@ -101,7 +101,7 @@ El widget de texto enriquecido cuenta con un formateador automático, por lo que
 - **Contenido destacado**: Muestra un listado de entradas como imágenes "hero" en un carrusel.
 - **Personalizado**: Encontrarás un listado de todos los widgets que has creado y publicado en el widget builder.
 
-Una vez seleccionado un widget en la sección central, el foco pasará a la pestaña lateral, donde podrás encontrar distintas opciones de configuración del widget y en caso de seleccionar un widget personalizado, encontrarás un link para ir directamente a su vista de edición en [widget builder](/es/platform/channels/widgets.html) y el listado de variables que el widget está usando. Si quieres sobrescribir el valor de una variable en particular para esa instancia del widget en esa página, debes seleccionar el checkbox a la izquierda de la variable y cambiar el valor que toma. 
+Una vez seleccionado un widget en la sección central, el foco pasará a la pestaña lateral, donde podrás encontrar distintas opciones de configuración del widget y en caso de seleccionar un widget personalizado, encontrarás un link para ir directamente a su vista de edición en [widget builder](/es/platform/channels/widgets.html) y el listado de variables que el widget está usando. Si quieres sobrescribir el valor de una variable en particular para esa instancia del widget en esa página, debes seleccionar el checkbox a la izquierda de la variable y cambiar el valor que toma.
 
 ### Propiedades
 
@@ -157,7 +157,7 @@ Modyo cuenta con rutas reservadas para las página, por lo que no podrás usarlo
 
 ## Página de Contenido
 
-Despliega las [entradas](/es/platform/content/entries) de tus [tipos de contenido](/es/platform/content/types) desde una sola página usando páginas de contenido. 
+Despliega las [entradas](/es/platform/content/entries) de tus [tipos de contenido](/es/platform/content/types) desde una sola página usando páginas de contenido.
 
 ### Requisitos previos
 
@@ -170,7 +170,7 @@ Para poder mostrar contenido en un sitio, debes cumplir con ciertas condiciones:
 Puedes usar el nombre que desees para las vistas, sin importar a que tipo o espacio lo quieras asociar. Siempre debes tener en consideración que las entradas solo se mostrarán si tienen una versión publicada en el idioma del sitio en el que estás creando estas vistas.
 :::
 
-Estas páginas están compuestas por dos secciones **Index** y **Show**. 
+Estas páginas están compuestas por dos secciones **Index** y **Show**.
 
 ### Index
 
@@ -256,7 +256,7 @@ Para agregar un nuevo meta tag a tu sitio, sigue estos pasos:
 1. Expande **Configuración de sitio** y haz click en **SEO**.
 1. En la sección de Meta tags personalizados, haz click en **+ Nuevo meta tag**.
 
-En la pantalla que aparece tienes la opción de elegir entre diferentes meta tags y asignarles un valor. Este valor puede ser dinámico si se utiliza Liquid. Si activas la opción **Replicar meta tag en páginas**, se creará un meta tag en la sección de Propiedades de todas tus páginas. 
+En la pantalla que aparece tienes la opción de elegir entre diferentes meta tags y asignarles un valor. Este valor puede ser dinámico si se utiliza Liquid. Si activas la opción **Replicar meta tag en páginas**, se creará un meta tag en la sección de Propiedades de todas tus páginas.
 
 Como parte de la Plantilla `base`, incluimos el Snippet `seo` que contiene la información necesaria para imprimir los valores de los meta tags dependiendo si es un Sitio, una Página, o una Entrada.
 

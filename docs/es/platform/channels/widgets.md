@@ -12,7 +12,7 @@ Al entrar en la sección Widgets del sitio, se puede ver un listado de todos los
 
 En la vista de edición del widget, se puede ver la barra superior de acciones, el área de trabajo y la columna de propiedades.
 
-<img src="/assets/img/platform/widget-builder.png" alt="The widget builder module"> 
+<img src="/assets/img/platform/widget-builder.png" alt="The widget builder module">
 
 En la barra superior se encuentran las siguientes secciones:
 
@@ -20,18 +20,18 @@ En la barra superior se encuentran las siguientes secciones:
 - **Publicado**: Este estado aparece luego de haber hecho una publicación y cuando las versiones editable y publicada son iguales.
 - **Cambios pendientes**: Este estado aparece si es que ya hay una versión publicada, pero hay cambios pendientes de publicar en versión editable.
 - **En revisión**: Este estado aparece cuando esté habilitada la [revisión en equipo](/es/platform/core/key-concepts.html) y se haya enviado a revisión la versión editable.
-- **Aprobado**: Este estado aparece cuando esté habilitada la [revisión en equipo](/es/platform/core/key-concepts.html) y si es que se cumplieron las condiciones de revisión del elemento. Si se está en este estado, los templates están listos para ser publicados.
+- **Aprobado**: Este estado aparece cuando esté habilitada la [revisión en equipo](/es/platform/core/key-concepts.html) y se cumplen las condiciones de revisión del elemento. Si está en este estado, las plantillas están listas para ser publicadas.
 
-A la derecha, estas son las distintas acciones:
-**Vista previa**: Permite abrir en una nueva pestaña la vista previa de la versión editable del widget.
+A la derecha, encuentras las siguientes acciones:
+**Vista previa**: Abre en una nueva pestaña la vista previa de la versión editable del widget.
 
 :::warning Atención
-Puedes previsualizar los widgets como usuario sin sesión o usuario con sesión de Modyo. Para esto, es recomendable iniciar o cerrar la sesión de Modyo en el sitio antes de entrar al modo vista previa, dado que si se inicia o cierra sesión dentro del modo vista previa, podrías encontrarte con errores de seguridad del tipo _x-frame-options_ o _mixed-content_, dependiendo de la configuración de dominios personalizados y SSL del sitio
+Puedes previsualizar los widgets como usuario sin sesión o usuario con sesión de Modyo. Para esto, es recomendable iniciar o cerrar la sesión de Modyo en el sitio antes de entrar al modo vista previa. Esto se debe a que iniciar o cerrar sesión dentro del modo de vista previa puede generar errores de seguridad como _x-frame-options_ o _mixed-content_, dependiendo de la configuración de dominios personalizados y SSL del sitio.
 :::
 
-**Diferencias**: Irás a la [vista de diferencias](/es/platform/core/key-concepts.html), en la cual puedes comparar los cambios que hay entre múltiples versiones del widget.
+**Diferencias**: Te lleva a la [vista de diferencias](/es/platform/core/key-concepts.html), en la cual puedes comparar los cambios que hay entre múltiples versiones del widget.
 
-Por defecto comienzas comparando la versión publicada con la versión editable, pero al hacer uso de los selectores de versiones, se puede además con las versiones de respaldo. Si este ícono no aparece, entonces no hay ninguna versión publicada de este widget.
+Por defecto comienzas comparando la versión publicada con la versión editable. Usa los selectores de versiones para comparar con versiones de respaldo. Si el ícono no aparece, significa que no hay versión publicada de este widget.
 
 **Actividad**: Te permite desplegar una pestaña lateral que muestra la actividad y comentarios del widget.
 
@@ -40,13 +40,13 @@ Por defecto comienzas comparando la versión publicada con la versión editable,
 **Botón principal:**
 
 - **Guardar**: Guarda los cambios actuales.
-- **Enviar a revisión**: Si está la revisión en equipo habilitada, entonces se puede enviar a revisión y notificar a los revisores de que el widget está listo para ser revisado.
-- **Publicar**: Te lleva a la vista de [publicación conjunta](/es/platform/core/key-concepts.html#revision-y-publicacion-conjunta) donde podrás publicar tus widgets.
+- **Enviar a revisión**:Si está habilitada la revisión en equipo, puedes enviar el widget a revisión y notificar a los revisores que el widget está listo para ser revisado.
+- **Publicar**: Te lleva a la vista de [publicación conjunta](/es/platform/core/key-concepts.html#revision-y-publicacion-conjunta) donde puedes publicar tus widgets.
 
 **Otras acciones principales:**
 
-- **Despublicar**: Si el widget está publicado, se puede sacar de producción usando esta opción.
-- **Forzar publicación**: Si eres administrador del sitio, se puede hacer uso de de esta opción para publicar inmediatamente un widget, incluso si está habilitada la Revisión en Equipo.
+- **Despublicar**: Si el widget está publicado, puedes sacarlo de producción usando esta opción.
+- **Forzar publicación**: Si eres administrador del sitio, puedes utilizar esta opción para publicar inmediatamente un widget, incluso si está habilitada la Revisión en Equipo.
 
 :::tip Tip
 Sólo se pueden archivar los widgets que han sido despublicados previamente.
@@ -80,14 +80,14 @@ Cuando se publica el widget, no se observarán cambios disponibles. Esto es porq
 
 En las tres pestañas del widget se puede hacer uso de Liquid. Para más información revise [la documentación asociada a Liquid.](/es/platform/channels/liquid-markup.html)
 
-En la columna de propiedades se pueden ver: 
+En la columna de propiedades se pueden ver:
 
 - **Nombre**: Permite cambiar el nombre del widget
 - **Tags**: Permite añadir tags a un widget. Los tag son de uso administrativo y sirven para buscar y filtrar los widgets y así poder encontrarlos rápidamente.
 - **Páginas que usan este widget**: Verás un listado de páginas que están usando este widget. Mientras veas páginas en este listado, no podrás despublicar ni archivar el widget.
 
 :::warning Atención
-Si eliminas un widget de una página y publicas, seguirás viendo esa página en este listado dado que el widget sigue referenciado en los respaldos de esa página. Desde la versión 9.1.10 en adelante, puedes despublicar cualquier widget publicado, incluso si está en uso. Las referencias activas en las páginas quedarán inactivas, por lo que no verás el widget en el sitio si lo despublicaste. Además, podrás archivar cualquier widget que no esté publicado, de tal forma que si aun existen referencias en algunas páginas del widget que quieres archivar, estas se eliminarán al momento de archivar el widget. 
+Si eliminas un widget de una página y publicas, seguirás viendo esa página en este listado dado que el widget sigue referenciado en los respaldos de esa página. Desde la versión 9.1.10 en adelante, puedes despublicar cualquier widget publicado, incluso si está en uso. Las referencias activas en las páginas quedarán inactivas, por lo que no verás el widget en el sitio si lo despublicaste. Además, podrás archivar cualquier widget que no esté publicado, de tal forma que si aun existen referencias en algunas páginas del widget que quieres archivar, estas se eliminarán al momento de archivar el widget.
 :::
 
 ## Crear un Widget
@@ -109,7 +109,7 @@ En la pestaña de variables puedes ver el listado de variables creadas en el wid
 
 Junto al nombre de cada variable verás un indicador "sobreescrita" si es que la variable también existe a nivel de cuenta o sitio en las [variables globales](/es/platform/core/key-concepts.html#variables-globales).
 
-Al modificar una variable, podrás decidir el nombre y valor por defecto que tomará esa variable en el widget. Además, podrás decidir si quieres disponibilizar un listado de valores para que al momento de instanciar el widget en una página, se pueda elegir entre estos distintos valores. 
+Al modificar una variable, podrás decidir el nombre y valor por defecto que tomará esa variable en el widget. Además, podrás decidir si quieres disponibilizar un listado de valores para que al momento de instanciar el widget en una página, se pueda elegir entre estos distintos valores.
 
 Cuando usas el listado de posibles valores, debes dejar cada valor en una linea nueva, y dejar un `*` delante del valor que quieres que sea tomado como valor por defecto.
 
@@ -178,7 +178,7 @@ La variable `liquid.lang` la tenemos que crear en Modyo Platform. Para crear est
 
 1. En tu navegador, inicia sesión en Modyo Platform.
 1. Expande **Channels**, y haz click en **Sitios**.
-1. Haz click en **Plantillas**. 
+1. Haz click en **Plantillas**.
 1. Abre la Vista `theme` en la sección Vistas -> Javascript -> theme.
 1. Agrega el siguiente código:
 
@@ -258,7 +258,7 @@ Sigue estos pasos para crear un snippet con variables de Liquid:
 3. En el menú de tu sitio, haz click en **Plantillas** y selecciona **Snippets**.
 4. Agrega un nuevo **Snippet Personalizado**. Para éste ejemplo al snippet lo nombramos `liquid2js_js`, pero puede tener cualquier nombre.
 
-<img src="/assets/img/widgets/template_snippets.png" alt="Image displaying where to find template snippets.">   
+<img src="/assets/img/widgets/template_snippets.png" alt="Image displaying where to find template snippets.">
 
 5. Abre el apartado de javascript y pega el código:
 ```js
@@ -269,7 +269,7 @@ Sigue estos pasos para crear un snippet con variables de Liquid:
      },
    };
 ```
-En este snippet creamos un objecto llamado _liquid_ con scope de `window` que contenga el lenguaje y el request path del sitio. Desde nuestro Widget ahora podemos acceder a estos datos utilizando el objeto creado en el paso anterior. Por ejemplo, si quieres obtener los lenguajes del sitio desde el Widget, puedes hacerlo con: 
+En este snippet creamos un objecto llamado _liquid_ con scope de `window` que contenga el lenguaje y el request path del sitio. Desde nuestro Widget ahora podemos acceder a estos datos utilizando el objeto creado en el paso anterior. Por ejemplo, si quieres obtener los lenguajes del sitio desde el Widget, puedes hacerlo con:
 
    ```js
    const languages = window.liquid.lang;

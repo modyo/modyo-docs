@@ -4,7 +4,7 @@ search: true
 
 # Navigation
 
-La navegación es la forma más rápida de armar un listado de elementos para entregarle a tus usuarios un fácil acceso a los puntos clave de tu sitio. 
+La navegación es la forma más rápida de armar un listado de elementos para entregarle a tus usuarios un fácil acceso a los puntos clave de tu sitio.
 
 <img src="/assets/img/platform/navigation-builder.png" alt="Navigation module screen">
 
@@ -21,31 +21,31 @@ En la parte superior de la vista, encontrarás el estado de publicación del men
 
 En la parte superior derecha, encuentras la última fecha de publicación y las acciones disponibles:
 
-**Vista previa** : Al hacer click en este ícono se abre una nueva pestaña con el modo vista previa del menú, en el cual puedes ver como si estuvieran publicados todos los cambios que tienes en tu menú.
+**Vista previa**: Al hacer click en este ícono se abre una nueva pestaña con el modo vista previa del menú, donde puedes visualizar todos los cambios.
 
 :::warning Atención
-Puedes previsualizar los cambios como usuario sin sesión o usuario con sesión de Modyo. Para esto, es recomendable iniciar o cerrar la sesión de Modyo en el sitio antes de entrar al modo vista previa, dado que si se inicia o cierra sesión dentro del modo vista previa, podrías encontrarte con errores de seguridad del tipo _x-frame-options_ o _mixed-content_, dependiendo de la configuración de dominios personalizados y SSL del sitio
+Puedes previsualizar los cambios como usuario sin sesión o usuario con sesión de Modyo. Para esto, es recomendable iniciar o cerrar la sesión de Modyo en el sitio antes de entrar al modo vista previa, Esto debido a que iniciar o cerrar sesión dentro del modo de vista previa puede generar errores de seguridad como  _x-frame-options_ o _mixed-content_, dependiendo de la configuración de dominios personalizados y SSL del sitio.
 :::
 
 :::warning Atención
-El menú realizado se podrá visualizar en alguna página si y solo si se agrega a una página a través de una plantilla publicada, de lo contrario, el menú nunca se manda a pedir y no aparecerá en la página.
+El menú que has creado solo se visualizará en una página si lo agregas a través de una plantilla publicada. De lo contrario, el menú no se solicitará y no aparecerá en la página.
 :::
 
-**Diferencias**: Al hacer click, irás a la [vista de diferencias](/es/platform/core/key-concepts.html#revertir-un-cambio), en la cual puedes comparar los cambios que hay entre múltiples versiones de tu menú.
+**Diferencias**: Haz click aquí para acceder a la [vista de diferencias](/es/platform/core/key-concepts.html#revertir-un-cambio), en la cual puedes comparar los cambios entre diferentes versiones de tu menú.
 
-Por defecto, inicias comparando la versión publicada con la versión editable, pero al hacer uso de los selectores de versiones, comparas con las versiones de respaldo.
+Por defecto, inicias comparando la versión publicada con la versión editable. Usa los selectores de versiones para comparar con versiones de respaldo.
 
 :::tip Tip
-Cada vez que publicas una versión, la versión que estaba publicada pasa a ser una versión de respaldo. 
+Cada vez que publicas una versión, la versión que estaba publicada pasa a ser una versión de respaldo.
 
-Por defecto se guardan hasta 20 respaldos de tal forma que los veinte respaldos más recientes se pueden comparar, restaurar, y hacer rollback. 
+Por defecto se guardan hasta 20 respaldos de tal forma que los veinte respaldos más recientes se pueden comparar, restaurar, y hacer rollback.
 
 Para más información sobre el versionamiento, revisa la sección de [Versionado](/es/platform/core/key-concepts.html#versionado).
 :::
 
-**Actividad/Comentarios**: Solo aparece habilitada si es que tienes la [revisión en equipo](/es/platform/core/key-concepts.html) habilitada. Al hacerle click, despliega una barra lateral con el historial de actividad y comentarios del menú. 
+**Actividad/Comentarios**: Solo aparece habilitada si tienes activada la [revisión en equipo](/es/platform/core/key-concepts.html) habilitada. Al hacerle click, despliega una barra lateral con el historial de actividad y comentarios del menú.
 
-Al final de la barra lateral, ves una caja de texto donde puedes escribir un comentario. Junto a cada actividad, puedes hacer click en "ver detalle" para mostrar la información completa de ese registro de actividad.
+Al final de la barra lateral, ves una caja de texto donde puedes escribir un comentario. Junto a cada actividad, puedes hacer click en _ver detalle_ para mostrar la información completa de ese registro de actividad.
 
 ## Crear un Menú
 Para crear un Menú, sigue estos pasos:
@@ -79,7 +79,7 @@ En la sección lateral derecha puedes ver una barra que cambia de acuerdo al ít
 	- HTTP(s): Apunta a una dirección usando HTTP(s). Ejemplos:
 		- http://www.example.com
 		- https://www.example.com
-	- URL relativa y ancla: Apunta a una dirección relativa a esta página o a una sección ancla. Ejemplos: 
+	- URL relativa y ancla: Apunta a una dirección relativa a esta página o a una sección ancla. Ejemplos:
 		- relative-page
 		- /relative-page
 		- #anchor
@@ -100,16 +100,16 @@ En la sección lateral derecha puedes ver una barra que cambia de acuerdo al ít
 
 El snippet general `menu` puede satisfacer las necesidades básicas de un sitio, desplegando un menú en forma de dropdown. A continuación, se explican las partes más importantes de este snippet y como se puede extender a más funcionalidades.
 
-Las primeras líneas encapsuladas por <span v-pre>{{ }} o {% %}</span> pertenecen a Liquid y son utilizadas para asignar variables o comenzar un bucle para desplegar información del menú. 
+Las primeras líneas encapsuladas por <span v-pre>{{ }} o {% %}</span> pertenecen a Liquid y son utilizadas para asignar variables o comenzar un bucle para desplegar información del menú.
 
 El siguiente listado describe las variables importantes para el menú:
 
 - menu: Esta variable toma el menú con identificador `main` dentro de Modyo Platform -> Navegación.
 - items_to_show: Toma los ítems de menú que son visibles.
 - active: Utilizado para agregar una clase CSS llamada `active` en caso de que éste ítem sea activado.
-- children_to_show: Si existen hijos del ítem actual, toma los items en esta variable y los despliega como segundo nivel en la jerarquía del menú. 
+- children_to_show: Si existen hijos del ítem actual, toma los items en esta variable y los despliega como segundo nivel en la jerarquía del menú.
 
-Al entrar a la sección de Plantillas de tu sitio en Modyo Platform, podrás hacer click en el snippet general `menu` para ver el HTML del menú. Se ve de la siguiente manera: 
+Al entrar a la sección de Plantillas de tu sitio en Modyo Platform, podrás hacer click en el snippet general `menu` para ver el HTML del menú. Se ve de la siguiente manera:
 
 `menu`
 

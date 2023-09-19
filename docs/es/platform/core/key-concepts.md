@@ -77,7 +77,7 @@ Esta opción existe porque hay ocasiones en las que es necesario publicar rápid
 ### Mis Tareas
 
 La sección Mis tareas en Modyo te da una visión general de todos los elementos que requieren tu atención. Te permite acceder a información sobre el tipo de elemento, su autor y cuándo fue actualizado por última vez.
-Una vez que un elemento ha sido marcado para revisión, el usuario asignado puede revisarlo y aprobarlo en la sección My Tasks. 
+Una vez que un elemento ha sido marcado para revisión, el usuario asignado puede revisarlo y aprobarlo en la sección My Tasks.
 <img src="/assets/img/platform/core/my-tasks.png"/>
 Para ver y revisar todas las tareas asignadas a ti, sigue estos pasos:
 1. Ve a Inicio.
@@ -104,9 +104,9 @@ Todos los usuarios que tienen acceso a la vista de edición del elemento verán 
 
 Los usuarios con los permisos necesarios pueden hacer click en el botón **Aprobar** para aprobar el elemento. Aquellos que no tienen los permisos ven el botón deshabilitado.
 
-Al aprobar el elemento, la aprobación de ese usuario queda registrada y se muestra un check verde junto a su nombre en el listado de revisores.
+Al aprobar el elemento, la aprobación del usuario queda registrada y se muestra un check verde junto a su nombre en el listado de revisores.
 
-Al habilitar la revisión en equipo, en la barra de acciones del elemento, a la izquierda del botón principal de color verde y a la derecha del botón de diferencias, puede encontrár la opción para abrir la pestaña de actividad del elemento.
+Al habilitar la revisión en equipo, en la barra de acciones del elemento, a la izquierda del botón principal de color verde y a la derecha del botón de diferencias, puedes encontrar la opción para abrir la pestaña de actividad del elemento.
 
 Al abrir esta pestaña, se muestra una lista cronológica de las acciones realizadas en el elemento, con la opción de ver los detalles de cada acción. Al final de la pestaña, está la opción de dejar un comentario.
 
@@ -116,14 +116,14 @@ Cuando se deja un comentario o se ejecuta alguna acción sobre el elemento, se e
 
 <img src="/assets/img/platform/core/review-joint-publication.png" width="800px" style="border: 1px solid #EEE;" alt="Modal de diferencias"/>
 
-En la pantalla de revisión y publicación conjunta puedes ver todos los cambios pendientes por publicar en tu sitio. Tienes la opción de ver qué cambio al hacer click en el botón **Ver**. 
+En la pantalla de revisión y publicación conjunta puedes ver todos los cambios pendientes por publicar en tu sitio. Tienes la opción de ver qué cambio al hacer click en el botón **Ver**.
 
 ### Publicar en conjunto
 
 Para hacer una publicación en conjunto en tu sitio, sigue estos pasos:
 
 1. En el menú principal de Modyo Platform, expande **Channels**, y haz click en **Sitios**.
-1. Haz click en tu sitio. 
+1. Haz click en tu sitio.
 1. En la pantalla de Resumen, haz click en **Publicar**.
 1. Aquí podrás ver todos los cambios pendientes. Selecciona todo lo que quieres publicar y haz click en **Publicar**.
 
@@ -255,7 +255,7 @@ Tras tomar el control, el Administrador solo tiene dos horas para hacer cambios 
 
 ## Modo vista previa
 
-El modo vista previa te permite previsualizar los cambios realizados a elementos publicables como las Entradas, Pages, Navigation, Widgets o Plantillas. El acceso a este modo está en la parte superior derecha del sitio. Puedes reconocer que estás en modo vista previa, cuando veas la barra en la parte superior del sitio.
+El modo vista previa te permite previsualizar los cambios realizados a elementos publicables como entradas, páginas, navegación, widgets o plantillas. El acceso a este modo está en la parte superior derecha del sitio. Puedes reconocer que estás en modo vista previa, cuando veas la barra en la parte superior del sitio.
 
 ![Barra de vista previa](/assets/img/platform/preview-bar.png)
 
@@ -302,6 +302,6 @@ Cuando uses las variables globales, siempre se tomará como preferencia las vari
 :::
 
 :::danger Peligro
-Las variables globales no cuentan con un flujo de trabajo de publicación, versionado, ni revisión en equipo. Solo los administradores de la cuenta y el sitio pueden modificarlas, por lo que debes considerar que al hacer cambios en estos valores, se verán reflejados inmediatamente en todo lugar donde se estén usando. 
+Las variables globales no cuentan con un flujo de trabajo de publicación, versionado, ni revisión en equipo. Solo los administradores de la cuenta y el sitio pueden modificarlas, por lo que debes considerar que al hacer cambios en estos valores, se verán reflejados inmediatamente en todo lugar donde se estén usando.
 Esto no aplica para las variables definidas en los widgets dado que los widgets y páginas si cuentan con flujo de publicación.
 :::
