@@ -159,7 +159,7 @@ search: true
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* Fixes the problem when reading a notification in the profile, now it is correctly marked as read
+* Fixes problem when reading a notification in the profile, it is now correctly marked as read
 * Adds a new parameter (redirect_to) to the login URL of a site to redirect to a particular view or to a site within the organization
 * Email campaigns are modified, multiple shipments are replaced by campaign cloning for new shipments for greater simplicity in their management
 
