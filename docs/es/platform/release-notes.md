@@ -5,7 +5,7 @@ search: true
 # Notas del release
 
 ## 9.2
-### 9.2.49 - 20 de septiembre de 2023
+### 9.2.49 - 13 de septiembre de 2023
 <Badge text="Core" type="core" vertical="middle"/>
 
 * Mejoras de seguridad
