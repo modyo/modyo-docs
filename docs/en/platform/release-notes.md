@@ -14,7 +14,7 @@ search: true
 
 * Fixes post login redirection when a custom domain exists
 * Improvements to the site search engine
-  * Now the results are more accurate
+  * Now results are more accurate
   * Search can be disabled
   * You can set up a multi-site search for the same organization
 
