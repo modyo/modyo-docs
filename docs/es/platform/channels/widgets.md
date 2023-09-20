@@ -16,37 +16,37 @@ En la vista de edición del widget, se puede ver la barra superior de acciones, 
 
 En la barra superior se encuentran las siguientes secciones:
 
-- **Borrador**: Este estado aparece cuando recién se haya creado un widget o cuando se haya despublicado.
-- **Publicado**: Este estado aparece luego de haber hecho una publicación y cuando las versiones editable y publicada son iguales.
-- **Cambios pendientes**: Este estado aparece si es que ya hay una versión publicada, pero hay cambios pendientes de publicar en versión editable.
-- **En revisión**: Este estado aparece cuando esté habilitada la [revisión en equipo](/es/platform/core/key-concepts.html) y se haya enviado a revisión la versión editable.
-- **Aprobado**: Este estado aparece cuando esté habilitada la [revisión en equipo](/es/platform/core/key-concepts.html) y se cumplen las condiciones de revisión del elemento. Si está en este estado, las plantillas están listas para ser publicadas.
+- **Borrador:** Este estado aparece cuando recién se haya creado un widget o cuando se haya despublicado.
+- **Publicado:** Este estado aparece luego de haber hecho una publicación y cuando las versiones editable y publicada son iguales.
+- **Cambios pendientes:** Este estado aparece si es que ya hay una versión publicada, pero hay cambios pendientes de publicar en versión editable.
+- **En revisión:** Este estado aparece cuando esté habilitada la [revisión en equipo](/es/platform/core/key-concepts.html) y se haya enviado a revisión la versión editable.
+- **Aprobado:** Este estado aparece cuando esté habilitada la [revisión en equipo](/es/platform/core/key-concepts.html) y se cumplen las condiciones de revisión del elemento. Si está en este estado, las plantillas están listas para ser publicadas.
 
 A la derecha, encuentras las siguientes acciones:
-**Vista previa**: Abre en una nueva pestaña la vista previa de la versión editable del widget.
+**Vista previa:** Abre en una nueva pestaña la vista previa de la versión editable del widget.
 
 :::warning Atención
 Puedes previsualizar los widgets como usuario sin sesión o usuario con sesión de Modyo. Para esto, es recomendable iniciar o cerrar la sesión de Modyo en el sitio antes de entrar al modo vista previa. Esto se debe a que iniciar o cerrar sesión dentro del modo de vista previa puede generar errores de seguridad como _x-frame-options_ o _mixed-content_, dependiendo de la configuración de dominios personalizados y SSL del sitio.
 :::
 
-**Diferencias**: Te lleva a la [vista de diferencias](/es/platform/core/key-concepts.html), en la cual puedes comparar los cambios que hay entre múltiples versiones del widget.
+**Diferencias:** Te lleva a la [vista de diferencias](/es/platform/core/key-concepts.html), en la cual puedes comparar los cambios que hay entre múltiples versiones del widget.
 
 Por defecto comienzas comparando la versión publicada con la versión editable. Usa los selectores de versiones para comparar con versiones de respaldo. Si el ícono no aparece, significa que no hay versión publicada de este widget.
 
-**Actividad**: Te permite desplegar una pestaña lateral que muestra la actividad y comentarios del widget.
+**Actividad:** Te permite desplegar una pestaña lateral que muestra la actividad y comentarios del widget.
 
-**Otras opciones**: Permite archivar y crear una copia del widget actual.
+**Otras opciones:** Permite archivar y crear una copia del widget actual.
 
 **Botón principal:**
 
-- **Guardar**: Guarda los cambios actuales.
-- **Enviar a revisión**:Si está habilitada la revisión en equipo, puedes enviar el widget a revisión y notificar a los revisores que el widget está listo para ser revisado.
-- **Publicar**: Te lleva a la vista de [publicación conjunta](/es/platform/core/key-concepts.html#revision-y-publicacion-conjunta) donde puedes publicar tus widgets.
+- **Guardar:** Guarda los cambios actuales.
+- **Enviar a revisión:**Si está habilitada la revisión en equipo, puedes enviar el widget a revisión y notificar a los revisores que el widget está listo para ser revisado.
+- **Publicar:** Te lleva a la vista de [publicación conjunta](/es/platform/core/key-concepts.html#revision-y-publicacion-conjunta) donde puedes publicar tus widgets.
 
 **Otras acciones principales:**
 
-- **Despublicar**: Si el widget está publicado, puedes sacarlo de producción usando esta opción.
-- **Forzar publicación**: Si eres administrador del sitio, puedes utilizar esta opción para publicar inmediatamente un widget, incluso si está habilitada la Revisión en Equipo.
+- **Despublicar:** Si el widget está publicado, puedes sacarlo de producción usando esta opción.
+- **Forzar publicación:** Si eres administrador del sitio, puedes utilizar esta opción para publicar inmediatamente un widget, incluso si está habilitada la Revisión en Equipo.
 
 :::tip Tip
 Sólo se pueden archivar los widgets que han sido despublicados previamente.
@@ -64,11 +64,11 @@ Para aprender más sobre el flujo de publicación, revise la sección de [Versio
 
 En el área de trabajo se puede ver:
 
-- **Pestañas de código**: Se tiene a disposición una pestaña de JavaScript, CSS, y HTML para construir widgets.
-- **Gestor de archivos**: Al hacer click, se levanta el modal de gestión de archivos, donde se puede filtrar y buscar los archivos que has subido en el [Gestor de Archivos](/es/platform/content/asset-manager.html) y copiar su URL para usarlos en el widget. También se puede subir nuevos archivos desde este modal.
-- **Atajos de teclado**: Muestra una pequeña ventana informativa con algunos atajos de teclado útiles.
-- **Snippets**: Muestra una lista de los snippets disponibles desde el [Template Builder](/es/platform/channels/templates.html#snippets) y se copia su código para referenciarlos en el widget.
-- **Cambios**: Si se han guardado cambios y no han publicado, mostrará este listado de todas las veces guardadas cada uno de los archivos (JS, CSS, y HTML). Al hacer click en una sub-versión, se cambia el contenido de la pestaña por el contenido de la sub-versión que se hizo click.
+- **Pestañas de código:** Se tiene a disposición una pestaña de JavaScript, CSS, y HTML para construir widgets.
+- **Gestor de archivos:** Al hacer click, se levanta el modal de gestión de archivos, donde se puede filtrar y buscar los archivos que has subido en el [Gestor de Archivos](/es/platform/content/asset-manager.html) y copiar su URL para usarlos en el widget. También se puede subir nuevos archivos desde este modal.
+- **Atajos de teclado:** Muestra una pequeña ventana informativa con algunos atajos de teclado útiles.
+- **Snippets:** Muestra una lista de los snippets disponibles desde el [Template Builder](/es/platform/channels/templates.html#snippets) y se copia su código para referenciarlos en el widget.
+- **Cambios:** Si se han guardado cambios y no han publicado, mostrará este listado de todas las veces guardadas cada uno de los archivos (JS, CSS, y HTML). Al hacer click en una sub-versión, se cambia el contenido de la pestaña por el contenido de la sub-versión que se hizo click.
 
 :::tip Tip
 Para no perder los cambios que tienes actualmente, se debe guardar antes de saltar entre sub-versiones, de tal forma que siempre pueda volver a la última versión guardada en la lista de cambios.
@@ -82,9 +82,9 @@ En las tres pestañas del widget se puede hacer uso de Liquid. Para más informa
 
 En la columna de propiedades se pueden ver:
 
-- **Nombre**: Permite cambiar el nombre del widget
-- **Tags**: Permite añadir tags a un widget. Los tag son de uso administrativo y sirven para buscar y filtrar los widgets y así poder encontrarlos rápidamente.
-- **Páginas que usan este widget**: Verás un listado de páginas que están usando este widget. Mientras veas páginas en este listado, no podrás despublicar ni archivar el widget.
+- **Nombre:** Permite cambiar el nombre del widget
+- **Tags:** Permite añadir tags a un widget. Los tag son de uso administrativo y sirven para buscar y filtrar los widgets y así poder encontrarlos rápidamente.
+- **Páginas que usan este widget:** Verás un listado de páginas que están usando este widget. Mientras veas páginas en este listado, no podrás despublicar ni archivar el widget.
 
 :::warning Atención
 Si eliminas un widget de una página y publicas, seguirás viendo esa página en este listado dado que el widget sigue referenciado en los respaldos de esa página. Desde la versión 9.1.10 en adelante, puedes despublicar cualquier widget publicado, incluso si está en uso. Las referencias activas en las páginas quedarán inactivas, por lo que no verás el widget en el sitio si lo despublicaste. Además, podrás archivar cualquier widget que no esté publicado, de tal forma que si aun existen referencias en algunas páginas del widget que quieres archivar, estas se eliminarán al momento de archivar el widget.
@@ -202,7 +202,7 @@ Para agregar un idioma nuevo al sitio, simplemente creamos un archivo **JSON** e
 │   │   └── es-CL.json
 ```
 :::warning Atención
-La estructura del archivo de idioma tiene que ser un objeto **json**:
+La estructura del archivo de idioma tiene que ser un objeto **json:**
 :::
 
 ### Validación de formularios

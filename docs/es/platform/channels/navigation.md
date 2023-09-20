@@ -14,14 +14,14 @@ Navegación sólo permite tres niveles de profundidad, por lo que puedes tener u
 
 En la parte superior de la vista, encontrarás el estado de publicación del menú:
 
-- **Publicado**: Este estado aparece luego de haber hecho una publicación y cuando las versiones editable y publicada son iguales.
-- **Cambios pendientes**: Este estado aparece si es que ya hay una versión publicada, pero hay cambios pendientes de publicar en tu versión editable.
-- **En revisión**: Este estado aparece cuando esté habilitada la [Revisión en Equipo](/es/platform/core/key-concepts.html) y se haya enviado a revisión la versión editable.
-- **Aprobado**: Este estado aparece cuando esté habilitada la [Revisión en Equipo](/es/platform/core/key-concepts.html) y si se cumplieron las condiciones de revisión del elemento. Si se encuentra en este estado, tus plantillas ya pueden ser publicados.
+- **Publicado:** Este estado aparece luego de haber hecho una publicación y cuando las versiones editable y publicada son iguales.
+- **Cambios pendientes:** Este estado aparece si es que ya hay una versión publicada, pero hay cambios pendientes de publicar en tu versión editable.
+- **En revisión:** Este estado aparece cuando esté habilitada la [Revisión en Equipo](/es/platform/core/key-concepts.html) y se haya enviado a revisión la versión editable.
+- **Aprobado:** Este estado aparece cuando esté habilitada la [Revisión en Equipo](/es/platform/core/key-concepts.html) y si se cumplieron las condiciones de revisión del elemento. Si se encuentra en este estado, tus plantillas ya pueden ser publicados.
 
 En la parte superior derecha, encuentras la última fecha de publicación y las acciones disponibles:
 
-**Vista previa**: Al hacer click en este ícono se abre una nueva pestaña con el modo vista previa del menú, donde puedes visualizar todos los cambios.
+**Vista previa:** Al hacer click en este ícono se abre una nueva pestaña con el modo vista previa del menú, donde puedes visualizar todos los cambios.
 
 :::warning Atención
 Puedes previsualizar los cambios como usuario sin sesión o usuario con sesión de Modyo. Para esto, es recomendable iniciar o cerrar la sesión de Modyo en el sitio antes de entrar al modo vista previa, Esto debido a que iniciar o cerrar sesión dentro del modo de vista previa puede generar errores de seguridad como  _x-frame-options_ o _mixed-content_, dependiendo de la configuración de dominios personalizados y SSL del sitio.
@@ -31,7 +31,7 @@ Puedes previsualizar los cambios como usuario sin sesión o usuario con sesión 
 El menú que has creado solo se visualizará en una página si lo agregas a través de una plantilla publicada. De lo contrario, el menú no se solicitará y no aparecerá en la página.
 :::
 
-**Diferencias**: Haz click aquí para acceder a la [vista de diferencias](/es/platform/core/key-concepts.html#revertir-un-cambio), en la cual puedes comparar los cambios entre diferentes versiones de tu menú.
+**Diferencias:** Haz click aquí para acceder a la [vista de diferencias](/es/platform/core/key-concepts.html#revertir-un-cambio), en la cual puedes comparar los cambios entre diferentes versiones de tu menú.
 
 Por defecto, inicias comparando la versión publicada con la versión editable. Usa los selectores de versiones para comparar con versiones de respaldo.
 
@@ -43,7 +43,7 @@ Por defecto se guardan hasta 20 respaldos de tal forma que los veinte respaldos 
 Para más información sobre el versionamiento, revisa la sección de [Versionado](/es/platform/core/key-concepts.html#versionado).
 :::
 
-**Actividad/Comentarios**: Solo aparece habilitada si tienes activada la [revisión en equipo](/es/platform/core/key-concepts.html) habilitada. Al hacerle click, despliega una barra lateral con el historial de actividad y comentarios del menú.
+**Actividad/Comentarios:** Solo aparece habilitada si tienes activada la [revisión en equipo](/es/platform/core/key-concepts.html) habilitada. Al hacerle click, despliega una barra lateral con el historial de actividad y comentarios del menú.
 
 Al final de la barra lateral, ves una caja de texto donde puedes escribir un comentario. Junto a cada actividad, puedes hacer click en _ver detalle_ para mostrar la información completa de ese registro de actividad.
 
@@ -66,16 +66,16 @@ Para más información de como se crea y publica un menú personalizado, ve [Cre
 
 **Acción principal**
 
-- **Guardar**: Guarda todos los cambios del menú.
-- **Enviar a revisión**: Cambia el estado del menú a "Esperando revisión". En este estado sigues haciendo cambios, pero cada cambio será notificado vía correo a los revisores asignados.
-- **Rechazar**: Vuelve al estado "En edición", notificando a los revisores que el elemento fue rechazado.
-- **Publicar**: Una vez que el menú fue aprobado, podrás ir a la vista de [publicación conjunta](/es/platform/channels/sites.html#revision-y-publicacion-conjunta) para publicar tu navegación.
+- **Guardar:** Guarda todos los cambios del menú.
+- **Enviar a revisión:** Cambia el estado del menú a "Esperando revisión". En este estado sigues haciendo cambios, pero cada cambio será notificado vía correo a los revisores asignados.
+- **Rechazar:** Vuelve al estado "En edición", notificando a los revisores que el elemento fue rechazado.
+- **Publicar:** Una vez que el menú fue aprobado, podrás ir a la vista de [publicación conjunta](/es/platform/channels/sites.html#revision-y-publicacion-conjunta) para publicar tu navegación.
 
 En la sección lateral derecha puedes ver una barra que cambia de acuerdo al ítem seleccionado en el área principal. En esta sección puedes ver las opciones:
 
-- **Nombre**: Nombre del elemento que aparecerá en el sitio.
-- **Page asociado**: Se puede asociar directamente a una página o a una URL personalizada.
-- **URL**: Si escogiste una URL personalizada en el elemento anterior, tienes diferentes opciones para configurar este ítem:
+- **Nombre:** Nombre del elemento que aparecerá en el sitio.
+- **Page asociado:** Se puede asociar directamente a una página o a una URL personalizada.
+- **URL:** Si escogiste una URL personalizada en el elemento anterior, tienes diferentes opciones para configurar este ítem:
 	- HTTP(s): Apunta a una dirección usando HTTP(s). Ejemplos:
 		- http://www.example.com
 		- https://www.example.com
@@ -92,9 +92,9 @@ En la sección lateral derecha puedes ver una barra que cambia de acuerdo al ít
 		- sms:+569-123-45678,9-123-45678?body=hello%20there&param1=a%20value
 	- Email: Genera una liga con el URI `mailto`. Ejemplos:
 		- mailto:info@example.com?subject=subject&cc=cc@example.com
-- **Abrir en pestaña nueva**: Le añade el atributo `target='blank'` al elemento HTML del item del menú, para que al hacerle click, se abra en una pestaña nueva.
-- **Privado**: Hace que el elemento seleccionado aparezca visible solo cuando hay una sesión de usuario activa en el sitio.
-- **Segmentos**: Si hay segmentos creados, también podrás segmentar este elemento para que los usuarios puedan ver este ítem de menú solo cuando tengan una sesión activa y que además se encuentren dentro de los segmentos seleccionados.
+- **Abrir en pestaña nueva:** Le añade el atributo `target='blank'` al elemento HTML del item del menú, para que al hacerle click, se abra en una pestaña nueva.
+- **Privado:** Hace que el elemento seleccionado aparezca visible solo cuando hay una sesión de usuario activa en el sitio.
+- **Segmentos:** Si hay segmentos creados, también podrás segmentar este elemento para que los usuarios puedan ver este ítem de menú solo cuando tengan una sesión activa y que además se encuentren dentro de los segmentos seleccionados.
 
 ## Ejemplos de Menu
 

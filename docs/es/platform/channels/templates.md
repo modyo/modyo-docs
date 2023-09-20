@@ -13,14 +13,14 @@ Al crear un Sitio, se llenará con plantillas distintas para generar el tema Min
 Una vez dentro de Plantillas, puedes ver que el menú principal se esconde para optimizar el área de trabajo. En la barra superior, a la izquierda, encuentras el nombre de la sección y el estado de publicación actual.
 
 
-- **Publicado**: Cuando ya existe una versión publicada y su versión editable es igual.
-- **Cambios pendientes**: Cuando hay una versión publicada, pero hay cambios pendientes de publicar en tu versión editable.
-- **En revisión**: Cuando se habilita la [revisión en equipo](/es/platform/core/key-concepts.html) y se ha enviado a revisión la versión editable.
-- **Aprobado**: Cuando se habilita la [revisión en equipo](/es/platform/core/key-concepts.html) y si es que se cumplieron las condiciones de revisión del elemento. Si estás en este estado, tus plantillas están listos para ser publicados.
+- **Publicado:** Cuando ya existe una versión publicada y su versión editable es igual.
+- **Cambios pendientes:** Cuando hay una versión publicada, pero hay cambios pendientes de publicar en tu versión editable.
+- **En revisión:** Cuando se habilita la [revisión en equipo](/es/platform/core/key-concepts.html) y se ha enviado a revisión la versión editable.
+- **Aprobado:** Cuando se habilita la [revisión en equipo](/es/platform/core/key-concepts.html) y si es que se cumplieron las condiciones de revisión del elemento. Si estás en este estado, tus plantillas están listos para ser publicados.
 
 En la parte superior derecha, puedes ver la última fecha de publicación y las acciones disponibles:
 
-**Vista previa**: Da click en este icono para abrir una nueva pestaña con el modo de vista previa de las plantillas. En esta vista puedes ver todos los cambios en tus plantillas, como si estuvieran publicados.
+**Vista previa:** Da click en este icono para abrir una nueva pestaña con el modo de vista previa de las plantillas. En esta vista puedes ver todos los cambios en tus plantillas, como si estuvieran publicados.
 
 :::warning Atención
 Puedes previsualizar los cambios como usuario sin sesión o usuario con sesión de Modyo. Para esto, es recomendable iniciar o cerrar la sesión de Modyo en el sitio antes de entrar al modo vista previa, dado que si se inicia o cierra sesión dentro del modo vista previa. Esto se debe a que iniciar o cerrar sesión dentro del modo de vista previa puede generar errores de seguridad como _x-frame-options_ o _mixed-content_, dependiendo de la configuración de dominios personalizados y SSL del sitio.
@@ -28,7 +28,7 @@ Puedes previsualizar los cambios como usuario sin sesión o usuario con sesión 
 
 <img src="/assets/img/channels/template_builder/differences.jpg" style="border: 1px solid #EEEEEE" width="700" alt="The version differences window">
 
-**Diferencias**: Te lleva a la [vista de diferencias](/es/platform/channels/sites.html#revision-y-publicacion-conjunta), en la cual puedes comparar los cambios que hay entre múltiples versiones de tus plantillas.
+**Diferencias:** Te lleva a la [vista de diferencias](/es/platform/channels/sites.html#revision-y-publicacion-conjunta), en la cual puedes comparar los cambios que hay entre múltiples versiones de tus plantillas.
 
 Por defecto, comienzas comparando la versión publicada con la versión editable. Usa los selectores de versiones para comparar con versiones de respaldo.
 
@@ -38,24 +38,24 @@ Cada vez que publicas una versión, la versión que estaba publicada pasa a ser 
 Para más información sobre el versionamiento, ve [versionado](/es/platform/core/key-concepts.html#versionado).
 :::
 
-**Buscar en plantillas**: Despliega una barra lateral con un buscador de texto que busca en todas las plantillas editables.
+**Buscar en plantillas:** Despliega una barra lateral con un buscador de texto que busca en todas las plantillas editables.
 
 <img src="/assets/img/channels/template_builder/conversation.jpg" style="border: 1px solid #EEEEEE" width="700" alt="The activity window">
 
-**Actividad/Comentarios**: Despliega una barra lateral que muestra el historial de actividad y comentarios de las plantillas.
+**Actividad/Comentarios:** Despliega una barra lateral que muestra el historial de actividad y comentarios de las plantillas.
 
 Al final de la barra lateral, hay una caja de texto donde puedes escribir un comentario. Junto a cada actividad, puedes hacer click en **ver detalle** para mostrar la información completa de ese registro de actividad.
 
-**Más acciones**:
+**Más acciones:**
 
-- **Restaurar todo**: Restauras las plantillas a su valor original.
+- **Restaurar todo:** Restauras las plantillas a su valor original.
 
 **Acción principal**
 
-- **Guardar**: Guarda todos los cambios de todas las plantillas.
-- **Enviar a revisión**: Cambia el estado de las plantillas a "Esperando revisión". En este estado puedes seguir haciendo cambios, pero cada cambio será notificado vía correo a los revisores asignados.
-- **Rechazar**: Vuelve al estado "En edición", notificando a los revisores que el elemento fue rechazado.
-- **Publicar**: Una vez que las plantillas fueron aprobadas, podrás ir a la vista de [publicación conjunta](/es/platform/channels/sites.html#revision-y-publicacion-conjunta) y publicar tus plantillas.
+- **Guardar:** Guarda todos los cambios de todas las plantillas.
+- **Enviar a revisión:** Cambia el estado de las plantillas a "Esperando revisión". En este estado puedes seguir haciendo cambios, pero cada cambio será notificado vía correo a los revisores asignados.
+- **Rechazar:** Vuelve al estado "En edición", notificando a los revisores que el elemento fue rechazado.
+- **Publicar:** Una vez que las plantillas fueron aprobadas, podrás ir a la vista de [publicación conjunta](/es/platform/channels/sites.html#revision-y-publicacion-conjunta) y publicar tus plantillas.
 
 En el área de trabajo principal, puedes ver dos secciones:
 
@@ -69,9 +69,9 @@ La barra de plantillas a la derecha tiene dos pestañas: vistas y snippets.
 ## Layouts
 
 Modyo cuenta con tres layouts por defecto:
-* **Home**: Se usa exclusivamente en la página home del sitio.
-* **Base**: Todas las páginas excepto el home usan este layout por defecto.
-* **Error**: Las vistas de error usan este layout limpio (404, 401)
+* **Home:** Se usa exclusivamente en la página home del sitio.
+* **Base:** Todas las páginas excepto el home usan este layout por defecto.
+* **Error:** Las vistas de error usan este layout limpio (404, 401)
 
 Puedes crear nuevos Layouts desde Plantillas, haciendo click en "Añadir layout" en la pestaña "Vistas", lo que te permitirá definir una nueva estructura base para usar en las páginas.
 
@@ -106,10 +106,10 @@ Luego de haber creado tu nuevo layout, puedes empezar a usarlo yendo a la vista 
 
 En la sección de vistas, encontrarás 4 tipos de error disponible para personalizar:
 
-* **Deshabilitado**: Verás esta vista de error si es que el sitio al que estás intentando acceder ha sido [deshabilitado](/es/platform/channels/sites.html).
-* **404**: Verás esta vista si entras a una URL del sitio que no está definida y si es que en la configuración de [restricciones del sitio](/es/platform/channels/sites.html#privacidad) decides mostrar el 404 y no redireccionar a la página home.
-* **Privacy**: Verás esta vista de error si no tienes permisos para acceder al [sitio](/es/platform/channels/sites.html#privacidad) o a una de sus [páginas](/es/platform/channels/pages.html#privacidad).
-* **Template**: Verás esta vista de error cuando la página del sitio que estés cargando tenga un error de sintaxis de liquid. Es poco probable que llegues a ver esta vista, dado que desde modyo 8.1 en adelante contamos con una funcionalidad que checa la sintaxis de liquid antes de poder guardar y publicar cambios en Plantillas.
+* **Deshabilitado:** Verás esta vista de error si es que el sitio al que estás intentando acceder ha sido [deshabilitado](/es/platform/channels/sites.html).
+* **404:** Verás esta vista si entras a una URL del sitio que no está definida y si es que en la configuración de [restricciones del sitio](/es/platform/channels/sites.html#privacidad) decides mostrar el 404 y no redireccionar a la página home.
+* **Privacy:** Verás esta vista de error si no tienes permisos para acceder al [sitio](/es/platform/channels/sites.html#privacidad) o a una de sus [páginas](/es/platform/channels/pages.html#privacidad).
+* **Template:** Verás esta vista de error cuando la página del sitio que estés cargando tenga un error de sintaxis de liquid. Es poco probable que llegues a ver esta vista, dado que desde modyo 8.1 en adelante contamos con una funcionalidad que checa la sintaxis de liquid antes de poder guardar y publicar cambios en Plantillas.
 
 ## CSS y JavaScript
 
@@ -171,21 +171,21 @@ En el área de trabajo, debajo de las pestañas, encontrarás una barra con elem
 
 <img src="/assets/img/channels/template_builder/bar-templates.jpg" style="border: 1px solid #EEEEEE" width="700" alt="Action bar inside templates">
 
-**Gestor de archivos**: Se levanta un modal donde puedes acceder a todos los archivos de la cuenta y copiar su URL. Si accedes a la segunda pestaña, puedes subir nuevos archivos.
+**Gestor de archivos:** Se levanta un modal donde puedes acceder a todos los archivos de la cuenta y copiar su URL. Si accedes a la segunda pestaña, puedes subir nuevos archivos.
 
 :::tip Tip
 Para más información sobre los beneficios y prestaciones de Gestor de Archivos, dirígete a [Gestor de Archivos](/es/platform/content/asset-manager.html)
 :::
 
-**Atajos de teclado**: Se muestra un pequeño pop-up con algunos de los atajos de teclado útiles para usar en Plantillas.
+**Atajos de teclado:** Se muestra un pequeño pop-up con algunos de los atajos de teclado útiles para usar en Plantillas.
 
 <img src="/assets/img/channels/template_builder/keywords.jpg" width="400" alt="Keyboard shortcuts inside the templates module">
 
-**Snippets**: Se despliega un listado con todos los snippets, junto a la opción de copiar su código de referencia.
+**Snippets:** Se despliega un listado con todos los snippets, junto a la opción de copiar su código de referencia.
 
 <img src="/assets/img/channels/template_builder/snippets.jpg" width="300" alt="The list with all your custom snippets">
 
-**Cambios**: Un listado de todas las veces y estados en los que has hecho la acción "Guardar" en esta versión. Al hacer click en alguna de las sub-versiones, cambias el contenido del template en el que estás trabajando a esa sub-versión.
+**Cambios:** Un listado de todas las veces y estados en los que has hecho la acción "Guardar" en esta versión. Al hacer click en alguna de las sub-versiones, cambias el contenido del template en el que estás trabajando a esa sub-versión.
 
 <img src="/assets/img/channels/template_builder/changes.jpg" style="border: 1px solid #EEE" width="300" alt="The latest changes in your template">
 

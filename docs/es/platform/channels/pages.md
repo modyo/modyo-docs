@@ -18,25 +18,25 @@ En la vista de edición, encuentras una barra superior con acciones, una grilla 
 
 En la barra superior, encuentras distintas acciones e información:
 
-**Título**: Se encuentra en la parte superior izquierda, e indica el nombre de la página que estás modificando. A la derecha el nombre, encontrarás el estado actual de la página. Esos pueden ser "Borrador", "En revisión", "Aprobado", "Cambios pendientes", "Publicado". Para aprender más sobre estos estados, puedes revisar la sección de [Versionado y Revisión en Equipo](/es/platform/core/key-concepts.html).
+**Título:** Se encuentra en la parte superior izquierda, e indica el nombre de la página que estás modificando. A la derecha el nombre, encontrarás el estado actual de la página. Esos pueden ser "Borrador", "En revisión", "Aprobado", "Cambios pendientes", "Publicado". Para aprender más sobre estos estados, puedes revisar la sección de [Versionado y Revisión en Equipo](/es/platform/core/key-concepts.html).
 
-**Fecha de publicación**: Si la página ha sido publicada, indicará la fecha de la última publicación.
+**Fecha de publicación:** Si la página ha sido publicada, indicará la fecha de la última publicación.
 
-**Vista previa**: Este ícono te permite abrir una pestaña nueva con el modo Vista Previa para visualizar los cambios que se han hecho en la página sin necesidad de publicarla.
+**Vista previa:** Este ícono te permite abrir una pestaña nueva con el modo Vista Previa para visualizar los cambios que se han hecho en la página sin necesidad de publicarla.
 
 :::warning Atención
 Puedes previsualizar las páginas como usuario sin sesión o usuario con sesión de Modyo. Para esto, es recomendable iniciar o cerrar la sesión de Modyo en el sitio antes de entrar al modo vista previa. Esto se debe a que iniciar o cerrar sesión dentro del modo de vista previa puede generar errores de seguridad como _x-frame-options_ o _mixed-content_, dependiendo de la configuración de dominios personalizados y SSL del sitio.
 :::
 
-**Diferencias**: Al hacer click en el ícono de diferencias,  accedes a la vista de diferencias de la página, donde puede seleccionar dos versiones a comparar, permitiendo ejecutar las acciones [reestablecer y rollback](/es/platform/core/key-concepts.html#revertir-un-cambio)
+**Diferencias:** Al hacer click en el ícono de diferencias,  accedes a la vista de diferencias de la página, donde puede seleccionar dos versiones a comparar, permitiendo ejecutar las acciones [reestablecer y rollback](/es/platform/core/key-concepts.html#revertir-un-cambio)
 
 :::tip Tip
 Si tu página está en estado _borrador_ no aparecerá el icono de diferencias, dado que no hay nada con que comparar la versión editable actual. Para aprender más sobre las diferencias y respaldos, revisa la sección de [versionado](/es/platform/core/key-concepts.html#versionado)
 :::
 
-**Actividad**: Despliega una barra lateral que muestra la actividad asociada a la página, como las modificaciones, publicaciones y comentarios. En la parte inferior de esta barra, puedes escribir comentarios asociados. En caso de que la página esté en revisión, todos los revisores asignados recibirán una notificación con el comentario.
+**Actividad:** Despliega una barra lateral que muestra la actividad asociada a la página, como las modificaciones, publicaciones y comentarios. En la parte inferior de esta barra, puedes escribir comentarios asociados. En caso de que la página esté en revisión, todos los revisores asignados recibirán una notificación con el comentario.
 
-**Otras acciones**:
+**Otras acciones:**
 
 - Archivar: Si una página no está publicada, esta acción te permite archivarla. Cuando una página está archivada, por defecto, no aparece en el índice de página, lo que permite mantener la estructura del sitio limpia.
 - Duplicar: Esta acción te permite copiar la versión editable de la página en la que estás. La versión copiada queda en estado _borrador_.
@@ -61,7 +61,7 @@ Para conocer los tipos de widgets que puedes agregar, ve [Widgets](/es/platform/
 
 Para conocer más acerca de páginas de contenido, ve [Página de Contenido](/es/platform/channels/pages.html#pagina-de-contenido)
 
-**Acción principal**: Es el botón verde en la parte superior derecha. Este botón puede tomar distintas formas:
+**Acción principal:** Es el botón verde en la parte superior derecha. Este botón puede tomar distintas formas:
 
 - Guardar: Te permite guardar los cambios que has hecho en la página.
 - Enviar a revisión: Si está habilitada la revisión en equipo, entonces si no hay cambios que guardar, esta acción te permitirá enviar a revisión la página y asignar revisores.
@@ -73,7 +73,7 @@ Para conocer más acerca de páginas de contenido, ve [Página de Contenido](/es
 * Si una página tiene hijos, solo puedes archivarla si todos estos se encuentran archivados.
 :::
 
-**Acciones secundarias**:
+**Acciones secundarias:**
 - Forzar publicación: Si es que eres administrador del sitio, entonces puedes ver y usar esta opción que te permite publicar la página en cualquier momento, incluso saltándote la revisión en equipo.
 - Despublicar: Si es que la página está publicada, entonces ves esta acción que te permite despublicar la página.
 
@@ -92,14 +92,14 @@ En la sección lateral derecha hay tres pestañas:
 Aquí puedes personalizar tu página usando widgets preestablecidos de la siguiente lista:
 
 
-- **HTML**: Te permite ingresar código HTML y CSS sin validaciones. No te permitirá ingresar código Javascript.
-- **Texto enriquecido**: Te permitirá hacer uso de un editor de texto enriquecido, en el que puedes darle formato al texto y cambiar entre la vista de código y texto enriquecido.
+- **HTML:** Te permite ingresar código HTML y CSS sin validaciones. No te permitirá ingresar código Javascript.
+- **Texto enriquecido:** Te permitirá hacer uso de un editor de texto enriquecido, en el que puedes darle formato al texto y cambiar entre la vista de código y texto enriquecido.
 :::warning Atención
 El widget de texto enriquecido cuenta con un formateador automático, por lo que el código que escribas en la vista de código puede verse afectado.
 :::
-- **Listado de contenido**: Muestra listados de contenido haciendo uso de filtros por espacio, tipo, idioma, tags, y categoría. Para modificar como se ven estos widgets, debes hacerlo en la sección de Widgets en [Templates](/es/platform/channels/templates.html).
-- **Contenido destacado**: Muestra un listado de entradas como imágenes "hero" en un carrusel.
-- **Personalizado**: Encontrarás un listado de todos los widgets que has creado y publicado en el widget builder.
+- **Listado de contenido:** Muestra listados de contenido haciendo uso de filtros por espacio, tipo, idioma, tags, y categoría. Para modificar como se ven estos widgets, debes hacerlo en la sección de Widgets en [Templates](/es/platform/channels/templates.html).
+- **Contenido destacado:** Muestra un listado de entradas como imágenes "hero" en un carrusel.
+- **Personalizado:** Encontrarás un listado de todos los widgets que has creado y publicado en el widget builder.
 
 Una vez seleccionado un widget en la sección central, el foco pasará a la pestaña lateral, donde podrás encontrar distintas opciones de configuración del widget y en caso de seleccionar un widget personalizado, encontrarás un link para ir directamente a su vista de edición en [widget builder](/es/platform/channels/widgets.html) y el listado de variables que el widget está usando. Si quieres sobrescribir el valor de una variable en particular para esa instancia del widget en esa página, debes seleccionar el checkbox a la izquierda de la variable y cambiar el valor que toma.
 
@@ -178,9 +178,9 @@ La página índice que contiene el listado de todas las entradas del tipo de con
 
 #### Edit
 
-- **Habilitar Índice de Entradas**: Deshabilitado por defecto. La ruta que toma es el nombre que se le dio a la página cuando fue creada. Si se deshabilita esta opción, solo las páginas de **Show** serán accesibles y si se intenta acceder se les mostrará un error 404.
-- **Layout**: La plantilla Layout que va a cargar para el Index.
-- **Custom Meta Tag**: Agrega custom meta tags para optimizar el SEO del índice. Este meta tag solo será cargado para el Index, no para el Show. También puedes utilizar Liquid para cargar meta tags dinámicos.
+- **Habilitar Índice de Entradas:** Deshabilitado por defecto. La ruta que toma es el nombre que se le dio a la página cuando fue creada. Si se deshabilita esta opción, solo las páginas de **Show** serán accesibles y si se intenta acceder se les mostrará un error 404.
+- **Layout:** La plantilla Layout que va a cargar para el Index.
+- **Custom Meta Tag:** Agrega custom meta tags para optimizar el SEO del índice. Este meta tag solo será cargado para el Index, no para el Show. También puedes utilizar Liquid para cargar meta tags dinámicos.
 
 ### Show
 
@@ -188,8 +188,8 @@ La pestaña en donde defines como van a lucir las entradas dinámicas. Aquí pod
 
 #### Edit:
 
-- **Layout**: La plantilla Layout que va a cargar para el Show.
-- **Custom Meta Tag**: Agrega custom meta tags para optimizar el SEO del show. Este meta tag solo será cargado para el Show, no para el Index. También puedes utilizar Liquid para cargar meta tags dinámicos.
+- **Layout:** La plantilla Layout que va a cargar para el Show.
+- **Custom Meta Tag:** Agrega custom meta tags para optimizar el SEO del show. Este meta tag solo será cargado para el Show, no para el Index. También puedes utilizar Liquid para cargar meta tags dinámicos.
 
 Un ejemplo básico de código Liquid+HTML que puedes usar en **Show** es:
 
