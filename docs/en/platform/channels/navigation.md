@@ -107,7 +107,7 @@ The following list describes the important variables for the menu:
 - menu: This variable takes the menu with identifier `main` within Modyo Platform -> Navigation.
 - items_to_show: Take the menu items that are visible.
 - active: Used to add a CSS class called `active` in case this item is activated.
-- children_to_show: If there are children of the current item, it takes the items in this variable and displays them as the second level in the menu hierarchy.
+- children_to_show: If the current item has children, it takes the items in this variable and displays them as the second level in the menu hierarchy.
 
 When you enter the Templates section of your site in Modyo Platform, you can click on the general `menu` snippet to see the HTML of the menu. It looks like this:
 
