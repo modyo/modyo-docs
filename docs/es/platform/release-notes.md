@@ -5,6 +5,24 @@ search: true
 # Notas del release
 
 ## 9.2
+### 9.2.49 - 13 de septiembre de 2023
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Corrige redirección post login cuando existe un custom domain
+* Mejoras al buscador de sitios
+  * Ahora los resultados son mas precisos
+  * La búsqueda puede ser deshabilitada
+  * Se puede establecer una búsqueda multi sitio para una misma organización
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Corrige problemas al publicar contenidos y páginas que fueron restauradas desde un backup
+
+
 ### 9.2.48 - 04 de septiembre de 2023
 <Badge text="Customers" type="customers" vertical="middle"/>
 
