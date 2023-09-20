@@ -112,7 +112,7 @@ Crea contenido dinámico en tus espacios usando Entradas. En este objeto tienes 
 | **entry.type** El tipo de la entrada. | ``type2`` |
 | **entry.type_uid** El id único del tipo de la entrada. | ``type2`` |
 | **entry.tags** Arreglo de strings de los tags de esta entrada. | ```tag1, tag2``` |
-| **entry.excerpt** El excerpt asociado a la página. | ```Este es el excerpt de una página muy cool``` |
+| **entry.excerpt** El excerpt asociado a la página. | ```Este es el excerpt de un entry muy cool``` |
 | **entry.account_url** La url de la cuenta. | ```https://test.miModyo.com``` |
 | **entry.url** URL canónico de la entrada. | ```https://test.miModyo.com/entry``` |
 | **[entry.author](#usuario)** El objeto del usuario autor de la entrada. | ```tag1, tag2``` |
