@@ -50,7 +50,7 @@ Objecto del tipo asset. Contiene la información pertinente a un archivo dentro 
 
 ### Audio
 
-El drop de Audio es una subclase que hereda los mismos atributos que Asset. Se puede utilizar **audio_asset** y reemplazarlo en lugar de asset. 
+El drop de Audio es una subclase que hereda los mismos atributos que Asset. Se puede utilizar **audio_asset** y reemplazarlo en lugar de asset.
 
 Se heredan los siguientes atributos de [Asset](#asset):
 
@@ -58,7 +58,7 @@ Se heredan los siguientes atributos de [Asset](#asset):
 
 ### Archivo
 
-El drop de Archivo es una subclase que hereda los mismos atributos que Asset. Se puede utilizar **file_asset** y reemplazarlo en lugar de asset. 
+El drop de Archivo es una subclase que hereda los mismos atributos que Asset. Se puede utilizar **file_asset** y reemplazarlo en lugar de asset.
 
 Se heredan los siguientes atributos de [Asset](#asset):
 
@@ -78,7 +78,7 @@ Se heredan los siguientes atributos de [Asset](#asset):
 
 ### Video
 
-El drop de Video es una subclase que hereda los mismos atributos que Asset. Se puede utilizar **video_asset** y reemplazarlo en lugar de asset. 
+El drop de Video es una subclase que hereda los mismos atributos que Asset. Se puede utilizar **video_asset** y reemplazarlo en lugar de asset.
 
 | Descripción  | Ejemplo  |
 |---|---|
@@ -105,17 +105,18 @@ Crea contenido dinámico en tus espacios usando Entradas. En este objeto tienes 
 
 | Descripción  | Ejemplo  |
 |---|---|
-| **entry.space** El nombre del espacio asociado a la entry.  | ```espacio1``` |
+| **entry.space** El nombre del espacio asociado a la entry. | ```espacio1``` |
 | **entry.category** La ruta de la categoría de esta entrada. | ```category-1/category-2``` |
 | **entry.category_name** El nombre de la categoría de esta entrada. | ```category 2``` |
 | **entry.category_slug** El slug de la categoría de esta entrada. | ```category-2``` |
 | **entry.type** El tipo de la entrada. | ``type2`` |
 | **entry.type_uid** El id único del tipo de la entrada. | ``type2`` |
 | **entry.tags** Arreglo de strings de los tags de esta entrada. | ```tag1, tag2``` |
-| **entry.account_url** La url de la cuenta | ```https://test.miModyo.com``` |
-| **entry.url** URL canónico de la entrada | ```https://test.miModyo.com/entry``` |
-| **[entry.author](#usuario)** El objeto del usuario autor de la entrada | ```tag1, tag2``` |
-| **entry.meta** El objeto del metadata de la entrada.  | Este objecto tiene los siguientes atributos: uuid, published_at, locale, slug, created_at, updated_at, unpublished_at, private, private |
+| **entry.excerpt** El excerpt asociado a la página. | Este es el excerpt de un entry muy cool |
+| **entry.account_url** La url de la cuenta. | ```https://test.miModyo.com``` |
+| **entry.url** URL canónico de la entrada. | ```https://test.miModyo.com/entry``` |
+| **[entry.author](#usuario)** El objeto del usuario autor de la entrada. | ```tag1, tag2``` |
+| **entry.meta** El objeto del metadata de la entrada. | Este objecto tiene los siguientes atributos: uuid, published_at, locale, slug, created_at, updated_at, unpublished_at, private, private. |
 | **[entry.fields](#campo)** Array con objetos de los campos de la entrada. |  |
 
 ## Campo
@@ -177,7 +178,7 @@ Estos drops te permiten obtener información a través de Liquid para las pregun
 
 ## Grilla
 
-Contiene la definición una Grilla en una Página. 
+Contiene la definición una Grilla en una Página.
 
 
 | Descripción  | Ejemplo  |
@@ -396,7 +397,7 @@ Estos drops son de gran utilidad al momento de querer hacer páginas dinámicas 
 
 ## Request
 
-Estos drops te permiten obtener información al momento de hacer un request. 
+Estos drops te permiten obtener información al momento de hacer un request.
 
 | Descripción  | Ejemplo  |
 |---|---|
