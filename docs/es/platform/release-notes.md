@@ -14,13 +14,13 @@ search: true
 
 * Corrige redirección post login cuando existe un custom domain
 * Mejoras al buscador de sitios
-  * ahora los resultados son mas precisos
-  * la búsqueda pede ser deshabilitada
-  * se puede establecer una búsqueda multi sitio para una misma organización
+  * Ahora los resultados son mas precisos
+  * La búsqueda puede ser deshabilitada
+  * Se puede establecer una búsqueda multi sitio para una misma organización
 
 <Badge text="Core" type="core" vertical="middle"/>
 
-* Corrige problemas al publicar contenidos y paginas que fueron restauradas desde un backup
+* Corrige problemas al publicar contenidos y páginas que fueron restauradas desde un backup
 
 
 ### 9.2.48 - 04 de septiembre de 2023
