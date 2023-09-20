@@ -4,7 +4,7 @@ search: true
 
 # Backend for Frontend
 
-El patrón de arquitectura "Backend for Frontend" (BFF) es un enfoque que optimiza y adapta el backend de una aplicación a las necesidades específicas de sus clientes o a las interfaces front end de usuario (UI).
+El patrón de arquitectura Backend for Frontend (BFF) es un enfoque que optimiza y adapta el backend de una aplicación a las necesidades específicas de las interfaces de usuario (UI).
 
 En una arquitectura tradicional, el backend de una aplicación suele manejar múltiples tipos de clientes o interfaces, como aplicaciones móviles, web y servicios API, lo que puede complicar la gestión, debido a diferentes requerimientos y flujos de trabajo.
 
@@ -26,9 +26,7 @@ Puedes implementar BFF en Modyo de dos formas:
 
 
 :::tip Desacoplamiento de APIs
-La arquitectura de Modyo enfatiza el desacoplamiento de capas frontend y backend.
-
-Las APIs son independientes y pueden desplegarse en diferentes infraestructuras, conectándose mediante HTTP.
+La arquitectura de Modyo enfatiza que las capas de frontend y backend esten desacopladas. De esta forma, las APIs son independientes y pueden desplegarse en diferentes infraestructuras, conectándose mediante HTTP.
 :::
 
 
