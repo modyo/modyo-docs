@@ -5,10 +5,56 @@ search: true
 # Release Notes
 
 ## 9.2
+### 9.2.49 - September 13, 2023
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Security improvements
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Fixes post login redirection when a custom domain exists
+* Improvements to the site search engine
+  * Now the results are more accurate
+  * Search can be disabled
+  * You can set up a multi-site search for the same organization
+
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Fixes problems when publishing restored content and pages from a backup
+
+
+### 9.2.48 - September 04, 2023
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Fixes modal for changing images in the campaign email template editor
+
+### 9.2.47 - September 01, 2023
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Security improvements
+
+### 9.2.46 - August 29, 2023
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Security improvements
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Fixes problem with the linter when adding the raw liquid tag in templates
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Adds sanitizer for the SVG type images
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Fixes problem in viewing payment answers with Bancard
+* Fixes the problem of crossing redirects in concurrent logins in different user realms
+
 ### 9.2.45 - August 17, 2023
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* Fixes problems in saving email templates, now old templates can be saved again, and html tags no longer lose their attributes
+* Fixes problems in saving email templates, now old templates can be saved again, and HTML tags no longer lose their attributes
 
 ### 9.2.44 - August 10, 2023
 <Badge text="Core" type="core" vertical="middle"/>
@@ -17,8 +63,8 @@ search: true
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* Correct the logout redirection loop between realm and identity provider under certain circumstances
-* Add read-only role in realms
+* Corrects the logout redirection loop between realm and identity provider under certain circumstances
+* Adds read-only role in realms
 
 ### 9.2.43 - August 03, 2023
 <Badge text="Core" type="core" vertical="middle"/>
@@ -84,13 +130,13 @@ search: true
 ### 9.2.38 - July 07, 2023
 <Badge text="Core" type="core" vertical="middle"/>
 
-* Security improvements.
+* Security improvements
 * Improves the information shown in the activity logs
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
 * Fixes problems accessing the security headers edition
-* Adds the viewer role to team members. This role can even see items to be synchronized or in a release.
+* Adds the viewer role to team members. This role can even see items to be synchronized or in a release
 
 <Badge text="Content" type="content" vertical="middle"/>
 
@@ -98,40 +144,40 @@ search: true
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* Add configuration for a post-login home page. After a successful login to the kingdom, you will be redirected to this page.
+* Adds configuration of a post-login home page. After a successful login to the realm, you will be redirected to this page.
 
 
 ### 9.2.37 - June 30, 2023
 <Badge text="Core" type="core" vertical="middle"/>
 
-* Security improvements.
-* Improvements in the configuration of expiration and inactivity policies.
+* Security improvements
+* Improvements in the configuration of expiration and inactivity policies
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
-* Add configuration for new security headers, Cross-Origin-Embedder-Policy, Cross-Origin-Opener-Policy, Cross-Origin-Resource-Policy.
+* Adds configuration of new security headers, Cross-Origin-Embedder-Policy, Cross-Origin-Opener-Policy, Cross-Origin-Resource-Policy
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* Corrects problem when reading a notification in the profile, now it is correctly marked as read.
-* Adds a new parameter (redirect_to) to the login URL of a site to redirect to a particular view or to a site within the organization.
-* Email campaigns are modified, multiple mailings are replaced by campaign cloning for new mailings for greater simplicity in their management.
+* Fixes the problem when reading a notification in the profile, now it is correctly marked as read
+* Adds a new parameter (redirect_to) to the login URL of a site to redirect to a particular view or to a site within the organization
+* Email campaigns are modified, multiple shipments are replaced by campaign cloning for new shipments for greater simplicity in their management
 
 
 ### 9.2.36 - June 19, 2023
 <Badge text="Core" type="core" vertical="middle"/>
 
-* Security improvements.
-* Add administrator permission validation to the endpoints of the API's swagger documentation.
+* Security improvements
+* Adds administrator permission validation to the endpoints of the swagger API documentation
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
-* Fixes the problem of empty differences after synchronizing stages.
+* Fixes empty differences problem after synchronizing stages
 
 <Badge text="Content" type="content" vertical="middle"/>
 
-* Fixes the problem of listing repeated spaces for users in a permission group.
-* Fixes problem of publishing pages when they come from the synchronization of stages.
+* Fixes problem with the list of repeated spaces for users in a permission group
+* Fixes the problem of publishing pages when they come from the synchronization of stages
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
@@ -260,7 +306,7 @@ search: true
 
 ### 9.2.28 - March 21, 2023
 
- <Badge text="Core" type="core" vertical="middle"/> 
+<Badge text="Core" type="core" vertical="middle"/>
 
 * Security improvements
 
