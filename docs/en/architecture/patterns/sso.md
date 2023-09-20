@@ -30,7 +30,7 @@ Both options benefit from the platform's ability to integrate with standards suc
 
 By activating SSO within Modyo, delegating user authentication to the system you have selected. This means that Modyo relies on the SSO system to verify the identity of users and allow them to access applications and services. One of the key advantages of this delegation is that you can apply specific security policies centrally in the SSO system, providing an additional level of control and security over access to your resources.
 
-The Modyo platform supports delegation to SSO systems in two main ways:
+Modyo platform supports delegation to SSO systems in two main ways:
 
 1. For administrator users with access to the Web console.
 2. For end users through the configurations present in the [user realms] (/en/platform/customers/realms).
