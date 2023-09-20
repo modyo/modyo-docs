@@ -6,43 +6,43 @@ search: true
 
 Pages (or pages) are what allow you to create a structure for your site, where you can add unstructured content and customize the routes where that content is displayed.
 
-You can create two types of pages, widgets or content. The widget pages are based on a modular layout so you can create your custom site using HTML, JS, and CSS. You'll be able to drag and arrange different widgets that we offer or custom widgets created by your team. 
+You can create two types of pages, widgets or content. Widget pages are based on a modular scheme so you can create your custom site using HTML, JS, and CSS. You can drag and place different widgets that we offer or custom widgets created by your team.
 
 Content pages are our solution for connecting Content modules with Channels. Here you can create the index containing the entries and the structure for all the entries using HTML, JS, CSS, and Liquid.
 
 <img src="/assets/img/platform/page-index.png" alt="The index page for all the pages in your site">
 
-To edit a page, you must click the edit icon (<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M14.06 9l.94.94L5.92 19H5v-.92L14.06 9m3.6-6c-.25 0-.51.1-.7.29l-1.83 1.83l3.75 3.75l1.83-1.83c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29m-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>) or the page name to go to the edit view.
+To edit a page, click on the edit icon or on the name of the page to go to the editing view.
 
 In the edit view, you will see a bar across the top, a central grid in the middle, and a sidebar with tabs.
 
 In the top bar, you can find different actions and information:
 
-**Title**: Located in the upper left, and indicates the name of the page you are modifying. On the right side of the name, you can see the current state of the page. The state will either be "Draft", "Under review", "Approved", "Pending changes", or "Published". To learn more about these states, review the [versioning and team review](/en/platform/core/key-concepts.html) section.
+**Title: ** It's at the top left, and indicates the name of the page you're modifying. To the right of the name, you'll find the current status of the page. These can be “Draft”, “In Review”, “Approved”, “Pending Changes”, “Published”. To learn more about these states, you can check out the [Versioning and Team Review] section (/es/platform/core/key-concepts.html).
 
-**Publication date**: On the right side of the top bar, if the page has been published, the date of the last publication will be indicated.
+**Date of publication: ** If the page has been published, it will indicate the date of the last publication.
 
-**Preview** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5c-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0a9.821 9.821 0 0 0-17.64 0z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: This icon allows you to open a new tab in the Page Preview mode to be able to view the changes that have been made on the page without having to publish it.
+**Preview: ** This icon allows you to open a new tab with Preview mode to view the changes that have been made to the page without having to publish it.
 
-:::warning Attention
-You can preview pages as a user without a session or with a Modyo session. For this, it is advised to log in or out of Modyo from your site before entering preview mode, because if you log out while in preview mode you might encounter security errors like _x-frame-options_ or _mixed-content_, depending on your site's SSL and custom domain settings.
+:: :warning Attention
+You can preview the pages as a user without a session or a user with a Modyo session. For this, it is recommended to start or close the Modyo session on the site before entering preview mode. This is because logging in or out of preview mode can result in security errors such as _x-frame-options_ or _mixed-content_, depending on the site's custom domain and SSL settings.
 :::
 
-**Differences** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Clicking on the diff icon will take you to the diff view of the page which allows you to select two versions to compare, allowing you to execute the actions [reset and rollback](/en/platform/core/key-concepts.html#reversing-a-change).
+**Differences: ** By clicking on the differences icon, you access the differences view of the page, where you can select two versions to compare, allowing you to execute the actions [reset and rollback] (/es/platform/core/key-concepts.html #revertir -un-change)
 
-:::tip Tip
-If your page is in "draft" status, the differences icon will not appear, since there is nothing to compare with the current editable version. To learn more about differences and backups, review the [versioning](/en/platform/core/key-concepts.html#versioning) section.
+:: :tip Tip
+If your page is in a _draft_ state, the difference icon will not appear, since there is nothing to compare the current editable version with. To learn more about the differences and supports, check out the [versioning] section (/es/platform/core/key-concepts.html #versionado)
 :::
 
-**Activity** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 23a1 1 0 0 1-1-1v-3H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4.1l-3.7 3.71c-.2.18-.44.29-.7.29H12m1-6v3.08L16.08 17H21V7H7v10h6M3 15H1V3a2 2 0 0 1 2-2h16v2H3v12m6-6h10v2H9V9m0 4h8v2H9v-2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Clicking this icon displays a sidebar showing you the activity associated with the page, such as edits, posts, and comments. At the bottom of this bar, you can type associated comments. If the page is under review, everyone who is assigned as a reviewer will receive a notification with the comment.
+**Activity: ** Displays a sidebar that shows the activity associated with the page, such as modifications, posts and comments. At the bottom of this bar, you can type associated comments. If the page is under review, all assigned reviewers will receive a notification with the comment.
 
-**Other actions** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>:
+**Other actions: **
 
-- Archive <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M5.12 5l.81-1h12l.94 1M12 17.5L6.5 12H10v-2h4v2h3.5L12 17.5m8.54-12.27l-1.39-1.68C18.88 3.21 18.47 3 18 3H6c-.47 0-.88.21-1.16.55L3.46 5.23C3.17 5.57 3 6 3 6.5V19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.5c0-.5-.17-.93-.46-1.27z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg>: If a page is not published, this action allows you to archive it. When a page is archived, it will not appear in the page index and allows you to keep the site structure clean.
-- Duplicate <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M20 16V4H8v12h12m2 0a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2h12a2 2 0 0 1 2 2v12m-6 4v2H4a2 2 0 0 1-2-2V7h2v13h12z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: This action allows you to copy the editable version of the page you are currently working on. The copied version starts in a draft state as if it were a newly created page.
+- Archive: If a page isn't published, this action allows you to archive it. When a page is archived, by default, it doesn't appear in the page index, keeping the site structure clean.
+- Duplicate: This action allows you to copy the editable version of the page you're on. The copied version is in a _draft_ state.
 
-:::warning Warning
-Once the copy is complete, it takes you to the new page, it's important to save all changes before using this action so you don't lose important information.
+:: :warning Attention
+Once you complete the copy action, you'll be redirected to the new page, so it's important to save all changes before using this action to avoid losing important information.
 :::
 
 ## Create a page
@@ -61,7 +61,7 @@ To learn about the types of widgets you can add, see [Widgets](/en/platform/chan
 
 To learn more about content pages, see [Content Page](/en/platform/channels/pages.html#content-page)
 
-**Main action**: The green button in the upper right. This button can take different forms:
+**Main action: ** This is the green button at the top right. This button can take different forms:
 
 - Save: Allows you to save all changes made to the page.
 - Send to review: If Team Review is enabled, and all changes have been saved, this action will allow you to submit the page for review and assign reviewers.
@@ -73,15 +73,15 @@ To learn more about content pages, see [Content Page](/en/platform/channels/page
 * If a page has children, you can only archive it if all of its child pages are archived.
 :::
 
-**Secondary Actions**:
+**Secondary Actions: **
 - Force publish: If you are a site administrator, then you have the option to publish pages at any time, including skipping the team review process.
 - Unpublish: If the page is published, then you will see this action and can unpublish the page.
 
 <img src="/assets/img/platform/page-builder.png" alt="The page builder screen">
 
-The central grid is the place where you can position your widgets. You can move widgets back and forth using the _drag-and-drop_ functionality by dragging them from the <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M7 19v-2h2v2H7m4 0v-2h2v2h-2m4 0v-2h2v2h-2m-8-4v-2h2v2H7m4 0v-2h2v2h-2m4 0v-2h2v2h-2m-8-4V9h2v2H7m4 0V9h2v2h-2m4 0V9h2v2h-2M7 7V5h2v2H7m4 0V5h2v2h-2m4 0V5h2v2h-2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg> icon.
+The central grid is where you can position your widgets. You can move widgets back and forth using the _drag-and-drop_ functionality.
 
-In the right side section you will find three tabs:
+In the right side section there are three tabs:
 
 - Add Widgets: allows you to select widgets from a list and add them to the grid.
 - Edit Widget: allows you to change different properties and filters for each widget.
@@ -89,19 +89,19 @@ In the right side section you will find three tabs:
 
 ## Widget Page
 
-Here you can customize your page using preset widgets from the following list: 
+Here you can customize your page using preset widgets from the following list:
 
 
-- **HTML**: Allows you to enter HTML and CSS code without validations. While markup, styling, and templating are allowed in HTML widgets, scripting is not. If you need to include Javascript, you should create a [custom widget](/en/platform/channels/widgets.html).
-- **Rich text**: Allows you to make use of a rich text editor, in which you can write and edit text and swap to a code view to check or modify the HTML directly.
+- **HTML: ** Allows you to enter HTML and CSS code without validations. It will not allow you to enter Javascript code.
+- **Rich Text: ** It will allow you to make use of a rich text editor, in which you can format the text and switch between the code view and rich text.
 :::warning Warning
 The rich text widget has an automatic formatter, so the code you write in the code view may be affected.
 :::
-- **Content List**: Displays a list of Content entries using filters by space, type, language, tags, and category. To modify what these widgets look like, you must do so from the Widgets section in [Templates](/en/platform/channels/templates.html).
-- **Content featured**: Displays a list of entries as “hero” images in a carousel.
-- **Custom**: Clicking this displays a list of all custom widgets that you have created and published in the Widget Builder.
+- **Content listing: ** Show content listings using filters by space, type, language, tags, and category. To modify how these widgets look, you must do so in the Widgets section in [Templates] (/es/platform/channels/templates.html).
+- **Featured Content: ** Shows a list of entries as “hero” images in a carousel.
+- **Custom: ** You'll find a list of all the widgets you've created and published in the widget builder.
 
-Once you have selected a widget in the middle section, the focus will be shifted to the side tab, where you can find different widget configuration options and if you select a custom widget, you will find a link to go directly to its edit view in [widget builder](/en/platform/channels/widgets.html) with a list of the variables that the widget is using. If you want to overwrite the value of a particular variable for that instance of the widget on that page, you need to select the checkbox to the left of the variable and change the value. 
+Once you have selected a widget in the central section, the focus will go to the side tab, where you can find different configuration options for the widget and if you select a custom widget, you will find a link to go directly to its editing view in [widget builder] (/es/platform/channels/widgets.html) and the list of variables that the widget is using. If you want to overwrite the value of a particular variable for that instance of the widget on that page, you must select the checkbox to the left of the variable and change the value it takes.
 
 ### Settings
 
@@ -157,7 +157,7 @@ Modyo has reserved paths for the pages, so you cannot use these as paths for you
 
 ## Content Page
 
-Display the [entries](/en/platform/content/entries) of your [content types](/en/platform/content/types) from a single page using content pages.
+Display the [entries] (/en/platform/content/entries) of your [content types] (/en/platform/content/types) from a single page using content pages.
 
 ### Prerequisites
 
@@ -170,7 +170,7 @@ In order to display content on a site, you must meet certain conditions:
 You can freely choose the name of each view, regardless of the space and content type you choose. You have to keep in mind that it is required to have an entry published in this site language in order to see content in these views.
 :::
 
-These pages are composed of two sections **Index** and **Show**. 
+These pages are comprised of two sections **Index** and **Show**.
 
 ### Index
 
@@ -178,9 +178,9 @@ The index page will display the list of all entries in the content type. Here yo
 
 #### Edit
 
-- **Enable Entry Index**: Disabled by default. The path it takes is the name given to the page when it was created. If this option is disabled, only **Show** pages will be accessible. Users attempting to access will be shown a 404 error.
-- **Layout**: The Layout template that is loaded for the Index.
-- **Custom Meta Tag**: Add custom meta tags to optimize index SEO. This meta tag will only be uploaded for the Index, not for the Show. You can also use Liquid to load dynamic meta tags.
+- **Enable Entry Index: ** Disabled by default. The path it takes is the name given to the page when it was created. If this option is disabled, only the **Show** pages will be accessible and if you try to access it, you will see a 404 error.
+- **Layout: ** The Layout template you are going to load for the Index.
+- **Custom Meta Tag: ** Add custom meta tags to optimize the SEO of the index. This meta tag will only be loaded for the Index, not for the Show. You can also use Liquid to load dynamic meta tags.
 
 ### Show
 
@@ -188,8 +188,8 @@ The tab where you define what dynamic entries will look like. Here you can selec
 
 #### Edit:
 
-- **Layout**: The Layout template that is loaded for the Show.
-- **Custom Meta Tag**: Add custom meta tags to optimize the SEO of the Show. This meta tag will only be uploaded for the Show, not for the Index. You can also use Liquid to load dynamic meta tags.
+- **Layout: ** The Layout template you are going to upload for the Show.
+- **Custom Meta Tag: ** Add custom meta tags to optimize the show's SEO. This meta tag will only be loaded for the Show, not for the Index. You can also use Liquid to load dynamic meta tags.
 
 A basic example of Liquid+HTML code that you can use in **Show** is:
 
@@ -256,7 +256,7 @@ To add a new meta tag to your site, follow these steps:
 1. Expand **Site settings** and click **SEO**.
 1. In the Custom Meta Tags section, click **+ New meta tag**.
 
-On the screen that appears, you have the option to choose between different meta tags and assign them a value. This value can be dynamic if Liquid is used. If you activate the **Replicate meta tag on pages** option, a meta tag will be created in the Properties section of all your pages. 
+On the screen that appears, you have the option to choose between different meta tags and assign them a value. This value can be dynamic if Liquid is used. If you activate the **Replicate meta tag on pages** option, a meta tag will be created in the Properties section of all your pages.
 
 As part of the `base` Template, we include the `seo` Snippet which contains the information needed to print the values of the meta tags depending on whether it is a Site, a Page, or a Entry.
 
