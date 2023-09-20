@@ -33,7 +33,7 @@ By activating SSO within Modyo, delegating user authentication to the system you
 The Modyo platform supports delegation to SSO systems in two main ways:
 
 1. For administrator users with access to the Web console.
-2. Towards end users through the configurations present in the [user realms] (/en/platform/customers/realms).
+2. For end users through the configurations present in the [user realms] (/en/platform/customers/realms).
 
 Both forms of integration are independent of each other, so you can define specific topologies for each customer, for example: Azure AD (SAML) for administrators, KeyCloak (OIDC) for the realm of users with access to the transactional application, Azure AD (OIDC) for the realm of agents with access to the internal sales application.
 
