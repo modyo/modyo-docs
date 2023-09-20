@@ -19,7 +19,7 @@ Dynamic Framework facilitates this process by providing a solid, predefined foun
 In the context of Dynamic Framework, a theme is based on its CSS variable system, which allows you to easily modify predefined styles to create a custom theme.
 
 With a theme we can get:
-- **Visual consistency: ** By ensuring that all elements of the application follow a consistent style, thus improving the user experience.
+- **Visual consistency:** By ensuring that all elements of the application follow a consistent style, thus improving the user experience.
 - **Effective customization: ** Adjusting specific variables and properties that allow an easy and quick adaptation of the application style, aligning it with brand identity and design requirements.
 - **Development efficiency: ** Through a strong foundation that saves time and effort in creating styles from scratch. In addition, with the right architecture, global changes can be implemented quickly.
 - **Scalability: ** Theme customization facilitates scalable and adaptable development for different projects and requirements.
