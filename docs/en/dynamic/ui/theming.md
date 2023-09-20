@@ -26,7 +26,7 @@ With a theme we can get:
 
 ### Structure of a Theme
 
-- **Global variables: ** In addition to the variables provided by the Bootstrap library, which is used as a base, Dynamic Framework adds an additional set of global CSS variables to the `_variables.css` file. These variables control different aspects such as colors, typography, spacing, font sizes and more, which will modify all components.
+- **Global variables:** In addition to the variables provided by the Bootstrap library, which is used as a base, Dynamic Framework adds an additional set of global CSS variables to the `_variables.css` file. These variables control different aspects such as colors, typography, spacing, font sizes and more, which will modify all components.
 - **Overwriting variables: ** To customize the framework, you can overwrite global variables. By modifying these variables, you change the styles throughout the library that are based on them.
 
 The variables are organized into categories such as colors, typography, spacing and borders, allowing you to identify which variables are available and modify them according to your needs. For example, to change the main colors, modify the `$firstary` variable with the new color value.
