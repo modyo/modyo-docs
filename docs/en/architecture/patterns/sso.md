@@ -23,7 +23,7 @@ It's important to note that, if not implemented correctly, SSO can present secur
 
 SSO in Modyo delegates authentication to a central system, making it easier to manage users and enforce centralized security policies. It can be implemented in two ways:
 
-1. By using the [SSO component] (/es/connect/components/infrastructure.html #single -sign-on-esso) of [Modyo Connect] (/es/connect).
+1. By using the [SSO component] (/en/connect/components/infrastructure.html#single-sign-on-sso) of [Modyo Connect] (/en/connect).
 2. Through integration with a customer's SSO system.
 
 Both options benefit from the platform's ability to integrate with standards such as OpenID Connect (OIDC), SAML, Azure AD, Google, OAuth2, among others.
