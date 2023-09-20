@@ -44,7 +44,7 @@ search: true
 
 <Badge text="Content" type="content" vertical="middle"/>
 
-* Adds sanitizer for the SVG type images
+* Adds sanitizer for SVG type images
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
