@@ -59,7 +59,7 @@ Para integrar el inicio de sesión con SAML en Modyo, necesitas los siguientes d
 - **Nombre del servicio**: El nombre que se mostrará en el botón de inicio de sesión.
 - **Issuer**: Identificador de la aplicación del IDP. En algunos servicios es requerido agregar el prefijo `spn`:
 (Por ejemplo: `spn:13e4ff44-b0c9-4618-b305-2171a24b07f5`).
-- **IDP SSO del URL destino**: La URL a la cual se envía la solicitud de autenticación. Esto está en el proveedor de identidad.
+- **IDP SSO del URL destino**: La URL a la cual se envía la solicitud de autenticación. Esto lo puedes encontrar en el proveedor de identidad.
 - **Parámetros de tiempo de ejecución del IDP SSO del URL destino**: Parámetros opcionales para completar el flujo.
 - **IDP Cert**: El certificado del proveedor de identidad en formato PEM. Esto tiene prioridad sobre la opción de huella digital.
 - **Huella dactilar del certificado IDP**: La huella digital SHA1 del certificado público del proveedor de identidad.
