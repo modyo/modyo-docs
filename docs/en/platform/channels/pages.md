@@ -18,7 +18,7 @@ In the edit view, you will see a bar across the top, a central grid in the middl
 
 In the top bar, you can find different actions and information:
 
-**Title: ** It's at the top left, and indicates the name of the page you're modifying. To the right of the name, you'll find the current status of the page. These can be “Draft”, “In Review”, “Approved”, “Pending Changes”, “Published”. To learn more about these states, you can check out the [Versioning and Team Review] section (/es/platform/core/key-concepts.html).
+**Title**: It is located in the upper left side and indicates the name of the page you are modifying. On the right side of the name, you can see the current state of the page. The state will either be "Draft", "Under review", "Approved", "Pending changes", or "Published". To learn more about these states, review the [versioning and team review](/en/platform/core/key-concepts.html) section.
 
 **Date of publication: ** If the page has been published, it will indicate the date of the last publication.
 
