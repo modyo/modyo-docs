@@ -13,7 +13,7 @@ Benefits of using SSO:
 - **Reduces technical support:** Decreases the number of passwords that users must remember, reducing the need for password reset requests and related problems, which the technical support team must address.
 - **Improves security:** Centralizes authentication, making it easier to monitor and manage access to multiple applications. Users can focus on creating a strong password; also, SSO solutions often include robust security features, such as two-factor authentication.
 - **Save time and increase productivity:** Users can quickly access all the apps they need without signing in to each one separately.
-- **Simplifies administration:** For IT administrators, implementing SSO allows you to manage a set of credentials per user instead of managing access to each application individually.
+- **Simplifies administration:** For IT administrators, implementing SSO allows them to manage a set of credentials per user instead of managing access to each application individually.
 
 :: :danger Security
 It's important to note that, if not implemented correctly, SSO can present security risks. For example, if a user's SSO credentials are compromised, an attacker could gain access to all the applications to which the user has access. Therefore, it's crucial to implement strong security measures, such as two-factor authentication and strong password policies.
