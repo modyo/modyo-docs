@@ -37,8 +37,8 @@ Modyo platform supports delegation to SSO systems in two main ways:
 
 Both forms of integration are independent of each other, so you can define specific topologies for each customer, for example: Azure AD (SAML) for administrators, KeyCloak (OIDC) for the realm of users with access to the transactional application, Azure AD (OIDC) for the realm of agents with access to the internal sales application.
 
-:: :warning Session Times
-When a user is unsubscribed from SSO or from the source system, the changes in Modyo may not be immediately reflected in the next authentication attempt. This may take an additional time during which the deleted user still has access to the system. To avoid this, we recommend using session expiration times in accordance with company security requirements or implementing advanced session term flows, such as Single Logout.
+:::warning Session Times
+When a user is unsubscribed from SSO or from the source system, these changes in Modyo may not be immediately reflected in the next authentication attempt. This may take additional time, during which the deleted user still has access to the system. To avoid this, we recommend using session expiration times in accordance with company security requirements or implementing advanced session term flows, such as Single Logout.
 :::
 
 
