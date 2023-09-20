@@ -94,7 +94,7 @@ In the right side section, you will see a bar that changes according to the item
         - mailto:info@example.com?subject=subject&amp;cc=cc@example.com
 - **Open in a new tab:** Adds the attribute `target='blank'` to the HTML element of the menu item, so that when you click it, it opens in a new tab.
 - **Private:** Makes the selected item visible only when there is an active user session on the site.
-- **Segments: ** If there are segments created, you can also segment this item so that users can see this menu item only when they have an active session and that they are also within the selected segments.
+- **Segments:** If there are segments created, you can also segment this item so that users can see this menu item only when they have an active session and that they are also within the selected segments.
 
 ## Menu examples
 
