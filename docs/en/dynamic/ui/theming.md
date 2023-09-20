@@ -7,7 +7,7 @@ In developing user experiences, the look and feel of an application plays a cruc
 
 Dynamic Framework offers two levels of customization:
 - **Themes:** A list of variables that define the style of the components and that constitute what we understand as a _theme_.
-- **Components: ** Customizing Dynamic Framework components through parameters, properties, or custom markup.
+- **Components:** Customizing Dynamic Framework components through parameters, properties, or custom markup.
 
 In this section, we'll dive deeper into the first level. We will explain the concept of the topic and the variables that make it possible.
 
