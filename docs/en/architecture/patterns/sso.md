@@ -4,7 +4,7 @@ search: true
 
 # Single Sign On
 
-Single Sign-On (SSO), or single sign-on, is an authentication and access method that allows users to log in to multiple systems and applications with a single authentication credential, eliminating the need to remember and provide separate credentials for each application.
+Single Sign-On (SSO), or Single Sign-On, is an authentication and access method that allows users to log in to multiple systems and applications with a single authentication credential, eliminating the need to remember and provide separate credentials for each application.
 
 SSO is based on a system of trust between service providers and a centralized identity provider. When logging in to the identity provider, it generates a session token that authenticates the user to the applications and services that make up the SSO environment, allowing the user to move between services without performing additional authentications.
 
