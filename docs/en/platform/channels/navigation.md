@@ -100,7 +100,7 @@ In the right side section, you will see a bar that changes according to the item
 
 The general snippet `menu` can meet the basic needs of a site by displaying a menu in the form of a dropdown. The most important parts of this snippet and how it can be extended to more functionality are explained below.
 
-The first lines encapsulated by <span v-pre>{{}} or {%%}</span> belong to Liquid and are used to assign variables or start a loop to display menu information.
+The first lines encapsulated by <span v-pre>{{ }} or {% %}</span> belong to Liquid and are used to assign variables or start a loop to display menu information.
 
 The following list describes the important variables for the menu:
 
