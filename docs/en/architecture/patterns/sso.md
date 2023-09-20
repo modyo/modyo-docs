@@ -9,7 +9,7 @@ Single Sign-On (SSO), or Single Sign-On, is an authentication and access method 
 SSO is based on a system of trust between service providers and a centralized identity provider. When logging in to the identity provider, it generates a session token that authenticates the user to the applications and services that make up the SSO environment, allowing the user to move between services without performing additional authentications.
 
 Benefits of using SSO:
-- **Improves the user experience: ** Simplifies the login process, making access to applications faster, especially in corporate environments with numerous applications.
+- **Improves the user experience:** Simplifies the login process, streamlining access to applications, especially in corporate environments with numerous applications.
 - **Reduces technical support: ** It decreases the number of passwords that users must remember, reducing the need for password reset requests and related problems, which the technical support team must address.
 - **Improves security: ** Centralizes authentication, making it easier to monitor and manage access to multiple applications. Users can focus on creating a strong password, and in addition, SSO solutions often include robust security features, such as two-factor authentication.
 - **Save time and increase productivity: ** Users can quickly access all the apps they need without signing in to each one separately.
