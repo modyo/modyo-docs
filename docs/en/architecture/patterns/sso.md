@@ -10,7 +10,7 @@ SSO is based on a system of trust between service providers and a centralized id
 
 Benefits of using SSO:
 - **Improves the user experience:** Simplifies the login process, streamlining access to applications, especially in corporate environments with numerous applications.
-- **Reduces technical support: ** It decreases the number of passwords that users must remember, reducing the need for password reset requests and related problems, which the technical support team must address.
+- **Reduces technical support:** Decreases the number of passwords that users must remember, reducing the need for password reset requests and related problems, which the technical support team must address.
 - **Improves security: ** Centralizes authentication, making it easier to monitor and manage access to multiple applications. Users can focus on creating a strong password, and in addition, SSO solutions often include robust security features, such as two-factor authentication.
 - **Save time and increase productivity: ** Users can quickly access all the apps they need without signing in to each one separately.
 - **Simplifies administration: ** For IT administrators, implementing SSO allows you to manage a set of credentials per user instead of managing access to each application individually.
