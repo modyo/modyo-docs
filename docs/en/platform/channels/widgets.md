@@ -29,7 +29,7 @@ On the right, you'll find the following actions:
 You can preview the widgets as a user without a session or a user with a Modyo session. For this, it is recommended to open or close the Modyo session on the site before entering preview mode. This is because logging in or out of preview mode can result in security errors such as _x-frame-options_ or _mixed-content_, depending on the site's custom domain and SSL settings.
 :::
 
-**Differences: ** It takes you to the [difference view] (/es/platform/core/key-concepts.html), where you can compare the changes between multiple versions of the widget.
+**Differences:** Takes you to the [difference view] (/en/platform/core/key-concepts.html), where you can compare the changes between multiple versions of the widget.
 
 By default, you start by comparing the published version with the editable version. Use the version selectors to compare with backup versions. If the icon does not appear, it means that there is no published version of this widget.
 
