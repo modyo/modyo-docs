@@ -4,12 +4,17 @@ search: true
 
 # Aprovisionamiento de grupos y usuarios de SCIM con Microsoft Azure AD
 
-El sistema de gestión de identidades multidominio (SCIM) establece una comunicación estandarizada entre Modyo y Microsoft Azure para intercambiar datos de usuarios y grupos de forma automática, permitiéndote:
-- Crear usuarios en un sistema y aprovisionarlos en otro.
-- Actualizar datos de usuario en un sistema y reflejar los cambios en todos.
-- Eliminar usuarios en un sistema y desaprovisionarlos en todos.
+El sistema de gestión de identidades multidominio (SCIM) establece una comunicación estandarizada entre Modyo y Microsoft Azure para sincronizar automáticamente datos de usuarios y grupos. Esto te permite:
+- Crear usuarios en Microsoft Azure y aprovisionarlos automáticamente en Modyo.
+- Actualizar datos de usuario en Microsoft Azure y reflejar los cambios en Modyo.
+- Eliminar usuarios en Microsoft Azure y desaprovisionarlos en Modyo
 
 Esta integración de grupos y usuarios entre Modyo y Microsoft Azure Active Directory con la API SCIM de Modyo, simplifica la gestión de usuarios en diferentes sistemas y reduce errores, favoreciendo una administración eficiente.
+
+:::warning Atención
+La sincronización es unidireccional, lo que significa que los datos modificados en Modyo no afectarán los datos del usuario en Azure. Además, cualquier cambio realizado en Azure puede sobrescribir las modificaciones realizadas en Modyo.
+:::
+
 
 ### Paso 1: Crea tu aplicación en Azure Active Directory
 1. Accede al panel de administración de **Azure Active Directory**
@@ -68,7 +73,7 @@ Puedes confirmar que la configuración de tu mapeo es correcta siguiendo estos p
 :::tip Tip
 En el caso de grupos, no existe aprovisionamiento a petición por lo que, para probar la configuración de grupos, debes crear un usuario, agregarlo a un grupo y seleccionar **comenzar aprovisionamiento**.
 
-Esta tarea se ejecuta cada 45 minutos, por lo que debes esperar este tiempo para ver los cambios reflejados en la plataforma.
+Esta tarea se ejecuta cada 40 minutos, por lo que debes esperar este tiempo para ver los cambios reflejados en la plataforma.
 :::
 
 Una vez configurado correctamente, puedes agregar usuarios en Active Directory. A la vez, tus grupos existentes también serán aprovisionados.
