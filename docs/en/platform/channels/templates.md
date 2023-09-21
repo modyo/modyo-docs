@@ -181,7 +181,7 @@ For more information on the benefits and features of File Manager, go to [File M
 
 <img src="/assets/img/channels/template_builder/keywords.jpg" width="400" alt="Keyboard shortcuts inside the templates module">
 
-**Snippets: ** A list of all the snippets is displayed, along with the option to copy their reference code.
+**Snippets:** A list of all the snippets is displayed, along with the option to copy their reference code.
 
 <img src="/assets/img/channels/template_builder/snippets.jpg" width="300" alt="The list with all your custom snippets">
 
