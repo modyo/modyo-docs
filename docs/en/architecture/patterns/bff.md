@@ -10,7 +10,7 @@ In a traditional architecture, the backend of an application usually manages mul
 
 The BFF pattern solves this by adding a specific backend layer for each type of client or user interface. Each BFF acts as an intermediary between the frontend and the main backend, managing specific requests and responses for each customer. This personalizes the user experience and improves efficiency.
 
-Advantages of the BFF pattern:
+Advantages of the BFF model:
 
 - **Adaptability: ** It adapts to the needs of each customer and to the viewing needs, optimizing the user experience.
 - **Frontend independence: ** Frontend and backend teams can work independently and make changes without affecting the other components.
