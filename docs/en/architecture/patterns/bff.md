@@ -13,7 +13,7 @@ The BFF pattern solves this by adding a specific backend layer for each type of 
 Advantages of the BFF model:
 
 - **Adaptability:** It adapts to the needs of each customer and to visualization requirements, optimizing user experience.
-- **Frontend independence: ** Frontend and backend teams can work independently and make changes without affecting the other components.
+- **Frontend independence:** Frontend and backend teams can work independently and make changes without affecting the other components.
 - **Performance improvement: ** Optimizes data queries and responses for each customer, thus improving application performance.
 - **Ease of evolution: ** Simplifies the evolution and maintenance of the application by separating responsibilities. Changes can be made to a user interface without affecting other parts of the system.
 
