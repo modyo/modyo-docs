@@ -28,7 +28,7 @@ In the top bar, you can find different actions and information:
 You can preview the pages as a user without a session or a user with a Modyo session. For this, it is recommended to open or close the Modyo session on the site before entering preview mode. This is because logging in or out of preview mode can result in security errors such as _x-frame-options_ or _mixed-content_, depending on the site's custom domain and SSL settings.
 :::
 
-**Differences: ** By clicking on the differences icon, you access the differences view of the page, where you can select two versions to compare, allowing you to execute the actions [reset and rollback] (/es/platform/core/key-concepts.html #revertir -un-change)
+**Differences:** By clicking on the differences icon, you access the differences view of the page, where you can select two versions to compare, allowing you to execute the actions [reset and rollback] (/en/platform/core/key-concepts.html#reversing-a-change)
 
 :: :tip Tip
 If your page is in a _draft_ state, the difference icon will not appear, since there is nothing to compare the current editable version with. To learn more about the differences and supports, check out the [versioning] section (/es/platform/core/key-concepts.html #versionado)
