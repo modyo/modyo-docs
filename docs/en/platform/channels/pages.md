@@ -34,7 +34,7 @@ You can preview the pages as a user without a session or a user with a Modyo ses
 If your page is in a _draft_ state, the difference icon will not appear, since there is nothing to compare the current editable version with. To learn more about the differences and supports, check out the [versioning] section (/en/platform/core/key-concepts.html#versions)
 :::
 
-**Activity: ** Displays a sidebar that shows the activity associated with the page, such as modifications, posts and comments. At the bottom of this bar, you can type associated comments. If the page is under review, all assigned reviewers will receive a notification with the comment.
+**Activity:** Displays a sidebar that shows the activity associated with the page, such as modifications, posts and comments. At the bottom of this bar, you can type associated comments. If the page is under review, all assigned reviewers will receive a notification with the comment.
 
 **Other actions: **
 
