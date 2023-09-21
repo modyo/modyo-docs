@@ -185,7 +185,7 @@ For more information on the benefits and features of File Manager, go to [File M
 
 <img src="/assets/img/channels/template_builder/snippets.jpg" width="300" alt="The list with all your custom snippets">
 
-**Changes: ** A list of all the times and states in which you have done the “Save” action in this version. When you click on one of the sub-versions, you change the content of the template you are working on to that sub-version.
+**Changes:** A list of all the times and states in which you have done the “Save” action in this version. When you click on one of the sub-versions, you change the content of the template you are working on to that sub-version.
 
 <img src="/assets/img/channels/template_builder/changes.jpg" style="border: 1px solid #EEE" width="300" alt="The latest changes in your template">
 
