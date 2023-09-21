@@ -25,8 +25,8 @@ Along the **top bar**, on the left, you can see the widget name and current stat
 On the right, you'll find the following actions:
 **Preview:** Opens the preview of the editable version of the widget in a new tab.
 
-:: :warning Attention
-You can preview the widgets as a user without a session or a user with a Modyo session. For this, it is recommended to start or close the Modyo session on the site before entering preview mode. This is because logging in or out of preview mode can result in security errors such as _x-frame-options_ or _mixed-content_, depending on the site's custom domain and SSL settings.
+:::warning Attention
+You can preview the widgets as a user without a session or a user with a Modyo session. For this, it is recommended to open or close the Modyo session on the site before entering preview mode. This is because logging in or out of preview mode can result in security errors such as _x-frame-options_ or _mixed-content_, depending on the site's custom domain and SSL settings.
 :::
 
 **Differences: ** It takes you to the [difference view] (/es/platform/core/key-concepts.html), where you can compare the changes between multiple versions of the widget.
