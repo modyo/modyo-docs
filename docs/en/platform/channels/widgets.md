@@ -82,8 +82,8 @@ You can make use of Liquid in the Javascript, CSS, and HTML tabs in the widget b
 
 In the properties column you can see:
 
-- **Name: ** Allows you to change the name of the widget
-- **Tags: ** Allows you to add tags to a widget. Tags are for administrative use and are used to search and filter widgets so that they can be found quickly.
+- **Name:** Allows you to change the name of the widget
+- **Tags:** Allows you to add tags to a widget. Tags are for administrative use and are used to search and filter widgets so that they can be found quickly.
 - **Pages using this widget: ** You'll see a list of pages that are using this widget. While viewing pages in this list, you won't be able to unpublish or archive the widget.
 
 :: :warning Attention
