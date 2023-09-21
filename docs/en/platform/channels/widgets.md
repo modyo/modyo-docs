@@ -45,7 +45,7 @@ By default, you start by comparing the published version with the editable versi
 
 **Other main actions:**
 
-- **Unpublish: ** If the widget is published, you can take it out of production using this option.
+- **Unpublish:** If the widget is published, you can take it out of production using this option.
 - **Force publishing: ** If you're a site administrator, you can use this option to immediately publish a widget, even if Team Review is enabled.
 
 :::tip Tip
