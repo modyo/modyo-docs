@@ -84,7 +84,7 @@ In the properties column you can see:
 
 - **Name:** Allows you to change the name of the widget
 - **Tags:** Allows you to add tags to a widget. Tags are for administrative use and are used to search and filter widgets so that they can be found quickly.
-- **Pages using this widget: ** You'll see a list of pages that are using this widget. While viewing pages in this list, you won't be able to unpublish or archive the widget.
+- **Pages using this widget:** You'll see a list of pages that are using this widget. While viewing pages in this list, you won't be able to unpublish or archive the widget.
 
 :: :warning Attention
 If you delete a widget from a page and publish, you'll continue to see that page in this list because the widget is still referenced in the backrests of that page. From version 9.1.10 onward, you can unpublish any published widget, even if it's in use. Active references on pages will be inactive, so you won't see the widget on the site if you unpublished it. In addition, you can archive any widget that is not published, so that if there are still references on some pages of the widget that you want to archive, they will be deleted when the widget is archived.
