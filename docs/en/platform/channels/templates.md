@@ -206,7 +206,7 @@ Like every template, you can restore all the templates to their original version
 
 ## SEO
 
-SEO [(Search Engine Optimization)] (/es/platform/channels/sites.html #seo) is one of the most important topics of the site and content.
+SEO [(Search Engine Optimization)] (/en/platform/channels/sites.html #seo) is one of the most important topics of the site and content.
 
 In Modyo, there is a way to control the way search engines read your site and content, dynamically adding meta tags depending on the attributes you add to your pages and content.
 
