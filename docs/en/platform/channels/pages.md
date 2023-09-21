@@ -92,7 +92,7 @@ In the right side section there are three tabs:
 Here you can customize your page using preset widgets from the following list:
 
 
-- **HTML: ** Allows you to enter HTML and CSS code without validations. It will not allow you to enter Javascript code.
+- **HTML:** Allows you to enter HTML and CSS code without validations. It will not allow you to enter Javascript code.
 - **Rich Text: ** It will allow you to make use of a rich text editor, in which you can format the text and switch between the code view and rich text.
 :::warning Warning
 The rich text widget has an automatic formatter, so the code you write in the code view may be affected.
