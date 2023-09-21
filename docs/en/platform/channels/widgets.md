@@ -35,7 +35,7 @@ By default, you start by comparing the published version with the editable versi
 
 **Activity:** Allows you to display a side tab that shows the widget's activity and comments.
 
-**Other options: ** Allows you to archive and create a copy of the current widget.
+**Other options:** Allows you to archive and create a copy of the current widget.
 
 **Main button:**
 
