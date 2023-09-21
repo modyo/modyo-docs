@@ -43,7 +43,7 @@ By default, you start by comparing the published version with the editable versi
 - **Submit for review:**If team review is enabled, you can submit the widget for review and notify reviewers that the widget is ready to be reviewed.
 - **Publish:** Takes you to the [co-post] view (/en/platform/core/key-concepts.html#joint-review-and-publication) where you can publish your widgets.
 
-**Other main actions: **
+**Other main actions:**
 
 - **Unpublish: ** If the widget is published, you can take it out of production using this option.
 - **Force publishing: ** If you're a site administrator, you can use this option to immediately publish a widget, even if Team Review is enabled.
