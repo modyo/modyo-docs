@@ -201,8 +201,8 @@ To add a new language to the site, we simply create a **JSON** file in the `loca
 │   │   ├── pt-BR.json <-- nuevo idioma
 │   │   └── es-CL.json
 ```
-:: :warning Attention
-The structure of the language file must be a **json: ** object
+:::warning Attention
+The structure of the language file must be a **json:** object
 :::
 
 ### Form validation
