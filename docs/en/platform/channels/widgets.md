@@ -23,7 +23,7 @@ Along the **top bar**, on the left, you can see the widget name and current stat
 - **Approved:** This status appears when [team review] (/en/platform/core/key-concepts.html) is enabled and the review conditions for the item are met. When in this state, templates are ready to be published.
 
 On the right, you'll find the following actions:
-**Preview: ** Opens the preview of the editable version of the widget in a new tab.
+**Preview:** Opens the preview of the editable version of the widget in a new tab.
 
 :: :warning Attention
 You can preview the widgets as a user without a session or a user with a Modyo session. For this, it is recommended to start or close the Modyo session on the site before entering preview mode. This is because logging in or out of preview mode can result in security errors such as _x-frame-options_ or _mixed-content_, depending on the site's custom domain and SSL settings.
