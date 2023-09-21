@@ -101,7 +101,7 @@ The rich text widget has an automatic formatter, so the code you write in the co
 - **Featured Content:** Shows a list of entries as “hero” images in a carousel.
 - **Custom:** You'll find a list of all the widgets you've created and published in the widget builder.
 
-Once you have selected a widget in the central section, the focus will go to the side tab, where you can find different configuration options for the widget and if you select a custom widget, you will find a link to go directly to its editing view in [widget builder] (/es/platform/channels/widgets.html) and the list of variables that the widget is using. If you want to overwrite the value of a particular variable for that instance of the widget on that page, you must select the checkbox to the left of the variable and change the value it takes.
+Once you have selected a widget in the central section, the focus will go to the side tab, where you can find different configuration options for the widget and if you select a custom widget, you will find a link to go directly to its editing view in [widget builder] (/en/platform/channels/widgets.html) and the list of variables that the widget is using. If you want to overwrite the value of a particular variable for that instance of the widget on that page, you must select the checkbox to the left of the variable and change the value it takes.
 
 ### Settings
 
