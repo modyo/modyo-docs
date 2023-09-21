@@ -41,7 +41,7 @@ By default, you start by comparing the published version with the editable versi
 
 - **Save:** Saves current changes.
 - **Submit for review:**If team review is enabled, you can submit the widget for review and notify reviewers that the widget is ready to be reviewed.
-- **Publish: ** Takes you to the [co-post] view (/es/platform/core/key-concepts.html #revision -y-joint-post) where you can publish your widgets.
+- **Publish:** Takes you to the [co-post] view (/en/platform/core/key-concepts.html#joint-review-and-publication) where you can publish your widgets.
 
 **Other main actions: **
 
