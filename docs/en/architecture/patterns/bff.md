@@ -21,7 +21,7 @@ Advantages of the BFF model:
 ### Implementing BFF with Modyo
 
 You can implement BFF in Modyo in two ways:
-1. With APIs in [Modyo Connect] (/es/connect) to define lightweight microservices for integration with each customer's central systems, generating an API interface designed especially for the needs of the frontend. The APIs in Modyo Connect use the Amazon AWS [Amazon AWS] API Gateway technology (https://aws.amazon.com) and are integrated with [Single Sign On (SSO)] systems (/es/architecture/patterns/esso) for user authentication.
+1. With APIs in [Modyo Connect] (/en/connect) to define lightweight microservices for integration with each customer's central systems, generating an API interface designed especially for the needs of the frontend. The APIs in Modyo Connect use the Amazon AWS [Amazon AWS] API Gateway technology (https://aws.amazon.com) and are integrated with [Single Sign On (SSO)] systems (/en/architecture/patterns/sso) for user authentication.
 2. Using APIs provided by the customer or third parties. The [micro frontends] (/es/architecture/patterns/micro-frontend) on the platform access these APIs directly, with or without authentication, as required.
 
 
