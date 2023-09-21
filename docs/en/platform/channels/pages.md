@@ -61,7 +61,7 @@ To learn about the types of widgets you can add, see [Widgets](/en/platform/chan
 
 To learn more about content pages, see [Content Page](/en/platform/channels/pages.html#content-page)
 
-**Main action: ** This is the green button at the top right. This button can take different forms:
+**Main action:** This is the green button at the top right. This button can take different forms:
 
 - Save: Allows you to save all changes made to the page.
 - Send to review: If Team Review is enabled, and all changes have been saved, this action will allow you to submit the page for review and assign reviewers.
