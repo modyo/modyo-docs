@@ -22,7 +22,7 @@ In the top bar, you can find different actions and information:
 
 **Date of publication:** If the page has been published, it will indicate the date of the last publication.
 
-**Preview: ** This icon allows you to open a new tab with Preview mode to view the changes that have been made to the page without having to publish it.
+**Preview:** This icon allows you to open a new tab with Preview mode to view the changes that have been made to the page without having to publish it.
 
 :: :warning Attention
 You can preview the pages as a user without a session or a user with a Modyo session. For this, it is recommended to start or close the Modyo session on the site before entering preview mode. This is because logging in or out of preview mode can result in security errors such as _x-frame-options_ or _mixed-content_, depending on the site's custom domain and SSL settings.
