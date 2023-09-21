@@ -73,7 +73,7 @@ To learn more about content pages, see [Content Page](/en/platform/channels/page
 * If a page has children, you can only archive it if all of its child pages are archived.
 :::
 
-**Secondary Actions: **
+**Secondary Actions:**
 - Force publish: If you are a site administrator, then you have the option to publish pages at any time, including skipping the team review process.
 - Unpublish: If the page is published, then you will see this action and can unpublish the page.
 
