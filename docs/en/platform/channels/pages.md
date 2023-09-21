@@ -24,8 +24,8 @@ In the top bar, you can find different actions and information:
 
 **Preview:** This icon allows you to open a new tab with Preview mode to view the changes that have been made to the page without having to publish it.
 
-:: :warning Attention
-You can preview the pages as a user without a session or a user with a Modyo session. For this, it is recommended to start or close the Modyo session on the site before entering preview mode. This is because logging in or out of preview mode can result in security errors such as _x-frame-options_ or _mixed-content_, depending on the site's custom domain and SSL settings.
+:::warning Attention
+You can preview the pages as a user without a session or a user with a Modyo session. For this, it is recommended to open or close the Modyo session on the site before entering preview mode. This is because logging in or out of preview mode can result in security errors such as _x-frame-options_ or _mixed-content_, depending on the site's custom domain and SSL settings.
 :::
 
 **Differences: ** By clicking on the differences icon, you access the differences view of the page, where you can select two versions to compare, allowing you to execute the actions [reset and rollback] (/es/platform/core/key-concepts.html #revertir -un-change)
