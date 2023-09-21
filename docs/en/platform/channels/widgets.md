@@ -12,41 +12,41 @@ When you enter the Widgets section of the site, you can see a list of all the wi
 
 In the widget editing view, you can see three areas: the top action bar, the main work area and the properties column on the right.
 
-<img src="/assets/img/platform/widget-builder.png" alt="The widget builder module"> 
+<img src="/assets/img/platform/widget-builder.png" alt="The widget builder module">
 
 Along the **top bar**, on the left, you can see the widget name and current status:
 
-- **Draft**: This status means a widget is new or is unpublished.
-- **Published**: This status means a widget is published and the version in the editor contains no unpublished changes.
-- **Pending changes**: This status means there is a published version of a widget, and the editor contains unpublished, pending changes.
-- **In review**: This status means [team review](/en/platform/core/key-concepts.html) is enabled and this widget is in review.
-- **Approved**: This status means [team review](/en/platform/core/key-concepts.html) is enabled and a widget passed the review process. You can now publish this widget.
+- **Draft: ** This status appears when a widget has just been created or when it has been unpublished.
+- **Published:** This status appears after you have made a publication and when the editable and published versions are the same.
+- **Pending changes: ** This status appears if there is already a published version, but there are changes pending publication in an editable version.
+- **In review: ** This status appears when [team review] (/es/platform/core/key-concepts.html) is enabled and the editable version has been submitted for review.
+- **Approved: ** This status appears when [team review] (/es/platform/core/key-concepts.html) is enabled and the review conditions for the item are met. If you are in this state, the templates are ready to be published.
 
-On the right, these are the different actions:
-**Preview** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5a5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: This allows you to open the preview of the widget's editable version in a new tab.
+On the right, you'll find the following actions:
+**Preview: ** Opens the preview of the editable version of the widget in a new tab.
 
-:::warning Warning
-You can preview widgets as a user without a session or with a Modyo session. For this, it's recommended to log in or out of Modyo from your site before entering preview mode, because if you log out in preview mode you might encounter security errors like _x-frame-options_ or _mixed-content_, depending on your site's SSL and custom domain settings.
+:: :warning Attention
+You can preview the widgets as a user without a session or a user with a Modyo session. For this, it is recommended to start or close the Modyo session on the site before entering preview mode. This is because logging in or out of preview mode can result in security errors such as _x-frame-options_ or _mixed-content_, depending on the site's custom domain and SSL settings.
 :::
 
-**Differences** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/> </svg>: By clicking on this icon, you will go to the [difference view](/en/platform/core/key-concepts.html), where you can compare the changes between multiple versions of the widget.
+**Differences: ** It takes you to the [difference view] (/es/platform/core/key-concepts.html), where you can compare the changes between multiple versions of the widget.
 
-By default, you see the differences between the published version and the editable version you are currently working on, but you can use the selectors to compare older backed up versions as well.
+By default, you start by comparing the published version with the editable version. Use the version selectors to compare with backup versions. If the icon does not appear, it means that there is no published version of this widget.
 
-**Activity** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M12 23a1 1 0 0 1-1-1v-3H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4.1l-3.7 3.71c-.2.18-.44.29-.7.29H12m1-6v3.08L16.08 17H21V7H7v10h6M3 15H1V3a2 2 0 0 1 2-2h16v2H3v12m6-6h10v2H9V9m0 4h8v2H9v-2z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg>: This displays a sidebar with the widget's activity history and comments. At the bottom of the sidebar, you can submit comments. Next to each activity, click on "see detail" to show the complete information of an activity log.
+**Activity: ** Allows you to display a side tab that shows the widget's activity and comments.
 
-**Other options** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M12 16a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /> </svg>: Archive and create a copy of the current widget.
+**Other options: ** Allows you to archive and create a copy of the current widget.
 
 **Main button:**
 
-- **Save**: Saves current changes.
-- **Send to review**: Changes the widget status to "In review". You can continue making changes, but each change sends a notification to all assigned reviewers via email.
-- **Publish**: Takes you to the [joint publication](/en/platform/core/key-concepts.html) view where you can publish your widgets.
+- **Save: ** Save current changes.
+- **Submit for review: **If team review is enabled, you can submit the widget for review and notify reviewers that the widget is ready to be reviewed.
+- **Publish: ** Takes you to the [co-post] view (/es/platform/core/key-concepts.html #revision -y-joint-post) where you can publish your widgets.
 
-**Other main actions**<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M7.41 8.58L12 13.17l4.59-4.59L18 10l-6 6l-6-6l1.41-1.42z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>
+**Other main actions: **
 
-- **Unpublish**: If the widget is published, you can take it out of production using this option.
-- **Force Publish**: Admin team members have the option to forcibly publish widgets, circumventing the established reviewal process.
+- **Unpublish: ** If the widget is published, you can take it out of production using this option.
+- **Force publishing: ** If you're a site administrator, you can use this option to immediately publish a widget, even if Team Review is enabled.
 
 :::tip Tip
 Only unpublished widgets can be archived.
@@ -64,11 +64,11 @@ To learn more about publication lifecycles in Modyo, review the [Versioning](/en
 
 In the main work area you can see the following:
 
-- **Code Tabs**: A JavaScript, CSS, and HTML tab is available to build widgets.
-- **Asset manager**: Opens a modal that lists all account files and provides filters and searching. Clicking the image preview or file name opens an editor where you can resize/crop the image, and change attributes such as the title or alternate text. Selecting the copy icon provides you with a URL you can paste, and you can select the "Upload files" tab to upload files. You can learn more about By clicking on it, you will raise the file management modal, where you can filter and search the files you have uploaded in the [File manager](/en/platform/content/asset-manager.html) and copy its URL to use them in your widget. You can also upload new files from this modal.
-- **Shortcuts helper**: A small pop-up that displays useful keyboard shortcuts for the Widget Builder.
-- **Snippets**: Displays a list of snippets available from the [Template Builder](/en/platform/channels/templates.html#snippets) and copies their code to reference them in the widget.
-- **Changes**: If changes have been saved and not published, it will display this list of all the times saved each file (JS, CSS, and HTML). Clicking on a sub-version changes the contents of the tab to the content of the subversion that was clicked.
+- **Code Tabs: ** A JavaScript, CSS, and HTML tab is available for building widgets.
+- **File Manager: ** When you click, the file management mode is lifted, where you can filter and search for the files you have uploaded to the [File Manager] (/es/platform/content/asset-manager.html) and copy their URL to use them in the widget. You can also upload new files from this modal.
+- **Keyboard Shortcuts: ** Shows a small informational window with some useful keyboard shortcuts.
+- **Snippets: ** Shows a list of the snippets available from the [Template Builder] (/es/platform/channels/templates.html #snippets) and their code is copied to reference them in the widget.
+- **Changes: ** If changes have been saved and have not been published, it will display this list of all the times saved each of the files (JS, CSS, and HTML). Clicking on a sub-version changes the content of the tab to the content of the sub-version that was clicked.
 
 :::tip Tip
 To avoid losing any changes you currently have, be sure to save before jumping between save states. This way, you can always return to the most recently saved version in the **Changes** list.
@@ -80,14 +80,14 @@ If you publish a new version of your widget, the **Changes** list resets and era
 
 You can make use of Liquid in the Javascript, CSS, and HTML tabs in the widget builder. For more information check [the associated Liquid documentation](/en/platform/channels/liquid-markup.html).
 
-The Properties on the right contains the following fields:
+In the properties column you can see:
 
-- **Name**: Use this field to update the name of your widget.
-- **Tags**: Use this field to add tags to your widget. Tagging a widget makes it easier to search and filter. As your digital channels scale in size and complexity, good tagging helps keep your channel management well organized.
-- **Pages using this widget**: You will see a list of pages that are using this widget. While viewing pages in this listing, you will not be able to download or archive the widget.
+- **Name: ** Allows you to change the name of the widget
+- **Tags: ** Allows you to add tags to a widget. Tags are for administrative use and are used to search and filter widgets so that they can be found quickly.
+- **Pages using this widget: ** You'll see a list of pages that are using this widget. While viewing pages in this list, you won't be able to unpublish or archive the widget.
 
-:::warning Warning
-If you delete a widget from a page and publish, you will still see that page in this listing since the widget is still referenced in the backups of that page. From version 9.1.10 onwards, you can unpublish any published widget, even if it is in use. Active references on pages will become inactive, so you will not see the widget on the site if you unpublished it. Also, you will be able to archive any unpublished widget, so if there are still references on some pages of the widget you want to archive, they will be removed when you archive the widget.
+:: :warning Attention
+If you delete a widget from a page and publish, you'll continue to see that page in this list because the widget is still referenced in the backrests of that page. From version 9.1.10 onward, you can unpublish any published widget, even if it's in use. Active references on pages will be inactive, so you won't see the widget on the site if you unpublished it. In addition, you can archive any widget that is not published, so that if there are still references on some pages of the widget that you want to archive, they will be deleted when the widget is archived.
 :::
 
 ## Create a Widget
@@ -109,7 +109,7 @@ In the variables tab you can see the list of variables created in the widget, an
 
 Next to the name of each variable you will see an "overwritten" indicator if the variable also exists at the account or site level in the [global variables](/en/platform/core/key-concepts.html#global-variables).
 
-When modifying a variable, you can choose the name and default value that the variable will take in the widget. In addition, you can decide if you want to make a list of values available so that when you instantiate the widget on a page, you can choose from these different values.
+By modifying a variable, you can decide the name and default value that that variable will take in the widget. In addition, you can decide if you want to provide a list of values so that when you instantiate the widget on a page, you can choose between these different values.
 
 When you use the list of possible values, you must leave each value on a new line, and leave a `*` in front of the value you want to be taken as the default.
 
@@ -201,8 +201,8 @@ To add a new language to the site, we simply create a **JSON** file in the `loca
 │   │   ├── pt-BR.json <-- nuevo idioma
 │   │   └── es-CL.json
 ```
-:::warning Warning
-The structure of the language file must be a **json** object:
+:: :warning Attention
+The structure of the language file must be a **json: ** object
 :::
 
 ### Form validation
@@ -258,7 +258,7 @@ Follow these steps to create a snippet with Liquid variables:
 3. In your site menu, click **Templates** and select **Snippets**.
 4. Add a new **Custom Snippet**. For this example use `liquid2js_js`, but it can be any other name.
 
-<img src="/assets/img/widgets/template_snippets.png" alt="Image displaying where to find template snippets.">   
+<img src="/assets/img/widgets/template_snippets.png" alt="Image displaying where to find template snippets.">
 
 5. Open the javascript section and paste the code:
 ```js
@@ -269,7 +269,7 @@ Follow these steps to create a snippet with Liquid variables:
      },
    };
 ```
-In this snippet we created an object called _liquid_ with scope `window` that contains the language and the request path of the site. From our Widget we can now access this data using the object created in the previous step. For example, if you want to get the site's languages from the Widget, you can do so with: 
+In this snippet, we created an object called _liquid_ with the scope of `window` that contains the language and the request path of the site. From our Widget we can now access this data using the object created in the previous step. For example, if you want to get the site's languages from the Widget, you can do it with:
 
    ```js
    const languages = window.liquid.lang;
