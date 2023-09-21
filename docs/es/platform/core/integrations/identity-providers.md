@@ -49,28 +49,28 @@ Además de los valores necesarios, puedes configurar algunos datos extra para co
 
 ### Requisitos
 
-Los siguientes atributos deben ser configurados desde el Proveedor de Identidad para asegurar una conexión exitosa entre SAML y Modyo Platform:
+Para lograr una conexión exitosa entre SAML y Modyo, configura los siguientes atributos en el Proveedor de Identidad:
 
 - **givenName** o (En la versión 9.2.22 en adelante también puede ser `givenname`). Corresponde al nombre del usuario.
 - **sn** (En la versión 9.2.22 en adelante también puede ser `surname`). Corresponde al apellido del usuario.
 
-Para poder integrar un inicio de sesión con SAML en Modyo, necesitarás los siguientes datos de tu proveedor de identidad:
+Para integrar el inicio de sesión con SAML en Modyo, necesitas los siguientes datos de tu proveedor de identidad:
 
-- **Nombre del servicio**: Nombre del botón que se mostrará en la vista de login.
-- **Issuer**: Identificador de la aplicación del IDP. Algunos servicios es requerido agregar el prefijo `spn`:  
+- **Nombre del servicio**: El nombre que se mostrará en el botón de inicio de sesión.
+- **Issuer**: Identificador de la aplicación del IDP. En algunos servicios es requerido agregar el prefijo `spn`:
 (Por ejemplo: `spn:13e4ff44-b0c9-4618-b305-2171a24b07f5`).
-
-- **Parámetros de tiempo de ejecución del IDP SSO del URL destino**: Parametros opcionales para completar el flujo.
-- **IDP Cert**: Certificado del proveedor de identidad en formato PEM. Esto tendrá prioridad sobre la opción de huella digital.
+- **IDP SSO del URL destino**: La URL a la cual se envía la solicitud de autenticación. Esto lo puedes encontrar en el proveedor de identidad.
+- **Parámetros de tiempo de ejecución del IDP SSO del URL destino**: Parámetros opcionales para completar el flujo.
+- **IDP Cert**: El certificado del proveedor de identidad en formato PEM. Esto tiene prioridad sobre la opción de huella digital.
 - **Huella dactilar del certificado IDP**: La huella digital SHA1 del certificado público del proveedor de identidad.
-- **Formato del identificador de nombre**: Se utiliza durante el SSO iniciado por el proveedor de servicio (SP-initiated SSO). Describe el formato del nombre de usuario requerido por esta aplicación. Consulte http://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf sección 8.3 para otras opciones. Tenga en cuenta que es posible que el proveedor de identidades no permita todas las opciones. Si no se especifica, el Proveedor puede elegir el formato de identificador de nombre utilizado en la respuesta. (comunmente el email, como por ejemplo.: `urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress`)
+- **Formato del identificador de nombre**: Se utiliza durante el SSO iniciado por el proveedor de servicio (SP-initiated SSO). Describe el formato del nombre de usuario requerido por la aplicación. Consulta la sección 8.3 de http://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf para otras opciones. Es posible que el proveedor de identidades no permita todas las opciones; si no se especifica, el proveedor puede elegir el formato de identificador de nombre utilizado en la respuesta; comúnmente el correo electrónico, como por ejemplo: `urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress`
 - **URL de Entity ID**: URL provisto por Modyo donde se encuentra el identificador de la aplicación:
    * Admin: `test.modyo.com/admin/auth/saml/metadata`
    * Realms: para configuraciones con realms usa: `test.modyo.com/realms/<tu_uid_del_realm>/auth/saml/metadata`
-- **URL del aserción de servicio de consumidor**: URL provisto por Modyo donde el proveedor de identidad redirige el flujo.
+- **URL de la aserción de servicio de consumidor**: La URL proporcionada por Modyo a la que el proveedor de identidad redirige el flujo.
    * Admin: `test.modyo.com/admin/auth/saml/callback`
-   * Realms: para configuraciones con realms usa: `test.modyo.com/realms/<tu_uid_del_realm>/auth/saml/callback`
-- **(Opcional) URL de destino de inicio de sesión único de IDP**: URL de inicio de sesión del proveedor de identidad.
+   * Realms: para configuraciones con reinos utiliza: `test.modyo.com/realms/<tu_uid_del_realm>/auth/saml/callback`
+- **(Opcional) URL de destino de inicio de sesión único de IDP**: La URL de inicio de sesión del proveedor de identidad.
 
 ## OAuth2
 
@@ -162,7 +162,7 @@ Keycloak es un identity provider certificado de OpenID Connect que implementa la
 
 ### Configurar Keycloak en Modyo Platform
 
-Después de configurar Keycloak, ahora tienes que completar la integración en Modyo Platform. 
+Después de configurar Keycloak, ahora tienes que completar la integración en Modyo Platform.
 
 1. Accede a **Configuración/Configuración de reino > Proveedores de Identidad > OpenID Connect** y completa **Client ID** y **Secret** con el nombre del cliente y las credenciales que aparecen en la tab **Credentials** del cliente en Keycloak.
 2. En Issuer, rellena con la URL del realm, por ejemplo, para el realm my-realm la URL es `https://keycloak.example.com/auth/realms/my-realm`.
