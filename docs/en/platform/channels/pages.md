@@ -41,7 +41,7 @@ If your page is in a _draft_ state, the difference icon will not appear, since t
 - Archive: If a page isn't published, this action allows you to archive it. When a page is archived, by default, it doesn't appear in the page index, keeping the site structure clean.
 - Duplicate: This action allows you to copy the editable version of the page you're on. The copied version is in a _draft_ state.
 
-:: :warning Attention
+:::warning Attention
 Once you complete the copy action, you'll be redirected to the new page, so it's important to save all changes before using this action to avoid losing important information.
 :::
 
