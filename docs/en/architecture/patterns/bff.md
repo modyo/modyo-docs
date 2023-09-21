@@ -25,8 +25,8 @@ You can implement BFF in Modyo in two ways:
 2. Using APIs provided by the customer or by third parties. The [micro frontends] (/en/architecture/patterns/micro-frontend) on the platform access these APIs directly, with or without authentication, as required.
 
 
-:: :tip API decoupling
-The Modyo architecture emphasizes that the frontend and backend layers are decoupled. In this way, the APIs are independent and can be deployed in different infrastructures, connecting via HTTP.
+:::tip API decoupling
+Modyo architecture emphasizes that the frontend and backend layers are decoupled. In this way, APIs are independent and can be deployed in different infrastructures, connecting via HTTP.
 :::
 
 
