@@ -189,7 +189,7 @@ The tab where you define what dynamic entries will look like. Here you can selec
 #### Edit:
 
 - **Layout:** The Layout template you are going to upload for the Show.
-- **Custom Meta Tag: ** Add custom meta tags to optimize the show's SEO. This meta tag will only be loaded for the Show, not for the Index. You can also use Liquid to load dynamic meta tags.
+- **Custom Meta Tag:** Add custom meta tags to optimize the show's SEO. This meta tag will only be loaded for the Show, not for the Index. You can also use Liquid to load dynamic meta tags.
 
 A basic example of Liquid+HTML code that you can use in **Show** is:
 
