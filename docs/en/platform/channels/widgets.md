@@ -33,7 +33,7 @@ You can preview the widgets as a user without a session or a user with a Modyo s
 
 By default, you start by comparing the published version with the editable version. Use the version selectors to compare with backup versions. If the icon does not appear, it means that there is no published version of this widget.
 
-**Activity: ** Allows you to display a side tab that shows the widget's activity and comments.
+**Activity:** Allows you to display a side tab that shows the widget's activity and comments.
 
 **Other options: ** Allows you to archive and create a copy of the current widget.
 
