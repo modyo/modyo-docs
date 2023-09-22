@@ -1,31 +1,32 @@
 # Integrations
 
-The integration into the customer's core systems can be done in two ways. The first one through [Modyo Connect](/en/connect) and the second one directly to APIs controlled directly by the customer.
+Integration with the customer's central systems can be carried out in two ways:
+
+1. Through Modyo Connect
+2. By connecting directly to the APIs controlled by the customer.
+
 
 #### APIs deployed in Modyo Connect
 
-[Modyo Connect](/en/connect) is a managed infrastructure service provided by Modyo on which the different integration templates available within the Dynamic Framework can be directly deployed, as shown in the following figure:
+[Modyo Connect] (/es/connect) is a managed infrastructure service, provided by Modyo, on which you can directly deploy the integration templates available in the Dynamic Framework, as shown in the following figure:
 
 <img src="/assets/img/dynamic/dynamic_architecture.png" alt="Dynamic structure" style="margin-top: 40px; max-width: 700px;" />
 
 #### APIs provided by the Customer
 
-The Micro Frontends available in Dynamic Framework can be directly integrated into the APIs of each client, increasing the flexibility of how they can be used.
+You can integrate the Micro Frontends available in Dynamic Framework directly into each customer's APIs, increasing flexibility in their use. There are two options to achieve this:
 
 <img src="/assets/img/dynamic/dynamic_architecture2.png" alt="Dynamic structure" style="margin-top: 40px; max-width: 700px;" />
 
-To do this, there are two options:
+1. Modify the code of the communication intermediary component, adjusting the API calls and the results to the Dynamic Framework structure. This follows the [repository architecture pattern] (https://martinfowler.com/eaaCatalog/repository.html), but alters the source of the data.
+2. Make direct calls to the APIs from the Micro Frontends, thus eliminating the intermediate component provided by Modyo.
 
-- Altering the code of the communication intermediary component, adjusting the API calls and the results to the Dynamic Framework structure, following the [repository architecture pattern](https://martinfowler.com/eaaCatalog/repository.html), but altering the source of the data.
-- Make calls to the APIs directly from the Micro Frontends, thus eliminating the intermediary component provided by Modyo.
-
-:::warning Integration APIs
-The integration microservice templates offered as part of the initiative can also be deployed within the customer's infrastructure. To do this, certain settings in your code base may be necessary.
+:: :warning Integration APIs
+The integration microservices templates offered as part of the initiative can also be deployed within the customer's infrastructure. This may require adjustments to the codebase.
 :::
 
+The Dynamic APIs are designed to implement a reference model that integrates Dynamic Widgets with the ecosystem of systems that are part of the financial solutions we seek to adopt.
 
-The Dynamic APIs seek to implement a reference model to integrate Dynamic Widgets with the ecosystem of systems that are part of the financial solutions we seek to adopt.
+These Dynamic APIs are developed using Modyo Connect and are based on the Java Spring Boot standard as the main language. This makes it easier to adapt and operate in the future because of the large community that supports these technologies.
 
-The Dynamic APIs will be developed based on Modyo Connect, using the Java Spring Boot standard as the base language, which reduces future adaptation and operation efforts thanks to the enormous community that these technologies have.
-
-The Dynamic APIs follow the REST standard and contain a documentation portal based on Swagger or similar for developers, in which the different endpoints and their usage can be explored with examples.
+Dynamic's APIs follow the REST standard and provide developers with a documentation portal based on Swagger or another similar format. This allows you to explore the different endpoints and their way of invoking them through examples.
