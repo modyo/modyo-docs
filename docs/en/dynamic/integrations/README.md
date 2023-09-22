@@ -14,7 +14,7 @@ Integration with the customer's central systems can be carried out in two ways:
 
 #### APIs provided by the Customer
 
-You can integrate the Micro Frontends available in Dynamic Framework directly into each customer's APIs, increasing flexibility in their use. There are two options to achieve this:
+You can integrate the available Micro Frontends in Dynamic Framework directly into each customer's APIs, increasing flexibility in their use. There are two options to achieve this:
 
 <img src="/assets/img/dynamic/dynamic_architecture2.png" alt="Dynamic structure" style="margin-top: 40px; max-width: 700px;" />
 
