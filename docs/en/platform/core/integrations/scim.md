@@ -78,7 +78,7 @@ This task is executed every 40 minutes, so you must wait this time to see the ch
 
 Once properly configured, you can add users to Active Directory. At the same time, your existing groups will also be provisioned.
 
-:: :warning Attention
+:::warning Attention
 Username and email are required fields to generate users. Without them, user provisioning will fail.
 :::
 
