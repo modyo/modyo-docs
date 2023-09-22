@@ -29,7 +29,7 @@ The synchronization is unidirectional, meaning that data changed in Modyo will n
 3. Click on **Introduction**
 4. Select **Automatic Provisioning**
 5. In the admin credentials, add the following:
-    - Tenant URL: The URL of your SCIM-compatible web server, for example: https://tudominio.modyo.cloud/api/admin/scim
+    - Tenant URL: The URL of your SCIM-compatible web server, for example: https://yourdomain.modyo.cloud/api/admin/scim
     - Secret Token: The Modyo administrative user's access token generated for the authentication credential. Detailed token information can be found in the [Management API] section (https://docs.modyo.com/es/platform/core/api.html#bearer-token)
 6. In the Settings section, you can customize the sending of notifications and select the accidental deletion threshold. For more information about these configurations, review the [Azure] documentation (https://learn.microsoft.com/es-es/azure/active-directory/app-provisioning/user-provisioning)
 7. Click **Test Settings** to verify the connection
