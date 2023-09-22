@@ -70,8 +70,8 @@ You can confirm that your mapping configuration is correct by following these st
 2. Select **On-Demand Provisioning**
 3. Confirm that the process is running without showing errors
 
-:: :tip Tip
-In the case of groups, there is no on-demand provisioning, so to test the group configuration, you must create a user, add it to a group and select **begin provisioning**.
+:::tip Tip
+For groups, there is no on-demand provisioning, in order to test the group configuration, you must create a user, add it to a group and select **begin provisioning**.
 
 This task is executed every 40 minutes, so you must wait this time to see the changes reflected in the platform.
 :::
