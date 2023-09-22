@@ -2,42 +2,56 @@
 search: true
 ---
 
-# Provisionamiento SCIM con Microsoft Azure AD
+# Aprovisionamiento de grupos y usuarios de SCIM con Microsoft Azure AD
 
-Logra integrar tus grupos y usuarios entre Modyo y Microsoft Azure Active Directory usando la API compatible con SCIM que Modyo provee.
+El sistema de gestión de identidades multidominio (SCIM) establece una comunicación estandarizada entre Modyo y Microsoft Azure para sincronizar automáticamente datos de usuarios y grupos. Esto te permite:
+- Crear usuarios en Microsoft Azure y aprovisionarlos automáticamente en Modyo.
+- Actualizar datos de usuario en Microsoft Azure y reflejar los cambios en Modyo.
+- Eliminar usuarios en Microsoft Azure y desaprovisionarlos en Modyo
 
-#### Para crear tu aplicación en Azure Active Directory, sigue estos pasos:
+Esta integración de grupos y usuarios entre Modyo y Microsoft Azure Active Directory con la API SCIM de Modyo, simplifica la gestión de usuarios en diferentes sistemas y reduce errores, favoreciendo una administración eficiente.
 
-1. Desde el panel de administración de Azure Active Directory, haz click en **Enterprise Applications**.
-2. Haz click en **Create your own application** y elegir la siguiente configuración:
+:::warning Atención
+La sincronización es unidireccional, lo que significa que los datos modificados en Modyo no afectarán los datos del usuario en Azure. Además, cualquier cambio realizado en Azure puede sobrescribir las modificaciones realizadas en Modyo.
+:::
 
-<img src="/assets/img/platform/scim-1-createapp.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" alt="Image showing the Browsw Azure AD Gallery window."/>
 
-3. Escribe un nombre para tu aplicación y elige **Integrate any other application you don't find in the gallery**. Haz click en **Create**.
+### Paso 1: Crea tu aplicación en Azure Active Directory
+1. Accede al panel de administración de **Azure Active Directory**
+1. En el menú lateral selecciona **Enterprise Application**
+1. Selecciona la opción **Crea tu propia aplicación** en la parte superior de la galería de Azure
+1. Nombra tu aplicación y selecciona la opción **Integrar cualquier otra aplicación que no se encuentre en la página** como objetivo de la aplicación
+1. Haz click en **Crear**
 
-4. En el menú lateral, selecciona **Provisioning** y después haz click en **Get Started**.
-
-<img src="/assets/img/platform/scim-2-provision.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" alt="Image showing the Provisioning window in Azure AD."/>
-
+### Paso 2: Aprovisionamiento
+1. Accede a tu aplicación en Azure
+2. En el menú lateral selecciona **Aprovisamiento**
+3. Da click en **Introducción**
+4. Selecciona aprovisionamiento **Automático**
 5. En las credenciales de administración, agrega lo siguiente:
-	- Provisioning mode: Automatic
-	- Tenant URL: _URL de tu web server compatible con SCIM_ (e.g. https://miServidor.com/scim)
-	- Secret Token: _Client Secret_ (El secreto que fue generado para la credencial de autenticación)
+	- URL de inquilino: El URL de tu servidor de web compatible con SCIM, por ejemplo: https://tudominio.modyo.cloud/api/admin/scim
+	- Secret Token: El token de acceso del usuario administrativo de Modyo generado para la credencial de autenticación. Puedes encontrar información detallada de tokens en la sección de [API de administración](https://docs.modyo.com/es/platform/core/api.html#bearer-token)
+6. En la sección de Configuración puedes personalizar el envío de notificaciones y seleccionar el umbral de eliminación accidental. Para más información acerca de estas configuraciones, revisa la documentación de [Azure](https://learn.microsoft.com/es-es/azure/active-directory/app-provisioning/user-provisioning)
+7. Da click en **Probar configuración** para verificar la conexión
+8. Una vez confirmada la configuración da click en **Guardar**
+8. Si la configuración y guardado es correcto, debajo del botón de probar conexión podrás configurar la sección de **Asignaciones**
+9. Selecciona una asignación para proceder al paso de asignación de atributos
 
-<img src="/assets/img/platform/scim-3-testprovision.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" alt="Image showing the Provisioning window with the Admin Credentials."/>
-
-6. En el apartado de **Attribute Mapping**, agrega un nuevo grupo. El objecto Grupo podrá realizar todas las acciones: **Create, Update, Delete** y tendrá el siguiente mapeo:
-
+### Paso 3: Asignación de atributos
+#### Grupos
+1. Selecciona la asignación **Provision Azure Active Directory Groups** para configurar sus atributos.
+2. Selecciona las acciones del objeto de destino: Crear, actualizar y/ eliminar. Confirma que el mapeo sea:
 
 | Azure Active Directory Attribute | customApp Attribute |
 | ------------------------------- | ------------------ |
 | displayName | displayName |
 | objectId | externalId |
 | members| members |
+3. Da click en **Guardar**
 
-<img src="/assets/img/platform/scim-4-attributemapping.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" alt="Image showing the Attribute Mapping window filled out with the required Attributes."/>
-
-7. Agrega un nuevo objeto de usuarios. El objecto Usuario podrá realizar las acciones: **Create** y **Update** y tendrá el siguiente mapeo:
+#### Usuarios
+1. Selecciona la asignación **Provision Azure Active Directory Users** para configurar los atributos de tus grupos.
+2. Selecciona únicamente las acciones: Crear y actualizar. Asegúrate que el mapeo sea:
 
 | Azure Active Directory Attribute | customApp Attribute |
 | ------------------------------- | ------------------ |
@@ -47,35 +61,26 @@ Logra integrar tus grupos y usuarios entre Modyo y Microsoft Azure Active Direct
 | givenName| name.givenName|
 | surname  |name.familyName|
 | Join(" ",[givenName],[surname]| name.formatted|
+3. Da click en **Guardar**
+4. Una vez hecho lo anterior, en la sección de Aprovisionamiento, en las opciones de configuración tendrás ya la opción de **Ámbito**, selecciona **Sincronizar todos los usuarios del grupo**
+5. Da click en **Guardar**
 
-<img src="/assets/img/platform/scim-5-attributemapping.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" alt="Image showing the Attribute Mapping window with the User object filled."/>
-
-8. En **Settings**, activa el Scope **Sync all Users and Groups**.
-
-<img src="/assets/img/platform/scim-6-provisioning.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" alt="Image showing the Attribute Mapping with the Sync Settings added."/>
-
-9. En el menú principal de Active Directory, selecciona Usuarios. 
-10. Haz click en **Nuevo usuario**. Es importante crear un correo electrónico para el usuario ya que esto es requerido por Modyo.
-
-<img src="/assets/img/platform/scim-7-allusers.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" alt="Image showing the All Users window."/>
-
-12. En el menú principal de Active Directory, selecciona Grupos. 
-13. Haz click en **Nuevo grupo**.
-
-<img src="/assets/img/platform/scim-8-allgroups.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" alt="Image showing the All Groups window."/>
-
-14. En la pantalla principal de tu aplicación nueva, haz click en **Provisioning**.
-
-> La ruta puede ser algo como All services > Default Directory > Enterprise Applications > La nueva app
+Puedes confirmar que la configuración de tu mapeo es correcta siguiendo estos pasos:
+1. En Azure ve a aprovisionamiento
+2. Selecciona **Aprovisionamiento a petición**
+3. Confirma que el proceso corre sin mostrar errores
 
 :::tip Tip
-Para verificar que el aprovisionamiento funciona, haz click en **Provision on demand** y selecciona un usuario.
+En el caso de grupos, no existe aprovisionamiento a petición por lo que, para probar la configuración de grupos, debes crear un usuario, agregarlo a un grupo y seleccionar **comenzar aprovisionamiento**.
 
-Para grupos, no existe provisionamiento "on demand", así que hay que crear un usuario agregarlo a un grupo y poner "start provisioning", esta tarea se ejecuta cada 45 minutos, por lo que se debería esperar este tiempo y ver reflejado los cambios en la plataforma.
+Esta tarea se ejecuta cada 40 minutos, por lo que debes esperar este tiempo para ver los cambios reflejados en la plataforma.
 :::
 
-<img src="/assets/img/platform/scim-9-ondemand.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" alt="Image showing the Provision On Demand."/>
+Una vez configurado correctamente, puedes agregar usuarios en Active Directory. A la vez, tus grupos existentes también serán aprovisionados.
 
+:::warning Atención
+Nombre del usuario y correo electrónico son campos requeridos para generar usuarios. Sin ellos, fallará el aprovisionamiento del usuario.
+:::
 
 
 ### Referencias
