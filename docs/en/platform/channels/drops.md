@@ -50,7 +50,7 @@ Object of type asset. Contains the information relevant to a file within the [As
 
 ### Audio
 
-The Audio drop is a subclass that inherits the same attributes as Asset. **audio_asset** can be used and replaced instead of asset. 
+The Audio drop is a subclass that inherits the same attributes as Asset. You can use **audio_asset** and replace it instead of asset.
 
 The following attributes are inherited from [Asset](#asset):
 
@@ -58,7 +58,7 @@ The following attributes are inherited from [Asset](#asset):
 
 ### Asset
 
-The File drop is a subclass that inherits the same attributes as Asset. **file_asset** can be used and replaced instead of asset. 
+The File drop is a subclass that inherits the same attributes as Asset. You can use **file_asset** and replace it instead of asset.
 
 The following attributes are inherited from [Asset](#asset):
 
@@ -78,7 +78,7 @@ The following attributes are inherited from [Asset](#asset):
 
 ### Video
 
-The Video drop is a subclass that inherits the same attributes as Asset. You can use **video_asset** and replace it instead of asset. 
+The Video drop is a subclass that inherits the same attributes as Asset. You can use **video_asset** and replace it instead of asset.
 
 | Description  | Example  |
 |---|---|
@@ -105,17 +105,18 @@ Create dynamic content in your spaces using Entries. In this object you have acc
 
 | Description  | Example  |
 |---|---|
-| **entry.space** The name of the space associated with the entry.  | ```space1``` |
+| **entry.space** The name of the space associated with the entry. | ```space1``` |
 | **entry.category** The category path for this entry. | ```category-1/category-2``` |
 | **entry.category_name** The category name for this entry. | ```category 2``` |
 | **entry.category_slug** This entry's category slug. | ```category-2``` |
 | **entry.type** The type of the entry. | ``type2`` |
 | **entry.type_uid** The unique id of the entry type. | ``type2`` |
 | **entry.tags** String arrangement for the tags in this entry. | ```tag1, tag2``` |
-| **entry.account_url** The account url | ```https://test.miModyo.com``` |
-| **entry.url** Canonical URL of the entry | ```https://test.miModyo.com/entry``` |
-| **[entry.author](#user)** The user object author of the entry | ```tag1, tag2``` |
-| **entry.meta** The metadata object for the entry.  | This object has the following attributes: uuid, published_at, locale, slug, created_at, updated_at, unpublished_at, private, private |
+| **entry.excerpt** The excerpt associated with the entry. | ```This is the excerpt of a very cool entry``` |
+| **entry.account_url** The account url. | ```https://test.miModyo.com``` |
+| **entry.url** Canonical URL of the entry. | ```https://test.miModyo.com/entry``` |
+| ** [entry.author] (#usuario)** The object of the user who wrote the post. | ```tag1, tag2``` |
+| **entry.meta** The metadata object for the entry. | This object has the following attributes: uuid, published_at, locale, slug, created_at, updated_at, unpublished_at, private, private. |
 | **[entry.fields](#field)** Array with objects from the fields in the entry. |  |
 
 ## Field
@@ -168,7 +169,7 @@ These drops allow you to obtain information through Liquid for questions on a fo
 
 | Description  | Example  |
 |---|---|
-| **question.allow_alternatives? ** Boolean to check if the question accepts alternatives.  | ```false``` |
+| **question.allow_alternatives?** Boolean to check if the question accepts alternatives.  | ```false``` |
 | **question.alternatives** Array with alternatives type objects.  | |
 | **question.allow_alternatives?** Boolean to check if the question accepts alternatives.  | ```false``` |
 | **[question.form](#form)** Form-type object.  | |
@@ -177,7 +178,7 @@ These drops allow you to obtain information through Liquid for questions on a fo
 
 ## Grid
 
-Contains the definition of a Grid on a Page. 
+The definition contains a Grid on a Page.
 
 
 | Description  | Example  |
@@ -396,7 +397,7 @@ These drops are very useful when you want to make dynamic pages using Liquid.
 
 ## Request
 
-These drops allow you to obtain information when making a request. 
+These drops allow you to obtain information when making a request.
 
 | Description  | Example  |
 |---|---|
