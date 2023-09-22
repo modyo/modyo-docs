@@ -11,7 +11,7 @@ The Multi-Domain Identity Management System (SCIM) establishes standardized comm
 
 This integration of groups and users between Modyo and Microsoft Azure Active Directory with the Modyo SCIM API simplifies the management of users in different systems and reduces errors, promoting efficient administration.
 
-:: :warning Attention
+:::warning Attention
 The synchronization is unidirectional, meaning that data changed in Modyo will not affect user data in Azure. In addition, any changes made in Azure can overwrite the changes made in Modyo.
 :::
 
