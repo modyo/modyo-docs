@@ -9,7 +9,7 @@ search: true
 Modyo Commons es una librería que simplifica tareas comunes y repetitivas al desplegar microservicios en Modyo Connect. Sus principales características incluyen:
 - Soporte para generación dinámica de OpenAPI para incorporar definiciones en la API Gateway de AWS
 - Soporte para verificación de identidad de peticiones a la API Gateway de AWS
-- Soporte para control y estandarización de gestión de bitácoras de registro
+- Soporte para control y estandarización de gestión de logs
 - Soporte para la estandarización del control de error y propagación de eventos al frontend
 
 
