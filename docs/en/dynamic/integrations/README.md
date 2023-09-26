@@ -14,14 +14,14 @@ Integration with the customer's central systems can be carried out in two ways:
 
 #### APIs provided by the Customer
 
-You can integrate the available Micro Frontends in Dynamic Framework directly into each customer's APIs, increasing flexibility in their use. There are two options to achieve this:
+You can integrate the Micro Frontends available in Dynamic Framework directly into each customer's APIs, increasing flexibility in their use. There are two options to achieve this:
 
 <img src="/assets/img/dynamic/dynamic_architecture2.png" alt="Dynamic structure" style="margin-top: 40px; max-width: 700px;" />
 
 1. Modify the code of the communication intermediary component, adjusting the API calls and the results to the Dynamic Framework structure. This follows the [repository architecture pattern] (https://martinfowler.com/eaaCatalog/repository.html), but alters the source of the data.
 2. Make direct calls to the APIs from the Micro Frontends, thus eliminating the intermediate component provided by Modyo.
 
-:::warning Integration APIs
+:: :warning Integration APIs
 The integration microservices templates offered as part of the initiative can also be deployed within the customer's infrastructure. This may require adjustments to the codebase.
 :::
 
