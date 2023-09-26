@@ -21,7 +21,7 @@ You can integrate the Micro Frontends available in Dynamic Framework directly in
 1. Modify the code of the communication intermediary component, adjusting the API calls and the results to the Dynamic Framework structure. This follows the [repository architecture pattern] (https://martinfowler.com/eaaCatalog/repository.html), but alters the source of the data.
 2. Make direct calls to the APIs from the Micro Frontends, thus eliminating the intermediate component provided by Modyo.
 
-:: :warning Integration APIs
+:::warning Integration APIs
 The integration microservices templates offered as part of the initiative can also be deployed within the customer's infrastructure. This may require adjustments to the codebase.
 :::
 
