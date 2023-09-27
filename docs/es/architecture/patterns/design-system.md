@@ -10,7 +10,6 @@ Un sistema de diseño ofrece elementos reutilizables, como componentes, patrones
 
 Su finalidad principal es mejorar la eficiencia y la consistencia en el proceso de diseño y desarrollo. Para lograrlo, promueve la colaboración entre equipos y evita la necesidad de crear todo desde cero en cada proyecto. Asimismo, fortalece la alineación entre los equipos de diseño, desarrollo y producto.
 
-
 ### Ventajas y Desventajas del uso de Sistemas de Diseño
 
 Ventajas:
