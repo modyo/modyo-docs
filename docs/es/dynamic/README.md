@@ -83,7 +83,7 @@ Si quieres contribuir a Dynamic Framework como usuario, hay varias formas en las
 - Sugiere mejoras en la redacción de la documentación.
 - Participa en la comunidad, únete a nuestros webinars y eventos digitales periódicos.
 
-Para comunicarte con el equipo, reportar un problema o sugerir una funcionalidad, puedes hacerlo a través de nuestro  [Centro de Soporte de Modyo](https://support.modyo.com).
+Para comunicarte con el equipo, reportar un problema o sugerir una funcionalidad, puedes hacerlo a través de nuestro [Centro de Soporte de Modyo](https://support.modyo.com).
 
 
 ### Soporte
