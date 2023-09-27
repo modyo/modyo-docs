@@ -4,71 +4,83 @@ search: true
 
 # Sistema de Diseño
 
-Un sistema de diseño es una metodología y conjunto de recursos que permite crear y mantener de manera coherente y eficiente la apariencia visual y la experiencia de usuario de una marca, producto o servicio. El sistema de diseño proporciona una serie de elementos reutilizables, como componentes, patrones, guías y principios de diseño, que se utilizan para construir interfaces y mantener una identidad visual consistente en todas las aplicaciones y plataformas.
+Un sistema de diseño es un conjunto de recursos y metodologías que tiene como principal objetivo facilitar la creación y mantenimiento coherente de la apariencia visual y la experiencia del usuario en una marca, producto o servicio.
 
-El objetivo principal de un sistema de diseño es mejorar la eficiencia y la consistencia en el proceso de diseño y desarrollo, al tiempo que garantiza una experiencia de usuario unificada y de alta calidad. Al utilizar componentes y patrones predefinidos, los diseñadores y desarrolladores pueden acelerar el proceso de creación de interfaces, evitando la necesidad de diseñar y desarrollar desde cero en cada ocasión.
+Un sistema de diseño ofrece elementos reutilizables, como componentes, patrones y guías, que aseguran una identidad visual uniforme en todas las aplicaciones y plataformas.
 
-Además, un sistema de diseño promueve la colaboración y la alineación entre los equipos de diseño, desarrollo y producto, al proporcionar una base común de elementos y directrices que todos pueden seguir. Esto ayuda a mantener una coherencia visual y de interacción en todas las aplicaciones y contribuye a construir una identidad de marca sólida y reconocible.
+Su finalidad principal es mejorar la eficiencia y la consistencia en el proceso de diseño y desarrollo. Para lograrlo, promueve la colaboración entre equipos y evita la necesidad de crear todo desde cero en cada proyecto. Asimismo, fortalece la alineación entre los equipos de diseño, desarrollo y producto.
+
 
 ### Ventajas y Desventajas del uso de Sistemas de Diseño
 
-Un sistema de diseño puede ofrecer múltiples beneficios, pero también tiene sus propios desafíos. Aquí están algunas de las ventajas y desventajas:
-
 Ventajas:
 
-- **Consistencia**: Un sistema de diseño ayuda a mantener la consistencia en múltiples productos y plataformas al proporcionar un conjunto estándar de componentes y estilos.
-- **Eficiencia**: Los equipos pueden trabajar más rápido al reutilizar los componentes existentes, en lugar de diseñar y codificar elementos desde cero para cada nuevo proyecto.
+- **Consistencia**: Un sistema de diseño mantiene la consistencia en múltiples productos y plataformas al proporcionar un conjunto estándar de componentes y estilos.
+- **Eficiencia**: Los equipos pueden trabajar más rápido al reutilizar componentes existentes, en lugar de diseñar y codificar elementos desde cero para cada nuevo proyecto.
 - **Colaboración**: Fomenta una mejor colaboración entre los diseñadores y desarrolladores, al proporcionar un lenguaje visual común y directrices claras para la implementación.
-- **Usabilidad y Experiencia de Usuario**: La consistencia proporcionada por un sistema de diseño puede conducir a una mejor experiencia de usuario, ya que los usuarios no tienen que aprender nuevas interfaces para cada producto.
-- **Mantenibilidad**: Las actualizaciones y las correcciones de errores son más fáciles de implementar a través de la base de código cuando se utilizan componentes estandarizados.
+- **Usabilidad y experiencia de usuario**: La consistencia proporcionada por un sistema de diseño mejora la experiencia de usuario, evitando la necesidad de aprender nuevas interfaces para cada producto.
+- **Mantenibilidad**: Las actualizaciones y las correcciones de errores son más fáciles de implementar al utilizar componentes estandarizados.
 
 Desventajas:
 
-- **Tiempo y Recursos**: Crear y mantener un sistema de diseño puede requerir una inversión significativa de tiempo y recursos, especialmente en las primeras etapas.
-- **Flexibilidad Limitada**: Los sistemas de diseño pueden ser restrictivos y limitar la creatividad al requerir el uso de componentes estándar.
-- **Adopción y Resistencia al Cambio**: Puede ser un desafío lograr que todos los miembros del equipo adopten y sigan consistentemente el sistema de diseño.
-- **Mantenimiento**: A medida que los productos y las necesidades de los usuarios evolucionan, el sistema de diseño también debe evolucionar. Esto requiere un compromiso continuo con el mantenimiento y la actualización del sistema.
-- **Sobre-estandarización**: Si no se maneja adecuadamente, podría haber una sobre-estandarización, lo que podría llevar a productos que se ven y se sienten demasiado similares, y carecen de individualidad.
+- **Tiempo y recursos**: Crear y mantener un sistema de diseño requiere una inversión significativa de tiempo y recursos, especialmente en las primeras etapas.
+- **Flexibilidad limitada**: Los sistemas de diseño pueden ser restrictivos y limitar la creatividad al requerir el uso de componentes estándar.
+- **Adopción y resistencia al cambio**: Puede ser un desafío lograr que todos los miembros del equipo adopten y sigan consistentemente el sistema de diseño.
+- **Mantenibilidad**: El sistema de diseño debe evolucionar con los cambios en productos y necesidades de los usuarios, lo que requiere un compromiso continuo con su mantenimiento y actualización.
+- **Sobre-estandarización**: Llevado al extremo, puede llevar a productos que se ven y se sienten demasiado similares, sin individualidad.
 
 Un sistema de diseño bien implementado y mantenido puede ofrecer más ventajas que desventajas. Sin embargo, requiere una inversión continua y el compromiso del equipo para garantizar su éxito a largo plazo.
 
 ### Tipos de Sistema de Diseño
 
-Los sistema de diseño puede incluir hojas de estilo, tipografías, iconos, librerías javascript o, incluso, componentes web. Dependiendo de los artefactos que informan este sistema de diseño, podemos distinguir dos implementaciones posibles:
+Los sistema de diseño puede incluir hojas de estilo, tipografías, iconos, librerías javascript y componentes web. Dependiendo de los artefactos que informan el sistema de diseño, existen dos implementaciones posibles:
 
 #### Sistema de diseño tipo librería
 
-En el caso de un sitio público, este es el tipo de sistema de diseño más recomendado, como recomendamos en la sección “Uso de widgets en sitios públicos” de este documento. Para implementar este tipo de sistema de diseño, lo ideal es cargar las dependencias en Modyo, usando los templates para guardar las hojas de estilo, librerías de javascript y los binarios cómo assets. En el caso de las librerías javascript y hojas de estilo, para ponerlas a disposición en el sitio, hay que agregarlas a una vista para que puedan ser consumidas, idealmente el layout del sitio. Es importante recordar que hay que actualizar las referencias de imágenes o tipografías que se hagan en esos archivos. La mejor forma de hacerlo es usando un helper de Liquid que permitirá mantener actualizada la URL si se edita o cambia la imagen o tipografía.
+Este enfoque de sistema de diseño tipo librería es recomendado para sitios públicos, ya que centraliza las dependencias y facilita su gestión.
+
+Para implementar este tipo de sistema de diseño, lo ideal es cargar las dependencias en Modyo, usando las plantillas para guardar las hojas de estilo, librerías de JavaScript y los archivos binarios como activos.
+
+  Para las librerías de JavaScript y hojas de estilo, es necesario agregarlas a una vista,  idealmente en el diseño del sitio, para ponerlas a disposición en el sitio y que puedan ser consumidas. Es importante mantener actualizadas las referencias de imágenes o tipografías que hagas en esos archivos. La manera más efectiva de lograrlo es mediante el uso de un helper de Liquid, que asegurará que la URL se mantenga al día en caso de ediciones o cambios en las imágenes o tipografías.
 
 #### Sistema de diseño que incluye componentes
 
-Si el sistema de diseño incluye componentes, la mejor opción es externalizar el desarrollo y usar el CLI de Modyo para empujar los widgets a la plataforma. El externalizar el desarrollo, nos permite consumir el sistema de diseño como paquete desde un registro público o privado.
+Si el sistema de diseño incluye componentes, la mejor opción es externalizar el desarrollo y usar el CLI de Modyo para subir los widgets a la plataforma; lo cual permite consumir el sistema de diseño como un paquete desde un registro público o privado.
 
-Snippets, con CSS, HTML, parametrizables. Widgets con liquid y HTML
+Esto incluye snippets con CSS, HTML y parámetros configurables, así como widgets con Liquid y HTML.
 
 ### Implementación de un Sistema de Diseño
 
-Implementar un sistema de diseño en la web involucra crear y mantener un conjunto coherente de estándares de diseño y componentes de interfaz de usuario (UI) reutilizables. Aquí hay algunos pasos generales que podrías seguir:
+Implementar un sistema de diseño en la web involucra crear y mantener un conjunto coherente de estándares de diseño y componentes de interfaz de usuario (UI) reutilizables. Para ello, sigue estos pasos:
 
-- **Definir los Estándares de Diseño**: Esto puede incluir colores, tipografías, espaciado, iconografía y cualquier otro elemento visual que será común en todo tu sitio web o aplicación. Estos estándares deben documentarse en una guía de estilo o en un manual de marca.
-- **Crear Componentes de UI Reutilizables**: Los sistemas de diseño a menudo incluyen una biblioteca de componentes de UI que se pueden reutilizar en todo el sitio web o aplicación. Esto puede incluir botones, formularios, tarjetas, barras de navegación y otros elementos comunes. Estos componentes deben crearse de manera que sean fácilmente reutilizables y modificables.
-- **Documentar el Uso de Componentes**: Junto con la creación de componentes, debes documentar cómo se deben usar estos componentes. Esto puede incluir guías de implementación, mejores prácticas, y ejemplos de uso.
-- **Mantener el Sistema de Diseño**: Un sistema de diseño no es un proyecto de una sola vez. Debería ser mantenido y actualizado a medida que las necesidades de tu sitio web o aplicación cambien. Esto puede requerir revisiones regulares y actualizaciones de los componentes y estándares del sistema.
-- **Herramientas de Implementación**: Existen herramientas como Storybook, Figma, Sketch, y Adobe XD que facilitan la creación, el mantenimiento y el uso compartido de los sistemas de diseño.
-- **Colaboración y Adopción**: Debes asegurarte de que el equipo de desarrollo esté alineado con el sistema de diseño y lo adopte en su flujo de trabajo. Además, puede ser útil tener un propietario o equipo dedicado que supervise y mantenga el sistema de diseño.
+- **Definir los Estándares de Diseño**: Incluye colores, tipografías, espaciado, iconografía y otros elementos visuales comunes en toda tu web o aplicación. Documenta estos estándares en una guía de estilo o manual de marca.
+- **Crear Componentes de UI Reutilizables**: Desarrolla una biblioteca de componentes de UI que puedas reutilizar en toda la web o aplicación, como botones, formularios, tarjetas y barras de navegación. Estos componentes deben crearse de manera que sean fácilmente reutilizables y modificables.
+- **Documentar el Uso de Componentes**: Acompaña la creación de componentes con guías de implementación, mejores prácticas y ejemplos de uso.
+- **Mantener el Sistema de Diseño**: Mantén y actualiza el sistema de diseño conforme cambian las necesidades de tu web o aplicación. Revisa y actualiza regularmente los componentes y estándares del sistema.
+- **Herramientas de Implementación**: Utiliza herramientas como Storybook, Figma, Sketch y Adobe XD para crear, mantener y compartir sistemas de diseño.
+- **Colaboración y Adopción**: Asegúrate que el equipo de desarrollo esta alineado con el sistema de diseño y lo incorpora en su flujo de trabajo. Considera asignar un propietario o equipo dedicado para supervisar y mantener el sistema de diseño.
 
-Recuerda, un sistema de diseño es más que solo un conjunto de componentes UI y guías de estilo. Es una parte integral del proceso de diseño y desarrollo que ayuda a mantener la coherencia, mejora la eficiencia y fomenta una mejor colaboración entre los diseñadores y desarrolladores.
+:::tip Tip
+Un sistema de diseño es más que una colección de componentes UI y guías de estilo; es una parte integral del proceso de diseño y desarrollo que fomenta la coherencia y mejora la colaboración entre diseñadores y desarrolladores.
 
-### ¿Cómo se implementa un sistema de diseño con Modyo?
+:::
 
-En Modyo existen diferentes formas de implementar sistemas de diseño, dependiendo del caso de uso con el que se requiera trabajar. Si bien, un buen sistema de diseño comienza su existencia alejado del desarrollo, en plataformas como Figma o Sketch, en esta guía nos referiremos sólo a las implementaciones técnicas de éstos.
+### Implementación de un sistema de diseño con Modyo
 
-La primera de ellas, y la más simple, es en el escenario de [sitios públicos](/es/architecture/patterns/public-site). En este escenario, el sistema de diseño puede ser implementado dentro de la plataforma mediante el uso de las librerías de [Bootstrap](https://getbootstrap.com/) con las que se inicializa cada nuevo proyecto, más el soporte de variables que se encuentra presente en el. De esta forma, el sistema de diseño se podrá implementar con una serie de variables que tomen control de los aspectos más importantes del sitio, las cuales se propagan de forma inmediata a todos los componentes CSS, logrando un gran nivel de consistencia entre los componentes.
+Existen diferentes formas de implementar sistemas de diseño en Modyo, dependiendo del caso de uso. A continuación, se describen dos enfoques:
 
-Una variante de este primer escenario, podría ser la externalización del sistema de diseño a una librería externa, que no esté gobernada directamente en el sitio. A esto se le conoce como inyección dinámica o en el “runtime” de estilos y para lograrla, el sistema de diseño se debe incorporar en los sitios como una librería externa, alojada en algún servidor al cual los desarrolladores del sistema de diseño tengan acceso y puedan publicar sus cambios. Debido a la naturaleza de cómo opera la Web, en este caso será necesario tener un buen control de versiones mediante URL bien definidas, ya que el propio caché del navegador o los sistemas de CDN podría generar problemas a la hora de invalidar y propagar los cambios.
+1. **Sitios públicos**
 
-Un segundo caso de uso de sistema de diseño se aplica cuando se trabaja con [sitios privados](/es/architecture/patterns/private-site). Si bien, la técnica explicada anteriormente aplica de igual forma acá, en el caso de los sitios privados más sofisticados dentro de Modyo posiblemente se hará uso de [micro frontends](/es/architecture/patterns/micro-frontend). En el caso de los micro frontends, la implementación del sistema de diseño puede implementarse directamente dentro del componente, inyectando las definiciones de forma estática o en el “build time”, por medio de librerías versionadas del sistema de diseño que deben vivir dentro de algún repositorio intermediario. Estas librerías se importan como dependencia dentro del micro frontend y se empaquetan junto con él, lo que permite que cada micro frontend cuente con versiones diferentes de la librería, adaptando los cambios en ella de forma progresiva.
+Para los [sitios públicos](/es/architecture/patterns/public-site) puedes integrar el sistema de diseño en la plataforma aprovechando las librerías de [Bootstrap](https://getbootstrap.com/) que se incluyen en cada nuevo proyecto. Además, puedes utilizar las variables que están presentes en estas bibliotecas, que se aplican automáticamente a todos los componentes CSS. Esto te permite tener un control efectivo sobre aspectos clave del sitio y garantizar una alta consistencia entre los componentes.
+
+Una variante de este primer escenario implica la externalización del sistema de diseño a una librería externa, no gestionada directamente en el sitio. A este enfoque se le conoce como _inyección dinámica_ o _en tiempo de ejecución_ de estilos. Para lograrla, debes incorporar el sistema de diseño en los sitios como una librería externa, alojada en un servidor al cual los desarrolladores del sistema de diseño tienen acceso y pueden publicar cambios.
+
+En este caso es necesario tener un buen control de versiones mediante URLs bien definidas, ya que el caché del navegador o los sistemas de CDN pueden ocasionar problemas al invalidar y propagar los cambios.
+
+2. **Sitios privados**
+
+En el caso de [sitios privados](/es/architecture/patterns/private-site) más sofisticados puedes usar [micro frontends](/es/architecture/patterns/micro-frontend). En este escenario puedes implementar el sistema de diseño directamente dentro del componente, inyectando las definiciones de forma estática o durante el proceso de construcción o _build time_ mediante librerías versionadas dentro de un repositorio intermediario. Estas librerías se importan como dependencias y se empaquetan junto con el micro frontend, permitiendo adaptar los cambios de forma progresiva.
 
 :::tip Técnica híbrida
-Un buen sistema de diseño, se podría empaquetar de diferentes maneras, considerando una librería de inyección dinámica y otra estática, reutilizando código en un nivel superior y generando artefactos ubicuos según la necesidad de los equipos de desarrollo.
+Un enfoque híbrido considerar la combinación de librerías de inyección dinámica y estática, reutilizando código en un nivel superior y generando artefactos ubicuos según la necesidad de los equipos de desarrollo.
 :::
