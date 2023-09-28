@@ -12,7 +12,7 @@ search: true
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* Corrige condición de carrera en el proceso de logout
+* Corrige redrección post logout
 
 
 ### 9.2.50 - 27 de septiembre de 2023
@@ -23,11 +23,12 @@ search: true
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* Mejoras en la muestra de información en medios de pagos
+* Mejoras al mostrar información en medios de pago
 * Corrige problemas en la recepción de datos de campañas
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* Excluye de la sincronización de stages los segmentos asociados a páginas y menus
+
+* Excluye de la sincronización de stages los segmentos asociados a páginas y menús
 
 
 ### 9.2.49 - 13 de septiembre de 2023
