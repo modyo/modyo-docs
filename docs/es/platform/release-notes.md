@@ -5,6 +5,31 @@ search: true
 # Notas del release
 
 ## 9.2
+### 9.2.51 - 28 de septiembre de 2023
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Corrige condición de carrera en el proceso de logout
+
+
+### 9.2.50 - 27 de septiembre de 2023
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+* Corrige problema al guardar configuraciones en despliegues single account
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Mejoras en la muestra de información en medios de pagos
+* Corrige problemas en la recepción de datos de campañas
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Excluye de la sincronización de stages los segmentos asociados a páginas y menus
+
+
 ### 9.2.49 - 13 de septiembre de 2023
 <Badge text="Core" type="core" vertical="middle"/>
 
