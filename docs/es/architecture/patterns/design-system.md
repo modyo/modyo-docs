@@ -14,19 +14,19 @@ Su finalidad principal es mejorar la eficiencia y la consistencia en el proceso 
 
 Ventajas:
 
-- **Consistencia**: Un sistema de diseño mantiene la consistencia en múltiples productos y plataformas al proporcionar un conjunto estándar de componentes y estilos.
-- **Eficiencia**: Los equipos pueden trabajar más rápido al reutilizar componentes existentes, en lugar de diseñar y codificar elementos desde cero para cada nuevo proyecto.
-- **Colaboración**: Fomenta una mejor colaboración entre los diseñadores y desarrolladores, al proporcionar un lenguaje visual común y directrices claras para la implementación.
-- **Usabilidad y experiencia de usuario**: La consistencia proporcionada por un sistema de diseño mejora la experiencia de usuario, evitando la necesidad de aprender nuevas interfaces para cada producto.
-- **Mantenibilidad**: Las actualizaciones y las correcciones de errores son más fáciles de implementar al utilizar componentes estandarizados.
+- **Consistencia:** Un sistema de diseño mantiene la consistencia en múltiples productos y plataformas al proporcionar un conjunto estándar de componentes y estilos.
+- **Eficiencia:** Los equipos pueden trabajar más rápido al reutilizar componentes existentes, en lugar de diseñar y codificar elementos desde cero para cada nuevo proyecto.
+- **Colaboración:** Fomenta una mejor colaboración entre los diseñadores y desarrolladores, al proporcionar un lenguaje visual común y directrices claras para la implementación.
+- **Usabilidad y experiencia de usuario:** La consistencia proporcionada por un sistema de diseño mejora la experiencia de usuario, evitando la necesidad de aprender nuevas interfaces para cada producto.
+- **Mantenibilidad:** Las actualizaciones y las correcciones de errores son más fáciles de implementar al utilizar componentes estandarizados.
 
 Desventajas:
 
-- **Tiempo y recursos**: Crear y mantener un sistema de diseño requiere una inversión significativa de tiempo y recursos, especialmente en las primeras etapas.
-- **Flexibilidad limitada**: Los sistemas de diseño pueden ser restrictivos y limitar la creatividad al requerir el uso de componentes estándar.
-- **Adopción y resistencia al cambio**: Puede ser un desafío lograr que todos los miembros del equipo adopten y sigan consistentemente el sistema de diseño.
-- **Mantenibilidad**: El sistema de diseño debe evolucionar con los cambios en productos y necesidades de los usuarios, lo que requiere un compromiso continuo con su mantenimiento y actualización.
-- **Sobre-estandarización**: Llevado al extremo, puede llevar a productos que se ven y se sienten demasiado similares, sin individualidad.
+- **Tiempo y recursos:** Crear y mantener un sistema de diseño requiere una inversión significativa de tiempo y recursos, especialmente en las primeras etapas.
+- **Flexibilidad limitada:** Los sistemas de diseño pueden ser restrictivos y limitar la creatividad al requerir el uso de componentes estándar.
+- **Adopción y resistencia al cambio:** Puede ser un desafío lograr que todos los miembros del equipo adopten y sigan consistentemente el sistema de diseño.
+- **Mantenibilidad:** El sistema de diseño debe evolucionar con los cambios en productos y necesidades de los usuarios, lo que requiere un compromiso continuo con su mantenimiento y actualización.
+- **Sobre-estandarización:** Llevado al extremo, puede llevar a productos que se ven y se sienten demasiado similares, sin individualidad.
 
 Un sistema de diseño bien implementado y mantenido puede ofrecer más ventajas que desventajas. Sin embargo, requiere una inversión continua y el compromiso del equipo para garantizar su éxito a largo plazo.
 
@@ -52,12 +52,12 @@ Esto incluye snippets con CSS, HTML y parámetros configurables, así como widge
 
 Implementar un sistema de diseño en la web involucra crear y mantener un conjunto coherente de estándares de diseño y componentes de interfaz de usuario (UI) reutilizables. Para ello, sigue estos pasos:
 
-- **Definir los Estándares de Diseño**: Incluye colores, tipografías, espaciado, iconografía y otros elementos visuales comunes en toda tu web o aplicación. Documenta estos estándares en una guía de estilo o manual de marca.
-- **Crear Componentes de UI Reutilizables**: Desarrolla una biblioteca de componentes de UI que puedas reutilizar en toda la web o aplicación, como botones, formularios, tarjetas y barras de navegación. Estos componentes deben crearse de manera que sean fácilmente reutilizables y modificables.
-- **Documentar el Uso de Componentes**: Acompaña la creación de componentes con guías de implementación, mejores prácticas y ejemplos de uso.
-- **Mantener el Sistema de Diseño**: Mantén y actualiza el sistema de diseño conforme cambian las necesidades de tu web o aplicación. Revisa y actualiza regularmente los componentes y estándares del sistema.
-- **Herramientas de Implementación**: Utiliza herramientas como Storybook, Figma, Sketch y Adobe XD para crear, mantener y compartir sistemas de diseño.
-- **Colaboración y Adopción**: Asegúrate que el equipo de desarrollo esta alineado con el sistema de diseño y lo incorpora en su flujo de trabajo. Considera asignar un propietario o equipo dedicado para supervisar y mantener el sistema de diseño.
+- **Definir los Estándares de Diseño:** Incluye colores, tipografías, espaciado, iconografía y otros elementos visuales comunes en toda tu web o aplicación. Documenta estos estándares en una guía de estilo o manual de marca.
+- **Crear Componentes de UI Reutilizables:** Desarrolla una biblioteca de componentes de UI que puedas reutilizar en toda la web o aplicación, como botones, formularios, tarjetas y barras de navegación. Estos componentes deben crearse de manera que sean fácilmente reutilizables y modificables.
+- **Documentar el Uso de Componentes:** Acompaña la creación de componentes con guías de implementación, mejores prácticas y ejemplos de uso.
+- **Mantener el Sistema de Diseño:** Mantén y actualiza el sistema de diseño conforme cambian las necesidades de tu web o aplicación. Revisa y actualiza regularmente los componentes y estándares del sistema.
+- **Herramientas de Implementación:** Utiliza herramientas como Storybook, Figma, Sketch y Adobe XD para crear, mantener y compartir sistemas de diseño.
+- **Colaboración y Adopción:** Asegúrate que el equipo de desarrollo esta alineado con el sistema de diseño y lo incorpora en su flujo de trabajo. Considera asignar un propietario o equipo dedicado para supervisar y mantener el sistema de diseño.
 
 :::tip Tip
 Un sistema de diseño es más que una colección de componentes UI y guías de estilo; es una parte integral del proceso de diseño y desarrollo que fomenta la coherencia y mejora la colaboración entre diseñadores y desarrolladores.
