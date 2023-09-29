@@ -16,7 +16,7 @@ Al combinar estas tecnologías, los Web Components permiten crear componentes pe
 
 Además, fomentan la reutilización de código y facilitan el mantenimiento y la modularidad en el desarrollo web, ya que permiten crear componentes independientes y autónomos que se pueden usar en múltiples contextos sin conflictos.
 
-### ¿Cómo se implementan los Web Components?
+### Implementación de Web Components
 
 La implementación de Web Components está respaldada por estándares web y es compatible con la mayoría de los navegadores modernos. Sin embargo, para navegadores más antiguos, es posible que requieras polyfills o herramientas específicas para garantizar la compatibilidad.
 
@@ -34,7 +34,6 @@ Ambas herramientas son poderosas y se adaptan a diferentes casos de uso. Si requ
 :::warning Importante
 Los Web Components aún no cuentan con un soporte consistente en todos los navegadores.
 :::
-
 
 En Modyo puedes implementar Web Components en el desarrollo de [micro frontends](/es/architecture/patterns/micro-frontend), debido a que los micro frontends utilizan herramientas tradicionales de JavaScript, lo que facilita la incorporación de librerías como [StencilJS](https://stenciljs.com) o [Lit](https://lit.dev). Este tipo de librerías otorga definiciones de componentes que pueden ser empaquetadas en conjunto con el micro frontend para ser desplegadas dentro de la plataforma.
 
