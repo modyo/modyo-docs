@@ -4,7 +4,9 @@ search: true
 
 # Primeros Pasos
 
-Bienvenido a la documentación oficial de [Dynamic Framework](https://dynamicframework.dev). En esta guía encontrarás información sobre las diversas características de este framework, así como definiciones clave y detalles sobre cómo empezar a trabajar con él.
+Te damos la bienvenida a la documentación oficial de [Dynamic Framework](https://dynamicframework.dev).
+
+En esta guía encontrarás información sobre las diversas características de este framework, así como definiciones clave y detalles sobre cómo empezar a trabajar con él.
 
 <img src="/assets/img/dynamic/dynamic-logo.png"/>
 
@@ -50,19 +52,16 @@ Inicia un nuevo proyecto con Dynamic Framework utilizando el comando NPX. Este c
 ``` shell
 npx @modyo/cli@latest get dynamic-react-base-template <nombre-de-tu-proyecto>
 ```
-Si no tienes instalado el CLI de Modyo, se te preguntará si quieres instalarlo:
-```shell
-Need to install the following packages:
-  @modyo/cli@3.3.0
-```
-Una vez instalado, se descarga la plantilla dynamic-react-base-template. Ahora, instala las dependencias y levanta el proyecto:
+Si no tienes instalado el CLI de Modyo, el sistema solicitará instalarlo debido a que es un paquete requerido. Puedes encontrar las instrucciones de instalación del CLI en la [documentación oficial](/es/platform/channels/cli.html#modyo-cli)
+
+Este proceso descarga la plantilla dynamic-react-base-template, una vez que tengas la plantilla, ingresa a la carpeta del proyecto para instalar las dependencias y levantar el proyecto:
+
 ```shell
 cd <nombre-de-tu-proyecto>
 npm i
 npm run start
 ```
-
-Usa un editor de código para explorar el código y ver por ti mismo cómo se utilizan los diferentes [componentes](/es/dynamic/ui/components) del sistema de diseño.
+Usa un editor de código para explorar el código y examinar cómo se utilizan los diferentes [componentes](/es/dynamic/ui/components) del sistema de diseño.
 
 ### Instalación manual
 Para crear manualmente un nuevo proyecto con Dynamic Framework o agregarlo a un proyecto React, instala los paquetes requeridos:
@@ -83,7 +82,7 @@ Si quieres contribuir a Dynamic Framework como usuario, hay varias formas en las
 - Sugiere mejoras en la redacción de la documentación.
 - Participa en la comunidad, únete a nuestros webinars y eventos digitales periódicos.
 
-Para comunicarte con el equipo, reportar un problema o sugerir una funcionalidad, puedes hacerlo a través de nuestro [Centro de Soporte de Modyo](https://support.modyo.com).
+Puedes comunicarte con el equipo de desarrollo, reportar un problema o sugerir una funcionalidad a través de nuestro [Centro de Soporte de Modyo](https://support.modyo.com).
 
 
 ### Soporte
@@ -93,5 +92,5 @@ Si tienes dudas o problemas con las plantillas de experiencia e integración pro
 La creación de casos de soporte se realiza desde el [Centro de Soporte de Modyo](https://support.modyo.com). Si no recibes una respuesta oportuna, cada cliente tiene la opción de seguir el protocolo de escalamiento establecido.
 
 :::warning Alcance del Soporte
-Las consultas y solicitudes de soporte se aplican exclusivamente a las plantillas y cómo se integran con la plataforma Modyo. Las modificaciones y el código personalizado desarrollado sobre ellas está excluido. Para estos casos, Modyo te ofrece servicios profesionales de acompañamiento experto y apoyo a los clientes.
+Las consultas y solicitudes de soporte se aplican exclusivamente a las plantillas y cómo se integran con la plataforma Modyo. Las modificaciones y el código personalizado desarrollado sobre ellas está excluido. Para estos casos, Modyo te ofrece [servicios profesionales](https://modyo.com/services) de acompañamiento experto y apoyo a los clientes.
 :::
