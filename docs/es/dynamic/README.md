@@ -64,7 +64,7 @@ npm run start
 Usa un editor de código para explorar el código y examinar cómo se utilizan los diferentes [componentes](/es/dynamic/ui/components) del sistema de diseño.
 
 ### Instalación manual
-Para crear manualmente un nuevo proyecto con Dynamic Framework o agregarlo a un proyecto React, instala los paquetes requeridos:
+Para crear manualmente un nuevo proyecto con Dynamic Framework o agregarlo como dependencia a un proyecto React existente, instala los paquetes requeridos:
 ```shell
 npm i @modyo/cli@latest @dynamic-framework/ui-react@latest
 ```
