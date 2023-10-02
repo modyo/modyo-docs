@@ -12,7 +12,7 @@ Advantages of SSR:
 
 - **Search engine optimization:** Pre-rendered content is more accessible to search engines, making it easier to index and rank in search results.
 - **Better initial performance:** The user quickly views visual content without waiting for the JavaScript code to load and execute in the browser.
-- **Compatibility with devices with limited resources: ** Reduces the processing load on the client, which is beneficial on mobile devices or older browsers.
+- **Compatibility with devices with limited resources:** Reduces the processing load on the client, which is beneficial on mobile devices or older browsers.
 - **Better SEO and social media sharing: ** It's more friendly to social networks and search crawlers, providing rich, comprehensive content to share and track.
 
 Disadvantages of SSR:
