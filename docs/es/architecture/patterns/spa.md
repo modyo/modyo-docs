@@ -4,28 +4,35 @@ search: true
 
 # Single Page Application
 
-Las Single-Page Applications (SPAs) son aplicaciones web que se cargan una sola vez en el navegador y luego se actualizan y modifican dinámicamente sin necesidad de cargar páginas adicionales. En lugar de cargar páginas completamente nuevas, las SPAs utilizan técnicas de manipulación del DOM y comunicación asíncrona para actualizar el contenido en la misma página, proporcionando una experiencia fluida y rápida al usuario.
+Las Single-Page Applications (SPAs) son aplicaciones web que se cargan una sola vez en el navegador y luego se actualizan y modifican dinámicamente sin necesidad de cargar páginas adicionales.
+
+En lugar de cargar páginas completamente nuevas, las SPAs utilizan técnicas de manipulación del DOM y comunicación asíncrona para actualizar el contenido en la misma página, proporcionando una experiencia fluida y rápida al usuario.
 
 Ventajas de las SPAs:
 
-- **Experiencia de usuario fluida:** Al evitar las recargas de página completas, las SPAs ofrecen una experiencia más rápida y fluida para los usuarios, ya que las actualizaciones de contenido se realizan de forma dinámica y sin interrupciones.
-- **Interactividad y navegación rápida:** Las SPAs permiten una navegación más rápida y suave dentro de la aplicación, ya que solo se actualizan los componentes necesarios sin necesidad de cargar páginas adicionales.
-- **Mejora del rendimiento:** Al reducir la cantidad de datos y recursos que se deben transmitir y procesar en cada interacción, las SPAs pueden mejorar el rendimiento general de la aplicación y reducir los tiempos de carga.
-- **Desarrollo más eficiente:** Las SPAs permiten un desarrollo más eficiente al utilizar frameworks y bibliotecas modernas, como React, Angular o Vue.js, que ofrecen un enfoque basado en componentes y facilitan la reutilización de código.
+- **Experiencia de usuario fluida:** Ofrecen una experiencia más rápida y fluida para los usuarios, ya que las actualizaciones de contenido se realizan de forma dinámica y sin interrupciones.
+- **Interactividad y navegación rápida:** Permiten una navegación más rápida y fluida en la aplicación, al solo actualizar los componentes necesarios y no cargar páginas adicionales.
+- **Mejora del rendimiento:** Mejoran el rendimiento general de la aplicación y reducen los tiempos de carga al disminuir la cantidad de datos y recursos que se deben transmitir y procesar en cada interacción.
+- **Desarrollo más eficiente:** Permiten un desarrollo más eficiente al utilizar frameworks y bibliotecas modernas, como React, Angular o Vue.js, que ofrecen un enfoque basado en componentes y facilitan la reutilización de código.
 
 Desventajas de las SPAs:
 
-- **Mayor complejidad inicial:** El desarrollo de SPAs puede tener una curva de aprendizaje más pronunciada debido a la necesidad de comprender y trabajar con frameworks y herramientas adicionales.
-- **Mayor consumo de memoria:** Las SPAs pueden requerir más memoria en el navegador debido a la necesidad de mantener todo el estado de la aplicación en memoria mientras se navega.
-- **SEO y compartición social:** Las SPAs a menudo pueden presentar desafíos relacionados con el SEO (optimización para motores de búsqueda) y la compartición de enlaces en redes sociales, ya que los rastreadores de búsqueda y las vistas previas de enlaces pueden no interpretar correctamente el contenido dinámico.
-- **Dependencia en JavaScript:** Las SPAs requieren que los usuarios tengan JavaScript habilitado en su navegador para que funcionen correctamente. Si JavaScript está deshabilitado o no es compatible, la aplicación puede no ser utilizable.
+- **Mayor complejidad inicial:** Pueden tener una curva de aprendizaje más pronunciada debido a la necesidad de comprender y trabajar con frameworks y herramientas adicionales.
+- **Mayor consumo de memoria:** Pueden requerir más memoria en el navegador debido a la necesidad de mantener todo el estado de la aplicación en memoria al navegar.
+- **SEO y compartición social:** Los rastreadores de búsqueda y las vistas previas de enlaces pueden no interpretar correctamente el contenido dinámico de las SPAs, lo que puede presentar desafíos relacionados con el SEO y con compartir en redes sociales.
+- **Dependencia en JavaScript:** Requieren que los usuarios tengan Javascript habilitado en su navegador para funcionar correctamente.
 
-Es importante evaluar cuidadosamente las necesidades del proyecto y los requisitos específicos antes de optar por desarrollar una SPA. Si bien las SPAs pueden ofrecer muchas ventajas, también presentan desafíos adicionales que deben considerarse.
+:::tip Tip
+Es importante evaluar cuidadosamente las necesidades del proyecto y los requisitos específicos antes de optar por desarrollar una SPA. Aunque las SPAs ofrecen muchas ventajas, también presentan desafíos adicionales que deben considerarse.
+:::
+
 
 ### ¿Cómo se implementa una SPA con Modyo?
 
-Para implementar una SPA con Modyo actualmente, se debe hacer uso de las capacidades de [Modyo Connect](/es/connect), dentro del cual se pueden configurar repositorios de objetos y redes de distribución de contenidos (CDNs) que permitirán  el despliegue y posterior mantención de la SPA. Los cambios en este caso, son gestionados directamente por el repositorio de código del servicio, y mediante el uso de automatizaciones, se podrán realizar despliegues e invalidaciones de caché al momento de incorporar o mezclar los cambios en él.
+Para implementar una SPA con Modyo debes usar las capacidades de [Modyo Connect](/en/connect), dentro del cual puedes configurar repositorios de objetos y redes de distribución de contenidos (CDNs) que permitirán el despliegue y posterior mantención de la SPA.
+
+Los cambios son gestionados directamente por el repositorio de código del servicio y mediante el uso de automatizaciones puedes realizar despliegues e invalidaciones de caché al momento de incorporar o mezclar los cambios.
 
 :::tip Modyo 10
-En Modyo 10, la futura versión de la plataforma, existirá soporte directo desde la consola de administración Web para el despliegue de módulos estáticos en la CDN. Esto otorgará un sistema de hospedaje estático para trabajar con SPA y otro tipo de librerías, dejando a la plataforma en control de los despliegues y las invalidaciones de cachés.
+En Modyo 10, la futura versión de la plataforma, habrá soporte directo desde la consola de administración web para el despliegue de módulos estáticos en la CDN. Esto proporcionará un sistema de hospedaje estático para trabajar con SPAs y otro tipo de librerías, dejando a la plataforma en control de los despliegues y las invalidaciones de caché.
 :::
