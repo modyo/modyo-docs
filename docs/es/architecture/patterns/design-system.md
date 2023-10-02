@@ -32,7 +32,7 @@ Un sistema de diseño bien implementado y mantenido puede ofrecer más ventajas 
 
 ### Tipos de Sistema de Diseño
 
-Los sistema de diseño puede incluir hojas de estilo, tipografías, iconos, librerías javascript y componentes web. Dependiendo de los artefactos que informan el sistema de diseño, existen dos implementaciones posibles:
+Los sistemas de diseño pueden incluir hojas de estilo, tipografías, iconos, librerías javascript y componentes web. Dependiendo de los artefactos que informan el sistema de diseño, existen dos implementaciones posibles:
 
 #### Sistema de diseño tipo librería
 
