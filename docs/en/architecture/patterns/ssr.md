@@ -15,7 +15,7 @@ Advantages of SSR:
 - **Compatibility with devices with limited resources: ** Reduces the processing load on the client, which is beneficial on mobile devices or older browsers.
 - **Better SEO and social media sharing: ** It's more friendly to social networks and search crawlers, providing rich, comprehensive content to share and track.
 
-Disadvantages of the SSR:
+Disadvantages of SSR:
 
 - **Increased load on the server: ** SSR means that the server must generate and send the full HTML content on every request, which can increase the load on the server, especially in applications with high request loads.
 - **Lower interactivity: ** Subsequent interactions and updates to the page may require additional requests to the server, which may result in less interactivity compared to single-page applications (SPA).
