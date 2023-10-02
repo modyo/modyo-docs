@@ -116,7 +116,7 @@ Crea contenido dinámico en tus espacios usando Entradas. En este objeto tienes 
 | **entry.account_url** La url de la cuenta. | ```https://test.miModyo.com``` |
 | **entry.url** URL canónico de la entrada. | ```https://test.miModyo.com/entry``` |
 | **[entry.author](#usuario)** El objeto del usuario autor de la entrada. | ```tag1, tag2``` |
-| **entry.meta** El objeto del metadata de la entrada. | Este objecto tiene los siguientes atributos: uuid, published_at, locale, slug, created_at, updated_at, unpublished_at, private, private. |
+| **entry.meta** El objeto del metadata de la entrada. | Este objecto tiene los siguientes atributos: uuid, published_at, locale, slug, created_at, updated_at, unpublished_at y private. |
 | **[entry.fields](#campo)** Array con objetos de los campos de la entrada. |  |
 
 ## Campo
