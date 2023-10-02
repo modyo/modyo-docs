@@ -19,7 +19,7 @@ Disadvantages of SSR:
 
 - **Increased load on the server:** SSR means that the server must generate and send the full HTML content on every request, which can increase the load on the server, especially in applications with high request loads.
 - **Lower interactivity:** Subsequent interactions and updates to the page may require additional requests to the server, which may result in less interactivity compared to single-page applications (SPA).
-- **Increased implementation complexity: ** Implementing the SSR may require more complex configuration and management on the server.
+- **Increased implementation complexity:** Implementing SSR may require more complex configuration and management on the server.
 
 Server Side Rendering is a useful technique in scenarios where SEO and initial performance are critical. However, its implementation requires careful architecture and execution due to its impact on the server load and the interactivity of the application.
 
