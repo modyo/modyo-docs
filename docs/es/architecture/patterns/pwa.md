@@ -9,7 +9,7 @@ Las Progressive Web Applications (PWA) son aplicaciones web que combinan caracte
 Ventajas de las PWA:
 
 - **Instalación en el dispositivo:** Pueden instalarse en el dispositivo del usuario y accederse desde el escritorio o la pantalla de inicio, sin necesidad de una tienda de aplicaciones.
-- **Funcionamiento offline:** Gracias al almacenamiento en caché de navegadores modernos, las PWA pueden funcionar con conexiones intermitentes o sin conexión a Internet
+- **Funcionamiento offline:** Gracias al almacenamiento en caché de navegadores modernos, las PWA pueden funcionar con conexiones intermitentes o sin conexión a Internet.
 - **Notificaciones push:** Pueden notificar a los usuarios, según se configuren.
 - **Acceso a hardware del dispositivo:** Pueden acceder a la cámara, GPS y más del dispositivo del usuario.
 - **Adaptabilidad a diferentes tamaños de pantalla:** Permitiendo unificar experiencias en diferentes dispositivos.
@@ -57,7 +57,7 @@ Apple no tiene una funcionalidad equivalente a TWA en iOS. Sin embargo, ha intro
 
 - **Añadir a la pantalla de inicio:** Permite a los usuarios agregar un acceso directo a una PWA en la pantalla de inicio. La PWA se ejecutará en el navegador Safari en pantalla completa.
 - **Manifiesto de aplicaciones web:** Permite personalizar la apariencia y el comportamiento de una PWA en iOS usando un archivo JSON que describe la PWA y sus características, como el nombre, los iconos, los colores temáticos y la orientación.
-- **Trabajadores de servicio:** Una tecnología que permite almacenar en caché de recursos, funcionar sin conexión y mejorar el rendimiento de una PWA. Aunque Apple ha introducido limitaciones en la ejecución de Service Workers en segundo plano en iOS, aún se pueden aprovechar para mejorar la experiencia de la PWA mientras está activa en el navegador Safari.
+- **Service Workers:** Una tecnología que permite almacenar en caché de recursos, funcionar sin conexión y mejorar el rendimiento de una PWA. Aunque Apple ha introducido limitaciones en la ejecución de Service Workers en segundo plano en iOS, aún se pueden aprovechar para mejorar la experiencia de la PWA mientras está activa en el navegador Safari.
 
 Estas características no ofrecen una experiencia idéntica a TWA, pero pueden mejorar la experiencia de las PWAs en iOS.
 
@@ -70,7 +70,7 @@ Apple puede introducir cambios o nuevas funcionalidades en futuras actualizacion
 
 Algunos ejemplos destacados de Progressive Web Applications (PWA) que muestran la versatilidad y eficacia de esta tecnología, son:
 
-- **Twitter Lite:** Una versión ligera de la aplicación de Twitter que está diseñada para ser rápida y eficiente en el consumo de datos. Ofrece una experiencia similar a la aplicación nativa, con características como notificaciones push y acceso offline.
+- **Twitter Lite:** Una versión ligera de la aplicación de X (antes conocida como Twitter) que está diseñada para ser rápida y eficiente en el consumo de datos. Ofrece una experiencia similar a la aplicación nativa, con características como notificaciones push y acceso offline.
 - **Pinterest:** La PWA de Pinterest logró aumentar significativamente la tasa de participación de los usuarios y el tiempo que pasan en la plataforma. Proporciona una experiencia de usuario fluida con tiempos de carga rápidos.
 - **Spotify Web Player:** Permite a los usuarios escuchar música y acceder a sus playlists sin necesidad de descargar una aplicación separada. Funciona en diferentes plataformas y navegadores.
 - **Starbucks:** La PWA de Starbucks permite a los clientes ver el menú, personalizar sus pedidos y agregarlos a la cesta, incluso cuando están offline. Una vez que se restaura la conexión, pueden completar la compra.
@@ -95,5 +95,5 @@ Las aplicaciones Web creadas en Modyo, pueden implementarse como aplicaciones na
 
 El uso de App Shells nativas permite la inclusión de las aplicaciones en las tiendas oficiales, cómo Google Play Store o el Apple App Store. Las App Shells se implementan como proyectos de código a medida y pueden hacer uso de SDKs nativos del dispositivo, incrementando con ello sus capacidades con respecto a las PWA tradicionales.
 
-Si deseas recibir más información acerca de esta técnica de empaquetamiento y cómo un [experto nuestro](https://modyo.com/services) podría asesorar o colaborar con tu desarrollo, no dudes en contactar a un ejecutivo comercial o de clientes de Modyo.
+Si deseas recibir más información acerca de esta técnica de empaquetamiento y cómo nuestro [equipos de expertos](https://modyo.com/services) puede asesorar o colaborar con tu desarrollo, no dudes en contactar a un ejecutivo comercial o de clientes de Modyo.
 :::
