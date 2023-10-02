@@ -8,7 +8,7 @@ Server-Side Rendering (SSR), or server-side rendering, is a web development tech
 
 In SSR, the server is responsible for processing the client's request and generating a complete response, including HTML, CSS and, in some cases, JavaScript content. This means that the server executes the application code and generates the final HTML that is sent to the browser.
 
-Advantages of the SSR:
+Advantages of SSR:
 
 - **Search engine optimization: ** Pre-rendered content is more accessible to search engines, making it easier to index and rank in search results.
 - **Better initial performance: ** The user quickly views visual content without waiting for the JavaScript code to load and execute in the browser.
