@@ -76,7 +76,7 @@ Now you can choose:
 
 ### Contributions
 
-If you want to contribute to the Dynamic Framework as a user, there are several ways you can help:
+If you want to contribute to Dynamic Framework as a user, there are several ways you can help:
 - It uses the framework in our test environments and provides feedback on issues and possible improvements.
 - Contribute directly to code repositories.
 - It suggests improvements in the drafting of documentation.
