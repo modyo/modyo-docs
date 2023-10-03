@@ -4,7 +4,7 @@ search: true
 
 # Design System
 
-A design system is a set of resources and methodologies whose main objective is to facilitate the creation and consistent maintenance of the visual appearance and user experience in a brand, product or service.
+A design system is a set of resources and methodologies with the primary objective of making it easier to create and consistently maintain the visual design and user experience of a brand, product, or service.
 
 A design system offers reusable elements, such as components, patterns, and guides, that ensure a consistent visual identity across applications and platforms.
 
