@@ -95,5 +95,5 @@ Las aplicaciones Web creadas en Modyo, pueden implementarse como aplicaciones na
 
 El uso de App Shells nativas permite la inclusión de las aplicaciones en las tiendas oficiales, cómo Google Play Store o el Apple App Store. Las App Shells se implementan como proyectos de código a medida y pueden hacer uso de SDKs nativos del dispositivo, incrementando con ello sus capacidades con respecto a las PWA tradicionales.
 
-Si deseas recibir más información acerca de esta técnica de empaquetamiento y cómo nuestro [equipos de expertos](https://modyo.com/services) puede asesorar o colaborar con tu desarrollo, no dudes en contactar a un ejecutivo comercial o de clientes de Modyo.
+Si deseas recibir más información acerca de esta técnica de empaquetamiento y cómo nuestro [equipo de expertos](https://modyo.com/services) puede asesorar o colaborar con tu desarrollo, no dudes en contactarnos.
 :::
