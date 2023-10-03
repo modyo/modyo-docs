@@ -18,7 +18,7 @@ Advantages:
 - **Efficiency:** Teams can work faster by reusing existing components, instead of designing and coding elements from scratch for each new project.
 - **Collaboration:** Encourages better collaboration between designers and developers, by providing a common visual language and clear guidelines for implementation.
 - **Usability and user experience:** The consistency provided by a design system improves the user experience, avoiding the need to learn new interfaces for each product.
-- **Maintainability: ** Updates and bug fixes are easier to implement using standardized components.
+- **Maintainability:** Updates and bug fixes are easier to implement using standardized components.
 
 Disadvantages:
 
