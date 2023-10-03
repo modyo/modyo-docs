@@ -8,7 +8,7 @@ A design system is a set of resources and methodologies with the primary objecti
 
 A design system offers reusable elements, such as components, patterns, and guides, that ensure a consistent visual identity across applications and platforms.
 
-Its main purpose is to improve efficiency and consistency in the design and development process. To achieve this, it promotes collaboration between teams and avoids the need to create everything from scratch in every project. It also strengthens alignment between design, development and product teams.
+Its main purpose is to improve efficiency and consistency in the design and development process. To achieve this, it promotes collaboration between teams and avoids the need to create everything from scratch in every project. It also strengthens alignment between design, development, and product teams.
 
 ### Advantages and Disadvantages of Using Design Systems
 
