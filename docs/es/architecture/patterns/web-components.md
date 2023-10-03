@@ -12,7 +12,7 @@ Están compuestos por tres principales tecnologías:
 - **Shadow DOM:** Proporciona un ámbito de encapsulación para los estilos y la estructura de un componente. El Shadow DOM permite que los estilos y elementos internos de un componente no afecten ni sean afectados por el resto de la página.
 - **HTML Templates:** Definen fragmentos de código HTML que pueden clonarse y utilizarse múltiples veces. Se utilizan para definir la estructura inicial de un componente.
 
-Al combinar estas tecnologías, los Web Components permiten crear componentes personalizados con comportamiento y apariencia propio, que pueden ser utilizados en diferentes partes de una aplicación web o en diferentes proyectos.
+Combinando estas tecnologías, los Web Components permiten la creación de componentes personalizados con su propio comportamiento y apariencia. Estos componentes pueden ser utilizados en diversas partes de una aplicación web o en diferentes proyectos.
 
 Además, fomentan la reutilización de código y facilitan el mantenimiento y la modularidad en el desarrollo web, ya que permiten crear componentes independientes y autónomos que se pueden usar en múltiples contextos sin conflictos.
 
