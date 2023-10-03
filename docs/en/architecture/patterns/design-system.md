@@ -55,7 +55,7 @@ Implementing a web design system involves creating and maintaining a coherent se
 - **Define Design Standards:** Include colors, typographies, spacing, iconography, and other common visual elements throughout your website or application. Document these standards in a style guide or brand manual.
 - **Create Reusable UI Components:** Develop a library of UI components that you can reuse throughout the web or application, such as buttons, forms, cards, and navigation bars. These components must be created in a way that ensures they are easily reusable and modifiable.
 - **Documenting the Use of Components:** Accompany the creation of components with implementation guides, best practices, and examples of use.
-- **Maintain the Design System: ** Maintain and update the design system as the needs of your website or application change. It regularly reviews and updates system components and standards.
+- **Maintain the Design System:** Maintain and update the design system as the needs of your website or application change. Regularly review and update system components and standards.
 - **Implementation Tools: ** Use tools such as Storybook, Figma, Sketch, and Adobe XD to create, maintain, and share design systems.
 - **Collaboration and Adoption: ** Make sure that the development team is aligned with the design system and incorporates it into their workflow. Consider assigning a dedicated owner or team to oversee and maintain the design system.
 
