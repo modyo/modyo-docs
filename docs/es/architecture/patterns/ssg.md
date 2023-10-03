@@ -30,6 +30,6 @@ Desventajas del SSG:
 - **Mayor tiempo de compilación en proyectos grandes:** A medida que el proyecto crece en tamaño y complejidad, el tiempo necesario para compilar las páginas puede aumentar considerablemente, alentando el flujo de trabajo de desarrollo.  Por lo que recomendamos una planificación adecuada para gestionar tiempos de compilación en proyectos más grandes.
 
 
-### ¿Cómo se implementa SSG en Modyo?
+### Implementación del SSG en Modyo
 
 Dentro de Modyo se pueden implementar sitios que se ven estáticos a ojos del visitante, pero que mantienen sus características dinámicas a la hora de modificar el contenido. Esto se logra mediante el uso de capas de caché y sistemas de distribución de contenidos que aprovechan las ventajas del SSG, sin perder la capacidad de publicar cambios de forma fácil y rápida, invalidando las copias cacheadas de la información en tiempo real.
