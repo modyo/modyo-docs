@@ -27,7 +27,7 @@ Es importante evaluar cuidadosamente las necesidades del proyecto y los requisit
 :::
 
 
-### ¿Cómo se implementa una SPA con Modyo?
+### Implementación de una SPA con Modyo
 
 Para implementar una SPA con Modyo debes usar las capacidades de [Modyo Connect](/en/connect), dentro del cual puedes configurar repositorios de objetos y redes de distribución de contenidos (CDNs) que permitirán el despliegue y posterior mantención de la SPA.
 
