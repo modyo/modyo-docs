@@ -24,7 +24,7 @@ Disadvantages:
 
 - **Time and resources:** Creating and maintaining a design system requires a significant investment of time and resources, especially in the early stages.
 - **Limited flexibility:** Design systems can be restrictive and limit creativity by requiring the use of standard components.
-- **Adoption and resistance to change: ** It can be a challenge to get all team members to consistently adopt and follow the design system.
+- **Adoption and resistance to change:** It can be a challenge to get all team members to consistently adopt and follow the design system.
 - **Maintainability: ** The design system must evolve with changes in products and user needs, requiring a continuous commitment to its maintenance and updating.
 - **Over-standardization: ** Taken to the extreme, it can lead to products that look and feel too similar, without individuality.
 
