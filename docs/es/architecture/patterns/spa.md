@@ -20,7 +20,7 @@ Desventajas de las SPAs:
 - **Mayor complejidad inicial:** Pueden tener una curva de aprendizaje más pronunciada debido a la necesidad de comprender y trabajar con frameworks y herramientas adicionales.
 - **Mayor consumo de memoria:** Pueden requerir más memoria en el navegador debido a la necesidad de mantener todo el estado de la aplicación en memoria al navegar.
 - **SEO y compartición social:** Los rastreadores de búsqueda y las vistas previas de enlaces pueden no interpretar correctamente el contenido dinámico de las SPAs, lo que puede presentar desafíos relacionados con el SEO y con compartir en redes sociales.
-- **Dependencia en JavaScript:** Requieren que los usuarios tengan Javascript habilitado en su navegador para funcionar correctamente.
+- **Dependencia de JavaScript:** Requieren que los usuarios tengan Javascript habilitado en su navegador para funcionar correctamente.
 
 :::tip Tip
 Es importante evaluar cuidadosamente las necesidades del proyecto y los requisitos específicos antes de optar por desarrollar una SPA. Aunque las SPAs ofrecen muchas ventajas, también presentan desafíos adicionales que deben considerarse.
