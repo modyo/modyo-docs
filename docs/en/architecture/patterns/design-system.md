@@ -59,7 +59,7 @@ Implementing a web design system involves creating and maintaining a coherent se
 - **Implementation Tools: ** Use tools such as Storybook, Figma, Sketch, and Adobe XD to create, maintain, and share design systems.
 - **Collaboration and Adoption: ** Make sure that the development team is aligned with the design system and incorporates it into their workflow. Consider assigning a dedicated owner or team to oversee and maintain the design system.
 
-:: :tip Tip
+:::tip Tip
 A design system is more than a collection of UI components and style guides; it's an integral part of the design and development process that promotes consistency and improves collaboration between designers and developers.
 
 :::
