@@ -22,7 +22,7 @@ Disadvantages of SPAs:
 - **SEO and social sharing:** Search crawlers and link previews may not correctly interpret the dynamic content of SPAs, which can present challenges related to SEO and social sharing.
 - **JavaScript dependency:** They require that users have Javascript enabled in their browser to work properly.
 
-:: :tip Tip
+:::tip Tip
 It's important to carefully evaluate project needs and specific requirements before choosing to develop a SPA. While SPAs offer many advantages, they also present additional challenges that must be considered.
 :::
 
