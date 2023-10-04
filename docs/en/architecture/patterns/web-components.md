@@ -31,7 +31,7 @@ There are different tools for developing Web Components, such as Polymer and Ste
 Both tools are powerful and adapt to different use cases. If you need a complete and consolidated library with numerous features, Polymer is an excellent choice. On the other hand, if you prioritize performance and want to create highly optimized and native Web Components, Stencil may be the right choice.
 
 ### Implementing Web Components with Modyo
-:: :warning Important
+:::warning Important
 Web Components are not yet consistently supported in all browsers.
 :::
 
