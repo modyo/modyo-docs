@@ -18,7 +18,7 @@ In addition, they promote code reuse and facilitate maintenance and modularity i
 
 ### Web Components Implementation
 
-The Web Components implementation is supported by web standards and is compatible with most modern browsers. However, for older browsers, you may require polyfills or specific tools to ensure compatibility.
+Web Components implementation is supported by web standards and is compatible with most modern browsers. However, for older browsers, you may require polyfills or specific tools to ensure compatibility.
 
 There are different tools for developing Web Components, such as Polymer and Stencil, these are some of the key differences between them:
 
