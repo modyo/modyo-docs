@@ -31,7 +31,7 @@ PWAs can have limitations on iOS due to:
 - **Browser limitations:** On iOS, available browsers, such as Safari, have certain limitations in terms of supporting web functions and technologies. This can affect the performance and functionality of PWAs compared to other, more modern, web-standards-compliant browsers.
 - **Notification service limitations:** Push notifications are an important feature of PWAs, but only Safari and Firefox browsers currently support them on iOS.
 - **Caching issues:** Caching PWA resources can be more restrictive on iOS than on other platforms. This can lead to some functionalities not working properly or to problems with content updates.
-- **Background execution limitations: ** iOS has strict restrictions on running code in the background to save battery and improve performance. This can affect the ability of a PWA to function properly in situations where continuous background processing is required.
+- **Background execution limitations:** iOS has strict restrictions on running code in the background to save battery and improve performance. This can affect the ability of a PWA to function properly in situations where continuous background processing is required.
 
 Apple is working on improving PWA support on iOS and has introduced new features in newer versions of the operating system. However, there are still limitations compared to other platforms.
 
