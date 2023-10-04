@@ -20,8 +20,8 @@ Advantages of PWAs:
 
 AppShells package PWAs for distribution in application markets. Internally, they implement a WebView that provides the user experience. They are also used to extend the functionality of the web application with platform-specific native elements.
 
-:: :warning WebView vs Native Browser
-WebView differs significantly from the device's native browsers, which may limit some native PWAs functions.
+:::warning WebView vs. Native Browser
+WebView differs significantly from the device's native browsers, which may limit some native PWA's functions.
 :::
 
 ### PWA limitations on iOS
