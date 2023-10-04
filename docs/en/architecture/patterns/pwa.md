@@ -12,7 +12,7 @@ Advantages of PWAs:
 - **Offline operation:** Thanks to the caching of modern browsers, PWAs can work with intermittent connections or without an Internet connection.
 - **Push notifications:** They can notify users, as configured.
 - **Device hardware access:** They can access the user's device's camera, GPS, and more.
-- **Adaptability to different screen sizes: ** Allowing to unify experiences on different devices.
+- **Adaptability to different screen sizes:** Permitting unified experiences on different devices.
 - **Automatic updates: ** They ensure that users always have the latest version of the application.
 
 
