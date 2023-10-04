@@ -13,7 +13,7 @@ Advantages of SPAs:
 - **Smooth user experience:** They offer a faster and smoother experience for users, as content updates are performed dynamically and without interruption.
 - **Interactivity and fast navigation:** They permit faster and smoother navigation in the application, by only updating the necessary components and not loading additional pages.
 - **Performance improvement: ** They improve the overall performance of the application and reduce load times by reducing the amount of data and resources that must be transmitted and processed in each interaction.
-- **More efficient development: ** They allow for more efficient development by using modern frameworks and libraries, such as React, Angular or Vue.js, which offer a component-based approach and facilitate code reuse.
+- **More efficient development: ** They allow for more efficient development by using modern frameworks and libraries, such as React, Angular, or Vue.js, which offer a component-based approach and facilitate code reuse.
 
 Disadvantages of SPAs:
 
