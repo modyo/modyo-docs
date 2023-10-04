@@ -41,7 +41,7 @@ For simpler websites or web applications, that are managed entirely within Modyo
 
 An alternative for simpler web sites or applications is to use the platform's SSR capabilities to create reusable elements using Liquid Snippets and variables. This makes it possible to solve common problems in an efficient and clean way to maintain.
 
-:: :tip Dynamic Framework
+:::tip Dynamic Framework
 Modyo uses Web Components in its Dynamic development framework: Stencil for the definition of components and React for their implementation. In addition, it uses other libraries that accelerate and facilitate its adoption.
 :::
 
