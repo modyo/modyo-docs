@@ -23,7 +23,7 @@ Web Components implementation is supported by web standards and is compatible wi
 There are different tools for developing Web Components, such as Polymer and Stencil, these are some of the key differences between them:
 
 - **Focus and maturity:** Polymer, developed by Google, simplifies the creation of Web Components and offers a wide range of features. Stencil is a web component compiler that focuses on efficiency and performance.
-- **Size and dependencies: ** The Polymer library is larger, while Stencil is lighter and focuses on generating optimized code without additional dependencies.
+- **Size and dependencies:** The Polymer library is larger, while Stencil is lighter and focuses on generating optimized code without additional dependencies.
 - **Browser support: ** Both frameworks are compatible with most modern browsers. However, Polymer uses polyfills to ensure compatibility with older browsers.
 - **Programming language: ** Polymer uses modern JavaScript and the class-based programming pattern to define components, Stencil uses TypeScript, a superset of JavaScript that adds static typing features and other functionality.
 - **Performance: ** Stencil is optimized for performance, while Polymer offers good performance without being specifically optimized for it.
