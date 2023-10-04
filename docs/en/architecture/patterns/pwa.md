@@ -57,7 +57,7 @@ Apple doesn't have a functionality equivalent to TWA on iOS. However, it has int
 
 - **Add to home screen:** Allows users to add a shortcut to a PWA on the home screen. The PWA will run in the Safari browser in full screen.
 - **Web Application Manifest:** Allows you to customize the appearance and behavior of a PWA on iOS using a JSON file that describes the PWA and its characteristics, such as name, icons, thematic colors, and orientation.
-- **Service Workers:** This technology enables caching of resources, offline operation, and enhanced performance for Progressive Web Apps (PWAs). Despite Apple's limitations on running Service Workers in the background on iOS, they can still enhance the PWA experience when active in the Safari browser.
+- **Service Workers:** This technology enables caching of resources, offline operation, and enhanced performance for PWAs. Despite Apple's limitations on running Service Workers in the background on iOS, they can still enhance the PWA experience when active in the Safari browser.
 
 These features don't offer an identical TWA experience, but they can improve the PWAs experience on iOS.
 
