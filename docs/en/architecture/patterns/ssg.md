@@ -14,7 +14,7 @@ The SSG process involves the following steps:
 
 Advantages of SSG:
 
-- **Fast performance: ** Its performance is fast and the load time is reduced, as it does not require real-time processing on the server.
+- **Fast performance:** Its performance is fast and the load time is reduced, as it does not require real-time processing on the server.
 - **Improved security: ** Reduces the attack surface and improves security by not allowing server-side code execution.
 - **Scalability and resiliency: ** It can be easily served from a content delivery network (CDN), allowing for efficient global scalability and distribution. In addition, by not relying on dynamic resources, static sites can handle large volumes of traffic without degrading their performance.
 - **Ease of maintenance: ** The development and maintenance process is simplified, as changes to the content or structure of the site can be made without requiring server or database operations.
