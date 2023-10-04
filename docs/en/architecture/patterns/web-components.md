@@ -9,7 +9,7 @@ A web component is a web technology that allows you to create customized and reu
 They are made up of three main technologies:
 
 - **Custom Elements: ** They allow the creation of custom HTML elements with functionality and behavior defined in JavaScript.
-- **Shadow DOM: ** Provides an encapsulation scope for the styles and structure of a component. The Shadow DOM allows the styles and internal elements of a component to not affect or be affected by the rest of the page.
+- **Shadow DOM:** Provides an encapsulation scope for the styles and structure of a component. The Shadow DOM allows the styles and internal elements of a component to not affect or be affected by the rest of the page.
 - **HTML Templates: ** Define fragments of HTML code that can be cloned and used multiple times. They are used to define the initial structure of a component.
 
 By combining these technologies, Web Components allow the creation of custom components with their own behavior and appearance. These components can be used in different parts of a web application or in different projects.
