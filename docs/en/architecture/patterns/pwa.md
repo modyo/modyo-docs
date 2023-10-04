@@ -8,7 +8,7 @@ Progressive Web Applications (PWAs) are web applications that combine features o
 
 Advantages of PWAs:
 
-- **Installation on the device: ** They can be installed on the user's device and accessed from the desktop or home screen, without the need for an application store.
+- **Installation on the device:** They can be installed on the user's device and accessed from the desktop or home screen, without the need for an application store.
 - **Offline operation: ** Thanks to the caching of modern browsers, PWAs can work with intermittent connections or without an Internet connection.
 - **Push notifications: ** They can notify users, as configured.
 - **Device hardware access: ** They can access the user's device's camera, GPS, and more.
