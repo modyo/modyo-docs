@@ -37,7 +37,7 @@ Apple is working on improving PWA support on iOS and has introduced new features
 
 Although some features may not be available or may have slightly lower performance compared to other platforms, numerous PWAs are functional and useful on iOS.
 
-:: :tip Tip
+:::tip Tip
 We recommend testing and evaluating specific PWA compatibility on target devices and browsers to ensure an optimal experience.
 :::
 
