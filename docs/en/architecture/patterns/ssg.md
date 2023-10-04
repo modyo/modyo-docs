@@ -9,7 +9,7 @@ Static Site Generation (SSG) is an approach to web development in which pages ar
 The SSG process involves the following steps:
 
 - **Compilation: ** Static HTML pages are generated based on the data and templates defined in the project. This can be achieved using static tools and generators such as Gatsby, Hugo, Jekyll, Next.js, and others.
-- **Content Generation: ** During compilation, static generation tools take the defined data and templates and generate the corresponding static HTML pages for each path or section of the website. This can include generating dynamic content such as blogs, product listings, or category pages.
+- **Content Generation:** During compilation, static generation tools take the defined data and templates and generate the corresponding static HTML pages for each path or section of the website. This can include generating dynamic content such as blogs, product listings, or category pages.
 - **Deployment: ** Once the static HTML pages are generated, they are uploaded to a web server for distribution. The web server can be as simple as a static file server or use hosting services such as Netlify, Amplify, Vercel or GitHub Pages.
 
 Advantages of SSG:
