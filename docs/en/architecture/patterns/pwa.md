@@ -66,7 +66,7 @@ Apple may introduce changes or new functionality in future updates. It's advisab
 :::
 
 
-### PWAs use cases
+### PWA use cases
 
 Some outstanding examples of Progressive Web Applications (PWA) that show the versatility and effectiveness of this technology are:
 
