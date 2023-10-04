@@ -84,7 +84,7 @@ Some outstanding examples of Progressive Web Applications (PWA) that show the ve
 Through these examples, we can see how different industries and companies are using PWAs in different contexts to improve the user experience, increase participation and achieve their key business objectives.
 
 
-### Implementing PWA with Modyo
+### Implementing PWAs with Modyo
 
 Modyo offers native support for working with PWAs, allowing any web application developed in it to take control of the required technological enablers, such as the Service Worker and the PWA manifest file. Modyo provides an editing environment for these and is responsible for updating the modifications on the different devices.
 
