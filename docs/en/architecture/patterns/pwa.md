@@ -53,7 +53,7 @@ TWA works using Chrome Custom Tabs, a variant of Chrome integrated into the nati
 
 ### TWA on iOS
 
-Apple doesn't have functionality equivalent to TWA on iOS. However, it has introduced some features to improve the PWAs experience on iOS devices, such as:
+Apple doesn't have a functionality equivalent to TWA on iOS. However, it has introduced some features to improve the PWAs experience on iOS devices, such as:
 
 - **Add to home screen: ** Allows users to add a shortcut to a PWA on the home screen. The PWA will run in the Safari browser in full screen.
 - **Web Application Manifest: ** Allows you to customize the appearance and behavior of a PWA on iOS using a JSON file that describes the PWA and its characteristics, such as name, icons, thematic colors, and orientation.
