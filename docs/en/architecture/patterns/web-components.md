@@ -26,7 +26,7 @@ There are different tools for developing Web Components, such as Polymer and Ste
 - **Size and dependencies:** The Polymer library is larger, while Stencil is lighter and focuses on generating optimized code without additional dependencies.
 - **Browser support:** Both frameworks are compatible with most modern browsers. However, Polymer uses polyfills to ensure compatibility with older browsers.
 - **Programming language:** Polymer uses modern JavaScript and the class-based programming pattern to define components, Stencil uses TypeScript, a superset of JavaScript that adds static typing features and other functionality.
-- **Performance: ** Stencil is optimized for performance, while Polymer offers good performance without being specifically optimized for it.
+- **Performance:** Stencil is optimized for performance, while Polymer offers good performance without being specifically optimized for it.
 
 Both tools are powerful and adapt to different use cases. If you need a complete and consolidated library with numerous features, Polymer is an excellent choice. On the other hand, if you prioritize performance and want to create highly optimized and native Web Components, Stencil may be the right choice.
 
