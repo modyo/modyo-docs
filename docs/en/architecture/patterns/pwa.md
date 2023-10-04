@@ -4,7 +4,7 @@ search: true
 
 # Progressive Web Applications
 
-Progressive Web Applications (PWAs) are web applications that combine features of mobile applications and traditional web pages. They are developed using standard web technologies, such as HTML, CSS and JavaScript and stand out for their ability to function reliably and provide a complete user experience, even in conditions of limited or absent connectivity.
+Progressive Web Applications (PWAs) are web applications that combine features of mobile applications and traditional web pages. They are developed using standard web technologies, such as HTML, CSS, and JavaScript, and stand out for their ability to function reliably and provide a complete user experience, even in conditions of limited or absent connectivity.
 
 Advantages of PWAs:
 
