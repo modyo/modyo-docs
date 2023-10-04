@@ -61,8 +61,8 @@ Apple doesn't have a functionality equivalent to TWA on iOS. However, it has int
 
 These features don't offer an identical TWA experience, but they can improve the PWA's experience on iOS.
 
-:: :warning Updates
-Apple may introduce changes or new functionality in future updates. It is recommended to follow Apple's updates and development guidelines to take full advantage of the capabilities of PWAs on iOS.
+:::warning Updates
+Apple may introduce changes or new functionality in future updates. It's advisable to follow Apple's updates and development guidelines to take full advantage of the capabilities of PWAs on iOS.
 :::
 
 
