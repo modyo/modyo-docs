@@ -4,7 +4,7 @@ search: true
 
 # Static Site Generation
 
-Static Site Generation (SSG) is an approach to web development in which pages are created in advance during the compilation process and are stored as static HTML files on the server. Unlike traditional web applications, where content is generated in real time in response to each request, pre-generated static sites are served directly from the server without the need for additional processing.
+Static Site Generation (SSG) is an approach to web development in which pages are created in advance during the compilation process and are stored as static HTML files on the server. Unlike traditional web applications, where content is generated in real-time in response to each request, pre-generated static sites are served directly from the server without the need for additional processing.
 
 The SSG process involves the following steps:
 
