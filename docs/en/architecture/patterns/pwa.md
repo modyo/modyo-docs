@@ -59,7 +59,7 @@ Apple doesn't have a functionality equivalent to TWA on iOS. However, it has int
 - **Web Application Manifest:** Allows you to customize the appearance and behavior of a PWA on iOS using a JSON file that describes the PWA and its characteristics, such as name, icons, thematic colors, and orientation.
 - **Service Workers:** This technology enables caching of resources, offline operation, and enhanced performance for PWAs. Despite Apple's limitations on running Service Workers in the background on iOS, they can still enhance the PWA experience when active in the Safari browser.
 
-These features don't offer an identical TWA experience, but they can improve the PWAs experience on iOS.
+These features don't offer an identical TWA experience, but they can improve the PWA's experience on iOS.
 
 :: :warning Updates
 Apple may introduce changes or new functionality in future updates. It is recommended to follow Apple's updates and development guidelines to take full advantage of the capabilities of PWAs on iOS.
