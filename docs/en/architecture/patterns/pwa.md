@@ -90,7 +90,7 @@ Modyo offers native support for working with PWAs, allowing any web application 
 
 Beyond the control of these enablers, the rest of the PWA is a common Web application, so the user experience and its adaptation to different devices and screen sizes depends directly on who implements them.
 
-:: :tip Native App Shells
+:::tip Native App Shells
 Web applications created on Modyo can be implemented as native applications using App Shells developed for each platform.
 
 The use of native App Shells allows the inclusion of applications in official stores, such as the Google Play Store or the Apple App Store. App Shells are implemented as custom code projects and can make use of the device's native SDKs, thus increasing their capabilities compared to traditional PWAs.
