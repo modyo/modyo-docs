@@ -37,7 +37,7 @@ Web Components are not yet consistently supported in all browsers.
 
 In Modyo, you can implement Web Components in the development of [micro frontends] (/en/architecture/patterns/micro-frontend), because micro frontends use traditional JavaScript tools, making it easier to incorporate libraries such as [StencilJS] (https://stenciljs.com) or [Lit] (https://lit.dev). This type of library provides component definitions that can be packaged together with the micro frontend to be deployed within the platform.
 
-For simpler websites or web applications, which are managed entirely within Modyo, the use of Web Components may be more restricted. This is because Web Components act on static HTML definitions [from the server side (SSR)] (/es/architecture/patterns/ssr). In this case, it is necessary to inject the libraries into the HTML code. However, this can be complex and result in sites that are difficult to maintain.
+For simpler websites or web applications, that are managed entirely within Modyo, the use of Web Components may be more restricted. This is because Web Components act on static HTML definitions [from the server side (SSR)] (/es/architecture/patterns/ssr). In this case, it is necessary to inject the libraries into the HTML code. However, this can be complex and result in sites that are difficult to maintain.
 
 An alternative for simpler web sites or applications is to use the platform's SSR capabilities to create reusable elements using Liquid Snippets and variables. This makes it possible to solve common problems in an efficient and clean way to maintain.
 
