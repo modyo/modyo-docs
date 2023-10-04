@@ -12,7 +12,7 @@ The SSG process involves the following steps:
 - **Content Generation: ** During compilation, static generation tools take the defined data and templates and generate the corresponding static HTML pages for each path or section of the website. This can include generating dynamic content such as blogs, product listings, or category pages.
 - **Deployment: ** Once the static HTML pages are generated, they are uploaded to a web server for distribution. The web server can be as simple as a static file server or use hosting services such as Netlify, Amplify, Vercel or GitHub Pages.
 
-Advantages of the SSG:
+Advantages of SSG:
 
 - **Fast performance: ** Its performance is fast and the load time is reduced, as it does not require real-time processing on the server.
 - **Improved security: ** Reduces the attack surface and improves security by not allowing server-side code execution.
@@ -21,7 +21,7 @@ Advantages of the SSG:
 
 However, it's important to note that SSGs may not be suitable for all use cases. If highly dynamic content or real-time interactions are required, it may be more appropriate to use approaches such as Server-Side Rendering (SSR) or single-page applications (SPA) to achieve the necessary interactivity.
 
-Disadvantages of the SSG:
+Disadvantages of SSG:
 
 - **Limitations on dynamic interactivity: ** Functionality that requires real-time updates or complex interactions can be more difficult to achieve.
 - **Increased complexity in large-scale projects: ** In large, complex projects, maintaining and updating multiple static pages can be more difficult compared to a dynamic system. In cases where there are numerous internal links or frequent changes in the structure of the site, careful planning and management is required to maintain consistency and efficiency in development.
