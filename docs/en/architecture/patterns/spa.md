@@ -17,7 +17,7 @@ Advantages of SPAs:
 
 Disadvantages of SPAs:
 
-- **Higher initial complexity: ** They may have a steeper learning curve due to the need to understand and work with additional frameworks and tools.
+- **Higher initial complexity:** They may have a steeper learning curve due to the need to understand and work with additional frameworks and tools.
 - **Higher memory consumption: ** They may require more memory in the browser due to the need to keep the entire state of the application in memory when browsing.
 - **SEO and social sharing: ** Search crawlers and link previews may not correctly interpret the dynamic content of SPAs, which can present challenges related to SEO and social sharing.
 - **JavaScript dependency: ** They require that users have Javascript enabled in their browser to work properly.
