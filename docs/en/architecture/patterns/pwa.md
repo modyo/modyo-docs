@@ -76,7 +76,7 @@ Some outstanding examples of Progressive Web Applications (PWA) that show the ve
 - **Starbucks: ** The Starbucks PWA allows customers to view the menu, customize their orders and add them to the cart, even when they are offline. Once the connection is restored, they can complete the purchase.
 - **Uber: ** The web version of Uber is a PWA that offers a user experience similar to the native application but with a faster loading time and lower data consumption.
 - **Forbes: ** This magazine's PWA offers a faster and more engaging reading experience. The application quickly loads content and allows readers to continue reading offline.
-- **Alibaba: ** The Chinese e-commerce giant developed a PWA to improve the mobile experience for its users. They were able to increase conversions and user engagement on mobile devices.
+- **Alibaba:** The Chinese e-commerce giant developed a PWA to improve the mobile experience for its users. They were able to increase conversions and user engagement on mobile devices.
 - **OLX: ** Global online marketplace that uses a PWA to provide a faster and more efficient browsing experience, resulting in increased user engagement and retention.
 - **Flipkart Lite: ** Flipkart, one of India's largest online retailers, created its PWA to offer an efficient shopping experience with offline access and push notifications.
 - **The Washington Post: ** Your PWA provides a fast and smooth reading experience. Readers can access the articles and continue reading offline.
