@@ -4,20 +4,20 @@ search: false
 
 # Reuso de Código
 
-El reuso de código se refiere a la práctica de escribir código que se puede usar en múltiples contextos o aplicaciones, en lugar de tener que escribir nuevo código para cada nueva función o aplicación. La idea es "escribir una vez, usar muchas veces".
+El reuso de código es la práctica de escribir código que puedes usar en múltiples contextos o aplicaciones, en lugar de crear código nuevo para cada función o aplicación nueva. El objetivo es "_escribir una vez, usar muchas veces_".
 
-Esta práctica puede tener varias ventajas, como:
+Esta práctica ofrece múltiples ventajas, como:
 
-- **Eficiencia**: Puedes ahorrar tiempo y esfuerzo al no tener que escribir el mismo código una y otra vez.
-- **Consistencia**: Reutilizar código puede ayudar a asegurar que ciertas funciones se comporten de manera consistente en todas las partes de una aplicación o en varias aplicaciones.
+- **Eficiencia**: Ahorro de tiempo y esfuerzo al no tener que escribir el mismo código una y otra vez.
+- **Consistencia**: Ayuda a asegurar que ciertas funciones se comporten de manera consistente en todas las partes de una aplicación o en diferentes aplicaciones.
 - **Mantenibilidad**: Es más fácil y más rápido actualizar o corregir errores en una única base de código reutilizable que en múltiples copias del mismo código.
 
-Hay varias maneras de reutilizar el código en el desarrollo de aplicaciones Web. Esto puede implicar el uso de librerías o frameworks, la creación de componentes reutilizables, o incluso simplemente la organización del código de manera que se pueda referenciar y reutilizar fácilmente partes del mismo en diferentes partes de una aplicación.
+Existen varias formas de reutilizar código en el desarrollo de aplicaciones web. Esto incluye el uso de librerías o frameworks, la creación de componentes reutilizables y la organización del código, de manera que puedes referenciar y reutilizar fácilmente partes del mismo en distintas partes de una aplicación.
 
 
-### ¿Cómo se implementa el reuso de código con Modyo?
+### Implementación del reuso de código con Modyo
 
-Hay diversas alternativas en Modyo para reutilizar código que no implican necesariamente el uso de Web Components. Dependiendo del tipo de proyecto en desarrollo, algunas de estas opciones pueden incluir:
+Modyo ofrece diversas alternativas para reutilizar código que no implican el uso de Web Components. Dependiendo del tipo de proyecto en desarrollo, algunas de estas opciones pueden incluir:
 
 - Aplicación de fragmentos de código en Liquid.
 - Implementación de Widgets compartidos en varios sitios.
@@ -28,5 +28,7 @@ Hay diversas alternativas en Modyo para reutilizar código que no implican neces
 - Integración de librerías externas implementadas en diversos sitios o aplicaciones Web.
 
 :::tip Guía de Arquitectura
-A lo largo de esta guía, te mostramos diferentes maneras de reutilizar código, aplicando patrones y técnicas de nuestra arquitectura de referencia que permiten lograr excelentes niveles de eficiencia dentro de los equipos de desarrollo. Te invitamos a seguir leyendo con atención y si tienes alguna duda, no dudes en ponerte en contacto con nuestro equipo.
+Esta guía te muestra diferentes maneras de reutilizar código, aplicando patrones y técnicas de nuestra arquitectura de referencia que permiten lograr excelentes niveles de eficiencia dentro de los equipos de desarrollo.
+
+Si tienes alguna pregunta o requieres de soporte, no dudes en ponerte en contacto con nuestro [equipo de expertos](https://modyo.com/services).
 :::
