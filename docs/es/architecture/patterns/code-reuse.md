@@ -30,5 +30,5 @@ Modyo ofrece diversas alternativas para reutilizar código que no implican el us
 :::tip Guía de Arquitectura
 Esta guía te muestra diferentes maneras de reutilizar código, aplicando patrones y técnicas de nuestra arquitectura de referencia que permiten lograr excelentes niveles de eficiencia dentro de los equipos de desarrollo.
 
-Si tienes alguna pregunta o requieres de soporte, no dudes en ponerte en contacto con nuestro [equipo de expertos](https://modyo.com/services).
+Si tienes alguna pregunta o requieres de soporte, no dudes en ponerte en contacto con nuestro [equipo de expertos](https://support.modyo.com/).
 :::
