@@ -15,5 +15,5 @@ To achieve this mission, Dynamic Framework adheres to a series of key practices,
 - **ARIA Tags:** To improve the experience for users with disabilities, we use ARIA (Accessible Rich Internet Applications) attributes that provide additional information for screen readers and assistive technologies.
 - **Hidden and alternative content:** We offer classes like `.sr-only` and `.visually-hidden` to visually hide content while remaining accessible to assistive technologies. We also promote the use of alt attributes and alternative text in images, diagrams, videos, illustrations, etc.
 - **Visual and keyboard focus:** We ensure that focusable elements, such as buttons and links, have a clear visual focus style. This helps users to know where their current position is as they navigate the page using the keyboard.
-- **Form Validation: ** We include status and error indicators in our form components to help users with disabilities effectively understand and correct fields.
+- **Form Validation:** We include status and error indicators in our form components to help users with disabilities effectively understand and correct fields.
 - **Screen reader compatibility:** We guarantee compatibility with screen readers such as JAWS and NVDA, ensuring that information is properly transmitted to users who rely on these devices.
