@@ -183,9 +183,9 @@ Puedes cambiar qué versiones comparar, cambiando los valores en los selectores 
 Sigue estos pasos para revertir a una versión publicada en una Entrada:
 
 1. Desde Modyo Platform, expande Content y selecciona Espacios.
-2. Selecciona tu Espacio y después haz click en la Entrada que quieres versionar.
-3. Haz click en **Diferencias**.
-4. En el modal que aparece, selecciona la versión que quieras hacer rollback y después haz click en **Rollback a esta versión**.
+1. Selecciona tu Espacio y después haz click en la Entrada que quieres versionar.
+1. Haz click en **Diferencias**.
+1. En el modal que aparece, selecciona la versión que quieras hacer rollback y después haz click en **Rollback a esta versión**.
 
 Cuando se aplica alguna de las acciones, siempre se toma la versión seleccionada a la izquierda, de tal forma que si se resetea, se llevará la versión de la izquierda a la versión editable, y si se hace rollback, se llevará la versión de la izquierda a la versión publicada.
 
