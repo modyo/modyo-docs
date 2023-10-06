@@ -25,8 +25,8 @@ Meeting accessibility standards and guidelines, such as those established by the
 
 Web accessibility is measured using different techniques and evaluations. Some of the most common forms are:
 
-- **Manual evaluation: ** Consists in manually reviewing the website or application to identify possible accessibility barriers. This involves verifying the structure of the content, the correct use of tags, contrast, navigability, and the presence of alternatives for non-textual content, and other key aspects.
-- **Automatic evaluation tools: ** Makes use of automated tools that analyze the code and content of a website for accessibility issues. These tools can detect missing or incorrect elements, provide recommendations, and generate reports on the level of accessibility of the site.
+- **Manual evaluation:** Consists in manually reviewing the website or application to identify possible accessibility barriers. This involves verifying the structure of the content, the correct use of tags, contrast, navigability, and the presence of alternatives for non-textual content, and other key aspects.
+- **Automatic evaluation tools:** Makes use of automated tools that analyze the code and content of a website for accessibility issues. These tools can detect missing or incorrect elements, provide recommendations, and generate reports on the level of accessibility of the site.
 - **Testing with real users:** Calls for involving people with disabilities or limitations to test and evaluate the accessibility of the website. Real users can provide valuable feedback on the barriers they encounter when interacting with the site and help identify areas for improvement.
 - **Compliance with standards and guidelines: ** Consists in evaluating whether the website complies with established accessibility standards and guidelines, such as the W3C Web Content Accessibility Guidelines (WCAG). These guidelines provide specific criteria and recommendations for achieving web accessibility.
 
