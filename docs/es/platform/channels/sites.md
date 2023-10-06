@@ -375,13 +375,13 @@ Las ventajas principales de tener distintos stages en tus sitios son:
 Para agregar un nuevo stage a tu sitio, sigue estos pasos:
 
 1. Desde el menú lateral, haz click en **Channels**.
-2. Haz click en **Sitios**.
-3. Selecciona tu sitio.
-4. Expande la sección **Configuración del sitio**.
-5. Haz click en **Stages**.
-6. Haz click en **+ Nuevo Stage**.
-7. Selecciona la base del stage y escribe su nombre.
-8. Haz click en **Crear**.
+1. Haz click en **Sitios**.
+1. Selecciona tu sitio.
+1. Expande la sección **Configuración del sitio**.
+1. Haz click en **Stages**.
+1. Haz click en **+ Nuevo Stage**.
+1. Selecciona la base del stage y escribe su nombre.
+1. Haz click en **Crear**.
 
 :::tip Tip
 Cuando tienes más de un stage en tu sitio, la página de **Overview** muestra los detalles del stage actual y un botón para sincronizar cambios entre stages.
@@ -398,12 +398,12 @@ En la pantalla de sincronizaciones puedes ver todos los cambios que se realizar�
 Para sincronizar un stage, sigue estos pasos:
 
 1. En el menú lateral, haz click en **Channels**.
-2. Haz click en **Sitios**.
-3. Selecciona tu sitio.
-4. En la vista resumen haz click en **Sincronizar**.
-5. En la vista de sincronizaciones puedes ver todos los elementos con diferencias entre los stages seleccionados. Haz click en _Ver_ para obtener más detalles sobre los cambios.
-6. Selecciona los elementos que quieres sincronizar.
-7. Haz click en **Sincronizar**.
+1. Haz click en **Sitios**.
+1. Selecciona tu sitio.
+1. En la vista resumen haz click en **Sincronizar**.
+1. En la vista de sincronizaciones puedes ver todos los elementos con diferencias entre los stages seleccionados. Haz click en _Ver_ para obtener más detalles sobre los cambios.
+1. Selecciona los elementos que quieres sincronizar.
+1. Haz click en **Sincronizar**.
 
 :::tip Tip
 Al hacer click en **Sincronizar** puedes seleccionar desde cuál stage vas a traer los cambios. Si quieres sincronizar cambios a `main`, debes estar en `main` al hacer click en **Sincronizar**.
