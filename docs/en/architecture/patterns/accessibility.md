@@ -14,7 +14,7 @@ Some key aspects of web accessibility include:
 - **Semantic tagging:** Use HTML tags correctly to structure and describe content clearly, allowing people with visual or cognitive disabilities to understand the information presented.
 - **Contrast and legibility:** Ensure adequate contrast between text and background to facilitate reading for people with visual disabilities or perception difficulties.
 - **Ease of navigation and use: ** Design intuitive and navigable interfaces, with controls and interactive elements that are easy to use, both with the mouse and keyboard.
-- **Alternatives for non-textual content: ** Provide textual descriptions for images or videos so that people with visual or hearing disabilities understand the content.
+- **Alternatives for non-textual content:** Provide textual descriptions for images or videos so that people with visual or hearing disabilities understand the content.
 
 Web accessibility is essential for inclusion and equal access to information and online services.
 
