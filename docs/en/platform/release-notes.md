@@ -5,6 +5,32 @@ search: true
 # Release Notes
 
 ## 9.2
+### 9.2.51 - September 28, 2023
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Security improvements
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Corrects post-logout redirection
+
+
+### 9.2.50 - September 27, 2023
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Security improvements
+* Fixes problem when saving settings in single account deployments
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Improvements when displaying information on payment methods
+* Fixes problems receiving campaign data
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Excludes segments associated with pages and menus from stage synchronization
+
+
 ### 9.2.49 - September 13, 2023
 <Badge text="Core" type="core" vertical="middle"/>
 
