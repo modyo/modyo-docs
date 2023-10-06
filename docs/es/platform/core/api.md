@@ -279,8 +279,8 @@ Al guardar la información de la aplicación, Modyo mostrará una vista donde ve
 Ten en consideración que cuando se cierra sesión en alguno de tus sitios, se hará un _GET_ a todas las URL de cierre de sesión de tus aplicaciones de acceso a la API, lo que podría generar algunas redirecciones no deseadas si es que se usa una URL sin cuidado en ese campo.
 :::
 
-1. Una vez registrada la aplicación, asigna la aplicación los usuarios que harán uso de la API. Para esto, en el menú lateral, expande **Configuración** y haz click en **Equipo**.
-2. Selecciona un usuario con un rol administrativo dentro de la aplicación deseada. 
+4. Una vez registrada la aplicación, asigna la aplicación los usuarios que harán uso de la API. Para esto, en el menú lateral, expande **Configuración** y haz click en **Equipo**.
+5. Selecciona un usuario con un rol administrativo dentro de la aplicación deseada. 
 
 Para más detalles, ve a [Usuarios y Roles](/es/platform/core/roles.html)
 
