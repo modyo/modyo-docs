@@ -14,7 +14,7 @@ El patrón de repositorio tiene tres propósitos principales:
 - **Facilitar las pruebas:** Al permitir el intercambio del repositorio real con una implementación ficticia para pruebas sin afectar la base de datos real.
 - **Proporcionar una interfaz coherente para el acceso a datos:** Independientemente de la ubicación de los datos o la implementación de las operaciones de la base de datos, la aplicación siempre interactúa con un repositorio a través de una interfaz coherente.
 
-Una desventaja del patrón de repositorio es que puede añadir complejidad adicional al código,  sin embargo, frecuentemente, los beneficios de la separación de preocupaciones, la mejora en las pruebas y la coherencia en el acceso a los datos superan esta desventaja.
+Una desventaja del patrón de repositorio es que puede añadir complejidad adicional al código, sin embargo, frecuentemente, los beneficios de la separación de preocupaciones, la mejora en las pruebas y la coherencia en el acceso a los datos superan esta desventaja.
 
 Es importante tener en cuenta que, aunque el patrón de repositorio puede ser muy útil, no es la mejor elección para todas las situaciones. Como con todos los patrones de diseño, es esencial considerar cuidadosamente las necesidades y características de tu aplicación antes de decidir utilizarlo.
 
