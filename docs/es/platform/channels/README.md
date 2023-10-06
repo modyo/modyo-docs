@@ -11,8 +11,6 @@ version: 9.2
 
 {{ $frontmatter.meta[0].content }}
 
-<img src="/assets/img/channels/header.jpg" alt="Channels header image" style="margin: 40px auto; width: 400px; display: block;">
-
 **Modyo Channels** provee un extenso acceso al código HTML de las plantillas, entregando control absoluto a los desarrolladores de los detalles acerca de cómo se implementan las experiencias digitales de los usuarios y mediante un sistema integrado de versionamiento.
 
 **Modyo Channels** cuenta con plantillas de diseño las cuales son editables por HTML, logrando facilitar la reutilización de código.

@@ -7,8 +7,6 @@ sidebarDepth: 2
 
 Un sitio es donde se despliega el contenido creado en [Content](/es/platform/content/) y [Channels](/platform/channels/) para crear tu canal digital personalizado. En un sitio se lleva a cabo todo el desarrollo, diseño y flujo de navegación.
 
-<img src="/assets/img/channels/sites/sites-index.jpg" alt="The main page for the Sites module" style="border: 1px solid #EEE;" />
-
 Un sitio puede estar en uno de estos tres estados:
 
 - **Habilitado**: Estado por defecto de los sitios recién creados y aquellos que están habilitados para uso.
@@ -32,8 +30,6 @@ En el índice de sitios, solo verás los sitios en los cuales tienes algún rol 
 :::
 
 ## Revisión y Publicación Conjunta
-
-<img src="/assets/img/platform/core/review-joint-publication.png" width="800px" style="border: 1px solid #EEE;" alt="Modal de diferencias"/>
 
 En la pantalla de revisión y publicación conjunta puedes ver todos los cambios pendientes por publicar en tu sitio. Para visualizar los cambios, haz click en el botón **Ver**.
 
@@ -74,8 +70,6 @@ Puedes acceder a ella mediante la URL de tu sitio y anexando _search_ o _search.
  - `test.modyo.com/miSitio/search`
  - `test.modyo.com/miSitio/search.json`
 
-<img src="/assets/img/channels/sites/searchshow.jpg" alt="The location on where to find the search  template" width="250" />
-
 Por defecto, al realizar una consulta, los registros se muestran en forma de lista con su título, descripción y un enlace hacia su dirección. Puedes modificar la plantilla y ampliar sus funcionalidades para adaptarla a tus necesidades específicas.
 
 ### Search.json
@@ -93,9 +87,6 @@ Puedes personalizar tus consultas de la siguiente manera:
 | **page** | Este parámetro te permite seleccionar la página específica que deseas consultar en caso de que existan múltiples páginas de registros para la consulta. |
 | **multi=true** | Este parámetro permite realizar búsquedas en todos los sitios de la cuenta que tienen habilitada la función de búsqueda. |
 
-Aquí puedes ver un ejemplo de un resultado JSON al utilizar search.json:
-
-<img src="/assets/img/channels/sites/search-result.jpg" alt="The JSON result when you perform a search using search.json" width="250" />
 
 ## Configuración de un Sitio
 
@@ -171,8 +162,6 @@ Con esta configuración completada, cuando haya un valor asociado al campo **ID 
 
 #### Privacidad
 
-<img src="/assets/img/channels/sites/search-privacy.png" alt="Public or private privacy settings and their explanations" width="250" style="margin-top: 40px; border: 1px solid #EEE;" >
-
 Esta sección te permite configurar las restricciones de privacidad de tu sitio.
 
 - **Público**: Todos los visitantes pueden ver el sitio sin necesidad de iniciar sesión. El contenido del sitio es accesible para cualquier usuario.
@@ -190,8 +179,6 @@ Si habilitas la búsqueda en tu sitio y usas el parámetro`multi=true` desde otr
 
 Estas opciones conllevan riesgo para la experiencia del sitio y sus usuarios. Procede con cuidado.
 
-<img src="/assets/img/channels/sites/danger-zone.jpg" alt="The options in the danger zone." width="400" style="margin-top: 40px; border: 1px solid #EEE;" >
-
 - Cambiar reino: Este campo despliega el reino del sitio. Al cambiar de reino se pierde toda la configuración de privacidad en tus sitios, páginas y navegación.
 - Estado del Sitio: Cambia el estado del sitio entre tres diferentes opciones.
 	* Habilitado: Permite que el sitio sea editable y visible al público. Este es el estado por defecto de un sitio.
@@ -201,8 +188,6 @@ Estas opciones conllevan riesgo para la experiencia del sitio y sus usuarios. Pr
 
 
 ### SEO
-
-<img src="/assets/img/channels/sites/seo.png" alt="The options for configuring SEO within a site." width="400" style="margin-top: 40px; border: 1px solid #EEE;" >
 
 El SEO (Search Engine Optimization) es fundamental para aparecer en los distintos motores de búsqueda. Los usuarios dependen de una buena configuración de SEO para llegar al sitio.
 
@@ -250,8 +235,6 @@ Para mejorar el SEO fuera-de-página, puedes:
 
 Modyo permite la implementación de Progressive Web Apps (PWA) dentro de los canales digitales que se estén desarrollando. Para ello, ofrece dos opciones para implementarlas.
 
-<img src="/assets/img/channels/sites/pwa-site.jpg" alt="The PWA options you can configure withing a site." width="600" style="margin-top: 40px; border: 1px solid #EEE;" >
-
 #### Manifiesto
 
 El manifiesto sirve para indicar cómo quieres que un navegador muestre tu canal digital. Lo puedes activar en Modyo marcando la casilla. Al activarlo, se crea esta ruta:
@@ -291,8 +274,6 @@ Si no personalizas o no guardas el código, el sitio no contará con las funcion
 :::
 
 ### Dominios
-
-<img src="/assets/img/channels/sites/domains-site.jpg" alt="The domain options you can configure within a site." width="500" style="margin-top: 40px; border: 1px solid #EEE;" >
 
 La sección Dominios te permite conocer la ubicación pública de tu sitio, por lo que es esencial que cada uno de los miembros de la plataforma estén informados de los cambios que se realicen aquí.
 
@@ -391,18 +372,16 @@ Las ventajas principales de tener distintos stages en tus sitios son:
 
 #### Agregar un nuevo stage
 
-<img src="/assets/img/channels/sites/create-stage.jpg" alt="The create a new stage window." width="300" />
-
 Para agregar un nuevo stage a tu sitio, sigue estos pasos:
 
 1. Desde el menú lateral, haz click en **Channels**.
-1. Haz click en **Sitios**.
-1. Selecciona tu sitio.
-1. Expande la sección **Configuración del sitio**.
-1. Haz click en **Stages**.
-1. Haz click en **+ Nuevo Stage**.
-1. Selecciona la base del stage y escribe su nombre.
-1. Haz click en **Crear**.
+2. Haz click en **Sitios**.
+3. Selecciona tu sitio.
+4. Expande la sección **Configuración del sitio**.
+5. Haz click en **Stages**.
+6. Haz click en **+ Nuevo Stage**.
+7. Selecciona la base del stage y escribe su nombre.
+8. Haz click en **Crear**.
 
 :::tip Tip
 Cuando tienes más de un stage en tu sitio, la página de **Overview** muestra los detalles del stage actual y un botón para sincronizar cambios entre stages.
@@ -416,17 +395,15 @@ Una vez que hayas terminado las pruebas en tu stage y quieras sincronizar, aseg�
 
 En la pantalla de sincronizaciones puedes ver todos los cambios que se realizarán entre los dos stages seleccionados.
 
-<img src="/assets/img/channels/sites/sync-stage.jpg" alt="The sync two stages in a site window."/>
-
 Para sincronizar un stage, sigue estos pasos:
 
 1. En el menú lateral, haz click en **Channels**.
-1. Haz click en **Sitios**.
-1. Selecciona tu sitio.
-1. En la vista resumen haz click en **Sincronizar**.
-1. En la vista de sincronizaciones puedes ver todos los elementos con diferencias entre los stages seleccionados. Haz click en _Ver_ para obtener más detalles sobre los cambios.
-1. Selecciona los elementos que quieres sincronizar.
-1. Haz click en **Sincronizar**.
+2. Haz click en **Sitios**.
+3. Selecciona tu sitio.
+4. En la vista resumen haz click en **Sincronizar**.
+5. En la vista de sincronizaciones puedes ver todos los elementos con diferencias entre los stages seleccionados. Haz click en _Ver_ para obtener más detalles sobre los cambios.
+6. Selecciona los elementos que quieres sincronizar.
+7. Haz click en **Sincronizar**.
 
 :::tip Tip
 Al hacer click en **Sincronizar** puedes seleccionar desde cuál stage vas a traer los cambios. Si quieres sincronizar cambios a `main`, debes estar en `main` al hacer click en **Sincronizar**.
@@ -447,8 +424,6 @@ Para eliminar un stage, sigue estos pasos:
 1. Haz click en **Configuración de Sitio**.
 1. Haz click en **General**.
 1. En la sección zona peligrosa haz click en **Eliminar Stage**.
-
-<img src="/assets/img/channels/sites/delete-stage.png" alt="Delete stage." width="500" style="margin-top: 40px; border: 1px solid #EEE;" >
 
 :::warning Advertencia
 Al hacer click en Eliminar stage, recibirás una alerta de confirmación. Una vez que confirmes la eliminación, Modyo inicia un proceso asíncrono y no podrás acceder nuevamente al stage.
@@ -471,8 +446,6 @@ Una vez que hayas habilitado la revisión en equipo, puedes realizar las siguien
 
 
 ### Miembros del Equipo
-
-<img src="/assets/img/channels/sites/members-site.jpg" alt="The members and their roles in a site." width="500" style="margin-top: 40px; border: 1px solid #EEE;" >
 
 Para organizar y gestionar eficientemente el trabajo en Modyo, puedes seleccionar los miembros del equipo que participarán en la elaboración de cada sitio, dándoles acceso a las tareas de escritura, revisión y/o publicación.
 
