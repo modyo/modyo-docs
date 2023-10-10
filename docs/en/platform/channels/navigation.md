@@ -6,8 +6,6 @@ search: true
 
 Navigation is the fastest way to put together a list of items to give your users easy access to the key points of your site.
 
-<img src="/assets/img/platform/navigation-builder.png" alt="Navigation module screen">
-
 In this section you find a nested list of elements, which correspond to the elements that will appear on the site when using the tag <span v-pre>`{% menu%}`</span> in [Templates](/en/platform/channels/templates.html).
 
 Navigation only allows three levels of depth, so you can have a main list and up to two sub-elements nested in each of the main items. By default when creating a site, Modyo includes a template and a basic menu that you can modify to your needs.
@@ -19,7 +17,7 @@ At the top of the view, you will find the publication status of the menu:
 - **In Review:** This status appears when [Team Review] (/en/platform/core/key-concepts.html) is enabled and the editable version has been submitted for review.
 - **Approved:** This status appears when [Team Review] (/en/platform/core/key-concepts.html) is enabled and if the item's review conditions have been met. When it is in this state, a template can now be published.
 
-On the right side of the upper bar, you will find the latest publication date and the available actions:
+At the top right, you can find the last publication date and the available actions:
 
 **Preview:** Clicking on this icon opens a new tab with the preview mode of the menu, where you can view all the changes.
 
@@ -56,7 +54,7 @@ To create a Menu, follow these steps:
 4. Click on **+ New Menu**.
 5. Fill in the name and identifier and click on **Create**.
 6. Customize the menu by adding or editing items.
-7. Once finished, click on **Publish**.
+7. Once finished, click **Publish**.
 
 :::tip Tip
 Your menu is currently public but it is not being called. You need to use a template to  display the menu on the screen. Modyo offers a general-purpose snippet in **Snippets, General, menu** and is called in the `base` template using <pre v-pre>`{% snippet 'shared/general/menu' %}`</pre>.
@@ -64,7 +62,7 @@ Your menu is currently public but it is not being called. You need to use a temp
 
 For more information on how to create and publish a custom menu, see [Creating a Mega Menu](/en/platform/tutorials/how-to-create-a-menu.html).
 
-**Main Actions**
+**Main Action**
 
 - **Save:** Save all menu changes.
 - **Submit for review:** Change the menu status to “Awaiting review”. In this state, you are still making changes, but each change will be notified via email to the assigned reviewers.
