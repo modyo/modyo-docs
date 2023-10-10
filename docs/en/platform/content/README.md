@@ -13,13 +13,11 @@ version: 9.2
 
 In addition, if you use the Channels and Customers modules, you can create sites with the ability to show entries if they belong to a segment of your users in a site.
 
-<img src="/assets/img/content/header.jpg" alt="Content header image" style="margin: 40px auto; width: 500px; display: block;">
-
 **Modyo Content** has a Headless architecture that allows content to be consumed via an HTTP API from channels defined in **Modyo Channels** and external systems or applications.
 
 Thanks to its integrated system of cache and management of HTTP Headers, content can also be hosted on CDNs for greater availability and access speed, regardless of geographic location.
 
-### Main features
+### Main functionalities
 
 - [Spaces](/en/platform/content/spaces.html) for the organization of contents and teams that manage them.
 - [Content types](/en/platform/content/types.html) to define custom structures.
