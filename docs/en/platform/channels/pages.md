@@ -10,8 +10,6 @@ You can create two types of pages, widgets or content. Widget pages are based on
 
 Content pages are our solution for connecting Content modules with Channels. Here you can create the index containing the entries and the structure for all the entries using HTML, JS, CSS, and Liquid.
 
-<img src="/assets/img/platform/page-index.png" alt="The index page for all the pages in your site">
-
 To edit a page, click on the edit icon or on the name of the page to go to the editing view.
 
 In the edit view, you will see a bar across the top, a central grid in the middle, and a sidebar with tabs.
@@ -76,8 +74,6 @@ To learn more about content pages, see [Content Page](/en/platform/channels/page
 **Secondary Actions:**
 - Force publish: If you are a site administrator, then you have the option to publish pages at any time, including skipping the team review process.
 - Unpublish: If the page is published, then you will see this action and can unpublish the page.
-
-<img src="/assets/img/platform/page-builder.png" alt="The page builder screen">
 
 The central grid is where you can position your widgets. You can move widgets back and forth using the _drag-and-drop_ functionality.
 
