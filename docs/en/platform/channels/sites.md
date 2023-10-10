@@ -7,8 +7,6 @@ sidebarDepth: 2
 
 A site is where the content created in [Content] (/en/platform/content/) and [Channels] (/platform/channels/) is displayed in order to create your personalized digital channel. All development, design and navigation flows take place on a site.
 
-<img src="/assets/img/channels/sites/sites-index.jpg" alt="The main page for the Sites module" style="border: 1px solid #EEE;" />
-
 A site can be in one of three states:
 
 - **Enabled**: Default status of newly created sites and those that are enabled for use.
@@ -19,7 +17,7 @@ A site can be in one of three states:
 
 To create a new site, follow these steps:
 
-1. In the side menu, click **Channels**.
+1. On the side menu, click **Channels**.
 1. Click **+ New Site**.
 1. Enter the name and host (the site's path).
 1. If necessary, select which realm the site belongs to.
@@ -32,8 +30,6 @@ In the site index, you will only see the sites in which you have a role and are 
 :::
 
 ## Joint Review and Publication
-
-<img src="/assets/img/platform/core/review-joint-publication.png" width="800px" style="border: 1px solid #EEE;" alt="Differences modal"/>
 
 On the review and joint publication screen, you can see all the pending changes to be published on your site. To view the changes, click on the **View** button.
 
@@ -74,8 +70,6 @@ You can access it using the URL of your site and attaching _search_ or _search.j
  - `test.modyo.com/mysite/search`
  - `test.modyo.com/mysite/search.json`
 
-<img src="/assets/img/channels/sites/searchshow.jpg" alt="The location on where to find the search  template" width="250" />
-
 By default, when making a query, the records are displayed in the form of a list with their title, description and a link to their address. You can modify the template and expand its functionalities to adapt it to your specific needs.
 
 ### Search.json
@@ -93,9 +87,6 @@ You can customize your queries as follows:
 | **page** | This parameter allows you to select the specific page you want to consult, if there are multiple pages of records for the query. |
 | **multi=true** | This parameter allows you to search all the sites in the account that have the search function enabled. |
 
-Here's an example of a JSON result using search.json:
-
-<img src="/assets/img/channels/sites/search-result.jpg" alt="The JSON result when you perform a search using search.json" width="250" /> 
 
 ## Site settings
 
@@ -171,8 +162,6 @@ With this configuration completed, when there is a value associated with the **G
 
 #### Privacy
 
-<img src="/assets/img/channels/sites/search-privacy.png" alt="Public or private privacy settings and their explanations" width="250" style="margin-top: 40px; border: 1px solid #EEE;" >
-
 This section allows you to configure your site's privacy restrictions.
 
 - **Public**: All visitors can view the site without logging in. The content of the site is accessible to any user.
@@ -190,8 +179,6 @@ If you enable search on your site and use the `multi=true` parameter from other 
 
 These options pose a risk to the experience of the site and its users. Proceed carefully.
 
-<img src="/assets/img/channels/sites/danger-zone.jpg" alt="The options in the danger zone." width="400" style="margin-top: 40px; border: 1px solid #EEE;" >
-
 - Change realm: This field displays the kingdom of the site. When you change your kingdom, you lose all the privacy settings on your sites, pages and navigation.
 - Site Status: Change the status of the site between three different options.
     * Enabled: Allows the site to be editable and visible to the public. This is the default state of a site.
@@ -201,8 +188,6 @@ These options pose a risk to the experience of the site and its users. Proceed c
 
 
 ### SEO
-
-<img src="/assets/img/channels/sites/seo.png" alt="The options for configuring SEO within a site." width="400" style="margin-top: 40px; border: 1px solid #EEE;" >
 
 SEO (Search Engine Optimization) is essential for visibility across different search engines. Users depend on good SEO settings to get to the site.
 
@@ -250,8 +235,6 @@ To improve off-page SEO, you can:
 
 Modyo allows the implementation of Progressive Web Apps (PWA) within the digital channels that are being developed. To do this, it offers two options for implementing them.
 
-<img src="/assets/img/channels/sites/pwa-site.jpg" alt="The PWA options you can configure withing a site." width="600" style="margin-top: 40px; border: 1px solid #EEE;" >
-
 #### Manifest
 
 The manifest is used to indicate how you want a browser to display your digital channel. You can activate it in Modyo by checking the box. Activating it creates this path:
@@ -291,8 +274,6 @@ If you don't customize or save the code, the site won't have the features you're
 :::
 
 ### Domains
-
-<img src="/assets/img/channels/sites/domains-site.jpg" alt="The domain options you can configure within a site." width="500" style="margin-top: 40px; border: 1px solid #EEE;" >
 
 The Domains section allows you to know the public location of your site, so it's essential that each member of the platform is informed of the changes that are made here.
 
@@ -391,8 +372,6 @@ The main advantages of having different stages on your sites are:
 
 #### Adds a new stage
 
-<img src="/assets/img/channels/sites/create-stage.jpg" alt="The create a new stage window." width="300" />
-
 To add a new stage to your site, follow these steps:
 
 1. From the side menu, click **Channels**.
@@ -416,11 +395,9 @@ Once you've finished testing on your stage and want to sync, make sure you don't
 
 On the synchronizations screen you can see all the changes that will be made between the two selected stages.
 
-<img src="/assets/img/channels/sites/sync-stage.jpg" alt="The sync two stages in a site window."/>
-
 To synchronize a stage, follow these steps:
 
-1. In the side menu, click **Channels**.
+1. On the side menu, click **Channels**.
 1. Click on **Sites**.
 1. Select your site.
 1. In the summary view, click **Synchronize**.
@@ -448,8 +425,6 @@ To delete a stage, follow these steps:
 1. Click on **General**.
 1. In the dangerous zone section, click **Delete Stage**.
 
-<img src="/assets/img/channels/sites/delete-stage.png" alt="Delete stage." width="500" style="margin-top: 40px; border: 1px solid #EEE;" >
-
 :::warning Warning
 When you click Delete stage, you will receive a confirmation alert. Once you confirm the deletion, Modyo starts an asynchronous process, and you won't be able to access the stage again.
 
@@ -471,8 +446,6 @@ Once you've enabled team review, you can take the following actions:
 
 
 ### Team Members
-
-<img src="/assets/img/channels/sites/members-site.jpg" alt="The members and their roles in a site." width="500" style="margin-top: 40px; border: 1px solid #EEE;" >
 
 To efficiently organize and manage the work in Modyo, you can select the team members who will participate in the development of each site, giving them access to writing, reviewing and/or publishing tasks.
 
