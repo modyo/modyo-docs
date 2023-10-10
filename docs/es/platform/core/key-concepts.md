@@ -21,8 +21,6 @@ Estos revisores son los responsables de aprobar o rechazar el elemento, y determ
 
 Cada paso de este proceso lleva al elemento a través de distintos estados, que quedan registrados en un historial para su posterior auditoría.
 
-<img src="/assets/img/platform/core/team-review.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
-
 ### Configuración
 
 Para activar la revisión de equipo, sigue estos pasos:
@@ -30,8 +28,6 @@ Para activar la revisión de equipo, sigue estos pasos:
 1. Desde el menú lateral en Modyo Platform, selecciona un espacio o sitio.
 2. Expande **Configuración del espacio/sitio** y selecciona **Revisión en Equipo**.
 3. Haz click en **Habilita la revisión en equipo**.
-
-<img src="/assets/img/platform/teamreviewsettings.jpg" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
 
 Las opciones disponibles son:
 
@@ -78,7 +74,7 @@ Esta opción existe porque hay ocasiones en las que es necesario publicar rápid
 
 La sección Mis tareas en Modyo te da una visión general de todos los elementos que requieren tu atención. Te permite acceder a información sobre el tipo de elemento, su autor y cuándo fue actualizado por última vez.
 Una vez que un elemento ha sido marcado para revisión, el usuario asignado puede revisarlo y aprobarlo en la sección My Tasks.
-<img src="/assets/img/platform/core/my-tasks.png"/>
+
 Para ver y revisar todas las tareas asignadas a ti, sigue estos pasos:
 1. Ve a Inicio.
 2. Haz click en Mis tareas.
@@ -88,15 +84,11 @@ Para ver y revisar todas las tareas asignadas a ti, sigue estos pasos:
 
 Cuando se activa la opción de revisión en equipo y se guardan los cambios, se muestra el botón verde principal **Enviar a revisión**.
 
-<img src="/assets/img/platform/send-to-review-bar.jpg" width="350px" style=" border: 1px solid #EEE;" />
-
 Al enviar a revisión, la barra cambia de estado para indicar si faltan condiciones o si no se tiene permiso suficiente.
 
 Al hacer click, en la sección lateral derecha se indicarán los requerimientos para publicar el elemento.
 
 Si se requiere la revisión de algún revisor, aparecerá `(requerido)` junto a su nombre en el listado de revisores.
-
-<img src="/assets/img/platform/box-reviewers.jpg" width="500px" style="border: 1px solid #EEE;" />
 
 A la derecha de cada revisor, está el estado de su revisión. Se muestra un círculo amarillo si no ha hecho su revisión, y un check verde en caso de haber aprobado el elemento.
 
@@ -113,8 +105,6 @@ Al abrir esta pestaña, se muestra una lista cronológica de las acciones realiz
 Cuando se deja un comentario o se ejecuta alguna acción sobre el elemento, se envía una notificación tanto a quien envió a revisión como a los usuarios que están en la lista de revisores.
 
 ## Revisión y Publicación Conjunta
-
-<img src="/assets/img/platform/core/review-joint-publication.png" width="800px" style="border: 1px solid #EEE;" alt="Modal de diferencias"/>
 
 En la pantalla de revisión y publicación conjunta puedes ver todos los cambios pendientes por publicar en tu sitio. Tienes la opción de ver qué cambio al hacer click en el botón **Ver**.
 
@@ -190,8 +180,6 @@ Dentro del versionado hay dos acciones que te permiten interactuar con los respa
 
 Puedes cambiar qué versiones comparar, cambiando los valores en los selectores de versiones en la parte superior del modal.
 
-<img src="/assets/img/platform/differences.jpg" width="800px" style="border: 1px solid #EEE;" alt="Modal de diferencias"/>
-
 Sigue estos pasos para revertir a una versión publicada en una Entrada:
 
 1. Desde Modyo Platform, expande Content y selecciona Espacios.
@@ -225,8 +213,6 @@ Dado que esta es una acción potencialmente peligrosa, solo los administradores 
 
 Locks es una funcionalidad de Modyo que permite modificar un recurso de manera segura, evitando problemas de concurrencia que puedan ocurrir cuando otro usuario esté trabajando en él simultáneamente. De esta forma Modyo evita la pérdida de trabajo o la sobreescritura de documentos.
 
-<img src="/assets/img/platform/locks.jpg" style="border: 1px solid #EEE;" />
-
 ### ¿Qué elementos usan Locks?
 
 Locks se usa principalmente en [Content](/es/platform/content/) y en [Channels](/es/platform/channels/), pero también puede ser usado en otras secciones donde se editan elementos como Configuraciones y [Customers](/es/platform/customers/).
@@ -245,8 +231,6 @@ En este caso, sólo un Administrador podrá tomar el control, activando para sí
 :::warning Tomar el control
 
 Si un Administrador quiere tomar el control de una vista, deberá hacer click en el elemento en uso y en la pantalla siguiente, hacer click en el botón **Tomar Control**.
-
-<img src="/assets/img/platform/lock-forms.jpg" style="border: 1px solid #EEE;" />
 
 Cuando el Administrador toma el control, el usuario que esté usando el recurso recibe un mensaje en el que se le impide seguir haciendo cambios, por lo que cualquier cambio que el usuario esté realizando, debe ser guardado y respaldado offline.
 

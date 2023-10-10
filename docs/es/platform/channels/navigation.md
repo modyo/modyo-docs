@@ -6,8 +6,6 @@ search: true
 
 La navegación es la forma más rápida de armar un listado de elementos para entregarle a tus usuarios un fácil acceso a los puntos clave de tu sitio.
 
-<img src="/assets/img/platform/navigation-builder.png" alt="Navigation module screen">
-
 En esta sección encuentras un listado anidado de elementos, que corresponden a los elementos que aparecerán en el sitio al usar el tag <span v-pre>`{% menu %}`</span> en [Plantillas](/es/platform/channels/templates.html).
 
 Navegación sólo permite tres niveles de profundidad, por lo que puedes tener un listado principal y hasta dos sub elementos anidados en cada uno de los items principales. Por defecto al crear un sitio, Modyo incluye una plantilla y un menú básico que puedes modificar a tus necesidades.

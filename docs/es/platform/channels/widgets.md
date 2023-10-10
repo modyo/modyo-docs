@@ -12,8 +12,6 @@ Al entrar en la sección Widgets del sitio, se puede ver un listado de todos los
 
 En la vista de edición del widget, se puede ver la barra superior de acciones, el área de trabajo y la columna de propiedades.
 
-<img src="/assets/img/platform/widget-builder.png" alt="The widget builder module">
-
 En la barra superior se encuentran las siguientes secciones:
 
 - **Borrador:** Este estado aparece cuando recién se haya creado un widget o cuando se haya despublicado.
@@ -257,8 +255,6 @@ Sigue estos pasos para crear un snippet con variables de Liquid:
 2. Haz click en tu sitio.
 3. En el menú de tu sitio, haz click en **Plantillas** y selecciona **Snippets**.
 4. Agrega un nuevo **Snippet Personalizado**. Para éste ejemplo al snippet lo nombramos `liquid2js_js`, pero puede tener cualquier nombre.
-
-<img src="/assets/img/widgets/template_snippets.png" alt="Image displaying where to find template snippets.">
 
 5. Abre el apartado de javascript y pega el código:
 ```js

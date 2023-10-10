@@ -10,8 +10,6 @@ Puedes crear dos tipos de páginas, de widgets o de contenido. Las páginas de w
 
 Las páginas de contenido son nuestra solución para conectar los módulos de Content con Channels. Aquí podrás crear el índice que contiene las entradas y la estructura para todas las entradas usando HTML, JS, CSS, y Liquid.
 
-<img src="/assets/img/platform/page-index.png" alt="The index page for all the pages in your site">
-
 Para editar una página, haz click en el ícono de edición o en el nombre de la página para ir a la vista de edición.
 
 En la vista de edición, encuentras una barra superior con acciones, una grilla central y una barra lateral con pestañas.
@@ -76,8 +74,6 @@ Para conocer más acerca de páginas de contenido, ve [Página de Contenido](/es
 **Acciones secundarias:**
 - Forzar publicación: Si es que eres administrador del sitio, entonces puedes ver y usar esta opción que te permite publicar la página en cualquier momento, incluso saltándote la revisión en equipo.
 - Despublicar: Si es que la página está publicada, entonces ves esta acción que te permite despublicar la página.
-
-<img src="/assets/img/platform/page-builder.png" alt="The page builder screen">
 
 La grilla central es donde puedes posicionar tus widgets. Puedes mover los widgets de un lado a otro utilizando la funcionalidad _drag-and-drop_.
 

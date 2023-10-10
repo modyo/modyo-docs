@@ -57,8 +57,6 @@ Si un usuario no tiene una sesión activa, llena el formulario, y el correo elec
 
 ## Editar formulario
 
-<img src="/assets/img/customers/forms/edit-form.jpg" style="border: 1px solid #EEE; margin-top: 40px">
-
 Para modificar un formulario, sigue estos pasos:
 
 1. En el menú lateral, selecciona **Customers** y haz click en **Reinos**.
@@ -143,8 +141,6 @@ La sección **General** agrega dos opciones:
 
 #### Snippet
 La sección **Snippet**, que sólo aparecerá si el formulario es público, te permitirá copiar un código _HTML_ que podrás usar en cualquier lugar para cargar dinámicamente el formulario, incluso fuera de Modyo.
-
-<img src="/assets/img/customers/forms/form-embed.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="350">
 
 :::warning Atención
 Para poder hacer uso adecuado del snippet del formulario, debes tener en cuenta la configuración _CORS_ de tu cuenta en Modyo y los _headers_ de seguridad de donde estés insertando el snippet.
@@ -239,5 +235,3 @@ Puedes eliminar respuestas una por una usando la acción a la derecha de cada re
 :::
 
 Para ver en detalle la respuesta de un usuario, basta con hacer click en el nombre del usuario, y accederás al listado de preguntas junto a las respuestas que ese usuario envió en esa determinada ocasión.
-
-<img src="/assets/img/customers/forms/submission-show.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="600">

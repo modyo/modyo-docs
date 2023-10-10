@@ -6,14 +6,10 @@ search: true
 
 Mensajería es una herramienta de Modyo que te permite hacer campañas en el sitio y enviar información a los usuarios finales de manera masiva, dirigida a segmentos específicos.
 
-<img src="/assets/img/platform/newcampaign.png" style="border: 1px solid #EEE; margin-top: 40px">
-
 En Modyo, puedes enviar mensajes a los usuarios a través de dos canales:
 
 - **Correos**: Envía campañas a las casillas de emails registradas en los perfiles de los usuarios. No es necesario ingresar a la plataforma para  ver los mensajes.
 - **Notificaciones**: Envía notificaciones a través del sistema de mensajería interno. Para verlas, el usuario tiene que ingresar a la plataforma.
-
-<img src="/assets/img/platform/messagedeliveries.png" width="400" style="border: 1px solid #EEE; margin-top: 40px">
 
 ## Campañas
 
@@ -59,8 +55,6 @@ Esto abre el editor WYSIWYG con la plantilla que seleccionaste. Edita la plantil
 
 ### Estado de envío
 
-<img src="/assets/img/platform/send.png" style="border: 1px solid #EEE; margin-top: 40px">
-
 En la parte superior de la pantalla, el ícono de **vista previa** te permite visualizar tu campaña antes de enviarla. Da click en el botón **Enviar** para mandar la campaña.
 
 El botón contextual te permite realizar estas acciones:
@@ -70,8 +64,6 @@ El botón contextual te permite realizar estas acciones:
 - **Editar**: Edita las propiedades de la campaña, aspectos técnicos como la dirección de envío y los segmentos a recibir.
 - **Clonar la campaña**: Copia todo el contenido de una campaña.
 - **Borrar la campaña**: Elimina una campaña.
-
-<img width="300" src="/assets/img/platform/menu.png" style="border: 1px solid #EEE; margin-top: 40px">
 
 Una vez que hayas enviado una campaña, no puedes enviarla nuevamente. Si deseas enviar de nuevo la misma campaña, selecciona la opción de clonar. Esto  crea una una nueva campaña con los mismos datos de nombre, segmentos y contenido, mientras que la información estadística parte de cero.
 
@@ -84,8 +76,6 @@ Debes indicar si deseas enviar nuevamente los mensajes a todos los usuarios o so
 :::
 
 En campañas enviadas por correo puedes visualizar:
-
-<img src="/assets/img/platform/campaign.png" style="border: 1px solid #EEE; margin-top: 40px">
 
 - **Alcance**: Personas a las que les llegó la campaña.
 - **Enviados**: Número total de correos enviados.
@@ -140,8 +130,6 @@ La barra de búsqueda te permite buscar por algún término en específico.
 
 ## Plantillas
 
-<img src="/assets/img/customers/messaging/messaging-templates-index.jpg" style="border: 1px solid #EEE; margin-top: 40px">
-
 Para crear tu mensaje en forma de correo, necesitas una plantilla en la cual añadir tu contenido.
 
 En la sección plantillas puedes hacer maquetas de correos para después enviarlas a los usuarios.
@@ -163,8 +151,6 @@ Para modificar una plantilla temporalmente y después volver a una nueva, haz un
 :::
 
 ### Editar plantillas
-
-<img src="/assets/img/customers/messaging/messaging-template-show.jpg" style="border: 1px solid #EEE; margin-top: 40px">
 
 Para crear una plantilla, haz click en el botón **+ Nueva Plantilla**, en la parte superior de la página.
 

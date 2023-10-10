@@ -11,8 +11,6 @@ version: 9.2
 
 {{ $frontmatter.meta[0].content }}
 
-<img src="/assets/img/customers/header.jpg" alt="Customers header image" style="margin: 40px auto; width: 400px; display: block;">
-
 Una vez que el usuario ha sido identificado, la plataforma gestionará de forma interna los eventos de negocio que el usuario realice durante su sesión y mediante la funcionalidad de Segmentos la Plataforma podrá personalizar el contenido y la experiencia en su navegación.
 
 **Modyo Customers** representa un importante elemento a la hora de desarrollar productos digitales sobre la plataforma. Además posee un sistema integrado de mensajería al usuario autenticado.
