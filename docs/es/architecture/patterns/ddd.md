@@ -10,7 +10,7 @@ Ventajas del DDD:
 
 - **Comunicación mejorada:** Fomenta el uso de un lenguaje común llamado "lenguaje ubicuo" entre desarrolladores, stakeholders y usuarios; lo que mejora la comunicación y la comprensión en el proyecto.
 - **Enfoque en el dominio del negocio:** Garantiza que el software se adapte a las necesidades y procesos del negocio.
-- **Diseño de software de alta calidad:** Promueve principios sólidos de diseño de software, lo que conduce a un software más mantenible y adaptable.
+- **Diseño de software de alta calidad:** Promueve los principios SOLID de diseño de software, lo que conlleva a un software más mantenible y adaptable.
 
 Desventajas del DDD:
 
