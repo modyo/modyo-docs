@@ -8,8 +8,6 @@ Welcome to the official [Dynamic Framework] documentation (https://dynamicframew
 
 In this guide, you'll find information about the various features of this framework, as well as key definitions and details on how to start working with it.
 
-<img src="/assets/img/dynamic/dynamic-logo.png"/>
-
 ## Dynamic Framework
 
 Dynamic Framework is a set of user experiences, based on web components and integrations, designed to accelerate the development of solutions in the field of digital banking and the financial industry in general. This platform provides a fast and efficient way to create robust solutions.
