@@ -11,15 +11,13 @@ version: 9.2
 
 {{ $frontmatter.meta[0].content }}
 
-<img src="/assets/img/channels/header.jpg" alt="Channels header image" style="margin: 40px auto; width: 400px; display: block;">
-
 **Modyo Channels** provides extensive access to the HTML code of every template, giving developers complete control of every detail of a user's digital experiences, published through an integrated version control system.
 
 **Modyo Channels** includes design templates which are editable by HTML, making it easier to reuse code.
 
 **Modyo Channels** also has a templating system based on [Liquid Markup](/en/platform/channels/liquid-markup.html) that allows for dynamic interpolation of information which is efficiently processed from the server's side.
 
-### Main features
+### Main functionalities
 
 - [Site management](/en/platform/channels/sites.html) to organize digital channels.
 - [Dynamic pages](/en/platform/channels/pages.html) to define the structure of each site and add content to it.
