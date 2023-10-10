@@ -9,8 +9,6 @@ Content Types are the basis for your Posts. The Types define which fields and va
 
 Content Types can be assigned cardinality. This variable indicates how many Entries can exist for this Type. You can add languages to the repository and generate Multilingual Entries, stored in one place. In addition, you can create Users, with different roles and permissions, thus achieving a division of labor called Team Review.
 
-<img src="/assets/img/content/types/types.jpg" alt="The UI for the Content Type module.">
-
 ## About the Interface
 
 When you first enter the Types section, click the green **+New Type** button to create a new Type.
