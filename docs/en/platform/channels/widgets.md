@@ -12,8 +12,6 @@ When you enter the Widgets section of the site, you can see a list of all the wi
 
 In the widget editing view, you can see three areas: the top action bar, the main work area and the properties column on the right.
 
-<img src="/assets/img/platform/widget-builder.png" alt="The widget builder module">
-
 Along the **top bar**, on the left, you can see the widget name and current status:
 
 - **Draft:** This status appears when a widget has just been created or when it has been unpublished.
@@ -92,7 +90,7 @@ If you delete a widget from a page and publish, you'll continue to see that page
 
 ## Create a Widget
 To create a new Widget and have a _micro frontend_ for your sites and posts, follow these steps:
-1. From the Modyo Platform main menu, expand Channels, and click your site.
+1. From the Modyo Platform main menu, expand Channels, and click your Site.
 1. Click Widgets.
 1. Click the **+ New Widget** button.
 1. Enter the name of your widget and click **Create**.
@@ -257,8 +255,6 @@ Follow these steps to create a snippet with Liquid variables:
 2. Click on your site.
 3. In your site menu, click **Templates** and select **Snippets**.
 4. Add a new **Custom Snippet**. For this example use `liquid2js_js`, but it can be any other name.
-
-<img src="/assets/img/widgets/template_snippets.png" alt="Image displaying where to find template snippets.">
 
 5. Open the javascript section and paste the code:
 ```js
