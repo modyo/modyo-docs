@@ -25,7 +25,7 @@ Web accessibility is essential for inclusion and equal access to information and
 
 Web accessibility is measured using different techniques and evaluations. Some of the most common forms are:
 
-- **Manual evaluation: ** It consists of manually reviewing the website or application to identify possible accessibility barriers, including verifying the structure of the content, the correct use of tags, contrast, navigability, the presence of alternatives for non-textual content, and other key aspects.
+- **Manual evaluation:** Consists of manually reviewing the website or application to identify possible accessibility barriers, including verifying the structure of the content, the correct use of tags, contrast, navigability, the presence of alternatives for non-textual content, and other key aspects.
 - **Automatic evaluation tools: ** Use automated tools that analyze the code and content of a website for accessibility issues. These tools can detect missing or incorrect elements, provide recommendations, and generate reports on the level of accessibility of the site.
 - **Testing with real users: ** Involves people with disabilities or limitations to test and evaluate the accessibility of the website. Real users can provide valuable feedback to find barriers and identify areas for improvement.
 - **Compliance with standards and guidelines: ** It consists of evaluating whether the website complies with established accessibility standards and guidelines, such as the W3C WCAG.
