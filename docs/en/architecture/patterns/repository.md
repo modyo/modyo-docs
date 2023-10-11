@@ -12,7 +12,7 @@ The repository pattern has three main purposes:
 
 - **Separate application logic from database logic:** This makes it easier to write and maintain application code by reducing the need for logic for database manipulation.
 - **Facilitate testing:** By allowing the exchange of the real repository with a fictitious implementation for testing without affecting the real database.
-- **Provide a consistent interface for data access: ** Regardless of the location of the data or the implementation of database operations, the application always interacts with a repository through a consistent interface.
+- **Provide a consistent interface for data access:** Regardless of the location of the data or the implementation of database operations, the application always interacts with a repository through a consistent interface.
 
 A disadvantage of the repository pattern is that it can add additional complexity to the code, however, often, the benefits of separation of concerns, improved testing, and consistency in accessing data outweigh this disadvantage.
 
