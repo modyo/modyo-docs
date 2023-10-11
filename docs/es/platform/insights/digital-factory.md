@@ -16,8 +16,6 @@ Los filtros disponibles son:
 Cuando filtras por sitio, los elementos que usan datos de espacios, no aportarán su data en el conteo, y a la vez, si filtras por espacio, los elementos que usen data de sitios, no aportarán al conteo de datos.
 :::
 
-![Digital factory](/assets/img/platform/digital-factory.png)
-
 ### Actividad por tipo
 
 Verás cinco cajas que representarán la cantidad de elementos creados, modificados, enviados a revisión, aprobados y publicados. Los elementos que se agrupan en estas cajas son entradas, página, navegación, widgets y templates.
