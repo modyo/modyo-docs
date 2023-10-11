@@ -10,7 +10,7 @@ Advantages of DDD:
 
 - **Improved communication:** Encourages the use of a common language called “ubiquitous language” among developers, stakeholders, and users; which improves communication and understanding in the project.
 - **Business domain focus:** Ensures that the software adapts to business needs and processes.
-- **High-quality software design: ** Promotes SOLID principles of software design, leading to more maintainable and adaptable software.
+- **High-quality software design:** Promotes SOLID principles of software design, leading to more maintainable and adaptable software.
 
 Disadvantages of DDD:
 
