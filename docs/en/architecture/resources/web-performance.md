@@ -25,7 +25,7 @@ Web performance measurement is based on a variety of metrics and tools. Here are
 - **Load Time:** This is the time it takes for a page to fully load. You can measure it with Google PageSpeed Insights, GTmetrix, or others.
 - **Time to First Byte (TTFB):** Measures the time from the initial request to the receipt of the first byte from the server. The shorter the TTFB, the better.
 - **User Interaction Time (TBT):** Indicates how much time is required for a page to load enough for the user to interact with it.
-- **Largest Content Paint Time (LCP) :** Google metric that measures how long it takes to load the largest visible component, such as an image or block of text.
+- **Largest Content Paint Time (LCP):** Google metric that measures how long it takes to load the largest visible component, such as an image or block of text.
 - **Cumulative Design Displacement (CLS):** Another Google metric, it measures how much elements on a page move during loading.
 - **Speed Index :** Indicates how long it takes for a page to be displayed visually to the user.
 - **Performance Score: ** Metrics from tools like Google's Lighthouse that provide an overall score based on multiple performance metrics.
