@@ -6,8 +6,6 @@ search: true
 
 One of the most demanted features in any platforms is the ability to capture of user data, analyze it, and use it for segmentation. With this tool you can create as many forms as you need to collect data from the users of your sites.
 
-![Digital factory](/assets/img/platform/form-index.png)
-
 When you access the tool, you are able to see a list of all the forms currently active in the account. You can filter by their status (enabled or disabled), by the site they're deployed to, and search by the name of the form.
 
 In each row of the forms table, the columns are ordered by the name of the form, the date it was created, and the number of responses that were submitted for that form.
