@@ -34,7 +34,7 @@ In both cases, applying DDD means dividing the system into smaller components, e
 
 
 ### DDD implementation with Modyo
-There are several ways to implement DDD with Modyo, the most common starting with understanding the business in which you want to implement the solution. Once you have identified the different business areas (domain) and how they are divided (sub-domains), you can make significant decisions, such as:
+There are several ways to implement DDD with Modyo, the most common begins with understanding the business in which you want to implement the solution. Once you have identified the different business areas (domain) and how they are divided (sub-domains), you can make significant decisions, such as:
 - Separation into different Modyo organizations that are independent of each other.
 - Separation of multiple Web sites or applications, with different users and administration roles.
 - Separation of content spaces, with different users and administration roles.
