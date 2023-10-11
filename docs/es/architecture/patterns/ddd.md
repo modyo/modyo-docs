@@ -4,42 +4,42 @@ search: false
 
 # Domain Driven Design
 
-El Domain-Driven Design (DDD) es un enfoque para el desarrollo de software que pone un énfasis fuerte en la comprensión del dominio del negocio y en modelar el software según ese dominio. En DDD, los conceptos y estructuras del dominio del negocio se reflejan directamente en el diseño del software.
+El Domain-Driven Design (DDD) es una metodología de desarrollo de software que enfatiza la comprensión del dominio del negocio y modela el software según ese dominio. En DDD, los conceptos y estructuras del dominio empresarial se reflejan directamente en el diseño del software.
 
 Ventajas del DDD:
 
-- **Comunicación Mejorada:** DDD promueve el uso de un lenguaje común entre desarrolladores, stakeholders y usuarios, llamado "lenguaje ubiquito". Esto puede mejorar la comunicación y la comprensión entre todos los involucrados en un proyecto.
-- **Enfoque en el Dominio del Negocio:** Al centrarse en el dominio del negocio, DDD ayuda a asegurar que el software se alinee estrechamente con las necesidades y los procesos del negocio.
-- **Diseño de Software de Alta Calidad:** DDD promueve principios de diseño de software sólidos, lo que puede conducir a software más mantenible y adaptable.
+- **Comunicación mejorada:** Fomenta el uso de un lenguaje común llamado "lenguaje ubicuo" entre desarrolladores, stakeholders y usuarios; lo que mejora la comunicación y la comprensión en el proyecto.
+- **Enfoque en el dominio del negocio:** Garantiza que el software se adapte a las necesidades y procesos del negocio.
+- **Diseño de software de alta calidad:** Promueve los principios SOLID de diseño de software, lo que conlleva a un software más mantenible y adaptable.
 
 Desventajas del DDD:
 
-- **Complejidad:** DDD puede ser complejo y puede requerir un tiempo y un esfuerzo considerables para implementar correctamente. Puede no ser adecuado para aplicaciones más simples o para equipos con menos experiencia en diseño de software.
-- **Requiere Conocimiento del Dominio:** Para usar DDD efectivamente, los desarrolladores necesitan tener o adquirir un buen entendimiento del dominio del negocio, lo cual puede ser un desafío en algunos contextos.
-- **No es Adecuado para Todas las Aplicaciones:** DDD es más útil en aplicaciones de negocio complejas. En aplicaciones con lógica de negocio simple, la sobrecarga de DDD puede no justificar los beneficios.
+- **Complejidad:** Puede ser complejo y requerir tiempo y esfuerzo considerables para implementar correctamente. Puede no ser adecuado para aplicaciones más simples o equipos con menos experiencia en diseño de software.
+- **Requiere conocimiento del dominio:** Para usar DDD efectivamente, los desarrolladores deben tener o adquirir un buen entendimiento del dominio del negocio, lo cual puede ser un desafío en algunos contextos.
+- **No es adecuado para todas las aplicaciones:** Es más útil en aplicaciones empresariales complejas. En aplicaciones con lógica de negocio simple, la sobrecarga de DDD puede no justificar los beneficios.
 
-En general, DDD puede ser una herramienta valiosa para desarrollar software de alta calidad que se alinea estrechamente con las necesidades de un negocio, pero es importante considerar cuidadosamente si es el enfoque adecuado para tu situación particular.
+El DDD puede ser una herramienta valiosa para desarrollar software de alta calidad que se alinee estrechamente con las necesidades de un negocio. Sin embargo, es importante considerar cuidadosamente si es el enfoque adecuado para tu situación específica.
 
-### DDD aplicado a los Micro Frontend y Microservicios
+### DDD aplicado a los micro frontend y microservicios
 
-Domain-Driven Design (DDD) se puede aplicar tanto a los micro frontends como a los microservicios para mantener el enfoque en el dominio del negocio y asegurar que los sistemas desarrollados estén alineados con las necesidades y los procesos del negocio.
+Se puede aplicar DDD tanto a micro frontends como a microservicios para mantener el enfoque en el dominio del negocio y garantizar que los sistemas desarrollados se alineen con las necesidades y procesos del negocio.
 
-#### Micro Frontends
-En el contexto de los micro frontends, puedes aplicar DDD al diseñar cada micro frontend para reflejar un subdominio específico del dominio del negocio. Por ejemplo, si estás construyendo un sitio web de comercio electrónico, podrías tener un micro frontend para el carrito de compras, otro para la lista de productos, y otro para el proceso de pago. Cada uno de estos micro frontends se encargaría de un aspecto específico del dominio del negocio y se desarrollaría de acuerdo con las necesidades y reglas de ese subdominio.
+#### Micro frontends
+En el contexto de los micro frontends, puedes aplicar DDD al diseñar cada micro frontend para reflejar un subdominio específico del dominio del negocio. Por ejemplo, si estás construyendo un sitio web de comercio electrónico, puedes tener un micro frontend para el carrito de compras, otro para la lista de productos y otro para el proceso de pago. Cada uno de estos micro frontends se encargaría de un aspecto específico del dominio del negocio y se desarrollaría de acuerdo con las necesidades y reglas de ese subdominio.
 
 #### Microservicios
-Con los microservicios, DDD se aplica de manera similar. Cada microservicio debería representar un "bounded context" ( contexto acotado), que es un término de DDD que se refiere a un límite dentro del cual un modelo de dominio particular es consistente. Dentro de este contexto acotado, los modelos y el lenguaje deben ser coherentes. Cada microservicio debe tener su propio modelo de dominio y debe interactuar con otros microservicios a través de interfaces bien definidas.
+En el contexto de los microservicios, la aplicación de DDD es similar a la de los micro frontends. Cada microservicio debe representar un _bounded context_ o contexto acotado, que se refiere a un límite dentro del cual un modelo de dominio particular es consistente. Dentro de este contexto acotado, los modelos y el lenguaje deben ser coherentes. Cada microservicio debe tener su propio modelo de dominio y debe interactuar con otros microservicios a través de interfaces bien definidas.
+
+En ambos casos, aplicar DDD significa dividir el sistema en componentes más pequeños, ya sea micro frontends o microservicios. Cada uno de estos componentes se enfoca en un aspecto particular del dominio empresarial y se diseña considerando las necesidades y reglas específicas de ese dominio. Esta práctica contribuye a desarrollar sistemas más coherentes, escalables y fáciles de mantener.
 
 
-La aplicación de DDD en ambos contextos implica dividir el sistema en componentes más pequeños (ya sean micro frontends o microservicios) que se centran en un aspecto específico del dominio del negocio, y diseñar cada componente de acuerdo con las necesidades y reglas de ese dominio. Esto puede ayudar a crear sistemas más coherentes, escalables y mantenibles.
+### Implementación de DDD con Modyo
+Existen diversas formas de implementar DDD con Modyo, la más común comienza con el entendimiento del negocio en el que deseas implementar la solución. Una vez identificadas las diferentes áreas de negocio (dominio) y cómo estas se dividen (sub-dominios), puedes tomar decisiones significativas, como:
+- Separación en diferentes organizaciones de Modyo independientes entre sí.
+- Separación de múltiples sitios o aplicaciones Web, con usuarios y roles de administración diferenciados.
+- Separación de espacios de contenidos, con usuarios y roles de administración diferenciados.
+- Alcance de los widgets que serán desarrollados como [micro frontends](/es/architecture/patterns/micro-frontend), buscando siempre unificar.
 
-### ¿Cómo se implementa el DDD con Modyo?
-Existen diversas formas de implementar DDD con Modyo, pero la más común nace del entendimiento del negocio sobre el cuál se desea implementar la solución. Una vez que se identifican las diferentes áreas de negocio (dominio) y cómo éstas se dividen (sub-dominios) se podrán tomar decisiones relevantes cómo por ejemplo:
-- Separación en diferentes organizaciones de Modyo independientes entre sí
-- Separación de múltiples sitios o aplicaciones Web, con usuarios y roles de administración diferenciados
-- Separación de espacios de contenidos, con usuarios y roles de administracións diferenciados
-- Alcance de los Widgets que serán desarrollados como [micro frontends](/es/architecture/patterns/micro-frontend), buscando siempre unificar 
+El objetivo de lo anterior es agrupar los elementos que necesitan modificarse conjuntamente y separar aquellos que no tienen dependencia entre sí; creando contextos delimitados dentro de la implementación, dónde un usuario resuelve operaciones de negocio completas con un intercambio mínimo de contextos.
 
-Aplicando los criterios anteriores, lo que se busca es que las cosas que se modifiquen juntas, se estructuren juntas, mientras que las cosas que no dependen una de otra, se implementen por separado. De esta forma se crean contextos delimitados dentro de la implementación, dónde un usuario resuelve operaciones de negocio completas con el mínimo intercambio de contextos posible.
-
-El DDD es una gran técnica de arquitectura para ayudar a la definición de la estructura de iniciativas complejas, y resulta especialmente útil cuando se trabaja sobre la arquitectura de referencia de Modyo.
+El DDD es una valiosa técnica de arquitectura para ayudar a definir la estructura de iniciativas complejas y resulta especialmente útil cuando se trabaja sobre la arquitectura de referencia de Modyo.
