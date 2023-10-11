@@ -6,7 +6,7 @@ search: false
 
 Domain-Driven Design (DDD) is a software development methodology that emphasizes understanding the business domain and models the software according to that domain. In DDD, the concepts and structures of the business domain are directly reflected in the design of the software.
 
-Advantages of the DDD:
+Advantages of DDD:
 
 - **Improved communication: ** Encourages the use of a common language called “ubiquitous language” among developers, stakeholders and users; which improves communication and understanding in the project.
 - **Business domain focus: ** Ensures that the software adapts to business needs and processes.
