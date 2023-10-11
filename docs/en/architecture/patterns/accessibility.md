@@ -43,4 +43,4 @@ The implementation of accessibility in Modyo varies depending on the project and
 - Confirm that media files, such as images and videos in Modyo Content, include alternative descriptions suitable for people with visual disabilities.
 - Use the Liquid language tag instead of a fixed URL when embedding media files in a page or widget in Modyo, to ensure the correct representation of alternative descriptions and to easily allow updates by the content management team.
 
-By following these criteria, you promote web accessibility in the development of projects in Modyo and allow a greater number of users to access and enjoy the online experience in an inclusive way.
+By following these criteria, you promote web accessibility in the development of projects in Modyo and allow a greater number of users to access and enjoy their online experience in an inclusive way.
