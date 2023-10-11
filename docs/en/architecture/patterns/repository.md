@@ -30,5 +30,5 @@ To do this, Modyo Connect uses [GitHub Enterprise] technology (https://github.co
 The last component is especially important, since it allows other projects to access the libraries that make up the pattern, obtaining reusable code under a controlled versioning scheme.
 
 :::type Semantic Versioning
-To centrally manage intermediate libraries, it is necessary to establish criteria for labeling the versions to be generated. For this purpose, Modyo recommends the use of [semantic versioning] (https://semver.org/lang/es/).
+To centrally manage intermediate libraries, it is necessary to establish criteria for labeling the versions to be generated. For this purpose, Modyo recommends the use of [semantic versioning] (https://semver.org/).
 :::
