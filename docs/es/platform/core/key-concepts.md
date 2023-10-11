@@ -241,8 +241,6 @@ Tras tomar el control, el Administrador solo tiene dos horas para hacer cambios 
 
 El modo vista previa te permite previsualizar los cambios realizados a elementos publicables como entradas, páginas, navegación, widgets o plantillas. El acceso a este modo está en la parte superior derecha del sitio. Puedes reconocer que estás en modo vista previa, cuando veas la barra en la parte superior del sitio.
 
-![Barra de vista previa](/assets/img/platform/preview-bar.png)
-
 La barra de vista previa contiene los siguientes elementos interactivos:
 
 * **Selector de plantillas**: Permite cambiar entre la versión publicada y editable de los elementos pertenecientes al template builder.
