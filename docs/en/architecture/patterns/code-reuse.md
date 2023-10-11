@@ -8,7 +8,7 @@ Code reuse is the practice of writing code that you can use in multiple contexts
 
 This practice offers multiple advantages, such as:
 
-- **Efficiency: ** Save time and effort by not having to write the same code over and over again.
+- **Efficiency:** Save time and effort by not having to write the same code over and over again.
 - **Consistency: ** It helps to ensure that certain functions behave consistently in all parts of an application or in different applications.
 - **Maintainability: ** It's easier and faster to update or correct errors in a single reusable codebase than in multiple copies of the same code.
 
