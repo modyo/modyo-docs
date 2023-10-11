@@ -4,7 +4,7 @@ search: true
 
 # Accessibility
 
-Web accessibility is the practice of designing and developing websites and applications so that all people, regardless of their abilities or limitations, can access and use online resources and services. Its main objective is to eliminate barriers that prevent people with disabilities from accessing, interacting and fully benefiting from online resources and services.
+Web accessibility is the practice of designing and developing websites and applications so that all people, regardless of their abilities or limitations, can access and use online resources and services. Its main objective is to eliminate barriers that prevent people with disabilities from accessing, interacting, and fully benefiting from online resources and services.
 
 Web accessibility is based on the principle of universal design, which seeks to create products and environments that are usable by as many people as possible, regardless of their skills or abilities. This includes considering people with visual, hearing, motor, or cognitive disabilities.
 
