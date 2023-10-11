@@ -20,7 +20,7 @@ It's important to note that while the repository pattern can be very useful, it'
 
 ### Implementing the repository pattern with Modyo
 
-The repository pattern can be applied in Modyo to both micro frontends and microservices by implementing intermediate repositories through [Modyo Connect] (/es/connect). These repositories generate versioned components available in an artifact registration system and can be invoked as required in different contexts.
+The repository pattern can be applied in Modyo to both micro frontends and microservices by implementing intermediate repositories through [Modyo Connect] (/en/connect). These repositories generate versioned components available in an artifact registration system and can be invoked as required in different contexts.
 
 To do this, Modyo Connect uses [GitHub Enterprise] technology (https://github.com), which provides access to three key components to activate this pattern:
 - Repository where the library is stored and versioned, with [GitHub Repositories] (https://github.com/features)
