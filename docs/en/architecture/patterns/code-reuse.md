@@ -10,7 +10,7 @@ This practice offers multiple advantages, such as:
 
 - **Efficiency:** Save time and effort by not having to write the same code over and over again.
 - **Consistency:** Helps ensure that certain functions behave consistently in all parts of an application or in different applications.
-- **Maintainability: ** It's easier and faster to update or correct errors in a single reusable codebase than in multiple copies of the same code.
+- **Maintainability:** It's easier and faster to update or correct errors in a single reusable codebase than in multiple copies of the same code.
 
 There are several ways to reuse code in web application development. This includes the use of libraries or frameworks, the creation of reusable components and the organization of the code, so that you can easily reference and reuse parts of it in different parts of an application.
 
