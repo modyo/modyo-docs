@@ -14,7 +14,7 @@ To achieve optimal web performance, you can apply a variety of techniques and pr
 - **Efficient rendering: ** Renders efficiently, prioritizing visible content and avoiding blocks in the main thread. Use techniques such as progressive loading to load visible content first, asynchronous loading, or deferred loading of JavaScript files for heavy scripts.
 - **Server Optimization: ** Configure and optimize the server that hosts the site. Use server-side caching, response compression, and appropriate HTTP headers to improve efficiency and speed of server response.
 - **Network optimization: ** To reduce network requests and minimize latency times, combine and reduce CSS and JavaScript files, use on-demand content loading, and take advantage of resource clustering techniques.
-- **Detecting and resolving bottlenecks: ** Performs performance tests and monitoring to identify potential bottlenecks and areas for improvement. Tools like Lighthouse, PageSpeed Insights, and WebPageTest can help you evaluate the performance of a web page and provide specific recommendations.
+- **Detecting and resolving bottlenecks:** Conduct performance tests and monitoring to identify potential bottlenecks and areas for improvement. Tools like Lighthouse, PageSpeed Insights, and WebPageTest can help you evaluate the performance of a web page and provide specific recommendations.
 
 Here are some techniques and practices for improving web performance. However, each site and web application has specific requirements and considerations, so it's important to evaluate and adjust these practices to the needs of the project.
 
