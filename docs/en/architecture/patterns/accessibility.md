@@ -28,7 +28,7 @@ Web accessibility is measured using different techniques and evaluations. Some o
 - **Manual evaluation:** Consists of manually reviewing the website or application to identify possible accessibility barriers, including verifying the structure of the content, the correct use of tags, contrast, navigability, the presence of alternatives for non-textual content, and other key aspects.
 - **Automatic evaluation tools:** Use automated tools that analyze the code and content of a website for accessibility issues. These tools can detect missing or incorrect elements, provide recommendations, and generate reports on the level of accessibility of the site.
 - **Testing with real users:** Involves testing and evaluating the accessibility of the website by people with disabilities or limitations. Real users can provide valuable feedback to find barriers and identify areas for improvement.
-- **Compliance with standards and guidelines: ** It consists of evaluating whether the website complies with established accessibility standards and guidelines, such as the W3C WCAG.
+- **Compliance with standards and guidelines:** Consists of evaluating whether the website complies with established accessibility standards and guidelines, such as the W3C WCAG.
 
 Web accessibility is an ongoing process that you must perform periodically to ensure that a website or application is always accessible, especially during development and update phases. It is essential to consider the needs and feedback of users with disabilities, as they are the ones who can best evaluate the accessibility of the site.
 
