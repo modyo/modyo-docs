@@ -42,4 +42,4 @@ There are several ways to implement DDD with Modyo, the most common begins with 
 
 The objective of the above is to group the elements that need to be modified together and to separate those that have no dependence on each other; creating delimited contexts within the implementation, where a user solves complete business operations with a minimum exchange of contexts.
 
-The DDD is a valuable architectural technique to help define the structure of complex initiatives and is especially useful when working on the Modyo reference architecture.
+DDD is a valuable architectural technique to help define the structure of complex initiatives and is especially useful when working on the Modyo reference architecture.
