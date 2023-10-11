@@ -27,7 +27,7 @@ Modyo offers several alternatives for reusing code. Depending on the type of pro
 - Use of Design Systems.
 - Integration of external libraries implemented in various Web sites or applications.
 
-:: :tip Architecture Guide
+:::tip Architecture Guide
 This guide shows you different ways to reuse code, applying patterns and techniques from our reference architecture to achieve excellent levels of efficiency within development teams.
 
 If you have any questions or need support, don't hesitate to contact our [team of experts] (https://support.modyo.com/).
