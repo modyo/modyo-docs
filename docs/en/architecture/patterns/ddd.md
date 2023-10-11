@@ -14,7 +14,7 @@ Advantages of DDD:
 
 Disadvantages of DDD:
 
-- **Complexity: ** It can be complex and require considerable time and effort to implement correctly. It may not be suitable for simpler applications or teams with less experience in software design.
+- **Complexity:** It can be complex and require considerable time and effort to implement correctly. It may not be suitable for simpler applications or teams with less experience in software design.
 - **Requires domain knowledge: ** To effectively use DDD, developers must have or acquire a good understanding of the business domain, which can be a challenge in some contexts.
 - **Not suitable for all applications: ** It is most useful in complex business applications. In applications with simple business logic, DDD overhead may not justify the benefits.
 
