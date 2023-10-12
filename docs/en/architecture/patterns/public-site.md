@@ -139,7 +139,7 @@ Modyo recommends the use of physical environments for testing new versions of th
 :::
 
 #### Using Stages
-In the context of public sites, Modyo recommends managing previous environments using the [stages] functionality (/en/platform/channels/sites#stages), which allows you to create virtualized pre-productive environments within the same production deployment. This technique allows you to avoid the need to move changes and files between environments, reducing the possibility of errors at the time of publication.
+In the context of public sites, Modyo recommends managing previous environments using the [stages](/en/platform/channels/sites#stages) functionality, which allows you to create virtualized pre-productive environments within the same production deployment. This technique allows you to avoid the need to move changes and files between environments, reducing the possibility of errors at the time of publication.
 
 The use of stages makes it possible to create separate and isolated environments to build, test and verify the operation of the site before it is deployed in a production environment. This helps prevent failures that could affect end users. In the case of public sites, the following stages can be defined, for example:
 
