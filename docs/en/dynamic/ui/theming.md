@@ -11,7 +11,7 @@ Dynamic Framework offers two levels of customization:
 
 In this section, we'll dive deeper into the first level. We will explain the concept of the topic and the variables that make it possible.
 
-### What is a topic?
+### What is a theme?
 In the context of Dynamic Framework, a theme refers to customizing the visual appearance and style of elements, by modifying colors, typography, spacing, and components.
 
 Dynamic Framework facilitates this process by providing a solid, predefined foundation that can be adapted to the needs and visual identity of an organization.
