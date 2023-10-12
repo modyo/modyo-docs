@@ -62,7 +62,7 @@ Para habilitar o deshabilitar la funcionalidad de búsqueda en un sitio sigue es
 
 ### Plantilla de búsqueda
 
-Puedes controlar la apariencia y funcionalidades de búsqueda en tu sitio utilizando la [plantilla](/es/platform/channels/templates/) _search_.
+Puedes controlar la apariencia y funcionalidades de búsqueda en tu sitio utilizando la [plantilla](/es/platform/channels/sites.html#plantilla-de-busqueda/) _search_.
 
 Esta plantilla está disponible de forma predeterminada en la sección de Plantillas, en la categoría "Vistas/Search/Show". Contiene todo el código Liquid que necesitas para llevar a cabo consultas en tu sitio.
 
