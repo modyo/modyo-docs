@@ -1174,7 +1174,7 @@ Se arregla bug con filtro con 100 o más tags en el admin
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Mejoras a gestión y cuotas de planes.
-- Se añade vista vacía de [mis tareas](/es/platform/core/the-modyo-interface.html).
+- Se añade vista vacía de mis tareas.
 - Múltiples bugs resueltos.
 - Múltiples mejoras de navegación y usabilidad.
 

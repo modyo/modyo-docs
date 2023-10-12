@@ -82,7 +82,6 @@ module.exports = {
                           path: "/en/platform/core/",
                           collapsable: true,
                           children: [
-                              "/en/platform/core/the-modyo-interface",
                               "/en/platform/core/key-concepts",
                               "/en/platform/core/configuration",
                               {
@@ -361,7 +360,6 @@ module.exports = {
                           path: "/es/platform/core/",
                           collapsable: true,
                           children: [
-                              "/es/platform/core/the-modyo-interface",
                               "/es/platform/core/key-concepts",
                               /*"/es/platform/core/integration",*/
                               /*"/es/platform/core/installation",*/

@@ -52,7 +52,7 @@ Para obtener soporte de la Plataforma Modyo visita el [sitio oficial de soporte]
 
 ### Requisitos para usar Modyo
 
-Para utilizar Modyo, sólo debes disponer de un navegador Web compatible. Toda la interfaz del producto puede ser accedida mediante su [consola Web](/es/platform/core/the-modyo-interface.html).
+Para utilizar Modyo, sólo debes disponer de un navegador Web compatible. Toda la interfaz del producto puede ser accedida mediante su interfaz Web.
 
 :::tip Navegadores compatibles
 Modyo es compatible con las versiones más modernas de Google Chrome, Firefox, y Microsoft Edge.

@@ -179,7 +179,7 @@ El color primario es el que se muestra en los principales botones del manejo de 
 
 #### Mostrar el logo de la cuenta
 
-Esta opción te permite mostrar el logo configurado para la cuenta, en las vistas de sesión. El logo se desplegará sobre los formularios respectivos de estas vistas. Para cambiar el logo, accede a la [Interfaz de Modyo](/es/platform/core/the-modyo-interface.html).
+Esta opción te permite mostrar el logo configurado para la cuenta, en las vistas de sesión. El logo se desplegará sobre los formularios respectivos de estas vistas. Para cambiar el logo, accede a la Interfaz de Modyo.
 
 #### CSS personalizado
 
