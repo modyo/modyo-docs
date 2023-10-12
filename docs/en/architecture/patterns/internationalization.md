@@ -14,7 +14,7 @@ To achieve this, these aspects must be taken into consideration:
 - **Character and encoding support:** Different languages use different character sets and encodings. Web applications must correctly handle and display special characters and accented letters corresponding to different languages.
 - **Interface design:** The interface must be flexible in order to adapt to different text lengths and grammatical structures. For example, languages written from right to left require a reverse interface design compared to languages written from left to right.
 
-The implementation of internationalization practices makes it easier to translate, localize and adapt the application to different languages and cultures. This broadens their reach, reaches wider audiences and improves the user experience by offering content that is relevant and adapted to their local context.
+The implementation of internationalization practices makes it easier to translate, localize and adapt the application to different languages and cultures. This broadens their reach, reaches wider audiences, and improves the user experience by offering content that is relevant and adapted to their local context.
 
 ### Implementing internationalization with Modyo
 
