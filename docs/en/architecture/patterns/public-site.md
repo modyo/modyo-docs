@@ -152,7 +152,7 @@ Stages can have separate settings, such as site variables. This allows you to ad
 If, while using stages in conjunction with content spaces, there is some degree of coupling between the two, we recommend cloning the space and making changes to the copy. Then, when you promote the site to production, the same changes will be applied to the original content space.
 
 #### Using Design Systems
-Modyo offers different ways to implement [design systems] (/en/architecture/patterns/design-system), their complexity varies depending on the scenario in which they are to be applied.
+Modyo offers different ways to implement [design systems](/en/architecture/patterns/design-system), their complexity varies depending on the scenario in which they are to be applied.
 
 For public sites, it is possible to implement design systems easily, using CSS libraries or frameworks that establish consistent rules for all elements. Sites created in Modyo use [Bootstrap] (https://getbootstrap.com) as the default CSS framework, which you can customize through the variables enabled for this purpose.
 
