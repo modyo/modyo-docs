@@ -36,7 +36,7 @@ When using organizations, consider the limits of your license. The maximum limit
 :::
 
 #### Using Pages and Layouts
-[Layouts] (/en/platform/channels/templates.md #layouts) are an excellent way to differentiate contexts within a site. A layout can be shared by multiple [pages] (/en/platform/channels/pages) and each page can have only one layout. Within the layout you can define reusable elements between the different pages, such as Headers, Footers, Meta Tags, etc.
+[Layouts](/en/platform/channels/templates.md #layouts) are an excellent way to differentiate contexts within a site. A layout can be shared by multiple [pages] (/en/platform/channels/pages) and each page can have only one layout. Within the layout you can define reusable elements between the different pages, such as Headers, Footers, Meta Tags, etc.
 
 The layouts ensure visual consistency between pages, although cases such as a special promotion page may require different layouts.
 
