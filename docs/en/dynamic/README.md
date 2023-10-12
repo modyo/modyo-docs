@@ -69,7 +69,7 @@ npm i @modyo /cli @latest @dynamic -framework/ui-react @latest
 
 Now you can choose:
 1. Continue [exploring other templates](/en/dynamic/experiences/retail/dashboard.html)
-2. [Deploy your template] (/en/platform/channels/cli.html #modyo -cli-push-name) within your sandbox environment using the modyo-cli with a valid API token.
+2. [Deploy your template](/en/platform/channels/cli.html#modyo-cli-push-name) within your sandbox environment using the modyo-cli with a valid API token.
 
 
 ### Contributions
