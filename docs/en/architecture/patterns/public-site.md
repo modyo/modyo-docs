@@ -197,7 +197,7 @@ Modyo has several features that allow you to incorporate structured elements to 
 
 - Using dynamic meta tags on content pages
 - Use of general meta tags for the site, with the option to modify them in specific cases
-- Implementing server-side rendering [SSR] (/es/architecture/patterns/ssr) to ensure that search engines find information quickly and directly in the HTML, without relying on external APIs or JavaScript to build content
+- Implementing server-side rendering [SSR](/en/architecture/patterns/ssr) to ensure that search engines find information quickly and directly in the HTML, without relying on external APIs or JavaScript to build content
 - Performance of public sites
 
 :::tip Modyo Experts
@@ -209,7 +209,7 @@ Search engine optimization can be critical to achieving business goals, but it c
 Web analytics, from the perspective of marketing teams, is possibly the most important point to consider when implementing a public site. This is because it is the only way to measure the performance of the other attributes of the site and achieve business objectives.
 
 :::tip Integration
-For the purpose of analytics on a public site, Modyo does not provide any proprietary tools within its platform to gather metrics for public traffic. This is because there are already established players in the industry, who also offer excellent forms of integration, such as [Google Analytics] (https://marketingplatform.google.com).
+For the purpose of analytics on a public site, Modyo does not provide any proprietary tools within its platform to gather metrics for public traffic. This is because there are already established players in the industry, who also offer excellent forms of integration, such as [Google Analytics](https://marketingplatform.google.com).
 :::
 
 #### Tagging
