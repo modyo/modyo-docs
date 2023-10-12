@@ -100,7 +100,7 @@ In the development of private sites in Modyo, you can programmatically implement
 
 
 ### Progressive Web Application (PWA)
-[Progressive Web Applications (PWA)] (/en/architecture/patterns/pwa) are web applications that offer an experience similar to a native application on mobile and desktop devices.
+[Progressive Web Applications (PWA)](/en/architecture/patterns/pwa) are web applications that offer an experience similar to a native application on mobile and desktop devices.
 
 They use modern web technologies to offer features such as offline work, push notifications, and fast access, even on slow networks.
 
