@@ -83,7 +83,7 @@ The hexagonal architecture is made up of three main layers:
 
 - **Domain layer:** It contains the business logic of the application and represents the core of the architecture. This layer is independent of the user interface and the infrastructure layer.
 - **Infrastructure adapter layer:** Contains the adapters that connect the domain layer to the infrastructure layers. Adapters are responsible for transforming data between domain layer formats and specific infrastructure formats, such as databases and web services.
-- **Infrastructure layer: ** Contains the specific infrastructure components used in the application, such as databases, web services, and file systems.
+- **Infrastructure layer:** Contains the specific infrastructure components used in the application, such as databases, web services, and file systems.
 
 Hexagonal architecture has several benefits, including:
 
