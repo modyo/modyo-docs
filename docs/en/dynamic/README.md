@@ -4,7 +4,7 @@ search: true
 
 # First Steps
 
-Welcome to the official [Dynamic Framework] documentation (https://dynamicframework.dev).
+Welcome to the official [Dynamic Framework](https://dynamicframework.dev) documentation.
 
 In this guide, you'll find information about the various features of this framework, as well as key definitions and details on how to start working with it.
 
