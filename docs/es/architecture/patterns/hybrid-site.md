@@ -21,10 +21,10 @@ La segmentación de contenidos personaliza y adapta el contenido que se muestra 
 
 Los segmentos pueden estar definidos por diversos criterios, incluyendo:
 
-- **Comportamiento del usuario**: páginas visitadas, compras realizadas o interacciones anteriores con el sitio o la aplicación.
-- **Información demográfica**: detalles como edad, género, ubicación, educación y otros datos demográficos del usuario.
-- **Intereses del usuario**: lo que se conoce o infiere que le interesa al usuario, basado en sus comportamientos pasados o en la información proporcionada.
-- **Etapa en el viaje del cliente**: punto en el que se encuentra el usuario en el recorrido del cliente o en el embudo de ventas. Por ejemplo, un usuario podría estar en la etapa de descubrimiento, consideración, decisión o fidelización.
+- **Comportamiento del usuario:** páginas visitadas, compras realizadas o interacciones anteriores con el sitio o la aplicación.
+- **Información demográfica:** detalles como edad, género, ubicación, educación y otros datos demográficos del usuario.
+- **Intereses del usuario:** lo que se conoce o infiere que le interesa al usuario, basado en sus comportamientos pasados o en la información proporcionada.
+- **Etapa en el viaje del cliente:** punto en el que se encuentra el usuario en el recorrido del cliente o en el embudo de ventas. Por ejemplo, un usuario podría estar en la etapa de descubrimiento, consideración, decisión o fidelización.
 
 En Modyo, los segmentos se definen de manera individual para cada dominio de usuarios, lo que permite crear varios segmentos en paralelo. Posteriormente, estos segmentos se pueden aplicar tanto a los contenidos como a las aplicaciones web.
 
