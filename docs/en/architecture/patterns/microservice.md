@@ -63,7 +63,7 @@ Microservices that require relational data persistence should consider the follo
 - **Efficiency:** Bring only the required information from the database. Sometimes it can be beneficial to use [lazy loading](https://www.baeldung.com/hibernate-lazy-eager-loading) to avoid unnecessary database queries at each iteration within a loop.
 - **Indexes:** Ensure that the indexes applied to the schema are effective. Use the ["explain"](https://dev.mysql.com/doc/refman/8.0/en/using-explain.html) command locally to verify their use.
 - **Migrations and versioning:** Ensure the [versioning and automation](https://flywaydb.org) of tasks that operate on the data schema.
-- **Connection pool: ** Ensure a correct configuration of the [connection pool] (https://www.baeldung.com/java-connection-pooling)y properly size the database engine, according to the expected concurrency and scalability.
+- **Connection pool:** Ensure a correct configuration of the [connection pool](https://www.baeldung.com/java-connection-pooling)y properly size the database engine, according to the expected concurrency and scalability.
 
 #### Connection with external services
 
