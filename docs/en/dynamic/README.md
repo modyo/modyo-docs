@@ -87,7 +87,7 @@ You can contact the development team, report a problem, or suggest a feature thr
 
 If you have questions or problems with the experience and integration templates provided by Dynamic Framework, you can request help directly from the platform using the help function, accessible from the web administration panel. If you need more comprehensive assistance, create a support case.
 
-You can create a support case from the [Modyo Support Center] (https://support.modyo.com). If you don't receive a timely response, each customer has the option to follow the established escalation protocol.
+You can create a support case from the [Modyo Support Center](https://support.modyo.com). If you don't receive a timely response, each customer has the option to follow the established escalation protocol.
 
 :::warning Scope of Support
 Inquiries and support requests apply exclusively to templates and how they integrate with Modyo platform. Modifications and custom code developed on top of them are excluded. For these cases, Modyo offers you [professional services] (https://modyo.com/services) for expert guidance and customer support.
