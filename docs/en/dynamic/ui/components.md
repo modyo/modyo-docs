@@ -10,6 +10,6 @@ Components allow you to divide a user interface into smaller, more manageable an
 
 ### Stencil and React
 
-Dynamic Framework offers a consistent API for developers. Their web components were implemented using [Stencil] (https://stenciljs.com/) for lower-level definitions and [React] (https://react.dev/) for abstractions with more complex requirements, such as state management. Thus maintaining a Micro frontend developed in React without additional special requirements.
+Dynamic Framework offers a consistent API for developers. Their web components were implemented using [Stencil](https://stenciljs.com/) for lower-level definitions and [React](https://react.dev/) for abstractions with more complex requirements, such as state management. Thus maintaining a Micro frontend developed in React without additional special requirements.
 
 Although the implementation of Dynamic Framework involves the use of two individual libraries, this duality is imperceptible to the developer, which means that its integration into the development of a Micro frontend created in React does not impose special requirements, beyond importing and using it.
