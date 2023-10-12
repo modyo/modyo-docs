@@ -144,8 +144,8 @@ In the context of public sites, Modyo recommends managing previous environments 
 The use of stages makes it possible to create separate and isolated environments to build, test and verify the operation of the site before it is deployed in a production environment. This helps prevent failures that could affect end users. In the case of public sites, the following stages can be defined, for example:
 
 - **Develop:** for carrying out the development and integration of changes.
-- **Certification: ** intended for pre-deployment testing in production.
-- **Main: ** productive version of the site.
+- **Certification:** intended for pre-deployment testing in production.
+- **Main:** productive version of the site.
 
 Stages can have separate settings, such as site variables. This allows you to adjust behaviors between different environments, for example, changing the URL of an API that provides information to the site.
 
