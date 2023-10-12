@@ -100,7 +100,7 @@ The following attributes must be configured from the Identity Provider to ensure
 
 - **given_name**: Corresponds to the user's name.
 - **family_name**: Corresponds to the user's last name.
-- **e-mail**: Corresponds to the user's e-mail address.
+- **email**: Corresponds to the user's e-mail address.
 
 :::warning Warning
 For a correct OpenID Connect integration, it is necessary that the OIDC Provider has an up-to-date SSL certificate, Modyo client uses TLS 1.3, and OpenSSL Security Level 2 [(ref)](https://www.openssl.org/docs/man1.1.1/man3/SSL_CTX_get_security_level.html).
