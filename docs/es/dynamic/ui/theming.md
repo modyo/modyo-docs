@@ -37,8 +37,8 @@ Es importante tener en cuenta que, por diseño, las definiciones CSS tienen un o
 
 ### Variables CSS
 
-Bootstrap ofrece una extensa lista de variables CSS que se aplican al elemento `:root` de un documento. Estas variables están (documentadas en su sitio web)[https://getbootstrap.com/docs/5.3/customize/css-variables/].
+Bootstrap ofrece una extensa lista de variables CSS que se aplican al elemento `:root` de un documento. Estas variables están [documentadas en su sitio web](https://getbootstrap.com/docs/5.3/customize/css-variables/).
 
-Dynamic Framework introduce clases específicas para cada componente, siguiendo la misma convención de nomenclatura que Bootstrap, que utiliza el prefijo `bs-`. Este enfoque evita posibles conflictos con librerías de terceros. Puedes consultar las variables disponibles para cada componente (documentadas en el Storybook de Dynamic Framework)[https://react.dynamicframework.dev/].
+Dynamic Framework introduce clases específicas para cada componente, siguiendo la misma convención de nomenclatura que Bootstrap, que utiliza el prefijo `bs-`. Este enfoque evita posibles conflictos con librerías de terceros. Puedes consultar las variables disponibles para cada componente [documentadas en el Storybook de Dynamic Framework](https://react.dynamicframework.dev/).
 
 Este enfoque permite agregar nuevas variables al elemento `:root` para controlar aspectos más específicos. Lo que resulta especialmente útil cuando se requiere incorporar estas variables en del contexto del tema.
