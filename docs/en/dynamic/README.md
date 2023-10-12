@@ -59,7 +59,7 @@ CD <nombre-de-tu-proyecto>
 npm i
 NPM Run Start
 ```
-Use a code editor to explore the code and examine how the different [components] (/en/dynamic/ui/components) of the design system are used.
+Use a code editor to explore the code and examine how the different [components](/en/dynamic/ui/components) of the design system are used.
 
 ### Manual installation
 To manually create a new project with Dynamic Framework or add it as a dependency to an existing React project, install the required packages:
