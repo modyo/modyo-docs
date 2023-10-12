@@ -245,7 +245,7 @@ In a public place, a limited amount of user information is handled, but this doe
 - **Cookie Banners:** Corresponds to banners that provide users with the option to disable the tracking of certain cookies on the site, completely or individually. The banner must explain the reason for each cookie that is intended to be installed in the user's browser.
 - **Cookie Policy:** Corresponds to the policy maintained by the site on the type of cookies used and their purpose, in addition to what could eventually happen to the user's experience if they do not accept them. The cookie policy is generally accepted in the cookie banner.
 - **Privacy Policy:** Encompasses the organization's policy regarding the privacy of user data in the context of the site. If the public site is an entry point to a private or transactional system, this policy can be extended to cover the entire system.
-- **Consent management: ** Consists in accurately recording the consents derived from any acceptance of conditions by the user. Consent records must be kept for a certain period of time, in accordance with the regulations in force in each country.
+- **Consent management:** Consists in accurately recording the consents derived from any acceptance of conditions by the user. Consent records must be kept for a certain period of time, in accordance with the regulations in force in each country.
 
 ### Other requirements
 Finally, we reserved some specific requirements that should be taken into account when implementing a public site.
