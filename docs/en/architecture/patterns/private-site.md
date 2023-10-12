@@ -109,7 +109,7 @@ The value of PWAs lies in their ability to provide a more attractive and fluid u
 Modyo offers the ability to activate sites as PWAs, providing access to main settings that enable this technology. These enablers allow you to interact with native components of the device, incorporate shortcuts from the application menu and access advanced features such as the camera or the device's biometrics. A simple, but relevant example of these enablers, is the activation of a basic cache on the device to manage the experience in unstable connections (offline mode).
 
 :::tip Uses of PWA
-To learn more about the capabilities of PWAs and how to activate these enablers within the Modyo platform, check out our [learning paths] (https://help.modyo.com).
+To learn more about the capabilities of PWAs and how to activate these enablers within the Modyo platform, check out our [learning paths](https://help.modyo.com).
 :::
 
 
