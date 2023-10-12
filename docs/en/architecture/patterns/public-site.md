@@ -157,7 +157,7 @@ Modyo offers different ways to implement [design systems](/en/architecture/patte
 For public sites, it is possible to implement design systems easily, using CSS libraries or frameworks that establish consistent rules for all elements. Sites created in Modyo use [Bootstrap](https://getbootstrap.com) as the default CSS framework, which you can customize through the variables enabled for this purpose.
 
 ### Accessibility
-Within a public site, [accessibility] (/en/architecture/patterns/accessibility) is essential to provide the best possible experience for people who require special assistance.
+Within a public site, [accessibility](/en/architecture/patterns/accessibility) is essential to provide the best possible experience for people who require special assistance.
 
 To implement an accessible public site with Modyo, the first step is to take advantage of the [native accessibility capabilities] (https://getbootstrap.com/docs/5.2/getting-started/accessibility) of the [Bootstrap] toolkit (https://getbootstrap.com), which defines controls and standards for many basic elements. A second step involves determining the desired level of accessibility and, depending on that, implementing aids such as changes in color contrast, size adjustments and simplified versions of the content, among other possibilities.
 
