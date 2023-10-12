@@ -78,8 +78,8 @@ This recommendation is both because of the inherent complexity in the code of ea
 
 Other reasons to avoid using JavaScript frameworks on public sites are:
 
-- **Performance: ** Every time a visitor loads a page, the browser must download and execute the JavaScript code to display and manipulate the elements of the page. Excessive use of JavaScript can encourage page loading, especially on devices with slow connections or limited resources.
-- **Accessibility: ** Some users may have difficulty accessing and using interactive Javascript-based content. This includes people with visual disabilities who use screen readers, users with slow connections or older devices, and those who turn off Javascript for safety or personal preference.
+- **Performance:** Every time a visitor loads a page, the browser must download and execute the JavaScript code to display and manipulate the elements of the page. Excessive use of JavaScript can encourage page loading, especially on devices with slow connections or limited resources.
+- **Accessibility:** Some users may have difficulty accessing and using interactive Javascript-based content. This includes people with visual disabilities who use screen readers, users with slow connections or older devices, and those who turn off Javascript for safety or personal preference.
 - **Maintenance and compatibility: ** Reducing Javascript dependencies simplifies site maintenance. In addition, these solutions tend to have greater compatibility with various browsers and devices.
 - **Security: ** Limiting the use of Javascript decreases the potential attack surface and improves site security.
 
