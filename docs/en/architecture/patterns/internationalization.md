@@ -6,7 +6,7 @@ search: true
 
 Internationalization in web applications is the process of designing and developing applications that adapt and function correctly in different languages, cultures and regions around the world. The main objective is to make a web application easily localizable, that is, capable of adjusting to the linguistic and cultural requirements of users.
 
-To achieve this, aspects such as:
+To achieve this, these aspects must be taken into consideration:
 
 - **Text Localization: ** It involves separating the textual content of the application from its underlying code, allowing it to be translated and adapted to different languages. This is achieved through the use of resource files or databases.
 - **Date and time format: ** Applications must present dates and times in formats that are understandable and acceptable in various regions, including different date formats, timestamps, and time zone options.
