@@ -50,7 +50,7 @@ Start a new Dynamic Framework project using the NPX command. This command automa
 ```shell
 npx @modyo /cli @latest get dynamic-react-base-template <nombre-de-tu-proyecto>
 ```
-If you don't have the Modyo CLI installed, the system will ask to install it, as it is a required package. You can find the CLI installation instructions in the [official documentation] (/en/platform/channels/cli.html #modyo -cli)
+If you don't have the Modyo CLI installed, the system will ask to install it, as it is a required package. You can find the CLI installation instructions in the [official documentation](/en/platform/channels/cli.html #modyo -cli)
 
 This process downloads the dynamic-react-base-template, once you have the template, go to the project folder to install the dependencies and build the project:
 
