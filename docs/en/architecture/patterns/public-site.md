@@ -222,7 +222,7 @@ To implement tagging with Modyo, you must first define the business objectives y
 
 
 ### Performance
-[performance] (/en/architecture/resources/web-performance) is one of the most important requirements when implementing a public site, not only to ensure a positive user experience, but also to improve search engine rankings and conversion rates on the site.
+[Performance](/en/architecture/resources/web-performance) is one of the most important requirements when implementing a public site, not only to ensure a positive user experience, but also to improve search engine rankings and conversion rates on the site.
 
 The performance of a website is affected by multiple factors, some of which are beyond the control of the implementer, such as connectivity problems or problems with the visitor's device. Other factors are the responsibility of the implementer, such as the complexity of rendering the page, mainly influenced by JavaScript running on the client side, the use of images that are not optimized in terms of weight and dimensions, the distance between web servers and users, among others.
 
@@ -232,7 +232,7 @@ Modyo Cloud and Enterprise Cloud have unique features that allow you to implemen
 - Application of modern image compression standards
 - Use of HTTP3 in conjunction with TLS 1.3
 - Use of optimized internet routes between end users and the origin server
-- Server-side rendering [(SSR)] (/en/architecture/patterns/ssr) with Liquid
+- Server-side rendering [(SSR)](/en/architecture/patterns/ssr) with Liquid
 
 :::tip Modyo Enterprise On Premise
 In the case of Modyo Enterprise On Premise, you can implement similar features, by configuring providers comparable to those used in the Cloud.
