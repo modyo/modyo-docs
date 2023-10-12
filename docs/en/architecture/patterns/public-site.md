@@ -95,7 +95,7 @@ As with micro frontends, using Javascript frameworks on a public site can involv
 
 
 #### Web Components
-[web components] (/en/architecture/patterns/web-components) are a modularization technique based on HTML, CSS and JS standards. Currently, web components lack consistent support in browsers, although this situation gradually improves over time. To implement web components safely, you need to use a JavaScript library that addresses these incompatibilities. That is why in the case of public sites, the use of Web Components can create more problems than the benefits it would bring, as mentioned in previous sections.
+[web components](/en/architecture/patterns/web-components) are a modularization technique based on HTML, CSS and JS standards. Currently, web components lack consistent support in browsers, although this situation gradually improves over time. To implement web components safely, you need to use a JavaScript library that addresses these incompatibilities. That is why in the case of public sites, the use of Web Components can create more problems than the benefits it would bring, as mentioned in previous sections.
 
 As an alternative to using Web Components, public sites can benefit from lighter and more standard alternatives, such as the CSS [Bootstrap] framework (https://getbootstrap.com), which is natively integrated into the Modyo platform. In addition, you can use the snippets functionality, which makes it easier to reuse code in a manner analogous to Web Components.
 
