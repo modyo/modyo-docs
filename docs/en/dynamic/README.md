@@ -38,7 +38,7 @@ To take full advantage of Dynamic Framework's capabilities, we recommend having 
 In the case of integration templates, knowledge of backend programming is required, mainly in Java language and Spring Boot framework, in addition to basic notions of [microservices](/en/architecture/patterns/microservice) architecture.
 
 :::tip Modyo Platform
-The experience templates included in the framework were designed to be compatible with Modyo. For more information about Modyo platform visit the [official documentation] (/en/platform).
+The experience templates included in the framework were designed to be compatible with Modyo. For more information about Modyo platform visit the [official documentation](/en/platform).
 :::
 
 
