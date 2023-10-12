@@ -31,7 +31,7 @@ Each service is built to handle specific business capabilities and focuses on a 
 #### Benefits of microservices
 
 - **Agility:** They foster small, independent teams that can work faster and more efficiently in well-understood contexts. This reduces development times and increases the performance of the organization.
-- **Flexible scalability: ** They allow each service to scale independently to meet the demand for the feature of the application it supports. This allows teams to adapt to infrastructure needs, accurately measure the cost of a feature, and maintain availability if a service experiences an increase in demand.
+- **Flexible scalability:** They allow each service to scale independently to meet the demand for the feature of the application it supports. This allows teams to adapt to infrastructure needs, accurately measure the cost of a feature, and maintain availability if a service experiences an increase in demand.
 - **Easy deployment: ** Microservices allow for continuous integration and delivery, making it easy to test new ideas and reverse them if something doesn't work. The low cost of errors allows for experimentation, makes it easier to update the code, and accelerates the time to market for new features.
 - **Technological freedom: ** They don't follow a “one-size-fits-all” approach. Teams have the freedom to choose the best tool to solve each task or situation.
 - **Reusable code: ** Dividing software into small, well-defined modules allows teams to use functions for different purposes. A service developed for a specific function can be used as a building block for another feature. This makes it easier to start an application, as developers can create new capabilities without having to write code from scratch.
