@@ -45,7 +45,7 @@ At the same time, you can group pages into hierarchies, ensuring an organized st
 #### Using Templates and Snippets
 [Templates](/en/platform/channels/templates) are documents in Liquid language that are dynamically rendered on the platform. They can represent HTML pages, layouts, CSS style sheets, or JavaScript files.
 
-At the same time, [snippets] (/en/platform/channels/templates.md #snippets) are useful for organizing source code and can be referenced from different Liquid templates on the same site. Snippets allow you to modularize and reuse functions, making it easier to break down complex functionality into simpler parts. Snippets are dynamically rendered when the page loads.
+At the same time, [snippets](/en/platform/channels/templates.md #snippets) are useful for organizing source code and can be referenced from different Liquid templates on the same site. Snippets allow you to modularize and reuse functions, making it easier to break down complex functionality into simpler parts. Snippets are dynamically rendered when the page loads.
 
 :::warning Recursion and performance
 A common mistake when using snippets is to recursively call circular references, that is, to call themselves. If this happens, the platform stops executing the snippet to avoid saturating system resources.
