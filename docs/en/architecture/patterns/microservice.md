@@ -101,4 +101,4 @@ Dynamic Framework microservices are developed following the principles of hexago
 - **Task Scheduling:** For services that require task scheduling, we recommend using [ShedLock](https://www.baeldung.com/shedlock-spring) in microservices that require scheduling programmed tasks.
 - **Workflows and state machine:** The use of [state machines](https://www.baeldung.com/spring-state-machine) is recommended for the orchestration of complex processes. As well as integrating workflow technologies with Spring Boot.
 - **Hexagon Architecture:** For more flexible, application domain-focused development, testing, and maintenance, this software design pattern separates an application's business logic from its external services.
-- **Modyo API: ** We recommend using Modyo platform's administrative API for common tasks, such as sending messages to users or integrating with managed content.
+- **Modyo API:** We recommend using Modyo platform's administrative API for common tasks, such as sending messages to users or integrating with managed content.
