@@ -35,7 +35,7 @@ All components of the framework have been designed to work together, offering th
 ### Prerequisites
 To take full advantage of Dynamic Framework's capabilities, we recommend having a minimum knowledge base of Javascript, React, HTML and CSS, as well as basic notions of [micro frontends](/en/architecture/patterns/micro-frontend) Web architecture.
 
-In the case of integration templates, knowledge of backend programming is required, mainly in Java language and Spring Boot framework, in addition to basic notions of [microservices] architecture (/en/architecture/patterns/microservice).
+In the case of integration templates, knowledge of backend programming is required, mainly in Java language and Spring Boot framework, in addition to basic notions of [microservices](/en/architecture/patterns/microservice) architecture.
 
 :::tip Modyo Platform
 The experience templates included in the framework were designed to be compatible with Modyo. For more information about Modyo platform visit the [official documentation] (/en/platform).
