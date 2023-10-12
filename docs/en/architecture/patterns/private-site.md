@@ -66,7 +66,7 @@ In the specific context of micro frontends, Modyo offers all the tools necessary
 In the next version of Modyo, we have incorporated a feature called “code splitting”, which will allow you to break down highly complex micro frontends into modules that will be downloaded dynamically. This will improve load times and prevent the user from downloading code that will not be used. This technique will be especially useful for large micro frontends whose functionality is not convenient to maintain separately.
 :::
 
-Support for microservice development is offered from [Modyo Connect] (/en/connect). Modyo Connect is a managed cloud infrastructure service that gives you all the resources you need to establish an integration structure with business systems, using lightweight integration microservices.
+Support for microservice development is offered from [Modyo Connect](/en/connect). Modyo Connect is a managed cloud infrastructure service that gives you all the resources you need to establish an integration structure with business systems, using lightweight integration microservices.
 
 The integration between micro frontends and microservices is done through clearly defined APIs that are directly exposed on the Internet. These APIs incorporate layers of authentication and authorization through the use of [Single Sign On (SSO)] (/en/architecture/patterns/asso), using an architecture pattern called [Backend for Frontend (BFF)] (/en/architecture/patterns/bff).
 
