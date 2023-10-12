@@ -27,7 +27,7 @@ This gives rise to a second way of implementing internationalization within Mody
 In this case, it is recommended to develop micro frontends taking into account the inclusion of an i18n library that allows changing the language and location using a dynamically injected variable when loading the component. In this way, the same micro frontend can be reused on different sites or web applications, adapting to the language configured on each site
 
 
-:: :tip Maintaining language files
+:::tip Maintaining language files
 In complex projects, with multiple microservices in several languages, managing language keys in different repositories can be a challenge. To simplify this process, Modyo recommends incorporating a language automation system. These systems are responsible for controlling the files in each repository and provide a management interface for the people responsible for keeping them up to date.
 
 Some language automation systems include Transifex, Lokalise, Crowdin and WebTranslate. All of these have the ability to integrate directly with repositories.
