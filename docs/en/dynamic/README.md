@@ -43,7 +43,7 @@ The experience templates included in the framework were designed to be compatibl
 
 
 ## Installation
-To start using Dynamic Framework [create a test environment] (https://www.modyo.com/get-started) (sandbox) in Modyo and familiarize yourself with the basic concepts of the platform.
+To start using Dynamic Framework [create a test environment](https://www.modyo.com/get-started) (sandbox) in Modyo and familiarize yourself with the basic concepts of the platform.
 
 Start a new Dynamic Framework project using the NPX command. This command automatically configures the entire environment:
 
