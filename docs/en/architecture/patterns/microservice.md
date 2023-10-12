@@ -72,7 +72,7 @@ Microservices developed in Modyo Connect can be integrated with other systems, s
 - **Connectivity:** Ensure that connectivity from AWS networks to service endpoints are defined and stable.
 - **Security:** Ensure that the link to external services is established through a secure channel, by means of VPNs or [mTLS](https://www.cloudflare.com/learning/access-management/what-is-mutual-tls/).
 - **Error Handling:** Errors originating from external services must be managed appropriately at the microservice level to ensure a satisfactory user experience.
-- **Timeouts and crashes: ** External services with performance or connectivity issues can cause blockages in the user experience or excessive use of resources within the microservice. We recommend defining reasonable timeouts for each call, aligned with those defined in the API Gateway. In addition, we suggest using asynchronous invocations when response times are not predictable.
+- **Timeouts and crashes:** External services with performance or connectivity issues can cause blockages in the user experience or excessive use of resources within the microservice. We recommend defining reasonable timeouts for each call, aligned with those defined in the API Gateway. In addition, we suggest using asynchronous invocations when response times are not predictable.
 
 #### Hexagonal Architecture
 The hexagonal architecture, also known as Ports and Adapters Architecture, is a software architecture pattern that focuses on the separation of concerns (System on a Chip or SoC) and the independence of hardware and software in an application.
