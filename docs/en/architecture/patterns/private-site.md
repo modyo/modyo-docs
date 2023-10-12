@@ -34,7 +34,7 @@ Although private sites have their specificities, they also share similarities wi
 
 
 ### User Management
-In a private site, user management is essential and is the main difference compared to a private site. To manage users, Modyo has a feature called [user realms] (/en/platform/customers/realms). User realms are completely independent of each other and can have their own settings, such as the method of authenticating users in each one.
+In a private site, user management is essential and is the main difference compared to a private site. To manage users, Modyo has a feature called [user realms](/en/platform/customers/realms). User realms are completely independent of each other and can have their own settings, such as the method of authenticating users in each one.
 
 #### User events
 User kingdoms store user events and allow the definition of segments based on information in the user's profile or on their behavior within the system.
