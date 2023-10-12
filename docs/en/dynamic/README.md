@@ -80,7 +80,7 @@ If you want to contribute to Dynamic Framework as a user, there are several ways
 - Suggest improvements in the drafting of documentation.
 - Get involved in the community, join our webinars and regular digital events.
 
-You can contact the development team, report a problem, or suggest a feature through our [Modyo Support Center] (https://support.modyo.com).
+You can contact the development team, report a problem, or suggest a feature through our [Modyo Support Center](https://support.modyo.com).
 
 
 ### Support
