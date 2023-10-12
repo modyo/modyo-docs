@@ -41,4 +41,4 @@ Bootstrap provides an extensive list of CSS variables that apply to the `:root` 
 
 Dynamic Framework introduces specific classes for each component, following the same naming convention as Bootstrap, which uses the `bs-` prefix. This approach avoids potential conflicts with third-party libraries. You can check the variables available for each component (documented in the Dynamic Framework Storybook)[https://react.dynamicframework.dev/].
 
-This approach allows new variables to be added to the `:root` element to control more specific aspects. This is especially useful when it is necessary to incorporate these variables into the context of the topic.
+This approach allows new variables to be added to the `:root` element to control more specific aspects. This is especially useful when it is necessary to incorporate these variables into the context of the theme.
