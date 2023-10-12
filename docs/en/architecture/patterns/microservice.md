@@ -97,7 +97,7 @@ Dynamic Framework microservices are developed following the principles of hexago
 
 #### Other considerations
 
-- **Heavy tasks: ** We recommend using background processing, using [messaging queues] (.. /components/infrastructure.md #colas -de-messaging), for services that are slow or sensitive to traffic fluctuations.
+- **Heavy tasks:** We recommend using background processing, using [messaging queues](/en/connect/components/infrastructure.html#messaging-queues), for services that are slow or sensitive to traffic fluctuations.
 - **Task Scheduling: ** For services that require task scheduling, we recommend using [ShedLock] (https://www.baeldung.com/shedlock-spring) in microservices that require scheduling programmed tasks.
 - **Workflows and state machine: ** The use of [state machines] (https://www.baeldung.com/spring-state-machine) is recommended for the orchestration of complex processes. As well as integrating workflow technologies with Spring Boot.
 - **Hexagon Architecture: ** For more flexible, application domain-focused development, testing, and maintenance, this software design pattern separates an application's business logic from its external services.
