@@ -159,12 +159,12 @@ For public sites, it is possible to implement design systems easily, using CSS l
 ### Accessibility
 Within a public site, [accessibility](/en/architecture/patterns/accessibility) is essential to provide the best possible experience for people who require special assistance.
 
-To implement an accessible public site with Modyo, the first step is to take advantage of the [native accessibility capabilities] (https://getbootstrap.com/docs/5.2/getting-started/accessibility) of the [Bootstrap] toolkit (https://getbootstrap.com), which defines controls and standards for many basic elements. A second step involves determining the desired level of accessibility and, depending on that, implementing aids such as changes in color contrast, size adjustments and simplified versions of the content, among other possibilities.
+To implement an accessible public site with Modyo, the first step is to take advantage of the [native accessibility capabilities](https://getbootstrap.com/docs/5.2/getting-started/accessibility) of the [Bootstrap](https://getbootstrap.com) toolkit, which defines controls and standards for many basic elements. A second step involves determining the desired level of accessibility and, depending on that, implementing aids such as changes in color contrast, size adjustments and simplified versions of the content, among other possibilities.
 
 Another important aspect is the use of Liquid tags to insert elements from the Modyo Media Library. This ensures that every image embedded in the site has alternative texts and appropriate descriptions, in addition to centralizing its maintenance.
 
 ### Internationalization
-[internationalization] (/en/architecture/patterns/internationalization) on a public site is a requirement for which the platform does not currently offer a specific solution. When configuring a site, the contents can be defined with a specific language, however, the site only supports one language. Therefore, to implement a second or third language, the only option currently is to clone the site and adjust it to the desired language.
+[Internationalization](/en/architecture/patterns/internationalization) on a public site is a requirement for which the platform does not currently offer a specific solution. When configuring a site, the contents can be defined with a specific language, however, the site only supports one language. Therefore, to implement a second or third language, the only option currently is to clone the site and adjust it to the desired language.
 
 It is important to note that when implementing languages by cloning sites, the contents of the spaces are not duplicated, since they do support several languages. At the same time, it is important to mention that any technique based on JavaScript or dynamics to change the language of a site without following our recommendations can affect various attributes mentioned in this guide, such as accessibility or indexing.
 
@@ -179,11 +179,11 @@ In a public place, the search for content is a fundamental element. To this end,
 If you require more advanced search functionality, you can also implement external indexing solutions.
 
 #### Implementing external search
-There are several alternatives in the market for incorporating search capabilities into a site. One of the most popular is [Algolia] (https://www.algolia.com), a complete indexing and search solution that allows you to activate advanced functions such as relevance criteria, A/B testing, artificial intelligence, real-time search, among others.
+There are several alternatives in the market for incorporating search capabilities into a site. One of the most popular is [Algolia](https://www.algolia.com), a complete indexing and search solution that allows you to activate advanced functions such as relevance criteria, A/B testing, artificial intelligence, real-time search, among others.
 
 You can integrate Algolia and Modyo in a variety of ways. For public sites, an indexing crawler similar to the one used by Google to index information from the sites visited is usually sufficient.
 
-Another option to consider is [ElasticSerch] (https://www.elastic.co/web-crawler), which offers a specific product for indexing and searching public sites.
+Another option to consider is [ElasticSerch](https://www.elastic.co/web-crawler), which offers a specific product for indexing and searching public sites.
 
 :::tip Using external indexers
 Modyo recommends the use of external indexers only in cases where their incorporation can be justified, since these tools generate additional costs that can be high depending on the volume of searches carried out in them.
