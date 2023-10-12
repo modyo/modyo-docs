@@ -29,7 +29,7 @@ Segments can be defined by a variety of criteria, including:
 In Modyo, segments are defined individually for each user domain, allowing multiple segments to be created in parallel. These segments can then be applied to both content and web applications.
 
 :::tip Segments
-For more information on creating segments in Modyo, see the [segments] section (/en/platform/customers/segments).
+For more information on creating segments in Modyo, see the [segments](/en/platform/customers/segments) section.
 :::
 
 ### Using PWA
