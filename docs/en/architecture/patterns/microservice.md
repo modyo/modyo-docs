@@ -9,7 +9,7 @@ Microservices architecture is an approach to software development that involves 
 This architectural approach allows applications to be more scalable and their development to be faster, promoting innovation and reducing the time needed to launch new features to the market.
 
 :::tip Microservices on AWS
-We adapted the definitions of this guide from the [Amazon AWS] web (https://aws.amazon.com).
+We adapted the definitions of this guide from the [Amazon AWS](https://aws.amazon.com) web.
 
 For more information on how AWS can support the implementation of a microservices initiative, we recommend visiting its [official documentation] (https://aws.amazon.com/microservices).
 :::
