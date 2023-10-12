@@ -9,7 +9,7 @@ Dynamic Framework offers two levels of customization:
 - **Themes:** A list of variables that define the style of the components and that constitute what we understand as a _theme_.
 - **Components:** Customizing Dynamic Framework components through parameters, properties, or custom markup.
 
-In this section, we'll dive deeper into the first level. We will explain the concept of the topic and the variables that make it possible.
+In this section, we'll dive deeper into the first level. We will explain the concept of the theme and the variables that make it possible.
 
 ### What is a theme?
 In the context of Dynamic Framework, a theme refers to customizing the visual appearance and style of elements, by modifying colors, typography, spacing, and components.
