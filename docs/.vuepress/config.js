@@ -219,7 +219,7 @@ module.exports = {
                           ],
                       },
                       {
-                          title: "Integraciones",
+                          title: "Integrations",
                           collapsable: true,
                           path: "/en/dynamic/integrations/",
                           children: [
