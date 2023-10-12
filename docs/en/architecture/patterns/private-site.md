@@ -16,7 +16,7 @@ Some examples of private sites are:
 - Corporate intranets
 
 :::tip Hybrid sites
-Private sites have traditionally been kept separate from public sites, in different systems that often lack common ground. However, there are cases where it is more appropriate to combine both approaches, giving rise to [hybrid sites] (/en/architecture/patterns/hybrid-site).
+Private sites have traditionally been kept separate from public sites, in different systems that often lack common ground. However, there are cases where it is more appropriate to combine both approaches, giving rise to [hybrid sites](/en/architecture/patterns/hybrid-site).
 :::
 
 <!-- Hack to avoid this title to be displayed in the TOC element -->
