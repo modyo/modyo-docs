@@ -11,7 +11,7 @@ This architectural approach allows applications to be more scalable and their de
 :::tip Microservices on AWS
 We adapted the definitions of this guide from the [Amazon AWS](https://aws.amazon.com) web.
 
-For more information on how AWS can support the implementation of a microservices initiative, we recommend visiting its [official documentation] (https://aws.amazon.com/microservices).
+For more information on how AWS can support the implementation of a microservices initiative, we recommend visiting its [official documentation](https://aws.amazon.com/microservices).
 :::
 
 ### Monoliths vs. microservices
