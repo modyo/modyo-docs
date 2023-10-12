@@ -24,7 +24,7 @@ For websites and applications, the language is defined on each channel, allowing
 
 This gives rise to a second way of implementing internationalization within Modyo, by using micro frontends. These components, developed externally, must be designed to be incorporated into websites or applications that may have different language settings.
 
-In this case, it is recommended to develop micro frontends taking into account the inclusion of an i18n library that allows changing the language and location using a dynamically injected variable when loading the component. In this way, the same microfrontend can be reused on different sites or web applications, adapting to the language configured on each site
+In this case, it is recommended to develop micro frontends taking into account the inclusion of an i18n library that allows changing the language and location using a dynamically injected variable when loading the component. In this way, the same micro frontend can be reused on different sites or web applications, adapting to the language configured on each site
 
 
 :: :tip Maintaining language files
