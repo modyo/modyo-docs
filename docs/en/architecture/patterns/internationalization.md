@@ -8,7 +8,7 @@ Internationalization in web applications is the process of designing and develop
 
 To achieve this, these aspects must be taken into consideration:
 
-- **Text Localization: ** It involves separating the textual content of the application from its underlying code, allowing it to be translated and adapted to different languages. This is achieved through the use of resource files or databases.
+- **Text Localization:** Involves separating the textual content of the application from its underlying code, allowing it to be translated and adapted to different languages. This is achieved through the use of resource files or databases.
 - **Date and time format: ** Applications must present dates and times in formats that are understandable and acceptable in various regions, including different date formats, timestamps, and time zone options.
 - **Numerical and monetary format: ** Numbering systems and currency symbols vary by country. Web applications must be able to adapt the way they display numbers and monetary values according to the cultural preferences of users.
 - **Character and encoding support: ** Different languages use different character sets and encodings. Web applications must correctly handle and display special characters and accented letters corresponding to different languages.
