@@ -52,7 +52,7 @@ Some important considerations when developing microservices on Modyo Connect are
   authentication, etc.
 - **OpenAPI:** Standard for defining and publishing APIs on the API Gateway
 - **Code structure and style:** We recommend using the [Spring Boot](https://start.spring.io) initializer
-  or [Yeoman] (https://yeoman.io/generators) to give a standard to the source code. We also recommend following the
+  or [Yeoman](https://yeoman.io/generators) to give a standard to the source code. We also recommend following the
   code style recommended by [Google](https://google.github.io/styleguide/javaguide.html).
 
 #### Use of databases
