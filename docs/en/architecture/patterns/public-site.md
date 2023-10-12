@@ -54,7 +54,7 @@ Another common problem is excessive snippets within a site, which can slow page 
 :::
 
 #### Using Widgets
-In Modyo, [widgets] (/en/platform/channels/widgets) allow you to organize and modularize business functionality.
+In Modyo, [widgets](/en/platform/channels/widgets) allow you to organize and modularize business functionality.
 
 The widgets contain HTML, CSS and Javascript code that is modified and deployed together, without affecting the site. Widgets differ from templates and snippets in that they have a separate execution scope. This means that they encapsulate self-contained code that runs autonomously, without impacting the rest of the website environment.
 
