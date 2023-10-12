@@ -22,7 +22,7 @@ At Modyo, internationalization can be carried out in two ways. The first and eas
 
 For websites and applications, the language is defined on each channel, allowing content and variables to be taken from the selected language to be deployed to end users. Each site includes a Liquid context variable that identifies the language, allowing you to create custom logic according to the language or to deliver its value to a third party, such as a micro frontend deployed on Modyo or a third-party library, such as a chatbot system.
 
-This gives rise to a second way of implementing internationalization within Modyo, using micro frontends. These components, developed externally, must be designed to be incorporated into websites or applications that may have different language settings.
+This gives rise to a second way of implementing internationalization within Modyo, by using micro frontends. These components, developed externally, must be designed to be incorporated into websites or applications that may have different language settings.
 
 In this case, it is recommended to develop micro frontends taking into account the inclusion of an i18n library that allows changing the language and location using a dynamically injected variable when loading the component. In this way, the same microfrontend can be reused on different sites or web applications, adapting to the language configured on each site
 
