@@ -10,7 +10,7 @@ En esta nueva versión de plataforma, destacamos las siguientes mejoras y nuevas
 
 ### Nueva interfaz simplificada
 
-[Nueva interfaz de usuario simplificada](/es/platform/core/the-modyo-interface.html), más limpia y con la posibilidad de cambiar el logo de Modyo para personalizarla según el cliente.
+Nueva interfaz de usuario simplificada, más limpia y con la posibilidad de cambiar el logo de Modyo para personalizarla según el cliente.
 
 ### Aplicación de contenidos
 

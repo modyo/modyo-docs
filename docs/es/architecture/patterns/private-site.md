@@ -72,7 +72,7 @@ La integración entre micro frontends y microservicios se realiza mediante APIs 
 
 
 #### Uso de Frameworks de Javascript
-A diferencia de los sitios públicos, en los sitios privados el uso de frameworks de Javascript puede ser muy recomendado en los casos en que se requiere de funcionalidad avanzada. Por ejemplo, el consumo de APIs externas, componentes con flujos de interacción complejos, reutilización de código o la utilización de Componentes Web. En estas instancias, la vía recomendada es mediante el uso de [micro frontends](/es/architecture/patterns/miro-frontend).
+A diferencia de los sitios públicos, en los sitios privados el uso de frameworks de Javascript puede ser muy recomendado en los casos en que se requiere de funcionalidad avanzada. Por ejemplo, el consumo de APIs externas, componentes con flujos de interacción complejos, reutilización de código o la utilización de Componentes Web. En estas instancias, la vía recomendada es mediante el uso de [micro frontends](/es/architecture/patterns/micro-frontend).
 
 #### Uso de Web Components
 Al hacer uso de micro frontends, los sitios privados pueden beneficiarse del uso de [Web Components](/es/architecture/patterns/web-components) de una forma más efectiva y directa que en el caso de los sitios públicos, siempre y cuando su alcance se limite a los micro frontends y no a todo el sitio.
