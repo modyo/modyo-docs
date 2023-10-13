@@ -5,6 +5,17 @@ search: true
 # Notas del release
 
 ## 9.2
+### 9.2.52 - 13 de octubre de 2023
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Corrige problema de logout y carga del sitio en simultaneo.
+* Corrige visibilidad de información en la lista de actividad de una orden.
+
+
 ### 9.2.51 - 28 de septiembre de 2023
 <Badge text="Core" type="core" vertical="middle"/>
 
