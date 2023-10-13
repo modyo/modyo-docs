@@ -372,7 +372,7 @@ module.exports = {
                                   collapsable: true,
                                   children: [
                                       ["/es/platform/core/integrations/identity-providers", "Proveedores de Identidad"],
-                                      ["/es/platform/core/integrations/scim", "Provisionamiento SCIM con Microsoft Azure AD"],
+                                      ["/es/platform/core/integrations/scim", "Aprovisionamiento SCIM con Microsoft Azure AD"],
                                       ["/es/platform/core/integrations/google-data-studio-integration", "Integración con Google Analytics"],
                                       ["/es/platform/core/integrations/oidc", "Gestión de sesión privada usando OpenID Connect (OIDC)"],
                                   ],
