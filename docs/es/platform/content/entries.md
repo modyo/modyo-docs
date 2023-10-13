@@ -246,10 +246,10 @@ URL: `https://test.modyo.com/api/content/spaces/test-space/types/nuevo/entries/4
 {
   "meta":
   {
-    "name": "MiNuevaEntrada",
-    "slug": "minuevaentrada",
+    "name": "MyNewEntry",
+    "slug": "mynewentry",
     "tags": [],
-    "type": "nuevoTipo",
+    "type": "newType",
     "uuid": "45fa2ef7-bf12-47a3-8ff7-f7d1f5f36844",
     "space": "test-space",
     "author":

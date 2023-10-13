@@ -47,15 +47,15 @@ Para comenzar a utilizar Dynamic Framework [crea un ambiente de pruebas](https:/
 
 Inicia un nuevo proyecto con Dynamic Framework utilizando el comando NPX. Este comando configura automáticamente todo el entorno:
 
-``` shell
-npx @modyo/cli@latest get dynamic-react-base-template <nombre-de-tu-proyecto>
+```bash
+npx @modyo/cli@latest get dynamic-react-base-template <project-name>
 ```
 Si no tienes instalado el CLI de Modyo, el sistema solicitará instalarlo debido a que es un paquete requerido. Puedes encontrar las instrucciones de instalación del CLI en la [documentación oficial](/es/platform/channels/cli.html#modyo-cli)
 
 Este proceso descarga la plantilla dynamic-react-base-template, una vez que tengas la plantilla, ingresa a la carpeta del proyecto para instalar las dependencias y levantar el proyecto:
 
-```shell
-cd <nombre-de-tu-proyecto>
+```bash
+cd <project-name>
 npm i
 npm run start
 ```
@@ -63,7 +63,7 @@ Usa un editor de código para explorar el código y examinar cómo se utilizan l
 
 ### Instalación manual
 Para crear manualmente un nuevo proyecto con Dynamic Framework o agregarlo como dependencia a un proyecto React existente, instala los paquetes requeridos:
-```shell
+```bash
 npm i @modyo/cli@latest @dynamic-framework/ui-react@latest
 ```
 

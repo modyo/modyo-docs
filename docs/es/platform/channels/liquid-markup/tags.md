@@ -192,7 +192,7 @@ A menudo hay que alternar entre diferentes colores o tareas similares. Liquid ti
 
 resultará en
 
-```plain
+```shell
 one
 two
 three
@@ -214,7 +214,7 @@ el nombre del grupo. Esto puede incluso ser una variable.
 
 resultará en
 
-```text
+```shell
 one
 two
 one

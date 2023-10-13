@@ -38,7 +38,7 @@ Por defecto comienzas comparando la versión publicada con la versión editable.
 **Botón principal:**
 
 - **Guardar:** Guarda los cambios actuales.
-- **Enviar a revisión:**Si está habilitada la revisión en equipo, puedes enviar el widget a revisión y notificar a los revisores que el widget está listo para ser revisado.
+- **Enviar a revisión:** Si está habilitada la revisión en equipo, puedes enviar el widget a revisión y notificar a los revisores que el widget está listo para ser revisado.
 - **Publicar:** Te lleva a la vista de [publicación conjunta](/es/platform/core/key-concepts.html#revision-y-publicacion-conjunta) donde puedes publicar tus widgets.
 
 **Otras acciones principales:**
@@ -137,7 +137,7 @@ Con i18n puedes configurar y agregar nuevos idiomas a tus widgets.
 
 Para manejar la internacionalización en los Widgets de nuestro [catálogo de widgets](/es/widgets/) usamos el paquete [**Vue I18n**](https://kazupon.github.io/vue-i18n/) instalado mediante el plugin [vue-cli-plugin-i18n](https://github.com/kazupon/vue-cli-plugin-i18n), pueden revisar su documentación [aquí](https://kazupon.github.io/vue-i18n/introduction.html). Al instalar el plugin, se crea una carpeta para los idiomas llamada `locales` y un archivo de configuración llamado `i18n.js`.
 
-``` treeview{3,5-7}
+```shell{3,5-7}
 ├── src/
 │   ├── App.vue
 │   ├── i18n.js
@@ -180,7 +180,7 @@ La variable `liquid.lang` la tenemos que crear en Modyo Platform. Para crear est
 1. Abre la Vista `theme` en la sección Vistas -> Javascript -> theme.
 1. Agrega el siguiente código:
 
-``` js
+```shell
 window.liquid = {
  lang: '{{@site.language}}' === 'en' ? 'en-US' : 'es-CL'
 };
@@ -192,11 +192,11 @@ Este código asigna a la variable `liquid.lang` el lenguaje, dependiendo del val
 
 Para agregar un idioma nuevo al sitio, simplemente creamos un archivo **JSON** en la carpeta `locales` donde su nombre es el código del idioma a añadir. Por ejemplo, si queremos agregar portugués de Brasil, agrega `pt-BR.json`:
 
-``` treeview{4}
+```shell{4}
 ├── src/
 │   ├── locales/
 │   │   ├── en-US.json
-│   │   ├── pt-BR.json <-- nuevo idioma
+│   │   ├── pt-BR.json <-- new language
 │   │   └── es-CL.json
 ```
 :::warning Atención
@@ -212,7 +212,6 @@ Para poder localizar los mensajes de error que el validador nos muestra, tenemos
 3. Retornamos el objeto **messages** modificado.
 
 ```js
-// 1
 import esCL from 'vee-validate/dist/locale/es-CL.json';
 import enUS from 'vee-validate/dist/locale/en-US.json';
 import ptBR from 'vee-validate/dist/locale/pt-BR.json';
@@ -223,22 +222,22 @@ function loadLocaleMessages() {
   const locales = require.context('./locales', true, /[A-Za-z0-9-_,\s]+\.json$/i);
   const messages = {};
   locales.keys().forEach((key) => {...});
-  // 2
+ 
   messages['es-CL'] = {
     ...messages['es-CL'],
     validations: esCL.messages,
   };
-  // 2
+
   messages['en-US'] = {
     ...messages['en-US'],
     validations: enUS.messages,
   };
-  // 3
+
   messages['pt-BR'] = {
     ...messages['pt-BR'],
     validations: ptBR.messages,
   };
-  // 4
+
   return messages;
 }
 ```

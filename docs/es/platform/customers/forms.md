@@ -163,7 +163,7 @@ El correo de agradecimiento te permite personalizar un correo que será enviado 
 A continuación, tienes un ejemplo de código que podrás usar como base para personalizar el correo de agradecimiento.
 
 ```liquid
-Enviaste esta respuesta el: {{ 'now' | date: "%b %d, %y" }}
+Message Sent: {{ 'now' | date: "%b %d, %y" }}
 <table width="600px">
     <tr>
         <td><b>user name</b></td>
