@@ -23,5 +23,3 @@ El Figma Kit de Dynamic Framework es un conjunto de herramientas de diseño que 
 Este kit permite a los diseñadores trabajar de manera más eficiente y consistente al proporcionar una colección de componentes predefinidos que pueden reutilizar en diferentes partes de una aplicación web. Además, los estilos y patrones de diseño predefinidos en el kit aseguran que la apariencia visual de la aplicación sea coherente.
 
 Incluye además, elementos de diseño como iconos y tipografías, que ayudan a los diseñadores a crear diseños de alta calidad de forma rápida y sencilla. Estos elementos visuales se pueden personalizar y adaptar según las necesidades específicas de cada proyecto.
-
-Puedes acceder al Figma Kit de Dynamic Framework desde [el siguiente link](https://www.figma.com/community/file/1274095451173638903).

@@ -60,8 +60,6 @@ Para crear un Menú, sigue estos pasos:
 Tu menú en este momento ya es público pero no se manda a llamar. Se necesita usar una plantilla para que se despliegue en pantalla. Modyo ofrece un snippet de uso general en **Snippets, General, menu** y es llamado en la plantilla `base` usando <pre v-pre>`{% snippet 'shared/general/menu' %}`</pre>.
 :::
 
-Para más información de como se crea y publica un menú personalizado, ve [Creación de Mega Menú](/es/platform/tutorials/how-to-create-a-menu.html).
-
 **Acción principal**
 
 - **Guardar:** Guarda todos los cambios del menú.
