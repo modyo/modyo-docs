@@ -12,8 +12,8 @@ search: true
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* Corrige problema de logout y carga del sitio en simultaneo.
-* Corrige visibilidad de información en la lista de actividad de una orden.
+* Corrige problema de logout y carga del sitio en simultáneo
+* Corrige visibilidad de información en la lista de actividad de una orden
 
 
 ### 9.2.51 - 28 de septiembre de 2023
