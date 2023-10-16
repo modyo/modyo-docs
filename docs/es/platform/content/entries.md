@@ -97,7 +97,7 @@ Si el campo de nombre queda vacío, la plataforma pondrá por defecto el UUID de
 
 ## Traducir una Entrada
 
-Modyo Platform te permite agregar diferentes idiomas en tus Espacios y crear Entradas para ellos. Para traducir una entrada existente a un idioma distinto, debes asegurarte que el idioma haya sido agregado a la sección de Localización en la configuración del Espacio. 
+Modyo Platform te permite agregar diferentes idiomas en tus Espacios y crear Entradas para ellos. Para traducir una entrada existente a un idioma distinto, debes asegurarte que el idioma haya sido agregado a la sección de Localización en la configuración del Espacio.
 
 Para traducir una entrada, sigue estos pasos:
 
@@ -135,8 +135,6 @@ Para despublicar contenido, sigue estos pasos:
 1. Haz click en tu Espacio.
 1. En el menú de Entradas, selecciona tu Entrada.
 1. Expande el menú de Acciones Masivas y haz click en Despublicar.
-
-<img src="/assets/img/content/despublicar.jpg" alt="Unpublish entries using bulk actions" style="margin: 40px auto; width: 500px; display: block;">
 
 
 ### Eliminar entradas
@@ -201,10 +199,6 @@ Si se borra la Categoría Padre, se borran también todas las subcategorías asi
 
 Los tags te permiten agregar más granularidad a tus Entradas al combinarlo con Liquid en tus páginas de contenido. Al crear Entradas, se puede agregar un tag que aparece tanto en el código fuente como en nuestra API de contenido para que puedas agregar funcionalidad específica a este tag.
 
-<img src="/assets/img/tutorials/how-to-create-custom-view/preview_site.png" alt="The JSON information that appears when you click the preview site button."/>
-
-Por ejemplo, si está entrada es una entrada destacada, se puede agregar un tag ‘featured’ y agregar funcionalidad a través del módulo Channels.
-
 ### Slug
 
 Si quieres hacer un link mucho más amigable a cualquier microservicio que quieras conectar, puedes escribir un slug simple que te permita hacer más fácil el trabajo en la URL.
@@ -229,7 +223,7 @@ Para crear un segmento en específico, revisa la [sección Segmentos](/es/platfo
 
 ## Consumir externamente
 
-Accesa el contenido creado en el módulo de Content desde cualquier parte usando nuestra API. 
+Accesa el contenido creado en el módulo de Content desde cualquier parte usando nuestra API.
 
 Sigue estos pasos para obtener el uuid de una entrada:
 
