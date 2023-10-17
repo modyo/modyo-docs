@@ -23,7 +23,7 @@ At the top right, you can see the last publication date and the available action
 You can preview the changes as a user without a session or a user with a Modyo session. For this, it is recommended to open or close the Modyo session on the site before entering the preview mode, since if you start or close the session within the preview mode. This is because logging in or out of preview mode can result in security errors such as _x-frame-options_ or _mixed-content_, depending on the site's custom domain and SSL settings.
 :::
 
-**Differences: ** It takes you to the difference view, where you can compare the changes between multiple versions of your templates.
+**Differences:** Takes you to the difference view, where you can compare the changes between multiple versions of your templates.
 
 By default, you start by comparing the published version with the editable version. Use the version selectors to compare with backup versions.
 
