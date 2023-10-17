@@ -97,7 +97,7 @@ If the name field is empty, the platform defaults the UUID of the entry as a slu
 
 ## Translate an Entry
 
-Modyo Platform allows you to add different languages to your Spaces and create Entries for them. To translate an existing entry into a different language, you must ensure that the language has been added to the Localization section in the Space settings. 
+Modyo Platform allows you to add different languages to your Spaces and create Entries for them. To translate an existing post into a different language, you must ensure that the language has been added to the Localization section in the Space settings.
 
 To translate an entry, follow these steps:
 
@@ -135,8 +135,6 @@ To unpublish content, follow these steps:
 1. Click your Space.
 1. In the Entries menu, select your Entry.
 1. Expand the Mass Actions menu and click Unpublish.
-
-<img src="/assets/img/content/despublicar.jpg" alt="Unpublish entries using bulk actions" style="margin: 40px auto; width: 500px; display: block;">
 
 
 ### Delete Entries
@@ -201,10 +199,6 @@ If the Parent Category is deleted, all subcategories assigned to it are also del
 
 Tags allow you to add more granularity to your Entries by combining it with Liquid on your content pages. When creating Entries, you can add a tag that appears both in the source code and in our content API so that you can add specific functionality to this tag.
 
-<img src="/assets/img/tutorials/how-to-create-custom-view/preview_site.png" alt="The JSON information that appears when you click the preview site button."/>
-
-For example, if this entry is a featured entry, you can add a 'featured' tag and add functionality through the Channels module.
-
 ### Slug
 
 If you want to make a link easier to read with any microservice or endpoint that you want to connect, you can provide a custom slug.
@@ -229,7 +223,7 @@ To create a specific target, review the [Segments section](/en/platform/customer
 
 ## Consume externally
 
-Access the content created in the Content module from anywhere using our API. 
+Access the content created in the Content module from anywhere using our API.
 
 Follow these steps to get the uuid of an entry:
 
@@ -246,26 +240,26 @@ URL: `https://test.modyo.com/api/content/spaces/test-space/types/nuevo/entries/4
 {
  “goal”:
  {
- “name”: “My New Entry”,
- “slug”: “my new entry”,
+ “name”: “myNewEntry”,
+ “slug”: “mynewentry”,
  “tags”: [],
- “type”: “NewType”,
+ “type”: “newType”,
  “uuid”: “45fa2ef7-bf12-47a3-8ff7-f7d1f5f36844",
  “space”: “test-space”,
  “author”:
  {},
- “locale”: “en-cl”,
- “private”: false,
+ 'local': 'es-cl',
+ 'private': false,
  “targets”: [],
  “category”: “mycategory”,
- “created_at”: “2022-02-24T 12:44:24. 000-03:00 “,
- “updated_at”: “2022-02-25T 10:06:46. 000-03:00 “,
- “published_at”: “2022-02-25T 10:06:46. 000-03:00 “,
+ “created_at”: “2021-02-24T 12:44:24.000-03:00”,
+ “updated_at”: “2021-02-25T 10:06:46.000-03:00”,
+ “published_at”: “2021-02-25T 10:06:46.000-03:00”,
  “version_type”: “current”,
- “category_name”: “myCategory”,
+ “category_name”: “MyCategory”,
  “category_slug”: “mycategory”,
  “unpublished_at”: null,
- “available_locales”: ["en-cl"]
+ “available_locals”: ["en-cl"]
  },
  “fields”:
  {
