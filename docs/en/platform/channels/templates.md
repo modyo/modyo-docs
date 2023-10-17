@@ -148,7 +148,7 @@ Snippets are snippets of HTML, JS, or CSS code that you can reuse on your sites.
 
 You can add custom snippets to the bottom of the platform's snippet list, by clicking on the **+ Add a Snippet** button.
 
-:: :warning Important
+:::warning Important
 For the system to recognize the type of programming language to which the snippet belongs, the ending with underscore + termination must be added, that is to say **"front_css"** or **"library_js"** by default will recognize the snippet as an HTML language.
 :::
 
