@@ -113,7 +113,7 @@ Al final de la documentación, encontrarás una sección llamada "Models" que co
 
 El siguiente código es una parte del modelo para objeto **User**:
 
-```
+```shell
 User{
 schemas	    [...]
 id	        string example: 2441309d85324e7793ae

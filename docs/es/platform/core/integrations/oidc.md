@@ -107,7 +107,6 @@ axios_api.interceptors.request.use(appendTokenToRequest ,errorRequest);
 1. Agrega otro snippet personalizado llamado `controller_js` y copia el siguiente código:
 
 ```js
-// se encarga de levantar el modal de advertencia que avisará el cierre próximo de la sesión, esta variable devolverá una promesa que será efectiva si se hace click en el botón Mantener Sesión y que lanzará una promesa reject en el caso de seleccionar el botón con la negativa de continuar
 var modalConfirm = function() {
   return new Promise(function(resolve, reject) {
     $("#session-modal").modal({
@@ -125,30 +124,26 @@ var modalConfirm = function() {
     });
   });
 };
-// será la que se encarga de al iniciarse comenzar el tracking del tiempo para levantar este modal y manejar del lado Front la sesión a continuación se explica cada una de las propiedades y métodos de este objeto que maneja la sesión
+
 var sessionManager = {
-  // propiedad que define el tiempo desde la última actividad hasta el fin de la sesión en segundos (ojo no el tiempo de refresco del token sino el de finalización de la sesión, es recomendado que este sea un minuto menor al declarado por el provider del Open ID Connect para tener un poco de holgura con la sesión y el cierre de la misma sea 100% valido)
   timeToEndSessionInSeconds: 900,
-  // propiedad donde se define el tiempo de levantamiento del modal de inactividad desde la última acción o petición en la página
   timeToRaiseWarningModalInSeconds: 720,
-  // propiedad que guarda el timestamp del último momento de actividad del sessionManager
   lastActionTimeInThisWindow: new Date().getTime(),
-  // función que convierte segundos a milisegundos
+
   secondsToMilisecs: function(minutes) {
     return minutes * 1000;
   },
-  // propiedad para almacenar el interval id de revisión de eventos de sesión
   intevalId:null,
-  // función que determina si se esta accediendo a la aplicación desde el modyoShell o no
+
   isModyoAppShell: function() {
     return /; Modyo_App_Shell/.test(navigator.userAgent);
   },
-  // método que debe ser ejecutado en cada carga de página para comenzar el proceso de eventos de sesión a hacer seguimiento recomendado hacer esta invocación sessionManager.init() en el head del layout para comenzar a trackear la sesión (en algunos casos se define que los developers no lancen esta invocación en ese caso la API de prueba a conectar debe tener también este if y así lograrás que axios_api sirva para el entorno develop y el de desarrollo uno con sesión y el otro sin sesión manager)
+
   init: function() {
     this.resetIdleTime();
     this.intevalId=this.interval();
   },
-  // reinicia el tiempo de espera o crea una nueva actividad en el sitio
+
   resetIdleTime: function() {
     this.lastActionTimeInThisWindow = new Date().getTime();
     var sessionEndTime =
@@ -160,16 +155,17 @@ var sessionManager = {
       this.secondsToMilisecs(this.timeToRaiseWarningModalInSeconds);
     localStorage.setItem("timeToRaiseWarningModal", raiseWarningModalTime);
   },
-  // método que inicia la actividad cada segundo js que maneja los eventos de sesión
+
+
   interval: function() {
     var self = this;
     return setInterval(this.checkSessionEvents, 1000, self);
   },
-  // método que levanta el modal de warning time
+
   raiseModal: function() {
     return modalConfirm();
   },
-  // método que cierra sesión y limpia storage
+
   logout: function() {
     localStorage.clear();
     sessionStorage.clear();
@@ -183,7 +179,7 @@ var sessionManager = {
       window.location.href = "{{site.account_url}}/logout?site={{site.uuid}}";
     }
   },
-  // método que revisa los eventos de sesión para determinar si es momento de cierre de la misma o de mantenerla después de mostrar el modal
+
   checkSessionEvents: function(self) {
     var sessionEndTime = localStorage.getItem("timeToEndSession");
     var raiseWarningModalTime = localStorage.getItem("timeToRaiseWarningModal");
@@ -234,18 +230,18 @@ Este es el modal a activar en el paso anterior con bootstrap para el manejo del 
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="session-modal-label">
-          Su sesión va a expirar
+          Session about to expire
         </h5>
       </div>
       <div class="modal-body text-center">
         <p>
-          Su sesión va a expirar en <span id="expiration-time"></span> segundos.
+          Your session will expire in <span id="expiration-time"></span> seconds.
         </p>
-        <p>¿Quiere mantener su sesión?</p>
+        <p>Close Session?</p>
       </div>
       <div class="modal-footer">
         <button id="session-modal-yes" type="button" class="btn btn-primary">
-          Si
+          Yes
         </button>
         <button
           id="session-modal-no"

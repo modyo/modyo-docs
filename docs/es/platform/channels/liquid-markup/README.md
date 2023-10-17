@@ -65,7 +65,7 @@ Para desplegar el nombre de la entrada en tu página usa:
 Con Tags se puede agregar control de flujo e iteración a tus páginas. Se necesita encapsular el lenguaje con corchete y porcentaje {% %} para hacer uso de Tags, por ejemplo:
 
 ```liquid
-{% if product.name == "Banca Electrónica" %}
- ¡Descarga nuestra banca electrónica en tu teléfono celular!
+{% if product.name == "Online Banking" %}
+Download our Online Banking App now!
 {% endif %}
 ```

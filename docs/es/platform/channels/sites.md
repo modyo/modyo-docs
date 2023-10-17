@@ -239,7 +239,7 @@ Modyo permite la implementación de Progressive Web Apps (PWA) dentro de los can
 
 El manifiesto sirve para indicar cómo quieres que un navegador muestre tu canal digital. Lo puedes activar en Modyo marcando la casilla. Al activarlo, se crea esta ruta:
 
-```
+```bash
 https://[domain]/[site-name]/manifest.json
 ```
 
@@ -259,7 +259,7 @@ Si no personalizas el manifiesto, pero agregas la ruta en Plantillas, este queda
 
 El Service Worker permite que el canal digital realice distintas acciones o mantenga ciertos datos conectados dentro del caché para ofrecer una estructura en caso de tener una mala conexión. Puedes habilitar el Service Worker a través de la casilla correspondiente. Al activarlo, se crea la siguiente ruta:
 
-```
+```bash
 https://[domain]/[site-name]/serviceworker.js
 ```
 
@@ -561,7 +561,7 @@ Un valor muy estricto puede interferir con algunas características como [Google
 
 Una política apta para producción debe asegurar que todos los recursos, como imágenes y hojas de estilo, se carguen desde fuentes confiables y requiere que todos los scripts sean seguros y confiables para la aplicación. Por ejemplo, una política estricta para el _template minimal_ se vería así:
 
-```
+```bash
 default-src 'self'; img-src 'self' https://cloud.modyocdn.com; font-src 'self' https://cloud.modyocdn.com http://cdn.materialdesignicons.com; style-src 'self' http://cdn.materialdesignicons.com; script-src 'self'
 ```
 
