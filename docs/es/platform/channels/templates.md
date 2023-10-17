@@ -8,10 +8,7 @@ Uno de los aspectos más importantes al crear el sitio es la arquitectura base y
 
 Al crear un Sitio, se llenará con plantillas distintas para generar el tema Minimal y puedas empezar a crear tu canal digital. Si es necesario, también podrás crear Snippets de código HTML, JS, y CSS para extender la funcionalidad de tu sitio.
 
-<img src="/assets/img/channels/template_builder/template-builder.png" alt="The templates main menu">
-
 Una vez dentro de Plantillas, puedes ver que el menú principal se esconde para optimizar el área de trabajo. En la barra superior, a la izquierda, encuentras el nombre de la sección y el estado de publicación actual.
-
 
 - **Publicado:** Cuando ya existe una versión publicada y su versión editable es igual.
 - **Cambios pendientes:** Cuando hay una versión publicada, pero hay cambios pendientes de publicar en tu versión editable.
@@ -26,9 +23,7 @@ En la parte superior derecha, puedes ver la última fecha de publicación y las 
 Puedes previsualizar los cambios como usuario sin sesión o usuario con sesión de Modyo. Para esto, es recomendable iniciar o cerrar la sesión de Modyo en el sitio antes de entrar al modo vista previa, dado que si se inicia o cierra sesión dentro del modo vista previa. Esto se debe a que iniciar o cerrar sesión dentro del modo de vista previa puede generar errores de seguridad como _x-frame-options_ o _mixed-content_, dependiendo de la configuración de dominios personalizados y SSL del sitio.
 :::
 
-<img src="/assets/img/channels/template_builder/differences.jpg" style="border: 1px solid #EEEEEE" width="700" alt="The version differences window">
-
-**Diferencias:** Te lleva a la [vista de diferencias](/es/platform/channels/sites.html#revision-y-publicacion-conjunta), en la cual puedes comparar los cambios que hay entre múltiples versiones de tus plantillas.
+**Diferencias:** Te lleva a la vista de diferencias, en la cual puedes comparar los cambios que hay entre múltiples versiones de tus plantillas.
 
 Por defecto, comienzas comparando la versión publicada con la versión editable. Usa los selectores de versiones para comparar con versiones de respaldo.
 
@@ -39,8 +34,6 @@ Para más información sobre el versionamiento, ve [versionado](/es/platform/cor
 :::
 
 **Buscar en plantillas:** Despliega una barra lateral con un buscador de texto que busca en todas las plantillas editables.
-
-<img src="/assets/img/channels/template_builder/conversation.jpg" style="border: 1px solid #EEEEEE" width="700" alt="The activity window">
 
 **Actividad/Comentarios:** Despliega una barra lateral que muestra el historial de actividad y comentarios de las plantillas.
 
@@ -153,11 +146,9 @@ Para conocer a detalle y los parámetros soportados por estos filtros, dirígete
 
 Los snippets son fragmentos de código HTML, JS o CSS que puedes reutilizar en tus sitios. Puedes copiar la ruta de referencia de cada snippet personalizado. El código Liquid será similar a: <span v-pre>`{% snippet "nombre-del-snippet" %}`</span>. Pega este código donde quieras llamar a este Snippet.
 
-Puedes añadir snippets personalizados al final del listado de snippets de la plataforma, haciendo click en el botón **+**.
+Puedes añadir snippets personalizados al final del listado de snippets de la plataforma, haciendo click en el botón **+ Add a Snippet**.
 
-<img src="/assets/img/channels/template_builder/custom-snippet.jpg" style="border: 1px solid #EEEEEE" width="300" alt="The custom snippet window">
-
-:::tip Tip
+:::warning Importante
 Para que el sistema reconozca el tipo de lenguaje de programación al que pertenece el snippet, se debe agregar la terminación con guión bajo + terminación, es decir **"front_css"** o **"library_js"** por defecto reconocerá el snippet como lenguaje HTML.
 :::
 
@@ -167,9 +158,7 @@ Todos los elementos del Template Builder usan Liquid como motor de plantillas.
 Para más información sobre qué es Liquid y cómo sacarle el mejor provecho, echa un vistazo a la página [Liquid Markup](/es/platform/channels/liquid-markup.html)
 :::
 
-En el área de trabajo, debajo de las pestañas, encontrarás una barra con elementos útiles:
-
-<img src="/assets/img/channels/template_builder/bar-templates.jpg" style="border: 1px solid #EEEEEE" width="700" alt="Action bar inside templates">
+En el área de trabajo, debajo de las pestañas, encontrarás una barra con estos elementos:
 
 **Gestor de archivos:** Se levanta un modal donde puedes acceder a todos los archivos de la cuenta y copiar su URL. Si accedes a la segunda pestaña, puedes subir nuevos archivos.
 
@@ -179,15 +168,9 @@ Para más información sobre los beneficios y prestaciones de Gestor de Archivos
 
 **Atajos de teclado:** Se muestra un pequeño pop-up con algunos de los atajos de teclado útiles para usar en Plantillas.
 
-<img src="/assets/img/channels/template_builder/keywords.jpg" width="400" alt="Keyboard shortcuts inside the templates module">
-
 **Snippets:** Se despliega un listado con todos los snippets, junto a la opción de copiar su código de referencia.
 
-<img src="/assets/img/channels/template_builder/snippets.jpg" width="300" alt="The list with all your custom snippets">
-
 **Cambios:** Un listado de todas las veces y estados en los que has hecho la acción "Guardar" en esta versión. Al hacer click en alguna de las sub-versiones, cambias el contenido del template en el que estás trabajando a esa sub-versión.
-
-<img src="/assets/img/channels/template_builder/changes.jpg" style="border: 1px solid #EEE" width="300" alt="The latest changes in your template">
 
 :::tip Tip
 Si publicas una versión, puedes ver que el listado de cambios desaparece, esto es porque la nueva versión editable no ha tenido ningún cambio.
