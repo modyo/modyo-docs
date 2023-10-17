@@ -8,10 +8,7 @@ One of the most important aspects when creating the site is the base architectur
 
 When creating a Site, it will be filled with different templates to generate the Minimal theme and you can start creating your digital channel. If necessary, you can also create Snippets of HTML, JS, and CSS code to extend the functionality of your site.
 
-<img src="/assets/img/channels/template_builder/template-builder.png" alt="The templates main menu">
-
 Once inside Templates, you can see that the main menu is hidden to optimize the work area. In the top bar, on the left, you can find the name of the section and the current publication status.
-
 
 - **Published:** When a published version already exists and its editable version is the same.
 - **Pending changes:** When there is a published version, but there are pending changes to be published in your editable version.
@@ -26,9 +23,7 @@ At the top right, you can see the last publication date and the available action
 You can preview the changes as a user without a session or a user with a Modyo session. For this, it is recommended to open or close the Modyo session on the site before entering the preview mode, since if you start or close the session within the preview mode. This is because logging in or out of preview mode can result in security errors such as _x-frame-options_ or _mixed-content_, depending on the site's custom domain and SSL settings.
 :::
 
-<img src="/assets/img/channels/template_builder/differences.jpg" style="border: 1px solid #EEEEEE" width="700" alt="The version differences window">
-
-**Differences:** It takes you to the [difference view] (/en/platform/core/key-concepts.html#joint-review-and-publication), in which you can compare the changes between multiple versions of your templates.
+**Differences: ** It takes you to the difference view, where you can compare the changes between multiple versions of your templates.
 
 By default, you start by comparing the published version with the editable version. Use the version selectors to compare with backup versions.
 
@@ -39,8 +34,6 @@ For more information on versioning, see [versioning] (/en/platform/core/key-conc
 :::
 
 **Search in templates:** Displays a sidebar with a text search engine that searches all the editable templates.
-
-<img src="/assets/img/channels/template_builder/conversation.jpg" style="border: 1px solid #EEEEEE" width="700" alt="The activity window">
 
 **Activity/Comments: ** Displays a sidebar that shows the history of activity and comments of the templates.
 
@@ -153,12 +146,10 @@ To learn more about the parameters supported by these filters, go to [Liquid fil
 
 Snippets are snippets of HTML, JS, or CSS code that you can reuse on your sites. You can copy the reference path for each custom snippet. The Liquid code will look like: <span v-pre>`{% snippet “snippet-name”%}`</span>. Paste this code wherever you want to call this Snippet.
 
-You can add custom snippets at the bottom of the platform's list of snippets, by clicking on the**+** button.
+You can add custom snippets to the bottom of the platform's snippet list, by clicking on the **+ Add a Snippet** button.
 
-<img src="/assets/img/channels/template_builder/custom-snippet.jpg" style="border: 1px solid #EEEEEE" width="300" alt="The custom snippet window">
-
-:::tip Tip
-For the system to recognize the type of programming language to which the snippet belongs, an ending with an underscore must be added, i.e. **"front_css"** or**"library_js"** will recognize the snippet as an HTML language by default.
+:: :warning Important
+For the system to recognize the type of programming language to which the snippet belongs, the ending with underscore + termination must be added, that is to say **"front_css"** or **"library_js"** by default will recognize the snippet as an HTML language.
 :::
 
 :::tip Tip
@@ -167,9 +158,7 @@ All elements of the Template Builder use Liquid as a template engine.
 For more information on what Liquid is and how to get best take advantage of it, check out the [Liquid Markup] page (/en/platform/channels/liquid-markup.html)
 :::
 
-In the work area, below the tabs, you'll find a bar with useful items:
-
-<img src="/assets/img/channels/template_builder/bar-templates.jpg" style="border: 1px solid #EEEEEE" width="700" alt="Action bar inside templates">
+In the work area, under the tabs, you'll find a bar with these items:
 
 **File manager:** A modal is created where you can access all the files in the account and copy their URL. If you access the second tab, you can upload new files.
 
@@ -179,15 +168,9 @@ For more information on the benefits and features of File Manager, go to [File M
 
 **Keyboard Shortcuts:** A small pop-up appears with some of the useful keyboard shortcuts for use in Templates.
 
-<img src="/assets/img/channels/template_builder/keywords.jpg" width="400" alt="Keyboard shortcuts inside the templates module">
-
 **Snippets:** A list of all the snippets is displayed, along with the option to copy their reference code.
 
-<img src="/assets/img/channels/template_builder/snippets.jpg" width="300" alt="The list with all your custom snippets">
-
 **Changes:** A list of all the times and states in which you have done the “Save” action in this version. When you click on one of the sub-versions, you change the content of the template you are working on to that sub-version.
-
-<img src="/assets/img/channels/template_builder/changes.jpg" style="border: 1px solid #EEE" width="300" alt="The latest changes in your template">
 
 :::tip Tip
 If you publish a version, you will see that the list of changes disappears, this is because the new editable version has not had any changes.
