@@ -238,33 +238,33 @@ URL: `https://test.modyo.com/api/content/spaces/test-space/types/nuevo/entries/4
 
 ```json
 {
- “goal”:
- {
- “name”: “myNewEntry”,
- “slug”: “mynewentry”,
- “tags”: [],
- “type”: “newType”,
- “uuid”: “45fa2ef7-bf12-47a3-8ff7-f7d1f5f36844",
- “space”: “test-space”,
- “author”:
- {},
- 'local': 'es-cl',
- 'private': false,
- “targets”: [],
- “category”: “mycategory”,
- “created_at”: “2021-02-24T 12:44:24.000-03:00”,
- “updated_at”: “2021-02-25T 10:06:46.000-03:00”,
- “published_at”: “2021-02-25T 10:06:46.000-03:00”,
- “version_type”: “current”,
- “category_name”: “MyCategory”,
- “category_slug”: “mycategory”,
- “unpublished_at”: null,
- “available_locals”: ["en-cl"]
- },
- “fields”:
- {
- “My items”: “...”
- }
+  "meta":
+  {
+    "name": "MyNewEntry",
+    "slug": "mynewentry",
+    "tags": [],
+    "type": "newType",
+    "uuid": "45fa2ef7-bf12-47a3-8ff7-f7d1f5f36844",
+    "space": "test-space",
+    "author":
+    {},
+    "locale": "es-cl",
+    "private": false,
+    "targets": [],
+    "category": "mycategory",
+    "created_at": "2022-02-24T12:44:24.000-03:00",
+    "updated_at": "2022-02-25T10:06:46.000-03:00",
+    "published_at": "2022-02-25T10:06:46.000-03:00",
+    "version_type": "current",
+    "category_name": "MyCategory",
+    "category_slug": "mycategory",
+    "unpublished_at": null,
+    "available_locales": ["es-cl"]
+  },
+  "fields":
+  {
+    "My items": "..."
+  }
 }
 ```
 
