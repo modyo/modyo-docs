@@ -16,10 +16,3 @@ Los principios de diseño en Dynamic Framework son:
 - **Estética:** Proporcionar a los usuarios componentes con interfaces atractivas. Priorizando tanto la funcionalidad, como el diseño de la interface.
 
 Dynamic Framework te ofrece una experiencia de usuario unificada y flujos de trabajo optimizados. Su interfaz limpia permite a los equipos de trabajo centrarse en el diseño y en la lógica detrás de la implementación de cada componente.
-
-### Figma Kit
-El Figma Kit de Dynamic Framework es un conjunto de herramientas de diseño que incluyen una biblioteca de componentes, estilos y patrones de diseño basados en el sistema de diseño de Dynamic Framework. Está diseñado específicamente para ser utilizado en Figma, una herramienta de diseño colaborativo basada en la nube.
-
-Este kit permite a los diseñadores trabajar de manera más eficiente y consistente al proporcionar una colección de componentes predefinidos que pueden reutilizar en diferentes partes de una aplicación web. Además, los estilos y patrones de diseño predefinidos en el kit aseguran que la apariencia visual de la aplicación sea coherente.
-
-Incluye además, elementos de diseño como iconos y tipografías, que ayudan a los diseñadores a crear diseños de alta calidad de forma rápida y sencilla. Estos elementos visuales se pueden personalizar y adaptar según las necesidades específicas de cada proyecto.
