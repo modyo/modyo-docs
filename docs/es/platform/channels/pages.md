@@ -210,7 +210,7 @@ Este snippet toma `entry.name`, `entry.published_at`, `request.url`, y `entry.de
 :::tip Tip
 Para aprender más sobre cómo usar Liquid, dirígete a [Liquid markup](/es/platform/channels/liquid-markup.html)
 
-Para aprender que campos puedes utilizar con el drop `entry`, ve [Drops de Content](/es/platform/channels/drops/entry).
+Para aprender que campos puedes utilizar con el drop `entry`, ve [Drops de Content](/es/platform/channels/drops.html#entrada).
 :::
 
 #### Propiedades

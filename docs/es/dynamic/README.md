@@ -20,7 +20,7 @@ Dynamic Framework aborda las necesidades digitales comunes en diversas entidades
 Algunas de las características principales de Dynamic Framework son:
 - [Catálogo de componentes](/es/dynamic/ui/components) implementados en React y disponibles en Storybook.
 - [Kit de diseño](/es/dynamic/ui) para prototipado rápido en Figma.
-- [Plantillas de experiencias](/es/dynamic/experiences) financieras listas para descargar y modificar, con datos de ejemplo en APIs mocks.
+- [Plantillas de experiencias](/es/dynamic/experiences/retail/dashboard) financieras listas para descargar y modificar, con datos de ejemplo en APIs mocks.
 - [Plantillas de integración](/es/dynamic/integrations) con sistemas comunes, disponibles como proyectos en Java y Spring Boot.
 
 
