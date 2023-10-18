@@ -35,7 +35,7 @@ For more information on versioning, see [versioning] (/en/platform/core/key-conc
 
 **Search in templates:** Displays a sidebar with a text search engine that searches all the editable templates.
 
-**Activity/Comments: ** Displays a sidebar that shows the history of activity and comments of the templates.
+**Activity/Comments:** Displays a sidebar that shows the history of activity and comments of the templates.
 
 At the bottom of the sidebar, there's a text box where you can type a comment. Next to each activity, you can click **view detail** to show the full information for that activity log.
 
