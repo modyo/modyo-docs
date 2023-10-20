@@ -182,7 +182,7 @@ For entries in these categories, the identifier is added as a prefix to the URL 
 An entry with URL: test.modyo.com/visita-chile and category 'travel' would now be test.modyo.com/travel/visita-chile.
 
 :::tip Tip
-When the category title is entered, the path field will default to matching the same letters, in a url-accepted format. To change it, click the field to edit it.
+When the category name is entered, the path defaults to a slug. To change it, click on it.
 
 If we change the path, remember to change all links in any channel using it.
 :::
