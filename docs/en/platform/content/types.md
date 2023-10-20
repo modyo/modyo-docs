@@ -40,7 +40,7 @@ To create a new type of content that will serve as the basis for your posts, fol
 4. Select the type's cardinality.
 5. Click **Create**.
 
-:: :tip Tip
+:::tip Tip
 We recommend writing the format of the entries within the identifier, for example, videos, posts, etc. This way, any member of the team will know what type of content it is and can use it as a template for their posts without having to create a new one.
 
 Cardinality refers to the number of entries that can exist for that type of content. If you select “individual cardinality”, only one such entry is allowed. If you choose “multiple cardinality”, there is no limit to the number of entries allowed.:::
