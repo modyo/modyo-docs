@@ -41,7 +41,7 @@ Groups allow you to streamline access control to the different Modyo contexts. Y
 
 In addition, from the “Groups” section in each team member's profile, you can add or remove the user from an existing group.
 
-:: :tip Tip
+:::tip Tip
 All users who belong to a group will have the group role. In the case of individually assigning a particular role to a team member, the role with the most privileges takes precedence.
 :::
 
