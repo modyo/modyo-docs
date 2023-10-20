@@ -12,8 +12,8 @@ Once inside Templates, you can see that the main menu is hidden to optimize the 
 
 - **Published:** When a published version already exists and its editable version is the same.
 - **Pending changes:** When there is a published version, but there are pending changes to be published in your editable version.
-- **In review:** When [team review] (/en/platform/core/key-concepts.html) is enabled and the editable version has been submitted for review.
-- **Approved:** When [team review] (/en/platform/core/key-concepts.html) is enabled and if the item's review conditions have been met. If you're in this state, your templates are ready to be published.
+- **In review:** When [team review](/en/platform/core/key-concepts.html) is enabled and the editable version has been submitted for review.
+- **Approved:** When [team review](/en/platform/core/key-concepts.html) is enabled and if the item's review conditions have been met. If you're in this state, your templates are ready to be published.
 
 At the top right, you can see the last publication date and the available actions:
 
