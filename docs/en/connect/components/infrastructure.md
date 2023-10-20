@@ -147,7 +147,7 @@ To request the creation of a container in the AWS cloud, a request ticket must b
 
 Each container must be associated to a [single code repository](development.md#code-repository). The same branch cannot point to more than one environment (productive or pre-productive).
 
-:: :tip Learn more
+:::tip Learn more
 For more information, please refer to the [microservices](/en/architecture/patterns/microservice) development guide.
 :::
 
