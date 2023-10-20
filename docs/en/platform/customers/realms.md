@@ -41,7 +41,7 @@ At the top of the table you have filters to quickly find groups of users. The av
 
 
 :::tip Tip
-Next to the **Apply** button, there is the **Save as Segment** button. It will save the filters you applied to a new Segment, to which you must give it a title and description. Later you can find it in the [Segments] section(/en/platform/customers/segments.html)
+Next to the **Apply** button, there is the **Save as Segment** button. It will save the filters you applied to a new Segment, to which you must give it a title and description. Later you can find it in the [Segments](/en/platform/customers/segments.html) section
 :::
 
 In the table you can also sort the users by their respective values, to do so, click on the headers of the following columns:
