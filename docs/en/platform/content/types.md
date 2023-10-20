@@ -58,7 +58,7 @@ This interface allows you to create each of the types and format them as needed,
 
 ## Fields
 
-:: :tip Tip
+:::tip Tip
 The name of the field is of utmost importance, since it will be used to access its value in the Liquid and JS SDKs. To access the value of a field in an entry, you can use the syntax <span v-pre>`{{entry ["field name"]}}`</span>. 
 
 For more information go to the [API reference](/en/platform/content/public-api-reference.html)
