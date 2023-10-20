@@ -177,7 +177,6 @@ To see the Categories, click the **Categories** section in the main menu on the 
 
 To create a category, click on the green button at the top of the screen. You will then see a screen that will ask you to enter its name, the Route and if it has a Parent Category.
 
-
 For entries in these categories, the identifier is added as a prefix to the URL of the entry. For example:
 
 An entry with URL: test.modyo.com/visita-chile and category 'travel' would now be test.modyo.com/travel/visita-chile.
