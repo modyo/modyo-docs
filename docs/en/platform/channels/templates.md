@@ -48,7 +48,7 @@ At the bottom of the sidebar, there's a text box where you can type a comment. N
 - **Save:** Save all changes to all templates.
 - **Submit for review:** Change the status of the templates to “Awaiting review”. In this state, you can continue to make changes, but each change will be notified via email to the assigned reviewers.
 - **Reject:** Returns to the “In Editing” status, notifying reviewers that the item was rejected.
-- **Publish:** Once the templates have been approved, you can go to the [joint publication] view (/en/platform/core/key-concepts.html#joint-review-and-publication) and publish your templates.
+- **Publish:** Once the templates have been approved, you can go to the [joint publication](/en/platform/core/key-concepts.html#joint-review-and-publication) view and publish your templates.
 
 In the main workspace, you can see two sections:
 
