@@ -62,7 +62,7 @@ To add a new user, click the **+ New User** button at the top right of the scree
 
 When you select to add a user, the platform will ask you to complete the following fields:
 
-- **Name**: ** [Required] ** Legal name of the user.
+- **Name**: **[Required]** Legal name of the user.
 - **Last Name**: Last name of the user.
 - **Maternal Surname**: User's mother's last name.
 - **Username**: ** [Required] ** Name within the platform.
