@@ -145,7 +145,7 @@ Here you will find options for both the visual user experience, such as the sele
 Here, you can set up general aspects of the realm, such as:
 
 - **Name**
-- **Identifier**: Allows you to modify the URL of the kingdom's profile, login, registration, and password recovery views.
+- **Identifier**: Allows you to modify the URL of the realm's profile, login, registration, and password recovery views.
 - **Enable/Disable Credentials**: Allows you to deactivate Modyo credentials in this realm and only allow access through SSO. Before you enable this option, make sure that you have an SSO identity provider configured.
 - **After login, redirect to**: Allows you to choose a specific URL to which to direct the user, once they have entered the kingdom. If you do not activate the “Force Redirection” option, the user will be redirected to the entered URL only if it is not possible to return to the URL from which they logged in.
 - **Force redirection to**: By activating this option, the user will always be redirected to the URL specified in the login redirect field, regardless of where they started the session.
