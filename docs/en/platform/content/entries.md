@@ -161,7 +161,7 @@ You can preview the content either as a logged in user or as a user that has not
 
 #### Edit an entry
 
-If you want to edit an entry, click the entry's name inside the entry manager.
+To edit an entry, click the entry's name in the entry manager.
 
 This will take you to the edit view where you can change the content and properties of the post, such as the name, slug and tags.
 
