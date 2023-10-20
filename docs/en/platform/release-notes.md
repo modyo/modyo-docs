@@ -5,6 +5,17 @@ search: true
 # Release Notes
 
 ## 9.2
+### 9.2.52 - October 13, 2023
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Security improvements
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Fixes problem of logging out and loading the site simultaneously
+* Corrects visibility of information in the activity list of an order
+
+
 ### 9.2.51 - September 28, 2023
 <Badge text="Core" type="core" vertical="middle"/>
 
@@ -1127,7 +1138,7 @@ Problem with allowing tag style with MODYO_HTML_ALLOWED_ATTRS environment variab
 
 <Badge text="Core" type="core" vertical="middle"/>
 
-- [Scheduler](en/platform/core/key-concepts.html#scheduled): Schedule a change in the future without the need to unpublish what is already published.
+- [Scheduler](en/platform/core/key-concepts.html#programado): Schedule a change in the future without the need to unpublish what is already published.
 - Modyo Lite: Access a version of Modyo that includes Core and Content and Channels apps.
 - [New Preview Mode](/en/platform/core/key-concepts.html#preview-mode): Preview mode that allows you to view content, pages, templates, widgets, and navigation together.
 - Upgrade ElasticSearch version to 7.4.
@@ -1173,7 +1184,7 @@ Problem with allowing tag style with MODYO_HTML_ALLOWED_ATTRS environment variab
 <Badge text="Core" type="core" vertical="middle"/>
 
 - Adds possibility to integrate google tag manager to sites.
-- Empty view of [my tasks](/en/platform/core/the-modyo-interface.html) is added.
+- An empty view of my tasks has been added.
 - Multiple bugs resolved.
 - Multiple navigation and usability improvements.
 
