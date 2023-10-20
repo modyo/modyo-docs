@@ -40,9 +40,9 @@ At the top of the table you have filters to quickly find groups of users. The av
 
 
 
-:: :tip Tip
+:::tip Tip
 Next to the **Apply** button, there is the **Save as Segment** button. It will save the filters you applied to a new Segment, to which you must give it a title and description. Later you can find it in the [Segments] section (/en/platform/customers/segments.html)
-::
+:::
 
 In the table you can also sort the users by their respective values, to do so, click on the headers of the following columns:
 - **Name**: User's name.
@@ -71,9 +71,9 @@ When you select to add a user, the platform will ask you to complete the followi
 - **Password Confirmation**: ** [Required] ** Repeat the password entered in the previous field.
 - **Tag**s: Tags to identify the user.
 
-:: :tip Tip
+:::tip Tip
 To send the password to the user's email, check the box below the email field. When saving, the platform sends an email to the new user with their password. The user can change the password once they access the platform.
-::
+:::
 
 The user creation view can contain more fields depending on your configuration on the platform. In the [Realm Configuration] section (/en/platform/customers/realms.html #configuracion -of-kingdom) you can modify the fields of the new user form.
 
@@ -106,9 +106,9 @@ In this section you can see general user data:
 
 In this section you can see a record of all the actions that the user has performed within the platform.
 
-:: :tip Tip
+:::tip Tip
 This section shows the main interactions that the user has had on the platform. These records cannot be deleted or edited.
-::
+:::
 
 #### Answers to forms
 
@@ -130,7 +130,7 @@ In the menu in the upper right section, you can also execute these actions:
 * **Deactivate**: Deactivates a user and prevents them from logging in.
 * **Delete**: Once a user is deactivated, you can delete the user. You must be an administrator to delete a user. Also, the user himself can delete his account from the additional options in his profile.
 
-:: :tip Tip
+:::tip Tip
 Modifying a user may result in the list of segments that user belongs to being modified.
 :::
 
@@ -179,7 +179,7 @@ The primary color is the one shown on the main session management buttons, such 
 
 #### Show the account logo
 
-This option allows you to show the logo configured for the account, in the session views. The logo will be displayed on the respective forms of these views. To change the logo, access the [Modyo Interface] (/en/platform/core/the-modyo-interface.html).
+This option allows you to display the logo configured for the account, in session views. The logo will be displayed on the respective forms of these views. To change the logo, access the Modyo Interface.
 
 #### Custom CSS
 
@@ -193,7 +193,7 @@ Click the [File Manager] icon (/en/platform/content/asset-manager.html) to uploa
 
 It's important to note that the editor doesn't automatically generate the link to the file after uploading it. After uploading the file, click the paste button on the side of each file to generate its link. Then, copy this link and paste it into the CSS code.
 
-:: :tip Tip
+:::tip Tip
 If you have problems with the keyboard codes when editing the CSS, click the keyboard icon above the editor. This displays a series of button shortcuts that make editing easier.
 :::
 
@@ -216,7 +216,7 @@ To redirect the login follow these steps:
 Modyo is programmed so that the login information is in the header of the site. If your site is programmed differently, use the magnifying glass icon to find the term login in your templates. 
 :::
 
-:: :warning Attention
+:::warning Attention
 The login address must be a page within your account. You cannot redirect the login to an external URL.
 :::
 
@@ -243,7 +243,7 @@ To enable or disable sending an email, click the Enabled/Disabled button next to
 
 You can enter customizable codes in each email, these codes allow the platform to include the user's information in the designated field, at the time of sending.
 
-:: :danger Danger
+:::danger Danger
 It is essential that each email includes the customizable codes that allow the platform to include the random data of the user requesting the shipment.
 
 To do this, insert the attributes below the editor into the code, and paste them into the corresponding part of the code.
