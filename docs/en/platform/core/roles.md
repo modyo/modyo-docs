@@ -20,7 +20,7 @@ To create an internal user, follow these steps:
 1. Fill in the first name, last name, username, email, and password fields.
 1. Click **Save**.
 
-:: :tip Tip
+:::tip Tip
 If you want the new member to receive an email with their account details on the platform, check the box “Send password to the user's email”.
 :::
 
