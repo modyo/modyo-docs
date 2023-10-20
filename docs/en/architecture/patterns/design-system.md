@@ -80,6 +80,6 @@ In this case, it is necessary to have good version control through well-defined 
 
 For more sophisticated [private sites] (/es/architecture/patterns/private-site) you can use [micro frontends] (/es/architecture/patterns/micro-frontend). In this scenario, you can implement the design system directly inside the component, injecting the definitions statically or during the construction process or _build time_ using versioned libraries within an intermediate repository. These libraries are imported as dependencies and are packaged together with the micro frontend, allowing changes to be progressively adapted.
 
-:: :tip Hybrid technique
+:::tip Hybrid technique
 A hybrid approach considers the combination of dynamic and static injection libraries, reusing code at a higher level and generating ubiquitous artifacts as needed by development teams.
 :::
