@@ -1138,7 +1138,7 @@ Problem with allowing tag style with MODYO_HTML_ALLOWED_ATTRS environment variab
 
 <Badge text="Core" type="core" vertical="middle"/>
 
-- [Scheduler](en/platform/core/key-concepts.html#programado): Schedule a change in the future without the need to unpublish what is already published.
+- [Scheduler](/en/platform/core/key-concepts.html#programado): Schedule a change in the future without the need to unpublish what is already published.
 - Modyo Lite: Access a version of Modyo that includes Core and Content and Channels apps.
 - [New Preview Mode](/en/platform/core/key-concepts.html#preview-mode): Preview mode that allows you to view content, pages, templates, widgets, and navigation together.
 - Upgrade ElasticSearch version to 7.4.
