@@ -175,7 +175,8 @@ To see the Categories, click the **Categories** section in the main menu on the 
 
 #### Create a Category
 
-To create a category, click on the green button at the top of the screen. This takes us to the next screen where we define the Title, Path (for the url), and optionally, a Parent category, e.g. a category "dogs" with the parent category "pets" would resolve to "pets/dogs" in the URL.
+To create a category, click on the green button at the top of the screen. You will then see a screen that will ask you to enter its name, the Route and if it has a Parent Category.
+
 
 For entries in these categories, the identifier is added as a prefix to the URL of the entry. For example:
 
