@@ -136,7 +136,7 @@ Once it has been saved and published, it is translated to the following HTML cod
 
 ```html
 <link href='my-css' rel='stylesheet' type='text/css' media='screen' title='color style' />
- <script src='my-js' type='text/javascript' async='async' defer='defer'></script>
+<script src='my-js' type='text/javascript' async='async' defer='defer'></script>
 ```
 
 To learn more about the parameters supported by these filters, go to [Liquid filters] (/en/platform/channels/liquid-markup.html #filtros -standard).
