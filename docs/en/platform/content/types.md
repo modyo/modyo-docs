@@ -171,7 +171,7 @@ You can validate the contents of the fields as follows:
   - If you mark an item as required, that item must have content.
 - **Unique**: When you mark an entry as unique, its content cannot be repeated within the same group. 
 
-:: :tip Tip
+:::tip Tip
 A group can host any type of field, except another group. :::
 
 
