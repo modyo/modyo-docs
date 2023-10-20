@@ -189,7 +189,7 @@ If you want to have a custom CSS style sheet that fits your needs in session vie
 3. Paste the CSS code into the editor.
 4. Click the**Save** button to save the changes.
 
-Click the [File Manager] icon (/en/platform/content/asset-manager.html) to upload linked files in the CSS code.
+Click the [File Manager](/en/platform/content/asset-manager.html) icon to upload linked files in the CSS code.
 
 It's important to note that the editor doesn't automatically generate the link to the file after uploading it. After uploading the file, click the paste button on the side of each file to generate its link. Then, copy this link and paste it into the CSS code.
 
