@@ -71,9 +71,9 @@ You can create new Layouts from Templates, by clicking on “Add Layout” in th
 You can use this code as a base, which contains everything necessary for your pages to use all the necessary elements of the site, such as the head, header, footer, service worker, and the Google Tag Manager configuration, but keep in mind that you can modify it as much as you want:
 
 ```liquid
-{% HTML5 %}
+{% html5 %}
 <head>
-{% snippet 'shared/general/head' %}
+  {% snippet 'shared/general/head' %}
 </head>
 
 {% body %}
@@ -85,11 +85,11 @@ You can use this code as a base, which contains everything necessary for your pa
 {{ content_for_layout }}
 </div>
 
-<script>{% snippet “shared/serviceworker/register_js” %}</script>
+<script>{% snippet "shared/serviceworker/register_js" %}</script>
 {% snippet 'shared/general/footer' %}
 
 {% endbody %}
-{% endHTML5 %}
+{% endhtml5 %}
 ```
 
 Once you have created your new layout, you can start using it by going to the page editing view and changing it from the properties tab.
