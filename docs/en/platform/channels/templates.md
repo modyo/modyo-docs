@@ -231,7 +231,7 @@ For example, if you want to use specific meta tags when a user visits an Entry, 
 
 ```html
 ...
-{% if entry%}
+{% if entry %}
 <!-- Content SEO -->
 <meta name="description" content="{{ entry.meta.excerpt }}" />
 <meta property="og:title" content="{{ entry.meta.title }}" />
@@ -246,8 +246,8 @@ For example, if you want to use specific meta tags when a user visits an Entry, 
 <meta property="og:type" content="place" />
 <meta property="place:latitude" content="{{ entry.location.first.latitude }}" />
 <meta property="place:longitude" content="{{ entry.location.first.longitude }}" />
-{% endif%}
-{% endif%}
+{% endif %}
+{% endif %}
 ...
 ```
 
