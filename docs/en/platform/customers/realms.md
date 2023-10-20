@@ -112,7 +112,7 @@ This section shows the main interactions that the user has had on the platform. 
 
 #### Answers to forms
 
-This section shows you all the forms that the user has filled out on the platform. Clicking on a form takes you to see the user's answers in that form. To learn more about forms, go to the [Forms] section (/en/platform/customers/forms.html).
+This section shows you all the forms that the user has filled out on the platform. Clicking on a form takes you to see the user's answers in that form. To learn more about forms, go to the [Forms](/en/platform/customers/forms.html) section.
 
 #### Notes
 
