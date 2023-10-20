@@ -74,7 +74,7 @@ Each team member can activate two-step authentication from their profile. In add
 
 By enabling mandatory two-step authentication for team members, the next time a member logs in, they will be required to set up their two-step authentication device. Once set up, you must log in using your password and the code provided by Google Authenticator.
 
-:: :warning Attention
+:::warning Attention
 The **Set Time Zone Automatically Option** must be active when using two-factor authentication on your mobile device.
 :::
 
