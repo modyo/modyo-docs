@@ -163,7 +163,7 @@ In the work area, under the tabs, you'll find a bar with these items:
 **File manager:** A modal is created where you can access all the files in the account and copy their URL. If you access the second tab, you can upload new files.
 
 :::tip Tip
-For more information on the benefits and features of File Manager, go to [File Manager] (/es/platform/content/asset-manager.html)
+For more information on the benefits and features of File Manager, go to [File Manager](/en/platform/content/asset-manager.html)
 :::
 
 **Keyboard Shortcuts:** A small pop-up appears with some of the useful keyboard shortcuts for use in Templates.
