@@ -127,8 +127,8 @@ To include any of these views, there are different Liquid filters available: `as
 
 ```html
 <head>
- {{ 'my-css' | asset_url: 'css' | stylesheet_tag: media: 'screen', title: 'color style' }}
- {{ 'my-js'  | asset_url: 'js' | script_tag: async: 'async', defer: 'defer' }}
+  {{ 'my-css' | asset_url: 'css' | stylesheet_tag: media: 'screen', title: 'color style' }}
+  {{ 'my-js'  | asset_url: 'js'  | script_tag: async: 'async', defer: 'defer' }}
 </head>
 ```
 
