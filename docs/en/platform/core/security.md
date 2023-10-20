@@ -99,7 +99,7 @@ If the authenticator is lost or stolen, it will not be possible to access the ac
 1. Click on the member's name.
 1. In the top bar, click on the more options button, represented by three dots, and select **Remove authenticator**.
 
-:: :warning Attention
+:::warning Attention
 If you have activated the option to force authentication, the next time the user tries to log in, they will need to initialize the authenticator first. Once the authenticator is active, the user can proceed with the login process.
 :::
 
