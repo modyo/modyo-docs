@@ -30,7 +30,7 @@ By default, you start by comparing the published version with the editable versi
 :::tip Tip
 Every time you publish a version, the version that was published becomes a backup version. By default, up to 20 backups are saved, so that the twenty most recent backups can be compared, restored, and rolled back.
 
-For more information on versioning, see [versioning] (/en/platform/core/key-concepts.html#versions).
+For more information on versioning, see [versioning](/en/platform/core/key-concepts.html#versions).
 :::
 
 **Search in templates:** Displays a sidebar with a text search engine that searches all the editable templates.
