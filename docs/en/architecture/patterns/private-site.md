@@ -68,11 +68,11 @@ In the next version of Modyo, we have incorporated a feature called “code spli
 
 Support for microservice development is offered from [Modyo Connect](/en/connect). Modyo Connect is a managed cloud infrastructure service that gives you all the resources you need to establish an integration structure with business systems, using lightweight integration microservices.
 
-The integration between micro frontends and microservices is done through clearly defined APIs that are directly exposed on the Internet. These APIs incorporate layers of authentication and authorization through the use of [Single Sign On (SSO)](/en/architecture/patterns/asso), using an architecture pattern called [Backend for Frontend (BFF)](/en/architecture/patterns/bff).
+The integration between micro frontends and microservices is done through clearly defined APIs that are directly exposed on the Internet. These APIs incorporate layers of authentication and authorization through the use of [Single Sign On (SSO)](/en/architecture/patterns/sso), using an architecture pattern called [Backend for Frontend (BFF)](/en/architecture/patterns/bff).
 
 
 #### Using Javascript Frameworks
-Unlike public sites, the use of Javascript frameworks on private sites can be strongly recommended in cases where advanced functionality is required. For example, the consumption of external APIs, components with complex interaction flows, the reuse of code or the use of Web Components. In these instances, the recommended route is to use [micro frontends](/en/architecture/patterns/miro-frontend).
+Unlike public sites, the use of Javascript frameworks on private sites can be highly recommended in cases where advanced functionality is required. For example, the consumption of external APIs, components with complex interaction flows, the reuse of code or the use of Web Components. In these instances, the recommended route is to use [micro frontends] (/es/architecture/patterns/micro-frontend).
 
 #### Using Web Components
 By making use of micro frontends, private sites can benefit from using [Web Components](/en/architecture/patterns/web-components) in a more effective and direct way than in the case of public sites, as long as their reach is limited to micro frontends and not to the entire site.
