@@ -187,7 +187,7 @@ When the category name is entered, the path defaults to a slug. To change it, cl
 If we change the path, remember to change all links in any channel using it.
 :::
 
-:: :warning Attention
+:::warning Attention
 If you want to delete a category, simply click on the icon at the bottom of its name. However, if there are Entries assigned to that category, they are not deleted but are not already assigned to any category. To reassign a category to them, it is necessary to re-assign them.
 :::
 
