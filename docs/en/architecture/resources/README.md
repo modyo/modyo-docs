@@ -16,7 +16,7 @@ Join the [Modyo Community](https://www.modyo.com/community), where you'll find v
 
 ### Official Documentation
 
-We invite you to explore our [official documentation] (/en/platform) to deepen your knowledge of our product and its main functionalities.
+We invite you to explore our [official documentation](/en/platform) to deepen your knowledge of our product and its main functionalities.
 
 ### Modyo Expert
 
