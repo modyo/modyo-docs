@@ -77,7 +77,7 @@ To send the password to the user's email, check the box below the email field. W
 
 The user creation view can contain more fields depending on your configuration on the platform. In the [Realm Configuration](/en/platform/customers/realms.html#configuracion-de-reino) section, you can modify the fields of the new user form.
 
-Some special fields, such as second surname, avatar or date of birth, can be activated in the [Registration Form](/en/platform/customers/realms.html#formulario-de-registro) section. You can also create and modify custom fields in the [Custom Fields](/en/platform/customers/realms.html #custom -fields) section.
+Some special fields, such as second surname, avatar or date of birth, can be activated in the [Registration Form](/en/platform/customers/realms.html#formulario-de-registro) section. You can also create and modify custom fields in the [Custom Fields](/en/platform/customers/realms.html#custom -fields) section.
 
 
 ### Users tab
