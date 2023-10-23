@@ -47,7 +47,8 @@ Cardinality refers to the number of entries that can exist for that type of cont
 :::
 
 :::warning Attention
-Please note that there is a limit of 50 Content Types per Space.:::
+Please note that there is a limit of 50 Content Types per Space.
+:::
 
 In the creation interface, you'll find an empty template in the center of the screen and on the right side, a table with three tabs: 
 
