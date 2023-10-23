@@ -21,8 +21,6 @@ These reviewers are responsible for approving or rejecting the item, and determi
 
 Each step of this process takes the item through different states, which are recorded in a history for subsequent auditing.
 
-<img src="/assets/img/platform/core/team-review.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
-
 ### Configuration
 
 To activate the team review, follow these steps:
@@ -31,11 +29,9 @@ To activate the team review, follow these steps:
 2. Expand **Space/Site Settings** and select **Team Review**.
 3. Click **Enable team review**.
 
-<img src="/assets/img/platform/teamreviewsettings.jpg" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
-
 The available options are:
 
-- **Enable Team Review**: Enables or disables Team Review within the current site or space.
+- **Enable Team Review**: Enables or disables Team Review in that context (site or space).
 - **Number of Approvals**: Determines the number of users required to approve the item before it is ready for publication. Once the required number of approvals is reached, the item's status will change from “Awaiting Review” to “Approved”.
 - **Restrict the selection of reviewers**: By default, any user with the necessary permissions can approve items awaiting review. However, by enabling this option, only the reviewers selected by the editor will be able to carry out the approval.
 
@@ -78,7 +74,7 @@ This option exists because there are times when you need to publish quickly, so 
 
 The My Tasks section in Modyo gives you an overview of all the items that need your attention. It allows you to access information about the type of item, its author and when it was last updated.
 Once an item has been marked for review, the assigned user can review and approve it in the My Tasks section.
-<img src="/assets/img/platform/core/my-tasks.png"/>
+
 To view and review all the tasks assigned to you, follow these steps:
 1. Go to Home.
 2. Click on My Tasks.
@@ -88,15 +84,11 @@ To view and review all the tasks assigned to you, follow these steps:
 
 When the team review option is activated and the changes are saved, the main green button **Submit for Review** is displayed.
 
-<img src="/assets/img/platform/send-to-review-bar.jpg" width="350px" style=" border: 1px solid #EEE;" />
-
 When submitting for review, the bar changes status to indicate if conditions are missing or if you don't have sufficient permissions.
 
 When you click on it, the right side section will indicate the requirements for publishing the item.
 
 If a reviewer's review is required, `(required)` will appear next to their name in the list of reviewers.
-
-<img src="/assets/img/platform/box-reviewers.jpg" width="500px" style="border: 1px solid #EEE;" />
 
 To the right of each reviewer is their review status. A yellow circle is shown if you have not reviewed it, and a green check if you have approved the item.
 
@@ -113,8 +105,6 @@ When you open this tab, a chronological list of the actions performed on the ite
 When a team member has left a comment or an action is performed on the item, a notification is sent to both the person who sent the item for revision, and the users who are on the list of reviewers.
 
 ## Joint Review and Publication
-
-<img src="/assets/img/platform/core/review-joint-publication.png" width="800px" style="border: 1px solid #EEE;" alt="Modal de diferencias"/>
 
 On the review and joint publication screen, you can see all the pending changes to be published on your site. You have the option to see what changed by clicking on the **View** button.
 
@@ -190,8 +180,6 @@ Within versioning, there are two actions that allow you to interact with the bac
 
 You can change which versions to compare by changing the values in the version selectors at the top of the modal.
 
-<img src="/assets/img/platform/differences.jpg" width="800px" style="border: 1px solid #EEE;" alt="Modal de diferencias"/>
-
 Follow these steps to revert to a version published in a Post:
 
 1. From Modyo Platform, expand Content and select Spaces.
@@ -225,8 +213,6 @@ Because this is a potentially dangerous action, only site or space administrator
 
 Locks is a Modyo feature that allows you to modify a resource securely, avoiding concurrency problems that may occur when another user is working on it simultaneously. This way, Modyo prevents loss of work, or overwrite of documents.
 
-<img src="/assets/img/platform/locks.jpg" style="border: 1px solid #EEE;" />
-
 ### What elements do Locks use?
 
 Locks is mainly used in [Content] (/en/platform/content/) and [Channels] (/en/platform/channels/), but it can also be used in other sections where elements such as Configurations and [Customers] (/en/platform/customers/) are edited.
@@ -246,8 +232,6 @@ In this case, only an Administrator will be able to take control, activating for
 
 If an Administrator wants to take control of a view, they must click on the item in use and, in the next screen, click on the **Take Control** button.
 
-<img src="/assets/img/platform/lock-forms.jpg" style="border: 1px solid #EEE;" />
-
 When the Administrator takes control, the user who is using the resource receives a message preventing them from continuing to make changes. Therefore, any changes that the user is making must be saved and backed up offline.
 
 After taking control, the Administrator has only two hours to make unsaved changes. After that time, the resource is once again released, and can be taken by any other user.
@@ -256,8 +240,6 @@ After taking control, the Administrator has only two hours to make unsaved chang
 ## Preview mode
 
 The preview mode allows you to preview changes made to publishable elements such as posts, pages, navigation, widgets or templates. Access to this mode is at the top right of the site. You can recognize that you are in preview mode, when you see the bar at the top of the site.
-
-![Preview Bar](/assets/img/platform/preview-bar.png)
 
 The preview bar contains the following interactive elements:
 
