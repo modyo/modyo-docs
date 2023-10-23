@@ -174,7 +174,8 @@ You can validate the contents of the fields as follows:
 - **Unique**: When you mark an entry as unique, its content cannot be repeated within the same group. 
 
 :::tip Tip
-A group can host any type of field, except another group. :::
+A group can host any type of field, except another group.
+:::
 
 
 ## Settings
