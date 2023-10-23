@@ -187,7 +187,7 @@ If you want to have a custom CSS style sheet that fits your needs in session vie
 1. Copy the CSS code you want to use.
 2. Open the editor found in the window.
 3. Paste the CSS code into the editor.
-4. Click the**Save** button to save the changes.
+4. Click the **Save** button to save the changes.
 
 Click the [File Manager](/en/platform/content/asset-manager.html) icon to upload linked files in the CSS code.
 
