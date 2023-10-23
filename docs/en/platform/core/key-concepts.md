@@ -178,7 +178,7 @@ This state appears when team review is enabled, it signifies  that an item in th
 
 Within versioning, there are two actions that allow you to interact with the backups: reset and rollback. By default, the difference modal shows the published version on the left, and the editable version on the right.
 
-You can change which versions to compare by changing the values in the version selectors at the top of the modal.
+You can change which versions to compare by changing the values in the versions selector at the top of the modal.
 
 Follow these steps to revert to a version published in a Post:
 
