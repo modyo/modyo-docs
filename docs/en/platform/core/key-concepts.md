@@ -250,7 +250,7 @@ The preview bar contains the following interactive elements:
 * **Content View Selector**: Allows you to switch between the published and editable version of the content entry being previewed in custom content views. This view doesn't directly use the Liquid Content SDK, therefore, the content in these views won't be affected by the Content SDK selector.
 * **Widget selector**: If you are previewing pages that contain custom widgets, a list of the widgets present on the page will be displayed, allowing you to select whether you want to view the editable or published version of each of them. Once the selection is made, you must click on the “refresh” button for the widget settings to take effect.
 * **Minimize Tab**: Allows you to hide the preview bar to avoid interference with the elements located at the top of the site. Once minimized, the tab will still be visible to restore the bar in preview mode.
-* **Edit item**: When you click, you access the editing view of the element being viewed, whether it is a post, a page, a widget, or a default site template.
+* **Edit Item**: Clicking this will take you to the edit view of the element you're viewing, whether it's a post, a page, a widget, or a default site template.
 * **Share link**: Allows you to copy a link that can be shared with other users. When you open the link, you directly access the preview mode with the settings you had when copying the link. To access the preview mode, you must be logged in to the administrator account.
 * **Exit preview mode**: Closes preview mode, removing the bar and keeping the tab at the current URL of the site.
 
