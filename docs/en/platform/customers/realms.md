@@ -34,7 +34,7 @@ At the top of the table you have filters to quickly find groups of users. The av
 
 - **Status**: Active and inactive users.
 - **Verification**: Users who have confirmed their data on the platform.
-- **Segments**: Users who belong to a specific [segment] (/en/platform/customers/segments.html).
+- **Segments**: Users who belong to a specific [segment](/en/platform/customers/segments.html).
 - **Tags**: Users assigned specific tags on the platform.
 - **Search**: Filter users by first name, last name, email, and username.
 
