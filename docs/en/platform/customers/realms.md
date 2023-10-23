@@ -126,7 +126,7 @@ In this section you can see all the user's devices that have an active session. 
 
 In the menu in the upper right section, you can also execute these actions:
 
-* **Edit**: Opens the user editing modal. To add more fields to the form, go to [Custom Fields] (/en/platform/customers/realms.html #custom -fields).
+* **Edit**: Opens the user editing modal. To add more fields to the form, go to [Custom Fields] (/en/platform/customers/realms.html #custom-fields).
 * **Deactivate**: Deactivates a user and prevents them from logging in.
 * **Delete**: Once a user is deactivated, you can delete the user. You must be an administrator to delete a user. Also, the user himself can delete his account from the additional options in his profile.
 
