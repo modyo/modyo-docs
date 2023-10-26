@@ -11,8 +11,8 @@ Modyo allows you to upload, review, and edit files within the same platform, thr
 The only requirement is that the files must be within the size limits. The limits are:
 
 - **Images:** 6 MB
-- **Videos: ** 10 MB
-- **Audios: ** 10 MB
+- **Videos:** 10 MB
+- **Audios:** 10 MB
 - **Files: ** 10 MB
 
 The valid file types are:
