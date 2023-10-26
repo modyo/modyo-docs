@@ -21,11 +21,21 @@ $ yarn global add @modyo/cli #via yarn
 
 Los comandos disponibles son:
 
-- [modyo-cli (-v|--version|version)](#modyo-cli-version)
-- [modyo-cli help [COMMAND]](#modyo-cli-help-command)
-- [modyo-cli autocomplete [SHELL]](#modyo-cli-autocomplete-shell)
-- [modyo-cli get NAME [DIRECTORY]](#modyo-cli-get-name-directory)
-- [modyo-cli push NAME](#modyo-cli-push-name)
+- [Modyo CLI](#modyo-cli)
+  - [Instalación](#instalación)
+  - [Plantillas de widget](#plantillas-de-widget)
+  - [`modyo-cli (-v|--version|version)`](#modyo-cli--v--versionversion)
+  - [`modyo-cli help [COMMAND]`](#modyo-cli-help-command)
+    - [Variables de entorno](#variables-de-entorno)
+  - [`modyo-cli autocomplete [SHELL]`](#modyo-cli-autocomplete-shell)
+    - [Instrucciones para utilizar MODYO-CLI CLI Autocomplete](#instrucciones-para-utilizar-modyo-cli-cli-autocomplete)
+    - [Obtenga una plantilla para un proyecto](#obtenga-una-plantilla-para-un-proyecto)
+  - [`modyo-cli get NAME [DIRECTORY]`](#modyo-cli-get-name-directory)
+  - [`modyo-cli push NAME`](#modyo-cli-push-name)
+    - [Variables de entorno](#variables-de-entorno-1)
+      - [Archivo de variables de entorno](#archivo-de-variables-de-entorno)
+      - [Opciones](#opciones)
+      - [Push hacia Stage](#push-hacia-stage)
 
 ## Plantillas de widget
 
@@ -139,7 +149,7 @@ La CLI de Modyo está diseñada para funcionar en base a una arquitectura de mic
 
 ## `modyo-cli get NAME [DIRECTORY]`
 
-El comando `get` se usa para obtener una plantilla de widget de nuestro [catálogo de widgets](/es/widgets/) utilizando un token proporcionado por Modyo.
+El comando `get` se usa para obtener una plantilla de widget de nuestro [catálogo de experiencias](es/dynamic/experiences/) utilizando un token proporcionado por Modyo.
 
 ```bash
 USAGE
