@@ -31,9 +31,9 @@ In the upper right part of the screen you can see the percentage of used space c
 
 The list has three types of filters that will help you find a file:
 
-**Extensions: ** With this filter you can see all the files of the same type found within the platform (the list is made up of the types of files that have been uploaded to the platform).
+**Extensions:** With this filter you can see all the files of the same type found within the platform (the list is made up of the types of files that have been uploaded to the platform).
 
-**Tags: ** This filter allows you to show all the files associated with a tag that are found within the platform.
+**Tags:** This filter allows you to show all the files associated with a tag that are found within the platform.
 
 :::tip Tip
 If you want to add a tag to a file or group of files, you can do so by directly editing the file or by using the bulk actions that appear at the bottom left of the list. 
