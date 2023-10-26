@@ -72,9 +72,9 @@ However, the platform recognizes and classifies known file types by their extens
 To access the properties of a file, click on its name to open a modal where you can edit the file's properties.
 
 ## Edit a file
-You can find and/or edit the following in the file properties editor:
+In the file's properties editor you can view these fields:
 
-**File URL: ** Shows the public URL of the file. You can copy it to your clipboard by clicking on the side icon.
+**File URL:** Shows the public URL of the file. You can copy it to your clipboard by clicking on the side icon.
 
 **Liquid Tag: ** Shows the Liquid tag from the file, to be used within the contents of the platform.
 
