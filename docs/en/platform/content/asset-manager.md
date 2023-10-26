@@ -53,9 +53,9 @@ Each file listed in the main view shows the following information and attributes
 
 **Name:** Name of the file with the extension included. The order is in alphabetical order.
 
-**Type: ** File type and file extension. The sorting is alphabetically first by type and then by the letter of the extension name.
+**Type:** File type and file extension. The sorting is alphabetically first by type and then by the letter of the extension name.
 
-**Size: ** Size in kilobytes of the file.
+**Size:** Size in kilobytes of the file.
 
 **Created on: ** Date of upload or creation within the platform, regardless of whether the file was created on a different date in another service.
 
