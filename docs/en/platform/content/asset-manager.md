@@ -27,7 +27,7 @@ The valid file types are:
 
 This interface shows you a list of all the files that exist within the platform.
 
-In the upper right part of the screen you can see the percentage of space used corresponding to the total allocated for the account and the button to upload new files.
+In the upper right part of the screen you can see the percentage of used space corresponding to the total allocated for the account and the button to upload new files.
 
 The list has three types of filters that will help you find a file:
 
