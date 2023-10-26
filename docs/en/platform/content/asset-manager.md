@@ -144,7 +144,7 @@ To upload the file, click **Add**.
 This action opens a new window that allows you to upload files in two ways:
 
 - **Drag & Drop:** Drag from your computer's file browser to the window
-- **Traditional way: ** Through the browser, clicking and selecting the files
+- **Traditional way:** Through the browser, clicking and selecting the files
 
 :::warning Warning
 You can upload a maximum of 10 files at a time. If you need to upload more, do so in batches.
