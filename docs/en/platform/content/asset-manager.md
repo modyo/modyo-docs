@@ -143,7 +143,7 @@ To upload the file, click **Add**.
 
 This action opens a new window that allows you to upload files in two ways:
 
-- **Drag & Drop: ** Drag from your computer's file browser to the window
+- **Drag & Drop:** Drag from your computer's file browser to the window
 - **Traditional way: ** Through the browser, clicking and selecting the files
 
 :::warning Warning
