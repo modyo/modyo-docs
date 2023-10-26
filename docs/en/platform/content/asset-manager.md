@@ -79,7 +79,7 @@ In the file's properties editor you can view these fields:
 **Liquid Tag:** Shows the Liquid tag from the file, to be used within the contents of the platform.
 
 :::warning Warning
-Neither the URL nor the Liquid Tag is possible to change through Modyo.
+It is not possible to change the URL or the Liquid Tag in Modyo.
 :::
 
 **Title: ** Shows the title of the file. This section is different from the name of the file, which cannot be changed.
