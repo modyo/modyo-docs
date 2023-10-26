@@ -41,7 +41,7 @@ If you want to add a tag to a file or group of files, you can do so by directly 
 If you select one or more checkboxes that are on your screen, the button will only assign labels to those files that you have marked.
 :::
 
-**Search bar: ** With the search bar, the Manager will show you all the files that have a word or content that is found within the metadata of the file. In this case, it also includes searching for your specific extension, tag, name or user who uploaded it.
+**Search bar:** With the search bar, the Manager will show you all the files that have a word or content that is found within the metadata of the file. In this case, it also includes searching for your specific extension, tag, name or user who uploaded it.
 
 :::tip Tip
 Modyo displays 30 files at a time, and this value cannot be updated.
@@ -49,9 +49,9 @@ Modyo displays 30 files at a time, and this value cannot be updated.
 
 Each file listed in the main view shows the following information and attributes:
 
-**Preview: ** If the platform identifies that the file is an image, you can see a small thumbnail of it. If it isn't, this space will appear blank.
+**Preview:** If the platform identifies that the file is an image, you can see a small thumbnail of it. If it isn't, this space will appear blank.
 
-**Name: ** Name of the file with the extension included. The order is in alphabetical order.
+**Name:** Name of the file with the extension included. The order is in alphabetical order.
 
 **Type: ** File type and file extension. The sorting is alphabetically first by type and then by the letter of the extension name.
 
