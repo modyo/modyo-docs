@@ -57,9 +57,9 @@ Each file listed in the main view shows the following information and attributes
 
 **Size:** Size in kilobytes of the file.
 
-**Created on: ** Date of upload or creation within the platform, regardless of whether the file was created on a different date in another service.
+**Created on:** Date of upload or creation within the platform, regardless of whether the file was created on a different date in another service.
 
-**Author: ** Name of the user who uploaded the file, as long as the user has a name assigned to it.
+**Author:** Name of the user who uploaded the file, as long as the user has a name assigned to it.
 
 The lower right corner lists the pagination of all your account files.
 
