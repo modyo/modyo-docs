@@ -21,21 +21,11 @@ $ yarn global add @modyo/cli #via yarn
 
 Los comandos disponibles son:
 
-- [Modyo CLI](#modyo-cli)
-  - [Instalación](#instalación)
-  - [Plantillas de widget](#plantillas-de-widget)
-  - [`modyo-cli (-v|--version|version)`](#modyo-cli--v--versionversion)
-  - [`modyo-cli help [COMMAND]`](#modyo-cli-help-command)
-    - [Variables de entorno](#variables-de-entorno)
-  - [`modyo-cli autocomplete [SHELL]`](#modyo-cli-autocomplete-shell)
-    - [Instrucciones para utilizar MODYO-CLI CLI Autocomplete](#instrucciones-para-utilizar-modyo-cli-cli-autocomplete)
-    - [Obtenga una plantilla para un proyecto](#obtenga-una-plantilla-para-un-proyecto)
-  - [`modyo-cli get NAME [DIRECTORY]`](#modyo-cli-get-name-directory)
-  - [`modyo-cli push NAME`](#modyo-cli-push-name)
-    - [Variables de entorno](#variables-de-entorno-1)
-      - [Archivo de variables de entorno](#archivo-de-variables-de-entorno)
-      - [Opciones](#opciones)
-      - [Push hacia Stage](#push-hacia-stage)
+- [modyo-cli (-v|--version|version)](#modyo-cli-version)
+- [modyo-cli help [COMMAND]](#modyo-cli-help-command)
+- [modyo-cli autocomplete [SHELL]](#modyo-cli-autocomplete-shell)
+- [modyo-cli get NAME [DIRECTORY]](#modyo-cli-get-name-directory)
+- [modyo-cli push NAME](#modyo-cli-push-name)
 
 ## Plantillas de widget
 
