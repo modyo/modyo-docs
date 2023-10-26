@@ -94,7 +94,7 @@ It is not possible to change the URL or the Liquid Tag in Modyo.
 
 To save the modification of the data, it is necessary to click on the **Update Information** button located in the lower right part of the window.
 
-If the data is modified but the button is not clicked to be saved, these modifications will be lost.
+If the data is modified but the button is not clicked on to be saved, these modifications will be lost.
 
 If you want to close the window and return to the Manager interface, click on the **Close** button, located at the bottom of the screen.
 
