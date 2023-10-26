@@ -13,7 +13,7 @@ The only requirement is that the files must be within the size limits. The limit
 - **Images:** 6 MB
 - **Videos:** 10 MB
 - **Audios:** 10 MB
-- **Files: ** 10 MB
+- **Files:** 10 MB
 
 The valid file types are:
 
