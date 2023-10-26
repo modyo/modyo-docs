@@ -18,7 +18,7 @@ The only requirement is that the files must be within the size limits. The limit
 The valid file types are:
 
 - **Images:** apng avif bmp gif ico jpeg jpg png tif tiff webp
-- **Videos: ** av avi f4v flv mkv mov mp4 mpeg webm wmv
+- **Videos:** av avi f4v flv mkv mov mp4 mpeg webm wmv
 - **Audios: ** 3gp aac alac dsd flac mp3 pcm wav m4a ogg wma
 - **Files: ** 7z ai apk css csv doc docx fon ico iso jar js msi ods odt otf pdf ppt pptx rar rss rtf scss tar tex ttf txt vcf wdp xhtml xls xlsm xlsx xml zip one ecf pub xps json svg woff woff2 ics
 
