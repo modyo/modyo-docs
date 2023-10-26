@@ -100,7 +100,7 @@ If you want to close the window and return to the Manager interface, click on th
 
 ## Upload an image again
 
-If you want to upload a file again, keeping the name and the original link, click on the icon to upload the file found in the window **Update Information**. Thus, it will display a new window where you can select a new file.
+If you want to upload a file again, keeping the name and the original link, click on the icon to upload the file found in the window **Update Information**. Thus, a new window will be dispalyed where you can select a new file.
 
 ## Edit an image
 
