@@ -36,33 +36,33 @@ La vista principal muestra una tabla con todos los usuarios registrados en la pl
 
 Usa los filtros en la parte superior de la tabla para encontrar grupos de usuarios rápidamente. Los filtros disponibles son:
 
-- **Estado**: Usuarios activos e inactivos.
-- **Verificación**: Usuarios que han confirmado sus datos en la plataforma.
+- **Estado:** Usuarios activos e inactivos.
+- **Verificación:** Usuarios que han confirmado sus datos en la plataforma.
 - **Segmentos**: Usuarios que pertenecen a un [segmento](/es/platform/customers/segments.html) específico.
-- **Etiquetas**: Usuarios asignados etiquetas específica en la plataforma.
-- **Búsqueda**: Filtra usuarios por nombre, apellido, email o nombre de usuario.
+- **Etiquetas:** Usuarios asignados etiquetas específica en la plataforma.
+- **Búsqueda:** Filtra usuarios por nombre, apellido, email o nombre de usuario.
 
 Puedes ordenar los usuarios, en la tabla, por nombre, fecha de inscripción, fecha de último ingreso a la plataforma o por cantidad de sesiones que han iniciado, haciendo click en las cabeceras de las columnas.
 
 Para acciones masivas, marca la casilla junto al nombre de uno o más usuarios y haz click en el botón **Bulk Actions** debajo del listado de usuarios, para:
 
-- **Desactivar**: Desactivar usuarios.
-- **Activar**: Activar usuarios.
-- **Exportar**: Exportar la lista de usuarios en formato Excel o CSV.
-- **Agregar o eliminar tags**: Crea nuevas etiquetas y asigna o elimina etiquetas existentes de los usuarios seleccionados.
+- **Desactivar:** Desactivar usuarios.
+- **Activar:** Activar usuarios.
+- **Exportar:** Exportar la lista de usuarios en formato Excel o CSV.
+- **Agregar o eliminar tags:** Crea nuevas etiquetas y asigna o elimina etiquetas existentes de los usuarios seleccionados.
 
 ### Añadir un usuario
 
 Para agregar un nuevo usuario, haz click en el botón **+ Nuevo Usuario** en la parte superior derecha de la pantalla y completa los siguientes campos:
 
-- **Nombre**: **[Requerido]** Nombre legal del usuario.
+- **Nombre:** **[Requerido]** Nombre legal del usuario.
 - **Apellido**
 - **Apellido materno**
-- **Nombre del usuario**: **[Requerido]** Nombre dentro de la plataforma.
-- **Email**: **[Requerido]**
-- **Contraseña**: **[Requerido]** Debe contener al menos 8 caracteres.
-- **Confirmación de la contraseña**: **[Requerido]**
-- **Tags**: Etiquetas para identificar al usuario.
+- **Nombre del usuario:** **[Requerido]** Nombre dentro de la plataforma.
+- **Email** **[Requerido]**
+- **Contraseña:** **[Requerido]** Debe contener al menos 8 caracteres.
+- **Confirmación de la contraseña:** **[Requerido]**
+- **Tags:** Etiquetas para identificar al usuario.
 
 :::tip Tip
 Para enviar la contraseña al correo del usuario, marca la casilla debajo del campo de correo electrónico. El usuario puede cambiar la contraseña una vez que acceda a la plataforma.
@@ -112,14 +112,14 @@ En esta sección puedes ver todos los dispositivos del usuario que tienen una se
 
 Da click en el menú de la sección superior derecha para:
 
-* **Editar**: Abre el modal de edición de usuario.
+* **Editar:** Abre el modal de edición de usuario.
 
 :::tip Tip
 Modificar un usuario puede resultar en que se modifique el listado de segmentos a los que pertenece ese usuario.
 :::
 
-* **Desactivar**: Desactiva un usuario e impide que pueda iniciar sesión.
-* **Eliminar**: Permite eliminar a un usuario. Solamente los administradores pueden eliminar usuarios.
+* **Desactivar:** Desactiva un usuario e impide que pueda iniciar sesión.
+* **Eliminar:** Permite eliminar a un usuario. Solamente los administradores pueden eliminar usuarios.
 
 :::tip Tip
 Un usuario puede eliminar su cuenta desde las opciones adicionales de su perfil.
@@ -160,23 +160,23 @@ Aquí puedes modificar tanto la experiencia visual del usuario como la configura
 En esta sección puedes configurar aspectos generales del reino, como:
 
 - **Título**
-- **Identificador**: La URL de las vistas de perfil, inicio de sesión, registro y recuperación de contraseña del reino.
-- **Deshabilitar credenciales**: Al marcar esta casilla, desactivas las credenciales de Modyo en el reino y permites únicamente el acceso a través de SSO.
+- **Identificador:** La URL de las vistas de perfil, inicio de sesión, registro y recuperación de contraseña del reino.
+- **Deshabilitar credenciales:** Al marcar esta casilla, desactivas las credenciales de Modyo en el reino y permites únicamente el acceso a través de SSO.
 
 :::danger Peligro
 Antes de habilitar la opción de deshabilitar las credenciales de Modyo en el reino, asegúrate de tener configurado un proveedor de identidad SSO para el reino. De lo contrario, los usuarios no podrán iniciar sesión.
 :::
 
-- **Después de iniciar sesión, redirigir a**: Te permite elegir una URL específica a la cual dirigir al usuario, una vez que haya ingresado al reino. Si no activas la opción de "Forzar redirección", el usuario será redirigido a la URL ingresada solo si no es posible volver a la URL desde la que inició sesión.
-- **Forzar la redirección a**: Al activar esta opción, el usuario siempre será redirigido a la URL especificada en el campo de redirección del inicio de sesión, sin importar desde dónde inició la sesión.
-- **Activación de la cuenta**:
+- **Después de iniciar sesión, redirigir a:** Te permite elegir una URL específica a la cual dirigir al usuario, una vez que haya ingresado al reino. Si no activas la opción de "Forzar redirección", el usuario será redirigido a la URL ingresada solo si no es posible volver a la URL desde la que inició sesión.
+- **Forzar la redirección a:** Al activar esta opción, el usuario siempre será redirigido a la URL especificada en el campo de redirección del inicio de sesión, sin importar desde dónde inició la sesión.
+- **Activación de la cuenta:**
   - Directa: Los usuarios que se registren pueden iniciar sesión directamente.
   - E-mail de activación: Los usuarios que se registren deben activar su cuenta mediante un enlace enviado a su correo electrónico previo a poder iniciar sesión.
   - Moderada: Los usuarios que se registren deberán esperar a que un administrador del reino active su cuenta para poder iniciar sesión.
   - Deshabilitada: No se pueden registrar nuevos usuarios en el reino. Los usuarios ya registrados y activados aún pueden iniciar sesión.
-- **Imagen de Avatar por defecto**: Imagen que se muestra en el avatar de los usuarios que no tienen una imagen personalizada.
-- **Formulario de registro:**: Aquí puedes habilitar o deshabilitar diferentes atributos en el formulario de registro, como el segundo apellido, confirmación de correo electrónico, avatar de usuario, fecha de nacimiento, género y número de teléfono.
-- **Eliminar reino**: Elimina el reino. Este proceso se realiza en segundo plano y es posible que no veas el reino desaparecer inmediatamente después de ejecutar la acción. Para confirmar la eliminación, debes ingresar el nombre completo del reino.
+- **Imagen de Avatar por defecto:** Imagen que se muestra en el avatar de los usuarios que no tienen una imagen personalizada.
+- **Formulario de registro:** Aquí puedes habilitar o deshabilitar diferentes atributos en el formulario de registro, como el segundo apellido, confirmación de correo electrónico, avatar de usuario, fecha de nacimiento, género y número de teléfono.
+- **Eliminar reino:** Elimina el reino. Este proceso se realiza en segundo plano y es posible que no veas el reino desaparecer inmediatamente después de ejecutar la acción. Para confirmar la eliminación, debes ingresar el nombre completo del reino.
 
 
 
@@ -220,15 +220,15 @@ Aquí puedes también habilitar, deshabilitar y personalizar el envío de los co
  En caso de activarlas, se envía un correo cuando:
 
 
-- **Correo de Activación**:  Un usuario ha completado su registro, para que confirme sus datos.
-- **Correo de Bienvenida**: Un usuario se ha registrado en un sitio específico.
-- **Agregado por el Admin**: Un administrador crea un usuario manualmente.
-- **Recuperación de Contraseña**: Un usuario solicita recuperar su contraseña.
-- **Esperando Confirmación**: El usuario ha sido confirmado y activado.
-- **Confirmación**: El usuario ha sido confirmado, pero requiere activación manual por parte de un administrador.
-- **Verificación de actualizaciones de correo**: Se ha llevado a cabo un cambio en la dirección de correo.
+- **Correo de Activación:**  Un usuario ha completado su registro, para que confirme sus datos.
+- **Correo de Bienvenida:** Un usuario se ha registrado en un sitio específico.
+- **Agregado por el Admin:** Un administrador crea un usuario manualmente.
+- **Recuperación de Contraseña:** Un usuario solicita recuperar su contraseña.
+- **Esperando Confirmación:** El usuario ha sido confirmado y activado.
+- **Confirmación:** El usuario ha sido confirmado, pero requiere activación manual por parte de un administrador.
+- **Verificación de actualizaciones de correo:** Se ha llevado a cabo un cambio en la dirección de correo.
 
-**Footer personalizado**: Permite personalizar el pie de página de todos los correos mencionados anteriormente.
+**Footer personalizado:** Permite personalizar el pie de página de todos los correos mencionados anteriormente.
 
 Para habilitar o deshabilitar el envío de un correo, haz click en el botón Habilitado/Deshabilitado junto a cada función y da click en el botón **Guardar**.
 
@@ -328,12 +328,12 @@ Puedes crear un máximo de 20 campos personalizados en cada reino.
 
 Los campos personalizados tienen propiedades estándar que debes tener en cuenta:
 
-- **Debe ser una respuesta única**: El valor debe ser único para cada usuario, evitando duplicados.
-- **Este es un campo requerido**: Debe completarse al modificar o crear un usuario. Si el campo es visible y editable para los usuarios, se mostrará en el formulario de registro y será obligatorio para crear nuevos usuarios.
-- **Visible para los usuarios de los sitios**: Será visible en el perfil del usuario.
-    - **Editable por usuarios de los sitios**: Los usuarios podrán ver y modificar el valor.
-- **Buscable por administradores**: El valor estará indexado y los administradores podrán realizar búsquedas de usuarios en el índice de usuarios del administrador de Modyo, por el valor de este campo.
-- **Texto de sugerencia**: Proporciona un ejemplo o guía para el campo.
+- **Debe ser una respuesta única:** El valor debe ser único para cada usuario, evitando duplicados.
+- **Este es un campo requerido:** Debe completarse al modificar o crear un usuario. Si el campo es visible y editable para los usuarios, se mostrará en el formulario de registro y será obligatorio para crear nuevos usuarios.
+- **Visible para los usuarios de los sitios:** Será visible en el perfil del usuario.
+    - **Editable por usuarios de los sitios:** Los usuarios podrán ver y modificar el valor.
+- **Buscable por administradores:** El valor estará indexado y los administradores podrán realizar búsquedas de usuarios en el índice de usuarios del administrador de Modyo, por el valor de este campo.
+- **Texto de sugerencia:** Proporciona un ejemplo o guía para el campo.
 - **Valor por defecto**.
 
 Los campos personalizables pueden estar habilitados o deshabilitados. Si están habilitados, un administrador puede usarlos y, dependiendo de su configuración, pueden también estar disponibles para los usuarios.
