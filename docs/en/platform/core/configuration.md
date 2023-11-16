@@ -25,7 +25,7 @@ If the time zone you choose is subject to time changes, these will be automatica
 
 ### Visualization
 
-* **Don't show the first steps page**: Enabling this option hides the first steps button from all users.
+* **Don't show the first steps page**: Enabling this option hides the first steps button for all users.
 * **Account logo and favicon**: Personalize the platform by uploading a logo and favicon for all users. These elements will also be used on default pages and sites.
 * **Google API key**: The API key used to connect the Google Maps API to the location-type fields in the Content module.
 
