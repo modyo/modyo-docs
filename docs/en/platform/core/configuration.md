@@ -14,7 +14,7 @@ The general options for a Modyo Platform account are:
 * **Account URL**: This is the subdomain that represents your account. If you decide to modify it, make sure that all users are informed of the new URL. Once the change is saved, Modyo will redirect you to the account login.
 * **Default site**: If you have more than one site, this option allows you to redirect traffic from the base domain to a specific site.
 * **Permanent Redirection**: Uses a 301 status redirect.
-* **Default language**: Select the default language of the platform. Existing users can change the language for them in the user settings of their profile.
+* **Default language**: Select the default language of the platform. Existing users can change their language preference in their profile settings.
 * **Time Zone**: Define the schedule for the entire platform. This will be the default time zone for new sites and email campaigns.
 
 :: :tip Tip
