@@ -33,7 +33,7 @@ If the time zone you choose is subject to time changes, these will be automatica
 
 Customize your user, change your password, and enable two-factor authentication within your Profile.
 
-To access your profile, click on the `...` button in the lower left corner and select **Profil**.
+To access your profile, click on the `...` button in the lower left corner and select **Profile**.
 
 In your Profile screen, you can modify the following fields:
   - Name
