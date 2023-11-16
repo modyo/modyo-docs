@@ -15,7 +15,7 @@ The general options for a Modyo Platform account are:
 * **Default site**: If you have more than one site, this option allows you to redirect traffic from the base domain to a specific site.
 * **Permanent Redirection**: Uses a 301 status redirect.
 * **Default language**: Select the default language of the platform. Existing users can change their language preference in their profile settings.
-* **Time Zone**: Define the schedule for the entire platform. This will be the default time zone for new sites and email campaigns.
+* **Time Zone**: Defines the schedule for the entire platform. This will be the default time zone for new sites and email campaigns.
 
 :: :tip Tip
 If the time zone you choose is subject to time changes, these will be automatically reflected when the time changes in the selected zone or country.
