@@ -17,7 +17,7 @@ The general options for a Modyo Platform account are:
 * **Default language**: Select the default language of the platform. Existing users can change their language preference in their profile settings.
 * **Time Zone**: Defines the schedule for the entire platform. This will be the default time zone for new sites and email campaigns.
 
-:: :tip Tip
+:::tip Tip
 If the time zone you choose is subject to time changes, these will be automatically reflected when the time changes in the selected zone or country.
 :::
 
