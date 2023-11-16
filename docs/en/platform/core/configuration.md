@@ -43,7 +43,7 @@ In your Profile screen, you can modify the following fields:
   - Username
   - Email
 
-### Change of password
+### Change password
 
 To change your password, follow these steps:
 
