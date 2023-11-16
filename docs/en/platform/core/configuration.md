@@ -39,7 +39,7 @@ In your Profile screen, you can modify the following fields:
   - Name
   - Last name
   - Avatar
-  - Language: Changes the language of the Modyo Platform (for example, the name of the fields and buttons within the platform), however, it does not modify the sites.
+  - Language: Changes the language of Modyo Platform (for example, the name of the fields and buttons within the platform), however, it does not modify the sites.
   - Username
   - Email
 
