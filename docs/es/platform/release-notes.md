@@ -14,14 +14,14 @@ search: true
 
 * Corrige redirección post logout cuando una sesión es inválida
 * Agrega nueva integración con medio de pago BCP QR Bolivia
-* Corrige mapeo de claims de tipo hash en la integración openidc
+* Corrige mapeo de claims de tipo hash en la integración OIDC
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 * Corrige problema de despublicación de páginas en condiciones de herencia cruzada
-* Corrige información retornada para un location consumida a través del SDK de liquid, ahora retorna correctamente todos sus campos de igual forma que el API de contenidos.
+* Corrige la información devuelta para una ubicación consumida a través del SDK de liquid; ahora retorna todos sus campos de manera correcta, al igual que la API de contenidos
 
 <Badge text="Content" type="content" vertical="middle"/>
-* Corrige inconsistencia del guardado de datos introducidos en un richtext. ahora se gatilla la limpieza de código antes del guardado.
+* Corrige inconsistencia del guardado de datos introducidos en un richtext. Ahora se activa la limpieza de código antes del guardado
 
 
 ### 9.2.52 - 13 de octubre de 2023
