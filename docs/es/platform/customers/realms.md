@@ -224,8 +224,8 @@ Aquí puedes también habilitar, deshabilitar y personalizar el envío de los co
 - **Correo de Bienvenida:** Un usuario se ha registrado en un sitio específico.
 - **Agregado por el Admin:** Un administrador crea un usuario manualmente.
 - **Recuperación de Contraseña:** Un usuario solicita recuperar su contraseña.
-- **Esperando Confirmación:** El usuario ha sido confirmado y activado.
-- **Confirmación:** El usuario ha sido confirmado, pero requiere activación manual por parte de un administrador.
+- **Esperando Confirmación:** El usuario ha sido confirmado, pero requiere activación manual por parte de un administrador.
+- **Confirmación:** El usuario ha sido confirmado y activado.
 - **Verificación de actualizaciones de correo:** Se ha llevado a cabo un cambio en la dirección de correo.
 
 **Footer personalizado:** Permite personalizar el pie de página de todos los correos mencionados anteriormente.
@@ -301,8 +301,8 @@ Para modificar el rol de un miembro del equipo:
 
 Puedes elegir entre dos roles:
 
-- **Realm User**: Puede añadir usuarios, crear, modificar y enviar a revisión campañas, formularios y segmentos.
-- **Realm Admin**:  Tiene acceso a todas las configuraciones y secciones del reino, puede añadir y eliminar usuarios y miembros del equipo.  Puede también eliminar el reino.
+- **Realm User:** Puede añadir usuarios, crear, modificar y enviar a revisión campañas, formularios y segmentos.
+- **Realm Admin:**  Tiene acceso a todas las configuraciones y secciones del reino, puede añadir y eliminar usuarios y miembros del equipo.  Puede también eliminar el reino.
 
 Para eliminar a un administrador del reino, selecciona la casilla a la izquierda de su nombre y haz click en el botón **Borrar** en la parte inferior.
 
@@ -373,8 +373,8 @@ Puedes habilitar o no reCAPTCHA en el reino, una vez habilitado ingresa:
 
 Al habilitar la función de pago en tu reino, tienes acceso a las siguientes opciones:
 
-- **Formato de moneda**: Modifica el tipo de puntuación usado.
-- **Activar envío de correo electrónico**: Cuando esta opción está seleccionada, el usuario recibe un correo al pagar una orden.
-- **Asunto de correo**: Encabezado del correo enviado a los usuarios.
-- **Cuerpo del correo**: Contenido del mensaje enviado a los usuarios.
+- **Formato de moneda:** Modifica el tipo de puntuación usado.
+- **Activar envío de correo electrónico:** Cuando esta opción está seleccionada, el usuario recibe un correo al pagar una orden.
+- **Asunto de correo:** Encabezado del correo enviado a los usuarios.
+- **Cuerpo del correo:** Contenido del mensaje enviado a los usuarios.
 
