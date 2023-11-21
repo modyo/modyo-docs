@@ -40,7 +40,7 @@ Use the filters at the top of the table to quickly find user groups. The availab
 - **Verification:** Users who have confirmed their details on the platform.
 - **Segments:** Users who belong to a specific [segment](/en/platform/customers/segments.html).
 - **Tags: ** Users assigned platform-specific tags.
-- **Search: ** Filter users by name, last name, email or username.
+- **Search:** Filter users by name, last name, email or username.
 
 You can sort the users, in the table, by name, date of registration, date of last login to the platform or by the number of sessions they have started, by clicking on the column headers.
 
