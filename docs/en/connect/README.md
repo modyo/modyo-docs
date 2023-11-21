@@ -17,7 +17,7 @@ Modyo Connect allows the implementation of services to meet the common requireme
 
 Modyo Connect was born in response to the need of some customers for a managed layer of API management services that are securely integrated with their business systems. This service is completely optional and, in many cases, is not necessary, since the client can count on their own API architecture and Single Sign-On, to which the [micro frontends] (/en/architecture/patterns/micro-frontend) developed in Modyo can be integrated.
 
-This diagram shows the Modyo implementation reference architecture. The Modyo Connect managed services are on the right in the diagram and are completely decoupled from the platform, so they can be replaced by APIs that the customer already has or developed by third parties.
+This diagram shows the Modyo implementation reference architecture. Modyo Connect managed services are on the right in the diagram and are completely decoupled from the platform, so they can be replaced by APIs that the customer already has or that are developed by third parties.
 
 <img src="/assets/img/infrastructure/reference_architecture.png" alt="Partner Badge" />
 
