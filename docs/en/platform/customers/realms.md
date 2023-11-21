@@ -86,7 +86,7 @@ User's general data:
 - **Last login to the platform**
 - **Number of logins on the platform**
 - **User Verification Status**
-- **Segments in which it is included** (if available)
+- **Segments in which the user is included** (if available)
 
 #### Activity
 
