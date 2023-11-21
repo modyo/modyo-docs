@@ -70,7 +70,7 @@ To send the password to the user's email, check the box below the email field. T
 
 To add additional fields to the new user form or select a default avatar for those users without an avatar, go to the **Register** section in [Realm Settings] (/en/platform/customers/realms.html #realm-settings).
 
-To create and modify custom fields, go to the [Custom Fields] section (/es/platform/customers/realms.html #custom -fields).
+To create and modify custom fields, go to the [Custom Fields] section (/en/platform/customers/realms.html #custom-fields).
 
 
 ### Users tab
