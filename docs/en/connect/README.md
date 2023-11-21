@@ -3,13 +3,13 @@ search: true
 ---
 # What is Modyo Connect?
 
-Modyo Connect is an infrastructure management and DevOps service on the Amazon AWS cloud exclusive to Modyo Enterprise Cloud customers. Modyo Connect is designed for organizations that need to implement a secure and scalable layer of integration APIs to feed data to [micro frontends] (/es/architecture/patterns/micro-frontend) deployed as widgets in Modyo.
+Modyo Connect is an infrastructure management and DevOps service on the Amazon AWS cloud exclusive to Modyo Enterprise Cloud customers. Modyo Connect is designed for organizations that need to implement a secure and scalable layer of integration APIs to feed data to [micro frontends] (/en/architecture/patterns/micro-frontend) deployed as widgets in Modyo.
 
 Modyo Connect allows the implementation of services to meet the common requirements of a complex integration initiative. Among them:
 
  - Single Sign-On (SSO)
  - API Gateway
-- Container infrastructure for [microservices] (/es/architecture/patterns/microservice)
+- Container infrastructure for [microservices] (/en/architecture/patterns/microservice)
 - Databases
 - Messaging queues
 - Object repositories
