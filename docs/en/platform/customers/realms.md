@@ -240,7 +240,6 @@ You can also enter customizable codes in each email, these codes allow the platf
 It is essential that each email includes the customizable codes that allow the platform to include the random data of the user requesting the sending.
 
 To do this, insert the attributes below the editor into the code and paste them into the corresponding part of the code.
-:::
 
 Every time you make a change to the code, you must click on the **Save** button located at the top of the screen.
 
@@ -259,7 +258,7 @@ The services compatible with Modyo login are:
 
 You must have the correct configuration of the associated service so that Modyo can connect to it. Be sure to complete all required fields.
 
-For more information on integrations, see the [Identity Providers] section (/es/platform/core/integrations/identity-providers.html)
+For more information on integrations, see the [Identity Providers] section (/en/platform/core/integrations/identity-providers.html)
 
 ### Integrations
 
@@ -275,7 +274,7 @@ To integrate with Zendesk you need:
 
 ### OAuth client
 
-Use an authentication client to send your integration access tokens to your resources; you need the following values:
+Use an authentication client to send your integration access tokens to your resources; you will need the following values:
 
 - Name
 - Redirect URI: The URI to which the authentication server will redirect the user after successful authentication.
