@@ -39,17 +39,17 @@ Use the filters at the top of the table to quickly find user groups. The availab
 - **Status:** Active and inactive users.
 - **Verification:** Users who have confirmed their details on the platform.
 - **Segments:** Users who belong to a specific [segment](/en/platform/customers/segments.html).
-- **Tags: ** Users assigned platform-specific tags.
+- **Tags:** Users assigned platform-specific tags.
 - **Search:** Filter users by name, last name, email or username.
 
 You can click on the column headers to sort the users in the table by name, date of registration, date of last login to the platform, or by the number of sessions they have started.
 
-For mass actions, check the box next to the name of one or more users and click the **Bulk Actions** button below the list of users, to:
+To execute bulk actions, check the box next to the name of one or more users and click the **Bulk Actions** button below the list of users, to:
 
-- **Disable: ** Deactivate users.
-- **Activate: ** Activate users.
-- **Export: ** Export the list of users in Excel or CSV format.
-- **Add or remove tags: ** Create new tags and assign or remove existing tags from the selected users.
+- **Disable:** Deactivate users.
+- **Activate:** Activate users.
+- **Export:** Export the user list in Excel or CSV format.
+- **Add or remove tags:** Create new tags and assign or remove existing tags from the selected users.
 
 ### Add a user
 
