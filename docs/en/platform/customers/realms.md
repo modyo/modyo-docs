@@ -224,8 +224,8 @@ Here you can also enable, disable and customize the sending of automated emails 
 - **Welcome Email:** A user has registered on a specific site.
 - **Added by the Admin:** An administrator creates a user manually.
 - **Password Recovery:** A user requests to recover their password.
-- **Awaiting Confirmation:** The user has been confirmed and activated.
-- **Confirmation:** The user has been confirmed, but requires manual activation by an administrator.
+- **Awaiting Confirmation:** The user has been confirmed, but requires manual activation by an administrator.
+- **Confirmation: ** The user has been confirmed and activated.
 - **Verification of email update:** A change has been made to the email address.
 
 **Custom footer:** Allows you to customize the footer of all the aforementioned emails.
@@ -301,8 +301,8 @@ To modify the role of a team member:
 
 You can choose between two roles:
 
-- **Realm User**: Can add users, create, modify, and review campaigns, forms, and segments.
-- **Realm Admin**: Has access to all the settings and sections of the realms, can add and remove users and team members. Can also delete the realm.
+- **Realm User: ** You can add users, create, modify and submit campaigns, forms and segments for review.
+- **Realm Admin: ** You have access to all the settings and sections of the kingdom, you can add and remove users and team members. You can also delete the kingdom.
 
 To remove an administrator from the realm, check the box to the left of their name and click the **Delete** button at the bottom.
 
@@ -373,8 +373,8 @@ You can enable reCAPTCHA in the realm or not, once enabled, enter:
 
 By enabling the payment feature in your realm, you have access to the following options:
 
-- **Currency format**: Modifies how the currency values are displayed.
-- **Enable email**: When this option is selected, the user receives an email when paying for an order.
-- **Email subject**: Header of the email sent to users.
-- **Body of the mail**: Content of the message sent to users.
+- **Currency format: ** Modify the type of score used.
+- **Enable email sending: ** When this option is selected, the user receives an email when paying for an order.
+- **Email subject: ** Header of the email sent to users.
+- **Body of the email: ** Content of the message sent to users.
 
