@@ -115,10 +115,10 @@ Click on the menu in the upper right section to:
 * **Edit:** Opens the user editing mode.
 
 :::tip Tip
-Modifying a user may result in the list of segments that user belongs to being modified.
+Modifying a user may result in changes to the list of segments to which that user belongs.
 :::
 
-* **Disable: ** Deactivates a user and prevents them from being able to log in.
+* **Deactivate**: Deactivates a user and prevents them from logging in.
 * **Delete: ** Allows you to delete a user. Only administrators can delete users.
 
 :: :tip Tip
