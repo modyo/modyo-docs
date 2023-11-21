@@ -51,7 +51,7 @@ Modyo Connect has a variety of services or components that are grouped into thre
 - [Infrastructure](components/infrastructure.md)
 - [Monitoring](components/monitoring.md)
 
-To activate a component, a requisition ticket will be required. We recommend having an active account at the [Modyo Support Center] (https://support.modyo.com) before using the service. For questions about how to activate accounts in the Support Center, please contact the assigned account executive.
+To activate a component, a requisition ticket is required. We recommend having an active account at the [Modyo Support Center] (https://support.modyo.com) before using the service. For questions about how to activate accounts in the Support Center, please contact the assigned account executive.
 
 :: :tip Activation costs
 Activating the components could have associated recurring costs. Each request must be approved by users authorized by the customer.
