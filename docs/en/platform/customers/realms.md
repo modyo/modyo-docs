@@ -112,7 +112,7 @@ In this section, you can see all the user's devices that have an active session.
 
 Click on the menu in the upper right section to:
 
-* **Edit: ** Open the user editing mode.
+* **Edit:** Opens the user editing mode.
 
 :::tip Tip
 Modifying a user may result in the list of segments that user belongs to being modified.
