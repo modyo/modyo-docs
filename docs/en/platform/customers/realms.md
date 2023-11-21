@@ -167,14 +167,14 @@ In this section, you can configure general aspects of the realm, such as:
 Before enabling the option to disable Modyo credentials in the realm, make sure that you have configured an SSO identity provider for the realm. Otherwise, users won't be able to sign in.
 :::
 
-- **After logging in, redirect to: ** Allows you to choose a specific URL to direct the user to, once they have entered the realm. If you don't activate the “Force Redirect” option, the user will be redirected to the URL entered only if it is not possible to return to the URL from which they logged in.
-- **Force redirection to: ** By activating this option, the user will always be redirected to the URL specified in the login redirection field, regardless of where they started the session.
-- **Account activation: **
+- **After logging in, redirect to:** Allows you to choose a specific URL to direct the user to, once they have entered the realm. If you don't activate the “Force Redirect” option, the user will be redirected to the URL entered only if it is not possible to return to the URL from which they logged in.
+- **Force redirection to:** By activating this option, the user will always be redirected to the URL specified in the login redirection field, regardless of where they started the session.
+- **Account activation:**
   - Direct: Users who register can log in directly.
   - Activation email: Users who register must activate their account by clicking on a link sent to their email before being able to log in.
-  - Moderate: Users who register must wait for a kingdom administrator to activate their account before they can log in.
+  - Moderate: Users who register must wait for a realm administrator to activate their account before they can log in.
   - Disabled: New users cannot be registered in the realm. Already registered and activated users can still log in.
-- **Default Avatar Image: ** Image shown in the avatar of users who do not have a personalized image.
+- **Default Avatar Image:** Image shown in the avatar of users who do not have a personalized image.
 - **Registration form: ** Here you can enable or disable different attributes in the registration form, such as the second surname, email confirmation, user avatar, date of birth, gender and phone number.
 - **Delete realm: ** Deletes the realm. This process is done in the background and you may not see the realm disappear immediately after executing the action. To confirm the deletion, you must enter the full name of the kingdom.
 
