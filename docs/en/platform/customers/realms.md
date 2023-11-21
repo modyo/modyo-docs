@@ -347,7 +347,7 @@ Deleting a customizable field permanently deletes all user values associated wit
 :::
 
 :::tip Tip
-In addition to saving user-specific values, you can use customizable field values to create [segment] filters (/en/platform/customers/segments.html), allowing you to separate users based on their custom values.
+In addition to saving user-specific values, you can use customizable field values to create [segments](/en/platform/customers/segments.html) filters, allowing you to separate users based on their custom values.
 :::
 
 ### Security
