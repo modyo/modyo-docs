@@ -13,11 +13,11 @@ search: true
 <Badge text="Customers" type="customers" vertical="middle"/>
 
 * Fix post-logout redirection when a session is invalid
-* Add new integration with BCP QR Bolivia payment method
+* Adds new integration with BCP QR Bolivia payment method
 * Correct hash-type claim mapping in the OIDC integration
 
 <Badge text="Channels" type="channels" vertical="middle"/>
-* Fix problem with unpublishing pages under cross-inheritance conditions
+* Fixes problem with unpublishing pages under cross-inheritance conditions
 * Correct the information returned for a location consumed through the liquid SDK; now it returns all its fields correctly, just like the content API
 
 <Badge text="Content" type="content" vertical="middle"/>
