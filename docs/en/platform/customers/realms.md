@@ -42,7 +42,7 @@ Use the filters at the top of the table to quickly find user groups. The availab
 - **Tags: ** Users assigned platform-specific tags.
 - **Search:** Filter users by name, last name, email or username.
 
-You can sort the users, in the table, by name, date of registration, date of last login to the platform or by the number of sessions they have started, by clicking on the column headers.
+You can click on the column headers to sort the users in the table by name, date of registration, date of last login to the platform, or by the number of sessions they have started.
 
 For mass actions, check the box next to the name of one or more users and click the **Bulk Actions** button below the list of users, to:
 
