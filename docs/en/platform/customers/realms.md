@@ -136,7 +136,7 @@ To redirect the login follow these steps:
 4. In the side menu, click Templates.
 5. In the header template, look for the line that contains the login information.
 6. Redirect to the desired page using this code:
-`login? redirect_to=/your-page` where “/your-page” is the URL of the page you want to redirect the login to.
+`login?redirect_to=/your-page` where “/your-page” is the URL of the page you want to redirect the login to.
 7. Click **Save**.
 8. Click **Publish**.
 
