@@ -80,7 +80,7 @@ Click on the side menu below the action column to view a specific user's details
 #### Profile
 User's general data:
 
-- **User avatar: ** Only if it has been previously loaded.
+- **User avatar:** Only if it has been previously loaded.
 - **In-platform status: ** Active or inactive.
 - **Date of registration on the platform**
 - **Last login to the platform**
