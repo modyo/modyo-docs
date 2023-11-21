@@ -322,7 +322,7 @@ The types of custom fields you can add are:
 You can rearrange the custom fields by dragging them.  Remember that the order in which you arrange them will be the same order in which they appear in the editing views and in the user profiles.
 
 :::tip Tip
-You can create a maximum of 20 custom fields in each realms.
+You can create a maximum of 20 custom fields in each realm.
 :::
 
 Custom fields have standard properties that you should consider:
