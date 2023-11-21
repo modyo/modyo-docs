@@ -121,7 +121,7 @@ Modifying a user may result in changes to the list of segments to which that use
 * **Deactivate**: Deactivates a user and prevents them from logging in.
 * **Delete:** Allows you to delete a user. Only administrators can delete users.
 
-:: :tip Tip
+:::tip Tip
 A user can delete their account from the additional options in their profile.
 :::
 
