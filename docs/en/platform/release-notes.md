@@ -31,7 +31,7 @@ search: true
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* Fix problem with logging out and loading the site simultaneously
+* Fixes problem with logging out and loading the site simultaneously
 * Correct visibility of information in an order's activity list
 
 
