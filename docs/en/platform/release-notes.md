@@ -32,7 +32,7 @@ search: true
 <Badge text="Customers" type="customers" vertical="middle"/>
 
 * Fixes problem with logging out and loading the site simultaneously
-* Correct visibility of information in an order's activity list
+* Corrects visibility of information in an order's activity list
 
 
 ### 9.2.51 - September 28, 2023
