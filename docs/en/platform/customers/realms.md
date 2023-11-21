@@ -372,7 +372,7 @@ You can enable reCAPTCHA in the realm or not, once enabled, enter:
 
 By enabling the payment feature in your realm, you have access to the following options:
 
-- **Currency format**: Modify the type of score used.
+- **Currency format**: Modifies how the currency values are displayed.
 - **Enable email**: When this option is selected, the user receives an email when paying for an order.
 - **Email subject**: Header of the email sent to users.
 - **Body of the mail**: Content of the message sent to users.
