@@ -18,7 +18,7 @@ search: true
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 * Fixes problem with unpublishing pages under cross-inheritance conditions
-* Correct the information returned for a location consumed through the liquid SDK; now it returns all its fields correctly, just like the content API
+* Corrects the information returned for a location consumed through the liquid SDK; it now returns all its fields correctly, just like the content API
 
 <Badge text="Content" type="content" vertical="middle"/>
 * Corrects inconsistency when saving data entered in a richtext. Code cleaning is now activated before saving
