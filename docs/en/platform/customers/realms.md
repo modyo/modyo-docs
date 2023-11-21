@@ -62,7 +62,7 @@ To add a new user, click the **+ New User** button at the top right of the scree
 - **Email** **[Required]**
 - **Password:** **[Required]** Must contain at least 8 characters.
 - **Password confirmation:** **[Required]**
-- **Tags: ** Labels to identify the user.
+- **Tags:** Labels to identify the user.
 
 :: :tip Tip
 To send the password to the user's email, check the box below the email field. The user can change the password once they access the platform.
