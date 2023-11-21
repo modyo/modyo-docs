@@ -58,10 +58,10 @@ To add a new user, click the **+ New User** button at the top right of the scree
 - **Name:** **[Required]** User's legal name.
 - **Surname**
 - **Maternal surname**
-- **Username: ** ** [Required] ** Name within the platform.
-- **Email** ** [Required] **
-- **Password: ** ** [Required] ** Must contain at least 8 characters.
-- **Password confirmation: ** ** [Required] **
+- **Username:** **[Required]** Name within the platform.
+- **Email** **[Required]**
+- **Password:** **[Required]** Must contain at least 8 characters.
+- **Password confirmation:** **[Required]**
 - **Tags: ** Labels to identify the user.
 
 :: :tip Tip
