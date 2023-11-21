@@ -36,7 +36,7 @@ The main view displays a table containing all the registered users on the platfo
 
 Use the filters at the top of the table to quickly find user groups. The available filters are:
 
-- **Status: ** Active and inactive users.
+- **Status:** Active and inactive users.
 - **Verification: ** Users who have confirmed their details on the platform.
 - **Segments**: Users who belong to a specific [segment](/en/platform/customers/segments.html).
 - **Tags: ** Users assigned platform-specific tags.
