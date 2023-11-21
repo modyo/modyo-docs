@@ -175,8 +175,8 @@ Before enabling the option to disable Modyo credentials in the realm, make sure 
   - Moderate: Users who register must wait for a realm administrator to activate their account before they can log in.
   - Disabled: New users cannot be registered in the realm. Already registered and activated users can still log in.
 - **Default Avatar Image:** Image shown in the avatar of users who do not have a personalized image.
-- **Registration form: ** Here you can enable or disable different attributes in the registration form, such as the second surname, email confirmation, user avatar, date of birth, gender and phone number.
-- **Delete realm: ** Deletes the realm. This process is done in the background and you may not see the realm disappear immediately after executing the action. To confirm the deletion, you must enter the full name of the kingdom.
+- **Registration form:** Here you can enable or disable different attributes in the registration form, such as the second surname, email confirmation, user avatar, date of birth, gender, and phone number.
+- **Delete realm:** Deletes the realm. This process is done in the background, thus you may not see the realm disappear immediately after executing the action. To confirm the deletion, you must enter the realm's full name.
 
 
 
@@ -196,7 +196,7 @@ Click the**Upload** button to upload a custom logo. The logo will be displayed o
 
 To use a custom CSS style sheet in session views, follow these steps:
 1. Copy the CSS code you want to use.
-2. Open the editor found in the window.
+2. Opens the editor in the window.
 3. Paste the CSS code into the editor.
 4. Click the **Save** button to save the changes.
 
