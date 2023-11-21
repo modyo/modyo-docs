@@ -75,7 +75,7 @@ To create and modify custom fields, go to the [Custom Fields] section (/en/platf
 
 ### Users tab
 
-Click on the side menu below the action column to view the details of a specific user or to deactivate the user. Select **View** to open that user's file. In the file you can see:
+Click on the side menu below the action column to view a specific user's details or to deactivate the user. Select **View** to open that user's file. In the file, you can see:
 
 #### Profile
 General user data:
