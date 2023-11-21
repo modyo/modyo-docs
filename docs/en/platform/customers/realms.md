@@ -220,9 +220,9 @@ Here you can also enable, disable and customize the sending of automated emails 
  If you activate them, an email is sent when:
 
 
-- **Activation Email: ** A user has completed their registration, to confirm their details.
-- **Welcome Email: ** A user has registered on a specific site.
-- **Added by the Admin: ** An administrator creates a user manually.
+- **Activation Email:** A user has completed their registration, to confirm their details.
+- **Welcome Email:** A user has registered on a specific site.
+- **Added by the Admin:** An administrator creates a user manually.
 - **Password Recovery: ** A user requests to recover their password.
 - **Awaiting Confirmation: ** The user has been confirmed and activated.
 - **Confirmation: ** The user has been confirmed, but requires manual activation by an administrator.
