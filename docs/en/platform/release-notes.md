@@ -5,6 +5,25 @@ search: true
 # Release Notes
 
 ## 9.2
+### 9.2.53 - November 15, 2023
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Security improvements
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Fix post-logout redirection when a session is invalid
+* Add new integration with BCP QR Bolivia payment method
+* Correct hash-type claim mapping in the OIDC integration
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Fix problem with unpublishing pages under cross-inheritance conditions
+* Correct the information returned for a location consumed through the liquid SDK; now it returns all its fields correctly, just like the content API
+
+<Badge text="Content" type="content" vertical="middle"/>
+* Corrects inconsistency when saving data entered in a richtext. Code cleaning is now activated before saving
+
+
 ### 9.2.52 - October 13, 2023
 <Badge text="Core" type="core" vertical="middle"/>
 
@@ -12,8 +31,8 @@ search: true
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* Fixes problem of logging out and loading the site simultaneously
-* Corrects visibility of information in the activity list of an order
+* Fix problem with logging out and loading the site simultaneously
+* Correct visibility of information in an order's activity list
 
 
 ### 9.2.51 - September 28, 2023
