@@ -395,6 +395,10 @@ Una vez que hayas terminado las pruebas en tu stage y quieras sincronizar, aseg�
 
 En la pantalla de sincronizaciones puedes ver todos los cambios que se realizarán entre los dos stages seleccionados.
 
+:::warning Atención
+Ten en cuenta que al sincronizar un stage, los segmentos asociados a ese stage no se sincronizan y, por lo tanto, se perderán.
+:::
+
 Para sincronizar un stage, sigue estos pasos:
 
 1. En el menú lateral, haz click en **Channels**.
