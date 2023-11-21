@@ -92,13 +92,13 @@ User's general data:
 
 In this section you can see a record of all the actions that the user has performed within the platform.
 
-:: :warning Attention
+:::warning Attention
 These records cannot be deleted or edited.
 :::
 
 #### Answers to forms
 
-This section shows you all the forms that the user has filled out on the platform. Click on a form to see the user's responses in that form. To learn more about forms, go to the [Forms] section (/es/platform/customers/forms.html).
+This section shows you all the forms that the user has filled out on the platform. Click on a form to see the user's responses in that form. To learn more about forms, go to the [Forms] section (/en/platform/customers/forms.html).
 
 #### Notes
 
@@ -106,7 +106,7 @@ Here you can add personalized notes about users. Only administrators can add, vi
 
 #### Devices
 
-In this section you can see all the user's devices that have an active session. An administrator can log out the user remotely.
+In this section, you can see all the user's devices that have an active session. An administrator can log the user out remotely.
 
 #### Additional options
 
