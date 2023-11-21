@@ -55,7 +55,7 @@ To execute bulk actions, check the box next to the name of one or more users and
 
 To add a new user, click the **+ New User** button at the top right of the screen and complete the following fields:
 
-- **Name: ** ** [Required] ** Legal name of the user.
+- **Name:** **[Required]** User's legal name.
 - **Surname**
 - **Maternal surname**
 - **Username: ** ** [Required] ** Name within the platform.
