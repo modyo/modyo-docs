@@ -28,11 +28,11 @@ On the right side of the screen you can find some of the most important settings
 
 ## Users
 
-In this section you can view and modify the external users of the system. These users are those who register on the platform, access Modyo sites, respond to forms and can receive email campaigns.
+In this section, you can view and modify the system's external users. These are the users who register on the platform, access Modyo sites, respond to forms and can receive email campaigns.
 
 ### About the interface
 
-The main view shows a table with all the users registered on the platform, paginated if you have more than 30 records.
+The main view displays a table containing all the registered users on the platform. If there are more than 30 records, the table is paginated.
 
 Use the filters at the top of the table to quickly find user groups. The available filters are:
 
