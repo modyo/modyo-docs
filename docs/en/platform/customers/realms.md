@@ -329,8 +329,8 @@ Custom fields have standard properties that you should consider:
 
 - **Must be a unique answer:** The value must be unique for each user, avoiding duplicates.
 - **This is a required field:** Must be completed when modifying or creating a user. If the field is visible and editable to users, it will be displayed on the registration form and will be required to create new users.
-- **Visible to site users: ** It will be visible in the user's profile.
-    - **Editable by site users: ** Users can view and modify the value.
+- **Visible to site users:** Will be visible in the user's profile.
+    - **Editable by site users:** Users can view and modify the value.
 - **Searchable by administrators: ** The value will be indexed and administrators can search for users in the Modyo administrator's user index, by the value of this field.
 - **Suggestion text: ** Provide an example or guide for the field.
 - **Default Value**.
