@@ -21,12 +21,12 @@ This diagram shows the Modyo implementation reference architecture. Modyo Connec
 
 <img src="/assets/img/infrastructure/reference_architecture.png" alt="Partner Badge" />
 
-The APIs developed in Modyo Connect are consumed directly by the end user from their web browser. The Modyo platform does not participate in communication with APIs, which prevents sensitive information from passing through it. This architecture achieves a complete separation between presentation and business logic, establishing responsibilities delimited in separate systems and increasing the modularity and efficiency of developments.
+The APIs developed in Modyo Connect are consumed directly by the end user from their web browser. Modyo Platform does not take part in the communication with the APIs, thus preventing sensitive information from passing through it. This architecture achieves a complete separation between presentation and business logic, establishing responsibilities delimited in separate systems, and increasing the modularity and efficiency of developments.
 
 
 ## Capabilities
 
-The Modyo Connect managed service includes the following capabilities:
+Modyo Connect managed service includes the following capabilities:
 
 - Secure source code repositories
 - Automation pipelines for [micro frontends](/en/architecture/patterns/micro-frontend) and [microservices](/en/architecture/patterns/microservice)
