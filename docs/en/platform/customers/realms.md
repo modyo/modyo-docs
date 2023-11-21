@@ -296,7 +296,7 @@ To modify the role of a team member:
 
 1. Click on the user's name in the modal.
 2. Assign the desired role to the user.
-3. Click**Update**.
+3. Click **Update**.
 
 You can choose between two roles:
 
