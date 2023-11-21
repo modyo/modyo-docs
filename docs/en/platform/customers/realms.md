@@ -68,7 +68,7 @@ To add a new user, click the **+ New User** button at the top right of the scree
 To send the password to the user's email, check the box below the email field. The user can change the password once they access the platform.
 :::
 
-To add additional fields to the new user form or select a default avatar for those users without an avatar, go to the **Register** section in [Realm Settings] (/en/platform/customers/realms.html #realm-settings).
+To add additional fields to the new user form or select a default avatar for those users without an avatar, go to the **Register** section in [Realm Settings](/en/platform/customers/realms.html #realm-settings).
 
 To create and modify custom fields, go to the [Custom Fields] section (/en/platform/customers/realms.html #custom-fields).
 
