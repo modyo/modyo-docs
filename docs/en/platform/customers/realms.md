@@ -225,10 +225,10 @@ Here you can also enable, disable and customize the sending of automated emails 
 - **Added by the Admin:** An administrator creates a user manually.
 - **Password Recovery:** A user requests to recover their password.
 - **Awaiting Confirmation:** The user has been confirmed and activated.
-- **Confirmation: ** The user has been confirmed, but requires manual activation by an administrator.
-- **Verification of email updates: ** A change has been made to the email address.
+- **Confirmation:** The user has been confirmed, but requires manual activation by an administrator.
+- **Verification of email update:** A change has been made to the email address.
 
-**Custom footer: ** Allows you to customize the footer of all the emails mentioned above.
+**Custom footer:** Allows you to customize the footer of all the aforementioned emails.
 
 To enable or disable sending an email, click the Enabled/Disabled button next to each function and click the **Save** button.
 
