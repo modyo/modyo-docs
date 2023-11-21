@@ -32,7 +32,7 @@ Modyo Connect managed service includes the following capabilities:
 - Automation pipelines for [micro frontends](/en/architecture/patterns/micro-frontend) and [microservices](/en/architecture/patterns/microservice)
 - Container deployment platform
 - Productive and pre-productive environments
-- Centralized log log management
+- Centralized log management
 - Managing APIs using an API Gateway
 - Application Firewall Management (WAF)
 - TLS certificates for all defined endpoints
