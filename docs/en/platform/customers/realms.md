@@ -274,7 +274,7 @@ To integrate with Zendesk you need:
 
 ### OAuth client
 
-Use an authentication client to send your integration access tokens to your resources; you will need the following values:
+Use an authentication client to send your integration access tokens to your resources. You need the following values:
 
 - Name
 - Redirect URI: The URI to which the authentication server will redirect the user after successful authentication.
