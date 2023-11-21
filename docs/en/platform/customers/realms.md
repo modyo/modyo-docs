@@ -140,7 +140,7 @@ To redirect the login follow these steps:
 7. Click **Save**.
 8. Click **Publish**.
 
-:: :tip Tip
+:::tip Tip
 Modyo is programmed so that the login information is in the header of the site. If your site is programmed differently, use the magnifying glass icon to find the term login in your templates.
 :::
 
@@ -150,9 +150,9 @@ The login address must be a page within your account. You cannot redirect the lo
 
 ## Realm settings
 
-In the Realm Settings section, you can customize the interaction between users and the Modyo platform.
+In the realm's Settings section, you can customize the interaction between users and the Modyo platform.
 
-Here you can modify both the user's visual experience and the settings related to registration, access control and personalization. It is important to exercise caution when making modifications to this section, as this may affect the proper functioning of the platform.
+Here you can modify both the user's visual experience and the settings related to registration, access control, and personalization. It is important to exercise caution when making modifications to this section, as this may affect the proper functioning of the platform.
 
 
 ### General
@@ -160,11 +160,11 @@ Here you can modify both the user's visual experience and the settings related t
 In this section, you can configure general aspects of the realm, such as:
 
 - **Title**
-- **Identifier: ** The URL of the realm's profile, login, registration, and password recovery views.
-- **Disable credentials: ** By checking this box, you deactivate Modyo credentials in the realm and only allow access via SSO.
+- **Identifier:** The URL of the realm's profile, login, registration, and password recovery views.
+- **Disable credentials:** By checking this box, you deactivate Modyo credentials in the realm and only allow access via SSO.
 
-:: :danger Danger
-Before enabling the option to disable Modyo credentials in the realm, make sure that you have configured an SSO identity provider for the kingdom. Otherwise, users won't be able to sign in.
+:::danger Danger
+Before enabling the option to disable Modyo credentials in the realm, make sure that you have configured an SSO identity provider for the realm. Otherwise, users won't be able to sign in.
 :::
 
 - **After logging in, redirect to: ** Allows you to choose a specific URL to direct the user to, once they have entered the realm. If you don't activate the “Force Redirect” option, the user will be redirected to the URL entered only if it is not possible to return to the URL from which they logged in.
