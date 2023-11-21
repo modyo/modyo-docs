@@ -327,7 +327,7 @@ You can create a maximum of 20 custom fields in each realm.
 
 Custom fields have standard properties that you should consider:
 
-- **It must be a unique answer: ** The value must be unique for each user, avoiding duplicates.
+- **Must be a unique answer:** The value must be unique for each user, avoiding duplicates.
 - **This is a required field: ** Must be completed when modifying or creating a user. If the field is visible and editable to users, it will be displayed on the registration form and will be required to create new users.
 - **Visible to site users: ** It will be visible in the user's profile.
     - **Editable by site users: ** Users can view and modify the value.
