@@ -237,7 +237,7 @@ To enable or disable sending an email, click the Enabled/Disabled button next to
 You can also enter customizable codes in each email, these codes allow the platform to include user information in the designated field, at the time of sending.
 
 :::danger Danger
-It is essential that each email includes the customizable codes that allow the platform to include the random data of the user requesting the shipment.
+It is essential that each email includes the customizable codes that allow the platform to include the random data of the user requesting the sending.
 
 To do this, insert the attributes below the editor into the code and paste them into the corresponding part of the code.
 :::
