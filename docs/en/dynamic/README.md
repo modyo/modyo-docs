@@ -20,7 +20,7 @@ Dynamic Framework addresses common digital needs in various financial institutio
 Some of the main features of Dynamic Framework are:
 - [Component Catalog](/en/dynamic/ui/components) implemented in React and available in Storybook.
 - [Design kit](/en/dynamic/ui) for rapid prototyping in Figma.
-- Financial [Experience Templates] (/es/dynamic/experiences/retail/dashboard) ready to download and modify, with sample data in mocks APIs.
+- Financial [Experience Templates] (/en/dynamic/experiences/retail/dashboard) ready to download and modify, with sample data in mocks APIs.
 - [Integration templates](/en/dynamic/integrations) with common systems, available as Java and Spring Boot projects.
 
 
