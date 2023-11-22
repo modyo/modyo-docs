@@ -2,7 +2,7 @@
 search: true
 ---
 
-# First Steps
+# Get Started
 
 Welcome to the official [Dynamic Framework](https://dynamicframework.dev) documentation.
 
@@ -20,7 +20,7 @@ Dynamic Framework addresses common digital needs in various financial institutio
 Some of the main features of Dynamic Framework are:
 - [Component Catalog](/en/dynamic/ui/components) implemented in React and available in Storybook.
 - [Design kit](/en/dynamic/ui) for rapid prototyping in Figma.
-- Financial [experience templates](/en/dynamic/experiences) ready to be downloaded and modified, with sample data in mock APIs.
+- Financial [Experience Templates] (/es/dynamic/experiences/retail/dashboard) ready to download and modify, with sample data in mocks APIs.
 - [Integration templates](/en/dynamic/integrations) with common systems, available as Java and Spring Boot projects.
 
 
@@ -47,23 +47,23 @@ To start using Dynamic Framework [create a test environment](https://www.modyo.c
 
 Start a new Dynamic Framework project using the NPX command. This command automatically configures the entire environment:
 
-```shell
-npx @modyo /cli @latest get dynamic-react-base-template <nombre-de-tu-proyecto>
+```bash
+npx @modyo /cli @latest get dynamic-react-base-template <project-name>
 ```
 If you don't have the Modyo CLI installed, the system will ask to install it, as it is a required package. You can find the CLI installation instructions in the [official documentation](/en/platform/channels/cli.html #modyo -cli)
 
 This process downloads the dynamic-react-base-template, once you have the template, go to the project folder to install the dependencies and build the project:
 
-```shell
-CD <nombre-de-tu-proyecto>
-npm i
-NPM Run Start
+```bash
+CD <project-name>
+NPM I
+npm run start
 ```
 Use a code editor to explore the code and examine how the different [components](/en/dynamic/ui/components) of the design system are used.
 
 ### Manual installation
 To manually create a new project with Dynamic Framework or add it as a dependency to an existing React project, install the required packages:
-```shell
+```bash
 npm i @modyo /cli @latest @dynamic -framework/ui-react @latest
 ```
 
