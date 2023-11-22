@@ -55,8 +55,8 @@ If you don't have the Modyo CLI installed, the system will ask to install it, as
 This process downloads the dynamic-react-base-template, once you have the template, go to the project folder to install the dependencies and build the project:
 
 ```bash
-CD <project-name>
-NPM I
+cd <project-name>
+npm i
 npm run start
 ```
 Use a code editor to explore the code and examine how the different [components](/en/dynamic/ui/components) of the design system are used.
