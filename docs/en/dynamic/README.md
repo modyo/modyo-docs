@@ -48,7 +48,7 @@ To start using Dynamic Framework [create a test environment](https://www.modyo.c
 Start a new Dynamic Framework project using the NPX command. This command automatically configures the entire environment:
 
 ```bash
-npx @modyo /cli @latest get dynamic-react-base-template <project-name>
+npx @modyo/cli@latest get dynamic-react-base-template <project-name>
 ```
 If you don't have the Modyo CLI installed, the system will ask to install it, as it is a required package. You can find the CLI installation instructions in the [official documentation](/en/platform/channels/cli.html #modyo -cli)
 
