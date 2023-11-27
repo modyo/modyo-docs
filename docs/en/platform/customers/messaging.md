@@ -6,14 +6,10 @@ search: true
 
 Messaging is a Modyo tool that allows you to create campaigns in the site and send information to end users in bulk, aimed at specific segments.
 
- <img src="/assets/img/platform/newcampaign.png" style="border: 1px solid #EEE; margin-top: 40px">
-
 In Modyo, you can send messages to users through two channels:
 
 - **Emails**: Send campaigns to the email addresses registered in user profiles. It is not necessary to be logged into the platform to view the messages.
 - **Notifications**: Send notifications through Modyo's internal messaging system. To see a notification, users must enter the platform.
-
- <img src="/assets/img/platform/messagedeliveries.png" width="400" style="border: 1px solid #EEE; margin-top: 40px">
 
 ## Campaigns
 
@@ -59,8 +55,6 @@ This opens the WYSIWYG editor with the template you selected. Edit the template 
 
 ### Campaign Status
 
- <img src="/assets/img/platform/send.png" style="border: 1px solid #EEE; margin-top: 40px">
-
 At the top of the screen, the**preview** icon allows you to view your campaign before sending it. Click the **Send** button to send the campaign.
 
 The contextual button allows you to perform these actions:
@@ -70,8 +64,6 @@ The contextual button allows you to perform these actions:
 - **Edit**: Edits the campaign properties, technical aspects such as the shipping address and the segments to receive.
 - **Clone the campaign**: Copies all the content of a campaign.
 - **Delete campaign**: Deletes a campaign.
-
- <img width="300" src="/assets/img/platform/menu.png" style="border: 1px solid #EEE; margin-top: 40px">
 
 Once you've sent a campaign, you can't send it again. If you want to send the same campaign again, select the clone option. This creates a new campaign with the same name data, segments and content, while the statistical information starts from scratch.
 
@@ -84,8 +76,6 @@ You must indicate whether you want to send messages again to all users or only t
 :::
 
 In campaigns sent by email, you can view:
-
- <img src="/assets/img/platform/campaign.png" style="border: 1px solid #EEE; margin-top: 40px">
 
 - **Reach**: People who receive the campaign.
 - **Send**: Total number of emails sent.
@@ -140,8 +130,6 @@ The search bar allows you to search for a specific term.
 
 ## Templates
 
-<img src="/assets/img/customers/messaging/messaging-templates-index.jpg" style="border: 1px solid #EEE; margin-top: 40px">
-
 To create your message in the form of an email, you need a template in which to add your content.
 
 In the templates section, you can make email mockups and then send them to users.
@@ -163,8 +151,6 @@ To modify a template temporarily and then return to a new one, make a copy of th
 :::
 
 ### Edit Templates
-
-<img src="/assets/img/customers/messaging/messaging-template-show.jpg" style="border: 1px solid #EEE; margin-top: 40px">
 
 To create a template, click the**+ New Template** button at the top of the page.
 

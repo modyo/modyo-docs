@@ -4,27 +4,12 @@ search: true
 
 # Components
 
-Web components are a standard web technology that allows the creation of reusable and customizable elements for web applications. The Dynamic Framework web components are implemented with the help of [Stencil](https://stenciljs.com/).
+Web components are autonomous, reusable units of a user interface. They encapsulate not only their structure, such as the HTML elements, their arrangement, and how the data will be presented, but also their style. They define the visual appearance of the component, such as colors, typography and margins, etc. In addition, components also include their behavior or logic, such as the handling of events, the management of states and specific actions.
 
+Components allow you to divide a user interface into smaller, more manageable and reusable pieces, making it easier to develop, maintain and scale an application.
 
-### Stencil
+### Stencil and React
 
-The Dynamic Framework Web Components are implemented with Stencil. Stencil is a compiler of Web components using the latest technologies, including TypeScript, JSX and Virtual DOM. Stencil allows the creation of Web components that are highly efficient, customizable and reusable.
+Dynamic Framework offers a consistent API for developers. Their web components were implemented using [Stencil](https://stenciljs.com/) for lower-level definitions and [React](https://react.dev/) for abstractions with more complex requirements, such as state management. Thus maintaining a Micro frontend developed in React without additional special requirements.
 
-
-### React
-
-React is an open source JavaScript library developed by Facebook that is used to build interactive and scalable user interfaces for web and mobile applications. React is one of the most popular tools for creating modern web applications.
-
-React is based on the concept of “components”, which are re-usable building blocks for building an application's user interface. React components can be composed to form complex applications, allowing the creation of modular, easy to maintain, and scalable user interfaces.
-
-React uses a declarative programming model in which the developer focuses on defining the structure of the user interface rather than worrying about the details of how the user interface is updated in response to user actions. React automatically updates the user interface when there is a change in data, making application development more efficient and less error-prone.
-
-React is an excellent choice for building micro frontends because of the following reasons:
-- React is a JavaScript library that allows the creation of reusable components, which aligns perfectly with the philosophy of the micro frontends architecture, which seeks to divide the user interface into small, modular and independent parts.
-- React is very flexible and integrates well with other technologies and libraries. This means that it's easy to integrate React components with other technologies and libraries, making it easy to incorporate React into a micro frontend architecture.
-- React performs very well, making it suitable for high-demand and large-scale web applications, such as applications that use a micro frontends architecture.
-- React has a large developer community and a wide range of complementary tools and libraries, making it easy to develop and implement micro frontends web applications.
-- React supports the “Client-Side Rendering” approach, allowing for the creation of fast and highly interactive web applications, which is very important in micro frontends applications.
-
-Dynamic Framework uses React as it is an excellent option for building micro frontends due to its ability to create reusable components, its flexibility, performance, developer community, and compatibility with client-side rendering.
+Although the implementation of Dynamic Framework involves the use of two individual libraries, this duality is imperceptible to the developer, which means that its integration into the development of a Micro frontend created in React does not impose special requirements, beyond importing and using it.

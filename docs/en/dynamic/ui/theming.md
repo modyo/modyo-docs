@@ -3,16 +3,42 @@ search: true
 ---
 
 # Themes
+In developing user experiences, the look and feel of an application plays a crucial role. However, designing and maintaining a coherent set of styles can be a complex and laborious task. That's why it's critical to have efficient ways to customize the aesthetics of an application in a consistent and efficient way.
 
-The Dynamic Framework components have been created with a system of tokens and variables that allow you to adjust all the relevant aspects of your look and feel. To customize a design, it can be done in two ways, as we will see below.
+Dynamic Framework offers two levels of customization:
+- **Themes:** A list of variables that define the style of the components and that constitute what we understand as a _theme_.
+- **Components:** Customizing Dynamic Framework components through parameters, properties, or custom markup.
 
-### Variables in the Micro Frontend
+In this section, we'll dive deeper into the first level. We will explain the concept of the theme and the variables that make it possible.
 
-The variables in the micro frontend are a convenient way to define customization within each template, thus allowing us not to depend on a central configuration structure. The variables within the template are defined in a variable file present in each of them and their values will only affect that micro frontend, having no effect on the rest of the components that are deployed as part of the web application.
+### What is a theme?
+In the context of Dynamic Framework, a theme refers to customizing the visual appearance and style of elements, by modifying colors, typography, spacing, and components.
 
+Dynamic Framework facilitates this process by providing a solid, predefined foundation that can be adapted to the needs and visual identity of an organization.
 
-### Web Application Variables
+In the context of Dynamic Framework, a theme is based on its CSS variable system, which allows you to easily modify predefined styles to create a custom theme.
 
-The variables of the web application are modified in Modyo and allow you to configure all the customizable aspects present in the framework in a centralized way. Variables are defined within the platform and passed to the design system using a Liquid template.
+With a theme we can get:
+- **Visual consistency:** By ensuring that all elements of the application follow a consistent style, thus improving the user experience.
+- **Effective customization:** Adjusting specific variables and properties that allow an easy and quick adaptation of the application style, aligning it with brand identity and design requirements.
+- **Development efficiency:** Through a strong foundation that saves time and effort in creating styles from scratch. In addition, with the right architecture, global changes can be implemented quickly.
+- **Scalability:** Theme customization facilitates scalable and adaptable development for different projects and requirements.
 
-An advantage of using this method is that because it is centralized, it will be easier to consistently control and maintain the customizations applied, in addition to being able to reuse the same definitions beyond the micro frontend, in the Web application itself.
+### Structure of a Theme
+
+- **Global variables:** In addition to the variables provided by the Bootstrap library, which is used as a base, Dynamic Framework adds an additional set of global CSS variables to the `_variables.css` file. These variables control different aspects such as colors, typography, spacing, font sizes and more, which will modify all components.
+- **Overwriting variables:** To customize the framework, you can overwrite global variables. By modifying these variables, you change the styles throughout the library that are based on them.
+
+The variables are organized into categories such as colors, typography, spacing and borders, allowing you to identify which variables are available and modify them according to your needs. For example, to change the main colors, modify the `$firstary` variable with the new color value.
+
+:::tip Order of Precedence
+It's important to note that, by design, CSS definitions have an order of precedence. Therefore, if a Micro frontend changes the value of a global variable, this new definition will take precedence over the one defined in the theme.
+:::
+
+### CSS variables
+
+Bootstrap provides an extensive list of CSS variables that apply to the `:root` element of a document. These variables are [documented on their website](https://getbootstrap.com/docs/5.3/customize/css-variables/).
+
+Dynamic Framework introduces specific classes for each component, following the same naming convention as Bootstrap, which uses the `bs-` prefix. This approach avoids potential conflicts with third-party libraries. You can check the variables available for each component [documented in the Dynamic Framework Storybook](https://react.dynamicframework.dev/).
+
+This approach allows new variables to be added to the `:root` element to control more specific aspects. This is especially useful when it is necessary to incorporate these variables into the context of the theme.

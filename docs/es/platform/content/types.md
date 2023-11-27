@@ -9,8 +9,6 @@ Los Tipos de contenido son la base para tus Entradas. Los Tipos definen qué cam
 
 A los Tipos de contenido se les puede asignar una cardinalidad. Esta variable indica cuantas Entradas pueden existir para este Tipo. Puedes agregar idiomas al repositorio y generar Entradas en varios idiomas, almacenadas en un solo lugar. Además, puedes crear Usuarios, con diferentes roles y permisos, logrando así una división de trabajo llamada Revisión de Equipo.
 
-<img src="/assets/img/content/types/types.jpg" alt="The UI for the Content Type module.">
-
 ## Sobre la Interfaz
 
 Al ingresar por primera vez en la sección Tipos, haz click en el botón verde **+Nuevo Tipo** para crear un nuevo Tipo.

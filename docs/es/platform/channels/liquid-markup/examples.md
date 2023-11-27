@@ -8,11 +8,11 @@ En cualquier parte de Channels (Sitios, Widgets, y Plantillas) puedes usar Liqui
 
 ## Desplegar listado de Entradas de un Tipo
 
-En [Páginas de Contenido](/es/platform/channels/pages.html#pagina-de-contenido) puedes generar un listado de todas las Entradas de un Tipo. En este caso, tomamos todas las Entradas del Tipo `producto` en el Espacio `Mi Banco`. La variable `entries`  de la línea 1 obtiene un arreglo del drop [Entrada](/es/platform/channels/drops.html#entrada). Se recorre este arreglo para desplegar por renglón el `meta.uuid` y `meta.title` de cada Entrada. 
+En [Páginas de Contenido](/es/platform/channels/pages.html#pagina-de-contenido) puedes generar un listado de todas las Entradas de un Tipo. En este caso, tomamos todas las Entradas del Tipo `product` en el Espacio `My Bank`. La variable `entries`  de la línea 1 obtiene un arreglo del drop [Entry](/es/platform/channels/drops.html#entrada). Se recorre este arreglo para desplegar por renglón el `meta.uuid` y `meta.title` de cada Entrada. 
 
 ```liquid
-{% assign entries = spaces['mi-banco'].types['producto'].entries %}
-<p>Los productos que ofrecemos son:</p>
+{% assign entries = spaces['my-bank'].types['product'].entries %}
+<p>Products:</p>
 <ul>
 {% for entry in entries %}
   <li>{{ entry.meta.uuid }} -- {{ entry.meta.title }}</li>
@@ -25,7 +25,7 @@ Para poder usar estos ejemplos en tu sitio, debes reemplazar el ID de Espacio y 
 En el caso de una entrada de cardinalidad single (en este ejemplo es un aviso de privacidad), puedes usar `entry` para desplegar el URL de la siguiente manera:
 
 ```liquid
-Visita nuestro <a href="{{ spaces['mi-banco'].types['privacidad'].entry.url }}">Aviso de Privacidad</a>.
+Visit our <a href="{{ spaces['my-bank'].types['privacy'].entry.url }}">Privacy Policy</a>.
 ```
 
 ## Desplegar cantidad total de Entradas
@@ -33,8 +33,8 @@ Visita nuestro <a href="{{ spaces['mi-banco'].types['privacidad'].entry.url }}">
 Para acceder a la cantidad total de entradas que retorna un filtro de contenido, puedes usar el filtro de Liquid `entries.size`, por ejemplo:
 
 ```liquid
-{% assign entries = spaces['mi-banco'].types['products'].entries %}
-<p>Ofrecemos un total de {{ entries.size }} productos para ti!</p>
+{% assign entries = spaces['my-bank'].types['products'].entries %}
+<p>You have a total of {{ entries.size }} products!</p>
 ```
 
 ## Filtros
@@ -55,8 +55,8 @@ Todos los filtros deben recibir un arreglo de Entries y es posible concatenar mu
 En el siguiente ejemplo, filtramos las Entradas de tipo `post`, con categoría `news`. Después tomamos el resultado y desplegamos todas las Entradas de tipo `news`:
 
 ```liquid
-{% assign entries = spaces['mi-banco'].types['post'].entries | by_category: 'news' %}
-<p>Estas son todas nuestras noticias:</p>
+{% assign entries = spaces['my-bank'].types['post'].entries | by_category: 'news' %}
+<p>News:</p>
 <ul>
 {% for entry in entries %}
 <li><a href="entry.url">{{ entry.meta.title }}</a></li>
@@ -65,11 +65,11 @@ En el siguiente ejemplo, filtramos las Entradas de tipo `post`, con categoría `
 
 ### Filtro concatenado
 
-En el siguiente ejemplo, filtramos las Entradas de tipo `post`, con categoría `news`, que además tengan el tag `campaña`. Después tomamos el resultado y desplegamos las noticias que cumplen todos los criterios:
+En el siguiente ejemplo, filtramos las Entradas de tipo `post`, con categoría `news`, que además tengan el tag `campaign`. Después tomamos el resultado y desplegamos las noticias que cumplen todos los criterios:
 
 ```liquid
-{% assign entries = spaces['mi-banco'].types['post'].entries | by_category: 'news' | by_tag: 'campaña' %}
-<p>Las siguientes noticias son relevantes para ti!</p>
+{% assign entries = spaces['my-bank'].types['post'].entries | by_category: 'news' | by_tag: 'campaign' %}
+<p>News for you!</p>
 <ul>
 {% for entry in entries %}
 <li><a href="entry.url">{{ entry.meta.title }}</a></li>
@@ -149,13 +149,13 @@ Para ordenar por un campo personalizado, debes usar como parámetro el `fields.u
 
 Para los entries con campos de ubicación se pueden generar fácilmente mapas con los filtros `static_map` y `dynamic_map`, estos usan Google Maps Static API y Google Maps Javascript API respectivamente. El siguiente ejemplo genera mapas para el field `Locations` con un tamaño de 600x300 px, un zoom de nivel 5, con tipo de mapa 'roadmap' y con un ícono personalizado.
 
-```
+```liquid
 {{ entry.fields.['Locations'] | static_map: '600x300',5,'roadmap','https://goo.gl/5y3S82'}}
 ```
 
 El filtro `dynamic_map` acepta un atributo adicional para controlar la visibilidad de los controles de zoom, arrastre y pantalla completa.
 
-```
+```liquid
 {{ entry.fields['Locations'] | dynamic_map: '600x300',5,'roadmap','https://goo.gl/5y3S82',true}}
 ```
 

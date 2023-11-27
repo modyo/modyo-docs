@@ -49,28 +49,28 @@ In addition to the necessary values, you can configure additional data to contro
 
 ### Requirements
 
-The following attributes must be configured from the Identity Provider to ensure a successful connection between SAML and Modyo Platform:
+To achieve a successful connection between SAML and Modyo, configure the following attributes in the Identity Provider:
 
 - **givenName** or (from version 9.2.22 onwards can also be `givenname`). Corresponds to the user name.
 - **sn** (from version 9.2.22 onwards can also be `surname`). Corresponds to the last name of the user.
 
-In order to integrate a login with SAML in Modyo, you will need the following information from your identity provider:
+To integrate SAML login with Modyo, you need the following data from your identity provider:
 
-- **Service name**: Name of the button to be displayed in the login view.
-- **Issuer**: IDP application identifier. Some services are required to add the `spn` prefix:  
+- **Service Name**: The name that will be displayed on the login button.
+- **Issuer**: Identifier of the IDP application. Some services require adding the `spn` prefix:
 (For example: `spn:13e4ff44-b0c9-4618-b305-2171a24b07f5`).
-
+- **SSO IDP of the destination URL**: The URL to which the authentication request is sent. You can find this in the identity provider.
 - **SSO IDP runtime parameters of the destination URL**: Optional parameters to complete the flow.
-- **IDP Cert**: Identity Provider Certificate in PEM format. This will take precedence over the fingerprint option.
+- **IDP Cert**: The identity provider certificate in PEM format. This takes precedence over the fingerprint option.
 - **IDP certificate fingerprint**: The SHA1 fingerprint of the identity provider's public certificate.
-- **Name identifier format**: Used during service provider initiated SSO (SP-initiated SSO). Describes the format of the user name required by this application. See http://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf section 8.3 for other options. Note that the Identity Provider may not allow all options. If not specified, the Provider may choose the format of the name identifier used in the response (commonly email, such as: `urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress`).
+- **Name identifier format**: Used during service provider-initiated SSO (SP-Initiated SSO). Describes the username format required by the application. See section 8.3 of http://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf for other options. The identity provider may not allow all options; if not specified, the provider can choose the name identifier format used in the response; commonly email, such as: `urn:oasis:names:tc.saml:1.1:nameid-format:emailAddress`
 - **Entity ID URL**: URL provided by Modyo where the application identifier is located:
    * Admin: `test.modyo.com/admin/auth/saml/metadata`.
    * Realms: for settings with realms use: `test.modyo.com/realms/<tu_uid_del_realm>/auth/saml/metadata`.
-- **Consumer service assertion URL**: URL provided by Modyo where the identity provider redirects the flow.
+- **URL of the consumer service assertion**: The URL provided by Modyo to which the identity provider redirects the flow.
    * Admin: `test.modyo.com/admin/auth/saml/callback`.
-   * Realms: for settings with realms use: `test.modyo.com/realms/<tu_uid_del_realm>/auth/saml/callback`.
-- **(Optional) IDP single sign-on destination URL**: Identity provider login URL.
+   * Realms: for configurations with realms use: `test.modyo.com/realms/<tu_uid_del_realm>/auth/saml/callback `
+- ** (Optional) IDP single sign-on destination URL**: The login URL of the identity provider.
 
 ## OAuth2
 
@@ -100,7 +100,7 @@ The following attributes must be configured from the Identity Provider to ensure
 
 - **given_name**: Corresponds to the user's name.
 - **family_name**: Corresponds to the user's last name.
-- **e-mail**: Corresponds to the user's e-mail address.
+- **email**: Corresponds to the user's e-mail address.
 
 :::warning Warning
 For a correct OpenID Connect integration, it is necessary that the OIDC Provider has an up-to-date SSL certificate, Modyo client uses TLS 1.3, and OpenSSL Security Level 2 [(ref)](https://www.openssl.org/docs/man1.1.1/man3/SSL_CTX_get_security_level.html).
@@ -162,7 +162,7 @@ Keycloak is a certified OpenID Connect identity provider that implements most of
 
 ### Configuring Keycloak in Modyo Platform
 
-After configuring Keycloak, you now have to complete the integration in Modyo Platform. 
+After configuring Keycloak, you now have to complete the integration into Modyo Platform.
 
 1. Go to **Configuration/Realm Configuration > Identity Providers > OpenID Connect** and fill in **Client ID** and **Secret** with the client's name and credentials that appear on the client's **Credentials** tab in Keycloak.
 2. In Issuer, fill in the URL of the realm, for example, for realm my-realm the URL is `https://keycloak.example.com/auth/realms/my-realm`.

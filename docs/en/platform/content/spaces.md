@@ -35,8 +35,6 @@ Later, in the configuration, you can define other secondary languages for the sp
 
 In this case, the space configuration helps us to change the general settings, language, security, team members with access, and rules for revision and publication.
 
-<img src="/assets/img/content/space-settings.jpg" style="margin-top: 40px" width="300" alt="Space setting UI">
-
 ### General
 
 Here you can change the name of a space and its UID.
@@ -61,11 +59,7 @@ This option is irreversible, so you must be completely sure when executing this 
 
 Modyo allows language and vocabulary changes by country, which is useful when you need to publish content in different languages.
 
-<img src="/assets/img/content/locale-index.jpg" style="border: 1px solid #EEE;" width="600" alt="The Locales UI">
-
 The default language of a space is defined when first creating a space and cannot be modified, but in this section you can add as many secondary languages as needed. You just have to select one from the list, add it and save the changes. Adding a secondary language places a language selector next to the page title of any entries you edit in order to switch between entry languages.
-
-<img src="/assets/img/content/selector-language.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="350" alt="Select a language dropdown inside Entries">
 
 :::tip Tip
 You can learn how to select one of the available languages of an entry in the following sections: [Public API](/en/platform/content/public-api-reference.html#filters), [Javascript SDK](/en/platform/content/public-api-reference.html#sdk-de-javascript) and in [Liquid SDK](/en/platform/content/public-api-reference.html#filter-entries)
@@ -74,8 +68,6 @@ You can learn how to select one of the available languages of an entry in the fo
 ### Cache
 
 The cache is a tool that allows you to reduce the number of requests that reach the application servers, improving performance and reducing response times. In this section, you can enable the cache for the Content API of the Space, allowing the content to be cached for up to 5 minutes (300 seconds).
-
-<img src="/assets/img/content/cache.jpg" style="margin: 40px 0; border: 1px solid #EEE" width="600" alt="An image with the cache options available.">
 
 :::warning Warning
 You should take into account that when you enable this option, changes in your content will appear at your chosen time intervals. For example, if you specify a cache max-age of 5 minutes, when publishing content with title "A", and then publishing the same content with the title "A+1", the content will have the title "Example" for 5 minutes, until the initial cache is invalidated.
@@ -90,8 +82,6 @@ To work in development mode, it is highly recommended to have this option disabl
 Modyo allows CORS to be enabled as a form of secure data transmission so that the API can be accessed by any microservice in an external domain.
 
 You need to specify the domain from which the information will be accessed. It's possible to allow access to all origins but it is not usually recommended.
-
-<img src="/assets/img/content/cors-spaces.jpg" width="600" style="border: 1px solid #EEE; margin: 20px 0" alt="An image with the CORS options available.">
 
 When CORS is enabled, the following changes occur within the API:
 
@@ -116,14 +106,10 @@ When deciding whether to use SSL within the platform, the following should also 
 
 Team Review is a system to review and approve changes made to content and elements in the platform before making these changes publicly available. Modyo uses the Team Review to confirm and correct content sent through the API.
 
-<img src="/assets/img/content/enforced.jpg" style="border: 1px solid #EEE; margin: 40px 0" width="600" alt="An image with the Team Review options available.">
-
 
 For more information on how to configure this option, go to [Team Review](/en/platform/core/key-concepts.html).
 
 ### Team Members
-
-<img src="/assets/img/content/teammembers.jpg" style="border: 1px solid #EEE; margin: 40px 0" width="600" alt="An image with the Team Members UI.">
 
 To allow access to a space, you must select the team members who will work in this Space and have varying levels of access to writing, reviewing and/or publishing.
 

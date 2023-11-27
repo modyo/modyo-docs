@@ -20,8 +20,6 @@ Los filtros disponibles son:
 
 **Registros**: Corresponde al conteo de todos los registros de usuarios.
 
-![Customers](/assets/img/platform/customers.png)
-
 ### Actividad de usuarios
 
 En este gráfico verás una comparativa entre dos valores que representan acciones de usuarios en los sitios.

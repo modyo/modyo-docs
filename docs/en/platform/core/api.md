@@ -273,11 +273,7 @@ The first thing you need to do is register the application to consume the API. F
 2. Click the **+ New API Access** button.
 3. Fill in the name, description, and redirect URI of the access.
 
-<img src="/assets/img/platform/new-API-access.png" alt="Image showing New Admin API Acess window in Modyo Platform.">
-
 When saving the information of your application, Modyo will show you a view where you will see the _callback URL_ (which corresponds to the Redirect URI field entered in the previous step) and the _Application ID_ and _Secret_ fields that you can use later.
-
-<img src="/assets/img/platform/save-API-access.png" alt="Image showing the details for the API Access in the My Application window.">
 
 :::warning Warning
 Keep in mind that when you sign out of any of your sites, a _GET_ will be made to all the logout URLs of your API access apps, which could result in some unwanted redirects if a careless URL is used in that field.
@@ -290,20 +286,13 @@ For more details, see [Users and Roles](/en/platform/core/roles.html)
 
 6. In the admin user edit view, click _API Access_ and select the option **+ New API Access**.
 
-<img src="/assets/img/platform/team-member-API-access-1.png" alt="Image showing the Manage Access Tokens window.">
-
 7. In the _popup_ shown below, select the name of the application you just created, and then click **+ New Access Token**.
-
-<img src="/assets/img/platform/team-member-API-access-2.png" alt="Image showing the Generate Access Token modal window.">
-
 
 :::warning Warning
 You should keep in mind that admin users can only execute actions through the Modyo administrative API if they have the necessary permissions. For example, an administrator with the role of "Developer" on a site cannot execute the "Publish" action on that site.
 :::
 
 Finally, you will now see that in the “Manage Access Tokens” section, the application (“My application”) will appear, along with a value highlighted in red which corresponds precisely to the _access token_, and which you will then use to perform authenticated _requests_ in Modyo API.
-
-<img src="/assets/img/platform/team-member-API-access-3.png" alt="Image showing the generated access token.">
 
 Well done! Now that you have created your token, you can start benefiting from the wide range of options provided by the Modyo Administration API. For example, if you want to see a list of available roles for admin users, you can perform a _request_ to the `/api/admin/roles` _endpoint_, including in the HTTP _header_ the value of the previously obtained _access token_ for the _"Authorization: Bearer"_ field:
 

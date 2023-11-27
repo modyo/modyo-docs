@@ -79,12 +79,12 @@ Para facilitar el proceso de subir tus widgets a la plataforma Modyo, puedes hac
 1. Crea un archivo `.env` en la raíz de tu proyecto.
 2. Agrega la siguiente información:
 
-```
-MODYO_ACCOUNT_URL=test.miModyo.com
+```bash
+MODYO_ACCOUNT_URL=test.myModyo.com
 MODYO_VERSION=9
 MODYO_TOKEN=ak9cb2....a53s
-MODYO_SITE_HOST=miSitio
-MODYO_WIDGET_NAME=miNuevoWidget
+MODYO_SITE_HOST=mySite
+MODYO_WIDGET_NAME=myNewWidget
 MODYO_BUILD_COMMAND=build
 MODYO_BUILD_DIRECTORY=dist
 ```
@@ -129,8 +129,8 @@ Después del comando, puedes correr `$ compaudit -D` para verificar que no hay c
 
 2. Prueba que funcione correctamente, e.g.:
 ```bash
-$ modyo-cli <TAB>           #Completar comando
-$ modyo-cli command --<TAB> #Completar opción
+$ modyo-cli <TAB>           #Complete command
+$ modyo-cli command --<TAB> #Complete option
 ```
 
 ### Obtenga una plantilla para un proyecto
@@ -162,7 +162,6 @@ EXAMPLE
 >Hay algunas plantillas de widgets públicos a los que se puede acceder a través de este comando
 
 ```bash
-  EJEMPLOS
     $ modyo-cli get modyo-widgets-template-vue [DIRECTORY] #to initialize a widget
 ```
 
@@ -210,23 +209,23 @@ Para hacer push hacia la plataforma, es necesario llenar las opciones requeridas
 
 En el directorio raíz del widget, crea un archivo `.env` que contenga los siguientes datos:
 
-```shell
-MODYO_ACCOUNT_URL=https://test.miModyo.com //URL de la cuenta dueña del sitio
-MODYO_VERSION=9                            //La versión de la plataforma Modyo
-MODYO_TOKEN=ax93...nm3                     //El token para accesar a la API administrativa
-MODYO_SITE_HOST=miHost                     //El nombre de Host, localizado dentro de la plataforma, en la sección de sitios
-MODYO_SITE_ID=miStage                      //(Opcional) Esta variable solo se utiliza en el caso de hacer push hacia un stage. Solo se utiliza una variable MODYO_SITE_HOST o MODYO_SITE_ID. El Id se obtiene utilizando nuestra API /api/admin/sites.    
-MODYO_WIDGET_NAME=miWidget                 //El nombre del widget
-MODYO_BUILD_COMMAND=build                  //El comando para package.json (default: build) 
-MODYO_BUILD_DIRECTORY=dist                 //La ruta del widget (default: dist) 
+```bash
+MODYO_ACCOUNT_URL=https://test.myModyo.com
+MODYO_VERSION=9
+MODYO_TOKEN=ax93...nm3
+MODYO_SITE_HOST=myHost
+MODYO_SITE_ID=myStage
+MODYO_WIDGET_NAME=myWidget
+MODYO_BUILD_COMMAND=build
+MODYO_BUILD_DIRECTORY=dist 
 ```
 
 #### Opciones
 
 En una terminal con modyo-cli instalado, es posible hacer push a través de la linea de comandos de la siguiente manera:
 
-```
-modyo-cli push miWidget -b build -d dist -n miHost -v 9 -u "https://test.miModyo.com" -t $TOKEN 
+```bash
+modyo-cli push myWidget -b build -d dist -n myHost -v 9 -u "https://test.myModyo.com" -t $TOKEN 
 ```
 
 #### Push hacia Stage
@@ -243,7 +242,7 @@ Recibirás un JSON con toda la información relacionada a sitios. Dentro de este
 "meta": [...],
 "sites": [
     ...,
-    "name": "miHost",
+    "name": "myHost",
     "stages": [
         {
           "id": 1044,
@@ -271,11 +270,11 @@ Recibirás un JSON con toda la información relacionada a sitios. Dentro de este
 
 2. Abre tu archivo de variables de entorno `.env`. Se debe borrar la variable MODYO_SITE_HOST ya que usaremos el Id del sitio. Para hacer push hacia un stage, solo se puede usar MODYO_SITE_ID. Agrega el MODYO_SITE_ID de la siguiente manera:
 
-```shell
-MODYO_ACCOUNT_URL=https://test.miModyo.com
+```bash
+MODYO_ACCOUNT_URL=https://test.myModyo.com
 MODYO_VERSION=9
 MODYO_TOKEN=ax93...nm3
-MODYO_WIDGET_NAME=miWidget
+MODYO_WIDGET_NAME=myWidget
 MODYO_BUILD_COMMAND=build
 MODYO_BUILD_DIRECTORY=dist
 MODYO_SITE_ID=2673
@@ -283,6 +282,6 @@ MODYO_SITE_ID=2673
 
 3. En tu terminal, haz push a tu stage utilizando Modyo CLI:
 
-``modyo-cli push miWidget``
+``modyo-cli push myWidget``
 
 En caso de querer hacer push a main, se tiene que modificar la variable MODYO_SITE_ID para main o borrar esta variable y usar MODYO_SITE_HOST.

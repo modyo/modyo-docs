@@ -4,44 +4,43 @@ search: true
 
 # Accessibility
 
-Web accessibility refers to the practice of designing and developing websites and applications in a way that they are accessible and usable by all people, including those with disabilities or limitations. The main goal of web accessibility is to eliminate barriers that prevent people with disabilities from accessing, interacting and fully benefiting from online resources and services.
+Web accessibility is the practice of designing and developing websites and applications so that all people, regardless of their abilities or limitations, can access and use online resources and services. Its main objective is to eliminate barriers that prevent people with disabilities from accessing, interacting, and fully benefiting from online resources and services.
 
-Web accessibility is based on the principle of universal design, which seeks to create products and environments that are usable by as many people as possible, regardless of their skills or abilities. This involves taking into account the needs of different users, such as people with visual, hearing, motor or cognitive disabilities.
+Web accessibility is based on the principle of universal design, which seeks to create products and environments that are usable by as many people as possible, regardless of their skills or abilities. This includes considering people with visual, hearing, motor, or cognitive disabilities.
 
-Some key aspects of web accessibility include:
+Key aspects of web accessibility:
 
-- **Assistive technology compatibility:** Ensure that people using assistive technologies, such as screen readers or special keyboards, can effectively navigate and access content.
+
+- **Assistive technology compatibility:** Ensure that assistive technologies, such as screen readers or special keyboards, can effectively navigate and access content.
 - **Semantic tagging:** Use HTML tags correctly to structure and describe content clearly, allowing people with visual or cognitive disabilities to understand the information presented.
-- **Contrast and readability:** Ensure that the content has adequate contrast between the text and the background, making it easier to read for people with visual disabilities or difficulties with perception.
-- **Ease of navigation and use:** Design intuitive and navigable interfaces, with controls and interactive elements that are easy to use with both the mouse and the keyboard.
-- **Alternatives for non-textual content:** Providing textual alternatives for non-textual elements, such as images or videos, allowing people with visual or hearing disabilities to understand the content.
+- **Contrast and legibility:** Ensure adequate contrast between text and background to facilitate reading for people with visual disabilities or perception difficulties.
+- **Ease of navigation and use:** Design intuitive and easy-to-navigate interfaces, incorporating controls and interactive elements accessible with both the mouse and the keyboard.
+- **Alternatives for non-textual content:** Provide textual descriptions for images or videos so that people with visual or hearing disabilities understand the content.
 
-Web accessibility is a fundamental aspect to ensure inclusion and equal access to information and online services. Meeting accessibility standards and guidelines, such as those established by the World Wide Web Consortium (W3C) in the Web Content Accessibility Guidelines (WCAG), is essential to creating an accessible web and benefiting a wider audience.
+Web accessibility is essential for inclusion and equal access to information and online services. Meeting accessibility standards and guidelines, such as those established by the World Wide Web Consortium (W3C) in the Web Content Accessibility Guidelines (WCAG), is essential to creating an accessible web and reaching a wider audience.
 
-### How do you measure how accessible a site is?
 
-Web accessibility is measured using different techniques and evaluations that focus on verifying whether a website or application meets established accessibility standards and guidelines. Some of the most common ways to measure web accessibility include the following:
 
-- **Manual evaluation:** This consists of manually reviewing the website or application to identify possible accessibility barriers. This involves verifying the structure of the content, the appropriate tags, contrast, navigability, the availability of alternatives for non-textual content, among other key aspects.
-- **Automatic evaluation tools:** There are automated tools that analyze the code and content of a website for accessibility issues. These tools can detect missing or incorrect elements, provide recommendations, and generate reports on the level of accessibility of the site.
-- **Testing with real users:** Involves involving people with disabilities or limitations to test and evaluate the accessibility of the website. Real users can provide valuable feedback on the barriers they encounter when interacting with the site and help identify areas for improvement.
-- **Compliance with standards and guidelines:** It is evaluated if the website complies with established accessibility standards and guidelines, such as the W3C Web Content Accessibility Guidelines (WCAG). These guidelines provide specific criteria and recommendations for achieving web accessibility.
+### Web accessibility measurement
 
-It is important to note that web accessibility is an ongoing process and must be done periodically to ensure that it is maintained during the development and updates of the website or application. In addition, it is essential to consider the needs and feedback of users with disabilities, as they are the best judges of the accessibility of the site.
+Web accessibility is measured using different techniques and evaluations. Some of the most common forms are:
 
-### How do you implement accessibility with Modyo?
+- **Manual evaluation:** Consists of manually reviewing the website or application to identify possible accessibility barriers, including verifying the structure of the content, the correct use of tags, contrast, navigability, the presence of alternatives for non-textual content, and other key aspects.
+- **Automatic evaluation tools:** Use automated tools that analyze the code and content of a website for accessibility issues. These tools can detect missing or incorrect elements, provide recommendations, and generate reports on the level of accessibility of the site.
+- **Testing with real users:** Involves testing and evaluating the accessibility of the website by people with disabilities or limitations. Real users can provide valuable feedback to find barriers and identify areas for improvement.
+- **Compliance with standards and guidelines:** Consists of evaluating whether the website complies with established accessibility standards and guidelines, such as the W3C WCAG.
 
-How you implement accessibility in Modyo will depend on each type of initiative and the objectives you want to achieve with them, but in general we recommend considering the following criteria:
+Web accessibility is an ongoing process that you must perform periodically to ensure that a website or application is always accessible, especially during development and update phases. It is essential to consider the needs and feedback of users with disabilities, as they are the ones who can best evaluate the accessibility of the site.
 
-- Determine the degree of accessibility necessary for the project in question.
-- Establish a way to measure accessibility to assess compliance with standards.
-- Ensure that you comply with the basic accessibility standards of the Bootstrap framework, which provides guidelines and
-  components accessible by default.
-- Ensure that media files (such as photos and videos) managed in Modyo Content include descriptions
-  suitable alternatives. These descriptions help people with visual disabilities understand the
-  multimedia content.
-- When embedding media files in a page or widget in Modyo, it is recommended to use the Liquid tag in
-  instead of a fixed URL. This ensures that alternative descriptions are represented correctly and can be
-  easily updated by the content management team.
 
-By following these criteria, web accessibility is promoted in the development of projects in Modyo, allowing a greater number of users to access and enjoy the online experience in an inclusive manner.
+### Accessibility in Modyo
+
+The implementation of accessibility in Modyo varies depending on the project and its objectives. However, we recommend following these general criteria:
+
+- Determine the level of accessibility needed for the project.
+- Establish a method for measuring accessibility and evaluating compliance with standards
+- Ensure compliance with the basic accessibility standards of the Bootstrap framework, which provides guidelines and components accessible by default.
+- Confirm that media files, such as images and videos in Modyo Content, include alternative descriptions suitable for people with visual disabilities.
+- Use the Liquid language tag instead of a fixed URL when embedding media files in a page or widget in Modyo, to ensure the correct representation of alternative descriptions and to easily allow updates by the content management team.
+
+By following these criteria, you promote web accessibility in the development of projects in Modyo and allow a greater number of users to access and enjoy their online experience in an inclusive way.

@@ -1,0 +1,13 @@
+Indicator type, Indicator, Description
+IPv4, 8.29.109.235, zerotrust
+IPv4, 8.29.231.59, zerotrust
+IPv4, 8.29.228.208, zerotrust
+IPv4, 8.29.109.237, zerotrust
+IPv6, 2a09:bac0:1000:18c::/64, zerotrust
+IPv6, 2a09:bac0:1001:172::/64, zerotrust
+IPv6, 2a09:bac0:1001:171::/64, zerotrust
+IPv6, 2a09:bac0:1000:18d::/64, zerotrust
+IPv4, 45.77.194.16, perimeter81
+IPv4, 207.246.113.218, perimeter81
+IPv4, 144.202.33.21, perimeter81
+IPv4, 207.246.77.214, perimeter81

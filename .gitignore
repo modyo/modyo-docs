@@ -8,10 +8,8 @@ lib/core/MetadataBlog.js
 docs/build/
 docs/yarn.lock
 docs/node_modules
-website/i18n/*
 npm-debug.log
 docs/.vuepress/dist/
-google_cloud_credentials.json
 
 .vscode/
 .idea/

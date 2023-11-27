@@ -13,8 +13,6 @@ version: 9.2
 
 Además, si se utilizan los módulos de Channels y Customers, se pueden crear sitios con la habilidad de segmentar entradas para solo mostrar estas si pertenecen a un segmento de tus usuarios en el sitio.
 
-<img src="/assets/img/content/header.jpg" alt="Content header image" style="margin: 40px auto; width: 500px; display: block;">
-
 **Modyo Content** posee una arquitectura Headless que permite que los contenidos sean consumidos vía un API HTTP tanto desde canales definidos en **Modyo Channels** como de sistemas o aplicaciones externas.
 
 Gracias a su sistema integrado de caché y gestión de Headers HTTP, los contenidos podrán además ser alojados en CDNs para una mayor disponibilidad y velocidad de acceso, independiente de la ubicación geográfica.

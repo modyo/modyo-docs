@@ -10,63 +10,38 @@ Modyo allows you to upload, review, and edit files within the same platform, thr
 
 The only requirement is that the files must be within the size limits. The limits are:
 
-- **Images**: 6 MB
-- **Videos**: 10 MB
-- **Audios**: 10 MB
-- **Files**: 10 MB
+- **Images:** 6 MB
+- **Videos:** 10 MB
+- **Audios:** 10 MB
+- **Files:** 10 MB
 
 The valid file types are:
 
-- **Images**: apng avif bmp gif ico jpeg jpg png tif tiff webp
-- **Videos**: av avi f4v flv mkv mov mp4 mpeg webm wmv
-- **Audios**: 3gp aac alac dsd flac mp3 pcm wav m4a ogg wma
-- **Files**: 7z ai apk css csv doc docx fon ico iso jar js msi ods odt otf pdf ppt pptx rar rss rtf scss tar tex ttf txt vcf wdp xhtml xls xlsm xlsx xml zip one ecf pub xps json svg woff woff2 ics
-
-#### Rich Text
-
-<img src="/assets/img/content/asset-manager/2.jpg" style="margin: 20px 0" alt="Add image button inside a rich text textbox">
-
-#### Multiline
-
-<img src="/assets/img/content/asset-manager/3.jpg"  style="margin: 20px 0" alt="Asset manager button inside a multiline box">
-
-#### Assets Selector
-
-<img src="/assets/img/content/asset-manager/4.jpg" width="150px" style="margin: 20px 0" alt="Asset list button">
-
-The second one is directly through the Asset manager tool found in the Content section.
-
-<img src="/assets/img/content/asset-manager/5.jpg" width="150px" style="margin: 20px 0" alt="Asset manager from the main menu.">
+- **Images:** apng avif bmp gif ico jpeg jpg png tif tiff webp
+- **Videos:** av avi f4v flv mkv mov mp4 mpeg webm wmv
+- **Audios:** 3gp aac alac dsd flac mp3 pcm wav m4a ogg wma
+- **Files:** 7z ai apk css csv doc docx fon ico iso jar js msi ods odt otf pdf ppt pptx rar rss rtf scss tar tex ttf txt vcf wdp xhtml xls xlsm xlsx xml zip one ecf pub xps json svg woff woff2 ics
 
 
 ## About the interface
 
-<img src="/assets/img/content/asset-manager/1.jpg" width="600" style="border: 1px solid #EEE; margin: 20px 0" alt="Asset manager UI">
+This interface shows you a list of all the files that exist within the platform.
 
-The Asset manager interface displays a list of all the files that exist within the platform.
+In the upper right part of the screen you can see the percentage of used space corresponding to the total allocated for the account and the button to upload new files.
 
-In the upper right part of the screen you can see the percentage of space used corresponding to the total allocated for the account and the button to upload new files.
+The list has three types of filters that will help you find a file:
 
-The list has three different filters for browsing files.
+**Extensions:** With this filter you can see all the files of the same type found within the platform (the list is made up of the types of files that have been uploaded to the platform).
 
-<img src="/assets/img/content/asset-manager/7.jpg" width="400" style="margin: 20px 0" alt="The three filters inside asset manager">
-
-**Extensions**: Use this to filter all files of the same type within the platform (the default list displays all uploaded files).
-
-**Tags**: This filter allows you to display all files that match all selected tags.
+**Tags:** This filter allows you to show all the files associated with a tag that are found within the platform.
 
 :::tip Tip
 If you want to add a tag to a file or group of files, you can do so by directly editing the file or by using the bulk actions that appear at the bottom left of the list. 
 
-This will appear as soon as you select the first item (by clicking on the checkbox in the first column.)
-
-If you select one or more checkboxes that are on your screen, the button will only assign tags to those files you've selected.
-
-<img src="/assets/img/content/asset-manager/14.jpg" width="400" style="margin: 20px 0" alt="Apply tags to assets to identify them">
-
+If you select one or more checkboxes that are on your screen, the button will only assign labels to those files that you have marked.
 :::
 
-**Search bar**: With the search bar, the manager will show you all files with titles or metadata that match your search terms. This also includes searches for specific file extensions, tags, and the names of users who uploaded a file.
+**Search bar:** With the search bar, the Manager will show you all the files that have a word or content that is found within the metadata of the file. In this case, it also includes searching for your specific extension, tag, name or user who uploaded it.
 
 :::tip Tip
 Modyo displays 30 files at a time, and this value cannot be updated.
@@ -74,29 +49,22 @@ Modyo displays 30 files at a time, and this value cannot be updated.
 
 Each file listed in the main view shows the following information and attributes:
 
-<img src="/assets/img/content/asset-manager/8.jpg" style="margin: 20px 0" alt="The available columns when searching for an asset.">
+**Preview:** If the platform identifies that the file is an image, you can see a small thumbnail of it. If it isn't, this space will appear blank.
 
-Attributes with arrows can be sorted by either ascending and descending order. The default sort order **is the file upload date**.
+**Name:** Name of the file with the extension included. The order is in alphabetical order.
 
-**Preview**: Image files display small thumbnail previews. Non-image files do not use this feature.
+**Type:** File type and file extension. The sorting is alphabetically first by type and then by the letter of the extension name.
 
-**Name**: File name with the extension included. Ordering by this field sorts all files alphabetically.
+**Size:** Size in kilobytes of the file.
 
-**Type**: File type and extension. The ordering is in alphabetical order first by type and then by the letter of the name of the extension.
+**Created on:** Date of upload or creation within the platform, regardless of whether the file was created on a different date in another service.
 
-**Size**: Size in kilobytes of the file.
-
-**Created on**: Upload or creation date within the platform, independent if the file was created on a different date in another service.
-
-**Author**: Name of the user who uploaded the file, as long as the user has a name assigned.
+**Author:** Name of the user who uploaded the file, as long as the user has a name assigned to it.
 
 The lower right corner lists the pagination of all your account files.
 
 
 ## File Properties
-
-<img src="/assets/img/content/asset-manager/9.jpg" width="500" style="border: 1px solid #EEE; margin: 20px 0" alt="Edit Asset UI.">
-
 You can upload any file type to the platform, without no filetype exclusions.
 
 However, the platform recognizes and classifies known file types by their extensions and applies their type to the list.
@@ -104,44 +72,37 @@ However, the platform recognizes and classifies known file types by their extens
 To access the properties of a file, click on its name to open a modal where you can edit the file's properties.
 
 ## Edit a file
+In the file's properties editor you can view these fields:
 
-<img src="/assets/img/content/asset-manager/12.jpg" width="500" style="margin: 20px 0" alt="The URL and Liquid Tag assigned to the asset.">
+**File URL:** Shows the public URL of the file. You can copy it to your clipboard by clicking on the side icon.
 
-You can find and/or edit the following in the file properties editor:
-
-**File URL**: Displays the public URL of the file. You can copy it to your clipboard by clicking on the side icon.
-
-**Liquid Tag**: Use this tag within the platform to reference the file through Liquid as opposed to it's URL.
+**Liquid Tag:** Shows the Liquid tag from the file, to be used within the contents of the platform.
 
 :::warning Warning
-Neither the URL nor the Liquid Tag is possible to change through Modyo.
+It is not possible to change the URL or the Liquid Tag in Modyo.
 :::
 
-**Title**: Shows the title of the file. This section is different from the file name, which cannot be changed.
+**Title:** Shows the title of the file. This section is different from the name of the file, which cannot be changed.
 
-**Alternative text**: Shows the ```alt text``` of the element. (Only applies to images and videos).
+**Alternative text:** Shows the ```alt text``` of the element. (Only applies to images and videos).
 
-**Description**: Description of the element. It is good practice to write a small text that refers to the image.
+**Description:** Description of the item. It's good practice to write a short text that references the image.
 
-**Tags**: Shows the tags associated to the file, clicking on the box you can search and add more tags. In turn, you can click on the X of the existing tags to remove the association with the file.
+**Tags:** Shows the tags associated with the file, by clicking on the box you can search and add more tags. You can also click on the X of the existing tags to remove the association with the file.
 
 <hr style="margin: 40px 0;" />
 
 To save the modification of the data, it is necessary to click on the **Update Information** button located in the lower right part of the window.
 
-If the data is modified but the button is not clicked to be saved, these modifications will be lost.
+If the data is modified but the button is not clicked on to be saved, these modifications will be lost.
 
 If you want to close the window and return to the Manager interface, click on the **Close** button, located at the bottom of the screen.
 
-## Recover an image
+## Upload an image again
 
-If you want to upload a file again, keeping the name and the original link, click on the icon to upload the file found in the window **Update Information**. Thus, it will display a new window where you can select a new file.
-
-<img src="/assets/img/content/asset-manager/13.jpg" width="300" style="border: 1px solid #EEE; margin: 20px 0" alt="Re-upload an image using the reupload button.">
+If you want to upload a file again, keeping the name and the original link, click on the icon to upload the file found in the window **Update Information**. Thus, a new window will be dispalyed where you can select a new file.
 
 ## Edit an image
-
-<img src="/assets/img/content/asset-manager/10.jpg" width="500" style="border: 1px solid #EEE; margin: 20px 0" alt="You can also perform small changes to images using Asset Manager.">
 
 To facilitate the handling of images within the platform, **Modyo includes an image editor** that allows you to make changes to your images.
 
@@ -151,9 +112,9 @@ This opens a window with two views that display the original image and a preview
 
 On the left side of the image editor are three options to edit the image size:
 
-- **16:9**: Crop the image with a 16:9 ratio.
-- **Square**: Crop the image to the size of a square with a 1:1 ratio.
-- **Free**: Freely crop the image to any size by selecting the edges and corners of the blue cropping tool.
+- ** 16:9:** Edit the image in a 16:9 ratio.
+- **Square:** Edit the image to the size of a square.
+- **Free:** Edit the image in pixels freely to a size that you can change at the bottom of the screen.
 
 The left side displays the original size of the image and the size in pixels of the crop edit.
 
@@ -176,16 +137,14 @@ This action is irreversible, and any content using this file will display a brok
 
 ## Upload a file
 
-<img src="/assets/img/content/asset-manager/11.jpg" width="500" style="border: 1px solid #EEE; margin: 20px 0" alt="Upload Image UI">
-
 There are two ways to upload a file for use in **Modyo**. One of them is through the same section from which you work and another is through the Asset Manager, which gives you the option of taking any material from the local disk to upload it to the platform.
 
 To upload the file, click **Add**.
 
 This action opens a new window that allows you to upload files in two ways:
 
-- **Drag & Drop**: Drag from your computer's file browser to the window
-- **Select the window**: Click the large "Upload" square to open the file browser on your local machine, and select the file from there.
+- **Drag & Drop:** Drag from your computer's file browser to the window
+- **Traditional way:** Through the browser, clicking and selecting the files
 
 :::warning Warning
 You can upload a maximum of 10 files at a time. If you need to upload more, do so in batches.

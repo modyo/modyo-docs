@@ -6,8 +6,6 @@ search: true
 
 Modyo operates its critical systems in the [Amazon AWS] cloud (https://aws.amazon.com). With over 12 years of experience on this platform, and as an Advanced Technology Partner, Modyo has the necessary experience and certified personnel to ensure the continuity, performance, and security of your deployments.
 
-<img src="/assets/img/cloud/partner_badge.png" alt="Partner Badge" style="margin-top: 40px;" />
-
 In 2019 and 2021, Modyo was recognized by Amazon AWS as Technology Partner of the Year for Chile and Peru. Additionally, Modyo was the first company in Latin America to become an AWS Independent Software Vendor (ISV).
 
 Modyo Connect is offered exclusively on the Amazon AWS cloud and, like Modyo Cloud and Enterprise Cloud, operates in a highly available configuration over multiple AWS availability zones and regions. Using abstract resources and containers in the cloud, it avoids the need to configure and maintain virtual machines of any kind. For the deployment of [microservices](/en/architecture/patterns/microservice), the Amazon Elastic Container Services (ECS) container platform is used in conjunction with automation and configuration control tools, following a reference architecture as shown in the following diagram:

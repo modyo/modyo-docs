@@ -1,0 +1,13 @@
+/ /en 301
+/platform /en/platform 301
+/platform/* /en/platform/:splat 301
+/dynamic /en/dynamic 301
+/dynamic/* /en/dynamic/:splat 301
+/brand /en/brand 301
+/brand/* /en/brand/:splat 301
+/legal /en/legal 301
+/legal/* /en/legal/:splat 301
+/connect /en/connect 301
+/connect/* /en/connect/:splat 301
+/architecture /en/architecture 301
+/architecture/* /en/architecture/:splat 301

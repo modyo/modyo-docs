@@ -44,11 +44,11 @@ Once the user is marked as inactive, they cannot log in. The default inactivity 
 
 If you check the box to send an email to a user when they are considered inactive, the user will receive an email notification. From this email, they will be able to reactivate their account.
 
-:: :tip Tip
+:::tip Tip
 Account owners can change a user's status between inactive and active using the “Login disabled due to inactivity” checkbox.
 
 You can locate this option when editing a user in the **Team** section, in the **Edit** tab. If you select the box, the user is marked as inactive and when it is deactivated, the user will be active.
-::
+:::
 
 ## HTTP access control (Cross-Origin Resource Sharing CORS)
 
@@ -60,7 +60,7 @@ By default, your sites' custom domains are already included once CORS is activat
 
 This key or _secret_ is used by Modyo to sign user JWTs so that they can access [private content through the API] (/es/platform/content/public-api-reference.html #contenido -private).
 
-:: :warning Attention
+:::warning Attention
 If you generate a new key, all requests for private content must go through Modyo. This is because JWTs signed by Modyo with the old key will no longer be valid.
 :::
 
@@ -74,7 +74,7 @@ Each team member can activate two-step authentication from their profile. In add
 
 By enabling mandatory two-step authentication for team members, the next time a member logs in, they will be required to set up their two-step authentication device. Once set up, you must log in using your password and the code provided by Google Authenticator.
 
-:: :warning Attention
+:::warning Attention
 The **Set Time Zone Automatically Option** must be active when using two-factor authentication on your mobile device.
 :::
 
@@ -99,7 +99,7 @@ If the authenticator is lost or stolen, it will not be possible to access the ac
 1. Click on the member's name.
 1. In the top bar, click on the more options button, represented by three dots, and select **Remove authenticator**.
 
-:: :warning Attention
+:::warning Attention
 If you have activated the option to force authentication, the next time the user tries to log in, they will need to initialize the authenticator first. Once the authenticator is active, the user can proceed with the login process.
 :::
 

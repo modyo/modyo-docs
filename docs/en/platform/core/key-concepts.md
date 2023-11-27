@@ -21,8 +21,6 @@ These reviewers are responsible for approving or rejecting the item, and determi
 
 Each step of this process takes the item through different states, which are recorded in a history for subsequent auditing.
 
-<img src="/assets/img/platform/core/team-review.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
-
 ### Configuration
 
 To activate the team review, follow these steps:
@@ -31,11 +29,9 @@ To activate the team review, follow these steps:
 2. Expand **Space/Site Settings** and select **Team Review**.
 3. Click **Enable team review**.
 
-<img src="/assets/img/platform/teamreviewsettings.jpg" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
-
 The available options are:
 
-- **Enable Team Review**: Enables or disables Team Review within the current site or space.
+- **Enable Team Review**: Enables or disables Team Review in that context (site or space).
 - **Number of Approvals**: Determines the number of users required to approve the item before it is ready for publication. Once the required number of approvals is reached, the item's status will change from “Awaiting Review” to “Approved”.
 - **Restrict the selection of reviewers**: By default, any user with the necessary permissions can approve items awaiting review. However, by enabling this option, only the reviewers selected by the editor will be able to carry out the approval.
 
@@ -76,9 +72,9 @@ This option exists because there are times when you need to publish quickly, so 
 :::
 ### My Tasks
 
-The My Tasks section in Modyo gives you an overview of all the items that require your attention. It allows you to access information about the type of item, its author, and when it was last updated.
-Once an item has been marked for review, the assigned user can review and approve it in the My Tasks section. 
-<img src="/assets/img/platform/core/my-tasks.png"/> 
+The My Tasks section in Modyo gives you an overview of all the items that need your attention. It allows you to access information about the type of item, its author and when it was last updated.
+Once an item has been marked for review, the assigned user can review and approve it in the My Tasks section.
+
 To view and review all the tasks assigned to you, follow these steps:
 1. Go to Home.
 2. Click on My Tasks.
@@ -88,25 +84,21 @@ To view and review all the tasks assigned to you, follow these steps:
 
 When the team review option is activated and the changes are saved, the main green button **Submit for Review** is displayed.
 
-<img src="/assets/img/platform/send-to-review-bar.jpg" width="350px" style=" border: 1px solid #EEE;" />
-
 When submitting for review, the bar changes status to indicate if conditions are missing or if you don't have sufficient permissions.
 
 When you click on it, the right side section will indicate the requirements for publishing the item.
 
 If a reviewer's review is required, `(required)` will appear next to their name in the list of reviewers.
 
-<img src="/assets/img/platform/box-reviewers.jpg" width="500px" style="border: 1px solid #EEE;" />
-
-To the right of each reviewer is their review status. A yellow circle is shown if you have not reviewed it, and a green check if you have approved the item.
+To the right of each reviewer is the status of their revision. A yellow circle is shown if they have not finished their review, and a green check if they have approved the item.
 
 All users who have access to the item's editing view will see an **Approve button** below the list of reviewers.
 
 Users with the necessary permissions can click the **Approve button** to approve the item. Those who don't have the permissions will see the button disabled.
 
-When the item is approved, the user's approval is recorded and a green check is displayed next to their name in the reviewers list.
+When the item is approved, the user's approval is recorded and a green check is displayed next to their name in the list of reviewers.
 
-When you enable team review, in the item's action bar, to the left of the main green button and to the right of the difference button, an icon (<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 23a1 1 0 0 1-1-1v-3H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4.1l-3.7 3.71c-.2.18-.44.29-.7.29H12m1-6v3.08L16.08 17H21V7H7v10h6M3 15H1V3a2 2 0 0 1 2-2h16v2H3v12m6-6h10v2H9V9m0 4h8v2H9v-2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>) appears to open the item's activity tab.
+By enabling team review, in the item's action bar, to the left of the main green button and to the right of the differences button, you can find the option to open the item's activity tab.
 
 When you open this tab, a chronological list of the actions performed on the item is displayed, with the option to view the details of each action. At the bottom of the tab, there is the option to leave a comment.
 
@@ -114,16 +106,14 @@ When a team member has left a comment or an action is performed on the item, a n
 
 ## Joint Review and Publication
 
-<img src="/assets/img/platform/core/review-joint-publication.png" width="800px" style="border: 1px solid #EEE;" alt="Modal de diferencias"/>
-
-On the review and joint publication screen, you can see all the pending changes to be published on your site. You have the option to see what changed by clicking on the**View** button. 
+On the review and joint publication screen, you can see all the pending changes to be published on your site. You have the option to see what changed by clicking on the **View** button.
 
 ### Joint Publication
 
 To make a joint publication on your site, follow these steps:
 
 1. In the Modyo Platform main menu, expand **Channels**, and click on **Sites**.
-1. Click your site. 
+1. Click on your site.
 1. On the Summary screen, click **Publish**.
 1. Here you can see all the pending changes. Select everything you want to publish and click **Publish**.
 
@@ -188,9 +178,7 @@ This state appears when team review is enabled, it signifies  that an item in th
 
 Within versioning, there are two actions that allow you to interact with the backups: reset and rollback. By default, the difference modal shows the published version on the left, and the editable version on the right.
 
-You can change which versions to compare by changing the values in the version selectors at the top of the modal.
-
-<img src="/assets/img/platform/differences.jpg" width="800px" style="border: 1px solid #EEE;" alt="Modal de diferencias"/>
+You can change which versions to compare by changing the values in the versions selector at the top of the modal.
 
 Follow these steps to revert to a version published in a Post:
 
@@ -225,11 +213,9 @@ Because this is a potentially dangerous action, only site or space administrator
 
 Locks is a Modyo feature that allows you to modify a resource securely, avoiding concurrency problems that may occur when another user is working on it simultaneously. This way, Modyo prevents loss of work, or overwrite of documents.
 
-<img src="/assets/img/platform/locks.jpg" style="border: 1px solid #EEE;" />
-
 ### What elements do Locks use?
 
-Locks is mainly used in [Content] (/en/platform/content/) and [Channels] (/en/platform/channels/), but it can also be used in other sections where elements such as Configurations and [Customers] (/en/platform/customers/) are edited.
+Locks is mainly used in [Content](/en/platform/content/) and [Channels](/en/platform/channels/), but it can also be used in other sections where elements such as Configurations and [Customers](/en/platform/customers/) are edited.
 
 ### How to use Locks?
 
@@ -239,14 +225,12 @@ If a second person tries to make a change, a message will appear indicating that
 
 In other sections, such as [Customers](/en/platform/customers/) and Settings, Locks will not allow users to view resources simultaneously. Therefore, if an item is being edited, another user will not be able to access the work view.
 
-In this case, only an Administrator will be able to take control, activating for himself the edition, and discarding the unsaved changes made by the user working on the item.
+In this case, only an Administrator will be able to take control, activating the edition for himself, and discarding the unsaved changes made by the user working on the item.
 
 
 :::warning Take control
 
 If an Administrator wants to take control of a view, they must click on the item in use and, in the next screen, click on the **Take Control** button.
-
-<img src="/assets/img/platform/lock-forms.jpg" style="border: 1px solid #EEE;" />
 
 When the Administrator takes control, the user who is using the resource receives a message preventing them from continuing to make changes. Therefore, any changes that the user is making must be saved and backed up offline.
 
@@ -255,9 +239,7 @@ After taking control, the Administrator has only two hours to make unsaved chang
 
 ## Preview mode
 
-The preview mode allows you to preview the changes made to publishable elements such as Posts, Pages, Navigation, Widgets, or Templates. Access to this mode is at the top right of the site with the icon <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path d="M12 9a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5c-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0a9.821 9.821 0 0 0-17.64 0z" fill="#626262"/> <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>. You can recognize that you are in preview mode, when you see the bar at the top of the site.
-
-![Preview Bar](/assets/img/platform/preview-bar.png)
+The preview mode allows you to preview changes made to publishable elements such as posts, pages, navigation, widgets or templates. Access to this mode is at the top right of the site. You can recognize that you are in preview mode, when you see the bar at the top of the site.
 
 The preview bar contains the following interactive elements:
 
@@ -268,7 +250,7 @@ The preview bar contains the following interactive elements:
 * **Content View Selector**: Allows you to switch between the published and editable version of the content entry being previewed in custom content views. This view doesn't directly use the Liquid Content SDK, therefore, the content in these views won't be affected by the Content SDK selector.
 * **Widget selector**: If you are previewing pages that contain custom widgets, a list of the widgets present on the page will be displayed, allowing you to select whether you want to view the editable or published version of each of them. Once the selection is made, you must click on the “refresh” button for the widget settings to take effect.
 * **Minimize Tab**: Allows you to hide the preview bar to avoid interference with the elements located at the top of the site. Once minimized, the tab will still be visible to restore the bar in preview mode.
-* **Edit item**: When you click, you access the editing view of the element being viewed, whether it is a post, a page, a widget, or a default site template.
+* **Edit Item**: Clicking this will take you to the edit view of the element you're viewing, whether it's a post, a page, a widget, or a default site template.
 * **Share link**: Allows you to copy a link that can be shared with other users. When you open the link, you directly access the preview mode with the settings you had when copying the link. To access the preview mode, you must be logged in to the administrator account.
 * **Exit preview mode**: Closes preview mode, removing the bar and keeping the tab at the current URL of the site.
 
@@ -295,13 +277,13 @@ To create a global variable, follow these steps:
 1. Fill in the **Name** and **Value** of the variable.
 1. Click **Save**.
 
-Global variables can be used to add values for different languages. If required, you also have the option of overwriting the values of global variables in sites and widgets, using the [site configuration] (/en/platform/channels/sites.html #variables -of-site) and [custom widgets] (/en/platform/channels/widgets.html #variables -del-widget) sections, respectively.
+Global variables can be used to add values for different languages. If required, you also have the option of overwriting the values of global variables in sites and widgets, using the [site configuration](/en/platform/channels/sites.html#variables-del-sitio) and [custom widgets](/en/platform/channels/widgets.html#variables-del-widget) sections, respectively.
 
 :::warning Warning
 When using global variables, the variables defined at the lowest level will always take precedence.  First, the variables defined in the widget will be considered, followed by the ones defined at the site level, and finally, the variables defined at the account level. Therefore, you must be careful when defining variables in widgets or in the site with the same name as the account-level variables.
 :::
 
 :::danger Danger
-Global variables do not have a publishing, versioning, or team review workflow. Only account and site administrators can modify them. Be careful when making changes to these settings, as they will be immediately reflected wherever they are being used.
+Global variables don't have a publishing, versioning, or team review workflow. Only account and site administrators can modify them, so you should consider that when you make changes to these values, they will be immediately reflected everywhere they are being used.
 This does not apply to variables defined in widgets because widgets and pages do have a publishing flow.
 :::

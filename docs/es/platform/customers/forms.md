@@ -6,8 +6,6 @@ search: true
 
 Una de las funcionalidades más requeridas por todas las plataformas es la captura de datos de usuarios para posteriormente analizar y segmentar. Con esta herramienta podrás crear cuantos formularios necesites para recolectar datos provenientes de los usuarios de tus sitios.
 
-![Digital factory](/assets/img/platform/form-index.png)
-
 Al entrar a la herramienta, podrás ver un listado de todos los formularios que hay activos actualmente en la cuenta. Podrás filtrar por su estado (habilitado o deshabilitado), por el sitio en el que se despliegan, y buscar por el nombre del formulario.
 
 En cada fila de la tabla de formularios, verás en la primera columna el nombre del formulario, a continuación la fecha de creación, y la cantidad de respuestas que se han enviado para ese formulario.
@@ -56,8 +54,6 @@ Si un usuario no tiene una sesión activa, llena el formulario, y el correo elec
 :::
 
 ## Editar formulario
-
-<img src="/assets/img/customers/forms/edit-form.jpg" style="border: 1px solid #EEE; margin-top: 40px">
 
 Para modificar un formulario, sigue estos pasos:
 
@@ -144,8 +140,6 @@ La sección **General** agrega dos opciones:
 #### Snippet
 La sección **Snippet**, que sólo aparecerá si el formulario es público, te permitirá copiar un código _HTML_ que podrás usar en cualquier lugar para cargar dinámicamente el formulario, incluso fuera de Modyo.
 
-<img src="/assets/img/customers/forms/form-embed.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="350">
-
 :::warning Atención
 Para poder hacer uso adecuado del snippet del formulario, debes tener en cuenta la configuración _CORS_ de tu cuenta en Modyo y los _headers_ de seguridad de donde estés insertando el snippet.
 
@@ -169,7 +163,7 @@ El correo de agradecimiento te permite personalizar un correo que será enviado 
 A continuación, tienes un ejemplo de código que podrás usar como base para personalizar el correo de agradecimiento.
 
 ```liquid
-Enviaste esta respuesta el: {{ 'now' | date: "%b %d, %y" }}
+Message Sent: {{ 'now' | date: "%b %d, %y" }}
 <table width="600px">
     <tr>
         <td><b>user name</b></td>
@@ -239,5 +233,3 @@ Puedes eliminar respuestas una por una usando la acción a la derecha de cada re
 :::
 
 Para ver en detalle la respuesta de un usuario, basta con hacer click en el nombre del usuario, y accederás al listado de preguntas junto a las respuestas que ese usuario envió en esa determinada ocasión.
-
-<img src="/assets/img/customers/forms/submission-show.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="600">

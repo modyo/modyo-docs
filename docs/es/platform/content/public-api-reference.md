@@ -17,7 +17,7 @@ Por el momento sólo existe, de forma oficial, un SDK para Javascript. A futuro 
 
 Para realizar cualquier acción, es necesario conocer la estructura de rutas de los contenidos en la API, la cual se hace de la siguiente manera:
 
-```
+```bash
 https://www.example.com/api/content/spaces/:space_uid/types/:type_uid/schema
 
 https://www.example.com/api/content/spaces/:space_uid/types/:type_uid/entries?[filters]

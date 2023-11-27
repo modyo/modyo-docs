@@ -2,42 +2,56 @@
 search: true
 ---
 
-# SCIM provisioning with Microsoft Azure AD
+# Provisioning SCIM groups and users with Microsoft Azure AD
 
-Integrate your groups and users between Modyo and Microsoft Azure Active Directory using the SCIM-compatible API that Modyo provides.
+The Multi-Domain Identity Management System (SCIM) establishes standardized communication between Modyo and Microsoft Azure to automatically synchronize user and group data. This allows you to:
+- Create users in Microsoft Azure and automatically provision them in Modyo.
+- Update user data in Microsoft Azure and reflect changes in Modyo.
+- Delete users in Microsoft Azure and deprovision them in Modyo
 
-#### To create your application in Azure Active Directory, follow these steps:
+This integration of groups and users between Modyo and Microsoft Azure Active Directory with the Modyo SCIM API simplifies the management of users in different systems and reduces errors, promoting efficient administration.
 
-1. From the Azure Active Directory admin panel, click **Enterprise Applications**.
-2. Click **Create your own application** and choose the following configuration:
+:::warning Attention
+The synchronization is unidirectional, meaning that data changed in Modyo will not affect user data in Azure. In addition, any changes made in Azure can overwrite the changes made in Modyo.
+:::
 
-<img src="/assets/img/platform/scim-1-createapp.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" alt="Image showing the Browsw Azure AD Gallery window."/>
 
-3. Enter a name for your app and choose **Integrate any other application you don't find in the gallery**. Click **Create**.
+### Step 1: Create your application in Azure Active Directory
+1. Access the **Azure Active Directory admin panel**
+1. In the side menu select **Enterprise Application**
+1. Select the **Create your own app** option at the top of the Azure gallery
+1. Name your application and select the option **Integrate any other application that is not on the page** as the purpose of the application
+1. Click **Create**
 
-4. In the side menu, select **Provisioning** and then click **Get Started**.
-
-<img src="/assets/img/platform/scim-2-provision.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" alt="Image showing the Provisioning window in Azure AD."/>
-
+### Step 2: Provisioning
+1. Access your application in Azure
+2. In the side menu, select **Provision**
+3. Click on **Introduction**
+4. Select **Automatic Provisioning**
 5. In the admin credentials, add the following:
-    - Provisioning mode: Automatic
-    - Tenant URL: _URL for your SCIM compatible web server_ (e.g. https://myServidor.com/scim)
-    - Secret Token: _Client Secret_ (The secret that was generated for your authentication credential)
+    - Tenant URL: The URL of your SCIM-compatible web server, for example: https://yourdomain.modyo.cloud/api/admin/scim
+    - Secret Token: The Modyo administrative user's access token generated for the authentication credential. Detailed token information can be found in the [Management API] section (https://docs.modyo.com/en/platform/core/api.html#bearer-token)
+6. In the Settings section, you can customize notification delivery and select the accidental deletion threshold. For more information about these configurations, review the [Azure] documentation (https://learn.microsoft.com/en-us/azure/active-directory/app-provisioning/user-provisioning)
+7. Click **Test Settings** to verify the connection
+8. Once the configuration is confirmed, click on **Save**
+8. If the configuration and saving are correct, under the test connection button you can configure the **Assignments** section
+9. Select an assignment to proceed to the attribute assignment step
 
-<img src="/assets/img/platform/scim-3-testprovision.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" alt="Image showing the Provisioning window with the Admin Credentials."/>
-
-6. In the **Attribute Mapping** section, add a new group. The Group object will be able to perform all the actions: **Create, Update, Delete** and will have the following mapping:
-
+### Step 3: Assigning Attributes
+#### Groups
+1. Select the **Provision Azure Active Directory Groups** assignment to configure its attributes.
+2. Select the actions of the target object: Create, update, and/or delete. Confirm that the mapping is:
 
 | Azure Active Directory Attribute | customApp Attribute |
 | ------------------------------- | ------------------ |
 | displayName | displayName |
 | objectId | externalId |
 | members| members |
+3. Click **Save**
 
-<img src="/assets/img/platform/scim-4-attributemapping.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" alt="Image showing the Attribute Mapping window filled out with the required Attributes."/>
-
-7. Adds a new users object. The User object will be able to perform the actions: **Create** and **Update** and will have the following mapping:
+#### Users
+1. Select the **Provision Azure Active Directory Users** assignment to configure the attributes of your groups.
+2. Select only the actions: Create and update. Make sure the mapping is:
 
 | Azure Active Directory Attribute | customApp Attribute |
 | ------------------------------- | ------------------ |
@@ -47,35 +61,26 @@ Integrate your groups and users between Modyo and Microsoft Azure Active Directo
 | givenName| name.givenName|
 | surname  |name.familyName|
 | Join(" ",[givenName],[surname]| name.formatted|
+3. Click **Save**
+4. Once this is done, in the Provisioning section, in the configuration options you will now have the option of **Scope**, select **Synchronize all users in the group**
+5. Click **Save**
 
-<img src="/assets/img/platform/scim-5-attributemapping.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" alt="Image showing the Attribute Mapping window with the User object filled."/>
-
-8. In **Settings**, enable Scope **Sync all Users and Groups**.
-
-<img src="/assets/img/platform/scim-6-provisioning.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" alt="Image showing the Attribute Mapping with the Sync Settings added."/>
-
-9. From the Active Directory main menu, select Users. 
-10. Click **New User**. It is important to create an email for the user as this is required by Modyo.
-
-<img src="/assets/img/platform/scim-7-allusers.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" alt="Image showing the All Users window."/>
-
-12. From the Active Directory main menu, select Groups. 
-13. Click **New Group**.
-
-<img src="/assets/img/platform/scim-8-allgroups.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" alt="Image showing the All Groups window."/>
-
-14. On the main screen of your new application, click **Provisioning**.
-
-> The path can be something like All services > Default Directory > Enterprise Applications > The new app
+You can confirm that your mapping configuration is correct by following these steps:
+1. In Azure, go to provisioning
+2. Select **On-Demand Provisioning**
+3. Confirm that the process is running without showing errors
 
 :::tip Tip
-To verify that provisioning works, click **Provision on demand** and select a user.
+For groups, there is no on-demand provisioning, in order to test the group configuration, you must create a user, add it to a group and select **begin provisioning**.
 
-For groups, there is no “on demand” provisioning, you have to create a user, add it to a group and select “start provisioning”, this task runs every 45 minutes, please wait until the process is done and refresh the page to see the change is reflected.
+This task is executed every 40 minutes, so you must wait this time to see the changes reflected in the platform.
 :::
 
-<img src="/assets/img/platform/scim-9-ondemand.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" alt="Image showing the Provision On Demand."/>
+Once properly configured, you can add users to Active Directory. At the same time, your existing groups will also be provisioned.
 
+:::warning Attention
+Username and email are required fields to generate users. Without them, user provisioning will fail.
+:::
 
 
 ### References

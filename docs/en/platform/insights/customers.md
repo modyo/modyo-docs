@@ -20,8 +20,6 @@ The available filters are:
 
 **Signups**: Total count of all user signups.
 
-![Customers](/assets/img/platform/customers.png)
-
 ### User activity
 
 In this graph we can see a comparison between two values that represent user actions within Modyo Channels.

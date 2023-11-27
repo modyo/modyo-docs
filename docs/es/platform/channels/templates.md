@@ -8,53 +8,47 @@ Uno de los aspectos más importantes al crear el sitio es la arquitectura base y
 
 Al crear un Sitio, se llenará con plantillas distintas para generar el tema Minimal y puedas empezar a crear tu canal digital. Si es necesario, también podrás crear Snippets de código HTML, JS, y CSS para extender la funcionalidad de tu sitio.
 
-<img src="/assets/img/channels/template_builder/template-builder.png" alt="The templates main menu">
-
 Una vez dentro de Plantillas, puedes ver que el menú principal se esconde para optimizar el área de trabajo. En la barra superior, a la izquierda, encuentras el nombre de la sección y el estado de publicación actual.
 
+- **Publicado:** Cuando ya existe una versión publicada y su versión editable es igual.
+- **Cambios pendientes:** Cuando hay una versión publicada, pero hay cambios pendientes de publicar en tu versión editable.
+- **En revisión:** Cuando se habilita la [revisión en equipo](/es/platform/core/key-concepts.html) y se ha enviado a revisión la versión editable.
+- **Aprobado:** Cuando se habilita la [revisión en equipo](/es/platform/core/key-concepts.html) y si es que se cumplieron las condiciones de revisión del elemento. Si estás en este estado, tus plantillas están listos para ser publicados.
 
-- **Publicado**: Cuando ya existe una versión publicada y su versión editable es igual.
-- **Cambios pendientes**: Cuando hay una versión publicada, pero hay cambios pendientes de publicar en tu versión editable.
-- **En revisión**: Cuando se habilita la [revisión en equipo](/es/platform/core/key-concepts.html) y se ha enviado a revisión la versión editable.
-- **Aprobado**: Cuando se habilita la [revisión en equipo](/es/platform/core/key-concepts.html) y si es que se cumplieron las condiciones de revisión del elemento. Si estás en este estado, tus plantillas están listos para ser publicados.
+En la parte superior derecha, puedes ver la última fecha de publicación y las acciones disponibles:
 
-En la parte superior derecha, encuentras la última fecha de publicación y las acciones disponibles:
-
-**Vista previa** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5c-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0a9.821 9.821 0 0 0-17.64 0z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Al hacer click en este icono se abre una nueva pestaña con el modo vista previa de los plantillas, en el cual podrás ver como si estuvieran publicados, todos los cambios que tienes en tus plantillas.
+**Vista previa:** Da click en este icono para abrir una nueva pestaña con el modo de vista previa de las plantillas. En esta vista puedes ver todos los cambios en tus plantillas, como si estuvieran publicados.
 
 :::warning Atención
-Puedes previsualizar los cambios como usuario sin sesión o usuario con sesión de Modyo. Para esto, es recomendable iniciar o cerrar la sesión de Modyo en el sitio antes de entrar al modo vista previa, dado que si se inicia o cierra sesión dentro del modo vista previa, podrías encontrarte con errores de seguridad del tipo _x-frame-options_ o _mixed-content_, dependiendo de la configuración de dominios personalizados y SSL del sitio
+Puedes previsualizar los cambios como usuario sin sesión o usuario con sesión de Modyo. Para esto, es recomendable iniciar o cerrar la sesión de Modyo en el sitio antes de entrar al modo vista previa, dado que si se inicia o cierra sesión dentro del modo vista previa. Esto se debe a que iniciar o cerrar sesión dentro del modo de vista previa puede generar errores de seguridad como _x-frame-options_ o _mixed-content_, dependiendo de la configuración de dominios personalizados y SSL del sitio.
 :::
 
-<img src="/assets/img/channels/template_builder/differences.jpg" style="border: 1px solid #EEEEEE" width="700" alt="The version differences window">
+**Diferencias:** Te lleva a la vista de diferencias, en la cual puedes comparar los cambios que hay entre múltiples versiones de tus plantillas.
 
-**Diferencias** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2v2z" fill="#626262"/></svg>: Al hacer click en este icono, irás a la [vista de diferencias](/es/platform/channels/sites.html#revision-y-publicacion-conjunta), en la cual podrás comparar los cambios que hay entre múltiples versiones de tus plantillas. 
-
-Por defecto, comienzas comparando la versión publicada con la versión editable, pero al hacer uso de los selectores de versiones, puedes comparar además con las versiones de respaldo.
+Por defecto, comienzas comparando la versión publicada con la versión editable. Usa los selectores de versiones para comparar con versiones de respaldo.
 
 :::tip Tip
-Cada vez que publicas una versión, la versión que estaba publicada pasa a ser una versión de respaldo. Por defecto, se guardan hasta 20 respaldos, de tal forma que los veinte respaldos más recientes se pueden comparar, restaurar, y hacer rollback. 
+Cada vez que publicas una versión, la versión que estaba publicada pasa a ser una versión de respaldo. Por defecto, se guardan hasta 20 respaldos, de tal forma que los veinte respaldos más recientes se pueden comparar, restaurar, y hacer rollback.
+
 Para más información sobre el versionamiento, ve [versionado](/es/platform/core/key-concepts.html#versionado).
 :::
 
-**Buscar en plantillas** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M9 13a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3a3 3 0 0 0-3 3m11 6.59V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12c.45 0 .85-.15 1.19-.4l-4.43-4.43c-.8.52-1.76.83-2.76.83a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5c0 1-.31 1.96-.83 2.75L20 19.59z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Despliega una barra lateral con un buscador de texto que busca en todas las plantillas editables. 
+**Buscar en plantillas:** Despliega una barra lateral con un buscador de texto que busca en todas las plantillas editables.
 
-<img src="/assets/img/channels/template_builder/conversation.jpg" style="border: 1px solid #EEEEEE" width="700" alt="The activity window">
+**Actividad/Comentarios:** Despliega una barra lateral que muestra el historial de actividad y comentarios de las plantillas.
 
-**Actividad/Comentarios** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 23a1 1 0 0 1-1-1v-3H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4.1l-3.7 3.71c-.2.18-.44.29-.7.29H12m1-6v3.08L16.08 17H21V7H7v10h6M3 15H1V3a2 2 0 0 1 2-2h16v2H3v12m6-6h10v2H9V9m0 4h8v2H9v-2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>: Despliega una barra lateral con el historial de actividad y comentarios de las plantillas. 
+Al final de la barra lateral, hay una caja de texto donde puedes escribir un comentario. Junto a cada actividad, puedes hacer click en **ver detalle** para mostrar la información completa de ese registro de actividad.
 
-Al final de la barra lateral, ves una caja de texto donde puedes escribir un comentario. Junto a cada actividad, puedes hacer click en **ver detalle** para mostrar la información completa de ese registro de actividad.
+**Más acciones:**
 
-**Más acciones** <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>:
-
-- **Restaurar todo**: Restauras las plantillas a su valor original.
+- **Restaurar todo:** Restauras las plantillas a su valor original.
 
 **Acción principal**
 
-- **Guardar**: Guarda todos los cambios de todas las plantillas.
-- **Enviar a revisión**: Cambia el estado de las plantillas a "Esperando revisión". En este estado puedes seguir haciendo cambios, pero cada cambio será notificado vía correo a los revisores asignados.
-- **Rechazar**: Vuelve al estado "En edición", notificando a los revisores que el elemento fue rechazado.
-- **Publicar**: Una vez que las plantillas fueron aprobadas, podrás ir a la vista de [publicación conjunta](/es/platform/channels/sites.html#revision-y-publicacion-conjunta) y publicar tus plantillas.
+- **Guardar:** Guarda todos los cambios de todas las plantillas.
+- **Enviar a revisión:** Cambia el estado de las plantillas a "Esperando revisión". En este estado puedes seguir haciendo cambios, pero cada cambio será notificado vía correo a los revisores asignados.
+- **Rechazar:** Vuelve al estado "En edición", notificando a los revisores que el elemento fue rechazado.
+- **Publicar:** Una vez que las plantillas fueron aprobadas, podrás ir a la vista de [publicación conjunta](/es/platform/channels/sites.html#revision-y-publicacion-conjunta) y publicar tus plantillas.
 
 En el área de trabajo principal, puedes ver dos secciones:
 
@@ -67,10 +61,10 @@ La barra de plantillas a la derecha tiene dos pestañas: vistas y snippets.
 
 ## Layouts
 
-Modyo cuenta con tres layouts por defecto: 
-* **Home**: Se usa exclusivamente en la página home del sitio.
-* **Base**: Todas las páginas excepto el home usan este layout por defecto.
-* **Error**: Las vistas de error usan este layout limpio (404, 401)
+Modyo cuenta con tres layouts por defecto:
+* **Home:** Se usa exclusivamente en la página home del sitio.
+* **Base:** Todas las páginas excepto el home usan este layout por defecto.
+* **Error:** Las vistas de error usan este layout limpio (404, 401)
 
 Puedes crear nuevos Layouts desde Plantillas, haciendo click en "Añadir layout" en la pestaña "Vistas", lo que te permitirá definir una nueva estructura base para usar en las páginas.
 
@@ -105,10 +99,10 @@ Luego de haber creado tu nuevo layout, puedes empezar a usarlo yendo a la vista 
 
 En la sección de vistas, encontrarás 4 tipos de error disponible para personalizar:
 
-* **Deshabilitado**: Verás esta vista de error si es que el sitio al que estás intentando acceder ha sido [deshabilitado](/es/platform/channels/sites.html).
-* **404**: Verás esta vista si entras a una URL del sitio que no está definida y si es que en la configuración de [restricciones del sitio](/es/platform/channels/sites.html#privacidad) decides mostrar el 404 y no redireccionar a la página home.
-* **Privacy**: Verás esta vista de error si no tienes permisos para acceder al [sitio](/es/platform/channels/sites.html#privacidad) o a una de sus [páginas](/es/platform/channels/pages.html#privacidad).
-* **Template**: Verás esta vista de error cuando la página del sitio que estés cargando tenga un error de sintaxis de liquid. Es poco probable que llegues a ver esta vista, dado que desde modyo 8.1 en adelante contamos con una funcionalidad que checa la sintaxis de liquid antes de poder guardar y publicar cambios en Plantillas.
+* **Deshabilitado:** Verás esta vista de error si es que el sitio al que estás intentando acceder ha sido [deshabilitado](/es/platform/channels/sites.html).
+* **404:** Verás esta vista si entras a una URL del sitio que no está definida y si es que en la configuración de [restricciones del sitio](/es/platform/channels/sites.html#privacidad) decides mostrar el 404 y no redireccionar a la página home.
+* **Privacy:** Verás esta vista de error si no tienes permisos para acceder al [sitio](/es/platform/channels/sites.html#privacidad) o a una de sus [páginas](/es/platform/channels/pages.html#privacidad).
+* **Template:** Verás esta vista de error cuando la página del sitio que estés cargando tenga un error de sintaxis de liquid. Es poco probable que llegues a ver esta vista, dado que desde modyo 8.1 en adelante contamos con una funcionalidad que checa la sintaxis de liquid antes de poder guardar y publicar cambios en Plantillas.
 
 ## CSS y JavaScript
 
@@ -126,7 +120,7 @@ Las vistas personalizadas de CSS y Javascript son la manera en la cual podrás i
 1. Una vez que hayas terminado de editar la Hoja de Estilo o Javascript, se debe incluir en tu Layout de la siguiente manera.
 
 
-Para incluir cualquiera de estas vistas, existen distintos filtros de Liquid disponibles: `asset_url` para definir el tipo de archivo, `stylesheet_tag`, y `script_tag` para generar los tags correspondientes, en el siguiente ejemplo se agrega: 
+Para incluir cualquiera de estas vistas, existen distintos filtros de Liquid disponibles: `asset_url` para definir el tipo de archivo, `stylesheet_tag`, y `script_tag` para generar los tags correspondientes, en el siguiente ejemplo se agrega:
 
 - Una vista personalizada de CSS con media: screen
 - Una vista personalizada de Javascript con carga asíncrona
@@ -134,7 +128,7 @@ Para incluir cualquiera de estas vistas, existen distintos filtros de Liquid dis
 ```html
 <head>
   {{ 'my-css' | asset_url: 'css' | stylesheet_tag: media: 'screen', title: 'color style' }}
-  {{ 'my-js'  | asset_url: 'js'  | script_tag: async: 'async', defer: 'defer' }} 
+  {{ 'my-js'  | asset_url: 'js'  | script_tag: async: 'async', defer: 'defer' }}
 </head>
 ```
 
@@ -150,13 +144,11 @@ Para conocer a detalle y los parámetros soportados por estos filtros, dirígete
 
 ## Snippets
 
-Los snippets son pedazos de código HTML, JS, o CSS que pueden ser reutilizados en tus sitios. Junto a cada snippet personalizado, encontrarás un ícono (<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>) para copiar su ruta de referencia. El código lucirá similar a este: <span v-pre>`{% snippet "nombre-del-snippet" %}`</span>. Este código Liquid se debe pegar en donde se quiera llamar a este Snippet.
+Los snippets son fragmentos de código HTML, JS o CSS que puedes reutilizar en tus sitios. Puedes copiar la ruta de referencia de cada snippet personalizado. El código Liquid será similar a: <span v-pre>`{% snippet "nombre-del-snippet" %}`</span>. Pega este código donde quieras llamar a este Snippet.
 
-Puedes añadir snippets personalizados al final del listado de snippets de la plataforma, haciendo click en el botón **+**.
+Puedes añadir snippets personalizados al final del listado de snippets de la plataforma, haciendo click en el botón **+ Add a Snippet**.
 
-<img src="/assets/img/channels/template_builder/custom-snippet.jpg" style="border: 1px solid #EEEEEE" width="300" alt="The custom snippet window">
-
-:::tip Tip
+:::warning Importante
 Para que el sistema reconozca el tipo de lenguaje de programación al que pertenece el snippet, se debe agregar la terminación con guión bajo + terminación, es decir **"front_css"** o **"library_js"** por defecto reconocerá el snippet como lenguaje HTML.
 :::
 
@@ -166,27 +158,19 @@ Todos los elementos del Template Builder usan Liquid como motor de plantillas.
 Para más información sobre qué es Liquid y cómo sacarle el mejor provecho, echa un vistazo a la página [Liquid Markup](/es/platform/channels/liquid-markup.html)
 :::
 
-En el área de trabajo, debajo de las pestañas, encontrarás una barra con elementos útiles:
+En el área de trabajo, debajo de las pestañas, encontrarás una barra con estos elementos:
 
-<img src="/assets/img/channels/template_builder/bar-templates.jpg" style="border: 1px solid #EEEEEE" width="700" alt="Action bar inside templates">
-
-**Gestor de archivos**: Se levanta un modal donde puedes acceder a todos los archivos de la cuenta y copiar su URL. Si accedes a la segunda pestaña, puedes subir nuevos archivos.
+**Gestor de archivos:** Se levanta un modal donde puedes acceder a todos los archivos de la cuenta y copiar su URL. Si accedes a la segunda pestaña, puedes subir nuevos archivos.
 
 :::tip Tip
 Para más información sobre los beneficios y prestaciones de Gestor de Archivos, dirígete a [Gestor de Archivos](/es/platform/content/asset-manager.html)
 :::
 
-**Atajos de teclado**: Se muestra un pequeño pop-up con algunos de los atajos de teclado útiles para usar en Plantillas.
+**Atajos de teclado:** Se muestra un pequeño pop-up con algunos de los atajos de teclado útiles para usar en Plantillas.
 
-<img src="/assets/img/channels/template_builder/keywords.jpg" width="400" alt="Keyboard shortcuts inside the templates module">
+**Snippets:** Se despliega un listado con todos los snippets, junto a la opción de copiar su código de referencia.
 
-**Snippets**: Se despliega un listado con todos los snippets, junto a la opción de copiar su código de referencia.
-
-<img src="/assets/img/channels/template_builder/snippets.jpg" width="300" alt="The list with all your custom snippets">
-
-**Cambios**: Un listado de todas las veces y estados en los que has hecho la acción "Guardar" en esta versión. Al hacer click en alguna de las sub-versiones, cambias el contenido del template en el que estás trabajando a esa sub-versión.
-
-<img src="/assets/img/channels/template_builder/changes.jpg" style="border: 1px solid #EEE" width="300" alt="The latest changes in your template">
+**Cambios:** Un listado de todas las veces y estados en los que has hecho la acción "Guardar" en esta versión. Al hacer click en alguna de las sub-versiones, cambias el contenido del template en el que estás trabajando a esa sub-versión.
 
 :::tip Tip
 Si publicas una versión, puedes ver que el listado de cambios desaparece, esto es porque la nueva versión editable no ha tenido ningún cambio.
@@ -197,15 +181,15 @@ Las sub-versiones son por cada plantilla, por lo que para algunos puedes observa
 :::
 
 :::tip Tip
-Si se reestablece una versión anterior a la versión editable, podrás acceder a las sub-versiones de cada template de esa versión. 
+Si se reestablece una versión anterior a la versión editable, podrás acceder a las sub-versiones de cada template de esa versión.
 Puedes aprender más sobre el [versionado aquí](/platform/core/key-concepts.html#versionado).
 :::
 
-Al igual que cada template, puedes restaurar todos los templates a su versión original haciendo click en la acción secundaria de la barra superior "<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88c3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg> Restaurar todo". Para que esos cambios tengan efecto, debes publicar los templates.
+Al igual que cada plantilla, puedes restaurar todas las plantillas a su versión original haciendo click en la acción secundaria de la barra superior "Restaurar todo". Para que los cambios tengan efecto, debes publicar las plantillas.
 
 ## SEO
 
-El SEO [(Search Engine Optimization)](/es/platform/channels/sites.html#seo) es uno de los tópicos más importantes del sitio y del contenido. 
+El SEO [(Search Engine Optimization)](/es/platform/channels/sites.html#seo) es uno de los tópicos más importantes del sitio y del contenido.
 
 En Modyo existe una forma de controlar la forma en que los motores de búsqueda leen tu sitio y contenido, añadiendo meta tags de forma dinámica dependiendo de los atributos que añadas a tus páginas y contenidos.
 
@@ -235,7 +219,7 @@ Puedes añadir este snippet de código en Plantillas y luego llamar a este snipp
 
 Este snippet utiliza Liquid para agregar meta tags a nivel Sitio. También agrega meta tags específicos cuando el usuario navega a una Página de Widget o de Contenido.
 
-Si es que lo requieres, puedes personalizar este snippet, definiendo qué meta tags quieres que aparezcan para URLs o tipos específicos. 
+Si es que lo requieres, puedes personalizar este snippet, definiendo qué meta tags quieres que aparezcan para URLs o tipos específicos.
 
 ## Ejemplos de SEO
 
@@ -257,13 +241,13 @@ Por ejemplo, si quieres usar meta tags específicas cuando un usuario visita una
 <meta property="og:description" content="{{ entry.meta.excerpt }}" />
 {% if entry.type_uid = 'posts'%}
 <meta property="og:type" content="article" />
-{endif} 
+{endif}
 {% if entry.type_uid = 'place'%}
 <meta property="og:type" content="place" />
 <meta property="place:latitude" content="{{ entry.location.first.latitude }}" />
 <meta property="place:longitude" content="{{ entry.location.first.longitude }}" />
-{% endif %} 
-{% endif %} 
+{% endif %}
+{% endif %}
 ...
 ```
 
@@ -275,7 +259,7 @@ En caso de tener meta tags específicas cuando muestras Entradas que pertenecen 
 
 ```html
 {% assign category_name = category_path | split: '/' | last | capitalize %}
- 
+
 {% case category_name %}
   {% when 'Category 1' %}
      {% assign category_description = 'This is the meta description for Category 1' %}

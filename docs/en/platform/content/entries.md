@@ -97,7 +97,7 @@ If the name field is empty, the platform defaults the UUID of the entry as a slu
 
 ## Translate an Entry
 
-Modyo Platform allows you to add different languages to your Spaces and create Entries for them. To translate an existing entry into a different language, you must ensure that the language has been added to the Localization section in the Space settings. 
+Modyo Platform allows you to add different languages to your Spaces and create Entries for them. To translate an existing post into a different language, you must ensure that the language has been added to the Localization section in the Space settings.
 
 To translate an entry, follow these steps:
 
@@ -136,8 +136,6 @@ To unpublish content, follow these steps:
 1. In the Entries menu, select your Entry.
 1. Expand the Mass Actions menu and click Unpublish.
 
-<img src="/assets/img/content/despublicar.jpg" alt="Unpublish entries using bulk actions" style="margin: 40px auto; width: 500px; display: block;">
-
 
 ### Delete Entries
 
@@ -163,7 +161,7 @@ You can preview the content either as a logged in user or as a user that has not
 
 #### Edit an entry
 
-If you want to edit an entry, click the entry's name inside the entry manager.
+To edit an entry, click the entry's name in the entry manager.
 
 This will take you to the edit view where you can change the content and properties of the post, such as the name, slug and tags.
 
@@ -177,20 +175,20 @@ To see the Categories, click the **Categories** section in the main menu on the 
 
 #### Create a Category
 
-To create a category, click on the green button at the top of the screen. This takes us to the next screen where we define the Title, Path (for the url), and optionally, a Parent category, e.g. a category "dogs" with the parent category "pets" would resolve to "pets/dogs" in the URL.
+To create a category, click on the green button at the top of the screen. You will then see a screen that will ask you to enter its name, the Route and if it has a Parent Category.
 
 For entries in these categories, the identifier is added as a prefix to the URL of the entry. For example:
 
 An entry with URL: test.modyo.com/visita-chile and category 'travel' would now be test.modyo.com/travel/visita-chile.
 
 :::tip Tip
-When the category title is entered, the path field will default to matching the same letters, in a url-accepted format. To change it, click the field to edit it.
+When the category name is entered, the path defaults to a slug. To change it, click on it.
 
 If we change the path, remember to change all links in any channel using it.
 :::
 
-:::warning Warning
-If you want to delete a category, click the three-point icon at the end of its name, then select **Delete**. If there are entries assigned to that category, they will lose their category assignment, and you will need to reassign them to another category.
+:::warning Attention
+If you want to delete a category, simply click on the icon at the bottom of its name. However, if there are Entries assigned to that category, they are not deleted but are not already assigned to any category. To reassign a category to them, it is necessary to re-assign them.
 :::
 
 :::danger Danger
@@ -200,10 +198,6 @@ If the Parent Category is deleted, all subcategories assigned to it are also del
 ### Tags
 
 Tags allow you to add more granularity to your Entries by combining it with Liquid on your content pages. When creating Entries, you can add a tag that appears both in the source code and in our content API so that you can add specific functionality to this tag.
-
-<img src="/assets/img/tutorials/how-to-create-custom-view/preview_site.png" alt="The JSON information that appears when you click the preview site button."/>
-
-For example, if this entry is a featured entry, you can add a 'featured' tag and add functionality through the Channels module.
 
 ### Slug
 
@@ -217,7 +211,7 @@ This value must be unique for entries of the same type. If two entries with the 
 
 If you want the content to be private or exclusive for users who have a current authenticated session within the platform, you must enable this option.
 
-Depending on how you are consuming the content, you will need to perform extra steps to access it. If you are using the public API, go to the section on [private content in the API](/en/platform/content/public-api-reference.html#private-content). If you are consuming the content through [Liquid](/en/platform/channels/liquid-markup.html), it is enough for users to log in to the site in order to view private content.
+Depending on how you are consuming the content, you will need to perform extra steps to access it. If you are using the public API, go to the section on [private content in the API](/en/platform/content/public-api-reference.html#private-content). If you are consuming the content through Liquid, it is enough for users to log in to the site in order to view private content.
 
 ### Segments
 
@@ -229,7 +223,7 @@ To create a specific target, review the [Segments section](/en/platform/customer
 
 ## Consume externally
 
-Access the content created in the Content module from anywhere using our API. 
+Access the content created in the Content module from anywhere using our API.
 
 Follow these steps to get the uuid of an entry:
 
@@ -244,33 +238,33 @@ URL: `https://test.modyo.com/api/content/spaces/test-space/types/nuevo/entries/4
 
 ```json
 {
- “goal”:
- {
- “name”: “My New Entry”,
- “slug”: “my new entry”,
- “tags”: [],
- “type”: “NewType”,
- “uuid”: “45fa2ef7-bf12-47a3-8ff7-f7d1f5f36844",
- “space”: “test-space”,
- “author”:
- {},
- “locale”: “en-cl”,
- “private”: false,
- “targets”: [],
- “category”: “mycategory”,
- “created_at”: “2022-02-24T 12:44:24. 000-03:00 “,
- “updated_at”: “2022-02-25T 10:06:46. 000-03:00 “,
- “published_at”: “2022-02-25T 10:06:46. 000-03:00 “,
- “version_type”: “current”,
- “category_name”: “myCategory”,
- “category_slug”: “mycategory”,
- “unpublished_at”: null,
- “available_locales”: ["en-cl"]
- },
- “fields”:
- {
- “My items”: “...”
- }
+  "meta":
+  {
+    "name": "MyNewEntry",
+    "slug": "mynewentry",
+    "tags": [],
+    "type": "newType",
+    "uuid": "45fa2ef7-bf12-47a3-8ff7-f7d1f5f36844",
+    "space": "test-space",
+    "author":
+    {},
+    "locale": "es-cl",
+    "private": false,
+    "targets": [],
+    "category": "mycategory",
+    "created_at": "2022-02-24T12:44:24.000-03:00",
+    "updated_at": "2022-02-25T10:06:46.000-03:00",
+    "published_at": "2022-02-25T10:06:46.000-03:00",
+    "version_type": "current",
+    "category_name": "MyCategory",
+    "category_slug": "mycategory",
+    "unpublished_at": null,
+    "available_locales": ["es-cl"]
+  },
+  "fields":
+  {
+    "My items": "..."
+  }
 }
 ```
 

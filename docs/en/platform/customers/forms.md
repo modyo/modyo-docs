@@ -6,8 +6,6 @@ search: true
 
 One of the most demanted features in any platforms is the ability to capture of user data, analyze it, and use it for segmentation. With this tool you can create as many forms as you need to collect data from the users of your sites.
 
-![Digital factory](/assets/img/platform/form-index.png)
-
 When you access the tool, you are able to see a list of all the forms currently active in the account. You can filter by their status (enabled or disabled), by the site they're deployed to, and search by the name of the form.
 
 In each row of the forms table, the columns are ordered by the name of the form, the date it was created, and the number of responses that were submitted for that form.
@@ -56,8 +54,6 @@ If a user does not have an active session, fills out the form, and the email mat
 :::
 
 ## Edit a form
-
-<img src="/assets/img/customers/forms/edit-form.jpg" style="border: 1px solid #EEE; margin-top: 40px">
 
 To edit a form, follow these steps:
 
@@ -143,8 +139,6 @@ The **General** section adds two options:
 
 #### Snippet
 The **Form Snippet** section, which will only appear if the form is public, will allow you to copy a _HTML_ code that you can use anywhere to dynamically load the form, even outside of Modyo.
-
-<img src="/assets/img/customers/forms/form-embed.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="350">
 
 :::warning Warning
 In order to make proper use of the form snippet, you must take into account the _CORS_ configuration of your account in Modyo and the security _headers_ from where you are inserting the snippet.
@@ -239,5 +233,3 @@ You can delete answers one by one using the action to the right of each answer, 
 :::
 
 To see a user response in detail, just click on the user name, and you can access a list of questions next to the answers that user sent to a particular form.
-
-<img src="/assets/img/customers/forms/submission-show.jpg" style="border: 1px solid #EEE; margin-top: 40px" width="600">

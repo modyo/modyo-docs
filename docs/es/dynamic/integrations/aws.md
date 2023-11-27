@@ -4,8 +4,8 @@ search: true
 
 # Amazon AWS
 
-Librería tipo "wrapper" del API oficial de AWS, que permite otrogar acceso organizado a las APIs importantes de AWS utilizadas en la implementación de microservicios con esta tecnología. Actualmente existe soporte para los siguientes servicios:
-- Interacción con repositorios de AWS S3 (pública y privada)
+Amazon AWS es una librería tipo _wrapper_ del API oficial de AWS, que permite otorgar acceso organizado a las APIs clave de AWS utilizadas en la implementación de microservicios con esta tecnología. Actualmente, ofrece soporte para los siguientes servicios:
+- Interacción con repositorios públicos y privados de AWS S3
 - Interacción con sistema de colas SQS
 - Interacción con AWS API Gateway
 

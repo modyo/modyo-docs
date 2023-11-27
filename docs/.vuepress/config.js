@@ -82,7 +82,6 @@ module.exports = {
                           path: "/en/platform/core/",
                           collapsable: true,
                           children: [
-                              "/en/platform/core/the-modyo-interface",
                               "/en/platform/core/key-concepts",
                               "/en/platform/core/configuration",
                               {
@@ -219,7 +218,7 @@ module.exports = {
                           ],
                       },
                       {
-                          title: "Integraciones",
+                          title: "Integrations",
                           collapsable: true,
                           path: "/en/dynamic/integrations/",
                           children: [
@@ -361,7 +360,6 @@ module.exports = {
                           path: "/es/platform/core/",
                           collapsable: true,
                           children: [
-                              "/es/platform/core/the-modyo-interface",
                               "/es/platform/core/key-concepts",
                               /*"/es/platform/core/integration",*/
                               /*"/es/platform/core/installation",*/
@@ -372,7 +370,7 @@ module.exports = {
                                   collapsable: true,
                                   children: [
                                       ["/es/platform/core/integrations/identity-providers", "Proveedores de Identidad"],
-                                      ["/es/platform/core/integrations/scim", "Provisionamiento SCIM con Microsoft Azure AD"],
+                                      ["/es/platform/core/integrations/scim", "Aprovisionamiento SCIM con Microsoft Azure AD"],
                                       ["/es/platform/core/integrations/google-data-studio-integration", "Integración con Google Analytics"],
                                       ["/es/platform/core/integrations/oidc", "Gestión de sesión privada usando OpenID Connect (OIDC)"],
                                   ],

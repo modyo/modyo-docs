@@ -9,8 +9,6 @@ Content Types are the basis for your Posts. The Types define which fields and va
 
 Content Types can be assigned cardinality. This variable indicates how many Entries can exist for this Type. You can add languages to the repository and generate Multilingual Entries, stored in one place. In addition, you can create Users, with different roles and permissions, thus achieving a division of labor called Team Review.
 
-<img src="/assets/img/content/types/types.jpg" alt="The UI for the Content Type module.">
-
 ## About the Interface
 
 When you first enter the Types section, click the green **+New Type** button to create a new Type.
@@ -42,13 +40,15 @@ To create a new type of content that will serve as the basis for your posts, fol
 4. Select the type's cardinality.
 5. Click **Create**.
 
-:: :tip Tip
+:::tip Tip
 We recommend writing the format of the entries within the identifier, for example, videos, posts, etc. This way, any member of the team will know what type of content it is and can use it as a template for their posts without having to create a new one.
 
-Cardinality refers to the number of entries that can exist for that type of content. If you select “individual cardinality”, only one such entry is allowed. If you choose “multiple cardinality”, there is no limit to the number of entries allowed.:::
+Cardinality refers to the number of entries that can exist for that type of content. If you select “individual cardinality”, only one such entry is allowed. If you choose “multiple cardinality”, there is no limit to the number of entries allowed.
+:::
 
 :::warning Attention
-Please note that there is a limit of 50 Content Types per Space.:::
+Please note that there is a limit of 50 Content Types per Space.
+:::
 
 In the creation interface, you'll find an empty template in the center of the screen and on the right side, a table with three tabs: 
 
@@ -60,7 +60,7 @@ This interface allows you to create each of the types and format them as needed,
 
 ## Fields
 
-:: :tip Tip
+:::tip Tip
 The name of the field is of utmost importance, since it will be used to access its value in the Liquid and JS SDKs. To access the value of a field in an entry, you can use the syntax <span v-pre>`{{entry ["field name"]}}`</span>. 
 
 For more information go to the [API reference](/en/platform/content/public-api-reference.html)
@@ -173,8 +173,9 @@ You can validate the contents of the fields as follows:
   - If you mark an item as required, that item must have content.
 - **Unique**: When you mark an entry as unique, its content cannot be repeated within the same group. 
 
-:: :tip Tip
-A group can host any type of field, except another group. :::
+:::tip Tip
+A group can host any type of field, except another group.
+:::
 
 
 ## Settings

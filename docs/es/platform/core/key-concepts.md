@@ -21,8 +21,6 @@ Estos revisores son los responsables de aprobar o rechazar el elemento, y determ
 
 Cada paso de este proceso lleva al elemento a través de distintos estados, que quedan registrados en un historial para su posterior auditoría.
 
-<img src="/assets/img/platform/core/team-review.png" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
-
 ### Configuración
 
 Para activar la revisión de equipo, sigue estos pasos:
@@ -30,8 +28,6 @@ Para activar la revisión de equipo, sigue estos pasos:
 1. Desde el menú lateral en Modyo Platform, selecciona un espacio o sitio.
 2. Expande **Configuración del espacio/sitio** y selecciona **Revisión en Equipo**.
 3. Haz click en **Habilita la revisión en equipo**.
-
-<img src="/assets/img/platform/teamreviewsettings.jpg" width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
 
 Las opciones disponibles son:
 
@@ -77,8 +73,8 @@ Esta opción existe porque hay ocasiones en las que es necesario publicar rápid
 ### Mis Tareas
 
 La sección Mis tareas en Modyo te da una visión general de todos los elementos que requieren tu atención. Te permite acceder a información sobre el tipo de elemento, su autor y cuándo fue actualizado por última vez.
-Una vez que un elemento ha sido marcado para revisión, el usuario asignado puede revisarlo y aprobarlo en la sección My Tasks. 
-<img src="/assets/img/platform/core/my-tasks.png"/>
+Una vez que un elemento ha sido marcado para revisión, el usuario asignado puede revisarlo y aprobarlo en la sección My Tasks.
+
 Para ver y revisar todas las tareas asignadas a ti, sigue estos pasos:
 1. Ve a Inicio.
 2. Haz click en Mis tareas.
@@ -88,15 +84,11 @@ Para ver y revisar todas las tareas asignadas a ti, sigue estos pasos:
 
 Cuando se activa la opción de revisión en equipo y se guardan los cambios, se muestra el botón verde principal **Enviar a revisión**.
 
-<img src="/assets/img/platform/send-to-review-bar.jpg" width="350px" style=" border: 1px solid #EEE;" />
-
 Al enviar a revisión, la barra cambia de estado para indicar si faltan condiciones o si no se tiene permiso suficiente.
 
 Al hacer click, en la sección lateral derecha se indicarán los requerimientos para publicar el elemento.
 
 Si se requiere la revisión de algún revisor, aparecerá `(requerido)` junto a su nombre en el listado de revisores.
-
-<img src="/assets/img/platform/box-reviewers.jpg" width="500px" style="border: 1px solid #EEE;" />
 
 A la derecha de cada revisor, está el estado de su revisión. Se muestra un círculo amarillo si no ha hecho su revisión, y un check verde en caso de haber aprobado el elemento.
 
@@ -104,9 +96,9 @@ Todos los usuarios que tienen acceso a la vista de edición del elemento verán 
 
 Los usuarios con los permisos necesarios pueden hacer click en el botón **Aprobar** para aprobar el elemento. Aquellos que no tienen los permisos ven el botón deshabilitado.
 
-Al aprobar el elemento, la aprobación de ese usuario queda registrada y se muestra un check verde junto a su nombre en el listado de revisores.
+Al aprobar el elemento, la aprobación del usuario queda registrada y se muestra un check verde junto a su nombre en el listado de revisores.
 
-Al habilitar la revisión en equipo, en la barra de acciones del elemento, a la izquierda del botón principal de color verde y a la derecha del botón de diferencias, aparece un ícono ( <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 23a1 1 0 0 1-1-1v-3H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4.1l-3.7 3.71c-.2.18-.44.29-.7.29H12m1-6v3.08L16.08 17H21V7H7v10h6M3 15H1V3a2 2 0 0 1 2-2h16v2H3v12m6-6h10v2H9V9m0 4h8v2H9v-2z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg> ) para abrir la pestaña de actividad del elemento.
+Al habilitar la revisión en equipo, en la barra de acciones del elemento, a la izquierda del botón principal de color verde y a la derecha del botón de diferencias, puedes encontrar la opción para abrir la pestaña de actividad del elemento.
 
 Al abrir esta pestaña, se muestra una lista cronológica de las acciones realizadas en el elemento, con la opción de ver los detalles de cada acción. Al final de la pestaña, está la opción de dejar un comentario.
 
@@ -114,16 +106,14 @@ Cuando se deja un comentario o se ejecuta alguna acción sobre el elemento, se e
 
 ## Revisión y Publicación Conjunta
 
-<img src="/assets/img/platform/core/review-joint-publication.png" width="800px" style="border: 1px solid #EEE;" alt="Modal de diferencias"/>
-
-En la pantalla de revisión y publicación conjunta puedes ver todos los cambios pendientes por publicar en tu sitio. Tienes la opción de ver qué cambio al hacer click en el botón **Ver**. 
+En la pantalla de revisión y publicación conjunta puedes ver todos los cambios pendientes por publicar en tu sitio. Tienes la opción de ver qué cambio al hacer click en el botón **Ver**.
 
 ### Publicar en conjunto
 
 Para hacer una publicación en conjunto en tu sitio, sigue estos pasos:
 
 1. En el menú principal de Modyo Platform, expande **Channels**, y haz click en **Sitios**.
-1. Haz click en tu sitio. 
+1. Haz click en tu sitio.
 1. En la pantalla de Resumen, haz click en **Publicar**.
 1. Aquí podrás ver todos los cambios pendientes. Selecciona todo lo que quieres publicar y haz click en **Publicar**.
 
@@ -190,8 +180,6 @@ Dentro del versionado hay dos acciones que te permiten interactuar con los respa
 
 Puedes cambiar qué versiones comparar, cambiando los valores en los selectores de versiones en la parte superior del modal.
 
-<img src="/assets/img/platform/differences.jpg" width="800px" style="border: 1px solid #EEE;" alt="Modal de diferencias"/>
-
 Sigue estos pasos para revertir a una versión publicada en una Entrada:
 
 1. Desde Modyo Platform, expande Content y selecciona Espacios.
@@ -225,8 +213,6 @@ Dado que esta es una acción potencialmente peligrosa, solo los administradores 
 
 Locks es una funcionalidad de Modyo que permite modificar un recurso de manera segura, evitando problemas de concurrencia que puedan ocurrir cuando otro usuario esté trabajando en él simultáneamente. De esta forma Modyo evita la pérdida de trabajo o la sobreescritura de documentos.
 
-<img src="/assets/img/platform/locks.jpg" style="border: 1px solid #EEE;" />
-
 ### ¿Qué elementos usan Locks?
 
 Locks se usa principalmente en [Content](/es/platform/content/) y en [Channels](/es/platform/channels/), pero también puede ser usado en otras secciones donde se editan elementos como Configuraciones y [Customers](/es/platform/customers/).
@@ -246,8 +232,6 @@ En este caso, sólo un Administrador podrá tomar el control, activando para sí
 
 Si un Administrador quiere tomar el control de una vista, deberá hacer click en el elemento en uso y en la pantalla siguiente, hacer click en el botón **Tomar Control**.
 
-<img src="/assets/img/platform/lock-forms.jpg" style="border: 1px solid #EEE;" />
-
 Cuando el Administrador toma el control, el usuario que esté usando el recurso recibe un mensaje en el que se le impide seguir haciendo cambios, por lo que cualquier cambio que el usuario esté realizando, debe ser guardado y respaldado offline.
 
 Tras tomar el control, el Administrador solo tiene dos horas para hacer cambios sin guardar. Pasado ese tiempo, el recurso vuelve a liberarse y puede ser tomado por cualquier otro usuario.
@@ -255,9 +239,7 @@ Tras tomar el control, el Administrador solo tiene dos horas para hacer cambios 
 
 ## Modo vista previa
 
-El modo vista previa te permite previsualizar los cambios realizados a elementos publicables como las Entradas, Pages, Navigation, Widgets o Plantillas. El acceso a este modo está en la parte superior derecha del sitio con el ícono <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5c-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0a9.821 9.821 0 0 0-17.64 0z" fill="#626262"/><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>. Puedes reconocer que estás en modo vista previa, cuando veas la barra en la parte superior del sitio.
-
-![Barra de vista previa](/assets/img/platform/preview-bar.png)
+El modo vista previa te permite previsualizar los cambios realizados a elementos publicables como entradas, páginas, navegación, widgets o plantillas. El acceso a este modo está en la parte superior derecha del sitio. Puedes reconocer que estás en modo vista previa, cuando veas la barra en la parte superior del sitio.
 
 La barra de vista previa contiene los siguientes elementos interactivos:
 
@@ -302,6 +284,6 @@ Cuando uses las variables globales, siempre se tomará como preferencia las vari
 :::
 
 :::danger Peligro
-Las variables globales no cuentan con un flujo de trabajo de publicación, versionado, ni revisión en equipo. Solo los administradores de la cuenta y el sitio pueden modificarlas, por lo que debes considerar que al hacer cambios en estos valores, se verán reflejados inmediatamente en todo lugar donde se estén usando. 
+Las variables globales no cuentan con un flujo de trabajo de publicación, versionado, ni revisión en equipo. Solo los administradores de la cuenta y el sitio pueden modificarlas, por lo que debes considerar que al hacer cambios en estos valores, se verán reflejados inmediatamente en todo lugar donde se estén usando.
 Esto no aplica para las variables definidas en los widgets dado que los widgets y páginas si cuentan con flujo de publicación.
 :::
