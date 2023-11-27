@@ -56,7 +56,7 @@ Para habilitar o deshabilitar la funcionalidad de búsqueda en un sitio sigue es
 
 1. En el menú lateral, haz click en **Configuración del sitio**.
 1. Haz click en **General**.
-1. En la sección **Privacidad** deshabilita la casilla **Habilitar búsqueda**.
+1. En la sección **Privacidad** habilita la casilla **Habilitar búsqueda**.
 1. Haz click en **Guardar**.
 
 
