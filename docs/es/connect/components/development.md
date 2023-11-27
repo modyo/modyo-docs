@@ -15,7 +15,7 @@ Al activar el acceso de desarrollador debes tener en cuenta:
 
 ### Pasos para activar
 Crea un ticket de requerimiento en el [Centro de Soporte de Modyo](https://support.modyo.com) en el que indicas:
-- Usuario GitHub del desarrollador (si no tienes uno, deberá ser creado previamente).
+- Usuario GitHub del desarrollador (si no tienes uno, deberás crearlo previamente).
 - Nombre y correo electrónico del desarrollador.
 - Si el desarrollador está autorizado o no para solicitar cambios en los componentes del servicio.
 
