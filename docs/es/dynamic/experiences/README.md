@@ -4,33 +4,29 @@ search: true
 
 # Experiencias Dynamic
 
-**Dynamic Framework** ofrece un catálogo de experiencias digitales centradas en servicios financieros que te permitirán crear aplicaciones funcionales en solo minutos.
+**Dynamic Framework** te ofrece un catálogo de experiencias digitales enfocadas en servicios financieros que te permiten crear aplicaciones funcionales rápidamente.
 
-Actualmente, tenemos experiencias listas para trabajar en las áreas de _[Banca Retail](/es/dynamic/experiences/retail/dashboard.html) y [Banca Empresas](/es/dynamic/experiences/business/dashboard.html)_. 
+En esta sección encuentras el catálogo completo de experiencias financieras en las áreas de [Banca Retail](/es/dynamic/experiences/retail/dashboard.html) y [Banca de Empresas](/es/dynamic/experiences/business/dashboard.html), así como instrucciones para su instalación y desarrollo en tu ambiente local.
 
 
-### ¿Qué es un Widget?
-Un **Widget** es un componente aislado que empaqueta su propio marcado, estilo e interactividad de manera que pueda ser desplegado como parte de cualquier página web sin tener errores de runtime o conflictos con los estilos o el javascript de la página que lo aloja.
+### Beneficios de usar experiencias financieras
 
-En otras palabras, un **Widget** es un [micro frontend](https://martinfowler.com/articles/micro-frontends.html): un estilo arquitectónico que permite componer y desplegar múltiples aplicaciones javascript en una página.
+Las experiencias financieras te permiten acelerar y agilizar el desarrollo de soluciones para la industria financiera y banca digital, al ofrecer componentes interactivos personalizables. Además, ofrecen:
 
-### ¿Por qué usar un Widget de Dynamic?
-El catálogo de Widgets financieros están diseñados para acelerar el desarrollo de tus experiencias digitales porque te ofrecen componentes interactivos para que los personalices y los ensambles en flujos que se adapten a tu negocio.
-
-Los Widgets financieros entregan de la caja:
-- **UX** pensado para facilitar la interacción de usuarios
-- **Accesibilidad básica** (como contraste de colores adecuados, uso de tamaños tipográficos legibles, estructura semántica, etc)
-- **Internacionalización y localización de textos y monedas**. Por defecto cada Widget viene en inglés y español, pero tiene toda la infraestructura necesaria para personalizar los idiomas que trae o agregar más idiomas para que se adapte a la necesidad de tu negocio. Si son desplegados en Modyo, los Widgets detectan el idioma configurado para el sitio
-- **Validaciones para formularios, fechas**
-- **Estilos planos para una fácil personalización** con nuestro sistema de diseño y librerías populares como [Bootstrap](https://getbootstrap.com/).
+- **Experiencia de Usuario (UX):** Diseñada para facilitar la interacción de los usuarios.
+- **Accesibilidad básica:** Incluyendo contraste de colores adecuados, uso de tamaños tipográficos legibles y estructura semántica, entre otros.
+- **Internacionalización y localización de textos y monedas:** Las experiencias están desarrolladas en en inglés y español, y pueden ser personalizadas a otros idiomas, según requieras. Una vez desplegadas en Modyo, los experiencias detectan el idioma configurado para tu sitio.
+- **Validaciones para formularios y fechas**.
+- **Estilos planos para una fácil personalización:** A través de nuestro sistema de diseño y librerías populares como [Bootstrap](https://getbootstrap.com/).
 
 
 ## Instalación de experiencias Dynamic
 
-Para instalar una experiencia de Dynamic, solo tienes que elegir una de nuestros proyectos listos para utilizar y ejecutar el comando:
+Para instalar una experiencia de Dynamic:
+
+1. Elige una plantilla
+1. Ejecuta este comando, indicando el nombre de la plantilla:
 
 ```bash
 modyo-cli get dynamic-retail-dashboard-template
 ```
-
-Reemplaza el nombre con la plantilla que deseas descargar.
