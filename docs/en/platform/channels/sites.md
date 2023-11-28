@@ -179,7 +179,7 @@ If you enable search on your site and use the `multi=true` parameter from other 
 
 These options pose a risk to the experience of the site and its users. Proceed carefully.
 
-- Change realm: This field displays the kingdom of the site. When you change your kingdom, you lose all the privacy settings on your sites, pages and navigation.
+- Change realm: This field displays the site's realm. When changing your realm, you lose all the privacy settings on your sites, pages and navigation.
 - Site Status: Change the status of the site between three different options.
     * Enabled: Allows the site to be editable and visible to the public. This is the default state of a site.
     * Editable: Allows a site to be modified, but is not visible to the public. Users must log in to Modyo Platform to access the site. Robots.txt, PWAs, and the manifest are disabled in this state.
