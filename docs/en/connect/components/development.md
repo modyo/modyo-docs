@@ -38,7 +38,7 @@ The activation of a Code Repository is done by means of a request ticket in the 
 ## Continuous Integration
 The continuous integration configuration is used to automate common processes within the software development cycle. Within these processes we find mainly code inspection, dependency review, artifact packaging, deployments, among others.
 
-Modyo uses the continuous integration systems of GitHub Enterprise and Amazon. All activities related to the development cycle, such as inspections, reviews or generation of intermediate artifacts, are performed on GitHub Actions. All the automations referring to [micro frontends] (/es/architecture/patterns/micro-frontend), such as the deployment to the Modyo platform using the Modyo CLI, are also carried out on GitHub Actions. Activities related to the generation of container-based artifacts and their deployments on AWS ECS are performed using AWS CodePipeline.
+Modyo uses the continuous integration systems of GitHub Enterprise and Amazon. All activities related to the development cycle, such as inspections, reviews or generation of intermediate artifacts, are performed on GitHub Actions. All the automations referring to [micro frontends] (/en/architecture/patterns/micro-frontend), such as deployment to the Modyo platform using the Modyo CLI, are also carried out on GitHub Actions. Activities related to the generation of container-based artifacts and their deployments on AWS ECS are performed using AWS CodePipeline.
 
 :::warning Important
 AWS CodePipeline-based integrations will be migrated to GitHub Actions during the first half of 2023.
