@@ -537,7 +537,7 @@ The _header_ `Referer` contains information from the previous web page from whic
 * **same-origin**: Sends _referrer_ information for same origin _requests_ only.
 * **strict-origin**: Sends the origin domain only for same security level _requests_, and doesn't send _referrer_ information to less secure destinations.
 * **strict-origin-when-cross-origin**: Sends _referrer_ a _requests_  information from the same source. Sends the source only if the security level is the same, and does not send _referrer_ information to less secure destinations.
-* **unsafe-url**: Always send _referrer_ information.
+* **unsafe-url**: Always sends _referrer_ information.
 
 #### X-Frame-Options
 
