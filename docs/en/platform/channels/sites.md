@@ -354,7 +354,7 @@ Modyo has reserved hosts for sites, so you can't use them as a host for your sit
 
 ### Stages
 
-Adding stages to your site allows you to implement a continuous integration and deployment (CI/CD) approach to add new functionality without affecting what is already published.
+Adding stages to your site allows you to implement a continuous integration and deployment (CI/CD) approach, in order to add new functionalities without affecting what is already published.
 
 The main advantages of having different stages on your sites are:
 
