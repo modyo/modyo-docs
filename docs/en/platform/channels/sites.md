@@ -553,7 +553,7 @@ Indicates that _MIME types_ announced in the _header_ `Content-Type` must be fol
 
 Controls what resources the browser can load on the site to mitigate data injection attacks and _cross site scripting_. The default value *allows you to load resources from anywhere*, so it's important to design a content security policy that's right for your site.
 
-Freely specify your content security policy in the text area. For a complete guide on how to write your policy, see [Content Security Policy (CSP) from Mozilla Developer Network.] (https://developer.mozilla.org/en/docs/Web/HTTP/CSP)
+Freely specifies your content security policy in the text area. For a complete guide on how to write your policy, see [Content Security Policy (CSP) from Mozilla Developer Network.] (https://developer.mozilla.org/en/docs/Web/HTTP/CSP)
 
 :::warning Warning
 A very strict value can interfere with some features like [Google tag manager](/en/platform/channels/sites.html#google-tag-manager), [PWA](/en/platform/channels/sites.html#pwa), [Widgets](/en/platform/channels/widgets.html) and [Asset Manager](/en/platform/content/asset-manager.html).
