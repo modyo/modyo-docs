@@ -182,7 +182,7 @@ These options pose a risk to the experience of the site and its users. Proceed c
 - Change realm: This field displays the site's realm. When changing your realm, you lose all the privacy settings on your sites, pages and navigation.
 - Site Status: Change the status of the site between three different options.
     * Enabled: Allows the site to be editable and visible to the public. This is the default state of a site.
-    * Editable: Allows a site to be modified, but is not visible to the public. Users must log in to Modyo Platform to access the site. Robots.txt, PWAs, and the manifest are disabled in this state.
+    * Editable: Allows a site to be modified, but not visible to the public. Users must log in to Modyo Platform to access the site. Robots.txt, PWAs, and the manifest are disabled in this state.
     * Disabled: Prohibits both editing and visibility of a site. In this state, the site is not accessible or visible to users.
 - Delete Site: This action starts the process of asynchronously deleting the site. Once the deletion begins, the site is no longer accessible. All elements contained in the site, such as pages and widgets, will also be deleted.
 
