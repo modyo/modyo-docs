@@ -551,7 +551,7 @@ Indicates that _MIME types_ announced in the _header_ `Content-Type` must be fol
 
 #### Content-Security-Policy (CSP)
 
-Controls what resources the browser can load on the site to mitigate data injection attacks and _cross site scripting_. The default value of *allows you to load resources from anywhere*, so it's important to design a content security policy that's right for your site.
+Controls what resources the browser can load on the site to mitigate data injection attacks and _cross site scripting_. The default value *allows you to load resources from anywhere*, so it's important to design a content security policy that's right for your site.
 
 Freely specify your content security policy in the text area. For a complete guide on how to write your policy, see [Content Security Policy (CSP) from Mozilla Developer Network.] (https://developer.mozilla.org/en/docs/Web/HTTP/CSP)
 
