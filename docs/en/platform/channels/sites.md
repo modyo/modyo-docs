@@ -10,7 +10,7 @@ A site is where the content created in [Content] (/en/platform/content/) and [Ch
 A site can be in one of three states:
 
 - **Enabled**: Default status of newly created sites and those that are enabled for use.
-- **Pending changes**: This status appears when there are changes pending on the site. An administrator can click **Publish** to access the **Review and Publish** section, to verify the changes and publish the site.
+- **Pending changes**: This status appears when there are changes pending on the site. An administrator can click **Publish** to access the **Review and Publish** section, in order to verify the changes and publish the site.
 - **Disabled**: When a site is in this state, it is not possible to access it.
 
 ## Create a Site
