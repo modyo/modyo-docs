@@ -210,7 +210,7 @@ The robots.txt and sitemap.xml files are only visible on the site if custom doma
 In the site configuration section, only users with the site administrator role can add meta tags. Within a site, the developer's role is able to add and remove meta tags page by page.
 :::
 
-#### On-page vs. off-page SEO (On-Page vs. Off-Page)
+#### On-page vs. off-page SEO
 
 Also known as on-site and off-site SEO, these terms refer to actions you can take on and off a web page to improve the visibility of your site in search engines. To achieve the best results, we recommend using both strategies together, which will contribute to a stronger position in search results.
 
