@@ -98,7 +98,7 @@ In this section, you can configure the following data for your site:
 
 - **Site Name**:  The name of your site, this field is used as the default title for your site's SEO.
 - **Description**: A brief description of your site.
-- **Site Logo**: Image shown at the top left as a site logo.
+- **Site Logo**: Image shown at the top left as the site's logo.
 - **Language**: The language in which your site is available. The options are: Spanish, English and Portuguese.
 - **[Team Review](/en/platform/core/key-concepts.html)**
 - **Time Zone**: The time zone in which the date and time fields are displayed within the site. This setting affects all sections of the site, including Pages, Navigation and Templates, as well as Liquid calls to site data.
