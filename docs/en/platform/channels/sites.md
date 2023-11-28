@@ -531,7 +531,7 @@ Tells the browser that it can only access the site using HTTPS.
 The _header_ `Referer` contains information from the previous web page from which it is linking, with the _header_ `Referer-Policy` you can control how much information should be included in the _header_ `Referer`.
 
 * **no-referrer**: Does not send _referrer_ information.
-* **no-referrer-when-downgrade**: Don't send _referrer_ information to a less secure destination.
+* **no-referrer-when-downgrade**: Does not send _referrer_ information to a less secure destination.
 * **origin**: Send only the source domain, remove the paths and _query string_.
 * **origin-when-cross-origin**: Send _referrer_ information for _requests_ from the same source. Delete the routes and _query string_ for other destinations.
 * **same-origin**: Send _referrer_ information for same origin _requests_ only.
