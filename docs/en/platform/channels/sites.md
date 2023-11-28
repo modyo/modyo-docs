@@ -204,7 +204,7 @@ The robots.txt and sitemap.xml files are only visible on the site if custom doma
 :::
 
 - **Custom meta tags**: Allows you to set meta tags and their default values for all pages.
-- **Replicate meta tag on pages: ** Propagate this meta tag and its value on all pages of the site. It is necessary to save the changes and publish all the modified pages for the new meta tags to take effect.
+- **Replicate meta tag on pages: ** Propagates the meta tag and its value on all pages of the site. It is necessary to save the changes and publish all the modified pages for the new meta tags to take effect.
 
 :::warning Attention
 In the site configuration section, only users with the site administrator role can add meta tags. Within a site, the developer's role is able to add and remove meta tags page by page.
