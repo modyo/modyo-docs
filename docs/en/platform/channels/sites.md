@@ -113,7 +113,7 @@ The time in the content is managed in the Account Settings.
 - **Delete**: Permanently delete a site and all of its elements.
 
 :::danger Danger
-Erasing is irreversible, so you must be completely safe when performing this action.
+Erasing is irreversible, you must be completely sure when executing this action.
 
 When you press the delete button, the system will ask you to enter the textual name of the site you want to delete to confirm the action. Once confirmed, you won't be able to access the site or its elements again.
 :::
