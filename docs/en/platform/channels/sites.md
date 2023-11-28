@@ -460,7 +460,7 @@ To add a new member to your site, follow these steps:
 1. Expand **Site Settings**.
 1. Click on **Team Members**.
 1. Press the **+ Add Member** button.
-1. Search for and select the user you want to add to the site and choose a role for him.
+1. Search for and select the user you want to add to the site and choose a role for that user.
 1. Click **Add**.
 
 #### Modify a role
