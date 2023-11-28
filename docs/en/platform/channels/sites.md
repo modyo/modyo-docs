@@ -31,7 +31,7 @@ In the site index, you will only see the sites in which you have a role and are 
 
 ## Joint Review and Publication
 
-On the review and joint publication screen, you can see all the pending changes to be published on your site. To view the changes, click on the **View** button.
+On the joint review and publication screen, you can see all the changes slated for publication on your site. To view the changes, click the **View** button.
 
 ### Joint Publication
 
