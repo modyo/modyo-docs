@@ -67,7 +67,7 @@ You can control the look and feel of your site using the [template] (/en/platfor
 This template is available by default in the Templates section, in the “Views/Search/Show” category. It contains all the Liquid code you need to carry out queries on your site.
 
 You can access it using the URL of your site and attaching _search_ or _search.json_. For example:
- - `test.modyo.com/mysite/search`
+ - `test.modyo.com/mySite/search`
  - `test.modyo.com/mysite/search.json`
 
 By default, when making a query, the records are displayed in the form of a list with their title, description and a link to their address. You can modify the template and expand its functionalities to adapt it to your specific needs.
