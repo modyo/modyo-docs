@@ -12,7 +12,7 @@ Modyo Connect is offered exclusively on the Amazon AWS cloud and, like Modyo Clo
 
 <img src="/assets/img/infrastructure/architecture.png" alt="Modyo Connect Architecture" style="margin-top: 40px;" />
 
-The [microservices](/en/architecture/patterns/microservice) automatically connect to an internal load balancer, where the container instances deployed in [AWS Elastic Container Services (ECS)] are dynamically registered (https://aws.amazon.com/ecs/). The [microservices](/en/architecture/patterns/microservice) have traffic egress rules to the Internet using [AWS NAT Gateway](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html) which provides dedicated fixed IP addresses for each customer. Business services are accessed through configured IPsec VPN links to the customer's infrastructure.
+The [microservices](/en/architecture/patterns/microservice) automatically connect to an internal load balancer, where the container instances deployed in [AWS Elastic Container Services (ECS)](https://aws.amazon.com/ecs/) are dynamically registered. The [microservices](/en/architecture/patterns/microservice) have traffic egress rules to the Internet using [AWS NAT Gateway](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html) which provides dedicated fixed IP addresses for each customer. Business services are accessed through configured IPsec VPN links to the customer's infrastructure.
 
 Container images are securely stored in the AWS Elastic Container Repository (ECR) repository, on which security inspections are performed to detect any vulnerabilities present in the images stored in it.
 
