@@ -532,7 +532,7 @@ The _header_ `Referer` contains information from the previous web page from whic
 
 * **no-referrer**: Does not send _referrer_ information.
 * **no-referrer-when-downgrade**: Does not send _referrer_ information to a less secure destination.
-* **origin**: Send only the source domain, remove the paths and _query string_.
+* **origin**: Sends only the source domain, remove the paths and _query string_.
 * **origin-when-cross-origin**: Send _referrer_ information for _requests_ from the same source. Delete the routes and _query string_ for other destinations.
 * **same-origin**: Send _referrer_ information for same origin _requests_ only.
 * **strict-origin**: Sends the origin domain only for same security level _requests_, and doesn't send _referrer_ information to less secure destinations.
