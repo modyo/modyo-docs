@@ -56,13 +56,13 @@ To enable or disable search functionality on a site, follow these steps:
 
 1. In the side menu, click **Site Settings**.
 1. Click on **General**.
-1. In the **Privacy** section, disable the **Enable search** box.
+1. In the **Privacy** section, check the **Enable search** box.
 1. Click **Save**.
 
 
 ### Search template
 
-You can control the appearance and search functionality on your site using the [template] (/en/platform/channels/templates/) _search_.
+You can control the look and feel of your site using the [template] (/es/platform/channels/sites.html #plantilla -de-search/) _search_.
 
 This template is available by default in the Templates section, in the “Views/Search/Show” category. It contains all the Liquid code you need to carry out queries on your site.
 
@@ -239,7 +239,7 @@ Modyo allows the implementation of Progressive Web Apps (PWA) within the digital
 
 The manifest is used to indicate how you want a browser to display your digital channel. You can activate it in Modyo by checking the box. Activating it creates this path:
 
-```
+```bash
 https://[domain]/[site-name]/manifest.json
 ```
 
@@ -259,7 +259,7 @@ If you don't customize the manifest, but add the path in Templates, it will be b
 
 The Service Worker allows the digital channel to perform different actions or keep certain data connected within the cache to provide a structure in case of a bad connection. You can enable the Service Worker through the corresponding box. Activating it creates the following path:
 
-```
+```bash
 https://[domain]/[site-name]/serviceworker.js
 ```
 
@@ -561,7 +561,7 @@ A very strict value can interfere with some features like [Google tag manager](/
 
 A production-ready policy must ensure that all resources, such as images and style sheets, are loaded from reliable sources and requires that all scripts be secure and reliable for the application. For example, a strict policy for the _minimal template_ would look like this:
 
-```
+```bash
 default-src 'self'; img-src 'self' https://cloud.modyocdn.com; font-src 'self' https://cloud.modyocdn.com http://cdn.materialdesignicons.com; style-src 'self' http://cdn.materialdesignicons.com; script-src 'self'
 ```
 
