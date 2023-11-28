@@ -168,7 +168,7 @@ This section allows you to configure your site's privacy restrictions.
 - **Private**: Only users logged in to Modyo can view the site.
 - **Show home to public visits**: The home page of the site is shown to all visitors, even those who are not logged in. However, when navigating to any other page of the site, users will be asked to register or log in.
 - **Redirect to home when a URL is not found**: By default, the site shows a 404 response (page not found) when accessing a URL that doesn't exist. However, if you check this option, instead of receiving a 404, the user will be redirected to the home page of the site.
-- **Enable search**: If you check this option, you enable the search function on the site.
+- **Enable search**: When checking this option, you enable the search function on the site.
 
 :::tip Tip
 If you enable search on your site and use the `multi=true` parameter from other sites, you can also search your current site.
