@@ -625,7 +625,7 @@ To get the value of the variable anywhere that accepts Liquid markup, use:<span 
 To create a variable in sites, follow these steps:
 
 1. From the main side menu, click **Channels**.
-1. Select your**Site**.
+1. Select your **Site**.
 1. Under **Site Settings**, click **Site Variables**. Here you can see the list of all global variables and site variables, their general information and a button to copy their code into Liquid markup.
 1. Click on**+ New Variable**.
 1. Complete the **Name** and **Value** fields of the variable.
