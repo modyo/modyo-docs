@@ -47,6 +47,6 @@ Modyo defines a shared responsibility matrix in conjunction with its customers i
 
 <img src="/assets/img/infrastructure/shared_responsability_model.png" alt="Modyo Shared Responsibility Model" style="margin-top: 40px;" />
 
-From the point of view of the service users, the architects, technical leaders, and developers will be responsible from the design of the solution, to the deployment and execution of the solution, so they are primarily responsible for ensuring the resiliency, scalability, and security of what is delivered.
+From the point of view of the users, the architects, technical leaders, and developers will be responsible from the design of the solution, to the deployment and execution of the solution, so they are primarily responsible for ensuring the resiliency, scalability, and security of what is delivered.
 
 From the point of view of the SRE team that operates the service, they will be responsible for implementing the infrastructure of the service offered, the definition of security standards and configurations, and the high availability of the service itself. This ensures that the principles of [AWS Well Architected Framework] (https://aws.amazon.com/architecture/well-architected/) are met.
