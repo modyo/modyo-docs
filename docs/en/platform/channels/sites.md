@@ -233,7 +233,7 @@ To improve off-page SEO, you can:
 
 ### PWA
 
-Modyo allows the implementation of Progressive Web Apps (PWA) within the digital channels that are being developed. To do this, it offers two options for implementing them.
+Modyo allows the implementation of Progressive Web Apps (PWA) within the digital channels that are being developed. For this, it offers two options to implement them.
 
 #### Manifest
 
