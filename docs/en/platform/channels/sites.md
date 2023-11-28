@@ -76,7 +76,7 @@ By default, when making a query, the records are displayed in the form of a list
 
 You can also use search.json to integrate the search engine. This API allows you to integrate the search engine in a more personalized way.
 
-To access the API, add “search.json” to the URL of your site along with your query. For example: test.modyo.com/mysite/search. json?query=myquery
+To access the API, add “search.json” to the URL of your site along with your query. For example: test.modyo.com/mysite/search. json?query=myQuery
 
 You can customize your queries as follows:
 
