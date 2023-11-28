@@ -590,7 +590,7 @@ For a full list of browser-compatible features, see the [MDN Feature Policy] (ht
 
 #### Cross Origin Embedder Policy (COEP)
 
-Configure the insertion of cross-source resources into the document. For example, if your document has a COEP header with a value of Require-Corp or Credentialless, you can only access certain functions, such as SharedArrayBuffer or Performance.now () objects, with unrestricted timers.
+Configures the insertion of cross-source resources into the document. For example, if your document has a COEP header with a value of Require-Corp or Credentialless, you can only access certain functions, such as SharedArrayBuffer or Performance.now () objects, with unrestricted timers.
 
 For more information, see the [MDN Cross-Origin-Embedder-Policy] (https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy).
 
