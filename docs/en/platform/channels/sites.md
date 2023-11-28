@@ -275,7 +275,7 @@ If you don't customize or save the code, the site won't have the features you're
 
 ### Domains
 
-The Domains section allows you to know the public location of your site, so it's essential that each member of the platform is informed of the changes that are made here.
+The Domains section allows you to know the public location of your site, therefore it's essential that each member of the platform is informed of changes that are made here.
 
 The variables you can change in this section are:
 
