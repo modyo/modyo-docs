@@ -26,7 +26,7 @@ To create a new site, follow these steps:
 Once the site is created, it will be automatically enabled and the system will take you to the **Summary** page.
 
 :::warning Attention
-In the site index, you will only see the sites in which you have a role and are part of the work team.
+In the site index, you will only see the sites in which you have a role and are part of the team.
 :::
 
 ## Joint Review and Publication
