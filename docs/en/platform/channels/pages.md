@@ -240,7 +240,7 @@ Enable route delegation to allow absolute control over the sub-routes of the pag
 
 ## Meta tags
 
-Meta tags define the content of a page and search engines rely on them to provide the user with a search list. In this section you can add meta tags to pages and modify the value of existing meta tags, to enrich the SEO of the page. With the tags added to the pages, you can decide whether to use the default value, overwrite the value available for the tag, or remove the tag from the page.
+Meta tags define the content of a page and search engines rely on them to provide the user with a search list. In this section you can add meta tags to pages and modify the value of existing meta tags, to enhance the page's SEO. With the tags added to the pages, you can decide whether to use the default value, overwrite the value available for the tag, or remove the tag from the page.
 
 To access the list of meta tags on the page, you must use the <span v-pre>`{{ page.meta_tags }}`</span> Liquid drop. We recommend that you go through the example in the SEO section of the [Template builder](/en/platform/channels/templates.html#seo).
 
