@@ -2,20 +2,20 @@
 search: true
 ---
 
-# Modyo 
+# Modyo
 
 ### Modyo Connect
 
-Modyo Commons is a library that allows you to take control of common and repetitive tasks when deploying microservices within Modyo Connect. Among its main characteristics we can name:
-- Support for Swagger dynamic generation (OpenAPI) to incorporate definitions to the AWS API Gateway
+Modyo Commons is a library that simplifies common and repetitive tasks when deploying microservices in Modyo Connect. Its main features include:
+- Support for dynamic OpenAPI generation to incorporate definitions into the AWS Gateway API
 - Support for identity verification of requests to the AWS API Gateway
-- Support for control and standardization of log log management
-- Support for standardization of error handling and event propagation to the frontend
+- Support for log management control and standardization
+- Support for the standardization of error control and event propagation to the frontend
 
 
 ### SDK module
 
-The Dynamic Modyo SDK library allows access to Modoyo's administrative API functionalities, which grant access to basic and advanced functionalities of the platform, mainly with the following objectives:
+The Dynamic Modyo SDK library provides access to the functionality of the Modyo administrative API. This includes access to basic and advanced features of the platform, with these objectives:
 - Access to the platform's notifications and messaging API
 - Access to the user and profile management API
 - Access to the administrative content management API
