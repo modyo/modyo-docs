@@ -208,9 +208,10 @@ A basic example of Liquid+HTML code that you can use in **Show** is:
 This snippet takes `entry.name`, `entry.published_at`, `request.url`, and `entry.description` to generate a dynamic page depending on the entry you select.
 
 :::tip Tip
-To learn more about how to use Liquid, see [Liquid markup](/en/platform/channels/liquid-markup.html)
+To learn more about how to use Liquid, go to [Liquid markup](/en/platform/channels/liquid-markup.html).
 
-To learn what fields you can use with the `entry` drop, see [Content Drops](/en/platform/channels/drops.html#entry).
+To learn what fields you can use with the `entry` drop, see [Content Drops](/en/platform/channels/drops.html #entrada).
+You can complement it with the use of [Content Filters](/es/platform/channels/liquid-markup/filters.html #content).
 :::
 
 #### Settings
