@@ -611,7 +611,7 @@ For more information, see the [MDN Cross-Origin-Resource-Policy](https://develop
 
 ### Site variables
 
-Modyo has [global variables] (/en/platform/core/key-concepts.html #variables -global) that you can use on multiple sites. However, you can also create specific variables for a particular site or overwrite the value of an existing global variable, with a value specific to the particular site.
+Modyo has [global variables](/en/platform/core/key-concepts.html #variables -global) that you can use on multiple sites. However, you can also create specific variables for a particular site or overwrite the value of an existing global variable, with a value specific to the particular site.
 
 Using variables allows you to reuse HTML, JS, CSS, or text code across different sites, widgets, or templates. If you have code that is repeated in several parts of your account, you can assign that value to a variable to simplify your processes and if you edit the value of the variable, the change will be reflected everywhere the variable is in use.
 
