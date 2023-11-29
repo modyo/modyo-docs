@@ -173,7 +173,7 @@ Using the push command, we can trigger the automatic publication of the micro-fr
 $ modyo-cli push -p
 ```
 
-:: :tip Note
+:::tip Note
 The user who owns the token must have a reviewer or admin role on the site where we are deploying our micro-frontends so that the publication can be carried out correctly.
 :::
 
