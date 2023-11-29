@@ -120,7 +120,7 @@ When you press the delete button, the system will ask you to enter the textual n
 
 #### Google Tag Manager
 
-By default, the new Modyo themes include the necessary snippets to automatically inject Google Tag Manager scripts into both `tag <head>` and tag `<body> ` of the sites. You can find these snippets in the [Templates] section (/en/platform/channels/templates.html), category _Snippets/General_ and they are embedded both in the _head_ snippet and in the _home_ and _base_ views.
+By default, the new Modyo themes include the necessary snippets to automatically inject Google Tag Manager scripts into both `tag <head>` and tag `<body> ` of the sites. You can find these snippets in the [Templates](/en/platform/channels/templates.html) section, category _Snippets/General_ and they are embedded both in the _head_ snippet and in the _home_ and _base_ views.
 
 If you don't have these snippets, you can create a custom snippet and then embed Google Tag Manager on your site.
 
