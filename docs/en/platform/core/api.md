@@ -113,7 +113,7 @@ At the end of the documentation, you will find a section called “Models” tha
 
 The following code is a part of the model for **User** object:
 
-```
+```shell
 User{
 schemas     [...]
 id          string example: 2441309d85324e7793ae
