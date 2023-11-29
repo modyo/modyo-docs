@@ -192,7 +192,7 @@ You often have to alternate between different colors or similar tasks. Liquid ha
 
 will result in
 
-```plain
+```shell
 one
 two
 three
@@ -214,7 +214,7 @@ The name of the group. This can even be a variable.
 
 will result in
 
-```text
+```shell
 one
 two
 one
