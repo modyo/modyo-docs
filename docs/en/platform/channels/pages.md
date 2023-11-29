@@ -249,7 +249,7 @@ To access the list of meta tags on the page, you must use the <span v-pre>`{{ pa
 To add a new meta tag to your site, follow these steps:
 
 1. In Modyo Platform, from the main menu, expand **Channels**, and click **Sites**.
-1. Click your Site.
+1. Click on your Site.
 1. Expand **Site settings** and click **SEO**.
 1. In the Custom Meta Tags section, click **+ New meta tag**.
 
