@@ -208,9 +208,10 @@ Un ejemplo básico de código Liquid+HTML que puedes usar en **Show** es:
 Este snippet toma `entry.name`, `entry.published_at`, `request.url`, y `entry.description` para generar una página dinámica dependiendo de la entrada que selecciones.
 
 :::tip Tip
-Para aprender más sobre cómo usar Liquid, dirígete a [Liquid markup](/es/platform/channels/liquid-markup.html)
+Para aprender más sobre cómo usar Liquid, dirígete a [Liquid markup](/es/platform/channels/liquid-markup.html).
 
 Para aprender que campos puedes utilizar con el drop `entry`, ve [Drops de Content](/es/platform/channels/drops.html#entrada).
+Se puede complementar con el uso de [Filtros de contenido](/es/platform/channels/liquid-markup/filters.html#content).
 :::
 
 #### Propiedades
