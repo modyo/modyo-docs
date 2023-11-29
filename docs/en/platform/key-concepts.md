@@ -78,7 +78,7 @@ The following definitions correspond to commonly used terms between the differen
 * [**Site:**](/en/platform/channels/sites.html) It is the tool for creating digital channels within the platform. Site operation encompasses the entire development, design, and flow of navigation.
 * [**Editable version:**](/en/platform/core/key-concepts.html#editable) This is the version that you can modify and where you can preview versioned elements.
 * [**Global variables:**](/en/platform/core/key-concepts.html#global-variables) These are elements that you can define globally and reuse in different sites.
-* [**Scheduled version: **] (/es/platform/core/key-concepts.html #programado) It is the version that is ready to be published at a specific date and time.
+* [**Scheduled version:**](/en/platform/core/key-concepts.html#scheduled) It is the version that is ready to be published at a specific date and time.
 * [**Published version: **] (/es/platform/core/key-concepts.html #publicado) It is the visible or productive version of the versioned elements. This version cannot be modified.
 * [**Backup version: **] (/es/platform/core/key-concepts.html #respaldos) These are the versions that have been published before.
 * [**Webhook: **] (/es/platform/core/webhooks.html) Automatically sends information to an external system when a certain event occurs.
