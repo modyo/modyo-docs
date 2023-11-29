@@ -163,7 +163,7 @@ The thank you email allows you to customize an email that will be sent to the us
 Here is a code sample that you can use as a base to personalize the thank you mail.
 
 ```liquid
-You sent this answer on: {{ 'now' | date: "%b %d, %y" }}
+Message Sent: {{ 'now' | date: "%b %d, %y" }}
 <table width="600px">
     <tr>
         <td><b>user name</b></td>
