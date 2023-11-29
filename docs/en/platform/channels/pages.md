@@ -232,7 +232,7 @@ The excerpt is added as part of the meta tags to improve SEO. This is possible f
 
 #### Child routes delegation
 
-Enable the child routes delegation to allow the full control of the page routes from the Javascript router.
+Enable the child routes delegation to allow full control of the page routes from the Javascript router.
 
 ## Privacy
 
