@@ -113,5 +113,5 @@ The following definitions correspond to commonly used terms between the differen
 * [**Filters:**](/en/platform/customers/segments.html#filters) They are the unit that allows you to build segments.
 * [**Form:**](/en/platform/customers/forms.html) Allows you to capture data from your users on your sites.
 * [**Messaging:**](/en/platform/customers/messaging.html) Allows you to control direct communication channels with your users.
-* [**Segment: **] (/es/platform/customers/segments.html) Allows you to add and group your users using filter groups with different conditions.
+* [**Segment:**](/en/platform/customers/segments.html) Allows you to add and group your users using filter groups with different conditions.
 * [**User: **] (/es/platform/customers/realms.html) Is the one who accesses and registers on Modyo sites.
