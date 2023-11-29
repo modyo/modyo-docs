@@ -178,7 +178,7 @@ The user who owns the token must have a reviewer or admin role on the site where
 :::
 
 ## Next steps
-When a widget is deployed and published on the Modyo platform, it is available to be used on the pages of the site to which it belongs, if [variables] (http://localhost:8080/es/platform/core/key-concepts.html#variables-globales) its values can be specified at different levels to be set globally or individually to each instance of the micro-frontend, for more information on what you can do on Modyo sites, consult the [Channels documentation] (https://docs.modyo.com/en/platform/channels/ #frontmatter -title) specifically the [Widgets Page] section (https://docs.modyo.com/en/platform/channels/pages.html#widget-page) and [widgets] (http://localhost:8080/es/platform/channels/widgets.html)
+When a widget is deployed and published on the Modyo platform, it is available to be used on the pages of the site to which it belongs, if [variables](http://localhost:8080/es/platform/core/key-concepts.html#global-variables) its values can be specified at different levels to be set globally or individually to each instance of the micro-frontend, for more information on what you can do on Modyo sites, consult the [Channels documentation](https://docs.modyo.com/en/platform/channels/#frontmatter-title) specifically the [Widgets Page](https://docs.modyo.com/en/platform/channels/pages.html#widget-page) section and [widgets](http://localhost:8080/es/platform/channels/widgets.html)
 
 ## Quick guide
 
