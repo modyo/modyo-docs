@@ -110,7 +110,7 @@ The following definitions correspond to commonly used terms between the differen
 
 * [**Campaigns:**](/en/platform/customers/messaging.html#campaigns) It is the definition of a communication channel with the user, which allows you to reach them through emails and notifications.
 * [**Custom field:**](/en/platform/customers/realms.html#custom-fields) Allows you to add custom attributes to the user profile.
-* [**Filters: **] (/es/platform/customers/segments.html #filtros) They are the unit that allows you to build segments.
+* [**Filters:**](/en/platform/customers/segments.html#filters) They are the unit that allows you to build segments.
 * [**Form: **] (/es/platform/customers/forms.html) Allows you to capture data from your users on your sites.
 * [**Messaging: **] (/es/platform/customers/messaging.html) Allows you to control direct communication channels with your users.
 * [**Segment: **] (/es/platform/customers/segments.html) Allows you to add and group your users using filter groups with different conditions.
