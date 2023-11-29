@@ -153,7 +153,7 @@ Modyo has reserved paths for the pages, so you cannot use these as paths for you
 
 ## Content Page
 
-Display the [entries](/en/platform/content/entries) of your [content types](/en/platform/content/types) from a single page using content pages.
+Displays the [entries](/en/platform/content/entries) of your [content types](/en/platform/content/types) from a single page using content pages.
 
 ### Prerequisites
 
