@@ -88,7 +88,7 @@ The following definitions correspond to commonly used terms between the differen
 
 * [**Assets:**](/en/platform/content/asset-manager.html#about-the-interface) These are the different files that are uploaded to the platform to be used in content and sites.
 * [**Field:**](/en/platform/content/types.html#fields) It is the atomic unit with which different types of content are formed.
-* [**Categories: **] (/es/platform/content/entries.html #categorias) They are a tree structure that allows you to order the contents of your spaces.
+* [**Categories:**](/en/platform/content/entries.html#categories) They are a tree structure that allows you to order the contents of your spaces.
 * [**Entry: **] (/es/platform/content/entries.html) It is a set of values associated with the different fields defined in the content type.
 * [**Space: **] (/es/platform/content/spaces.html) Resource repository where team members can define different structures (types) of content, create and publish entries.
 * **Tags: ** They allow you to sort and filter entries freely and without restrictions.
