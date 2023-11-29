@@ -243,7 +243,7 @@ The manifest is used to indicate how you want a browser to display your digital 
 https://[domain]/[site-name]/manifest.json
 ```
 
-The manifest must be implemented on each of the pages where the PWA is developed, through [Templates] (/en/platform/channels/templates.html), in the ``head`` snippet.
+The manifest must be implemented on each of the pages where the PWA is developed, through [Templates](/en/platform/channels/templates.html), in the ``head`` snippet.
 
 You can create and modify the manifest in the next field, allowing you to add changes without having to leave the view.
 
