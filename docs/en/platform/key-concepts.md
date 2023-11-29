@@ -97,7 +97,7 @@ The following definitions correspond to commonly used terms between the differen
 
 #### Modyo Channels
 
-* [**Domains: **] (/es/platform/channels/sites.html #dominios) Allows you to change the URL and security certificates of your site.
+* [**Domains:**](/en/platform/channels/sites.html #dominios) Allows you to change the URL and security certificates of your site.
 * [**Meta tags: **] (/es/platform/channels/pages.html #meta -tags) Allows you to customize the meta tags for your pages and improve the way search engines index your pages.
 * [**Navigation: **] (/es/platform/channels/navigation.html) Allows you to modify the main menu of your site with an easy-to-use interface.
 * [**Page: **] (/es/platform/channels/pages.html) Pages (or pages) are what allow you to create a structure for your site, where you can add unstructured content and customize the paths where that content is displayed.
