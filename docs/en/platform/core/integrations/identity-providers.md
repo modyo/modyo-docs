@@ -149,7 +149,7 @@ Keycloak is a certified OpenID Connect identity provider that implements most of
 
 ### Register a new client application
 
-1. From the administrative console, for example [https://keycloak.example.com/auth/](https://keycloak.example.com/auth/) click add a new realm.
+1. From the administrative console, for example `https://keycloak.example.com/auth/` click on add a new realm.
 
 <img src="/assets/img/platform/keycloak-add-realm.png" alt="Keycloak add a new realm button." width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
 
