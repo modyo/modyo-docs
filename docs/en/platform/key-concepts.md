@@ -69,49 +69,49 @@ The following definitions correspond to commonly used terms between the differen
 
 #### General
 
-* [**CORS**](/en/platform/core/security.html#http-access-control-cross-origin-resource-sharing-cors): Cross Origin Resource Sharing - Allows you to share resources in different domains.
-* **Account**: This is where you can access all the features that Modyo has to offer.
-* [**Team**](/en/platform/core/roles.html#team): All users who have access to the Modyo admin and can be assigned roles and permissions.
-* [**Integrations**](/en/platform/core/integrations/): This is where you can delegate or federate the authentication process of users or team members.
-* [**Password Policy**](/en/platform/core/security.html#password-policy): Allows you to define rules that team members must follow when creating or modifying their passwords.
-* [**Team Review**](/en/platform/core/key-concepts.html#team-review): Revision flow of versioned items in which you can request approval from multiple team members.
-* [**Site**](/en/platform/channels/sites.html): This is the tool for creating digital channels within the platform. Sites operations include all areas of development, design, and navigation flow.
-* [**Editable Version**](/en/platform/core/key-concepts.html#editable): It is the version that you can modify and use to preview versioned elements.
-* [**Global Variables**](/en/platform/core/key-concepts.html#global-variables): These are elements that you can define globally and reuse in different sites.
-* [**Scheduled Version**](/en/platform/core/key-concepts.html#scheduled): It is the version that is ready to be published at a predetermined date and time.
-* [**Published version**](/en/platform/core/key-concepts.html#published): It is the visible or productive version of the elements. This version can not be modified.
-* [**Backup version**](/en/platform/core/key-concepts.html#backups): It is a version that was previously published.
-* [**Webhook**](/en/platform/core/webhooks.html): Automatically sends information to an external system when a particular event occurs.
+* [**CORS: **](/en/platform/core/security.html #access-control-cross-origin-resource-sharing-cors) Cross Origin Resource Sharing - Allows you to share resources in different domains.
+* **Account:** The access point to all of Modyo's features.
+* [**Team:**](/en/platform/core/roles.html#equipo) All users have access to the Modyo admin and can be assigned roles and permissions.
+* [**Integrations:**](/en/platform/core/integrations) This is the way to delegate or federate the initial authentication process for users or team members.
+* [**Password Policy:**](/en/platform/core/security.html#password-policy) Allows you to define rules that team members must comply with when creating or modifying their passwords.
+* [**Team review:**](/en/platform/core/key-concepts.html#team-review) Review flow for versioned elements in which approval can be requested from multiple team members.
+* [**Site:**](/en/platform/channels/sites.html) It is the tool for creating digital channels within the platform. Site operation encompasses the entire development, design, and flow of navigation.
+* [**Editable version: **] (/es/platform/core/key-concepts.html #editable) This is the version that you can modify and preview of the versioned elements.
+* [**Global variables: **] (/es/platform/core/key-concepts.html #variables -global) These are elements that you can define globally and reuse them in different places.
+* [**Scheduled version: **] (/es/platform/core/key-concepts.html #programado) It is the version that is ready to be published at a specific date and time.
+* [**Published version: **] (/es/platform/core/key-concepts.html #publicado) It is the visible or productive version of the versioned elements. This version cannot be modified.
+* [**Backup version: **] (/es/platform/core/key-concepts.html #respaldos) These are the versions that have been published before.
+* [**Webhook: **] (/es/platform/core/webhooks.html) Automatically sends information to an external system when a certain event occurs.
 
 
 #### Modyo Content
 
-* [**Assets**](/en/platform/content/asset-manager.html#about-the-interface): These are the various files that are uploaded to the platform to be used in content and sites.
-* [**Fields**](/en/platform/content/types.html#fields): These are the atomic units with which the different types of content are formed.
-* [**Categories**](/en/platform/content/entries.html#categories): They are a tree structure that allows you to order the content of your spaces.
-* [**Entry**](/en/platform/content/entries.html): It is a set of values associated with the different fields defined in the content type.
-* [**Space**](/en/platform/content/spaces.html): Resource repository where team members can define different content structures (types), create and publish entries.
-* **Tags**: Allow you to sort and filter the entries freely and without restrictions.
-* [**Content type**](/en/platform/content/types.html): It is a structure with fields that allows you to define the different types of content of your business.
+* [**Assets: **] (/es/platform/content/asset-manager.html #acerca -the-interface) These are the different files that are uploaded to the platform to be used in content and sites.
+* [**Field: **] (/es/platform/content/types.html #campos) It is the atomic unit with which different types of content are formed.
+* [**Categories: **] (/es/platform/content/entries.html #categorias) They are a tree structure that allows you to order the contents of your spaces.
+* [**Entry: **] (/es/platform/content/entries.html) It is a set of values associated with the different fields defined in the content type.
+* [**Space: **] (/es/platform/content/spaces.html) Resource repository where team members can define different structures (types) of content, create and publish entries.
+* **Tags: ** They allow you to sort and filter entries freely and without restrictions.
+* [**Content type: **] (/es/platform/content/types.html) It is a structure with fields that allows you to define the different contents of your business.
 
 
 #### Modyo Channels
 
-* [**Domains**](/en/platform/channels/sites.html#domains): Allows you to change the URL and security certificates of your site.
-* [**Meta tags**](/en/platform/channels/pages.html#meta-tags): Allows you to customize the meta tags for your pages and improve the way search engines index your pages.
-* [**Navigation**](/en/platform/channels/navigation.html): Allows you to modify the main menu of your site with an easy to use interface.
-* [**Page**](/en/platform/channels/pages.html): Pages are what allow you to create a structure for your site, where you can add unstructured content and customize the paths where that content is displayed.
-* [**PWA**](/en/platform/channels/sites.html#pwa): Allows you to configure the _serviceworker_ and manifest of your site to be able to use it offline.
-* [**SEO**](/en/platform/channels/sites.html#seo): Allows you to configure the way indexing robots see your site.
-* [**Templates**](/en/platform/channels/templates.html): They are the base of your site and define the basic structure of your site's pages.
-* [**Widget**](/en/platform/channels/widgets.html): A reusable feature package that contains HTML, JavaScript and CSS that can be used in different pages.
+* [**Domains: **] (/es/platform/channels/sites.html #dominios) Allows you to change the URL and security certificates of your site.
+* [**Meta tags: **] (/es/platform/channels/pages.html #meta -tags) Allows you to customize the meta tags for your pages and improve the way search engines index your pages.
+* [**Navigation: **] (/es/platform/channels/navigation.html) Allows you to modify the main menu of your site with an easy-to-use interface.
+* [**Page: **] (/es/platform/channels/pages.html) Pages (or pages) are what allow you to create a structure for your site, where you can add unstructured content and customize the paths where that content is displayed.
+* [**PWA: **] (/es/platform/channels/sites.html #pwa) Allows you to configure the _serviceworker_ and manifest of your site so that you can use it offline.
+* [**SEO: **] (/es/platform/channels/sites.html #seo) Allows you to configure the way your site looks before indexing robots.
+* [**Templates: **] (/es/platform/channels/templates.html) They are the foundation of your site and define the basic structure of your site's pages.
+* [**Widget: **] (/es/platform/channels/widgets.html) It's a reusable functionality package containing HTML, JavaScript, and CSS that can be used on different pages.
 
 #### Modyo Customers
 
-* [**Campaigns**](/en/platform/customers/messaging.html#campaigns): A defined communication channel with your users which allows you to reach them through emails and notifications.
-* [**Custom field**](/en/platform/customers/realms.html#custom-fields): Allows you to add personalized attributes to the users' profile.
-* [**Filters**](/en/platform/customers/segments.html#filters): Basic units that allow you to build segments.
-* [**Form**](/en/platform/customers/forms.html): Allows you to capture data from your users on your sites.
-* [**Messaging**](/en/platform/customers/messaging.html): Allows you to control the direct communication channels with your users.
-* [**Segment**](/en/platform/customers/segments.html): Allows you to add and group your users through filter groups with different conditions.
-* [**User**](/en/platform/customers/realms.html): This is any person who accesses and registers on sites built with Modyo.
+* [**Campaigns: **] (/es/platform/customers/messaging.html #campanas) It is the definition of a communication channel with the user, which allows you to reach them through emails and notifications.
+* [**Custom field: **] (/es/platform/customers/realms.html #custom -fields) Allows you to add custom attributes to the user profile.
+* [**Filters: **] (/es/platform/customers/segments.html #filtros) They are the unit that allows you to build segments.
+* [**Form: **] (/es/platform/customers/forms.html) Allows you to capture data from your users on your sites.
+* [**Messaging: **] (/es/platform/customers/messaging.html) Allows you to control direct communication channels with your users.
+* [**Segment: **] (/es/platform/customers/segments.html) Allows you to add and group your users using filter groups with different conditions.
+* [**User: **] (/es/platform/customers/realms.html) Is the one who accesses and registers on Modyo sites.
