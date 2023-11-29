@@ -51,7 +51,7 @@ $ modyo-cli get dynamic-react-base-template my-project-name
 ```
 which will initialize a functional project with everything we need to start a new development.
 
-We also have a set of financial experience templates available, which allow us to accelerate and further accelerate the development of solutions in the field of digital banking and the financial industry. Experiences and how to obtain their templates can be found in the [Experiences section] (https://docs.modyo.com/es/dynamic/experiences/retail/dashboard.html) of the [dynamic framework] documentation (https://docs.modyo.com/es/dynamic/#dynamic-framework).
+We also have a set of financial experience templates available, which allow us to accelerate and further accelerate the development of solutions in the field of digital banking and the financial industry. Experiences and how to obtain their templates can be found in the [Experiences section](https://docs.modyo.com/es/dynamic/experiences/retail/dashboard.html) of the [dynamic framework](https://docs.modyo.com/es/dynamic/#dynamic-framework) documentation.
 
 :: :tip Tip
 Each template obtained from the dynamic framework has a README file with a small documentation that indicates its requirements and how to use it.
