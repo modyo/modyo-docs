@@ -8,11 +8,11 @@ In any part of Channels (Sites, Widgets, and Templates) you can use Liquid to cr
 
 ## Display list of Entries of a Type
 
-In [Content-Pages](/en/platform/channels/pages.html#content-page) you can generate a list of all the Entries of a Type. In this case, we take all the Entries of Type `product` in the `My Bank` Space. The variable `entries` in line 1 gets an array of the drop [Entry](/en/platform/channels/drops.html#entry). This array is traversed to display per line the `meta.uuid` and `meta.title` of each Entry. 
+In [Content Pages] (/es/platform/channels/pages.html #pagina -de-content) you can generate a list of all Entries of a Type. In this case, we take all the Entries of the `product` Type in the `My Bank` Space. The variable `entries` on line 1 gets an array of the drop [Entry] (/es/platform/channels/drops.html #entrada). We go through this arrangement to display the `meta.uuid` and `meta.title` of each Entry by line. 
 
 ```liquid
-{% assign entries = spaces['mi-banco'].types['producto'].entries %}
-<p>Los productos que ofrecemos son:</p>
+{% assign entries = spaces['my-bank'].types['product'].entries %}
+<p>Products:</p>
 <ul>
 {% for entry in entries %}
   <li>{{ entry.meta.uuid }} -- {{ entry.meta.title }}</li>
@@ -25,7 +25,7 @@ In order to use these examples on your site, you must replace the Space and Type
 In the case of a single cardinality entry (in this example it is a privacy notice), you can use `entry` to display the URL as follows:
 
 ```liquid
-Visit our <a href="{{ spaces['my-banco'].types['privacy'].entry.url }}">Privacy Policy</a>.
+Visit our <a href="{{ spaces['my-bank'].types['privacy'].entry.url }}">Privacy Policy</a>.
 ```
 
 ## Display total number of Entries
@@ -34,7 +34,7 @@ To access the total number of entries returned by a content filter, you can use 
 
 ```liquid
 {% assign entries = spaces['my-bank'].types['products'].entries %}
-<p>We offer a total of {{ entries.size }} products for you!</p>
+<p>You have a total of {{ entries.size }} products!</p>
 ```
 
 ## Filters
@@ -56,7 +56,7 @@ In the following example, we filter the Entries of type `post`, with category `n
 
 ```liquid
 {% assign entries = spaces['my-bank'].types['post'].entries | by_category: 'news' %}
-<p>These are all our news:</p>
+<p>News:</p>
 <ul>
 {% for entry in entries %}
 <li><a href="entry.url">{{ entry.meta.title }}</a></li>
@@ -65,11 +65,11 @@ In the following example, we filter the Entries of type `post`, with category `n
 
 ### Concatenated filter
 
-In the following example, we filter the Entries of type `post`, with category `news`, which also have the tag `campaign`. Then we take the result and display the news that meet all the criteria:
+In the following example, we filter posts of type `post`, with category `news`, which also have the tag `campaign`. Then we take the result and display the news that meets all the criteria:
 
 ```liquid
 {% assign entries = spaces['my-bank'].types['post'].entries | by_category: 'news' | by_tag: 'campaign' %}
-<p>The following news are relevant for you!</p>
+<p>News for you!</p>
 <ul>
 {% for entry in entries %}
 <li><a href="entry.url">{{ entry.meta.title }}</a></li>
@@ -149,13 +149,13 @@ To sort by a custom field, you must use the field's `fields.uid` as a parameter:
 
 For entries with location fields you can easily generate maps with the `static_map` and `dynamic_map` filters, these use Google Maps Static API and Google Maps Javascript API respectively. The following example generates maps for the `Locations` field with a size of 600x300 px, a level 5 zoom, with a map type 'roadmap' and with a custom icon.
 
-```
+```liquid
 {{ entry.fields.['Locations'] | static_map: '600x300',5,'roadmap','https://goo.gl/5y3S82'}}
 ```
 
 The `dynamic_map` filter accepts an additional attribute to control the visibility of the zoom, drag and full screen controls.
 
-```
+```liquid
 {{ entry.fields['Locations'] | dynamic_map: '600x300',5,'roadmap','https://goo.gl/5y3S82',true}}
 ```
 
