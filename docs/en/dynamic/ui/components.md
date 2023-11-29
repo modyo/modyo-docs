@@ -8,8 +8,6 @@ Web components are autonomous, reusable units of a user interface. They encapsul
 
 Components allow you to divide a user interface into smaller, more manageable and reusable pieces, making it easier to develop, maintain and scale an application.
 
-### Stencil and React
+### React
 
-Dynamic Framework offers a consistent API for developers. Their web components were implemented using [Stencil](https://stenciljs.com/) for lower-level definitions and [React](https://react.dev/) for abstractions with more complex requirements, such as state management. Thus maintaining a Micro frontend developed in React without additional special requirements.
-
-Although the implementation of Dynamic Framework involves the use of two individual libraries, this duality is imperceptible to the developer, which means that its integration into the development of a Micro frontend created in React does not impose special requirements, beyond importing and using it.
+Dynamic Framework implements its web components with [React] (https://react.dev/), which not only facilitates their integration into an existing project based on React, but also allows us to take advantage of the extensive ecosystem, community and support that React offers.
