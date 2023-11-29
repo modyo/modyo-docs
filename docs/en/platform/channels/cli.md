@@ -77,7 +77,7 @@ for this configuration we need some previous actions
 
 ### Obtaining a Modyo access token
 
-The first thing we must obtain is access to Modyo, for this we must [create a user] (https://docs.modyo.com/es/platform/core/roles.html#crear-usuario) who at least has the [role] (https://docs.modyo.com/es/platform/core/roles.html#roles) of developer-cli in the sites or stages where we will deploy our micro-frontend, then [configure an access token] (https://docs.modyo.com/es/platform/core/api.html#autenticacion) for this user which we will use to obtain the necessary information for the configuration and to trigger the deployments to the platform.
+The first thing we must obtain is access to Modyo, for this we must [create a user](https://docs.modyo.com/es/platform/core/roles.html#crear-usuario) who at least has the [role](https://docs.modyo.com/es/platform/core/roles.html#roles) of developer-cli in the sites or stages where we will deploy our micro-frontend, then [configure an access token] (https://docs.modyo.com/es/platform/core/api.html#autenticacion) for this user which we will use to obtain the necessary information for the configuration and to trigger the deployments to the platform.
 
 ### Identification of the site or stage
 Then we must have the information of the site or stage in which the micro-frontend will be deployed and obtain some essential data such as the URL of the account, the host or id of the site or the id of some stage of the site. For this we can do this using the modyo administrative API using the access token obtained previously and attach it as an authorization header of the Bearer type as follows:
