@@ -104,7 +104,7 @@ The following definitions correspond to commonly used terms between the differen
 * [**PWA:**](/en/platform/channels/sites.html#pwa) Allows you to configure your site's  _serviceworker_ and manifest site so that you can use it offline.
 * [**SEO: **](/en/platform/channels/sites.html#seo) Allows you to configure the way your site appears to indexing robots.
 * [**Templates:**](/en/platform/channels/templates.html) They are the foundation of your site and define the basic structure of your site's pages.
-* [**Widget: **] (/es/platform/channels/widgets.html) It's a reusable functionality package containing HTML, JavaScript, and CSS that can be used on different pages.
+* [**Widget:**](/en/platform/channels/widgets.html) A reusable functionality package containing HTML, JavaScript, and CSS that can be used on different pages.
 
 #### Modyo Customers
 
