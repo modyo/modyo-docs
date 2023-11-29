@@ -17,10 +17,10 @@ At the moment there is only an SDK for Javascript. In the future, we plan to inc
 
 To perform any action, it is necessary to know the path structure of the contents in the API, which is done as follows:
 
-```
+```bash
 https://www.example.com/api/content/spaces/:space_uid/types/:type_uid/schema
 
-https://www.example.com/api/content/spaces/:space_uid/types/:type_uid/entries?[filters]
+https://www.example.com/api/content/spaces/:space_uid/types/:type_uid/entries? [filters]
 
 https://www.example.com/api/content/spaces/:space_uid/types/:type_uid/entries/:entry_uuid
 ```
