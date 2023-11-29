@@ -73,7 +73,7 @@ To learn more about content pages, see [Content Page](/en/platform/channels/page
 
 **Secondary Actions:**
 - Force publish: If you are a site administrator, you have the option to publish pages at any time, including skipping the team review process.
-- Unpublish: If the page is published, then you will see this action and can unpublish the page.
+- Unpublish: If the page is published, you will see this action and can unpublish the page.
 
 The central grid is where you can position your widgets. You can move widgets back and forth using the _drag-and-drop_ functionality.
 
