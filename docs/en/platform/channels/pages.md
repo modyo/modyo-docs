@@ -166,7 +166,7 @@ In order to display content on a site, you must meet certain conditions:
 You can freely choose the name of each view, regardless of the space and content type you choose. You have to keep in mind that it is required to have an entry published in this site language in order to see content in these views.
 :::
 
-These pages are comprised of two sections **Index** and **Show**.
+These pages are composed of two sections, **Index** and **Show**.
 
 ### Index
 
