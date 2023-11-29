@@ -162,8 +162,8 @@ In order to display content on a site, you must meet certain conditions:
 * Have a space with at least one language (the same language as the site) and at least one Content Type. For more information, see [Create a Space](/en/platform/content/spaces.html#create-a-space) and [Create a Type](/en/platform/content/types.html#create-a-type)
 * Have entries published in the language of the site. For more information, see [Entries](/en/platform/content/entries.html) and [Locales](/en/platform/content/spaces.html#locales)
 
-:::tip Tip
-You can freely choose the name of each view, regardless of the space and content type you choose. You have to keep in mind that it is required to have an entry published in this site language in order to see content in these views.
+:: :tip Tip
+You can use any name you want for the views, regardless of the type or space you want to associate them with. Always keep in mind that entries will only be displayed if they have a published version in the language of the site where you are creating these views.
 :::
 
 These pages are composed of two sections, **Index** and **Show**.
