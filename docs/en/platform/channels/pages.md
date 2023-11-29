@@ -93,7 +93,7 @@ Here you can customize your page using preset widgets from the following list:
 :::warning Warning
 The rich text widget has an automatic formatter, so the code you write in the code view may be affected.
 :::
-- **Content listing:** Show content listings using filters by space, type, language, tags, and category. To modify how these widgets look, you must do so in the Widgets section in [Templates] (/en/platform/channels/templates.html).
+- **Content listing:** Show content listings using filters by space, type, language, tags, and category. To modify how these widgets look, you must do so in the Widgets section in [Templates](/en/platform/channels/templates.html).
 - **Featured Content:** Shows a list of entries as “hero” images in a carousel.
 - **Custom:** You'll find a list of all the widgets you've created and published in the widget builder.
 
