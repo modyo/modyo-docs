@@ -90,7 +90,7 @@ The following definitions correspond to commonly used terms between the differen
 * [**Field:**](/en/platform/content/types.html#fields) It is the atomic unit with which different types of content are formed.
 * [**Categories:**](/en/platform/content/entries.html#categories) They are a tree structure that allows you to order the contents of your spaces.
 * [**Entry:**](/en/platform/content/entries.html) It is a set of values associated with the different fields defined in the content type.
-* [**Space: **] (/es/platform/content/spaces.html) Resource repository where team members can define different structures (types) of content, create and publish entries.
+* [**Space:**](/en/platform/content/spaces.html) Resource repository where team members can define different structures (types) of content, create, and publish entries.
 * **Tags: ** They allow you to sort and filter entries freely and without restrictions.
 * [**Content type: **] (/es/platform/content/types.html) It is a structure with fields that allows you to define the different contents of your business.
 
