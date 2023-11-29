@@ -36,7 +36,7 @@ If your page is in a _draft_ state, the difference icon will not appear, since t
 
 **Other actions:**
 
-- Archive: If a page isn't published, this action allows you to archive it. When a page is archived, by default, it doesn't appear in the page index, keeping the site structure clean.
+- Archive: If a page isn't published, this action allows you to archive it. When a page is archived, by default it doesn't appear in the page index, keeping the site structure clean.
 - Duplicate: This action allows you to copy the editable version of the page you're on. The copied version is in a _draft_ state.
 
 :::warning Attention
