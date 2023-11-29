@@ -21,7 +21,7 @@ Content segmentation personalizes and adapts the content shown to users, accordi
 
 Segments can be defined by a variety of criteria, including:
 
-- **User behavior: ** pages visited, purchases made, or previous interactions with the site or application.
+- **User behavior:** pages visited, purchases made, or previous interactions with the site or application.
 - **Demographic information: ** details such as age, gender, location, education, and other demographic data of the user.
 - **User interests: ** what is known or inferred to be of interest to the user, based on their past behaviors or information provided.
 - **Stage in the customer journey: ** the point at which the user is in the customer journey or sales funnel. For example, a user could be in the discovery, consideration, decision, or loyalty stage.
