@@ -21,10 +21,10 @@ Content segmentation personalizes and adapts the content shown to users, accordi
 
 Segments can be defined by a variety of criteria, including:
 
-- **User behavior:** pages visited, purchases made, or previous interactions with the site or application.
-- **Demographic information:** details such as age, gender, location, education, and other user demographics.
-- **User Interests:** What is known or inferred to be of interest to the user, based on their past behaviors or on the information provided.
-- **Stage in the customer journey:** point where the user is in the customer journey or in the sales funnel. For example, a user could be in the discovery, consideration, decision, or loyalty stage.
+- **User behavior: ** pages visited, purchases made, or previous interactions with the site or application.
+- **Demographic information: ** details such as age, gender, location, education, and other demographic data of the user.
+- **User interests: ** what is known or inferred to be of interest to the user, based on their past behaviors or information provided.
+- **Stage in the customer journey: ** the point at which the user is in the customer journey or sales funnel. For example, a user could be in the discovery, consideration, decision, or loyalty stage.
 
 In Modyo, segments are defined individually for each user domain, allowing multiple segments to be created in parallel. These segments can then be applied to both content and web applications.
 
