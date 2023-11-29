@@ -10,4 +10,4 @@ Components allow you to divide a user interface into smaller, more manageable an
 
 ### React
 
-Dynamic Framework implements its web components with [React] (https://react.dev/), which not only facilitates their integration into an existing project based on React, but also allows us to take advantage of the extensive ecosystem, community and support that React offers.
+Dynamic Framework implements its web components with [React](https://react.dev/), which not only facilitates their integration into an existing project based on React, but also allows us to take advantage of the extensive ecosystem, community and support that React offers.
