@@ -80,7 +80,7 @@ The following definitions correspond to commonly used terms between the differen
 * [**Global variables:**](/en/platform/core/key-concepts.html#global-variables) These are elements that you can define globally and reuse in different sites.
 * [**Scheduled version:**](/en/platform/core/key-concepts.html#scheduled) It is the version that is ready to be published at a specific date and time.
 * [**Published version: **](/en/platform/core/key-concepts.html#published) It is the visible or productive version of the versioned elements. This version cannot be modified.
-* [**Backup version: **] (/es/platform/core/key-concepts.html #respaldos) These are the versions that have been published before.
+* [**Backup version:**](/en/platform/core/key-concepts.html#backups) These are the versions that have been published before.
 * [**Webhook: **] (/es/platform/core/webhooks.html) Automatically sends information to an external system when a certain event occurs.
 
 
