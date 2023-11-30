@@ -63,7 +63,7 @@ To learn more about publication lifecycles in Modyo, review the [Versioning](/en
 In the main work area you can see the following:
 
 - **Code Tabs:** A JavaScript, CSS, and HTML tab is available for building widgets.
-- **File Manager:** When clicked, the file management mode is lifted, where you can filter and search for the files you have uploaded to the [File Manager] (/en/platform/content/asset-manager.html) and copy their URL to use them in the widget. You can also upload new files from this modal.
+- **File Manager:** When clicked, the file management mode is lifted, where you can filter and search for the files you have uploaded to the [File Manager](/en/platform/content/asset-manager.html) and copy their URL to use them in the widget. You can also upload new files from this modal.
 - **Keyboard Shortcuts:** Shows a small informational window with some useful keyboard shortcuts.
 - **Snippets:** Shows a list of the snippets available from the [Template Builder] (/en/platform/channels/templates.html #snippets) and their code is copied to reference them in the widget.
 - **Changes:** If changes have been saved and have not been published, it will display this list of all the times saved each of the files (JS, CSS, and HTML). Clicking on a sub-version changes the content of the tab to the content of the sub-version that was clicked.
