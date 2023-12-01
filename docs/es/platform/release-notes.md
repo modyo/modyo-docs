@@ -18,7 +18,7 @@ search: true
 <Badge text="Channels" type="channels" vertical="middle"/>
 
 * Mejora la edición del header CSP en sitios, ahora es posible especificar el nonce como varaible
-* Corrige la sincronización de nuevos menus entre stages de un sitio
+* Corrige la sincronización de nuevos menús entre stages de un sitio
 
 
 ### 9.2.53 - 15 de noviembre de 2023
@@ -39,7 +39,7 @@ search: true
 
 <Badge text="Content" type="content" vertical="middle"/>
 
-* Corrige inconsistencia del guardado de datos introducidos en un richtext. Ahora se activa la limpieza de código antes del guardado
+* Corrige inconsistencia en el guardado de datos introducidos en un richtext. Ahora se activa la limpieza de código antes del guardado
 
 
 ### 9.2.52 - 13 de octubre de 2023
