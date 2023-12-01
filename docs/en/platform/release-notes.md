@@ -28,7 +28,7 @@ search: true
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* Fix post-logout redirection when a session is invalid
+* Fixes post-logout redirection when a session is invalid
 * Adds new integration with BCP QR Bolivia payment method
 * Correct hash-type claim mapping in the OIDC integration
 
