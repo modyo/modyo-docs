@@ -186,6 +186,7 @@ module.exports = {
                       {
                           title: "Experiences",
                           collapsable: true,
+                          path: "/en/dynamic/experiences/",
                           children: [{
                                   title: "Retail Banking",
                                   collapsable: true,
@@ -466,6 +467,7 @@ module.exports = {
                       {
                           title: "Experiencias",
                           collapsable: true,
+                          path: "/es/dynamic/experiences/",
                           children: [{
                                   title: "Banca Retail",
                                   collapsable: true,
