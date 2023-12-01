@@ -5,6 +5,22 @@ search: true
 # Release Notes
 
 ## 9.2
+### 9.2.54 - November 30, 2023
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Security improvements
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Add the BIN to the list of cards with Bancard Tokenized
+* Add the extra _parameters parameter for the payment call with PayU
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Improves the editing of the CSP header on sites, it is now possible to specify nonce as a variable
+* Correct the synchronization of new menus between stages of a site
+
+
 ### 9.2.53 - November 15, 2023
 <Badge text="Core" type="core" vertical="middle"/>
 
@@ -17,11 +33,13 @@ search: true
 * Correct hash-type claim mapping in the OIDC integration
 
 <Badge text="Channels" type="channels" vertical="middle"/>
+
 * Fixes problem with unpublishing pages under cross-inheritance conditions
 * Corrects the information returned for a location consumed through the liquid SDK; it now returns all its fields correctly, just like the content API
 
 <Badge text="Content" type="content" vertical="middle"/>
-* Corrects inconsistency when saving data entered in a richtext. Code cleaning is now activated before saving
+
+* Corrects inconsistency in the saving of data entered in a richtext. Code cleaning is now activated before saving
 
 
 ### 9.2.52 - October 13, 2023
