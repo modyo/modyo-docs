@@ -39,7 +39,7 @@ search: true
 
 <Badge text="Content" type="content" vertical="middle"/>
 
-* Corrects inconsistency in the saving of data entered in a richtext. Code cleaning is now activated before saving
+* Corrects inconsistency in the saving of data entered in richtext. Code cleaning is now activated before saving
 
 
 ### 9.2.52 - October 13, 2023
