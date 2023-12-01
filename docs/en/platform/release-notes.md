@@ -30,7 +30,7 @@ search: true
 
 * Fixes post-logout redirection when a session is invalid
 * Adds new integration with BCP QR Bolivia payment method
-* Correct hash-type claim mapping in the OIDC integration
+* Corrects hash-type claim mapping in the OIDC integration
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
