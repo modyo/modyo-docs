@@ -18,7 +18,7 @@ search: true
 <Badge text="Channels" type="channels" vertical="middle"/>
 
 * Improves editing of the CSP header on sites, it is now possible to specify nonce as a variable
-* Correct the synchronization of new menus between stages of a site
+* Corrects the synchronization of new menus between stages of a site
 
 
 ### 9.2.53 - November 15, 2023
