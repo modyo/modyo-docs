@@ -13,7 +13,7 @@ search: true
 <Badge text="Customers" type="customers" vertical="middle"/>
 
 * Adds the BIN to the list of cards with Bancard Tokenized
-* Add the extra _parameters parameter for the payment call with PayU
+* Adds the extra _parameters parameter for the payment call with PayU
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
