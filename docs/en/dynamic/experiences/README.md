@@ -16,8 +16,8 @@ Financial experiences allow you to accelerate and speed up the development of so
 - **User Experience (UX) :** Designed to facilitate user interaction.
 - **Basic accessibility: ** Including appropriate color contrast, use of legible font sizes and semantic structure, among others.
 - **Internationalization and localization of texts and currencies: ** The experiences are developed in English and Spanish, and can be customized to other languages, as required. Once deployed in Modyo, the experiences detect the language configured for your site.
-- Los Widgets financieros entregan de la caja:
-- **UX** pensado para facilitar la interacción de usuarios
+- **Validations for forms and dates**.
+- **Flat styles for easy customization: ** Through our design system and popular libraries such as [Bootstrap] (https://getbootstrap.com/).
 
 
 ## **Accesibilidad básica** (como contraste de colores adecuados, uso de tamaños tipográficos legibles, estructura semántica, etc)
