@@ -14,8 +14,8 @@ In this section you will find the complete catalog of financial experiences in t
 Financial experiences allow you to accelerate and speed up the development of solutions for the financial industry and digital banking, by offering customizable interactive components. In addition, they offer:
 
 - **User Experience (UX) :** Designed to facilitate user interaction.
-- ¿Por qué usar un Widget de Dynamic?
-- El catálogo de Widgets financieros están diseñados para acelerar el desarrollo de tus experiencias digitales porque te ofrecen componentes interactivos para que los personalices y los ensambles en flujos que se adapten a tu negocio.
+- **Basic accessibility: ** Including appropriate color contrast, use of legible font sizes and semantic structure, among others.
+- **Internationalization and localization of texts and currencies: ** The experiences are developed in English and Spanish, and can be customized to other languages, as required. Once deployed in Modyo, the experiences detect the language configured for your site.
 - Los Widgets financieros entregan de la caja:
 - **UX** pensado para facilitar la interacción de usuarios
 
