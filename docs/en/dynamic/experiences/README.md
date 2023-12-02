@@ -11,7 +11,7 @@ In this section you will find the complete catalog of financial experiences in t
 
 ### Benefits of using financial experiences
 
-Financial experiences allow you to accelerate and speed up the development of solutions for the financial industry and digital banking, by offering customizable interactive components. In addition, they offer:
+Financial experiences allow you to accelerate and simplify the development of solutions for the financial industry and digital banking, by offering customizable interactive components. In addition, they offer:
 
 - **User Experience (UX) :** Designed to facilitate user interaction.
 - **Basic accessibility: ** Including appropriate color contrast, use of legible font sizes and semantic structure, among others.
