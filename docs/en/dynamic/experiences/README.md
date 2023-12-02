@@ -9,9 +9,9 @@ search: true
 In this section you will find the complete catalog of financial experiences in the areas of [Retail Banking] (/es/dynamic/experiences/retail/dashboard.html) and [Business Banking] (/es/dynamic/experiences/business/dashboard.html), as well as instructions for their installation and development in your local environment.
 
 
-### ¿Qué es un Widget?
+### Benefits of using financial experiences
 
-Un **Widget** es un componente aislado que empaqueta su propio marcado, estilo e interactividad de manera que pueda ser desplegado como parte de cualquier página web sin tener errores de runtime o conflictos con los estilos o el javascript de la página que lo aloja.
+Financial experiences allow you to accelerate and speed up the development of solutions for the financial industry and digital banking, by offering customizable interactive components. In addition, they offer:
 
 - En otras palabras, un **Widget** es un [micro frontend](https://martinfowler.com/articles/micro-frontends.html): un estilo arquitectónico que permite componer y desplegar múltiples aplicaciones javascript en una página.
 - ¿Por qué usar un Widget de Dynamic?
