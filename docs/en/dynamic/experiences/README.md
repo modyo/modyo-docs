@@ -24,7 +24,7 @@ Financial experiences allow you to accelerate and speed up the development of so
 
 To install a Dynamic experience:
 
-1. **Validaciones para formularios, fechas**
-1. **Estilos planos para una fácil personalización** con nuestro sistema de diseño y librerías populares como [Bootstrap](https://getbootstrap.com/).
+1. Choose a template
+1. Run this command, indicating the name of the template:
 
 Instalación de experiencias Dynamic
