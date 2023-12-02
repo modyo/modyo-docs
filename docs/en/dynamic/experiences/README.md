@@ -13,7 +13,7 @@ In this section you will find the complete catalog of financial experiences in t
 
 Financial experiences allow you to accelerate and speed up the development of solutions for the financial industry and digital banking, by offering customizable interactive components. In addition, they offer:
 
-- En otras palabras, un **Widget** es un [micro frontend](https://martinfowler.com/articles/micro-frontends.html): un estilo arquitectónico que permite componer y desplegar múltiples aplicaciones javascript en una página.
+- **User Experience (UX) :** Designed to facilitate user interaction.
 - ¿Por qué usar un Widget de Dynamic?
 - El catálogo de Widgets financieros están diseñados para acelerar el desarrollo de tus experiencias digitales porque te ofrecen componentes interactivos para que los personalices y los ensambles en flujos que se adapten a tu negocio.
 - Los Widgets financieros entregan de la caja:
