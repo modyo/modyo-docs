@@ -6,7 +6,7 @@ search: true
 
 **Dynamic Framework** offers you a catalog of digital experiences focused on financial services that allow you to quickly create functional applications.
 
-In this section you will find the complete catalog of financial experiences in the areas of [Retail Banking] (/es/dynamic/experiences/retail/dashboard.html) and [Business Banking] (/es/dynamic/experiences/business/dashboard.html), as well as instructions for their installation and development in your local environment.
+In this section you will find the complete catalog of financial experiences in the areas of [Retail Banking](/en/dynamic/experiences/retail/dashboard.html) and [Business Banking](/en/dynamic/experiences/business/dashboard.html), as well as instructions for their installation and development in your local environment.
 
 
 ### Benefits of using financial experiences
