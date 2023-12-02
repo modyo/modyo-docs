@@ -27,4 +27,6 @@ To install a Dynamic experience:
 1. Choose a template
 1. Run this command, indicating the name of the template:
 
-Instalación de experiencias Dynamic
+```bash
+modyo-cli get dynamic-retail-dashboard-template
+```
