@@ -20,7 +20,7 @@ Financial experiences allow you to accelerate and speed up the development of so
 - **Flat styles for easy customization: ** Through our design system and popular libraries such as [Bootstrap] (https://getbootstrap.com/).
 
 
-## **Accesibilidad básica** (como contraste de colores adecuados, uso de tamaños tipográficos legibles, estructura semántica, etc)
+## Installing Dynamic Experiences
 
 **Internacionalización y localización de textos y monedas**. Por defecto cada Widget viene en inglés y español, pero tiene toda la infraestructura necesaria para personalizar los idiomas que trae o agregar más idiomas para que se adapte a la necesidad de tu negocio. Si son desplegados en Modyo, los Widgets detectan el idioma configurado para el sitio
 
