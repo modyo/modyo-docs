@@ -2,11 +2,11 @@
 search: true
 ---
 
-# Experiencias Dynamic
+# Dynamic Experiences
 
-**Dynamic Framework** ofrece un catálogo de experiencias digitales centradas en servicios financieros que te permitirán crear aplicaciones funcionales en solo minutos.
+**Dynamic Framework** offers you a catalog of digital experiences focused on financial services that allow you to quickly create functional applications.
 
-Actualmente, tenemos experiencias listas para trabajar en las áreas de _[Banca Retail](/es/dynamic/experiences/retail/dashboard.html) y [Banca Empresas](/es/dynamic/experiences/business/dashboard.html)_. 
+In this section you will find the complete catalog of financial experiences in the areas of [Retail Banking] (/es/dynamic/experiences/retail/dashboard.html) and [Business Banking] (/es/dynamic/experiences/business/dashboard.html), as well as instructions for their installation and development in your local environment.
 
 
 ### ¿Qué es un Widget?
