@@ -52,7 +52,7 @@ If you have any additional questions regarding the Modyo Platform, visit our [of
 
 ### Requirements for using Modyo
 
-To use Modyo, you only need to have a supported Web browser. The entire product interface can be accessed using its [Web Console](/en/platform/core/the-modyo-interface.html).
+To use Modyo, you only need a compatible web browser. The entire product interface can be accessed through its web interface.
 
 :::tip Supported browsers
 Modyo is compatible with the most modern versions of Google Chrome, Firefox, and Microsoft Edge.

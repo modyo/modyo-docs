@@ -4,7 +4,7 @@ search: true
 
 # Architecture
 
-Modyo operates its critical systems in the [Amazon AWS] cloud (https://aws.amazon.com). With over 12 years of experience on this platform, and as an Advanced Technology Partner, Modyo has the necessary experience and certified personnel to ensure the continuity, performance, and security of your deployments.
+Modyo operates its critical systems in the [Amazon AWS](https://aws.amazon.com) cloud. With over 12 years of experience on this platform, and as an Advanced Technology Partner, Modyo has the necessary experience and certified personnel to ensure the continuity, performance, and security of your deployments.
 
 In 2019 and 2021, Modyo was recognized by Amazon AWS as Technology Partner of the Year for Chile and Peru. Additionally, Modyo was the first company in Latin America to become an AWS Independent Software Vendor (ISV).
 
@@ -12,7 +12,7 @@ Modyo Connect is offered exclusively on the Amazon AWS cloud and, like Modyo Clo
 
 <img src="/assets/img/infrastructure/architecture.png" alt="Modyo Connect Architecture" style="margin-top: 40px;" />
 
-The [microservices](/en/architecture/patterns/microservice) automatically connect to an internal load balancer, where the container instances deployed in [AWS Elastic Container Services (ECS)] are dynamically registered (https://aws.amazon.com/ecs/). The [microservices](/en/architecture/patterns/microservice) have traffic egress rules to the Internet using [AWS NAT Gateway](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html) which provides dedicated fixed IP addresses for each customer. Business services are accessed through configured IPsec VPN links to the customer's infrastructure.
+The [microservices](/en/architecture/patterns/microservice) automatically connect to an internal load balancer, where the container instances deployed in [AWS Elastic Container Services (ECS)](https://aws.amazon.com/ecs/) are dynamically registered. The [microservices](/en/architecture/patterns/microservice) have traffic egress rules to the Internet using [AWS NAT Gateway](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html) which provides dedicated fixed IP addresses for each customer. Business services are accessed through configured IPsec VPN links to the customer's infrastructure.
 
 Container images are securely stored in the AWS Elastic Container Repository (ECR) repository, on which security inspections are performed to detect any vulnerabilities present in the images stored in it.
 
@@ -22,7 +22,7 @@ The multi-zone deployment in Amazon AWS guarantees an excellent level of redunda
 
 ## Operation
 
-Like Modyo Enterprise Cloud, Modyo Connect is a service fully managed by Modyo, who is responsible for all configuration management and control of the cloud infrastructure. Service availability levels are determined by a service agreement with each customer.
+Like Modyo Enterprise Cloud, Modyo Connect is a fully-managed service where Modyo is responsible for all infrastructure configuration, management, and control of the cloud infrastructure. Modyo ensures service availability for Modyo Connect through service level agreements established with each customer.
 
 For the delivery of the service, Modyo has a dedicated team of [Site Reliability Engineers (SREs)](https://sre.google) certified in AWS, who are responsible for ensuring the proper operation of cloud systems for all its customers. The main responsibilities of the SREs team are:
 
@@ -47,6 +47,6 @@ Modyo defines a shared responsibility matrix in conjunction with its customers i
 
 <img src="/assets/img/infrastructure/shared_responsability_model.png" alt="Modyo Shared Responsibility Model" style="margin-top: 40px;" />
 
-From the point of view of the service users, the architects, technical leaders, and developers will be responsible from the design of the solution, to the deployment and execution of the solution, so they are primarily responsible for ensuring the resiliency, scalability, and security of what is delivered.
+From the point of view of the users of the service; the architects, technical leaders, and developers will be responsible from the design of the solution, to the deployment and execution of the solution, so they are primarily responsible for ensuring the resiliency, scalability, and security of what is delivered.
 
-From the point of view of the SRE team that operates the service, they will be responsible for the implementation of the infrastructure of the offered service, the definition of security standards and configurations and the high availability of the service itself. This ensures that the principles of the [AWS Well Architected Framework](https://aws.amazon.com/architecture/well-architected/) are met.
+From the point of view of the SRE team that operates the service, they will be responsible for implementing the infrastructure of the service offered, the definition of security standards and configurations, and the high availability of the service itself. This ensures that the principles of [AWS Well Architected Framework] (https://aws.amazon.com/architecture/well-architected/) are met.

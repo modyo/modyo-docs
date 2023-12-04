@@ -64,8 +64,8 @@ To display the name of the post on your page use:
 
 With Tags you can add flow and iteration control to your pages. You need to encapsulate the language with square brackets and percentage {% %} to use Tags, for example:
 
-```Liquid
-{% if product.name == “Electronic Banking”%}
- Download our electronic banking to your cell phone!
-{% endif%}
+```liquid
+{% if product.name == "Online Banking" %}
+Download our Online Banking App now!
+{% endif %}
 ```

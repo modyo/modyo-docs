@@ -10,7 +10,7 @@ A site is where the content created in [Content] (/en/platform/content/) and [Ch
 A site can be in one of three states:
 
 - **Enabled**: Default status of newly created sites and those that are enabled for use.
-- **Pending changes**: This status appears when there are changes pending on the site. An administrator can click **Publish** to access the **Review and Publish** section, to verify the changes and publish the site.
+- **Pending changes**: This status appears when there are changes pending on the site. An administrator can click **Publish** to access the **Review and Publish** section, in order to verify the changes and publish the site.
 - **Disabled**: When a site is in this state, it is not possible to access it.
 
 ## Create a Site
@@ -26,12 +26,12 @@ To create a new site, follow these steps:
 Once the site is created, it will be automatically enabled and the system will take you to the **Summary** page.
 
 :::warning Attention
-In the site index, you will only see the sites in which you have a role and are part of the work team.
+In the site index, you will only see the sites in which you have a role and are part of the team.
 :::
 
 ## Joint Review and Publication
 
-On the review and joint publication screen, you can see all the pending changes to be published on your site. To view the changes, click on the **View** button.
+On the joint review and publication screen, you can see all the changes slated for publication on your site. To view the changes, click the **View** button.
 
 ### Joint Publication
 
@@ -56,19 +56,19 @@ To enable or disable search functionality on a site, follow these steps:
 
 1. In the side menu, click **Site Settings**.
 1. Click on **General**.
-1. In the **Privacy** section, disable the **Enable search** box.
+1. In the **Privacy** section, check the **Enable search** box.
 1. Click **Save**.
 
 
 ### Search template
 
-You can control the appearance and search functionality on your site using the [template] (/en/platform/channels/templates/) _search_.
+You can control the look and feel of your site using the [template](/en/platform/channels/sites.html #plantilla -de-search/) _search_.
 
 This template is available by default in the Templates section, in the “Views/Search/Show” category. It contains all the Liquid code you need to carry out queries on your site.
 
 You can access it using the URL of your site and attaching _search_ or _search.json_. For example:
- - `test.modyo.com/mysite/search`
- - `test.modyo.com/mysite/search.json`
+ - `test.modyo.com/mySite/search`
+ - `test.modyo.com/mySite/search.json`
 
 By default, when making a query, the records are displayed in the form of a list with their title, description and a link to their address. You can modify the template and expand its functionalities to adapt it to your specific needs.
 
@@ -76,7 +76,7 @@ By default, when making a query, the records are displayed in the form of a list
 
 You can also use search.json to integrate the search engine. This API allows you to integrate the search engine in a more personalized way.
 
-To access the API, add “search.json” to the URL of your site along with your query. For example: test.modyo.com/mysite/search. json?query=myquery
+To access the API, add “search.json” to the URL of your site along with your query. For example: test.modyo.com/mysite/search. json?query=myQuery
 
 You can customize your queries as follows:
 
@@ -98,7 +98,7 @@ In this section, you can configure the following data for your site:
 
 - **Site Name**:  The name of your site, this field is used as the default title for your site's SEO.
 - **Description**: A brief description of your site.
-- **Site Logo**: Image shown at the top left as a site logo.
+- **Site Logo**: Image shown at the top left as the site's logo.
 - **Language**: The language in which your site is available. The options are: Spanish, English and Portuguese.
 - **[Team Review](/en/platform/core/key-concepts.html)**
 - **Time Zone**: The time zone in which the date and time fields are displayed within the site. This setting affects all sections of the site, including Pages, Navigation and Templates, as well as Liquid calls to site data.
@@ -113,14 +113,14 @@ The time in the content is managed in the Account Settings.
 - **Delete**: Permanently delete a site and all of its elements.
 
 :::danger Danger
-Erasing is irreversible, so you must be completely safe when performing this action.
+Erasing is irreversible, you must be completely sure when executing this action.
 
 When you press the delete button, the system will ask you to enter the textual name of the site you want to delete to confirm the action. Once confirmed, you won't be able to access the site or its elements again.
 :::
 
 #### Google Tag Manager
 
-By default, the new Modyo themes include the necessary snippets to automatically inject Google Tag Manager scripts into both the `tag <head> `and the tag` <body> `of the sites. You can find these snippets in the [Templates] section (/en/platform/channels/templates.html), category _Snippets/General_ and they are embedded both in the _head_ snippet and in the _home_ and _base_ views.
+By default, the new Modyo themes include the necessary snippets to automatically inject Google Tag Manager scripts into both `tag <head>` and tag `<body> ` of the sites. You can find these snippets in the [Templates](/en/platform/channels/templates.html) section, category _Snippets/General_ and they are embedded both in the _head_ snippet and in the _home_ and _base_ views.
 
 If you don't have these snippets, you can create a custom snippet and then embed Google Tag Manager on your site.
 
@@ -168,7 +168,7 @@ This section allows you to configure your site's privacy restrictions.
 - **Private**: Only users logged in to Modyo can view the site.
 - **Show home to public visits**: The home page of the site is shown to all visitors, even those who are not logged in. However, when navigating to any other page of the site, users will be asked to register or log in.
 - **Redirect to home when a URL is not found**: By default, the site shows a 404 response (page not found) when accessing a URL that doesn't exist. However, if you check this option, instead of receiving a 404, the user will be redirected to the home page of the site.
-- **Enable search**: If you check this option, you enable the search function on the site.
+- **Enable search**: When checking this option, you enable the search function on the site.
 
 :::tip Tip
 If you enable search on your site and use the `multi=true` parameter from other sites, you can also search your current site.
@@ -179,10 +179,10 @@ If you enable search on your site and use the `multi=true` parameter from other 
 
 These options pose a risk to the experience of the site and its users. Proceed carefully.
 
-- Change realm: This field displays the kingdom of the site. When you change your kingdom, you lose all the privacy settings on your sites, pages and navigation.
+- Change realm: This field displays the site's realm. When changing your realm, you lose all the privacy settings on your sites, pages and navigation.
 - Site Status: Change the status of the site between three different options.
     * Enabled: Allows the site to be editable and visible to the public. This is the default state of a site.
-    * Editable: Allows a site to be modified, but is not visible to the public. Users must log in to Modyo Platform to access the site. Robots.txt, PWAs, and the manifest are disabled in this state.
+    * Editable: Allows a site to be modified, but not visible to the public. Users must log in to Modyo Platform to access the site. Robots.txt, PWAs, and the manifest are disabled in this state.
     * Disabled: Prohibits both editing and visibility of a site. In this state, the site is not accessible or visible to users.
 - Delete Site: This action starts the process of asynchronously deleting the site. Once the deletion begins, the site is no longer accessible. All elements contained in the site, such as pages and widgets, will also be deleted.
 
@@ -204,13 +204,13 @@ The robots.txt and sitemap.xml files are only visible on the site if custom doma
 :::
 
 - **Custom meta tags**: Allows you to set meta tags and their default values for all pages.
-- **Replicate meta tag on pages: ** Propagate this meta tag and its value on all pages of the site. It is necessary to save the changes and publish all the modified pages for the new meta tags to take effect.
+- **Replicate meta tag on pages:** Propagates the meta tag and its value on all pages of the site. It is necessary to save the changes and publish all the modified pages for the new meta tags to take effect.
 
 :::warning Attention
 In the site configuration section, only users with the site administrator role can add meta tags. Within a site, the developer's role is able to add and remove meta tags page by page.
 :::
 
-#### On-page vs. off-page SEO (On-Page vs. Off-Page)
+#### On-page vs. off-page SEO
 
 Also known as on-site and off-site SEO, these terms refer to actions you can take on and off a web page to improve the visibility of your site in search engines. To achieve the best results, we recommend using both strategies together, which will contribute to a stronger position in search results.
 
@@ -233,17 +233,17 @@ To improve off-page SEO, you can:
 
 ### PWA
 
-Modyo allows the implementation of Progressive Web Apps (PWA) within the digital channels that are being developed. To do this, it offers two options for implementing them.
+Modyo allows the implementation of Progressive Web Apps (PWA) within the digital channels that are being developed. For this, it offers two options to implement them.
 
 #### Manifest
 
 The manifest is used to indicate how you want a browser to display your digital channel. You can activate it in Modyo by checking the box. Activating it creates this path:
 
-```
+```bash
 https://[domain]/[site-name]/manifest.json
 ```
 
-The manifest must be implemented on each of the pages where the PWA is developed, through [Templates] (/en/platform/channels/templates.html), in the ``head`` snippet.
+The manifest must be implemented on each of the pages where the PWA is developed, through [Templates](/en/platform/channels/templates.html), in the ``head`` snippet.
 
 You can create and modify the manifest in the next field, allowing you to add changes without having to leave the view.
 
@@ -259,7 +259,7 @@ If you don't customize the manifest, but add the path in Templates, it will be b
 
 The Service Worker allows the digital channel to perform different actions or keep certain data connected within the cache to provide a structure in case of a bad connection. You can enable the Service Worker through the corresponding box. Activating it creates the following path:
 
-```
+```bash
 https://[domain]/[site-name]/serviceworker.js
 ```
 
@@ -275,7 +275,7 @@ If you don't customize or save the code, the site won't have the features you're
 
 ### Domains
 
-The Domains section allows you to know the public location of your site, so it's essential that each member of the platform is informed of the changes that are made here.
+The Domains section allows you to know the public location of your site, therefore it's essential that each member of the platform is informed of changes that are made here.
 
 The variables you can change in this section are:
 
@@ -309,7 +309,7 @@ Modyo has reserved domains that cannot be used as custom site domains:
 :::
 
 :::warning Attention
-Modyo has reserved hosts for sites, so you can't use them as a host for your sites:
+Modyo has reserved hosts for sites, therefore, you can't use them as hosts for your sites:
 <table style="border: none;"><tr style="border: none;">
 <td style="border: none;"><ul>
 <li>404</li>
@@ -354,7 +354,7 @@ Modyo has reserved hosts for sites, so you can't use them as a host for your sit
 
 ### Stages
 
-Adding stages to your site allows you to implement a continuous integration and deployment (CI/CD) approach to add new functionality without affecting what is already published.
+Adding stages to your site allows you to implement a continuous integration and deployment (CI/CD) approach, in order to add new functionalities without affecting what is already published.
 
 The main advantages of having different stages on your sites are:
 
@@ -460,7 +460,7 @@ To add a new member to your site, follow these steps:
 1. Expand **Site Settings**.
 1. Click on **Team Members**.
 1. Press the **+ Add Member** button.
-1. Search for and select the user you want to add to the site and choose a role for him.
+1. Search for and select the user you want to add to the site and choose a role for that user.
 1. Click **Add**.
 
 #### Modify a role
@@ -471,11 +471,11 @@ To modify an administrator's role, follow these steps:
 
 The available roles are:
 
-- **Viewer**: This user can view entries, see differences between versions, and leave comments. You can also access the synchronization view and view the changes that are pending synchronization. This role is not authorized to take any action that constitutes a change to the platform.
-- **Developer**: This user is in charge of structural resource development. You can create, modify, and submit pages, widgets, menus, and templates for review. All actions taken by a Developer must go through a review process before publication. This role does not have permissions to publish, delete, or _rollback_ to previous versions of the resources, nor to modify the configuration of the site. There is a variant of this role called Developer CLI, which in addition to the permissions of a Developer, allows you to update widgets from external applications, such as the [modyo-cli] (/en/platform/channels/widgets.html #modyo -cli).
-- **Developer CLI**: Can create, modify and submit pages, widgets, the menu and templates for review. In addition, you can push widgets from external applications.
+- **Viewer**: This user can view entries, see differences between versions, and leave comments. They can also access the synchronization view and view the changes that are pending synchronization. This role is not authorized to take any action that constitutes a change to the platform.
+- **Developer**: This user is in charge of structural resource development. They can create, modify, and submit pages, widgets, menus, and templates for review. All actions taken by a Developer must go through a review process before publication. This role does not have permissions to publish, delete, or _rollback_ to previous versions of the resources, nor to modify the configuration of the site. There is a variant of this role called Developer CLI, which in addition to the permissions of a Developer, allows you to update widgets from external applications, such as the [modyo-cli] (/en/platform/channels/widgets.html #modyo -cli).
+- **Developer CLI**: Can create, modify and submit pages, widgets, the menu and templates for review. In addition, they can push widgets from external applications.
 - **Reviewer**: This role permits the correction, approval or discarding of the work done by the Developers. It can create, modify, submit for review, and approve pages, widgets, menus, and templates. It can also publish when the review conditions are met. It cannot edit the site settings.
-- **Admin**: The Site Administrator has the same privileges as the previous roles and has the ability to configure the entire site. This includes the creation, modification, submission for review and approval of pages, widgets, menus and templates. In addition, you can publish without requiring team review validation.
+- **Admin**: The Site Administrator has the same privileges as the previous roles and has the ability to configure the entire site. This includes the creation, modification, submission for review and approval of pages, widgets, menus and templates. In addition, they can publish without requiring team review validation.
 
 #### Delete an administrator
 To remove an administrator from the site, follow these steps:
@@ -491,7 +491,7 @@ In this view you will find a table with all the redirects that currently exist o
 To create a new redirect, click on the**New** button in the upper right corner of the view. Fill in the fields **_URL_ of Source** and **_URL_ of destination** and redirection code and then save the changes.
 
 :::warning Attention
-The redirect table is the second to last in precedence, so if there is a URL on the site that points to a [page] (/en/platform/channels/pages.html) or a default view, you'll see that view instead of being redirected through the custom redirection table.
+The redirect table is the second to last in precedence, so if there is a URL on the site that points to a [page](/en/platform/channels/pages.html) or a default view, you'll see that view instead of being redirected through the custom redirection table.
 :::
 
 In addition to creating redirects one by one, you can import a [CSV file](/assets/examples/custom-redirections.csv) with up to 1000 redirects.
@@ -531,17 +531,17 @@ Tells the browser that it can only access the site using HTTPS.
 The _header_ `Referer` contains information from the previous web page from which it is linking, with the _header_ `Referer-Policy` you can control how much information should be included in the _header_ `Referer`.
 
 * **no-referrer**: Does not send _referrer_ information.
-* **no-referrer-when-downgrade**: Don't send _referrer_ information to a less secure destination.
-* **origin**: Send only the source domain, remove the paths and _query string_.
-* **origin-when-cross-origin**: Send _referrer_ information for _requests_ from the same source. Delete the routes and _query string_ for other destinations.
-* **same-origin**: Send _referrer_ information for same origin _requests_ only.
+* **no-referrer-when-downgrade**: Does not send _referrer_ information to a less secure destination.
+* **origin**: Sends only the source domain, remove the paths and _query string_.
+* **origin-when-cross-origin**: Sends _referrer_ information for _requests_ from the same source. Deletes the routes and _query string_ for other destinations.
+* **same-origin**: Sends _referrer_ information for same origin _requests_ only.
 * **strict-origin**: Sends the origin domain only for same security level _requests_, and doesn't send _referrer_ information to less secure destinations.
 * **strict-origin-when-cross-origin**: Sends _referrer_ a _requests_  information from the same source. Sends the source only if the security level is the same, and does not send _referrer_ information to less secure destinations.
-* **unsafe-url**: Always send _referrer_ information.
+* **unsafe-url**: Always sends _referrer_ information.
 
 #### X-Frame-Options
 
-Indicate whether your site can be included in a `frame`, `iframe`, `embed`, or `object`.
+Indicates whether your site can be included in a `frame`, `iframe`, `embed`, or `object`.
 * **DENY**: The site cannot be displayed in a _frame_.
 * **SAMEORIGIN**: The site can be displayed in _frames_ with the same domain.
 
@@ -551,9 +551,9 @@ Indicates that _MIME types_ announced in the _header_ `Content-Type` must be fol
 
 #### Content-Security-Policy (CSP)
 
-Controls what resources the browser can load on the site to mitigate data injection attacks and _cross site scripting_. The default value of *allows you to load resources from anywhere*, so it's important to design a content security policy that's right for your site.
+Controls what resources the browser can load on the site to mitigate data injection attacks and _cross site scripting_. The default value *allows you to load resources from anywhere*, so it's important to design a content security policy that's right for your site.
 
-Freely specify your content security policy in the text area. For a complete guide on how to write your policy, see [Content Security Policy (CSP) from Mozilla Developer Network.] (https://developer.mozilla.org/en/docs/Web/HTTP/CSP)
+Freely specifies your content security policy in the text area. For a complete guide on how to write your policy, see [Content Security Policy (CSP) from Mozilla Developer Network.](https://developer.mozilla.org/en/docs/Web/HTTP/CSP)
 
 :::warning Warning
 A very strict value can interfere with some features like [Google tag manager](/en/platform/channels/sites.html#google-tag-manager), [PWA](/en/platform/channels/sites.html#pwa), [Widgets](/en/platform/channels/widgets.html) and [Asset Manager](/en/platform/content/asset-manager.html).
@@ -561,7 +561,7 @@ A very strict value can interfere with some features like [Google tag manager](/
 
 A production-ready policy must ensure that all resources, such as images and style sheets, are loaded from reliable sources and requires that all scripts be secure and reliable for the application. For example, a strict policy for the _minimal template_ would look like this:
 
-```
+```bash
 default-src 'self'; img-src 'self' https://cloud.modyocdn.com; font-src 'self' https://cloud.modyocdn.com http://cdn.materialdesignicons.com; style-src 'self' http://cdn.materialdesignicons.com; script-src 'self'
 ```
 
@@ -586,13 +586,13 @@ These tools can help you design a strong security policy:
 
 Allows or denies the use of browser features and APIs for the site; for example, you can restrict privacy-sensitive APIs such as the camera or microphone and the automatic playback of videos.
 
-For a full list of browser-compatible features, see the [MDN Feature Policy] (https://developer.mozilla.org/en-US/docs/Web/HTTP/Feature_Policy).
+For a full list of browser-compatible features, see the [MDN Feature Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Feature_Policy).
 
 #### Cross Origin Embedder Policy (COEP)
 
-Configure the insertion of cross-source resources into the document. For example, if your document has a COEP header with a value of Require-Corp or Credentialless, you can only access certain functions, such as SharedArrayBuffer or Performance.now () objects, with unrestricted timers.
+Configures the insertion of cross-source resources into the document. For example, if your document has a COEP header with a value of Require-Corp or Credentialless, you can only access certain functions, such as SharedArrayBuffer or Performance.now () objects, with unrestricted timers.
 
-For more information, see the [MDN Cross-Origin-Embedder-Policy] (https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy).
+For more information, see the [MDN Cross-Origin-Embedder-Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy).
 
 #### Cross Origin Opener Policy (COOP)
 
@@ -600,22 +600,23 @@ Allows you to ensure that a top-level document doesn't share a browsing context 
 
 COOP isolates the processing of your document, so potential attackers won't be able to access your global object if they open it in a popup, preventing a set of cross-origin attacks.
 
-For more information, review the [MDN Cross-Origin-Opener-Policy] (https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy).
+For more information, review the [MDN Cross-Origin-Opener-Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy).
 
 #### Cross Origin Resource Policy
 
 Conveys the desire to block cross-origin/cross-site requests without cors to the specified resource by the browser.
 
-For more information, see the [MDN Cross-Origin-Resource-Policy] (https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Resource-Policy).
+For more information, see the [MDN Cross-Origin-Resource-Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Resource-Policy).
 
 
 ### Site variables
 
-Modyo has [global variables] (/en/platform/core/key-concepts.html #variables -global) that you can use on multiple sites. However, you can also create specific variables for a particular site or overwrite the value of an existing global variable, with a value specific to the particular site.
+Modyo has [global variables](/en/platform/core/key-concepts.html #variables -global) that you can use on multiple sites. However, you can also create specific variables for a particular site or overwrite the value of an existing global variable, with a value specific to the particular site.
 
 Using variables allows you to reuse HTML, JS, CSS, or text code across different sites, widgets, or templates. If you have code that is repeated in several parts of your account, you can assign that value to a variable to simplify your processes and if you edit the value of the variable, the change will be reflected everywhere the variable is in use.
 
-:::tip Tip In global variables, you can use plain text, HTML, JavaScript, and CSS. However, it's important to note that you can't use Liquid code inside these variables. It is also important to remember that the content of global variables has a maximum limit of 65,535 characters.
+:::tip Tip 
+In global variables, you can use plain text, HTML, JavaScript, and CSS. However, it's important to note that you can't use Liquid code inside these variables. It is also important to remember that the content of global variables has a maximum limit of 65,535 characters.
 
 To get the value of the variable anywhere that accepts Liquid markup, use:<span v-pre>`{{vars.Name}}`</span>
 :::
@@ -625,13 +626,14 @@ To get the value of the variable anywhere that accepts Liquid markup, use:<span 
 To create a variable in sites, follow these steps:
 
 1. From the main side menu, click **Channels**.
-1. Select your**Site**.
+1. Select your **Site**.
 1. Under **Site Settings**, click **Site Variables**. Here you can see the list of all global variables and site variables, their general information and a button to copy their code into Liquid markup.
-1. Click on**+ New Variable**.
+1. Click on **+ New Variable**.
 1. Complete the **Name** and **Value** fields of the variable.
 1. Click **Save**.
 
-:::warning Attention When using variables, Modyo follows a hierarchy of preference, where variables defined at the lowest level have priority. The variables defined in the widget will take precedence over the variables defined on the site, and in turn, the variables defined on the site will take precedence over the variables defined at the account level.
+:::warning Attention 
+When using variables, Modyo follows a hierarchy of preference, where variables defined at the lowest level have priority. The variables defined in the widget will take precedence over the variables defined on the site, and in turn, the variables defined on the site will take precedence over the variables defined at the account level.
 
 Therefore, it's important to use caution when defining variables in widgets or on the site, especially if you use the same name as the variables defined at the account level.
 

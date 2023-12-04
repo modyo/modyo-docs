@@ -18,7 +18,7 @@ Along the **top bar**, on the left, you can see the widget name and current stat
 - **Published:** This status appears after you have made a publication and when the editable and published versions are the same.
 - **Pending changes:** This status appears if there is already a published version, but there are changes pending publication in an editable version.
 - **In review:** This status appears when [team review] (/en/platform/core/key-concepts.html) is enabled and the editable version has been submitted for review.
-- **Approved:** This status appears when [team review] (/en/platform/core/key-concepts.html) is enabled and the review conditions for the item are met. When in this state, templates are ready to be published.
+- **Approved:** This status appears when [team review](/en/platform/core/key-concepts.html) is enabled and the review conditions for the item are met. When in this state, templates are ready to be published.
 
 On the right, you'll find the following actions:
 **Preview:** Opens the preview of the editable version of the widget in a new tab.
@@ -27,7 +27,7 @@ On the right, you'll find the following actions:
 You can preview the widgets as a user without a session or a user with a Modyo session. For this, it is recommended to open or close the Modyo session on the site before entering preview mode. This is because logging in or out of preview mode can result in security errors such as _x-frame-options_ or _mixed-content_, depending on the site's custom domain and SSL settings.
 :::
 
-**Differences:** Takes you to the [difference view] (/en/platform/core/key-concepts.html), where you can compare the changes between multiple versions of the widget.
+**Differences:** Takes you to the [difference view](/en/platform/core/key-concepts.html), where you can compare the changes between multiple versions of the widget.
 
 By default, you start by comparing the published version with the editable version. Use the version selectors to compare with backup versions. If the icon does not appear, it means that there is no published version of this widget.
 
@@ -38,8 +38,8 @@ By default, you start by comparing the published version with the editable versi
 **Main button:**
 
 - **Save:** Saves current changes.
-- **Submit for review:**If team review is enabled, you can submit the widget for review and notify reviewers that the widget is ready to be reviewed.
-- **Publish:** Takes you to the [co-post] view (/en/platform/core/key-concepts.html#joint-review-and-publication) where you can publish your widgets.
+- **Submit for review:** If team review is enabled, you can submit the widget for review and notify reviewers that the widget is ready for review.
+- **Publish:** Takes you to the [co-post](/en/platform/core/key-concepts.html#joint-review-and-publication) view where you can publish your widgets.
 
 **Other main actions:**
 
@@ -63,9 +63,9 @@ To learn more about publication lifecycles in Modyo, review the [Versioning](/en
 In the main work area you can see the following:
 
 - **Code Tabs:** A JavaScript, CSS, and HTML tab is available for building widgets.
-- **File Manager:** When clicked, the file management mode is lifted, where you can filter and search for the files you have uploaded to the [File Manager] (/en/platform/content/asset-manager.html) and copy their URL to use them in the widget. You can also upload new files from this modal.
+- **File Manager:** When clicked, the file management mode is lifted, where you can filter and search for the files you have uploaded to the [File Manager](/en/platform/content/asset-manager.html) and copy their URL to use them in the widget. You can also upload new files from this modal.
 - **Keyboard Shortcuts:** Shows a small informational window with some useful keyboard shortcuts.
-- **Snippets:** Shows a list of the snippets available from the [Template Builder] (/en/platform/channels/templates.html #snippets) and their code is copied to reference them in the widget.
+- **Snippets:** Shows a list of the snippets available from the [Template Builder](/en/platform/channels/templates.html #snippets) and their code is copied to reference them in the widget.
 - **Changes:** If changes have been saved and have not been published, it will display this list of all the times saved each of the files (JS, CSS, and HTML). Clicking on a sub-version changes the content of the tab to the content of the sub-version that was clicked.
 
 :::tip Tip
@@ -137,7 +137,7 @@ With i18n you can configure and add new languages to your widgets.
 
 To handle internationalization in the Widgets in our [widget catalog](/en/widgets/) we use the [**Vue i18n**](https://kazupon.github.io/vue-i18n/) package installed using the  [vue-cli-plugin-i18n](https://github.com/kazupon/vue-cli-plugin-i18n) plugin, you can review its documentation [here](https://kazupon.github.io/vue-i18n/introduction.html). When you install the plugin, a folder for languages called `locales` and a configuration file called `i18n.js` are created.
 
-``` treeview{3,5-7}
+```shell{3,5-7}
 ├── src/
 │   ├── App.vue
 │   ├── i18n.js
@@ -180,7 +180,7 @@ We have to create the variable `liquid.lang` in Modyo Platform. To create this v
 1. Open the `theme` View in the Views -> Javascript -> theme section.
 1. Paste the following code:
 
-``` js
+```shell
 window.liquid = {
  lang: '{{@site.language}}' === 'en' ? 'en-US' : 'es-CL'
 };
@@ -192,11 +192,11 @@ This code assigns the language to the `liquid.lang` variable, depending on the v
 
 To add a new language to the site, we simply create a **JSON** file in the `locales` folder where its name is the code of the language to be added. For example, if we want to add Brazilian Portuguese, add `pt-BR.JSON`:
 
-``` treeview{4}
+```shell{4}
 ├── src/
 │   ├── locales/
 │   │   ├── en-US.json
-│   │   ├── pt-BR.json <-- nuevo idioma
+│   │   ├── pt-BR.json <-- new language
 │   │   └── es-CL.json
 ```
 :::warning Attention
@@ -212,7 +212,6 @@ In order to locate the error messages that the validator shows, we need to make 
 3. Return the modified **messages** object.
 
 ```js
-// 1
 import esCL from 'vee-validate/dist/locale/es-CL.json';
 import enUS from 'vee-validate/dist/locale/en-US.json';
 import ptBR from 'vee-validate/dist/locale/pt-BR.json';
@@ -223,22 +222,22 @@ function loadLocaleMessages() {
   const locales = require.context('./locales', true, /[A-Za-z0-9-_,\s]+\.json$/i);
   const messages = {};
   locales.keys().forEach((key) => {...});
-  // 2
+
   messages['es-CL'] = {
     ...messages['es-CL'],
     validations: esCL.messages,
   };
-  // 2
+
   messages['en-US'] = {
     ...messages['en-US'],
     validations: enUS.messages,
   };
-  // 3
+
   messages['pt-BR'] = {
     ...messages['pt-BR'],
     validations: ptBR.messages,
   };
-  // 4
+
   return messages;
 }
 ```

@@ -14,29 +14,29 @@ To edit a page, click on the edit icon or on the name of the page to go to the e
 
 In the edit view, you will see a bar across the top, a central grid in the middle, and a sidebar with tabs.
 
-In the top bar, you can find different actions and information:
+In the bar at the top, you can find different actions and information:
 
-**Title**: It is located in the upper left side and indicates the name of the page you are modifying. On the right side of the name, you can see the current state of the page. The state will either be "Draft", "Under review", "Approved", "Pending changes", or "Published". To learn more about these states, review the [versioning and team review](/en/platform/core/key-concepts.html) section.
+**Title:** It is located in the upper left side and indicates the name of the page you are modifying. On the right side of the name, you can see the current state of the page. The state will either be "Draft", "Under review", "Approved", "Pending changes", or "Published". To learn more about these states, review the [versioning and team review](/en/platform/core/key-concepts.html) section.
 
 **Date of publication:** If the page has been published, it will indicate the date of the last publication.
 
 **Preview:** This icon allows you to open a new tab with Preview mode to view the changes that have been made to the page without having to publish it.
 
 :::warning Attention
-You can preview the pages as a user without a session or a user with a Modyo session. For this, it is recommended to open or close the Modyo session on the site before entering preview mode. This is because logging in or out of preview mode can result in security errors such as _x-frame-options_ or _mixed-content_, depending on the site's custom domain and SSL settings.
+You can preview the pages as a user without a session or a user with a Modyo session. For this, it is recommended you open or close the Modyo session on the site before entering preview mode. This is because logging in or out of preview mode can result in security errors such as _x-frame-options_ or _mixed-content_, depending on the site's custom domain and SSL settings.
 :::
 
-**Differences:** By clicking on the differences icon, you access the differences view of the page, where you can select two versions to compare, allowing you to execute the actions [reset and rollback] (/en/platform/core/key-concepts.html#reversing-a-change)
+**Differences:** By clicking on the differences icon, you access the differences view of the page, where you can select two versions to compare, allowing you to execute the actions [reset and rollback](/en/platform/core/key-concepts.html#reversing-a-change)
 
 :::tip Tip
-If your page is in a _draft_ state, the difference icon will not appear, since there is nothing to compare the current editable version with. To learn more about the differences and supports, check out the [versioning] section (/en/platform/core/key-concepts.html#versions)
+If your page is in a _draft_ state, the difference icon will not appear, since there is nothing to compare the current editable version with. To learn more about the differences and supports, check out the [versioning](/en/platform/core/key-concepts.html#versions) section
 :::
 
 **Activity:** Displays a sidebar that shows the activity associated with the page, such as modifications, posts and comments. At the bottom of this bar, you can type associated comments. If the page is under review, all assigned reviewers will receive a notification with the comment.
 
 **Other actions:**
 
-- Archive: If a page isn't published, this action allows you to archive it. When a page is archived, by default, it doesn't appear in the page index, keeping the site structure clean.
+- Archive: If a page isn't published, this action allows you to archive it. When a page is archived, by default it doesn't appear in the page index, keeping the site structure clean.
 - Duplicate: This action allows you to copy the editable version of the page you're on. The copied version is in a _draft_ state.
 
 :::warning Attention
@@ -72,8 +72,8 @@ To learn more about content pages, see [Content Page](/en/platform/channels/page
 :::
 
 **Secondary Actions:**
-- Force publish: If you are a site administrator, then you have the option to publish pages at any time, including skipping the team review process.
-- Unpublish: If the page is published, then you will see this action and can unpublish the page.
+- Force publish: If you are a site administrator, you have the option to publish pages at any time, including skipping the team review process.
+- Unpublish: If the page is published, you will see this action and can unpublish the page.
 
 The central grid is where you can position your widgets. You can move widgets back and forth using the _drag-and-drop_ functionality.
 
@@ -93,11 +93,11 @@ Here you can customize your page using preset widgets from the following list:
 :::warning Warning
 The rich text widget has an automatic formatter, so the code you write in the code view may be affected.
 :::
-- **Content listing:** Show content listings using filters by space, type, language, tags, and category. To modify how these widgets look, you must do so in the Widgets section in [Templates] (/en/platform/channels/templates.html).
+- **Content listing:** Show content listings using filters by space, type, language, tags, and category. To modify how these widgets look, you must do so in the Widgets section in [Templates](/en/platform/channels/templates.html).
 - **Featured Content:** Shows a list of entries as “hero” images in a carousel.
 - **Custom:** You'll find a list of all the widgets you've created and published in the widget builder.
 
-Once you have selected a widget in the central section, the focus will go to the side tab, where you can find different configuration options for the widget and if you select a custom widget, you will find a link to go directly to its editing view in [widget builder] (/en/platform/channels/widgets.html) and the list of variables that the widget is using. If you want to overwrite the value of a particular variable for that instance of the widget on that page, you must select the checkbox to the left of the variable and change the value it takes.
+Once you have selected a widget in the central section, the focus will go to the side tab, where you can find different configuration options for the widget and if you select a custom widget, you will find a link to go directly to its editing view in [widget builder](/en/platform/channels/widgets.html) and the list of variables that the widget is using. If you want to overwrite the value of a particular variable for that instance of the widget on that page, you must select the checkbox to the left of the variable and change the value it takes.
 
 ### Settings
 
@@ -153,7 +153,7 @@ Modyo has reserved paths for the pages, so you cannot use these as paths for you
 
 ## Content Page
 
-Display the [entries] (/en/platform/content/entries) of your [content types] (/en/platform/content/types) from a single page using content pages.
+Displays the [entries](/en/platform/content/entries) of your [content types](/en/platform/content/types) from a single page using content pages.
 
 ### Prerequisites
 
@@ -162,11 +162,11 @@ In order to display content on a site, you must meet certain conditions:
 * Have a space with at least one language (the same language as the site) and at least one Content Type. For more information, see [Create a Space](/en/platform/content/spaces.html#create-a-space) and [Create a Type](/en/platform/content/types.html#create-a-type)
 * Have entries published in the language of the site. For more information, see [Entries](/en/platform/content/entries.html) and [Locales](/en/platform/content/spaces.html#locales)
 
-:::tip Tip
-You can freely choose the name of each view, regardless of the space and content type you choose. You have to keep in mind that it is required to have an entry published in this site language in order to see content in these views.
+:: :tip Tip
+You can use any name you want for the views, regardless of the type or space you want to associate them with. Always keep in mind that entries will only be displayed if they have a published version in the language of the site where you are creating these views.
 :::
 
-These pages are comprised of two sections **Index** and **Show**.
+These pages are composed of two sections, **Index** and **Show**.
 
 ### Index
 
@@ -184,7 +184,7 @@ The tab where you define what dynamic entries will look like. Here you can selec
 
 #### Edit:
 
-- **Layout:** The Layout template you are going to upload for the Show.
+- **Layout:** The Layout template that will load for Show.
 - **Custom Meta Tag:** Add custom meta tags to optimize the show's SEO. This meta tag will only be loaded for the Show, not for the Index. You can also use Liquid to load dynamic meta tags.
 
 A basic example of Liquid+HTML code that you can use in **Show** is:
@@ -208,9 +208,10 @@ A basic example of Liquid+HTML code that you can use in **Show** is:
 This snippet takes `entry.name`, `entry.published_at`, `request.url`, and `entry.description` to generate a dynamic page depending on the entry you select.
 
 :::tip Tip
-To learn more about how to use Liquid, see [Liquid markup](/en/platform/channels/liquid-markup.html)
+To learn more about how to use Liquid, go to [Liquid markup](/en/platform/channels/liquid-markup.html).
 
-To learn what fields you can use with the `entry` drop, see [Content Drops](/en/platform/channels/drops.html#entry).
+To learn what fields you can use with the `entry` drop, see [Content Drops](/en/platform/channels/drops.html #entrada).
+You can complement it with the use of [Content Filters](/es/platform/channels/liquid-markup/filters.html #content).
 :::
 
 #### Settings
@@ -231,15 +232,15 @@ The excerpt is added as part of the meta tags to improve SEO. This is possible f
 
 #### Child routes delegation
 
-Enable the child routes delegation to allow the full control of the page routes from the Javascript router.
+Enable route delegation to allow absolute control over the sub-routes of the page through the JavaScript router.
 
 ## Privacy
 
-If you enable the "Private" option on a page, then a user must be logged in with a session to view this page. Along with privacy, you can also associate [Segments](/en/platform/customers/segments.html), so that only users belonging to specific user segments can access this page. Those who are not part of the group of selected targets will be redirected to the previous page or to the home page.
+"If you enable privacy on a page, a session will be required to view this page. In addition to privacy, you can also associate [Segments](/en/platform/customers/segments.html), so that only users belonging to those segments will be able to access this page. Those who are not part of the selected segment group will be redirected to the previous page or the site's home page.
 
 ## Meta tags
 
-Meta tags define the content of a page and search engines rely on them to provide the user with a search list. In this section you can add meta tags to pages and modify the value of existing meta tags, to enrich the SEO of the page. With the tags added to the pages, you can decide whether to use the default value, overwrite the value available for the tag, or remove the tag from the page.
+Meta tags define the content of a page and search engines rely on them to provide the user with a search list. In this section you can add meta tags to pages and modify the value of existing meta tags, to enhance the page's SEO. With the tags added to the pages, you can decide whether to use the default value, overwrite the value available for the tag, or remove the tag from the page.
 
 To access the list of meta tags on the page, you must use the <span v-pre>`{{ page.meta_tags }}`</span> Liquid drop. We recommend that you go through the example in the SEO section of the [Template builder](/en/platform/channels/templates.html#seo).
 
@@ -247,14 +248,14 @@ To access the list of meta tags on the page, you must use the <span v-pre>`{{ pa
 
 To add a new meta tag to your site, follow these steps:
 
-1. In Modyo Platform, from the main menu, expand **Channels**, and click **Sites**.
-1. Click your Site.
+1. In Modyo Platform, from the main menu, expand **Channels**, and click on **Sites**.
+1. Click on your Site.
 1. Expand **Site settings** and click **SEO**.
 1. In the Custom Meta Tags section, click **+ New meta tag**.
 
 On the screen that appears, you have the option to choose between different meta tags and assign them a value. This value can be dynamic if Liquid is used. If you activate the **Replicate meta tag on pages** option, a meta tag will be created in the Properties section of all your pages.
 
-As part of the `base` Template, we include the `seo` Snippet which contains the information needed to print the values of the meta tags depending on whether it is a Site, a Page, or a Entry.
+As part of the `base` Template, we include the `seo` Snippet which contains the information needed to print the values of the meta tags depending on whether it is a Site, a Page, or an Entry.
 
 :::tip Tip
 Please note that for the meta tags to take effect on your page, you must publish the changes.

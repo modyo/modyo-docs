@@ -107,7 +107,6 @@ axios_api.interceptors.request.use(appendTokenToRequest ,errorRequest);
 1. Add another custom snippet called `controller_js` and copy the following code:
 
 ```js
-// This code handles initializing the warning modal when the session is about to expire, this variable will return the promise that will be effective as soon as the button of Maintain Session is clicked and will send a reject promise in case the close session button is clicked
 var modalConfirm = function() {
   return new Promise(function(resolve, reject) {
     $("#session-modal").modal({
@@ -125,30 +124,26 @@ var modalConfirm = function() {
     });
   });
 };
-// This will take care of tracking as soon as the script is initialized. It will also handle the frontend. In the following lines, we will explain each of the properties and methods of this object that handles the session.
+
 var sessionManager = {
-  // Property that defines the time since last activity until the end of the sessions in seconds (keep in mind this does not mean the refresh time of the token, it only handles the termination of the session, it is recommended that this value is at least one minute shorter than the OIDC provider to provide slack in the session and the closure is performed 100%)
   timeToEndSessionInSeconds: 900,
-  // Property where we define the init time of the inactivity modal since the last action or site petition
   timeToRaiseWarningModalInSeconds: 720,
-  // Property that saves the timestamp of the sessionManager's last activity
   lastActionTimeInThisWindow: new Date().getTime(),
-  // Function that converts seconds to milliseconds
+
   secondsToMilisecs: function(minutes) {
     return minutes * 1000;
   },
-  // Property to save the interval id of the event handling of the session
   intevalId:null,
-  // Function that determines if the script is entering the application from modyoShell
+
   isModyoAppShell: function() {
     return /; Modyo_App_Shell/.test(navigator.userAgent);
   },
-  // Method that must be executed each time page load starts to handle session events to invoke sessionManager.init() in the layout's head to start tracking the session. (In some cases the API must have this if, axios_api will now work for the develop scope with or without session manager)
+
   init: function() {
     this.resetIdleTime();
     this.intevalId=this.interval();
   },
-  // Restarts the wait time or creates a new activity in the site
+
   resetIdleTime: function() {
     this.lastActionTimeInThisWindow = new Date().getTime();
     var sessionEndTime =
@@ -160,16 +155,17 @@ var sessionManager = {
       this.secondsToMilisecs(this.timeToRaiseWarningModalInSeconds);
     localStorage.setItem("timeToRaiseWarningModal", raiseWarningModalTime);
   },
-  // Method to initialize each second js that manages the session events
+
+
   interval: function() {
     var self = this;
     return setInterval(this.checkSessionEvents, 1000, self);
   },
-  // Method to raise warning modal
+
   raiseModal: function() {
     return modalConfirm();
   },
-  // Method to close session and clean storage
+
   logout: function() {
     localStorage.clear();
     sessionStorage.clear();
@@ -183,7 +179,7 @@ var sessionManager = {
       window.location.href = "{{site.account_url}}/logout?site={{site.uuid}}";
     }
   },
-  // Method that handles session events and determines if it's time to close or keep alive after showing the modal
+
   checkSessionEvents: function(self) {
     var sessionEndTime = localStorage.getItem("timeToEndSession");
     var raiseWarningModalTime = localStorage.getItem("timeToRaiseWarningModal");
@@ -222,42 +218,42 @@ This should be the modal to activate in the previous step with bootstrap for han
 
 1. Add another custom snippet called `sessionmodal` and copy the following code:
 
-``` html
+```html
 <div
-  id="session-modal"
-  class="modal fade"
-  tabindex="- 1"
-  role="dialog"
-  aria-labelledby="session-modal-label"
+  id="session-modal"
+  class="modal fade"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="session-modal-label"
 >
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="session-modal-label">
-          Your session will expire
-        </h5>
-      </div>
-      <div class="modal-body text-center">
-        <p>
-          Your session will expire in <span id="expiration-time"> </span> seconds.
-        </p>
-        <p> Do you want to keep your session? </p>
-      </div>
-      <div class="modal-footer">
-        <button id="session-modal-yes" type="button" class="btn btn-primary">
-          Yes
-        </button>
-        <button
-          id="session-modal-no"
-          type="button"
-          class="btn btn-secondary"
-          data-dismiss="modal"
-        >
-          No
-        </button>
-      </div>
-    </div>
-  </div>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="session-modal-label">
+          Session about to expire
+        </h5>
+      </div>
+      <div class="modal-body text-center">
+        <p>
+          Your session will expire in <span id="expiration-time"></span> seconds.
+        </p>
+        <p>Close Session?</p>
+      </div>
+      <div class="modal-footer">
+        <button id="session-modal-yes" type="button" class="btn btn-primary">
+          Yes
+        </button>
+        <button
+          id="session-modal-no"
+          type="button"
+          class="btn btn-secondary"
+          data-dismiss="modal"
+        >
+          No
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
 ```
 
