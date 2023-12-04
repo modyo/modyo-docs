@@ -17,7 +17,7 @@ Along the **top bar**, on the left, you can see the widget name and current stat
 - **Draft:** This status appears when a widget has just been created or when it has been unpublished.
 - **Published:** This status appears after you have made a publication and when the editable and published versions are the same.
 - **Pending changes:** This status appears if there is already a published version, but there are changes pending publication in an editable version.
-- **In review:** This status appears when [team review] (/en/platform/core/key-concepts.html) is enabled and the editable version has been submitted for review.
+- **In review:** This status appears when [team review](/en/platform/core/key-concepts.html) is enabled and the editable version has been submitted for review.
 - **Approved:** This status appears when [team review](/en/platform/core/key-concepts.html) is enabled and the review conditions for the item are met. When in this state, templates are ready to be published.
 
 On the right, you'll find the following actions:
