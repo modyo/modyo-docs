@@ -246,7 +246,7 @@ function loadLocaleMessages() {
 
 Create a javascript object in Snippets so you can make use of Liquid in your Widgets.
 
-Widgets, since they are decoupled from the platform, have the disadvantage of not being able to use Liquid directly and we don't have access to [liquid drops](/en/platform/channels/drops), in order to work with them we'll have to make them available via javascript from the platform. [**Liquid Markup**](/en/platform/channels/liquid-markup.html) is an important part of the platform, of how we build views, and access the content on it. It also gives us access to [**drops**](/en/platform/channels/drops), context variables that allow us to interact with our views more dynamically. For example, you can determine what content to show the user according to the segment to which they belong, hide a menu depending on the page being visited, and so on.
+Widgets, since they are decoupled from the platform, have the disadvantage of not being able to use Liquid directly, and we don't have access to [liquid drops](/en/platform/channels/drops), in order to work with them, we'll have to make them available via javascript from the platform. [**Liquid Markup**](/en/platform/channels/liquid-markup.html) is an important part of the platform, of how we build views, and access the content on it. It also gives us access to [**drops**](/en/platform/channels/drops), context variables that allow us to interact with our views more dynamically. For example, you can determine what content to show the user according to the segment to which they belong, hide a menu depending on the page being visited, and so on.
 
 
 Follow these steps to create a snippet with Liquid variables:
