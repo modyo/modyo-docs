@@ -237,7 +237,7 @@ EXAMPLE
 
 ### `modyo-cli help get`
 
-El comando `get` se usa para obtener una plantilla de widget de nuestro [catálogo de widgets](/es/widgets/) utilizando un token proporcionado por Modyo.
+El comando `get` se usa para obtener una plantilla de widget de nuestro [catálogo de experiencias](es/dynamic/experiences/) utilizando un token proporcionado por Modyo.
 
 ```bash
 USAGE

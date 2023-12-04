@@ -135,7 +135,7 @@ Debes tener en consideración que usar widgets muy pesados de forma sincrónica 
 
 Con i18n puedes configurar y agregar nuevos idiomas a tus widgets.
 
-Para manejar la internacionalización en los Widgets de nuestro [catálogo de widgets](/es/widgets/) usamos el paquete [**Vue I18n**](https://kazupon.github.io/vue-i18n/) instalado mediante el plugin [vue-cli-plugin-i18n](https://github.com/kazupon/vue-cli-plugin-i18n), pueden revisar su documentación [aquí](https://kazupon.github.io/vue-i18n/introduction.html). Al instalar el plugin, se crea una carpeta para los idiomas llamada `locales` y un archivo de configuración llamado `i18n.js`.
+Para manejar la internacionalización en los Widgets de nuestro [catálogo de experiencias](es/dynamic/experiences/) usamos el paquete [**Vue I18n**](https://kazupon.github.io/vue-i18n/) instalado mediante el plugin [vue-cli-plugin-i18n](https://github.com/kazupon/vue-cli-plugin-i18n), pueden revisar su documentación [aquí](https://kazupon.github.io/vue-i18n/introduction.html). Al instalar el plugin, se crea una carpeta para los idiomas llamada `locales` y un archivo de configuración llamado `i18n.js`.
 
 ```shell{3,5-7}
 ├── src/
