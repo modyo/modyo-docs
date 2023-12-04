@@ -74,6 +74,7 @@ $ modyo-cli get --organization=myOrganization my-custom-template-repo my-project
 A partir de este punto, tienes ya un proyecto funcional y puedes obtener sus dependencias y ejecutar el servidor integrado.
 
 ```sh
+$ cd my-project-name
 $ npm install
 $ npm run start
 ```
