@@ -7,7 +7,7 @@ search: true
 The Modyo Command Line Interface (CLI) is a tool based on two fundamental principles: acceleration and integration. These principles are implemented through the _get_ and _push_ commands, respectively.
 
 The main benefits of working with the Modyo CLI are:
-- **Work locally: ** Allowing you to create widgets of any size or complexity.
+- **Work locally:** Allowing you to create widgets of any size or complexity.
 - **Store widgets in local repositories: ** Making it easier to manage widgets and collaborate with other developers.
 - **Create a widget once and reuse it on multiple sites**
 
