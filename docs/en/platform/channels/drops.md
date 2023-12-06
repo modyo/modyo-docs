@@ -125,7 +125,7 @@ Displays all the information of an entry fields.
 
 | Description  | Example  |
 |---|---|
-| **field.name** Name of the custom field.  | ```Field1``` |
+| **field.name** Custom field name.  | ```Field1``` |
 | **field.type** Name of the type associated with the field. | ```Type1``` |
 
 
