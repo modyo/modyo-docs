@@ -5,7 +5,7 @@ sidebarDepth: 2
 
 # Sites
 
-A site is where the content created in [Content] (/en/platform/content/) and [Channels] (/platform/channels/) is displayed in order to create your personalized digital channel. All development, design and navigation flows take place on a site.
+A site is where the content created in [Content](/en/platform/content/) and [Channels](/platform/channels/) is displayed in order to create your personalized digital channel. All development, design and navigation flows take place on a site.
 
 A site can be in one of three states:
 
