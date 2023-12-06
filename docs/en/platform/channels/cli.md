@@ -87,7 +87,7 @@ The next step is to configure your project to make it easier to load the microfr
 
 1. **Get an access token to Modyo:** To obtain the token you need to have a user or [create one](en/platform/core/roles.html#create-user) that has at least the site developer-cli [role](en/platform/core/roles.html #roles) in the sites or stages where you will deploy your micro-frontend. Once you've created the user, you can [set up an access token](en/platform/core/api.html#autentication) for it. You will use this access token to obtain the necessary information to configure and activate deployments on the platform.
 
-2. **Identify the site or stage: ** Use the Modyo administrative API with the access token obtained previously, to obtain the information of the site or stage where the microfrontend will be deployed as well as the URL of the account, the host or ID of the site or the ID of any stage of the site. To do this, attach the Bearer type authorization header as follows:
+2. **Identify the site or stage:** Use the Modyo administrative API with the access token obtained previously, to obtain the information of the site or stage where the microfrontend will be deployed as well as the URL of the account, the host or ID of the site or the ID of any stage of the site. To do this, attach the Bearer type authorization header as follows:
 
 ```sh
 $ curl https://my-org.modyo.cloud/api/admin/sites\?only\[\]\=id\&only\[\]\=host\&only\[\]\=stages -H 'Authorization: Bearer gT0ogW43lSy4nV9cYtc_hH0i_sUNq01q-12ptFzoW8'
