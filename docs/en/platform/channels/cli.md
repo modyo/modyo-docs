@@ -135,7 +135,7 @@ The command returns a list with the information needed to configure your microfr
 
 
 
-3. **Configure the .env file: ** Once you have obtained the list of sites and stages, where you can identify the ID and the host, configure the `.env` file with the corresponding information. You can use the example file provided, called `.env.example`, which is included in the base template, which includes the necessary variables predefined and a brief description of each of them.
+3. **Configure the .env file:** Once you have obtained the list of sites and stages where you can identify the ID and the host, configure the `.env` file with the corresponding information. You can use the example file provided, called `.env.example`, that is included in the base template, which includes the necessary variables predefined and a brief description of each of them.
 ```sh
 # Base URL base of the organization in Modyo
 MODYO_ACCOUNT_URL= https://my-org.modyo.cloud/
