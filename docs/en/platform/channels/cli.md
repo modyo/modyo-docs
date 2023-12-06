@@ -62,8 +62,8 @@ This initializes a functional project to begin a new development.
 
 Modyo also has a set of financial experience templates that further accelerate the development of solutions in the field of digital banking and the financial industry. You can find information about these experiences and how to obtain their templates in the [Experiences](en/dynamic/experiences/retail/dashboard.html) section of the [Dynamic Framework](en/dynamic/ #dynamic -framework) documentation.
 
-:: :tip Tip
-All [Dynamic Framework] templates (es/dynamic/) have a README file with information about their requirements and use.
+:::tip Tip
+All [Dynamic Framework](en/dynamic/) templates have a README file with information about their requirements and use.
 :::
 
 An organization can also create its own templates to customize the initialization process. To get a customized template, use the `organization` option.
