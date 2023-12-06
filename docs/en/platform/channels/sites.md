@@ -62,7 +62,7 @@ To enable or disable search functionality on a site, follow these steps:
 
 ### Search template
 
-You can control the look and feel of your site using the [template](/en/platform/channels/sites.html #plantilla -de-search/) _search_.
+You can control the look and feel of your site using the [template](/en/platform/channels/sites.html#search-template/) _search_.
 
 This template is available by default in the Templates section, in the “Views/Search/Show” category. It contains all the Liquid code you need to carry out queries on your site.
 
