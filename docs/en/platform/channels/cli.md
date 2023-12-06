@@ -71,7 +71,7 @@ An organization can also create its own templates to customize the initializatio
 ```sh
 $ modyo-cli get --organization=myOrganization my-custom-template-repo my-project-name
 ```
-From this point on, you already have a functional project and you can get its dependencies and run the integrated server.
+From this point on, you already have a functional project, and you can get its dependencies and run the integrated server.
 
 ```sh
 $ cd my-project-name
