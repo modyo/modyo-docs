@@ -407,7 +407,7 @@ These drops allow you to obtain information when making a request.
 | **request.user_agent** The details of the user agent. | ```mozilla/5.0 (macintosh; intel mac os x 10_15_2) applewebkit/537.36 (khtml, like gecko) chrome/96.0.4664.110 safari/537.36``` |
 | **request.comments_url** Comments URL of the request.  | ```https://test.miModyo.com/newsite/requests/123124/comments``` |
 | **request.interact_url** The interact URL of the request. | ```https://test.miModyo.com/newsite/requests``` |
-| **request.is_app_shell? ** Boolean to know if the user agent of the request belongs to a Modyo app. | ```false``` |
+| **request.is_app_shell?** Boolean to know if the user agent of the request belongs to a Modyo app. | ```false``` |
 | **request.path** The path of the request.  | ```/newsite/the-new-type/newentry``` |
 | **request.refresh_url** The refresh URL of the request. | ```https://test.miModyo.com/newsite/requests/refresh``` |
 | **request.url** The URL of the request.  | ```https://test.miModyo.com/ivansite/the-new-type/newentry``` |
