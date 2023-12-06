@@ -69,7 +69,7 @@ The following attributes are inherited from [Asset](#asset):
 | **file_asset.url** The URL of the file. | ```/Uploads/8de5a204-74e6-4d6b-a319-6f7896c09135/original/platon.csv``` |
 | **file_asset.thumbnail_url** The URL of the file's thumb. | ```/Uploads/7b1b3f82-c9f5-4c51-87dc-b93fc9918c9c/c50x50/platon.jpg``` |
 | **file_asset.image_thumbnail_url** The URL of the file. | ```/Uploads/8de5a204-74e6-4d6b-a319-6f7896c09135/c200x200/cave.csv``` |
-| **file_asset.is_image? ** Boolean to know if the file is an image. | ```false``` |
+| **file_asset.is_image?** Boolean to know if the file is an image. | ```false``` |
 | **file_asset.is_video? ** Boolean to know if the file is video. | ```false``` |
 | **file_asset.is_audio? ** Boolean to know if the file is audio. | ```false``` |
 | **file_asset.is_pdf? ** Boolean to know if the file is a PDF. | ```false``` |
