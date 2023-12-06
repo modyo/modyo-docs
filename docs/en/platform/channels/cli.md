@@ -240,7 +240,7 @@ EXAMPLE
 
 - **`modyo-cli help get`**
 
-The `get` command is used to get a widget template from our [experience catalog] (es/dynamic/experiences/) using a token provided by Modyo.
+The `get` command is used to get a widget template from our [experience catalog](en/dynamic/experiences/) using a token provided by Modyo.
 
 ```bash
 USAGE
