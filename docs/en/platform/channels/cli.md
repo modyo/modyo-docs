@@ -190,7 +190,7 @@ The user who owns the token must have a [site reviewer or admin](en/platform/cor
 ## Next steps
 Once a widget is deployed and published in Modyo, it is available for use on the pages of the site to which it belongs.
 
-If you have defined [variables](en/platform/core/key-concepts.html#global-variables), their values can be specified globally or privately to each instance of the microfrontend. For more information on functionalities on Modyo sites, refer to the [Channels documentation](en/platform/channels/#frontmatter-title) specifically the [widget page](en/platform/channels/pages.html#widget -page) and [widgets](en/platform/channels/widgets.html) section
+If you have defined [variables](en/platform/core/key-concepts.html#global-variables), their values can be specified globally or privately to each instance of the microfrontend. For more information on functionalities on Modyo sites, refer to the [Channels documentation](en/platform/channels/#frontmatter-title) specifically the [widget page](en/platform/channels/pages.html#widget -page) and [widgets](en/platform/channels/widgets.html) sections
 
 ## Quick guide
 The commands available in the Modyo CLI and the description of each of its options are:
