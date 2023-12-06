@@ -383,7 +383,7 @@ These drops are very useful when you want to make dynamic pages using Liquid.
 | **page.description** The description of the page.  | ```This is the description of a very cool page``` |
 | **page.excerpt** The excerpt associated with the page.  | ```This is the excerpt of a very cool page```
  |
-| ** [page.grid] (#grilla) ** The grid-type object associated with the page. |  |
+| **[page.grid](#grid)** The grid-type object associated with the page. |  |
 | **page.meta_tags** Arrangement of strings with the meta tags associated with the page.  | ```My, Test, Metatag``` |
 | **page.title** The title associated with the page.  | ```Home``` |
 
