@@ -138,20 +138,20 @@ The command returns a list with the information needed to configure your microfr
 3. **Configure the .env file:** Once you have obtained the list of sites and stages where you can identify the ID and the host, configure the `.env` file with the corresponding information. You can use the example file provided, called `.env.example`, that is included in the base template, which includes the necessary variables predefined and a brief description of each of them.
 ```sh
 # Base URL base of the organization in Modyo
-MODYO_ACCOUNT_URL= https://my-org.modyo.cloud/
+MODYO_ACCOUNT_URL=https://my-org.modyo.cloud/
 # Where you will deploy your micro frontend, you can use either the host or the ID but not both.
-# modyo_site_host=my-site
+# MODYO_SITE_HOST=my-site
 MODYO_SITE_ID=1
 # The token authorizing the deployment, taken from Modyo
-modyo_token=GT0OGW43LSY4NV9CYTC_HH0I_SUNQ01Q-12PTFZow8
+MODYO_TOKEN=gT0ogW43lSy4nV9cYtc_hH0i_sUNq01q-12ptFzoW8
 # The version of Modyo platform where the deployment will take place (8 or 9)
 MODYO_VERSION=9
 # The name of the directory that contains the micro frontend's bundle
-modyo_build_directory=Build
+MODYO_BUILD_DIRECTORY=build
 # The name that will identify your Micro Frontend in Modyo
-modyo_widget_name=my-project
+MODYO_WIDGET_NAME=my-project
 # This directive is necessary to safely remove some libraries from the Liquid parser
-modyo_disable_liquid_regex=RAW
+MODYO_DISABLE_LIQUID_REGEX=raw
 ```
 * `MODYO_ACCOUNT_URL` The URL of the domain of our Modyo deployment.
 * `MODYO_SITE_HOST` The host of the site where you want to deploy the micro-frontend. It is not necessary if the site id is specified.
