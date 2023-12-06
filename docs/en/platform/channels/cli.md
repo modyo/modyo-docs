@@ -208,13 +208,13 @@ Show contextual help for the specified command.
 
 ```bash
 USAGE
- $ modyo-cli help [COMMAND]
+  $ modyo-cli help [COMMAND]
 
 ARGUMENTS
- Autocomplete Display Autocomplete Installation Instructions
- Get Pull a widget from our catalog into a new directory
- Help Display help for modyo-cli
- Push Push widget to Modyo platform
+  autocomplete Display autocomplete installation instructions
+  get          Pull a widget from our catalog into a new directory
+  help         Display help for modyo-cli
+  push         Push widget to Modyo platform
 ```
 
 - **`modyo-cli help autocomplete`**
