@@ -195,7 +195,7 @@ If you have defined [variables](en/platform/core/key-concepts.html#global-variab
 ## Quick guide
 The commands available in the Modyo CLI and the description of each of the options are:
 
-- **`modyo-cli (-v|--version|version) `**
+- **`modyo-cli (-v|--version|version)`**
 Print the `modyo-cli` version.
 
 ```bash
