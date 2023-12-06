@@ -13,7 +13,7 @@ The main benefits of working with the Modyo CLI are:
 
 ## Installation
 
-To use the Modyo Command Line, you must first install it globally on your local machine. This will allow you to use the `modyo-cli` command, which allows you to initialize a project with some predefined front-end architectural decisions using the Modyo base template or with an experience from the [Dynamic Framework] catalog (es/dynamic/).
+To use the Modyo Command Line, you must first install it globally on your local machine. This will allow you to use the `modyo-cli` command, which allows you to initialize a project with some predefined front-end architectural decisions using the Modyo base template or with an experience from the [Dynamic Framework](en/dynamic/) catalog.
 
 
 To use the Modyo CLI you can choose one of the following options:
