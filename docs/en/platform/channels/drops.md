@@ -313,7 +313,7 @@ Object of type Menu. Contains the information for the items of a menu.
 | **menu_item.label** The label of the item menu.  | ```Home``` |
 | **menu_item.parameterized_label** The parameterized label associated with the menu item.  | ```home``` |
 | **menu_item.position** The position associated with the menu item starting from 0 as the first position.  | ```0``` |
-| **menu_item.url** The URL associated with the item menu.  | ```https://test.miModyo.com/newsite/``` |
+| **menu_item.url** The URL associated with the menu item.  | ```https://test.miModyo.com/newsite/``` |
 
 ## Notification
 
