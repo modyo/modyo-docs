@@ -82,7 +82,7 @@ In a web browser, visit [`http://localhost:8081/`](http://localhost:8081/) to vi
 
 ## Initial Setup
 
-The next step is to configure your project to make it easier to load the microfrontend on the Modyo platform and include it in the pages you build. You can specify everything as parameters in the `push` call, however, there is a `.env` file in which you can define a set of environment variables to specify all the attributes, such as the URL of the account, the site where it will be hosted and the access token, among others. For this configuration, you need to perform these actions beforehand:
+The next step is to configure your project to make it easier to load the microfrontend on Modyo platform and include it in the pages you build. You can specify everything as parameters in the `push` call, however, there is a `.env` file in which you can define a set of environment variables to specify all the attributes, such as the URL of the account, the site where it will be hosted and the access token, among others. For this configuration, you need to perform these actions beforehand:
 
 
 1. **Get an access token to Modyo: ** To obtain the token you need to have a user or [create one] (es/platform/core/roles.html #crear -user) that has at least the [role] (es/platform/core/roles.html #roles) of site developer-cli in the sites or stages where you will deploy your micro-frontend. Once you've created the user, you can [set up an access token] (es/platform/core/api.html #autenticacion) for it. You will use this access token to obtain the information necessary to configure and activate deployments on the platform.
