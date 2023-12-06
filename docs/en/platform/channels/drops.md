@@ -159,7 +159,7 @@ These drops allow you to get information through Liquid from a form in the Custo
 
 | Description  | Example  |
 |---|---|
-| **form_response.description** The description of the form.  | ```This form is the new user form``` |
+| **form_response.description** Form description.  | ```This form is the new user form``` |
 | **form_response.name** The form name.  | ```The new form``` |
 | **form_response.questions** Fix the questions in the form.  | ```[{"title"=>” What is your job title?” , “type"=>"textquestion”, “Answer"=>"software developer"}] ``` |
 
