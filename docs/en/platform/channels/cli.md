@@ -36,7 +36,7 @@ To verify that the installation was successful and confirm the installed version
 
 ```sh
 $ modyo-cli version
-@modyo /cli/3.3.0 darwin-arm64v8 node-v21.2.0
+@modyo/cli/3.3.0 darwin-arm64v8 node-v21.2.0
 ```
 
 :: :tip Tip
