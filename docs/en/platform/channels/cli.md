@@ -183,8 +183,8 @@ Activate the automatic publication of the microfrontend on the platform using th
 $ modyo-cli push -p
 ```
 
-:: :warning Attention
-The user who owns the token must have a [site reviewer or admin] role (es/platform/core/roles.html #roles) on the site where you are deploying the micro-frontend so that the publication can be carried out correctly.
+:::warning Attention
+The user who owns the token must have a [site reviewer or admin](en/platform/core/roles.html #roles) role on the site where you are deploying the micro-frontend so that the publication can be carried out correctly.
 :::
 
 ## Next steps
