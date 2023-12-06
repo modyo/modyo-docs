@@ -395,7 +395,7 @@ Once you've finished testing on your stage and want to sync, make sure you don't
 
 On the synchronizations screen you can see all the changes that will be made between the two selected stages.
 
-:: :warning Attention
+:::warning Attention
 Keep in mind that the elements of a stage associated with a segment are not synchronized, so you will have to repeat the process manually on the new stage, once the synchronization is complete.
 :::
 
