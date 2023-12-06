@@ -71,7 +71,7 @@ The following attributes are inherited from [Asset](#asset):
 | **file_asset.image_thumbnail_url** The URL of the file. | ```/Uploads/8de5a204-74e6-4d6b-a319-6f7896c09135/c200x200/cave.csv``` |
 | **file_asset.is_image?** Boolean to know if the file is an image. | ```false``` |
 | **file_asset.is_video?** Boolean to know if the file is video. | ```false``` |
-| **file_asset.is_audio? ** Boolean to know if the file is audio. | ```false``` |
+| **file_asset.is_audio?** Boolean to know if the file is audio. | ```false``` |
 | **file_asset.is_pdf? ** Boolean to know if the file is a PDF. | ```false``` |
 | **file_asset.is_another? ** Boolean to know if the file is of another unspecified type. | ```false``` |
 | **file_asset.temp_url** The temporary URL of the file. | ```/var/folders/vm/fk9_xg_d7qs8xbxj28csw1000000gp/T/e8ca0956-a576-43c0-9f37-2be39cf9660120210602-6475-1lvfh9t``` |
