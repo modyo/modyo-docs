@@ -471,7 +471,7 @@ To add a new member to your site, follow these steps:
 To modify an administrator's role, follow these steps:
 1. Click on the administrator's name.
 1. In the modal that opens, select the new role.
-1. Tap **Update** to confirm the change.
+1. Press **Update** to confirm the change.
 
 The available roles are:
 
