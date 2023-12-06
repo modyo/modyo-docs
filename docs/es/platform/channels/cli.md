@@ -4,25 +4,35 @@ search: true
 
 # Modyo Command Line Interface
 
-La interfaz de línea de comandos de Modyo (CLI) es una herramienta de línea de comandos basada en dos principios de aceleración e integración, estos principios tienen un comando get y push respectivamente.
+La Interfaz de Línea de Comandos de Modyo (CLI) es una herramienta basada en dos principios fundamentales: aceleración e integración. Estos principios se implementan a través de los comandos _get_ y _push_, respectivamente.
+
+Los principales beneficios de trabajar con la CLI de Modyo son:
+- **Trabajar en local:** Permitiendo crear widgets de cualquier tamaño o complejidad.
+- **Almacenar los widgets en repositorios locales:** Facilitando la gestión de los widgets y la colaboración con otros desarrolladores.
+- **Crear un widget una vez y reusarlo en múltiples sitios**
 
 ## Instalación
 
-Primero, necesitas instalar la CLI de Modyo globalmente en su máquina local para tener disponible el comando `modyo-cli`, esto le permitirá inicializar un proyecto con algunas decisiones arquitectónicas de front-end predefinidas mediante nuestra plantilla base, o inicializar desde alguna de nuestras experiencias predefinidas disponibles en el catalogo del dynamic framework.
+Para usar la Línea de Comandos de Modyo, primero debes instalarla globalmente en tu máquina local. Esto te permitirá usar el comando `modyo-cli`, eque te permite inicializar un proyecto con algunas decisiones arquitectónicas de front-end predefinidas mediante la plantilla base de Modyo o con una experiencia del catálogo de [Dynamic Framework](es/dynamic/).
 
-Para instalar el modyo-cli globalmente para ser usado desde un terminal, puede usar una alguna de estas opciones:
+
+Para usar el CLI de Modyo puedes optar por alguna de las siguientes opciones:
+- Instalar modyo-cli globalmente para usar desde la terminal
+
 
 ```sh
 $ npm i -g @modyo/cli #via npm
 $ yarn global add @modyo/cli #via yarn
 ```
-o bien puede ejecutarlo sin instalación mediante npx
+
+- Ejecutarlo sin instalación mediante npx
 
 ```sh
 $ npx @modyo/cli #via npx
 $ npx @modyo/cli@version #via npx - señalando una versión en específico
 ```
-Puede comprobar que la instalación fue correcta y ver la versión instalada del CLI ejecutando:
+
+Para comprobar que la instalación fue correcta y confirmar la versión instalada del CLI, ejecuta este comando:
 
 ```sh
 $ modyo-cli version
@@ -30,11 +40,10 @@ $ modyo-cli version
 ```
 
 :::tip Tip
-Puede que en algunos casos sea necesario volver a cargar el profile del terminal o iniciar una nueva sesión para tener disponible el comando `modyo-cli`
+En algunos casos, es necesario volver a cargar el perfil de la terminal o iniciar una nueva sesión para que el comando `modyo-cli` esté disponible.
 :::
 
-
-Modyo ofrece la habilidad de configurar un autocompletado de los comandos del CLI. Puedes acceder a las instrucciones de su configuración mediante:
+Modyo ofrece la habilidad de configurar el autocompletado de los comandos del CLI. Para obtener instrucciones sobre cómo configurarlo, ejecuta uno de los siguientes comandos:
 
 ```sh
 $ modyo-cli autocomplete zsh
@@ -44,48 +53,47 @@ $ modyo-cli autocomplete bash
 
 ## Inicialización de un nuevo proyecto
 
-La vía mas rápida y fácil de comenzar a crear nuestro primer micro-frontend es mediante el uso de la plantilla base en react de nuestro framework mediante el comando `get` del CLI
+La forma más rápida y fácil de crear tu primer micro-frontend es utilizando la plantilla base en React de nuestro framework mediante el comando `get`.
 
 ```sh
-$ modyo-cli get dynamic-react-base-template my-project-name 
+$ modyo-cli get dynamic-react-base-template my-project-name
 ```
-el cual nos inicializará un proyecto funcional con todo lo necesario para comenzar un nuevo desarrollo.
+Esto inicializa un proyecto funcional para comenzar un nuevo desarrollo.
 
-Tambien tenemos disponible un conjunto de plantillas de experiencias financieras las cuales nos permiten acelerar y agilizar aún mas el desarrollo de soluciones en el ámbito de la banca digital e industria financiera. Las experiencias y como obtener sus plantillas lo puedes encontrar en la [sección Experiencias](https://docs.modyo.com/es/dynamic/experiences/retail/dashboard.html) de la documentación del [dynamic framework](https://docs.modyo.com/es/dynamic/#dynamic-framework).
+Modyo tiene también un conjunto de plantillas de experiencias financieras que agilizan aún más el desarrollo de soluciones en el ámbito de la banca digital e industria financiera. Puedes encontrar información sobre estas experiencias y cómo obtener sus plantillas en la sección [Experiencias](es/dynamic/experiences/retail/dashboard.html) de la documentación de [Dynamic Framework](es/dynamic/#dynamic-framework).
 
 :::tip Tip
-Cada plantilla obtenida del dynamic framework cuenta con un archivo README con una pequeña documentación en la cual se indican sus requerimientos y como utilizarla.
+Todas las plantillas de [Dynamic Framework](es/dynamic/) tienen un archivo README con información sobre sus requisitos y uso.
 :::
 
-Como organización también pueden crear sus plantillas para la inicialización a medida y con sus propios estándares. Para obtenerlos pueden hacerlo mediante la opción `organization`
+Una organización puede, también, crear sus propias plantillas para personalizar el proceso de inicialización. Para obtener una plantilla personalizada, utiliza la opción `organization`.
 
 ```sh
 $ modyo-cli get --organization=myOrganization my-custom-template-repo my-project-name
 ```
-desde este punto ya se cuenta con un proyecto funcional el cual puede ser visualizado obteniendo sus dependencias y ejecutando el servidor integrado
+A partir de este punto, tienes ya un proyecto funcional y puedes obtener sus dependencias y ejecutar el servidor integrado.
 
 ```sh
+$ cd my-project-name
 $ npm install
 $ npm run start
 ```
-en un navegador web puedes visitar la url [`http://localhost:8081/`](http://localhost:8081/) para ver en acción el proyecto recien inicializado.
+En un navegador web visita [`http://localhost:8081/`](http://localhost:8081/) para ver el proyecto inicializado.
 
 ## Configuración inicial
 
-El siguiente paso es configurar nuestro proyecto para facilitar la carga del micro-frontend en la plataforma Modyo y poder incluirlo en lás páginas que en él se construyen. Si bien todo puede ser indicado como parámetros en la llamada `push` existe un archivo `.env` en el cual se puede definir un conjunto de variables de entorno para especificar todos los atributos tales como url de la cuenta, el sitio donde se alojará y el token de accesso entre otros.
-para esta configuración necesitamos de algunas acciones previas
+El siguiente paso es configurar tu proyecto para facilitar la carga del microfrontend en la plataforma Modyo e incluirlo en las páginas que construyas. Puedes especificar todo como parámetros en la llamada `push`, sin embargo, existe un archivo `.env` en el que puedes definir un conjunto de variables de entorno para especificar todos los atributos, como la URL de la cuenta, el sitio donde se alojará y el token de acceso, entre otros. Para esta configuración, necesitas realizar previamente estas acciones:
 
-### Obtención de un token de acceso a Modyo
 
-Lo primero que debemos obtener es el acceso a Modyo, para esto debemos [crear un usuario](https://docs.modyo.com/es/platform/core/roles.html#crear-usuario) que por lo menos tenga el [rol](https://docs.modyo.com/es/platform/core/roles.html#roles) de developer-cli en los sitios o stages en los que desplegaremos nuestro micro-frontend, luego [configurar un access token](https://docs.modyo.com/es/platform/core/api.html#autenticacion) para este usuario el cual utilizaremos para obtener la información necesaria para la configuración y para gatillar los despliegues a la plataforma.
+1. **Obtener un token de acceso a Modyo:** Para obtener el token necesitas tener un usuario o [crear uno](es/platform/core/roles.html#crear-usuario) que tenga como mínimo el [rol](es/platform/core/roles.html#roles) de site developer-cli en los sitios o stages donde desplegarás tu micro-frontend. Una vez que hayas creado el usuario, puedes[configurar un token de acceso](es/platform/core/api.html#autenticacion) para él. Este token de acceso lo utilizarás para obtener la información necesaria para configurar y activar los despliegues en la plataforma.
 
-### Identificación del sitio o stage
-Luego debemos tener la información del sitio o stage en el cual se desplegará el micro-frontend y obtener algunos datos escenciales como la url de la cuenta, el host o id del sitio o el id de algun stage del sitio. Para esto podemos hacerlo mediante el API administrativa de modyo usando el access token obtenido previamente y adjuntarlo como header de autorización del tipo Bearer de la siguiente forma:
+2. **Identificar el sitio o stage:** Utiliza la API administrativa de Modyo con el token de acceso obtenido previamente, para obtener la información del sitio o stage en el que se desplegará el microfrontend así como la URL de la cuenta, el host o ID del sitio o el ID de algún stage del sitio. Para ello, adjunta el encabezado de autorización del tipo Bearer de la siguiente manera:
 
 ```sh
 $ curl https://my-org.modyo.cloud/api/admin/sites\?only\[\]\=id\&only\[\]\=host\&only\[\]\=stages -H 'Authorization: Bearer gT0ogW43lSy4nV9cYtc_hH0i_sUNq01q-12ptFzoW8'
 ```
-el cual tendrá como salida el siguiente listado:
+El comando devuelve un listado con la información necesaria para configurar tu microfrontend en Modyo. Muestra los sitios, con sus respectivos stages, a los cuales el usuario tiene acceso. De este listado puedes obtener el id y el host que necesitas para configurar el despliegue.
+
 ```sh
 {
   "sites": [
@@ -125,74 +133,69 @@ el cual tendrá como salida el siguiente listado:
 
 ```
 
-el listado muestra los sitios con sus respectivos stages a los cuales el usuario tiene acceso. De este listado podemos obtener el id y el host que serán requeridos en la configuración para el despliegue.
 
-### Archivo .env
-Ya con la información del sitio al cual haremos el despliegue debemos configurar nuestro archivo `.env`,  como base podemos utilizar renombrar el archivo `.env.example` que viene incluido en la plantilla base el cual trae predefinidas las variables necesarias y una breve descripción de cada una de ellas.
+
+3. **Configurar el archivo .env:** Una vez que has obtenido el listado de sitios y stages, donde puedes identificar el ID y el host, configura el archivo `.env` con la información correspondiente. Puedes utilizar el archivo de ejemplo proporcionado, llamado `.env.example`, que viene incluido en la plantilla base, el cual trae predefinidas las variables necesarias y una breve descripción de cada una de ellas.
 ```sh
-# The url base of the organization in Modyo
+# Base URL base of the organization in Modyo
 MODYO_ACCOUNT_URL=https://my-org.modyo.cloud/
 # Where you will deploy your micro frontend, you can use either the host or the ID but not both.
 # MODYO_SITE_HOST=my-site
 MODYO_SITE_ID=1
 # The token authorizing the deployment, taken from Modyo
 MODYO_TOKEN=gT0ogW43lSy4nV9cYtc_hH0i_sUNq01q-12ptFzoW8
-# The major version of the Modyo platform where the deployment will take place (8 or 9)
+# The version of Modyo platform where the deployment will take place (8 or 9)
 MODYO_VERSION=9
-# The name of the directory that contains the bundle of the micro frontend
+# The name of the directory that contains the micro frontend's bundle
 MODYO_BUILD_DIRECTORY=build
 # The name that will identify your Micro Frontend in Modyo
 MODYO_WIDGET_NAME=my-project
-# This directive is necessary to safely remove some libraries from the liquid parser
+# This directive is necessary to safely remove some libraries from the Liquid parser
 MODYO_DISABLE_LIQUID_REGEX=raw
 ```
-* `MODYO_ACCOUNT_URL`: Es la url del dominio de nuestro despliegue modyo.
-* `MODYO_SITE_HOST`: Es el host del sitio donde queremos hacer el despliegue de nuestro micro-frontend, no es necesario si el id del sitio está especificado.
-* `MODYO_SITE_ID`: Es el id del sitio donde queremos hacer el despliegue de nuestro micro-frontend. 
-* `MODYO_TOKEN`: Es el access token del usuario el cual será utilizado para los despliegues del micro-frontend
-* `MODYO_VERSION`: Es la versión de modyo, para versiones legacy es 8 y la actual es 9
-* `MODYO_BUILD_DIRECTORY`: Indicamos el nombre de la carpeta que produce el build según el framework utilizado, por ejemplo dist o build
-* `MODYO_WIDGET_NAME`: es el nombre que tendrá el widget despues que se despliegue en la plataforma
-* `MODYO_DISABLE_LIQUID_REGEX`: Define una expresión regular para seleccionar los archivos que necesiten deshabilitar el uso de liquid, por ejemplo archivos de templates donde es probable que la definición o uso de variables colisionen con el uso en liquid
+* `MODYO_ACCOUNT_URL` La url del dominio de nuestro despliegue Modyo.
+* `MODYO_SITE_HOST` El host del sitio donde quieres hacer el despliegue del micro-frontend. No es necesario si el id del sitio está especificado.
+* `MODYO_SITE_ID` El id del sitio donde quieres hacer el despliegue del micro-frontend.
+* `MODYO_TOKEN` El token de acceso del usuario que se usará para los despliegues del micro-frontend.
+* `MODYO_VERSION` La versión de Modyo. Para versiones antiguas es 8 y la actual es 9.
+* `MODYO_BUILD_DIRECTORY` El nombre de la carpeta que contiene el resultado del build, como "dist" o "build" según el framework utilizado.
+* `MODYO_WIDGET_NAME` El nombre que tendrá el widget después de desplegarse en la plataforma.
+* `MODYO_DISABLE_LIQUID_REGEX` Define una expresión regular para seleccionar archivos que necesitan deshabilitar el uso de Liquid, por ejemplo, archivos de plantillas donde es probable que la definición o el uso de variables colisionen con el uso en Liquid.
 
 ## Despliegue
-Una vez que tenemos todo configurado y listo para llevar nuestro micro-frontend a Modyo debemos construir nuestro widget:
+Una vez configurado y listo tu micro-frontend, puedes construir tu widget.
+
+Este comando realizará las acciones necesarias para preparar tu microfrontend para producción, limpiando y minificando los archivos finales.
 
 ```sh
 $ npm run build
 ```
-Este commando hará todo lo necesario para dejar el micro-frontend listo para producción, limpiando y minificando los archivos finales. Para enviar a Modyo hacemos uso del commando `push` el cual utilizará nuestras configuraciones para seleccionar el sitio o stage y comprobará si el micro-frontend existe previamente en Modyo, según el caso lo creará o actualizará en la plataforma.
+Para enviarlo a Modyo, utiliza el comando push. Este comando utiliza tus configuraciones para seleccionar el sitio o stage y comprobar si el microfrontend ya existe en Modyo. Según el caso, lo creará o actualizará en la plataforma.
+
 
 ```sh
 $ modyo-cli push
 ```
 
-Mediante el commando push podemos gatillar el publicado automático del micro-fronent en la plataforma esto lo realizamos con el parámetro `-p`
+Activa la publicación automática del microfrontend en la plataforma mediante el parámetro `-p`.
 
 ```sh
 $ modyo-cli push -p
 ```
 
-:::tip Nota
-El usuario dueño del token debe tener un rol de reviewer o admin en el sitio en el cual estamos desplegando nuestros micro-frontend para que se pueda realizar la publicación correctamente.
+:::warning Atención
+El usuario dueño del token debe tener un rol de [site reviewer o admin](es/platform/core/roles.html#roles) en el sitio en el cual estás desplegando el micro-frontend para que se pueda realizar la publicación correctamente.
 :::
 
 ## Siguientes pasos
-Cuando un widget está desplegado y publicado en la plataforma Modyo, está disponible para ser utilizado en las páginas del sitio al que pertence, si se hace uso de [variables](http://localhost:8080/es/platform/core/key-concepts.html#variables-globales) sus valores pueden ser especificados en distintos niveles para ser establecidos a nivel global o particular a cada instancia del micro-frontend, para obtener mas información sobre lo que puedes hacer en los sitios de Modyo consulta la [documentación de Channels](https://docs.modyo.com/en/platform/channels/#frontmatter-title) especificamente la sección de [Página de Widgets](https://docs.modyo.com/en/platform/channels/pages.html#widget-page) y [widgets](http://localhost:8080/es/platform/channels/widgets.html)
+Una vez que un widget está desplegado y publicado en Modyo, está disponible para ser utilizado en las páginas del sitio al que pertenece.
+
+Si has definido [variables](es/platform/core/key-concepts.html#variables-globales) sus valores pueden ser especificados a nivel global o particular a cada instancia del microfrontend. Para obtener más información sobre las funcionalidades en los sitios de Modyo, consulta la [documentación de Channels](es/platform/channels/#frontmatter-title) especificamente la sección de [página de widgets](es/platform/channels/pages.html#widget-page) y [widgets](es/platform/channels/widgets.html)
 
 ## Guía rápida
+Los comandos disponibles en el CLI de Modyo y la descripción de cada una de sus opciones, son:
 
-Los comandos disponibles del CLI son:
-
-- [modyo-cli (-v|--version|version)](#modyo-cli-version)
-- [modyo-cli help [COMMAND]](#modyo-cli-help-command)
-- [modyo-cli autocomplete [SHELL]](#modyo-cli-autocomplete-shell)
-- [modyo-cli get NAME [DIRECTORY]](#modyo-cli-get-name-directory)
-- [modyo-cli push NAME](#modyo-cli-push-name)
-
-A continuación mostramos la ayuda de cada uno de los comandos disponibles y la descripción de cada una de sus opciones.
-
-### `modyo-cli (-v|--version|version)`
+- **`modyo-cli (-v|--version|version)`**
 Imprime la versión de `modyo-cli`.
 
 ```bash
@@ -200,23 +203,23 @@ $ modyo-cli (-v|--version|version)
 @modyo/cli/3.3.0 darwin-arm64v8 node-v21.2.0
 ```
 
-### `modyo-cli help`
-Muestra ayuda contextual dependiendo del comando que se escriba.
+- **`modyo-cli help`**
+Muestra ayuda contextual del comando indicado.
 
 ```bash
 USAGE
   $ modyo-cli help [COMMAND]
 
 ARGUMENTS
-  autocomplete Display autocomplete installation instructions 
+  autocomplete Display autocomplete installation instructions
   get          Pull a widget from our catalog into a new directory
   help         Display help for modyo-cli
   push         Push widget to Modyo platform
 ```
 
-### `modyo-cli help autocomplete`
+- **`modyo-cli help autocomplete`**
 
-Modyo ofrece la habilidad de autocompletar los comandos de nuestro CLI si se configura esta opción.
+Muestra instrucciones de autocompletado, en caso de configurarse la opción.
 
 ```bash
 USAGE
@@ -235,7 +238,7 @@ EXAMPLE
   $ modyo-cli autocomplete --refresh-cache
 ```
 
-### `modyo-cli help get`
+- **`modyo-cli help get`**
 
 El comando `get` se usa para obtener una plantilla de widget de nuestro [catálogo de experiencias](es/dynamic/experiences/) utilizando un token proporcionado por Modyo.
 
@@ -257,7 +260,7 @@ EXAMPLE
   $ modyo-cli get name [directory]
 ```
 
-### `modyo-cli help push`
+- **`modyo-cli help push`**
 
 Integra un widget escrito en Vue al sitio seleccionado de Modyo Platform.
 
