@@ -69,7 +69,7 @@ All [Dynamic Framework](en/dynamic/) templates have a README file with informati
 An organization can also create its own templates to customize the initialization process. To get a customized template, use the `organization` option.
 
 ```sh
-$ modyo-cli get --organization=MyOrganization my-custom-template-repo my-project-name
+$ modyo-cli get --organization=myOrganization my-custom-template-repo my-project-name
 ```
 From this point on, you already have a functional project and you can get its dependencies and run the integrated server.
 
