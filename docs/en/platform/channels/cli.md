@@ -21,8 +21,8 @@ To use the Modyo CLI you can choose one of the following options:
 
 
 ```sh
-$ npm i -g @modyo /cli #via npm
-$ yarn global add @modyo /cli #via yarn
+$ npm i -g @modyo/cli #via npm
+$ yarn global add @modyo/cli #via yarn
 ```
 
 - Run it without installation using npx
