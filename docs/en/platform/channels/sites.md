@@ -527,7 +527,7 @@ Enable this module for your site to configure HTTP security headers. Please note
 
 Tells the browser that it can only access the site using HTTPS.
 * **Duration**: Sets the time that the browser accesses the site via HTTPS only.
-* **Preload**: Includes the preload policy. For more information, see [HSTS Preload List Submission] (https://hstspreload.org/).
+* **Preload**: Includes the preload policy. For more information, see [HSTS Preload List Submission](https://hstspreload.org/).
 * **Include subdomains**: Applies the HSTS rule to all subdomains on the site.
 
 #### Referrer-Policy
