@@ -152,7 +152,7 @@ These drops allow you to get information through Liquid from a form in the Custo
 | **answer.id** The id of the answer.  | ```5``` |
 | **[answer.question](#question)** Question type object associated with the answer.  |  |
 | **[answer.response](#answer)** Response type object associated with the response.  |  |
-| **answer.text_field** The text field associated with the answer.  | ```This is the answer in the text field``` |
+| **answer.text_field** Text field associated with the answer.  | ```This is the answer in the text field``` |
 | **answer.type** The type of response.  | ```text_answer``` |
 
 ### Response
