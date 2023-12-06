@@ -115,7 +115,7 @@ Create dynamic content in your spaces using Entries. In this object you have acc
 | **entry.excerpt** The excerpt associated with the entry. | ```This is the excerpt of a very cool entry``` |
 | **entry.account_url** The account url. | ```https://test.miModyo.com``` |
 | **entry.url** Canonical URL of the entry. | ```https://test.miModyo.com/entry``` |
-| ** [entry.author] (#usuario)** The object of the user who wrote the post. | ```tag1, tag2``` |
+| ** [entry.author](#user)** The object of the user who wrote the post. | ```tag1, tag2``` |
 | **entry.meta** The metadata object for the entry. | This object has the following attributes: uuid, published_at, locale, slug, created_at, updated_at, unpublished_at, and private. |
 | **[entry.fields](#field)** Array with objects from the fields in the entry. |  |
 
