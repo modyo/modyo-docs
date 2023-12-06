@@ -28,8 +28,8 @@ $ yarn global add @modyo/cli #via yarn
 - Run it without installation using npx
 
 ```sh
-$ npx @modyo /cli #via npx
-$ npx @modyo /cli @version #via npx - pointing to a specific version
+$ npx @modyo/cli #via npx
+$ npx @modyo/cli@version #via npx - señalando una versión en específico
 ```
 
 To verify that the installation was successful and confirm the installed version of the CLI, run this command:
