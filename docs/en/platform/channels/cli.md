@@ -266,24 +266,24 @@ Integrate a widget written in Vue to the selected Site in Modyo Platform.
 
 ```bash
 USAGE
- $modyo-cli push NAME
+  $ modyo-cli push NAME
 
 ARGUMENTS
- NAME The name of the widget
+  NAME  The name of the widget
 
 OPTIONS
- -b, —build-command=build-command [default: build] Build command in package.json
- -d, —build-directory=build-directory [default: dist] Build directory path
- -h, —help Output usage information
- -i, —site-id=site-id Id of the site where the widget will be pushed
- -l, —disable-liquid Disable Liquid
- -n, —site-host=site-host Host of the site where the widget will be pushed
- -p, —publish Force widget publication
- -t, —token=token (required) Modyo API token
- -u, —account-url=account-url (required) URL of your Modyo account ex ("https://account.modyo.com")
- -v, —version=8|9 [default: 9] Version of Modyo platform
+  -b, --build-command=build-command      [default: build] Build command in package.json
+  -d, --build-directory=build-directory  [default: dist] Build directory path
+  -h, --help                             Output usage information
+  -i, --site-id=site-id                  Id of the site where the widget will be pushed
+  -l, --disable-liquid                   Disable Liquid
+  -n, --site-host=site-host              Host of the site where the widget will be pushed
+  -p, --publish                          Force widget publication
+  -t, --token=token                      (required) Modyo Api token
+  -u, --account-url=account-url          (required) URL of your Modyo account ex("https://account.modyo.com")
+  -v, --version=8|9                      [default: 9] Version of Modyo platform
 
 EXAMPLE
- $modyo-cli push <NAME> 
+  $ modyo-cli push <NAME>
 
 ```
