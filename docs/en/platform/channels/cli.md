@@ -39,7 +39,7 @@ $ modyo-cli version
 @modyo/cli/3.3.0 darwin-arm64v8 node-v21.2.0
 ```
 
-:: :tip Tip
+:::tip Tip
 In some cases, it is necessary to reload the terminal profile or start a new session for the `modyo-cli` command to be available.
 :::
 
