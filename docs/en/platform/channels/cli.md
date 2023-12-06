@@ -184,7 +184,7 @@ $ modyo-cli push -p
 ```
 
 :::warning Attention
-The user who owns the token must have a [site reviewer or admin](en/platform/core/roles.html #roles) role on the site where you are deploying the micro-frontend so that the publication can be carried out correctly.
+The user who owns the token must have a [site reviewer or admin](en/platform/core/roles.html #roles) role on the site where you are deploying the micro-frontend in order for the publication to be carried out correctly.
 :::
 
 ## Next steps
