@@ -121,7 +121,7 @@ Create dynamic content in your spaces using Entries. In this object you have acc
 
 ## Field
 
-Displays all the information in the fields of an entry.
+Displays all the information of an entry fields.
 
 | Description  | Example  |
 |---|---|
