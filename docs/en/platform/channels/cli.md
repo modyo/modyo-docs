@@ -47,7 +47,7 @@ Modyo offers the ability to configure the auto-completion of CLI commands. For i
 
 ```sh
 $ modyo-cli autocomplete zsh
-# or
+# o
 $ modyo-cli autocomplete bash
 ```
 
