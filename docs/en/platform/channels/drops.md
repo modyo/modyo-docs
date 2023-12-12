@@ -69,11 +69,11 @@ The following attributes are inherited from [Asset](#asset):
 | **file_asset.url** The URL of the file. | ```/Uploads/8de5a204-74e6-4d6b-a319-6f7896c09135/original/platon.csv``` |
 | **file_asset.thumbnail_url** The URL of the file's thumb. | ```/Uploads/7b1b3f82-c9f5-4c51-87dc-b93fc9918c9c/c50x50/platon.jpg``` |
 | **file_asset.image_thumbnail_url** The URL of the file. | ```/Uploads/8de5a204-74e6-4d6b-a319-6f7896c09135/c200x200/cave.csv``` |
-| **file_asset.is_image? ** Boolean to know if the file is an image. | ```false``` |
-| **file_asset.is_video? ** Boolean to know if the file is video. | ```false``` |
-| **file_asset.is_audio? ** Boolean to know if the file is audio. | ```false``` |
-| **file_asset.is_pdf? ** Boolean to know if the file is a PDF. | ```false``` |
-| **file_asset.is_another? ** Boolean to know if the file is of another unspecified type. | ```false``` |
+| **file_asset.is_image?** Boolean to know if the file is an image. | ```false``` |
+| **file_asset.is_video?** Boolean to know if the file is video. | ```false``` |
+| **file_asset.is_audio?** Boolean to know if the file is audio. | ```false``` |
+| **file_asset.is_pdf?** Boolean to know if the file is a PDF. | ```false``` |
+| **file_asset.is_another?** Boolean to know if the file is of another unspecified type. | ```false``` |
 | **file_asset.temp_url** The temporary URL of the file. | ```/var/folders/vm/fk9_xg_d7qs8xbxj28csw1000000gp/T/e8ca0956-a576-43c0-9f37-2be39cf9660120210602-6475-1lvfh9t``` |
 
 ### Video
@@ -115,17 +115,17 @@ Create dynamic content in your spaces using Entries. In this object you have acc
 | **entry.excerpt** The excerpt associated with the entry. | ```This is the excerpt of a very cool entry``` |
 | **entry.account_url** The account url. | ```https://test.miModyo.com``` |
 | **entry.url** Canonical URL of the entry. | ```https://test.miModyo.com/entry``` |
-| ** [entry.author] (#usuario)** The object of the user who wrote the post. | ```tag1, tag2``` |
+| ** [entry.author](#user)** The object of the user who wrote the post. | ```tag1, tag2``` |
 | **entry.meta** The metadata object for the entry. | This object has the following attributes: uuid, published_at, locale, slug, created_at, updated_at, unpublished_at, and private. |
 | **[entry.fields](#field)** Array with objects from the fields in the entry. |  |
 
 ## Field
 
-Displays all the information in the fields of an entry.
+Displays all the information of an entry fields.
 
 | Description  | Example  |
 |---|---|
-| **field.name** Name of the custom field.  | ```Field1``` |
+| **field.name** Custom field name.  | ```Field1``` |
 | **field.type** Name of the type associated with the field. | ```Type1``` |
 
 
@@ -148,19 +148,19 @@ These drops allow you to get information through Liquid from a form in the Custo
 
 | Description  | Example  |
 |---|---|
-| **answer.edit_url** The editing URL for the response.  | ```"https://test.miModyo.com/forms/el-nuevo-formulario/edit_answer?question_id=3&answer_id=8"``` |
+| **answer.edit_url** The editing URL for the response.  | ```"https://test.miModyo.com/forms/new-form/edit_answer?question_id=3&answer_id=8"``` |
 | **answer.id** The id of the answer.  | ```5``` |
 | **[answer.question](#question)** Question type object associated with the answer.  |  |
 | **[answer.response](#answer)** Response type object associated with the response.  |  |
-| **answer.text_field** The text field associated with the answer.  | ```This is the answer in the text field``` |
+| **answer.text_field** Text field associated with the answer.  | ```This is the answer in the text field``` |
 | **answer.type** The type of response.  | ```text_answer``` |
 
 ### Response
 
 | Description  | Example  |
 |---|---|
-| **form_response.description** The description of the form.  | ```This form is the new user form``` |
-| **form_response.name** The form name.  | ```The new form``` |
+| **form_response.description** Form description.  | ```This form is the new user form``` |
+| **form_response.name** Form name.  | ```The new form``` |
 | **form_response.questions** Fix the questions in the form.  | ```[{"title"=>” What is your job title?” , “type"=>"textquestion”, “Answer"=>"software developer"}] ``` |
 
 ### Question
@@ -214,8 +214,8 @@ Extends the functionality of the drop Grid and additionally contains the followi
 
 | Description  | Example  |
 |---|---|
-| **[full_two_cols_grid.main_widgets] (#widget)** Array of widget-type objects.  | |
-| **[full_two_cols_grid.col1_widgets] (#widget)** Array of widget-type objects.  | |
+| **[full_two_cols_grid.main_widgets](#widget)** Array of widget-type objects.  | |
+| **[full_two_cols_grid.col1_widgets](#widget)** Array of widget-type objects.  | |
 | **[full_two_cols_grid.col2_widgets](#widget)** Array of widget-type objects.  | |
 
 
@@ -311,9 +311,9 @@ Object of type Menu. Contains the information for the items of a menu.
 | **menu_item.classes** CSS classes associated with this item.  | ```mdi, mdi-circle``` |
 | **menu_item.description** The description for this item.  |  |
 | **menu_item.label** The label of the item menu.  | ```Home``` |
-| **menu_item.parameterized_label** The parameterized label associated with the item menu.  | ```home``` |
-| **menu_item.position** The position associated with the item menu starting from 0 as the first position.  | ```0``` |
-| **menu_item.url** The URL associated with the item menu.  | ```https://test.miModyo.com/newsite/``` |
+| **menu_item.parameterized_label** The parameterized label associated with the menu item.  | ```home``` |
+| **menu_item.position** The position associated with the menu item starting from 0 as the first position.  | ```0``` |
+| **menu_item.url** The URL associated with the menu item.  | ```https://test.miModyo.com/newsite/``` |
 
 ## Notification
 
@@ -375,7 +375,7 @@ These drops are very useful when you want to make dynamic pages using Liquid.
 
 | Description  | Example  |
 |---|---|
-| **page.content** The content of the page. | ```Home Main Sectionx Build better digital products to unify your customer experiences and accelerate growth. Welcome to the Minimal theme. This is an HTML widget that you can modify in the Page Builder section. You can also modify the style in the Template Builder section. Go to Modyo Read the docs Create and launch digital products faster Welcome to the Minimal Theme. This is an HTML widget that you can modify in the Page Builder section. You can also modify the style in the Template Builder section. Learn more Loren Ipsum pain Lorem ipsum pain sit amet, consectetur adipiscing elit, thirst for eismod tempor. Learn more Loren Ipsum pain Lorem ipsum pain sit amet, consectetur adipiscing elit, thirst for eismod tempor. Learn more Loren Ipsum pain Lorem ipsum pain sit amet, consectetur adipiscing elit, thirst for eismod tempor. Learn more HTML dsfdfdfs customize Content list Content list newentry 7 Feb, 2022 42838bbc-8ce8-4401-9898-3c0f2590c992 2022-02-08 14:59:31 UTC on newentry 2022-02-07 21:09:18 UTC 2022-02-08 14:59:31 UTC false``` |
+| **page.content** The content of the page. | ```Home Main Sectionx Build better digital products to unify your customer experiences and accelerate growth. Welcome to the Minimal theme. This is an HTML widget that you can modify in the Page Builder section. You can also modify the style in the Template Builder section. Go to Modyo Read the docs Create and launch digital products faster Welcome to the Minimal theme. This is an HTML widget that you can modify in the Page Builder section. You can also modify the style in the Template Builder section. Learn more Loren Ipsum dolor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Learn more Loren Ipsum dolor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Learn more Loren Ipsum dolor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Learn more HTML dsfdfdfs customivan Content list Content list newentry 7 Feb, 2022 42838bbc-8ce8-4401-9898-3c0f2590c992 2022-02-08 14:59:31 UTC en newentry 2022-02-07 21:09:18 UTC 2022-02-08 14:59:31 UTC false``` |
 | **page.name** The name associated with the page.  | ```Home``` |
 | **page.parent** The page-type object that is the parent of the page, if there is no parent, displays void. |  |
 | **page.url** The URL of the page. | ```https://test.miModyo.com/newsite/``` |
@@ -383,7 +383,7 @@ These drops are very useful when you want to make dynamic pages using Liquid.
 | **page.description** The description of the page.  | ```This is the description of a very cool page``` |
 | **page.excerpt** The excerpt associated with the page.  | ```This is the excerpt of a very cool page```
  |
-| ** [page.grid] (#grilla) ** The grid-type object associated with the page. |  |
+| **[page.grid](#grid)** The grid-type object associated with the page. |  |
 | **page.meta_tags** Arrangement of strings with the meta tags associated with the page.  | ```My, Test, Metatag``` |
 | **page.title** The title associated with the page.  | ```Home``` |
 
@@ -407,7 +407,7 @@ These drops allow you to obtain information when making a request.
 | **request.user_agent** The details of the user agent. | ```mozilla/5.0 (macintosh; intel mac os x 10_15_2) applewebkit/537.36 (khtml, like gecko) chrome/96.0.4664.110 safari/537.36``` |
 | **request.comments_url** Comments URL of the request.  | ```https://test.miModyo.com/newsite/requests/123124/comments``` |
 | **request.interact_url** The interact URL of the request. | ```https://test.miModyo.com/newsite/requests``` |
-| **request.is_app_shell? ** Boolean to know if the user agent of the request belongs to a Modyo app. | ```false``` |
+| **request.is_app_shell?** Boolean to know if the user agent of the request belongs to a Modyo app. | ```false``` |
 | **request.path** The path of the request.  | ```/newsite/the-new-type/newentry``` |
 | **request.refresh_url** The refresh URL of the request. | ```https://test.miModyo.com/newsite/requests/refresh``` |
 | **request.url** The URL of the request.  | ```https://test.miModyo.com/ivansite/the-new-type/newentry``` |

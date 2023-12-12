@@ -17,7 +17,7 @@ Along the **top bar**, on the left, you can see the widget name and current stat
 - **Draft:** This status appears when a widget has just been created or when it has been unpublished.
 - **Published:** This status appears after you have made a publication and when the editable and published versions are the same.
 - **Pending changes:** This status appears if there is already a published version, but there are changes pending publication in an editable version.
-- **In review:** This status appears when [team review] (/en/platform/core/key-concepts.html) is enabled and the editable version has been submitted for review.
+- **In review:** This status appears when [team review](/en/platform/core/key-concepts.html) is enabled and the editable version has been submitted for review.
 - **Approved:** This status appears when [team review](/en/platform/core/key-concepts.html) is enabled and the review conditions for the item are met. When in this state, templates are ready to be published.
 
 On the right, you'll find the following actions:
@@ -39,7 +39,7 @@ By default, you start by comparing the published version with the editable versi
 
 - **Save:** Saves current changes.
 - **Submit for review:** If team review is enabled, you can submit the widget for review and notify reviewers that the widget is ready for review.
-- **Publish:** Takes you to the [co-post](/en/platform/core/key-concepts.html#joint-review-and-publication) view where you can publish your widgets.
+- **Publish:** Takes you to the [join review and publication](/en/platform/core/key-concepts.html#joint-review-and-publication) view where you can publish your widgets.
 
 **Other main actions:**
 
@@ -135,7 +135,7 @@ Keep in mind that using very heavy widgets synchronously can be the cause of bad
 
 With i18n you can configure and add new languages to your widgets.
 
-To handle internationalization in the Widgets in our [widget catalog](/en/widgets/) we use the [**Vue i18n**](https://kazupon.github.io/vue-i18n/) package installed using the  [vue-cli-plugin-i18n](https://github.com/kazupon/vue-cli-plugin-i18n) plugin, you can review its documentation [here](https://kazupon.github.io/vue-i18n/introduction.html). When you install the plugin, a folder for languages called `locales` and a configuration file called `i18n.js` are created.
+To handle internationalization of Widgets in our [experience catalog](en/dynamic/experiences/) we use the [**Vue i18n**](https://kazupon.github.io/vue-i18n/) package, installed using the plugin [vue-cli-plugin-i18n](https://github.com/kazupon/vue-cli-plugin-i18n), you can review its documentation [here](https://kazupon.github.io/vue-i18n/introduction.html). When installing the plugin, a folder for languages called `locals` and a configuration file called `i18n.js` are created.
 
 ```shell{3,5-7}
 ├── src/
@@ -246,7 +246,7 @@ function loadLocaleMessages() {
 
 Create a javascript object in Snippets so you can make use of Liquid in your Widgets.
 
-Widgets, since they are decoupled from the platform, have the disadvantage of not being able to use Liquid directly and we don't have access to [liquid drops](/en/platform/channels/drops), in order to work with them we'll have to make them available via javascript from the platform. [**Liquid Markup**](/en/platform/channels/liquid-markup.html) is an important part of the platform, of how we build views, and access the content on it. It also gives us access to [**drops**](/en/platform/channels/drops), context variables that allow us to interact with our views more dynamically. For example, you can determine what content to show the user according to the segment to which they belong, hide a menu depending on the page being visited, and so on.
+Widgets, since they are decoupled from the platform, have the disadvantage of not being able to use Liquid directly, and we don't have access to [liquid drops](/en/platform/channels/drops), in order to work with them, we'll have to make them available via javascript from the platform. [**Liquid Markup**](/en/platform/channels/liquid-markup.html) is an important part of the platform, of how we build views, and access the content on it. It also gives us access to [**drops**](/en/platform/channels/drops), context variables that allow us to interact with our views more dynamically. For example, you can determine what content to show the user according to the segment to which they belong, hide a menu depending on the page being visited, and so on.
 
 
 Follow these steps to create a snippet with Liquid variables:

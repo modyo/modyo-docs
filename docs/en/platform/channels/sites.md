@@ -5,7 +5,7 @@ sidebarDepth: 2
 
 # Sites
 
-A site is where the content created in [Content] (/en/platform/content/) and [Channels] (/platform/channels/) is displayed in order to create your personalized digital channel. All development, design and navigation flows take place on a site.
+A site is where the content created in [Content](/en/platform/content/) and [Channels](/platform/channels/) is displayed in order to create your personalized digital channel. All development, design and navigation flows take place on a site.
 
 A site can be in one of three states:
 
@@ -62,7 +62,7 @@ To enable or disable search functionality on a site, follow these steps:
 
 ### Search template
 
-You can control the look and feel of your site using the [template](/en/platform/channels/sites.html #plantilla -de-search/) _search_.
+You can control the look and feel of your site using the [template](/en/platform/channels/sites.html#search-template/) _search_.
 
 This template is available by default in the Templates section, in the “Views/Search/Show” category. It contains all the Liquid code you need to carry out queries on your site.
 
@@ -395,6 +395,10 @@ Once you've finished testing on your stage and want to sync, make sure you don't
 
 On the synchronizations screen you can see all the changes that will be made between the two selected stages.
 
+:::warning Attention
+Keep in mind that the elements of a stage associated with a segment are not synchronized, so you will have to repeat the process manually on the new stage, once the synchronization is complete.
+:::
+
 To synchronize a stage, follow these steps:
 
 1. On the side menu, click **Channels**.
@@ -467,12 +471,12 @@ To add a new member to your site, follow these steps:
 To modify an administrator's role, follow these steps:
 1. Click on the administrator's name.
 1. In the modal that opens, select the new role.
-1. Tap **Update** to confirm the change.
+1. Press **Update** to confirm the change.
 
 The available roles are:
 
 - **Viewer**: This user can view entries, see differences between versions, and leave comments. They can also access the synchronization view and view the changes that are pending synchronization. This role is not authorized to take any action that constitutes a change to the platform.
-- **Developer**: This user is in charge of structural resource development. They can create, modify, and submit pages, widgets, menus, and templates for review. All actions taken by a Developer must go through a review process before publication. This role does not have permissions to publish, delete, or _rollback_ to previous versions of the resources, nor to modify the configuration of the site. There is a variant of this role called Developer CLI, which in addition to the permissions of a Developer, allows you to update widgets from external applications, such as the [modyo-cli] (/en/platform/channels/widgets.html #modyo -cli).
+- **Developer**: This user is in charge of structural resource development. They can create, modify, and submit pages, widgets, menus, and templates for review. All actions taken by a Developer must go through a review process before publication. This role does not have permissions to publish, delete, or _rollback_ to previous versions of the resources, nor to modify the configuration of the site. There is a variant of this role called Developer CLI, which in addition to the permissions of a Developer, allows you to update widgets from external applications, such as the [modyo-cli](/en/platform/channels/widgets.html#modyo -cli).
 - **Developer CLI**: Can create, modify and submit pages, widgets, the menu and templates for review. In addition, they can push widgets from external applications.
 - **Reviewer**: This role permits the correction, approval or discarding of the work done by the Developers. It can create, modify, submit for review, and approve pages, widgets, menus, and templates. It can also publish when the review conditions are met. It cannot edit the site settings.
 - **Admin**: The Site Administrator has the same privileges as the previous roles and has the ability to configure the entire site. This includes the creation, modification, submission for review and approval of pages, widgets, menus and templates. In addition, they can publish without requiring team review validation.
@@ -523,7 +527,7 @@ Enable this module for your site to configure HTTP security headers. Please note
 
 Tells the browser that it can only access the site using HTTPS.
 * **Duration**: Sets the time that the browser accesses the site via HTTPS only.
-* **Preload**: Includes the preload policy. For more information, see [HSTS Preload List Submission] (https://hstspreload.org/).
+* **Preload**: Includes the preload policy. For more information, see [HSTS Preload List Submission](https://hstspreload.org/).
 * **Include subdomains**: Applies the HSTS rule to all subdomains on the site.
 
 #### Referrer-Policy
@@ -532,7 +536,7 @@ The _header_ `Referer` contains information from the previous web page from whic
 
 * **no-referrer**: Does not send _referrer_ information.
 * **no-referrer-when-downgrade**: Does not send _referrer_ information to a less secure destination.
-* **origin**: Sends only the source domain, remove the paths and _query string_.
+* **origin**: Sends only the source domain, removes the paths and _query string_.
 * **origin-when-cross-origin**: Sends _referrer_ information for _requests_ from the same source. Deletes the routes and _query string_ for other destinations.
 * **same-origin**: Sends _referrer_ information for same origin _requests_ only.
 * **strict-origin**: Sends the origin domain only for same security level _requests_, and doesn't send _referrer_ information to less secure destinations.
@@ -611,7 +615,7 @@ For more information, see the [MDN Cross-Origin-Resource-Policy](https://develop
 
 ### Site variables
 
-Modyo has [global variables](/en/platform/core/key-concepts.html #variables -global) that you can use on multiple sites. However, you can also create specific variables for a particular site or overwrite the value of an existing global variable, with a value specific to the particular site.
+Modyo has [global variables](/en/platform/core/key-concepts.html#global-variables) that you can use on multiple sites. However, you can also create specific variables for a particular site or overwrite the value of an existing global variable, with a value specific to the particular site.
 
 Using variables allows you to reuse HTML, JS, CSS, or text code across different sites, widgets, or templates. If you have code that is repeated in several parts of your account, you can assign that value to a variable to simplify your processes and if you edit the value of the variable, the change will be reflected everywhere the variable is in use.
 
