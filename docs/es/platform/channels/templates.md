@@ -4,71 +4,69 @@ search: true
 
 # Plantillas
 
-Uno de los aspectos más importantes al crear el sitio es la arquitectura base y apariencia de este. En Plantillas, podrás modificar las plantillas base, junto con el JavaScript, y CSS globales para usar en tus páginas y cambiar su estructura según lo requieras.
+La arquitectura base y la apariencia son aspectos esenciales de un sitio. En la sección de Plantillas, puedes ajustar las plantillas base, así como el JavaScript y CSS globales y modificar la estructura según sea necesario.
 
-Al crear un Sitio, se llenará con plantillas distintas para generar el tema Minimal y puedas empezar a crear tu canal digital. Si es necesario, también podrás crear Snippets de código HTML, JS, y CSS para extender la funcionalidad de tu sitio.
+Cuando creas un sitio, se completa con plantillas distintas para generar el tema Minimal y puedes empezar a crear tu canal digital en él. Puedes también crear snippets de código HTML, JS y CSS para extender la funcionalidad de tu sitio.
 
-Una vez dentro de Plantillas, puedes ver que el menú principal se esconde para optimizar el área de trabajo. En la barra superior, a la izquierda, encuentras el nombre de la sección y el estado de publicación actual.
+En la sección de plantillas, el menú principal se oculta para optimizar el área de trabajo. En la parte superior izquierda, encuentras el nombre de la sección y el estado actual de la publicación:
 
-- **Publicado:** Cuando ya existe una versión publicada y su versión editable es igual.
-- **Cambios pendientes:** Cuando hay una versión publicada, pero hay cambios pendientes de publicar en tu versión editable.
-- **En revisión:** Cuando se habilita la [revisión en equipo](/es/platform/core/key-concepts.html) y se ha enviado a revisión la versión editable.
-- **Aprobado:** Cuando se habilita la [revisión en equipo](/es/platform/core/key-concepts.html) y si es que se cumplieron las condiciones de revisión del elemento. Si estás en este estado, tus plantillas están listos para ser publicados.
+- **Publicado:** Hay una versión publicada y que la versión editable es idéntica.
+- **Cambios pendientes:** Existe una versión publicada, pero hay modificaciones pendientes de publicar en tu versión editable.
+- **En revisión:** La [revisión en equipo](/es/platform/core/key-concepts.html) está activada y se ha enviado a revisión la versión editable.
+- **Aprobado:** La [revisión en equipo](/es/platform/core/key-concepts.html) está activada y las condiciones de revisión del elemento se han cumplido. En este estado, la plantilla está lista para ser publicada.
 
-En la parte superior derecha, puedes ver la última fecha de publicación y las acciones disponibles:
+En la parte superior derecha, puedes ver la última fecha de publicación e íconos con las acciones disponibles:
 
-**Vista previa:** Da click en este icono para abrir una nueva pestaña con el modo de vista previa de las plantillas. En esta vista puedes ver todos los cambios en tus plantillas, como si estuvieran publicados.
+**Vista previa:** Da click en este ícono para abrir una nueva pestaña con la vista previa de las plantillas. Aquí puedes visualizar todos los cambios en tus plantillas, como si estuvieran publicados.
 
 :::warning Atención
-Puedes previsualizar los cambios como usuario sin sesión o usuario con sesión de Modyo. Para esto, es recomendable iniciar o cerrar la sesión de Modyo en el sitio antes de entrar al modo vista previa, dado que si se inicia o cierra sesión dentro del modo vista previa. Esto se debe a que iniciar o cerrar sesión dentro del modo de vista previa puede generar errores de seguridad como _x-frame-options_ o _mixed-content_, dependiendo de la configuración de dominios personalizados y SSL del sitio.
+Puedes previsualizar los cambios como usuario sin sesión o usuario con sesión activa de Modyo. Para esto, recomendamos iniciar o cerrar la sesión de Modyo en el sitio antes de entrar al modo vista previa, dado que si se inicia o cierra sesión dentro del modo vista previa. Esto se debe a que iniciar o cerrar sesión dentro del modo vista previa puede generar errores de seguridad como _x-frame-options_ o _mixed-content_, dependiendo de la configuración de dominios personalizados y SSL del sitio.
 :::
 
-**Diferencias:** Te lleva a la vista de diferencias, en la cual puedes comparar los cambios que hay entre múltiples versiones de tus plantillas.
-
-Por defecto, comienzas comparando la versión publicada con la versión editable. Usa los selectores de versiones para comparar con versiones de respaldo.
+**Diferencias:** Compara los cambios entre múltiples versiones de tus plantillas. Por defecto, Modyo compara la versión publicada con la versión editable. Usa los selectores de versiones para comparar con versiones de respaldo.
 
 :::tip Tip
-Cada vez que publicas una versión, la versión que estaba publicada pasa a ser una versión de respaldo. Por defecto, se guardan hasta 20 respaldos, de tal forma que los veinte respaldos más recientes se pueden comparar, restaurar, y hacer rollback.
+Cada vez que publicas una versión, la versión que estaba publicada pasa a ser una versión de respaldo. Por defecto, se guardan hasta 20 respaldos, permitiéndote comparar, restaurar y hacer rollback a las últimas 20 versiones
 
-Para más información sobre el versionamiento, ve [versionado](/es/platform/core/key-concepts.html#versionado).
+Para más información sobre el versionamiento, consulta la sección de [versionado](/es/platform/core/key-concepts.html#versionado).
 :::
 
-**Buscar en plantillas:** Despliega una barra lateral con un buscador de texto que busca en todas las plantillas editables.
+**Buscar en plantillas:** Despliega una barra lateral con un buscador de texto que explora todas las plantillas editables.
 
-**Actividad/Comentarios:** Despliega una barra lateral que muestra el historial de actividad y comentarios de las plantillas.
+**Ver actividad:** Despliega una barra lateral que muestra el historial de actividad y donde puedes leer y escribir comentarios. Haz click en **ver detalle** para mostrar la información completa de cualquier registro de actividad.
 
-Al final de la barra lateral, hay una caja de texto donde puedes escribir un comentario. Junto a cada actividad, puedes hacer click en **ver detalle** para mostrar la información completa de ese registro de actividad.
+**Más acciones:** Este ícono te permite **archivar** o **borrar** una plantilla.
 
-**Más acciones:**
-
-- **Restaurar todo:** Restauras las plantillas a su valor original.
-
-**Acción principal**
+La última opción en la bara superior muestra las acciones principales que puedes llevar a cabo:
 
 - **Guardar:** Guarda todos los cambios de todas las plantillas.
-- **Enviar a revisión:** Cambia el estado de las plantillas a "Esperando revisión". En este estado puedes seguir haciendo cambios, pero cada cambio será notificado vía correo a los revisores asignados.
-- **Rechazar:** Vuelve al estado "En edición", notificando a los revisores que el elemento fue rechazado.
-- **Publicar:** Una vez que las plantillas fueron aprobadas, podrás ir a la vista de [publicación conjunta](/es/platform/channels/sites.html#revision-y-publicacion-conjunta) y publicar tus plantillas.
+- **Enviar a revisión:** Cambia el estado de las plantillas a "Esperando revisión". En este estado puedes seguir haciendo modificaciones, pero cada cambio será notificado por correo a los revisores asignados.
+- **Forzar publicación:** Solo disponible para administradores del sitio, permite publicar inmediatamente una plantilla, incluso si está esperando revisión
+- **Rechazar:** Vuelve al estado "En edición" y notifica a los revisores que el elemento fue rechazado.
+- **Publicar:** Una vez que la plantilla ha sido aprobada, puedes enviarla a publicar.
 
-En el área de trabajo principal, puedes ver dos secciones:
+En el área de trabajo principal, hay dos secciones:
 
-- El área de trabajo.
-- El área de selección de plantillas.
-
-Cada plantillas al que le hagas click en la barra lateral derecha, se abre en el área central con un editor de texto. Si abres múltiples plantillas, estas quedan abiertas como pestañas en el área de trabajo.
-
-La barra de plantillas a la derecha tiene dos pestañas: vistas y snippets.
+- **El área de edición:** El hacer click en una plantilla del listado del área de selección del lado derecho abrirá la plantilla en el área central con un editor de texto. Si abres múltiples plantillas, abrirán como pestañas en el área de trabajo.
+- **El área de selección de plantillas:** Selecciona la pestaña de vistas o snippets, según requieras.
 
 ## Layouts
 
-Modyo cuenta con tres layouts por defecto:
-* **Home:** Se usa exclusivamente en la página home del sitio.
-* **Base:** Todas las páginas excepto el home usan este layout por defecto.
-* **Error:** Las vistas de error usan este layout limpio (404, 401)
+Modyo ofrece tres layouts predefinidos:
 
-Puedes crear nuevos Layouts desde Plantillas, haciendo click en "Añadir layout" en la pestaña "Vistas", lo que te permitirá definir una nueva estructura base para usar en las páginas.
+* **Home:** Exclusivamente para la página principal del sitio.
+* **Base:** Todas las páginas, excepto la de inicio, usan este layout.
+* **Error:** Empleado en las vistas de error (404, 401), presentando un diseño limpio.
 
-Puedes usar como base este código que contiene todo lo necesario para que tus páginas usen todos los elementos necesarios del sitio, como el head, header, footer, service worker, y la configuración de Google Tag Manager, pero ten en cuenta que puedes modifcarlo tanto como quieras:
+Para crear un nuevo layout:
+1. En la sección de **Plantillas** da click en la pestaña **Vistas**
+2. Da click en el botón **+** junto a **Layouts**.
+3. Agrega la Ruta y haz clic en Añadir.
+
+Esto te permite definir una nueva estructura base para usar en las páginas.
+
+Puedes usar como base este código que contiene todo lo necesario para que tus páginas usen los elementos del sitio, como el encabezado, pie de página, service worker y la configuración de Google Tag Manager. También puedes modificar el código, según requieras.
+
 
 ```liquid
 {% html5 %}
@@ -92,38 +90,40 @@ Puedes usar como base este código que contiene todo lo necesario para que tus p
 {% endhtml5 %}
 ```
 
-Luego de haber creado tu nuevo layout, puedes empezar a usarlo yendo a la vista de edición de las páginas y cambiarlo desde el tab de propiedades.
+Para aplicar un layout nuevo a una página, sigue estos pasos:
+1. Ve a la sección **Páginas**
+2. Selecciona la pestaña **Propiedades**.
+3. Elige el layout que deseas usar en tu página.
+4. Envía a revisión o publica tu layout, según el caso.
 
 
 ## Errores en Vistas
 
-En la sección de vistas, encontrarás 4 tipos de error disponible para personalizar:
+En la sección de vistas puedes personalizar cuatro tipos de errores:
 
-* **Deshabilitado:** Verás esta vista de error si es que el sitio al que estás intentando acceder ha sido [deshabilitado](/es/platform/channels/sites.html).
-* **404:** Verás esta vista si entras a una URL del sitio que no está definida y si es que en la configuración de [restricciones del sitio](/es/platform/channels/sites.html#privacidad) decides mostrar el 404 y no redireccionar a la página home.
-* **Privacy:** Verás esta vista de error si no tienes permisos para acceder al [sitio](/es/platform/channels/sites.html#privacidad) o a una de sus [páginas](/es/platform/channels/pages.html#privacidad).
-* **Template:** Verás esta vista de error cuando la página del sitio que estés cargando tenga un error de sintaxis de liquid. Es poco probable que llegues a ver esta vista, dado que desde modyo 8.1 en adelante contamos con una funcionalidad que checa la sintaxis de liquid antes de poder guardar y publicar cambios en Plantillas.
+* **Deshabilitado:** Se muestra cuando el sitio al que intentas acceder está [deshabilitado](/es/platform/channels/sites.html).
+* **404:** Si en la configuración de [restricciones del sitio](/es/platform/channels/sites.html#privacidad) decides mostrar el 404 en lugar de redireccionar a la página de inicio, se muestra este error al ingresar a una URL no definida.
+* **Privacy:** Se muestra cuando no tienes permisos para acceder al [sitio](/es/platform/channels/sites.html#privacidad) o a una de sus [páginas](/es/platform/channels/pages.html#privacidad).
+* **Template:** Visible cuando la página cargada tiene un error de sintaxis de Liquid. Es poco probable que veas esta vista, debido a que a partir de Modyo 8.1 la plataforma realiza una verificación de la sintaxis antes de guardar y publicar cambios en Plantillas.
 
 ## CSS y JavaScript
 
-Es posible crear plantillas personalizadas de código CSS y JavaScript haciendo click en los botones **+**, en las secciones de CSS y JavaScript respectivamente, al final de la pestaña Vistas.
+Crea vistas personalizadas de CSS y JavaScript para importar tus librerías a Modyo Platform. Para ello, sigue estos pasos:
 
-### Agregar CSS o Javascript
-
-Las vistas personalizadas de CSS y Javascript son la manera en la cual podrás importar tus librerías a Modyo Platform. Sigue estos pasos para crear una vista de CSS o Javascript:
-
-1. En Modyo Platform, expande **Channels**, y haz click en **Sitios**.
-1. Haz click en tu sitio.
-1. En el menú lateral, haz click en **Plantillas**.
-1. En la sección de Vistas, haz click en el botón **Añadir Hoja de Estilos** (o Javascript).
+1. En la sección de **Plantillas** da click en la pestaña **Vistas**.
+1. Dirígete a la sección CSS o JavaScript, debajo de la sección de **Layout**.
+1. Da click en el botón **+**correspondiente.
 1. Agrega la Ruta y haz click en **Añadir**.
-1. Una vez que hayas terminado de editar la Hoja de Estilo o Javascript, se debe incluir en tu Layout de la siguiente manera.
+1. Una vez que hayas terminado de editar la Hoja de Estilo o Javascript, debes incluirla en tu layout. Para ello, puedes usar los siguientes filtros de Liquid:
 
+- `asset_url`: Para definir el tipo de archivo
+- `stylesheet_tag`: Genera un tag <link> para incluir la vista de CSS.
+- `script_tag`: Genera un tag <script> para incluir la vista de Javascript.
 
-Para incluir cualquiera de estas vistas, existen distintos filtros de Liquid disponibles: `asset_url` para definir el tipo de archivo, `stylesheet_tag`, y `script_tag` para generar los tags correspondientes, en el siguiente ejemplo se agrega:
-
+### Ejemplos
 - Una vista personalizada de CSS con media: screen
 - Una vista personalizada de Javascript con carga asíncrona
+
 
 ```html
 <head>
@@ -132,68 +132,69 @@ Para incluir cualquiera de estas vistas, existen distintos filtros de Liquid dis
 </head>
 ```
 
-Una vez que se haya guardado y publicado, se traduce al siguiente código HTML:
+Una vez guardado y publicado, se traduce al siguiente código HTML:
 
 ```html
 <link href='my-css' rel='stylesheet' type='text/css' media='screen' title='color style' />
 <script src='my-js' type='text/javascript' async='async' defer='defer'></script>
 ```
 
-Para conocer a detalle y los parámetros soportados por estos filtros, dirígete a [filtros de Liquid](/es/platform/channels/liquid-markup.html#filtros-estandar).
+Para obtener información detallada y conocer los parámetros admitidos por estos filtros, consulta la sección de [filtros de Liquid](/es/platform/channels/liquid-markup.html#filtros-estandar).
 
 
 ## Snippets
 
-Los snippets son fragmentos de código HTML, JS o CSS que puedes reutilizar en tus sitios. Puedes copiar la ruta de referencia de cada snippet personalizado. El código Liquid será similar a: <span v-pre>`{% snippet "nombre-del-snippet" %}`</span>. Pega este código donde quieras llamar a este Snippet.
+Los snippets son fragmentos reutilizables de código HTML, JS o CSS para tus sitios. Para usar un snippet:
 
-Puedes añadir snippets personalizados al final del listado de snippets de la plataforma, haciendo click en el botón **+ Add a Snippet**.
+1. Copia la ruta de referencia del snippet personalizado. El código Liquid será similar a: <span v-pre>`{% snippet "nombre-del-snippet" %}`</span>.
+1. Pega el código donde quieras llamar a este Snippet.
+
+Para añadir un snippet personalizado:
+1. En la sección de **Plantillas** da click en la pestaña **Snippets**
+1. Navega hasta la sección Personalizado, al final del listado de snippets.
+1. Da click en el botón **+**
+1. Agrega la Ruta y haz clic en Añadir.
+
 
 :::warning Importante
-Para que el sistema reconozca el tipo de lenguaje de programación al que pertenece el snippet, se debe agregar la terminación con guión bajo + terminación, es decir **"front_css"** o **"library_js"** por defecto reconocerá el snippet como lenguaje HTML.
+Para que el sistema reconozca el lenguaje de programación al que pertenece el snippet, debes agregar un guión bajo y después la terminación; de la siguiente manera: "front_css" o "library_js". Por defecto, el sistema reconocerá el snippet como lenguaje HTML.
 :::
 
 :::tip Tip
-Todos los elementos del Template Builder usan Liquid como motor de plantillas.
-
-Para más información sobre qué es Liquid y cómo sacarle el mejor provecho, echa un vistazo a la página [Liquid Markup](/es/platform/channels/liquid-markup.html)
+Todos los elementos del Template Builder usan Liquid como motor de plantillas. Para más información sobre Liquid y cómo usarlo, consulta la sección [Liquid Markup](/es/platform/channels/liquid-markup.html)
 :::
 
 En el área de trabajo, debajo de las pestañas, encontrarás una barra con estos elementos:
 
-**Gestor de archivos:** Se levanta un modal donde puedes acceder a todos los archivos de la cuenta y copiar su URL. Si accedes a la segunda pestaña, puedes subir nuevos archivos.
+**Elementos de la barra de herramientas**
+La barra de herramientas debajo de las pestañas del Template Builder contiene los siguientes elementos:
+
+- **Gestor de archivos:** Abre un modal que te permite acceder a todos los archivos de tu cuenta y copiar su URL. Selecciona la pestaña **Subir archivos** para cargar nuevos archivos. Para más información sobre los beneficios y funcionalidades de Gestor de Archivos, dirígete a [Gestor de Archivos](/es/platform/content/asset-manager.html)
+- **Atajos de teclado:** Muestra atajos de teclado útiles para Plantillas.
+- **Snippets:** Despliega un listado con todos los snippets y la opción de copiar su código de referencia.
+- **Cambios:** Despliega un listado de todas las veces y estados en los que has guardado la versión actual. Al hacer click en una de las sub-versiones, cambias el contenido del template a esa sub-versión.
 
 :::tip Tip
-Para más información sobre los beneficios y prestaciones de Gestor de Archivos, dirígete a [Gestor de Archivos](/es/platform/content/asset-manager.html)
-:::
-
-**Atajos de teclado:** Se muestra un pequeño pop-up con algunos de los atajos de teclado útiles para usar en Plantillas.
-
-**Snippets:** Se despliega un listado con todos los snippets, junto a la opción de copiar su código de referencia.
-
-**Cambios:** Un listado de todas las veces y estados en los que has hecho la acción "Guardar" en esta versión. Al hacer click en alguna de las sub-versiones, cambias el contenido del template en el que estás trabajando a esa sub-versión.
-
-:::tip Tip
-Si publicas una versión, puedes ver que el listado de cambios desaparece, esto es porque la nueva versión editable no ha tenido ningún cambio.
+Al publicar una versión, el listado de cambios desaparece, debido a que la nueva versión editable no ha tenido cambios.
 :::
 
 :::tip Tip
-Las sub-versiones son por cada plantilla, por lo que para algunos puedes observar que hay cambios y para otros no verás el selector de cambios. De la misma forma, si vuelves a una sub-versión anterior de un template, no afectas al resto de los templates.
+Las sub-versiones son específicas a cada plantilla, por lo que algunos pueden tener cambios y otros no, las que no tienen cambios no mostrarán el selector de cambios. De la misma forma, si vuelves a una sub-versión anterior de un template, no afectas al resto de los templates.
 :::
 
 :::tip Tip
-Si se reestablece una versión anterior a la versión editable, podrás acceder a las sub-versiones de cada template de esa versión.
-Puedes aprender más sobre el [versionado aquí](/platform/core/key-concepts.html#versionado).
+Si restableces una versión anterior a la versión editable, puedes acceder a las sub-versiones de cada template de esa versión. Puedes aprender más sobre [versionado](/platform/core/key-concepts.html#versionado) aquí.
 :::
 
-Al igual que cada plantilla, puedes restaurar todas las plantillas a su versión original haciendo click en la acción secundaria de la barra superior "Restaurar todo". Para que los cambios tengan efecto, debes publicar las plantillas.
+Para restaurar todas las plantillas a su versión original, haz click en la acción secundaria de la barra superior **Restaurar todo**. Para que los cambios tengan efecto, debes publicar las plantillas.
 
 ## SEO
 
-El SEO [(Search Engine Optimization)](/es/platform/channels/sites.html#seo) es uno de los tópicos más importantes del sitio y del contenido.
+El SEO [(Search Engine Optimization)](/es/platform/channels/sites.html#seo) es fundamental para el posicionamiento de tu sitio y contenido.
 
-En Modyo existe una forma de controlar la forma en que los motores de búsqueda leen tu sitio y contenido, añadiendo meta tags de forma dinámica dependiendo de los atributos que añadas a tus páginas y contenidos.
+En Modyo puedes controlar la forma en que los motores de búsqueda leen tu sitio y contenido, agregando meta tags de forma dinámica, según los atributos que añadas a tus páginas y contenidos.
 
-Puedes añadir este snippet de código en Plantillas y luego llamar a este snippet desde el head de tu sitio:
+Para añadir las meta tags en Modyo, usa este snippet de código en Plantillas y luego llámalo desde el head de tu sitio:
 
 ```html
 <!-- Site SEO -->
@@ -217,17 +218,18 @@ Puedes añadir este snippet de código en Plantillas y luego llamar a este snipp
 <!-- END SEO -->
 ```
 
-Este snippet utiliza Liquid para agregar meta tags a nivel Sitio. También agrega meta tags específicos cuando el usuario navega a una Página de Widget o de Contenido.
+Este snippet usa Liquid para agregar meta tags a nivel de sitio. También agrega meta tags específicas cuando el usuario navega a una página de widget o de contenido.
 
-Si es que lo requieres, puedes personalizar este snippet, definiendo qué meta tags quieres que aparezcan para URLs o tipos específicos.
+Puedes personalizar este snippet y definir qué meta tags deseas para URLs o tipos específicos.
+
 
 ## Ejemplos de SEO
 
-A continuación proveemos una serie de ejemplos para mejorar el SEO de diferentes casos.
+A continuación te proporcionamos ejemplos de cómo usar el snippet de SEO para mejorar el SEO de diferentes casos:
 
 ### Meta tags específicos para una Entrada
 
-Por ejemplo, si quieres usar meta tags específicas cuando un usuario visita una Entrada, puedes usar:
+Emplea este código para usar meta tags específicas cuando un usuario visita una entrada:
 
 ```html
 ...
@@ -251,11 +253,11 @@ Por ejemplo, si quieres usar meta tags específicas cuando un usuario visita una
 ...
 ```
 
-En este caso, los tipos de Entrada `posts` y `place` comparten los atributos _title_, _excerpt_ y _covers_, y difieren en el objeto _locations_. Además, define un tipo de documento diferente para cada uno.
+En este caso, los tipos de entrada `posts` y `place` comparten los atributos _title_, _excerpt_ y _covers_ y difieren en el objeto _locations_. Además, define un tipo de documento diferente para cada uno.
 
 ### Meta tags específicos para Categoría en Página de Contenido
 
-En caso de tener meta tags específicas cuando muestras Entradas que pertenecen a una Categoría, puedes copiar el siguiente código:
+Para meta tags específicos al mostrar entradas de una categoría, copia el siguiente código:
 
 ```html
 {% assign category_name = category_path | split: '/' | last | capitalize %}
@@ -279,6 +281,6 @@ En caso de tener meta tags específicas cuando muestras Entradas que pertenecen 
 <meta property="og:description" content="{{ category_description }}"/>
 ```
 
-En este código, se crea una variable `category_name` que contiene el nombre de la categoría tomado del URL, después se utiliza un `{% if category_path.size > 0 %}` para anexar meta data pertinente a la categoría.
+En este código, se crea una variable `category_name` que contiene el nombre de la categoría tomado del URL, después se utiliza un `{% if category_path.size > 0 %}` para añadir metadata pertinente a la categoría.
 
-Liquid es la manera para crear contenido dinámico en todas las partes de tu Sitio. Para conocer más información acerca de Liquid y como usar Liquid Drops, visita [Liquid Markup](/es/platform/channels/liquid-markup).
+Liquid te permite crear contenido dinámico para tu sitio. Para conocer más acerca de Liquid y como usar Liquid Drops, visita [Liquid Markup](/es/platform/channels/liquid-markup).
