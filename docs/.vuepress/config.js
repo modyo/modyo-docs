@@ -346,43 +346,16 @@ module.exports = {
               ],
               sidebar: {
                   "/es/platform/": [{
-                          title: "Primeros Pasos",
-                          path: "/es/platform/",
+                          title: "Fundamentos de Modyo",
+                          path: "/es/platform/basics/",
                           collapsable: true,
-                          children: [
-                              ["/es/platform/whats-new", "¿Qué hay de nuevo?"],
-                              ["/es/platform/key-concepts", "Conceptos claves"],
-                              "/es/platform/release-notes",
-                              ["/es/platform/training", "Entrenamiento"],
+                          children: [ 
+                            ["/es/platform/basics/", "Acerca de Modyo"],
+                            ["/es/platform/basics/learn-modyo", "Aprende Modyo"],
+                            ["/es/platform/basics/key-concepts", "Conceptos claves"], 
                           ],
                       },
-                      {
-                          title: "Plataforma",
-                          path: "/es/platform/core/",
-                          collapsable: true,
-                          children: [
-                              "/es/platform/core/key-concepts",
-                              /*"/es/platform/core/integration",*/
-                              /*"/es/platform/core/installation",*/
-                              "/es/platform/core/configuration",
-                              {
-                                  title: "Integraciones",
-                                  path: "/es/platform/core/integrations/",
-                                  collapsable: true,
-                                  children: [
-                                      ["/es/platform/core/integrations/identity-providers", "Proveedores de Identidad"],
-                                      ["/es/platform/core/integrations/scim", "Aprovisionamiento SCIM con Microsoft Azure AD"],
-                                      ["/es/platform/core/integrations/google-data-studio-integration", "Integración con Google Analytics"],
-                                      ["/es/platform/core/integrations/oidc", "Gestión de sesión privada usando OpenID Connect (OIDC)"],
-                                  ],
-                              },
-                              "/es/platform/core/webhooks",
-                              "/es/platform/core/api",
-                              "/es/platform/core/activity-logs",
-                              "/es/platform/core/roles",
-                              "/es/platform/core/security",
-                          ],
-                      },
+                      
                       {
                           title: "Content",
                           path: "/es/platform/content/",
