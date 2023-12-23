@@ -4,7 +4,7 @@ search: true
 
 # Gestor de Archivos
 
-Modyo te proporciona un espacio que te permite cargar, organizar y gestionar tus archivos de forma simple y eficiente.
+Este espacio te permite cargar, organizar y gestionar tus archivos de forma simple y eficiente.
 
 - En `Modyo 9` este espacio se llama **Gestor de archivos**: Al migrar a Modyo 10 todos los assets se conservan y podrás elegir previamente a cuál espacio moverlos.
 
@@ -105,7 +105,7 @@ Para cargar un archivo nuevo manteniendo el nombre y el enlace originales, sigue
 
 ## Editar una imagen
 
-El editor de imágenes de Modyo te permite realizar pequeños cambios a las imágenes para facilitar su manejo en la plataforma.Para ajustar las dimensiones de una imagen, sigue estos pasos:
+El editor de imágenes de Modyo te permite realizar pequeños cambios a las imágenes para facilitar su manejo en la plataforma. Para ajustar las dimensiones de una imagen, sigue estos pasos:
 
 1. Da click en el nombre de un archivo, para abrir la interfaz de edición de propiedades.
 2. Haz click en el ícono de edición sobre la imagen.
@@ -115,7 +115,7 @@ El editor de imágenes de Modyo te permite realizar pequeños cambios a las imá
     - Libre: Edita la imagen a un tamaño personalizado en píxeles, ajustable en la parte inferior de la pantalla.
 4. Da click en **Aplicar**.
 
-::: tip Tip
+:::tip Tip
 Puedes cambiar la vista y el recorte de la imagen de dos maneras:
 
 - Zoom: Usa el scroll del mouse para acercar la imagen.
@@ -131,6 +131,6 @@ Para borrar un archivo sigue estos pasos:
 1. Da click en el nombre de un archivo para abrir la interfaz de edición de propiedades.
 1. Haz click en **Borrar**, debajo de la imagen.
 
-::: warning Atención
+:::warning Atención
 Esta acción es irreversible. Si el archivo está vinculado a un contenido, no podrás recuperarlo y aparecerá como un enlace roto.
 :::
