@@ -2,7 +2,11 @@
 name: Index Algolia
 on:
 
+  schedule:
+  - cron: "00 1 1,28 * *"
+  
   workflow_dispatch:
+  
 
 jobs:
   index:
