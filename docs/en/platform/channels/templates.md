@@ -19,7 +19,7 @@ At the top right, you can see the last date of publication and icons with the av
 
 **Preview:** Click on this icon to open a new tab with a preview of the templates. Here you can view all the changes to your templates, as if they were published.
 
-:: :warning Attention
+:::warning Attention
 You can preview the changes as a non-session user or a user with an active Modyo session. For this reason, we recommend starting or closing the Modyo session on the site before entering preview mode, given that if you start or close the session in preview mode. This is because logging in or logging out in preview mode can generate security errors such as _x-frame-options_ or _mixed-content_, depending on the site's custom domain and SSL configuration.
 :::
 
