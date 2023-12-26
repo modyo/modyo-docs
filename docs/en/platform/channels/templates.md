@@ -39,7 +39,7 @@ For more information on versioning, refer to the section on [versioning](en/plat
 
 The last option in the top bar shows the main actions you can perform:
 
-- **Save: ** Save all changes to all templates.
+- **Save:** Save all changes to all templates.
 - **Submit for review: ** Change the status of the templates to “Awaiting review”. In this state, you can continue to make changes, but each change will be notified by email to the assigned reviewers.
 - **Force publication: ** Only available to site administrators, allows you to immediately publish a template, even if it is waiting for review
 - **Reject: ** Return to “In Edit” status and notify reviewers that the item was rejected.
