@@ -54,7 +54,7 @@ In the main work area, there are two sections:
 
 Modyo offers three predefined layouts:
 
-* **Home: ** Exclusively for the main page of the site.
+* **Home:** Exclusively for the main page of the site.
 * **Base: ** All pages, except the home page, use this layout.
 * **Error: ** Used in error views (404, 401), presenting a clean design.
 
