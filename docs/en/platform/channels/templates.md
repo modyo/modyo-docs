@@ -15,7 +15,7 @@ In the templates section, the main menu is hidden to optimize the work area. At 
 - **Under review:** [team review](/en/platform/core/key-concepts.html) is active, and the editable version has been submitted for review.
 - **Approved:** [team review](/en/platform/core/key-concepts.html) is enabled and the item's review conditions have been met. In this state, the template is ready to be published.
 
-At the top right, you can see the last publication date and icons with the available actions:
+At the top right, you can see the last date of publication and icons with the available actions:
 
 **Preview: ** Click on this icon to open a new tab with a preview of the templates. Here you can view all the changes to your templates, as if they were published.
 
