@@ -48,7 +48,7 @@ The last option in the top bar shows the main actions you can perform:
 In the main work area, there are two sections:
 
 - **The editing area:** Clicking on a template from the list in the selection area on the right side will open the template in the central area with a text editor. If you open multiple templates, they will open as tabs in the workspace.
-- **The template selection area: ** Select the views or snippets tab, as required.
+- **The template selection area:** Select the views or snippets tab, as required.
 
 ## Layouts
 
