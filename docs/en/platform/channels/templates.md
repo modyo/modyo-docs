@@ -182,8 +182,8 @@ When you publish a version, the list of changes disappears, because the new edit
 Subversions are specific to each template, so some may have changes and others may not, and those without changes will not show the change selector. In the same way, if you go back to a previous sub-version of a template, you don't affect the rest of the templates.
 :::
 
-:: :tip Tip
-If you restore a previous version to the editable version, you can access the sub-versions of each template in that version. You can learn more about [versioned] (/platform/core/key-concepts.html #versionado) here.
+:::tip Tip
+If you restore a previous version to the editable version, you can access the sub-versions of each template in that version. You can learn more about [versions](en/platform/core/key-concepts.html#versions) here.
 :::
 
 To restore all templates to their original version, click on the secondary action in the top bar **Restore All**. For the changes to take effect, you must publish the templates.
