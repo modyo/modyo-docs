@@ -35,7 +35,7 @@ For more information on versioning, refer to the section on [versioning](en/plat
 
 **View activity:** Display a sidebar that shows the activity history and, where you can read and write comments. Click on **view detail** to show the full information of any activity log.
 
-**More actions: ** This icon allows you to **archive** or **delete** a template.
+**More actions:** This icon allows you to **archive** or **delete** a template.
 
 The last option in the top bar shows the main actions you can perform:
 
