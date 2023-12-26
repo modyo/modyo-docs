@@ -233,7 +233,7 @@ Use this code to use specific meta tags when a user visits a post:
 
 ```html
 ...
-{% if entry%}
+{% if entry %}
 <!-- Content SEO -->
 <meta name="description" content="{{ entry.meta.excerpt }}" />
 <meta property="og:title" content="{{ entry.meta.title }}" />
@@ -248,8 +248,8 @@ Use this code to use specific meta tags when a user visits a post:
 <meta property="og:type" content="place" />
 <meta property="place:latitude" content="{{ entry.location.first.latitude }}" />
 <meta property="place:longitude" content="{{ entry.location.first.longitude }}" />
-{% endif%}
-{% endif%}
+{% endif %}
+{% endif %}
 ...
 ```
 
