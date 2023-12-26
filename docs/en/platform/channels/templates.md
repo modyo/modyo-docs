@@ -23,7 +23,7 @@ At the top right, you can see the last date of publication and icons with the av
 You can preview the changes as a non-session user or a user with an active Modyo session. For this reason, we recommend starting or closing the Modyo session on the site before entering preview mode, given that if you start or close the session in preview mode. This is because logging in or logging out in preview mode can generate security errors such as _x-frame-options_ or _mixed-content_, depending on the site's custom domain and SSL configuration.
 :::
 
-**Differences: ** Compare changes between multiple versions of your templates. By default, Modyo compares the published version with the editable version. Use the version selectors to compare with backup versions.
+**Differences:** Compare changes between multiple versions of your templates. By default, Modyo compares the published version with the editable version. Use the version selectors to compare with backup versions.
 
 :: :tip Tip
 Every time you publish a version, the version that was published becomes a backup version. By default, up to 20 backups are saved, allowing you to compare, restore and roll back to the last 20 versions
