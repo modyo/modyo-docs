@@ -144,7 +144,7 @@ To obtain detailed information and learn about the parameters supported by these
 
 ## Snippets
 
-Snippets are reusable snippets of HTML, JS, or CSS code for your sites. To use a snippet:
+Snippets are reusable fragments of HTML, JS, or CSS code for your sites. To use a snippet:
 
 1. Copy the reference path of the custom snippet. The Liquid code will look like: <span v-pre>`{% snippet “snippet-name”%}`</span>.
 1. Paste the code wherever you want to call this Snippet.
