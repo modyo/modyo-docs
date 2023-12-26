@@ -169,7 +169,7 @@ In the work area, under the tabs, you'll find a bar with these items:
 **Toolbar items**
 The toolbar under the Template Builder tabs contains the following elements:
 
-- **File Manager: ** Open a modal that allows you to access all the files in your account and copy their URL. Select the **Upload Files** tab to upload new files. For more information about the benefits and features of File Manager, go to [File Manager] (/es/platform/content/asset-manager.html)
+- **File Manager:** Opens a modal that allows you to access all the files in your account and copy their URL. Select the **Upload Files** tab to upload new files. For more information about the benefits and features of File Manager, go to [File Manager](/en/platform/content/asset-manager.html)
 - **Keyboard Shortcuts: ** Show useful keyboard shortcuts for Templates.
 - **Snippets: ** Display a list with all the snippets and the option to copy their reference code.
 - **Changes: ** Display a list of all the times and states in which you have saved the current version. By clicking on one of the sub-versions, you change the content of the template to that sub-version.
