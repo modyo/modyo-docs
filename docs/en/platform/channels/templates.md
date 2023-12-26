@@ -33,7 +33,7 @@ For more information on versioning, refer to the section on [versioning](en/plat
 
 **Search in templates:** Display a sidebar with a text search engine that explores all the editable templates.
 
-**View activity: ** Display a sidebar that shows the activity history and where you can read and write comments. Click on **view detail** to show the full information of any activity log.
+**View activity:** Display a sidebar that shows the activity history and, where you can read and write comments. Click on **view detail** to show the full information of any activity log.
 
 **More actions: ** This icon allows you to **archive** or **delete** a template.
 
