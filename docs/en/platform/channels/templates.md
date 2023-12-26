@@ -174,7 +174,7 @@ The toolbar under the Template Builder tabs contains the following elements:
 - **Snippets:** Displays a list with all the snippets and the option to copy their reference code.
 - **Changes:** Displays a list of all the times and states in which you have saved the current version. By clicking on one of the sub-versions, you change the content of the template to that sub-version.
 
-:: :tip Tip
+:::tip Tip
 When you publish a version, the list of changes disappears, because the new editable version has not changed.
 :::
 
