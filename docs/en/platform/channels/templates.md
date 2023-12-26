@@ -94,7 +94,7 @@ To apply a new layout to a page, follow these steps:
 1. Go to the **Pages** section
 2. Select the **Properties** tab.
 3. Choose the layout you want to use on your page.
-4. Submit for review or publish your layout, as appropriate.
+4. Submit for review or publish your layout, as required.
 
 
 ## Errors in Views
