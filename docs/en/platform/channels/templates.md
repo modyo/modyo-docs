@@ -260,18 +260,18 @@ In this case, the `posts` and `place` entry types share the _title_, _excerpt_ a
 For specific meta tags when displaying posts from a category, copy the following code:
 
 ```html
-{% assign category_name = category_path | split: '/' | last | capitalize%}
+{% assign category_name = category_path | split: '/' | last | capitalize %}
 
-{% case category_name%}
- {% when 'Category 1'%}
- {% assign category_description = 'This is the meta description for Category 1'%}
- {% when 'Category 2'%}
- {% assign category_description = 'This is the meta description for Category 2'%}
-{% endcase%}
+{% case category_name %}
+  {% when 'Category 1' %}
+     {% assign category_description = 'This is the meta description for Category 1' %}
+  {% when 'Categoría 2' %}
+     {% assign category_description = 'This is the meta description for Category 2' %}
+{% endcase %}
 
-{% if category_path.size > 0%}
+{% if category_path.size > 0 %}
 <!-- Content Page: Index con categoría -->
-<title> {{category_name}} - {{site.name}} </title>
+<title> {{ category_name }} - {{ site.name }} </title>
 <meta name="description" content="{{ category_description }}"/>
 <meta property="og:title" content="{{ category_name }} - {{ site.name }}"/>
 <meta property="og:type" content="website"/>
