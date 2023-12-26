@@ -70,7 +70,8 @@ Para cargar un archivo en Modyo, elige una de las siguientes opciones:
 
 `Modyo 10`
 1. En el menú lateral da click en el ícono de **Content**.
-1. Selecciona **Media** del listado.
+1. Selecciona un espacio.
+1. En el menú lateral da click en **Media**.
 1. Da click en el botón **+ Nuevo Asset**.
 1. Arrastra el archivo o haz clic en el recuadro de carga para abrir una ventana de búsqueda.
 1. Agrega etiquetas al archivo si lo deseas.
