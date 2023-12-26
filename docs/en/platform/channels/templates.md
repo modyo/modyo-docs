@@ -104,7 +104,7 @@ In the views section, you can customize four types of errors:
 * **Disabled:** Displayed when the site you're trying to access is [disabled](/en/platform/channels/sites.html).
 * **404:** If in the [site restrictions]configuration (en/platform/channels/sites.html#privacy) you decide to show 404 instead of redirecting to the home page, this error appears when entering an undefined URL.
 * **Privacy:** Shown when you don't have permissions to access the [site](en/platform/channels/sites.html#privacy) or one of its [pages](en/platform/channels/pages.html#privacy).
-* **Template: ** Visible when the loaded page has a Liquid syntax error. It's unlikely that you'll see this view, because starting with Modyo 8.1, the platform performs a syntax check before saving and publishing changes to Templates.
+* **Template:** Visible when the loaded page has a Liquid syntax error. It's unlikely that you'll see this view, because starting with Modyo 8.1, the platform performs a syntax check before saving and publishing changes to Templates.
 
 ## CSS and JavaScript
 
