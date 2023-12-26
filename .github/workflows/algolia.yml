@@ -1,5 +1,5 @@
 
-name: Modyo Docs Build
+name: Index Algolia
 on:
 
   workflow_dispatch:
