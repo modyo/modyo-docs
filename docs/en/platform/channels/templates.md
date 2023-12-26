@@ -6,7 +6,7 @@ search: true
 
 The base architecture and appearance are essential aspects of a site. In the Templates section, you can adjust the base templates as well as the global JavaScript and CSS and modify the structure as needed.
 
-When you create a site, it comes complete with different templates to generate the Minimal theme and you can start creating your digital channel on it. You can also create HTML, JS and CSS code snippets to extend the functionality of your site.
+When you create a site, it comes complete with different templates to generate the Minimal theme, and you can start creating your digital channel on it. You can also create HTML, JS and CSS code snippets to extend the functionality of your site.
 
 In the templates section, the main menu is hidden to optimize the work area. At the top left, you'll find the name of the section and the current status of the post:
 
