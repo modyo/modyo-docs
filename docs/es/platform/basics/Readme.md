@@ -3,6 +3,7 @@ search: true
 title: Bienvenido a Modyo
 ---
 
+# Acerca de Modyo
  
 La documentación de Modyo la hemos diseñado para ser navegada en forma de guía (de principio a fin) o para resolver una consulta específica. Los contenidos dentro de la documentación se encuentran relacionados entre sí para facilitar el entendimiento de éstos.
 
