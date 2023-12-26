@@ -190,7 +190,7 @@ To restore all templates to their original version, click on the secondary actio
 
 ## SEO
 
-SEO [(Search Engine Optimization)] (/es/platform/channels/sites.html #seo) is essential for the positioning of your site and content.
+SEO [(Search Engine Optimization)](/en/platform/channels/sites.html #seo) is essential for the positioning of your site and content.
 
 In Modyo, you can control the way in which search engines read your site and content, adding meta tags dynamically, depending on the attributes you add to your pages and content.
 
