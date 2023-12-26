@@ -25,7 +25,6 @@
         "default_value": "Documentation"
       },
       "lvl1": ".content__default h1",
-      /*"lvl2": ".content__default h2",*/
       "lvl2": ".content__default h3",
       "lvl3": ".content__default h4",
       "lvl4": ".content__default h5",
@@ -43,7 +42,6 @@
         "default_value": "Documentation"
       },
       "lvl1": ".theme-default-content h1",
-      /*"lvl2": ".theme-default-content h2",*/
       "lvl2": ".theme-default-content h3",
       "lvl3": ".theme-default-content h4",
       "lvl4": ".theme-default-content h5",
