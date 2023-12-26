@@ -41,8 +41,8 @@ The last option in the top bar shows the main actions you can perform:
 
 - **Save:** Save all changes to all templates.
 - **Submit for review:** Change the status of the templates to “Awaiting Review”. In this state, you can continue to make changes, but each change will be notified by email to the assigned reviewers.
-- **Force publication: ** Only available to site administrators, allows you to immediately publish a template, even if it is waiting for review
-- **Reject: ** Return to “In Edit” status and notify reviewers that the item was rejected.
+- **Force publication:** Only available to site administrators, allows you to immediately publish a template, even if it is awaiting review.
+- **Reject:** Return to “In Edit” status and notify reviewers that the item was rejected.
 - **Publish: ** Once the template has been approved, you can send it to publish.
 
 In the main work area, there are two sections:
