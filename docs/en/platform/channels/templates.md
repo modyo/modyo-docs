@@ -56,7 +56,7 @@ Modyo offers three predefined layouts:
 
 * **Home:** Exclusively for the main page of the site.
 * **Base:** All pages, except the home page, use this layout.
-* **Error: ** Used in error views (404, 401), presenting a clean design.
+* **Error:** Used in error views (404, 401), showcasing a clean design.
 
 To create a new layout:
 1. In the **Templates** section, click on the **Views** tab
