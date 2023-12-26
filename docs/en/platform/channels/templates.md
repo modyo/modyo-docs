@@ -11,7 +11,7 @@ When you create a site, it comes complete with different templates to generate t
 In the templates section, the main menu is hidden to optimize the work area. At the top left, you'll find the name of the section and the current status of the post:
 
 - **Published:** There is a published version and the editable version is identical.
-- **Pending changes: ** There is a published version, but there are changes pending publication in your editable version.
+- **Pending changes:** There is a published version, but there are changes pending publication in your editable version.
 - **Under review: ** [team review] (/es/platform/core/key-concepts.html) is active and the editable version has been submitted for review.
 - **Approved: ** [team review] (/es/platform/core/key-concepts.html) is enabled and the item's review conditions have been met. In this state, the template is ready to be published.
 
