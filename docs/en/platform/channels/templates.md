@@ -69,25 +69,25 @@ You can use this code as a base that contains everything necessary for your page
 
 
 ```liquid
-{% html5%}
+{% html5 %}
 <head>
- {% snippet 'shared/general/head'%}
+  {% snippet 'shared/general/head' %}
 </head>
 
-{% body%}
-{% snippet 'shared/general/body_tag_manager'%}
-{% snippet 'shared/general/header'%}
+{% body %}
+{% snippet 'shared/general/body_tag_manager' %}
+{% snippet 'shared/general/header' %}
 
-{{site.breadcrumb}}
+{{ site.breadcrumb }}
 <div id="main-layout">
-{{content_for_layout}}
+{{ content_for_layout }}
 </div>
 
-<script>{% snippet “shared/serviceworker/register_js”%}</script>
-{% snippet 'shared/general/footer'%}
+<script>{% snippet "shared/serviceworker/register_js" %}</script>
+{% snippet 'shared/general/footer' %}
 
-{% endbody%}
-{% endHTML5%}
+{% endbody %}
+{% endhtml5 %}
 ```
 
 To apply a new layout to a page, follow these steps:
