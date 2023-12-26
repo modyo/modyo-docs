@@ -31,7 +31,7 @@ Every time you publish a version, the version that was published becomes a backu
 For more information on versioning, refer to the section on [versioning](en/platform/core/key-concepts.html#versions).
 :::
 
-**Search in templates: ** Display a sidebar with a text search engine that explores all the editable templates.
+**Search in templates:** Display a sidebar with a text search engine that explores all the editable templates.
 
 **View activity: ** Display a sidebar that shows the activity history and where you can read and write comments. Click on **view detail** to show the full information of any activity log.
 
