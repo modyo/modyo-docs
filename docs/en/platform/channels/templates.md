@@ -194,7 +194,7 @@ SEO [(Search Engine Optimization)](/en/platform/channels/sites.html #seo) is ess
 
 In Modyo, you can control the way in which search engines read your site and content, adding meta tags dynamically, depending on the attributes you add to your pages and content.
 
-To add the meta tags in Modyo, use this code snippet in Templates and then call it from the head of your site:
+To add meta tags in Modyo, use this code snippet in Templates and then call it from the head of your site:
 
 ```html
 <!-- Site SEO -->
@@ -202,11 +202,11 @@ To add the meta tags in Modyo, use this code snippet in Templates and then call 
 <meta name="author" content="{{ site.name }}"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-{{site.meta_tags}}
+{{ site.meta_tags }}
 
-{% if page%}
+{% if page %}
 <!-- Page SEO -->
-{{page.meta_tags}}
+{{ page.meta_tags }}
 <meta name="description" content="{{ page.excerpt }}"/>
 <meta property="og:title" content="{{ page.title }}"/>
 <meta property="og:type" content="website"/>
@@ -214,7 +214,7 @@ To add the meta tags in Modyo, use this code snippet in Templates and then call 
 <meta property="og:image" content="{{ site.logo | asset_url : 'original' }}"/>
 <meta property="og:site_name" content="{{ site.name }}"/>
 <meta property="og:description" content="{{ page.excerpt }}"/>
-{% endif%}
+{% endif %}
 <!-- END SEO -->
 ```
 
