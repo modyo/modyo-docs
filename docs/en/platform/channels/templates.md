@@ -28,7 +28,7 @@ You can preview the changes as a non-session user or a user with an active Modyo
 :::tip Tip
 Every time you publish a version, the version that was published becomes a backup version. By default, up to 20 backups are saved, allowing you to compare, restore and roll back to the last 20 versions
 
-For more information on versioning, see the [versioning] section (/es/platform/core/key-concepts.html #versionado).
+For more information on versioning, see the [versioning](en/platform/core/key-concepts.html#versions) section.
 :::
 
 **Search in templates: ** Display a sidebar with a text search engine that explores all the editable templates.
