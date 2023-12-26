@@ -139,7 +139,7 @@ Once saved and published, it is translated into the following HTML code:
 <script src='my-js' type='text/javascript' async='async' defer='defer'></script>
 ```
 
-For detailed information and the parameters supported by these filters, see the [Liquid filters] section (/es/platform/channels/liquid-markup.html #filtros -standard).
+To obtain detailed information and learn about the parameters supported by these filters, refer to the [Liquid filters section](en/platform/channels/liquid-markup/filters.html).
 
 
 ## Snippets
