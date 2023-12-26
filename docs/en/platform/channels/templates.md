@@ -160,8 +160,8 @@ To add a custom snippet:
 For the system to recognize the programming language to which the snippet belongs, you must add an underscore and then the ending, as follows: “front_css” or “library_js”. By default, the system will recognize the snippet as an HTML language.
 :::
 
-:: :tip Tip
-All the elements of the Template Builder use Liquid as the template engine. For more information about Liquid and how to use it, see the [Liquid Markup] section (/es/platform/channels/liquid-markup.html)
+:::tip Tip
+All the elements of the Template Builder use Liquid as the template engine. For more information about Liquid and how to use it, see the [Liquid Markup](/en/platform/channels/liquid-markup.html) section.
 :::
 
 In the work area, under the tabs, you'll find a bar with these items:
