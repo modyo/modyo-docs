@@ -178,7 +178,7 @@ The toolbar under the Template Builder tabs contains the following elements:
 When you publish a version, the list of changes disappears, because the new editable version has not changed.
 :::
 
-:: :tip Tip
+:::tip Tip
 Subversions are specific to each template, so some may have changes and others may not, and those without changes will not show the change selector. In the same way, if you go back to a previous sub-version of a template, you don't affect the rest of the templates.
 :::
 
