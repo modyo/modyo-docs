@@ -65,7 +65,7 @@ To create a new layout:
 
 This allows you to define a new base structure for use on pages.
 
-You can use as a base this code that contains everything necessary for your pages to use the elements of the site, such as the header, footer, service worker and Google Tag Manager configuration. You can also modify the code, as needed.
+You can use this code as a base that contains everything necessary for your pages to use the elements of the site, such as the header, footer, service worker and Google Tag Manager configuration. You can also modify the code as needed.
 
 
 ```liquid
