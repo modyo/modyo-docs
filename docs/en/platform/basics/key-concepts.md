@@ -79,7 +79,7 @@ Here are some key terms in Modyo and their definitions:
 * [**Site:**](/en/platform/channels/sites.html) Tool for creating digital channels within Modyo. Site operation encompasses the development, design and flow of navigation.
 * [**Editable version:**](/en/platform/core/key-concepts.html#editable) The version that you can modify and preview of the versioned elements.
 * [**Global variables:**](en/platform/core/key-concepts.html#global-variables) Elements that you can define globally and reuse in different places.
-* [**Scheduled version: **] (/es/platform/core/key-concepts.html #programado) Version that will be published at a certain date and time.
+* [**Scheduled version:**](en/platform/core/key-concepts.html#scheduled) Version that will be published at a certain date and time.
 * [**Published version: **] (/es/platform/core/key-concepts.html #publicado) Visible or productive version of the versioned elements. This version cannot be modified.
 * [**Backup version: **] (/es/platform/core/key-concepts.html #respaldos) Previously released versions.
 * [**Webhook: **] (/es/platform/core/webhooks.html) It automatically sends information to an external system when a certain event occurs.
