@@ -20,7 +20,7 @@ Once we log into our account, click <b>Setup</b>.
 
 <img src="/assets/img/tutorials/saleforce/home.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Salesforce home page UI"/>
 
-The link to <b> Setup </b> is located in the upper right corner of our screen and its icon is a nut:
+The link to <b> Setup </b> is located in the upper right corner of our screen, and its icon is a gear:
 
 <img src="/assets/img/tutorials/saleforce/setup.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;" alt="Image with closeup to the Setup button"/>
 
