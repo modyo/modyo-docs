@@ -349,7 +349,7 @@ Once you have completed both steps, when you make a change to a Modyo user, the 
 To ensure proper data synchronization between Modyo and Salesforce and maintain the integrity and consistency of information between both platforms, the following specifications exist:
 
 * It is allowed to use a single “issuer” per account, which means that between realms they cannot be repeated.
-* Contact update in Salesforce:
+* Update contacts in Salesforce:
   * If the linking settings allow it, when updating a contact in Salesforce, Modyo searches for the corresponding user using the “secondary_user_id” field.
   * If the Modyo user does not exist, a new one is created, and if it already exists, it is updated according to the synchronized fields.
   * If the Modyo user didn't exist previously, their “secondary_user_id” is defined as the ID of the Salesforce contact.
