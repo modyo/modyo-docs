@@ -40,3 +40,7 @@ Any file (markdown files) follow the same structure of the file system plus the 
 The route should be `/guides/foo/`. If we add the same folder `foo` to the english language, should be `/guides/foo/`.
 
 The main navigation and the sidebar are controlled by the configuration file (`/docs/.vuepress/config.js`)
+
+## Examples routes
+
+Visit `http://localhost:8080/es/` or `http://localhost:8080/es/platform`

@@ -528,8 +528,7 @@ Usa los drops de user para obtener información de tus usuarios del módulo Cust
 | **[user.targets](#target)** Array de objectos del tipo target.  |  |
 | **user.undefined_sex_value** El valor por defecto cuando el sexo es indefinido.  | ```3``` |
 | **[user.unread_notifications](#notificacion)** Array de objectos del tipo notificación.  |  |
-| **user.unread_notifications_count** El conteo de las notificaciones no leídas.
-  | ```2``` |
+| **user.unread_notifications_count** El conteo de las notificaciones no leídas.  | ```2``` |
 | **user.username** El username del usuario.  | ```ivan@modyo.com``` |
 | **user.uuid** El uuid del usuario.  | ```cdc7f0e2-b5c3-4b92-aa34-962ffa0bi572``` |
 
