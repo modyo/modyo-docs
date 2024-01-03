@@ -77,7 +77,7 @@ To upload a file to Modyo, choose one of the following options:
 1. Add tags to the file if you want.
 1. Click **Upload** to confirm.
 
-::: type Tip
+:::tip Tip
 Modyo allows you to upload 10 files at a time. If you need to upload more items, repeat the process.
 :::
 
