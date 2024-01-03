@@ -91,8 +91,8 @@ Here are some key terms in Modyo and their definitions:
 * [**Field:**](/en/platform/content/types.html#fields) Basic unit for forming content types.
 * [**Categories:**](en/platform/content/entries.html#categories) Hierarchical structure to organize the content of your spaces.
 * [**Entry:**](/en/platform/content/entries.html) Set of values associated with fields defined in the content type.
-* [**Space: **] (/es/platform/content/spaces.html) Resource repository where team members define types of content, create and publish entries.
-* **Tags: ** Labels for sorting and filtering posts.
+* [**Space:**](/en/platform/content/spaces.html) Resource repository where team members define types of content, create and publish entries.
+* **Tags:** Labels for sorting and filtering posts.
 * [**Content type: **] (/es/platform/content/types.html) Structure with fields that allows you to define different contents.
 
 
