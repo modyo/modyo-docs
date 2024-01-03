@@ -60,7 +60,7 @@ To upload a file to Modyo, choose one of the following options:
 
 #### In the dedicated section for managing files.
 
-`Mode 9`
+`Modyo 9`
 1. In the side menu, select **Content**.
 1. Click on **File Manager**.
 1. Click on the **+ New Asset** button.
