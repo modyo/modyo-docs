@@ -35,8 +35,8 @@ In the upper right part of the screen you can see the percentage of used space c
 Modyo displays 30 files per page. At the bottom you can navigate between the file pages.
 
 You can filter the content by:
-- **Extensions: ** Filter by file type.
-- **Author: ** Filter by username who uploaded the content.
+- **Extensions:** Filter by file type.
+- **Author:** Filter by username who uploaded the content.
 - **Tags: ** Shows all the files associated with a tag.
 - **Search bar: ** Type a word to display files that contain that word in their name or metadata.
 
