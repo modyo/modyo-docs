@@ -423,7 +423,7 @@ The last step is the definition of the external service within Salesforce.
 
 External services allow us to connect Salesforce to third-party services, sharing an API schema in OpenAPI format and we find them in Setup -> External services.
 
-To generate the integration, create a new External Service by clicking on the <b> New External Service </b> button on the top right of the screen.
+To generate the integration, create a new External Service by clicking on the <b>New External Service</b> button on the top right of the screen.
 
 Enter a name, select the Named Credential you created and at the bottom we paste the following code, selecting <b> Service Schema Complete JSON </b> 
 
