@@ -82,7 +82,7 @@ Here are some key terms in Modyo and their definitions:
 * [**Scheduled version:**](en/platform/core/key-concepts.html#scheduled) Version that will be published at a certain date and time.
 * [**Published version:**](en/platform/core/key-concepts.html#published) Visible or productive version of the versioned elements. This version cannot be modified.
 * [**Backup version:**](en/platform/core/key-concepts.html#backups) Previously released versions.
-* [**Webhook: **] (/es/platform/core/webhooks.html) It automatically sends information to an external system when a certain event occurs.
+* [**Webhook:**](/en/platform/core/webhooks.html) Automatically sends information to an external system when a certain event occurs.
 
 
 #### Modyo Content
