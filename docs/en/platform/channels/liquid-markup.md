@@ -166,8 +166,8 @@ A filter is a Ruby method that takes one or more parameters and returns a value.
 Tags (tags) are used for template logic. Here is a list of currently supported tags:
 
 * **assign** - Assigns a value to a variable
-* **capture** - Tag block that captures text to a variable.
-* **case** - Tag block, case standard statement.
+* **capture** - Block tag that captures text to a variable.
+* **case** - Block tag, case standard statement.
 * **comment** - Block tag, comment on the text in the block.
 * **cycle** - Cycle is generally used within a loop to toggle between values, such as colors or DOM classes.
 * **for** - Loop for
