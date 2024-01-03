@@ -77,7 +77,7 @@ Here are some key terms in Modyo and their definitions:
 * [**Password Policy:**](/en/platform/core/security.html#password-policy) Allows you to define rules for creating or modifying passwords.
 * [**Team review:**](en/platform/core/key-concepts.html#team-review) Review flow for versioned items. Approval can be requested from multiple team members.
 * [**Site:**](/en/platform/channels/sites.html) Tool for creating digital channels within Modyo. Site operation encompasses the development, design and flow of navigation.
-* [**Editable version: **] (/es/platform/core/key-concepts.html #editable) The version that you can modify and preview of the versioned elements.
+* [**Editable version:**](/en/platform/core/key-concepts.html#editable) The version that you can modify and preview of the versioned elements.
 * [**Global variables: **] (/es/platform/core/key-concepts.html #variables -global) Elements that you can define globally and reuse in different places.
 * [**Scheduled version: **] (/es/platform/core/key-concepts.html #programado) Version that will be published at a certain date and time.
 * [**Published version: **] (/es/platform/core/key-concepts.html #publicado) Visible or productive version of the versioned elements. This version cannot be modified.
