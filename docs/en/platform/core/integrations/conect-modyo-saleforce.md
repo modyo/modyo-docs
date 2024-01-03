@@ -753,7 +753,7 @@ Then in Modyo Platform, select <b>Customers</b> and click **Realms**. Select you
 
 <img src="/assets/img/tutorials/saleforce/custom_field.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image adding a New Custom Field in Modyo."/>
 
-Click on <b>Create</b>, we activate it in the 3 points and save.
+Click on <b>Create</b>, activate it in the 3 points and save.
 
 <img src="/assets/img/tutorials/saleforce/activate.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image activating the custom field in Modyo."/>
 
