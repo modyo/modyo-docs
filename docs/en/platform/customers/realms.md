@@ -338,7 +338,7 @@ Once you've linked the fields, select the type of synchronization:
 - **Bidirectional:** This option sends information from Modyo to Salesforce and information from Salesforce is used in Modyo, allowing contacts and users to be updated respectively. In this case, users and contacts are kept up to date with the most recent information available.
 - **Don't sync:** By selecting this option, you turn off the integration, preventing users and contacts from being synchronized between Modyo and Salesforce. This option can be useful if you need to pause syncing for any reason.
 
-:: :warning Attention
+:::warning Attention
 If you select the **Always use Modyo** or **bidirectional** link mode, but don't complete the second step explained below, Modyo users will not be sent to Salesforce.
 :::
 
