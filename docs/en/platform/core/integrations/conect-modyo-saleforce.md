@@ -767,7 +767,7 @@ For this, go to Setup -> Flows and click <b>New Flow</b>. Select <b>Autolaunched
 
 To get started, go to the <b>Manager</b> tab and create new resources.
 
-Creates a new variable named <b>isPremiumCustomer</b> of the Boolean Type and of default value <b>{! $globalconstant.false}</b>, enable the two fields below and click <b>Done</b>.
+Creates a new variable named <b>isPremiumCustomer</b> of the Boolean Type and of default value <b>{!$GlobalConstant.False}</b>, enable the two fields below and click <b>Done</b>.
 
 <img src="/assets/img/tutorials/saleforce/IsPremiumCustomer.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image showing the new variable called IsPremiumCustomer in the New Resource window."/>
 
