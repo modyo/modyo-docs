@@ -89,7 +89,7 @@ Here are some key terms in Modyo and their definitions:
 
 * [**Assets:**](/en/platform/content/asset-manager.html#about-the-interface) Files uploaded to the platform for use in content and sites.
 * [**Field:**](/en/platform/content/types.html#fields) Basic unit for forming content types.
-* [**Categories: **] (/es/platform/content/entries.html #categorias) Hierarchical structure to organize the content of your spaces.
+* [**Categories:**](en/platform/content/entries.html#categories) Hierarchical structure to organize the content of your spaces.
 * [**Entry: **] (/es/platform/content/entries.html) Set of values associated with fields defined in the content type.
 * [**Space: **] (/es/platform/content/spaces.html) Resource repository where team members define types of content, create and publish entries.
 * **Tags: ** Labels for sorting and filtering posts.
