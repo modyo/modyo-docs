@@ -375,7 +375,7 @@ To ensure proper data synchronization between Modyo and Salesforce and maintain 
 * Fields not included in the list, such as references or composite fields, are disabled in the field linking view. This indicates that they are not available for linking.
 
 #### Enable the Modyo API in Salesforce.
-To carry out this process, review the Salesforce [Connect REST API developer guide](https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/intro_what_is_chatter_connect.htm)
+To carry out this process, review the [Salesforce Connect REST API](https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/intro_what_is_chatter_connect.htm) developer guide
 
 :::warning Important
 If you don't carry out this second step, the information and changes you make in Salesforce will not be reflected in Modyo.
