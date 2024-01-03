@@ -153,7 +153,7 @@ To configure the fields search for <b>Custom Metadata Types</b> and click <b>New
 <img src="/assets/img/tutorials/saleforce/custom_metadata_type.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image with the New Custom Metadata Type UI."/>
 
 Click <b>Save</b> and on the settings of <b>Custom Metadata Types
- </b>, fill in the Custom Fields table with the following:
+</b>, fill in the Custom Fields table with the following:
 
 <table>
  <tr>
