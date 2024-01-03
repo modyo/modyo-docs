@@ -93,7 +93,7 @@ In the file interface, click on the name of a file to open the file properties e
 
 Click **Update Information** to confirm the changes or **Close** to cancel them.
 
-## Upload an image again
+## Re-upload an image
 
 To upload a new file while keeping the original name and link, follow these steps:
 
