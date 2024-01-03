@@ -425,7 +425,7 @@ External services allow us to connect Salesforce to third-party services, sharin
 
 To generate the integration, create a new External Service by clicking on the <b>New External Service</b> button on the top right of the screen.
 
-Enter a name, select the Named Credential you created and at the bottom we paste the following code, selecting <b> Service Schema Complete JSON </b> 
+Enter a name, select the Named Credential you created and at the bottom we paste the following code, selecting <b>Service Schema Complete JSON</b> 
 
 
 ```json
