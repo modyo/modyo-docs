@@ -37,8 +37,8 @@ Modyo displays 30 files per page. At the bottom you can navigate between the fil
 You can filter the content by:
 - **Extensions:** Filter by file type.
 - **Author:** Filter by username who uploaded the content.
-- **Tags: ** Shows all the files associated with a tag.
-- **Search bar: ** Type a word to display files that contain that word in their name or metadata.
+- **Tags:** Shows all the files associated with a tag.
+- **Search bar:** Type a word to display files that contain that word in their name or metadata.
 
 Labels allow you to organize and group your files. To modify the tags of more than one file, select the files you want and click on the **Add or Remove Tags** button that appears at the bottom of the list.
 
