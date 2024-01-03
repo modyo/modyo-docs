@@ -1,9 +1,9 @@
 ---
 search: true
-title: Learn to use modyo
+title: Learn to use Modyo
 ---
 
-# Learn how to use modyo
+# Learn to use Modyo
 
 Modyo is a platform that will help you create personalized digital experiences in a secure, fast and unified way.
 
