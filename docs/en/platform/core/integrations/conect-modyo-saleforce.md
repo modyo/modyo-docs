@@ -791,7 +791,7 @@ Now the dots have to be joined.
 
 <img src="/assets/img/tutorials/saleforce/flow1.png" style="border: 1px solid rgb(238, 238, 238);max-width: 400px;margin: auto 0;" alt="Image connecting the Autolaunched Flow to the Async Pause."/>
 
-Add an <b> Decision </b> to the flow, named <b> Is Premium Customer </b>, and fill it with the following fields:
+Add an <b>Decision</b> to the flow, named <b>Is Premium Customer</b>, and fill it with the following fields:
 
 <table>
  <tr>
