@@ -1129,4 +1129,4 @@ Click on <b>Activate</b>.
 
 Congratulations! You have finished the tutorial, in order to test that everything is OK, we need to create a user by filling in the required fields (First Name, Last Name, Email and Modyo ID).
 
-To find out the user ID in Modyo we can do it through the Customers API at the following url {acount.url} /customers/ {realm_uid} /users or on the Modyo platform, by clicking the user within Realms. The Modyo ID will be located as part of the URL and looks something like: `987eb795-9476-49f7-b511-efb5ba3f07de`.
+To find out the user ID in Modyo we can do it through the Customers API at the following {acount.url}/customers/{realm_uid}/users or on the Modyo platform, by clicking the user within Realms. The Modyo ID will be located as part of the URL and looks something like: `987eb795-9476-49f7-b511-efb5ba3f07de`.
