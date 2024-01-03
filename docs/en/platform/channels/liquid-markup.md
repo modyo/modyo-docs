@@ -4,7 +4,11 @@ search: true
 
 # Liquid Markup
 
-Liquid is a template engine which was written with very specific requirements:
+Liquid is a language that we use on Modyo Platform to display the content of the Content module on your Sites. Using Liquid you can generate a template on your site that displays the information of your entries dynamically as well as control what to display using flow or iteration control.
+
+In Liquid, as in many other programming languages, you have to use reserved words to display dynamic content. These calls are executed “just-in-time”, allowing you to do “lazy loading” only when needed.
+
+Liquid is written with very specific requirements:
 
 * It has to have beautiful and simple markup. Template engines which don't produce good looking markup are no fun to use.
 * It needs to be non-evaluable and safe. Liquid templates are made so that users can edit them. You don't want to run code on your server which your users wrote.
@@ -35,31 +39,33 @@ Liquid is a template engine which was written with very specific requirements:
 
 ### How to use Liquid?
 
-There are two types of markup in Liquid: Output and Tag.
+Below we'll look at several examples of the most common uses when writing with Liquid.
 
-* Output markup (which may resolve to text) is surrounded by
+#### Objects
 
-```liquid
-{{ matched pairs of curly brackets (ie, braces) }}
-```
+An object is what contains the content that Liquid displays on the screen. You can display objects or variables using a double bracket ``{{ }}``, for example:
 
-* Tag markup (which cannot resolve to text) is surrounded by
+To display the name of the post on your page use:
 
 ```liquid
-{% matched pairs of curly brackets and percent signs %}
+{{ entry.meta.name }}
 ```
 
-### Output
+#### Tags
 
-An output statement is a set of double curly braces containing an expression; when the template is rendered, it gets replaced with the value of that expression.
+With Tags you can add flow and iteration control to your pages. You need to encapsulate the language with square brackets and percentage {% %} to use Tags, for example:
 
-Here is a simple example of output:
-
-```liquid
-Hello {{name}}
-Hello {{user.name}}
-Hello {{ 'tobi' }}
+```Liquid
+{% if product.name == “Electronic Banking”%}
+ Download our electronic banking to your cell phone!
+{% endif%}
 ```
+
+### Drops
+Modyo extends Liquid's functionality through variables created for Modyo Platform called Drops. We currently offer drops from more than 20 different categories for all modules on the platform. 
+
+For more information on how to use Drops, see [Drops](/en/platform/channels/drops).
+
 
 ## Expressions and Variables
 
@@ -99,7 +105,7 @@ Hello {{ '*tobi*' | textilize | upcase }}
 Hello {{ 'now' | date: "%Y %h" }}
 ```
 
-Under the hood, a filter is a Ruby method that takes one or more parameters and returns a value. Parameters are passed to filters by position: the first parameter is the expression preceding the pipe character, and additional parameters can be passed using the `name: arg1, arg2` syntax described above.
+A filter is a Ruby method that takes one or more parameters and returns a value. Parameters are passed to filters by position: the first parameter is the expression preceding the pipe character, and additional parameters can be passed using the `name: arg1, arg2` syntax described above.
 
 ### Standard Filters
 
@@ -109,7 +115,7 @@ Under the hood, a filter is a Ruby method that takes one or more parameters and 
 * `base64_encode` - Returns the Base64-encoded value for a string *e.g.* <span v-pre>`{% 'SGVsbG8gd29ybGQ=' | base64_decode %} # => 'Hello world'`</span>.
 * `capitalize` - Capitalize the entry sentence
 * `ceil` - Rounds up a decimal number to the next integer, *e.g.* <span v-pre>`{{ 4.6 | ceil }} #=> 5`</span>
-* `date` - Format a date ([syntax reference](http://docs.shopify.com/themes/liquid-documentation/filters/additional-filters#date))
+* `date` - Format a date ([syntax reference] (https://shopify.dev/api/liquid/filters#date))
 * `default` - Returns the given variable unless it is null or empty string, then returns the given value, *e.g.* <span v-pre>`{{ undefined_variable | default: "Default value" }} #=> "Default value"`</span>
 * `divided_by` - Division of integers *e.g.* <span v-pre>`{{ 10 | divided_by:3 }} #=> 3`</span>
 * `downcase` - Convert an input string to lowercase
@@ -145,7 +151,7 @@ Under the hood, a filter is a Ruby method that takes one or more parameters and 
 * `sort` - Sort array items
 * `split` - Split a string into a matching pattern *e.g.* <span v-pre>`{{ "a~b" | split:"~" }} #=> ['a','b']`</span>
 * `strip_html` - Remove html from the string
-* `strip_newlines` - Remove all new lines (\ n) from the string
+* `strip_newlines` - Remove all new lines (\n) from the string
 * `strip` - Removes all blank spaces at both ends of the string.
 * `stylesheet_tag` - Generates a `<link>` HTML tag for a CSS template, taking a URL and `attr: 'value'` attributes as parameters, *e.g.* <span v-pre>`{{ 'my-css-url' | stylesheet_tag: media: 'screen', title: 'color style' }}`</span> => `<link href='my-css-url' rel='stylesheet' type='text/css' media='screen' title='color style' />`
 * `times` - Multiply  *e.g* <span v-pre>`{{ 5 | times:4 }} #=> 20`</span>
@@ -303,7 +309,7 @@ Liquid expressions are tested to determine their "truthiness" in similar to Ruby
 {% endif %}
 ```
 
-### Case/when
+### Case Statement
 
 If you need to evaluate multiple conditions, you can use the "case" statement:
 
@@ -436,7 +442,7 @@ Both are only useful when combined with something like an "if" statement.
 {% endfor %}
 ```
 
-#### Help Variables
+#### Help variables
 
 During each `for` loop, the following help variables are available for additional style needs:
 
