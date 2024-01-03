@@ -128,7 +128,7 @@ To restore the file, open the property editing window again and click on **Resto
 
 ## Delete a file
 
-To delete a file follow these steps:
+To delete a file, follow these steps:
 1. Click on the name of a file to open the property editing interface.
 1. Click **Delete**, below the image.
 
