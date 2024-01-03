@@ -293,10 +293,10 @@ In Salesforce, you should get:
 ```
 -----BEGIN PRIVATE KEY-----
 
-Miievwibadanbgkqhkig9w0baqefaascbkkwggslageaaoibaqc9zt/lc/dtmxcm
-...
-...
-s/NW7vm0LSv3ri3buratfMxx+q==
+MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQC9ZT/LC/DtmxCm
+......
+......
+S/nw7vM0Lsv3Ri3BURATfMXx+Q==
 
 -----END PRIVATE KEY-----
 ```
