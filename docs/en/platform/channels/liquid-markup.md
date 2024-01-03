@@ -340,7 +340,7 @@ hit 2 or 3
 
 ### Cycle
 
-You often have to alternate between different colors or similar tasks. Liquid has built-in support for such operations, using the `cycle` tag.
+Often, you have to alternate between different colors or similar tasks. Liquid has built-in support for such operations, using the `cycle` tag.
 
 ```liquid
 {% cycle 'one', 'two', 'three' %}
