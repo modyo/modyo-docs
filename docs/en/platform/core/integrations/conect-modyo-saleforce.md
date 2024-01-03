@@ -965,7 +965,7 @@ Finally, save and test that it is working correctly.
 
 ## Step 9: Creating Process
 
-Now we need to search <b> Process builder </b> in the search engine,
+Now we need to search <b>Process builder</b> in the search engine,
 
 <img src="/assets/img/tutorials/saleforce/Process_builder.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image searching for Process Builder in the Setup window."/>
 
