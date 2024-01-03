@@ -4,148 +4,134 @@ search: true
 
 # Gestor de Archivos
 
-Una organización necesita tener una plataforma que les permita organizar los archivos y documentos de contenido que se requieran dentro de la plataforma.
+Este espacio te permite cargar, organizar y gestionar tus archivos de forma simple y eficiente.
 
-Modyo permite subir, revisar, y editar archivos dentro de la misma plataforma, a través de la herramienta del Gestor de Archivos. Esta se puede acceder desde tus Espacios, Sitios, o en el menú lateral dentro de Content. 
+- En `Modyo 9` este espacio se llama **Gestor de archivos**: Al migrar a Modyo 10 todos los assets se conservan y podrás elegir previamente a cuál espacio moverlos.
 
-El único requisito es que los archivos estén dentro de los límites de tamaño. Los límites son:
+- A partir de `Modyo 10` este espacio se denomina **Media**: Aquí (a diferencia del Gestor de Archivos en Modyo 9), los permisos de edición y eliminación de imágenes se llevan a cabo a través de grupos. De esta manera, un grupo puede tener permisos para ver y usar assets, pero no podrá modificarlos o eliminarlos.
+
+Puedes cargar diversos tipos de media a este espacio, considerando las siguientes restricciones de tamaño por archivo:
+
 
 - **Imágenes:** 6 MB
 - **Videos:** 10 MB
 - **Audios:** 10 MB
 - **Archivos:** 10 MB
 
-Los tipos de archivos permitidos son los siguientes:
+Los tipos de archivos permitidos son:
+- **Imágenes:** apng, avif, bmp, gif, ico, jpeg, jpg, png, tif, tiff, webp
+- **Videos:** av, avi, f4v, flv, mkv, mov, mp4, mpeg, webm, wmv
+- **Audios:** 3gp, aac, alac, dsd, flac, mp3, pcm, wav, m4a, ogg, wma
+- **Archivos:** 7z, ai, apk, css, csv, doc, docx, fon, ico, iso, jar, js, msi, ods, odt, otf, pdf, ppt, pptx, rar, rss, rtf, scss, tar, tex, ttf, txt, vcf, wdp, xhtml, xls, xlsm, xlsx, xml, zip, one, ecf, pub, xps, json, svg, woff, woff2, ics
 
-- **Imágenes:** apng avif bmp gif ico jpeg jpg png tif tiff webp
-- **Videos:** av avi f4v flv mkv mov mp4 mpeg webm wmv
-- **Audios:** 3gp aac alac dsd flac mp3 pcm wav m4a ogg wma
-- **Archivos:** 7z ai apk css csv doc docx fon ico iso jar js msi ods odt otf pdf ppt pptx rar rss rtf scss tar tex ttf txt vcf wdp xhtml xls xlsm xlsx xml zip one ecf pub xps json svg woff woff2 ics
 
 
 ## Acerca de la interfaz
 
-Esta interfaz te muestra una lista de todos los archivos que existen dentro de la plataforma.
+La interfaz te muestra una lista de todos los archivos que existen dentro de la plataforma.
 
 En la parte superior derecha de la pantalla puedes ver el porcentaje de espacio utilizado correspondiente al total asignado para la cuenta y el botón para subir archivos nuevos.
 
-El listado cuenta con tres tipos de filtros que te serán útiles para encontrar un archivo:
+Modyo muestra 30 archivos por página. En la parte inferior puedes navegar entre las páginas de archivos.
 
-**Extensiones:** Con este filtro puedes ver todos los archivos de un mismo tipo que se encuentren dentro de la plataforma (el listado esta conformado por los tipos de archivos que han sido subidos a la plataforma).
+Puedes filtrar el contenido por:
+- **Extensiones:** Filtra por tipo de archivo.
+- **Autor:** Filtra por nombre de usuario que subió el contenido.
+- **Tags:** Muestra todos los archivos asociados a una etiqueta.
+- **Barra de búsqueda:** Escribe una palabra para desplegar los archivos que contengan esa palabra en su nombre o metadata.
 
-**Tags:** Este filtro permite mostrar todos los archivos asociados a una etiqueta que se encuentren dentro de la plataforma.
+Las etiquetas te permiten organizar y agrupar tus archivos. Para modificar las etiquetas de más de un archivo, selecciona los archivos que desees y da click en el botón **Agregar o quitar etiquetas** que aparece en la parte inferior del listado.
 
-:::tip Tip
-Si quieres agregar una etiqueta a un archivo o un grupo de archivos, puedes hacerlo editando directamente el archivo o utilizando las acciones masivas que aparecen en la parte inferior izquierda del listado. 
+En esta vista, las columnas son:
+- **Previsualizar:** Si la plataforma identifica que el archivo es una imagen, puedes ver una imagen en miniatura del archivo. Si no lo es, el espacio aparece en blanco.
+- **Nombre:** Nombre del archivo y su extensión. El ordenamiento es alfabético.
+- **Tipo:** Tipo y extensión del archivo. El ordenamiento es alfabético, primero por tipo y después por el nombre de la extensión.
+- **Tamaño:** Tamaño en kilobytes del archivo.
+- **Creado el:** Fecha de subida o creación dentro de la plataforma, sin considerar si el archivo fue creado en una fecha distinta en otro servicio.
+- **Autor:** Nombre del usuario que subió el archivo, solo cuando el usuario tiene asignado un nombre.
 
-Si seleccionas uno o más checkboxes que estén en tu pantalla, el botón solo asignará etiquetas a esos archivos que hayas marcado.
+
+## Subir un archivo
+Para cargar un archivo en Modyo, elige una de las siguientes opciones:
+
+#### Desde la sección donde estás trabajando, plantillas, páginas, reinos o sitios:
+1. Abre el editor de texto,
+1. En la barra superior, selecciona **insertar imagen** para abrir un modal donde podrás arrastar o subir un archivo.
+
+#### En la sección dedicada para administrar archivos.
+
+`Modyo 9`
+1. En el menú lateral selecciona **Content**.
+1. Haz click en **Gestor de archivos**.
+1. Da click en el botón **+ Nuevo Asset**.
+1. Arrastra el archivo o haz click en el recuadro de carga para abrir una ventana de búsqueda.
+1. Agrega etiquetas al archivo si lo deseas.
+1. Da click en **Upload** para confirmar.
+
+`Modyo 10`
+1. En el menú lateral da click en el ícono de **Content**.
+1. Selecciona un espacio.
+1. En el menú lateral da click en **Media**.
+1. Da click en el botón **+ Nuevo Asset**.
+1. Arrastra el archivo o haz clic en el recuadro de carga para abrir una ventana de búsqueda.
+1. Agrega etiquetas al archivo si lo deseas.
+1. Da click en **Upload** para confirmar.
+
+::: tip Tip
+Modyo permite subir 10 archivos a la vez. Si necesitas subir más elementos, repite el proceso.
 :::
-
-**Barra de búsqueda:** Con la barra de búsqueda, el Gestor te mostrará todos los archivos que tengan una palabra o contenido que se encuentre dentro de la metadata de este. En este caso, también incluye la búsqueda de su extensión específica, etiqueta, nombre o usuario que lo haya subido.
-
-:::tip Tip
-Modyo permite mostrar solo 30 archivos a la vez. Esto viene de manera predeterminada y no es posible cambiarlo.
-:::
-
-Para esta vista, las columnas son:
-
-**Previsualizar:** Si la plataforma identifica que el archivo es una imagen, puedes ver una pequeño thumbnail de esta. Si no lo es, este espacio aparecerá en blanco.
-
-**Nombre:** Nombre del archivo con la extensión incluida. El ordenamiento es por orden alfabético.
-
-**Tipo:** Tipo de archivo y extensión del mismo. El ordenamiento es por orden alfabético primero por tipo y después por la letra del nombre de la extensión.
-
-**Tamaño:** Tamaño en kilobytes del archivo.
-
-**Creado el:** Fecha de subida o creación dentro de la plataforma, independiente si el archivo fue creado en una fecha distinta en otro servicio.
-
-**Autor:** Nombre del usuario que subió el archivo, siempre y cuando el usuario tenga asignado un nombre.
-
-Finalmente, en la esquina inferior derecha, puedes encontrar la paginación de todos los archivos del sistema.
-
-
-## Propiedades de los archivos
-La plataforma permite el manejo y subida de archivos de todos los tipos, sin un límite de extensión.
-
-Sin embargo, cuando se trate de extensiones conocidas, la plataforma los reconoce y clasifica el archivo según su uso y después su extensión.
-
-Para acceder a las propiedades de los archivos, se debe hacer click en el nombre de este. De esta manera, se levanta un modal en el que puedes editar cada una de las propiedades.
 
 ## Editar un archivo
-En la interfaz de edición de las propiedades del archivo, puedes ver ciertos campos:
+En la interfaz de archivos, da click en el nombre de un archivo para abrir la interfaz de edición de las propiedades del archivo y ver:
 
-**URL del Archivo:** Muestra la URL pública del archivo. Puedes copiarla a tu portapapeles haciendo click en el ícono lateral.
+- **URL del Archivo:** Muestra la URL pública del archivo. Da click en el ícono junto a la URL para copiarla. No es modificable.
+- **Tag de liquid:** Muestra el tag de liquid del archivo, da click en el ícono para copiar y usarlo en los contenidos de la plataforma. No es modificable.
+- **Título:** Muestra el título del archivo. Esta sección es distinta al nombre del archivo, el cual no se puede cambiar.
+- **Texto alternativo:** Muestra el alt text del elemento. Solo para imágenes y videos.
+- **Descripción:** Descripción del elemento, recomendamos escribir un texto corto referente a la imagen.
+- **Etiquetas:** Muestra las etiquetas asociadas al archivo. Puedes buscar y agregar más etiquetas, así como eliminar etiquetas existentes.
 
-**Tag de Liquid:** Muestra el tag de Liquid del archivo, para usarse dentro de los contenidos de la plataforma.
-
-:::warning Atención
-Ni la URL ni el Tag de Liquid son posibles de cambiar a través de Modyo.
-:::
-
-**Título:** Muestra el título del archivo. Esta sección es distinta al nombre del archivo, el cual no se puede cambiar.
-
-**Texto alternativo:** Muestra el ```alt text``` del elemento. (Solo aplica a imágenes y videos).
-
-**Descripción:** Descripción del elemento. Es una buena práctica escribir un pequeño texto que haga referencia a la imagen.
-
-**Etiquetas:** Muestra las etiquetas asociadas al archivo, haciendo click en la caja se pueden buscar y agregar más etiquetas. A su vez que se puede hacer click en la X de las etiquetas existentes para eliminar la asociación con el archivo.
-
-<hr style="margin: 40px 0;" />
-
-Para guardar la modificación de los datos, es necesario hacer click en el botón **Actualizar Información** que se encuentra en la parte inferior derecha de la ventana. 
-
-Si se modifican los datos pero no se hace click en el botón para que queden guardados, estas modificaciones se perderán.
-
-Si se quiere cerrar la ventana y volver a la interfaz del Gestor, se debe hacer click en el botón **Cerrar**, ubicado en la parte inferior de la pantalla.
+Da click en **Actualizar información** para confirmar los cambios o en **Cerrar** para cancelarlos.
 
 ## Subir de nuevo una imagen
 
-Si quieres volver a subir un archivo, manteniendo el nombre y el link original, haz clic en el ícono para subir el archivo que se encuentra en la ventana **Actualizar Información**. Así, muestra una nueva ventana donde puedes seleccionar un archivo nuevo.
+Para cargar un archivo nuevo manteniendo el nombre y el enlace originales, sigue estos pasos:
+
+1. Da click en el nombre de un archivo para abrir la interfaz de edición de propiedades.
+2. Haz click en el botón de carga sobre la imagen.
+3. Selecciona un archivo nuevo.
+4. Confirma que deseas reemplazar el archivo anterior.
+5. Haz click en **Actualizar información** para confirmar los cambios
+
 
 ## Editar una imagen
 
-Para facilitar el manejo de imágenes dentro de la plataforma, Modyo incluye un editor de imágenes que permite hacer cambios pequeños de manera online.
+El editor de imágenes de Modyo te permite realizar pequeños cambios a las imágenes para facilitar su manejo en la plataforma. Para ajustar las dimensiones de una imagen, sigue estos pasos:
 
-Uno de los cambios que se puede hacer es editar las medidas de la imagen. Para ello, haz click en el ícono del **lápiz** que se encuentra en la ventana de Actualizar Información.
-
-Tras ello, se despliega otra ventana en la que tendrás dos vistas. La imagen original y la vista previa de la imagen editada.
-
-Posteriormente, puedes ver las tres opciones que puedes elegir para editar el tamaño:
-
-- **16:9:** Edita la imagen en una proporción de 16:9.
-- **Cuadrado:** Edita la imagen al tamaño de un cuadrado.
-- **Libre:** Edita la imagen a un tamaño libre en pixeles que puedes cambiar en la parte inferior de la pantalla.
-
-A un costado, puedes observar el tamaño original de la imagen y el tamaño en pixeles de lo que ya hayas editado.
+1. Da click en el nombre de un archivo, para abrir la interfaz de edición de propiedades.
+2. Haz click en el ícono de edición sobre la imagen.
+3. Elige la opción que desees para editar el tamaño:
+    - 16:9
+    - Cuadrado
+    - Libre: Edita la imagen a un tamaño personalizado en píxeles, ajustable en la parte inferior de la pantalla.
+4. Da click en **Aplicar**.
 
 :::tip Tip
-Existen dos maneras para cambiar la vista y corte de la imagen con el cursor:
+Puedes cambiar la vista y el recorte de la imagen de dos maneras:
 
-- **Zoom:** Usa el scroll del mouse para acercar la imagen.
-- **Mover fondo:** Haz doble click fuera de la zona de recorte y arrastra el fondo.
+- Zoom: Usa el scroll del mouse para acercar la imagen.
+- Mover fondo: Haz doble click fuera de la zona de recorte y arrastra el fondo.
 :::
 
-Si quieres reeditar el archivo o restaurarlo, puedes volver a la ventana de Actualizar Información, donde encuentras el botón **Restaurar Original**, lo cual provoca que la imagen vuelva a su estado original pero la modificada se pierde permanentemente.
+Para restaurar el archivo, abre nuevamente la ventana de edición de propiedades y da click en **Restore Original**, esto elimina permanentemente las modificaciones realizadas.
+
 
 ## Borrar un archivo
 
-Para borrar un archivo en específico se debe hacer click en el ícono Borrar, que se encuentra en un costado de la URL del archivo.
+Para borrar un archivo sigue estos pasos:
+1. Da click en el nombre de un archivo para abrir la interfaz de edición de propiedades.
+1. Haz click en **Borrar**, debajo de la imagen.
 
 :::warning Atención
-Esta acción es irreversible. Si este archivo se encuentra vinculado a un contenido, no puedes recuperarlo y aparece como un link roto.
-:::
-
-## Subir un archivo
-
-Hay dos formas de subir un archivo para usarse en **Modyo**. Una de ellas es a través de la misma sección desde la que se trabaja y otra es a través del Gestor de Archivos, que da la opción de tomar cualquier material del disco local para subirlo a la plataforma.
-
-Para subir el archivo, haz click en **Añadir**.
-
-Esta acción abre una nueva ventana que permite subir los archivos de dos maneras:
-
-- **Drag & Drop:** Arrastrar desde el navegador de archivos de tu computador hacia la ventana
-- **Manera tradicional:** A través del navegador, pinchando y seleccionado los archivos
-
-:::warning Atención
-Modyo solo permite la subida de 10 archivos a la vez. Si se quiere subir más elementos, se debe hacer en dos o más tandas.
+Esta acción es irreversible. Si el archivo está vinculado a un contenido, no podrás recuperarlo y aparecerá como un enlace roto.
 :::
