@@ -977,7 +977,7 @@ Then in Object click <b>Add Object</b>, add a <b>Contact</b>, select <b>when a r
 
 <img src="/assets/img/tutorials/saleforce/object.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image showing the Choose Object and specify when to start the process window."/>
 
-Then click on <b> Add Criteria </b> and fill in the following fields:
+Then click on <b>Add Criteria</b> and fill in the following fields:
 
 <table>
  <tr>
