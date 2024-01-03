@@ -113,6 +113,6 @@ Here are some key terms in Modyo and their definitions:
 * [**Custom field:**](/en/platform/customers/realms.html#custom-fields) Allows you to add custom attributes to the user profile.
 * [**Filters:**](/en/platform/customers/segments.html#filters) Unit that allows you to build segments.
 * [**Form:**](/en/platform/customers/forms.html) To capture data from your users on your sites.
-* [**Messaging: **] (/es/platform/customers/messaging.html) Control the channels of direct communication with your users.
+* [**Messaging:**](/en/platform/customers/messaging.html) Control the channels of direct communication with your users.
 * [**Segment: **] (/es/platform/customers/segments.html) Allows you to add and group users using filter groups with different conditions.
 * [**User: **] (/es/platform/customers/realms.html) Who accesses and registers on Modyo sites.
