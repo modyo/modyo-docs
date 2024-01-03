@@ -81,7 +81,7 @@ Here are some key terms in Modyo and their definitions:
 * [**Global variables:**](en/platform/core/key-concepts.html#global-variables) Elements that you can define globally and reuse in different places.
 * [**Scheduled version:**](en/platform/core/key-concepts.html#scheduled) Version that will be published at a certain date and time.
 * [**Published version:**](en/platform/core/key-concepts.html#published) Visible or productive version of the versioned elements. This version cannot be modified.
-* [**Backup version: **] (/es/platform/core/key-concepts.html #respaldos) Previously released versions.
+* [**Backup version:**](en/platform/core/key-concepts.html#backups) Previously released versions.
 * [**Webhook: **] (/es/platform/core/webhooks.html) It automatically sends information to an external system when a certain event occurs.
 
 
