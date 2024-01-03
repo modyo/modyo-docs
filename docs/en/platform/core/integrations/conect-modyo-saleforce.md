@@ -777,8 +777,8 @@ Creates a new variable <b>ModyoID</b> of type Text and, like the previous one, e
 
 Then create another variable called <b>DynamicCustomField</b> and unlike the previous ones, in <b>Data Type</b> select <b>Apex-Defined</b>. In <b>Apex Class</b> type <b>ExternalService__DynamicModyo_UserCustomField</b>, enable input and output, and click <b>Done</b>.
 
-Repeat the same procedure but changing the name to <b> DynamicUserInput
- </b> and <b> Apex Class </b> by <b> ExternalService__DynamicModyo_UserInput </b>.
+Repeat the same procedure but changing the name to <b>DynamicUserInput
+ </b> and <b>Apex Class</b> by <b>ExternalService__DynamicModyo_UserInput</b>.
 
 
 Once the Variables are created, return to the tab of <b> Elements </b> and add to the flow an <b> Pause </b>, named <b> async pause </b> 8z0 and inside <b> Resume event </b> add <b> {! $flow.currentDateTime} </b> in <b> Base Time </b> inside <b> Define Resume Time </b>.
