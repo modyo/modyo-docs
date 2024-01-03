@@ -288,7 +288,6 @@ EXAMPLE
 
 ```
 
-#### `Solo disponible en Modyo 10`
 ### Code Splitting
 
 
