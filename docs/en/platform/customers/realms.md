@@ -333,7 +333,7 @@ You can also link other fields. Take into consideration that:
 - You can link custom or custom Modyo fields. To do this, you must first create the custom field in Modyo and the field must be enabled to be used in synchronization.
 
 Once you've linked the fields, select the type of synchronization:
-- **Always use Salesforce: ** This option uses data from Salesforce to update (create, update, delete) Modyo users. In this case, no user information is sent from Modyo to Salesforce. The synchronization is unidirectional, and information flows only from Salesforce to Modyo.
+- **Always use Salesforce:** This option uses data from Salesforce to update (create, update, delete) Modyo users. In this case, no user information is sent from Modyo to Salesforce. The synchronization is unidirectional, and information flows only from Salesforce to Modyo.
 - **Always use Modyo: ** Selecting this option sends Modyo user data to Salesforce to update contacts in Salesforce. Modyo users are not updated with Salesforce information. The synchronization is unidirectional and information flows only from Modyo to Salesforce.
 - **Bidirectional: ** This option sends information from Modyo to Salesforce and information from Salesforce is used in Modyo, allowing contacts and users to be updated respectively. In this case, users and contacts are kept up to date with the most recent information available.
 - **Don't sync: ** By selecting this option, you turn off the integration, preventing users and contacts from being synchronized between Modyo and Salesforce. This option can be useful if you need to pause syncing for any reason.
