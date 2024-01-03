@@ -132,6 +132,6 @@ To delete a file, follow these steps:
 1. Click on the name of a file to open the property editing interface.
 1. Click **Delete**, below the image.
 
-:: :warning Attention
-This action is irreversible. If the file is linked to content, you won't be able to recover it and it will appear as a broken link.
+:::warning Attention
+This action is irreversible. If the file is linked to content, you won't be able to recover it, and it will appear as a broken link.
 :::
