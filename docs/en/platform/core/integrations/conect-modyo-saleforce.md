@@ -336,7 +336,7 @@ Fill in the following data:
 
 Named Credentials allow users to authenticate to an external service provider. There are several default options, in order to connect to Modyo, we need to create a custom authentication.
 
-To generate one we are going to search for <b> Named Credentials </b> inside Setup, and click on <b>New Named Credential</b>. We fill in the fields as follows:
+To generate one, we are going to search for <b>Named Credentials</b> inside Setup, and click on <b>New Named Credential</b>. We fill in the fields as follows:
 
 <table>
  <tr>
