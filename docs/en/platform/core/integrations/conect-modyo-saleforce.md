@@ -781,7 +781,7 @@ Repeat the same procedure but changing the name to <b>DynamicUserInput
  </b> and <b>Apex Class</b> by <b>ExternalService__DynamicModyo_UserInput</b>.
 
 
-Once the Variables are created, return to the tab of <b> Elements </b> and add to the flow an <b> Pause </b>, named <b> async pause </b> 8z0 and inside <b> Resume event </b> add <b> {! $flow.currentDateTime} </b> in <b> Base Time </b> inside <b> Define Resume Time </b>.
+Once the Variables are created, return to the tab of <b>Elements</b> and add to the flow an <b>Pause</b>, named <b>async pause</b> and in<b>Resume event</b> add <b>{!$Flow.CurrentDateTime}</b> in <b>Base Time</b> inside <b>Define Resume Time</b>.
 
 <img src="/assets/img/tutorials/saleforce/async_pause.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image adding a new Async Pause in the New Pause window."/>
 
