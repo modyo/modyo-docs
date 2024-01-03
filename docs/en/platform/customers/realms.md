@@ -305,7 +305,7 @@ S/nw7vM0Lsv3Ri3BURATfMXx+Q==
 Once you have obtained this information in Salesforce, go to **Modyo** and perform these steps:
 
 1. Enter the realm you want to link.
-1. Access the kingdom settings.
+1. Access the realm settings.
 1. Click on **Integrations**.
 1. Click **+ Add** and select the Salesforce integration.
 1. Enter a name for the integration. It can be any text that is at least 3 characters long.
