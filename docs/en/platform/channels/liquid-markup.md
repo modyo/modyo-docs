@@ -156,7 +156,7 @@ A filter is a Ruby method that takes one or more parameters and returns a value.
 * `stylesheet_tag` - Generates a `<link>` HTML tag for a CSS template, taking a URL and `attr: 'value'` attributes as parameters, *e.g.* <span v-pre>`{{ 'my-css-url' | stylesheet_tag: media: 'screen', title: 'color style' }}`</span> => `<link href='my-css-url' rel='stylesheet' type='text/css' media='screen' title='color style' />`
 * `times` - Multiplies  *e.g* <span v-pre>`{{ 5 | times:4 }} #=> 20`</span>
 * `truncate` - Restricts a string to x characters. It also accepts a second parameter that will be added to the string *e.g.* <span v-pre>`{{ 'foobarfoobar' | truncate: 5, '.' }} #=> 'foob.'`</span>
-* `truncatewords` - Restrict a string to x words
+* `truncatewords` - Restricts a string to x words
 * `uniq` - Removes duplicate elements from an array, optionally using a specific property to check its uniqueness.
 * `upcase` - Convert an input string to uppercase
 * `url_encode` - Encode a string to URL
