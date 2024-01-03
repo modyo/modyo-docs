@@ -1053,8 +1053,8 @@ IN the table of <b>Set Conditions</b>
  </tr> 
 </table>
 
-With this we ensure that the contact has Modyo ID, click <b> Save </b> and on <b> IMMEDIATE ACTIONS
- </b> click on <b> Add Action </b> with the following data:
+With this we ensure that the contact has Modyo ID, click <b>Save</b> and on <b>IMMEDIATE ACTIONS
+</b> click on <b>Add Action</b> with the following data:
 
 <table>
  <tr>
