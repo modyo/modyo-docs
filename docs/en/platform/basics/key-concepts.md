@@ -4,7 +4,7 @@ search: true
 
 # Key concepts
 
-In this section you can find a brief explanation of the key concepts related to the Modyo Platform.
+In this section, you will find a brief explanation of the key concepts related to the Modyo Platform.
 
 
 ### Multi-Site Architecture
