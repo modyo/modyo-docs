@@ -47,7 +47,7 @@ In this view, the columns are:
 - **Name:** Name of the file and its extension. The order is alphabetical.
 - **Type:** File type and extension. The sorting is alphabetical, first by type and then by the name of the extension.
 - **Size:** Size in kilobytes of the file.
-- **Created on: ** Date of upload or creation within the platform, regardless of whether the file was created on a different date on another service.
+- **Created on:** Date of upload or creation within the platform, regardless of whether the file was created on a different date on another service.
 - **Author: ** Name of the user who uploaded the file, only when the user is assigned a name.
 
 
