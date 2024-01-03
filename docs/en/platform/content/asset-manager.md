@@ -43,9 +43,9 @@ You can filter the content by:
 Labels allow you to organize and group your files. To modify the tags of more than one file, select the files you want and click on the **Add or Remove Tags** button that appears at the bottom of the list.
 
 In this view, the columns are:
-- **Preview: ** If the platform identifies that the file is an image, you can view a thumbnail image of the file. If it isn't, the space appears blank.
-- **Name: ** Name of the file and its extension. The order is alphabetical.
-- **Type: ** File type and extension. The sorting is alphabetical, first by type and then by the name of the extension.
+- **Preview:** If the platform identifies that the file is an image, you can view a thumbnail image of the file. If it isn't, the space appears blank.
+- **Name:** Name of the file and its extension. The order is alphabetical.
+- **Type:** File type and extension. The sorting is alphabetical, first by type and then by the name of the extension.
 - **Size:** Size in kilobytes of the file.
 - **Created on: ** Date of upload or creation within the platform, regardless of whether the file was created on a different date on another service.
 - **Author: ** Name of the user who uploaded the file, only when the user is assigned a name.
