@@ -75,7 +75,7 @@ Here are some key terms in Modyo and their definitions:
 * [**Team:**](/en/platform/core/roles.html#team) All users with access to the Modyo admin. They can be assigned roles and permissions.
 * [**Integrations:**](/en/platform/core/integrations) Way to delegate or federate the process of initiating authentication of users or team members.
 * [**Password Policy:**](/en/platform/core/security.html#password-policy) Allows you to define rules for creating or modifying passwords.
-* [**Team review: **] (/es/platform/core/key-concepts.html #revision -on-team) Review flow for versioned items. Approval can be requested from multiple team members.
+* [**Team review:**](en/platform/core/key-concepts.html#team-review) Review flow for versioned items. Approval can be requested from multiple team members.
 * [**Site: **] (/es/platform/channels/sites.html) Tool for creating digital channels within Modyo. Site operation encompasses the development, design and flow of navigation.
 * [**Editable version: **] (/es/platform/core/key-concepts.html #editable) The version that you can modify and preview of the versioned elements.
 * [**Global variables: **] (/es/platform/core/key-concepts.html #variables -global) Elements that you can define globally and reuse in different places.
