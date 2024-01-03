@@ -159,7 +159,7 @@ A filter is a Ruby method that takes one or more parameters and returns a value.
 * `truncatewords` - Restricts a string to x words
 * `uniq` - Removes duplicate elements from an array, optionally using a specific property to check its uniqueness.
 * `upcase` - Converts an input string to uppercase
-* `url_encode` - Encode a string to URL
+* `url_encode` - Encodes a string to URL
 
 ## Tags
 
