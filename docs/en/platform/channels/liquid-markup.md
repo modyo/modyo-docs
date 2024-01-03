@@ -43,7 +43,7 @@ Below we'll look at several examples of the most common uses when writing with L
 
 #### Objects
 
-An object is what contains the content that Liquid displays on the screen. You can display objects or variables using a double bracket ``{{ }}``, for example:
+An object is that which contains the content that Liquid displays on the screen. You can display objects or variables using a double bracket ``{{ }}``, for example:
 
 To display the name of the post on your page use:
 
