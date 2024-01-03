@@ -158,7 +158,7 @@ A filter is a Ruby method that takes one or more parameters and returns a value.
 * `truncate` - Restricts a string to x characters. It also accepts a second parameter that will be added to the string *e.g.* <span v-pre>`{{ 'foobarfoobar' | truncate: 5, '.' }} #=> 'foob.'`</span>
 * `truncatewords` - Restricts a string to x words
 * `uniq` - Removes duplicate elements from an array, optionally using a specific property to check its uniqueness.
-* `upcase` - Convert an input string to uppercase
+* `upcase` - Converts an input string to uppercase
 * `url_encode` - Encode a string to URL
 
 ## Tags
