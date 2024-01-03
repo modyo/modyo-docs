@@ -6,7 +6,7 @@ search: true
 
 ## Introduction
 
-In this tutorial we will integrate Salesforce, a customer relationship management (CRM) platform with Modyo's Customers module where the platform's end users are managed. This integration allows us to manage all users from one place and thus centralize the workflow of our sales, marketing, and organization teams.
+In this tutorial we will integrate Salesforce, a customer relationship management (CRM) platform, with Modyo's Customers module where the platform's end users are managed. This integration allows us to manage all users from one place and thus centralize the workflow of our sales, marketing, and organization teams.
 
 ## Prerequisites
 
