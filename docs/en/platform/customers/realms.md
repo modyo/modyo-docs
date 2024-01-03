@@ -179,7 +179,6 @@ Before enabling the option to disable Modyo credentials in the realm, make sure 
 - **Delete realm:** Deletes the realm. This process is done in the background, thus you may not see the realm disappear immediately after executing the action. To confirm the deletion, you must enter the realm's full name.
 
 
-
 ### Appearance
 
 In this section, you can customize the appearance of the realm.
@@ -261,17 +260,126 @@ You must have the correct configuration of the associated service so that Modyo 
 
 For more information on integrations, see the [Identity Providers] section (/en/platform/core/integrations/identity-providers.html)
 
-### Integrations
+## Integrations
 
 Modyo allows you to integrate with other services and applications.
 
-#### Zendesk
+### Zendesk
 
 To integrate with Zendesk you need:
 
 - Integration name
 - Zendesk Shared Secret
 - Integration URL: e.g. mysubdomain.zendesk.com
+
+`only available on Modyo 10`
+
+### Salesforce
+
+A Salesforce integration with Modyo allows you to link your Modyo users to your Salesforce contacts.
+
+To carry out this integration you must:
+
+1. Enable the use of the Salesforce API in Modyo. This allows you to create, update, or delete Salesforce contacts directly from Modyo.
+1. Enable the Modyo API in Salesforce. This way, you can create, update, or delete Modyo users from Salesforce.
+
+#### Enable the use of the Salesforce API in Modyo.
+To enable the use of the Salesforce API in Modyo, you must first create a Connected App in Salesforce. Follow this guide for detailed information on how to create a Connected App and obtain the credentials needed to use the Salesforce API from an external application.
+
+In Salesforce, you should get:
+- **Consumer Key** Click the **Copy** button under the key in Salesforce to copy it.
+- **Private Key** To find this text in Salseforce, click the **Select File** button on the document in .crt format and copy the text. The text should look like this:
+
+```
+-----BEGIN PRIVATE KEY-----
+
+Miievwibadanbgkqhkig9w0baqefaascbkkwggslageaaoibaqc9zt/lc/dtmxcm
+...
+...
+s/NW7vm0LSv3ri3buratfMxx+q==
+
+-----END PRIVATE KEY-----
+```
+- **Email of a user with access to the Connected App** Confirm in Salesforce if a user has access to the Connected App in Setup > User > Profile.
+
+Once you have obtained this information in Salesforce, go to **Modyo** and perform these steps:
+
+1. Enter the kingdom you want to link.
+1. Access the kingdom settings.
+1. Click on **Integrations**.
+1. Click **+ Add** and select the Salesforce integration.
+1. Enter a name for the integration. It can be any text that is at least 3 characters long.
+1. In the **Subject** field, use the email of a user who has access to the Connected App in Salesforce.
+1. In **Issuer** enter your Consumer Key.
+1. In the **Private Key** field, enter, in text format, the certificate used when creating the Connected App.
+
+:: :tip Tip
+If the credentials you entered are not valid, the system will alert you and ask you to enter them again.
+:::
+
+Once you have successfully entered your credentials, you can select the fields you want to synchronize between users and contacts.
+
+The integration with Modyo requires synchronizing three required fields with their corresponding Salesforce equivalents:
+
+- Email
+- First name
+- Last name
+
+You can also link other fields. Take into consideration that:
+- Modyo fields are shown on the left and Salesforce fields on the right.
+- The fields must match in type (text, date, number, etc.) in order to be linked. If there is a discrepancy in the data type between the Modyo and Salesforce fields, an alert appears in the interface to inform you of the incompatibility.
+- You can't link a field more than once.
+- If a field has not been linked, no synchronization will take place for that specific field.
+- You can link custom or custom Modyo fields. To do this, you must first create the custom field in Modyo and the field must be enabled to be used in synchronization.
+
+Once you've linked the fields, select the type of synchronization:
+- **Always use Salesforce: ** This option uses data from Salesforce to update (create, update, delete) Modyo users. In this case, no user information is sent from Modyo to Salesforce. The synchronization is unidirectional, and information flows only from Salesforce to Modyo.
+- **Always use Modyo: ** Selecting this option sends Modyo user data to Salesforce to update contacts in Salesforce. Modyo users are not updated with Salesforce information. The synchronization is unidirectional and information flows only from Modyo to Salesforce.
+- **Bidirectional: ** This option sends information from Modyo to Salesforce and information from Salesforce is used in Modyo, allowing contacts and users to be updated respectively. In this case, users and contacts are kept up to date with the most recent information available.
+- **Don't sync: ** By selecting this option, you turn off the integration, preventing users and contacts from being synchronized between Modyo and Salesforce. This option can be useful if you need to pause syncing for any reason.
+
+:: :warning Attention
+If you select the **Always use Modyo** or **bidirectional** link mode, but don't complete the second step explained below, Modyo users will not be sent to Salesforce.
+:::
+
+To complete the second point and enable the use of the Modyo API from the Salesforce Apex classes, follow this [guide] (https://sites.google.com/modyo.com/platform/recursos/salesforce-external-services).
+
+Once you have completed both steps, when you make a change to a Modyo user, the modification is reflected in Salesforce and the same is reflected from Salesforce to Modyo, depending on the selected link configuration.
+
+To ensure the correct synchronization of data between Modyo and Salesforce and to maintain the integrity and consistency of information between both platforms, there are the following specifications:
+
+* It is allowed to use a single “issuer” per account, which means that between realms they cannot be repeated.
+* Contact update in Salesforce:
+  * If the linking settings allow it, when updating a contact in Salesforce, Modyo searches for the corresponding user using the “secondary_user_id” field.
+  * If the Modyo user does not exist, a new one is created, and if it already exists, it is updated according to the synchronized fields.
+  * If the Modyo user didn't exist previously, their “secondary_user_id” is defined as the ID of the Salesforce contact.
+* Modyo user update:
+  * When updating a Modyo user, the corresponding contact is searched in Salesforce using their “contact ID”.
+  * If the Modyo user is new or doesn't have “secondary_user_id”, a new contact is created in Salesforce and the “secondary_user_id” field is updated with the ID of the newly created contact.
+* Contact creation in Salesforce:
+  * A contact in Salesforce only requires the “Last Name” field to be created.
+  * When a contact is created only with “Last Name”, in Modyo, the “username” and the “first name” will be completed with placeholders or placeholders that indicate that they were created as a result of the link.
+* Creating a user in Modyo:
+  * A Modyo user can be created without “Last Name”, but this field, when required in Salesforce, is sent with a placeholder that indicates that it was created from the linking process.
+* The primitive types of Salesforce fields available for linking are:
+  * Boolean
+  * Date
+  * Datetime
+  * Decimal
+  * Double
+  * ID
+  * Integer
+  * Long
+  * Object
+  * String
+* Fields not included in the list, such as references or composite fields, are disabled in the field linking view. This indicates that they are not available for linking.
+
+#### Enable the Modyo API in Salesforce.
+To carry out this process, review the Salesforce [Connect REST API developer guide (https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/intro_what_is_chatter_connect.htm)
+
+:: :warning Important
+If you don't carry out this second step, the information and changes you make in Salesforce will not be reflected in Modyo.
+:::
 
 ### OAuth client
 
