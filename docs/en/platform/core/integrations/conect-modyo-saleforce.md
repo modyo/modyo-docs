@@ -384,7 +384,7 @@ To generate one, we are going to search for <b>Named Credentials</b> inside Setu
    Authentication Provider      
   </td>
   <td>
-   [ El que ya creamos ]
+   [ The one we created ]
   </td>
  </tr>
  <tr>
