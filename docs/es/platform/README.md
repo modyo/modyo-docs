@@ -20,7 +20,7 @@ Queremos que tu experiencia sea lo más fácil y satisfactoria posible, por lo q
 
 :::tip Versiones anteriores
 
-La documentación actual aplica a la última versión (9.2) de Modyo. Si necesitas información sobre versiones anteriores (8.2), [puedes acceder aquí](/assets/pdf/Modyo82Docs.pdf).
+La documentación actual aplica a la última versión (10) de Modyo. Si necesitas información sobre versiones anteriores (9.2), [puedes acceder aquí](https://9-2.docs.modyo.com/en/).
 
 :::
 
