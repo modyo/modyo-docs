@@ -115,4 +115,4 @@ Here are some key terms in Modyo and their definitions:
 * [**Form:**](/en/platform/customers/forms.html) To capture data from your users on your sites.
 * [**Messaging:**](/en/platform/customers/messaging.html) Control the channels of direct communication with your users.
 * [**Segment:**](/en/platform/customers/segments.html) Allows you to add and group users using filter groups with different conditions.
-* [**User: **] (/es/platform/customers/realms.html) Who accesses and registers on Modyo sites.
+* [**User:**](/en/platform/customers/realms.html) Who accesses and registers on Modyo sites.
