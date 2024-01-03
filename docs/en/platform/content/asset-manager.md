@@ -87,8 +87,8 @@ In the file interface, click on the name of a file to open the file properties e
 - **File URL:** Shows the public URL of the file. Click on the icon next to the URL to copy it. It is not modifiable.
 - **Liquid tag:** Shows the liquid tag in the file, click on the icon to copy and use it in the contents of the platform. It is not modifiable.
 - **Title:** Shows the title of the file. This section is different from the name of the file, which cannot be changed.
-- **Alternative text: ** Shows the element's alt text. For images and videos only.
-- **Description: ** Description of the element, we recommend writing a short text referring to the image.
+- **Alternative text:** Shows the element's alt text. For images and videos only.
+- **Description:** Description of the element, we recommend writing a short text referring to the image.
 - **Labels: ** Shows the tags associated with the file. You can search for and add more tags, as well as delete existing tags.
 
 Click **Update Information** to confirm the changes or **Close** to cancel them.
