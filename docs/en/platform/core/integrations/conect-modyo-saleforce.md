@@ -1006,7 +1006,7 @@ Then click on <b>Add Criteria</b> and fill in the following fields:
  </tr>
 </table>
 
-IN the table of <b> Set Conditions </b> 
+IN the table of <b>Set Conditions</b> 
 
 <table>
  <tr>
