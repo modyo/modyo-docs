@@ -158,7 +158,7 @@ Este campo te permite vincular más de una Entrada existente dentro del Espacio 
 
 - **Restringir tipo**: Te permite seleccionar un tipo predeterminado para solo se puedan seleccionar, como enlace, entradas del tipo seleccionado.
 
-### Grupo `(coming soon)`
+### Grupo
 
 Utiliza el campo Grupo para albergar otro campo dentro él. Puedes asignar un nombre al grupo según tus necesidades, así como nombrar los campos dentro del grupo. En casilla pista, incluye el texto que deseas mostrar para ayudar a tus usuarios a completar correctamente el campo. 
 
