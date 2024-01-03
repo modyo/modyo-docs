@@ -68,7 +68,7 @@ To upload a file to Modyo, choose one of the following options:
 1. Add tags to the file if you want.
 1. Click **Upload** to confirm.
 
-`Mode 10`
+`Modyo 10`
 1. In the side menu, click on the **Content** icon.
 1. Select a space.
 1. In the side menu, click **Media**.
