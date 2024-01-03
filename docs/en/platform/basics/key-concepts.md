@@ -99,7 +99,7 @@ Here are some key terms in Modyo and their definitions:
 #### Modyo Channels
 
 * [**Domains:**](/en/platform/channels/sites.html#domains) You can modify the URL of your site, as can the security certificates of your site.
-* [**Meta tags: **] (/es/platform/channels/pages.html #meta -tags) Customize your meta tags to improve search engine indexing.
+* [**Meta tags:**](/en/platform/channels/pages.html#meta-tags) Customize your meta tags to improve search engine indexing.
 * [**Navigation: **] (/es/platform/channels/navigation.html) Allows you to modify the main menu of your site through a simple interface.
 * [**Page: **] (/es/platform/channels/pages.html) They allow you to create a structure for your site. You can add unstructured content and customize the routes where the content is displayed.
 * [**PWA: **] (/es/platform/channels/sites.html #pwa) Configure your site's _serviceworker_ and manifest for offline use.
