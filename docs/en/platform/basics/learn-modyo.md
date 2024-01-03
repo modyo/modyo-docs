@@ -1,6 +1,6 @@
 ---
 search: true
-title: Learn how to use modyo
+title: Learn to use modyo
 ---
 
 # Learn how to use modyo
