@@ -313,7 +313,7 @@ Once you have obtained this information in Salesforce, go to **Modyo** and perfo
 1. In **Issuer** enter your Consumer Key.
 1. In the **Private Key** field, enter -in text format- the certificate used when creating the Connected App.
 
-:: :tip Tip
+:::tip Tip
 If the credentials you entered are not valid, the system will alert you and ask you to enter them again.
 :::
 
