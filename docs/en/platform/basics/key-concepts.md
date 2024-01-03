@@ -109,7 +109,7 @@ Here are some key terms in Modyo and their definitions:
 
 #### Modyo Customers
 
-* [**Campaigns: **] (/es/platform/customers/messaging.html #campanas) They define the communication channel with the user. They allow you to reach your users through emails and notifications.
+* [**Campaigns:**](/en/platform/customers/messaging.html#campaigns) They define the communication channel with the user. They allow you to reach your users through emails and notifications.
 * [**Custom field:**](/en/platform/customers/realms.html#custom-fields) Allows you to add custom attributes to the user profile.
 * [**Filters: **] (/es/platform/customers/segments.html #filtros) Unit that allows you to build segments.
 * [**Form: **] (/es/platform/customers/forms.html) To capture data from your users on your sites.
