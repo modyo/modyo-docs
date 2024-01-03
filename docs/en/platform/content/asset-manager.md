@@ -6,7 +6,7 @@ search: true
 
 This space allows you to upload, organize and manage your files in a simple and efficient way.
 
-- In `Modyo 9` this space is called **File Manager**: When migrating to Modyo 10 all assets are preserved and you can choose in advance which space to move them to.
+- In `Modyo 9` this space is called **File Manager**: When migrating to Modyo 10 all assets are preserved, and you can choose in advance which space to move them to.
 
 - Starting with `Modyo 10` this space is called **Media**: Here (unlike the File Manager in Modyo 9), image editing and deleting permissions are carried out through groups. This way, a group can have permissions to view and use assets, but it can't modify or delete them.
 
