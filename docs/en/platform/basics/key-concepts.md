@@ -105,7 +105,7 @@ Here are some key terms in Modyo and their definitions:
 * [**PWA:**](/en/platform/channels/sites.html#pwa) Configure your site's _serviceworker_ and manifest for offline use.
 * [**SEO:**](/en/platform/channels/sites.html #seo) Configure how your site looks to indexing robots.
 * [**Templates:**](/en/platform/channels/templates.html) They are the foundation of your site and define the basic structure of the pages.
-* [**Widget: **] (/es/platform/channels/widgets.html) Reusable functionality package with HTML, JavaScript and CSS that you can use on different pages.
+* [**Widget:**](/en/platform/channels/widgets.html) Reusable functionality package with HTML, JavaScript and CSS that you can use on different pages.
 
 #### Modyo Customers
 
