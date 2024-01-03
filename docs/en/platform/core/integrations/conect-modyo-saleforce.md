@@ -969,7 +969,7 @@ Now we need to search <b>Process builder</b> in the search engine,
 
 <img src="/assets/img/tutorials/saleforce/Process_builder.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image searching for Process Builder in the Setup window."/>
 
-And generate a new one with the name <b> Change Modyo Customer </b> and in **The process starts when** select <b> A record changes </b>, which looks like this:
+And generate a new one with the name <b>Change Modyo Customer</b> and in **The process starts when** select <b>A record changes</b>, which looks like this:
 
 <img src="/assets/img/tutorials/saleforce/Modyo_Customer.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image showing the result after adding the processes."/>
 
