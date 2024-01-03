@@ -89,7 +89,7 @@ In the file interface, click on the name of a file to open the file properties e
 - **Title:** Shows the title of the file. This section is different from the name of the file, which cannot be changed.
 - **Alternative text:** Shows the element's alt text. For images and videos only.
 - **Description:** Description of the element, we recommend writing a short text referring to the image.
-- **Labels: ** Shows the tags associated with the file. You can search for and add more tags, as well as delete existing tags.
+- **Labels:** Shows the tags associated with the file. You can search for and add more tags, as well as delete existing tags.
 
 Click **Update Information** to confirm the changes or **Close** to cancel them.
 
