@@ -102,7 +102,7 @@ Here are some key terms in Modyo and their definitions:
 * [**Meta tags:**](/en/platform/channels/pages.html#meta-tags) Customize your meta tags to improve search engine indexing.
 * [**Navigation:**](/en/platform/channels/navigation.html) Allows you to modify the main menu of your site through a simple interface.
 * [**Page:**](/en/platform/channels/pages.html) They allow you to create a structure for your site. You can add unstructured content and customize the routes where the content is displayed.
-* [**PWA: **] (/es/platform/channels/sites.html #pwa) Configure your site's _serviceworker_ and manifest for offline use.
+* [**PWA:**](/en/platform/channels/sites.html#pwa) Configure your site's _serviceworker_ and manifest for offline use.
 * [**SEO: **] (/es/platform/channels/sites.html #seo) Configure how your site looks before indexing robots.
 * [**Templates: **] (/es/platform/channels/templates.html) They are the foundation of your site and define the basic structure of the pages.
 * [**Widget: **] (/es/platform/channels/widgets.html) Reusable functionality package with HTML, JavaScript and CSS that you can use on different pages.
