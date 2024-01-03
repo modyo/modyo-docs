@@ -350,8 +350,7 @@ module.exports = {
                           path: "/es/platform/basics/",
                           collapsable: true,
                           children: [ 
-                            ["/es/platform/basics/", "Acerca de Modyo"],
-                            ["/es/platform/basics/learn-modyo", "Aprende Modyo"],
+                            ["/es/platform/basics/", "Aprende Modyo"],
                             ["/es/platform/basics/key-concepts", "Conceptos claves"], 
                           ],
                       },
