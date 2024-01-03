@@ -4,148 +4,134 @@ search: true
 
 # Asset Manager
 
-An organization needs to have a platform that allows them to organize and manage their required files and content.
+This space allows you to upload, organize and manage your files in a simple and efficient way.
 
-Modyo allows you to upload, review, and edit files within the same platform, through the Asset Manager tool. This can be accessed from your Spaces, Sites, or in the side menu within Content. 
+- In `Modyo 9` this space is called **File Manager**: When migrating to Modyo 10 all assets are preserved and you can choose in advance which space to move them to.
 
-The only requirement is that the files must be within the size limits. The limits are:
+- Starting with `Modyo 10` this space is called **Media**: Here (unlike the File Manager in Modyo 9), image editing and deleting permissions are carried out through groups. This way, a group can have permissions to view and use assets, but it can't modify or delete them.
+
+You can upload different types of media to this space, considering the following size restrictions per file:
+
 
 - **Images:** 6 MB
 - **Videos:** 10 MB
 - **Audios:** 10 MB
 - **Files:** 10 MB
 
-The valid file types are:
+The allowed file types are:
+- **Images: ** apng, avif, bmp, gif, ico, jpeg, jpg, png, tif, tiff, webp
+- **Videos: ** av, avi, f4v, flv, mkv, mov, mp4, mpeg, webm, wmv
+- **Audios: ** 3gp, aac, alac, dsd, flac, mp3, pcm, wav, m4a, ogg, wma
+- **Files: ** 7z, ai, apk, css, csv, doc, docx, fon, ico, iso, jar, js, msi, ods, odt, otf, pdf, ppt, pptx, rar, rss, rtf, scss, tar, tex, ttf, txt, vcf, wdp, xhtml, xls, xlsm, xlsx, xml, zip, one, ecf, pub, xps, json, svg, woff, woff2, ics
 
-- **Images:** apng avif bmp gif ico jpeg jpg png tif tiff webp
-- **Videos:** av avi f4v flv mkv mov mp4 mpeg webm wmv
-- **Audios:** 3gp aac alac dsd flac mp3 pcm wav m4a ogg wma
-- **Files:** 7z ai apk css csv doc docx fon ico iso jar js msi ods odt otf pdf ppt pptx rar rss rtf scss tar tex ttf txt vcf wdp xhtml xls xlsm xlsx xml zip one ecf pub xps json svg woff woff2 ics
 
 
 ## About the interface
 
-This interface shows you a list of all the files that exist within the platform.
+The interface shows you a list of all the files that exist within the platform.
 
 In the upper right part of the screen you can see the percentage of used space corresponding to the total allocated for the account and the button to upload new files.
 
-The list has three types of filters that will help you find a file:
+Modyo displays 30 files per page. At the bottom you can navigate between the file pages.
 
-**Extensions:** With this filter you can see all the files of the same type found within the platform (the list is made up of the types of files that have been uploaded to the platform).
+You can filter the content by:
+- **Extensions: ** Filter by file type.
+- **Author: ** Filter by username who uploaded the content.
+- **Tags: ** Shows all the files associated with a tag.
+- **Search bar: ** Type a word to display files that contain that word in their name or metadata.
 
-**Tags:** This filter allows you to show all the files associated with a tag that are found within the platform.
+Labels allow you to organize and group your files. To modify the tags of more than one file, select the files you want and click on the **Add or Remove Tags** button that appears at the bottom of the list.
 
-:::tip Tip
-If you want to add a tag to a file or group of files, you can do so by directly editing the file or by using the bulk actions that appear at the bottom left of the list. 
+In this view, the columns are:
+- **Preview: ** If the platform identifies that the file is an image, you can view a thumbnail image of the file. If it isn't, the space appears blank.
+- **Name: ** Name of the file and its extension. The order is alphabetical.
+- **Type: ** File type and extension. The sorting is alphabetical, first by type and then by the name of the extension.
+- **Size:** Size in kilobytes of the file.
+- **Created on: ** Date of upload or creation within the platform, regardless of whether the file was created on a different date on another service.
+- **Author: ** Name of the user who uploaded the file, only when the user is assigned a name.
 
-If you select one or more checkboxes that are on your screen, the button will only assign labels to those files that you have marked.
+
+## Upload a file
+To upload a file to Modyo, choose one of the following options:
+
+#### From the section where you're working, templates, pages, kingdoms or sites:
+1. Open the text editor,
+1. In the top bar, select **insert image** to open a modal where you can drag or upload a file.
+
+#### In the dedicated section for managing files.
+
+`Mode 9`
+1. In the side menu, select **Content**.
+1. Click on **File Manager**.
+1. Click on the **+ New Asset** button.
+1. Drag the file or click on the upload box to open a search window.
+1. Add tags to the file if you want.
+1. Click **Upload** to confirm.
+
+`Mode 10`
+1. In the side menu, click on the **Content** icon.
+1. Select a space.
+1. In the side menu, click **Media**.
+1. Click on the **+ New Asset** button.
+1. Drag the file or click the upload box to open a search window.
+1. Add tags to the file if you want.
+1. Click **Upload** to confirm.
+
+::: type Tip
+Modyo allows you to upload 10 files at a time. If you need to upload more items, repeat the process.
 :::
-
-**Search bar:** With the search bar, the Manager will show you all the files that have a word or content that is found within the metadata of the file. In this case, it also includes searching for your specific extension, tag, name or user who uploaded it.
-
-:::tip Tip
-Modyo displays 30 files at a time, and this value cannot be updated.
-:::
-
-Each file listed in the main view shows the following information and attributes:
-
-**Preview:** If the platform identifies that the file is an image, you can see a small thumbnail of it. If it isn't, this space will appear blank.
-
-**Name:** Name of the file with the extension included. The order is in alphabetical order.
-
-**Type:** File type and file extension. The sorting is alphabetically first by type and then by the letter of the extension name.
-
-**Size:** Size in kilobytes of the file.
-
-**Created on:** Date of upload or creation within the platform, regardless of whether the file was created on a different date in another service.
-
-**Author:** Name of the user who uploaded the file, as long as the user has a name assigned to it.
-
-The lower right corner lists the pagination of all your account files.
-
-
-## File Properties
-You can upload any file type to the platform, without no filetype exclusions.
-
-However, the platform recognizes and classifies known file types by their extensions and applies their type to the list.
-
-To access the properties of a file, click on its name to open a modal where you can edit the file's properties.
 
 ## Edit a file
-In the file's properties editor you can view these fields:
+In the file interface, click on the name of a file to open the file properties editing interface and see:
 
-**File URL:** Shows the public URL of the file. You can copy it to your clipboard by clicking on the side icon.
+- **File URL: ** Shows the public URL of the file. Click on the icon next to the URL to copy it. It is not modifiable.
+- **Liquid tag: ** Show the liquid tag in the file, click on the icon to copy and use it in the contents of the platform. It is not modifiable.
+- **Title:** Shows the title of the file. This section is different from the name of the file, which cannot be changed.
+- **Alternative text: ** Shows the element's alt text. For images and videos only.
+- **Description: ** Description of the element, we recommend writing a short text referring to the image.
+- **Labels: ** Shows the tags associated with the file. You can search for and add more tags, as well as delete existing tags.
 
-**Liquid Tag:** Shows the Liquid tag from the file, to be used within the contents of the platform.
-
-:::warning Warning
-It is not possible to change the URL or the Liquid Tag in Modyo.
-:::
-
-**Title:** Shows the title of the file. This section is different from the name of the file, which cannot be changed.
-
-**Alternative text:** Shows the ```alt text``` of the element. (Only applies to images and videos).
-
-**Description:** Description of the item. It's good practice to write a short text that references the image.
-
-**Tags:** Shows the tags associated with the file, by clicking on the box you can search and add more tags. You can also click on the X of the existing tags to remove the association with the file.
-
-<hr style="margin: 40px 0;" />
-
-To save the modification of the data, it is necessary to click on the **Update Information** button located in the lower right part of the window.
-
-If the data is modified but the button is not clicked on to be saved, these modifications will be lost.
-
-If you want to close the window and return to the Manager interface, click on the **Close** button, located at the bottom of the screen.
+Click **Update Information** to confirm the changes or **Close** to cancel them.
 
 ## Upload an image again
 
-If you want to upload a file again, keeping the name and the original link, click on the icon to upload the file found in the window **Update Information**. Thus, a new window will be dispalyed where you can select a new file.
+To upload a new file while keeping the original name and link, follow these steps:
+
+1. Click on the name of a file to open the property editing interface.
+2. Click on the upload button above the image.
+3. Select a new file.
+4. Confirm that you want to replace the old file.
+5. Click **Update Information** to confirm the changes
+
 
 ## Edit an image
 
-To facilitate the handling of images within the platform, **Modyo includes an image editor** that allows you to make changes to your images.
+The Modyo image editor allows you to make small changes to the images to make them easier to use on the platform. To adjust the dimensions of an image, follow these steps:
 
-One of the changes you can make is to edit the image measurements. To do this, click on the **pencil** icon found in the "Update information" window.
+1. Click on the name of a file, to open the properties editing interface.
+2. Click on the edit icon above the image.
+3. Choose the option you want to edit the size:
+    - 16:9
+    - Square
+    - Free: Edit the image to a custom size in pixels, adjustable at the bottom of the screen.
+4. Click **Apply**.
 
-This opens a window with two views that display the original image and a preview of the edited image.
+:: :tip Tip
+You can change the view and crop of the image in two ways:
 
-On the left side of the image editor are three options to edit the image size:
-
-- ** 16:9:** Edit the image in a 16:9 ratio.
-- **Square:** Edit the image to the size of a square.
-- **Free:** Edit the image in pixels freely to a size that you can change at the bottom of the screen.
-
-The left side displays the original size of the image and the size in pixels of the crop edit.
-
-:::tip Tip
-There are two ways to change the view and cut the image with the cursor:
-
-- **Zoom:** Use the mouse scroll to zoom in.
-- **Move background**: Double click outside the clipping area and drag the background.
+- Zoom: Use the mouse scroll to zoom in on the image.
+- Move background: Double-click outside the cropping area and drag the background.
 :::
 
-After cropping an image, if you want to restore it to its original dimensions, you can return to the "Update information" window and select the **Restore Original** button, which returns the image to its original state. However, restoring an image causes you to lose the cropped version.
+To restore the file, open the property editing window again and click on **Restore Original**, this permanently removes the modifications made.
+
 
 ## Delete a file
 
-To delete a file, click on the Delete icon, located in the upper right corner of the image preview in the "Update information" window.
+To delete a file follow these steps:
+1. Click on the name of a file to open the property editing interface.
+1. Click **Delete**, below the image.
 
-:::warning Warning
-This action is irreversible, and any content using this file will display a broken link.
-:::
-
-## Upload a file
-
-There are two ways to upload a file for use in **Modyo**. One of them is through the same section from which you work and another is through the Asset Manager, which gives you the option of taking any material from the local disk to upload it to the platform.
-
-To upload the file, click **Add**.
-
-This action opens a new window that allows you to upload files in two ways:
-
-- **Drag & Drop:** Drag from your computer's file browser to the window
-- **Traditional way:** Through the browser, clicking and selecting the files
-
-:::warning Warning
-You can upload a maximum of 10 files at a time. If you need to upload more, do so in batches.
+:: :warning Attention
+This action is irreversible. If the file is linked to content, you won't be able to recover it and it will appear as a broken link.
 :::
