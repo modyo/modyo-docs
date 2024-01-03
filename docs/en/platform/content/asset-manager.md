@@ -110,7 +110,7 @@ The Modyo image editor allows you to make small changes to the images to make th
 
 1. Click on the name of a file, to open the properties editing interface.
 2. Click on the edit icon above the image.
-3. Choose the option you want to edit the size:
+3. Select the option you want, in order to modify the size:
     - 16:9
     - Square
     - Free: Edit the image to a custom size in pixels, adjustable at the bottom of the screen.
