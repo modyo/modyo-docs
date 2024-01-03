@@ -197,7 +197,7 @@ This is useful for generating content (eg, Mustache, Handlebars) that can use co
 {% endraw %}
 ```
 
-### If/Else
+### If / Else
 
 The `if/else` statements should be known from other programming languages. Liquid implements them with the following tags:
 
