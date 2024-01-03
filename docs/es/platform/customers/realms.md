@@ -375,7 +375,7 @@ Para asegurar la correcta sincronización de datos entre Modyo y Salesforce y ma
 * Los campos no incluidos en la lista, por ejemplo, referencias o campos compuestos, están deshabilitados en la vista de vinculación de campos. Esto indica que no están disponibles para vinculación.
 
 #### Habilitar la API de Modyo en Salesforce.
-Para llevar a cabo este proceso, revisa la guía de desarrollador de [Connect REST API de Salesforce(https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/intro_what_is_chatter_connect.htm)
+Para llevar a cabo este proceso, revisa la guía de desarrollador de [Connect REST API de Salesforce](https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/intro_what_is_chatter_connect.htm)
 
 :::warning Importante
 En caso de no llevar a cabo este segundo paso, la información y cambios que lleves a cabo en Salesforce no los verás reflejados en Modyo.
