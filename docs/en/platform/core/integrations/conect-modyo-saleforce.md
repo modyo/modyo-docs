@@ -230,7 +230,7 @@ In order to generate an authenticator, from the Modyo platform, within **Configu
 
 <img src="/assets/img/tutorials/saleforce/api-access.png" style="border: 1px solid rgb(238, 238, 238);max-width: 500px;margin: auto 0;" alt="Image with New Application for API Access in Modyo Platform"/> 
 
-Then, in **Settings**, <b> Team </b>, click your username. In the section of <b>API access</b> click <b>+ New Access Token</b> and create one with which we already configured <b>SF Dynamic</b> to have an Access Token for your user.
+Then, in **Settings**, <b>Team</b>, click your username. In the section of <b>API access</b> click <b>+ New Access Token</b> and create one with the one we already configured <b>SF Dynamic</b> to have an Access Token for your user.
 
 After we have the configuration in Modyo, we return to Salesforce. Within Setup, go to the <b>Auth section. Providers</b>.
 
