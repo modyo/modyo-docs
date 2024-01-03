@@ -116,7 +116,7 @@ The Modyo image editor allows you to make small changes to the images to make th
     - Free: Edit the image to a custom size in pixels, adjustable at the bottom of the screen.
 4. Click **Apply**.
 
-:: :tip Tip
+:::tip Tip
 You can change the view and crop of the image in two ways:
 
 - Zoom: Use the mouse scroll to zoom in on the image.
