@@ -1123,7 +1123,7 @@ In Set Flow Variables add two lines with the following:
 
 <img src="/assets/img/tutorials/saleforce/action.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image showing the select and define action window."/>
 
-Click on <b> Activate </b>.
+Click on <b>Activate</b>.
 
 ## Conclusion
 
