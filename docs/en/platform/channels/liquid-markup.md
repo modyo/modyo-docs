@@ -199,7 +199,7 @@ This is useful for generating content (eg, Mustache, Handlebars) that can use co
 
 ### If / Else
 
-The `if/else` statements should be known from other programming languages. Liquid implements them with the following tags:
+The `if / else` statements should be known from other programming languages. Liquid implements them with the following tags:
 
 * `{% if <CONDITION> %} ... {% endif %}` — Attach a section of the template that will only be executed if the condition is true.
 * `{% elsif <CONDITION> %}` — Can optionally be used within an `if .... endif` block. Specifies another condition; If the initial "if" fails, Liquid tests the "elsif",, and if it passes, executes the next section of the template. Any number of elsif statements can be used in an `if` * `{% else %}` - Can be used within an `if... endif` block, _after_ any "elsif" tag. If all the above conditions fail, Liquid will execute the template section following the "else" tag.
