@@ -151,7 +151,7 @@ A filter is a Ruby method that takes one or more parameters and returns a value.
 * `sort` - Sorts array items
 * `split` - Splits a string into a matching pattern *e.g.* <span v-pre>`{{ "a~b" | split:"~" }} #=> ['a','b']`</span>
 * `strip_html` - Removes html from the string
-* `strip_newlines` - Remove all new lines (\n) from the string
+* `strip_newlines` - Removes all new lines (\n) from the string
 * `strip` - Removes all blank spaces at both ends of the string.
 * `stylesheet_tag` - Generates a `<link>` HTML tag for a CSS template, taking a URL and `attr: 'value'` attributes as parameters, *e.g.* <span v-pre>`{{ 'my-css-url' | stylesheet_tag: media: 'screen', title: 'color style' }}`</span> => `<link href='my-css-url' rel='stylesheet' type='text/css' media='screen' title='color style' />`
 * `times` - Multiply  *e.g* <span v-pre>`{{ 5 | times:4 }} #=> 20`</span>
