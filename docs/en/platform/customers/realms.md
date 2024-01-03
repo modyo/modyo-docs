@@ -311,7 +311,7 @@ Once you have obtained this information in Salesforce, go to **Modyo** and perfo
 1. Enter a name for the integration. It can be any text that is at least 3 characters long.
 1. In the **Subject** field, use the email of a user who has access to the Connected App in Salesforce.
 1. In **Issuer** enter your Consumer Key.
-1. In the **Private Key** field, enter, in text format, the certificate used when creating the Connected App.
+1. In the **Private Key** field, enter -in text format- the certificate used when creating the Connected App.
 
 :: :tip Tip
 If the credentials you entered are not valid, the system will alert you and ask you to enter them again.
