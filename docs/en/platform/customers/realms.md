@@ -342,7 +342,7 @@ Once you've linked the fields, select the type of synchronization:
 If you select the **Always use Modyo** or **bidirectional** link mode, but don't complete the second step explained below, Modyo users will not be sent to Salesforce.
 :::
 
-To complete the second point and enable the use of the Modyo API from the Salesforce Apex classes, follow this [guide] (https://sites.google.com/modyo.com/platform/recursos/salesforce-external-services).
+To complete the second point and enable the use of the Modyo API from the Salesforce Apex classes, follow this [guide](https://sites.google.com/modyo.com/platform/recursos/salesforce-external-services).
 
 Once you have completed both steps, when you make a change to a Modyo user, the modification is reflected in Salesforce and the same is reflected from Salesforce to Modyo, depending on the selected link configuration.
 
