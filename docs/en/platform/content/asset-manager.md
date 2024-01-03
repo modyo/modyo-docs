@@ -84,7 +84,7 @@ Modyo allows you to upload 10 files at a time. If you need to upload more items,
 ## Edit a file
 In the file interface, click on the name of a file to open the file properties editing interface and see:
 
-- **File URL: ** Shows the public URL of the file. Click on the icon next to the URL to copy it. It is not modifiable.
+- **File URL:** Shows the public URL of the file. Click on the icon next to the URL to copy it. It is not modifiable.
 - **Liquid tag: ** Show the liquid tag in the file, click on the icon to copy and use it in the contents of the platform. It is not modifiable.
 - **Title:** Shows the title of the file. This section is different from the name of the file, which cannot be changed.
 - **Alternative text: ** Shows the element's alt text. For images and videos only.
