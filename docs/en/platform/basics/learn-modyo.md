@@ -5,7 +5,7 @@ title: Learn to use Modyo
 
 # Learn to use Modyo
 
-Modyo is a platform that will help you create personalized digital experiences in a secure, fast and unified way.
+Modyo is a platform that will help you create personalized digital experiences in a secure, fast, and unified way.
 
 Here you'll find detailed tutorials to help you understand and start using Modyo. These tutorials will guide you through every step of the creation process, from an introduction to Modyo's most important features to managing your content and creating a website.
 
