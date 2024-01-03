@@ -14,7 +14,7 @@ Queremos que tu experiencia sea lo más fácil y satisfactoria posible, por lo q
 
 :::tip Versiones anteriores
 
-La documentación actual aplica a la última versión (9.2) de Modyo. Si necesitas información sobre versiones anteriores (8.2), [puedes acceder aquí](/assets/pdf/Modyo82Docs.pdf).
+La documentación actual aplica a la última versión (10) de Modyo. Si necesitas información sobre versiones anteriores (9.2), [puedes acceder aquí](https://9-2.docs.modyo.com/en/).
 
 :::
 
@@ -40,15 +40,10 @@ Modyo es una plataforma de experiencia digital que te ayuda a crear experiencias
 Modyo está diseñado para diversos perfiles, desde líderes de canales digitales hasta desarrolladores de frontend y backend. Sea cual sea tu rol, Modyo tiene algo que ofrecer.
 
 * **Líderes de canales digitales** es ideal para líderes de canales digitales que buscan crear experiencias digitales integradas para sus consumidores.
-
 * **Arquitectos de software** que buscan crear una arquitectura limpia, desde los Microservicios y APIs hasta microfrontends para canales web y móvil.
-
 * **Expertos en marketing digital** que requieren un sistema de administración de contenido para crear experiencias digitales para grupos objetivos.
-
 * **Administradores de contenido** que quieren administrar las publicaciones de sus diversos canales digitales en un solo lugar.
-
 * **Desarrolladores de frontend** que quieren construir experiencias digitales a través de widgets fáciles de crear y administrar.
-
 * **Desarrolladores de backend** que requieren un ambiente de desarrollo de frontend poderoso para conectar APIs y microservicios.
 
 ### ¿Dónde puedo obtener soporte?

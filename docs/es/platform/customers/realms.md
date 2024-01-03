@@ -179,7 +179,6 @@ Antes de habilitar la opción de deshabilitar las credenciales de Modyo en el re
 - **Eliminar reino:** Elimina el reino. Este proceso se realiza en segundo plano y es posible que no veas el reino desaparecer inmediatamente después de ejecutar la acción. Para confirmar la eliminación, debes ingresar el nombre completo del reino.
 
 
-
 ### Apariencia
 
 En esta sección, puedes personalizar la apariencia del reino.
@@ -261,17 +260,126 @@ Debes contar con la correcta configuración del servicio asociado para que Modyo
 
 Para más información sobre las integraciones consulta la sección de [Proveedores de Identidad](/es/platform/core/integrations/identity-providers.html)
 
-### Integraciones
+## Integraciones
 
 Modyo permite integrar con otros servicios y aplicaciones.
 
-#### Zendesk
+### Zendesk
 
 Para integrar con Zendesk necesitas:
 
 - Nombre de la integración
 - Shared secret de Zendesk
 - URL de la integración: e.g. mysubdomain.zendesk.com
+
+`solo disponible en Modyo 10`
+
+### Salesforce
+
+Una integración de Salesforce con Modyo te permite vincular tus usuarios de Modyo con tus contactos de Salesforce.
+
+Para llevar a cabo esta integración debes:
+
+1. Habilitar el uso de la API de Salesforce en Modyo. Esto te permite crear, actualizar o borrar contactos de Salesforce directamente desde Modyo.
+1. Habilitar la API de Modyo en Salesforce. De esta manera, puedes crear, actualizar o borrar usuarios de Modyo desde Salesforce.
+
+#### Habilitar el uso de la API de Salesforce en Modyo.
+Para habilitar el uso de la API de Salesforce en Modyo, primero debes crear un Connected App en Salesforce. Sigue esta guía para obtener información detallada sobre cómo crear un Connected App y obtener las credenciales necesarias para utilizar la API de Salesforce desde una aplicación externa.
+
+En Salesforce debes obtener:
+- **Consumer Key** Haz click en el botón **Copy** debajo de la llave en Salesforce para copiarla.
+- **Private Key**  Para encontrar este texto en Salseforce, da click en el botón **Seleccionar archivo** en el documento en formato .crt y copia el texto. El texto debe verse así:
+
+```
+-----BEGIN PRIVATE KEY-----
+
+MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQC9ZT/LC/DtmxCm
+......
+......
+S/nw7vM0Lsv3Ri3BURATfMXx+Q==
+
+-----END PRIVATE KEY-----
+```
+- **Correo electrónico de un usuario con acceso al Connected App** Confirma en Salesforce si un usuario tiene acceso al Connected App en Setup > User > Profile.
+
+Una vez que hayas obtenido esta información en Salesforce, accede a **Modyo** y realiza estos pasos:
+
+1. Ingresa al reino que deseas vincular.
+1. Accede a la configuración del reino.
+1. Haz click en **Integraciones**.
+1. Haz click en **+ Add** y selecciona la integración de Salesforce.
+1. Ingresa un nombre para la integración. Puede ser cualquier texto de al menos 3 caracteres de largo.
+1. En el campo **Sujeto**, utiliza el correo electrónico de un usuario que tienen acceso al Connected App en Salesforce.
+1. En **Issuer** ingresa tu Consumer Key.
+1. En el campo **Private Key** ingresa, en formato texto, el certificado usado al crear el Connected App.
+
+:::tip Tip
+Si las credenciales que ingresaste no son válidas, el sistema te alertará y te solicitará que las ingreses nuevamente.
+:::
+
+Una vez que hayas ingresado correctamente las credenciales, puedes seleccionar los campos que deseas sincronizar entre usuarios y contactos.
+
+La integración con Modyo requiere sincronizar tres campos obligatorios con sus equivalentes correspondientes de Salesforce:
+
+- Email
+- First name
+- Last name
+
+Puedes además vincular otros campos. Toma en consideración que:
+- Los campos de Modyo se muestran a la izquierda y los campos de Salesforce a la derecha.
+- Los campos deben coincidir en tipo (texto, fecha, número, etc.) para poder ser vinculados. Si existe alguna discrepancia en el tipo de dato entre los campos de Modyo y Salesforce, se muestra una alerta en la interfaz para informarte de la incompatibilidad.
+- No puedes vincular un campo más de una vez.
+- Si un campo no ha sido vinculado, no se realizará ninguna sincronización para ese campo específico.
+- Puedes vincular campos personalizados o custom de Modyo. Para ello, primero debes crear el campo custom en Modyo y el campo tiene que estar habilitado para ser utilizado en la sincronización.
+
+Una vez que hayas vinculado los campos, selecciona el tipo de sincronización:
+- **Siempre usar Salesforce:** Esta opción usa los datos desde Salesforce para actualizar (crear, actualizar, borrar) los usuarios de Modyo. En este caso, no se envía información de usuario de Modyo a Salesforce. La sincronización es unidireccional, y la información fluye únicamente desde Salesforce hacia Modyo.
+- **Siempre usar Modyo:** Al seleccionar esta opción se envían datos de usuarios de Modyo a Salesforce para actualizar contactos en Salesforce. No se actualizan usuarios de Modyo con información de Salesforce. La sincronización es unidireccional y la información fluye únicamente desde Modyo hacia Salesforce.
+- **Bidireccional:** Esta opción envía información de Modyo a Salesforce y se usa información de Salesforce en Modyo, lo que permite actualizar contactos y usuarios respectivamente. En este caso, los usuarios y contactos se mantienen actualizados con la información más reciente disponible.
+- **No sincronizar:** Al seleccionar esta opción, desactivas la integración, evitando que se sincronicen usuarios y contactos entre Modyo y Salesforce. Esta opción puede ser útil si necesitas pausar la sincronización por alguna razón.
+
+:::warning Attention
+Si seleccionas la modalidad de vinculación **Siempre usar Modyo** o **bidireccional**, pero no completas el segundo paso que se explica a continuación, los usuarios de Modyo no se enviarán a Salesforce.
+:::
+
+Para completar el segundo punto y habilitar el uso de la API de Modyo desde las clases Apex de Salesforce, sigue esta [guía](https://sites.google.com/modyo.com/platform/recursos/salesforce-external-services).
+
+Una vez que hayas completado los dos pasos, al hacer un cambio a un usuario de Modyo la modificación se ve reflejada en Salesforce y lo mismo de Salesforce a Modyo, según la configuración de vinculación seleccionada.
+
+Para asegurar la correcta sincronización de datos entre Modyo y Salesforce y mantener la integridad y consistencia de la información entre ambas plataformas existen las siguentes especificaciones:
+
+* Se permite utilizar un único "issuer" por cuenta, lo que significa que entre reinos no se pueden repetir.
+* Actualización de contacto en Salesforce:
+  * Si la configuración de vinculación lo permite, al actualizar un contacto en Salesforce, Modyo busca el usuario correspondiente utilizando el campo "secondary_user_id".
+  * Si el usuario de Modyo no existe, se crea uno nuevo, y si ya existe, se actualiza según los campos sincronizados.
+  * Si el usuario de Modyo no existía previamente, su "secondary_user_id" se define como el ID del contacto de Salesforce.
+* Actualización de usuario en Modyo:
+  * Al actualizar un usuario de Modyo, se busca al contacto correspondiente en Salesforce utilizando su "ID de contacto".
+  * Si el usuario de Modyo es nuevo o no tiene "secondary_user_id", se crea un nuevo contacto en Salesforce y se actualiza el campo "secondary_user_id" con el ID del contacto recién creado.
+* Creación de contacto en Salesforce:
+  * Un contacto en Salesforce solo requiere del campo "Last Name" para ser creado.
+  * Cuando se crea un contacto solo con "Last Name", en Modyo se completarán el "username" y el "first name" con placeholders o marcadores de posición que indican que fueron creados producto de la vinculación.
+* Creación de usuario en Modyo:
+  * Un usuario de Modyo se puede crear sin "Last Name", pero este campo, al ser requerido en Salesforce, se envia con un placeholder que indica que fue creado a partir del proceso de vinculación.
+* Los tipos primitivos de campos de Salesforce disponibles para vincular, son:
+  * Boolean
+  * Date
+  * Datetime
+  * Decimal
+  * Double
+  * ID
+  * Integer
+  * Long
+  * Object
+  * String
+* Los campos no incluidos en la lista, por ejemplo, referencias o campos compuestos, están deshabilitados en la vista de vinculación de campos. Esto indica que no están disponibles para vinculación.
+
+#### Habilitar la API de Modyo en Salesforce.
+Para llevar a cabo este proceso, revisa la guía de desarrollador de [Connect REST API de Salesforce](https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/intro_what_is_chatter_connect.htm)
+
+:::warning Importante
+En caso de no llevar a cabo este segundo paso, la información y cambios que lleves a cabo en Salesforce no los verás reflejados en Modyo.
+:::
 
 ### Cliente OAuth
 

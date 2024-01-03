@@ -287,3 +287,38 @@ EXAMPLE
   $ modyo-cli push <NAME>
 
 ```
+
+### Code Splitting
+
+
+[Widgets](en/platform/channels/widgets.html#widgets) allow you to develop micro frontends for your Modyo sites, thus increasing the functionality of your site.
+
+However, by including external libraries or increasing the complexity of a widget, you can face excessive load times or exceed the size limits established for widgets in Modyo, negatively affecting the development experience and that of the user.
+
+The _code splitting_ technique allows you to divide the code of your widgets into components that are loaded on demand or in parallel, solving these problems. The benefits of code splitting include:
+
+* Reduction in loading speed.
+* Improved interaction time.
+* Elimination of restrictions on the size of widgets.
+* Increased performance.
+
+#### CLI commands for code splitting
+
+With Modyo's command line interface (CLI), you can publish and update a widget developed externally or in which you have implemented code splitting.
+
+When you create a widget with Modyo CLI, your widget will have a label with the CLI text next to its name.
+
+In the case of widgets created with code splitting, you must specify which is the main file and which chunks will be loaded dynamically, as required.
+
+To package a file as a zip in Modyo CLI use these options:
+
+ * zip: package the widget bundle to send it to the platform.
+ * zip-entry-css: main CSS file of the widget.
+ * zip-entry-js: main JS file of the widget.
+
+Example:
+
+```
+modyo-cli --zip --zip-entry-css=main.css --zip-entry-js=main.js push
+
+```
