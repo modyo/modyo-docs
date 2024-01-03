@@ -93,7 +93,7 @@ Here are some key terms in Modyo and their definitions:
 * [**Entry:**](/en/platform/content/entries.html) Set of values associated with fields defined in the content type.
 * [**Space:**](/en/platform/content/spaces.html) Resource repository where team members define types of content, create and publish entries.
 * **Tags:** Labels for sorting and filtering posts.
-* [**Content type: **] (/es/platform/content/types.html) Structure with fields that allows you to define different contents.
+* [**Content type:**](/en/platform/content/types.html) Structure with fields that allows you to define different contents.
 
 
 #### Modyo Channels
