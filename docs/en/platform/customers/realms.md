@@ -346,7 +346,7 @@ To complete the second point and enable the use of the Modyo API from the Salesf
 
 Once you have completed both steps, when you make a change to a Modyo user, the modification is reflected in Salesforce and the same is reflected from Salesforce to Modyo, depending on the selected link configuration.
 
-To ensure the correct synchronization of data between Modyo and Salesforce and to maintain the integrity and consistency of information between both platforms, there are the following specifications:
+To ensure proper data synchronization between Modyo and Salesforce and maintain the integrity and consistency of information between both platforms, the following specifications exist:
 
 * It is allowed to use a single “issuer” per account, which means that between realms they cannot be repeated.
 * Contact update in Salesforce:
