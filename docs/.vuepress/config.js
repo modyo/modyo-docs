@@ -67,16 +67,14 @@ module.exports = {
               ],
               sidebar: {
                   "/en/platform/": [{
-                          title: "First Steps",
-                          path: "/en/platform/",
-                          collapsable: true,
-                          children: [
-                              "/en/platform/whats-new",
-                              "/en/platform/key-concepts",
-                              "/en/platform/release-notes",
-                              "/en/platform/training",
-                          ],
-                      },
+                      title: "Modyo Basics",
+                      path: "/en/platform/basics",
+                      collapsable: true,
+                      children: [
+                          "/en/platform/basics/",
+                          "/en/platform/basics/key-concepts",
+                      ],
+                  },
                       {
                           title: "Platform",
                           path: "/en/platform/core/",
