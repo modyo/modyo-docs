@@ -356,6 +356,33 @@ module.exports = {
                       },
                       
                       {
+                        title: "Plataforma",
+                        path: "/es/platform/core/",
+                        collapsable: true,
+                        children: [
+                            "/es/platform/core/key-concepts",
+                            /*"/es/platform/core/integration",*/
+                            /*"/es/platform/core/installation",*/
+                            "/es/platform/core/configuration",
+                            {
+                                title: "Integraciones",
+                                path: "/es/platform/core/integrations/",
+                                collapsable: true,
+                                children: [
+                                    ["/es/platform/core/integrations/identity-providers", "Proveedores de Identidad"],
+                                    ["/es/platform/core/integrations/scim", "Aprovisionamiento SCIM con Microsoft Azure AD"],
+                                    ["/es/platform/core/integrations/google-data-studio-integration", "Integración con Google Analytics"],
+                                    ["/es/platform/core/integrations/oidc", "Gestión de sesión privada usando OpenID Connect (OIDC)"],
+                                ],
+                            },
+                            "/es/platform/core/webhooks",
+                            "/es/platform/core/api",
+                            "/es/platform/core/activity-logs",
+                            "/es/platform/core/roles",
+                            "/es/platform/core/security",
+                        ],
+                        },
+                      {
                           title: "Content",
                           path: "/es/platform/content/",
                           collapsable: true,
@@ -417,6 +444,9 @@ module.exports = {
                           ],
                       },
                   ],
+
+                  
+
                   "/es/dynamic/": [{
                           title: "Dynamic Framework",
                           collapsable: false,

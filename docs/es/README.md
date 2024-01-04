@@ -49,7 +49,7 @@ FirstSteps2Alt: Descripción general rápida de en qué trabajamos para la últi
 FirstSteps3Title: Conceptos clave
 FirstSteps3Text: Una lista de todos los conceptos y términos clave que usamos para la plataforma.
 FirstSteps3Img: https://cloud.modyocdn.com/uploads/9b68c3ae-ca6e-4fce-8097-5c4a5c559277/original/Key_concepts.png
-FirstSteps3Url: /es/platform/key-concepts
+FirstSteps3Url: /es/platform/basics/key-concepts
 FirstSteps3Alt: Una lista de todos los conceptos y términos clave que usamos para la plataforma.
 
 FirstSteps4Title: Dynamic Framework
