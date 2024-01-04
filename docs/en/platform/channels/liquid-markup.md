@@ -43,7 +43,7 @@ Below we'll look at several examples of the most common uses when writing with L
 
 #### Objects
 
-An object is what contains the content that Liquid displays on the screen. You can display objects or variables using a double bracket ``{{ }}``, for example:
+An object is that which contains the content that Liquid displays on the screen. You can display objects or variables using a double bracket ``{{ }}``, for example:
 
 To display the name of the post on your page use:
 
@@ -109,13 +109,13 @@ A filter is a Ruby method that takes one or more parameters and returns a value.
 
 ### Standard Filters
 
-* `append` - Add a string *e.g.* <span v-pre>` {{'foo' | append: 'bar'}} # => 'foobar'` </span>
-* `asset_url` - Generates the URL for an Asset object with a determined size, *e.g.* <span v-pre>`{{ asset_obj | asset_url: '640x480' }}`</span>. Also, can generate the URL of a CSS or JavaScript template, *e.g.* <span v-pre>`{{ 'my-css' | asset_url: 'css' }}`</span> or <span v-pre>`{{ 'my-js' | asset_url: 'js' }}`</span>.
+* `append` - Add a string *e.g.* <span v-pre>`{{ 'foo' | append:'bar' }} #=> 'foobar'`</span>
+* `asset_url` - Generates the URL of an Asset object with a specific size, *e.g.* <span v-pre>`{{ asset_obj | asset_url: '640x480' }}`</span>. It can also generate the URL of a CSS or JavaScript template, *e.g.* <span v-pre>`{{ 'my-css' | asset_url: 'css' }}`</span> or <span v-pre>`{{ 'my-js' | asset_url: 'js' }}`</span>.
 * `base64_decode` - Returns the Base64-decoded value for a string *e.g.* <span v-pre> `{% 'Hello world' | base64_encode %} # => 'SGVsbG8gd29ybGQ='`</span>.
 * `base64_encode` - Returns the Base64-encoded value for a string *e.g.* <span v-pre>`{% 'SGVsbG8gd29ybGQ=' | base64_decode %} # => 'Hello world'`</span>.
 * `capitalize` - Capitalize the entry sentence
 * `ceil` - Rounds up a decimal number to the next integer, *e.g.* <span v-pre>`{{ 4.6 | ceil }} #=> 5`</span>
-* `date` - Format a date ([syntax reference] (https://shopify.dev/api/liquid/filters#date))
+* `date` - Formats a date ([syntax reference] (https://shopify.dev/api/liquid/filters#date))
 * `default` - Returns the given variable unless it is null or empty string, then returns the given value, *e.g.* <span v-pre>`{{ undefined_variable | default: "Default value" }} #=> "Default value"`</span>
 * `divided_by` - Division of integers *e.g.* <span v-pre>`{{ 10 | divided_by:3 }} #=> 3`</span>
 * `downcase` - Convert an input string to lowercase
@@ -142,32 +142,32 @@ A filter is a Ruby method that takes one or more parameters and returns a value.
 * `replace` - Replace all incidents *e.g.* <span v-pre>`{{ 'foofoo' | replace:'foo','bar' }} #=> 'barbar'`</span>
 * `reverse` - Reverses the given array.
 * `round` - Round to the nearest whole number or to the specified number of decimals *e.g.* <span v-pre>`{{ 4.5612 | round: 2 }} #=> 4.56`</span>
-* `rstrip` - Remove all blank spaces from the end of a string
+* `rstrip` - Removes all blank spaces from the end of a string
 * `script_tag` - Generates a `<script>` HTML tag for a JavaScript template, taking a URL and `attr: 'value'` attributes as parameters, *e.g.* <span v-pre>`{{ 'my-js-url' | script_tag: async: 'async', defer: 'defer' }}`</span> => `<script src='my-js-url' type='text/javascript' async='async' defer='defer'></script>`
 * `sha1` - Returns the SHA-1 hash for a string *e.g.* <span v-pre>`{% 'Hello world' | sha1  %} # => '7b502c3a1f48c8609ae212cdfb639dee39673f5e'`</span>.
 * `sha256` - Returns the SHA-256 hash for a string *e.g.* <span v-pre> `{% 'Hello world' | sha256%} # => '64ec88ca00b268e5ba1a35678a1b5316d212f4f366b2477232534a8aeca37f3ccc0756f3cc0756b2477232534a8aeca37f3cc'`</span>.
 * `size` - Return the size of an array or string
-* `slice` - Divide a string. Take a offset and a length, *e.g.* <span v-pre>`{{ "hello" | slice: -3, 3 }} #=> llo`</span>
-* `sort` - Sort array items
-* `split` - Split a string into a matching pattern *e.g.* <span v-pre>`{{ "a~b" | split:"~" }} #=> ['a','b']`</span>
-* `strip_html` - Remove html from the string
-* `strip_newlines` - Remove all new lines (\n) from the string
+* `slice` - Divides a string. Takes an offset and a length, *e.g.* <span v-pre>`{{ "hello" | slice: -3, 3 }} #=> llo`</span>
+* `sort` - Sorts array items
+* `split` - Splits a string into a matching pattern *e.g.* <span v-pre>`{{ "a~b" | split:"~" }} #=> ['a','b']`</span>
+* `strip_html` - Removes html from the string
+* `strip_newlines` - Removes all new lines (\n) from the string
 * `strip` - Removes all blank spaces at both ends of the string.
 * `stylesheet_tag` - Generates a `<link>` HTML tag for a CSS template, taking a URL and `attr: 'value'` attributes as parameters, *e.g.* <span v-pre>`{{ 'my-css-url' | stylesheet_tag: media: 'screen', title: 'color style' }}`</span> => `<link href='my-css-url' rel='stylesheet' type='text/css' media='screen' title='color style' />`
-* `times` - Multiply  *e.g* <span v-pre>`{{ 5 | times:4 }} #=> 20`</span>
-* `truncate` - Restrict a string to x characters. It also accepts a second parameter that will be added to the string *e.g.* <span v-pre>`{{ 'foobarfoobar' | truncate: 5, '.' }} #=> 'foob.'`</span>
-* `truncatewords` - Restrict a string to x words
+* `times` - Multiplies  *e.g* <span v-pre>`{{ 5 | times:4 }} #=> 20`</span>
+* `truncate` - Restricts a string to x characters. It also accepts a second parameter that will be added to the string *e.g.* <span v-pre>`{{ 'foobarfoobar' | truncate: 5, '.' }} #=> 'foob.'`</span>
+* `truncatewords` - Restricts a string to x words
 * `uniq` - Removes duplicate elements from an array, optionally using a specific property to check its uniqueness.
-* `upcase` - Convert an input string to uppercase
-* `url_encode` - Encode a string to URL
+* `upcase` - Converts an input string to uppercase
+* `url_encode` - Encodes a string to URL
 
 ## Tags
 
 Tags (tags) are used for template logic. Here is a list of currently supported tags:
 
 * **assign** - Assigns a value to a variable
-* **capture** - Tag block that captures text to a variable.
-* **case** - Tag block, case standard statement.
+* **capture** - Block tag that captures text to a variable.
+* **case** - Block tag, case standard statement.
 * **comment** - Block tag, comment on the text in the block.
 * **cycle** - Cycle is generally used within a loop to toggle between values, such as colors or DOM classes.
 * **for** - Loop for
@@ -197,12 +197,12 @@ This is useful for generating content (eg, Mustache, Handlebars) that can use co
 {% endraw %}
 ```
 
-### If/Else
+### If / Else
 
-The `if/else` statements should be known from other programming languages. Liquid implements them with the following tags:
+The `if / else` statements should be known from other programming languages. Liquid implements them with the following tags:
 
-* `{% if <CONDITION> %} ... {% endif %}` — Attach a section of the template that will only be executed if the condition is true.
-* `{% elsif <CONDITION> %}` — Can optionally be used within an `if .... endif` block. Specifies another condition; If the initial "if" fails, Liquid tests the "elsif",, and if it passes, executes the next section of the template. Any number of elsif statements can be used in an `if` * `{% else %}` - Can be used within an `if... endif` block, _after_ any "elsif" tag. If all the above conditions fail, Liquid will execute the template section following the "else" tag.
+* `{% if <CONDITION> %} ... {% endif %}` — Attaches a section of the template that will only be executed if the condition is true.
+* `{% elsif <CONDITION> %}` — Can optionally be used within an `if .... endif` block. Specifies another condition. If the initial "if" fails, Liquid tests the "elsif",, and if it passes, executes the next section of the template. Any number of elsif statements can be used in an `if` * `{% else %}` - Can be used within an `if... endif` block, _after_ any "elsif" tag. If all the above conditions fail, Liquid will execute the template section following the "else" tag.
 * `{% unless <CONDITION> %} ... {% endunless %}` — The reverse of an "if" statement. Do not use "elsif" or "else" with an unless statement.
 
 The condition of an `if`,` elsif` or `unless` tag must be a normal Liquid expression or a _comparison_ using Liquid expressions. Note that relational operators are implemented using tags similar to "if"; they don't work anywhere else in Liquid.
@@ -340,7 +340,7 @@ hit 2 or 3
 
 ### Cycle
 
-You often have to alternate between different colors or similar tasks. Liquid has built-in support for such operations, using the `cycle` tag.
+Often, you have to alternate between different colors or similar tasks. Liquid has built-in support for such operations, using the `cycle` tag.
 
 ```liquid
 {% cycle 'one', 'two', 'three' %}

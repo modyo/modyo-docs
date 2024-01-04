@@ -6,7 +6,7 @@ search: true
 
 ## Introduction
 
-In this tutorial we will integrate Salesforce, a customer relationship management (CRM) platform with Modyo's Customers module where the platform's end users are managed. This integration allows us to manage all users from one place and thus centralize the workflow of our sales, marketing, and organization teams.
+In this tutorial we will integrate Salesforce, a customer relationship management (CRM) platform, with Modyo's Customers module where the platform's end users are managed. This integration allows us to manage all users from one place and thus centralize the workflow of our sales, marketing, and organization teams.
 
 ## Prerequisites
 
@@ -20,7 +20,7 @@ Once we log into our account, click <b>Setup</b>.
 
 <img src="/assets/img/tutorials/saleforce/home.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Salesforce home page UI"/>
 
-The link to <b> Setup </b> is located in the upper right corner of our screen and its icon is a nut:
+The link to <b> Setup </b> is located in the upper right corner of our screen, and its icon is a gear:
 
 <img src="/assets/img/tutorials/saleforce/setup.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;" alt="Image with closeup to the Setup button"/>
 
@@ -153,7 +153,7 @@ To configure the fields search for <b>Custom Metadata Types</b> and click <b>New
 <img src="/assets/img/tutorials/saleforce/custom_metadata_type.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image with the New Custom Metadata Type UI."/>
 
 Click <b>Save</b> and on the settings of <b>Custom Metadata Types
- </b>, fill in the Custom Fields table with the following:
+</b>, fill in the Custom Fields table with the following:
 
 <table>
  <tr>
@@ -230,7 +230,7 @@ In order to generate an authenticator, from the Modyo platform, within **Configu
 
 <img src="/assets/img/tutorials/saleforce/api-access.png" style="border: 1px solid rgb(238, 238, 238);max-width: 500px;margin: auto 0;" alt="Image with New Application for API Access in Modyo Platform"/> 
 
-Then, in **Settings**, <b> Team </b>, click your username. In the section of <b>API access</b> click <b>+ New Access Token</b> and create one with which we already configured <b>SF Dynamic</b> to have an Access Token for your user.
+Then, in **Settings**, <b>Team</b>, click your username. In the section of <b>API access</b> click <b>+ New Access Token</b> and create one with the one we already configured <b>SF Dynamic</b> to have an Access Token for your user.
 
 After we have the configuration in Modyo, we return to Salesforce. Within Setup, go to the <b>Auth section. Providers</b>.
 
@@ -336,7 +336,7 @@ Fill in the following data:
 
 Named Credentials allow users to authenticate to an external service provider. There are several default options, in order to connect to Modyo, we need to create a custom authentication.
 
-To generate one we are going to search for <b> Named Credentials </b> inside Setup, and click on <b>New Named Credential</b>. We fill in the fields as follows:
+To generate one, we are going to search for <b>Named Credentials</b> inside Setup, and click on <b>New Named Credential</b>. We fill in the fields as follows:
 
 <table>
  <tr>
@@ -384,7 +384,7 @@ To generate one we are going to search for <b> Named Credentials </b> inside Set
    Authentication Provider      
   </td>
   <td>
-   [ El que ya creamos ]
+   [ The one we created ]
   </td>
  </tr>
  <tr>
@@ -423,9 +423,9 @@ The last step is the definition of the external service within Salesforce.
 
 External services allow us to connect Salesforce to third-party services, sharing an API schema in OpenAPI format and we find them in Setup -> External services.
 
-To generate the integration, create a new External Service by clicking on the <b> New External Service </b> button on the top right of the screen.
+To generate the integration, create a new External Service by clicking on the <b>New External Service</b> button on the top right of the screen.
 
-Enter a name, select the Named Credential you created and at the bottom we paste the following code, selecting <b> Service Schema Complete JSON </b> 
+Enter a name, select the Named Credential you created and at the bottom we paste the following code, selecting <b>Service Schema Complete JSON</b> 
 
 
 ```json
@@ -753,7 +753,7 @@ Then in Modyo Platform, select <b>Customers</b> and click **Realms**. Select you
 
 <img src="/assets/img/tutorials/saleforce/custom_field.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image adding a New Custom Field in Modyo."/>
 
-Click on <b>Create</b>, we activate it in the 3 points and save.
+Click on <b>Create</b>, activate it in the 3 points and save.
 
 <img src="/assets/img/tutorials/saleforce/activate.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image activating the custom field in Modyo."/>
 
@@ -767,7 +767,7 @@ For this, go to Setup -> Flows and click <b>New Flow</b>. Select <b>Autolaunched
 
 To get started, go to the <b>Manager</b> tab and create new resources.
 
-Creates a new variable named <b>isPremiumCustomer</b> of the Boolean Type and of default value <b>{! $globalconstant.false}</b>, enable the two fields below and click <b>Done</b>.
+Creates a new variable named <b>isPremiumCustomer</b> of the Boolean Type and of default value <b>{!$GlobalConstant.False}</b>, enable the two fields below and click <b>Done</b>.
 
 <img src="/assets/img/tutorials/saleforce/IsPremiumCustomer.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image showing the new variable called IsPremiumCustomer in the New Resource window."/>
 
@@ -777,11 +777,11 @@ Creates a new variable <b>ModyoID</b> of type Text and, like the previous one, e
 
 Then create another variable called <b>DynamicCustomField</b> and unlike the previous ones, in <b>Data Type</b> select <b>Apex-Defined</b>. In <b>Apex Class</b> type <b>ExternalService__DynamicModyo_UserCustomField</b>, enable input and output, and click <b>Done</b>.
 
-Repeat the same procedure but changing the name to <b> DynamicUserInput
- </b> and <b> Apex Class </b> by <b> ExternalService__DynamicModyo_UserInput </b>.
+Repeat the same procedure but changing the name to <b>DynamicUserInput
+</b> and <b>Apex Class</b> by <b>ExternalService__DynamicModyo_UserInput</b>.
 
 
-Once the Variables are created, return to the tab of <b> Elements </b> and add to the flow an <b> Pause </b>, named <b> async pause </b> 8z0 and inside <b> Resume event </b> add <b> {! $flow.currentDateTime} </b> in <b> Base Time </b> inside <b> Define Resume Time </b>.
+Once the Variables are created, return to the tab of <b>Elements</b> and add to the flow an <b>Pause</b>, named <b>async pause</b> and in<b>Resume event</b> add <b>{!$Flow.CurrentDateTime}</b> in <b>Base Time</b> inside <b>Define Resume Time</b>.
 
 <img src="/assets/img/tutorials/saleforce/async_pause.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image adding a new Async Pause in the New Pause window."/>
 
@@ -791,7 +791,7 @@ Now the dots have to be joined.
 
 <img src="/assets/img/tutorials/saleforce/flow1.png" style="border: 1px solid rgb(238, 238, 238);max-width: 400px;margin: auto 0;" alt="Image connecting the Autolaunched Flow to the Async Pause."/>
 
-Add an <b> Decision </b> to the flow, named <b> Is Premium Customer </b>, and fill it with the following fields:
+Add an <b>Decision</b> to the flow, named <b>Is Premium Customer</b>, and fill it with the following fields:
 
 <table>
  <tr>
@@ -965,11 +965,11 @@ Finally, save and test that it is working correctly.
 
 ## Step 9: Creating Process
 
-Now we need to search <b> Process builder </b> in the search engine,
+Now we need to search <b>Process builder</b> in the search engine,
 
 <img src="/assets/img/tutorials/saleforce/Process_builder.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image searching for Process Builder in the Setup window."/>
 
-And generate a new one with the name <b> Change Modyo Customer </b> and in **The process starts when** select <b> A record changes </b>, which looks like this:
+And generate a new one with the name <b>Change Modyo Customer</b> and in **The process starts when** select <b>A record changes</b>, which looks like this:
 
 <img src="/assets/img/tutorials/saleforce/Modyo_Customer.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image showing the result after adding the processes."/>
 
@@ -977,7 +977,7 @@ Then in Object click <b>Add Object</b>, add a <b>Contact</b>, select <b>when a r
 
 <img src="/assets/img/tutorials/saleforce/object.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image showing the Choose Object and specify when to start the process window."/>
 
-Then click on <b> Add Criteria </b> and fill in the following fields:
+Then click on <b>Add Criteria</b> and fill in the following fields:
 
 <table>
  <tr>
@@ -1006,7 +1006,7 @@ Then click on <b> Add Criteria </b> and fill in the following fields:
  </tr>
 </table>
 
-IN the table of <b> Set Conditions </b> 
+IN the table of <b>Set Conditions</b> 
 
 <table>
  <tr>
@@ -1053,8 +1053,8 @@ IN the table of <b> Set Conditions </b>
  </tr> 
 </table>
 
-With this we ensure that the contact has Modyo ID, click <b> Save </b> and on <b> IMMEDIATE ACTIONS
- </b> click on <b> Add Action </b> with the following data:
+With this we ensure that the contact has Modyo ID, click <b>Save</b> and on <b>IMMEDIATE ACTIONS
+</b> click on <b>Add Action</b> with the following data:
 
 <table>
  <tr>
@@ -1123,10 +1123,10 @@ In Set Flow Variables add two lines with the following:
 
 <img src="/assets/img/tutorials/saleforce/action.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image showing the select and define action window."/>
 
-Click on <b> Activate </b>.
+Click on <b>Activate</b>.
 
 ## Conclusion
 
 Congratulations! You have finished the tutorial, in order to test that everything is OK, we need to create a user by filling in the required fields (First Name, Last Name, Email and Modyo ID).
 
-To find out the user ID in Modyo we can do it through the Customers API at the following url {acount.url} /customers/ {realm_uid} /users or on the Modyo platform, by clicking the user within Realms. The Modyo ID will be located as part of the URL and looks something like: `987eb795-9476-49f7-b511-efb5ba3f07de`.
+To find out the user ID in Modyo we can do it through the Customers API at the following {acount.url}/customers/{realm_uid}/users or on the Modyo platform, by clicking the user within Realms. The Modyo ID will be located as part of the URL and looks something like: `987eb795-9476-49f7-b511-efb5ba3f07de`.
