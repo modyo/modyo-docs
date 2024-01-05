@@ -58,7 +58,7 @@ By default, your sites' custom domains are already included once CORS is activat
 
 ## Content Delivery Token (JWT - JSON Web Token)
 
-This key or _secret_ is used by Modyo to sign user JWTs so that they can access [private content through the API] (/es/platform/content/public-api-reference.html #contenido -private).
+This key or _secret_ is used by Modyo to sign user JWTs so that they can access [private content through the API](en/platform/content/public-api-reference.html#private-content).
 
 :::warning Attention
 If you generate a new key, all requests for private content must go through Modyo. This is because JWTs signed by Modyo with the old key will no longer be valid.
