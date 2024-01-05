@@ -45,7 +45,7 @@ Once the user is marked as inactive, they cannot log in. The default inactivity 
 If you check the box to send an email to a user when they are considered inactive, the user will receive an email notification. From this email, they will be able to reactivate their account.
 
 :::tip Tip
-Account owners can change a user's status between inactive and active using the “Login disabled due to inactivity” checkbox.
+**Account owners** can change a user's status between inactive and active using the “Login disabled due to inactivity” checkbox.
 
 You can locate this option when editing a user in the **Team** section, in the **Edit** tab. If you select the box, the user is marked as inactive and when it is deactivated, the user will be active.
 :::
