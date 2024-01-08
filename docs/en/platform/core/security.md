@@ -19,7 +19,7 @@ In this section, you can set the password security policy for team members. The 
 - **Minimum password length value**: This value determines the minimum length that a password must have, it must be between 12 and 128 characters.
 - **Require at least one lowercase letter (a - z)**: This option ensures that the password contains at least one lowercase letter.
 - **Require at least one capital letter (A - Z)**: This option ensures that the password contains at least one capital letter.
-- **Require at least one non-alphanumeric character (! @ # $% ^ & * () _ + - = [] {} |) **: This option requires that team members' passwords contain at least one of the specified special characters.
+- **Require at least one non-alphanumeric character (! @ # $% ^ & * () _ + - = [] {} |)**: This option requires that team members' passwords contain at least one of the specified special characters.
 
 When saving this configuration, existing users will have to comply with these conditions whenever they change their passwords.
 
