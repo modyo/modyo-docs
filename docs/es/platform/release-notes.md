@@ -8,7 +8,7 @@ search: true
 ### 9.2.55 - 08 de enero de 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
-* Agrega un fix crítico de seguridad
+* Agrega un fix seguridad para el cual se recomienda actualizar a esta versión.
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
