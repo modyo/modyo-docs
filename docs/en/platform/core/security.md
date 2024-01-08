@@ -162,6 +162,6 @@ In addition, administrators can generate tokens to access the platform's managem
 
 If you think you have identified a security vulnerability in Modyo, please help us by reporting the problem.
 
-Modyo provides secure and confidential channels for reporting security incidents through our [support center](https://support.modyo.com/hc/en-us) or by sending an email to <a href="mailto:security@modyo.com">security@modyo.com</a> .
+Modyo provides secure and confidential channels for reporting security incidents through our [support center](https://support.modyo.com/hc/en-us) or by sending an email to <a href="mailto:security@modyo.com">security@modyo.com</a>.
 
 Your collaboration is critical to maintaining the integrity and security of the platform.
