@@ -5,6 +5,20 @@ search: true
 # Notas del release
 
 ## 9.2
+### 9.2.55 - 08 de enero de 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Agrega un fix de seguridad por lo que se recomienda actualizar a esta versión
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Agrega el parámetro meta.tags al filtrado de contenido mediante query string
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Agrega nuevo filtro liquid de contenido `by`
+
+
 ### 9.2.54 - 30 de noviembre de 2023
 <Badge text="Core" type="core" vertical="middle"/>
 
