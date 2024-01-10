@@ -64,7 +64,7 @@ Modyo implements artifact repositories within its GitHub Enterprise and in the c
 
 
 ### Steps to activate
-Create a request ticket at the [Modyo Support Center] (https://support.modyo.com) stating:
+Create a request ticket at the [Modyo Support Center](https://support.modyo.com) stating:
 - Name of the artifact repository.
 - Artifact repository type: NPM or Maven library.
 - Purpose for which the artifact repository will be used.
