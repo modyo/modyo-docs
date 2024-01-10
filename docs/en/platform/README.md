@@ -24,7 +24,7 @@ Modyo is a digital experience platform that helps you create integrated digital 
 
 ### Why use Modyo?
 
-* **To create integrated digital experiences: ** Modyo allows you to create personalized digital experiences for your consumers, regardless of their channel.
+* **To create integrated digital experiences:** Modyo allows you to create personalized digital experiences for your consumers, regardless of their channel.
 * **To create agility and governance: ** Modyo helps you accelerate the development of your digital experiences and ensure their quality.
 * **To create digital experiences through widgets: ** Modyo offers you an extensive library of widgets that you can use to quickly create digital experiences.
 
