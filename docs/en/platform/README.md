@@ -48,7 +48,7 @@ Modyo is designed for diverse profiles, from digital channel leaders to frontend
 
 ### Where can I get support?
 
-For Modyo Platform support, visit the [official support site] (https://support.modyo.com/hc/es).
+For Modyo Platform support, visit the [official support site](https://support.modyo.com/hc/es).
 
 ### Requirements for using Modyo
 
