@@ -36,7 +36,7 @@ The main responsibilities of the SREs team are:
 - Security settings and firewall rules
 - Access control to cloud environments
 
-:: :tip Tip
+:::tip Tip
 Service availability levels are determined by a service agreement with each customer.
 :::
 
