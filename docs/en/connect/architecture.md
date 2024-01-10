@@ -46,7 +46,7 @@ Service availability levels are determined by a service agreement with each cust
 
 Modyo implements multiple security controls, both for our staff and for our infrastructure, aligned with the most demanding industry standards, such as [ISO 27001](https://en.wikipedia.org/wiki/ISO/IEC_27001) and [CSA Star](https://cloudsecurityalliance.org/star/).
 
-Modyo Connect is deployed on Modyo Enterprise Cloud's isolated AWS (Single Tenant) accounts, ensuring that no infrastructure component is shared between customers. Within each account, isolated virtual private networks are used for each environment, configured with subnets for different infrastructure layers, restricting communication between them through security groups.
+Modyo Connect is deployed on the isolated AWS accounts (Single Tenant) of Modyo Enterprise Cloud, ensuring that no infrastructure component is shared between clients. Within each account, isolated virtual private networks are used for each environment, configured with subnets for different layers of infrastructure, restricting communication between them through security groups.
 
 ### Shared Responsibility Model
 
