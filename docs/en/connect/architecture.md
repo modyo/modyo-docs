@@ -4,30 +4,31 @@ search: true
 
 # Architecture
 
-Modyo operates its critical systems in the [Amazon AWS](https://aws.amazon.com) cloud. With over 12 years of experience on this platform, and as an Advanced Technology Partner, Modyo has the necessary experience and certified personnel to ensure the continuity, performance, and security of your deployments.
+Modyo operates its critical systems in the [Amazon AWS] cloud (https://aws.amazon.com), where it has more than 12 years of experience as an Advanced Technology Partner. This experience, backed by certified personnel, ensures the continuity, performance and security of deployments.
 
-In 2019 and 2021, Modyo was recognized by Amazon AWS as Technology Partner of the Year for Chile and Peru. Additionally, Modyo was the first company in Latin America to become an AWS Independent Software Vendor (ISV).
+In 2019 and 2021, Amazon AWS recognized Modyo as the Technology Partner of the Year for Chile and Peru. Modyo was the first company in Latin America to become an AWS Independent Software Vendor (ISV).
 
-Modyo Connect is offered exclusively on the Amazon AWS cloud and, like Modyo Cloud and Enterprise Cloud, operates in a highly available configuration over multiple AWS availability zones and regions. Using abstract resources and containers in the cloud, it avoids the need to configure and maintain virtual machines of any kind. For the deployment of [microservices](/en/architecture/patterns/microservice), the Amazon Elastic Container Services (ECS) container platform is used in conjunction with automation and configuration control tools, following a reference architecture as shown in the following diagram:
+Modyo Connect is offered exclusively in the Amazon AWS cloud and, like Modyo Cloud and Enterprise Cloud, operates in a highly available configuration across multiple AWS zones and regions. The implementation uses abstract resources and containers in the cloud, eliminating the need to configure and maintain virtual machines. The deployment of [microservices] (/es/architecture/patterns/microservice) is done using Amazon Elastic Container Services (ECS) with an architecture detailed in the following diagram:
 
 <img src="/assets/img/infrastructure/architecture.png" alt="Modyo Connect Architecture" style="margin-top: 40px;" />
 
-The [microservices](/en/architecture/patterns/microservice) automatically connect to an internal load balancer, where the container instances deployed in [AWS Elastic Container Services (ECS)](https://aws.amazon.com/ecs/) are dynamically registered. The [microservices](/en/architecture/patterns/microservice) have traffic egress rules to the Internet using [AWS NAT Gateway](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html) which provides dedicated fixed IP addresses for each customer. Business services are accessed through configured IPsec VPN links to the customer's infrastructure.
+The [microservices] (/es/architecture/patterns/microservice) are automatically connected to an internal load balancer, where the container instances deployed in [AWS Elastic Container Services (ECS)] (https://aws.amazon.com/ecs/) are dynamically registered. [microservices] (/en/architecture/patterns/microservice) use [AWS NAT Gateway] (https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html) for traffic egress rules to the Internet, assigning dedicated fixed IP addresses for each customer. Business services are accessed through configured IPSec VPN links to the customer's infrastructure.
 
-Container images are securely stored in the AWS Elastic Container Repository (ECR) repository, on which security inspections are performed to detect any vulnerabilities present in the images stored in it.
+Container images are securely stored in the AWS Elastic Container Repository (ECR), where security inspections are performed to detect vulnerabilities.
 
-Modyo Connect also has auto-scalability groups to increase the number of container instances as traffic and demand increases. To this end, a minimum base capacity and elasticity action range is defined with each customer according to their particular needs.
+Modyo Connect also has self-scaling groups to increase the number of container instances based on traffic and demand. The base capacity and the range of elasticity are defined with each customer according to their needs.
 
-The multi-zone deployment in Amazon AWS guarantees an excellent level of redundancy and availability to cope with the most common failures that can usually affect the environment. In the unlikely event that there is a region-wide failure for which Amazon AWS does not deliver an acceptable resolution time, an alternate processing region is available, in which continuous backups of all data are maintained.
+The multi-zone deployment on Amazon AWS ensures excellent redundancy and availability, with ongoing backup in the event of unlikely regional failures.
+
 
 ## Operation
 
-Like Modyo Enterprise Cloud, Modyo Connect is a fully-managed service where Modyo is responsible for all infrastructure configuration, management, and control of the cloud infrastructure. Modyo ensures service availability for Modyo Connect through service level agreements established with each customer.
+Like Modyo Enterprise Cloud, Modyo Connect is a service fully managed by Modyo. A dedicated team of [Site Reliability Engineers (SRes)] (https://sre.google) certified on AWS is responsible for the operation, monitoring and maintenance of cloud infrastructure for all customers.
 
-For the delivery of the service, Modyo has a dedicated team of [Site Reliability Engineers (SREs)](https://sre.google) certified in AWS, who are responsible for ensuring the proper operation of cloud systems for all its customers. The main responsibilities of the SREs team are:
+The main responsibilities of the SRes team are:
 
 - Monitoring performance, availability and security metrics
-- 24x7 Incident Response
+- Incident response 24 hours a day, 7 days a week.
 - Capacity planning
 - Provision and withdrawal of services
 - Infrastructure and Security Change Management
@@ -35,18 +36,24 @@ For the delivery of the service, Modyo has a dedicated team of [Site Reliability
 - Security settings and firewall rules
 - Access control to cloud environments
 
+:: :tip Tip
+Service availability levels are determined by a service agreement with each customer.
+:::
+
+
+
 ## Security
 
-Modyo implements multiple security controls covering both personnel and infrastructure. Modyo's security controls are aligned with the most stringent industry standards, such as [ISO 27001](https://en.wikipedia.org/wiki/ISO/IEC_27001) and [CSA Star](https://cloudsecurityalliance.org/star/). 
+Modyo implements multiple security controls, both for our staff and for our infrastructure, aligned with the most demanding industry standards, such as [ISO 27001] (https://en.wikipedia.org/wiki/ISO/IEC_27001) and [CSA Star] (https://cloudsecurityalliance.org/star/).
 
-Modyo Connect is deployed on the same isolated AWS accounts (Single Tenant) as Modyo Enterprise Cloud, which ensure that no infrastructure component is shared between customers. Within each account, isolated virtual private networks are used for each environment within which they are configured with subnets for the different layers of infrastructure, restricting communication between them through security groups. 
+Modyo Connect is deployed on Modyo Enterprise Cloud's isolated AWS (Single Tenant) accounts, ensuring that no infrastructure component is shared between customers. Within each account, isolated virtual private networks are used for each environment, configured with subnets for different infrastructure layers, restricting communication between them through security groups.
 
 ### Shared Responsibility Model
 
-Modyo defines a shared responsibility matrix in conjunction with its customers in which responsibility for complex infrastructure controls is left to Modyo and the customer is responsible for the platform developments and configurations that are deployed on the service, as detailed in the following diagram.
+Modyo and its customers share responsibility for safety and operation, clearly defining the complex infrastructure controls carried out by Modyo. The customer is responsible for the development and configuration of the platform deployed on the service. The shared responsibility model is detailed in the following diagram:
 
 <img src="/assets/img/infrastructure/shared_responsability_model.png" alt="Modyo Shared Responsibility Model" style="margin-top: 40px;" />
 
-From the point of view of the users of the service; the architects, technical leaders, and developers will be responsible from the design of the solution, to the deployment and execution of the solution, so they are primarily responsible for ensuring the resiliency, scalability, and security of what is delivered.
+Service users, architects, technical leaders and developers are responsible from design to deployment and execution of the solution, so they are primarily responsible for ensuring the resilience, scalability and security of what is delivered.
 
-From the point of view of the SRE team that operates the service, they will be responsible for implementing the infrastructure of the service offered, the definition of security standards and configurations, and the high availability of the service itself. This ensures that the principles of [AWS Well Architected Framework] (https://aws.amazon.com/architecture/well-architected/) are met.
+The SRE team, responsible for operating the service, ensures the implementation of the infrastructure, defines security standards and ensures high availability, following the principles of [AWS Well Architected Framework] (https://aws.amazon.com/architecture/well-architected/).
