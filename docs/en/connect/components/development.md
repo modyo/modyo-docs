@@ -49,7 +49,7 @@ AWS CodePipeline-based integrations will be migrated to GitHub Actions during th
 :::
 
 ### Steps to activate
-Create a ticket at the [Modyo Support Center] (https://support.modyo.com) to activate Continuous Integration on a [repository] (#repositorio -de-code), stating:
+Create a ticket at the [Modyo Support Center](https://support.modyo.com) to activate Continuous Integration on a [repository](#code-repository), stating:
 - Code repository on which to run the automation.
 - Type of automation to implement.
 - Specific instructions to consider when implementing automation; for example, specific compilation script, special parameters, and so on.
