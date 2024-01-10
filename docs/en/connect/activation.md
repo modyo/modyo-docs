@@ -24,7 +24,7 @@ Once the ticket is created, it is assigned a priority, unique identifier and a U
 Requirement tickets, once entered, are reviewed before being accepted and assigned to an SRE. The duration of this process depends on the demand and availability of the team.
 
 Urgent tickets require justification and may be limited depending on the support contract.
-For efficient access, we request the creation of an account using the corporate email associated with the Modyo Enterprise Cloud contract. It is recommended to include all parties involved in the ticket, using the CC field of the request form, to facilitate communication.
+For efficient access, we request the creation of an account using the corporate email associated with the Modyo Enterprise Cloud contract. To facilitate communication, we recommend including all parties involved in the ticket, using the CC field of the request form.
 
 
 :: :tip Planning
