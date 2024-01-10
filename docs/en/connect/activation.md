@@ -21,7 +21,7 @@ Container capacity is calculated based on estimated traffic to the system in pro
 Request management is done through the [Modyo Support Center](https://support.modyo.com), by creating requirement tickets and completing the instructions indicated therein.
 
 Once the ticket is created, it is assigned a priority, unique identifier and a URL to review the status of the request or answer questions that the Modyo SRE team may have.
-Requirement tickets, once entered, are reviewed before being accepted and assigned to an SRE. The length of this process depends on the demand and availability of the equipment.
+Requirement tickets, once entered, are reviewed before being accepted and assigned to an SRE. The duration of this process depends on the demand and availability of the team.
 
 Urgent tickets require justification and may be limited depending on the support contract.
 For efficient access, we request the creation of an account using the corporate email associated with the Modyo Enterprise Cloud contract. It is recommended to include all parties involved in the ticket, using the CC field of the request form, to facilitate communication.
