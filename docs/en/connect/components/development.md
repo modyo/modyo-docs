@@ -19,8 +19,8 @@ Create a request ticket at the [Modyo Support Center](https://support.modyo.com)
 - Name and email of the developer.
 - Whether or not the developer is authorized to request changes to the components of the service.
 
-:: :warning Important
-The customer is responsible for informing Modyo in case they need to remove access to a developer. To do this, you must create a request ticket in the [Modyo Support Center] (https://support.modyo.com).
+:::warning Important
+The customer is responsible for informing Modyo in case they need to remove access to a developer. To do this, you must create a request ticket in the [Modyo Support Center](https://support.modyo.com).
 :::
 
 
