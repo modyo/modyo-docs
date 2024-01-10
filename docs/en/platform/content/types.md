@@ -158,7 +158,7 @@ This field allows you to link more than one existing Entry, within the Space, to
 
 - **Restrict type**: Allows you to select a default type so that only entries of the selected type can be selected as a link.
 
-### Covey
+### Group
 
 Use the Group field to house another field inside it. You can assign a name to the group according to your needs, and also name the fields within the group. In the hint field, include the text you want to display to help your users complete the field correctly. 
 
