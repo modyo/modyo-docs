@@ -4,7 +4,7 @@ search: true
 
 # Activation
 
-The Modyo Connect managed service is activated through a contract or attachment separate from the Modyo Enterprise Cloud subscription. To start the Modyo Connect service you must consider:
+The Modyo Connect managed service is activated through a contract or addendum separate from the Modyo Enterprise Cloud subscription. To initiate the Modyo Connect service, you must consider:
 
 - Number of developers with access to code repositories.
 - Number of [micro frontends] (/es/architecture/patterns/micro-frontend) that will be developed with the Modyo Command Line Interface (CLI).
