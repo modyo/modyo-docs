@@ -45,7 +45,7 @@ Una vez que el usuario es marcado como inactivo, no puede iniciar sesión. El pe
 Si marcas la casilla para reenviar un correo al usuario al considerarlo inactivo, el usuario recibirá una notificación por correo electrónico. Desde este correo, tendrá la capacidad de reactivar su cuenta.
 
 :::tip Tip
-Los dueños de las cuentas pueden cambiar el estado de un usuario entre inactivo y activo utilizando la casilla de verificación "Inicio de sesión desactivado por inactividad".
+Los **dueños de las cuentas** pueden cambiar el estado de un usuario entre inactivo y activo utilizando la casilla de verificación "Inicio de sesión desactivado por inactividad".
 
 Puedes localizar esta opción al editar un usuario en la sección **Equipo**, en la pestaña de **Editar**. Si seleccionas la casilla, el usuario es marcado como inactivo y al desactivarla el usuario estará activo.
 :::

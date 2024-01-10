@@ -17,9 +17,9 @@ This guide presents the most relevant recommendations for achieving this goal.
 In this section, you can set the password security policy for team members. The available options are:
 
 - **Minimum password length value**: This value determines the minimum length that a password must have, it must be between 12 and 128 characters.
-- **Require at least one lowercase letter (a - z) **: This option ensures that the password contains at least one lowercase letter.
-- **Require at least one capital letter (A - Z) **: This option ensures that the password contains at least one capital letter.
-- **Require at least one non-alphanumeric character (! @ # $% ^ & * () _ + - = [] {} |) **: This option requires that team members' passwords contain at least one of the specified special characters.
+- **Require at least one lowercase letter (a - z)**: This option ensures that the password contains at least one lowercase letter.
+- **Require at least one capital letter (A - Z)**: This option ensures that the password contains at least one capital letter.
+- **Require at least one non-alphanumeric character (! @ # $% ^ & * () _ + - = [] {} |)**: This option requires that team members' passwords contain at least one of the specified special characters.
 
 When saving this configuration, existing users will have to comply with these conditions whenever they change their passwords.
 
@@ -45,7 +45,7 @@ Once the user is marked as inactive, they cannot log in. The default inactivity 
 If you check the box to send an email to a user when they are considered inactive, the user will receive an email notification. From this email, they will be able to reactivate their account.
 
 :::tip Tip
-Account owners can change a user's status between inactive and active using the “Login disabled due to inactivity” checkbox.
+**Account owners** can change a user's status between inactive and active using the “Login disabled due to inactivity” checkbox.
 
 You can locate this option when editing a user in the **Team** section, in the **Edit** tab. If you select the box, the user is marked as inactive and when it is deactivated, the user will be active.
 :::
@@ -58,7 +58,7 @@ By default, your sites' custom domains are already included once CORS is activat
 
 ## Content Delivery Token (JWT - JSON Web Token)
 
-This key or _secret_ is used by Modyo to sign user JWTs so that they can access [private content through the API] (/es/platform/content/public-api-reference.html #contenido -private).
+This key or _secret_ is used by Modyo to sign user JWTs so that they can access [private content through the API](en/platform/content/public-api-reference.html#private-content).
 
 :::warning Attention
 If you generate a new key, all requests for private content must go through Modyo. This is because JWTs signed by Modyo with the old key will no longer be valid.
@@ -107,9 +107,9 @@ If you have activated the option to force authentication, the next time the user
 
 ### Important Concepts
 * **Limit access:** Reduce the chances of a malicious actor gaining access to the system.
-* **Containment: ** Configure the system in a way that minimizes possible damage if it is breached by a malicious actor.
-* **Preparation and knowledge: ** Maintain backups and procedures to be prepared in the event of potential disasters.
-* **Trusted sources: ** Avoid implementing widgets or code from untrustworthy sources. Ensure that all dependencies loaded on the site come from reliable sources.
+* **Containment:** Configure the system in a way that minimizes possible damage if it is breached by a malicious actor.
+* **Preparation and knowledge:** Maintain backups and procedures to be prepared in the event of potential disasters.
+* **Trusted sources:** Avoid implementing widgets or code from untrustworthy sources. Ensure that all dependencies loaded on the site come from reliable sources.
 
 ### Local Vulnerabilities
 * Make sure that the computers of all administrator users are free of spyware, malware, or viruses.
@@ -162,6 +162,6 @@ In addition, administrators can generate tokens to access the platform's managem
 
 If you think you have identified a security vulnerability in Modyo, please help us by reporting the problem.
 
-Modyo provides secure and confidential channels for reporting security incidents through our [support center] (https://support.modyo.com/hc/es) or by sending an email to <a href="mailto:security@modyo.com"> security@modyo.com </a> .
+Modyo provides secure and confidential channels for reporting security incidents through our [support center](https://support.modyo.com/hc/en-us) or by sending an email to <a href="mailto:security@modyo.com">security@modyo.com</a>.
 
 Your collaboration is critical to maintaining the integrity and security of the platform.
