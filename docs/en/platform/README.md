@@ -39,7 +39,7 @@ Modyo is a digital experience platform that helps you create integrated digital 
 
 Modyo is designed for diverse profiles, from digital channel leaders to frontend and backend developers. Whatever your role, Modyo has something to offer.
 
-* **Digital Channel Leaders** is ideal for digital channel leaders looking to create integrated digital experiences for their consumers.
+* **Digital Channel Leaders** it is ideal for digital channel leaders looking to create integrated digital experiences for their consumers.
 * **Software Architects** who seek to create a clean architecture, from Microservices and APIs to microfrontends for web and mobile channels.
 * **Digital marketing experts** who require a content management system to create digital experiences for target groups.
 * **Content managers** who want to manage publications from their various digital channels in one place.
