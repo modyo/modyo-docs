@@ -9,7 +9,7 @@ The Modyo Connect managed service is activated through a contract or addendum se
 - Number of developers with access to code repositories.
 - Number of [micro frontends](/en/architecture/patterns/micro-frontend) that will be developed with the Modyo Command Line Interface (CLI).
 - Number of pre-productive environments that will be used in development.
-- Number of [microservices] (/es/architecture/patterns/microservice) to be developed.
+- Number of [microservices](/en/architecture/patterns/microservice) to be developed.
 - Number of intermediate repositories that might be required in case of building shared artifacts, such as NPM packages or Java libraries for Maven or Gradle.
 - VPN links that must be activated to access business services.
 - Single Sign-On authentication requirements.
