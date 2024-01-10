@@ -14,7 +14,7 @@ When activating developer access you must consider:
 - GitHub users are added to the repository as “external”. Modyo cannot guarantee the security of this account, so each customer is responsible for having their developers activate additional security measures, such as the use of secure passwords and the control of existing tokens in each account.
 
 ### Steps to activate
-Create a request ticket at the [Modyo Support Center] (https://support.modyo.com) stating:
+Create a request ticket at the [Modyo Support Center](https://support.modyo.com) stating:
 - The developer's GitHub user (if you don't have one, you'll need to create one first).
 - Name and email of the developer.
 - Whether or not the developer is authorized to request changes to the components of the service.
