@@ -27,7 +27,7 @@ Urgent tickets require justification and may be limited depending on the support
 For efficient access, we request the creation of an account using the corporate email associated with the Modyo Enterprise Cloud contract. To facilitate communication, we recommend including all parties involved in the ticket, using the CC field of the request form.
 
 
-:: :tip Planning
+:::tip Planning
 We recommend planning requirement tickets in advance, considering periods of high demand. Anticipation helps ensure adequate response times.
 :::
 
