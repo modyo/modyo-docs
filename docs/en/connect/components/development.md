@@ -7,7 +7,7 @@ search: true
 The development components include all the tools and accesses necessary for a team of developers to collaborate and work securely on [micro frontends](/en/architecture/patterns/micro-frontend) and [microservices](/en/architecture/patterns/microservice) initiatives.
 
 ## Developer Access
-Developer Access is the starting point for starting to use Modyo Connect services. Once enabled, the developer can interact with the [created repositories] (#repositorio -de-code) in the version control system and the [Modyo Support Center] (https://support.modyo.com) to activate the rest of the services. In addition, developer access grants permissions to access cloud systems, metrics, monitoring and logs.
+Developer Access is the starting point to begin using Modyo Connect services. Once enabled, the developer can interact with the [created repositories](#code-repository) in the version control system and the [Modyo Support Center](https://support.modyo.com) to activate the rest of the services. In addition, developer access grants permissions to access cloud systems, metrics, monitoring and logs.
 
 When activating developer access you must consider:
 - The GitHub account must have two-factor authentication enabled, otherwise it will not comply with Modyo's security policy and you will not have access to the repositories.
