@@ -18,7 +18,7 @@ Container capacity is calculated based on estimated traffic to the system in pro
 
 ### Requirement ticket
 
-Request management is done through the [Modyo Support Center] (https://support.modyo.com), by creating requirement tickets and completing the instructions indicated therein.
+Request management is done through the [Modyo Support Center](https://support.modyo.com), by creating requirement tickets and completing the instructions indicated therein.
 
 Once the ticket is created, it is assigned a priority, unique identifier and a URL to review the status of the request or answer questions that the Modyo SRE team may have.
 Requirement tickets, once entered, are reviewed before being accepted and assigned to an SRE. The length of this process depends on the demand and availability of the equipment.
