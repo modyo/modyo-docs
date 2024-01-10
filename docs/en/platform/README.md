@@ -52,6 +52,6 @@ For Modyo Platform support, visit the [official support site](https://support.mo
 
 ### Requirements for using Modyo
 
-To get started, you only need a compatible web browser. Modyo is compatible with the latest versions of Google Chrome, Firefox and Microsoft Edge. The entire product interface can be accessed through its web interface.
+To get started, you just need a compatible web browser. Modyo is compatible with the latest versions of Google Chrome, Firefox and Microsoft Edge. The entire product interface can be accessed through its web interface.
 
 We're excited to join you on this digital adventure with Modyo!
