@@ -56,4 +56,4 @@ Modyo and its customers share responsibility for safety and operation, clearly d
 
 Service users, architects, technical leaders and developers are responsible from design to deployment and execution of the solution, so they are primarily responsible for ensuring the resilience, scalability and security of what is delivered.
 
-The SRE team, responsible for operating the service, ensures the implementation of the infrastructure, defines security standards and ensures high availability, following the principles of [AWS Well Architected Framework] (https://aws.amazon.com/architecture/well-architected/).
+The SRE team, responsible for operating the service, ensures the implementation of the infrastructure, defines security standards and ensures high availability, following the principles of [AWS Well Architected Framework](https://aws.amazon.com/architecture/well-architected/).
