@@ -4,7 +4,7 @@ search: true
 
 # Architecture
 
-Modyo operates its critical systems in the [Amazon AWS] cloud (https://aws.amazon.com), where it has more than 12 years of experience as an Advanced Technology Partner. This experience, backed by certified personnel, ensures the continuity, performance and security of deployments.
+Modyo operates its critical systems in [Amazon AWS](https://aws.amazon.com) cloud, where it has more than 12 years of experience as an Advanced Technology Partner. This experience, backed by certified personnel, ensures the continuity, performance, and security of deployments.
 
 In 2019 and 2021, Amazon AWS recognized Modyo as the Technology Partner of the Year for Chile and Peru. Modyo was the first company in Latin America to become an AWS Independent Software Vendor (ISV).
 
