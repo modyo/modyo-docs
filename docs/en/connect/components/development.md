@@ -31,7 +31,7 @@ The source code repositories are implemented on top of Modyo's GitHub Enterprise
 
 
 ### Steps to activate
-Create a request ticket at the [Modyo Support Center] (https://support.modyo.com) stating:
+Create a request ticket at the [Modyo Support Center](https://support.modyo.com) stating:
 - Type of repository: micro frontend, microservice, or intermediary artifact.
 - Repository name: Modyo will apply an internal naming standard with prefixes and/or suffixes depending on the type of repository.
 
