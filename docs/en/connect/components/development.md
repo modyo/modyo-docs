@@ -39,7 +39,7 @@ Create a request ticket at the [Modyo Support Center](https://support.modyo.com)
 ## Continuous Integration
 Continuous integration automates common processes in the software development cycle, such as code inspection, dependency review, artifact packaging, and deployment. To do this, Modyo uses the continuous integration systems of GitHub Enterprise and Amazon.
 All activities related to the development cycle, such as inspections, reviews and generation of intermediate artifacts, as well as automations related to
-[micro frontends] (/en/architecture/patterns/micro-frontend), such as deploying to the Modyo platform using the Modyo CLI, are done in GitHub Actions.
+[micro frontends](/en/architecture/patterns/micro-frontend), such as deploying to the Modyo platform using the Modyo CLI, are done in GitHub Actions.
 
 Activities related to the generation of container-based artifacts and their deployments to AWS ECS are performed using AWS CodePipeline.
 
