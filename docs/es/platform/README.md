@@ -14,9 +14,6 @@ version: 9.2
 
 La documentación de Modyo la hemos diseñado para ser navegada en forma de guía (de principio a fin) o para resolver una consulta específica. Los contenidos dentro de la documentación se encuentran relacionados entre sí para facilitar el entendimiento de éstos.
 
-:::tip Versiones anteriores
-La documentación en este sitio aplica a la última versión ( {{ $frontmatter.version }} ). Para acceder a la documentación de las versiones anteriores (8.2) [haz click aquí](/assets/pdf/Modyo82Docs.pdf). 
-:::
 
 ### ¿Qué es Modyo?
 

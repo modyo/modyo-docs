@@ -14,10 +14,6 @@ version: 9.2
 
 We have designed Modyo's documentation to be navigated in the form of a guide (from start to finish) or to solve a specific query. The contents within the documentation are linked to each other to facilitate their understanding.
 
-:::tip Previous Versions
-The documentation on this site applies to the latest version ( {{ $frontmatter.version }} ). To access documentation for previous versions (8.2) [click here](/assets/pdf/Modyo82Docs.pdf). 
-:::
-
 ### What is Modyo?
 
 Modyo is a digital experience platform that powers solutions for digital customer interaction, accelerating web and mobile development in a secure way, and allowing you to unify native and third-party applications in a single area to manage your digital channels.

@@ -25,6 +25,7 @@ export default {
 @require '../styles/wrapper.styl'
 
 .page
+  padding-top 2.3rem
   padding-bottom 2rem
   display block
   h1
