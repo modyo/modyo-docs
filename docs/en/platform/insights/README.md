@@ -14,4 +14,4 @@ Each view of **Modyo Insights** has three main sections:
 - Comparative chart
 - Specific elements
 
-You can also filter the data associated with the view with the three filters at the top right of the screen, where you can filter by date and 2 other values, depending on the context.
+You can also filter the data associated with the view using the three filters at the top right of the screen, you can filter by date and 2 other values, depending on the context.
