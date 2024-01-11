@@ -6,7 +6,7 @@ version: 9.2
 
 # Welcome to Modyo
 
-Hello!
+👋 Hello! 
 
 We're excited to have you on board and exploring our platform.
 
