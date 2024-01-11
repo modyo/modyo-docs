@@ -14,7 +14,7 @@ At the top of the view, you will find the publication status of the menu:
 
 - **Published:** This status appears after you have made a publication and when the editable and published versions are the same.
 - **Pending changes:** This status appears if there is already a published version, but there are changes pending publication in your editable version.
-- **In Review:** This status appears when [Team Review] (/en/platform/core/key-concepts.html) is enabled and the editable version has been submitted for review.
+- **In Review:** This status appears when [Team Review](/en/platform/core/key-concepts.html) is enabled and the editable version has been submitted for review.
 - **Approved:** This status appears when [Team Review] (/en/platform/core/key-concepts.html) is enabled and if the item's review conditions have been met. When it is in this state, a template can now be published.
 
 At the top right, you can find the last publication date and the available actions:
