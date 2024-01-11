@@ -70,7 +70,7 @@ Here are some key terms in Modyo and their definitions:
 
 #### General
 
-* [**CORS:**](/en/platform/core/security.html #access-control-cross-origin-resource-sharing-cors) Cross Origin Resource Sharing - Allows you to share resources in different domains.
+* [**CORS:**](/en/platform/core/security.html#access-control-cross-origin-resource-sharing-cors) Cross Origin Resource Sharing - Allows you to share resources in different domains.
 * **Account:** Access point to all Modyo features.
 * [**Team:**](/en/platform/core/roles.html#team) All users with access to the Modyo admin. They can be assigned roles and permissions.
 * [**Integrations:**](/en/platform/core/integrations) Way to delegate or federate the process of initiating authentication of users or team members.
