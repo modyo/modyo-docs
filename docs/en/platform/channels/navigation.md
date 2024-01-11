@@ -65,7 +65,7 @@ Your menu is currently public but it is not being called. You need to use a temp
 - **Save:** Save all menu changes.
 - **Submit for review:** Change the menu status to “Awaiting review”. In this state, you are still making changes, but each change will be notified via email to the assigned reviewers.
 - **Reject:** Returns to the “In Editing” status, notifying reviewers that the item was rejected.
-- **Publish:** Once the menu has been approved, you can go to the [joint publication] view (/en/platform/core/key-concepts.html#joint-review-and-publication) to publish your navigation.
+- **Publish:** Once the menu has been approved, you can go to the [joint publication](/en/platform/core/key-concepts.html#joint-review-and-publication) view, to publish your navigation.
 
 In the right side section, you will see a bar that changes according to the item selected in the main area. In this section are the following options:
 
