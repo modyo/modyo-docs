@@ -87,7 +87,7 @@ On the right side section, you can see a bar that changes according to the item 
         - sms:+569-123-45678,9-123-45678
         - sms:+569-123-45678,9-123-45678?body=hello%20there&amp;param1=a%20value
     - Email: Generates a link with the `mailto` URI. Examples:
-        - mailto:info@example.com?subject=subject&amp;cc=cc@example.com
+        - mailto:info@example.com?subject=subject&cc=cc@example.com
 - **Open in a new tab:** Adds the attribute `target='blank'` to the HTML element of the menu item, so that when you click it, it opens in a new tab.
 - **Private:** Makes the selected item visible only when there is an active user session on the site.
 - **Segments:** If there are segments created, you can also segment this item so that users can see this menu item only when they have an active session and that they are also within the selected segments.
