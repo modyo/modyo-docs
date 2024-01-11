@@ -41,7 +41,7 @@ By default, up to 20 backups are saved so that the twenty most recent backups ca
 For more information on versioning, check out the [versioning](/en/platform/core/key-concepts.html#versioning) section.
 :::
 
-**Activity/Feedback:** It is only enabled if you have [team review] (/en/platform/core/key-concepts.html) enabled. When you click it, a sidebar opens with the history of activity and menu comments.
+**Activity/Feedback:** It is only enabled if you have [team review](/en/platform/core/key-concepts.html) enabled. When you click it, a sidebar opens with the activity history and menu comments.
 
 At the bottom of the sidebar, there is a text box where you can type a comment. Next to each activity, you can click _view detail_ to show the full information for that activity log.
 
