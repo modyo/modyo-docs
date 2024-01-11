@@ -3,7 +3,7 @@ search: true
 title: Aprende a usar modyo
 ---
 
-# Aprende a usar modyo
+# Aprende a usar Modyo
 
 Modyo es una plataforma que te ayudara a crear experiencias digitales personalizadas de forma segura, rápida y unificada.
 
