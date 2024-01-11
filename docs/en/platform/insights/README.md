@@ -10,7 +10,7 @@ For any company or institution, it is important to know what is happening in its
 
 Each view of **Modyo Insights** has three main sections:
 
-- General Accountants
+- General counters
 - Comparative chart
 - Specific elements
 
