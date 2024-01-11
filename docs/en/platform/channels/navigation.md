@@ -36,7 +36,7 @@ By default, you start by comparing the published version with the editable versi
 :::tip Tip
 Every time you publish a version, the version that was published becomes a backup version.
 
-By default, up to twenty backups are saved so that the twenty most recent backups can be compared, restored, and rolled back.
+By default, up to 20 backups are saved so that the twenty most recent backups can be compared, restored, and rolled back.
 
 For more information on versioning, check out the [versioning](/en/platform/core/key-concepts.html#versioning) section.
 :::
