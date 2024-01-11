@@ -294,7 +294,7 @@ You should keep in mind that admin users can only execute actions through the Mo
 
 Finally, you will now see that in the “Manage Access Tokens” section, the application (“My application”) will appear, along with a value highlighted in red which corresponds precisely to the _access token_, and which you will then use to perform authenticated _requests_ in Modyo API.
 
-Well done! Now that you have created your token, you can start benefiting from the wide range of options provided by the Modyo Administration API. For example, if you want to see a list of available roles for admin users, you can perform a _request_ to the `/api/admin/roles` _endpoint_, including in the HTTP _header_ the value of the previously obtained _access token_ for the _"Authorization: Bearer"_ field:
+Done! Now that you have created your token, you can start benefiting from the wide range of options provided by the Modyo Administration API. For example, if you want to see a list of available roles for admin users, you can perform a _request_ to the `/api/admin/roles` _endpoint_, including in the HTTP _header_ the value of the previously obtained _access token_ for the _"Authorization: Bearer"_ field:
 
 ```shell
 curl -X GET https://example.modyo.com/api/admin/roles -H 'Authorization: Bearer
