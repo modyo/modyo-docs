@@ -22,7 +22,7 @@ You will see five boxes that will represent the number of items created, edited,
 
 **Created**: Number of times an entry, page or widget is created.
 
-**Edited**: Number of times the "save" action is used on entries, pages, navigation, widgets and templates.
+**Edited**: Number of times the "save" action is used on entries, pages, navigation, widgets, and templates.
 
 **Sent to Review**: Number of times in a place or space with the team review activated, an item is sent for review.
 
