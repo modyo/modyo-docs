@@ -29,7 +29,7 @@ You can preview the changes as a user without a session or a user with a Modyo s
 The menu you created will only be displayed on a page if you add it through a published template. Otherwise, the menu will not be requested and will not appear on the page.
 :::
 
-**Differences:** Click here to access the [differences view] (/en/platform/core/key-concepts.html#reversing-a-change), in which you can compare the changes between different versions of your menu.
+**Differences:** Click here to access the [differences view](/en/platform/core/key-concepts.html#reversing-a-change), in which you can compare the changes between different versions of your menu.
 
 By default, you start by comparing the published version with the editable version. Use the version selectors to compare with backup versions.
 
