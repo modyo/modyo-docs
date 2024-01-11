@@ -101,7 +101,7 @@ The first lines encapsulated by <span v-pre>{{ }} or {% %}</span> belong to Liqu
 The following list describes the important variables for the menu:
 
 - menu: This variable takes the menu with identifier `main` within Modyo Platform -> Navigation.
-- items_to_show: Take the menu items that are visible.
+- items_to_show: Takes the menu items that are visible.
 - active: Used to add a CSS class called `active` in case this item is activated.
 - children_to_show: If the current item has children, it takes the items in this variable and displays them as the second level in the menu hierarchy.
 
