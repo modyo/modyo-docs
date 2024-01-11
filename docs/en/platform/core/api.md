@@ -357,7 +357,7 @@ Remember that you will only be able to access the same sections of the API that 
 
 ## Pagination
 
-When it comes to APIs, sometimes the number of results of a query is too high to be human-readable. In order to improve the understanding of this data, you can use **pagination**.
+When it comes to APIs, at times, the number of results of a query is too high to be human-readable. In order to improve the understanding of this data, you can use **pagination**.
 
 Imagine that we now want to review the complete list of mails delivered to customers (`message deliveries`) of a particular mail campaign (`campaign`) and a specific campaign delivery (`campaign delivery`). With the data obtained from the _requests_ in the previous sections, we can use the _endpoint_ that lists the _message deliveries_, passing in the corresponding `campaign_id` and` delivery_id` as parameters:
 
