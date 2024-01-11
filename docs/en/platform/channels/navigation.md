@@ -139,7 +139,7 @@ When you enter the Templates section of your site in Modyo Platform, you can cli
 
 ### List menu
 
-Next we have a menu that also calls `main`, but now in the form of a list unlike the general snippet that uses a dropdown:
+Next we have a menu that also calls `main`, but now in the form of a list, unlike the general snippet that uses a dropdown:
 
 ```html
 {% assign menu = menus['main'] %}
