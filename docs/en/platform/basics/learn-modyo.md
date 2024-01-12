@@ -52,4 +52,4 @@ In addition to all the courses you have here, you can always find information on
 
 **[Modyo Community:](https://www.modyo.com/community)** in this section we have practical use cases, frequently asked questions from our users and pre-recorded webinars so you can go beyond theory and find the solution to everyday problems of use.
 
-** [Webinars:] (https://es.modyo.com/webinars) :** Every month, all our users receive invitations to attend live sessions with our entire community, you can ask questions and resolve them with our specialists.
+**[Webinars:](https://modyo.com/webinars):** Every month, all our users receive invitations to attend live sessions with our entire community, you can ask questions and get solutions from our specialists.
