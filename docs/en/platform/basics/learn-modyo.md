@@ -39,7 +39,7 @@ For users who already have basic knowledge of using Modyo, these courses provide
 Users who already have knowledge and experience both in creating sites in Modyo and skills in developing web applications, can find useful resources in these advanced courses:
 
 <a href="https://help.modyo.com/es/articles/6873935-crea-microfrontends-con-el-cli-de-modyo" target="_blank">
- <img src="https://cdn.modyo.cloud/uploads/9c9a6fe1-62bb-4d5b-a526-7a7d8cfa5a72/original/ES-06-CLI.png" width="500" alt="Microfrontends con el CLI" />
+    <img src="https://cdn.modyo.cloud/uploads/9c9a6fe1-62bb-4d5b-a526-7a7d8cfa5a72/original/ES-06-CLI.png" width="500" alt="Microfrontends con el CLI" />
 </a>
 
 <a href="https://help.modyo.com/es/articles/6873957-desarrollo-multiplataforma-con-pwas" target="_blank">
