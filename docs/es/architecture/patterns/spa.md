@@ -33,6 +33,4 @@ Para implementar una SPA con Modyo debes usar las capacidades de [Modyo Connect]
 
 Los cambios son gestionados directamente por el repositorio de código del servicio y mediante el uso de automatizaciones puedes realizar despliegues e invalidaciones de caché al momento de incorporar o mezclar los cambios.
 
-:::tip Modyo 10
-En Modyo 10, la futura versión de la plataforma, habrá soporte directo desde la consola de administración web para el despliegue de módulos estáticos en la CDN. Esto proporcionará un sistema de hospedaje estático para trabajar con SPAs y otro tipo de librerías, dejando a la plataforma en control de los despliegues y las invalidaciones de caché.
-:::
+Desde la consola de administración web tienes soporte directo para el despliegue de módulos estáticos en la CDN. Esto proporciona un sistema de hospedaje estático para trabajar con SPAs y otro tipo de librerías, dejando a la plataforma en control de los despliegues y las invalidaciones de caché.

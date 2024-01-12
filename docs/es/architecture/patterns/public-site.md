@@ -168,10 +168,7 @@ La [internacionalización](/es/architecture/patterns/internationalization) en un
 
 Es importante destacar que al implementar idiomas mediante la clonación de sitios, los contenidos de los espacios no se duplican, ya que estos sí admiten varios idiomas. A la vez, es relevante mencionar que cualquier técnica basada en JavaScript o dinámica para cambiar el idioma de un sitio sin seguir nuestras recomendaciones puede afectar diversos atributos mencionados en esta guía, como la accesibilidad o la indexación.
 
-:::tip Modyo 10
-La próxima versión de Modyo incluirá soporte mejorado para la internacionalización, lo que permitirá trabajar con varios idiomas en un mismo sitio y cambiar de idioma dinámicamente sin la necesidad de duplicar esfuerzos.
-:::
-
+Modyo cuenta con soporte avanzado para la internacionalización, lo que te permite trabajar con varios idiomas en un mismo sitio y cambiar de idioma dinámicamente sin la necesidad de duplicar esfuerzos.
 
 ### Búsqueda
 En un sitio público, la búsqueda de contenido es un elemento fundamental. Para ello, la plataforma dispone de un buscador interno que indexa el contenido del sitio y proporciona una interfaz sencilla para mostrar los resultados. Este buscador utiliza criterios internos para evaluar la relevancia de los resultados, basándose en prácticas comunes de indexación como priorizar títulos sobre descripciones, frecuencia de palabras clave, entre otros.
