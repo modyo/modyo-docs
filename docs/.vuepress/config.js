@@ -46,7 +46,7 @@ module.exports = {
               label: "English",
               nav: [{
                       text: "Platform",
-                      link: "/en/platform/"
+                      link: "/en/platform/basics/"
                   },
                   {
                       text: "Dynamic",
@@ -72,6 +72,7 @@ module.exports = {
                       collapsable: true,
                       children: [
                           "/en/platform/basics/",
+                          "/en/platform/basics/learn-modyo",
                           "/en/platform/basics/key-concepts",
                       ],
                   },
@@ -323,7 +324,7 @@ module.exports = {
               label: "Español",
               nav: [{
                       text: "Plataforma",
-                      link: "/es/platform/"
+                      link: "/es/platform/basics/"
                   },
                   {
                       text: "Dynamic",
@@ -348,7 +349,8 @@ module.exports = {
                           path: "/es/platform/basics/",
                           collapsable: true,
                           children: [ 
-                            ["/es/platform/basics/", "Aprende Modyo"],
+                            ["/es/platform/basics/", "Bienvenido a Modyo"],
+                            ["/es/platform/basics/learn-modyo", "Aprende Modyo"],
                             ["/es/platform/basics/key-concepts", "Conceptos claves"], 
                           ],
                       },
