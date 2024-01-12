@@ -2,14 +2,17 @@
 search: true
 ---
 
-# Gestor de Archivos
+# Media
+
+:::tip Tip
+- En `Modyo 9` este espacio se llama **Gestor de archivos**. Si migras de Modyo 9 a Modyo 10 todos los assets se conservan y podrás elegir previamente a cuál espacio moverlos.
+:::
 
 Este espacio te permite cargar, organizar y gestionar tus archivos de forma simple y eficiente.
 
 - En `Modyo 9` este espacio se llama **Gestor de archivos**: Al migrar a Modyo 10 todos los assets se conservan y podrás elegir previamente a cuál espacio moverlos.
 
-- A partir de `Modyo 10` este espacio se denomina **Media**: Aquí (a diferencia del Gestor de Archivos en Modyo 9), los permisos de edición y eliminación de imágenes se llevan a cabo a través de grupos. De esta manera, un grupo puede tener permisos para ver y usar assets, pero no podrá modificarlos o eliminarlos.
-
+En Media puedes asignar permisos de edición y eliminación de imágenes a través de grupos. De esta manera, un grupo puede tener permisos para ver y usar assets, pero no podrá modificarlos o eliminarlos.
 Puedes cargar diversos tipos de media a este espacio, considerando las siguientes restricciones de tamaño por archivo:
 
 
@@ -60,15 +63,6 @@ Para cargar un archivo en Modyo, elige una de las siguientes opciones:
 
 #### En la sección dedicada para administrar archivos.
 
-`Modyo 9`
-1. En el menú lateral selecciona **Content**.
-1. Haz click en **Gestor de archivos**.
-1. Da click en el botón **+ Nuevo Asset**.
-1. Arrastra el archivo o haz click en el recuadro de carga para abrir una ventana de búsqueda.
-1. Agrega etiquetas al archivo si lo deseas.
-1. Da click en **Upload** para confirmar.
-
-`Modyo 10`
 1. En el menú lateral da click en el ícono de **Content**.
 1. Selecciona un espacio.
 1. En el menú lateral da click en **Media**.
