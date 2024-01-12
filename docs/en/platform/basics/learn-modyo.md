@@ -14,7 +14,7 @@ Here you'll find detailed tutorials to help you understand and start using Modyo
 Take as many courses as you need according to your role, or take them all to become a true Modyo specialist.
 
 ## Basic Level
-The basic level courses are for people who are learning to use Modyo for the first time, we recommend that you always take the Introduction to Modyo first before continuing with the other courses
+The basic level courses are for people who are learning to use Modyo for the first time, we recommend that you always take the Introduction to Modyo course first, before moving on to other courses
 
 <a href="https://help.modyo.com/es/articles/6871283-introduccion-a-modyo" target="_blank">
     <img src="https://cdn.modyo.cloud/uploads/07374707-2f79-40ad-ad1f-6f69f3b9bf9a/original/ES-01-intro-modyo.png" width="500" alt="Introducción a Modyo" />
