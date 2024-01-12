@@ -43,7 +43,7 @@ Users who already have knowledge and experience both in creating sites in Modyo 
 </a>
 
 <a href="https://help.modyo.com/es/articles/6873957-desarrollo-multiplataforma-con-pwas" target="_blank">
- <img src="https://cdn.modyo.cloud/uploads/267c3da7-4ac3-4061-b9cf-d145fede3317/original/ES-05-PWA.png" width="500" alt="Apps Multiplataforma con PWA" />
+    <img src="https://cdn.modyo.cloud/uploads/267c3da7-4ac3-4061-b9cf-d145fede3317/original/ES-05-PWA.png" width="500" alt="Apps Multiplataforma con PWA" />
 </a>
 
 ## Additional Resources
