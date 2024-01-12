@@ -11,7 +11,7 @@ Here you'll find detailed tutorials to help you understand and start using Modyo
 
  You can take our new courses independently and without the need for registration. Choose according to your level of knowledge, and advance at your own pace.
 
-Take the courses you need according to your needs according to the role you play or take them all to become a true Modyo specialist.
+Take as many courses as you need according to your role, or take them all to become a true Modyo specialist.
 
 ## Basic Level
 The basic level courses are for people who are learning to use Modyo for the first time, we recommend that you always take the Introduction to Modyo first before continuing with the other courses
