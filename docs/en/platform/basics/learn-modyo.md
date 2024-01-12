@@ -17,11 +17,11 @@ Take the courses you need according to your needs according to the role you play
 The basic level courses are for people who are learning to use Modyo for the first time, we recommend that you always take the Introduction to Modyo first before continuing with the other courses
 
 <a href="https://help.modyo.com/es/articles/6871283-introduccion-a-modyo" target="_blank">
- <img src="https://cdn.modyo.cloud/uploads/07374707-2f79-40ad-ad1f-6f69f3b9bf9a/original/ES-01-intro-modyo.png" width="500" alt="Introducción a Modyo" />
+    <img src="https://cdn.modyo.cloud/uploads/07374707-2f79-40ad-ad1f-6f69f3b9bf9a/original/ES-01-intro-modyo.png" width="500" alt="Introducción a Modyo" />
 </a>
 
 <a href="https://help.modyo.com/es/articles/6872056-introduccion-a-la-gestion-de-contenidos" target="_blank">
- <img src="https://cdn.modyo.cloud/uploads/54c82443-84d7-4bba-b19d-909b89192d59/original/ES-02-content-management.png" width="500" alt="Gestion de Contenidos" />
+    <img src="https://cdn.modyo.cloud/uploads/54c82443-84d7-4bba-b19d-909b89192d59/original/ES-02-content-management.png" width="500" alt="Gestion de Contenidos" />
 </a>
 
 ## Intermediate Level
