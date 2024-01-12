@@ -9,7 +9,7 @@ Modyo is a platform that will help you create personalized digital experiences i
 
 Here you'll find detailed tutorials to help you understand and start using Modyo. These tutorials will guide you through every step of the creation process, from an introduction to Modyo's most important features to managing your content and creating a website.
 
- You can take our new courses independently and without the need for registration. Choose according to your level of knowledg,e and advance at your own pace.
+ You can take our new courses independently and without the need for registration. Choose according to your level of knowledge, and advance at your own pace.
 
 Take the courses you need according to your needs according to the role you play or take them all to become a true Modyo specialist.
 
