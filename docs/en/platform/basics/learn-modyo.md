@@ -28,11 +28,11 @@ The basic level courses are for people who are learning to use Modyo for the fir
 For users who already have basic knowledge of using Modyo, these courses provide them with a deeper view of the tool.
 
 <a href="https://help.modyo.com/es/articles/6849565-learning-path-creacion-de-sitios-web" target="_blank">
- <img src="https://cdn.modyo.cloud/uploads/7c8e3f90-8715-48ac-999d-3563932cd80c/original/ES-03-building-websites.png" width="500" alt="Desarrollo de sitios web" />
+    <img src="https://cdn.modyo.cloud/uploads/7c8e3f90-8715-48ac-999d-3563932cd80c/original/ES-03-building-websites.png" width="500" alt="Desarrollo de sitios web" />
 </a>
 
 <a href="https://help.modyo.com/es/articles/6873913-crea-microfrontends-con-el-widget-builder" target="_blank">
- <img src="https://cdn.modyo.cloud/uploads/dab8974d-7a2a-401c-b54a-f105c3b23cf4/original/Learning_path_04_Widget_builder_ES.png" width="500" alt="Microfrontends con el widget Builder" />
+    <img src="https://cdn.modyo.cloud/uploads/dab8974d-7a2a-401c-b54a-f105c3b23cf4/original/Learning_path_04_Widget_builder_ES.png" width="500" alt="Microfrontends con el widget Builder" />
 </a>
 
 ## Advanced Level
