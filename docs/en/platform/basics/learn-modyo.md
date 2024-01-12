@@ -25,7 +25,7 @@ The basic level courses are for people who are learning to use Modyo for the fir
 </a>
 
 ## Intermediate Level
-For users who already have basic knowledge of using Modyo, these courses provide them with a deeper view of the tool.
+For users who already have a basic knowledge of using Modyo, these courses provide them with a deeper view of the tool.
 
 <a href="https://help.modyo.com/es/articles/6849565-learning-path-creacion-de-sitios-web" target="_blank">
     <img src="https://cdn.modyo.cloud/uploads/7c8e3f90-8715-48ac-999d-3563932cd80c/original/ES-03-building-websites.png" width="500" alt="Desarrollo de sitios web" />
