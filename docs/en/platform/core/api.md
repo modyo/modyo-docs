@@ -600,6 +600,6 @@ This query gets the following results and displays them as a JSON:
 }
 ```
 
-If you want to know the administrator records, change the user type to: `user_type=AdminUser`.
+If you want to access the administrator records, change the user type to: `user_type=AdminUser`.
 
 To learn more about how to query Content information via API, see our guide and examples at [API](/en/platform/content/public-api-reference).
