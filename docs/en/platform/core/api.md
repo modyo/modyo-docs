@@ -481,7 +481,7 @@ As you can see, the ``message_deliveries`` object within the JSON contains a lis
 
 The `meta` object contains the information you need to be able to traverse a large number of records, through small groups of records or pages.
 
-The 4 attributes are the following:
+The 4 attributes are:
 
 * `total_entries`: The total number of items of the requested resource
 * `per_page`: The number of items that will be delivered per page
