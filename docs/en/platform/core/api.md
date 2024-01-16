@@ -490,7 +490,7 @@ The 4 attributes are:
 
 In the previous example, aside from having the first 10 records, there are a total of 1078 entries, grouped into 108 pages. If you want to obtain the second page of this data, you need to add the `page` parameter with a value of 2, invoking the URL again. To modify the number of records per page, add the `per_page` parameter with the desired value.
 
-For example, let's get page 30, but this time with the _message deliveries_ grouped into pages of 5 elements:
+For example, if you want to get page 30, but this time with the _message deliveries_ grouped into pages of 5 elements:
 
 ```shell script
 curl -X GET https://test.modyo.com/api/admin/messaging/message_deliveries?campaign_id=15&delivery_id=29&page=30&per_page=5  -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
