@@ -483,7 +483,7 @@ The `meta` object contains the information you need to be able to traverse a lar
 
 The 4 attributes are:
 
-* `total_entries`: The total number of items of the requested resource
+* `total_entries`: The total number of items of the queried resource
 * `per_page`: The number of items that will be delivered per page
 * `current_page`: The current data window
 * `total_pages`: The total number of pages or groups of elements that we can request.
