@@ -59,7 +59,7 @@ This option is irreversible, so you must be completely sure when executing this 
 
 Modyo allows you to switch languages and lexicons according to the country where you need them. Switching is useful in case you need to work with customized content and users with different languages.
 
-The default language of a space is defined when first creating a space and cannot be modified, but in this section you can add as many secondary languages as needed. You just have to select one from the list, add it and save the changes. Adding a secondary language places a language selector next to the page title of any entries you edit in order to switch between entry languages.
+The default language of a space is defined at the time of creating the space and cannot be changed, but in this section you can add as many secondary languages as you need. Just select one from the list, add it and save the changes. After adding a secondary language, when you modify an entry, you will notice that a language selector will appear next to the page title.
 
 :::tip Tip
 You can learn how to select one of the available languages of an entry in the following sections: [Public API](/en/platform/content/public-api-reference.html#filters), [Javascript SDK](/en/platform/content/public-api-reference.html#sdk-de-javascript) and in [Liquid SDK](/en/platform/content/public-api-reference.html#filter-entries)
