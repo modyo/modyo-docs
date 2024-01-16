@@ -55,7 +55,7 @@ The last option is to eliminate the space. This option allows you to permanently
 This option is irreversible, so you must be completely sure when executing this action. When you press the delete button, the system will ask you for the name of the space. You must enter the textual name of the space you are deleting in order to execute the action. Once the action is confirmed, you will not be able to access the space or its elements again.
 :::
 
-### Locales
+### Localization
 
 Modyo allows language and vocabulary changes by country, which is useful when you need to publish content in different languages.
 
