@@ -359,7 +359,7 @@ Remember that you will only be able to access the same sections of the API that 
 
 When it comes to APIs, at times, the number of results of a query is too high to be human-readable. In order to improve the understanding of this data, you can use **pagination**.
 
-Imagine that we now want to review the complete list of mails delivered to customers (`message deliveries`) of a particular mail campaign (`campaign`) and a specific campaign delivery (`campaign delivery`). With the data obtained from the _requests_ in the previous sections, we can use the _endpoint_ that lists the _message deliveries_, passing in the corresponding `campaign_id` and` delivery_id` as parameters:
+If you want to review the full list of `message deliveries` to customers for a given email `campaign` and a specific `campaign delivery` execution, with the data obtained in the previous sections _requests_ 's, you can use the _endpoint_ that lists the _message deliveries_, passing as parameters the corresponding `campaign_id` and `delivery_id`:
 
 ```shell script
 curl -X GET https://test.modyo.com/api/admin/messaging/message_deliveries?campaign_id=15&delivery_id=29  -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
