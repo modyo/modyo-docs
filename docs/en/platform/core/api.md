@@ -488,7 +488,7 @@ The 4 attributes are:
 * `current_page`: The current data window
 * `total_pages`: The total number of pages or groups of elements that you can request.
 
-In the example above, apart from having the first 10 records, there are a total of 1078 entries, grouped into 108 pages. If you want to get the second page of this data, you need to add the `page` parameter with a value equal to 2 to the cURL call. To modify the number of records per page, add the `per_page` parameter with the desired value.
+In the previous example, aside from having the first 10 records, there are a total of 1078 entries, grouped into 108 pages. If you want to obtain the second page of this data, you need to add the `page` parameter with a value of 2, invoking the URL again. To modify the number of records per page, add the `per_page` parameter with the desired value.
 
 For example, let's get page 30, but this time with the _message deliveries_ grouped into pages of 5 elements:
 
