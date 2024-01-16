@@ -534,7 +534,7 @@ Finally, the API will always return the first page (`current_page: 1`) of resour
 
 ## Logs
 
-With the Logs API you can get all the logs that happen inside Modyo Platform, you can choose between User or Administrator logs. If you want to consult the User logs, use:  
+With the Logs API you can obtain all the records that occur within Modyo Platform, you can choose between User or Administrator logs. If you want to consult User logs, use:
 
 ```shell script
 curl -X GET https://test.modyo.com/api/admin/logs?user_type=User"   -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
