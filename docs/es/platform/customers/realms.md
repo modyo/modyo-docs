@@ -264,16 +264,6 @@ Para más información sobre las integraciones consulta la sección de [Proveedo
 
 Modyo permite integrar con otros servicios y aplicaciones.
 
-### Zendesk
-
-Para integrar con Zendesk necesitas:
-
-- Nombre de la integración
-- Shared secret de Zendesk
-- URL de la integración: e.g. mysubdomain.zendesk.com
-
-`solo disponible en Modyo 10`
-
 ### Salesforce
 
 Una integración de Salesforce con Modyo te permite vincular tus usuarios de Modyo con tus contactos de Salesforce.
