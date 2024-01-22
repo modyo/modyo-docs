@@ -10,8 +10,6 @@ search: true
 
 Este espacio te permite cargar, organizar y gestionar tus archivos de forma simple y eficiente.
 
-- En `Modyo 9` este espacio se llama **Gestor de archivos**: Al migrar a Modyo 10 todos los assets se conservan y podrás elegir previamente a cuál espacio moverlos.
-
 En Media puedes asignar permisos de edición y eliminación de imágenes a través de grupos. De esta manera, un grupo puede tener permisos para ver y usar assets, pero no podrá modificarlos o eliminarlos.
 Puedes cargar diversos tipos de media a este espacio, considerando las siguientes restricciones de tamaño por archivo:
 
