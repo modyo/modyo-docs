@@ -265,14 +265,6 @@ For more information on integrations, see the [Identity Providers] section (/en/
 
 Modyo allows you to integrate with other services and applications.
 
-#### Zendesk
-
-To integrate with Zendesk you need:
-
-- Integration name
-- Zendesk Shared Secret
-- Integration URL: e.g. mysubdomain.zendesk.com
-
 ### OAuth client
 
 Use an authentication client to send your integration access tokens to your resources. You need the following values:
