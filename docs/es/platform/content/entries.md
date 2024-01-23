@@ -277,6 +277,7 @@ Para habilitar que una entrada sea visible para un grupo determinado de usuarios
 1. Marca la opción de contenido privado
 1. Habilita la segmentación
 1. Selecciona el segmento de usuarios al que se dirige la entrada.
+1. Da click en **Guardar**.
 
 Para crear un segmento en específico, revisa la sección Segmentos.
 
