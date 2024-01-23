@@ -5,6 +5,13 @@ search: true
 # Notas del release
 
 ## 9.2
+### 9.2.56 - 23 de enero de 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Actualiza todos los links para la documentacion correspondiente a la versión
+* Corrección y mejoras en la inactividad de usuarios administradores
+
+
 ### 9.2.55 - 08 de enero de 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
