@@ -5,6 +5,13 @@ search: true
 # Notas del release
 
 ## 9.2
+### 9.2.56 - 23 de enero de 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Actualización de enlaces para la documentación asociada a la versión
+* Correcciones y mejoras en la gestión de inactividad de usuarios administradores
+
+
 ### 9.2.55 - 08 de enero de 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
@@ -171,7 +178,7 @@ search: true
 ### 9.2.42 - 28 de julio de 2023
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* Corrige error en flujo de autenticación con identity providers 
+* Corrige error en flujo de autenticación con identity providers
 
 ### 9.2.41 - 26 de julio de 2023
 <Badge text="Core" type="core" vertical="middle"/>
@@ -188,7 +195,7 @@ search: true
 * Mejora comportamiento de la URL post login de los reinos, ahora la URL queda como redirección por defecto y por una opción se puede forzar a llegar siempre a esa URL
 * Agrega FPay como medio de pago soportado
 * Mejoras en segmentos
-  
+
 
 ### 9.2.40 - 14 de julio de 2023
 <Badge text="Customers" type="customers" vertical="middle"/>
