@@ -5,6 +5,25 @@ search: true
 # Release Notes
 
 ## 9.2
+### 9.2.56 - January 23, 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Updates links for the documentation related to the version
+* Fixes and improvements in the handling of administrator user inactivity
+
+### 9.2.55 - January 08, 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Adds a security fix, therefore, it is highly recommended to update to this version
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Adds the meta.tags parameter to content filtering through query strings
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Adds a new liquid content filter called `by`
+
 ### 9.2.54 - November 30, 2023
 <Badge text="Core" type="core" vertical="middle"/>
 
@@ -157,7 +176,7 @@ search: true
 ### 9.2.42 - July 28, 2023
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* Fixes error in authentication flow with identity providers 
+* Fixes error in authentication flow with identity providers
 
 ### 9.2.41 - July 26, 2023
 <Badge text="Core" type="core" vertical="middle"/>
@@ -628,7 +647,7 @@ search: true
 <Badge text="Channels" type="channels" vertical="middle"/>
 
 * Bug fixed in the initial editing of duplicate widgets on a Widget Page
-* Flag added for enabling categories in path for content pages 
+* Flag added for enabling categories in path for content pages
 * Fixed deployment of Targets option in Pages
 * Corrects problem when deleting favicon and apple icons from a site, which affected their copies
 
@@ -729,7 +748,7 @@ search: true
 * IntegrationsToIDPS migration fails due to new openidc_userinfo_enabled attribute
 * Duplicate accounts in onboarding
 * Direct authentication in Realm with Google leads to 404 error
-* Implement Cybersource payment method 
+* Implement Cybersource payment method
 * Add tags in New Asset modal
 
 
