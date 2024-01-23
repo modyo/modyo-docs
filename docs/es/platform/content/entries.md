@@ -4,235 +4,294 @@ search: true
 
 # Entradas
 
-Las Entradas son la manera de desplegar contenido creado en Espacios para todos tus sitios. Estas Entradas se pueden ver desde Sitios creado en Modyo Platform, en el módulo de Channels, o en sitios externos, utilizando nuestra API.
+Las entradas son la forma de desplegar a tus sitios el contenido creado en un espacio. Puedes ver tus entradas desde los sitios creados en Modyo Platform, en el módulo de Channels, o en sitios externos mediante nuestra API.
 
-Entradas es una parte de Modyo Content, el módulo encargado de la creación de repositorios de contenidos dinámicos que llamamos Espacios. En un Espacio, las entradas son separadas por Tipos de Contenido. El Tipo define la estructura básica con sus requerimientos y validaciones para que una Entrada pueda ser publicada.
+En un espacio, las entradas se separan por tipos de contenido. El tipo de contenido define la estructura básica y los requerimientos y validaciones necesarios para que una entrada pueda publicarse.
 
-Además, si se utilizan los módulos de Channels y Customers, se pueden crear sitios con la habilidad de segmentar entradas para solo mostrar estas si pertenecen a un segmento de tus usuarios en el sitio.
+Adicionalmente, al emplear los módulos de Channels y Customers, puedes crear sitios capaces de segmentar entradas y mostrarlas solo a usuarios específicos.
+
 
 ## Sobre la interfaz
 
-A primera vista, puedes ver una lista que contendrá todos los contenidos que están dentro de la plataforma, generados por todos los usuarios.
+En la interfaz de entradas, puedes ver una lista con todos los contenidos generados por los usuarios, ordenados por fecha de última actualización.
 
-La lista está ordenada por fecha de actualización del contenido. En este caso, hace referencia a la fecha de creación o de la última vez que fue guardada la entrada respectiva.
+Las columnas para ordenar la lista de entradas son:
 
-Las columnas por las cuales se puede ordenar la lista de entradas son:
+- **Estado:** Borrador, publicado, programado o archivado.
+- **Nombre:** Nombre del contenido.
+- **Tipo:** [Tipo](/es/platform/content/types.html) de contenido.
+- **Actualizado:** Fecha de la última actualización guardada del contenido.
+- **Autor:** Nombre del autor del contenido.
 
-- **Estado**: Estado en que se encuentra en el proceso de publicación del contenido. En este caso, los estados son cuatro: Borrador, Publicado, Programado y Archivado.
-- **Nombre**: Nombre del contenido.
-- **Tipo**: Tipo del Contenido (Ver [Tipos](/es/platform/content/types.html)).
-- **Actualizado**: Fecha de la última actualización guardada del contenido.
-- **Autor**: Nombre del autor del contenido.
+También puedes filtrar la vista con filtros predeterminados:
 
-En el administrador también puedes filtrar la vista según varios filtros predeterminados que puedes ir ajustando según tu necesidad, independiente de cómo ordenes la lista de tus contenidos.
+- **Tipo:** [Tipo](/es/platform/content/types.html) de contenido.
+- **Estado:** Borrador, publicado, programado y archivado.
+- **Categoría:** Categoría asignada a las entradas.
+- **Idioma** Idioma del contenido.
+- **Traducción:** Estado de traducción de la entrada. Si una entrada no tiene versión en el idioma seleccionado, se considera "no traducida".
+- **Tags:** Etiquetas disponibles en la cuenta.
+- **Barra de búsqueda:** Filtra por el contenido del título de las entradas.
 
-En este caso, los filtros son seis:
+:::tip Tip
+Da click en el menú de Filters en la parte superior derecha de la lista de entradas para agregar o eliminar cualquiera de las opciones de filtrado del encabezado.
+:::
 
-- **Tipo**: Tipo del Contenido que se ha creado (Ver [Tipos](/es/platform/content/types.html))
-- **Estado**: Estado en que se encuentra en el proceso de publicación del contenido. En este caso, los estados son cuatro: Borrador, Publicado, Programado y Archivado.
-- **Categoría**: Categoría a la que se encuentra asignadas las entradas.
-- **Idioma**: Idioma en que se encuentra escrito el contenido.
-- **Traducción**: Este filtro está asociado al idioma seleccionado y filtra por el estado de traducción de las entradas para dicho idioma. Ej: Esto quiere decir que si una entrada no tiene una versión en el idioma seleccionado, está caerá en "No traducida".
-- **Tags**: Tags disponibles en la cuenta. Puedes ocupar la barra de búsqueda interior del filtro para los tags de una manera más simple.
-- **Barra de búsqueda**: Filtra por el contenido del titulo de las entradas.
 
 ## Acciones masivas
 
-Al seleccionar entradas con el _checkbox_ a la izquierda de cada entrada, podrás usar las acciones masivas que aparecen al final de la lista.
+Selecciona una o más entradas y da click en el recuadro de Acciones masivas para:
 
-- **Editar masivamente**: Entrarás en el la interfaz que te permite modificar múltiples entradas a la vez.
-- **Publicar**: Se publicarán las entradas seleccionadas que tengan cambios pendientes o estén en estado Borrador.
-- **Forzar publicación**: Si está la revisión en equipo habilitada, los administradores del espacio podrán usar esta acción para forzar la publicación de las entradas que tengan cambios pendientes o estén en estado Borrador sin necesidad de pasar por el proceso de revisión.
-- **Despublicar**: Se despublicarán las entradas seleccionadas que estén publicadas.
-- **Archivar**: Se archivarán las entradas seleccionadas que estén despublicadas.
+- **Editar masivamente:** Esta opción abre una interfaz donde puedes modificar múltiples entradas a la vez, seleccionando los campos que deseas sobrescribir y aplicando los cambios.
 
-:::warning Atención
-- La publicación en masa solo será efectiva en las entradas seleccionadas que tengan cambios pendientes.
-- Despublicar en masa solo tendrá efecto en las entradas seleccionadas que tengan una versión publicada.
-- Archivar en masa solo tendrá efecto en las entradas seleccionadas que no estén publicadas.
-
-De tal forma que si intentas archivar una entrada que esté publicada, esta acción será omitida y no tendrá efecto.
+:::warning Importante
+La opción de editar masivamente entradas solo esta disponible para entradas del mismo tipo y solo es visible si filtras las entradas por tipo.
 :::
 
-:::tip Tip
-Las acciones masivas se ejecutan en segundo plano y es posible que no veas los cambios inmediatamente, por lo que recomendamos esperar un momento y refrescar la vista luego de ejecutar una acción masiva.
-:::
+Puedes hacer cambios en todos los campos del tipo. Una vez hechos los cambios, da click en **Siguiente** en la parte superior de la pantalla para ver el resumen de tus cambios. Da click en "Guardar" confirmar los cambios.
 
-## Editar masivamente
+Estas entradas ahora tendrán cambios pendientes y debes publicarlas. Para ello, puedes hacer uso de la acción masiva "Publicar".
 
-:::warning Atención
-Esta opción sólo está disponible si tienes el index de entradas filtradas por un tipo particular y además tienes entradas seleccionadas para las acciones masivas.
-
-Si seleccionas múltiples entradas, pero no estás usando el filtro por tipo de la tabla, no verás esta opción.
-:::
-
-Al seleccionar entradas de un mismo tipo, verás esta opción en las acciones masivas abajo a la izquierda de la tabla. Al hacer click en ella, entrarás en una nueva vista que te permitirá seleccionar los campos que quieres sobreescribir de las entradas seleccionadas. Una vez checkeado el selector de la izquierda de cada campo, podrás ingresar el valor asociado al campo.
-
-Puedes hacer cambios en todos los campos del tipo. Una vez que hayas terminado de añadir valores en los campos que necesites, presiona "Siguiente" en la parte superior de la pantalla para ver el resumen de tus cambios. Si estás de acuerdo con los cambios, presiona "confirmar" para que Modyo comience a aplicar los cambios en todas las entradas seleccionadas
 
 :::warning Atención
 Al usar la edición masiva de entradas estás sobreescribiendo los valores para los campos seleccionados en todas las entradas seleccionadas, por lo que los valores que existían antes de la edición conjunta ya no estarán disponibles en la versión editable.
 
-Si necesitas recuperar un valor específico de una entrada, puedes hacer uso de la opción "Diferencias" en la vista de edición de entradas para revisar los valores previos que tenía una entrada en particular.
+Para recuperar un valor específico de una entrada, accede a la vista de edición de entradas y selecciona la opción **Diferencias** para revisar los valores previos de una entrada.
 :::
 
-Una vez que Modyo haya terminado de modificar los campos para las entradas seleccionadas, notarás que todas las entradas ahora están con cambios pendientes y debes publicarlas. Para esto, puedes hacer uso de la acción masiva "Publicar".
+- **Publicar:**  Publica las entradas seleccionadas que tengan cambios pendientes o estén en estado borrador.
+- **Forzar publicación:** Si está habilitada la revisión en equipo, los administradores del espacio pueden usar esta acción para forzar la publicación de entradas que tienen cambios pendientes o estén en estado borrador, sin necesidad de pasar por el proceso de revisión.
+- **Despublicar**
+- **Archivar:** Archivar en masa solo tiene efecto en las entradas seleccionadas que no estén publicadas. Si intentas archivar una entrada publicada, la acción no tendrá efecto.
 
-## Crear y Publicar una Entrada
+:::tip Tip
+Las acciones masivas se ejecutan en segundo plano y es posible que no veas los cambios inmediatamente, por lo que deberás esperar un momento y refrescar la vista luego de ejecutar una acción masiva.
+:::
+
+
+
+## Crear y publicar una entrada
 
 Para crear una entrada, sigue estos pasos:
 
-1. En el menú lateral de la Plataforma Modyo, selecciona **Content** y haz click en **Espacios**.
-2. Selecciona tu **Espacio**.
-3. Haz click en **+ Nueva Entrada**.
-4. Selecciona el **Tipo de contenido**, **Nombre**, e **Identificador**. Haz click en **Crear**.
-Al hacer click en **Crear**, la entrada se creará y serás redirigido a la edición de la misma donde puedes rellenar con el contenido que quieras, está contendrá la estructura definida en el tipo de contenido que seleccionaste.
-5. Haz click en **Guardar** y después haz click en **Publicar**.
+1. En el menú lateral selecciona Content.
+1. Selecciona tu espacio.
+1. Haz click en Entradas
+1. Haz click en **+ Nueva Entrada**.
+1. Selecciona el tipo de contenido, nombre e identificador.
+1. Haz click en **Crear**.
+1. Una vez creada la entrada, puedes incluir el contenido que requieras. La entrada tendrá la estructura definida en el tipo de contenido que seleccionaste.
+1. Haz click en **Guardar**.
+1. Haz click en **Publicar**.
 
-En primera instancia, **Modyo** pide el nombre, el slug, y tipo de entrada que deseas crear, para organizar el formato a presentar, el cuál se puede crear en [Tipos](/es/platform/content/types.html).
 
 :::warning Atención
-Si el campo de nombre queda vacío, la plataforma pondrá por defecto el UUID de la entrada como slug.
+Si el campo de nombre queda vacío, el identificador por defecto será el UUID de la entrada.
 :::
 
-## Traducir una Entrada
+## Traducir una entrada
 
-Modyo Platform te permite agregar diferentes idiomas en tus Espacios y crear Entradas para ellos. Para traducir una entrada existente a un idioma distinto, debes asegurarte que el idioma haya sido agregado a la sección de Localización en la configuración del Espacio.
+Para traducir una entrada, debes primero añadir el idioma a tu espacio. Para ello, sigue estos pasos:
 
-Para traducir una entrada, sigue estos pasos:
+1. En el menú lateral, selecciona Content.
+1. Haz click en tu espacio.
+1. Da click en Configuración del espacio
+1. Haz click en Localización.
+1. Selecciona el idioma que quieres agregar y haz click en **Añadir idioma**.
 
-1. Desde Modyo Platform, en el menú lateral, expande **Content**, y haz click en **Espacios**.
-1. Haz click en tu **Espacio**.
-1. Expande **Configuración del Espacio** y haz click en **Localización**.
-1. Selecciona el idioma que quieres agregar y haz click en **Añadir Idioma**.
-1. Haz click en **Guardar**.
-1. En el menú lateral, haz click en **Entradas**.
-1. Selecciona la entrada que quieres traducir y selecciona el idioma.
+
+Una vez que tu espacio tenga ya los idiomas que requieres, puedes ya traducir tus entradas, para ello:
+
+1. En el menú lateral, selecciona Content.
+1. Haz click en tu espacio.
+1. Selecciona Entradas.
+1. Del listado de entradas, da click en la entrada que quieres traducir para abrir la vista de edición.
+1. Da click en el recuadro de idioma junto al título de tu entrada y selecciona el idioma al cual quieres traducir tu entrada.
 1. Haz click en el botón de más acciones (...) y selecciona **Copiar desde idioma**.
+1. Selecciona el idioma desde el cual quieres copiar el contenido.
+1. Confirma tu selección.
+1. Ingresa en los campos tu contenido.
+1. Haz click en **Guardar**.
+1. Haz click en **Publicar**.
 
-Para más información acerca de como agregar otro idioma, ve [Configurar un Espacio](/es/platform/content/spaces.html#localizacion).
 
-### Publicar una Entrada
+### Publicar una entrada
 
-Para publicar una entrada, Modyo te asegura un proceso de chequeo paulatino con tal de certificar que el contenido que vayas a ofrecer se encuentre correcto.
+Para publicar una entrada en Modyo, sigue estos pasos:
 
-Al terminar el desarrollo de tu entrada, en la parte superior de la pantalla encontrarás el botón **Guardar**, que grabará todo tu contenido.
+1. En el menú lateral, selecciona Content.
+1. Haz click en tu espacio.
+1. Selecciona Entradas.
+1. Del listado de entradas, da click en la entrada que quieres publicar.
+1. En la parte superior de la pantalla, haz click en **Guardar**.
+1. Si tienes permisos de administrador, el botón de **Guardar** cambia a **Publicar** y puedes proceder a publicar tu entrada. De lo contrario, otro usuario con permisos de Administrador puede hacerlo. Si está activa la revisión en equipo, pasará por ese proceso antes de publicarse.
 
-Si haces click en este, el botón experimentará dos cambios. Si es que tienes permisos de Administrador del Espacio, puedes publicar automáticamente. Si es que no tienes esos permisos, no puedes publicar el recurso, sino que otro usuario con un rol superior a ti, puede hacerlo.
-
-Sin embargo, si se encuentra la opción de Revisión en Equipo, pasará al proceso de chequeo por parte de otros usuarios, donde puedes asignar a revisores en específico quienes pueden publicar.
-
-Para saber más acerca de Revisión en Equipo, puedes ver [Revisión en Equipo.](/es/platform/core/key-concepts.html)
+Puedes encontrar más información de revisión en equipo en la sección de [Conceptos Clave](https://docs.modyo.com/es/platform/core/key-concepts.html) de nuestra documentación.
 
 
 ### Despublicar una entrada
 
-Despublicar una entrada o una parte de un sitio te permite pasar a estado de Borrador y será  oculto del público. En el caso que Revisión de Equipo esté activado, tendrá que pasar por el flujo de revisión de nuevo al ser publicado.
+Despublicar una entrada permite pasar la entrada a estado Borrador y ocultarla del público. Si la revisión en equipo está activada, deberá pasar por ese flujo nuevamente para publicarla.
 
-Para despublicar contenido, sigue estos pasos:
-
-1. En Modyo Platform, en el menú lateral, haz click en Channels y selecciona Espacios.
-1. Haz click en tu Espacio.
-1. En el menú de Entradas, selecciona tu Entrada.
-1. Expande el menú de Acciones Masivas y haz click en Despublicar.
+Para despublicar:
+1. En el menú lateral, selecciona Content.
+1. Haz click en tu espacio.
+1. Selecciona Entradas.
+1. Del listado de entradas, marca la casilla de la entrada que quieres despublicar.
+1. Expande el menú de Acciones Masivas
+1. Haz click en **Despublicar**.
 
 
 ### Eliminar entradas
 
-Modyo solo permite eliminar entradas que están archivadas. Para realizar esta acción entra a la vista de edición de la entrada y en las opciones adicionales usa la opción "Borrar" del selector a la izquierda del botón principal de la vista.
+Para eliminar una entrada:
 
-#### Vista Previa
+1. En el menú lateral, selecciona Content.
+1. Haz click en tu espacio.
+1. Selecciona Entradas.
+1. Del listado de entradas, da click en la entrada que quieres eliminar.
+1. Haz click en el botón de más acciones (...) y selecciona **Borrar**. Si la entrada no está archivada, esta opción no estará activa, selecciona primero **Archivar** y posteriormente selecciona **Borrar**.
+1. Da click en **Ok** para confirmar.
 
-Como plataforma headless, Modyo permite hacer una vista previa de un entrada en múltiples sitios.
+### Vista previa
 
-Si ya cuentas con [vistas de contenido en tus sitios](/es/platform/channels/templates.html#vistas-para-contenido), puedes ver el botón **Vista Previa en Sitio**, en el que seleccionas dónde quieres ver cómo se está desarrollando tu recurso.
+Modyo te permite visualizar como se verá tu entrada publicada en múltiples sitios, previo a que la publiques.
 
-:::danger Atención
-Si el Espacio no se encuentra asociado a un sitio, sólo puedes ver el código JSON de la entrada que estás desarrollando.
+Además, puedes previsualizar el contenido como usuario sin sesión o usuario con sesión de Modyo. Recomendamos iniciar o cerrar la sesión de Modyo en el sitio antes de entrar al modo vista previa, para evitar errores de seguridad del tipo x-frame-options o mixed-content.
+
+:::tip Tip
+Es necesario configurar previamente la vista de contenido para activar la opción de vista previa. Para obtener más detalles sobre cómo configurarla, consulta [vistas de contenido](https://docs.modyo.com/es/platform/channels/templates.html).
 :::
+
+Para previsualizar tu contenido:
+
+1. En el menú lateral, selecciona Content.
+1. Haz click en tu espacio.
+1. Selecciona Entradas.
+1. Del listado de entradas, da click en la entrada que quieres previsualizar.
+1. Da click en el ícono de vista previa en la parte superior derecha.
 
 :::warning Atención
-Solo podrás previsualizar en el sitio los contenidos que son de un idioma igual al idioma del sitio. Si la entrada está en otro idioma, al llegar a la vista previa te encontrarás con un error 404.
+Te recomendamos tener en cuenta:
+
+- Solo puedes previsualizar contenido en el idioma del sitio. Si la entrada está en otro idioma, la vista previa muestra un error 404.
+- Si el Espacio no está asociado a un sitio, solo podrás ver el código JSON de la entrada que estás desarrollando.
 :::
 
-:::warning Atención
-Puedes previsualizar el contenido como usuario sin sesión o usuario con sesión de Modyo. Para esto, es recomendable iniciar o cerrar la sesión de Modyo en el sitio antes de entrar al modo vista previa, dado que si se inicia o cierra sesión dentro del modo vista previa, podrías encontrarte con errores de seguridad del tipo _x-frame-options_ o _mixed-content_, dependiendo de la configuración de dominios personalizados y SSL del sitio
-:::
+### Editar una entrada
 
-#### Editar una entrada
+Para editar una entrada, sigue estos pasos:
 
-Si deseas editar una entrada, solo debes hacer click en el nombre dentro del administrador.
+1. En el menú lateral, selecciona Content.
+1. Haz click en tu espacio.
+1. Selecciona Entradas.
+1. Del listado de entradas, da click en la entrada que quieres editar.
+1. Modifica los campos que requieras.
+1. Da click en **Guardar**.
+1. Da click en **Publicar**.  Si la entrada está en proceso de revisión en equipo, los revisores deberán actualizar su vista para notar los cambios.
 
-Después de esto, entras a la vista de edición en la que puedes cambiar el contenido y las propiedades de esta, como el nombre, el slug y los tags.
-
-En el caso de que la entrada se encuentre publicada, los cambios se harán automáticamente. Si esta se encuentra en proceso de Revisión en Equipo, los revisores deberán actualizar su vista para poder notar los cambios.
 
 ## Categorías
 
-Las Categorías son una de las formas más útiles de Modyo para ordenar tus Entradas. En este caso, cada vez que se use una Categoría, se genera una ruta en la URL que permite acceder al recurso, en el caso de que este se encuentre publicado.
+Las categorías son una herramienta fundamental en Modyo para organizar tus Entradas.
 
-Para ver las Categorías, es necesario que hagas click en la sección **Categorías**, que se encuentra a un costado izquierdo de la interfaz de entrada. Ahí, puedes ver todas las categorías que se encuentran ya hechas.
+Cuando creas una categoría, Modyo genera una ruta única en la URL que proporciona acceso al recurso, siempre que esté publicado.
 
-#### Crear una Categoría
+Para ver tus categorías, haz click en el menú lateral en Content y después selecciona Categorías.
 
-Si quieres crear una categoría, solo debes hacer click en el botón verde que se encuentra en la parte superior de la pantalla. Después, puedes ver una ventana que pedirá ingresar el nombre de ella, la Ruta y si esta posee a una Categoría Padre.
 
-Para las entradas de estas categorías, se añade el identificador como un prefijo a la URL de la entrada. Por ejemplo:
+#### Crear una categoría
+
+Para crear una categoría:
+
+1. Haz click en Content
+1. Selecciona Categorías
+1. Haz click en el botón **+ Nueva categoría**.
+1. En la ventana emergente, ingresa el nombre, la ruta y, opcionalmente, una categoría padre.
+
+Cuando asignas una entrada a una categoría, Modyo agrega el identificador como prefijo a la URL de la entrada, por ejemplo:
 
 Una entrada con URL: test.modyo.com/visita-chile y categoría ‘travel’, ahora sería test.modyo.com/travel/visita-chile.
 
 :::tip Tip
-Cuando se ingrese el nombre de la categoría, la ruta se establece predeterminadamente como un slug. Si quieres cambiarla, solo basta con hacer click en ella.
+Al ingresar el nombre de la categoría, la ruta se establece automáticamente como identificador. Para cambiarla, haz click en la ruta.
 
-Si cambias la ruta, recuerda también cambiar todos los vínculos a ella, si es que se encuentran en un sitio web.
+Si modificas la ruta, asegúrate de actualizar todos los enlaces vínculos a ella.
+:::
+
+#### Eliminar una categoría
+
+Para eliminar una categoría:
+
+1. Haz click en Content
+1. Selecciona Categorías
+1. Haz click en el botón de más acciones (...)  después del nombre de la categoría
+1. Selecciona **Borrar**.
+1. Da click en **OK** para confirmar la eliminación.
+
+:::tip Tip
+Al eliminar una categoría que tiene entradas asignadas, las entradas no se eliminan, sin embargo, no estarán asignadas a una categoría. Si deseas asignarles una nueva categoría deberás hacerlo nuevamente.
 :::
 
 :::warning Atención
-Si se quiere eliminar una categoría, simplemente basta con hacer click en el ícono que se encuentra al final del nombre de esta. Sin embargo, si hay Entradas asignadas a esa categoría, no se borran sino que no están a asignadas a ninguna categoría. Para volver a asignarles alguna categoría, es necesario realizar la asignación nuevamente.
-:::
-
-:::danger Peligro
-Si se borra la Categoría Padre, se borran también todas las subcategorías asignadas a esta. Y las entradas asociadas a dichas categorías quedan sin categoría asignada.
+Si eliminas una categoría padre, se eliminarán todas las subcategorías asociadas a ella. Las entradas vinculadas a esas categorías quedarán sin categoría asignada.
 :::
 
 ### Tags
 
-Los tags te permiten agregar más granularidad a tus Entradas al combinarlo con Liquid en tus páginas de contenido. Al crear Entradas, se puede agregar un tag que aparece tanto en el código fuente como en nuestra API de contenido para que puedas agregar funcionalidad específica a este tag.
+Los tags permiten agregar mayor detalle a tus entradas al combinarlos con Liquid en tus páginas de contenido.
 
-### Slug
+Al crear entradas, puedes agregar un tag que aparecerá tanto en el código fuente como en nuestra API de contenido, permitiéndote agregar funcionalidades específicas a ese tag.
 
-Si quieres hacer un link mucho más amigable a cualquier microservicio que quieras conectar, puedes escribir un slug simple que te permita hacer más fácil el trabajo en la URL.
 
-Cuando crees una entrada, la plataforma te asigna un slug de manera aleatoria. Sin embargo, para cambiarla solo tienes que cambiar el campo en la ventana de propiedades.
+### Identificador
 
-Este valor debe ser único para las entradas del mismo tipo. En caso de que se guarden dos entradas con el mismo slug, este será modificado al momento de publicar la entrada.
+El identificador es un valor único que se usa para generar la URL de una entrada.
+Cuando crees una entrada, la plataforma le asigna un identificador. Si deseas crear un enlace más amigable, puedes modificarlo al momento de crear la entrada o posteriormente al editarla.
 
-### Contenido Privado
+Forzosamente, el identificador debe ser un valor único para las entradas del mismo tipo. Si tratas de guardar dos entradas con el mismo identificador, la plataforma modificará la última, al publicar la entrada.
 
-Si deseas que el contenido sea exclusivo para usuarios que tengan una sesión en la plataforma se debe habilitar está opción.
 
-Dependiendo de como estés consumiendo el contenido, necesitas realizar unos pasos extras para acceder a este. Si estás usando la API pública, dirígete a la sección sobre [contenido privado en la API](/es/platform/content/public-api-reference.html#contenido-privado). Si estás consumiendo el contenido a través de Liquid, basta con que los usuarios inicien sesión en el sitio para poder visualizar el contenido privado.
+:::warning Importante
+Si deseas modificar el identificador de tu entrada posterior a su creación, debes dar click sobre el candado en el campo de identificador y confirmar que deseas cambiarlo, ya que el hacer cambios en el identificador rompe todas las referencias al contenido a través de la API o los SDKs.
+
+:::
+
+
+### Contenido privado
+
+Habilita la opción de contenido privado para que tu contenido sea exclusivo para usuarios que tengan una sesión en la plataforma.
+
+Dependiendo de como estés consumiendo el contenido, es posible que debas seguir algunos pasos adicionales para acceder a él:
+
+- **A través de la API pública:** Consulta la sección sobre contenido privado en la API.
+- **A través de Liquid:** Al iniciar sesión en tu sitio, tus usuarios podrán visualizar el contenido privado.
+
 
 ### Segmentos
 
-El contenido segmentado es fundamental para cualquier entidad o empresa que quiera hacer llegar una información en específico a un grupo de usuario.
+El contenido segmentado es fundamental para cualquier entidad o empresa que desee enviar información específica a un grupo de usuarios.
 
-Para ello, es posible habilitar en la Entrada que el contenido sea visible para un grupo determinado que elijas. Para ello, solo basta con hacer check en la opción de que el Contenido sea privado y luego en que se desea habilitar segmentación y después seleccionar a qué segmento de usuarios al que se dirige la entrada.
+Para habilitar que una entrada sea visible para un grupo determinado de usuarios:
 
-Para crear un segmento en específico, revisa la [sección Segmentos](/es/platform/customers/segments.html).
+1. Marca la opción de contenido privado
+1. Habilita la segmentación
+1. Selecciona el segmento de usuarios al que se dirige la entrada.
+
+Para crear un segmento en específico, revisa la sección Segmentos.
+
 
 ## Consumir externamente
 
-Accesa el contenido creado en el módulo de Content desde cualquier parte usando nuestra API.
+Puedes acceder al contenido creado en el módulo de Content desde cualquier lugar, usando nuestra API.
+Para obtener el UUID de una entrada, sigue estos pasos:
 
-Sigue estos pasos para obtener el uuid de una entrada:
-
-1. En la Plataforma Modyo, en el menú principal, selecciona **Content** y haz click en **Espacios**.
-1. Selecciona tu **Espacio**.
-1. Haz click en **Vista Previa**.
-1. Haz click en **Link de la API**.
-
-Te llevará a una nueva página en donde se usa la API para obtener el contenido de la entrada. El resultado será similar a esto:
+1. En el menú lateral, selecciona Content.
+1. Haz click en tu espacio.
+1. Selecciona Entradas.
+1. Del listado de entradas, da click en una entrada
+1. Haz click en el ícono de vista previa.
+1. Haz click en **Link de la API**. Serás redirigido a una nueva página que usa la API para obtener el contenido de la entrada. El resultado será similar a esto:
 
 URL: `https://test.modyo.com/api/content/spaces/test-space/types/nuevo/entries/45fa2ef7-bf12-47a3-8ff7-f7d1f5f36844`
 
@@ -268,4 +327,4 @@ URL: `https://test.modyo.com/api/content/spaces/test-space/types/nuevo/entries/4
 }
 ```
 
-Para saber más acerca de nuestra API y las diferentes acciones que puedes realizar, ve [API de administración](/es/platform/core/api).
+Para más infromación de nuestra API y las diferentes acciones que puedes realizar, ve [API de administración](/es/platform/core/api).
