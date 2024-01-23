@@ -98,7 +98,7 @@ These records cannot be deleted or edited.
 
 #### Answers to forms
 
-This section shows you all the forms that the user has filled out on the platform. Click on a form to see the user's responses in that form. To learn more about forms, go to the [Forms] section (/en/platform/customers/forms.html).
+This section shows you all the forms that the user has filled out on the platform. Click on a form to see the user's responses in that form. To learn more about forms, go to the [Forms](/en/platform/customers/forms.html) section.
 
 #### Notes
 
