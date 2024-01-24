@@ -152,7 +152,7 @@ To modify a template temporarily and then return to a new one, make a copy of th
 
 ### Edit Templates
 
-To create a template, click the**+ New Template** button at the top of the page.
+To create a template, click the **+ New Template** button at the top of the page.
 
 In the editing view, designate a name for the template.
 
