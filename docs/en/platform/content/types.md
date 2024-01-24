@@ -22,7 +22,7 @@ The table below the search bar shows the Types already created, ordered by defau
 To reorder the table, click on the symbols next to each category. The categories by which you can reorder are:
 
 - **Name**
-- **Identifier (UID) **
+- **Identifier (UID)**
 - **Creation Date**
 - **Updated on** Date
 
