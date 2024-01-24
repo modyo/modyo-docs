@@ -24,7 +24,7 @@ To reorder the table, click on the symbols next to each category. The categories
 - **Name**
 - **Identifier (UID)**
 - **Creation Date**
-- **Updated on** Date
+- **Update Date**
 
 Click on the name of a Type to open the corresponding editor.
 
