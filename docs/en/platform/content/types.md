@@ -56,7 +56,7 @@ In the creation interface, you'll find an empty template in the center of the sc
 - **Field Configuration**
 - **Configuration**
 
-This interface allows you to create each of the types and format them as needed, according to your requirements.
+This interface allows you to create each of the types and format them as needed, according to your needs.
 
 ## Fields
 
