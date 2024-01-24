@@ -68,7 +68,7 @@ For more information go to the [API reference](/en/platform/content/public-api-r
 
 All fields require a name, and can optionally be set as required.
 
-If a field is marked as required, when creating or modifying an entry, you must provide a value for that field. Otherwise, you won't be able to save the changes you made.
+When a field is marked as required, when creating or modifying an entry, you must provide a value for that field. Otherwise, you will not be able to save the changes made.
 
 ### Single-line text
 
