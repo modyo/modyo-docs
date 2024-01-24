@@ -168,7 +168,7 @@ When you create a campaign, remember to add in the footer all the legal informat
 To automate Footer insertion, read [Realms Configuration](/en/platform/customers/realms.html#emails)
 :::
 
-To save the template, click the**Save** button at the top of the page.
+To save the template, click the **Save** button at the top of the page.
 
 To use the template in an email, select the name of that template when designing the campaign.
 
