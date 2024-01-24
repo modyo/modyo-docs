@@ -35,7 +35,7 @@ To create a new type of content that will serve as the basis for your posts, fol
 1. From the main menu, click **Content**.
 2. Select the space where you want to create a new Type.
 3. Click on **Types**.
-2. Click the**+ New Type** button.
+2. Click the **+ New Type** button.
 3. Type the name and identifier (UID).
 4. Select the type's cardinality.
 5. Click **Create**.
