@@ -44,8 +44,8 @@ Fill in the information requested in the form:
 - **Type**: Choose if it will be sent by mail or notification.
 - **Subject**: Text that will appear in the subject line of the message that will be sent to users.
 - **Reply to**: Email address that people can reply to
- ** (for email campaigns only) **.
-- **Template**: List of [templates] (/en/platform/customers/messaging.html #plantillas) that will be used to send an email. If one is not selected, Modyo will send a blank template** (only for email campaigns) **.
+ **(for email campaigns only)**.
+- **Template**: List of [templates](/en/platform/customers/messaging.html #plantillas) that will be used to send an email. If one is not selected, Modyo will send a blank template **(only for email campaigns)**.
 - **Enable Targeting**: Check box to select a segment to send the campaign to. If you leave the box blank, the campaign will be sent to all users.
 
 Once you have completed the form, click on the**Save and Continue** button at the top of the screen.
