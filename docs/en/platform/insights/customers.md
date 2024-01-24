@@ -26,7 +26,7 @@ In this graph we can see a comparison between two values that represent user act
 
 You can select any of these values to compare:
 
-- **Activity**: Total of all activity.
+- **Activity**: The sum of all activities.
 - **Active users**: Includes all users who have performed two or more actions in the specified period of time.
 - **Email delivered**: Total emails from campaigns that were successfully sent.
 - **Email opened**: Total emails opened in campaigns.
