@@ -91,7 +91,7 @@ If you sent the campaign by notification, you can view:
 - **Sent**: Number of notifications sent.
 - **Opens**: Number of notifications opened.
 
-If you send a campaign through [segments] (/en/platform/customers/segments.html), you can see which group of users the campaign reached. If you do not see this section, it's because the campaign was sent to all contacts.
+If you send a campaign through [segments](/en/platform/customers/segments.html), you can see which group of users the campaign reached. If you do not see this section, it's because the campaign was sent to all contacts.
 
 :::warning Attention
 If you haven't yet sent the campaign, the values for that campaign will appear be zero.
@@ -109,11 +109,11 @@ Clicking on the name of a campaign takes you to the Message Deliveries section.
 
 In the Message Deliveries section, you will find the list of users who have received a message from the platform. Here, you can see a list of all users who have received a unique email or notification, referred to as “No Campaign”.
 
-“No Campaign” refers to an email or notification sent specifically to a user on a certain date. These messages are not considered Campaigns, because they are personalized and contain information that is not sent to other users. For more information on how these messages work, see the [Management API] (/en/platform/core/api.html). 
+“No Campaign” refers to an email or notification sent specifically to a user on a certain date. These messages are not considered Campaigns, because they are personalized and contain information that is not sent to other users. For more information on how these messages work, see the [Management API](/en/platform/core/api.html). 
 
 In the initial view, the messages are ordered in these categories:
 
-- **Name**: Name of the user to whom the message is sent. The user's email is included, regardless of whether it was sent by email or notification.
+- **Name**: Name of the user to whom the message was sent. The user's email is included, regardless of whether it was sent by email or notification.
 - **Campaign**: Campaign under which the message was sent.
 - **Type**: The route through which the message was sent, either email or notification.
 - **Delivery**: Date on which the campaign started.
@@ -122,7 +122,7 @@ In the initial view, the messages are ordered in these categories:
 
 In addition, you can filter the data using the following filters:
 
-- **Campaign Type**: All, mail or notification.
+- **Campaign Type**: All, mail, or notification.
 - **Campaign Name**: Name given to the campaign in general.
 - **Shipment**: Date on which the campaign was sent.
 
