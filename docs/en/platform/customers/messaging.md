@@ -48,14 +48,14 @@ Fill in the information requested in the form:
 - **Template**: List of [templates](/en/platform/customers/messaging.html #plantillas) that will be used to send an email. If one is not selected, Modyo will send a blank template **(only for email campaigns)**.
 - **Enable Targeting**: Check box to select a segment to send the campaign to. If you leave the box blank, the campaign will be sent to all users.
 
-Once you have completed the form, click on the**Save and Continue** button at the top of the screen.
+Once you have completed the form, click on the **Save and Continue** button at the top of the screen.
 
-This opens the WYSIWYG editor with the template you selected. Edit the template and click the**Save** button to confirm the changes and open the Shipping Status view to send the campaign. 
+This opens the WYSIWYG editor with the template you selected. Edit the template and click the **Save** button to confirm the changes and open the Shipping Status view to send the campaign. 
 
 
 ### Campaign Status
 
-At the top of the screen, the**preview** icon allows you to view your campaign before sending it. Click the **Send** button to send the campaign.
+At the top of the screen, the **preview** icon allows you to view your campaign before sending it. Click the **Send** button to send the campaign.
 
 The contextual button allows you to perform these actions:
 
