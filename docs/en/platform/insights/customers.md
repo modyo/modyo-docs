@@ -29,7 +29,7 @@ You can select any of these values to compare:
 - **Activity**: The sum of all activities.
 - **Active users**: Includes all users who have performed two or more actions in the specified period of time.
 - **Email delivered**: Total emails from campaigns that were successfully sent.
-- **Email opened**: Total emails opened in campaigns.
+- **Email Opened**: The count of all campaign emails opened by users.
 - **Email spam report**: Total spam notifications sent by users receiving emails from your campaigns.
 - **Form response created**: Total count of all Modyo form responses.
 - **Login**: Total count of all user logins.
