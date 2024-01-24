@@ -61,11 +61,11 @@ The contextual button allows you to perform these actions:
 
 - **Message Editor**: Edit your message before sending it.
 - **Send test**: Send a test email with the campaign to a specific address.
-- **Edit**: Edits the campaign properties, technical aspects such as the shipping address and the segments to receive.
+- **Edit**: Edits the campaign properties, technical aspects such as the shipping address and the receiving segments.
 - **Clone the campaign**: Copies all the content of a campaign.
 - **Delete campaign**: Deletes a campaign.
 
-Once you've sent a campaign, you can't send it again. If you want to send the same campaign again, select the clone option. This creates a new campaign with the same name data, segments and content, while the statistical information starts from scratch.
+Once you've sent a campaign, you can't resend it. If you want to send the same campaign again, select the clone option. This creates a new campaign with the same name data, segments and content, while the statistical information starts from scratch.
 
 You can cancel a campaign when it is in queue or while it is being sent.
 
