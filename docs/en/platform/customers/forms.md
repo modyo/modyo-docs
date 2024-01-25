@@ -10,7 +10,7 @@ When you access the tool, you can see a list of all the forms currently active i
 
 In each row of the forms table, the columns are ordered by the name of the form, the date it was created, and the number of responses that were submitted for that form.
 
-From this list you can also access the individual analysis view, by clicking on the title of the form, also to the list of responses of the form, by clicking on the number of responses on the form.
+From this list you can also access the individual analysis view, by clicking on the title of the form, also you can access the list of responses of the form, by clicking on the number of responses on the form.
 
 To enable or disable forms and allow users to send their answers, you must go to the analysis view and select the respective action from the options displayed in the upper right section.
 
