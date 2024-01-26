@@ -148,7 +148,7 @@ module.exports = {
                               "/en/platform/content/spaces",
                               "/en/platform/content/types",
                               "/en/platform/content/entries",
-                              "/en/platform/content/asset-manager",
+                              "/en/platform/content/media",
                               "/en/platform/content/public-api-reference",
                               "/en/platform/content/javascript",
                           ],
@@ -348,13 +348,13 @@ module.exports = {
                           title: "Fundamentos de Modyo",
                           path: "/es/platform/basics/",
                           collapsable: true,
-                          children: [ 
+                          children: [
                             ["/es/platform/basics/", "Bienvenido a Modyo"],
                             ["/es/platform/basics/learn-modyo", "Aprende Modyo"],
-                            ["/es/platform/basics/key-concepts", "Conceptos claves"], 
+                            ["/es/platform/basics/key-concepts", "Conceptos claves"],
                           ],
                       },
-                      
+
                       {
                         title: "Plataforma",
                         path: "/es/platform/core/",
@@ -429,7 +429,7 @@ module.exports = {
                               "/es/platform/content/spaces",
                               "/es/platform/content/types",
                               "/es/platform/content/entries",
-                              "/es/platform/content/asset-manager",
+                              "/es/platform/content/media",
                               "/es/platform/content/public-api-reference",
                               "/es/platform/content/javascript",
                           ],
@@ -445,7 +445,7 @@ module.exports = {
                       },
                   ],
 
-                  
+
 
                   "/es/dynamic/": [{
                           title: "Dynamic Framework",
