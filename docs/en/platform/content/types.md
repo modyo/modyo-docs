@@ -13,7 +13,7 @@ Content Types can be assigned cardinality. This variable indicates how many Entr
 
 When you first enter the Types section, click the green **+New Type** button to create a new Type.
 
-Once you've created your first Type, you can create additional types by clicking on the**+New Type** button at the top right.
+Once you've created your first Type, you can create additional types by clicking on the **+New Type** button at the top right.
 
 The search bar allows you to search and filter your types by any word that appears in the Name field.
 
