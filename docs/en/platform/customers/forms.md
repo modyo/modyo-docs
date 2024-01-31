@@ -120,9 +120,9 @@ For simple text and paragraph fields, you can add validations through regular ex
 
 Selecting any of the different options and clicking **Add** will autocomplete the expression to the field.
 
-### Form Properties
+### Form properties
 
-This section will allow you to change the general behavior of the form. It contains the same options as when creating a new form, but in turn adds a couple of new options which we will detail below.
+This section will allow you to change the general behavior of the form. It contains the same thing as the creation view of a new form, but in turn it adds a couple of new options, as detailed below. 
 
 Its sections are:
 
