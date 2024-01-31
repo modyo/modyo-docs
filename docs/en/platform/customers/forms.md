@@ -39,7 +39,7 @@ You can only select a site that belongs to the same kingdom, within the **Site S
 After a division, you will be able to see the options to modify the redirect after a user answers the form.
 
 - **Default options**: After answering the form, the user is redirected to the home of the site associated with the form.
-- **Redirect URL**: Allows you to enter a URL to which the user will be redirected after responding to the form. It is necessary to enter the entire URL (e.g. https://test.miModyo.com/home).
+- **Redirect URL**: Allows you to enter a URL to which the user will be redirected after completing the form. It is necessary to type the entire URL (e.g. https://test.miModyo.com/home).
 - **Thank you page**: Allows you to add a personalized thank you message after a user answers the form, next to a button that will take you to a site page. The button URL is a relative URL of the site associated with the form. You can also determine if you want the user to be automatically redirected to that page after a certain time.
 
 
