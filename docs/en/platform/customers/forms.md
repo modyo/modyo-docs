@@ -31,7 +31,7 @@ To create a new form, follow these steps:
 You can only select a site that belongs to the same kingdom, within the **Site Settings**, under **General**, make sure that the site is part of the correct kingdom.
 :::
 
-- **Enabled**: Select whether the form will start in an enabled state or not.
+- **Enabled**: Select if the form will start in an enabled state or not.
 - **Accept multiple responses**: If this option is enabled, each time a user answers the form, it will be registered as a new response. If this option is disabled, each time the same user answers the form, they will overwrite their previous response.
 - **Show only to registered users**: Allows you to determine if the form will only be visible to registered users in Modyo. If this option is enabled, a user without a session cannot see the form. If this option is disabled, any user can answer the form.
 - **Automatically redirect to form**: If the form is private (only registered users can answer it), this option will appear, allowing you to automatically redirect users belonging to the site associated to the form when they log in.
