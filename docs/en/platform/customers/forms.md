@@ -68,8 +68,8 @@ Once you enter the editing section of a form, you will be able to see 2 sections
 This section will allow you to add as many fields as necessary to complete the form or delete the ones that are not necessary. Here are the fields you can add for a form:
 
 - **Simple Text**: Allows the user to enter text up to 256 characters.
-- **Paragraph**: Enter a multi-line text response up to 65535 characters.
-- **Number**: Enter numbers.
+- **Paragraph**: Allows the user to enter multiline text up to 65535 characters.
+- **Number**: Allows the user to enter numbers.
 - **Dropdown**: Add options from which the user can add a dropdown.
 - **Checkbox**: Add options from which the user can choose multiple answers in a checkbox format.
 - **Choice**: Add options from which the user can choose an answer in a _radio button_ format.
