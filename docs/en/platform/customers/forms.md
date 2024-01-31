@@ -109,7 +109,7 @@ Just as some fields have validations, most have a default value that is pre-sele
 For simple text and paragraph fields, you can add validations through regular expressions. By clicking on the functions button, you can see the different default validations:
 
 - Email
-- URLS
+- URL
 - Phone Number
 - Chilean RUT
 - Bank card number
