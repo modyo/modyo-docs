@@ -49,11 +49,11 @@ After a division, you will be able to see the options to modify the redirect aft
 If it's a public form, users who don't have an active session in Modyo will see three mandatory fields at the top of the form: First Name, Last Name, and Email. Once they submit the form, a user will be created with those values and then the response will be associated with that user.
 :::
 
-:::warning Warning
-If a user does not have an active session, fills out the form, and the email matches one of the users already registered in Modyo, the response will be associated with the existing user instead.
+:: :warning Attention
+If a user does not have an active session, fill out the form, and the email matches one of the users already registered with Modyo, then the response will be associated with the existing user and a new one will not be created.
 :::
 
-## Edit a form
+## Edit form
 
 To edit a form, follow these steps:
 
