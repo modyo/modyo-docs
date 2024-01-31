@@ -57,7 +57,7 @@ If a user, who doesn't have an active session, completes the form, and their ema
 
 To modify a form, follow these steps:
 
-1. In the side menu, select **Customers** and click **Kingdoms**.
+1. In the side menu, select **Customers** and click **Realms**.
 2. Select your kingdom and click on your form.
 3. In the options menu at the top right, click **"Edit"**.
 
