@@ -65,7 +65,7 @@ Once you enter the editing section of a form, you will be able to see 2 sections
 
 ### Add
 
-This section will allow you to add as many fields as necessary to complete the form or delete the ones that are not necessary. Here are the fields you can add for a form:
+This section will allow you to add as many fields as necessary to complete the form, or delete the ones that are not necessary. These are the fields you can add to a form:
 
 - **Simple Text**: Allows the user to enter text up to 256 characters.
 - **Paragraph**: Allows the user to enter multiline text up to 65535 characters.
