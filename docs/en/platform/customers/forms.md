@@ -113,7 +113,7 @@ For simple text and paragraph fields, you can add validations through regular ex
 - Phone Number
 - Chilean RUT
 - Bank card number
-- American zip code
+- US zip code
 - Canadian zip code
 - Chileno Post code
 - UUID
