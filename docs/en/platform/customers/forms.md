@@ -40,7 +40,7 @@ After a division, you will be able to see the options to modify the redirect aft
 
 - **Default options**: After answering the form, the user is redirected to the home of the site associated with the form.
 - **Redirect URL**: Allows you to enter a URL to which the user will be redirected after completing the form. It is necessary to type the entire URL (e.g. https://test.miModyo.com/home).
-- **Thank you page**: Allows you to add a personalized thank you message after a user answers the form, next to a button that will take you to a site page. The button URL is a relative URL of the site associated with the form. You can also determine if you want the user to be automatically redirected to that page after a certain time.
+- **Thank you page**: Allows you to add a personalized thank you message after a user answers the form, along with a button that will take them to a page on the site. The button URL is a relative URL of the site associated with the form. You can also determine if you want the user to be automatically redirected to that page after a certain amount of time.
 
 
 - **Enable segmentation**: If the form is private (only registered users can answer it), you can select a set of users who can answer the form using the segments. To learn more, go to [Segments](/en/platform/customers/segments.html)
