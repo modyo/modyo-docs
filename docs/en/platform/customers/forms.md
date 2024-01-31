@@ -74,7 +74,7 @@ This section will allow you to add as many fields as necessary to complete the f
 - **Checkbox**: Allows you to add options from which the user can choose multiple options in a checkbox format.
 - **Choice**: Allows you to add options from which the user can choose one in _radio button_ format.
 - **Date**: Allows you to add a date field where the user can select one within the allowed range.
-- **Nested questions**: Add a series of questions that can be nested, so that the user is asked to select one of the possible nested options within a selected parent.
+- **Nested questions**: Allows you to add a series of alternatives that can be nested, so that the user is asked to select one of the possible nested options within the option they selected.
 
 :::warning Warning
 From version 9.0.8 onwards, you cannot add file-type questions in forms, you won't be able to request users to upload files using Modyo forms.
