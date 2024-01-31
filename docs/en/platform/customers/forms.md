@@ -34,9 +34,9 @@ You can only select a site that belongs to the same kingdom, within the **Site S
 - **Enabled**: Select if the form will start in an enabled state or not.
 - **Accept multiple answers**: If this option is enabled, each time a user answers the form, it will be recorded as a new response. If this option is disabled, each time the same user answers the form, they will be overwriting their previous response.
 - **Only for registered users**: Allows you to determine if the form will only be visible to registered Modyo users. If this option is enabled, an unsigned user will not be able to view the form. If this option is disabled, any user can answer the form.
-- **Automatically redirect to form**: If the form is private (only registered users can answer it), this option will appear, allowing you to automatically redirect users belonging to the site associated to the form when they log in.
+- **Request to answer automatically**: If the form is private (only registered users can answer it), this option will appear, allowing you to automatically redirect users who log in to the site associated with the form to answer it.
 
-The next section of the form properties contains the Form Options for what happens after a customer completes a form.
+After a division, you will be able to see the options to modify the redirect after a user answers the form.
 
 - **Default options**: After responding to the form, the user is redirected to the home page of the site associated with the form.
 - **Redirect URL**: Allows you to enter a URL to which the user will be redirected after responding to the form. It is necessary to enter the entire URL (e.g. https://test.miModyo.com/home).
