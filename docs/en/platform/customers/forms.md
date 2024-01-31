@@ -70,7 +70,7 @@ This section will allow you to add as many fields as necessary to complete the f
 - **Simple Text**: Allows the user to enter text up to 256 characters.
 - **Paragraph**: Allows the user to enter multiline text up to 65535 characters.
 - **Number**: Allows the user to enter numbers.
-- **Dropdown**: Add options from which the user can add a dropdown.
+- **Dropdown**: Allows you to add options from which the user can choose one in a dropdown format.
 - **Checkbox**: Add options from which the user can choose multiple answers in a checkbox format.
 - **Choice**: Add options from which the user can choose an answer in a _radio button_ format.
 - **Date**: Add a date field in which the user can select a date within the allowed range.
