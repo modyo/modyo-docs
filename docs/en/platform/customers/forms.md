@@ -135,7 +135,7 @@ Its sections are:
 #### General
 The **General** section adds two options:
 - **Submit button text**: Allows you to customize the text associated with the **Submit** button on the form.
-- **Enabled**: Lets you determine whether or not users will be able to respond to the form. If the option is checked, then the form will be accessible and answered, if it is not enabled, then users will not see it or be able to respond to it.
+- **Enabled**: Allows you to determine whether or not users will be able to answer the form. If the option is checked, then the form can be accessed and answered, if it is not enabled, then users will not see or be able to respond to it.
 
 #### Snippet
 The **Form Snippet** section, which will only appear if the form is public, will allow you to copy a _HTML_ code that you can use anywhere to dynamically load the form, even outside of Modyo.
