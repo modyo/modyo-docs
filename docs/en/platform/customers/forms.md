@@ -106,7 +106,7 @@ Just as some fields have validations, most have a default value that is pre-sele
 
 ### Regular Expressions
 
-For plain text and paragraph fields, you can add validations through regular expressions. By clicking on the functions button, you can see the different default validations:
+For simple text and paragraph fields, you can add validations through regular expressions. By clicking on the functions button, you can see the different default validations:
 
 - Email
 - URL
