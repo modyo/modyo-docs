@@ -32,7 +32,7 @@ You can only select a site that belongs to the same kingdom, within the **Site S
 :::
 
 - **Enabled**: Select if the form will start in an enabled state or not.
-- **Accept multiple responses**: If this option is enabled, each time a user answers the form, it will be registered as a new response. If this option is disabled, each time the same user answers the form, they will overwrite their previous response.
+- **Accept multiple answers**: If this option is enabled, each time a user answers the form, it will be recorded as a new response. If this option is disabled, each time the same user answers the form, they will be overwriting their previous response.
 - **Show only to registered users**: Allows you to determine if the form will only be visible to registered users in Modyo. If this option is enabled, a user without a session cannot see the form. If this option is disabled, any user can answer the form.
 - **Automatically redirect to form**: If the form is private (only registered users can answer it), this option will appear, allowing you to automatically redirect users belonging to the site associated to the form when they log in.
 
