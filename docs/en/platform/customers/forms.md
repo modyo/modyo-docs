@@ -156,11 +156,11 @@ If you're using a Modyo site with a custom domain, you'll need to enable the opt
 
 In the **Notifications** section you can configure the different emails that are sent after a user answers the form.
 
-The notification by mail sends an "administrative" email in which platform users are notified that someone responded to the form. You can assign a subject and a mailing list that you want to notify.
+The email notification sends an “administrative” email notifying you via that channel that someone has answered the form. You can assign a subject and a list of emails to which you want to notify.
 
-The thank you email allows you to customize an email that will be sent to the user who answered the form. You can customize both the subject and the body of the message using [Liquid](/en/platform/channels/liquid-markup.html). Below the field to customize your message, you'll see a list of variables you can use to personalize your email.
+The thank you email allows you to customize an email that will be sent to the user who answered the form. You can customize both the subject and the body of the message using [Liquid] (/es/platform/channels/liquid-markup.html). Below the field for customizing the message, you can see a list of variables that you can use to personalize the email.
 
-Here is a code sample that you can use as a base to personalize the thank you mail.
+Below is an example of code that you can use as a basis for customizing the thank you email.
 
 ```liquid
 Message Sent: {{ 'now' | date: "%b %d, %y" }}
