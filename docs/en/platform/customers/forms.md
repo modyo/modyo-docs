@@ -57,7 +57,7 @@ If a user does not have an active session, fill out the form, and the email matc
 
 To modify a form, follow these steps:
 
-1. In the side menu, select **Customers** and click **Realms**.
+1. In the side menu, select **Customers** and click **Kingdoms**.
 2. Select your Realms and click your form.
 3. In the options menu at the top right, click **"Edit"**.
 
