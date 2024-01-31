@@ -114,8 +114,8 @@ For simple text and paragraph fields, you can add validations through regular ex
 - Chilean RUT
 - Bank card number
 - American zip code
-- Canadian Post Code
-- Chilean Post code
+- Canadian zip code
+- Chileno Post code
 - UUID
 
 Selecting any of the different options and clicking **Add** will autocomplete the expression to the field.
