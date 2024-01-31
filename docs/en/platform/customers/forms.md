@@ -224,7 +224,7 @@ This script will run after the div containing the form, so it's important to kee
 
 ## Answers
 
-Clicking on a form will bring you to a view where all the responses users have submitted and the date they responded to are listed.
+When you click on a form, you will arrive at a view where all the answers that users have submitted and the date they responded are listed.
 
 You can export the responses to an _XLS_ or _CSV_ file by selecting them in the list and then using the actions selection that appears at the bottom.
 
