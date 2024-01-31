@@ -140,10 +140,10 @@ The **General** section adds two options:
 #### Snippet
 The **Snippet** section, which will only appear if the form is public, will allow you to copy an _HTML_ code that you can use anywhere to dynamically load the form, even outside of Modyo.
 
-:::warning Warning
-In order to make proper use of the form snippet, you must take into account the _CORS_ configuration of your account in Modyo and the security _headers_ from where you are inserting the snippet.
+:: :warning Attention
+In order to make proper use of the form snippet, you must take into account the _CORS_ configuration of your Modyo account and the security _headers_ where you are inserting the snippet.
 
-To use the snippet within a page on the Modyo platform, you must copy the Javascript code into the Javascript section and the div into the HTML section. The HTML section in [Pages](/en/platform/channels/pages) cannot run Javascript, it is mandatory to use the Javascript section to run the code correctly. 
+To make use of the snippet within a page on the Modyo platform, you must copy the Javascript code inside the Javascript section and the div in the HTML section. The HTML section in [Pages] (/es/platform/channels/pages) cannot run Javascript, the use of the Javascript section is mandatory to run the code correctly. 
 :::
 
 The **Form Options** and **Email Notifications** sections do not add anything different from what is found when creating a **New Form**
