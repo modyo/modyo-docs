@@ -23,7 +23,7 @@ To create a new form, follow these steps:
 3. Click **+ New Form**. This will take you to the creation view of a new form, where you must fill in the main attributes of the form:
 
 - **Name**: Name associated with the form. This value will appear both in the form index in the Modyo administrator and as a title when a user is responding to it.
-- **Description**: This text will appear as text under the title in the front end.
+- **Description**: This text will appear as text below the title when users respond to it.
 - **People limit**: Determines the maximum number of answers are allowed.
 - **Site**: Allows you to select where this form will be displayed. Keep in mind that this causes the form to change its appearance according to the classes defined in the site's global CSS. For more information, go to [Template builder](/en/platform/channels/templates.html). 
 
