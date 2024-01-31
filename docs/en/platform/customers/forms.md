@@ -218,8 +218,8 @@ Add functionality such as custom validation to your form using Javascript by fol
 1. In the Custom JS section you can add validations or extra functionality using Javascript.
 1. Click **Save**.
 
-:::tip Tip
-This script will run right after the div that contains the form, so it is important to note that it may be affected by the rest of the site configuration. For example if this form is embedded in another external site that cannot run Javascript.
+:: :tip Tip
+This script will run after the div containing the form, so it's important to keep in mind that it can be affected by the rest of the site's configuration. For example, if this form is embedded in another external site that cannot run Javascript.
 :::
 
 ## Answers
