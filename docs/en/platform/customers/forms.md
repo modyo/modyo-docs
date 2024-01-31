@@ -71,8 +71,8 @@ This section will allow you to add as many fields as necessary to complete the f
 - **Paragraph**: Allows the user to enter multiline text up to 65535 characters.
 - **Number**: Allows the user to enter numbers.
 - **Dropdown**: Allows you to add options from which the user can choose one in a dropdown format.
-- **Checkbox**: Add options from which the user can choose multiple answers in a checkbox format.
-- **Choice**: Add options from which the user can choose an answer in a _radio button_ format.
+- **Checkbox**: Allows you to add options from which the user can choose multiple options in a checkbox format.
+- **Choice**: Allows you to add options from which the user can choose one in _radio button_ format.
 - **Date**: Add a date field in which the user can select a date within the allowed range.
 - **Nested questions**: Add a series of questions that can be nested, so that the user is asked to select one of the possible nested options within a selected parent.
 
