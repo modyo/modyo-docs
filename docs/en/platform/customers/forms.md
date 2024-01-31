@@ -76,11 +76,11 @@ This section will allow you to add as many fields as necessary to complete the f
 - **Date**: Allows you to add a date field where the user can select one within the allowed range.
 - **Nested questions**: Allows you to add a series of alternatives that can be nested, so that the user is asked to select one of the possible nested options within the option they selected.
 
-:::warning Warning
-From version 9.0.8 onwards, you cannot add file-type questions in forms, you won't be able to request users to upload files using Modyo forms.
+:: :warning Attention
+From version 9.0.8 onward, forms no longer have file-type questions, so you won't be able to require users to upload files using Modyo forms.
 :::
 
-You can remove one of the form fields by clicking on the garbage can icon to the right of each field in the main section. The form option is deleted once you save the changes.
+You can delete one of the fields from the form by clicking on the trash can icon to the right of each field in the main section. The deletion will be effective once you save the changes.
 
 :::danger Danger
 If your form is already activated and you already have answered forms, be very careful when deleting questions from it, because by doing so, you will be deleting the values of those answers that users have already submitted. This action is irreversible.
