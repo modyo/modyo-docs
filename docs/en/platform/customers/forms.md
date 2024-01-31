@@ -146,10 +146,10 @@ In order to make proper use of the form snippet, you must take into account the 
 To make use of the snippet within a page on the Modyo platform, you must copy the Javascript code inside the Javascript section and the div in the HTML section. The HTML section in [Pages] (/es/platform/channels/pages) cannot run Javascript, the use of the Javascript section is mandatory to run the code correctly. 
 :::
 
-The **Form Options** and **Email Notifications** sections do not add anything different from what is found when creating a **New Form**
+The **Options** and **Notifications** sections don't add anything other than what's found in **New Form**
 
-:::warning Attention
-If you're using a Modyo site with a custom domain, you'll need to activate the option to share resource sources [CORS](/en/platform/core/security.html) in the platform settings.
+:: :warning Attention
+If you're using a Modyo site with a custom domain, you'll need to enable the option to share resource sources [CORS] (/es/platform/core/security.html) in the platform settings.
 :::
 
 ### Notifications
