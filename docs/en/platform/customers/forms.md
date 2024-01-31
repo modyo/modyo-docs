@@ -148,8 +148,8 @@ To make use of the snippet within a page on the Modyo platform, you must copy th
 
 The **Options** and **Notifications** sections don't add anything other than what's found in **New Form**
 
-:: :warning Attention
-If you're using a Modyo site with a custom domain, you'll need to enable the option to share resource sources [CORS] (/es/platform/core/security.html) in the platform settings.
+:::warning Attention
+If you're using a Modyo site with a custom domain, you'll need to enable the option to share resource sources [CORS](/en/platform/core/security.html) in the platform settings.
 :::
 
 ### Notifications
