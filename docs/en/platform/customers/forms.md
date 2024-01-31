@@ -45,8 +45,8 @@ After a division, you will be able to see the options to modify the redirect aft
 
 - **Enable segmentation**: If the form is private (only registered users can answer it), you can select a set of users who can answer the form using segments. To learn more, go to [Segments](/en/platform/customers/segments.html)
 
-:: :warning Attention
-If it's a public form, users who don't have an active session in Modyo will see three mandatory fields at the top of the form: First Name, Last Name, and Email. Once they submit the form, a user will be created with those values and then the response will be associated with that user.
+:::warning Attention
+In case of a public form, users who do not have an active session in Modyo, will see three required fields at the top of the form: First Name, Last Name, and Email. Once they submit the form, a user will be created with those values, and then the response will be associated with that user.
 :::
 
 :: :warning Attention
