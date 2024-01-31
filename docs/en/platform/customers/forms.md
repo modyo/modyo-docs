@@ -96,7 +96,7 @@ Some fields have validations, to ensure that the user meets certain requirements
 
 - **Minimum length**: Length required for the text to be valid
 - **Maximum length**: maximum length allowed for text to be allowed
-- **Regular expression**: Text format entered must match the associated regular expression to be valid.
+- **Regular expression**: Format of the text entered must match the associated regular expression to be valid.
 - **Minimum number**: The number entered cannot be less than this value.
 - **Maximum number**: The number entered cannot be greater than this value.
 - **Minimum date**: The date entered cannot be earlier than this value
