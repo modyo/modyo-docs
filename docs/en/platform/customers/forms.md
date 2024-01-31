@@ -134,7 +134,7 @@ Its sections are:
 
 #### General
 The **General** section adds two options:
-- **Send button text**: Allows you to customize the text associated with the **Send** button on the form.
+- **Submit button text**: Allows you to customize the text associated with the **Submit** button on the form.
 - **Enabled**: Lets you determine whether or not users will be able to respond to the form. If the option is checked, then the form will be accessible and answered, if it is not enabled, then users will not see it or be able to respond to it.
 
 #### Snippet
