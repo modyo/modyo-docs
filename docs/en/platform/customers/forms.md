@@ -27,8 +27,8 @@ To create a new form, follow these steps:
 - **People limit**: Allows you to determine the maximum number of answers allowed.
 - **Site**: Allows you to select where this form will be displayed. Keep in mind that this causes the form to change its appearance according to the classes defined in the site's global CSS. For more information, go to [Template builder](/en/platform/channels/templates.html). 
 
-:: :warning Alert
-You can only select a site that belongs to the same kingdom, within the **Site Settings**, under **General**, make sure that the site is part of the correct kingdom.
+:::warning Alert
+You can only select a site that belongs to the same realm, within the **Site Settings**, under **General**, make sure that the site is part of the correct realm.
 :::
 
 - **Enabled**: Select if the form will start in an enabled state or not.
