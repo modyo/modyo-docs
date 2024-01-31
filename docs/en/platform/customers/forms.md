@@ -214,7 +214,7 @@ Add functionality such as custom validation to your form using Javascript by fol
 1. On the Modyo platform, within your realm, click on your form.
 1. Click on more options and click on **View**.
 1. Open the developer tools and inspect the element you want to modify.
-1. Write down the id of the element to be validated. (e.g. `answers_3684_value`)
+1. Note the id of the element to be validated. (e.g. `answers_3684_value`)
 1. In the Custom JS section you can add validations or extra functionality using Javascript.
 1. Click **Save**.
 
