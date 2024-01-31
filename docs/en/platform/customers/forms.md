@@ -88,7 +88,7 @@ If your form is already activated and you already have answers, be very careful 
 
 ### Field properties
 
-This section allows you to modify the options for each of the questions on your form, you must select a field from the main section to use this section.
+This section will allow you to modify the options for each of the questions on your form, you must select a field from the main section in order to make use of this section.
 
 All the fields that you can add have a title, which are effectively the questions associated with each answer, have the option of making that field required to submit the form, and each can have a brief description in case instructions are required to answer the field.
 
