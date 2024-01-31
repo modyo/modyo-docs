@@ -127,9 +127,9 @@ This section will allow you to change the general behavior of the form. It conta
 Its sections are:
 
 - **General**
-- **Form Snippet**
-- **Form Options**
-- **Email Notifications**
+- **Snippet**
+- **Options**
+- **Notifications**
 - **Custom JS**
 
 #### General
