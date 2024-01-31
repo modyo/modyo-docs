@@ -43,7 +43,7 @@ After a division, you will be able to see the options to modify the redirect aft
 - **Thank you page**: Allows you to add a personalized thank you message after a user answers the form, along with a button that will take them to a page on the site. The button URL is a relative URL of the site associated with the form. You can also determine if you want the user to be automatically redirected to that page after a certain amount of time.
 
 
-- **Enable segmentation**: If the form is private (only registered users can answer it), you can select a set of users who can answer the form using the segments. To learn more, go to [Segments] (/es/platform/customers/segments.html)
+- **Enable segmentation**: If the form is private (only registered users can answer it), you can select a set of users who can answer the form using segments. To learn more, go to [Segments](/en/platform/customers/segments.html)
 
 :: :warning Attention
 If it's a public form, users who don't have an active session in Modyo will see three mandatory fields at the top of the form: First Name, Last Name, and Email. Once they submit the form, a user will be created with those values and then the response will be associated with that user.
