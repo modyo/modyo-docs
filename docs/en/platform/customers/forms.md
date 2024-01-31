@@ -25,7 +25,7 @@ To create a new form, follow these steps:
 - **Name**: Name associated with the form. This value will appear both in the form index in the Modyo administrator and as a title when a user is responding to it.
 - **Description**: This text will appear as text below the title when users respond to it.
 - **People limit**: Allows you to determine the maximum number of answers allowed.
-- **Site**: Allows you to select where this form will be displayed. Keep in mind that this causes the form to change its appearance according to the classes defined in the site's global CSS. For more information, go to [Template builder] (/es/platform/channels/templates.html). 
+- **Site**: Allows you to select where this form will be displayed. Keep in mind that this causes the form to change its appearance according to the classes defined in the site's global CSS. For more information, go to [Template builder](/en/platform/channels/templates.html). 
 
 :: :warning Alert
 You can only select a site that belongs to the same kingdom, within the **Site Settings**, under **General**, make sure that the site is part of the correct kingdom.
