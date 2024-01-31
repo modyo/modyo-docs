@@ -95,7 +95,7 @@ All the fields you can add have a title, which will be the question associated w
 Some fields have validations, to ensure that the user meets certain requirements to fill in the field, some of these restrictions are:
 
 - **Minimum length**: Length required for the text to be valid
-- **Maximum length**: Maximum length allowed for text to be valid
+- **Maximum length**: maximum length allowed for text to be allowed
 - **Regular expression**: Text format entered must match the associated regular expression to be valid.
 - **Minimum number**: The number entered cannot be less than this value.
 - **Maximum number**: The number entered cannot be greater than this value.
