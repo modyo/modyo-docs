@@ -138,7 +138,7 @@ The **General** section adds two options:
 - **Enabled**: Allows you to determine whether or not users will be able to answer the form. If the option is checked, then the form can be accessed and answered, if it is not enabled, then users will not see or be able to respond to it.
 
 #### Snippet
-The **Form Snippet** section, which will only appear if the form is public, will allow you to copy a _HTML_ code that you can use anywhere to dynamically load the form, even outside of Modyo.
+The **Snippet** section, which will only appear if the form is public, will allow you to copy an _HTML_ code that you can use anywhere to dynamically load the form, even outside of Modyo.
 
 :::warning Warning
 In order to make proper use of the form snippet, you must take into account the _CORS_ configuration of your account in Modyo and the security _headers_ from where you are inserting the snippet.
