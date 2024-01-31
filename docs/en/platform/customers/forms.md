@@ -76,7 +76,7 @@ This section will allow you to add as many fields as necessary to complete the f
 - **Date**: Allows you to add a date field where the user can select one within the allowed range.
 - **Nested questions**: Allows you to add a series of alternatives that can be nested, so that the user is asked to select one of the possible nested options within the option they selected.
 
-:: :warning Attention
+:::warning Attention
 From version 9.0.8 onward, forms no longer have file-type questions, so you won't be able to require users to upload files using Modyo forms.
 :::
 
