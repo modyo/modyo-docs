@@ -228,8 +228,8 @@ When you click on a form, you will arrive at a view where all the answers that u
 
 You can export the responses to a _XLS_ or _CSV_ file by selecting them from the list and then using the bulk actions at the bottom of the list.
 
-:::danger Danger
-You can delete answers one by one using the action to the right of each answer, or by making use of the bulk actions, selecting multiple answers and then the **Delete** button at the end of the list. Note that this action is irreversible and once a reply has been deleted, it cannot be recovered.
+:: :danger Danger
+You can delete answers one by one using the action to the right of each answer, or by making use of mass actions, selecting multiple answers and then the **Delete** button at the bottom of the list. Keep in mind that this action is irreversible and once a response has been deleted, it cannot be recovered.
 :::
 
-To see a user response in detail, just click on the user name, and you can access a list of questions next to the answers that user sent to a particular form.
+To see a user's answer in detail, just click on the user's name, and you'll access the list of questions along with the answers that user sent on that particular occasion.
