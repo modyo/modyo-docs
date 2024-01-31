@@ -209,7 +209,7 @@ Message Sent: {{ 'now' | date: "%b %d, %y" }}
 
 ### Custom JS
 
-Add functionality such as custom validation to your form using Javascript by following these steps:
+Add functionality, such as custom validation, to your form using Javascript by following these steps:
 
 1. On the Modyo platform, within your realm, click on your form.
 1. Click on more options and click on **View**.
