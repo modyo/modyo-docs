@@ -82,11 +82,11 @@ From version 9.0.8 onward, forms no longer have file-type questions, so you won'
 
 You can delete one of the fields from the form by clicking on the trash can icon to the right of each field in the main section. The deletion will be effective once you save the changes.
 
-:::danger Danger
-If your form is already activated and you already have answered forms, be very careful when deleting questions from it, because by doing so, you will be deleting the values of those answers that users have already submitted. This action is irreversible.
+:: :danger Danger
+If your form is already activated and you already have answers, be very careful when deleting questions from it, because by doing so, you will be removing the values from those answers that users have already submitted. This action is irreversible.
 :::
 
-### Field Properties
+### Field properties
 
 This section allows you to modify the options for each of the questions on your form, you must select a field from the main section to use this section.
 
