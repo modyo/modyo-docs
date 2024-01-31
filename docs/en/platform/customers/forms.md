@@ -154,7 +154,7 @@ If you're using a Modyo site with a custom domain, you'll need to enable the opt
 
 ### Notifications
 
-In the **Email Notifications** section you can configure the different emails that are sent after a user answers the form.
+In the **Notifications** section you can configure the different emails that are sent after a user answers the form.
 
 The notification by mail sends an "administrative" email in which platform users are notified that someone responded to the form. You can assign a subject and a mailing list that you want to notify.
 
