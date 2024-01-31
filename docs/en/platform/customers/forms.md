@@ -158,7 +158,7 @@ In the **Notifications** section you can configure the different emails that are
 
 The email notification sends an “administrative” email notifying you via that channel that someone has answered the form. You can assign a subject and a list of emails to which you want to notify.
 
-The thank you email allows you to customize an email that will be sent to the user who answered the form. You can customize both the subject and the body of the message using [Liquid] (/es/platform/channels/liquid-markup.html). Below the field for customizing the message, you can see a list of variables that you can use to personalize the email.
+The thank you email allows you to customize an email that will be sent to the user who answered the form. You can customize both the subject and the body of the message using [Liquid](/es/platform/channels/liquid-markup.html). Below the field for customizing the message, you can see a list of variables that you can use to personalize the email.
 
 Below is an example of code that you can use as a basis for customizing the thank you email.
 
