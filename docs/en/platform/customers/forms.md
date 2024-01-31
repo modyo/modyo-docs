@@ -73,7 +73,7 @@ This section will allow you to add as many fields as necessary to complete the f
 - **Dropdown**: Allows you to add options from which the user can choose one in a dropdown format.
 - **Checkbox**: Allows you to add options from which the user can choose multiple options in a checkbox format.
 - **Choice**: Allows you to add options from which the user can choose one in _radio button_ format.
-- **Date**: Add a date field in which the user can select a date within the allowed range.
+- **Date**: Allows you to add a date field where the user can select one within the allowed range.
 - **Nested questions**: Add a series of questions that can be nested, so that the user is asked to select one of the possible nested options within a selected parent.
 
 :::warning Warning
