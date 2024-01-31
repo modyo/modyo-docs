@@ -212,8 +212,8 @@ Message Sent: {{ 'now' | date: "%b %d, %y" }}
 Add functionality such as custom validation to your form using Javascript by following these steps:
 
 1. On the Modyo platform, within your realm, click on your form.
-1. Click more options and click **View**.
-1. Open the developer tools and inspect the item you want to modify.
+1. Click on more options and click on **View**.
+1. Open the developer tools and inspect the element you want to modify.
 1. Write down the id of the element to be validated. (e.g. `answers_3684_value`)
 1. In the Custom JS section you can add validations or extra functionality using Javascript.
 1. Click **Save**.
