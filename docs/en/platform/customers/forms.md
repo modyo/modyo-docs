@@ -90,9 +90,9 @@ If your form is already activated and you already have answers, be very careful 
 
 This section will allow you to modify the options for each of the questions on your form, you must select a field from the main section in order to make use of this section.
 
-All the fields that you can add have a title, which are effectively the questions associated with each answer, have the option of making that field required to submit the form, and each can have a brief description in case instructions are required to answer the field.
+All the fields you can add have a title, which will be the question associated with the answer, the option to make that required field to submit the form, and a brief description if instructions are needed to answer the field.
 
-Some fields have validations, to ensure the user meets certain requirements to fill in the field. The rules you can add are:
+Some fields have validations, to ensure that the user meets certain requirements to fill in the field, some of these restrictions are:
 
 - **Minimum length**: Length required for the text to be valid
 - **Maximum length**: Maximum length allowed for text to be valid
