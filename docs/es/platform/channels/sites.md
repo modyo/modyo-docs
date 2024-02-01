@@ -88,16 +88,25 @@ Puedes personalizar tus consultas de la siguiente manera:
 | **multi=true** | Este parámetro permite realizar búsquedas en todos los sitios de la cuenta que tienen habilitada la función de búsqueda. |
 
 
-## Configuración de un Sitio
+## Configuración de aplicaciones web
 
-La configuración del sitio te permite abrir las opciones de la plataforma, de modo que los visitantes, clientes, desarrolladores y administradores del sitio puedan verla de manera diferente. Además, puedes modificar opciones para mejorar el SEO y la presentación de algunos datos a los que el público tiene acceso al visitar las páginas.
+En la sección de Configuración de la aplicación puedes personalizar tu sitio a las necesidades de tus diferentes públicos y asegurar que tus visitantes, clientes, desarrolladores y administradores visualicen tu sitio de manera diferente.
+
+Además, puedes modificar configuraciones para optimizar el SEO.
+
 
 ### General
 
-En esta sección puedes configurar los siguientes datos de tu sitio:
+En esta sección puedes configurar:
 
 - **Nombre del sitio**: El nombre de tu sitio, este campo se usa como título por defecto para el SEO de tu sitio.
 - **Descripción**: Una breve descripción de tu sitio.
+
+:::warning Atención
+
+Los cambios realizados en el nombre y la descripción de la aplicación se verán de inmediato en Modyo. Sin embargo, la actualización en los resultados de búsqueda se reflejarán después de que los motores de búsqueda completen su proceso de reindexación.
+
+:::
 - **Logo del sitio**: Imagen que se muestra en la parte superior izquierda como logo del sitio.
 - **Idioma**: El idioma en el que está disponible tu sitio. Las opciones son: español, inglés y portugués.
 - **[Revisión en Equipo](/es/platform/core/key-concepts.html)**
