@@ -113,7 +113,7 @@ The API for obtaining delegated access tokens via `/auth/openidc/access_token` i
 ### Integration Settings
 
 1. Go to **Configuration/Realm Configuration > Realm > Identity Providers > + Add > OpenID Connect** and fill in **Client ID** and **Secret** with the client's name and credentials.
-2. In Issuer, fill in the URL of the realm, for example, for the realm `my-realm` the URL is `https://test.example.com/auth/realms/my-realm`.
+2. In Issuer, fill in the URL of the realm, for example, for the realm `my-realm` the URL it is `https://test.example.com/auth/realms/my-realm`.
 3. Click **Launch discovery service**. This will complete most of the settings.
 4. Configure the **Scopes** with the scopes required for the application. Use `openid, email, profile` in case you don't have custom scopes.
 
