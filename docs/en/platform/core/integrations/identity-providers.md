@@ -185,7 +185,7 @@ Azure Active Directory is a Microsoft Azure cloud identity service that allows y
    * **Name**: Use a meaningful name, for example, `modyo-production`.
    * **Supported account types**: Use **"Accounts in any organizational directory and personal Microsoft accounts"** to include personal Microsoft accounts. You can find more information about it [here](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps).
    * **Redirect URI**: For admin accounts use: `test.modyo.com/admin/auth/openidc/callback`.
-      * For realms use: `test.modyo.com/realms/<realm-name>/auth/openidc/callback`.
+      * For realms use: `test.modyo.com/realms/<nombre-realm>/auth/openidc/callback`.
       * Substitute `test.modyo.com` for the URL of your account.
 4. Once the application is created, go to **App registrations > modyo-production** and get the **Application ID (client) ** and **Directory ID (tenant) **.
 
