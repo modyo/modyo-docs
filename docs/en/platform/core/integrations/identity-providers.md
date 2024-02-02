@@ -135,7 +135,7 @@ When performing a specific integration, Modyo allows you to enable certain setti
 
 
 
-### Synchronization of _claims_
+### _Claims_ synchronization
 
 Modyo allows you to synchronize attributes and other properties of Customer users through standard and additional _claims_ through OpenID Connect.
 
