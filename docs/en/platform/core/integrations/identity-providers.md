@@ -115,7 +115,7 @@ The API for obtaining delegated access tokens via `/auth/openidc/access_token` i
 1. Go to **Configuration/Realm Configuration > Realm > Identity Providers > + Add > OpenID Connect** and fill in **Client ID** and **Secret** with the client's name and credentials.
 2. In Issuer, fill in the URL of the realm, for example, for the realm `my-realm` the URL it is `https://test.example.com/auth/realms/my-realm`.
 3. Click **Launch discovery service**. This will complete most of the settings.
-4. Configure the **Scopes** with the scopes required for the application. Use `openid, email, profile` in case you don't have custom scopes.
+4. Configure the **Scopes** with the scopes required for the application. Use `openid, email, profile` if you don't have custom scopes.
 
 <img src="/assets/img/platform/keycloak-new-idp.png" alt="Modyo's new identity provider page." width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
 
