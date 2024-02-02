@@ -167,7 +167,7 @@ After configuring Keycloak, you now have to complete the integration into Modyo 
 1. Go to **Configuration/Realm Configuration > Identity Providers > OpenID Connect** and fill in **Client ID** and **Secret** with the client's name and credentials that appear on the client's **Credentials** tab in Keycloak.
 2. In Issuer, fill in the URL of the realm, for example, for realm my-realm the URL is `https://keycloak.example.com/auth/realms/my-realm`.
 3. Click **Launch discovery service**. This will complete most of the settings.
-4. Configure the **Scopes** with the scopes required for the application. Use `openid, email, profile` in case you don't have custom scopes.
+4. Configure the **Scopes** with the scopes required for the application. Use `openid, email, profile` if you don't have custom scopes.
 
 
 ## Azure Active Directory
