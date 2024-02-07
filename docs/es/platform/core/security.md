@@ -54,7 +54,7 @@ Puedes localizar esta opción al editar un usuario en la sección **Equipo**, en
 
 Habilita la funcionalidad de Compartir Recursos de Origen Cruzado (CORS) para permitir el acceso a los recursos de Modyo desde otras páginas web.
 
-Por defecto, los dominios personalizados de tus sitios ya están incluidos una vez que CORS está activado. Para darle acceso a dominios externos, escríbelos separados por comas, por ejemplo `http://api.mydomain.com, http://mysubdomain.mydomain.com`. Los comodines o _wildcards_ no están permitidos en esta sección.
+Para dar acceso a dominios externos, escríbelos separados por comas, por ejemplo `http://api.mydomain.com, http://mysubdomain.mydomain.com`. Por defecto, no están permitidos los comodines o _wildcards_ en esta sección. Para habilitarlos, deberás deshabilitar manualemente el SSL a través de un ticket enviado area de [soporte de Modyo](https://support.modyo.com/hc/en-us).
 
 ## Token de entrega de contenido (JWT - JSON Web Token)
 
