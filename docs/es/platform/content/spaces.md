@@ -100,8 +100,11 @@ Nginx: set $cache_key "$http_x_forwarded_proto://$host$request_uri-$http_accept-
 ```
 :::tip Tip
 Al decidir el uso de SSL, considera:
--  **SSL:** Wildcards no son permitidos.
-- **NO SSL:** Wildcards son permitidos, pero Modyo debe ser seguro por defecto.
+-  **SSL:** No se permiten certificados wildcards.
+- **NO SSL:** Si se permiten wildcards en estos entornos, pero debes habilitarlos manualmente a través de un ticket enviado al área de [soporte de Modyo](https://support.modyo.com/hc/en-us). Por defecto, Modyo utiliza SSL.
+
+Para más información, revisa la sección de [Seguridad](https://docs.modyo.com/es/platform/channels/sites.html#security-headers)  de la documentación de Modyo.
+
 :::
 
 
