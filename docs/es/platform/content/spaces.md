@@ -104,7 +104,6 @@ Al decidir el uso de SSL, considera:
 - **NO SSL:** Si se permiten wildcards en estos entornos, pero debes habilitarlos manualmente a través de un ticket enviado al área de [soporte de Modyo](https://support.modyo.com/hc/en-us). Por defecto, Modyo utiliza SSL.
 
 Para más información, revisa la sección de [Seguridad](https://docs.modyo.com/es/platform/channels/sites.html#security-headers)  de la documentación de Modyo.
-
 :::
 
 
@@ -132,7 +131,7 @@ Para añadir un usuario al espacio:
 1. Da click en **Añadir**.
 
 
-#### Modificar Rol ####
+#### Modificar rol ####
 Para modificar el rol un usuario:
 1. Haz en el nombre del usuario.
 1. En el modal selecciona el nuevo rol.
