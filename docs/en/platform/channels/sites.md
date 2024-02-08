@@ -379,7 +379,7 @@ The main advantages of having different stages on your sites are:
 - The stages have a Team Members section regardless of the `main` stage. So you'll need to add members to enable the Team Review functionality. This way, you can have the same members with different roles and permissions for each stage.
 :::
 
-#### Adds a new stage
+#### Adding a new stage
 
 To add a new stage to your site, follow these steps:
 
