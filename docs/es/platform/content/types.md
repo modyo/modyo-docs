@@ -50,7 +50,7 @@ La cardinalidad se refiere al número de entradas que pueden existir para ese ti
 Es importante tener en cuenta que existe un límite de 50 Tipos de Contenido por Espacio.
 :::
 
-En la interfaz de creación, encontrarás una plantilla vacía en el centro de la pantalla y al lado derecho, una tabla con tres pestañas: 
+En la interfaz de creación, encontrarás una plantilla vacía en el centro de la pantalla y al lado derecho, una tabla con tres pestañas:
 
 - **Añadir campos**
 - **Configuración del campo**
@@ -61,7 +61,7 @@ Esta interfaz te permite crear cada uno de los tipos y darles el formato necesar
 ## Campos
 
 :::tip Tip
-El nombre del campo es de suma importancia, ya que será utilizado para acceder a su valor en los SDK de Liquid y JS. Para acceder al valor de un campo de una entrada puedes utilizar la sintaxis <span v-pre>`{{entry["nombre del campo"]}}`</span>. 
+El nombre del campo es de suma importancia, ya que será utilizado para acceder a su valor en los SDK de Liquid y JS. Para acceder al valor de un campo de una entrada puedes utilizar la sintaxis <span v-pre>`{{entry["nombre del campo"]}}`</span>.
 
 Para más información ve a la [referencia de la API](/es/platform/content/public-api-reference.html)
 :::
@@ -158,32 +158,13 @@ Este campo te permite vincular más de una Entrada existente dentro del Espacio 
 
 - **Restringir tipo**: Te permite seleccionar un tipo predeterminado para solo se puedan seleccionar, como enlace, entradas del tipo seleccionado.
 
-### Grupo `(coming soon)`
-
-Utiliza el campo Grupo para albergar otro campo dentro él. Puedes asignar un nombre al grupo según tus necesidades, así como nombrar los campos dentro del grupo. En casilla pista, incluye el texto que deseas mostrar para ayudar a tus usuarios a completar correctamente el campo. 
-
-Una vez que tengas más de un tipo de campo dentro de un grupo, puedes arrastrarlos y ordenarlos según requieras. 
-
-No hay límite en la cantidad de campos que puedes incluir dentro de un grupo. 
-
-Puedes validar el contenido de los campos de la siguiente forma: 
-
-- **Requerido**: Marca la casilla **Requirido** para obligar a que se complete el grupo o campo.
-  - Si marcas el grupo como requerido, al menos un elemento dentro del grupo deberá ser completado. 
-  - Si marcas un elemento como requerido, ese elemento tiene que tener contenido.
-- **Unique**: Cuando marcas una entrada como única, no puede repetirse su contenido dentro del mismo grupo. 
-
-:::tip Tip
-Un grupo puede albergar cualquier tipo de campo, menos otro grupo. 
-:::
-
 
 ## Propiedades
 
 En esta pestaña, puedes ver el nombre y UID del tipo. El UID es importante, ya que se utiliza para referirse al tipo desde los SDK de Liquid, JavaScript y la API. A continuación, verás un botón que puede estar en 2 estados:
 
 - **Reindexar**: Te permite volver a indexar el modelo en caso de problemas con la API pública.
-- **Cancelar reindexación**: Si hay una reindexación en curso, puedes cancelar el proceso haciendo click en este botón. 
+- **Cancelar reindexación**: Si hay una reindexación en curso, puedes cancelar el proceso haciendo click en este botón.
 
 :::warning Atención
 Al reindexar uno de tus tipos, el modelo previamente indexado seguirá disponible hasta que se complete la nueva indexación. Una vez finalizada la reindexación, el antiguo índice se sobrescribirá con el nuevo índice.

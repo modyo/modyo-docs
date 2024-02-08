@@ -13,7 +13,7 @@ Content Types can be assigned cardinality. This variable indicates how many Entr
 
 When you first enter the Types section, click the green **+New Type** button to create a new Type.
 
-Once you've created your first Type, you can create additional types by clicking on the**+New Type** button at the top right.
+Once you've created your first Type, you can create additional types by clicking on the **+New Type** button at the top right.
 
 The search bar allows you to search and filter your types by any word that appears in the Name field.
 
@@ -22,7 +22,7 @@ The table below the search bar shows the Types already created, ordered by defau
 To reorder the table, click on the symbols next to each category. The categories by which you can reorder are:
 
 - **Name**
-- **Identifier (UID) **
+- **Identifier (UID)**
 - **Creation Date**
 - **Updated on** Date
 
@@ -35,7 +35,7 @@ To create a new type of content that will serve as the basis for your posts, fol
 1. From the main menu, click **Content**.
 2. Select the space where you want to create a new Type.
 3. Click on **Types**.
-2. Click the**+ New Type** button.
+2. Click the **+ New Type** button.
 3. Type the name and identifier (UID).
 4. Select the type's cardinality.
 5. Click **Create**.
@@ -50,7 +50,7 @@ Cardinality refers to the number of entries that can exist for that type of cont
 Please note that there is a limit of 50 Content Types per Space.
 :::
 
-In the creation interface, you'll find an empty template in the center of the screen and on the right side, a table with three tabs: 
+In the creation interface, you'll find an empty template in the center of the screen and on the right side, a table with three tabs:
 
 - **Add fields**
 - **Field Configuration**
@@ -61,7 +61,7 @@ This interface allows you to create each of the types and format them as needed,
 ## Fields
 
 :::tip Tip
-The name of the field is of utmost importance, since it will be used to access its value in the Liquid and JS SDKs. To access the value of a field in an entry, you can use the syntax <span v-pre>`{{entry ["field name"]}}`</span>. 
+The name of the field is of utmost importance, since it will be used to access its value in the Liquid and JS SDKs. To access the value of a field in an entry, you can use the syntax <span v-pre>`{{entry ["field name"]}}`</span>.
 
 For more information go to the [API reference](/en/platform/content/public-api-reference.html)
 :::
@@ -158,32 +158,13 @@ This field allows you to link more than one existing Entry, within the Space, to
 
 - **Restrict type**: Allows you to select a default type so that only entries of the selected type can be selected as a link.
 
-### `(coming soon)` group
-
-Use the Group field to house another field inside it. You can assign a name to the group according to your needs, and also name the fields within the group. In the hint field, include the text you want to display to help your users complete the field correctly. 
-
-Once you have more than one type of field within a group, you can drag and order them as needed. 
-
-There is no limit to the number of fields you can include within a group. 
-
-You can validate the contents of the fields as follows: 
-
-- **Required**: Check the **Required** box to force the group or field to be completed.
-  - If you mark the group as required, at least one item within the group must be completed. 
-  - If you mark an item as required, that item must have content.
-- **Unique**: When you mark an entry as unique, its content cannot be repeated within the same group. 
-
-:::tip Tip
-A group can host any type of field, except another group.
-:::
-
 
 ## Settings
 
 In this tab, you can see the name and UID of the type. The UID is important, as it is used to refer to the type from the Liquid SDKs, JavaScript, and the API. Next, you'll see a button that can be in 2 states:
 
 - **Reindex**: Allows you to re-index the model in case of problems with the public API.
-- **Cancel reindexing**: If a reindexing is in progress, you can cancel the process by clicking this button. 
+- **Cancel reindexing**: If a reindexing is in progress, you can cancel the process by clicking this button.
 
 :::warning Attention
 When you reindex one of your types, the previously indexed model will remain available until the new indexing is complete. Once the reindexing is complete, the old index will be overwritten with the new index.
