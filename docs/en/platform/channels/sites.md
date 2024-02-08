@@ -436,7 +436,7 @@ To delete a stage, follow these steps:
 1. Open the drop-down menu next to the name of your site and select the stage you want to delete.
 1. Click **Site Settings**.
 1. Click on **General**.
-1. In the dangerous zone section, click **Delete Stage**.
+1. In the danger zone section, click **Delete Stage**.
 
 :::warning Warning
 When you click Delete stage, you will receive a confirmation alert. Once you confirm the deletion, Modyo starts an asynchronous process, and you won't be able to access the stage again.
