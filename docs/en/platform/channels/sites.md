@@ -88,16 +88,25 @@ You can customize your queries as follows:
 | **multi=true** | This parameter allows you to search all the sites in the account that have the search function enabled. |
 
 
-## Site settings
+## Configuring web applications
 
-Configuring the site allows you to open the platform options, so that visitors, customers, developers and site administrators can view it differently. In addition, you can modify options to improve SEO and the presentation of some data that the public has access to when visiting the pages.
+In the Settings section of the application, you can customize your site to the needs of your different audiences and ensure that your visitors, customers, developers and administrators view your site differently.
+
+In addition, you can modify settings to optimize SEO.
+
 
 ### General
 
-In this section, you can configure the following data for your site:
+In this section you can configure:
 
 - **Site Name**:  The name of your site, this field is used as the default title for your site's SEO.
 - **Description**: A brief description of your site.
+
+:::warning Warning
+
+Changes made to the name and description of the application will be immediately visible in Modyo. However, the update in the search results will be reflected after the search engines complete their reindexing process.
+
+:::
 - **Site Logo**: Image shown at the top left as the site's logo.
 - **Language**: The language in which your site is available. The options are: Spanish, English and Portuguese.
 - **[Team Review](/en/platform/core/key-concepts.html)**
