@@ -9,7 +9,7 @@ The Business Banking Dashboard is an overview of a client's entire product portf
 
 Shows data such as available balances, debts and quotas, and allows the user to view specific product details. 
 
-In addition, it has a side panel with the user's pending tasks, such as configuring roles and permissions, adding team members and upcoming deadlines. 
+Additionally, it has a side panel with the user's pending tasks, such as setting roles and permissions, adding team members and upcoming deadlines.
 
 ### Preview
 
