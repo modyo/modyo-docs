@@ -528,7 +528,7 @@ The hierarchy of locations on Modyo sites follows this order:
 For a redirect to be successful, the source path cannot exist or must be unpublished. If the source is a published page with subpages, you must unpublish the subpages before you unpublish the main page.
 :::
 
-### Security headers
+### Security Headers
 
 Enable this module for your site to configure HTTP security headers. Please note that this action cannot be undone. Once enabled, you'll have full control over the headers you want to use.
 
