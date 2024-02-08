@@ -495,7 +495,7 @@ To remove an administrator from the site, follow these steps:
 1. Check the box next to the administrator's name.
 2. Click on the **Delete** button at the bottom of the list, at the bottom left of the screen.
 
-### Custom redirects
+### Custom Redirects
 
 Modyo has a custom redirect system that will allow you to take a URL from your site and automatically redirect it via a 301 or 302 code to another section of the site.
 
