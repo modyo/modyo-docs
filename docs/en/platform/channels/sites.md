@@ -225,7 +225,7 @@ Also known as on-site and off-site SEO, these terms refer to actions you can tak
 
 ##### On-Page SEO
 
-Here's a list of actions you can take to improve on-page SEO:
+This is a list of actions you can take to improve on-page SEO:
 
 - Use keywords in the SEO section of the platform and on your pages.
 - Include keywords in the URL of the page.
