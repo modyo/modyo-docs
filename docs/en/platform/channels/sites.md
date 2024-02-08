@@ -622,7 +622,7 @@ Conveys the desire to block cross-origin/cross-site requests without cors to the
 For more information, see the [MDN Cross-Origin-Resource-Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Resource-Policy).
 
 
-### Site variables
+### Site Variables
 
 Modyo has [global variables](/en/platform/core/key-concepts.html#global-variables) that you can use on multiple sites. However, you can also create specific variables for a particular site or overwrite the value of an existing global variable, with a value specific to the particular site.
 
