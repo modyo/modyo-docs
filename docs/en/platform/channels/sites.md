@@ -88,7 +88,7 @@ You can customize your queries as follows:
 | **multi=true** | This parameter allows you to search all the sites in the account that have the search function enabled. |
 
 
-## Configuring web applications
+## Web Application Settings
 
 In the Settings section of the application, you can customize your site to the needs of your different audiences and ensure that your visitors, customers, developers and administrators view your site differently.
 
