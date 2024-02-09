@@ -160,7 +160,7 @@ Modyo te permite visualizar como se verá tu entrada publicada en múltiples sit
 Además, puedes previsualizar el contenido como usuario sin sesión o usuario con sesión de Modyo. Recomendamos iniciar o cerrar la sesión de Modyo en el sitio antes de entrar al modo vista previa, para evitar errores de seguridad del tipo x-frame-options o mixed-content.
 
 :::tip Tip
-Es necesario configurar previamente la vista de contenido para activar la opción de vista previa. Para obtener más detalles sobre cómo configurarla, consulta [vistas de contenido](https://docs.modyo.com/es/platform/channels/templates.html).
+Deberás configurar previamente la página de contenido en la aplicación para activar la opción de vista previa. Para obtener más detalles sobre cómo configurarla, consulta la sección de [contenido](https://docs.modyo.com/es/platform/content) de la documentación.
 :::
 
 Para previsualizar tu contenido:
