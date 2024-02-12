@@ -219,7 +219,7 @@ When you enter the name of the category, the route is automatically set as an id
 If you modify the route, be sure to update all the links linked to it.
 :::
 
-#### Delete a category
+#### Delete a Category
 
 To delete a category:
 
