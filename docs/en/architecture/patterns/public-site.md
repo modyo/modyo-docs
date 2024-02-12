@@ -168,11 +168,6 @@ Another important aspect is the use of Liquid tags to insert elements from the M
 
 It is important to note that when implementing languages by cloning sites, the contents of the spaces are not duplicated, since they do support several languages. At the same time, it is important to mention that any technique based on JavaScript or dynamics to change the language of a site without following our recommendations can affect various attributes mentioned in this guide, such as accessibility or indexing.
 
-:::tip Modyo 10
-The next version of Modyo will include improved support for internationalization, allowing you to work with several languages on the same site and to change languages dynamically without the need to duplicate efforts.
-:::
-
-
 ### Search
 In a public place, the search for content is a fundamental element. To this end, the platform has an internal search engine that indexes the content of the site and provides a simple interface to display the results. This search engine uses internal criteria to evaluate the relevance of the results, based on common indexing practices such as prioritizing titles over descriptions, keyword frequency, among others.
 
