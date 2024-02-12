@@ -171,7 +171,7 @@ To preview your content:
 1. From the list of entries, click on the entry you want to preview.
 1. Click on the preview icon at the top right.
 
-:: :warning Attention
+:::warning Attention
 We recommend that you consider:
 
 - You can only preview content in the site's language. If the entry is in another language, the preview shows a 404 error.
