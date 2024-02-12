@@ -104,7 +104,7 @@ Remains *e.g.*
 Replace each newline with HTML space.
 
 ### Plus
-Sum *e.g.*
+Sums *e.g.*
 <span v-pre>`{{'1' | plus: '1'}} #=> 2`</span>, <span v-pre>`{{1 | plus:1}} #=> 2`</span>
 
 ### Prepend
