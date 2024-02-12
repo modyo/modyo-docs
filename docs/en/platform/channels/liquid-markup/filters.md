@@ -594,7 +594,7 @@ Generates a primary type button. *e.g.*
 
 ### QR Code
 
-Generate a qr code. *e.g*
+Generates a qr code. *e.g*
 <span v-pre>`{{value | qr_code: 4, 320, 320}}`</span>
 
 **Parameters**
