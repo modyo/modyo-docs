@@ -178,7 +178,7 @@ We recommend that you consider:
 - If the Space isn't associated with a site, you'll only be able to see the JSON code of the entry you're developing.
 :::
 
-### Edit an entry
+### Edit an Entry
 
 To edit an entry, follow these steps:
 
