@@ -32,8 +32,8 @@ Capitalize the word in the input sentence.
 
 ### Ceiling
 
-Round up a decimal number to the next integer, *e.g.*
-<span v-pre>`{{4.6 | ceil}} #=> 5`</span>
+Rounds up a decimal number to the next integer, *e.g.*
+<span v-pre>`{{ 4.6 | ceil }} #=> 5`</span>
 
 ### Date
 
