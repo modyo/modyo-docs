@@ -40,7 +40,7 @@ Click on the Filters menu at the top right of the list of entries to add or remo
 
 ## Bulk actions
 
-Select one or more entries and click on the Mass Actions box to:
+Select one or more entries and click on the Bulk Actions box to:
 
 - **Bulk edit: ** This option opens an interface where you can modify multiple entries at once, selecting the fields you want to overwrite and applying the changes.
 
