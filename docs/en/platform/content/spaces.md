@@ -57,7 +57,7 @@ In this section, you can:
 Saving this option reindexes all entries in the space. The changes will be reflected once the process is completed.
 :::
 
-- **Modify the space kingdom: ** When you change the user kingdom, you will lose all privacy settings.
+- **Modify the realm's space:** When you change the user realm, you lose all privacy settings.
 - **Modify the space identifier: ** The identifier or UID of the space is the attribute with which you access from the public content API, the Javascript SDK and the Liquid SDK. Make sure it's unique and without accents or special characters, as it will be used in URLs to access the content.
 - **Delete space: ** Permanently delete space and all of its elements.
 :: :danger Danger
