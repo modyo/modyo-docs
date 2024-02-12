@@ -98,9 +98,9 @@ When you enable CORS:
 Varnish: sub vcl_hash {  if (req.http.Origin) { hash_data(req.http.Origin);  } }
 Nginx: set $cache_key "$http_x_forwarded_proto://$host$request_uri-$http_accept-$http_x_requested_with";
 ```
-:: :tip Tip
+:::tip Tip
 When deciding to use SSL, consider:
--  **SSL: ** Wildcard certificates are not allowed.
+-  **SSL:** Wildcard certificates are not allowed.
 - **NO SSL: ** If wildcards are allowed in these environments, but you must enable them manually through a ticket sent to the [Modyo support] area (https://support.modyo.com/hc/en-us). By default, Modyo uses SSL.
 
 For more information, review the [Security] section (https://docs.modyo.com/es/platform/channels/sites.html#security-headers) of the Modyo documentation.
