@@ -377,7 +377,7 @@ These drops are very useful when you want to make dynamic pages using Liquid.
 |---|---|
 | **page.content** The content of the page. | ```Home Main Sectionx Build better digital products to unify your customer experiences and accelerate growth. Welcome to the Minimal theme. This is an HTML widget that you can modify in the Page Builder section. You can also modify the style in the Template Builder section. Go to Modyo Read the docs Create and launch digital products faster Welcome to the Minimal theme. This is an HTML widget that you can modify in the Page Builder section. You can also modify the style in the Template Builder section. Learn more Loren Ipsum dolor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Learn more Loren Ipsum dolor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Learn more Loren Ipsum dolor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Learn more HTML dsfdfdfs customivan Content list Content list newentry 7 Feb, 2022 42838bbc-8ce8-4401-9898-3c0f2590c992 2022-02-08 14:59:31 UTC en newentry 2022-02-07 21:09:18 UTC 2022-02-08 14:59:31 UTC false``` |
 | **page.name** The name associated with the page.  | ```Home``` |
-| **page.parent** The page-type object that is the parent of the page, if there is no parent, displays void. |  |
+| **page.parent** The page-type object that is the parent of the page, if there is no parent, it displays void. |  |
 | **page.url** The URL of the page. | ```https://test.miModyo.com/newsite/``` |
 | **page.current_path** The path associated with the page.  | ```/examples``` |
 | **page.description** The description of the page.  | ```This is the description of a very cool page``` |
@@ -528,8 +528,7 @@ Use the user drops to get information about your users from the Customers module
 | **[user.targets](#target)** Array of objects of the target type.  |  |
 | **user.undefined_sex_value** The default value when gender is undefined.  | ```3``` |
 | **[user.unread_notifications](#notification)** Array of notification-type objects.  |  |
-| **user.unread_notifications_count** The count of unread notifications.
-  | ```2``` |
+| **user.unread_notifications_count** The count of unread notifications.  | ```2``` |
 | **user.username** The user's username.  | ```ivan@modyo.com``` |
 | **user.uuid** The uuid of the user.  | ```cdc7f0e2-b5c3-4b92-aa34-962ffa0bi572``` |
 
