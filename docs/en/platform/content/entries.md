@@ -213,7 +213,7 @@ When you assign an entry to a category, Modyo adds the identifier as a prefix to
 
 An entry with URL: test.modyo.com/visita-chile and category 'travel' would now be test.modyo.com/travel/visita-chile.
 
-:: :tip Tip
+:::tip Tip
 When you enter the name of the category, the route is automatically set as an identifier. To change it, click on the path.
 
 If you modify the route, be sure to update all the links linked to it.
