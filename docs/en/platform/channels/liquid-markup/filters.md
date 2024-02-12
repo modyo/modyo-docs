@@ -686,7 +686,7 @@ Deploys the HTML code for a user's image. *e.g.*
 
 ### Default Avatar Image
 
-Display the default avatar image. *e.g.*
+Displays the default avatar image. *e.g.*
 <span v-pre>`{{user | avatar_for: 'C50x50'}}`</span>
 
 **Parameters**
