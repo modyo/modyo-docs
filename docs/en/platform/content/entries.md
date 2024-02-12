@@ -229,8 +229,8 @@ To delete a category:
 1. Select **Delete**.
 1. Click **OK** to confirm the deletion.
 
-:: :tip Tip
-When you delete a category that has assigned entries, the entries are not deleted, however, they will not be assigned to a category. If you want to assign them a new category, you must do it again.
+:::tip Tip
+When you delete a category that has assigned entries, the entries are not deleted, however, they will not be assigned to a category. If you want to assign them a new category, you must do so again.
 :::
 
 :: :warning Attention
