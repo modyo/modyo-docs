@@ -645,7 +645,7 @@ Adds a theme tag in CSS. *e.g.*
 
 ### Time Ago in Words
 
-Convert a date in String to words. *e.g.*
+Converts a date in String to words. *e.g.*
 <span v-pre>`{{'01-02-2019' | time_ago_in_words}} #=> 'over 3 years'`</span>
 
 ### Translate
