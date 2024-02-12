@@ -126,10 +126,10 @@ To publish an entry in Modyo, follow these steps:
 1. At the top of the screen, click **Save**.
 1. If you have administrator permissions, the **Save** button changes to **Publish** and you can proceed to publish your post. Otherwise, another user with Administrator permissions can do so. If team review is active, it will go through that process before it is published.
 
-You can find more information on team review in the [Key Concepts] section (https://docs.modyo.com/es/platform/core/key-concepts.html) of our documentation.
+You can find more information on team review in the [Key Concepts](https://docs.modyo.com/en/platform/core/key-concepts.html) section of our documentation.
 
 
-### Unpublish an entry
+### Unpublish an Entry
 
 Unpublishing an entry allows you to switch the entry to the Draft state and hide it from the public. If team review is turned on, you'll need to go through that flow again to publish it.
 
