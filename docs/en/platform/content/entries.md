@@ -19,7 +19,7 @@ The columns for sorting the list of entries are:
 
 - **Status:** Draft, Published, Scheduled, or Archived.
 - **Name:** Name of the content.
-- **Type: ** [Type] (/es/platform/content/types.html) of content.
+- **Type:** [Type](/en/platform/content/types.html) of content.
 - **Updated: ** Date of the last saved update of the content.
 - **Author: ** Name of the author of the content.
 
