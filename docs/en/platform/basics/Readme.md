@@ -20,7 +20,7 @@ The current documentation applies to the latest version (10) of Modyo. If you ne
 
 Modyo is a digital experience platform that helps you create integrated digital experiences for your consumers, accelerating web and mobile development securely, and allowing you to unify native and third-party applications in a single area to manage your digital channels.
 
-### What to Use Modyo for?
+### What to Use Modyo For?
 
 * **To create integrated digital experiences:** Modyo allows you to create personalized digital experiences for your consumers, regardless of their channel.
 * **To create agility and governance:** Modyo helps you accelerate the development of your digital experiences and ensure their quality.
