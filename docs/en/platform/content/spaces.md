@@ -31,7 +31,7 @@ To create a space, follow these steps:
 1. Click **Create**
 
 
-:: :tip Tip
+:::tip Tip
 Selecting the default language in which you will write the content improves the character configuration.
 
 Later, in the space configuration, you can define secondary languages for the entries.
