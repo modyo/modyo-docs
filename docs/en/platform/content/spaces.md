@@ -117,8 +117,7 @@ The configuration options for team review are as follows:
 - **Force review:** Requires at least one specific user to review the content.
 - **Require all:** Requires all selected users to approve the item before it is published.
 
-For more information on how to configure this option, review the
- [Team Review] (/es/platform/core/key-concepts.html)
+For more information on how to configure this option, go to [Team Review](/en/platform/core/key-concepts.html).
 
 ### Team members
 
