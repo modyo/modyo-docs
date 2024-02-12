@@ -328,4 +328,4 @@ URL: `https://test.modyo.com/api/content/spaces/test-space/types/nuevo/entries/4
 }
 ```
 
-For more information about our API and the different actions you can perform, see [Management API] (/es/platform/core/api).
+For more information about our API and the different actions you can perform, see [Management API] (/en/platform/core/api).
