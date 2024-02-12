@@ -121,7 +121,7 @@ For more information on how to configure this option, go to [Team Review](/en/pl
 
 ### Team members
 
-Team members are the users who have access to a space to write, review and publish content. The space administrator can add, modify, or remove team members and assign the default roles.
+Team members are those users who have access to a space to write, review and publish content. The space administrator can add, modify, or remove team members and assign the default roles.
 
 #### Add User ####
 To add a user to the space:
