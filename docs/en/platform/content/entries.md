@@ -138,7 +138,7 @@ To unpublish:
 1. Click on your space.
 1. Select Entries.
 1. From the list of entries, check the box for the entry you want to unpublish.
-1. Expand the Mass Actions menu
+1. Expand the Bulk Actions menu
 1. Click **Publish**.
 
 
