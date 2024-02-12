@@ -530,7 +530,7 @@ Return the URL of an embedded video. *e.g.*
 
 ### Escape JS
 
-Avoid interpreting JavaScript code. *e.g.*
+Avoids interpreting JavaScript code. *e.g.*
 <span v-pre>`{{'<script>alert (“hello world”);</script>'| escape_js}} `</span>
 
 ### Format Date
