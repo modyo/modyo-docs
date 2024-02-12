@@ -50,7 +50,7 @@ The option to edit entries in bulk is only available for entries of the same typ
 
 You can make changes to all fields of the type. Once the changes are made, click **Next** at the top of the screen to see the summary of your changes. Click “Save” to confirm the changes.
 
-These entries will now have pending changes and you must publish them. To do this, you can make use of the “Publish” mass action.
+These entries will now have pending changes and you must publish them. To do this, you can make use of the “Publish” bulk action.
 
 
 :::warning Warning
