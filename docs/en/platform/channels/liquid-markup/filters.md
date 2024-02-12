@@ -611,7 +611,7 @@ Sanitizes the HTML tags in a String. *e.g.*
 
 ### Script Tag
 
-Add a script tag. *e.g.*
+Adds a script tag. *e.g.*
 <span v-pre>`{{'test-script' | script_tag}}`</span>
 
 ### Search Box
