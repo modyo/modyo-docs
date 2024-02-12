@@ -621,7 +621,7 @@ Adds a search engine field. *e.g.*
 
 ### Strftime
 
-Convert a datetime to String format. *e.g.*
+Converts a datetime to String format. *e.g.*
 <span v-pre>`{{time | strftime: '%m/%d/%y'}}
 `</span>
 
