@@ -54,7 +54,7 @@ In this section, you can:
 - **Show the author of the posts:** Enabling this option allows the author of the content to be visible in the public API and in the Liquid SDK. If disabled, the author will be blank.
 
 :::warning Attention
-When you save this option, all entries in the space are reindexed. The changes will be reflected once the process is complete.
+Saving this option reindexes all entries in the space. The changes will be reflected once the process is completed.
 :::
 
 - **Modify the space kingdom: ** When you change the user kingdom, you will lose all privacy settings.
