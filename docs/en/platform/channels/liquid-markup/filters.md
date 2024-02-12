@@ -343,12 +343,12 @@ Returns the Base64-decoded value of a string *e.g.*
 
 ### Base64 Encode
 
-Return the Base64-encoded value of a string *e.g.*
+Returns the Base64-encoded value of a string *e.g.*
 <span v-pre>`{% 'SgvsbG8gd29yBgQ=' | base64_decode%} # => 'Hello world'`</span>.
 
 ### HMAC SHA1
 
-Return the SHA-1 hash using a message authentication code (HMAC) from a string. *e.g.*
+Returns the SHA-1 hash using a message authentication code (HMAC) from a string. *e.g.*
 <span v-pre>`{% 'Hello world' | hmac_sha1: 'key'%} # => '2a73959742baf046e6e2e27e5ee94bcff0af31b1'`</span>
 
 ### HMAC SHA256
