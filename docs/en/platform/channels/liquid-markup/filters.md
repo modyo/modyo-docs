@@ -578,12 +578,12 @@ Adds an anchor link tag. *e.g.*
 
 ### Notifications
 
-Deploy the flash message variable. *e.g.*
+Deploys the flash message variable. *e.g.*
 <span v-pre>`{{'alert-error' | notifications}}`</span>
 
 ### Primary button to
 
-Generate a primary type button. *e.g.*
+Generates a primary type button. *e.g.*
 <span v-pre>`{{'Hello World' | primary_button_to: 'http://www.google.com', 'large'}}`</span>
 
 **Parameters**
