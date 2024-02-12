@@ -289,7 +289,7 @@ To get the UUID of an entry, follow these steps:
 
 1. In the side menu, select Content.
 1. Click on your space.
-1. Select Tickets.
+1. Select Entries.
 1. From the list of entries, click on an entry
 1. Click on the preview icon.
 1. Click on **API Link**. You'll be redirected to a new page that uses the API to get the content of the post. The result will look similar to this:
