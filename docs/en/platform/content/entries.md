@@ -292,7 +292,7 @@ To get the UUID of an entry, follow these steps:
 1. Select Tickets.
 1. From the list of entries, click on an entry
 1. Click on the preview icon.
-1. Click on **API Link**. You'll be redirected to a new page that uses the API to get the content of the post. The result will look something like this:
+1. Click on **API Link**. You'll be redirected to a new page that uses the API to get the content of the post. The result will look similar to this:
 
 URL: `https://test.modyo.com/api/content/spaces/test-space/types/nuevo/entries/45fa2ef7-bf12-47a3-8ff7-f7d1f5f36844`
 
