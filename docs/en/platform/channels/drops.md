@@ -561,7 +561,7 @@ These drops get the information relevant to Widgets.
 | **widget.name** The name of the widget.  | ```Content list``` |
 | **widget.type** The type of the widget.  | ```content-list``` |
 | **widget.use_default_title** Boolean indicating if the widget uses the default title.  | ```false``` |
-| **widget.wid** The widget wid.  | ```63ae60e2-d152-4c70-a5b0-ffa9916162e3``` |
+| **widget.wid** The widget's wid.  | ```63ae60e2-d152-4c70-a5b0-ffa9916162e3``` |
 | **widget.width** The width configured in the widget.  | ```full``` |
 
 ### Content List Widget
