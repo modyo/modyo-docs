@@ -184,7 +184,7 @@ To edit an entry, follow these steps:
 
 1. In the side menu, select Content.
 1. Click on your space.
-1. Select Tickets.
+1. Select Entries.
 1. From the list of entries, click on the entry you want to edit.
 1. Modify the fields you require.
 1. Click **Save**.
