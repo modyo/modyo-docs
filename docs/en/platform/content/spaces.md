@@ -103,7 +103,7 @@ When deciding to use SSL, consider:
 -  **SSL:** Wildcard certificates are not allowed.
 - **NO SSL:** Wildcards are allowed in these environments, but you must enable them manually by sending a ticket to [Modyo support](https://support.modyo.com/hc/en-us). By default, Modyo uses SSL.
 
-For more information, review the [Security] section (https://docs.modyo.com/es/platform/channels/sites.html#security-headers) of the Modyo documentation.
+For more information, review the [Security](https://docs.modyo.com/es/platform/channels/sites.html#security-headers) section of the Modyo documentation.
 :::
 
 
