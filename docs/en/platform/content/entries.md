@@ -136,7 +136,7 @@ Unpublishing an entry allows you to switch the entry to Draft state and hide it 
 To unpublish:
 1. In the side menu, select Content.
 1. Click on your space.
-1. Select Tickets.
+1. Select Entries.
 1. From the list of entries, check the box for the entry you want to unpublish.
 1. Expand the Mass Actions menu
 1. Click **Publish**.
