@@ -100,7 +100,7 @@ To translate an entry, you must first add the language to your space. To do this
 1. Select the language you want to add and click **Add language**.
 
 
-Once your space already has the languages you require, you can now translate your entries, for this purpose:
+Once your space has the languages you require, you can now translate your entries, for this purpose:
 
 1. In the side menu, select Content.
 1. Click on your space.
