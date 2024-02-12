@@ -75,7 +75,7 @@ To add a language:
 
 Once you've added a secondary language, when you modify an entry, you'll see a language selector next to the title of the entry.
 
-For more information on how to translate an entry into a secondary language, review the [Translate an entry] section (https://docs.modyo.com/es/platform/content/entries.html#traducir-una-entrada).
+For more information on how to translate an entry into a secondary language, review the [Translate an entry](https://docs.modyo.com/es/platform/content/entries.html#traducir-una-entrada) section.
 
 :: :tip Tip
 To select one of the available languages from an entry in its corresponding sections, review the documentation of [Public API] (/es/platform/content/public-api-reference.html #filtros), [Javascript SDK] (/es/platform/content/public-api-reference.html #sdk -de-javascript) and in [Liquid SDK] (/es/platform/content/public-api-reference.html #filtrar -entries)
