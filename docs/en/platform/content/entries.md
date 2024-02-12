@@ -31,7 +31,7 @@ You can also filter the view with default filters:
 - **Language:** Language of the content.
 - **Translation: ** Translation status of the entry. If an entry has no version in the selected language, it is considered “not translated”.
 - **Tags:** Labels available in the account.
-- **Search bar: ** Filter by the content of the title of the entries.
+- **Search bar:** Filter by the content of the title of the entries.
 
 :: :tip Tip
 Click on the Filters menu at the top right of the list of entries to add or remove any of the filter options in the header.
