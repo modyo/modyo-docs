@@ -33,7 +33,7 @@ You can also filter the view with default filters:
 - **Tags:** Labels available in the account.
 - **Search bar:** Filter by the content of the title of the entries.
 
-:: :tip Tip
+:::tip Tip
 Click on the Filters menu at the top right of the list of entries to add or remove any of the filter options in the header.
 :::
 
