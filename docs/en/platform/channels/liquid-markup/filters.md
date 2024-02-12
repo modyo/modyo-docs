@@ -171,7 +171,7 @@ These are the liquid filters that alter values related to Trade.
 
 ### Format Currency
 
-Add currency format to a value. *e.g.*
+Adds currency format to a value. *e.g.*
 <span v-pre>`{{4 | format_currency}} => $4`</span>
 
 ## Content
