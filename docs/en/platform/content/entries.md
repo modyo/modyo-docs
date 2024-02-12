@@ -59,7 +59,7 @@ By using bulk editing of entries you are overwriting the values for the selected
 To retrieve a specific value from an entry, access the entry editing view and select the **Differences** option to review the previous values of an entry.
 :::
 
-- **Publish: ** Publish selected entries that have pending changes or are in a draft state.
+- **Publish:** Publish selected entries that have pending changes or are in a draft state.
 - **Force publication: ** If team review is enabled, space administrators can use this action to force the publication of entries that have pending changes or are in draft status, without having to go through the review process.
 - **Unpublish**
 - **Archive: ** Mass archiving only has an effect on selected entries that are not published. If you try to archive a published post, the action will have no effect.
