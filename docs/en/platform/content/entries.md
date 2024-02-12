@@ -104,7 +104,7 @@ Once your space has the languages you require, you can now translate your entrie
 
 1. In the side menu, select Content.
 1. Click on your space.
-1. Select Tickets.
+1. Select Entries.
 1. From the list of entries, click on the entry you want to translate to open the editing view.
 1. Click on the language box next to the title of your post and select the language you want to translate your entry into.
 1. Click on the more actions button (...) and select **Copy from Language**.
