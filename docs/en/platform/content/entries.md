@@ -70,7 +70,7 @@ Bulk actions run in the background, and you might not see the changes immediatel
 
 
 
-## Create and publish an entry
+## Create and Publish an Entry
 
 To create an entry, follow these steps:
 
