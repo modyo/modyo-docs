@@ -259,7 +259,7 @@ Returns a list of Entries that match a filter. *e.g.*
 
 ### Filter By Query String
 
-Return a list of Entries that meet a query. You can use logical operators, various meta fields, URLs, or Liquid tags.
+Returns a list of Entries that meet a query. You can use logical operators, various meta fields, URLs, or Liquid tags.
 
 **Operators:**
 
