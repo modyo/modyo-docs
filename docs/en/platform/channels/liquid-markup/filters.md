@@ -635,12 +635,12 @@ Generates the HTML `<link>` for a CSS template, taking as parameters the URL and
 
 ### Javascript Theme
 
-Add a theme tag in Javascript. *e.g.*
+Adds a theme tag in Javascript. *e.g.*
 <span v-pre>`{{'home-page-javascript' | theme_javascript}}`</span>
 
 ### Theme Stylesheet
 
-Add a theme tag in CSS. *e.g.*
+Adds a theme tag in CSS. *e.g.*
 <span v-pre>`{{'home-page-stylesheet' | theme_stylesheet}}`</span>
 
 ### Time Ago in Words
