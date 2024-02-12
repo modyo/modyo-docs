@@ -710,7 +710,7 @@ Returns a list of all the widgets that belong to a Site. *e.g.*
 
 ### Resolve Me Widget List
 
-Return a list of all the widgets that belong to a “me” page. *e.g.*
+Returns a list of all the widgets that belong to a “me” page. *e.g.*
 <span v-pre>`{{site | resolve_me_widget_list}}`</span>
 
 ### Resolve Widget List
