@@ -407,7 +407,7 @@ Transforms a color to its RGB equivalent. *e.g.*
 
 ### Saturate
 
-It saturates a color. *e.g.*
+Saturates a color. *e.g.*
 <span v-pre>`{{'#00ff00' | saturated: 15}} #=> '#00ff00 '`</span>
 
 ### Spin
@@ -478,7 +478,7 @@ These are the liquid filters that alter values related to Sites in Modyo Platfor
 
 ### Asset Image Tag
 
-Generate the HTML tag of an image. *e.g.*
+Generates the HTML tag of an image. *e.g.*
 <span v-pre>`{{asset | asset_image_tag: 'original'}}`</span>
 
 ### Asset Thumbnail Link Tag
