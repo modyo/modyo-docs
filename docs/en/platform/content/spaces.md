@@ -113,7 +113,7 @@ Team review is a tool that allows multiple users to confirm and correct content 
 The configuration options for team review are as follows:
 - **Enable team review:** Activates or deactivates team review. If enabled, all items submitted through the API will require approval from one or more reviewers.
 - **Number of Approvals:** Specifies the number of approvals required for an item to be published.
-- **Restrict the selection of reviewers: ** Allows you to specify which users can review the content. Only those who submit for review can select reviewers.
+- **Restrict the selection of reviewers:** Allows you to specify which users can review the content. Only those who submit for review can select reviewers.
 - **Force review:** Requires at least one specific user to review the content.
 - **Require all:** Requires all selected users to approve the item before it is published.
 
