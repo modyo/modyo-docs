@@ -76,7 +76,7 @@ To create an entry, follow these steps:
 
 1. In the side menu, select Content.
 1. Select your space.
-1. Click on Tickets
+1. Click on Entries
 1. Click **+ New Entry**.
 1. Select the type of content, name and identifier.
 1. Click **Create**.
