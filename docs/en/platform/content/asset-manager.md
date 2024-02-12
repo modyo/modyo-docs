@@ -55,7 +55,7 @@ In this view, the columns are:
 ## Upload a file
 To upload a file to Modyo, choose one of the following options:
 
-#### From the section where you're working, templates, pages, kingdoms or sites:
+#### From the section where you're working, templates, pages, realms, or sites:
 1. Open the text editor,
 1. In the top bar, select **insert image** to open a modal where you can drag or upload a file.
 
