@@ -15,7 +15,7 @@ You can use this content inside and outside the Modyo platform, through the publ
 
 In the spaces interface, you can see a list of all your spaces, the number of content types and entries in each space, and the date it was created.
 
-You can sort the columns alphabetically by space name or identifier, or by creation date, and filter using the search engine.
+You can sort the columns alphabetically, by space name or identifier, or by creation date; and filter using the search engine.
 
 :: :warning Attention
 You can only see those spaces in which you are part of the work team with a role.
