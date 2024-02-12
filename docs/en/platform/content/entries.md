@@ -159,8 +159,8 @@ Modyo allows you to see what your post will look like published on multiple site
 
 In addition, you can preview the content as a user without a session or as a user with a Modyo session. We recommend starting or closing the Modyo session on the site before entering preview mode to avoid security errors such as x-frame-options or mixed-content.
 
-:: :tip Tip
-You'll need to pre-configure the content page in the app to activate the preview option. For more details on how to configure it, see the [content] section (https://docs.modyo.com/es/platform/content) of the documentation.
+:::tip Tip
+You'll need to pre-configure the content page in the app to activate the preview option. For more details on how to configure it, see the [content](https://docs.modyo.com/es/platform/content)section of the documentation.
 :::
 
 To preview your content:
