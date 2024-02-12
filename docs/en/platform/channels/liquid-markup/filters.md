@@ -352,8 +352,8 @@ Returns the SHA-1 hash using a message authentication code (HMAC) from a string.
 <span v-pre>`{% 'Hello world' | hmac_sha1: 'key'%} # => '2a73959742baf046e6e2e27e5ee94bcff0af31b1'`</span>
 
 ### HMAC SHA256
-Return the SHA-256 hash using a message authentication code (HMAC) from a string. *e.g.*
-<span v-pre>`{% 'Hello World' | hmac_sha256: 'key'%} # => 'a82b2e160edaf92a6589dc11160d2a10cai4449840a58717db308c1ee3512b039'`</span>
+Returns the SHA-256 hash using a message authentication code (HMAC) from a string. *e.g.*
+<span v-pre>`{% 'Hello world' | hmac_sha256: 'key'  %} # => 'a82b2e160edaf92a6589dc11160d2a10c04449840a58717db308c1ee3512b039'`</span>
 
 ### MD5
 
