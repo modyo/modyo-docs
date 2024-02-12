@@ -200,7 +200,7 @@ When you create a category, Modyo generates a unique path in the URL that provid
 To view your categories, click on the side menu in Content and then select Categories.
 
 
-#### Create a category
+#### Create a Category
 
 To create a category:
 
