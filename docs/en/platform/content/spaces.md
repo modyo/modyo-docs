@@ -77,8 +77,8 @@ Once you've added a secondary language, when you modify an entry, you'll see a l
 
 For more information on how to translate an entry into a secondary language, review the [Translate an entry](https://docs.modyo.com/es/platform/content/entries.html#traducir-una-entrada) section.
 
-:: :tip Tip
-To select one of the available languages from an entry in its corresponding sections, review the documentation of [Public API] (/es/platform/content/public-api-reference.html #filtros), [Javascript SDK] (/es/platform/content/public-api-reference.html #sdk -de-javascript) and in [Liquid SDK] (/es/platform/content/public-api-reference.html #filtrar -entries)
+:::tip Tip
+To select one of the available languages from an entry in its corresponding sections, review the documentation of [Public API](/en/platform/content/public-api-reference.html#filter), [Javascript SDK] (en/platform/content/public-api-reference.html#sdk-de-javascript) and in [Liquid SDK] (/en/platform/content/public-api-reference.html#filtrar-entradas)
 :::
 
 
