@@ -85,7 +85,7 @@ In the file interface, click on the name of a file to open the file properties e
 
 Click **Update Information** to confirm the changes or **Close** to cancel them.
 
-## Re-upload an image
+## Re-upload an Image
 
 To upload a new file while keeping the original name and link, follow these steps:
 
