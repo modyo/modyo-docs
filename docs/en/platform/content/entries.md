@@ -85,7 +85,7 @@ To create an entry, follow these steps:
 1. Click **Publish**.
 
 
-:: :warning Attention
+:::warning Attention
 If the name field is empty, the default identifier will be the UUID of the entry.
 :::
 
