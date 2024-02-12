@@ -494,12 +494,12 @@ Generate the HTML thumbnail tag of an image. *e.g.*
 
 ### Asset URL
 
-Generate the URL of an Asset-type object. *e.g.*
+Generates the URL of an Asset-type object. *e.g.*
 <span v-pre>`{{{{asset | asset_url: 'original'}}`</span>
 
 ### Audio Player
 
-Generate the URL of an Audio-type object. *e.g.*
+Generates the URL of an Audio-type object. *e.g.*
 <span v-pre>`{{{{audio1 | audio_player}}`</span>
 
 ### Bar Code
