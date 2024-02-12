@@ -382,7 +382,7 @@ Reduces brightness to a color. *e.g.*
 
 ### Desaturate
 
-Desaturate a color. *e.g.*
+Desaturates a color. *e.g.*
 <span v-pre>`{{'#00ff00' | desaturate: 15}} #=> '#13ec13 '`</span>
 
 ### Grayscale
