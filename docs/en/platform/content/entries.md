@@ -26,7 +26,7 @@ The columns for sorting the list of entries are:
 You can also filter the view with default filters:
 
 - **Type:** [Type](/en/platform/content/types.html) of content.
-- **Status: ** Draft, published, scheduled and archived.
+- **Status:** Draft, published, scheduled, and archived.
 - **Category: ** Category assigned to entries.
 - **Language** Language of the content.
 - **Translation: ** Translation status of the entry. If an entry has no version in the selected language, it is considered “not translated”.
