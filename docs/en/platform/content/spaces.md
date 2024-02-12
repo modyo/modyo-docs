@@ -38,7 +38,7 @@ Later, in the space configuration, you can define secondary languages for the en
 
 :::
 
-## Space configuration
+## Space Settings
 
 In this section, you can customize and adjust the options available for your space, according to your specific needs. To access the configuration of your space follow these steps:
 1. In the side menu, select Content
