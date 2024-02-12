@@ -42,7 +42,7 @@ Click on the Filters menu at the top right of the list of entries to add or remo
 
 Select one or more entries and click on the Bulk Actions box to:
 
-- **Bulk edit: ** This option opens an interface where you can modify multiple entries at once, selecting the fields you want to overwrite and applying the changes.
+- **Bulk edit: ** This option opens an interface where you can modify multiple entries at once, by selecting the fields you want to overwrite and applying the changes.
 
 :: :warning Important
 The option to edit entries in bulk is only available for entries of the same type and is only visible if you filter the entries by type.
