@@ -265,7 +265,7 @@ Enable the private content option so that your content is exclusive to users who
 Depending on how you're consuming the content, you may need to take some additional steps to access it:
 
 - **Through the public API:** Refer to the section on private content in the API.
-- **Through Liquid: ** By signing in to your site, your users will be able to view private content.
+- **Through Liquid:** By signing in to your site, your users will be able to view private content.
 
 
 ### Segments
