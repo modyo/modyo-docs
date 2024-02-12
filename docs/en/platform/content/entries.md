@@ -233,7 +233,7 @@ To delete a category:
 When you delete a category that has assigned entries, the entries are not deleted, however, they will not be assigned to a category. If you want to assign them a new category, you must do so again.
 :::
 
-:: :warning Attention
+:::warning Attention
 If you delete a parent category, all subcategories associated with it will be deleted. Entries linked to those categories will be left without an assigned category.
 :::
 
