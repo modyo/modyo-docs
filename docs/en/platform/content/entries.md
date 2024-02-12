@@ -249,7 +249,7 @@ When creating posts, you can add a tag that will appear both in the source code 
 The identifier is a unique value used to generate the URL of an entry.
 When you create an entry, the platform assigns an identifier to it. If you want to create a more friendly link, you can modify it when creating the post or later when editing it.
 
-The identifier must necessarily be a unique value for entries of the same type. If you try to save two entries with the same identifier, the platform will modify the last one when you publish the entry.
+The identifier must be a unique value for entries of the same type. If you try to save two entries with the same identifier, the platform will modify the last one when you publish the entry.
 
 
 :: :warning Important
