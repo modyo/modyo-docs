@@ -338,7 +338,7 @@ These are liquid filters that alter values related to Cryptology.
 
 ### Base64 Decode
 
-Return the Base64-decoded value of a string *e.g.*
+Returns the Base64-decoded value of a string *e.g.*
 <span v-pre> `{% 'Hello world' | base64_encode%} # => 'sgvsbg8gd29ybgq='`</span>.
 
 ### Base64 Encode
