@@ -148,7 +148,7 @@ To delete an entry:
 
 1. In the side menu, select Content.
 1. Click on your space.
-1. Select Tickets.
+1. Select Entries.
 1. From the list of entries, click on the entry you want to delete.
 1. Click on the more actions button (...) and select **Delete**. If the entry is not archived, this option will not be active, first select **Archive** and then select **Delete**.
 1. Click **Ok** to confirm.
