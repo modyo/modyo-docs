@@ -397,12 +397,12 @@ Lightens a color. *e.g.*
 
 ### Opacity
 
-Modify the opacity of a color. *e.g.*
+Modifies the opacity of a color. *e.g.*
 <span v-pre>`{{'#00ff00' | opacity: 0.5}} #=> 'rgba (0, 255, 0, 0.5) '`</span>
 
 ### RGB
 
-Transform a color to its RGB equivalent. *e.g.*
+Transforms a color to its RGB equivalent. *e.g.*
 <span v-pre>`{{'#00ff00' | rgb}} #=> 'rgb (0, 255, 0) '`</span>
 
 ### Saturate
