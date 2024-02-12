@@ -2,14 +2,15 @@
 search: true
 ---
 
-# Asset Manager
+# Media
+
+:::tip Tip
+- In `Modyo 9` this space is called **File Manager**. If you migrate from Modyo 9 to Modyo 10, all assets are preserved and you can choose in advance which space to move them to.
+:::
 
 This space allows you to upload, organize and manage your files in a simple and efficient way.
 
-- In `Modyo 9` this space is called **File Manager**: When migrating to Modyo 10 all assets are preserved, and you can choose in advance which space to move them to.
-
-- Starting with `Modyo 10` this space is called **Media**: Here (unlike the File Manager in Modyo 9), image editing and deleting permissions are carried out through groups. This way, a group can have permissions to view and use assets, but it can't modify or delete them.
-
+In Media, you can assign editing and deleting permissions to images through groups. This way, a group can have permissions to view and use assets, but it can't modify or delete them.
 You can upload different types of media to this space, considering the following size restrictions per file:
 
 
@@ -60,15 +61,6 @@ To upload a file to Modyo, choose one of the following options:
 
 #### In the dedicated section for managing files.
 
-`Modyo 9`
-1. In the side menu, select **Content**.
-1. Click on **File Manager**.
-1. Click on the **+ New Asset** button.
-1. Drag the file or click on the upload box to open a search window.
-1. Add tags to the file if you want.
-1. Click **Upload** to confirm.
-
-`Modyo 10`
 1. In the side menu, click on the **Content** icon.
 1. Select a space.
 1. In the side menu, click **Media**.
