@@ -30,7 +30,7 @@ You can also filter the view with default filters:
 - **Category:** Category assigned to entries.
 - **Language:** Language of the content.
 - **Translation: ** Translation status of the entry. If an entry has no version in the selected language, it is considered “not translated”.
-- **Tags: ** Labels available in the account.
+- **Tags:** Labels available in the account.
 - **Search bar: ** Filter by the content of the title of the entries.
 
 :: :tip Tip
