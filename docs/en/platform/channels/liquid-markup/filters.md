@@ -616,7 +616,7 @@ Adds a script tag. *e.g.*
 
 ### Search Box
 
-Add a search engine field. *e.g.*
+Adds a search engine field. *e.g.*
 <span v-pre>`{{'testsite' | search_box}}`</span>
 
 ### Strftime
