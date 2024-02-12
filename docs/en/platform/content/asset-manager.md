@@ -96,7 +96,7 @@ To upload a new file while keeping the original name and link, follow these step
 5. Click **Update Information** to confirm the changes
 
 
-## Edit an image
+## Edit an Image
 
 The Modyo image editor allows you to make small changes to the images to make them easier to use on the platform. To adjust the dimensions of an image, follow these steps:
 
