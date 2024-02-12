@@ -27,7 +27,7 @@ The allowed file types are:
 
 
 
-## About the interface
+## About the Interface
 
 The interface shows you a list of all the files that exist within the platform.
 
