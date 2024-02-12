@@ -41,8 +41,8 @@ Format a date ([syntax reference](https://shopify.dev/api/liquid/filters#date))
 
 ### Default
 
-Returns the given variable unless it's null or empty string, then returns the given value, *e.g.*
-<span v-pre>`{{undefined_variable | default: “Default value”}} #=> “Default value"`</span>
+Returns the given variable unless it is null or empty string, then it returns the given value, *e.g.*
+<span v-pre>`{{ undefined_variable | default: "Default value" }} #=> "Default value"`</span>
 
 ### Divided by
 
