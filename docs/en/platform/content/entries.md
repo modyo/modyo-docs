@@ -17,7 +17,7 @@ In the entry interface, you can see a list of all the user-generated content, or
 
 The columns for sorting the list of entries are:
 
-- **Status: ** Draft, Published, Scheduled, or Archived.
+- **Status:** Draft, Published, Scheduled, or Archived.
 - **Name: ** Name of the content.
 - **Type: ** [Type] (/es/platform/content/types.html) of content.
 - **Updated: ** Date of the last saved update of the content.
