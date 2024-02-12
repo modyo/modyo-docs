@@ -5,7 +5,7 @@ sidebarDepth: 3
 
 # Spaces
 
-A space is a repository where team members can define [types of content] (https://docs.modyo.com/es/platform/content/types.html) and entries.
+A space is a repository where team members can define [types of content](https://docs.modyo.com/es/platform/content/types.html) and entries.
 
 Spaces allow you to organize content in the areas where you work, for better distribution and order.
 
