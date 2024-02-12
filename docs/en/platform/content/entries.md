@@ -20,7 +20,7 @@ The columns for sorting the list of entries are:
 - **Status:** Draft, Published, Scheduled, or Archived.
 - **Name:** Name of the content.
 - **Type:** [Type](/en/platform/content/types.html) of content.
-- **Updated: ** Date of the last saved update of the content.
+- **Updated:** Date of the last saved update of the content.
 - **Author: ** Name of the author of the content.
 
 You can also filter the view with default filters:
