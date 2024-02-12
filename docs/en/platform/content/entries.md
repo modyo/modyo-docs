@@ -89,7 +89,7 @@ To create an entry, follow these steps:
 If the name field is empty, the default identifier will be the UUID of the entry.
 :::
 
-## Translate an entry
+## Translate an Entry
 
 To translate an entry, you must first add the language to your space. To do this, follow these steps:
 
