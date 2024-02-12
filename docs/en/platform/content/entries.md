@@ -115,7 +115,7 @@ Once your space has the languages you require, you can now translate your entrie
 1. Click **Publish**.
 
 
-### Publish an entry
+### Publish an Entry
 
 To publish an entry in Modyo, follow these steps:
 
