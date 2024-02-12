@@ -148,6 +148,6 @@ To remove a team member from a space:
 1. Click **OK**.
 
 
-:: :warning Attention
+:::warning Attention
 Every space must have at least one administrator. If there's only one administrator in a space, the platform won't allow you to delete that user.
 :::
