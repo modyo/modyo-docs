@@ -675,7 +675,7 @@ These are the liquid filters that alter values related to Users.
 
 ### Image For
 
-Deploy the HTML code for a user's image. *e.g.*
+Deploys the HTML code for a user's image. *e.g.*
 <span v-pre>`{{user | avatar_for: 'C50x50', true}}`</span>
 
 **Parameters**
