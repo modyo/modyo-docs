@@ -73,7 +73,7 @@ To upload a file to Modyo, choose one of the following options:
 Modyo allows you to upload 10 files at a time. If you need to upload more items, repeat the process.
 :::
 
-## Edit a file
+## Edit a File
 In the file interface, click on the name of a file to open the file properties editing interface and see:
 
 - **File URL:** Shows the public URL of the file. Click on the icon next to the URL to copy it. It is not modifiable.
