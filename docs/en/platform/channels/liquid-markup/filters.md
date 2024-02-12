@@ -357,7 +357,7 @@ Returns the SHA-256 hash using a message authentication code (HMAC) from a strin
 
 ### MD5
 
-Return the MD5 hash of a string. *e.g.*
+Returns the MD5 hash of a string. *e.g.*
 <span v-pre>`{% 'Hello World' | md5%} # => '3e25960a79dbc69b674cd4ec67a72c62'`</span>
 
 ### SHA1
