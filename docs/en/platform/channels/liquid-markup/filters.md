@@ -705,7 +705,7 @@ Determines the entry limit for a widget. *e.g.*
 
 ### Resolve Home Widget List
 
-Return a list of all the widgets that belong to a Site. *e.g.*
+Returns a list of all the widgets that belong to a Site. *e.g.*
 <span v-pre>`{{site | resolve_home_widget_list}}`</span>
 
 ### Resolve Me Widget List
