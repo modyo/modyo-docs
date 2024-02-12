@@ -137,7 +137,7 @@ To modify a user's role:
 1. Press **Update**.
 
 
-:: :warning Attention
+:::warning Attention
 Every space must have at least one administrator. If there is only one administrator in a space, the platform will not allow you to modify their role.
 :::
 
