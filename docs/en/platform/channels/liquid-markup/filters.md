@@ -627,7 +627,7 @@ Converts a datetime to String format. *e.g.*
 
 ### Strip tag
 
-Remove all HTML tags and their content from a String. *e.g.*
+Removes all HTML tags and their content from a String. *e.g.*
 <span v-pre>`{{'<script>Hello World</script>'| strip_tags}} #=> “" `</span>
 
 ### Stylesheet Tag
