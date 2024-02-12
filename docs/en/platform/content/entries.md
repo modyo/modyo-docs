@@ -64,8 +64,8 @@ To retrieve a specific value from an entry, access the entry editing view and se
 - **Unpublish**
 - **Archive:** Bulk archiving only has an effect on the selected entries that are not published. If you try to archive a published post, the action will have no effect.
 
-:: :tip Tip
-Bulk actions run in the background and you might not see the changes immediately, so you'll need to wait a moment and refresh your view after executing a mass action.
+:::tip Tip
+Bulk actions run in the background, and you might not see the changes immediately. You will need to wait a moment and refresh your view after executing a bulk action.
 :::
 
 
