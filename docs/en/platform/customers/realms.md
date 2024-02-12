@@ -351,7 +351,7 @@ To ensure proper data synchronization between Modyo and Salesforce and maintain 
   * If the linking settings allow it, when updating a contact in Salesforce, Modyo searches for the corresponding user using the “secondary_user_id” field.
   * If the Modyo user does not exist, a new one is created, and if it already exists, it is updated according to the synchronized fields.
   * If the Modyo user didn't exist previously, their “secondary_user_id” is defined as the ID of the Salesforce contact.
-* Modyo user update:
+* Update a user in Modyo:
   * When updating a Modyo user, the corresponding contact is searched in Salesforce using their “contact ID”.
   * If the Modyo user is new or doesn't have “secondary_user_id”, a new contact is created in Salesforce and the “secondary_user_id” field is updated with the ID of the newly created contact.
 * Contact creation in Salesforce:
