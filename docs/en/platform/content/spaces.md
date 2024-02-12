@@ -115,7 +115,7 @@ The configuration options for team review are as follows:
 - **Number of Approvals:** Specifies the number of approvals required for an item to be published.
 - **Restrict the selection of reviewers: ** Allows you to specify which users can review the content. Only those who submit for review can select reviewers.
 - **Force review:** Requires at least one specific user to review the content.
-- **Require all: ** Require all selected users to approve the item before it is published.
+- **Require all:** Requires all selected users to approve the item before it is published.
 
 For more information on how to configure this option, review the
  [Team Review] (/es/platform/core/key-concepts.html)
