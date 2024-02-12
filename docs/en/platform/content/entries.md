@@ -252,8 +252,8 @@ When you create an entry, the platform assigns an identifier to it. If you want 
 The identifier must be a unique value for entries of the same type. If you try to save two entries with the same identifier, the platform will modify the last one when you publish the entry.
 
 
-:: :warning Important
-If you want to modify the identifier of your entry after its creation, you must click on the padlock in the identifier field and confirm that you want to change it, since making changes to the identifier breaks all references to the content through the API or the SDKs.
+:::warning Important
+If you want to modify the identifier of your entry after its creation, you must click on the lock in the identifier field and confirm that you want to change it, since making changes to the identifier breaks all references to the content through the API or the SDKs.
 
 :::
 
