@@ -148,7 +148,7 @@ Modyo is programmed so that the login information is in the header of the site. 
 The login address must be a page within your account. You cannot redirect the login to an external URL.
 :::
 
-## Realm settings
+## Realm Settings
 
 In the realm's Settings section, you can customize the interaction between users and the Modyo platform.
 
