@@ -118,7 +118,7 @@ You can change the view and crop of the image in two ways:
 To restore the file, open the property editing window again and click on **Restore Original**, this permanently removes the modifications made.
 
 
-## Delete a file
+## Delete a File
 
 To delete a file, follow these steps:
 1. Click on the name of a file to open the property editing interface.
