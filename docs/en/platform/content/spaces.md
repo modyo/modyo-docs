@@ -17,8 +17,8 @@ In the spaces interface, you can see a list of all your spaces, the number of co
 
 You can sort the columns alphabetically, by space name or identifier, or by creation date; and filter using the search engine.
 
-:: :warning Attention
-You can only see those spaces in which you are part of the work team with a role.
+:::warning Attention
+You can only see those spaces in which you are part of the team, with a role.
 :::
 
 ## Create a space
