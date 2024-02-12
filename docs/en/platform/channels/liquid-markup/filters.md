@@ -560,7 +560,7 @@ Returns the session ID. *e.g.*
 
 ### Asset Image Tag
 
-Return the tag of an image. *e.g.*
+Returns the tag of an image. *e.g.*
 <span v-pre>`{{url | asset_image_tag}}`</span>
 
 ### Link To
