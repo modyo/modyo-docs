@@ -357,7 +357,7 @@ To ensure proper data synchronization between Modyo and Salesforce and maintain 
 * Contact creation in Salesforce:
   * A contact in Salesforce only requires the “Last Name” field to be created.
   * When a contact is created only with “Last Name”, in Modyo, the “username” and the “first name” will be completed with placeholders or placeholders that indicate that they were created as a result of the link.
-* Creating a user in Modyo:
+* Create a user in Modyo:
   * A Modyo user can be created without “Last Name”, but this field, when required in Salesforce, is sent with a placeholder that indicates that it was created from the linking process.
 * The primitive types of Salesforce fields available for linking are:
   * Boolean
