@@ -51,7 +51,7 @@ In this section, you can customize and adjust the options available for your spa
 
 In this section, you can:
 - **Change the name of the space**
-- **Show the author of the posts: ** Enabling this option allows the author of the content to be visible in the public API and in the Liquid SDK. If disabled, the author will be blank.
+- **Show the author of the posts:** Enabling this option allows the author of the content to be visible in the public API and in the Liquid SDK. If disabled, the author will be blank.
 
 :: :warning Attention
 When you save this option, all entries in the space are reindexed. The changes will be reflected once the process is complete.
