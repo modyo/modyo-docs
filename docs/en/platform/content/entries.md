@@ -188,7 +188,7 @@ To edit an entry, follow these steps:
 1. From the list of entries, click on the entry you want to edit.
 1. Modify the fields you require.
 1. Click **Save**.
-1. Click **Publish**. If the entry is being reviewed as a team, reviewers should update their view to notice changes.
+1. Click **Publish**. If the entry is being reviewed as a team, reviewers should update their view to note the changes.
 
 
 ## Categories
