@@ -650,12 +650,12 @@ Converts a date in String to words. *e.g.*
 
 ### Translate
 
-Solve the translation text for Site keys. Custom values will be returned if they exist. *e.g.*
+Solves the translation text for Site keys. Custom values will be returned if they exist. *e.g.*
 <span v-pre>`{{'admin.logs.errors.no_logs_yet' | translate}}`</span>
 
 ### Truncate HTML
 
-Return a String after truncating it. *e.g.*
+Returns a String after truncating it. *e.g.*
 <span v-pre>`{{html | truncate_html: 10}}`</span>
 
 ### Video Player
