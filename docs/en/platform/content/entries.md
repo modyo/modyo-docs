@@ -225,7 +225,7 @@ To delete a category:
 
 1. Click on Content
 1. Select Categories
-1. Click on the button for more actions (...) after the name of the category
+1. Click on the (...) button, after the name of the category, for more actions 
 1. Select **Delete**.
 1. Click **OK** to confirm the deletion.
 
