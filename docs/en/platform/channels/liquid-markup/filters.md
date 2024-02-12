@@ -23,8 +23,8 @@ A filter is a Ruby method that takes one or more parameters and returns a value.
 
 ### Append
 
-Add a string *e.g.*
-<span v-pre>`{{'foo' | append: 'bar'}} #=> 'foobar'`</span>
+Adds a string *e.g.*
+<span v-pre>`{{ 'foo' | append:'bar' }} #=> 'foobar'`</span>
 
 ### Capitalize
 
