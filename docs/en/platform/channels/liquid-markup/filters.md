@@ -545,12 +545,12 @@ Translates a date to another format. *e.g.*
 
 ### Format DateTime
 
-Translate a date to DateTime format. *e.g.*
+Translates a date to DateTime format. *e.g.*
 <span v-pre>`{{time | format_datetime}}`</span>
 
 ### Format Short Date
 
-Translate a date to a reduced format. dd-mm-yyyy *e.g.*
+Translates a date to a reduced format. dd-mm-yyyy *e.g.*
 <span v-pre>`{{time | format_short_date}}`</span>
 
 ### Get Session ID
