@@ -54,7 +54,7 @@ You can locate this option when editing a user in the **Team** section, in the *
 
 Enables the Cross-Origin Resource Sharing (CORS) functionality to allow access to Modyo resources from other websites.
 
-By default, your sites' custom domains are already included once CORS is activated. To give you access to external domains, type them separated by commas, for example `http://api.mydomain.com, http://mysubdomain.mydomain.com`. Wildcards or _wildcards_ are not allowed in this section.
+To give access to external domains, write them separated by commas, for example `http://api.mydomain.com, http://mysubdomain.mydomain.com`. By default, wildcards are not allowed in this section. To enable them, you must manually disable SSL through a ticket sent to the [Modyo support area](https://support.modyo.com/hc/en-us).
 
 ## Content Delivery Token (JWT - JSON Web Token)
 
