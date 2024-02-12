@@ -62,7 +62,7 @@ To retrieve a specific value from an entry, access the entry editing view and se
 - **Publish:** Publish selected entries that have pending changes or are in a draft state.
 - **Force publication:** If team review is enabled, space administrators can use this action to force the publication of entries that have pending changes or are in draft status, without having to go through the review process.
 - **Unpublish**
-- **Archive: ** Mass archiving only has an effect on selected entries that are not published. If you try to archive a published post, the action will have no effect.
+- **Archive:** Bulk archiving only has an effect on the selected entries that are not published. If you try to archive a published post, the action will have no effect.
 
 :: :tip Tip
 Bulk actions run in the background and you might not see the changes immediately, so you'll need to wait a moment and refresh your view after executing a mass action.
