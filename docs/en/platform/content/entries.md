@@ -131,7 +131,7 @@ You can find more information on team review in the [Key Concepts](https://docs.
 
 ### Unpublish an Entry
 
-Unpublishing an entry allows you to switch the entry to the Draft state and hide it from the public. If team review is turned on, you'll need to go through that flow again to publish it.
+Unpublishing an entry allows you to switch the entry to Draft state and hide it from the public. If team review is turned on, you'll need to go through that flow again to publish it.
 
 To unpublish:
 1. In the side menu, select Content.
