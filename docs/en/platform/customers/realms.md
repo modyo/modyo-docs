@@ -272,8 +272,6 @@ To integrate with Zendesk you need:
 - Zendesk Shared Secret
 - Integration URL: e.g. mysubdomain.zendesk.com
 
-`only available on Modyo 10`
-
 ### Salesforce
 
 A Salesforce integration with Modyo allows you to link your Modyo users to your Salesforce contacts.
