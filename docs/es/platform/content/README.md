@@ -3,7 +3,7 @@ search: true
 title: Modyo Content
 meta:
   - name: description
-    content: Modyo Content es el módulo que te permite crear y gestionar los repositorios de contenido dinámico llamados Espacios. En un Espacio puedes crear Entradas, segmentadas por Tipos de Contenido. El Tipo de contenido define la estructura básica, con sus requerimientos y validaciones para publicar una entrada.
+    content: Modyo content es el módulo que te permite crear y gestionar los repositorios de contenido dinámico llamados espacios. En un espacio puedes crear entradas, segmentadas por tipos de contenido. El tipo de contenido define la estructura básica, con sus requerimientos y validaciones para publicar una entrada.
 version: 9.2
 ---
 
@@ -12,8 +12,8 @@ version: 9.2
 {{ $frontmatter.meta[0].content }}
 
 ### Beneficios
-- **Segmentación:** Muestra Entradas a usuarios específicos mediante la integración con Channels y Customers.
-- **Arquitectura Headless:** Consume contenido a través de una API HTTP desde Modyo Channels o sistemas externos.
+- **Segmentación:** Muestra entradas a usuarios específicos mediante la integración con channels y customers.
+- **Arquitectura Headless:** Consume contenido a través de una API HTTP desde Modyo channels o sistemas externos.
 - **Rendimiento:** Aloja contenido en CDNs para mayor disponibilidad y velocidad de acceso, sin importar la ubicación geográfica.
 
 ### Funcionalidades principales
