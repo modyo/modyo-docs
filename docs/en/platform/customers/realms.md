@@ -265,7 +265,7 @@ For more information on integrations, see the [Identity Providers] section (/en/
 
 Modyo allows you to integrate with other services and applications.
 
-#### Zendesk
+### Zendesk
 
 To integrate with Zendesk you need:
 
