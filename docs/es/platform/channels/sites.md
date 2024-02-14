@@ -10,7 +10,7 @@ Una aplicación web o web app despliega el contenido creado en content y channel
 Una web app puede estar en uno de estos tres estados:
 
 - **Habilitado**: Estado por defecto de las aplicaciones web recién creadas y aquellas que están habilitadas para uso.
-- **Cambios pendientes**: Existen modificaciones pendientes en la aplicación web. Un administrador puede verificar los cambios y publicar el sitio.
+- **Cambios pendientes**: Existen modificaciones pendientes en la aplicación web. Un administrador puede verificar los cambios y publicar la aplicación web.
 - **Deshabilitado**: No es posible acceder a la aplicación web.
 
 ## Crear una aplicación web
@@ -19,7 +19,7 @@ Para crear una nueva web app, sigue estos pasos:
 
 1. En el menú lateral, haz click en **channels**.
 1. Haz click en **+ nueva aplicación**.
-1. Escribe el nombre y el host (ruta principal del sitio).
+1. Escribe el nombre y el host (ruta principal de la aplicación web).
 1. Si es necesario, selecciona a qué reino pertenece.
 1. Haz click en **crear**.
 
@@ -35,7 +35,7 @@ En la pantalla de revisión y publicación conjunta puedes ver todos los cambios
 
 ### Publicar en conjunto
 
-Para hacer una publicación en conjunto en tu sitio, sigue estos pasos:
+Para hacer una publicación en conjunto en tu aplicación web, sigue estos pasos:
 
 1. En el menú lateral, haz click en **channels**.
 1. Haz click en tu aplicación web.
@@ -45,7 +45,7 @@ Para hacer una publicación en conjunto en tu sitio, sigue estos pasos:
 
 
 :::tip Tip
-Si haces click en **Publicar** en un artículo en particular (e.g. publicar una página), se abrirá la ventana de Revisar y Publicar con este artículo seleccionado para ver los cambios pendientes.
+Si haces click en **publicar** en un artículo en particular (e.g. publicar una página), se abrirá la ventana de Revisar y Publicar con este artículo seleccionado para ver los cambios pendientes.
 :::
 
 ## Buscador
@@ -67,7 +67,7 @@ Para habilitar o deshabilitar la funcionalidad de búsqueda, sigue estos pasos:
 
 Puedes controlar la apariencia y funcionalidades de búsqueda en tu web app utilizando la [plantilla](/es/platform/channels/sites.html#plantilla-de-busqueda/) _search_.
 
-Esta plantilla está disponible de forma predeterminada en la sección de plantillas y contiene todo el código Liquid necesario para realizar cabo consultas en tu sitio. Por defecto, al realizar una consulta, los registros se muestran en forma de lista con su título, descripción y un enlace hacia su dirección. Puedes modificar la plantilla para adaptarla a tus necesidades.
+Esta plantilla está disponible de forma predeterminada en la sección de plantillas y contiene todo el código Liquid necesario para realizar cabo consultas en tu web app. Por defecto, al realizar una consulta, los registros se muestran en forma de lista con su título, descripción y un enlace hacia su dirección. Puedes modificar la plantilla para adaptarla a tus necesidades.
 
 Para acceder a esta plantilla:
 
@@ -76,7 +76,7 @@ Para acceder a esta plantilla:
 1. Haz click en **plantillas** en el menú lateral.
 1. En la sección vistas, en la columna derecha, y debajo de la categoría search, haz click en **show**.
 
-Para acceder a la plantilla de búsqueda anexa _search_ o _search.json_ a la URL de tu sitio
+Para acceder a la plantilla de búsqueda anexa _search_ o _search.json_ a la URL de tu web app.
 
 Por ejemplo:
  - `test.modyo.com/miSitio/search`
@@ -87,17 +87,17 @@ Por ejemplo:
 
 Puedes también usar "search.json" para integrar el buscador de manera más personalizada.
 
-Para acceder a esta API, agrega "search.json" a la URL de tu sitio junto con tu consulta. Por ejemplo: test.modyo.com/miSitio/search.json?query=miConsulta
+Para acceder a esta API, agrega "search.json" a la URL de tu web app junto con tu consulta. Por ejemplo: test.modyo.com/miSitio/search.json?query=miConsulta
 
 Personaliza tus consultas de la siguiente manera:
 
 
 |  Parámetro       |       Descripción    |
 |------------------|----------------------|
-| **query** | Realiza consultas a la API de búsqueda. Este buscador lleva a cabo consultas en todas las páginas publicadas de tu sitio y en todas las entradas públicas de los espacios vinculados al sitio. |
+| **query** | Realiza consultas a la API de búsqueda. Este buscador lleva a cabo consultas en todas las páginas publicadas de tu web app y en todas las entradas públicas de los espacios vinculados a la web app. |
 | **per_page** | Divide el número total de registros en el número de páginas seleccionadas. |
 | **page** | Selecciona la página específica que deseas consultar, en caso de que existan múltiples páginas de registros para la consulta. |
-| **multi=true** | Permite realizar búsquedas en todos los sitios de la cuenta que tengan habilitada la función de búsqueda. |
+| **multi=true** | Permite realizar búsquedas en todos las aplicaciones web de la cuenta que tengan habilitada la función de búsqueda. |
 
 
 ## Configuración de aplicaciones web
