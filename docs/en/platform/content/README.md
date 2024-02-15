@@ -20,5 +20,5 @@ version: 9.2
 
 - ** [Spaces](/en/platform/content/spaces.html):** Organize content and teams that manage them.
 - ** [Content Types](/en/platform/content/types.html):** Define custom structures.
-- ** [File Manager] (/es/platform/content/asset-manager.html) :** Organize the files used in the contents such as images or videos.
+- ** [File Manager](/en/platform/content/asset-manager.html):** Organize the files used in the contents such as images or videos.
 - ** [API and SDKs] (/es/platform/content/public-api-reference.html) :** Access content repositories, on and off the platform.
