@@ -9,9 +9,9 @@ Una aplicación web o web app despliega el contenido creado en content y channel
 
 Una web app puede estar en uno de estos tres estados:
 
-- **Habilitado**: Estado por defecto de las aplicaciones web recién creadas y aquellas que están habilitadas para uso.
-- **Cambios pendientes**: Existen modificaciones pendientes en la aplicación web. Un administrador puede verificar los cambios y publicar la aplicación web.
-- **Deshabilitado**: No es posible acceder a la aplicación web.
+- **Habilitado:** Estado por defecto de las aplicaciones web recién creadas y aquellas que están habilitadas para uso.
+- **Cambios pendientes:** Existen modificaciones pendientes en la aplicación web. Un administrador puede verificar los cambios y publicar la aplicación web.
+- **Deshabilitado:** No es posible acceder a la aplicación web.
 
 ## Crear una aplicación web
 
