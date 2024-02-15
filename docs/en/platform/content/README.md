@@ -12,7 +12,7 @@ version: 9.2
 {{ $frontmatter.meta[0].content }}
 
 ### Benefits
-- **Segmentation: ** Show entries to specific users through integration with channels and customers.
+- **Segmentation:** Show entries to specific users through integration with channels and customers.
 - **Headless Architecture: ** Consume content through an HTTP API from Modyo channels or external systems.
 - **Performance: ** Host content on CDNs for greater availability and speed of access, regardless of geographic location.
 
