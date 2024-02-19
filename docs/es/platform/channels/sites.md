@@ -169,75 +169,88 @@ style="display:none;visibility:hidden">
 
 Con esta configuración completada, cuando haya un valor asociado al campo **ID de Google Tag Manager** en la sección Configuración General del sitio, los scripts se inyectarán automáticamente y podrás comenzar a crear eventos en Google Tag Manager para registrar las acciones de tus usuarios.
 
-#### Privacidad
+**Visualización**
+- **Favicon:** Imagen que se muestra junto a la barra de dirección.
+- **Icono de Apple:** Imagen que se visualiza en dispositivos móviles iOS al marcar la aplicación como favorita.
 
-Esta sección te permite configurar las restricciones de privacidad de tu sitio.
-
-- **Público**: Todos los visitantes pueden ver el sitio sin necesidad de iniciar sesión. El contenido del sitio es accesible para cualquier usuario.
-- **Privado**: Solo los usuarios con una sesión iniciada de Modyo pueden ver el sitio.
-- **Mostrar home a visitas públicas**: La página de inicio del sitio se muestra a todos los visitantes, incluso aquellos que no hayan iniciado sesión. Sin embargo, al navegar a cualquier otra página del sitio, se les solicitará a los usuarios que se registren o inicien sesión.
-- **Redireccionar a home cuando una URL no se encuentra**:  Por defecto, el sitio muestra una respuesta 404 (página no encontrada) cuando se accede a una URL que no existe. Sin embargo, si marcas esta opción, en lugar de recibir un 404, el usuario será redirigido a la página de inicio del sitio.
-- **Habilitar búsqueda**: Si marcas esta opción, habilitas la función de búsqueda en el sitio.
+**Privacidad**
+- **Público:** Todos los visitantes pueden ver la web app y su contenido sin necesidad de iniciar sesión.
+- **Privado:** Solo los usuarios con una sesión iniciada de Modyo pueden ver la web app.
+- **Mostrar home a visitas públicas:** La página de inicio de la web app se muestra a todos los visitantes, incluso aquellos que no hayan iniciado sesión. Al navegar a cualquier otra página, se solicita registro o inicio de sesión.
+- **Redireccionar al home cuando una URL no se encuentra:** Por defecto, la aplicación web muestra un error 404 cuando el usuario accede a una URL inexistente. Si marcas esta opción, el usuario será redirigido a la página de inicio de la web app en lugar del 404.
+- **Habilitar búsqueda:** Activa la función de búsqueda en la web app.
+- **Habilitar la búsqueda en múltiples aplicaciones**
 
 :::tip Tip
-Si habilitas la búsqueda en tu sitio y usas el parámetro`multi=true` desde otros sitios, podrás también buscar en tu sitio actual.
+Si habilitas la búsqueda en tu web app y usas el parámetro `multi=true` desde otra web app, también puedes buscar en tu app actual.
 :::
 
 
-#### Zona de Peligro
+**Zona peligrosa**
 
-Estas opciones conllevan riesgo para la experiencia del sitio y sus usuarios. Procede con cuidado.
+::: danger Peligro
+Procede con cautela al modificar estas opciones, ya que pueden afectar el acceso a tu aplicación web y la experiencia de tus sus usuarios.
+:::
 
-- Cambiar reino: Este campo despliega el reino del sitio. Al cambiar de reino se pierde toda la configuración de privacidad en tus sitios, páginas y navegación.
-- Estado del Sitio: Cambia el estado del sitio entre tres diferentes opciones.
-	* Habilitado: Permite que el sitio sea editable y visible al público. Este es el estado por defecto de un sitio.
-	* Editable: Permite que un sitio sea modificado, pero no es visible al público. Los usuarios deben iniciar sesión en Modyo Platform para acceder al sitio. Robots.txt, PWAs y el manifiesto están deshabilitados en este estado.
-	* Deshabilitado: Prohíbe tanto la edición como la visibilidad de un sitio. En este estado, el sitio no es accesible ni visible para los usuarios.
-- Eliminar Sitio: Esta acción inicia el proceso de eliminación del sitio de manera asincrónica. Una vez que se inicia la eliminación, el sitio ya no es accesible. Todos los elementos que contiene el sitio, como páginas y widgets, también serán eliminados.
+- **Cambiar host:** Esta acción modifica la visibilidad y accesibilidad de la aplicación. Realizar un cambio de host puede impactar la visibilidad y disponibilidad de la aplicación web.
+- **Cambiar reino:** Despliega el reino de la aplicación. Al cambiar de reino pierdes toda la configuración de privacidad en tus web apps, páginas y navegación.
+- **Cambiar estado:** Cambia el estado de la aplicación, las opciones son:
+	* Habilitado: Editable y visible al público. Este es el estado por defecto de una web app.
+	* Editable: Modificable pero no visible al público. Requiere inicio de sesión para acceder. Robots.txt, PWAs y el manifiesto están deshabilitados en este estado.
+	* Deshabilitado: No editable ni visible. En este estado, no es accesible ni visible para los usuarios.
+- **Eliminar aplicación:** Inicia la eliminación asíncrona de la aplicación y de todos sus elementos, como páginas y widgets.
 
+::: danger Peligro
+Es irreversible la eliminación de una aplicación web.
+
+Al presionar el botón de eliminado, el sistema te pide que ingreses el nombre textual de la aplicación para confirmar la acción. Una vez confirmada, no puedes acceder a la aplicación ni a sus elementos.
+:::
 
 ### SEO
 
-El SEO (Search Engine Optimization) es fundamental para aparecer en los distintos motores de búsqueda. Los usuarios dependen de una buena configuración de SEO para llegar al sitio.
+El SEO (Search Engine Optimization) es fundamental para el posicionamiento en motores de búsqueda. Los usuarios dependen de una buena configuración de SEO para llegar a tu aplicación.
 
-Las opciones a configurar son:
+Puedes configurar:
 
-- **Tagline**: Descripción que aparece en los motores de búsqueda, debajo del nombre del sitio.
-- **Actualizar automáticamente el archivo sitemap.xml para mí**: Esta opción permite a Modyo crear y mantener automáticamente el archivo sitemap.xml. Si deseas mantener un mapa de sitio personalizado, deshabilita esta opción.
-- **Sitemap**: Este archivo XML permite a los motores de búsqueda indexar el contenido del sitio.
-- **Actualizar automáticamente el archivo robots.xml para mí**: Al habilitar esta opción, Modyo se encargará de crear y mantener el archivo robots.txt automáticamente. Deshabilita esta opción para proporcionar instrucciones personalizadas a los rastreadores de sitios.
-- **Robots.txt**: Este archivo forma parte del Protocolo de Exclusión de Robots (REP), un grupo de normas web que regulan la forma en que los robots rastrean la web, acceden e indexan el contenido y lo sirven a los usuarios. Este archivo determina si ciertos agentes de usuario (software de rastreo web) pueden o no rastrear partes de un sitio web. Especifica las instrucciones de rastreo "permitiendo" o "prohibiendo" el comportamiento de ciertos o todos los agentes de usuario.
+- **Tagline:** Descripción en los motores de búsqueda, debajo del nombre de la aplicación web.
+- **Actualizar automáticamente el archivo sitemap.xml para mí:** Permite a Modyo crear y mantener el sitemap.xml automáticamente. Desactiva esta opción para usar un mapa de sitio personalizado.
+- **Sitemap:** Este archivo XML permite a los motores de búsqueda indexar el contenido del sitio.
+- **Archivo sitemap.xml personalizado:** Archivo que permite a los motores de búsqueda indexar el contenido de la web app.
+- **Actualizar automáticamente el archivo robots.xml para mí:** Permite a Modyo crear y mantener robots.txt automáticamente. Desactiva esta opción para proporcionar instrucciones personalizadas a los rastreadores de web apps.
+- **Archivo robots.txt personalizado:** Archivo que indica a los robots rastreadores las partes de la aplicación pueden o no indexar.
 
 :::tip Tip
-Los archivos robots.txt y sitemap.xml solo son visibles en el sitio si se utilizan dominios personalizados. De lo contrario, robots.txt y sitemap.xml se encuentran solo a nivel de plataforma, tienen sus valores por defecto, y no se pueden personalizar.
+Los archivos robots.txt y sitemap.xml solo son visibles con dominios personalizados. De lo contrario, se encuentran solo a nivel de plataforma, tienen sus valores por defecto y no se pueden personalizar.
 :::
 
-- **Meta tags personalizados**: Te permite configurar meta tags para todas las páginas y sus valores por defecto.
-- **Replicar meta tag en páginas:** Propaga este meta tag y su valor en todas las páginas del sitio. Es necesario guardar los cambios y publicar todas las páginas modificadas para que los nuevos meta tags surtan efecto.
+- **Meta tags personalizados:** Te permite configurar meta tags para todas las páginas y sus valores por defecto. Da click en **+ Nuevo meta tag** para crear uno nuevo.
+- **Replicar meta tag en páginas:** Al crear un nuevo meta tag, selecciona esta opción para propagar el meta tag y su valor en todas las páginas de la web app. Debes guardar los cambios en meta tags y publicar todas las páginas modificadas para que los nuevos meta tags surtan efecto.
 
 :::warning Atención
-En la sección de configuración del sitio, solo los usuarios con rol de administrador del sitio pueden añadir meta tags. Dentro de un sitio, el rol developers podrá añadir y eliminar meta tags página por página.
+Solo los administradores de la aplicación pueden añadir meta tags. Los developers pueden añadir y eliminar meta tags página por página.
 :::
 
 #### SEO en-página vs. fuera-de-página (On-Page vs. Off-Page)
 
-También conocidos como SEO en-sitio y fuera-de-sitio, estos términos se refieren a las acciones que puedes llevar a cabo dentro y fuera de una página web para mejorar la visibilidad de tu sitio en los motores de búsqueda. Para lograr los mejores resultados, recomendamos utilizar ambas estrategias de manera conjunta, lo que contribuirá a un posicionamiento más sólido en los resultados de búsqueda.
+También conocidos como SEO en-sitio y fuera-de-sitio, estos términos se refieren a las acciones que puedes hacer dentro y fuera de una página web para mejorar la visibilidad en buscadores. Para un mejor posicionamiento, recomendamos utilizar ambas estrategias de manera conjunta.
 
 ##### SEO en-página
 
-Aquí hay una lista de acciones que puedes tomar para mejorar el SEO en-página:
+Para mejorar el SEO en-página:
 
-- Utilizar palabras clave en la sección de SEO de la plataforma y en tus páginas.
-- Incluir palabras clave en la URL de la página.
-- Agregar enlaces a información relevante o a otras partes de tu sitio.
+- Utiliza palabras clave en la sección de SEO de la plataforma y en tus páginas.
+- Incluye palabras clave en la URL.
+- Agrega enlaces relevantes a otras secciones de tu aplicación.
+
 
 
 ##### SEO fuera-de-página
 
-Para mejorar el SEO fuera-de-página, puedes:
+Para mejorar el SEO fuera-de-página:
 
-- Promocionar el contenido en redes sociales y otros canales de distribución.
-- Fomentar alianzas y colaboraciones con medios de autoridad en el tema.
+- Promociona el contenido en redes sociales y otros canales de distribución.
+- Fomenta alianzas y colaboraciones con medios de autoridad en el tema.
+
 
 
 ### PWA
