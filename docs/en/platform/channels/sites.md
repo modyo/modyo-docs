@@ -3,139 +3,146 @@ search: true
 sidebarDepth: 2
 ---
 
-# Sites
+# Web applications
 
-A site is where the content created in [Content](/en/platform/content/) and [Channels](/platform/channels/) is displayed in order to create your personalized digital channel. All development, design and navigation flows take place on a site.
+A web application or web app displays the content created in content and channels to create your personalized digital channel. In the web application, all the development, design and navigation flow are carried out.
 
-A site can be in one of three states:
+A web app can be in one of these three states:
 
-- **Enabled**: Default status of newly created sites and those that are enabled for use.
-- **Pending changes**: This status appears when there are changes pending on the site. An administrator can click **Publish** to access the **Review and Publish** section, in order to verify the changes and publish the site.
-- **Disabled**: When a site is in this state, it is not possible to access it.
+- **Enabled: ** Default status of newly created web applications and those that are enabled for use.
+- **Pending changes: ** There are pending changes to the web application. An administrator can verify the changes and publish the web application.
+- **Disabled: ** The web application cannot be accessed.
 
-## Create a Site
+## Create a web application
 
-To create a new site, follow these steps:
+To create a new web app, follow these steps:
 
-1. On the side menu, click **Channels**.
-1. Click **+ New Site**.
-1. Enter the name and host (the site's path).
-1. If necessary, select which realm the site belongs to.
-1. Click **Create**.
+1. In the side menu, click **channels**.
+1. Click on **+ new application**.
+1. Type the name and host (main path of the web application).
+1. If necessary, select which kingdom you belong to.
+1. Click **create**.
 
-Once the site is created, it will be automatically enabled and the system will take you to the **Summary** page.
+Once created, the web application is automatically enabled and the system takes you to the summary screen.
 
-:::warning Attention
-In the site index, you will only see the sites in which you have a role and are part of the team.
+:: :warning Attention
+In the web apps index, you will only see those apps in which you have a role and are part of the work team.
 :::
 
-## Joint Review and Publication
+## Review and joint publication
 
-On the joint review and publication screen, you can see all the changes slated for publication on your site. To view the changes, click the **View** button.
+On the review and joint publication screen, you can see all the pending changes to be published in your web app. To view the changes, click on the **view** button.
 
 ### Joint Publication
 
-To make a joint publication on your site, follow these steps:
+To publish together in your web application, follow these steps:
 
-1. In the Modyo Platform main menu, expand **Channels** and click **Sites**.
-1. Click on your site.
-1. On the Summary screen, click **Publish**.
-1. Here you can see all pending changes. Select what you want to publish and click **Publish**.
+1. In the side menu, click **channels**.
+1. Click on your web application.
+1. On the summary screen you can see the pending changes to be published. Click the **publish** button to preview and select the changes.
+1. Select the changes you want to publish.
+1. Click on the **publish** button.
 
-:::tip Tip
-If you click **Publish** on a particular article (e.g. publish a page), the Review and Publish window will open with this article selected to see the pending changes.
+
+:: :tip Tip
+If you click **publish** on a particular article (e.g. publish a page), the Review and Publish window will open with this article selected to see the pending changes.
 :::
 
 ## Search
 
-By creating a site with Modyo, your users can search your sites and all their content using the search function. This can be done using the `/search` URL or by accessing the dedicated search page.
+When you create a web application with Modyo, your users can search your web apps and all their content using the search function. This can be done using the `/search` URL or by accessing the dedicated search page.
 
-### Enable Search
+### Enable or Disable Search
 
-To enable or disable search functionality on a site, follow these steps:
+To enable or disable the search functionality, follow these steps:
 
-1. In the side menu, click **Site Settings**.
-1. Click on **General**.
-1. In the **Privacy** section, check the **Enable search** box.
+1. In the side menu, click **channels**.
+1. Click on your web application.
+1. Click on **general**.
+1. In the privacy section, enable or disable the **enable search** box, as required.
 1. Click **Save**.
 
 
 ### Search template
 
-You can control the look and feel of your site using the [template](/en/platform/channels/sites.html#search-template/) _search_.
+You can control the appearance and search functionality in your web app using the [template] (/es/platform/channels/sites.html #plantilla -de-search/) _search_.
 
-This template is available by default in the Templates section, in the “Views/Search/Show” category. It contains all the Liquid code you need to carry out queries on your site.
+This template is available by default in the templates section and contains all the Liquid code needed to carry out queries in your web app. By default, when making a query, the records are displayed in the form of a list with their title, description and a link to their address. You can modify the template to suit your needs.
 
-You can access it using the URL of your site and attaching _search_ or _search.json_. For example:
+To access this template:
+
+1. In the side menu, click **channels**.
+1. Select your web application.
+1. Click **templates** in the side menu.
+1. In the views section, in the right column, and under the search category, click **show**.
+
+To access the search template, append _search_ or _search.json_ to the URL of your web app.
+
+For example:
  - `test.modyo.com/mySite/search`
  - `test.modyo.com/mySite/search.json`
 
-By default, when making a query, the records are displayed in the form of a list with their title, description and a link to their address. You can modify the template and expand its functionalities to adapt it to your specific needs.
 
 ### Search.json
 
-You can also use search.json to integrate the search engine. This API allows you to integrate the search engine in a more personalized way.
+You can also use “search.json” to integrate the search engine in a more personalized way.
 
-To access the API, add “search.json” to the URL of your site along with your query. For example: test.modyo.com/mysite/search. json?query=myQuery
+To access this API, add “search.json” to the URL of your web app along with your query. For example: test.modyo.com/mysite/search. json?query=MyQuery
 
-You can customize your queries as follows:
+Customize your queries as follows:
+
 
 |  Parameter       |       Description    |
 |------------------|----------------------|
-| **query** | With the string **query** you can make queries to the search API. This search engine performs queries on all published pages on your site and on all public entries in the spaces linked to the site. |
-| **per_page** | This pagination parameter allows you to divide the total number of records by the number of pages you select. |
-| **page** | This parameter allows you to select the specific page you want to consult, if there are multiple pages of records for the query. |
-| **multi=true** | This parameter allows you to search all the sites in the account that have the search function enabled. |
+| **query** | Make queries to the search API. This search engine performs queries on all published pages of your web app and on all public entries in the spaces linked to the web app. |
+| **per_page** | Divide the total number of records by the number of pages selected. |
+| **page** | Select the specific page you want to consult, if there are multiple pages of records for the query. |
+| **multi=true** | It allows you to search all the web applications in the account that have the search function enabled. |
 
 
 ## Web Application Settings
 
-In the Settings section of the application, you can customize your site to the needs of your different audiences and ensure that your visitors, customers, developers and administrators view your site differently.
-
-In addition, you can modify settings to optimize SEO.
+In the application configuration section, you can customize your web app so that your visitors, customers, developers and administrators view your web app differently. As well as to optimize the SEO of your application.
 
 
 ### General
 
 In this section you can configure:
 
-- **Site Name**:  The name of your site, this field is used as the default title for your site's SEO.
-- **Description**: A brief description of your site.
+- **Name of the application: ** This field is used as the default title for the SEO of your web app.
+- **Description**
 
 :::warning Warning
 
-Changes made to the name and description of the application will be immediately visible in Modyo. However, the update in the search results will be reflected after the search engines complete their reindexing process.
+Changes to the name and description are immediately reflected in Modyo. The update in the search results will be seen once the search engines complete their reindexing process.
 
 :::
-- **Site Logo**: Image shown at the top left as the site's logo.
-- **Language**: The language in which your site is available. The options are: Spanish, English and Portuguese.
-- **[Team Review](/en/platform/core/key-concepts.html)**
-- **Time Zone**: The time zone in which the date and time fields are displayed within the site. This setting affects all sections of the site, including Pages, Navigation and Templates, as well as Liquid calls to site data.
+- **Application logo: ** Image shown at the top left.
+- **Application language: ** The language in which your web app is available. The options are: Spanish, English and Portuguese.
+- **Time zone: ** The time zone where the date and time fields are displayed in the app. This setting affects all sections, including pages, navigation and templates, as well as Liquid's calls to web application data.
 
-:::warning Attention
-The time in the content is managed in the Account Settings.
+
+:: :warning Attention
+The time in the content is managed in the [general] section (https://docs.modyo.com/es/platform/core/configuration.html#configuracion) of the account settings.
 :::
 
-- **Google Tag Manager ID**: Allows you to add a Google Tag Manager identifier to easily insert scripts to be able to make use of Google's event registration tool.
-- **Favicon**: Image that appears in the address bar.
-- **Apple icon**: Image viewed on mobile devices when using the site as an application.
-- **Delete**: Permanently delete a site and all of its elements.
+- **Google Tag Manager ID**: Add a Google Tag Manager identifier to insert scripts for tracking and measuring events.
 
-:::danger Danger
-Erasing is irreversible, you must be completely sure when executing this action.
+By default, new Modyo themes include snippets to automatically inject Google Tag Manager scripts into tags `<head>`and`<body>`of web applications.
 
-When you press the delete button, the system will ask you to enter the textual name of the site you want to delete to confirm the action. Once confirmed, you won't be able to access the site or its elements again.
-:::
+To access these snippets:
 
-#### Google Tag Manager
+1. In the side menu, click channels.
+1. Select your web application.
+1. Click on templates in the side menu
+1. In the column on the right side, click on snippets and go to the general section. You can embed them in the _head_ snippet and in the _home_ and _base_ views.
 
-By default, the new Modyo themes include the necessary snippets to automatically inject Google Tag Manager scripts into both `tag <head>` and tag `<body> ` of the sites. You can find these snippets in the [Templates](/en/platform/channels/templates.html) section, category _Snippets/General_ and they are embedded both in the _head_ snippet and in the _home_ and _base_ views.
+**To create custom snippets: **
 
-If you don't have these snippets, you can create a custom snippet and then embed Google Tag Manager on your site.
+**For the _head_: **
 
-1. Create a custom snippet with the following code and then embed the snippet in the site's head using `{% snippet "gtm-head" %}`, replacing "gtm-head" with the name you gave the snippet.
+1. Use this code:
 
-**Google Tag Manager for the _head_**
 ```liquid
 {% if site.tag_manager_id != '' %}
 
@@ -149,10 +156,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 {% endif %}
 ```
+2. Embed the snippet in the _head_ of the web app using {% snippet “gtm-head”%}, replacing “gtm-head” with the name you gave the snippet.
 
-2. Create a custom snippet with the following code and then insert it into the body tags of the home and base views using `{% snippet "gtm-body" %}`, replacing "gtm-body" with the name you gave the snippet.
+**For the _body_**
 
-**Google Tag Manager for the _body_**
+1. Use this code:
+
 ```liquid
 {% if site.tag_manager_id != '' %}
 
@@ -167,77 +176,106 @@ style="display:none;visibility:hidden">
 {% endif %}
 ```
 
-With this configuration completed, when there is a value associated with the **Google Tag Manager ID** field in the General Settings section of the site, the scripts will be automatically injected and you can start creating events in Google Tag Manager to record the actions of your users.
+2. Embed the snippet inside the body tags of the _home_ and _base_ views using {% snippet “gtm-body”%}, replacing “gtm-body” with the name you gave the snippet.
 
-#### Privacy
+With this configuration complete, when there is a value associated with the **ID field of Google Tag Manager**, the scripts will be automatically injected. This will allow you to create events in Google Tag Manager to record the actions of your users.
 
-This section allows you to configure your site's privacy restrictions.
 
-- **Public**: All visitors can view the site without logging in. The content of the site is accessible to any user.
-- **Private**: Only users logged in to Modyo can view the site.
-- **Show home to public visits**: The home page of the site is shown to all visitors, even those who are not logged in. However, when navigating to any other page of the site, users will be asked to register or log in.
-- **Redirect to home when a URL is not found**: By default, the site shows a 404 response (page not found) when accessing a URL that doesn't exist. However, if you check this option, instead of receiving a 404, the user will be redirected to the home page of the site.
-- **Enable search**: When checking this option, you enable the search function on the site.
 
-:::tip Tip
-If you enable search on your site and use the `multi=true` parameter from other sites, you can also search your current site.
+- **Favicon**: Image that appears in the address bar.
+- **Apple icon**: Image viewed on mobile devices when using the site as an application.
+- **Delete**: Permanently delete a site and all of its elements.
+
+:::danger Danger
+Erasing is irreversible, you must be completely sure when executing this action.
+
+When you press the delete button, the system will ask you to enter the textual name of the site you want to delete to confirm the action. Once confirmed, you won't be able to access the site or its elements again.
 :::
 
 
-#### Danger Zone
 
-These options pose a risk to the experience of the site and its users. Proceed carefully.
+**Visualization**
+- **Favicon: ** Image displayed next to the address bar.
+- **Apple icon: ** An image that is displayed on iOS mobile devices when you mark the application as a favorite.
 
-- Change realm: This field displays the site's realm. When changing your realm, you lose all the privacy settings on your sites, pages and navigation.
-- Site Status: Change the status of the site between three different options.
-    * Enabled: Allows the site to be editable and visible to the public. This is the default state of a site.
-    * Editable: Allows a site to be modified, but not visible to the public. Users must log in to Modyo Platform to access the site. Robots.txt, PWAs, and the manifest are disabled in this state.
-    * Disabled: Prohibits both editing and visibility of a site. In this state, the site is not accessible or visible to users.
-- Delete Site: This action starts the process of asynchronously deleting the site. Once the deletion begins, the site is no longer accessible. All elements contained in the site, such as pages and widgets, will also be deleted.
+**Privacy**
+- **Audience: ** All visitors can view the web app and its content without having to log in.
+- **Private: ** Only users who are logged in to Modyo can view the web app.
+- **Show home to public visitors: ** The home page of the web app is shown to all visitors, even those who are not logged in. When navigating to any other page, registration or login is required.
+- **Redirect to home when a URL is not found: ** By default, the web application shows a 404 error when the user accesses a non-existent URL. If you check this option, the user will be redirected to the home page of the web app instead of 404.
+- **Enable search: ** Activate the search function in the web app.
+- **Enable search across multiple applications**
 
+:: :tip Tip
+If you enable search in your web app and use the `multi=true` parameter from another web app, you can also search your current app.
+:::
+
+
+**Dangerous Zone**
+
+::: danger Danger
+Use caution when modifying these options, as they can affect access to your web application and the experience of your users.
+:::
+
+- **Change host: ** This action modifies the visibility and accessibility of the application. Making a host change can impact the visibility and availability of the web application.
+- **Change kingdom: ** Deploy the application kingdom. When you change the kingdom, you lose all the privacy settings in your web apps, pages and browsing.
+- **Change status: ** Change the status of the application, the options are:
+    * Enabled: Editable and visible to the public. This is the default state of a web app.
+    * Editable: Modifiable but not visible to the public. Requires login to access. Robots.txt, PWAs, and the manifest are disabled in this state.
+    * Disabled: Not editable or visible. In this state, it's not accessible or visible to users.
+- **Delete application: ** Initiates the asynchronous removal of the application and all of its elements, such as pages and widgets.
+
+::: danger Danger
+Deleting a web application is irreversible.
+
+When you press the delete button, the system asks you to enter the textual name of the application to confirm the action. Once confirmed, you can't access the application or its elements.
+:::
 
 ### SEO
 
-SEO (Search Engine Optimization) is essential for visibility across different search engines. Users depend on good SEO settings to get to the site.
+SEO (Search Engine Optimization) is essential for search engine positioning. Users rely on good SEO settings to reach your application.
 
-The options listed in this section help improve your SEO across a particular channel:
+You can configure:
 
-- **Tagline**: Description that appears in search engines, below the name of the site.
-- **Automatically update the sitemap.xml file for me**: This option allows Modyo to automatically create and maintain the sitemap.xml file. If you want to keep a custom sitemap, disable this option.
-- **Sitemap**: This XML file allows search engines to index the content of the site.
-- **Automatically update the robots.xml file for me**: By enabling this option, Modyo will automatically create and maintain the robots.txt file. Disable this option to provide personalized instructions to site crawlers.
-- **Robots.txt**: This file is part of the Robot Exclusion Protocol (REP), a group of web standards that regulate how robots crawl the web, access and index content and serve it to users. This file determines whether or not certain user agents (web tracking software) can crawl parts of a website. Specifies tracking instructions by “allowing” or “prohibiting” the behavior of certain or all user agents.
+- **Tagline: ** Description in search engines, below the name of the web application.
+- **Automatically update the sitemap.xml file for me: ** It allows Modyo to create and maintain the sitemap.xml automatically. Disable this option to use a custom site map.
+- **Sitemap: ** This XML file allows search engines to index site content.
+- **Custom sitemap.xml file: ** File that allows search engines to index the content of the web app.
+- **Automatically update the robots.xml file for me: ** It allows Modyo to automatically create and maintain robots.txt. Disable this option to provide personalized instructions to web app crawlers.
+- **Custom robots.txt file: ** File that tells crawler robots what parts of the application may or may not index.
 
-:::tip Tip
-The robots.txt and sitemap.xml files are only visible on the site if custom domains are used. Otherwise, robots.txt and sitemap.xml are only found at the platform level, have their default values, and cannot be customized.
+:: :tip Tip
+The robots.txt and sitemap.xml files are only visible with custom domains. Otherwise, they are found only at the platform level, have their default values and cannot be customized.
 :::
 
-- **Custom meta tags**: Allows you to set meta tags and their default values for all pages.
-- **Replicate meta tag on pages:** Propagates the meta tag and its value on all pages of the site. It is necessary to save the changes and publish all the modified pages for the new meta tags to take effect.
+- **Custom meta tags: ** Allows you to configure meta tags for all pages and their default values. Click **+ New meta tag** to create a new one.
+- **Replicate meta tag on pages: ** When creating a new meta tag, select this option to spread the meta tag and its value across all pages of the web app. You must save the changes to meta tags and publish all the modified pages for the new meta tags to take effect.
 
-:::warning Attention
-In the site configuration section, only users with the site administrator role can add meta tags. Within a site, the developer's role is able to add and remove meta tags page by page.
+:: :warning Attention
+Only administrators of the application can add meta tags. Developers can add and remove meta tags page by page.
 :::
 
 #### On-page vs. off-page SEO
 
-Also known as on-site and off-site SEO, these terms refer to actions you can take on and off a web page to improve the visibility of your site in search engines. To achieve the best results, we recommend using both strategies together, which will contribute to a stronger position in search results.
+Also known as on-site and off-site SEO, these terms refer to actions you can do on and off a web page to improve visibility in search engines. For better positioning, we recommend using both strategies together.
 
 ##### On-Page SEO
 
-This is a list of actions you can take to improve on-page SEO:
+To improve on-page SEO:
 
 - Use keywords in the SEO section of the platform and on your pages.
-- Include keywords in the URL of the page.
-- Add links to relevant information or to other parts of your site.
+- Include keywords in the URL.
+- Add relevant links to other sections of your application.
+
 
 
 ##### Off-Page SEO
 
-To improve off-page SEO, you can:
+To improve off-page SEO:
 
-- Promote content on social networks and other distribution channels
-- Promote alliances and collaborations with media of authority on the subject.
+- Promote content on social networks and other distribution channels.
+- It encourages alliances and collaborations with authoritative media on the subject.
+
 
 
 ### PWA
@@ -521,7 +559,7 @@ The hierarchy of locations on Modyo sites follows this order:
 
 1. [Default views (Home, search)](/en/platform/channels/templates.html)
 1. [Pages](/en/platform/channels/pages.html)
-1. Custom redirects
+1. Custom Redirects
 1. [Site 404 error settings](/en/platform/channels/sites.html#privacy)
 
 :::warning Conditions for a redirect
