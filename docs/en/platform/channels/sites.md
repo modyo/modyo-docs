@@ -97,7 +97,7 @@ Customize your queries as follows:
 | **query** | Make queries to the search API. This search engine performs queries on all published pages of your web app and on all public entries in the spaces linked to the web app. |
 | **per_page** | Divide the total number of records by the number of pages selected. |
 | **page** | Select the specific page you want to consult, in case there are multiple pages of records to query. |
-| **multi=true** | It allows you to search all the web applications in the account that have the search function enabled. |
+| **multi=true** | Allows you to search in all the web applications in the account that have the search function enabled. |
 
 
 ## Web Application Settings
