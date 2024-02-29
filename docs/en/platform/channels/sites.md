@@ -123,7 +123,7 @@ Changes to the name and description are immediately reflected in Modyo. The upda
 
 
 :: :warning Attention
-The time in the content is managed in the [general] section (https://docs.modyo.com/es/platform/core/configuration.html#configuracion) of the account settings.
+The time in content is managed in the [general](https://https://docs.modyo.com/en/platform/core/configuration.html#configuration) section of the account settings.
 :::
 
 - **Google Tag Manager ID**: Add a Google Tag Manager identifier to insert scripts for tracking and measuring events.
