@@ -5,7 +5,7 @@ sidebarDepth: 2
 
 # Web applications
 
-A web application or web app displays the content created in content and channels to create your personalized digital channel. In the web application, all the development, design and navigation flow are carried out.
+A web application or web app displays the content created in content and channels to create your personalized digital channel. All the development, design, and navigation flow is carried out in the web application.
 
 A web app can be in one of these three states:
 
