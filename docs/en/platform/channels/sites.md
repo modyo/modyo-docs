@@ -65,7 +65,7 @@ To enable or disable the search functionality, follow these steps:
 
 ### Search template
 
-You can control the appearance and search functionality in your web app using the [template] (/es/platform/channels/sites.html #plantilla -de-search/) _search_.
+You can control the appearance and search functionality in your web app using the [template](/en/platform/channels/sites.html#search-template/) _search_.
 
 This template is available by default in the templates section and contains all the Liquid code needed to carry out queries in your web app. By default, when making a query, the records are displayed in the form of a list with their title, description and a link to their address. You can modify the template to suit your needs.
 
