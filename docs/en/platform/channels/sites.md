@@ -203,7 +203,7 @@ When you press the delete button, the system will ask you to enter the textual n
 - **Private:** Only users who are logged in to Modyo can view the web app.
 - **Show home to public visitors:** The home page of the web app is shown to all visitors, even those who are not logged in. When navigating to any other page, registration or login is required.
 - **Redirect to home when a URL is not found:** By default, the web application shows a 404 error when the user accesses a non-existent URL. If you check this option, the user will be redirected to the home page of the web app instead of to the 404.
-- **Enable search: ** Activate the search function in the web app.
+- **Enable search:** Activates search function in the web app.
 - **Enable search across multiple applications**
 
 :: :tip Tip
