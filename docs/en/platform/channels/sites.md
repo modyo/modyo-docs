@@ -233,7 +233,7 @@ When you press the delete button, the system asks you to enter the textual name 
 
 ### SEO
 
-SEO (Search Engine Optimization) is essential for search engine positioning. Users rely on good SEO settings to reach your application.
+SEO (Search Engine Optimization) is essential for search engine positioning. Users rely on good SEO settings to find your application.
 
 You can configure:
 
