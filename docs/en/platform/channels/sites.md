@@ -274,7 +274,7 @@ To improve on-page SEO:
 To improve off-page SEO:
 
 - Promote content on social networks and other distribution channels.
-- It encourages alliances and collaborations with authoritative media on the subject.
+- Encourage alliances and collaborations with authoritative media on the subject.
 
 
 
