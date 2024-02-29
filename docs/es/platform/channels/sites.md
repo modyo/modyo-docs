@@ -102,52 +102,47 @@ Personaliza tus consultas de la siguiente manera:
 
 ## Configuración de aplicaciones web
 
-En la sección de Configuración de la aplicación puedes personalizar tu sitio a las necesidades de tus diferentes públicos y asegurar que tus visitantes, clientes, desarrolladores y administradores visualicen tu sitio de manera diferente.
-
-Además, puedes modificar configuraciones para optimizar el SEO.
+En la sección de configuración de la aplicación puedes personalizar tu web app para que tus visitantes, clientes, desarrolladores y administradores visualicen tu web app de manera diferente. Así como para optimizar el SEO de tu aplicación.
 
 
 ### General
 
 En esta sección puedes configurar:
 
-- **Nombre del sitio**: El nombre de tu sitio, este campo se usa como título por defecto para el SEO de tu sitio.
-- **Descripción**: Una breve descripción de tu sitio.
+- **Nombre de la aplicación:** Este campo se usa como título por defecto para el SEO de tu web app.
+- **Descripción**
 
 :::warning Atención
 
-Los cambios realizados en el nombre y la descripción de la aplicación se verán de inmediato en Modyo. Sin embargo, la actualización en los resultados de búsqueda se reflejarán después de que los motores de búsqueda completen su proceso de reindexación.
+Los cambios en el nombre y la descripción se reflejan de inmediato Modyo. La actualización en los resultados de búsqueda se verá una vez que los motores de búsqueda completen su proceso de reindexación.
 
 :::
-- **Logo del sitio**: Imagen que se muestra en la parte superior izquierda como logo del sitio.
-- **Idioma**: El idioma en el que está disponible tu sitio. Las opciones son: español, inglés y portugués.
-- **[Revisión en Equipo](/es/platform/core/key-concepts.html)**
-- **Zona Horaria**: La zona horaria en que se muestran los campos de fecha y hora dentro del sitio. Esta configuración afecta a todas las secciones del sitio, incluyendo Pages, Navegación y Plantillas, así como las llamadas de Liquid a datos del sitio.
+- **Logo de la aplicación:** Imagen que se muestra en la parte superior izquierda.
+- **Idioma de la aplicación:** El idioma en el que está disponible tu web app. Las opciones son: español, inglés y portugués.
+- **Zona horaria:** La zona horaria en que se muestran los campos de fecha y hora en la app. Esta configuración afecta a todas las secciones, incluyendo pages, navegación y plantillas, así como las llamadas de Liquid a los datos de la aplicación web.
+
 
 :::warning Atención
-La hora en el contenido es manejada en la Configuración de la Cuenta.
+La hora en el contenido se gestiona en la sección [general](https://docs.modyo.com/es/platform/core/configuration.html#configuracion) de configuración de la cuenta.
 :::
 
-- **ID de Google Tag Manager**: Te permite añadir un identificador de Google Tag Manager para insertar fácilmente los scripts para poder hacer uso de la herramienta de registro de eventos de Google.
-- **Favicon**: Imagen que aparece al costado de la barra de dirección.
-- **Icono de Apple**: Imagen que se ve en los dispositivos móviles al usar el sitio como aplicación.
-- **Borrar**: Eliminar definitivamente un sitio y todo sus elementos.
+- **ID de Google Tag Manager**: Agrega un identificador de Google Tag Manager para insertar scripts para el seguimiento y medición de eventos.
 
-:::danger Peligro
-Borrar es irreversible, por lo que debes estar completamente seguro al ejecutar esta acción.
+Por defecto, los nuevos temas de Modyo incluyen snippets para inyectar automáticamente los scripts de Google Tag Manager en los tags `<head>` y `<body>` de las aplicaciones web.
 
-Al presionar el botón de eliminado, el sistema te pedirá que ingreses el nombre textual del sitio que deseas eliminar para confirmar la acción. Una vez confirmada, no podrás volver a acceder al sitio ni a sus elementos.
-:::
+Para acceder a estos snippets:
 
-#### Google Tag Manager
+1. En el menú lateral, haz click en channels.
+1. Selecciona tu aplicación web.
+1. Haz click en plantillas en el menú lateral
+1. En la columna del lado derecho, da click en snippets y ve a la sección general. Puedes incrustarlos en el snippet _head_ y en las vistas _home_ y _base_.
 
-Por defecto, los nuevos temas de Modyo incluyen los snippets necesarios para inyectar automáticamente los scripts de Google Tag Manager tanto en el tag `<head>` como en el tag `<body>` de los sitios. Puedes encontrar estos snippets en la sección [Plantillas](/es/platform/channels/templates.html), categoría _Snippets/General_ y se incrustan tanto en el snippet _head_ como en las vistas _home_ y _base_.
+**Para crear snippets personalizados:**
 
-Si no cuentas con estos snippets, puedes crear un snippet personalizado para luego incrustar Google Tag Manager en tu sitio.
+**Para el _head_:**
 
-1. Crea un snippet personalizado con el siguiente código y luego incrusta el snippet en el head del sitio usando `{% snippet "gtm-head" %}`, reemplazando "gtm-head" por el nombre que le diste al snippet.
+1. Utiliza este código:
 
-**Google Tag Manager para el _head_**
 ```liquid
 {% if site.tag_manager_id != '' %}
 
@@ -161,10 +156,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 {% endif %}
 ```
+2. Incrusta el snippet en el _head_ de la web app usando {% snippet "gtm-head" %}, reemplazando "gtm-head" por el nombre que le diste al snippet.
 
-2. Crea un snippet personalizado con el siguiente código y luego insértalo dentro de los tags body de las vistas home y base usando `{% snippet "gtm-body" %}`, reemplazando "gtm-body" por el nombre que le diste al snippet.
+**Para el _body_**
 
-**Google Tag Manager para el _body_**
+1. Utiliza este código:
+
 ```liquid
 {% if site.tag_manager_id != '' %}
 
@@ -179,7 +176,23 @@ style="display:none;visibility:hidden">
 {% endif %}
 ```
 
-Con esta configuración completada, cuando haya un valor asociado al campo **ID de Google Tag Manager** en la sección Configuración General del sitio, los scripts se inyectarán automáticamente y podrás comenzar a crear eventos en Google Tag Manager para registrar las acciones de tus usuarios.
+2. Incrusta el snippet dentro de los tags body de las vistas _home_ y _base_ usando {% snippet "gtm-body" %}, reemplazando "gtm-body" por el nombre que le diste al snippet.
+
+Con esta configuración completada, cuando exista un valor asociado al campo **ID de Google Tag Manager**, los scripts se inyectarán automáticamente. Esto te permitirá crear eventos en Google Tag Manager para registrar las acciones de tus usuarios.
+
+
+
+- **Favicon**: Imagen que aparece al costado de la barra de dirección.
+- **Icono de Apple**: Imagen que se ve en los dispositivos móviles al usar el sitio como aplicación.
+- **Borrar**: Eliminar definitivamente un sitio y todo sus elementos.
+
+:::danger Peligro
+Borrar es irreversible, por lo que debes estar completamente seguro al ejecutar esta acción.
+
+Al presionar el botón de eliminado, el sistema te pedirá que ingreses el nombre textual del sitio que deseas eliminar para confirmar la acción. Una vez confirmada, no podrás volver a acceder al sitio ni a sus elementos.
+:::
+
+
 
 #### Privacidad
 
