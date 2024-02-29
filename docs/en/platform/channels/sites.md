@@ -118,7 +118,7 @@ Changes to the name and description are immediately reflected in Modyo. The upda
 
 :::
 - **Application logo:** Image shown at the top left.
-- **Application language: ** The language in which your web app is available. The options are: Spanish, English and Portuguese.
+- **Application language:** The language in which your web app is available. The options are: Spanish, English, and Portuguese.
 - **Time zone: ** The time zone where the date and time fields are displayed in the app. This setting affects all sections, including pages, navigation and templates, as well as Liquid's calls to web application data.
 
 
