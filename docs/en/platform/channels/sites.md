@@ -249,7 +249,7 @@ The robots.txt and sitemap.xml files are only visible with custom domains. Other
 :::
 
 - **Custom meta tags:** Allows you to configure meta tags for all pages and their default values. Click **+ new meta tag** to create a new one.
-- **Replicate meta tag on pages: ** When creating a new meta tag, select this option to spread the meta tag and its value across all pages of the web app. You must save the changes to meta tags and publish all the modified pages for the new meta tags to take effect.
+- **Replicate metatag on pages:** When creating a new meta tag, select this option to spread the meta tag and its value across all pages of the web app. You must save the changes to meta tags and publish all the modified pages for the new meta tags to take effect.
 
 :: :warning Attention
 Only administrators of the application can add meta tags. Developers can add and remove meta tags page by page.
