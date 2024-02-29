@@ -681,7 +681,7 @@ To create a variable in sites, follow these steps:
 1. Under **Site Settings**, click **Site Variables**. Here you can see the list of all global variables and site variables, their general information and a button to copy their code into Liquid markup.
 1. Click on **+ New Variable**.
 1. Complete the **Name** and **Value** fields of the variable.
-1. Click **Save**.
+1. Click **save**.
 
 :::warning Attention 
 When using variables, Modyo follows a hierarchy of preference, where variables defined at the lowest level have priority. The variables defined in the widget will take precedence over the variables defined on the site, and in turn, the variables defined on the site will take precedence over the variables defined at the account level.
