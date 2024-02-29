@@ -244,8 +244,8 @@ You can configure:
 - **Automatically update the robots.xml file for me:** Allows Modyo to automatically create and maintain robots.txt. Disable this option to provide personalized instructions to web app crawlers.
 - **Custom robots.txt file:** File that tells web crawlers what parts of the application they may or may not index.
 
-:: :tip Tip
-The robots.txt and sitemap.xml files are only visible with custom domains. Otherwise, they are found only at the platform level, have their default values and cannot be customized.
+:::tip Tip
+The robots.txt and sitemap.xml files are only visible with custom domains. Otherwise, they are found only at the platform level, have default values and cannot be customized.
 :::
 
 - **Custom meta tags: ** Allows you to configure meta tags for all pages and their default values. Click **+ New meta tag** to create a new one.
