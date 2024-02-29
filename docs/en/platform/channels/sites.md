@@ -195,7 +195,7 @@ When you press the delete button, the system will ask you to enter the textual n
 
 
 **Visualization**
-- **Favicon: ** Image displayed next to the address bar.
+- **Favicon:** Image displayed next to the address bar.
 - **Apple icon: ** An image that is displayed on iOS mobile devices when you mark the application as a favorite.
 
 **Privacy**
