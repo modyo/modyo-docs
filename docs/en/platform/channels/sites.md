@@ -13,7 +13,7 @@ A web app can be in one of these three states:
 - **Pending changes:** There are pending changes in the web application. An administrator can verify the changes and publish the web application.
 - **Disabled:** The web application cannot be accessed.
 
-## Create a web application
+## Create a Web Application
 
 To create a new web app, follow these steps:
 
