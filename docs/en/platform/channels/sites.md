@@ -223,7 +223,7 @@ Use caution when modifying these options, as they can affect access to your web 
     * Enabled: Editable and visible to the public. This is the default state of a web app.
     * Editable: Modifiable but not visible to the public. Requires login to access. Robots.txt, PWAs, and the manifest are disabled in this state.
     * Disabled: Not editable or visible. In this state, it's not accessible or visible to users.
-- **Delete application: ** Initiates the asynchronous removal of the application and all of its elements, such as pages and widgets.
+- **Delete app:** Initiates the asynchronous removal of the application and all of its elements, such as pages and widgets.
 
 ::: danger Danger
 Deleting a web application is irreversible.
