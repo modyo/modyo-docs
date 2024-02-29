@@ -217,7 +217,7 @@ If you enable search in your web app and use the `multi=true` parameter from ano
 Use caution when modifying these options, as they can affect access to your web application and your users' experience.
 :::
 
-- **Change host: ** This action modifies the visibility and accessibility of the application. Making a host change can impact the visibility and availability of the web application.
+- **Change host:** This action modifies the visibility and accessibility of the application. Making a host change can impact the visibility and availability of the web application.
 - **Change kingdom: ** Deploy the application kingdom. When you change the kingdom, you lose all the privacy settings in your web apps, pages and browsing.
 - **Change status: ** Change the status of the application, the options are:
     * Enabled: Editable and visible to the public. This is the default state of a web app.
