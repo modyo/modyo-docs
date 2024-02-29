@@ -20,7 +20,7 @@ To create a new web app, follow these steps:
 1. In the side menu, click on **channels**.
 1. Click on **+ new application**.
 1. Type the name and host (main path of the web application).
-1. If necessary, select which kingdom you belong to.
+1. If necessary, select which realm it belongs to.
 1. Click **create**.
 
 Once created, the web application is automatically enabled and the system takes you to the summary screen.
