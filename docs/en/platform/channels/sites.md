@@ -10,7 +10,7 @@ A web application or web app displays the content created in content and channel
 A web app can be in one of these three states:
 
 - **Enabled:** Default status of newly created web applications and those that are enabled for use.
-- **Pending changes: ** There are pending changes to the web application. An administrator can verify the changes and publish the web application.
+- **Pending changes:** There are pending changes in the web application. An administrator can verify the changes and publish the web application.
 - **Disabled: ** The web application cannot be accessed.
 
 ## Create a web application
