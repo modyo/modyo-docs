@@ -211,7 +211,7 @@ If you enable search in your web app and use the `multi=true` parameter from ano
 :::
 
 
-**Dangerous Zone**
+**Danger Zone**
 
 ::: danger Danger
 Use caution when modifying these options, as they can affect access to your web application and the experience of your users.
