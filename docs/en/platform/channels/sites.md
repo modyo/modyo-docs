@@ -122,7 +122,7 @@ Changes to the name and description are immediately reflected in Modyo. The upda
 - **Time zone:** The timezone in which the date and time fields are displayed in the app. This setting affects all sections, including pages, navigation and templates, as well as Liquid's calls to the web application data.
 
 
-:: :warning Attention
+:::warning Attention
 The time in content is managed in the [general](https://https://docs.modyo.com/en/platform/core/configuration.html#configuration) section of the account settings.
 :::
 
