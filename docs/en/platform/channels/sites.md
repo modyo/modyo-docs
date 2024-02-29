@@ -214,7 +214,7 @@ If you enable search in your web app and use the `multi=true` parameter from ano
 **Danger Zone**
 
 ::: danger Danger
-Use caution when modifying these options, as they can affect access to your web application and the experience of your users.
+Use caution when modifying these options, as they can affect access to your web application and your users' experience.
 :::
 
 - **Change host: ** This action modifies the visibility and accessibility of the application. Making a host change can impact the visibility and availability of the web application.
