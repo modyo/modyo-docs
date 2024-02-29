@@ -60,7 +60,7 @@ To enable or disable the search functionality, follow these steps:
 1. Click on your web application.
 1. Click on **general**.
 1. In the privacy section, enable or disable the **enable search** box, as required.
-1. Click **Save**.
+1. Click **save**.
 
 
 ### Search template
