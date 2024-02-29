@@ -242,7 +242,7 @@ You can configure:
 - **Sitemap:** This XML file allows search engines to index site content.
 - **Custom sitemap.xml file:** File that allows search engines to index the content of the web app.
 - **Automatically update the robots.xml file for me:** Allows Modyo to automatically create and maintain robots.txt. Disable this option to provide personalized instructions to web app crawlers.
-- **Custom robots.txt file: ** File that tells crawler robots what parts of the application may or may not index.
+- **Custom robots.txt file:** File that tells web crawlers what parts of the application they may or may not index.
 
 :: :tip Tip
 The robots.txt and sitemap.xml files are only visible with custom domains. Otherwise, they are found only at the platform level, have their default values and cannot be customized.
