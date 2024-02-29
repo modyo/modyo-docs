@@ -25,8 +25,8 @@ To create a new web app, follow these steps:
 
 Once created, the web application is automatically enabled and the system takes you to the summary screen.
 
-:: :warning Attention
-In the web apps index, you will only see those apps in which you have a role and are part of the work team.
+:::warning Attention
+In the web apps index, you will only see those apps in which you have a role and are part of the team.
 :::
 
 ## Review and joint publication
