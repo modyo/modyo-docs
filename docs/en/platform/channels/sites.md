@@ -35,7 +35,7 @@ On the review and joint publication screen, you can see all the pending changes 
 
 ### Joint Publication
 
-To publish together in your web application, follow these steps:
+To make a joint publication in your web application, follow these steps:
 
 1. In the side menu, click **channels**.
 1. Click on your web application.
