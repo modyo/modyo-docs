@@ -39,7 +39,7 @@ To make a joint publication in your web application, follow these steps:
 
 1. In the side menu, click **channels**.
 1. Click on your web application.
-1. On the summary screen you can see the pending changes to be published. Click the **publish** button to preview and select the changes.
+1. In the summary screen you can see the pending changes to be published. Click on the **publish** button to preview and select the changes.
 1. Select the changes you want to publish.
 1. Click on the **publish** button.
 
