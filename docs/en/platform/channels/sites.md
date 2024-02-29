@@ -44,7 +44,7 @@ To make a joint publication in your web application, follow these steps:
 1. Click on the **publish** button.
 
 
-:: :tip Tip
+:::tip Tip
 If you click **publish** on a particular article (e.g. publish a page), the Review and Publish window will open with this article selected to see the pending changes.
 :::
 
