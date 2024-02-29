@@ -109,7 +109,7 @@ In the application configuration section, you can customize your web app so that
 
 In this section you can configure:
 
-- **Name of the application: ** This field is used as the default title for the SEO of your web app.
+- **Name of the application:** This field is used as the default title for the SEO of your web app.
 - **Description**
 
 :::warning Warning
