@@ -132,7 +132,7 @@ By default, new Modyo themes include snippets to automatically inject Google Tag
 
 To access these snippets:
 
-1. In the side menu, click channels.
+1. In the side menu, click on channels.
 1. Select your web application.
 1. Click on templates in the side menu
 1. In the column on the right side, click on snippets and go to the general section. You can embed them in the _head_ snippet and in the _home_ and _base_ views.
