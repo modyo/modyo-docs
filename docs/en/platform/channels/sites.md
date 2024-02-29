@@ -17,7 +17,7 @@ A web app can be in one of these three states:
 
 To create a new web app, follow these steps:
 
-1. In the side menu, click **channels**.
+1. In the side menu, click on **channels**.
 1. Click on **+ new application**.
 1. Type the name and host (main path of the web application).
 1. If necessary, select which kingdom you belong to.
