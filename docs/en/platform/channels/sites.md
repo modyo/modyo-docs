@@ -218,7 +218,7 @@ Use caution when modifying these options, as they can affect access to your web 
 :::
 
 - **Change host:** This action modifies the visibility and accessibility of the application. Making a host change can impact the visibility and availability of the web application.
-- **Change kingdom: ** Deploy the application kingdom. When you change the kingdom, you lose all the privacy settings in your web apps, pages and browsing.
+- **Change realm:** Shows the application's realm. When you change the realm, you lose all the privacy settings in your web apps, pages, and browsing.
 - **Change status: ** Change the status of the application, the options are:
     * Enabled: Editable and visible to the public. This is the default state of a web app.
     * Editable: Modifiable but not visible to the public. Requires login to access. Robots.txt, PWAs, and the manifest are disabled in this state.
