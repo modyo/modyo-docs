@@ -237,7 +237,7 @@ SEO (Search Engine Optimization) is essential for search engine positioning. Use
 
 You can configure:
 
-- **Tagline:** Description in search engines, below the name of the web application.
+- **Tagline:** Description for search engines, below the name of the web application.
 - **Automatically update the sitemap.xml file for me: ** It allows Modyo to create and maintain the sitemap.xml automatically. Disable this option to use a custom site map.
 - **Sitemap: ** This XML file allows search engines to index site content.
 - **Custom sitemap.xml file: ** File that allows search engines to index the content of the web app.
