@@ -176,7 +176,7 @@ style="display:none;visibility:hidden">
 {% endif %}
 ```
 
-2. Embed the snippet inside the body tags of the _home_ and _base_ views using {% snippet “gtm-body”%}, replacing “gtm-body” with the name you gave the snippet.
+2. Embed the snippet inside the body tags of the _home_ and _base_ views using {% snippet "gtm-body" %}, replacing “gtm-body” with the name you gave the snippet.
 
 With this configuration complete, when there is a value associated with the **ID field of Google Tag Manager**, the scripts will be automatically injected. This will allow you to create events in Google Tag Manager to record the actions of your users.
 
