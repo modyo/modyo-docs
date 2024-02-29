@@ -102,7 +102,7 @@ Customize your queries as follows:
 
 ## Web Application Settings
 
-In the application configuration section, you can customize your web app so that your visitors, customers, developers and administrators view your web app differently. As well as to optimize the SEO of your application.
+In the application configuration section, you can customize your web app so that your visitors, customers, developers, and administrators view your web app differently. As well as to optimize the SEO of your application.
 
 
 ### General
