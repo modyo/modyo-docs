@@ -206,8 +206,8 @@ When you press the delete button, the system will ask you to enter the textual n
 - **Enable search:** Activates search function in the web app.
 - **Enable search across multiple applications**
 
-:: :tip Tip
-If you enable search in your web app and use the `multi=true` parameter from another web app, you can also search your current app.
+:::tip Tip
+If you enable search in your web app and use the `multi=true` parameter from another web app, you can also search in your current app.
 :::
 
 
