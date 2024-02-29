@@ -11,7 +11,7 @@ A web app can be in one of these three states:
 
 - **Enabled:** Default status of newly created web applications and those that are enabled for use.
 - **Pending changes:** There are pending changes in the web application. An administrator can verify the changes and publish the web application.
-- **Disabled: ** The web application cannot be accessed.
+- **Disabled:** The web application cannot be accessed.
 
 ## Create a web application
 
