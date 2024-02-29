@@ -156,7 +156,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 {% endif %}
 ```
-2. Embed the snippet in the _head_ of the web app using {% snippet “gtm-head”%}, replacing “gtm-head” with the name you gave the snippet.
+2. Embed the snippet in the _head_ of the web app using {% snippet "gtm-head" %}, replacing “gtm-head” with the name you gave the snippet.
 
 **For the _body_**
 
