@@ -3,89 +3,101 @@ search: true
 sidebarDepth: 2
 ---
 
-# Sitios
+# Aplicaciones web
 
-Un sitio es donde se despliega el contenido creado en [Content](/es/platform/content/) y [Channels](/platform/channels/) para crear tu canal digital personalizado. En un sitio se lleva a cabo todo el desarrollo, diseño y flujo de navegación.
+Una aplicación web o web app despliega el contenido creado en content y channels para crear tu canal digital personalizado. En la aplicación web se lleva a cabo todo el desarrollo, diseño y flujo de navegación.
 
-Un sitio puede estar en uno de estos tres estados:
+Una web app puede estar en uno de estos tres estados:
 
-- **Habilitado**: Estado por defecto de los sitios recién creados y aquellos que están habilitados para uso.
-- **Cambios pendientes**: Este estado aparece cuando hay modificaciones pendientes en el sitio. Un administrador puede hacer click en **Publicar** para acceder a la sección de **Revisar y Publicar**, para verificar los cambios y publicar el sitio.
-- **Deshabilitado**: Cuando un sitio está en estado no es posible acceder a él.
+- **Habilitado:** Estado por defecto de las aplicaciones web recién creadas y aquellas que están habilitadas para uso.
+- **Cambios pendientes:** Existen modificaciones pendientes en la aplicación web. Un administrador puede verificar los cambios y publicar la aplicación web.
+- **Deshabilitado:** No es posible acceder a la aplicación web.
 
-## Crear un Sitio
+## Crear una aplicación web
 
-Para crear un nuevo sitio, sigue estos pasos:
+Para crear una nueva web app, sigue estos pasos:
 
-1. En el menú lateral, haz click en **Channels**.
-1. Haz click en **+ Nuevo Sitio**.
-1. Escribe el nombre y el host (ruta principal del sitio).
-1. Si es necesario, selecciona a qué reino pertenece el sitio.
-1. Haz click en **Crear**.
+1. En el menú lateral, haz click en **channels**.
+1. Haz click en **+ nueva aplicación**.
+1. Escribe el nombre y el host (ruta principal de la aplicación web).
+1. Si es necesario, selecciona a qué reino pertenece.
+1. Haz click en **crear**.
 
-Una vez creado el sitio, este se habilitará automáticamente y el sistema te llevará a la página **Resumen**.
+Una vez creada, la aplicación web se habilita automáticamente y el sistema te lleva a la pantalla de resumen.
 
 :::warning Atención
-En el índice de sitios, solo verás los sitios en los cuales tienes algún rol y eres parte del equipo de trabajo.
+En el índice de web apps, solo verás aquellas apps en las cuales tienes algún rol y eres parte del equipo de trabajo.
 :::
 
-## Revisión y Publicación Conjunta
+## Revisión y publicación conjunta
 
-En la pantalla de revisión y publicación conjunta puedes ver todos los cambios pendientes por publicar en tu sitio. Para visualizar los cambios, haz click en el botón **Ver**.
+En la pantalla de revisión y publicación conjunta puedes ver todos los cambios pendientes por publicar en tu web app. Para visualizar los cambios, haz click en el botón **ver**.
 
 ### Publicar en conjunto
 
-Para hacer una publicación en conjunto en tu sitio, sigue estos pasos:
+Para hacer una publicación en conjunto en tu aplicación web, sigue estos pasos:
 
-1. En el menú principal de Modyo Platform, expande **Channels** y haz click en **Sitios**.
-1. Haz click en tu sitio.
-1. En la pantalla de Resumen, haz click en **Publicar**.
-1. Aquí podrás ver todos los cambios pendientes. Selecciona lo que quieres publicar y haz click en **Publicar**.
+1. En el menú lateral, haz click en **channels**.
+1. Haz click en tu aplicación web.
+1. En la pantalla de resumen puedes ver los cambios pendientes por publicar.  Haz click en el botón **publicar** para previsualizar y seleccionar los cambios.
+1. Selecciona los cambios que quieres publicar.
+1. Haz click en el botón **publicar**.
+
 
 :::tip Tip
-Si haces click en **Publicar** en un artículo en particular (e.g. publicar una página), se abrirá la ventana de Revisar y Publicar con este artículo seleccionado para ver los cambios pendientes.
+Si haces click en **publicar** en un artículo en particular (e.g. publicar una página), se abrirá la ventana de Revisar y Publicar con este artículo seleccionado para ver los cambios pendientes.
 :::
 
 ## Buscador
 
-Al crear un sitio con Modyo, tus usuarios pueden realizar búsquedas en tus sitios y en todo su contenido mediante la función de búsqueda. Esto puede hacerse utilizando la URL `/search` o accediendo a la página de búsqueda dedicada.
+Cuando creas una aplicación web con Modyo, tus usuarios pueden realizar búsquedas en tus web apps y en todo su contenido mediante la función de búsqueda. Esto puede hacerse utilizando la URL `/search` o accediendo a la página de búsqueda dedicada.
 
-### Habilitar Búsqueda
+### Habilitar o deshabilitar búsqueda
 
-Para habilitar o deshabilitar la funcionalidad de búsqueda en un sitio sigue estos pasos:
+Para habilitar o deshabilitar la funcionalidad de búsqueda, sigue estos pasos:
 
-1. En el menú lateral, haz click en **Configuración del sitio**.
-1. Haz click en **General**.
-1. En la sección **Privacidad** habilita la casilla **Habilitar búsqueda**.
-1. Haz click en **Guardar**.
+1. En el menú lateral, haz click en **channels**.
+1. Haz click en tu aplicación web.
+1. Haz click en **general**.
+1. En la sección privacidad, habilita o deshabilita la casilla de **habilitar búsqueda**, según requieras.
+1. Haz click en **guardar**.
 
 
 ### Plantilla de búsqueda
 
-Puedes controlar la apariencia y funcionalidades de búsqueda en tu sitio utilizando la [plantilla](/es/platform/channels/sites.html#plantilla-de-busqueda/) _search_.
+Puedes controlar la apariencia y funcionalidades de búsqueda en tu web app utilizando la [plantilla](/es/platform/channels/sites.html#plantilla-de-busqueda/) _search_.
 
-Esta plantilla está disponible de forma predeterminada en la sección de Plantillas, en la categoría "Vistas/Search/Show". Contiene todo el código Liquid que necesitas para llevar a cabo consultas en tu sitio.
+Esta plantilla está disponible de forma predeterminada en la sección de plantillas y contiene todo el código Liquid necesario para realizar cabo consultas en tu web app. Por defecto, al realizar una consulta, los registros se muestran en forma de lista con su título, descripción y un enlace hacia su dirección. Puedes modificar la plantilla para adaptarla a tus necesidades.
 
-Puedes acceder a ella mediante la URL de tu sitio y anexando _search_ o _search.json_. Por ejemplo:
+Para acceder a esta plantilla:
+
+1. En el menú lateral, haz click en **channels**.
+1. Selecciona tu aplicación web.
+1. Haz click en **plantillas** en el menú lateral.
+1. En la sección vistas, en la columna derecha, y debajo de la categoría search, haz click en **show**.
+
+Para acceder a la plantilla de búsqueda anexa _search_ o _search.json_ a la URL de tu web app.
+
+Por ejemplo:
  - `test.modyo.com/miSitio/search`
  - `test.modyo.com/miSitio/search.json`
 
-Por defecto, al realizar una consulta, los registros se muestran en forma de lista con su título, descripción y un enlace hacia su dirección. Puedes modificar la plantilla y ampliar sus funcionalidades para adaptarla a tus necesidades específicas.
 
 ### Search.json
 
-Puedes también usar search.json para integrar el buscador. Esta API te permite integrar el buscador de manera más personalizada.
+Puedes también usar "search.json" para integrar el buscador de manera más personalizada.
 
-Para acceder a la API agrega "search.json" a la URL de tu sitio junto con tu consulta. Por ejemplo: test.modyo.com/miSitio/search.json?query=miConsulta
+Para acceder a esta API, agrega "search.json" a la URL de tu web app junto con tu consulta. Por ejemplo: test.modyo.com/miSitio/search.json?query=miConsulta
 
-Puedes personalizar tus consultas de la siguiente manera:
+Personaliza tus consultas de la siguiente manera:
+
 
 |  Parámetro       |       Descripción    |
 |------------------|----------------------|
-| **query** | Con el string **query** puedes realizar consultas a la API de búsqueda. Este buscador lleva a cabo consultas en todas las páginas publicadas de tu sitio y en todas las entradas públicas de los espacios vinculados al sitio. |
-| **per_page** | Este parámetro de paginación te permite dividir el número total de registros en el número de páginas que selecciones. |
-| **page** | Este parámetro te permite seleccionar la página específica que deseas consultar en caso de que existan múltiples páginas de registros para la consulta. |
-| **multi=true** | Este parámetro permite realizar búsquedas en todos los sitios de la cuenta que tienen habilitada la función de búsqueda. |
+| **query** | Realiza consultas a la API de búsqueda. Este buscador lleva a cabo consultas en todas las páginas publicadas de tu web app y en todas las entradas públicas de los espacios vinculados a la web app. |
+| **per_page** | Divide el número total de registros en el número de páginas seleccionadas. |
+| **page** | Selecciona la página específica que deseas consultar, en caso de que existan múltiples páginas de registros para la consulta. |
+| **multi=true** | Permite realizar búsquedas en todos las aplicaciones web de la cuenta que tengan habilitada la función de búsqueda. |
 
 
 ## Configuración de aplicaciones web
