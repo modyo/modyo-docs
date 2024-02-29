@@ -139,7 +139,7 @@ To access these snippets:
 
 **To create custom snippets:**
 
-**For the _head_: **
+**For the _head_:**
 
 1. Use this code:
 
