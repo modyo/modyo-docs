@@ -37,7 +37,7 @@ module.exports = {
       smoothScroll: true,
       algolia: {
           apiKey: '0830ca92d68cf8e7626a6eaa2d2e083b',
-          indexName: 'csd_test_index_001',
+          indexName: 'modyo_docs_index',
           appId: 'TEEU706UKD'
       },
       locales: {
