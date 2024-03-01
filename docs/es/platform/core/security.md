@@ -54,7 +54,7 @@ Puedes localizar esta opción al editar un usuario en la sección **Equipo**, en
 
 Habilita la funcionalidad de Compartir Recursos de Origen Cruzado (CORS) para permitir el acceso a los recursos de Modyo desde otras páginas web.
 
-Por defecto, los dominios personalizados de tus sitios ya están incluidos una vez que CORS está activado. Para darle acceso a dominios externos, escríbelos separados por comas, por ejemplo `http://api.mydomain.com, http://mysubdomain.mydomain.com`. Los comodines o _wildcards_ no están permitidos en esta sección.
+Para dar acceso a dominios externos, escríbelos separados por comas, por ejemplo `http://api.mydomain.com, http://mysubdomain.mydomain.com`. Por defecto, los wildcards no están permitidos en esta sección. Para habilitarlos, deberás deshabilitar manualemente el SSL a través de un ticket enviado area de [soporte de Modyo](https://support.modyo.com/hc/en-us).
 
 ## Token de entrega de contenido (JWT - JSON Web Token)
 
@@ -116,9 +116,9 @@ Si has activado la opción de forzar autenticación, la próxima vez que el usua
 * Asegúrate que los accesos siempre provengan de equipos actualizados y a través de navegadores web confiables y actualizados.
 
 ### Actualizar Modyo con Regularidad
-Te recomendamos actualizar Modyo periódicamente para asegurar que tu instalación tenga las últimas correcciones de seguridad y que todos los parches de seguridad están al día. Estos parches están diseñados para aplicarse sin causar interrupciones significativas en el flujo de trabajo; por ejemplo: pasar de la versión 9.1.10 a la 9.1.12.
+Te recomendamos actualizar Modyo periódicamente para asegurar que tu instalación tenga las últimas correcciones de seguridad y que todos los parches de seguridad están al día. Estos parches están diseñados para aplicarse sin causar interrupciones significativas en el flujo de trabajo.
 
-Además, te recomendamos realizar actualizaciones de versiones mayores al menos dos veces al año, pasando, por ejemplo, de la versión 9.1.14 a la 9.2.2. Esto no solo te mantendrá en la última versión con soporte, sino que también te proporcionará las últimas características y funcionalidades.
+Además, te recomendamos realizar actualizaciones de versiones mayores al menos dos veces al año. Esto no solo te mantendrá en la última versión con soporte, sino que también te proporcionará las últimas características y funcionalidades.
 
 ### Configurar una Contraseña Segura en el Panel de Administración
 El Panel de Administración es la herramienta de administración más potente de Modyo. A través de él, puedes tener control sobre diversas configuraciones y acciones fundamentales en la operación de Modyo. Además, te proporciona acceso administrativo a todas las organizaciones definidas en la plataforma.

@@ -2,14 +2,15 @@
 search: true
 ---
 
-# Asset Manager
+# Media
+
+:::tip Tip
+- In `Modyo 9` this space is called **File Manager**. If you migrate from Modyo 9 to Modyo 10, all assets are preserved, and you can choose beforehand which space to move them to.
+:::
 
 This space allows you to upload, organize and manage your files in a simple and efficient way.
 
-- In `Modyo 9` this space is called **File Manager**: When migrating to Modyo 10 all assets are preserved, and you can choose in advance which space to move them to.
-
-- Starting with `Modyo 10` this space is called **Media**: Here (unlike the File Manager in Modyo 9), image editing and deleting permissions are carried out through groups. This way, a group can have permissions to view and use assets, but it can't modify or delete them.
-
+In Media, you can assign editing and deleting permissions to images through groups. This way, a group can have permissions to view and use assets, but it can't modify or delete them.
 You can upload different types of media to this space, considering the following size restrictions per file:
 
 
@@ -19,14 +20,14 @@ You can upload different types of media to this space, considering the following
 - **Files:** 10 MB
 
 The allowed file types are:
-- **Images: ** apng, avif, bmp, gif, ico, jpeg, jpg, png, tif, tiff, webp
-- **Videos: ** av, avi, f4v, flv, mkv, mov, mp4, mpeg, webm, wmv
+- **Images:** apng, avif, bmp, gif, ico, jpeg, jpg, png, tif, tiff, webp
+- **Videos:** av, avi, f4v, flv, mkv, mov, mp4, mpeg, webm, wmv
 - **Audios:** 3gp, aac, alac, dsd, flac, mp3, pcm, wav, m4a, ogg, wma
 - **Files:** 7z, ai, apk, css, csv, doc, docx, fon, ico, iso, jar, js, msi, ods, odt, otf, pdf, ppt, pptx, rar, rss, rtf, scss, tar, tex, ttf, txt, vcf, wdp, xhtml, xls, xlsm, xlsx, xml, zip, one, ecf, pub, xps, json, svg, woff, woff2, ics
 
 
 
-## About the interface
+## About the Interface
 
 The interface shows you a list of all the files that exist within the platform.
 
@@ -54,21 +55,12 @@ In this view, the columns are:
 ## Upload a file
 To upload a file to Modyo, choose one of the following options:
 
-#### From the section where you're working, templates, pages, kingdoms or sites:
+#### From the section where you're working, templates, pages, realms, or sites:
 1. Open the text editor,
 1. In the top bar, select **insert image** to open a modal where you can drag or upload a file.
 
 #### In the dedicated section for managing files.
 
-`Modyo 9`
-1. In the side menu, select **Content**.
-1. Click on **File Manager**.
-1. Click on the **+ New Asset** button.
-1. Drag the file or click on the upload box to open a search window.
-1. Add tags to the file if you want.
-1. Click **Upload** to confirm.
-
-`Modyo 10`
 1. In the side menu, click on the **Content** icon.
 1. Select a space.
 1. In the side menu, click **Media**.
@@ -81,7 +73,7 @@ To upload a file to Modyo, choose one of the following options:
 Modyo allows you to upload 10 files at a time. If you need to upload more items, repeat the process.
 :::
 
-## Edit a file
+## Edit a File
 In the file interface, click on the name of a file to open the file properties editing interface and see:
 
 - **File URL:** Shows the public URL of the file. Click on the icon next to the URL to copy it. It is not modifiable.
@@ -93,7 +85,7 @@ In the file interface, click on the name of a file to open the file properties e
 
 Click **Update Information** to confirm the changes or **Close** to cancel them.
 
-## Re-upload an image
+## Re-upload an Image
 
 To upload a new file while keeping the original name and link, follow these steps:
 
@@ -104,7 +96,7 @@ To upload a new file while keeping the original name and link, follow these step
 5. Click **Update Information** to confirm the changes
 
 
-## Edit an image
+## Edit an Image
 
 The Modyo image editor allows you to make small changes to the images to make them easier to use on the platform. To adjust the dimensions of an image, follow these steps:
 
@@ -126,7 +118,7 @@ You can change the view and crop of the image in two ways:
 To restore the file, open the property editing window again and click on **Restore Original**, this permanently removes the modifications made.
 
 
-## Delete a file
+## Delete a File
 
 To delete a file, follow these steps:
 1. Click on the name of a file to open the property editing interface.

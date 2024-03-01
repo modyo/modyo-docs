@@ -5,129 +5,149 @@ sidebarDepth: 3
 
 # Spaces
 
-A Space is a repository where team members can define different structures called Content Types and their Entries.
+A space is a repository where team members can define [types of content](https://docs.modyo.com/es/platform/content/types.html) and entries.
 
-All elements can be used inside or outside **Modyo Platform** through its public API or in the creation of a Site in the Channels module.
+Spaces allow you to organize content in the areas where you work, for better distribution and order.
 
-From Modyo, you can configure access from different origins so that the service that consumes the API can interpret it.
+You can use this content inside and outside the Modyo platform, through the public API or when creating a site in the Channels module. Configure access from various sources, to allow the service that consumes the API to interpret it. See the [API](https://docs.modyo.com/es/platform/content/public-api-reference.html#api) section of our documentation for more information.
 
-Spaces also allow us to organize content, for better order and easier distribution.
+## About the interface
 
-When accessing the list of spaces in the Modyo Content section, each listed space indicates how many content types and total entries it contains.
+In the spaces interface, you can see a list of all your spaces, the number of content types and entries in each space, and the date it was created.
 
-:::warning Warning
-In the Space index, you will only see the spaces in which you are part of the work team with an assigned role
+You can sort the columns alphabetically, by space name or identifier, or by creation date; and filter using the search engine.
+
+:::warning Attention
+You can only see those spaces in which you are part of the team, with a role.
 :::
 
-This list can be sorted alphabetically by space name or by the date the space was created, and you can also search for spaces by name.
+## Create a space
 
-## Create a Space
+To create a space, follow these steps:
 
-To create a Space, you must click on the green button in the upper right of the Spaces index view, and assign the name and the UID that you will use.
+1. In the side menu, select Content
+1. Click on **+ New Space**
+1. Fill out the fields in the form.
+1. Click **Create**
 
-In addition, you must select the default language of your content which will result in a better character configuration.
 
 :::tip Tip
-Later, in the configuration, you can define other secondary languages for the space.
+Selecting the default language in which you will write the content improves the character configuration.
+
+Later, in the space configuration, you can define secondary languages for the entries.
+
 :::
 
-## Configure a Space
+## Space Settings
 
-In this case, the space configuration helps us to change the general settings, language, security, team members with access, and rules for revision and publication.
+In this section, you can customize and adjust the options available for your space, according to your specific needs. To access the configuration of your space follow these steps:
+1. In the side menu, select Content
+1. Select your space
+1. Click on Space Settings to display the sections that you can modify.
+1. Click on a section to customize your space. The available sections are:
+
 
 ### General
 
-Here you can change the name of a space and its UID.
+In this section, you can:
+- **Change the name of the space**
+- **Show the author of the posts:** Enabling this option allows the author of the content to be visible in the public API and in the Liquid SDK. If disabled, the author will be blank.
 
-The UID of the space is very important. It determines how you access the space through the  [public API](/en/platform/content/public-api-reference.html#reference-del-api) content, the [Javascript SDK](/en/platform/content/public-api-reference.html#javascript-sdk) and the [Liquid SDK](/en/platform/content/public-api-reference.html#liquid-sdk). 
-
-Keep in mind that this attribute, apart from being unique, cannot contain tildes, dots or special characters, since it will be used in URLs to access the content.
-
-The next option is to configure whether the author of the content will be visible in both the public API and the Liquid SDK. If the option is enabled, then you'll see the details of the administrator who created the content, and if the option is disabled, you'll see a blank author.
-
-:::warning Warning
-Note that saving this option will reindex all the entries in the space, so there may be a time window where changes are not reflected until the space entries have finished reindexing.
+:::warning Attention
+Saving this option reindexes all entries in the space. The changes will be reflected once the process is completed.
 :::
 
-The last option is to eliminate the space. This option allows you to permanently delete a space and all its elements.
-
+- **Modify the realm's space:** When you change the user realm, you lose all privacy settings.
+- **Modify the space identifier:** The identifier or UID of the space is the attribute with which you access from the public content API, the Javascript SDK and the Liquid SDK. Make sure it's unique and without accents or special characters, as it will be used in URLs to access the content.
+- **Delete space:** Permanently deletes the space and all of its elements.
 :::danger Danger
-This option is irreversible, so you must be completely sure when executing this action. When you press the delete button, the system will ask you for the name of the space. You must enter the textual name of the space you are deleting in order to execute the action. Once the action is confirmed, you will not be able to access the space or its elements again.
+When selecting **Delete**, you must enter the textual name of the space to confirm the action. Once confirmed, you will not be able to access the space or its elements again.
 :::
 
-### Locales
 
-Modyo allows language and vocabulary changes by country, which is useful when you need to publish content in different languages.
+### Localization
 
-The default language of a space is defined when first creating a space and cannot be modified, but in this section you can add as many secondary languages as needed. You just have to select one from the list, add it and save the changes. Adding a secondary language places a language selector next to the page title of any entries you edit in order to switch between entry languages.
+The default language of a space is defined when creating the space and you cannot modify it, but in this section you can add as many secondary languages as you need, this is useful for working with personalized content and users with different languages.
+
+To add a language:
+1. Select a language from the drop-down menu
+1. Click on **Add language**
+
+Once you've added a secondary language, when you modify an entry, you'll see a language selector next to the title of the entry.
+
+For more information on how to translate an entry into a secondary language, review the [Translate an entry](https://docs.modyo.com/es/platform/content/entries.html#traducir-una-entrada) section.
 
 :::tip Tip
-You can learn how to select one of the available languages of an entry in the following sections: [Public API](/en/platform/content/public-api-reference.html#filters), [Javascript SDK](/en/platform/content/public-api-reference.html#sdk-de-javascript) and in [Liquid SDK](/en/platform/content/public-api-reference.html#filter-entries)
+To select one of the available languages from an entry in its corresponding sections, review the documentation of [Public API](/en/platform/content/public-api-reference.html#filter), [Javascript SDK] (en/platform/content/public-api-reference.html#sdk-de-javascript) and in [Liquid SDK] (/en/platform/content/public-api-reference.html#filtrar-entradas)
 :::
 
-### Cache
-
-The cache is a tool that allows you to reduce the number of requests that reach the application servers, improving performance and reducing response times. In this section, you can enable the cache for the Content API of the Space, allowing the content to be cached for up to 5 minutes (300 seconds).
-
-:::warning Warning
-You should take into account that when you enable this option, changes in your content will appear at your chosen time intervals. For example, if you specify a cache max-age of 5 minutes, when publishing content with title "A", and then publishing the same content with the title "A+1", the content will have the title "Example" for 5 minutes, until the initial cache is invalidated.
-:::
-
-:::tip Tip
-To work in development mode, it is highly recommended to have this option disabled, and only enable it when you have a scenario of high demand or concurrence, with frequent, high-volume requests being made to your content in this space.
-:::
 
 ### Security
 
-Modyo allows CORS to be enabled as a form of secure data transmission so that the API can be accessed by any microservice in an external domain.
+Modyo allows you to enable CORS so that the API can be accessed from any microservice in an external domain; ensuring secure data transmission.
 
-You need to specify the domain from which the information will be accessed. It's possible to allow access to all origins but it is not usually recommended.
+To enable CORS, you must specify the domain from which the information will be accessed. You can also allow all sources; however, we don't recommend doing so.
 
-When CORS is enabled, the following changes occur within the API:
-
-- The configuration of permitted URLs to access the content at the level of your Spaces, automatically allowing specified custom site domains.
-- When a request is made to the API, the header ```Access-Control-Allow-Origin``` with the value request.origin and ```Access-Control-Allow-Credentials'=true``` is added to the response, only if the origin belongs to the urls/domains previously mentioned. Otherwise, they are not configured.
-- Permitted URLs are cached at the application level.
-- When using an intermediate cache, the origin in the cache key must be considered so that the cache is handled separately in each source:
+When you enable CORS:
+- The URLs allowed to access content are configured at the space level, automatically allowing custom site domains.
+- When a request is made to the API, the Access-Control-Allow-Origin header with a value request.origin is added to the response and Access-Control-Allow-Credentials' = true, if the origin belongs to the mentioned domains.
+- Allowed URLs are cached at the application level.
+- If using intermediate cache, consider the origin in the cache key to handle it separately in each origin:
 
 ```javascript
 Varnish: sub vcl_hash {  if (req.http.Origin) { hash_data(req.http.Origin);  } }
 Nginx: set $cache_key "$http_x_forwarded_proto://$host$request_uri-$http_accept-$http_x_requested_with";
 ```
+:::tip Tip
+When deciding to use SSL, consider:
+-  **SSL:** Wildcard certificates are not allowed.
+- **NO SSL:** Wildcards are allowed in these environments, but you must enable them manually by sending a ticket to [Modyo support](https://support.modyo.com/hc/en-us). By default, Modyo uses SSL.
 
-#### CORS and SSL
+For more information, review the [Security](https://docs.modyo.com/es/platform/channels/sites.html#security-headers) section of the Modyo documentation.
+:::
 
-When deciding whether to use SSL within the platform, the following should also be considered:
-
-- **SSL**: Wildcards are not allowed.
-- **NO SSL**: Wildcards are allowed, but Modyo must now be secure by default.
 
 ### Team Review
 
-Team Review is a system to review and approve changes made to content and elements in the platform before making these changes publicly available. Modyo uses the Team Review to confirm and correct content sent through the API.
-
+Team review is a tool that allows multiple users to confirm and correct content before sending it through the API.
+The configuration options for team review are as follows:
+- **Enable team review:** Activates or deactivates team review. If enabled, all items submitted through the API will require approval from one or more reviewers.
+- **Number of Approvals:** Specifies the number of approvals required for an item to be published.
+- **Restrict the selection of reviewers:** Allows you to specify which users can review the content. Only those who submit for review can select reviewers.
+- **Force review:** Requires at least one specific user to review the content.
+- **Require all:** Requires all selected users to approve the item before it is published.
 
 For more information on how to configure this option, go to [Team Review](/en/platform/core/key-concepts.html).
 
-### Team Members
+### Team members
 
-To allow access to a space, you must select the team members who will work in this Space and have varying levels of access to writing, reviewing and/or publishing.
-
-To do this, the Content Administrator who created the space must manually assign users and their roles for each function.
+Team members are those users who have access to a space to write, review and publish content. The space administrator can add, modify, or remove team members and assign the default roles.
 
 #### Add User ####
-To add a user to the space, select the primary button **+ New** in the upper right of the view, in the modal that appears, select a user and assign a role, then press **Add** to add them to the space.
+To add a user to the space:
+1. Click **+ Add Member**.
+1. In the modal, select a user and assign them a role.
+1. Click **Add**.
+
 
 #### Modify Role ####
-You can modify the role of any of the associated users by clicking on their name. In the modal that appears, select a new role. Press **Save** to confirm the change.
+To modify a user's role:
+1. Click on the user's name.
+1. In the modal, select the new role.
+1. Press **Update**.
 
-:::warning Warning
-The system will check to verify that there is always an administrator within a space, so if there is only one administrator, this team member's role cannot be deleted.
+
+:::warning Attention
+Every space must have at least one administrator. If there is only one administrator in a space, the platform will not allow you to modify their role.
 :::
 
-#### Remove Team Members ####
-To remove a member of the team from a space, you can select them using the checkbox to the left of their name, and then clicking on the **Delete** button at the bottom of the list.
+#### Remove team members ####
+To remove a team member from a space:
+1. Check the box next to the user's name.
+1. Click **Delete** at the bottom of the list of users.
+1. Click **OK**.
 
-:::warning Warning
-The system will check to verify that there is always an administrator within a space, so if there is only one administrator, this team member cannot be deleted.
+
+:::warning Attention
+Every space must have at least one administrator. If there's only one administrator in a space, the platform won't allow you to delete that user.
 :::

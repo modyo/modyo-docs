@@ -22,13 +22,13 @@ You will see five boxes that will represent the number of items created, edited,
 
 **Created**: Number of times an entry, page or widget is created.
 
-**Edited**: Number of times the "save" action is used on entries, pages, navigation, widgets and templates.
+**Edited**: Number of times the "save" action is used on entries, pages, navigation, widgets, and templates.
 
-**Sent to Review**: Number of times in a place or space with the team review activated, an item is sent for review.
+**Sent to Review**: Counts the number of times, in a site or space with the team review activated, an item is sent for review.
 
-**Approved**: Number of times the restrictions of the team review are met and an item is ready to be published.
+**Approved**: Counts the number of times the restrictions of the team review are met, and an item is ready to be published.
 
-**Published**: Number of times an item is published, either on a site or space without team review (direct publication), or through team review, or also, through the "force post" action of the administrators.
+**Published**: Tallies the number of times an item is published, either on a site or space without team review (direct publication), or through team review, or also, through the "force post" action of the administrators.
 
 Next to each main counter, you will see an upward (green) or downward (red) indicator that represents whether the ratio between the current period and the previous one increased or decreased. If the counter is not present, it indicates that there is no data in the previous period.
 
@@ -40,7 +40,7 @@ The time ranges that are compared in each of the boxes, depend on the date range
 
 A line chart that represents a comparison over time between created versus published resources.
 
-With this graphic you can show how much created content gets published, and visualize, for example, if created content gets published multiple times.
+With this graph you can show how much created content gets published, and visualize, for example, if created content gets published multiple times.
 
 :::tip Tip
 The total date range on this chart depends on the total date range selected in the filter at the top right of the page.
@@ -48,7 +48,7 @@ The total date range on this chart depends on the total date range selected in t
 
 ### Activity by user
 
-This heat map allows you to visualize the detailed activity of the most active administrators on your team, separating the count of elements created, modified, sent for review, approved and published into columns.
+This heat map enables you to visualize the detailed activity of the most active administrators on your team, segregating the count of elements created, modified, sent for review, approved, and published into columns.
 
 ### Activity by resource
 

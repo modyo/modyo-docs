@@ -4,235 +4,295 @@ search: true
 
 # Entries
 
-Entries are the way to display content created in Spaces for all your sites. These Entries can be viewed from Sites created in Modyo Platform, in the Channels module, or on external sites, using our API.
+Entries are the way to display the content created in a space to your sites. You can view your entries from sites created on the Modyo Platform, in the Channels module, or on external sites using our API.
 
-Entries are a part of Modyo Content, the module responsible for creating dynamic content repositories that we call Spaces. In a Space, Entries are separated by Content Types. The Type defines the basic structure with its requirements and validations so that an Entry can be published.
+In a space, entries are separated by content types. The type of content defines the basic structure and the requirements and validations necessary for an entry to be published.
 
-In addition, if you use the Channels and Customers modules, you can create sites with the ability to show entries if they belong to a segment of your users in a site.
+Additionally, using the Channels and Customers modules, you can create sites capable of segmenting entries and showing them only to specific users.
+
 
 ## About the interface
 
-The entry list displays every type of non-archived entry within in that space.
+In the entry interface, you can see a list of all the user-generated content, ordered by the date of the last update.
 
-By default, this list displays entries by their "Updated on" date, meaning either by the date the entry was created, or last updated.
+The columns for sorting the list of entries are:
 
-The columns in the list display the following details:
+- **Status:** Draft, Published, Scheduled, or Archived.
+- **Name:** Name of the content.
+- **Type:** [Type](/en/platform/content/types.html) of content.
+- **Updated:** Date of the last saved update of the content.
+- **Author:** Name of the author of the content.
 
-- **Status**: Filter the list by the following statuses: Published, Not Published, Scheduled, Archived, and All. Filtering by All does not show Archived entries. Filtering by Not Published displays entries in either the Draft or Scheduled status.
-- **Name**: Title of the entry.
-- **Type**: Entry Type (See [Types](/en/platform/content/types.html)).
-- **Updated on**: Date of the last saved update.
-- **Author**: Original creator of the entry.
+You can also filter the view with default filters:
 
-You can also filter the view by other default filters that you can adjust depending on your need, regardless of how you order your entry list.
+- **Type:** [Type](/en/platform/content/types.html) of content.
+- **Status:** Draft, published, scheduled, and archived.
+- **Category:** Category assigned to entries.
+- **Language:** Language of the content.
+- **Translation:** Translation status of the entry. If an entry has no version in the selected language, it is considered “not translated”.
+- **Tags:** Labels available in the account.
+- **Search bar:** Filter by the content of the title of the entries.
 
-You can also filter the list by six different attributes:
+:::tip Tip
+Click on the Filters menu at the top right of the list of entries to add or remove any of the filter options in the header.
+:::
 
-- **Types**: Filter the list by any single type. (See [Types](/en/platform/content/types.html)).
-- **Status**: Filter the list by the following statuses: Published, Not Published, Scheduled, Archived, and All. Filtering by All does not show Archived entries. Filtering by Not Published displays entries in either the Draft or Scheduled status.
-- **Category**: Filter the list by a single category. Displays "All" by default.
-- **Locale**: Filter the list by a particular language. Entries without a translation in the filtered language display Not translated in the Status column.
-- **Translation**: This filter is associated to the selected language and filters by the translation status of the entries for that language. Ex: If an entry does not have a version in the selected language, it will be set to "Not translated".
-- **Tags**: Filter by a selectable, searchable list of the current tags available in the account.
-- **Search**: Not a filter, but a search that returns entries that match your criteria, by title.
 
 ## Bulk actions
 
-By selecting entries with the _checkbox_ to the left of each entry, you can use the bulk actions that appear at the bottom of the list.
+Select one or more entries and click on the Bulk Actions box to:
 
-- **Mass Edit**: You will enter the interface that allows you to modify multiple entries at once.
-- **Publish**: The selected entries that have pending changes or are in a Draft status will be published.
-- **Force publish**: If team review is enabled, space admins can use this action to force publish entries that have pending changes or are in draft status without going through the review process.
-- **Unpublish**: Selected entries that are published will be unpublished.
-- **Archive**: Selected entries that are unpublished will be archived.
+- **Bulk edit:** This option opens an interface where you can modify multiple entries at once, by selecting the fields you want to overwrite and applying the changes.
 
-:::warning Warning
-- Bulk publication will only be effective on selected entries that have pending changes.
-- Bulk unpublish will only take effect on selected entries that have a published version.
-- Bulk archiving will only take effect on selected entries that are not published.
-
-If you try to archive an entry that is published, this action will be omitted and will have no effect.
+:::warning Important
+The option to edit entries in bulk is only available for entries of the same type and is only visible if you filter the entries by type.
 :::
 
-:::tip Tip
-Bulk actions are executed in the background and you may not see the changes immediately, we recommend waiting a moment and refreshing the view after executing a mass action.
-:::
+You can make changes to all fields of the type. Once the changes are made, click **Next** at the top of the screen to see the summary of your changes. Click “Save” to confirm the changes.
 
-## Bulk edit
+These entries will now have pending changes and you must publish them. To do this, you can make use of the bulk action “Publish”.
 
-:::warning Warning
-This option is only available if you have the index of entries filtered by a particular type and you also have entries selected for bulk actions.
-
-If you select multiple entries, but are not using the filter by table type, you will not see this option.
-:::
-
-When selecting entries of the same type, you will see this option in the bulk actions at the bottom left of the table. By clicking on it, you will enter a new view that will allow you to select the fields you want to overwrite from the selected entries. Once you have checked the selector to the left of each field, you will be able to enter the value associated with the field.
-
-You can make changes to all fields of the type. Once you have finished adding values to the fields you need, press "Next" at the top of the screen to see a summary of your changes. If you agree with the changes, press "Save" to have Modyo start applying the changes to all selected entries.
 
 :::warning Warning
 By using bulk editing of entries you are overwriting the values for the selected fields in all selected entries, so the values that existed before the bulk edit will no longer be available in the editable version.
 
-If you need to restore a specific value from an entry, you can make use of the "Differences" option in the edit entries view to review the previous values that a particular entry had.
+To retrieve a specific value from an entry, access the entry editing view and select the **Differences** option to review the previous values of an entry.
 :::
 
-Once Modyo has finished modifying the fields for the selected entries, you will notice that all entries are now pending changes and you must publish them. For this, you can use the "Publish" mass action.
+- **Publish:** Publish selected entries that have pending changes or are in a draft state.
+- **Force publication:** If team review is enabled, space administrators can use this action to force the publication of entries that have pending changes or are in draft status, without having to go through the review process.
+- **Unpublish**
+- **Archive:** Bulk archiving only has an effect on the selected entries that are not published. If you try to archive a published post, the action will have no effect.
+
+:::tip Tip
+Bulk actions run in the background, and you might not see the changes immediately. You will need to wait a moment and refresh your view after executing a bulk action.
+:::
+
+
 
 ## Create and Publish an Entry
 
 To create an entry, follow these steps:
 
-1. In the side menu of Modyo Platform, select **Content** and click **Space**.
-2. Select your **Space**.
-3. Click **+ New Entry**.
-4. Select the **Content Type**, **Name**, and **Identifier**. Click **Create**.
-When you click **Create**, the Edit Entry view opens and you can fill in your content in the required fields based on the Content Type you chose.
-5. Click **Save** and then click **Publish**.
+1. In the side menu, select Content.
+1. Select your space.
+1. Click on Entries
+1. Click **+ New Entry**.
+1. Select the type of content, name and identifier.
+1. Click **Create**.
+1. Once the entry is created, you can include the content you require. The entry will have the structure defined in the type of content you selected.
+1. Click **Save**.
+1. Click **Publish**.
 
-In the next window, **Modyo** asks for the name, slug, and type of post you want to create, which can be created in [Content Types](/en/platform/content/types.html).
 
-:::warning Warning
-If the name field is empty, the platform defaults the UUID of the entry as a slug.
+:::warning Attention
+If the name field is empty, the default identifier will be the UUID of the entry.
 :::
 
 ## Translate an Entry
 
-Modyo Platform allows you to add different languages to your Spaces and create Entries for them. To translate an existing post into a different language, you must ensure that the language has been added to the Localization section in the Space settings.
+To translate an entry, you must first add the language to your space. To do this, follow these steps:
 
-To translate an entry, follow these steps:
+1. In the side menu, select Content.
+1. Click on your space.
+1. Click on Space Settings
+1. Click on Location.
+1. Select the language you want to add and click **Add language**.
 
-1. From Modyo Platform, in the side menu, expand **Content**, and click **Spaces**.
-1. Click your **Space**.
-1. Expand **Space Settings** and click **Location**.
-1. Select the language you want to add and click **Add Language**.
-1. Click **Save**.
-1. In the side menu, click **Entries**.
-1. Select the entry you want to translate and select the language.
+
+Once your space has the languages you require, you can now translate your entries, for this purpose:
+
+1. In the side menu, select Content.
+1. Click on your space.
+1. Select Entries.
+1. From the list of entries, click on the entry you want to translate to open the editing view.
+1. Click on the language box next to the title of your post and select the language you want to translate your entry into.
 1. Click on the more actions button (...) and select **Copy from Language**.
+1. Select the language from which you want to copy the content.
+1. Confirm your selection.
+1. Enter your content in the fields.
+1. Click **Save**.
+1. Click **Publish**.
 
-For more information about adding another language, see [Setting Up a Space](/en/platform/content/spaces.html#localization).
 
 ### Publish an Entry
 
-To publish an entry, Modyo offers a certification process in order to verify that the content you are going to publish is correct.
+To publish an entry in Modyo, follow these steps:
 
-After you finish writing and editing, click the **Save** button in the top right part of the screen, which will save all of your content.
+1. In the side menu, select Content.
+1. Click on your space.
+1. Select Tickets.
+1. From the list of entries, click on the entry you want to publish.
+1. At the top of the screen, click **Save**.
+1. If you have administrator permissions, the **Save** button changes to **Publish** and you can proceed to publish your post. Otherwise, another user with Administrator permissions can do so. If team review is active, it will go through that process before it is published.
 
-If you click on it, the button will respond in two ways. If you have the Space Administrator permission, you can publish automatically. If you don't have the required permissions, you will not be able to publish the resource and another user with a higher role must do it.
-
-If the Space has Team Review enabled, your entry goes through a review process with assigned users before publishing.
-
-To learn more about Team Review, see [Team Review](/en/platform/core/key-concepts.html).
+You can find more information on team review in the [Key Concepts](https://docs.modyo.com/en/platform/core/key-concepts.html) section of our documentation.
 
 
-### Unpublish an entry
+### Unpublish an Entry
 
-Unpublishing an entry or part of a site allows you to go to Draft status and will be hidden from the public. In the event that Team Review is enabled, you will have to go through the review flow again when it is published.
+Unpublishing an entry allows you to switch the entry to Draft state and hide it from the public. If team review is turned on, you'll need to go through that flow again to publish it.
 
-To unpublish content, follow these steps:
-
-1. In Modyo Platform, in the side menu, click Channels and select Spaces.
-1. Click your Space.
-1. In the Entries menu, select your Entry.
-1. Expand the Mass Actions menu and click Unpublish.
+To unpublish:
+1. In the side menu, select Content.
+1. Click on your space.
+1. Select Entries.
+1. From the list of entries, check the box for the entry you want to unpublish.
+1. Expand the Bulk Actions menu
+1. Click **Publish**.
 
 
 ### Delete Entries
 
-Modyo only allows you to delete entries that are archived. To do this open the additional options in the edit view and use the "Delete" option of the selector to the left of the main view button.
+To delete an entry:
 
-#### Preview
+1. In the side menu, select Content.
+1. Click on your space.
+1. Select Entries.
+1. From the list of entries, click on the entry you want to delete.
+1. Click on the more actions button (...) and select **Delete**. If the entry is not archived, this option will not be active, first select **Archive** and then select **Delete**.
+1. Click **Ok** to confirm.
 
-As a headless platform, Modyo allows you to preview an entry in multiple sites.
+### Preview
 
-If you already have [content views on your sites](/en/platform/channels/templates.html#content-views), you can see the **Site Preview** button, where you select where you want to see your resource.
+Modyo allows you to see what your post will look like published on multiple sites, before you publish it.
 
-:::danger Danger
-If the Space is not associated with a site, you can only see the JSON code of the Entry you are developing.
+In addition, you can preview the content as a user without a session or as a user with a Modyo session. We recommend starting or closing the Modyo session on the site before entering preview mode to avoid security errors such as x-frame-options or mixed-content.
+
+:::tip Tip
+You'll need to pre-configure the content page in the app to activate the preview option. For more details on how to configure it, see the [content](https://docs.modyo.com/es/platform/content)section of the documentation.
 :::
 
-:::warning Warning
-You will only be able to preview content on sites that are the same language as the language of the site. If the entry is in another language, when you get to the preview you will encounter a 404 error.
+To preview your content:
+
+1. In the side menu, select Content.
+1. Click on your space.
+1. Select Entries.
+1. From the list of entries, click on the entry you want to preview.
+1. Click on the preview icon at the top right.
+
+:::warning Attention
+We recommend that you consider:
+
+- You can only preview content in the site's language. If the entry is in another language, the preview shows a 404 error.
+- If the Space isn't associated with a site, you'll only be able to see the JSON code of the entry you're developing.
 :::
 
-:::warning Warning
-You can preview the content either as a logged in user or as a user that has not logged in. To do this, it is recommended that you log in or out of Modyo on the site before entering preview mode, as logging in or out during preview mode may result in _x-frame-options_ or _mixed-content_ security errors, depending on the site's custom domain and SSL settings.
-:::
+### Edit an Entry
 
-#### Edit an entry
+To edit an entry, follow these steps:
 
-To edit an entry, click the entry's name in the entry manager.
+1. In the side menu, select Content.
+1. Click on your space.
+1. Select Entries.
+1. From the list of entries, click on the entry you want to edit.
+1. Modify the fields you require.
+1. Click **Save**.
+1. Click **Publish**. If the entry is being reviewed as a team, reviewers should update their view to note the changes.
 
-This will take you to the edit view where you can change the content and properties of the post, such as the name, slug and tags.
-
-In case the post is published, the changes will be made automatically. If the entry is in the Team Review process, reviewers must update their view in order to see the changes.
 
 ## Categories
 
-Categories are one of Modyo's most useful ways to sort your Entries. In this case, every time a Category is used, a path is generated in the URL that allows you to access the resource, if it is published.
+Categories are a fundamental tool in Modyo for organizing your Entries.
 
-To see the Categories, click the **Categories** section in the main menu on the left. There, we can see all the categories that are already made.
+When you create a category, Modyo generates a unique path in the URL that provides access to the resource, whenever it is published.
+
+To view your categories, click on the side menu in Content and then select Categories.
+
 
 #### Create a Category
 
-To create a category, click on the green button at the top of the screen. You will then see a screen that will ask you to enter its name, the Route and if it has a Parent Category.
+To create a category:
 
-For entries in these categories, the identifier is added as a prefix to the URL of the entry. For example:
+1. Click on Content
+1. Select Categories
+1. Click on the **+ New Category** button.
+1. In the pop-up window, enter the name, path and, optionally, a parent category.
+
+When you assign an entry to a category, Modyo adds the identifier as a prefix to the URL of the entry, for example:
 
 An entry with URL: test.modyo.com/visita-chile and category 'travel' would now be test.modyo.com/travel/visita-chile.
 
 :::tip Tip
-When the category name is entered, the path defaults to a slug. To change it, click on it.
+When you enter the name of the category, the route is automatically set as an identifier. To change it, click on the path.
 
-If we change the path, remember to change all links in any channel using it.
+If you modify the route, be sure to update all the links linked to it.
+:::
+
+#### Delete a Category
+
+To delete a category:
+
+1. Click on Content
+1. Select Categories
+1. Click on the (...) button, after the name of the category, for more actions 
+1. Select **Delete**.
+1. Click **OK** to confirm the deletion.
+
+:::tip Tip
+When you delete a category that has assigned entries, the entries are not deleted, however, they will not be assigned to a category. If you want to assign them a new category, you must do so again.
 :::
 
 :::warning Attention
-If you want to delete a category, simply click on the icon at the bottom of its name. However, if there are Entries assigned to that category, they are not deleted but are not already assigned to any category. To reassign a category to them, it is necessary to re-assign them.
-:::
-
-:::danger Danger
-If the Parent Category is deleted, all subcategories assigned to it are also deleted. And the entries associated with those categories are left without a category assigned to them.
+If you delete a parent category, all subcategories associated with it will be deleted. Entries linked to those categories will be left without an assigned category.
 :::
 
 ### Tags
 
-Tags allow you to add more granularity to your Entries by combining it with Liquid on your content pages. When creating Entries, you can add a tag that appears both in the source code and in our content API so that you can add specific functionality to this tag.
+Tags allow you to add more detail to your posts by combining them with Liquid on your content pages.
 
-### Slug
+When creating posts, you can add a tag that will appear both in the source code and in our content API, allowing you to add specific functionality to that tag.
 
-If you want to make a link easier to read with any microservice or endpoint that you want to connect, you can provide a custom slug.
 
-When you create an entry, the platform will randomly assign you a slug. However, to change it you just have to change the field in the properties window.
+### Identifier
 
-This value must be unique for entries of the same type. If two entries with the same slug are saved, this will be modified at the time of posting the entry.
+The identifier is a unique value used to generate the URL of an entry.
+When you create an entry, the platform assigns an identifier to it. If you want to create a more friendly link, you can modify it when creating the post or later when editing it.
 
-### Private Content
+The identifier must be a unique value for entries of the same type. If you try to save two entries with the same identifier, the platform will modify the last one when you publish the entry.
 
-If you want the content to be private or exclusive for users who have a current authenticated session within the platform, you must enable this option.
 
-Depending on how you are consuming the content, you will need to perform extra steps to access it. If you are using the public API, go to the section on [private content in the API](/en/platform/content/public-api-reference.html#private-content). If you are consuming the content through Liquid, it is enough for users to log in to the site in order to view private content.
+:::warning Important
+If you want to modify the identifier of your entry after its creation, you must click on the lock in the identifier field and confirm that you want to change it, since making changes to the identifier breaks all references to the content through the API or the SDKs.
+
+:::
+
+
+### Private content
+
+Enable the private content option so that your content is exclusive to users who have a session on the platform.
+
+Depending on how you're consuming the content, you may need to take some additional steps to access it:
+
+- **Through the public API:** Refer to the section on private content in the API.
+- **Through Liquid:** By signing in to your site, your users will be able to view private content.
+
 
 ### Segments
 
-Segmented content is essential for any organization that wants to send specific information to their different audiences or customer segments.
+Segmented content is essential for any entity or company that wants to send specific information to a group of users.
 
-To do this, it is possible to enable the content to be visible to a particular group of your choice in the Input. To do this, just check the option that Content is private, enable targeting, and then select which user segment the entry is directed to.
+To enable an entry to be visible to a specific group of users:
 
-To create a specific target, review the [Segments section](/en/platform/customers/segments.html).
+1. Check the private content option
+1. Enable segmentation
+1. Select the user segment that the entry is aimed at.
+1. Click **Save**.
+
+To create a specific segment, review the Segments section.
+
 
 ## Consume externally
 
-Access the content created in the Content module from anywhere using our API.
+You can access the content created in the Content module from anywhere, using our API.
+To get the UUID of an entry, follow these steps:
 
-Follow these steps to get the uuid of an entry:
-
-1. On the Modyo Platform, in the main menu, select **Content** and click **Spaces**.
-1. Select your **Space**.
-1. Click **Preview**.
-1. Click **API Link**.
-
-It will take you to a new page where the API is used to get the content of the post. The result will be similar to this:
+1. In the side menu, select Content.
+1. Click on your space.
+1. Select Entries.
+1. From the list of entries, click on an entry
+1. Click on the preview icon.
+1. Click on **API Link**. You'll be redirected to a new page that uses the API to get the content of the post. The result will look similar to this:
 
 URL: `https://test.modyo.com/api/content/spaces/test-space/types/nuevo/entries/45fa2ef7-bf12-47a3-8ff7-f7d1f5f36844`
 
@@ -268,4 +328,4 @@ URL: `https://test.modyo.com/api/content/spaces/test-space/types/nuevo/entries/4
 }
 ```
 
-To learn more about our API and the different actions you can take, see [Management API](/en/platform/core/api).
+For more information about our API and the different actions you can perform, see [Management API](/en/platform/core/api).

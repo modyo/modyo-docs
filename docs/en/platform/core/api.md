@@ -294,7 +294,7 @@ You should keep in mind that admin users can only execute actions through the Mo
 
 Finally, you will now see that in the “Manage Access Tokens” section, the application (“My application”) will appear, along with a value highlighted in red which corresponds precisely to the _access token_, and which you will then use to perform authenticated _requests_ in Modyo API.
 
-Well done! Now that you have created your token, you can start benefiting from the wide range of options provided by the Modyo Administration API. For example, if you want to see a list of available roles for admin users, you can perform a _request_ to the `/api/admin/roles` _endpoint_, including in the HTTP _header_ the value of the previously obtained _access token_ for the _"Authorization: Bearer"_ field:
+Done! Now that you have created your token, you can start benefiting from the wide range of options provided by the Modyo Administration API. For example, if you want to see a list of available roles for admin users, you can perform a _request_ to the `/api/admin/roles` _endpoint_, including in the HTTP _header_ the value of the previously obtained _access token_ for the _"Authorization: Bearer"_ field:
 
 ```shell
 curl -X GET https://example.modyo.com/api/admin/roles -H 'Authorization: Bearer
@@ -357,9 +357,9 @@ Remember that you will only be able to access the same sections of the API that 
 
 ## Pagination
 
-When it comes to APIs, sometimes the number of results of a query is too high to be human-readable. In order to improve the understanding of this data, you can use **pagination**.
+When it comes to APIs, at times, the number of results of a query is too high to be human-readable. In order to improve the understanding of this data, you can use **pagination**.
 
-Imagine that we now want to review the complete list of mails delivered to customers (`message deliveries`) of a particular mail campaign (`campaign`) and a specific campaign delivery (`campaign delivery`). With the data obtained from the _requests_ in the previous sections, we can use the _endpoint_ that lists the _message deliveries_, passing in the corresponding `campaign_id` and` delivery_id` as parameters:
+If you want to review the full list of `message deliveries` to customers for a given email `campaign` and a specific `campaign delivery` execution, with the data obtained in the previous sections _requests_ 's, you can use the _endpoint_ that lists the _message deliveries_, passing as parameters the corresponding `campaign_id` and `delivery_id`:
 
 ```shell script
 curl -X GET https://test.modyo.com/api/admin/messaging/message_deliveries?campaign_id=15&delivery_id=29  -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
@@ -481,16 +481,16 @@ As you can see, the ``message_deliveries`` object within the JSON contains a lis
 
 The `meta` object contains the information you need to be able to traverse a large number of records, through small groups of records or pages.
 
-The 4 attributes are the following:
+The 4 attributes are:
 
-* `total_entries`: The total number of items of the requested resource
+* `total_entries`: The total number of items of the queried resource
 * `per_page`: The number of items that will be delivered per page
 * `current_page`: The current data window
-* `total_pages`: The total number of pages or groups of elements that we can request.
+* `total_pages`: The total number of pages or groups of elements that you can request.
 
-In the example above, apart from having the first 10 records, there are a total of 1078 entries, grouped into 108 pages. If you want to get the second page of this data, you need to add the `page` parameter with a value equal to 2 to the cURL call. To modify the number of records per page, add the `per_page` parameter with the desired value.
+In the previous example, aside from having the first 10 records, there are a total of 1078 entries, grouped into 108 pages. If you want to obtain the second page of this data, you need to add the `page` parameter with a value of 2, invoking the URL again. To modify the number of records per page, add the `per_page` parameter with the desired value.
 
-For example, let's get page 30, but this time with the _message deliveries_ grouped into pages of 5 elements:
+For example, if you want to get page 30, but this time with the _message deliveries_ grouped into pages of 5 elements:
 
 ```shell script
 curl -X GET https://test.modyo.com/api/admin/messaging/message_deliveries?campaign_id=15&delivery_id=29&page=30&per_page=5  -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
@@ -534,7 +534,7 @@ Finally, the API will always return the first page (`current_page: 1`) of resour
 
 ## Logs
 
-With the Logs API you can get all the logs that happen inside Modyo Platform, you can choose between User or Administrator logs. If you want to consult the User logs, use:  
+With the Logs API you can obtain all the records that occur within Modyo Platform, you can choose between User or Administrator logs. If you want to consult User logs, use:
 
 ```shell script
 curl -X GET https://test.modyo.com/api/admin/logs?user_type=User"   -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
@@ -600,6 +600,6 @@ This query gets the following results and displays them as a JSON:
 }
 ```
 
-If you want to know the administrator records, change the user type to: `user_type=AdminUser`.
+If you want to access the administrator records, change the user type to: `user_type=AdminUser`.
 
-To learn more about how to query Content information via API, see our guide and examples at [API](/en/platform/content/public-api-reference).
+To learn more about how to query Content information via API, refer to our guide and examples at [API](/en/platform/content/public-api-reference).

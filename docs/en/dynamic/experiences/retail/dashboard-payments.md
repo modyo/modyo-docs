@@ -4,7 +4,7 @@ search: true
 # Dashboard Payments
 
 ### Description
-The Payment Dashboard offers a centralized view of the different obligations a user has, allowing quick access to make payments. It has a side panel that allows you to view the payments that have been scheduled. 
+The Payment Dashboard offers a centralized view of the different obligations that a user has, allowing quick access to make payments. It has a side panel that allows you to see the payments that have been scheduled.
 
 ### Preview
 

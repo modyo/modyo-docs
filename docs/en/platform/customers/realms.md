@@ -98,7 +98,7 @@ These records cannot be deleted or edited.
 
 #### Answers to forms
 
-This section shows you all the forms that the user has filled out on the platform. Click on a form to see the user's responses in that form. To learn more about forms, go to the [Forms] section (/en/platform/customers/forms.html).
+This section shows you all the forms that the user has filled out on the platform. Click on a form to see the user's responses in that form. To learn more about forms, go to the [Forms](/en/platform/customers/forms.html) section.
 
 #### Notes
 
@@ -148,7 +148,7 @@ Modyo is programmed so that the login information is in the header of the site. 
 The login address must be a page within your account. You cannot redirect the login to an external URL.
 :::
 
-## Realm settings
+## Realm Settings
 
 In the realm's Settings section, you can customize the interaction between users and the Modyo platform.
 
@@ -272,8 +272,6 @@ To integrate with Zendesk you need:
 - Zendesk Shared Secret
 - Integration URL: e.g. mysubdomain.zendesk.com
 
-`only available on Modyo 10`
-
 ### Salesforce
 
 A Salesforce integration with Modyo allows you to link your Modyo users to your Salesforce contacts.
@@ -353,13 +351,13 @@ To ensure proper data synchronization between Modyo and Salesforce and maintain 
   * If the linking settings allow it, when updating a contact in Salesforce, Modyo searches for the corresponding user using the “secondary_user_id” field.
   * If the Modyo user does not exist, a new one is created, and if it already exists, it is updated according to the synchronized fields.
   * If the Modyo user didn't exist previously, their “secondary_user_id” is defined as the ID of the Salesforce contact.
-* Modyo user update:
+* Update a user in Modyo:
   * When updating a Modyo user, the corresponding contact is searched in Salesforce using their “contact ID”.
   * If the Modyo user is new or doesn't have “secondary_user_id”, a new contact is created in Salesforce and the “secondary_user_id” field is updated with the ID of the newly created contact.
 * Contact creation in Salesforce:
   * A contact in Salesforce only requires the “Last Name” field to be created.
   * When a contact is created only with “Last Name”, in Modyo, the “username” and the “first name” will be completed with placeholders or placeholders that indicate that they were created as a result of the link.
-* Creating a user in Modyo:
+* Create a user in Modyo:
   * A Modyo user can be created without “Last Name”, but this field, when required in Salesforce, is sent with a placeholder that indicates that it was created from the linking process.
 * The primitive types of Salesforce fields available for linking are:
   * Boolean
@@ -392,7 +390,7 @@ Use an authentication client to send your integration access tokens to your reso
 - Confidential: There are two types of OAuth clients, confidential or public. Select the confidential option if your application can securely authenticate with the authentication server. Public clients are usually applications that run on mobile devices or browsers.
 - Scopes: If your OAuth2 authentication service uses multiple spaces or environments to separate users, and you want to use a specific one in this integration, define it in this field.
 
-### Team members
+### Team Members
 
 Modyo allows you to select the team members that work in each realm, and thus control access to the different aspects of the realms.
 

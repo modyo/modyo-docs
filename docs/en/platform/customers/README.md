@@ -11,7 +11,7 @@ version: 9.2
 
 {{ $frontmatter.meta[0].content }}
 
-Once a user is identified, the platform manages the business events that the user performs during their session and through the functionality of Segments, the Platform can customize the content and experience during the navigation of your digital channels.
+Once the user has been identified, the platform will internally manage the business events that the user carries out during their session, and through the functionality of Segments, the Platform will be able to personalize the content and experience in their navigation.
 
 **Modyo Customers** represents an important element when developing digital products on the platform. It also has an integrated messaging system for authenticated users.
 

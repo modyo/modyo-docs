@@ -13,7 +13,7 @@ Content Types can be assigned cardinality. This variable indicates how many Entr
 
 When you first enter the Types section, click the green **+New Type** button to create a new Type.
 
-Once you've created your first Type, you can create additional types by clicking on the**+New Type** button at the top right.
+Once you've created your first Type, you can create additional types by clicking on the **+New Type** button at the top right.
 
 The search bar allows you to search and filter your types by any word that appears in the Name field.
 
@@ -22,9 +22,9 @@ The table below the search bar shows the Types already created, ordered by defau
 To reorder the table, click on the symbols next to each category. The categories by which you can reorder are:
 
 - **Name**
-- **Identifier (UID) **
+- **Identifier (UID)**
 - **Creation Date**
-- **Updated on** Date
+- **Update Date**
 
 Click on the name of a Type to open the corresponding editor.
 
@@ -35,7 +35,7 @@ To create a new type of content that will serve as the basis for your posts, fol
 1. From the main menu, click **Content**.
 2. Select the space where you want to create a new Type.
 3. Click on **Types**.
-2. Click the**+ New Type** button.
+2. Click the **+ New Type** button.
 3. Type the name and identifier (UID).
 4. Select the type's cardinality.
 5. Click **Create**.
@@ -56,7 +56,7 @@ In the creation interface, you'll find an empty template in the center of the sc
 - **Field Configuration**
 - **Configuration**
 
-This interface allows you to create each of the types and format them as needed, according to your requirements.
+This interface allows you to create each of the types and format them as needed, according to your needs.
 
 ## Fields
 
@@ -68,7 +68,7 @@ For more information go to the [API reference](/en/platform/content/public-api-r
 
 All fields require a name, and can optionally be set as required.
 
-If a field is marked as required, when creating or modifying an entry, you must provide a value for that field. Otherwise, you won't be able to save the changes you made.
+When a field is marked as required, when creating or modifying an entry, you must provide a value for that field. Otherwise, you will not be able to save the changes made.
 
 ### Single-line text
 
@@ -158,7 +158,7 @@ This field allows you to link more than one existing Entry, within the Space, to
 
 - **Restrict type**: Allows you to select a default type so that only entries of the selected type can be selected as a link.
 
-### `(coming soon)` group
+### Group
 
 Use the Group field to house another field inside it. You can assign a name to the group according to your needs, and also name the fields within the group. In the hint field, include the text you want to display to help your users complete the field correctly. 
 

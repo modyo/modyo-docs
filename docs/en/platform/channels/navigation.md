@@ -6,16 +6,16 @@ search: true
 
 Navigation is the fastest way to put together a list of items to give your users easy access to the key points of your site.
 
-In this section you find a nested list of elements, which correspond to the elements that will appear on the site when using the tag <span v-pre>`{% menu%}`</span> in [Templates](/en/platform/channels/templates.html).
+In this section, there is a nested list of elements, that correspond to the elements that will appear on the site when using the tag <span v-pre>`{% menu%}`</span> in [Templates](/en/platform/channels/templates.html).
 
-Navigation only allows three levels of depth, so you can have a main list and up to two sub-elements nested in each of the main items. By default when creating a site, Modyo includes a template and a basic menu that you can modify to your needs.
+Navigation only allows three levels of depth, you can have a main list and up to two sub-elements nested in each of the main items. By default, when creating a site, Modyo includes a template and a basic menu that you can modify to your needs.
 
 At the top of the view, you will find the publication status of the menu:
 
 - **Published:** This status appears after you have made a publication and when the editable and published versions are the same.
 - **Pending changes:** This status appears if there is already a published version, but there are changes pending publication in your editable version.
-- **In Review:** This status appears when [Team Review] (/en/platform/core/key-concepts.html) is enabled and the editable version has been submitted for review.
-- **Approved:** This status appears when [Team Review] (/en/platform/core/key-concepts.html) is enabled and if the item's review conditions have been met. When it is in this state, a template can now be published.
+- **In Review:** This status appears when [Team Review](/en/platform/core/key-concepts.html) is enabled and the editable version has been submitted for review.
+- **Approved:** This status appears when [Team Review](/en/platform/core/key-concepts.html) is enabled and if the item's review conditions have been met. When it is in this state, a template can now be published.
 
 At the top right, you can find the last publication date and the available actions:
 
@@ -29,19 +29,19 @@ You can preview the changes as a user without a session or a user with a Modyo s
 The menu you created will only be displayed on a page if you add it through a published template. Otherwise, the menu will not be requested and will not appear on the page.
 :::
 
-**Differences:** Click here to access the [differences view] (/en/platform/core/key-concepts.html#reversing-a-change), in which you can compare the changes between different versions of your menu.
+**Differences:** Click here to access the [differences view](/en/platform/core/key-concepts.html#reversing-a-change), in which you can compare the changes between different versions of your menu.
 
 By default, you start by comparing the published version with the editable version. Use the version selectors to compare with backup versions.
 
 :::tip Tip
 Every time you publish a version, the version that was published becomes a backup version.
 
-By default, up to twenty backups are saved so that the twenty most recent backups can be compared, restored, and rolled back.
+By default, up to 20 backups are saved so that the twenty most recent backups can be compared, restored, and rolled back.
 
 For more information on versioning, check out the [versioning](/en/platform/core/key-concepts.html#versioning) section.
 :::
 
-**Activity/Feedback:** It is only enabled if you have [team review] (/en/platform/core/key-concepts.html) enabled. When you click it, a sidebar opens with the history of activity and menu comments.
+**Activity/Feedback:** It is only enabled if you have [team review](/en/platform/core/key-concepts.html) enabled. When you click it, a sidebar opens with the activity history and menu comments.
 
 At the bottom of the sidebar, there is a text box where you can type a comment. Next to each activity, you can click _view detail_ to show the full information for that activity log.
 
@@ -65,9 +65,9 @@ Your menu is currently public but it is not being called. You need to use a temp
 - **Save:** Save all menu changes.
 - **Submit for review:** Change the menu status to “Awaiting review”. In this state, you are still making changes, but each change will be notified via email to the assigned reviewers.
 - **Reject:** Returns to the “In Editing” status, notifying reviewers that the item was rejected.
-- **Publish:** Once the menu has been approved, you can go to the [joint publication] view (/en/platform/core/key-concepts.html#joint-review-and-publication) to publish your navigation.
+- **Publish:** Once the menu has been approved, you can go to the [joint publication](/en/platform/core/key-concepts.html#joint-review-and-publication) view, to publish your navigation.
 
-In the right side section, you will see a bar that changes according to the item selected in the main area. In this section are the following options:
+On the right side section, you can see a bar that changes according to the item selected in the main area. In this section, you can see the following options:
 
 - **Name:** Name of the item that will appear on the site.
 - **Associated page:** Can be directly associated with a page or a custom URL.
@@ -87,7 +87,7 @@ In the right side section, you will see a bar that changes according to the item
         - sms:+569-123-45678,9-123-45678
         - sms:+569-123-45678,9-123-45678?body=hello%20there&amp;param1=a%20value
     - Email: Generates a link with the `mailto` URI. Examples:
-        - mailto:info@example.com?subject=subject&amp;cc=cc@example.com
+        - mailto:info@example.com?subject=subject&cc=cc@example.com
 - **Open in a new tab:** Adds the attribute `target='blank'` to the HTML element of the menu item, so that when you click it, it opens in a new tab.
 - **Private:** Makes the selected item visible only when there is an active user session on the site.
 - **Segments:** If there are segments created, you can also segment this item so that users can see this menu item only when they have an active session and that they are also within the selected segments.
@@ -101,7 +101,7 @@ The first lines encapsulated by <span v-pre>{{ }} or {% %}</span> belong to Liqu
 The following list describes the important variables for the menu:
 
 - menu: This variable takes the menu with identifier `main` within Modyo Platform -> Navigation.
-- items_to_show: Take the menu items that are visible.
+- items_to_show: Takes the menu items that are visible.
 - active: Used to add a CSS class called `active` in case this item is activated.
 - children_to_show: If the current item has children, it takes the items in this variable and displays them as the second level in the menu hierarchy.
 
@@ -139,7 +139,7 @@ When you enter the Templates section of your site in Modyo Platform, you can cli
 
 ### List menu
 
-Next we have a menu that also calls `main`, but now in the form of a list unlike the general snippet that uses a dropdown:
+Next we have a menu that also calls `main`, but now in the form of a list, unlike the general snippet that uses a dropdown:
 
 ```html
 {% assign menu = menus['main'] %}

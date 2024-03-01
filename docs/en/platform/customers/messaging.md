@@ -44,28 +44,28 @@ Fill in the information requested in the form:
 - **Type**: Choose if it will be sent by mail or notification.
 - **Subject**: Text that will appear in the subject line of the message that will be sent to users.
 - **Reply to**: Email address that people can reply to
- ** (for email campaigns only) **.
-- **Template**: List of [templates] (/en/platform/customers/messaging.html #plantillas) that will be used to send an email. If one is not selected, Modyo will send a blank template** (only for email campaigns) **.
+ **(for email campaigns only)**.
+- **Template**: List of [templates](/en/platform/customers/messaging.html #plantillas) that will be used to send an email. If one is not selected, Modyo will send a blank template **(only for email campaigns)**.
 - **Enable Targeting**: Check box to select a segment to send the campaign to. If you leave the box blank, the campaign will be sent to all users.
 
-Once you have completed the form, click on the**Save and Continue** button at the top of the screen.
+Once you have completed the form, click on the **Save and Continue** button at the top of the screen.
 
-This opens the WYSIWYG editor with the template you selected. Edit the template and click the**Save** button to confirm the changes and open the Shipping Status view to send the campaign. 
+This opens the WYSIWYG editor with the template you selected. Edit the template and click the **Save** button to confirm the changes and open the Shipping Status view to send the campaign. 
 
 
 ### Campaign Status
 
-At the top of the screen, the**preview** icon allows you to view your campaign before sending it. Click the **Send** button to send the campaign.
+At the top of the screen, the **preview** icon allows you to view your campaign before sending it. Click the **Send** button to send the campaign.
 
 The contextual button allows you to perform these actions:
 
 - **Message Editor**: Edit your message before sending it.
 - **Send test**: Send a test email with the campaign to a specific address.
-- **Edit**: Edits the campaign properties, technical aspects such as the shipping address and the segments to receive.
+- **Edit**: Edits the campaign properties, technical aspects such as the shipping address and the receiving segments.
 - **Clone the campaign**: Copies all the content of a campaign.
 - **Delete campaign**: Deletes a campaign.
 
-Once you've sent a campaign, you can't send it again. If you want to send the same campaign again, select the clone option. This creates a new campaign with the same name data, segments and content, while the statistical information starts from scratch.
+Once you've sent a campaign, you can't resend it. If you want to send the same campaign again, select the clone option. This creates a new campaign with the same name data, segments and content, while the statistical information starts from scratch.
 
 You can cancel a campaign when it is in queue or while it is being sent.
 
@@ -91,7 +91,7 @@ If you sent the campaign by notification, you can view:
 - **Sent**: Number of notifications sent.
 - **Opens**: Number of notifications opened.
 
-If you send a campaign through [segments] (/en/platform/customers/segments.html), you can see which group of users the campaign reached. If you do not see this section, it's because the campaign was sent to all contacts.
+If you send a campaign through [segments](/en/platform/customers/segments.html), you can see which group of users the campaign reached. If you do not see this section, it's because the campaign was sent to all contacts.
 
 :::warning Attention
 If you haven't yet sent the campaign, the values for that campaign will appear be zero.
@@ -109,11 +109,11 @@ Clicking on the name of a campaign takes you to the Message Deliveries section.
 
 In the Message Deliveries section, you will find the list of users who have received a message from the platform. Here, you can see a list of all users who have received a unique email or notification, referred to as “No Campaign”.
 
-“No Campaign” refers to an email or notification sent specifically to a user on a certain date. These messages are not considered Campaigns, because they are personalized and contain information that is not sent to other users. For more information on how these messages work, see the [Management API] (/en/platform/core/api.html). 
+“No Campaign” refers to an email or notification sent specifically to a user on a certain date. These messages are not considered Campaigns, because they are personalized and contain information that is not sent to other users. For more information on how these messages work, see the [Management API](/en/platform/core/api.html). 
 
 In the initial view, the messages are ordered in these categories:
 
-- **Name**: Name of the user to whom the message is sent. The user's email is included, regardless of whether it was sent by email or notification.
+- **Name**: Name of the user to whom the message was sent. The user's email is included, regardless of whether it was sent by email or notification.
 - **Campaign**: Campaign under which the message was sent.
 - **Type**: The route through which the message was sent, either email or notification.
 - **Delivery**: Date on which the campaign started.
@@ -122,7 +122,7 @@ In the initial view, the messages are ordered in these categories:
 
 In addition, you can filter the data using the following filters:
 
-- **Campaign Type**: All, mail or notification.
+- **Campaign Type**: All, mail, or notification.
 - **Campaign Name**: Name given to the campaign in general.
 - **Shipment**: Date on which the campaign was sent.
 
@@ -152,7 +152,7 @@ To modify a template temporarily and then return to a new one, make a copy of th
 
 ### Edit Templates
 
-To create a template, click the**+ New Template** button at the top of the page.
+To create a template, click the **+ New Template** button at the top of the page.
 
 In the editing view, designate a name for the template.
 
@@ -168,7 +168,7 @@ When you create a campaign, remember to add in the footer all the legal informat
 To automate Footer insertion, read [Realms Configuration](/en/platform/customers/realms.html#emails)
 :::
 
-To save the template, click the**Save** button at the top of the page.
+To save the template, click the **Save** button at the top of the page.
 
 To use the template in an email, select the name of that template when designing the campaign.
 
@@ -178,7 +178,7 @@ In this section, you will find a list of users who have unsubscribed from email 
 
 Use the search bar to find a specific user. You can enter their name or email.
 
-When you click on the user's name, you can see the [user's profile] (/en/platform/customers/realms.html #ficha -users) and all the activities they have performed on the platform.
+When you click on the user's name, you can see the [user's profile](/en/platform/customers/realms.html#users-tab) and all the activities they have performed on the platform.
 
 At the end of each username, there is a button that allows you to re-enroll the user to any campaign on the site.
 

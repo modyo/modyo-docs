@@ -54,7 +54,7 @@ You can locate this option when editing a user in the **Team** section, in the *
 
 Enables the Cross-Origin Resource Sharing (CORS) functionality to allow access to Modyo resources from other websites.
 
-By default, your sites' custom domains are already included once CORS is activated. To give you access to external domains, type them separated by commas, for example `http://api.mydomain.com, http://mysubdomain.mydomain.com`. Wildcards or _wildcards_ are not allowed in this section.
+To give access to external domains, write them separated by commas, for example `http://api.mydomain.com, http://mysubdomain.mydomain.com`. By default, wildcards are not allowed in this section. To enable them, you must manually disable SSL through a ticket sent to the [Modyo support area](https://support.modyo.com/hc/en-us).
 
 ## Content Delivery Token (JWT - JSON Web Token)
 
@@ -116,9 +116,9 @@ If you have activated the option to force authentication, the next time the user
 * Make sure that access always comes from updated computers and through reliable and updated web browsers.
 
 ### Update Modyo Regularly
-We recommend that you update Modyo regularly to ensure that your installation has the latest security fixes and that all security patches are up to date. These patches are designed to be applied without causing significant interruptions to the workflow, for example: moving from version 9.1.10 to 9.1.12.
+We recommend that you update Modyo periodically to ensure that your installation has the latest security fixes and that all security patches are up to date. These patches are designed to be applied without causing significant interruptions to the workflow.
 
-In addition, we recommend that you update major versions at least twice a year, moving, for example, from version 9.1.14 to 9.2.2. This will not only keep you in the latest supported version, but it will also provide you with the latest features and functionality.
+In addition, we recommend that you perform major version upgrades at least twice a year. This will not only keep you on the latest supported version, but will also provide you with the latest features and functionalities.
 
 ### Set up a Strong Password in the Admin Panel
 The Administration Panel is Modyo's most powerful management tool. Through it, you can have control over various configurations and actions that are fundamental to the operation of Modyo. In addition, it provides you with administrative access to all the organizations defined on the platform.

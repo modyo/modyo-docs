@@ -10,8 +10,8 @@ For any company or institution, it is important to know what is happening in its
 
 Each view of **Modyo Insights** has three main sections:
 
-- General Accountants
+- General counters
 - Comparative chart
 - Specific elements
 
-You can also filter the data associated with the view with the three filters at the top right of the screen, where you can filter by date and 2 other values, depending on the context.
+You can also filter the data associated with the view using the three filters at the top right of the screen, you can filter by date and 2 other values, depending on the context.

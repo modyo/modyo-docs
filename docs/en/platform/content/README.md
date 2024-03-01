@@ -3,7 +3,7 @@ search: true
 title: Modyo Content
 meta:
   - name: description
-    content: Modyo Content is the module responsible for creating dynamic content repositories which we call Spaces. In a Space, Entries are created separated by Content Types. The Type defines the basic structure with its requirements and validations so that an Entry can be published.
+    content: Modyo content is the module that allows you to create and manage dynamic content repositories called spaces. In a space you can create posts, segmented by content types. The type of content defines the basic structure, with its requirements and validations to publish an entry.
 version: 9.2
 ---
 
@@ -11,15 +11,14 @@ version: 9.2
 
 {{ $frontmatter.meta[0].content }}
 
-In addition, if you use the Channels and Customers modules, you can create sites with the ability to show entries if they belong to a segment of your users in a site.
-
-**Modyo Content** has a Headless architecture that allows content to be consumed via an HTTP API from channels defined in **Modyo Channels** and external systems or applications.
-
-Thanks to its integrated system of cache and management of HTTP Headers, content can also be hosted on CDNs for greater availability and access speed, regardless of geographic location.
+### Benefits
+- **Segmentation:** Show entries to specific users through integration with channels and customers.
+- **Headless Architecture:** Consume content through an HTTP API from Modyo channels or external systems.
+- **Performance:** Host content on CDNs for greater availability and speed of access, regardless of geographic location.
 
 ### Main functionalities
 
-- [Spaces](/en/platform/content/spaces.html) for the organization of contents and teams that manage them.
-- [Content types](/en/platform/content/types.html) to define custom structures.
-- [Asset manager](/en/platform/content/asset-manager.html) for organizing files such as images or videos that are used within the contents.
-- [API and SDKs](/en/platform/content/public-api-reference.html) for access to content repositories, both within and outside of the platform.
+- ** [Spaces](/en/platform/content/spaces.html):** Organize content and teams that manage them.
+- ** [Content Types](/en/platform/content/types.html):** Define custom structures.
+- ** [File Manager](/en/platform/content/asset-manager.html):** Organize the files used in the contents such as images or videos.
+- ** [API and SDKs](/en/platform/content/public-api-reference.html) :** Access content repositories, on and off, the platform.

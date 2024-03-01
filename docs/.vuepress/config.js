@@ -46,7 +46,7 @@ module.exports = {
               label: "English",
               nav: [{
                       text: "Platform",
-                      link: "/en/platform/"
+                      link: "/en/platform/basics/"
                   },
                   {
                       text: "Dynamic",
@@ -72,6 +72,7 @@ module.exports = {
                       collapsable: true,
                       children: [
                           "/en/platform/basics/",
+                          "/en/platform/basics/learn-modyo",
                           "/en/platform/basics/key-concepts",
                       ],
                   },
@@ -101,6 +102,45 @@ module.exports = {
                           ],
                       },
                       {
+                        title: "Channels",
+                        path: "/en/platform/channels/",
+                        collapsable: true,
+                        children: [
+                            "/en/platform/channels/sites",
+                            "/en/platform/channels/pages",
+                            "/en/platform/channels/navigation",
+                            "/en/platform/channels/widgets",
+                            "/en/platform/channels/cli",
+                            "/en/platform/channels/templates",
+                            {
+                                title: "Liquid Markup",
+                                path: "/en/platform/channels/liquid-markup/",
+                                collapsable: true,
+                                children: [
+                                    "/en/platform/channels/liquid-markup/variables",
+                                    "/en/platform/channels/liquid-markup/filters",
+                                    "/en/platform/channels/liquid-markup/tags",
+                                    "/en/platform/channels/liquid-markup/examples",
+                                ],
+                            },
+                            "/en/platform/channels/drops",
+                        ],
+                      },
+                      {
+                        title: "Customers",
+                        path: "/en/platform/customers/",
+                        collapsable: true,
+                        children: [
+                            "/en/platform/customers/realms",
+                            "/en/platform/customers/profile",
+                            "/en/platform/customers/events",
+                            "/en/platform/customers/segments",
+                            "/en/platform/customers/forms",
+                            "/en/platform/customers/messaging",
+                            "/en/platform/customers/api",
+                        ],
+                      },
+                      {
                           title: "Content",
                           path: "/en/platform/content/",
                           collapsable: true,
@@ -111,45 +151,6 @@ module.exports = {
                               "/en/platform/content/asset-manager",
                               "/en/platform/content/public-api-reference",
                               "/en/platform/content/javascript",
-                          ],
-                      },
-                      {
-                          title: "Channels",
-                          path: "/en/platform/channels/",
-                          collapsable: true,
-                          children: [
-                              "/en/platform/channels/sites",
-                              "/en/platform/channels/pages",
-                              "/en/platform/channels/navigation",
-                              "/en/platform/channels/widgets",
-                              "/en/platform/channels/cli",
-                              "/en/platform/channels/templates",
-                              {
-                                  title: "Liquid Markup",
-                                  path: "/en/platform/channels/liquid-markup/",
-                                  collapsable: true,
-                                  children: [
-                                      "/en/platform/channels/liquid-markup/variables",
-                                      "/en/platform/channels/liquid-markup/filters",
-                                      "/en/platform/channels/liquid-markup/tags",
-                                      "/en/platform/channels/liquid-markup/examples",
-                                  ],
-                              },
-                              "/en/platform/channels/drops",
-                          ],
-                      },
-                      {
-                          title: "Customers",
-                          path: "/en/platform/customers/",
-                          collapsable: true,
-                          children: [
-                              "/en/platform/customers/realms",
-                              "/en/platform/customers/profile",
-                              "/en/platform/customers/events",
-                              "/en/platform/customers/segments",
-                              "/en/platform/customers/forms",
-                              "/en/platform/customers/messaging",
-                              "/en/platform/customers/api",
                           ],
                       },
                       {
@@ -323,7 +324,7 @@ module.exports = {
               label: "Español",
               nav: [{
                       text: "Plataforma",
-                      link: "/es/platform/"
+                      link: "/es/platform/basics/"
                   },
                   {
                       text: "Dynamic",
@@ -348,7 +349,8 @@ module.exports = {
                           path: "/es/platform/basics/",
                           collapsable: true,
                           children: [ 
-                            ["/es/platform/basics/", "Aprende Modyo"],
+                            ["/es/platform/basics/", "Bienvenido a Modyo"],
+                            ["/es/platform/basics/learn-modyo", "Aprende Modyo"],
                             ["/es/platform/basics/key-concepts", "Conceptos claves"], 
                           ],
                       },
@@ -379,44 +381,31 @@ module.exports = {
                             "/es/platform/core/roles",
                             "/es/platform/core/security",
                         ],
-                        },
-                      {
-                          title: "Content",
-                          path: "/es/platform/content/",
-                          collapsable: true,
-                          children: [
-                              "/es/platform/content/spaces",
-                              "/es/platform/content/types",
-                              "/es/platform/content/entries",
-                              "/es/platform/content/asset-manager",
-                              "/es/platform/content/public-api-reference",
-                              "/es/platform/content/javascript",
-                          ],
                       },
                       {
-                          title: "Channels",
-                          path: "/es/platform/channels/",
-                          collapsable: true,
-                          children: [
-                              "/es/platform/channels/sites",
-                              "/es/platform/channels/pages",
-                              "/es/platform/channels/navigation",
-                              "/es/platform/channels/widgets",
-                              "/es/platform/channels/cli",
-                              "/es/platform/channels/templates",
-                              {
-                                  title: "Liquid Markup",
-                                  path: "/es/platform/channels/liquid-markup/",
-                                  collapsable: true,
-                                  children: [
-                                      "/es/platform/channels/liquid-markup/variables",
-                                      "/es/platform/channels/liquid-markup/filters",
-                                      "/es/platform/channels/liquid-markup/tags",
-                                      "/es/platform/channels/liquid-markup/examples",
-                                  ],
-                              },
-                              "/es/platform/channels/drops",
-                          ],
+                        title: "Channels",
+                        path: "/es/platform/channels/",
+                        collapsable: true,
+                        children: [
+                            "/es/platform/channels/sites",
+                            "/es/platform/channels/pages",
+                            "/es/platform/channels/navigation",
+                            "/es/platform/channels/widgets",
+                            "/es/platform/channels/cli",
+                            "/es/platform/channels/templates",
+                            {
+                                title: "Liquid Markup",
+                                path: "/es/platform/channels/liquid-markup/",
+                                collapsable: true,
+                                children: [
+                                    "/es/platform/channels/liquid-markup/variables",
+                                    "/es/platform/channels/liquid-markup/filters",
+                                    "/es/platform/channels/liquid-markup/tags",
+                                    "/es/platform/channels/liquid-markup/examples",
+                                ],
+                            },
+                            "/es/platform/channels/drops",
+                        ],
                       },
                       {
                           title: "Customers",
@@ -430,6 +419,19 @@ module.exports = {
                               "/es/platform/customers/forms",
                               "/es/platform/customers/messaging",
                               "/es/platform/customers/api",
+                          ],
+                      },
+                      {
+                          title: "Content",
+                          path: "/es/platform/content/",
+                          collapsable: true,
+                          children: [
+                              "/es/platform/content/spaces",
+                              "/es/platform/content/types",
+                              "/es/platform/content/entries",
+                              "/es/platform/content/asset-manager",
+                              "/es/platform/content/public-api-reference",
+                              "/es/platform/content/javascript",
                           ],
                       },
                       {

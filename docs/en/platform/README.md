@@ -1,60 +1,57 @@
 ---
 search: true
-title: Welcome to Modyo
-meta:
-  - name: description
-    content: Welcome to Modyo's documentation. Here we will cover all the relevant points of the platform, such as describing the interfaces, explanation of good practices when interacting with the platform, providing examples, among other topics. 
 canonicalUrl: "https://docs.modyo.com/en/platform"
 version: 9.2
 ---
 
-# {{ $frontmatter.title }}
+# Welcome to Modyo
 
-{{ $frontmatter.meta[0].content }}
+👋 Hello! 
 
-We have designed Modyo's documentation to be navigated in the form of a guide (from start to finish) or to solve a specific query. The contents within the documentation are linked to each other to facilitate their understanding.
+We're excited to have you on board and exploring our platform.
 
-:::tip Previous Versions
-The documentation on this site applies to the latest version ( {{ $frontmatter.version }} ). To access documentation for previous versions (8.2) [click here](/assets/pdf/Modyo82Docs.pdf). 
+We want your experience to be as easy and satisfying as possible, so we've designed this documentation with you in mind. You can browse these documents from start to finish or go to a specific section, the contents are all related to each other to facilitate your learning process.
+
+:::tip Older Versions
+
+The current documentation applies to the latest version (10) of Modyo. If you need information about previous versions (9.2), [you can access it here](https://9-2.docs.modyo.com/en/).
+
 :::
 
 ### What is Modyo?
 
-Modyo is a digital experience platform that powers solutions for digital customer interaction, accelerating web and mobile development in a secure way, and allowing you to unify native and third-party applications in a single area to manage your digital channels.
+Modyo is a digital experience platform that helps you create integrated digital experiences for your consumers, accelerating web and mobile development securely, and allowing you to unify native and third-party applications in a single area to manage your digital channels.
 
-### What is Modyo for?
+### What to use Modyo for?
 
-* Use Modyo to create **integrated digital experiences** for your consumers through public and private channels.
-* Use Modyo to increase **agility and governance** in your digital factory.
-* Use Modyo to create digital experiences through **intelligent widgets**.
+* **To create integrated digital experiences:** Modyo allows you to create personalized digital experiences for your consumers, regardless of their channel.
+* **To create agility and governance:** Modyo helps you accelerate the development of your digital experiences and ensure their quality.
+* **To create digital experiences through widgets:** Modyo offers you an extensive library of widgets that you can use to quickly create digital experiences.
+
 
 ### Why use Modyo?
 
-Modyo provides a secure development environment, either in the cloud or On-Premises, to build intelligent interactions with your customers. It allows you to easily create, manage, and measure both public and private sites. Large digital teams can expedite the creation of content and components developed for Front End securely, in an environment that provides a wide library of smart widgets that can be connected to various systems in your company.
+* **Modyo is secure:** Modyo offers you a secure development environment, both in the cloud and local (On Premise) so you can create digital experiences without worrying about the security of your data.
+* **Modyo is scalable:** Modyo can scale to meet the needs of your business, no matter its size. Large digital teams can streamline the creation of content and components developed for frontend
+* **Modyo is adaptable:** Modyo is adaptable to your specific needs and provides a wide library of intelligent widgets that can be connected to various systems in your company.
 
 ### Who is Modyo for?
 
-* **Digital Channel Leaders** who are responsible for guiding interactions, sales, and customer experiences across web and mobile channels.
+Modyo is designed for diverse profiles, from digital channel leaders to frontend and backend developers. Whatever your role, Modyo has something to offer.
 
-* **Software Architects** seeking to create a clean architecture, ranging from Microservices and APIs to Micro frontends for web and mobile channels.
-
-* **Experts in Digital Marketing** that require a content management system to create digital experiences for targeted user groups.
-
-* **Content Administrators** who want to manage their publications easily in one place for all their digital channels.
-
-* **Front End Developers** who want to build digital experiences through easy-to-create, manageable widgets.
-
-* **Back End Developers** that require a powerful Front End development environment to connect APIs and Microservices.
+* **Digital Channel Leaders** it is ideal for digital channel leaders looking to create integrated digital experiences for their consumers.
+* **Software Architects** who seek to create a clean architecture, from Microservices and APIs to microfrontends for web and mobile channels.
+* **Digital marketing experts** who require a content management system to create digital experiences for target groups.
+* **Content managers** who want to manage publications from their various digital channels in one place.
+* **Frontend developers** who want to build digital experiences through widgets that are easy to create and manage.
+* **Backend developers** who require a powerful frontend development environment to connect APIs and microservices.
 
 ### Where can I get support?
 
-If you have any additional questions regarding the Modyo Platform, visit our [official support site](https://support.modyo.com/hc/en-us).
+For Modyo Platform support, visit the [official support site](https://support.modyo.com/hc/es).
 
 ### Requirements for using Modyo
 
-To use Modyo, you only need a compatible web browser. The entire product interface can be accessed through its web interface.
+To get started, you just need a compatible web browser. Modyo is compatible with the latest versions of Google Chrome, Firefox and Microsoft Edge. The entire product interface can be accessed through its web interface.
 
-:::tip Supported browsers
-Modyo is compatible with the most modern versions of Google Chrome, Firefox, and Microsoft Edge.
-If you have pending updates, we recommend that you update your browser.
-:::
+We're excited to join you on this digital adventure with Modyo!

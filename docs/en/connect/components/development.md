@@ -4,64 +4,67 @@ search: true
 
 # Development
 
-The development components include all the access and tools required by a team of developers to collaborate and work securely on [micro frontends] (/en/architecture/patterns/micro-frontend) and [microservices] (/en/architecture/patterns/microservice) initiatives.
+The development components include all the tools and accesses necessary for a team of developers to collaborate and work securely on [micro frontends](/en/architecture/patterns/micro-frontend) and [microservices](/en/architecture/patterns/microservice) initiatives.
 
 ## Developer Access
-Developer Access is the starting point for starting to use Modyo Connect services. Once enabled, the developer will be able to interact with the [created repositories](#code-repository) in the version control system and the [Modyo Support Center](https://support.modyo.com) to activate the rest of the services. In addition, developer access grants permissions to access cloud systems, metrics, monitoring and logs.
+Developer Access is the starting point to begin using Modyo Connect services. Once enabled, the developer can interact with the [created repositories](#code-repository) in the version control system and the [Modyo Support Center](https://support.modyo.com) to activate the rest of the services. In addition, developer access grants permissions to access cloud systems, metrics, monitoring and logs.
 
-When activating developer access, consider the following:
-- The GitHub account must have active second-factor authentication protection, otherwise it will not comply with Modyo's security policy and will not be able to access the repositories
-- GitHub users are added to the repository as “external”. Modyo cannot guarantee the security of this account, so each customer will be responsible for its developers to activate other security measures, such as the use of secure passwords and the control of the existing tokens in each account
+When activating developer access you must consider:
+- The GitHub account must have two-factor authentication enabled, otherwise it will not comply with Modyo's security policy and you will not have access to the repositories.
+- GitHub users are added to the repository as “external”. Modyo cannot guarantee the security of this account, so each customer is responsible for having their developers activate additional security measures, such as the use of secure passwords and the control of existing tokens in each account.
 
 ### Steps to activate
-Developer Access is activated by means of a request ticket in the [Modyo Support Center](https://support.modyo.com) where you must indicate:
-- Developer GitHub user (if you don't have one, it must be created beforehand)
-- The developer's name and email
-- Indicate whether or not the developer is authorized to request changes to the components of the service
+Create a request ticket at the [Modyo Support Center](https://support.modyo.com) stating:
+- The developer's GitHub user (if you don't have one, you'll need to create one first).
+- Name and email of the developer.
+- Whether or not the developer is authorized to request changes to the components of the service.
 
 :::warning Important
-Once developer access has been created, it will be the customer's responsibility to inform when it should be removed from the authorized repositories. This is done by submitting a request ticket to the [Modyo Support Center](https://support.modyo.com).
+The customer is responsible for informing Modyo in case they need to remove access to a developer. To do this, you must create a request ticket in the [Modyo Support Center](https://support.modyo.com).
 :::
 
 
 ## Code Repository
-Source code repositories allow the management of all aspects of the code lifecycle, including versions, inspections, automations and collaboration flows between members of the development team with access to them.
+Source code repositories allow you to manage all aspects of the code lifecycle, including versions, inspections, automations, and collaboration flows between members of the development team with access to them.
 
-The source code repositories are implemented on top of Modyo's GitHub Enterprise service. Github Security solutions are also used for dependency inspection, SonarCloud for Java and Javascript.
+The source code repositories are implemented on top of Modyo's GitHub Enterprise service. We also use Github Security solutions for dependency inspection and SonarCloud for Java and Javascript.
+
 
 ### Steps to activate
-The activation of a Code Repository is done by means of a request ticket in the [Modyo Support Center](https://support.modyo.com) where you must indicate:
-- Repository type: micro frontend, microservice, or intermediary artifact
-- Name of the repository (Modyo will apply an internal naming standard to the name indicated, in which prefixes and/or suffixes are incorporated depending on the type of repository)
+Create a request ticket at the [Modyo Support Center](https://support.modyo.com) stating:
+- Type of repository: micro frontend, microservice, or intermediary artifact.
+- Repository name: Modyo will apply an internal naming standard with prefixes and/or suffixes depending on the type of repository.
 
 
 ## Continuous Integration
-The continuous integration configuration is used to automate common processes within the software development cycle. Within these processes we find mainly code inspection, dependency review, artifact packaging, deployments, among others.
+Continuous integration automates common processes in the software development cycle, such as code inspection, dependency review, artifact packaging, and deployment. To do this, Modyo uses the continuous integration systems of GitHub Enterprise and Amazon.
+All activities related to the development cycle, such as inspections, reviews and generation of intermediate artifacts, as well as automations related to
+[micro frontends](/en/architecture/patterns/micro-frontend), such as deploying to the Modyo platform using the Modyo CLI, are done in GitHub Actions.
 
-Modyo uses the continuous integration systems of GitHub Enterprise and Amazon. All activities related to the development cycle, such as inspections, reviews or generation of intermediate artifacts, are performed on GitHub Actions. All the automations referring to [micro frontends] (/en/architecture/patterns/micro-frontend), such as deployment to the Modyo platform using the Modyo CLI, are also carried out on GitHub Actions. Activities related to the generation of container-based artifacts and their deployments on AWS ECS are performed using AWS CodePipeline.
+Activities related to the generation of container-based artifacts and their deployments to AWS ECS are performed using AWS CodePipeline.
+
 
 :::warning Important
 AWS CodePipeline-based integrations will be migrated to GitHub Actions during the first half of 2023.
 :::
 
 ### Steps to activate
-The activation of Continuous Integration on a [repository](#repository-code repository) is done through a request ticket in the [Modyo Support Center](https://support.modyo.com) in which you must indicate:
-- Code repository on which automation should be run
-- Type of automation you want to implement
-- Specific instructions to be taken into account when implementing the automation (e.g. specific build script, special parameters, etc.).
+Create a ticket at the [Modyo Support Center](https://support.modyo.com) to activate Continuous Integration on a [repository](#code-repository), stating:
+- Code repository on which to run the automation.
+- Type of automation to implement.
+- Specific instructions to consider when implementing automation; for example, specific compilation script, special parameters, and so on.
 
 
 ## Artifact Repository
-Artifact repositories allow you to store software packages in a secure and accessible way. Its main functionalities include versioning and supporting packages, in addition to acting as a single source for their distribution. In the case of intermediary libraries, used in the modularization of Java and Javascript code, the dependencies are consumed directly from the artifact repository.
+Artifact repositories are a secure and accessible way to store software packages. They allow packages to be versioned and backed up, and to act as a single source for their distribution.
 
-Modyo implements artifact repositories within its GitHub Enterprise and the Amazon AWS account configured for the customer. For intermediary repositories, GitHub Registry is used as Java or Javascript libraries. For container repositories that will be deployed in the Amazon cloud, AWS Elastic Container Registry is used.
+In the case of intermediate libraries, used to modularize Java and Javascript code, dependencies are consumed directly from the artifact repository.
+
+Modyo implements artifact repositories within its GitHub Enterprise and in the customer's Amazon AWS account. For intermediate repositories, such as Java or Javascript libraries, GitHub Registry is used. For container repositories that will be deployed in the Amazon cloud, AWS Elastic Container Registry is used.
+
 
 ### Steps to activate
-The activation of an artifact repository is done by means of a requirement ticket in the [Modyo Support Center](https://support.modyo.com) where you must indicate:
-- Artifact repository name
-- Artifact repository type (NPM or Maven library)
-- Purpose for which the artifact repository will be used
-
-
-
-
+Create a request ticket at the [Modyo Support Center](https://support.modyo.com) stating:
+- Name of the artifact repository.
+- Artifact repository type: NPM or Maven library.
+- Purpose for which the artifact repository will be used.

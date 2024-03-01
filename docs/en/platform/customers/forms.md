@@ -6,11 +6,11 @@ search: true
 
 One of the most demanted features in any platforms is the ability to capture of user data, analyze it, and use it for segmentation. With this tool you can create as many forms as you need to collect data from the users of your sites.
 
-When you access the tool, you are able to see a list of all the forms currently active in the account. You can filter by their status (enabled or disabled), by the site they're deployed to, and search by the name of the form.
+When you access the tool, you can see a list of all the forms currently active in the account. You can filter by their status (enabled or disabled), by the site they're deployed to, and search by the name of the form.
 
 In each row of the forms table, the columns are ordered by the name of the form, the date it was created, and the number of responses that were submitted for that form.
 
-From this list you can also access the individual analysis view, by clicking on the title of the form, also to the list of responses of the form, by clicking on the number of responses on the form.
+From this list you can also access the individual analysis view, by clicking on the title of the form, also you can access the list of responses of the form, by clicking on the number of responses on the form.
 
 To enable or disable forms and allow users to send their answers, you must go to the analysis view and select the respective action from the options displayed in the upper right section.
 
@@ -19,148 +19,148 @@ To enable or disable forms and allow users to send their answers, you must go to
 To create a new form, follow these steps:
 
 1. From the side menu in the platform, select **Customers**, and click **Realms**.
-2. Click your Realm.
+2. Click on your realm.
 3. Click **+ New Form**. This will take you to the creation view of a new form, where you must fill in the main attributes of the form:
 
-- **Name**: Name associated with the form. This value will appear both in the form index in the platform and as a title when a user responds to it.
-- **Description**: This text will appear as text under the title in the front end.
-- **People limit**: Determines the maximum number of answers are allowed.
+- **Name**: Name associated with the form. This value will appear both in the form index in the Modyo administrator and as a title when a user is responding to it.
+- **Description**: This text will appear as text below the title when users respond to it.
+- **People limit**: Allows you to determine the maximum number of answers allowed.
 - **Site**: Allows you to select where this form will be displayed. Keep in mind that this causes the form to change its appearance according to the classes defined in the site's global CSS. For more information, go to [Template builder](/en/platform/channels/templates.html). 
 
-:::warning Warning
-You will only be able to select a site that belongs to the same realm. Inside **Site Settings** - **General**, make sure that the site is part of the correct realm.
+:::warning Alert
+You can only select a site that belongs to the same realm, within the **Site Settings**, under **General**, make sure that the site is part of the correct realm.
 :::
 
-- **Enabled**: Select whether the form will start in an enabled state or not.
-- **Accept multiple responses**: If this option is enabled, each time a user answers the form, it will be registered as a new response. If this option is disabled, each time the same user answers the form, they will overwrite their previous response.
-- **Show only to registered users**: Allows you to determine if the form will only be visible to registered users in Modyo. If this option is enabled, a user without a session cannot see the form. If this option is disabled, any user can answer the form.
-- **Automatically redirect to form**: If the form is private (only registered users can answer it), this option will appear, allowing you to automatically redirect users belonging to the site associated to the form when they log in.
+- **Enabled**: Select if the form will start in an enabled state or not.
+- **Accept multiple answers**: If this option is enabled, each time a user answers the form, it will be recorded as a new response. If this option is disabled, each time the same user answers the form, they will be overwriting their previous response.
+- **Only for registered users**: Allows you to determine if the form will only be visible to registered Modyo users. If this option is enabled, an unsigned user will not be able to view the form. If this option is disabled, any user can answer the form.
+- **Request to answer automatically**: If the form is private (only registered users can answer it), this option will appear, allowing you to automatically redirect users who log in to the site associated with the form to answer it.
 
-The next section of the form properties contains the Form Options for what happens after a customer completes a form.
+After a division, you will be able to see the options to modify the redirect after a user answers the form.
 
-- **Default options**: After responding to the form, the user is redirected to the home page of the site associated with the form.
-- **Redirect URL**: Allows you to enter a URL to which the user will be redirected after responding to the form. It is necessary to enter the entire URL (e.g. https://test.miModyo.com/home).
-- **Thank you page**: Allows you to add a personalized thank you message after a user answers the form, next to a button that will take you to a site page. The button URL is a relative URL of the site associated with the form. You can also determine if you want the user to be automatically redirected to that page after a certain time.
+- **Default options**: After answering the form, the user is redirected to the home of the site associated with the form.
+- **Redirect URL**: Allows you to enter a URL to which the user will be redirected after completing the form. It is necessary to type the entire URL (e.g. https://test.miModyo.com/home).
+- **Thank you page**: Allows you to add a personalized thank you message after a user answers the form, along with a button that will take them to a page on the site. The button URL is a relative URL of the site associated with the form. You can also determine if you want the user to be automatically redirected to that page after a certain amount of time.
 
 
-- **Enable segmentation**: If the form is private (only registered users can answer it), you can select a set of users who can answer the form using the segments. To learn more, go to [Segments](/en/platform/customers/segments.html)
+- **Enable segmentation**: If the form is private (only registered users can answer it), you can select a set of users who can answer the form using segments. To learn more, go to [Segments](/en/platform/customers/segments.html)
 
-:::warning Warning
-If it is a public form, users who do not have an active session in Modyo will see three required fields at the top of the form: First Name, Last Name, and Email. Once they submit the form, a user will be created with those values and the response will be associated with that user.
+:::warning Attention
+In case of a public form, users who do not have an active session in Modyo, will see three required fields at the top of the form: First Name, Last Name, and Email. Once they submit the form, a user will be created with those values, and then the response will be associated with that user.
 :::
 
-:::warning Warning
-If a user does not have an active session, fills out the form, and the email matches one of the users already registered in Modyo, the response will be associated with the existing user instead.
+:::warning Attention
+If a user, who doesn't have an active session, completes the form, and their email matches an already registered user in Modyo, the response will be linked to the existing user, and a new user will not be created.
 :::
 
-## Edit a form
+## Edit form
 
-To edit a form, follow these steps:
+To modify a form, follow these steps:
 
 1. In the side menu, select **Customers** and click **Realms**.
-2. Select your Realms and click your form.
+2. Select your realm and click on your form.
 3. In the options menu at the top right, click **"Edit"**.
 
-Once you enter the editing section of a form, you will see 2 sections: a central section, where you can rearrange the questions by dragging them in the required order, and the right side section, which has three tabs:
+Once you enter the editing section of a form, you will be able to see 2 sections: a central section, where you can rearrange the questions by dragging them in the required order, and the right side section, which has three tabs:
 
 ### Add
 
-This section lets you add as many fields as necessary to complete the form or delete the ones that are not needed. Here are the fields you can add for a form:
+This section will allow you to add as many fields as necessary to complete the form, or delete the ones that are not necessary. These are the fields you can add to a form:
 
-- **Simple text**: Enter a single-line text response up to 256 characters.
-- **Paragraph**: Enter a multi-line text response up to 65535 characters.
-- **Number**: Enter numbers.
-- **Dropdown**: Add options from which the user can add a dropdown.
-- **Checkbox**: Add options from which the user can choose multiple answers in a checkbox format.
-- **Choice**: Add options from which the user can choose an answer in a _radio button_ format.
-- **Date**: Add a date field in which the user can select a date within the allowed range.
-- **Nested questions**: Add a series of questions that can be nested, so that the user is asked to select one of the possible nested options within a selected parent.
+- **Simple Text**: Allows the user to enter text up to 256 characters.
+- **Paragraph**: Allows the user to enter multiline text up to 65535 characters.
+- **Number**: Allows the user to enter numbers.
+- **Dropdown**: Allows you to add options from which the user can choose one in dropdown format.
+- **Checkbox**: Allows you to add options from which the user can choose multiple options in a checkbox format.
+- **Choice**: Allows you to add options from which the user can choose one in _radio button_ format.
+- **Date**: Allows you to add a date field where the user can select one within the allowed range.
+- **Nested questions**: Allows you to add a series of alternatives that can be nested, so that the user is asked to select one of the possible nested options within the option they selected.
 
-:::warning Warning
-From version 9.0.8 onwards, you cannot add file-type questions in forms, you won't be able to request users to upload files using Modyo forms.
+:::warning Attention
+From version 9.0.8 onward, forms no longer have file-type questions, so you won't be able to require users to upload files using Modyo forms.
 :::
 
-You can remove one of the form fields by clicking on the garbage can icon to the right of each field in the main section. The form option is deleted once you save the changes.
+You can delete one of the fields from the form by clicking on the trash can icon to the right of each field in the main section. The deletion will be effective once you save the changes.
 
 :::danger Danger
-If your form is already activated and you already have answered forms, be very careful when deleting questions from it, because by doing so, you will be deleting the values of those answers that users have already submitted. This action is irreversible.
+If your form is already activated, and you already have answers, be very careful when deleting questions from it, because by doing so, you will be removing the values from those answers that users have already submitted. This action is irreversible.
 :::
 
-### Field Properties
+### Field properties
 
-This section allows you to modify the options for each of the questions on your form, you must select a field from the main section to use this section.
+This section will allow you to modify the options for each of the questions on your form, you must select a field from the main section in order to make use of this section.
 
-All the fields that you can add have a title, which are effectively the questions associated with each answer, have the option of making that field required to submit the form, and each can have a brief description in case instructions are required to answer the field.
+All the fields you can add have a title, which will be the question associated with the answer, the option to make it a required field in order to submit the form, and a brief description, if instructions are needed, to answer the field.
 
-Some fields have validations, to ensure the user meets certain requirements to fill in the field. The rules you can add are:
+Some fields have validations, to ensure that the user meets certain requirements to fill in the field, some of these restrictions are:
 
 - **Minimum length**: Length required for the text to be valid
-- **Maximum length**: Maximum length allowed for text to be valid
-- **Regular expression**: Text format entered must match the associated regular expression to be valid.
+- **Maximum length**: maximum length allowed for text to be allowed
+- **Regular expression**: Format of the text entered must match the associated regular expression to be valid.
 - **Minimum number**: The number entered cannot be less than this value.
 - **Maximum number**: The number entered cannot be greater than this value.
-- **Minimum date**: The date entered cannot be earlier than this value
-- **Maximum date**: The date entered cannot be later than this value.
+- **Minimum Date**: The date entered cannot be earlier than this value
+- **Maximum Date**: The date entered cannot be later than this value.
 
-Just as some fields have validations, most have a default value that is pre-selected when the form is loaded. The only ones that don't have a default value are nested questions.
+Just as some fields have validations, most have a default value that is pre-selected when loading the form. The only ones that don't have a default value are nested questions.
 
 ### Regular Expressions
 
-For plain text and paragraph fields, you can add validations through regular expressions. By clicking on the functions button, you can see the different default validations:
+For simple text and paragraph fields, you can add validations through regular expressions. By clicking on the functions button, you can see the different default validations:
 
 - Email
 - URL
 - Phone Number
 - Chilean RUT
 - Bank card number
-- American Post code
-- Canadian Post Code
-- Chilean Post code
+- US zip code
+- Canadian zip code
+- Chilean zip code
 - UUID
 
 Selecting any of the different options and clicking **Add** will autocomplete the expression to the field.
 
-### Form Properties
+### Form properties
 
-This section will allow you to change the general behavior of the form. It contains the same options as when creating a new form, but in turn adds a couple of new options which we will detail below.
+This section will allow you to change the general behavior of the form. It contains the same thing as the creation view of a new form, but in turn it adds a couple of new options, as detailed below. 
 
 Its sections are:
 
 - **General**
-- **Form Snippet**
-- **Form Options**
-- **Email Notifications**
+- **Snippet**
+- **Options**
+- **Notifications**
 - **Custom JS**
 
 #### General
 The **General** section adds two options:
-- **Send button text**: Allows you to customize the text associated with the **Send** button on the form.
-- **Enabled**: Lets you determine whether or not users will be able to respond to the form. If the option is checked, then the form will be accessible and answered, if it is not enabled, then users will not see it or be able to respond to it.
+- **Submit button text**: Allows you to customize the text associated with the **Submit** button on the form.
+- **Enabled**: Allows you to determine whether or not users will be able to answer the form. If the option is checked, then the form can be accessed and answered, if it is not enabled, then users will not see or be able to respond to it.
 
 #### Snippet
-The **Form Snippet** section, which will only appear if the form is public, will allow you to copy a _HTML_ code that you can use anywhere to dynamically load the form, even outside of Modyo.
-
-:::warning Warning
-In order to make proper use of the form snippet, you must take into account the _CORS_ configuration of your account in Modyo and the security _headers_ from where you are inserting the snippet.
-
-To use the snippet within a page on the Modyo platform, you must copy the Javascript code into the Javascript section and the div into the HTML section. The HTML section in [Pages](/en/platform/channels/pages) cannot run Javascript, it is mandatory to use the Javascript section to run the code correctly. 
-:::
-
-The **Form Options** and **Email Notifications** sections do not add anything different from what is found when creating a **New Form**
+The **Snippet** section, which will only appear if the form is public, will allow you to copy an _HTML_ code that you can use anywhere to dynamically load the form, even outside of Modyo.
 
 :::warning Attention
-If you're using a Modyo site with a custom domain, you'll need to activate the option to share resource sources [CORS](/en/platform/core/security.html) in the platform settings.
+In order to make proper use of the form snippet, you must take into account the _CORS_ configuration of your Modyo account and the security _headers_ where you are inserting the snippet.
+
+To make use of the snippet within a page on the Modyo platform, you must copy the Javascript code inside the Javascript section and the div in the HTML section. The HTML section in [Pages](/en/platform/channels/pages) cannot run Javascript, the use of the Javascript section is mandatory to run the code correctly. 
+:::
+
+The **Options** and **Notifications** sections don't add anything other than what's found in **New Form**
+
+:::warning Attention
+If you're using a Modyo site with a custom domain, you'll need to enable the option to share resource sources [CORS](/en/platform/core/security.html) in the platform settings.
 :::
 
 ### Notifications
 
-In the **Email Notifications** section you can configure the different emails that are sent after a user answers the form.
+In the **Notifications** section you can configure the different emails that are sent after a user answers the form.
 
-The notification by mail sends an "administrative" email in which platform users are notified that someone responded to the form. You can assign a subject and a mailing list that you want to notify.
+The email notification sends an “administrative” email notifying you via that channel that someone has answered the form. You can assign a subject and a list of emails to which you want to notify.
 
-The thank you email allows you to customize an email that will be sent to the user who answered the form. You can customize both the subject and the body of the message using [Liquid](/en/platform/channels/liquid-markup.html). Below the field to customize your message, you'll see a list of variables you can use to personalize your email.
+The thank you email allows you to customize an email that will be sent to the user who answered the form. You can customize both the subject and the body of the message using [Liquid](/es/platform/channels/liquid-markup.html). Below the field for customizing the message, you can see a list of variables that you can use to personalize the email.
 
-Here is a code sample that you can use as a base to personalize the thank you mail.
+Below is an example of code that you can use as a basis for customizing the thank you email.
 
 ```liquid
 Message Sent: {{ 'now' | date: "%b %d, %y" }}
@@ -209,27 +209,27 @@ Message Sent: {{ 'now' | date: "%b %d, %y" }}
 
 ### Custom JS
 
-Add functionality such as custom validation to your form using Javascript by following these steps:
+Add functionality, such as custom validation, to your form using Javascript by following these steps:
 
-1. In Modyo platform, inside your realm, click your form.
-1. Click more options and click **View**.
-1. Open the developer tools and inspect the item you want to modify.
-1. Write down the id of the element to be validated. (e.g. `answers_3684_value`)
+1. On the Modyo platform, within your realm, click on your form.
+1. Click on more options and click on **View**.
+1. Open the developer tools and inspect the element you want to modify.
+1. Note the id of the element to be validated. (e.g. `answers_3684_value`)
 1. In the Custom JS section you can add validations or extra functionality using Javascript.
 1. Click **Save**.
 
 :::tip Tip
-This script will run right after the div that contains the form, so it is important to note that it may be affected by the rest of the site configuration. For example if this form is embedded in another external site that cannot run Javascript.
+This script will run after the div containing the form, so it's important to keep in mind that it can be affected by the rest of the site's configuration. For example, if this form is embedded in another external site that cannot run Javascript.
 :::
 
 ## Answers
 
-Clicking on a form will bring you to a view where all the responses users have submitted and the date they responded to are listed.
+When you click on a form, you will arrive at a view where all the answers that users have submitted and the date they responded are listed.
 
-You can export the responses to an _XLS_ or _CSV_ file by selecting them in the list and then using the actions selection that appears at the bottom.
+You can export the responses to a _XLS_ or _CSV_ file by selecting them from the list and then using the bulk actions at the bottom of the list.
 
 :::danger Danger
-You can delete answers one by one using the action to the right of each answer, or by making use of the bulk actions, selecting multiple answers and then the **Delete** button at the end of the list. Note that this action is irreversible and once a reply has been deleted, it cannot be recovered.
+You can delete answers, one by one, using the action to the right of each answer, or by making use of mass actions, selecting multiple answers and then the **Delete** button at the bottom of the list. Keep in mind that this action is irreversible and once a response has been deleted, it cannot be recovered.
 :::
 
-To see a user response in detail, just click on the user name, and you can access a list of questions next to the answers that user sent to a particular form.
+To see a user's answer in detail, just click on the user's name, and you'll access the list of questions along with the answers that user sent on that particular occasion.
