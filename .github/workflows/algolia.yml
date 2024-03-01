@@ -21,6 +21,6 @@ jobs:
       - name: Push indices to Algolia
         uses: signcl/docsearch-scraper-action@master
         env:
-          APPLICATION_ID: TEEU706UKD
-          API_KEY: e445aba903f3930fd3b7748786a7532d
+          APPLICATION_ID: ${{ secrets.ALGOLIA_APPLICATION_ID }}
+          API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
           CONFIG: ${{ steps.algolia_config.outputs.config }}
