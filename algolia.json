@@ -1,5 +1,5 @@
 { 
-  "index_name": "csd_test_index_001",
+  "index_name": "modyo_docs_index",
   "start_urls": [
     {
       "url": "https://docs.modyo.com/es/",
