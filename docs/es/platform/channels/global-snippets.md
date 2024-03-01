@@ -50,7 +50,7 @@ Para cargar y utilizar un snippet global creado previamente:
 1. Selecciona widgets o plantillas (si seleccionas plantillas, ve directo al paso 5).
 1. Selecciona tu widget.
 1. Haz click en la pestaña snippets, arriba de la zona de trabajo, para desplegar el listado de snippets globales disponibles.
-1. Selecciona el snippet global que quieres usar. Los snippets globales siempre llevan `global/nombredelsnippet`.
+1. Selecciona el snippet global que quieres usar. Los snippets globales siempre usan la nomenclatura `global/nombredelsnippet`.
 1. Haz click en **publicar**.
 1. Selecciona si quieres publicar el snippet global inmediatamente o en una fecha específica. Puedes también seleccionar una fecha de despublicación, si deseas.
 
@@ -62,7 +62,7 @@ Para previsualizar un snippet global en tu web app:
 1. Selecciona widgets o plantillas (si seleccionas plantillas, ve directo al paso 5).
 1. Selecciona tu widget.
 1. Haz click en snippets, arriba de la zona de trabajo para desplegar el listado de snippets disponibles.
-1. Selecciona el snippet que quieres usar. Los snippets globales siempre llevan `global/nombredelsnippet`.
+1. Selecciona el snippet que quieres visualizar. Los snippets globales siempre usan la nomenclatura `global/nombredelsnippet`.
 1. Haz click en el ícono de vista previa.
 
 
@@ -71,7 +71,7 @@ Para modificar un snippet, sigue estos pasos:
 
 1. En el menú lateral, haz click en channels.
 1. Haz click en snippets.
-1. Selecciona el snippet que quieres editar.
+1. Selecciona el snippet que quieres editar. Los snippets globales siempre usan la nomenclatura `global/nombredelsnippet`.
 1. Modifica el snippet según requieras.
 1. Da click en **guardar**.
 1. Haz click en **publicar**.
