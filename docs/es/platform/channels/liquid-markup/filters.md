@@ -174,6 +174,24 @@ Estos son los filtros liquid que alteran valores relacionados con Comercio.
 Agrega formato de divisa a un valor. *e.g.*
 <span v-pre>`{{ 4 | format_currency }} => $4`</span>
 
+<span v-pre>`{ 1890.5123 | format_currency: unit: '¥', separator: ',', delimiter: '.', precision: 3 }} = ¥1.890,512`</span>
+
+:::warning Importante
+Este filtro determina el formato de la moneda y tiene prioridad sobre cualquier otra configuración de divisa.
+
+Si no especificas parámetros de divisa con el filtro de currency, Modyo utiliza la configuración de [payment](https://docs.modyo.com/es/platform/customers/realms.html#payment-setu) del reino.
+
+En caso de que el sitio no tenga un reino asociado y no especifiques parámetros, se aplicará el formato predefinido del idioma del sitio.
+:::
+
+**Parámetros:**
+
+- unit - símbolo de la moneda.
+- separator - separador de decimales.
+- delimiter - separador de miles.
+- precision - cantidad de dígitos decimales.
+
+
 ## Content
 
 Estos son los filtros liquid que alteran valores relacionados al módulo de Content en Modyo Platform.
