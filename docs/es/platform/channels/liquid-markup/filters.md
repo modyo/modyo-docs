@@ -174,7 +174,7 @@ Estos son los filtros liquid que alteran valores relacionados con Comercio.
 Agrega formato de divisa a un valor. *e.g.*
 <span v-pre>`{{ 4 | format_currency }} => $4`</span>
 
-<span v-pre>`{ 1890.5123 | format_currency: unit: '¥', separator: ',', delimiter: '.', precision: 3 }} = ¥1.890,512`</span>
+<span v-pre>`{{ 1890.5123 | format_currency: unit: '¥', separator: ',', delimiter: '.', precision: 3 }} = ¥1.890,512`</span>
 
 :::warning Importante
 Este filtro determina el formato de la moneda y tiene prioridad sobre cualquier otra configuración de divisa.
