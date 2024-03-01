@@ -174,6 +174,7 @@ These are the liquid filters that alter values related to Trade.
 Adds currency formatting to a value. *e.g.*
 <span v-pre>`{{ 4 | format_currency }} => $4`.</span>
 
+<span v-pre>`{{ 1890.5123 | format_currency: unit: '¥', separator: ',', delimiter: '.', precision: 3 }} = ¥1.890,512`</span>
 
 :::warning Important
 This filter determines the currency format and takes precedence over any other currency settings.
