@@ -406,7 +406,7 @@ Desaturates a color. *e.g.*
 ### Grayscale
 
 Converts a color to grayscale. *e.g.*
-<span v-pre>`{{'#00ff00' | grayscale}} #=> '#808080 '`</span>
+<span v-pre>`{{ '#00ff00' | grayscale }} #=> '#808080'`</span>
 
 ### Lighten
 
