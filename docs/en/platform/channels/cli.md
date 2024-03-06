@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Modyo Command Line Interface
+# Modyo CLI
 
 The Modyo Command Line Interface (CLI) is a tool based on two fundamental principles: acceleration and integration. These principles are implemented through the _get_ and _push_ commands, respectively.
 
@@ -28,8 +28,8 @@ $ yarn global add @modyo/cli #via yarn
 - Run it without installation using npx
 
 ```sh
-$ npx @modyo/cli #via npx
-$ npx @modyo/cli@version #via npx - señalando una versión en específico
+$ npx @modyo /cli #via npx
+$ npx @modyo /cli @latest #via npx - pointing to a specific version
 ```
 
 To verify that the installation was successful and confirm the installed version of the CLI, run this command:
@@ -319,6 +319,6 @@ To package a file as a zip in Modyo CLI use these options:
 Example:
 
 ```
-modyo-cli --zip --zip-entry-css=main.css --zip-entry-js=main.js push
+modyo-cli push --zip --zip-entry-css=main.css --zip-entry-js=main.js 
 
 ```
