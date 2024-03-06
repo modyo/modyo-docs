@@ -564,7 +564,7 @@ Translates a date to another format. *e.g.*
 ### Format DateTime
 
 Translates a date to DateTime format. *e.g.*
-<span v-pre>`{{time | format_datetime}}`</span>
+<span v-pre>`{{ time | format_datetime }}`</span>
 
 ### Format Short Date
 
