@@ -396,7 +396,7 @@ Adds sparkle to a color. *e.g.*
 ### Darken
 
 Reduces brightness to a color. *e.g.*
-<span v-pre>`{{'#00ff00' | darken: 15}} #=> '#00b300 '`</span>
+<span v-pre>`{{ '#00ff00' | darken: 15 }} #=> '#00b300'`</span>
 
 ### Desaturate
 
