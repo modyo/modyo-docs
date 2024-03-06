@@ -569,7 +569,7 @@ Translates a date to DateTime format. *e.g.*
 ### Format Short Date
 
 Translates a date to a reduced format. dd-mm-yyyy *e.g.*
-<span v-pre>`{{time | format_short_date}}`</span>
+<span v-pre>`{{ time | format_short_date }}`</span>
 
 ### Get Session ID
 
