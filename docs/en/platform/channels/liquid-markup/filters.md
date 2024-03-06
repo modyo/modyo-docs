@@ -63,7 +63,7 @@ HTML escape to a string.
 
 ### First
 
-Get the first element of the passed array.
+Gets the first element of the passed array.
 
 ### Floor
 
