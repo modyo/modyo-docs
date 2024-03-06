@@ -421,7 +421,7 @@ Modifies the opacity of a color. *e.g.*
 ### RGB
 
 Transforms a color to its RGB equivalent. *e.g.*
-<span v-pre>`{{'#00ff00' | rgb}} #=> 'rgb (0, 255, 0) '`</span>
+<span v-pre>`{{ '#00ff00' | rgb }} #=> 'rgb(0, 255, 0)'`</span>
 
 ### Saturate
 
