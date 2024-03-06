@@ -204,7 +204,7 @@ Returns the tags of an image using its uuid from the File Manager. *e.g.*
 ### Asset Link
 
 Returns the URL of an image using its File Manager uuid. *e.g.*
-<span v-pre>`{{ uuid | asset_link: 'This is a link to the asset' }}`</span>
+<span v-pre>`{{ uuid | asset_link: 'Este es una liga para el asset' }}`</span>
 
 ### Asset URL by UUID
 
