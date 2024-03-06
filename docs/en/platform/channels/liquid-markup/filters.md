@@ -719,7 +719,7 @@ These are the liquid filters that alter values related to Widgets.
 ### Entry Limit
 
 Determines the entry limit for a widget. *e.g.*
-<span v-pre>`{{widget1 | entry_limit}}`</span>
+<span v-pre>`{{  widget1 | entry_limit }}`</span>
 
 ### Resolve Home Widget List
 
