@@ -88,7 +88,7 @@ Removes all blanks from the beginning of a string.
 
 ### Map
 
-Map/collect an array into a given property.
+Maps/collects an array into a given property.
 
 ### Minus
 
