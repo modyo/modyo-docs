@@ -619,7 +619,7 @@ Generates a qr code. *e.g*
 
 - value (String) (default: '') - qr value
 - qr_size (Integer) (default: 4) - qr size
-- width (Integer) (default: 100) - width of qr
+- width (Integer) (default: 100) - qr width
 - height (Integer) (default: 100) - length of the qr
 
 ### Sanitize HTML
