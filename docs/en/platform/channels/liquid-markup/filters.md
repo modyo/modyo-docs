@@ -518,7 +518,7 @@ Generates the URL of an Asset-type object. *e.g.*
 ### Audio Player
 
 Generates the URL of an Audio-type object. *e.g.*
-<span v-pre>`{{{{audio1 | audio_player}}`</span>
+<span v-pre>`{{ {{ audio1 | audio_player }}`</span>
 
 ### Bar Code
 
