@@ -656,7 +656,7 @@ Generates the HTML tag `<link>`for a CSS template, taking as parameters the URL 
 Adds a theme tag in Javascript. *e.g.*
 <span v-pre>`{{ 'home-page-javascript' | theme_javascript }}`</span>
 
-### Theme Stylesheet
+### Stylesheet Theme 
 
 Adds a theme tag in CSS. *e.g.*
 <span v-pre>`{{'home-page-stylesheet' | theme_stylesheet}}`</span>
