@@ -426,7 +426,7 @@ Transforms a color to its RGB equivalent. *e.g.*
 ### Saturate
 
 Saturates a color. *e.g.*
-<span v-pre>`{{'#00ff00' | saturated: 15}} #=> '#00ff00 '`</span>
+<span v-pre>`{{ '#00ff00' | saturate: 15 }} #=> '#00ff00'`</span>
 
 ### Spin
 
