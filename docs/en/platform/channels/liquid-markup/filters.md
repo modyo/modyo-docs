@@ -68,7 +68,7 @@ Gets the first element of the passed array.
 ### Floor
 
 Rounds a decimal number down to the nearest integer, *e.g.*
-<span v-pre>`{{4.6 | floor}} #=> 4`</span>
+<span v-pre>`{{ 4.6 | floor }} #=> 4`</span>
 
 ### Format Date
 
