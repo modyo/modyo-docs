@@ -618,7 +618,7 @@ Generates a qr code. *e.g*
 **Parameters**
 
 - value (String) (default: '') - qr value
-- qr_size (Integer) (default: 4) - size of the qr
+- qr_size (Integer) (default: 4) - qr size
 - width (Integer) (default: 100) - width of qr
 - height (Integer) (default: 100) - length of the qr
 
