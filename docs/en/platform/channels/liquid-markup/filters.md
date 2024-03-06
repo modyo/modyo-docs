@@ -501,8 +501,8 @@ Generates the HTML tag of an image. *e.g.*
 
 ### Asset Thumbnail Link Tag
 
-Generate the HTML thumbnail tag of an image. *e.g.*
-<span v-pre>`{{asset | asset_thumbnail_link_tag: 'class', 'target'}}`</span>
+Generates the HTML thumbnail tag of an image. *e.g.*
+<span v-pre>`{{ asset | asset_thumbnail_link_tag: 'class', 'target' }}`</span>
 
 **Parameters**
 
