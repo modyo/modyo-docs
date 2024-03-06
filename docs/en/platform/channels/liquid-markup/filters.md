@@ -679,7 +679,7 @@ Returns a String after truncating it. *e.g.*
 ### Video Player
 
 Adds a video player in HTML code using a File Manager asset. *e.g.*
-<span v-pre>`{{movie1 | video_player: 320, 320}}`</span>
+<span v-pre>`{{ movie1 | video_player: 320, 320 }}`</span>
 
 **Parameters**
 
