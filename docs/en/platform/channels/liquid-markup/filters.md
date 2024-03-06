@@ -544,7 +544,7 @@ Returns the value of a cookie. *e.g.*
 ### Embedded Video
 
 Return the URL of an embedded video. *e.g.*
-<span v-pre>`{{movie2 | embedded_video}}`</span>
+<span v-pre>`{{ movie2 | embedded_video }}`</span>
 
 ### Escape JS
 
