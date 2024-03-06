@@ -5,7 +5,7 @@ sidebarDepth: 2
 
 # Variables globales
 
-Modyo te ofrece la funcionalidad de definir elementos de forma global y reutilizar en todos los sitios donde se utilice Liquid. Esto permite compartir, por ejemplo, un _snippet_ de código entre diferentes sitios.
+Modyo te ofrece la funcionalidad de definir elementos de forma global y reutilizarlos en todos los sitios donde se utilice Liquid. Esto te permite compartir código entre diferentes sitios.
 
 :::tip Tip
 Puedes usar texto plano, HTML, JavaScript y CSS dentro de las variables globales; sin embargo, no puedes usar código Liquid dentro de ellas. Debes tener en consideración que el contenido tiene un máximo de 65.535 caracteres.
