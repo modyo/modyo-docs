@@ -127,7 +127,7 @@ Replace all occurrences *e.g.* <span v-pre>`{{ 'foofoo' | replace:'foo','bar' }}
 Inverts the given array.
 
 ### Round
-Round to the nearest whole number or to the specified number of decimal places *e.g.* <span v-pre>`{{ 4.5612 | round: 2 }} #=> 4.56`</span>.
+Rounds to the nearest whole number or to the specified number of decimal places *e.g.* <span v-pre>`{{ 4.5612 | round: 2 }} #=> 4.56`</span>.
 
 ### Rstrip
 Removes all whitespace from the end of a string
