@@ -112,10 +112,10 @@ Prepends a string *e.g.*
 <span v-pre>`{{ 'bar' | prepend:'foo' }} #=> 'foobar'`</span>
 
 ### Remove First
-Remove the first occurrence *e.g.* <span v-pre>`{{ 'barbar' | remove_first:'bar' }} #=> 'bar'`.</span>
+Removes the first occurrence *e.g.* <span v-pre>`{{ 'barbar' | remove_first:'bar' }} #=> 'bar'`.</span>
 
 ### Remove
-Remove all occurrences *e.g.* <span v-pre>`{{ 'foobarfoobar' | remove:'foo' }} #=> 'barbar'`.</span>
+Removes all occurrences *e.g.* <span v-pre>`{{ 'foobarfoobar' | remove:'foo' }} #=> 'barbar'`.</span>
 
 ### Replace First
 Replaces the first occurrence *e.g.* <span v-pre>`{{ 'barbar' | replace_first:'bar','foo' }} #=> 'foobar'`</span>.
