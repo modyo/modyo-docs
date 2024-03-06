@@ -411,7 +411,7 @@ Converts a color to grayscale. *e.g.*
 ### Lighten
 
 Lightens a color. *e.g.*
-<span v-pre>`{{'#00ff00' | lighten: 15}} #=> '#4dff4d '`</span>
+<span v-pre>`{{ '#00ff00' | lighten: 15 }} #=> '#4dff4d'`</span>
 
 ### Opacity
 
