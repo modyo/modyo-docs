@@ -674,7 +674,7 @@ Solves the translation text for Site keys. Custom values will be returned if the
 ### Truncate HTML
 
 Returns a String after truncating it. *e.g.*
-<span v-pre>`{{html | truncate_html: 10}}`</span>
+<span v-pre>`{{ html | truncate_html: 10 }}`</span>
 
 ### Video Player
 
