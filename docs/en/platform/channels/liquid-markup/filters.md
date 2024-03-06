@@ -181,10 +181,10 @@ This filter determines the format of the currency and takes precedence over any 
 
 If you don't specify currency parameters with the currency filter, Modyo uses the realm's [payment] (https://docs.modyo.com/en/platform/customers/realms.html#payment-setup) settings.
 
-If the site does not have an associated kingdom and you don't specify parameters, the predefined format of the site's language will apply.
+If the site does not have a realm associated to it, and you don't specify parameters, the predefined format of the site's language will be applied.
 :::
 
-**Parameters: **
+**Parameters:**
 
 - unit - currency symbol.
 - separator - decimal separator.
