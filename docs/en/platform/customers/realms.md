@@ -480,7 +480,7 @@ You can enable reCAPTCHA in the realm or not, once enabled, enter:
 By enabling the payment feature in your realm, you have access to the following options:
 
 - **Currency format:** Modifies how currency values are displayed.
-- **Payment settings: ** Select the currency unit you want to display. This unit is reflected in orders and reports. If you don't indicate a currency unit, Modyo uses the default currency depending on the language configured for the site.
+- **Payment settings:** Select the currency unit you want to display. This unit is reflected in orders and reports. If you don't indicate a currency unit, Modyo uses the default currency according to the language configured for the site.
 - **Activate email delivery: ** When this option is selected, the user receives an email when paying for an order.
 - **Email subject: ** Header of the email sent to users.
 - **Body of the email:** Content of the message sent to users.
