@@ -659,7 +659,7 @@ Adds a theme tag in Javascript. *e.g.*
 ### Stylesheet Theme 
 
 Adds a theme tag in CSS. *e.g.*
-<span v-pre>`{{'home-page-stylesheet' | theme_stylesheet}}`</span>
+<span v-pre>`{{ 'home-page-stylesheet' | theme_stylesheet }}`</span>
 
 ### Time Ago in Words
 
