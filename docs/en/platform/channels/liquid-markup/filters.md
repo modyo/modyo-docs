@@ -669,7 +669,7 @@ Converts a date in String to words. *e.g.*
 ### Translate
 
 Solves the translation text for Site keys. Custom values will be returned if they exist. *e.g.*
-<span v-pre>`{{'admin.logs.errors.no_logs_yet' | translate}}`</span>
+<span v-pre>`{{ 'admin.logs.errors.no_logs_yet' | translate }}`</span>
 
 ### Truncate HTML
 
