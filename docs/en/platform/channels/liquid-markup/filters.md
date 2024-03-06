@@ -602,7 +602,7 @@ Deploys the flash message variable. *e.g.*
 ### Primary button to
 
 Generates a primary type button. *e.g.*
-<span v-pre>`{{'Hello World' | primary_button_to: 'http://www.google.com', 'large'}}`</span>
+<span v-pre>`{{ 'Hello World' | primary_button_to: 'http://www.google.com', 'large' }}`</span>
 
 **Parameters**
 
