@@ -597,7 +597,7 @@ Adds an anchor link tag. *e.g.*
 ### Notifications
 
 Deploys the flash message variable. *e.g.*
-<span v-pre>`{{'alert-error' | notifications}}`</span>
+<span v-pre>`{{ 'alert-error' | notifications }}`</span>
 
 ### Primary button to
 
