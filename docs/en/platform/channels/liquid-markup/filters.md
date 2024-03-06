@@ -513,7 +513,7 @@ Generates the HTML thumbnail tag of an image. *e.g.*
 ### Asset URL
 
 Generates the URL of an Asset-type object. *e.g.*
-<span v-pre>`{{{{asset | asset_url: 'original'}}`</span>
+<span v-pre>`{{ {{ asset | asset_url: 'original' }}`</span>
 
 ### Audio Player
 
