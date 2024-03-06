@@ -554,7 +554,7 @@ Avoids interpreting JavaScript code. *e.g.*
 ### Format Date
 
 Translates a date to another format. *e.g.*
-<span v-pre>`{{time | format_date: '%e %b, %Y'}} `</span>
+<span v-pre>`{{ time | format_date: '%e %b, %Y' }}`</span>
 
 **Parameters**
 
