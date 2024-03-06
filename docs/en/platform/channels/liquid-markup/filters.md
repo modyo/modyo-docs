@@ -649,7 +649,7 @@ Removes all HTML tags and their content from a String. *e.g.*
 <span v-pre>`{{ '<script>Hello World</script>' | strip_tags }} #=> ""`</span>
 
 ### Stylesheet Tag
-Generates the HTML `<link>` for a CSS template, taking as parameters the URL and attributes of the form `attr: 'value'`, *e.g.* <span v-pre>`{{ 'my-css-url' | stylesheet_tag: media: 'screen', title: 'color style' }}`</span> => `<link href='my-css-url' rel='stylesheet' type='text/css' media='screen' title='color style' />`
+Generates the HTML `<link>` para un template CSS, tomando como parámetros la URL y atributos de la forma `attr: 'value'`, *e.g.* <span v-pre>`{{ 'my-css-url' | stylesheet_tag: media: 'screen', title: 'color style' }}`</span> => `<link href='my-css-url' rel='stylesheet' type='text/css' media='screen' title='color style' />`
 
 ### Javascript Theme
 
