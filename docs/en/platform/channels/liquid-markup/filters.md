@@ -431,7 +431,7 @@ Saturates a color. *e.g.*
 ### Spin
 
 Rotate clockwise one color.
-<span v-pre>`{{ '#00ff00' | spin: 15 }} #=> 'rgba(0, 255, 0, 0.5)'`.</span>
+<span v-pre>`{{ '#00ff00' | spin: 15 }} #=> 'rgba(0, 255, 0, 0.5)'`</span>
 
 ## Location
 
