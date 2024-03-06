@@ -497,7 +497,7 @@ These are the liquid filters that alter values related to Sites in Modyo Platfor
 ### Asset Image Tag
 
 Generates the HTML tag of an image. *e.g.*
-<span v-pre>`{{asset | asset_image_tag: 'original'}}`</span>
+<span v-pre>`{{ asset | asset_image_tag: 'original' }}`</span>
 
 ### Asset Thumbnail Link Tag
 
