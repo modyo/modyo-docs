@@ -416,7 +416,7 @@ Lightens a color. *e.g.*
 ### Opacity
 
 Modifies the opacity of a color. *e.g.*
-<span v-pre>`{{'#00ff00' | opacity: 0.5}} #=> 'rgba (0, 255, 0, 0.5) '`</span>
+<span v-pre>`{{ '#00ff00' | opacity: 0.5 }} #=> 'rgba(0, 255, 0, 0.5)'`</span>
 
 ### RGB
 
