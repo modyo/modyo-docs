@@ -523,7 +523,7 @@ Generates the URL of an Audio-type object. *e.g.*
 ### Bar Code
 
 Generates the URL of a barcode. *e.g.*
-<span v-pre>`{{value | bar_code: 320, 320}}`</span>
+<span v-pre>`{{  value | bar_code: 320, 320 }}`</span>
 
 **Parameters**
 
