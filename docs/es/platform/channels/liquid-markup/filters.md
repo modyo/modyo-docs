@@ -179,7 +179,7 @@ Agrega formato de divisa a un valor. *e.g.*
 :::warning Importante
 Este filtro determina el formato de la moneda y tiene prioridad sobre cualquier otra configuración de divisa.
 
-Si no especificas parámetros de divisa con el filtro de currency, Modyo utiliza la configuración de [payment](https://docs.modyo.com/es/platform/customers/realms.html#payment-setu) del reino.
+Si no especificas parámetros de divisa con el filtro de currency, Modyo utiliza la configuración de [payment](https://docs.modyo.com/es/platform/customers/realms.html#configuracion-de-payment) del reino.
 
 En caso de que el sitio no tenga un reino asociado y no especifiques parámetros, se aplicará el formato predefinido del idioma del sitio.
 :::
