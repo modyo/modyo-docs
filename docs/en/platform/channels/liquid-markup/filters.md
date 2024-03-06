@@ -640,7 +640,7 @@ Adds a search engine field. *e.g.*
 ### Strftime
 
 Converts a datetime to String format. *e.g.*
-<span v-pre>`{{time | strftime: '%m/%d/%y'}}
+<span v-pre>`{{ time | strftime: '%m/%d/%y' }}
 `</span>
 
 ### Strip tag
