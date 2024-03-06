@@ -607,7 +607,7 @@ Generates a primary type button. *e.g.*
 **Parameters**
 
 - text (String) (default: '') - link text
-- link (String) (default: '/') - url for the link
+- link (String) (default: '/') - link url
 - size (String) (default: 'large') - size for the link
 
 ### QR Code
