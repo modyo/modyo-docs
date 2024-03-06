@@ -606,7 +606,7 @@ Generates a primary type button. *e.g.*
 
 **Parameters**
 
-- text (String) (default: '') - text for the link
+- text (String) (default: '') - link text
 - link (String) (default: '/') - url for the link
 - size (String) (default: 'large') - size for the link
 
