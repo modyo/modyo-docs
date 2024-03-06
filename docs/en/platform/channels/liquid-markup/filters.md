@@ -534,7 +534,7 @@ Generates the URL of a barcode. *e.g.*
 ### Button To
 
 Generate a button. *e.g.*
-<span v-pre>`{{'Hello World' | button_to: 'http://www.google.com'}}`</span>
+<span v-pre>`{{ 'Hello World' | button_to: 'http://www.google.com' }}`</span>
 
 ### Cookie Value
 
