@@ -684,7 +684,7 @@ Adds a video player in HTML code using a File Manager asset. *e.g.*
 **Parameters**
 
 - video (Asset) - Video type object in the File Manager
-- width (Integer) - width for the video
+- width (Integer) - video width
 - height (Integer) - video length
 
 ## User
