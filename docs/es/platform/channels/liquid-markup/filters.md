@@ -23,7 +23,7 @@ Un filtro es un método Ruby que toma uno o más parámetros y devuelve un valor
 
 ### Append
 
-Añade un string *e.g.* 
+Añade un string *e.g.*
 <span v-pre>`{{ 'foo' | append:'bar' }} #=> 'foobar'`</span>
 
 ### Capitalize
@@ -32,7 +32,7 @@ Poner palabra en mayúscula en la frase de entrada.
 
 ### Ceiling
 
-Redondea hacia arriba un número decimal al próximo entero, *e.g.* 
+Redondea hacia arriba un número decimal al próximo entero, *e.g.*
 <span v-pre>`{{ 4.6 | ceil }} #=> 5`</span>
 
 ### Date
@@ -41,12 +41,12 @@ Da formato a una fecha ([syntax reference](https://shopify.dev/api/liquid/filter
 
 ### Default
 
-Devuelve la variable dada a menos que sea nula o string vacío, entonces devuelve el valor dado, *e.g.* 
+Devuelve la variable dada a menos que sea nula o string vacío, entonces devuelve el valor dado, *e.g.*
 <span v-pre>`{{ undefined_variable | default: "Default value" }} #=> "Default value"`</span>
 
 ### Divided by
 
-División de enteros *e.g.* 
+División de enteros *e.g.*
 <span v-pre>`{{ 10 | divided_by:3 }} #=> 3`</span>
 
 ### Downcase
@@ -61,13 +61,13 @@ Devuelve una versión escape de html sin afectar a las entidades escape existent
 
 Escape HTML a un string.
 
-### First 
+### First
 
 Obtener el primer elemento del array pasado.
 
 ### Floor
 
-Redondea un número decimal hacia abajo al entero más cercano, *e.g.* 
+Redondea un número decimal hacia abajo al entero más cercano, *e.g.*
 <span v-pre>`{{ 4.6 | floor }} #=> 4`</span>
 
 ### Format Date
@@ -82,7 +82,7 @@ Une elementos del array con cierto caracter entre ellos.
 
 Obtener el último elemento del array pasado.
 
-### Lstrip 
+### Lstrip
 
 Elimina todos los espacios en blanco del principio de un string.
 
@@ -92,19 +92,19 @@ Mapear/coleccionar un array en una propiedad dada.
 
 ### Minus
 
-Resta *e.g.*  
+Resta *e.g.*
 <span v-pre>`{{ 4 | minus:2 }} #=> 2`</span>
 
 ### Modulo
 
-Modulo *e.g.* 
+Modulo *e.g.*
 <span v-pre>`{{ 3 | modulo:2 }} #=> 1`</span>
 
 ### Newline to br
 Reemplaza cada linea nueva (\n) con espacio HTML.
 
 ### Plus
-Suma *e.g.* 
+Suma *e.g.*
 <span v-pre>`{{ '1' | plus:'1' }} #=> 2`</span>, <span v-pre>`{{ 1 | plus:1 }} #=> 2`</span>
 
 ### Prepend
@@ -129,7 +129,7 @@ Invierte el array dado.
 ### Round
 Redondea al número entero más cercano o al número especificado de decimales *e.g.* <span v-pre>`{{ 4.5612 | round: 2 }} #=> 4.56`</span>
 
-### Rstrip 
+### Rstrip
 Elimina todos los espacios en blanco del final de un string
 
 ### Script Tag
@@ -171,8 +171,27 @@ Estos son los filtros liquid que alteran valores relacionados con Comercio.
 
 ### Format Currency
 
-Agrega formato de divisa a un valor. *e.g.* 
+Agrega formato de divisa a un valor. *e.g.*
 <span v-pre>`{{ 4 | format_currency }} => $4`</span>
+
+<span v-pre>`{{ 1890.5123 | format_currency: unit: '¥', separator: ',', delimiter: '.', precision: 3 }} = ¥1.890,512`</span>
+
+:::warning Importante
+Este filtro determina el formato de la moneda y tiene prioridad sobre cualquier otra configuración de divisa.
+
+Si no especificas parámetros de divisa con el filtro de currency, Modyo utiliza la configuración de [payment](https://docs.modyo.com/es/platform/customers/realms.html#payment-setu) del reino.
+
+En caso de que el sitio no tenga un reino asociado y no especifiques parámetros, se aplicará el formato predefinido del idioma del sitio.
+:::
+
+**Parámetros:**
+
+- unit - símbolo de la moneda.
+- separator - separador de decimales.
+- delimiter - separador de miles.
+- precision - cantidad de dígitos decimales.
+
+
 
 ## Content
 
@@ -259,7 +278,7 @@ Retorna una lista de Entradas que cumplen con un filtro. *e.g.*
 
 ### Filter By Query String
 
-Retorna una lista de Entradas que cumplen con un query. Se pueden usar operadores lógicos, varios campos meta, URLs, o tags de Liquid. 
+Retorna una lista de Entradas que cumplen con un query. Se pueden usar operadores lógicos, varios campos meta, URLs, o tags de Liquid.
 
 **Operators**:
 
@@ -338,29 +357,29 @@ Estos son los filtros liquid que alteran valores relacionados a la Cryptología.
 
 ### Base64 Decode
 
-Retorna el valor Base64-decoded de un string *e.g.* 
+Retorna el valor Base64-decoded de un string *e.g.*
 <span v-pre> `{% 'Hello world' | base64_encode %} # => 'SGVsbG8gd29ybGQ='`</span>.
 
 ### Base64 Encode
 
-Retorna el valor Base64-encoded de un string *e.g.* 
+Retorna el valor Base64-encoded de un string *e.g.*
 <span v-pre>`{% 'SGVsbG8gd29ybGQ=' | base64_decode %} # => 'Hello world'`</span>.
 
 ### HMAC SHA1
 
-Retorna el hash SHA-1 usando un código de autenticación de mensajes (HMAC) de un string. *e.g.* 
+Retorna el hash SHA-1 usando un código de autenticación de mensajes (HMAC) de un string. *e.g.*
 <span v-pre>`{% 'Hello world' | hmac_sha1: 'key'  %} # => '2a73959742baf046e6e2e27e5ee94bcff0af31b1'`</span>
 
 ### HMAC SHA256
-Retorna el hash SHA-256 usando un código de autenticación de mensajes (HMAC) de un string. *e.g.* 
+Retorna el hash SHA-256 usando un código de autenticación de mensajes (HMAC) de un string. *e.g.*
 <span v-pre>`{% 'Hello world' | hmac_sha256: 'key'  %} # => 'a82b2e160edaf92a6589dc11160d2a10c04449840a58717db308c1ee3512b039'`</span>
 
 ### MD5
 
-Retorna el hash MD5 de un string. *e.g.* 
+Retorna el hash MD5 de un string. *e.g.*
 <span v-pre>`{% 'Hello world' | md5  %} # => '3e25960a79dbc69b674cd4ec67a72c62'`</span>
 
-### SHA1 
+### SHA1
 Retorna el hash SHA-1 de un string. *e.g.* <span v-pre>`{% 'Hello world' | sha1  %} # => '7b502c3a1f48c8609ae212cdfb639dee39673f5e'`</span>
 
 ### SHA 256
@@ -372,42 +391,42 @@ Estos son los filtros liquid que alteran valores relacionados a CSS en Modyo Pla
 
 ### Brighten
 
-Agrega brillo a un color. *e.g.* 
+Agrega brillo a un color. *e.g.*
 <span v-pre>`{{ '#00ff00' | brighten: 15 }} #=> '#26ff26'`</span>
 
 ### Darken
 
-Reduce brillo a un color. *e.g.* 
+Reduce brillo a un color. *e.g.*
 <span v-pre>`{{ '#00ff00' | darken: 15 }} #=> '#00b300'`</span>
 
 ### Desaturate
 
-Desatura un color. *e.g.* 
+Desatura un color. *e.g.*
 <span v-pre>`{{ '#00ff00' | desaturate: 15 }} #=> '#13ec13'`</span>
 
 ### Grayscale
 
-Convierte un color a escala de gris. *e.g.* 
+Convierte un color a escala de gris. *e.g.*
 <span v-pre>`{{ '#00ff00' | grayscale }} #=> '#808080'`</span>
 
 ### Lighten
 
-Aligerar un color. *e.g.* 
+Aligerar un color. *e.g.*
 <span v-pre>`{{ '#00ff00' | lighten: 15 }} #=> '#4dff4d'`</span>
 
 ### Opacity
 
-Modifica la opacidad de un color. *e.g.* 
+Modifica la opacidad de un color. *e.g.*
 <span v-pre>`{{ '#00ff00' | opacity: 0.5 }} #=> 'rgba(0, 255, 0, 0.5)'`</span>
 
 ### RGB
 
-Transforma un color a su equivalente RGB. *e.g.* 
+Transforma un color a su equivalente RGB. *e.g.*
 <span v-pre>`{{ '#00ff00' | rgb }} #=> 'rgb(0, 255, 0)'`</span>
 
 ### Saturate
 
-Satura un color. *e.g.* 
+Satura un color. *e.g.*
 <span v-pre>`{{ '#00ff00' | saturate: 15 }} #=> '#00ff00'`</span>
 
 ### Spin
@@ -478,33 +497,33 @@ Estos son los filtros liquid que alteran valores relacionados a los Sitios en Mo
 
 ### Asset Image Tag
 
-Genera el HTML tag de una imagen. *e.g.* 
+Genera el HTML tag de una imagen. *e.g.*
 <span v-pre>`{{ asset | asset_image_tag: 'original' }}`</span>
 
 ### Asset Thumbnail Link Tag
 
-Genera el HTML tag del thumbnail de una imagen. *e.g.* 
+Genera el HTML tag del thumbnail de una imagen. *e.g.*
 <span v-pre>`{{ asset | asset_thumbnail_link_tag: 'class', 'target' }}`</span>
 
 **Parametros**
 
-- asset (Asset) — Objecto de tipo Asset 
+- asset (Asset) — Objecto de tipo Asset
 - classes (String) (default: '') — Clases HTML adicionales (opcional)
 - target (String) (default: '') — targets HTML adicionales (opcional)
 
-### Asset URL 
+### Asset URL
 
-Genera la URL de un objeto tipo Asset. *e.g.* 
+Genera la URL de un objeto tipo Asset. *e.g.*
 <span v-pre>`{{ {{ asset | asset_url: 'original' }}`</span>
 
 ### Audio Player
 
-Genera la URL de un objeto tipo Audio. *e.g.* 
-<span v-pre>`{{ {{ audio1 | audio_player }}`</span> 
+Genera la URL de un objeto tipo Audio. *e.g.*
+<span v-pre>`{{ {{ audio1 | audio_player }}`</span>
 
 ### Bar Code
 
-Genera la URL de un código de barras. *e.g.* 
+Genera la URL de un código de barras. *e.g.*
 <span v-pre>`{{  value | bar_code: 320, 320 }}`</span>
 
 **Parametros**
@@ -515,27 +534,27 @@ Genera la URL de un código de barras. *e.g.*
 
 ### Button To
 
-Genera un botón. *e.g.* 
-<span v-pre>`{{ 'Hello World' | button_to: 'http://www.google.com' }}`</span> 
+Genera un botón. *e.g.*
+<span v-pre>`{{ 'Hello World' | button_to: 'http://www.google.com' }}`</span>
 
 ### Cookie Value
 
-Retorna el valor de una cookie. *e.g.* 
+Retorna el valor de una cookie. *e.g.*
 <span v-pre>`{{ 32 | cookie_value }}`</span>
 
 ### Embedded Video
 
-Retorna el URL de un video integrado. *e.g.* 
+Retorna el URL de un video integrado. *e.g.*
 <span v-pre>`{{ movie2 | embedded_video }}`</span>
 
 ### Escape JS
 
-Evita interpretar código JavaScript. *e.g.* 
+Evita interpretar código JavaScript. *e.g.*
 <span v-pre>`{{ '<script>alert("hello world");</script>' | escape_js }}`</span>
 
 ### Format Date
 
-Traduce una fecha a otro formato. *e.g.* 
+Traduce una fecha a otro formato. *e.g.*
 <span v-pre>`{{ time | format_date: '%e %b, %Y' }}`</span>
 
 **Parametros**
@@ -545,27 +564,27 @@ Traduce una fecha a otro formato. *e.g.*
 
 ### Format DateTime
 
-Traduce una fecha a formato DateTime. *e.g.* 
+Traduce una fecha a formato DateTime. *e.g.*
 <span v-pre>`{{ time | format_datetime }}`</span>
 
 ### Format Short Date
 
-Traduce una fecha a un formato reducido. dd-mm-yyyy *e.g.* 
+Traduce una fecha a un formato reducido. dd-mm-yyyy *e.g.*
 <span v-pre>`{{ time | format_short_date }}`</span>
 
 ### Get Session ID
 
-Retorna el ID de la sesión. *e.g.* 
+Retorna el ID de la sesión. *e.g.*
 <span v-pre>`{{ get_session_id }}`</span>
 
 ### Asset Image Tag
 
-Retorna el tag de una imagen. *e.g.* 
+Retorna el tag de una imagen. *e.g.*
 <span v-pre>`{{ url | asset_image_tag }}`</span>
 
 ### Link To
 
-Agrega un tag de anchor link. *e.g.* 
+Agrega un tag de anchor link. *e.g.*
 <span v-pre>`{{ 'Hello World' | link_to: 'http://www.google.com', 'this is my alt', 'small', '_blank' }}`</span>
 
 **Parametros**
@@ -578,12 +597,12 @@ Agrega un tag de anchor link. *e.g.*
 
 ### Notifications
 
-Despliega la variable de mensaje flash. *e.g.* 
+Despliega la variable de mensaje flash. *e.g.*
 <span v-pre>`{{ 'alert-error' | notifications }}`</span>
 
 ### Primary button to
 
-Genera un botón de tipo primario. *e.g.* 
+Genera un botón de tipo primario. *e.g.*
 <span v-pre>`{{ 'Hello World' | primary_button_to: 'http://www.google.com', 'large' }}`</span>
 
 **Parametros**
@@ -594,7 +613,7 @@ Genera un botón de tipo primario. *e.g.*
 
 ### QR Code
 
-Genera un código qr. *e.g* 
+Genera un código qr. *e.g*
 <span v-pre>`{{  value | qr_code: 4, 320, 320 }}`</span>
 
 **Parametros**
@@ -606,28 +625,28 @@ Genera un código qr. *e.g*
 
 ### Sanitize HTML
 
-Sanitiza los tags HTML de un String. *e.g.* 
+Sanitiza los tags HTML de un String. *e.g.*
 <span v-pre>`{{ '<script>Hello World</script>' | sanitize }} #=> 'Hello World'`</span>
 
 ### Script Tag
 
-Agrega un script tag. *e.g.* 
+Agrega un script tag. *e.g.*
 <span v-pre>`{{ 'test-script' | script_tag }}`</span>
 
 ### Search Box
 
-Agrega un campo del buscador. *e.g.* 
+Agrega un campo del buscador. *e.g.*
 <span v-pre>`{{ 'testsite' | search_box }}`</span>
 
 ### Strftime
 
-Convierte un datetime a formato String. *e.g.* 
+Convierte un datetime a formato String. *e.g.*
 <span v-pre>`{{ time | strftime: '%m/%d/%y' }}
 `</span>
 
 ### Strip tag
 
-Elimina todos los tags HTML y su contenido de un String. *e.g.* 
+Elimina todos los tags HTML y su contenido de un String. *e.g.*
 <span v-pre>`{{ '<script>Hello World</script>' | strip_tags }} #=> ""`</span>
 
 ### Stylesheet Tag
@@ -635,32 +654,32 @@ Genera el tag HTML `<link>` para un template CSS, tomando como parámetros la UR
 
 ### Theme Javascript
 
-Agrega un tag de theme en Javascript. *e.g.* 
+Agrega un tag de theme en Javascript. *e.g.*
 <span v-pre>`{{ 'home-page-javascript' | theme_javascript }}`</span>
 
 ### Theme Stylesheet
 
-Agrega un tag de theme en CSS. *e.g.* 
+Agrega un tag de theme en CSS. *e.g.*
 <span v-pre>`{{ 'home-page-stylesheet' | theme_stylesheet }}`</span>
 
 ### Time Ago in Words
 
-Convierte una fecha en String a en palabras. *e.g.* 
+Convierte una fecha en String a en palabras. *e.g.*
 <span v-pre>`{{ '01-02-2019' | time_ago_in_words }} #=> 'over 3 years'`</span>
 
 ### Translate
 
-Resuelve el texto de traducción para llaves de Sitios. Valores personalizados serán retornados si existen. *e.g.* 
+Resuelve el texto de traducción para llaves de Sitios. Valores personalizados serán retornados si existen. *e.g.*
 <span v-pre>`{{ 'admin.logs.errors.no_logs_yet' | translate }}`</span>
 
 ### Truncate HTML
 
-Retorna un String después de truncarlo. *e.g.* 
+Retorna un String después de truncarlo. *e.g.*
 <span v-pre>`{{ html | truncate_html: 10 }}`</span>
 
 ### Video Player
 
-Agrega un reproductor de video en código HTML usando un asset del Gestor de Archivos. *e.g.* 
+Agrega un reproductor de video en código HTML usando un asset del Gestor de Archivos. *e.g.*
 <span v-pre>`{{ movie1 | video_player: 320, 320 }}`</span>
 
 **Parámetros**
@@ -675,7 +694,7 @@ Estos son los filtros liquid que alteran valores relacionados con los Usuarios.
 
 ### Image For
 
-Despliega el código HTML para la imágen de un usuario. *e.g.* 
+Despliega el código HTML para la imágen de un usuario. *e.g.*
 <span v-pre>`{{  user | avatar_for: 'C50x50', true }}`</span>
 
 **Parámetros**
@@ -686,7 +705,7 @@ Despliega el código HTML para la imágen de un usuario. *e.g.*
 
 ### Default Avatar Image
 
-Despliega la imágen por defecto del avatar. *e.g.* 
+Despliega la imágen por defecto del avatar. *e.g.*
 <span v-pre>`{{  user | avatar_for: 'C50x50' }}`</span>
 
 **Parámetros**
@@ -700,22 +719,22 @@ Estos son los filtros liquid que alteran valores relacionados con los Widgets.
 
 ### Entry Limit
 
-Determina el límite de entradas para un widget. *e.g.* 
+Determina el límite de entradas para un widget. *e.g.*
 <span v-pre>`{{  widget1 | entry_limit }}`</span>
 
 ### Resolve Home Widget List
 
-Retorna una lista de todos los widgets que pertenecen a un Sitio. *e.g.* 
+Retorna una lista de todos los widgets que pertenecen a un Sitio. *e.g.*
 <span v-pre>`{{  site | resolve_home_widget_list }}`</span>
 
 ### Resolve Me Widget List
 
-Retorna una lista de todos los widgets que pertenecen a una página "me". *e.g.* 
+Retorna una lista de todos los widgets que pertenecen a una página "me". *e.g.*
 <span v-pre>`{{  site | resolve_me_widget_list }}`</span>
 
 ### Resolve Widget List
 
-Retorna una lista de todos los widgets que pertenecen a una página. *e.g.* 
+Retorna una lista de todos los widgets que pertenecen a una página. *e.g.*
 <span v-pre>`{{  site | resolve_widget_list: page }}`</span>
 
 **Parámetros**

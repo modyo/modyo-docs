@@ -369,12 +369,13 @@ Puedes habilitar o no reCAPTCHA en el reino, una vez habilitado ingresa:
 - **Secreto**
 - **Umbral**
 
-### Configuración de Pago
+### Configuración de payment
 
 Al habilitar la función de pago en tu reino, tienes acceso a las siguientes opciones:
 
 - **Formato de moneda:** Modifica el tipo de puntuación usado.
-- **Activar envío de correo electrónico:** Cuando esta opción está seleccionada, el usuario recibe un correo al pagar una orden.
-- **Asunto de correo:** Encabezado del correo enviado a los usuarios.
+- **Configuración de pago:** Selecciona la unidad monetaria que deseas mostrar. Esta unidad se refleja en las órdenes y reportes. Si no indicas una unidad monetaria, Modyo utiliza la moneda predeterminada según el idioma configurado para el sitio.
+- **Activar el envío de correo electrónico:** Cuando esta opción está seleccionada, el usuario recibe un correo al pagar una orden.
+- **Asunto del correo:** Encabezado del correo enviado a los usuarios.
 - **Cuerpo del correo:** Contenido del mensaje enviado a los usuarios.
 
