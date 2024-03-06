@@ -538,8 +538,8 @@ Generate a button. *e.g.*
 
 ### Cookie Value
 
-Return the value of a cookie. *e.g.*
-<span v-pre>`{{32 | cookie_value}}`</span>
+Returns the value of a cookie. *e.g.*
+<span v-pre>`{{ 32 | cookie_value }}`</span>
 
 ### Embedded Video
 
