@@ -440,7 +440,7 @@ These are the liquid filters that alter values related to Geolocation in Modyo P
 ### Dynamic Map
 
 Returns a dynamic map from Google Maps. *e.g.*
-<span v-pre>`{{ locations | dynamic_map: '600x300', 'true', 'roadmap', true}}`.</span>
+<span v-pre>`{{  locations | dynamic_map: '600x300', 'true', 'roadmap', true}}`</span>
 
 **Parameters**
 
