@@ -625,7 +625,7 @@ Generates a qr code. *e.g*
 ### Sanitize HTML
 
 Sanitizes the HTML tags in a String. *e.g.*
-<span v-pre>`{{'<script>Hello World</script>'| sanitize}} #=> 'Hello World'`</span>
+<span v-pre>`{{ '<script>Hello World</script>' | sanitize }} #=> 'Hello World'`</span>
 
 ### Script Tag
 
