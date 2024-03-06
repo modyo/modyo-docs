@@ -574,7 +574,7 @@ Translates a date to a reduced format. dd-mm-yyyy *e.g.*
 ### Get Session ID
 
 Returns the session ID. *e.g.*
-<span v-pre>`{{get_session_id}}`</span>
+<span v-pre>`{{ get_session_id }}`</span>
 
 ### Asset Image Tag
 
