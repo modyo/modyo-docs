@@ -584,7 +584,7 @@ Returns the tag of an image. *e.g.*
 ### Link To
 
 Adds an anchor link tag. *e.g.*
-<span v-pre>`{{'Hello World' | link_to: 'http://www.google.com', 'this is my alt', 'small', '_blank'}}`</span>
+<span v-pre>`{{ 'Hello World' | link_to: 'http://www.google.com', 'this is my alt', 'small', '_blank' }}`</span>
 
 **Parameters**
 
