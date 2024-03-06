@@ -630,7 +630,7 @@ Sanitizes the HTML tags in a String. *e.g.*
 ### Script Tag
 
 Adds a script tag. *e.g.*
-<span v-pre>`{{'test-script' | script_tag}}`</span>
+<span v-pre>`{{ 'test-script' | script_tag }}`</span>
 
 ### Search Box
 
