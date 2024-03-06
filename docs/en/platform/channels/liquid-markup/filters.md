@@ -592,7 +592,7 @@ Adds an anchor link tag. *e.g.*
 - link (String) (default: '/') -  link url
 - alt (String) (default: '') - link alt
 - class (String) (default: '') -  link class
-- target (String) (default: '') - target for the link
+- target (String) (default: '') -  link target
 
 ### Notifications
 
