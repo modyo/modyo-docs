@@ -454,7 +454,7 @@ Returns a dynamic map from Google Maps. *e.g.*
 ### Static Map
 
 Returns a static map from Google Maps. *e.g.*
-<span v-pre>`{{ locations | static_map: '600x300', 'true', 'roadmap'}}`</span>
+<span v-pre>`{{  locations | static_map: '600x300', 'true', 'roadmap'}}`</span>
 
 **Parameters**
 
