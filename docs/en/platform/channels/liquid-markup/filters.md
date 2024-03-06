@@ -295,7 +295,7 @@ Returns a list of Entries that meet a query. You can use logical operators, vari
 - https://company.site.com/testsite?meta.created_at=1987-11-19T13:13:13
 
 *e.g.*
-<span v-pre>`{{% assign entries = widget.entries | filter_by_query_string %}`</span>
+<span v-pre>`{% assign entries = widget.entries | filter_by_query_string %}`</span>
 
 **Parameters:**
 - entries (ArrayEntry) - array with entries
