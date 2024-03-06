@@ -174,6 +174,24 @@ These are the liquid filters that alter values related to Trade.
 Adds currency format to a value. *e.g.*
 <span v-pre>`{{4 | format_currency}} => $4`</span>
 
+<span v-pre>`{{1890.5123 | format_currency: unit: '¥', separator:', ', delimiter:' . ', precision: 3}} = ¥1,890,512`</span>
+
+:: :warning Important
+This filter determines the format of the currency and takes precedence over any other currency settings.
+
+If you don't specify currency parameters with the currency filter, Modyo uses the kingdom's [payment] (https://docs.modyo.com/es/platform/customers/realms.html#payment-setu) settings.
+
+If the site does not have an associated kingdom and you don't specify parameters, the predefined format of the site's language will apply.
+:::
+
+**Parameters: **
+
+- unit - currency symbol.
+- separator - decimal separator.
+- delimiter - separator of thousands.
+- precision - number of decimal digits.
+
+
 ## Content
 
 These are the liquid filters that alter values related to the Content module in Modyo Platform.
