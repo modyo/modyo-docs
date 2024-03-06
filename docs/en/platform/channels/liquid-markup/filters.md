@@ -391,7 +391,7 @@ These are the liquid filters that alter CSS-related values in Modyo Platform.
 ### Brighten
 
 Adds sparkle to a color. *e.g.*
-<span v-pre>`{{'#00ff00' | brighten: 15}} #=> '#26ff26 '`</span>
+<span v-pre>`{{ '#00ff00' | brighten: 15 }} #=> '#26ff26'`</span>
 
 ### Darken
 
