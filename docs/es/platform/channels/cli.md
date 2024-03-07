@@ -288,6 +288,54 @@ EXAMPLE
 
 ```
 
+- **`modyo-cli preview`**
+
+El comando `preview` te permite previsualizar un widget localmente y verlo con el estilo de tu sitio, antes de publicarlo.
+
+**Requisitos:**
+Para hacer uso del comando preview, asegúrate de tener:
+
+- Un archivo [.env](https://docs.modyo.com/es/platform/channels/cli.html#configuracion-inicial) correctamente configurado. Los campos `MODYO ACCOUNT URL` `MODYO HOST`y `TOKEN VALIDO` son indispensables.
+- Un servidor local en ejecución.
+
+Una vez tengas tu archivo .env configurado y tu proyecto funcionando en el servidor local, sigue estos pasos:
+
+1. Abre una nueva ventana de terminal.
+2. Ejecuta el comando `modyo-cli preview`.
+
+:::warning Importante
+
+Para visualizar un cambio, debes refrescar manualmente tu web app. Haz click en **refresh** para cargar los cambios.
+
+:::
+
+Modyo usa variables predeterminadas para la previsualización de widgets, puedes modificarlas según requieras. Las variables predefinadas son:
+
+  - Puerto 8080
+  - El ID del elemento
+  - El archivo JS principal
+
+
+Además, puedes seleccionar si quieres previsualizar tu widget en la versión publicada de tu sitio o en uno de los templates. Para ello, da click en la casilla debajo de **templates**. El texto cambiará de published a draft.
+
+
+Estos comandos te permiten seleccionar los entry points locales que quieres usar.
+
+
+    OPTIONS
+
+    -p, –port=<value> [default: 8080) Deploy port local widget running
+    -s, –dom-id=<value> [default: widgetName] Container id of the widget
+    -j, –entry-js=<value> [default: main.js] Entry JS file of the widget
+
+    EXAMPLE
+
+    MODYO_LOCAL_PORT=port
+    MODYO_LOCAL_DOM_ID=domId
+    MODYO_LOCAL_ENTRY_JS=entryJs
+
+
+
 ### Code Splitting
 
 
@@ -319,6 +367,6 @@ Para empaquetar un archivo como zip en Modyo CLI usa estas opciones:
 Ejemplo:
 
 ```
-modyo-cli push --zip --zip-entry-css=main.css --zip-entry-js=main.js 
+modyo-cli push --zip --zip-entry-css=main.css --zip-entry-js=main.js
 
 ```
