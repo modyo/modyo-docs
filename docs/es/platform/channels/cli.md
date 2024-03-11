@@ -293,12 +293,12 @@ EXAMPLE
 El comando `preview` te permite previsualizar un widget localmente y verlo con el estilo de tu sitio, antes de publicarlo.
 
 **Requisitos:**
-Para hacer uso del comando preview, asegúrate de tener:
+Para hacer uso del comando `preview`, asegúrate de tener:
 
-- Un archivo [.env](https://docs.modyo.com/es/platform/channels/cli.html#configuracion-inicial) correctamente configurado. Los campos `MODYO ACCOUNT URL` `MODYO HOST`y `TOKEN VALIDO` son indispensables.
-- Un servidor local en ejecución.
+- Un archivo [.env](https://docs.modyo.com/es/platform/channels/cli.html#configuracion-inicial) correctamente configurado. Los campos `MODYO_ACCOUNT_URL`, `MODYO_SITE_HOST` o `MODYO_SITE_ID` y `MODYO_TOKEN ` son indispensables.
+- Un servidor local en ejecución con el widget que deseas previsualizar.
 
-Una vez tengas tu archivo .env configurado y tu proyecto funcionando en el servidor local, sigue estos pasos:
+Una vez tengas tu archivo `.env` configurado y tu proyecto funcionando en el servidor local, sigue estos pasos:
 
 1. Abre una nueva ventana de terminal.
 2. Ejecuta el comando `modyo-cli preview`.
@@ -311,12 +311,12 @@ Para visualizar un cambio, debes refrescar manualmente tu web app. Haz click en 
 
 Modyo usa variables predeterminadas para la previsualización de widgets, puedes modificarlas según requieras. Las variables predefinadas son:
 
-  - Puerto 8080
-  - El ID del elemento
-  - El archivo JS principal
+  - `MODYO_LOCAL_PORT`: Puerto del servidor local (por defecto: `8080`)
+  - `MODYO_LOCAL_DOM_ID`: El ID del elemento contenedor del widget (por defecto: `widgetName`)
+  - `MODYO_LOCAL_ENTRY_JS`: El archivo JavaScript principal (por defecto: `main.js`)
 
 
-Además, puedes seleccionar si quieres previsualizar tu widget en la versión publicada de tu sitio o en uno de los templates. Para ello, da click en la casilla debajo de **templates**. El texto cambiará de published a draft.
+Además, puedes seleccionar si quieres previsualizar tu widget en la versión publicada de tu sitio o en la versión editable. Para ello, da click en la casilla debajo de **templates**. El texto cambiará de **publicada** a **editable**.
 
 
 Estos comandos te permiten seleccionar los entry points locales que quieres usar.
@@ -330,9 +330,9 @@ Estos comandos te permiten seleccionar los entry points locales que quieres usar
 
     EXAMPLE
 
-    MODYO_LOCAL_PORT=port
-    MODYO_LOCAL_DOM_ID=domId
-    MODYO_LOCAL_ENTRY_JS=entryJs
+    MODYO_LOCAL_PORT=8080
+    MODYO_LOCAL_DOM_ID=widgetName
+    MODYO_LOCAL_ENTRY_JS=main.js
 
 
 
