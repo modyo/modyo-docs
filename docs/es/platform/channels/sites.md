@@ -182,9 +182,9 @@ Con esta configuración completada, cuando exista un valor asociado al campo **I
 
 
 
-- **Favicon**: Imagen que aparece al costado de la barra de dirección.
-- **Icono de Apple**: Imagen que se ve en los dispositivos móviles al usar el sitio como aplicación.
-- **Borrar**: Eliminar definitivamente un sitio y todo sus elementos.
+- **Favicon:** Imagen que aparece al costado de la barra de dirección.
+- **Icono de Apple:** Imagen que se ve en los dispositivos móviles al usar el sitio como aplicación.
+- **Borrar:** Eliminar definitivamente un sitio y todo sus elementos.
 
 :::danger Peligro
 Borrar es irreversible, por lo que debes estar completamente seguro al ejecutar esta acción.
@@ -248,7 +248,7 @@ Puedes configurar:
 Los archivos robots.txt y sitemap.xml solo son visibles con dominios personalizados. De lo contrario, se encuentran solo a nivel de plataforma, tienen sus valores por defecto y no se pueden personalizar.
 :::
 
-- **Meta tags personalizados:** Te permite configurar meta tags para todas las páginas y sus valores por defecto. Da click en **+ Nuevo meta tag** para crear uno nuevo.
+- **Meta tags personalizados:** Te permite configurar meta tags para todas las páginas y sus valores por defecto. Da click en **+ nuevo meta tag** para crear uno nuevo.
 - **Replicar meta tag en páginas:** Al crear un nuevo meta tag, selecciona esta opción para propagar el meta tag y su valor en todas las páginas de la web app. Debes guardar los cambios en meta tags y publicar todas las páginas modificadas para que los nuevos meta tags surtan efecto.
 
 :::warning Atención
@@ -280,59 +280,92 @@ Para mejorar el SEO fuera-de-página:
 
 ### PWA
 
-Modyo permite la implementación de Progressive Web Apps (PWA) dentro de los canales digitales que se estén desarrollando. Para ello, ofrece dos opciones para implementarlas.
+Modyo te permite implementar progressive web apps (PWA) en tus canales digitales en desarrollo. Para ello, tienes dos opciones:
 
 #### Manifiesto
 
-El manifiesto sirve para indicar cómo quieres que un navegador muestre tu canal digital. Lo puedes activar en Modyo marcando la casilla. Al activarlo, se crea esta ruta:
+El manifiesto indica cómo quieres que un navegador muestre tu canal digital. Para activar el manifiesto:
+
+1. En el menú lateral, haz click en channels.
+1. Selecciona tu aplicación web.
+1. Haz click en configuración de la aplicación.
+1. Da click en PWA.
+1. Marca la casilla habilitar manifiesto PWA.
+1. En el modal, llena los campos.
+1. Haz click en **generar**.
+1. Haz click en **guardar** en el modal.
+1. Haz click en **guardar**.
+
+
+Al activar el manifiesto, se crea esta ruta:
+
 
 ```bash
 https://[domain]/[site-name]/manifest.json
 ```
 
-El manifiesto se debe implementar en cada una de las páginas en que se desarrolle la PWA, a través de [Plantillas](/es/platform/channels/templates.html), en el snippet ``head``.
+Es necesario implementar el manifiesto en cada página de la PWA a través de [Plantillas](/es/platform/channels/templates.html), en el snippet ``head``.
 
-Puedes crear y modificar el manifiesto en el siguiente campo, lo que te permite agregar cambios sin tener que salir de la vista.
-
-:::warning Atención
-Si realizas cambios en el manifiesto, asegúrate de guardarlos utilizando el botón **Guardar** que se encuentra en la parte superior de la pantalla para evitar perder los cambios realizados.
-:::
 
 :::warning Atención
-Si no personalizas el manifiesto, pero agregas la ruta en Plantillas, este quedará en blanco y no hará ninguna acción.
+Si no personalizas el contenido del manifiesto PWA y agregas la ruta en plantillas, el manifiesto se creará en blanco y no tendrá ningún efecto.
 :::
 
-#### Service Worker
 
-El Service Worker permite que el canal digital realice distintas acciones o mantenga ciertos datos conectados dentro del caché para ofrecer una estructura en caso de tener una mala conexión. Puedes habilitar el Service Worker a través de la casilla correspondiente. Al activarlo, se crea la siguiente ruta:
+#### Service worker
+
+Activa el Service Worker para que tu canal digital pueda almacenar datos en caché, funcionar sin conexión y brindar una experiencia mejorada a tus usuarios, aún con una conexión inestable.
+
+Para habilitar el service worker, sigue estos pasos:
+
+1. En el menú lateral, haz click en channels.
+1. Selecciona tu aplicación web.
+1. Haz click en configuración de la aplicación.
+1. Activa la casilla habilitar service worker principal.
+1. Da click en **guardar**.
+
+Una vez activado y guardado, se crea la siguiente ruta:
+
 
 ```bash
 https://[domain]/[site-name]/serviceworker.js
 ```
 
-Puedes modificar y programar el Service Worker en el siguiente campo, adaptándolo a tus rutas y utilizando las variables disponibles.
+Para modificar el service worker, sigue estos pasos:
+
+1.  En el menú lateral, haz click en channels.
+1. Selecciona tu aplicación web.
+1. Haz click en plantillas, en el menú lateral.
+1. Da click en la pestaña snippets en la columna de la  derecha.
+1. En la sección de service worker, selecciona el archivo que quieres modificar.
+1. Haz click en **guardar**.
+1. Haz click en **publicar**.
+
 
 :::warning Atención
-Si desactivas el Service Worker, la página seguirá funcionando, solamente en sus funciones básicas y no con los beneficios que ofrece esta opción.
+Es necesario personalizar y guardar el código del service worker para integrar estas funciones a tu web app.
 :::
 
 :::warning Atención
-Si no personalizas o no guardas el código, el sitio no contará con las funciones que estás diseñando.
+Si desactivas el service worker, tu aplicación web seguirá funcionando, con funciones básicas y sin los beneficios del service worker.
 :::
 
 ### Dominios
 
-La sección Dominios te permite conocer la ubicación pública de tu sitio, por lo que es esencial que cada uno de los miembros de la plataforma estén informados de los cambios que se realicen aquí.
-
-Las variables que puedes cambiar en esta sección son:
-
-- **Host**: Donde se encuentra el sitio dentro del servidor.
-- **Activar dominios personalizados**: Al activar esta opción, puedes tener sitios con URLs personalizadas o _custom hosts_ dentro del dominio.
-- **Dominio primario**: Dirección del sitio.
-- **Dominio alternativo**: Dirección secundaria para redireccionar en caso de que falle la primera.
+En la sección de dominios puedes ver y modificar la ubicación pública de tu aplicación web.
 
 :::warning Atención
-Modyo cuenta con dominios reservados que no se pueden usar como dominios personalizados de los sitios:
+Es esencial informar a todos los miembros de la plataforma sobre cualquier cambio que realices en esta sección.
+:::
+
+Activa la casilla para realizar modificaciones. Las variables que puedes modificar son:
+- **Host:** Ubicación de la aplicación web en del servidor.
+- **Dominio primario:** Dirección principal de la aplicación web.
+- **Dominio alternativo:** Dirección secundaria para redireccionar en caso de fallo en el primario.
+
+
+:::warning Atención
+Estos dominios están reservados por Modyo. No están disponibles como dominios personalizados:
 <table style="border: none;"><tr style="border: none;">
 <td style="border: none;"><ul>
 <li>education.modyo.com</li>
@@ -356,7 +389,7 @@ Modyo cuenta con dominios reservados que no se pueden usar como dominios persona
 :::
 
 :::warning Atención
-Modyo tiene hosts reservados para los sitios, de tal forma que no puedes usarlos como host de tus sitios:
+Estos hosts están reservados por Modyo. No están disponibles como hosts para tus web apps:
 <table style="border: none;"><tr style="border: none;">
 <td style="border: none;"><ul>
 <li>404</li>
