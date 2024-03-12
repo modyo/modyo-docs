@@ -128,7 +128,7 @@ Adding the widget on a page will list all the variables that that widget is usin
 This is an experimental feature and may be subject to changes.
 :::
 
-You can decide whether you want to load your widgets synchronously, that is, have your widget's HTML, CSS, and JavaScript code loaded along with the rest of the page from the server, or load asynchronously, so all static content on the page will load and once the main document is loaded, the content of your widget will be loaded using JavaScript. By default, all widgets are loaded asynchronously.
+You can decide whether you want to load your widgets synchronously, that is, have your widgets' HTML, CSS, and JavaScript code loaded along with the rest of the page from the server, or asynchronously, so that all the static content of the page will be loaded and once the main document is loaded, the content of your widget will be loaded via JavaScript. By default, all widgets are loaded asynchronously.
 
 To change the way each widget loads, go to the edit view of the page containing the widget, select the widget and check or uncheck the "Sync loading" option.
 
