@@ -33,7 +33,7 @@ For more information on these integrations, see the [Identity Providers](https:/
 
 
 ### Messaging Integration
-Integration with messaging systems allows the sending of notification messages and marketing campaigns to end users who are enabled within a Realm in Modyo Customers.
+Integration with messaging systems allows the sending of notification messages and marketing campaigns to end users who are enabled within a realm in Modyo Customers.
 
 We currently support the following messaging channels:
 * Email
