@@ -288,6 +288,54 @@ EXAMPLE
 
 ```
 
+- **`modyo-cli preview`**
+
+The `preview` command allows you to preview a widget locally and view it in the style of your site, before publishing it.
+
+**Requirements: **
+To make use of the `preview` command, make sure you have:
+
+- A properly configured [.env] file (https://docs.modyo.com/es/platform/channels/cli.html#configuracion-inicial). The `MODYO_ACCOUNT_URL`, `MODYO_SITE_HOST` or `MODYO_SITE_ID` and `MODYO_TOKEN` fields are indispensable.
+- A local server running with the widget you want to preview.
+
+Once you have your `.env` file configured and your project running on the local server, follow these steps:
+
+1. Open a new terminal window.
+2. Run the `modyo-cli preview` command.
+
+:::warning Important
+
+To see a change, you must manually refresh your web app. Click **refresh** to load the changes.
+
+:::
+
+Modyo uses default variables for the preview of widgets, you can modify them as needed. The predefined variables are:
+
+  - `MODYO_LOCAL_PORT`: Local server port (default: `8080`)
+  - `MODYO_LOCAL_DOM_ID`: The ID of the widget's container element (default: `widgetName`)
+  - `MODYO_LOCAL_ENTRY_JS`: The main JavaScript file (default: `main.js`)
+
+
+In addition, you can select whether you want to preview your widget in the published version of your site or in the editable version. To do this, click on the box under **templates**. The text will change from **published** to **editable**.
+
+
+These commands allow you to select the local entry points that you want to use.
+
+
+    OPTIONS
+
+ -p, —port=<value> [default: 8080) Deploy local running widget port
+ -s, —dom-id=<value> [default: widgetName] Container id of the widget
+ -j, —entry-js=<value> [default: main.js] Entry JS file of the widget
+
+ EXAMPLE
+
+ MODYO_LOCAL_PORT=8080
+ modyo_local_dom_id=WidgetName
+ modyo_local_entry_js=main.js
+
+
+
 ### Code Splitting
 
 
@@ -319,6 +367,6 @@ To package a file as a zip in Modyo CLI use these options:
 Example:
 
 ```
-modyo-cli push --zip --zip-entry-css=main.css --zip-entry-js=main.js 
+modyo-cli push --zip --zip-entry-css=main.css --zip-entry-js=main.js
 
 ```
