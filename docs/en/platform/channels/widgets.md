@@ -97,6 +97,11 @@ To create a new Widget and have a _micro frontend_ for your sites and posts, fol
 1. Customize your widget using HTML, CSS, JavaScript, or Liquid.
 1. Once finished, click **Publish**.
 
+:::tip Tip
+
+Modyo allows you to preview a widget locally and view it in the style of your site before publishing it. To do this, review the related [documentation] (https://docs.modyo.com/en/platform/channels/cli.html#quick-guide).
+:::
+
 ## Widget variables
 
 In the variables tab you can see the list of variables created in the widget, and their respective actions for:
