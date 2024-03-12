@@ -112,7 +112,7 @@ Security and performance tools are implemented much like analytics and product m
 ### Integration with public APIs
 Integrations with external public APIs are done directly from the Modyo Channels frontend, using Widgets developed in Javascript that have the functionality of invoking content and executing actions using the HTTP protocol.
 
-Integrating APIs from Widgets requires endpoints that are publicly exposed to the Internet (or on Intranet in case of private deployments). Depending on the security policies configured on the endpoint, a domain validation by CORS may be required.
+Integrating APIs from Widgets requires endpoints that are publicly exposed to the Internet (or Intranet in case of private deployments). Depending on the security policies configured on the endpoint, a domain validation by CORS may be required.
 
 ### Integration with private APIs
 Private APIs behave similarly to public APIs, with the difference that they require authentication. This authentication can be initiated directly by the frontend from a Modyo Channels Widget or can be based on a security token previously negotiated by Modyo Customers and some SSO integration.
