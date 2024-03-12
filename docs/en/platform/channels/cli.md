@@ -295,7 +295,7 @@ The `preview` command allows you to preview a widget locally and view it styled 
 **Requirements:**
 To make use of the `preview` command, make sure you have:
 
-- A properly configured [.env](https://docs.modyo.com/es/platform/channels/cli.html#configuracion-inicial) file. The `MODYO_ACCOUNT_URL`, `MODYO_SITE_HOST` or `MODYO_SITE_ID`, and `MODYO_TOKEN` fields are indispensable.
+- A properly configured [.env](https://docs.modyo.com/es/platform/channels/cli.html#configuracion-inicial) file. The `MODYO_ACCOUNT_URL`, `MODYO_SITE_HOST` or `MODYO_SITE_ID`, and `MODYO_TOKEN` fields are requisite.
 - A local server running with the widget you want to preview.
 
 Once you have your `.env` file configured and your project running on the local server, follow these steps:
