@@ -324,15 +324,15 @@ These commands allow you to select the local entry points that you want to use.
 
     OPTIONS
 
- -p, —port=<value> [default: 8080) Deploy local running widget port
- -s, —dom-id=<value> [default: widgetName] Container id of the widget
- -j, —entry-js=<value> [default: main.js] Entry JS file of the widget
+    -p, –port=<value> [default: 8080) Deploy port local widget running
+    -s, –dom-id=<value> [default: widgetName] Container id of the widget
+    -j, –entry-js=<value> [default: main.js] Entry JS file of the widget
 
- EXAMPLE
+    EXAMPLE
 
- MODYO_LOCAL_PORT=8080
- modyo_local_dom_id=WidgetName
- modyo_local_entry_js=main.js
+    MODYO_LOCAL_PORT=8080
+    MODYO_LOCAL_DOM_ID=widgetName
+    MODYO_LOCAL_ENTRY_JS=main.js
 
 
 
