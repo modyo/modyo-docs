@@ -158,7 +158,7 @@ To learn more about internationalization and vue-i18n, see [Internationalization
 
 ### Configuration
 
-In the configuration file, you will get the language of the site that you have on the platform. First, the LANG constant is initialized in the `i18n.js` file.
+In the configuration file, you will get the language of the site that you have on the platform. First, initialize the LANG constant in the `i18n.js` file.
 
 ```js{4,11}
 import Vue from 'vue';
