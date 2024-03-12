@@ -309,10 +309,10 @@ To see a change, you must manually refresh your web app. Click **refresh** to lo
 
 :::
 
-Modyo uses default variables for the preview of widgets, you can modify them as needed. The predefined variables are:
+Modyo uses default variables for widgets preview, you can modify them as needed. The predefined variables are:
 
   - `MODYO_LOCAL_PORT`: Local server port (default: `8080`)
-  - `MODYO_LOCAL_DOM_ID`: The ID of the widget's container element (default: `widgetName`)
+  - `MODYO_LOCAL_DOM_ID`: ID of the widget's container element (default: `widgetName`)
   - `MODYO_LOCAL_ENTRY_JS`: The main JavaScript file (default: `main.js`)
 
 
