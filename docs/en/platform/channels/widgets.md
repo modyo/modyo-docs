@@ -133,7 +133,7 @@ You can decide whether you want to load your widgets synchronously, that is, hav
 To change the way each widget loads, go to the edit view of the page containing the widget, select the widget and check or uncheck the "Sync loading" option.
 
 :::warning Warning
-Keep in mind that using very heavy widgets synchronously can be the cause of bad performance in your pages, you should carefully decide which widgets will load synchronously and which ones will load asynchronously.
+Keep in mind that using very large widgets synchronously may decrease the performance of your page, therefore you should carefully decide which widgets will load synchronously and which ones will load asynchronously.
 :::
 
 ## Use Internationalization (i18n)
