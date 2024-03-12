@@ -118,6 +118,44 @@ Puedes cambiar la vista y el recorte de la imagen de dos maneras:
 Para restaurar el archivo, abre nuevamente la ventana de edición de propiedades y da click en **Restore Original**, esto elimina permanentemente las modificaciones realizadas.
 
 
+## Redimensionar una imagen
+
+En Modyo puedes redimensionar dinámicamente una imagen, lo que te permite modificar el tamaño de la imagen sin perder calidad y garantizar que se ajuste a la pantalla del dispositivo de tus usuarios.  Este redimensionamiento lo haces con código Liquid, en el área de trabajo donde hayas insertado la imagen.
+
+
+:::warning Importante
+Te recomendamos siempre usar el tag de Liquid de una imagen para incluirla en tu contenido y no el asset URL. De esta forma, cualquier cambio que hagas en la imagen, se reflejará en todos los lugares donde se use la imagen.
+:::
+
+
+Para redimensionar una imagen debes primero copiar el código Liquid para renderizar la imagen, para eso:
+
+1. Haz click en content.
+1. Selecciona el espacio donde está la imagen que quieres modificar.
+1. Haz click en media.
+1. Haz click sobre la imagen.
+1. Haz click en el ícono de copiar, junto al tag de Liquid de la imagen.
+
+
+Una vez que tengas el código Liquid de la imagen, accede al área de trabajo donde quieres insertar la imagen, ya sea en plantillas, pages o widgets y sigue estos pasos:
+
+1. Pega el código Liquid. Debe verse similar a esto:
+`{{ 'ec0a3e4-ccdb-48c5-87be-5e1eca560dee' | asset_image }}`
+2. Agrega el filtro de Liquid, puede ser height, width o quality, siguiendo cualquiera de  estos  formatos:
+- `asset_image: width: XXX` donde XXX es el tamaño en píxeles deseado.
+- `asset_image: quality: XX` donde XX es el porcentaje de calidad deseado.
+- `asset_image: width: XXX, quality: XX, widths: ‘XXX, XXX, XXX, sizes: (min-width: XXXpx) XXXpx` adaptando los valores según tus necesidades para asegurar que la imagen se ajuste a las diferentes pantallas y resoluciones de los dispositivos de tus usuarios, usando el atributo srcset para soporte responsivo.
+3. Da click en **guardar**.
+4. Da click en **publicar**.
+
+:::tip Tip
+
+Al redimensionar imágenes, se conserva la relación de aspecto original, por lo que la imagen se ajusta de manera proporcional, sin distorsionarse.
+
+Si incluyes solamente la altura o ancho de la imagen, automáticamente se calcula el valor faltante para mantener la relación de aspecto correcta de la imagen.
+:::
+
+
 ## Borrar un archivo
 
 Para borrar un archivo sigue estos pasos:
