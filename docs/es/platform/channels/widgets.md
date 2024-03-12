@@ -97,6 +97,11 @@ Para crear un nuevo Widget y tener un _micro frontend_ para tus sitios y publica
 1. Personaliza tu widget usando HTML, CSS, JavaScript, o Liquid.
 1. Una vez terminado, haz click en **Publicar**.
 
+:::tip Tip
+
+Modyo te permite previsualizar un widget localmente y verlo con el estilo de tu sitio antes de publicarlo. Para ello revisa la [documentación](https://docs.modyo.com/en/platform/channels/cli.html#quick-guide) relacionada.
+:::
+
 ## Variables del Widget
 
 En la pestaña de variables puedes ver el listado de variables creadas en el widget, y sus respectivas acciones para:
@@ -222,7 +227,7 @@ function loadLocaleMessages() {
   const locales = require.context('./locales', true, /[A-Za-z0-9-_,\s]+\.json$/i);
   const messages = {};
   locales.keys().forEach((key) => {...});
- 
+
   messages['es-CL'] = {
     ...messages['es-CL'],
     validations: esCL.messages,
