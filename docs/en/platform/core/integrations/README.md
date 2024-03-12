@@ -70,7 +70,7 @@ Modyo is in a continuous process of including new means of payment to incorporat
 
 Web sites and applications built on Modyo can be natively integrated into a large number of systems using mainly HTML and Javascript standards, using the Modyo Channels template editor, which provides complete access and control of the source code of the sites managed on it.
 
-The following integrations correspond to the most commonly requested integrations.
+The following correspond to the most commonly requested integrations.
 
 ### Analytics Tools
 Web analytics tools integrated into each of the pages of a site by including scripts within the decorators or layouts. In this category we can mention tools such as:
@@ -81,7 +81,7 @@ Web analytics tools integrated into each of the pages of a site by including scr
 - Segment
 - Snowplow
 
-By using Liquid specific tags, Modyo Channels is able to interpolate context information to tracking events, such as user name, email, unique identifiers, segments to which the user belongs, among many others.
+By using Liquid specific tags, Modyo Channels is able to interpolate context information to tracking events, such as username, email, unique identifiers, segments to which the user belongs, among many others.
 
 ### Marketing Tools
 Digital marketing tools that allow to alter the user experience according to previously established rules, type A/B testing, or similar. In this category we can mention tools such as:
