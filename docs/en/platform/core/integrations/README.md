@@ -53,7 +53,7 @@ This type of integration is only available for events occurring within the Modyo
 
 
 ### Integration with payment methods
-Integration with payment methods is activated in Modyo as a mechanism that allows users to collect amounts of money integrated into a previously defined flow, using the Modyo Commerce API. Modyo has native features of integration into different means of payment commonly used in Latin America, among which we can mention:
+Integration with payment methods is activated in Modyo as a mechanism that allows charging users amounts of money, integrated into a predefined flow, through the Modyo Commerce API. Modyo has native integration features for different payment methods commonly used in Latin America, among which we can mention:
 - WebPay
 - Bancard
 - Khipu
