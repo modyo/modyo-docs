@@ -343,7 +343,7 @@ These commands allow you to select the local entry points that you want to use.
 
 However, by including external libraries or increasing the complexity of a widget, you can face excessive load times or exceed the size limits established for widgets in Modyo, negatively affecting the development experience and that of the user.
 
-The _code splitting_ technique allows you to divide the code of your widgets into components that are loaded on demand or in parallel, solving these problems. The benefits of code splitting include:
+The _code splitting_ technique allows you to divide your widgets' code into components that are loaded on demand or in parallel, solving these problems. The benefits of code splitting include:
 
 * Reduction in loading speed.
 * Improved interaction time.
