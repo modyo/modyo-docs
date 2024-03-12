@@ -13,7 +13,7 @@ Platform integrations correspond to all those integrations that are established 
 The most relevant platform integrations are reviewed below.
 
 ### Integration with CRMs and CDPs
-Customer Relationship Management (CRM) and Customer Data Platform (CDP) systems manage customer data interconnected to different business applications to provide a unified view of customer behavior.
+Customer Relationship Management (CRM) and Customer Data Platform (CDP) systems manage customer data interconnected with different business applications to provide a unified view of customer behavior.
 
 [Modyo Customers](https://docs.modyo.com/en/platform/customers/) is the application within Modyo where the actions and business events of authenticated users, carried out on the different digital channels managed by the platform, converge. Modyo Customers allows you to segment audiences, using both information about user behavior and the data in their profiles. It is precisely the latter that can be enriched by integrating systems such as CRMs and CDPs. To carry out this type of integration, the Modyo Customers administrative API is used, which allows users to obtain information in Modyo as well as update their attributes if required. In addition, this API allows the execution of administrative tasks such as creating new users or deactivating them on the platform.
 
