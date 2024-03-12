@@ -99,7 +99,7 @@ To create a new Widget and have a _micro frontend_ for your sites and posts, fol
 
 :::tip Tip
 
-Modyo allows you to preview a widget locally and view it in the style of your site before publishing it. To do this, review the related [documentation] (https://docs.modyo.com/en/platform/channels/cli.html#quick-guide).
+Modyo allows you to preview a widget locally and see it styled for your site before publishing it. To do this, check the related [documentation](https://docs.modyo.com/en/platform/channels/cli.html#quick-guide).
 :::
 
 ## Widget variables
