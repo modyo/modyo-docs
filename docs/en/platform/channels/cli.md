@@ -316,7 +316,7 @@ Modyo uses default variables for widgets preview, you can modify them as needed.
   - `MODYO_LOCAL_ENTRY_JS`: Main JavaScript file (default: `main.js`)
 
 
-In addition, you can select whether you want to preview your widget in the published version of your site or in the editable version. To do this, click on the box under **templates**. The text will change from **published** to **editable**.
+Also, you can select whether you want to preview your widget in the published version of your site or in the editable version. To do this, click on the box under **templates**. The text will change from **published** to **editable**.
 
 
 These commands allow you to select the local entry points that you want to use.
