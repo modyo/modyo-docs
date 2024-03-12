@@ -116,7 +116,7 @@ When modifying a variable, you will be able to decide the name and default value
 
 When you use the list of possible values, you must leave each value on a new line, and leave a `*` in front of the value you want to be taken as the default.
 
-When you instantiate the widget on a page, you will see that now all variables being used (whether account, site, or widget) will be listed as "disabled" with their default value. If you want to overwrite the value of a particular variable for that instance of the widget on that page, you must select the checkbox to the left of the variable and change the value it takes.
+When you instantiate the widget on a page, you will see all variables being used (whether account, site, or widget) listed as "disabled" with their default value. To overwrite the value of a particular variable for that instance of the widget on that page, select the checkbox to the left of the variable and change its value.
 
 :::warning Warning
 Adding the widget on a page will list all the variables that that widget is using, so if you don't see any of the variables that are defined in the widget, chances are that the variable in the widget code is not being used.
