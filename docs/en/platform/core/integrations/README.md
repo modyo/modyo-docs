@@ -29,7 +29,7 @@ Modyo supports integration to SSO systems in two ways:
 - Integration of administrators user accounts
 - Integration of end-user accounts
 
-For more information on these integrations, see the [Identity Providers] section (https://docs.modyo.com/es/platform/core/integrations/identity-providers.html).
+For more information on these integrations, see the [Identity Providers](https://docs.modyo.com/en/platform/core/integrations/identity-providers.html) section.
 
 
 ### Integration with messaging
