@@ -313,7 +313,7 @@ Modyo uses default variables for widgets preview, you can modify them as needed.
 
   - `MODYO_LOCAL_PORT`: Local server port (default: `8080`)
   - `MODYO_LOCAL_DOM_ID`: ID of the widget's container element (default: `widgetName`)
-  - `MODYO_LOCAL_ENTRY_JS`: The main JavaScript file (default: `main.js`)
+  - `MODYO_LOCAL_ENTRY_JS`: Main JavaScript file (default: `main.js`)
 
 
 In addition, you can select whether you want to preview your widget in the published version of your site or in the editable version. To do this, click on the box under **templates**. The text will change from **published** to **editable**.
