@@ -212,7 +212,7 @@ The structure of the language file must be a **json:** object
 
 In order to locate the error messages that the validator shows, you need to make a small modification to the **i18n.js** configuration file.
 
-1. We import error messages into the languages we need.
+1. Import error messages into the needed languages.
 2. In the **LoadLocaleMessages** function, we add the validator messages in the corresponding language.
 3. Return the modified **messages** object.
 
