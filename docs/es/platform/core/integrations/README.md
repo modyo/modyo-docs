@@ -13,7 +13,7 @@ Las integraciones de plataforma corresponde a todas aquellas integraciones que s
 A continuación se revisan las integraciones de plataforma más relevantes.
 
 ### Integración con CRMs y CDPs
-Los sistemas de Customer Relationship Management (CRM) y de Customer Data Platform (CDP) gestionan datos de clientes interconectados a diferentes aplicaciones de negocio con el fin de brindar una visión unificada del comportamiento de éstos. 
+Los sistemas de Customer Relationship Management (CRM) y de Customer Data Platform (CDP) gestionan datos de clientes interconectados a diferentes aplicaciones de negocio con el fin de brindar una visión unificada del comportamiento de éstos.
 
 [Modyo Customers](https://docs.modyo.com/es/platform/customers/) es la aplicación dentro de Modyo en donde convergen las acciones y eventos de negocios de los usuarios autenticados, realizadas sobre los diferentes canales digitales gestionados por la plataforma. Modyo Customers permite segmentar las audiencias, utilizando tanto información del comportamiento de los usuarios como de los datos en sus perfiles. Es precisamente esto último lo que puede ser enriquecido mediante la integración de sistemas como CRMs y CDPs. Para realizar este tipo de integración, se hace uso del API administrativa de Modyo Customers, la que permite obtener la información de los usuarios en Modyo así como también actualizar los atributos de éstos en caso de ser requerido. Además, esta API permite la ejecución de tareas administrativas como la creación de nuevos usuarios o la desactivación de ellos en la plataforma.
 
@@ -23,23 +23,13 @@ La API de Modyo Customers también se puede usar para mantener los registros act
 
 
 ### Integración con SSO
-Los sistemas de Single Sign-On (SSO) son una pieza clave en la estrategia de integración del DXP de Modyo hacia los sistemas de negocio.
+Los sistemas de Single Sign-On (SSO) son fundamentales en la estrategia de integración del DXP de Modyo con los sistemas de negocio.
 
-Actualmente la plataforma soporta la integración a sistemas de SSO de dos formas:
+Modyo soporta la integración a sistemas de SSO de dos formas:
 - Integración de cuentas de usuario administradores
 - Integración de cuentas de usuarios finales
 
-En el caso de la integración con cuentas de administración, Modyo cuenta con soporte nativo para:
-* LDAP
-* SAML
-* OAuth 2.0
-* OIDC
-* Google Workspace.
-
-En el caso de la integración con cuentas de usuario, Modyo cuenta con soporte nativo para:
-* OAuth 2.0
-* OIDC
-* Google Workspace.
+Para obtener más información sobre estas integraciones, consulta la sección [Proveedores de identidad](https://docs.modyo.com/es/platform/core/integrations/identity-providers.html).
 
 
 ### Integración con mensajería
@@ -47,7 +37,7 @@ La integración con sistemas de mensajería permite el envío de mensajes de not
 
 Actualmente soportamos los canales de mensajería:
 * Email
-* SMS 
+* SMS
 * Whatsapp for Business
 * Web Push
 * Push
@@ -104,7 +94,7 @@ Mediante el acceso al código fuente de las páginas y Widgets que componen el s
 Las herramientas de chat son comúnmente usadas en acciones de soporte o marketing conversacional. La integración de estos componentes se realiza mediante un código de Javascript el cual instala el agente de comunicación en el sitio Web, típicamente en una zona de la pantalla que no interrumpa la visualización del contenido. En esta categoría podemos mencionar herramientas cómo:
 - Intercom
 - Drift
-- Zendesk Chat 
+- Zendesk Chat
 - SalesForce Service Cloud
 
 ### Herramientas de Product Management
