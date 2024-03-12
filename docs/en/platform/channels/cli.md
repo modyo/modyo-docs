@@ -290,9 +290,9 @@ EXAMPLE
 
 - **`modyo-cli preview`**
 
-The `preview` command allows you to preview a widget locally and view it in the style of your site, before publishing it.
+The `preview` command allows you to preview a widget locally and view it styled for you site, before publishing it.
 
-**Requirements: **
+**Requirements:**
 To make use of the `preview` command, make sure you have:
 
 - A properly configured [.env] file (https://docs.modyo.com/es/platform/channels/cli.html#configuracion-inicial). The `MODYO_ACCOUNT_URL`, `MODYO_SITE_HOST` or `MODYO_SITE_ID` and `MODYO_TOKEN` fields are indispensable.
