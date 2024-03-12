@@ -258,7 +258,7 @@ Follow these steps to create a snippet with Liquid variables:
 1. In the platform's side menu, expand **Channels**, and click **Sites**.
 2. Click on your site.
 3. In your site menu, click **Templates** and select **Snippets**.
-4. Add a new **Custom Snippet**. For this example use `liquid2js_js`, but it can be any other name.
+4. Add a new **Custom Snippet**. For this example, we named the snippet `liquid2js_js`, but it can have any name.
 
 5. Open the javascript section and paste the code:
 ```js
