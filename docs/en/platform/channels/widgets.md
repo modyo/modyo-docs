@@ -177,7 +177,7 @@ export default new VueI18n({
 });
 ```
 
-We have to create the variable `liquid.lang` in Modyo Platform. To create this variable, follow these steps:
+You must create the variable `liquid.lang` in Modyo Platform. To create this variable, follow these steps:
 
 1. In your browser, log in to Modyo Platform.
 1. Expand **Channels**, and click **Sites**.
