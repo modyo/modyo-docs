@@ -119,7 +119,7 @@ When you use the list of possible values, you must leave each value on a new lin
 When you instantiate the widget on a page, you will see all variables being used (whether account, site, or widget) listed as "disabled" with their default value. To overwrite the value of a particular variable for that instance of the widget on that page, select the checkbox to the left of the variable and change its value.
 
 :::warning Warning
-Adding the widget on a page will list all the variables that that widget is using, so if you don't see any of the variables that are defined in the widget, chances are that the variable in the widget code is not being used.
+Adding the widget on a page will list all the variables that that widget is using. If you don't see any of the variables that are defined in the widget, it is likely that the variable in the widget code is not being used.
 :::
 
 ## Synchronous and asynchronous loading
