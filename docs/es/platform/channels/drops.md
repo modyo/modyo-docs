@@ -576,6 +576,8 @@ Estos drops obtienen la información relevante a los Widgets.
 
 ### Custom Widget
 
+| Descripción  | Ejemplo  |
+|---|---|
 | **custom_widget.manager_uuid** El uuid del custom widget. | ```a6090e3f-1d46-44e3-885c-14971ca8fc27``` |
 | **custom_widget.sync** Boolean que determina si la carga es sincrónica (true) o asincrónica (false). | ```true``` |
 | **custom_widget.css** Un string con el CSS asociado al widget. |  |
@@ -585,11 +587,15 @@ Estos drops obtienen la información relevante a los Widgets.
 
 ### Rich Text Widget
 
+| Descripción  | Ejemplo  |
+|---|---|
 | **rich_text_widget.html** El contenido html del widget. | ```<p><strong><span style=\"color: rgb(216, 55, 98);\">Hello World&nbsp;<span class=\"fr-emoticon fr-deletable\">😃</span>&nbsp;</span></strong></p>``` |
 
 
 ### Text Widget
 
+| Descripción  | Ejemplo  |
+|---|---|
 | **text_widget.html** El html asociado al text widget. | ```Hola mundo``` |
 
 
