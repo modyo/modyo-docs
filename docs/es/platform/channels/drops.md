@@ -498,6 +498,7 @@ Usa los drops de Content Type para obtener información de tus tipos de contenid
 
 # Usuario
 
+
 Usa los drops de user para obtener información de tus usuarios del módulo Customers.
 
 | Descripción  | Ejemplo  |
@@ -531,6 +532,7 @@ Usa los drops de user para obtener información de tus usuarios del módulo Cust
 | **user.unread_notifications_count** El conteo de las notificaciones no leídas.  | ```2``` |
 | **user.username** El username del usuario.  | ```ivan@modyo.com``` |
 | **user.uuid** El uuid del usuario.  | ```cdc7f0e2-b5c3-4b92-aa34-962ffa0bi572``` |
+  **user.realm_uid** El reino del usuario.  |   ```my-realm```
 
 ## User Agent
 
