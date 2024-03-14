@@ -532,7 +532,7 @@ Use the user drops to get information about your users from the Customers module
 | **user.unread_notifications_count** The count of unread notifications.  | ```2``` |
 | **user.username** The user's username.  | ```ivan@modyo.com``` |
 | **user.uuid** The uuid of the user.  | ```cdc7f0e2-b5c3-4b92-aa34-962ffa0bi572``` |
-  **user.realm_uid** The user's kingdom. | ```my-realm```
+  **user.realm_uid** The user's realm. | ```my-realm```
 
 ## User Agent
 
