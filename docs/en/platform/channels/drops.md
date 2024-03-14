@@ -571,7 +571,7 @@ These drops obtain the information relevant to the Widgets.
 | Description  | Example  |
 |---|---|
 | **content_list_widget.context_params** The context parameters associated with the widget.  | ```{:page=>1, :per_page=>10, :account=> #account_object, :user=>nil, :version_type=>:currents}``` |
-| ** [content_list_widget.entries] (#entrada)** Array of Entries objects associated with the widget.  | |
+| **[content_list_widget.entries] (#entrada)** Array of Entries objects associated with the widget.  | |
 | **content_list_widget.show_caption** Boolean if the show caption option is active. | ```true``` |
 | **content_list_widget.space_id** The ID of the Space associated with the widget. | ```5``` |
 | **content_list_widget.type_uid** The uid of the type associated with the widget. | ```the-new-type``` |
