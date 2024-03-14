@@ -578,12 +578,12 @@ These drops obtain the information relevant to the Widgets.
 
 ### Custom Widget
 
-| **custom_widget.manager_uuid** El uuid del custom widget. | ```a6090e3f-1d46-44e3-885c-14971ca8fc27``` |
-| **custom_widget.sync** Boolean que determina si la carga es sincrónica (true) o asincrónica (false). | ```true``` |
-| **custom_widget.css** Un string con el CSS asociado al widget. |  |
-| **custom_widget.html** Un string con el HTML asociado al widget. |  |
-| **custom_widget.js** Un string con el JavaScript asociado al widget. |  |
-| **custom_widget.version** La versión hash del custom widget. | ```a666a9243ea76806e4fcebfcd99650b27f162ff5f9e4c4719ab9e0f5c7d159fe``` |
+| **custom_widget.manager_uuid** The uuid of the custom widget. | ```a6090e3f-1d46-44e3-885c-14971ca8fc27``` |
+| **custom_widget.sync** Boolean that determines if the load is synchronous (true) or asynchronous (false). | ```true``` |
+| **custom_widget.css** A string with the CSS associated to the widget. |  |
+| **custom_widget.html** A string with the HTML associated to the widget |  |
+| **custom_widget.js** A string with the JavaScript associated to the widget. |  |
+| **custom_widget.version** The hash version of the custom widget. | ```a666a9243ea76806e4fcebfcd99650b27f162ff5f9e4c4719ab9e0f5c7d159fe``` |
 
 ### Rich Text Widget
 
