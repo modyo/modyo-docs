@@ -144,7 +144,7 @@ Una vez que tengas el código Liquid de la imagen, accede al área de trabajo do
 2. Agrega el filtro de Liquid, puede ser height, width o quality, siguiendo cualquiera de  estos  formatos:
 - `asset_image: width: XXX` donde XXX es el tamaño en píxeles deseado.
 - `asset_image: quality: XX` donde XX es el porcentaje de calidad deseado.
-- `asset_image: width: XXX, quality: XX, widths: ‘XXX, XXX, XXX, sizes: (min-width: XXXpx) XXXpx` adaptando los valores según tus necesidades para asegurar que la imagen se ajuste a las diferentes pantallas y resoluciones de los dispositivos de tus usuarios, usando el atributo srcset para soporte responsivo.
+- `asset_image: width: XXX, quality: XX, widths: ‘XXX, XXX, XXX, sizes: (min-width: XXXpx) XXXpx` adaptando los valores según tus necesidades para asegurar que la imagen se ajuste a las diferentes pantallas y resoluciones de los dispositivos de tus usuarios, usando el atributo [srcset](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/srcset) para soporte responsivo.
 3. Da click en **guardar**.
 4. Da click en **publicar**.
 

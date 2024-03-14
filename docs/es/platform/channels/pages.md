@@ -108,7 +108,7 @@ Además, Modyo convierte la imagen a formato webp con calidad lossless de compre
 1. Da click en **actualizar información**.
 
 :::tip Tip
-Es necesario que el CDN de tu cuenta este en la nube para que los cambios se reflejen de inmediato, de lo contrario deberás solicitar la invalidación de caché a Modyo.
+Es necesario que el CDN de tu cuenta esté en la nube para que los cambios se reflejen de inmediato, de lo contrario deberás solicitar la invalidación de caché a Modyo.
 :::
 
 ## Página de Widget
