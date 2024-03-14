@@ -602,6 +602,6 @@ These drops obtain the information relevant to the Widgets.
 
 <style>
 table, th, td {
- border: 1px solid white;
+  border: 1px solid white;
 }
 </style>
