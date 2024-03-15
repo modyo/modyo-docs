@@ -470,7 +470,7 @@ Despliega contenido dinámico creado en tus espacios desde cualquier parte de tu
 
 | Descripción  | Ejemplo  |
 |---|---|
-| **[space.categories](#categoria)** Arreglo de objetos del tipo categoria que contiene todas las categorias del espacio. |  |
+| **[spaces['nombre_del_espacio'].categories](#categoria)** Arreglo de objetos del tipo categoria que contiene todas las categorias del espacio. |  |
 | **[space.entries](#entrada)** Objeto de tipo Página que cumplen con los parámetros de búsqueda.  | |
 | **[space.types](#tipo-de-contenido)** Arreglo de objetos de tipos de contenido que contiene todos los tipos del espacio.  | |
 | **space.name** El nombre del espacio.  | ```Espacio Nuevo``` |
