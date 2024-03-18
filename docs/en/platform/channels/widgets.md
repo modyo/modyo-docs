@@ -97,7 +97,12 @@ To create a new Widget and have a _micro frontend_ for your sites and posts, fol
 1. Customize your widget using HTML, CSS, JavaScript, or Liquid.
 1. Once finished, click **Publish**.
 
-## Widget variables
+:::tip Tip
+
+Modyo allows you to preview a widget locally and see it styled for your site before publishing it. To do this, check the related [documentation](https://docs.modyo.com/en/platform/channels/cli.html#quick-guide).
+:::
+
+## Widget Variables
 
 In the variables tab you can see the list of variables created in the widget, and their respective actions for:
 
@@ -107,28 +112,28 @@ In the variables tab you can see the list of variables created in the widget, an
 
 Next to the name of each variable you will see an "overwritten" indicator if the variable also exists at the account or site level in the [global variables](/en/platform/core/key-concepts.html#global-variables).
 
-By modifying a variable, you can decide the name and default value that that variable will take in the widget. In addition, you can decide if you want to provide a list of values so that when you instantiate the widget on a page, you can choose between these different values.
+When modifying a variable, you will be able to decide the name and default value that this variable will take in the widget. In addition, you can decide if you want to make a list of values available so that when a widget is instantiated on a page, it is possible to choose between these different values.
 
 When you use the list of possible values, you must leave each value on a new line, and leave a `*` in front of the value you want to be taken as the default.
 
-When you instantiate the widget on a page, you will see that now all variables being used (whether account, site, or widget) will be listed as "disabled" with their default value. If you want to overwrite the value of a particular variable for that instance of the widget on that page, you must select the checkbox to the left of the variable and change the value it takes.
+When you instantiate the widget on a page, you will see all variables being used (whether account, site, or widget) listed as "disabled" with their default value. To overwrite the value of a particular variable for that instance of the widget on that page, select the checkbox to the left of the variable and change its value.
 
 :::warning Warning
-Adding the widget on a page will list all the variables that that widget is using, so if you don't see any of the variables that are defined in the widget, chances are that the variable in the widget code is not being used.
+Adding the widget on a page will list all the variables that that widget is using. If you don't see any of the variables that are defined in the widget, it is likely that the variable in the widget code is not being used.
 :::
 
 ## Synchronous and asynchronous loading
 
 :::warning Warning
-This is an experimental feature and it may be subject to changes.
+This is an experimental feature and may be subject to changes.
 :::
 
-You can decide whether you want to load your widgets synchronously, that is, have your widget's HTML, CSS, and JavaScript code loaded along with the rest of the page from the server, or load asynchronously, so all static content on the page will load and once the main document is loaded, the content of your widget will be loaded using JavaScript. By default, all widgets are loaded asynchronously.
+You can decide whether you want to load your widgets synchronously, that is, have your widgets' HTML, CSS, and JavaScript code loaded along with the rest of the page from the server, or asynchronously, so that all the static content of the page will be loaded and once the main document is loaded, the content of your widget will be loaded via JavaScript. By default, all widgets are loaded asynchronously.
 
 To change the way each widget loads, go to the edit view of the page containing the widget, select the widget and check or uncheck the "Sync loading" option.
 
 :::warning Warning
-Keep in mind that using very heavy widgets synchronously can be the cause of bad performance in your pages, you should carefully decide which widgets will load synchronously and which ones will load asynchronously.
+Keep in mind that using very large widgets synchronously may decrease the performance of your page, therefore you should carefully decide which widgets will load synchronously and which ones will load asynchronously.
 :::
 
 ## Use Internationalization (i18n)
@@ -153,7 +158,7 @@ To learn more about internationalization and vue-i18n, see [Internationalization
 
 ### Configuration
 
-In the configuration file we will get the language of the site that we have on the platform. First, the LANG constant is initialized in the `i18n.js` file.
+In the configuration file, you will get the language of the site that you have on the platform. First, initialize the LANG constant in the `i18n.js` file.
 
 ```js{4,11}
 import Vue from 'vue';
@@ -172,7 +177,7 @@ export default new VueI18n({
 });
 ```
 
-We have to create the variable `liquid.lang` in Modyo Platform. To create this variable, follow these steps:
+You must create the variable `liquid.lang` in Modyo Platform. To create this variable, follow these steps:
 
 1. In your browser, log in to Modyo Platform.
 1. Expand **Channels**, and click **Sites**.
@@ -205,10 +210,10 @@ The structure of the language file must be a **json:** object
 
 ### Form validation
 
-In order to locate the error messages that the validator shows, we need to make a small modification to the **i18n.js** configuration file.
+In order to locate the error messages that the validator shows, you need to make a small modification to the **i18n.js** configuration file.
 
-1. We import error messages into the languages we need.
-2. In the **LoadLocaleMessages** function, we add the validator messages in the corresponding language.
+1. Import error messages into the needed languages.
+2. In the **LoadLocaleMessages** function, add the validator messages in the corresponding language.
 3. Return the modified **messages** object.
 
 ```js
@@ -244,16 +249,16 @@ function loadLocaleMessages() {
 
 ## Using Liquid in Widgets
 
-Create a javascript object in Snippets so you can make use of Liquid in your Widgets.
+Create a javascript object in Snippets so that you can use Liquid in your Widgets.
 
-Widgets, since they are decoupled from the platform, have the disadvantage of not being able to use Liquid directly, and we don't have access to [liquid drops](/en/platform/channels/drops), in order to work with them, we'll have to make them available via javascript from the platform. [**Liquid Markup**](/en/platform/channels/liquid-markup.html) is an important part of the platform, of how we build views, and access the content on it. It also gives us access to [**drops**](/en/platform/channels/drops), context variables that allow us to interact with our views more dynamically. For example, you can determine what content to show the user according to the segment to which they belong, hide a menu depending on the page being visited, and so on.
+Widgets, since they are decoupled from the platform, have the disadvantage of not being able to use Liquid directly, and we don't have access to [liquid drops](/en/platform/channels/drops), in order to work with them, you'll have to make them available via javascript from the platform. [**Liquid Markup**](/en/platform/channels/liquid-markup.html) is an important part of the platform, of how we build views, and how we access the content on it. It also gives you access to [**drops**](/en/platform/channels/drops), context variables that allow you to interact with your views more dynamically. For example, you can determine what content to show the user according to the segment to which they belong, hide a menu depending on the page being visited, and so on.
 
 
 Follow these steps to create a snippet with Liquid variables:
 1. In the platform's side menu, expand **Channels**, and click **Sites**.
 2. Click on your site.
 3. In your site menu, click **Templates** and select **Snippets**.
-4. Add a new **Custom Snippet**. For this example use `liquid2js_js`, but it can be any other name.
+4. Add a new **Custom Snippet**. For this example, we named the snippet `liquid2js_js`, but it can have any name.
 
 5. Open the javascript section and paste the code:
 ```js
