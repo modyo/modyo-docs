@@ -115,7 +115,7 @@ Create dynamic content in your spaces using Entries. In this object you have acc
 | **entry.excerpt** The excerpt associated with the entry. | ```This is the excerpt of a very cool entry``` |
 | **entry.account_url** The account url. | ```https://test.miModyo.com``` |
 | **entry.url** Canonical URL of the entry. | ```https://test.miModyo.com/entry``` |
-| ** [entry.author](#user)** The object of the user who wrote the post. | ```tag1, tag2``` |
+| **[entry.author](#user)** The object of the user who wrote the post. | ```tag1, tag2``` |
 | **entry.meta** The metadata object for the entry. | This object has the following attributes: uuid, published_at, locale, slug, created_at, updated_at, unpublished_at, and private. |
 | **[entry.fields](#field)** Array with objects from the fields in the entry. |  |
 
@@ -498,6 +498,7 @@ Use the Content Type drops to get information about your content types from the 
 
 # User
 
+
 Use the user drops to get information about your users from the Customers module.
 
 | Description  | Example  |
@@ -531,10 +532,11 @@ Use the user drops to get information about your users from the Customers module
 | **user.unread_notifications_count** The count of unread notifications.  | ```2``` |
 | **user.username** The user's username.  | ```ivan@modyo.com``` |
 | **user.uuid** The uuid of the user.  | ```cdc7f0e2-b5c3-4b92-aa34-962ffa0bi572``` |
+  **user.realm_uid** The user's realm. | ```my-realm```
 
 ## User Agent
 
-Use the user agent drops to get agent information from the web browser.
+Use user agent drops to get information from the web browser agent.
 
 | Description  | Example  |
 |---|---|
@@ -543,24 +545,24 @@ Use the user agent drops to get agent information from the web browser.
 | **user_agent.browser** A string with the browser name for the agent.  | |
 | **user_agent.browser_version** A string with the browser version for the agent.  | |
 | **user_agent.is_modyo_shell** Boolean that determines if the agent is being managed by a Modyo application  | |
-| **user_agent.platform** A string with the version of the agent's operating system.  | |
+| **user_agent.platform** A string containing the agent's operating system version.  | |
 
 
 # Widget
 
-These drops get the information relevant to Widgets.
+These drops obtain the information relevant to the Widgets.
 
 | Description  | Example  |
 |---|---|
 | **widget.cache_key** The cache key associated with the widget.  | ```widgets/content_list_widgets/506-20220215151403000000``` |
-| **widget.created_at** The creation date of the widget.  | ```Tue, 15 Feb 2022 15:14:03 UTC +00:00``` |
+| **widget.created_at** The date the widget was created.  | ```Tue, 15 Feb 2022 15:14:03 UTC +00:00``` |
 | **widget.id** The ID associated with the respective widget.  | ```506``` |
-| **widget.resolve_type** The type of the widget with underscore.  | ```content_list_widget``` |
+| **widget.resolve_type** The type of the underscored widget.  | ```content_list_widget``` |
 | **widget.title** The title of the widget.  | ```Content list``` |
 | **widget.css_class** The css class associated with the widget.  | ```content-list-widget``` |
 | **widget.name** The name of the widget.  | ```Content list``` |
 | **widget.type** The type of the widget.  | ```content-list``` |
-| **widget.use_default_title** Boolean indicating if the widget uses the default title.  | ```false``` |
+| **widget.use_default_title** Boolean indicating if the widget uses the title by default.  | ```false``` |
 | **widget.wid** The widget's wid.  | ```63ae60e2-d152-4c70-a5b0-ffa9916162e3``` |
 | **widget.width** The width configured in the widget.  | ```full``` |
 
@@ -568,8 +570,8 @@ These drops get the information relevant to Widgets.
 
 | Description  | Example  |
 |---|---|
-| **content_list_widget.context_params** The context parameters associated with the widget.  | ```{:page=>1, :per_page=>10, :account=>#account_object, :user=>nil, :version_type=>:currents}``` |
-| **[content_list_widget.entries](#entry)** Array of Entries type Objects associated with the widget.  | |
+| **content_list_widget.context_params** The context parameters associated with the widget.  | ```{:page=>1, :per_page=>10, :account=> #account_object, :user=>nil, :version_type=>:currents}``` |
+| **[content_list_widget.entries] (#entrada)** Array of Entries objects associated with the widget.  | |
 | **content_list_widget.show_caption** Boolean if the show caption option is active. | ```true``` |
 | **content_list_widget.space_id** The ID of the Space associated with the widget. | ```5``` |
 | **content_list_widget.type_uid** The uid of the type associated with the widget. | ```the-new-type``` |
@@ -578,14 +580,14 @@ These drops get the information relevant to Widgets.
 
 | **custom_widget.manager_uuid** The uuid of the custom widget. | ```a6090e3f-1d46-44e3-885c-14971ca8fc27``` |
 | **custom_widget.sync** Boolean that determines if the load is synchronous (true) or asynchronous (false). | ```true``` |
-| **custom_widget.css** A string with the CSS associated with the widget. | |
-| **custom_widget.html** A string with the HTML associated with the widget. | |
-| **custom_widget.js** A string with the JavaScript associated with the widget. | |
+| **custom_widget.css** A string with the CSS associated to the widget. |  |
+| **custom_widget.html** A string with the HTML associated to the widget |  |
+| **custom_widget.js** A string with the JavaScript associated to the widget. |  |
 | **custom_widget.version** The hash version of the custom widget. | ```a666a9243ea76806e4fcebfcd99650b27f162ff5f9e4c4719ab9e0f5c7d159fe``` |
 
 ### Rich Text Widget
 
-| **rich_text_widget.html** El contenido html del widget. | ```<p><strong><span style=\"color: rgb(216, 55, 98);\">Hello World&nbsp;<span class=\"fr-emoticon fr-deletable\">😃</span>&nbsp;</span></strong></p>``` |
+| **rich_text_widget.html** The html content of the widget. | ```<p><strong><span style=\"color: rgb(216, 55, 98);\">Hello World&nbsp;<span class=\"fr-emoticon fr-deletable\">😃</span>&nbsp;</span></strong></p>```|
 
 
 ### Text Widget

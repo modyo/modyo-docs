@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Modyo Command Line Interface
+# Modyo CLI
 
 La Interfaz de Línea de Comandos de Modyo (CLI) es una herramienta basada en dos principios fundamentales: aceleración e integración. Estos principios se implementan a través de los comandos _get_ y _push_, respectivamente.
 
@@ -29,7 +29,7 @@ $ yarn global add @modyo/cli #via yarn
 
 ```sh
 $ npx @modyo/cli #via npx
-$ npx @modyo/cli@version #via npx - señalando una versión en específico
+$ npx @modyo/cli@latest #via npx - señalando una versión en específico
 ```
 
 Para comprobar que la instalación fue correcta y confirmar la versión instalada del CLI, ejecuta este comando:
@@ -288,6 +288,54 @@ EXAMPLE
 
 ```
 
+- **`modyo-cli preview`**
+
+El comando `preview` te permite previsualizar un widget localmente y verlo con el estilo de tu sitio, antes de publicarlo.
+
+**Requisitos:**
+Para hacer uso del comando `preview`, asegúrate de tener:
+
+- Un archivo [.env](https://docs.modyo.com/es/platform/channels/cli.html#configuracion-inicial) correctamente configurado. Los campos `MODYO_ACCOUNT_URL`, `MODYO_SITE_HOST` o `MODYO_SITE_ID` y `MODYO_TOKEN ` son indispensables.
+- Un servidor local en ejecución con el widget que deseas previsualizar.
+
+Una vez tengas tu archivo `.env` configurado y tu proyecto funcionando en el servidor local, sigue estos pasos:
+
+1. Abre una nueva ventana de terminal.
+2. Ejecuta el comando `modyo-cli preview`.
+
+:::warning Importante
+
+Para visualizar un cambio, debes refrescar manualmente tu web app. Haz click en **refresh** para cargar los cambios.
+
+:::
+
+Modyo usa variables predeterminadas para la previsualización de widgets, puedes modificarlas según requieras. Las variables predefinadas son:
+
+  - `MODYO_LOCAL_PORT`: Puerto del servidor local (por defecto: `8080`)
+  - `MODYO_LOCAL_DOM_ID`: El ID del elemento contenedor del widget (por defecto: `widgetName`)
+  - `MODYO_LOCAL_ENTRY_JS`: El archivo JavaScript principal (por defecto: `main.js`)
+
+
+Además, puedes seleccionar si quieres previsualizar tu widget en la versión publicada de tu sitio o en la versión editable. Para ello, da click en la casilla debajo de **templates**. El texto cambiará de **publicada** a **editable**.
+
+
+Estos comandos te permiten seleccionar los entry points locales que quieres usar.
+
+
+    OPTIONS
+
+    -p, –port=<value> [default: 8080) Deploy port local widget running
+    -s, –dom-id=<value> [default: widgetName] Container id of the widget
+    -j, –entry-js=<value> [default: main.js] Entry JS file of the widget
+
+    EXAMPLE
+
+    MODYO_LOCAL_PORT=8080
+    MODYO_LOCAL_DOM_ID=widgetName
+    MODYO_LOCAL_ENTRY_JS=main.js
+
+
+
 ### Code Splitting
 
 
@@ -319,6 +367,6 @@ Para empaquetar un archivo como zip en Modyo CLI usa estas opciones:
 Ejemplo:
 
 ```
-modyo-cli --zip --zip-entry-css=main.css --zip-entry-js=main.js push
+modyo-cli push --zip --zip-entry-css=main.css --zip-entry-js=main.js
 
 ```

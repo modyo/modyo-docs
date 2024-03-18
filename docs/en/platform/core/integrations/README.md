@@ -13,7 +13,7 @@ Platform integrations correspond to all those integrations that are established 
 The most relevant platform integrations are reviewed below.
 
 ### Integration with CRMs and CDPs
-Customer Relationship Management (CRM) and Customer Data Platform (CDP) systems manage customer data interconnected to different business applications to provide a unified view of customer behavior. 
+Customer Relationship Management (CRM) and Customer Data Platform (CDP) systems manage customer data interconnected with different business applications to provide a unified view of customer behavior.
 
 [Modyo Customers](https://docs.modyo.com/en/platform/customers/) is the application within Modyo where the actions and business events of authenticated users, carried out on the different digital channels managed by the platform, converge. Modyo Customers allows you to segment audiences, using both information about user behavior and the data in their profiles. It is precisely the latter that can be enriched by integrating systems such as CRMs and CDPs. To carry out this type of integration, the Modyo Customers administrative API is used, which allows users to obtain information in Modyo as well as update their attributes if required. In addition, this API allows the execution of administrative tasks such as creating new users or deactivating them on the platform.
 
@@ -23,31 +23,21 @@ The Modyo Customers API can also be used to keep records up to date with other b
 
 
 ### Integration with SSO
-Single Sign-On (SSO) systems are a key part of Modyo's DXP integration strategy into business systems.
+Single Sign-On (SSO) systems are fundamental to Modyo's DXP integration strategy with business systems.
 
-Currently, the platform supports integration into SSO systems in two ways:
+Modyo supports integration to SSO systems in two ways:
 - Integration of administrators user accounts
 - Integration of end-user accounts
 
-In the case of integration with management accounts, Modyo has native support for:
-* LDAP
-* SAML
-* OAuth 2.0
-* OIDC
-* Google Workspace.
-
-In the case of user account integration, Modyo has native support for:
-* OAuth 2.0
-* OIDC
-* Google Workspace.
+For more information on these integrations, see the [Identity Providers](https://docs.modyo.com/en/platform/core/integrations/identity-providers.html) section.
 
 
-### Integration with messaging
-Integration with messaging systems allows the sending of notification messages and marketing campaigns to end users who are enabled within a Realm in Modyo Customers.
+### Messaging Integration
+Integration with messaging systems allows the sending of notification messages and marketing campaigns to end users who are enabled within a realm in Modyo Customers.
 
 We currently support the following messaging channels:
 * Email
-* SMS 
+* SMS
 * Whatsapp for Business
 * Web Push
 * Push
@@ -63,7 +53,7 @@ This type of integration is only available for events occurring within the Modyo
 
 
 ### Integration with payment methods
-Integration with payment methods is activated in Modyo as a mechanism that allows users to collect amounts of money integrated into a previously defined flow, using the Modyo Commerce API. Modyo has native features of integration into different means of payment commonly used in Latin America, among which we can mention:
+Integration with payment methods is activated in Modyo as a mechanism that allows charging users amounts of money, integrated into a predefined flow, through the Modyo Commerce API. Modyo has native integration features for different payment methods commonly used in Latin America, among which we can mention:
 - WebPay
 - Bancard
 - Khipu
@@ -80,7 +70,7 @@ Modyo is in a continuous process of including new means of payment to incorporat
 
 Web sites and applications built on Modyo can be natively integrated into a large number of systems using mainly HTML and Javascript standards, using the Modyo Channels template editor, which provides complete access and control of the source code of the sites managed on it.
 
-The following integrations correspond to the most commonly requested integrations.
+The following correspond to the most commonly requested integrations.
 
 ### Analytics Tools
 Web analytics tools integrated into each of the pages of a site by including scripts within the decorators or layouts. In this category we can mention tools such as:
@@ -91,20 +81,20 @@ Web analytics tools integrated into each of the pages of a site by including scr
 - Segment
 - Snowplow
 
-By using Liquid specific tags, Modyo Channels is able to interpolate context information to tracking events, such as user name, email, unique identifiers, segments to which the user belongs, among many others.
+By using Liquid specific tags, Modyo Channels is able to interpolate context information to tracking events, such as username, email, unique identifiers, segments to which the user belongs, among many others.
 
 ### Marketing Tools
-Digital marketing tools that allow to alter the user experience according to previously established rules, type A/B testing, or similar. In this category we can mention tools such as:
+Digital marketing tools that allow altering the user experience according to previously established rules, such as A/B testing or similar. In this category we can mention tools such as:
 - Google Optimize
 - SalesForce Marketing Cloud
 
 By accessing the source code of the pages and widgets that make up the Web site or application, Modyo Channels allows the inclusion of special brands in each HTML component that make the use of this type of digital marketing tools more efficient.
 
 ### Chat Tools
-Chat tools are commonly used in support or conversational marketing actions. The integration of these components is done using a Javascript code which installs the communication agent on the website, typically in an area of the screen that does not interrupt the display of content. In this category we can mention tools such as:
+Chat tools are commonly used in support or conversational marketing actions. The integration of these components is done using a Javascript code that installs the communication agent on the website, typically in an area of the screen that does not interrupt the display of content. In this category we can mention tools such as:
 - Intercom
 - Drift
-- Zendesk Chat 
+- Zendesk Chat
 - SalesForce Service Cloud
 
 ### Product Management Tools
@@ -122,7 +112,7 @@ Security and performance tools are implemented much like analytics and product m
 ### Integration with public APIs
 Integrations with external public APIs are done directly from the Modyo Channels frontend, using Widgets developed in Javascript that have the functionality of invoking content and executing actions using the HTTP protocol.
 
-Integrating APIs from Widgets requires endpoints that are publicly exposed to the Internet (or on Intranet in case of private deployments). Depending on the security policies configured on the endpoint, a domain validation by CORS may be required.
+Integrating APIs from Widgets requires endpoints that are publicly exposed to the Internet (or Intranet in case of private deployments). Depending on the security policies configured on the endpoint, a domain validation by CORS may be required.
 
 ### Integration with private APIs
 Private APIs behave similarly to public APIs, with the difference that they require authentication. This authentication can be initiated directly by the frontend from a Modyo Channels Widget or can be based on a security token previously negotiated by Modyo Customers and some SSO integration.

@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Modyo Command Line Interface
+# Modyo CLI
 
 The Modyo Command Line Interface (CLI) is a tool based on two fundamental principles: acceleration and integration. These principles are implemented through the _get_ and _push_ commands, respectively.
 
@@ -29,7 +29,7 @@ $ yarn global add @modyo/cli #via yarn
 
 ```sh
 $ npx @modyo/cli #via npx
-$ npx @modyo/cli@version #via npx - señalando una versión en específico
+$ npx @modyo/cli@latest #via npx - pointing to a specific version
 ```
 
 To verify that the installation was successful and confirm the installed version of the CLI, run this command:
@@ -288,6 +288,54 @@ EXAMPLE
 
 ```
 
+- **`modyo-cli preview`**
+
+The `preview` command allows you to preview a widget locally and view it styled for you site, before publishing it.
+
+**Requirements:**
+To make use of the `preview` command, make sure you have:
+
+- A properly configured [.env](https://docs.modyo.com/es/platform/channels/cli.html#configuracion-inicial) file. The `MODYO_ACCOUNT_URL`, `MODYO_SITE_HOST` or `MODYO_SITE_ID`, and `MODYO_TOKEN` fields are requisite.
+- A local server running with the widget you want to preview.
+
+Once you have your `.env` file configured and your project running on the local server, follow these steps:
+
+1. Open a new terminal window.
+2. Run the `modyo-cli preview` command.
+
+:::warning Important
+
+To see a change, you must manually refresh your web app. Click **refresh** to load the changes.
+
+:::
+
+Modyo uses default variables for widgets preview, you can modify them as needed. The predefined variables are:
+
+  - `MODYO_LOCAL_PORT`: Local server port (default: `8080`)
+  - `MODYO_LOCAL_DOM_ID`: ID of the widget's container element (default: `widgetName`)
+  - `MODYO_LOCAL_ENTRY_JS`: Main JavaScript file (default: `main.js`)
+
+
+Also, you can select whether you want to preview your widget in the published version of your site or in the editable version. To do this, click on the box under **templates**. The text will change from **published** to **editable**.
+
+
+These commands allow you to select the local entry points that you want to use.
+
+
+    OPTIONS
+
+    -p, –port=<value> [default: 8080) Deploy port local widget running
+    -s, –dom-id=<value> [default: widgetName] Container id of the widget
+    -j, –entry-js=<value> [default: main.js] Entry JS file of the widget
+
+    EXAMPLE
+
+    MODYO_LOCAL_PORT=8080
+    MODYO_LOCAL_DOM_ID=widgetName
+    MODYO_LOCAL_ENTRY_JS=main.js
+
+
+
 ### Code Splitting
 
 
@@ -295,7 +343,7 @@ EXAMPLE
 
 However, by including external libraries or increasing the complexity of a widget, you can face excessive load times or exceed the size limits established for widgets in Modyo, negatively affecting the development experience and that of the user.
 
-The _code splitting_ technique allows you to divide the code of your widgets into components that are loaded on demand or in parallel, solving these problems. The benefits of code splitting include:
+The _code splitting_ technique allows you to divide your widgets' code into components that are loaded on demand or in parallel, solving these problems. The benefits of code splitting include:
 
 * Reduction in loading speed.
 * Improved interaction time.
@@ -319,6 +367,6 @@ To package a file as a zip in Modyo CLI use these options:
 Example:
 
 ```
-modyo-cli --zip --zip-entry-css=main.css --zip-entry-js=main.js push
+modyo-cli push --zip --zip-entry-css=main.css --zip-entry-js=main.js
 
 ```
