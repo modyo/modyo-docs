@@ -307,8 +307,8 @@ https://[domain]/[site-name]/manifest.json
 It is necessary to implement the manifest on each page of the PWA through [Templates](/en/platform/channels/templates.html), in the ``head`` snippet.
 
 
-:: :warning Attention
-If you don't customize the content of the PWA manifest and add the route in templates, the manifest will be created blank and will have no effect.
+:::warning Attention
+If you do not customize the content of the PWA manifest and add the route in templates, the manifest will be created blank and will have no effect.
 :::
 
 
