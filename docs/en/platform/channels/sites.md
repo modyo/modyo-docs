@@ -184,7 +184,7 @@ With this configuration complete, when there is a value associated with the **ID
 
 - **Favicon:** Image that appears on the side of the address bar.
 - **Apple icon:** Image that you see on mobile devices when using the site as an application.
-- **Delete:** Permanently delete a site and all its elements.
+- **Delete:** Permanently deletes a site and all its elements.
 
 :::danger Danger
 Erasing is irreversible, you must be completely sure when executing this action.
