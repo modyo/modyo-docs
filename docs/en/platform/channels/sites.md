@@ -484,7 +484,7 @@ Once you've enabled team review, you can take the following actions:
 - Define the **number of approvals** necessary for an item to be published.
 - **Restrict the selection of reviewers** - Only the submitter for review can select who should review the content and only those reviewers can approve the content.
 - **Force review** - By activating this option, at least one of the users designated as reviewers must approve the item before publication.
-- **Require all** - When this option is active, you require that all users designated as reviewers approve the item before it can be published.
+- **Require all** - When this option is selected, you require that all users designated as reviewers approve the item before it can be published.
 
 
 ### Team Members
