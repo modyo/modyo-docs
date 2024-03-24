@@ -437,7 +437,7 @@ In the summary section of your web application you can see the details of the cu
 
 #### Synchronize a stage
 
-:: :warning Attention
+:::warning Attention
 The platform does not allow you to synchronize changes that have not yet been published. Make sure you don't have any pending changes to publish before starting the synchronization.
 :::
 
