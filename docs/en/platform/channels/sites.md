@@ -364,7 +364,7 @@ Check the box to make changes. The variables you can modify are:
 - **Alternative domain:** Secondary address to redirect in case the primary one fails.
 
 
-:: :warning Attention
+:::warning Attention
 These domains are reserved by Modyo. They are not available as custom domains:
 <table style="border: none;"><tr style="border: none;">
 <td style="border: none;"><ul>
