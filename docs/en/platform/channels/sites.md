@@ -431,7 +431,7 @@ To add a new stage to your web app, follow these steps:
 1. Click **create**.
 
 
-:: :tip Tip
+:::tip Tip
 In the summary section of your web application you can see the details of the current stage. You can also click on the name of your web app to display a list of its stages and navigate between them.
 :::
 
