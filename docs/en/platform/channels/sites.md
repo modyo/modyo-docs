@@ -342,11 +342,11 @@ To modify the service worker, follow these steps:
 1. Click **publish**.
 
 
-:: :warning Attention
+:::warning Attention
 You need to customize and save the service worker code to integrate these functions into your web app.
 :::
 
-:: :warning Attention
+:::warning Attention
 If you turn off the service worker, your web application will continue to work, with basic functions and without the benefits of the service worker.
 :::
 
