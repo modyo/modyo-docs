@@ -467,8 +467,8 @@ To delete a stage, follow these steps:
 1. Click **delete**.
 
 
-:: :warning Warning
-Once you confirm the deletion, Modyo starts an asynchronous process and you won't be able to access the stage again.
+:::warning Warning
+Once you confirm the deletion, Modyo starts an asynchronous process, and you won't be able to access the stage again.
 
 Deleting a stage deletes all the elements associated with that stage in the web application, including pages and widgets. In addition, the configuration of equipment, roles and other relevant aspects related to the stage are eliminated.
 :::
