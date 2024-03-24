@@ -304,7 +304,7 @@ When you activate the manifest, this route is created:
 https://[domain]/[site-name]/manifest.json
 ```
 
-It is necessary to implement the manifest on each page of the PWA through [Templates] (/es/platform/channels/templates.html), in the ``head`` snippet.
+It is necessary to implement the manifest on each page of the PWA through [Templates](/en/platform/channels/templates.html), in the ``head`` snippet.
 
 
 :: :warning Attention
