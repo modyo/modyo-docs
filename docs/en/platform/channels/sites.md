@@ -354,7 +354,7 @@ If you turn off the service worker, your web application will continue to work, 
 
 In the domains section, you can view and modify the public location of your web application.
 
-:: :warning Attention
+:::warning Attention
 It's essential to inform all members of the platform about any changes you make to this section.
 :::
 
