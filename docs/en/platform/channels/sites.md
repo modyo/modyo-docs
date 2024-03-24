@@ -451,7 +451,7 @@ To synchronize a stage follow these steps:
 1. Click on **synchronize**
 
 
-:: :warning Attention
+:::warning Attention
 The elements of a stage associated with a segment are not synchronized. You must repeat the process manually in the new stage, once the synchronization is complete.
 :::
 
