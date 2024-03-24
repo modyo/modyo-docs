@@ -339,7 +339,7 @@ To modify the service worker, follow these steps:
 1. Click on the snippets tab in the right column.
 1. In the service worker section, select the file you want to modify.
 1. Click **save**.
-1. Click on **publish**.
+1. Click **publish**.
 
 
 :: :warning Attention
