@@ -182,9 +182,9 @@ With this configuration complete, when there is a value associated with the **ID
 
 
 
-- **Favicon**: Image that appears in the address bar.
-- **Apple icon**: Image viewed on mobile devices when using the site as an application.
-- **Delete**: Permanently delete a site and all of its elements.
+- **Favicon: ** Image that appears on the side of the address bar.
+- **Apple icon: ** An image that you see on mobile devices when using the site as an application.
+- **Delete: ** Permanently delete a site and all its elements.
 
 :::danger Danger
 Erasing is irreversible, you must be completely sure when executing this action.
@@ -248,7 +248,7 @@ You can configure:
 The robots.txt and sitemap.xml files are only visible with custom domains. Otherwise, they are found only at the platform level, have default values and cannot be customized.
 :::
 
-- **Custom meta tags:** Allows you to configure meta tags for all pages and their default values. Click **+ new meta tag** to create a new one.
+- **Custom meta tags: ** Allows you to configure meta tags for all pages and their default values. Click **+ new meta tag** to create a new one.
 - **Replicate metatag on pages:** When creating a new meta tag, select this option to spread the meta tag and its value across all pages of the web app. You must save the changes to meta tags and publish all the modified pages for the new meta tags to take effect.
 
 :::warning Attention
@@ -280,59 +280,92 @@ To improve off-page SEO:
 
 ### PWA
 
-Modyo allows the implementation of Progressive Web Apps (PWA) within the digital channels that are being developed. For this, it offers two options to implement them.
+Modyo allows you to implement progressive web apps (PWA) on your digital channels under development. To do this, you have two options:
 
 #### Manifest
 
-The manifest is used to indicate how you want a browser to display your digital channel. You can activate it in Modyo by checking the box. Activating it creates this path:
+The manifest indicates how you want a browser to display your digital channel. To activate the manifest:
+
+1. In the side menu, click on channels.
+1. Select your web application.
+1. Click on application settings.
+1. Click on PWA.
+1. Check the Enable PWA Manifest box.
+1. In the modal, fill in the fields.
+1. Click **generate**.
+1. Click **save** in the modal.
+1. Click **save**.
+
+
+When you activate the manifest, this route is created:
+
 
 ```bash
 https://[domain]/[site-name]/manifest.json
 ```
 
-The manifest must be implemented on each of the pages where the PWA is developed, through [Templates](/en/platform/channels/templates.html), in the ``head`` snippet.
+It is necessary to implement the manifest on each page of the PWA through [Templates] (/es/platform/channels/templates.html), in the ``head`` snippet.
 
-You can create and modify the manifest in the next field, allowing you to add changes without having to leave the view.
 
-:::warning Attention
-If you make changes to the manifest, be sure to save them using the **save** button at the top of the screen to avoid losing the changes.
+:: :warning Attention
+If you don't customize the content of the PWA manifest and add the route in templates, the manifest will be created blank and will have no effect.
 :::
 
-:::warning Attention
-If you don't customize the manifest, but add the path in Templates, it will be blank and no action will be taken.
-:::
 
-#### Service Worker
+#### Service worker
 
-The Service Worker allows the digital channel to perform different actions or keep certain data connected within the cache to provide a structure in case of a bad connection. You can enable the Service Worker through the corresponding box. Activating it creates the following path:
+Activate the Service Worker so that your digital channel can cache data, work offline and provide an improved experience for your users, even with an unstable connection.
+
+To enable the service worker, follow these steps:
+
+1. In the side menu, click on channels.
+1. Select your web application.
+1. Click on application settings.
+1. Check the Enable Primary Service Worker box.
+1. Click **save**.
+
+Once activated and saved, the following route is created:
+
 
 ```bash
 https://[domain]/[site-name]/serviceworker.js
 ```
 
-You can modify and program the Service Worker in the following field, adapting it to your routes and using the available variables.
+To modify the service worker, follow these steps:
 
-:::warning Attention
-If you deactivate the Service Worker, the page will continue to work only in its basic functions and without the benefits offered by this option.
+1.  In the side menu, click on channels.
+1. Select your web application.
+1. Click on templates in the side menu.
+1. Click on the snippets tab in the right column.
+1. In the service worker section, select the file you want to modify.
+1. Click **save**.
+1. Click on **publish**.
+
+
+:: :warning Attention
+You need to customize and save the service worker code to integrate these functions into your web app.
 :::
 
-:::warning Attention
-If you don't customize or save the code, the site won't have the features you're designing.
+:: :warning Attention
+If you turn off the service worker, your web application will continue to work, with basic functions and without the benefits of the service worker.
 :::
 
 ### Domains
 
-The Domains section allows you to know the public location of your site, therefore it's essential that each member of the platform is informed of changes that are made here.
+In the domains section, you can view and modify the public location of your web application.
 
-The variables you can change in this section are:
+:: :warning Attention
+It's essential to inform all members of the platform about any changes you make to this section.
+:::
 
-- **Host**: Where your site is located within the server.
-- **Activate custom domains**: By activating this option, you can have sites with custom URLs or _custom hosts_ within the domain.
-- **Primary domain**: This is the main address of your site. Alternative domains redirect to this domain through HTTP 302.
-- **Alternative domain 1 & 2**: These secondary addresses redirect if the primary one fails.
+Check the box to make changes. The variables you can modify are:
+- **Host: ** Location of the web application on the server.
+- **Primary domain: ** Main address of the web application.
+- **Alternative domain: ** Secondary address to redirect in case the primary one fails.
 
-:::warning Warning
-Modyo has reserved domains that cannot be used as custom site domains:
+
+:: :warning Attention
+These domains are reserved by Modyo. They are not available as custom domains:
 <table style="border: none;"><tr style="border: none;">
 <td style="border: none;"><ul>
 <li>education.modyo.com</li>
@@ -355,8 +388,8 @@ Modyo has reserved domains that cannot be used as custom site domains:
 </tr></table>
 :::
 
-:::warning Attention
-Modyo has reserved hosts for sites, therefore, you can't use them as hosts for your sites:
+:: :warning Attention
+These hosts are reserved by Modyo. They are not available as hosts for your web apps:
 <table style="border: none;"><tr style="border: none;">
 <td style="border: none;"><ul>
 <li>404</li>
