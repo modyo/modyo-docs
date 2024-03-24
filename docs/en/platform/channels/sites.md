@@ -401,85 +401,76 @@ Modyo has reserved hosts for sites, therefore, you can't use them as hosts for y
 
 ### Stages
 
-Adding stages to your site allows you to implement a continuous integration and deployment (CI/CD) approach, in order to add new functionalities without affecting what is already published.
+Using stages in your web application allows you to implement a continuous integration and deployment (CI/CD) approach to add new functionality without affecting what's already published.
 
-The main advantages of having different stages on your sites are:
+The main advantages of having different stages in your web apps are:
 
-- Focused development: You can develop exclusively for the current stage without modifying what already exists on the site.
-- Flexible customization: Create and use local variables, widgets, and templates to customize the experience or view changes.
-- Easy integration: When you finish the changes within one stage, you can integrate them into another stage.
+- Focused development: Develop at the current stage without modifying the published web app.
+- Flexible customization: Create and use local variables, widgets, and templates to customize the experience or visualize changes.
+- Easy integration: When you finish the changes in one stage, you can integrate them into another.
 
 :::warning Warning
-- Each site has a maximum of four stages.
+- A web app can have a maximum of four stages.
 - The changes you make to a stage are only reflected in that stage.
-- This functionality can only be used on sites.
-- When using stages, PWAs and custom redirects will be disabled. You can only make use of PWAs and custom redirects on the `main` stage.
-- The stages have a Team Members section regardless of the `main` stage. So you'll need to add members to enable the Team Review functionality. This way, you can have the same members with different roles and permissions for each stage.
+- Stages are only available for web applications.
+- Custom PWAs and redirections are disabled in stages. They can only be used in the `main` stage.
+- The team members section is separate on each stage `main`. Add members to enable team review.
+- You can have the same members with different roles and permissions for each stage.
 :::
 
 #### Add a new stage
 
-To add a new stage to your site, follow these steps:
+To add a new stage to your web app, follow these steps:
 
-1. From the side menu, click **Channels**.
-1. Click on **Sites**.
-1. Select your site.
-1. Expand the **Site Settings** section.
-1. Click on **Stages**.
-1. Click **+ New Stage**.
-1. Select the base of the stage and type its name.
-1. Click **Create**.
+1. In the side menu, click on channels.
+1. Select your web application.
+1. Click on application settings.
+1. Click on stages.
+1. Click on **+ new stage**.
+1. Select the source stage and name your new stage.
+1. Click **create**.
 
-:::tip Tip
-When you have more than one stage on your site, the **Overview** page shows the details of the current stage and a button for synchronizing changes between stages.
 
-In the sidebar, you can see what stage you're currently in. By clicking on the drop-down menu you can see a list of all the stages on your site.
+:: :tip Tip
+In the summary section of your web application you can see the details of the current stage. You can also click on the name of your web app to display a list of its stages and navigate between them.
 :::
 
 #### Synchronize a stage
 
-Once you've finished testing on your stage and want to sync, make sure you don't have any pending changes before proceeding.
-
-On the synchronizations screen you can see all the changes that will be made between the two selected stages.
-
-:::warning Attention
-Keep in mind that the elements of a stage associated with a segment are not synchronized, so you will have to repeat the process manually on the new stage, once the synchronization is complete.
+:: :warning Attention
+The platform does not allow you to synchronize changes that have not yet been published. Make sure you don't have any pending changes to publish before starting the synchronization.
 :::
 
-To synchronize a stage, follow these steps:
+To synchronize a stage follow these steps:
 
-1. On the side menu, click **Channels**.
-1. Click on **Sites**.
-1. Select your site.
-1. In the summary view, click **Synchronize**.
-1. In the synchronizations view, you can see all the elements with differences between the selected stages. Click _View_ for more details about the changes.
-1. Select the items you want to sync.
-1. Click **Synchronize**.
+1. In the side menu, click on channels.
+1. Click on the name of your web application and select the stage you want to synchronize.
+1. In the summary view, click **synchronize**.
+1. In the synchronizations view, select the stage you want to synchronize to. In this view you can see all the elements with differences between the selected stages. Click on view for more details on the changes.
+1. Check the boxes for the items you want to synchronize.
+1. Click on **synchronize**
 
-:::tip Tip
-By clicking on **Synchronize** you can select from which stage you are going to bring the changes. If you want to sync changes to `main`, you must be in `main` by clicking **Synchronize**.
-:::
 
-:::warning Attention
-The platform does not allow synchronizing changes that are not yet published. Make sure to publish your changes before synchronizing.
+:: :warning Attention
+The elements of a stage associated with a segment are not synchronized. You must repeat the process manually in the new stage, once the synchronization is complete.
 :::
 
 #### Delete a stage
 
 To delete a stage, follow these steps:
+1. In the side menu, click on channels.
+1. Click on the name of your web application and select the stage you want to delete.
+1. Click on application settings.
+1. Click on General.
+1. In the dangerous zone section, click **delete stage**.
+1. Enter the name of your stage.
+1. Click **delete**.
 
-1. On the side menu, click **Channels**.
-1. Click on **Sites**.
-1. Select your site.
-1. Open the drop-down menu next to the name of your site and select the stage you want to delete.
-1. Click **Site Settings**.
-1. Click on **General**.
-1. In the danger zone section, click **Delete Stage**.
 
-:::warning Warning
-When you click Delete stage, you will receive a confirmation alert. Once you confirm the deletion, Modyo starts an asynchronous process, and you won't be able to access the stage again.
+:: :warning Warning
+Once you confirm the deletion, Modyo starts an asynchronous process and you won't be able to access the stage again.
 
-Keep in mind that deleting a stage erases all the elements associated with that stage on the site, such as pages and widgets. In addition, the configuration of equipment, roles and other relevant aspects related to the stage is eliminated.
+Deleting a stage deletes all the elements associated with that stage in the web application, including pages and widgets. In addition, the configuration of equipment, roles and other relevant aspects related to the stage are eliminated.
 :::
 
 ### Team Review
