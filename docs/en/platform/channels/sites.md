@@ -361,7 +361,7 @@ It's essential to inform all members of the platform about any changes you make 
 Check the box to make changes. The variables you can modify are:
 - **Host:** Location of the web application on the server.
 - **Primary domain:** Main address of the web application.
-- **Alternative domain: ** Secondary address to redirect in case the primary one fails.
+- **Alternative domain:** Secondary address to redirect in case the primary one fails.
 
 
 :: :warning Attention
