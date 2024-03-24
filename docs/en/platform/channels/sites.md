@@ -182,7 +182,7 @@ With this configuration complete, when there is a value associated with the **ID
 
 
 
-- **Favicon: ** Image that appears on the side of the address bar.
+- **Favicon:** Image that appears on the side of the address bar.
 - **Apple icon: ** An image that you see on mobile devices when using the site as an application.
 - **Delete: ** Permanently delete a site and all its elements.
 
