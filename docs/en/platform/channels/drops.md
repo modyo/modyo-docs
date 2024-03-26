@@ -472,7 +472,7 @@ Display dynamic content created in your spaces from anywhere on your site. In th
 |---|---|
 | **[spaces['space_name_'].categories](#category)** Array of category type objects containing all the categories in the space. |  |
 | **[spaces['space_name_'].entries](#entry)** Page type objects that meet the search parameters.  | |
-| **space ['space_name_'] .name** The name of the space.  | ```New Space``` |
+| **space['space_name_'].name** The space’s name.  | ```New Space``` |
 
 ## Target
 
