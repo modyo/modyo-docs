@@ -137,10 +137,10 @@ To resize an image you must first copy the Liquid code to render the image, to d
 1. Click on the copy icon, next to the Liquid tag in the image.
 
 
-Once you have the Liquid code for the image, access the work area where you want to insert the image, either in templates, pages or widgets and follow these steps:
+Once you have the Liquid code for the image, access the work area where you want to insert the image, either in templates, pages or widgets, and follow these steps:
 
 1. Paste the Liquid code. It should look something like this:
-`{{'ec0a3e4-ccdb-48c5-87be-5e1eca560dee' | asset_image}}`
+`{{ 'ec0a3e4-ccdb-48c5-87be-5e1eca560dee' | asset_image }}`
 2. Add the Liquid filter, it can be height, width or quality, following any of these formats:
 - `asset_image: width: XXX` where XXX is the desired pixel size.
 - `asset_image: quality: XX` where XX is the desired percentage of quality.
