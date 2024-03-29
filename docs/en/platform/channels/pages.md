@@ -84,7 +84,7 @@ In the right side section there are three tabs:
 - Properties: allows you to modify the name, excerpt, path, parent, privacy, grid layout, and meta tags of the page.
 
 
-### Inserting an image with Liquid
+### Inserting an Image with Liquid
 
 Modyo recommends using the Liquid tag and not the asset URL to insert images into your content. This allows you to resize or replace an image everywhere it's in use and ensure that any changes are immediately reflected.
 
