@@ -140,7 +140,7 @@ In this tab you will find options of common properties between all pages:
 * Custom meta tags
 
 :::warning Warning
-Modyo has reserved paths for the pages, so you cannot use these as paths for your custom pages:
+Modyo has reserved paths for the pages, therefore you cannot use these as paths for your custom pages:
 <table style="border: none;"><tr style="border: none;">
 <td style="border: none;"><ul>
 <li>404</li>
