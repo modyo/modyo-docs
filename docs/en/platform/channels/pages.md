@@ -88,7 +88,7 @@ In the right side section there are three tabs:
 
 Modyo recommends using the Liquid tag and not the asset URL to insert images into your content. This allows you to resize or replace an image everywhere it's in use and ensure that any changes are immediately reflected.
 
-In addition, Modyo converts the image to webp format with lossless compression quality. This results in smaller images, with shorter load times and without losing quality.
+In addition, Modyo converts the image to webp format with lossless compression quality. This results in smaller images, with shorter load times, and without loss of  quality.
 
 
 #### To get the Liquid code from an image:
