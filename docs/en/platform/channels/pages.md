@@ -281,7 +281,7 @@ To add a new meta tag to your site, follow these steps:
 1. Expand **Site settings** and click **SEO**.
 1. In the Custom Meta Tags section, click **+ New meta tag**.
 
-On the screen that appears, you have the option to choose between different meta tags and assign them a value. This value can be dynamic if Liquid is used. If you activate the **Replicate meta tag on pages** option, a meta tag will be created in the Properties section of all your pages.
+On the screen that appears, you can choose between different meta tags and assign them a value. This value can be dynamic if Liquid is used. If you activate the **Replicate meta tag on pages** option, a meta tag will be created in the Properties section of all your pages.
 
 As part of the `base` Template, we include the `seo` Snippet which contains the information needed to print the values of the meta tags depending on whether it is a Site, a Page, or an Entry.
 
