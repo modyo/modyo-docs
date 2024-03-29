@@ -100,7 +100,7 @@ To apply a new layout to a page, follow these steps:
 
 Modyo recommends using the Liquid tag and not the asset URL to insert images into your content. This allows you to resize or replace an image everywhere it's in use, and ensure that any changes are immediately reflected.
 
-In addition, Modyo converts the image to webp format with lossless compression quality. This generates lighter images, with shorter load times and without losing quality.
+In addition, Modyo converts the image to webp format with lossless compression quality. This generates lighter images, with shorter load times, and without loss of quality.
 
 
 #### To get the Liquid code from an image:
