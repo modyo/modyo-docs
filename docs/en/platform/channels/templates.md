@@ -112,7 +112,7 @@ In addition, Modyo converts the image to webp format with lossless compression q
 #### To replace an image, follow these steps:
 
 1. Click on content.
-1. Select the space where the image you want to modify is located.
+1. Select the space that the image that you want to modify is in.
 1. Click on media.
 1. Select the image you want to replace.
 1. Click on the upload image icon above the current image.
