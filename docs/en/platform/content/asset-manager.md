@@ -118,6 +118,44 @@ You can change the view and crop of the image in two ways:
 To restore the file, open the property editing window again and click on **Restore Original**, this permanently removes the modifications made.
 
 
+## Resize an image
+
+In Modyo, you can dynamically resize an image, allowing you to modify the size of the image without losing quality and ensuring that it fits the screen of your users device. You do this resizing with Liquid code, in the work area where you inserted the image.
+
+
+:: :warning Important
+We recommend that you always use the Liquid tag of an image to include it in your content and not the asset URL. This way, any changes you make to the image will be reflected everywhere the image is used.
+:::
+
+
+To resize an image you must first copy the Liquid code to render the image, for that:
+
+1. Click on content.
+1. Select the space where the image you want to modify is located.
+1. Click on media.
+1. Click on the image.
+1. Click on the copy icon, next to the Liquid tag in the image.
+
+
+Once you have the Liquid code for the image, access the work area where you want to insert the image, either in templates, pages or widgets and follow these steps:
+
+1. Paste the Liquid code. It should look something like this:
+`{{'ec0a3e4-ccdb-48c5-87be-5e1eca560dee' | asset_image}}`
+2. Add the Liquid filter, it can be height, width or quality, following any of these formats:
+- `asset_image: width: XXX` where XXX is the desired pixel size.
+- `asset_image: quality: XX` where XX is the desired percentage of quality.
+- `asset_image: width: XXX, quality: XX, widths: 'XXX, XXX, XXX, sizes: (min-width: XXXpx) XXXPx` adapting the values according to your needs to ensure that the image fits the different screens and resolutions of your user's devices, using the [srcset] attribute (https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/srcset) for responsive support.
+3. Click **save**.
+4. Click on **publish**.
+
+:::tip Tip
+
+When you resize images, the original aspect ratio is preserved, so the image is adjusted proportionally, without being distorted.
+
+If you include only the height or width of the image, the missing value is automatically calculated to maintain the correct aspect ratio of the image.
+:::
+
+
 ## Delete a File
 
 To delete a file, follow these steps:
