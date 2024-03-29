@@ -107,8 +107,8 @@ In addition, Modyo converts the image to webp format with lossless compression q
 1. Select the new image.
 1. Click on **update information**.
 
-:: :tip Tip
-Your account's CDN needs to be in the cloud for changes to be reflected immediately, otherwise you'll need to request cache validation, through a ticket to [Modyo] (https://support.modyo.com/hc/en-us).
+:::tip Tip
+Your account's CDN needs to be in the cloud for changes to be reflected immediately, otherwise you'll need to request cache validation, through a ticket to [Modyo](https://support.modyo.com/hc/en-us).
 :::
 
 ## Widget Page
