@@ -251,7 +251,7 @@ You can customize this snippet and define what meta tags you want for specific U
 
 ## Examples of SEO
 
-Here are examples of how to use the SEO snippet to improve SEO in different cases:
+These examples show you how to use the SEO snippet to improve SEO in different cases:
 
 ### Specific meta tags for a Post
 
