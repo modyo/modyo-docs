@@ -96,6 +96,32 @@ To apply a new layout to a page, follow these steps:
 3. Choose the layout you want to use on your page.
 4. Submit for review or publish your layout, as required.
 
+### Inserting an image with Liquid
+
+Modyo recommends using the Liquid tag and not the asset URL to insert images into your content. This allows you to resize or replace an image everywhere it's in use and ensure that any changes are immediately reflected.
+
+In addition, Modyo converts the image to webp format with lossless compression quality. This generates lighter images, with shorter load times and without losing quality.
+
+
+#### To get the Liquid code from an image:
+
+1. Click on the media icon above your work area
+1. Click on the image.
+1. Click on the copy icon, next to the Liquid tag in the image.
+
+#### To replace an image, follow these steps:
+
+1. Click on content.
+1. Select the space where the image you want to modify is located.
+1. Click on media.
+1. Select the image you want to replace.
+1. Click on the upload image icon above the current image.
+1. Select the new image.
+1. Click on **update information**.
+
+:: :tip Tip
+Your account's CDN needs to be in the cloud for changes to be reflected immediately, otherwise you'll need to request cache validation via a ticket to [Modyo] (https://support.modyo.com/hc/en-us).
+:::
 
 ## Errors in Views
 
