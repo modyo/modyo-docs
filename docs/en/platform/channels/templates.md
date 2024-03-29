@@ -178,7 +178,7 @@ Snippets are reusable fragments of HTML, JS, or CSS code for your sites. To use 
 To add a custom snippet:
 1. In the **Templates** section, click on the **Snippets** tab
 1. Navigate to the Custom section, at the bottom of the list of snippets.
-1. Click on the **+** button
+1. Click the **+** button
 1. Add the Route and click Add.
 
 
