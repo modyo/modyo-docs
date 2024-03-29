@@ -150,7 +150,7 @@ Once you have the Liquid code for the image, access the work area where you want
 
 :::tip Tip
 
-When you resize images, the original aspect ratio is preserved, therefore the image is adjusted proportionally, without being distorted.
+When you resize images, the original aspect ratio is preserved, therefore the image is adjusted proportionally, without distortions.
 
 If you include only the height or width of the image, the missing value is automatically calculated to maintain the correct aspect ratio of the image.
 :::
