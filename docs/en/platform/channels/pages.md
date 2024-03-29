@@ -244,7 +244,7 @@ You can complement it with the use of [Content Filters](/en/platform/channels/li
 
 #### Settings
 
-Displays the type of content and the space to which this page belongs. You'll also have options to change the name, parent page, path, and an excerpt.
+Displays the type of content and the space to which this page belongs to. You'll also have options to change the name, parent page, path, and excerpt.
 
 :::tip Tip
 If a custom domain is enabled, the URL is the same as the one in ``Site Settings > Domains``.
