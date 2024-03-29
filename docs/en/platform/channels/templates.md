@@ -218,7 +218,7 @@ To restore all templates to their original version, click on the secondary actio
 
 SEO [(Search Engine Optimization)](/en/platform/channels/sites.html #seo) is essential for positioning your site and content.
 
-In Modyo, you can control the way in which search engines read your site and content, adding meta tags dynamically, depending on the attributes you add to your pages and content.
+In Modyo, you can control the way in which search engines read your site and content, by adding meta tags dynamically, depending on the attributes you add to your pages and content.
 
 To add meta tags in Modyo, use this code snippet in Templates and then call it from the head of your site:
 
