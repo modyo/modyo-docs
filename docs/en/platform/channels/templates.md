@@ -183,7 +183,7 @@ To add a custom snippet:
 
 
 :::warning Important
-For the system to recognize the programming language to which the snippet belongs, you must add an underscore and then the ending, as follows: “front_css” or “library_js”. By default, the system will recognize the snippet as an HTML language.
+For the system to recognize the programming language that the snippet belongs to, you must add an underscore and then the ending, as follows: “front_css” or “library_js”. By default, the system will recognize the snippet as an HTML language.
 :::
 
 :::tip Tip
