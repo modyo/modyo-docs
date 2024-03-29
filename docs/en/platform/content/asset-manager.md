@@ -123,8 +123,8 @@ To restore the file, open the property editing window again and click on **Resto
 In Modyo, you can dynamically resize an image, this lets you modify the size of the image without losing quality and ensuring that it fits the screen of your users' device. You can perform this resizing with Liquid code, in the work area where you inserted the image.
 
 
-:: :warning Important
-We recommend that you always use the Liquid tag of an image to include it in your content and not the asset URL. This way, any changes you make to the image will be reflected everywhere the image is used.
+:::warning Important
+We recommend that you always use the Liquid tag of an image when including it in your content, and not the asset URL. This way, any changes you make to the image will be reflected everywhere the image is used.
 :::
 
 
