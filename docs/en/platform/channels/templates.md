@@ -96,7 +96,7 @@ To apply a new layout to a page, follow these steps:
 3. Choose the layout you want to use on your page.
 4. Submit for review or publish your layout, as required.
 
-### Inserting an image with Liquid
+### Inserting an Image with Liquid
 
 Modyo recommends using the Liquid tag and not the asset URL to insert images into your content. This allows you to resize or replace an image everywhere it's in use and ensure that any changes are immediately reflected.
 
