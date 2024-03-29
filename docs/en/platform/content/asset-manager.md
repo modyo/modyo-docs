@@ -128,7 +128,7 @@ We recommend that you always use the Liquid tag of an image when including it in
 :::
 
 
-To resize an image you must first copy the Liquid code to render the image, for that:
+To resize an image you must first copy the Liquid code to render the image, to do so:
 
 1. Click on content.
 1. Select the space where the image you want to modify is located.
