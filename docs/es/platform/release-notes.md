@@ -5,12 +5,30 @@ search: true
 # Notas del release
 
 ## 9.2
+### 9.2.57 - 28 de marzo de 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+* Agrega la posibilidad de agregar logs de la plataforma a la salida stdout mediante el logger de la aplicación
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Corrige problema de invalidación de caché de content pages al publicar templates del sitio
+* Agrega la eliminación de menus cuando están despublicados y archivados
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Corrige problema de tokens duplicados en sesiones distintas del mismo usuario
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Corrige problema de lentitud al guardar y publicar contenidos
+
 ### 9.2.56 - 23 de enero de 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
 * Actualización de enlaces para la documentación asociada a la versión
 * Correcciones y mejoras en la gestión de inactividad de usuarios administradores
-
 
 ### 9.2.55 - 08 de enero de 2024
 <Badge text="Core" type="core" vertical="middle"/>
