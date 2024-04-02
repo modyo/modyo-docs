@@ -13,7 +13,7 @@ Los principales beneficios de trabajar con la CLI de Modyo son:
 
 ## Instalación
 
-Para usar la Línea de Comandos de Modyo, primero debes instalarla globalmente en tu máquina local. Esto te permitirá usar el comando `modyo-cli`, eque te permite inicializar un proyecto con algunas decisiones arquitectónicas de front-end predefinidas mediante la plantilla base de Modyo o con una experiencia del catálogo de [Dynamic Framework](es/dynamic/).
+Para usar la Línea de Comandos de Modyo, primero debes instalarla globalmente en tu máquina local. Esto te permitirá usar el comando `modyo-cli`, eque te permite inicializar un proyecto con algunas decisiones arquitectónicas de front-end predefinidas mediante la plantilla base de Modyo o con una experiencia del catálogo de [Dynamic Framework](/es/dynamic/).
 
 
 Para usar el CLI de Modyo puedes optar por alguna de las siguientes opciones:
@@ -60,10 +60,10 @@ $ modyo-cli get dynamic-react-base-template my-project-name
 ```
 Esto inicializa un proyecto funcional para comenzar un nuevo desarrollo.
 
-Modyo tiene también un conjunto de plantillas de experiencias financieras que agilizan aún más el desarrollo de soluciones en el ámbito de la banca digital e industria financiera. Puedes encontrar información sobre estas experiencias y cómo obtener sus plantillas en la sección [Experiencias](es/dynamic/experiences/retail/dashboard.html) de la documentación de [Dynamic Framework](es/dynamic/#dynamic-framework).
+Modyo tiene también un conjunto de plantillas de experiencias financieras que agilizan aún más el desarrollo de soluciones en el ámbito de la banca digital e industria financiera. Puedes encontrar información sobre estas experiencias y cómo obtener sus plantillas en la sección [Experiencias](/es/dynamic/experiences/retail/dashboard.html) de la documentación de [Dynamic Framework](/es/dynamic/#dynamic-framework).
 
 :::tip Tip
-Todas las plantillas de [Dynamic Framework](es/dynamic/) tienen un archivo README con información sobre sus requisitos y uso.
+Todas las plantillas de [Dynamic Framework](/es/dynamic/) tienen un archivo README con información sobre sus requisitos y uso.
 :::
 
 Una organización puede, también, crear sus propias plantillas para personalizar el proceso de inicialización. Para obtener una plantilla personalizada, utiliza la opción `organization`.
@@ -85,7 +85,7 @@ En un navegador web visita [`http://localhost:8081/`](http://localhost:8081/) pa
 El siguiente paso es configurar tu proyecto para facilitar la carga del microfrontend en la plataforma Modyo e incluirlo en las páginas que construyas. Puedes especificar todo como parámetros en la llamada `push`, sin embargo, existe un archivo `.env` en el que puedes definir un conjunto de variables de entorno para especificar todos los atributos, como la URL de la cuenta, el sitio donde se alojará y el token de acceso, entre otros. Para esta configuración, necesitas realizar previamente estas acciones:
 
 
-1. **Obtener un token de acceso a Modyo:** Para obtener el token necesitas tener un usuario o [crear uno](es/platform/core/roles.html#crear-usuario) que tenga como mínimo el [rol](es/platform/core/roles.html#roles) de site developer-cli en los sitios o stages donde desplegarás tu micro-frontend. Una vez que hayas creado el usuario, puedes[configurar un token de acceso](es/platform/core/api.html#autenticacion) para él. Este token de acceso lo utilizarás para obtener la información necesaria para configurar y activar los despliegues en la plataforma.
+1. **Obtener un token de acceso a Modyo:** Para obtener el token necesitas tener un usuario o [crear uno](/es/platform/core/roles.html#crear-usuario) que tenga como mínimo el [rol](/es/platform/core/roles.html#roles) de site developer-cli en los sitios o stages donde desplegarás tu micro-frontend. Una vez que hayas creado el usuario, puedes [configurar un token de acceso](/es/platform/core/api.html#autenticacion) para él. Este token de acceso lo utilizarás para obtener la información necesaria para configurar y activar los despliegues en la plataforma.
 
 2. **Identificar el sitio o stage:** Utiliza la API administrativa de Modyo con el token de acceso obtenido previamente, para obtener la información del sitio o stage en el que se desplegará el microfrontend así como la URL de la cuenta, el host o ID del sitio o el ID de algún stage del sitio. Para ello, adjunta el encabezado de autorización del tipo Bearer de la siguiente manera:
 
@@ -184,13 +184,13 @@ $ modyo-cli push -p
 ```
 
 :::warning Atención
-El usuario dueño del token debe tener un rol de [site reviewer o admin](es/platform/core/roles.html#roles) en el sitio en el cual estás desplegando el micro-frontend para que se pueda realizar la publicación correctamente.
+El usuario dueño del token debe tener un rol de [site reviewer o admin](/es/platform/core/roles.html#roles) en el sitio en el cual estás desplegando el micro-frontend para que se pueda realizar la publicación correctamente.
 :::
 
 ## Siguientes pasos
 Una vez que un widget está desplegado y publicado en Modyo, está disponible para ser utilizado en las páginas del sitio al que pertenece.
 
-Si has definido [variables](es/platform/core/key-concepts.html#variables-globales) sus valores pueden ser especificados a nivel global o particular a cada instancia del microfrontend. Para obtener más información sobre las funcionalidades en los sitios de Modyo, consulta la [documentación de Channels](es/platform/channels/#frontmatter-title) especificamente la sección de [página de widgets](es/platform/channels/pages.html#widget-page) y [widgets](es/platform/channels/widgets.html)
+Si has definido [variables](/es/platform/core/key-concepts.html#variables-globales) sus valores pueden ser especificados a nivel global o particular a cada instancia del microfrontend. Para obtener más información sobre las funcionalidades en los sitios de Modyo, consulta la [documentación de Channels](/es/platform/channels/#frontmatter-title) especificamente la sección de [página de widgets](/es/platform/channels/pages.html#widget-page) y [widgets](/es/platform/channels/widgets.html)
 
 ## Guía rápida
 Los comandos disponibles en el CLI de Modyo y la descripción de cada una de sus opciones, son:
@@ -240,7 +240,7 @@ EXAMPLE
 
 - **`modyo-cli help get`**
 
-El comando `get` se usa para obtener una plantilla de widget de nuestro [catálogo de experiencias](es/dynamic/experiences/) utilizando un token proporcionado por Modyo.
+El comando `get` se usa para obtener una plantilla de widget de nuestro [catálogo de experiencias](/es/dynamic/experiences/) utilizando un token proporcionado por Modyo.
 
 ```bash
 USAGE
@@ -339,7 +339,7 @@ Estos comandos te permiten seleccionar los entry points locales que quieres usar
 ### Code Splitting
 
 
-Los [widgets](es/platform/channels/widgets.html#widgets) te permiten desarrollar micro frontends para tus sitios en Modyo, incrementando así la funcionalidad de tu sitio.
+Los [widgets](/es/platform/channels/widgets.html#widgets) te permiten desarrollar micro frontends para tus sitios en Modyo, incrementando así la funcionalidad de tu sitio.
 
 Sin embargo, al incluir librerías externas o incrementar la complejidad de un widget, puedes enfrentar tiempos de carga excesivos o exceder los límites de tamaño establecidos para los widgets en Modyo, afectando negativamente la experiencia de desarrollo y la del usuario.
 
