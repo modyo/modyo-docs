@@ -177,7 +177,7 @@ Para enviarlo a Modyo, utiliza el comando push. Este comando utiliza tus configu
 $ modyo-cli push
 ```
 
-Activa la publicación automática del microfrontend en la plataforma mediante el parámetro `-p`.
+Publica de forma inmediata el microfrontend en la plataforma mediante el parámetro `-p`.
 
 ```sh
 $ modyo-cli push -p
