@@ -83,13 +83,41 @@ In the right side section there are three tabs:
 - Edit Widget: allows you to change different properties and filters for each widget.
 - Properties: allows you to modify the name, excerpt, path, parent, privacy, grid layout, and meta tags of the page.
 
+
+### Inserting an Image with Liquid
+
+Modyo recommends using the Liquid tag and not the asset URL to insert images into your content. This allows you to resize or replace an image everywhere it's in use and ensure that any changes are immediately reflected.
+
+In addition, Modyo converts the image to webp format with lossless compression quality. This results in smaller images, with shorter load times, and without loss of  quality.
+
+
+#### To get the Liquid code from an image:
+
+1. Click on the media icon above your work area
+1. Click on the image.
+1. Click on the copy icon, next to the Liquid tag in the image.
+
+#### To replace an image, follow these steps:
+
+1. Click on content.
+1. Select the space where the image you want to modify is located.
+1. Click on media.
+1. Select the image you want to replace.
+1. Click on the upload image icon above the current image.
+1. Select the new image.
+1. Click on **update information**.
+
+:::tip Tip
+Your account's CDN needs to be in the cloud for changes to be reflected immediately, otherwise you'll need to request cache validation, through a ticket to [Modyo](https://support.modyo.com/hc/en-us).
+:::
+
 ## Widget Page
 
 Here you can customize your page using preset widgets from the following list:
 
 
 - **HTML:** Allows you to enter HTML and CSS code without validations. It will not allow you to enter Javascript code.
-- **Rich Text:** It will allow you to make use of a rich text editor, in which you can format the text and switch between the code view and rich text.
+- **Rich Text:** Allows you to make use of a rich text editor, in which you can format the text and switch between the code view and rich text.
 :::warning Warning
 The rich text widget has an automatic formatter, so the code you write in the code view may be affected.
 :::
@@ -112,7 +140,7 @@ In this tab you will find options of common properties between all pages:
 * Custom meta tags
 
 :::warning Warning
-Modyo has reserved paths for the pages, so you cannot use these as paths for your custom pages:
+Modyo has reserved paths for the pages, therefore you cannot use these as paths for your custom pages:
 <table style="border: none;"><tr style="border: none;">
 <td style="border: none;"><ul>
 <li>404</li>
@@ -162,7 +190,7 @@ In order to display content on a site, you must meet certain conditions:
 * Have a space with at least one language (the same language as the site) and at least one Content Type. For more information, see [Create a Space](/en/platform/content/spaces.html#create-a-space) and [Create a Type](/en/platform/content/types.html#create-a-type)
 * Have entries published in the language of the site. For more information, see [Entries](/en/platform/content/entries.html) and [Locales](/en/platform/content/spaces.html#locales)
 
-:: :tip Tip
+:::tip Tip
 You can use any name you want for the views, regardless of the type or space you want to associate them with. Always keep in mind that entries will only be displayed if they have a published version in the language of the site where you are creating these views.
 :::
 
@@ -175,7 +203,7 @@ The index page will display the list of all entries in the content type. Here yo
 #### Edit
 
 - **Enable Entry Index:** Disabled by default. The path it takes is the name given to the page when it was created. If this option is disabled, only the **Show** pages will be accessible and if you try to access it, you will see a 404 error.
-- **Layout:** The Layout template you are going to load for the Index.
+- **Layout:** The Layout template that will be loaded for the Index.
 - **Custom Meta Tag:** Add custom meta tags to optimize the SEO of the index. This meta tag will only be loaded for the Index, not for the Show. You can also use Liquid to load dynamic meta tags.
 
 ### Show
@@ -210,13 +238,13 @@ This snippet takes `entry.name`, `entry.published_at`, `request.url`, and `entry
 :::tip Tip
 To learn more about how to use Liquid, go to [Liquid markup](/en/platform/channels/liquid-markup.html).
 
-To learn what fields you can use with the `entry` drop, see [Content Drops](/en/platform/channels/drops.html #entrada).
-You can complement it with the use of [Content Filters](/es/platform/channels/liquid-markup/filters.html #content).
+To learn what fields you can use with the `entry` drop, see [Content Drops](/en/platform/channels/drops.html#entry).
+You can complement it with the use of [Content Filters](/en/platform/channels/liquid-markup/filters.html#content).
 :::
 
 #### Settings
 
-Displays the type of content and the space to which this page belongs. You'll also have options to change the name, parent page, path, and an excerpt.
+Displays the type of content and the space to which this page belongs to. You'll also have options to change the name, parent page, path, and excerpt.
 
 :::tip Tip
 If a custom domain is enabled, the URL is the same as the one in ``Site Settings > Domains``.
@@ -240,7 +268,7 @@ Enable route delegation to allow absolute control over the sub-routes of the pag
 
 ## Meta tags
 
-Meta tags define the content of a page and search engines rely on them to provide the user with a search list. In this section you can add meta tags to pages and modify the value of existing meta tags, to enhance the page's SEO. With the tags added to the pages, you can decide whether to use the default value, overwrite the value available for the tag, or remove the tag from the page.
+Meta tags define the content of a page. Search engines rely on them to provide the user with a search list. In this section, you can add meta tags to pages and modify the value of existing meta tags, to enhance the page's SEO. With the tags added to the pages, you can decide whether to use the default value, overwrite the value available for the tag, or remove the tag from the page.
 
 To access the list of meta tags on the page, you must use the <span v-pre>`{{ page.meta_tags }}`</span> Liquid drop. We recommend that you go through the example in the SEO section of the [Template builder](/en/platform/channels/templates.html#seo).
 
@@ -253,7 +281,7 @@ To add a new meta tag to your site, follow these steps:
 1. Expand **Site settings** and click **SEO**.
 1. In the Custom Meta Tags section, click **+ New meta tag**.
 
-On the screen that appears, you have the option to choose between different meta tags and assign them a value. This value can be dynamic if Liquid is used. If you activate the **Replicate meta tag on pages** option, a meta tag will be created in the Properties section of all your pages.
+On the screen that appears, you can choose between different meta tags and assign them a value. This value can be dynamic if Liquid is used. If you activate the **Replicate meta tag on pages** option, a meta tag will be created in the Properties section of all your pages.
 
 As part of the `base` Template, we include the `seo` Snippet which contains the information needed to print the values of the meta tags depending on whether it is a Site, a Page, or an Entry.
 

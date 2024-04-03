@@ -96,6 +96,32 @@ To apply a new layout to a page, follow these steps:
 3. Choose the layout you want to use on your page.
 4. Submit for review or publish your layout, as required.
 
+### Inserting an Image with Liquid
+
+Modyo recommends using the Liquid tag and not the asset URL to insert images into your content. This allows you to resize or replace an image everywhere it's in use, and ensure that any changes are immediately reflected.
+
+In addition, Modyo converts the image to webp format with lossless compression quality. This generates lighter images, with shorter load times, and without loss of quality.
+
+
+#### To get the Liquid code from an image:
+
+1. Click on the media icon above your work area
+1. Click on the image.
+1. Click on the copy icon, next to the Liquid tag in the image.
+
+#### To replace an image, follow these steps:
+
+1. Click on content.
+1. Select the space that the image that you want to modify is in.
+1. Click on media.
+1. Select the image you want to replace.
+1. Click on the upload image icon above the current image.
+1. Select the new image.
+1. Click on **update information**.
+
+:::tip Tip
+Your account's CDN needs to be in the cloud for changes to be reflected immediately, otherwise you'll need to request cache validation via a ticket to [Modyo] (https://support.modyo.com/hc/en-us).
+:::
 
 ## Errors in Views
 
@@ -104,7 +130,7 @@ In the views section, you can customize four types of errors:
 * **Disabled:** Displayed when the site you're trying to access is [disabled](/en/platform/channels/sites.html).
 * **404:** If in the [site restrictions](en/platform/channels/sites.html#privacy) configuration you decide to show 404 instead of redirecting to the home page, this error appears when entering an undefined URL.
 * **Privacy:** Shown when you don't have permissions to access the [site](en/platform/channels/sites.html#privacy) or one of its [pages](en/platform/channels/pages.html#privacy).
-* **Template:** Visible when the loaded page has a Liquid syntax error. It's unlikely that you'll see this view, because starting with Modyo 8.1, the platform performs a syntax check before saving and publishing changes to Templates.
+* **Template:** Visible when the loaded page has a Liquid syntax error. It's unlikely that you'll see this view, as from Modyo 8.1 onwards, the platform performs a syntax check before saving and publishing changes to Templates.
 
 ## CSS and JavaScript
 
@@ -152,12 +178,12 @@ Snippets are reusable fragments of HTML, JS, or CSS code for your sites. To use 
 To add a custom snippet:
 1. In the **Templates** section, click on the **Snippets** tab
 1. Navigate to the Custom section, at the bottom of the list of snippets.
-1. Click on the **+** button
+1. Click the **+** button
 1. Add the Route and click Add.
 
 
 :::warning Important
-For the system to recognize the programming language to which the snippet belongs, you must add an underscore and then the ending, as follows: “front_css” or “library_js”. By default, the system will recognize the snippet as an HTML language.
+For the system to recognize the programming language that the snippet belongs to, you must add an underscore and then the ending, as follows: “front_css” or “library_js”. By default, the system will recognize the snippet as an HTML language.
 :::
 
 :::tip Tip
@@ -190,11 +216,11 @@ To restore all templates to their original version, click on the secondary actio
 
 ## SEO
 
-SEO [(Search Engine Optimization)](/en/platform/channels/sites.html #seo) is essential for the positioning of your site and content.
+SEO [(Search Engine Optimization)](/en/platform/channels/sites.html #seo) is essential for positioning your site and content.
 
-In Modyo, you can control the way in which search engines read your site and content, adding meta tags dynamically, depending on the attributes you add to your pages and content.
+In Modyo, you can control the way in which search engines read your site and content, by adding meta tags dynamically, depending on the attributes you add to your pages and content.
 
-To add meta tags in Modyo, use this code snippet in Templates and then call it from the head of your site:
+To add meta tags in Modyo, use this snippet of code in Templates and then call it from the head of your site:
 
 ```html
 <!-- Site SEO -->
@@ -225,7 +251,7 @@ You can customize this snippet and define what meta tags you want for specific U
 
 ## Examples of SEO
 
-Here are examples of how to use the SEO snippet to improve SEO in different cases:
+These examples show you how to use the SEO snippet to improve SEO in different cases:
 
 ### Specific meta tags for a Post
 

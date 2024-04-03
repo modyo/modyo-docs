@@ -182,9 +182,9 @@ With this configuration complete, when there is a value associated with the **ID
 
 
 
-- **Favicon**: Image that appears in the address bar.
-- **Apple icon**: Image viewed on mobile devices when using the site as an application.
-- **Delete**: Permanently delete a site and all of its elements.
+- **Favicon:** Image that appears on the side of the address bar.
+- **Apple icon:** Image that you see on mobile devices when using the site as an application.
+- **Delete:** Permanently deletes a site and all its elements.
 
 :::danger Danger
 Erasing is irreversible, you must be completely sure when executing this action.
@@ -280,59 +280,92 @@ To improve off-page SEO:
 
 ### PWA
 
-Modyo allows the implementation of Progressive Web Apps (PWA) within the digital channels that are being developed. For this, it offers two options to implement them.
+Modyo allows you to implement progressive web apps (PWA) on your digital channels under development. To do this, you have two options:
 
 #### Manifest
 
-The manifest is used to indicate how you want a browser to display your digital channel. You can activate it in Modyo by checking the box. Activating it creates this path:
+The manifest indicates how you want a browser to display your digital channel. To activate the manifest:
+
+1. In the side menu, click on channels.
+1. Select your web application.
+1. Click on application settings.
+1. Click on PWA.
+1. Check the Enable PWA Manifest box.
+1. In the modal, fill in the fields.
+1. Click **generate**.
+1. Click **save** in the modal.
+1. Click **save**.
+
+
+When you activate the manifest, this route is created:
+
 
 ```bash
 https://[domain]/[site-name]/manifest.json
 ```
 
-The manifest must be implemented on each of the pages where the PWA is developed, through [Templates](/en/platform/channels/templates.html), in the ``head`` snippet.
+It is necessary to implement the manifest on each page of the PWA through [Templates](/en/platform/channels/templates.html), in the ``head`` snippet.
 
-You can create and modify the manifest in the next field, allowing you to add changes without having to leave the view.
-
-:::warning Attention
-If you make changes to the manifest, be sure to save them using the **save** button at the top of the screen to avoid losing the changes.
-:::
 
 :::warning Attention
-If you don't customize the manifest, but add the path in Templates, it will be blank and no action will be taken.
+If you do not customize the content of the PWA manifest and add the route in templates, the manifest will be created blank and will have no effect.
 :::
 
-#### Service Worker
 
-The Service Worker allows the digital channel to perform different actions or keep certain data connected within the cache to provide a structure in case of a bad connection. You can enable the Service Worker through the corresponding box. Activating it creates the following path:
+#### Service worker
+
+Activate the Service Worker so that your digital channel can cache data, work offline and provide an improved experience for your users, even with an unstable connection.
+
+To enable the service worker, follow these steps:
+
+1. In the side menu, click on channels.
+1. Select your web application.
+1. Click on application settings.
+1. Check the Enable Primary Service Worker box.
+1. Click **save**.
+
+Once activated and saved, the following route is created:
+
 
 ```bash
 https://[domain]/[site-name]/serviceworker.js
 ```
 
-You can modify and program the Service Worker in the following field, adapting it to your routes and using the available variables.
+To modify the service worker, follow these steps:
+
+1.  In the side menu, click on channels.
+1. Select your web application.
+1. Click on templates in the side menu.
+1. Click on the snippets tab in the right column.
+1. In the service worker section, select the file you want to modify.
+1. Click **save**.
+1. Click **publish**.
+
 
 :::warning Attention
-If you deactivate the Service Worker, the page will continue to work only in its basic functions and without the benefits offered by this option.
+You need to customize and save the service worker code to integrate these functions into your web app.
 :::
 
 :::warning Attention
-If you don't customize or save the code, the site won't have the features you're designing.
+If you turn off the service worker, your web application will continue to work, with basic functions and without the benefits of the service worker.
 :::
 
 ### Domains
 
-The Domains section allows you to know the public location of your site, therefore it's essential that each member of the platform is informed of changes that are made here.
+In the domains section, you can view and modify the public location of your web application.
 
-The variables you can change in this section are:
+:::warning Attention
+It's essential to inform all members of the platform about any changes you make to this section.
+:::
 
-- **Host**: Where your site is located within the server.
-- **Activate custom domains**: By activating this option, you can have sites with custom URLs or _custom hosts_ within the domain.
-- **Primary domain**: This is the main address of your site. Alternative domains redirect to this domain through HTTP 302.
-- **Alternative domain 1 & 2**: These secondary addresses redirect if the primary one fails.
+Check the box to make changes. The variables you can modify are:
+- **Host:** Location of the web application on the server.
+- **Primary domain:** Main address of the web application.
+- **Alternative domain:** Secondary address to redirect in case the primary one fails.
 
-:::warning Warning
-Modyo has reserved domains that cannot be used as custom site domains:
+
+:::warning Attention
+These domains are reserved by Modyo. They are not available as custom domains:
 <table style="border: none;"><tr style="border: none;">
 <td style="border: none;"><ul>
 <li>education.modyo.com</li>
@@ -355,8 +388,8 @@ Modyo has reserved domains that cannot be used as custom site domains:
 </tr></table>
 :::
 
-:::warning Attention
-Modyo has reserved hosts for sites, therefore, you can't use them as hosts for your sites:
+:: :warning Attention
+These hosts are reserved by Modyo. They are not available as hosts for your web apps:
 <table style="border: none;"><tr style="border: none;">
 <td style="border: none;"><ul>
 <li>404</li>
@@ -401,85 +434,76 @@ Modyo has reserved hosts for sites, therefore, you can't use them as hosts for y
 
 ### Stages
 
-Adding stages to your site allows you to implement a continuous integration and deployment (CI/CD) approach, in order to add new functionalities without affecting what is already published.
+Using stages in your web application allows you to implement a continuous integration and deployment (CI/CD) approach to add new functionality without affecting what's already published.
 
-The main advantages of having different stages on your sites are:
+The main advantages of having different stages in your web apps are:
 
-- Focused development: You can develop exclusively for the current stage without modifying what already exists on the site.
-- Flexible customization: Create and use local variables, widgets, and templates to customize the experience or view changes.
-- Easy integration: When you finish the changes within one stage, you can integrate them into another stage.
+- Focused development: Develop at the current stage without modifying the published web app.
+- Flexible customization: Create and use local variables, widgets, and templates to customize the experience or visualize changes.
+- Easy integration: When you finish the changes in one stage, you can integrate them into another.
 
 :::warning Warning
-- Each site has a maximum of four stages.
+- A web app can have a maximum of four stages.
 - The changes you make to a stage are only reflected in that stage.
-- This functionality can only be used on sites.
-- When using stages, PWAs and custom redirects will be disabled. You can only make use of PWAs and custom redirects on the `main` stage.
-- The stages have a Team Members section regardless of the `main` stage. So you'll need to add members to enable the Team Review functionality. This way, you can have the same members with different roles and permissions for each stage.
+- Stages are only available for web applications.
+- Custom PWAs and redirections are disabled in stages. They can only be used in the `main` stage.
+- The team members section is separate on each stage `main`. Add members to enable team review.
+- You can have the same members with different roles and permissions for each stage.
 :::
 
 #### Add a new stage
 
-To add a new stage to your site, follow these steps:
+To add a new stage to your web app, follow these steps:
 
-1. From the side menu, click **Channels**.
-1. Click on **Sites**.
-1. Select your site.
-1. Expand the **Site Settings** section.
-1. Click on **Stages**.
-1. Click **+ New Stage**.
-1. Select the base of the stage and type its name.
-1. Click **Create**.
+1. In the side menu, click on channels.
+1. Select your web application.
+1. Click on application settings.
+1. Click on stages.
+1. Click on **+ new stage**.
+1. Select the source stage and name your new stage.
+1. Click **create**.
+
 
 :::tip Tip
-When you have more than one stage on your site, the **Overview** page shows the details of the current stage and a button for synchronizing changes between stages.
-
-In the sidebar, you can see what stage you're currently in. By clicking on the drop-down menu you can see a list of all the stages on your site.
+In the summary section of your web application you can see the details of the current stage. You can also click on the name of your web app to display a list of its stages and navigate between them.
 :::
 
 #### Synchronize a stage
 
-Once you've finished testing on your stage and want to sync, make sure you don't have any pending changes before proceeding.
-
-On the synchronizations screen you can see all the changes that will be made between the two selected stages.
-
 :::warning Attention
-Keep in mind that the elements of a stage associated with a segment are not synchronized, so you will have to repeat the process manually on the new stage, once the synchronization is complete.
+The platform does not allow you to synchronize changes that have not yet been published. Make sure you don't have any pending changes to publish before starting the synchronization.
 :::
 
-To synchronize a stage, follow these steps:
+To synchronize a stage follow these steps:
 
-1. On the side menu, click **Channels**.
-1. Click on **Sites**.
-1. Select your site.
-1. In the summary view, click **Synchronize**.
-1. In the synchronizations view, you can see all the elements with differences between the selected stages. Click _View_ for more details about the changes.
-1. Select the items you want to sync.
-1. Click **Synchronize**.
+1. In the side menu, click on channels.
+1. Click on the name of your web application and select the stage you want to synchronize.
+1. In the summary view, click **synchronize**.
+1. In the synchronizations view, select the stage you want to synchronize to. In this view you can see all the elements with differences between the selected stages. Click on view for more details on the changes.
+1. Check the boxes for the items you want to synchronize.
+1. Click on **synchronize**
 
-:::tip Tip
-By clicking on **Synchronize** you can select from which stage you are going to bring the changes. If you want to sync changes to `main`, you must be in `main` by clicking **Synchronize**.
-:::
 
 :::warning Attention
-The platform does not allow synchronizing changes that are not yet published. Make sure to publish your changes before synchronizing.
+The elements of a stage associated with a segment are not synchronized. You must repeat the process manually in the new stage, once the synchronization is complete.
 :::
 
 #### Delete a stage
 
 To delete a stage, follow these steps:
+1. In the side menu, click on channels.
+1. Click on the name of your web application and select the stage you want to delete.
+1. Click on application settings.
+1. Click on General.
+1. In the dangerous zone section, click **delete stage**.
+1. Enter the name of your stage.
+1. Click **delete**.
 
-1. On the side menu, click **Channels**.
-1. Click on **Sites**.
-1. Select your site.
-1. Open the drop-down menu next to the name of your site and select the stage you want to delete.
-1. Click **Site Settings**.
-1. Click on **General**.
-1. In the danger zone section, click **Delete Stage**.
 
 :::warning Warning
-When you click Delete stage, you will receive a confirmation alert. Once you confirm the deletion, Modyo starts an asynchronous process, and you won't be able to access the stage again.
+Once you confirm the deletion, Modyo starts an asynchronous process, and you won't be able to access the stage again.
 
-Keep in mind that deleting a stage erases all the elements associated with that stage on the site, such as pages and widgets. In addition, the configuration of equipment, roles and other relevant aspects related to the stage is eliminated.
+Deleting a stage deletes all the elements associated with that stage in the web application, including pages and widgets. In addition, the configuration of equipment, roles and other relevant aspects related to the stage are eliminated.
 :::
 
 ### Team Review
@@ -493,7 +517,7 @@ Once you've enabled team review, you can take the following actions:
 - Define the **number of approvals** necessary for an item to be published.
 - **Restrict the selection of reviewers** - Only the submitter for review can select who should review the content and only those reviewers can approve the content.
 - **Force review** - By activating this option, at least one of the users designated as reviewers must approve the item before publication.
-- **Require all** - With this option active, you require that all users designated as reviewers approve the item before it can be published.
+- **Require all** - When this option is selected, you require that all users designated as reviewers approve the item before it can be published.
 
 
 ### Team Members
@@ -539,7 +563,7 @@ Modyo has a custom redirect system that will allow you to take a URL from your s
 
 In this view you will find a table with all the redirects that currently exist on the site. You can search by path or description.
 
-To create a new redirect, click on the**New** button in the upper right corner of the view. Fill in the fields **_URL_ of Source** and **_URL_ of destination** and redirection code and then save the changes.
+To create a new redirect, click on the **New** button in the upper right corner of the view. Fill in the fields **_URL_ of Source** and **_URL_ of destination** and redirection code, and then save the changes.
 
 :::warning Attention
 The redirect table is the second to last in precedence, so if there is a URL on the site that points to a [page](/en/platform/channels/pages.html) or a default view, you'll see that view instead of being redirected through the custom redirection table.

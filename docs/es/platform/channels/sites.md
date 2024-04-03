@@ -182,9 +182,9 @@ Con esta configuración completada, cuando exista un valor asociado al campo **I
 
 
 
-- **Favicon**: Imagen que aparece al costado de la barra de dirección.
-- **Icono de Apple**: Imagen que se ve en los dispositivos móviles al usar el sitio como aplicación.
-- **Borrar**: Eliminar definitivamente un sitio y todo sus elementos.
+- **Favicon:** Imagen que aparece al costado de la barra de dirección.
+- **Icono de Apple:** Imagen que se ve en los dispositivos móviles al usar el sitio como aplicación.
+- **Borrar:** Eliminar definitivamente un sitio y todo sus elementos.
 
 :::danger Peligro
 Borrar es irreversible, por lo que debes estar completamente seguro al ejecutar esta acción.
@@ -248,7 +248,7 @@ Puedes configurar:
 Los archivos robots.txt y sitemap.xml solo son visibles con dominios personalizados. De lo contrario, se encuentran solo a nivel de plataforma, tienen sus valores por defecto y no se pueden personalizar.
 :::
 
-- **Meta tags personalizados:** Te permite configurar meta tags para todas las páginas y sus valores por defecto. Da click en **+ Nuevo meta tag** para crear uno nuevo.
+- **Meta tags personalizados:** Te permite configurar meta tags para todas las páginas y sus valores por defecto. Da click en **+ nuevo meta tag** para crear uno nuevo.
 - **Replicar meta tag en páginas:** Al crear un nuevo meta tag, selecciona esta opción para propagar el meta tag y su valor en todas las páginas de la web app. Debes guardar los cambios en meta tags y publicar todas las páginas modificadas para que los nuevos meta tags surtan efecto.
 
 :::warning Atención
@@ -280,59 +280,92 @@ Para mejorar el SEO fuera-de-página:
 
 ### PWA
 
-Modyo permite la implementación de Progressive Web Apps (PWA) dentro de los canales digitales que se estén desarrollando. Para ello, ofrece dos opciones para implementarlas.
+Modyo te permite implementar progressive web apps (PWA) en tus canales digitales en desarrollo. Para ello, tienes dos opciones:
 
 #### Manifiesto
 
-El manifiesto sirve para indicar cómo quieres que un navegador muestre tu canal digital. Lo puedes activar en Modyo marcando la casilla. Al activarlo, se crea esta ruta:
+El manifiesto indica cómo quieres que un navegador muestre tu canal digital. Para activar el manifiesto:
+
+1. En el menú lateral, haz click en channels.
+1. Selecciona tu aplicación web.
+1. Haz click en configuración de la aplicación.
+1. Da click en PWA.
+1. Marca la casilla habilitar manifiesto PWA.
+1. En el modal, llena los campos.
+1. Haz click en **generar**.
+1. Haz click en **guardar** en el modal.
+1. Haz click en **guardar**.
+
+
+Al activar el manifiesto, se crea esta ruta:
+
 
 ```bash
 https://[domain]/[site-name]/manifest.json
 ```
 
-El manifiesto se debe implementar en cada una de las páginas en que se desarrolle la PWA, a través de [Plantillas](/es/platform/channels/templates.html), en el snippet ``head``.
+Es necesario implementar el manifiesto en cada página de la PWA a través de [Plantillas](/es/platform/channels/templates.html), en el snippet ``head``.
 
-Puedes crear y modificar el manifiesto en el siguiente campo, lo que te permite agregar cambios sin tener que salir de la vista.
-
-:::warning Atención
-Si realizas cambios en el manifiesto, asegúrate de guardarlos utilizando el botón **Guardar** que se encuentra en la parte superior de la pantalla para evitar perder los cambios realizados.
-:::
 
 :::warning Atención
-Si no personalizas el manifiesto, pero agregas la ruta en Plantillas, este quedará en blanco y no hará ninguna acción.
+Si no personalizas el contenido del manifiesto PWA y agregas la ruta en plantillas, el manifiesto se creará en blanco y no tendrá ningún efecto.
 :::
 
-#### Service Worker
 
-El Service Worker permite que el canal digital realice distintas acciones o mantenga ciertos datos conectados dentro del caché para ofrecer una estructura en caso de tener una mala conexión. Puedes habilitar el Service Worker a través de la casilla correspondiente. Al activarlo, se crea la siguiente ruta:
+#### Service worker
+
+Activa el Service Worker para que tu canal digital pueda almacenar datos en caché, funcionar sin conexión y brindar una experiencia mejorada a tus usuarios, aún con una conexión inestable.
+
+Para habilitar el service worker, sigue estos pasos:
+
+1. En el menú lateral, haz click en channels.
+1. Selecciona tu aplicación web.
+1. Haz click en configuración de la aplicación.
+1. Activa la casilla habilitar service worker principal.
+1. Da click en **guardar**.
+
+Una vez activado y guardado, se crea la siguiente ruta:
+
 
 ```bash
 https://[domain]/[site-name]/serviceworker.js
 ```
 
-Puedes modificar y programar el Service Worker en el siguiente campo, adaptándolo a tus rutas y utilizando las variables disponibles.
+Para modificar el service worker, sigue estos pasos:
+
+1.  En el menú lateral, haz click en channels.
+1. Selecciona tu aplicación web.
+1. Haz click en plantillas, en el menú lateral.
+1. Da click en la pestaña snippets en la columna de la  derecha.
+1. En la sección de service worker, selecciona el archivo que quieres modificar.
+1. Haz click en **guardar**.
+1. Haz click en **publicar**.
+
 
 :::warning Atención
-Si desactivas el Service Worker, la página seguirá funcionando, solamente en sus funciones básicas y no con los beneficios que ofrece esta opción.
+Es necesario personalizar y guardar el código del service worker para integrar estas funciones a tu web app.
 :::
 
 :::warning Atención
-Si no personalizas o no guardas el código, el sitio no contará con las funciones que estás diseñando.
+Si desactivas el service worker, tu aplicación web seguirá funcionando, con funciones básicas y sin los beneficios del service worker.
 :::
 
 ### Dominios
 
-La sección Dominios te permite conocer la ubicación pública de tu sitio, por lo que es esencial que cada uno de los miembros de la plataforma estén informados de los cambios que se realicen aquí.
-
-Las variables que puedes cambiar en esta sección son:
-
-- **Host**: Donde se encuentra el sitio dentro del servidor.
-- **Activar dominios personalizados**: Al activar esta opción, puedes tener sitios con URLs personalizadas o _custom hosts_ dentro del dominio.
-- **Dominio primario**: Dirección del sitio.
-- **Dominio alternativo**: Dirección secundaria para redireccionar en caso de que falle la primera.
+En la sección de dominios puedes ver y modificar la ubicación pública de tu aplicación web.
 
 :::warning Atención
-Modyo cuenta con dominios reservados que no se pueden usar como dominios personalizados de los sitios:
+Es esencial informar a todos los miembros de la plataforma sobre cualquier cambio que realices en esta sección.
+:::
+
+Activa la casilla para realizar modificaciones. Las variables que puedes modificar son:
+- **Host:** Ubicación de la aplicación web en del servidor.
+- **Dominio primario:** Dirección principal de la aplicación web.
+- **Dominio alternativo:** Dirección secundaria para redireccionar en caso de fallo en el primario.
+
+
+:::warning Atención
+Estos dominios están reservados por Modyo. No están disponibles como dominios personalizados:
 <table style="border: none;"><tr style="border: none;">
 <td style="border: none;"><ul>
 <li>education.modyo.com</li>
@@ -356,7 +389,7 @@ Modyo cuenta con dominios reservados que no se pueden usar como dominios persona
 :::
 
 :::warning Atención
-Modyo tiene hosts reservados para los sitios, de tal forma que no puedes usarlos como host de tus sitios:
+Estos hosts están reservados por Modyo. No están disponibles como hosts para tus web apps:
 <table style="border: none;"><tr style="border: none;">
 <td style="border: none;"><ul>
 <li>404</li>
@@ -401,85 +434,76 @@ Modyo tiene hosts reservados para los sitios, de tal forma que no puedes usarlos
 
 ### Stages
 
-Agregar stages a tu sitio te permite implementar un enfoque de integración y despliegue continuo (CI/CD) para añadir nuevas funcionalidades sin afectar lo que ya está publicado.
+Usar stages en tu aplicación web te permite implementar un enfoque de integración y despliegue continuo (CI/CD) para añadir nuevas funcionalidades sin afectar lo que ya está publicado.
 
-Las ventajas principales de tener distintos stages en tus sitios son:
+Las principales ventajas de tener distintas etapas en tus web apps son:
 
-- Desarrollo focalizado: Puedes desarrollar exclusivamente para el stage actual sin modificar lo que ya existe en el sitio.
-- Personalización flexible: Crea y utiliza variables, widgets y plantillas locales para personalizar la experiencia o visualizar los cambios.
-- Integración sencilla: Al finalizar los cambios dentro de un stage, puedes integrarlos a otro stage.
+- Desarrollo focalizado: Desarrolla en el stage actual sin modificar la web app publicada.
+- Personalización flexible: Crea y usa variables, widgets y plantillas locales para personalizar la experiencia o visualizar cambios.
+- Integración sencilla: Al finalizar los cambios en un stage, puedes integrarlos a otro.
 
 :::warning Atención
-- Cada sitio tiene un máximo de cuatro stages.
+- Un web app puede tener un máximo de cuatro stages.
 - Los cambios que realices en un stage solo se reflejan en ese stage.
-- Esta funcionalidad solo se puede usar en sitios.
-- Al utilizar stages, las PWAs y redirecciones personalizadas serán deshabilitadas. Solo puedes hacer uso de PWAs y redirecciones personalizadas en el stage `main`.
-- Los stages tienen una sección de Miembros del Equipos independientemente del stage `main`. Por lo que tendrás que agregar a los miembros para habilitar la funcionalidad de Revisión de equipo. Así, puedes tener los mismos miembros con diferentes roles y permisos para cada stage.
+- Los stages solo están disponible para aplicaciones web.
+- Las PWAs y redirecciones personalizadas se deshabilitan en los stages. Solo se pueden usar en el stage `main`.
+- La sección de miembros del equipos es independiente en cada stage `main`. Agrega miembros para habilitar la revisión de equipo.
+- Puedes tener los mismos miembros con diferentes roles y permisos para cada stage.
 :::
 
 #### Agregar un nuevo stage
 
-Para agregar un nuevo stage a tu sitio, sigue estos pasos:
+Para agregar un nuevo stage a tu web app, sigue estos pasos:
 
-1. Desde el menú lateral, haz click en **Channels**.
-1. Haz click en **Sitios**.
-1. Selecciona tu sitio.
-1. Expande la sección **Configuración del sitio**.
-1. Haz click en **Stages**.
-1. Haz click en **+ Nuevo Stage**.
-1. Selecciona la base del stage y escribe su nombre.
-1. Haz click en **Crear**.
+1. En el menú lateral, haz click en channels.
+1. Selecciona tu aplicación web.
+1. Haz click en configuración de la aplicación.
+1. Haz click en stages.
+1. Da click en **+ nuevo stage**.
+1. Selecciona el stage de origen y nombra tu nuevo stage.
+1. Haz click en **crear**.
+
 
 :::tip Tip
-Cuando tienes más de un stage en tu sitio, la página de **Overview** muestra los detalles del stage actual y un botón para sincronizar cambios entre stages.
-
-En la barra lateral, puedes ver en qué stage te encuentras actualmente. Al hacer click en el menú desplegable puedes ver una lista de todos los stages de tu sitio.
+En la sección de resumen de tu aplicación web puedes ver los detalles del stage actual. Puedes además dar click en el nombre de tu web app para desplegar un listado de sus stages y navegar entre ellos.
 :::
 
 #### Sincronizar un stage
 
-Una vez que hayas terminado las pruebas en tu stage y quieras sincronizar, asegúrate de no tener cambios pendientes antes de proceder.
-
-En la pantalla de sincronizaciones puedes ver todos los cambios que se realizarán entre los dos stages seleccionados.
-
 :::warning Atención
-Ten en cuenta que los elementos de un stage asociados a un segmento no se sincronizan, por lo que tendrás que repetir el proceso manualmente en el nuevo stage, una vez concluida la sincronización.
+La plataforma no permite sincronizar cambios que todavía no están publicados. Asegúrate de no tener cambios pendientes por publicar antes de iniciar la sincronización.
 :::
 
-Para sincronizar un stage, sigue estos pasos:
+Para sincronizar un stage sigue estos pasos:
 
-1. En el menú lateral, haz click en **Channels**.
-1. Haz click en **Sitios**.
-1. Selecciona tu sitio.
-1. En la vista resumen haz click en **Sincronizar**.
-1. En la vista de sincronizaciones puedes ver todos los elementos con diferencias entre los stages seleccionados. Haz click en _Ver_ para obtener más detalles sobre los cambios.
-1. Selecciona los elementos que quieres sincronizar.
-1. Haz click en **Sincronizar**.
+1. En el menú lateral, haz click en channels.
+1. Da click en el nombre de tu aplicación web y selecciona el stage del que quieres sincronzar.
+1. En la vista resumen haz click en **sincronizar**.
+1. En la vista de sincronizaciones, selecciona el stage al que quieres sincronizar. En esta vista puedes ver todos los elementos con diferencias entre los stages seleccionados. Haz click en ver para obtener más detalles sobre los cambios.
+1. Activa las casillas de los elementos que quieres sincronizar.
+1. Haz click en **sincronizar**
 
-:::tip Tip
-Al hacer click en **Sincronizar** puedes seleccionar desde cuál stage vas a traer los cambios. Si quieres sincronizar cambios a `main`, debes estar en `main` al hacer click en **Sincronizar**.
-:::
 
 :::warning Atención
-La plataforma no permite sincronizar cambios que todavía no están publicados. Asegúrate de publicar los cambios antes de realizar la sincronización.
+Los elementos de un stage asociados a un segmento no se sincronizan. Deberás repetir el proceso manualmente en el nuevo stage, una vez concluida la sincronización.
 :::
 
 #### Eliminar un stage
 
 Para eliminar un stage, sigue estos pasos:
+1. En el menú lateral, haz click en channels.
+1. Da click en el nombre de tu aplicación web y selecciona el stage que quieres eliminar.
+1. Haz click en configuración de la aplicación.
+1. Haz click en General.
+1. En la sección zona peligrosa haz click en **eliminar stage**.
+1. Ingresa el nombre de tu stage.
+1. Haz click en **borrar**.
 
-1. En el menú lateral, haz click en **Channels**.
-1. Haz click en **Sitios**.
-1. Selecciona tu sitio.
-1. Abre el menú desplegable junto al nombre de tu sitio y selecciona el stage que quieres eliminar.
-1. Haz click en **Configuración de Sitio**.
-1. Haz click en **General**.
-1. En la sección zona peligrosa haz click en **Eliminar Stage**.
 
 :::warning Advertencia
-Al hacer click en Eliminar stage, recibirás una alerta de confirmación. Una vez que confirmes la eliminación, Modyo inicia un proceso asíncrono y no podrás acceder nuevamente al stage.
+Una vez confirmes la eliminación, Modyo inicia un proceso asíncrono y no podrás acceder nuevamente al stage.
 
-Ten en cuenta que al eliminar un stage, se borran todos los elementos asociados a ese stage en el sitio, como páginas y widgets. Además, se elimina la configuración de equipo, roles y otros aspectos relevantes relacionados con el stage.
+Al eliminar un stage se borran todos los elementos asociados a ese stage en la aplicación web, incluyendo páginas y widgets. Además, se elimina la configuración de equipo, roles y otros aspectos relevantes relacionados con el stage.
 :::
 
 ### Revisión en equipo

@@ -470,10 +470,9 @@ Display dynamic content created in your spaces from anywhere on your site. In th
 
 | Description  | Example  |
 |---|---|
-| **[space.categories](#category)** An array of objects of the category type that contains all the categories of space. |  |
-| **[space.entries](#entry)** Page-type object that meets the search parameters.  | |
-| **[space.types](#content)** Content-type object array that contains all the types of space.  | |
-| **space.name** The name of the space.  | ```New Space``` |
+| **[spaces['space_name_'].categories](#category)** Array of category type objects containing all the categories in the space. |  |
+| **[spaces['space_name_'].entries](#entry)** Page type objects that meet the search parameters.  | |
+| **space['space_name_'].name** The space’s name.  | ```New Space``` |
 
 ## Target
 
@@ -562,7 +561,7 @@ These drops obtain the information relevant to the Widgets.
 | **widget.css_class** The css class associated with the widget.  | ```content-list-widget``` |
 | **widget.name** The name of the widget.  | ```Content list``` |
 | **widget.type** The type of the widget.  | ```content-list``` |
-| **widget.use_default_title** Boolean indicating if the widget uses the title by default.  | ```false``` |
+| **widget.use_default_title** Boolean indicating if the widget uses the default title.  | ```false``` |
 | **widget.wid** The widget's wid.  | ```63ae60e2-d152-4c70-a5b0-ffa9916162e3``` |
 | **widget.width** The width configured in the widget.  | ```full``` |
 
