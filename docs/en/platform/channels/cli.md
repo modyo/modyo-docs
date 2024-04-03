@@ -13,7 +13,7 @@ The main benefits of working with the Modyo CLI are:
 
 ## Installation
 
-To use the Modyo Command Line, you must first install it globally on your local machine. This will allow you to use the `modyo-cli` command, which allows you to initialize a project with some predefined front-end architectural decisions using the Modyo base template or with an experience from the [Dynamic Framework](en/dynamic/) catalog.
+To use the Modyo Command Line, you must first install it globally on your local machine. This will allow you to use the `modyo-cli` command, which allows you to initialize a project with some predefined front-end architectural decisions using the Modyo base template or with an experience from the [Dynamic Framework](/en/dynamic/) catalog.
 
 
 To use the Modyo CLI you can choose one of the following options:
@@ -60,10 +60,10 @@ $ modyo-cli get dynamic-react-base-template my-project-name
 ```
 This initializes a functional project to begin a new development.
 
-Modyo also has a set of financial experience templates that further accelerate the development of solutions in the field of digital banking and the financial industry. You can find information about these experiences and how to obtain their templates in the [Experiences](en/dynamic/experiences/retail/dashboard.html) section of the [Dynamic Framework](en/dynamic/#dynamic-framework) documentation.
+Modyo also has a set of financial experience templates that further accelerate the development of solutions in the field of digital banking and the financial industry. You can find information about these experiences and how to obtain their templates in the [Experiences](/en/dynamic/experiences/retail/dashboard.html) section of the [Dynamic Framework](/en/dynamic/#dynamic-framework) documentation.
 
 :::tip Tip
-All [Dynamic Framework](en/dynamic/#dynamic-framework) templates have a README file with information about their requirements and use.
+All [Dynamic Framework](/en/dynamic/#dynamic-framework) templates have a README file with information about their requirements and use.
 :::
 
 An organization can also create its own templates to customize the initialization process. To get a customized template, use the `organization` option.
@@ -85,7 +85,7 @@ In a web browser, visit [`http://localhost:8081/`](http://localhost:8081/) to vi
 The next step is to configure your project to make it easier to load the microfrontend on Modyo platform and include it in the pages you build. You can specify everything as parameters in the `push` call, however, there is a `.env` file in which you can define a set of environment variables to specify all the attributes, such as the URL of the account, the site where it will be hosted and the access token, among others. For this configuration, you need to perform these actions beforehand:
 
 
-1. **Get an access token to Modyo:** To obtain the token you need to have a user or [create one](en/platform/core/roles.html#create-user) that has at least the site developer-cli [role](en/platform/core/roles.html#roles) in the sites or stages where you will deploy your micro-frontend. Once you've created the user, you can [set up an access token](en/platform/core/api.html#autentication) for it. You will use this access token to obtain the necessary information to configure and activate deployments on the platform.
+1. **Get an access token to Modyo:** To obtain the token you need to have a user or [create one](/en/platform/core/roles.html#create-user) that has at least the site developer-cli [role](en/platform/core/roles.html#roles) in the sites or stages where you will deploy your micro-frontend. Once you've created the user, you can [set up an access token](/en/platform/core/api.html#autentication) for it. You will use this access token to obtain the necessary information to configure and activate deployments on the platform.
 
 2. **Identify the site or stage:** Use the Modyo administrative API with the access token obtained previously, to obtain the information of the site or stage where the microfrontend will be deployed as well as the URL of the account, the host or ID of the site or the ID of any stage of the site. To do this, attach the Bearer type authorization header as follows:
 
@@ -184,13 +184,13 @@ $ modyo-cli push -p
 ```
 
 :::warning Attention
-The user who owns the token must have a [site reviewer or admin](en/platform/core/roles.html#roles) role on the site where you are deploying the micro-frontend in order for the publication to be carried out correctly.
+The user who owns the token must have a [site reviewer or admin](/en/platform/core/roles.html#roles) role on the site where you are deploying the micro-frontend in order for the publication to be carried out correctly.
 :::
 
 ## Next steps
 Once a widget is deployed and published in Modyo, it is available for use on the pages of the site to which it belongs.
 
-If you have defined [variables](en/platform/core/key-concepts.html#global-variables), their values can be specified globally or privately to each instance of the microfrontend. For more information on functionalities on Modyo sites, refer to the [Channels documentation](en/platform/channels/#frontmatter-title) specifically the [widget page](en/platform/channels/pages.html#widget-page) and [widgets](en/platform/channels/widgets.html) sections
+If you have defined [variables](/en/platform/core/key-concepts.html#global-variables), their values can be specified globally or privately to each instance of the microfrontend. For more information on functionalities on Modyo sites, refer to the [Channels documentation](/en/platform/channels/#frontmatter-title) specifically the [widget page](/en/platform/channels/pages.html#widget-page) and [widgets](/en/platform/channels/widgets.html) sections
 
 ## Quick guide
 The commands available in the Modyo CLI and the description of each of the options are:
@@ -240,7 +240,7 @@ EXAMPLE
 
 - **`modyo-cli help get`**
 
-The `get` command is used to get a widget template from our [experience catalog](en/dynamic/experiences/) using a token provided by Modyo.
+The `get` command is used to get a widget template from our [experience catalog](/en/dynamic/experiences/) using a token provided by Modyo.
 
 ```bash
 USAGE
@@ -339,7 +339,7 @@ These commands allow you to select the local entry points that you want to use.
 ### Code Splitting
 
 
-[Widgets](en/platform/channels/widgets.html#widgets) allow you to develop micro frontends for your Modyo sites, thus increasing the functionality of your site.
+[Widgets](/en/platform/channels/widgets.html#widgets) allow you to develop micro frontends for your Modyo sites, thus increasing the functionality of your site.
 
 However, by including external libraries or increasing the complexity of a widget, you can face excessive load times or exceed the size limits established for widgets in Modyo, negatively affecting the development experience and that of the user.
 
