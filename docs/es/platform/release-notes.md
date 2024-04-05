@@ -31,7 +31,7 @@ search: true
 * Agrega la posibilidad de previsualizar los widgets de forma local. Al trabajar con el CLI de Modyo ahora puedes ejecutar un preview del widget en desarrollo y verlo directamente en el navegador con la posibilidad de montarlo en los distintos layouts que contiene el sitio de destino
 * Agrega la posibilidad de usar chunks en los widgets del CLI, ahora la plataforma acepta un zip con los datos del widget más los chunks asociados
 * Mejoras en la interfaz de widgets cuando estos provienen desde el CLI
-* Agrega procesamiento de imágenes cuando se utiliza cloudflare, a traves del filtro de assets se puede especificar tamaño y calidad de la imagen a mostrar o un conjunto de tamaños como srcset, esto beneficia el rendimiento de los sitios que se construyen
+* Agrega procesamiento de imágenes cuando se utiliza cloudflare, a través del filtro de assets se puede especificar tamaño y calidad de la imagen a mostrar o un conjunto de tamaños como srcset, esto beneficia el rendimiento de los sitios que se construyen
 * Mueve las configuración de variables globales al contexto de channels
 * BREAKING CHANGE: Se eliminan los widgets de contenido Content List y Content Featured, pueden ser reemplazados mediante un widget html y el uso del sdk de liquid
 
