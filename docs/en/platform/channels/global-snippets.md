@@ -52,7 +52,7 @@ To load and use a previously created global snippet:
 1. Click on the snippets tab, above the work area, to display the list of available global snippets.
 1. Select the global snippet you want to use. Global snippets always use the nomenclature `global/nombredelsnippet`.
 1. Click **publish**.
-1. Select whether you want to publish the global snippet immediately or on a specific date. You can also select a publication date, if you wish.
+1. Select whether you want to publish the global snippet immediately or on a specific date. You can also select an unpublish date, if you wish.
 
 ### Preview a snippet
 To preview a global snippet in your web app:
