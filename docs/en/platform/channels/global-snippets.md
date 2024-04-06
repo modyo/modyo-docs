@@ -62,7 +62,7 @@ To preview a global snippet in your web app:
 1. Select widgets or templates (if you select templates, go to step 5).
 1. Select your widget.
 1. Click on snippets, above the work area, to display the list of available snippets.
-1. Select the snippet you want to view. Global snippets always use the `global/snippet name` naming.
+1. Select the snippet you want to use. Global snippets always use the nomenclature `global/nombredelsnippet`.
 1. Click on the preview icon.
 
 
