@@ -21,7 +21,7 @@ In the snippet editing view, you can create and manage your global snippets. In 
     - Delete: To delete a snippet you must first archive it.
 - **Save:** Once you've saved your snippet, this button changes status to **publish**.
 
-Above the work area are the following sections:
+The sections that can be found above the work area are:
 
 - Media
 - Keyboard shortcuts
