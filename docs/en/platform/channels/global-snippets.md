@@ -74,7 +74,7 @@ To modify a snippet, follow these steps:
 1. Select the snippet you want to use. Global snippets always use the nomenclature `global/nombredelsnippet`.
 1. Modify the snippet as needed.
 1. Click **save**.
-1. Click on **publish**.
+1. Click **publish**.
 1. Select whether you want to publish your global snippet immediately or on a specific date. You can also select a publication date, if you wish.
 
 
