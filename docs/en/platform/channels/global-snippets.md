@@ -9,8 +9,8 @@ A snippet is a small piece of reusable code. Snippets are useful for modularizin
 
 Global snippets in Modyo allow you to share code between your different web applications.
 
-:: :tip Tip
-A change in a global snippet affects all the web applications where it is being used, so only users with an administrator role can access the global snippets.
+:::tip Tip
+A change in a global snippet affects all the web applications where it is being used, therefore only users with an administrator role can access the global snippets.
 :::
 
 In the snippet editing view, you can create and manage your global snippets. In the top bar, you have the following options:
