@@ -19,7 +19,7 @@ In the snippet editing view, you can create and manage your global snippets. In 
 - **Other actions:**
     - Archive: To archive a snippet you must first publish it.
     - Delete: To delete a snippet you must first archive it.
-- **Save: ** Once you've saved your snippet, this button changes status to **publish**.
+- **Save:** Once you've saved your snippet, this button changes status to **publish**.
 
 Above the work area are the following sections:
 
