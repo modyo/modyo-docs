@@ -5,7 +5,7 @@ sidebarDepth: 2
 
 # Global variables
 
-Modyo offers you the functionality to define elements globally and reuse them everywhere where Liquid is used. This allows you to share code between different sites.
+Modyo offers you the functionality to define elements globally and reuse them everywhere Liquid is used. This allows you to share code between different sites.
 
 :: :tip Tip
 You can use plain text, HTML, JavaScript, and CSS inside global variables; however, you can't use Liquid code inside them. You should keep in mind that the content has a maximum of 65,535 characters.
