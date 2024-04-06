@@ -78,7 +78,7 @@ To modify a snippet, follow these steps:
 1. Select whether you want to publish your global snippet immediately or on a specific date. You can also select a publication date, if you wish.
 
 
-:: :danger Danger
+:::danger Danger
 Making changes to a global snippet affects all web applications where the snippet is published, so proceed with caution before editing or deleting a snippet.
 :::
 
