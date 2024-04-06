@@ -28,7 +28,7 @@ Global variables can be used to add values for different languages. If you requi
 When using global variables, the variables defined at the lowest level will always take precedence, leaving first the variables defined in the widget, then those defined in the site, and finally the variables defined at the account level, therefore, take care when defining variables in widgets or the site with the same name as the account variables
 :::
 
-:: :danger Danger
+:::danger Danger
 Global variables don't have a publishing, versioning, or team review workflow. Only account and site administrators can modify them, so you should consider that when you make changes to these values, they will be immediately reflected wherever they are being used.
 This does not apply to variables defined in widgets, since widgets and pages do have a publishing flow.
 :::
