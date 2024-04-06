@@ -71,7 +71,7 @@ To modify a snippet, follow these steps:
 
 1. In the side menu, click channels.
 1. Click on snippets.
-1. Select the snippet you want to edit. Global snippets always use the `global/snippet name` naming.
+1. Select the snippet you want to use. Global snippets always use the nomenclature `global/nombredelsnippet`.
 1. Modify the snippet as needed.
 1. Click **save**.
 1. Click on **publish**.
