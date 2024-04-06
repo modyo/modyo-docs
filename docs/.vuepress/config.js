@@ -107,6 +107,8 @@ module.exports = {
                         collapsable: true,
                         children: [
                             "/en/platform/channels/sites",
+                            "/en/platform/channels/global-variables",
+                            "/en/platform/channels/global-snippets",
                             "/en/platform/channels/pages",
                             "/en/platform/channels/navigation",
                             "/en/platform/channels/widgets",
@@ -348,13 +350,13 @@ module.exports = {
                           title: "Fundamentos de Modyo",
                           path: "/es/platform/basics/",
                           collapsable: true,
-                          children: [ 
+                          children: [
                             ["/es/platform/basics/", "Bienvenido a Modyo"],
                             ["/es/platform/basics/learn-modyo", "Aprende Modyo"],
-                            ["/es/platform/basics/key-concepts", "Conceptos claves"], 
+                            ["/es/platform/basics/key-concepts", "Conceptos claves"],
                           ],
                       },
-                      
+
                       {
                         title: "Plataforma",
                         path: "/es/platform/core/",
@@ -388,6 +390,8 @@ module.exports = {
                         collapsable: true,
                         children: [
                             "/es/platform/channels/sites",
+                            "/es/platform/channels/global-variables",
+                            "/es/platform/channels/global-snippets",
                             "/es/platform/channels/pages",
                             "/es/platform/channels/navigation",
                             "/es/platform/channels/widgets",
@@ -445,7 +449,7 @@ module.exports = {
                       },
                   ],
 
-                  
+
 
                   "/es/dynamic/": [{
                           title: "Dynamic Framework",
