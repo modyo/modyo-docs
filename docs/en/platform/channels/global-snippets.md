@@ -40,7 +40,7 @@ To create a global snippet, follow these steps:
 1. Enter your code.
 1. Click **save**.
 1. Click **publish**.
-1. Select whether you want to publish your global snippet immediately or on a specific date. You can also select a publication date, if you wish.
+1. Select whether you want to publish your global snippet immediately or on a specific date. You can also select a unplublish date, if you wish.
 
 ### Upload a global snippet
 To load and use a previously created global snippet:
