@@ -7,7 +7,7 @@ sidebarDepth: 2
 
 Modyo offers you the functionality to define elements globally and reuse them everywhere Liquid is used. This allows you to share code between different sites.
 
-:: :tip Tip
+:::tip Tip
 You can use plain text, HTML, JavaScript, and CSS inside global variables; however, you can't use Liquid code inside them. You should keep in mind that the content has a maximum of 65,535 characters.
 
 To get the value of the variable anywhere Liquid markup accepts (entries, widgets, templates), use:<span v-pre>`{{vars.name}}`</span>
