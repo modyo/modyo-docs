@@ -13,7 +13,7 @@ Los principales beneficios de trabajar con la CLI de Modyo son:
 
 ## Instalación
 
-Para usar la Línea de Comandos de Modyo, primero debes instalarla globalmente en tu máquina local. Esto te permitirá usar el comando `modyo-cli`, eque te permite inicializar un proyecto con algunas decisiones arquitectónicas de front-end predefinidas mediante la plantilla base de Modyo o con una experiencia del catálogo de [Dynamic Framework](/es/dynamic/).
+Para usar la Línea de Comandos de Modyo, primero debes instalarla globalmente en tu máquina local. Esto te permitirá usar el comando `modyo-cli`, eque te permite inicializar un proyecto con algunas decisiones arquitectónicas de front-end predefinidas mediante la plantilla base de Modyo o con una experiencia del catálogo de [Dynamic Framework](https://dynamicframework.dev).
 
 
 Para usar el CLI de Modyo puedes optar por alguna de las siguientes opciones:
@@ -60,10 +60,10 @@ $ modyo-cli get dynamic-react-base-template my-project-name
 ```
 Esto inicializa un proyecto funcional para comenzar un nuevo desarrollo.
 
-Modyo tiene también un conjunto de plantillas de experiencias financieras que agilizan aún más el desarrollo de soluciones en el ámbito de la banca digital e industria financiera. Puedes encontrar información sobre estas experiencias y cómo obtener sus plantillas en la sección [Experiencias](/es/dynamic/experiences/retail/dashboard.html) de la documentación de [Dynamic Framework](/es/dynamic/#dynamic-framework).
+Modyo tiene también un conjunto de plantillas de experiencias financieras que agilizan aún más el desarrollo de soluciones en el ámbito de la banca digital e industria financiera. Puedes encontrar información sobre estas experiencias y cómo obtener sus plantillas en la sección [Experiencias](https://dynamicframework.dev) de la documentación de [Dynamic Framework](https://dynamicframework.dev).
 
 :::tip Tip
-Todas las plantillas de [Dynamic Framework](/es/dynamic/) tienen un archivo README con información sobre sus requisitos y uso.
+Todas las plantillas de [Dynamic Framework](https://dynamicframework.dev) tienen un archivo README con información sobre sus requisitos y uso.
 :::
 
 Una organización puede, también, crear sus propias plantillas para personalizar el proceso de inicialización. Para obtener una plantilla personalizada, utiliza la opción `organization`.
@@ -240,7 +240,7 @@ EXAMPLE
 
 - **`modyo-cli help get`**
 
-El comando `get` se usa para obtener una plantilla de widget de nuestro [catálogo de experiencias](/es/dynamic/experiences/) utilizando un token proporcionado por Modyo.
+El comando `get` se usa para obtener una plantilla de widget de nuestro [catálogo de experiencias](https://dynamicframework.dev) utilizando un token proporcionado por Modyo.
 
 ```bash
 USAGE

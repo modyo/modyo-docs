@@ -44,12 +44,12 @@ FirstSteps3Url: /en/platform/key-concepts
 FirstSteps4Title: Dynamic Framework
 FirstSteps4Text: Dynamic Framework allows you to implement different financial experiences tailored to your needs, quickly and flexibly.
 FirstSteps4Img: https://cloud.modyocdn.com/uploads/566b72a5-2c53-481f-a1b8-5f6bde01278a/original/Widget.png
-FirstSteps4Url: /en/dynamic/
+FirstSteps4Url: https://dynamicframework.dev
 
 FirstSteps5Title: Modyo Training
 FirstSteps5Text: Obtain your certifications in our training programs at your own pace.
 FirstSteps5Img: https://cloud.modyocdn.com/uploads/4853c725-b765-4770-add1-d4cd4184ae10/original/Training.png
-FirstSteps5Url: https://help.modyo.com/
+FirstSteps5Url: https://help.modyo.com
 
 search: Search in
 

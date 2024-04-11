@@ -55,7 +55,7 @@ FirstSteps3Alt: Una lista de todos los conceptos y términos clave que usamos pa
 FirstSteps4Title: Dynamic Framework
 FirstSteps4Text: Dynamic Framework te permite implementar diferentes experiencias financieras ajustadas a tus necesidades, de forma rápida y flexible.
 FirstSteps4Img: https://cloud.modyocdn.com/uploads/566b72a5-2c53-481f-a1b8-5f6bde01278a/original/Widget.png
-FirstSteps4Url: /es/dynamic/
+FirstSteps4Url: https://dynamicframework.dev
 FirstSteps4Alt: Dynamic Framework te permite implementar diferentes experiencias financieras ajustadas a tus necesidades, de forma rápida y flexible.
 
 

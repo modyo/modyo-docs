@@ -49,12 +49,12 @@ module.exports = {
                       link: "/en/platform/basics/"
                   },
                   {
-                      text: "Dynamic",
-                      link: "/en/dynamic/"
-                  },
-                  {
                       text: "Connect",
                       link: "/en/connect/"
+                  },
+                  {
+                      text: "Dynamic",
+                      link: "https://dynamicframework.dev"
                   },
                   {
                       text: "Modyo",
@@ -165,73 +165,6 @@ module.exports = {
                           ],
                       },
                   ],
-                  "/en/dynamic/": [{
-                          title: "Dynamic Framework",
-                          collapsable: false,
-                          children: [
-                              "/en/dynamic/",
-                              "/en/dynamic/release-notes"
-                          ],
-                      },
-                      {
-                          title: "Design System",
-                          collapsable: true,
-                          children: [
-                              "/en/dynamic/ui/",
-                              "/en/dynamic/ui/components",
-                              "/en/dynamic/ui/theming",
-                              "/en/dynamic/ui/i18n",
-                              "/en/dynamic/ui/accessibility"
-                          ],
-                      },
-                      {
-                          title: "Experiences",
-                          collapsable: true,
-                          path: "/en/dynamic/experiences/",
-                          children: [{
-                                  title: "Retail Banking",
-                                  collapsable: true,
-                                  children: [
-                                      "/en/dynamic/experiences/retail/dashboard",
-                                      "/en/dynamic/experiences/retail/product-detail",
-                                      "/en/dynamic/experiences/retail/pay-debt",
-                                      "/en/dynamic/experiences/retail/loan-application",
-                                      "/en/dynamic/experiences/retail/loan-approval",
-                                      "/en/dynamic/experiences/retail/transfer",
-                                  ],
-                              },
-                              {
-                                  title: "Business Banking",
-                                  collapsable: true,
-                                  children: [
-                                      "/en/dynamic/experiences/business/dashboard",
-                                      "/en/dynamic/experiences/business/product-detail",
-                                      "/en/dynamic/experiences/business/entitlements",
-                                      "/en/dynamic/experiences/business/entitlement-management",
-                                  ],
-                              },
-                              // {
-                              //   title: "Onboarding Digital",
-                              //   collapsable: true,
-                              //   children: [
-                              //     "/en/dynamic/experiences/onboarding/accounts",
-                              //   ],
-                              // }
-                          ],
-                      },
-                      {
-                          title: "Integrations",
-                          collapsable: true,
-                          path: "/en/dynamic/integrations/",
-                          children: [
-                              "/en/dynamic/integrations/modyo",
-                              "/en/dynamic/integrations/aws",
-                              "/en/dynamic/integrations/mambu",
-                              "/en/dynamic/integrations/jumio",
-                              "/en/dynamic/integrations/salesforce"
-                          ],
-                      },
-                  ],
                   "/en/connect/": [{
                           title: "Modyo Connect",
                           collapsable: false,
@@ -329,12 +262,12 @@ module.exports = {
                       link: "/es/platform/basics/"
                   },
                   {
-                      text: "Dynamic",
-                      link: "/es/dynamic/"
-                  },
-                  {
                       text: "Connect",
                       link: "/es/connect/"
+                  },
+                  {
+                      text: "Dynamic",
+                      link: "https://dynamicframework.dev"
                   },
                   {
                       text: "Modyo",
@@ -445,76 +378,6 @@ module.exports = {
                           children: [
                               "/es/platform/insights/digital-factory",
                               ["/es/platform/insights/data-studio", "Data Studio"],
-                          ],
-                      },
-                  ],
-
-
-
-                  "/es/dynamic/": [{
-                          title: "Dynamic Framework",
-                          collapsable: false,
-                          children: [
-                              "/es/dynamic/",
-                              "/es/dynamic/release-notes"
-                          ],
-                      },
-                      {
-                          title: "Sistema de Diseño",
-                          collapsable: true,
-                          children: [
-                              "/es/dynamic/ui/",
-                              "/es/dynamic/ui/components",
-                              "/es/dynamic/ui/theming",
-                              "/es/dynamic/ui/i18n",
-                              "/es/dynamic/ui/accessibility"
-                          ],
-                      },
-                      {
-                          title: "Experiencias",
-                          collapsable: true,
-                          path: "/es/dynamic/experiences/",
-                          children: [{
-                                  title: "Banca Retail",
-                                  collapsable: true,
-                                  children: [
-                                      "/es/dynamic/experiences/retail/dashboard",
-                                      "/es/dynamic/experiences/retail/product-detail",
-                                      "/es/dynamic/experiences/retail/pay-debt",
-                                      "/es/dynamic/experiences/retail/loan-application",
-                                      "/es/dynamic/experiences/retail/loan-approval",
-                                      "/es/dynamic/experiences/retail/transfer",
-                                  ],
-                              },
-                              {
-                                  title: "Banca Empresas",
-                                  collapsable: true,
-                                  children: [
-                                      "/es/dynamic/experiences/business/dashboard",
-                                      "/es/dynamic/experiences/business/product-detail",
-                                      "/es/dynamic/experiences/business/entitlements",
-                                      "/es/dynamic/experiences/business/entitlement-management",
-                                  ],
-                              },
-                              // {
-                              //   title: "Onboarding Digital",
-                              //   collapsable: true,
-                              //   children: [
-                              //     "/es/dynamic/experiences/onboarding/accounts",
-                              //   ],
-                              // }
-                          ],
-                      },
-                      {
-                          title: "Integraciones",
-                          collapsable: true,
-                          path: "/es/dynamic/integrations/",
-                          children: [
-                              "/es/dynamic/integrations/modyo",
-                              "/es/dynamic/integrations/aws",
-                              "/es/dynamic/integrations/mambu",
-                              "/es/dynamic/integrations/jumio",
-                              "/es/dynamic/integrations/salesforce"
                           ],
                       },
                   ],
