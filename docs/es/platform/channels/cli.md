@@ -157,7 +157,7 @@ MODYO_DISABLE_LIQUID_REGEX=raw
 * `MODYO_SITE_HOST` El host del sitio donde quieres hacer el despliegue del micro-frontend. No es necesario si el id del sitio está especificado.
 * `MODYO_SITE_ID` El id del sitio donde quieres hacer el despliegue del micro-frontend.
 * `MODYO_TOKEN` El token de acceso del usuario que se usará para los despliegues del micro-frontend.
-* `MODYO_VERSION` La versión de Modyo. Para versiones antiguas es 8 y la actual es 9.
+* `MODYO_VERSION` La versión de Modyo. Para versiones antiguas es 8 y la actual es 10.
 * `MODYO_BUILD_DIRECTORY` El nombre de la carpeta que contiene el resultado del build, como "dist" o "build" según el framework utilizado.
 * `MODYO_WIDGET_NAME` El nombre que tendrá el widget después de desplegarse en la plataforma.
 * `MODYO_DISABLE_LIQUID_REGEX` Define una expresión regular para seleccionar archivos que necesitan deshabilitar el uso de Liquid, por ejemplo, archivos de plantillas donde es probable que la definición o el uso de variables colisionen con el uso en Liquid.
@@ -281,7 +281,7 @@ OPTIONS
   -p, --publish                          Force widget publication
   -t, --token=token                      (required) Modyo Api token
   -u, --account-url=account-url          (required) URL of your Modyo account ex("https://account.modyo.com")
-  -v, --version=8|9                      [default: 9] Version of Modyo platform
+  -v, --version=9|10                      [default: 10] Version of Modyo platform
 
 EXAMPLE
   $ modyo-cli push <NAME>
