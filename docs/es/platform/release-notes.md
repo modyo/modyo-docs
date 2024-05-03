@@ -13,7 +13,7 @@ search: true
 <Badge text="Channels" type="channels" vertical="middle"/>
 
 * Mejora de performance del filtro de contenido by_tag
-* Mejora en las custom redirections, ahora se redirige al destino si se detecta una url de fuente que contempla argumentos.
+* Mejora en las redirecciones personalizadas, ahora se redirige al destino si se detecta una url de fuente que contempla argumentos
 
 
 ### 9.2.57 - 28 de marzo de 2024
