@@ -12,7 +12,7 @@ search: true
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
-* Mejora de performance del filtro de contenido by_tag
+* Mejora de performance en el filtro de contenido by_tag
 * Mejora en las redirecciones personalizadas, ahora se redirige al destino si se detecta una url de fuente que contempla argumentos
 
 
