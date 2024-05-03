@@ -5,6 +5,17 @@ search: true
 # Notas del release
 
 ## 9.2
+### 9.2.58 - 03 de marzo de 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Mejora de performance del filtro de contenido by_tag
+* Mejora en las custom redirections, ahora se redirige al destino si se detecta una url de fuente que contempla argumentos.
+
+
 ### 9.2.57 - 28 de marzo de 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
@@ -23,6 +34,7 @@ search: true
 <Badge text="Content" type="content" vertical="middle"/>
 
 * Corrige problema de lentitud al guardar y publicar contenidos
+
 
 ### 9.2.56 - 23 de enero de 2024
 <Badge text="Core" type="core" vertical="middle"/>
