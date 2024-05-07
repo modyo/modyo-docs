@@ -331,13 +331,14 @@ Separates the results into pages. *e.g.*
 
 ### Sort By
 
-Separates the results into pages. *e.g.*
-<span v-pre>`{{ objects | paginated: 10, 2 }}`</span>
+Return an array with the entries ordered by a filed *e.g.*
+<span v-pre>`{% assign entries = widgets.entries | sort_by: 'name', 'asc'%}`</span>
 
 **Parameters:**
-- object(Array) - array
-- per_page (Integer) (default: 10) - objects per page
-- page (Integer) (default: 1) - page number to display
+- entries (ArrayEntry) - array with entries
+- attribute (String) — field by which you want to sort
+- order (String) - asc (ascending) or desc (descending)
+
 
 ### To Published Date
 
