@@ -140,7 +140,7 @@ Keep in mind that using very large widgets synchronously may decrease the perfor
 
 With i18n you can configure and add new languages to your widgets.
 
-To handle internationalization of Widgets in our [experience catalog](en/dynamic/experiences/) we use the [**Vue i18n**](https://kazupon.github.io/vue-i18n/) package, installed using the plugin [vue-cli-plugin-i18n](https://github.com/kazupon/vue-cli-plugin-i18n), you can review its documentation [here](https://kazupon.github.io/vue-i18n/introduction.html). When installing the plugin, a folder for languages called `locals` and a configuration file called `i18n.js` are created.
+To handle internationalization in the widgets of our [experience catalog](https://dynamicframework.dev) we use the [**Vue I18n**](https://kazupon.github.io/vue-i18n/) package installed through the plugin [vue-cli-plugin-i18n](https://github.com/kazupon/vue-cli-plugin-i18n), you can check its documentation [here](https://kazupon.github.io/vue-i18n/introduction.html). When installing the plugin, it creates a folder for the languages called `locals` and a configuration file called `i18n.js`.
 
 ```shell{3,5-7}
 ├── src/

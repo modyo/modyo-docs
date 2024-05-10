@@ -13,7 +13,7 @@ The main benefits of working with the Modyo CLI are:
 
 ## Installation
 
-To use the Modyo Command Line, you must first install it globally on your local machine. This will allow you to use the `modyo-cli` command, which allows you to initialize a project with some predefined front-end architectural decisions using the Modyo base template or with an experience from the [Dynamic Framework](/en/dynamic/) catalog.
+To use the Modyo Command Line Interface, you first need to install it globally on your local machine. This will allow you to use the `modyo-cli` command, which enables you to initialize a project with some predefined front-end architectural decisions using the Modyo base template or with an experience from the [Dynamic Framework catalog](https://dynamicframework.dev).
 
 
 To use the Modyo CLI you can choose one of the following options:
@@ -60,10 +60,10 @@ $ modyo-cli get dynamic-react-base-template my-project-name
 ```
 This initializes a functional project to begin a new development.
 
-Modyo also has a set of financial experience templates that further accelerate the development of solutions in the field of digital banking and the financial industry. You can find information about these experiences and how to obtain their templates in the [Experiences](/en/dynamic/experiences/retail/dashboard.html) section of the [Dynamic Framework](/en/dynamic/#dynamic-framework) documentation.
+Modyo also has a set of financial experiences templates that accelerate the development of solutions in the digital banking and financial industry even further. You can find information about these experiences and how to obtain their templates in the [Experiences](https://dynamicframework.dev) section of the [Dynamic Framework](https://dynamicframework.dev) documentation.
 
 :::tip Tip
-All [Dynamic Framework](/en/dynamic/#dynamic-framework) templates have a README file with information about their requirements and use.
+All the [Dynamic Framework](https://dynamicframework.dev) templates have a README file with information about their requirements and usage.
 :::
 
 An organization can also create its own templates to customize the initialization process. To get a customized template, use the `organization` option.
@@ -240,7 +240,7 @@ EXAMPLE
 
 - **`modyo-cli help get`**
 
-The `get` command is used to get a widget template from our [experience catalog](/en/dynamic/experiences/) using a token provided by Modyo.
+The `get` command is used to obtain a widget template from our [experience catalog](https://dynamicframework.dev) using a token provided by Modyo.
 
 ```bash
 USAGE
