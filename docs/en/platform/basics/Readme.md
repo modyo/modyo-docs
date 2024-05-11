@@ -4,7 +4,7 @@ search: true
 
 # Welcome to Modyo
 
-### Hello! 👋
+### ¡Hola! 👋
 
 We're excited to have you on board and exploring our platform!
 
