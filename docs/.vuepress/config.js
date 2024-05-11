@@ -193,24 +193,6 @@ module.exports = {
                           ],
                       },
                   ],
-                  "/en/brand/": [{
-                      title: "Brand Guidelines",
-                      collapsable: true,
-                      children: [
-                          ["/en/brand/", "Introduction"],
-                          "/en/brand/logo",
-                          "/en/brand/colors",
-                          "/en/brand/typography",
-                          "/en/brand/illustrations",
-                      ],
-                  }, ],
-                  "/en/legal/": [{
-                      title: "Legal",
-                      collapsable: true,
-                      children: [
-                          ["/en/legal/", "License Agreement"],
-                      ],
-                  }, ],
                   "/en/architecture/": [{
                           title: "Architecture",
                           collapsable: false,
@@ -409,25 +391,6 @@ module.exports = {
                           ],
                       },
                   ],
-                  "/es/brand/": [{
-                      title: "Guía de Marca",
-                      collapsable: false,
-                      children: [
-                          ["/es/brand/", "Introducción"],
-                          "/es/brand/logo",
-                          "/es/brand/colors",
-                          "/es/brand/typography",
-                          "/es/brand/illustrations",
-                      ],
-                  }, ],
-                  "/es/legal/": [{
-                      title: "Legal",
-                      collapsable: false,
-                      children: [
-                          ["/es/legal/", "Acuerdo de Licencia"],
-                          "/es/legal/dpa",
-                      ],
-                  }, ],
                   "/es/architecture/": [{
                           title: "Arquitectura",
                           collapsable: false,
