@@ -8,13 +8,13 @@ version: 9.2
 
 ### ¡Hola! 👋
 
-Estamos emocionados de tenerte a bordo y explorando nuestra plataforma.
+¡Estamos emocionados de tenerte a bordo y explorando nuestra plataforma!
 
 Queremos que tu experiencia sea lo más fácil y satisfactoria posible, por lo que hemos diseñado esta documentación pensando en ti. Puedes navegar estos documentos de principio a fin o dirigirte a una sección específica, los contenidos están todos relacionados entre sí para facilitar tu proceso de aprendizaje.
 
 :::tip Versiones anteriores
 
-La documentación actual aplica a la última versión (10) de Modyo. Si necesitas información sobre versiones anteriores (9.2), [puedes acceder aquí](https://9-2.docs.modyo.com/en/).
+La documentación actual aplica a la última versión (Modyo 10). Si necesitas información sobre la versión anterior (Modyo 9.2), [puedes acceder aquí](https://9-2.docs.modyo.com/en/).
 
 :::
 
