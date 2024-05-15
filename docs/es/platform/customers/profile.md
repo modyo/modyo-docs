@@ -44,15 +44,15 @@ La eliminación de la cuenta de usuario es una acción irreversible y los usuari
 
 Puedes acceder a la API de customers en donde podrás obtener y editar la información de reinos y usuarios a través de la URL `account_url/api/customers/docs`. Algunas de las cosas que puedes modificar son: 
 
-- Notificaciones: `/realms/{realm_uid}/notifications`
-- Información de usuarios: `/realms/{realm_uid}/me`
-- Eventos: `/realms/{realm_uid}/events`
+- Notificaciones: `account_url/api/customers/realms/{realm_uid}/notifications`
+- Información de usuarios: `account_url/api/customers/realms/{realm_uid}/me`
+- Eventos: `account_url/api/customers/realms/{realm_uid}/events`
 
 ### Tokens delegados
 
-Al habilitar la opción de [**Mostrar información de delegación**](/es/platform/core/integrations/identity-providers.html) en tus proveedores de identidad, al hacer uso de la API `/realms/{realm_uid}/me`, obtendrás un JSON adicionado con información de tokens delegados parecido a este:
+Al habilitar la opción de [**Mostrar información de delegación**](/es/platform/core/integrations/identity-providers.html) en tus proveedores de identidad, al hacer uso de la API `account_url/api/customers/realms/{realm_uid}/me`, obtendrás un JSON adicionado con información de tokens delegados parecido a este:
 
-``curl -X GET test.miModyo.com/api/realms/miRealm/me``
+``curl -X GET test.miModyo.com/api/customers/realms/miRealm/me``
 
 ```json
 {
