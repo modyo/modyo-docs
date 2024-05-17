@@ -12,7 +12,7 @@ Desde conceptos básicos hasta funcionalidades avanzadas, los Learning Paths est
 
 ### Comunidad
 
-Únete a la [Comunidad de Modyo](https://www.modyo.com/community), donde encontrarás valiosos recursos de aprendizaje, invitaciones a eventos exclusivos y el apoyo incondicional de nuestros expertos para resolver cualquier duda que tengas sobre la plataforma.
+Únete a la [Comunidad de Modyo](https://es.modyo.com/recursos/comunidad), donde encontrarás valiosos recursos de aprendizaje, invitaciones a eventos exclusivos y el apoyo incondicional de nuestros expertos para resolver cualquier duda que tengas sobre la plataforma.
 
 ### Documentación Oficial
 

@@ -71,7 +71,7 @@ roadmapUrl: https://modyo.com/roadmap
 
 communityTitle: Need more help?
 communityText: Use our help channels
-communityURL: https://www.modyo.com/community
+communityURL: https://www.modyo.com/resources/community
 
 communityLang: en-US
 ---
