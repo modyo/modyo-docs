@@ -5,7 +5,28 @@ search: true
 # Notas del release
 
 ## 9.2
-### 9.2.58 - 03 de marzo de 2024
+### 9.2.59 - 17 de mayo de 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+* Mejoras al SEO, se agrega la posibilidad de editar el sitemap.xnl y robots.txt a nivel de cuenta
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Permite headers mas largos de Content Security Policy y Permission Policy
+* Mejoras al SEO, se agrega la posibilidad de inhabilitar el sitemap.xml y robots.txt del sitio
+* Corrige preview de cotenido editable en los sitios, ahora se muestra correctamente el contenido relacionado en edicion en los sitios
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Corrige problema al entregar fechas en el API me, ahora se considera siempre la zona horaria de la cuenta
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Agrega la posibilidad de alterar por despliegue el numero máximo de contenido relacionado
+
+
+### 9.2.58 - 02 de mayo de 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
 * Mejoras de seguridad
