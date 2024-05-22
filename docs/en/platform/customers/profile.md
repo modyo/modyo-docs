@@ -46,11 +46,11 @@ You can access the customers API where you can get and edit information about re
 
 - Notifications: `account_url/api/customers/realms/{realm_uid}/notifications`
 - User Information: `account_url/api/customers/realms/{realm_uid}/me`
-- Events: `account_url/api/customers/realms/{realm_uid}/events`
+- Events: `account_url/api/customers/realms/{realm_uid}/events `
 
 ### Delegated tokens
 
-By enabling the [**Show delegation information**](/en/platform/core/integrations/identity-providers.html) option in your identity providers, you will get an appended JSON with delegate token information when making use of the `account_url/api/customers/realms/{realm_uid}/me` API, the result will be similar to this:
+By enabling the [**Show delegation information**](/es/platform/core/integrations/identity-providers.html) option in your identity providers, using the API `account_url/api/customers/realms/{realm_uid}/me `, you'll get a JSON with added information about delegated tokens similar to this:
 
 ``curl -X GET test.miModyo.com/api/customers/realms/miRealm/me``
 
