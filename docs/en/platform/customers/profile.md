@@ -44,15 +44,15 @@ Deleting the user account is an irreversible action and users who perform this a
 
 You can access the customers API where you can get and edit information about realms and users through the URL `account_url/api/customers/docs`. Some of the things you can modify are: 
 
-- Notifications: `/realms/{realm_uid}/notifications`
-- User Information: `/realms/{realm_uid}/me`
-- Events: `/realms/{realm_uid}/events`
+- Notifications: `account_url/api/customers/realms/{realm_uid}/notifications`
+- User Information: `account_url/api/customers/realms/{realm_uid}/me`
+- Events: `account_url/api/customers/realms/{realm_uid}/events`
 
 ### Delegated tokens
 
-By enabling the [**Show delegation information**](/en/platform/core/integrations/identity-providers.html) option in your identity providers, you will get an appended JSON with delegate token information when making use of the `/realms/{realm_uid}/me` API, the result will be similar to this:
+By enabling the [**Show delegation information**](/en/platform/core/integrations/identity-providers.html) option in your identity providers, you will get an appended JSON with delegate token information when making use of the `account_url/api/customers/realms/{realm_uid}/me` API, the result will be similar to this:
 
-``curl -X GET test.miModyo.com/api/realms/miRealm/me``
+``curl -X GET test.miModyo.com/api/customers/realms/miRealm/me``
 
 ```json
 {
