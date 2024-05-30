@@ -5,6 +5,55 @@ search: true
 # Release Notes
 
 ## 9.2
+### 9.2.59 - May 17, 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Security improvements
+* SEO improvements, adds the ability to edit the sitemap.xml and robots.txt files at the account level
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Allows longer headers for Content Security Policy and Permission Policy
+* SEO improvements, adds the ability to disable the site's sitemap.xml and robots.txt
+* Fixes preview of editable content on sites, now correctly displays related content in editing mode on sites
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Fixes issue with delivering dates in the API, now always considers the account's time zone
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Adds the ability to alter the maximum number of related content per deployment
+
+### 9.2.58 - May 2, 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Security improvements
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Performance improvement in the by_tag content filter
+* Improvement in custom redirects, now redirects to the destination if a source URL with arguments is detected
+
+### 9.2.57 - March 28, 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Security improvements
+* Adds the possibility to output platform logs to stdout via the application logger
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Fixes cache invalidation issue for content pages when publishing site templates
+* Adds deletion of menus when they are unpublished and archived
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Fixes duplicate token issue in different sessions for the same user
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Fixes slow performance when saving and publishing content
+
 ### 9.2.56 - January 23, 2024
 <Badge text="Core" type="core" vertical="middle"/>
 

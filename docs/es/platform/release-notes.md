@@ -9,17 +9,17 @@ search: true
 <Badge text="Core" type="core" vertical="middle"/>
 
 * Mejoras de seguridad
-* Mejoras al SEO, se agrega la posibilidad de editar el sitemap.xnl y robots.txt a nivel de cuenta
+* Mejoras al SEO, se agrega la posibilidad de editar el sitemap.xml y robots.txt a nivel de cuenta
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
 * Permite headers mas largos de Content Security Policy y Permission Policy
 * Mejoras al SEO, se agrega la posibilidad de inhabilitar el sitemap.xml y robots.txt del sitio
-* Corrige preview de cotenido editable en los sitios, ahora se muestra correctamente el contenido relacionado en edicion en los sitios
+* Corrige preview de contenido editable en los sitios, ahora se muestra correctamente el contenido relacionado en edición en los sitios
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* Corrige problema al entregar fechas en el API me, ahora se considera siempre la zona horaria de la cuenta
+* Corrige problema al entregar fechas en el API, ahora se considera siempre la zona horaria de la cuenta
 
 <Badge text="Content" type="content" vertical="middle"/>
 
