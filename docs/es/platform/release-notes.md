@@ -14,19 +14,19 @@ search: true
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* Soft login, ahora es posible el inicio de sesión mediante un codigo otp que es enviado al correo electrónico
-* Mejoras al los formularios de registro y profile
+* Soft login, ahora es posible el inicio de sesión mediante un código OTP que es enviado al correo electrónico
+* Mejoras a los formularios de registro y profile
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
-* Mejoras en el acceso a las variables de sitio, ahora son accesibles pra verlas por cualquier rol
+* Mejoras en el acceso a las variables de sitio, ahora son accesibles para ser vistas por cualquier rol
 * Agrega la posibilidad de usar las variables globales y de sitios en las urls de los items de menú
 * Agrega ordenamiento por ruta de las páginas en la vista de tabla
 
 <Badge text="Content" type="content" vertical="middle"/>
 
 * Se agrega la posibilidad de especificar una descripción a los spaces el cual es mostrado en el overview
-* Se agrega la posibilidad de agregar una descripcion a los tipos de contenido
+* Se agrega la posibilidad de agregar una descripción a los tipos de contenido
 
 
 ### 10.0.0 - 03 de abril de 2024
