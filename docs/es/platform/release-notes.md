@@ -5,6 +5,22 @@ search: true
 # Notas del release
 
 ## 9.2
+### 9.2.60 - 10 de junio de 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+* Endpoints de sitemap.xml, robots.txt y corssdomain.xml dejan de responder a extensiones no soportadas
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Corrige headers de respuesta cuando se redirige al login en páginas privadas
+* Restringe el acceso a las páginas 404 cuando el sitio es privado
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Permite cambiar a nivel de despliegue el limite máximo de assets permitidos a subir en el asset manager y en su versión modal
+
+
 ### 9.2.59 - 17 de mayo de 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
