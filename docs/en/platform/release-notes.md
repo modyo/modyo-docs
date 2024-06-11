@@ -5,6 +5,30 @@ search: true
 # Release Notes
 
 ## 10.0
+### 10.0.1 - May 31, 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Security improvements
+* Performance improvements
+* Updating dependencies
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Soft login, it is now possible to log in using an OTP code that is sent to by email
+* Improvements to registration and profile forms
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Improved access to site variables, now accessible to be viewed by any role
+* Adds the ability to use global and site variables in the URLs of the menu items
+* Adds sorting by path of pages in table view
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Adds the possibility of specifying a description to spaces, which is shown in the overview.
+* Adds the ability of specifying a description to content types
+
+
 ### 10.0.0 - April 03, 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
