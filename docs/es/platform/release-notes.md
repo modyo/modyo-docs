@@ -5,6 +5,30 @@ search: true
 # Notas del release
 
 ## 10.0
+### 10.0.1 - 31 de mayo de 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+* Mejoras de rendimiento
+* Actualización de dependencias
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Soft login, ahora es posible el inicio de sesión mediante un código OTP que es enviado al correo electrónico
+* Mejoras a los formularios de registro y profile
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Mejoras en el acceso a las variables de sitio, ahora son accesibles para ser vistas por cualquier rol
+* Agrega la posibilidad de usar las variables globales y de sitios en las urls de los items de menú
+* Agrega ordenamiento por ruta de las páginas en la vista de tabla
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Se agrega la posibilidad de especificar una descripción a los spaces el cual es mostrado en el overview
+* Se agrega la posibilidad de agregar una descripción a los tipos de contenido
+
+
 ### 10.0.0 - 03 de abril de 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
