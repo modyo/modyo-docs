@@ -5,6 +5,21 @@ search: true
 # Release Notes
 
 ## 9.2
+### 9.2.60 - June 10, 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Security improvements
+* Sitemap.xml, robots.txt, and crossdomain.xml endpoints no longer respond to unsupported extensions
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Fixes response headers when redirecting to login on private pages
+* Restricts access to 404 pages when the site is private
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Allows changing the maximum upload limit of assets in the asset manager and its modal version at the deployment level
+
 ### 9.2.59 - May 17, 2024
 <Badge text="Core" type="core" vertical="middle"/>
 

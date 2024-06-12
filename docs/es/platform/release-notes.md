@@ -9,7 +9,7 @@ search: true
 <Badge text="Core" type="core" vertical="middle"/>
 
 * Mejoras de seguridad
-* Endpoints de sitemap.xml, robots.txt y corssdomain.xml dejan de responder a extensiones no soportadas
+* Endpoints de sitemap.xml, robots.txt y crossdomain.xml dejan de responder a extensiones no soportadas
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
