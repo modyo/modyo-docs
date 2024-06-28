@@ -13,7 +13,7 @@ search: true
 
 <Badge text="Content" type="content" vertical="middle"/>
 
-* Corrige error al cargar entradas bajo ciertas condiciones
+* Corrige error al cargar el listado de entradas
 * Corrige problema de performance al publicar entradas referenciadas por otras entradas
 
 
