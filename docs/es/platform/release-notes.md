@@ -5,6 +5,18 @@ search: true
 # Notas del release
 
 ## 9.2
+### 9.2.61 - 26 de junio de 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+* Agrega listado de sesiones abiertas al perfil del administrador
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Corrige error al cargar el listado de entradas
+* Corrige problema de performance al publicar entradas referenciadas por otras entradas
+
+
 ### 9.2.60 - 10 de junio de 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
