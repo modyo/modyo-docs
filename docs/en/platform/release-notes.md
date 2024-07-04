@@ -5,6 +5,18 @@ search: true
 # Release Notes
 
 ## 9.2
+### 9.2.61 - June 26, 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Security improvements
+* Adds the list of open sessions to the administrator's profile
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Fixes error when loading the entry list
+* Fixes performance problem when publishing entries referenced by other entries
+
+
 ### 9.2.60 - June 10, 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
