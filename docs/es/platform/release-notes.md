@@ -5,6 +5,40 @@ search: true
 # Notas del release
 
 ## 10.0
+### 10.0.3 12 de julio de 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+* Mejoras de rendimiento
+* Se agregan mejoras en la configuracion de SEO, ahora es posible editar el sitemap y robots desde la configuracion de la organización e incluir automáticamente sitios que dependan de la url base
+* Se agrega listado de sesiones activas en el profile del administrados, también es posible cerrarlas desde esa vista.
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Corrige problema al clonar entradas de contenido con multiples idiomas
+
+
+### 10.0.2 - 08 de julio de 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+* Mejoras de rendimiento
+* Actualización de dependencias
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Mejora en el formato de teléfono, ahora se selecciona automáticamente el pais mediante cloudflare
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Corrige un problema de performance al usar el filtro by_tag en los tempaltes liquid
+* Mejora la experiencia de carga de templates al volver al template builder
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Agrega la posibilidad de clonar espacios y tipos de contenidos
+
+
 ### 10.0.1 - 31 de mayo de 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
