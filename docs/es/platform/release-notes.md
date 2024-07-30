@@ -5,6 +5,16 @@ search: true
 # Notas del release
 
 ## 10.0
+### 10.0.4 30 de julio de 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+* Mejoras en los webhooks, ahora los stages responden a los hooks asociados a un sitio, agrega hooks al crear o actualizar un asset
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Corrige problema al publicar una page cuando se tienen una configuracion de variables y borrado de backups
+
 ### 10.0.3 12 de julio de 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
