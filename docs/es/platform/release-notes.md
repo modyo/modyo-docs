@@ -5,6 +5,24 @@ search: true
 # Notas del release
 
 ## 9.2
+### 9.2.62 - 29 de julio de 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Se deja de restringir el largo de las opciones en los formularios
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Corrige error al eliminar redirecciones en bulk, ahora se eliminan todas las redirecciones seleccionadas
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Restringe a uno la cantidad de generación de reportes que pueden estar activos
+
+
 ### 9.2.61 - 26 de junio de 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
