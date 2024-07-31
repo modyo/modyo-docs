@@ -13,15 +13,15 @@ search: true
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
-* Corrige problema al publicar una page cuando se tienen una configuracion de variables y borrado de backups
+* Corrige problema al publicar una page cuando se tienen una configuración de variables y borrado de backups
 
 ### 10.0.3 12 de julio de 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
 * Mejoras de seguridad
 * Mejoras de rendimiento
-* Se agregan mejoras en la configuracion de SEO, ahora es posible editar el sitemap y robots desde la configuracion de la organización e incluir automáticamente sitios que dependan de la url base
-* Se agrega listado de sesiones activas en el profile del administrados, también es posible cerrarlas desde esa vista.
+* Se agregan mejoras en la configuración de SEO, ahora es posible editar el sitemap y robots desde la configuración de la organización e incluir automáticamente sitios que dependan de la url base
+* Se agrega listado de sesiones activas en el profile del administrador, también es posible cerrarlas desde esa vista.
 
 <Badge text="Content" type="content" vertical="middle"/>
 
@@ -37,11 +37,11 @@ search: true
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* Mejora en el formato de teléfono, ahora se selecciona automáticamente el pais mediante cloudflare
+* Mejora en el formato de teléfono, ahora se selecciona automáticamente el país mediante cloudflare
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
-* Corrige un problema de performance al usar el filtro by_tag en los tempaltes liquid
+* Corrige un problema de performance al usar el filtro by_tag en los templates liquid
 * Mejora la experiencia de carga de templates al volver al template builder
 
 <Badge text="Content" type="content" vertical="middle"/>
