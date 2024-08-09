@@ -5,6 +5,74 @@ search: true
 # Notas del release
 
 ## 10.0
+### 10.0.4 30 de julio de 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+* Mejoras en los webhooks, ahora los stages responden a los hooks asociados a un sitio, agrega hooks al crear o actualizar un asset
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Corrige problema al publicar una page cuando se tienen una configuración de variables y borrado de backups
+
+### 10.0.3 12 de julio de 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+* Mejoras de rendimiento
+* Se agregan mejoras en la configuración de SEO, ahora es posible editar el sitemap y robots desde la configuración de la organización e incluir automáticamente sitios que dependan de la url base
+* Se agrega listado de sesiones activas en el profile del administrador, también es posible cerrarlas desde esa vista.
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Corrige problema al clonar entradas de contenido con multiples idiomas
+
+
+### 10.0.2 - 08 de julio de 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+* Mejoras de rendimiento
+* Actualización de dependencias
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Mejora en el formato de teléfono, ahora se selecciona automáticamente el país mediante cloudflare
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Corrige un problema de performance al usar el filtro by_tag en los templates liquid
+* Mejora la experiencia de carga de templates al volver al template builder
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Agrega la posibilidad de clonar espacios y tipos de contenidos
+
+
+### 10.0.1 - 31 de mayo de 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+* Mejoras de rendimiento
+* Actualización de dependencias
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Soft login, ahora es posible el inicio de sesión mediante un código OTP que es enviado al correo electrónico
+* Mejoras a los formularios de registro y profile
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Mejoras en el acceso a las variables de sitio, ahora son accesibles para ser vistas por cualquier rol
+* Agrega la posibilidad de usar las variables globales y de sitios en las urls de los items de menú
+* Agrega ordenamiento por ruta de las páginas en la vista de tabla
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Se agrega la posibilidad de especificar una descripción a los spaces el cual es mostrado en el overview
+* Se agrega la posibilidad de agregar una descripción a los tipos de contenido
+
+
 ### 10.0.0 - 03 de abril de 2024
 <Badge text="Core" type="core" vertical="middle"/>
 

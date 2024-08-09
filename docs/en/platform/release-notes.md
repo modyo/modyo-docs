@@ -5,6 +5,74 @@ search: true
 # Release Notes
 
 ## 10.0
+### 10.0.4 July 30, 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Security improvements
+* Improvements to webhooks, stages now respond to hooks associated with a site, and adds hooks when creating or updating an asset
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Fixes problem when publishing a page when having a variable configuration and deleting backups
+
+### 10.0.3 July 12, 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Security improvements
+* Performance improvements
+* Improvements have been added to the SEO configuration, it is now possible to edit the sitemap and robots from the organization settings and automatically include sites that depend on the base URL
+* A list of active sessions is added to the administrator's profile, and it is also possible to close them from that view.
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Fixes problem when cloning content entries with multiple languages
+
+
+### 10.0.2 - July 08, 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Security improvements
+* Performance improvements
+* Updating dependencies
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Improved phone format, now the country is automatically selected using Cloudflare
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Fixes a performance issue when using the by_tag filter in liquid templates
+* Improves the template loading experience when returning to the template builder
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Adds the ability to clone spaces and content types
+
+
+### 10.0.1 - May 31, 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Security improvements
+* Performance improvements
+* Updating dependencies
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Soft login, it is now possible to log in using an OTP code that is sent to by email
+* Improvements to registration and profile forms
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Improved access to site variables, now accessible to be viewed by any role
+* Adds the ability to use global and site variables in the URLs of the menu items
+* Adds sorting by path of pages in table view
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Adds the possibility of specifying a description to spaces, which is shown in the overview.
+* Adds the ability of specifying a description to content types
+
+
 ### 10.0.0 - April 03, 2024
 <Badge text="Core" type="core" vertical="middle"/>
 

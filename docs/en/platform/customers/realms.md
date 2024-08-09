@@ -175,6 +175,7 @@ Before enabling the option to disable Modyo credentials in the realm, make sure 
   - Moderate: Users who register must wait for a realm administrator to activate their account before they can log in.
   - Disabled: New users cannot be registered in the realm. Already registered and activated users can still log in.
 - **Default Avatar Image:** Image shown in the avatar of users who do not have a personalized image.
+- **Enable Soft Login: ** By activating this option you can access your account without entering your credentials each time. You will receive a security code by email for easy login without passwords. 
 - **Registration form:** Here you can enable or disable different attributes in the registration form, such as the second surname, email confirmation, user avatar, date of birth, gender, and phone number.
 - **Delete realm:** Deletes the realm. This process is done in the background, thus you may not see the realm disappear immediately after executing the action. To confirm the deletion, you must enter the realm's full name.
 
