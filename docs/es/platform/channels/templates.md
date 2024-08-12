@@ -172,7 +172,7 @@ Para obtener información detallada y conocer los parámetros admitidos por esto
 
 Los snippets son fragmentos reutilizables de código HTML, JS o CSS para tus sitios. Para usar un snippet:
 
-1. Copia la ruta de referencia del snippet personalizado. El código Liquid será similar a: 	&lt;span v-pre&gt;`{% snippet "nombre-del-snippet" %}`	&lt;/span&gt;.
+1. Copia la ruta de referencia del snippet personalizado. El código Liquid será similar a: &lt;span v-pre&gt;`{% snippet "nombre-del-snippet" %}` &lt;/span&gt;.
 1. Pega el código donde quieras llamar a este Snippet.
 
 Para añadir un snippet personalizado:
