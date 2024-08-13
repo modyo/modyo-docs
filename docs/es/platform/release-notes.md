@@ -5,6 +5,12 @@ search: true
 # Notas del release
 
 ## 10.0
+### 10.0.5 02 de agosto de 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Corrige error de configuración del SEO
+
+
 ### 10.0.4 30 de julio de 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
