@@ -3,9 +3,8 @@ search: true
 ---
 
 # Integraciones
-Los sistemas de DXP juegan un rol fundamental en cualquier estrategia de transformación digital. Sus capacidades de tomar control de los canales principales de comunicación con clientes y colaboradores hacen necesaria una sólida estrategia de integraciones hacia el resto del ecosistema de aplicaciones de negocio que forman parte en cada estrategia.
 
-La Plataforma Modyo, mediante un esquema de integración descentralizado basado en APIs y microservicios, permite adaptarse a diferentes desafíos. A diferencia de las plataformas monolíticas que buscaban tener una respuesta interna para cada problema, los [DXP de siguiente generación](https://www.modyo.com/es/platform) privilegian la integración con plataformas especializadas en lugar de ofrecer todas las funcionalidades. Esto se traduce en plataformas más livianas y adaptables a cada necesidad, permitiendo a las organizaciones elegir dentro del ecosistema las mejores soluciones que se adapten a sus realidades específicas. Todo esto resulta en bajar los costos totales de operación e infraestructura al escalar sólo los recursos que lo requieren.
+La Plataforma Modyo, mediante un esquema de integración descentralizado basado en APIs y microservicios, permite adaptarse a diferentes desafíos. A diferencia de las plataformas monolíticas que buscaban tener una respuesta interna para cada problema, la [plataforma de Modyo](https://es.modyo.com/plataforma) privilegia la integración con sistemas especializados en lugar de ofrecer todas las funcionalidades. Esto se traduce en plataformas más livianas y adaptables a cada necesidad, permitiendo a las organizaciones elegir dentro del ecosistema las mejores soluciones que se adapten a sus realidades específicas. Todo esto resulta en bajar los costos totales de operación e infraestructura al escalar sólo los recursos que lo requieren.
 
 ## Integraciones de la Plataforma
 Las integraciones de plataforma corresponde a todas aquellas integraciones que se establecen por Modyo de forma directa y sin necesidad de requerir grandes desarrollos. Estas integraciones responden a diferentes propósitos según el contexto en el que se usen pero en su gran mayoría se relacionan al perfil de los usuarios y la comunicación con éstos.
@@ -23,7 +22,7 @@ La API de Modyo Customers también se puede usar para mantener los registros act
 
 
 ### Integración con SSO
-Los sistemas de Single Sign-On (SSO) son una pieza clave en la estrategia de integración del DXP de Modyo hacia los sistemas de negocio.
+Los sistemas de Single Sign-On (SSO) son una pieza clave en la estrategia de integración de Modyo hacia los sistemas de negocio.
 
 Actualmente la plataforma soporta la integración a sistemas de SSO de dos formas:
 - Integración de cuentas de usuario administradores
@@ -73,7 +72,7 @@ La integración con medios de pago se activa en Modyo como un mecanismo que perm
 
 Para todos estos medios de pago, Modyo provee de una interfaz en la cual se puede revisar el estado de las transacciones asociado al perfil de un usuario autenticado a la plataforma. Además, la información de pagos y compras realizadas persiste en la plataforma para ser usada como criterio de segmentación.
 
-Modyo se encuentra en un proceso contínuo de inclusión de nuevos medios de pago para incorporar a la plataforma.
+Modyo se encuentra en un proceso continuo de inclusión de nuevos medios de pago para incorporar a la plataforma.
 
 
 ## Sitios y Aplicaciones Web
@@ -95,7 +94,7 @@ Mediante el uso de tags específicos de Liquid, Modyo Channels es capaz de inter
 
 ### Herramientas de Marketing
 Herramientas de marketing digital que permiten alterar la experiencia de los usuarios según reglas previamente establecidas, tipo A/B testing o similares. En esta categoría podemos mencionar herramientas cómo:
-- Google Optimice
+
 - SalesForce Marketing Cloud
 
 Mediante el acceso al código fuente de las páginas y Widgets que componen el sitio o aplicación Web, Modyo Channels permite la inclusión de marcas especiales en cada componente HTML que hacen más eficiente el uso de este tipo de herramientas de marketing digital.
