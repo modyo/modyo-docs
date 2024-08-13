@@ -84,7 +84,7 @@ Mediante el uso de tags específicos de Liquid, Modyo Channels es capaz de inter
 
 ### Herramientas de Marketing
 Herramientas de marketing digital que permiten alterar la experiencia de los usuarios según reglas previamente establecidas, tipo A/B testing o similares. En esta categoría podemos mencionar herramientas cómo:
-- Google Optimice
+
 - SalesForce Marketing Cloud
 
 Mediante el acceso al código fuente de las páginas y Widgets que componen el sitio o aplicación Web, Modyo Channels permite la inclusión de marcas especiales en cada componente HTML que hacen más eficiente el uso de este tipo de herramientas de marketing digital.
