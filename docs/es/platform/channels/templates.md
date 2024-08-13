@@ -117,8 +117,8 @@ Crea vistas personalizadas de CSS y JavaScript para importar tus librerías a Mo
 1. Una vez que hayas terminado de editar la Hoja de Estilo o Javascript, debes incluirla en tu layout. Para ello, puedes usar los siguientes filtros de Liquid:
 
 - `asset_url`: Para definir el tipo de archivo
-- `stylesheet_tag`: Genera un tag <link> para incluir la vista de CSS.
-- `script_tag`: Genera un tag <script> para incluir la vista de Javascript.
+- `stylesheet_tag`: Genera un tag  &lt;link&gt; para incluir la vista de CSS.
+- `script_tag`: Genera un tag &lt;script&gt; para incluir la vista de Javascript.
 
 ### Ejemplos
 - Una vista personalizada de CSS con media: screen
@@ -146,7 +146,7 @@ Para obtener información detallada y conocer los parámetros admitidos por esto
 
 Los snippets son fragmentos reutilizables de código HTML, JS o CSS para tus sitios. Para usar un snippet:
 
-1. Copia la ruta de referencia del snippet personalizado. El código Liquid será similar a: <span v-pre>`{% snippet "nombre-del-snippet" %}`</span>.
+1. Copia la ruta de referencia del snippet personalizado. El código Liquid será similar a: &lt;span v-pre&gt;`{% snippet "nombre-del-snippet" %}` &lt;/span&gt;.
 1. Pega el código donde quieras llamar a este Snippet.
 
 Para añadir un snippet personalizado:

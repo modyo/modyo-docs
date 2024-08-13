@@ -3,9 +3,7 @@ search: true
 ---
 
 # Integrations
-DXP systems play a key role in any digital transformation strategy. Its ability to take control of the main channels of communication with customers and collaborators require a robust integration strategy towards the rest of the ecosystem of business applications that are part of each strategy.
-
-The Modyo Platform, through a decentralized integration scheme based on APIs and microservices, allows you to adapt to different challenges. Unlike monolithic platforms that sought to have an in-house answer for every problem, the [next-generation DXP](https://www.modyo.com/platform) provides integration with specialized platforms rather than offering full functionality. This translates into lighter and more adaptable platforms to suit every need, allowing organizations to choose within the ecosystem the best solutions that adapt to their specific realities. All of this results in lowering total operating and infrastructure costs by scaling only the resources that require it.
+The Modyo Platform, through a decentralized integration scheme based on APIs and microservices, allows you to adapt to different challenges. Unlike monolithic platforms that sought to have an in-house answer for every problem, the [Modyo platform](https://www.modyo.com/platform) provides integration with specialized systems rather than offering full functionality. This translates into lighter and more adaptable platforms to suit every need, allowing organizations to choose within the ecosystem the best solutions that adapt to their specific realities. All of this results in lowering total operating and infrastructure costs by scaling only the resources that require it.
 
 ## Platform Integrations
 Platform integrations correspond to all those integrations that are established by Modyo directly and without requiring major developments. These integrations serve different purposes depending on the context in which they are used, but most of them relate to the profile of users and the communication with them.
@@ -23,7 +21,7 @@ The Modyo Customers API can also be used to keep records up to date with other b
 
 
 ### Integration with SSO
-Single Sign-On (SSO) systems are a key part of Modyo's DXP integration strategy into business systems.
+Single Sign-On (SSO) systems are a key part of Modyo's integration strategy into business systems.
 
 Currently, the platform supports integration into SSO systems in two ways:
 - Integration of administrators user accounts
@@ -95,7 +93,7 @@ By using Liquid specific tags, Modyo Channels is able to interpolate context inf
 
 ### Marketing Tools
 Digital marketing tools that allow to alter the user experience according to previously established rules, type A/B testing, or similar. In this category we can mention tools such as:
-- Google Optimize
+
 - SalesForce Marketing Cloud
 
 By accessing the source code of the pages and widgets that make up the Web site or application, Modyo Channels allows the inclusion of special brands in each HTML component that make the use of this type of digital marketing tools more efficient.
