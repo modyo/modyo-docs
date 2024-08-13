@@ -5,6 +5,24 @@ search: true
 # Release Notes
 
 ## 9.2
+### 9.2.62 - 29 de julio de 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Security improvements
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* The length of the options in the forms is no longer restricted
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Fixes bug when deleting redirects in bulk, now all selected redirects are removed
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Restricts to one the number of report generation that can be active
+
+
 ### 9.2.61 - June 26, 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
