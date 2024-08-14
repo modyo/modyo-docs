@@ -5,6 +5,20 @@ search: true
 # Notas del release
 
 ## 10.0
+### 10.0.6 14 de agosto de 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Corrige problema del SDK de liquid al mostrar json de un grupo repetible
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Agrega query param `search` para realizar búsqueda de texto mediante el uso del api de contenido 
+
+
 ### 10.0.5 02 de agosto de 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
