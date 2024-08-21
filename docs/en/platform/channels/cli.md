@@ -144,8 +144,8 @@ MODYO_ACCOUNT_URL=https://my-org.modyo.cloud/
 MODYO_SITE_ID=1
 # The token authorizing the deployment, taken from Modyo
 MODYO_TOKEN=gT0ogW43lSy4nV9cYtc_hH0i_sUNq01q-12ptFzoW8
-# The version of Modyo platform where the deployment will take place (8 or 9)
-MODYO_VERSION=9
+# The version of Modyo platform where the deployment will take place (8, 9 or 10)
+MODYO_VERSION=10
 # The name of the directory that contains the micro frontend's bundle
 MODYO_BUILD_DIRECTORY=build
 # The name that will identify your Micro Frontend in Modyo
@@ -157,7 +157,7 @@ MODYO_DISABLE_LIQUID_REGEX=raw
 * `MODYO_SITE_HOST` The host of the site where you want to deploy the micro-frontend. It is not necessary if the site id is specified.
 * `MODYO_SITE_ID` The id of the site where you want to deploy the micro-frontend.
 * `MODYO_TOKEN` The user access token to be used for micro-frontend deployments.
-* `MODYO_VERSION` The version of Modyo. For older versions it is 8 and the current one is 9.
+* `MODYO_VERSION` The version of Modyo. For older versions it's 8 and the current one is 10.
 * `MODYO_BUILD_DIRECTORY` The name of the folder containing the build result, such as “dist” or “build” depending on the framework used.
 * `MODYO_WIDGET_NAME` The name the widget will have after being deployed on the platform.
 * `MODYO_DISABLE_LIQUID_REGEX` Defines a regular expression for selecting files that need to disable the use of Liquid, for example, template files where the definition or use of variables is likely to collide with their use in Liquid.
@@ -177,7 +177,7 @@ To send it to Modyo, use the push command. This command uses your settings to se
 $ modyo-cli push
 ```
 
-Activate the automatic publication of the microfrontend on the platform using the `-p` parameter.
+Immediately publish the microfrontend on the platform using the `-p` parameter.
 
 ```sh
 $ modyo-cli push -p
@@ -281,7 +281,7 @@ OPTIONS
   -p, --publish                          Force widget publication
   -t, --token=token                      (required) Modyo Api token
   -u, --account-url=account-url          (required) URL of your Modyo account ex("https://account.modyo.com")
-  -v, --version=8|9                      [default: 9] Version of Modyo platform
+  -v, --version=9|10                      [default: 10] Version of Modyo platform
 
 EXAMPLE
   $ modyo-cli push <NAME>
