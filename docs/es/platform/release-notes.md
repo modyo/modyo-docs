@@ -5,7 +5,7 @@ search: true
 # Notas del release
 
 ## 10.0
-### 10.0.6 14 de agosto de 2024
+### 10.0.6 - 14 de agosto de 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
 * Mejoras de seguridad
@@ -19,13 +19,13 @@ search: true
 * Agrega query param `search` para realizar búsqueda de texto mediante el uso del api de contenido 
 
 
-### 10.0.5 02 de agosto de 2024
+### 10.0.5 - 02 de agosto de 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
 * Corrige error de configuración del SEO
 
 
-### 10.0.4 30 de julio de 2024
+### 10.0.4 - 30 de julio de 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
 * Mejoras de seguridad
@@ -35,7 +35,7 @@ search: true
 
 * Corrige problema al publicar una page cuando se tienen una configuración de variables y borrado de backups
 
-### 10.0.3 12 de julio de 2024
+### 10.0.3 - 12 de julio de 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
 * Mejoras de seguridad
