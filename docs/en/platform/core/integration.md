@@ -4,7 +4,7 @@ search: true
 
 # Integrations
 
-The Modyo Platform, through a decentralized integration scheme based on APIs and microservices, is adaptable to different challenges. Unlike monolithic platforms that seek to have an internal answer to every problem, the [Modyo platform](https://es.modyo.com/plataforma) privileges integration with specialized systems instead of offering all the functionalities. This results in platforms that are lighter and more adaptable to every need, allowing organizations to choose within the ecosystem the best solutions that adapt to their specific realities. All this results in lower total operating and infrastructure costs by scaling only the resources that require it.
+The Modyo Platform, through a decentralized integration scheme based on APIs and microservices, is adaptable to different challenges. Unlike monolithic platforms that seek to have an internal answer to every problem, the [Modyo platform](https://es.modyo.com/plataforma) privileges integration with specialized systems instead of offering all the functionalities. This results in applications that are lighter and more adaptable to every need, allowing organizations to choose within the ecosystem the best solutions that adapt to their specific realities. All this results in lower total operating and infrastructure costs by scaling only the resources that require it.
 
 ## Platform Integrations
 Platform integrations correspond to all those integrations that are established by Modyo directly and without requiring major developments. These integrations serve different purposes depending on the context in which they are used, but most of them relate to the profile of users and the communication with them.
