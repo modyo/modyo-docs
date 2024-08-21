@@ -5,7 +5,7 @@ search: true
 # Release Notes
 
 ## 10.0
-### 10.0.6 August 14, 2024
+### 10.0.6 - August 14, 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
 * Security improvements
@@ -19,13 +19,13 @@ search: true
 * Adds query param `search` to search for text using the content api 
 
 
-### 10.0.5 August 02, 2024
+### 10.0.5 - August 2, 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
 * Fixes SEO configuration error
 
 
-### 10.0.4 July 30, 2024
+### 10.0.4 - July 30, 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
 * Security improvements
@@ -35,7 +35,7 @@ search: true
 
 * Fixes problem when publishing a page when having a variable configuration and deleting backups
 
-### 10.0.3 July 12, 2024
+### 10.0.3 - July 12, 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
 * Security improvements
