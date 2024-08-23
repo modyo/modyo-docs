@@ -5,6 +5,13 @@ search: true
 # Release Notes
 
 ## 9.2
+### 9.2.63 - August 23, 2024
+<Badge text=“Core” type=“core” vertical=“middle”/>
+
+* Security improvements
+* Improved time to obtain delivery token
+
+  
 ### 9.2.62 - 29 de julio de 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
