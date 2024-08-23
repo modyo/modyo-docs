@@ -5,6 +5,13 @@ search: true
 # Notas del release
 
 ## 9.2
+### 9.2.63 - 23 de agosto de 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+* Mejora en tiempo de obtención de delivery token
+
+
 ### 9.2.62 - 29 de julio de 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
