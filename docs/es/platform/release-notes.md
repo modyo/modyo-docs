@@ -5,6 +5,24 @@ search: true
 # Notas del release
 
 ## 10.0
+### 10.0.7 - 06 de septiembre de 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Corrige el paginador de la busqueda en sitios para mostrar la cantidad de paginas segun la cantidad maxima de resultados
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Agrega filtro exacto por full_path y uuid al endpoint de categorias del api de contenido
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Corrige calculo sincrónico de segmentos al iniciar sesión cuando está habilitado
+
+
 ### 10.0.6 - 14 de agosto de 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
@@ -16,7 +34,7 @@ search: true
 
 <Badge text="Content" type="content" vertical="middle"/>
 
-* Agrega query param `search` para realizar búsqueda de texto mediante el uso del api de contenido 
+* Agrega query param `search` para realizar búsqueda de texto mediante el uso del api de contenido
 
 
 ### 10.0.5 - 02 de agosto de 2024
