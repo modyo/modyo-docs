@@ -5,6 +5,22 @@ search: true
 # Notas del release
 
 ## 9.2
+
+### 9.2.64 - 06 de septiembre de 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+* Corrige logo de la cuenta en emails transaccionales
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Se agrega cambios de posición de widgets y menús en la vista de diferencias  
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Mejoras de performance
+
+
 ### 9.2.63 - 23 de agosto de 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
