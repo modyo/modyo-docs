@@ -12,7 +12,7 @@ search: true
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
-* Corrige el paginador de la busqueda en sitios para mostrar la cantidad de paginas segun la cantidad maxima de resultados
+* Corrige el paginador de la búsqueda en sitios para mostrar la cantidad de páginas según la cantidad máxima de resultados
 
 <Badge text="Content" type="content" vertical="middle"/>
 
@@ -20,7 +20,7 @@ search: true
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* Corrige calculo sincrónico de segmentos al iniciar sesión cuando está habilitado
+* Corrige cálculo sincrónico de segmentos al iniciar sesión cuando está habilitado
 
 
 ### 10.0.6 - 14 de agosto de 2024
