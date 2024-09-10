@@ -5,6 +5,21 @@ search: true
 # Release Notes
 
 ## 9.2
+### 9.2.64 - September 06, 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Security improvements
+* Changes account logo in transactional emails
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Adds widgets and menus position changes in difference view  
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Performance improvements
+
+
 ### 9.2.63 - August 23, 2024
 <Badge text=“Core” type=“core” vertical=“middle”/>
 
