@@ -6,6 +6,11 @@ search: true
 
 ## 9.2
 
+### 9.2.65 - 11 de septiembre de 2024
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Permite arreglos como argumentos en filtros de contenido  
+
 ### 9.2.64 - 06 de septiembre de 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
