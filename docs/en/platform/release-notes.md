@@ -5,6 +5,11 @@ search: true
 # Release Notes
 
 ## 9.2
+### 9.2.65 - September 11, 2024
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Allows arrays as arguments in content filters
+
 ### 9.2.64 - September 06, 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
