@@ -5,6 +5,24 @@ search: true
 # Release Notes
 
 ## 10.0
+### 10.0.7 - September 06, 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Security improvements
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Corrects the site search paginator to show the number of pages based on the maximum number of results
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Adds exact filter for full_path and uuid to the categories endpoint of the content api
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Corrects synchronous calculation of segments at login when enabled
+
+
 ### 10.0.6 - August 14, 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
@@ -16,7 +34,7 @@ search: true
 
 <Badge text="Content" type="content" vertical="middle"/>
 
-* Adds query param `search` to search for text using the content api 
+* Adds query param `search` to search for text using the content api
 
 
 ### 10.0.5 - August 2, 2024
