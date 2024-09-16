@@ -5,6 +5,13 @@ search: true
 # Release Notes
 
 ## 10.0
+
+### 10.0.8 - September 16, 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Fixes problem with preloading links when hovering 
+
+
 ### 10.0.7 - September 06, 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
