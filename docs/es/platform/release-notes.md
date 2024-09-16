@@ -5,6 +5,13 @@ search: true
 # Notas del release
 
 ## 10.0
+
+### 10.0.8 - 16 de septiembre de 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Corrige problema con precarga de links al pasar el cursor 
+
+
 ### 10.0.7 - 06 de septiembre de 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
