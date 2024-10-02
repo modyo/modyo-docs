@@ -6,6 +6,11 @@ search: true
 
 ## 9.2
 
+### 9.2.66 - 02 de octubre de 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+
 ### 9.2.65 - 11 de septiembre de 2024
 <Badge text="Channels" type="channels" vertical="middle"/>
 
