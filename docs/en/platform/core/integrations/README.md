@@ -3,9 +3,8 @@ search: true
 ---
 
 # Integrations
-DXP systems play a key role in any digital transformation strategy. Its ability to take control of the main channels of communication with customers and collaborators require a robust integration strategy towards the rest of the ecosystem of business applications that are part of each strategy.
 
-The Modyo Platform, through a decentralized integration scheme based on APIs and microservices, allows you to adapt to different challenges. Unlike monolithic platforms that sought to have an in-house answer for every problem, the [next-generation DXP](https://www.modyo.com/platform) provides integration with specialized platforms rather than offering full functionality. This translates into lighter and more adaptable platforms to suit every need, allowing organizations to choose within the ecosystem the best solutions that adapt to their specific realities. All of this results in lowering total operating and infrastructure costs by scaling only the resources that require it.
+The Modyo Platform, through a decentralized integration scheme based on APIs and microservices, is adaptable to different challenges. Unlike monolithic platforms that seek to have an internal answer to every problem, the [Modyo platform](https://es.modyo.com/plataforma) privileges integration with specialized systems instead of offering all the functionalities. This results in applications that are lighter and more adaptable to every need, allowing organizations to choose within the ecosystem the best solutions that adapt to their specific realities. All this results in lower total operating and infrastructure costs by scaling only the resources that require it.
 
 ## Platform Integrations
 Platform integrations correspond to all those integrations that are established by Modyo directly and without requiring major developments. These integrations serve different purposes depending on the context in which they are used, but most of them relate to the profile of users and the communication with them.
@@ -23,7 +22,7 @@ The Modyo Customers API can also be used to keep records up to date with other b
 
 
 ### Integration with SSO
-Single Sign-On (SSO) systems are fundamental to Modyo's DXP integration strategy with business systems.
+Single Sign-On (SSO) systems are fundamental to Modyo's integration strategy with business systems.
 
 Modyo supports integration to SSO systems in two ways:
 - Integration of administrators user accounts
@@ -63,7 +62,7 @@ Integration with payment methods is activated in Modyo as a mechanism that allow
 
 For all these payment methods, Modyo provides an interface in which you can review the status of transactions associated with the profile of a user authenticated to the platform. In addition, payment and purchase information persists on the platform to be used as a segmentation criterion.
 
-Modyo is in a continuous process of including new means of payment to incorporate into the platform.
+Modyo is in a continuous process of including new payment methods to be incorporated into the platform.
 
 
 ## Web Sites and Applications
@@ -85,7 +84,7 @@ By using Liquid specific tags, Modyo Channels is able to interpolate context inf
 
 ### Marketing Tools
 Digital marketing tools that allow altering the user experience according to previously established rules, such as A/B testing or similar. In this category we can mention tools such as:
-- Google Optimize
+
 - SalesForce Marketing Cloud
 
 By accessing the source code of the pages and widgets that make up the Web site or application, Modyo Channels allows the inclusion of special brands in each HTML component that make the use of this type of digital marketing tools more efficient.
@@ -117,5 +116,5 @@ Integrating APIs from Widgets requires endpoints that are publicly exposed to th
 ### Integration with private APIs
 Private APIs behave similarly to public APIs, with the difference that they require authentication. This authentication can be initiated directly by the frontend from a Modyo Channels Widget or can be based on a security token previously negotiated by Modyo Customers and some SSO integration.
 
-Modyo does not recommend direct integration from the frontend as it makes it difficult to manage authentication tokens securely. Instead, the flow initiated by Modyo Customers ensures proper management of credentials and establishes query mechanisms so that the widget that requires it can obtain a valid token whenever it requires it.
+Modyo does not recommend direct integration from the frontend as it makes it difficult to manage authentication tokens securely. Instead, the flow initiated by Modyo Customers ensures proper management of credentials and establishes query mechanisms so that the widget that requires it can obtain a valid token whenever it needs it.
 

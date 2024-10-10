@@ -143,8 +143,8 @@ Create custom CSS and JavaScript views to import your libraries to Modyo Platfor
 1. Once you have finished editing the Style Sheet or Javascript, you must include it in your layout. To do this, you can use the following Liquid filters:
 
 - `asset_url`: To define the file type
-- `stylesheet_tag`: Generate a tag <link> to include the CSS view.
-- `script_tag`: Generate a tag <script> to include the Javascript view.
+- `stylesheet_tag`: Generate a tag &lt;link&gt; to include the CSS view.
+- `script_tag`: Generate a tag &lt;script&gt; to include the Javascript view.
 
 ### Examples
 - A custom CSS view with media: screen
@@ -172,7 +172,7 @@ To obtain detailed information and learn about the parameters supported by these
 
 Snippets are reusable fragments of HTML, JS, or CSS code for your sites. To use a snippet:
 
-1. Copy the reference path of the custom snippet. The Liquid code will look like: <span v-pre>`{% snippet “snippet-name”%}`</span>.
+1. Copy the reference path of the custom snippet. The Liquid code will look like: &lt;span v-pre&gt;`{% snippet “snippet-name”%}` &lt;/span&gt;.
 1. Paste the code wherever you want to call this Snippet.
 
 To add a custom snippet:

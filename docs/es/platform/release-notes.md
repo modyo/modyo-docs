@@ -5,13 +5,52 @@ search: true
 # Notas del release
 
 ## 10.0
-### 10.0.5 02 de agosto de 2024
+
+### 10.0.8 - 16 de septiembre de 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Corrige problema con precarga de links al pasar el cursor 
+
+
+### 10.0.7 - 06 de septiembre de 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Corrige el paginador de la búsqueda en sitios para mostrar la cantidad de páginas según la cantidad máxima de resultados
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Agrega filtro exacto por full_path y uuid al endpoint de categorias del api de contenido
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Corrige cálculo sincrónico de segmentos al iniciar sesión cuando está habilitado
+
+
+### 10.0.6 - 14 de agosto de 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Corrige problema del SDK de liquid al mostrar json de un grupo repetible
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Agrega query param `search` para realizar búsqueda de texto mediante el uso del api de contenido
+
+
+### 10.0.5 - 02 de agosto de 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
 * Corrige error de configuración del SEO
 
 
-### 10.0.4 30 de julio de 2024
+### 10.0.4 - 30 de julio de 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
 * Mejoras de seguridad
@@ -21,7 +60,7 @@ search: true
 
 * Corrige problema al publicar una page cuando se tienen una configuración de variables y borrado de backups
 
-### 10.0.3 12 de julio de 2024
+### 10.0.3 - 12 de julio de 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
 * Mejoras de seguridad
