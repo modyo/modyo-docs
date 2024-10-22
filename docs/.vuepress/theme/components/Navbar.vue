@@ -1,5 +1,13 @@
 <template>
   <header class="navbar">
+    <div class="banner">
+      <div class="banner-content">
+        <div class="banner-text">
+          <strong>Modyo 10.0:</strong> You are viewing an older version of the Modyo documentation. For a more recent version please visit <a href="https://docs.modyo.com">https://docs.modyo.com</a>.
+        </div>
+      </div>
+    </div>
+
     <SidebarButton @toggle-sidebar="$emit('toggle-sidebar')"/>
 
     <router-link
@@ -83,7 +91,35 @@ function css (el, property) {
 </script>
 
 <style lang="stylus">
-$navbar-vertical-padding = 0.7rem
+.banner {
+  background: #009579;
+  z-index: 99999;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+.banner-content {
+  padding: 10px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.banner-text {
+  flex-grow: 1;
+  line-height: 1.2;
+  font-family: "Quicksand", sans-serif;
+  color: #ffffff;
+}
+
+.banner-text a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+$navbar-vertical-padding = 3.0rem
 $navbar-horizontal-padding = 1.5rem
 
 .navbar

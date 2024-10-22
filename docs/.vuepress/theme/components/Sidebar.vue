@@ -22,6 +22,7 @@ export default {
 
 <style lang="stylus">
 .sidebar
+  padding-top 2.3rem
   background-color #FFFFFF
   border-right 2px solid #F4F4F4
   ul

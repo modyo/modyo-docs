@@ -37,7 +37,7 @@ module.exports = {
       smoothScroll: true,
       algolia: {
           apiKey: '0830ca92d68cf8e7626a6eaa2d2e083b',
-          indexName: 'modyo_docs_index',
+          indexName: 'csd_test_index_001',
           appId: 'TEEU706UKD'
       },
       locales: {
@@ -46,15 +46,7 @@ module.exports = {
               label: "English",
               nav: [{
                       text: "Platform",
-                      link: "/en/platform/basics/"
-                  },
-                  {
-                      text: "Connect",
-                      link: "/en/connect/"
-                  },
-                  {
-                      text: "Dynamic",
-                      link: "https://dynamicframework.dev"
+                      link: "/en/platform/"
                   },
                   {
                       text: "Modyo",
@@ -165,75 +157,6 @@ module.exports = {
                           ],
                       },
                   ],
-                  "/en/connect/": [{
-                          title: "Modyo Connect",
-                          collapsable: false,
-                          children: [
-                              ["/en/connect/", "What is Modyo Connect?"],
-                              "/en/connect/architecture",
-                              "/en/connect/activation",
-                              "/en/connect/support",
-                          ],
-                      },
-                      {
-                          title: "Components",
-                          collapsable: true,
-                          children: [
-                              "/en/connect/components/development",
-                              "/en/connect/components/infrastructure",
-                              "/en/connect/components/monitoring",
-                          ],
-                      },
-                      {
-                          title: "Resources",
-                          collapsable: true,
-                          children: [
-                              "/en/connect/resources/mrus",
-                              "/en/connect/resources/faq",
-                          ],
-                      },
-                  ],
-                  "/en/architecture/": [{
-                          title: "Architecture",
-                          collapsable: false,
-                          children: [
-                              ["/en/architecture/", "Introduction"],
-                              ["/en/architecture/why-modyo", "Why Modyo?"],
-                          ],
-                      },
-                      {
-                          title: "Patterns",
-                          collapsable: true,
-                          children: [
-                              "/en/architecture/patterns/public-site",
-                              "/en/architecture/patterns/private-site",
-                              "/en/architecture/patterns/hybrid-site",
-                              "/en/architecture/patterns/micro-frontend",
-                              "/en/architecture/patterns/microservice",
-                              "/en/architecture/patterns/sso",
-                              "/en/architecture/patterns/bff",
-                              "/en/architecture/patterns/design-system",
-                              "/en/architecture/patterns/web-components",
-                              "/en/architecture/patterns/pwa",
-                              "/en/architecture/patterns/ssr",
-                              "/en/architecture/patterns/ssg",
-                              "/en/architecture/patterns/spa",
-                              "/en/architecture/patterns/repository",
-                              "/en/architecture/patterns/code-reuse",
-                              "/en/architecture/patterns/ddd",
-                              "/en/architecture/patterns/accessibility",
-                              "/en/architecture/patterns/internationalization",
-                          ],
-                      },
-                      {
-                          title: "Resources",
-                          collapsable: true,
-                          children: [
-                              "/en/architecture/resources/",
-                              "/en/architecture/resources/web-performance",
-                          ],
-                      },
-                  ],
               },
           },
           "/es/": {
@@ -241,15 +164,7 @@ module.exports = {
               label: "Español",
               nav: [{
                       text: "Plataforma",
-                      link: "/es/platform/basics/"
-                  },
-                  {
-                      text: "Connect",
-                      link: "/es/connect/"
-                  },
-                  {
-                      text: "Dynamic",
-                      link: "https://dynamicframework.dev"
+                      link: "/es/platform/"
                   },
                   {
                       text: "Modyo",
@@ -362,76 +277,7 @@ module.exports = {
                               ["/es/platform/insights/data-studio", "Data Studio"],
                           ],
                       },
-                  ],
-                  "/es/connect/": [{
-                          title: "Modyo Connect",
-                          collapsable: false,
-                          children: [
-                              ["/es/connect/", "¿Qué es Modyo Connect?"],
-                              "/es/connect/architecture",
-                              "/es/connect/activation",
-                              "/es/connect/support",
-                          ],
-                      },
-                      {
-                          title: "Componentes",
-                          collapsable: true,
-                          children: [
-                              "/es/connect/components/development",
-                              "/es/connect/components/infrastructure",
-                              "/es/connect/components/monitoring",
-                          ],
-                      },
-                      {
-                          title: "Recursos",
-                          collapsable: true,
-                          children: [
-                              "/es/connect/resources/mrus",
-                              "/es/connect/resources/faq",
-                          ],
-                      },
-                  ],
-                  "/es/architecture/": [{
-                          title: "Arquitectura",
-                          collapsable: false,
-                          children: [
-                              ["/es/architecture/", "Introducción"],
-                              ["/es/architecture/why-modyo", "¿Por qué Modyo?"],
-                          ],
-                      },
-                      {
-                          title: "Patrones",
-                          collapsable: true,
-                          children: [
-                              "/es/architecture/patterns/public-site",
-                              "/es/architecture/patterns/private-site",
-                              "/es/architecture/patterns/hybrid-site",
-                              "/es/architecture/patterns/micro-frontend",
-                              "/es/architecture/patterns/microservice",
-                              "/es/architecture/patterns/sso",
-                              "/es/architecture/patterns/bff",
-                              "/es/architecture/patterns/design-system",
-                              "/es/architecture/patterns/web-components",
-                              "/es/architecture/patterns/pwa",
-                              "/es/architecture/patterns/ssr",
-                              "/es/architecture/patterns/ssg",
-                              "/es/architecture/patterns/spa",
-                              "/es/architecture/patterns/repository",
-                              "/es/architecture/patterns/code-reuse",
-                              "/es/architecture/patterns/ddd",
-                              "/es/architecture/patterns/accessibility",
-                              "/es/architecture/patterns/internationalization",
-                          ],
-                      },
-                      {
-                          title: "Recursos",
-                          collapsable: true,
-                          children: [
-                              "/es/architecture/resources/",
-                              "/es/architecture/resources/web-performance",
-                          ],
-                      },
-                  ],
+                  ]
               },
           },
       },
