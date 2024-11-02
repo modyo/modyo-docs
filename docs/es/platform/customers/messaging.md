@@ -35,13 +35,14 @@ Si borras la campaña, no se puede recuperar y la campaña no quedará registrad
 :::
 
 ### Crear una campaña
+Las campañas te permiten contactar directamente a tus usuarios mediante correo electrónico o notificaciones directas, incluyendo soporte para notificaciones WebPush. Para generar una nueva campaña haz click en el botón **+ Nueva Campaña**, en la parte superior de la vista del Administrador.
 
-Da click en el botón **+ Nueva Campaña**, en la parte superior de la vista del Administrador para crear una campaña nueva.
+#### Campañas de Correo
 
-Rellena los datos solicitados en el formulario:
+Las campañas de correo te permiten contactar a los usuarios a través de email. Para configurar una campaña de correo, completa los campos solicitados en el formulario:
 
 - **Nombre**:  Nombre de la campaña.
-- **Tipo**: Elige si se enviará por correo o notificación.
+- **Tipo**: Selecciona **Correo** para activar esta opción..
 - **Asunto**: Texto que aparecerá en la línea de asunto del mensaje que se enviará a los usuarios.
 - **Responder a**: Dirección de correo electrónico a la cual las personas pueden responder
  **(solo para campañas de correo)**.
@@ -52,6 +53,30 @@ Una vez completes el formulario, haz click en el botón **Guardar y continuar**,
 
 Esto abre el editor WYSIWYG con la plantilla que seleccionaste. Edita la plantilla y haz click en el botón **Guardar** para confirmar los cambios y abrir la vista Estado de envío para enviar la campaña. 
 
+#### Campañas de Notificaciones
+Las campañas de notificaciones permiten enviar mensajes directos a los usuarios. Para configurar una campaña de notificaciones, completa los siguientes campos en el formulario:
+
+- **Nombre**:  Nombre de la campaña.
+- **Tipo**: Selecciona **Notificación** para activar esta opción.
+- **Asunto**: Texto que aparecerá en el mensaje que se enviará a los usuarios.
+
+#### Habilitar soporte para WebPush
+
+Las campañas de notificaciones tienen la capacidad de enviar notificaciones WebPush. Esta funcionalidad permite a los usuarios recibir mensajes directamente en su navegador. Para habilitar esta función, asegúrate de cumplir con los siguientes requisitos:
+
+* La aplicación web que envía las notificaciones debe estar vinculada al **Realm** donde se crean las campañas.
+* La aplicación web debe estar en estado **Enabled**.
+* En la sección **PWA** de la aplicación web, activa las opciones **Habilitar service worker principal** y **Habilitar las notificaciones WebPush**.
+
+
+Además, para que los usuarios puedan recibir notificaciones WebPush, deben cumplir con lo siguiente:
+
+* Deben estar autenticados.
+* Las notificaciones deben estar habilitadas en su navegador.
+
+:::warning Atención
+Al crear una nueva web app tienes soporte por defecto para WebPush, si fue creada en Modyo 10.0 o inferior requieres actualizar tu plantilla, puedes utilizar [este código para refactorizar](https://github.com/modyo-community/web-push-support). 
+:::
 
 ### Estado de envío
 

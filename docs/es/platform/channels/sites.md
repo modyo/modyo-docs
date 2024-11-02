@@ -280,39 +280,9 @@ Para mejorar el SEO fuera-de-página:
 
 ### PWA
 
-Modyo te permite implementar progressive web apps (PWA) en tus canales digitales en desarrollo. Para ello, tienes dos opciones:
+Modyo te permite implementar Progressive Web Apps (PWA) en tus canales digitales, ofreciendo una experiencia mejorada a tus usuarios. Para usar funcionalidades PWA debes habilitar las opciones que requieras en tu proyecto.
 
-#### Manifiesto
-
-El manifiesto indica cómo quieres que un navegador muestre tu canal digital. Para activar el manifiesto:
-
-1. En el menú lateral, haz click en channels.
-1. Selecciona tu aplicación web.
-1. Haz click en configuración de la aplicación.
-1. Da click en PWA.
-1. Marca la casilla habilitar manifiesto PWA.
-1. En el modal, llena los campos.
-1. Haz click en **generar**.
-1. Haz click en **guardar** en el modal.
-1. Haz click en **guardar**.
-
-
-Al activar el manifiesto, se crea esta ruta:
-
-
-```bash
-https://[domain]/[site-name]/manifest.json
-```
-
-Es necesario implementar el manifiesto en cada página de la PWA a través de [Plantillas](/es/platform/channels/templates.html), en el snippet ``head``.
-
-
-:::warning Atención
-Si no personalizas el contenido del manifiesto PWA y agregas la ruta en plantillas, el manifiesto se creará en blanco y no tendrá ningún efecto.
-:::
-
-
-#### Service worker
+#### Service worker principal
 
 Activa el Service Worker para que tu canal digital pueda almacenar datos en caché, funcionar sin conexión y brindar una experiencia mejorada a tus usuarios, aún con una conexión inestable.
 
@@ -349,6 +319,42 @@ Es necesario personalizar y guardar el código del service worker para integrar 
 :::warning Atención
 Si desactivas el service worker, tu aplicación web seguirá funcionando, con funciones básicas y sin los beneficios del service worker.
 :::
+
+
+#### Notificaciones WebPush
+
+Permite que tus usuarios reciban notificaciones WebPush junto con las campañas de notificación. Para enviar mensajes a tus usuarios debes asegurarte que tu aplicación esté vinculada a un reino y el estado de la aplicación esté en **Habilitado**. La gestión de las notificaciones se realiza a través de la [herramienta de mensajería](/es/platform/customers/messaging.html). 
+
+#### Manifiesto PWA
+
+El manifiesto indica cómo quieres que un navegador muestre tu canal digital. Para activar el manifiesto:
+
+1. En el menú lateral, haz click en channels.
+1. Selecciona tu aplicación web.
+1. Haz click en configuración de la aplicación.
+1. Da click en PWA.
+1. Marca la casilla habilitar manifiesto PWA.
+1. En el modal, llena los campos.
+1. Haz click en **generar**.
+1. Haz click en **guardar** en el modal.
+1. Haz click en **guardar**.
+
+
+Al activar el manifiesto, se crea esta ruta:
+
+
+```bash
+https://[domain]/[site-name]/manifest.json
+```
+
+Es necesario implementar el manifiesto en cada página de la PWA a través de [Plantillas](/es/platform/channels/templates.html), en el snippet ``head``.
+
+
+:::warning Atención
+Si no personalizas el contenido del manifiesto PWA y agregas la ruta en plantillas, el manifiesto se creará en blanco y no tendrá ningún efecto.
+:::
+
+
 
 ### Dominios
 
