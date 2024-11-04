@@ -13,7 +13,7 @@ search: true
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
-* Corrige problema en las redirecciones que no se realizan cuando la url fuente viene con %
+* Corrige problema en las redirecciones que no se realizan cuando la url fuente contiene el signo `%`
 
 
 ### 9.2.66 - 02 de octubre de 2024
