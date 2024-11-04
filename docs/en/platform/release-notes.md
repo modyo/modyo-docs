@@ -41,7 +41,7 @@ search: true
 
 
 ### 9.2.63 - August 23, 2024
-<Badge text=“Core” type=“core” vertical=“middle”/>
+<Badge text="Core" type="core" vertical="middle"/>
 
 * Security improvements
 * Improved time to obtain delivery token
