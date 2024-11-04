@@ -5,6 +5,21 @@ search: true
 # Release Notes
 
 ## 9.2
+
+### 9.2.67 - October 21, 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Security enhancements
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Fixes problem with redirects not being performed when source URL contains the `%` sign.
+
+### 9.2.66 - October 02, 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Security enhancements
+
 ### 9.2.65 - September 11, 2024
 <Badge text="Channels" type="channels" vertical="middle"/>
 
