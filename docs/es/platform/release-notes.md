@@ -24,6 +24,7 @@ search: true
 * Se agrega la posibilidad de mapear un atributo de un claim de tipo objeto a un custom field especifico.
 * Se agrega la capacidad de envio de webpush en las campañas de notificaciones cuando este es activado en el sitio relacionado al reino.
 
+
 ### 10.0.9 - 14 de octubre de 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
