@@ -572,11 +572,6 @@ Translates a date to DateTime format. *e.g.*
 Translates a date to a reduced format. dd-mm-yyyy *e.g.*
 <span v-pre>`{{ time | format_short_date }}`</span>
 
-### Get Session ID
-
-Returns the session ID. *e.g.*
-<span v-pre>`{{ get_session_id }}`</span>
-
 ### Asset Image Tag
 
 Returns the tag of an image. *e.g.*
