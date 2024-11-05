@@ -6,6 +6,24 @@ search: true
 
 ## 10.0
 
+### 10.0.10 - 04 de noviembre de 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+* Se agrega la invalidación de todas las sesiones de un administrador cuando este cambia su contraseña
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Corrige problemas al renderizar páginas con contenido segmentado
+* Corrige problemas al renderizar páginas con contenidos muy grandes
+* Corrige el author de una sincronización en la actividad mostrada en paginas, widgets, templates y menus
+* Se agrega la opción de habilitar el webpush en las configuraciones de una aplicación
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Se agrega la posibilidad de mapear un atributo de un claim de tipo objeto a un custom field especifico.
+* Se agrega la capacidad de envio de webpush en las campañas de notificaciones cuando este es activado en el sitio relacionado al reino.
+
 ### 10.0.9 - 14 de octubre de 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
