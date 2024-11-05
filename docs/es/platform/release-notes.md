@@ -6,6 +6,15 @@ search: true
 
 ## 9.2
 
+### 9.2.67 - 21 de octubre de 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Corrige problema en las redirecciones que no se realizan cuando la URL fuente contiene el signo `%`
+
 ### 9.2.66 - 02 de octubre de 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
