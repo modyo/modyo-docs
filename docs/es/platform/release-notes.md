@@ -6,6 +6,19 @@ search: true
 
 ## 10.0
 
+### 10.0.9 - 14 de octubre de 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+* Corrige expiración de la sesión según tiempo de inactividad
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Corrige problema al publicar entries con listas de assets, ahora se respeta el orden definido en el listado
+* Corrige problema al publicar entries que contienen richtext en modo código
+* Corrige problema de duplicación de parametros al usar el api administrativa de contenido
+
+
 ### 10.0.8 - 16 de septiembre de 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
