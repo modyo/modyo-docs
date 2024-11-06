@@ -282,7 +282,7 @@ To improve off-page SEO:
 
 Modyo allows you to implement Progressive Web Apps (PWA) in your digital channels, offering an enhanced experience to your users. To use PWA features, you must enable them in your project
 
-#### Main service worker
+#### Top level service worker
 
 Activate the Service Worker so that your digital channel can cache data, work offline and provide an improved experience for your users, even with an unstable connection.
 
