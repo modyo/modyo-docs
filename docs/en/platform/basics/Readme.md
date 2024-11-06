@@ -14,8 +14,8 @@ We want your experience to be as easy and satisfying as possible, so we've desig
 
 The current documentation refers to **Modyo 10.1**. If you need information about previous versions, you can access the specific documentation for each version:
 
-* [Modyo 9.2] (https://9-2.docs.modyo.com/en/)
-* [Modyo 10.0] (https://10-0.docs.modyo.com/en/)
+* [Modyo 9.2](https://9-2.docs.modyo.com/en/)
+* [Modyo 10.0](https://10-0.docs.modyo.com/en/)
 
 :::
 
