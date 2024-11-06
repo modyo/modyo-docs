@@ -12,7 +12,10 @@ We want your experience to be as easy and satisfying as possible, so we've desig
 
 :::tip Older Versions
 
-The current documentation applies to the latest version (Modyo 10). If you need information about previous version (Modyo 9.2), [you can access it here](https://9-2.docs.modyo.com/en/).
+The current documentation refers to **Modyo 10.1**. If you need information about previous versions, you can access the specific documentation for each version:
+
+* [Modyo 9.2] (https://9-2.docs.modyo.com/en/)
+* [Modyo 10.0] (https://10-0.docs.modyo.com/en/)
 
 :::
 
