@@ -280,13 +280,56 @@ To improve off-page SEO:
 
 ### PWA
 
-Modyo allows you to implement progressive web apps (PWA) on your digital channels under development. To do this, you have two options:
+Modyo allows you to implement Progressive Web Apps (PWA) in your digital channels, offering an enhanced experience to your users. To use PWA features, you must enable them in your project
 
-#### Manifest
+#### Main service worker
+
+Activate the Service Worker so that your digital channel can cache data, work offline and provide an improved experience for your users, even with an unstable connection.
+
+To enable the service worker, follow these steps:
+
+1. In the side menu, click channels.
+1. Select your web application.
+1. Click on application settings.
+1. Check the Enable Primary Service Worker box.
+1. Click **save**.
+
+Once activated and saved, the following route is created:
+
+
+```bash
+https://[domain]/[site-name]/serviceworker.js
+```
+
+To modify the service worker, follow these steps:
+
+1.  In the side menu, click channels.
+1. Select your web application.
+1. Click on templates in the side menu.
+1. Click on the snippets tab in the right column.
+1. In the service worker section, select the file you want to modify.
+1. Click **save**.
+1. Click **publish**.
+
+
+:::warning Attention
+You need to customize and save the service worker code to integrate these functions into your web app.
+:::
+
+:::warning Attention
+If you turn off the service worker, your web application will continue to work, with basic functions and without the benefits of the service worker.
+:::
+
+
+#### WebPush Notifications
+
+Allow your users to receive WebPush notifications along with notification campaigns. To send messages to your users, you must ensure that your application is linked to a realm and the application status is set to **Enabled**. Notifications are managed through the [messaging tool](/en/platform/customers/messaging.html).
+
+#### PWA Manifest
 
 The manifest indicates how you want a browser to display your digital channel. To activate the manifest:
 
-1. In the side menu, click on channels.
+1. In the side menu, click channels.
 1. Select your web application.
 1. Click on application settings.
 1. Click on PWA.
@@ -312,43 +355,6 @@ If you do not customize the content of the PWA manifest and add the route in tem
 :::
 
 
-#### Service worker
-
-Activate the Service Worker so that your digital channel can cache data, work offline and provide an improved experience for your users, even with an unstable connection.
-
-To enable the service worker, follow these steps:
-
-1. In the side menu, click on channels.
-1. Select your web application.
-1. Click on application settings.
-1. Check the Enable Primary Service Worker box.
-1. Click **save**.
-
-Once activated and saved, the following route is created:
-
-
-```bash
-https://[domain]/[site-name]/serviceworker.js
-```
-
-To modify the service worker, follow these steps:
-
-1.  In the side menu, click on channels.
-1. Select your web application.
-1. Click on templates in the side menu.
-1. Click on the snippets tab in the right column.
-1. In the service worker section, select the file you want to modify.
-1. Click **save**.
-1. Click **publish**.
-
-
-:::warning Attention
-You need to customize and save the service worker code to integrate these functions into your web app.
-:::
-
-:::warning Attention
-If you turn off the service worker, your web application will continue to work, with basic functions and without the benefits of the service worker.
-:::
 
 ### Domains
 
@@ -455,7 +461,7 @@ The main advantages of having different stages in your web apps are:
 
 To add a new stage to your web app, follow these steps:
 
-1. In the side menu, click on channels.
+1. In the side menu, click channels.
 1. Select your web application.
 1. Click on application settings.
 1. Click on stages.
@@ -476,7 +482,7 @@ The platform does not allow you to synchronize changes that have not yet been pu
 
 To synchronize a stage follow these steps:
 
-1. In the side menu, click on channels.
+1. In the side menu, click channels.
 1. Click on the name of your web application and select the stage you want to synchronize.
 1. In the summary view, click **synchronize**.
 1. In the synchronizations view, select the stage you want to synchronize to. In this view you can see all the elements with differences between the selected stages. Click on view for more details on the changes.
@@ -491,7 +497,7 @@ The elements of a stage associated with a segment are not synchronized. You must
 #### Delete a stage
 
 To delete a stage, follow these steps:
-1. In the side menu, click on channels.
+1. In the side menu, click channels.
 1. Click on the name of your web application and select the stage you want to delete.
 1. Click on application settings.
 1. Click on General.
@@ -705,7 +711,7 @@ To create a variable in sites, follow these steps:
 1. Under **Site Settings**, click **Site Variables**. Here you can see the list of all global variables and site variables, their general information and a button to copy their code into Liquid markup.
 1. Click on **+ New Variable**.
 1. Complete the **Name** and **Value** fields of the variable.
-1. Click **save**.
+1. Click **Save**.
 
 :::warning Attention 
 When using variables, Modyo follows a hierarchy of preference, where variables defined at the lowest level have priority. The variables defined in the widget will take precedence over the variables defined on the site, and in turn, the variables defined on the site will take precedence over the variables defined at the account level.
