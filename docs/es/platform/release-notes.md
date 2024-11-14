@@ -13,7 +13,7 @@ search: true
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
-* Corrige problemas de perdida del preview de sitios
+* Corrige problemas de pérdida del preview de sitios
 * Mejoras en la indexación de páginas para la búsqueda
 * Aumenta los resultados de búsquedas en sitios, ahora por defecto son 15 resultados
 
