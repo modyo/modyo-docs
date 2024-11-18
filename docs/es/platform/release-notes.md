@@ -6,6 +6,17 @@ search: true
 
 ## 10.0
 
+### 10.0.11 - 14 de noviembre de 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Corrige problemas de pérdida del preview de sitios
+* Mejoras en la indexación de páginas para la búsqueda
+* Aumenta los resultados de búsquedas en sitios, ahora por defecto son 15 resultados
+
 ### 10.0.10 - 04 de noviembre de 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
