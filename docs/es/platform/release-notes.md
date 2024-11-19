@@ -5,7 +5,7 @@ search: true
 # Notas del release
 
 ## 9.2
-### 9.2.67 - 21 de octubre de 2024
+### 9.2.68 - 19 de noviembre de 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
 * Mejoras de seguridad
