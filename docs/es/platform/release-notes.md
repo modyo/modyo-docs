@@ -5,6 +5,16 @@ search: true
 # Notas del release
 
 ## 9.2
+### 9.2.68 - 19 de noviembre de 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Corrige errores de mensajes flash que se muestran incorrectamente en flujos de login directo con un identity provider
+* Corrige log de errores en transacciones de pagos
+  
 
 ### 9.2.67 - 21 de octubre de 2024
 <Badge text="Core" type="core" vertical="middle"/>
@@ -15,15 +25,18 @@ search: true
 
 * Corrige problema en las redirecciones que no se realizan cuando la URL fuente contiene el signo `%`
 
+
 ### 9.2.66 - 02 de octubre de 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
 * Mejoras de seguridad
 
+
 ### 9.2.65 - 11 de septiembre de 2024
 <Badge text="Channels" type="channels" vertical="middle"/>
 
 * Permite arreglos como argumentos en filtros de contenido  
+
 
 ### 9.2.64 - 06 de septiembre de 2024
 <Badge text="Core" type="core" vertical="middle"/>
