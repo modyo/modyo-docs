@@ -17,7 +17,6 @@ search: true
 * Mejoras en la indexación de páginas para la búsqueda
 * Aumenta los resultados de búsquedas en sitios, ahora por defecto son 15 resultados
 
-
 ### 10.0.10 - 04 de noviembre de 2024
 <Badge text="Core" type="core" vertical="middle"/>
 

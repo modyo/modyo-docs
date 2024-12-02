@@ -35,13 +35,14 @@ If you delete the campaign, it cannot be recovered and the campaign will not be 
 :::
 
 ### Create a campaign
+Campaigns allow you to contact your users via email or direct notifications, including support for WebPush notifications. To generate a new campaign, click on the **+ New Campaign** button at the top of the Administrator view.
 
-Click the**+ New Campaign** button at the top of the Manager view to create a new campaign.
+#### Mailing Campaigns
 
-Fill in the information requested in the form:
+Email campaigns allow you to contact users via email. To set up an email campaign, fill in the fields requested in the form:
 
 - **Name**: Campaign name.
-- **Type**: Choose if it will be sent by mail or notification.
+- **Type**: Select **Mail** to activate this option.
 - **Subject**: Text that will appear in the subject line of the message that will be sent to users.
 - **Reply to**: Email address that people can reply to
  **(for email campaigns only)**.
@@ -52,6 +53,28 @@ Once you have completed the form, click on the **Save and Continue** button at t
 
 This opens the WYSIWYG editor with the template you selected. Edit the template and click the **Save** button to confirm the changes and open the Shipping Status view to send the campaign. 
 
+#### Notification Campaigns
+Notification campaigns allow you to send direct messages to users. To set up a notification campaign, fill in the following fields in the form:
+
+- **Name**: Campaign name.
+- **Type**: Select **Notification** to activate this option.
+- **Subject**: Text that will appear in the message to be sent to users.
+
+#### Enable WebPush support
+
+Notification campaigns can send WebPush notifications. This functionality allows users to receive messages directly in their browser. To enable this feature, make sure you meet the following requirements:
+
+* The web application that sends the notifications must be linked to the **Realm** where the campaigns are created.
+* The web application must be in **Enabled** state.
+* In the **PWA** section of the web application, select the **Enable top level service worker** and **Enable WebPush notifications** options.
+
+
+In order for users to receive WebPush notifications, they must comply with the following:
+
+* Must be authenticated.
+* Notifications must be enabled in your browser.
+
+When creating a new web app you have WebPush support by default, if it was created in Modyo 10.0 or lower, you need to update your template, you can use [this code to refactor](https://github.com/modyo-community/web-push-support).
 
 ### Campaign Status
 
