@@ -6,6 +6,27 @@ search: true
 
 ## 10.0
 
+### 10.0.12 - 03 de diciembre de 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Mejoras en la programación de la indexación de páginas
+* Corrige resultados de búsqueda que contenian contenido privado
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Corrige errores en selector de imagenes y buscador en los Richtexts
+* Mejora de performance en la publicación masiva de contenidos
+* Corrige error al mostrar diferencias en contenidos muy extensos
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+* Corrige duplicación de segmentos de usuarios
+* Corrige edición de custom fields recien agregados al editar un usuario
+
+
 ### 10.0.11 - 14 de noviembre de 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
@@ -16,6 +37,7 @@ search: true
 * Corrige problemas de pérdida del preview de sitios
 * Mejoras en la indexación de páginas para la búsqueda
 * Aumenta los resultados de búsquedas en sitios, ahora por defecto son 15 resultados
+
 
 ### 10.0.10 - 04 de noviembre de 2024
 <Badge text="Core" type="core" vertical="middle"/>
