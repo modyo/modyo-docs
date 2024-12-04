@@ -6,6 +6,26 @@ search: true
 
 ## 10.0
 
+### 10.0.12 - December 03, 2024
+<Badge text="Core" type="core" vertical="middle"/>
+* Security enhancements
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Page indexing improvements
+* Corrects search results that contained private content.
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Fixes bugs in image selector and search engine in rich text format
+* Improved performance in mass content publishing
+* Fixes error when displaying differences in very long contents
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Corrects duplication of user segments
+* Corrects editing of newly added custom fields when editing a user
+
 ### 10.0.11 - November 14, 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
@@ -28,7 +48,7 @@ search: true
 * Fixes issues when rendering pages with segmented content
 * Fixes issues when rendering pages with large content
 * Fixes the author of a synchronization in the activity displayed in pages, widgets, templates and menus
-* Added a new option to enable webpush in the application's settings 
+* Added a new option to enable webpush in the application's settings
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
@@ -52,7 +72,7 @@ search: true
 ### 10.0.8 - September 16, 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
-* Fixes problem with preloading links when hovering 
+* Fixes problem with preloading links when hovering
 
 
 ### 10.0.7 - September 06, 2024
