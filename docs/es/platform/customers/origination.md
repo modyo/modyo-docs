@@ -16,9 +16,9 @@ Origination está diseñado para cualquier organización que busque agilizar pro
 
 Para crear una nueva originación, sigue estos pasos:
 
-- En el menú lateral, navega a **Customers** \> **Realms** y selecciona el Reino en el que deseas trabajar.
+- En el menú lateral, navega a **Customers** \> **Reinos** y selecciona el Reino en el que deseas trabajar.
 - Dirígete a la opción **Origination**.
-- Haz clic en el botón **+ New Origination**.
+- Haz clic en el botón **+ Nueva originación**.
 - Asigna un nombre y selecciona el tipo de originación que deseas crear.
 - Haz clic en **Crear** para finalizar y comenzar a configurar los pasos del nuevo flujo de originación.
 
