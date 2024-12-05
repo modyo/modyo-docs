@@ -6,7 +6,7 @@ search: true
 
 ## Equipo
 
-Todos los usuarios internos de la plataforma conforman el equipo y cada miembro puede tener un rol específico para aprovechar al máximo el sistema. 
+Todos los usuarios internos de la plataforma conforman el equipo y cada miembro puede tener un rol específico para aprovechar al máximo el sistema.
 
 En esta sección puedes crear, editar y desactivar a los usuarios de la plataforma.
 
@@ -49,14 +49,14 @@ Todos los usuarios que pertenecen a un grupo tendrán el rol del grupo. En caso 
 
 Para crear un grupo, sigue estos pasos:
 
-1. Desde Modyo Platform haz click en **Configuración** 
-1. Daz click en **Grupos**. 
+1. Desde Modyo Platform haz click en **Configuración**
+1. Daz click en **Grupos**.
 1. Haz click en **+ Nuevo Grupo**.
 1. Escribe el nombre del grupo y selecciona el **Rol del Grupo**.
 1. Selecciona del menú desplegable debajo de **Agregar Usuarios**, los usuarios que formarán parte de este grupo.
 1. Da click en **Crear**.
 
-Una vez creado un grupo, lo puedes ver en el panel de Grupos. Además, al editar un usuario podrás agregarlo o, si ya es parte de ese grupo, eliminarlo. 
+Una vez creado un grupo, lo puedes ver en el panel de Grupos. Además, al editar un usuario podrás agregarlo o, si ya es parte de ese grupo, eliminarlo.
 
 
 ## Roles
@@ -79,7 +79,7 @@ Los roles predeterminados que existen, según contexto, son:
 
 #### Roles por sitio:
 
-- **Site viewer**: Puede ver entradas, ver diferencias entre versiones y puede dejar comentarios. También puede acceder a la vista de sincronización y ver los cambios pendientes de sincronizar. Sin embargo, este rol no tiene autorización para realizar ninguna acción que implique un cambio en la plataforma. 
+- **Site viewer**: Puede ver entradas, ver diferencias entre versiones y puede dejar comentarios. También puede acceder a la vista de sincronización y ver los cambios pendientes de sincronizar. Sin embargo, este rol no tiene autorización para realizar ninguna acción que implique un cambio en la plataforma.
 - **Site developer**: Solamente puede editar recursos. No puede publicar, eliminar, hacer rollback o editar la configuración.
 - **Site developer CLI**: Tiene los mismos permisos que Site developer; en adición, puede interactuar con modyo-cli.
 - **Site reviewer**:  Tiene todos los permisos del rol de site admin, excepto los permisos para editar la configuración del sitio.
@@ -99,15 +99,33 @@ El usuario más importante tendrá el rol de Default Admin o Administrador. Este
 - **Realm User**: Este rol puede añadir usuarios, crear, modificar y enviar a revisión campañas, formularios y segmentos.
 - **Realm Admin**: Puede acceder a todas las configuraciones y secciones del reino. Además, puede añadir y eliminar usuarios y miembros del equipo, así como eliminar el reino.
 
+### Roles personalizados:
+Los roles personalizados te permiten crear perfiles con accesos y permisos únicos, combinando roles existentes o configurándolos según las necesidades específicas de tu organización.
+
+#### Crear roles personalizados
+
+Para crear un rol personalizado, selecciona el botón **+ Nuevo Rol** y define su **scope**. Esto asignará permisos según la selección que realices:
+
+- **Organización**: el rol tendrá acceso a todos los módulos de Modyo y su alcance será global.
+- **Channels**: el rol tendrá acceso únicamente al módulo de [Channels](/es/platform/channels/).
+- **Customer**: el rol tendrá acceso únicamente al módulo de [Customers](/es/platform/customers/).
+- **Content**: el rol tendrá acceso únicamente al módulo de [Content](/es/platform/content/).
+
+Al crear un nuevo rol o seleccionar uno existente, podrás ver y modificar todos sus permisos y accesos asociados. Si seleccionas la opción **Todos**, asignarás automáticamente todos los permisos al rol.
+
+Para conservar los cambios, presiona el botón **Guardar**.
+
 ### Acceso a las aplicaciones:
 Modyo tiene roles que permiten acceder a todas las aplicaciones sin restricción alguna; por ello, Modyo permite restringir el acceso a ciertas aplicaciones configurando los roles de los miembros del equipo. De esta manera, es posible otorgar a un usuario un acceso total (Owner) solo en la aplicación de Channels, mientras restringe su acceso a otras aplicaciones.
 
 ### Asignar un rol por cuenta
 
-Para asignar un rol en el contexto de cuenta, sigue estos pasos: 
+Para asignar un rol en el contexto de cuenta, sigue estos pasos:
 
 1. Ve a la sección "Equipo" en la plataforma Modyo.
 2. Haz click en el perfil del usuario al que deseas cambiar el rol.
 3. Ingresa a la pestaña "Acceso".
 4. Selecciona el rol que deseas asignar al usuario y en qué espacio.
-5. Da click en el botón **Guardar** para confirmar los cambios.  
+5. Da click en el botón **Guardar** para confirmar los cambios.
+
+
