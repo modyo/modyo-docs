@@ -99,12 +99,12 @@ El usuario más importante tendrá el rol de Default Admin o Administrador. Este
 - **Realm User**: Este rol puede añadir usuarios, crear, modificar y enviar a revisión campañas, formularios y segmentos.
 - **Realm Admin**: Puede acceder a todas las configuraciones y secciones del reino. Además, puede añadir y eliminar usuarios y miembros del equipo, así como eliminar el reino.
 
-### Roles personalizados:
-Los roles personalizados te permiten crear perfiles con accesos y permisos únicos, combinando roles existentes o configurándolos según las necesidades específicas de tu organización.
+### Roles a medida:
+Los roles a medida te permiten crear perfiles con accesos y permisos únicos, combinando roles existentes o configurándolos según las necesidades específicas de tu organización.
 
-#### Crear roles personalizados
+#### Crear roles a medida
 
-Para crear un rol personalizado, selecciona el botón **+ Nuevo Rol** y define su **scope**. Esto asignará permisos según la selección que realices:
+Para crear un rol a medida, selecciona el botón **+ Nuevo Rol** y define su **scope**. Esto asignará permisos según la selección que realices:
 
 - **Organización**: el rol tendrá acceso a todos los módulos de Modyo y su alcance será global.
 - **Channels**: el rol tendrá acceso únicamente al módulo de [Channels](/es/platform/channels/).
