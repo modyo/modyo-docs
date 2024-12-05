@@ -332,13 +332,15 @@ module.exports = {
                           collapsable: true,
                           children: [
                               "/es/platform/customers/realms",
-                              "/es/platform/customers/profile",
+                              "/es/platform/customers/users",
+                              /* "/es/platform/customers/profile", Actualizar Links */
                               "/es/platform/customers/events",
                               "/es/platform/customers/segments",
                               "/es/platform/customers/forms",
                               "/es/platform/customers/origination",
                               "/es/platform/customers/messaging",
                               "/es/platform/customers/api",
+                              "/es/platform/customers/settings",
                           ],
                       },
                       {
