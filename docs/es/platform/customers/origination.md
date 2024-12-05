@@ -143,19 +143,19 @@ La vista resumen de una originación te ofrece un resumen de las métricas clave
 
 ### Gestión de Aplicaciones
 
-La vista de aplicaciones te permite revisar y administrar individualmente el estado e información de cada originación. Puedes seleccionar una originación específica para acceder a sus detalles y gestionar sus elementos clave.
+La vista de aplicaciones te permite revisar y administrar individualmente el estado e información de cada aplicación a esta originación. Puedes seleccionar una aplicación específica para acceder a sus detalles y gestionar sus elementos clave.
 
 En la vista de detalles, encontrarás las siguientes secciones principales:
 
-- **Detalles**: Información general de la originación, como el nombre, descripción y estado actual.
+- **Detalles**: Información general de la aplicación, como el nombre, descripción y estado actual.
 - **Tareas**: Listado de tareas asociadas al flujo de originación, junto con su estado de avance.
 - **Campos**: Campos configurados en el flujo para recopilar información del usuario.
 - **Documentos**: Archivos subidos por los usuarios o necesarios para el proceso de originación.
 - **Firmas**: Seguimiento de las firmas digitales recolectadas durante el flujo.
 - **Validaciones**: Validaciones realizadas por los administradores para autorizar el progreso.
-- **Actividad**: Registro de actividades y cambios realizados en la originación, útil para seguimiento y auditoría.
+- **Actividad**: Registro de actividades y cambios realizados en la aplicación, útil para seguimiento y auditoría.
 
-Esta estructura te brinda una visión integral y detallada de cada originación, permitiéndote gestionar de manera efectiva todos los aspectos relacionados con las aplicaciones.
+Esta estructura te brinda una visión integral y detallada de cada aplicación, permitiéndote gestionar de manera efectiva todos los aspectos relacionados con las aplicaciones.
 
 #### Asignar aplicación
 
@@ -167,7 +167,7 @@ Selecciona una aplicación y presiona el menu contextual. Al seleccionar la opci
 
 #### Eliminar aplicación
 
-Para eliminar una aplicación individual, selecciona el menú en la columna actions y presiona la opción delete. esto eliminará la aplicación
+Para eliminar una aplicación individual, selecciona el menú en la columna actions y presiona la opción delete. Esto eliminará la aplicación.
 
 Para eliminar varias aplicaciones al mismo tiempo, selecciona cada entrada marcando la casilla correspondiente y presiona el botón eliminar.
 
