@@ -25,7 +25,7 @@ Para crear un nuevo formulario, sigues estos pasos:
 - **Nombre**: Nombre asociado al formulario. Este valor aparecerá tanto en el índice de formularios en el administrador de Modyo y como título cuando un usuario lo vaya a responder.
 - **Descripción**: Este texto aparecerá como texto debajo del título cuando los usuarios lo vayan a responder.
 - **Límite de personas**: Permite determinar el número máximo de respuestas son permitidas.
-- **Sitio**: Te permite seleccionar en que sitio se mostrará este formulario. Ten en consideración que esto provoca que el formulario cambie su aspecto de acuerdo a las clases definidas en el CSS global del sitio. Para más información, dirígete a [Template builder](/es/platform/channels/templates.html). 
+- **Sitio**: Te permite seleccionar en que sitio se mostrará este formulario. Ten en consideración que esto provoca que el formulario cambie su aspecto de acuerdo a las clases definidas en el CSS global del sitio. Para más información, dirígete a [Template builder](/es/platform/channels/templates.html).
 
 :::warning Alerta
 Solamente podrás seleccionar un sitio que pertenece al mismo reino, dentro de la **Configuración del sitio**, en **General**, asegúrate de que el sitio sea parte del reino correcto.
@@ -65,20 +65,21 @@ Una vez que entres en la sección de edición de un formulario, podrás ver 2 se
 
 ### Añadir
 
-Esta sección te permitirá añadir cuantos campos sean necesarios para completar el formulario o eliminar los que no sean necesarios. A continuación se muestran los campos que puedes agregar para un formulario:
+En esta sección, puedes agregar campos para completar tu formulario o eliminar los que no necesites. Los tipos de campos que puedes agregar son:
 
-- **Texto simple**: Permite al usuario ingresar un texto hasta 256 caracteres.
-- **Párrafo**: Permite al usuario ingresar un texto de múltiples líneas hasta 65535 caracteres.
-- **Número**: Le permite al usuario ingresar números.
-- **Dropdown**: Te permite añadir opciones de las cuales el usuario podrá elegir una en formato dropdown.
-- **Checkbox**: Te permite añadir opciones de las cuales el usuario podrá elegir múltiples en formato checkbox.
-- **Elección**: Te permite añadir opciones de las cuales el usuario podrá elegir una en formato _radio button_.
-- **Fecha**: Te permite añadir un campo de fecha en el que el usuario podrá seleccionar una dentro del rango permitido.
-- **Preguntas anidadas**: Te permite añadir una serie de alternativas que pueden ser anidadas, de tal forma que al usuario se le solicita que seleccione una de las posibles opciones anidadas dentro de la opción que seleccionó.
-
-:::warning Atención
-Desde la versión 9.0.8 en adelante, los formularios ya no cuentan con preguntas de tipo archivos, por lo que no podrás requerir que los usuarios suban archivos usando los formularios de Modyo.
-:::
+- **Texto simple**: Permite ingresar hasta 256 caracteres.
+- **Párrafo**: Permite ingresar texto en múltiples líneas de hasta 65,535 caracteres.
+- **Número**: Permite ingresar números.
+- **Dropdown**: Agrega opciones para que la persona usuaria seleccione una en formato _dropdown_.
+- **Checkbox**: Agrega opciones que permiten seleccionar múltiples valores en formato _checkbox_.
+- **Elección**: Agrega opciones para seleccionar una opción en formato _radio button_.
+- **Fecha**: Permite seleccionar una fecha dentro de un rango permitido
+- **Preguntas anidadas**: Permite agregar opciones dentro de otras opciones. El usuario selecciona una opción principal y, según su elección, puede elegir entre las opciones relacionadas que se despliegan.
+- **Archivo**: Permite cargar archivos.
+- **País**: Selector de países.
+- **Teléfono**: Campo para ingresar números telefónicos.
+- **Dirección**: Campo estructurado para capturar direcciones.
+- **Grupo**: Agrupa un listado de varios campos repetibles. Puedes ver más detalles sobre este formato en la [documentación sobre Grupos repetibles](/es/platform/content/types.html#grupo)
 
 Puedes eliminar uno de los campos del formulario haciendo click en el icono de basurero a la derecha de cada campo en la sección principal. La eliminación será efectiva una vez que guardes los cambios.
 
@@ -122,7 +123,7 @@ Al seleccionar cualquiera de las diferentes opciones y al hacer click en **Añad
 
 ### Propiedades del formulario
 
-Esta sección te permitirá cambiar el comportamiento general del formulario. Contiene lo mismo que la vista de creación de un formulario nuevo, pero a su vez agrega un par de opciones nuevas las que se detalla a continuación. 
+Esta sección te permitirá cambiar el comportamiento general del formulario. Contiene lo mismo que la vista de creación de un formulario nuevo, pero a su vez agrega un par de opciones nuevas las que se detalla a continuación.
 
 Sus secciones son:
 
@@ -143,7 +144,7 @@ La sección **Snippet**, que sólo aparecerá si el formulario es público, te p
 :::warning Atención
 Para poder hacer uso adecuado del snippet del formulario, debes tener en cuenta la configuración _CORS_ de tu cuenta en Modyo y los _headers_ de seguridad de donde estés insertando el snippet.
 
-Para hacer uso del snippet dentro de una página en la plataforma Modyo, debes copiar el código Javascript dentro de la sección Javascript y el div en la sección HTML. El apartado de HTML en [Pages](/es/platform/channels/pages) no puede correr Javascript, es obligatorio el uso del apartado Javascript para correr el código correctamente. 
+Para hacer uso del snippet dentro de una página en la plataforma Modyo, debes copiar el código Javascript dentro de la sección Javascript y el div en la sección HTML. El apartado de HTML en [Pages](/es/platform/channels/pages) no puede correr Javascript, es obligatorio el uso del apartado Javascript para correr el código correctamente.
 :::
 
 Las secciónes **Opciones** y **Notificaciones** no agregan nada diferente a lo que se encuentra en **Nuevo Formulario**
