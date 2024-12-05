@@ -5,6 +5,16 @@ search: true
 # Notas del release
 
 ## 10.0
+### 10.0.13 - 05 de diciembre de 2024
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Corrige problema de redirección al custom domain de un sitio
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Corrige recalculo de segmentos
+* Corrige campo from de la campaña de correo, vuelve a ser el nombre del sender
+
 
 ### 10.0.12 - 03 de diciembre de 2024
 <Badge text="Core" type="core" vertical="middle"/>
