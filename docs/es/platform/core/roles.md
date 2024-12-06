@@ -49,8 +49,8 @@ Todos los usuarios que pertenecen a un grupo tendrán el rol del grupo. En caso 
 
 Para crear un grupo, sigue estos pasos:
 
-1. Desde Modyo Platform haz click en **Configuración**
-1. Daz click en **Grupos**.
+1. Haz click en **Configuración**.
+1. Haz click en **Grupos**.
 1. Haz click en **+ Nuevo Grupo**.
 1. Escribe el nombre del grupo y selecciona el **Rol del Grupo**.
 1. Selecciona del menú desplegable debajo de **Agregar Usuarios**, los usuarios que formarán parte de este grupo.
