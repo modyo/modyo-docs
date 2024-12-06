@@ -138,6 +138,7 @@ module.exports = {
                             "/en/platform/customers/events",
                             "/en/platform/customers/segments",
                             "/en/platform/customers/forms",
+                            "/en/platform/customers/origination",
                             "/en/platform/customers/messaging",
                             "/en/platform/customers/api",
                         ],
