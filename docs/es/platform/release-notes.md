@@ -4,6 +4,11 @@ search: true
 
 # Notas del release
 
+### 9.2.69 - 09 de diciembre de 2024
+<Badge text="Customers" type="customers" vertical="middle"/>
+* Agrega método de pago Yape de Payu Perú
+
+
 ## 9.2
 ### 9.2.68 - 19 de noviembre de 2024
 <Badge text="Core" type="core" vertical="middle"/>
