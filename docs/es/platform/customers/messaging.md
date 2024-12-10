@@ -4,90 +4,84 @@ search: true
 
 # Mensajería
 
-Mensajería es una herramienta de Modyo que te permite hacer campañas en el sitio y enviar información a los usuarios finales de manera masiva, dirigida a segmentos específicos.
+La funcionalidad de **Mensajería** en Modyo permite crear campañas masivas para enviar información a usuarios finales de forma segmentada y personalizada.
 
 En Modyo, puedes enviar mensajes a los usuarios a través de dos canales:
 
 - **Correos**: Envía campañas a las casillas de emails registradas en los perfiles de los usuarios. No es necesario ingresar a la plataforma para  ver los mensajes.
-- **Notificaciones**: Envía notificaciones a través del sistema de mensajería interno. Para verlas, el usuario tiene que ingresar a la plataforma.
+- **Notificaciones**: Envía notificaciones a través del sistema de mensajería interno. Los usuarios deben ingresar a la plataforma para visualizarlos.
 
 ## Campañas
 
-En la sección de campañas puedes ver, a través de un administrador, todos los mensajes e información que has enviado a los usuarios finales.
+En la sección de **Campañas**, puedes administrar todos los mensajes enviados a los usuarios finales. Utiliza el botón **Tipo**, para filtrar las campañas por el canal de envío.
 
-Da click en el botón **Todos** en la parte superior de la pantalla para filtrar los mensajes según el canal a través del cual fueron enviados.
+Las campañas se organizan en las siguientes columnas:
 
-Los mensajes de las campañas se ordenan en las siguientes columnas:
-
-- **Nombre**: Nombre que se le dio a la campaña. Puede contener el segmento específico al que se le envió.
+- **Nombre**: Nombre asignado a la campaña. Puede contener el segmento específico al que se le envió.
 - **Tipo**: Tipo de mensaje en que se envió la campaña.
-- **Enviados**: Cantidad total de envíos realizados para la campaña.
+- **Enviados**: Total de envíos realizados.
 - **Último envío**: Fecha y hora en que se envió la campaña.
 - **Creado el**: Fecha de creación de la campaña.
 
-En la fila de cada campaña, hay un botón que permite realizar dos acciones: 
+En cada fila de campaña, encontrarás un menú con las siguientes acciones:
 
-- **Editar la campaña**
-- **Borrar la campaña**
+- **Editar campaña**
+- **Borrar**
 
 :::danger Peligro
-Si borras la campaña, no se puede recuperar y la campaña no quedará registrada en el sistema.
+Si borras una campaña, no podrás recuperarla, y su registro se eliminará del sistema.
 :::
 
-### Crear una campaña
-Las campañas te permiten contactar directamente a tus usuarios mediante correo electrónico o notificaciones directas, incluyendo soporte para notificaciones WebPush. Para generar una nueva campaña haz click en el botón **+ Nueva Campaña**, en la parte superior de la vista del Administrador.
+## Crear una campaña
+Las campañas te permiten contactar directamente a tus usuarios mediante correo electrónico o notificaciones directas, incluyendo soporte para notificaciones WebPush. Para generar una nueva campaña haz click en el botón **+ Nueva Campaña**
 
-#### Campañas de Correo
+### Campañas de Correo
 
 Las campañas de correo te permiten contactar a los usuarios a través de email. Para configurar una campaña de correo, completa los campos solicitados en el formulario:
 
-- **Nombre**:  Nombre de la campaña.
-- **Tipo**: Selecciona **Correo** para activar esta opción..
-- **Asunto**: Texto que aparecerá en la línea de asunto del mensaje que se enviará a los usuarios.
-- **Responder a**: Dirección de correo electrónico a la cual las personas pueden responder
- **(solo para campañas de correo)**.
-- **Plantilla**: Lista de [plantillas](/es/platform/customers/messaging.html#plantillas) que se usarán para enviar un correo. Si no se selecciona alguna, Modyo enviará a una plantilla en blanco **(solo para campañas de correo)**.
-- **Habilitar segmentación**: Casilla de verificación para seleccionar un segmento  para enviar la campaña. Si dejas la casilla en blanco, la campaña se enviará a todos los usuarios.
+- **Nombre**: Identificador de la campaña.
+- **Tipo**: Selecciona **Correo** para activar esta opción.
+- **Asunto**: Texto que aparecerá en la línea de asunto del mensaje.
+- **Responder a**: Dirección de correo electrónico para las respuestas de los usuarios.
+- **Plantilla**: Selecciona una [plantilla](/es/platform/customers/messaging.html#plantillas). Si no seleccionas una, se enviará una plantilla en blanco.
+- **Habilitar segmentación**: Selecciona un segmento específico o deja esta opción desmarcada para enviar el mensaje a todos los usuarios.
 
-Una vez completes el formulario, haz click en el botón **Guardar y continuar**, en la parte superior de la pantalla.
+Haz clic en **Guardar y continuar** para abrir el editor WYSIWYG, donde puedes personalizar el contenido de la plantilla seleccionada. Una vez editado, selecciona **Guardar** para confirmar los cambios y acceder a la vista **Estado de envío**.
 
-Esto abre el editor WYSIWYG con la plantilla que seleccionaste. Edita la plantilla y haz click en el botón **Guardar** para confirmar los cambios y abrir la vista Estado de envío para enviar la campaña. 
 
-#### Campañas de Notificaciones
+### Campañas de Notificaciones
 Las campañas de notificaciones permiten enviar mensajes directos a los usuarios. Para configurar una campaña de notificaciones, completa los siguientes campos en el formulario:
 
-- **Nombre**:  Nombre de la campaña.
+- **Nombre**: Identificador de la campaña.
 - **Tipo**: Selecciona **Notificación** para activar esta opción.
-- **Asunto**: Texto que aparecerá en el mensaje que se enviará a los usuarios.
+- **Asunto**: Texto que aparecerá en el mensaje enviado.
 
 #### Habilitar soporte para WebPush
 
 Las campañas de notificaciones tienen la capacidad de enviar notificaciones WebPush. Esta funcionalidad permite a los usuarios recibir mensajes directamente en su navegador. Para habilitar esta función, asegúrate de cumplir con los siguientes requisitos:
 
-* La aplicación web que envía las notificaciones debe estar vinculada al **Realm** donde se crean las campañas.
-* La aplicación web debe estar en estado **Enabled**.
-* En la sección **PWA** de la aplicación web, activa las opciones **Habilitar service worker principal** y **Habilitar las notificaciones WebPush**.
-
+- La aplicación web que envía las notificaciones debe estar vinculada al **Realm** donde se crean las campañas.
+- La aplicación web debe estar en estado **Enabled**.
+- En la sección **PWA** de la aplicación web, activa las opciones **Habilitar service worker principal** y **Habilitar las notificaciones WebPush**.
 
 Además, para que los usuarios puedan recibir notificaciones WebPush, deben cumplir con lo siguiente:
 
-* Deben estar autenticados.
-* Las notificaciones deben estar habilitadas en su navegador.
+- Deben estar autenticados.
+- Las notificaciones deben estar habilitadas en su navegador.
 
 :::warning Atención
-Al crear una nueva web app tienes soporte por defecto para WebPush, si fue creada en Modyo 10.0 o inferior requieres actualizar tu plantilla, puedes utilizar [este código para refactorizar](https://github.com/modyo-community/web-push-support). 
+Si utilizas una versión de Modyo anterior a la 10.0, actualiza tu plantilla con el [código de soporte para WebPush](https://github.com/modyo-community/web-push-support).
 :::
 
-### Estado de envío
+## Estado de envío
 
-En la parte superior de la pantalla, el ícono de **vista previa** te permite visualizar tu campaña antes de enviarla. Da click en el botón **Enviar** para mandar la campaña.
-
+Antes de enviar una campaña, utiliza el botón de **Vista previa** para verificar el contenido. Una vez confirmado, haz clic en **Enviar**.
 El botón contextual te permite realizar estas acciones:
 
-- **Editor de Mensajes**: Edita tu mensaje antes de enviarlo.
-- **Enviar prueba**: Envía un correo de prueba con la campaña a una dirección determinada.
-- **Editar**: Edita las propiedades de la campaña, aspectos técnicos como la dirección de envío y los segmentos a recibir.
-- **Clonar la campaña**: Copia todo el contenido de una campaña.
+- **Editor de Mensajes**: Modifica el contenido antes de enviarlo.
+- **Enviar prueba**: Envía un mensaje de prueba a una dirección específica.
+- **Editar**: Cambia las propiedades de la campaña, como el segmento objetivo o la dirección de respuesta.
+- **Clonar la campaña**: Crea una copia con todo el contenido de una campaña.
 - **Borrar la campaña**: Elimina una campaña.
 
 Una vez que hayas enviado una campaña, no puedes enviarla nuevamente. Si deseas enviar de nuevo la misma campaña, selecciona la opción de clonar. Esto  crea una una nueva campaña con los mismos datos de nombre, segmentos y contenido, mientras que la información estadística parte de cero.
@@ -95,7 +89,7 @@ Una vez que hayas enviado una campaña, no puedes enviarla nuevamente. Si deseas
 Puedes cancelar el envío de una campaña cuando la campaña está en cola o en proceso de envío.
 
 :::warning Atención
-Una campaña puede ser reenviada solamente si cancelaste previamente el envío de la campaña cuando estaba en cola o proceso de envío. 
+Una campaña puede reenviarse únicamente si fue cancelado previamente el envío de la campaña cuando estaba en cola o proceso de envío.
 
 Debes indicar si deseas enviar nuevamente los mensajes a todos los usuarios o solo a aquellos que no los recibieron anteriormente. En este caso, el número de entregas de mensajes puede ser mayor que el alcance total de usuarios de la campaña.
 :::
@@ -123,7 +117,7 @@ Si no has enviado aún la campaña, los valores de esa campaña aparecerán en c
 :::
 
 :::danger Peligro
-Cuando borras un envío no puedes recuperar el registro si hiciste algún cambio en él. 
+Cuando borras un envío no puedes recuperar el registro si hiciste algún cambio en él.
 
 Borrar una campaña cuando está en proceso de envío, no significa que no llegará a los usuarios, sino que se detiene el proceso en el punto en que se encuentra.
 :::
@@ -134,7 +128,7 @@ Hacer click en el nombre de una campaña te lleva a la sección Entregas de Mens
 
 En la sección Entregas de mensajes, encuentras la lista de usuarios a los cuales les ha llegado un mensaje desde la plataforma. Aquí puedes ver una lista de todos los usuarios que han recibido un correo o notificación única, denominados "Sin Campaña".
 
-"Sin Campaña" se refiere a un correo o notificación enviado específicamente a un usuario en una fecha determinada. Estos mensajes no se consideran Campañas, ya que están personalizados y contienen información que no se envía a otros usuarios. Para obtener más información sobre cómo funcionan estos mensajes, consulta la [API de Administración](/es/platform/core/api.html). 
+"Sin Campaña" se refiere a un correo o notificación enviado específicamente a un usuario en una fecha determinada. Estos mensajes no se consideran Campañas, ya que están personalizados y contienen información que no se envía a otros usuarios. Para obtener más información sobre cómo funcionan estos mensajes, consulta la [API de Administración](/es/platform/core/api.html).
 
 En la vista inicial los mensajes se ordenan en estas categorías:
 
@@ -155,37 +149,23 @@ La barra de búsqueda te permite buscar por algún término en específico.
 
 ## Plantillas
 
-Para crear tu mensaje en forma de correo, necesitas una plantilla en la cual añadir tu contenido.
 
-En la sección plantillas puedes hacer maquetas de correos para después enviarlas a los usuarios.
+En la sección **Plantillas**, puedes crear y administrar diseños de correo para tus campañas. Para crear tu mensaje en forma de correo, necesitas una plantilla en la cual añadir tu contenido.
 
-Al ingresar a esta sección encuentras todas las plantillas de correos creadas. Las plantillas están ordenada por nombre y puedes ver la última vez que se modificó una plantilla.
+### Crear una plantilla
 
-:::tip Tip
-En caso de reutilizar una plantilla, asegúrate de revisar cuidadosamente su contenido para evitar posibles errores temporales que puedan causar confusión en el mensaje que deseas enviar a tus usuarios.
-:::
+- Haz clic en **+ Nueva Plantilla**.
+- Asigna un nombre descriptivo a la plantilla.
+- Utiliza el editor WYSIWYG para personalizar el diseño.
 
-Cada plantilla tiene un botón de edición debajo. Haz click en él para acceder al editor donde creaste la plantilla. Haz click en el botón de menú desplegable junto al botón de edición para acceder a estas opciones:
+### Editar plantillas
+
+Cada plantilla tiene un botón de edición con las siguientes acciones:
 
 - **Vista previa**: Muestra el modelo de plantilla de correo guardada.
 - **Copiar**: Permite copiar la plantilla.
 - **Borrar**: Borra la plantilla
 
-:::tip Tip
-Para modificar una plantilla temporalmente y después volver a una nueva, haz una copia de la plantilla y trabaja sobre la copia, dejando la original sin cambios.
-:::
-
-### Editar plantillas
-
-Para crear una plantilla, haz click en el botón **+ Nueva Plantilla**, en la parte superior de la página.
-
-En la vista de edición designa un nombre a la plantilla.
-
-:::tip Tip
-Al crear una Campaña, el nombre de tu plantilla será utilizado posteriormente para realizar el envío. Elige un texto que te ayude a identificar claramente cuál es la plantilla que quieres usar.
-:::
-
-El editor WYSIWYG, te permite crear visualmente cómo será tu correo y agregar los parámetros correspondientes que permiten automáticamente personalizar el mensaje.
 
 :::warning Atención
 Cuando haces una campaña, recuerda agregar en el footer toda la información legal que exige la regulación de tu país en cuanto a correos masivos.
@@ -193,21 +173,16 @@ Cuando haces una campaña, recuerda agregar en el footer toda la información le
 Para automatizar la inserción del Footer, lee [Configuración de Realms](/es/platform/customers/realms.html#emails)
 :::
 
-Para guardar la plantilla, haz click en el botón **Guardar** en la parte superior de la página.
-
-Para usar la plantilla en un correo, selecciona el nombre de esa plantilla al elaborando la campaña.
-
 ## Desinscripciones
 
 En esta sección, encuentras una lista de los usuarios que se han dado de baja de las campañas de correos o notificaciones a través de su perfil web.
 
 Usa la barra de búsqueda para encontrar un usuario específico. Puedes ingresar su nombre o correo electrónico.
 
-Cuando haces click en el nombre del usuario, puedes ver el [perfil del usuario](/es/platform/customers/realms.html#ficha-de-usuarios) con todas las actividades que ha hecho en la plataforma.
+Cuando haces click en el nombre del usuario, puedes ver la [ficha de usuario](/es/platform/customers/users.html#ficha-de-usuarios) con todas las actividades que ha hecho en la plataforma.
 
 Al final de cada nombre de usuario hay un botón que te permite reinscribir al usuario a cualquier campaña del sitio.
 
 :::danger Peligro
-Hacer una reinscripción sin autorización del usuario puede causar problemas legales.
-Revisa la regulación sobre correos masivos en cada país.
+Hacer una reinscripción sin autorización del usuario puede causar problemas legales. Revisa la regulación sobre correos masivos en cada país.
 :::

@@ -4,58 +4,41 @@ search: true
 
 # Segmentos
 
-Segmentos es la función de Modyo ideal para manejar a los usuarios en masa si necesitas que reciban información determinada.
+La funcionalidad de **Segmentos** en Modyo es ideal para manejar usuarios en masa y asegurarte de que reciban información específica. Los segmentos agrupan a los usuarios finales mediante filtros anidados, lo que facilita el envío de correos o notificaciones. También puedes aplicarlos en los módulos de **Content** y **Channels** para personalizar el contenido que entregas a tus usuarios.
 
-Estos nos permiten agrupar a los usuarios finales en distintos Segmentos y así facilitar el envío de correos o notificaciones. Esto se logra a través de filtros anidados para lograr la agrupación deseada. Los Segmentos se pueden aplicar a los módulos de Content y Channels para mostrar cierto contenido a tus usuarios.
+En esta sección, encontrarás una lista de todos los segmentos creados, con información clave como:
 
-### Sobre la interfaz
+- **Nombre**: Identificador del segmento (bajo este se encuentran los filtros que lo componen).
+- **Creado el**: Fecha de creación del segmento.
+- **Personas**: Número de usuarios que forman parte del segmento.
 
-En la interfaz, podrás ver una lista con todos los segmentos creados hasta ahora, con el nombre y las distintas especificaciones que permiten filtrarlos.
-
-La lista está ordenada de la siguiente manera.
-
-- Nombre: Nombre particular que tiene la lista. (bajo esta se encuentran los filtros que la componen).
-- Creado el: Fecha de creación del segmento.
-- Personas: Cantidad de usuarios que pertenecen al segmento.
-
-Además, en el extremo izquierdo encontrarás un botón con un menú desplegable que te permite ejecutar las siguientes opciones:
-
-- Editar: Editar el nombre y los filtros del segmento.
-- Borrar: Borrar el segmento.
-
-:::warning Atención
-Si borras el segmento, tendrás que crearlo nuevamente, los usuarios no serán eliminados.
-:::
-
-Si necesitas buscar un segmento por nombre en específico, puedes hacerlo a través de la barra de búsqueda que se encuentra en la parte superior de la pantalla.
+Para buscar un segmento por nombre, utiliza la barra de búsqueda en la parte superior de la pantalla.
 
 ## Crear un Segmento
+
 Para crear un segmento, sigue estos pasos:
 
-1. Desde la página de administración, haz click en **Customers**, luego selecciona **Reinos**.
-1. Haz click en tu **Reino**.
-1. Selecciona **Segmentos**, y haz click en **+ Nuevo Segmento**.
-1. Agrega los filtros necesarios para tu segmento.
-1. Haz click en **Siguiente.**
-1. Escribe un **Nombre** y **Descripción**.
-1. Haz click en **Guardar**.
+- Desde la página de administración, haz clic en **Customers**, luego selecciona **Reinos**.
+- Haz clic en tu **Reino**.
+- Selecciona **Segmentos** y haz clic en **+ Nuevo Segmento**.
+- Agrega los filtros necesarios para tu segmento.
+- Haz clic en **Siguiente**.
+- Escribe un **Nombre** y una **Descripción**.
+- Haz clic en **Guardar**.
 
 :::tip Tip
-Si quieres ver los usuarios que integran un segmento, en el menú de Segmentos, haz click en el número de usuarios. Con esto, llegarás a la vista de [Usuarios](/es/platform/customers/realms.html) que te mostrará una lista con todos los contactos que se ajustan a tu segmento.
+Asegúrate de que la ficha de cada cliente esté completa, ya que los datos incompletos impedirán que un usuario sea incluido en un segmento basado en esos criterios.
 :::
 
-:::tip Tip
-Es necesario que la ficha de cada cliente esté completa, ya que cada uno de los datos que aparecen en él, pueden ser tomados en cuenta para segmentar. Si la ficha no está completa o no está el dato del cliente para filtrar, este no será agregado al segmento.
-:::
+## Filtros
 
-### Filtros
+Los filtros te permiten crear segmentos basados en la información de las fichas de usuario y su actividad en el sitio. Puedes incluir usuarios que coincidan con ciertos criterios o excluir a los que no los cumplan.
 
-Los filtros permiten crear segmentos que se basan en la información que aparece en la ficha del cliente y su actividad dentro del sitio. Podrás crear segmentos incluyendo usuarios que coinciden con cierto criterio o usuarios que no coinciden con un determinado criterio.
-
-Los filtros que se encuentran de manera predeterminada en la plataforma son:
+Los filtros predeterminados en la plataforma incluyen:
 
 - Estado de activación
 - Edad
+- Respuestas de formulario
 - Fecha de nacimiento
 - Valor de custom field
 - Dispositivo
@@ -73,7 +56,6 @@ Los filtros que se encuentran de manera predeterminada en la plataforma son:
 - Fecha de registro
 - Tags de usuario
 - Valores de campo de usuarios
-- Respuestas de formulario
 - Orden completada
 - Orden fallida
 - Orden confirmando
@@ -81,13 +63,23 @@ Los filtros que se encuentran de manera predeterminada en la plataforma son:
 - Orden pagando
 - Orden rechazada
 
-Para crear un filtro avanzado, que se ajuste a tus necesidades, ve [Custom Fields](/es/platform/customers/realms.html#custom-fields).
+Para crear un filtro avanzado, que se ajuste a tus necesidades, , consulta la sección [Custom Fields](/es/platform/customers/realms.html#custom-fields).
 
 :::warning Atención
-Los segmentos a los que pertenece cada usuario se actualiza en un proceso en segundo plano:
-* Cada 5 minutos.
-* Cada vez que el perfil de un usuario es modificado.
-* Cada vez que un usuario responde un formulario.
+La actualización de segmentos a los que pertenece un usuario se realiza en un proceso en segundo plano y puede no ser inmediata. Esto ocurre:
 
-La actualización se ejecuta en un proceso en segundo plano, esto quiere decir que la actualización no es inmediata y depende de la carga del sistema. Es posible que algunos usuarios no vean el contenido segmentado por algunos minutos luego de haber ejecutado una acción que los incluya o excluya de un segmento.
+- Cada 5 minutos.
+- Cada vez que se modifica el perfil de un usuario.
+- Cada vez que un usuario responde un formulario.
+
+La velocidad de la actualización depende de la carga del sistema, por lo que algunos usuarios podrían no ver contenido segmentado de inmediato tras realizar acciones que los incluyen o excluyen de un segmento.
+:::
+
+
+## Borrar un segmento
+
+Puedes borrar un segmento desde la vista general. en el botón de acciones, seleccionando la opción borrar.
+
+:::warning Atención
+Si eliminas un segmento, deberás crearlo nuevamente. Sin embargo, los usuarios no serán eliminados.
 :::

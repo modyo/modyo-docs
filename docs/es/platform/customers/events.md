@@ -4,17 +4,23 @@ search: true
 
 # Eventos
 
-Esta sección contiene un registro cronológico de las actividades y sucesos de los usuarios.
+La sección **Eventos** contiene un registro cronológico de las actividades y sucesos realizados por los usuarios en la plataforma. Este historial detallado es útil para tareas de seguimiento y monitoreo.
 
-Está bitácora es útil para tareas de seguimiento y monitoreo, ya que te proporciona un historial detallado de las acciones de tus usuarios.
+En la interfaz de eventos puedes ver una lista de los usuarios que han llevado a cabo tareas, qué tipos de tareas y cuándo las llevaron a cabo.
 
-## Sobre la interfaz
+## Filtros disponibles
 
-En la interfaz de eventos puedes ver una lista de los usuarios que han llevado a cabo tareas,  qué tipos de tareas y cuándo las llevaron a cabo.
+Para encontrar eventos específicos, utiliza los filtros disponibles:
 
-Puedes filtrar los eventos por:
 - **Fecha**: Filtra por un período específico o selecciona una fecha de inicio y finalización.
-- **Tipo**: Filtra por tipo de evento, como intento de inicio de sesión sin éxito, inicio o cierre de sesión, creación o activación de usuario, reinicio de contraseña y otros.
-- **Usuario**: Selecciona un usuario en específico o todos los usuarios del reino.
+- **Tipo de evento**: Filtra por acciones como:
+  - Email devuelto.
+  - Email entregado.
+  - Email no entregado.
+  - Inicio de sesión.
+  - Cierre de sesión.
+- **Usuario**: Busca eventos relacionados con un usuario específico o selecciona todos los usuarios del reino.
 
-Marca la casilla al lado de uno o varios usuarios y haz clic en el botón **Exportar** ubicado debajo del listado para descargar un archivo en formato Excel o CSV con los eventos seleccionados.
+## Exportar eventos
+
+Marca la casilla al lado de uno o varios eventos y haz clic en el botón **Exportar**, ubicado debajo del listado para descargar un archivo en formato **Excel** o **CSV** con los eventos seleccionados.
