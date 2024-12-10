@@ -1,8 +1,7 @@
 ---
 search: true
 ---
-
-# Resumen
+# Reinos
 
 En Modyo, los **reinos** agrupan a usuarios con características similares y comparten una configuración común. Son especialmente útiles para gestionar múltiples grupos de sitios independientes o para crear un entorno de pruebas sin afectar a los usuarios activos.
 
@@ -11,6 +10,8 @@ Cada reino tiene configuraciones específicas para inicio de sesión, registro, 
 :::tip Tip
 Los cambios realizados en un reino afectarán únicamente a los usuarios de ese reino y no a los de otros.
 :::
+
+## Resumen
 
 La sección **Resumen** proporciona una visión general de los elementos clave del reino, que incluyen:
 
