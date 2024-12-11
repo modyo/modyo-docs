@@ -5,6 +5,22 @@ search: true
 # Release Notes
 
 ## 10.0
+### 10.0.14 - December 10, 2024
+<Badge text="Content" type="content" vertical="middle"/>
+* Fixes error when editing content in bulk
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+* Fixes multiple calls to count_matches endpoint
+
+### 10.0.13 - December 05, 2024
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Fixes issue with redirect to a site's custom domain
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Fixes segment recalculation
+* Fixed "from" field of email campaign, change back to sender's name
 
 ### 10.0.12 - December 03, 2024
 <Badge text="Core" type="core" vertical="middle"/>
@@ -13,7 +29,7 @@ search: true
 <Badge text="Channels" type="channels" vertical="middle"/>
 
 * Page indexing improvements
-* Corrects search results that contained private content.
+* Corrects search results that contained private content
 
 <Badge text="Content" type="content" vertical="middle"/>
 
@@ -41,7 +57,7 @@ search: true
 <Badge text="Core" type="core" vertical="middle"/>
 
 * Security improvements
-* Added invalidation of all administrator sessions when the administrator changes his password.
+* Added invalidation of all administrator sessions when the administrator changes his password
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
@@ -129,7 +145,7 @@ search: true
 * Security improvements
 * Performance improvements
 * Improvements have been added to the SEO configuration, it is now possible to edit the sitemap and robots from the organization settings and automatically include sites that depend on the base URL
-* A list of active sessions is added to the administrator's profile, and it is also possible to close them from that view.
+* A list of active sessions is added to the administrator's profile, and it is also possible to close them from that view
 
 <Badge text="Content" type="content" vertical="middle"/>
 
@@ -177,7 +193,7 @@ search: true
 
 <Badge text="Content" type="content" vertical="middle"/>
 
-* Adds the possibility of specifying a description to spaces, which is shown in the overview.
+* Adds the possibility of specifying a description to spaces, which is shown in the overview
 * Adds the ability of specifying a description to content types
 
 

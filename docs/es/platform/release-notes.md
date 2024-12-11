@@ -5,6 +5,13 @@ search: true
 # Notas del release
 
 ## 10.0
+### 10.0.14 - 10 de diciembre de 2024
+<Badge text="Content" type="content" vertical="middle"/>
+* Corrige error al editar contenido en bulk
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+* Corrige llamados multiples al endpoint de count_matches
+
 ### 10.0.13 - 05 de diciembre de 2024
 <Badge text="Channels" type="channels" vertical="middle"/>
 
@@ -64,8 +71,8 @@ search: true
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* Se agrega la posibilidad de mapear un atributo de un claim de tipo objeto a un custom field especifico.
-* Se agrega la capacidad de envio de webpush en las campañas de notificaciones cuando este es activado en el sitio relacionado al reino.
+* Se agrega la posibilidad de mapear un atributo de un claim de tipo objeto a un custom field especifico
+* Se agrega la capacidad de envio de webpush en las campañas de notificaciones cuando este es activado en el sitio relacionado al reino
 
 
 ### 10.0.9 - 14 de octubre de 2024
@@ -141,7 +148,7 @@ search: true
 * Mejoras de seguridad
 * Mejoras de rendimiento
 * Se agregan mejoras en la configuración de SEO, ahora es posible editar el sitemap y robots desde la configuración de la organización e incluir automáticamente sitios que dependan de la url base
-* Se agrega listado de sesiones activas en el profile del administrador, también es posible cerrarlas desde esa vista.
+* Se agrega listado de sesiones activas en el profile del administrador, también es posible cerrarlas desde esa vista
 
 <Badge text="Content" type="content" vertical="middle"/>
 
