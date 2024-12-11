@@ -170,7 +170,7 @@ Cada plantilla tiene un botón de edición con las siguientes acciones:
 :::warning Atención
 Cuando haces una campaña, recuerda agregar en el footer toda la información legal que exige la regulación de tu país en cuanto a correos masivos.
 
-Para automatizar la inserción del Footer, lee [Configuración de Realms](/es/platform/customers/realms.html#emails)
+Para automatizar la inserción del Footer, lee [Configuración de Realms](/es/platform/customers/settings.html#correos)
 :::
 
 ## Desinscripciones

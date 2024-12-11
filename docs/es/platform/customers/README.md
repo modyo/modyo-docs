@@ -12,7 +12,7 @@ Una vez que un usuario ha sido identificado, la plataforma gestiona internamente
 
 ### Funcionalidades principales
 
-- **[Gestión de usuarios](/es/platform/customers/realms.html)**: Implementa flujos de autenticación personalizados utilizando el sistema integrado o conectándolo con sistemas de Single Sign On (SSO).
+- **[Gestión de usuarios](/es/platform/customers/users.html)**: Implementa flujos de autenticación personalizados utilizando el sistema integrado o conectándolo con sistemas de Single Sign On (SSO).
 - **[Segmentación precisa](/es/platform/customers/segments.html)**: Personaliza la experiencia de usuario mediante el uso de segmentos dinámicos.
 - **[Formularios dinámicos](/es/platform/customers/forms.html)**: Recopila información clave de tus usuarios.
 - **[Mensajería](/es/platform/customers/messaging.html)**: Envía notificaciones y campañas de correo específicas para mantener una conexión activa con tus usuarios.

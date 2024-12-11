@@ -63,7 +63,7 @@ Los filtros predeterminados en la plataforma incluyen:
 - Orden pagando
 - Orden rechazada
 
-Para crear un filtro avanzado, que se ajuste a tus necesidades, , consulta la sección [Custom Fields](/es/platform/customers/realms.html#custom-fields).
+Para crear un filtro avanzado, que se ajuste a tus necesidades, , consulta la sección [Custom Fields](/es/platform/customers/settings.html#custom-fields).
 
 :::warning Atención
 La actualización de segmentos a los que pertenece un usuario se realiza en un proceso en segundo plano y puede no ser inmediata. Esto ocurre:

@@ -45,9 +45,9 @@ Para agregar un nuevo usuario, haz clic en el botón **+ Nuevo Usuario** y compl
 Para enviar la contraseña al correo del usuario, marca la casilla debajo del campo de correo electrónico. El usuario puede cambiar la contraseña una vez que acceda a la plataforma.
 :::
 
-Si necesitas agregar campos adicionales al formulario o seleccionar un avatar predeterminado para usuarios sin avatar, ve a la sección **Regístrate** en la [Configuración de Reino](/es/platform/customers/realms.html#configuracion-de-reino).
+Si necesitas agregar campos adicionales al formulario o seleccionar un avatar predeterminado para usuarios sin avatar, ve a la sección **Regístrate** en la [Configuración de Reino](/es/platform/customers/settings.html).
 
-Para crear o modificar campos personalizados, consulta la sección [Custom Fields](/es/platform/customers/realms.html#custom-fields).
+Para crear o modificar campos personalizados, consulta la sección [Custom Fields](/es/platform/customers/settings.html#custom-fields).
 
 ## Ficha de usuario
 
