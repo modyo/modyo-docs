@@ -5,7 +5,7 @@ search: true
 # Notas del release
 
 ## 10.0
-### 10.0.13 - 05 de diciembre de 2024
+### 10.0.14 - 10 de diciembre de 2024
 <Badge text="Content" type="content" vertical="middle"/>
 * Corrige error al editar contenido en bulk
 
