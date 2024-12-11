@@ -6,6 +6,14 @@ search: true
 
 ## 10.0
 ### 10.0.13 - 05 de diciembre de 2024
+<Badge text="Content" type="content" vertical="middle"/>
+* Corrige error al editar contenido en bulk
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+* Corrige llamados multiples al endpoint de count_matches.
+
+
+### 10.0.13 - 05 de diciembre de 2024
 <Badge text="Channels" type="channels" vertical="middle"/>
 
 * Corrige problema de redirección al custom domain de un sitio
