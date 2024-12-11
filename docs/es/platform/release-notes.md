@@ -5,6 +5,11 @@ search: true
 # Notas del release
 
 ## 9.2
+
+### 9.2.69 - 09 de diciembre de 2024
+<Badge text="Customers" type="customers" vertical="middle"/>
+* Agrega método de pago Yape de Payu Perú
+
 ### 9.2.68 - 19 de noviembre de 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
@@ -14,7 +19,6 @@ search: true
 
 * Corrige errores de mensajes flash que se muestran incorrectamente en flujos de login directo con un identity provider
 * Corrige log de errores en transacciones de pagos
-  
 
 ### 9.2.67 - 21 de octubre de 2024
 <Badge text="Core" type="core" vertical="middle"/>
@@ -35,7 +39,7 @@ search: true
 ### 9.2.65 - 11 de septiembre de 2024
 <Badge text="Channels" type="channels" vertical="middle"/>
 
-* Permite arreglos como argumentos en filtros de contenido  
+* Permite arreglos como argumentos en filtros de contenido
 
 
 ### 9.2.64 - 06 de septiembre de 2024
@@ -46,7 +50,7 @@ search: true
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
-* Se agrega cambios de posición de widgets y menús en la vista de diferencias  
+* Se agrega cambios de posición de widgets y menús en la vista de diferencias
 
 <Badge text="Content" type="content" vertical="middle"/>
 

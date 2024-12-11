@@ -6,6 +6,20 @@ search: true
 
 ## 9.2
 
+### 9.2.69 - December 09, 2024
+<Badge text="Customers" type="customers" vertical="middle"/>
+* Adds Yape payment method from Payu Peru
+
+### 9.2.68 - November 19, 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Security enhancements
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Fixes flash message errors that are incorrectly displayed in direct login flows with an identity provider
+* Fixes error log in payment transactions
+
 ### 9.2.67 - October 21, 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
@@ -33,7 +47,7 @@ search: true
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
-* Adds widgets and menus position changes in difference view  
+* Adds widgets and menus position changes in difference view
 
 <Badge text="Content" type="content" vertical="middle"/>
 
@@ -46,7 +60,7 @@ search: true
 * Security improvements
 * Improved time to obtain delivery token
 
-  
+
 ### 9.2.62 - 29 de julio de 2024
 <Badge text="Core" type="core" vertical="middle"/>
 
@@ -621,7 +635,7 @@ search: true
 
 * Security improvements
 * Log Separation
-* Fix “Review” button in Team Review emails
+* Fix "Review" button in Team Review emails
 * The archived item will be visually separated from the others in the state filters
 * Password and signup paths stop responding to extensions that don't match
 * Management accounts that are not accessed within a certain amount of time will be disabled
@@ -964,5 +978,5 @@ Problem with allowing tag style with MODYO_HTML_ALLOWED_ATTRS environment variab
 <Badge text="Core" type="core" vertical="middle"/>
 * Team Member Groups
 * Multiple full admins
-* “Get started” landing page
+* "Get started" landing page
 * Publisher: Froala
