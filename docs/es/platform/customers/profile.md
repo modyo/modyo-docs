@@ -1,86 +1,45 @@
----
-search: true
-sidebarDepth: 3
----
-
 # Perfil de usuario
 
-El perfil de usuario es el lugar central donde los usuarios pueden encontrar los distintos sitios de la cuenta, las notificaciones, y la vista para modificar su perfil como su nombre, correo, campos personalizados, y su suscripción a las campañas de correo.
+El **perfil de usuario** es el espacio donde cada usuario puede:
 
-### Sitios
+- Gestionar sus notificaciones.
+- Editar su información personal, como nombre, correo, campos personalizados y suscripciones a campañas de correo.
 
-Muestra el listado de sitios habilitados de la cuenta, de tal forma que el usuario pueda encontrar fácilmente todos los canales digitales asociados a la cuenta.
+Este perfil está disponible para los usuarios al autenticarse o acceder a la sección de edición de su información.
 
-:::tip Tip
-Puedes esconder esa sección del perfil haciendo uso de CSS en la configuración de customers, sección apariencia.
+## Actividad
+
+En esta sección puedes ver un registro de todas las acciones realizadas por el usuario en la plataforma.
+
+:::warning Atención
+Estos registros no se pueden borrar ni editar.
 :::
 
-### Notificaciones
+## Notificaciones
 
-Cada usuario puede acceder a sus notificaciones directamente desde el perfil, listando en la parte superior las notificaciones no leídas, y a continuación las notificaciones leídas. Ambos listados están ordenados desde la mas reciente a la más antigua. 
+Cada usuario puede acceder a sus notificaciones directamente desde el perfil, listando en la parte superior las notificaciones no leídas, y a continuación las notificaciones leídas. Ambos listados están ordenados desde la mas reciente a la más antigua.
 
-Al hacer click en una notificación, se mostrará el contenido completo de esta y se marcará como leída. 
+Al hacer click en una notificación, se mostrará el contenido completo de esta y se marcará como leída.
 
-### Editar perfil
+## Editar información
 
-En esta sección, cada usuario puede modificar los datos de su perfil, dependiendo de la [configuración de customers](/es/platform/customers/realms.html#configuracion-de-reino), cada usuario podrá modificar:
+En esta sección, cada usuario puede modificar los datos de su perfil, dependiendo de la [configuración de reino](/es/platform/customers/settings.html), cada usuario podrá modificar:
 
-* Nombre
-* Apellido
-* Segundo apellido
-* Correo electrónico
-* Fecha de nacimiento
-* Género
-* [Custom fields](/es/platform/customers/realms.html#custom-fields)
-* Contraseña
+- Nombre
+- Apellido
+- Segundo apellido
+- Correo electrónico
+- Móvil
+- Imagen de Usuario
+- Fecha de Nacimiento
+- Género
+- Idioma
+- [Custom fields](/es/platform/customers/settings.html#custom-fields)
+- Contraseña
+- Gestión de campañas de correo
 
-Además, cada usuario puede eliminar definitivamente su cuenta. 
+Además, los usuarios tienen la opción de eliminar su cuenta de manera definitiva.
 
 :::danger Peligro
-La eliminación de la cuenta de usuario es una acción irreversible y los usuarios que ejecuten esta acción deberán registrarse nuevamente para poder acceder.
-:::
-
-## API de customers
-
-Puedes acceder a la API de customers en donde podrás obtener y editar la información de reinos y usuarios a través de la URL `account_url/api/customers/docs`. Algunas de las cosas que puedes modificar son: 
-
-- Notificaciones: `account_url/api/customers/realms/{realm_uid}/notifications`
-- Información de usuarios: `account_url/api/customers/realms/{realm_uid}/me`
-- Eventos: `account_url/api/customers/realms/{realm_uid}/events`
-
-### Tokens delegados
-
-Al habilitar la opción de [**Mostrar información de delegación**](/es/platform/core/integrations/identity-providers.html) en tus proveedores de identidad, al hacer uso de la API `account_url/api/customers/realms/{realm_uid}/me`, obtendrás un JSON adicionado con información de tokens delegados parecido a este:
-
-``curl -X GET test.miModyo.com/api/customers/realms/miRealm/me``
-
-```json
-{
-  "avatar": {
-    "id": 100,
-    "file_name": "user_avatar.png",
-    "url_original": "/user_avatar_original.png",
-    "url_small": "/user_avatar_small.png",
-    "url_medium": "/user_avatar_medium.png"
-  },
-  "id": 2332,
-  "external_id": "11111111-1",
-  "name": "Clifton Feil",
-  "first_name": "Clifton",
-  "last_name": "Feil",
-  "second_last_name": "Smith",
-  "email": "test.user@modyo.com",
-  "username": "test.user",
-  ...
-  ...
-   "delegated_token":{
-      "uuid":"af57d947-69dc-4ed7-b5af-418c957d827f",
-      "access_token":"TOKEN",
-      "access_token_expires_in":300,
-      "access_token_expires_in_datetime":"2021-04-15T21:42:55.995+00:00"
-   }
-```
-
-:::tip Tip
-En caso de no tener habilitada la opción **Mostrar información de delegación**, se mostrará null (vacío).
+La eliminación de la cuenta es irreversible. Si un usuario realiza esta acción, deberá registrarse nuevamente para acceder a la plataforma.
 :::

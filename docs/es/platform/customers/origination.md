@@ -4,7 +4,7 @@ search: true
 
 # Origination
 
-Origination es una herramienta diseñada para optimizar y automatizar procesos complejos en diversos sectores, como la gestión de solicitudes, aprobaciones o registros que requieren la interacción de múltiples partes. Este feature permite a los usuarios crear y gestionar flujos de trabajo colaborativos en los que diferentes actores pueden participar activamente. A través de Origination, es posible solicitar y recopilar documentación e información entre partes, facilitando la validación y el avance del proceso en función de los requisitos cumplidos.
+**Origination** es una herramienta diseñada para optimizar y automatizar procesos complejos en diversos sectores, como la gestión de solicitudes, aprobaciones o registros que requieren la interacción de múltiples partes. Este feature permite a los usuarios crear y gestionar flujos de trabajo colaborativos en los que diferentes actores pueden participar activamente. A través de **Origination**, es posible solicitar y recopilar documentación e información entre partes, facilitando la validación y el avance del proceso en función de los requisitos cumplidos.
 
 Una de las principales ventajas de Origination es su capacidad para gestionar flujos de trabajo en múltiples pasos, permitiendo que cada paso sea verificado antes de avanzar, lo que garantiza la precisión y el cumplimiento de cada etapa. Además, Origination ofrece un entorno seguro y eficiente, evitando el intercambio de información confidencial por medios inseguros, lo que reduce el riesgo de errores y asegura la protección de los datos.
 
@@ -31,28 +31,24 @@ Los tipos de originación determinan el propósito y las funcionalidades especí
 
 ## Flujos de originación
 
-Los flujos de originación son procesos configurables diseñados para recopilar, validar y gestionar información clave de los usuarios o entidades. Estos flujos se componen de Pasos y Tareas, los cuales definen la estructura y las acciones necesarias para completar el flujo.
+Los flujos de originación están compuestos por **Pasos** y **Tareas**, que estructuran y definen las acciones necesarias para completar el proceso.
 
-### Crear y modificar flujos de originación
+### Pasos
 
-Al crear o seleccionar un flujo de originación tienes acceso a gestionar sus propiedades, agregar pasos y tareas para crear flujos eficientes.
+Los pasos agrupan tareas que se presentan en una misma pantalla. Para avanzar al siguiente paso, el usuario debe completar todas las tareas asignadas.
 
-#### Pasos
-
-Los pasos son conjuntos de tareas que se presentan en una misma pantalla al usuario. Para avanzar al siguiente paso, el usuario debe completar todas las tareas y reglas asignadas al paso actual.
-
-##### Agregar pasos
+#### Agregar pasos
 
 Para agregar un paso, presiona el botón **Añadir** y designa los valores
 
 - **Nombre**: El nombre que se mostrará en la interfaz del usuario para identificar el Paso.
 - **Identificador**: Un valor único que se incluirá en la URL del flujo de originación.
 
-#### Tareas
+### Tareas
 
-Las tareas son las unidades de acción dentro de cada paso. Estas tareas recopilan información, realizan validaciones o solicitan acciones específicas del usuario. Las tareas se completan de manera secuencial, y al validarse, permiten avanzar al siguiente paso del flujo.
+Las tareas son las acciones individuales dentro de cada paso. Estas tareas recopilan información, realizan validaciones o solicitan acciones específicas del usuario. Las tareas se completan de manera secuencial, y al validarse, permiten avanzar al siguiente paso del flujo.
 
-##### Agregar tareas
+#### Agregar tareas
 
 Para agregar una nueva Tarea, presiona el botón **+ Agregar tarea** y eso creará un nuevo contenedor de tareas. Al crear una tarea, debes incluir sus valores
 
@@ -61,7 +57,7 @@ Para agregar una nueva Tarea, presiona el botón **+ Agregar tarea** y eso crear
 - **Descripción**: Un breve texto explicativo sobre la tarea, que será visible para el usuario.
 - **Tipo**: Selecciona el tipo de tarea en función de los objetivos del flujo.
 
-##### Tipos de tareas
+#### Tipos de tareas
 
 Los tipos de tareas disponibles son:
 
@@ -71,21 +67,21 @@ Los tipos de tareas disponibles son:
 - **Revisión pendiente**: Pausa el proceso hasta que un administrador autorice el avance al siguiente paso.
 
 :::warning Atención
- Para guardar un paso debes incluir al menos una Tarea con su respectivo contenido. No puedes almacenar pasos vacíos.
+ Cada paso debe incluir al menos una tarea válida para ser guardado.
 :::
 
-#### Campos
+### Campos
 
 Puedes incorporar una amplia variedad de campos en tus formularios para personalizar la recolección de datos de tus usuarios.
 
-##### Añadir campos
+#### Añadir campos
 
 Para incluir un nuevo campo debes seleccionar una tarea y seleccionar la pestaña **Añadir**
 
 Origination soporta todos los tipos de entrada disponibles en formularios. Puedes ver el listado completo de tipos en la [documentación de formularios](https://docs.modyo.com/es/platform/customers/forms.html#anadir)
 
 
-##### Editar campos
+#### Editar campos
 
 Al seleccionar un campo, puedes modificar sus propiedades al dirigirte a  la pestaña **Editar** Allí encontrarás diferentes propiedades según las características del campo seleccionado. Las principales propiedades son:
 
@@ -116,12 +112,15 @@ Al seleccionar la opción **Editar** en el menu contextual de tu orignación pue
 - **Reglas de completado**:  Define el comportamiento de completado para cada aplicación.
 - **Privacidad**: Permite restringir el acceso al flujo de originación a ciertos segmentos de usuarios predefinidos.
 
-#### Borrar originación
+#### Eliminar originación
 
-Si necesitas eliminar una originación de forma permanente, puedes hacerlo desde esta sección.
+Si necesitas eliminar una originación de forma permanente:
+
+1. Selecciona la opción **Eliminar originación**.
+2. Confirma que no necesitas los datos de la originación antes de proceder.
 
 :::danger Peligro
-Este proceso es irreversible, por lo que debes asegurarte de que no necesitas la originación ni sus datos antes de proceder.
+Este proceso es irreversible.
 :::
 
 ### Ver detalles de una originación
