@@ -6,7 +6,7 @@ search: true
 
 ## Team
 
-All the internal users of the platform make up the team and each member can have a specific role to make the most of the system. 
+All internal users of the platform make up the team and each member can have a specific role to make the most of the system.
 
 In this section you can create, edit and deactivate users of the platform.
 
@@ -48,14 +48,14 @@ All users who belong to a group will have the roles of the group. In case a part
 
 To create a group, follow these steps:
 
-1. From Modyo Platform click on **Configuration** 
-1. Click on **Groups**. 
+1. Click on **Settings**.
+1. Click on **Groups**.
 1. Click **+ New Group**.
 1. Type the name of the group and select the**Group Role**.
 1. Select from the drop-down menu under **Add Users**, the users that will be part of this group.
 1. Click **Create**.
 
-Once a group is created, you can view it in the Groups panel. In addition, when editing a user, you can add them or, if they are already part of that group, delete them. 
+Once a group is created, you can view it in the Groups panel. In addition, when editing a user, you can add them or, if they are already part of that group, delete them.
 
 
 ## Roles
@@ -78,7 +78,7 @@ The default roles that exist, depending on the context, are:
 
 #### Site-level roles:
 
-- **Site viewer**: Can view entries, see differences between versions, and you can leave comments. Can also access the sync view and see the changes pending syncing. However, this role is not authorized to take any action that involves a change to the platform. 
+- **Site viewer**: You can view entries, see differences between versions and you can leave comments. You can also access the synchronization view and see the changes waiting to be synchronized. However, this role is not authorized to perform any action that involves a change in the platform.
 - **Site developer**: Can only edit resources. Cannot publish, delete, rollback, or edit the configuration.
 - **Site developer CLI**: Has the same permissions as Site developer; in addition, can interact with modyo-cli.
 - **Site reviewer**: Has all the permissions of the site admin role, except the permissions to edit the site settings.
@@ -98,15 +98,33 @@ The most important user will have the Default Admin or Administrator role. This 
 - **Realm User**: This role can add users, create, modify, and submit campaigns, forms, and segments for review.
 - **Realm Admin**: Can access all the settings and sections of the kingdom. In addition, can add and remove users and team members, as well as delete the kingdom.
 
+### Custom roles:
+Custom roles allow you to create profiles with unique access and permissions, combining existing roles or configuring them according to the specific needs of your organization.
+
+#### Create custom roles
+
+To create a custom role, select the **+ New Role** button and define your **scope**. This will assign permissions depending on the selection you make:
+
+- **Organization**: The role will have access to all Modyo modules and its reach will be global.
+- **Channels**: The role will have access only to the [Channels](/en/platform/channels/) module.
+- **Customer**: the role will have access only to the [Customers](/en/platform/customers/) module.
+- **Content**: The role will have access only to the [Content](/en/platform/content/) module.
+
+When you create a new role or select an existing one, you'll be able to view and modify all of its associated permissions and accesses. If you select the **All** option, you will automatically assign all permissions to the role.
+
+To keep the changes, press the **Save** button.
+
 ### Access to applications:
 Modyo has roles that allow access to all applications without any restrictions; therefore, Modyo allows you to restrict access to certain applications by configuring the roles of team members. In this way, it is possible to grant a user full access (Owner) only to the Channels application, while restricting their access to other applications.
 
 ### Assign one role per account
 
-To assign a role in the account context, follow these steps: 
+To assign a role in the account context, follow these steps:
 
 1. Go to the “Team” section on the Modyo platform.
 2. Click on the profile of the user you want to change the role to.
 3. Go to the “Access” tab.
 4. Select the role you want to assign to the user and in what space.
-5. Click the**Save** button to confirm the changes.  
+5. Click the **Save** button to confirm the changes.
+
+
