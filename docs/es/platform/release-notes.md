@@ -5,6 +5,10 @@ search: true
 # Notas del release
 
 ## 10.0
+### 10.0.15 - 12 de diciembre de 2024
+<Badge text="Customers" type="customers" vertical="middle"/>
+* Mejora en filtro de segmentos de tipo custom field, ahora permite una lista de valores
+
 ### 10.0.14 - 10 de diciembre de 2024
 <Badge text="Content" type="content" vertical="middle"/>
 * Corrige error al editar contenido en bulk
@@ -21,7 +25,6 @@ search: true
 
 * Corrige recalculo de segmentos
 * Corrige campo from de la campaña de correo, vuelve a ser el nombre del sender
-
 
 ### 10.0.12 - 03 de diciembre de 2024
 <Badge text="Core" type="core" vertical="middle"/>

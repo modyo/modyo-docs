@@ -5,6 +5,10 @@ search: true
 # Release Notes
 
 ## 10.0
+### 10.0.15 - December 12, 2024
+<Badge text="Customers" type="customers" vertical="middle"/>
+* Improved custom field type segment filter, now allows a list of values.
+
 ### 10.0.14 - December 10, 2024
 <Badge text="Content" type="content" vertical="middle"/>
 * Fixes error when editing content in bulk
