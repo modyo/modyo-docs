@@ -394,7 +394,7 @@ These domains are reserved by Modyo. They are not available as custom domains:
 </tr></table>
 :::
 
-:: :warning Attention
+:::warning Attention
 These hosts are reserved by Modyo. They are not available as hosts for your web apps:
 <table style="border: none;"><tr style="border: none;">
 <td style="border: none;"><ul>
