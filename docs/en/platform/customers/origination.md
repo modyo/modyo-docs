@@ -4,7 +4,7 @@ search: true
 
 # Origination
 
-Origination is a tool designed to optimize and automate complex processes in various sectors, such as managing requests, approvals, or records requiring multiple parties' interaction. This feature allows users to create and manage collaborative workflows in which different actors can actively participate. Through Origination, it is possible to request and collect documentation and information between parties, facilitating the validation and progress of the process based on the requirements met.
+**Origination** is a tool designed to optimize and automate complex processes in various sectors, such as managing requests, approvals, or records requiring multiple parties' interaction. This feature allows users to create and manage collaborative workflows in which different actors can actively participate. Through **Origination**, it is possible to request and collect documentation and information between parties, facilitating the validation and progress of the process based on the requirements met.
 
 One of Origination's main advantages is its ability to manage workflows in multiple steps. Each step is verified before proceeding, ensuring the accuracy and compliance of each stage. In addition, Origination offers a secure and efficient environment, preventing the exchange of confidential information by insecure means, reducing the risk of errors, and ensuring data protection.
 
@@ -31,28 +31,24 @@ The origination types determine the purpose and specific functionality of the fl
 
 ## Origination flows
 
-Origination flows are configurable processes designed to collect, validate, and manage key information from users or entities. These flows are composed of Steps and Tasks, which define the structure and actions needed to complete the flow.
+The flows are composed of **Steps** and **Tasks**, which define the structure and actions needed to complete the flow.
 
-### Create and modify origination flows
+### Steps
 
-When creating or selecting an origination flow, you have access to managing its properties, and adding steps and tasks to create efficient flows.
+The steps group tasks that are presented on the same screen. To proceed to the next step, the user must complete all assigned tasks.
 
-#### Steps
-
-The steps are sets of tasks that are presented on the same screen to the user. To proceed to the next step, the user must complete all the tasks and rules assigned to the current step.
-
-##### Add steps
+#### Add steps
 
 To add a step, press the **Add** button and choose the values
 
 - **Name**: The name that will be displayed in the user interface to identify the Step.
 - **Identifier**: A unique value that will be included in the URL of the origination flow.
 
-#### Tasks
+### Tasks
 
-Tasks are the units of action within each step. These tasks collect information, perform validations, or request specific actions from the user. Tasks are completed sequentially, and when validated, they allow you to move to the next step in the flow.
+Tasks are the individual actions within each step. These tasks collect information, perform validations, or request specific actions from the user. Tasks are completed sequentially, and when validated, they allow you to move to the next step in the flow.
 
-##### Add tasks
+#### Add tasks
 
 To add a new Task, press the **+ Add Task** button and a new task will be created. When creating a task, you must include its values
 
@@ -61,7 +57,7 @@ To add a new Task, press the **+ Add Task** button and a new task will be create
 - **Description**: A short explanatory text about the task, it will be visible to the user.
 - **Type**: Select the type of task based on the objectives of the flow.
 
-##### Tasks types
+#### Tasks types
 
 The available task types are:
 
@@ -71,21 +67,21 @@ The available task types are:
 - **Pending Review**: Pauses the process until an administrator authorizes progress to the next step.
 
 :::warning Warning
- To save a step you must include at least one Task with its respective content. You can't store empty steps.
+ Each step must include at least one valid task to be saved.
 :::
 
-#### Fields
+### Fields
 
 You can incorporate a wide variety of fields in your forms to customize the collection from your users' data.
 
-##### Add fields
+#### Add fields
 
 To include a new field you must select a task and select the **Add** tab
 
 Origination supports all types of input available in forms. You can see the full list of types in the [form documentation] (https://docs.modyo.com/en/platform/customers/forms.html#add)
 
 
-##### Edit fields
+#### Edit fields
 
 When selecting a field, you can modify its properties by going to the **Edit** tab. There you will find different properties depending on the characteristics of the selected field. The main properties are:
 
@@ -118,10 +114,13 @@ By selecting the **Edit** option in the context menu of your origination you can
 
 #### Delete origination
 
-If you need to permanently delete an origination, you can do so from this section.
+If you need to permanently delete an origination:
+
+1. Select the **Delete Origination** option.
+2. Confirm that you don't need the origination details before proceeding.
 
 :::danger Danger
-This process is irreversible, so you should make sure that you don't need the origination or your data before proceeding.
+This process is irreversible.
 :::
 
 ### View details of an origination
