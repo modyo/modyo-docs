@@ -1,86 +1,45 @@
----
-search: true
-sidebarDepth: 3
----
-
 # User Profile
 
-The user profile is the central place where users can find the various account sites, notifications, and the view to modify their profile such as their name, email, custom fields, and their subscription to email campaigns.
+The **user profile** is the space where each user can:
 
-### Sites
+- Manage their notifications.
+- Edit their personal information, such as name, email, custom fields, and email campaign subscriptions.
 
-Displays the list of enabled sites in the account, so that the user can easily find all the digital channels associated with the account.
+This profile is available to users upon authentication or when accessing the section to edit their information.
 
-:::tip Tip
-You can hide that section of the profile by using CSS in the customers settings, appearance section.
+## Activity
+
+In this section, you can view a log of all actions performed by the user on the platform.
+
+:::warning Attention
+These records cannot be deleted or edited.
 :::
 
-### Notifications
+## Notifications
 
-Each user can access their notifications directly from the profile, listing at the top the unread notifications, and then the read notifications. Both lists are ordered from the most recent to the oldest.
+Each user can access their notifications directly from the profile. At the top, unread notifications are listed, followed by read notifications. Both lists are sorted from the most recent to the oldest.
 
-When you click on a notification, its full content will be displayed and it will be marked as read. 
+By clicking on a notification, its full content will be displayed, and it will be marked as read.
 
-### Edit profile
+## Edit Information
 
-In this section, each user can modify the details of their profile, depending on the [Realm Configuration](/en/platform/customers/realms.html#realm-configuration), each user can modify:
+In this section, each user can modify their profile data. Depending on the [realm configuration](/en/platform/customers/settings.html), each user will be able to edit:
 
-* Name
-* Last name
-* Second last name
-* Email
-* Birth date
-* Gender
-* [Custom fields](/en/platform/customers/realms.html#custom-fields)
-* Password
+- Name
+- Surname
+- Second surname
+- Email
+- Mobile
+- Profile Image
+- Date of Birth
+- Gender
+- Language
+- [Custom Fields](/en/platform/customers/settings.html#custom-fields)
+- Password
+- Email Campaign Management
 
-In addition, each user can permanently delete their account. 
+Additionally, users have the option to permanently delete their account.
 
-:::danger Danger
-Deleting the user account is an irreversible action and users who perform this action will need to register again in order to access it.
-:::
-
-## Customer APIs
-
-You can access the customers API where you can get and edit information about realms and users through the URL `account_url/api/customers/docs`. Some of the things you can modify are: 
-
-- Notifications: `account_url/api/customers/realms/{realm_uid}/notifications`
-- User Information: `account_url/api/customers/realms/{realm_uid}/me`
-- Events: `account_url/api/customers/realms/{realm_uid}/events `
-
-### Delegated tokens
-
-By enabling the [**Show delegation information**](/es/platform/core/integrations/identity-providers.html) option in your identity providers, using the API `account_url/api/customers/realms/{realm_uid}/me `, you'll get a JSON with added information about delegated tokens similar to this:
-
-``curl -X GET test.miModyo.com/api/customers/realms/miRealm/me``
-
-```json
-{
-  "avatar": {
-    "id": 100,
-    "file_name": "user_avatar.png",
-    "url_original": "/user_avatar_original.png",
-    "url_small": "/user_avatar_small.png",
-    "url_medium": "/user_avatar_medium.png"
-  },
-  "id": 2332,
-  "external_id": "11111111-1",
-  "name": "Clifton Feil",
-  "first_name": "Clifton",
-  "last_name": "Feil",
-  "second_last_name": "Smith",
-  "email": "test.user@modyo.com",
-  "username": "test.user",
-  ...
-  ...
-   "delegated_token":{
-      "uuid":"af57d947-69dc-4ed7-b5af-418c957d827f",
-      "access_token":"TOKEN",
-      "access_token_expires_in":300,
-      "access_token_expires_in_datetime":"2021-04-15T21:42:55.995+00:00"
-   }
-```
-
-:::tip Tip
-If you do not have the **Show delegation information** option enabled, null (void) will be displayed.
+:::danger Peligro
+Account deletion is irreversible. If a user performs this action, they will need to register again to access the platform.
 :::
