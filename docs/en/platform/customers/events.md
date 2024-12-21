@@ -4,17 +4,23 @@ search: true
 
 # Events
 
-This section contains a chronological record of user activities and events.
+The **Events** section contains a chronological log of activities and occurrences performed by users on the platform. This detailed history is useful for tracking and monitoring tasks.
 
-This log is useful for auditing and monitoring tasks, as it provides you with a detailed history of your users' actions.
+In the events interface, you can view a list of users who have performed tasks, the types of tasks, and when they were carried out.
 
-## About the interface
+## Available Filters
 
-In the event interface, you can see a list of users who have carried out tasks, what types of tasks, and when they carried them out.
+To find specific events, use the available filters:
 
-You can filter events by:
 - **Date**: Filter by a specific period or select a start and end date.
-- **Type**: Filter by type of event, such as unsuccessful login attempt, login or logout, user creation or activation, password reset, and others.
-- **User**: Select a specific user or all users in the realm.
+- **Event Type**: Filter by actions such as:
+  - Email bounced.
+  - Email delivered.
+  - Email undelivered.
+  - Login.
+  - Logout.
+- **User**: Search for events related to a specific user, or select all users of the realm.
 
-Check the box next to one or more users and click on the**Export** button located below the list to download a file in Excel or CSV format with the selected events.
+## Export Events
+
+Check the box next to one or more events and click the **Export** button, located below the list, to download a file in **Excel** or **CSV** format with the selected events.
