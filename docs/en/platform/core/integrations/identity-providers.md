@@ -86,7 +86,7 @@ In order to integrate a login with OAuth2 in Modyo, you will need the following 
 - **Placeholder for login**: Text to be displayed in the identification field as placeholder if the user has not filled in the field.
 - **Use SSL**: Enable this option if your OAuth2 authentication service uses a secure socket layer (SSL: _Secure Sockets Layer_).
 
-To create a OAuth client, see [OAuth Client](/en/platform/customers/realms.html#oauth-client).
+To create an OAuth client, go to [OAuth Client] (/en/platform/customers/settings.html #oauth-client).
 
 
 ## OpenID Connect
@@ -130,7 +130,7 @@ When performing a specific integration, Modyo allows you to enable certain setti
 | **Tolerance in seconds for access token**                        | Number in seconds that will be used as a margin of tolerance to obtain an access token using the refresh token.                                                                                                                                                                                                           |
 | **Enable token revocation**                                   | Enables revocation of access tokens via API. For revocation, you can use the provider's endpoint to revoke tokens.                              |
 | **Activate refresh token**                  | Enables the use of OAuth 2.0 refresh tokens. To refresh your access token, you can use the provider's POST endpoint by sending <tt> grant_type: refresh_token, refresh_token: **my-refresh-token**, client_id: **my-client-id** </tt>  |
-| **Show delegation information**                               | Enables more information in the [User Profile API](/en/platform/customers/profile.html#profile-api) regarding delegated tokens. This is useful when the access token issued by the identity provider is needed to gain access to some other service (e.g. an external API).                           |
+| **Show delegation information**                               | Enable more information in the [User Profile API](/en/platform/customers/api.html) regarding delegated tokens. This is useful when the access token issued by the identity provider is needed to gain access to another service (e.g., an external API).                           |
 | **Enable claims synchronization at login** | Enable synchronization of OpenID Connect claims with custom fields in Modyo. More information in [Claims Synchronization](#claims-synchronization).                                                                                                                                                                      |
 
 
@@ -211,4 +211,4 @@ The following configuration applies to both Team and Customer user integrations.
    | **Enable refresh token** | Enable token refreshment managed by Modyo. The access tokens will be automatically renewed by the platform if the user maintains activity on the site and has a valid refresh token. |
    | **Enable logout** | Enable logging out of the provider when logging out of Modyo. This allows the session to be effectively closed, forcing the user to identify again in Azure AD, and disabling the SSO experience. |
    | **Enable token revocation** | Not supported by Azure AD|
-   | **Show delegation information** | Enable more information in the [User Profile API](/en/platform/customers/profile.html#profile-api) regarding delegated tokens. This is useful when you need the access token issued by the identity provider to gain access to some other service (e.g. an external API). | | **Enable synchronization of claims at login** | Enables synchronization of OpenID Connect claims with custom fields in Modyo. For more information, see [Synchronization of claims](#sincronization-of-claims). |
+   | **Show Delegation Information**                               | Enables more information in the [User Profile API](/en/platform/customers/api.html) regarding delegated tokens. This is useful when the access token issued by the identity provider is needed to gain access to another service (e.g., an external API). |                   | **Enable Claim Synchronization at Login** | Enables OpenID Connect claim synchronization with custom fields in Modyo. More information in [Claim Synchronization](#claims-synchronization).               |
