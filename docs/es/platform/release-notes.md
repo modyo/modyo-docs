@@ -5,16 +5,31 @@ search: true
 # Notas del release
 
 ## 10.0
+### 10.0.16 - 23 de diciembre de 2024
+<Badge text="Content" type="content" vertical="middle"/>
+* Agrega ordenamiento dentro de un campo de contenido de tipo lista de contenidos
+* Corrige problema de richtexts quedan en blanco al mover elementos dentro de un grupo repetible
+* Corrige error en copia de contenido desde otro idioma cuando se tiene un grupo repetible
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+* Mejora de performance en el calculo de segmentos de usuarios al iniciar sesión
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Corrige problemas al previsualizar snippets globales
+
 ### 10.0.15 - 12 de diciembre de 2024
 <Badge text="Customers" type="customers" vertical="middle"/>
 * Mejora en filtro de segmentos de tipo custom field, ahora permite una lista de valores
+
 
 ### 10.0.14 - 10 de diciembre de 2024
 <Badge text="Content" type="content" vertical="middle"/>
 * Corrige error al editar contenido en bulk
 
+
 <Badge text="Customers" type="customers" vertical="middle"/>
 * Corrige llamados multiples al endpoint de count_matches
+
 
 ### 10.0.13 - 05 de diciembre de 2024
 <Badge text="Channels" type="channels" vertical="middle"/>
@@ -25,6 +40,7 @@ search: true
 
 * Corrige recalculo de segmentos
 * Corrige campo from de la campaña de correo, vuelve a ser el nombre del sender
+
 
 ### 10.0.12 - 03 de diciembre de 2024
 <Badge text="Core" type="core" vertical="middle"/>
