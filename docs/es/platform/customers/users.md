@@ -11,11 +11,11 @@ La vista principal muestra una tabla con todos los usuarios registrados, que se 
 
 Puedes utilizar los filtros en la parte superior de la tabla para encontrar grupos de usuarios rápidamente. Los filtros disponibles son:
 
-- **Estado:** Usuarios activos e inactivos.
-- **Verificación:** Usuarios que han confirmado sus datos en la plataforma.
+- **Estado**: Usuarios activos e inactivos.
+- **Verificación**: Usuarios que han confirmado sus datos en la plataforma.
 - **Segmentos**: Usuarios que pertenecen a un [segmento](/es/platform/customers/segments.html) específico.
 - **Etiquetas**: Usuarios asignados a etiquetas específicas en la plataforma.
-- **Búsqueda:** Filtra usuarios por nombre, apellido, email o nombre de usuario.
+- **Búsqueda**: Filtra usuarios por nombre, apellido, email o nombre de usuario.
 
 Puedes ordenar los usuarios en la tabla por nombre, fecha de inscripción, último ingreso o cantidad de sesiones iniciadas haciendo clic en las cabeceras de las columnas.
 
@@ -39,7 +39,7 @@ Para agregar un nuevo usuario, haz clic en el botón **+ Nuevo Usuario** y compl
 - **Email**: **[Requerido]**
 - **Contraseña**: **[Requerido]**. Debe contener al menos 8 caracteres.
 - **Confirmación de contraseña**: **[Requerido]**
-- **Tags:** Etiquetas para identificar al usuario.
+- **Tags**: Etiquetas para identificar al usuario.
 
 :::tip Tip
 Para enviar la contraseña al correo del usuario, marca la casilla debajo del campo de correo electrónico. El usuario puede cambiar la contraseña una vez que acceda a la plataforma.

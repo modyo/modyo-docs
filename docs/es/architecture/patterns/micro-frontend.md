@@ -14,16 +14,16 @@ Los micro frontends permiten a los equipos trabajar con mayor autonomía, ya que
 
 #### Características
 
-- **Son tecnológicamente agnósticos:** Cada equipo puede trabajar con diferentes tecnologías o versiones, ya que los micro frontends no dependen unos de otros. Por ejemplo, en una misma aplicación web, un micro frontend puede estar desarrollado en React y otro en Angular.
-- **Aislan el código del equipo:** Son aplicaciones independientes que no comparten recursos entre sí. Los códigos son independientes en cada equipo y se versionan por separado.
-- **Usan APIs nativas:** Los micro frontends favorecen las funciones nativas del navegador en lugar de desarrollar APIs personalizadas. Por ejemplo, utilizan controles nativos de geolocalización en lugar de desarrollos personalizados.
-- **Construyen un sitio resiliente:** En caso de que un micro frontend falle, su estado no contamina a los demás, ya que se cargan de forma asincrónica e independiente.
+- **Son tecnológicamente agnósticos**: Cada equipo puede trabajar con diferentes tecnologías o versiones, ya que los micro frontends no dependen unos de otros. Por ejemplo, en una misma aplicación web, un micro frontend puede estar desarrollado en React y otro en Angular.
+- **Aislan el código del equipo**: Son aplicaciones independientes que no comparten recursos entre sí. Los códigos son independientes en cada equipo y se versionan por separado.
+- **Usan APIs nativas**: Los micro frontends favorecen las funciones nativas del navegador en lugar de desarrollar APIs personalizadas. Por ejemplo, utilizan controles nativos de geolocalización en lugar de desarrollos personalizados.
+- **Construyen un sitio resiliente**: En caso de que un micro frontend falle, su estado no contamina a los demás, ya que se cargan de forma asincrónica e independiente.
 
 #### Beneficios
 
-- **Actualizaciones incrementales:** Al ser componentes independientes, los cambios y despliegues a producción también lo son. Para muchas organizaciones, este es el motivo principal para adoptar micro frontends.
-- **Código desacoplado y más simple:** El código de cada micro frontend es más pequeño que el de la aplicación completa, lo que facilita el trabajo de los desarrolladores.
-- **Despliegues independientes:** Al igual que en los microservicios, los despliegues independientes son un componente clave en la arquitectura de micro frontends. Cada micro frontend tiene su propio proceso de construcción, prueba y despliegue. Al reducir el alcance de cada despliegue, disminuye el riesgo asociado.
+- **Actualizaciones incrementales**: Al ser componentes independientes, los cambios y despliegues a producción también lo son. Para muchas organizaciones, este es el motivo principal para adoptar micro frontends.
+- **Código desacoplado y más simple**: El código de cada micro frontend es más pequeño que el de la aplicación completa, lo que facilita el trabajo de los desarrolladores.
+- **Despliegues independientes**: Al igual que en los microservicios, los despliegues independientes son un componente clave en la arquitectura de micro frontends. Cada micro frontend tiene su propio proceso de construcción, prueba y despliegue. Al reducir el alcance de cada despliegue, disminuye el riesgo asociado.
 - **Equipos independientes**: Los equipos independientes tienen mayor sentido de propiedad y control de los productos que mantienen, lo que fomenta un trabajo más rápido y eficiente.
 
 

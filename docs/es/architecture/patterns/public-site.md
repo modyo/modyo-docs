@@ -78,10 +78,10 @@ Esta recomendación es tanto por la inherente complejidad en el código de cada 
 
 Otras razones para evitar usar frameworks de JavaScript en sitios públicos son:
 
-- **Rendimiento:** Cada vez que un visitante carga una página, el navegador debe descargar y ejecutar el código JavaScript para mostrar y manipular los elementos de la página. El uso excesivo de JavaScript puede alentar la carga de la página, especialmente en dispositivos con conexiones lentas o recursos limitados.
-- **Accesibilidad:** Algunos usuarios pueden tener dificultades para acceder y usar contenido interactivo basado en Javascript. Esto incluye personas con discapacidades visuales que emplean lectores de pantalla, usuarios con conexiones lentas o dispositivos antiguos, y aquellos que desactivan Javascript por seguridad o preferencia personal.
-- **Mantenimiento y compatibilidad:** Reducir las dependencias de Javascript simplifica el mantenimiento del sitio. Además, estas soluciones tienden a tener mayor compatibilidad con diversos navegadores y dispositivos.
-- **Seguridad:** Limitar el uso de Javascript disminuye la superficie de ataque potencial y mejora la seguridad del sitio.
+- **Rendimiento**: Cada vez que un visitante carga una página, el navegador debe descargar y ejecutar el código JavaScript para mostrar y manipular los elementos de la página. El uso excesivo de JavaScript puede alentar la carga de la página, especialmente en dispositivos con conexiones lentas o recursos limitados.
+- **Accesibilidad**: Algunos usuarios pueden tener dificultades para acceder y usar contenido interactivo basado en Javascript. Esto incluye personas con discapacidades visuales que emplean lectores de pantalla, usuarios con conexiones lentas o dispositivos antiguos, y aquellos que desactivan Javascript por seguridad o preferencia personal.
+- **Mantenimiento y compatibilidad**: Reducir las dependencias de Javascript simplifica el mantenimiento del sitio. Además, estas soluciones tienden a tener mayor compatibilidad con diversos navegadores y dispositivos.
+- **Seguridad**: Limitar el uso de Javascript disminuye la superficie de ataque potencial y mejora la seguridad del sitio.
 
 En lugar de usar frameworks de Javascript, te sugerimos optar por HTML estático y, en caso de requerirlo, aprovechar el uso de del lenguaje Liquid.
 
@@ -143,9 +143,9 @@ En el contexto de sitios públicos, Modyo recomienda gestionar ambientes previos
 
 El uso de stages posibilita la creación de entornos separados y aislados para construir, probar y verificar el funcionamiento del sitio antes de ser desplegado en un entorno de producción. Esto ayuda a prevenir fallos que podrían afectar a los usuarios finales. En el caso de sitios públicos, se pueden definir, por ejemplo, los siguientes stages:
 
-- **Develop:** para llevar a cabo el desarrollo e integración de cambios.
-- **Certification:** destinado a pruebas previas al despliegue en producción.
-- **Main:** versión productiva del sitio.
+- **Develop**: para llevar a cabo el desarrollo e integración de cambios.
+- **Certification**: destinado a pruebas previas al despliegue en producción.
+- **Main**: versión productiva del sitio.
 
 Los stages pueden tener configuraciones independientes, como por ejemplo, las variables del sitio. Esto te permite ajustar comportamientos entre diferentes ambientes, por ejemplo, cambiar la URL de una API que proporciona información al sitio.
 
@@ -237,10 +237,10 @@ En el caso de Modyo Enterprise On Premise, puedes implementar características s
 Por último, entre los requisitos más importantes que un sitio público debe considerar, son aquellos relacionados con la privacidad de los datos de los usuarios. La atención a la privacidad es importante no solo desde un punto de vista legal y regulatorio, sino también como una manifestación del compromiso de la organización de hacer las cosas de manera correcta y transparente.
 
 En un sitio público, se maneja una cantidad limitada de información de usuario, pero esto no exime el cumplimiento de requisitos como:
-- **Cookie Banners:** Corresponde a los banners que brindan a los usuarios la opción de deshabilitar el seguimiento de ciertas cookies en el sitio, de manera completa o individual. El banner debe explicar la razón de cada cookie que se pretende instalar en el navegador del usuario.
-- **Cookie Policy:** Corresponde a la política que mantiene el sitio sobre el tipo de cookies utilizadas y su propósito, además de lo que eventualmente podría suceder con la experiencia del usuario en caso de no aceptarlas. La cookie policy generalmente se aceptan en el cookie banner.
-- **Privacy Policy:** Engloba la política de la organización con respecto a la privacidad de los datos del usuario en el contexto del sitio. Si el sitio público es un punto de entrada a un sistema privado o transaccional, esta política puede extenderse para cubrir todo el sistema.
-- **Gestión de consentimiento:** Consiste en registrar de manera precisa los consentimientos derivados de cualquier aceptación de condiciones por parte del usuario. Los registros de consentimiento deben guardarse durante un período determinado, conforme a las regulaciones vigentes en cada país.
+- **Cookie Banners**: Corresponde a los banners que brindan a los usuarios la opción de deshabilitar el seguimiento de ciertas cookies en el sitio, de manera completa o individual. El banner debe explicar la razón de cada cookie que se pretende instalar en el navegador del usuario.
+- **Cookie Policy**: Corresponde a la política que mantiene el sitio sobre el tipo de cookies utilizadas y su propósito, además de lo que eventualmente podría suceder con la experiencia del usuario en caso de no aceptarlas. La cookie policy generalmente se aceptan en el cookie banner.
+- **Privacy Policy**: Engloba la política de la organización con respecto a la privacidad de los datos del usuario en el contexto del sitio. Si el sitio público es un punto de entrada a un sistema privado o transaccional, esta política puede extenderse para cubrir todo el sistema.
+- **Gestión de consentimiento**: Consiste en registrar de manera precisa los consentimientos derivados de cualquier aceptación de condiciones por parte del usuario. Los registros de consentimiento deben guardarse durante un período determinado, conforme a las regulaciones vigentes en cada país.
 
 ### Otros requerimientos
 Finalmente, reservamos algunos requerimientos en específico que conviene tener en cuenta a la hora de implementar un sitio público.

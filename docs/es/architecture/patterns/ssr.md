@@ -10,16 +10,16 @@ En el SSR, el servidor es responsable de procesar la solicitud del cliente y gen
 
 Ventajas del SSR:
 
-- **Optimización para motores de búsqueda:** El contenido pre-renderizado es más accesible para los motores de búsqueda, lo que facilita su indexación y el posicionamiento en los resultados de búsqueda.
-- **Mejor rendimiento inicial:** El usuario ve rápidamente el contenido visual sin esperar a que se cargue y ejecute el código JavaScript en el navegador.
-- **Compatibilidad con dispositivos con recursos limitados:** Reduce la carga de procesamiento en el cliente, lo que es beneficioso en dispositivos móviles o navegadores más antiguos.
-- **Mejor SEO y compartición en redes sociales:** Es más amigable con las redes sociales y los rastreadores de búsqueda, al proporcionar contenido completo y enriquecido para compartir y rastrear.
+- **Optimización para motores de búsqueda**: El contenido pre-renderizado es más accesible para los motores de búsqueda, lo que facilita su indexación y el posicionamiento en los resultados de búsqueda.
+- **Mejor rendimiento inicial**: El usuario ve rápidamente el contenido visual sin esperar a que se cargue y ejecute el código JavaScript en el navegador.
+- **Compatibilidad con dispositivos con recursos limitados**: Reduce la carga de procesamiento en el cliente, lo que es beneficioso en dispositivos móviles o navegadores más antiguos.
+- **Mejor SEO y compartición en redes sociales**: Es más amigable con las redes sociales y los rastreadores de búsqueda, al proporcionar contenido completo y enriquecido para compartir y rastrear.
 
 Desventajas del SSR:
 
-- **Mayor carga en el servidor:** El SSR implica que el servidor debe generar y enviar el contenido HTML completo en cada solicitud, lo que puede aumentar la carga en el servidor, especialmente en aplicaciones con alta carga de solicitudes.
-- **Menor interactividad:** Las interacciones y actualizaciones posteriores en la página pueden requerir solicitudes adicionales al servidor, lo que puede resultar en una menor interactividad en comparación con aplicaciones de una sola página (SPA).
-- **Mayor complejidad de implementación:** Implementar el SSR puede requerir configuración y manejo más complejo en el servidor.
+- **Mayor carga en el servidor**: El SSR implica que el servidor debe generar y enviar el contenido HTML completo en cada solicitud, lo que puede aumentar la carga en el servidor, especialmente en aplicaciones con alta carga de solicitudes.
+- **Menor interactividad**: Las interacciones y actualizaciones posteriores en la página pueden requerir solicitudes adicionales al servidor, lo que puede resultar en una menor interactividad en comparación con aplicaciones de una sola página (SPA).
+- **Mayor complejidad de implementación**: Implementar el SSR puede requerir configuración y manejo más complejo en el servidor.
 
 El Server Side Rendering es una técnica útil en escenarios donde el SEO y el rendimiento inicial son críticos. Sin embargo, su implementación requierede cuidado en la arquitectura y la ejecución debido a su impacto en la carga del servidor y la interactividad de la aplicación.
 

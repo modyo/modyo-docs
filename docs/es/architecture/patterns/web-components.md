@@ -8,9 +8,9 @@ Un web component es una tecnología web que permite crear elementos personalizad
 
 Están compuestos por tres principales tecnologías:
 
-- **Custom Elements:** Permiten la creación de elementos HTML personalizados con funcionalidad y comportamiento definidos en JavaScript.
-- **Shadow DOM:** Proporciona un ámbito de encapsulación para los estilos y la estructura de un componente. El Shadow DOM permite que los estilos y elementos internos de un componente no afecten ni sean afectados por el resto de la página.
-- **HTML Templates:** Definen fragmentos de código HTML que pueden clonarse y utilizarse múltiples veces. Se utilizan para definir la estructura inicial de un componente.
+- **Custom Elements**: Permiten la creación de elementos HTML personalizados con funcionalidad y comportamiento definidos en JavaScript.
+- **Shadow DOM**: Proporciona un ámbito de encapsulación para los estilos y la estructura de un componente. El Shadow DOM permite que los estilos y elementos internos de un componente no afecten ni sean afectados por el resto de la página.
+- **HTML Templates**: Definen fragmentos de código HTML que pueden clonarse y utilizarse múltiples veces. Se utilizan para definir la estructura inicial de un componente.
 
 Combinando estas tecnologías, los Web Components permiten la creación de componentes personalizados con su propio comportamiento y apariencia. Estos componentes pueden ser utilizados en diversas partes de una aplicación web o en diferentes proyectos.
 
@@ -22,11 +22,11 @@ La implementación de Web Components está respaldada por estándares web y es c
 
 Existen diferentes herramientas para desarrollar Web Components, como Polymer y Stencil, estas son algunas de las diferencias clave entre ellas:
 
-- **Enfoque y madurez:** Polymer, desarrollado por Google, simplifica la creación de Web Components y ofrece una amplia gama de características. Stencil es un compilador de componentes web que se centra en la eficiencia y el rendimiento.
-- **Tamaño y dependencias:** La bilbioteca de Polymer es más grande, mientras que Stencil es más liviano y se enfoca en la generación de código optimizado y sin dependencias adicionales.
-- **Soporte de navegadores:** Ambos frameworks son compatibles con la mayoría de los navegadores modernos. Sin embargo, Polymer utiliza polyfills para garantizar la compatibilidad con navegadores más antiguos.
-- **Lenguaje de programación:** Polymer utiliza JavaScript moderno y el patrón de programación basado en clases para definir los componentes, Stencil usa TypeScript, un superconjunto de JavaScript que agrega características de tipado estático y otras funcionalidades.
-- **Rendimiento:** Stencil está optimizado para el rendimiento, mientras que Polymer ofrece un buen rendimiento sin estar optimizado específicamente para ello.
+- **Enfoque y madurez**: Polymer, desarrollado por Google, simplifica la creación de Web Components y ofrece una amplia gama de características. Stencil es un compilador de componentes web que se centra en la eficiencia y el rendimiento.
+- **Tamaño y dependencias**: La bilbioteca de Polymer es más grande, mientras que Stencil es más liviano y se enfoca en la generación de código optimizado y sin dependencias adicionales.
+- **Soporte de navegadores**: Ambos frameworks son compatibles con la mayoría de los navegadores modernos. Sin embargo, Polymer utiliza polyfills para garantizar la compatibilidad con navegadores más antiguos.
+- **Lenguaje de programación**: Polymer utiliza JavaScript moderno y el patrón de programación basado en clases para definir los componentes, Stencil usa TypeScript, un superconjunto de JavaScript que agrega características de tipado estático y otras funcionalidades.
+- **Rendimiento**: Stencil está optimizado para el rendimiento, mientras que Polymer ofrece un buen rendimiento sin estar optimizado específicamente para ello.
 
 Ambas herramientas son poderosas y se adaptan a diferentes casos de uso. Si requieres una biblioteca completa y consolidada con numerosas características, Polymer es una excelente elección. En cambio, si priorizas el rendimiento y deseas crear Web Components altamente optimizados y nativos, Stencil puede ser la opción más adecuada.
 

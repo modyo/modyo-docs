@@ -10,20 +10,20 @@ Cuando creas un sitio, se completa con plantillas distintas para generar el tema
 
 En la sección de plantillas, el menú principal se oculta para optimizar el área de trabajo. En la parte superior izquierda, encuentras el nombre de la sección y el estado actual de la publicación:
 
-- **Publicado:** Hay una versión publicada y que la versión editable es idéntica.
-- **Cambios pendientes:** Existe una versión publicada, pero hay modificaciones pendientes de publicar en tu versión editable.
-- **En revisión:** La [revisión en equipo](/es/platform/core/key-concepts.html) está activada y se ha enviado a revisión la versión editable.
-- **Aprobado:** La [revisión en equipo](/es/platform/core/key-concepts.html) está activada y las condiciones de revisión del elemento se han cumplido. En este estado, la plantilla está lista para ser publicada.
+- **Publicado**: Hay una versión publicada y que la versión editable es idéntica.
+- **Cambios pendientes**: Existe una versión publicada, pero hay modificaciones pendientes de publicar en tu versión editable.
+- **En revisión**: La [revisión en equipo](/es/platform/core/key-concepts.html) está activada y se ha enviado a revisión la versión editable.
+- **Aprobado**: La [revisión en equipo](/es/platform/core/key-concepts.html) está activada y las condiciones de revisión del elemento se han cumplido. En este estado, la plantilla está lista para ser publicada.
 
 En la parte superior derecha, puedes ver la última fecha de publicación e íconos con las acciones disponibles:
 
-**Vista previa:** Da click en este ícono para abrir una nueva pestaña con la vista previa de las plantillas. Aquí puedes visualizar todos los cambios en tus plantillas, como si estuvieran publicados.
+**Vista previa**: Da click en este ícono para abrir una nueva pestaña con la vista previa de las plantillas. Aquí puedes visualizar todos los cambios en tus plantillas, como si estuvieran publicados.
 
 :::warning Atención
 Puedes previsualizar los cambios como usuario sin sesión o usuario con sesión activa de Modyo. Para esto, recomendamos iniciar o cerrar la sesión de Modyo en el sitio antes de entrar al modo vista previa, dado que si se inicia o cierra sesión dentro del modo vista previa. Esto se debe a que iniciar o cerrar sesión dentro del modo vista previa puede generar errores de seguridad como _x-frame-options_ o _mixed-content_, dependiendo de la configuración de dominios personalizados y SSL del sitio.
 :::
 
-**Diferencias:** Compara los cambios entre múltiples versiones de tus plantillas. Por defecto, Modyo compara la versión publicada con la versión editable. Usa los selectores de versiones para comparar con versiones de respaldo.
+**Diferencias**: Compara los cambios entre múltiples versiones de tus plantillas. Por defecto, Modyo compara la versión publicada con la versión editable. Usa los selectores de versiones para comparar con versiones de respaldo.
 
 :::tip Tip
 Cada vez que publicas una versión, la versión que estaba publicada pasa a ser una versión de respaldo. Por defecto, se guardan hasta 20 respaldos, permitiéndote comparar, restaurar y hacer rollback a las últimas 20 versiones
@@ -31,32 +31,32 @@ Cada vez que publicas una versión, la versión que estaba publicada pasa a ser 
 Para más información sobre el versionamiento, consulta la sección de [versionado](/es/platform/core/key-concepts.html#versionado).
 :::
 
-**Buscar en plantillas:** Despliega una barra lateral con un buscador de texto que explora todas las plantillas editables.
+**Buscar en plantillas**: Despliega una barra lateral con un buscador de texto que explora todas las plantillas editables.
 
-**Ver actividad:** Despliega una barra lateral que muestra el historial de actividad y donde puedes leer y escribir comentarios. Haz click en **ver detalle** para mostrar la información completa de cualquier registro de actividad.
+**Ver actividad**: Despliega una barra lateral que muestra el historial de actividad y donde puedes leer y escribir comentarios. Haz click en **ver detalle** para mostrar la información completa de cualquier registro de actividad.
 
-**Más acciones:** Este ícono te permite **archivar** o **borrar** una plantilla.
+**Más acciones**: Este ícono te permite **archivar** o **borrar** una plantilla.
 
 La última opción en la bara superior muestra las acciones principales que puedes llevar a cabo:
 
-- **Guardar:** Guarda todos los cambios de todas las plantillas.
-- **Enviar a revisión:** Cambia el estado de las plantillas a "Esperando revisión". En este estado puedes seguir haciendo modificaciones, pero cada cambio será notificado por correo a los revisores asignados.
-- **Forzar publicación:** Solo disponible para administradores del sitio, permite publicar inmediatamente una plantilla, incluso si está esperando revisión
-- **Rechazar:** Vuelve al estado "En edición" y notifica a los revisores que el elemento fue rechazado.
-- **Publicar:** Una vez que la plantilla ha sido aprobada, puedes enviarla a publicar.
+- **Guardar**: Guarda todos los cambios de todas las plantillas.
+- **Enviar a revisión**: Cambia el estado de las plantillas a "Esperando revisión". En este estado puedes seguir haciendo modificaciones, pero cada cambio será notificado por correo a los revisores asignados.
+- **Forzar publicación**: Solo disponible para administradores del sitio, permite publicar inmediatamente una plantilla, incluso si está esperando revisión
+- **Rechazar**: Vuelve al estado "En edición" y notifica a los revisores que el elemento fue rechazado.
+- **Publicar**: Una vez que la plantilla ha sido aprobada, puedes enviarla a publicar.
 
 En el área de trabajo principal, hay dos secciones:
 
-- **El área de edición:** El hacer click en una plantilla del listado del área de selección del lado derecho abrirá la plantilla en el área central con un editor de texto. Si abres múltiples plantillas, abrirán como pestañas en el área de trabajo.
-- **El área de selección de plantillas:** Selecciona la pestaña de vistas o snippets, según requieras.
+- **El área de edición**: El hacer click en una plantilla del listado del área de selección del lado derecho abrirá la plantilla en el área central con un editor de texto. Si abres múltiples plantillas, abrirán como pestañas en el área de trabajo.
+- **El área de selección de plantillas**: Selecciona la pestaña de vistas o snippets, según requieras.
 
 ## Layouts
 
 Modyo ofrece tres layouts predefinidos:
 
-* **Home:** Exclusivamente para la página principal del sitio.
-* **Base:** Todas las páginas, excepto la de inicio, usan este layout.
-* **Error:** Empleado en las vistas de error (404, 401), presentando un diseño limpio.
+* **Home**: Exclusivamente para la página principal del sitio.
+* **Base**: Todas las páginas, excepto la de inicio, usan este layout.
+* **Error**: Empleado en las vistas de error (404, 401), presentando un diseño limpio.
 
 Para crear un nuevo layout:
 1. En la sección de **Plantillas** da click en la pestaña **Vistas**
@@ -127,10 +127,10 @@ Es necesario que el CDN de tu cuenta esté en la nube para que los cambios se re
 
 En la sección de vistas puedes personalizar cuatro tipos de errores:
 
-* **Deshabilitado:** Se muestra cuando el sitio al que intentas acceder está [deshabilitado](/es/platform/channels/sites.html).
-* **404:** Si en la configuración de [restricciones del sitio](/es/platform/channels/sites.html#privacidad) decides mostrar el 404 en lugar de redireccionar a la página de inicio, se muestra este error al ingresar a una URL no definida.
-* **Privacy:** Se muestra cuando no tienes permisos para acceder al [sitio](/es/platform/channels/sites.html#privacidad) o a una de sus [páginas](/es/platform/channels/pages.html#privacidad).
-* **Template:** Visible cuando la página cargada tiene un error de sintaxis de Liquid. Es poco probable que veas esta vista, debido a que a partir de Modyo 8.1 la plataforma realiza una verificación de la sintaxis antes de guardar y publicar cambios en Plantillas.
+* **Deshabilitado**: Se muestra cuando el sitio al que intentas acceder está [deshabilitado](/es/platform/channels/sites.html).
+* **404**: Si en la configuración de [restricciones del sitio](/es/platform/channels/sites.html#privacidad) decides mostrar el 404 en lugar de redireccionar a la página de inicio, se muestra este error al ingresar a una URL no definida.
+* **Privacy**: Se muestra cuando no tienes permisos para acceder al [sitio](/es/platform/channels/sites.html#privacidad) o a una de sus [páginas](/es/platform/channels/pages.html#privacidad).
+* **Template**: Visible cuando la página cargada tiene un error de sintaxis de Liquid. Es poco probable que veas esta vista, debido a que a partir de Modyo 8.1 la plataforma realiza una verificación de la sintaxis antes de guardar y publicar cambios en Plantillas.
 
 ## CSS y JavaScript
 
@@ -195,10 +195,10 @@ En el área de trabajo, debajo de las pestañas, encontrarás una barra con esto
 **Elementos de la barra de herramientas**
 La barra de herramientas debajo de las pestañas del Template Builder contiene los siguientes elementos:
 
-- **Gestor de archivos:** Abre un modal que te permite acceder a todos los archivos de tu cuenta y copiar su URL. Selecciona la pestaña **Subir archivos** para cargar nuevos archivos. Para más información sobre los beneficios y funcionalidades de Gestor de Archivos, dirígete a [Gestor de Archivos](/es/platform/content/asset-manager.html)
-- **Atajos de teclado:** Muestra atajos de teclado útiles para Plantillas.
-- **Snippets:** Despliega un listado con todos los snippets y la opción de copiar su código de referencia.
-- **Cambios:** Despliega un listado de todas las veces y estados en los que has guardado la versión actual. Al hacer click en una de las sub-versiones, cambias el contenido del template a esa sub-versión.
+- **Gestor de archivos**: Abre un modal que te permite acceder a todos los archivos de tu cuenta y copiar su URL. Selecciona la pestaña **Subir archivos** para cargar nuevos archivos. Para más información sobre los beneficios y funcionalidades de Gestor de Archivos, dirígete a [Gestor de Archivos](/es/platform/content/asset-manager.html)
+- **Atajos de teclado**: Muestra atajos de teclado útiles para Plantillas.
+- **Snippets**: Despliega un listado con todos los snippets y la opción de copiar su código de referencia.
+- **Cambios**: Despliega un listado de todas las veces y estados en los que has guardado la versión actual. Al hacer click en una de las sub-versiones, cambias el contenido del template a esa sub-versión.
 
 :::tip Tip
 Al publicar una versión, el listado de cambios desaparece, debido a que la nueva versión editable no ha tenido cambios.

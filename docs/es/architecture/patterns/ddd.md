@@ -8,15 +8,15 @@ El Domain-Driven Design (DDD) es una metodología de desarrollo de software que 
 
 Ventajas del DDD:
 
-- **Comunicación mejorada:** Fomenta el uso de un lenguaje común llamado "lenguaje ubicuo" entre desarrolladores, stakeholders y usuarios; lo que mejora la comunicación y la comprensión en el proyecto.
-- **Enfoque en el dominio del negocio:** Garantiza que el software se adapte a las necesidades y procesos del negocio.
-- **Diseño de software de alta calidad:** Promueve los principios SOLID de diseño de software, lo que conlleva a un software más mantenible y adaptable.
+- **Comunicación mejorada**: Fomenta el uso de un lenguaje común llamado "lenguaje ubicuo" entre desarrolladores, stakeholders y usuarios; lo que mejora la comunicación y la comprensión en el proyecto.
+- **Enfoque en el dominio del negocio**: Garantiza que el software se adapte a las necesidades y procesos del negocio.
+- **Diseño de software de alta calidad**: Promueve los principios SOLID de diseño de software, lo que conlleva a un software más mantenible y adaptable.
 
 Desventajas del DDD:
 
-- **Complejidad:** Puede ser complejo y requerir tiempo y esfuerzo considerables para implementar correctamente. Puede no ser adecuado para aplicaciones más simples o equipos con menos experiencia en diseño de software.
-- **Requiere conocimiento del dominio:** Para usar DDD efectivamente, los desarrolladores deben tener o adquirir un buen entendimiento del dominio del negocio, lo cual puede ser un desafío en algunos contextos.
-- **No es adecuado para todas las aplicaciones:** Es más útil en aplicaciones empresariales complejas. En aplicaciones con lógica de negocio simple, la sobrecarga de DDD puede no justificar los beneficios.
+- **Complejidad**: Puede ser complejo y requerir tiempo y esfuerzo considerables para implementar correctamente. Puede no ser adecuado para aplicaciones más simples o equipos con menos experiencia en diseño de software.
+- **Requiere conocimiento del dominio**: Para usar DDD efectivamente, los desarrolladores deben tener o adquirir un buen entendimiento del dominio del negocio, lo cual puede ser un desafío en algunos contextos.
+- **No es adecuado para todas las aplicaciones**: Es más útil en aplicaciones empresariales complejas. En aplicaciones con lógica de negocio simple, la sobrecarga de DDD puede no justificar los beneficios.
 
 El DDD puede ser una herramienta valiosa para desarrollar software de alta calidad que se alinee estrechamente con las necesidades de un negocio. Sin embargo, es importante considerar cuidadosamente si es el enfoque adecuado para tu situación específica.
 

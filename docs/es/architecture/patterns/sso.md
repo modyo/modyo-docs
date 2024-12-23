@@ -9,11 +9,11 @@ Single Sign-On (SSO) o inicio de sesión único, es un método de autenticación
 El SSO se fundamenta en un sistema de confianza entre los proveedores de servicios y un proveedor de identidad centralizado. Al iniciar sesión en el proveedor de identidad, este genera un token de sesión que autentica al usuario en las aplicaciones y servicios que integran el entorno de SSO, lo que permite al usuario moverse entre los servicios sin realizar autenticaciones adicionales.
 
 Ventajas de utilizar SSO:
-- **Mejora la experiencia del usuario:** Simplifica el proceso de inicio de sesión, lo que agiliza el acceso a las aplicaciones, especialmente en entornos corporativos con numerosas aplicaciones.
-- **Reduce el soporte técnico:** Disminuye  la cantidad de contraseñas que los usuarios deben recordar, reduciendo la necesidad de solicitudes de restablecimiento de contraseñas y problemas relacionados, que el equipo de soporte técnico debe atender.
-- **Mejora la seguridad:** Centraliza la autenticación, lo que facilita monitorear y gestionar el acceso a varias aplicaciones. Los usuarios pueden centrarse en crear una contraseña sólida y además, las soluciones de SSO suelen incluir características de seguridad robustas, como la autenticación de dos factores.
-- **Ahorra tiempo y aumenta la productividad:** Los usuarios pueden acceder rápidamente a todas las aplicaciones que necesitan sin iniciar sesión en cada una por separado.
-- **Simplifica la administración:** Para los administradores de TI, la implementación de SSO permite gestionar un conjunto de credenciales por usuario en lugar de administrar el acceso a cada aplicación individualmente.
+- **Mejora la experiencia del usuario**: Simplifica el proceso de inicio de sesión, lo que agiliza el acceso a las aplicaciones, especialmente en entornos corporativos con numerosas aplicaciones.
+- **Reduce el soporte técnico**: Disminuye  la cantidad de contraseñas que los usuarios deben recordar, reduciendo la necesidad de solicitudes de restablecimiento de contraseñas y problemas relacionados, que el equipo de soporte técnico debe atender.
+- **Mejora la seguridad**: Centraliza la autenticación, lo que facilita monitorear y gestionar el acceso a varias aplicaciones. Los usuarios pueden centrarse en crear una contraseña sólida y además, las soluciones de SSO suelen incluir características de seguridad robustas, como la autenticación de dos factores.
+- **Ahorra tiempo y aumenta la productividad**: Los usuarios pueden acceder rápidamente a todas las aplicaciones que necesitan sin iniciar sesión en cada una por separado.
+- **Simplifica la administración**: Para los administradores de TI, la implementación de SSO permite gestionar un conjunto de credenciales por usuario en lugar de administrar el acceso a cada aplicación individualmente.
 
 :::danger Seguridad
 Es importante tener en cuenta que, si no se implementa correctamente, el SSO puede presentar riesgos de seguridad. Por ejemplo, si las credenciales de SSO de un usuario se ven comprometidas, un atacante podría obtener acceso a todas las aplicaciones a las que el usuario tiene acceso. Por lo tanto, es crucial implementar medidas de seguridad sólidas, como la autenticación de dos factores y políticas de contraseñas fuertes.

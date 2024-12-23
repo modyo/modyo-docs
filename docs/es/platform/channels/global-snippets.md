@@ -15,11 +15,11 @@ Un cambio en un snippet global afecta a todas las aplicaciones web donde se est�
 
 En la vista de edición de snippets puedes crear y gestionar tus snippets globales. En la barra superior, tienes las siguientes opciones:
 
-- **Diferencias:** Permite comparar cambios entre múltiples versiones de un snippet. Puedes seleccionar las versiones a comparar y hacer reset o rollback a versiones previas.
-- **Otras acciones:**
+- **Diferencias**: Permite comparar cambios entre múltiples versiones de un snippet. Puedes seleccionar las versiones a comparar y hacer reset o rollback a versiones previas.
+- **Otras acciones**:
     - Archivar: Para archivar un snippet debes primero publicarlo.
     - Borrar: Para eliminar un snippet debes primero archivarlo.
-- **Guardar:** Una vez que hayas guardado tu snippet, este botón cambia de estado a **publicar**.
+- **Guardar**: Una vez que hayas guardado tu snippet, este botón cambia de estado a **publicar**.
 
 Arriba de la zona de trabajo están las siguientes secciones:
 
