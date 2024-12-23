@@ -17,7 +17,6 @@ search: true
 <Badge text="Channels" type="channels" vertical="middle"/>
 * Corrige problemas al previsualizar snippets globales
 
-
 ### 10.0.15 - 12 de diciembre de 2024
 <Badge text="Customers" type="customers" vertical="middle"/>
 * Mejora en filtro de segmentos de tipo custom field, ahora permite una lista de valores

@@ -5,6 +5,18 @@ search: true
 # Release Notes
 
 ## 10.0
+### 10.0.16 - December 23, 2024
+<Badge text="Content" type="content" vertical="middle"/>
+* Adds sorting inside a content field of type content list
+* Fixes richtexts going blank when moving items within a repeating group
+* Fixes error in copying content from another language when having a repeatable group
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+* Improved performance in the calculation of user segments at login
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Fixes problems when previewing global snippets
+
 ### 10.0.15 - December 12, 2024
 <Badge text="Customers" type="customers" vertical="middle"/>
 * Improved custom field type segment filter, now allows a list of values.
