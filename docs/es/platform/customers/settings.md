@@ -14,24 +14,24 @@ Aquí puedes modificar tanto la experiencia visual del usuario como la configura
 En esta sección puedes configurar aspectos generales del reino, como:
 
 - **Título**
-- **Identificador:** La URL de las vistas de perfil, inicio de sesión, registro y recuperación de contraseña del reino.
-- **Deshabilitar credenciales:** Al marcar esta casilla, desactivas las credenciales de Modyo en el reino y permites únicamente el acceso a través de SSO.
+- **Identificador**: La URL de las vistas de perfil, inicio de sesión, registro y recuperación de contraseña del reino.
+- **Deshabilitar credenciales**: Al marcar esta casilla, desactivas las credenciales de Modyo en el reino y permites únicamente el acceso a través de SSO.
 
 :::danger Peligro
 Antes de habilitar la opción de deshabilitar las credenciales de Modyo en el reino, asegúrate de tener configurado un proveedor de identidad SSO para el reino. De lo contrario, los usuarios no podrán iniciar sesión.
 :::
 
-- **Después de iniciar sesión, redirigir a:** Te permite elegir una URL específica a la cual dirigir al usuario, una vez que haya ingresado al reino. Si no activas la opción de "Forzar redirección", el usuario será redirigido a la URL ingresada solo si no es posible volver a la URL desde la que inició sesión.
-- **Forzar la redirección a:** Al activar esta opción, el usuario siempre será redirigido a la URL especificada en el campo de redirección del inicio de sesión, sin importar desde dónde inició la sesión.
-- **Activación de la cuenta:**
+- **Después de iniciar sesión, redirigir a**: Te permite elegir una URL específica a la cual dirigir al usuario, una vez que haya ingresado al reino. Si no activas la opción de "Forzar redirección", el usuario será redirigido a la URL ingresada solo si no es posible volver a la URL desde la que inició sesión.
+- **Forzar la redirección a**: Al activar esta opción, el usuario siempre será redirigido a la URL especificada en el campo de redirección del inicio de sesión, sin importar desde dónde inició la sesión.
+- **Activación de la cuenta**:
   - Directa: Los usuarios que se registren pueden iniciar sesión directamente.
   - E-mail de activación: Los usuarios que se registren deben activar su cuenta mediante un enlace enviado a su correo electrónico previo a poder iniciar sesión.
   - Moderada: Los usuarios que se registren deberán esperar a que un administrador del reino active su cuenta para poder iniciar sesión.
   - Deshabilitada: No se pueden registrar nuevos usuarios en el reino. Los usuarios ya registrados y activados aún pueden iniciar sesión.
-- **Imagen de Avatar por defecto:** Imagen que se muestra en el avatar de los usuarios que no tienen una imagen personalizada.
-- **Habilitar Soft login:** Activando esta opción puedes acceder a tu cuenta sin introducir tus credenciales cada vez. Recibirás un código de seguridad en tu email para ingresar fácilmente sin necesidad de contraseñas.
-- **Formulario de registro:** Aquí puedes habilitar o deshabilitar diferentes atributos en el formulario de registro, como el segundo apellido, confirmación de correo electrónico, avatar de usuario, fecha de nacimiento, género y número de teléfono.
-- **Eliminar reino:** Elimina el reino. Este proceso se realiza en segundo plano y es posible que no veas el reino desaparecer inmediatamente después de ejecutar la acción. Para confirmar la eliminación, debes ingresar el nombre completo del reino.
+- **Imagen de Avatar por defecto**: Imagen que se muestra en el avatar de los usuarios que no tienen una imagen personalizada.
+- **Habilitar Soft login**: Activando esta opción puedes acceder a tu cuenta sin introducir tus credenciales cada vez. Recibirás un código de seguridad en tu email para ingresar fácilmente sin necesidad de contraseñas.
+- **Formulario de registro**: Aquí puedes habilitar o deshabilitar diferentes atributos en el formulario de registro, como el segundo apellido, confirmación de correo electrónico, avatar de usuario, fecha de nacimiento, género y número de teléfono.
+- **Eliminar reino**: Elimina el reino. Este proceso se realiza en segundo plano y es posible que no veas el reino desaparecer inmediatamente después de ejecutar la acción. Para confirmar la eliminación, debes ingresar el nombre completo del reino.
 
 
 ## Redireccionar Login ##
@@ -101,15 +101,15 @@ Aquí puedes también habilitar, deshabilitar y personalizar el envío de los co
  En caso de activarlas, se envía un correo cuando:
 
 
-- **Correo de Activación:**  Un usuario ha completado su registro, para que confirme sus datos.
-- **Correo de Bienvenida:** Un usuario se ha registrado en un sitio específico.
-- **Agregado por el Admin:** Un administrador crea un usuario manualmente.
-- **Recuperación de Contraseña:** Un usuario solicita recuperar su contraseña.
-- **Esperando Confirmación:** El usuario ha sido confirmado, pero requiere activación manual por parte de un administrador.
-- **Confirmación:** El usuario ha sido confirmado y activado.
-- **Verificación de actualizaciones de correo:** Se ha llevado a cabo un cambio en la dirección de correo.
+- **Correo de Activación**:  Un usuario ha completado su registro, para que confirme sus datos.
+- **Correo de Bienvenida**: Un usuario se ha registrado en un sitio específico.
+- **Agregado por el Admin**: Un administrador crea un usuario manualmente.
+- **Recuperación de Contraseña**: Un usuario solicita recuperar su contraseña.
+- **Esperando Confirmación**: El usuario ha sido confirmado, pero requiere activación manual por parte de un administrador.
+- **Confirmación**: El usuario ha sido confirmado y activado.
+- **Verificación de actualizaciones de correo**: Se ha llevado a cabo un cambio en la dirección de correo.
 
-**Footer personalizado:** Permite personalizar el pie de página de todos los correos mencionados anteriormente.
+**Footer personalizado**: Permite personalizar el pie de página de todos los correos mencionados anteriormente.
 
 Para habilitar o deshabilitar el envío de un correo, haz click en el botón Habilitado/Deshabilitado junto a cada función y da click en el botón **Guardar**.
 
@@ -215,10 +215,10 @@ Puedes además vincular otros campos. Toma en consideración que:
 - Puedes vincular campos personalizados o custom de Modyo. Para ello, primero debes crear el campo custom en Modyo y el campo tiene que estar habilitado para ser utilizado en la sincronización.
 
 Una vez que hayas vinculado los campos, selecciona el tipo de sincronización:
-- **Siempre usar Salesforce:** Esta opción usa los datos desde Salesforce para actualizar (crear, actualizar, borrar) los usuarios de Modyo. En este caso, no se envía información de usuario de Modyo a Salesforce. La sincronización es unidireccional, y la información fluye únicamente desde Salesforce hacia Modyo.
-- **Siempre usar Modyo:** Al seleccionar esta opción se envían datos de usuarios de Modyo a Salesforce para actualizar contactos en Salesforce. No se actualizan usuarios de Modyo con información de Salesforce. La sincronización es unidireccional y la información fluye únicamente desde Modyo hacia Salesforce.
-- **Bidireccional:** Esta opción envía información de Modyo a Salesforce y se usa información de Salesforce en Modyo, lo que permite actualizar contactos y usuarios respectivamente. En este caso, los usuarios y contactos se mantienen actualizados con la información más reciente disponible.
-- **No sincronizar:** Al seleccionar esta opción, desactivas la integración, evitando que se sincronicen usuarios y contactos entre Modyo y Salesforce. Esta opción puede ser útil si necesitas pausar la sincronización por alguna razón.
+- **Siempre usar Salesforce**: Esta opción usa los datos desde Salesforce para actualizar (crear, actualizar, borrar) los usuarios de Modyo. En este caso, no se envía información de usuario de Modyo a Salesforce. La sincronización es unidireccional, y la información fluye únicamente desde Salesforce hacia Modyo.
+- **Siempre usar Modyo**: Al seleccionar esta opción se envían datos de usuarios de Modyo a Salesforce para actualizar contactos en Salesforce. No se actualizan usuarios de Modyo con información de Salesforce. La sincronización es unidireccional y la información fluye únicamente desde Modyo hacia Salesforce.
+- **Bidireccional**: Esta opción envía información de Modyo a Salesforce y se usa información de Salesforce en Modyo, lo que permite actualizar contactos y usuarios respectivamente. En este caso, los usuarios y contactos se mantienen actualizados con la información más reciente disponible.
+- **No sincronizar**: Al seleccionar esta opción, desactivas la integración, evitando que se sincronicen usuarios y contactos entre Modyo y Salesforce. Esta opción puede ser útil si necesitas pausar la sincronización por alguna razón.
 
 :::warning Attention
 Si seleccionas la modalidad de vinculación **Siempre usar Modyo** o **bidireccional**, pero no completas el segundo paso que se explica a continuación, los usuarios de Modyo no se enviarán a Salesforce.
@@ -291,8 +291,8 @@ Para modificar el rol de un miembro del equipo:
 
 Puedes elegir entre dos roles:
 
-- **Realm User:** Puede añadir usuarios, crear, modificar y enviar a revisión campañas, formularios y segmentos.
-- **Realm Admin:**  Tiene acceso a todas las configuraciones y secciones del reino, puede añadir y eliminar usuarios y miembros del equipo.  Puede también eliminar el reino.
+- **Realm User**: Puede añadir usuarios, crear, modificar y enviar a revisión campañas, formularios y segmentos.
+- **Realm Admin**:  Tiene acceso a todas las configuraciones y secciones del reino, puede añadir y eliminar usuarios y miembros del equipo.  Puede también eliminar el reino.
 
 Para eliminar a un administrador del reino, selecciona la casilla a la izquierda de su nombre y haz click en el botón **Borrar** en la parte inferior.
 
@@ -318,12 +318,12 @@ Puedes crear un máximo de 20 campos personalizados en cada reino.
 
 Los campos personalizados tienen propiedades estándar que debes tener en cuenta:
 
-- **Debe ser una respuesta única:** El valor debe ser único para cada usuario, evitando duplicados.
-- **Este es un campo requerido:** Debe completarse al modificar o crear un usuario. Si el campo es visible y editable para los usuarios, se mostrará en el formulario de registro y será obligatorio para crear nuevos usuarios.
-- **Visible para los usuarios de los sitios:** Será visible en el perfil del usuario.
-    - **Editable por usuarios de los sitios:** Los usuarios podrán ver y modificar el valor.
-- **Buscable por administradores:** El valor estará indexado y los administradores podrán realizar búsquedas de usuarios en el índice de usuarios del administrador de Modyo, por el valor de este campo.
-- **Texto de sugerencia:** Proporciona un ejemplo o guía para el campo.
+- **Debe ser una respuesta única**: El valor debe ser único para cada usuario, evitando duplicados.
+- **Este es un campo requerido**: Debe completarse al modificar o crear un usuario. Si el campo es visible y editable para los usuarios, se mostrará en el formulario de registro y será obligatorio para crear nuevos usuarios.
+- **Visible para los usuarios de los sitios**: Será visible en el perfil del usuario.
+    - **Editable por usuarios de los sitios**: Los usuarios podrán ver y modificar el valor.
+- **Buscable por administradores**: El valor estará indexado y los administradores podrán realizar búsquedas de usuarios en el índice de usuarios del administrador de Modyo, por el valor de este campo.
+- **Texto de sugerencia**: Proporciona un ejemplo o guía para el campo.
 - **Valor por defecto**.
 
 Los campos personalizables pueden estar habilitados o deshabilitados. Si están habilitados, un administrador puede usarlos y, dependiendo de su configuración, pueden también estar disponibles para los usuarios.
@@ -363,9 +363,9 @@ Puedes habilitar o no reCAPTCHA en el reino, una vez habilitado ingresa:
 
 Al habilitar la función de pago en tu reino, tienes acceso a las siguientes opciones:
 
-- **Formato de moneda:** Modifica el tipo de puntuación usado.
-- **Configuración de pago:** Selecciona la unidad monetaria que deseas mostrar. Esta unidad se refleja en las órdenes y reportes. Si no indicas una unidad monetaria, Modyo utiliza la moneda predeterminada según el idioma configurado para el sitio.
-- **Activar el envío de correo electrónico:** Cuando esta opción está seleccionada, el usuario recibe un correo al pagar una orden.
-- **Asunto del correo:** Encabezado del correo enviado a los usuarios.
-- **Cuerpo del correo:** Contenido del mensaje enviado a los usuarios.
+- **Formato de moneda**: Modifica el tipo de puntuación usado.
+- **Configuración de pago**: Selecciona la unidad monetaria que deseas mostrar. Esta unidad se refleja en las órdenes y reportes. Si no indicas una unidad monetaria, Modyo utiliza la moneda predeterminada según el idioma configurado para el sitio.
+- **Activar el envío de correo electrónico**: Cuando esta opción está seleccionada, el usuario recibe un correo al pagar una orden.
+- **Asunto del correo**: Encabezado del correo enviado a los usuarios.
+- **Cuerpo del correo**: Contenido del mensaje enviado a los usuarios.
 

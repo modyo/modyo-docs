@@ -17,21 +17,21 @@ En la interfaz de entradas, puedes ver una lista con todos los contenidos genera
 
 Las columnas para ordenar la lista de entradas son:
 
-- **Estado:** Borrador, publicado, programado o archivado.
-- **Nombre:** Nombre del contenido.
-- **Tipo:** [Tipo](/es/platform/content/types.html) de contenido.
-- **Actualizado:** Fecha de la última actualización guardada del contenido.
-- **Autor:** Nombre del autor del contenido.
+- **Estado**: Borrador, publicado, programado o archivado.
+- **Nombre**: Nombre del contenido.
+- **Tipo**: [Tipo](/es/platform/content/types.html) de contenido.
+- **Actualizado**: Fecha de la última actualización guardada del contenido.
+- **Autor**: Nombre del autor del contenido.
 
 También puedes filtrar la vista con filtros predeterminados:
 
-- **Tipo:** [Tipo](/es/platform/content/types.html) de contenido.
-- **Estado:** Borrador, publicado, programado y archivado.
-- **Categoría:** Categoría asignada a las entradas.
+- **Tipo**: [Tipo](/es/platform/content/types.html) de contenido.
+- **Estado**: Borrador, publicado, programado y archivado.
+- **Categoría**: Categoría asignada a las entradas.
 - **Idioma** Idioma del contenido.
-- **Traducción:** Estado de traducción de la entrada. Si una entrada no tiene versión en el idioma seleccionado, se considera "no traducida".
-- **Tags:** Etiquetas disponibles en la cuenta.
-- **Barra de búsqueda:** Filtra por el contenido del título de las entradas.
+- **Traducción**: Estado de traducción de la entrada. Si una entrada no tiene versión en el idioma seleccionado, se considera "no traducida".
+- **Tags**: Etiquetas disponibles en la cuenta.
+- **Barra de búsqueda**: Filtra por el contenido del título de las entradas.
 
 :::tip Tip
 Da click en el menú de Filters en la parte superior derecha de la lista de entradas para agregar o eliminar cualquiera de las opciones de filtrado del encabezado.
@@ -42,7 +42,7 @@ Da click en el menú de Filters en la parte superior derecha de la lista de entr
 
 Selecciona una o más entradas y da click en el recuadro de Acciones masivas para:
 
-- **Editar masivamente:** Esta opción abre una interfaz donde puedes modificar múltiples entradas a la vez, seleccionando los campos que deseas sobrescribir y aplicando los cambios.
+- **Editar masivamente**: Esta opción abre una interfaz donde puedes modificar múltiples entradas a la vez, seleccionando los campos que deseas sobrescribir y aplicando los cambios.
 
 :::warning Importante
 La opción de editar masivamente entradas solo esta disponible para entradas del mismo tipo y solo es visible si filtras las entradas por tipo.
@@ -59,10 +59,10 @@ Al usar la edición masiva de entradas estás sobreescribiendo los valores para 
 Para recuperar un valor específico de una entrada, accede a la vista de edición de entradas y selecciona la opción **Diferencias** para revisar los valores previos de una entrada.
 :::
 
-- **Publicar:**  Publica las entradas seleccionadas que tengan cambios pendientes o estén en estado borrador.
-- **Forzar publicación:** Si está habilitada la revisión en equipo, los administradores del espacio pueden usar esta acción para forzar la publicación de entradas que tienen cambios pendientes o estén en estado borrador, sin necesidad de pasar por el proceso de revisión.
+- **Publicar**:  Publica las entradas seleccionadas que tengan cambios pendientes o estén en estado borrador.
+- **Forzar publicación**: Si está habilitada la revisión en equipo, los administradores del espacio pueden usar esta acción para forzar la publicación de entradas que tienen cambios pendientes o estén en estado borrador, sin necesidad de pasar por el proceso de revisión.
 - **Despublicar**
-- **Archivar:** Archivar en masa solo tiene efecto en las entradas seleccionadas que no estén publicadas. Si intentas archivar una entrada publicada, la acción no tendrá efecto.
+- **Archivar**: Archivar en masa solo tiene efecto en las entradas seleccionadas que no estén publicadas. Si intentas archivar una entrada publicada, la acción no tendrá efecto.
 
 :::tip Tip
 Las acciones masivas se ejecutan en segundo plano y es posible que no veas los cambios inmediatamente, por lo que deberás esperar un momento y refrescar la vista luego de ejecutar una acción masiva.
@@ -264,8 +264,8 @@ Habilita la opción de contenido privado para que tu contenido sea exclusivo par
 
 Dependiendo de como estés consumiendo el contenido, es posible que debas seguir algunos pasos adicionales para acceder a él:
 
-- **A través de la API pública:** Consulta la sección sobre contenido privado en la API.
-- **A través de Liquid:** Al iniciar sesión en tu sitio, tus usuarios podrán visualizar el contenido privado.
+- **A través de la API pública**: Consulta la sección sobre contenido privado en la API.
+- **A través de Liquid**: Al iniciar sesión en tu sitio, tus usuarios podrán visualizar el contenido privado.
 
 
 ### Segmentos
