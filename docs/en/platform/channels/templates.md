@@ -10,20 +10,20 @@ When you create a site, it comes complete with different templates to generate t
 
 In the templates section, the main menu is hidden to optimize the work area. At the top left, you'll find the name of the section and the current status of the post:
 
-- **Published:** There is a published version and the editable version is identical.
-- **Pending changes:** There is a published version, but there are changes pending publication in your editable version.
-- **Under review:** [team review](/en/platform/core/key-concepts.html) is active, and the editable version has been submitted for review.
-- **Approved:** [team review](/en/platform/core/key-concepts.html) is enabled and the item's review conditions have been met. In this state, the template is ready to be published.
+- **Published**: There is a published version and the editable version is identical.
+- **Pending changes**: There is a published version, but there are changes pending publication in your editable version.
+- **Under review**: [team review](/en/platform/core/key-concepts.html) is active, and the editable version has been submitted for review.
+- **Approved**: [team review](/en/platform/core/key-concepts.html) is enabled and the item's review conditions have been met. In this state, the template is ready to be published.
 
 At the top right, you can see the last date of publication and icons with the available actions:
 
-**Preview:** Click on this icon to open a new tab with a preview of the templates. Here you can view all the changes to your templates, as if they were published.
+**Preview**: Click on this icon to open a new tab with a preview of the templates. Here you can view all the changes to your templates, as if they were published.
 
 :::warning Attention
 You can preview the changes as a non-session user or a user with an active Modyo session. For this reason, we recommend starting or closing the Modyo session on the site before entering preview mode, given that if you start or close the session in preview mode. This is because logging in or logging out in preview mode can generate security errors such as _x-frame-options_ or _mixed-content_, depending on the site's custom domain and SSL configuration.
 :::
 
-**Differences:** Compare changes between multiple versions of your templates. By default, Modyo compares the published version with the editable version. Use the version selectors to compare with backup versions.
+**Differences**: Compare changes between multiple versions of your templates. By default, Modyo compares the published version with the editable version. Use the version selectors to compare with backup versions.
 
 :::tip Tip
 Every time you publish a version, the version that was published becomes a backup version. By default, up to 20 backups are saved, allowing you to compare, restore and roll back to the last 20 versions
@@ -31,32 +31,32 @@ Every time you publish a version, the version that was published becomes a backu
 For more information on versioning, refer to the section on [versioning](en/platform/core/key-concepts.html#versions).
 :::
 
-**Search in templates:** Display a sidebar with a text search engine that explores all the editable templates.
+**Search in templates**: Display a sidebar with a text search engine that explores all the editable templates.
 
-**View activity:** Display a sidebar that shows the activity history and, where you can read and write comments. Click on **view detail** to show the full information of any activity log.
+**View activity**: Display a sidebar that shows the activity history and, where you can read and write comments. Click on **view detail** to show the full information of any activity log.
 
-**More actions:** This icon allows you to **archive** or **delete** a template.
+**More actions**: This icon allows you to **archive** or **delete** a template.
 
 The last option in the top bar shows the main actions you can perform:
 
-- **Save:** Save all changes to all templates.
-- **Submit for review:** Change the status of the templates to “Awaiting Review”. In this state, you can continue to make changes, but each change will be notified by email to the assigned reviewers.
-- **Force publication:** Only available to site administrators, allows you to immediately publish a template, even if it is awaiting review.
-- **Reject:** Returns to “In Edit” status and notifies reviewers that the item was rejected.
-- **Publish:** Once the template has been approved, you can send it to publication.
+- **Save**: Save all changes to all templates.
+- **Submit for review**: Change the status of the templates to “Awaiting Review”. In this state, you can continue to make changes, but each change will be notified by email to the assigned reviewers.
+- **Force publication**: Only available to site administrators, allows you to immediately publish a template, even if it is awaiting review.
+- **Reject**: Returns to “In Edit” status and notifies reviewers that the item was rejected.
+- **Publish**: Once the template has been approved, you can send it to publication.
 
 In the main work area, there are two sections:
 
-- **The editing area:** Clicking on a template from the list in the selection area on the right side will open the template in the central area with a text editor. If you open multiple templates, they will open as tabs in the workspace.
-- **The template selection area:** Select the views or snippets tab, as required.
+- **The editing area**: Clicking on a template from the list in the selection area on the right side will open the template in the central area with a text editor. If you open multiple templates, they will open as tabs in the workspace.
+- **The template selection area**: Select the views or snippets tab, as required.
 
 ## Layouts
 
 Modyo offers three predefined layouts:
 
-* **Home:** Exclusively for the main page of the site.
-* **Base:** All pages, except the home page, use this layout.
-* **Error:** Used in error views (404, 401), showcasing a clean design.
+* **Home**: Exclusively for the main page of the site.
+* **Base**: All pages, except the home page, use this layout.
+* **Error**: Used in error views (404, 401), showcasing a clean design.
 
 To create a new layout:
 1. In the **Templates** section, click on the **Views** tab
@@ -127,10 +127,10 @@ Your account's CDN needs to be in the cloud for changes to be reflected immediat
 
 In the views section, you can customize four types of errors:
 
-* **Disabled:** Displayed when the site you're trying to access is [disabled](/en/platform/channels/sites.html).
-* **404:** If in the [site restrictions](en/platform/channels/sites.html#privacy) configuration you decide to show 404 instead of redirecting to the home page, this error appears when entering an undefined URL.
-* **Privacy:** Shown when you don't have permissions to access the [site](en/platform/channels/sites.html#privacy) or one of its [pages](en/platform/channels/pages.html#privacy).
-* **Template:** Visible when the loaded page has a Liquid syntax error. It's unlikely that you'll see this view, as from Modyo 8.1 onwards, the platform performs a syntax check before saving and publishing changes to Templates.
+* **Disabled**: Displayed when the site you're trying to access is [disabled](/en/platform/channels/sites.html).
+* **404**: If in the [site restrictions](en/platform/channels/sites.html#privacy) configuration you decide to show 404 instead of redirecting to the home page, this error appears when entering an undefined URL.
+* **Privacy**: Shown when you don't have permissions to access the [site](en/platform/channels/sites.html#privacy) or one of its [pages](en/platform/channels/pages.html#privacy).
+* **Template**: Visible when the loaded page has a Liquid syntax error. It's unlikely that you'll see this view, as from Modyo 8.1 onwards, the platform performs a syntax check before saving and publishing changes to Templates.
 
 ## CSS and JavaScript
 
@@ -195,10 +195,10 @@ In the work area, under the tabs, you'll find a bar with these items:
 **Toolbar items**
 The toolbar under the Template Builder tabs contains the following elements:
 
-- **File Manager:** Opens a modal that allows you to access all the files in your account and copy their URL. Select the **Upload Files** tab to upload new files. For more information about the benefits and features of File Manager, go to [File Manager](/en/platform/content/asset-manager.html)
-- **Keyboard Shortcuts:** Shows useful keyboard shortcuts for Templates.
-- **Snippets:** Displays a list with all the snippets and the option to copy their reference code.
-- **Changes:** Displays a list of all the times and states in which you have saved the current version. By clicking on one of the sub-versions, you change the content of the template to that sub-version.
+- **File Manager**: Opens a modal that allows you to access all the files in your account and copy their URL. Select the **Upload Files** tab to upload new files. For more information about the benefits and features of File Manager, go to [File Manager](/en/platform/content/asset-manager.html)
+- **Keyboard Shortcuts**: Shows useful keyboard shortcuts for Templates.
+- **Snippets**: Displays a list with all the snippets and the option to copy their reference code.
+- **Changes**: Displays a list of all the times and states in which you have saved the current version. By clicking on one of the sub-versions, you change the content of the template to that sub-version.
 
 :::tip Tip
 When you publish a version, the list of changes disappears, because the new editable version has not changed.
