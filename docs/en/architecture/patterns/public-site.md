@@ -78,10 +78,10 @@ This recommendation is both because of the inherent complexity in the code of ea
 
 Other reasons to avoid using JavaScript frameworks on public sites are:
 
-- **Performance:** Every time a visitor loads a page, the browser must download and execute the JavaScript code to display and manipulate the elements of the page. Excessive use of JavaScript can encourage page loading, especially on devices with slow connections or limited resources.
-- **Accessibility:** Some users may have difficulty accessing and using interactive Javascript-based content. This includes people with visual disabilities who use screen readers, users with slow connections or older devices, and those who turn off Javascript for safety or personal preference.
-- **Maintenance and compatibility:** Reducing Javascript dependencies simplifies site maintenance. In addition, these solutions tend to have greater compatibility with various browsers and devices.
-- **Security:** Limiting the use of Javascript decreases the potential attack surface and improves site security.
+- **Performance**: Every time a visitor loads a page, the browser must download and execute the JavaScript code to display and manipulate the elements of the page. Excessive use of JavaScript can encourage page loading, especially on devices with slow connections or limited resources.
+- **Accessibility**: Some users may have difficulty accessing and using interactive Javascript-based content. This includes people with visual disabilities who use screen readers, users with slow connections or older devices, and those who turn off Javascript for safety or personal preference.
+- **Maintenance and compatibility**: Reducing Javascript dependencies simplifies site maintenance. In addition, these solutions tend to have greater compatibility with various browsers and devices.
+- **Security**: Limiting the use of Javascript decreases the potential attack surface and improves site security.
 
 Instead of using Javascript frameworks, we suggest opting for static HTML and, if required, taking advantage of the use of Liquid language.
 
@@ -143,9 +143,9 @@ In the context of public sites, Modyo recommends managing previous environments 
 
 The use of stages makes it possible to create separate and isolated environments to build, test and verify the operation of the site before it is deployed in a production environment. This helps prevent failures that could affect end users. In the case of public sites, the following stages can be defined, for example:
 
-- **Develop:** for carrying out the development and integration of changes.
-- **Certification:** intended for pre-deployment testing in production.
-- **Main:** productive version of the site.
+- **Develop**: for carrying out the development and integration of changes.
+- **Certification**: intended for pre-deployment testing in production.
+- **Main**: productive version of the site.
 
 Stages can have separate settings, such as site variables. This allows you to adjust behaviors between different environments, for example, changing the URL of an API that provides information to the site.
 
@@ -237,10 +237,10 @@ In the case of Modyo Enterprise On Premise, you can implement similar features, 
 Finally, among the most important requirements that a public site must consider are those related to the privacy of user data. Attention to privacy is important not only from a legal and regulatory point of view, but also as a manifestation of the organization's commitment to doing things correctly and transparently.
 
 In a public place, a limited amount of user information is handled, but this does not exempt compliance with requirements such as:
-- **Cookie Banners:** Corresponds to banners that provide users with the option to disable the tracking of certain cookies on the site, completely or individually. The banner must explain the reason for each cookie that is intended to be installed in the user's browser.
-- **Cookie Policy:** Corresponds to the policy maintained by the site on the type of cookies used and their purpose, in addition to what could eventually happen to the user's experience if they do not accept them. The cookie policy is generally accepted in the cookie banner.
-- **Privacy Policy:** Encompasses the organization's policy regarding the privacy of user data in the context of the site. If the public site is an entry point to a private or transactional system, this policy can be extended to cover the entire system.
-- **Consent management:** Consists in accurately recording the consents derived from any acceptance of conditions by the user. Consent records must be kept for a certain period of time, in accordance with the regulations in force in each country.
+- **Cookie Banners**: Corresponds to banners that provide users with the option to disable the tracking of certain cookies on the site, completely or individually. The banner must explain the reason for each cookie that is intended to be installed in the user's browser.
+- **Cookie Policy**: Corresponds to the policy maintained by the site on the type of cookies used and their purpose, in addition to what could eventually happen to the user's experience if they do not accept them. The cookie policy is generally accepted in the cookie banner.
+- **Privacy Policy**: Encompasses the organization's policy regarding the privacy of user data in the context of the site. If the public site is an entry point to a private or transactional system, this policy can be extended to cover the entire system.
+- **Consent management**: Consists in accurately recording the consents derived from any acceptance of conditions by the user. Consent records must be kept for a certain period of time, in accordance with the regulations in force in each country.
 
 ### Other requirements
 Finally, we reserved some specific requirements that should be taken into account when implementing a public site.
