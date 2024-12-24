@@ -11,11 +11,11 @@ The main view shows a table with all registered users, which will be paginated i
 
 You can use the filters at the top of the table to quickly find user groups. The available filters are:
 
-- **Status:** Active and inactive users.
-- **Verification:** Users who have confirmed their details on the platform.
+- **Status**: Active and inactive users.
+- **Verification**: Users who have confirmed their data on the platform.
 - **Segments:** Users who belong to a specific [segment](/en/platform/customers/segments.html).
 - **Tags**: Users assigned to specific tags on the platform.
-- **Search:** Filter users by name, last name, email or username.
+- **Search**: Filter users by name, last name, email or username.
 
 You can sort the users in the table by name, registration date, last login, or number of sessions started by clicking on the column headers.
 
@@ -39,7 +39,7 @@ To add a new user, click the **+ New User** button and complete the following fi
 - **Email**: **[Required]**
 - **Password**: **[Required]**. Must be at least 8 characters long.
 - **Password Confirmation**: **[Required]**
-- **Tags:** Labels to identify the user.
+- **Tags**: Labels to identify the user.
 
 :::tip Tip
 To send the password to the user's email, check the box below the email field. The user can change the password once they access the platform.
