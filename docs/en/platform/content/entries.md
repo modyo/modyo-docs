@@ -17,21 +17,21 @@ In the entry interface, you can see a list of all the user-generated content, or
 
 The columns for sorting the list of entries are:
 
-- **Status:** Draft, Published, Scheduled, or Archived.
-- **Name:** Name of the content.
-- **Type:** [Type](/en/platform/content/types.html) of content.
-- **Updated:** Date of the last saved update of the content.
-- **Author:** Name of the author of the content.
+- **Status**: Draft, Published, Scheduled, or Archived.
+- **Name**: Title of the entry.
+- **Type**: [Type](/en/platform/content/types.html) of content.
+- **Updated on**: Date of the last saved update.
+- **Author**: Original creator of the entry.
 
 You can also filter the view with default filters:
 
-- **Type:** [Type](/en/platform/content/types.html) of content.
-- **Status:** Draft, published, scheduled, and archived.
-- **Category:** Category assigned to entries.
+- **Type**: [Type](/en/platform/content/types.html) of content.
+- **Status**: Draft, Published, Scheduled, or Archived.
+- **Category**: Category assigned to entries.
 - **Language:** Language of the content.
-- **Translation:** Translation status of the entry. If an entry has no version in the selected language, it is considered “not translated”.
-- **Tags:** Labels available in the account.
-- **Search bar:** Filter by the content of the title of the entries.
+- **Translation**: Translation status of the entry. If an entry has no version in the selected language, it is considered “not translated”.
+- **Tags**: Labels available in the account.
+- **Search**: Not a filter, but a search that returns entries that match your criteria, by title.
 
 :::tip Tip
 Click on the Filters menu at the top right of the list of entries to add or remove any of the filter options in the header.
@@ -42,7 +42,7 @@ Click on the Filters menu at the top right of the list of entries to add or remo
 
 Select one or more entries and click on the Bulk Actions box to:
 
-- **Bulk edit:** This option opens an interface where you can modify multiple entries at once, by selecting the fields you want to overwrite and applying the changes.
+- **Bulk edit**: This option opens an interface where you can modify multiple entries at once, by selecting the fields you want to overwrite and applying the changes.
 
 :::warning Important
 The option to edit entries in bulk is only available for entries of the same type and is only visible if you filter the entries by type.
@@ -59,10 +59,10 @@ By using bulk editing of entries you are overwriting the values for the selected
 To retrieve a specific value from an entry, access the entry editing view and select the **Differences** option to review the previous values of an entry.
 :::
 
-- **Publish:** Publish selected entries that have pending changes or are in a draft state.
-- **Force publication:** If team review is enabled, space administrators can use this action to force the publication of entries that have pending changes or are in draft status, without having to go through the review process.
+- **Publish**: Publish selected entries that have pending changes or are in a draft state.
+- **Force publication**: If team review is enabled, space administrators can use this action to force the publication of entries that have pending changes or are in draft status, without having to go through the review process.
 - **Unpublish**
-- **Archive:** Bulk archiving only has an effect on the selected entries that are not published. If you try to archive a published post, the action will have no effect.
+- **Archive**: Bulk archiving only has an effect on the selected entries that are not published. If you try to archive a published post, the action will have no effect.
 
 :::tip Tip
 Bulk actions run in the background, and you might not see the changes immediately. You will need to wait a moment and refresh your view after executing a bulk action.
@@ -264,8 +264,8 @@ Enable the private content option so that your content is exclusive to users who
 
 Depending on how you're consuming the content, you may need to take some additional steps to access it:
 
-- **Through the public API:** Refer to the section on private content in the API.
-- **Through Liquid:** By signing in to your site, your users will be able to view private content.
+- **Through the public API**: Refer to the section on private content in the API.
+- **Through Liquid**: By signing in to your site, your users will be able to view private content.
 
 
 ### Segments
