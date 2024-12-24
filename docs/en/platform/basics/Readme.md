@@ -25,16 +25,16 @@ Modyo is a digital experience platform that helps you create integrated digital 
 
 ### What to Use Modyo For?
 
-* **To create integrated digital experiences:** Modyo allows you to create personalized digital experiences for your consumers, regardless of their channel.
-* **To create agility and governance:** Modyo helps you accelerate the development of your digital experiences and ensure their quality.
-* **To create digital experiences through widgets:** Modyo offers you an extensive library of widgets that you can use to quickly create digital experiences.
+* **To create integrated digital experiences**: Modyo allows you to create personalized digital experiences for your consumers, regardless of their channel.
+* **To create agility and governance**: Modyo helps you accelerate the development of your digital experiences and ensure their quality.
+* **To create digital experiences through widgets**: Modyo offers you an extensive library of widgets that you can use to quickly create digital experiences.
 
 
 ### Why use Modyo?
 
-* **Modyo is secure:** Modyo offers you a secure development environment, both in the cloud and local (On Premise) so you can create digital experiences without worrying about the security of your data.
+* **Modyo is secure**: Modyo offers you a secure development environment, both in the cloud and local (On Premise) so you can create digital experiences without worrying about the security of your data.
 * **Modyo is scalable:** Modyo can scale to meet the needs of your business, no matter its size. Large digital teams can streamline the creation of content and components developed for frontend
-* **Modyo is adaptable:** Modyo is adaptable to your specific needs and provides a wide library of intelligent widgets that can be connected to various systems in your company.
+* **Modyo is adaptable**: Modyo is adaptable to your specific needs and provides a wide library of intelligent widgets that can be connected to various systems in your company.
 
 ### Who is Modyo for?
 
