@@ -14,24 +14,24 @@ Here you can modify both the user's visual experience and the settings related t
 In this section, you can configure general aspects of the realm, such as:
 
 - **Title**
-- **Identifier:** The URL of the realm's profile, login, registration, and password recovery views.
-- **Disable credentials:** By checking this box, you deactivate Modyo credentials in the realm and only allow access via SSO.
+- **Identifier**: The URL of the realm's profile, login, registration, and password recovery views.
+- **Disable credentials**: By checking this box, you deactivate Modyo credentials in the realm and only allow access via SSO.
 
 :::danger Danger
 Before enabling the option to disable Modyo credentials in the realm, make sure that you have configured an SSO identity provider for the realm. Otherwise, users won't be able to sign in.
 :::
 
-- **After logging in, redirect to:** Allows you to choose a specific URL to direct the user to, once they have entered the realm. If you don't activate the “Force Redirect” option, the user will be redirected to the URL entered only if it is not possible to return to the URL from which they logged in.
-- **Force redirection to:** By activating this option, the user will always be redirected to the URL specified in the login redirection field, regardless of where they started the session.
-- **Account activation:**
+- **After logging in, redirect to**: Allows you to choose a specific URL to direct the user to, once they have entered the realm. If you don't activate the “Force Redirect” option, the user will be redirected to the URL entered only if it is not possible to return to the URL from which they logged in.
+- **Force redirection to**: By activating this option, the user will always be redirected to the URL specified in the login redirect field, regardless of where they started the session.
+- **Account Activation**:
   - Direct: Users who register can log in directly.
   - Activation email: Users who register must activate their account by clicking on a link sent to their email before being able to log in.
   - Moderate: Users who register must wait for a realm administrator to activate their account before they can log in.
   - Disabled: New users cannot be registered in the realm. Already registered and activated users can still log in.
-- **Default Avatar Image:** Image shown in the avatar of users who do not have a personalized image.
-- **Enable Soft Login:** By activating this option you can access your account without entering your credentials each time. You will receive a security code in your email for easy login without the need for passwords.
-- **Registration form:** Here you can enable or disable different attributes in the registration form, such as the second surname, email confirmation, user avatar, date of birth, gender, and phone number.
-- **Delete realm:** Deletes the realm. This process is done in the background, thus you may not see the realm disappear immediately after executing the action. To confirm the deletion, you must enter the realm's full name.
+- **Default Avatar Image**: Image shown on the avatar of users who do not have a custom image.
+- **Enable Soft Login**: By activating this option you can access your account without entering your credentials each time. You will receive a security code in your email for easy login without the need for passwords.
+- **Registration form**: Here you can enable or disable different attributes in the registration form, such as the second surname, email confirmation, user avatar, date of birth, gender, and phone number.
+- **Delete realm**: Deletes the realm. This process is performed in the background, so you may not see the realm disappear immediately after executing the action. To confirm the deletion, you must enter the full name of the realm.
 
 
 ## Redirect Login ##
@@ -101,15 +101,15 @@ Here you can also enable, disable and customize the sending of automated emails 
  If you activate them, an email is sent when:
 
 
-- **Activation Email:** A user has completed their registration, to confirm their details.
-- **Welcome Email:** A user has registered on a specific site.
-- **Added by the Admin:** An administrator creates a user manually.
-- **Password Recovery:** A user requests to recover their password.
-- **Awaiting Confirmation:** The user has been confirmed, but requires manual activation by an administrator.
-- **Confirmation:** The user has been confirmed and activated.
-- **Verification of email update:** A change has been made to the email address.
+- **Activation Email**: A user has completed their registration, to confirm their details.
+- **Welcome Email**: A user has registered on a specific site.
+- **Added by the Admin**: An administrator creates a user manually.
+- **Password Recovery**: A user requests to recover their password.
+- **Awaiting Confirmation**: The user has been confirmed, but requires manual activation by an administrator.
+- **Confirmation**: The user has been confirmed and activated.
+- **Verification of email update**: A change has been made to the email address.
 
-**Custom footer:** Allows you to customize the footer of all the aforementioned emails.
+**Custom footer**: Allows you to customize the footer of all the emails mentioned above.
 
 To enable or disable sending an email, click the Enabled/Disabled button next to each function and click the **Save** button.
 
@@ -215,10 +215,10 @@ You can also link other fields. Take into consideration that:
 - You can link custom or custom Modyo fields. To do this, you must first create the custom field in Modyo and the field must be enabled to be used in synchronization.
 
 Once you've linked the fields, select the type of synchronization:
-- **Always use Salesforce:** This option uses data from Salesforce to update (create, update, delete) Modyo users. In this case, no user information is sent from Modyo to Salesforce. The synchronization is unidirectional, and information flows only from Salesforce to Modyo.
-- **Always use Modyo:** Selecting this option sends Modyo user data to Salesforce to update contacts in Salesforce. Modyo users are not updated with Salesforce information. The synchronization is unidirectional and information flows only from Modyo to Salesforce.
-- **Bidirectional:** This option sends information from Modyo to Salesforce and information from Salesforce is used in Modyo, allowing contacts and users to be updated respectively. In this case, users and contacts are kept up to date with the most recent information available.
-- **Don't sync:** By selecting this option, you turn off the integration, preventing users and contacts from being synchronized between Modyo and Salesforce. This option can be useful if you need to pause syncing for any reason.
+- **Always use Salesforce**: This option uses data from Salesforce to update (create, update, delete) Modyo users. In this case, no user information is sent from Modyo to Salesforce. The synchronization is unidirectional, and information flows only from Salesforce to Modyo.
+- **Always use Modyo**: Selecting this option sends Modyo user data to Salesforce to update contacts in Salesforce. Modyo users are not updated with Salesforce information. The synchronization is unidirectional and information flows only from Modyo to Salesforce.
+- **Bidirectional**: This option sends information from Modyo to Salesforce and information from Salesforce is used in Modyo, allowing contacts and users to be updated respectively. In this case, users and contacts are kept up to date with the most recent information available.
+- **Don't sync**: By selecting this option, you turn off the integration, preventing users and contacts from being synchronized between Modyo and Salesforce. This option can be useful if you need to pause syncing for any reason.
 
 :::warning Attention
 If you select the **Always use Modyo** or **bidirectional** link mode, but don't complete the second step explained below, Modyo users will not be sent to Salesforce.
@@ -291,8 +291,8 @@ To modify the role of a team member:
 
 You can choose between two roles:
 
-- **Realm User:** Can add users, create, modify, and submit campaigns, forms, and segments for review.
-- **Realm Admin:** Has access to all the settings and sections of the realm; can add and remove users and team members. Can also delete the realm.
+- **Realm User**: Can add users, create, modify, and review campaigns, forms, and segments.
+- **Realm Admin**: Has access to all the settings and sections of the realms, can add and remove users and team members. Can also delete the realm.
 
 To remove an administrator from the realm, check the box to the left of their name and click the **Delete** button at the bottom.
 
@@ -318,12 +318,12 @@ You can create a maximum of 20 custom fields in each realm.
 
 Custom fields have standard properties that you should consider:
 
-- **Must be a unique answer:** The value must be unique for each user, avoiding duplicates.
-- **This is a required field:** Must be completed when modifying or creating a user. If the field is visible and editable to users, it will be displayed on the registration form and will be required to create new users.
-- **Visible to site users:** Will be visible in the user's profile.
-    - **Editable by site users:** Users can view and modify the value.
-- **Searchable by administrators:** The value will be indexed and administrators can search for users in the Modyo administrator's user index, by the value of this field.
-- **Suggestion text:** Provide an example or guide for the field.
+- **Must be a unique answer**: The value must be unique for each user, avoiding duplicates.
+- **This is a required field**: Must be completed when modifying or creating a user. If the field is visible and editable to users, it will be shown in the registration form and will be mandatory when creating new users.
+- **Visible to users of the sites**: It will be visible in the user's profile.
+    - **Editable by site users**: Users will be able to view and modify the value.
+- **Searchable by administrators**: The value will be indexed and administrators will be able to search for users in the Modyo administrator user index, by the value of this field.
+- **Suggestion Text**: Provides an example or guide for the field.
 - **Default Value**.
 
 Customizable fields can be enabled or disabled. If they are enabled, an administrator can use them and, depending on their configuration, they can also be available to users.
@@ -363,9 +363,9 @@ You can enable reCAPTCHA in the realm or not, once enabled, enter:
 
 By enabling the payment feature in your realm, you have access to the following options:
 
-- **Currency format:** Modifies how currency values are displayed.
-- **Payment settings:** Select the currency unit you want to display. This unit is reflected in orders and reports. If you don't indicate a currency unit, Modyo uses the default currency according to the language configured for the site.
-- **Activate email delivery:** When this option is selected, the user receives an email when paying for an order.
-- **Email subject:** Header of the email sent to users.
-- **Body of the email:** Content of the message sent to users.
+- **Currency format**: Modifies how the currency values are displayed.
+- **Payment settings**: Select the currency unit you want to display. This unit is reflected in orders and reports. If you don't indicate a currency unit, Modyo uses the default currency according to the language configured for the site.
+- **Activate email delivery**: When this option is selected, the user receives an email when paying for an order.
+- **Email subject**: Header of the email sent to users.
+- **Body of the mail**: Content of the message sent to users.
 
