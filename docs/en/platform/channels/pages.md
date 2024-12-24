@@ -16,25 +16,25 @@ In the edit view, you will see a bar across the top, a central grid in the middl
 
 In the bar at the top, you can find different actions and information:
 
-**Title:** It is located in the upper left side and indicates the name of the page you are modifying. On the right side of the name, you can see the current state of the page. The state will either be "Draft", "Under review", "Approved", "Pending changes", or "Published". To learn more about these states, review the [versioning and team review](/en/platform/core/key-concepts.html) section.
+**Title**: Located in the upper left, and indicates the name of the page you are modifying. On the right side of the name, you can see the current state of the page. The state will either be "Draft", "Under review", "Approved", "Pending changes", or "Published". To learn more about these states, review the [versioning and team review](/en/platform/core/key-concepts.html) section.
 
-**Date of publication:** If the page has been published, it will indicate the date of the last publication.
+**Date of publication**: If the page has been published, it will indicate the date of the last publication.
 
-**Preview:** This icon allows you to open a new tab with Preview mode to view the changes that have been made to the page without having to publish it.
+**Preview**: This icon allows you to open a new tab with Preview mode to view the changes that have been made to the page without having to publish it.
 
 :::warning Attention
 You can preview the pages as a user without a session or a user with a Modyo session. For this, it is recommended you open or close the Modyo session on the site before entering preview mode. This is because logging in or out of preview mode can result in security errors such as _x-frame-options_ or _mixed-content_, depending on the site's custom domain and SSL settings.
 :::
 
-**Differences:** By clicking on the differences icon, you access the differences view of the page, where you can select two versions to compare, allowing you to execute the actions [reset and rollback](/en/platform/core/key-concepts.html#reversing-a-change)
+**Differences**: By clicking on the differences icon, you access the differences view of the page, where you can select two versions to compare, allowing you to execute the actions [reset and rollback](/en/platform/core/key-concepts.html#reversing-a-change)
 
 :::tip Tip
 If your page is in a _draft_ state, the difference icon will not appear, since there is nothing to compare the current editable version with. To learn more about the differences and supports, check out the [versioning](/en/platform/core/key-concepts.html#versions) section
 :::
 
-**Activity:** Displays a sidebar that shows the activity associated with the page, such as modifications, posts and comments. At the bottom of this bar, you can type associated comments. If the page is under review, all assigned reviewers will receive a notification with the comment.
+**Activity**: Displays a sidebar that shows the activity associated with the page, such as modifications, posts and comments. At the bottom of this bar, you can type associated comments. If the page is under review, all assigned reviewers will receive a notification with the comment.
 
-**Other actions:**
+**Other actions**:
 
 - Archive: If a page isn't published, this action allows you to archive it. When a page is archived, by default it doesn't appear in the page index, keeping the site structure clean.
 - Duplicate: This action allows you to copy the editable version of the page you're on. The copied version is in a _draft_ state.
@@ -59,7 +59,7 @@ To learn about the types of widgets you can add, see [Widgets](/en/platform/chan
 
 To learn more about content pages, see [Content Page](/en/platform/channels/pages.html#content-page)
 
-**Main action:** This is the green button at the top right. This button can take different forms:
+**Main action**: The green button in the upper right. This button can take different forms:
 
 - Save: Allows you to save all changes made to the page.
 - Send to review: If Team Review is enabled, and all changes have been saved, this action will allow you to submit the page for review and assign reviewers.
@@ -71,7 +71,7 @@ To learn more about content pages, see [Content Page](/en/platform/channels/page
 * If a page has children, you can only archive it if all of its child pages are archived.
 :::
 
-**Secondary Actions:**
+**Secondary Actions**:
 - Force publish: If you are a site administrator, you have the option to publish pages at any time, including skipping the team review process.
 - Unpublish: If the page is published, you will see this action and can unpublish the page.
 
@@ -116,14 +116,14 @@ Your account's CDN needs to be in the cloud for changes to be reflected immediat
 Here you can customize your page using preset widgets from the following list:
 
 
-- **HTML:** Allows you to enter HTML and CSS code without validations. It will not allow you to enter Javascript code.
-- **Rich Text:** Allows you to make use of a rich text editor, in which you can format the text and switch between the code view and rich text.
+- **HTML**: Allows you to enter HTML and CSS code without validations. While markup, styling, and templating are allowed in HTML widgets, scripting is not. If you need to include Javascript, you should create a [custom widget](/en/platform/channels/widgets.html).
+- **Rich text**: Allows you to make use of a rich text editor, in which you can write and edit text and swap to a code view to check or modify the HTML directly.
 :::warning Warning
 The rich text widget has an automatic formatter, so the code you write in the code view may be affected.
 :::
-- **Content listing:** Show content listings using filters by space, type, language, tags, and category. To modify how these widgets look, you must do so in the Widgets section in [Templates](/en/platform/channels/templates.html).
-- **Featured Content:** Shows a list of entries as “hero” images in a carousel.
-- **Custom:** You'll find a list of all the widgets you've created and published in the widget builder.
+- **Content List**: Displays a list of Content entries using filters by space, type, language, tags, and category. To modify what these widgets look like, you must do so from the Widgets section in [Templates](/en/platform/channels/templates.html).
+- **Content featured**: Displays a list of entries as “hero” images in a carousel.
+- **Custom**: Clicking this displays a list of all custom widgets that you have created and published in the Widget Builder.
 
 Once you have selected a widget in the central section, the focus will go to the side tab, where you can find different configuration options for the widget and if you select a custom widget, you will find a link to go directly to its editing view in [widget builder](/en/platform/channels/widgets.html) and the list of variables that the widget is using. If you want to overwrite the value of a particular variable for that instance of the widget on that page, you must select the checkbox to the left of the variable and change the value it takes.
 
@@ -202,9 +202,9 @@ The index page will display the list of all entries in the content type. Here yo
 
 #### Edit
 
-- **Enable Entry Index:** Disabled by default. The path it takes is the name given to the page when it was created. If this option is disabled, only the **Show** pages will be accessible and if you try to access it, you will see a 404 error.
-- **Layout:** The Layout template that will be loaded for the Index.
-- **Custom Meta Tag:** Add custom meta tags to optimize the SEO of the index. This meta tag will only be loaded for the Index, not for the Show. You can also use Liquid to load dynamic meta tags.
+- **Enable Entry Index**: Disabled by default. The path it takes is the name given to the page when it was created. If this option is disabled, only **Show** pages will be accessible. Users attempting to access will be shown a 404 error.
+- **Layout**: The Layout template that is loaded for the Index.
+- **Custom Meta Tag**: Add custom meta tags to optimize index SEO. This meta tag will only be uploaded for the Index, not for the Show. You can also use Liquid to load dynamic meta tags.
 
 ### Show
 
@@ -212,8 +212,8 @@ The tab where you define what dynamic entries will look like. Here you can selec
 
 #### Edit:
 
-- **Layout:** The Layout template that will load for Show.
-- **Custom Meta Tag:** Add custom meta tags to optimize the show's SEO. This meta tag will only be loaded for the Show, not for the Index. You can also use Liquid to load dynamic meta tags.
+- **Layout**: The Layout template that is loaded for the Show.
+- **Custom Meta Tag**: Add custom meta tags to optimize the SEO of the Show. This meta tag will only be uploaded for the Show, not for the Index. You can also use Liquid to load dynamic meta tags.
 
 A basic example of Liquid+HTML code that you can use in **Show** is:
 
