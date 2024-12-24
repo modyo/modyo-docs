@@ -30,12 +30,12 @@ Each service is built to handle specific business capabilities and focuses on a 
 
 #### Benefits of microservices
 
-- **Agility:** They foster small, independent teams that can work faster and more efficiently in well-understood contexts. This reduces development times and increases the performance of the organization.
-- **Flexible scalability:** They allow each service to scale independently to meet the demand for the feature of the application it supports. This allows teams to adapt to infrastructure needs, accurately measure the cost of a feature, and maintain availability if a service experiences an increase in demand.
-- **Easy deployment:** Microservices allow for continuous integration and delivery, making it easy to test new ideas and reverse them if something doesn't work. The low cost of errors allows for experimentation, makes it easier to update the code, and accelerates the time to market for new features.
-- **Technological freedom:** They don't follow a “one-size-fits-all” approach. Teams have the freedom to choose the best tool to solve each task or situation.
-- **Reusable code:** Dividing software into small, well-defined modules allows teams to use functions for different purposes. A service developed for a specific function can be used as a building block for another feature. This makes it easier to start an application, as developers can create new capabilities without having to write code from scratch.
-- **Resiliency:** Service independence increases resistance to errors. If there is an error in a service, applications can degrade functionality without affecting the entire application.
+- **Agility**: They foster small, independent teams that can work faster and more efficiently in well-understood contexts. This reduces development times and increases the performance of the organization.
+- **Flexible scalability**: They allow each service to scale independently to meet the demand for the feature of the application it supports. This allows teams to adapt to infrastructure needs, accurately measure the cost of a feature, and maintain availability if a service experiences an increase in demand.
+- **Easy deployment**: Microservices allow for continuous integration and delivery, making it easy to test new ideas and reverse them if something doesn't work. The low cost of errors allows for experimentation, makes it easier to update the code, and accelerates the time to market for new features.
+- **Technological freedom**: They don't follow a “one-size-fits-all” approach. Teams have the freedom to choose the best tool to solve each task or situation.
+- **Reusable code**: Dividing software into small, well-defined modules allows teams to use functions for different purposes. A service developed for a specific function can be used as a building block for another feature. This makes it easier to start an application, as developers can create new capabilities without having to write code from scratch.
+- **Resiliency**: Service independence increases resistance to errors. If there is an error in a service, applications can degrade functionality without affecting the entire application.
 
 ### Implementing microservices with Modyo
 
@@ -47,11 +47,11 @@ The microservices developed in Modyo Connect have the ability to scale horizonta
 
 Some important considerations when developing microservices on Modyo Connect are:
 
-- **Spring Boot:** Framework used for development
-- **Modyo Commons Library:** Support library for common tasks such as error management, log records,
+- **Spring Boot**: Framework used for development
+- **Modyo Commons Library**: Support library for common tasks such as error management, log records,
   authentication, etc.
-- **OpenAPI:** Standard for defining and publishing APIs on the API Gateway
-- **Code structure and style:** We recommend using the [Spring Boot](https://start.spring.io) initializer
+- **OpenAPI**: Standard for defining and publishing APIs on the API Gateway
+- **Code structure and style**: We recommend using the [Spring Boot](https://start.spring.io) initializer
   or [Yeoman](https://yeoman.io/generators) to give a standard to the source code. We also recommend following the
   code style recommended by [Google](https://google.github.io/styleguide/javaguide.html).
 
@@ -59,20 +59,20 @@ Some important considerations when developing microservices on Modyo Connect are
 
 Microservices that require relational data persistence should consider the following guidelines:
 
-- **Blocks:** Avoid queries that could generate [blocks](https://www.baeldung.com/jpa-pessimistic-locking) in database tables during times of high demand.
-- **Efficiency:** Bring only the required information from the database. Sometimes it can be beneficial to use [lazy loading](https://www.baeldung.com/hibernate-lazy-eager-loading) to avoid unnecessary database queries at each iteration within a loop.
-- **Indexes:** Ensure that the indexes applied to the schema are effective. Use the ["explain"](https://dev.mysql.com/doc/refman/8.0/en/using-explain.html) command locally to verify their use.
-- **Migrations and versioning:** Ensure the [versioning and automation](https://flywaydb.org) of tasks that operate on the data schema.
-- **Connection pool:** Ensure a correct configuration of the [connection pool](https://www.baeldung.com/java-connection-pooling)y properly size the database engine, according to the expected concurrency and scalability.
+- **Blocks**: Avoid queries that could generate [blocks](https://www.baeldung.com/jpa-pessimistic-locking) in database tables during times of high demand.
+- **Efficiency**: Bring only the required information from the database. Sometimes it can be beneficial to use [lazy loading](https://www.baeldung.com/hibernate-lazy-eager-loading) to avoid unnecessary database queries at each iteration within a loop.
+- **Indexes**: Ensure that the indexes applied to the schema are effective. Use the ["explain"](https://dev.mysql.com/doc/refman/8.0/en/using-explain.html) command locally to verify their use.
+- **Migrations and versioning**: Ensure the [versioning and automation](https://flywaydb.org) of tasks that operate on the data schema.
+- **Connection pool**: Ensure a correct configuration of the [connection pool](https://www.baeldung.com/java-connection-pooling)y properly size the database engine, according to the expected concurrency and scalability.
 
 #### Connection with external services
 
 Microservices developed in Modyo Connect can be integrated with other systems, such as APIs and external Web Services. To do this, you must keep the following considerations in mind:
 
-- **Connectivity:** Ensure that connectivity from AWS networks to service endpoints are defined and stable.
-- **Security:** Ensure that the link to external services is established through a secure channel, by means of VPNs or [mTLS](https://www.cloudflare.com/learning/access-management/what-is-mutual-tls/).
-- **Error Handling:** Errors originating from external services must be managed appropriately at the microservice level to ensure a satisfactory user experience.
-- **Timeouts and crashes:** External services with performance or connectivity issues can cause blockages in the user experience or excessive use of resources within the microservice. We recommend defining reasonable timeouts for each call, aligned with those defined in the API Gateway. In addition, we suggest using asynchronous invocations when response times are not predictable.
+- **Connectivity**: Ensure that connectivity from AWS networks to service endpoints are defined and stable.
+- **Security**: Ensure that the link to external services is established through a secure channel, through VPNs or [mTLS](https://www.cloudflare.com/learning/access-management/what-is-mutual-tls/).
+- **Error Handling**: Errors originating from external services must be managed appropriately at the microservice level to ensure a satisfactory user experience.
+- **Timeouts and crashes**: External services with performance or connectivity issues can cause blockages in the user experience or excessive use of resources within the microservice. We recommend defining reasonable timeouts for each call, aligned with those defined in the API Gateway. In addition, we suggest using asynchronous invocations when response times are not predictable.
 
 #### Hexagonal Architecture
 The hexagonal architecture, also known as Ports and Adapters Architecture, is a software architecture pattern that focuses on the separation of concerns (System on a Chip or SoC) and the independence of hardware and software in an application.
@@ -81,9 +81,9 @@ This architecture organizes the application so that the core of the business log
 
 The hexagonal architecture is made up of three main layers:
 
-- **Domain layer:** It contains the business logic of the application and represents the core of the architecture. This layer is independent of the user interface and the infrastructure layer.
-- **Infrastructure adapter layer:** Contains the adapters that connect the domain layer to the infrastructure layers. Adapters are responsible for transforming data between domain layer formats and specific infrastructure formats, such as databases and web services.
-- **Infrastructure layer:** Contains the specific infrastructure components used in the application, such as databases, web services, and file systems.
+- **Domain layer**: It contains the business logic of the application and represents the core of the architecture. This layer is independent of the user interface and the infrastructure layer.
+- **Infrastructure adapter layer**: Contains the adapters that connect the domain layer to the infrastructure layers. Adapters are responsible for transforming data between domain layer formats and specific infrastructure formats, such as databases and web services.
+- **Infrastructure layer**: Contains the specific infrastructure components used in the application, such as databases, web services, and file systems.
 
 Hexagonal architecture has several benefits, including:
 
@@ -97,8 +97,8 @@ Dynamic Framework microservices are developed following the principles of hexago
 
 #### Other considerations
 
-- **Heavy tasks:** We recommend using background processing with [messaging queues](/en/connect/components/infrastructure.html#messaging-queues), for services that are slow or sensitive to traffic fluctuations.
-- **Task Scheduling:** For services that require task scheduling, we recommend using [ShedLock](https://www.baeldung.com/shedlock-spring) in microservices that require scheduling programmed tasks.
-- **Workflows and state machine:** The use of [state machines](https://www.baeldung.com/spring-state-machine) is recommended for the orchestration of complex processes. As well as integrating workflow technologies with Spring Boot.
-- **Hexagon Architecture:** For more flexible, application domain-focused development, testing, and maintenance, this software design pattern separates an application's business logic from its external services.
-- **Modyo API:** We recommend using Modyo platform's administrative API for common tasks, such as sending messages to users or integrating with managed content.
+- **Heavy tasks**: We recommend using background processing with [messaging queues](/en/connect/components/infrastructure.html#messaging-queues), for services that are slow or sensitive to traffic fluctuations.
+- **Task Scheduling**: For services that require task scheduling, we recommend using [ShedLock](https://www.baeldung.com/shedlock-spring) in microservices that require scheduling programmed tasks.
+- **Workflows and state machine**: The use of [state machines](https://www.baeldung.com/spring-state-machine) is recommended for the orchestration of complex processes. As well as integrating workflow technologies with Spring Boot.
+- **Hexagon Architecture**: For more flexible, application domain-focused development, testing, and maintenance, this software design pattern separates an application's business logic from its external services.
+- **Modyo API**: We recommend using Modyo platform's administrative API for common tasks, such as sending messages to users or integrating with managed content.
