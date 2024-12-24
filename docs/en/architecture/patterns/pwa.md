@@ -8,12 +8,12 @@ Progressive Web Applications (PWAs) are web applications that combine features o
 
 Advantages of PWAs:
 
-- **Installation on the device:** They can be installed on the user's device and accessed from the desktop or home screen, without the need for an application store.
-- **Offline operation:** Thanks to the caching of modern browsers, PWAs can work with intermittent connections or without an Internet connection.
-- **Push notifications:** They can notify users, as configured.
-- **Device hardware access:** They can access the user's device's camera, GPS, and more.
-- **Adaptability to different screen sizes:** Permitting unified experiences on different devices.
-- **Automatic updates:** Ensuring that users always have the latest version of the application.
+- **Installation on the device**: They can be installed on the user's device and accessed from the desktop or home screen, without the need for an application store.
+- **Offline operation**: Thanks to the caching of modern browsers, PWAs can work with intermittent connections or without an Internet connection.
+- **Push notifications**: They can notify users, as configured.
+- **Device hardware access**: They can access the user's device's camera, GPS, and more.
+- **Adaptability to different screen sizes**: Permitting unified experiences on different devices.
+- **Automatic updates**: Ensuring that users always have the latest version of the application.
 
 
 ### Native AppShell
@@ -28,10 +28,10 @@ WebView differs significantly from the device's native browsers, which may limit
 
 PWAs can have limitations on iOS due to:
 
-- **Browser limitations:** On iOS, available browsers, such as Safari, have certain limitations in terms of supporting web functions and technologies. This can affect the performance and functionality of PWAs compared to other, more modern, web-standards-compliant browsers.
-- **Notification service limitations:** Push notifications are an important feature of PWAs, but only Safari and Firefox browsers currently support them on iOS.
-- **Caching issues:** Caching PWA resources can be more restrictive on iOS than on other platforms. This can lead to some functionalities not working properly or to problems with content updates.
-- **Background execution limitations:** iOS has strict restrictions on running code in the background to save battery and improve performance. This can affect the ability of a PWA to function properly in situations where continuous background processing is required.
+- **Browser limitations**: On iOS, available browsers, such as Safari, have certain limitations in terms of supporting web functions and technologies. This can affect the performance and functionality of PWAs compared to other, more modern, web-standards-compliant browsers.
+- **Notification service limitations**: Push notifications are an important feature of PWAs, but only Safari and Firefox browsers currently support them on iOS.
+- **Caching issues**: Caching PWA resources can be more restrictive on iOS than on other platforms. This can lead to some functionalities not working properly or to problems with content updates.
+- **Background execution limitations**: iOS has strict restrictions on running code in the background to save battery and improve performance. This can affect the ability of a PWA to function properly in situations where continuous background processing is required.
 
 Apple is working on improving PWA support on iOS and has introduced new features in newer versions of the operating system. However, there are still limitations compared to other platforms.
 
@@ -55,9 +55,9 @@ TWA works using Chrome Custom Tabs, a variant of Chrome integrated into the nati
 
 Apple doesn't have a functionality equivalent to TWA on iOS. However, it has introduced some features to improve the PWAs experience on iOS devices, such as:
 
-- **Add to home screen:** Allows users to add a shortcut to a PWA on the home screen. The PWA will run in the Safari browser in full screen.
-- **Web Application Manifest:** Allows you to customize the appearance and behavior of a PWA on iOS using a JSON file that describes the PWA and its characteristics, such as name, icons, thematic colors, and orientation.
-- **Service Workers:** This technology enables caching of resources, offline operation, and enhanced performance for PWAs. Despite Apple's limitations on running Service Workers in the background on iOS, they can still enhance the PWA experience when active in the Safari browser.
+- **Add to home screen**: Allows users to add a shortcut to a PWA on the home screen. The PWA will run in the Safari browser in full screen.
+- **Web Application Manifest**: Allows you to customize the appearance and behavior of a PWA on iOS using a JSON file that describes the PWA and its characteristics, such as name, icons, thematic colors, and orientation.
+- **Service Workers**: This technology enables caching of resources, offline operation, and enhanced performance for PWAs. Despite Apple's limitations on running Service Workers in the background on iOS, they can still enhance the PWA experience when active in the Safari browser.
 
 These features don't offer an identical TWA experience, but they can improve the PWA's experience on iOS.
 
@@ -70,16 +70,16 @@ Apple may introduce changes or new functionality in future updates. It's advisab
 
 Some outstanding examples of Progressive Web Applications (PWA) that show the versatility and effectiveness of this technology are:
 
-- **Twitter Lite:** A lightweight version of the X application (formerly known as Twitter) that is designed to be fast and efficient in consuming data. It offers an experience similar to the native application, with features such as push notifications and offline access.
-- **Pinterest:** Pinterest's PWA was able to significantly increase the user engagement rate and the time they spend on the platform. It provides a smooth user experience with fast loading times.
-- **Spotify Web Player:** Allows users to listen to music and access their playlists without the need to download a separate application. It works on different platforms and browsers.
-- **Starbucks:** Starbucks's PWA allows customers to view the menu, customize their orders, and add them to the cart, even when they are offline. Once the connection is restored, they can complete the purchase.
-- **Uber:** The web version of Uber is a PWA that offers a user experience similar to the native application but with a faster loading time and lower data consumption.
-- **Forbes:** This magazine's PWA offers a faster and more engaging reading experience. The application quickly loads content and allows readers to continue reading offline.
-- **Alibaba:** The Chinese e-commerce giant developed a PWA to improve the mobile experience for its users. They were able to increase conversions and user engagement on mobile devices.
-- **OLX:** Global online marketplace that uses a PWA to provide a faster and more efficient browsing experience, resulting in increased user engagement and retention.
-- **Flipkart Lite:** Flipkart, one of India's largest online retailers, created its PWA to offer an efficient shopping experience with offline access and push notifications.
-- **The Washington Post:** Your PWA provides a fast and smooth reading experience. Readers can access the articles and continue reading offline.
+- **Twitter Lite**: A lightweight version of the X application (formerly known as Twitter) that is designed to be fast and efficient in consuming data. It offers an experience similar to the native application, with features such as push notifications and offline access.
+- **Pinterest**: Pinterest's PWA was able to significantly increase the user engagement rate and the time they spend on the platform. It provides a smooth user experience with fast loading times.
+- **Spotify Web Player**: Allows users to listen to music and access their playlists without the need to download a separate application. It works on different platforms and browsers.
+- **Starbucks**: Starbucks's PWA allows customers to view the menu, customize their orders, and add them to the cart, even when they are offline. Once the connection is restored, they can complete the purchase.
+- **Uber**: The web version of Uber is a PWA that offers a user experience similar to the native application but with a faster loading time and lower data consumption.
+- **Forbes**: This magazine's PWA offers a faster and more engaging reading experience. The application quickly loads content and allows readers to continue reading offline.
+- **Alibaba**: The Chinese e-commerce giant developed a PWA to improve the mobile experience for its users. They were able to increase conversions and user engagement on mobile devices.
+- **OLX**: Global online marketplace that uses a PWA to provide a faster and more efficient browsing experience, resulting in increased user engagement and retention.
+- **Flipkart Lite**: Flipkart, one of India's largest online retailers, created its PWA to offer an efficient shopping experience with offline access and push notifications.
+- **The Washington Post**: Your PWA provides a fast and smooth reading experience. Readers can access the articles and continue reading offline.
 
 Through these examples, we can see how different industries and companies are using PWAs in different contexts to improve the user experience, increase participation and achieve their key business objectives.
 
