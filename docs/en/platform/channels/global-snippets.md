@@ -15,11 +15,11 @@ A change in a global snippet affects all the web applications where it is being 
 
 In the snippet editing view, you can create and manage your global snippets. In the top bar, you have the following options:
 
-- **Differences:** Allows you to compare changes between multiple versions of a snippet. You can select the versions to compare and reset or rollback to previous versions.
-- **Other actions:**
+- **Differences**: Allows you to compare changes between multiple versions of a snippet. You can select the versions to compare and reset or rollback to previous versions.
+- **Other actions**:
     - Archive: To archive a snippet you must first publish it.
     - Delete: To delete a snippet you must first archive it.
-- **Save:** Once you've saved your snippet, this button changes status to **publish**.
+- **Save**: Once you've saved your snippet, this button changes status to **publish**.
 
 The sections that can be found above the work area are:
 
