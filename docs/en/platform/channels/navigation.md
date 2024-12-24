@@ -12,14 +12,14 @@ Navigation only allows three levels of depth, you can have a main list and up to
 
 At the top of the view, you will find the publication status of the menu:
 
-- **Published:** This status appears after you have made a publication and when the editable and published versions are the same.
-- **Pending changes:** This status appears if there is already a published version, but there are changes pending publication in your editable version.
-- **In Review:** This status appears when [Team Review](/en/platform/core/key-concepts.html) is enabled and the editable version has been submitted for review.
-- **Approved:** This status appears when [Team Review](/en/platform/core/key-concepts.html) is enabled and if the item's review conditions have been met. When it is in this state, a template can now be published.
+- **Published**: This status means a widget is published and the version in the editor contains no unpublished changes.
+- **Pending changes**: You will see this status if there is already a published version, but there are pending changes to be published in your editable version.
+- **In review**: You will see this status when [team review](/en/platform/core/key-concepts.html) is enabled and the editable version has been submitted for review.
+- **Approved**: This status appears when [Computer Review](/en/platform/core/key-concepts.html) is enabled and if the item's review conditions were met. If it is in this state, your templates can now be published.
 
 At the top right, you can find the last publication date and the available actions:
 
-**Preview:** Clicking on this icon opens a new tab with the preview mode of the menu, where you can view all the changes.
+**Preview**: Clicking on this icon opens a new tab with the preview mode of the menu, where you can view all the changes.
 
 :::warning Attention
 You can preview the changes as a user without a session or a user with a Modyo session. For this, it is recommended to open or close the Modyo session on the site before entering the preview mode. This is because opening or closing the session within the preview mode can generate security errors such as _x-frame-options_ or _mixed-content_, depending on the configuration of custom domains and SSL of the site.
@@ -29,7 +29,7 @@ You can preview the changes as a user without a session or a user with a Modyo s
 The menu you created will only be displayed on a page if you add it through a published template. Otherwise, the menu will not be requested and will not appear on the page.
 :::
 
-**Differences:** Click here to access the [differences view](/en/platform/core/key-concepts.html#reversing-a-change), in which you can compare the changes between different versions of your menu.
+**Differences**: Click here to access the [differences view](/en/platform/core/key-concepts.html#reversing-a-change), in which you can compare the changes between different versions of your menu.
 
 By default, you start by comparing the published version with the editable version. Use the version selectors to compare with backup versions.
 
@@ -41,7 +41,7 @@ By default, up to 20 backups are saved so that the twenty most recent backups ca
 For more information on versioning, check out the [versioning](/en/platform/core/key-concepts.html#versioning) section.
 :::
 
-**Activity/Feedback:** It is only enabled if you have [team review](/en/platform/core/key-concepts.html) enabled. When you click it, a sidebar opens with the activity history and menu comments.
+**Activity/Feedback**: It is only enabled if you have [team review](/en/platform/core/key-concepts.html) enabled. When you click it, a sidebar opens with the activity history and menu comments.
 
 At the bottom of the sidebar, there is a text box where you can type a comment. Next to each activity, you can click _view detail_ to show the full information for that activity log.
 
@@ -62,16 +62,16 @@ Your menu is currently public but it is not being called. You need to use a temp
 
 **Main Action**
 
-- **Save:** Save all menu changes.
-- **Submit for review:** Change the menu status to “Awaiting review”. In this state, you are still making changes, but each change will be notified via email to the assigned reviewers.
-- **Reject:** Returns to the “In Editing” status, notifying reviewers that the item was rejected.
-- **Publish:** Once the menu has been approved, you can go to the [joint publication](/en/platform/core/key-concepts.html#joint-review-and-publication) view, to publish your navigation.
+- **Save**: Save all menu changes.
+- **Send to review**: Changes the menu status to "In review". In this state you can continue making changes, but each change alerts assigned reviewers via email.
+- **Reject**: Returns to the “In Editing” state, notifying reviewers that the item was rejected.
+- **Publish**: Once the changes are approved, you can go to the [publish view](/en/platform/channels/sites.html#review-and-joint-publication) to review and publish changes across the site.
 
 On the right side section, you can see a bar that changes according to the item selected in the main area. In this section, you can see the following options:
 
-- **Name:** Name of the item that will appear on the site.
-- **Associated page:** Can be directly associated with a page or a custom URL.
-- **URL:** If you chose a custom URL in the previous element, you have different options for configuring this item:
+- **Name**: Name of the item as it appears on the site.
+- **Associated Layout Page**: Directly associate a page to this menu item with a custom URL.
+- **URL**: If you chose a custom URL in the previous item, you have different options to configure this item:
     - HTTP(s): Points to an address using HTTP(s). Examples:
         - http://www.example.com
         - https://www.example.com
@@ -88,9 +88,9 @@ On the right side section, you can see a bar that changes according to the item 
         - sms:+569-123-45678,9-123-45678?body=hello%20there&amp;param1=a%20value
     - Email: Generates a link with the `mailto` URI. Examples:
         - mailto:info@example.com?subject=subject&cc=cc@example.com
-- **Open in a new tab:** Adds the attribute `target='blank'` to the HTML element of the menu item, so that when you click it, it opens in a new tab.
-- **Private:** Makes the selected item visible only when there is an active user session on the site.
-- **Segments:** If there are segments created, you can also segment this item so that users can see this menu item only when they have an active session and that they are also within the selected segments.
+- **Open in new tab**: Enable this option to open a the menu item link in a new tab. Adds the `target='blank'` attribute to the menu item's HTML.
+- **Private**: Makes the selected item appear visible only when the user has an active session on the site.
+- **Segments**: If there are segments created, you can also segment this element so that users can see this menu item only when they have an active session and are also within the selected segments.
 
 ## Menu examples
 
