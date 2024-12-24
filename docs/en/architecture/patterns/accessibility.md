@@ -11,11 +11,11 @@ Web accessibility is based on the principle of universal design, which seeks to 
 Key aspects of web accessibility:
 
 
-- **Assistive technology compatibility:** Ensure that assistive technologies, such as screen readers or special keyboards, can effectively navigate and access content.
-- **Semantic tagging:** Use HTML tags correctly to structure and describe content clearly, allowing people with visual or cognitive disabilities to understand the information presented.
-- **Contrast and legibility:** Ensure adequate contrast between text and background to facilitate reading for people with visual disabilities or perception difficulties.
-- **Ease of navigation and use:** Design intuitive and easy-to-navigate interfaces, incorporating controls and interactive elements accessible with both the mouse and the keyboard.
-- **Alternatives for non-textual content:** Provide textual descriptions for images or videos so that people with visual or hearing disabilities understand the content.
+- **Assistive technology compatibility**: Ensure that assistive technologies, such as screen readers or special keyboards, can effectively navigate and access content.
+- **Semantic tagging**: Use HTML tags correctly to structure and describe content clearly, allowing people with visual or cognitive disabilities to understand the information presented.
+- **Contrast and legibility**: Ensure adequate contrast between text and background to facilitate reading for people with visual disabilities or perception difficulties.
+- **Ease of navigation and use**: Design intuitive and easy-to-navigate interfaces, incorporating controls and interactive elements accessible with both the mouse and the keyboard.
+- **Alternatives for non-textual content**: Provide textual descriptions for images or videos so that people with visual or hearing disabilities understand the content.
 
 Web accessibility is essential for inclusion and equal access to information and online services. Meeting accessibility standards and guidelines, such as those established by the World Wide Web Consortium (W3C) in the Web Content Accessibility Guidelines (WCAG), is essential to creating an accessible web and reaching a wider audience.
 
@@ -25,10 +25,10 @@ Web accessibility is essential for inclusion and equal access to information and
 
 Web accessibility is measured using different techniques and evaluations. Some of the most common forms are:
 
-- **Manual evaluation:** Consists of manually reviewing the website or application to identify possible accessibility barriers, including verifying the structure of the content, the correct use of tags, contrast, navigability, the presence of alternatives for non-textual content, and other key aspects.
-- **Automatic evaluation tools:** Use automated tools that analyze the code and content of a website for accessibility issues. These tools can detect missing or incorrect elements, provide recommendations, and generate reports on the level of accessibility of the site.
-- **Testing with real users:** Involves testing and evaluating the accessibility of the website by people with disabilities or limitations. Real users can provide valuable feedback to find barriers and identify areas for improvement.
-- **Compliance with standards and guidelines:** Consists of evaluating whether the website complies with established accessibility standards and guidelines, such as the W3C WCAG.
+- **Manual evaluation**: Consists of manually reviewing the website or application to identify possible accessibility barriers, including verifying the structure of the content, the correct use of tags, contrast, navigability, the presence of alternatives for non-textual content, and other key aspects.
+- **Automatic evaluation tools**: Use automated tools that analyze the code and content of a website for accessibility issues. These tools can detect missing or incorrect elements, provide recommendations, and generate reports on the level of accessibility of the site.
+- **Testing with real users**: Involves testing and evaluating the accessibility of the website by people with disabilities or limitations. Real users can provide valuable feedback to find barriers and identify areas for improvement.
+- **Compliance with standards and guidelines**: Consists of evaluating whether the website complies with established accessibility standards and guidelines, such as the W3C WCAG.
 
 Web accessibility is an ongoing process that you must perform periodically to ensure that a website or application is always accessible, especially during development and update phases. It is essential to consider the needs and feedback of users with disabilities, as they are the ones who can best evaluate the accessibility of the site.
 
