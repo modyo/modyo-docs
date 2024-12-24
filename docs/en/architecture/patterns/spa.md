@@ -10,17 +10,17 @@ Instead of loading completely new pages, SPAs use DOM manipulation and asynchron
 
 Advantages of SPAs:
 
-- **Smooth user experience:** They offer a faster and smoother experience for users, as content updates are performed dynamically and without interruption.
-- **Interactivity and fast navigation:** They permit faster and smoother navigation in the application, by only updating the necessary components and not loading additional pages.
-- **Performance improvement:** They improve the overall performance of the application and reduce load times by reducing the amount of data and resources that must be transmitted and processed in each interaction.
-- **More efficient development:** They allow for more efficient development by using modern frameworks and libraries, such as React, Angular, or Vue.js, which offer a component-based approach and facilitate code reuse.
+- **Smooth user experience**: They offer a faster and smoother experience for users, as content updates are performed dynamically and without interruption.
+- **Interactivity and fast navigation**: They permit faster and smoother navigation in the application, by only updating the necessary components and not loading additional pages.
+- **Performance improvement**: They improve the overall performance of the application and reduce load times by reducing the amount of data and resources that must be transmitted and processed in each interaction.
+- **More efficient development**: They allow for more efficient development by using modern frameworks and libraries, such as React, Angular, or Vue.js, which offer a component-based approach and facilitate code reuse.
 
 Disadvantages of SPAs:
 
-- **Higher initial complexity:** They may have a steeper learning curve due to the need to understand and work with additional frameworks and tools.
-- **Higher memory consumption:** They may require more memory in the browser due to the need to keep the entire state of the application in memory when browsing.
-- **SEO and social sharing:** Search crawlers and link previews may not correctly interpret the dynamic content of SPAs, which can present challenges related to SEO and social sharing.
-- **JavaScript dependency:** They require that users have Javascript enabled in their browser to work properly.
+- **Higher initial complexity**: They may have a steeper learning curve due to the need to understand and work with additional frameworks and tools.
+- **Higher memory consumption**: They may require more memory in the browser due to the need to keep the entire state of the application in memory when browsing.
+- **SEO and social sharing**: Search crawlers and link previews may not correctly interpret the dynamic content of SPAs, which can present challenges related to SEO and social sharing.
+- **JavaScript dependency**: They require that users have Javascript enabled in their browser to work properly.
 
 :::tip Tip
 It's important to carefully evaluate project needs and specific requirements before choosing to develop a SPA. While SPAs offer many advantages, they also present additional challenges that must be considered.
