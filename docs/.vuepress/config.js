@@ -24,7 +24,7 @@ module.exports = {
   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-MW9VKMC');
   `,
       ]
@@ -133,13 +133,15 @@ module.exports = {
                         path: "/en/platform/customers/",
                         collapsable: true,
                         children: [
-                            "/en/platform/customers/realms",
-                            "/en/platform/customers/profile",
+                            "/en/platform/customers/overview",
+                            "/en/platform/customers/users",
                             "/en/platform/customers/events",
                             "/en/platform/customers/segments",
                             "/en/platform/customers/forms",
                             "/en/platform/customers/origination",
                             "/en/platform/customers/messaging",
+                            "/en/platform/customers/settings",
+                            "/en/platform/customers/profile",
                             "/en/platform/customers/api",
                         ],
                       },
