@@ -1,4 +1,4 @@
-{ 
+{
   "index_name": "modyo_docs_index",
   "start_urls": [
     {
@@ -9,7 +9,21 @@
       ]
     },
     {
+      "url": "https://es.modyo.com/comunidad/developer-tips",
+      "selectors_key": "es",
+      "tags": [
+        "es"
+      ]
+    },
+    {
       "url": "https://docs.modyo.com/en/",
+      "selectors_key": "en",
+      "tags": [
+        "en"
+      ]
+    },
+    {
+      "url": "https://www.modyo.com/community/developer-tips",
       "selectors_key": "en",
       "tags": [
         "en"
