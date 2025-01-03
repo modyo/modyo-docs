@@ -5,6 +5,12 @@ search: true
 # Release Notes
 
 ## 9.2
+### 9.2.70 - January 03, 2025
+<Badge text="Customers" type="customers" vertical="middle"/>
+* Fixes problems with access to appearance editing in a realm configuration
+
+<Badge text="Content" type="content" vertical="middle"/>
+* Fixes problems related to listing and publishing content
 
 ### 9.2.69 - December 09, 2024
 <Badge text="Customers" type="customers" vertical="middle"/>
