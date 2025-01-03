@@ -5,10 +5,18 @@ search: true
 # Notas del release
 
 ## 9.2
+### 9.2.70 - 03 de enero de 2025
+<Badge text="Customers" type="customers" vertical="middle"/>
+* Corrige problemas de acceso a la edición de la apariencia en las configuraciones de un reino
+
+<Badge text="Content" type="content" vertical="middle"/>
+* Corrige problemas relacionados al listado y publicación de contenidos
+
 
 ### 9.2.69 - 09 de diciembre de 2024
 <Badge text="Customers" type="customers" vertical="middle"/>
 * Agrega método de pago Yape de Payu Perú
+
 
 ### 9.2.68 - 19 de noviembre de 2024
 <Badge text="Core" type="core" vertical="middle"/>
@@ -19,6 +27,7 @@ search: true
 
 * Corrige errores de mensajes flash que se muestran incorrectamente en flujos de login directo con un identity provider
 * Corrige log de errores en transacciones de pagos
+
 
 ### 9.2.67 - 21 de octubre de 2024
 <Badge text="Core" type="core" vertical="middle"/>
