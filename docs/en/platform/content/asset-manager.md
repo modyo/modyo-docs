@@ -14,16 +14,16 @@ In Media, you can assign editing and deleting permissions to images through grou
 You can upload different types of media to this space, considering the following size restrictions per file:
 
 
-- **Images:** 6 MB
-- **Videos:** 10 MB
-- **Audios:** 10 MB
-- **Files:** 10 MB
+- **Images**: 6 MB
+- **Videos**: 10 MB
+- **Audios**: 10 MB
+- **Files**: 10 MB
 
 The allowed file types are:
-- **Images:** apng, avif, bmp, gif, ico, jpeg, jpg, png, tif, tiff, webp
-- **Videos:** av, avi, f4v, flv, mkv, mov, mp4, mpeg, webm, wmv
-- **Audios:** 3gp, aac, alac, dsd, flac, mp3, pcm, wav, m4a, ogg, wma
-- **Files:** 7z, ai, apk, css, csv, doc, docx, fon, ico, iso, jar, js, msi, ods, odt, otf, pdf, ppt, pptx, rar, rss, rtf, scss, tar, tex, ttf, txt, vcf, wdp, xhtml, xls, xlsm, xlsx, xml, zip, one, ecf, pub, xps, json, svg, woff, woff2, ics
+- **Images**: apng, avif, bmp, gif, ico, jpeg, jpg, png, tif, tiff, webp
+- **Videos**: av, avi, f4v, flv, mkv, mov, mp4, mpeg, webm, wmv
+- **Audios**: 3gp, aac, alac, dsd, flac, mp3, pcm, wav, m4a, ogg, wma
+- **Files**: 7z, ai, apk, css, csv, doc, docx, fon, ico, iso, jar, js, msi, ods, odt, otf, pdf, ppt, pptx, rar, rss, rtf, scss, tar, tex, ttf, txt, vcf, wdp, xhtml, xls, xlsm, xlsx, xml, zip, one, ecf, pub, xps, json, svg, woff, woff2, ics
 
 
 
@@ -36,20 +36,20 @@ In the upper right part of the screen you can see the percentage of used space c
 Modyo displays 30 files per page. At the bottom you can navigate between the file pages.
 
 You can filter the content by:
-- **Extensions:** Filter by file type.
-- **Author:** Filter by username who uploaded the content.
-- **Tags:** Shows all the files associated with a tag.
-- **Search bar:** Type a word to display files that contain that word in their name or metadata.
+- **Extensions**: Filter by file type.
+- **Author**: Original creator of the entry.
+- **Tags**: Shows all the files associated with a tag.
+- **Search bar**: Type a word to display files that contain that word in their name or metadata.
 
 Labels allow you to organize and group your files. To modify the tags of more than one file, select the files you want and click on the **Add or Remove Tags** button that appears at the bottom of the list.
 
 In this view, the columns are:
-- **Preview:** If the platform identifies that the file is an image, you can view a thumbnail image of the file. If it isn't, the space appears blank.
-- **Name:** Name of the file and its extension. The order is alphabetical.
-- **Type:** File type and extension. The sorting is alphabetical, first by type and then by the name of the extension.
-- **Size:** Size in kilobytes of the file.
-- **Created on:** Date of upload or creation within the platform, regardless of whether the file was created on a different date on another service.
-- **Author:** Name of the user who uploaded the file, only when the user is assigned a name.
+- **Preview**: If the platform identifies that the file is an image, you can view a thumbnail image of the file. If it isn't, the space appears blank.
+- **Name**: Name of the file and its extension. The order is alphabetical.
+- **Type**: File type and extension. The sorting is alphabetical, first by type and then by the name of the extension.
+- **Size**: Size in kilobytes of the file.
+- **Created on**: Date of upload or creation within the platform, regardless of whether the file was created on a different date on another service.
+- **Author**:Name of the user who uploaded the file, only when the user is assigned a name.
 
 
 ## Upload a file
@@ -76,12 +76,12 @@ Modyo allows you to upload 10 files at a time. If you need to upload more items,
 ## Edit a File
 In the file interface, click on the name of a file to open the file properties editing interface and see:
 
-- **File URL:** Shows the public URL of the file. Click on the icon next to the URL to copy it. It is not modifiable.
-- **Liquid tag:** Shows the liquid tag in the file, click on the icon to copy and use it in the contents of the platform. It is not modifiable.
-- **Title:** Shows the title of the file. This section is different from the name of the file, which cannot be changed.
-- **Alternative text:** Shows the element's alt text. For images and videos only.
-- **Description:** Description of the element, we recommend writing a short text referring to the image.
-- **Labels:** Shows the tags associated with the file. You can search for and add more tags, as well as delete existing tags.
+- **File URL**: Shows the public URL of the file. Click on the icon next to the URL to copy it. It is not modifiable.
+- **Liquid tag**: Shows the liquid tag in the file, click on the icon to copy and use it in the contents of the platform. It is not modifiable.
+- **Title**: Shows the title of the file. This section is different from the file name, which cannot be changed.
+- **Alternative text**: Shows the element's alt text. For images and videos only.
+- **Description**: Description of the element, we recommend writing a short text referring to the image.
+- **Labels**: Shows the tags associated with the file. You can search for and add more tags, as well as delete existing tags.
 
 Click **Update Information** to confirm the changes or **Close** to cancel them.
 

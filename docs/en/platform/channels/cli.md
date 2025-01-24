@@ -8,9 +8,9 @@ The Modyo Command Line Interface (CLI) is a tool based on two fundamental princi
 
  #### Benefits of the Modyo CLI
 
-- **Local work: ** You can create widgets of any size or complexity from your local environment.
-- **Store widgets in local repositories:** Making it easier to manage widgets and collaborate with other developers using version control systems.
-- **Widget reuse: ** Allows you to create a widget once and reuse it on multiple sites and occasions.
+- **Local work**: You can create widgets of any size or complexity in your local environment.
+- **Store widgets in local repositories**: Making it easier to manage widgets and collaborate with other developers using version control systems.
+- **Widget reuse**: Allows you to create a widget once and reuse it on multiple sites and occasions.
 
 ## Installation
 
@@ -53,13 +53,13 @@ $ modyo-cli autocomplete bash
 
 ## Setting up the environment
 
-The next step is to configure your project to make it easier to upload widgets to the Modyo platform and include them in the pages you build. Although you can specify everything as parameters in the push call, we recommend defining a set of environment variables in a `.env` file. This file will allow you to specify attributes such as the URL of the account, the site where it will be hosted and the access token, among others. 
+The next step is to configure your project to make it easier to upload widgets to the Modyo platform and include them in the pages you build. Although you can specify everything as parameters in the push call, we recommend defining a set of environment variables in a `.env` file. This file will allow you to specify attributes such as the URL of the account, the site where it will be hosted and the access token, among others.
 
 #### Previous Actions
 
-1. **Get a Modyo access token: ** To obtain the token you need to have a user or [create one](/en/platform/core/roles.html#create-user) who has at least the [role](/en/platform/core/roles.html#roles) of site developer-cli in the sites or stages where you will deploy your widget. Once you've created the user, you can [set up an access token](/en/platform/core/api.html#authentication). This token will be used to configure and activate deployments on the platform.
+1. **Get a Modyo access token**: To obtain the token you need to have a user or [create one](/en/platform/core/roles.html#create-user) who has at least the [role](/en/platform/core/roles.html#roles) of site developer-cli in the sites or stages where you will deploy your widget. Once you've created the user, you can [set up an access token](/en/platform/core/api.html#authentication). This token will be used to configure and activate deployments on the platform.
 
-2. **Identify the application where you will publish: **
+2. **Identify the application where you will publish**:
 To get the ID of your application, go to the summary of your application where you will find the corresponding ID. We recommend using this value whenever possible. If you need to use the site host, you'll find it in the general configuration section of your application.
 
 #### Configuring the .env file

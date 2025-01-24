@@ -30,12 +30,12 @@ Cada servicio se crea para manejar capacidades empresariales específicas y se c
 
 #### Beneficios de los microservicios
 
-- **Agilidad:** Fomentan equipos pequeños e independientes que pueden trabajar de manera más rápida y eficiente en contextos bien comprendidos. Esto reduce los tiempos de desarrollo y aumenta el rendimiento de la organización.
-- **Escalabilidad flexible:** Permiten que cada servicio se escale de forma independiente para satisfacer la demanda de la característica de la aplicación que respalda. Esto permite a los equipos adaptarse a las necesidades de la infraestructura, medir con precisión el costo de una característica y mantener disponibilidad si un servicio experimenta un aumento en la demanda.
-- **Implementación sencilla:** Los microservicios permiten la integración y entrega continua, lo que facilita probar nuevas ideas y revertirlas si algo no funciona. El bajo costo de los errores permite experimentar, facilita la actualización del código y acelera el tiempo de comercialización de las nuevas características.
-- **Libertad tecnológica:** No siguen un enfoque de "diseño único". Los equipos tienen la libertad de elegir la mejor herramienta para resolver cada tarea o situación.
-- **Código reutilizable:** La división del software en módulos pequeños y bien definidos permite a los equipos usar funciones para diferentes propósitos. Un servicio desarrollado para una función específica puede ser utilizado como componente básico para otra característica. Esto facilita el inicio de una aplicación, ya que los desarrolladores pueden crear nuevas capacidades sin tener que escribir código desde cero.
-- **Resiliencia:** La independencia del servicio aumenta la resistencia a los errores. En caso de existir un error en un servicio, las aplicaciones pueden degradar la funcionalidad sin afectar toda la aplicación.
+- **Agilidad**: Fomentan equipos pequeños e independientes que pueden trabajar de manera más rápida y eficiente en contextos bien comprendidos. Esto reduce los tiempos de desarrollo y aumenta el rendimiento de la organización.
+- **Escalabilidad flexible**: Permiten que cada servicio se escale de forma independiente para satisfacer la demanda de la característica de la aplicación que respalda. Esto permite a los equipos adaptarse a las necesidades de la infraestructura, medir con precisión el costo de una característica y mantener disponibilidad si un servicio experimenta un aumento en la demanda.
+- **Implementación sencilla**: Los microservicios permiten la integración y entrega continua, lo que facilita probar nuevas ideas y revertirlas si algo no funciona. El bajo costo de los errores permite experimentar, facilita la actualización del código y acelera el tiempo de comercialización de las nuevas características.
+- **Libertad tecnológica**: No siguen un enfoque de "diseño único". Los equipos tienen la libertad de elegir la mejor herramienta para resolver cada tarea o situación.
+- **Código reutilizable**: La división del software en módulos pequeños y bien definidos permite a los equipos usar funciones para diferentes propósitos. Un servicio desarrollado para una función específica puede ser utilizado como componente básico para otra característica. Esto facilita el inicio de una aplicación, ya que los desarrolladores pueden crear nuevas capacidades sin tener que escribir código desde cero.
+- **Resiliencia**: La independencia del servicio aumenta la resistencia a los errores. En caso de existir un error en un servicio, las aplicaciones pueden degradar la funcionalidad sin afectar toda la aplicación.
 
 ### Implementación de microservicios con Modyo
 
@@ -47,11 +47,11 @@ Los microservicios desarrollados en Modyo Connect tienen la capacidad de escalar
 
 Algunas consideraciones importantes al desarrollar microservicios en Modyo Connect son:
 
-- **Spring Boot:** Framework utilizado para el desarrollo
-- **Modyo Commons Library:** Librería de apoyo para tareas comunes como la gestión de errores, registros de logs,
+- **Spring Boot**: Framework utilizado para el desarrollo
+- **Modyo Commons Library**: Librería de apoyo para tareas comunes como la gestión de errores, registros de logs,
   autenticación, etc.
-- **OpenAPI:** Estándar para la definición y publicación de APIs en el API Gateway
-- **Estructura y estilo de código:** Recomendamos utilizar el inicializador de [Spring Boot](https://start.spring.io)
+- **OpenAPI**: Estándar para la definición y publicación de APIs en el API Gateway
+- **Estructura y estilo de código**: Recomendamos utilizar el inicializador de [Spring Boot](https://start.spring.io)
   o [Yeoman](https://yeoman.io/generators) para dar una estándar al código fuente. Recomendamos además, seguir el
   estilo de código recomendado por [Google](https://google.github.io/styleguide/javaguide.html).
 
@@ -59,20 +59,20 @@ Algunas consideraciones importantes al desarrollar microservicios en Modyo Conne
 
 Los microservicios que requieren de persistencia relacional de datos deben considerar las siguientes pautas:
 
-- **Bloqueos:** Evitar consultas que puedan generar [bloqueos](https://www.baeldung.com/jpa-pessimistic-locking) en las tablas de la base de datos durante momentos de alta demanda.
-- **Eficiencia:** Traer únicamente la información requerida de la base de datos. En ocasiones puede ser beneficiosos utilizar [lazy loading](https://www.baeldung.com/hibernate-lazy-eager-loading) para evitar consultas innecesarias a la base de datos en cada iteración dentro de un bucle.
-- **Índices:** Asegurar que los índices aplicados al esquema sean efectivos. Usar el comando [“explain”](https://dev.mysql.com/doc/refman/8.0/en/using-explain.html) de forma local para verificar su uso.
-- **Migraciones y versionamiento:** Asegurar el [versionamiento y la automatización](https://flywaydb.org) de tareas que operan sobre el esquema de datos.
-- **Pool de conexiones:** Asegurar una configuración correcta del [pool de conexiones](https://www.baeldung.com/java-connection-pooling)y dimensionar adecuadamente el motor de base de datos, según la concurrencia y escalabilidad esperada.
+- **Bloqueos**: Evitar consultas que puedan generar [bloqueos](https://www.baeldung.com/jpa-pessimistic-locking) en las tablas de la base de datos durante momentos de alta demanda.
+- **Eficiencia**: Traer únicamente la información requerida de la base de datos. En ocasiones puede ser beneficiosos utilizar [lazy loading](https://www.baeldung.com/hibernate-lazy-eager-loading) para evitar consultas innecesarias a la base de datos en cada iteración dentro de un bucle.
+- **Índices**: Asegurar que los índices aplicados al esquema sean efectivos. Usar el comando ["explain"](https://dev.mysql.com/doc/refman/8.0/en/using-explain.html) de forma local para verificar su uso.
+- **Migraciones y versionamiento**: Asegurar el [versionamiento y la automatización](https://flywaydb.org) de tareas que operan sobre el esquema de datos.
+- **Pool de conexiones**: Asegurar una configuración correcta del [pool de conexiones](https://www.baeldung.com/java-connection-pooling)y dimensionar adecuadamente el motor de base de datos, según la concurrencia y escalabilidad esperada.
 
 #### Conexión con servicios externos
 
 Los microservicios desarrollados en Modyo Connect pueden integrarse a otros sistemas, como APIs y Web Services externos. Para ello debes tener presente las siguientes consideraciones:
 
-- **Conectividad:** Asegurar que la conectividad desde las redes de AWS hacia los endpoints del servicio estén definidos y sean estables.
-- **Seguridad:** Asegurar que el enlace a los servicios externos se establezca mediante un canal seguro, mediante VPNs o [mTLS](https://www.cloudflare.com/learning/access-management/what-is-mutual-tls/).
-- **Manejo de errores:** Los errores originados en servicios externos deben ser gestionados de manera apropiada a nivel del microservicio para asegurar una experiencia de usuario satisfactoria.
-- **Timeouts y bloqueos:** Los servicios externos con problemas de rendimiento o conectividad pueden causar bloqueos en la experiencia del usuario o un uso excesivo de recursos dentro del microservicio. Recomendamos definir timeouts razonables en cada llamada, alineados con los definidos en el API Gateway. Además, te sugerimos utilizar invocaciones asíncronas cuando los tiempos de respuesta no sean predecibles.
+- **Conectividad**: Asegurar que la conectividad desde las redes de AWS hacia los endpoints del servicio estén definidos y sean estables.
+- **Seguridad**: Asegurar que el enlace a los servicios externos se establezca mediante un canal seguro, mediante VPNs o [mTLS](https://www.cloudflare.com/learning/access-management/what-is-mutual-tls/).
+- **Manejo de errores**: Los errores originados en servicios externos deben ser gestionados de manera apropiada a nivel del microservicio para asegurar una experiencia de usuario satisfactoria.
+- **Timeouts y bloqueos**: Los servicios externos con problemas de rendimiento o conectividad pueden causar bloqueos en la experiencia del usuario o un uso excesivo de recursos dentro del microservicio. Recomendamos definir timeouts razonables en cada llamada, alineados con los definidos en el API Gateway. Además, te sugerimos utilizar invocaciones asíncronas cuando los tiempos de respuesta no sean predecibles.
 
 #### Arquitectura Héxagonal
 La arquitectura hexagonal, también conocida como Arquitectura Puertos y Adaptadores, es un patrón de arquitectura de software que se enfoca en la separación de las preocupaciones (System on a Chip o SoC) y en la independencia del hardware y del software en una aplicación.
@@ -81,9 +81,9 @@ Esta arquitectura organiza la aplicación de manera que el núcleo de la lógica
 
 La arquitectura hexagonal se compone de tres capas principales:
 
-- **Capa de dominio:** Contiene la lógica de negocio de la aplicación y representa el núcleo de la arquitectura. Esta capa es independiente de la interfaz de usuario y de la capa de infraestructura.
-- **Capa de adaptadores de infraestructura:** Contiene los adaptadores que conectan la capa de dominio con las capas de infraestructura. Los adaptadores se encargan de transformar los datos entre los formatos de la capa de dominio y los formatos específicos de la infraestructura; por ejemplo, bases de datos y servicios web.
-- **Capa de infraestructura:** Contiene los componentes específicos de la infraestructura que se utilizan en la aplicación, como bases de datos, servicios web y sistemas de archivos.
+- **Capa de dominio**: Contiene la lógica de negocio de la aplicación y representa el núcleo de la arquitectura. Esta capa es independiente de la interfaz de usuario y de la capa de infraestructura.
+- **Capa de adaptadores de infraestructura**: Contiene los adaptadores que conectan la capa de dominio con las capas de infraestructura. Los adaptadores se encargan de transformar los datos entre los formatos de la capa de dominio y los formatos específicos de la infraestructura; por ejemplo, bases de datos y servicios web.
+- **Capa de infraestructura**: Contiene los componentes específicos de la infraestructura que se utilizan en la aplicación, como bases de datos, servicios web y sistemas de archivos.
 
 La arquitectura hexagonal tiene varios beneficios, entre ellos:
 
@@ -97,8 +97,8 @@ Los microservicios de Dynamic Framework se desarrollan siguiendo los principios 
 
 #### Otras consideraciones
 
-- **Tareas pesadas:** Recomendamos usar procesamiento en segundo plano, mediante [colas de mensajería](/es/connect/components/infrastructure.html#colas-de-mensajeria), para servicios lentos o sensibles a las fluctuaciones de tráfico.
-- **Programación de tareas:** Para servicios que requieren programación de tareas, recomendamos usar [ShedLock](https://www.baeldung.com/shedlock-spring) en los microservicios que requieran agendamiento de tareas programadas.
-- **Workflows y máquina de estado:** Se recomienda el uso de [máquinas de estados](https://www.baeldung.com/spring-state-machine) para la orquestación de procesos complejos. Así como integrar tecnologías de workflows con Spring Boot.
-- **Arquitectura hexagonal:** Para desarrollo, pruebas y mantenimiento más flexibles y centrados en el dominio de la aplicación, este patrón de diseño de software separa la lógica de negocio de una aplicación de sus servicios externos.
-- **API de Modyo:** Recomendamos usar el API administrativa de la plataforma Modyo para tareas comunes, como el envío de mensajes a usuarios o la integración con el contenido administrado.
+- **Tareas pesadas**: Recomendamos usar procesamiento en segundo plano, mediante [colas de mensajería](/es/connect/components/infrastructure.html#colas-de-mensajeria), para servicios lentos o sensibles a las fluctuaciones de tráfico.
+- **Programación de tareas**: Para servicios que requieren programación de tareas, recomendamos usar [ShedLock](https://www.baeldung.com/shedlock-spring) en los microservicios que requieran agendamiento de tareas programadas.
+- **Workflows y máquina de estado**: Se recomienda el uso de [máquinas de estados](https://www.baeldung.com/spring-state-machine) para la orquestación de procesos complejos. Así como integrar tecnologías de workflows con Spring Boot.
+- **Arquitectura hexagonal**: Para desarrollo, pruebas y mantenimiento más flexibles y centrados en el dominio de la aplicación, este patrón de diseño de software separa la lógica de negocio de una aplicación de sus servicios externos.
+- **API de Modyo**: Recomendamos usar el API administrativa de la plataforma Modyo para tareas comunes, como el envío de mensajes a usuarios o la integración con el contenido administrado.

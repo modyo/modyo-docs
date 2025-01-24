@@ -179,12 +179,12 @@ Agrega formato de divisa a un valor. *e.g.*
 :::warning Importante
 Este filtro determina el formato de la moneda y tiene prioridad sobre cualquier otra configuración de divisa.
 
-Si no especificas parámetros de divisa con el filtro de currency, Modyo utiliza la configuración de [payment](https://docs.modyo.com/es/platform/customers/realms.html#configuracion-de-payment) del reino.
+Si no especificas parámetros de divisa con el filtro de currency, Modyo utiliza la configuración de [payment](/es/platform/customers/settings.html#configuracion-de-payment) del reino.
 
 En caso de que el sitio no tenga un reino asociado y no especifiques parámetros, se aplicará el formato predefinido del idioma del sitio.
 :::
 
-**Parámetros:**
+**Parámetros**:
 
 - unit - símbolo de la moneda.
 - separator - separador de decimales.
@@ -216,7 +216,7 @@ Retorna el URL de una imagen usando su uuid del Gestor de Archivos. *e.g.*
 Retorna los tags de un video usando su uuid del Gestor de Archivos. *e.g.*
 <span v-pre>`{{ uuid | asset_video: 350, 300 }}`</span>
 
-**Parametros:**
+**Parametros**:
 - uuid (String) — asset uuid
 - width (Integer) (default: 300) — ancho
 - height (Integer) (default: 200) — largo
@@ -226,7 +226,7 @@ Retorna los tags de un video usando su uuid del Gestor de Archivos. *e.g.*
 Retorna una lista de Entradas que pertenecen a la Categoría seleccionada. *e.g.*
 <span v-pre>`{% assign filtered_entries = entries | by_category: 'category2,category1,category3' %}`</span>
 
-**Parametros:**
+**Parametros**:
 - entries (ArrayEntry) — array con entradas
 - list (String) (default: '') — String con categorías separadas por coma.
 
@@ -235,7 +235,7 @@ Retorna una lista de Entradas que pertenecen a la Categoría seleccionada. *e.g.
 Retorna una lista de Entradas que pertenecen a un lenguaje seleccionado. *e.g.*
 <span v-pre>`{% assign entries = widget.entries | locale: 'es,en,pt' %} => entries`</span>
 
-**Parametros:**
+**Parametros**:
 - entries (ArrayEntry) — array con entradas
 - locale (String) (default: '') — String con lenguajes separadas por coma.
 
@@ -244,7 +244,7 @@ Retorna una lista de Entradas que pertenecen a un lenguaje seleccionado. *e.g.*
 Retorna una lista de Entradas que pertenecen a un slug seleccionado. *e.g.*
 <span v-pre>`{% assign filtered_entries = entries | by_slug: 'slug2,slug1,slug' %}`</span>
 
-**Parametros:**
+**Parametros**:
 - entries (ArrayEntry) — array con entradas
 - slug (String) (default: '') — Slug separadas por coma.
 
@@ -253,7 +253,7 @@ Retorna una lista de Entradas que pertenecen a un slug seleccionado. *e.g.*
 Retorna una lista de Entradas que pertenecen a un tag seleccionado. *e.g.*
 <span v-pre>`{% assign entries = widget.entries | by_tag: 'tag2,tag1,tag3' %} => entries`</span>
 
-**Parametros:**
+**Parametros**:
 - entries (ArrayEntry) — array con entradas
 - locale (String) (default: '') — String con tags separadas por coma.
 
@@ -262,7 +262,7 @@ Retorna una lista de Entradas que pertenecen a un tag seleccionado. *e.g.*
 Retorna una lista de Entradas que pertenecen a un Tipo de Contenido seleccionado. *e.g.*
 <span v-pre>`{% assign filtered_entries = entries | by_type: 'type2,type1,type3' %}`</span>
 
-**Parametros:**
+**Parametros**:
 - entries (ArrayEntry) — array con entradas
 - locale (String) (default: '') — String con tipos de contenido separados por coma.
 
@@ -271,7 +271,7 @@ Retorna una lista de Entradas que pertenecen a un Tipo de Contenido seleccionado
 Retorna una lista de Entradas que cumplen con un filtro. *e.g.*
 <span v-pre>`{% assign entries = widget.entries | filter_by: field: 'name', eq: 'entry3Cat3' %}`</span>
 
-**Parametros:**
+**Parametros**:
 - entries (ArrayEntry) — array con entradas
 - opts (Hash) (default: {}) — hash con el campo y eq como el valor
 
@@ -283,11 +283,11 @@ Retorna una lista de Entradas que cumplen con un query. Se pueden usar operadore
 
 - gt, lt, in, all, nin
 
-**Fields:**
+**Fields**:
 - meta.category meta.category_slug meta.category_name meta.uuid meta.name meta.created_at
  meta.updated_at meta.published_at meta.unpublished_at meta.slug meta.tag
 
-**Url examples:**
+**Url examples**:
 
 - https://company.site.com/testsite?meta.category_slug=category3
 - https://company.site.com/testsite?meta.tag=tag_name
@@ -297,7 +297,7 @@ Retorna una lista de Entradas que cumplen con un query. Se pueden usar operadore
 *e.g.*
 <span v-pre>`{% assign entries = widget.entries | filter_by_query_string %}`</span>
 
-**Parametros:**
+**Parametros**:
 - entries (ArrayEntry) — array con entradas
 
 ### From Published Date
@@ -306,7 +306,7 @@ Retorna una lista de Entradas que tengan una fecha de publicación más reciente
 <span v-pre>`{% assign entries = widgets.entries | from_published_date: date %}
 `</span>
 
-**Parametros:**
+**Parametros**:
 - entries (ArrayEntry) — array con entradas
 - date (Datetime)(default: Time.zone.now) — fecha límite
 
@@ -315,7 +315,7 @@ Retorna una lista de Entradas que tengan una fecha de publicación más reciente
 Límita el número de resultados. *e.g.*
 <span v-pre>`{{ entries | limit: 1 }}`</span>
 
-**Parametros:**
+**Parametros**:
 - objeto(Array) — array
 - limit (Integer)(default: 1) — límite de resultados
 
@@ -324,7 +324,7 @@ Límita el número de resultados. *e.g.*
 Separa los resultados en páginas. *e.g.*
 <span v-pre>`{{ objects | paginated: 10, 2 }}`</span>
 
-**Parametros:**
+**Parametros**:
 - objeto(Array) — array
 - per_page (Integer) (default: 10) — objetos por página
 - page (Integer) (default: 1) — número de página a mostrar
@@ -334,7 +334,7 @@ Separa los resultados en páginas. *e.g.*
 Retorna un array con las entradas ordenadas por un campo *e.g.*
 <span v-pre>`{% assign entries = widgets.entries | sort_by: 'name', 'asc' %}`</span>
 
-**Parametros:**
+**Parametros**:
 - entries (ArrayEntry) — array con entradas
 - atributo (String) — campo por el cual se quiere ordenar
 - orden (String) - asc (asecendente) o desc (desciendiente)
@@ -346,7 +346,7 @@ Retorna una lista de Entradas que tengan una fecha de publicación más vieja qu
 <span v-pre>`{% assign entries = widgets.entries | to_published_date: date %}
 `</span>
 
-**Parametros:**
+**Parametros**:
 - entries (ArrayEntry) — array con entradas
 - date (Datetime)(default: Time.zone.now) — fecha límite
 
@@ -571,11 +571,6 @@ Traduce una fecha a formato DateTime. *e.g.*
 
 Traduce una fecha a un formato reducido. dd-mm-yyyy *e.g.*
 <span v-pre>`{{ time | format_short_date }}`</span>
-
-### Get Session ID
-
-Retorna el ID de la sesión. *e.g.*
-<span v-pre>`{{ get_session_id }}`</span>
 
 ### Asset Image Tag
 

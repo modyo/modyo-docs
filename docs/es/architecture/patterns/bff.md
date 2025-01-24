@@ -12,10 +12,10 @@ El patrón BFF resuelve esto añadiendo una capa de backend específica para cad
 
 Ventajas del patrón BFF:
 
-- **Adaptabilidad:** Se adapta a las necesidades de cada cliente y a las necesidades de visualización, optimizando la experiencia del usuario.
-- **Independencia del frontend:** Los equipos de frontend y backend pueden trabajar de manera independiente y realizar cambios sin afectar a los otros componentes.
-- **Mejora de rendimiento:** Optimiza consultas y respuestas de datos para cada cliente, mejorando así el rendimiento de la aplicación.
-- **Facilidad de evolución:** Simplifica la evolución y mantenimiento de la aplicación al separar responsabilidades. Se pueden realizar cambios en una interfaz de usuario sin afectar a otras partes del sistema.
+- **Adaptabilidad**: Se adapta a las necesidades de cada cliente y a las necesidades de visualización, optimizando la experiencia del usuario.
+- **Independencia del frontend**: Los equipos de frontend y backend pueden trabajar de manera independiente y realizar cambios sin afectar a los otros componentes.
+- **Mejora de rendimiento**: Optimiza consultas y respuestas de datos para cada cliente, mejorando así el rendimiento de la aplicación.
+- **Facilidad de evolución**: Simplifica la evolución y mantenimiento de la aplicación al separar responsabilidades. Se pueden realizar cambios en una interfaz de usuario sin afectar a otras partes del sistema.
 
 
 ### Implementación de BFF con Modyo

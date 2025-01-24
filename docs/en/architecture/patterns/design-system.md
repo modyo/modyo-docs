@@ -14,19 +14,19 @@ Its main purpose is to improve efficiency and consistency in the design and deve
 
 Advantages:
 
-- **Consistency:** A design system maintains consistency across multiple products and platforms by providing a standard set of components and styles.
-- **Efficiency:** Teams can work faster by reusing existing components, instead of designing and coding elements from scratch for each new project.
-- **Collaboration:** Encourages better collaboration between designers and developers, by providing a common visual language and clear guidelines for implementation.
-- **Usability and user experience:** The consistency provided by a design system improves the user experience, avoiding the need to learn new interfaces for each product.
-- **Maintainability:** Updates and bug fixes are easier to implement using standardized components.
+- **Consistency**: A design system maintains consistency across multiple products and platforms by providing a standard set of components and styles.
+- **Efficiency**: Teams can work faster by reusing existing components, instead of designing and coding elements from scratch for each new project.
+- **Collaboration**: Encourages better collaboration between designers and developers, by providing a common visual language and clear guidelines for implementation.
+- **Usability and user experience**: The consistency provided by a design system improves the user experience, avoiding the need to learn new interfaces for each product.
+- **Maintainability**: Updates and bug fixes are easier to implement using standardized components.
 
 Disadvantages:
 
-- **Time and resources:** Creating and maintaining a design system requires a significant investment of time and resources, especially in the early stages.
-- **Limited flexibility:** Design systems can be restrictive and limit creativity by requiring the use of standard components.
-- **Adoption and resistance to change:** It can be a challenge to get all team members to consistently adopt and follow the design system.
-- **Maintainability:** The design system must adapt to changes in products and user needs. This requires a continuous commitment to its maintenance and updating.
-- **Over-standardization: ** Taken to the extreme, it can lead to products that look and feel too similar, without individuality.
+- **Time and resources**: Creating and maintaining a design system requires a significant investment of time and resources, especially in the early stages.
+- **Limited flexibility**: Design systems can be restrictive and limit creativity by requiring the use of standard components.
+- **Adoption and resistance to change**: It can be a challenge to get all team members to consistently adopt and follow the design system.
+- **Maintainability**: The design system must adapt to changes in products and user needs. This requires a continuous commitment to its maintenance and updating.
+- **Over-standardization**: Taken to the extreme, it can lead to products that look and feel too similar, without individuality.
 
 A well-implemented and maintained design system can offer more advantages than disadvantages. However, it requires continuous investment and team commitment to ensure its long-term success.
 
@@ -52,12 +52,12 @@ This includes snippets with CSS, HTML and configurable parameters, as well as wi
 
 Implementing a web design system involves creating and maintaining a coherent set of design standards and reusable user interface (UI) components. To do this, follow these steps:
 
-- **Define Design Standards:** Include colors, typographies, spacing, iconography, and other common visual elements throughout your website or application. Document these standards in a style guide or brand manual.
-- **Create Reusable UI Components:** Develop a library of UI components that you can reuse throughout the web or application, such as buttons, forms, cards, and navigation bars. These components must be created in a way that ensures they are easily reusable and modifiable.
-- **Documenting the Use of Components:** Accompany the creation of components with implementation guides, best practices, and examples of use.
-- **Maintain the Design System:** Maintain and update the design system as the needs of your website or application change. Regularly review and update system components and standards.
-- **Implementation Tools: ** Use tools such as Storybook, Figma, Sketch, and Adobe XD to create, maintain, and share design systems.
-- **Collaboration and Adoption: ** Make sure that the development team is aligned with the design system and incorporates it into their workflow. Consider assigning a dedicated owner or team to oversee and maintain the design system.
+- **Define Design Standards**: Include colors, typographies, spacing, iconography, and other common visual elements throughout your website or application. Document these standards in a style guide or brand manual.
+- **Create Reusable UI Components**: Develop a library of UI components that you can reuse throughout the web or application, such as buttons, forms, cards, and navigation bars. These components must be created in a way that ensures they are easily reusable and modifiable.
+- **Documenting the Use of Components**: Accompany the creation of components with implementation guides, best practices, and examples of use.
+- **Maintain the Design System**: Maintain and update the design system as the needs of your website or application change. Regularly review and update system components and standards.
+- **Implementation Tools**: Use tools such as Storybook, Figma, Sketch, and Adobe XD to create, maintain, and share design systems.
+- **Collaboration and Adoption**: Make sure that the development team is aligned with the design system and incorporates it into their workflow. Consider assigning a dedicated owner or team to oversee and maintain the design system.
 
 :::tip Tip
 A design system is more than a collection of UI components and style guides; it's an integral part of the design and development process that promotes consistency and improves collaboration between designers and developers.

@@ -6,6 +6,36 @@ search: true
 
 ## 10.0
 
+### 10.0.11 - November 14, 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Security improvements
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Fixes problems with the loss of the site preview
+* Improvements in page indexing for search
+* Increases search results on sites, now by default there are 15 results
+
+### 10.0.10 - November 04, 2024
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Security improvements
+* Added invalidation of all administrator sessions when the administrator changes his password.
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Fixes issues when rendering pages with segmented content
+* Fixes issues when rendering pages with large content
+* Fixes the author of a synchronization in the activity displayed in pages, widgets, templates and menus
+* Added a new option to enable webpush in the application's settings 
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Added the ability to map an attribute of an object type claim to a specific custom field.
+* Added the ability to send webpush in notification campaigns when it is enabled in a site linked to the realm.
+
+
 ### 10.0.9 - October 14, 2024
 <Badge text="Core" type="core" vertical="middle"/>
 

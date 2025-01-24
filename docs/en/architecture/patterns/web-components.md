@@ -8,9 +8,9 @@ A web component is a web technology that allows you to create customized and reu
 
 They are made up of three main technologies:
 
-- **Custom Elements:** They allow the creation of custom HTML elements with functionality and behavior defined in JavaScript.
-- **Shadow DOM:** Provides an encapsulation scope for the styles and structure of a component. The Shadow DOM allows the styles and internal elements of a component to not affect or be affected by the rest of the page.
-- **HTML Templates:** Define fragments of HTML code that can be cloned and used multiple times. They are used to define the initial structure of a component.
+- **Custom Elements**: They allow the creation of custom HTML elements with functionality and behavior defined in JavaScript.
+- **Shadow DOM**: Provides an encapsulation scope for the styles and structure of a component. The Shadow DOM allows the styles and internal elements of a component to not affect or be affected by the rest of the page.
+- **HTML Templates**: Define fragments of HTML code that can be cloned and used multiple times. They are used to define the initial structure of a component.
 
 By combining these technologies, Web Components allow the creation of custom components with their own behavior and appearance. These components can be used in different parts of a web application or in different projects.
 
@@ -22,11 +22,11 @@ Web Components implementation is supported by web standards and is compatible wi
 
 There are different tools for developing Web Components, such as Polymer and Stencil, these are some of the key differences between them:
 
-- **Focus and maturity:** Polymer, developed by Google, simplifies the creation of Web Components and offers a wide range of features. Stencil is a web component compiler that focuses on efficiency and performance.
-- **Size and dependencies:** The Polymer library is larger, while Stencil is lighter and focuses on generating optimized code without additional dependencies.
-- **Browser support:** Both frameworks are compatible with most modern browsers. However, Polymer uses polyfills to ensure compatibility with older browsers.
-- **Programming language:** Polymer uses modern JavaScript and the class-based programming pattern to define components, Stencil uses TypeScript, a superset of JavaScript that adds static typing features and other functionality.
-- **Performance:** Stencil is optimized for performance, while Polymer offers good performance without being specifically optimized for it.
+- **Focus and maturity**: Polymer, developed by Google, simplifies the creation of Web Components and offers a wide range of features. Stencil is a web component compiler that focuses on efficiency and performance.
+- **Size and dependencies**: The Polymer library is larger, while Stencil is lighter and focuses on generating optimized code without additional dependencies.
+- **Browser support**: Both frameworks are compatible with most modern browsers. However, Polymer uses polyfills to ensure compatibility with older browsers.
+- **Programming language**: Polymer uses modern JavaScript and the class-based programming pattern to define components, Stencil uses TypeScript, a superset of JavaScript that adds static typing features and other functionality.
+- **Performance**: Stencil is optimized for performance, while Polymer offers good performance without being specifically optimized for it.
 
 Both tools are powerful and adapt to different use cases. If you need a complete and consolidated library with numerous features, Polymer is an excellent choice. On the other hand, if you prioritize performance and want to create highly optimized and native Web Components, Stencil may be the right choice.
 

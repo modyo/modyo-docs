@@ -1,23 +1,18 @@
 ---
 search: true
-title: Modyo Customers
-meta:
-  - name: description
-    content: Modyo Customers is an application that allows you to enable user authentication for sites created in Modyo, either through its internal account registration system or through its business integrations to Single Sign On (SSO) systems. 
-version: 9.2
 ---
 
-# {{ $frontmatter.title }}
+# Modyo Customers
 
-{{ $frontmatter.meta[0].content }}
+Modyo Customers is an application that enables user authentication on Modyo sites, either through its internal account registration system or through enterprise integrations with **Single Sign-On (SSO)** systems.
 
-Once the user has been identified, the platform will internally manage the business events that the user carries out during their session, and through the functionality of Segments, the Platform will be able to personalize the content and experience in their navigation.
+Once a user is identified, the platform internally manages the business events they perform during their session. Additionally, using the **Segments** functionality, it is possible to customize the user's content and browsing experience.
 
-**Modyo Customers** represents an important element when developing digital products on the platform. It also has an integrated messaging system for authenticated users.
+**Modyo Customers** is a key component for developing digital products on the platform. It also offers an integrated messaging system for authenticated users.
 
 ### Main functionalities
 
-- [User management](/en/platform/customers/realms.html) to manage the user database and integration policies for Single Sign On (SSO) systems.
-- [Segments](/en/platform/customers/segments.html) to define dynamic user segments.
-- [Dynamic forms](/en/platform/customers/forms.html) to capture information associated with users.
-- [Messaging](/en/platform/customers/messaging.html) to send Web notifications or email campaigns to users.
+- **[User Management](/en/platform/customers/users.html)**: Implement custom authentication flows using the integrated system or by connecting it with Single Sign-On (SSO) systems.
+- **[Precise Segmentation](/en/platform/customers/segments.html)**: Customize the user experience through the use of dynamic segments.
+- **[Dynamic Forms](/en/platform/customers/forms.html)**: Collect key information from your users.
+- **[Messaging](/en/platform/customers/messaging.html)**: Send notifications and specific email campaigns to maintain an active connection with your users.

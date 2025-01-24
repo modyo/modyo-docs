@@ -24,16 +24,16 @@ Modyo es una plataforma de experiencia digital que te ayuda a crear experiencias
 
 ### ¿Para qué usar Modyo?
 
-* **Para crear experiencias digitales integradas:** Modyo te permite crear experiencias digitales personalizadas para tus consumidores, independientemente de su canal.
-* **Para crear agilidad y gobernabilidad:** Modyo te ayuda a agilizar el desarrollo de tus experiencias digitales y a garantizar su calidad.
-* **Para crear experiencias digitales a través de widgets:** Modyo te ofrece una amplia biblioteca de widgets que puedes usar para crear experiencias digitales rápidamente.
+* **Para crear experiencias digitales integradas**: Modyo te permite crear experiencias digitales personalizadas para tus consumidores, independientemente de su canal.
+* **Para crear agilidad y gobernabilidad**: Modyo te ayuda a agilizar el desarrollo de tus experiencias digitales y a garantizar su calidad.
+* **Para crear experiencias digitales a través de widgets**: Modyo te ofrece una amplia biblioteca de widgets que puedes usar para crear experiencias digitales rápidamente.
 
 
 ### ¿Por qué usar Modyo?
 
-* **Modyo es seguro:** Modyo te ofrece un entorno de desarrollo seguro, tanto en la nube como local (On Premise) para que puedas crear experiencias digitales sin preocuparte por la seguridad de tus datos.
-* **Modyo es escalable:** Modyo puede escalar para satisfacer las necesidades de tu negocio, sin importar su tamaño. Grandes equipos digitales pueden agilizar la creación de contenido y componentes desarrollados para frontend
-* **Modyo es adaptable:** Modyo es adaptable a tus necesidades específicas y  provee una amplia librería de widgets inteligentes que pueden ser conectados a diversos sistemas de su empresa.
+* **Modyo es seguro**: Modyo te ofrece un entorno de desarrollo seguro, tanto en la nube como local (On Premise) para que puedas crear experiencias digitales sin preocuparte por la seguridad de tus datos.
+* **Modyo es escalable**: Modyo puede escalar para satisfacer las necesidades de tu negocio, sin importar su tamaño. Grandes equipos digitales pueden agilizar la creación de contenido y componentes desarrollados para frontend
+* **Modyo es adaptable**: Modyo es adaptable a tus necesidades específicas y  provee una amplia librería de widgets inteligentes que pueden ser conectados a diversos sistemas de su empresa.
 
 ### ¿Para quién es Modyo?
 

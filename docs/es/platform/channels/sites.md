@@ -9,9 +9,9 @@ Una aplicación web o web app despliega el contenido creado en content y channel
 
 Una web app puede estar en uno de estos tres estados:
 
-- **Habilitado:** Estado por defecto de las aplicaciones web recién creadas y aquellas que están habilitadas para uso.
-- **Cambios pendientes:** Existen modificaciones pendientes en la aplicación web. Un administrador puede verificar los cambios y publicar la aplicación web.
-- **Deshabilitado:** No es posible acceder a la aplicación web.
+- **Habilitado**: Estado por defecto de las aplicaciones web recién creadas y aquellas que están habilitadas para uso.
+- **Cambios pendientes**: Existen modificaciones pendientes en la aplicación web. Un administrador puede verificar los cambios y publicar la aplicación web.
+- **Deshabilitado**: No es posible acceder a la aplicación web.
 
 ## Crear una aplicación web
 
@@ -109,7 +109,7 @@ En la sección de configuración de la aplicación puedes personalizar tu web ap
 
 En esta sección puedes configurar:
 
-- **Nombre de la aplicación:** Este campo se usa como título por defecto para el SEO de tu web app.
+- **Nombre de la aplicación**: Este campo se usa como título por defecto para el SEO de tu web app.
 - **Descripción**
 
 :::warning Atención
@@ -117,9 +117,9 @@ En esta sección puedes configurar:
 Los cambios en el nombre y la descripción se reflejan de inmediato Modyo. La actualización en los resultados de búsqueda se verá una vez que los motores de búsqueda completen su proceso de reindexación.
 
 :::
-- **Logo de la aplicación:** Imagen que se muestra en la parte superior izquierda.
-- **Idioma de la aplicación:** El idioma en el que está disponible tu web app. Las opciones son: español, inglés y portugués.
-- **Zona horaria:** La zona horaria en que se muestran los campos de fecha y hora en la app. Esta configuración afecta a todas las secciones, incluyendo pages, navegación y plantillas, así como las llamadas de Liquid a los datos de la aplicación web.
+- **Logo de la aplicación**: Imagen que se muestra en la parte superior izquierda.
+- **Idioma de la aplicación**: El idioma en el que está disponible tu web app. Las opciones son: español, inglés y portugués.
+- **Zona horaria**: La zona horaria en que se muestran los campos de fecha y hora en la app. Esta configuración afecta a todas las secciones, incluyendo pages, navegación y plantillas, así como las llamadas de Liquid a los datos de la aplicación web.
 
 
 :::warning Atención
@@ -137,9 +137,9 @@ Para acceder a estos snippets:
 1. Haz click en plantillas en el menú lateral
 1. En la columna del lado derecho, da click en snippets y ve a la sección general. Puedes incrustarlos en el snippet _head_ y en las vistas _home_ y _base_.
 
-**Para crear snippets personalizados:**
+**Para crear snippets personalizados**:
 
-**Para el _head_:**
+**Para el _head_**:
 
 1. Utiliza este código:
 
@@ -182,9 +182,9 @@ Con esta configuración completada, cuando exista un valor asociado al campo **I
 
 
 
-- **Favicon:** Imagen que aparece al costado de la barra de dirección.
-- **Icono de Apple:** Imagen que se ve en los dispositivos móviles al usar el sitio como aplicación.
-- **Borrar:** Eliminar definitivamente un sitio y todo sus elementos.
+- **Favicon**: Imagen que aparece al costado de la barra de dirección.
+- **Icono de Apple**: Imagen que se ve en los dispositivos móviles al usar el sitio como aplicación.
+- **Borrar**: Eliminar definitivamente un sitio y todo sus elementos.
 
 :::danger Peligro
 Borrar es irreversible, por lo que debes estar completamente seguro al ejecutar esta acción.
@@ -195,15 +195,15 @@ Al presionar el botón de eliminado, el sistema te pedirá que ingreses el nombr
 
 
 **Visualización**
-- **Favicon:** Imagen que se muestra junto a la barra de dirección.
-- **Icono de Apple:** Imagen que se visualiza en dispositivos móviles iOS al marcar la aplicación como favorita.
+- **Favicon**: Imagen que se muestra junto a la barra de dirección.
+- **Icono de Apple**: Imagen que se visualiza en dispositivos móviles iOS al marcar la aplicación como favorita.
 
 **Privacidad**
-- **Público:** Todos los visitantes pueden ver la web app y su contenido sin necesidad de iniciar sesión.
-- **Privado:** Solo los usuarios con una sesión iniciada de Modyo pueden ver la web app.
-- **Mostrar home a visitas públicas:** La página de inicio de la web app se muestra a todos los visitantes, incluso aquellos que no hayan iniciado sesión. Al navegar a cualquier otra página, se solicita registro o inicio de sesión.
-- **Redireccionar al home cuando una URL no se encuentra:** Por defecto, la aplicación web muestra un error 404 cuando el usuario accede a una URL inexistente. Si marcas esta opción, el usuario será redirigido a la página de inicio de la web app en lugar del 404.
-- **Habilitar búsqueda:** Activa la función de búsqueda en la web app.
+- **Público**: Todos los visitantes pueden ver la web app y su contenido sin necesidad de iniciar sesión.
+- **Privado**: Solo los usuarios con una sesión iniciada de Modyo pueden ver la web app.
+- **Mostrar home a visitas públicas**: La página de inicio de la web app se muestra a todos los visitantes, incluso aquellos que no hayan iniciado sesión. Al navegar a cualquier otra página, se solicita registro o inicio de sesión.
+- **Redireccionar al home cuando una URL no se encuentra**: Por defecto, la aplicación web muestra un error 404 cuando el usuario accede a una URL inexistente. Si marcas esta opción, el usuario será redirigido a la página de inicio de la web app en lugar del 404.
+- **Habilitar búsqueda**: Activa la función de búsqueda en la web app.
 - **Habilitar la búsqueda en múltiples aplicaciones**
 
 :::tip Tip
@@ -217,13 +217,13 @@ Si habilitas la búsqueda en tu web app y usas el parámetro `multi=true` desde 
 Procede con cautela al modificar estas opciones, ya que pueden afectar el acceso a tu aplicación web y la experiencia de tus sus usuarios.
 :::
 
-- **Cambiar host:** Esta acción modifica la visibilidad y accesibilidad de la aplicación. Realizar un cambio de host puede impactar la visibilidad y disponibilidad de la aplicación web.
-- **Cambiar reino:** Despliega el reino de la aplicación. Al cambiar de reino pierdes toda la configuración de privacidad en tus web apps, páginas y navegación.
-- **Cambiar estado:** Cambia el estado de la aplicación, las opciones son:
+- **Cambiar host**: Esta acción modifica la visibilidad y accesibilidad de la aplicación. Realizar un cambio de host puede impactar la visibilidad y disponibilidad de la aplicación web.
+- **Cambiar reino**: Despliega el reino de la aplicación. Al cambiar de reino pierdes toda la configuración de privacidad en tus web apps, páginas y navegación.
+- **Cambiar estado**: Cambia el estado de la aplicación, las opciones son:
 	* Habilitado: Editable y visible al público. Este es el estado por defecto de una web app.
 	* Editable: Modificable pero no visible al público. Requiere inicio de sesión para acceder. Robots.txt, PWAs y el manifiesto están deshabilitados en este estado.
 	* Deshabilitado: No editable ni visible. En este estado, no es accesible ni visible para los usuarios.
-- **Eliminar aplicación:** Inicia la eliminación asíncrona de la aplicación y de todos sus elementos, como páginas y widgets.
+- **Eliminar aplicación**: Inicia la eliminación asíncrona de la aplicación y de todos sus elementos, como páginas y widgets.
 
 ::: danger Peligro
 Es irreversible la eliminación de una aplicación web.
@@ -237,19 +237,19 @@ El SEO (Search Engine Optimization) es fundamental para el posicionamiento en mo
 
 Puedes configurar:
 
-- **Tagline:** Descripción en los motores de búsqueda, debajo del nombre de la aplicación web.
-- **Actualizar automáticamente el archivo sitemap.xml para mí:** Permite a Modyo crear y mantener el sitemap.xml automáticamente. Desactiva esta opción para usar un mapa de sitio personalizado.
-- **Sitemap:** Este archivo XML permite a los motores de búsqueda indexar el contenido del sitio.
-- **Archivo sitemap.xml personalizado:** Archivo que permite a los motores de búsqueda indexar el contenido de la web app.
-- **Actualizar automáticamente el archivo robots.xml para mí:** Permite a Modyo crear y mantener robots.txt automáticamente. Desactiva esta opción para proporcionar instrucciones personalizadas a los rastreadores de web apps.
-- **Archivo robots.txt personalizado:** Archivo que indica a los robots rastreadores las partes de la aplicación pueden o no indexar.
+- **Tagline**: Descripción en los motores de búsqueda, debajo del nombre de la aplicación web.
+- **Actualizar automáticamente el archivo sitemap.xml para mí**: Permite a Modyo crear y mantener el sitemap.xml automáticamente. Desactiva esta opción para usar un mapa de sitio personalizado.
+- **Sitemap**: Este archivo XML permite a los motores de búsqueda indexar el contenido del sitio.
+- **Archivo sitemap.xml personalizado**: Archivo que permite a los motores de búsqueda indexar el contenido de la web app.
+- **Actualizar automáticamente el archivo robots.xml para mí**: Permite a Modyo crear y mantener robots.txt automáticamente. Desactiva esta opción para proporcionar instrucciones personalizadas a los rastreadores de web apps.
+- **Archivo robots.txt personalizado**: Archivo que indica a los robots rastreadores las partes de la aplicación pueden o no indexar.
 
 :::tip Tip
 Los archivos robots.txt y sitemap.xml solo son visibles con dominios personalizados. De lo contrario, se encuentran solo a nivel de plataforma, tienen sus valores por defecto y no se pueden personalizar.
 :::
 
-- **Meta tags personalizados:** Te permite configurar meta tags para todas las páginas y sus valores por defecto. Da click en **+ nuevo meta tag** para crear uno nuevo.
-- **Replicar meta tag en páginas:** Al crear un nuevo meta tag, selecciona esta opción para propagar el meta tag y su valor en todas las páginas de la web app. Debes guardar los cambios en meta tags y publicar todas las páginas modificadas para que los nuevos meta tags surtan efecto.
+- **Meta tags personalizados**: Te permite configurar meta tags para todas las páginas y sus valores por defecto. Da click en **+ nuevo meta tag** para crear uno nuevo.
+- **Replicar meta tag en páginas**: Al crear un nuevo meta tag, selecciona esta opción para propagar el meta tag y su valor en todas las páginas de la web app. Debes guardar los cambios en meta tags y publicar todas las páginas modificadas para que los nuevos meta tags surtan efecto.
 
 :::warning Atención
 Solo los administradores de la aplicación pueden añadir meta tags. Los developers pueden añadir y eliminar meta tags página por página.
@@ -280,39 +280,9 @@ Para mejorar el SEO fuera-de-página:
 
 ### PWA
 
-Modyo te permite implementar progressive web apps (PWA) en tus canales digitales en desarrollo. Para ello, tienes dos opciones:
+Modyo te permite implementar Progressive Web Apps (PWA) en tus canales digitales, ofreciendo una experiencia mejorada a tus usuarios. Para usar funcionalidades PWA debes habilitar las opciones que requieras en tu proyecto.
 
-#### Manifiesto
-
-El manifiesto indica cómo quieres que un navegador muestre tu canal digital. Para activar el manifiesto:
-
-1. En el menú lateral, haz click en channels.
-1. Selecciona tu aplicación web.
-1. Haz click en configuración de la aplicación.
-1. Da click en PWA.
-1. Marca la casilla habilitar manifiesto PWA.
-1. En el modal, llena los campos.
-1. Haz click en **generar**.
-1. Haz click en **guardar** en el modal.
-1. Haz click en **guardar**.
-
-
-Al activar el manifiesto, se crea esta ruta:
-
-
-```bash
-https://[domain]/[site-name]/manifest.json
-```
-
-Es necesario implementar el manifiesto en cada página de la PWA a través de [Plantillas](/es/platform/channels/templates.html), en el snippet ``head``.
-
-
-:::warning Atención
-Si no personalizas el contenido del manifiesto PWA y agregas la ruta en plantillas, el manifiesto se creará en blanco y no tendrá ningún efecto.
-:::
-
-
-#### Service worker
+#### Service worker principal
 
 Activa el Service Worker para que tu canal digital pueda almacenar datos en caché, funcionar sin conexión y brindar una experiencia mejorada a tus usuarios, aún con una conexión inestable.
 
@@ -350,6 +320,42 @@ Es necesario personalizar y guardar el código del service worker para integrar 
 Si desactivas el service worker, tu aplicación web seguirá funcionando, con funciones básicas y sin los beneficios del service worker.
 :::
 
+
+#### Notificaciones WebPush
+
+Permite que tus usuarios reciban notificaciones WebPush junto con las campañas de notificación. Para enviar mensajes a tus usuarios debes asegurarte que tu aplicación esté vinculada a un reino y el estado de la aplicación esté en **Habilitado**. La gestión de las notificaciones se realiza a través de la [herramienta de mensajería](/es/platform/customers/messaging.html).
+
+#### Manifiesto PWA
+
+El manifiesto indica cómo quieres que un navegador muestre tu canal digital. Para activar el manifiesto:
+
+1. En el menú lateral, haz click en channels.
+1. Selecciona tu aplicación web.
+1. Haz click en configuración de la aplicación.
+1. Da click en PWA.
+1. Marca la casilla habilitar manifiesto PWA.
+1. En el modal, llena los campos.
+1. Haz click en **generar**.
+1. Haz click en **guardar** en el modal.
+1. Haz click en **guardar**.
+
+
+Al activar el manifiesto, se crea esta ruta:
+
+
+```bash
+https://[domain]/[site-name]/manifest.json
+```
+
+Es necesario implementar el manifiesto en cada página de la PWA a través de [Plantillas](/es/platform/channels/templates.html), en el snippet ``head``.
+
+
+:::warning Atención
+Si no personalizas el contenido del manifiesto PWA y agregas la ruta en plantillas, el manifiesto se creará en blanco y no tendrá ningún efecto.
+:::
+
+
+
 ### Dominios
 
 En la sección de dominios puedes ver y modificar la ubicación pública de tu aplicación web.
@@ -359,9 +365,9 @@ Es esencial informar a todos los miembros de la plataforma sobre cualquier cambi
 :::
 
 Activa la casilla para realizar modificaciones. Las variables que puedes modificar son:
-- **Host:** Ubicación de la aplicación web en del servidor.
-- **Dominio primario:** Dirección principal de la aplicación web.
-- **Dominio alternativo:** Dirección secundaria para redireccionar en caso de fallo en el primario.
+- **Host**: Ubicación de la aplicación web en del servidor.
+- **Dominio primario**: Dirección principal de la aplicación web.
+- **Dominio alternativo**: Dirección secundaria para redireccionar en caso de fallo en el primario.
 
 
 :::warning Atención

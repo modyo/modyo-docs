@@ -51,15 +51,15 @@ In this section, you can customize and adjust the options available for your spa
 
 In this section, you can:
 - **Change the name of the space**
-- **Show the author of the posts:** Enabling this option allows the author of the content to be visible in the public API and in the Liquid SDK. If disabled, the author will be blank.
+- **Show the author of the posts**: Enabling this option allows the author of the content to be visible in the public API and in the Liquid SDK. If disabled, the author will be blank.
 
 :::warning Attention
 Saving this option reindexes all entries in the space. The changes will be reflected once the process is completed.
 :::
 
-- **Modify the realm's space:** When you change the user realm, you lose all privacy settings.
-- **Modify the space identifier:** The identifier or UID of the space is the attribute with which you access from the public content API, the Javascript SDK and the Liquid SDK. Make sure it's unique and without accents or special characters, as it will be used in URLs to access the content.
-- **Delete space:** Permanently deletes the space and all of its elements.
+- **Modify the realm's space**: When you change the user realm, you lose all privacy settings.
+- **Modify the space identifier**: The identifier or UID of the space is the attribute with which you access from the public content API, the Javascript SDK and the Liquid SDK. Make sure it's unique and without accents or special characters, as it will be used in URLs to access the content.
+- **Delete space**: Permanently deletes the space and all of its elements.
 :::danger Danger
 When selecting **Delete**, you must enter the textual name of the space to confirm the action. Once confirmed, you will not be able to access the space or its elements again.
 :::
@@ -100,8 +100,8 @@ Nginx: set $cache_key "$http_x_forwarded_proto://$host$request_uri-$http_accept-
 ```
 :::tip Tip
 When deciding to use SSL, consider:
--  **SSL:** Wildcard certificates are not allowed.
-- **NO SSL:** Wildcards are allowed in these environments, but you must enable them manually by sending a ticket to [Modyo support](https://support.modyo.com/hc/en-us). By default, Modyo uses SSL.
+-  **SSL**: Wildcard certificates are not allowed.
+- **NO SSL**: Wildcards are allowed in these environments, but you must enable them manually by sending a ticket to [Modyo support](https://support.modyo.com/hc/en-us). By default, Modyo uses SSL.
 
 For more information, review the [Security](https://docs.modyo.com/es/platform/channels/sites.html#security-headers) section of the Modyo documentation.
 :::
@@ -111,11 +111,11 @@ For more information, review the [Security](https://docs.modyo.com/es/platform/c
 
 Team review is a tool that allows multiple users to confirm and correct content before sending it through the API.
 The configuration options for team review are as follows:
-- **Enable team review:** Activates or deactivates team review. If enabled, all items submitted through the API will require approval from one or more reviewers.
-- **Number of Approvals:** Specifies the number of approvals required for an item to be published.
-- **Restrict the selection of reviewers:** Allows you to specify which users can review the content. Only those who submit for review can select reviewers.
-- **Force review:** Requires at least one specific user to review the content.
-- **Require all:** Requires all selected users to approve the item before it is published.
+- **Enable team review**: Activates or deactivates team review. If enabled, all items submitted through the API will require approval from one or more reviewers.
+- **Number of Approvals**: Specifies the number of approvals required for an item to be published.
+- **Restrict the selection of reviewers**: Allows you to specify which users can review the content. Only those who submit for review can select reviewers.
+- **Force review**: Requires at least one specific user to review the content.
+- **Require all**: Requires all selected users to approve the item before it is published.
 
 For more information on how to configure this option, go to [Team Review](/en/platform/core/key-concepts.html).
 

@@ -34,7 +34,7 @@ Aunque los sitios privados tienen sus particularidades, comparten también simil
 
 
 ### Gestión de Usuarios
-En un sitio privado, la gestión de usuarios es esencial y es la principal diferencia con respecto a un sitio privado. Para gestionar usuarios, Modyo tiene una funcionalidad llamada [reinos de usuarios](/es/platform/customers/realms). Los reinos de usuarios son completamente independientes entre sí y pueden tener configuraciones propias, como por ejemplo, el método de autenticación de usuarios en cada uno.
+En un sitio privado, la gestión de usuarios es esencial y es la principal diferencia con respecto a un sitio privado. Para gestionar usuarios, Modyo tiene una funcionalidad llamada [reinos de usuarios](/es/platform/customers/overview). Los reinos de usuarios son completamente independientes entre sí y pueden tener configuraciones propias, como por ejemplo, el método de autenticación de usuarios en cada uno.
 
 #### Eventos de usuario
 Los reinos de usuarios almacenan los eventos de los usuarios y permiten la definición de segmentos basados en la información del perfil de los usuarios o en su comportamiento dentro del sistema.

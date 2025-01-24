@@ -9,9 +9,9 @@ A web application or web app displays the content created in content and channel
 
 A web app can be in one of these three states:
 
-- **Enabled:** Default status of newly created web applications and those that are enabled for use.
-- **Pending changes:** There are pending changes in the web application. An administrator can verify the changes and publish the web application.
-- **Disabled:** The web application cannot be accessed.
+- **Enabled**: Default status of newly created web applications and those that are enabled for use.
+- **Pending changes**: There are pending changes in the web application. An administrator can verify the changes and publish the web application.
+- **Disabled**: The web application cannot be accessed.
 
 ## Create a Web Application
 
@@ -109,7 +109,7 @@ In the application configuration section, you can customize your web app so that
 
 In this section you can configure:
 
-- **Name of the application:** This field is used as the default title for the SEO of your web app.
+- **Name of the application**: This field is used as the default title for the SEO of your web app.
 - **Description**
 
 :::warning Warning
@@ -117,9 +117,9 @@ In this section you can configure:
 Changes to the name and description are immediately reflected in Modyo. The update in the search results will be seen once the search engines complete their reindexing process.
 
 :::
-- **Application logo:** Image shown at the top left.
-- **Application language:** The language in which your web app is available. The options are: Spanish, English, and Portuguese.
-- **Time zone:** The timezone in which the date and time fields are displayed in the app. This setting affects all sections, including pages, navigation and templates, as well as Liquid's calls to the web application data.
+- **Application logo**: Image shown at the top left.
+- **Application language**: The language in which your web app is available. The options are: Spanish, English, and Portuguese.
+- **Time zone**: The timezone in which the date and time fields are displayed in the app. This setting affects all sections, including pages, navigation and templates, as well as Liquid's calls to the web application data.
 
 
 :::warning Attention
@@ -137,9 +137,9 @@ To access these snippets:
 1. Click on templates in the side menu
 1. In the column on the right side, click on snippets and go to the general section. You can embed them in the _head_ snippet and in the _home_ and _base_ views.
 
-**To create custom snippets:**
+**To create custom snippets**:
 
-**For the _head_:**
+**For the _head_**:
 
 1. Use this code:
 
@@ -182,9 +182,9 @@ With this configuration complete, when there is a value associated with the **ID
 
 
 
-- **Favicon:** Image that appears on the side of the address bar.
-- **Apple icon:** Image that you see on mobile devices when using the site as an application.
-- **Delete:** Permanently deletes a site and all its elements.
+- **Favicon**: Image that appears in the address bar.
+- **Apple icon**: Image viewed on mobile devices when using the site as an application.
+- **Delete**: Permanently delete a site and all of its elements.
 
 :::danger Danger
 Erasing is irreversible, you must be completely sure when executing this action.
@@ -195,15 +195,15 @@ When you press the delete button, the system will ask you to enter the textual n
 
 
 **Visualization**
-- **Favicon:** Image displayed next to the address bar.
-- **Apple icon:** An image that is displayed on iOS mobile devices when you mark the application as a favorite.
+- **Favicon**: Image displayed next to the address bar.
+- **Apple icon**: An image that is displayed on iOS mobile devices when you mark the application as a favorite.
 
 **Privacy**
-- **Audience:** All visitors can view the web app and its content without having to log in.
-- **Private:** Only users who are logged in to Modyo can view the web app.
-- **Show home to public visitors:** The home page of the web app is shown to all visitors, even those who are not logged in. When navigating to any other page, registration or login is required.
-- **Redirect to home when a URL is not found:** By default, the web application shows a 404 error when the user accesses a non-existent URL. If you check this option, the user will be redirected to the home page of the web app instead of to the 404.
-- **Enable search:** Activates search function in the web app.
+- **Audience**: All visitors can view the web app and its content without having to log in.
+- **Private**: Only users who are logged in to Modyo can view the web app.
+- **Show home to public visitors**: The home page of the web app is shown to all visitors, even those who are not logged in. When navigating to any other page, registration or login is required.
+- **Redirect to home when a URL is not found**: By default, the web application shows a 404 error when the user accesses a non-existent URL. If you check this option, the user will be redirected to the home page of the web app instead of to the 404.
+- **Enable search**: Activates search function in the web app.
 - **Enable search across multiple applications**
 
 :::tip Tip
@@ -217,13 +217,13 @@ If you enable search in your web app and use the `multi=true` parameter from ano
 Use caution when modifying these options, as they can affect access to your web application and your users' experience.
 :::
 
-- **Change host:** This action modifies the visibility and accessibility of the application. Making a host change can impact the visibility and availability of the web application.
-- **Change realm:** Shows the application's realm. When you change the realm, you lose all the privacy settings in your web apps, pages, and browsing.
-- **Change status:** Changes the status of the application, the options are:
+- **Change host**: This action modifies the visibility and accessibility of the application. Making a host change can impact the visibility and availability of the web application.
+- **Change realm**: Shows the application's realm. When you change the realm, you lose all the privacy settings in your web apps, pages, and browsing.
+- **Change status**: Changes the status of the application, the options are:
     * Enabled: Editable and visible to the public. This is the default state of a web app.
     * Editable: Modifiable but not visible to the public. Requires login to access. Robots.txt, PWAs, and the manifest are disabled in this state.
     * Disabled: Not editable or visible. In this state, it's not accessible or visible to users.
-- **Delete app:** Initiates the asynchronous removal of the application and all of its elements, such as pages and widgets.
+- **Delete app**: Initiates the asynchronous removal of the application and all of its elements, such as pages and widgets.
 
 ::: danger Danger
 Deleting a web application is irreversible.
@@ -237,19 +237,19 @@ SEO (Search Engine Optimization) is essential for search engine positioning. Use
 
 You can configure:
 
-- **Tagline:** Description for search engines, below the name of the web application.
-- **Automatically update the sitemap.xml file for me:** Allows Modyo to create and maintain the sitemap.xml automatically. Disable this option to use a custom site map.
-- **Sitemap:** This XML file allows search engines to index site content.
-- **Custom sitemap.xml file:** File that allows search engines to index the content of the web app.
-- **Automatically update the robots.xml file for me:** Allows Modyo to automatically create and maintain robots.txt. Disable this option to provide personalized instructions to web app crawlers.
-- **Custom robots.txt file:** File that tells web crawlers what parts of the application they may or may not index.
+- **Tagline**: Description for search engines, below the name of the web application.
+- **Automatically update the sitemap.xml file for me**: Allows Modyo to create and maintain the sitemap.xml automatically. Disable this option to use a custom site map.
+- **Sitemap**: This XML file allows search engines to index the content of the site.
+- **Custom sitemap.xml file**: File that allows search engines to index the content of the web app.
+- **Automatically update the robots.xml file for me**: Allows Modyo to automatically create and maintain robots.txt. Disable this option to provide personalized instructions to web app crawlers.
+- **Custom robots.txt file**: File that tells web crawlers what parts of the application they may or may not index.
 
 :::tip Tip
 The robots.txt and sitemap.xml files are only visible with custom domains. Otherwise, they are found only at the platform level, have default values and cannot be customized.
 :::
 
-- **Custom meta tags:** Allows you to configure meta tags for all pages and their default values. Click **+ new meta tag** to create a new one.
-- **Replicate metatag on pages:** When creating a new meta tag, select this option to spread the meta tag and its value across all pages of the web app. You must save the changes to meta tags and publish all the modified pages for the new meta tags to take effect.
+- **Custom meta tags**: Allows you to configure meta tags for all pages and their default values. Click **+ new meta tag** to create a new one.
+- **Replicate metatag on pages**: When creating a new meta tag, select this option to spread the meta tag and its value across all pages of the web app. You must save the changes to meta tags and publish all the modified pages for the new meta tags to take effect.
 
 :::warning Attention
 Only administrators of the application can add meta tags. Developers can add and remove meta tags page by page.
@@ -280,13 +280,56 @@ To improve off-page SEO:
 
 ### PWA
 
-Modyo allows you to implement progressive web apps (PWA) on your digital channels under development. To do this, you have two options:
+Modyo allows you to implement Progressive Web Apps (PWA) in your digital channels, offering an enhanced experience to your users. To use PWA features, you must enable them in your project
 
-#### Manifest
+#### Top level service worker
+
+Activate the Service Worker so that your digital channel can cache data, work offline and provide an improved experience for your users, even with an unstable connection.
+
+To enable the service worker, follow these steps:
+
+1. In the side menu, click channels.
+1. Select your web application.
+1. Click on application settings.
+1. Check the Enable Primary Service Worker box.
+1. Click **save**.
+
+Once activated and saved, the following route is created:
+
+
+```bash
+https://[domain]/[site-name]/serviceworker.js
+```
+
+To modify the service worker, follow these steps:
+
+1.  In the side menu, click channels.
+1. Select your web application.
+1. Click on templates in the side menu.
+1. Click on the snippets tab in the right column.
+1. In the service worker section, select the file you want to modify.
+1. Click **save**.
+1. Click **publish**.
+
+
+:::warning Attention
+You need to customize and save the service worker code to integrate these functions into your web app.
+:::
+
+:::warning Attention
+If you turn off the service worker, your web application will continue to work, with basic functions and without the benefits of the service worker.
+:::
+
+
+#### WebPush Notifications
+
+Allow your users to receive WebPush notifications along with notification campaigns. To send messages to your users, you must ensure that your application is linked to a realm and the application status is set to **Enabled**. Notifications are managed through the [messaging tool](/en/platform/customers/messaging.html).
+
+#### PWA Manifest
 
 The manifest indicates how you want a browser to display your digital channel. To activate the manifest:
 
-1. In the side menu, click on channels.
+1. In the side menu, click channels.
 1. Select your web application.
 1. Click on application settings.
 1. Click on PWA.
@@ -312,43 +355,6 @@ If you do not customize the content of the PWA manifest and add the route in tem
 :::
 
 
-#### Service worker
-
-Activate the Service Worker so that your digital channel can cache data, work offline and provide an improved experience for your users, even with an unstable connection.
-
-To enable the service worker, follow these steps:
-
-1. In the side menu, click on channels.
-1. Select your web application.
-1. Click on application settings.
-1. Check the Enable Primary Service Worker box.
-1. Click **save**.
-
-Once activated and saved, the following route is created:
-
-
-```bash
-https://[domain]/[site-name]/serviceworker.js
-```
-
-To modify the service worker, follow these steps:
-
-1.  In the side menu, click on channels.
-1. Select your web application.
-1. Click on templates in the side menu.
-1. Click on the snippets tab in the right column.
-1. In the service worker section, select the file you want to modify.
-1. Click **save**.
-1. Click **publish**.
-
-
-:::warning Attention
-You need to customize and save the service worker code to integrate these functions into your web app.
-:::
-
-:::warning Attention
-If you turn off the service worker, your web application will continue to work, with basic functions and without the benefits of the service worker.
-:::
 
 ### Domains
 
@@ -359,9 +365,9 @@ It's essential to inform all members of the platform about any changes you make 
 :::
 
 Check the box to make changes. The variables you can modify are:
-- **Host:** Location of the web application on the server.
-- **Primary domain:** Main address of the web application.
-- **Alternative domain:** Secondary address to redirect in case the primary one fails.
+- **Host**: Location of the web application on the server.
+- **Primary domain**: Main address of the web application.
+- **Alternative domain**: Secondary address to redirect in case the primary one fails.
 
 
 :::warning Attention
@@ -388,7 +394,7 @@ These domains are reserved by Modyo. They are not available as custom domains:
 </tr></table>
 :::
 
-:: :warning Attention
+:::warning Attention
 These hosts are reserved by Modyo. They are not available as hosts for your web apps:
 <table style="border: none;"><tr style="border: none;">
 <td style="border: none;"><ul>
@@ -455,7 +461,7 @@ The main advantages of having different stages in your web apps are:
 
 To add a new stage to your web app, follow these steps:
 
-1. In the side menu, click on channels.
+1. In the side menu, click channels.
 1. Select your web application.
 1. Click on application settings.
 1. Click on stages.
@@ -476,7 +482,7 @@ The platform does not allow you to synchronize changes that have not yet been pu
 
 To synchronize a stage follow these steps:
 
-1. In the side menu, click on channels.
+1. In the side menu, click channels.
 1. Click on the name of your web application and select the stage you want to synchronize.
 1. In the summary view, click **synchronize**.
 1. In the synchronizations view, select the stage you want to synchronize to. In this view you can see all the elements with differences between the selected stages. Click on view for more details on the changes.
@@ -491,7 +497,7 @@ The elements of a stage associated with a segment are not synchronized. You must
 #### Delete a stage
 
 To delete a stage, follow these steps:
-1. In the side menu, click on channels.
+1. In the side menu, click channels.
 1. Click on the name of your web application and select the stage you want to delete.
 1. Click on application settings.
 1. Click on General.
@@ -705,7 +711,7 @@ To create a variable in sites, follow these steps:
 1. Under **Site Settings**, click **Site Variables**. Here you can see the list of all global variables and site variables, their general information and a button to copy their code into Liquid markup.
 1. Click on **+ New Variable**.
 1. Complete the **Name** and **Value** fields of the variable.
-1. Click **save**.
+1. Click **Save**.
 
 :::warning Attention 
 When using variables, Modyo follows a hierarchy of preference, where variables defined at the lowest level have priority. The variables defined in the widget will take precedence over the variables defined on the site, and in turn, the variables defined on the site will take precedence over the variables defined at the account level.

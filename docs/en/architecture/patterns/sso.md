@@ -9,11 +9,11 @@ Single Sign-On (SSO), or Single Sign-On, is an authentication and access method 
 SSO is based on a system of trust between service providers and a centralized identity provider. When logging in to the identity provider, it generates a session token that authenticates the user to the applications and services that make up the SSO environment, allowing the user to move between services without performing additional authentications.
 
 Benefits of using SSO:
-- **Improves the user experience:** Simplifies the login process, streamlining access to applications, especially in corporate environments with numerous applications.
-- **Reduces technical support:** Decreases the number of passwords that users must remember, reducing the need for password reset requests and related problems, which the technical support team must address.
-- **Improves security:** Centralizes authentication, making it easier to monitor and manage access to multiple applications. Users can focus on creating a strong password; also, SSO solutions often include robust security features, such as two-factor authentication.
-- **Save time and increase productivity:** Users can quickly access all the apps they need without signing in to each one separately.
-- **Simplifies administration:** For IT administrators, implementing SSO allows them to manage a set of credentials per user instead of managing access to each application individually.
+- **Improves the user experience**: Simplifies the login process, streamlining access to applications, especially in corporate environments with numerous applications.
+- **Reduces technical support**: Decreases the number of passwords that users must remember, reducing the need for password reset requests and related problems, which the technical support team must address.
+- **Improves security**: Centralizes authentication, making it easier to monitor and manage access to multiple applications. Users can focus on creating a strong password; also, SSO solutions often include robust security features, such as two-factor authentication.
+- **Save time and increase productivity**: Users can quickly access all the apps they need without signing in to each one separately.
+- **Simplifies administration**: For IT administrators, implementing SSO allows them to manage a set of credentials per user instead of managing access to each application individually.
 
 :::danger Security
 It's important to note that, if not implemented correctly, SSO can present security risks. For example, if a user's SSO credentials are compromised, an attacker could gain access to all the applications to which the user has access. Therefore, it's crucial to implement strong security measures, such as two-factor authentication and strong password policies.
@@ -33,7 +33,7 @@ By activating SSO within Modyo, delegating user authentication to the system you
 Modyo platform supports delegation to SSO systems in two main ways:
 
 1. For administrator users with access to the Web console.
-2. For end users through the configurations present in the [user realms] (/en/platform/customers/realms).
+2. Towards end users through the settings available in the [user realms](/en/platform/customers/overview).
 
 Both forms of integration are independent of each other, so you can define specific topologies for each customer, for example: Azure AD (SAML) for administrators, KeyCloak (OIDC) for the realm of users with access to the transactional application, Azure AD (OIDC) for the realm of agents with access to the internal sales application.
 

@@ -51,15 +51,15 @@ En esta sección puedes personalizar y ajustar las opciones disponibles para tu 
 
 En esta sección puedes:
 - **Cambiar el nombre del espacio**
-- **Mostrar el autor de las entradas:** Habilitar esta opción permite que el autor del contenido este visible en la API pública y en el SDK de Liquid. Si está deshabilitada, el autor se verá en blanco.
+- **Mostrar el autor de las entradas**: Habilitar esta opción permite que el autor del contenido este visible en la API pública y en el SDK de Liquid. Si está deshabilitada, el autor se verá en blanco.
 
 :::warning Atención
 Al guardar esta opción, se reindexan todas las entradas del espacio. Los cambios se reflejarán una vez el proceso haya concluido.
 :::
 
-- **Modificar el reino del espacio:** Al cambiar el reino de usuarios, perderás todas las configuraciones de privacidad.
-- **Modificar el identificador del espacio:** El identificador o UID del espacio es el atributo con el cual accedes desde la API pública de contenido, el SDK de Javascript y el SDK de Liquid. Asegúrate de que sea único y sin tildes ni caracteres especiales, ya que será usado en las URL para acceder al contenido.
-- **Eliminar el espacio:** Elimina definitivamente el espacio y todos sus elementos.
+- **Modificar el reino del espacio**: Al cambiar el reino de usuarios, perderás todas las configuraciones de privacidad.
+- **Modificar el identificador del espacio**: El identificador o UID del espacio es el atributo con el cual accedes desde la API pública de contenido, el SDK de Javascript y el SDK de Liquid. Asegúrate de que sea único y sin tildes ni caracteres especiales, ya que será usado en las URL para acceder al contenido.
+- **Eliminar el espacio**: Elimina definitivamente el espacio y todos sus elementos.
 :::danger Peligro
 Al seleccionar **Borrar**, debes ingresar el nombre textual del espacio para confirmar la acción. Una vez confirmada, no podrás volver a acceder al espacio ni a sus elementos.
 :::
@@ -100,8 +100,8 @@ Nginx: set $cache_key "$http_x_forwarded_proto://$host$request_uri-$http_accept-
 ```
 :::tip Tip
 Al decidir el uso de SSL, considera:
--  **SSL:** No se permiten certificados wildcards.
-- **NO SSL:** Si se permiten wildcards en estos entornos, pero debes habilitarlos manualmente a través de un ticket enviado al área de [soporte de Modyo](https://support.modyo.com/hc/en-us). Por defecto, Modyo utiliza SSL.
+-  **SSL**: No se permiten certificados wildcards.
+- **NO SSL**: Si se permiten wildcards en estos entornos, pero debes habilitarlos manualmente a través de un ticket enviado al área de [soporte de Modyo](https://support.modyo.com/hc/en-us). Por defecto, Modyo utiliza SSL.
 
 Para más información, revisa la sección de [Seguridad](https://docs.modyo.com/es/platform/channels/sites.html#security-headers)  de la documentación de Modyo.
 :::
@@ -111,11 +111,11 @@ Para más información, revisa la sección de [Seguridad](https://docs.modyo.com
 
 La revisión en equipo es una herramienta que permite a varios usuarios confirmar y corregir el contenido antes de enviarlo a través de la API.
 Las opciones de configuración de la revisión en equipo son las siguientes:
-- **Habilitar revisión en equipo:** Activa o desactiva la revisión en equipo. Si está activada, todos los elementos que se envíen a través de la API requerirán la aprobación de uno o más revisores.
-- **Número de aprobaciones:** Especifica el número de aprobaciones que se requieren para que un elemento se publique.
-- **Restringir la selección de revisores:** Permite especificar qué usuarios pueden revisar el contenido. Solo quien envía a revisión puede seleccionar revisores.
-- **Forzar revisión:** Obliga a que al menos un usuario específico revise el contenido.
-- **Requerir todos:** Obliga a que todos los usuarios seleccionados aprueben el elemento antes de que se publique.
+- **Habilitar revisión en equipo**: Activa o desactiva la revisión en equipo. Si está activada, todos los elementos que se envíen a través de la API requerirán la aprobación de uno o más revisores.
+- **Número de aprobaciones**: Especifica el número de aprobaciones que se requieren para que un elemento se publique.
+- **Restringir la selección de revisores**: Permite especificar qué usuarios pueden revisar el contenido. Solo quien envía a revisión puede seleccionar revisores.
+- **Forzar revisión**: Obliga a que al menos un usuario específico revise el contenido.
+- **Requerir todos**: Obliga a que todos los usuarios seleccionados aprueben el elemento antes de que se publique.
 
 Para más información sobre cómo configurar esta opción, revisa la sección de
  [Team Review](/es/platform/core/key-concepts.html)

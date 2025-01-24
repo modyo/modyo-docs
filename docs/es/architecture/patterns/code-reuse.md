@@ -8,9 +8,9 @@ El reuso de código es la práctica de escribir código que puedes usar en múlt
 
 Esta práctica ofrece múltiples ventajas, como:
 
-- **Eficiencia:** Ahorro de tiempo y esfuerzo al no tener que escribir el mismo código una y otra vez.
-- **Consistencia:** Ayuda a asegurar que ciertas funciones se comporten de manera consistente en todas las partes de una aplicación o en diferentes aplicaciones.
-- **Mantenibilidad:** Es más fácil y más rápido actualizar o corregir errores en una única base de código reutilizable que en múltiples copias del mismo código.
+- **Eficiencia**: Ahorro de tiempo y esfuerzo al no tener que escribir el mismo código una y otra vez.
+- **Consistencia**: Ayuda a asegurar que ciertas funciones se comporten de manera consistente en todas las partes de una aplicación o en diferentes aplicaciones.
+- **Mantenibilidad**: Es más fácil y más rápido actualizar o corregir errores en una única base de código reutilizable que en múltiples copias del mismo código.
 
 Existen varias formas de reutilizar código en el desarrollo de aplicaciones web. Esto incluye el uso de librerías o frameworks, la creación de componentes reutilizables y la organización del código, de manera que puedes referenciar y reutilizar fácilmente partes del mismo en distintas partes de una aplicación.
 

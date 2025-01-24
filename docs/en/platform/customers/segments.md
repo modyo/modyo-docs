@@ -4,58 +4,41 @@ search: true
 
 # Segments
 
-Segments is the ideal Modyo feature to manage users in bulk if you need them to receive specific information.
+The **Segments** functionality in Modyo is ideal for managing users in bulk and ensuring they receive specific information. Segments group end users through nested filters, making it easy to send emails or notifications. You can also apply them in the **Content** and **Channels** modules to personalize the content you deliver to your users.
 
-These allow us to group end users into different Segments and thus facilitate the sending of emails or notifications. This is achieved through nested filters to achieve the desired grouping. Segments can be applied to the Content and Channels modules to show certain content to your users.
+In this section, you'll find a list of all created segments, along with key information such as:
 
-### About the interface
+- **Name**: The identifier of the segment (under which the filters that define it are listed).
+- **Created On**: The date the segment was created.
+- **People**: The number of users included in the segment.
 
-In the interface, you can see a list of all segments in your account, with the following details:
-
-The list is sorted as follows.
-
-- Name: Particular name of the list. (Below are the filters that it contains).
-- Created on: Segment creation date.
-- Number of users that within the segment.
-
-In addition, on the far right you will find an "Action" button with a drop-down menu that allows you to execute the following options:
-
-- Edit: Edit the name and filters of the segment.
-- Delete: Delete the segment.
-
-:::warning Warning
-If you delete the segment, you will have to create it again, users will not be deleted.
-:::
-
-If you need to search for a specific segment by name, you can do so through the search bar at the top of the screen.
+To search for a segment by name, use the search bar at the top of the screen.
 
 ## Create a Segment
+
 To create a segment, follow these steps:
 
-1. From the admin page, click on **Customers**, then select **Realms**.
-1. Click on your **Realm**.
-1. Select **Segments**, and click on **+ New Segment**.
-1. Add the required filters for your segment.
-1. Click **Next**.
-1. Enter a **Name** and **Description**.
-1. Click **Save**.
+- From the administration page, click **Customers**, then select **Realms**.
+- Click on your **Realm**.
+- Select **Segments** and click **+ New Segment**.
+- Add the required filters for your segment.
+- Click **Next**.
+- Enter a **Name** and a **Description**.
+- Click **Save**.
 
 :::tip Tip
-If you want to see the users who are part of a segment, in the Segments menu, click on the number of users. This will bring you to the [Users](/en/platform/customers/realms.html) view that will show you a list of all the contacts that fit your segment.
+Make sure each customer's profile is complete, as incomplete data will prevent a user from being included in a segment based on those criteria.
 :::
 
-:::tip Tip
-It is necessary that each customer's file is complete, as each of the data that appears on it, can be taken into account for segmenting. If the tab is not complete or there is no customer data to filter, it will not be added to the segment.
-:::
+## Filters
 
-### Filters
+Filters allow you to create segments based on user profile information and their activity on the site. You can include users who meet certain criteria or exclude those who do not.
 
-Filters allow you to create segments based on the information that appears in the customer's profile and their activity within the site. You can create segments including users that match certain criteria or users that do not match certain criteria.
-
-The filters found by default in the platform are:
+The default filters available on the platform include:
 
 - Activation status
 - Age
+- Form responses
 - Birth date
 - Custom field value
 - Device
@@ -73,7 +56,6 @@ The filters found by default in the platform are:
 - Registration date
 - User Tags
 - User Field Values
-- Form responses
 - Order Completed
 - Order failed
 - Order confirming
@@ -81,13 +63,23 @@ The filters found by default in the platform are:
 - Order paying
 - Order rejected
 
-To create an advanced filter that fits your needs, see [Custom Fields](/en/platform/customers/realms.html#custom-fields).
+To create an advanced filter that fits your needs, refer to the [Custom Fields](/en/platform/customers/settings.html#custom-fields) section.
 
-:::warning Warning
-User segments are updated constantly in the background:
-* Every 5 minutes.
-* Each time a user's profile is modified.
-* Every time a user answers a form.
+:::warning Attention
+The update of segments to which a user belongs is performed as a background process and may not be immediate. This occurs:
 
-The update runs in a background process, meaning that the update is not immediate and depends on the system load. Some users may not see segmented content for a few minutes after they've run an action that includes or excludes them from a segment.
+- Every 5 minutes.
+- Whenever a user's profile is modified.
+- Every time a user answers a form.
+
+The speed of the update depends on the system load, so some users might not see segmented content immediately after performing actions that include or exclude them from a segment.
+:::
+
+
+## Delete a segment
+
+You can delete a segment from the overview by selecting the delete option from the actions button.
+
+:::warning Attention
+If you delete a segment, you will need to recreate it. However, the users will not be removed.
 :::

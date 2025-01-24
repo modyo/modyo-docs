@@ -14,16 +14,16 @@ En Media puedes asignar permisos de edición y eliminación de imágenes a trav�
 Puedes cargar diversos tipos de media a este espacio, considerando las siguientes restricciones de tamaño por archivo:
 
 
-- **Imágenes:** 6 MB
-- **Videos:** 10 MB
-- **Audios:** 10 MB
-- **Archivos:** 10 MB
+- **Imágenes**: 6 MB
+- **Videos**: 10 MB
+- **Audios**: 10 MB
+- **Archivos**: 10 MB
 
 Los tipos de archivos permitidos son:
-- **Imágenes:** apng, avif, bmp, gif, ico, jpeg, jpg, png, tif, tiff, webp
-- **Videos:** av, avi, f4v, flv, mkv, mov, mp4, mpeg, webm, wmv
-- **Audios:** 3gp, aac, alac, dsd, flac, mp3, pcm, wav, m4a, ogg, wma
-- **Archivos:** 7z, ai, apk, css, csv, doc, docx, fon, ico, iso, jar, js, msi, ods, odt, otf, pdf, ppt, pptx, rar, rss, rtf, scss, tar, tex, ttf, txt, vcf, wdp, xhtml, xls, xlsm, xlsx, xml, zip, one, ecf, pub, xps, json, svg, woff, woff2, ics
+- **Imágenes**: apng, avif, bmp, gif, ico, jpeg, jpg, png, tif, tiff, webp
+- **Videos**: av, avi, f4v, flv, mkv, mov, mp4, mpeg, webm, wmv
+- **Audios**: 3gp, aac, alac, dsd, flac, mp3, pcm, wav, m4a, ogg, wma
+- **Archivos**: 7z, ai, apk, css, csv, doc, docx, fon, ico, iso, jar, js, msi, ods, odt, otf, pdf, ppt, pptx, rar, rss, rtf, scss, tar, tex, ttf, txt, vcf, wdp, xhtml, xls, xlsm, xlsx, xml, zip, one, ecf, pub, xps, json, svg, woff, woff2, ics
 
 
 
@@ -36,20 +36,20 @@ En la parte superior derecha de la pantalla puedes ver el porcentaje de espacio 
 Modyo muestra 30 archivos por página. En la parte inferior puedes navegar entre las páginas de archivos.
 
 Puedes filtrar el contenido por:
-- **Extensiones:** Filtra por tipo de archivo.
-- **Autor:** Filtra por nombre de usuario que subió el contenido.
-- **Tags:** Muestra todos los archivos asociados a una etiqueta.
-- **Barra de búsqueda:** Escribe una palabra para desplegar los archivos que contengan esa palabra en su nombre o metadata.
+- **Extensiones**: Filtra por tipo de archivo.
+- **Autor**: Filtra por nombre de usuario que subió el contenido.
+- **Tags**: Muestra todos los archivos asociados a una etiqueta.
+- **Barra de búsqueda**: Escribe una palabra para desplegar los archivos que contengan esa palabra en su nombre o metadata.
 
 Las etiquetas te permiten organizar y agrupar tus archivos. Para modificar las etiquetas de más de un archivo, selecciona los archivos que desees y da click en el botón **Agregar o quitar etiquetas** que aparece en la parte inferior del listado.
 
 En esta vista, las columnas son:
-- **Previsualizar:** Si la plataforma identifica que el archivo es una imagen, puedes ver una imagen en miniatura del archivo. Si no lo es, el espacio aparece en blanco.
-- **Nombre:** Nombre del archivo y su extensión. El ordenamiento es alfabético.
-- **Tipo:** Tipo y extensión del archivo. El ordenamiento es alfabético, primero por tipo y después por el nombre de la extensión.
-- **Tamaño:** Tamaño en kilobytes del archivo.
-- **Creado el:** Fecha de subida o creación dentro de la plataforma, sin considerar si el archivo fue creado en una fecha distinta en otro servicio.
-- **Autor:** Nombre del usuario que subió el archivo, solo cuando el usuario tiene asignado un nombre.
+- **Previsualizar**: Si la plataforma identifica que el archivo es una imagen, puedes ver una imagen en miniatura del archivo. Si no lo es, el espacio aparece en blanco.
+- **Nombre**: Nombre del archivo y su extensión. El ordenamiento es alfabético.
+- **Tipo**: Tipo y extensión del archivo. El ordenamiento es alfabético, primero por tipo y después por el nombre de la extensión.
+- **Tamaño**: Tamaño en kilobytes del archivo.
+- **Creado el**: Fecha de subida o creación dentro de la plataforma, sin considerar si el archivo fue creado en una fecha distinta en otro servicio.
+- **Autor**: Nombre del usuario que subió el archivo, solo cuando el usuario tiene asignado un nombre.
 
 
 ## Subir un archivo
@@ -76,12 +76,12 @@ Modyo permite subir 10 archivos a la vez. Si necesitas subir más elementos, rep
 ## Editar un archivo
 En la interfaz de archivos, da click en el nombre de un archivo para abrir la interfaz de edición de las propiedades del archivo y ver:
 
-- **URL del Archivo:** Muestra la URL pública del archivo. Da click en el ícono junto a la URL para copiarla. No es modificable.
-- **Tag de liquid:** Muestra el tag de liquid del archivo, da click en el ícono para copiar y usarlo en los contenidos de la plataforma. No es modificable.
-- **Título:** Muestra el título del archivo. Esta sección es distinta al nombre del archivo, el cual no se puede cambiar.
-- **Texto alternativo:** Muestra el alt text del elemento. Solo para imágenes y videos.
-- **Descripción:** Descripción del elemento, recomendamos escribir un texto corto referente a la imagen.
-- **Etiquetas:** Muestra las etiquetas asociadas al archivo. Puedes buscar y agregar más etiquetas, así como eliminar etiquetas existentes.
+- **URL del Archivo**: Muestra la URL pública del archivo. Da click en el ícono junto a la URL para copiarla. No es modificable.
+- **Tag de liquid**: Muestra el tag de liquid del archivo, da click en el ícono para copiar y usarlo en los contenidos de la plataforma. No es modificable.
+- **Título**: Muestra el título del archivo. Esta sección es distinta al nombre del archivo, el cual no se puede cambiar.
+- **Texto alternativo**: Muestra el alt text del elemento. Solo para imágenes y videos.
+- **Descripción**: Descripción del elemento, recomendamos escribir un texto corto referente a la imagen.
+- **Etiquetas**: Muestra las etiquetas asociadas al archivo. Puedes buscar y agregar más etiquetas, así como eliminar etiquetas existentes.
 
 Da click en **Actualizar información** para confirmar los cambios o en **Cerrar** para cancelarlos.
 

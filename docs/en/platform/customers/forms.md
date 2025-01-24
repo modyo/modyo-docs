@@ -25,7 +25,7 @@ To create a new form, follow these steps:
 - **Name**: Name associated with the form. This value will appear both in the form index in the Modyo administrator and as a title when a user is responding to it.
 - **Description**: This text will appear as text below the title when users respond to it.
 - **People limit**: Allows you to determine the maximum number of answers allowed.
-- **Site**: Allows you to select where this form will be displayed. Keep in mind that this causes the form to change its appearance according to the classes defined in the site's global CSS. For more information, go to [Template builder](/en/platform/channels/templates.html). 
+- **Site**: Allows you to select where this form will be displayed. Keep in mind that this causes the form to change its appearance according to the classes defined in the site's global CSS. For more information, go to [Template builder](/en/platform/channels/templates.html).
 
 :::warning Alert
 You can only select a site that belongs to the same realm, within the **Site Settings**, under **General**, make sure that the site is part of the correct realm.
@@ -70,15 +70,16 @@ This section will allow you to add as many fields as necessary to complete the f
 - **Simple Text**: Allows the user to enter text up to 256 characters.
 - **Paragraph**: Allows the user to enter multiline text up to 65535 characters.
 - **Number**: Allows the user to enter numbers.
-- **Dropdown**: Allows you to add options from which the user can choose one in dropdown format.
-- **Checkbox**: Allows you to add options from which the user can choose multiple options in a checkbox format.
+- **Dropdown**: Allows you to add options from which the user can choose one in _dropdown_ format.
+- **Checkbox**: Allows you to add options from which the user can choose multiple options in a _checkbox_ format.
 - **Choice**: Allows you to add options from which the user can choose one in _radio button_ format.
 - **Date**: Allows you to add a date field where the user can select one within the allowed range.
 - **Nested questions**: Allows you to add a series of alternatives that can be nested, so that the user is asked to select one of the possible nested options within the option they selected.
-
-:::warning Attention
-From version 9.0.8 onward, forms no longer have file-type questions, so you won't be able to require users to upload files using Modyo forms.
-:::
+- **File**: Allows you to upload files.
+- **Country**: Country selector.
+- **Phone**: Field for entering phone numbers.
+- **Address**: Structured field for capturing addresses.
+- **Group**: Group a list of several repeatable fields. You can see more details about this format in the [documentation on Repeatable Groups](/en/platform/content/types.html#group)
 
 You can delete one of the fields from the form by clicking on the trash can icon to the right of each field in the main section. The deletion will be effective once you save the changes.
 
@@ -122,7 +123,7 @@ Selecting any of the different options and clicking **Add** will autocomplete th
 
 ### Form properties
 
-This section will allow you to change the general behavior of the form. It contains the same thing as the creation view of a new form, but in turn it adds a couple of new options, as detailed below. 
+This section allows you to change the form's general behavior. It is similar to the creation view of a new form, but it adds a couple of new options, as detailed below.
 
 Its sections are:
 
@@ -143,7 +144,7 @@ The **Snippet** section, which will only appear if the form is public, will allo
 :::warning Attention
 In order to make proper use of the form snippet, you must take into account the _CORS_ configuration of your Modyo account and the security _headers_ where you are inserting the snippet.
 
-To make use of the snippet within a page on the Modyo platform, you must copy the Javascript code inside the Javascript section and the div in the HTML section. The HTML section in [Pages](/en/platform/channels/pages) cannot run Javascript, the use of the Javascript section is mandatory to run the code correctly. 
+To make use of the snippet within a page on the Modyo platform, you must copy the Javascript code inside the Javascript section and the div in the HTML section. The HTML section in [Pages](/en/platform/channels/pages) cannot run Javascript, the use of the Javascript section is mandatory to run the code correctly.
 :::
 
 The **Options** and **Notifications** sections don't add anything other than what's found in **New Form**
