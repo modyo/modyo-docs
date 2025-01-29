@@ -5,6 +5,23 @@ search: true
 # Release Notes
 
 ## 10.0
+### 10.0.17 - Janurary 14, 2025
+<Badge text="Core" type="core" vertical="middle"/>
+* Corrects author when cloning a content element, page, menu, widget, template, now the author of the new element is the one who executes the action.
+* Corrects problem with the listing of sites, spaces and realms in the webhooks listing.
+  
+<Badge text="Content" type="content" vertical="middle"/>
+* Corrects permission to obtain related entries when editing a content
+* Fixes content indexing issues, content is now indexed for searches on content pages, content is indexed on publication and removed on unpublication, only widget pages are reindexed in the reindex job, in case they include content through the sdk
+* Improved content indexing performance
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+* Corrects queuing of multiple segment calculation jobs for one user
+* Corrects user view to show all users when requested from segment listing
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+* Fixes problems with the use of the search parameter using the filter_by_query_string filter
+
 ### 10.0.16 - December 23, 2024
 <Badge text="Content" type="content" vertical="middle"/>
 * Adds sorting inside a content field of type content list
