@@ -5,48 +5,73 @@ search: true
 # Notas del release
 
 ## 10.0
+### 10.0.18 - 03 de febrero de 2025
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+* Corrige error al publicar cuando se alcanza el límite de backups
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Agrega edición en bulk de segmentos
+* Restaura bordes de las tablas insertadas en froala
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Agrega buscador en el lisado de campañas
+
+
 ### 10.0.17 - 14 de enero de 2025
 <Badge text="Core" type="core" vertical="middle"/>
+
 * Corrige autor al momento de clonar un elemento de contenido, página, menú, widget, template, ahora el autor del nuevo elemento es el que ejecuta la acción
 * Corrige problema del listado de sitios, spaces y reinos del listado de webhooks
   
 <Badge text="Content" type="content" vertical="middle"/>
+
 * Corrige permiso para obtener entries relacionadas en la edición de un contenido
 * Corrige problemas en la indexación de contenido, ahora se indexa el contenido para las búsquedas en páginas de contenido, se indexa el contenido al publicar y se quita el índice al despublicar, solo las páginas de widgets se reindexan en el job de reindexado, esto por si incluyen contenido mediante el sdk
 * Mejora en performance de la indexación de contenido
 
 <Badge text="Customers" type="customers" vertical="middle"/>
+
 * Corrige el encolado de multiples jobs de cálculo de segmentos para un usuario
 * Corrige vista usuario para que muestre todos los usuarios cuando se solicita desde el listado de segmentos
 
 <Badge text="Channels" type="channels" vertical="middle"/>
+
 * Corrige problemas con el uso del parametro search en las búsquedas usando el filtro filter_by_query_string
 
 
 ### 10.0.16 - 23 de diciembre de 2024
 <Badge text="Content" type="content" vertical="middle"/>
+
 * Agrega ordenamiento dentro de un campo de contenido de tipo lista de contenidos
 * Corrige problema de richtexts quedan en blanco al mover elementos dentro de un grupo repetible
 * Corrige error en copia de contenido desde otro idioma cuando se tiene un grupo repetible
 
 <Badge text="Customers" type="customers" vertical="middle"/>
+
 * Mejora de performance en el calculo de segmentos de usuarios al iniciar sesión
 
 <Badge text="Channels" type="channels" vertical="middle"/>
+
 * Corrige problemas al previsualizar snippets globales
 
 
 ### 10.0.15 - 12 de diciembre de 2024
 <Badge text="Customers" type="customers" vertical="middle"/>
+
 * Mejora en filtro de segmentos de tipo custom field, ahora permite una lista de valores
 
 
 ### 10.0.14 - 10 de diciembre de 2024
 <Badge text="Content" type="content" vertical="middle"/>
+
 * Corrige error al editar contenido en bulk
 
-
 <Badge text="Customers" type="customers" vertical="middle"/>
+
 * Corrige llamados multiples al endpoint de count_matches
 
 
@@ -78,6 +103,7 @@ search: true
 * Corrige error al mostrar diferencias en contenidos muy extensos
 
 <Badge text="Customers" type="customers" vertical="middle"/>
+
 * Corrige duplicación de segmentos de usuarios
 * Corrige edición de custom fields recien agregados al editar un usuario
 
