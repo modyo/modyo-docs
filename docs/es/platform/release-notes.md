@@ -5,16 +5,25 @@ search: true
 # Notas del release
 
 ## 9.2
+### 9.2.71 - 03 de febrero de 2025
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+* Corrige error al publicar elementos cuando se alcanza el límite de backups
+
 ### 9.2.70 - 03 de enero de 2025
 <Badge text="Customers" type="customers" vertical="middle"/>
+
 * Corrige problemas de acceso a la edición de la apariencia en las configuraciones de un reino
 
 <Badge text="Content" type="content" vertical="middle"/>
+
 * Corrige problemas relacionados al listado y publicación de contenidos
 
 
 ### 9.2.69 - 09 de diciembre de 2024
 <Badge text="Customers" type="customers" vertical="middle"/>
+
 * Agrega método de pago Yape de Payu Perú
 
 
