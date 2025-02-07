@@ -5,6 +5,11 @@ search: true
 # Notas del release
 
 ## 9.2
+### 9.2.72 - 07 de febrero de 2025
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Agrega variable de csp-nonce a los assets que inyecta la aplicación en los sitios
+
 ### 9.2.71 - 03 de febrero de 2025
 <Badge text="Core" type="core" vertical="middle"/>
 
