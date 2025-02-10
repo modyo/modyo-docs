@@ -5,6 +5,17 @@ search: true
 # Notas del release
 
 ## 10.0
+### 10.0.19 - 07 de febrero de 2025
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+* Agrega de forma explícita el atributo samesite=Lax a la cookie de sesión
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Corrige problema con permisos al subir assets en los sitios 
+
+
 ### 10.0.18 - 03 de febrero de 2025
 <Badge text="Core" type="core" vertical="middle"/>
 
