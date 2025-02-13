@@ -5,6 +5,11 @@ search: true
 # Notas del release
 
 ## 9.2
+### 9.2.73 - 13 de febrero de 2025
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Arregla el conteo de ejecuciones de jobs erróneos y reintentos
+  
 ### 9.2.72 - 07 de febrero de 2025
 <Badge text="Channels" type="channels" vertical="middle"/>
 
