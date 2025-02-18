@@ -79,7 +79,7 @@ Antes de enviar una campaña, utiliza el botón de **Vista previa** para verific
 El botón contextual te permite realizar estas acciones:
 
 - **Editor de Mensajes**: Modifica el contenido antes de enviarlo.
-- **Enviar prueba**: Envía un mensaje de prueba a una dirección específica.
+- **Enviar prueba**: Envía un mensaje de prueba a una dirección específica (Únicamente puede a enviarse a usuarios con acceso al backend de Modyo).
 - **Editar**: Cambia las propiedades de la campaña, como el segmento objetivo o la dirección de respuesta.
 - **Clonar la campaña**: Crea una copia con todo el contenido de una campaña.
 - **Borrar la campaña**: Elimina una campaña.
