@@ -25,7 +25,7 @@ Campaign messages are ordered in the following columns:
 - **Last sent**: Date and time the campaign was sent.
 - **Created on**: Campaign creation date.
 
-In each row of the campaign, there is a button that allows you to perform two actions: 
+In each row of the campaign, there is a button that allows you to perform two actions:
 
 - **Edit the Campaign**
 - **Delete the Campaign**
@@ -51,7 +51,7 @@ Email campaigns allow you to contact users via email. To set up an email campaig
 
 Once you have completed the form, click on the **Save and Continue** button at the top of the screen.
 
-This opens the WYSIWYG editor with the template you selected. Edit the template and click the **Save** button to confirm the changes and open the Shipping Status view to send the campaign. 
+This opens the WYSIWYG editor with the template you selected. Edit the template and click the **Save** button to confirm the changes and open the Shipping Status view to send the campaign.
 
 #### Notification Campaigns
 Notification campaigns allow you to send direct messages to users. To set up a notification campaign, fill in the following fields in the form:
@@ -83,7 +83,7 @@ At the top of the screen, the **preview** icon allows you to view your campaign 
 The contextual button allows you to perform these actions:
 
 - **Message Editor**: Edit your message before sending it.
-- **Send test**: Send a test email with the campaign to a specific address.
+- **Send test**: Send a test email with the campaign to a specific address (It can only be sent to users with access to the Modyo backend).
 - **Edit**: Edits the campaign properties, technical aspects such as the shipping address and the receiving segments.
 - **Clone the campaign**: Copies all the content of a campaign.
 - **Delete campaign**: Deletes a campaign.
@@ -93,7 +93,7 @@ Once you've sent a campaign, you can't resend it. If you want to send the same c
 You can cancel a campaign when it is in queue or while it is being sent.
 
 :::warning Attention
-A campaign can be resent only if you previously canceled sending the campaign when it was in queue or being sent. 
+A campaign can be resent only if you previously canceled sending the campaign when it was in queue or being sent.
 
 You must indicate whether you want to send messages again to all users or only to those who did not receive them before. In this case, the number of message deliveries may be greater than the total reach of users of the campaign.
 :::
@@ -121,7 +121,7 @@ If you haven't yet sent the campaign, the values for that campaign will appear b
 :::
 
 :::danger Danger
-When you delete a delivery, you can not recover the record if you made any changes to it. 
+When you delete a delivery, you can not recover the record if you made any changes to it.
 
 Deleting a campaign when it is in the process of being sent does not mean that it will not reach users, but that the process is stopped at the point where it currently is.
 :::
@@ -130,9 +130,9 @@ Clicking on the name of a campaign takes you to the Message Deliveries section.
 
 ## Message deliveries
 
-In the Message Deliveries section, you will find the list of users who have received a message from the platform. Here, you can see a list of all users who have received a unique email or notification, referred to as “No Campaign”.
+In the Message Deliveries section, you will find the list of users who have received a message from the platform. Here, you can see a list of all users who have received a unique email or notification, referred to as "No Campaign".
 
-“No Campaign” refers to an email or notification sent specifically to a user on a certain date. These messages are not considered Campaigns, because they are personalized and contain information that is not sent to other users. For more information on how these messages work, see the [Management API](/en/platform/core/api.html). 
+"No Campaign" refers to an email or notification sent specifically to a user on a certain date. These messages are not considered Campaigns, because they are personalized and contain information that is not sent to other users. For more information on how these messages work, see the [Management API](/en/platform/core/api.html).
 
 In the initial view, the messages are ordered in these categories:
 
