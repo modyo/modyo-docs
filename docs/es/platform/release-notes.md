@@ -13,7 +13,7 @@ search: true
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
-* Corrige problema con permisos al subir assets en los sitios 
+* Corrige problema con permisos al subir assets en los sitios
 
 
 ### 10.0.18 - 03 de febrero de 2025
@@ -31,13 +31,12 @@ search: true
 
 * Agrega buscador en el lisado de campañas
 
-
 ### 10.0.17 - 14 de enero de 2025
 <Badge text="Core" type="core" vertical="middle"/>
 
 * Corrige autor al momento de clonar un elemento de contenido, página, menú, widget, template, ahora el autor del nuevo elemento es el que ejecuta la acción
 * Corrige problema del listado de sitios, spaces y reinos del listado de webhooks
-  
+
 <Badge text="Content" type="content" vertical="middle"/>
 
 * Corrige permiso para obtener entries relacionadas en la edición de un contenido

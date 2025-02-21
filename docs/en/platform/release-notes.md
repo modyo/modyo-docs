@@ -5,11 +5,37 @@ search: true
 # Release Notes
 
 ## 10.0
+### 10.0.19 - February 07, 2025
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Security enhancements
+* Explicitly adds samesite=Lax attribute to session cookie
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Fixes permissions issue when uploading assets on sites
+
+
+### 10.0. 18 - February 03, 2025
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Security enhancements
+* Fixes error when publishing at backup limit
+
+<Badge text="Content" type="content" vertical="middle"/>
+
+* Adds bulk editing of segments
+* Restores borders of tables inserted in froala
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Adds search engine in campaign listing.
+
 ### 10.0.17 - Janurary 14, 2025
 <Badge text="Core" type="core" vertical="middle"/>
 * Corrects author when cloning a content element, page, menu, widget, template, now the author of the new element is the one who executes the action.
 * Corrects problem with the listing of sites, spaces and realms in the webhooks listing.
-  
+
 <Badge text="Content" type="content" vertical="middle"/>
 * Corrects permission to obtain related entries when editing a content
 * Fixes content indexing issues, content is now indexed for searches on content pages, content is indexed on publication and removed on unpublication, only widget pages are reindexed in the reindex job, in case they include content through the sdk
