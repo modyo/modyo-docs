@@ -9,7 +9,7 @@ search: true
 <Badge text="Customers" type="customers" vertical="middle"/>
 
 * Arregla el conteo de ejecuciones de jobs erróneos y reintentos
-  
+
 ### 9.2.72 - 07 de febrero de 2025
 <Badge text="Channels" type="channels" vertical="middle"/>
 
@@ -29,7 +29,6 @@ search: true
 <Badge text="Content" type="content" vertical="middle"/>
 
 * Corrige problemas relacionados al listado y publicación de contenidos
-
 
 ### 9.2.69 - 09 de diciembre de 2024
 <Badge text="Customers" type="customers" vertical="middle"/>

@@ -5,11 +5,29 @@ search: true
 # Release Notes
 
 ## 9.2
+### 9.2.73 - February 13, 2025
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Fixes erroneous job execution count and retries
+
+### 9.2.72 - February 07, 2025
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Adds csp-nonce variable to assets that injects the application into sites
+
+### 9. 2.71 - February 03, 2025
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Security enhancements
+* Fixes error when publishing items when backup limit is reached.
+
 ### 9.2.70 - January 03, 2025
 <Badge text="Customers" type="customers" vertical="middle"/>
+
 * Fixes problems with access to appearance editing in a realm configuration
 
 <Badge text="Content" type="content" vertical="middle"/>
+
 * Fixes problems related to listing and publishing content
 
 ### 9.2.69 - December 09, 2024
