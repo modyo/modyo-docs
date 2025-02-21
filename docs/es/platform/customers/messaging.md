@@ -25,7 +25,7 @@ Los mensajes de las campañas se ordenan en las siguientes columnas:
 - **Último envío**: Fecha y hora en que se envió la campaña.
 - **Creado el**: Fecha de creación de la campaña.
 
-En la fila de cada campaña, hay un botón que permite realizar dos acciones: 
+En la fila de cada campaña, hay un botón que permite realizar dos acciones:
 
 - **Editar la campaña**
 - **Borrar la campaña**
@@ -51,7 +51,7 @@ Las campañas de correo te permiten contactar a los usuarios a través de email.
 
 Una vez completes el formulario, haz click en el botón **Guardar y continuar**, en la parte superior de la pantalla.
 
-Esto abre el editor WYSIWYG con la plantilla que seleccionaste. Edita la plantilla y haz click en el botón **Guardar** para confirmar los cambios y abrir la vista Estado de envío para enviar la campaña. 
+Esto abre el editor WYSIWYG con la plantilla que seleccionaste. Edita la plantilla y haz click en el botón **Guardar** para confirmar los cambios y abrir la vista Estado de envío para enviar la campaña.
 
 #### Campañas de Notificaciones
 Las campañas de notificaciones permiten enviar mensajes directos a los usuarios. Para configurar una campaña de notificaciones, completa los siguientes campos en el formulario:
@@ -75,7 +75,7 @@ Además, para que los usuarios puedan recibir notificaciones WebPush, deben cump
 * Las notificaciones deben estar habilitadas en su navegador.
 
 :::warning Atención
-Al crear una nueva web app tienes soporte por defecto para WebPush, si fue creada en Modyo 10.0 o inferior requieres actualizar tu plantilla, puedes utilizar [este código para refactorizar](https://github.com/modyo-community/web-push-support). 
+Al crear una nueva web app tienes soporte por defecto para WebPush, si fue creada en Modyo 10.0 o inferior requieres actualizar tu plantilla, puedes utilizar [este código para refactorizar](https://github.com/modyo-community/web-push-support).
 :::
 
 ### Estado de envío
@@ -85,7 +85,7 @@ En la parte superior de la pantalla, el ícono de **vista previa** te permite vi
 El botón contextual te permite realizar estas acciones:
 
 - **Editor de Mensajes**: Edita tu mensaje antes de enviarlo.
-- **Enviar prueba**: Envía un correo de prueba con la campaña a una dirección determinada.
+- **Enviar prueba**: Envía un correo de prueba con la campaña a una dirección determinada (Únicamente puede a enviarse a usuarios con acceso al backend de Modyo).
 - **Editar**: Edita las propiedades de la campaña, aspectos técnicos como la dirección de envío y los segmentos a recibir.
 - **Clonar la campaña**: Copia todo el contenido de una campaña.
 - **Borrar la campaña**: Elimina una campaña.
@@ -95,7 +95,7 @@ Una vez que hayas enviado una campaña, no puedes enviarla nuevamente. Si deseas
 Puedes cancelar el envío de una campaña cuando la campaña está en cola o en proceso de envío.
 
 :::warning Atención
-Una campaña puede ser reenviada solamente si cancelaste previamente el envío de la campaña cuando estaba en cola o proceso de envío. 
+Una campaña puede ser reenviada solamente si cancelaste previamente el envío de la campaña cuando estaba en cola o proceso de envío.
 
 Debes indicar si deseas enviar nuevamente los mensajes a todos los usuarios o solo a aquellos que no los recibieron anteriormente. En este caso, el número de entregas de mensajes puede ser mayor que el alcance total de usuarios de la campaña.
 :::
@@ -123,7 +123,7 @@ Si no has enviado aún la campaña, los valores de esa campaña aparecerán en c
 :::
 
 :::danger Peligro
-Cuando borras un envío no puedes recuperar el registro si hiciste algún cambio en él. 
+Cuando borras un envío no puedes recuperar el registro si hiciste algún cambio en él.
 
 Borrar una campaña cuando está en proceso de envío, no significa que no llegará a los usuarios, sino que se detiene el proceso en el punto en que se encuentra.
 :::
@@ -134,7 +134,7 @@ Hacer click en el nombre de una campaña te lleva a la sección Entregas de Mens
 
 En la sección Entregas de mensajes, encuentras la lista de usuarios a los cuales les ha llegado un mensaje desde la plataforma. Aquí puedes ver una lista de todos los usuarios que han recibido un correo o notificación única, denominados "Sin Campaña".
 
-"Sin Campaña" se refiere a un correo o notificación enviado específicamente a un usuario en una fecha determinada. Estos mensajes no se consideran Campañas, ya que están personalizados y contienen información que no se envía a otros usuarios. Para obtener más información sobre cómo funcionan estos mensajes, consulta la [API de Administración](/es/platform/core/api.html). 
+"Sin Campaña" se refiere a un correo o notificación enviado específicamente a un usuario en una fecha determinada. Estos mensajes no se consideran Campañas, ya que están personalizados y contienen información que no se envía a otros usuarios. Para obtener más información sobre cómo funcionan estos mensajes, consulta la [API de Administración](/es/platform/core/api.html).
 
 En la vista inicial los mensajes se ordenan en estas categorías:
 
