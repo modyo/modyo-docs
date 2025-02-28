@@ -70,9 +70,6 @@ Los tipos de tareas disponibles son:
  Cada paso debe incluir al menos una tarea válida para ser guardado.
 :::
 
-
-=====
-
 ## Code Snippets
 
 Los **code snippets** permiten agregar bloques personalizados de código en los flujos de originación. Estos bloques soportan **HTML, JavaScript y CSS**, lo que facilita la creación de componentes interactivos o la personalización del flujo según las necesidades del usuario.
