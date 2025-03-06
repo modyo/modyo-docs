@@ -70,6 +70,165 @@ Los tipos de tareas disponibles son:
  Cada paso debe incluir al menos una tarea válida para ser guardado.
 :::
 
+## Code Snippets
+
+Los **code snippets** permiten agregar bloques personalizados de código en los flujos de originación. Estos bloques soportan **HTML, JavaScript y CSS**, lo que facilita la creación de componentes interactivos o la personalización del flujo según las necesidades del usuario.
+
+Los **code snippets** pueden:
+
+- Ajustarse a cualquier escenario dentro del flujo de originación.
+- Desplegar datos en tiempo real desde la aplicación.
+- Almacenar y consumir información relevante para el proceso.
+
+### Insertar un Code Snippet
+
+Para agregar un **code snippet** en una tarea de originación, sigue estos pasos:
+
+1. Crea una nueva **Tarea** dentro de un paso del flujo.
+2. Selecciona el tipo de tarea **Snippet de código**.
+3. Configura las propiedades de la tarea.
+
+### Propiedades del Snippet de código
+
+- **Task ID**: Identificador único de la tarea. Se genera automáticamente al guardar la tarea y permite acceder a los datos desde la API.
+- **Nombre**: Nombre de la tarea, visible para el usuario.
+- **Identificador**: Valor único que se incluye en la URL de originación.
+- **Descripción**: Breve texto explicativo que describe la tarea.
+- **Completar la tarea mediante la API**:
+Si se marca, la acción de continuar se desactivará por defecto para esta tarea y requerirá que el desarrollador notifique el estado de finalización mediante la API de JavaScript.
+
+
+### API de JavaScript para Code Snippets
+
+Modyo proporciona una API en JavaScript para interactuar con los code snippets en tiempo de ejecución.
+
+#### Métodos disponibles
+
+- **`getUrl()`**: Retorna la URL del flujo de originación actual.
+- **`enableButton()`**: Habilita el botón de acción de la tarea y permite al usuario continuar con el flujo.
+
+### API JSON para Code Snippets
+
+Los Code Snippets pueden comunicarse con la API de originación utilizando datos en formato **JSON**.
+
+Para obtener datos almacenados en la aplicación actual, usa el método `getUrl()` para construir la solicitud. Para guardar información, se debe realizar una **petición POST** a la misma URL.
+
+
+#### Ejemplo de estructura JSON
+
+Cuando consumes datos de la API JSON obtendrás un objeto con todas los datos almacenados en la aplicación actual.
+
+```json
+{
+  "application": {
+    "sequence_id": "12345",
+    "fields": [
+      {
+        "answers": [
+          {
+            "question": {
+              "label": "What's your name?"
+            },
+            "text_field": "Jorge Regula"
+          }
+        ]
+      }
+    ]
+  },
+  "task": {
+    "task_id": "67890",
+    "step": {
+      "uid": "abcd1234"
+    }
+  },
+  "page": {
+    "name": "Origin Page"
+  }
+}
+```
+
+:::warning Atención
+Para almacenar información, los datos deben utilizar formato JSON válido, los errores de formato no serán procesados.
+:::
+
+### Uso de Liquid en code snippets
+
+Los code snippets pueden utilizar drops de liquid para acceder a datos internos de la aplicación y personalizar la experiencia del usuario.
+
+
+#### Application Drops
+
+En un flujo de originación, cada aplicación representa el proceso en curso de un usuario específico. Estos son algunos de los principales atributos disponibles a través de Liquid:
+
+| Descripción  | Ejemplo  |
+|---|---|
+| **application.sequence_id** Número de secuencia de la actual aplicación.  | ``` 77 ``` |
+| **application.assignee.name** Nombre de la persona asignada.  | ```John``` |
+| **application.fields** Array con respuestas almacenadas dentro de la aplicación actual. | ```[{"question": {"label": "What's your name?"},"text_field": "Jorge Regula"}]``` |
+| **application.QUESTION_ID** Al usar el ID de una pregunta específica ( ej: aplication.123456) se accede directamente a su información | ```{"question": {"label": "What's your name?"},"text_field": "John Doe"}``` |
+| **application.origination.name** Nombre de la originación. | ```My Origination``` |
+| **application.origination.steps** Array con los nombres de los steps en la originación | ```[ {"uid": "step 1"}, {"uid": "step 2"}]``` |
+| **application.origination.tasks** Array con todos los tasks en la originación y el step al que corresponden | ```[{"task_id": "67890","name": "Task 1", description: "step 1": { "uid": "abcd1234" } }]``` |
+
+Puedes aprender más sobre [Liquid Drops](/es/platform/channels/drops.html) en nuestra documentación.
+
+### Ejemplo de code snippets
+
+En este ejemplo puede encontrar en uso el  acceso a datos por Drops de Liquid e interacción con la APIs de JavaScript y JSON. Recuerda reemplazar el valor `QUESTION_ID` por el correspondiente en tu aplicación.
+
+``` html
+<div>
+  <h1>Code Snippets Demo</h1>
+  <p><strong>Username:</strong> {{ user.username }}</p>
+  <p><strong>Application sequence_id: </strong>{{ application.sequence_id }} </p>
+
+  <!-- Show all answered questions -->
+
+  {% for field in application.fields %}
+    {% for answer in field.answers %}
+
+    <hr>
+    <p><strong>Question: {{ answer.question.label }} </strong></p>
+    <p>Answer: {{ answer.text_field }}</p>
+
+    {% endfor %}
+  {% endfor %}
+
+  <!-- Show a question with answer -->
+
+  <p><strong>Question: {{ application.QUESTION_ID.question.label }}</strong></p>
+  <p>Answer: {{ application.QUESTION_ID.text_field }}</p>
+
+  <!-- Show Additional info  -->
+  <p><strong>Current Task ID:</strong> {{ task.task_id }}</p>
+  <p><strong>Current Step: </strong>{{ task.step.uid }}</p>
+  <p> <strong>Current Page: </strong>{{ page.name }}</p>
+  <p><strong>Origination Name:</strong> {{ application.origination.name }}</p>
+</div>
+
+<script>
+
+  /// Request formated URL for the API (JSON)
+  function getRequestJson() {
+    fetch(getUrl())
+      .then((data) => console.log(data));
+  }
+
+  /// Store data in the API (JSON)
+  function postRequestJson(content) {
+    fetch(getUrl().concat(`?content=${encodeURIComponent(JSON.stringify(content))}`), {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'X-CSRF-Token': document.querySelector('meta[name=csrf-token]').content
+      }
+    })
+      .then((data) => console.log(data));
+  }
+</script>
+```
+
 ### Campos
 
 Puedes incorporar una amplia variedad de campos en tus formularios para personalizar la recolección de datos de tus usuarios.
@@ -100,7 +259,7 @@ En este apartado se pueden editar los valores de la tarea seleccionada, puedes e
 - **Descripción**: Un breve texto explicativo sobre la tarea, que será visible para el usuario.
 
 
-### Editar Configuración de la originación
+### Editar configuración de la originación
 
 Al seleccionar la opción **Editar** en el menu contextual de tu orignación puedes editar sus propiedades.
 
@@ -140,7 +299,7 @@ La vista resumen de una originación te ofrece un resumen de las métricas clave
 - **Canceladas**: Refleja las solicitudes que han sido canceladas por el usuario o el administrador.
 - **Total**: Representa el número total de solicitudes, incluyendo las pendientes, completadas y canceladas.
 
-### Gestión de Aplicaciones
+### Gestión de aplicaciones
 
 La vista de aplicaciones te permite revisar y administrar individualmente el estado e información de cada aplicación a esta originación. Puedes seleccionar una aplicación específica para acceder a sus detalles y gestionar sus elementos clave.
 
@@ -179,7 +338,7 @@ Puedes invitar a usuarios para que ingresen información en una originación. Al
 - **Email**: La dirección de correo electrónico del usuario, donde recibirá la invitación para acceder a la originación.
 - **Asignar la aplicación**: En la lista desplegable, selecciona un administrador que gestionará esta originación en particular. Si no se selecciona un administrador, la aplicación quedará sin asignar.
 
-### Gestión de Asignados
+### Gestión de asignados
 
 En la vista de asignados,  puedes  monitorear y administrar a los administradores responsables de las aplicaciones dentro de un reino. Esta vista facilita el seguimiento del desempeño y la carga de trabajo de los administradores. Puedes filtrar las aplicaciones asignadas por rangos de fecha
 
