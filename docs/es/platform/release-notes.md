@@ -5,6 +5,16 @@ search: true
 # Notas del release
 
 ## 10.0
+### 10.0.20 - 10 de marzo de 2025
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Agrega soporte de archivos web assembly como chunks en paquetes zip porvenientes desde Modyo CLI
+* Agrega nuevo header Service-Worker-Allowed en los security headers de un sitio
+* Corrige un error en el modal de assets
+* Corrige problema de diferencias de csp nonce entre header y vista
+* Agrega filtros liquid para manipular respuestas de formularios para un usuario en la construcción de un sitio
+
+
 ### 10.0.19 - 07 de febrero de 2025
 <Badge text="Core" type="core" vertical="middle"/>
 
