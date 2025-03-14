@@ -79,7 +79,7 @@ Before sending a campaign, use the **Preview** button to verify the content. Onc
 The contextual button allows you to perform these actions:
 
 - **Message Editor**: Modify the content before sending.
-- **Send Test**: Send a test message to a specific address.
+- **Send test**: Sends a test message to a specific address (It can only be sent to users with access to the Modyo backend).
 - **Edit**: Change campaign properties, such as the target segment or reply address.
 - **Clone Campaign**: Create a copy with all the campaign's content.
 - **Delete campaign**: Deletes a campaign.
