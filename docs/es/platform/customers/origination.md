@@ -177,55 +177,94 @@ Puedes aprender más sobre [Liquid Drops](/es/platform/channels/drops.html) en n
 En este ejemplo puede encontrar en uso el  acceso a datos por Drops de Liquid e interacción con la APIs de JavaScript y JSON. Recuerda reemplazar el valor `QUESTION_ID` por el correspondiente en tu aplicación.
 
 ``` html
-<div>
-  <h1>Code Snippets Demo</h1>
-  <p><strong>Username:</strong> {{ user.username }}</p>
-  <p><strong>Application sequence_id: </strong>{{ application.sequence_id }} </p>
-
-  <!-- Show all answered questions -->
-
-  {% for field in application.fields %}
-    {% for answer in field.answers %}
-
-    <hr>
-    <p><strong>Question: {{ answer.question.label }} </strong></p>
-    <p>Answer: {{ answer.text_field }}</p>
-
-    {% endfor %}
-  {% endfor %}
-
-  <!-- Show a question with answer -->
-
-  <p><strong>Question: {{ application.QUESTION_ID.question.label }}</strong></p>
-  <p>Answer: {{ application.QUESTION_ID.text_field }}</p>
-
-  <!-- Show Additional info  -->
-  <p><strong>Current Task ID:</strong> {{ task.task_id }}</p>
-  <p><strong>Current Step: </strong>{{ task.step.uid }}</p>
-  <p> <strong>Current Page: </strong>{{ page.name }}</p>
-  <p><strong>Origination Name:</strong> {{ application.origination.name }}</p>
+<div class="form-group">
+	<h5>Hola, {{ user.name }}!</h5>
+	<p class="mb-6">Estas en la originacion {{ application.origination.name }}</p>
+	<div class="form-group">
+		<label for="productDropdown" class="form-label">Selecciona la marca de tus productos favoritos <span class="req">*</span></label>
+		<select class="form-select" id="productDropdown" disabled>
+			<option value="" selected>Cargando...</option>
+		</select>
+	</div>
 </div>
 
 <script>
+	const dropdown = document.getElementById('productDropdown');
 
-  /// Request formated URL for the API (JSON)
-  function getRequestJson() {
-    fetch(getUrl())
-      .then((data) => console.log(data));
-  }
+	async function initializeDropdown() {
+		const savedData = await getRequestJson();
+		let selectedValue = null;
+		if (savedData?.application?.fields?.[0]?.answers) {
+			const productAnswer = savedData.application.fields[0].answers.find(answer => answer.question.label === 'PRODUCT');
+			selectedValue = productAnswer?.text_field;
+		}
 
-  /// Store data in the API (JSON)
-  function postRequestJson(content) {
-    fetch(getUrl().concat(`?content=${encodeURIComponent(JSON.stringify(content))}`), {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-        'X-CSRF-Token': document.querySelector('meta[name=csrf-token]').content
-      }
-    })
-      .then((data) => console.log(data));
-  }
+		try {
+			const response = await fetch('https://dummyjson.com/products');
+			if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+			const data = await response.json();
+
+			let optionsHtml = '<option value="">Seleccionar ...</option>';
+			data.products.forEach(product => {
+				optionsHtml += `<option value="${product.id}" ${selectedValue && product.id.toString() === selectedValue ? 'selected' : ''}>${product.title}</option>`;
+			});
+			dropdown.innerHTML = optionsHtml;
+			dropdown.disabled = false;
+			if (dropdown.value) enableButton();
+
+		} catch (error) {
+			console.error("Error fetching product data:", error);
+			dropdown.innerHTML = '<option value="">Error al cargar</option>';
+		}
+	}
+
+	dropdown.addEventListener('change', () => {
+		if (dropdown.value) enableButton();
+	});
+
+	async function getRequestJson() {
+		try {
+			const url = getUrl();
+			const response = await fetch(url);
+			if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
+			return await response.json();
+		} catch (error) {
+			console.error("Error in getRequestJson:", error);
+			return null;
+		}
+	}
+
+	async function sendData() {
+		const jsonData = {
+			"application": {
+				"sequence_id": "{{application.sequence_id}}",
+				"fields": [{ "answers": [{ "question": { "label": "PRODUCT" }, "text_field": dropdown.value }] }]
+			},
+			"task": { "task_id": "{{task.task_id}}", "step": { "uid": "{{task.step.uid}}" } },
+			"page": { "name": "{{application.origination.name}}" }
+		};
+		await postRequestJson(jsonData);
+	}
+
+	async function postRequestJson(content) {
+		try {
+			const response = await fetch(getUrl().concat(`?content=${encodeURIComponent(JSON.stringify(content))}`), {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json', 'Accept': 'application/json', 'X-CSRF-Token': document.querySelector('meta[name=csrf-token]').content }
+			});
+			if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+			await response.json();
+		} catch (error) {
+			console.error('Error:', error);
+		}
+	}
+
+	document.addEventListener('DOMContentLoaded', async function() {
+		await initializeDropdown();
+		document.querySelector('form')?.addEventListener("submit", function(event) {
+			sendData();
+		});
+	});
 </script>
 ```
 
