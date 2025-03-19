@@ -5,6 +5,17 @@ search: true
 # Release Notes
 
 ## 10.0
+### 10.0.21 - March 16, 2025
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Adds Auhtorization code + PKCE flow option in integration with an open id identity provider
+* Adds option to send authentication parameters via url params
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Improved performance when obtaining templates
+
+
 ### 10.0.20 - March 10, 2025
 <Badge text="Channels" type="channels" vertical="middle"/>
 
