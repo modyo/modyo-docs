@@ -5,6 +5,17 @@ search: true
 # Notas del release
 
 ## 9.2
+### 9.2.74 - 02 de abril de 2025
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+  
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Corrige problema de diferencias de csp nonce entre header y vista
+* Agrega el atributo reference order al drop de ordenes en liquid
+
+
 ### 9.2.73 - 13 de febrero de 2025
 <Badge text="Customers" type="customers" vertical="middle"/>
 
