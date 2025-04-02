@@ -284,7 +284,9 @@ En este ejemplo puede encontrar en uso el  acceso a datos por Drops de Liquid e 
 	});
 </script>
 ```
-
+:::tip Tip
+El parámetro content que se envía tiene que ser un json válido. En caso de que tenga que ser vacío se tiene que enviar {}.
+:::
 ### Campos
 
 Puedes incorporar una amplia variedad de campos en tus formularios para personalizar la recolección de datos de tus usuarios.
