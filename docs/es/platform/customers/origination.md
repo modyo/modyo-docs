@@ -258,6 +258,23 @@ En este ejemplo puede encontrar en uso el  acceso a datos por Drops de Liquid e 
 			console.error('Error:', error);
 		}
 	}
+	async function postRequestJson2(content) {
+		try {
+			const response = await fetch(getUrl(), {
+				method: "POST",
+				headers: {
+					'X-CSRF-TOKEN': document.querySelector('meta[name=csrf-token]').content,
+					'Accept': 'application/json',
+      		'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({content: content}),
+			});
+			if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+			await response.json();
+		} catch (error) {
+			console.error('Error:', error);
+		}
+	}
 
 	document.addEventListener('DOMContentLoaded', async function() {
 		await initializeDropdown();
