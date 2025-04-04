@@ -12,7 +12,7 @@ search: true
   
 <Badge text="Channels" type="channels" vertical="middle"/>
 
-* Corrects problem of csp nonce differences between header and view
+* Fixes csp nonce differences problem between the header and the view
 * Adds the reference order attribute to the order drop in liquid
 
 ### 9.2.73 - February 13, 2025
