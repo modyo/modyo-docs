@@ -2,3 +2,4 @@ User-agent: *
 Disallow: /brand/
 Disallow: /coding/
 Disallow: /legal/
+Disallow: /assets/pdf/Modyo82Docs.pdf
