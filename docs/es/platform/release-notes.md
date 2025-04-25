@@ -5,6 +5,16 @@ search: true
 # Notas del release
 
 ## 10.0
+### 10.0.22 - 25 de abril de 2025
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Agrega nuevos caracteres soportados para el username de un usuario
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Mejora en la sincronización de menus, ahora identifica correctamente los segmentos iniciales si ambos stages comparten un mismo reino.
+
+
 ### 10.0.21 - 16 de marzo de 2025
 <Badge text="Core" type="core" vertical="middle"/>
 
