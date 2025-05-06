@@ -316,6 +316,28 @@ En este apartado se pueden editar los valores de la tarea seleccionada, puedes e
 - **Identificador**: Un identificador único que se incluirá en la URL de la originación.
 - **Descripción**: Un breve texto explicativo sobre la tarea, que será visible para el usuario.
 
+### Lógica Condicional
+
+La lógica condicional en Origination te permite crear flujos de trabajo más dinámicos e inteligentes. Con esta funcionalidad, puedes definir reglas para mostrar u ocultar **Pasos** y **Tareas** basándote en las respuestas proporcionadas por los usuarios o en datos existentes dentro de la aplicación. Esto te permite personalizar la experiencia del usuario, presentando solo la información relevante en cada etapa del proceso y simplificando o bifurcando la interacción.
+
+La lógica condicional te ofrece la flexibilidad de:
+
+* **Ocultar o mostrar pasos completos:** Dirige a los usuarios a través de diferentes caminos dentro del flujo de originación según sus respuestas previas.
+* **Ocultar o mostrar tareas individuales:** Dentro de un paso, puedes mostrar u ocultar tareas específicas. Esto es útil para solicitar información adicional solo cuando es necesaria.
+
+#### Configurar Lógica Condicional
+
+Para configurar la lógica condicional en Pasos y Tareas, sigue estos pasos:
+
+1. En el build de una originación da click en el botón de **Lógica condicional**
+2. **Esconde pasos o la tareas:** Dentro de la configuración de tu flujo de originación, puedes dejar como no visibles los pasos o las tareas que quieras, presionando el ícono del ojo.
+3. **Selecciona el Paso o la Tarea:** Dentro de la configuración de tu flujo de originación, puedes selecciona el paso o la tarea a la que deseas aplicar la lógica condicional.
+4. **Define las Reglas:** Utiliza el editor de reglas para definir las condiciones que determinarán si el Paso o la Tarea se muestra u oculta. Puedes crear reglas basadas en:
+    * **Respuestas a campos Input:** Compara la respuesta proporcionada por el usuario en un campo específico con un valor determinado. Puedes utilizar operadores como "es igual a", "no es igual a", "contiene", "es mayor que", "es menor que", etc.
+    **Selecciona la Acción:** Define la acción que se realizará cuando la regla se cumpla: "Mostrar" u "Ocultar" y el paso o la tarea que concierne.
+6. **Guarda los cambios:** Una vez que hayas definido tus reglas, guarda los cambios.
+
+:::tip Considera cómo la lógica condicional puede afectar la experiencia del usuario y asegúrate de que el flujo se pueda completar. :::
 
 ### Editar configuración de la originación
 
