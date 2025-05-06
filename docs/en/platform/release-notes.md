@@ -5,6 +5,26 @@ search: true
 # Release Notes
 
 ## 10.0
+### 10.0.23 - May 05, 2025
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Fixes domain validation for redirect_to logout parameter
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Fixes preview display persistence on administrator logout for sites with custom domains
+
+
+### 10.0.22 - April 25, 2025
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Adds new supported characters to usernames
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Improved menu synchronization, now correctly identifies the initial segments if both stages share the same realm
+
+
 ### 10.0.21 - March 16, 2025
 <Badge text="Core" type="core" vertical="middle"/>
 
