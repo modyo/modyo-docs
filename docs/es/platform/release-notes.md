@@ -5,6 +5,16 @@ search: true
 # Notas del release
 
 ## 10.0
+### 10.0.23 - 05 de mayo de 2025
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Corrige la validación de dominios para el parámetro redirect_to del logout
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Corrige persistencia de visualización del preview al cerrar sesión de administrador para sitios con custom domains
+
+
 ### 10.0.22 - 25 de abril de 2025
 <Badge text="Core" type="core" vertical="middle"/>
 
