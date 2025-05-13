@@ -5,6 +5,17 @@ search: true
 # Notas del release
 
 ## 10.0
+### 10.0.24 - 13 de mayo de 2025
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de performance
+  
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Mejora de performance en la carga de contenido desde el SDK de liquid y páginas de contenido
+* Mejora de performance en la carga de menús
+
+
 ### 10.0.23 - 05 de mayo de 2025
 <Badge text="Customers" type="customers" vertical="middle"/>
 
@@ -22,7 +33,7 @@ search: true
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
-* Mejora en la sincronización de menus, ahora identifica correctamente los segmentos iniciales si ambos stages comparten un mismo reino.
+* Mejora en la sincronización de menus, ahora identifica correctamente los segmentos iniciales si ambos stages comparten un mismo reino
 
 
 ### 10.0.21 - 16 de marzo de 2025
