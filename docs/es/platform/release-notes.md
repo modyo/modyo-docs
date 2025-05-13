@@ -13,7 +13,7 @@ search: true
 <Badge text="Channels" type="channels" vertical="middle"/>
 
 * Mejora de performance en la carga de contenido desde el SDK de liquid y páginas de contenido
-* Mejora de performance en la carga de menus
+* Mejora de performance en la carga de menús
 
 
 ### 10.0.23 - 05 de mayo de 2025
@@ -33,7 +33,7 @@ search: true
 
 <Badge text="Channels" type="channels" vertical="middle"/>
 
-* Mejora en la sincronización de menus, ahora identifica correctamente los segmentos iniciales si ambos stages comparten un mismo reino.
+* Mejora en la sincronización de menus, ahora identifica correctamente los segmentos iniciales si ambos stages comparten un mismo reino
 
 
 ### 10.0.21 - 16 de marzo de 2025
