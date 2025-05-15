@@ -5,6 +5,12 @@ search: true
 # Notas del release
 
 ## 10.0
+### 10.0.25 - 14 de mayo de 2025
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Mejora de performance en el filtro json para una entrada de contenido
+
+
 ### 10.0.24 - 13 de mayo de 2025
 <Badge text="Core" type="core" vertical="middle"/>
 
