@@ -315,7 +315,29 @@ En este apartado se pueden editar los valores de la tarea seleccionada, puedes e
 - **Nombre**: El nombre de la tarea que será visible para el usuario.
 - **Identificador**: Un identificador único que se incluirá en la URL de la originación.
 - **Descripción**: Un breve texto explicativo sobre la tarea, que será visible para el usuario.
+### Lógica Condicional
 
+La lógica condicional te permite crear flujos de trabajo más dinámicos e inteligentes. Con esta funcionalidad, puedes definir reglas para mostrar u ocultar **Pasos**, **Tareas** y **campos de tareas Input** basándote en las respuestas proporcionadas por los usuarios o en datos existentes dentro de la aplicación. Esto te permite personalizar la experiencia del usuario, presentando solo la información relevante en cada etapa del proceso y simplificando o bifurcando la interacción. La lógica condicional te ofrece la flexibilidad de:
+
+* **Ocultar o mostrar pasos completos:** Dirige a los usuarios a través de diferentes caminos dentro del flujo de originación según sus respuestas previas.
+* **Ocultar o mostrar tareas individuales:** Dentro de un paso, puedes mostrar u ocultar tareas específicas. Esto es útil para solicitar información adicional solo cuando es necesaria.
+* **Ocultar o mostrar campos de tareas Input:** Dentro de una tarea de tipo Input, puedes mostrar u ocultar campos específicos. Esto te permite omitir o solicitar datos de acuerdo a las respuestas que proporciona el usuario. 
+
+#### Configurar Lógica Condicional
+
+Para configurar la lógica condicional, sigue estos pasos:
+
+1. **Entra en el editor:** En la vista Build de una originación, presiona el botón de **Lógica condicional**.
+2. **Edita la visibilidad de los elementos:** Por defecto, todos los pasos, tareas y campos estarán visibles. En la sección **Estructura**, puedes marcar como no visibles los elementos que quieras presionando el ícono del ojo.
+3. **Define reglas:** En la sección **Reglas**, puedes definir las condiciones que determinarán si un elemento se muestra u oculta. Las reglas se componen de: (1) una o más condiciones evaluadas mediante  operadores **AND** y **OR** y (2) una acción a ejecutar cuando las condiciones se cumplan.
+   1. **Agrega una regla**: Presiona el botón **Añadir**.
+   2. **Define las condiciones:** Las condiciones pueden estar basadas en:
+      * **Respuestas a campos Input:** Compara la respuesta proporcionada por el usuario en un campo específico con un valor determinado. Puedes utilizar operadores como "es igual a", "no es igual a", "contiene", "es mayor que", "es menor que", etc.
+      * **Completitud de un Paso o Tarea:** Evalúa si un paso o tarea fue completada.
+   3. **Define la acción:** Selecciona la acción y el elemento sobre el cual se ejecutará cuando la regla se cumpla. Las acciones disponibles son **Mostrar** y **Ocultar**.
+4. **Guarda los cambios:** Una vez que hayas definido tus reglas, guarda los cambios.
+
+:::tip Considera cómo la lógica condicional puede afectar la experiencia del usuario y asegúrate de que el flujo se pueda completar. :::
 
 ### Editar configuración de la originación
 
