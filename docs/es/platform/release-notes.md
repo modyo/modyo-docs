@@ -12,7 +12,7 @@ search: true
 * Mejoras de rendimiento y mantenibilidad
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* Mejora validación de fechas del formulario
+* Mejoras en la validación de fechas del formulario
 
 
 ### 9.2.74 - 02 de abril de 2025
