@@ -5,6 +5,16 @@ search: true
 # Notas del release
 
 ## 9.2
+### 9.2.75 - 15 de mayo de 2025
+<Badge text="Core" type="core" vertical="middle"/>
+
+* Mejoras de seguridad
+* Mejoras de rendimiento y mantenibilidad
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Mejoras en la validación de fechas del formulario
+
+
 ### 9.2.74 - 02 de abril de 2025
 <Badge text="Core" type="core" vertical="middle"/>
 
