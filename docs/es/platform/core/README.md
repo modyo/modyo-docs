@@ -13,10 +13,6 @@ version: 9.2
 
 Modyo Platform presenta la interfaz principal de Modyo desde la cual se tienen acceso a todas las secciones relevantes.
 
-:::tip Versiones pasadas
-La documentación en este sitio aplica a la última versión (9.1). Para acceder a la documentación de las versiones anteriores (8.2) [haz click aquí](/assets/pdf/Modyo82Docs.pdf).
-:::
-
 ### Funcionalidades principales
 
 - [Revisión en Equipo](/es/platform/core/key-concepts.html)
