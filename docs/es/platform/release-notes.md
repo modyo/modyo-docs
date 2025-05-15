@@ -10,7 +10,6 @@ search: true
 
 * Mejoras de seguridad
 * Mejoras de rendimiento y mantenibilidad
-  
 <Badge text="Customers" type="customers" vertical="middle"/>
 
 * Mejora validación de fechas del formulario
