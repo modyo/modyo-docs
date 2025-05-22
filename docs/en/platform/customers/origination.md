@@ -70,6 +70,223 @@ The available task types are:
  Each step must include at least one valid task to be saved.
 :::
 
+## Code Snippets
+
+**Code snippets** allow you to add custom blocks of code to origination flows. These blocks support **HTML, JavaScript and CSS**, making it easy to create interactive components or customize the flow according to the user's needs.
+
+**Code snippets** can:
+
+- Adjust to any scenario within the origination flow.
+- Deploy real-time data from the submissions.
+- Store and consume information relevant to the process.
+
+### Insert a Code Snippet
+
+To add a **code snippet** to an origination task, follow these steps:
+
+1. Create a new **Task** within a flow step.
+2. Select the **Code Snippet** task type.
+3. Configure the properties of the task.
+
+### Code Snippet Properties
+
+- **Task ID**: Unique identifier for the task. It is generated automatically when you save the task and allows you to access the data from the API.
+- **Name**: Name of the task, visible to the user.
+- **Identifier**: Unique value included in the origination URL.
+- **Description**: Short explanatory text describing the task.
+- **Complete the task using the API**:
+If checked, the continue action will be disabled by default for this task and will require the developer to report the completion status using the JavaScript API.
+
+
+### JavaScript API for Code Snippets
+
+Modyo provides a JavaScript API for interacting with code snippets at run time.
+
+#### Available methods
+
+- **`getUrl()`**: Returns the URL of the current origination flow.
+- **`enableButton()`**: Enables the task's action button and allows the user to continue with the flow.
+
+### JSON API for Code Snippets
+
+Code Snippets can communicate with the origination API using data in **JSON** format.
+
+To get data stored in the current application, use the `getUrl()` method to build the request. To save information, a **POST request** must be made to the same URL.
+
+
+#### JSON structure example
+
+When you consume data from the JSON API you will get an object with all the data stored in the current application.
+
+```json
+{
+  "application": {
+    "sequence_id": "12345",
+    "fields": [
+      {
+        "answers": [
+          {
+            "question": {
+              "label": "What's your name?"
+            },
+            "text_field": "Jorge Regula"
+          }
+        ]
+      }
+    ]
+  },
+  "task": {
+    "task_id": "67890",
+    "step": {
+      "uid": "abcd1234"
+    }
+  },
+  "page": {
+    "name": "Origin Page"
+  }
+}
+```
+
+:::warning Attention
+To store information, the data must use valid JSON format, format errors will not be processed.
+:::
+
+### Using Liquid in code snippets
+
+Code snippets can use liquid drops to access internal application data and personalize the user experience.
+
+
+#### Application Drops
+
+In an origination flow, each application represents the ongoing process of a specific user. Here are some of the key attributes available through Liquid:
+
+| Description  | Example  |
+|---|---|
+| **application.sequence_id** Sequence number of the current application.  | ``` 77 ``` |
+| **application.assignee.name** Name of the assigned person.  | ```John``` |
+| **submission.fields** Array with answers stored within the current submission. | ```[{"question": {"label": "What's your name?"},"text_field": "Jorge Regula"}]``` |
+| **Submission.QUESTIONS_ID** Using the ID of a specific question (ex: submission.123456), your information is directly accessed | ```{"question": {"label": "What's your name?"},"text_field": "John Doe"}``` |
+| **submission.origination.name** Name of the origination. | ```My Origination``` |
+| **submission.origination.steps** Array with the names of the steps in the origination | ```[ {"uid": "step 1"}, {"uid": "step 2"}]``` |
+| **submission.origination.tasks** Array with all the tasks in the origination and the step to which they correspond | ```[{"task_id": "67890","name": "Task 1", description: "step 1": { "uid": "abcd1234" } }]``` |
+
+You can learn more about [Liquid Drops](/platform/channels/drops.html) in our documentation.
+
+### Code snippets example
+
+In this example, you can find in use the access to data by Liquid Drops and interaction with the JavaScript and JSON APIs. Remember to replace the `QUESTION_ID` value with the corresponding one in your application.
+
+``` html
+<div class="form-group">
+    <h5>Hi, {{ user.name }}!</h5>
+    <p class="mb-6">This is the {{ application.origination.name }} origination</p>
+    <div class="form-group">
+        <label for="productDropdown" class="form-label">Select the brand of your favorite products <span class="req">*</span></label>
+        <select class="form-select" id="productDropdown" disabled>
+            <option value="" selected>Loading...</option>
+        </select>
+    </div>
+</div>
+
+<script>
+    const dropdown = document.getElementById('productDropdown');
+
+    async function initializeDropdown() {
+        const savedData = await getRequestJson();
+        let selectedValue = null;
+        if (savedData?.application?.fields?.[0]?.answers) {
+            const productAnswer = savedData.application.fields[0].answers.find(answer => answer.question.label === 'PRODUCT');
+            selectedValue = productAnswer?.text_field;
+        }
+
+        try {
+            const response = await fetch('https://dummyjson.com/products');
+            if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+            const data = await response.json();
+
+            let optionsHtml = '<option value="">Seleccionar ...</option>';
+            data.products.forEach(product => {
+                optionsHtml += `<option value="${product.id}" ${selectedValue && product.id.toString() === selectedValue ? 'selected' : ''}>${product.title}</option>`;
+            });
+            dropdown.innerHTML = optionsHtml;
+            dropdown.disabled = false;
+            if (dropdown.value) enableButton();
+
+        } catch (error) {
+            console.error("Error fetching product data:", error);
+            dropdown.innerHTML = '<option value="">Error al cargar</option>';
+        }
+    }
+
+    dropdown.addEventListener('change', () => {
+        if (dropdown.value) enableButton();
+    });
+
+    async function getRequestJson() {
+        try {
+            const url = getUrl();
+            const response = await fetch(url);
+            if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
+            return await response.json();
+        } catch (error) {
+            console.error("Error in getRequestJson:", error);
+            return null;
+        }
+    }
+
+    async function sendData() {
+        const jsonData = {
+            "application": {
+                "sequence_id": "{{application.sequence_id}}",
+                "fields": [{ "answers": [{ "question": { "label": "PRODUCT" }, "text_field": dropdown.value }] }]
+            },
+            "task": { "task_id": "{{task.task_id}}", "step": { "uid": "{{task.step.uid}}" } },
+            "page": { "name": "{{application.origination.name}}" }
+        };
+        await postRequestJson(jsonData);
+    }
+
+    async function postRequestJson(content) {
+        try {
+            const response = await fetch(getUrl().concat(`?content=${encodeURIComponent(JSON.stringify(content))}`), {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json', 'X-CSRF-Token': document.querySelector('meta[name=csrf-token]').content }
+            });
+            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+            await response.json();
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    }
+    async function postRequestJson2(content) {
+        try {
+            const response = await fetch(getUrl(), {
+                method: "POST",
+                headers: {
+                    'X-CSRF-TOKEN': document.querySelector('meta[name=csrf-token]').content,
+                    'Accept': 'application/json',
+            'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({content: content}),
+            });
+            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+            await response.json();
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', async function() {
+        await initializeDropdown();
+        document.querySelector('form')?.addEventListener("submit", function(event) {
+            sendData();
+        });
+    });
+</script>
+```
+:::tip Tip
+The content parameter that is sent must be a valid json. If it has to be empty, {} must be sent.
+:::
 ### Fields
 
 You can incorporate a wide variety of fields in your forms to customize the collection from your users' data.
@@ -98,9 +315,31 @@ In this section you can edit the values of the selected task, you can find these
 - **Name**: The name of the task that will be visible to the user.
 - **Identifier**: A unique identifier that will be included in the origination URL.
 - **Description**: A short explanatory text about the task, it will be visible to the user.
+### Conditional Logic
 
+Conditional logic allows you to create more dynamic and intelligent workflows. With this functionality, you can define rules for showing or hiding **Steps**, **Tasks** and **Input task fields** based on answers provided by users or on existing data within the application. This allows you to personalize the user experience, presenting only relevant information at each stage of the process and simplifying or bifurcating the interaction. Conditional logic gives you the flexibility to:
 
-### Edit Origination Settings
+* **Hide or show complete steps: ** It guides users through different paths within the origination flow based on their previous answers.
+* **Hide or show individual tasks: ** Within a step, you can show or hide specific tasks. This is useful for requesting additional information only when needed.
+* **Hide or show Input task fields: ** Within an Input task, you can show or hide specific fields. This allows you to omit or request data based on the answers provided by the user. 
+
+#### Configure Conditional Logic
+
+To set up conditional logic, follow these steps:
+
+1. **Enter the editor: ** In the Build view of an origination, press the **Conditional Logic** button.
+2. **Edit the visibility of items: ** By default, all steps, tasks, and fields will be visible. In the **Structure** section, you can mark as invisible the elements you want by pressing the eye icon.
+3. **Define rules: ** In the **Rules** section, you can define the conditions that will determine if an element is shown or hidden. The rules are composed of: (1) one or more conditions evaluated using **AND** and **OR** operators and (2) an action to be executed when the conditions are met.
+   1. **Add a rule**: Press the **Add** button.
+   2. **Define conditions: ** Conditions can be based on:
+      * **Responses to Input fields: ** Compares the response provided by the user in a specific field with a given value. You can use operators such as “is equal to”, “not equal to”, “contains”, “is greater than”, “is less than”, etc.
+      * **Completeness of a Step or Task: ** Evaluate if a step or task was completed.
+   3. **Define the action: ** Select the action and the element on which it will be executed when the rule is met. The available actions are **Show** and **Hide**.
+4. **Save the changes: ** Once you've defined your rules, save the changes.
+
+:::tip Consider how conditional logic can affect the user experience and ensure that the flow can be completed. :::
+
+### Edit origination settings
 
 By selecting the **Edit** option in the context menu of your origination you can edit its properties.
 
@@ -140,7 +379,7 @@ The overview of an origination gives you a summary of key metrics related to the
 - **Canceled**: Reflects requests that have been canceled by the user or administrator.
 - **Total**: Represents the total number of requests, including those pending, completed and canceled.
 
-### Application Management
+### Submission management
 
 The application view allows you to individually review and manage the status and information of each application at this origin. You can select a specific application to access its details and manage its key elements.
 
@@ -179,7 +418,7 @@ You can invite users to enter information in an origination. When inviting a use
 - **Email**: The user's email address, where they will receive the invitation to access the origination.
 - **Assign the application**: In the drop-down list, select an administrator who will manage this particular origination. If an administrator is not selected, the application will remain unassigned.
 
-### Assignee Management
+### Assignee management
 
 In the assignee view, you can monitor and manage the administrators responsible for the applications within a realm. This view makes it easy to track the performance and workload of administrators. You can filter the assigned apps by date ranges
 
