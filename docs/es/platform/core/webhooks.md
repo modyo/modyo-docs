@@ -12,7 +12,12 @@ Para habilitarlos, debes checkear la parte superior de la página y después pro
 
 Los webhooks se pueden crear a partir de acciones de sitios o espacios.
 
-### Crear un webhook
+Al crear un webhook, debes tener la URL a la que quieres enviar la información, seleccionar el tipo de log y sitio (en caso de ser necesario) que gatillará el webhook y luego guardar los cambios.
+
+Luego de esto, podrás ver en la lista todos los webhooks que estén activos.
+
+
+### Crear un webhook administrativo
 
 Llama a tus canales de gestión a través de un webhook.
 
@@ -26,12 +31,9 @@ Para crear un webhook, sigue estos pasos:
 6. Agrega los headers necesarios para la llamada. 
 7. Haz click en **Guardar**.
 
-Nota: El webhook es llamado a través de un POST cuando se genera un log del tipo seleccionado. Una vez creado el webhook, podrás enviar una notificación de prueba con información falsa para probar que tu URL está recibiendo correctamente los POSTs desde Modyo.
 
 Los webhooks de sitio son:
 
-* Respuesta del formulario creado
-* Respuesta de formulario actualizada
 * Página creada
 * Página eliminada
 * Página publicada
@@ -84,13 +86,8 @@ Los webhooks de espacios son:
 * Tipo eliminado
 * Tipo actualizado
 
-Al crear un webhook, debes tener la URL a la que quieres enviar la información, seleccionar el tipo de log y sitio (en caso de ser necesario) que gatillará el webhook y luego guardar los cambios.
 
-Luego de esto, podrás ver en la lista todos los webhooks que estén activos.
-
-Una vez creado el webhook, podrás enviar una notificación de prueba con información falsa para probar que tu URL está recibiendo correctamente los POSTs desde Modyo.
-
-### Ejemplo de Carga Útil
+### Ejemplo de Payload
 
 ``` javascript
 {
@@ -123,5 +120,77 @@ Una vez creado el webhook, podrás enviar una notificación de prueba con inform
    "trigger_entry_space_uid":"space-test"
 }
 ```
+### Crear un webhook de reino
 
-Una vez creado el webhook, podrás enviar una notificación de prueba con información falsa para probar que tu URL está recibiendo correctamente los POSTs desde Modyo.
+Llama a tus canales de gestión a través de un webhook.
+
+Para crear un webhook, sigue estos pasos:
+
+1. Desde un reino, haz click en **Configuración del reino**, luego selecciona **Webhooks**.
+2. Haz click en **+ Nuevo Webhook**.
+3. Escribe el nombre y la URL a la cual quieres llamar.
+4. Selecciona el tipo de log que activará el webhook.
+5. Agrega los headers necesarios para la llamada. 
+6. Haz click en **Guardar**.
+
+Los webhooks de reino con sus payloads repectuvos:
+
+* Respuesta de formulario creada
+``` javascript
+```
+* Respuesta de formulario actualizada
+``` javascript
+```
+* Respuesta de originación creada
+``` javascript
+```
+* Respuesta de originación iniciada
+``` javascript
+```
+* Tarea de respuesta de originación enviada
+``` javascript
+```
+* Respuesta de originación completada
+``` javascript
+```
+* Respuesta de originación cancelada
+``` javascript
+```
+* Inicio de sesión
+``` javascript
+```
+* Iniciar sesión con código
+``` javascript
+```
+* Cerrar sesión
+``` javascript
+```
+* Error al intentar iniciar sesión
+``` javascript
+```
+* Error al intentar iniciar sesión con código
+``` javascript
+```
+* Usuario creado
+``` javascript
+```
+* Usuario actualizado
+``` javascript
+```
+* Usuario habilitado
+``` javascript
+```
+* Registro de usuario
+``` javascript
+```
+* Restaurar contraseña
+``` javascript
+```
+* Usuario borrado
+``` javascript
+```
+
+Nota: El webhook es llamado a través de un POST cuando se genera un log del tipo seleccionado. Una vez creado el webhook, podrás enviar una notificación de prueba con información falsa para probar que tu URL está recibiendo correctamente los POSTs desde Modyo.
+
+
+
