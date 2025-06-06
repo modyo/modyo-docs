@@ -5,6 +5,12 @@ search: true
 # Notas del release
 
 ## 9.2
+### 9.2.76 - 06 de junio de 2025
+<Badge text="Channels" type="Channels" vertical="middle"/>
+
+* Mejora la inyección del csp-nonce en las páginas, ahora se inyecta en cada request que llegue a la aplicación indistintamente si existe o no cache de aplicación
+
+
 ### 9.2.75 - 15 de mayo de 2025
 <Badge text="Core" type="core" vertical="middle"/>
 
