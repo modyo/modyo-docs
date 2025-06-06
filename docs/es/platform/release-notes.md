@@ -5,6 +5,12 @@ search: true
 # Notas del release
 
 ## 10.0
+### 10.0.26 - 06 de junio de 2025
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Mejora la inyección del csp-nonce en las páginas, ahora se inyecta en cada request que llegue a la aplicación indistintamente si existe o no caché de aplicación
+
+
 ### 10.0.25 - 14 de mayo de 2025
 <Badge text="Channels" type="channels" vertical="middle"/>
 
