@@ -358,6 +358,10 @@ Puedes habilitar o no reCAPTCHA en el reino, una vez habilitado ingresa:
 - **Clave de sitio**
 - **Secreto**
 - **Umbral**
+- 
+:::tip Tip
+Modyo soporta la versión V3 de reCAPTCHA básico, no soporta el enterprise.
+:::
 
 ### Configuración de payment
 
