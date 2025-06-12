@@ -428,6 +428,16 @@ These drops allow you to obtain information when making a request.
 | **request.refresh_url** The refresh URL of the request. | ```https://test.miModyo.com/newsite/requests/refresh``` |
 | **request.url** The URL of the request.  | ```https://test.miModyo.com/ivansite/the-new-type/newentry``` |
 
+## Segment
+
+These drops allow you to obtain information from Segments. The available attributes are:
+
+| Description                                                        | Example  |
+|--------------------------------------------------------------------|---|
+| **segment.id** A string with the ID associated with the segment.   |  |
+| **segment.name** A string with the name associated with the segment. | |
+
+
 ## Site
 
 Site drops are used to obtain all the information of a site. The available attributes are:
@@ -495,10 +505,11 @@ Display dynamic content created in your spaces from anywhere on your site. In th
 
 These drops obtain the information relevant to Origination Steps.
 
-| Description                                         | Example                                                                                              |
-|-----------------------------------------------------|------------------------------------------------------------------------------------------------------|
-| **step.name** Name of the step                      | ```First Step```                                                                              |
-| **step.tasks** Array of tasks (REVISAR ESTO CAMBIO) |                                                                                                      |
+| Description                                         | Example          |
+|-----------------------------------------------------|------------------|
+| **step.name** Name of the step                      | ```First Step``` |
+| **step.uid** UID of the step                        | ```first-step``` |
+| **step.tasks** Array of tasks |                  |
 
 
 
@@ -569,17 +580,6 @@ Responses to the Validation Tasks
 | **validation_task_response.validated** Boolean to check if validation task was validated | ```true```  |
 
 
-
-
-## Target
-
-These drops allow you to obtain information from Targets. The available attributes are:
-
-| Description  | Example  |
-|---|---|
-| **target.id** A string with the ID associated with the target. |  |
-| **target.name** A string with the name associated with the target.  | |
-
 ## Task
 
 These drops obtain the information relevant to Origination Tasks.
@@ -634,8 +634,8 @@ Use the user drops to get information about your users from the Customers module
 | **[user.notifications](#notificacion)** Array of notification type objects.                                                              |  |
 | **user.profile_url** The URL of the user's profile.                                                                                      | ```https://test.miModyo.com/realms/default/profile``` |
 | **user.sex** The gender value configured for the user.                                                                                   | ```0``` |
-| **[user.submissions](#notificacion)** Array of submission type objects.                                                                 |  |
-| **[user.targets](#target)** Array of objects of the target type.                                                                         |  |
+| **[user.submissions](#notificacion)** Array of submission type objects.                                                                  |  |
+| **[user.segments](#segment)** Array of objects of the segment type.                                                                      |  |
 | **user.undefined_sex_value** The default value when gender is undefined.                                                                 | ```3``` |
 | **[user.unread_notifications](#notification)** Array of notification-type objects.                                                       |  |
 | **user.unread_notifications_count** The count of unread notifications.                                                                   | ```2``` |
