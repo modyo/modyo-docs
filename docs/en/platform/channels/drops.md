@@ -167,14 +167,16 @@ These drops allow you to get information through Liquid from a form in the Custo
 
 These drops allow you to obtain information through Liquid for questions on a form in the Customers module.
 
-| Description  | Example  |
-|---|---|
-| **question.allow_alternatives?** Boolean to check if the question accepts alternatives.  | ```false``` |
-| **question.alternatives** Array with alternatives type objects.  | |
-| **question.allow_alternatives?** Boolean to check if the question accepts alternatives.  | ```false``` |
-| **[question.form](#form)** Form-type object.  | |
-| **question.id** Returns the question id.  | ```3``` |
-| **question.label** The label of the question. | ```The first question``` |
+| Description                                                                             | Example                  |
+|-----------------------------------------------------------------------------------------|--------------------------|
+| **question.allow_alternatives?** Boolean to check if the question accepts alternatives. | ```false```              |
+| **question.alternatives** Array with alternatives type objects.                         |                          |
+| **question.allow_alternatives?** Boolean to check if the question accepts alternatives. | ```false```              |
+| **[question.form](#form)** Form-type object.                                            |                          |
+| **question.id** Returns the question id.                                                | ```3```                  |
+| **question.label** The label of the question.                                           | ```The first question``` |
+| **question.name** The name of the question.                                             | ```The first question``` |
+| **question.uid** The uid of the question.                                                | ```text-question-1```    |
 
 ## Grid
 
@@ -368,6 +370,20 @@ These drops allow you to obtain information through Liquid for notifications in 
 | **order_item.quantity** Number of items in the order.  |  |
 | **order_item.updated_at** Date the order item was last updated.  |  |
 
+# Origination
+
+These drops obtain the information relevant to Originations.
+
+| Description                                                                                                          | Example                                                                                                 |
+|----------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **origination.name** Name of the origination.                                                                        | ```My new Origination```                                                                                |
+| **origination.description** Description of the origination.                                                          | ```Origination process to guide customers from personal information register to bank data validation``` |
+| **origination.due_value** (Integer) Value of due period.                                                             | ```15```                                                                                                |
+| **origination.due_unit** Unit of due period. Possible values are days, weeks and months                              | ```days```                                                                                              |
+| **origination.url** Origination Page URL.                                                                            | ```https://test.modyo.com/new-site/myorigination``` |
+| **origination.steps['step_uid']** Step with provided UID. |                                                     |
+
+
 ## Page
 
 These drops are very useful when you want to make dynamic pages using Liquid.
@@ -416,43 +432,44 @@ These drops allow you to obtain information when making a request.
 
 Site drops are used to obtain all the information of a site. The available attributes are:
 
-| Description  | Example  |
-|---|---|
-| **[site.account](#account)** The Account-type object associated with this site. |  |
-| **site.apple_touch_icons** String with the link for the Apple touch icon.  | |
-| **site.cache_key** The cache key associated with the site. |  |
-| **site.description** A string with the description of the site.  | |
-| **site.favicon_link** A string with the link to the favicon.|  |
-| **site.host** A string with the site host.  | |
-| **site.keywords** A string with all the keywords separated by commas on the site. |  |
-| **site.language** A string containing the language of the site.  | |
-| **site.login_url** A string with the URL to log in to the site. |  |
-| **site.logo** A string with the location of the logo for the site.  | |
-| **site.logout_url** A string containing the site's logout URL. |  |
-| **site.name** A string with the name of the site. |  |
-| **site.profile_url** A string with the profile link for the site. |  |
-| **[site.pwa_icon](#asset)** Asset type object that contains the PWA icon information. |  |
-| **site.search_url** A string with the URL for the site's search bar. |  |
-| **site.tag_manager_id** A string with the Google Tag Manager ID of the site. |  |
-| **site.tagline** A string describing the site's tagline. |  |
-| **site.use_pwa_manifest** Boolean that determines if the site uses PWA manifest. |  |
-| **site.uuid** A string with the UUID of the site. |  |
-| **site.account_url** A string with the URL of the account associated with the site. |  |
-| **site.breadcrumb** A string with the CSS class of the breadcrumb div. |  |
-| **site.cache_version** A string with the cache key for this version of the site. |  |
-| **site.csrf_meta_tag** A string with the CSRF meta tag. |  |
-| **site.css_path** A string with the location of the site's CSS file. |  |
-| **site.current_year** A string with the current year of the site. |  |
-| **site.js_path** A string with the location of the site's JS file. |  |
-| **site.login_enabled** Boolean that determines if the site uses login.|  |
-| **site.manifest_url** A string with the URL of the manifest for the site. |  |
-| **site.meta_tags** A string with the site's meta tags separated by commas. |  |
-| **site.root_path** A string with the root location of the site. |  |
-| **site.service_worker_enabled** Boolean that determines if the top-level service worker is activated (alias: sw_enabled) |  |
-| **site.service_worker_scope** A string with the scope of the site's service worker.|  |
-| **site.service_worker_url** A string with the service worker URL for the site.
- |  |
-| **site.url** A string with the URL associated with the site. |  |
+| Description                                                                                                                  | Example  |
+|------------------------------------------------------------------------------------------------------------------------------|---|
+| **[site.account](#account)** The Account-type object associated with this site.                                              |  |
+| **site.apple_touch_icons** String with the link for the Apple touch icon.                                                    | |
+| **site.cache_key** The cache key associated with the site.                                                                   |  |
+| **site.description** A string with the description of the site.                                                              | |
+| **site.favicon_link** A string with the link to the favicon.                                                                 |  |
+| **site.host** A string with the site host.                                                                                   | |
+| **site.keywords** A string with all the keywords separated by commas on the site.                                            |  |
+| **site.language** A string containing the language of the site.                                                              | |
+| **site.login_url** A string with the URL to log in to the site.                                                              |  |
+| **site.logo** A string with the location of the logo for the site.                                                           | |
+| **site.logout_url** A string containing the site's logout URL.                                                               |  |
+| **site.name** A string with the name of the site.                                                                            |  |
+| **site.profile_url** A string with the profile link for the site.                                                            |  |
+| **[site.pwa_icon](#asset)** Asset type object that contains the PWA icon information.                                        |  |
+| **site.search_url** A string with the URL for the site's search bar.                                                         |  |
+| **site.tag_manager_id** A string with the Google Tag Manager ID of the site.                                                 |  |
+| **site.tagline** A string describing the site's tagline.                                                                     |  |
+| **site.use_pwa_manifest** Boolean that determines if the site uses PWA manifest.                                             |  |
+| **site.uuid** A string with the UUID of the site.                                                                            |  |
+| **site.account_url** A string with the URL of the account associated with the site.                                          |  |
+| **site.breadcrumb** A string with the CSS class of the breadcrumb div.                                                       |  |
+| **site.cache_version** A string with the cache key for this version of the site.                                             |  |
+| **site.csrf_meta_tag** A string with the CSRF meta tag.                                                                      |  |
+| **site.css_path** A string with the location of the site's CSS file.                                                         |  |
+| **site.current_year** A string with the current year of the site.                                                            |  |
+| **site.js_path** A string with the location of the site's JS file.                                                           |  |
+| **site.login_enabled** Boolean that determines if the site uses login.                                                       |  |
+| **site.manifest_url** A string with the URL of the manifest for the site.                                                    |  |
+| **site.meta_tags** A string with the site's meta tags separated by commas.                                                   |  |
+| **site.originations** Origination object array containing all originations with associated origination page on current site. |  |
+| **site.root_path** A string with the root location of the site.                                                              |  |
+| **site.service_worker_enabled** Boolean that determines if the top-level service worker is activated (alias: sw_enabled)     |  |
+| **site.service_worker_scope** A string with the scope of the site's service worker.                                          |  |
+| **site.service_worker_url** A string with the service worker URL for the site.                                               
+ |                                                                                                                              |
+| **site.url** A string with the URL associated with the site.                                                                 |  |
 
 ## Site Browser
 
@@ -474,6 +491,86 @@ Display dynamic content created in your spaces from anywhere on your site. In th
 | **[spaces['space_name_'].entries](#entry)** Page type objects that meet the search parameters.  | |
 | **space['space_name_'].name** The space’s name.  | ```New Space``` |
 
+## Step
+
+These drops obtain the information relevant to Origination Steps.
+
+| Description                                         | Example                                                                                              |
+|-----------------------------------------------------|------------------------------------------------------------------------------------------------------|
+| **step.name** Name of the step                      | ```First Step```                                                                              |
+| **step.tasks** Array of tasks (REVISAR ESTO CAMBIO) |                                                                                                      |
+
+
+
+## Submission
+
+These drops obtain the information relevant to the Submissions.
+
+| Description                                                                                                                  | Example                                             |
+|------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------|
+| **submission.status** The status of the submission.                                                                          | ```completed```                                     |
+| **submission.progress** The completion percentage progress of the submission.                                                | ```100%```                                          |
+| **submission.assignee** The Administrator assigned to this submission.                                                       |                                                     |
+| **submission.created_at** The date on submission was created.                                                                | ```Tue, 15 Feb 2025 15:14:03 UTC +00:00```          |
+| **submission.updated_at** The last date on submission was updated.                                                           | ```Tue, 15 Feb 2025 20:30:10 UTC +00:00```          |
+| **submission.started_at** The date on submission was started.                                                                | ```Tue, 15 Feb 2025 15:14:03 UTC +00:00```          |
+| **submission.completed_at** The date on submission was completed.                                                            | ```Tue, 15 Feb 2025 20:30:10 UTC +00:00```          |
+| **submission.due_date** The date on the submission is due.                                                                   | ```Tue, 22 Feb 2025 12:00:00 UTC +00:00```          |
+| **submission.url** Origination Page URL.                                                                                     | ```https://test.modyo.com/new-site/myorigination``` |
+| **submission.tasks['task_uid']** Task response of task with provided UID. Task responses types are described on next section | |
+
+### Input Task Response
+
+Responses to the User Input Tasks 
+
+| Description                                                                                | Example                                                              |
+|--------------------------------------------------------------------------------------------|----------------------------------------------------------------------|
+| **user_input_task_response.fields['field_uid']** Answer of the question with provided UID. |                                                     |
+
+
+### Code Snippet Task Response
+
+Responses to the Code Snippet Tasks
+
+| Description                                                                   | Example                                                              |
+|-------------------------------------------------------------------------------|----------------------------------------------------------------------|
+| **code_snippet_task_response.data** The data response on JSON format.         | ```{ user_form: { field_1: 'some information', field_2: 1000  } }``` |
+
+### Origination Flow Task Response
+
+Responses to the Origination Flow Tasks
+
+| Description                                                                       | Example                                                              |
+|-----------------------------------------------------------------------------------|----------------------------------------------------------------------|
+| **origination_flow_task_response.submission** A submission object of related task | |
+
+### Digital Signature Task Response
+
+Responses to the Digital Signature Tasks
+
+| Description                                                                                      | Example     |
+|--------------------------------------------------------------------------------------------------|-------------|
+| **digital_signature_task_response.signed** Boolean to check if digital signature task was signed | ```true```  |
+
+### Pending Review Task Response
+
+Responses to the Pending Review Tasks
+
+| Description                                                                                           | Example     |
+|-------------------------------------------------------------------------------------------------------|-------------|
+| **pending_review_task_response.approved** Boolean to check if pending review task was approved | ```true```  |
+
+### Validation Task Response
+
+Responses to the Validation Tasks
+
+| Description                                                                              | Example     |
+|------------------------------------------------------------------------------------------|-------------|
+| **validation_task_response.validated** Boolean to check if validation task was validated | ```true```  |
+
+
+
+
 ## Target
 
 These drops allow you to obtain information from Targets. The available attributes are:
@@ -482,6 +579,18 @@ These drops allow you to obtain information from Targets. The available attribut
 |---|---|
 | **target.id** A string with the ID associated with the target. |  |
 | **target.name** A string with the name associated with the target.  | |
+
+## Task
+
+These drops obtain the information relevant to Origination Tasks.
+
+| Description                                                            | Example                                    |
+|------------------------------------------------------------------------|--------------------------------------------|
+| **task.uid** UID of the task                                           | ```task-01```                              |
+| **task.name** Name of the task                                         | ```Task 01```                              |
+| **task.description** Description of the task                           | ```Task to validate basic personal data``` |
+| **task.fields** Specific to User Input tasks. Returns a Question Array | |
+
 
 ## Content Type
 
@@ -495,43 +604,44 @@ Use the Content Type drops to get information about your content types from the 
 | **type.name** Name of the type.  | ```NewType``` |
 
 
-# User
+## User
 
 
 Use the user drops to get information about your users from the Customers module.
 
-| Description  | Example  |
-|---|---|
-| **user.access_token** The user's access token. | ```Uel7k61VuWhSxX3dJDILB7BtM1I_KQi1wEkV9PtnHLQ``` |
-| **user.age** The user's age  | ```39``` |
-| **[user.avatar](#asset)** Asset type object that represents the user avatar.  | |
-| **type.name** Name of the type.  | ```508``` |
-| **user.birth_at** The user's date of birth.  | ```1982-09-01``` |
-| **user.change_password_url** The password change URL.  | ```https://test.miModyo.com/newsite/password/change``` |
-| **user.custom_fields** Hash with the user's custom field data.  | ```{"_UCF_Job"=>"Software Engineer"}``` |
-| **user.email** The user's email.  | ```ivan@modyo.com``` |
-| **user.external_access_token** The user's external access token, if not, displays empty (void).  | ``UEL7K69VUWhSXxX9DjDilB7BtM1I_KQIPWeKV9pTNHLQ```` |
-| **user.external_user_id** The user's external user id if they have one.  | ```aswerr1m@mdaa.com``` |
-| **user.female_sex_value** The default value when the gender is female.  | ```1``` |
-| **user.first_name** Returns the user's first name.  | ```Ivan``` |
-| **user.genders** The genres present on the platform.  | ```{:id=>0, :name=>"Male"}{:id=>1, :name=>"Female"}``` |
-| **user.generated_password** Boolenano that determines if the password was automatically generated (true) or created by the user (false).  | ```false``` |
-| **user.id** The user's id.  | ```16``` |
-| **user.initials** The initials of the username.  | ```IM``` |
-| **user.last_name** The last name of the user.  | ```Modyo``` |
-| **user.male_sex_value** The default value when the gender is male.  | ```0``` |
-| **user.member_since** The date from which you are a user you have been a member of the site.  | ```2021-11-23 18:25:07 UTC``` |
-| **user.name** The user's full name.  | ```Ivan Modyo Gonzalez``` |
-| **[user.notifications](#notificacion)** Array of notification type objects.  |  |
-| **user.profile_url** The URL of the user's profile.  | ```https://test.miModyo.com/realms/default/profile``` |
-| **user.sex** The gender value configured for the user. | ```0``` |
-| **[user.targets](#target)** Array of objects of the target type.  |  |
-| **user.undefined_sex_value** The default value when gender is undefined.  | ```3``` |
-| **[user.unread_notifications](#notification)** Array of notification-type objects.  |  |
-| **user.unread_notifications_count** The count of unread notifications.  | ```2``` |
-| **user.username** The user's username.  | ```ivan@modyo.com``` |
-| **user.uuid** The uuid of the user.  | ```cdc7f0e2-b5c3-4b92-aa34-962ffa0bi572``` |
-  **user.realm_uid** The user's realm. | ```my-realm```
+| Description                                                                                                                              | Example  |
+|------------------------------------------------------------------------------------------------------------------------------------------|---|
+| **user.access_token** The user's access token.                                                                                           | ```Uel7k61VuWhSxX3dJDILB7BtM1I_KQi1wEkV9PtnHLQ``` |
+| **user.age** The user's age                                                                                                              | ```39``` |
+| **[user.avatar](#asset)** Asset type object that represents the user avatar.                                                             | |
+| **type.name** Name of the type.                                                                                                          | ```508``` |
+| **user.birth_at** The user's date of birth.                                                                                              | ```1982-09-01``` |
+| **user.change_password_url** The password change URL.                                                                                    | ```https://test.miModyo.com/newsite/password/change``` |
+| **user.custom_fields** Hash with the user's custom field data.                                                                           | ```{"_UCF_Job"=>"Software Engineer"}``` |
+| **user.email** The user's email.                                                                                                         | ```ivan@modyo.com``` |
+| **user.external_access_token** The user's external access token, if not, displays empty (void).                                          | ``UEL7K69VUWhSXxX9DjDilB7BtM1I_KQIPWeKV9pTNHLQ```` |
+| **user.external_user_id** The user's external user id if they have one.                                                                  | ```aswerr1m@mdaa.com``` |
+| **user.female_sex_value** The default value when the gender is female.                                                                   | ```1``` |
+| **user.first_name** Returns the user's first name.                                                                                       | ```Ivan``` |
+| **user.genders** The genres present on the platform.                                                                                     | ```{:id=>0, :name=>"Male"}{:id=>1, :name=>"Female"}``` |
+| **user.generated_password** Boolenano that determines if the password was automatically generated (true) or created by the user (false). | ```false``` |
+| **user.id** The user's id.                                                                                                               | ```16``` |
+| **user.initials** The initials of the username.                                                                                          | ```IM``` |
+| **user.last_name** The last name of the user.                                                                                            | ```Modyo``` |
+| **user.male_sex_value** The default value when the gender is male.                                                                       | ```0``` |
+| **user.member_since** The date from which you are a user you have been a member of the site.                                             | ```2021-11-23 18:25:07 UTC``` |
+| **user.name** The user's full name.                                                                                                      | ```Ivan Modyo Gonzalez``` |
+| **[user.notifications](#notificacion)** Array of notification type objects.                                                              |  |
+| **user.profile_url** The URL of the user's profile.                                                                                      | ```https://test.miModyo.com/realms/default/profile``` |
+| **user.sex** The gender value configured for the user.                                                                                   | ```0``` |
+| **[user.submissions](#notificacion)** Array of submission type objects.                                                                 |  |
+| **[user.targets](#target)** Array of objects of the target type.                                                                         |  |
+| **user.undefined_sex_value** The default value when gender is undefined.                                                                 | ```3``` |
+| **[user.unread_notifications](#notification)** Array of notification-type objects.                                                       |  |
+| **user.unread_notifications_count** The count of unread notifications.                                                                   | ```2``` |
+| **user.username** The user's username.                                                                                                   | ```ivan@modyo.com``` |
+| **user.uuid** The uuid of the user.                                                                                                      | ```cdc7f0e2-b5c3-4b92-aa34-962ffa0bi572``` |
+ **user.realm_uid** The user's realm.                                                                                                     | ```my-realm```
 
 ## User Agent
 

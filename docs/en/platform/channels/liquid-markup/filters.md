@@ -491,6 +491,47 @@ Returns a list of visible items in a list of items. *e.g.*
 <span v-pre>`{{ items | visible_items }}
 `</span>
 
+## Origination
+
+These are the liquid filters that alter values related to originations in Modyo Platform.
+
+### By UID
+
+Returns the Origination with selected UID. *e.g.*
+<span v-pre>`{% assign my_origination = site.originations | by_uid: 'my-origination' %}`</span>
+
+**Parameters:**
+- originations (ArrayOrigination) - array with originations
+- uid (String) - Origination UID
+
+## Step
+
+These are the liquid filters that alter values related to steps in Modyo Platform.
+
+### By UID
+
+Returns the Step with selected UID. *e.g.*
+<span v-pre>`{% assign my_step = origination.steps | by_uid: 'step-01' %}`</span>
+
+**Parameters:**
+- steps (ArrayStep) - array with steps
+- uid (String) - Step UID
+
+## Task
+
+These are the liquid filters that alter values related to tasks in Modyo Platform.
+
+### By UID
+
+Returns the Task with selected UID. *e.g.*
+<span v-pre>`{% assign my_task = step.tasks | by_uid: 'task-01' %}`</span>
+
+**Parameters:**
+- tasks (ArrayTask) - array with tasks
+- uid (String) - Task UID
+
+
+
 ## Site
 
 These are the liquid filters that alter values related to Sites in Modyo Platform.
@@ -682,6 +723,30 @@ Adds a video player in HTML code using a File Manager asset. *e.g.*
 - video (Asset) - Video type object in the File Manager
 - width (Integer) - video width
 - height (Integer) - video length
+
+## Submission
+
+These are the liquid filters that alter values related to submissions in Modyo Platform.
+
+### By Origination
+
+Returns the Submissions filtered by Origination UID. *e.g.*
+<span v-pre>`{% assign filtered_submissions = user.submissions | by_origination: 'my-origination' %}`</span>
+
+**Parameters:**
+- submissions (ArraySubmission) - array with user submissions
+- uid (String) - Origination UID
+
+### By Status
+
+Returns the Submissions with selected status. *e.g.*
+<span v-pre>`{% assign filtered_submissions = user.submissions | by_status: 'completed' %}`</span>
+
+**Parameters:**
+- submissions (ArraySubmission) - array with user submissions
+- status (String) - Originations status. Supported values are 'pending', 'completed' and 'all'
+
+
 
 ## User
 
