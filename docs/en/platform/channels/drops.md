@@ -374,14 +374,15 @@ These drops allow you to obtain information through Liquid for notifications in 
 
 These drops obtain the information relevant to Originations.
 
-| Description                                                                                                          | Example                                                                                                 |
-|----------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **origination.name** Name of the origination.                                                                        | ```My new Origination```                                                                                |
-| **origination.description** Description of the origination.                                                          | ```Origination process to guide customers from personal information register to bank data validation``` |
-| **origination.due_value** (Integer) Value of due period.                                                             | ```15```                                                                                                |
-| **origination.due_unit** Unit of due period. Possible values are days, weeks and months                              | ```days```                                                                                              |
-| **origination.url** Origination Page URL.                                                                            | ```https://test.modyo.com/new-site/myorigination``` |
-| **origination.steps['step_uid']** Step with provided UID. |                                                     |
+| Description                                                                             | Example                                                                                                 |
+|-----------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **origination.name** Name of the origination.                                           | ```My new Origination```                                                                                |
+| **origination.description** Description of the origination.                             | ```Origination process to guide customers from personal information register to bank data validation``` |
+| **origination.due_value** (Integer) Value of due period.                                | ```15```                                                                                                |
+| **origination.due_unit** Unit of due period. Possible values are days, weeks and months | ```days```                                                                                              |
+| **origination.uid** Origination UID.                                                    | ```https://test.modyo.com/new-site/myorigination``` |
+| **origination.url** Origination Page URL.                                               
+| **origination.steps['step_uid']** Step with provided UID.                               |                                                     |
 
 
 ## Page
@@ -527,8 +528,10 @@ These drops obtain the information relevant to the Submissions.
 | **submission.started_at** The date on submission was started.                                                                | ```Tue, 15 Feb 2025 15:14:03 UTC +00:00```          |
 | **submission.completed_at** The date on submission was completed.                                                            | ```Tue, 15 Feb 2025 20:30:10 UTC +00:00```          |
 | **submission.due_date** The date on the submission is due.                                                                   | ```Tue, 22 Feb 2025 12:00:00 UTC +00:00```          |
+| **submission.origination** Submission origination                                                                 |  |
 | **submission.url** Origination Page URL.                                                                                     | ```https://test.modyo.com/new-site/myorigination``` |
-| **submission.tasks['task_uid']** Task response of task with provided UID. Task responses types are described on next section | |
+| **submission.uuid** Origination UUID.                                                                                        | ```abcd-1234-5678-0000```                           |
+| **submission.tasks['task_uid']** Task response of task with provided UID. Task responses types are described on next section |                                                     |
 
 ### Input Task Response
 
