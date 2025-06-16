@@ -133,7 +133,7 @@ Para crear un webhook, sigue estos pasos:
 5. Agrega los headers necesarios para la llamada. 
 6. Haz click en **Guardar**.
 
-Los webhooks de reino con sus payloads repectuvos:
+Los webhooks de reino con sus payloads respectivos:
 
 * Respuesta de formulario creada
 * Respuesta de formulario actualizada
