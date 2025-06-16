@@ -136,59 +136,111 @@ Para crear un webhook, sigue estos pasos:
 Los webhooks de reino con sus payloads repectuvos:
 
 * Respuesta de formulario creada
-``` javascript
-```
 * Respuesta de formulario actualizada
-``` javascript
-```
 * Respuesta de originación creada
 ``` javascript
+{
+   "ip":"172.71.194.146",
+   "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+   "e_a":"created_log",
+   "e_c":"origination_submission",
+   "uid":2300345,
+   "idsite":4521,
+   "realm_id":681,
+   "realm_uid":"jordana",
+   "account_id":381,
+   "origination_uid":"ori",
+   "submission_uuid":"4c23599f-2aa6-4a8c-b2ae-66be46b7b938"
+}
 ```
 * Respuesta de originación iniciada
 ``` javascript
+{
+   "ip":"172.71.194.146",
+   "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+   "e_a":"started_log",
+   "e_c":"origination_submission",
+   "uid":2300345,
+   "idsite":4521,
+   "realm_id":681,
+   "realm_uid":"jordana",
+   "account_id":381,
+   "origination_uid":"ori",
+   "submission_uuid":"4c23599f-2aa6-4a8c-b2ae-66be46b7b938"
+}
 ```
 * Tarea de respuesta de originación enviada
 ``` javascript
+{
+   "ip":"172.71.195.36",
+   "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+   "e_a":"task_submitted_log",
+   "e_c":"origination_submission",
+   "uid":2300345,
+   "idsite":4521,
+   "task_id":157,
+   "realm_id":681,
+   "realm_uid":"jordana",
+   "account_id":381,
+   "origination_uid":"ori",
+   "submission_uuid":"4c23599f-2aa6-4a8c-b2ae-66be46b7b938"
+}
 ```
 * Respuesta de originación completada
 ``` javascript
+{
+   "id":35914440,
+   "account_id":381,
+   "site_id":null,
+   "user_id":1177351,
+   "value_1":null,
+   "value_2":null,
+   "value_3":null,
+   "request_ip":"172.71.195.87",
+   "request_user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+   "loggeable_id":419,
+   "loggeable_type":"Origination::Submission",
+   "options":{"title":null},
+   "created_at":"2025-06-16T10:50:22.000-04:00",
+   "space_id":null,
+   "log_type_id":415405,
+   "realm_id":681,
+   "trigger_uid":"origination_submission_completed_log",
+   "trigger_name":"Origination submission completed log",
+   "trigger_entity":"Origination::Submission",
+   "trigger_entity_id":419,
+   "trigger_entry_uuid":null,
+   "trigger_content_uuid":null,
+   "trigger_entry_space_uid":null
+}
 ```
 * Respuesta de originación cancelada
 ``` javascript
+{
+   "ip":"172.71.195.41",
+   "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+   "e_a":"canceled_log",
+   "e_c":"origination_submission",
+   "uid":2300345,
+   "idsite":4521,
+   "realm_id":681,
+   "realm_uid":"jordana",
+   "account_id":381,
+   "origination_uid":"ori",
+   "submission_uuid":"04bf572a-9e00-4474-ae8a-6a0bc17d4c1a"
+}
 ```
 * Inicio de sesión
-``` javascript
-```
 * Iniciar sesión con código
-``` javascript
-```
 * Cerrar sesión
-``` javascript
-```
 * Error al intentar iniciar sesión
-``` javascript
-```
 * Error al intentar iniciar sesión con código
-``` javascript
-```
 * Usuario creado
-``` javascript
-```
 * Usuario actualizado
-``` javascript
-```
 * Usuario habilitado
-``` javascript
-```
 * Registro de usuario
-``` javascript
-```
 * Restaurar contraseña
-``` javascript
-```
 * Usuario borrado
-``` javascript
-```
 
 Nota: El webhook es llamado a través de un POST cuando se genera un log del tipo seleccionado. Una vez creado el webhook, podrás enviar una notificación de prueba con información falsa para probar que tu URL está recibiendo correctamente los POSTs desde Modyo.
 
