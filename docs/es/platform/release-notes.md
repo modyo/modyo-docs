@@ -10,6 +10,7 @@ search: true
 
 * Se elimina error controlado cuando se excede el máximo de elementos permitido por el API
 
+
 ### 10.0.26 - 06 de junio de 2025
 <Badge text="Channels" type="channels" vertical="middle"/>
 
