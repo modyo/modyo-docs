@@ -8,7 +8,7 @@ search: true
 ### 10.0.27 - 25 de junio de 2025
 <Badge text="Content" type="content" vertical="middle"/>
 
-* Se elimina error controlado cuando se excede el máximo de elementos permitido por el API
+* Se elimina el error controlado cuando se excede el máximo de elementos permitido por la API
 
 
 ### 10.0.26 - 06 de junio de 2025
