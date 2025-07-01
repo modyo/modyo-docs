@@ -6,7 +6,7 @@ search: true
 
 ## 10.1
 
-### 10.1.0 - 1 de julio de 2025
+### 10.1.0 - 3 de julio de 2025
 <Badge text="Core" type="core" vertical="middle"/>
 
 * Agrega opción de creación de roles personalizables
