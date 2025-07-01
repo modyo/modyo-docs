@@ -273,7 +273,7 @@ module.exports = {
                             ["/es/platform/basics/", "Bienvenido a Modyo"],
                             ["/es/platform/basics/learn-modyo", "Aprende Modyo"],
                             ["/es/platform/basics/key-concepts", "Conceptos claves"],
-                            ["/es/platform/basics/release-notes", "Notas del release"],
+                            ["/es/platform/release-notes", "Notas del release"],
                           ],
                       },
 
