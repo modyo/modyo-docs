@@ -7,6 +7,7 @@ search: true
 ## 10.1
 
 ### 10.1.0 - 3 de julio de 2025
+
 <Badge text="Core" type="core" vertical="middle"/>
 
 * Agrega opción de creación de roles personalizables
@@ -29,11 +30,11 @@ search: true
   * Personalización de los flujos
   * Api de originación
   * Drops liquid para acceso desde vistas de los sitios
-* Webhooks para eventos de usuarios
+* Webhooks para eventos de usuarios (Breaking change, este cambio requiere revisión previa a la subida de versión)
 * Agrega session expiration policy a nivel de reino
 * Agrega la opción de poder customizar el input de username para el login
 * Agrega nuevos tipos de campos para los formularios
 * Agrega datasets a nivel de reino que se pueden usar en formularios y originaciones
-* Transforma los eventos de usuarios 
+* Transforma los eventos de usuarios (Breaking change, este cambio requiere revisión previa a la subida de versión)
 * Unifica los identity providers con las integraciones en un solo módulo llamado integraciones
 
