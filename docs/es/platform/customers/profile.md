@@ -9,7 +9,7 @@ Este perfil está disponible para los usuarios al autenticarse o acceder a la se
 
 ## Actividad
 
-En esta sección puedes ver un registro de todas las acciones realizadas por el usuario en la plataforma.
+En esta sección, puedes ver un registro de todas las acciones realizadas por el usuario en la plataforma.
 
 :::warning Atención
 Estos registros no se pueden borrar ni editar.

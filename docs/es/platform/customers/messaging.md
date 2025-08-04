@@ -8,7 +8,7 @@ La funcionalidad de **Mensajería** en Modyo permite crear campañas masivas par
 
 En Modyo, puedes enviar mensajes a los usuarios a través de dos canales:
 
-- **Correos**: Envía campañas a las casillas de emails registradas en los perfiles de los usuarios. No es necesario ingresar a la plataforma para  ver los mensajes.
+- **Correos**: Envía campañas a las casillas de emails registradas en los perfiles de los usuarios. No es necesario ingresar a la plataforma para ver los mensajes.
 - **Notificaciones**: Envía notificaciones a través del sistema de mensajería interno. Los usuarios deben ingresar a la plataforma para visualizarlos.
 
 ## Campañas

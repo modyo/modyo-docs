@@ -3,151 +3,153 @@ search: true
 ---
 
 # Sitio Público
-Un sitio público es todo sitio que está disponible en Internet para cualquier persona. Estos sitios tienen el propósito de compartir información, brindar servicios e interactuar con el público en general, ofreciendo una experiencia uniforme para todos los visitantes.
+Un sitio público es accesible para cualquier persona en Internet. Su propósito es compartir información, ofrecer servicios e interactuar con el público en general, proporcionando una experiencia uniforme para todos los visitantes.
 
-Los sitios públicos pueden tener diversos propósitos, como:
-- Sitios corporativos o informativos
-- Sitios de captura de prospectos
-- Sitios de generación de clientes
-- Sitios de marketing y promociones
-- Sitios de noticias y blogs
+Los sitios públicos pueden tener diversos propósitos, tales como:
+- Corporativos o informativos
+- Captura de prospectos
+- Generación de clientes
+- Marketing y promociones
+- Noticias y blogs
 
 <!-- Hack to avoid this title to be displayed in the TOC element -->
 <h3><a href="#¿como-implementar-sitios-publicos-con-modyo" class="header-anchor">#</a> ¿Cómo implementar sitios públicos con Modyo?</h3>
 
-Modyo te proporciona todas las herramientas esenciales para crear y mantener sitios públicos de manera ágil, segura y eficiente. Mediante la combinación de sus aplicaciones de contenido y canales, tienes acceso a todas las funcionalidades necesarias en cada etapa del ciclo de vida del sitio.
+Modyo proporciona las herramientas esenciales para crear y mantener sitios públicos de forma ágil, segura y eficiente. La combinación de sus aplicaciones de contenido y canales ofrece acceso a todas las funcionalidades necesarias en cada etapa del ciclo de vida del sitio.
 
-En términos de la arquitectura del sitio, implementar un sitio público es uno de los procesos más comunes y simples en Modyo. Pero no por ello está exento de múltiples detalles que debes considerar para asegurar su éxito, entre ellos:
+Arquitectónicamente, la implementación de un sitio público en Modyo es un proceso común y relativamente simple. Sin embargo, su éxito depende de considerar múltiples detalles, entre ellos:
 
 [[toc]]
 
 Dependiendo del resultado que buscas, estos requerimientos pueden impactar de diversas maneras en las decisiones de implementación. En esta guía te explicamos los conceptos más relevantes de cada uno de ellos.
 
 ### Estructura y modularidad
-Las primeras decisiones al implementar un sitio en Modyo deben centrarse en la estructura y modularidad, ya que de ellas dependen el resto de los requerimientos. Un sitio bien estructurado es más fácil de mantener y desarrollar. A continuación, se exploran los criterios clave de estructura y modularidad.
+Las decisiones iniciales al implementar un sitio en Modyo deben centrarse en la estructura y modularidad, ya que de ellas dependen los demás requisitos. Un sitio bien estructurado es más fácil de mantener y desarrollar. A continuación, se exploran los criterios clave.
 
 #### Múltiples Sitios y Organizaciones
-Modyo utiliza una arquitectura multi-sitio y multi-organización que puede ser utilizada para separar la administración en diferentes equipos de administradores de sitios, relacionados o no entre sí.
+Modyo utiliza una arquitectura multisitio y multiorganización que permite separar la administración en diferentes equipos, estén o no relacionados.
 
-Generalmente, se separan por organizaciones filiales o subsidiarias independientes, creando silos de implementación que no comparten administración, pero sí comparten la infraestructura física de la plataforma.
+Generalmente, la separación se realiza por organizaciones filiales o subsidiarias independientes, creando silos de implementación que no comparten administración, pero sí la infraestructura física de la plataforma.
 
 :::warning Organizaciones y licenciamiento
 Al usar organizaciones, considera los límites de tu licencia. El límite máximo de organizaciones puede ampliarse previa validación comercial.
 :::
 
 #### Uso de Páginas y Layouts
-Los [layouts](/es/platform/channels/templates.md#layouts) son una excelente forma para diferenciar contextos dentro de un sitio. Un layout puede ser compartido por múltiples [páginas](/es/platform/channels/pages) y cada página puede tener un solo layout. Dentro del layout puedes definir elementos reutilizables entre las diferentes páginas, como Headers, Footers, Meta Tags, etc.
+Los [layouts](/es/platform/channels/templates.md#layouts) son una excelente forma de diferenciar contextos dentro de un sitio. Un layout puede ser compartido por múltiples [páginas](/es/platform/channels/pages), y cada página puede tener un solo layout. Dentro del layout, se pueden definir elementos reutilizables entre las páginas, como encabezados, pies de página y meta etiquetas.
 
-Los layouts aseguran coherencia visual entre las páginas, aunque casos como una página de promoción especial pueden requerir layouts diferentes.
+Los layouts aseguran coherencia visual entre las páginas, aunque casos específicos (ej. una página de promoción) pueden requerir layouts diferentes.
 
-A la vez, puedes agrupar las páginas en jerarquías, asegurando una estructura organizada para los diferentes elementos del sitio.
+Además, las páginas pueden agruparse en jerarquías, asegurando una estructura organizada para los elementos del sitio.
 
 #### Uso de Templates y Snippets
-Los [templates](/es/platform/channels/templates) o plantillas son documentos en lenguaje Liquid que se renderizan dinámicamente en la plataforma. Pueden representar páginas HTML, layouts, hojas de estilo CSS o archivos JavaScript.
+Los [templates](/es/platform/channels/templates) o plantillas son documentos Liquid que se renderizan dinámicamente en la plataforma. Pueden representar páginas HTML, layouts, hojas de estilo CSS o archivos JavaScript.
 
-A la vez, los [snippets](/es/platform/channels/templates.md#snippets) o fragmentos son útiles para organizar códigos fuente y se pueden referenciar desde diferentes plantillas Liquid de un mismo sitio. Los snippets te permiten modularizar y reutilizar funciones, lo que facilita descomponer funcionalidades complejas en partes más simples. Los snippets se renderizan dinámicamente al cargar la página.
+Los [snippets](/es/platform/channels/templates.md#snippets) o fragmentos son útiles para organizar código fuente y pueden referenciarse desde diferentes plantillas Liquid del mismo sitio. Permiten modularizar y reutilizar funciones, facilitando la descomposición de funcionalidades complejas en partes más simples. Los snippets se renderizan dinámicamente al cargar la página.
 
 :::warning Recursividad y rendimiento
-Un error común al utilizar snippets es llamar recursivamente referencias circulares, es decir, que se llamen a sí mismas. En caso de hacerlo, la plataforma detiene la ejecución del snippet para evitar saturar los recursos del sistema.
+Un error común al usar snippets es la llamada recursiva de referencias circulares. En tal caso, la plataforma detiene la ejecución para evitar la saturación de recursos.
 
-Otro problema frecuente es el exceso de snippets dentro de un sitio, lo que puede alentar la carga de la página al requerir procesamiento adicional.
+El exceso de snippets en un sitio también puede ralentizar la carga de la página debido al procesamiento adicional.
 :::
 
 #### Uso de Widgets
-En Modyo, los [widgets](/es/platform/channels/widgets) te permiten organizar y modularizar la funcionalidad de negocio.
+En Modyo, los [widgets](/es/platform/channels/widgets) permiten organizar y modularizar la funcionalidad de negocio.
 
-Los widgets contienen código HTML, CSS y Javascript que se modifica y despliega en conjunto, sin afectar al sitio. Los widgets se diferencian de las plantillas y snippets en que poseen un ámbito de ejecución independiente. Esto significa que encapsulan código autocontenido que se ejecuta de manera autónoma, sin ejercer impacto en el resto del entorno del sitio web.
+Los widgets contienen código HTML, CSS y Javascript que se modifica y despliega en conjunto, sin afectar al sitio. Se diferencian de las plantillas y snippets por su ámbito de ejecución independiente, encapsulando código autocontenido que se ejecuta de forma autónoma, sin impactar el entorno del sitio web.
 
-El widget builder en la consola de administración de Modyo, al igual que el editor de plantillas, te da control del ciclo completo de desarrollo del widget, con previsualización, versionamiento y despliegue.
+El widget builder en la consola de administración de Modyo, al igual que el editor de plantillas, ofrece control completo del ciclo de desarrollo del widget, incluyendo previsualización, versionamiento y despliegue.
 
-Los widgets, en conjunto con el uso de snippet y su builder, son una excelente forma de trabajar con funcionalidad de baja o mediana complejidad, donde el uso de Javascript no es intenso. En escenarios más complejos, recomendamos el uso de [micro frontends](/es/architecture/patterns/micro-frontend).
+Los widgets, junto con los snippets y su builder, son una excelente opción para funcionalidades de baja o mediana complejidad con uso limitado de Javascript. En escenarios más complejos, se recomienda el uso de [micro frontends](/es/architecture/patterns/micro-frontend).
 
 #### Uso de Micro Frontends
-Los [micro frontends](/es/architecture/patterns/micro-frontend) son un tipo especial de widgets que permiten un flujo de trabajo más sofisticado. Con los micro frontends, desarrollas el código fuera de la plataforma y lo introduces mediante la línea de comandos de Modyo.
+Los [micro frontends](/es/architecture/patterns/micro-frontend) son un tipo especial de widgets que permiten un flujo de trabajo más sofisticado. El código se desarrolla fuera de la plataforma y se introduce mediante la línea de comandos de Modyo.
 
-Los micro frontends se compilan de forma estática antes de ser cargados en Modyo. Esto te permite hacer uso de librerías y frameworks avanzados, además de permitirte incorporar flujos de revisión estática de código para garantizar su calidad y seguridad.
+Los micro frontends se compilan de forma estática antes de cargarse en Modyo. Esto permite el uso de librerías y frameworks avanzados, e incorporar flujos de revisión estática de código para garantizar su calidad y seguridad.
 
 :::warning Sobre-ingeniería
-La implementación de micro frontends en un sitio público puede añadir complejidad adicional, incluyendo la administración de flujos de integración continua y procesos de DevOps. Generalmente, esta complejidad adicional requiere de apoyo de las áreas de IT dentro de la organización, por lo que debe considerarse si esta complejidad adicional está justificada.
+La implementación de micro frontends en un sitio público puede añadir complejidad (ej. gestión de flujos de integración continua y procesos DevOps). Esta complejidad adicional suele requerir apoyo de las áreas de IT, por lo que debe evaluarse si está justificada.
 :::
 
 #### Uso de Frameworks de Javascript
-En el contexto de sitios públicos, recomendamos minimizar la dependencia de JavaScript y evitar usar frameworks como ReactJS o Vue.
+En sitios públicos, se recomienda minimizar la dependencia de JavaScript y evitar el uso de frameworks como ReactJS o Vue.
 
-Esta recomendación es tanto por la inherente complejidad en el código de cada dependencia que puede afectar las características esenciales que un sitio web debe tener, como por la tendencia a incurrir en costos adicionales al implementar sitios públicos con frameworks avanzados de Javascript.
+Esta recomendación se basa tanto en la complejidad inherente del código de cada dependencia, que puede afectar las características esenciales de un sitio web, como en la tendencia a incurrir en costos adicionales al implementar sitios públicos con frameworks avanzados de Javascript.
 
-Otras razones para evitar usar frameworks de JavaScript en sitios públicos son:
+Otras razones para evitar el uso de frameworks de JavaScript en sitios públicos incluyen:
 
-- **Rendimiento**: Cada vez que un visitante carga una página, el navegador debe descargar y ejecutar el código JavaScript para mostrar y manipular los elementos de la página. El uso excesivo de JavaScript puede alentar la carga de la página, especialmente en dispositivos con conexiones lentas o recursos limitados.
-- **Accesibilidad**: Algunos usuarios pueden tener dificultades para acceder y usar contenido interactivo basado en Javascript. Esto incluye personas con discapacidades visuales que emplean lectores de pantalla, usuarios con conexiones lentas o dispositivos antiguos, y aquellos que desactivan Javascript por seguridad o preferencia personal.
-- **Mantenimiento y compatibilidad**: Reducir las dependencias de Javascript simplifica el mantenimiento del sitio. Además, estas soluciones tienden a tener mayor compatibilidad con diversos navegadores y dispositivos.
-- **Seguridad**: Limitar el uso de Javascript disminuye la superficie de ataque potencial y mejora la seguridad del sitio.
+- **Rendimiento**: El uso excesivo de JavaScript puede ralentizar la carga de la página, especialmente en dispositivos con conexiones lentas o recursos limitados, ya que el navegador debe descargar y ejecutar el código para mostrar y manipular los elementos.
+- **Accesibilidad**: Usuarios con discapacidades visuales (lectores de pantalla), conexiones lentas, dispositivos antiguos o aquellos que deshabilitan JavaScript pueden tener dificultades para acceder y usar contenido interactivo.
+- **Mantenimiento y compatibilidad**: Reducir las dependencias de JavaScript simplifica el mantenimiento del sitio y mejora la compatibilidad con diversos navegadores y dispositivos.
+- **Seguridad**: Limitar el uso de JavaScript disminuye la superficie de ataque potencial y mejora la seguridad del sitio.
 
-En lugar de usar frameworks de Javascript, te sugerimos optar por HTML estático y, en caso de requerirlo, aprovechar el uso de del lenguaje Liquid.
+En lugar de frameworks de Javascript, se sugiere optar por HTML estático y, si es necesario, aprovechar el lenguaje Liquid.
 
-No obstante, en situaciones donde se requieren componentes complejos específicos para un sitio público, como simuladores, buscadores de sucursales cercanas o resúmenes de indicadores financieros, el uso de un framework puede ser indicado y la estrategia de implementación recomendada es utilizar micro frontends.
+No obstante, para componentes complejos específicos de un sitio público (ej. simuladores, buscadores de sucursales, resúmenes financieros), el uso de un framework puede ser indicado, y la estrategia de implementación recomendada es utilizar micro frontends.
 
-El objetivo es lograr un equilibrio adecuado entre elementos estáticos y dinámicos para ofrecer una experiencia óptima a los usuarios.
+El objetivo es lograr un equilibrio adecuado entre elementos estáticos y dinámicos para ofrecer una experiencia de usuario óptima.
 
 :::warning Sobre-ingeniería
-Al igual que en el caso de los micro frontends, el uso de frameworks de Javascript en un sitio público puede implicar complejidad adicional, por lo que no recomendamos emplearlos a menos que los beneficios estén claramente identificados.
+Al igual que con los micro frontends, el uso de frameworks de Javascript en un sitio público puede implicar complejidad adicional. Por ello, no se recomienda emplearlos a menos que los beneficios estén claramente identificados.
 :::
 
 
 #### Web Components
-Los [web components](/es/architecture/patterns/web-components) son una técnica de modularización basada en estándares de HTML, CSS y JS. Actualmente, los web components carecen de soporte uniforme en los navegadores, aunque esta situación mejora gradualmente con el tiempo. Para implementar los web components de manera segura, es necesario utilizar una librería de JavaScript que aborde estas incompatibilidades. Es por ello que en el caso de los sitios públicos, el uso de Web Components puede generar más problemas de los beneficios que aportaría, como se menciona en secciones anteriores.
+Los [web components](/es/architecture/patterns/web-components) son una técnica de modularización basada en estándares de HTML, CSS y JS. Actualmente, su soporte uniforme en navegadores es limitado, aunque mejora gradualmente. Para una implementación segura, se requiere una librería JavaScript que aborde estas incompatibilidades. Por ello, en sitios públicos, el uso de Web Components puede generar más problemas que beneficios, como se menciona en secciones anteriores.
 
-Como alternativa al uso de los Web Components, los sitios públicos se pueden beneficiar de alternativas más livianas y estándares, cómo es el caso del framework de CSS [Bootstrap](https://getbootstrap.com) y que está integrado nativamente dentro de la plataforma Modyo. Además, se puede emplear la funcionalidad de snippets, que facilita la reutilización de código de manera análoga a los Web Components.
+Como alternativa a los Web Components, los sitios públicos pueden beneficiarse de opciones más ligeras y estándar, como el framework CSS [Bootstrap](https://getbootstrap.com), integrado nativamente en la plataforma Modyo. Además, la funcionalidad de snippets facilita la reutilización de código de forma análoga a los Web Components.
 
 ### Gobernabilidad de contenido y códigos fuente
-En cada proyecto de sitio público el gobierno del contenido y código fuente deben ser un elemento central a considerar.La implementación debe alinearse con las expectativas del negocio respecto a cómo se gestionarán las actualizaciones futuras del sitio, respetando los flujos de aprobación de cambios y el nivel adecuado de separación entre el contenido y su lógica de implementación.
+En cada proyecto de sitio público, la gobernabilidad del contenido y el código fuente es un elemento central. La implementación debe alinearse con las expectativas del negocio sobre la gestión de futuras actualizaciones, respetando los flujos de aprobación de cambios y el nivel adecuado de separación entre el contenido y su lógica de implementación.
 
 Las principales funcionalidades de la plataforma, que permiten una correcta gobernabilidad de los sitios públicos, son:
 
 #### Grupos y permisos
-Modyo permite la creación de múltiples espacios de contenidos y sitios con roles y grupos de permisos definidos específicos para cada usuario. Esto permite asignar a un mismo usuario permisos elevados en un primer sitio, mientras que en un segundo sitio sus permisos pueden ser más limitados.
+Modyo permite la creación de múltiples espacios de contenido y sitios con roles y grupos de permisos específicos para cada usuario. Esto posibilita asignar a un mismo usuario permisos elevados en un sitio y más limitados en otro.
 
-En Modyo, los roles y grupos se definen a nivel de la organización y luego puedes asignarlos de manera individual a cada espacio y sitio. Te recomendamos asegurar siempre que los usuarios tengan los permisos mínimos necesarios para realizar sus funciones, evitando así modificaciones no deseadas en los sitios, ya sea de manera accidental o intencionada.
+En Modyo, los roles y grupos se definen a nivel de organización y se asignan individualmente a cada espacio y sitio. Se recomienda asegurar que los usuarios tengan los permisos mínimos necesarios para sus funciones, evitando modificaciones no deseadas (accidentales o intencionadas).
 
 
 #### Múltiples espacio de contenido
-La plataforma ofrece un ambiente de gestión de contenido híbrido. En este entorno, puedes acceder de forma descentralizada al contenido gestionado dentro de un espacio por medio del API, aprovechando el máximo nivel de desacoplamiento, o mediante el uso de _content pages_, un tipo especial de página que se integra automáticamente con el espacio configurado y que está disponible dentro de cada sitio.
+La plataforma ofrece un entorno de gestión de contenido híbrido. Se puede acceder al contenido gestionado de forma descentralizada mediante la API, aprovechando el máximo nivel de desacoplamiento, o a través de _content pages_, un tipo especial de página que se integra automáticamente con el espacio configurado y está disponible en cada sitio.
 
 :::tip Experiencia de CMS tradicional
-La combinación de los espacios de contenido y las páginas de contenidos logra una experiencia de uso similar a la de un sistema de gestión de contenido (CMS) convencional, donde cada contenido está vinculado a una representación.
+:::tip Experiencia de CMS tradicional
+La combinación de espacios de contenido y páginas de contenido ofrece una experiencia de uso similar a la de un CMS convencional, donde cada contenido está vinculado a una representación.
 
-Además, en Modyo, un mismo contenido puede ser desplegado en múltiples páginas, de maneras diversas. Esto permite a los editores previsualizar el contenido en la página que elijan.
+En Modyo, un mismo contenido puede desplegarse en múltiples páginas de diversas maneras, permitiendo a los editores previsualizarlo en la página que elijan.
+:::
 
 :::
 
 #### Uso de Team Review
-El [team review](/es/platform/core/key-concepts.md#revision-en-equipo) o revisión de equipos es una funcionalidad de Modyo que permite configurar de forma simple y flexible a los usuarios responsables de revisar elementos antes de su publicación. Los usuarios que participan en la revisión pueden previsualizar el cambio o contenido y hacer comentarios para corregir aspectos que consideren necesarios. Desde la configuración de los espacios de contenido y los sitios, puedes acceder al menú de team review.
+El [team review](/es/platform/core/key-concepts.md#revision-en-equipo) o revisión de equipos es una funcionalidad de Modyo que permite configurar de forma simple y flexible a los usuarios responsables de revisar elementos antes de su publicación. Los revisores pueden previsualizar el cambio o contenido y hacer comentarios para corregir aspectos necesarios. El menú de team review es accesible desde la configuración de los espacios de contenido y los sitios.
 
-El uso de team review es muy recomendable en sitios públicos donde buscas mantener la agilidad máxima en la publicación y al mismo tiempo deseas reducir al mínimo los controles de aprobación para realizar revisiones simples.
+El uso de team review es altamente recomendable en sitios públicos donde se busca máxima agilidad en la publicación y, al mismo tiempo, minimizar los controles de aprobación para revisiones simples.
 
 #### Ambientes de desarrollo
-Generalmente, en un sitio público, los cambios más comunes son pequeños e involucran ajustes en contenido como noticias, promociones, información de tarifas, ubicaciones de sucursales o anuncios ubicados en las páginas principales.
+Generalmente, en un sitio público, los cambios más comunes son pequeños y se refieren a ajustes en contenido (ej. noticias, promociones, tarifas, ubicaciones de sucursales o anuncios en páginas principales).
 
-Los cambios más complejos, que afectan al diseño, se llevan a cabo con menor frecuencia y en situaciones específicas. Por lo tanto, para la mayoría de las modificaciones, un flujo de aprobación de cambios bien configurado es suficiente para el control del sitio. Las técnicas más avanzadas se reservan para cambios estructurales.
+Los cambios más complejos, que afectan al diseño, se realizan con menor frecuencia y en situaciones específicas. Por lo tanto, para la mayoría de las modificaciones, un flujo de aprobación de cambios bien configurado es suficiente para el control del sitio. Las técnicas avanzadas se reservan para cambios estructurales.
 
-Para trabajar en ambientes de desarrollo separados antes de implementar cambios en producción, Modyo ofrece diversas alternativas. La opción más directa y adecuada para pruebas de cambios más arriesgados o experimentales es el uso de ambientes físicos de tipo pre-productivo. Los ambientes pre-productivos están incluidos por defecto en las versiones empresariales de la plataforma. Sin embargo, no recomendamos utilizar este tipo de ambiente para operaciones diarias en sitios públicos, debido a las dificultades de mantener el contenido sincronizado entre infraestructuras diferentes.
+Para trabajar en ambientes de desarrollo separados antes de implementar cambios en producción, Modyo ofrece diversas alternativas. La opción más directa y adecuada para pruebas de cambios arriesgados o experimentales es el uso de ambientes físicos pre-productivos, incluidos por defecto en las versiones empresariales de la plataforma. Sin embargo, no se recomienda este tipo de ambiente para operaciones diarias en sitios públicos, debido a las dificultades de sincronización de contenido entre infraestructuras.
 
-Otra manera de manejar ambientes previos, mediante virtualización dentro de la misma plataforma, es a través del uso de stages, como se explica a continuación.
+Otra forma de gestionar ambientes previos, mediante virtualización dentro de la misma plataforma, es a través del uso de stages, como se explica a continuación.
 
 :::tip Pruebas de nuevas versiones
-Modyo recomienda el uso de ambientes físicos para pruebas de nuevas versiones de la plataforma, ya que el riesgo de incompatibilidad tiene un impacto menor en este contexto.
+Modyo recomienda el uso de ambientes físicos para pruebas de nuevas versiones de la plataforma, dado que el riesgo de incompatibilidad tiene un impacto menor en este contexto.
 :::
 
 #### Uso de Stages
-En el contexto de sitios públicos, Modyo recomienda gestionar ambientes previos utilizando la funcionalidad de [stages](/es/platform/channels/sites.md#stages), que te permite crear entornos pre-productivos virtualizados dentro del mismo despliegue de producción. Esta técnica evita la necesidad de mover cambios y archivos entre ambientes, reduciendo la posibilidad de errores al momento de la publicación.
+En sitios públicos, Modyo recomienda gestionar ambientes previos utilizando la funcionalidad de [stages](/es/platform/channels/sites.md#stages), que permite crear entornos pre-productivos virtualizados dentro del mismo despliegue de producción. Esta técnica evita la necesidad de mover cambios y archivos entre ambientes, reduciendo la posibilidad de errores en la publicación.
 
-El uso de stages posibilita la creación de entornos separados y aislados para construir, probar y verificar el funcionamiento del sitio antes de ser desplegado en un entorno de producción. Esto ayuda a prevenir fallos que podrían afectar a los usuarios finales. En el caso de sitios públicos, se pueden definir, por ejemplo, los siguientes stages:
+El uso de stages posibilita la creación de entornos separados y aislados para construir, probar y verificar el funcionamiento del sitio antes de su despliegue en producción. Esto ayuda a prevenir fallos que podrían afectar a los usuarios finales. Para sitios públicos, se pueden definir, por ejemplo, los siguientes stages:
 
 - **Develop**: para llevar a cabo el desarrollo e integración de cambios.
 - **Certification**: destinado a pruebas previas al despliegue en producción.
 - **Main**: versión productiva del sitio.
 
-Los stages pueden tener configuraciones independientes, como por ejemplo, las variables del sitio. Esto te permite ajustar comportamientos entre diferentes ambientes, por ejemplo, cambiar la URL de una API que proporciona información al sitio.
+Los stages pueden tener configuraciones independientes (ej. variables del sitio), lo que permite ajustar comportamientos entre diferentes ambientes (ej. cambiar la URL de una API que proporciona información al sitio).
 
 Si al utilizar stages, en conjunto con espacios de contenido, existe cierto grado de acoplamiento entre ambos, recomendamos clonar el espacio y realizar modificaciones en la copia. Luego, al promover el sitio a producción, los mismos cambios se aplicarán al espacio de contenido original.
 

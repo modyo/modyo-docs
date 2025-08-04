@@ -4,7 +4,7 @@ search: true
 
 # Formularios
 
-Una de las funcionalidades más requeridas por todas las plataformas es la captura de datos de usuarios para posteriormente analizar y segmentar. Con esta herramienta podrás crear cuantos formularios necesites para recolectar datos provenientes de los usuarios de tus sitios.
+Una de las funcionalidades más requeridas por todas las plataformas es la captura de datos de usuarios para posteriormente analizar y segmentar. Con esta herramienta, podrás crear cuantos formularios necesites para recolectar datos provenientes de los usuarios de tus sitios.
 
 Al entrar a la herramienta, podrás ver un listado de todos los formularios que hay activos actualmente en la cuenta. Podrás filtrar por su estado (habilitado o deshabilitado), por el sitio en el que se despliegan, y buscar por el nombre del formulario.
 

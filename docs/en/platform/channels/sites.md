@@ -5,7 +5,7 @@ sidebarDepth: 2
 
 # Web applications
 
-A web application or web app displays the content created in content and channels to create your personalized digital channel. All the development, design, and navigation flow is carried out in the web application.
+A web application or web app displays the content created in Content and Channels to create your personalized digital channel. All the development, design, and navigation flow is carried out in the web application.
 
 A web app can be in one of these three states:
 
@@ -33,7 +33,7 @@ In the web apps index, you will only see those apps in which you have a role and
 
 On the review and joint publication screen, you can see all the pending changes to be published in your web app. To view the changes, click on the **view** button.
 
-### Joint Publication
+### Publish jointly
 
 To make a joint publication in your web application, follow these steps:
 
@@ -45,7 +45,7 @@ To make a joint publication in your web application, follow these steps:
 
 
 :::tip Tip
-If you click **publish** on a particular article (e.g. publish a page), the Review and Publish window will open with this article selected to see the pending changes.
+If you click **publish** on a particular article (e.g., publish a page), the Review and Publish window will open with this article selected to see the pending changes.
 :::
 
 ## Search
@@ -65,18 +65,18 @@ To enable or disable the search functionality, follow these steps:
 
 ### Search template
 
-You can control the appearance and search functionality in your web app using the [template](/en/platform/channels/sites.html#search-template/) _search_.
+You can control the appearance and search functionalities in your web app using the _search_ [template](/en/platform/channels/sites.html#search-template/).
 
-This template is available by default in the templates section and contains all the Liquid code needed to carry out queries in your web app. By default, when making a query, the records are displayed in list form, with their title, description and a link to their address. You can modify the template to suit your needs.
+This template is available by default in the templates section and contains all the Liquid code needed to carry out queries in your web app. By default, when making a query, the records are displayed in list form, with their title, description, and a link to their address. You can modify the template to adapt it to your needs.
 
 To access this template:
 
 1. In the side menu, click **channels**.
 1. Select your web application.
-1. Click **templates** in the side menu.
+1. Click on **templates** in the side menu.
 1. In the views section, in the right column, and under the search category, click **show**.
 
-To access the search template, append _search_ or _search.json_ to the URL of your web app.
+To access the search template, append _search_ or _search.json_ to your web app's URL.
 
 For example:
  - `test.modyo.com/mySite/search`
@@ -85,19 +85,19 @@ For example:
 
 ### Search.json
 
-You can also use “search.json” to integrate the search engine in a more personalized way.
+You can also use "search.json" to integrate the search engine in a more personalized way.
 
-To access this API, add “search.json” to the URL of your web app along with your query. For example: test.modyo.com/mysite/search. json?query=MyQuery
+To access this API, add "search.json" to your web app's URL along with your query. For example: test.modyo.com/mySite/search.json?query=MyQuery
 
 Customize your queries as follows:
 
 
 |  Parameter       |       Description    |
 |------------------|----------------------|
-| **query** | Make queries to the search API. This search engine performs queries on all published pages of your web app and on all public entries in the spaces linked to the web app. |
-| **per_page** | Divide the total number of records by the number of pages selected. |
-| **page** | Select the specific page you want to consult, in case there are multiple pages of records to query. |
-| **multi=true** | Allows you to search in all the web applications in the account that have the search function enabled. |
+| **query** | Performs queries to the search API. This search engine queries all published pages of your web app and all public entries in the spaces linked to the web app. |
+| **per_page** | Divides the total number of records by the number of selected pages. |
+| **page** | Selects the specific page you want to query, in case there are multiple pages of records to query. |
+| **multi=true** | Allows you to search in all web applications in the account that have the search function enabled. |
 
 
 ## Web Application Settings
@@ -109,33 +109,33 @@ In the application configuration section, you can customize your web app so that
 
 In this section you can configure:
 
-- **Name of the application**: This field is used as the default title for the SEO of your web app.
+- **Application name**: This field is used as the default title for your web app's SEO.
 - **Description**
 
-:::warning Warning
+:::warning Attention
 
-Changes to the name and description are immediately reflected in Modyo. The update in the search results will be seen once the search engines complete their reindexing process.
+Changes to the name and description are immediately reflected in Modyo. The update in search results will be seen once search engines complete their reindexing process.
 
 :::
-- **Application logo**: Image shown at the top left.
-- **Application language**: The language in which your web app is available. The options are: Spanish, English, and Portuguese.
-- **Time zone**: The timezone in which the date and time fields are displayed in the app. This setting affects all sections, including pages, navigation and templates, as well as Liquid's calls to the web application data.
+- **Application logo**: Image displayed in the upper left.
+- **Application language**: The language in which your web app is available. Options are: Spanish, English, and Portuguese.
+- **Time zone**: The time zone in which date and time fields are displayed in the app. This setting affects all sections, including pages, navigation, and templates, as well as Liquid calls to web application data.
 
 
 :::warning Attention
-The time in content is managed in the [general](https://https://docs.modyo.com/en/platform/core/configuration.html#configuration) section of the account settings.
+Time in content is managed in the [general](https://https://docs.modyo.com/en/platform/core/configuration.html#configuration) section of the account settings.
 :::
 
-- **Google Tag Manager ID**: Add a Google Tag Manager identifier to insert scripts for tracking and measuring events.
+- **Google Tag Manager ID**: Adds a Google Tag Manager identifier to insert scripts for tracking and measuring events.
 
-By default, new Modyo themes include snippets to automatically inject Google Tag Manager scripts into tags `<head>`and`<body>`of web applications.
+By default, new Modyo themes include snippets to automatically inject Google Tag Manager scripts into the `<head>` and `<body>` tags of web applications.
 
 To access these snippets:
 
 1. In the side menu, click on channels.
 1. Select your web application.
 1. Click on templates in the side menu
-1. In the column on the right side, click on snippets and go to the general section. You can embed them in the _head_ snippet and in the _home_ and _base_ views.
+1. In the right column, click on snippets and go to the general section. You can embed them in the _head_ snippet and in the _home_ and _base_ views.
 
 **To create custom snippets**:
 
@@ -156,7 +156,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 {% endif %}
 ```
-2. Embed the snippet in the _head_ of the web app using {% snippet "gtm-head" %}, replacing “gtm-head” with the name you gave the snippet.
+2. Embed the snippet in the _head_ of the web app using {% snippet "gtm-head" %}, replacing "gtm-head" with the name you gave the snippet.
 
 **For the _body_**
 
@@ -176,20 +176,20 @@ style="display:none;visibility:hidden">
 {% endif %}
 ```
 
-2. Embed the snippet inside the body tags of the _home_ and _base_ views using {% snippet "gtm-body" %}, replacing “gtm-body” with the name you gave the snippet.
+2. Embed the snippet inside the body tags of the _home_ and _base_ views using {% snippet "gtm-body" %}, replacing "gtm-body" with the name you gave the snippet.
 
-With this configuration complete, when there is a value associated with the **ID field of Google Tag Manager**, the scripts will be automatically injected. This will allow you to create events in Google Tag Manager to record the actions of your users.
+With this configuration complete, when there is a value associated with the **Google Tag Manager ID** field, the scripts will be automatically injected. This will allow you to create events in Google Tag Manager to record your users' actions.
 
 
 
-- **Favicon**: Image that appears in the address bar.
-- **Apple icon**: Image viewed on mobile devices when using the site as an application.
-- **Delete**: Permanently delete a site and all of its elements.
+- **Favicon**: Image that appears next to the address bar.
+- **Apple icon**: Image displayed on iOS mobile devices when marking the application as a favorite.
+- **Delete**: Permanently delete a site and all its elements.
 
 :::danger Danger
-Erasing is irreversible, you must be completely sure when executing this action.
+Deletion is irreversible, so you must be completely sure when executing this action.
 
-When you press the delete button, the system will ask you to enter the textual name of the site you want to delete to confirm the action. Once confirmed, you won't be able to access the site or its elements again.
+When you press the delete button, the system will ask you to enter the textual name of the site you want to delete to confirm the action. Once confirmed, you will not be able to access the site or its elements again.
 :::
 
 
@@ -199,12 +199,12 @@ When you press the delete button, the system will ask you to enter the textual n
 - **Apple icon**: An image that is displayed on iOS mobile devices when you mark the application as a favorite.
 
 **Privacy**
-- **Audience**: All visitors can view the web app and its content without having to log in.
-- **Private**: Only users who are logged in to Modyo can view the web app.
-- **Show home to public visitors**: The home page of the web app is shown to all visitors, even those who are not logged in. When navigating to any other page, registration or login is required.
-- **Redirect to home when a URL is not found**: By default, the web application shows a 404 error when the user accesses a non-existent URL. If you check this option, the user will be redirected to the home page of the web app instead of to the 404.
-- **Enable search**: Activates search function in the web app.
-- **Enable search across multiple applications**
+- **Public**: All visitors can view the web app and its content without logging in.
+- **Private**: Only users with an active Modyo session can view the web app.
+- **Show home to public visitors**: The web app's home page is shown to all visitors, even those who are not logged in. When navigating to any other page, registration or login is required.
+- **Redirect to home when a URL is not found**: By default, the web application shows a 404 error when the user accesses a non-existent URL. If you check this option, the user will be redirected to the web app's home page instead of the 404.
+- **Enable search**: Activates the search function in the web app.
+- **Enable multi-application search**
 
 :::tip Tip
 If you enable search in your web app and use the `multi=true` parameter from another web app, you can also search in your current app.
@@ -214,56 +214,56 @@ If you enable search in your web app and use the `multi=true` parameter from ano
 **Danger Zone**
 
 ::: danger Danger
-Use caution when modifying these options, as they can affect access to your web application and your users' experience.
+Proceed with caution when modifying these options, as they can affect access to your web application and your users' experience.
 :::
 
-- **Change host**: This action modifies the visibility and accessibility of the application. Making a host change can impact the visibility and availability of the web application.
-- **Change realm**: Shows the application's realm. When you change the realm, you lose all the privacy settings in your web apps, pages, and browsing.
-- **Change status**: Changes the status of the application, the options are:
-    * Enabled: Editable and visible to the public. This is the default state of a web app.
-    * Editable: Modifiable but not visible to the public. Requires login to access. Robots.txt, PWAs, and the manifest are disabled in this state.
-    * Disabled: Not editable or visible. In this state, it's not accessible or visible to users.
-- **Delete app**: Initiates the asynchronous removal of the application and all of its elements, such as pages and widgets.
+- **Change host**: This action modifies the visibility and accessibility of the application. Changing the host can impact the visibility and availability of the web application.
+- **Change realm**: Displays the application's realm. When you change the realm, you lose all privacy settings in your web apps, pages, and navigation.
+- **Change status**: Changes the application's status. Options are:
+	* Enabled: Editable and visible to the public. This is the default state of a web app.
+	* Editable: Modifiable but not visible to the public. Requires login to access. Robots.txt, PWAs, and the manifest are disabled in this state.
+	* Disabled: Not editable or visible. In this state, it is not accessible or visible to users.
+- **Delete application**: Initiates the asynchronous deletion of the application and all its elements, such as pages and widgets.
 
 ::: danger Danger
 Deleting a web application is irreversible.
 
-When you press the delete button, the system asks you to enter the textual name of the application to confirm the action. Once confirmed, you can't access the application or its elements.
+When you press the delete button, the system asks you to enter the textual name of the application to confirm the action. Once confirmed, you cannot access the application or its elements.
 :::
 
 ### SEO
 
-SEO (Search Engine Optimization) is essential for search engine positioning. Users rely on good SEO settings to find your application.
+SEO (Search Engine Optimization) is fundamental for search engine positioning. Users rely on good SEO settings to find your application.
 
 You can configure:
 
-- **Tagline**: Description for search engines, below the name of the web application.
-- **Automatically update the sitemap.xml file for me**: Allows Modyo to create and maintain the sitemap.xml automatically. Disable this option to use a custom site map.
-- **Sitemap**: This XML file allows search engines to index the content of the site.
-- **Custom sitemap.xml file**: File that allows search engines to index the content of the web app.
-- **Automatically update the robots.xml file for me**: Allows Modyo to automatically create and maintain robots.txt. Disable this option to provide personalized instructions to web app crawlers.
-- **Custom robots.txt file**: File that tells web crawlers what parts of the application they may or may not index.
+- **Tagline**: Description in search engines, below the web application name.
+- **Automatically update the sitemap.xml file for me**: Allows Modyo to automatically create and maintain the sitemap.xml. Disable this option to use a custom sitemap.
+- **Sitemap**: This XML file allows search engines to index the site's content.
+- **Custom sitemap.xml file**: File that allows search engines to index the web app's content.
+- **Automatically update the robots.txt file for me**: Allows Modyo to automatically create and maintain robots.txt. Disable this option to provide custom instructions to web app crawlers.
+- **Custom robots.txt file**: File that tells web crawlers which parts of the application they may or may not index.
 
 :::tip Tip
-The robots.txt and sitemap.xml files are only visible with custom domains. Otherwise, they are found only at the platform level, have default values and cannot be customized.
+Robots.txt and sitemap.xml files are only visible with custom domains. Otherwise, they are only found at the platform level, have default values, and cannot be customized.
 :::
 
 - **Custom meta tags**: Allows you to configure meta tags for all pages and their default values. Click **+ new meta tag** to create a new one.
-- **Replicate metatag on pages**: When creating a new meta tag, select this option to spread the meta tag and its value across all pages of the web app. You must save the changes to meta tags and publish all the modified pages for the new meta tags to take effect.
+- **Replicate meta tag on pages**: When creating a new meta tag, select this option to propagate the meta tag and its value across all pages of the web app. You must save changes to meta tags and publish all modified pages for the new meta tags to take effect.
 
 :::warning Attention
-Only administrators of the application can add meta tags. Developers can add and remove meta tags page by page.
+Only application administrators can add meta tags. Developers can add and remove meta tags page by page.
 :::
 
-#### On-page vs. off-page SEO
+#### On-page vs. Off-page SEO
 
-Also known as on-site and off-site SEO, these terms refer to actions you can do on and off a web page to improve visibility in search engines. For better positioning, we recommend using both strategies together.
+Also known as on-site and off-site SEO, these terms refer to actions you can take on and off a web page to improve visibility in search engines. For better positioning, we recommend using both strategies together.
 
 ##### On-Page SEO
 
 To improve on-page SEO:
 
-- Use keywords in the SEO section of the platform and on your pages.
+- Use keywords in the platform's SEO section and on your pages.
 - Include keywords in the URL.
 - Add relevant links to other sections of your application.
 
@@ -280,18 +280,18 @@ To improve off-page SEO:
 
 ### PWA
 
-Modyo allows you to implement Progressive Web Apps (PWA) in your digital channels, offering an enhanced experience to your users. To use PWA features, you must enable them in your project
+Modyo allows you to implement Progressive Web Apps (PWA) in your digital channels, offering an enhanced experience to your users. To use PWA functionalities, you must enable the options you require in your project.
 
-#### Top level service worker
+#### Main service worker
 
-Activate the Service Worker so that your digital channel can cache data, work offline and provide an improved experience for your users, even with an unstable connection.
+Activate the Service Worker so that your digital channel can cache data, work offline, and provide an improved experience to your users, even with an unstable connection.
 
 To enable the service worker, follow these steps:
 
 1. In the side menu, click channels.
 1. Select your web application.
 1. Click on application settings.
-1. Check the Enable Primary Service Worker box.
+1. Check the enable primary service worker box.
 1. Click **save**.
 
 Once activated and saved, the following route is created:
@@ -313,34 +313,34 @@ To modify the service worker, follow these steps:
 
 
 :::warning Attention
-You need to customize and save the service worker code to integrate these functions into your web app.
+It is necessary to customize and save the service worker code to integrate these functions into your web app.
 :::
 
 :::warning Attention
-If you turn off the service worker, your web application will continue to work, with basic functions and without the benefits of the service worker.
+If you disable the service worker, your web application will continue to function, with basic functions and without the benefits of the service worker.
 :::
 
 
 #### WebPush Notifications
 
-Allow your users to receive WebPush notifications along with notification campaigns. To send messages to your users, you must ensure that your application is linked to a realm and the application status is set to **Enabled**. Notifications are managed through the [messaging tool](/en/platform/customers/messaging.html).
+Allow your users to receive WebPush notifications along with notification campaigns. To send messages to your users, you must ensure that your application is linked to a realm and the application status is set to **Enabled**. Notification management is done through the [messaging tool](/en/platform/customers/messaging.html).
 
 #### PWA Manifest
 
-The manifest indicates how you want a browser to display your digital channel. To activate the manifest:
+ The manifest indicates how you want a browser to display your digital channel. To activate the manifest:
 
 1. In the side menu, click channels.
 1. Select your web application.
 1. Click on application settings.
 1. Click on PWA.
-1. Check the Enable PWA Manifest box.
+1. Check the enable PWA manifest box.
 1. In the modal, fill in the fields.
 1. Click **generate**.
 1. Click **save** in the modal.
 1. Click **save**.
 
 
-When you activate the manifest, this route is created:
+When the manifest is activated, this route is created:
 
 
 ```bash
@@ -361,13 +361,13 @@ If you do not customize the content of the PWA manifest and add the route in tem
 In the domains section, you can view and modify the public location of your web application.
 
 :::warning Attention
-It's essential to inform all members of the platform about any changes you make to this section.
+It is essential to inform all platform members about any changes you make in this section.
 :::
 
-Check the box to make changes. The variables you can modify are:
+Activate the checkbox to make changes. The variables you can modify are:
 - **Host**: Location of the web application on the server.
 - **Primary domain**: Main address of the web application.
-- **Alternative domain**: Secondary address to redirect in case the primary one fails.
+- **Alternative domain**: Secondary address to redirect in case of failure in the primary.
 
 
 :::warning Attention
@@ -387,7 +387,7 @@ These domains are reserved by Modyo. They are not available as custom domains:
 </ul></td>
 <td style="border: none;"><ul>
 <li>www.modyo.com</li>
-<li>en.modyo.com</li>
+<li>es.modyo.com</li>
 <li>pt.modyo.com</li>
 <li>global.modyo.com</li>
 </ul></td>
@@ -440,20 +440,20 @@ These hosts are reserved by Modyo. They are not available as hosts for your web 
 
 ### Stages
 
-Using stages in your web application allows you to implement a continuous integration and deployment (CI/CD) approach to add new functionality without affecting what's already published.
+Using stages in your web application allows you to implement a continuous integration and deployment (CI/CD) approach to add new functionality without affecting what is already published.
 
 The main advantages of having different stages in your web apps are:
 
-- Focused development: Develop at the current stage without modifying the published web app.
+- Focused development: Develop in the current stage without modifying the published web app.
 - Flexible customization: Create and use local variables, widgets, and templates to customize the experience or visualize changes.
 - Easy integration: When you finish the changes in one stage, you can integrate them into another.
 
 :::warning Warning
 - A web app can have a maximum of four stages.
-- The changes you make to a stage are only reflected in that stage.
+- Changes you make to a stage are only reflected in that stage.
 - Stages are only available for web applications.
 - Custom PWAs and redirections are disabled in stages. They can only be used in the `main` stage.
-- The team members section is separate on each stage `main`. Add members to enable team review.
+- The team members section is separate in each `main` stage. Add members to enable team review.
 - You can have the same members with different roles and permissions for each stage.
 :::
 
@@ -471,7 +471,7 @@ To add a new stage to your web app, follow these steps:
 
 
 :::tip Tip
-In the summary section of your web application you can see the details of the current stage. You can also click on the name of your web app to display a list of its stages and navigate between them.
+In the summary section of your web application, you can see the details of the current stage. You can also click on the name of your web app to display a list of its stages and navigate between them.
 :::
 
 #### Synchronize a stage
@@ -480,18 +480,18 @@ In the summary section of your web application you can see the details of the cu
 The platform does not allow you to synchronize changes that have not yet been published. Make sure you don't have any pending changes to publish before starting the synchronization.
 :::
 
-To synchronize a stage follow these steps:
+To synchronize a stage, follow these steps:
 
 1. In the side menu, click channels.
-1. Click on the name of your web application and select the stage you want to synchronize.
+1. Click on the name of your web application and select the stage you want to synchronize from.
 1. In the summary view, click **synchronize**.
-1. In the synchronizations view, select the stage you want to synchronize to. In this view you can see all the elements with differences between the selected stages. Click on view for more details on the changes.
-1. Check the boxes for the items you want to synchronize.
+1. In the synchronizations view, select the stage you want to synchronize to. In this view, you can see all the elements with differences between the selected stages. Click on view for more details on the changes.
+1. Check the boxes for the elements you want to synchronize.
 1. Click on **synchronize**
 
 
 :::warning Attention
-The elements of a stage associated with a segment are not synchronized. You must repeat the process manually in the new stage, once the synchronization is complete.
+Elements of a stage associated with a segment are not synchronized. You must repeat the process manually in the new stage, once the synchronization is complete.
 :::
 
 #### Delete a stage
@@ -501,34 +501,34 @@ To delete a stage, follow these steps:
 1. Click on the name of your web application and select the stage you want to delete.
 1. Click on application settings.
 1. Click on General.
-1. In the dangerous zone section, click **delete stage**.
+1. In the danger zone section, click **delete stage**.
 1. Enter the name of your stage.
 1. Click **delete**.
 
 
 :::warning Warning
-Once you confirm the deletion, Modyo starts an asynchronous process, and you won't be able to access the stage again.
+Once you confirm the deletion, Modyo starts an asynchronous process, and you will not be able to access the stage again.
 
-Deleting a stage deletes all the elements associated with that stage in the web application, including pages and widgets. In addition, the configuration of equipment, roles and other relevant aspects related to the stage are eliminated.
+Deleting a stage deletes all elements associated with that stage in the web application, including pages and widgets. In addition, the configuration of equipment, roles, and other relevant aspects related to the stage are eliminated.
 :::
 
 ### Team Review
 
-Team Review is a tool that allows you to control the process of publishing content in Modyo.
+Team Review is a tool that allows you to control the content publication process in Modyo.
 
-By activating Team Review using the **Enable Team Review** box, you establish that each item must go through different stages of review before it can be published.
+By activating Team Review using the **Enable team review** checkbox, you establish that each item must go through different review stages before it can be published.
 
-Once you've enabled team review, you can take the following actions:
+Once you have enabled team review, you can perform the following actions:
 
-- Define the **number of approvals** necessary for an item to be published.
-- **Restrict the selection of reviewers** - Only the submitter for review can select who should review the content and only those reviewers can approve the content.
+- Define the **number of approvals** required for an item to be published.
+- **Restrict reviewer selection** - Only the person submitting for review can select who should review the content, and only those reviewers can approve the content.
 - **Force review** - By activating this option, at least one of the users designated as reviewers must approve the item before publication.
-- **Require all** - When this option is selected, you require that all users designated as reviewers approve the item before it can be published.
+- **Require all** - With this option active, you require that all users designated as reviewers approve the item before it can be published.
 
 
 ### Team Members
 
-To efficiently organize and manage the work in Modyo, you can select the team members who will participate in the development of each site, giving them access to writing, reviewing and/or publishing tasks.
+To efficiently organize and manage work in Modyo, you can select the team members who will participate in the development of each site, granting them access to writing, reviewing, and/or publishing tasks.
 
 When creating a site, the administrator can manually assign users and the default roles that enable each of the functions.
 
@@ -536,12 +536,12 @@ When creating a site, the administrator can manually assign users and the defaul
 #### Add a new member
 To add a new member to your site, follow these steps:
 
-1. From the Modyo Platform main menu, open the **Channels** section.
+1. From the Modyo Platform main menu, expand the **Channels** section.
 1. Select your site.
 1. Expand **Site Settings**.
 1. Click on **Team Members**.
 1. Press the **+ Add Member** button.
-1. Search for and select the user you want to add to the site and choose a role for that user.
+1. Search for and select the user you want to add to the site and choose a role for them.
 1. Click **Add**.
 
 #### Modify a role
@@ -550,39 +550,39 @@ To modify an administrator's role, follow these steps:
 1. In the modal that opens, select the new role.
 1. Press **Update** to confirm the change.
 
-The available roles are:
+Available roles are:
 
-- **Viewer**: This user can view entries, view differences between versions, and leave comments. They can also access the synchronization view and view the changes that are pending synchronization. This role is not authorized to take any action that constitutes a change to the platform.
-- **Developer**: This user is in charge of structural resource development. They can create, modify, and submit pages, widgets, menus, and templates for review. All actions taken by a Developer must go through a review process before publication. This role does not have permissions to publish, delete, or _rollback_ to previous versions of the resources, nor to modify the configuration of the site. There is a variant of this role called Developer CLI, which in addition to the permissions of a Developer, allows updating widgets from external applications, such as the [modyo-cli](/en/platform/channels/widgets.html#modyo -cli).
-- **Developer CLI**: Can create, modify and submit pages, widgets, the menu and templates for review. In addition, they can push widgets from external applications.
-- **Reviewer**: This role allows for the correction, approval or discarding of the work done by the Developers. It can create, modify, submit for review, and approve pages, widgets, menus, and templates. It can also publish when the review conditions are met. It cannot edit the site settings.
-- **Admin**: The Site Administrator has the same privileges as the previous roles and has the ability to configure the entire site. This includes the creation, modification, submission for review and approval of pages, widgets, menus and templates. In addition, they can publish without requiring team review validation.
+- **Viewer**: This user can view entries, view differences between versions, and leave comments. They can also access the synchronization view and view pending changes to synchronize. This role is not authorized to perform any action that implies a change in the platform.
+- **Developer**: This user is in charge of the structural resource development. They can create, modify, and submit pages, widgets, menus, and templates for review. All actions performed by a Developer must go through a review process before publication. This role does not have permissions to publish, delete, or _rollback_ to previous versions of the resources, nor to modify the site's configuration. There is a variant of this role called Developer CLI, which in addition to the permissions of a Developer, allows updating widgets from external applications, such as the [modyo-cli](/en/platform/channels/widgets.html#modyo-cli).
+- **Developer CLI**: Can create, modify, and submit pages, widgets, the menu, and templates for review. In addition, they can push widgets from external applications.
+- **Reviewer**: This role allows for the correction, approval, or discarding of the work done by Developers. They can create, modify, submit for review, and approve pages, widgets, menus, and templates. They can also publish when review conditions are met. They cannot edit the site settings.
+- **Admin**: The Site Administrator has the same privileges as the previous roles and has the ability to configure the entire site. This includes the creation, modification, submission for review, and approval of pages, widgets, menus, and templates. In addition, they can publish without requiring team review validation.
 
 #### Delete an administrator
 To remove an administrator from the site, follow these steps:
 1. Check the box next to the administrator's name.
-2. Click on the **Delete** button at the bottom of the list, at the bottom left of the screen.
+2. Click on the **Delete** button at the end of the list, at the bottom left of the screen.
 
 ### Custom Redirects
 
 Modyo has a custom redirect system that will allow you to take a URL from your site and automatically redirect it via a 301 or 302 code to another section of the site.
 
-In this view you will find a table with all the redirects that currently exist on the site. You can search by path or description.
+In this view, you will find a table with all the redirects that currently exist on the site. You can search by path or description.
 
-To create a new redirect, click on the **New** button in the upper right corner of the view. Fill in the fields **_URL_ of Source** and **_URL_ of destination** and redirection code, and then save the changes.
+To create a new redirect, click on the **New** button in the upper right corner of the view. Fill in the **_Source URL_** and **_Destination URL_** fields and the redirection code, then save the changes.
 
 :::warning Attention
-The redirect table is the second to last in precedence, so if there is a URL on the site that points to a [page](/en/platform/channels/pages.html) or a default view, you'll see that view instead of being redirected through the custom redirection table.
+The redirects table is the second to last in precedence, so if there is a URL on the site that points to a [page](/en/platform/channels/pages.html) or a default view, you will see that view instead of being redirected through the custom redirects table.
 :::
 
 In addition to creating redirects one by one, you can import a [CSV file](/assets/examples/custom-redirections.csv) with up to 1000 redirects.
 
 :::warning Warning
-The required columns to import redirects are origin y destination.
+The required columns to import redirects are origin and destination.
 
 You can select a 301 or 302 response code for all elements without having to add an additional column.
 
-If you're importing a redirect with a source that's already registered, you won't be able to start the import process. Adjust your CSV file by deleting the row with the existing source, or delete the record of custom redirects from the site where you're trying to import the source.
+If you are importing a redirect with an already registered origin, you will not be able to start the import process. Adjust your CSV file by deleting the row with the existing origin, or delete the custom redirect record from the site where you are trying to import the origin.
 :::
 
 The hierarchy of locations on Modyo sites follows this order:
@@ -593,62 +593,62 @@ The hierarchy of locations on Modyo sites follows this order:
 1. [Site 404 error settings](/en/platform/channels/sites.html#privacy)
 
 :::warning Conditions for a redirect
-For a redirect to be successful, the source path cannot exist or must be unpublished. If the source is a published page with subpages, you must unpublish the subpages before you unpublish the main page.
+For a redirect to be successful, the source path cannot exist or must be unpublished. If the source is a published page with subpages, you must unpublish the subpages before unpublishing the main page.
 :::
 
 ### Security Headers
 
-Enable this module for your site to configure HTTP security headers. Please note that this action cannot be undone. Once enabled, you'll have full control over the headers you want to use.
+Enable this module for your site to configure HTTP security headers. Please note that this action cannot be undone. Once enabled, you will have full control over the headers you want to use.
 
 #### HTTP Strict Transport Security (HSTS)
 
-Tells the browser that it can only access the site using HTTPS.
-* **Duration**: Sets the time that the browser accesses the site via HTTPS only.
-* **Preload**: Includes the preload policy. For more information, see [HSTS Preload List Submission](https://hstspreload.org/).
+Indicates to the browser that it can only access the site via HTTPS.
+* **Duration**: Sets the time the browser accesses the site only via HTTPS.
+* **Preload**: Includes the preload directive. For more information, see [HSTS Preload List Submission](https://hstspreload.org/).
 * **Include subdomains**: Applies the HSTS rule to all subdomains on the site.
 
 #### Referrer-Policy
 
-The _header_ `Referer` contains information from the previous web page from which it is linking, with the _header_ `Referer-Policy` you can control how much information should be included in the _header_ `Referer`.
+The _header_ `Referer` contains information from the previous web page from which it is linking. With the _header_ `Referrer-Policy`, you can control how much information should be included in the _header_ `Referer`.
 
 * **no-referrer**: Does not send _referrer_ information.
 * **no-referrer-when-downgrade**: Does not send _referrer_ information to a less secure destination.
-* **origin**: Sends only the source domain, removes the paths and _query string_.
-* **origin-when-cross-origin**: Sends _referrer_ information for _requests_ from the same source. Deletes the routes and _query string_ for other destinations.
-* **same-origin**: Sends _referrer_ information for same origin _requests_ only.
-* **strict-origin**: Sends the origin domain only for same security level _requests_, and doesn't send _referrer_ information to less secure destinations.
-* **strict-origin-when-cross-origin**: Sends _referrer_ a _requests_  information from the same source. Sends the source only if the security level is the same, and does not send _referrer_ information to less secure destinations.
+* **origin**: Sends only the origin domain, removes paths and _query string_.
+* **origin-when-cross-origin**: Sends _referrer_ information for _requests_ from the same origin. Removes paths and _query string_ for other destinations.
+* **same-origin**: Sends _referrer_ information only for _requests_ from the same origin.
+* **strict-origin**: Sends the origin domain only for _requests_ of the same security level and does not send _referrer_ information to less secure destinations.
+* **strict-origin-when-cross-origin**: Sends _referrer_ information for _requests_ from the same origin. Sends the origin only if the security level is the same, and does not send _referrer_ information to less secure destinations.
 * **unsafe-url**: Always sends _referrer_ information.
 
 #### X-Frame-Options
 
 Indicates whether your site can be included in a `frame`, `iframe`, `embed`, or `object`.
 * **DENY**: The site cannot be displayed in a _frame_.
-* **SAMEORIGIN**: The site can be displayed in _frames_ with the same domain.
+* **SAMEORIGIN**: The site can be displayed in _frames_ from the same domain.
 
 #### X-Content-Type-Options
 
-Indicates that _MIME types_ announced in the _header_ `Content-Type` must be followed to avoid _MIME type sniffing_.
+Indicates that the _MIME types_ announced in the _header_ `Content-Type` must be followed to avoid _MIME type sniffing_.
 
 #### Content-Security-Policy (CSP)
 
-Controls what resources the browser can load on the site to mitigate data injection attacks and _cross site scripting_. The default value *allows you to load resources from anywhere*, so it's important to design a content security policy that's right for your site.
+Controls which resources the browser can load on the site to mitigate data injection attacks and _cross-site scripting_. The default value *allows loading resources from anywhere*, so it is important to design a content security policy appropriate for your site.
 
-Freely specifies your content security policy in the text area. For a complete guide on how to write your policy, see [Content Security Policy (CSP) from Mozilla Developer Network.](https://developer.mozilla.org/en/docs/Web/HTTP/CSP)
+Freely specify your content security policy in the text area. For a complete guide on how to write your policy, see [Content Security Policy (CSP) from Mozilla Developer Network.](https://developer.mozilla.org/es/docs/Web/HTTP/CSP)
 
-:::warning Warning
-A very strict value can interfere with some features like [Google tag manager](/en/platform/channels/sites.html#google-tag-manager), [PWA](/en/platform/channels/sites.html#pwa), [Widgets](/en/platform/channels/widgets.html) and [Asset Manager](/en/platform/content/asset-manager.html).
+:::warning Attention
+A very strict value can interfere with some features like [Google Tag Manager](/en/platform/channels/sites.html#google-tag-manager), [PWA](/en/platform/channels/sites.html#pwa), [Widgets](/en/platform/channels/widgets.html), and [Asset Manager](/en/platform/content/asset-manager.html).
 :::
 
-A production-ready policy must ensure that all resources, such as images and style sheets, are loaded from reliable sources and requires that all scripts be secure and reliable for the application. For example, a strict policy for the _minimal template_ would look like this:
+A production-ready policy must ensure that all resources, such as images and stylesheets, are loaded from trusted sources and requires that all scripts are secure and reliable for the application. For example, a strict policy for the _minimal template_ would look like this:
 
 ```bash
 default-src 'self'; img-src 'self' https://cloud.modyocdn.com; font-src 'self' https://cloud.modyocdn.com http://cdn.materialdesignicons.com; style-src 'self' http://cdn.materialdesignicons.com; script-src 'self'
 ```
 
-The policy must include a `default-src 'self'` directive, which serves as a _fallback_ for any other type of resource. You should also include `script-src` and `style-src` directives to avoid evaluating _inline_ `style` and `script` tags.
+The policy must include a `default-src 'self'` directive, which serves as a _fallback_ for any other type of resource. It must also include `script-src` and `style-src` directives to avoid evaluating _inline_ `style` and `script` tags.
 
-* **Nonce**: A CSP nonce will be added automatically by the server to the `script-src` and `style-src` directives if present.
+* **Nonce**: A CSP nonce will be automatically added by the server to the `script-src` and `style-src` directives if present.
 
 If you have the nonce present in your policy, you can add the `script` and `style` _tags_ to the allowed list in your _templates_ using the `csp_nonce` variable.
 
@@ -665,41 +665,41 @@ These tools can help you design a strong security policy:
 
 #### Permissions-Policy
 
-Allows or denies the use of browser features and APIs for the site; for example, you can restrict privacy-sensitive APIs such as the camera or microphone and the automatic playback of videos.
+Allows or denies the use of browser features and APIs for the site; for example, you can restrict privacy-sensitive APIs such as the camera or microphone and automatic video playback.
 
-For a full list of browser-compatible features, see the [MDN Feature Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Feature_Policy).
+For a complete list of browser-compatible features, see the [MDN Feature Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Feature_Policy).
 
 #### Cross Origin Embedder Policy (COEP)
 
-Configures the insertion of cross-source resources into the document. For example, if your document has a COEP header with a value of Require-Corp or Credentialless, you can only access certain functions, such as SharedArrayBuffer or Performance.now () objects, with unrestricted timers.
+Configures the embedding of cross-origin resources into the document. For example, if your document has a COEP header with a value of require-corp or credentialless, you can only access certain functions, such as SharedArrayBuffer or Performance.now(), with unrestricted timers.
 
 For more information, see the [MDN Cross-Origin-Embedder-Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy).
 
 #### Cross Origin Opener Policy (COOP)
 
-Allows you to ensure that a top-level document doesn't share a browsing context group with cross-source documents.
+Allows you to ensure that a top-level document does not share a browsing context group with cross-origin documents.
 
-COOP isolates the processing of your document, so potential attackers won't be able to access your global object if they open it in a popup, preventing a set of cross-origin attacks.
+COOP isolates the processing of your document, so potential attackers will not be able to access your global object if they open it in a popup, preventing a set of cross-origin attacks.
 
 For more information, review the [MDN Cross-Origin-Opener-Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy).
 
 #### Cross Origin Resource Policy
 
-Conveys the desire to block cross-origin/cross-site requests without cors to the specified resource by the browser.
+Conveys the desire to block cross-origin/cross-site requests without CORS to the specified resource by the browser.
 
 For more information, see the [MDN Cross-Origin-Resource-Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Resource-Policy).
 
 
 ### Site Variables
 
-Modyo has [global variables](/en/platform/core/key-concepts.html#global-variables) that you can use on multiple sites. However, you can also create specific variables for a particular site or overwrite the value of an existing global variable, with a value specific to the particular site.
+Modyo has [global variables](/en/platform/core/key-concepts.html#global-variables) that you can use on multiple sites. However, you can also create specific variables for a particular site or overwrite the value of an existing global variable with a value specific to that particular site.
 
-Using variables allows you to reuse HTML, JS, CSS, or text code across different sites, widgets, or templates. If you have code that is repeated in several parts of your account, you can assign that value to a variable to simplify your processes and if you edit the value of the variable, the change will be reflected everywhere the variable is in use.
+Using variables allows you to reuse HTML, JS, CSS, or text code across different sites, widgets, or templates. If you have code that is repeated in several parts of your account, you can assign that value to a variable to simplify your processes, and if you edit the variable's value, the change will be reflected wherever the variable is in use.
 
-:::tip Tip 
-In global variables, you can use plain text, HTML, JavaScript, and CSS. However, it's important to note that you can't use Liquid code inside these variables. It is also important to remember that the content of global variables has a maximum limit of 65,535 characters.
+:::tip Tip
+In global variables, you can use plain text, HTML, JavaScript, and CSS. However, it is important to note that you cannot use Liquid code within these variables. It is also important to remember that the content of global variables has a maximum limit of 65,535 characters.
 
-To get the value of the variable anywhere that accepts Liquid markup, use:<span v-pre>`{{vars.Name}}`</span>
+To get the variable's value anywhere that accepts Liquid markup, use:<span v-pre>`{{vars.Name}}`</span>
 :::
 
 #### Create a variable in sites
@@ -708,14 +708,14 @@ To create a variable in sites, follow these steps:
 
 1. From the main side menu, click **Channels**.
 1. Select your **Site**.
-1. Under **Site Settings**, click **Site Variables**. Here you can see the list of all global variables and site variables, their general information and a button to copy their code into Liquid markup.
+1. Under **Site Settings**, click **Site Variables**. Here you can see the list of all global variables and site variables, their general information, and a button to copy their code into Liquid markup.
 1. Click on **+ New Variable**.
 1. Complete the **Name** and **Value** fields of the variable.
 1. Click **Save**.
 
-:::warning Attention 
-When using variables, Modyo follows a hierarchy of preference, where variables defined at the lowest level have priority. The variables defined in the widget will take precedence over the variables defined on the site, and in turn, the variables defined on the site will take precedence over the variables defined at the account level.
+:::warning Attention
+When using variables, Modyo follows a hierarchy of preference, where variables defined at the lowest level have priority. Variables defined in the widget will take precedence over variables defined on the site, and in turn, variables defined on the site will take precedence over variables defined at the account level.
 
-Therefore, it's important to use caution when defining variables in widgets or on the site, especially if you use the same name as the variables defined at the account level.
+Therefore, it is important to be cautious when defining variables in widgets or on the site, especially if you use the same name as the variables defined at the account level.
 
 :::

@@ -16,7 +16,7 @@ Después de recorrer esta guía, puedes aplicar los mismos pasos para otras plan
 
 ### Conecta tus datos a una plantilla de Data Studio
 
-La galería de plantillas se encuentra en la plataforma Modyo en Insights > Data studio.
+La galería de plantillas se encuentra en la plataforma Modyo en Insights > Data Studio.
 
 ![Data studio](/assets/img/insights/0.png)
 

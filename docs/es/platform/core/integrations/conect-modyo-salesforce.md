@@ -2,11 +2,11 @@
 search: true
 ---
 
-# Integracion con Salesforce
+# Integración con Salesforce
 
 ## Introducción
 
-En este tutorial integraremos Salesforce, una plataforma de gestión de las relaciones con los clientes (CRM), con el módulo de Customers de Modyo donde se tienen a los usuarios finales de la plataforma. Esta integración nos permite administrar todos lo usuarios desde un solo lugar y así no cambiar el flujo de trabajo de nuestros equipos de ventas, marketing, organización, etc.
+En este tutorial, integraremos Salesforce, una plataforma de gestión de las relaciones con los clientes (CRM), con el módulo de Customers de Modyo, donde se gestionan los usuarios finales de la plataforma. Esta integración nos permite administrar todos los usuarios desde un solo lugar y así no cambiar el flujo de trabajo de nuestros equipos de ventas, marketing, organización, etc.
 
 ## Requisitos Previos
 

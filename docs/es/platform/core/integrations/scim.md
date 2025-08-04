@@ -7,7 +7,7 @@ search: true
 El sistema de gestión de identidades multidominio (SCIM) establece una comunicación estandarizada entre Modyo y Microsoft Azure para sincronizar automáticamente datos de usuarios y grupos. Esto te permite:
 - Crear usuarios en Microsoft Azure y aprovisionarlos automáticamente en Modyo.
 - Actualizar datos de usuario en Microsoft Azure y reflejar los cambios en Modyo.
-- Eliminar usuarios en Microsoft Azure y desaprovisionarlos en Modyo
+- Eliminar usuarios en Microsoft Azure y desaprovisionarlos en Modyo.
 
 Esta integración de grupos y usuarios entre Modyo y Microsoft Azure Active Directory con la API SCIM de Modyo, simplifica la gestión de usuarios en diferentes sistemas y reduce errores, favoreciendo una administración eficiente.
 

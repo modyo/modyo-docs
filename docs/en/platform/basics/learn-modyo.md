@@ -3,18 +3,18 @@ search: true
 title: Learn to use Modyo
 ---
 
-# Learn to use Modyo
+# Learn to Use Modyo
 
 Modyo is a platform that will help you create personalized digital experiences in a secure, fast, and unified way.
 
 Here you'll find detailed tutorials to help you understand and start using Modyo. These tutorials will guide you through every step of the creation process, from an introduction to Modyo's most important features to managing your content and creating a website.
 
- You can take our new courses independently and without the need for registration. Choose according to your level of knowledge, and advance at your own pace.
+You can access our new courses independently and without the need for registration. Choose according to your level of knowledge, and advance at your own pace.
 
 Take as many courses as you need according to your role, or take them all to become a true Modyo specialist.
 
 ## Basic Level
-The basic level courses are for people who are learning to use Modyo for the first time, we recommend that you always take the Introduction to Modyo course first, before moving on to other courses
+Basic level courses are designed for those learning to use Modyo for the first time. It is recommended to start with "Introduction to Modyo" before continuing with other courses.
 
 <a href="https://help.modyo.com/es/articles/6871283-introduccion-a-modyo" target="_blank">
     <img src="https://cdn.modyo.cloud/uploads/07374707-2f79-40ad-ad1f-6f69f3b9bf9a/original/ES-01-intro-modyo.png" width="500" alt="Introducción a Modyo" />
@@ -25,7 +25,7 @@ The basic level courses are for people who are learning to use Modyo for the fir
 </a>
 
 ## Intermediate Level
-For users who already have a basic knowledge of using Modyo, these courses provide them with a deeper view of the tool.
+For users with basic knowledge of Modyo, these courses offer a deeper view of the tool.
 
 <a href="https://help.modyo.com/es/articles/6849565-learning-path-creacion-de-sitios-web" target="_blank">
     <img src="https://cdn.modyo.cloud/uploads/7c8e3f90-8715-48ac-999d-3563932cd80c/original/ES-03-building-websites.png" width="500" alt="Desarrollo de sitios web" />
@@ -36,7 +36,7 @@ For users who already have a basic knowledge of using Modyo, these courses provi
 </a>
 
 ## Advanced Level
-Users who already have knowledge and experience, both in creating sites in Modyo and skills in developing web applications, can find useful resources in these advanced courses:
+Users with knowledge and experience in creating sites in Modyo, as well as skills in web application development, will find useful resources in these advanced courses:
 
 <a href="https://help.modyo.com/es/articles/6873935-crea-microfrontends-con-el-cli-de-modyo" target="_blank">
     <img src="https://cdn.modyo.cloud/uploads/9c9a6fe1-62bb-4d5b-a526-7a7d8cfa5a72/original/ES-06-CLI.png" width="500" alt="Microfrontends con el CLI" />
@@ -48,8 +48,8 @@ Users who already have knowledge and experience, both in creating sites in Modyo
 
 ## Additional Resources
 
-In addition to all the courses you have here, you can always find information on our specialized sites:
+In addition to these courses, you can always find information on our specialized sites:
 
-**[Modyo Community:](https://www.modyo.com/community)** in this section we have practical use cases, frequently asked questions from our users and pre-recorded webinars so you can go beyond theory and find the solution to everyday problems of use.
+**[Modyo Community:](https://es.modyo.com/comunidad)** This section offers practical use cases, frequently asked questions, and pre-recorded webinars to go beyond theory and find solutions to everyday problems.
 
-**[Webinars:](https://modyo.com/webinars)**: Every month, all our users receive invitations to attend live sessions with our entire community, you can ask questions and get solutions from our specialists.
+**[Webinars:](https://es.modyo.com/webinars)**: Every month, our users receive invitations to live sessions with our community, where they can ask questions and solve them with our specialists.

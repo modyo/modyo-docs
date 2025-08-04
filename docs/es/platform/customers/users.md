@@ -5,7 +5,7 @@ sidebarDepth: 2
 
 # Usuarios
 
-En esta sección puedes ver y modificar los usuarios externos del sistema. Estos usuarios son aquellos que se registran en la plataforma, acceden a los sitios de Modyo, responden a formularios y pueden recibir campañas de correo.
+En esta sección, puedes ver y modificar los usuarios externos del sistema. Estos usuarios son aquellos que se registran en la plataforma, acceden a los sitios de Modyo, responden a formularios y pueden recibir campañas de correo.
 
 La vista principal muestra una tabla con todos los usuarios registrados, que se paginará si hay más de 30 registros.
 

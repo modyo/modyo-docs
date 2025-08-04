@@ -4,101 +4,98 @@ search: true
 
 # Microservice
 
-Microservices architecture is an approach to software development that involves dividing an application into small, independent services that interact through defined APIs. These services are managed by small, independent teams.
+The microservices architecture is a software development approach that divides an application into small, independent services, managed by autonomous teams and interacting through well-defined APIs.
 
-This architectural approach allows applications to be more scalable and their development to be faster, promoting innovation and reducing the time needed to launch new features to the market.
+This approach allows for more scalable applications and faster development, promoting innovation and reducing the time to market for new functionalities.
 
 :::tip Microservices on AWS
-We adapted the definitions of this guide from the [Amazon AWS](https://aws.amazon.com) web.
+We adapted the definitions of this guide from the [Amazon AWS](https://aws.amazon.com) website.
 
 For more information on how AWS can support the implementation of a microservices initiative, we recommend visiting its [official documentation](https://aws.amazon.com/microservices).
 :::
 
 ### Monoliths vs. microservices
 
-In software architecture, two main approaches face off: monoliths and microservices. Each has its own characteristics and benefits.
+In software architecture, monoliths and microservices are two main approaches, each with distinctive characteristics and benefits.
 
 #### Monoliths
-In monolithic architectures, all processes are closely associated and run as a single service. This means that if an application process experiences an increase in demand, the entire architecture must scale. In addition, as the code base grows, adding or improving the features of a monolithic application becomes more complex. This complexity limits experimentation and makes it difficult to implement new ideas.
+In monolithic architectures, all processes are closely associated and run as a single service. This implies that an increase in demand for a process requires scaling the entire architecture. As the codebase grows, adding or improving functionalities becomes more complex, which limits experimentation and makes it difficult to implement new ideas.
 
-Monolithic architectures also increase the risk of application availability and increase the impact of a process failure due to the dependency between processes. Because an error in a single component can cause an application-wide error.
+Monolithic architectures also increase the risk of application availability and the impact of errors, as the dependency between processes means that a failure in a single component can cause an application-wide error.
 
 #### Microservices:
-In a microservices architecture, an application is built using separate components, each of which runs an application process as a separate service. There is no need to share code or implementations between services, and communication occurs through lightweight, well-defined APIs.
+In a microservices architecture, an application is built with independent components, each running a process as a separate service. It is not necessary to share code or implementations between services; communication is done through lightweight and well-defined APIs.
 
-Each service is built to handle specific business capabilities and focuses on a single function or on solving a specific problem. Because of its independence, each service can be independently updated, deployed, and scaled to meet the demand for specific application functions. If developers contribute more code to a service and the service becomes more complex, it can be divided into smaller services.
+Each service is designed to handle specific business capabilities, focusing on a single function or problem. Its independence allows each service to be updated, deployed, and scaled autonomously to meet the demand for specific functions. If a service becomes too complex, it can be divided into smaller services.
 
 #### Benefits of microservices
 
-- **Agility**: They foster small, independent teams that can work faster and more efficiently in well-understood contexts. This reduces development times and increases the performance of the organization.
-- **Flexible scalability**: They allow each service to scale independently to meet the demand for the feature of the application it supports. This allows teams to adapt to infrastructure needs, accurately measure the cost of a feature, and maintain availability if a service experiences an increase in demand.
-- **Easy deployment**: Microservices allow for continuous integration and delivery, making it easy to test new ideas and reverse them if something doesn't work. The low cost of errors allows for experimentation, makes it easier to update the code, and accelerates the time to market for new features.
-- **Technological freedom**: They don't follow a “one-size-fits-all” approach. Teams have the freedom to choose the best tool to solve each task or situation.
-- **Reusable code**: Dividing software into small, well-defined modules allows teams to use functions for different purposes. A service developed for a specific function can be used as a building block for another feature. This makes it easier to start an application, as developers can create new capabilities without having to write code from scratch.
-- **Resiliency**: Service independence increases resistance to errors. If there is an error in a service, applications can degrade functionality without affecting the entire application.
+- **Agility**: They foster small, independent teams that work faster and more efficiently in well-defined contexts, reducing development times and increasing organizational performance.
+- **Flexible scalability**: Each service can be scaled independently to meet the demand for its specific functionality. This allows teams to adapt to infrastructure needs, accurately measure costs, and maintain availability during demand peaks.
+- **Simple implementation**: They facilitate continuous integration and delivery, allowing new ideas to be tested and quickly reversed. The low cost of errors encourages experimentation, streamlines code updates, and accelerates the time to market for new functionalities.
+- **Technological freedom**: Teams have the freedom to choose the best tool for each task or situation, without a "one-size-fits-all" approach.
+- **Reusable code**: Dividing the software into small, well-defined modules allows for the reuse of functions for different purposes. A service developed for a specific function can be a basic component for another, facilitating the creation of new capabilities without writing code from scratch.
+- **Resilience**: The independence of the service increases resistance to failures. An error in a service allows for the degradation of the application's functionality without affecting its entirety.
 
-### Implementing microservices with Modyo
+### Implementation of microservices with Modyo
 
-[Modyo Connect](/en/connect) allows the development and deployment of microservices in the cloud on its [container](/en/connect/components/infrastructure.html#containers) platform. To do this, you must have a [code repository] (/en/connect/components/development.html#code-repository) and the [continuous integration](/en/connect/components/development.html#continuous-integration) processes active.
+[Modyo Connect](/en/connect) allows the development and deployment of microservices in the cloud on its [containers](/en/connect/components/infrastructure.md#containers) platform. To do this, a [code repository](/en/connect/components/development.md#code-repository) and active [continuous integration](/en/connect/components/development.md#continuous-integration) processes are required.
 
-The microservices developed in Modyo Connect have the ability to scale horizontally, which means that you can automatically increase the number of instances when required and replace those that have some type of problem. In addition, you can deploy microservices in multiple regions and availability zones to ensure their resilience to infrastructure failures.
+Microservices developed in Modyo Connect scale horizontally, allowing for the automatic increase of instances according to demand and the replacement of those with problems. In addition, they can be deployed in multiple regions and availability zones to ensure their resilience to infrastructure failures.
 
 #### General considerations
 
-Some important considerations when developing microservices on Modyo Connect are:
+Some important considerations when developing microservices in Modyo Connect:
 
-- **Spring Boot**: Framework used for development
-- **Modyo Commons Library**: Support library for common tasks such as error management, log records,
-  authentication, etc.
-- **OpenAPI**: Standard for defining and publishing APIs on the API Gateway
-- **Code structure and style**: We recommend using the [Spring Boot](https://start.spring.io) initializer
-  or [Yeoman](https://yeoman.io/generators) to give a standard to the source code. We also recommend following the
-  code style recommended by [Google](https://google.github.io/styleguide/javaguide.html).
+- **Spring Boot**: Recommended framework for development.
+- **Modyo Commons Library**: Support library for common tasks (error management, logs, authentication, etc.).
+- **OpenAPI**: Standard for the definition and publication of APIs in the API Gateway.
+- **Code structure and style**: It is recommended to use the [Spring Boot](https://start.spring.io) initializer or [Yeoman](https://yeoman.io/generators) to standardize the source code, and to follow the code style recommended by [Google](https://google.github.io/styleguide/javaguide.html).
 
 #### Use of databases
 
-Microservices that require relational data persistence should consider the following guidelines:
+Microservices with relational data persistence should consider the following guidelines:
 
-- **Blocks**: Avoid queries that could generate [blocks](https://www.baeldung.com/jpa-pessimistic-locking) in database tables during times of high demand.
-- **Efficiency**: Bring only the required information from the database. Sometimes it can be beneficial to use [lazy loading](https://www.baeldung.com/hibernate-lazy-eager-loading) to avoid unnecessary database queries at each iteration within a loop.
-- **Indexes**: Ensure that the indexes applied to the schema are effective. Use the ["explain"](https://dev.mysql.com/doc/refman/8.0/en/using-explain.html) command locally to verify their use.
-- **Migrations and versioning**: Ensure the [versioning and automation](https://flywaydb.org) of tasks that operate on the data schema.
-- **Connection pool**: Ensure a correct configuration of the [connection pool](https://www.baeldung.com/java-connection-pooling)y properly size the database engine, according to the expected concurrency and scalability.
+- **Locks**: Avoid queries that generate [locks](https://www.baeldung.com/jpa-pessimistic-locking) on the database tables during high demand.
+- **Efficiency**: Retrieve only the necessary information from the database. Consider using [lazy loading](https://www.baeldung.com/hibernate-lazy-eager-loading) to avoid unnecessary queries in loops.
+- **Indexes**: Ensure the effectiveness of the indexes applied to the schema. Use the ["explain"](https://dev.mysql.com/doc/refman/8.0/en/using-explain.html) command locally to verify their use.
+- **Migrations and versioning**: Ensure the [versioning and automation](https://flywaydb.org) of tasks on the data schema.
+- **Connection pool**: Correctly configure the [connection pool](https://www.baeldung.com/java-connection-pooling) and properly size the database engine according to the expected concurrency and scalability.
 
 #### Connection with external services
 
-Microservices developed in Modyo Connect can be integrated with other systems, such as APIs and external Web Services. To do this, you must keep the following considerations in mind:
+Microservices developed in Modyo Connect can be integrated with external systems (APIs and Web Services). Key considerations:
 
-- **Connectivity**: Ensure that connectivity from AWS networks to service endpoints are defined and stable.
-- **Security**: Ensure that the link to external services is established through a secure channel, through VPNs or [mTLS](https://www.cloudflare.com/learning/access-management/what-is-mutual-tls/).
-- **Error Handling**: Errors originating from external services must be managed appropriately at the microservice level to ensure a satisfactory user experience.
-- **Timeouts and crashes**: External services with performance or connectivity issues can cause blockages in the user experience or excessive use of resources within the microservice. We recommend defining reasonable timeouts for each call, aligned with those defined in the API Gateway. In addition, we suggest using asynchronous invocations when response times are not predictable.
+- **Connectivity**: Ensure that the connectivity from the AWS networks to the service endpoints is defined and stable.
+- **Security**: Establish the link to external services through a secure channel (VPNs or [mTLS](https://www.cloudflare.com/learning/access-management/what-is-mutual-tls/)).
+- **Error handling**: Properly manage errors originating from external services at the microservice level to ensure a satisfactory user experience.
+- **Timeouts and locks**: Define reasonable timeouts in each call, aligned with those of the API Gateway, to avoid locks or excessive use of resources by external services with performance problems. It is suggested to use asynchronous invocations when response times are not predictable.
 
 #### Hexagonal Architecture
-The hexagonal architecture, also known as Ports and Adapters Architecture, is a software architecture pattern that focuses on the separation of concerns (System on a Chip or SoC) and the independence of hardware and software in an application.
+The hexagonal architecture, also known as Ports and Adapters Architecture, is a software architecture pattern that focuses on the separation of responsibilities and the independence of hardware and software in an application.
 
-This architecture organizes the application so that the core of the business logic is in the center and the user interface and infrastructure layers are at the edge.
+It organizes the application with the business logic at the center, and the user interface and infrastructure layers at the periphery.
 
-The hexagonal architecture is made up of three main layers:
+It is composed of three main layers:
 
-- **Domain layer**: It contains the business logic of the application and represents the core of the architecture. This layer is independent of the user interface and the infrastructure layer.
-- **Infrastructure adapter layer**: Contains the adapters that connect the domain layer to the infrastructure layers. Adapters are responsible for transforming data between domain layer formats and specific infrastructure formats, such as databases and web services.
-- **Infrastructure layer**: Contains the specific infrastructure components used in the application, such as databases, web services, and file systems.
+- **Domain layer**: Contains the central business logic of the application, independent of the user interface and infrastructure.
+- **Infrastructure adapters layer**: Contains adapters that connect the domain layer with the infrastructure, transforming data between domain formats and specific infrastructure formats (e.g., databases, web services).
+- **Infrastructure layer**: Contains specific infrastructure components (databases, web services, file systems).
 
-Hexagonal architecture has several benefits, including:
+Benefits of the hexagonal architecture:
 
-- Allows the separation of concerns and the independence of hardware and software in an application.
+- Separation of responsibilities and independence of hardware and software.
 - Simplifies the integration of new infrastructure components.
-- Simplifies testing and debugging the application's business logic.
+- Facilitates the testing and debugging of the business logic.
 - Improves the modularity and reusability of the code.
 
-Dynamic Framework microservices are developed following the principles of hexagonal architecture.
+The microservices of Dynamic Framework are developed following the principles of the hexagonal architecture.
 
 
 #### Other considerations
 
-- **Heavy tasks**: We recommend using background processing with [messaging queues](/en/connect/components/infrastructure.html#messaging-queues), for services that are slow or sensitive to traffic fluctuations.
-- **Task Scheduling**: For services that require task scheduling, we recommend using [ShedLock](https://www.baeldung.com/shedlock-spring) in microservices that require scheduling programmed tasks.
-- **Workflows and state machine**: The use of [state machines](https://www.baeldung.com/spring-state-machine) is recommended for the orchestration of complex processes. As well as integrating workflow technologies with Spring Boot.
-- **Hexagon Architecture**: For more flexible, application domain-focused development, testing, and maintenance, this software design pattern separates an application's business logic from its external services.
-- **Modyo API**: We recommend using Modyo platform's administrative API for common tasks, such as sending messages to users or integrating with managed content.
+- **Heavy tasks**: For slow services or those sensitive to traffic fluctuations, background processing through [messaging queues](/en/connect/components/infrastructure.html#messaging-queues) is recommended.
+- **Task scheduling**: For microservices that require scheduling of programmed tasks, it is recommended to use [ShedLock](https://www.baeldung.com/shedlock-spring).
+- **Workflows and state machine**: The use of [state machines](https://www.baeldung.com/spring-state-machine) is recommended for the orchestration of complex processes, and to integrate workflow technologies with Spring Boot.
+- **Hexagonal architecture**: This software design pattern separates the business logic of an application from its external services, facilitating more flexible and domain-focused development, testing, and maintenance.
+- **Modyo API**: It is recommended to use the administrative API of the Modyo platform for common tasks, such as sending messages to users or integrating with managed content.

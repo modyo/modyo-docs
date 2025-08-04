@@ -6,7 +6,7 @@ search: true
 
 ## Revisión en Equipo
 
-La Revisión en Equipo (o Team Review) es una herramienta que permite controlar el proceso de publicación de contenidos en Modyo. Al activarla, cada elemento debe pasar por etapas de revisión antes de habilitar su publicación.
+La Revisión en Equipo (o Team Review) es una herramienta que permite controlar el proceso de publicación de contenidos en Modyo. Al activarla, cada elemento debe pasar por etapas de revisión antes de su publicación.
 
 La Revisión en Equipo añade un nivel de supervisión y colaboración entre el editor de contenidos y un equipo de revisores. Esta herramienta se configura de forma individual para cada Sitio y Espacio.
 

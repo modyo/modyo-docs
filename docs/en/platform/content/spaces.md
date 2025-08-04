@@ -5,11 +5,11 @@ sidebarDepth: 3
 
 # Spaces
 
-A space is a repository where team members can define [types of content](https://docs.modyo.com/es/platform/content/types.html) and entries.
+A space is a repository where team members can define [content types](https://docs.modyo.com/es/platform/content/types.html) and entries.
 
 Spaces allow you to organize content in the areas where you work, for better distribution and order.
 
-You can use this content inside and outside the Modyo platform, through the public API or when creating a site in the Channels module. Configure access from various sources, to allow the service that consumes the API to interpret it. See the [API](https://docs.modyo.com/es/platform/content/public-api-reference.html#api) section of our documentation for more information.
+You can use this content inside and outside the Modyo platform, through the public API or when creating a site in the Channels module. Configure access from various sources to allow the service that consumes the API to interpret it. See the [API](https://docs.modyo.com/es/platform/content/public-api-reference.html#api) section of our documentation for more information.
 
 ## About the interface
 
@@ -40,7 +40,7 @@ Later, in the space configuration, you can define secondary languages for the en
 
 ## Space Settings
 
-In this section, you can customize and adjust the options available for your space, according to your specific needs. To access the configuration of your space follow these steps:
+In this section, you can customize and adjust the options available for your space, according to your specific needs. To access the configuration of your space, follow these steps:
 1. In the side menu, select Content
 1. Select your space
 1. Click on Space Settings to display the sections that you can modify.
@@ -58,27 +58,27 @@ Saving this option reindexes all entries in the space. The changes will be refle
 :::
 
 - **Modify the realm's space**: When you change the user realm, you lose all privacy settings.
-- **Modify the space identifier**: The identifier or UID of the space is the attribute with which you access from the public content API, the Javascript SDK and the Liquid SDK. Make sure it's unique and without accents or special characters, as it will be used in URLs to access the content.
-- **Delete space**: Permanently deletes the space and all of its elements.
+- **Modify the space identifier**: The identifier or UID of the space is the attribute with which you access from the public content API, the Javascript SDK, and the Liquid SDK. Make sure it's unique and without accents or special characters, as it will be used in URLs to access the content.
+- **Delete space**: Permanently deletes the space and all its elements.
 :::danger Danger
-When selecting **Delete**, you must enter the textual name of the space to confirm the action. Once confirmed, you will not be able to access the space or its elements again.
+When selecting **Delete**, you must enter the textual name of the space to confirm the action. Once confirmed, you will not be able to access the space or its elements.
 :::
 
 
 ### Localization
 
-The default language of a space is defined when creating the space and you cannot modify it, but in this section you can add as many secondary languages as you need, this is useful for working with personalized content and users with different languages.
+The default language of a space is defined when creating the space and you cannot modify it, but in this section you can add as many secondary languages as you need. This is useful for working with personalized content and users with different languages.
 
 To add a language:
 1. Select a language from the drop-down menu
 1. Click on **Add language**
 
-Once you've added a secondary language, when you modify an entry, you'll see a language selector next to the title of the entry.
+Once you have added a secondary language, when you modify an entry, you will see a language selector next to the title of the entry.
 
 For more information on how to translate an entry into a secondary language, review the [Translate an entry](https://docs.modyo.com/es/platform/content/entries.html#traducir-una-entrada) section.
 
 :::tip Tip
-To select one of the available languages from an entry in its corresponding sections, review the documentation of [Public API](/en/platform/content/public-api-reference.html#filter), [Javascript SDK] (en/platform/content/public-api-reference.html#sdk-de-javascript) and in [Liquid SDK] (/en/platform/content/public-api-reference.html#filtrar-entradas)
+To select one of the available languages from an entry in its corresponding sections, review the documentation of [Public API](/en/platform/content/public-api-reference.html#filter), [Javascript SDK](/en/platform/content/public-api-reference.html#sdk-de-javascript) and in [Liquid SDK](/en/platform/content/public-api-reference.html#filtrar-entradas)
 :::
 
 
@@ -86,7 +86,7 @@ To select one of the available languages from an entry in its corresponding sect
 
 Modyo allows you to enable CORS so that the API can be accessed from any microservice in an external domain; ensuring secure data transmission.
 
-To enable CORS, you must specify the domain from which the information will be accessed. You can also allow all sources; however, we don't recommend doing so.
+To enable CORS, you must specify the domain from which the information will be accessed. You can also allow all sources; however, we do not recommend doing so.
 
 When you enable CORS:
 - The URLs allowed to access content are configured at the space level, automatically allowing custom site domains.
@@ -121,7 +121,7 @@ For more information on how to configure this option, go to [Team Review](/en/pl
 
 ### Team members
 
-Team members are those users who have access to a space to write, review and publish content. The space administrator can add, modify, or remove team members and assign the default roles.
+Team members are users who have access to a space to write, review, and publish content. The space administrator can add, modify, or remove team members and assign the default roles.
 
 #### Add User ####
 To add a user to the space:
@@ -144,10 +144,10 @@ Every space must have at least one administrator. If there is only one administr
 #### Remove team members ####
 To remove a team member from a space:
 1. Check the box next to the user's name.
-1. Click **Delete** at the bottom of the list of users.
+1. Click **Delete** at the end of the user list.
 1. Click **OK**.
 
 
 :::warning Attention
-Every space must have at least one administrator. If there's only one administrator in a space, the platform won't allow you to delete that user.
+Every space must have at least one administrator. If there is only one administrator in a space, the platform will not allow you to delete that user.
 :::

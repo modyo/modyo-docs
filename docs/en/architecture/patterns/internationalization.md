@@ -4,31 +4,31 @@ search: true
 
 # Internationalization
 
-Internationalization in web applications is the process of designing and developing applications that adapt and function correctly in different languages, cultures and regions around the world. The main objective is to make a web application easily localizable, that is, capable of adjusting to the linguistic and cultural requirements of users.
+Internationalization (i18n) in web applications is the process of designing and developing software to adapt and function correctly in different languages, cultures, and regions. Its main objective is to facilitate localization, allowing the application to adjust to the linguistic and cultural requirements of users.
 
-To achieve this, these aspects must be taken into consideration:
+To achieve this, aspects such as the following must be considered:
 
-- **Text Localization**: Involves separating the textual content of the application from its underlying code, allowing it to be translated and adapted to different languages. This is achieved through the use of resource files or databases.
-- **Date and time format**: Applications must present dates and times in formats that are understandable and acceptable in various regions, including different date formats, timestamps, and time zone options.
-- **Numerical and monetary format**: Numbering systems and currency symbols vary by country. Web applications must be able to adapt the way they display numbers and monetary values according to the cultural preferences of users.
-- **Character and encoding support**: Different languages use different character sets and encodings. Web applications must correctly handle and display special characters and accented letters corresponding to different languages.
-- **Interface design**: The interface must be flexible in order to adapt to different text lengths and grammatical structures. For example, languages written from right to left require a reverse interface design compared to languages written from left to right.
+- **Text localization**: Separate the textual content from the code to facilitate its translation and adaptation to different languages, using resource files or databases.
+- **Date and time format**: Present dates and times in formats that are understandable and acceptable for various regions, including different formats, timestamps, and time zones.
+- **Numeric and monetary format**: Adapt the display of numbers and monetary values according to the cultural preferences of users.
+- **Character and encoding support**: Correctly handle and display special characters and accented letters from different languages.
+- **Interface design**: Design flexible interfaces that adapt to different text lengths and grammatical structures (e.g., right-to-left languages).
 
-The implementation of internationalization practices makes it easier to translate, localize and adapt the application to different languages and cultures. This broadens their reach, reaches wider audiences, and improves the user experience by offering content that is relevant and adapted to their local context.
+The implementation of internationalization practices facilitates the translation, localization, and adaptation of the application to different languages and cultures, expanding its reach and improving the user experience by offering relevant content adapted to their local context.
 
-### Implementing internationalization with Modyo
+### Implementation of internationalization with Modyo
 
-At Modyo, internationalization can be carried out in two ways. The first and easiest involves using the language tools integrated into the platform. These settings allow the publication and management of content in several languages in the same space.
+In Modyo, internationalization can be implemented in two ways. The first, and simplest, uses the language tools integrated into the platform, which allow the publication and management of content in various languages within the same space.
 
-For websites and applications, the language is defined on each channel, allowing content and variables to be taken from the selected language to be deployed to end users. Each site includes a Liquid context variable that identifies the language, allowing you to create custom logic according to the language or to deliver its value to a third party, such as a micro frontend deployed on Modyo or a third-party library, such as a chatbot system.
+For websites and applications, the language is defined by channel, which allows content and variables to be obtained from the selected language for end users. Each site includes a Liquid context variable that identifies the language, facilitating the creation of custom logic or the delivery of its value to third parties (e.g., micro frontends or external libraries such as chatbot systems).
 
-This gives rise to a second way of implementing internationalization within Modyo, by using micro frontends. These components, developed externally, must be designed to be incorporated into websites or applications that may have different language settings.
+A second way to implement internationalization in Modyo is through micro frontends. These components, developed externally, must be designed to be incorporated into websites or applications with various language configurations.
 
-In this case, it is recommended to develop micro frontends taking into account the inclusion of an i18n library that allows changing the language and location using a dynamically injected variable when loading the component. In this way, the same micro frontend can be reused on different sites or web applications, adapting to the language configured on each site
+In this case, it is recommended to develop the micro frontends including an i18n library that allows changing the language and location through a variable injected dynamically when loading the component. In this way, the same micro frontend can be reused on different sites or web applications, adapting to the language configured in each one.
 
 
 :::tip Maintaining language files
-In complex projects, with multiple microservices in several languages, managing language keys in different repositories can be a challenge. To simplify this process, Modyo recommends incorporating a language automation system. These systems are responsible for controlling the files in each repository and provide a management interface for the people responsible for keeping them up to date.
+In complex projects with multiple microservices and several languages, managing language keys in different repositories can be a challenge. To simplify this process, Modyo recommends incorporating a language automation system. These systems control the files in each repository and provide a management interface for their updating.
 
-Some language automation systems include Transifex, Lokalise, Crowdin and WebTranslate. All of these have the ability to integrate directly with repositories.
+Examples of language automation systems that integrate directly with repositories include Transifex, Lokalise, Crowdin, and WebTranslate.
 :::

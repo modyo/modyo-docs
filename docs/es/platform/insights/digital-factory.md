@@ -8,9 +8,9 @@ Digital Factory te permite visualizar las estadísticas relacionadas con el fluj
 
 Los filtros disponibles son:
 
-- Rango de fecha
-- Sitio
-- Espacio
+- Rango de fecha.
+- Sitio.
+- Espacio.
 
 :::warning Atención
 Cuando filtras por sitio, los elementos que usan datos de espacios, no aportarán su data en el conteo, y a la vez, si filtras por espacio, los elementos que usen data de sitios, no aportarán al conteo de datos.

@@ -4,7 +4,7 @@ search: true
 
 # API de administración
 
-Además de la funcionalidad que provee la plataforma Modyo, esta cuenta con una API administrativa. Te permite, de forma autenticada, acceder de forma externa a distintas acciones como listar, crear, y eliminar elementos como formularios, layouts, contenido, campos personalizados, menús de navegación, campañas de correo, entre otros.
+Además de la funcionalidad que provee la plataforma Modyo, esta cuenta con una API administrativa. Te permite, de forma autenticada, acceder externamente a distintas acciones como listar, crear y eliminar elementos como formularios, layouts, contenido, campos personalizados, menús de navegación, campañas de correo, entre otros.
 
 De esta forma, es posible realizar labores administrativas consumiendo la API y sin depender de la interfaz de Modyo, lo que te otorga mayor libertad para controlar tu trabajo.
 

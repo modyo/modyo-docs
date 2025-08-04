@@ -6,7 +6,7 @@ search: true
 
 ## Equipo
 
-Todos los usuarios internos de la plataforma conforman el equipo y cada miembro puede tener un rol específico para aprovechar al máximo el sistema.
+Todos los usuarios internos de la plataforma conforman el equipo, y cada miembro puede tener un rol específico para aprovechar al máximo el sistema.
 
 En esta sección puedes crear, editar y desactivar a los usuarios de la plataforma.
 

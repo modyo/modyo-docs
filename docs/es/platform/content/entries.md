@@ -4,7 +4,7 @@ search: true
 
 # Entradas
 
-Las entradas son la forma de desplegar a tus sitios el contenido creado en un espacio. Puedes ver tus entradas desde los sitios creados en Modyo Platform, en el módulo de Channels, o en sitios externos mediante nuestra API.
+Las entradas son la forma de desplegar en tus sitios el contenido creado en un espacio. Puedes ver tus entradas desde los sitios creados en Modyo Platform, en el módulo de Channels, o en sitios externos mediante nuestra API.
 
 En un espacio, las entradas se separan por tipos de contenido. El tipo de contenido define la estructura básica y los requerimientos y validaciones necesarios para que una entrada pueda publicarse.
 

@@ -4,7 +4,7 @@ search: true
 
 # APIs de Customers
 
-Modyo Customers contiene una variedad de APIs con la que podrás obtener la información de Reinos, las notificaciones, y sus usuarios.
+Modyo Customers contiene una variedad de APIs con las que podrás obtener la información de Reinos, las notificaciones y sus usuarios.
 
 
 ## API de customers

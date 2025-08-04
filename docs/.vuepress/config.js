@@ -399,6 +399,25 @@ module.exports = {
                           ],
                       },
                   ],
+                  "/es/dynamic/": [{
+                      title: "Dynamic Framework",
+                      collapsable: false,
+                      children: [
+                          "/es/dynamic/",
+                      ],
+                  },
+                  {
+                      title: "Framework",
+                      path: "/es/dynamic/framework/",
+                      collapsable: true,
+                      children: [
+                          "/es/dynamic/framework/",
+                          "/es/dynamic/framework/react",
+                          "/es/dynamic/framework/widgets",
+                          "/es/dynamic/framework/theming",
+                      ],
+                  },
+                  ],
                   "/es/architecture/": [{
                           title: "Arquitectura",
                           collapsable: false,

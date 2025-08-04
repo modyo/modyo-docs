@@ -4,7 +4,7 @@ search: true
 
 # Plantillas
 
-La arquitectura base y la apariencia son aspectos esenciales de un sitio. En la sección de Plantillas, puedes ajustar las plantillas base, así como el JavaScript y CSS globales y modificar la estructura según sea necesario.
+La arquitectura base y la apariencia son aspectos esenciales de un sitio. En la sección de Plantillas, puedes ajustar las plantillas base, el JavaScript y CSS globales, y modificar la estructura según sea necesario.
 
 Cuando creas un sitio, se completa con plantillas distintas para generar el tema Minimal y puedes empezar a crear tu canal digital en él. Puedes también crear snippets de código HTML, JS y CSS para extender la funcionalidad de tu sitio.
 

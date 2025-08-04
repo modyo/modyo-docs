@@ -6,7 +6,7 @@ search: true
 
 ## Introducción
 
-Una de las cosas más importantes a la hora de tomar decisiones es poder visualizar los datos y la mejor forma es tenerlos en un tablero simple, fácil de compartir, y completamente personalizable.
+Una de las cosas más importantes a la hora de tomar decisiones es poder visualizar los datos, y la mejor forma es tenerlos en un tablero simple, fácil de compartir y completamente personalizable.
 
 Es por eso que recomendamos el uso de Data Studio, la solución de reportes de Google que permite crear visualizaciones personalizadas de datos. 
 

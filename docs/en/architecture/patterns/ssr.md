@@ -2,31 +2,31 @@
 search: true
 ---
 
-# Server Side Rendering
+# Server-Side Rendering (SSR)
 
-Server-Side Rendering (SSR) or server-side rendering, is a web development technique for generating and sending a pre-rendered version of a web page to the client from the server, instead of sending only the JavaScript code and letting the client render it in the browser.
+Server-Side Rendering (SSR) is a web development technique that generates and sends the client a pre-rendered version of a web page from the server, instead of the client rendering it in the browser from JavaScript code.
 
-In SSR, the server is responsible for processing the client's request and generating a complete response, including HTML, CSS and, in some cases, JavaScript content. This means that the server executes the application code and generates the final HTML that is sent to the browser.
+In SSR, the server processes the client's request and generates a complete response (HTML, CSS, and, in some cases, JavaScript). This implies that the server executes the application code and produces the final HTML that is sent to the browser.
 
 Advantages of SSR:
 
-- **Search engine optimization**: Pre-rendered content is more accessible to search engines, making it easier to index and rank in search results.
-- **Better initial performance**: The user quickly views visual content without waiting for the JavaScript code to load and execute in the browser.
-- **Compatibility with devices with limited resources**: Reduces the processing load on the client, which is beneficial on mobile devices or older browsers.
-- **Better SEO and social media sharing**: It is more social media and search engine friendly by providing complete and enriched content for sharing and tracking.
+- **Search engine optimization**: Pre-rendered content is more accessible to search engines, facilitating its indexing and positioning.
+- **Better initial performance**: The user visualizes the content quickly, without waiting for the JavaScript to load and execute in the browser.
+- **Compatibility with limited resource devices**: Reduces the processing load on the client, which is beneficial for mobile devices or old browsers.
+- **Better SEO and social media sharing**: More friendly with social networks and search crawlers, by providing complete and enriched content for sharing and tracking.
 
 Disadvantages of SSR:
 
-- **Increased load on the server**: SSR means that the server must generate and send the full HTML content on every request, which can increase the load on the server, especially in applications with high request loads.
-- **Lower interactivity**: Subsequent interactions and updates to the page may require additional requests to the server, which may result in less interactivity compared to single-page applications (SPA).
-- **Increased implementation complexity**: Implementing SSR may require more complex configuration and management on the server.
+- **Greater server load**: The server must generate and send the complete HTML content in each request, which can increase its load, especially in applications with high demand.
+- **Less interactivity**: Subsequent interactions and updates may require additional requests to the server, resulting in less interactivity compared to Single-Page Applications (SPA).
+- **Greater implementation complexity**: The implementation of SSR may require more complex configuration and management on the server.
 
-Server Side Rendering is a useful technique in scenarios where SEO and initial performance are critical. However, its implementation requires careful architecture and execution due to its impact on the server load and the interactivity of the application.
+SSR is a useful technique in scenarios where SEO and initial performance are critical. However, its implementation requires care in the architecture and execution due to its impact on the server load and the interactivity of the application.
 
 ### SSR implementation in Modyo
 
-In Modyo, SSR is achieved using Liquid as a template language. Liquid, created by Shopify, is a template language widely used to generate dynamic content in web applications and online stores. Within Modyo, Liquid is the basis for code processing on the platform.
+In Modyo, SSR is achieved using Liquid as a template language. Liquid, created by Shopify, is a widely used template language for generating dynamic content in web applications and online stores. In Modyo, Liquid is the basis for code processing on the platform.
 
 :::tip Liquid Performance
-Templates processed with Liquid in Modyo are stored in several cache layers, ensuring reduced response times and an exceptional user experience, while maintaining the dynamic nature of these templates.
+Templates processed with Liquid in Modyo are stored in several cache layers, which guarantees reduced response times and an exceptional user experience, maintaining the dynamic nature of these templates.
 :::

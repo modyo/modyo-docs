@@ -5,7 +5,7 @@ search: true
 # Tipos de contenido
 
 
-Los Tipos de contenido son la base para tus Entradas. Los Tipos definen qué campos y validaciones son requeridas para las Entradas, contando con más de 15 tipos de campos.
+Los Tipos de contenido son la base para tus Entradas. Definen qué campos y validaciones son requeridas para las Entradas, contando con más de 15 tipos de campos.
 
 A los Tipos de contenido se les puede asignar una cardinalidad. Esta variable indica cuantas Entradas pueden existir para este Tipo. Puedes agregar idiomas al repositorio y generar Entradas en varios idiomas, almacenadas en un solo lugar. Además, puedes crear Usuarios, con diferentes roles y permisos, logrando así una división de trabajo llamada Revisión de Equipo.
 

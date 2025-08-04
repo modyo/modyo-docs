@@ -23,6 +23,6 @@ La sección **Resumen** proporciona una visión general de los elementos clave d
 También encontrarás un registro cronológico de todas las actividades realizadas dentro del reino, lo que facilita el monitoreo y análisis de las interacciones.
 
 
-En esta sección también encontrarás información relevante, como las configuraciones principales del reino, los sitios donde se utiliza, los proveedores de identidad integrados y sus identificadores correspondientes.
+En esta sección, también encontrarás información relevante, como las configuraciones principales del reino, los sitios donde se utiliza, los proveedores de identidad integrados y sus identificadores correspondientes.
 
 Este resumen te permite administrar eficientemente cada reino y entender cómo se conecta con los usuarios y otros elementos clave de la plataforma.

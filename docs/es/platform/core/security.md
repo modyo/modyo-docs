@@ -6,7 +6,7 @@ tags:
 
 # Seguridad
 
-Para Modyo la seguridad es una prioridad fundamental. Por este motivo, hemos desarrollado esta página que servirá como guía integral para asegurar la instalación de Modyo.
+Para Modyo, la seguridad es una prioridad fundamental. Por este motivo, hemos desarrollado esta página que servirá como guía integral para asegurar la instalación de Modyo.
 
 Tanto Modyo Cloud como Enterprise Cloud, nuestras soluciones en la nube, ofrecen un excelente nivel de seguridad de manera predeterminada. Además, los administradores de la plataforma tienen la capacidad de aplicar medidas adicionales para fortalecer la protección de sus organizaciones.
 

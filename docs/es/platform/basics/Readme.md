@@ -8,7 +8,7 @@ search: true
 
 ¡Estamos emocionados de tenerte a bordo y explorando nuestra plataforma!
 
-Queremos que tu experiencia sea lo más fácil y satisfactoria posible, por lo que hemos diseñado esta documentación pensando en ti. Puedes navegar estos documentos de principio a fin o dirigirte a una sección específica, los contenidos están todos relacionados entre sí para facilitar tu proceso de aprendizaje.
+Queremos que tu experiencia sea lo más fácil y satisfactoria posible, por lo que hemos diseñado esta documentación pensando en ti. Puedes navegar estos documentos de principio a fin o dirigirte a una sección específica; los contenidos están todos relacionados entre sí para facilitar tu proceso de aprendizaje.
 
 :::tip Versiones anteriores
 

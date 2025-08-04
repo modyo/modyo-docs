@@ -6,26 +6,26 @@ tags:
 
 # Security
 
-For Modyo, safety is a key priority. For this reason, we have developed this page that will serve as a comprehensive guide to ensure the secure installation of Modyo.
+For Modyo, security is a fundamental priority. For this reason, we have developed this page that will serve as a comprehensive guide to ensure the secure installation of Modyo.
 
 Both Modyo Cloud and Enterprise Cloud, our cloud solutions, offer an excellent level of security by default. In addition, platform administrators have the ability to implement additional measures to strengthen the protection of their organizations.
 
-This guide presents the most relevant recommendations for achieving this goal.
+This guide presents the most relevant recommendations for achieving this objective.
 
 ## Password Policy
 
 In this section, you can set the password security policy for team members. The available options are:
 
-- **Minimum password length value**: This value determines the minimum length that a password must have, it must be between 12 and 128 characters.
+- **Minimum password length value**: This value determines the minimum length a password must have; it must be between 12 and 128 characters.
 - **Require at least one lowercase letter (a - z)**: This option ensures that the password contains at least one lowercase letter.
 - **Require at least one capital letter (A - Z)**: This option ensures that the password contains at least one capital letter.
-- **Require at least one non-alphanumeric character (! @ # $% ^ & * () _ + - = [] {} |)**: This option requires that team members' passwords contain at least one of the specified special characters.
+- **Require at least one non-alphanumeric character (! @ # $ % ^ & * () _ + - = [] {} |)**: This option requires that team members' passwords contain at least one of the specified special characters.
 
-When saving this configuration, existing users will have to comply with these conditions whenever they change their passwords.
+When saving this configuration, existing users will have to comply with these conditions when changing their password.
 
 ## Session expiration policy
 
-In this section you can configure how long a session will remain active.
+In this section, you can configure how long a session will remain active.
 
 **Session Expiration**: At the end of the selected time, Modyo automatically closes the user's session.
 
@@ -33,38 +33,38 @@ In this section you can configure how long a session will remain active.
 
 ## User inactivity period policy
 
-When this option is activated, and once the selected time has elapsed without user interaction on the platform, Modyo will automatically make a change in the user's status to _inactive_.
+When this option is activated, and once the selected time has elapsed without user interaction on the platform, Modyo will automatically change the user's status to _inactive_.
 
-Once the user is marked as inactive, they cannot log in. The default inactivity period is 90 days and you can change it to:
+Once the user is marked as inactive, they cannot log in. The default inactivity period is 90 days, and you can change it to:
 
 - 30 days
 - 90 days
 - 180 days
 - 360 days
 
-If you check the box to send an email to a user when they are considered inactive, the user will receive an email notification. From this email, they will be able to reactivate their account.
+If you check the box to resend an email to the user when they are considered inactive, the user will receive an email notification. From this email, they will be able to reactivate their account.
 
 :::tip Tip
-**Account owners** can change a user's status between inactive and active using the “Login disabled due to inactivity” checkbox.
+**Account owners** can change a user's status between inactive and active using the "Login disabled due to inactivity" checkbox.
 
-You can locate this option when editing a user in the **Team** section, in the **Edit** tab. If you select the box, the user is marked as inactive and when it is deactivated, the user will be active.
+You can locate this option when editing a user in the **Team** section, in the **Edit** tab. If you select the checkbox, the user is marked as inactive, and when deactivated, the user will be active.
 :::
 
 ## HTTP access control (Cross-Origin Resource Sharing CORS)
 
 Enables the Cross-Origin Resource Sharing (CORS) functionality to allow access to Modyo resources from other websites.
 
-To give access to external domains, write them separated by commas, for example `http://api.mydomain.com, http://mysubdomain.mydomain.com`. By default, wildcards are not allowed in this section. To enable them, you must manually disable SSL through a ticket sent to the [Modyo support area](https://support.modyo.com/hc/en-us).
+To grant access to external domains, write them separated by commas, for example, `http://api.mydomain.com, http://mysubdomain.mydomain.com`. By default, wildcards are not allowed in this section. To enable them, you must manually disable SSL through a ticket sent to the [Modyo support area](https://support.modyo.com/hc/en-us).
 
 ## Content Delivery Token (JWT - JSON Web Token)
 
-This key or _secret_ is used by Modyo to sign user JWTs so that they can access [private content through the API](en/platform/content/public-api-reference.html#private-content).
+This key or _secret_ is used by Modyo to sign user JWTs to access [private content through the API](/en/platform/content/public-api-reference.html#private-content).
 
 :::warning Attention
 If you generate a new key, all requests for private content must go through Modyo. This is because JWTs signed by Modyo with the old key will no longer be valid.
 :::
 
-The key or _secret_ has a specified duration in seconds. You can set this time in the field provided; by default, the duration is one hour (3600 seconds). It is recommended to avoid a very short period of duration, as it may affect the performance of the platform.
+The key or _secret_ has a specified duration in seconds. You can set this time in the provided field; by default, the duration is one hour (3600 seconds). It is recommended to avoid a very short duration, as it may affect the platform's performance.
 
 ## Two-Factor Authentication (2FA)
 
@@ -84,7 +84,7 @@ To enable two-factor authentication for a user and neutralize the risk of compro
 
 1. In Modyo Platform, in the user menu, click **Profile**.
 2. In profile settings, in the top menu, click the 3 dots and click **Configure Authenticator**.
-3. Scan the code that appears on the screen with your mobile device to link your authenticator to Modyo Platform.
+3. Scan the code that appears on the screen with your mobile device to link your authenticator with Modyo Platform.
 This adds a new field with the domain name, your user level, and your username.
 4. Enter the numbers that appear on your mobile phone in the password field and click **Save**.
 
@@ -129,7 +129,7 @@ We recommend that you set a secure password and change it regularly, for example
 Forcing connections to be TLS only in your installation ensures that all incoming and outgoing traffic is encrypted. In addition, we recommend using only modern versions of the protocol, in particular versions 1.2 or 1.3.
 
 ### Differentiate Subdomains
-Differentiating subdomains is essential, since there are multiple places where Modyo supports HTML development. If not activated, the HTML of sites developed on Modyo can become an entry point for attacks that could affect other Modyo components through the cross-site scripting (XSS) technique.
+Differentiating subdomains is essential, as there are multiple places where Modyo supports HTML development. If not activated, the HTML of sites developed on Modyo can become an entry point for attacks that could affect other Modyo components through the cross-site scripting (XSS) technique.
 
 ### Review the Backup Processors
 Running backup processes on a regular basis is very important in a secure Modyo implementation.
@@ -162,6 +162,6 @@ In addition, administrators can generate tokens to access the platform's managem
 
 If you think you have identified a security vulnerability in Modyo, please help us by reporting the problem.
 
-Modyo provides secure and confidential channels for reporting security incidents through our [support center](https://support.modyo.com/hc/en-us) or by sending an email to <a href="mailto:security@modyo.com">security@modyo.com</a>.
+Modyo offers secure and confidential channels for reporting security incidents through our [support center](https://support.modyo.com/hc/es) or by sending an email to <a href="mailto:security@modyo.com">security@modyo.com</a>.
 
-Your collaboration is critical to maintaining the integrity and security of the platform.
+Your collaboration is fundamental to maintaining the integrity and security of the platform.

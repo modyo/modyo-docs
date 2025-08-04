@@ -4,31 +4,31 @@ search: true
 
 # Conceptos claves de Modyo
 
-En esta sección puedes encontrar una breve explicación de los conceptos clave relacionados con la Plataforma Modyo.
+Esta sección ofrece una breve explicación de los conceptos clave relacionados con la Plataforma Modyo.
 
 
 ### Arquitectura Multi-Sitio
 
-Modyo implementa una arquitectura Multi-Sitio fácil de administrar. Desde una sola cuenta, puedes crear múltiples sitios públicos o privados.
+Modyo implementa una arquitectura Multi-Sitio fácil de administrar. Desde una sola cuenta, se pueden crear múltiples sitios públicos o privados.
 
 ### Interacción contextual de clientes
 
-Modyo ofrece diversos mecanismos de autenticación, como OpenID Connect, OAuth2 y Google, para autenticar fácilmente a tus clientes. Los clientes pueden interactuar en diferentes sitios y contextos, manteniendo un perfil central para una administración eficiente.
+Modyo ofrece diversos mecanismos de autenticación (ej. OpenID Connect, OAuth2, Google) para autenticar fácilmente a tus clientes. Los clientes pueden interactuar en diferentes sitios y contextos, manteniendo un perfil central para una administración eficiente.
 
 ### CMS y Headless CMS
 
-Modyo Content te permite crear y publicar contenido, con la flexibilidad de añadir campos para estructuras personalizadas.
+Modyo Content permite crear y publicar contenido, con la flexibilidad de añadir campos para estructuras personalizadas.
 
 Modyo Channels trabaja con plantillas HTML y componentes reutilizables de frontend llamados widgets.
 
-Todo el contenido estructurado que es publicado genera un archivo JSON que puede alimentar a otro sitio o aplicación a través de la API.
+Todo el contenido estructurado publicado genera un archivo JSON que puede alimentar otro sitio o aplicación a través de la API.
 
 
 ### Plataforma de integración
 
-Modyo está diseñado para facilitar la creación de soluciones digitales integradas con los sistemas centrales de las empresas. Con esto en mente, mantenemos el foco en facilitar el desarrollo de widgets y la conexión con APIs.
+Modyo está diseñado para facilitar la creación de soluciones digitales integradas con los sistemas centrales de las empresas. Con esto en mente, nos enfocamos en facilitar el desarrollo de widgets y la conexión con APIs.
 
-El generador de widgets ayuda a los desarrolladores de back y frontend a trabajar juntos para crear experiencias digitales conectadas a APIs y el modelo de gobernabilidad les permite previsualizar y publicar trabajos rápidamente.
+El generador de widgets ayuda a los desarrolladores de back y frontend a trabajar juntos para crear experiencias digitales conectadas a APIs, y el modelo de gobernabilidad les permite previsualizar y publicar trabajos rápidamente.
 
 ### Widgets
 
@@ -38,15 +38,13 @@ Modyo se basa en widgets y rastrea cada cambio en un sistema de control de versi
 
 ### Generador de widgets
 
-El generador de widgets de Modyo es una herramienta robusta que simplifica el desarrollo frontend, la publicación y la auditoría. Con esta herramienta puedes crear experiencias digitales personalizadas y de alta calidad, de manera rápida y sencilla.
+El generador de widgets de Modyo es una herramienta robusta que simplifica el desarrollo frontend, la publicación y la auditoría. Con esta herramienta, se pueden crear experiencias digitales personalizadas y de alta calidad, de manera rápida y sencilla.
 
-Con el generador de widgets, puedes crear cualquier tipo de widget, incluyendo componentes en HTML, CSS y JavaScript conectados con APIs, además, puedes guardar los widgets en tu librería para reutilizarlos en otros sitios.
+Con el generador de widgets, se puede crear cualquier tipo de widget, incluyendo componentes en HTML, CSS y JavaScript conectados con APIs. Además, se pueden guardar los widgets en la librería para reutilizarlos en otros sitios.
 
 ### Widgets prefabricados para servicios financieros
 
-Modyo Banking proporciona widgets financieros prefabricados para acelerar el desarrollo de tus experiencias bancarias de _retail_ y _wealth management_. Estos widgets están diseñados para cumplir con los requisitos específicos de las instituciones financieras.
-
-Modyo Banking requiere de una licencia dedicada.
+Modyo Banking proporciona widgets financieros prefabricados para acelerar el desarrollo de experiencias bancarias de _retail_ y _wealth management_. Estos widgets están diseñados para cumplir con los requisitos específicos de las instituciones financieras y requieren una licencia dedicada.
 
 ### Liquid Markup
 

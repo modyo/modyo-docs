@@ -6,13 +6,13 @@ search: true
 
 The **Modyo SDK** is a library that facilitates the interaction of JavaScript-based applications with the Modyo public API.
 
-Using the SDK you can fetch, filter, and sort your created content to take full advantage of the capabilities of the Headless API.
+Using the SDK, you can fetch, filter, and sort your created content to take full advantage of the capabilities of the Headless API.
 
 In addition, the Modyo SDK allows you to obtain information from the end user who is already logged into the platform to further customize the user's interaction with your site.
 
 ### Use
 
-To be able to use it in your project you first have to create a client. For that we create an instance of a new client with the web address of the Modyo account as argument together with the language to request.
+To use it in your project, you first have to create a client. For that, we create an instance of a new client with the web address of the Modyo account as an argument along with the language to request.
 
 ```js
 import { Client } from "@modyo/sdk";
@@ -21,12 +21,12 @@ const modyoAccount = new Client("https://my-account.modyo.com","en");
 ```
 
 :::tip Tip
-When having a client instance, the second parameter _locale_ is optional, so that entries are requested only in the requested language, otherwise the default language of the Space will be used.
+When having a client instance, the second parameter _locale_ is optional, so that entries are requested only in the requested language; otherwise, the default language of the Space will be used.
 :::
 
 ## Display Entries
 
-To access the list of entries of a type with the uid `type_uid` and of a space with the uid `space_uid` we use:
+To access the list of entries of a type with the uid `type_uid` and of a space with the uid `space_uid`, use:
 
 ```js
 import { Client } from "@modyo/sdk";
@@ -84,7 +84,7 @@ Supported filters: `Before`, `After`, `LessThan`, `GreaterThan`, `In`, `NotIn`, 
 
 - **Before, After, LessThan, GreaterThan**: they receive as a parameter the name of the field to be compared and the value to which it will be compared.
 
-- **In, NoTin, Has**: receive as a parameter the name of the field to be compared and an array of values with which it will be compared to. In is equivalent to an `OR` in SQL, Has is equivalent to an `AND`.
+- **In, NotIn, Has**: receive as a parameter the name of the field to be compared and an array of values with which it will be compared to. In is equivalent to an `OR` in SQL, Has is equivalent to an `AND`.
 
 - **SortBy**: receives as parameters the field to sort and order (`asc` or `desc`).
 
@@ -129,7 +129,7 @@ The results of our search can also be sorted with the `SortBy()` method:
 ```js
 
 const filters = ctype
-  .filter()
+  .Filter()
   .SortBy("meta.created_at", "desc")
   .JSONPath("$..uuid");
 ```
@@ -156,9 +156,8 @@ It is important that this potentially sensitive information be treated with care
 ### End User Information
 
 :::warning Warning
-It is important that you treat this sensitive information with care. As with Private Content, this information is only available if working from a browser that supports cookies, and the end user is logged in to the platform.
+It is important that you treat this sensitive information with care. As with Private Content, this information is only available if working from a browser that supports cookies, and the end user has logged in to the platform.
 
-To get information from the end user, you need to call the function: `client.getUserInfo()`, this will return an object with the basic information
+To get information from the end user, you need to call the function: `client.getUserInfo()` this will return an object with the basic information
 of that user.
 :::
-

@@ -4,31 +4,31 @@ search: false
 
 # Code Reuse
 
-Code reuse is the practice of writing code that you can use in multiple contexts or applications, instead of creating new code for each new function or application. The goal is to “write once, use many times”.
+Code reuse is the practice of designing and writing code that can be used in multiple contexts or applications, avoiding the need to create new implementations for each function or application. Its objective is to "write once, use many times".
 
 This practice offers multiple advantages, such as:
 
-- **Efficiency**: Save time and effort by not having to write the same code over and over again.
-- **Consistency**: Helps ensure that certain functions behave consistently in all parts of an application or in different applications.
-- **Maintainability**: It's easier and faster to update or correct errors in a single reusable codebase than in multiple copies of the same code.
+- **Efficiency**: Reduces time and effort by avoiding code rewriting.
+- **Consistency**: Ensures uniform behavior of functions in different parts or applications.
+- **Maintainability**: Facilitates updating and correcting errors by centralizing the code in a single reusable base.
 
-There are several ways to reuse code in web application development. This includes the use of libraries or frameworks, the creation of reusable components, and the organization of the code so that you can easily reference and reuse parts of it in different parts of an application.
+Code reuse in web application development is achieved through the use of libraries, frameworks, the creation of reusable components, and a code organization that allows for easy referencing and use of its parts in different sections of an application.
 
 
-### Implementing code reuse with Modyo
+### Implementation of code reuse with Modyo
 
-Modyo offers several alternatives for reusing code. Depending on the type of project being developed, these options may include:
+Modyo offers several alternatives for code reuse, which may include, depending on the type of project:
 
-- Applying code snippets in Liquid.
-- Implementation of shared Widgets on multiple sites.
-- Deployment of micro frontends in different Web applications.
-- Use of intermediate libraries or repositories.
-- Use of Web Components.
-- Use of Design Systems.
-- Integration of external libraries implemented in various Web sites or applications.
+- Liquid code snippets.
+- Shared widgets between sites.
+- Micro frontends deployed in different web applications.
+- Intermediary libraries or repositories.
+- Web Components.
+- Design Systems.
+- Integration of external libraries in websites or web applications.
 
 :::tip Architecture Guide
-This guide shows you different ways to reuse code, applying patterns and techniques from our reference architecture to achieve excellent levels of efficiency within development teams.
+This guide explores various ways to reuse code, applying patterns and techniques from our reference architecture to optimize the efficiency of development teams.
 
-If you have any questions or need support, don't hesitate to contact our [team of experts] (https://support.modyo.com/).
+For questions or support, contact our [team of experts](https://support.modyo.com/).
 :::

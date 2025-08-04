@@ -9,7 +9,7 @@ Un espacio es un repositorio donde los miembros del equipo pueden definir los [t
 
 Los espacios te permiten organizar el contenido en las áreas en las que trabajas, para una mejor distribución y orden.
 
-Puedes utilizar este contenido dentro y fuera de la plataforma Modyo, mediante la API pública o al crear un sitio en el módulo Channels. Configura el acceso desde diversos orígenes, para permitir que el servicio que consume la API pueda interpretarla. Revisa la sección de [API](https://docs.modyo.com/es/platform/content/public-api-reference.html#api) de nuestra documentación para más información.
+Puedes utilizar este contenido dentro y fuera de la plataforma Modyo, mediante la API pública o al crear un sitio en el módulo Channels. Configura el acceso desde diversos orígenes para permitir que el servicio que consume la API pueda interpretarla. Revisa la sección de [API](https://docs.modyo.com/es/platform/content/public-api-reference.html#api) de nuestra documentación para más información.
 
 ## Sobre la interfaz
 

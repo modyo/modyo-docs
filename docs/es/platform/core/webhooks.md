@@ -4,7 +4,7 @@ search: true
 
 # Webhooks
 
-La plataforma también permite el uso de Webhooks para ciertos eventos específicos dentro de tu cuenta. Para ello, se deben habilitar y configurar desde la sección webhooks en la configuración de la cuenta.
+La plataforma también permite el uso de Webhooks para ciertos eventos específicos dentro de tu cuenta. Para ello, se deben habilitar y configurar desde la sección Webhooks en la configuración de la cuenta.
 
 Un webhook es una acción _POST_ automática a una URL determinada con información determinada.
 

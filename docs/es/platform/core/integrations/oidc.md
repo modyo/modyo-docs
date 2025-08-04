@@ -4,7 +4,7 @@ search: true
 
 # Gestionar sesiones privadas usando OpenID Connect (OIDC)
 
-Interactúa con una API privada usando la sesión privada de Modyo con una integración OIDC. Esta integración consiste de dos pasos: **hacer el sitio privado** y **habilitar la integración a nivel de cuenta**.
+Interactúa con una API privada usando la sesión privada de Modyo con una integración OIDC. Esta integración consiste en dos pasos: **hacer el sitio privado** y **habilitar la integración a nivel de cuenta**.
 
 ## 1. Hacer el sitio privado
 

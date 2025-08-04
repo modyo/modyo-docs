@@ -10,7 +10,7 @@ Estos números pueden ser vistos según Fecha, Estado de la orden y Medio de Pag
 
 ### Actividad de usuarios
 
-En esta sección se puede ver la cantidad de órdenes ingresadas, los items vendidos y los ingresos recibidos durante ese tiempo, junto con una comparación al periodo anterior.
+En esta sección, se puede ver la cantidad de órdenes ingresadas, los ítems vendidos y los ingresos recibidos durante ese tiempo, junto con una comparación al periodo anterior.
 
 También se grafica dinámicamente los estados de las órdenes, con tal de hacer una comparativa a lo largo del tiempo.
 

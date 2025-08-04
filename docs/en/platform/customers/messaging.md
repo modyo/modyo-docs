@@ -29,7 +29,7 @@ Each campaign row includes a menu with the following actions:
 - **Delete**
 
 :::danger Danger
-If you delete a campaign, you won't be able to recover it, and its record will be deleted from the system.
+If you delete a campaign, you will not be able to recover it, and its record will be deleted from the system.
 :::
 
 ## Create a campaign
@@ -58,13 +58,13 @@ Notification campaigns allow you to send direct messages to users. To set up a n
 
 #### Enable WebPush support
 
-Notification campaigns can send WebPush notifications. This functionality allows users to receive messages directly in their browser. To enable this feature, make sure you meet the following requirements:
+Notification campaigns have the ability to send WebPush notifications. This functionality allows users to receive messages directly in their browser. To enable this function, make sure you meet the following requirements:
 
 - The web application that sends the notifications must be linked to the **Realm** where the campaigns are created.
 - The web application must be in **Enabled** state.
-- In the **PWA** section of the web application, select the **Enable top level service worker** and **Enable WebPush notifications** options.
+- In the **PWA** section of the web application, activate the options **Enable top level service worker** and **Enable WebPush notifications**.
 
-In order for users to receive WebPush notifications, they must comply with the following:
+In addition, for users to receive WebPush notifications, they must comply with the following:
 
 - Must be authenticated.
 - Notifications must be enabled in your browser.
@@ -84,39 +84,39 @@ The contextual button allows you to perform these actions:
 - **Clone Campaign**: Create a copy with all the campaign's content.
 - **Delete campaign**: Deletes a campaign.
 
-Once you've sent a campaign, you can't resend it. If you want to send the same campaign again, select the clone option. This creates a new campaign with the same name data, segments and content, while the statistical information starts from scratch.
+Once you have sent a campaign, you cannot send it again. If you want to send the same campaign again, select the clone option. This creates a new campaign with the same name data, segments, and content, while the statistical information starts from scratch.
 
 You can cancel a campaign when it is in queue or while it is being sent.
 
 :::warning Attention
-A campaign can only be resent if its sending was previously canceled while queued or in progress.
+A campaign can only be resent if its sending was previously canceled when it was queued or in progress.
 
-You must indicate whether you want to send messages again to all users or only to those who did not receive them before. In this case, the number of message deliveries may be greater than the total reach of users of the campaign.
+You must indicate whether you want to send messages again to all users or only to those who did not receive them previously. In this case, the number of message deliveries may be greater than the total reach of users of the campaign.
 :::
 
 In campaigns sent by email, you can view:
 
-- **Reach**: People who receive the campaign.
-- **Send**: Total number of emails sent.
-- **Open**: Total number of emails opened.
-- **Unique opens**: Total number of users who opened the campaign.
+- **Reach**: People who received the campaign.
+- **Sent**: Total number of emails sent.
+- **Opened**: Total number of emails opened.
+- **Unique opens**: Total number of users who opened the campaign at least once.
 - **Clicks**: Number of times a link in the campaign has been clicked.
 - **Unique Clicks**: Number of users who have clicked on the campaign.
 - **Spam**: Number of users whose email reached the spam folder.
 
 If you sent the campaign by notification, you can view:
 
-- **Reach**: People who receive the campaign.
+- **Reach**: People who received the campaign.
 - **Sent**: Number of notifications sent.
-- **Opens**: Number of notifications opened.
+- **Opened**: Number of notifications opened.
 
-If you send a campaign through [segments](/en/platform/customers/segments.html), you can see which group of users the campaign reached. If you do not see this section, it's because the campaign was sent to all contacts.
+If you send a campaign through [segments](/en/platform/customers/segments.html), you can see which group of users the campaign reached. If this section does not appear, it is because the campaign was sent to all contacts.
 
 :::warning Attention
-If you haven't yet sent the campaign, the values for that campaign will appear be zero.
+If you have not yet sent the campaign, the values for that campaign will appear as zero.
 :::
 
-:::danger Warning
+:::danger Danger
 When deleting a campaign, you cannot recover the record if changes were made.
 
 Deleting a campaign when it is in the process of being sent does not mean that it will not reach users, but that the process is stopped at the point where it currently is.
@@ -170,7 +170,7 @@ Each template has an edit button with the following actions:
 :::warning Attention
 When you create a campaign, remember to add in the footer all the legal information required by your country's regulation, regarding mass mailings.
 
-To automate footer insertion, read [Realm Configuration](/en/platform/customers/settings.html#emails).
+To automate footer insertion, read [Realm Configuration](/en/platform/customers/settings.html#emails)
 :::
 
 ## Unsubscriptions
@@ -183,6 +183,6 @@ Clicking on a user's name allows you to view their [user profile](/en/platform/c
 
 At the end of each username, there is a button that allows you to re-enroll the user to any campaign on the site.
 
-:::danger Warning
+:::danger Danger
 Re-enrolling a user without their consent can lead to legal issues. Be sure to review the mass email regulations in your country.
 :::

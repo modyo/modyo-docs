@@ -11,7 +11,7 @@ version: 9.2
 
 {{ $frontmatter.meta[0].content }}
 
-**Modyo Channels** provee un extenso acceso al código HTML de las plantillas, entregando control absoluto a los desarrolladores de los detalles acerca de cómo se implementan las experiencias digitales de los usuarios y mediante un sistema integrado de versionamiento.
+**Modyo Channels** proporciona acceso extendido al código HTML de las plantillas, otorgando a los desarrolladores control absoluto sobre la implementación de las experiencias digitales de los usuarios, y cuenta con un sistema integrado de versionamiento.
 
 **Modyo Channels** cuenta con plantillas de diseño las cuales son editables por HTML, logrando facilitar la reutilización de código.
 
