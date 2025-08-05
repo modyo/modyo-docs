@@ -47,7 +47,7 @@ Modyo offers the ability to configure CLI command auto-completion. For instructi
 
 ```bash
 $ modyo-cli autocomplete zsh
-# o
+# or
 $ modyo-cli autocomplete bash
 ```
 
@@ -264,9 +264,9 @@ These commands allow you to select the local entry points you want to use.
 
     OPTIONS
 
-    -p, –port=<value> [default: 8080) Deploy port local widget running
-    -s, –dom-id=<value> [default: widgetName] Container id of the widget
-    -j, –entry-js=<value> [default: main.js] Entry JS file of the widget
+    -p, --port=<value> [default: 8080) Deploy port local widget running
+    -s, --dom-id=<value> [default: widgetName] Container id of the widget
+    -j, --entry-js=<value> [default: main.js] Entry JS file of the widget
 
     EXAMPLE
 

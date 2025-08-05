@@ -4,17 +4,17 @@ search: true
 
 # Web Components
 
-A Web Component is a web technology that allows you to create custom, reusable elements in web applications, based on standards such as HTML, CSS, and JavaScript. Its purpose is to encapsulate and extend the behavior of existing HTML elements.
+A Web Component is a web technology that enables the creation of custom, reusable elements in web applications, based on standards such as HTML, CSS, and JavaScript. Its purpose is to encapsulate and extend the behavior of existing HTML elements.
 
 They are composed of three main technologies:
 
-- **Custom Elements**: They allow you to create custom HTML elements with functionality and behavior defined in JavaScript.
-- **Shadow DOM**: It provides an encapsulation scope for the styles and structure of a component, preventing the internal styles and elements from affecting or being affected by the rest of the page.
-- **HTML Templates**: They define cloneable and reusable HTML code fragments, used for the initial structure of a component.
+- **Custom Elements**: Allow you to create custom HTML elements with functionality and behavior defined in JavaScript.
+- **Shadow DOM**: Provides an encapsulation scope for a component's styles and structure, preventing internal styles and elements from affecting or being affected by the rest of the page.
+- **HTML Templates**: Define cloneable and reusable HTML code fragments, used for a component's initial structure.
 
-By combining these technologies, Web Components allow the creation of custom components with their own behavior and appearance. These components can be used in various parts of a web application or in different projects.
+By combining these technologies, Web Components enable the creation of custom components with their own behavior and appearance. These components can be used in various parts of a web application or across different projects.
 
-In addition, they promote code reuse and facilitate maintenance and modularity in web development, by allowing the creation of independent and autonomous components that can be used in multiple contexts without conflicts.
+Furthermore, they promote code reuse and facilitate maintenance and modularity in web development by allowing the creation of independent and autonomous components that can be used in multiple contexts without conflicts.
 
 ### Implementation of Web Components
 
@@ -37,6 +37,6 @@ Web Components do not yet have consistent support in all browsers.
 
 In Modyo, Web Components can be implemented in the development of [micro frontends](/en/architecture/patterns/micro-frontend). Since micro frontends use traditional JavaScript tools, it is easy to incorporate libraries such as [StencilJS](https://stenciljs.com) or [Lit](https://lit.dev). These libraries provide component definitions that can be packaged with the micro frontend for deployment on the platform.
 
-For simpler sites or web applications, managed entirely in Modyo, the use of Web Components may be more restricted. This is because Web Components act on static HTML definitions [from the server side (SSR)](/en/architecture/patterns/ssr), requiring the injection of libraries into the HTML code, which can be complex and result in difficult-to-maintain sites.
+For simpler sites or web applications managed entirely in Modyo, the use of Web Components may be more restricted. This is because Web Components act on static HTML definitions [from the server side (SSR)](/en/architecture/patterns/ssr), requiring the injection of libraries into the HTML code, which can be complex and result in difficult-to-maintain sites.
 
 An alternative for simpler websites or web applications is to use the platform's SSR capabilities to create reusable elements using Liquid Snippets and variables. This allows for solving common problems efficiently and maintainably.

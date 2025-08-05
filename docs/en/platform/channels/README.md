@@ -11,11 +11,11 @@ version: 9.2
 
 {{ $frontmatter.meta[0].content }}
 
-**Modyo Channels** provides extended access to the HTML code of the templates, giving developers absolute control over the implementation of users' digital experiences, and has an integrated versioning system.
+**Modyo Channels** provides extended access to the HTML code of templates, giving developers absolute control over the implementation of users' digital experiences. It also features an integrated versioning system.
 
-**Modyo Channels** has design templates which are editable by HTML, making it easier to reuse code.
+**Modyo Channels** includes design templates that are HTML-editable, facilitating code reuse.
 
-**Modyo Channels**, also has a templating system based on [Liquid Markup](/en/platform/channels/liquid-markup.html) that allows for dynamic interpolation of information which is efficiently processed from the server side.
+**Modyo Channels** also features a templating system based on [Liquid Markup](/en/platform/channels/liquid-markup.html) that allows for dynamic interpolation of information, efficiently processed server-side.
 
 ### Main functionalities
 

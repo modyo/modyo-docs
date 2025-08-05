@@ -3,9 +3,9 @@ search: true
 ---
 # What is Modyo Connect?
 
-Modyo Connect is an infrastructure and DevOps management service in the Amazon AWS cloud, exclusive to Modyo Enterprise Cloud customers. It is designed for organizations that need to implement a secure and scalable layer of integration APIs to feed data to the [micro frontends](/en/architecture/patterns/micro-frontend) deployed as widgets in Modyo.
+Modyo Connect is an infrastructure and DevOps management service in the Amazon AWS cloud, exclusively for Modyo Enterprise Cloud customers. It is designed for organizations that need to implement a secure and scalable layer of integration APIs to feed data to the [micro frontends](/en/architecture/patterns/micro-frontend) deployed as widgets in Modyo.
 
-Modyo Connect allows the implementation of services to cover the common requirements of a complex integration initiative, including:
+Modyo Connect enables the implementation of services to cover the common requirements of complex integration initiatives, including:
 
  - Single Sign-On (SSO)
  - API Gateway
@@ -14,13 +14,13 @@ Modyo Connect allows the implementation of services to cover the common requirem
 - Messaging queues
 - Object repositories
 
-Modyo Connect was created to meet the need of some customers for a managed layer of API management services that integrates securely with their business systems. This service is optional and, in many cases, not necessary, as the client may have their own API and Single Sign-On architecture, to which the [micro frontends](/en/architecture/patterns/micro-frontend) developed in Modyo can be integrated.
+Modyo Connect was developed to address the need of some customers for a managed layer of API management services that securely integrates with their business systems. This service is optional and, in many cases, not necessary, as clients may have their own API and Single Sign-On architecture, to which Modyo-developed [micro frontends](/en/architecture/patterns/micro-frontend) can be integrated.
 
-This diagram shows Modyo's reference implementation architecture. The managed services of Modyo Connect are on the right in the diagram and are completely decoupled from the platform, so they can be replaced by APIs that the client already owns or that are developed by third parties.
+This diagram illustrates Modyo's reference implementation architecture. The managed services of Modyo Connect are depicted on the right side of the diagram and are completely decoupled from the platform, allowing them to be replaced by existing client APIs or those developed by third parties.
 
 <img src="/assets/img/infrastructure/reference_architecture.png" alt="Partner Badge" />
 
-The APIs developed in Modyo Connect are consumed directly by the end user from their web browser. The Modyo platform does not participate in the communication with the APIs, which prevents sensitive information from passing through it. This architecture achieves a complete separation between the presentation and the business logic, establishing delimited responsibilities in separate systems and increasing the modularity and efficiency of the developments.
+APIs developed in Modyo Connect are consumed directly by the end user from their web browser. The Modyo platform does not participate in API communication, which prevents sensitive information from passing through it. This architecture achieves a complete separation between presentation and business logic, establishing delimited responsibilities in separate systems and increasing the modularity and efficiency of developments.
 
 
 ## Capabilities
@@ -44,18 +44,18 @@ Modyo Connect is implemented in high availability mode and is operated by a team
 
 ## Components
 
-Modyo Connect has a variety of services or components that are grouped into three categories:
+Modyo Connect features a variety of services or components categorized into three groups:
 
 - [Development](components/development.md)
 - [Infrastructure](components/infrastructure.md)
 - [Monitoring](components/monitoring.md)
 
-To activate a component, a requirement ticket is required. It is recommended to have an active account in the [Modyo Support Center](https://support.modyo.com) before using the service. For questions on how to activate accounts in the Support Center, contact the assigned account executive.
+To activate a component, a requirement ticket is necessary. It is recommended to have an active account in the [Modyo Support Center](https://support.modyo.com) before using the service. For questions on how to activate accounts in the Support Center, contact the assigned account executive.
 
 :::tip Activation costs
-The activation of the components could have associated recurring costs. Each request must be approved by the client's authorized users.
+The activation of components may incur recurring costs. Each request must be approved by the client's authorized users.
 :::
 
 ## Environments
 
-Modyo Connect considers productive and pre-productive environments, deployed in completely separate virtual private networks. Customers can request up to two pre-productive environments per deployment. Each environment generates additional recurring costs, measured in [Modyo Resource Units (MRUs)](resources/mrus.md).
+Modyo Connect supports productive and pre-productive environments, deployed in completely separate virtual private networks. Customers can request up to two pre-productive environments per deployment. Each environment generates additional recurring costs, measured in [Modyo Resource Units (MRUs)](resources/mrus.md).

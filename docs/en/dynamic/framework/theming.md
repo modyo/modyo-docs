@@ -32,13 +32,13 @@ Once your custom CSS is ready, you can add any HTML component from Modyo's catal
 		<div class="row">
 			<div class="col-lg-7 d-lg-flex mb-lg-4 align-items-center">
 					<div>
-						<span class="badge text-bg-light mb-2">Beneficios</span>
-						<h2 class="h3 mb-4">Desbloquea la libertad financiera con Dynamic Bank</h2>
-						<h5 class="fw-normal text-gray-500 mb-3">Potencia tu viaje hacia la riqueza con Dynamic Bank</h5>
+						<span class="badge text-bg-light mb-2">Benefits</span>
+						<h2 class="h3 mb-4">Unlock Financial Freedom with Dynamic Bank</h2>
+						<h5 class="fw-normal text-gray-500 mb-3">Empower Your Wealth Journey with Dynamic Bank</h5>
 
 						<div class="mt-4">
-							<a href="" class="btn btn-primary btn-lg rounded-pill">Solicitar una demostración</a>
-							<a href="" class="btn btn-link-secondary btn-lg rounded-pill">Solicitar una demostración</a>
+							<a href="" class="btn btn-primary btn-lg rounded-pill">Request a demo</a>
+							<a href="" class="btn btn-link-secondary btn-lg rounded-pill">Request a demo</a>
 						</div>
 			</div>
 			<div class="col-lg-5">
@@ -53,7 +53,7 @@ Once your custom CSS is ready, you can add any HTML component from Modyo's catal
 
 Note that we have added a `.df-hero-component` class to the `<section>` tag in our HTML to ensure styles are applied correctly.
 
-3. Define custom CSS variables
+**3. Define custom CSS variables**
 
 Now, let's add custom CSS variables to your stylesheet to adapt the appearance of this component:
 
@@ -66,7 +66,7 @@ Now, let's add custom CSS variables to your stylesheet to adapt the appearance o
 }
 ```
 
-4. Apply custom styles
+**4. Apply custom styles**
 
 Now that CSS variables are available, you can apply them to the component using CSS rules. Add this code to the same stylesheet:
 
@@ -83,13 +83,13 @@ Now that CSS variables are available, you can apply them to the component using 
 }
 ```
 
-5. Continue customizing
+**5. Continue customizing**
 
 To make additional modifications or create more complex themes, simply add additional CSS rules to your custom stylesheet. This approach allows you to maintain full control over the visual presentation of your Modyo applications while leveraging the power and flexibility of Dynamic Framework.
 
 * * *
 
-Creating a custom theme for a widget
+**Creating a custom theme for a widget**
 
 Although the section on creating a theme in Modyo addressed applying styles across your entire application, theming individual widgets requires a slightly different approach.
 

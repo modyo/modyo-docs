@@ -4,27 +4,27 @@ search: true
 
 # Activation
 
-The Modyo Connect managed service is activated through a contract or annex independent of the Modyo Enterprise Cloud subscription. To start the service, the following points must be considered:
+The Modyo Connect managed service is activated through a contract or annex independent of the Modyo Enterprise Cloud subscription. To initiate the service, the following considerations are essential:
 
-- Number of developers with access to code repositories.
+- Number of developers requiring access to code repositories.
 - Number of [micro frontends](/en/architecture/patterns/micro-frontend) to be developed with the Modyo Command Line Interface (CLI).
-- Number of pre-productive environments for development.
+- Number of pre-production environments needed for development.
 - Number of [microservices](/en/architecture/patterns/microservice) to be developed.
-- Number of intermediary repositories for shared artifacts (e.g., NPM packages, Java libraries for Maven or Gradle).
-- VPN links to be activated to access business services.
+- Number of intermediary repositories that might be required for building shared artifacts (e.g., NPM packages, Java libraries for Maven or Gradle).
+- VPN links to be activated for accessing business services.
 - Single Sign-On authentication requirements.
 
-The capacity of the containers is calculated according to the estimated traffic in production, subject to adjustments for actual consumption and high availability criteria.
+The container capacity is calculated based on the estimated production traffic, subject to adjustments for actual consumption and high availability criteria.
 
 ### Requirement ticket
 
-Request management is done through the [Modyo Support Center](https://support.modyo.com), creating requirement tickets and following the instructions indicated.
+Request management is conducted through the [Modyo Support Center](https://support.modyo.com), by creating requirement tickets and following the provided instructions.
 
-Once the ticket is created, it is assigned a priority, a unique identifier, and a URL to check its status or answer queries from the Modyo SRE team.
-Requirement tickets are reviewed before being accepted and assigned to an SRE. The duration of this process depends on the demand and availability of the team.
+Once a ticket is created, it is assigned a priority, a unique identifier, and a URL to check its status or respond to queries from the Modyo SRE team.
+Requirement tickets are reviewed before being accepted and assigned to an SRE. The duration of this process depends on team demand and availability.
 
-Urgent tickets require justification and may be subject to limitations depending on the support contract.
-For efficient access, the creation of an account using the corporate email associated with the Modyo Enterprise Cloud contract is requested. It is recommended to include all parties involved in the ticket through the CC field of the request form, to facilitate communication.
+Urgent tickets require justification and may be subject to limitations based on the support contract.
+For efficient access, account creation using the corporate email associated with the Modyo Enterprise Cloud contract is requested. It is recommended to include all involved parties in the ticket via the CC field of the request form to facilitate communication.
 
 
 :::tip Planning
@@ -33,4 +33,4 @@ It is recommended to plan requirement tickets in advance, considering periods of
 
 ### Costs
 
-Modyo uses the Modyo Resource Unit (MRU) equivalence unit to allocate resources and licenses. The MRUs are added up, considering the total of the environments, and are billed monthly. Modyo establishes the number of MRUs assigned to each resource according to a cost analysis that includes AWS costs, taxes, and man-hour management costs. The value of the MRU varies according to the costs in the cloud. For more details on the updated values, contact the assigned account executive.
+Modyo utilizes the Modyo Resource Unit (MRU) as an equivalence unit to allocate resources and licenses. MRUs are aggregated, considering the total number of environments, and are billed monthly. Modyo determines the number of MRUs assigned to each resource based on a cost analysis that includes AWS costs, taxes, and human-hour management costs. The value of the MRU varies according to cloud costs. For more details on updated values, contact the assigned account executive.

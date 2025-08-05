@@ -3,9 +3,9 @@ search: true
 ---
 
 # Public Site
-A public site is accessible to anyone on the Internet. Its purpose is to share information, offer services, and interact with the general public, providing a uniform experience for all visitors.
+A public site is any website accessible to anyone on the Internet. Its purpose is to share information, offer services, and interact with the general public, providing a uniform experience for all visitors.
 
-Public sites can have various purposes, such as:
+Public sites can serve various purposes, such as:
 - Corporate or informational
 - Lead capture
 - Customer generation
@@ -15,21 +15,21 @@ Public sites can have various purposes, such as:
 <!-- Hack to avoid this title to be displayed in the TOC element -->
 <h3><a href="#¿como-implementar-sitios-publicos-con-modyo" class="header-anchor">#</a> How to implement public sites with Modyo?</h3>
 
-Modyo provides the essential tools to create and maintain public sites in an agile, secure, and efficient manner. The combination of its content and channel applications offers access to all the necessary functionalities at each stage of the site's life cycle.
+Modyo provides all the essential tools to create and maintain public sites in an agile, secure, and efficient manner. The combination of its content and channel applications offers access to all the necessary functionalities at each stage of the site's lifecycle.
 
-Architecturally, the implementation of a public site in Modyo is a common and relatively simple process. However, its success depends on considering multiple details, including:
+Architecturally, implementing a public site in Modyo is a common and relatively simple process. However, its success depends on considering multiple details, including:
 
 [[toc]]
 
-Depending on the result you are looking for, these requirements can impact implementation decisions in various ways. In this guide, we explain the most relevant concepts of each of them.
+Depending on the desired outcome, these requirements can impact implementation decisions in various ways. In this guide, we explain the most relevant concepts for each of them.
 
 ### Structure and modularity
-The initial decisions when implementing a site in Modyo should focus on structure and modularity, since the other requirements depend on them. A well-structured site is easier to maintain and develop. Below, the key criteria are explored.
+The initial decisions when implementing a site in Modyo should focus on structure and modularity, as other requirements depend on them. A well-structured site is easier to maintain and develop. Below, the key criteria are explored.
 
 #### Multiple Sites and Organizations
 Modyo uses a multi-site and multi-organization architecture that allows for the separation of administration into different teams, whether related or not.
 
-Generally, the separation is done by independent subsidiary or affiliate organizations, creating implementation silos that do not share administration, but do share the physical infrastructure of the platform.
+Generally, separation is done by independent subsidiary or affiliate organizations, creating implementation silos that do not share administration but do share the physical infrastructure of the platform.
 
 :::warning Organizations and licensing
 When using organizations, consider the limits of your license. The maximum limit of organizations can be extended after commercial validation.
@@ -114,12 +114,9 @@ In Modyo, roles and groups are defined at the organization level and are assigne
 The platform offers a hybrid content management environment. The managed content can be accessed in a decentralized manner through the API, taking advantage of the maximum level of decoupling, or through _content pages_, a special type of page that is automatically integrated with the configured space and is available on each site.
 
 :::tip Traditional CMS experience
-:::tip Traditional CMS experience
 The combination of content spaces and content pages offers a user experience similar to that of a conventional CMS, where each content is linked to a representation.
 
 In Modyo, the same content can be displayed on multiple pages in various ways, allowing editors to preview it on the page of their choice.
-:::
-
 :::
 
 #### Use of Team Review
@@ -229,7 +226,7 @@ Modyo Cloud and Enterprise Cloud have unique features that allow you to implemen
 - Application of modern image compression standards
 - Use of HTTP3 in conjunction with TLS 1.3
 - Use of optimized internet routes between end users and the origin server
-- Server-side rendering [(SSR)](/en/architecture/patterns/ssr) with Liquid
+- Server-side rendering [SSR](/en/architecture/patterns/ssr) with Liquid
 
 :::tip Modyo Enterprise On Premise
 In the case of Modyo Enterprise On Premise, you can implement similar features, by configuring providers comparable to those used in the Cloud.
