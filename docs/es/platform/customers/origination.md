@@ -337,11 +337,13 @@ Para configurar la lógica condicional, sigue estos pasos:
    3. **Define la acción:** Selecciona la acción y el elemento sobre el cual se ejecutará cuando la regla se cumpla. Las acciones disponibles son **Mostrar** y **Ocultar**.
 4. **Guarda los cambios:** Una vez que hayas definido tus reglas, guarda los cambios.
 
-:::tip Considera cómo la lógica condicional puede afectar la experiencia del usuario y asegúrate de que el flujo se pueda completar. :::
+:::tip 
+Considera cómo la lógica condicional puede afectar la experiencia del usuario y asegúrate de que el flujo se pueda completar.
+:::
 
 ### Editar configuración de la originación
 
-Al seleccionar la opción **Editar** en el menu contextual de tu orignación puedes editar sus propiedades.
+Al seleccionar la opción **Editar** en el menu contextual de tu originación puedes editar sus propiedades.
 
 - **Nombre**: Define el nombre de la originación, visible para los usuarios en la interfaz.
 - **Descripción**: Incluye un breve texto explicativo sobre el propósito de la originación.
