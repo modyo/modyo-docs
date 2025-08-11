@@ -21,7 +21,7 @@ Cada usuario puede acceder a sus notificaciones directamente desde el perfil, li
 
 Al hacer click en una notificación, se mostrará el contenido completo de esta y se marcará como leída.
 
-## Editar información
+## Editar Información
 
 En esta sección, cada usuario puede modificar los datos de su perfil, dependiendo de la [configuración de reino](/es/platform/customers/settings.html), cada usuario podrá modificar:
 

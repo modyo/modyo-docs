@@ -17,14 +17,14 @@ When creating a webhook, you must have the URL to which you want to send the inf
 After this, you will be able to see all active webhooks in the list.
 
 
-### Create an administrative webhook
+### Create an Administrative Webhook
 
 Call your management channels through a webhook.
 
 To create a webhook, follow these steps:
 
 1. From the administration page, click **Settings**, then select **Webhooks**.
-2. Click **New Webhook**.
+2. Click **+ New Webhook**.
 3. Type the name and the URL you want to call.
 4. Select the sites or spaces you want to activate the webhook.
 5. Select the log type that will activate the webhook.
@@ -87,7 +87,7 @@ Space webhooks are:
 * Type updated
 
 
-### Payload example
+### Payload Example
 
 ``` javascript
 {
@@ -120,14 +120,14 @@ Space webhooks are:
    "trigger_entry_space_uid":"space-test"
 }
 ```
-### Create a realm webhook
+### Create a Realm Webhook
 
 Call your management channels through a webhook.
 
 To create a webhook, follow these steps:
 
 1. From a realm, click **Realm Settings**, then select **Webhooks**.
-2. Click **New Webhook**.
+2. Click **+ New Webhook**.
 3. Type the name and the URL you want to call.
 4. Select the type of log that will activate the webhook.
 5. Add the necessary headers for the call.

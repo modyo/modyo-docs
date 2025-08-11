@@ -13,7 +13,7 @@ Public sites can serve various purposes, such as:
 - News and blogs
 
 <!-- Hack to avoid this title to be displayed in the TOC element -->
-### How to implement public sites with Modyo?
+### How to Implement Public Sites with Modyo?
 
 Modyo provides all the essential tools to create and maintain public sites in an agile, secure, and efficient manner. The combination of its content and channel applications offers access to all the necessary functionalities at each stage of the site's lifecycle.
 
@@ -23,7 +23,7 @@ Architecturally, implementing a public site in Modyo is a common and relatively 
 
 Depending on the desired outcome, these requirements can impact implementation decisions in various ways. In this guide, we explain the most relevant concepts for each of them.
 
-### Structure and modularity
+### Structure and Modularity
 The initial decisions when implementing a site in Modyo should focus on structure and modularity, as other requirements depend on them. A well-structured site is easier to maintain and develop. Below, the key criteria are explored.
 
 #### Multiple Sites and Organizations
@@ -99,18 +99,18 @@ As with micro frontends, the use of Javascript frameworks on a public site can i
 
 As an alternative to Web Components, public sites can benefit from lighter and more standard options, such as the [Bootstrap](https://getbootstrap.com) CSS framework, natively integrated into the Modyo platform. In addition, the snippets functionality facilitates code reuse in a manner analogous to Web Components.
 
-### Governance of content and source codes
+### Governance of Content and Source Codes
 In every public site project, the governance of content and source code is a central element. The implementation must align with the business expectations on the management of future updates, respecting the change approval flows and the appropriate level of separation between the content and its implementation logic.
 
 The main functionalities of the platform, which allow for a correct governance of public sites, are:
 
-#### Groups and permissions
+#### Groups and Permissions
 Modyo allows the creation of multiple content spaces and sites with specific roles and permission groups for each user. This makes it possible to assign a single user high permissions on one site and more limited ones on another.
 
 In Modyo, roles and groups are defined at the organization level and are assigned individually to each space and site. It is recommended to ensure that users have the minimum necessary permissions for their functions, thus avoiding unwanted modifications (accidental or intentional).
 
 
-#### Multiple content spaces
+#### Multiple Content Spaces
 The platform offers a hybrid content management environment. The managed content can be accessed in a decentralized manner through the API, taking advantage of the maximum level of decoupling, or through _content pages_, a special type of page that is automatically integrated with the configured space and is available on each site.
 
 :::tip Traditional CMS experience
@@ -124,7 +124,7 @@ The [team review](/en/platform/core/key-concepts.html#team-review) is a Modyo fu
 
 The use of team review is highly recommended on public sites where maximum agility in publication is sought and, at the same time, approval controls for simple reviews are minimized.
 
-#### Development environments
+#### Development Environments
 Generally, on a public site, the most common changes are small and refer to adjustments in content (e.g., news, promotions, rates, branch locations, or ads on main pages).
 
 The most complex changes, which affect the design, are made less frequently and in specific situations. Therefore, for most modifications, a well-configured change approval flow is sufficient for site control. Advanced techniques are reserved for structural changes.
@@ -172,7 +172,7 @@ On a public site, content search is a fundamental element. For this, the platfor
 
 If you require more advanced search functionalities, you can also implement external indexing solutions.
 
-#### Implementation of external search
+#### Implementation of External Search
 There are several alternatives on the market to incorporate search capabilities into a site. One of the most popular is [Algolia](https://www.algolia.com), a complete indexing and search solution that allows for the activation of advanced functions such as relevance criteria, A/B testing, artificial intelligence, real-time search, among others.
 
 You can perform the integration between Algolia and Modyo in various ways. For public sites, an indexing crawler similar to the one used by Google to index information from the visited sites is usually sufficient.
@@ -241,7 +241,7 @@ On a public site, a limited amount of user information is handled, but this does
 - **Privacy Policy**: Encompasses the organization's policy regarding the privacy of user data in the context of the site. If the public site is an entry point to a private or transactional system, this policy can be extended to cover the entire system.
 - **Consent management**: Consists of accurately recording the consents derived from any acceptance of conditions by the user. Consent records must be kept for a certain period of time, in accordance with the regulations in force in each country.
 
-### Other requirements
+### Other Requirements
 Finally, we reserve some specific requirements that should be taken into account when implementing a public site.
 
 #### Use of PWA

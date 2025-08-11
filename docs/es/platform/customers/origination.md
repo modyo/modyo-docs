@@ -12,7 +12,7 @@ Esta funcionalidad no está incluida por defecto en todos los planes de Modyo. P
 
 Origination está diseñado para cualquier organización que busque agilizar procesos complejos, mejorar la colaboración entre los involucrados y asegurar que el flujo de trabajo se gestione de manera estructurada y segura.
 
-## Crear Una Nueva Originación
+## Crear una nueva originación
 
 Para crear una nueva originación, sigue estos pasos:
 
@@ -37,7 +37,7 @@ Los flujos de originación están compuestos por **Pasos** y **Tareas**, que est
 
 Los pasos agrupan tareas que se presentan en una misma pantalla. Para avanzar al siguiente paso, el usuario debe completar todas las tareas asignadas.
 
-#### Agregar Pasos
+#### Agregar pasos
 
 Para agregar un paso, presiona el botón **Añadir** y designa los valores
 
@@ -48,7 +48,7 @@ Para agregar un paso, presiona el botón **Añadir** y designa los valores
 
 Las tareas son las acciones individuales dentro de cada paso. Estas tareas recopilan información, realizan validaciones o solicitan acciones específicas del usuario. Las tareas se completan de manera secuencial, y al validarse, permiten avanzar al siguiente paso del flujo.
 
-#### Agregar Tareas
+#### Agregar tareas
 
 Para agregar una nueva Tarea, presiona el botón **+ Agregar tarea** y eso creará un nuevo contenedor de tareas. Al crear una tarea, debes incluir sus valores
 
@@ -57,7 +57,7 @@ Para agregar una nueva Tarea, presiona el botón **+ Agregar tarea** y eso crear
 - **Descripción**: Un breve texto explicativo sobre la tarea, que será visible para el usuario.
 - **Tipo**: Selecciona el tipo de tarea en función de los objetivos del flujo.
 
-#### Tipos de Tareas
+#### Tipos de tareas
 
 Los tipos de tareas disponibles son:
 
@@ -88,7 +88,7 @@ Para agregar un **code snippet** en una tarea de originación, sigue estos pasos
 2. Selecciona el tipo de tarea **Snippet de código**.
 3. Configura las propiedades de la tarea.
 
-### Propiedades del Snippet de Código
+### Propiedades del Snippet de código
 
 - **Task ID**: Identificador único de la tarea. Se genera automáticamente al guardar la tarea y permite acceder a los datos desde la API.
 - **Nombre**: Nombre de la tarea, visible para el usuario.
@@ -102,7 +102,7 @@ Si se marca, la acción de continuar se desactivará por defecto para esta tarea
 
 Modyo proporciona una API en JavaScript para interactuar con los code snippets en tiempo de ejecución.
 
-#### Métodos Disponibles
+#### Métodos disponibles
 
 - **`getUrl()`**: Retorna la URL del flujo de originación actual.
 - **`enableButton()`**: Habilita el botón de acción de la tarea y permite al usuario continuar con el flujo.
@@ -114,7 +114,7 @@ Los Code Snippets pueden comunicarse con la API de originación utilizando datos
 Para obtener datos almacenados en la aplicación actual, usa el método `getUrl()` para construir la solicitud. Para guardar información, se debe realizar una **petición POST** a la misma URL.
 
 
-#### Ejemplo de Estructura JSON
+#### Ejemplo de estructura JSON
 
 Cuando consumes datos de la API JSON obtendrás un objeto con todas los datos almacenados en la aplicación actual.
 
@@ -151,7 +151,7 @@ Cuando consumes datos de la API JSON obtendrás un objeto con todas los datos al
 Para almacenar información, los datos deben utilizar formato JSON válido, los errores de formato no serán procesados.
 :::
 
-### Uso de Liquid en Code Snippets
+### Uso de Liquid en code snippets
 
 Los code snippets pueden utilizar drops de liquid para acceder a datos internos de la aplicación y personalizar la experiencia del usuario.
 
@@ -179,7 +179,7 @@ En este ejemplo puede encontrar en uso el  acceso a datos por Drops de Liquid e 
 ``` html
 <div class="form-group">
 	<h5>Hola, {{ user.name }}!</h5>
-	<p class="mb-6">Estas en la originacion {{ application.origination.name }}</p>
+	<p class="mb-6">Estas en la originacion {{ application.origination.name }}</p>
 	<div class="form-group">
 		<label for="productDropdown" class="form-label">Selecciona la marca de tus productos favoritos <span class="req">*</span></label>
 		<select class="form-select" id="productDropdown" disabled>
@@ -291,14 +291,14 @@ El parámetro content que se envía tiene que ser un json válido. En caso de qu
 
 Puedes incorporar una amplia variedad de campos en tus formularios para personalizar la recolección de datos de tus usuarios.
 
-#### Añadir Campos
+#### Añadir campos
 
 Para incluir un nuevo campo debes seleccionar una tarea y seleccionar la pestaña **Añadir**
 
 Origination soporta todos los tipos de entrada disponibles en formularios. Puedes ver el listado completo de tipos en la [documentación de formularios](https://docs.modyo.com/es/platform/customers/forms.html#anadir)
 
 
-#### Editar Campos
+#### Editar campos
 
 Al seleccionar un campo, puedes modificar sus propiedades al dirigirte a  la pestaña **Editar** Allí encontrarás diferentes propiedades según las características del campo seleccionado. Las principales propiedades son:
 
@@ -308,7 +308,7 @@ Al seleccionar un campo, puedes modificar sus propiedades al dirigirte a  la pes
 - **Agregar campo Pop-up de instruciones**: Agrega un ícono de ayuda junto al campo. Al hacer clic en este ícono, se despliega un mensaje con información adicional o consejos útiles relacionados con el campo.
 - **Opciones**: Propiedades adicionales de acuerdo al tipo de campo seleccionado.
 
-##### Propiedades de la Tarea
+##### Propiedades de la tarea
 
 En este apartado se pueden editar los valores de la tarea seleccionada, puedes encontrar estos valores
 
@@ -351,7 +351,7 @@ Al seleccionar la opción **Editar** en el menu contextual de tu orignación pue
 - **Reglas de completado**:  Define el comportamiento de completado para cada aplicación.
 - **Privacidad**: Permite restringir el acceso al flujo de originación a ciertos segmentos de usuarios predefinidos.
 
-#### Eliminar Originación
+#### Eliminar originación
 
 Si necesitas eliminar una originación de forma permanente:
 
@@ -395,21 +395,21 @@ En la vista de detalles, encontrarás las siguientes secciones principales:
 
 Esta estructura te brinda una visión integral y detallada de cada aplicación, permitiéndote gestionar de manera efectiva todos los aspectos relacionados con las aplicaciones.
 
-#### Asignar Aplicación
+#### Asignar aplicación
 
 En el listado de aplicaciones, selecciona el menú acciones y presiona la opción **Asignar**. En el menú contextual selecciona a un administrador para esta aplicación.
 
-#### Cancelar Aplicación
+#### Cancelar aplicación
 
 Selecciona una aplicación y presiona el menu contextual. Al seleccionar la opción **Cancelar** para modificar permanentemente el estatus de una aplicación a cancelado.
 
-#### Eliminar Aplicación
+#### Eliminar aplicación
 
 Para eliminar una aplicación individual, selecciona el menú en la columna actions y presiona la opción delete. Esto eliminará la aplicación.
 
 Para eliminar varias aplicaciones al mismo tiempo, selecciona cada entrada marcando la casilla correspondiente y presiona el botón eliminar.
 
-#### Invitar Usuarios
+#### Invitar usuarios
 
 Puedes invitar a usuarios para que ingresen información en una originación. Al invitar a un usuario, deberás ingresar su información básica
 

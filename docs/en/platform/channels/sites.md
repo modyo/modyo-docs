@@ -18,7 +18,7 @@ A web app can be in one of these three states:
 To create a new web app, follow these steps:
 
 1. In the side menu, click on **channels**.
-1. Click on **new application**.
+1. Click on **+ new application**.
 1. Type the name and host (main path of the web application).
 1. If necessary, select which realm it belongs to.
 1. Click **create**.
@@ -29,11 +29,11 @@ Once created, the web application is automatically enabled and the system takes 
 In the web apps index, you will only see those apps in which you have a role and are part of the team.
 :::
 
-## Review and joint publication
+## Review and Joint Publication
 
 On the review and joint publication screen, you can see all the pending changes to be published in your web app. To view the changes, click on the **view** button.
 
-### Publish jointly
+### Publish Jointly
 
 To make a joint publication in your web application, follow these steps:
 
@@ -63,7 +63,7 @@ To enable or disable the search functionality, follow these steps:
 1. Click **save**.
 
 
-### Search template
+### Search Template
 
 You can control the appearance and search functionalities in your web app using the _search_ [template](/en/platform/channels/sites.html#search-template/).
 
@@ -248,14 +248,14 @@ You can configure:
 Robots.txt and sitemap.xml files are only visible with custom domains. Otherwise, they are only found at the platform level, have default values, and cannot be customized.
 :::
 
-- **Custom meta tags**: Allows you to configure meta tags for all pages and their default values. Click **new meta tag** to create a new one.
+- **Custom meta tags**: Allows you to configure meta tags for all pages and their default values. Click **+ new meta tag** to create a new one.
 - **Replicate meta tag on pages**: When creating a new meta tag, select this option to propagate the meta tag and its value across all pages of the web app. You must save changes to meta tags and publish all modified pages for the new meta tags to take effect.
 
 :::warning Attention
 Only application administrators can add meta tags. Developers can add and remove meta tags page by page.
 :::
 
-#### On-page vs. Off-page SEO
+#### On-Page vs. Off-Page SEO
 
 Also known as on-site and off-site SEO, these terms refer to actions you can take on and off a web page to improve visibility in search engines. For better positioning, we recommend using both strategies together.
 
@@ -282,7 +282,7 @@ To improve off-page SEO:
 
 Modyo allows you to implement Progressive Web Apps (PWA) in your digital channels, offering an enhanced experience to your users. To use PWA functionalities, you must enable the options you require in your project.
 
-#### Main service worker
+#### Main Service Worker
 
 Activate the Service Worker so that your digital channel can cache data, work offline, and provide an improved experience to your users, even with an unstable connection.
 
@@ -457,7 +457,7 @@ The main advantages of having different stages in your web apps are:
 - You can have the same members with different roles and permissions for each stage.
 :::
 
-#### Add a new stage
+#### Add a New Stage
 
 To add a new stage to your web app, follow these steps:
 
@@ -465,7 +465,7 @@ To add a new stage to your web app, follow these steps:
 1. Select your web application.
 1. Click on application settings.
 1. Click on stages.
-1. Click on **new stage**.
+1. Click on **+ new stage**.
 1. Select the source stage and name your new stage.
 1. Click **create**.
 
@@ -474,7 +474,7 @@ To add a new stage to your web app, follow these steps:
 In the summary section of your web application, you can see the details of the current stage. You can also click on the name of your web app to display a list of its stages and navigate between them.
 :::
 
-#### Synchronize a stage
+#### Synchronize a Stage
 
 :::warning Attention
 The platform does not allow you to synchronize changes that have not yet been published. Make sure you don't have any pending changes to publish before starting the synchronization.
@@ -494,7 +494,7 @@ To synchronize a stage, follow these steps:
 Elements of a stage associated with a segment are not synchronized. You must repeat the process manually in the new stage, once the synchronization is complete.
 :::
 
-#### Delete a stage
+#### Delete a Stage
 
 To delete a stage, follow these steps:
 1. In the side menu, click channels.
@@ -533,18 +533,18 @@ To efficiently organize and manage work in Modyo, you can select the team member
 When creating a site, the administrator can manually assign users and the default roles that enable each of the functions.
 
 
-#### Add a new member
+#### Add a New Member
 To add a new member to your site, follow these steps:
 
 1. From the Modyo Platform main menu, expand the **Channels** section.
 1. Select your site.
 1. Expand **Site Settings**.
 1. Click on **Team Members**.
-1. Press the **Add Member** button.
+1. Press the **+ Add Member** button.
 1. Search for and select the user you want to add to the site and choose a role for them.
 1. Click **Add**.
 
-#### Modify a role
+#### Modify a Role
 To modify an administrator's role, follow these steps:
 1. Click on the administrator's name.
 1. In the modal that opens, select the new role.
@@ -558,7 +558,7 @@ Available roles are:
 - **Reviewer**: This role allows for the correction, approval, or discarding of the work done by Developers. They can create, modify, submit for review, and approve pages, widgets, menus, and templates. They can also publish when review conditions are met. They cannot edit the site settings.
 - **Admin**: The Site Administrator has the same privileges as the previous roles and has the ability to configure the entire site. This includes the creation, modification, submission for review, and approval of pages, widgets, menus, and templates. In addition, they can publish without requiring team review validation.
 
-#### Delete an administrator
+#### Delete an Administrator
 To remove an administrator from the site, follow these steps:
 1. Check the box next to the administrator's name.
 2. Click on the **Delete** button at the end of the list, at the bottom left of the screen.
@@ -702,14 +702,14 @@ In global variables, you can use plain text, HTML, JavaScript, and CSS. However,
 To get the variable's value anywhere that accepts Liquid markup, use:<span v-pre>`{{vars.Name}}`</span>
 :::
 
-#### Create a variable in sites
+#### Create a Variable in Sites
 
 To create a variable in sites, follow these steps:
 
 1. From the main side menu, click **Channels**.
 1. Select your **Site**.
 1. Under **Site Settings**, click **Site Variables**. Here you can see the list of all global variables and site variables, their general information, and a button to copy their code into Liquid markup.
-1. Click on **New Variable**.
+1. Click on **+ New Variable**.
 1. Complete the **Name** and **Value** fields of the variable.
 1. Click **Save**.
 

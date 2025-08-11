@@ -11,7 +11,7 @@ Esta sección ofrece una breve explicación de los conceptos clave relacionados 
 
 Modyo implementa una arquitectura Multi-Sitio fácil de administrar. Desde una sola cuenta, se pueden crear múltiples sitios públicos o privados.
 
-### Interacción contextual de clientes
+### Interacción Contextual de Clientes
 
 Modyo ofrece diversos mecanismos de autenticación (ej. OpenID Connect, OAuth2, Google) para autenticar fácilmente a tus clientes. Los clientes pueden interactuar en diferentes sitios y contextos, manteniendo un perfil central para una administración eficiente.
 
@@ -24,7 +24,7 @@ Modyo Channels trabaja con plantillas HTML y componentes reutilizables de fronte
 Todo el contenido estructurado publicado genera un archivo JSON que puede alimentar otro sitio o aplicación a través de la API.
 
 
-### Plataforma de integración
+### Plataforma de Integración
 
 Modyo está diseñado para facilitar la creación de soluciones digitales integradas con los sistemas centrales de las empresas. Con esto en mente, nos enfocamos en facilitar el desarrollo de widgets y la conexión con APIs.
 
@@ -36,13 +36,13 @@ La mayoría de las empresas en el mercado trabajan con un antiguo modelo de _por
 
 Modyo se basa en widgets y rastrea cada cambio en un sistema de control de versiones, lo que agiliza el trabajo digital, facilita la auditoría y acelera la disponibilidad para tus clientes.
 
-### Generador de widgets
+### Generador de Widgets
 
 El generador de widgets de Modyo es una herramienta robusta que simplifica el desarrollo frontend, la publicación y la auditoría. Con esta herramienta, se pueden crear experiencias digitales personalizadas y de alta calidad, de manera rápida y sencilla.
 
 Con el generador de widgets, se puede crear cualquier tipo de widget, incluyendo componentes en HTML, CSS y JavaScript conectados con APIs. Además, se pueden guardar los widgets en la librería para reutilizarlos en otros sitios.
 
-### Widgets prefabricados para servicios financieros
+### Widgets Prefabricados para Servicios Financieros
 
 Modyo Banking proporciona widgets financieros prefabricados para acelerar el desarrollo de experiencias bancarias de _retail_ y _wealth management_. Estos widgets están diseñados para cumplir con los requisitos específicos de las instituciones financieras y requieren una licencia dedicada.
 
@@ -59,7 +59,7 @@ Las Aplicaciones Web Progresivas (PWA) son el futuro de la Web, mejoran la inter
 
 Con Modyo puedes controlar las definiciones de _manifest.json_ y de los _Service Workers_ en cada sitio, fundamentales para implementar PWAs.
 
-### Seguridad, gobernabilidad y agilidad
+### Seguridad, Gobernabilidad y Agilidad
 
 En Modyo todo el código publicado genera versiones, permitiendo revisar fácilmente los cambios. La agilidad se logra con la activación del Team Review, manteniendo un equilibrio entre gobernabilidad y agilidad.
 

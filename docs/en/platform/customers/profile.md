@@ -1,4 +1,4 @@
-# User profile
+# User Profile
 
 The **user profile** is the space where each user can:
 

@@ -11,7 +11,7 @@ In this section, you will find a brief explanation of the key concepts related t
 
 Modyo implements an easy-to-manage Multi-Site architecture. From a single account, you can create multiple public or private sites.
 
-### Contextual customer interaction
+### Contextual Customer Interaction
 
 Modyo offers several authentication mechanisms, such as OpenID Connect, OAuth2 and Google, to easily authenticate your customers. Customers can interact in different sites and contexts, maintaining a central profile for efficient administration.
 
@@ -24,7 +24,7 @@ Modyo Channels works with HTML templates and reusable frontend components called
 All the structured content that is published generates a JSON file that you can feed to another site or application through the API.
 
 
-### Integration platform
+### Integration Platform
 
 Modyo is designed to facilitate the creation of digital solutions integrated with companies' core systems. With this in mind, we remain focused on facilitating the development of widgets and the connection with APIs.
 
@@ -36,7 +36,7 @@ Most companies in the market work with an old _portlets_ model where the develop
 
 Modyo is widget-based and tracks every change in a version control system, streamlining digital work, facilitating auditing and accelerating availability for your customers.
 
-### Widget generator
+### Widget Generator
 
 The Modyo widget generator is a robust tool that simplifies frontend development, publishing, and auditing. With this tool, you can create personalized, high-quality digital experiences, quickly and easily.
 

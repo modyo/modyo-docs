@@ -20,7 +20,7 @@ Traditionally, private and public sites have been kept separate. However, in cer
 :::
 
 <!-- Hack to avoid this title to be displayed in the TOC element -->
-### Implementation of private sites in Modyo
+### Implementation of Private Sites in Modyo
 
 The implementation of private sites in Modyo is one of the most complete use cases of the platform. It includes tools for common tasks such as user authentication (internal credentials or external identity systems), consumption of user information from external APIs, use of advanced Javascript components, [micro frontends](/en/architecture/patterns/micro-frontend), [microservices](/en/architecture/patterns/microservice), messaging, notifications, and content and page segmentation based on profiles.
 
@@ -36,26 +36,26 @@ Although private sites have their particularities, they also share similarities 
 ### User Management
 In a private site, user management is essential. Modyo offers the functionality of [user realms](/en/platform/customers/overview), which are completely independent and can have their own configurations, such as the authentication method.
 
-#### User events
+#### User Events
 User realms store events and allow the definition of segments based on the user's profile or behavior within the system.
 
 #### Forms
 Within a realm, forms can be defined for users to complete. Modyo processes these responses, complementing the available information to generate user segments based on their profile.
 
-#### Messaging and notifications
+#### Messaging and Notifications
 In a realm, communication channels with the user can also be defined through email.
 
 :::tip Messaging channels
 (Note: In future versions of Modyo, more messaging channels for notifications will be offered.)
 :::
 
-#### Use of page and content segmentation
+#### Use of Page and Content Segmentation
 Content spaces and sites in Modyo can specify a user realm. This allows for dynamic segmentation of content and information, and for offering private features only available to authenticated users.
 
 
 ### Structure and Modularity
 
-#### Micro frontends and Microservices
+#### Micro Frontends and Microservices
 [Micro frontends](/en/architecture/patterns/micro-frontend) and [microservices](/en/architecture/patterns/microservice) are architectural strategies that divide an application into small, independent components. Micro frontends focus on dividing the user interface into autonomous parts for greater flexibility and collaboration in UI development. Microservices, on the other hand, subdivide business logic and functionalities into independent services, allowing for their autonomous development, implementation, and scaling. Both approaches improve the modularity, maintainability, and scalability of the application.
 
 The number of functionalities to be implemented and the structuring strategy vary according to the business and resources. For private sites, it is especially relevant to apply techniques such as [Domain-Driven Design (DDD)](/en/architecture/patterns/ddd). DDD allows for the precise identification and definition of high-level domains and subdomains, determining the most effective way to group functionalities and establish the appropriate coupling.
@@ -78,7 +78,7 @@ Unlike public sites, in private sites the use of Javascript frameworks is highly
 By using micro frontends, private sites can benefit from the use of [Web Components](/en/architecture/patterns/web-components) more effectively and directly than public sites, as long as their scope is limited to the micro frontends and not to the entire site.
 
 
-### Governance of content and source codes
+### Governance of Content and Source Codes
 In a private site, the concept of governance differs from that of public sites due to the complexity of the developments, the use of micro frontends, and the dependence on external systems.
 
 Likewise, in a private site, content management is usually simpler than in a public site, except in specific cases such as segmented content or promotional campaigns. Therefore, the recommendations for previous environments may vary.

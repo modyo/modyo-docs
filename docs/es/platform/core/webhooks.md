@@ -17,19 +17,19 @@ Al crear un webhook, debes tener la URL a la que quieres enviar la información,
 Luego de esto, podrás ver en la lista todos los webhooks que estén activos.
 
 
-### Crear un webhook administrativo
+### Crear un Webhook Administrativo
 
 Llama a tus canales de gestión a través de un webhook.
 
 Para crear un webhook, sigue estos pasos:
 
 1. Desde la página de administración, haz click en **Configuración**, luego selecciona **Webhooks**.
-2. Haz click en **Nuevo Webhook**.
-3. Escribe el nombre y la URL a la cual quieres llamar.
-4. Selecciona los sitios o espacios que quieras que activen el webhook.
-5. Selecciona el tipo de log que activará el webhook.
-6. Agrega los headers necesarios para la llamada. 
-7. Haz click en **Guardar**.
+2. Haz click en **+ Nuevo Webhook**
+3. Escribe el nombre y la URL a la cual quieres llamar
+4. Selecciona los sitios o espacios que quieras que activen el webhook
+5. Selecciona el tipo de log que activará el webhook
+6. Agrega los headers necesarios para la llamada
+7. Haz click en **Guardar**
 
 
 Los webhooks de sitio son:
@@ -120,14 +120,14 @@ Los webhooks de espacios son:
    "trigger_entry_space_uid":"space-test"
 }
 ```
-### Crear un webhook de reino
+### Crear un Webhook de Reino
 
 Llama a tus canales de gestión a través de un webhook.
 
 Para crear un webhook, sigue estos pasos:
 
-1. Desde un reino, haz click en **Configuración del reino**, luego selecciona **Webhooks**.
-2. Haz click en **Nuevo Webhook**.
+1. Desde un reino, haz click en **Configuración del reino**, luego selecciona **Webhooks**
+2. Haz click en **+ Nuevo Webhook**.
 3. Escribe el nombre y la URL a la cual quieres llamar.
 4. Selecciona el tipo de log que activará el webhook.
 5. Agrega los headers necesarios para la llamada. 
@@ -230,19 +230,16 @@ Los webhooks de reino con sus payloads respectivos:
    "submission_uuid":"04bf572a-9e00-4474-ae8a-6a0bc17d4c1a"
 }
 ```
-* Inicio de sesión
-* Iniciar sesión con código
-* Cerrar sesión
-* Error al intentar iniciar sesión
-* Error al intentar iniciar sesión con código
-* Usuario creado
-* Usuario actualizado
-* Usuario habilitado
-* Registro de usuario
-* Restaurar contraseña
-* Usuario borrado
+* Login
+* Login with code
+* Logout
+* Error trying to log in
+* Error trying to log in with code
+* User created
+* User updated
+* User enabled
+* User registration
+* Restore password
+* User deleted
 
 Nota: El webhook es llamado a través de un POST cuando se genera un log del tipo seleccionado. Una vez creado el webhook, podrás enviar una notificación de prueba con información falsa para probar que tu URL está recibiendo correctamente los POSTs desde Modyo.
-
-
-
