@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Key concepts
+# Key Concepts
 
 In this section, you will find a brief explanation of the key concepts related to the Modyo Platform.
 

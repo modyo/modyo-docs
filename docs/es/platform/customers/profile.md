@@ -1,4 +1,4 @@
-# Perfil de usuario
+# Perfil de Usuario
 
 El **perfil de usuario** es el espacio donde cada usuario puede:
 

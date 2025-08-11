@@ -3,7 +3,7 @@ search: true
 sidebarDepth: 2
 ---
 
-# Aplicaciones web
+# Aplicaciones Web
 
 Una aplicación web (web app) despliega el contenido creado en Content y Channels para crear tu canal digital personalizado. En la aplicación web se lleva a cabo todo el desarrollo, diseño y flujo de navegación.
 

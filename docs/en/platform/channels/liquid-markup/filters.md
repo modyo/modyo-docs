@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Filters
+# Filtros
 
 Output markup can take filters, which modify the result of the output statement. You can invoke filters by following the output statement's main expression with:
 

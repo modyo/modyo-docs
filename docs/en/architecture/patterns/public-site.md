@@ -13,7 +13,7 @@ Public sites can serve various purposes, such as:
 - News and blogs
 
 <!-- Hack to avoid this title to be displayed in the TOC element -->
-<h3><a href="#¿como-implementar-sitios-publicos-con-modyo" class="header-anchor">#</a> How to implement public sites with Modyo?</h3>
+### How to implement public sites with Modyo?
 
 Modyo provides all the essential tools to create and maintain public sites in an agile, secure, and efficient manner. The combination of its content and channel applications offers access to all the necessary functionalities at each stage of the site's lifecycle.
 

@@ -3,7 +3,7 @@ search: true
 sidebarDepth: 2
 ---
 
-# Web applications
+# Web Applications
 
 A web application or web app displays the content created in Content and Channels to create your personalized digital channel. All the development, design, and navigation flow is carried out in the web application.
 

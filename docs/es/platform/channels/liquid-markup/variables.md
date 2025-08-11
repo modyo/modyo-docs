@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Expresiones y variables
+# Expresiones y Variables
 
 Las expresiones son sentencias que tienen valores. Las plantillas de Liquid pueden usar expresiones en muchos lugares; frecuentemente en sentencias output, pero también como argumentos para tags o filtros.
 

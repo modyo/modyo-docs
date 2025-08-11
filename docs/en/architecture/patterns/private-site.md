@@ -20,7 +20,7 @@ Traditionally, private and public sites have been kept separate. However, in cer
 :::
 
 <!-- Hack to avoid this title to be displayed in the TOC element -->
-<h3><a href="#implementacion-de-sitios-privados-en-modyo">#</a> Implementation of private sites in Modyo</h3>
+### Implementation of private sites in Modyo
 
 The implementation of private sites in Modyo is one of the most complete use cases of the platform. It includes tools for common tasks such as user authentication (internal credentials or external identity systems), consumption of user information from external APIs, use of advanced Javascript components, [micro frontends](/en/architecture/patterns/micro-frontend), [microservices](/en/architecture/patterns/microservice), messaging, notifications, and content and page segmentation based on profiles.
 

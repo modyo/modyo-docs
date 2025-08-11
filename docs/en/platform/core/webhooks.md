@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Webhooks
+# WebHooks
 
 The platform also allows the use of Webhooks for certain specific events within your account. To do this, they must be enabled and configured from the Webhooks section in the account settings.
 

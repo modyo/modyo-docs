@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Variables globales
+# Variables Globales
 
 Modyo cuenta con la funcionalidad para definir variables globales que puedes usar en todos los sitios donde cuentes con Liquid. De esta manera, puedes, por ejemplo, compartir un _snippet_ de código entre sitios.
 

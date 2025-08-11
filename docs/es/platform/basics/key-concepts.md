@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Conceptos claves de Modyo
+# Conceptos Claves de Modyo
 
 Esta sección ofrece una breve explicación de los conceptos clave relacionados con la Plataforma Modyo.
 
