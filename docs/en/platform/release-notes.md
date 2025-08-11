@@ -19,7 +19,7 @@ search: true
 
 <Badge text="Customers" type="customers" vertical="middle"/>
 
-* Adds new origination module activable via plan with the following features:
+* Adds new origination module activatable via plan with the following features:
   * Conditional flows
   * Versioning
   * Forms

@@ -18,7 +18,7 @@ In the snippet editing view, you can create and manage your global snippets. The
 - **Differences**: Allows you to compare changes between multiple versions of a snippet, select versions to compare, and reset or rollback to previous versions.
 - **Other actions**:
     - **Archive**: To archive a snippet, you must first publish it.
-    - - **Delete**: To delete a snippet, you must first archive it.
+    - **Delete**: To delete a snippet, you must first archive it.
 - **Save**: Once your snippet is saved, this button changes status to **publish**.
 
 The following sections are above the work area:
