@@ -120,7 +120,7 @@ In Modyo, the same content can be displayed on multiple pages in various ways, a
 :::
 
 #### Use of Team Review
-The [team review](/en/platform/core/key-concepts.md#team-review) is a Modyo functionality that allows for the simple and flexible configuration of the users responsible for reviewing elements before their publication. The reviewers can preview the change or content and make comments to correct necessary aspects. The team review menu is accessible from the configuration of the content spaces and sites.
+The [team review](/en/platform/core/key-concepts.html#team-review) is a Modyo functionality that allows for the simple and flexible configuration of the users responsible for reviewing elements before their publication. The reviewers can preview the change or content and make comments to correct necessary aspects. The team review menu is accessible from the configuration of the content spaces and sites.
 
 The use of team review is highly recommended on public sites where maximum agility in publication is sought and, at the same time, approval controls for simple reviews are minimized.
 
