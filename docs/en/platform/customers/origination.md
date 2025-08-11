@@ -167,7 +167,7 @@ In an origination flow, each application represents the ongoing process of a spe
 | **application.QUESTION_ID** By using the ID of a specific question (e.g., application.123456), its information is directly accessed | ```{"question": {"label": "What's your name?"},"text_field": "John Doe"}``` |
 | **application.origination.name** Name of the origination. | ```My Origination``` |
 | **application.origination.steps** Array with the names of the steps in the origination | ```[ {"uid": "step 1"}, {"uid": "step 2"}]``` |
-| **application.origination.tasks** Array with all the tasks in the origination and the step they correspond to | ```[{"task_id": "67890","name": "Task 1", description: "step 1": { "uid": "abcd1234" } }]``` |
+| **submission.origination.tasks** Array with all the tasks in the origination and the step they correspond to | ```[{"task_id": "67890","name": "Task 1", description: "step 1": { "uid": "abcd1234" } }]``` |
 
 You can learn more about [Liquid Drops](/platform/channels/drops.html) in our documentation.
 
