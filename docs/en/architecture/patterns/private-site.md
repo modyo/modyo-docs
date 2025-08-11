@@ -6,7 +6,7 @@ search: true
 A private site requires user authentication. Unlike [public sites](/en/architecture/patterns/public-site), private sites function as web applications, offering relevant functionalities and recording user actions. This ensures that the use of credentials or the installation as a Progressive Web Application [PWA](/en/architecture/patterns/pwa) has a clear purpose for the user.
 
 Some examples of private sites are:
-- Digital banking application
+- Digital banking applications
 - Financial platforms
 - Digital wallets
 - Digital onboarding
