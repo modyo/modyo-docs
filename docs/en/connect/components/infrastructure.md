@@ -75,7 +75,7 @@ public class GetUsersController {
 }
 ```
 
-The generation of the definitions for the API Gateway is done within an automated [continuous integration](development.md#continuous-integration) pipeline, which must be previously defined.
+The generation of the definitions for the API Gateway is done within an automated [continuous integration](development.html#continuous-integration) pipeline, which must be previously defined.
 
 ### Connectivity with containers
 
@@ -145,7 +145,7 @@ To request the creation of a container in AWS, a requirement ticket must be crea
 - Branch from which the automatic deployment of each environment should be performed.
 - Environment variables to be injected per environment.
 
-Each container must be associated with a [single code repository](development.md#code-repository). The same branch cannot point to more than one environment (productive or pre-productive).
+Each container must be associated with a [single code repository](development.html#code-repository). The same branch cannot point to more than one environment (productive or pre-productive).
 
 :::tip Learn more
 For more information, please refer to the [microservices](/en/architecture/patterns/microservice) development guide.
