@@ -31,7 +31,7 @@ The [tutorials](https://help.modyo.com/es/collections/4032221-tutoriales) are th
 It is recommended to follow the tutorials in order, completing all the steps presented in them.
 
 #### Learning Paths
-Modyo offers various [Learning Paths](https://help.modyo.com/es/articles/6928873-como-aprender-a-usar-modyo) for clients and business partners. These provide dynamic alternatives to learn how to use our tools at your own pace.
+Modyo offers various [Learning Paths](https://help.modyo.com/en/articles/6928873-learning-how-to-use-modyo) for clients and business partners. These provide dynamic alternatives to learn how to use our tools at your own pace.
 
 Take the courses you need according to your role or take them all to become a Modyo specialist. The only requirement to start our Learning Paths is an environment.
 
