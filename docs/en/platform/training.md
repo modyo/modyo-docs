@@ -4,7 +4,7 @@ search: true
 
 # Training
 
-Training on the Modyo Platform is crucial for any user, as it provides the minimum necessary skills for effective use. Training activities include reviewing [Modyo documentation](/en/platform), [explanatory videos](https://www.youtube.com/channel/UCfss-k1zmkszMoNKzYRoGew), and [Learning Paths](https://help.modyo.com/es/articles/6928873-como-aprender-a-usar-modyo), among other resources.
+Training on the Modyo Platform is crucial for any user, as it provides the minimum necessary skills for effective use. Training activities include reviewing [Modyo documentation](/en/platform), [explanatory videos](https://www.youtube.com/channel/UCfss-k1zmkszMoNKzYRoGew), and [Learning Paths](https://help.modyo.com/en/articles/6928873-como-aprender-a-usar-modyo), among other resources.
 
 ### Modyo Platform
 
@@ -27,7 +27,7 @@ Modyo features the following main modules, which you will learn about during you
 - [**Modyo Insights**:](/en/platform/insights) An application specialized in representing statistical data for both your site users and the team that creates content and digital channels.
 
 #### Tutorials
-The [tutorials](https://help.modyo.com/es/collections/4032221-tutoriales) are the easiest way to get started on the Modyo Platform. Only a [test environment](/en/platform/training.html#test-environment) and time are required to learn the fundamental concepts step by step.
+The [tutorials](https://help.modyo.com/en/collections/4032221-tutoriales) are the easiest way to get started on the Modyo Platform. Only a [test environment](/en/platform/training.html#test-environment) and time are required to learn the fundamental concepts step by step.
 It is recommended to follow the tutorials in order, completing all the steps presented in them.
 
 #### Learning Paths
