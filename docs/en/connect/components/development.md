@@ -13,7 +13,7 @@ When activating developer access, consider the following:
 - The GitHub account must have two-factor authentication enabled; otherwise, it will not comply with Modyo's security policy, and access to repositories will be denied.
 - GitHub users are added to the repository as "external." Modyo cannot guarantee the security of these accounts, so each client is responsible for ensuring their developers activate additional security measures (e.g., secure passwords, token control).
 
-### Steps to activate
+### Steps to Activate
 Create a requirement ticket in the [Modyo Support Center](https://support.modyo.com) stating:
 - The developer's GitHub user (create one if you don't have one).
 - Name and email of the developer.
@@ -30,7 +30,7 @@ Source code repositories enable the management of all aspects of the code lifecy
 Source code repositories are implemented on top of Modyo's GitHub Enterprise service. Additionally, GitHub Security solutions are utilized for dependency inspection, and SonarCloud for Java and JavaScript.
 
 
-### Steps to activate
+### Steps to Activate
 Create a requirement ticket in the [Modyo Support Center](https://support.modyo.com) stating:
 - Type of repository: micro frontend, microservice, or intermediary artifact.
 - Repository name: Modyo will apply an internal naming standard with prefixes and/or suffixes depending on the repository type.
@@ -47,7 +47,7 @@ Activities related to the generation of container-based artifacts and their depl
 (Note: AWS CodePipeline-based integrations will be migrated to GitHub Actions during the first half of 2023.)
 :::
 
-### Steps to activate
+### Steps to Activate
 Create a ticket in the [Modyo Support Center](https://support.modyo.com) to activate Continuous Integration on a [repository](#code-repository), stating:
 - Code repository on which to run the automation.
 - Type of automation to implement.
@@ -62,7 +62,7 @@ For intermediary libraries, used in the modularization of Java and JavaScript co
 Modyo implements artifact repositories within its GitHub Enterprise and in the client's Amazon AWS account. For intermediary repositories (e.g., Java or JavaScript libraries), GitHub Registry is used. For container repositories deployed in the Amazon cloud, AWS Elastic Container Registry is used.
 
 
-### Steps to activate
+### Steps to Activate
 Create a requirement ticket in the [Modyo Support Center](https://support.modyo.com) stating:
 - Name of the artifact repository.
 - Type of artifact repository: NPM or Maven library.

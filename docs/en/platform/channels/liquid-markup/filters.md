@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Filtros
+# Filters
 
 Output markup can take filters, which modify the result of the output statement. You can invoke filters by following the output statement's main expression with:
 
@@ -275,7 +275,7 @@ Returns a list of Entries that match a filter. *e.g.*
 - entries (ArrayEntry) - array with entries
 - opts (Hash) (default: {}) - hash with field and eq as value
 
-### Filter By Query String
+### Filter by Query String
 
 Returns a list of Entries that meet a query. You can use logical operators, various meta fields, URLs, or Liquid tags.
 
