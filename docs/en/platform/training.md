@@ -49,7 +49,7 @@ This environment will be available for a limited period. Once the deadline expir
 
 #### Inquiries and problem reporting
 To report a problem or make inquiries, you must:
-1. Go to our Support Center: https://support.modyo.com/hc/es
+1. Go to our Support Center: https://support.modyo.com/hc/en
 2. Create an account linked to your corporate email.
 3. Select the type of case to report:
     - **Incident**: Problems affecting the correct functioning of the environment or the product developed on the platform, indicating severity level (e.g., environment crashes, performance problems).
