@@ -20,7 +20,7 @@ To create a new form, follow these steps:
 
 1. From the side menu in the platform, select **Customers**, and click **Realms**.
 2. Click on your realm.
-3. Click **+ New Form**. This will take you to the creation view of a new form, where you must fill in the main attributes of the form:
+3. Click **New Form**. This will take you to the creation view of a new form, where you must fill in the main attributes of the form:
 
 - **Name**: Name associated with the form. This value will appear both in the form index in the Modyo administrator and as a title when a user is responding to it.
 - **Description**: This text will appear as text below the title when users respond to it.

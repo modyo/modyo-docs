@@ -49,7 +49,7 @@ Para crear una nueva página, sigue estos pasos:
 1. Dentro del menú principal de Modyo Platform, expande Channels y haz clic en Sitios.
 2. Selecciona el sitio al que desees agregar una nueva página.
 3. Haz clic en **Pages**.
-4. Haz clic en **+ Nueva Página**.
+4. Haz clic en **Nueva Página**.
 5. Selecciona el tipo de página (**Widget** o **Content**) que quieres crear.
 6. Ingresa el Nombre del Layout, la Ruta y, si es necesario, selecciona el layout padre, luego presiona **Crear**.
 7. Personaliza la página según el tipo: agregando o editando widgets para Página de Widget, o editando el Index y Show para Página de Contenido.
@@ -279,7 +279,7 @@ Para agregar un nuevo meta tag a tu sitio, sigue estos pasos:
 1. En Modyo Platform, desde el menú principal, expande **Channels**, y haz click en **Sitios**.
 1. Haz click en tu Sitio.
 1. Expande **Configuración de sitio** y haz click en **SEO**.
-1. En la sección de Meta tags personalizados, haz click en **+ Nuevo meta tag**.
+1. En la sección de Meta tags personalizados, haz click en **Nuevo meta tag**.
 
 En la pantalla que aparece tienes la opción de elegir entre diferentes meta tags y asignarles un valor. Este valor puede ser dinámico si se utiliza Liquid. Si activas la opción **Replicar meta tag en páginas**, se creará un meta tag en la sección de Propiedades de todas tus páginas.
 

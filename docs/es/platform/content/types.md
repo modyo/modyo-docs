@@ -35,7 +35,7 @@ Para crear un nuevo tipo de contenido que servirá como base para tus entradas, 
 1. Desde el menú principal, haz click en **Contenido**.
 2. Selecciona el espacio donde quieres crear un nuevo Tipo.
 3. Haz click en **Tipos**.
-2. Haz click en el botón **+ Nuevo Tipo**.
+2. Haz click en el botón **Nuevo Tipo**.
 3. Escribe el nombre e identificador (UID).
 4. Selecciona la cardinalidad del tipo.
 5. Haz click en **Crear**.

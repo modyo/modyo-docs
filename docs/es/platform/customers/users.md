@@ -30,7 +30,7 @@ Marca la casilla junto al nombre de uno o más usuarios y haz clic en el botón 
 
 ## Añadir un usuario
 
-Para agregar un nuevo usuario, haz clic en el botón **+ Nuevo Usuario** y completa los siguientes campos:
+Para agregar un nuevo usuario, haz clic en el botón **Nuevo Usuario** y completa los siguientes campos:
 
 - **Nombre**: **[Requerido]**. Nombre legal del usuario.
 - **Apellido**

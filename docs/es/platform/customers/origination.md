@@ -12,24 +12,24 @@ Esta funcionalidad no está incluida por defecto en todos los planes de Modyo. P
 
 Origination está diseñado para cualquier organización que busque agilizar procesos complejos, mejorar la colaboración entre los involucrados y asegurar que el flujo de trabajo se gestione de manera estructurada y segura.
 
-## Crear una nueva originación
+## Crear Una Nueva Originación
 
 Para crear una nueva originación, sigue estos pasos:
 
-- En el menú lateral, navega a **Customers** \> **Reinos** y selecciona el Reino en el que deseas trabajar.
+- En el menú lateral, navega a **Customers** > **Reinos** y selecciona el Reino en el que deseas trabajar.
 - Dirígete a la opción **Origination**.
 - Haz clic en el botón **+ Nueva originación**.
 - Asigna un nombre y selecciona el tipo de originación que deseas crear.
 - Haz clic en **Crear** para finalizar y comenzar a configurar los pasos del nuevo flujo de originación.
 
-### Tipos de originación
+### Tipos de Originación
 
 Los tipos de originación determinan el propósito y las funcionalidades específicas de los flujos que deseas implementar. Al crear una nueva originación, puedes elegir entre los siguientes tipos:
 
 - **Persona**: Permite que tu originación recopile datos de personas naturales como documento de identidad o firma electrónica.
 - **Organización**: Recopila información de instituciones tales como inscripciones legales o múltiples accionistas.
 
-## Flujos de originación
+## Flujos de Originación
 
 Los flujos de originación están compuestos por **Pasos** y **Tareas**, que estructuran y definen las acciones necesarias para completar el proceso.
 
@@ -37,7 +37,7 @@ Los flujos de originación están compuestos por **Pasos** y **Tareas**, que est
 
 Los pasos agrupan tareas que se presentan en una misma pantalla. Para avanzar al siguiente paso, el usuario debe completar todas las tareas asignadas.
 
-#### Agregar pasos
+#### Agregar Pasos
 
 Para agregar un paso, presiona el botón **Añadir** y designa los valores
 
@@ -48,7 +48,7 @@ Para agregar un paso, presiona el botón **Añadir** y designa los valores
 
 Las tareas son las acciones individuales dentro de cada paso. Estas tareas recopilan información, realizan validaciones o solicitan acciones específicas del usuario. Las tareas se completan de manera secuencial, y al validarse, permiten avanzar al siguiente paso del flujo.
 
-#### Agregar tareas
+#### Agregar Tareas
 
 Para agregar una nueva Tarea, presiona el botón **+ Agregar tarea** y eso creará un nuevo contenedor de tareas. Al crear una tarea, debes incluir sus valores
 
@@ -57,7 +57,7 @@ Para agregar una nueva Tarea, presiona el botón **+ Agregar tarea** y eso crear
 - **Descripción**: Un breve texto explicativo sobre la tarea, que será visible para el usuario.
 - **Tipo**: Selecciona el tipo de tarea en función de los objetivos del flujo.
 
-#### Tipos de tareas
+#### Tipos de Tareas
 
 Los tipos de tareas disponibles son:
 
@@ -88,7 +88,7 @@ Para agregar un **code snippet** en una tarea de originación, sigue estos pasos
 2. Selecciona el tipo de tarea **Snippet de código**.
 3. Configura las propiedades de la tarea.
 
-### Propiedades del Snippet de código
+### Propiedades del Snippet de Código
 
 - **Task ID**: Identificador único de la tarea. Se genera automáticamente al guardar la tarea y permite acceder a los datos desde la API.
 - **Nombre**: Nombre de la tarea, visible para el usuario.
@@ -102,7 +102,7 @@ Si se marca, la acción de continuar se desactivará por defecto para esta tarea
 
 Modyo proporciona una API en JavaScript para interactuar con los code snippets en tiempo de ejecución.
 
-#### Métodos disponibles
+#### Métodos Disponibles
 
 - **`getUrl()`**: Retorna la URL del flujo de originación actual.
 - **`enableButton()`**: Habilita el botón de acción de la tarea y permite al usuario continuar con el flujo.
@@ -114,7 +114,7 @@ Los Code Snippets pueden comunicarse con la API de originación utilizando datos
 Para obtener datos almacenados en la aplicación actual, usa el método `getUrl()` para construir la solicitud. Para guardar información, se debe realizar una **petición POST** a la misma URL.
 
 
-#### Ejemplo de estructura JSON
+#### Ejemplo de Estructura JSON
 
 Cuando consumes datos de la API JSON obtendrás un objeto con todas los datos almacenados en la aplicación actual.
 
@@ -151,7 +151,7 @@ Cuando consumes datos de la API JSON obtendrás un objeto con todas los datos al
 Para almacenar información, los datos deben utilizar formato JSON válido, los errores de formato no serán procesados.
 :::
 
-### Uso de Liquid en code snippets
+### Uso de Liquid en Code Snippets
 
 Los code snippets pueden utilizar drops de liquid para acceder a datos internos de la aplicación y personalizar la experiencia del usuario.
 
@@ -172,7 +172,7 @@ En un flujo de originación, cada aplicación representa el proceso en curso de 
 
 Puedes aprender más sobre [Liquid Drops](/es/platform/channels/drops.html) en nuestra documentación.
 
-### Ejemplo de code snippets
+### Ejemplo de Code Snippets
 
 En este ejemplo puede encontrar en uso el  acceso a datos por Drops de Liquid e interacción con la APIs de JavaScript y JSON. Recuerda reemplazar el valor `QUESTION_ID` por el correspondiente en tu aplicación.
 
@@ -291,14 +291,14 @@ El parámetro content que se envía tiene que ser un json válido. En caso de qu
 
 Puedes incorporar una amplia variedad de campos en tus formularios para personalizar la recolección de datos de tus usuarios.
 
-#### Añadir campos
+#### Añadir Campos
 
 Para incluir un nuevo campo debes seleccionar una tarea y seleccionar la pestaña **Añadir**
 
 Origination soporta todos los tipos de entrada disponibles en formularios. Puedes ver el listado completo de tipos en la [documentación de formularios](https://docs.modyo.com/es/platform/customers/forms.html#anadir)
 
 
-#### Editar campos
+#### Editar Campos
 
 Al seleccionar un campo, puedes modificar sus propiedades al dirigirte a  la pestaña **Editar** Allí encontrarás diferentes propiedades según las características del campo seleccionado. Las principales propiedades son:
 
@@ -308,7 +308,7 @@ Al seleccionar un campo, puedes modificar sus propiedades al dirigirte a  la pes
 - **Agregar campo Pop-up de instruciones**: Agrega un ícono de ayuda junto al campo. Al hacer clic en este ícono, se despliega un mensaje con información adicional o consejos útiles relacionados con el campo.
 - **Opciones**: Propiedades adicionales de acuerdo al tipo de campo seleccionado.
 
-##### Propiedades de la tarea
+##### Propiedades de la Tarea
 
 En este apartado se pueden editar los valores de la tarea seleccionada, puedes encontrar estos valores
 
@@ -337,13 +337,11 @@ Para configurar la lógica condicional, sigue estos pasos:
    3. **Define la acción:** Selecciona la acción y el elemento sobre el cual se ejecutará cuando la regla se cumpla. Las acciones disponibles son **Mostrar** y **Ocultar**.
 4. **Guarda los cambios:** Una vez que hayas definido tus reglas, guarda los cambios.
 
-:::tip 
-Considera cómo la lógica condicional puede afectar la experiencia del usuario y asegúrate de que el flujo se pueda completar.
-:::
+:::tip Considera cómo la lógica condicional puede afectar la experiencia del usuario y asegúrate de que el flujo se pueda completar. :::
 
-### Editar configuración de la originación
+### Editar Configuración de la Originación
 
-Al seleccionar la opción **Editar** en el menu contextual de tu originación puedes editar sus propiedades.
+Al seleccionar la opción **Editar** en el menu contextual de tu orignación puedes editar sus propiedades.
 
 - **Nombre**: Define el nombre de la originación, visible para los usuarios en la interfaz.
 - **Descripción**: Incluye un breve texto explicativo sobre el propósito de la originación.
@@ -353,7 +351,7 @@ Al seleccionar la opción **Editar** en el menu contextual de tu originación pu
 - **Reglas de completado**:  Define el comportamiento de completado para cada aplicación.
 - **Privacidad**: Permite restringir el acceso al flujo de originación a ciertos segmentos de usuarios predefinidos.
 
-#### Eliminar originación
+#### Eliminar Originación
 
 Si necesitas eliminar una originación de forma permanente:
 
@@ -364,7 +362,7 @@ Si necesitas eliminar una originación de forma permanente:
 Este proceso es irreversible.
 :::
 
-### Ver detalles de una originación
+### Ver Detalles de una Originación
 
 Al acceder a una originación específica, puedes visualizar métricas y datos relevantes en función de la vista que selecciones. Estas vistas te permiten analizar y gestionar de manera eficiente la información asociada con la originación.
 
@@ -372,7 +370,7 @@ Al acceder a una originación específica, puedes visualizar métricas y datos r
 - **Aplicaciones**: Muestra un listado detallado de todas las aplicaciones realizadas dentro de esta originación. Es ideal para revisar el historial y el estado de cada solicitud.
 - **Asignados**: Proporciona un listado de las personas asignadas a esta originación, junto con sus métricas de gestión, lo que facilita el seguimiento del desempeño y la carga de trabajo.
 
-### Resumen de originación
+### Resumen de Originación
 
 La vista resumen de una originación te ofrece un resumen de las métricas clave relacionadas con el rendimiento y estado de las solicitudes en el flujo. Esta información es útil para comprender el progreso general y realizar un seguimiento efectivo.
 
@@ -381,7 +379,7 @@ La vista resumen de una originación te ofrece un resumen de las métricas clave
 - **Canceladas**: Refleja las solicitudes que han sido canceladas por el usuario o el administrador.
 - **Total**: Representa el número total de solicitudes, incluyendo las pendientes, completadas y canceladas.
 
-### Gestión de aplicaciones
+### Gestión de Aplicaciones
 
 La vista de aplicaciones te permite revisar y administrar individualmente el estado e información de cada aplicación a esta originación. Puedes seleccionar una aplicación específica para acceder a sus detalles y gestionar sus elementos clave.
 
@@ -397,21 +395,21 @@ En la vista de detalles, encontrarás las siguientes secciones principales:
 
 Esta estructura te brinda una visión integral y detallada de cada aplicación, permitiéndote gestionar de manera efectiva todos los aspectos relacionados con las aplicaciones.
 
-#### Asignar aplicación
+#### Asignar Aplicación
 
 En el listado de aplicaciones, selecciona el menú acciones y presiona la opción **Asignar**. En el menú contextual selecciona a un administrador para esta aplicación.
 
-#### Cancelar aplicación
+#### Cancelar Aplicación
 
 Selecciona una aplicación y presiona el menu contextual. Al seleccionar la opción **Cancelar** para modificar permanentemente el estatus de una aplicación a cancelado.
 
-#### Eliminar aplicación
+#### Eliminar Aplicación
 
 Para eliminar una aplicación individual, selecciona el menú en la columna actions y presiona la opción delete. Esto eliminará la aplicación.
 
 Para eliminar varias aplicaciones al mismo tiempo, selecciona cada entrada marcando la casilla correspondiente y presiona el botón eliminar.
 
-#### Invitar usuarios
+#### Invitar Usuarios
 
 Puedes invitar a usuarios para que ingresen información en una originación. Al invitar a un usuario, deberás ingresar su información básica
 
@@ -420,13 +418,13 @@ Puedes invitar a usuarios para que ingresen información en una originación. Al
 - **Email**: La dirección de correo electrónico del usuario, donde recibirá la invitación para acceder a la originación.
 - **Asignar la aplicación**: En la lista desplegable, selecciona un administrador que gestionará esta originación en particular. Si no se selecciona un administrador, la aplicación quedará sin asignar.
 
-### Gestión de asignados
+### Gestión de Asignados
 
 En la vista de asignados,  puedes  monitorear y administrar a los administradores responsables de las aplicaciones dentro de un reino. Esta vista facilita el seguimiento del desempeño y la carga de trabajo de los administradores. Puedes filtrar las aplicaciones asignadas por rangos de fecha
 
 Al seleccionar un administrador, podrás ver todas las aplicaciones que tiene asignadas y su correspondiente status
 
-## Crear una página de originación
+## Crear una Página de Originación
 
 Para desplegar una página de originación a los usuarios, sigue los pasos a continuación. Esto te permitirá habilitar un acceso directo y funcional a tus flujos.
 

@@ -77,7 +77,7 @@ To create an entry, follow these steps:
 1. In the side menu, select Content.
 1. Select your space.
 1. Click on Entries
-1. Click **+ New Entry**.
+1. Click **New Entry**.
 1. Select the content type, name, and identifier.
 1. Click **Create**.
 1. Once the entry is created, you can include the content you require. The entry will have the structure defined in the content type you selected.
@@ -206,7 +206,7 @@ To create a category:
 
 1. Click on Content
 1. Select Categories
-1. Click on the **+ New Category** button.
+1. Click on the **New Category** button.
 1. In the pop-up window, enter the name, path, and, optionally, a parent category.
 
 When you assign an entry to a category, Modyo adds the identifier as a prefix to the URL of the entry, for example:

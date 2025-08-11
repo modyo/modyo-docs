@@ -16,7 +16,7 @@ To create an internal user, follow these steps:
 
 1. From the main menu, click on **Settings**.
 1. Select **Team**.
-1. Click on **+ New Team Member**.
+1. Click on **New Team Member**.
 1. Fill in the first name, last name, username, email, and password fields.
 1. Click **Save**.
 
@@ -51,7 +51,7 @@ To create a group, follow these steps:
 
 1. Click on **Settings**.
 1. Click on **Groups**.
-1. Click **+ New Group**.
+1. Click **New Group**.
 1. Type the name of the group and select the**Group Role**.
 1. Select from the drop-down menu under **Add Users**, the users that will be part of this group.
 1. Click **Create**.
@@ -104,7 +104,7 @@ Custom roles allow you to create profiles with unique access and permissions, co
 
 #### Create custom roles
 
-To create a custom role, select the **+ New Role** button and define its **scope**. This will assign permissions depending on your selection:
+To create a custom role, select the **New Role** button and define its **scope**. This will assign permissions depending on your selection:
 
 - **Organization**: the role will have access to all Modyo modules and its scope will be global.
 - **Channels**: the role will have access only to the [Channels](/en/platform/channels/) module.

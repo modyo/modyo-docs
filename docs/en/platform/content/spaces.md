@@ -26,7 +26,7 @@ You can only see those spaces in which you are part of the team, with a role.
 To create a space, follow these steps:
 
 1. In the side menu, select Content
-1. Click on **+ New Space**
+1. Click on **New Space**
 1. Fill out the fields in the form.
 1. Click **Create**
 
@@ -125,7 +125,7 @@ Team members are users who have access to a space to write, review, and publish 
 
 #### Add User ####
 To add a user to the space:
-1. Click **+ Add Member**.
+1. Click **Add Member**.
 1. In the modal, select a user and assign them a role.
 1. Click **Add**.
 

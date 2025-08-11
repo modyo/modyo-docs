@@ -33,7 +33,7 @@ If you delete a campaign, you will not be able to recover it, and its record wil
 :::
 
 ## Create a campaign
-Campaigns allow you to contact your users directly via email or direct notifications, including support for WebPush notifications. To create a new campaign, click the **+ New Campaign** button.
+Campaigns allow you to contact your users directly via email or direct notifications, including support for WebPush notifications. To create a new campaign, click the **New Campaign** button.
 
 ### Mailing Campaigns
 
@@ -154,7 +154,7 @@ In the **Templates** section, you can create and manage email designs for your c
 
 ### Create a template
 
-- Click **+ New Template**.
+- Click **New Template**.
 - Give the template a descriptive name.
 - Use the WYSIWYG editor to customize the design.
 

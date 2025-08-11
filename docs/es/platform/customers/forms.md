@@ -20,7 +20,7 @@ Para crear un nuevo formulario, sigues estos pasos:
 
 1. Desde el menú lateral en la plataforma, selecciona **Customers**, y haz click en **Reinos**.
 2. Haz click en tu reino.
-3. Haz click en **+ Nuevo Formulario**. Esto te llevará a la vista de creación de un nuevo formulario, donde deberás llenar los atributos principales del mismo:
+3. Haz click en **Nuevo Formulario**. Esto te llevará a la vista de creación de un nuevo formulario, donde deberás llenar los atributos principales del mismo:
 
 - **Nombre**: Nombre asociado al formulario. Este valor aparecerá tanto en el índice de formularios en el administrador de Modyo y como título cuando un usuario lo vaya a responder.
 - **Descripción**: Este texto aparecerá como texto debajo del título cuando los usuarios lo vayan a responder.

@@ -64,7 +64,7 @@ To upload a file to Modyo, choose one of the following options:
 1. In the side menu, click on the **Content** icon.
 1. Select a space.
 1. In the side menu, click **Media**.
-1. Click on the **+ New Asset** button.
+1. Click on the **New Asset** button.
 1. Drag the file or click the upload box to open a search window.
 1. Add tags to the file if you want.
 1. Click **Upload** to confirm.

@@ -20,7 +20,7 @@ To create a segment, follow these steps:
 
 - From the administration page, click **Customers**, then select **Realms**.
 - Click on your **Realm**.
-- Select **Segments** and click **+ New Segment**.
+- Select **Segments** and click **New Segment**.
 - Add the required filters for your segment.
 - Click **Next**.
 - Enter a **Name** and a **Description**.

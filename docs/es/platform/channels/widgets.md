@@ -92,7 +92,7 @@ Si eliminas un widget de una página y publicas, seguirás viendo esa página en
 Para crear un nuevo Widget y tener un _micro frontend_ para tus sitios y publicaciones, sigue estos pasos:
 1. Dentro del menú principal de Modyo Platform, expande Channels y haz click en tu sitio.
 1. Haz click en Widgets.
-1. Haz click en el botón **+ Nuevo Widget**.
+1. Haz click en el botón **Nuevo Widget**.
 1. Escribe el nombre de tu widget y haz click en **Crear**.
 1. Personaliza tu widget usando HTML, CSS, JavaScript, o Liquid.
 1. Una vez terminado, haz click en **Publicar**.

@@ -189,7 +189,7 @@ Una vez que hayas obtenido esta información en Salesforce, accede a **Modyo** y
 1. Ingresa al reino que deseas vincular.
 1. Accede a la configuración del reino.
 1. Haz click en **Integraciones**.
-1. Haz click en **+ Add** y selecciona la integración de Salesforce.
+1. Haz click en **Add** y selecciona la integración de Salesforce.
 1. Ingresa un nombre para la integración. Puede ser cualquier texto de al menos 3 caracteres de largo.
 1. En el campo **Sujeto**, utiliza el correo electrónico de un usuario que tienen acceso al Connected App en Salesforce.
 1. En **Issuer** ingresa tu Consumer Key.
@@ -279,7 +279,7 @@ Utiliza un cliente de autenticación para enviar los tokens de acceso de tu inte
 Modyo permite seleccionar los miembros del equipo que trabajan en cada reino y así controlar el acceso a los distintos aspectos del reino.
 
 Para añadir un miembro al reino, sigue estos pasos:
-1. Haz click en el botón **+ Agregar miembro** en la parte superior derecha.
+1. Haz click en el botón **Agregar miembro** en la parte superior derecha.
 2. En el modal, selecciona a un usuario y asigna un rol.
 3. Haz click en **Agregar**.
 

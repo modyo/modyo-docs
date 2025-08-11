@@ -51,7 +51,7 @@ To create a Menu, follow these steps:
 1. From the Modyo Platform main menu, expand Channels and click Sites.
 2. Select the site you want to add a new menu.
 3. Click **Navigation**.
-4. Click on **+ New Menu**.
+4. Click on **New Menu**.
 5. Enter the name and identifier and click on **Create**.
 6. Customize the menu by adding or editing items.
 7. Once finished, click **Publish**.

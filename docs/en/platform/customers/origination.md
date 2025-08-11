@@ -18,7 +18,7 @@ To create a new origination, follow these steps:
 
 - In the side menu, navigate to **Customers** > **Realms** and select the Realm you want to work in.
 - Go to the **Origination** option.
-- Click the **+ New Origination** button.
+- Click the **New Origination** button.
 - Choose a name and select the type of origination you want to create.
 - Click **Create** to finish and begin configuring the steps of the new origination flow.
 
@@ -50,7 +50,7 @@ Tasks are the individual actions within each step. These tasks collect informati
 
 #### Add tasks
 
-To add a new Task, press the **+ Add Task** button and a new task will be created. When creating a task, you must include its values
+To add a new Task, press the **Add Task** button and a new task will be created. When creating a task, you must include its values
 
 - **Name**: The name of the task that will be visible to the user.
 - **Identifier**: A unique identifier that will be included in the origination URL.
@@ -282,6 +282,8 @@ In this example, you can find the use of data access by Liquid Drops and interac
 		});
 	});
 </script>
+```
+
 :::tip Tip
 The content parameter that is sent must be a valid json. If it has to be empty, {} must be sent.
 :::

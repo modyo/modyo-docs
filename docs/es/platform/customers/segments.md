@@ -20,7 +20,7 @@ Para crear un segmento, sigue estos pasos:
 
 - Desde la página de administración, haz clic en **Customers**, luego selecciona **Reinos**.
 - Haz clic en tu **Reino**.
-- Selecciona **Segmentos** y haz clic en **+ Nuevo Segmento**.
+- Selecciona **Segmentos** y haz clic en **Nuevo Segmento**.
 - Agrega los filtros necesarios para tu segmento.
 - Haz clic en **Siguiente**.
 - Escribe un **Nombre** y una **Descripción**.

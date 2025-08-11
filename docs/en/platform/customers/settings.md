@@ -189,7 +189,7 @@ Once you have obtained this information in Salesforce, go to **Modyo** and perfo
 1. Enter the realm you want to link.
 1. Access the realm settings.
 1. Click on **Integrations**.
-1. Click **+ Add** and select the Salesforce integration.
+1. Click **Add** and select the Salesforce integration.
 1. Enter a name for the integration. It can be any text that is at least 3 characters long.
 1. In the **Subject** field, use the email of a user who has access to the Connected App in Salesforce.
 1. In **Issuer** enter your Consumer Key.
@@ -279,7 +279,7 @@ Use an authentication client to send your integration access tokens to your reso
 Modyo allows you to select the team members that work in each realm, and thus control access to the different aspects of the realms.
 
 To add a member to a realm, follow these steps:
-1. Click the **+ Add Member** button at the top right.
+1. Click the **Add Member** button at the top right.
 2. In the modal, select a user and assign a role.
 3. Click on **Add**.
 

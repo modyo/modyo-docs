@@ -270,7 +270,7 @@ A continuación, se explica como utilizar cada uno de estos métodos
 Lo primero que debes realizar, es registrar la aplicación para consumir la API. Sigue estos pasos para crear un nuevo Bearer Token:
 
 1. Desde la plataforma Modyo, en el menú lateral, expande **Configuración** y haz click en **Acceso al API**.
-2. Haz click en el botón **+ Nuevo Acceso al API**.
+2. Haz click en el botón **Nuevo Acceso al API**.
 3. Llena el nombre, descripción, y URI de redirección del acceso.
 
 Al guardar la información de la aplicación, Modyo mostrará una vista donde verás el _callback URL_ (el que corresponde al campo Redirect URI ingresado en el paso anterior) y además los campos _Application ID_ y _Secret_ que puedes utilizar posteriormente.
@@ -284,9 +284,9 @@ Ten en consideración que cuando se cierra sesión en alguno de tus sitios, se h
 
 Para más detalles, ve a [Usuarios y Roles](/es/platform/core/roles.html)
 
-6. En la vista de edición del usuario administrador, haz click en _API Access_ y selecciona la opción **+ Nuevo Acceso al API**.
+6. En la vista de edición del usuario administrador, haz click en _API Access_ y selecciona la opción **Nuevo Acceso al API**.
 
-7. En el _popup_ que se muestra a continuación, selecciona el nombre de la aplicación que acabas de crear y luego haz click en **+ Nuevo Token de Acceso**.
+7. En el _popup_ que se muestra a continuación, selecciona el nombre de la aplicación que acabas de crear y luego haz click en **Nuevo Token de Acceso**.
 
 :::warning Atención
 Debes tener en cuenta que los usuarios administrativos solo podrán ejecutar acciones a través de la API administrativa de Modyo si es que cuentan con los permisos necesarios para realizar cada acción. Por ejemplo, un administrador con el rol de "Developer" en un sitio, no podrá ejecutar la acción "Publicar" en ese sitio.

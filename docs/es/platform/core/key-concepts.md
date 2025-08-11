@@ -273,7 +273,7 @@ Para obtener el valor de la variable en cualquier lugar que acepte Liquid markup
 Para crear una variable global, sigue esto pasos:
 
 1. Desde el menú lateral principal, haz click en **Configuración**, luego selecciona **Variables Globales**.
-1. Aquí podrás ver el listado de todas las variables globales de la cuenta, su información general, y un botón para copiar su nombre en Liquid. Haz click en **+ Nueva Variable**.
+1. Aquí podrás ver el listado de todas las variables globales de la cuenta, su información general, y un botón para copiar su nombre en Liquid. Haz click en **Nueva Variable**.
 1. Llena el **Nombre** y **Valor** de la variable.
 1. Haz click en **Guardar**.
 

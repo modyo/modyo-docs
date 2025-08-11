@@ -26,7 +26,7 @@ Solamente puedes ver aquellos espacios en los cuales eres parte del equipo de tr
 Para crear un espacio, sigue estos pasos:
 
 1. En el menú lateral selecciona Content
-1. Da click en **+ Nuevo Espacio**
+1. Da click en **Nuevo Espacio**
 1. Llena los campos del formulario.
 1. Haz click en **Crear**
 
@@ -126,7 +126,7 @@ Los miembros del equipo son los usuarios que tienen acceso a un espacio para esc
 
 #### Agregar usuario ####
 Para añadir un usuario al espacio:
-1. Da click en **+ Agregar miembro**.
+1. Da click en **Agregar miembro**.
 1. En el modal selecciona un usuario y asígnale un rol.
 1. Da click en **Añadir**.
 

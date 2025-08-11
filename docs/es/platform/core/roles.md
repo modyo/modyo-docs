@@ -16,7 +16,7 @@ Para crear un usuario interno, sigue estos pasos:
 
 1. Desde el menú principal, haz click en **Configuración**.
 1. Selecciona **Equipo**.
-1. Haz click en **+ Nuevo Miembro del Equipo**.
+1. Haz click en **Nuevo Miembro del Equipo**.
 1. Completa los campos de nombre, apellido, nombre de usuario, correo electrónico y contraseña.
 1. Haz click en **Guardar**.
 
@@ -51,7 +51,7 @@ Para crear un grupo, sigue estos pasos:
 
 1. Haz click en **Configuración**.
 1. Haz click en **Grupos**.
-1. Haz click en **+ Nuevo Grupo**.
+1. Haz click en **Nuevo Grupo**.
 1. Escribe el nombre del grupo y selecciona el **Rol del Grupo**.
 1. Selecciona del menú desplegable debajo de **Agregar Usuarios**, los usuarios que formarán parte de este grupo.
 1. Da click en **Crear**.
@@ -104,7 +104,7 @@ Los roles a medida te permiten crear perfiles con accesos y permisos únicos, co
 
 #### Crear roles a medida
 
-Para crear un rol a medida, selecciona el botón **+ Nuevo Rol** y define su **scope**. Esto asignará permisos según la selección que realices:
+Para crear un rol a medida, selecciona el botón **Nuevo Rol** y define su **scope**. Esto asignará permisos según la selección que realices:
 
 - **Organización**: el rol tendrá acceso a todos los módulos de Modyo y su alcance será global.
 - **Channels**: el rol tendrá acceso únicamente al módulo de [Channels](/es/platform/channels/).

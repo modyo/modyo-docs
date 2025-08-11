@@ -18,7 +18,7 @@ Una web app puede estar en uno de estos tres estados:
 Para crear una nueva web app, sigue estos pasos:
 
 1. En el menú lateral, haz click en **channels**.
-1. Haz click en **+ nueva aplicación**.
+1. Haz click en **nueva aplicación**.
 1. Escribe el nombre y el host (ruta principal de la aplicación web).
 1. Si es necesario, selecciona a qué reino pertenece.
 1. Haz click en **crear**.
@@ -248,7 +248,7 @@ Puedes configurar:
 Los archivos robots.txt y sitemap.xml solo son visibles con dominios personalizados. De lo contrario, se encuentran solo a nivel de plataforma, tienen sus valores por defecto y no se pueden personalizar.
 :::
 
-- **Meta tags personalizados**: Te permite configurar meta tags para todas las páginas y sus valores por defecto. Da click en **+ nuevo meta tag** para crear uno nuevo.
+- **Meta tags personalizados**: Te permite configurar meta tags para todas las páginas y sus valores por defecto. Da click en **nuevo meta tag** para crear uno nuevo.
 - **Replicar meta tag en páginas**: Al crear un nuevo meta tag, selecciona esta opción para propagar el meta tag y su valor en todas las páginas de la web app. Debes guardar los cambios en meta tags y publicar todas las páginas modificadas para que los nuevos meta tags surtan efecto.
 
 :::warning Atención
@@ -465,7 +465,7 @@ Para agregar un nuevo stage a tu web app, sigue estos pasos:
 1. Selecciona tu aplicación web.
 1. Haz click en configuración de la aplicación.
 1. Haz click en stages.
-1. Da click en **+ nuevo stage**.
+1. Da click en **nuevo stage**.
 1. Selecciona el stage de origen y nombra tu nuevo stage.
 1. Haz click en **crear**.
 
@@ -540,7 +540,7 @@ Para agregar un nuevo miembro para tu sitio, sigue estos pasos:
 1. Selecciona tu sitio.
 1. Expande **Configuración de Sitio**.
 1. Haz click en **Miembros del equipo**.
-1. Presiona el botón **+ Agregar miembro**.
+1. Presiona el botón **Agregar miembro**.
 1. Busca y selecciona al usuario que deseas agregar al sitio y elige un rol para él.
 1. Haz click en **Añadir**.
 
@@ -709,7 +709,7 @@ Para crear una variable en sitios, sigue estos pasos:
 1. Desde el menú lateral principal, haz click en **Channels**.
 1. Selecciona tu **Sitio**.
 1. En **Configuración del sitio**, haz click en **Variables del Sitio**. Aquí puedes ver el listado de todas las variables globales y las variables del sitio, su información general y un botón para copiar su código en Liquid markup.
-1. Haz click en **+ Nueva Variable**.
+1. Haz click en **Nueva Variable**.
 1. Completa los campos **Nombre** y **Valor** de la variable.
 1. Haz click en **Guardar**.
 

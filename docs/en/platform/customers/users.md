@@ -30,7 +30,7 @@ Check the box next to one or more users' names and click the **Bulk Actions** bu
 
 ## Add a user
 
-To add a new user, click the **+ New User** button and complete the following fields:
+To add a new user, click the **New User** button and complete the following fields:
 
 - **First Name**: **[Required]**. The user's legal first name.
 - **Surname**

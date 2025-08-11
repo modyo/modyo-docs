@@ -24,7 +24,7 @@ Llama a tus canales de gestión a través de un webhook.
 Para crear un webhook, sigue estos pasos:
 
 1. Desde la página de administración, haz click en **Configuración**, luego selecciona **Webhooks**.
-2. Haz click en **+ Nuevo Webhook**.
+2. Haz click en **Nuevo Webhook**.
 3. Escribe el nombre y la URL a la cual quieres llamar.
 4. Selecciona los sitios o espacios que quieras que activen el webhook.
 5. Selecciona el tipo de log que activará el webhook.
@@ -127,7 +127,7 @@ Llama a tus canales de gestión a través de un webhook.
 Para crear un webhook, sigue estos pasos:
 
 1. Desde un reino, haz click en **Configuración del reino**, luego selecciona **Webhooks**.
-2. Haz click en **+ Nuevo Webhook**.
+2. Haz click en **Nuevo Webhook**.
 3. Escribe el nombre y la URL a la cual quieres llamar.
 4. Selecciona el tipo de log que activará el webhook.
 5. Agrega los headers necesarios para la llamada. 

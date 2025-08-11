@@ -21,7 +21,7 @@ Además activa **Mostrar home a visitas públicas** para poder redireccionar usu
 
 1. En el menú lateral, selecciona **Customers** y haz click en **Reinos**.
 1. Expande **Configuración de reino** y haz click en **Proveedores de Identidad**.
-1. Haz click en **+ Añadir**
+1. Haz click en **Añadir**
 1. Selecciona la integración **OpenID Connect** y lleno los siguientes datos:
   * **Nombre del servicio**
   * **Client ID**

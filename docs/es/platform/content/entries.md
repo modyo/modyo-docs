@@ -77,7 +77,7 @@ Para crear una entrada, sigue estos pasos:
 1. En el menú lateral selecciona Content.
 1. Selecciona tu espacio.
 1. Haz click en Entradas
-1. Haz click en **+ Nueva Entrada**.
+1. Haz click en **Nueva Entrada**.
 1. Selecciona el tipo de contenido, nombre e identificador.
 1. Haz click en **Crear**.
 1. Una vez creada la entrada, puedes incluir el contenido que requieras. La entrada tendrá la estructura definida en el tipo de contenido que seleccionaste.
@@ -206,7 +206,7 @@ Para crear una categoría:
 
 1. Haz click en Content
 1. Selecciona Categorías
-1. Haz click en el botón **+ Nueva categoría**.
+1. Haz click en el botón **Nueva categoría**.
 1. En la ventana emergente, ingresa el nombre, la ruta y, opcionalmente, una categoría padre.
 
 Cuando asignas una entrada a una categoría, Modyo agrega el identificador como prefijo a la URL de la entrada, por ejemplo:

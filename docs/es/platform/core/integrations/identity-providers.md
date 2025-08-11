@@ -22,7 +22,7 @@ Recuerda tener a mano todos los datos y certificados que se te exigen antes de c
 Para agregar un nuevo proveedor de identidad, sigue estos pasos:
 
 1. Desde el menú principal, expande **Configuración** y haz click en **Proveedores de Identidad**.
-1. Haz click en **+ Añadir**.
+1. Haz click en **Añadir**.
 1. En el dropdown, selecciona la integración que quieres añadir.
 1. Agrega la información necesaria para la integración (Nombre, ID, Secreto, etc).
 1. Haz click en **Añadir**.
@@ -112,7 +112,7 @@ La API para obtención de access tokens delegados vía  `/auth/openidc/access_to
 
 ### Configuración de la integración
 
-1. Accede a **Configuración/Configuración de reino > Reino > Proveedores de Identidad > + Añadir > OpenID Connect** y completa **Client ID** y **Secret** con el nombre del cliente y sus credenciales.
+1. Accede a **Configuración/Configuración de reino > Reino > Proveedores de Identidad > Añadir > OpenID Connect** y completa **Client ID** y **Secret** con el nombre del cliente y sus credenciales.
 2. En Issuer, rellena con la URL del realm, por ejemplo, para el realm `my-realm` la URL es `https://test.example.com/auth/realms/my-realm`.
 3. Haz click en **Lanzar servicio de descubrimiento**. Así se completará la mayoría de las configuraciones.
 4. Configura los **Scopes** con los scopes requeridos para la aplicación. Usa `openid,email,profile` en caso de que no cuentes con scopes personalizados.

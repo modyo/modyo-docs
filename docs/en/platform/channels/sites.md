@@ -18,7 +18,7 @@ A web app can be in one of these three states:
 To create a new web app, follow these steps:
 
 1. In the side menu, click on **channels**.
-1. Click on **+ new application**.
+1. Click on **new application**.
 1. Type the name and host (main path of the web application).
 1. If necessary, select which realm it belongs to.
 1. Click **create**.
@@ -248,7 +248,7 @@ You can configure:
 Robots.txt and sitemap.xml files are only visible with custom domains. Otherwise, they are only found at the platform level, have default values, and cannot be customized.
 :::
 
-- **Custom meta tags**: Allows you to configure meta tags for all pages and their default values. Click **+ new meta tag** to create a new one.
+- **Custom meta tags**: Allows you to configure meta tags for all pages and their default values. Click **new meta tag** to create a new one.
 - **Replicate meta tag on pages**: When creating a new meta tag, select this option to propagate the meta tag and its value across all pages of the web app. You must save changes to meta tags and publish all modified pages for the new meta tags to take effect.
 
 :::warning Attention
@@ -465,7 +465,7 @@ To add a new stage to your web app, follow these steps:
 1. Select your web application.
 1. Click on application settings.
 1. Click on stages.
-1. Click on **+ new stage**.
+1. Click on **new stage**.
 1. Select the source stage and name your new stage.
 1. Click **create**.
 
@@ -540,7 +540,7 @@ To add a new member to your site, follow these steps:
 1. Select your site.
 1. Expand **Site Settings**.
 1. Click on **Team Members**.
-1. Press the **+ Add Member** button.
+1. Press the **Add Member** button.
 1. Search for and select the user you want to add to the site and choose a role for them.
 1. Click **Add**.
 
@@ -709,7 +709,7 @@ To create a variable in sites, follow these steps:
 1. From the main side menu, click **Channels**.
 1. Select your **Site**.
 1. Under **Site Settings**, click **Site Variables**. Here you can see the list of all global variables and site variables, their general information, and a button to copy their code into Liquid markup.
-1. Click on **+ New Variable**.
+1. Click on **New Variable**.
 1. Complete the **Name** and **Value** fields of the variable.
 1. Click **Save**.
 

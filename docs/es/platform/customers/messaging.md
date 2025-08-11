@@ -33,7 +33,7 @@ Si borras una campaña, no podrás recuperarla, y su registro se eliminará del 
 :::
 
 ## Crear una campaña
-Las campañas te permiten contactar directamente a tus usuarios mediante correo electrónico o notificaciones directas, incluyendo soporte para notificaciones WebPush. Para generar una nueva campaña haz click en el botón **+ Nueva Campaña**
+Las campañas te permiten contactar directamente a tus usuarios mediante correo electrónico o notificaciones directas, incluyendo soporte para notificaciones WebPush. Para generar una nueva campaña haz click en el botón **Nueva Campaña**
 
 ### Campañas de Correo
 
@@ -154,7 +154,7 @@ En la sección **Plantillas**, puedes crear y administrar diseños de correo par
 
 ### Crear una plantilla
 
-- Haz clic en **+ Nueva Plantilla**.
+- Haz clic en **Nueva Plantilla**.
 - Asigna un nombre descriptivo a la plantilla.
 - Utiliza el editor WYSIWYG para personalizar el diseño.
 
