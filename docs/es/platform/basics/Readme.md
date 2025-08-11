@@ -10,15 +10,6 @@ search: true
 
 Queremos que tu experiencia sea lo más fácil y satisfactoria posible, por lo que hemos diseñado esta documentación pensando en ti. Puedes navegar estos documentos de principio a fin o dirigirte a una sección específica; los contenidos están todos relacionados entre sí para facilitar tu proceso de aprendizaje.
 
-:::tip Versiones anteriores
-
-La documentación actual se refiere a **Modyo 10.1** . Si necesitas consultar información sobre versiones anteriores, puedes acceder a la documentación específica de cada versión en sus apartados dedicados:
-
-* [Modyo 9.2](https://9-2.docs.modyo.com/es/)
-* [Modyo 10.0](https://10-0.docs.modyo.com/es/)
-
-:::
-
 ### ¿Qué es Modyo?
 
 Modyo es una plataforma de experiencia digital que te ayuda a crear experiencias digitales integradas para tus consumidores, acelerando el desarrollo web y móvil de forma segura, permitiendo además unificar aplicaciones nativas y de terceros en una sola área para administrar tus canales digitales.

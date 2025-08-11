@@ -47,7 +47,7 @@ If you haven't used Data Studio before, it will show you the following setup pag
 
 <img src="/assets/img/tutorials/data-studio/2.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image showing the Complete your Account Setup window."/>
 
-In case you want to receive additional information by email, active the checkbox.
+In case you want to receive additional information by email, activate the checkbox.
 
 <img src="/assets/img/tutorials/data-studio/2-1.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image showing the second step in creating the account setup."/>
 
@@ -63,7 +63,7 @@ To create the data source, select Google Analytics and click on the account you 
 
 <img src="/assets/img/tutorials/data-studio/2-3.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image showing Google Analytics highlighted as a connector."/>
 
-In this view you can see all the symmetric data dimensions that are going to be connected to the report, the next step is to add them to the report.
+In this view you can see all the data dimensions that are going to be connected to the report, the next step is to add them to the report.
 
 <img src="/assets/img/tutorials/data-studio/3.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image showing the dimensions for the report."/>
 
@@ -74,7 +74,7 @@ This will take you back to the <b>Copy Report window</b>.
 
 ## Step 4: Link Search Console
 
-Once the report is linked to the Analytics Account, two more fields are selected <b> Search Console Data (URL) </b> and <b> Search Console Data (SiTel) </b>.
+Once the report is linked to the Analytics Account, two more fields are selected <b> Search Console Data (URL) </b> and <b> Search Console Data (Site) </b>.
  <img src="/assets/img/tutorials/data-studio/2-4.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image showing the Search Console Data (URL) highlighted in the Copy this report window."/> 
 
 Follow the same procedure as the previous one, click <b>Create data source</b>, but this time select <b>Search Console</b>.

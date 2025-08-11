@@ -1,6 +1,6 @@
 ---
 search: true
-sidbarDepth: 2
+sidebarDepth: 2
 ---
 
 # Global snippets

@@ -59,7 +59,7 @@ In the following example, we filter the Entries of type `post`, with category `n
 <p>News:</p>
 <ul>
 {% for entry in entries %}
-<li><a href="entry.url">{{ entry.meta.title }}</a></li>
+<li><a href="{{ entry.url }}">{{ entry.meta.title }}</a></li>
 {% endfor %}    
 ```
 
@@ -72,7 +72,7 @@ In the following example, we filter posts of type `post`, with category `news`, 
 <p>News for you!</p>
 <ul>
 {% for entry in entries %}
-<li><a href="entry.url">{{ entry.meta.title }}</a></li>
+<li><a href="{{ entry.url }}">{{ entry.meta.title }}</a></li>
 {% endfor %}    
 ```
 

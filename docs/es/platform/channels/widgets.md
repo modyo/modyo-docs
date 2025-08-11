@@ -16,7 +16,7 @@ En la barra superior se encuentran las siguientes secciones:
 
 - **Borrador**: Este estado aparece cuando recién se haya creado un widget o cuando se haya despublicado.
 - **Publicado**: Este estado aparece luego de haber hecho una publicación y cuando las versiones editable y publicada son iguales.
-- **Cambios pendientes**: Este estado aparece si es que ya hay una versión publicada, pero hay cambios pendientes de publicar en versión editable.
+- **Cambios pendientes**: Este estado aparece si ya hay una versión publicada, pero hay cambios pendientes de publicar en versión editable.
 - **En revisión**: Este estado aparece cuando esté habilitada la [revisión en equipo](/es/platform/core/key-concepts.html) y se haya enviado a revisión la versión editable.
 - **Aprobado**: Este estado aparece cuando esté habilitada la [revisión en equipo](/es/platform/core/key-concepts.html) y se cumplen las condiciones de revisión del elemento. Si está en este estado, las plantillas están listas para ser publicadas.
 
@@ -110,11 +110,11 @@ En la pestaña de variables puedes ver el listado de variables creadas en el wid
 * **Modificar** la variable
 * **Eliminar** la variable.
 
-Junto al nombre de cada variable verás un indicador "sobreescrita" si es que la variable también existe a nivel de cuenta o sitio en las [variables globales](/es/platform/core/key-concepts.html#variables-globales).
+Junto al nombre de cada variable verás un indicador "sobreescrita" si la variable también existe a nivel de cuenta o sitio en las [variables globales](/es/platform/core/key-concepts.html#variables-globales).
 
 Al modificar una variable, podrás decidir el nombre y valor por defecto que tomará esa variable en el widget. Además, podrás decidir si quieres disponibilizar un listado de valores para que al momento de instanciar el widget en una página, se pueda elegir entre estos distintos valores.
 
-Cuando usas el listado de posibles valores, debes dejar cada valor en una linea nueva, y dejar un `*` delante del valor que quieres que sea tomado como valor por defecto.
+Cuando usas el listado de posibles valores, debes dejar cada valor en una línea nueva, y dejar un `*` delante del valor que quieres que sea tomado como valor por defecto.
 
 Al momento de instanciar el widget en una página, verás que ahora todas las variables que se están usando (ya sean de cuenta, sitio o de widget) se listarán como "deshabilitadas" con su valor por defecto. Si quieres sobreescribir el valor de una variable en particular para esa instancia del widget en esa página, debes seleccionar el checkbox a la izquierda de la variable y cambiar el valor que toma.
 
@@ -133,7 +133,7 @@ Puedes decidir si quieres cargar tus widgets de forma sincrónica, es decir, que
 Para cambiar la forma en que se carga cada widget, debes ir a la vista de edición de la página que contiene el widget, seleccionar el widget y marcar o desmarcar la opción "Carga síncrona".
 
 :::warning Atención
-Debes tener en consideración que usar widgets muy pesados de forma sincrónica puede hacer que se vea disminuido el rendimiento de tu página, por lo que debes decidir con cuidado cuales widgets se cargarán de forma síncrona y cuales de forma asíncrona.
+Debes tener en consideración que usar widgets muy pesados de forma sincrónica puede hacer que se vea disminuido el rendimiento de tu página, por lo que debes decidir con cuidado cuáles widgets se cargarán de forma síncrona y cuáles de forma asíncrona.
 :::
 
 ## Usar Internacionalización (i18n)

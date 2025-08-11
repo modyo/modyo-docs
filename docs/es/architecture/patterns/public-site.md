@@ -114,12 +114,9 @@ En Modyo, los roles y grupos se definen a nivel de organización y se asignan in
 La plataforma ofrece un entorno de gestión de contenido híbrido. Se puede acceder al contenido gestionado de forma descentralizada mediante la API, aprovechando el máximo nivel de desacoplamiento, o a través de _content pages_, un tipo especial de página que se integra automáticamente con el espacio configurado y está disponible en cada sitio.
 
 :::tip Experiencia de CMS tradicional
-:::tip Experiencia de CMS tradicional
 La combinación de espacios de contenido y páginas de contenido ofrece una experiencia de uso similar a la de un CMS convencional, donde cada contenido está vinculado a una representación.
 
 En Modyo, un mismo contenido puede desplegarse en múltiples páginas de diversas maneras, permitiendo a los editores previsualizarlo en la página que elijan.
-:::
-
 :::
 
 #### Uso de Team Review
@@ -158,7 +155,7 @@ Modyo ofrece diferentes formas de implementar [sistemas de diseño](/es/architec
 
 Para sitios públicos, es posible implementar sistemas de diseño de manera sencilla utilizando librerías o frameworks de CSS que establezcan reglas consistentes para todos los elementos. Los sitios creados en Modyo utilizan [Bootstrap](https://getbootstrap.com) como framework CSS predeterminado, que puedes personalizar a través de las variables habilitadas para ello.
 
-### Accesiblidad
+### Accesibilidad
 Dentro de un sitio público, la [accesibilidad](/es/architecture/patterns/accessibility) es fundamental para proporcionar la mejor experiencia posible a personas que requieren asistencia especial.
 
 Para implementar un sitio público accesible con Modyo, el primer paso es aprovechar las [capacidades de accesibilidad nativas](https://getbootstrap.com/docs/5.2/getting-started/accessibility) del kit de herramientas [Bootstrap](https://getbootstrap.com), que define controles y estándares para muchos elementos básicos. Un segundo paso implica determinar el nivel de accesibilidad deseado y, en función de eso, implementar ayudas como cambios en el contraste de colores, ajustes en tamaños y versiones simplificadas del contenido, entre otras posibilidades.
@@ -180,10 +177,10 @@ Existen diversas alternativas, en el mercado, para incorporar capacidades de bú
 
 Puedes realizar la integración entre Algolia y Modyo de diversas formas. Para sitios públicos, un rastreador de indexación similar al que utiliza Google para indexar información de los sitios visitados suele ser suficiente.
 
-Otra opción a considerar es [ElasticSerch](https://www.elastic.co/web-crawler), que ofrece un producto específico para la indexación y búsqueda en sitios públicos.
+Otra opción a considerar es [ElasticSearch](https://www.elastic.co/web-crawler), que ofrece un producto específico para la indexación y búsqueda en sitios públicos.
 
 :::tip Uso de indexadores externos
-Modyo recomienda el uso de indexadores externos sólo en casos en dónde se pueda justificar su incorporación, ya que estas herramientas generan costos adicionales que pueden ser elevados según el volumen de búsquedas que se realicen en ellas.
+Modyo recomienda el uso de indexadores externos sólo en casos donde se pueda justificar su incorporación, ya que estas herramientas generan costos adicionales que pueden ser elevados según el volumen de búsquedas que se realicen en ellas.
 :::
 
 
@@ -198,7 +195,7 @@ Modyo tiene diversas funcionalidades que te permiten incorporar elementos estruc
 - Rendimiento de los sitios públicos
 
 :::tip Expertos de Modyo
-La optimización para motores de búsqueda puede ser fundamental para lograr los objetivos empresariales, pero también puede resultar complejo abordarlo. Modyo pone ofrece servicios profesionales con expertos en SEO que pueden colaborar en la definición e implementación de estrategias para maximizar los resultados. Si deseas obtener más información, no dudes en ponerte en contacto con un ejecutivo comercial o de atención al cliente de Modyo.
+La optimización para motores de búsqueda puede ser fundamental para lograr los objetivos empresariales, pero también puede resultar complejo abordarlo. Modyo ofrece servicios profesionales con expertos en SEO que pueden colaborar en la definición e implementación de estrategias para maximizar los resultados. Si deseas obtener más información, no dudes en ponerte en contacto con un ejecutivo comercial o de atención al cliente de Modyo.
 :::
 
 
@@ -214,7 +211,7 @@ Para Google Analytics, marcaje se refiere a la implementación de código en un 
 
 El marcaje para Google Analytics es esencial para el seguimiento y la evaluación del rendimiento del sitio o la aplicación. Permite a los propietarios y administradores del sitio entender cómo los usuarios interactúan con su contenido, qué páginas son más populares, cuánto tiempo pasan en el sitio, las fuentes de tráfico, las conversiones y otros detalles importantes. Estos datos son valiosos para tomar decisiones informadas sobre estrategias de marketing, diseño de sitio y optimización de la experiencia del usuario.
 
-Para implementar el marcaje con Modyo, se deberán primero definir los objetivos de negocio que se desean medir y luego implementar el código y etiquetas dentro de las plantillas de los sitios. Además, puedes utilizar Google Tag Manager, desde dónde podrás administrar definiciones de marcaje de forma externa al sitio. El marcaje te permite capturar los eventos que suceden en el sitio, correlacionarlos con otros datos y obtener información valiosa sobre la interacción de los usuarios con el sitio.
+Para implementar el marcaje con Modyo, se deberán primero definir los objetivos de negocio que se desean medir y luego implementar el código y etiquetas dentro de las plantillas de los sitios. Además, puedes utilizar Google Tag Manager, desde donde podrás administrar definiciones de marcaje de forma externa al sitio. El marcaje te permite capturar los eventos que suceden en el sitio, correlacionarlos con otros datos y obtener información valiosa sobre la interacción de los usuarios con el sitio.
 
 
 

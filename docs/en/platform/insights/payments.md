@@ -4,7 +4,7 @@ search: true
 
 # Payments
 
-Modyo also shows a statistics of transactions within the site, which customers have made during the last time.
+Modyo also shows statistics of transactions within the site, which customers have made recently.
 
 These numbers can be seen according to Date, Order Status and Payment Method.
 

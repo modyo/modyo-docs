@@ -12,11 +12,6 @@ We're excited to have you on board and exploring our platform!
 
 We've designed this documentation to make your experience as easy and satisfying as possible. You can browse these documents from start to finish or navigate to a specific section; all contents are interconnected to facilitate your learning process.
 
-:::tip Older Versions
-
-The current documentation applies to the latest version (Modyo 10). If you need information about previous versions (Modyo 9.2), [you can access it here](https://9-2.docs.modyo.com/en/).
-
-:::
 
 ### What is Modyo?
 

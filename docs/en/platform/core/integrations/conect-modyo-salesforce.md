@@ -368,7 +368,7 @@ To generate one, we are going to search for <b>Named Credentials</b> inside Setu
    Identity Type        
   </td>
   <td>
-   Named Pricipal
+   Named Principal
   </td>
  </tr>
  <tr>
@@ -376,7 +376,7 @@ To generate one, we are going to search for <b>Named Credentials</b> inside Setu
    Authentication Protocol      
   </td>
   <td>
-   OAith 2.0
+   OAuth 2.0
   </td>
  </tr>
  <tr>
@@ -936,7 +936,7 @@ Complete the following information:
    Label
   </td>
   <td>
-   Uptdate Dynamic User
+   Update Dynamic User
   </td>
  </tr>
  <tr>
