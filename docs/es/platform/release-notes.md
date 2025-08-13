@@ -6,6 +6,21 @@ search: true
 
 ## 10.1
 
+
+### 10.1.1 - 23 de julio de 2025
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Mejora visual de la edición de flujos condicionales
+* Corrige problema de scroll en el builder de las originaciones
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Agrega edición de vistas de inicio, resumen y de completado en la página de una originación
+* Mejora en la evaluación de condiciones durante el completado de una submission
+* Corrige valor entregado por field de tipo checkbox que ahora entrega un arreglo con los valores seleccionados
+
+
 ### 10.1.0 - 3 de julio de 2025
 
 <Badge text="Core" type="core" vertical="middle"/>

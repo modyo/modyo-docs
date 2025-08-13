@@ -6,6 +6,21 @@ search: true
 
 ## 10.1
 
+
+### 10.1.1 - July 23, 2025
+
+<Badge text="Customers" type="customers" vertical="middle"/>
+
+* Visual improvement for conditional flow editing
+* Fixes scroll issue in origination builder
+
+<Badge text="Channels" type="channels" vertical="middle"/>
+
+* Adds editing of start, summary, and completion views on origination pages
+* Improvement in condition evaluation during submission completion
+* Fixes value returned by checkbox field that now returns an array with selected values
+
+
 ### 10.1.0 - July 3, 2025
 
 <Badge text="Core" type="core" vertical="middle"/>
