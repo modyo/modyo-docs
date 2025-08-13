@@ -17,7 +17,7 @@ search: true
 
 * Agrega edición de vistas de inicio, resumen y de completado en la página de una originación
 * Mejora en la evaluación de condiciones durante el completado de una submission
-* Corrige valor entregado por field de tipo checkbox ahora entrega un arreglo con los valores seleccionados
+* Corrige valor entregado por field de tipo checkbox que ahora entrega un arreglo con los valores seleccionados
 
 
 ### 10.1.0 - 3 de julio de 2025
