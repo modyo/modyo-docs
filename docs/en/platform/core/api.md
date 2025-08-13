@@ -129,7 +129,7 @@ emails      [...]
 
 ## Calling the API
 
-Once you know the service you will be querying according to [Exploring the API](/en/platform/core/api.html#exploring-the-api) and a [Authentication](/en/platform/core/api.html#authentication) method, you can make a _request_ to the URL of the requested resource.
+Once you know the service you will be querying according to [Exploring the API](/en/platform/core/api#exploring-the-api) and a [Authentication](/en/platform/core/api#authentication) method, you can make a _request_ to the URL of the requested resource.
 
 For this example, we'll get the list of all email campaigns that were created on the platform. According to the documentation in Swagger _ (test.modyo.com/api/admin/docs) _, you need to call the following URL:
 
@@ -282,7 +282,7 @@ Keep in mind that when you sign out of any of your sites, a _GET_ will be made t
 4. Once the application is registered, it assigns the application to the users who will make use of the API. To do this, in the side menu, expand **Settings** and click on **Team**.
 5. Select a user with an administrative role within the desired application. 
 
-For more details, see [Users and Roles](/en/platform/core/roles.html)
+For more details, see [Users and Roles](/en/platform/core/roles)
 
 6. In the admin user edit view, click _API Access_ and select the option **New API Access**.
 

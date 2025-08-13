@@ -140,11 +140,11 @@ To resize an image, you must first copy the Liquid code to render the image. To 
 Once you have the Liquid code of the image, access the work area where you want to insert the image, whether in templates, pages, or widgets, and follow these steps:
 
 1. Paste the Liquid code. It should look something like this:
-`{{ 'ec0a3e4-ccdb-48c5-87be-5e1eca560dee' | asset_image }}`
+<span v-pre>`{{ 'ec0a3e4-ccdb-48c5-87be-5e1eca560dee' | asset_image }}`</span>
 2. Add the Liquid filter, it can be height, width, or quality, following any of these formats:
-- `asset_image: width: XXX` where XXX is the desired pixel size.
-- `asset_image: quality: XX` where XX is the desired percentage of quality.
-- `asset_image: width: XXX, quality: XX, widths: 'XXX, XXX, XXX, sizes: (min-width: XXXpx) XXXpx` adapting the values according to your needs to ensure that the image fits the different screens and resolutions of your user's devices, using the [srcset](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/srcset) attribute for responsive support.
+- <span v-pre>`asset_image: width: XXX`</span> where XXX is the desired pixel size.
+- <span v-pre>`asset_image: quality: XX`</span> where XX is the desired percentage of quality.
+- <span v-pre>`asset_image: width: XXX, quality: XX, widths: 'XXX, XXX, XXX, sizes: (min-width: XXXpx) XXXpx`</span> adapting the values according to your needs to ensure that the image fits the different screens and resolutions of your user's devices, using the [srcset](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/srcset) attribute for responsive support.
 3. Click **save**.
 4. Click on **publish**.
 

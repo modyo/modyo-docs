@@ -17,8 +17,8 @@ Along the **top bar**, on the left, you can see the widget name and current stat
 - **Draft**: This status appears when a widget has just been created or when it has been unpublished.
 - **Published**: This status appears after a publication and when the editable and published versions are the same.
 - **Pending changes**: This status appears if there is already a published version of a widget, but there are pending changes to be published in the editable version.
-- **In review**: This status appears when [team review](/en/platform/core/key-concepts.html) is enabled and this widget is in review.
-- **Approved**: This status appears when [team review](/en/platform/core/key-concepts.html) is enabled and the review conditions for the item are met. When in this state, templates are ready to be published.
+- **In review**: This status appears when [team review](/en/platform/core/key-concepts) is enabled and this widget is in review.
+- **Approved**: This status appears when [team review](/en/platform/core/key-concepts) is enabled and the review conditions for the item are met. When in this state, templates are ready to be published.
 
 On the right, you'll find the following actions:
 **Preview**: Opens the preview of the editable version of the widget in a new tab.
@@ -27,7 +27,7 @@ On the right, you'll find the following actions:
 You can preview the widgets as a user without a session or a user with a Modyo session. For this, it is recommended to start or close the Modyo session on the site before entering preview mode. This is because starting or closing a session within preview mode can generate security errors such as _x-frame-options_ or _mixed-content_, depending on the site's custom domain and SSL settings.
 :::
 
-**Differences**: Takes you to the [differences view](/en/platform/core/key-concepts.html), where you can compare the changes between multiple versions of the widget.
+**Differences**: Takes you to the [differences view](/en/platform/core/key-concepts), where you can compare the changes between multiple versions of the widget.
 
 By default, you start by comparing the published version with the editable version. Use the version selectors to compare with backup versions. If the icon does not appear, it means that there is no published version of this widget.
 
@@ -39,7 +39,7 @@ By default, you start by comparing the published version with the editable versi
 
 - **Save**: Saves current changes.
 - **Submit for review**: If team review is enabled, you can submit the widget for review and notify reviewers that the widget is ready for review.
-- **Publish**: Takes you to the [joint publication](/en/platform/core/key-concepts.html#review-and-joint-publication) view where you can publish your widgets.
+- **Publish**: Takes you to the [joint publication](/en/platform/core/key-concepts#review-and-joint-publication) view where you can publish your widgets.
 
 **Other main actions**:
 
@@ -54,18 +54,18 @@ Only widgets that have been unpublished can be archived.
 Archived widgets will not appear in the initial list or in the widget selection modal in the Page Builder. To restore an archived widget, you must go to the edit view, using the **Restore** option in the upper right corner of the view.
 :::
 
-Once a widget is published, it will be visible in the custom widget selection modal in the [Page Builder](/en/platform/channels/pages.html).
+Once a widget is published, it will be visible in the custom widget selection modal in the [Page Builder](/en/platform/channels/pages).
 
 :::tip Tip
-To learn more about the publication flow, review the [Versioning](/en/platform/core/key-concepts.html#versioning) section.
+To learn more about the publication flow, review the [Versioning](/en/platform/core/key-concepts#versioning) section.
 :::
 
 In the work area you can see:
 
 - **Code Tabs**: A JavaScript, CSS, and HTML tab is available to build widgets.
-- **File manager**: By clicking on it, the file management modal will open, where you can filter and search for the files you have uploaded in the [File manager](/en/platform/content/asset-manager.html) and copy their URL to use them in the widget. You can also upload new files from this modal.
+- **File manager**: By clicking on it, the file management modal will open, where you can filter and search for the files you have uploaded in the [File manager](/en/platform/content/asset-manager) and copy their URL to use them in the widget. You can also upload new files from this modal.
 - **Keyboard shortcuts**: Displays a small informational window with some useful keyboard shortcuts.
-- **Snippets**: Displays a list of available snippets from the [Template Builder](/en/platform/channels/templates.html#snippets) and copies their code to reference them in the widget.
+- **Snippets**: Displays a list of available snippets from the [Template Builder](/en/platform/channels/templates#snippets) and copies their code to reference them in the widget.
 - **Changes**: If changes have been saved and not published, this list will show all the times each file (JS, CSS, and HTML) has been saved. Clicking on a sub-version changes the content of the tab to the content of the sub-version that was clicked.
 
 :::tip Tip
@@ -76,7 +76,7 @@ To avoid losing any changes you currently have, you must save before jumping bet
 When the widget is published, no available changes will be observed. This is because each version starts without changes from the production version. If the widget is restored to an older version, the sub-versions will also be restored, so you can access all instances where changes were saved in that version.
 :::
 
-In the three widget tabs, Liquid can be used. For more information, review [the associated Liquid documentation](/en/platform/channels/liquid-markup.html).
+In the three widget tabs, Liquid can be used. For more information, review [the associated Liquid documentation](/en/platform/channels/liquid-markup).
 
 In the properties column you can see:
 
@@ -99,7 +99,7 @@ To create a new Widget and have a _micro frontend_ for your sites and publicatio
 
 :::tip Tip
 
-Modyo allows you to preview a widget locally and see it styled for your site before publishing it. To do this, check the related [documentation](https://docs.modyo.com/en/platform/channels/cli.html#quick-guide).
+Modyo allows you to preview a widget locally and see it styled for your site before publishing it. To do this, check the related [documentation](https://docs.modyo.com/en/platform/channels/cli#quick-guide).
 :::
 
 ## Widget Variables
@@ -110,7 +110,7 @@ In the variables tab, you can see the list of variables created in the widget, a
 * **Modify** the variable
 * **Delete** the variable.
 
-Next to the name of each variable, you will see an "overwritten" indicator if the variable also exists at the account or site level in the [global variables](/en/platform/core/key-concepts.html#global-variables).
+Next to the name of each variable, you will see an "overwritten" indicator if the variable also exists at the account or site level in the [global variables](/en/platform/core/key-concepts#global-variables).
 
 When modifying a variable, you can decide the name and default value that this variable will take in the widget. In addition, you can decide if you want to make a list of values available so that when a widget is instantiated on a page, it is possible to choose between these different values.
 
@@ -251,7 +251,7 @@ function loadLocaleMessages() {
 
 Create a javascript object in Snippets to be able to use Liquid in your Widgets.
 
-Widgets, being decoupled from the platform, have the disadvantage of not being able to use Liquid directly, and we do not have access to [liquid drops](/en/platform/channels/drops). To work with them, you will have to make them available via javascript from the platform. [**Liquid Markup**](/en/platform/channels/liquid-markup.html) is an important part of the platform, of how we build views, and how we access the content on it. It also gives you access to [**drops**](/en/platform/channels/drops), context variables that allow you to interact with your views more dynamically. For example, you can determine what content to show the user according to the segment they belong to, hide a menu depending on the page being visited, etc.
+Widgets, being decoupled from the platform, have the disadvantage of not being able to use Liquid directly, and we do not have access to [liquid drops](/en/platform/channels/drops). To work with them, you will have to make them available via javascript from the platform. [**Liquid Markup**](/en/platform/channels/liquid-markup) is an important part of the platform, of how we build views, and how we access the content on it. It also gives you access to [**drops**](/en/platform/channels/drops), context variables that allow you to interact with your views more dynamically. For example, you can determine what content to show the user according to the segment they belong to, hide a menu depending on the page being visited, etc.
 
 
 Follow these steps to create a snippet with Liquid variables:

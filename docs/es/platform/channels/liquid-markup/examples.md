@@ -8,7 +8,7 @@ En cualquier parte de Channels (Sitios, Widgets y Plantillas), puedes usar Liqui
 
 ## Desplegar listado de Entradas de un Tipo
 
-En [Páginas de Contenido](/es/platform/channels/pages.html#pagina-de-contenido), puedes generar un listado de todas las Entradas de un Tipo. En este ejemplo, se obtienen todas las Entradas del Tipo `product` en el Espacio `My Bank`. La variable `entries` de la línea 1 obtiene un array del drop [Entry](/es/platform/channels/drops.html#entrada). Este array se itera para mostrar el `meta.uuid` y `meta.title` de cada Entrada por fila. 
+En [Páginas de Contenido](/es/platform/channels/pages#pagina-de-contenido), puedes generar un listado de todas las Entradas de un Tipo. En este ejemplo, se obtienen todas las Entradas del Tipo `product` en el Espacio `My Bank`. La variable `entries` de la línea 1 obtiene un array del drop [Entry](/es/platform/channels/drops#entrada). Este array se itera para mostrar el `meta.uuid` y `meta.title` de cada Entrada por fila. 
 
 ```liquid
 {% assign entries = spaces['my-bank'].types['product'].entries %}

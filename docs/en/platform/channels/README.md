@@ -15,12 +15,12 @@ version: 9.2
 
 **Modyo Channels** includes design templates that are HTML-editable, facilitating code reuse.
 
-**Modyo Channels** also features a templating system based on [Liquid Markup](/en/platform/channels/liquid-markup.html) that allows for dynamic interpolation of information, efficiently processed server-side.
+**Modyo Channels** also features a templating system based on [Liquid Markup](/en/platform/channels/liquid-markup) that allows for dynamic interpolation of information, efficiently processed server-side.
 
 ### Main functionalities
 
-- [Site management](/en/platform/channels/sites.html) to organize digital channels.
-- [Dynamic pages](/en/platform/channels/pages.html) to define the structure of each site and add content to it.
-- [Widgets](/en/platform/channels/widgets.html) to create reusable components using technologies such as Javascript, HTML, and CSS.
-- [Templates](/en/platform/channels/templates.html) to organize the global structures of the site and the design system.
-- [Stages](/en/platform/channels/sites.html#stages) to create different branches within a site where you can work in encapsulated environments, with the option to synchronize your changes.
+- [Site management](/en/platform/channels/sites) to organize digital channels.
+- [Dynamic pages](/en/platform/channels/pages) to define the structure of each site and add content to it.
+- [Widgets](/en/platform/channels/widgets) to create reusable components using technologies such as Javascript, HTML, and CSS.
+- [Templates](/en/platform/channels/templates) to organize the global structures of the site and the design system.
+- [Stages](/en/platform/channels/sites#stages) to create different branches within a site where you can work in encapsulated environments, with the option to synchronize your changes.

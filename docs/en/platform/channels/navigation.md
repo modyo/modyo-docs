@@ -6,7 +6,7 @@ search: true
 
 Navigation allows you to organize and present a list of elements to facilitate user access to key points of your site.
 
-This section describes a nested list of elements that will appear on the site when using the <span v-pre>`{% menu %}`</span> tag in [Templates](/en/platform/channels/templates.html).
+This section describes a nested list of elements that will appear on the site when using the <span v-pre>`{% menu %}`</span> tag in [Templates](/en/platform/channels/templates).
 
 Navigation only allows three levels of depth: a main list and up to two nested sub-elements in each of the main items. By default, when creating a site, Modyo includes a template and a basic menu that you can modify according to your needs.
 
@@ -14,8 +14,8 @@ At the top of the view, you will find the publication status of the menu:
 
 - **Published**: This status appears after a publication and when the editable and published versions are the same.
 - **Pending changes**: This status appears if there is already a published version, but there are pending changes to be published in your editable version.
-- **In review**: This status appears when [Team Review](/en/platform/core/key-concepts.html) is enabled and the editable version has been submitted for review.
-- **Approved**: This status appears when [Team Review](/en/platform/core/key-concepts.html) is enabled and if the item's review conditions were met. If it is in this state, your templates can now be published.
+- **In review**: This status appears when [Team Review](/en/platform/core/key-concepts) is enabled and the editable version has been submitted for review.
+- **Approved**: This status appears when [Team Review](/en/platform/core/key-concepts) is enabled and if the item's review conditions were met. If it is in this state, your templates can now be published.
 
 In the upper right, you will find the last publication date and the available actions:
 
@@ -29,7 +29,7 @@ You can preview the changes as a user without a session or a user with a Modyo s
 The menu you created will only be displayed on a page if you add it through a published template. Otherwise, the menu will not be requested and will not appear on the page.
 :::
 
-**Differences**: Click here to access the [differences view](/en/platform/core/key-concepts.html#revert-a-change), where you can compare changes between different versions of your menu.
+**Differences**: Click here to access the [differences view](/en/platform/core/key-concepts#revert-a-change), where you can compare changes between different versions of your menu.
 
 By default, you start by comparing the published version with the editable version. Use the version selectors to compare with backup versions.
 
@@ -38,10 +38,10 @@ Every time you publish a version, the version that was published becomes a backu
 
 By default, up to 20 backups are saved so that the twenty most recent backups can be compared, restored, and rolled back.
 
-For more information on versioning, see the [Versioning](/en/platform/core/key-concepts.html#versioning) section.
+For more information on versioning, see the [Versioning](/en/platform/core/key-concepts#versioning) section.
 :::
 
-**Activity/Comments**: Only enabled if you have [team review](/en/platform/core/key-concepts.html) enabled. Clicking it opens a sidebar with the activity history and menu comments.
+**Activity/Comments**: Only enabled if you have [team review](/en/platform/core/key-concepts) enabled. Clicking it opens a sidebar with the activity history and menu comments.
 
 At the end of the sidebar, you will see a text box where you can type a comment. Next to each activity, you can click _view detail_ to show the full information for that activity log.
 
@@ -65,7 +65,7 @@ Your menu is now public, but it is not being called. You need to use a template 
 - **Save**: Saves all menu changes.
 - **Send to review**: Changes the menu status to "Pending review". In this state, you can continue making changes, but each change will be notified via email to the assigned reviewers.
 - **Reject**: Returns to the "In editing" state, notifying reviewers that the item was rejected.
-- **Publish**: Once the menu has been approved, you can go to the [joint publication](/en/platform/channels/sites.html#review-and-joint-publication) view to publish your navigation.
+- **Publish**: Once the menu has been approved, you can go to the [joint publication](/en/platform/channels/sites#review-and-joint-publication) view to publish your navigation.
 
 In the right sidebar, you will see a bar that changes according to the item selected in the main area. In this section, you can see the options:
 

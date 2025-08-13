@@ -277,7 +277,7 @@ Para crear una variable global, sigue esto pasos:
 1. Llena el **Nombre** y **Valor** de la variable.
 1. Haz click en **Guardar**.
 
-Las variables globales se pueden utilizar para añadir valores para distintos idiomas. Si lo requieres, también tienes la opción de sobrescribir los valores de variables globales en sitios y widgets, utilizando los apartados de [configuración del sitio](/es/platform/channels/sites.html#variables-del-sitio) y [widgets personalizados](/es/platform/channels/widgets.html#variables-del-widget), respectivamente.
+Las variables globales se pueden utilizar para añadir valores para distintos idiomas. Si lo requieres, también tienes la opción de sobrescribir los valores de variables globales en sitios y widgets, utilizando los apartados de [configuración del sitio](/es/platform/channels/sites#variables-del-sitio) y [widgets personalizados](/es/platform/channels/widgets#variables-del-widget), respectivamente.
 
 :::warning Atención
 Cuando uses las variables globales, siempre se tomará como preferencia las variables definidas en el nivel más bajo, quedando primero las variables definidas en el widget, luego las definidas en el sitio, y por último las variables definidas a nivel de cuenta, por lo que debes ser cuidadoso al momento de definir variables en widgets o el sitio con el mismo nombre que las variables de la cuenta.

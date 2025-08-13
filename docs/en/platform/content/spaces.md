@@ -5,11 +5,11 @@ sidebarDepth: 3
 
 # Spaces
 
-A space is a repository where team members can define [content types](https://docs.modyo.com/es/platform/content/types.html) and entries.
+A space is a repository where team members can define [content types](https://docs.modyo.com/es/platform/content/types) and entries.
 
 Spaces allow you to organize content in the areas where you work, for better distribution and order.
 
-You can use this content inside and outside the Modyo platform, through the public API or when creating a site in the Channels module. Configure access from various sources to allow the service that consumes the API to interpret it. See the [API](https://docs.modyo.com/es/platform/content/public-api-reference.html#api) section of our documentation for more information.
+You can use this content inside and outside the Modyo platform, through the public API or when creating a site in the Channels module. Configure access from various sources to allow the service that consumes the API to interpret it. See the [API](https://docs.modyo.com/es/platform/content/public-api-reference#api) section of our documentation for more information.
 
 ## About the interface
 
@@ -75,10 +75,10 @@ To add a language:
 
 Once you have added a secondary language, when you modify an entry, you will see a language selector next to the title of the entry.
 
-For more information on how to translate an entry into a secondary language, review the [Translate an entry](https://docs.modyo.com/es/platform/content/entries.html#traducir-una-entrada) section.
+For more information on how to translate an entry into a secondary language, review the [Translate an entry](https://docs.modyo.com/es/platform/content/entries#traducir-una-entrada) section.
 
 :::tip Tip
-To select one of the available languages from an entry in its corresponding sections, review the documentation of [Public API](/en/platform/content/public-api-reference.html#filter), [Javascript SDK](/en/platform/content/public-api-reference.html#sdk-de-javascript) and in [Liquid SDK](/en/platform/content/public-api-reference.html#filtrar-entradas)
+To select one of the available languages from an entry in its corresponding sections, review the documentation of [Public API](/en/platform/content/public-api-reference#filter), [Javascript SDK](/en/platform/content/public-api-reference#sdk-de-javascript) and in [Liquid SDK](/en/platform/content/public-api-reference#filtrar-entradas)
 :::
 
 
@@ -103,7 +103,7 @@ When deciding to use SSL, consider:
 -  **SSL**: Wildcard certificates are not allowed.
 - **NO SSL**: Wildcards are allowed in these environments, but you must enable them manually by sending a ticket to [Modyo support](https://support.modyo.com/hc/en-us). By default, Modyo uses SSL.
 
-For more information, review the [Security](https://docs.modyo.com/es/platform/channels/sites.html#security-headers) section of the Modyo documentation.
+For more information, review the [Security](https://docs.modyo.com/es/platform/channels/sites#security-headers) section of the Modyo documentation.
 :::
 
 
@@ -117,7 +117,7 @@ The configuration options for team review are as follows:
 - **Force review**: Requires at least one specific user to review the content.
 - **Require all**: Requires all selected users to approve the item before it is published.
 
-For more information on how to configure this option, go to [Team Review](/en/platform/core/key-concepts.html).
+For more information on how to configure this option, go to [Team Review](/en/platform/core/key-concepts).
 
 ### Team members
 

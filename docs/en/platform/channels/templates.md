@@ -12,8 +12,8 @@ In the templates section, the main menu is hidden to optimize the work area. At 
 
 - **Published**: There is a published version and the editable version is identical.
 - **Pending changes**: There is a published version, but there are changes pending publication in your editable version.
-- **Under review**: [Team review](/en/platform/core/key-concepts.html) is active, and the editable version has been submitted for review.
-- **Approved**: [Team review](/en/platform/core/key-concepts.html) is active and the item's review conditions have been met. In this state, the template is ready to be published.
+- **Under review**: [Team review](/en/platform/core/key-concepts) is active, and the editable version has been submitted for review.
+- **Approved**: [Team review](/en/platform/core/key-concepts) is active and the item's review conditions have been met. In this state, the template is ready to be published.
 
 At the top right, you can see the last date of publication and icons with the available actions:
 
@@ -28,7 +28,7 @@ You can preview the changes as a non-session user or a user with an active Modyo
 :::tip Tip
 Every time you publish a version, the version that was published becomes a backup version. By default, up to 20 backups are saved, allowing you to compare, restore, and roll back to the last 20 versions
 
-For more information on versioning, see the section on [versioning](/en/platform/core/key-concepts.html#versioning).
+For more information on versioning, see the section on [versioning](/en/platform/core/key-concepts#versioning).
 :::
 
 **Search in templates**: Displays a sidebar with a text search engine that explores all editable templates.
@@ -127,9 +127,9 @@ It is necessary that your account's CDN is in the cloud for changes to be reflec
 
 In the views section, you can customize four types of errors:
 
-* **Disabled**: Displayed when the site you are trying to access is [disabled](/en/platform/channels/sites.html).
-* **404**: If in the [site restrictions](/en/platform/channels/sites.html#privacy) configuration you decide to show 404 instead of redirecting to the home page, this error appears when entering an undefined URL.
-* **Privacy**: Shown when you do not have permissions to access the [site](/en/platform/channels/sites.html#privacy) or one of its [pages](/en/platform/channels/pages.html#privacy).
+* **Disabled**: Displayed when the site you are trying to access is [disabled](/en/platform/channels/sites).
+* **404**: If in the [site restrictions](/en/platform/channels/sites#privacy) configuration you decide to show 404 instead of redirecting to the home page, this error appears when entering an undefined URL.
+* **Privacy**: Shown when you do not have permissions to access the [site](/en/platform/channels/sites#privacy) or one of its [pages](/en/platform/channels/pages#privacy).
 * **Template**: Visible when the loaded page has a Liquid syntax error. It is unlikely that you will see this view, as from Modyo 8.1 onwards, the platform performs a syntax check before saving and publishing changes to Templates.
 
 ## CSS and JavaScript
@@ -165,7 +165,7 @@ Once saved and published, it translates into the following HTML code:
 <script src='my-js' type='text/javascript' async='async' defer='defer'></script>
 ```
 
-To obtain detailed information and learn about the parameters supported by these filters, refer to the [Liquid filters section](/en/platform/channels/liquid-markup.html#standard-filters).
+To obtain detailed information and learn about the parameters supported by these filters, refer to the [Liquid filters section](/en/platform/channels/liquid-markup#standard-filters).
 
 
 ## Snippets
@@ -187,7 +187,7 @@ For the system to recognize the programming language to which the snippet belong
 :::
 
 :::tip Tip
-All elements of the Template Builder use Liquid as the template engine. For more information about Liquid and how to use it, see the [Liquid Markup](/en/platform/channels/liquid-markup.html) section.
+All elements of the Template Builder use Liquid as the template engine. For more information about Liquid and how to use it, see the [Liquid Markup](/en/platform/channels/liquid-markup) section.
 :::
 
 In the work area, below the tabs, you will find a bar with these elements:
@@ -195,7 +195,7 @@ In the work area, below the tabs, you will find a bar with these elements:
 **Toolbar items**
 The toolbar below the Template Builder tabs contains the following elements:
 
-- **File Manager**: Opens a modal that allows you to access all the files in your account and copy their URL. Select the **Upload Files** tab to upload new files. For more information about the benefits and features of File Manager, go to [File Manager](/en/platform/content/asset-manager.html)
+- **File Manager**: Opens a modal that allows you to access all the files in your account and copy their URL. Select the **Upload Files** tab to upload new files. For more information about the benefits and features of File Manager, go to [File Manager](/en/platform/content/asset-manager)
 - **Keyboard Shortcuts**: Shows useful keyboard shortcuts for Templates.
 - **Snippets**: Displays a list with all the snippets and the option to copy their reference code.
 - **Changes**: Displays a list of all the times and states in which you have saved the current version. By clicking on one of the sub-versions, you change the content of the template to that sub-version.
@@ -209,14 +209,14 @@ Subversions are specific to each template, so some may have changes and others m
 :::
 
 :::tip Tip
-If you restore a previous version to the editable version, you can access the sub-versions of each template in that version. You can learn more about [versioning](/en/platform/core/key-concepts.html#versioning) here.
+If you restore a previous version to the editable version, you can access the sub-versions of each template in that version. You can learn more about [versioning](/en/platform/core/key-concepts#versioning) here.
 :::
 
 To restore all templates to their original version, click on the secondary action in the top bar **Restore All**. For the changes to take effect, you must publish the templates.
 
 ## SEO
 
-SEO [(Search Engine Optimization)](/en/platform/channels/sites.html#seo) is essential for positioning your site and content.
+SEO [(Search Engine Optimization)](/en/platform/channels/sites#seo) is essential for positioning your site and content.
 
 In Modyo, you can control how search engines read your site and content, by dynamically adding meta tags, depending on the attributes you add to your pages and content.
 

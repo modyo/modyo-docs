@@ -58,7 +58,7 @@ To grant access to external domains, write them separated by commas, for example
 
 ## Content Delivery Token (JWT - JSON Web Token)
 
-This key or _secret_ is used by Modyo to sign user JWTs to access [private content through the API](/en/platform/content/public-api-reference.html#private-content).
+This key or _secret_ is used by Modyo to sign user JWTs to access [private content through the API](/en/platform/content/public-api-reference#private-content).
 
 :::warning Attention
 If you generate a new key, all requests for private content must go through Modyo. This is because JWTs signed by Modyo with the old key will no longer be valid.
@@ -162,6 +162,6 @@ In addition, administrators can generate tokens to access the platform's managem
 
 If you think you have identified a security vulnerability in Modyo, please help us by reporting the problem.
 
-Modyo offers secure and confidential channels for reporting security incidents through our [support center](https://support.modyo.com/hc/es) or by sending an email to <a href="mailto:security@modyo.com">security@modyo.com</a>.
+Modyo offers secure and confidential channels for reporting security incidents through our [support center](https://support.modyo.com/hc/en-us) or by sending an email to <a href="mailto:security@modyo.com">security@modyo.com</a>.
 
 Your collaboration is fundamental to maintaining the integrity and security of the platform.

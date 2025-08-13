@@ -17,8 +17,8 @@ En la barra superior se encuentran las siguientes secciones:
 - **Borrador**: Este estado aparece cuando recién se haya creado un widget o cuando se haya despublicado.
 - **Publicado**: Este estado aparece luego de haber hecho una publicación y cuando las versiones editable y publicada son iguales.
 - **Cambios pendientes**: Este estado aparece si ya hay una versión publicada, pero hay cambios pendientes de publicar en versión editable.
-- **En revisión**: Este estado aparece cuando esté habilitada la [revisión en equipo](/es/platform/core/key-concepts.html) y se haya enviado a revisión la versión editable.
-- **Aprobado**: Este estado aparece cuando esté habilitada la [revisión en equipo](/es/platform/core/key-concepts.html) y se cumplen las condiciones de revisión del elemento. Si está en este estado, las plantillas están listas para ser publicadas.
+- **En revisión**: Este estado aparece cuando esté habilitada la [revisión en equipo](/es/platform/core/key-concepts) y se haya enviado a revisión la versión editable.
+- **Aprobado**: Este estado aparece cuando esté habilitada la [revisión en equipo](/es/platform/core/key-concepts) y se cumplen las condiciones de revisión del elemento. Si está en este estado, las plantillas están listas para ser publicadas.
 
 A la derecha, encuentras las siguientes acciones:
 **Vista previa**: Abre en una nueva pestaña la vista previa de la versión editable del widget.
@@ -27,7 +27,7 @@ A la derecha, encuentras las siguientes acciones:
 Puedes previsualizar los widgets como usuario sin sesión o usuario con sesión de Modyo. Para esto, es recomendable iniciar o cerrar la sesión de Modyo en el sitio antes de entrar al modo vista previa. Esto se debe a que iniciar o cerrar sesión dentro del modo de vista previa puede generar errores de seguridad como _x-frame-options_ o _mixed-content_, dependiendo de la configuración de dominios personalizados y SSL del sitio.
 :::
 
-**Diferencias**: Te lleva a la [vista de diferencias](/es/platform/core/key-concepts.html), en la cual puedes comparar los cambios que hay entre múltiples versiones del widget.
+**Diferencias**: Te lleva a la [vista de diferencias](/es/platform/core/key-concepts), en la cual puedes comparar los cambios que hay entre múltiples versiones del widget.
 
 Por defecto comienzas comparando la versión publicada con la versión editable. Usa los selectores de versiones para comparar con versiones de respaldo. Si el ícono no aparece, significa que no hay versión publicada de este widget.
 
@@ -39,7 +39,7 @@ Por defecto comienzas comparando la versión publicada con la versión editable.
 
 - **Guardar**: Guarda los cambios actuales.
 - **Enviar a revisión**: Si está habilitada la revisión en equipo, puedes enviar el widget a revisión y notificar a los revisores que el widget está listo para ser revisado.
-- **Publicar**: Te lleva a la vista de [publicación conjunta](/es/platform/core/key-concepts.html#revision-y-publicacion-conjunta) donde puedes publicar tus widgets.
+- **Publicar**: Te lleva a la vista de [publicación conjunta](/es/platform/core/key-concepts#revision-y-publicacion-conjunta) donde puedes publicar tus widgets.
 
 **Otras acciones principales**:
 
@@ -54,18 +54,18 @@ Sólo se pueden archivar los widgets que han sido despublicados previamente.
 Los widgets archivados no aparecerán en el listado inicial ni tampoco en el modal de selección de widgets en el Page Builder. Para restaurar un widget archivado, se debe entrar a la vista de edición, usando la opción **Restaurar** en la esquina superior derecha de la vista.
 :::
 
-Una vez que un widget está publicado, este será visible en el modal de selección de widgets personalizados en el [Page Builder.](/es/platform/channels/pages.html)
+Una vez que un widget está publicado, este será visible en el modal de selección de widgets personalizados en el [Page Builder.](/es/platform/channels/pages)
 
 :::tip Tip
-Para aprender más sobre el flujo de publicación, revise la sección de [Versionado.](/es/platform/core/key-concepts.html#versionado)
+Para aprender más sobre el flujo de publicación, revise la sección de [Versionado.](/es/platform/core/key-concepts#versionado)
 :::
 
 En el área de trabajo se puede ver:
 
 - **Pestañas de código**: Se tiene a disposición una pestaña de JavaScript, CSS, y HTML para construir widgets.
-- **Gestor de archivos**: Al hacer click, se levanta el modal de gestión de archivos, donde se puede filtrar y buscar los archivos que has subido en el [Gestor de Archivos](/es/platform/content/asset-manager.html) y copiar su URL para usarlos en el widget. También se puede subir nuevos archivos desde este modal.
+- **Gestor de archivos**: Al hacer click, se levanta el modal de gestión de archivos, donde se puede filtrar y buscar los archivos que has subido en el [Gestor de Archivos](/es/platform/content/asset-manager) y copiar su URL para usarlos en el widget. También se puede subir nuevos archivos desde este modal.
 - **Atajos de teclado**: Muestra una pequeña ventana informativa con algunos atajos de teclado útiles.
-- **Snippets**: Muestra una lista de los snippets disponibles desde el [Template Builder](/es/platform/channels/templates.html#snippets) y se copia su código para referenciarlos en el widget.
+- **Snippets**: Muestra una lista de los snippets disponibles desde el [Template Builder](/es/platform/channels/templates#snippets) y se copia su código para referenciarlos en el widget.
 - **Cambios**: Si se han guardado cambios y no han publicado, mostrará este listado de todas las veces guardadas cada uno de los archivos (JS, CSS, y HTML). Al hacer click en una sub-versión, se cambia el contenido de la pestaña por el contenido de la sub-versión que se hizo click.
 
 :::tip Tip
@@ -76,7 +76,7 @@ Para no perder los cambios que tienes actualmente, se debe guardar antes de salt
 Cuando se publica el widget, no se observarán cambios disponibles. Esto es porque cada versión parte sin cambios desde la versión productiva. Si se restaura el widget a una versión anterior, también lo harán las sub-versiones, por lo que se puede acceder a todas las instancias en que se guardaron cambios en esa versión.
 :::
 
-En las tres pestañas del widget se puede hacer uso de Liquid. Para más información revise [la documentación asociada a Liquid.](/es/platform/channels/liquid-markup.html)
+En las tres pestañas del widget se puede hacer uso de Liquid. Para más información revise [la documentación asociada a Liquid.](/es/platform/channels/liquid-markup)
 
 En la columna de propiedades se pueden ver:
 
@@ -99,7 +99,7 @@ Para crear un nuevo Widget y tener un _micro frontend_ para tus sitios y publica
 
 :::tip Tip
 
-Modyo te permite previsualizar un widget localmente y verlo con el estilo de tu sitio antes de publicarlo. Para ello revisa la [documentación](https://docs.modyo.com/en/platform/channels/cli.html#quick-guide) relacionada.
+Modyo te permite previsualizar un widget localmente y verlo con el estilo de tu sitio antes de publicarlo. Para ello revisa la [documentación](https://docs.modyo.com/en/platform/channels/cli#quick-guide) relacionada.
 :::
 
 ## Variables del Widget
@@ -110,7 +110,7 @@ En la pestaña de variables puedes ver el listado de variables creadas en el wid
 * **Modificar** la variable
 * **Eliminar** la variable.
 
-Junto al nombre de cada variable verás un indicador "sobreescrita" si la variable también existe a nivel de cuenta o sitio en las [variables globales](/es/platform/core/key-concepts.html#variables-globales).
+Junto al nombre de cada variable verás un indicador "sobreescrita" si la variable también existe a nivel de cuenta o sitio en las [variables globales](/es/platform/core/key-concepts#variables-globales).
 
 Al modificar una variable, podrás decidir el nombre y valor por defecto que tomará esa variable en el widget. Además, podrás decidir si quieres disponibilizar un listado de valores para que al momento de instanciar el widget en una página, se pueda elegir entre estos distintos valores.
 
@@ -251,7 +251,7 @@ function loadLocaleMessages() {
 
 Crea un objeto javascript en Snippets para poder hacer uso de Liquid en tus Widgets.
 
-Los Widgets, al estar desacoplados de la plataforma, tienen la desventaja de no poder usar Liquid directamente y no tenemos acceso a [liquid drops](/es/platform/channels/drops), para poder trabajar con ellos los tendremos que hacer disponibles mediante javascript desde la plataforma. [**Liquid Markup**](/es/platform/channels/liquid-markup.html) es una parte importante de la plataforma, de como construimos las vistas, y accedemos al contenido en ella. También nos da acceso a [**drops**](/es/platform/channels/drops), variables de contexto que nos permiten interactuar con nuestras vistas de manera más dinámica. Por ejemplo, se puede determinar que contenido mostrar al usuario según el segmento al que pertenece, ocultar un menú según la página que se este visitando, etc.
+Los Widgets, al estar desacoplados de la plataforma, tienen la desventaja de no poder usar Liquid directamente y no tenemos acceso a [liquid drops](/es/platform/channels/drops), para poder trabajar con ellos los tendremos que hacer disponibles mediante javascript desde la plataforma. [**Liquid Markup**](/es/platform/channels/liquid-markup) es una parte importante de la plataforma, de como construimos las vistas, y accedemos al contenido en ella. También nos da acceso a [**drops**](/es/platform/channels/drops), variables de contexto que nos permiten interactuar con nuestras vistas de manera más dinámica. Por ejemplo, se puede determinar que contenido mostrar al usuario según el segmento al que pertenece, ocultar un menú según la página que se este visitando, etc.
 
 
 Sigue estos pasos para crear un snippet con variables de Liquid:

@@ -15,12 +15,12 @@ version: 9.2
 
 **Modyo Channels** cuenta con plantillas de diseño las cuales son editables por HTML, logrando facilitar la reutilización de código.
 
-**Modyo Channels**, cuenta además, con un sistema de plantillas basado en [Liquid Markup](/es/platform/channels/liquid-markup.html) que permite la interpolación dinámica de información la cual se procesa de forma eficiente desde el lado del servidor.
+**Modyo Channels**, cuenta además, con un sistema de plantillas basado en [Liquid Markup](/es/platform/channels/liquid-markup) que permite la interpolación dinámica de información la cual se procesa de forma eficiente desde el lado del servidor.
 
 ### Funcionalidades principales
 
-- [Gestión de sitios](/es/platform/channels/sites.html) para organizar los canales digitales.
-- [Páginas dinámicas](/es/platform/channels/pages.html) para definir la estructura de cada sitio y agregar contenido en el.
-- [Widgets](/es/platform/channels/widgets.html) para crear componentes reutilizables usando tecnologías como Javascript, HTML, y CSS.
-- [Plantillas](/es/platform/channels/templates.html) para organizar las estructuras globales del sitio y el sistema de diseño.
-- [Stages](/es/platform/channels/sites.html#stages) para crear distintas ramas dentro de un sitio en donde podrás trabajar ambientes encapsulados, con la opción de sincronizar tus cambios.
+- [Gestión de sitios](/es/platform/channels/sites) para organizar los canales digitales.
+- [Páginas dinámicas](/es/platform/channels/pages) para definir la estructura de cada sitio y agregar contenido en el.
+- [Widgets](/es/platform/channels/widgets) para crear componentes reutilizables usando tecnologías como Javascript, HTML, y CSS.
+- [Plantillas](/es/platform/channels/templates) para organizar las estructuras globales del sitio y el sistema de diseño.
+- [Stages](/es/platform/channels/sites#stages) para crear distintas ramas dentro de un sitio en donde podrás trabajar ambientes encapsulados, con la opción de sincronizar tus cambios.

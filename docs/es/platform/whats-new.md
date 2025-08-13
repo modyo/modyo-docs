@@ -14,7 +14,7 @@ Interfaz de usuario simplificada y más limpia, con la posibilidad de personaliz
 
 ### Aplicación de contenidos
 
-Permite su uso en modalidad _headless_ mediante sus [API y SDKs](/es/platform/content/public-api-reference.html), o desacoplada dentro de plantillas desarrolladas en [Liquid](/es/platform/channels/liquid-markup.html).
+Permite su uso en modalidad _headless_ mediante sus [API y SDKs](/es/platform/content/public-api-reference), o desacoplada dentro de plantillas desarrolladas en [Liquid](/es/platform/channels/liquid-markup).
 
 ### Gestor de archivos
 
@@ -48,4 +48,4 @@ Modyo ahora usa el editor de texto enriquecido Froala. Este editor permite desar
 
 ### Páginas de Contenido
 
-Modyo ahora cambia la forma en que utilizas las vistas de contenido. Se realizará una migración automática a partir de Modyo 9.2 para llevar tus vistas de contenido en [Plantillas](/es/platform/channels/templates.html) hacia la sección de Páginas. Podrás crear páginas de widgets o de contenido desde el mismo lugar. Para conocer más, ve [Páginas](/es/platform/channels/pages.html).
+Modyo ahora cambia la forma en que utilizas las vistas de contenido. Se realizará una migración automática a partir de Modyo 9.2 para llevar tus vistas de contenido en [Plantillas](/es/platform/channels/templates) hacia la sección de Páginas. Podrás crear páginas de widgets o de contenido desde el mismo lugar. Para conocer más, ve [Páginas](/es/platform/channels/pages).

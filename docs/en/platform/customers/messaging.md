@@ -43,7 +43,7 @@ Email campaigns allow you to contact users via email. To set up an email campaig
 - **Type**: Select **Email** to enable this option.
 - **Subject**: The text that will appear in the message's subject line.
 - **Reply To**: The email address for user responses.
-- **Template**: Select a [template](/en/platform/customers/messaging.html#templates). If no template is selected, a blank one will be used.
+- **Template**: Select a [template](/en/platform/customers/messaging#templates). If no template is selected, a blank one will be used.
 - **Enable Segmentation**: Select a specific segment or leave this option unchecked to send the message to all users.
 
 Click **Save and Continue** to open the WYSIWYG editor, where you can customize the selected template's content. Once edited, select **Save** to confirm the changes and access the **Send Status** view.
@@ -110,7 +110,7 @@ If you sent the campaign by notification, you can view:
 - **Sent**: Number of notifications sent.
 - **Opened**: Number of notifications opened.
 
-If you send a campaign through [segments](/en/platform/customers/segments.html), you can see which group of users the campaign reached. If this section does not appear, it is because the campaign was sent to all contacts.
+If you send a campaign through [segments](/en/platform/customers/segments), you can see which group of users the campaign reached. If this section does not appear, it is because the campaign was sent to all contacts.
 
 :::warning Attention
 If you have not yet sent the campaign, the values for that campaign will appear as zero.
@@ -128,7 +128,7 @@ Clicking on the name of a campaign takes you to the Message Deliveries section.
 
 In the Message Deliveries section, you will find the list of users who have received a message from the platform. Here, you can see a list of all users who have received a unique email or notification, referred to as “No Campaign”.
 
-"No Campaign" refers to an email or notification sent specifically to a user on a certain date. These messages are not considered campaigns, as they are personalized and contain information not sent to other users. For more information on how these messages work, see the [Management API](/en/platform/core/api.html).
+"No Campaign" refers to an email or notification sent specifically to a user on a certain date. These messages are not considered campaigns, as they are personalized and contain information not sent to other users. For more information on how these messages work, see the [Management API](/en/platform/core/api).
 
 In the initial view, the messages are ordered in these categories:
 
@@ -170,7 +170,7 @@ Each template has an edit button with the following actions:
 :::warning Attention
 When you create a campaign, remember to add in the footer all the legal information required by your country's regulation, regarding mass mailings.
 
-To automate footer insertion, read [Realm Configuration](/en/platform/customers/settings.html#emails)
+To automate footer insertion, read [Realm Configuration](/en/platform/customers/settings#emails)
 :::
 
 ## Unsubscriptions
@@ -179,7 +179,7 @@ In this section, you will find a list of users who have unsubscribed from email 
 
 Use the search bar to find a specific user. You can enter their name or email.
 
-Clicking on a user's name allows you to view their [user profile](/en/platform/customers/users.html#user-profile) with all their platform activities.
+Clicking on a user's name allows you to view their [user profile](/en/platform/customers/users#user-profile) with all their platform activities.
 
 At the end of each username, there is a button that allows you to re-enroll the user to any campaign on the site.
 

@@ -65,7 +65,7 @@ To enable or disable the search functionality, follow these steps:
 
 ### Search Template
 
-You can control the appearance and search functionalities in your web app using the _search_ [template](/en/platform/channels/sites.html#search-template/).
+You can control the appearance and search functionalities in your web app using the _search_ [template](/en/platform/channels/sites#search-template/).
 
 This template is available by default in the templates section and contains all the Liquid code needed to carry out queries in your web app. By default, when making a query, the records are displayed in list form, with their title, description, and a link to their address. You can modify the template to adapt it to your needs.
 
@@ -123,7 +123,7 @@ Changes to the name and description are immediately reflected in Modyo. The upda
 
 
 :::warning Attention
-Time in content is managed in the [general](https://https://docs.modyo.com/en/platform/core/configuration.html#configuration) section of the account settings.
+Time in content is managed in the [general](https://https://docs.modyo.com/en/platform/core/configuration#configuration) section of the account settings.
 :::
 
 - **Google Tag Manager ID**: Adds a Google Tag Manager identifier to insert scripts for tracking and measuring events.
@@ -323,7 +323,7 @@ If you disable the service worker, your web application will continue to functio
 
 #### WebPush Notifications
 
-Allow your users to receive WebPush notifications along with notification campaigns. To send messages to your users, you must ensure that your application is linked to a realm and the application status is set to **Enabled**. Notification management is done through the [messaging tool](/en/platform/customers/messaging.html).
+Allow your users to receive WebPush notifications along with notification campaigns. To send messages to your users, you must ensure that your application is linked to a realm and the application status is set to **Enabled**. Notification management is done through the [messaging tool](/en/platform/customers/messaging).
 
 #### PWA Manifest
 
@@ -347,7 +347,7 @@ When the manifest is activated, this route is created:
 https://[domain]/[site-name]/manifest.json
 ```
 
-It is necessary to implement the manifest on each page of the PWA through [Templates](/en/platform/channels/templates.html), in the ``head`` snippet.
+It is necessary to implement the manifest on each page of the PWA through [Templates](/en/platform/channels/templates), in the ``head`` snippet.
 
 
 :::warning Attention
@@ -553,7 +553,7 @@ To modify an administrator's role, follow these steps:
 Available roles are:
 
 - **Viewer**: This user can view entries, view differences between versions, and leave comments. They can also access the synchronization view and view pending changes to synchronize. This role is not authorized to perform any action that implies a change in the platform.
-- **Developer**: This user is in charge of the structural resource development. They can create, modify, and submit pages, widgets, menus, and templates for review. All actions performed by a Developer must go through a review process before publication. This role does not have permissions to publish, delete, or _rollback_ to previous versions of the resources, nor to modify the site's configuration. There is a variant of this role called Developer CLI, which in addition to the permissions of a Developer, allows updating widgets from external applications, such as the [modyo-cli](/en/platform/channels/widgets.html#modyo-cli).
+- **Developer**: This user is in charge of the structural resource development. They can create, modify, and submit pages, widgets, menus, and templates for review. All actions performed by a Developer must go through a review process before publication. This role does not have permissions to publish, delete, or _rollback_ to previous versions of the resources, nor to modify the site's configuration. There is a variant of this role called Developer CLI, which in addition to the permissions of a Developer, allows updating widgets from external applications, such as the [modyo-cli](/en/platform/channels/widgets#modyo-cli).
 - **Developer CLI**: Can create, modify, and submit pages, widgets, the menu, and templates for review. In addition, they can push widgets from external applications.
 - **Reviewer**: This role allows for the correction, approval, or discarding of the work done by Developers. They can create, modify, submit for review, and approve pages, widgets, menus, and templates. They can also publish when review conditions are met. They cannot edit the site settings.
 - **Admin**: The Site Administrator has the same privileges as the previous roles and has the ability to configure the entire site. This includes the creation, modification, submission for review, and approval of pages, widgets, menus, and templates. In addition, they can publish without requiring team review validation.
@@ -572,7 +572,7 @@ In this view, you will find a table with all the redirects that currently exist 
 To create a new redirect, click on the **New** button in the upper right corner of the view. Fill in the **_Source URL_** and **_Destination URL_** fields and the redirection code, then save the changes.
 
 :::warning Attention
-The redirects table is the second to last in precedence, so if there is a URL on the site that points to a [page](/en/platform/channels/pages.html) or a default view, you will see that view instead of being redirected through the custom redirects table.
+The redirects table is the second to last in precedence, so if there is a URL on the site that points to a [page](/en/platform/channels/pages) or a default view, you will see that view instead of being redirected through the custom redirects table.
 :::
 
 In addition to creating redirects one by one, you can import a [CSV file](/assets/examples/custom-redirections.csv) with up to 1000 redirects.
@@ -587,10 +587,10 @@ If you are importing a redirect with an already registered origin, you will not 
 
 The hierarchy of locations on Modyo sites follows this order:
 
-1. [Default views (Home, search)](/en/platform/channels/templates.html)
-1. [Pages](/en/platform/channels/pages.html)
+1. [Default views (Home, search)](/en/platform/channels/templates)
+1. [Pages](/en/platform/channels/pages)
 1. Custom Redirects
-1. [Site 404 error settings](/en/platform/channels/sites.html#privacy)
+1. [Site 404 error settings](/en/platform/channels/sites#privacy)
 
 :::warning Conditions for a redirect
 For a redirect to be successful, the source path cannot exist or must be unpublished. If the source is a published page with subpages, you must unpublish the subpages before unpublishing the main page.
@@ -637,7 +637,7 @@ Controls which resources the browser can load on the site to mitigate data injec
 Freely specify your content security policy in the text area. For a complete guide on how to write your policy, see [Content Security Policy (CSP) from Mozilla Developer Network.](https://developer.mozilla.org/es/docs/Web/HTTP/CSP)
 
 :::warning Attention
-A very strict value can interfere with some features like [Google Tag Manager](/en/platform/channels/sites.html#google-tag-manager), [PWA](/en/platform/channels/sites.html#pwa), [Widgets](/en/platform/channels/widgets.html), and [Asset Manager](/en/platform/content/asset-manager.html).
+A very strict value can interfere with some features like [Google Tag Manager](/en/platform/channels/sites#google-tag-manager), [PWA](/en/platform/channels/sites#pwa), [Widgets](/en/platform/channels/widgets), and [Asset Manager](/en/platform/content/asset-manager).
 :::
 
 A production-ready policy must ensure that all resources, such as images and stylesheets, are loaded from trusted sources and requires that all scripts are secure and reliable for the application. For example, a strict policy for the _minimal template_ would look like this:
@@ -692,7 +692,7 @@ For more information, see the [MDN Cross-Origin-Resource-Policy](https://develop
 
 ### Site Variables
 
-Modyo has [global variables](/en/platform/core/key-concepts.html#global-variables) that you can use on multiple sites. However, you can also create specific variables for a particular site or overwrite the value of an existing global variable with a value specific to that particular site.
+Modyo has [global variables](/en/platform/core/key-concepts#global-variables) that you can use on multiple sites. However, you can also create specific variables for a particular site or overwrite the value of an existing global variable with a value specific to that particular site.
 
 Using variables allows you to reuse HTML, JS, CSS, or text code across different sites, widgets, or templates. If you have code that is repeated in several parts of your account, you can assign that value to a variable to simplify your processes, and if you edit the variable's value, the change will be reflected wherever the variable is in use.
 

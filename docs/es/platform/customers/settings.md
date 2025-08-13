@@ -81,7 +81,7 @@ Para usar una hoja de estilos CSS personalizada en las vistas de sesión, sigue 
 3. Pega el código CSS en el editor.
 4. Haz clic en el botón **Guardar** para guardar los cambios.
 
-Haz click en el ícono de [Gestor de Archivos](/es/platform/content/asset-manager.html) para subir archivos vinculados en el código CSS.
+Haz click en el ícono de [Gestor de Archivos](/es/platform/content/asset-manager) para subir archivos vinculados en el código CSS.
 
 Es importante tener en cuenta que el editor no genera automáticamente el enlace del archivo después de subirlo. Después de cargar el archivo, haz click en el botón de pegado que se encuentra en el lateral de cada archivo para generar su enlace. Luego, copia este enlace y pégalo en el código CSS.
 
@@ -140,7 +140,7 @@ Los servicios compatibles con el ingreso a Modyo son:
 
 Debes contar con la correcta configuración del servicio asociado para que Modyo pueda conectarse con él. Asegúrate de completar todos los campos requeridos.
 
-Para más información sobre las integraciones consulta la sección de [Proveedores de Identidad](/es/platform/core/integrations/identity-providers.html)
+Para más información sobre las integraciones consulta la sección de [Proveedores de Identidad](/es/platform/core/integrations/identity-providers)
 
 
 
@@ -337,7 +337,7 @@ Al eliminar un campo personalizable, eliminas permanentemente todos los valores 
 :::
 
 :::tip Tip
-Además de guardar valores específicos de los usuarios, puedes utilizar los valores de los campos personalizables para crear filtros de [segmentos](/es/platform/customers/segments.html) lo que te permite separar a los usuarios según sus valores personalizados.
+Además de guardar valores específicos de los usuarios, puedes utilizar los valores de los campos personalizables para crear filtros de [segmentos](/es/platform/customers/segments) lo que te permite separar a los usuarios según sus valores personalizados.
 :::
 
 ### Seguridad

@@ -16,7 +16,7 @@ In the edit view, you will find a top bar with actions, a central grid, and a si
 
 In the top bar, you will find different actions and information:
 
-**Title**: Located in the upper left, it indicates the name of the page you are modifying. To the right of the name, you will find the current status of the page: "Draft", "Under review", "Approved", "Pending changes", or "Published". To learn more about these statuses, you can review the [Versioning and Team Review](/en/platform/core/key-concepts.html) section.
+**Title**: Located in the upper left, it indicates the name of the page you are modifying. To the right of the name, you will find the current status of the page: "Draft", "Under review", "Approved", "Pending changes", or "Published". To learn more about these statuses, you can review the [Versioning and Team Review](/en/platform/core/key-concepts) section.
 
 **Publication date**: If the page has been published, it will indicate the date of the last publication.
 
@@ -26,10 +26,10 @@ In the top bar, you will find different actions and information:
 You can preview the pages as a user without a session or with a Modyo session. For this, it is recommended to start or close the Modyo session on the site before entering preview mode, as doing so within this mode can generate security errors such as _x-frame-options_ or _mixed-content_, depending on the custom domain and SSL configuration of the site.
 :::
 
-**Differences**: By clicking on the differences icon, you access the page's differences view, where you can select two versions to compare, allowing you to execute the actions [reset and rollback](/en/platform/core/key-concepts.html#revert-a-change).
+**Differences**: By clicking on the differences icon, you access the page's differences view, where you can select two versions to compare, allowing you to execute the actions [reset and rollback](/en/platform/core/key-concepts#revert-a-change).
 
 :::tip Tip
-If your page is in _draft_ status, the differences icon will not appear, as there is nothing to compare the current editable version with. To learn more about differences and backups, see the [versioning](/en/platform/core/key-concepts.html#versioning) section.
+If your page is in _draft_ status, the differences icon will not appear, as there is nothing to compare the current editable version with. To learn more about differences and backups, see the [versioning](/en/platform/core/key-concepts#versioning) section.
 :::
 
 **Activity**: Displays a sidebar that shows the activity associated with the page, such as modifications, publications, and comments. At the bottom of this bar, you can type comments. If the page is under review, all assigned reviewers will receive a notification with the comment.
@@ -55,9 +55,9 @@ To create a new page, follow these steps:
 7. Customize the page according to the type: adding or editing widgets for Widget Page, or editing the Index and Show for Content Page.
 8. Once finished, click **Publish**.
 
-To learn about the types of widgets you can add, see [Widgets](/en/platform/channels/pages.html#widget-page).
+To learn about the types of widgets you can add, see [Widgets](/en/platform/channels/pages#widget-page).
 
-To learn more about content pages, see [Content Page](/en/platform/channels/pages.html#content-page).
+To learn more about content pages, see [Content Page](/en/platform/channels/pages#content-page).
 
 **Main action**: It is the green button in the upper right that can take different forms:
 
@@ -121,11 +121,11 @@ Here you can customize your page using preset widgets from the following list:
 :::warning Attention
 The rich text widget has an automatic formatter, so the code you write in the code view may be affected.
 :::
-- **Content list**: Displays content lists using filters by space, type, language, tags, and category. To modify how these widgets look, you must do so in the Widgets section in [Templates](/en/platform/channels/templates.html).
+- **Content list**: Displays content lists using filters by space, type, language, tags, and category. To modify how these widgets look, you must do so in the Widgets section in [Templates](/en/platform/channels/templates).
 - **Featured content**: Displays a list of entries as "hero" images in a carousel.
 - **Custom**: You will find a list of all the widgets you have created and published in the widget builder.
 
-Once a widget is selected in the central section, the focus will shift to the side tab, where you can find different configuration options for the widget. If you select a custom widget, you will find a link to go directly to its editing view in [widget builder](/en/platform/channels/widgets.html) and the list of variables the widget is using. If you want to overwrite the value of a particular variable for that instance of the widget on that page, you must select the checkbox to the left of the variable and change the value it takes.
+Once a widget is selected in the central section, the focus will shift to the side tab, where you can find different configuration options for the widget. If you select a custom widget, you will find a link to go directly to its editing view in [widget builder](/en/platform/channels/widgets) and the list of variables the widget is using. If you want to overwrite the value of a particular variable for that instance of the widget on that page, you must select the checkbox to the left of the variable and change the value it takes.
 
 ### Properties
 
@@ -187,8 +187,8 @@ Displays the [entries](/en/platform/content/entries) of your [content types](/en
 
 To display content on a site, you must meet certain conditions:
 
-* Have a space with at least one language (the same as the site) and at least one Content Type. For more information, see [Create a Space](/en/platform/content/spaces.html#create-a-space) and [Create a Type](/en/platform/content/types.html#create-a-type)
-* Have entries published in the site's language. For more information, see [Entries](/en/platform/content/entries.html) and [Localization](/en/platform/content/spaces.html#localization)
+* Have a space with at least one language (the same as the site) and at least one Content Type. For more information, see [Create a Space](/en/platform/content/spaces#create-a-space) and [Create a Type](/en/platform/content/types#create-a-type)
+* Have entries published in the site's language. For more information, see [Entries](/en/platform/content/entries) and [Localization](/en/platform/content/spaces#localization)
 
 :::tip Tip
 You can use any name you want for the views, regardless of the type or space you want to associate them with. Always keep in mind that entries will only be displayed if they have a published version in the language of the site where you are creating these views.
@@ -236,10 +236,10 @@ A basic example of Liquid+HTML code that you can use in **Show** is:
 This snippet takes `entry.name`, `entry.published_at`, `request.url`, and `entry.description` to generate a dynamic page depending on the entry you select.
 
 :::tip Tip
-To learn more about how to use Liquid, go to [Liquid markup](/en/platform/channels/liquid-markup.html).
+To learn more about how to use Liquid, go to [Liquid markup](/en/platform/channels/liquid-markup).
 
-To learn what fields you can use with the `entry` drop, see [Content Drops](/en/platform/channels/drops.html#entry).
-It can be complemented with the use of [Content Filters](/en/platform/channels/liquid-markup/filters.html#content).
+To learn what fields you can use with the `entry` drop, see [Content Drops](/en/platform/channels/drops#entry).
+It can be complemented with the use of [Content Filters](/en/platform/channels/liquid-markup/filters#content).
 :::
 
 #### Properties
@@ -252,7 +252,7 @@ If the custom domain is enabled, to find the URL format, you must go to ``Site S
 If it is not enabled, the URL will be in the form `account_url/site_host`.
 :::
 
-The excerpt is added as part of the meta tags to improve SEO. This is possible for all page types and [Templates](/en/platform/channels/templates.html). Inside the `<head>` a tag is added:
+The excerpt is added as part of the meta tags to improve SEO. This is possible for all page types and [Templates](/en/platform/channels/templates). Inside the `<head>` a tag is added:
 
 ```html
 <meta name="description" content="{{ page.excerpt }}"/>
@@ -264,13 +264,13 @@ Enables route delegation to allow absolute control over the page's sub-routes th
 
 ## Privacy
 
-If you enable privacy on a page, a session will be required to view this page. Along with privacy, you can also associate [Segments](/en/platform/customers/segments.html), so that only users belonging to those segments will be able to access this page. Those who are not part of the selected segment group will be redirected to the previous page or the site's home page.
+If you enable privacy on a page, a session will be required to view this page. Along with privacy, you can also associate [Segments](/en/platform/customers/segments), so that only users belonging to those segments will be able to access this page. Those who are not part of the selected segment group will be redirected to the previous page or the site's home page.
 
 ## Meta tags
 
 Meta tags define the content of a page, and search engines rely on them to provide a search list to the user. In this section, you can add meta tags to pages and modify the value of existing meta tags to enhance the page's SEO. With the tags added to the pages, you can decide whether to use the default value, overwrite the available value for the tag, or remove the tag from the page.
 
-To access the list of meta tags on the page, you must use the Liquid drop <span v-pre>`{{ page.meta_tags }}`</span>. We recommend you see the example in the SEO section of the [Template builder](/en/platform/channels/templates.html#seo).
+To access the list of meta tags on the page, you must use the Liquid drop <span v-pre>`{{ page.meta_tags }}`</span>. We recommend you see the example in the SEO section of the [Template builder](/en/platform/channels/templates#seo).
 
 ### Add a new meta tag
 
@@ -289,4 +289,4 @@ As part of the `base` Template, we include the `seo` Snippet which contains the 
 Please note that for the meta tags to take effect on your page, you must publish the changes.
 :::
 
-For more information on how we use dynamic meta tags on sites, visit [site settings, SEO section](/en/platform/channels/sites.html#seo).
+For more information on how we use dynamic meta tags on sites, visit [site settings, SEO section](/en/platform/channels/sites#seo).

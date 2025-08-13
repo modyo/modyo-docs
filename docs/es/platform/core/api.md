@@ -129,7 +129,7 @@ emails	    [...]
 
 ## Llamar a la API
 
-Una vez que conoces el servicio que consultarás de acuerdo a [Explorando la API](/es/platform/core/api.html#explorando-el-api) y un método de [Autenticación](/es/platform/core/api.html#autenticacion)), ya se puede realizar un _request_ a la URL del recurso requerido.
+Una vez que conoces el servicio que consultarás de acuerdo a [Explorando la API](/es/platform/core/api#explorando-el-api) y un método de [Autenticación](/es/platform/core/api#autenticacion)), ya se puede realizar un _request_ a la URL del recurso requerido.
 
 Para este ejemplo, obtendremos la lista de todas las campañas de correo que se crearon en la plataforma. De acuerdo a la documentación en Swagger _(test.modyo.com/api/admin/docs)_, se necesita llamar a la siguiente URL:
 
@@ -282,7 +282,7 @@ Ten en consideración que cuando se cierra sesión en alguno de tus sitios, se h
 4. Una vez registrada la aplicación, asigna la aplicación los usuarios que harán uso de la API. Para esto, en el menú lateral, expande **Configuración** y haz click en **Equipo**.
 5. Selecciona un usuario con un rol administrativo dentro de la aplicación deseada. 
 
-Para más detalles, ve a [Usuarios y Roles](/es/platform/core/roles.html)
+Para más detalles, ve a [Usuarios y Roles](/es/platform/core/roles)
 
 6. En la vista de edición del usuario administrador, haz click en _API Access_ y selecciona la opción **Nuevo Acceso al API**.
 

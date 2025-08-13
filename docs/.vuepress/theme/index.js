@@ -27,11 +27,21 @@ module.exports = (options, ctx) => {
       ['@vuepress/active-header-links', options.activeHeaderLinks],
       '@vuepress/search',
       '@vuepress/plugin-nprogress',
+      ['@vuepress/pwa', {
+        serviceWorker: true,
+        updatePopup: {
+          message: "New content is available.",
+          buttonText: "Refresh"
+        }
+      }],
       [
         'sitemap', {
-          hostname: 'http://docs.modyo.com'
+          hostname: 'https://docs.modyo.com',
+          changefreq: 'weekly'
         },
       ],
+      '@vuepress/medium-zoom',
+      '@vuepress/back-to-top',
       ['container', {
         type: 'tip',
         defaultTitle: {

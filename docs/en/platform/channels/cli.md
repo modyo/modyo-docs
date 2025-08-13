@@ -57,7 +57,7 @@ The next step is to configure your project to facilitate uploading widgets to th
 
 #### Previous Actions
 
-1. **Get a Modyo access token**: To obtain the token, you need to have a user or [create one](/en/platform/core/roles.html#create-user) with at least the `site developer-cli` [role](/en/platform/core/roles.html#roles) in the sites or stages where you will deploy your widget. Once the user is created, you can [configure an access token](/en/platform/core/api.html#authentication). This token will be used to configure and activate deployments on the platform.
+1. **Get a Modyo access token**: To obtain the token, you need to have a user or [create one](/en/platform/core/roles#create-user) with at least the `site developer-cli` [role](/en/platform/core/roles#roles) in the sites or stages where you will deploy your widget. Once the user is created, you can [configure an access token](/en/platform/core/api#authentication). This token will be used to configure and activate deployments on the platform.
 
 2. **Identify the application where you will publish**:
 To get your application ID, go to your application summary. It is recommended to use this value whenever possible. If you need to use the site host, you will find it in the general configuration section of your application.
@@ -232,7 +232,7 @@ The `preview` command allows you to preview a widget locally to debug its code i
 
 To use the `preview` command, make sure you meet the following requirements:
 
-- A properly configured [.env](/en/platform/channels/cli.html#configuracion-del-entorno) file. The `MODYO_ACCOUNT_URL`, `MODYO_SITE_HOST` or `MODYO_SITE_ID` and `MODYO_TOKEN` fields are required.
+- A properly configured [.env](/en/platform/channels/cli#configuracion-del-entorno) file. The `MODYO_ACCOUNT_URL`, `MODYO_SITE_HOST` or `MODYO_SITE_ID` and `MODYO_TOKEN` fields are required.
 - A local server running with the widget you want to preview.
 
 #### Steps to Preview a Widget
@@ -278,7 +278,7 @@ These commands allow you to select the local entry points you want to use.
 
 ### Code Splitting
 
-[Widgets](/en/platform/channels/widgets.html#widgets) allow you to develop complex functionalities in your Modyo web applications, thus increasing the functionality of your sites.
+[Widgets](/en/platform/channels/widgets#widgets) allow you to develop complex functionalities in your Modyo web applications, thus increasing the functionality of your sites.
 
 However, by including external libraries or increasing the complexity of a widget, you can face excessive load times or exceed the size limits set for widgets in Modyo, which negatively affects both the development experience and the user experience.
 
@@ -332,9 +332,9 @@ modyo-cli push -p
 ```
 
 :::warning Attention
-The user who owns the token must have a [site reviewer or admin](/en/platform/core/roles.html#roles) role on the site where you are deploying the widget for the publication to be done correctly.
+The user who owns the token must have a [site reviewer or admin](/en/platform/core/roles#roles) role on the site where you are deploying the widget for the publication to be done correctly.
 :::
 
 Once a widget is deployed and published in Modyo, it is available for use on the pages of the site to which it belongs.
 
-If you have defined [variables](/en/platform/core/key-concepts.html#global-variables), their values can be specified globally or individually for each instance of the widget.
+If you have defined [variables](/en/platform/core/key-concepts#global-variables), their values can be specified globally or individually for each instance of the widget.

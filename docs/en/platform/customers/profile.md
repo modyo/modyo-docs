@@ -23,7 +23,7 @@ By clicking on a notification, its full content will be displayed, and it will b
 
 ## Edit Information
 
-In this section, each user can modify their profile data. Depending on the [realm configuration](/en/platform/customers/settings.html), each user will be able to edit:
+In this section, each user can modify their profile data. Depending on the [realm configuration](/en/platform/customers/settings), each user will be able to edit:
 
 - Name
 - Surname
@@ -34,7 +34,7 @@ In this section, each user can modify their profile data. Depending on the [real
 - Date of Birth
 - Gender
 - Language
-- [Custom Fields](/en/platform/customers/settings.html#custom-fields)
+- [Custom Fields](/en/platform/customers/settings#custom-fields)
 - Password
 - Email Campaign Management
 

@@ -36,7 +36,7 @@ When using organizations, consider the limits of your license. The maximum limit
 :::
 
 #### Use of Pages and Layouts
-[Layouts](/en/platform/channels/templates.html#layouts) are an excellent way to differentiate contexts within a site. A layout can be shared by multiple [pages](/en/platform/channels/pages), and each page can have only one layout. Within the layout, reusable elements can be defined between the pages, such as headers, footers, and meta tags.
+[Layouts](/en/platform/channels/templates#layouts) are an excellent way to differentiate contexts within a site. A layout can be shared by multiple [pages](/en/platform/channels/pages), and each page can have only one layout. Within the layout, reusable elements can be defined between the pages, such as headers, footers, and meta tags.
 
 Layouts ensure visual consistency between pages, although specific cases (e.g., a promotion page) may require different layouts.
 
@@ -45,7 +45,7 @@ In addition, pages can be grouped into hierarchies, ensuring an organized struct
 #### Use of Templates and Snippets
 [Templates](/en/platform/channels/templates) are Liquid documents that are dynamically rendered on the platform. They can represent HTML pages, layouts, CSS style sheets, or JavaScript files.
 
-[Snippets](/en/platform/channels/templates.html#snippets) are useful for organizing source code and can be referenced from different Liquid templates on the same site. They allow for the modularization and reuse of functions, facilitating the decomposition of complex functionalities into simpler parts. Snippets are dynamically rendered when the page loads.
+[Snippets](/en/platform/channels/templates#snippets) are useful for organizing source code and can be referenced from different Liquid templates on the same site. They allow for the modularization and reuse of functions, facilitating the decomposition of complex functionalities into simpler parts. Snippets are dynamically rendered when the page loads.
 
 :::warning Recursion and performance
 A common error when using snippets is the recursive call of circular references. In such a case, the platform stops the execution to avoid resource saturation.
@@ -120,7 +120,7 @@ In Modyo, the same content can be displayed on multiple pages in various ways, a
 :::
 
 #### Use of Team Review
-The [team review](/en/platform/core/key-concepts.html#team-review) is a Modyo functionality that allows for the simple and flexible configuration of the users responsible for reviewing elements before their publication. The reviewers can preview the change or content and make comments to correct necessary aspects. The team review menu is accessible from the configuration of the content spaces and sites.
+The [team review](/en/platform/core/key-concepts#team-review) is a Modyo functionality that allows for the simple and flexible configuration of the users responsible for reviewing elements before their publication. The reviewers can preview the change or content and make comments to correct necessary aspects. The team review menu is accessible from the configuration of the content spaces and sites.
 
 The use of team review is highly recommended on public sites where maximum agility in publication is sought and, at the same time, approval controls for simple reviews are minimized.
 
@@ -138,7 +138,7 @@ Modyo recommends the use of physical environments for testing new versions of th
 :::
 
 #### Use of Stages
-On public sites, Modyo recommends managing previous environments using the [stages](/en/platform/channels/sites.html#stages) functionality, which allows for the creation of virtualized pre-production environments within the same production deployment. This technique avoids the need to move changes and files between environments, reducing the possibility of errors in publication.
+On public sites, Modyo recommends managing previous environments using the [stages](/en/platform/channels/sites#stages) functionality, which allows for the creation of virtualized pre-production environments within the same production deployment. This technique avoids the need to move changes and files between environments, reducing the possibility of errors in publication.
 
 The use of stages makes it possible to create separate and isolated environments to build, test, and verify the operation of the site before its deployment in production. This helps prevent failures that could affect end users. For public sites, the following stages can be defined, for example:
 

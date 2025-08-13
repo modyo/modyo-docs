@@ -18,7 +18,7 @@ version: 9.2
 
 ### Funcionalidades principales
 
-- **[Espacios](/es/platform/content/spaces.html)**: Organiza contenidos y equipos que los administren.
-- **[Tipos de contenido](/es/platform/content/types.html)**: Define estructuras personalizadas.
-- **[Gestor de archivos](/es/platform/content/asset-manager.html)**: Organiza los archivos usados en los contenidos como imágenes o videos.
-- **[API y SDKs](/es/platform/content/public-api-reference.html)**: Accede a los repositorios de contenidos, dentro y fuera de la plataforma.
+- **[Espacios](/es/platform/content/spaces)**: Organiza contenidos y equipos que los administren.
+- **[Tipos de contenido](/es/platform/content/types)**: Define estructuras personalizadas.
+- **[Gestor de archivos](/es/platform/content/asset-manager)**: Organiza los archivos usados en los contenidos como imágenes o videos.
+- **[API y SDKs](/es/platform/content/public-api-reference)**: Accede a los repositorios de contenidos, dentro y fuera de la plataforma.

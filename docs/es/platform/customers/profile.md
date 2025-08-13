@@ -23,7 +23,7 @@ Al hacer click en una notificación, se mostrará el contenido completo de esta 
 
 ## Editar Información
 
-En esta sección, cada usuario puede modificar los datos de su perfil, dependiendo de la [configuración de reino](/es/platform/customers/settings.html), cada usuario podrá modificar:
+En esta sección, cada usuario puede modificar los datos de su perfil, dependiendo de la [configuración de reino](/es/platform/customers/settings), cada usuario podrá modificar:
 
 - Nombre
 - Apellido
@@ -34,7 +34,7 @@ En esta sección, cada usuario puede modificar los datos de su perfil, dependien
 - Fecha de Nacimiento
 - Género
 - Idioma
-- [Custom fields](/es/platform/customers/settings.html#custom-fields)
+- [Custom fields](/es/platform/customers/settings#custom-fields)
 - Contraseña
 - Gestión de campañas de correo
 

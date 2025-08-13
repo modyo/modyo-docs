@@ -170,7 +170,7 @@ En un flujo de originación, cada aplicación representa el proceso en curso de 
 | **application.origination.steps** Array con los nombres de los steps en la originación | ```[ {"uid": "step 1"}, {"uid": "step 2"}]``` |
 | **application.origination.tasks** Array con todos los tasks en la originación y el step al que corresponden | ```[{"task_id": "67890","name": "Task 1", description: "step 1": { "uid": "abcd1234" } }]``` |
 
-Puedes aprender más sobre [Liquid Drops](/es/platform/channels/drops.html) en nuestra documentación.
+Puedes aprender más sobre [Liquid Drops](/es/platform/channels/drops) en nuestra documentación.
 
 ### Ejemplo de Code Snippets
 
@@ -295,7 +295,7 @@ Puedes incorporar una amplia variedad de campos en tus formularios para personal
 
 Para incluir un nuevo campo debes seleccionar una tarea y seleccionar la pestaña **Añadir**
 
-Origination soporta todos los tipos de entrada disponibles en formularios. Puedes ver el listado completo de tipos en la [documentación de formularios](https://docs.modyo.com/es/platform/customers/forms.html#anadir)
+Origination soporta todos los tipos de entrada disponibles en formularios. Puedes ver el listado completo de tipos en la [documentación de formularios](https://docs.modyo.com/es/platform/customers/forms#anadir)
 
 
 #### Editar campos

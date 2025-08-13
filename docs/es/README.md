@@ -78,7 +78,7 @@ DontMiss: No te pierdas nada de
 DontMissText: Mantente actualizado sobre los nuevos lanzamientos y conoce nuestra hoja de ruta.
 
 releaseText: Notas del release
-releaseUrl: /es/platform/release-notes.html
+releaseUrl: /es/platform/release-notes
 
 roadmapText: Modyo Roadmap
 roadmapUrl: https://es.modyo.com/roadmap

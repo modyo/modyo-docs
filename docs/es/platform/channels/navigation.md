@@ -6,7 +6,7 @@ search: true
 
 La navegación permite organizar y presentar un listado de elementos para facilitar el acceso de los usuarios a los puntos clave de tu sitio.
 
-Esta sección describe un listado anidado de elementos que aparecerán en el sitio al usar el tag <span v-pre>`{% menu %}`</span> en [Plantillas](/es/platform/channels/templates.html).
+Esta sección describe un listado anidado de elementos que aparecerán en el sitio al usar el tag <span v-pre>`{% menu %}`</span> en [Plantillas](/es/platform/channels/templates).
 
 La navegación solo permite tres niveles de profundidad: un listado principal y hasta dos subelementos anidados en cada uno de los ítems principales. Por defecto, al crear un sitio, Modyo incluye una plantilla y un menú básico que puedes modificar según tus necesidades.
 
@@ -14,8 +14,8 @@ En la parte superior de la vista, encontrarás el estado de publicación del men
 
 - **Publicado**: Este estado aparece después de haber hecho una publicación y cuando las versiones editable y publicada son iguales.
 - **Cambios pendientes**: Este estado aparece si ya hay una versión publicada, pero hay cambios pendientes de publicar en tu versión editable.
-- **En revisión**: Este estado aparece cuando esté habilitada la [Revisión en Equipo](/es/platform/core/key-concepts.html) y se haya enviado a revisión la versión editable.
-- **Aprobado**: Este estado aparece cuando esté habilitada la [Revisión en Equipo](/es/platform/core/key-concepts.html) y si se cumplieron las condiciones de revisión del elemento. Si se encuentra en este estado, tus plantillas ya pueden ser publicadas.
+- **En revisión**: Este estado aparece cuando esté habilitada la [Revisión en Equipo](/es/platform/core/key-concepts) y se haya enviado a revisión la versión editable.
+- **Aprobado**: Este estado aparece cuando esté habilitada la [Revisión en Equipo](/es/platform/core/key-concepts) y si se cumplieron las condiciones de revisión del elemento. Si se encuentra en este estado, tus plantillas ya pueden ser publicadas.
 
 En la parte superior derecha, encuentras la última fecha de publicación y las acciones disponibles:
 
@@ -29,7 +29,7 @@ Puedes previsualizar los cambios como usuario sin sesión o usuario con sesión 
 El menú que has creado solo se visualizará en una página si lo agregas a través de una plantilla publicada. De lo contrario, el menú no se solicitará y no aparecerá en la página.
 :::
 
-**Diferencias**: Haz clic aquí para acceder a la [vista de diferencias](/es/platform/core/key-concepts.html#revertir-un-cambio), en la cual puedes comparar los cambios entre diferentes versiones de tu menú.
+**Diferencias**: Haz clic aquí para acceder a la [vista de diferencias](/es/platform/core/key-concepts#revertir-un-cambio), en la cual puedes comparar los cambios entre diferentes versiones de tu menú.
 
 Por defecto, inicias comparando la versión publicada con la versión editable. Usa los selectores de versiones para comparar con versiones de respaldo.
 
@@ -38,10 +38,10 @@ Cada vez que publicas una versión, la versión que estaba publicada pasa a ser 
 
 Por defecto, se guardan hasta 20 respaldos, de tal forma que los veinte respaldos más recientes se pueden comparar, restaurar y hacer rollback.
 
-Para más información sobre el versionamiento, revisa la sección de [Versionado](/es/platform/core/key-concepts.html#versionado).
+Para más información sobre el versionamiento, revisa la sección de [Versionado](/es/platform/core/key-concepts#versionado).
 :::
 
-**Actividad/Comentarios**: Solo aparece habilitada si tienes activada la [revisión en equipo](/es/platform/core/key-concepts.html). Al hacer clic, despliega una barra lateral con el historial de actividad y comentarios del menú.
+**Actividad/Comentarios**: Solo aparece habilitada si tienes activada la [revisión en equipo](/es/platform/core/key-concepts). Al hacer clic, despliega una barra lateral con el historial de actividad y comentarios del menú.
 
 Al final de la barra lateral, ves una caja de texto donde puedes escribir un comentario. Junto a cada actividad, puedes hacer clic en _ver detalle_ para mostrar la información completa de ese registro de actividad.
 
@@ -65,7 +65,7 @@ Tu menú en este momento ya es público, pero no se manda a llamar. Se necesita 
 - **Guardar**: Guarda todos los cambios del menú.
 - **Enviar a revisión**: Cambia el estado del menú a "Esperando revisión". En este estado sigues haciendo cambios, pero cada cambio será notificado vía correo a los revisores asignados.
 - **Rechazar**: Vuelve al estado "En edición", notificando a los revisores que el elemento fue rechazado.
-- **Publicar**: Una vez que el menú fue aprobado, podrás ir a la vista de [publicación conjunta](/es/platform/channels/sites.html#revision-y-publicacion-conjunta) para publicar tu navegación.
+- **Publicar**: Una vez que el menú fue aprobado, podrás ir a la vista de [publicación conjunta](/es/platform/channels/sites#revision-y-publicacion-conjunta) para publicar tu navegación.
 
 En la sección lateral derecha, puedes ver una barra que cambia de acuerdo al ítem seleccionado en el área principal. En esta sección, puedes ver las opciones:
 

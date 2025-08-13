@@ -58,7 +58,7 @@ Los microservicios con persistencia relacional de datos deben considerar las sig
 
 - **Bloqueos**: Evitar consultas que generen [bloqueos](https://www.baeldung.com/jpa-pessimistic-locking) en las tablas de la base de datos durante alta demanda.
 - **Eficiencia**: Recuperar solo la información necesaria de la base de datos. Considerar el uso de [lazy loading](https://www.baeldung.com/hibernate-lazy-eager-loading) para evitar consultas innecesarias en bucles.
-- **Índices**: Asegurar la efectividad de los índices aplicados al esquema. Utilizar el comando ["explain"](https://dev.mysql.com/doc/refman/8.0/en/using-explain.html) localmente para verificar su uso.
+- **Índices**: Asegurar la efectividad de los índices aplicados al esquema. Utilizar el comando ["explain"](https://dev.mysql.com/doc/refman/8.0/en/using-explain) localmente para verificar su uso.
 - **Migraciones y versionamiento**: Garantizar el [versionamiento y la automatización](https://flywaydb.org) de tareas sobre el esquema de datos.
 - **Pool de conexiones**: Configurar correctamente el [pool de conexiones](https://www.baeldung.com/java-connection-pooling) y dimensionar adecuadamente el motor de base de datos según la concurrencia y escalabilidad esperada.
 
@@ -94,7 +94,7 @@ Los microservicios de Dynamic Framework se desarrollan siguiendo los principios 
 
 #### Otras consideraciones
 
-- **Tareas pesadas**: Para servicios lentos o sensibles a fluctuaciones de tráfico, se recomienda el procesamiento en segundo plano mediante [colas de mensajería](/es/connect/components/infrastructure.html#colas-de-mensajeria).
+- **Tareas pesadas**: Para servicios lentos o sensibles a fluctuaciones de tráfico, se recomienda el procesamiento en segundo plano mediante [colas de mensajería](/es/connect/components/infrastructure#colas-de-mensajeria).
 - **Programación de tareas**: Para microservicios que requieran agendamiento de tareas programadas, se recomienda usar [ShedLock](https://www.baeldung.com/shedlock-spring).
 - **Workflows y máquina de estado**: Se recomienda el uso de [máquinas de estados](https://www.baeldung.com/spring-state-machine) para la orquestación de procesos complejos, e integrar tecnologías de workflows con Spring Boot.
 - **Arquitectura hexagonal**: Este patrón de diseño de software separa la lógica de negocio de una aplicación de sus servicios externos, facilitando un desarrollo, pruebas y mantenimiento más flexibles y centrados en el dominio.

@@ -11,7 +11,7 @@ search: true
 Queremos que tu experiencia sea lo más fácil y satisfactoria posible, por lo que hemos diseñado esta documentación pensando en ti. Puedes navegar estos documentos de principio a fin o dirigirte a una sección específica; los contenidos están todos relacionados entre sí para facilitar tu proceso de aprendizaje.
 
 :::tip Modyo 10
-Esta documentación hace referencia a la útlima versión de Modyo. Para la documentación de versiones anteriores, favor consulta en nuestros canales de soporte.
+Esta documentación hace referencia a la última versión de Modyo. Para la documentación de versiones anteriores, favor consulta en nuestros canales de soporte.
 :::
 
 ### ¿Qué es Modyo?

@@ -295,7 +295,7 @@ You can incorporate a wide variety of fields in your forms to customize the coll
 
 To include a new field, you must select a task and select the **Add** tab.
 
-Origination supports all types of input available in forms. You can see the full list of types in the [forms documentation](https://docs.modyo.com/en/platform/customers/forms.html#add)
+Origination supports all types of input available in forms. You can see the full list of types in the [forms documentation](https://docs.modyo.com/en/platform/customers/forms#add)
 
 
 #### Edit fields

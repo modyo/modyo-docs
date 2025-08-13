@@ -14,7 +14,7 @@ A simplified and cleaner user interface, with the option to customize the Modyo 
 
 ### Content application
 
-Allows its use in _headless_ mode through its [API and SDKs](/en/platform/content/public-api-reference.html), or decoupled within templates developed in [Liquid](/en/platform/channels/liquid-markup.html).
+Allows its use in _headless_ mode through its [API and SDKs](/en/platform/content/public-api-reference), or decoupled within templates developed in [Liquid](/en/platform/channels/liquid-markup).
 
 ### File manager
 
@@ -48,4 +48,4 @@ Modyo now uses the Froala rich text editor. This editor allows you to quickly de
 
 ### Content Pages
 
-Modyo now changes the way you use content views. An automatic migration will be performed starting from Modyo 9.2 to bring your content views in [Templates](/en/platform/channels/templates.html) to the Pages section. You can create widget or content pages from the same place. To learn more, see [Pages](/en/platform/channels/pages.html).
+Modyo now changes the way you use content views. An automatic migration will be performed starting from Modyo 9.2 to bring your content views in [Templates](/en/platform/channels/templates) to the Pages section. You can create widget or content pages from the same place. To learn more, see [Pages](/en/platform/channels/pages).

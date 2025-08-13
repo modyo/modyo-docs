@@ -28,7 +28,7 @@ Modyo soporta la integración a sistemas de SSO de dos formas:
 - Integración de cuentas de usuario administradores
 - Integración de cuentas de usuarios finales
 
-Para obtener más información sobre estas integraciones, consulta la sección [Proveedores de identidad](https://docs.modyo.com/es/platform/core/integrations/identity-providers.html).
+Para obtener más información sobre estas integraciones, consulta la sección [Proveedores de identidad](https://docs.modyo.com/es/platform/core/integrations/identity-providers).
 
 
 ### Integración con mensajería

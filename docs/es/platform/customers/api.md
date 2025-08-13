@@ -18,9 +18,9 @@ Accede a la API de Customers para gestionar reinos y usuarios a través de la UR
 
 ### Tokens delegados
 
-Al habilitar la opción de [**Mostrar información de delegación**](/es/platform/core/integrations/identity-providers.html) en tus proveedores de identidad, al hacer uso de la API `account_url/api/customers/realms/{realm_uid}/me`, obtendrás un JSON adicionado con información de tokens delegados parecido a este:
+Al habilitar la opción de [**Mostrar información de delegación**](/es/platform/core/integrations/identity-providers) en tus proveedores de identidad, al hacer uso de la API `account_url/api/customers/realms/{realm_uid}/me`, obtendrás un JSON adicionado con información de tokens delegados parecido a este:
 
-Si habilitas la opción de [**Mostrar información de delegación**](/es/platform/core/integrations/identity-providers.html) en los proveedores de identidad, el endpoint `account_url/api/customers/realms/{realm_uid}/me` incluirá un JSON con información de tokens delegados:
+Si habilitas la opción de [**Mostrar información de delegación**](/es/platform/core/integrations/identity-providers) en los proveedores de identidad, el endpoint `account_url/api/customers/realms/{realm_uid}/me` incluirá un JSON con información de tokens delegados:
 
 
 ``curl -X GET test.miModyo.com/api/customers/realms/miRealm/me``

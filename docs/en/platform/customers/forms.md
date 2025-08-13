@@ -25,7 +25,7 @@ To create a new form, follow these steps:
 - **Name**: Name associated with the form. This value will appear both in the form index in the Modyo administrator and as a title when a user is responding to it.
 - **Description**: This text will appear as text below the title when users respond to it.
 - **People limit**: Allows you to determine the maximum number of answers allowed.
-- **Site**: Allows you to select where this form will be displayed. Keep in mind that this causes the form to change its appearance according to the classes defined in the site's global CSS. For more information, go to [Template builder](/en/platform/channels/templates.html).
+- **Site**: Allows you to select where this form will be displayed. Keep in mind that this causes the form to change its appearance according to the classes defined in the site's global CSS. For more information, go to [Template builder](/en/platform/channels/templates).
 
 :::warning Alert
 You can only select a site that belongs to the same realm, within the **Site Settings**, under **General**, make sure that the site is part of the correct realm.
@@ -43,7 +43,7 @@ After a division, you will be able to see the options to modify the redirect aft
 - **Thank you page**: Allows you to add a personalized thank you message after a user answers the form, along with a button that will take them to a page on the site. The button URL is a relative URL of the site associated with the form. You can also determine if you want the user to be automatically redirected to that page after a certain amount of time.
 
 
-- **Enable segmentation**: If the form is private (only registered users can answer it), you can select a set of users who can answer the form using segments. To learn more, go to [Segments](/en/platform/customers/segments.html)
+- **Enable segmentation**: If the form is private (only registered users can answer it), you can select a set of users who can answer the form using segments. To learn more, go to [Segments](/en/platform/customers/segments)
 
 :::warning Attention
 In case of a public form, users who do not have an active session in Modyo, will see three required fields at the top of the form: First Name, Last Name, and Email. Once they submit the form, a user will be created with those values, and then the response will be associated with that user.
@@ -79,7 +79,7 @@ This section will allow you to add as many fields as necessary to complete the f
 - **Country**: Country selector.
 - **Phone**: Field for entering phone numbers.
 - **Address**: Structured field for capturing addresses.
-- **Group**: Group a list of several repeatable fields. You can see more details about this format in the [documentation on Repeatable Groups](/en/platform/content/types.html#group)
+- **Group**: Group a list of several repeatable fields. You can see more details about this format in the [documentation on Repeatable Groups](/en/platform/content/types#group)
 
 You can delete one of the fields from the form by clicking on the trash can icon to the right of each field in the main section. The deletion will be effective once you save the changes.
 
@@ -150,7 +150,7 @@ To make use of the snippet within a page on the Modyo platform, you must copy th
 The **Options** and **Notifications** sections don't add anything other than what's found in **New Form**
 
 :::warning Attention
-If you're using a Modyo site with a custom domain, you'll need to enable the option to share resource sources [CORS](/en/platform/core/security.html) in the platform settings.
+If you're using a Modyo site with a custom domain, you'll need to enable the option to share resource sources [CORS](/en/platform/core/security) in the platform settings.
 :::
 
 ### Notifications
@@ -159,7 +159,7 @@ In the **Notifications** section you can configure the different emails that are
 
 The email notification sends an “administrative” email notifying you via that channel that someone has answered the form. You can assign a subject and a list of emails to which you want to notify.
 
-The thank you email allows you to customize an email that will be sent to the user who answered the form. You can customize both the subject and the body of the message using [Liquid](/es/platform/channels/liquid-markup.html). Below the field for customizing the message, you can see a list of variables that you can use to personalize the email.
+The thank you email allows you to customize an email that will be sent to the user who answered the form. You can customize both the subject and the body of the message using [Liquid](/es/platform/channels/liquid-markup). Below the field for customizing the message, you can see a list of variables that you can use to personalize the email.
 
 Below is an example of code that you can use as a basis for customizing the thank you email.
 

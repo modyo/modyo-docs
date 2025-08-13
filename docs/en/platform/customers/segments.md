@@ -63,7 +63,7 @@ The default filters available on the platform include:
 - Order paying
 - Order rejected
 
-To create an advanced filter that fits your needs, refer to the [Custom Fields](/en/platform/customers/settings.html#custom-fields) section.
+To create an advanced filter that fits your needs, refer to the [Custom Fields](/en/platform/customers/settings#custom-fields) section.
 
 :::warning Attention
 The update of segments to which a user belongs is performed as a background process and may not be immediate. This occurs:

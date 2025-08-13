@@ -16,7 +16,7 @@ En la vista de edición, encontrarás una barra superior con acciones, una grill
 
 En la barra superior, encontrarás distintas acciones e información:
 
-**Título**: Se encuentra en la parte superior izquierda e indica el nombre de la página que estás modificando. A la derecha del nombre, encontrarás el estado actual de la página: "Borrador", "En revisión", "Aprobado", "Cambios pendientes" o "Publicado". Para aprender más sobre estos estados, puedes revisar la sección de [Versionado y Revisión en Equipo](/es/platform/core/key-concepts.html).
+**Título**: Se encuentra en la parte superior izquierda e indica el nombre de la página que estás modificando. A la derecha del nombre, encontrarás el estado actual de la página: "Borrador", "En revisión", "Aprobado", "Cambios pendientes" o "Publicado". Para aprender más sobre estos estados, puedes revisar la sección de [Versionado y Revisión en Equipo](/es/platform/core/key-concepts).
 
 **Fecha de publicación**: Si la página ha sido publicada, indicará la fecha de la última publicación.
 
@@ -26,10 +26,10 @@ En la barra superior, encontrarás distintas acciones e información:
 Puedes previsualizar las páginas como usuario sin sesión o con sesión de Modyo. Para esto, es recomendable iniciar o cerrar la sesión de Modyo en el sitio antes de entrar al modo vista previa, ya que hacerlo dentro de este modo puede generar errores de seguridad como _x-frame-options_ o _mixed-content_, dependiendo de la configuración de dominios personalizados y SSL del sitio.
 :::
 
-**Diferencias**: Al hacer clic en el icono de diferencias, accedes a la vista de diferencias de la página, donde puedes seleccionar dos versiones a comparar, permitiendo ejecutar las acciones [restablecer y rollback](/es/platform/core/key-concepts.html#revertir-un-cambio).
+**Diferencias**: Al hacer clic en el icono de diferencias, accedes a la vista de diferencias de la página, donde puedes seleccionar dos versiones a comparar, permitiendo ejecutar las acciones [restablecer y rollback](/es/platform/core/key-concepts#revertir-un-cambio).
 
 :::tip Tip
-Si tu página está en estado _borrador_, no aparecerá el icono de diferencias, dado que no hay nada con qué comparar la versión editable actual. Para aprender más sobre las diferencias y respaldos, revisa la sección de [versionado](/es/platform/core/key-concepts.html#versionado).
+Si tu página está en estado _borrador_, no aparecerá el icono de diferencias, dado que no hay nada con qué comparar la versión editable actual. Para aprender más sobre las diferencias y respaldos, revisa la sección de [versionado](/es/platform/core/key-concepts#versionado).
 :::
 
 **Actividad**: Despliega una barra lateral que muestra la actividad asociada a la página, como modificaciones, publicaciones y comentarios. En la parte inferior de esta barra, puedes escribir comentarios. Si la página está en revisión, todos los revisores asignados recibirán una notificación con el comentario.
@@ -55,9 +55,9 @@ Para crear una nueva página, sigue estos pasos:
 7. Personaliza la página según el tipo: agregando o editando widgets para Página de Widget, o editando el Index y Show para Página de Contenido.
 8. Una vez terminado, haz clic en **Publicar**.
 
-Para conocer los tipos de widgets que puedes agregar, consulta [Widgets](/es/platform/channels/pages.html#pagina-de-widget).
+Para conocer los tipos de widgets que puedes agregar, consulta [Widgets](/es/platform/channels/pages#pagina-de-widget).
 
-Para conocer más acerca de páginas de contenido, consulta [Página de Contenido](/es/platform/channels/pages.html#pagina-de-contenido).
+Para conocer más acerca de páginas de contenido, consulta [Página de Contenido](/es/platform/channels/pages#pagina-de-contenido).
 
 **Acción principal**: Es el botón verde en la parte superior derecha que puede tomar distintas formas:
 
@@ -121,11 +121,11 @@ Aquí puedes personalizar tu página usando widgets preestablecidos de la siguie
 :::warning Atención
 El widget de texto enriquecido cuenta con un formateador automático, por lo que el código que escribas en la vista de código puede verse afectado.
 :::
-- **Listado de contenido**: Muestra listados de contenido haciendo uso de filtros por espacio, tipo, idioma, tags, y categoría. Para modificar como se ven estos widgets, debes hacerlo en la sección de Widgets en [Templates](/es/platform/channels/templates.html).
+- **Listado de contenido**: Muestra listados de contenido haciendo uso de filtros por espacio, tipo, idioma, tags, y categoría. Para modificar como se ven estos widgets, debes hacerlo en la sección de Widgets en [Templates](/es/platform/channels/templates).
 - **Contenido destacado**: Muestra un listado de entradas como imágenes "hero" en un carrusel.
 - **Personalizado**: Encontrarás un listado de todos los widgets que has creado y publicado en el widget builder.
 
-Una vez seleccionado un widget en la sección central, el foco pasará a la pestaña lateral, donde podrás encontrar distintas opciones de configuración del widget y en caso de seleccionar un widget personalizado, encontrarás un link para ir directamente a su vista de edición en [widget builder](/es/platform/channels/widgets.html) y el listado de variables que el widget está usando. Si quieres sobrescribir el valor de una variable en particular para esa instancia del widget en esa página, debes seleccionar el checkbox a la izquierda de la variable y cambiar el valor que toma.
+Una vez seleccionado un widget en la sección central, el foco pasará a la pestaña lateral, donde podrás encontrar distintas opciones de configuración del widget y en caso de seleccionar un widget personalizado, encontrarás un link para ir directamente a su vista de edición en [widget builder](/es/platform/channels/widgets) y el listado de variables que el widget está usando. Si quieres sobrescribir el valor de una variable en particular para esa instancia del widget en esa página, debes seleccionar el checkbox a la izquierda de la variable y cambiar el valor que toma.
 
 ### Propiedades
 
@@ -187,8 +187,8 @@ Despliega las [entradas](/es/platform/content/entries) de tus [tipos de contenid
 
 Para poder mostrar contenido en un sitio, debes cumplir con ciertas condiciones:
 
-* Contar con un espacio con al menos un idioma (el mismo del sitio) y con por lo menos un Tipo de contenido. Para más información, ve a [Crear un Espacio](/es/platform/content/spaces.html#crear-un-espacio) y [Crear un Tipo](/es/platform/content/types.html#crear-un-tipo)
-* Contar con entradas publicadas en el idioma del sitio. Para más información, ve [Entradas](/es/platform/content/entries.html) y [Localización](/es/platform/content/spaces.html#localizacion)
+* Contar con un espacio con al menos un idioma (el mismo del sitio) y con por lo menos un Tipo de contenido. Para más información, ve a [Crear un Espacio](/es/platform/content/spaces#crear-un-espacio) y [Crear un Tipo](/es/platform/content/types#crear-un-tipo)
+* Contar con entradas publicadas en el idioma del sitio. Para más información, ve [Entradas](/es/platform/content/entries) y [Localización](/es/platform/content/spaces#localizacion)
 
 :::tip Tip
 Puedes usar el nombre que desees para las vistas, sin importar a que tipo o espacio lo quieras asociar. Siempre debes tener en consideración que las entradas solo se mostrarán si tienen una versión publicada en el idioma del sitio en el que estás creando estas vistas.
@@ -236,10 +236,10 @@ Un ejemplo básico de código Liquid+HTML que puedes usar en **Show** es:
 Este snippet toma `entry.name`, `entry.published_at`, `request.url`, y `entry.description` para generar una página dinámica dependiendo de la entrada que selecciones.
 
 :::tip Tip
-Para aprender más sobre cómo usar Liquid, dirígete a [Liquid markup](/es/platform/channels/liquid-markup.html).
+Para aprender más sobre cómo usar Liquid, dirígete a [Liquid markup](/es/platform/channels/liquid-markup).
 
-Para aprender que campos puedes utilizar con el drop `entry`, ve [Drops de Content](/es/platform/channels/drops.html#entrada).
-Se puede complementar con el uso de [Filtros de contenido](/es/platform/channels/liquid-markup/filters.html#content).
+Para aprender que campos puedes utilizar con el drop `entry`, ve [Drops de Content](/es/platform/channels/drops#entrada).
+Se puede complementar con el uso de [Filtros de contenido](/es/platform/channels/liquid-markup/filters#content).
 :::
 
 #### Propiedades
@@ -252,7 +252,7 @@ En el caso de que el custom domain esté habilitado, para encontrar la forma de 
 En caso de que no se encuentre habilitado, la URL será de la forma `account_url/site_host`.
 :::
 
-El extracto se agrega como parte de los meta tags para mejorar el SEO. Esto es posible tanto para todos los tipos de páginas y [Plantillas](/es/platform/channels/templates.html). Dentro del `<head>` se agrega un tag:
+El extracto se agrega como parte de los meta tags para mejorar el SEO. Esto es posible tanto para todos los tipos de páginas y [Plantillas](/es/platform/channels/templates). Dentro del `<head>` se agrega un tag:
 
 ```html
 <meta name="description" content="{{ page.excerpt }}"/>
@@ -264,13 +264,13 @@ Habilita la delegación de rutas para permitir el control absoluto de las sub-ru
 
 ## Privacidad
 
-Si habilitas la privacidad en una página, entonces se requerirá una sesión para poder ver esta página. Junto a la privacidad, también puedes asociar [Segmentos](/es/platform/customers/segments.html), de tal manera que solo los usuarios que pertenezcan a esos segmentos podrán acceder a esta página. Quienes no sean parte del grupo de segmentos seleccionados, serán redirigidos a la página anterior o al home del sitio.
+Si habilitas la privacidad en una página, entonces se requerirá una sesión para poder ver esta página. Junto a la privacidad, también puedes asociar [Segmentos](/es/platform/customers/segments), de tal manera que solo los usuarios que pertenezcan a esos segmentos podrán acceder a esta página. Quienes no sean parte del grupo de segmentos seleccionados, serán redirigidos a la página anterior o al home del sitio.
 
 ## Meta tags
 
 Los meta tags definen el contenido de una página y los motores de búsqueda dependen de estos para proveer el listado de una búsqueda al usuario. En esta sección podrás añadir meta tags a las páginas y modificar el valor de los meta tags existentes, para enriquecer el SEO de la página. Con los tags añadidos a las páginas, podrás decidir si usar el valor por defecto, sobrescribir el valor disponible para el tag, o eliminar el tag de la página.
 
-Para acceder al listado de meta tags de la página, debes usar el drop de Liquid <span v-pre>`{{ page.meta_tags }}`</span>. Te recomendamos ver el ejemplo en la sección SEO del [Template builder](/es/platform/channels/templates.html#seo).
+Para acceder al listado de meta tags de la página, debes usar el drop de Liquid <span v-pre>`{{ page.meta_tags }}`</span>. Te recomendamos ver el ejemplo en la sección SEO del [Template builder](/es/platform/channels/templates#seo).
 
 ### Agregar un nuevo meta tag
 
@@ -289,5 +289,5 @@ Como parte de la Plantilla `base`, incluimos el Snippet `seo` que contiene la in
 Debes tener en cuenta que para que los meta tags tengan efecto en tu página, debes publicar los cambios.
 :::
 
-Para más información acerca de como usamos meta tags dinámicos en los sitios, visita [configuración del sitio, sección SEO](/es/platform/channels/sites.html#seo).
+Para más información acerca de como usamos meta tags dinámicos en los sitios, visita [configuración del sitio, sección SEO](/es/platform/channels/sites#seo).
 

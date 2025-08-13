@@ -12,8 +12,8 @@ En la sección de plantillas, el menú principal se oculta para optimizar el ár
 
 - **Publicado**: Hay una versión publicada y que la versión editable es idéntica.
 - **Cambios pendientes**: Existe una versión publicada, pero hay modificaciones pendientes de publicar en tu versión editable.
-- **En revisión**: La [revisión en equipo](/es/platform/core/key-concepts.html) está activada y se ha enviado a revisión la versión editable.
-- **Aprobado**: La [revisión en equipo](/es/platform/core/key-concepts.html) está activada y las condiciones de revisión del elemento se han cumplido. En este estado, la plantilla está lista para ser publicada.
+- **En revisión**: La [revisión en equipo](/es/platform/core/key-concepts) está activada y se ha enviado a revisión la versión editable.
+- **Aprobado**: La [revisión en equipo](/es/platform/core/key-concepts) está activada y las condiciones de revisión del elemento se han cumplido. En este estado, la plantilla está lista para ser publicada.
 
 En la parte superior derecha, puedes ver la última fecha de publicación e íconos con las acciones disponibles:
 
@@ -28,7 +28,7 @@ Puedes previsualizar los cambios como usuario sin sesión o usuario con sesión 
 :::tip Tip
 Cada vez que publicas una versión, la versión que estaba publicada pasa a ser una versión de respaldo. Por defecto, se guardan hasta 20 respaldos, permitiéndote comparar, restaurar y hacer rollback a las últimas 20 versiones
 
-Para más información sobre el versionamiento, consulta la sección de [versionado](/es/platform/core/key-concepts.html#versionado).
+Para más información sobre el versionamiento, consulta la sección de [versionado](/es/platform/core/key-concepts#versionado).
 :::
 
 **Buscar en plantillas**: Despliega una barra lateral con un buscador de texto que explora todas las plantillas editables.
@@ -127,9 +127,9 @@ Es necesario que el CDN de tu cuenta esté en la nube para que los cambios se re
 
 En la sección de vistas puedes personalizar cuatro tipos de errores:
 
-* **Deshabilitado**: Se muestra cuando el sitio al que intentas acceder está [deshabilitado](/es/platform/channels/sites.html).
-* **404**: Si en la configuración de [restricciones del sitio](/es/platform/channels/sites.html#privacidad) decides mostrar el 404 en lugar de redireccionar a la página de inicio, se muestra este error al ingresar a una URL no definida.
-* **Privacy**: Se muestra cuando no tienes permisos para acceder al [sitio](/es/platform/channels/sites.html#privacidad) o a una de sus [páginas](/es/platform/channels/pages.html#privacidad).
+* **Deshabilitado**: Se muestra cuando el sitio al que intentas acceder está [deshabilitado](/es/platform/channels/sites).
+* **404**: Si en la configuración de [restricciones del sitio](/es/platform/channels/sites#privacidad) decides mostrar el 404 en lugar de redireccionar a la página de inicio, se muestra este error al ingresar a una URL no definida.
+* **Privacy**: Se muestra cuando no tienes permisos para acceder al [sitio](/es/platform/channels/sites#privacidad) o a una de sus [páginas](/es/platform/channels/pages#privacidad).
 * **Template**: Visible cuando la página cargada tiene un error de sintaxis de Liquid. Es poco probable que veas esta vista, debido a que a partir de Modyo 8.1 la plataforma realiza una verificación de la sintaxis antes de guardar y publicar cambios en Plantillas.
 
 ## CSS y JavaScript
@@ -165,7 +165,7 @@ Una vez guardado y publicado, se traduce al siguiente código HTML:
 <script src='my-js' type='text/javascript' async='async' defer='defer'></script>
 ```
 
-Para obtener información detallada y conocer los parámetros admitidos por estos filtros, consulta la sección de [filtros de Liquid](/es/platform/channels/liquid-markup.html#filtros-estandar).
+Para obtener información detallada y conocer los parámetros admitidos por estos filtros, consulta la sección de [filtros de Liquid](/es/platform/channels/liquid-markup#filtros-estandar).
 
 
 ## Snippets
@@ -187,7 +187,7 @@ Para que el sistema reconozca el lenguaje de programación al que pertenece el s
 :::
 
 :::tip Tip
-Todos los elementos del Template Builder usan Liquid como motor de plantillas. Para más información sobre Liquid y cómo usarlo, consulta la sección [Liquid Markup](/es/platform/channels/liquid-markup.html)
+Todos los elementos del Template Builder usan Liquid como motor de plantillas. Para más información sobre Liquid y cómo usarlo, consulta la sección [Liquid Markup](/es/platform/channels/liquid-markup)
 :::
 
 En el área de trabajo, debajo de las pestañas, encontrarás una barra con estos elementos:
@@ -195,7 +195,7 @@ En el área de trabajo, debajo de las pestañas, encontrarás una barra con esto
 **Elementos de la barra de herramientas**
 La barra de herramientas debajo de las pestañas del Template Builder contiene los siguientes elementos:
 
-- **Gestor de archivos**: Abre un modal que te permite acceder a todos los archivos de tu cuenta y copiar su URL. Selecciona la pestaña **Subir archivos** para cargar nuevos archivos. Para más información sobre los beneficios y funcionalidades de Gestor de Archivos, dirígete a [Gestor de Archivos](/es/platform/content/asset-manager.html)
+- **Gestor de archivos**: Abre un modal que te permite acceder a todos los archivos de tu cuenta y copiar su URL. Selecciona la pestaña **Subir archivos** para cargar nuevos archivos. Para más información sobre los beneficios y funcionalidades de Gestor de Archivos, dirígete a [Gestor de Archivos](/es/platform/content/asset-manager)
 - **Atajos de teclado**: Muestra atajos de teclado útiles para Plantillas.
 - **Snippets**: Despliega un listado con todos los snippets y la opción de copiar su código de referencia.
 - **Cambios**: Despliega un listado de todas las veces y estados en los que has guardado la versión actual. Al hacer click en una de las sub-versiones, cambias el contenido del template a esa sub-versión.
@@ -216,7 +216,7 @@ Para restaurar todas las plantillas a su versión original, haz click en la acci
 
 ## SEO
 
-El SEO [(Search Engine Optimization)](/es/platform/channels/sites.html#seo) es fundamental para el posicionamiento de tu sitio y contenido.
+El SEO [(Search Engine Optimization)](/es/platform/channels/sites#seo) es fundamental para el posicionamiento de tu sitio y contenido.
 
 En Modyo puedes controlar la forma en que los motores de búsqueda leen tu sitio y contenido, agregando meta tags de forma dinámica, según los atributos que añadas a tus páginas y contenidos.
 

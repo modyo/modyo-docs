@@ -179,7 +179,7 @@ Adds currency format to a value. *e.g.*
 :::warning Important
 This filter determines the format of the currency and takes precedence over any other currency settings.
 
-If you don't specify currency parameters with the currency filter, Modyo uses the realm's [payment] (/en/platform/customers/settings.html#payment-settings) settings.
+If you don't specify currency parameters with the currency filter, Modyo uses the realm's [payment] (/en/platform/customers/settings#payment-settings) settings.
 
 If the site does not have a realm associated to it, and you don't specify parameters, the predefined format of the site's language will be applied.
 :::

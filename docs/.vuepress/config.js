@@ -17,6 +17,13 @@ module.exports = {
   },
   plugins: [],
   head: [
+      ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
+      ['link', { rel: 'preconnect', href: 'https://cloud.modyocdn.com' }],
+      ['link', { rel: 'dns-prefetch', href: 'https://www.googletagmanager.com' }],
+      ['meta', { name: 'theme-color', content: '#00D4AA' }],
+      ['meta', { property: 'og:type', content: 'website' }],
+      ['meta', { property: 'og:site_name', content: 'Modyo Docs' }],
+      ['meta', { property: 'twitter:card', content: 'summary_large_image' }],
       [
           "script",
           {},

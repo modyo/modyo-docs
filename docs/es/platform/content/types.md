@@ -63,7 +63,7 @@ Esta interfaz te permite crear cada uno de los tipos y darles el formato necesar
 :::tip Tip
 El nombre del campo es de suma importancia, ya que será utilizado para acceder a su valor en los SDK de Liquid y JS. Para acceder al valor de un campo de una entrada puedes utilizar la sintaxis <span v-pre>`{{entry["nombre del campo"]}}`</span>. 
 
-Para más información ve a la [referencia de la API](/es/platform/content/public-api-reference.html)
+Para más información ve a la [referencia de la API](/es/platform/content/public-api-reference)
 :::
 
 Todos los campos que se pueden añadir en un tipo, tienen un nombre, y la posibilidad de ser requeridos.
@@ -190,5 +190,5 @@ Al reindexar uno de tus tipos, el modelo previamente indexado seguirá disponibl
 :::
 
 :::warning Atención
-Ten en cuenta que dependiendo de la [configuración de caché que tengas en tu espacio](/es/platform/content/spaces.html#cache), es posible que no veas los cambios inmediatamente después de haber terminado la reindexación.
+Ten en cuenta que dependiendo de la [configuración de caché que tengas en tu espacio](/es/platform/content/spaces#cache), es posible que no veas los cambios inmediatamente después de haber terminado la reindexación.
 :::

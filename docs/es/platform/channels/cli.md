@@ -57,7 +57,7 @@ El siguiente paso es configurar tu proyecto para facilitar la carga de widgets e
 
 #### Acciones Previas
 
-1. **Obtener un token de acceso a Modyo**: Para obtener el token, necesitas tener un usuario o [crear uno](/es/platform/core/roles.html#crear-usuario) con al menos el [rol](/es/platform/core/roles.html#roles) de `site developer-cli` en los sitios o stages donde desplegarás tu widget. Una vez creado el usuario, puedes [configurarle un token de acceso](/es/platform/core/api.html#autenticacion). Este token se utilizará para configurar y activar los despliegues en la plataforma.
+1. **Obtener un token de acceso a Modyo**: Para obtener el token, necesitas tener un usuario o [crear uno](/es/platform/core/roles#crear-usuario) con al menos el [rol](/es/platform/core/roles#roles) de `site developer-cli` en los sitios o stages donde desplegarás tu widget. Una vez creado el usuario, puedes [configurarle un token de acceso](/es/platform/core/api#autenticacion). Este token se utilizará para configurar y activar los despliegues en la plataforma.
 
 2. **Identificar la aplicación donde publicarás**:
 Para obtener el ID de tu aplicación, ve al resumen de tu aplicación. Se recomienda utilizar este valor siempre que sea posible. Si necesitas utilizar el site host, lo encontrarás en la sección general de la configuración de tu aplicación.
@@ -232,7 +232,7 @@ El comando `preview` te permite previsualizar un widget localmente para depurar 
 
 Para utilizar el comando `preview`, asegúrate de cumplir con los siguientes requisitos:
 
-- Un archivo [.env](https://docs.modyo.com/es/platform/channels/cli.html#configuracion-inicial) correctamente configurado. Los campos `MODYO_ACCOUNT_URL`, `MODYO_SITE_HOST` o `MODYO_SITE_ID` y `MODYO_TOKEN ` son requeridos.
+- Un archivo [.env](https://docs.modyo.com/es/platform/channels/cli#configuracion-inicial) correctamente configurado. Los campos `MODYO_ACCOUNT_URL`, `MODYO_SITE_HOST` o `MODYO_SITE_ID` y `MODYO_TOKEN ` son requeridos.
 - Un servidor local en ejecución con el widget que deseas previsualizar.
 
 #### Pasos para Previsualizar un Widget
@@ -278,7 +278,7 @@ Estos comandos te permiten seleccionar los entry points locales que quieres usar
 
 ### Code Splitting
 
-Los [widgets](/es/platform/channels/widgets.html#widgets) te permiten desarrollar funcionalidades complejas en tus aplicaciones web de Modyo, incrementando así la funcionalidad de tus sitios.
+Los [widgets](/es/platform/channels/widgets#widgets) te permiten desarrollar funcionalidades complejas en tus aplicaciones web de Modyo, incrementando así la funcionalidad de tus sitios.
 
 Sin embargo, al incluir librerías externas o incrementar la complejidad de un widget, puedes enfrentar tiempos de carga excesivos o exceder los límites de tamaño establecidos para los widgets en Modyo, lo que afecta negativamente tanto la experiencia de desarrollo como la del usuario.
 
@@ -332,9 +332,9 @@ $ modyo-cli push -p
 ```
 
 :::warning Atención
-El usuario dueño del token debe tener un rol de [site reviewer o admin](/es/platform/core/roles.html#roles) en el sitio en el cual estás desplegando el widget para que se pueda realizar la publicación correctamente.
+El usuario dueño del token debe tener un rol de [site reviewer o admin](/es/platform/core/roles#roles) en el sitio en el cual estás desplegando el widget para que se pueda realizar la publicación correctamente.
 :::
 
 Una vez que un widget está desplegado y publicado en Modyo, está disponible para ser utilizado en las páginas del sitio al que pertenece.
 
-Si has definido [variables](/es/platform/core/key-concepts.html#variables-globales) sus valores pueden ser especificados a nivel global o particular a cada instancia del widget.
+Si has definido [variables](/es/platform/core/key-concepts#variables-globales) sus valores pueden ser especificados a nivel global o particular a cada instancia del widget.

@@ -13,7 +13,7 @@ Training on the Modyo Platform is crucial for any user, as it provides the minim
 - Clearly define your role (e.g., frontend development, content management, digital marketing, system administration).
 - Set up a [test environment](https://platform.modyo.cloud/try) for practice.
 - Have access to the [platform documentation](/en/platform/core).
-- Have access to our [Support Center](https://support.modyo.com/hc/es) to report problems and make inquiries.
+- Have access to our [Support Center](https://support.modyo.com/hc/en-us) to report problems and make inquiries.
 
 Below, we will show you how to access the information and resources necessary to facilitate your experience with Modyo.
 
@@ -27,7 +27,7 @@ Modyo features the following main modules, which you will learn about during you
 - [**Modyo Insights**:](/en/platform/insights) An application specialized in representing statistical data for both your site users and the team that creates content and digital channels.
 
 #### Tutorials
-The [tutorials](https://help.modyo.com/en/collections/4032221-tutoriales) are the easiest way to get started on the Modyo Platform. Only a [test environment](/en/platform/training.html#test-environment) and time are required to learn the fundamental concepts step by step.
+The [tutorials](https://help.modyo.com/en/collections/4032221-tutoriales) are the easiest way to get started on the Modyo Platform. Only a [test environment](/en/platform/training#test-environment) and time are required to learn the fundamental concepts step by step.
 It is recommended to follow the tutorials in order, completing all the steps presented in them.
 
 #### Learning Paths

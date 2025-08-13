@@ -63,7 +63,7 @@ This interface allows you to create each of the types and format them as needed,
 :::tip Tip
 The name of the field is of utmost importance, as it will be used to access its value in the Liquid and JS SDKs. To access the value of a field in an entry, you can use the syntax <span v-pre>`{{entry["field name"]}}`</span>.
 
-For more information, go to the [API reference](/en/platform/content/public-api-reference.html)
+For more information, go to the [API reference](/en/platform/content/public-api-reference)
 :::
 
 All fields that can be added to a type have a name and can optionally be set as required.
@@ -190,5 +190,5 @@ When you reindex one of your types, the previously indexed model will remain ava
 :::
 
 :::warning Attention
-Note that depending on the [cache settings you have in your space](/en/platform/content/spaces.html#cache), you may not see the changes immediately after you have finished reindexing.
+Note that depending on the [cache settings you have in your space](/en/platform/content/spaces#cache), you may not see the changes immediately after you have finished reindexing.
 :::

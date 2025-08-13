@@ -81,7 +81,7 @@ To use a custom CSS style sheet in session views, follow these steps:
 3. Paste the CSS code into the editor.
 4. Click the **Save** button to save the changes.
 
-Click the [File Manager](/en/platform/content/asset-manager.html) icon to upload linked files in the CSS code.
+Click the [File Manager](/en/platform/content/asset-manager) icon to upload linked files in the CSS code.
 
 It's important to note that the editor doesn't automatically generate the link to the file after uploading it. After uploading the file, click the paste button on the side of each file to generate its link. Then, copy this link and paste it into the CSS code.
 
@@ -140,7 +140,7 @@ The services compatible with Modyo login are:
 
 You must have the correct configuration of the associated service so that Modyo can connect to it. Be sure to complete all required fields.
 
-For more information on integrations, see the [Identity Providers](/en/platform/core/integrations/identity-providers.html) section
+For more information on integrations, see the [Identity Providers](/en/platform/core/integrations/identity-providers) section
 
 
 
@@ -337,7 +337,7 @@ Deleting a customizable field permanently deletes all user values associated wit
 :::
 
 :::tip Tip
-In addition to saving user-specific values, you can use customizable field values to create [segments](/en/platform/customers/segments.html) filters, allowing you to separate users based on their custom values.
+In addition to saving user-specific values, you can use customizable field values to create [segments](/en/platform/customers/segments) filters, allowing you to separate users based on their custom values.
 :::
 
 ### Security

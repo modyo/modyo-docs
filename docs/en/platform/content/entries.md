@@ -19,13 +19,13 @@ The columns for sorting the list of entries are:
 
 - **Status**: Draft, Published, Scheduled, or Archived.
 - **Name**: Content title.
-- **Type**: Content [type](/en/platform/content/types.html).
+- **Type**: Content [type](/en/platform/content/types).
 - **Updated on**: Date of the last saved content update.
 - **Author**: Content author's name.
 
 You can also filter the view with predefined filters:
 
-- **Type**: Content [type](/en/platform/content/types.html).
+- **Type**: Content [type](/en/platform/content/types).
 - **Status**: Draft, Published, Scheduled, or Archived.
 - **Category**: Category assigned to entries.
 - **Language**: Content language.
@@ -126,7 +126,7 @@ To publish an entry in Modyo, follow these steps:
 1. At the top of the screen, click **Save**.
 1. If you have administrator permissions, the **Save** button changes to **Publish** and you can proceed to publish your entry. Otherwise, another user with Administrator permissions can do so. If team review is active, it will go through that process before it is published.
 
-You can find more information on team review in the [Key Concepts](https://docs.modyo.com/en/platform/core/key-concepts.html) section of our documentation.
+You can find more information on team review in the [Key Concepts](https://docs.modyo.com/en/platform/core/key-concepts) section of our documentation.
 
 
 ### Unpublish an Entry

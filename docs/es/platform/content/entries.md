@@ -19,13 +19,13 @@ Las columnas para ordenar la lista de entradas son:
 
 - **Estado**: Borrador, publicado, programado o archivado.
 - **Nombre**: Nombre del contenido.
-- **Tipo**: [Tipo](/es/platform/content/types.html) de contenido.
+- **Tipo**: [Tipo](/es/platform/content/types) de contenido.
 - **Actualizado**: Fecha de la última actualización guardada del contenido.
 - **Autor**: Nombre del autor del contenido.
 
 También puedes filtrar la vista con filtros predeterminados:
 
-- **Tipo**: [Tipo](/es/platform/content/types.html) de contenido.
+- **Tipo**: [Tipo](/es/platform/content/types) de contenido.
 - **Estado**: Borrador, publicado, programado y archivado.
 - **Categoría**: Categoría asignada a las entradas.
 - **Idioma** Idioma del contenido.
@@ -126,7 +126,7 @@ Para publicar una entrada en Modyo, sigue estos pasos:
 1. En la parte superior de la pantalla, haz click en **Guardar**.
 1. Si tienes permisos de administrador, el botón de **Guardar** cambia a **Publicar** y puedes proceder a publicar tu entrada. De lo contrario, otro usuario con permisos de Administrador puede hacerlo. Si está activa la revisión en equipo, pasará por ese proceso antes de publicarse.
 
-Puedes encontrar más información de revisión en equipo en la sección de [Conceptos Clave](https://docs.modyo.com/es/platform/core/key-concepts.html) de nuestra documentación.
+Puedes encontrar más información de revisión en equipo en la sección de [Conceptos Clave](https://docs.modyo.com/es/platform/core/key-concepts) de nuestra documentación.
 
 
 ### Despublicar una entrada

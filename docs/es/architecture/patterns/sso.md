@@ -23,7 +23,7 @@ Es importante tener en cuenta que, si no se implementa correctamente, el SSO pue
 
 El SSO en Modyo delega la autenticación a un sistema central, facilitando la gestión de usuarios y la aplicación de políticas de seguridad centralizadas. Se puede implementar de dos formas:
 
-1. Mediante el [componente de SSO](/es/connect/components/infrastructure.html#single-sign-on-sso) de [Modyo Connect](/es/connect).
+1. Mediante el [componente de SSO](/es/connect/components/infrastructure#single-sign-on-sso) de [Modyo Connect](/es/connect).
 2. A través de la integración con un sistema de SSO del cliente.
 
 Ambas opciones se benefician de la capacidad de integración de la plataforma con estándares como OpenID Connect (OIDC), SAML, Azure AD, Google, OAuth2, entre otros.

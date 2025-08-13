@@ -13,7 +13,7 @@ Puedes utilizar los filtros en la parte superior de la tabla para encontrar grup
 
 - **Estado**: Usuarios activos e inactivos.
 - **Verificación**: Usuarios que han confirmado sus datos en la plataforma.
-- **Segmentos**: Usuarios que pertenecen a un [segmento](/es/platform/customers/segments.html) específico.
+- **Segmentos**: Usuarios que pertenecen a un [segmento](/es/platform/customers/segments) específico.
 - **Etiquetas**: Usuarios asignados a etiquetas específicas en la plataforma.
 - **Búsqueda**: Filtra usuarios por nombre, apellido, email o nombre de usuario.
 
@@ -45,9 +45,9 @@ Para agregar un nuevo usuario, haz clic en el botón **Nuevo Usuario** y complet
 Para enviar la contraseña al correo del usuario, marca la casilla debajo del campo de correo electrónico. El usuario puede cambiar la contraseña una vez que acceda a la plataforma.
 :::
 
-Si necesitas agregar campos adicionales al formulario o seleccionar un avatar predeterminado para usuarios sin avatar, ve a la sección **Regístrate** en la [Configuración de Reino](/es/platform/customers/settings.html).
+Si necesitas agregar campos adicionales al formulario o seleccionar un avatar predeterminado para usuarios sin avatar, ve a la sección **Regístrate** en la [Configuración de Reino](/es/platform/customers/settings).
 
-Para crear o modificar campos personalizados, consulta la sección [Custom Fields](/es/platform/customers/settings.html#custom-fields).
+Para crear o modificar campos personalizados, consulta la sección [Custom Fields](/es/platform/customers/settings#custom-fields).
 
 ## Ficha de usuario
 
@@ -77,7 +77,7 @@ Estos registros no se pueden borrar ni editar.
 
 ### Respuestas a formularios
 
-Esta sección contiene una lista de formularios rellenados por el usuario. Haz clic en un formulario para ver sus respuestas. Para más información, consulta la sección [Formularios](/es/platform/customers/forms.html).
+Esta sección contiene una lista de formularios rellenados por el usuario. Haz clic en un formulario para ver sus respuestas. Para más información, consulta la sección [Formularios](/es/platform/customers/forms).
 
 ### Notas
 
