@@ -6,7 +6,7 @@ tags:
 
 # Seguridad
 
-Para Modyo la seguridad es una prioridad fundamental. Por este motivo, hemos desarrollado esta página que servirá como guía integral para asegurar la instalación de Modyo.
+Para Modyo, la seguridad es una prioridad fundamental. Por este motivo, hemos desarrollado esta página que servirá como guía integral para asegurar la instalación de Modyo.
 
 Tanto Modyo Cloud como Enterprise Cloud, nuestras soluciones en la nube, ofrecen un excelente nivel de seguridad de manera predeterminada. Además, los administradores de la plataforma tienen la capacidad de aplicar medidas adicionales para fortalecer la protección de sus organizaciones.
 
@@ -58,7 +58,7 @@ Para dar acceso a dominios externos, escríbelos separados por comas, por ejempl
 
 ## Token de entrega de contenido (JWT - JSON Web Token)
 
-Esta clave o _secret_ es usada por Modyo para firmar los JWT de los usuarios y así poder acceder al [contenido privado a través de la API](/es/platform/content/public-api-reference.html#contenido-privado).
+Esta clave o _secret_ es usada por Modyo para firmar los JWT de los usuarios y así poder acceder al [contenido privado a través de la API](/es/platform/content/public-api-reference#contenido-privado).
 
 :::warning Atención
 Si generas una nueva clave, todas las solicitudes de contenido privado deberán pasar por Modyo. Esto se debe a que los JWT firmados por Modyo con la clave anterior ya no serán válidos.

@@ -1,4 +1,4 @@
-# Perfil de usuario
+# Perfil de Usuario
 
 El **perfil de usuario** es el espacio donde cada usuario puede:
 
@@ -9,7 +9,7 @@ Este perfil está disponible para los usuarios al autenticarse o acceder a la se
 
 ## Actividad
 
-En esta sección puedes ver un registro de todas las acciones realizadas por el usuario en la plataforma.
+En esta sección, puedes ver un registro de todas las acciones realizadas por el usuario en la plataforma.
 
 :::warning Atención
 Estos registros no se pueden borrar ni editar.
@@ -21,9 +21,9 @@ Cada usuario puede acceder a sus notificaciones directamente desde el perfil, li
 
 Al hacer click en una notificación, se mostrará el contenido completo de esta y se marcará como leída.
 
-## Editar información
+## Editar Información
 
-En esta sección, cada usuario puede modificar los datos de su perfil, dependiendo de la [configuración de reino](/es/platform/customers/settings.html), cada usuario podrá modificar:
+En esta sección, cada usuario puede modificar los datos de su perfil, dependiendo de la [configuración de reino](/es/platform/customers/settings), cada usuario podrá modificar:
 
 - Nombre
 - Apellido
@@ -34,7 +34,7 @@ En esta sección, cada usuario puede modificar los datos de su perfil, dependien
 - Fecha de Nacimiento
 - Género
 - Idioma
-- [Custom fields](/es/platform/customers/settings.html#custom-fields)
+- [Custom fields](/es/platform/customers/settings#custom-fields)
 - Contraseña
 - Gestión de campañas de correo
 

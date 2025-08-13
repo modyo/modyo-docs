@@ -6,7 +6,7 @@ search: true
 
 La sección **Eventos** contiene un registro cronológico de las actividades y sucesos realizados por los usuarios en la plataforma. Este historial detallado es útil para tareas de seguimiento y monitoreo.
 
-En la interfaz de eventos puedes ver una lista de los usuarios que han llevado a cabo tareas, qué tipos de tareas y cuándo las llevaron a cabo.
+En la interfaz de eventos, puedes ver una lista de los usuarios que han llevado a cabo tareas, qué tipos de tareas y cuándo las llevaron a cabo.
 
 ## Filtros disponibles
 

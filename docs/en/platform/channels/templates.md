@@ -6,14 +6,14 @@ search: true
 
 The base architecture and appearance are essential aspects of a site. In the Templates section, you can adjust the base templates as well as the global JavaScript and CSS and modify the structure as needed.
 
-When you create a site, it comes complete with different templates to generate the Minimal theme, and you can start creating your digital channel on it. You can also create HTML, JS and CSS code snippets to extend the functionality of your site.
+When you create a site, it comes complete with different templates to generate the Minimal theme, and you can start creating your digital channel on it. You can also create HTML, JS, and CSS code snippets to extend the functionality of your site.
 
 In the templates section, the main menu is hidden to optimize the work area. At the top left, you'll find the name of the section and the current status of the post:
 
 - **Published**: There is a published version and the editable version is identical.
 - **Pending changes**: There is a published version, but there are changes pending publication in your editable version.
-- **Under review**: [team review](/en/platform/core/key-concepts.html) is active, and the editable version has been submitted for review.
-- **Approved**: [team review](/en/platform/core/key-concepts.html) is enabled and the item's review conditions have been met. In this state, the template is ready to be published.
+- **Under review**: [Team review](/en/platform/core/key-concepts) is active, and the editable version has been submitted for review.
+- **Approved**: [Team review](/en/platform/core/key-concepts) is active and the item's review conditions have been met. In this state, the template is ready to be published.
 
 At the top right, you can see the last date of publication and icons with the available actions:
 
@@ -26,24 +26,24 @@ You can preview the changes as a non-session user or a user with an active Modyo
 **Differences**: Compare changes between multiple versions of your templates. By default, Modyo compares the published version with the editable version. Use the version selectors to compare with backup versions.
 
 :::tip Tip
-Every time you publish a version, the version that was published becomes a backup version. By default, up to 20 backups are saved, allowing you to compare, restore and roll back to the last 20 versions
+Every time you publish a version, the version that was published becomes a backup version. By default, up to 20 backups are saved, allowing you to compare, restore, and roll back to the last 20 versions
 
-For more information on versioning, refer to the section on [versioning](en/platform/core/key-concepts.html#versions).
+For more information on versioning, see the section on [versioning](/en/platform/core/key-concepts#versioning).
 :::
 
-**Search in templates**: Display a sidebar with a text search engine that explores all the editable templates.
+**Search in templates**: Displays a sidebar with a text search engine that explores all editable templates.
 
-**View activity**: Display a sidebar that shows the activity history and, where you can read and write comments. Click on **view detail** to show the full information of any activity log.
+**View activity**: Displays a sidebar that shows the activity history and where you can read and write comments. Click on **view detail** to show the full information of any activity log.
 
 **More actions**: This icon allows you to **archive** or **delete** a template.
 
 The last option in the top bar shows the main actions you can perform:
 
-- **Save**: Save all changes to all templates.
-- **Submit for review**: Change the status of the templates to “Awaiting Review”. In this state, you can continue to make changes, but each change will be notified by email to the assigned reviewers.
+- **Save**: Saves all changes to all templates.
+- **Submit for review**: Changes the status of the templates to "Awaiting Review". In this state, you can continue to make changes, but each change will be notified by email to the assigned reviewers.
 - **Force publication**: Only available to site administrators, allows you to immediately publish a template, even if it is awaiting review.
-- **Reject**: Returns to “In Edit” status and notifies reviewers that the item was rejected.
-- **Publish**: Once the template has been approved, you can send it to publication.
+- **Reject**: Returns to "In Edit" status and notifies reviewers that the item was rejected.
+- **Publish**: Once the template has been approved, you can send it to publish.
 
 In the main work area, there are two sections:
 
@@ -65,7 +65,7 @@ To create a new layout:
 
 This allows you to define a new base structure for use on pages.
 
-You can use this code as a base that contains everything necessary for your pages to use the elements of the site, such as the header, footer, service worker and Google Tag Manager configuration. You can also modify the code as needed.
+You can use this code as a base that contains everything necessary for your pages to use the elements of the site, such as the header, footer, service worker, and Google Tag Manager configuration. You can also modify the code as needed.
 
 
 ```liquid
@@ -98,7 +98,7 @@ To apply a new layout to a page, follow these steps:
 
 ### Inserting an Image with Liquid
 
-Modyo recommends using the Liquid tag and not the asset URL to insert images into your content. This allows you to resize or replace an image everywhere it's in use, and ensure that any changes are immediately reflected.
+Modyo recommends using the Liquid tag and not the asset URL to insert images into your content. This allows you to resize or replace an image wherever it is in use, and ensure that any changes are immediately reflected.
 
 In addition, Modyo converts the image to webp format with lossless compression quality. This generates lighter images, with shorter load times, and without loss of quality.
 
@@ -120,31 +120,31 @@ In addition, Modyo converts the image to webp format with lossless compression q
 1. Click on **update information**.
 
 :::tip Tip
-Your account's CDN needs to be in the cloud for changes to be reflected immediately, otherwise you'll need to request cache validation via a ticket to [Modyo] (https://support.modyo.com/hc/en-us).
+It is necessary that your account's CDN is in the cloud for changes to be reflected immediately, otherwise you will need to request cache invalidation via a ticket to [Modyo](https://support.modyo.com/hc/en-us).
 :::
 
 ## Errors in Views
 
 In the views section, you can customize four types of errors:
 
-* **Disabled**: Displayed when the site you're trying to access is [disabled](/en/platform/channels/sites.html).
-* **404**: If in the [site restrictions](en/platform/channels/sites.html#privacy) configuration you decide to show 404 instead of redirecting to the home page, this error appears when entering an undefined URL.
-* **Privacy**: Shown when you don't have permissions to access the [site](en/platform/channels/sites.html#privacy) or one of its [pages](en/platform/channels/pages.html#privacy).
-* **Template**: Visible when the loaded page has a Liquid syntax error. It's unlikely that you'll see this view, as from Modyo 8.1 onwards, the platform performs a syntax check before saving and publishing changes to Templates.
+* **Disabled**: Displayed when the site you are trying to access is [disabled](/en/platform/channels/sites).
+* **404**: If in the [site restrictions](/en/platform/channels/sites#privacy) configuration you decide to show 404 instead of redirecting to the home page, this error appears when entering an undefined URL.
+* **Privacy**: Shown when you do not have permissions to access the [site](/en/platform/channels/sites#privacy) or one of its [pages](/en/platform/channels/pages#privacy).
+* **Template**: Visible when the loaded page has a Liquid syntax error. It is unlikely that you will see this view, as from Modyo 8.1 onwards, the platform performs a syntax check before saving and publishing changes to Templates.
 
 ## CSS and JavaScript
 
 Create custom CSS and JavaScript views to import your libraries to Modyo Platform. To do this, follow these steps:
 
 1. In the **Templates** section, click on the **Views** tab.
-1. Go to the CSS or JavaScript section, under the **Layout** section.
+1. Go to the CSS or JavaScript section, below the **Layout** section.
 1. Click on the corresponding **+** button.
 1. Add the Route and click **Add**.
 1. Once you have finished editing the Style Sheet or Javascript, you must include it in your layout. To do this, you can use the following Liquid filters:
 
 - `asset_url`: To define the file type
-- `stylesheet_tag`: Generate a tag &lt;link&gt; to include the CSS view.
-- `script_tag`: Generate a tag &lt;script&gt; to include the Javascript view.
+- `stylesheet_tag`: Generates a <link> tag to include the CSS view.
+- `script_tag`: Generates a <script> tag to include the Javascript view.
 
 ### Examples
 - A custom CSS view with media: screen
@@ -158,21 +158,21 @@ Create custom CSS and JavaScript views to import your libraries to Modyo Platfor
 </head>
 ```
 
-Once saved and published, it is translated into the following HTML code:
+Once saved and published, it translates into the following HTML code:
 
 ```html
 <link href='my-css' rel='stylesheet' type='text/css' media='screen' title='color style' />
 <script src='my-js' type='text/javascript' async='async' defer='defer'></script>
 ```
 
-To obtain detailed information and learn about the parameters supported by these filters, refer to the [Liquid filters section](en/platform/channels/liquid-markup/filters.html).
+To obtain detailed information and learn about the parameters supported by these filters, refer to the [Liquid filters section](/en/platform/channels/liquid-markup#standard-filters).
 
 
 ## Snippets
 
 Snippets are reusable fragments of HTML, JS, or CSS code for your sites. To use a snippet:
 
-1. Copy the reference path of the custom snippet. The Liquid code will look like: &lt;span v-pre&gt;`{% snippet “snippet-name”%}` &lt;/span&gt;.
+1. Copy the reference path of the custom snippet. The Liquid code will look like: <span v-pre>`{% snippet "snippet-name"%}`</span>.
 1. Paste the code wherever you want to call this Snippet.
 
 To add a custom snippet:
@@ -183,19 +183,19 @@ To add a custom snippet:
 
 
 :::warning Important
-For the system to recognize the programming language that the snippet belongs to, you must add an underscore and then the ending, as follows: “front_css” or “library_js”. By default, the system will recognize the snippet as an HTML language.
+For the system to recognize the programming language to which the snippet belongs, you must add an underscore and then the ending, as follows: "front_css" or "library_js". By default, the system will recognize the snippet as an HTML language.
 :::
 
 :::tip Tip
-All the elements of the Template Builder use Liquid as the template engine. For more information about Liquid and how to use it, see the [Liquid Markup](/en/platform/channels/liquid-markup.html) section.
+All elements of the Template Builder use Liquid as the template engine. For more information about Liquid and how to use it, see the [Liquid Markup](/en/platform/channels/liquid-markup) section.
 :::
 
-In the work area, under the tabs, you'll find a bar with these items:
+In the work area, below the tabs, you will find a bar with these elements:
 
 **Toolbar items**
-The toolbar under the Template Builder tabs contains the following elements:
+The toolbar below the Template Builder tabs contains the following elements:
 
-- **File Manager**: Opens a modal that allows you to access all the files in your account and copy their URL. Select the **Upload Files** tab to upload new files. For more information about the benefits and features of File Manager, go to [File Manager](/en/platform/content/asset-manager.html)
+- **File Manager**: Opens a modal that allows you to access all the files in your account and copy their URL. Select the **Upload Files** tab to upload new files. For more information about the benefits and features of File Manager, go to [File Manager](/en/platform/content/asset-manager)
 - **Keyboard Shortcuts**: Shows useful keyboard shortcuts for Templates.
 - **Snippets**: Displays a list with all the snippets and the option to copy their reference code.
 - **Changes**: Displays a list of all the times and states in which you have saved the current version. By clicking on one of the sub-versions, you change the content of the template to that sub-version.
@@ -205,22 +205,22 @@ When you publish a version, the list of changes disappears, because the new edit
 :::
 
 :::tip Tip
-Subversions are specific to each template, so some may have changes and others may not, and those without changes will not show the change selector. In the same way, if you go back to a previous sub-version of a template, you don't affect the rest of the templates.
+Subversions are specific to each template, so some may have changes and others may not, and those without changes will not show the change selector. In the same way, if you go back to a previous sub-version of a template, you do not affect the rest of the templates.
 :::
 
 :::tip Tip
-If you restore a previous version to the editable version, you can access the sub-versions of each template in that version. You can learn more about [versions](en/platform/core/key-concepts.html#versions) here.
+If you restore a previous version to the editable version, you can access the sub-versions of each template in that version. You can learn more about [versioning](/en/platform/core/key-concepts#versioning) here.
 :::
 
 To restore all templates to their original version, click on the secondary action in the top bar **Restore All**. For the changes to take effect, you must publish the templates.
 
 ## SEO
 
-SEO [(Search Engine Optimization)](/en/platform/channels/sites.html #seo) is essential for positioning your site and content.
+SEO [(Search Engine Optimization)](/en/platform/channels/sites#seo) is essential for positioning your site and content.
 
-In Modyo, you can control the way in which search engines read your site and content, by adding meta tags dynamically, depending on the attributes you add to your pages and content.
+In Modyo, you can control how search engines read your site and content, by dynamically adding meta tags, depending on the attributes you add to your pages and content.
 
-To add meta tags in Modyo, use this snippet of code in Templates and then call it from the head of your site:
+To add meta tags in Modyo, use this code snippet in Templates and then call it from the head of your site:
 
 ```html
 <!-- Site SEO -->
@@ -249,13 +249,13 @@ This snippet uses Liquid to add site-level meta tags. It also adds specific meta
 You can customize this snippet and define what meta tags you want for specific URLs or types.
 
 
-## Examples of SEO
+## SEO Examples
 
 These examples show you how to use the SEO snippet to improve SEO in different cases:
 
-### Specific meta tags for a Post
+### Specific meta tags for an Entry
 
-Use this code to use specific meta tags when a user visits a post:
+Use this code to use specific meta tags when a user visits an entry:
 
 ```html
 ...
@@ -279,11 +279,11 @@ Use this code to use specific meta tags when a user visits a post:
 ...
 ```
 
-In this case, the `posts` and `place` entry types share the _title_, _excerpt_ and _covers_ attributes and differ in the _locations_ object. In addition, it defines a different type of document for each one.
+In this case, the `posts` and `place` entry types share the _title_, _excerpt_, and _covers_ attributes and differ in the _locations_ object. In addition, it defines a different document type for each one.
 
 ### Category-specific meta tags on the Content Page
 
-For specific meta tags when displaying posts from a category, copy the following code:
+For specific meta tags when displaying entries from a category, copy the following code:
 
 ```html
 {% assign category_name = category_path | split: '/' | last | capitalize %}
@@ -296,7 +296,7 @@ For specific meta tags when displaying posts from a category, copy the following
 {% endcase %}
 
 {% if category_path.size > 0 %}
-<!-- Content Page: Index con categoría -->
+<!-- Content Page: Index with category -->
 <title> {{ category_name }} - {{ site.name }} </title>
 <meta name="description" content="{{ category_description }}"/>
 <meta property="og:title" content="{{ category_name }} - {{ site.name }}"/>
@@ -307,6 +307,6 @@ For specific meta tags when displaying posts from a category, copy the following
 <meta property="og:description" content="{{ category_description }}"/>
 ```
 
-In this code, a `category_name` variable is created that contains the name of the category taken from the URL, then a `{% if category_path.size > 0%}` is used to add relevant metadata to the category.
+In this code, a `category_name` variable is created that contains the name of the category taken from the URL. Then, an `{% if category_path.size > 0 %}` is used to add relevant metadata to the category.
 
 Liquid allows you to create dynamic content for your site. To learn more about Liquid and how to use Liquid Drops, visit [Liquid Markup](/en/platform/channels/liquid-markup).

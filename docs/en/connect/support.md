@@ -4,9 +4,6 @@ search: true
 
 # Support
 
-Modyo's Site Reliability Engineer (SRes) team operates in 24/7 on-call shifts. Each shift includes primary and secondary engineers, with the option of contacting customer-appointed technicians or escalating to internal experts if required.
+Modyo's Site Reliability Engineering (SRE) team operates on 24/7 on-call shifts. Each shift includes primary and secondary engineers, with options to contact customer-appointed technicians or escalate to internal experts as needed.
 
-Support activation is done in the [Modyo Support Center](https://support.modyo.com) using an incident ticket. In cases where the ticket does not receive a timely response, Modyo establishes a personalized escalation protocol with each customer.
-
-
-
+Support activation is managed through the [Modyo Support Center](https://support.modyo.com) by submitting an incident ticket. If a ticket does not receive a timely response, Modyo establishes a personalized escalation protocol with each customer.

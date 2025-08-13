@@ -4,17 +4,17 @@ search: true
 
 # Modyo CLI
 
-La Interfaz de Línea de Comandos de Modyo (CLI) es una herramienta basada en dos principios fundamentales: aceleración e integración. Estos principios se implementan a través de los comandos `get` y `push`, respectivamente.
+La Interfaz de Línea de Comandos de Modyo (CLI) es una herramienta basada en dos principios fundamentales: aceleración e integración, implementados a través de los comandos `get` y `push`, respectivamente.
 
  #### Beneficios de la CLI de Modyo
 
-- **Trabajo en local**: Puedes crear widgets de cualquier tamaño o complejidad desde tu entorno local.
-- **Almacenamiento en repositorios locales**: Facilita la gestión de los widgets y la colaboración con otros desarrolladores al utilizar sistemas de control de versiones.
+- **Trabajo local**: Permite crear widgets de cualquier tamaño o complejidad desde tu entorno local.
+- **Almacenamiento en repositorios locales**: Facilita la gestión de widgets y la colaboración con otros desarrolladores mediante sistemas de control de versiones.
 - **Reutilización de widgets**: Permite crear un widget una vez y reutilizarlo en múltiples sitios y ocasiones.
 
 ## Instalación
 
-Para usar la Línea de Comandos de Modyo, primero debes instalarla globalmente en tu máquina local. Esto habilitará el comando `modyo-cli`, que te permite inicializar un proyecto con algunas decisiones arquitectónicas de front-end predefinidas mediante la plantilla base de Modyo o con una experiencia del catálogo de [Dynamic Framework](https://dynamicframework.dev).
+Para usar la Línea de Comandos de Modyo, primero debes instalarla globalmente en tu máquina local. Esto habilitará el comando `modyo-cli`, que permite inicializar un proyecto con decisiones arquitectónicas de front-end predefinidas mediante la plantilla base de Modyo o con una experiencia del catálogo de [Dynamic Framework](https://dynamicframework.dev).
 
 Tienes dos opciones para usar el CLI de Modyo:
 
@@ -32,7 +32,7 @@ $ npx @modyo/cli@latest #via npx - señalando una versión en particular
 ```
 
 
-Para comprobar que la instalación fue correcta y confirmar la versión instalada del CLI, ejecuta este comando:
+Para comprobar la instalación y confirmar la versión del CLI, ejecuta este comando:
 
 ```bash
 $ modyo-cli version
@@ -40,7 +40,7 @@ $ modyo-cli version
 ```
 
 :::tip Tip
-En algunos casos, es necesario volver a cargar el perfil de la terminal o iniciar una nueva sesión para que el comando `modyo-cli` esté disponible.
+En algunos casos, es necesario recargar el perfil de la terminal o iniciar una nueva sesión para que el comando `modyo-cli` esté disponible.
 :::
 
 Modyo ofrece la habilidad de configurar el autocompletado de los comandos del CLI. Para obtener instrucciones sobre cómo configurarlo, ejecuta uno de los siguientes comandos:
@@ -53,20 +53,20 @@ $ modyo-cli autocomplete bash
 
 ## Configuración del entorno
 
-El siguiente paso es configurar tu proyecto para facilitar la carga de widgets en la plataforma Modyo e incluirlos en las páginas que construyas. Aunque puedes especificar todo como parámetros en la llamada push, recomendamos definir un conjunto de variables de entorno en un archivo `.env`. Este archivo te permitirá especificar atributos como la URL de la cuenta, el sitio donde se alojará y el token de acceso, entre otro.
+El siguiente paso es configurar tu proyecto para facilitar la carga de widgets en la plataforma Modyo y su inclusión en las páginas. Aunque puedes especificar todo como parámetros en la llamada `push`, se recomienda definir un conjunto de variables de entorno en un archivo `.env`. Este archivo te permitirá especificar atributos como la URL de la cuenta, el sitio donde se alojará y el token de acceso, entre otros.
 
 #### Acciones Previas
 
-1. **Obtener un token de acceso a Modyo**: Para obtener el token necesitas tener un usuario o [crear uno](/es/platform/core/roles.html#crear-usuario) que tenga como mínimo el [rol](/es/platform/core/roles.html#roles) de site developer-cli en los sitios o stages donde desplegarás tu widget. Una vez que hayas creado el usuario, puedes [configurarle un token de acceso](/es/platform/core/api.html#autenticacion). Este token será utilizado para configurar y activar los despliegues en la plataforma.
+1. **Obtener un token de acceso a Modyo**: Para obtener el token, necesitas tener un usuario o [crear uno](/es/platform/core/roles#crear-usuario) con al menos el [rol](/es/platform/core/roles#roles) de `site developer-cli` en los sitios o stages donde desplegarás tu widget. Una vez creado el usuario, puedes [configurarle un token de acceso](/es/platform/core/api#autenticacion). Este token se utilizará para configurar y activar los despliegues en la plataforma.
 
 2. **Identificar la aplicación donde publicarás**:
-Para obtener el ID de tu aplicación, ve al resumen de tu aplicación donde encontrarás el ID correspondiente. Recomendamos utilizar este valor siempre que sea posible. En caso que necesites utilizar el site host, lo encontrarás en la sección general de la configuración de tu aplicación.
+Para obtener el ID de tu aplicación, ve al resumen de tu aplicación. Se recomienda utilizar este valor siempre que sea posible. Si necesitas utilizar el site host, lo encontrarás en la sección general de la configuración de tu aplicación.
 
 #### Configuración del Archivo .env
 
  Después de obtener la información de tu aplicación y generar los tokens requeridos, configura el archivo `.env` con los datos correspondientes.
 
- Puedes utilizar el archivo de ejemplo `.env.example`incluido en la plantilla base. Este archivo trae predefinidas las variables necesarias y una breve descripción de cada una de ellas.
+ Puedes utilizar el archivo de ejemplo `.env.example` incluido en la plantilla base. Este archivo contiene las variables necesarias predefinidas y una breve descripción de cada una.
 
 
 ```bash
@@ -232,7 +232,7 @@ El comando `preview` te permite previsualizar un widget localmente para depurar 
 
 Para utilizar el comando `preview`, asegúrate de cumplir con los siguientes requisitos:
 
-- Un archivo [.env](https://docs.modyo.com/es/platform/channels/cli.html#configuracion-inicial) correctamente configurado. Los campos `MODYO_ACCOUNT_URL`, `MODYO_SITE_HOST` o `MODYO_SITE_ID` y `MODYO_TOKEN ` son requeridos.
+- Un archivo [.env](https://docs.modyo.com/es/platform/channels/cli#configuracion-inicial) correctamente configurado. Los campos `MODYO_ACCOUNT_URL`, `MODYO_SITE_HOST` o `MODYO_SITE_ID` y `MODYO_TOKEN ` son requeridos.
 - Un servidor local en ejecución con el widget que deseas previsualizar.
 
 #### Pasos para Previsualizar un Widget
@@ -278,7 +278,7 @@ Estos comandos te permiten seleccionar los entry points locales que quieres usar
 
 ### Code Splitting
 
-Los [widgets](/es/platform/channels/widgets.html#widgets) te permiten desarrollar funcionalidades complejas en tus aplicaciones web de Modyo, incrementando así la funcionalidad de tus sitios.
+Los [widgets](/es/platform/channels/widgets#widgets) te permiten desarrollar funcionalidades complejas en tus aplicaciones web de Modyo, incrementando así la funcionalidad de tus sitios.
 
 Sin embargo, al incluir librerías externas o incrementar la complejidad de un widget, puedes enfrentar tiempos de carga excesivos o exceder los límites de tamaño establecidos para los widgets en Modyo, lo que afecta negativamente tanto la experiencia de desarrollo como la del usuario.
 
@@ -332,9 +332,9 @@ $ modyo-cli push -p
 ```
 
 :::warning Atención
-El usuario dueño del token debe tener un rol de [site reviewer o admin](/es/platform/core/roles.html#roles) en el sitio en el cual estás desplegando el widget para que se pueda realizar la publicación correctamente.
+El usuario dueño del token debe tener un rol de [site reviewer o admin](/es/platform/core/roles#roles) en el sitio en el cual estás desplegando el widget para que se pueda realizar la publicación correctamente.
 :::
 
 Una vez que un widget está desplegado y publicado en Modyo, está disponible para ser utilizado en las páginas del sitio al que pertenece.
 
-Si has definido [variables](/es/platform/core/key-concepts.html#variables-globales) sus valores pueden ser especificados a nivel global o particular a cada instancia del widget.
+Si has definido [variables](/es/platform/core/key-concepts#variables-globales) sus valores pueden ser especificados a nivel global o particular a cada instancia del widget.

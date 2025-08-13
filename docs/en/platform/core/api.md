@@ -129,7 +129,7 @@ emails      [...]
 
 ## Calling the API
 
-Once you know the service you will be querying according to [Exploring the API](/en/platform/core/api.html#exploring-the-api) and a [Authentication](/en/platform/core/api.html#authentication) method, you can make a _request_ to the URL of the requested resource.
+Once you know the service you will be querying according to [Exploring the API](/en/platform/core/api#exploring-the-api) and a [Authentication](/en/platform/core/api#authentication) method, you can make a _request_ to the URL of the requested resource.
 
 For this example, we'll get the list of all email campaigns that were created on the platform. According to the documentation in Swagger _ (test.modyo.com/api/admin/docs) _, you need to call the following URL:
 
@@ -270,7 +270,7 @@ We will explain how to use each of these methods below.
 The first thing you need to do is register the application to consume the API. Follow these steps to create a new Bearer Token:
 
 1. From the Modyo platform, in the side menu, expand **Settings** and click **Access to API**.
-2. Click the **+ New API Access** button.
+2. Click the **New API Access** button.
 3. Fill in the name, description, and redirect URI of the access.
 
 When saving the information of your application, Modyo will show you a view where you will see the _callback URL_ (which corresponds to the Redirect URI field entered in the previous step) and the _Application ID_ and _Secret_ fields that you can use later.
@@ -282,11 +282,11 @@ Keep in mind that when you sign out of any of your sites, a _GET_ will be made t
 4. Once the application is registered, it assigns the application to the users who will make use of the API. To do this, in the side menu, expand **Settings** and click on **Team**.
 5. Select a user with an administrative role within the desired application. 
 
-For more details, see [Users and Roles](/en/platform/core/roles.html)
+For more details, see [Users and Roles](/en/platform/core/roles)
 
-6. In the admin user edit view, click _API Access_ and select the option **+ New API Access**.
+6. In the admin user edit view, click _API Access_ and select the option **New API Access**.
 
-7. In the _popup_ shown below, select the name of the application you just created, and then click **+ New Access Token**.
+7. In the _popup_ shown below, select the name of the application you just created, and then click **New Access Token**.
 
 :::warning Warning
 You should keep in mind that admin users can only execute actions through the Modyo administrative API if they have the necessary permissions. For example, an administrator with the role of "Developer" on a site cannot execute the "Publish" action on that site.

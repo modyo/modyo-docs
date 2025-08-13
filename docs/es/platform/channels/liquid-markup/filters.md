@@ -179,7 +179,7 @@ Agrega formato de divisa a un valor. *e.g.*
 :::warning Importante
 Este filtro determina el formato de la moneda y tiene prioridad sobre cualquier otra configuración de divisa.
 
-Si no especificas parámetros de divisa con el filtro de currency, Modyo utiliza la configuración de [payment](/es/platform/customers/settings.html#configuracion-de-payment) del reino.
+Si no especificas parámetros de divisa con el filtro de currency, Modyo utiliza la configuración de [payment](/es/platform/customers/settings#configuracion-de-payment) del reino.
 
 En caso de que el sitio no tenga un reino asociado y no especifiques parámetros, se aplicará el formato predefinido del idioma del sitio.
 :::
@@ -353,386 +353,330 @@ Retorna una lista de Entradas que tengan una fecha de publicación más vieja qu
 
 ## Crypto
 
-Estos son los filtros liquid que alteran valores relacionados a la Cryptología.
+Estos filtros Liquid alteran valores relacionados con la Criptografía.
 
 ### Base64 Decode
 
-Retorna el valor Base64-decoded de un string *e.g.*
-<span v-pre> `{% 'Hello world' | base64_encode %} # => 'SGVsbG8gd29ybGQ='`</span>.
+Devuelve el valor Base64-decoded de un string (ej. <span v-pre> `{% 'Hello world' | base64_encode %} # => 'SGVsbG8gd29ybGQ='`</span>).
 
 ### Base64 Encode
 
-Retorna el valor Base64-encoded de un string *e.g.*
-<span v-pre>`{% 'SGVsbG8gd29ybGQ=' | base64_decode %} # => 'Hello world'`</span>.
+Devuelve el valor Base64-encoded de un string (ej. <span v-pre>`{% 'SGVsbG8gd29ybGQ=' | base64_decode %} # => 'Hello world'`</span>).
 
 ### HMAC SHA1
 
-Retorna el hash SHA-1 usando un código de autenticación de mensajes (HMAC) de un string. *e.g.*
-<span v-pre>`{% 'Hello world' | hmac_sha1: 'key'  %} # => '2a73959742baf046e6e2e27e5ee94bcff0af31b1'`</span>
+Devuelve el hash SHA-1 usando un código de autenticación de mensajes (HMAC) de un string (ej. <span v-pre>`{% 'Hello world' | hmac_sha1: 'key' %} # => '2a73959742baf046e6e2e27e5ee94bcff0af31b1'`</span>).
 
 ### HMAC SHA256
-Retorna el hash SHA-256 usando un código de autenticación de mensajes (HMAC) de un string. *e.g.*
-<span v-pre>`{% 'Hello world' | hmac_sha256: 'key'  %} # => 'a82b2e160edaf92a6589dc11160d2a10c04449840a58717db308c1ee3512b039'`</span>
+Devuelve el hash SHA-256 usando un código de autenticación de mensajes (HMAC) de un string (ej. <span v-pre>`{% 'Hello world' | hmac_sha256: 'key' %} # => 'a82b2e160edaf92a6589dc11160d2a10c04449840a58717db308c1ee3512b039'`</span>).
 
 ### MD5
 
-Retorna el hash MD5 de un string. *e.g.*
-<span v-pre>`{% 'Hello world' | md5  %} # => '3e25960a79dbc69b674cd4ec67a72c62'`</span>
+Devuelve el hash MD5 de un string (ej. <span v-pre>`{% 'Hello world' | md5 %} # => '3e25960a79dbc69b674cd4ec67a72c62'`</span>).
 
 ### SHA1
-Retorna el hash SHA-1 de un string. *e.g.* <span v-pre>`{% 'Hello world' | sha1  %} # => '7b502c3a1f48c8609ae212cdfb639dee39673f5e'`</span>
+Devuelve el hash SHA-1 de un string (ej. <span v-pre>`{% 'Hello world' | sha1 %} # => '7b502c3a1f48c8609ae212cdfb639dee39673f5e'`</span>).
 
 ### SHA 256
-Retorna el hash SHA-256 de un string. *e.g.* <span v-pre>`{% 'Hello world' | sha256  %} # => '64ec88ca00b268e5ba1a35678a1b5316d212f4f366b2477232534a8aeca37f3c'`</span>
+Devuelve el hash SHA-256 de un string (ej. <span v-pre>`{% 'Hello world' | sha256 %} # => '64ec88ca00b268e5ba1a35678a1b5316d212f4f366b2477232534a8aeca37f3c'`</span>).
 
 ## CSS
 
-Estos son los filtros liquid que alteran valores relacionados a CSS en Modyo Platform.
+Estos filtros Liquid alteran valores relacionados con CSS en Modyo Platform.
 
 ### Brighten
 
-Agrega brillo a un color. *e.g.*
-<span v-pre>`{{ '#00ff00' | brighten: 15 }} #=> '#26ff26'`</span>
+Agrega brillo a un color (ej. <span v-pre>`{{ '#00ff00' | brighten: 15 }} #=> '#26ff26'`</span>).
 
 ### Darken
 
-Reduce brillo a un color. *e.g.*
-<span v-pre>`{{ '#00ff00' | darken: 15 }} #=> '#00b300'`</span>
+Reduce el brillo de un color (ej. <span v-pre>`{{ '#00ff00' | darken: 15 }} #=> '#00b300'`</span>).
 
 ### Desaturate
 
-Desatura un color. *e.g.*
-<span v-pre>`{{ '#00ff00' | desaturate: 15 }} #=> '#13ec13'`</span>
+Desatura un color (ej. <span v-pre>`{{ '#00ff00' | desaturate: 15 }} #=> '#13ec13'`</span>).
 
 ### Grayscale
 
-Convierte un color a escala de gris. *e.g.*
-<span v-pre>`{{ '#00ff00' | grayscale }} #=> '#808080'`</span>
+Convierte un color a escala de grises (ej. <span v-pre>`{{ '#00ff00' | grayscale }} #=> '#808080'`</span>).
 
 ### Lighten
 
-Aligerar un color. *e.g.*
-<span v-pre>`{{ '#00ff00' | lighten: 15 }} #=> '#4dff4d'`</span>
+Aligera un color (ej. <span v-pre>`{{ '#00ff00' | lighten: 15 }} #=> '#4dff4d'`</span>).
 
 ### Opacity
 
-Modifica la opacidad de un color. *e.g.*
-<span v-pre>`{{ '#00ff00' | opacity: 0.5 }} #=> 'rgba(0, 255, 0, 0.5)'`</span>
+Modifica la opacidad de un color (ej. <span v-pre>`{{ '#00ff00' | opacity: 0.5 }} #=> 'rgba(0, 255, 0, 0.5)'`</span>).
 
 ### RGB
 
-Transforma un color a su equivalente RGB. *e.g.*
-<span v-pre>`{{ '#00ff00' | rgb }} #=> 'rgb(0, 255, 0)'`</span>
+Transforma un color a su equivalente RGB (ej. <span v-pre>`{{ '#00ff00' | rgb }} #=> 'rgb(0, 255, 0)'`</span>).
 
 ### Saturate
 
-Satura un color. *e.g.*
-<span v-pre>`{{ '#00ff00' | saturate: 15 }} #=> '#00ff00'`</span>
+Satura un color (ej. <span v-pre>`{{ '#00ff00' | saturate: 15 }} #=> '#00ff00'`</span>).
 
 ### Spin
 
-Gira en grados a favor de las manecillas del reloj un color.
-<span v-pre>`{{ '#00ff00' | spin: 15 }} #=> 'rgba(0, 255, 0, 0.5)'`</span>
+Gira un color en grados a favor de las manecillas del reloj (ej. <span v-pre>`{{ '#00ff00' | spin: 15 }} #=> 'rgba(0, 255, 0, 0.5)'`</span>).
 
 ## Location
 
-Estos son los filtros liquid que alteran valores relacionados a la Geolocalización en Modyo Platform.
+Estos filtros Liquid alteran valores relacionados con la Geolocalización en Modyo Platform.
 
 ### Dynamic Map
 
-Retorna un mapa dínamico de Google Maps. *e.g.*
-<span v-pre>`{{  locations | dynamic_map: '600x300', 'true', 'roadmap', true}}`</span>
+Devuelve un mapa dinámico de Google Maps (ej. <span v-pre>`{{ locations | dynamic_map: '600x300', 'true', 'roadmap', true}}`</span>).
 
 **Parametros**
 
-- locations (ArrayHash) — Array de hashes con los puntos de latitud y longitud.
-- size (String) (default: '600x300') — Tamaño en pixeles del mapa
-- zoom (String) (default: 10) — Nivel de zoom para el mapa
-- type (String) (default: 'roadmap') — Tipo de mapa
-- icon (String) (default: '') — Ícono para el mapa
-- controls (String) (default: true) — Controles de navegación para el mapa
+- `locations` (ArrayHash) — Array de hashes con los puntos de latitud y longitud.
+- `size` (String) (default: '600x300') — Tamaño en píxeles del mapa.
+- `zoom` (String) (default: 10) — Nivel de zoom para el mapa.
+- `type` (String) (default: 'roadmap') — Tipo de mapa.
+- `icon` (String) (default: '') — Icono para el mapa.
+- `controls` (String) (default: true) — Controles de navegación para el mapa.
 
 ### Static Map
 
-Retorna un mapa estático de Google Maps. *e.g.*
-<span v-pre>`{{  locations | static_map: '600x300', 'true', 'roadmap'}}`</span>
+Devuelve un mapa estático de Google Maps (ej. <span v-pre>`{{ locations | static_map: '600x300', 'true', 'roadmap'}}`</span>).
 
 **Parametros**
 
-- locations (ArrayHash) — Array de hashes con los puntos de latitud y longitud.
-- size (String) (default: '600x300') — Tamaño en pixeles del mapa
-- zoom (String) (default: 10) — Nivel de zoom para el mapa
-- type (String) (default: 'roadmap') — Tipo de mapa
-- icon (String) (default: '') — Ícono para el mapa
+- `locations` (ArrayHash) — Array de hashes con los puntos de latitud y longitud.
+- `size` (String) (default: '600x300') — Tamaño en píxeles del mapa.
+- `zoom` (String) (default: 10) — Nivel de zoom para el mapa.
+- `type` (String) (default: 'roadmap') — Tipo de mapa.
+- `icon` (String) (default: '') — Icono para el mapa.
 
 
 ## Menu Items
 
-Estos son los filtros liquid que alteran valores relacionados a los ítems de menús en Modyo Platform.
+Estos filtros Liquid alteran valores relacionados con los ítems de menús en Modyo Platform.
 
 ### Active Page
 
-Determina si un item URL está activo. Retorna 'active' cuando es activo. *e.g.*
-<span v-pre>`{{ 'company.modyo.com/jobs' | active_page: 'company.modyo.com/jobs' }} #=> 'active'`</span>
+Determina si un ítem URL está activo. Devuelve 'active' cuando está activo (ej. <span v-pre>`{{ 'company.modyo.com/jobs' | active_page: 'company.modyo.com/jobs' }} #=> 'active'`</span>).
 
 ### Item Rel
 
-Retorna 'noopener noreferrer' si un link es "\_blank". *e.g.*
-<span v-pre>`{{ '_blank' | item_rel }} #=> 'noopener noreferrer'`</span>
+Devuelve 'noopener noreferrer' si un enlace es "\_blank" (ej. <span v-pre>`{{ '_blank' | item_rel }} #=> 'noopener noreferrer'`</span>).
 
 ### Resolve URL
 
-Resuelve el URL de un path y URL base. *e.g.*
-<span v-pre>`{{ 'dynamic_bank' | resolve_url: 'company.modyo.com' }} #=> 'company.modyo.com/dynamic_bank'`</span>
+Resuelve la URL de un path y URL base (ej. <span v-pre>`{{ 'dynamic_bank' | resolve_url: 'company.modyo.com' }} #=> 'company.modyo.com/dynamic_bank'`</span>).
 
 ### Visible Items
 
-Retorna una lista de ítems visibles en una lista de ítems. *e.g.*
-<span v-pre>`{{ items | visible_items }}
-`</span>
+Devuelve una lista de ítems visibles en una lista de ítems (ej. <span v-pre>`{{ items | visible_items }}`</span>).
 
 ## Site
 
-Estos son los filtros liquid que alteran valores relacionados a los Sitios en Modyo Platform.
+Estos filtros Liquid alteran valores relacionados con los Sitios en Modyo Platform.
 
 ### Asset Image Tag
 
-Genera el HTML tag de una imagen. *e.g.*
-<span v-pre>`{{ asset | asset_image_tag: 'original' }}`</span>
+Genera la etiqueta HTML de una imagen (ej. <span v-pre>`{{ asset | asset_image_tag: 'original' }}`</span>).
 
 ### Asset Thumbnail Link Tag
 
-Genera el HTML tag del thumbnail de una imagen. *e.g.*
-<span v-pre>`{{ asset | asset_thumbnail_link_tag: 'class', 'target' }}`</span>
+Genera la etiqueta HTML del thumbnail de una imagen (ej. <span v-pre>`{{ asset | asset_thumbnail_link_tag: 'class', 'target' }}`</span>).
 
 **Parametros**
 
-- asset (Asset) — Objecto de tipo Asset
-- classes (String) (default: '') — Clases HTML adicionales (opcional)
-- target (String) (default: '') — targets HTML adicionales (opcional)
+- `asset` (Asset) — Objeto de tipo Asset.
+- `classes` (String) (default: '') — Clases HTML adicionales (opcional).
+- `target` (String) (default: '') — Targets HTML adicionales (opcional).
 
 ### Asset URL
 
-Genera la URL de un objeto tipo Asset. *e.g.*
-<span v-pre>`{{ {{ asset | asset_url: 'original' }}`</span>
+Genera la URL de un objeto tipo Asset (ej. <span v-pre>`{{ asset | asset_url: 'original' }}`</span>).
 
 ### Audio Player
 
-Genera la URL de un objeto tipo Audio. *e.g.*
-<span v-pre>`{{ {{ audio1 | audio_player }}`</span>
+Genera la URL de un objeto tipo Audio (ej. <span v-pre>`{{ audio1 | audio_player }}`</span>).
 
 ### Bar Code
 
-Genera la URL de un código de barras. *e.g.*
-<span v-pre>`{{  value | bar_code: 320, 320 }}`</span>
+Genera la URL de un código de barras (ej. <span v-pre>`{{ value | bar_code: 320, 320 }}`</span>).
 
 **Parametros**
 
-- value (String) — Valor del código de barra
-- width (Integer) (default: 100) — Ancho
-- height (Integer) (default: 100) — Alto
+- `value` (String) — Valor del código de barras.
+- `width` (Integer) (default: 100) — Ancho.
+- `height` (Integer) (default: 100) — Alto.
 
 ### Button To
 
-Genera un botón. *e.g.*
-<span v-pre>`{{ 'Hello World' | button_to: 'http://www.google.com' }}`</span>
+Genera un botón (ej. <span v-pre>`{{ 'Hello World' | button_to: 'http://www.google.com' }}`</span>).
 
 ### Cookie Value
 
-Retorna el valor de una cookie. *e.g.*
-<span v-pre>`{{ 32 | cookie_value }}`</span>
+Devuelve el valor de una cookie (ej. <span v-pre>`{{ 32 | cookie_value }}`</span>).
 
 ### Embedded Video
 
-Retorna el URL de un video integrado. *e.g.*
-<span v-pre>`{{ movie2 | embedded_video }}`</span>
+Devuelve la URL de un video integrado (ej. <span v-pre>`{{ movie2 | embedded_video }}`</span>).
 
 ### Escape JS
 
-Evita interpretar código JavaScript. *e.g.*
-<span v-pre>`{{ '<script>alert("hello world");</script>' | escape_js }}`</span>
+Evita interpretar código JavaScript (ej. <span v-pre>`{{ '<script>alert("hello world");</script>' | escape_js }}`</span>).
 
 ### Format Date
 
-Traduce una fecha a otro formato. *e.g.*
-<span v-pre>`{{ time | format_date: '%e %b, %Y' }}`</span>
+Traduce una fecha a otro formato (ej. <span v-pre>`{{ time | format_date: '%e %b, %Y' }}`</span>).
 
 **Parametros**
 
-- time (DateTime) — Fecha
-- format_date (String) (default: '') — El nuevo formato para la fecha
+- `time` (DateTime) — Fecha.
+- `format_date` (String) (default: '') — El nuevo formato para la fecha.
 
 ### Format DateTime
 
-Traduce una fecha a formato DateTime. *e.g.*
-<span v-pre>`{{ time | format_datetime }}`</span>
+Traduce una fecha a formato DateTime (ej. <span v-pre>`{{ time | format_datetime }}`</span>).
 
 ### Format Short Date
 
-Traduce una fecha a un formato reducido. dd-mm-yyyy *e.g.*
-<span v-pre>`{{ time | format_short_date }}`</span>
+Traduce una fecha a un formato reducido (dd-mm-yyyy) (ej. <span v-pre>`{{ time | format_short_date }}`</span>).
 
 ### Asset Image Tag
 
-Retorna el tag de una imagen. *e.g.*
-<span v-pre>`{{ url | asset_image_tag }}`</span>
+Devuelve la etiqueta de una imagen (ej. <span v-pre>`{{ url | asset_image_tag }}`</span>).
 
 ### Link To
 
-Agrega un tag de anchor link. *e.g.*
-<span v-pre>`{{ 'Hello World' | link_to: 'http://www.google.com', 'this is my alt', 'small', '_blank' }}`</span>
+Agrega una etiqueta de enlace (anchor link) (ej. <span v-pre>`{{ 'Hello World' | link_to: 'http://www.google.com', 'this is my alt', 'small', '_blank' }}`</span>).
 
 **Parametros**
 
-- text (String) (default: '') — texto para el link
-- link (String) (default: '/') — url para el link
-- alt (String) (default: '') — alt para el link
-- class (String) (default: '') — class para el link
-- target (String) (default: '') — target para el link
+- `text` (String) (default: '') — Texto para el enlace.
+- `link` (String) (default: '/') — URL para el enlace.
+- `alt` (String) (default: '') — Texto alternativo para el enlace.
+- `class` (String) (default: '') — Clase CSS para el enlace.
+- `target` (String) (default: '') — Target para el enlace.
 
 ### Notifications
 
-Despliega la variable de mensaje flash. *e.g.*
-<span v-pre>`{{ 'alert-error' | notifications }}`</span>
+Muestra la variable de mensaje flash (ej. <span v-pre>`{{ 'alert-error' | notifications }}`</span>).
 
 ### Primary button to
 
-Genera un botón de tipo primario. *e.g.*
-<span v-pre>`{{ 'Hello World' | primary_button_to: 'http://www.google.com', 'large' }}`</span>
+Genera un botón de tipo primario (ej. <span v-pre>`{{ 'Hello World' | primary_button_to: 'http://www.google.com', 'large' }}`</span>).
 
 **Parametros**
 
-- text (String) (default: '') — texto para el link
-- link (String) (default: '/') — url para el link
-- size (String) (default: 'large') — tamaño para el link
+- `text` (String) (default: '') — Texto para el enlace.
+- `link` (String) (default: '/') — URL para el enlace.
+- `size` (String) (default: 'large') — Tamaño para el enlace.
 
 ### QR Code
 
-Genera un código qr. *e.g*
-<span v-pre>`{{  value | qr_code: 4, 320, 320 }}`</span>
+Genera un código QR (ej. <span v-pre>`{{ value | qr_code: 4, 320, 320 }}`</span>).
 
 **Parametros**
 
-- value (String) (default: '') — valor para el qr
-- qr_size (Integer) (default: 4) — tamaño del qr
-- width (Integer) (default: 100) — ancho del qr
-- height (Integer) (default: 100) — largo del qr
+- `value` (String) (default: '') — Valor para el QR.
+- `qr_size` (Integer) (default: 4) — Tamaño del QR.
+- `width` (Integer) (default: 100) — Ancho del QR.
+- `height` (Integer) (default: 100) — Alto del QR.
 
 ### Sanitize HTML
 
-Sanitiza los tags HTML de un String. *e.g.*
-<span v-pre>`{{ '<script>Hello World</script>' | sanitize }} #=> 'Hello World'`</span>
+Sanitiza las etiquetas HTML de un String (ej. <span v-pre>`{{ '<script>Hello World</script>' | sanitize }} #=> 'Hello World'`</span>).
 
 ### Script Tag
 
-Agrega un script tag. *e.g.*
-<span v-pre>`{{ 'test-script' | script_tag }}`</span>
+Agrega una etiqueta de script (ej. <span v-pre>`{{ 'test-script' | script_tag }}`</span>).
 
 ### Search Box
 
-Agrega un campo del buscador. *e.g.*
-<span v-pre>`{{ 'testsite' | search_box }}`</span>
+Agrega un campo de búsqueda (ej. <span v-pre>`{{ 'testsite' | search_box }}`</span>).
 
 ### Strftime
 
-Convierte un datetime a formato String. *e.g.*
-<span v-pre>`{{ time | strftime: '%m/%d/%y' }}
-`</span>
+Convierte un datetime a formato String (ej. <span v-pre>`{{ time | strftime: '%m/%d/%y' }}`</span>).
 
 ### Strip tag
 
-Elimina todos los tags HTML y su contenido de un String. *e.g.*
-<span v-pre>`{{ '<script>Hello World</script>' | strip_tags }} #=> ""`</span>
+Elimina todas las etiquetas HTML y su contenido de un String (ej. <span v-pre>`{{ '<script>Hello World</script>' | strip_tags }} #=> ""`</span>).
 
 ### Stylesheet Tag
-Genera el tag HTML `<link>` para un template CSS, tomando como parámetros la URL y atributos de la forma `attr: 'value'`, *e.g.* <span v-pre>`{{ 'my-css-url' | stylesheet_tag: media: 'screen', title: 'color style' }}`</span> => `<link href='my-css-url' rel='stylesheet' type='text/css' media='screen' title='color style' />`
+Genera la etiqueta HTML `<link>` para un template CSS, tomando como parámetros la URL y atributos (ej. `attr: 'value'`, <span v-pre>`{{ 'my-css-url' | stylesheet_tag: media: 'screen', title: 'color style' }}`</span> => `<link href='my-css-url' rel='stylesheet' type='text/css' media='screen' title='color style' />`).
 
 ### Theme Javascript
 
-Agrega un tag de theme en Javascript. *e.g.*
-<span v-pre>`{{ 'home-page-javascript' | theme_javascript }}`</span>
+Agrega una etiqueta de tema en Javascript (ej. <span v-pre>`{{ 'home-page-javascript' | theme_javascript }}`</span>).
 
 ### Theme Stylesheet
 
-Agrega un tag de theme en CSS. *e.g.*
-<span v-pre>`{{ 'home-page-stylesheet' | theme_stylesheet }}`</span>
+Agrega una etiqueta de tema en CSS (ej. <span v-pre>`{{ 'home-page-stylesheet' | theme_stylesheet }}`</span>).
 
 ### Time Ago in Words
 
-Convierte una fecha en String a en palabras. *e.g.*
-<span v-pre>`{{ '01-02-2019' | time_ago_in_words }} #=> 'over 3 years'`</span>
+Convierte una fecha en String a palabras (ej. <span v-pre>`{{ '01-02-2019' | time_ago_in_words }} #=> 'over 3 years'`</span>).
 
 ### Translate
 
-Resuelve el texto de traducción para llaves de Sitios. Valores personalizados serán retornados si existen. *e.g.*
-<span v-pre>`{{ 'admin.logs.errors.no_logs_yet' | translate }}`</span>
+Resuelve el texto de traducción para claves de Sitios. Se devolverán valores personalizados si existen (ej. <span v-pre>`{{ 'admin.logs.errors.no_logs_yet' | translate }}`</span>).
 
 ### Truncate HTML
 
-Retorna un String después de truncarlo. *e.g.*
-<span v-pre>`{{ html | truncate_html: 10 }}`</span>
+Devuelve un String después de truncarlo (ej. <span v-pre>`{{ html | truncate_html: 10 }}`</span>).
 
 ### Video Player
 
-Agrega un reproductor de video en código HTML usando un asset del Gestor de Archivos. *e.g.*
-<span v-pre>`{{ movie1 | video_player: 320, 320 }}`</span>
+Agrega un reproductor de video en código HTML usando un asset del Gestor de Archivos (ej. <span v-pre>`{{ movie1 | video_player: 320, 320 }}`</span>).
 
 **Parámetros**
 
-- video (Asset) — Objeto de tipo Video del Gestor de Archivos
-- width (Integer) — ancho para el video
-- height (Integer) — largo para el video
+- `video` (Asset) — Objeto de tipo Video del Gestor de Archivos.
+- `width` (Integer) — Ancho para el video.
+- `height` (Integer) — Alto para el video.
 
 ## User
 
-Estos son los filtros liquid que alteran valores relacionados con los Usuarios.
+Estos filtros Liquid alteran valores relacionados con los Usuarios.
 
 ### Image For
 
-Despliega el código HTML para la imágen de un usuario. *e.g.*
-<span v-pre>`{{  user | avatar_for: 'C50x50', true }}`</span>
+Muestra el código HTML para la imagen de un usuario (ej. <span v-pre>`{{ user | avatar_for: 'C50x50', true }}`</span>).
 
 **Parámetros**
 
-- user (User) — Objeto User
-- size (Integer) (default: 'C50x50') — Tamaño para la imágen
-- link (Boolean) (default: true) — True agrega una liga hacia el perfil del usuario.
+- `user` (User) — Objeto User.
+- `size` (Integer) (default: 'C50x50') — Tamaño para la imagen.
+- `link` (Boolean) (default: true) — `true` agrega un enlace hacia el perfil del usuario.
 
 ### Default Avatar Image
 
-Despliega la imágen por defecto del avatar. *e.g.*
-<span v-pre>`{{  user | avatar_for: 'C50x50' }}`</span>
+Muestra la imagen por defecto del avatar (ej. <span v-pre>`{{ user | avatar_for: 'C50x50' }}`</span>).
 
 **Parámetros**
 
-- user (User) — Objeto User
-- size (Integer) (default: 'C50x50') — Tamaño para la imágen
+- `user` (User) — Objeto User.
+- `size` (Integer) (default: 'C50x50') — Tamaño para la imagen.
 
 ## Widget
 
-Estos son los filtros liquid que alteran valores relacionados con los Widgets.
+Estos filtros Liquid alteran valores relacionados con los Widgets.
 
 ### Entry Limit
 
-Determina el límite de entradas para un widget. *e.g.*
-<span v-pre>`{{  widget1 | entry_limit }}`</span>
+Determina el límite de entradas para un widget (ej. <span v-pre>`{{ widget1 | entry_limit }}`</span>).
 
 ### Resolve Home Widget List
 
-Retorna una lista de todos los widgets que pertenecen a un Sitio. *e.g.*
-<span v-pre>`{{  site | resolve_home_widget_list }}`</span>
+Devuelve una lista de todos los widgets que pertenecen a un Sitio (ej. <span v-pre>`{{ site | resolve_home_widget_list }}`</span>).
 
 ### Resolve Me Widget List
 
-Retorna una lista de todos los widgets que pertenecen a una página "me". *e.g.*
-<span v-pre>`{{  site | resolve_me_widget_list }}`</span>
+Devuelve una lista de todos los widgets que pertenecen a una página "me" (ej. <span v-pre>`{{ site | resolve_me_widget_list }}`</span>).
 
 ### Resolve Widget List
 
-Retorna una lista de todos los widgets que pertenecen a una página. *e.g.*
-<span v-pre>`{{  site | resolve_widget_list: page }}`</span>
+Devuelve una lista de todos los widgets que pertenecen a una página (ej. <span v-pre>`{{ site | resolve_widget_list: page }}`</span>).
 
 **Parámetros**
 
-- site (Site) — Objeto de tipo Sitio
-- page (Page) — Objeto de tipo Página
+- `site` (Site) — Objeto de tipo Sitio.
+- `page` (Page) — Objeto de tipo Página.

@@ -5,7 +5,7 @@ sidebarDepth: 3
 
 # API
 
-Modyo Content cuenta con una API para poder acceder a los espacios que contienen las entradas de contenido de forma rápida y eficiente. Para poder acceder a ella existen dos tipos de Software Development Kits (SDKs), uno de uso interno que conecta a [Modyo Content](/es/platform/content/) con [Modyo Channels](/es/platform/channels/) desde el lado del servidor por medio de Liquid y otro externo que hace uso del API pública en REST para su consumo desde Javascript.
+Modyo Content cuenta con una API para acceder a los espacios que contienen las entradas de contenido de forma rápida y eficiente. Para acceder a ella, existen dos tipos de Software Development Kits (SDKs): uno de uso interno que conecta a [Modyo Content](/es/platform/content/) con [Modyo Channels](/es/platform/channels/) desde el lado del servidor por medio de Liquid, y otro externo que hace uso de la API pública en REST para su consumo desde JavaScript.
 
 :::tip SDKs para otros lenguajes
 Por el momento sólo existe, de forma oficial, un SDK para Javascript. A futuro se planean incorporar versiones para facilitar el trabajo con otros lenguajes.
@@ -549,7 +549,7 @@ Metadata (ej: Tags, Category, Fechas): Búsquedas por SQL, serán consultables m
   - `.../entries?meta.published_at[gt]=1987-11-19`
 - Fields: Búsquedas por medio de ElasticSearch, por ejemplo:
   - Ubicación: la búsqueda será por queryString (y se buscará en los campos street_name, country, admin_area_levels) o por geohash. En ambos casos debes cambiar <span v-pre>`{{field_name}}`</span> por el nombre del campo de ubicación del tipo de contenido
-    - <span v-pre>`.../?fields.{{field_name}}[search]=chile`</span>. Con el campo llamado `location` quedaría: `.../?fields.location[search]=chile` Ésta búsqueda no toma en cuenta mayúsculas ni minúsculas, pero si toma en cuenta los espacio, tíldes y carácteres especiales.
+    - <span v-pre>`.../?fields.{{field_name}}[search]=chile`</span>. Con el campo llamado `location` quedaría: `.../?fields.location[search]=chile` Esta búsqueda no toma en cuenta mayúsculas ni minúsculas, pero sí toma en cuenta los espacios, tildes y caracteres especiales.
     - <span v-pre>`.../?fields.{{field_name}}[geohash]=66j`</span>. Con el campo llamado `location` quedaría: `.../?fields.location[geohash]=66j`
   - `.../entries?fields.color=black`
 

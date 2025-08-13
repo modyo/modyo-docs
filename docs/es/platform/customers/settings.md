@@ -11,9 +11,9 @@ Aquí puedes modificar tanto la experiencia visual del usuario como la configura
 
 ## General
 
-En esta sección puedes configurar aspectos generales del reino, como:
+En esta sección, puedes configurar aspectos generales del reino, como:
 
-- **Título**
+- **Título**.
 - **Identificador**: La URL de las vistas de perfil, inicio de sesión, registro y recuperación de contraseña del reino.
 - **Deshabilitar credenciales**: Al marcar esta casilla, desactivas las credenciales de Modyo en el reino y permites únicamente el acceso a través de SSO.
 
@@ -81,7 +81,7 @@ Para usar una hoja de estilos CSS personalizada en las vistas de sesión, sigue 
 3. Pega el código CSS en el editor.
 4. Haz clic en el botón **Guardar** para guardar los cambios.
 
-Haz click en el ícono de [Gestor de Archivos](/es/platform/content/asset-manager.html) para subir archivos vinculados en el código CSS.
+Haz click en el ícono de [Gestor de Archivos](/es/platform/content/asset-manager) para subir archivos vinculados en el código CSS.
 
 Es importante tener en cuenta que el editor no genera automáticamente el enlace del archivo después de subirlo. Después de cargar el archivo, haz click en el botón de pegado que se encuentra en el lateral de cada archivo para generar su enlace. Luego, copia este enlace y pégalo en el código CSS.
 
@@ -140,7 +140,7 @@ Los servicios compatibles con el ingreso a Modyo son:
 
 Debes contar con la correcta configuración del servicio asociado para que Modyo pueda conectarse con él. Asegúrate de completar todos los campos requeridos.
 
-Para más información sobre las integraciones consulta la sección de [Proveedores de Identidad](/es/platform/core/integrations/identity-providers.html)
+Para más información sobre las integraciones consulta la sección de [Proveedores de Identidad](/es/platform/core/integrations/identity-providers)
 
 
 
@@ -189,7 +189,7 @@ Una vez que hayas obtenido esta información en Salesforce, accede a **Modyo** y
 1. Ingresa al reino que deseas vincular.
 1. Accede a la configuración del reino.
 1. Haz click en **Integraciones**.
-1. Haz click en **+ Add** y selecciona la integración de Salesforce.
+1. Haz click en **Add** y selecciona la integración de Salesforce.
 1. Ingresa un nombre para la integración. Puede ser cualquier texto de al menos 3 caracteres de largo.
 1. En el campo **Sujeto**, utiliza el correo electrónico de un usuario que tienen acceso al Connected App en Salesforce.
 1. En **Issuer** ingresa tu Consumer Key.
@@ -279,7 +279,7 @@ Utiliza un cliente de autenticación para enviar los tokens de acceso de tu inte
 Modyo permite seleccionar los miembros del equipo que trabajan en cada reino y así controlar el acceso a los distintos aspectos del reino.
 
 Para añadir un miembro al reino, sigue estos pasos:
-1. Haz click en el botón **+ Agregar miembro** en la parte superior derecha.
+1. Haz click en el botón **Agregar miembro** en la parte superior derecha.
 2. En el modal, selecciona a un usuario y asigna un rol.
 3. Haz click en **Agregar**.
 
@@ -337,7 +337,7 @@ Al eliminar un campo personalizable, eliminas permanentemente todos los valores 
 :::
 
 :::tip Tip
-Además de guardar valores específicos de los usuarios, puedes utilizar los valores de los campos personalizables para crear filtros de [segmentos](/es/platform/customers/segments.html) lo que te permite separar a los usuarios según sus valores personalizados.
+Además de guardar valores específicos de los usuarios, puedes utilizar los valores de los campos personalizables para crear filtros de [segmentos](/es/platform/customers/segments) lo que te permite separar a los usuarios según sus valores personalizados.
 :::
 
 ### Seguridad

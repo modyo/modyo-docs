@@ -3,7 +3,7 @@ search: true
 title: Modyo Platform
 meta:
   - name: description
-    content: Modyo Platform es la base tecnológica sobre la cual operan las aplicaciones de Modyo como Channels, Content, y Customers y en ella encontramos todo lo necesario para poder realizar las configuraciones transversales más relevantes. 
+    content: Modyo Platform es la base tecnológica sobre la cual operan las aplicaciones de Modyo como Channels, Content y Customers. En ella, encontramos todo lo necesario para poder realizar las configuraciones transversales más relevantes. 
 version: 9.2
 ---
 
@@ -19,11 +19,11 @@ La documentación en este sitio aplica a la última versión (10). Para acceder 
 
 ### Funcionalidades principales
 
-- [Revisión en Equipo](/es/platform/core/key-concepts.html)
+- [Revisión en Equipo](/es/platform/core/key-concepts)
 - [Integraciones](/es/platform/core/integrations)
-- [Usuarios y roles de administración](/es/platform/core/roles.html)
-- [Seguridad](/es/platform/core/security.html)
-- [API de administración](/es/platform/core/api.html)
+- [Usuarios y roles de administración](/es/platform/core/roles)
+- [Seguridad](/es/platform/core/security)
+- [API de administración](/es/platform/core/api)
 
 
 ### Palabras reservadas

@@ -20,7 +20,7 @@ Para crear un segmento, sigue estos pasos:
 
 - Desde la página de administración, haz clic en **Customers**, luego selecciona **Reinos**.
 - Haz clic en tu **Reino**.
-- Selecciona **Segmentos** y haz clic en **+ Nuevo Segmento**.
+- Selecciona **Segmentos** y haz clic en **Nuevo Segmento**.
 - Agrega los filtros necesarios para tu segmento.
 - Haz clic en **Siguiente**.
 - Escribe un **Nombre** y una **Descripción**.
@@ -63,7 +63,7 @@ Los filtros predeterminados en la plataforma incluyen:
 - Orden pagando
 - Orden rechazada
 
-Para crear un filtro avanzado, que se ajuste a tus necesidades, , consulta la sección [Custom Fields](/es/platform/customers/settings.html#custom-fields).
+Para crear un filtro avanzado, que se ajuste a tus necesidades, , consulta la sección [Custom Fields](/es/platform/customers/settings#custom-fields).
 
 :::warning Atención
 La actualización de segmentos a los que pertenece un usuario se realiza en un proceso en segundo plano y puede no ser inmediata. Esto ocurre:

@@ -4,7 +4,7 @@ search: true
 
 # API de administración
 
-Además de la funcionalidad que provee la plataforma Modyo, esta cuenta con una API administrativa. Te permite, de forma autenticada, acceder de forma externa a distintas acciones como listar, crear, y eliminar elementos como formularios, layouts, contenido, campos personalizados, menús de navegación, campañas de correo, entre otros.
+Además de la funcionalidad que provee la plataforma Modyo, esta cuenta con una API administrativa. Te permite, de forma autenticada, acceder externamente a distintas acciones como listar, crear y eliminar elementos como formularios, layouts, contenido, campos personalizados, menús de navegación, campañas de correo, entre otros.
 
 De esta forma, es posible realizar labores administrativas consumiendo la API y sin depender de la interfaz de Modyo, lo que te otorga mayor libertad para controlar tu trabajo.
 
@@ -129,7 +129,7 @@ emails	    [...]
 
 ## Llamar a la API
 
-Una vez que conoces el servicio que consultarás de acuerdo a [Explorando la API](/es/platform/core/api.html#explorando-el-api) y un método de [Autenticación](/es/platform/core/api.html#autenticacion)), ya se puede realizar un _request_ a la URL del recurso requerido.
+Una vez que conoces el servicio que consultarás de acuerdo a [Explorando la API](/es/platform/core/api#explorando-el-api) y un método de [Autenticación](/es/platform/core/api#autenticacion)), ya se puede realizar un _request_ a la URL del recurso requerido.
 
 Para este ejemplo, obtendremos la lista de todas las campañas de correo que se crearon en la plataforma. De acuerdo a la documentación en Swagger _(test.modyo.com/api/admin/docs)_, se necesita llamar a la siguiente URL:
 
@@ -270,7 +270,7 @@ A continuación, se explica como utilizar cada uno de estos métodos
 Lo primero que debes realizar, es registrar la aplicación para consumir la API. Sigue estos pasos para crear un nuevo Bearer Token:
 
 1. Desde la plataforma Modyo, en el menú lateral, expande **Configuración** y haz click en **Acceso al API**.
-2. Haz click en el botón **+ Nuevo Acceso al API**.
+2. Haz click en el botón **Nuevo Acceso al API**.
 3. Llena el nombre, descripción, y URI de redirección del acceso.
 
 Al guardar la información de la aplicación, Modyo mostrará una vista donde verás el _callback URL_ (el que corresponde al campo Redirect URI ingresado en el paso anterior) y además los campos _Application ID_ y _Secret_ que puedes utilizar posteriormente.
@@ -282,11 +282,11 @@ Ten en consideración que cuando se cierra sesión en alguno de tus sitios, se h
 4. Una vez registrada la aplicación, asigna la aplicación los usuarios que harán uso de la API. Para esto, en el menú lateral, expande **Configuración** y haz click en **Equipo**.
 5. Selecciona un usuario con un rol administrativo dentro de la aplicación deseada. 
 
-Para más detalles, ve a [Usuarios y Roles](/es/platform/core/roles.html)
+Para más detalles, ve a [Usuarios y Roles](/es/platform/core/roles)
 
-6. En la vista de edición del usuario administrador, haz click en _API Access_ y selecciona la opción **+ Nuevo Acceso al API**.
+6. En la vista de edición del usuario administrador, haz click en _API Access_ y selecciona la opción **Nuevo Acceso al API**.
 
-7. En el _popup_ que se muestra a continuación, selecciona el nombre de la aplicación que acabas de crear y luego haz click en **+ Nuevo Token de Acceso**.
+7. En el _popup_ que se muestra a continuación, selecciona el nombre de la aplicación que acabas de crear y luego haz click en **Nuevo Token de Acceso**.
 
 :::warning Atención
 Debes tener en cuenta que los usuarios administrativos solo podrán ejecutar acciones a través de la API administrativa de Modyo si es que cuentan con los permisos necesarios para realizar cada acción. Por ejemplo, un administrador con el rol de "Developer" en un sitio, no podrá ejecutar la acción "Publicar" en ese sitio.

@@ -2,31 +2,29 @@
 search: true
 ---
 
-# Backend for Frontend
+# Backend for Frontend (BFF)
 
-The Backend for Frontend (BFF) architecture pattern is an approach that optimizes and adapts the backend of an application to specific user interface (UI) needs.
+The Backend for Frontend (BFF) pattern is an architectural approach that optimizes and tailors an application's backend to the specific needs of its user interfaces (UIs).
 
-In a traditional architecture, the backend of an application usually manages multiple types of clients or interfaces, such as mobile applications, web and API services, which can complicate management, due to different requirements and workflows.
+In traditional architectures, a single backend typically serves multiple client types (mobile, web, APIs), which can complicate management due to their diverse requirements and workflows.
 
-The BFF pattern solves this by adding a specific backend layer for each type of client or user interface. Each BFF acts as an intermediary between the frontend and the main backend, managing specific requests and responses for each customer. This personalizes the user experience and improves efficiency.
+The BFF pattern addresses this by introducing a dedicated backend layer for each client type or UI. Each BFF acts as an intermediary between the frontend and the main backend, handling specific requests and responses for its client, thereby personalizing the user experience and enhancing efficiency.
 
-Advantages of the BFF model:
+Advantages of the BFF pattern:
 
-- **Adaptability**: It adapts to the needs of each customer and to visualization requirements, optimizing user experience.
-- **Frontend independence**: Frontend and backend teams can work independently and make changes without affecting the other components.
-- **Performance improvement**: Optimizes data queries and responses for each customer, thus improving application performance.
-- **Ease of evolution**: Simplifies the evolution and maintenance of the application by separating responsibilities. Changes can be made to a user interface without affecting other parts of the system.
-
-
-### Implementing BFF with Modyo
-
-You can implement BFF in Modyo in two ways:
-1. With APIs in [Modyo Connect] (/en/connect) to define lightweight microservices for integration with each customer's central systems, generating an API interface designed especially for the needs of the frontend. The APIs in Modyo Connect use the Amazon AWS [Amazon AWS] API Gateway technology (https://aws.amazon.com) and are integrated with [Single Sign On (SSO)] systems (/en/architecture/patterns/sso) for user authentication.
-2. Using APIs provided by the customer or by third parties. The [micro frontends] (/en/architecture/patterns/micro-frontend) on the platform access these APIs directly, with or without authentication, as required.
+- **Adaptability**: Tailors the backend to the unique needs of each client, optimizing the user experience.
+- **Frontend independence**: Enables frontend and backend teams to work autonomously, making changes without impacting other components.
+- **Performance improvement**: Optimizes data queries and responses for each client, leading to improved application performance.
+- **Ease of evolution**: Simplifies application evolution and maintenance by separating responsibilities, allowing UI changes without affecting other system parts.
 
 
-:::tip API decoupling
-Modyo architecture emphasizes that the frontend and backend layers are decoupled. In this way, APIs are independent and can be deployed in different infrastructures, connecting via HTTP.
+### BFF Implementation with Modyo
+
+The BFF pattern can be implemented in Modyo through two primary methods:
+1. **Modyo Connect APIs**: Utilize lightweight integration microservices within Modyo Connect to define an API interface specifically designed for frontend requirements. Modyo Connect APIs leverage Amazon AWS API Gateway technology and integrate with [Single Sign-On (SSO)](/en/architecture/patterns/sso) systems for user authentication.
+2. **External APIs**: Directly access APIs provided by the client or third parties. [Micro frontends](/en/architecture/patterns/micro-frontend) on the Modyo platform can consume these APIs directly, with or without authentication, as needed.
+
+
+:::tip API Decoupling
+Modyo's architecture emphasizes a strong decoupling between the frontend and backend layers. This ensures that APIs are independent and can be deployed across different infrastructures, communicating via HTTP.
 :::
-
-

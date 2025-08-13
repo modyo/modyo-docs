@@ -179,7 +179,7 @@ Adds currency format to a value. *e.g.*
 :::warning Important
 This filter determines the format of the currency and takes precedence over any other currency settings.
 
-If you don't specify currency parameters with the currency filter, Modyo uses the realm's [payment] (/en/platform/customers/settings.html#payment-settings) settings.
+If you don't specify currency parameters with the currency filter, Modyo uses the realm's [payment] (/en/platform/customers/settings#payment-settings) settings.
 
 If the site does not have a realm associated to it, and you don't specify parameters, the predefined format of the site's language will be applied.
 :::
@@ -275,7 +275,7 @@ Returns a list of Entries that match a filter. *e.g.*
 - entries (ArrayEntry) - array with entries
 - opts (Hash) (default: {}) - hash with field and eq as value
 
-### Filter By Query String
+### Filter by Query String
 
 Returns a list of Entries that meet a query. You can use logical operators, various meta fields, URLs, or Liquid tags.
 

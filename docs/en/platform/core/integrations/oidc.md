@@ -21,7 +21,7 @@ Also enable **Show home to public visitors** to be able to redirect users withou
 
 1. In the side menu, select **Customers** and click **Realms**.
 1. Expand **Realm Settings** and click **Identity Providers**.
-1. Click **+ Add**
+1. Click **Add**
 1. Select the **OpenID Connect** integration and fill in the following information:
   * **Name of the service**
   * **Client ID**

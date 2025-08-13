@@ -14,20 +14,20 @@ In the widget editing view, you can see three areas: the top action bar, the mai
 
 Along the **top bar**, on the left, you can see the widget name and current status:
 
-- **Draft**: This status means a widget is new or is unpublished.
-- **Published**: This status means a widget is published and the version in the editor contains no unpublished changes.
-- **Pending changes**: This status means there is a published version of a widget, and the editor contains unpublished, pending changes.
-- **In review**: This status means [team review](/en/platform/core/key-concepts.html) is enabled and this widget is in review.
-- **Approved**: This status appears when [team review](/en/platform/core/key-concepts.html) is enabled and the review conditions for the item are met. When in this state, templates are ready to be published.
+- **Draft**: This status appears when a widget has just been created or when it has been unpublished.
+- **Published**: This status appears after a publication and when the editable and published versions are the same.
+- **Pending changes**: This status appears if there is already a published version of a widget, but there are pending changes to be published in the editable version.
+- **In review**: This status appears when [team review](/en/platform/core/key-concepts) is enabled and this widget is in review.
+- **Approved**: This status appears when [team review](/en/platform/core/key-concepts) is enabled and the review conditions for the item are met. When in this state, templates are ready to be published.
 
 On the right, you'll find the following actions:
 **Preview**: Opens the preview of the editable version of the widget in a new tab.
 
 :::warning Attention
-You can preview the widgets as a user without a session or a user with a Modyo session. For this, it is recommended to open or close the Modyo session on the site before entering preview mode. This is because logging in or out of preview mode can result in security errors such as _x-frame-options_ or _mixed-content_, depending on the site's custom domain and SSL settings.
+You can preview the widgets as a user without a session or a user with a Modyo session. For this, it is recommended to start or close the Modyo session on the site before entering preview mode. This is because starting or closing a session within preview mode can generate security errors such as _x-frame-options_ or _mixed-content_, depending on the site's custom domain and SSL settings.
 :::
 
-**Differences**: Takes you to the [difference view](/en/platform/core/key-concepts.html), where you can compare the changes between multiple versions of the widget.
+**Differences**: Takes you to the [differences view](/en/platform/core/key-concepts), where you can compare the changes between multiple versions of the widget.
 
 By default, you start by comparing the published version with the editable version. Use the version selectors to compare with backup versions. If the icon does not appear, it means that there is no published version of this widget.
 
@@ -39,108 +39,108 @@ By default, you start by comparing the published version with the editable versi
 
 - **Save**: Saves current changes.
 - **Submit for review**: If team review is enabled, you can submit the widget for review and notify reviewers that the widget is ready for review.
-- **Publish**: Takes you to the [join review and publication](/en/platform/core/key-concepts.html#joint-review-and-publication) view where you can publish your widgets.
+- **Publish**: Takes you to the [joint publication](/en/platform/core/key-concepts#review-and-joint-publication) view where you can publish your widgets.
 
 **Other main actions**:
 
 - **Unpublish**: If the widget is published, you can take it out of production using this option.
-- **Force publishing**: If you're a site administrator, you can use this option to immediately publish a widget, even if Team Review is enabled.
+- **Force publishing**: If you are a site administrator, you can use this option to immediately publish a widget, even if Team Review is enabled.
 
 :::tip Tip
-Only unpublished widgets can be archived.
+Only widgets that have been unpublished can be archived.
 :::
 
 :::tip Tip
-Archived widgets do not appear in the main widget list or in the Custom widget selection in Page Builder. You can restore an archived widget by editing it and using the **restore** option in the upper right corner of the editing view.
+Archived widgets will not appear in the initial list or in the widget selection modal in the Page Builder. To restore an archived widget, you must go to the edit view, using the **Restore** option in the upper right corner of the view.
 :::
 
-Once a widget is published, it is available as a custom widget in the [page builder](/en/platform/channels/pages.html).
+Once a widget is published, it will be visible in the custom widget selection modal in the [Page Builder](/en/platform/channels/pages).
 
 :::tip Tip
-To learn more about publication lifecycles in Modyo, review the [Versioning](/en/platform/core/key-concepts.html#versioning) section.
+To learn more about the publication flow, review the [Versioning](/en/platform/core/key-concepts#versioning) section.
 :::
 
-In the main work area you can see the following:
+In the work area you can see:
 
 - **Code Tabs**: A JavaScript, CSS, and HTML tab is available to build widgets.
-- **Asset manager**: Opens a modal that lists all account files and provides filters and searching. Clicking the image preview or file name opens an editor where you can resize/crop the image, and change attributes such as the title or alternate text. Selecting the copy icon provides you with a URL you can paste, and you can select the "Upload files" tab to upload files. You can learn more about By clicking on it, you will raise the file management modal, where you can filter and search the files you have uploaded in the [File manager](/en/platform/content/asset-manager.html) and copy its URL to use them in your widget. You can also upload new files from this modal.
-- **Shortcuts helper**: A small pop-up that displays useful keyboard shortcuts for the Widget Builder.
-- **Snippets**: Displays a list of snippets available from the [Template Builder](/en/platform/channels/templates.html#snippets) and copies their code to reference them in the widget.
-- **Changes**: If changes have been saved and not published, it will display this list of all the times saved each file (JS, CSS, and HTML). Clicking on a sub-version changes the contents of the tab to the content of the subversion that was clicked.
+- **File manager**: By clicking on it, the file management modal will open, where you can filter and search for the files you have uploaded in the [File manager](/en/platform/content/asset-manager) and copy their URL to use them in the widget. You can also upload new files from this modal.
+- **Keyboard shortcuts**: Displays a small informational window with some useful keyboard shortcuts.
+- **Snippets**: Displays a list of available snippets from the [Template Builder](/en/platform/channels/templates#snippets) and copies their code to reference them in the widget.
+- **Changes**: If changes have been saved and not published, this list will show all the times each file (JS, CSS, and HTML) has been saved. Clicking on a sub-version changes the content of the tab to the content of the sub-version that was clicked.
 
 :::tip Tip
-To avoid losing any changes you currently have, be sure to save before jumping between save states. This way, you can always return to the most recently saved version in the **Changes** list.
+To avoid losing any changes you currently have, you must save before jumping between sub-versions, so that you can always return to the last saved version in the changes list.
 :::
 
 :::tip Tip
-If you publish a new version of your widget, the **Changes** list resets and erases all save states. This is because the new editable version now matches the version you just published. Saving new changes adds new save states until the next time you publish.
+When the widget is published, no available changes will be observed. This is because each version starts without changes from the production version. If the widget is restored to an older version, the sub-versions will also be restored, so you can access all instances where changes were saved in that version.
 :::
 
-You can make use of Liquid in the Javascript, CSS, and HTML tabs in the widget builder. For more information check [the associated Liquid documentation](/en/platform/channels/liquid-markup.html).
+In the three widget tabs, Liquid can be used. For more information, review [the associated Liquid documentation](/en/platform/channels/liquid-markup).
 
 In the properties column you can see:
 
-- **Name**: Use this field to update the name of your widget.
-- **Tags**: Use this field to add tags to your widget. Tagging a widget makes it easier to search and filter. As your digital channels scale in size and complexity, good tagging helps keep your channel management well organized.
-- **Pages using this widget**: You will see a list of pages that are using this widget. While viewing pages in this listing, you will not be able to download or archive the widget.
+- **Name**: Allows you to change the widget name.
+- **Tags**: Allows you to add tags to a widget. Tags are for administrative use and serve to search and filter widgets to find them quickly.
+- **Pages using this widget**: You will see a list of pages that are using this widget. While viewing pages in this list, you will not be able to unpublish or archive the widget.
 
 :::warning Attention
-If you delete a widget from a page and publish, you'll continue to see that page in this list because the widget is still referenced in the backrests of that page. From version 9.1.10 onward, you can unpublish any published widget, even if it's in use. Active references on pages will be inactive, so you won't see the widget on the site if you unpublished it. In addition, you can archive any widget that is not published, so that if there are still references on some pages of the widget that you want to archive, they will be deleted when the widget is archived.
+If you delete a widget from a page and publish, you will still see that page in this list because the widget is still referenced in the backups of that page. From version 9.1.10 onwards, you can unpublish any published widget, even if it is in use. Active references on pages will become inactive, so you will not see the widget on the site if you unpublished it. In addition, you can archive any widget that is not published, so that if there are still references on some pages of the widget you want to archive, these will be deleted when the widget is archived.
 :::
 
 ## Create a Widget
-To create a new Widget and have a _micro frontend_ for your sites and posts, follow these steps:
+To create a new Widget and have a _micro frontend_ for your sites and publications, follow these steps:
 1. From the Modyo Platform main menu, expand Channels, and click your Site.
 1. Click Widgets.
-1. Click the **+ New Widget** button.
-1. Enter the name of your widget and click **Create**.
+1. Click the **New Widget** button.
+1. Type the name of your widget and click **Create**.
 1. Customize your widget using HTML, CSS, JavaScript, or Liquid.
 1. Once finished, click **Publish**.
 
 :::tip Tip
 
-Modyo allows you to preview a widget locally and see it styled for your site before publishing it. To do this, check the related [documentation](https://docs.modyo.com/en/platform/channels/cli.html#quick-guide).
+Modyo allows you to preview a widget locally and see it styled for your site before publishing it. To do this, check the related [documentation](https://docs.modyo.com/en/platform/channels/cli#quick-guide).
 :::
 
 ## Widget Variables
 
-In the variables tab you can see the list of variables created in the widget, and their respective actions for:
+In the variables tab, you can see the list of variables created in the widget, and their respective actions for:
 
 * **Copy** the liquid code to use that variable.
-* **Edit** the variable
+* **Modify** the variable
 * **Delete** the variable.
 
-Next to the name of each variable you will see an "overwritten" indicator if the variable also exists at the account or site level in the [global variables](/en/platform/core/key-concepts.html#global-variables).
+Next to the name of each variable, you will see an "overwritten" indicator if the variable also exists at the account or site level in the [global variables](/en/platform/core/key-concepts#global-variables).
 
-When modifying a variable, you will be able to decide the name and default value that this variable will take in the widget. In addition, you can decide if you want to make a list of values available so that when a widget is instantiated on a page, it is possible to choose between these different values.
+When modifying a variable, you can decide the name and default value that this variable will take in the widget. In addition, you can decide if you want to make a list of values available so that when a widget is instantiated on a page, it is possible to choose between these different values.
 
-When you use the list of possible values, you must leave each value on a new line, and leave a `*` in front of the value you want to be taken as the default.
+When using the list of possible values, you must place each value on a new line, and place a `*` before the value you want to be taken as the default.
 
-When you instantiate the widget on a page, you will see all variables being used (whether account, site, or widget) listed as "disabled" with their default value. To overwrite the value of a particular variable for that instance of the widget on that page, select the checkbox to the left of the variable and change its value.
+When instantiating the widget on a page, you will see that all variables being used (whether account, site, or widget) will be listed as "disabled" with their default value. If you want to overwrite the value of a particular variable for that instance of the widget on that page, you must select the checkbox to the left of the variable and change the value it takes.
 
-:::warning Warning
-Adding the widget on a page will list all the variables that that widget is using. If you don't see any of the variables that are defined in the widget, it is likely that the variable in the widget code is not being used.
+:::warning Attention
+When instantiating the widget on a page, all variables that widget is using will be listed. If you do not see any of the variables that are defined in the widget, it is very likely that the variable is not being used in the widget code.
 :::
 
-## Synchronous and asynchronous loading
+## Synchronous loading
 
-:::warning Warning
+:::warning Attention
 This is an experimental feature and may be subject to changes.
 :::
 
-You can decide whether you want to load your widgets synchronously, that is, have your widgets' HTML, CSS, and JavaScript code loaded along with the rest of the page from the server, or asynchronously, so that all the static content of the page will be loaded and once the main document is loaded, the content of your widget will be loaded via JavaScript. By default, all widgets are loaded asynchronously.
+You can decide whether you want to load your widgets synchronously, meaning that the HTML, CSS, and JavaScript code of your widget is loaded along with the rest of the page from the server, or asynchronously, so that all the static content of the page will be loaded and once the main document is loaded, the content of your widget will be loaded via JavaScript. By default, all widgets are loaded asynchronously.
 
-To change the way each widget loads, go to the edit view of the page containing the widget, select the widget and check or uncheck the "Sync loading" option.
+To change how each widget loads, go to the edit view of the page containing the widget, select the widget, and check or uncheck the "Synchronous loading" option.
 
-:::warning Warning
-Keep in mind that using very large widgets synchronously may decrease the performance of your page, therefore you should carefully decide which widgets will load synchronously and which ones will load asynchronously.
+:::warning Attention
+You should consider that using very heavy widgets synchronously can decrease your page's performance, so you should carefully decide which widgets will load synchronously and which will load asynchronously.
 :::
 
 ## Use Internationalization (i18n)
 
-With i18n you can configure and add new languages to your widgets.
+With i18n, you can configure and add new languages to your widgets.
 
-To handle internationalization in the widgets of our [experience catalog](https://dynamicframework.dev) we use the [**Vue I18n**](https://kazupon.github.io/vue-i18n/) package installed through the plugin [vue-cli-plugin-i18n](https://github.com/kazupon/vue-cli-plugin-i18n), you can check its documentation [here](https://kazupon.github.io/vue-i18n/introduction.html). When installing the plugin, it creates a folder for the languages called `locals` and a configuration file called `i18n.js`.
+To handle internationalization in the Widgets of our [experience catalog](https://dynamicframework.dev), we use the [**Vue I18n**](https://kazupon.github.io/vue-i18n/) package installed through the plugin [vue-cli-plugin-i18n](https://github.com/kazupon/vue-cli-plugin-i18n). You can check its documentation [here](https://kazupon.github.io/vue-i18n/introduction.html). When installing the plugin, it creates a folder for the languages called `locales` and a configuration file called `i18n.js`.
 
 ```shell{3,5-7}
 ├── src/
@@ -158,7 +158,7 @@ To learn more about internationalization and vue-i18n, see [Internationalization
 
 ### Configuration
 
-In the configuration file, you will get the language of the site that you have on the platform. First, initialize the LANG constant in the `i18n.js` file.
+In the configuration file, we will get the site's language from the platform. First, initialize the LANG constant in the `i18n.js` file.
 
 ```js{4,11}
 import Vue from 'vue';
@@ -177,13 +177,13 @@ export default new VueI18n({
 });
 ```
 
-You must create the variable `liquid.lang` in Modyo Platform. To create this variable, follow these steps:
+The `liquid.lang` variable must be created in Modyo Platform. To create this variable, follow these steps:
 
 1. In your browser, log in to Modyo Platform.
 1. Expand **Channels**, and click **Sites**.
 1. Click **Templates**.
 1. Open the `theme` View in the Views -> Javascript -> theme section.
-1. Paste the following code:
+1. Add the following code:
 
 ```shell
 window.liquid = {
@@ -195,7 +195,7 @@ This code assigns the language to the `liquid.lang` variable, depending on the v
 
 ### Add a language
 
-To add a new language to the site, we simply create a **JSON** file in the `locales` folder where its name is the code of the language to be added. For example, if we want to add Brazilian Portuguese, add `pt-BR.JSON`:
+To add a new language to the site, simply create a **JSON** file in the `locales` folder where its name is the code of the language to be added. For example, if we want to add Brazilian Portuguese, add `pt-BR.json`:
 
 ```shell{4}
 ├── src/
@@ -204,16 +204,16 @@ To add a new language to the site, we simply create a **JSON** file in the `loca
 │   │   ├── pt-BR.json <-- new language
 │   │   └── es-CL.json
 ```
-:::warning Warning
+:::warning Attention
 The structure of the language file must be a **json** object:
 :::
 
 ### Form validation
 
-In order to locate the error messages that the validator shows, you need to make a small modification to the **i18n.js** configuration file.
+To locate the error messages that the validator shows, you need to make a small modification to the **i18n.js** configuration file.
 
-1. Import error messages into the needed languages.
-2. In the **LoadLocaleMessages** function, add the validator messages in the corresponding language.
+1. Import error messages in the languages you need.
+2. In the **loadLocaleMessages** function, add the validator messages in the corresponding language.
 3. Return the modified **messages** object.
 
 ```js
@@ -247,11 +247,11 @@ function loadLocaleMessages() {
 }
 ```
 
-## Using Liquid in Widgets
+## Use Liquid in Widgets
 
-Create a javascript object in Snippets so that you can use Liquid in your Widgets.
+Create a javascript object in Snippets to be able to use Liquid in your Widgets.
 
-Widgets, since they are decoupled from the platform, have the disadvantage of not being able to use Liquid directly, and we don't have access to [liquid drops](/en/platform/channels/drops), in order to work with them, you'll have to make them available via javascript from the platform. [**Liquid Markup**](/en/platform/channels/liquid-markup.html) is an important part of the platform, of how we build views, and how we access the content on it. It also gives you access to [**drops**](/en/platform/channels/drops), context variables that allow you to interact with your views more dynamically. For example, you can determine what content to show the user according to the segment to which they belong, hide a menu depending on the page being visited, and so on.
+Widgets, being decoupled from the platform, have the disadvantage of not being able to use Liquid directly, and we do not have access to [liquid drops](/en/platform/channels/drops). To work with them, you will have to make them available via javascript from the platform. [**Liquid Markup**](/en/platform/channels/liquid-markup) is an important part of the platform, of how we build views, and how we access the content on it. It also gives you access to [**drops**](/en/platform/channels/drops), context variables that allow you to interact with your views more dynamically. For example, you can determine what content to show the user according to the segment they belong to, hide a menu depending on the page being visited, etc.
 
 
 Follow these steps to create a snippet with Liquid variables:
@@ -269,17 +269,17 @@ Follow these steps to create a snippet with Liquid variables:
      },
    };
 ```
-In this snippet, we created an object called _liquid_ with the scope of `window` that contains the language and the request path of the site. From our Widget we can now access this data using the object created in the previous step. For example, if you want to get the site's languages from the Widget, you can do it with:
+In this snippet, we created an object called _liquid_ with the scope of `window` that contains the language and the request path of the site. From our Widget, we can now access this data using the object created in the previous step. For example, if you want to get the site's languages from the Widget, you can do it with:
 
    ```js
    const languages = window.liquid.lang;
    ```
 
 :::warning Warning
-In development mode we won't have access to this object since we're working locally, so the recommendation is to assign default values when defining these variables locally.
+In development mode, we will not have access to this object since we are working locally, so the recommendation is to assign default values when defining these variables locally.
 :::
 
-In the following example, const lang takes the value of window.liquid.lang, if the object doesn't exist, it assigns the default value “es-CL”:
+In the following example, const lang takes the value of window.liquid.lang; if the object does not exist, it assigns the default value "es-CL":
 
 ```js
 const lang = window.liquid !== "undefined" ? window.liquid.lang : "es-CL";
@@ -287,9 +287,9 @@ const lang = window.liquid !== "undefined" ? window.liquid.lang : "es-CL";
 
 ### Inserting an image with Liquid
 
-Modyo recommends using the Liquid tag and not the asset URL to insert images into your content. This allows you to resize or replace an image everywhere it's in use and ensure that any changes are immediately reflected.
+Modyo recommends using the Liquid tag and not the asset URL to insert images into your content. This allows you to resize or replace an image wherever it is in use and ensure that any changes are immediately reflected.
 
-In addition, Modyo converts the image to webp format with lossless compression quality. This results in more lightweight images, with shorter loading times, and without loss of quality.
+In addition, Modyo converts the image to webp format with lossless compression quality. This results in lighter images, with shorter loading times, and without loss of quality.
 
 
 #### To get the Liquid code from an image:
@@ -309,5 +309,5 @@ In addition, Modyo converts the image to webp format with lossless compression q
 1. Click on **update information**.
 
 :::tip Tip
-Your account's CDN needs to be in the cloud for changes to be reflected immediately, otherwise you'll need to request cache validation via a ticket to [Modyo](https://support.modyo.com/hc/en-us).
+It is necessary that your account's CDN is in the cloud for changes to be reflected immediately, otherwise you will need to request cache invalidation via a ticket to [Modyo](https://support.modyo.com/hc/en-us).
 :::

@@ -5,11 +5,11 @@ sidebarDepth: 3
 
 # Espacios
 
-Un espacio es un repositorio donde los miembros del equipo pueden definir los [tipos de contenido](https://docs.modyo.com/es/platform/content/types.html) y las entradas.
+Un espacio es un repositorio donde los miembros del equipo pueden definir los [tipos de contenido](https://docs.modyo.com/es/platform/content/types) y las entradas.
 
 Los espacios te permiten organizar el contenido en las áreas en las que trabajas, para una mejor distribución y orden.
 
-Puedes utilizar este contenido dentro y fuera de la plataforma Modyo, mediante la API pública o al crear un sitio en el módulo Channels. Configura el acceso desde diversos orígenes, para permitir que el servicio que consume la API pueda interpretarla. Revisa la sección de [API](https://docs.modyo.com/es/platform/content/public-api-reference.html#api) de nuestra documentación para más información.
+Puedes utilizar este contenido dentro y fuera de la plataforma Modyo, mediante la API pública o al crear un sitio en el módulo Channels. Configura el acceso desde diversos orígenes para permitir que el servicio que consume la API pueda interpretarla. Revisa la sección de [API](https://docs.modyo.com/es/platform/content/public-api-reference#api) de nuestra documentación para más información.
 
 ## Sobre la interfaz
 
@@ -26,7 +26,7 @@ Solamente puedes ver aquellos espacios en los cuales eres parte del equipo de tr
 Para crear un espacio, sigue estos pasos:
 
 1. En el menú lateral selecciona Content
-1. Da click en **+ Nuevo Espacio**
+1. Da click en **Nuevo Espacio**
 1. Llena los campos del formulario.
 1. Haz click en **Crear**
 
@@ -75,10 +75,10 @@ Para añadir un idioma:
 
 Una vez que hayas añadido un idioma secundario, al modificar una entrada verás un selector de idioma junto al título de la entrada.
 
-Para más información de cómo traducir una entrada a un idioma secundario, revisa la sección [Traducir una entrada](https://docs.modyo.com/es/platform/content/entries.html#traducir-una-entrada).
+Para más información de cómo traducir una entrada a un idioma secundario, revisa la sección [Traducir una entrada](https://docs.modyo.com/es/platform/content/entries#traducir-una-entrada).
 
 :::tip Tip
-Para seleccionar uno de los idiomas disponibles de una entrada en sus secciones correspondientes, revisa la documentación de [API pública](/es/platform/content/public-api-reference.html#filtros), [SDK de Javascript](/es/platform/content/public-api-reference.html#sdk-de-javascript) y  en [SDK de Liquid](/es/platform/content/public-api-reference.html#filtrar-entradas)
+Para seleccionar uno de los idiomas disponibles de una entrada en sus secciones correspondientes, revisa la documentación de [API pública](/es/platform/content/public-api-reference#filtros), [SDK de Javascript](/es/platform/content/public-api-reference#sdk-de-javascript) y  en [SDK de Liquid](/es/platform/content/public-api-reference#filtrar-entradas)
 :::
 
 
@@ -103,7 +103,7 @@ Al decidir el uso de SSL, considera:
 -  **SSL**: No se permiten certificados wildcards.
 - **NO SSL**: Si se permiten wildcards en estos entornos, pero debes habilitarlos manualmente a través de un ticket enviado al área de [soporte de Modyo](https://support.modyo.com/hc/en-us). Por defecto, Modyo utiliza SSL.
 
-Para más información, revisa la sección de [Seguridad](https://docs.modyo.com/es/platform/channels/sites.html#security-headers)  de la documentación de Modyo.
+Para más información, revisa la sección de [Seguridad](https://docs.modyo.com/es/platform/channels/sites#security-headers)  de la documentación de Modyo.
 :::
 
 
@@ -118,7 +118,7 @@ Las opciones de configuración de la revisión en equipo son las siguientes:
 - **Requerir todos**: Obliga a que todos los usuarios seleccionados aprueben el elemento antes de que se publique.
 
 Para más información sobre cómo configurar esta opción, revisa la sección de
- [Team Review](/es/platform/core/key-concepts.html)
+ [Team Review](/es/platform/core/key-concepts)
 
 ### Miembros del equipo
 
@@ -126,7 +126,7 @@ Los miembros del equipo son los usuarios que tienen acceso a un espacio para esc
 
 #### Agregar usuario ####
 Para añadir un usuario al espacio:
-1. Da click en **+ Agregar miembro**.
+1. Da click en **Agregar miembro**.
 1. En el modal selecciona un usuario y asígnale un rol.
 1. Da click en **Añadir**.
 

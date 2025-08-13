@@ -5,17 +5,17 @@ search: true
 
 # Monitoring
 
-Monitoring is one of the most important activities to be performed to ensure the efficiency and continuity of our cloud applications. Having access to reliable information on the performance of the systems allows us to make better decisions about the critical points that require attention.
+Monitoring is crucial to ensure the efficiency and continuity of cloud applications. Accessing reliable information about system performance allows for better decision-making regarding critical points that require attention.
 
-Modyo Connect includes real-time monitoring capabilities of the health of your infrastructure and applications, which generates metrics aggregated into dashboards that are used to determine the overall health of the service.
+Modyo Connect includes real-time monitoring capabilities of the health of your infrastructure and applications, generating aggregated metrics in dashboards to determine the overall health of the service.
 
-Modyo Connect is a managed service, so the vast majority of these metrics are managed internally by our operations teams. As part of the service, only alerts related to your particular applications, such as problems with external services or errors within the application, are escalated to the customer.
+Modyo Connect is a managed service; most metrics are handled internally by our operations teams. As part of the service, only alerts related to your particular applications (e.g., problems with external services or internal application errors) are escalated to the client.
 
 ## Application Metrics
 
-The monitoring of application metrics is a type of "white box" monitoring in which agents are implemented to report the behavior of the internal elements of each application. Application monitoring detects response times of services such as APIs, databases, caching systems, among others, providing a 360° view of the application status.
+Application metrics monitoring is a type of "white box" monitoring that instruments agents to report the behavior of internal elements of each application. It detects response times of services (e.g., APIs, databases, caching systems), providing a 360° view of the application status.
 
-Modyo Connect implements its application metrics monitoring service with [NewRelic APM](https://www.newrelic.com). NewRelic APM captures real-time performance metrics and centralizes them in dashboards that can be accessed from the Web, among which we can highlight:
+Modyo Connect implements its application metrics monitoring service with [NewRelic APM](https://www.newrelic.com). NewRelic APM captures real-time performance metrics and centralizes them in web-accessible dashboards, highlighting:
 
 - Average response times and percentiles
 
@@ -28,9 +28,9 @@ Modyo Connect implements its application metrics monitoring service with [NewRel
 - Slow traces within the application
 
 
-### Steps to activate
+### Steps to Activate
 
-To enable application monitoring with NewRelic within a microservice, you must ensure that the Java agent is installed and properly initialized as part of the service, as shown in the following example:
+To activate application monitoring with NewRelic in a microservice, ensure that the Java agent is installed and properly initialized as part of the service, as shown in the following example:
 
 
 ``` Dockerfile
@@ -45,7 +45,7 @@ CMD java -XX:MaxRAMPercentage=75.0 -XX:MinRAMPercentage=75.0 -XX:InitialRAMPerce
 
 ```
 
-In the above example, the following parameters are the ones that trigger monitoring:
+In the example above, the following parameters activate monitoring:
 
 
 ``` Java
@@ -55,7 +55,7 @@ In the above example, the following parameters are the ones that trigger monitor
 ```
 
 
-The $STAGE_NAME variable is used to notify NewRelic which environment configuration to use (production, certification, staging, etc.).
+The $STAGE_NAME variable is used to notify NewRelic the environment configuration to use (production, certification, staging, etc.).
 
 
 
@@ -65,42 +65,41 @@ The NewRelic API token, used to import metrics into the service, is automaticall
 
 
 :::warning Basic and full users in NewRelic
-The access granted by Modyo Connect is of the "basic" type and restricted exclusively to the dashboards defined for each service. Modyo does not grant "full" access to any user of the service.
+Accesses granted by Modyo Connect are of the "basic" type and restricted exclusively to the dashboards defined for each service. Modyo does not provide "full" access to any user of the service.
 :::
 
 
 ## Infrastructure Metrics
 
-Infrastructure metrics monitoring comprises all the details about the cloud dependencies configured for the service.
+Infrastructure metrics monitoring includes all details about the cloud dependencies configured for the service.
 
 
 Modyo Connect implements infrastructure monitoring using [AWS CloudWatch](https://aws.amazon.com/cloudwatch).
 
 
-### Steps to activate
+### Steps to Activate
 
-AWS CloudWatch monitoring is active by default on all infrastructure managed by Modyo Connect. It is accessed through the service accounts.
+AWS CloudWatch monitoring is active by default across all infrastructure managed by Modyo Connect. It is accessed through the service accounts.
 
 
 :::tip Monitoring with NewRelic
-The most relevant infrastructure monitoring metrics are sent to NewRelic using [AWS CloudWatch Metric Streams](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Metric-Streams.html), for centralization and cross-referencing with application metrics.
+The most relevant infrastructure monitoring metrics are sent to NewRelic via [AWS CloudWatch Metric Streams](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Metric-Streams.html), for centralization and cross-referencing with application metrics.
 :::
 
 
-## Logging
+## Log Registration
 
-Logging refers to the sequential recording in a file or database of all events or actions that affect a particular process. It thus constitutes evidence of the system's behavior.
-
-
-Modyo Connect implements its log logging using [AWS CloudWatch Logs](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html), which enables centralization of logs and thus a unified view of all log records generated by the infrastructure components.
+Log registration refers to the sequential recording in a file or database of all events or actions that affect a particular process, constituting evidence of the system's behavior.
 
 
-### Steps to activate
+Modyo Connect implements its log registration using [AWS CloudWatch Logs](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html), which allows for the centralization of logs and thus a unified view of all logs generated by the infrastructure components.
 
-AWS CloudWatch Logs are active by default across the infrastructure managed by Modyo Connect. They are accessed through the service's accounts.
+
+### Steps to Activate
+
+AWS CloudWatch Logs are active by default across all infrastructure managed by Modyo Connect. They are accessed through the service accounts.
 
 
 :::warning Log obfuscation
-It will be the responsibility of the user who generates the logs to obfuscate the parameters and sensitive information included in the logs.
+It is the responsibility of the user generating the logs to obfuscate the parameters and sensitive information included in the logs.
 :::
-

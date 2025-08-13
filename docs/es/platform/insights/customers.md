@@ -2,49 +2,48 @@
 search: true
 ---
 
-### Customers
+# Customers
 
-Así como en Digital Factory puedes ver una estadística directa de los miembros del equipo, Customers permite obtener una panorámica global de lo que hacen los usuarios finales dentro de ella y del comportamiento del contenido que ha llegado a ellos.
+El dashboard de Customers muestra métricas clave sobre la actividad y engagement de los usuarios finales de tu plataforma.
 
-Los filtros disponibles son:
+### Métricas Principales
 
-- Rango de fecha
-- Segmento
-- Sitio
+- **Usuarios activos**: Usuarios con al menos dos interacciones en el período seleccionado
+- **Actividad total**: Suma de todas las interacciones (logins, formularios, correos, notificaciones)
+- **Inicios de sesión**: Total de autenticaciones exitosas
+- **Nuevos registros**: Usuarios que completaron el registro
 
-**Usuarios activos**: Conteo de todos los usuarios con dos o más registros de actividad en el periodo seleccionado.
+### Filtros Disponibles
 
-**Actividad**: Corresponde al conteo de inicios de sesión, respuestas a formulario, correos abiertos, correos notificados como spam, notificaciones abiertas.
+- Rango de fechas
+- Segmentos de usuarios
+- Sitios específicos
 
-**Inicios de sesión**: Corresponde al conteo de todos los inicios de sesión de usuarios.
+### Gráfico de Actividad
 
-**Registros**: Corresponde al conteo de todos los registros de usuarios.
-
-### Actividad de usuarios
-
-En este gráfico verás una comparativa entre dos valores que representan acciones de usuarios en los sitios.
-
-Puedes seleccionar cualquiera de estos conteos de valores para comparar:
-
-- **Actividad**: Reúne todas las acciones a continuación.
-- **Usuarios activos**: Contempla a todos los usuarios que han realizado dos o más acciones en el periodo de tiempo especificado.
-- **Correo entregado**: Contempla el conteo de todos los correos de campañas que fueron exitosamente enviados.
-- **Correo abierto**: Corresponde al conteo de todos los correos de campañas abiertos por los usuarios.
-- **Correo notificado como spam**: Corresponde al conteo de todos los correos de campañas que fueron notificados como spam por los usuarios.
-- **Respuesta a formularios**: Corresponde al conteo de todas las respuestas a formularios de Modyo.
-- **Inicio de sesión**: Corresponde al conteo de todos los inicios de sesión de usuarios.
-- **Notificación abierta**: Corresponde al conteo de todas las aperturas de mensajes de notificación de usuarios.
+Permite comparar hasta dos métricas simultáneamente para identificar tendencias:
+- Actividad total
+- Usuarios activos
+- Correos entregados/abiertos
+- Respuestas a formularios
+- Inicios de sesión
+- Notificaciones abiertas
 
 ### Campañas Recientes
 
-Muestra un listado de las últimas 5 campañas de mensajería enviadas, con una razón de los mensajes abiertos versus el alcance de ese envío.
-
-En este listado, puedes encontrar tanto como campañas de correo como campañas de notificación.
+Tabla con las últimas 5 campañas ejecutadas mostrando:
+- Nombre y tipo de campaña
+- Alcance total
+- Cantidad de aperturas
+- Tasa de apertura
 
 ### Formularios Recientes
 
-Verás un listado de los últimos formularios creados, junto al conteo de respuestas a estos.
+Lista de formularios más recientes con:
+- Nombre del formulario
+- Total de respuestas
+- Fecha de creación
 
 ### Engagement
 
-Finalmente, también puedes visualizar a través de un gráfico de dona, el porcentaje de usuarios activos en el sitio (en el periodo seleccionado), comparado con el total de usuarios.
+Gráfico circular que muestra el porcentaje de usuarios activos versus inactivos en el período seleccionado.

@@ -1,7 +1,5 @@
 ---
 search: true
-canonicalUrl: https://docs.modyo.com/es/platform
-version: 9.2
 ---
 
 # Bienvenido a Modyo
@@ -10,12 +8,10 @@ version: 9.2
 
 ¡Estamos emocionados de tenerte a bordo y explorando nuestra plataforma!
 
-Queremos que tu experiencia sea lo más fácil y satisfactoria posible, por lo que hemos diseñado esta documentación pensando en ti. Puedes navegar estos documentos de principio a fin o dirigirte a una sección específica, los contenidos están todos relacionados entre sí para facilitar tu proceso de aprendizaje.
+Queremos que tu experiencia sea lo más fácil y satisfactoria posible, por lo que hemos diseñado esta documentación pensando en ti. Puedes navegar estos documentos de principio a fin o dirigirte a una sección específica; los contenidos están todos relacionados entre sí para facilitar tu proceso de aprendizaje.
 
-:::tip Versiones anteriores
-
-La documentación actual aplica a la última versión (Modyo 10). Si necesitas información sobre la versión anterior (Modyo 9.2), [puedes acceder aquí](https://9-2.docs.modyo.com/en/).
-
+:::tip Modyo 10
+Esta documentación hace referencia a la última versión de Modyo. Para la documentación de versiones anteriores, favor consulta en nuestros canales de soporte.
 :::
 
 ### ¿Qué es Modyo?

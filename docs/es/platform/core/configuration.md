@@ -4,7 +4,7 @@ search: true
 
 # Configuración
 
-En esta sección puedes personalizar tu cuenta y la plataforma de acuerdo a tus necesidades.
+En esta sección, puedes personalizar tu cuenta y la plataforma de acuerdo a tus necesidades.
 
 ## General
 
