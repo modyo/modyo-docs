@@ -52,4 +52,4 @@ Además de estos cursos, siempre puedes encontrar información en nuestros sitio
 
 **[Comunidad de Modyo:](https://es.modyo.com/comunidad)** Esta sección ofrece casos de uso prácticos, preguntas frecuentes y webinars pregrabados para ir más allá de la teoría y encontrar soluciones a problemas cotidianos.
 
-**[Webinars:](https://es.modyo.com/webinars)**: Cada mes, nuestros usuarios reciben invitaciones a sesiones en vivo con nuestra comunidad, donde pueden hacer preguntas y resolverlas con nuestros especialistas.
+**[Webinars:](https://es.modyo.com/webinars)**: Periódicamente, nuestros usuarios reciben invitaciones a sesiones en vivo con nuestra comunidad, donde pueden hacer preguntas y resolverlas con nuestros especialistas.

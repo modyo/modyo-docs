@@ -34,7 +34,7 @@ The management of roles and permissions for sites and content spaces has been si
 
 ### Separation of users and administrators
 
-Modyo 9.0 enhances user management by completely separating frontend users (site visitors, people interacting with your channels) from administrators (users with assigned roles, content managers, channel developers, engineers, etc.). User and administrative login panels are now separate, allowing for independent identity management service integration and a custom look-and-feel.
+Modyo 10 enhances user management by completely separating frontend users (site visitors, people interacting with your channels) from administrators (users with assigned roles, content managers, channel developers, engineers, etc.). User and administrative login panels are now separate, allowing for independent identity management service integration and a custom look-and-feel.
 
 ### PWA support
 

@@ -4,20 +4,37 @@ search: true
 
 # Payments
 
-Modyo también muestra una estadística de transacciones dentro del sitio, que han realizado los usuarios finales durante el último tiempo.
+El dashboard de Payments proporciona un resumen de las transacciones comerciales procesadas a través de tu plataforma.
 
-Estos números pueden ser vistos según Fecha, Estado de la orden y Medio de Pago.
+### Métricas Principales
 
-### Actividad de usuarios
+- **Total de órdenes**: Cantidad de transacciones en el período
+- **Ítems vendidos**: Total de productos o servicios comercializados
+- **Ingresos totales**: Valor monetario de las transacciones exitosas
 
-En esta sección, se puede ver la cantidad de órdenes ingresadas, los ítems vendidos y los ingresos recibidos durante ese tiempo, junto con una comparación al periodo anterior.
+### Filtros Disponibles
 
-También se grafica dinámicamente los estados de las órdenes, con tal de hacer una comparativa a lo largo del tiempo.
+- Rango de fechas
+- Estado de orden
+- Medio de pago
 
-### Órdenes por Medio de Pago
+### Actividad de Transacciones
 
-Este gráfico nos permite comparar el uso de los distintos tipos de medios de pago que hay instalados dentro del e-commerce, a través de la cantidad de transacciones que se han hecho mediante ellos.
+Gráfico que muestra la evolución de órdenes en el tiempo con comparación al período anterior.
 
-### Órdenes por Estado Actual
+### Estados de Órdenes
 
-Por último, puedes ver la efectividad de los movimientos de un e-commerce, con el estado de las órdenes del último tiempo, mostrando la cantidad de movimientos en estado de pago pendiente, pagados, rechazados, cancelados, en espera de confirmación, fallidos y completados.
+Visualización de la distribución de órdenes por estado:
+- Completadas
+- Pendientes de pago
+- Rechazadas
+- Canceladas
+- En procesamiento
+
+### Medios de Pago
+
+Gráfico que muestra la distribución de transacciones por método de pago utilizado:
+- Tarjetas de crédito
+- Tarjetas de débito
+- Transferencias
+- Otros métodos disponibles

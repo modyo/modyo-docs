@@ -46,7 +46,7 @@ module.exports = {
               label: "English",
               nav: [{
                       text: "Platform",
-                      link: "/en/platform/basics/"
+                      link: "/en/platform/"
                   },
                   {
                       text: "Connect",
@@ -67,13 +67,13 @@ module.exports = {
               ],
               sidebar: {
                   "/en/platform/": [{
-                      title: "Modyo Basics",
-                      path: "/en/platform/basics",
+                      title: "Getting Started",
+                      path: "/en/platform/",
                       collapsable: true,
                       children: [
-                          "/en/platform/basics/",
-                          "/en/platform/basics/learn-modyo",
-                          "/en/platform/basics/key-concepts",
+                          "/en/platform/",
+                          "/en/platform/learn-modyo",
+                          "/en/platform/key-concepts",
                           "/en/platform/release-notes",
                       ],
                   },
@@ -91,7 +91,6 @@ module.exports = {
                                   children: [
                                       ["/en/platform/core/integrations/identity-providers", "Identity Providers"],
                                       ["/en/platform/core/integrations/scim", "SCIM Provision with Microsoft Azure AD"],
-                                      ["/en/platform/core/integrations/google-data-studio-integration", "Integration with Google Analytics"],
                                       ["/en/platform/core/integrations/oidc", "Manage private sessions using OpenID Connect (OIDC)"],
                                   ],
                               },
@@ -164,8 +163,11 @@ module.exports = {
                           path: "/en/platform/insights/",
                           collapsable: true,
                           children: [
+                              "/en/platform/insights/apps",
+                              "/en/platform/insights/customers",
                               "/en/platform/insights/digital-factory",
-                              ["/en/platform/insights/data-studio", "Data Studio"],
+                              "/en/platform/insights/origination",
+                              "/en/platform/insights/payments",
                           ],
                       },
                   ],
@@ -245,7 +247,7 @@ module.exports = {
               label: "Español",
               nav: [{
                       text: "Plataforma",
-                      link: "/es/platform/basics/"
+                      link: "/es/platform/"
                   },
                   {
                       text: "Connect",
@@ -266,13 +268,13 @@ module.exports = {
               ],
               sidebar: {
                   "/es/platform/": [{
-                          title: "Fundamentos de Modyo",
-                          path: "/es/platform/basics/",
+                          title: "Primeros Pasos",
+                          path: "/es/platform/",
                           collapsable: true,
                           children: [
-                            ["/es/platform/basics/", "Bienvenido a Modyo"],
-                            ["/es/platform/basics/learn-modyo", "Aprende Modyo"],
-                            ["/es/platform/basics/key-concepts", "Conceptos claves"],
+                            ["/es/platform/", "Bienvenido a Modyo"],
+                            ["/es/platform/learn-modyo", "Aprende Modyo"],
+                            ["/es/platform/key-concepts", "Conceptos claves"],
                             ["/es/platform/release-notes", "Notas del release"],
                           ],
                       },
@@ -293,7 +295,6 @@ module.exports = {
                                 children: [
                                     ["/es/platform/core/integrations/identity-providers", "Proveedores de Identidad"],
                                     ["/es/platform/core/integrations/scim", "Aprovisionamiento SCIM con Microsoft Azure AD"],
-                                    ["/es/platform/core/integrations/google-data-studio-integration", "Integración con Google Analytics"],
                                     ["/es/platform/core/integrations/oidc", "Gestión de sesión privada usando OpenID Connect (OIDC)"],
                                 ],
                             },
@@ -366,8 +367,11 @@ module.exports = {
                           path: "/es/platform/insights/",
                           collapsable: true,
                           children: [
+                              "/es/platform/insights/apps",
+                              "/es/platform/insights/customers",
                               "/es/platform/insights/digital-factory",
-                              ["/es/platform/insights/data-studio", "Data Studio"],
+                              "/es/platform/insights/origination",
+                              "/es/platform/insights/payments",
                           ],
                       },
                   ],

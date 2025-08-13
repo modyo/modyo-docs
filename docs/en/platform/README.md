@@ -1,7 +1,5 @@
 ---
 search: true
-canonicalUrl: "https://docs.modyo.com/en/platform"
-version: 9.2
 ---
 
 # Welcome to Modyo
@@ -12,17 +10,15 @@ We're excited to have you on board and exploring our platform!
 
 We've designed this documentation to make your experience as easy and satisfying as possible. You can browse these documents from start to finish or navigate to a specific section; all contents are interconnected to facilitate your learning process.
 
-
 ### What is Modyo?
 
-Modyo is a digital experience platform that helps you create integrated digital experiences for your consumers. It accelerates secure web and mobile development and allows you to unify native and third-party applications in a single area to manage your digital channels.
+Modyo is a digital experience platform that helps you create integrated digital experiences for your customers, accelerating web and mobile development securely, and allowing you to unify native and third-party applications in a single area to manage your digital channels.
 
 ### What can you use Modyo for?
 
-* **To create integrated digital experiences**: Modyo enables you to create personalized digital experiences for your consumers, regardless of their channel.
+* **To create integrated digital experiences**: Modyo enables you to create personalized digital experiences for your customers, regardless of their channel.
 * **To foster agility and governance**: Modyo helps you accelerate the development of your digital experiences and ensure their quality.
 * **To build digital experiences through widgets**: Modyo offers an extensive library of widgets that you can use to quickly create digital experiences.
-
 
 ### Why use Modyo?
 

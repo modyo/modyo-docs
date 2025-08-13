@@ -49,7 +49,7 @@ FirstSteps2Alt: Learn about the new features and improvements in the latest vers
 FirstSteps3Title: Key Concepts
 FirstSteps3Text: Familiarize yourself with the key concepts and terminology of the platform.
 FirstSteps3Img: https://cloud.modyocdn.com/uploads/9b68c3ae-ca6e-4fce-8097-5c4a5c559277/original/Key_concepts.png
-FirstSteps3Url: /en/platform/basics/key-concepts
+FirstSteps3Url: /en/platform/key-concepts
 FirstSteps3Alt: Familiarize yourself with the key concepts and terminology of the platform.
 
 FirstSteps4Title: Dynamic Framework

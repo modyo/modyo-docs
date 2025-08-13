@@ -34,7 +34,7 @@ La gestión de roles y permisos para sitios y espacios de contenido ha sido simp
 
 ### Separación de usuarios y administradores
 
-Modyo 9.0 mejora la gestión de usuarios separando completamente a los usuarios de frontend (visitantes del sitio, personas que interactúan con tus canales) de los administradores (usuarios con roles asignados, gestores de contenido, desarrolladores de canales, ingenieros, etc.). Los paneles de acceso de usuarios y administradores están ahora separados, lo que permite la integración de un servicio de gestión de identidades independiente y un aspecto personalizado.
+Modyo 10 mejora la gestión de usuarios separando completamente a los usuarios de frontend (visitantes del sitio, personas que interactúan con tus canales) de los administradores (usuarios con roles asignados, gestores de contenido, desarrolladores de canales, ingenieros, etc.). Los paneles de acceso de usuarios y administradores están ahora separados, lo que permite la integración de un servicio de gestión de identidades independiente y un aspecto personalizado.
 
 ### Soporte para PWA
 
