@@ -106,9 +106,9 @@ Modyo te permite previsualizar un widget localmente y verlo con el estilo de tu 
 
 En la pestaña de variables puedes ver el listado de variables creadas en el widget, y sus respectivas acciones para:
 
-* **Copiar** el código liquid para usar esa variable.
-* **Modificar** la variable
-* **Eliminar** la variable.
+- **Copiar** el código liquid para usar esa variable.
+- **Modificar** la variable
+- **Eliminar** la variable.
 
 Junto al nombre de cada variable verás un indicador "sobreescrita" si la variable también existe a nivel de cuenta o sitio en las [variables globales](/es/platform/core/key-concepts#variables-globales).
 

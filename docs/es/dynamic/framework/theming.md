@@ -22,7 +22,7 @@ Con Dynamic Framework integrado por defecto en cada nueva aplicación de Modyo, 
 
 Antes de trabajar con la tematización en Dynamic Framework, asegúrate de tener un archivo CSS personalizado listo para albergar tus estilos. Puedes seguir los consejos para desarrolladores de Modyo sobre [cómo configurar un archivo CSS personalizado](https://www.modyo.com/resources/community/developer-tips/customize-your-ui-in-modyo-con-modular-css).
 
-2. Agrega componentes HTML
+### Agrega componentes HTML
 
 Una vez que tu CSS personalizado esté listo, puedes agregar cualquier componente HTML del catálogo de Modyo a tu aplicación. Tomemos este componente Hero como ejemplo:
 
@@ -53,7 +53,7 @@ Una vez que tu CSS personalizado esté listo, puedes agregar cualquier component
 
 Ten en cuenta que hemos agregado una clase `.df-hero-component` a la etiqueta `<section>` en nuestro HTML para garantizar que los estilos se apliquen correctamente.
 
-3. Define variables CSS personalizadas
+### Define variables CSS personalizadas
 
 Ahora, agreguemos variables CSS personalizadas a tu hoja de estilo para adaptar la apariencia de este componente:
 
@@ -66,7 +66,7 @@ Ahora, agreguemos variables CSS personalizadas a tu hoja de estilo para adaptar 
 }
 ```
 
-4. Aplica estilos personalizados
+### Aplica estilos personalizados
 
 Ahora que las variables CSS están disponibles, puedes aplicarlas al componente usando reglas CSS. Añade este código a la misma hoja de estilo:
 
@@ -83,13 +83,13 @@ Ahora que las variables CSS están disponibles, puedes aplicarlas al componente 
 }
 ```
 
-5. Continúa personalizando
+### Continúa personalizando
 
 Para realizar modificaciones adicionales o crear temas más complejos, simplemente añade reglas CSS adicionales en tu hoja de estilo personalizada. Este enfoque te permite mantener un control total sobre la presentación visual de tus aplicaciones de Modyo mientras aprovechas la potencia y la flexibilidad de Dynamic Framework.
 
-* * *
+---
 
-Creación de un tema personalizado para un widget
+## Creación de un tema personalizado para un widget
 
 Aunque en la sección de creación de un tema en Modyo se abordó la aplicación de estilos en toda tu aplicación, la tematización de widgets individuales requiere un enfoque ligeramente distinto.
 
@@ -97,18 +97,18 @@ Crear un tema para tus widgets puede contribuir a que tu aplicación sea más mo
 
 Tienes dos opciones principales para crear temas para tus widgets:
 
-1.  **CSS global en tu aplicación:** Define tu tema dentro del archivo CSS principal de tu sitio. Este es un enfoque sencillo, pero podría requerir el uso de selectores más específicos para apuntar a los elementos del widget.
+- **CSS global en tu aplicación:** Define tu tema dentro del archivo CSS principal de tu sitio. Este es un enfoque sencillo, pero podría requerir el uso de selectores más específicos para apuntar a los elementos del widget.
 
-2.  **Incrustado en el CSS de React:** Si tu widget es una aplicación de React, puedes incrustar el tema directamente en su archivo CSS. Esto proporciona una forma más encapsulada y modular de diseñar tu widget.
+- **Incrustado en el CSS de React:** Si tu widget es una aplicación de React, puedes incrustar el tema directamente en su archivo CSS. Esto proporciona una forma más encapsulada y modular de diseñar tu widget.
 
 Ten en cuenta que los componentes de React en Dynamic Framework tienen su propio conjunto de propiedades personalizadas predefinidas. Puedes aprovechar estas propiedades para personalizar la apariencia y el comportamiento de tus widgets. [Consulta la documentación del componente para obtener una lista detallada de las propiedades disponibles.](https://dynamicbanking.co/components)
 
-Ejemplo: Creación de un componente temático
+### Ejemplo: creación de un componente temático
 
 Supongamos que tienes un proyecto de React configurado utilizando el proceso de instalación de Dynamic Framework [detallado en la documentación](https://dynamicframework.dev/docs/getting-started).
 
-1.  **Navega a tu componente:** Abre el archivo `src/components/myComponent.tsx`.
-2.  **Reemplaza el código:** Reemplaza el código existente con el componente Lista:
+- **Navega a tu componente:** Abre el archivo `src/components/myComponent.tsx`.
+- **Reemplaza el código:** Reemplaza el código existente con el componente Lista:
 
     ```javascript
     import { DList, DListItem } from '@dynamic-framework/ui-react';
@@ -129,7 +129,7 @@ Supongamos que tienes un proyecto de React configurado utilizando el proceso de 
 
 Ten en cuenta la adición del atributo `id="my-component"` al div contenedor. Esto mejorará la especificidad de CSS para el estilo.
 
-3.  **Define tus variables personalizadas:** Agrega las siguientes variables CSS a tu archivo `styles/base.css` (o a tu archivo CSS principal del sitio):
+- **Define tus variables personalizadas:** Agrega las siguientes variables CSS a tu archivo `styles/base.css` (o a tu archivo CSS principal del sitio):
 
     ```css
     :root {

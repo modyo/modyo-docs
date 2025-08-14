@@ -54,9 +54,9 @@ En el área de trabajo principal, hay dos secciones:
 
 Modyo ofrece tres layouts predefinidos:
 
-* **Home**: Exclusivamente para la página principal del sitio.
-* **Base**: Todas las páginas, excepto la de inicio, usan este layout.
-* **Error**: Empleado en las vistas de error (404, 401), presentando un diseño limpio.
+- **Home**: Exclusivamente para la página principal del sitio.
+- **Base**: Todas las páginas, excepto la de inicio, usan este layout.
+- **Error**: Empleado en las vistas de error (404, 401), presentando un diseño limpio.
 
 Para crear un nuevo layout:
 1. En la sección de **Plantillas** da click en la pestaña **Vistas**
@@ -127,10 +127,10 @@ Es necesario que el CDN de tu cuenta esté en la nube para que los cambios se re
 
 En la sección de vistas puedes personalizar cuatro tipos de errores:
 
-* **Deshabilitado**: Se muestra cuando el sitio al que intentas acceder está [deshabilitado](/es/platform/channels/sites).
-* **404**: Si en la configuración de [restricciones del sitio](/es/platform/channels/sites#privacidad) decides mostrar el 404 en lugar de redireccionar a la página de inicio, se muestra este error al ingresar a una URL no definida.
-* **Privacy**: Se muestra cuando no tienes permisos para acceder al [sitio](/es/platform/channels/sites#privacidad) o a una de sus [páginas](/es/platform/channels/pages#privacidad).
-* **Template**: Visible cuando la página cargada tiene un error de sintaxis de Liquid. Es poco probable que veas esta vista, debido a que a partir de Modyo 8.1 la plataforma realiza una verificación de la sintaxis antes de guardar y publicar cambios en Plantillas.
+- **Deshabilitado**: Se muestra cuando el sitio al que intentas acceder está [deshabilitado](/es/platform/channels/sites).
+- **404**: Si en la configuración de [restricciones del sitio](/es/platform/channels/sites#privacidad) decides mostrar el 404 en lugar de redireccionar a la página de inicio, se muestra este error al ingresar a una URL no definida.
+- **Privacy**: Se muestra cuando no tienes permisos para acceder al [sitio](/es/platform/channels/sites#privacidad) o a una de sus [páginas](/es/platform/channels/pages#privacidad).
+- **Template**: Visible cuando la página cargada tiene un error de sintaxis de Liquid. Es poco probable que veas esta vista, debido a que a partir de Modyo 8.1 la plataforma realiza una verificación de la sintaxis antes de guardar y publicar cambios en Plantillas.
 
 ## CSS y JavaScript
 

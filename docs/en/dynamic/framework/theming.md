@@ -87,7 +87,7 @@ Now that CSS variables are available, you can apply them to the component using 
 
 To make additional modifications or create more complex themes, simply add additional CSS rules to your custom stylesheet. This approach allows you to maintain full control over the visual presentation of your Modyo applications while leveraging the power and flexibility of Dynamic Framework.
 
-* * *
+- * *
 
 **Creating a custom theme for a widget**
 

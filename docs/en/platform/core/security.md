@@ -106,14 +106,14 @@ If you have activated the option to force authentication, the next time the user
 ## Best Practices
 
 ### Important Concepts
-* **Limit access**: Reduce the chances of a malicious actor gaining access to the system.
-* **Containment**: Configure the system in a way that minimizes possible damage if it is breached by a malicious actor.
-* **Preparation and knowledge**: Maintain backups and procedures to be prepared in the event of potential disasters.
-* **Trusted sources**: Avoid implementing widgets or code from untrustworthy sources. Ensure that all dependencies loaded on the site come from reliable sources.
+- **Limit access**: Reduce the chances of a malicious actor gaining access to the system.
+- **Containment**: Configure the system in a way that minimizes possible damage if it is breached by a malicious actor.
+- **Preparation and knowledge**: Maintain backups and procedures to be prepared in the event of potential disasters.
+- **Trusted sources**: Avoid implementing widgets or code from untrustworthy sources. Ensure that all dependencies loaded on the site come from reliable sources.
 
 ### Local Vulnerabilities
-* Make sure that the computers of all administrator users are free of spyware, malware, or viruses.
-* Make sure that access always comes from updated computers and through reliable and updated web browsers.
+- Make sure that the computers of all administrator users are free of spyware, malware, or viruses.
+- Make sure that access always comes from updated computers and through reliable and updated web browsers.
 
 ### Update Modyo Regularly
 We recommend that you update Modyo periodically to ensure that your installation has the latest security fixes and that all security patches are up to date. These patches are designed to be applied without causing significant interruptions to the workflow.

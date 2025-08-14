@@ -260,8 +260,8 @@ To use Modyo API, it is required to authenticate the user who will be invoking t
 
 Modyo provides 2 possible authentication methods to invoke the API:
 
-* Bearer Token
-* Admin session cookie
+- Bearer Token
+- Admin session cookie
 
 We will explain how to use each of these methods below.
 
@@ -483,10 +483,10 @@ The `meta` object contains the information you need to be able to traverse a lar
 
 The 4 attributes are:
 
-* `total_entries`: The total number of items of the queried resource
-* `per_page`: The number of items that will be delivered per page
-* `current_page`: The current data window
-* `total_pages`: The total number of pages or groups of elements that you can request.
+- `total_entries`: The total number of items of the queried resource
+- `per_page`: The number of items that will be delivered per page
+- `current_page`: The current data window
+- `total_pages`: The total number of pages or groups of elements that you can request.
 
 In the previous example, aside from having the first 10 records, there are a total of 1078 entries, grouped into 108 pages. If you want to obtain the second page of this data, you need to add the `page` parameter with a value of 2, invoking the URL again. To modify the number of records per page, add the `per_page` parameter with the desired value.
 

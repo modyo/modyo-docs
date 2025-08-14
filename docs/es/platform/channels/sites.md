@@ -603,28 +603,28 @@ Habilita este módulo para tu sitio para configurar los encabezados de seguridad
 #### HTTP Strict Transport Security (HSTS)
 
 Indica al navegador que solo puede acceder al sitio mediante HTTPS.
-* **Duración**: Establece el tiempo que el navegador accede al sitio solamente mediante HTTPS.
-* **Precarga**: Incluye la directiva de precarga. Para más información, consulta [HSTS Preload List Submission](https://hstspreload.org/).
-* **Incluir subdominios**: Aplica la regla HSTS a todos los subdominios del sitio.
+- **Duración**: Establece el tiempo que el navegador accede al sitio solamente mediante HTTPS.
+- **Precarga**: Incluye la directiva de precarga. Para más información, consulta [HSTS Preload List Submission](https://hstspreload.org/).
+- **Incluir subdominios**: Aplica la regla HSTS a todos los subdominios del sitio.
 
 #### Referrer-Policy
 
 El _header_ `Referer` contiene información de la página web anterior desde la cual está vinculando, con el _header_ `Referrer-Policy` puedes controlar cuánta información debe incluirse en el _header_ `Referer`.
 
-* **no-referrer**: No envía información de _referrer_.
-* **no-referrer-when-downgrade**: No envía información de _referrer_ a un destino menos seguro.
-* **origin**: Envía solo el dominio de origen, elimina las rutas y _query string_.
-* **origin-when-cross-origin**: Envía información de _referrer_ para _requests_ del mismo origen. Elimina las rutas y _query string_ para otros destinos.
-* **same-origin**: Envía información de _referrer_ solo para _requests_ del mismo origen.
-* **strict-origin**: Envía el dominio de origen solo para _requests_ del mismo nivel de seguridad y no envía información de _referrer_ a destinos menos seguros.
-* **strict-origin-when-cross-origin**: Envía información de _referrer_ a _requests_ del mismo origen. Envía el origen solo si el nivel de seguridad es el mismo y no envía información de _referrer_ a destinos menos seguros.
-* **unsafe-url**: Envía siempre la información de _referrer_.
+- **no-referrer**: No envía información de _referrer_.
+- **no-referrer-when-downgrade**: No envía información de _referrer_ a un destino menos seguro.
+- **origin**: Envía solo el dominio de origen, elimina las rutas y _query string_.
+- **origin-when-cross-origin**: Envía información de _referrer_ para _requests_ del mismo origen. Elimina las rutas y _query string_ para otros destinos.
+- **same-origin**: Envía información de _referrer_ solo para _requests_ del mismo origen.
+- **strict-origin**: Envía el dominio de origen solo para _requests_ del mismo nivel de seguridad y no envía información de _referrer_ a destinos menos seguros.
+- **strict-origin-when-cross-origin**: Envía información de _referrer_ a _requests_ del mismo origen. Envía el origen solo si el nivel de seguridad es el mismo y no envía información de _referrer_ a destinos menos seguros.
+- **unsafe-url**: Envía siempre la información de _referrer_.
 
 #### X-Frame-Options
 
 Indica si tu sitio puede ser incluido en un `frame`, `iframe`, `embed`, or `object`.
-* **DENY**: El sitio no se puede mostrar en un _frame_.
-* **SAMEORIGIN**: El sitio se puede mostrar en _frames_ del mismo dominio.
+- **DENY**: El sitio no se puede mostrar en un _frame_.
+- **SAMEORIGIN**: El sitio se puede mostrar en _frames_ del mismo dominio.
 
 #### X-Content-Type-Options
 
@@ -648,7 +648,7 @@ default-src 'self'; img-src 'self' https://cloud.modyocdn.com; font-src 'self' h
 
 La política debe incluir una directiva `default-src 'self'`, que sirve de _fallback_ para cualquier otro tipo de recurso. También debe incluir directivas `script-src` y `style-src` para evitar la evaluación de tags _inline_ `style` y `script`.
 
-* **Nonce**: El servidor agregará un CSP nonce a las directivas `script-src` y `style-src` si están presentes.
+- **Nonce**: El servidor agregará un CSP nonce a las directivas `script-src` y `style-src` si están presentes.
 
 Si tienes el nonce presente en tu política, puedes agregar a la lista permitida los _tags_ `script` y `style` en tus _templates_ usando la variable `csp_nonce`.
 
@@ -659,9 +659,9 @@ Si tienes el nonce presente en tu política, puedes agregar a la lista permitida
 ```
 
 Estas herramientas te pueden ayudar a diseñar una política de seguridad sólida:
-* [Google CSP evaluator](https://csp-evaluator.withgoogle.com)
-* [ReportURI](https://report-uri.com/home/analyse)
-* [CSP validator](https://cspvalidator.org)
+- [Google CSP evaluator](https://csp-evaluator.withgoogle.com)
+- [ReportURI](https://report-uri.com/home/analyse)
+- [CSP validator](https://cspvalidator.org)
 
 #### Permissions-Policy
 

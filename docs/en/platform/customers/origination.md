@@ -319,9 +319,9 @@ In this section, you can edit the values of the selected task. You can find thes
 
 Conditional logic allows you to create more dynamic and intelligent workflows. With this functionality, you can define rules for showing or hiding **Steps**, **Tasks**, and **Input task fields** based on answers provided by users or on existing data within the application. This allows you to personalize the user experience, presenting only relevant information at each stage of the process and simplifying or bifurcating the interaction. Conditional logic gives you the flexibility to:
 
-* **Hide or show complete steps:** Guides users through different paths within the origination flow based on their previous answers.
-* **Hide or show individual tasks:** Within a step, you can show or hide specific tasks. This is useful for requesting additional information only when needed.
-* **Hide or show Input task fields:** Within an Input task, you can show or hide specific fields. This allows you to omit or request data based on the answers provided by the user.
+- **Hide or show complete steps:** Guides users through different paths within the origination flow based on their previous answers.
+- **Hide or show individual tasks:** Within a step, you can show or hide specific tasks. This is useful for requesting additional information only when needed.
+- **Hide or show Input task fields:** Within an Input task, you can show or hide specific fields. This allows you to omit or request data based on the answers provided by the user.
 
 #### Configure Conditional Logic
 

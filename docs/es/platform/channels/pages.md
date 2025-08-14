@@ -66,9 +66,9 @@ Para conocer más acerca de páginas de contenido, consulta [Página de Contenid
 - Publicar: Si la página está aprobada, puedes ir a la [vista de publicación conjunta](/es/platform/core/key-concepts) usando esta acción.
 
 :::tip Tip
-* Si una página tiene un padre, solo puedes publicarla si este se encuentra publicado.
-* Si una página tiene hijos, solo puedes despublicarla si todos ellos se encuentran despublicados.
-* Si una página tiene hijos, solo puedes archivarla si todos ellos se encuentran archivados.
+- Si una página tiene un padre, solo puedes publicarla si este se encuentra publicado.
+- Si una página tiene hijos, solo puedes despublicarla si todos ellos se encuentran despublicados.
+- Si una página tiene hijos, solo puedes archivarla si todos ellos se encuentran archivados.
 :::
 
 **Acciones secundarias**:
@@ -131,13 +131,13 @@ Una vez seleccionado un widget en la sección central, el foco pasará a la pest
 
 En esta pestaña encontrarás opciones propiedades comunes de todas las páginas:
 
-* Nombre
-* Padre
-* Ruta
-* Extracto
-* Grilla
-* Privacidad
-* Meta tags personalizados
+- Nombre
+- Padre
+- Ruta
+- Extracto
+- Grilla
+- Privacidad
+- Meta tags personalizados
 
 :::warning Atención
 Modyo cuenta con rutas reservadas para las página, por lo que no podrás usarlos como rutas de tus páginas personalizadas:
@@ -187,8 +187,8 @@ Despliega las [entradas](/es/platform/content/entries) de tus [tipos de contenid
 
 Para poder mostrar contenido en un sitio, debes cumplir con ciertas condiciones:
 
-* Contar con un espacio con al menos un idioma (el mismo del sitio) y con por lo menos un Tipo de contenido. Para más información, ve a [Crear un Espacio](/es/platform/content/spaces#crear-un-espacio) y [Crear un Tipo](/es/platform/content/types#crear-un-tipo)
-* Contar con entradas publicadas en el idioma del sitio. Para más información, ve [Entradas](/es/platform/content/entries) y [Localización](/es/platform/content/spaces#localizacion)
+- Contar con un espacio con al menos un idioma (el mismo del sitio) y con por lo menos un Tipo de contenido. Para más información, ve a [Crear un Espacio](/es/platform/content/spaces#crear-un-espacio) y [Crear un Tipo](/es/platform/content/types#crear-un-tipo)
+- Contar con entradas publicadas en el idioma del sitio. Para más información, ve [Entradas](/es/platform/content/entries) y [Localización](/es/platform/content/spaces#localizacion)
 
 :::tip Tip
 Puedes usar el nombre que desees para las vistas, sin importar a que tipo o espacio lo quieras asociar. Siempre debes tener en consideración que las entradas solo se mostrarán si tienen una versión publicada en el idioma del sitio en el que estás creando estas vistas.

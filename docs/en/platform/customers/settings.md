@@ -230,20 +230,20 @@ Once you have completed both steps, when you make a change to a Modyo user, the 
 
 To ensure proper data synchronization between Modyo and Salesforce and maintain the integrity and consistency of information between both platforms, the following specifications exist:
 
-* It is allowed to use a single “issuer” per account, which means that between realms they cannot be repeated.
-* Update contacts in Salesforce:
+- It is allowed to use a single “issuer” per account, which means that between realms they cannot be repeated.
+- Update contacts in Salesforce:
   * If the linking settings allow it, when updating a contact in Salesforce, Modyo searches for the corresponding user using the “secondary_user_id” field.
   * If the Modyo user does not exist, a new one is created, and if it already exists, it is updated according to the synchronized fields.
   * If the Modyo user didn't exist previously, their “secondary_user_id” is defined as the ID of the Salesforce contact.
-* Update a user in Modyo:
+- Update a user in Modyo:
   * When updating a Modyo user, the corresponding contact is searched in Salesforce using their “contact ID”.
   * If the Modyo user is new or doesn't have “secondary_user_id”, a new contact is created in Salesforce and the “secondary_user_id” field is updated with the ID of the newly created contact.
-* Contact creation in Salesforce:
+- Contact creation in Salesforce:
   * A contact in Salesforce only requires the “Last Name” field to be created.
   * When a contact is created only with “Last Name”, in Modyo, the “username” and the “first name” will be completed with placeholders or placeholders that indicate that they were created as a result of the link.
-* Create a user in Modyo:
+- Create a user in Modyo:
   * A Modyo user can be created without “Last Name”, but this field, when required in Salesforce, is sent with a placeholder that indicates that it was created from the linking process.
-* The primitive types of Salesforce fields available for linking are:
+- The primitive types of Salesforce fields available for linking are:
   * Boolean
   * Date
   * Datetime
@@ -254,7 +254,7 @@ To ensure proper data synchronization between Modyo and Salesforce and maintain 
   * Long
   * Object
   * String
-* Fields not included in the list, such as references or composite fields, are disabled in the field linking view. This indicates that they are not available for linking.
+- Fields not included in the list, such as references or composite fields, are disabled in the field linking view. This indicates that they are not available for linking.
 
 #### Enable the Modyo API in Salesforce.
 To carry out this process, review the [Salesforce Connect REST API](https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/intro_what_is_chatter_connect.htm) developer guide

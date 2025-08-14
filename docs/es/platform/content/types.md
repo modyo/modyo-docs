@@ -133,9 +133,9 @@ Utiliza este campo para seleccionar una dirección geográfica, según los campo
 :::warning Atención
 Para garantizar el correcto funcionamiento de los mapas de ubicación con la clave de API de Google configurada en tu cuenta, la clave tiene que tener permisos para acceder a:
 
-* API de mapas a través de JavaScript
-* API de lugares
-* API de geocodificación
+- API de mapas a través de JavaScript
+- API de lugares
+- API de geocodificación
 :::
 
 ### Archivo
