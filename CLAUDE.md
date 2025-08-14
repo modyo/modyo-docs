@@ -22,8 +22,8 @@ yarn docs:build
 This is the official Modyo technical documentation built with VuePress v1.9.10.
 
 ### Content Organization
-- **Spanish (Primary)**: `/docs/es/` - All original documentation is written in Spanish first
-- **English (Secondary)**: `/docs/en/` - Translations managed externally via Transifex (changes will be overwritten)
+- **Spanish (Primary)**: `/docs/es/` - All original documentation is written in Spanish first (Spanish default)
+- **English (Secondary)**: `/docs/en/` - Translations has to be generated every time an spanish file changes (changes will be overwritten)
 - **Configuration**: `/docs/.vuepress/config.js` - Controls navigation, sidebar, and site settings
 - **Public Assets**: `/docs/.vuepress/public/` - Static assets
 
@@ -37,7 +37,7 @@ This is the official Modyo technical documentation built with VuePress v1.9.10.
 
 ### Language and Translation
 - Spanish is the source of truth - always prioritize accuracy in Spanish documentation
-- English files are auto-generated from Transifex - manual changes will be overwritten
+- English files has to be auto-generated using AI - manual changes will be overwritten
 - Target audience is developers and technical users of the Modyo platform
 
 ### Link Conventions
