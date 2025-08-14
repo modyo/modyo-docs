@@ -243,7 +243,7 @@ November 04, 2024
 
 | Module | Improvements |
 |--------|---------|
-| **Core** | • Security improvements<br>• All administrator sessions are invalidated when their password is changed |
+| **Core** | • Security improvements<br>• All administrator sessions are invalidated when they change their password |
 | **Channels** | • Fixes issues when rendering pages with segmented content<br>• Fixes issues when rendering very large content pages<br>• Fixes the author of a synchronization in the activity shown on pages, widgets, templates, and menus<br>• Option to enable webpush in application settings has been added |
 | **Customers** | • Adds the ability to map an object-type claim attribute to a specific custom field<br>• Adds webpush sending capability in notification campaigns when enabled on the site related to the realm |
 
@@ -312,7 +312,7 @@ July 30, 2024
 | Module | Improvements |
 |--------|---------|
 | **Core** | • Security improvements<br>• Webhooks improvements, now stages respond to hooks associated with a site, adds hooks when creating or updating an asset |
-| **Channels** | • Fixes issue when publishing a page when variables are configured and backups are deleted |
+| **Channels** | • Fixes issue when publishing a page with variable configuration and backup deletion |
 
 ### 10.0.3
 
@@ -334,7 +334,7 @@ July 08, 2024
 | Module | Improvements |
 |--------|---------|
 | **Core** | • Security improvements<br>• Performance enhancements<br>• Dependency update |
-| **Customers** | • Phone format improved, country now automatically selected via Cloudflare |
+| **Customers** | • Phone format improved, country is now automatically selected via Cloudflare |
 | **Channels** | • Fixes a performance issue when using the `by_tag` filter in Liquid templates<br>• Improves template loading experience when returning to the template builder |
 | **Content** | • Adds the ability to clone spaces and content types |
 
