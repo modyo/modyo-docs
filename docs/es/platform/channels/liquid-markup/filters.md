@@ -470,6 +470,45 @@ Resuelve la URL de un path y URL base (ej. <span v-pre>`{{ 'dynamic_bank' | reso
 
 Devuelve una lista de ítems visibles en una lista de ítems (ej. <span v-pre>`{{ items | visible_items }}`</span>).
 
+## Origination
+
+Estos son los filtros liquid que alteran valores relacionados con originations en Modyo Platform.
+
+### By UID
+
+Devuelve el Origination con el UID seleccionado. *ej.*
+<span v-pre>`{% assign my_origination = site.originations | by_uid: 'my-origination' %}`</span>
+
+**Parámetros:**
+- originations (ArrayOrigination) - array con originations
+- uid (String) - UID del Origination
+
+## Step
+
+Estos son los filtros liquid que alteran valores relacionados con steps en Modyo Platform.
+
+### By UID
+
+Devuelve el Step con el UID seleccionado. *ej.*
+<span v-pre>`{% assign my_step = origination.steps | by_uid: 'step-01' %}`</span>
+
+**Parámetros:**
+- steps (ArrayStep) - array con steps
+- uid (String) - UID del Step
+
+## Task
+
+Estos son los filtros liquid que alteran valores relacionados con tasks en Modyo Platform.
+
+### By UID
+
+Devuelve el Task con el UID seleccionado. *ej.*
+<span v-pre>`{% assign my_task = step.tasks | by_uid: 'task-01' %}`</span>
+
+**Parámetros:**
+- tasks (ArrayTask) - array con tasks
+- uid (String) - UID del Task
+
 ## Site
 
 Estos filtros Liquid alteran valores relacionados con los Sitios en Modyo Platform.
@@ -632,6 +671,28 @@ Agrega un reproductor de video en código HTML usando un asset del Gestor de Arc
 - `video` (Asset) — Objeto de tipo Video del Gestor de Archivos.
 - `width` (Integer) — Ancho para el video.
 - `height` (Integer) — Alto para el video.
+
+## Submission
+
+Estos son los filtros liquid que alteran valores relacionados con submissions en Modyo Platform.
+
+### By Origination
+
+Devuelve los Submissions filtrados por UID de Origination. *ej.*
+<span v-pre>`{% assign filtered_submissions = user.submissions | by_origination: 'my-origination' %}`</span>
+
+**Parámetros:**
+- submissions (ArraySubmission) - array con submissions del usuario
+- uid (String) - UID del Origination
+
+### By Status
+
+Devuelve los Submissions con el estado seleccionado. *ej.*
+<span v-pre>`{% assign filtered_submissions = user.submissions | by_status: 'completed' %}`</span>
+
+**Parámetros:**
+- submissions (ArraySubmission) - array con submissions del usuario
+- status (String) - Estado de los Originations. Los valores soportados son 'pending', 'completed' y 'all'
 
 ## User
 

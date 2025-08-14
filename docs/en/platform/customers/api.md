@@ -18,7 +18,7 @@ Access the Customers API to manage realms and users through the URL `ACCOUNT_URL
 
 ### Delegated tokens
 
-By enabling the [**Show delegation information**](/es/platform/core/integrations/identity-providers) option in your identity providers, using the API `account_url/api/customers/realms/{realm_uid}/me `, you'll get a JSON with added information about delegated tokens similar to this:
+By enabling the [**Show delegation information**](/en/platform/core/integrations/identity-providers) option in your identity providers, using the API `account_url/api/customers/realms/{realm_uid}/me`, you'll get a JSON with added information about delegated tokens similar to this:
 
 If you enable the [**Show delegation information**](/en/platform/core/integrations/identity-providers) option in identity providers, the `account_url/api/customers/realms/{realm_uid}/me` endpoint will include a JSON with information about delegated tokens:
 

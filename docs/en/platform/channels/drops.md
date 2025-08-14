@@ -74,7 +74,6 @@ It inherits the following attributes from [Asset](#asset):
 | **file_asset.is_audio?** | Boolean indicating if the file is an audio. | ```false``` |
 | **file_asset.is_pdf?** | Boolean indicating if the file is a PDF. | ```false``` |
 | **file_asset.is_another?** | Boolean indicating if the file is of another unspecified type. | ```false``` |
-| **file_asset.temp_url** | The temporary URL of the file. | ```/var/folders/vm/fk9_xg_d7qs8xbxj28csw1000000gp/T/e8ca0956-a576-43c0-9f37-2be39cf9660120210602-6475-1lvfh9t``` |
 
 ### Video
 

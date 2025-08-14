@@ -74,7 +74,6 @@ Se heredan los siguientes atributos de [Asset](#asset):
 | **file_asset.is_audio?** | Booleano que indica si el archivo es un audio. | ```false``` |
 | **file_asset.is_pdf?** | Booleano que indica si el archivo es un PDF. | ```false``` |
 | **file_asset.is_another?** | Booleano que indica si el archivo es de otro tipo no especificado. | ```false``` |
-| **file_asset.temp_url** | La URL temporal del archivo. | ```/var/folders/vm/fk9_xg_d7qs8xbxj28csw1000000gp/T/e8ca0956-a576-43c0-9f37-2be39cf9660120210602-6475-1lvfh9t``` |
 
 ### Video
 
