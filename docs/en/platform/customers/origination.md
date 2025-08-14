@@ -166,10 +166,10 @@ In an origination flow, each application represents the ongoing process of a spe
 | **application.fields** Array with answers stored within the current application. | ```[{"question": {"label": "What's your name?"},"text_field": "Jorge Regula"}]``` |
 | **application.QUESTION_ID** By using the ID of a specific question (e.g., application.123456), its information is directly accessed | ```{"question": {"label": "What's your name?"},"text_field": "John Doe"}``` |
 | **application.origination.name** Name of the origination. | ```My Origination``` |
-| **submission.origination.steps** Array with the names of the steps in the origination | ```[ {"uid": "step 1"}, {"uid": "step 2"}]``` |
-| **submission.origination.tasks** Array with all the tasks in the origination and the step they correspond to | ```[{"task_id": "67890","name": "Task 1", description: "step 1": { "uid": "abcd1234" } }]``` |
+| **application.origination.steps** Array with the names of the steps in the origination | ```[ {"uid": "step 1"}, {"uid": "step 2"}]``` |
+| **application.origination.tasks** Array with all the tasks in the origination and the step they correspond to | ```[{"task_id": "67890","name": "Task 1", description: "step 1": { "uid": "abcd1234" } }]``` |
 
-You can learn more about [Liquid Drops](/platform/channels/drops.html) in our documentation.
+You can learn more about [Liquid Drops](/en/platform/channels/drops.html) in our documentation.
 
 ### Code snippets example
 
@@ -284,7 +284,7 @@ In this example, you can find the use of data access by Liquid Drops and interac
 </script>
 ```
 
-:::tip Tip
+:::tip Valid JSON
 The content parameter that is sent must be a valid json. If it has to be empty, {} must be sent.
 :::
 ### Fields
@@ -337,7 +337,9 @@ To set up conditional logic, follow these steps:
    3. **Define the action:** Select the action and the element on which it will be executed when the rule is met. The available actions are **Show** and **Hide**.
 4. **Save the changes:** Once you have defined your rules, save the changes.
 
-:::tip Consider how conditional logic can affect the user experience and ensure that the flow can be completed. :::
+:::tip User experience
+Consider how conditional logic can affect the user experience and ensure that the flow can be completed.
+:::
 
 ### Edit origination settings
 
@@ -379,7 +381,7 @@ The overview of an origination gives you a summary of key metrics related to the
 - **Canceled**: Reflects requests that have been canceled by the user or administrator.
 - **Total**: Represents the total number of requests, including pending, completed, and canceled.
 
-### Submission management
+### Application management
 
 The application view allows you to individually review and manage the status and information of each application at this origin. You can select a specific application to access its details and manage its key elements.
 

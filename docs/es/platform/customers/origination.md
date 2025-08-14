@@ -284,7 +284,7 @@ En este ejemplo puede encontrar en uso el  acceso a datos por Drops de Liquid e 
 	});
 </script>
 ```
-:::tip Tip
+:::tip JSON válido
 El parámetro content que se envía tiene que ser un json válido. En caso de que tenga que ser vacío se tiene que enviar {}.
 :::
 ### Campos
@@ -337,7 +337,9 @@ Para configurar la lógica condicional, sigue estos pasos:
    3. **Define la acción:** Selecciona la acción y el elemento sobre el cual se ejecutará cuando la regla se cumpla. Las acciones disponibles son **Mostrar** y **Ocultar**.
 4. **Guarda los cambios:** Una vez que hayas definido tus reglas, guarda los cambios.
 
-:::tip Considera cómo la lógica condicional puede afectar la experiencia del usuario y asegúrate de que el flujo se pueda completar. :::
+:::tip Experiencia de usuario
+Considera cómo la lógica condicional puede afectar la experiencia del usuario y asegúrate de que el flujo pueda ser completado con facilidad. 
+:::
 
 ### Editar Configuración de la Originación
 
