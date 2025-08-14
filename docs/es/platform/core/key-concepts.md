@@ -243,16 +243,16 @@ El modo vista previa te permite previsualizar los cambios realizados a elementos
 
 La barra de vista previa contiene los siguientes elementos interactivos:
 
-* **Selector de plantillas**: Permite cambiar entre la versión publicada y editable de los elementos pertenecientes al template builder.
-* **Selector de contenido**: Permite alternar entre la versión publicada y editable de los elementos pertenecientes a la aplicación de contenidos y que se estén usando en el sitio mediante el SDK de Liquid de contenido.
-* **Selector de navegación**: Permite cambiar entre la versión publicada y editable de los elementos pertenecientes al navigation builder.
-* **Selector de páginas**: Permite alternar entre la versión publicada y editable de los elementos pertenecientes al page builder.
-* **Selector de vista de contenido**: Permite cambiar entre la versión publicada y editable de la entrada de contenido que se está previsualizando en las vistas personalizadas de contenido. Esta vista no usa directamente el SDK de Liquid de contenido, por lo que el contenido en estas vistas no se verá afectado por el selector del SDK de contenido.
-* **Selector de widgets**: Si se están previsualizando páginas que contienen widgets personalizados, se mostrará una lista de los widgets presentes en la página, permitiendo seleccionar si se desea visualizar la versión editable o publicada de cada uno de ellos. Una vez realizada la selección, debes hacer click en el botón "refrescar" para que la configuración de los widgets surta efecto.
-* **Pestaña para minimizar**: Permite ocultar la barra de previsualización para evitar interferencias con los elementos ubicados en la parte superior del sitio. Una vez minimizada, la pestaña seguirá visible para restaurar la barra en el modo vista previa.
-* **Editar elemento**: Al hacer click, se accedes a la vista de edición del elemento que se está visualizando, ya sea una entrada, una página, un widget o una plantilla predeterminada del sitio.
-* **Compartir link**: Permite copiar un enlace que se puede compartir con otros usuarios. Al abrir el enlace, se accede directamente al modo vista previa con la configuración que se tenía al momento de copiar el enlace. Para acceder al modo vista previa, es necesario tener una sesión iniciada en la cuenta de administradora.
-* **Salir del modo vista previa**: Cierra el modo vista previa, eliminando la barra y manteniendo la pestaña en la URL actual del sitio.
+- **Selector de plantillas**: Permite cambiar entre la versión publicada y editable de los elementos pertenecientes al template builder.
+- **Selector de contenido**: Permite alternar entre la versión publicada y editable de los elementos pertenecientes a la aplicación de contenidos y que se estén usando en el sitio mediante el SDK de Liquid de contenido.
+- **Selector de navegación**: Permite cambiar entre la versión publicada y editable de los elementos pertenecientes al navigation builder.
+- **Selector de páginas**: Permite alternar entre la versión publicada y editable de los elementos pertenecientes al page builder.
+- **Selector de vista de contenido**: Permite cambiar entre la versión publicada y editable de la entrada de contenido que se está previsualizando en las vistas personalizadas de contenido. Esta vista no usa directamente el SDK de Liquid de contenido, por lo que el contenido en estas vistas no se verá afectado por el selector del SDK de contenido.
+- **Selector de widgets**: Si se están previsualizando páginas que contienen widgets personalizados, se mostrará una lista de los widgets presentes en la página, permitiendo seleccionar si se desea visualizar la versión editable o publicada de cada uno de ellos. Una vez realizada la selección, debes hacer click en el botón "refrescar" para que la configuración de los widgets surta efecto.
+- **Pestaña para minimizar**: Permite ocultar la barra de previsualización para evitar interferencias con los elementos ubicados en la parte superior del sitio. Una vez minimizada, la pestaña seguirá visible para restaurar la barra en el modo vista previa.
+- **Editar elemento**: Al hacer click, se accedes a la vista de edición del elemento que se está visualizando, ya sea una entrada, una página, un widget o una plantilla predeterminada del sitio.
+- **Compartir link**: Permite copiar un enlace que se puede compartir con otros usuarios. Al abrir el enlace, se accede directamente al modo vista previa con la configuración que se tenía al momento de copiar el enlace. Para acceder al modo vista previa, es necesario tener una sesión iniciada en la cuenta de administradora.
+- **Salir del modo vista previa**: Cierra el modo vista previa, eliminando la barra y manteniendo la pestaña en la URL actual del sitio.
 
 :::warning Atención
 Cambiar el selector de contenido de la barra de previsualización no tendrá efecto sobre el contenido que estés usando a través del SDK de JavaScript o la API de contenido. Solo tendrá efecto en el contenido que se usa a través del SDK de Liquid.

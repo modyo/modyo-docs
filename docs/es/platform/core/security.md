@@ -106,14 +106,14 @@ Si has activado la opción de forzar autenticación, la próxima vez que el usua
 ## Mejores Prácticas
 
 ### Conceptos importantes
-* **Limitar accesos**: Reducir las posibilidades de que un actor malicioso obtenga acceso al sistema.
-* **Contención**: Configurar el sistema de manera que minimice el daño posible en caso de ser vulnerado por un actor malintencionado.
-* **Preparación y conocimiento**:  Mantener copias de seguridad y procedimientos para estar preparados en el caso de posibles desastres.
-* **Fuentes confiables**: Evitar implementar widgets o código de fuentes poco confiables. Asegurar que todas las dependencias cargadas en el sitio provengan de fuentes confiables.
+- **Limitar accesos**: Reducir las posibilidades de que un actor malicioso obtenga acceso al sistema.
+- **Contención**: Configurar el sistema de manera que minimice el daño posible en caso de ser vulnerado por un actor malintencionado.
+- **Preparación y conocimiento**:  Mantener copias de seguridad y procedimientos para estar preparados en el caso de posibles desastres.
+- **Fuentes confiables**: Evitar implementar widgets o código de fuentes poco confiables. Asegurar que todas las dependencias cargadas en el sitio provengan de fuentes confiables.
 
 ### Vulnerabilidades Locales
-* Asegúrate que los equipos de cómputo de todos los usuarios administradores estén libres de spyware, malware o virus.
-* Asegúrate que los accesos siempre provengan de equipos actualizados y a través de navegadores web confiables y actualizados.
+- Asegúrate que los equipos de cómputo de todos los usuarios administradores estén libres de spyware, malware o virus.
+- Asegúrate que los accesos siempre provengan de equipos actualizados y a través de navegadores web confiables y actualizados.
 
 ### Actualizar Modyo con Regularidad
 Te recomendamos actualizar Modyo periódicamente para asegurar que tu instalación tenga las últimas correcciones de seguridad y que todos los parches de seguridad están al día. Estos parches están diseñados para aplicarse sin causar interrupciones significativas en el flujo de trabajo.

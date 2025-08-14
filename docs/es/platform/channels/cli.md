@@ -89,14 +89,14 @@ MODYO_DISABLE_LIQUID_REGEX=raw
 
 #### Descripción de Variables en el .env
 
-* `MODYO_ACCOUNT_URL` URL del dominio donde se hará el despliegue en Modyo.
-* `MODYO_SITE_HOST` Host del sitio donde quieres desplegar el widget. No es necesario si especificas el ID del sitio.
-* `MODYO_SITE_ID` ID del sitio donde se hará el despliegue.
-* `MODYO_TOKEN` Token de acceso del usuario para los despliegues.
-* `MODYO_VERSION` Versión de la plataforma Modyo. Para versiones antiguas es 8 y la actual es 10.
-* `MODYO_BUILD_DIRECTORY` Nombre de la carpeta que contiene el resultado del build, como "dist" o "build" según el framework utilizado.
-* `MODYO_WIDGET_NAME` Nombre que tendrá el widget después de ser desplegado en la plataforma.
-* `MODYO_DISABLE_LIQUID_REGEX` Define una expresión regular para seleccionar archivos que necesitan deshabilitar el uso de Liquid, por ejemplo, archivos de plantillas donde es probable que la definición o el uso de variables colisionen con el uso en Liquid.
+- `MODYO_ACCOUNT_URL` URL del dominio donde se hará el despliegue en Modyo.
+- `MODYO_SITE_HOST` Host del sitio donde quieres desplegar el widget. No es necesario si especificas el ID del sitio.
+- `MODYO_SITE_ID` ID del sitio donde se hará el despliegue.
+- `MODYO_TOKEN` Token de acceso del usuario para los despliegues.
+- `MODYO_VERSION` Versión de la plataforma Modyo. Para versiones antiguas es 8 y la actual es 10.
+- `MODYO_BUILD_DIRECTORY` Nombre de la carpeta que contiene el resultado del build, como "dist" o "build" según el framework utilizado.
+- `MODYO_WIDGET_NAME` Nombre que tendrá el widget después de ser desplegado en la plataforma.
+- `MODYO_DISABLE_LIQUID_REGEX` Define una expresión regular para seleccionar archivos que necesitan deshabilitar el uso de Liquid, por ejemplo, archivos de plantillas donde es probable que la definición o el uso de variables colisionen con el uso en Liquid.
 
 ## Inicialización de un nuevo proyecto
 
@@ -284,10 +284,10 @@ Sin embargo, al incluir librerías externas o incrementar la complejidad de un w
 
 La técnica de _code splitting_ te permite dividir el código de tus widgets en componentes que se cargan bajo demanda o en paralelo, resolviendo estos problemas. Los beneficios de code splitting incluyen:
 
-* Reducción en la velocidad de carga.
-* Mejora en el tiempo de interacción.
-* Eliminación de restricciones en el tamaño de los widgets.
-* Aumento del rendimiento.
+- Reducción en la velocidad de carga.
+- Mejora en el tiempo de interacción.
+- Eliminación de restricciones en el tamaño de los widgets.
+- Aumento del rendimiento.
 
 #### Comandos de CLI para code splitting
 

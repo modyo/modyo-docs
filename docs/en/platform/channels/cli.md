@@ -89,14 +89,14 @@ MODYO_DISABLE_LIQUID_REGEX=raw
 
 #### Description of Variables in the .env
 
-* `MODYO_ACCOUNT_URL` URL of the domain where the deployment will be made in Modyo.
-* `MODYO_SITE_HOST` Host of the site where you want to deploy the widget. Not necessary if you specify the site ID.
-* `MODYO_SITE_ID` ID of the site where the deployment will be made.
-* `MODYO_TOKEN` User access token for deployments.
-* `MODYO_VERSION` Version of the Modyo platform. For older versions it is 8 and the current one is 10.
-* `MODYO_BUILD_DIRECTORY` Name of the folder containing the build result, such as "dist" or "build" depending on the framework used.
-* `MODYO_WIDGET_NAME` Name that the widget will have after being deployed on the platform.
-* `MODYO_DISABLE_LIQUID_REGEX` Defines a regular expression to select files that need to disable the use of Liquid, for example, template files where the definition or use of variables is likely to collide with their use in Liquid.
+- `MODYO_ACCOUNT_URL` URL of the domain where the deployment will be made in Modyo.
+- `MODYO_SITE_HOST` Host of the site where you want to deploy the widget. Not necessary if you specify the site ID.
+- `MODYO_SITE_ID` ID of the site where the deployment will be made.
+- `MODYO_TOKEN` User access token for deployments.
+- `MODYO_VERSION` Version of the Modyo platform. For older versions it is 8 and the current one is 10.
+- `MODYO_BUILD_DIRECTORY` Name of the folder containing the build result, such as "dist" or "build" depending on the framework used.
+- `MODYO_WIDGET_NAME` Name that the widget will have after being deployed on the platform.
+- `MODYO_DISABLE_LIQUID_REGEX` Defines a regular expression to select files that need to disable the use of Liquid, for example, template files where the definition or use of variables is likely to collide with their use in Liquid.
 
 ## Initializing a new project
 
@@ -284,10 +284,10 @@ However, by including external libraries or increasing the complexity of a widge
 
 The _code splitting_ technique allows you to divide your widgets' code into components that are loaded on demand or in parallel, solving these problems. The benefits of code splitting include:
 
-* Reduction in loading speed.
-* Improved interaction time.
-* Elimination of restrictions on the size of widgets.
-* Increased performance.
+- Reduction in loading speed.
+- Improved interaction time.
+- Elimination of restrictions on the size of widgets.
+- Increased performance.
 
 #### CLI commands for code splitting
 

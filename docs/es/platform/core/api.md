@@ -260,8 +260,8 @@ Para utilizar la API de Modyo, es necesario primero poder autenticar a un usuari
 
 Modyo provee 2 posibles métodos de autenticación para invocar la API:
 
-* Bearer Token
-* Cookie de sesión del admin
+- Bearer Token
+- Cookie de sesión del admin
 
 A continuación, se explica como utilizar cada uno de estos métodos
 
@@ -483,10 +483,10 @@ El objeto `meta` contiene la información relevante para poder recorrer una gran
 
 Los 4 atributos son:
 
-* `total_entries`: El número total de items del recurso consultado
-* `per_page`: La cantidad de items que se entregarán por cada página
-* `current_page`: La ventana actual de datos
-* `total_pages`: El total de páginas, o grupos de elementos que puedes consultar.
+- `total_entries`: El número total de items del recurso consultado
+- `per_page`: La cantidad de items que se entregarán por cada página
+- `current_page`: La ventana actual de datos
+- `total_pages`: El total de páginas, o grupos de elementos que puedes consultar.
 
 En el ejemplo anterior, aparte de contar con los primeros 10 registros, existen un total de 1078 entradas, agrupadas en 108 páginas. Si quieres obtener la segunda página de estos datos, se necesita agregar el parámetro `page` con valor igual a 2, invocando nuevamente la URL. Para modificar la cantidad de registros por página, agrega el parámetro `per_page` con el valor deseado.
 

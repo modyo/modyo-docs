@@ -1,15 +1,15 @@
 ---
 search: true
-title: Aprende a usar modyo
+title: Aprende a Usar Modyo
 ---
 
-# Aprende a usar Modyo
+# Aprende a Usar Modyo
 
 Modyo es una plataforma que te ayudará a crear experiencias digitales personalizadas de forma segura, rápida y unificada.
 
 Aquí encontrarás tutoriales detallados para entender y comenzar a usar Modyo. Estos tutoriales te guiarán a través de cada paso del proceso de creación, desde una introducción a las funcionalidades más importantes hasta la gestión de contenidos y la creación de un sitio web.
 
- Puedes acceder a nuestros cursos directamente, sin necesidad de inscripción. Elige según tu nivel de conocimiento y avanza a tu propio ritmo.
+Puedes acceder a nuestros cursos directamente, sin necesidad de inscripción. Elige según tu nivel de conocimiento y avanza a tu propio ritmo.
 
 Toma los cursos que necesites según tu rol o tómalos todos para convertirte en un auténtico especialista en Modyo.
 

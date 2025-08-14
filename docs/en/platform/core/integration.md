@@ -29,28 +29,28 @@ Currently, the platform supports integration into SSO systems in two ways:
 - Integration of end-user accounts
 
 In the case of integration with management accounts, Modyo has native support for:
-* LDAP
-* SAML
-* OAuth 2.0
-* OIDC
-* Google Workspace.
+- LDAP
+- SAML
+- OAuth 2.0
+- OIDC
+- Google Workspace.
 
 In the case of user account integration, Modyo has native support for:
-* OAuth 2.0
-* OIDC
-* Google Workspace.
+- OAuth 2.0
+- OIDC
+- Google Workspace.
 
 
 ### Messaging Integration
 Integration with messaging systems allows the sending of notification messages and marketing campaigns to end users who are enabled within a Realm in Modyo Customers.
 
 We currently support the following messaging channels:
-* Email
-* SMS
-* Whatsapp for Business
-* Web Push
-* Push
-* Web application notifications.
+- Email
+- SMS
+- Whatsapp for Business
+- Web Push
+- Push
+- Web application notifications.
 
 Integration microservices can also send notifications to users and track users using the Modyo Customers messaging API.
 

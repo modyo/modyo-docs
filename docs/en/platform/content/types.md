@@ -133,9 +133,9 @@ Use this field to select a geographical address, based on the fields in Google M
 :::warning Attention
 To ensure that location maps work properly with the Google API key configured in your account, the key must have permissions to access:
 
-* JavaScript Maps API
-* Places API
-* Geocoding API
+- JavaScript Maps API
+- Places API
+- Geocoding API
 :::
 
 ### File

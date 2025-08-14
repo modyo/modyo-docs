@@ -106,9 +106,9 @@ Modyo allows you to preview a widget locally and see it styled for your site bef
 
 In the variables tab, you can see the list of variables created in the widget, and their respective actions for:
 
-* **Copy** the liquid code to use that variable.
-* **Modify** the variable
-* **Delete** the variable.
+- **Copy** the liquid code to use that variable.
+- **Modify** the variable
+- **Delete** the variable.
 
 Next to the name of each variable, you will see an "overwritten" indicator if the variable also exists at the account or site level in the [global variables](/en/platform/core/key-concepts#global-variables).
 

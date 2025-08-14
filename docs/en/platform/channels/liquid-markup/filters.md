@@ -6,9 +6,9 @@ search: true
 
 Output markup can take filters, which modify the result of the output statement. You can invoke filters by following the output statement's main expression with:
 
-* A pipe character (`|`)
-* The name of the filter
-* Optionally, a colon (`:`) and a comma-separated list of additional parameters to the filter. Each additional parameter must be a valid expression, and each filter pre-defines the parameters it accepts and the order in which they must be passed.
+- A pipe character (`|`)
+- The name of the filter
+- Optionally, a colon (`:`) and a comma-separated list of additional parameters to the filter. Each additional parameter must be a valid expression, and each filter pre-defines the parameters it accepts and the order in which they must be passed.
 
 Filters can also be chained together by adding additional filter statements (starting with another pipe character). The output of the previous filter will be the input for the next one.
 

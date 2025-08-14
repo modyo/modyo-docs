@@ -230,20 +230,20 @@ Una vez que hayas completado los dos pasos, al hacer un cambio a un usuario de M
 
 Para asegurar la correcta sincronización de datos entre Modyo y Salesforce y mantener la integridad y consistencia de la información entre ambas plataformas existen las siguentes especificaciones:
 
-* Se permite utilizar un único "issuer" por cuenta, lo que significa que entre reinos no se pueden repetir.
-* Actualización de contacto en Salesforce:
+- Se permite utilizar un único "issuer" por cuenta, lo que significa que entre reinos no se pueden repetir.
+- Actualización de contacto en Salesforce:
   * Si la configuración de vinculación lo permite, al actualizar un contacto en Salesforce, Modyo busca el usuario correspondiente utilizando el campo "secondary_user_id".
   * Si el usuario de Modyo no existe, se crea uno nuevo, y si ya existe, se actualiza según los campos sincronizados.
   * Si el usuario de Modyo no existía previamente, su "secondary_user_id" se define como el ID del contacto de Salesforce.
-* Actualización de usuario en Modyo:
+- Actualización de usuario en Modyo:
   * Al actualizar un usuario de Modyo, se busca al contacto correspondiente en Salesforce utilizando su "ID de contacto".
   * Si el usuario de Modyo es nuevo o no tiene "secondary_user_id", se crea un nuevo contacto en Salesforce y se actualiza el campo "secondary_user_id" con el ID del contacto recién creado.
-* Creación de contacto en Salesforce:
+- Creación de contacto en Salesforce:
   * Un contacto en Salesforce solo requiere del campo "Last Name" para ser creado.
   * Cuando se crea un contacto solo con "Last Name", en Modyo se completarán el "username" y el "first name" con placeholders o marcadores de posición que indican que fueron creados producto de la vinculación.
-* Creación de usuario en Modyo:
+- Creación de usuario en Modyo:
   * Un usuario de Modyo se puede crear sin "Last Name", pero este campo, al ser requerido en Salesforce, se envia con un placeholder que indica que fue creado a partir del proceso de vinculación.
-* Los tipos primitivos de campos de Salesforce disponibles para vincular, son:
+- Los tipos primitivos de campos de Salesforce disponibles para vincular, son:
   * Boolean
   * Date
   * Datetime
@@ -254,7 +254,7 @@ Para asegurar la correcta sincronización de datos entre Modyo y Salesforce y ma
   * Long
   * Object
   * String
-* Los campos no incluidos en la lista, por ejemplo, referencias o campos compuestos, están deshabilitados en la vista de vinculación de campos. Esto indica que no están disponibles para vinculación.
+- Los campos no incluidos en la lista, por ejemplo, referencias o campos compuestos, están deshabilitados en la vista de vinculación de campos. Esto indica que no están disponibles para vinculación.
 
 #### Habilitar la API de Modyo en Salesforce.
 Para llevar a cabo este proceso, revisa la guía de desarrollador de [Connect REST API de Salesforce](https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/intro_what_is_chatter_connect.htm)

@@ -6,18 +6,18 @@ search: true
 
 Los tags (etiquetas) se utilizan para la lógica de la plantilla. Aquí hay una lista de los tags actualmente soportados:
 
-* **assign**: Asigna un valor a una variable.
-* **capture**: Bloque tag que captura texto a una variable.
-* **case**: Bloque tag, sentencia `case` estándar.
-* **comment**: Bloque tag, comenta el texto en el bloque.
-* **cycle**: Se utiliza generalmente dentro de un bucle para alternar entre valores, como colores o clases DOM.
-* **for**: Bucle `for`.
-* **break**: Sale de un bucle.
-* **continue**: Salta el código restante en la iteración actual y continúa con la siguiente iteración del bucle.
-* **if**: Bloque `if/else` estándar.
-* **include**: Incluye otra plantilla; útil para parciales.
-* **raw**: Desactiva temporalmente el procesamiento de tags para evitar conflictos de sintaxis.
-* **unless**: Copia de la sentencia `if`.
+- **assign**: Asigna un valor a una variable.
+- **capture**: Bloque tag que captura texto a una variable.
+- **case**: Bloque tag, sentencia `case` estándar.
+- **comment**: Bloque tag, comenta el texto en el bloque.
+- **cycle**: Se utiliza generalmente dentro de un bucle para alternar entre valores, como colores o clases DOM.
+- **for**: Bucle `for`.
+- **break**: Sale de un bucle.
+- **continue**: Salta el código restante en la iteración actual y continúa con la siguiente iteración del bucle.
+- **if**: Bloque `if/else` estándar.
+- **include**: Incluye otra plantilla; útil para parciales.
+- **raw**: Desactiva temporalmente el procesamiento de tags para evitar conflictos de sintaxis.
+- **unless**: Copia de la sentencia `if`.
 
 ### Comentarios
 
@@ -42,34 +42,34 @@ Esto es útil para generar contenido (ej. Mustache, Handlebars) que puede usar u
 
 Las sentencias `if / else` son comunes en otros lenguajes de programación. Liquid las implementa con los siguientes tags:
 
-* `{% if <CONDITION> %}`: Adjunta una sección de la plantilla que solo se ejecutará si la condición es `true`.
-* `{% elsif <CONDITION> %}`: Puede utilizarse opcionalmente dentro de un bloque `if ... endif`. Especifica otra condición; si el `if` inicial falla, Liquid prueba el `elsif` y ejecuta la siguiente sección de la plantilla si tiene éxito. Se puede usar cualquier número de `elsif` en un bloque `if`.
-* `{% else %}`: Opcionalmente, se puede usar dentro de un bloque `if... endif`, después de cualquier etiqueta `elsif`. Si todas las condiciones anteriores fallan, Liquid ejecutará la sección de la plantilla siguiendo la etiqueta `else`.
+- `{% if <CONDITION> %}`: Adjunta una sección de la plantilla que solo se ejecutará si la condición es `true`.
+- `{% elsif <CONDITION> %}`: Puede utilizarse opcionalmente dentro de un bloque `if ... endif`. Especifica otra condición; si el `if` inicial falla, Liquid prueba el `elsif` y ejecuta la siguiente sección de la plantilla si tiene éxito. Se puede usar cualquier número de `elsif` en un bloque `if`.
+- `{% else %}`: Opcionalmente, se puede usar dentro de un bloque `if... endif`, después de cualquier etiqueta `elsif`. Si todas las condiciones anteriores fallan, Liquid ejecutará la sección de la plantilla siguiendo la etiqueta `else`.
 
 La condición de un tag `if`, `elsif` o `unless` debe ser una expresión de Liquid normal o una _comparación_ usando expresiones de Liquid. Ten en cuenta que los operadores de comparación se implementan mediante etiquetas similares a `if`; no funcionan en ningún otro lugar en Liquid.
 
 Los operadores relacionales disponibles son:
 
-* `==, !=,` y `<>`: Igual y desigual (los dos últimos son sinónimos).
+- `==, !=,` y `<>`: Igual y desigual (los dos últimos son sinónimos).
     * Hay un valor especial "empty" (sin comillas) con el que se pueden comparar los arrays; la comparación es verdadera si el array no tiene miembros.
-* `<, <=, >, >=`: Menor/mayor que.
-* `contains`: Un _wrapper_ alrededor del método `include?` de Ruby, implementado en strings, arrays y hashes. Si el argumento izquierdo es un string y el derecho no, convierte a string el derecho.
+- `<, <=, >, >=`: Menor/mayor que.
+- `contains`: Un _wrapper_ alrededor del método `include?` de Ruby, implementado en strings, arrays y hashes. Si el argumento izquierdo es un string y el derecho no, convierte a string el derecho.
 
 Los operadores booleanos disponibles son:
 
-* `and`.
-* `or`.
+- `and`.
+- `or`.
 
 Ten en cuenta que NO hay ningún operador "no", y que NO PUEDES utilizar paréntesis para controlar el orden de las operaciones, ya que la precedencia de los operadores parece no estar especificada. Cuando tengas dudas, usa sentencias `if` anidadas.
 
 Las expresiones de Liquid son probadas para determinar su "veracidad" en lo que parece ser una forma de Ruby:
 
-* `true` es verdadero
-* `false` es falso.
-* Cualquier string es true, incluyendo un string vacío.
-* Cualquier array es true.
-* Cualquier hash es true.
-* Cualquier valor inexistente/nulo (como una parte faltante de un hash) es falso.
+- `true` es verdadero
+- `false` es falso.
+- Cualquier string es true, incluyendo un string vacío.
+- Cualquier array es true.
+- Cualquier hash es true.
+- Cualquier valor inexistente/nulo (como una parte faltante de un hash) es falso.
 
 ```liquid
 {% if user %}
@@ -257,8 +257,8 @@ En lugar de hacer un bucle sobre una colección existente, también puede hacer 
 
 Puede salir tempranamente de un bucle con los siguientes tags:
 
-* `{% continue %}` - finaliza inmediatamente la iteración actual, y continúa el bucle "for" con el siguiente valor.
-* `{% break %}` - finaliza inmediatamente la iteración actual, luego finaliza completamente el bucle "for".
+- `{% continue %}` - finaliza inmediatamente la iteración actual, y continúa el bucle "for" con el siguiente valor.
+- `{% break %}` - finaliza inmediatamente la iteración actual, luego finaliza completamente el bucle "for".
 
 Ambas sólo son útiles cuando se combinan con algo como una sentencia "if".
 
@@ -269,13 +269,13 @@ Ambas sólo son útiles cuando se combinan con algo como una sentencia "if".
     {% continue %}
 {% endif %}
 # If it's not hidden, print it.
-* [page.title](page.url)
+- [page.title](page.url)
 {% endfor %}
 ```
 
 ``` liquid
 {% for page in pages %}
-* [page.title](page.url)
+- [page.title](page.url)
 # After we reach the "cutoff" page, stop the list and get on with whatever's after the "for" loop:
 {% if cutoff_page == page.url %}
     {% break %}
@@ -301,9 +301,9 @@ forloop.last        # => is this the last iteration?
 
 Hay varios argumentos opcionales en la etiqueta `for` que pueden influir en los elementos que recibe en su bucle y en el orden en que aparecen:
 
-* `limit:<INTEGER>` te permite restringir la cantidad de objetos a obtener.
-* `offset:<INTEGER>` permite empezar la colección con el enésimo ítem.
-* `reversed` itera sobre la colección desde el último hasta el primero.
+- `limit:<INTEGER>` te permite restringir la cantidad de objetos a obtener.
+- `offset:<INTEGER>` permite empezar la colección con el enésimo ítem.
+- `reversed` itera sobre la colección desde el último hasta el primero.
 
 Elementos de restricción:
 

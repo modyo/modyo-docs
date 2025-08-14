@@ -6,18 +6,18 @@ search: true
 
 Tags (tags) are used for template logic. Here is a list of currently supported tags:
 
-* **assign** - Assigns a value to a variable
-* **capture** - Tag block that captures text to a variable.
-* **case** - Tag block, case standard statement.
-* **comment** - Block tag, comment on the text in the block.
-* **cycle** - Cycle is generally used within a loop to toggle between values, such as colors or DOM classes.
-* **for** - Loop for
-* **break** - Exits a loop
-* **continue** Skip the remaining code in the current loop and continue with the next loop.
-* **if** - Standard if/else block.
-* **include** - Includes another template; useful for partials
-* **raw** - Temporarily disable tag processing to avoid syntax conflicts.
-* **unless** - Copy of the if statement.
+- **assign** - Assigns a value to a variable
+- **capture** - Tag block that captures text to a variable.
+- **case** - Tag block, case standard statement.
+- **comment** - Block tag, comment on the text in the block.
+- **cycle** - Cycle is generally used within a loop to toggle between values, such as colors or DOM classes.
+- **for** - Loop for
+- **break** - Exits a loop
+- **continue** Skip the remaining code in the current loop and continue with the next loop.
+- **if** - Standard if/else block.
+- **include** - Includes another template; useful for partials
+- **raw** - Temporarily disable tag processing to avoid syntax conflicts.
+- **unless** - Copy of the if statement.
 
 ### Comments
 
@@ -42,34 +42,34 @@ This is useful for generating content (eg, Mustache, Handlebars) that can use co
 
 The `if/else` statements should be known from other programming languages. Liquid implements them with the following tags:
 
-* `{% if <CONDITION> %} ... {% endif %}` — Attach a section of the template that will only be executed if the condition is true.
-* `{% elsif <CONDITION> %}` — Can optionally be used within an `if .... endif` block. Specifies another condition; If the initial "if" fails, Liquid tests the "elsif",, and if it passes, executes the next section of the template. Any number of elsif statements can be used in an `if` * `{% else %}` - Can be used within an `if... endif` block, _after_ any "elsif" tag. If all the above conditions fail, Liquid will execute the template section following the "else" tag.
-* `{% unless <CONDITION> %} ... {% endunless %}` — The reverse of an "if" statement. Do not use "elsif" or "else" with an unless statement.
+- `{% if <CONDITION> %} ... {% endif %}` — Attach a section of the template that will only be executed if the condition is true.
+- `{% elsif <CONDITION> %}` — Can optionally be used within an `if .... endif` block. Specifies another condition; If the initial "if" fails, Liquid tests the "elsif",, and if it passes, executes the next section of the template. Any number of elsif statements can be used in an `if` * `{% else %}` - Can be used within an `if... endif` block, _after_ any "elsif" tag. If all the above conditions fail, Liquid will execute the template section following the "else" tag.
+- `{% unless <CONDITION> %} ... {% endunless %}` — The reverse of an "if" statement. Do not use "elsif" or "else" with an unless statement.
 
 The condition of an `if`,` elsif` or `unless` tag must be a normal Liquid expression or a _comparison_ using Liquid expressions. Note that relational operators are implemented using tags similar to "if"; they don't work anywhere else in Liquid.
 
 The available relational operators are:
 
-* `==,! =, `and` <> `— equal and unequal (the last two are synonyms)
+- `==,! =, `and` <> `— equal and unequal (the last two are synonyms)
     * There is a special secret value "empty" (without quotes) to compare arrays; The comparison is true if the array has no items.
-* `<, <=, >, >=` — less/greater than
-* `contains` - a wrapper around Ruby's `include?` method, which is implemented in strings, arrays and hashes. If the left argument is a string and the right is not, this will convert the right to a string.
+- `<, <=, >, >=` — less/greater than
+- `contains` - a wrapper around Ruby's `include?` method, which is implemented in strings, arrays and hashes. If the left argument is a string and the right is not, this will convert the right to a string.
 
 The available Boolean operators are:
 
-* `and`
-* `or`
+- `and`
+- `or`
 
 Note that there is NO "no" operator, and you CANNOT use parentheses to control the order of operations, as the precedence of each operator will appear unspecified. When in doubt, use nested "if" statements.
 
 Liquid expressions are tested to determine their "truthiness" in similar to Ruby:
 
-* `true` is true
-* `false` is false.
-* Any string is true, including an empty string.
-* Any array is true.
-* Any hash is true.
-* Any non-existent/null value (as a missing part of a hash) is false.
+- `true` is true
+- `false` is false.
+- Any string is true, including an empty string.
+- Any array is true.
+- Any hash is true.
+- Any non-existent/null value (as a missing part of a hash) is false.
 
 ```liquid
 {% if user %}
@@ -257,8 +257,8 @@ Instead of looping over an existing collection, you can also loop through a rang
 
 You can exit a loop early with the following tags:
 
-* `{% continue%}` - immediately ends the current iteration, and continues the "for" loop with the following value.
-* `{% break%}` - immediately ends the current iteration, then exits the "for" loop.
+- `{% continue%}` - immediately ends the current iteration, and continues the "for" loop with the following value.
+- `{% break%}` - immediately ends the current iteration, then exits the "for" loop.
 
 Both are only useful when combined with something like an "if" statement.
 
@@ -269,13 +269,13 @@ Both are only useful when combined with something like an "if" statement.
     {% continue %}
 {% endif %}
 # If it's not hidden, print it.
-* [page.title](page.url)
+- [page.title](page.url)
 {% endfor %}
 ```
 
 ``` liquid
 {% for page in pages %}
-* [page.title](page.url)
+- [page.title](page.url)
 # After we reach the "cutoff" page, stop the list and get on with whatever's after the "for" loop:
 {% if cutoff_page == page.url %}
     {% break %}
@@ -301,9 +301,9 @@ forloop.last        # => is this the last iteration?
 
 There are several optional arguments in the `for` tag that can influence the elements you receive in your loop and in the order in which they appear:
 
-* `limit: <INTEGER> ` allows you to restrict the amount of objects to obtain.
-* `offset: <INTEGER> ` allows you to start the collection with the nth item.
-* `reversed` iterates over the collection from the last to the first.
+- `limit: <INTEGER> ` allows you to restrict the amount of objects to obtain.
+- `offset: <INTEGER> ` allows you to start the collection with the nth item.
+- `reversed` iterates over the collection from the last to the first.
 
 Restriction elements:
 

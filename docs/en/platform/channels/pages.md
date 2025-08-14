@@ -66,9 +66,9 @@ To learn more about content pages, see [Content Page](/en/platform/channels/page
 - Publish: If the page is approved, you can go to the [joint publication view](/en/platform/core/key-concepts) using this action.
 
 :::tip Tip
-* If a page has a parent, you can only publish it if it is published.
-* If a page has children, you can only unpublish it if all of them are unpublished.
-* If a page has children, you can only archive it if all of them are archived.
+- If a page has a parent, you can only publish it if it is published.
+- If a page has children, you can only unpublish it if all of them are unpublished.
+- If a page has children, you can only archive it if all of them are archived.
 :::
 
 **Secondary Actions**:
@@ -131,13 +131,13 @@ Once a widget is selected in the central section, the focus will shift to the si
 
 In this tab you will find common properties options for all pages:
 
-* Name
-* Parent
-* Path
-* Excerpt
-* Grid
-* Privacy
-* Custom meta tags
+- Name
+- Parent
+- Path
+- Excerpt
+- Grid
+- Privacy
+- Custom meta tags
 
 :::warning Attention
 Modyo has reserved paths for pages, so you cannot use them as paths for your custom pages:
@@ -187,8 +187,8 @@ Displays the [entries](/en/platform/content/entries) of your [content types](/en
 
 To display content on a site, you must meet certain conditions:
 
-* Have a space with at least one language (the same as the site) and at least one Content Type. For more information, see [Create a Space](/en/platform/content/spaces#create-a-space) and [Create a Type](/en/platform/content/types#create-a-type)
-* Have entries published in the site's language. For more information, see [Entries](/en/platform/content/entries) and [Localization](/en/platform/content/spaces#localization)
+- Have a space with at least one language (the same as the site) and at least one Content Type. For more information, see [Create a Space](/en/platform/content/spaces#create-a-space) and [Create a Type](/en/platform/content/types#create-a-type)
+- Have entries published in the site's language. For more information, see [Entries](/en/platform/content/entries) and [Localization](/en/platform/content/spaces#localization)
 
 :::tip Tip
 You can use any name you want for the views, regardless of the type or space you want to associate them with. Always keep in mind that entries will only be displayed if they have a published version in the language of the site where you are creating these views.

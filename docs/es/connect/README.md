@@ -7,8 +7,8 @@ Modyo Connect es un servicio de gestión de infraestructura y DevOps en la nube 
 
 Modyo Connect permite implementar servicios para cubrir los requisitos comunes de una iniciativa de integración compleja, incluyendo:
 
- - Single Sign-On (SSO)
- - API Gateway
+- Single Sign-On (SSO)
+- API Gateway
 - Infraestructura de contenedores para [microservicios](/es/architecture/patterns/microservice)
 - Bases de datos
 - Colas de mensajería

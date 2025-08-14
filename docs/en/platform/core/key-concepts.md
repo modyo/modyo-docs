@@ -243,16 +243,16 @@ The preview mode allows you to preview changes made to publishable elements such
 
 The preview bar contains the following interactive elements:
 
-* **Template selector**: Allows you to switch between the published and editable versions of the elements belonging to the template builder.
-* **Content selector**: Allows you to switch between the published and editable version of the elements belonging to the content application, and that are being used on the site through the Liquid Content SDK.
-* **Navigation selector**: Allows you to switch between the published and editable versions of the elements belonging to the navigation builder.
-* **Page selector**: Allows you to switch between the published and editable versions of the elements belonging to the page builder.
-* **Content View Selector**: Allows you to switch between the published and editable versions of the content entry being previewed in custom content views. This view does not directly use the Liquid Content SDK; therefore, the content in these views will not be affected by the Content SDK selector.
-* **Widget selector**: If you are previewing pages that contain custom widgets, a list of the widgets present on the page will be displayed, allowing you to select whether you want to view the editable or published version of each of them. Once the selection is made, you must click on the “refresh” button for the widget settings to take effect.
-* **Minimize Tab**: Allows you to hide the preview bar to avoid interference with the elements located at the top of the site. Once minimized, the tab will still be visible to restore the bar in preview mode.
-* **Edit Item**: Clicking this will take you to the edit view of the element you are viewing, whether it is an entry, a page, a widget, or a default site template.
-* **Share link**: Allows you to copy a link that can be shared with other users. When you open the link, you directly access the preview mode with the settings you had when copying the link. To access the preview mode, you must be logged in to the administrator account.
-* **Exit preview mode**: Closes preview mode, removing the bar and keeping the tab at the current URL of the site.
+- **Template selector**: Allows you to switch between the published and editable versions of the elements belonging to the template builder.
+- **Content selector**: Allows you to switch between the published and editable version of the elements belonging to the content application, and that are being used on the site through the Liquid Content SDK.
+- **Navigation selector**: Allows you to switch between the published and editable versions of the elements belonging to the navigation builder.
+- **Page selector**: Allows you to switch between the published and editable versions of the elements belonging to the page builder.
+- **Content View Selector**: Allows you to switch between the published and editable versions of the content entry being previewed in custom content views. This view does not directly use the Liquid Content SDK; therefore, the content in these views will not be affected by the Content SDK selector.
+- **Widget selector**: If you are previewing pages that contain custom widgets, a list of the widgets present on the page will be displayed, allowing you to select whether you want to view the editable or published version of each of them. Once the selection is made, you must click on the “refresh” button for the widget settings to take effect.
+- **Minimize Tab**: Allows you to hide the preview bar to avoid interference with the elements located at the top of the site. Once minimized, the tab will still be visible to restore the bar in preview mode.
+- **Edit Item**: Clicking this will take you to the edit view of the element you are viewing, whether it is an entry, a page, a widget, or a default site template.
+- **Share link**: Allows you to copy a link that can be shared with other users. When you open the link, you directly access the preview mode with the settings you had when copying the link. To access the preview mode, you must be logged in to the administrator account.
+- **Exit preview mode**: Closes preview mode, removing the bar and keeping the tab at the current URL of the site.
 
 :::warning Warning
 Changing the content selector in the preview bar will have no effect on the content you are using through the JavaScript SDK or the Content API. It will only affect content that is used through the Liquid SDK.

@@ -35,12 +35,12 @@ For more information on these integrations, see the [Identity Providers](https:/
 Integration with messaging systems allows the sending of notification messages and marketing campaigns to end users who are enabled within a realm in Modyo Customers.
 
 We currently support the following messaging channels:
-* Email
-* SMS
-* Whatsapp for Business
-* Web Push
-* Push
-* Web application notifications.
+- Email
+- SMS
+- Whatsapp for Business
+- Web Push
+- Push
+- Web application notifications.
 
 Integration microservices can also send notifications to users and track users using the Modyo Customers messaging API.
 

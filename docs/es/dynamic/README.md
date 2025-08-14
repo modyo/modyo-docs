@@ -34,8 +34,8 @@ npx @modyo/cli@latest get dynamic-react-base-template
 
 **Requisitos:**
 
-*   Node v20+
-*   NPM 10.x+
+- Node v20+
+- NPM 10.x+
 
 ```shell
 cd dynamic-react-base-template;

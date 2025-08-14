@@ -10,17 +10,17 @@ En Liquid, como en otros lenguajes de programación, se utilizan palabras reserv
 
 Liquid está diseñado con requisitos muy específicos:
 
-* Debe tener un marcado limpio y sencillo. Los motores de plantillas que no producen un marcado atractivo no son agradables de usar.
-* Debe ser no evaluable y seguro. Las plantillas Liquid están diseñadas para que los usuarios puedan editarlas, evitando la ejecución de código inseguro en el servidor.
-* No debe tener estado. Los pasos de compilación y renderizado deben estar separados para que el análisis sintáctico y la compilación se realicen una sola vez, y luego se pueda renderizar pasando un hash con objetos locales y variables.
+- Debe tener un marcado limpio y sencillo. Los motores de plantillas que no producen un marcado atractivo no son agradables de usar.
+- Debe ser no evaluable y seguro. Las plantillas Liquid están diseñadas para que los usuarios puedan editarlas, evitando la ejecución de código inseguro en el servidor.
+- No debe tener estado. Los pasos de compilación y renderizado deben estar separados para que el análisis sintáctico y la compilación se realicen una sola vez, y luego se pueda renderizar pasando un hash con objetos locales y variables.
 
 ### ¿Por qué usar Liquid?
 
-* Deseas permitir que los usuarios editen la apariencia de tu aplicación sin ejecutar **código inseguro en tu servidor**.
-* Quieres renderizar tus plantillas directamente desde la base de datos.
-* Prefieres motores de plantillas inteligentes (estilo PHP).
-* Necesitas un motor de plantillas que funcione bien tanto en HTML como en correos electrónicos.
-* No te agrada el marcado (markup) de tu motor de plantillas actual.
+- Deseas permitir que los usuarios editen la apariencia de tu aplicación sin ejecutar **código inseguro en tu servidor**.
+- Quieres renderizar tus plantillas directamente desde la base de datos.
+- Prefieres motores de plantillas inteligentes (estilo PHP).
+- Necesitas un motor de plantillas que funcione bien tanto en HTML como en correos electrónicos.
+- No te agrada el marcado (markup) de tu motor de plantillas actual.
 
 ### ¿Cómo se ve Liquid?
 
@@ -40,8 +40,8 @@ Liquid está diseñado con requisitos muy específicos:
 :::warning Atención
 Desde la versión 9.0.8 en adelante, los atributos de las entradas se llamarán según su meta información o sus campos personalizados, de tal forma que:
 
-* Los campos de meta-información de la entrada que antes se usaban como <span v-pre>`{{ entry.slug }}`</span>, ahora deben usarse como <span v-pre>`{{ entry.meta.slug }}`</span>, o bien <span v-pre>`{{ entry.meta['slug'] }}`</span>.
-* Los campos personalizados que antes se usaban como <span v-pre>`{{ entry.title }}`</span>, ahora deben usarse como <span v-pre>`{{ entry.fields.title }}`</span>, o bien <span v-pre>`{{ entry.fields['title'] }}`</span>.
+- Los campos de meta-información de la entrada que antes se usaban como <span v-pre>`{{ entry.slug }}`</span>, ahora deben usarse como <span v-pre>`{{ entry.meta.slug }}`</span>, o bien <span v-pre>`{{ entry.meta['slug'] }}`</span>.
+- Los campos personalizados que antes se usaban como <span v-pre>`{{ entry.title }}`</span>, ahora deben usarse como <span v-pre>`{{ entry.fields.title }}`</span>, o bien <span v-pre>`{{ entry.fields['title'] }}`</span>.
 
 Ambas formas estarán disponibles hasta la versión 9.2 de Modyo.
 :::
