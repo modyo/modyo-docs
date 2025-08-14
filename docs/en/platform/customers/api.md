@@ -23,7 +23,7 @@ By enabling the [**Show delegation information**](/es/platform/core/integrations
 If you enable the [**Show delegation information**](/en/platform/core/integrations/identity-providers) option in identity providers, the `account_url/api/customers/realms/{realm_uid}/me` endpoint will include a JSON with information about delegated tokens:
 
 
-``curl -X GET test.miModyo.com/api/customers/realms/miRealm/me``
+``curl -X GET test.modyo.com/api/customers/realms/miRealm/me``
 
 ```json
 {
