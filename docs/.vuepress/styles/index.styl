@@ -115,7 +115,8 @@ code {
 	overflow: visible;
 }
 
-// Table styles from theme
+// Table styles from theme - with higher specificity for production
+.theme-default-content table,
 table {
 	border-collapse: collapse;
 	margin: 1rem 0;
@@ -123,16 +124,20 @@ table {
 	overflow-x: auto;
 }
 
+.theme-default-content tr,
 tr {
-	border-top: 1px solid #dfe2e5;
+	border-top: 1px solid #dfe2e5 !important;
 }
 
+.theme-default-content tr:nth-child(2n),
 tr:nth-child(2n) {
 	background-color: #f6f8fa;
 }
 
+.theme-default-content th,
+.theme-default-content td,
 th, td {
-	border: 1px solid #dfe2e5;
+	border: 1px solid #dfe2e5 !important;
 	padding: .6em 1em;
 }
 
