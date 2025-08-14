@@ -4,7 +4,7 @@ search: true
 
 # Formularios
 
-Una de las funcionalidades más requeridas por todas las plataformas es la captura de datos de usuarios para posteriormente analizar y segmentar. Con esta herramienta podrás crear cuantos formularios necesites para recolectar datos provenientes de los usuarios de tus sitios.
+Una de las funcionalidades más requeridas por todas las plataformas es la captura de datos de usuarios para posteriormente analizar y segmentar. Con esta herramienta, podrás crear cuantos formularios necesites para recolectar datos provenientes de los usuarios de tus sitios.
 
 Al entrar a la herramienta, podrás ver un listado de todos los formularios que hay activos actualmente en la cuenta. Podrás filtrar por su estado (habilitado o deshabilitado), por el sitio en el que se despliegan, y buscar por el nombre del formulario.
 
@@ -20,12 +20,12 @@ Para crear un nuevo formulario, sigues estos pasos:
 
 1. Desde el menú lateral en la plataforma, selecciona **Customers**, y haz click en **Reinos**.
 2. Haz click en tu reino.
-3. Haz click en **+ Nuevo Formulario**. Esto te llevará a la vista de creación de un nuevo formulario, donde deberás llenar los atributos principales del mismo:
+3. Haz click en **Nuevo Formulario**. Esto te llevará a la vista de creación de un nuevo formulario, donde deberás llenar los atributos principales del mismo:
 
 - **Nombre**: Nombre asociado al formulario. Este valor aparecerá tanto en el índice de formularios en el administrador de Modyo y como título cuando un usuario lo vaya a responder.
 - **Descripción**: Este texto aparecerá como texto debajo del título cuando los usuarios lo vayan a responder.
 - **Límite de personas**: Permite determinar el número máximo de respuestas son permitidas.
-- **Sitio**: Te permite seleccionar en que sitio se mostrará este formulario. Ten en consideración que esto provoca que el formulario cambie su aspecto de acuerdo a las clases definidas en el CSS global del sitio. Para más información, dirígete a [Template builder](/es/platform/channels/templates.html).
+- **Sitio**: Te permite seleccionar en que sitio se mostrará este formulario. Ten en consideración que esto provoca que el formulario cambie su aspecto de acuerdo a las clases definidas en el CSS global del sitio. Para más información, dirígete a [Template builder](/es/platform/channels/templates).
 
 :::warning Alerta
 Solamente podrás seleccionar un sitio que pertenece al mismo reino, dentro de la **Configuración del sitio**, en **General**, asegúrate de que el sitio sea parte del reino correcto.
@@ -43,7 +43,7 @@ Luego de una división podrás ver las opciones para modificar la redirección l
 - **Página de agradecimiento**: Te permite añadir un mensaje de agradecimiento personalizado luego de que un usuario responde el formulario, junto a un botón que lo llevará a una página del sitio. La URL del botón es una URL relativa del sitio asociado al formulario. También podrás determinar si quieres que el usuario sea redireccionado automáticamente a esa página luego de un tiempo determinado.
 
 
-- **Habilitar segmentación**: Si el formulario es privado (solo usuarios registrados lo pueden contestar), podrás seleccionar un conjunto de usuarios que puedan contestar el formulario haciendo uso de los segmentos. Para aprender más dirígete a [Segmentos](/es/platform/customers/segments.html)
+- **Habilitar segmentación**: Si el formulario es privado (solo usuarios registrados lo pueden contestar), podrás seleccionar un conjunto de usuarios que puedan contestar el formulario haciendo uso de los segmentos. Para aprender más dirígete a [Segmentos](/es/platform/customers/segments)
 
 :::warning Atención
 En caso de ser un formulario público, los usuarios que no tienen una sesión activa en Modyo, verás tres campos obligatorios en la parte superior del formulario: Nombre, Apellido, y Correo. Una vez que envíen el formulario, se creará un usuario con esos valores y luego la respuesta será asociada a ese usuario.
@@ -79,7 +79,7 @@ En esta sección, puedes agregar campos para completar tu formulario o eliminar 
 - **País**: Selector de países.
 - **Teléfono**: Campo para ingresar números telefónicos.
 - **Dirección**: Campo estructurado para capturar direcciones.
-- **Grupo**: Agrupa un listado de varios campos repetibles. Puedes ver más detalles sobre este formato en la [documentación sobre Grupos repetibles](/es/platform/content/types.html#grupo)
+- **Grupo**: Agrupa un listado de varios campos repetibles. Puedes ver más detalles sobre este formato en la [documentación sobre Grupos repetibles](/es/platform/content/types#grupo)
 
 Puedes eliminar uno de los campos del formulario haciendo click en el icono de basurero a la derecha de cada campo en la sección principal. La eliminación será efectiva una vez que guardes los cambios.
 
@@ -150,7 +150,7 @@ Para hacer uso del snippet dentro de una página en la plataforma Modyo, debes c
 Las secciónes **Opciones** y **Notificaciones** no agregan nada diferente a lo que se encuentra en **Nuevo Formulario**
 
 :::warning Atención
-Si usas un sitio de Modyo con un dominio personalizado, deberás activar la opción para compartir orígenes de recursos [CORS](/es/platform/core/security.html) en la configuración de la plataforma.
+Si usas un sitio de Modyo con un dominio personalizado, deberás activar la opción para compartir orígenes de recursos [CORS](/es/platform/core/security) en la configuración de la plataforma.
 :::
 
 ### Notificaciones
@@ -159,7 +159,7 @@ En la sección **Notificaciones** podrás configurar los distintos correos que s
 
 La notificación por correo envía un correo del tipo "administrativo" en el cual se notifica vía ese canal de que alguien respondió el formulario. Puedes asignar un asunto y un listado de correos a los que quieras notificar.
 
-El correo de agradecimiento te permite personalizar un correo que será enviado al usuario que respondió el formulario. Puedes personalizar tanto el asunto como el cuerpo del mensaje haciendo uso de [Liquid](/es/platform/channels/liquid-markup.html). Debajo del campo para personalizar el mensaje, podrás ver un listado de variables que puedes usar para personalizar el correo.
+El correo de agradecimiento te permite personalizar un correo que será enviado al usuario que respondió el formulario. Puedes personalizar tanto el asunto como el cuerpo del mensaje haciendo uso de [Liquid](/es/platform/channels/liquid-markup). Debajo del campo para personalizar el mensaje, podrás ver un listado de variables que puedes usar para personalizar el correo.
 
 A continuación, tienes un ejemplo de código que podrás usar como base para personalizar el correo de agradecimiento.
 

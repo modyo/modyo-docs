@@ -2,43 +2,43 @@
 search: true
 ---
 
-# Progressive Web Applications
+# Progressive Web Applications (PWA)
 
-Las Progressive Web Applications (PWA) son aplicaciones web que combinan características de las aplicaciones móviles y de las páginas web tradicionales. Se desarrollan utilizando tecnologías web estándar, como HTML, CSS y JavaScript y destacan por su capacidad de funcionar de manera confiable y brindar una experiencia de usuario completa, incluso en condiciones de conectividad limitada o ausente.
+Las Progressive Web Applications (PWA) son aplicaciones web que combinan características de las aplicaciones móviles y las páginas web tradicionales. Desarrolladas con tecnologías web estándar (HTML, CSS, JavaScript), destacan por su capacidad de funcionar de forma confiable y ofrecer una experiencia de usuario completa, incluso con conectividad limitada o ausente.
 
 Ventajas de las PWA:
 
-- **Instalación en el dispositivo**: Pueden instalarse en el dispositivo del usuario y accederse desde el escritorio o la pantalla de inicio, sin necesidad de una tienda de aplicaciones.
+- **Instalación en el dispositivo**: Se pueden instalar en el dispositivo del usuario y acceder desde el escritorio o la pantalla de inicio, sin necesidad de una tienda de aplicaciones.
 - **Funcionamiento offline**: Gracias al almacenamiento en caché de navegadores modernos, las PWA pueden funcionar con conexiones intermitentes o sin conexión a Internet.
-- **Notificaciones push**: Pueden notificar a los usuarios, según se configuren.
-- **Acceso a hardware del dispositivo**: Pueden acceder a la cámara, GPS y más del dispositivo del usuario.
-- **Adaptabilidad a diferentes tamaños de pantalla**: Permitiendo unificar experiencias en diferentes dispositivos.
-- **Actualizaciones automáticas**: Garantizan que los usuarios siempre tengan la versión más reciente de la aplicación.
+- **Notificaciones push**: Permiten enviar notificaciones a los usuarios, según la configuración.
+- **Acceso a hardware del dispositivo**: Pueden acceder a la cámara, GPS y otros recursos del dispositivo.
+- **Adaptabilidad a diferentes tamaños de pantalla**: Unifican la experiencia en diversos dispositivos.
+- **Actualizaciones automáticas**: Aseguran que los usuarios siempre tengan la versión más reciente de la aplicación.
 
 
 ### AppShell Nativo
 
-Los AppShells empaquetan las PWA para su distribución en mercados de aplicaciones. Internamente, implementan un WebView que proporciona la experiencia al usuario. También se utilizan para extender la funcionalidad de la aplicación web con elementos nativos específicos de cada plataforma.
+Los AppShells empaquetan las PWA para su distribución en tiendas de aplicaciones. Internamente, implementan un WebView que proporciona la experiencia de usuario y se utilizan para extender la funcionalidad de la aplicación web con elementos nativos específicos de cada plataforma.
 
 :::warning WebView vs Navegador Nativo
-WebView difiere significativamente de los navegadores nativos del dispositivo, lo que puede limitar algunas funciones nativas de las PWA.
+WebView difiere significativamente de los navegadores nativos, lo que puede limitar algunas funciones nativas de las PWA.
 :::
 
 ### Limitaciones de las PWA en iOS
 
 Las PWA pueden tener limitaciones en iOS debido a:
 
-- **Limitaciones del navegador**: En iOS, los navegadores disponibles, como Safari, tienen ciertas limitaciones en cuanto al soporte de funciones y tecnologías web. Esto puede afectar el rendimiento y la funcionalidad de las PWA en comparación con otros navegadores más modernos y compatibles con estándares web.
-- **Limitaciones del servicio de notificaciones**: Las notificaciones push son una característica importante de las PWA, pero solo los navegadores Safari y Firefox las admiten actualmente en iOS.
-- **Problemas de almacenamiento en caché**: El almacenamiento en caché de los recursos de una PWA puede ser más restrictivo en iOS que en otras plataformas. Esto puede llevar a que algunas funcionalidades no funcionen correctamente o a problemas con la actualización de contenido.
-- **Limitaciones de ejecución en segundo plano**: iOS tiene restricciones estrictas en la ejecución de código en segundo plano para ahorrar batería y mejorar el rendimiento. Esto puede afectar la capacidad de una PWA para funcionar correctamente en situaciones en las que se requiere un procesamiento continuo en segundo plano.
+- **Limitaciones del navegador**: Los navegadores en iOS (ej. Safari) tienen limitaciones en el soporte de funciones y tecnologías web, lo que puede afectar el rendimiento y la funcionalidad de las PWA.
+- **Limitaciones del servicio de notificaciones**: Solo Safari y Firefox admiten notificaciones push en iOS.
+- **Problemas de almacenamiento en caché**: El almacenamiento en caché de recursos de PWA puede ser más restrictivo en iOS, lo que puede causar problemas de funcionalidad o actualización de contenido.
+- **Limitaciones de ejecución en segundo plano**: iOS restringe la ejecución de código en segundo plano para optimizar batería y rendimiento, lo que puede afectar la capacidad de una PWA para funcionar correctamente en situaciones que requieren procesamiento continuo.
 
-Apple está trabajando en mejorar el soporte de PWA en iOS y ha introducido nuevas funcionalidades en versiones más recientes del sistema operativo. Sin embargo, aún existen limitaciones respecto a otras plataformas.
+Apple está mejorando el soporte de PWA en iOS con nuevas funcionalidades en versiones recientes del sistema operativo, aunque persisten limitaciones respecto a otras plataformas.
 
-Aunque algunas características pueden no estar disponibles o pueden tener un rendimiento ligeramente inferior en comparación con otras plataformas, numerosas PWA son funcionales y útiles en iOS.
+A pesar de que algunas características pueden no estar disponibles o tener un rendimiento ligeramente inferior, numerosas PWA son funcionales y útiles en iOS.
 
 :::tip Tip
-Recomendamos realizar pruebas y evaluar la compatibilidad específica de la PWA en los dispositivos y navegadores de destino para garantizar una experiencia óptima.
+Se recomienda realizar pruebas y evaluar la compatibilidad específica de la PWA en los dispositivos y navegadores de destino para garantizar una experiencia óptima.
 :::
 
 

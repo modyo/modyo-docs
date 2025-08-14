@@ -4,11 +4,11 @@ search: true
 
 # Arquitectura
 
-En el contexto actual de la era digital, el desarrollo web ha asumido un papel central en la creación de soluciones de software. A medida que las aplicaciones web modernas se vuelven más complejas y escalables, se vuelve imperativo adoptar patrones de arquitectura de software eficaces y eficientes. Estos patrones garantizan la escalabilidad, mantenibilidad y eficacia de nuestras soluciones.
+El desarrollo de aplicaciones web complejas y escalables exige el uso de patrones de arquitectura de software eficaces. Estos patrones son fundamentales para garantizar la escalabilidad, mantenibilidad y eficiencia de cualquier solución de software moderna.
 
-Esta guía tiene como objetivo explorar diversos patrones de arquitectura de software que modelan la forma en que desarrollamos y entendemos las aplicaciones web. Desde la arquitectura modular orientada a componentes, hasta enfoques más contemporáneos, como la arquitectura basada en micro frontends, microservicios y el Diseño Dirigido por el Dominio (Domain-Driven Design), abordaremos cada uno de estos patrones en detalle. Analizaremos sus principios, ventajas, desventajas y los escenarios de uso ideales. Además, examinaremos su implementación con Modyo.
+En esta guía exploramos diversos patrones de arquitectura, desde enfoques modulares orientados a componentes hasta arquitecturas contemporáneas basadas en micro frontends, microservicios y Domain-Driven Design (DDD). Analizaremos los principios, ventajas, desventajas, escenarios de uso ideales y la implementación de cada patrón en la plataforma Modyo.
 
-Nuestro objetivo es proporcionar una guía sólida y un recurso de referencia para los desarrolladores web, los arquitectos de software y todas las partes interesadas que buscan hacer frente a los desafíos del desarrollo web moderno. Aspiramos a aprovechar al máximo los patrones de arquitectura de software para construir aplicaciones sólidas, escalables y orientadas al futuro.
+El objetivo es ofrecer una guía de referencia sólida para arquitectos y desarrolladores que buscan construir aplicaciones robustas, escalables y preparadas para el futuro, aprovechando al máximo estos patrones de arquitectura.
 
 :::tip Enfoque de Alto Nivel
 Esta guía contiene patrones de alto nivel y está diseñada para arquitectos de software y líderes técnicos.
@@ -18,17 +18,17 @@ Para una revisión de patrones de programación más específicos de programaci�
 
 ## Arquitectura de Referencia
 
-Los micro frontends son componentes de experiencia de usuario de alto nivel, orquestados por la plataforma Modyo. Los micro frontends se se ejecutan directamente desde el navegador del usuario final e interactúan por medio de APIs con los microservicios. Cada micro frontend y microservicio está diseñado para representar una parte específica de la funcionalidad del negocio y se desarrollan, prueban y despliegan de manera independiente.
+Los micro frontends son componentes de experiencia de usuario de alto nivel, orquestados por la plataforma Modyo. Los micro frontends se ejecutan directamente en el navegador del usuario final e interactúan mediante APIs con los microservicios. Cada micro frontend y microservicio está diseñado para representar una parte específica de la funcionalidad del negocio y se desarrollan, prueban y despliegan de manera independiente.
 
 La siguiente figura muestra la arquitectura de referencia de Modyo, en la cual, los micro frontends se despliegan dentro de la Plataforma Modyo, mientras que los microservicios se despliegan en una infraestructura separada, exponiendo su funcionalidad mediante APIs.
 
 <img src="/assets/img/infrastructure/reference_architecture.png" alt="Reference architecture" />
 
-Esta arquitectura ofrece ventajas en comparación con un enfoque monolítico. Permite actualizar y escalar cada componente de manera independiente, sin afectar al resto del sistema, lo que conlleva una mayor modularidad, flexibilidad, mantenibilidad y escalabilidad en el diseño de la arquitectura.
+Esta arquitectura ofrece ventajas clave sobre un enfoque monolítico, ya que permite actualizar y escalar cada componente de forma independiente sin afectar al resto del sistema. Esto proporciona mayor modularidad, flexibilidad, mantenibilidad y escalabilidad.
 
-Además, la arquitectura desacoplada basada en micro frontends y microservicios también permite una mayor independencia entre los equipos de desarrollo. Cada equipo puede centrarse en su servicio o componente específico sin preocuparse por el resto del sistema. Esto facilita la colaboración y agiliza el proceso de desarrollo.
+Además, esta arquitectura desacoplada fomenta una mayor independencia entre los equipos de desarrollo. Cada equipo puede centrarse en su servicio o componente específico sin preocuparse por el resto del sistema. Esto facilita la colaboración y agiliza el proceso de desarrollo.
 
-Para modelar micro frontends y microservicios desde una perspectiva de negocio, Modyo recomienda el uso de la técnica de [Domain Driven Design (DDD)](/es/architecture/patterns/ddd).
+Para modelar micro frontends y microservicios desde la perspectiva del negocio, Modyo recomienda usar la metodología [Domain-Driven Design (DDD)](/es/architecture/patterns/ddd).
 
 
 ### Modyo Connect

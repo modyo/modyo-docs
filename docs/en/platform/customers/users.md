@@ -13,7 +13,7 @@ You can use the filters at the top of the table to quickly find user groups. The
 
 - **Status**: Active and inactive users.
 - **Verification**: Users who have confirmed their data on the platform.
-- **Segments:** Users who belong to a specific [segment](/en/platform/customers/segments.html).
+- **Segments:** Users who belong to a specific [segment](/en/platform/customers/segments).
 - **Tags**: Users assigned to specific tags on the platform.
 - **Search**: Filter users by name, last name, email or username.
 
@@ -30,7 +30,7 @@ Check the box next to one or more users' names and click the **Bulk Actions** bu
 
 ## Add a user
 
-To add a new user, click the **+ New User** button and complete the following fields:
+To add a new user, click the **New User** button and complete the following fields:
 
 - **First Name**: **[Required]**. The user's legal first name.
 - **Surname**
@@ -45,9 +45,9 @@ To add a new user, click the **+ New User** button and complete the following fi
 To send the password to the user's email, check the box below the email field. The user can change the password once they access the platform.
 :::
 
-If you need to add additional fields to the form or select a default avatar for users without one, go to the **Sign Up** section in the [Realm Settings](/en/platform/customers/settings.html).
+If you need to add additional fields to the form or select a default avatar for users without one, go to the **Sign Up** section in the [Realm Settings](/en/platform/customers/settings).
 
-To create or modify custom fields, refer to the [Custom Fields](/en/platform/customers/settings.html#custom-fields) section.
+To create or modify custom fields, refer to the [Custom Fields](/en/platform/customers/settings#custom-fields) section.
 
 ## User Profile
 
@@ -77,7 +77,7 @@ These records cannot be deleted or edited.
 
 ### Answers to forms
 
-This section contains a list of forms filled out by the user. Click on a form to view their responses. For more information, see the [Forms](/en/platform/customers/forms.html) section.
+This section contains a list of forms filled out by the user. Click on a form to view their responses. For more information, see the [Forms](/en/platform/customers/forms) section.
 
 ### Notes
 

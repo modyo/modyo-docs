@@ -4,48 +4,48 @@ search: true
 
 # What's new in Modyo?
 
-Modyo Cloud and Modyo Enterprise Cloud version 9 correspond to the latest versions of the platform and represent a major evolution from previous versions in terms of performance, modularity, availability, and features that allow for improved control and management of the digital customer experience. 
+Modyo Cloud and Modyo Enterprise Cloud version 9 represent significant advancements in the platform, offering enhanced performance, modularity, availability, and functionalities to improve the control and management of the digital customer experience.
 
-In this new platform version, we highlight the following improvements and new features.
+This new version of the platform includes the following key improvements and functionalities:
 
-### New Simplified Interface
+### New simplified interface
 
-A new, simplified, cleaner user interface with the possibility of changing the Modyo logo to customize it according to the customer.
+A simplified and cleaner user interface, with the option to customize the Modyo logo according to the client's branding.
 
-### New Modyo Content application
+### Content application
 
-The Modyo Content application now serves content through its [API and SDKs](/en/platform/content/public-api-reference.html) as a _headless_ solution, and also serves decoupled content within Modyo Channels through [Liquid](/platform/channels/liquid-markup.html).
+Allows its use in _headless_ mode through its [API and SDKs](/en/platform/content/public-api-reference), or decoupled within templates developed in [Liquid](/en/platform/channels/liquid-markup).
 
-### Asset Manager
+### File manager
 
-The new asset manager allows users to upload, search, and manage various file types, and now has additional features such as _tag management_, image resizing, and more.
+Enables the management of digital assets, including functionalities such as _tags_ management, image resizing, and meta description management. The new file manager is accessible from the Modyo Content application and is integrated into the platform's text and code editors.
 
-### User Realms
+### User realms
 
-They allow you to define multiple end-user realms and assign them uniquely across different sites and content spaces. With this new functionality, end user databases can be managed in a cleaner and separate way, granting differentiated access to different managed resources on the platform and reduce the need to manage separate organizations for different types of users.
+Multiple end-user realms can be defined and exclusively assigned to different sites and content spaces. This new functionality allows for cleaner and more separate management of end-user databases, granting differentiated access to managed resources on the platform and reducing the need to manage separate organizations for different types of users.
 
-### Team Review
+### Team review
 
-Modyo's new Team Review system is the evolution of the earlier _Workflows_ functionality, which improves team collaboration with tools to review and approve changes to content and other elements within the platform. Team Review also has more options, allowing you to enable or disable review systems, assign specific team members to their respective roles, and customize separate sets of rules in any content space or digital channel.
+An evolution of the old _workflows_ functionality, which improves the collaboration experience with tools for reviewing and group approving changes. Team review can be configured in different ways across various sites and content spaces.
 
 ### New and simplified roles and permissions
 
-The management of roles and permissions for sites and content spaces has been simplified, allowing you to streamline your developments. In addition, a user group functionality is incorporated, allowing you to assign roles in a very simple way within the sites and content spaces.
+The management of roles and permissions for sites and content spaces has been simplified, streamlining your developments. Additionally, a user group functionality is incorporated, allowing for very simple role assignment within the sites and content spaces.
 
 ### Separation of users and administrators
 
-Modyo 9.0 improves upon user management by completely separating users in the front end (site visitors, people interacting in your channels) from the administrators (users with assigned roles, content managers, channels developers, engineers, etc.). User and administrative login panels are now separate, allowing for independent identity management service integration, and a custom look-and-feel.
+Modyo 10 enhances user management by completely separating frontend users (site visitors, people interacting with your channels) from administrators (users with assigned roles, content managers, channel developers, engineers, etc.). User and administrative login panels are now separate, allowing for independent identity management service integration and a custom look-and-feel.
 
-### Support for PWA
+### PWA support
 
-Modyo now has native support for Progressive Web Application enablers, allowing you to improve your users' experience when they have intermittency or lose their connection.
+Modyo now offers native support for Progressive Web Application enablers, which improves the user experience in intermittent or lost connectivity conditions.
 
-Modyo now has native support for Progressive Web Applications, which allow you to improve the experience of your users by providing digital channels that pre-cache key resources. This makes it possible to instantly load reliable experiences quickly regardless of intermittency or bad network connections, and can be installed by the user without the need of an app store.
+Modyo now has native support for Progressive Web Applications, allowing you to enhance your users' experience by providing digital channels that pre-cache key resources. This enables instant loading of reliable experiences quickly, regardless of intermittency or poor network connections, and can be installed by the user without the need for an app store.
 
 ### New rich text editor
 
-Modyo now uses the rich text editor Froala. This text editor allows you to develop content in an instant as well as paste the text from your documents while maintaining the same format.
+Modyo now uses the Froala rich text editor. This editor allows you to quickly develop content and paste text from documents while maintaining the format.
 
 ### Content Pages
 
-Modyo now changes the way that you use content views. An automatic migration will be performed starting from Modyo 9.2 to bring your content views in [Templates](/en/platform/channels/templates.html) to the Pages section. You can create widget or content pages from the same place. To learn more, see [Pages](/en/platform/channels/pages.html).
+Modyo now changes the way you use content views. An automatic migration will be performed starting from Modyo 9.2 to bring your content views in [Templates](/en/platform/channels/templates) to the Pages section. You can create widget or content pages from the same place. To learn more, see [Pages](/en/platform/channels/pages).

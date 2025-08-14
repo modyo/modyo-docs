@@ -6,7 +6,7 @@ tags:
 
 # Seguridad
 
-Para Modyo la seguridad es una prioridad fundamental. Por este motivo, hemos desarrollado esta página que servirá como guía integral para asegurar la instalación de Modyo.
+Para Modyo, la seguridad es una prioridad fundamental. Por este motivo, hemos desarrollado esta página que servirá como guía integral para asegurar la instalación de Modyo.
 
 Tanto Modyo Cloud como Enterprise Cloud, nuestras soluciones en la nube, ofrecen un excelente nivel de seguridad de manera predeterminada. Además, los administradores de la plataforma tienen la capacidad de aplicar medidas adicionales para fortalecer la protección de sus organizaciones.
 
@@ -58,7 +58,7 @@ Para dar acceso a dominios externos, escríbelos separados por comas, por ejempl
 
 ## Token de entrega de contenido (JWT - JSON Web Token)
 
-Esta clave o _secret_ es usada por Modyo para firmar los JWT de los usuarios y así poder acceder al [contenido privado a través de la API](/es/platform/content/public-api-reference.html#contenido-privado).
+Esta clave o _secret_ es usada por Modyo para firmar los JWT de los usuarios y así poder acceder al [contenido privado a través de la API](/es/platform/content/public-api-reference#contenido-privado).
 
 :::warning Atención
 Si generas una nueva clave, todas las solicitudes de contenido privado deberán pasar por Modyo. Esto se debe a que los JWT firmados por Modyo con la clave anterior ya no serán válidos.
@@ -106,14 +106,14 @@ Si has activado la opción de forzar autenticación, la próxima vez que el usua
 ## Mejores Prácticas
 
 ### Conceptos importantes
-* **Limitar accesos**: Reducir las posibilidades de que un actor malicioso obtenga acceso al sistema.
-* **Contención**: Configurar el sistema de manera que minimice el daño posible en caso de ser vulnerado por un actor malintencionado.
-* **Preparación y conocimiento**:  Mantener copias de seguridad y procedimientos para estar preparados en el caso de posibles desastres.
-* **Fuentes confiables**: Evitar implementar widgets o código de fuentes poco confiables. Asegurar que todas las dependencias cargadas en el sitio provengan de fuentes confiables.
+- **Limitar accesos**: Reducir las posibilidades de que un actor malicioso obtenga acceso al sistema.
+- **Contención**: Configurar el sistema de manera que minimice el daño posible en caso de ser vulnerado por un actor malintencionado.
+- **Preparación y conocimiento**:  Mantener copias de seguridad y procedimientos para estar preparados en el caso de posibles desastres.
+- **Fuentes confiables**: Evitar implementar widgets o código de fuentes poco confiables. Asegurar que todas las dependencias cargadas en el sitio provengan de fuentes confiables.
 
 ### Vulnerabilidades Locales
-* Asegúrate que los equipos de cómputo de todos los usuarios administradores estén libres de spyware, malware o virus.
-* Asegúrate que los accesos siempre provengan de equipos actualizados y a través de navegadores web confiables y actualizados.
+- Asegúrate que los equipos de cómputo de todos los usuarios administradores estén libres de spyware, malware o virus.
+- Asegúrate que los accesos siempre provengan de equipos actualizados y a través de navegadores web confiables y actualizados.
 
 ### Actualizar Modyo con Regularidad
 Te recomendamos actualizar Modyo periódicamente para asegurar que tu instalación tenga las últimas correcciones de seguridad y que todos los parches de seguridad están al día. Estos parches están diseñados para aplicarse sin causar interrupciones significativas en el flujo de trabajo.

@@ -4,7 +4,7 @@ search: true
 
 # Integraciones
 
-La Plataforma Modyo, mediante un esquema de integración descentralizado basado en APIs y microservicios, permite adaptarse a diferentes desafíos. A diferencia de las plataformas monolíticas que buscaban tener una respuesta interna para cada problema, la [plataforma de Modyo](https://es.modyo.com/plataforma) privilegia la integración con sistemas especializados en lugar de ofrecer todas las funcionalidades. Esto se traduce en plataformas más livianas y adaptables a cada necesidad, permitiendo a las organizaciones elegir dentro del ecosistema las mejores soluciones que se adapten a sus realidades específicas. Todo esto resulta en bajar los costos totales de operación e infraestructura al escalar sólo los recursos que lo requieren.
+La Plataforma Modyo, mediante un esquema de integración descentralizado basado en APIs y microservicios, permite adaptarse a diferentes desafíos. A diferencia de las plataformas monolíticas que buscaban tener una respuesta interna para cada problema, la [plataforma de Modyo](https://es.modyo.com/plataforma) privilegia la integración con sistemas especializados en lugar de ofrecer todas las funcionalidades. Esto se traduce en plataformas más livianas y adaptables a cada necesidad, permitiendo a las organizaciones elegir dentro del ecosistema las mejores soluciones que se adapten a sus realidades específicas. Todo esto resulta en bajar los costos totales de operación e infraestructura al escalar solo los recursos que lo requieren.
 
 ## Integraciones de la Plataforma
 Las integraciones de plataforma corresponde a todas aquellas integraciones que se establecen por Modyo de forma directa y sin necesidad de requerir grandes desarrollos. Estas integraciones responden a diferentes propósitos según el contexto en el que se usen pero en su gran mayoría se relacionan al perfil de los usuarios y la comunicación con éstos.
@@ -29,28 +29,28 @@ Actualmente la plataforma soporta la integración a sistemas de SSO de dos forma
 - Integración de cuentas de usuarios finales
 
 En el caso de la integración con cuentas de administración, Modyo cuenta con soporte nativo para:
-* LDAP
-* SAML
-* OAuth 2.0
-* OIDC
-* Google Workspace.
+- LDAP
+- SAML
+- OAuth 2.0
+- OIDC
+- Google Workspace.
 
 En el caso de la integración con cuentas de usuario, Modyo cuenta con soporte nativo para:
-* OAuth 2.0
-* OIDC
-* Google Workspace.
+- OAuth 2.0
+- OIDC
+- Google Workspace.
 
 
 ### Integración con mensajería
 La integración con sistemas de mensajería permite el envío de mensajes de notificación y campañas de marketing a usuarios finales que se encuentren habilitados dentro de un Realm en Modyo Customers.
 
 Actualmente soportamos los canales de mensajería:
-* Email
-* SMS 
-* Whatsapp for Business
-* Web Push
-* Push
-* Notificaciones en la aplicación Web.
+- Email
+- SMS 
+- Whatsapp for Business
+- Web Push
+- Push
+- Notificaciones en la aplicación Web.
 
 Los microservicios de integración también pueden enviar notificaciones a los usuarios y dar seguimiento a estas usando el API de mensajería de Modyo Customers.
 

@@ -3,9 +3,9 @@ search: true
 sidebarDepth: 2
 ---
 
-# Aplicaciones web
+# Aplicaciones Web
 
-Una aplicación web o web app despliega el contenido creado en content y channels para crear tu canal digital personalizado. En la aplicación web se lleva a cabo todo el desarrollo, diseño y flujo de navegación.
+Una aplicación web (web app) despliega el contenido creado en Content y Channels para crear tu canal digital personalizado. En la aplicación web se lleva a cabo todo el desarrollo, diseño y flujo de navegación.
 
 Una web app puede estar en uno de estos tres estados:
 
@@ -18,7 +18,7 @@ Una web app puede estar en uno de estos tres estados:
 Para crear una nueva web app, sigue estos pasos:
 
 1. En el menú lateral, haz click en **channels**.
-1. Haz click en **+ nueva aplicación**.
+1. Haz click en **nueva aplicación**.
 1. Escribe el nombre y el host (ruta principal de la aplicación web).
 1. Si es necesario, selecciona a qué reino pertenece.
 1. Haz click en **crear**.
@@ -65,7 +65,7 @@ Para habilitar o deshabilitar la funcionalidad de búsqueda, sigue estos pasos:
 
 ### Plantilla de búsqueda
 
-Puedes controlar la apariencia y funcionalidades de búsqueda en tu web app utilizando la [plantilla](/es/platform/channels/sites.html#plantilla-de-busqueda/) _search_.
+Puedes controlar la apariencia y funcionalidades de búsqueda en tu web app utilizando la [plantilla](/es/platform/channels/sites#plantilla-de-busqueda/) _search_.
 
 Esta plantilla está disponible de forma predeterminada en la sección de plantillas y contiene todo el código Liquid necesario para realizar cabo consultas en tu web app. Por defecto, al realizar una consulta, los registros se muestran en forma de lista con su título, descripción y un enlace hacia su dirección. Puedes modificar la plantilla para adaptarla a tus necesidades.
 
@@ -123,7 +123,7 @@ Los cambios en el nombre y la descripción se reflejan de inmediato Modyo. La ac
 
 
 :::warning Atención
-La hora en el contenido se gestiona en la sección [general](https://docs.modyo.com/es/platform/core/configuration.html#configuracion) de configuración de la cuenta.
+La hora en el contenido se gestiona en la sección [general](https://docs.modyo.com/es/platform/core/configuration#configuracion) de configuración de la cuenta.
 :::
 
 - **ID de Google Tag Manager**: Agrega un identificador de Google Tag Manager para insertar scripts para el seguimiento y medición de eventos.
@@ -248,7 +248,7 @@ Puedes configurar:
 Los archivos robots.txt y sitemap.xml solo son visibles con dominios personalizados. De lo contrario, se encuentran solo a nivel de plataforma, tienen sus valores por defecto y no se pueden personalizar.
 :::
 
-- **Meta tags personalizados**: Te permite configurar meta tags para todas las páginas y sus valores por defecto. Da click en **+ nuevo meta tag** para crear uno nuevo.
+- **Meta tags personalizados**: Te permite configurar meta tags para todas las páginas y sus valores por defecto. Da click en **nuevo meta tag** para crear uno nuevo.
 - **Replicar meta tag en páginas**: Al crear un nuevo meta tag, selecciona esta opción para propagar el meta tag y su valor en todas las páginas de la web app. Debes guardar los cambios en meta tags y publicar todas las páginas modificadas para que los nuevos meta tags surtan efecto.
 
 :::warning Atención
@@ -323,7 +323,7 @@ Si desactivas el service worker, tu aplicación web seguirá funcionando, con fu
 
 #### Notificaciones WebPush
 
-Permite que tus usuarios reciban notificaciones WebPush junto con las campañas de notificación. Para enviar mensajes a tus usuarios debes asegurarte que tu aplicación esté vinculada a un reino y el estado de la aplicación esté en **Habilitado**. La gestión de las notificaciones se realiza a través de la [herramienta de mensajería](/es/platform/customers/messaging.html).
+Permite que tus usuarios reciban notificaciones WebPush junto con las campañas de notificación. Para enviar mensajes a tus usuarios debes asegurarte que tu aplicación esté vinculada a un reino y el estado de la aplicación esté en **Habilitado**. La gestión de las notificaciones se realiza a través de la [herramienta de mensajería](/es/platform/customers/messaging).
 
 #### Manifiesto PWA
 
@@ -347,7 +347,7 @@ Al activar el manifiesto, se crea esta ruta:
 https://[domain]/[site-name]/manifest.json
 ```
 
-Es necesario implementar el manifiesto en cada página de la PWA a través de [Plantillas](/es/platform/channels/templates.html), en el snippet ``head``.
+Es necesario implementar el manifiesto en cada página de la PWA a través de [Plantillas](/es/platform/channels/templates), en el snippet ``head``.
 
 
 :::warning Atención
@@ -465,7 +465,7 @@ Para agregar un nuevo stage a tu web app, sigue estos pasos:
 1. Selecciona tu aplicación web.
 1. Haz click en configuración de la aplicación.
 1. Haz click en stages.
-1. Da click en **+ nuevo stage**.
+1. Da click en **nuevo stage**.
 1. Selecciona el stage de origen y nombra tu nuevo stage.
 1. Haz click en **crear**.
 
@@ -540,7 +540,7 @@ Para agregar un nuevo miembro para tu sitio, sigue estos pasos:
 1. Selecciona tu sitio.
 1. Expande **Configuración de Sitio**.
 1. Haz click en **Miembros del equipo**.
-1. Presiona el botón **+ Agregar miembro**.
+1. Presiona el botón **Agregar miembro**.
 1. Busca y selecciona al usuario que deseas agregar al sitio y elige un rol para él.
 1. Haz click en **Añadir**.
 
@@ -553,7 +553,7 @@ Para modificar el rol de un administrador, sigue estos pasos:
 Los roles disponibles son:
 
 - **Viewer**: Este usuario puede ver entradas, ver diferencias entre versiones y dejar comentarios. También puede acceder a la vista de sincronización y ver los cambios pendientes de sincronizar. Este rol no tiene autorización para realizar ninguna acción que implique un cambio en la plataforma.
-- **Developer**: Este usuario está a cargo del desarrollo estructural de los recursos. Puede crear, modificar y enviar a revisión páginas, widgets, menús y plantillas. Todas las acciones realizadas por un Developer deben pasar por un proceso de revisión antes de su publicación. Este rol no tiene permisos para publicar, eliminar o realizar un _rollback_ a versiones anteriores de los recursos, ni tampoco para modificar la configuración del sitio. Existe una variante de este rol llamada Developer CLI, que además de los permisos de un Developer, permite actualizar widgets desde aplicaciones externas, como el [modyo-cli](/es/platform/channels/widgets.html#modyo-cli).
+- **Developer**: Este usuario está a cargo del desarrollo estructural de los recursos. Puede crear, modificar y enviar a revisión páginas, widgets, menús y plantillas. Todas las acciones realizadas por un Developer deben pasar por un proceso de revisión antes de su publicación. Este rol no tiene permisos para publicar, eliminar o realizar un _rollback_ a versiones anteriores de los recursos, ni tampoco para modificar la configuración del sitio. Existe una variante de este rol llamada Developer CLI, que además de los permisos de un Developer, permite actualizar widgets desde aplicaciones externas, como el [modyo-cli](/es/platform/channels/widgets#modyo-cli).
 - **Developer CLI**: Puede crear, modificar y enviar a revisión páginas, widgets, el menú y los templates. Además, puede empujar widgets desde aplicaciones externas.
 - **Reviewer**: Este rol permite corregir, aprobar o desechar el trabajo realizado por los Developers. Puede crear, modificar, enviar a revisión y aprobar páginas, widgets, menús y plantillas. También puede publicar cuando se cumplen las condiciones de revisión. No puede editar la configuración del sitio.
 - **Admin**: El Administrador del sitio posee los mismos privilegios que los roles anteriores y tiene la capacidad de configurar todo el sitio. Esto incluye la creación, modificación, envío a revisión y aprobación de páginas, widgets, menús y plantillas. Además, puede publicar sin requerir la validación de revisión en equipo.
@@ -572,7 +572,7 @@ En esta vista encuentras una tabla con todas las redirecciones que existen actua
 Para crear una nueva redirección, haz click en el botón **Nuevo** en la esquina superior derecha de la vista. Completa los campos **_URL_ de Origen** y **_URL_ de destino** y código de redirección y luego guarda los cambios.
 
 :::warning Atención
-La tabla de redirecciones es la penúltima en precedencia, de tal forma que si existe una URL en el sitio que apunta a una [página](/es/platform/channels/pages.html) o una vista por defecto, verás esa vista en vez de ser redirigido mediante la tabla de redirecciones personalizadas.
+La tabla de redirecciones es la penúltima en precedencia, de tal forma que si existe una URL en el sitio que apunta a una [página](/es/platform/channels/pages) o una vista por defecto, verás esa vista en vez de ser redirigido mediante la tabla de redirecciones personalizadas.
 :::
 
 Además de crear redirecciones una por una, puedes importar un [archivo CSV](/assets/examples/custom-redirections.csv) con hasta 1000 redirecciones.
@@ -587,10 +587,10 @@ Si estás importando una redirección con un origen que ya está registrado, no 
 
 La jerarquía de ubicaciones en los sitios de Modyo sigue este orden:
 
-1. [Vistas por defecto (Home, search)](/es/platform/channels/templates.html)
-1. [Páginas](/es/platform/channels/pages.html)
+1. [Vistas por defecto (Home, search)](/es/platform/channels/templates)
+1. [Páginas](/es/platform/channels/pages)
 1. Redirecciones personalizadas
-1. [Configuración de error 404 del sitio](/es/platform/channels/sites.html#privacidad)
+1. [Configuración de error 404 del sitio](/es/platform/channels/sites#privacidad)
 
 :::warning Condiciones para una redirección
 Para que una redirección sea exitosa, la ruta de origen no puede existir o tiene que estar despublicada. Si el origen es una página publicada con subpáginas, tienes que despublicar las subpáginas antes de despublicar la página principal.
@@ -603,28 +603,28 @@ Habilita este módulo para tu sitio para configurar los encabezados de seguridad
 #### HTTP Strict Transport Security (HSTS)
 
 Indica al navegador que solo puede acceder al sitio mediante HTTPS.
-* **Duración**: Establece el tiempo que el navegador accede al sitio solamente mediante HTTPS.
-* **Precarga**: Incluye la directiva de precarga. Para más información, consulta [HSTS Preload List Submission](https://hstspreload.org/).
-* **Incluir subdominios**: Aplica la regla HSTS a todos los subdominios del sitio.
+- **Duración**: Establece el tiempo que el navegador accede al sitio solamente mediante HTTPS.
+- **Precarga**: Incluye la directiva de precarga. Para más información, consulta [HSTS Preload List Submission](https://hstspreload.org/).
+- **Incluir subdominios**: Aplica la regla HSTS a todos los subdominios del sitio.
 
 #### Referrer-Policy
 
 El _header_ `Referer` contiene información de la página web anterior desde la cual está vinculando, con el _header_ `Referrer-Policy` puedes controlar cuánta información debe incluirse en el _header_ `Referer`.
 
-* **no-referrer**: No envía información de _referrer_.
-* **no-referrer-when-downgrade**: No envía información de _referrer_ a un destino menos seguro.
-* **origin**: Envía solo el dominio de origen, elimina las rutas y _query string_.
-* **origin-when-cross-origin**: Envía información de _referrer_ para _requests_ del mismo origen. Elimina las rutas y _query string_ para otros destinos.
-* **same-origin**: Envía información de _referrer_ solo para _requests_ del mismo origen.
-* **strict-origin**: Envía el dominio de origen solo para _requests_ del mismo nivel de seguridad y no envía información de _referrer_ a destinos menos seguros.
-* **strict-origin-when-cross-origin**: Envía información de _referrer_ a _requests_ del mismo origen. Envía el origen solo si el nivel de seguridad es el mismo y no envía información de _referrer_ a destinos menos seguros.
-* **unsafe-url**: Envía siempre la información de _referrer_.
+- **no-referrer**: No envía información de _referrer_.
+- **no-referrer-when-downgrade**: No envía información de _referrer_ a un destino menos seguro.
+- **origin**: Envía solo el dominio de origen, elimina las rutas y _query string_.
+- **origin-when-cross-origin**: Envía información de _referrer_ para _requests_ del mismo origen. Elimina las rutas y _query string_ para otros destinos.
+- **same-origin**: Envía información de _referrer_ solo para _requests_ del mismo origen.
+- **strict-origin**: Envía el dominio de origen solo para _requests_ del mismo nivel de seguridad y no envía información de _referrer_ a destinos menos seguros.
+- **strict-origin-when-cross-origin**: Envía información de _referrer_ a _requests_ del mismo origen. Envía el origen solo si el nivel de seguridad es el mismo y no envía información de _referrer_ a destinos menos seguros.
+- **unsafe-url**: Envía siempre la información de _referrer_.
 
 #### X-Frame-Options
 
 Indica si tu sitio puede ser incluido en un `frame`, `iframe`, `embed`, or `object`.
-* **DENY**: El sitio no se puede mostrar en un _frame_.
-* **SAMEORIGIN**: El sitio se puede mostrar en _frames_ del mismo dominio.
+- **DENY**: El sitio no se puede mostrar en un _frame_.
+- **SAMEORIGIN**: El sitio se puede mostrar en _frames_ del mismo dominio.
 
 #### X-Content-Type-Options
 
@@ -637,7 +637,7 @@ Controla qué recursos puede cargar el navegador en el sitio para mitigar ataque
 Especifica libremente tu política de seguridad de contenido en el área de texto. Para obtener una guía completa sobre cómo escribir tu política, consulta [Content Security Policy (CSP) de Mozilla Developer Network.](https://developer.mozilla.org/es/docs/Web/HTTP/CSP)
 
 :::warning Atención
-Un valor muy estricto puede interferir con algunas características como [Google tag manager](/es/platform/channels/sites.html#google-tag-manager), [PWA](/es/platform/channels/sites.html#pwa), [Widgets](/es/platform/channels/widgets.html) y [Asset Manager](/es/platform/content/asset-manager.html).
+Un valor muy estricto puede interferir con algunas características como [Google tag manager](/es/platform/channels/sites#google-tag-manager), [PWA](/es/platform/channels/sites#pwa), [Widgets](/es/platform/channels/widgets) y [Asset Manager](/es/platform/content/asset-manager).
 :::
 
 Una política apta para producción debe asegurar que todos los recursos, como imágenes y hojas de estilo, se carguen desde fuentes confiables y requiere que todos los scripts sean seguros y confiables para la aplicación. Por ejemplo, una política estricta para el _template minimal_ se vería así:
@@ -648,7 +648,7 @@ default-src 'self'; img-src 'self' https://cloud.modyocdn.com; font-src 'self' h
 
 La política debe incluir una directiva `default-src 'self'`, que sirve de _fallback_ para cualquier otro tipo de recurso. También debe incluir directivas `script-src` y `style-src` para evitar la evaluación de tags _inline_ `style` y `script`.
 
-* **Nonce**: El servidor agregará un CSP nonce a las directivas `script-src` y `style-src` si están presentes.
+- **Nonce**: El servidor agregará un CSP nonce a las directivas `script-src` y `style-src` si están presentes.
 
 Si tienes el nonce presente en tu política, puedes agregar a la lista permitida los _tags_ `script` y `style` en tus _templates_ usando la variable `csp_nonce`.
 
@@ -659,9 +659,9 @@ Si tienes el nonce presente en tu política, puedes agregar a la lista permitida
 ```
 
 Estas herramientas te pueden ayudar a diseñar una política de seguridad sólida:
-* [Google CSP evaluator](https://csp-evaluator.withgoogle.com)
-* [ReportURI](https://report-uri.com/home/analyse)
-* [CSP validator](https://cspvalidator.org)
+- [Google CSP evaluator](https://csp-evaluator.withgoogle.com)
+- [ReportURI](https://report-uri.com/home/analyse)
+- [CSP validator](https://cspvalidator.org)
 
 #### Permissions-Policy
 
@@ -692,7 +692,7 @@ Para mas información, consulta la [Cross-Origin-Resource-Policy de MDN](https:/
 
 ### Variables del sitio
 
-Modyo cuenta con [variables globales](/es/platform/core/key-concepts.html#variables-globales) que puedes utilizar en múltiples sitios. Sin embargo, también puedes crear variables específicas para un sitio en particular o sobreescribir el valor de una variable global existente, con un valor específico para el sitio en particular.
+Modyo cuenta con [variables globales](/es/platform/core/key-concepts#variables-globales) que puedes utilizar en múltiples sitios. Sin embargo, también puedes crear variables específicas para un sitio en particular o sobreescribir el valor de una variable global existente, con un valor específico para el sitio en particular.
 
 Usar variables te permite reutilizar código HTML, JS, CSS o texto a través de distintos sitios, widgets o plantillas. Si tienes código que se repite en varias partes de tu cuenta, puedes asignar ese valor a una variable para simplificar tus procesos y en caso de que edites el valor de la variable, el cambio se verá reflejado en todos los lugares donde esté en uso la variable.
 
@@ -709,7 +709,7 @@ Para crear una variable en sitios, sigue estos pasos:
 1. Desde el menú lateral principal, haz click en **Channels**.
 1. Selecciona tu **Sitio**.
 1. En **Configuración del sitio**, haz click en **Variables del Sitio**. Aquí puedes ver el listado de todas las variables globales y las variables del sitio, su información general y un botón para copiar su código en Liquid markup.
-1. Haz click en **+ Nueva Variable**.
+1. Haz click en **Nueva Variable**.
 1. Completa los campos **Nombre** y **Valor** de la variable.
 1. Haz click en **Guardar**.
 

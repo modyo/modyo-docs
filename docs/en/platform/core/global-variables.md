@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Global variables
+# Global Variables
 
 Modyo has a feature to define global variables that you can use everywhere Liquid can be used, so you can for example, share a code _snippets_ between sites.
 

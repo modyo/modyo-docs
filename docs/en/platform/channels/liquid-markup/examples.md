@@ -8,7 +8,7 @@ In any part of Channels (Sites, Widgets, and Templates) you can use Liquid to cr
 
 ## Display list of Entries of a Type
 
-In [Content Pages](/en/platform/channels/pages.html#content-page) you can generate a list of all Entries of a Type. In this case, we take all the Entries of the `product` Type in the `My Bank` Space. The variable `entries` on line 1 gets an array of the drop [Entry](/en/platform/channels/drops.html#entry). This array is traversed to display the `meta.uuid` and `meta.title` of each Entry by line. 
+In [Content Pages](/en/platform/channels/pages#content-page) you can generate a list of all Entries of a Type. In this case, we take all the Entries of the `product` Type in the `My Bank` Space. The variable `entries` on line 1 gets an array of the drop [Entry](/en/platform/channels/drops#entry). This array is traversed to display the `meta.uuid` and `meta.title` of each Entry by line. 
 
 ```liquid
 {% assign entries = spaces['my-bank'].types['product'].entries %}
@@ -59,7 +59,7 @@ In the following example, we filter the Entries of type `post`, with category `n
 <p>News:</p>
 <ul>
 {% for entry in entries %}
-<li><a href="entry.url">{{ entry.meta.title }}</a></li>
+<li><a href="{{ entry.url }}">{{ entry.meta.title }}</a></li>
 {% endfor %}    
 ```
 
@@ -72,7 +72,7 @@ In the following example, we filter posts of type `post`, with category `news`, 
 <p>News for you!</p>
 <ul>
 {% for entry in entries %}
-<li><a href="entry.url">{{ entry.meta.title }}</a></li>
+<li><a href="{{ entry.url }}">{{ entry.meta.title }}</a></li>
 {% endfor %}    
 ```
 

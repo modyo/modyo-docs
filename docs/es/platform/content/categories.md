@@ -4,7 +4,7 @@ search: true
 
 # Categorías
 
-Las categorías te permiten ordenar las entradas que publicas según el contenido que se encuentre dentro, por lo que es útil si necesitas hacer directorios de áreas de conocimiento determinadas.
+Las categorías te permiten ordenar las entradas que publicas según su contenido, lo que es útil para crear directorios de áreas de conocimiento específicas.
 
 ## Crear una Categoría
 

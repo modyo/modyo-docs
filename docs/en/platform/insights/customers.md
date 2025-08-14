@@ -2,49 +2,48 @@
 search: true
 ---
 
-### Customers
+# Customers
 
-Similar to how the Digital Factory provides direct statistics of our team members' activities, Customers gives us a global overview of what our customers are doing in the platform, as well as the behavior of the content that reaches them.
+The Customers dashboard displays key metrics about end-user activity and engagement on your platform.
 
-The available filters are:
+### Key Metrics
 
-- Date Range
-- Segment
-- Site
+- **Active Users**: Users with at least two interactions in the selected period
+- **Total Activity**: Sum of all interactions (logins, forms, emails, notifications)
+- **Login Sessions**: Total successful authentications
+- **New Registrations**: Users who completed registration
 
-**Active users**: Total users with two or more activity records in the selected period.
+### Available Filters
 
-**Activity**: Corresponds to the total login count, form responses, open emails, emails notified as spam, and open notifications.
+- Date range
+- User segments
+- Specific sites
 
-**Logins**: Total count of all user logins.
+### Activity Chart
 
-**Signups**: Total count of all user signups.
-
-### User activity
-
-In this graph we can see a comparison between two values that represent user actions within Modyo Channels.
-
-You can select any of these values to compare:
-
-- **Activity**: The sum of all activities.
-- **Active users**: Includes all users who have performed two or more actions in the specified period of time.
-- **Email delivered**: Total emails from campaigns that were successfully sent.
-- **Email Opened**: The count of all campaign emails opened by users.
-- **Email spam report**: Total spam notifications sent by users receiving emails from your campaigns.
-- **Form response created**: Total count of all Modyo form responses.
-- **Login**: Total count of all user logins.
-- **Notification opened**: Total number of times users opened notification messages.
+Allows simultaneous comparison of up to two metrics to identify trends:
+- Total activity
+- Active users
+- Emails delivered/opened
+- Form responses
+- Login sessions
+- Notifications opened
 
 ### Recent Campaigns
 
-Displays a list of the last 5 messaging campaigns sent, with total unique opens versus reach.
-
-In this list, you can find both email and notification campaigns.
+Table with the last 5 executed campaigns showing:
+- Campaign name and type
+- Total reach
+- Number of opens
+- Open rate
 
 ### Recent Forms
 
-You will see a list of the latest forms created, along with the total responses to each.
+List of most recent forms with:
+- Form name
+- Total responses
+- Creation date
 
 ### Engagement
 
-Finally, engagement shows the percentage of active users on the site (in the selected period), compared to the total number of users, visualized through a donut chart.
+Pie chart showing the percentage of active versus inactive users in the selected period.

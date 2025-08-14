@@ -6,9 +6,9 @@ search: true
 
 Output markup can take filters, which modify the result of the output statement. You can invoke filters by following the output statement's main expression with:
 
-* A pipe character (`|`)
-* The name of the filter
-* Optionally, a colon (`:`) and a comma-separated list of additional parameters to the filter. Each additional parameter must be a valid expression, and each filter pre-defines the parameters it accepts and the order in which they must be passed.
+- A pipe character (`|`)
+- The name of the filter
+- Optionally, a colon (`:`) and a comma-separated list of additional parameters to the filter. Each additional parameter must be a valid expression, and each filter pre-defines the parameters it accepts and the order in which they must be passed.
 
 Filters can also be chained together by adding additional filter statements (starting with another pipe character). The output of the previous filter will be the input for the next one.
 
@@ -179,7 +179,7 @@ Adds currency format to a value. *e.g.*
 :::warning Important
 This filter determines the format of the currency and takes precedence over any other currency settings.
 
-If you don't specify currency parameters with the currency filter, Modyo uses the realm's [payment] (/en/platform/customers/settings.html#payment-settings) settings.
+If you don't specify currency parameters with the currency filter, Modyo uses the realm's [payment] (/en/platform/customers/settings#payment-settings) settings.
 
 If the site does not have a realm associated to it, and you don't specify parameters, the predefined format of the site's language will be applied.
 :::
@@ -275,7 +275,7 @@ Returns a list of Entries that match a filter. *e.g.*
 - entries (ArrayEntry) - array with entries
 - opts (Hash) (default: {}) - hash with field and eq as value
 
-### Filter By Query String
+### Filter by Query String
 
 Returns a list of Entries that meet a query. You can use logical operators, various meta fields, URLs, or Liquid tags.
 

@@ -20,7 +20,7 @@ To create a segment, follow these steps:
 
 - From the administration page, click **Customers**, then select **Realms**.
 - Click on your **Realm**.
-- Select **Segments** and click **+ New Segment**.
+- Select **Segments** and click **New Segment**.
 - Add the required filters for your segment.
 - Click **Next**.
 - Enter a **Name** and a **Description**.
@@ -63,7 +63,7 @@ The default filters available on the platform include:
 - Order paying
 - Order rejected
 
-To create an advanced filter that fits your needs, refer to the [Custom Fields](/en/platform/customers/settings.html#custom-fields) section.
+To create an advanced filter that fits your needs, refer to the [Custom Fields](/en/platform/customers/settings#custom-fields) section.
 
 :::warning Attention
 The update of segments to which a user belongs is performed as a background process and may not be immediate. This occurs:

@@ -4,196 +4,349 @@ search: true
 
 # Release Notes
 
+## 10.1
+
+
+### 10.1.1
+
+:::tip Release date
+July 23, 2025
+:::
+
+| Module | Improvements |
+|--------|---------|
+| **Customers** | • Visual improvement for conditional flow editing<br>• Fixes scroll issue in origination builder |
+| **Channels** | • Adds editing of start, summary, and completion views on origination pages<br>• Improvement in condition evaluation during submission completion<br>• Fixes value returned by checkbox field that now returns an array with selected values |
+
+
+### 10.1.0
+
+:::tip Release date
+July 3, 2025
+:::
+
+| Module | Improvements |
+|--------|---------|
+| **Core** | • Adds customizable role creation option<br>• Security, performance, and dependency improvements |
+| **Channels** | • Draft/published page check in preview is now persistent across navigation |
+| **Customers** | • Adds new origination module activatable via plan with the following features:<br>&nbsp;&nbsp;- Conditional flows<br>&nbsp;&nbsp;- Versioning<br>&nbsp;&nbsp;- Forms<br>&nbsp;&nbsp;- Code snippets<br>&nbsp;&nbsp;- Validations<br>&nbsp;&nbsp;- Agent view<br>&nbsp;&nbsp;- Flow invitations<br>&nbsp;&nbsp;- Flow customization<br>&nbsp;&nbsp;- Origination API<br>&nbsp;&nbsp;- Liquid drops for access from site views<br>• Webhooks for user events (Breaking change: this change requires review prior to version upload)<br>• Adds session expiration policy at realm level<br>• Adds option to customize username input for login<br>• Adds new field types for forms<br>• Adds datasets at realm level that can be used in forms and originations<br>• Transforms user events (Breaking change: this change requires review prior to version upload)<br>• Unifies identity providers with integrations into a single module called "integrations." |
+
 ## 10.0
 
-### 10.0.11 - November 14, 2024
-<Badge text="Core" type="core" vertical="middle"/>
+### 10.0.0
 
-* Security improvements
+:::tip Release date
+April 03, 2024
+:::
 
-<Badge text="Channels" type="channels" vertical="middle"/>
+| Module | Improvements |
+|--------|---------|
+| **Core** | • Controlled error when exceeding the maximum number of elements allowed by the API is removed.<br>• Performance improvements.<br>• Adds new supported characters for a user's username.<br>• Adds Authorization code + PKCE flow option in integration with an OpenID identity provider.<br>• Adds option to send authentication parameters via URL params.<br>• Security improvements.<br>• Explicitly adds the `samesite=Lax` attribute to the session cookie.<br>• Fixes error when publishing when backup limit is reached.<br>• Fixes author when cloning a content element, page, menu, widget, template; now the author of the new element is the one executing the action.<br>• Fixes issue with the list of sites, spaces, and realms in the webhooks list.<br>• Fixes issue with link preloading when hovering.<br>• Fixes SEO configuration error.<br>• Webhooks improvements, now stages respond to hooks associated with a site, adds hooks when creating or updating an asset.<br>• Performance enhancements.<br>• SEO configuration improvements added, it is now possible to edit the sitemap and robots from the organization's settings and automatically include sites that depend on the base URL.<br>• Active sessions list added to the administrator's profile, it is also possible to close them from this view.<br>• Dependency update.<br>• New administrative interface design.<br>• Adds cache invalidation support when Cloudflare is used for this purpose, allowing more aggressive caching that is invalidated when pages, content, and media library asset modifications occur.<br>• Adds new login alert for platform administrators; now, when logging in from a new device, an email notification is sent.<br>• All administrator sessions are invalidated when their password is changed.<br>• Fixes session expiration based on inactivity time. |
+| **Channels** | • Improves csp-nonce injection in pages, now injected into every request that reaches the application regardless of whether application cache exists or not.<br>• Performance improvement in JSON filter for a content entry.<br>• Performance improvement in content loading from Liquid SDK and content pages.<br>• Performance improvement in menu loading.<br>• Fixes preview display persistence when administrator logs out for sites with custom domains.<br>• Improves menu synchronization, now correctly identifies initial segments if both stages share the same realm.<br>• Performance improvement when getting templates.<br>• Adds support for web assembly files as chunks in zip packages coming from Modyo CLI.<br>• Adds new `Service-Worker-Allowed` header in site security headers.<br>• Fixes an error in the assets modal.<br>• Fixes CSP nonce difference problem between header and view.<br>• Adds Liquid filters to manipulate form responses for a user in site building.<br>• Fixes permissions issue when uploading assets on sites.<br>• Fixes issues with using the `search` parameter in searches using the `filter_by_query_string` filter.<br>• Fixes issues when previewing global snippets.<br>• Fixes redirection issue to a site's custom domain.<br>• Improvements in page indexing scheduling.<br>• Fixes search results that contained private content.<br>• Fixes issues with loss of site preview.<br>• Improvements in page indexing for search.<br>• Increases search results on sites, now defaulting to 15 results.<br>• Fixes issues when rendering pages with segmented content.<br>• Fixes issues when rendering very large content pages.<br>• Fixes the author of a synchronization in the activity shown on pages, widgets, templates, and menus.<br>• Option to enable webpush in application settings has been added.<br>• Fixes the search pager on sites to show the number of pages based on the maximum number of results.<br>• Fixes Liquid SDK issue when displaying JSON of a repeatable group.<br>• Fixes issue when publishing a page when variables are configured and backups are deleted.<br>• Fixes a performance issue when using the `by_tag` filter in Liquid templates.<br>• Improves template loading experience when returning to the template builder.<br>• Improvements in site variable access, now accessible for viewing by any role.<br>• Adds the ability to use global and site variables in menu item URLs.<br>• Adds page ordering by path in table view.<br>• Adds the option to include the search bar as an item in menu construction.<br>• Improved template for new sites, simpler and with framework reference from the start.<br>• Adds global snippets, now it's possible to define a code snippet and use it across different account sites, also includes a draft or published selector in the preview.<br>• Improves widget preview, now you can select the site layout to preview the widget with.<br>• Adds the ability to preview widgets locally. When working with the Modyo CLI, you can now run a preview of the developing widget and view it directly in the browser with the ability to mount it in the different layouts contained in the destination site.<br>• Includes chunk support in CLI widgets, now the platform accepts a zip with widget data plus associated chunks.<br>• Improvements in the widget interface when they come from the CLI.<br>• Adds image processing when Cloudflare is used, through the assets filter you can specify image size and quality to display or a set of sizes as srcset, which benefits the performance of built sites.<br>• Moves global variable configuration to the channels context.<br>• BREAKING CHANGE: Content widgets: Content List and Content Featured are removed; they can be replaced by an HTML widget and the use of the Liquid SDK. |
+| **Content** | • Controlled error when exceeding the maximum number of elements allowed by the API is removed.<br>• Adds bulk segment editing.<br>• Restores borders of tables inserted in Froala.<br>• Fixes permission to get related entries when editing content.<br>• Fixes content indexing issues; now content is indexed for searches on content pages, content is indexed when published and the index is removed when unpublished; only widget pages are re-indexed in the re-indexing job, in case they include content via the SDK.<br>• Performance improvement in content indexing.<br>• Adds ordering within a content field of type content list.<br>• Fixes rich text issues where they become blank when moving elements within a repeatable group.<br>• Fixes error when copying content from another language when a repeatable group is present.<br>• Fixes error when editing content in bulk.<br>• Fixes errors in image selector and search in Rich Texts.<br>• Performance improvement in bulk content publishing.<br>• Fixes error when showing differences in very extensive content.<br>• Fixes issue when publishing entries with asset lists, now the defined order in the list is respected.<br>• Fixes issue when publishing entries containing rich text in code mode.<br>• Fixes parameter duplication issue when using the administrative content API.<br>• Adds exact filter by `full_path` and `uuid` to the content API categories endpoint.<br>• Adds `search` query param to perform text search using the content API.<br>• Fixes issue when cloning content entries with multiple languages.<br>• Adds the ability to clone spaces and content types.<br>• Adds the ability to specify a description for spaces, which is displayed in the overview.<br>• Adds the ability to add a description to content types.<br>• Adds repeatable groups in content; now in the definition of content types there is the option for a repeatable group which can define multiple fields as a group that can be instantiated many times when creating an entry.<br>• Adds Media Library; now the asset manager becomes a media library that exists within a space and not globally, allowing better permission management and organization of assets uploaded to the platform. It can also be used in channels through the media library modal, leaving the specific context of assets to the application in use. |
+| **Customers** | • Fixes domain validation for the `redirect_to` logout parameter.<br>• Adds search bar to campaign listing.<br>• Fixes queuing of multiple segment calculation jobs for a user.<br>• Fixes user view to show all users when requested from the segment list.<br>• Performance improvement in user segment calculation at login.<br>• Improves custom field segment filter, now allows a list of values.<br>• Fixes multiple calls to the `count_matches` endpoint.<br>• Fixes segment recalculation.<br>• Fixes `from` field of email campaign, now defaults back to sender name.<br>• Fixes duplication of user segments.<br>• Fixes editing of newly added custom fields when editing a user.<br>• Adds the ability to map an object-type claim attribute to a specific custom field.<br>• Adds webpush sending capability in notification campaigns when enabled on the site related to the realm.<br>• Fixes synchronous segment calculation at login when enabled.<br>• Phone format improved, country now automatically selected via Cloudflare.<br>• Soft login, now possible to log in via an OTP code sent to email.<br>• Improvements to registration and profile forms.<br>• Adds Salesforce integration, now Salesforce contacts and realm users can be synchronized, configurable to receive and/or send user information changes.<br>• Visual improvements in registration and login forms.<br>• Improvements in email campaign creation, now campaigns can be cloned for new sends and the main view is simplified.<br>• Removes the "none" role, now all users will be account users by default. |
 
-* Fixes problems with the loss of the site preview
-* Improvements in page indexing for search
-* Increases search results on sites, now by default there are 15 results
 
-### 10.0.10 - November 04, 2024
-<Badge text="Core" type="core" vertical="middle"/>
+### 10.0.27
 
-* Security improvements
-* Added invalidation of all administrator sessions when the administrator changes his password.
+:::tip Release date
+June 25, 2025
+:::
 
-<Badge text="Channels" type="channels" vertical="middle"/>
+| Module | Improvements |
+|--------|---------|
+| **Content** | • Controlled error when exceeding the maximum number of elements allowed by the API is removed |
 
-* Fixes issues when rendering pages with segmented content
-* Fixes issues when rendering pages with large content
-* Fixes the author of a synchronization in the activity displayed in pages, widgets, templates and menus
-* Added a new option to enable webpush in the application's settings 
+### 10.0.26
 
-<Badge text="Customers" type="customers" vertical="middle"/>
+:::tip Release date
+June 06, 2025
+:::
 
-* Added the ability to map an attribute of an object type claim to a specific custom field.
-* Added the ability to send webpush in notification campaigns when it is enabled in a site linked to the realm.
+| Module | Improvements |
+|--------|---------|
+| **Channels** | • Improves csp-nonce injection in pages, now injected into every request that reaches the application regardless of whether application cache exists or not |
 
+### 10.0.25
 
-### 10.0.9 - October 14, 2024
-<Badge text="Core" type="core" vertical="middle"/>
+:::tip Release date
+May 14, 2025
+:::
 
-* Security improvements
-* Corrects session expiration depending on inactivity time
+| Module | Improvements |
+|--------|---------|
+| **Channels** | • Performance improvement in JSON filter for a content entry |
 
-<Badge text="Content" type="content" vertical="middle"/>
+### 10.0.24
 
-* Fixes problem when publishing entries with asset lists, now the order defined in the list is respected
-* Fixes problem when publishing entries containing richtext in code mode
-* Fixes parameter duplication issue when using the content management api
+:::tip Release date
+May 13, 2025
+:::
 
+| Module | Improvements |
+|--------|---------|
+| **Core** | • Performance improvements |
+| **Channels** | • Performance improvement in content loading from Liquid SDK and content pages<br>• Performance improvement in menu loading |
 
-### 10.0.8 - September 16, 2024
-<Badge text="Core" type="core" vertical="middle"/>
+### 10.0.23
 
-* Fixes problem with preloading links when hovering 
+:::tip Release date
+May 05, 2025
+:::
 
+| Module | Improvements |
+|--------|---------|
+| **Customers** | • Fixes domain validation for the `redirect_to` logout parameter |
+| **Channels** | • Fixes preview display persistence when administrator logs out for sites with custom domains |
 
-### 10.0.7 - September 06, 2024
-<Badge text="Core" type="core" vertical="middle"/>
+### 10.0.22
 
-* Security improvements
+:::tip Release date
+April 25, 2025
+:::
 
-<Badge text="Channels" type="channels" vertical="middle"/>
+| Module | Improvements |
+|--------|---------|
+| **Core** | • Adds new supported characters for a user's username |
+| **Channels** | • Improves menu synchronization, now correctly identifies initial segments if both stages share the same realm |
 
-* Corrects the site search paginator to show the number of pages based on the maximum number of results
+### 10.0.21
 
-<Badge text="Content" type="content" vertical="middle"/>
+:::tip Release date
+March 16, 2025
+:::
 
-* Adds exact filter for full_path and uuid to the categories endpoint of the content api
+| Module | Improvements |
+|--------|---------|
+| **Core** | • Adds Authorization code + PKCE flow option in integration with an OpenID identity provider<br>• Adds option to send authentication parameters via URL params |
+| **Channels** | • Performance improvement when getting templates |
 
-<Badge text="Customers" type="customers" vertical="middle"/>
+### 10.0.20
 
-* Corrects synchronous calculation of segments at login when enabled
+:::tip Release date
+March 10, 2025
+:::
 
+| Module | Improvements |
+|--------|---------|
+| **Channels** | • Adds support for web assembly files as chunks in zip packages coming from Modyo CLI<br>• Adds new `Service-Worker-Allowed` header in site security headers<br>• Fixes an error in the assets modal<br>• Fixes CSP nonce difference problem between header and view<br>• Adds Liquid filters to manipulate form responses for a user in site building |
 
-### 10.0.6 - August 14, 2024
-<Badge text="Core" type="core" vertical="middle"/>
+### 10.0.19
 
-* Security improvements
+:::tip Release date
+February 07, 2025
+:::
 
-<Badge text="Channels" type="channels" vertical="middle"/>
+| Module | Improvements |
+|--------|---------|
+| **Core** | • Security improvements<br>• Explicitly adds the `samesite=Lax` attribute to the session cookie |
+| **Channels** | • Fixes permissions issue when uploading assets on sites |
 
-* Fixes Liquid SDK problem when displaying json from a repeatable group
+### 10.0.18
 
-<Badge text="Content" type="content" vertical="middle"/>
+:::tip Release date
+February 03, 2025
+:::
 
-* Adds query param `search` to search for text using the content api
+| Module | Improvements |
+|--------|---------|
+| **Core** | • Security improvements<br>• Fixes error when publishing when backup limit is reached |
+| **Content** | • Adds bulk segment editing<br>• Restores borders of tables inserted in Froala |
+| **Customers** | • Adds search bar to campaign listing |
 
+### 10.0.17
 
-### 10.0.5 - August 2, 2024
-<Badge text="Core" type="core" vertical="middle"/>
+:::tip Release date
+January 14, 2025
+:::
 
-* Fixes SEO configuration error
+| Module | Improvements |
+|--------|---------|
+| **Core** | • Fixes author when cloning a content element, page, menu, widget, template; now the author of the new element is the one executing the action<br>• Fixes issue with the list of sites, spaces, and realms in the webhooks list |
+| **Content** | • Fixes permission to get related entries when editing content<br>• Fixes content indexing issues; now content is indexed for searches on content pages, content is indexed when published and the index is removed when unpublished; only widget pages are re-indexed in the re-indexing job, in case they include content via the SDK<br>• Performance improvement in content indexing |
+| **Customers** | • Fixes queuing of multiple segment calculation jobs for a user<br>• Fixes user view to show all users when requested from the segment list |
+| **Channels** | • Fixes issues with using the `search` parameter in searches using the `filter_by_query_string` filter |
 
+### 10.0.16
 
-### 10.0.4 - July 30, 2024
-<Badge text="Core" type="core" vertical="middle"/>
+:::tip Release date
+December 23, 2024
+:::
 
-* Security improvements
-* Improvements to webhooks, stages now respond to hooks associated with a site, and adds hooks when creating or updating an asset
+| Module | Improvements |
+|--------|---------|
+| **Content** | • Adds ordering within a content field of type content list<br>• Fixes rich text issues where they become blank when moving elements within a repeatable group<br>• Fixes error when copying content from another language when a repeatable group is present |
+| **Customers** | • Performance improvement in user segment calculation at login |
+| **Channels** | • Fixes issues when previewing global snippets |
 
-<Badge text="Channels" type="channels" vertical="middle"/>
+### 10.0.15
 
-* Fixes problem when publishing a page when having a variable configuration and deleting backups
+:::tip Release date
+December 12, 2024
+:::
 
-### 10.0.3 - July 12, 2024
-<Badge text="Core" type="core" vertical="middle"/>
+| Module | Improvements |
+|--------|---------|
+| **Customers** | • Improves custom field segment filter, now allows a list of values |
 
-* Security improvements
-* Performance improvements
-* Improvements have been added to the SEO configuration, it is now possible to edit the sitemap and robots from the organization settings and automatically include sites that depend on the base URL
-* A list of active sessions is added to the administrator's profile, and it is also possible to close them from that view.
+### 10.0.14
 
-<Badge text="Content" type="content" vertical="middle"/>
+:::tip Release date
+December 10, 2024
+:::
 
-* Fixes problem when cloning content entries with multiple languages
+| Module | Improvements |
+|--------|---------|
+| **Content** | • Fixes error when editing content in bulk |
+| **Customers** | • Fixes multiple calls to the `count_matches` endpoint |
 
+### 10.0.13
 
-### 10.0.2 - July 08, 2024
-<Badge text="Core" type="core" vertical="middle"/>
+:::tip Release date
+December 05, 2024
+:::
 
-* Security improvements
-* Performance improvements
-* Updating dependencies
+| Module | Improvements |
+|--------|---------|
+| **Channels** | • Fixes redirection issue to a site's custom domain |
+| **Customers** | • Fixes segment recalculation<br>• Fixes `from` field of email campaign, now defaults back to sender name |
 
-<Badge text="Customers" type="customers" vertical="middle"/>
+### 10.0.12
 
-* Improved phone format, now the country is automatically selected using Cloudflare
+:::tip Release date
+December 03, 2024
+:::
 
-<Badge text="Channels" type="channels" vertical="middle"/>
+| Module | Improvements |
+|--------|---------|
+| **Core** | • Security improvements |
+| **Channels** | • Improvements in page indexing scheduling<br>• Fixes search results that contained private content |
+| **Content** | • Fixes errors in image selector and search in Rich Texts<br>• Performance improvement in bulk content publishing<br>• Fixes error when showing differences in very extensive content |
+| **Customers** | • Fixes duplication of user segments<br>• Fixes editing of newly added custom fields when editing a user |
 
-* Fixes a performance issue when using the by_tag filter in liquid templates
-* Improves the template loading experience when returning to the template builder
+### 10.0.11
 
-<Badge text="Content" type="content" vertical="middle"/>
+:::tip Release date
+November 14, 2024
+:::
 
-* Adds the ability to clone spaces and content types
+| Module | Improvements |
+|--------|---------|
+| **Core** | • Security improvements |
+| **Channels** | • Fixes issues with loss of site preview<br>• Improvements in page indexing for search<br>• Increases search results on sites, now defaulting to 15 results |
 
+### 10.0.10
 
-### 10.0.1 - May 31, 2024
-<Badge text="Core" type="core" vertical="middle"/>
+:::tip Release date
+November 04, 2024
+:::
 
-* Security improvements
-* Performance improvements
-* Updating dependencies
+| Module | Improvements |
+|--------|---------|
+| **Core** | • Security improvements<br>• All administrator sessions are invalidated when they change their password |
+| **Channels** | • Fixes issues when rendering pages with segmented content<br>• Fixes issues when rendering very large content pages<br>• Fixes the author of a synchronization in the activity shown on pages, widgets, templates, and menus<br>• Option to enable webpush in application settings has been added |
+| **Customers** | • Adds the ability to map an object-type claim attribute to a specific custom field<br>• Adds webpush sending capability in notification campaigns when enabled on the site related to the realm |
 
-<Badge text="Customers" type="customers" vertical="middle"/>
+### 10.0.9
 
-* Soft login, it is now possible to log in using an OTP code that is sent to by email
-* Improvements to registration and profile forms
+:::tip Release date
+October 14, 2024
+:::
 
-<Badge text="Channels" type="channels" vertical="middle"/>
+| Module | Improvements |
+|--------|---------|
+| **Core** | • Security improvements<br>• Fixes session expiration based on inactivity time |
+| **Content** | • Fixes issue when publishing entries with asset lists, now the defined order in the list is respected<br>• Fixes issue when publishing entries containing rich text in code mode<br>• Fixes parameter duplication issue when using the administrative content API |
 
-* Improved access to site variables, now accessible to be viewed by any role
-* Adds the ability to use global and site variables in the URLs of the menu items
-* Adds sorting by path of pages in table view
+### 10.0.8
 
-<Badge text="Content" type="content" vertical="middle"/>
+:::tip Release date
+September 16, 2024
+:::
 
-* Adds the possibility of specifying a description to spaces, which is shown in the overview.
-* Adds the ability of specifying a description to content types
+| Module | Improvements |
+|--------|---------|
+| **Core** | • Fixes issue with link preloading when hovering |
 
+### 10.0.7
 
-### 10.0.0 - April 03, 2024
-<Badge text="Core" type="core" vertical="middle"/>
+:::tip Release date
+September 06, 2024
+:::
 
-* Security improvements
-* Performance improvements
-* Updating dependencies
-* New administrative interface design
-* Adds support for cache invalidation when using Cloudflare for this purpose, this allows more aggressive caches to be used and to be invalidated when modifying pages, content, and modifications to media library assets
-* Adds new login alert for platform administrator users, now when a new device is logged in an email notification is sent
+| Module | Improvements |
+|--------|---------|
+| **Core** | • Security improvements |
+| **Channels** | • Fixes the search pager on sites to show the number of pages based on the maximum number of results |
+| **Content** | • Adds exact filter by `full_path` and `uuid` to the content API categories endpoint |
+| **Customers** | • Fixes synchronous segment calculation at login when enabled |
 
-<Badge text="Customers" type="customers" vertical="middle"/>
+### 10.0.6
 
-* Adds Salesforce integration, now contacts in Salesforce and users in a realm can be kept in sync, can be configured to receive and/or send changes to user information
-* Visual enhancements to registration and login forms
-* Improved creation of mailing campaigns, they can now be cloned for new mailings and the main view has been simplified
-* Removal of the none role, now all users will be account users by default
+:::tip Release date
+August 14, 2024
+:::
 
-<Badge text="Channels" type="channels" vertical="middle"/>
+| Module | Improvements |
+|--------|---------|
+| **Core** | • Security improvements |
+| **Channels** | • Fixes Liquid SDK issue when displaying JSON of a repeatable group |
+| **Content** | • Adds `search` query param to perform text search using the content API |
 
-* Adds the option to add the search engine as an item to the menu construction
-* Improved template for new sites, simpler and with reference to the framework from the beginning
-* Adds global snippets, it is now possible to define a code snippet and use it in the different sites of the account, it also includes a draft or published selector in the preview
-* Improved widget preview, now you can select the layout of the site in which to preview the widget
-* Adds the ability to preview widgets locally. When working with the Modyo CLI you can now run a preview of the widget under development and view it directly in the browser with the possibility to mount it in the different layouts contained in the target web app
-* Includes support for chunks in CLI widgets, now the platform accepts a zip file with the widget data plus the associated chunks
-* Improved widget interface when widgets are created through the CLI
-* Adds image processing when using Cloudflare, through the assets filter you can specify the size and quality of the image to display or a set of sizes as srcset, this benefits the performance of the web apps you build
-* Moves global variable settings to the channel context
-* BREAKING CHANGE: Content List and Content Featured are removed, they can be replaced with an html block and using the liquid sdk
+### 10.0.5
 
-<Badge text="Content" type="content" vertical="middle"/>
+:::tip Release date
+August 02, 2024
+:::
 
-* Adds repeatable groups in content, now in the definition of the content types there is a repeatable group option which can define multiple fields as a group that can be instantiated many times in an entry
-* Adds Media Library, now the asset manager becomes media library within a space and not globally, this allows a better management of permissions and organization of the assets uploaded to the platform, it can also be used in channels through the media library modal and give the specific context of the assets to the current application
+| Module | Improvements |
+|--------|---------|
+| **Core** | • Fixes SEO configuration error |
 
+### 10.0.4
 
+:::tip Release date
+July 30, 2024
+:::
+
+| Module | Improvements |
+|--------|---------|
+| **Core** | • Security improvements<br>• Webhooks improvements, now stages respond to hooks associated with a site, adds hooks when creating or updating an asset |
+| **Channels** | • Fixes issue when publishing a page with variable configuration and backup deletion |
+
+### 10.0.3
+
+:::tip Release date
+July 12, 2024
+:::
+
+| Module | Improvements |
+|--------|---------|
+| **Core** | • Security improvements<br>• Performance enhancements<br>• SEO configuration improvements added, it is now possible to edit the sitemap and robots from the organization's settings and automatically include sites that depend on the base URL<br>• Active sessions list added to the administrator's profile, it is also possible to close them from this view |
+| **Content** | • Fixes issue when cloning content entries with multiple languages |
+
+### 10.0.2
+
+:::tip Release date
+July 08, 2024
+:::
+
+| Module | Improvements |
+|--------|---------|
+| **Core** | • Security improvements<br>• Performance enhancements<br>• Dependency update |
+| **Customers** | • Phone format improved, country is now automatically selected via Cloudflare |
+| **Channels** | • Fixes a performance issue when using the `by_tag` filter in Liquid templates<br>• Improves template loading experience when returning to the template builder |
+| **Content** | • Adds the ability to clone spaces and content types |
+
+### 10.0.1
+
+:::tip Release date
+May 31, 2024
+:::
+
+| Module | Improvements |
+|--------|---------|
+| **Core** | • Security improvements<br>• Performance enhancements<br>• Dependency update |
+| **Customers** | • Soft login, now possible to log in via an OTP code sent to email<br>• Improvements to registration and profile forms |
+| **Channels** | • Improvements in site variable access, now accessible for viewing by any role<br>• Adds the ability to use global and site variables in menu item URLs<br>• Adds page ordering by path in table view |
+| **Content** | • Adds the ability to specify a description for spaces, which is displayed in the overview<br>• Adds the ability to add a description to content types |

@@ -22,7 +22,7 @@ Recuerda tener a mano todos los datos y certificados que se te exigen antes de c
 Para agregar un nuevo proveedor de identidad, sigue estos pasos:
 
 1. Desde el menú principal, expande **Configuración** y haz click en **Proveedores de Identidad**.
-1. Haz click en **+ Añadir**.
+1. Haz click en **Añadir**.
 1. En el dropdown, selecciona la integración que quieres añadir.
 1. Agrega la información necesaria para la integración (Nombre, ID, Secreto, etc).
 1. Haz click en **Añadir**.
@@ -86,7 +86,7 @@ Para poder integrar un inicio de sesión con OAuth2 en Modyo, necesitarás los s
 - **Placeholder para el inicio de sesión**: Texto que se mostrará en el campo de identificación como placeholder si el usuario no ha rellenado el campo
 - **Usar SSL**: Habilitar esta opción si tu servicio de autenticación OAuth2 usa una capa de sockets segura (SSL: _Secure Sockets Layer_)
 
-Para crear un cliente OAuth, ve [Cliente OAuth](/es/platform/customers/settings.html#cliente-oauth).
+Para crear un cliente OAuth, ve [Cliente OAuth](/es/platform/customers/settings#cliente-oauth).
 
 
 ## OpenID Connect
@@ -112,7 +112,7 @@ La API para obtención de access tokens delegados vía  `/auth/openidc/access_to
 
 ### Configuración de la integración
 
-1. Accede a **Configuración/Configuración de reino > Reino > Proveedores de Identidad > + Añadir > OpenID Connect** y completa **Client ID** y **Secret** con el nombre del cliente y sus credenciales.
+1. Accede a **Configuración/Configuración de reino > Reino > Proveedores de Identidad > Añadir > OpenID Connect** y completa **Client ID** y **Secret** con el nombre del cliente y sus credenciales.
 2. En Issuer, rellena con la URL del realm, por ejemplo, para el realm `my-realm` la URL es `https://test.example.com/auth/realms/my-realm`.
 3. Haz click en **Lanzar servicio de descubrimiento**. Así se completará la mayoría de las configuraciones.
 4. Configura los **Scopes** con los scopes requeridos para la aplicación. Usa `openid,email,profile` en caso de que no cuentes con scopes personalizados.
@@ -130,7 +130,7 @@ Al momento de realizar una integración específica, Modyo te permite habilitar 
 | **Tolerancia en segundos para access token**                        | Número en segundos que será usado como margen de tolerancia para obtener un access token utilizando el refresh token.                                                                                                                                                                                                           |
 | **Habilitar revocación de token**                                   | Habilita la revocación de access tokens a través de API. Para la revocación, puedes usar el endpoint del proveedor para revokar tokens.                              |
 | **Activar token de actualización (Refresh Token)**                  | Habilita el uso de tokens de actualización de OAuth 2.0. Para refrescar tu access token, puedes usar el POST endpoint del proveedor enviando como headers <tt>grant_type: refresh_token, refresh_token: **mi-refresh-token**, client_id: **mi-client-id**</tt> |
-| **Mostrar información de delegación**                               | Habilita más información en la [API de perfil de usuario](/es/platform/customers/api.html#api-de-customers) con respecto a tokens delegados. Esto es útil cuando se necesita el access token que emite el proveedor de identidad para conseguir acceso a algún otro servicio (e.g. una API externa).                           |
+| **Mostrar información de delegación**                               | Habilita más información en la [API de perfil de usuario](/es/platform/customers/api#api-de-customers) con respecto a tokens delegados. Esto es útil cuando se necesita el access token que emite el proveedor de identidad para conseguir acceso a algún otro servicio (e.g. una API externa).                           |
 | **Habilitar sincronización de claims al momento de iniciar sesión** | Habilita la sincronización de claims OpenID Connect con custom fields en Modyo. Más información en  [Sincronización de claims](#sincronizacion-de-claims).                                                                                                                                                                      |
 
 
@@ -211,4 +211,4 @@ La siguiente configuración es válida tanto para las integraciones de usuarios 
    | **Habilitar refresh token**                   | Habilita el refresco de tokens administrado por Modyo. Los access tokens serán renovados automáticamente por la plataforma si el usuario mantiene actividad en el sitio y cuenta con un refresh token válido.          |
    | **Habilitar cierre de sesión**                   | Habilita el cierre de sesión en el provider al cerrar la sesión en Modyo. Esto permite cerrar efectivamente la sesión, obligando al usuario a identificarse nuevamente en Azure AD, y deshabilitando la experiencia SSO. |
    | **Habilitar revocación de token**                | No soportado por Azure AD|
-   | **Mostrar información de delegación**                               | Habilita más información en la [API de perfil de usuario](/es/platform/customers/api.html#api-de-customers) con respecto a tokens delegados. Esto es útil cuando se necesita el access token que emite el proveedor de identidad para conseguir acceso a algún otro servicio (e.g. una API externa). |                   | **Habilitar sincronización de claims al momento de iniciar sesión** | Habilita la sincronización de claims OpenID Connect con custom fields en Modyo. Más información en  [Sincronización de claims](#sincronizacion-de-claims).               |
+   | **Mostrar información de delegación**                               | Habilita más información en la [API de perfil de usuario](/es/platform/customers/api#api-de-customers) con respecto a tokens delegados. Esto es útil cuando se necesita el access token que emite el proveedor de identidad para conseguir acceso a algún otro servicio (e.g. una API externa). |                   | **Habilitar sincronización de claims al momento de iniciar sesión** | Habilita la sincronización de claims OpenID Connect con custom fields en Modyo. Más información en  [Sincronización de claims](#sincronizacion-de-claims).               |

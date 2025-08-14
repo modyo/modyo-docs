@@ -11,9 +11,9 @@ Aquí puedes modificar tanto la experiencia visual del usuario como la configura
 
 ## General
 
-En esta sección puedes configurar aspectos generales del reino, como:
+En esta sección, puedes configurar aspectos generales del reino, como:
 
-- **Título**
+- **Título**.
 - **Identificador**: La URL de las vistas de perfil, inicio de sesión, registro y recuperación de contraseña del reino.
 - **Deshabilitar credenciales**: Al marcar esta casilla, desactivas las credenciales de Modyo en el reino y permites únicamente el acceso a través de SSO.
 
@@ -81,7 +81,7 @@ Para usar una hoja de estilos CSS personalizada en las vistas de sesión, sigue 
 3. Pega el código CSS en el editor.
 4. Haz clic en el botón **Guardar** para guardar los cambios.
 
-Haz click en el ícono de [Gestor de Archivos](/es/platform/content/asset-manager.html) para subir archivos vinculados en el código CSS.
+Haz click en el ícono de [Gestor de Archivos](/es/platform/content/asset-manager) para subir archivos vinculados en el código CSS.
 
 Es importante tener en cuenta que el editor no genera automáticamente el enlace del archivo después de subirlo. Después de cargar el archivo, haz click en el botón de pegado que se encuentra en el lateral de cada archivo para generar su enlace. Luego, copia este enlace y pégalo en el código CSS.
 
@@ -140,7 +140,7 @@ Los servicios compatibles con el ingreso a Modyo son:
 
 Debes contar con la correcta configuración del servicio asociado para que Modyo pueda conectarse con él. Asegúrate de completar todos los campos requeridos.
 
-Para más información sobre las integraciones consulta la sección de [Proveedores de Identidad](/es/platform/core/integrations/identity-providers.html)
+Para más información sobre las integraciones consulta la sección de [Proveedores de Identidad](/es/platform/core/integrations/identity-providers)
 
 
 
@@ -189,7 +189,7 @@ Una vez que hayas obtenido esta información en Salesforce, accede a **Modyo** y
 1. Ingresa al reino que deseas vincular.
 1. Accede a la configuración del reino.
 1. Haz click en **Integraciones**.
-1. Haz click en **+ Add** y selecciona la integración de Salesforce.
+1. Haz click en **Add** y selecciona la integración de Salesforce.
 1. Ingresa un nombre para la integración. Puede ser cualquier texto de al menos 3 caracteres de largo.
 1. En el campo **Sujeto**, utiliza el correo electrónico de un usuario que tienen acceso al Connected App en Salesforce.
 1. En **Issuer** ingresa tu Consumer Key.
@@ -230,20 +230,20 @@ Una vez que hayas completado los dos pasos, al hacer un cambio a un usuario de M
 
 Para asegurar la correcta sincronización de datos entre Modyo y Salesforce y mantener la integridad y consistencia de la información entre ambas plataformas existen las siguentes especificaciones:
 
-* Se permite utilizar un único "issuer" por cuenta, lo que significa que entre reinos no se pueden repetir.
-* Actualización de contacto en Salesforce:
+- Se permite utilizar un único "issuer" por cuenta, lo que significa que entre reinos no se pueden repetir.
+- Actualización de contacto en Salesforce:
   * Si la configuración de vinculación lo permite, al actualizar un contacto en Salesforce, Modyo busca el usuario correspondiente utilizando el campo "secondary_user_id".
   * Si el usuario de Modyo no existe, se crea uno nuevo, y si ya existe, se actualiza según los campos sincronizados.
   * Si el usuario de Modyo no existía previamente, su "secondary_user_id" se define como el ID del contacto de Salesforce.
-* Actualización de usuario en Modyo:
+- Actualización de usuario en Modyo:
   * Al actualizar un usuario de Modyo, se busca al contacto correspondiente en Salesforce utilizando su "ID de contacto".
   * Si el usuario de Modyo es nuevo o no tiene "secondary_user_id", se crea un nuevo contacto en Salesforce y se actualiza el campo "secondary_user_id" con el ID del contacto recién creado.
-* Creación de contacto en Salesforce:
+- Creación de contacto en Salesforce:
   * Un contacto en Salesforce solo requiere del campo "Last Name" para ser creado.
   * Cuando se crea un contacto solo con "Last Name", en Modyo se completarán el "username" y el "first name" con placeholders o marcadores de posición que indican que fueron creados producto de la vinculación.
-* Creación de usuario en Modyo:
+- Creación de usuario en Modyo:
   * Un usuario de Modyo se puede crear sin "Last Name", pero este campo, al ser requerido en Salesforce, se envia con un placeholder que indica que fue creado a partir del proceso de vinculación.
-* Los tipos primitivos de campos de Salesforce disponibles para vincular, son:
+- Los tipos primitivos de campos de Salesforce disponibles para vincular, son:
   * Boolean
   * Date
   * Datetime
@@ -254,7 +254,7 @@ Para asegurar la correcta sincronización de datos entre Modyo y Salesforce y ma
   * Long
   * Object
   * String
-* Los campos no incluidos en la lista, por ejemplo, referencias o campos compuestos, están deshabilitados en la vista de vinculación de campos. Esto indica que no están disponibles para vinculación.
+- Los campos no incluidos en la lista, por ejemplo, referencias o campos compuestos, están deshabilitados en la vista de vinculación de campos. Esto indica que no están disponibles para vinculación.
 
 #### Habilitar la API de Modyo en Salesforce.
 Para llevar a cabo este proceso, revisa la guía de desarrollador de [Connect REST API de Salesforce](https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/intro_what_is_chatter_connect.htm)
@@ -279,7 +279,7 @@ Utiliza un cliente de autenticación para enviar los tokens de acceso de tu inte
 Modyo permite seleccionar los miembros del equipo que trabajan en cada reino y así controlar el acceso a los distintos aspectos del reino.
 
 Para añadir un miembro al reino, sigue estos pasos:
-1. Haz click en el botón **+ Agregar miembro** en la parte superior derecha.
+1. Haz click en el botón **Agregar miembro** en la parte superior derecha.
 2. En el modal, selecciona a un usuario y asigna un rol.
 3. Haz click en **Agregar**.
 
@@ -337,7 +337,7 @@ Al eliminar un campo personalizable, eliminas permanentemente todos los valores 
 :::
 
 :::tip Tip
-Además de guardar valores específicos de los usuarios, puedes utilizar los valores de los campos personalizables para crear filtros de [segmentos](/es/platform/customers/segments.html) lo que te permite separar a los usuarios según sus valores personalizados.
+Además de guardar valores específicos de los usuarios, puedes utilizar los valores de los campos personalizables para crear filtros de [segmentos](/es/platform/customers/segments) lo que te permite separar a los usuarios según sus valores personalizados.
 :::
 
 ### Seguridad

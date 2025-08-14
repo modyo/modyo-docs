@@ -12,7 +12,7 @@ Once a user is identified, the platform internally manages the business events t
 
 ### Main functionalities
 
-- **[User Management](/en/platform/customers/users.html)**: Implement custom authentication flows using the integrated system or by connecting it with Single Sign-On (SSO) systems.
-- **[Precise Segmentation](/en/platform/customers/segments.html)**: Customize the user experience through the use of dynamic segments.
-- **[Dynamic Forms](/en/platform/customers/forms.html)**: Collect key information from your users.
-- **[Messaging](/en/platform/customers/messaging.html)**: Send notifications and specific email campaigns to maintain an active connection with your users.
+- **[User Management](/en/platform/customers/users)**: Implement custom authentication flows using the integrated system or by connecting it with Single Sign-On (SSO) systems.
+- **[Precise Segmentation](/en/platform/customers/segments)**: Customize the user experience through the use of dynamic segments.
+- **[Dynamic Forms](/en/platform/customers/forms)**: Collect key information from your users.
+- **[Messaging](/en/platform/customers/messaging)**: Send notifications and specific email campaigns to maintain an active connection with your users.

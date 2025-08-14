@@ -4,20 +4,37 @@ search: true
 
 # Payments
 
-Modyo also shows a statistics of transactions within the site, which customers have made during the last time.
+The Payments dashboard provides a summary of commercial transactions processed through your platform.
 
-These numbers can be seen according to Date, Order Status and Payment Method.
+### Key Metrics
 
-### User activity
+- **Total Orders**: Number of transactions in the period
+- **Items Sold**: Total products or services sold
+- **Total Revenue**: Monetary value of successful transactions
 
-In this section you can see the number of orders entered, the items sold and the income received during that time, along with a comparison to the previous period.
+### Available Filters
 
-The states of the orders are also dynamically plotted, in order to make a comparison over time.
+- Date range
+- Order status
+- Payment method
 
-### Orders by Payment
+### Transaction Activity
 
-This graphic allows us to compare the use of the different types of payment methods that we have installed within our e-commerce, through the amount of transactions that have been made through them.
+Chart showing order evolution over time with comparison to the previous period.
 
-### Orders by Current Status
+### Order Status
 
-Finally, you can see the effectiveness of the movements of an e-commerce, with the status of the orders of the last time, showing the number of movements in the pending payment status, paid, rejected, canceled, awaiting confirmation, failed and completed.
+Visualization of order distribution by status:
+- Completed
+- Payment pending
+- Rejected
+- Canceled
+- Processing
+
+### Payment Methods
+
+Chart showing transaction distribution by payment method used:
+- Credit cards
+- Debit cards
+- Transfers
+- Other available methods

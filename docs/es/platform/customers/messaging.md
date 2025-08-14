@@ -8,7 +8,7 @@ La funcionalidad de **Mensajería** en Modyo permite crear campañas masivas par
 
 En Modyo, puedes enviar mensajes a los usuarios a través de dos canales:
 
-- **Correos**: Envía campañas a las casillas de emails registradas en los perfiles de los usuarios. No es necesario ingresar a la plataforma para  ver los mensajes.
+- **Correos**: Envía campañas a las casillas de emails registradas en los perfiles de los usuarios. No es necesario ingresar a la plataforma para ver los mensajes.
 - **Notificaciones**: Envía notificaciones a través del sistema de mensajería interno. Los usuarios deben ingresar a la plataforma para visualizarlos.
 
 ## Campañas
@@ -33,7 +33,7 @@ Si borras una campaña, no podrás recuperarla, y su registro se eliminará del 
 :::
 
 ## Crear una campaña
-Las campañas te permiten contactar directamente a tus usuarios mediante correo electrónico o notificaciones directas, incluyendo soporte para notificaciones WebPush. Para generar una nueva campaña haz click en el botón **+ Nueva Campaña**
+Las campañas te permiten contactar directamente a tus usuarios mediante correo electrónico o notificaciones directas, incluyendo soporte para notificaciones WebPush. Para generar una nueva campaña haz click en el botón **Nueva Campaña**
 
 ### Campañas de Correo
 
@@ -43,7 +43,7 @@ Las campañas de correo te permiten contactar a los usuarios a través de email.
 - **Tipo**: Selecciona **Correo** para activar esta opción.
 - **Asunto**: Texto que aparecerá en la línea de asunto del mensaje.
 - **Responder a**: Dirección de correo electrónico para las respuestas de los usuarios.
-- **Plantilla**: Selecciona una [plantilla](/es/platform/customers/messaging.html#plantillas). Si no seleccionas una, se enviará una plantilla en blanco.
+- **Plantilla**: Selecciona una [plantilla](/es/platform/customers/messaging#plantillas). Si no seleccionas una, se enviará una plantilla en blanco.
 - **Habilitar segmentación**: Selecciona un segmento específico o deja esta opción desmarcada para enviar el mensaje a todos los usuarios.
 
 Haz clic en **Guardar y continuar** para abrir el editor WYSIWYG, donde puedes personalizar el contenido de la plantilla seleccionada. Una vez editado, selecciona **Guardar** para confirmar los cambios y acceder a la vista **Estado de envío**.
@@ -110,7 +110,7 @@ Si enviaste la campaña por notificación puedes visualizar:
 - **Enviados**: Número de notificaciones enviadas.
 - **Abiertos**: Número de notificaciones abiertas.
 
-Si envías una campaña por [segmentos](/es/platform/customers/segments.html) puedes ver a cuál grupo de usuarios le llegó la campaña. Si esta sección no aparece, es debido a que la campaña fue enviada a todos los contactos.
+Si envías una campaña por [segmentos](/es/platform/customers/segments) puedes ver a cuál grupo de usuarios le llegó la campaña. Si esta sección no aparece, es debido a que la campaña fue enviada a todos los contactos.
 
 :::warning Atención
 Si no has enviado aún la campaña, los valores de esa campaña aparecerán en cero.
@@ -128,7 +128,7 @@ Hacer click en el nombre de una campaña te lleva a la sección Entregas de Mens
 
 En la sección Entregas de mensajes, encuentras la lista de usuarios a los cuales les ha llegado un mensaje desde la plataforma. Aquí puedes ver una lista de todos los usuarios que han recibido un correo o notificación única, denominados "Sin Campaña".
 
-"Sin Campaña" se refiere a un correo o notificación enviado específicamente a un usuario en una fecha determinada. Estos mensajes no se consideran Campañas, ya que están personalizados y contienen información que no se envía a otros usuarios. Para obtener más información sobre cómo funcionan estos mensajes, consulta la [API de Administración](/es/platform/core/api.html).
+"Sin Campaña" se refiere a un correo o notificación enviado específicamente a un usuario en una fecha determinada. Estos mensajes no se consideran Campañas, ya que están personalizados y contienen información que no se envía a otros usuarios. Para obtener más información sobre cómo funcionan estos mensajes, consulta la [API de Administración](/es/platform/core/api).
 
 En la vista inicial los mensajes se ordenan en estas categorías:
 
@@ -154,7 +154,7 @@ En la sección **Plantillas**, puedes crear y administrar diseños de correo par
 
 ### Crear una plantilla
 
-- Haz clic en **+ Nueva Plantilla**.
+- Haz clic en **Nueva Plantilla**.
 - Asigna un nombre descriptivo a la plantilla.
 - Utiliza el editor WYSIWYG para personalizar el diseño.
 
@@ -170,7 +170,7 @@ Cada plantilla tiene un botón de edición con las siguientes acciones:
 :::warning Atención
 Cuando haces una campaña, recuerda agregar en el footer toda la información legal que exige la regulación de tu país en cuanto a correos masivos.
 
-Para automatizar la inserción del Footer, lee [Configuración de Realms](/es/platform/customers/settings.html#correos)
+Para automatizar la inserción del Footer, lee [Configuración de Realms](/es/platform/customers/settings#correos)
 :::
 
 ## Desinscripciones
@@ -179,7 +179,7 @@ En esta sección, encuentras una lista de los usuarios que se han dado de baja d
 
 Usa la barra de búsqueda para encontrar un usuario específico. Puedes ingresar su nombre o correo electrónico.
 
-Cuando haces click en el nombre del usuario, puedes ver la [ficha de usuario](/es/platform/customers/users.html#ficha-de-usuarios) con todas las actividades que ha hecho en la plataforma.
+Cuando haces click en el nombre del usuario, puedes ver la [ficha de usuario](/es/platform/customers/users#ficha-de-usuarios) con todas las actividades que ha hecho en la plataforma.
 
 Al final de cada nombre de usuario hay un botón que te permite reinscribir al usuario a cualquier campaña del sitio.
 

@@ -6,7 +6,7 @@ search: true
 
 El **SDK de Modyo** es una librería que facilita la interacción de aplicaciones basadas en JavaScript con la API pública de Modyo.
 
-Mediante el SDK se puede obtener, filtrar, y ordenar tu contenido creado para poder aprovechar por completo las capacidades de la API Headless.
+Mediante el SDK, se puede obtener, filtrar y ordenar tu contenido creado para aprovechar por completo las capacidades de la API Headless.
 
 Asimismo, el SDK de Modyo permite obtener información del usuario final que ya haya iniciado sesión en la plataforma para personalizar aún más la interacción de este con tu sitio.
 

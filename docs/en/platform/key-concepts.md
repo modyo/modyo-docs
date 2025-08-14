@@ -2,116 +2,117 @@
 search: true
 ---
 
-# Key concepts
+# Key Concepts
 
-Below you will find a brief explanation of some of the key concepts related to the Modyo Platform.
+In this section, you will find a brief explanation of the key concepts related to the Modyo Platform.
 
 
 ### Multi-Site Architecture
 
 Modyo implements an easy-to-manage Multi-Site architecture. From a single account, you can create multiple public or private sites.
 
-### Customers interact on sites depending on context
+### Contextual Customer Interaction
 
-Modyo provides you with different authentication mechanisms, from OpenID Connect to OAuth2 and Google, so you can easily authenticate your customers.
+Modyo offers several authentication mechanisms, such as OpenID Connect, OAuth2 and Google, to easily authenticate your customers. Customers can interact in different sites and contexts, maintaining a central profile for efficient administration.
 
-Clients can interact in different sites and in different contexts, maintaining the same central profile that facilitates administration tasks.
+### CMS and Headless CMS
 
-### Both CMS and Headless CMS
+Modyo Content allows you to create and publish content, with the flexibility to add fields for custom structures.
 
-Modyo Content allows you to create and publish content. You can add fields to define custom content structures easily. Modyo Channels allows you to work with HTML templates and reusable Front End components called widgets.
+Modyo Channels works with HTML templates and reusable frontend components called widgets.
 
-All structured content that you publish generates an equivalent JSON file that can feed any other site or application. These are served through the Content API.
+All the structured content that is published generates a JSON file that you can feed to another site or application through the API.
 
-### An integration platform
 
-Modyo is designed to facilitate the creation of digital solutions integrated with the central systems of enterprises. With this in mind, we keep our focus on facilitating the development of widgets and their integration with APIs.
+### Integration Platform
 
-The widget builder helps Back and Front End developers to work together to create digital experiences connected to APIs. Our governance model allows digital teams to easily preview and publish their work to their digital channels in record time.
+Modyo is designed to facilitate the creation of digital solutions integrated with companies' core systems. With this in mind, we remain focused on facilitating the development of widgets and the connection with APIs.
 
-### Widgets vs Portlets
+The widget generator helps back and frontend developers to work together to create digital experiences connected to APIs, and the governance model allows them to quickly preview and publish work.
 
-Most of our competitors chose the old _portlets_ model (server-side development model). This is slower and requires publishing to production every time a change is made, making digital work more complex.
+### Widgets
 
-Modyo is based on widgets and a widget builder that tracks every change in a version control system. Digital work is: easy to audit, moved to the next stage, and published to make it quickly available to your customers.
+Most companies in the market work with an old _portlets_ model where the development is server-side and the process is slower and more complex.
 
-### Our widget generator
+Modyo is widget-based and tracks every change in a version control system, streamlining digital work, facilitating auditing and accelerating availability for your customers.
 
-With Modyo's widget builder you can develop any type of widget you require, where you can include components in HTML, CSS, and Javascript that connect to APIs. These become part of your widget library where you'll be able to reuse them when you need them.
+### Widget Generator
 
-The widget builder enhances the digital experience by making Front End development easy to manage, quick to send to production, and easy to audit, providing better security and goal expectations.
+The Modyo widget generator is a robust tool that simplifies frontend development, publishing, and auditing. With this tool, you can create personalized, high-quality digital experiences, quickly and easily.
+
+With the widget generator, you can create any type of widget, including HTML, CSS and JavaScript components connected to APIs, and you can save the widgets in your library for reuse on other sites.
 
 ### Prefabricated Widgets for Financial Services
 
-Modyo Banking provides prefabricated financial widgets to accelerate the development of your _retail_ and _wealth management_ banking experiences.
+Modyo Banking provides pre-made financial widgets to accelerate the development of your _retail_ and _wealth management_ banking experiences. These widgets are designed to meet the specific requirements of financial institutions.
 
-A separate license model applies to Modyo Banking.
+Modyo Banking requires a dedicated license.
 
-### Liquid Markup and APIs
+### Liquid Markup
 
-Modyo uses Liquid Markup within the platform to give Front and Back End developers a rich language that allows them to add more functionality when building digital experiences. Liquid Markup is used by leading companies to easily add more logic to the Front End code.
+Modyo uses Liquid Markup to enrich the front and backend development language, to add more functionality to digital experiences.
 
-APIs enhance our platform and make it easier to build solutions.
+### APIs
 
+Modyo provides an open API that allows you to integrate Modyo with other systems and tools.
 
-### Prepared for the future: PWAs
-Progressive Web Applications will be the future of the Web, as they improve the way applications are distributed to end users and give the Web browser more prominence as an execution platform. Within each channel in Modyo, you can control the definitions of _manifest.json_ and _Service Workers_, fundamental technical enablers when implementing PWAs.
+### Progressive Web Apps or Progressive Web Applications
+Progressive Web Applications (PWAs) are the future of the Web, they improve user interaction with a site and give more prominence to the web browser as an execution platform.
 
+With Modyo you can control the definitions of _manifest.json_ and the _Service Workers_ on each site, essential for implementing PWAs.
 
 ### Security, Governance, and Agility
 
-Modyo has an architecture with integrated version control of all the published code. This allows you to easily review the code changes between one version and another of your digital products before publishing.
+In Modyo, all published code generates versions, allowing you to easily review changes. Agility is achieved with the activation of the Team Review, maintaining a balance between governance and agility.
 
-Agility occurs when you have a greater predictability of your team's capacity, following a model that balances governance and agility. When Team Review is activated in the platform within Channels, two people (a Reviewer and an Approver) can change the status of digital resources to "Published" through a formal, easy-to-handle process. You can also monitor your team's capacity within Insights.
-
-### Glossary
-The following definitions correspond to commonly used terms between the different Modyo applications.
+## Glossary
+Here are some key terms in Modyo and their definitions:
 
 #### General
 
-* [**CORS: **](/en/platform/core/security.html #access-control-cross-origin-resource-sharing-cors) Cross Origin Resource Sharing - Allows you to share resources in different domains.
-* **Account:** The access point to all of Modyo's features.
-* [**Team:**](/en/platform/core/roles.html#equipo) All users have access to the Modyo admin and can be assigned roles and permissions.
-* [**Integrations:**](/en/platform/core/integrations) This is the way to delegate or federate the initial authentication process for users or team members.
-* [**Password Policy:**](/en/platform/core/security.html#password-policy) Allows you to define rules that team members must comply with when creating or modifying their passwords.
-* [**Team review:**](/en/platform/core/key-concepts.html#team-review) Review flow for versioned elements in which approval can be requested from multiple team members.
-* [**Site:**](/en/platform/channels/sites.html) It is the tool for creating digital channels within the platform. Site operation encompasses the entire development, design, and flow of navigation.
-* [**Editable version:**](/en/platform/core/key-concepts.html#editable) This is the version that you can modify and where you can preview versioned elements.
-* [**Global variables:**](/en/platform/core/key-concepts.html#global-variables) These are elements that you can define globally and reuse in different sites.
-* [**Scheduled version:**](/en/platform/core/key-concepts.html#scheduled) It is the version that is ready to be published at a specific date and time.
-* [**Published version: **](/en/platform/core/key-concepts.html#published) It is the visible or productive version of the versioned elements. This version cannot be modified.
-* [**Backup version:**](/en/platform/core/key-concepts.html#backups) These are the versions that have been published before.
-* [**Webhook:**](/en/platform/core/webhooks.html) Automatically sends information to an external system when a certain event occurs.
+- [**CORS**:](/en/platform/core/security#access-control-cross-origin-resource-sharing-cors) Cross Origin Resource Sharing - Allows you to share resources in different domains.
+- **Account**: Access point to all Modyo features.
+- [**Team**:](/en/platform/core/roles#team) All users with access to the Modyo admin. They can be assigned roles and permissions.
+- [**Integrations**:](/en/platform/core/integrations) Way to delegate or federate the process of initiating authentication of users or team members.
+- [**Password Policy**:](/en/platform/core/security#password-policy) Allows you to define rules for creating or modifying passwords.
+- [**Team review**:](en/platform/core/key-concepts.html#team-review) Review flow for versioned items. Approval can be requested from multiple team members.
+- [**Site**:](/en/platform/channels/sites) Tool for creating digital channels within Modyo. Site operation encompasses the development, design and flow of navigation.
+- [**Editable version**:](/en/platform/core/key-concepts#editable) The version that you can modify and preview of the versioned elements.
+- [**Global variables**:](en/platform/core/key-concepts.html#global-variables) Elements that you can define globally and reuse in different places.
+- [**Scheduled version**:](en/platform/core/key-concepts.html#scheduled) Version that will be published at a certain date and time.
+- [**Published version**:](en/platform/core/key-concepts.html#published) Visible or productive version of the versioned elements. This version cannot be modified.
+- [**Backup version**:](en/platform/core/key-concepts.html#backups) Previously released versions.
+- [**Webhook**:](/en/platform/core/webhooks) Automatically sends information to an external system when a certain event occurs.
 
 
 #### Modyo Content
 
-* [**Assets:**](/en/platform/content/asset-manager.html#about-the-interface) These are the different files that are uploaded to the platform to be used in content and sites.
-* [**Field:**](/en/platform/content/types.html#fields) It is the atomic unit with which different types of content are formed.
-* [**Categories:**](/en/platform/content/entries.html#categories) They are a tree structure that allows you to order the contents of your spaces.
-* [**Entry:**](/en/platform/content/entries.html) It is a set of values associated with the different fields defined in the content type.
-* [**Space:**](/en/platform/content/spaces.html) Resource repository where team members can define different structures (types) of content, create, and publish entries.
-* **Tags:** They allow you to sort and filter entries freely and without restrictions.
-* [**Content type:**](/en/platform/content/types.html) It is a structure with fields that allows you to define the different contents of your business.
+- [**Assets**:](/en/platform/content/asset-manager#about-the-interface) Files uploaded to the platform for use in content and sites.
+- [**Field**:](/en/platform/content/types#fields) Basic unit for forming content types.
+- [**Categories**:](en/platform/content/entries.html#categories) Hierarchical structure to organize the content of your spaces.
+- [**Entry**:](/en/platform/content/entries) Set of values associated with fields defined in the content type.
+- [**Space**:](/en/platform/content/spaces) Resource repository where team members define types of content, create and publish entries.
+- **Tags**: Labels for sorting and filtering posts.
+- [**Content type**:](/en/platform/content/types) Structure with fields that allows you to define different contents.
 
 
 #### Modyo Channels
 
-* [**Domains:**](/en/platform/channels/sites.html#domains) Allows you to change the URL and security certificates of your site.
-* [**Meta tags: **](/en/platform/channels/pages.html#meta-tags) Allows you to customize the meta tags for your pages and improve the way search engines index your pages.
-* [**Navigation:**](/en/platform/channels/navigation.html) Allows you to modify the main menu of your site with an easy-to-use interface.
-* [**Page:**](/en/platform/channels/pages.html) Pages are what allows you to create a structure for your site, where you can add unstructured content and customize the paths where that content is displayed.
-* [**PWA:**](/en/platform/channels/sites.html#pwa) Allows you to configure your site's  _serviceworker_ and manifest site so that you can use it offline.
-* [**SEO: **](/en/platform/channels/sites.html#seo) Allows you to configure the way your site appears to indexing robots.
-* [**Templates:**](/en/platform/channels/templates.html) They are the foundation of your site and define the basic structure of your site's pages.
-* [**Widget:**](/en/platform/channels/widgets.html) A reusable functionality package containing HTML, JavaScript, and CSS that can be used on different pages.
+- [**Domains**:](/en/platform/channels/sites#domains) You can modify the URL of your site, as can the security certificates of your site.
+- [**Meta tags**:](/en/platform/channels/pages#meta-tags) Customize your meta tags to improve search engine indexing.
+- [**Navigation**:](/en/platform/channels/navigation) Allows you to modify the main menu of your site through a simple interface.
+- [**Page**:](/en/platform/channels/pages) They allow you to create a structure for your site. You can add unstructured content and customize the routes where the content is displayed.
+- [**PWA**:](/en/platform/channels/sites#pwa) Configure your site's _serviceworker_ and manifest for offline use.
+- [**SEO**:](/en/platform/channels/sites#seo) Configure how your site looks to indexing robots.
+- [**Templates**:](/en/platform/channels/templates) They are the foundation of your site and define the basic structure of the pages.
+- [**Widget**:](/en/platform/channels/widgets) Reusable functionality package with HTML, JavaScript and CSS that you can use on different pages.
 
 #### Modyo Customers
 
-* [**Campaigns:**](/en/platform/customers/messaging.html#campaigns) It is the definition of a communication channel with the user, which allows you to reach them through emails and notifications.
-* [**Custom field:**](/en/platform/customers/realms.html#custom-fields) Allows you to add custom attributes to the user profile.
-* [**Filters:**](/en/platform/customers/segments.html#filters) They are the unit that allows you to build segments.
-* [**Form:**](/en/platform/customers/forms.html) Allows you to capture data from your users on your sites.
-* [**Messaging:**](/en/platform/customers/messaging.html) Allows you to control direct communication channels with your users.
-* [**Segment:**](/en/platform/customers/segments.html) Allows you to add and group your users using filter groups with different conditions.
-* [**User:**](/en/platform/customers/realms.html) The person who accesses and registers on Modyo sites.
+- [**Campaigns**:](/en/platform/customers/messaging#campaigns) They define the communication channel with the user. They allow you to reach your users through emails and notifications.
+- [**Custom field**:](/en/platform/customers/settings#custom-fields) Allows you to add custom attributes to the user profile.
+- [**Filters**:](/en/platform/customers/segments#filters) Unit that allows you to build segments.
+- [**Form**:](/en/platform/customers/forms) To capture data from your users on your sites.
+- [**Messaging**:](/en/platform/customers/messaging) Control the channels of direct communication with your users.
+- [**Segment**:](/en/platform/customers/segments) Allows you to add and group users using filter groups with different conditions.
+- [**User**:](/en/platform/customers/users) Who accesses and registers on Modyo sites.

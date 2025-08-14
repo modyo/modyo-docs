@@ -4,7 +4,7 @@ search: true
 
 # Entradas
 
-Las entradas son la forma de desplegar a tus sitios el contenido creado en un espacio. Puedes ver tus entradas desde los sitios creados en Modyo Platform, en el módulo de Channels, o en sitios externos mediante nuestra API.
+Las entradas son la forma de desplegar en tus sitios el contenido creado en un espacio. Puedes ver tus entradas desde los sitios creados en Modyo Platform, en el módulo de Channels, o en sitios externos mediante nuestra API.
 
 En un espacio, las entradas se separan por tipos de contenido. El tipo de contenido define la estructura básica y los requerimientos y validaciones necesarios para que una entrada pueda publicarse.
 
@@ -19,13 +19,13 @@ Las columnas para ordenar la lista de entradas son:
 
 - **Estado**: Borrador, publicado, programado o archivado.
 - **Nombre**: Nombre del contenido.
-- **Tipo**: [Tipo](/es/platform/content/types.html) de contenido.
+- **Tipo**: [Tipo](/es/platform/content/types) de contenido.
 - **Actualizado**: Fecha de la última actualización guardada del contenido.
 - **Autor**: Nombre del autor del contenido.
 
 También puedes filtrar la vista con filtros predeterminados:
 
-- **Tipo**: [Tipo](/es/platform/content/types.html) de contenido.
+- **Tipo**: [Tipo](/es/platform/content/types) de contenido.
 - **Estado**: Borrador, publicado, programado y archivado.
 - **Categoría**: Categoría asignada a las entradas.
 - **Idioma** Idioma del contenido.
@@ -77,7 +77,7 @@ Para crear una entrada, sigue estos pasos:
 1. En el menú lateral selecciona Content.
 1. Selecciona tu espacio.
 1. Haz click en Entradas
-1. Haz click en **+ Nueva Entrada**.
+1. Haz click en **Nueva Entrada**.
 1. Selecciona el tipo de contenido, nombre e identificador.
 1. Haz click en **Crear**.
 1. Una vez creada la entrada, puedes incluir el contenido que requieras. La entrada tendrá la estructura definida en el tipo de contenido que seleccionaste.
@@ -126,7 +126,7 @@ Para publicar una entrada en Modyo, sigue estos pasos:
 1. En la parte superior de la pantalla, haz click en **Guardar**.
 1. Si tienes permisos de administrador, el botón de **Guardar** cambia a **Publicar** y puedes proceder a publicar tu entrada. De lo contrario, otro usuario con permisos de Administrador puede hacerlo. Si está activa la revisión en equipo, pasará por ese proceso antes de publicarse.
 
-Puedes encontrar más información de revisión en equipo en la sección de [Conceptos Clave](https://docs.modyo.com/es/platform/core/key-concepts.html) de nuestra documentación.
+Puedes encontrar más información de revisión en equipo en la sección de [Conceptos Clave](https://docs.modyo.com/es/platform/core/key-concepts) de nuestra documentación.
 
 
 ### Despublicar una entrada
@@ -206,7 +206,7 @@ Para crear una categoría:
 
 1. Haz click en Content
 1. Selecciona Categorías
-1. Haz click en el botón **+ Nueva categoría**.
+1. Haz click en el botón **Nueva categoría**.
 1. En la ventana emergente, ingresa el nombre, la ruta y, opcionalmente, una categoría padre.
 
 Cuando asignas una entrada a una categoría, Modyo agrega el identificador como prefijo a la URL de la entrada, por ejemplo:

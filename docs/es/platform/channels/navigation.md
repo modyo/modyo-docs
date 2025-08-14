@@ -4,60 +4,60 @@ search: true
 
 # Navigation
 
-La navegación es la forma más rápida de armar un listado de elementos para entregarle a tus usuarios un fácil acceso a los puntos clave de tu sitio.
+La navegación permite organizar y presentar un listado de elementos para facilitar el acceso de los usuarios a los puntos clave de tu sitio.
 
-En esta sección encuentras un listado anidado de elementos, que corresponden a los elementos que aparecerán en el sitio al usar el tag <span v-pre>`{% menu %}`</span> en [Plantillas](/es/platform/channels/templates.html).
+Esta sección describe un listado anidado de elementos que aparecerán en el sitio al usar el tag <span v-pre>`{% menu %}`</span> en [Plantillas](/es/platform/channels/templates).
 
-Navegación sólo permite tres niveles de profundidad, por lo que puedes tener un listado principal y hasta dos sub elementos anidados en cada uno de los items principales. Por defecto al crear un sitio, Modyo incluye una plantilla y un menú básico que puedes modificar a tus necesidades.
+La navegación solo permite tres niveles de profundidad: un listado principal y hasta dos subelementos anidados en cada uno de los ítems principales. Por defecto, al crear un sitio, Modyo incluye una plantilla y un menú básico que puedes modificar según tus necesidades.
 
 En la parte superior de la vista, encontrarás el estado de publicación del menú:
 
-- **Publicado**: Este estado aparece luego de haber hecho una publicación y cuando las versiones editable y publicada son iguales.
-- **Cambios pendientes**: Este estado aparece si es que ya hay una versión publicada, pero hay cambios pendientes de publicar en tu versión editable.
-- **En revisión**: Este estado aparece cuando esté habilitada la [Revisión en Equipo](/es/platform/core/key-concepts.html) y se haya enviado a revisión la versión editable.
-- **Aprobado**: Este estado aparece cuando esté habilitada la [Revisión en Equipo](/es/platform/core/key-concepts.html) y si se cumplieron las condiciones de revisión del elemento. Si se encuentra en este estado, tus plantillas ya pueden ser publicados.
+- **Publicado**: Este estado aparece después de haber hecho una publicación y cuando las versiones editable y publicada son iguales.
+- **Cambios pendientes**: Este estado aparece si ya hay una versión publicada, pero hay cambios pendientes de publicar en tu versión editable.
+- **En revisión**: Este estado aparece cuando esté habilitada la [Revisión en Equipo](/es/platform/core/key-concepts) y se haya enviado a revisión la versión editable.
+- **Aprobado**: Este estado aparece cuando esté habilitada la [Revisión en Equipo](/es/platform/core/key-concepts) y si se cumplieron las condiciones de revisión del elemento. Si se encuentra en este estado, tus plantillas ya pueden ser publicadas.
 
 En la parte superior derecha, encuentras la última fecha de publicación y las acciones disponibles:
 
-**Vista previa**: Al hacer click en este ícono se abre una nueva pestaña con el modo vista previa del menú, donde puedes visualizar todos los cambios.
+**Vista previa**: Al hacer clic en este icono, se abre una nueva pestaña con el modo vista previa del menú, donde puedes visualizar todos los cambios.
 
 :::warning Atención
-Puedes previsualizar los cambios como usuario sin sesión o usuario con sesión de Modyo. Para esto, es recomendable iniciar o cerrar la sesión de Modyo en el sitio antes de entrar al modo vista previa, Esto debido a que iniciar o cerrar sesión dentro del modo de vista previa puede generar errores de seguridad como  _x-frame-options_ o _mixed-content_, dependiendo de la configuración de dominios personalizados y SSL del sitio.
+Puedes previsualizar los cambios como usuario sin sesión o usuario con sesión de Modyo. Para esto, es recomendable iniciar o cerrar la sesión de Modyo en el sitio antes de entrar al modo vista previa. Esto debido a que iniciar o cerrar sesión dentro del modo de vista previa puede generar errores de seguridad como _x-frame-options_ o _mixed-content_, dependiendo de la configuración de dominios personalizados y SSL del sitio.
 :::
 
 :::warning Atención
 El menú que has creado solo se visualizará en una página si lo agregas a través de una plantilla publicada. De lo contrario, el menú no se solicitará y no aparecerá en la página.
 :::
 
-**Diferencias**: Haz click aquí para acceder a la [vista de diferencias](/es/platform/core/key-concepts.html#revertir-un-cambio), en la cual puedes comparar los cambios entre diferentes versiones de tu menú.
+**Diferencias**: Haz clic aquí para acceder a la [vista de diferencias](/es/platform/core/key-concepts#revertir-un-cambio), en la cual puedes comparar los cambios entre diferentes versiones de tu menú.
 
 Por defecto, inicias comparando la versión publicada con la versión editable. Usa los selectores de versiones para comparar con versiones de respaldo.
 
 :::tip Tip
 Cada vez que publicas una versión, la versión que estaba publicada pasa a ser una versión de respaldo.
 
-Por defecto se guardan hasta 20 respaldos de tal forma que los veinte respaldos más recientes se pueden comparar, restaurar, y hacer rollback.
+Por defecto, se guardan hasta 20 respaldos, de tal forma que los veinte respaldos más recientes se pueden comparar, restaurar y hacer rollback.
 
-Para más información sobre el versionamiento, revisa la sección de [Versionado](/es/platform/core/key-concepts.html#versionado).
+Para más información sobre el versionamiento, revisa la sección de [Versionado](/es/platform/core/key-concepts#versionado).
 :::
 
-**Actividad/Comentarios**: Solo aparece habilitada si tienes activada la [revisión en equipo](/es/platform/core/key-concepts.html) habilitada. Al hacerle click, despliega una barra lateral con el historial de actividad y comentarios del menú.
+**Actividad/Comentarios**: Solo aparece habilitada si tienes activada la [revisión en equipo](/es/platform/core/key-concepts). Al hacer clic, despliega una barra lateral con el historial de actividad y comentarios del menú.
 
-Al final de la barra lateral, ves una caja de texto donde puedes escribir un comentario. Junto a cada actividad, puedes hacer click en _ver detalle_ para mostrar la información completa de ese registro de actividad.
+Al final de la barra lateral, ves una caja de texto donde puedes escribir un comentario. Junto a cada actividad, puedes hacer clic en _ver detalle_ para mostrar la información completa de ese registro de actividad.
 
 ## Crear un Menú
 Para crear un Menú, sigue estos pasos:
 
-1. Dentro del menú principal de Modyo Platform, expande Channels y haz click en Sitios.
-2. Selecciona el sitio que desees agregar un nuevo menú.
-3. Haz click en **Navegación**.
-4. Haz click en **+ Nuevo Menú**.
-5. Llena el nombre e identificador y haz click en **Crear**.
-6. Personaliza el menú agregando o editando items.
-7. Una vez terminado, haz click en **Publicar**.
+1. Dentro del menú principal de Modyo Platform, expande Channels y haz clic en Sitios.
+2. Selecciona el sitio al que desees agregar un nuevo menú.
+3. Haz clic en **Navegación**.
+4. Haz clic en **Nuevo Menú**.
+5. Ingresa el nombre e identificador y haz clic en **Crear**.
+6. Personaliza el menú agregando o editando ítems.
+7. Una vez terminado, haz clic en **Publicar**.
 
 :::tip Tip
-Tu menú en este momento ya es público pero no se manda a llamar. Se necesita usar una plantilla para que se despliegue en pantalla. Modyo ofrece un snippet de uso general en **Snippets, General, menu** y es llamado en la plantilla `base` usando <pre v-pre>`{% snippet 'shared/general/menu' %}`</pre>.
+Tu menú en este momento ya es público, pero no se manda a llamar. Se necesita usar una plantilla para que se despliegue en pantalla. Modyo ofrece un snippet de uso general en **Snippets, General, menu** y es llamado en la plantilla `base` usando <pre v-pre>`{% snippet 'shared/general/menu' %}`</pre>.
 :::
 
 **Acción principal**
@@ -65,12 +65,12 @@ Tu menú en este momento ya es público pero no se manda a llamar. Se necesita u
 - **Guardar**: Guarda todos los cambios del menú.
 - **Enviar a revisión**: Cambia el estado del menú a "Esperando revisión". En este estado sigues haciendo cambios, pero cada cambio será notificado vía correo a los revisores asignados.
 - **Rechazar**: Vuelve al estado "En edición", notificando a los revisores que el elemento fue rechazado.
-- **Publicar**: Una vez que el menú fue aprobado, podrás ir a la vista de [publicación conjunta](/es/platform/channels/sites.html#revision-y-publicacion-conjunta) para publicar tu navegación.
+- **Publicar**: Una vez que el menú fue aprobado, podrás ir a la vista de [publicación conjunta](/es/platform/channels/sites#revision-y-publicacion-conjunta) para publicar tu navegación.
 
-En la sección lateral derecha puedes ver una barra que cambia de acuerdo al ítem seleccionado en el área principal. En esta sección puedes ver las opciones:
+En la sección lateral derecha, puedes ver una barra que cambia de acuerdo al ítem seleccionado en el área principal. En esta sección, puedes ver las opciones:
 
 - **Nombre**: Nombre del elemento que aparecerá en el sitio.
-- **Page asociado**: Se puede asociar directamente a una página o a una URL personalizada.
+- **Página asociada**: Se puede asociar directamente a una página o a una URL personalizada.
 - **URL**: Si escogiste una URL personalizada en el elemento anterior, tienes diferentes opciones para configurar este ítem:
 	- HTTP(s): Apunta a una dirección usando HTTP(s). Ejemplos:
 		- http://www.example.com
@@ -79,33 +79,33 @@ En la sección lateral derecha puedes ver una barra que cambia de acuerdo al ít
 		- relative-page
 		- /relative-page
 		- #anchor
-	- Teléfonos: Genera una liga con el URI `tel`. Ejemplos:
+	- Teléfonos: Genera un enlace con el URI `tel`. Ejemplos:
 		- tel:+569-123-45678
 		- tel:912345678
-	- SMS: Genera una liga con el URI `sms`. Ejemplos:
+	- SMS: Genera un enlace con el URI `sms`. Ejemplos:
 		- sms:+569-123-45678
 		- sms:+569-123-45678,9-123-45678
 		- sms:+569-123-45678,9-123-45678?body=hello%20there&param1=a%20value
-	- Email: Genera una liga con el URI `mailto`. Ejemplos:
+	- Email: Genera un enlace con el URI `mailto`. Ejemplos:
 		- mailto:info@example.com?subject=subject&cc=cc@example.com
-- **Abrir en pestaña nueva**: Le añade el atributo `target='blank'` al elemento HTML del item del menú, para que al hacerle click, se abra en una pestaña nueva.
-- **Privado**: Hace que el elemento seleccionado aparezca visible solo cuando hay una sesión de usuario activa en el sitio.
+- **Abrir en pestaña nueva**: Añade el atributo `target='blank'` al elemento HTML del ítem del menú, para que al hacer clic, se abra en una pestaña nueva.
+- **Privado**: Hace que el elemento seleccionado sea visible solo cuando hay una sesión de usuario activa en el sitio.
 - **Segmentos**: Si hay segmentos creados, también podrás segmentar este elemento para que los usuarios puedan ver este ítem de menú solo cuando tengan una sesión activa y que además se encuentren dentro de los segmentos seleccionados.
 
 ## Ejemplos de Menu
 
-El snippet general `menu` puede satisfacer las necesidades básicas de un sitio, desplegando un menú en forma de dropdown. A continuación, se explican las partes más importantes de este snippet y como se puede extender a más funcionalidades.
+El snippet general `menu` puede satisfacer las necesidades básicas de un sitio, desplegando un menú en forma de dropdown. A continuación, se explican las partes más importantes de este snippet y cómo se puede extender a más funcionalidades.
 
-Las primeras líneas encapsuladas por <span v-pre>{{ }} o {% %}</span> pertenecen a Liquid y son utilizadas para asignar variables o comenzar un bucle para desplegar información del menú.
+Las primeras líneas encapsuladas por <span v-pre>{{ }} o {% %}</span> pertenecen a Liquid y se utilizan para asignar variables o comenzar un bucle para desplegar información del menú.
 
 El siguiente listado describe las variables importantes para el menú:
 
 - menu: Esta variable toma el menú con identificador `main` dentro de Modyo Platform -> Navegación.
 - items_to_show: Toma los ítems de menú que son visibles.
-- active: Utilizado para agregar una clase CSS llamada `active` en caso de que éste ítem sea activado.
-- children_to_show: Si existen hijos del ítem actual, toma los items en esta variable y los despliega como segundo nivel en la jerarquía del menú.
+- active: Utilizado para agregar una clase CSS llamada `active` en caso de que este ítem sea activado.
+- children_to_show: Si existen hijos del ítem actual, toma los ítems en esta variable y los despliega como segundo nivel en la jerarquía del menú.
 
-Al entrar a la sección de Plantillas de tu sitio en Modyo Platform, podrás hacer click en el snippet general `menu` para ver el HTML del menú. Se ve de la siguiente manera:
+Al entrar a la sección de Plantillas de tu sitio en Modyo Platform, podrás hacer clic en el snippet general `menu` para ver el HTML del menú. Se ve de la siguiente manera:
 
 `menu`
 
@@ -139,7 +139,7 @@ Al entrar a la sección de Plantillas de tu sitio en Modyo Platform, podrás hac
 
 ### Menú con forma de lista
 
-A continuación tenemos un menú que también llama a `main`, pero ahora en forma de lista a diferencia del snippet general que utiliza un dropdown:
+A continuación, tenemos un menú que también llama a `main`, pero ahora en forma de lista, a diferencia del snippet general que utiliza un dropdown:
 
 ```html
 {% assign menu = menus['main'] %}

@@ -4,7 +4,7 @@ search: true
 
 # Origination
 
-**Origination** es una herramienta diseñada para optimizar y automatizar procesos complejos en diversos sectores, como la gestión de solicitudes, aprobaciones o registros que requieren la interacción de múltiples partes. Este feature permite a los usuarios crear y gestionar flujos de trabajo colaborativos en los que diferentes actores pueden participar activamente. A través de **Origination**, es posible solicitar y recopilar documentación e información entre partes, facilitando la validación y el avance del proceso en función de los requisitos cumplidos.
+**Origination** es una herramienta diseñada para optimizar y automatizar procesos complejos en diversos sectores, como la gestión de solicitudes, aprobaciones o registros que requieren la interacción de múltiples partes. Esta característica permite a los usuarios crear y gestionar flujos de trabajo colaborativos en los que diferentes actores pueden participar activamente. A través de **Origination**, es posible solicitar y recopilar documentación e información entre partes, facilitando la validación y el avance del proceso en función de los requisitos cumplidos.
 
 Una de las principales ventajas de Origination es su capacidad para gestionar flujos de trabajo en múltiples pasos, permitiendo que cada paso sea verificado antes de avanzar, lo que garantiza la precisión y el cumplimiento de cada etapa. Además, Origination ofrece un entorno seguro y eficiente, evitando el intercambio de información confidencial por medios inseguros, lo que reduce el riesgo de errores y asegura la protección de los datos.
 
@@ -16,20 +16,20 @@ Origination está diseñado para cualquier organización que busque agilizar pro
 
 Para crear una nueva originación, sigue estos pasos:
 
-- En el menú lateral, navega a **Customers** \> **Reinos** y selecciona el Reino en el que deseas trabajar.
+- En el menú lateral, navega a **Customers** > **Reinos** y selecciona el Reino en el que deseas trabajar.
 - Dirígete a la opción **Origination**.
 - Haz clic en el botón **+ Nueva originación**.
 - Asigna un nombre y selecciona el tipo de originación que deseas crear.
 - Haz clic en **Crear** para finalizar y comenzar a configurar los pasos del nuevo flujo de originación.
 
-### Tipos de originación
+### Tipos de Originación
 
 Los tipos de originación determinan el propósito y las funcionalidades específicas de los flujos que deseas implementar. Al crear una nueva originación, puedes elegir entre los siguientes tipos:
 
 - **Persona**: Permite que tu originación recopile datos de personas naturales como documento de identidad o firma electrónica.
 - **Organización**: Recopila información de instituciones tales como inscripciones legales o múltiples accionistas.
 
-## Flujos de originación
+## Flujos de Originación
 
 Los flujos de originación están compuestos por **Pasos** y **Tareas**, que estructuran y definen las acciones necesarias para completar el proceso.
 
@@ -170,16 +170,16 @@ En un flujo de originación, cada aplicación representa el proceso en curso de 
 | **application.origination.steps** Array con los nombres de los steps en la originación | ```[ {"uid": "step 1"}, {"uid": "step 2"}]``` |
 | **application.origination.tasks** Array con todos los tasks en la originación y el step al que corresponden | ```[{"task_id": "67890","name": "Task 1", description: "step 1": { "uid": "abcd1234" } }]``` |
 
-Puedes aprender más sobre [Liquid Drops](/es/platform/channels/drops.html) en nuestra documentación.
+Puedes aprender más sobre [Liquid Drops](/es/platform/channels/drops) en nuestra documentación.
 
-### Ejemplo de code snippets
+### Ejemplo de Code Snippets
 
 En este ejemplo puede encontrar en uso el  acceso a datos por Drops de Liquid e interacción con la APIs de JavaScript y JSON. Recuerda reemplazar el valor `QUESTION_ID` por el correspondiente en tu aplicación.
 
 ``` html
 <div class="form-group">
 	<h5>Hola, {{ user.name }}!</h5>
-	<p class="mb-6">Estas en la originacion {{ application.origination.name }}</p>
+	<p class="mb-6">Estas en la originacion {{ application.origination.name }}</p>
 	<div class="form-group">
 		<label for="productDropdown" class="form-label">Selecciona la marca de tus productos favoritos <span class="req">*</span></label>
 		<select class="form-select" id="productDropdown" disabled>
@@ -295,7 +295,7 @@ Puedes incorporar una amplia variedad de campos en tus formularios para personal
 
 Para incluir un nuevo campo debes seleccionar una tarea y seleccionar la pestaña **Añadir**
 
-Origination soporta todos los tipos de entrada disponibles en formularios. Puedes ver el listado completo de tipos en la [documentación de formularios](https://docs.modyo.com/es/platform/customers/forms.html#anadir)
+Origination soporta todos los tipos de entrada disponibles en formularios. Puedes ver el listado completo de tipos en la [documentación de formularios](https://docs.modyo.com/es/platform/customers/forms#anadir)
 
 
 #### Editar campos
@@ -319,9 +319,9 @@ En este apartado se pueden editar los valores de la tarea seleccionada, puedes e
 
 La lógica condicional te permite crear flujos de trabajo más dinámicos e inteligentes. Con esta funcionalidad, puedes definir reglas para mostrar u ocultar **Pasos**, **Tareas** y **campos de tareas Input** basándote en las respuestas proporcionadas por los usuarios o en datos existentes dentro de la aplicación. Esto te permite personalizar la experiencia del usuario, presentando solo la información relevante en cada etapa del proceso y simplificando o bifurcando la interacción. La lógica condicional te ofrece la flexibilidad de:
 
-* **Ocultar o mostrar pasos completos:** Dirige a los usuarios a través de diferentes caminos dentro del flujo de originación según sus respuestas previas.
-* **Ocultar o mostrar tareas individuales:** Dentro de un paso, puedes mostrar u ocultar tareas específicas. Esto es útil para solicitar información adicional solo cuando es necesaria.
-* **Ocultar o mostrar campos de tareas Input:** Dentro de una tarea de tipo Input, puedes mostrar u ocultar campos específicos. Esto te permite omitir o solicitar datos de acuerdo a las respuestas que proporciona el usuario. 
+- **Ocultar o mostrar pasos completos:** Dirige a los usuarios a través de diferentes caminos dentro del flujo de originación según sus respuestas previas.
+- **Ocultar o mostrar tareas individuales:** Dentro de un paso, puedes mostrar u ocultar tareas específicas. Esto es útil para solicitar información adicional solo cuando es necesaria.
+- **Ocultar o mostrar campos de tareas Input:** Dentro de una tarea de tipo Input, puedes mostrar u ocultar campos específicos. Esto te permite omitir o solicitar datos de acuerdo a las respuestas que proporciona el usuario. 
 
 #### Configurar Lógica Condicional
 
@@ -339,7 +339,7 @@ Para configurar la lógica condicional, sigue estos pasos:
 
 :::tip Considera cómo la lógica condicional puede afectar la experiencia del usuario y asegúrate de que el flujo se pueda completar. :::
 
-### Editar configuración de la originación
+### Editar Configuración de la Originación
 
 Al seleccionar la opción **Editar** en el menu contextual de tu orignación puedes editar sus propiedades.
 
@@ -362,7 +362,7 @@ Si necesitas eliminar una originación de forma permanente:
 Este proceso es irreversible.
 :::
 
-### Ver detalles de una originación
+### Ver Detalles de una Originación
 
 Al acceder a una originación específica, puedes visualizar métricas y datos relevantes en función de la vista que selecciones. Estas vistas te permiten analizar y gestionar de manera eficiente la información asociada con la originación.
 
@@ -370,7 +370,7 @@ Al acceder a una originación específica, puedes visualizar métricas y datos r
 - **Aplicaciones**: Muestra un listado detallado de todas las aplicaciones realizadas dentro de esta originación. Es ideal para revisar el historial y el estado de cada solicitud.
 - **Asignados**: Proporciona un listado de las personas asignadas a esta originación, junto con sus métricas de gestión, lo que facilita el seguimiento del desempeño y la carga de trabajo.
 
-### Resumen de originación
+### Resumen de Originación
 
 La vista resumen de una originación te ofrece un resumen de las métricas clave relacionadas con el rendimiento y estado de las solicitudes en el flujo. Esta información es útil para comprender el progreso general y realizar un seguimiento efectivo.
 
@@ -379,7 +379,7 @@ La vista resumen de una originación te ofrece un resumen de las métricas clave
 - **Canceladas**: Refleja las solicitudes que han sido canceladas por el usuario o el administrador.
 - **Total**: Representa el número total de solicitudes, incluyendo las pendientes, completadas y canceladas.
 
-### Gestión de aplicaciones
+### Gestión de Aplicaciones
 
 La vista de aplicaciones te permite revisar y administrar individualmente el estado e información de cada aplicación a esta originación. Puedes seleccionar una aplicación específica para acceder a sus detalles y gestionar sus elementos clave.
 
@@ -418,13 +418,13 @@ Puedes invitar a usuarios para que ingresen información en una originación. Al
 - **Email**: La dirección de correo electrónico del usuario, donde recibirá la invitación para acceder a la originación.
 - **Asignar la aplicación**: En la lista desplegable, selecciona un administrador que gestionará esta originación en particular. Si no se selecciona un administrador, la aplicación quedará sin asignar.
 
-### Gestión de asignados
+### Gestión de Asignados
 
 En la vista de asignados,  puedes  monitorear y administrar a los administradores responsables de las aplicaciones dentro de un reino. Esta vista facilita el seguimiento del desempeño y la carga de trabajo de los administradores. Puedes filtrar las aplicaciones asignadas por rangos de fecha
 
 Al seleccionar un administrador, podrás ver todas las aplicaciones que tiene asignadas y su correspondiente status
 
-## Crear una página de originación
+## Crear una Página de Originación
 
 Para desplegar una página de originación a los usuarios, sigue los pasos a continuación. Esto te permitirá habilitar un acceso directo y funcional a tus flujos.
 

@@ -5,7 +5,7 @@ search: true
 # Tipos de contenido
 
 
-Los Tipos de contenido son la base para tus Entradas. Los Tipos definen qué campos y validaciones son requeridas para las Entradas, contando con más de 15 tipos de campos.
+Los Tipos de contenido son la base para tus Entradas. Definen qué campos y validaciones son requeridas para las Entradas, contando con más de 15 tipos de campos.
 
 A los Tipos de contenido se les puede asignar una cardinalidad. Esta variable indica cuantas Entradas pueden existir para este Tipo. Puedes agregar idiomas al repositorio y generar Entradas en varios idiomas, almacenadas en un solo lugar. Además, puedes crear Usuarios, con diferentes roles y permisos, logrando así una división de trabajo llamada Revisión de Equipo.
 
@@ -35,7 +35,7 @@ Para crear un nuevo tipo de contenido que servirá como base para tus entradas, 
 1. Desde el menú principal, haz click en **Contenido**.
 2. Selecciona el espacio donde quieres crear un nuevo Tipo.
 3. Haz click en **Tipos**.
-2. Haz click en el botón **+ Nuevo Tipo**.
+2. Haz click en el botón **Nuevo Tipo**.
 3. Escribe el nombre e identificador (UID).
 4. Selecciona la cardinalidad del tipo.
 5. Haz click en **Crear**.
@@ -63,7 +63,7 @@ Esta interfaz te permite crear cada uno de los tipos y darles el formato necesar
 :::tip Tip
 El nombre del campo es de suma importancia, ya que será utilizado para acceder a su valor en los SDK de Liquid y JS. Para acceder al valor de un campo de una entrada puedes utilizar la sintaxis <span v-pre>`{{entry["nombre del campo"]}}`</span>. 
 
-Para más información ve a la [referencia de la API](/es/platform/content/public-api-reference.html)
+Para más información ve a la [referencia de la API](/es/platform/content/public-api-reference)
 :::
 
 Todos los campos que se pueden añadir en un tipo, tienen un nombre, y la posibilidad de ser requeridos.
@@ -133,9 +133,9 @@ Utiliza este campo para seleccionar una dirección geográfica, según los campo
 :::warning Atención
 Para garantizar el correcto funcionamiento de los mapas de ubicación con la clave de API de Google configurada en tu cuenta, la clave tiene que tener permisos para acceder a:
 
-* API de mapas a través de JavaScript
-* API de lugares
-* API de geocodificación
+- API de mapas a través de JavaScript
+- API de lugares
+- API de geocodificación
 :::
 
 ### Archivo
@@ -190,5 +190,5 @@ Al reindexar uno de tus tipos, el modelo previamente indexado seguirá disponibl
 :::
 
 :::warning Atención
-Ten en cuenta que dependiendo de la [configuración de caché que tengas en tu espacio](/es/platform/content/spaces.html#cache), es posible que no veas los cambios inmediatamente después de haber terminado la reindexación.
+Ten en cuenta que dependiendo de la [configuración de caché que tengas en tu espacio](/es/platform/content/spaces#cache), es posible que no veas los cambios inmediatamente después de haber terminado la reindexación.
 :::

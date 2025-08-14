@@ -7,7 +7,7 @@ search: true
 El sistema de gestión de identidades multidominio (SCIM) establece una comunicación estandarizada entre Modyo y Microsoft Azure para sincronizar automáticamente datos de usuarios y grupos. Esto te permite:
 - Crear usuarios en Microsoft Azure y aprovisionarlos automáticamente en Modyo.
 - Actualizar datos de usuario en Microsoft Azure y reflejar los cambios en Modyo.
-- Eliminar usuarios en Microsoft Azure y desaprovisionarlos en Modyo
+- Eliminar usuarios en Microsoft Azure y desaprovisionarlos en Modyo.
 
 Esta integración de grupos y usuarios entre Modyo y Microsoft Azure Active Directory con la API SCIM de Modyo, simplifica la gestión de usuarios en diferentes sistemas y reduce errores, favoreciendo una administración eficiente.
 
@@ -30,7 +30,7 @@ La sincronización es unidireccional, lo que significa que los datos modificados
 4. Selecciona aprovisionamiento **Automático**
 5. En las credenciales de administración, agrega lo siguiente:
 	- URL de inquilino: El URL de tu servidor de web compatible con SCIM, por ejemplo: https://tudominio.modyo.cloud/api/admin/scim
-	- Secret Token: El token de acceso del usuario administrativo de Modyo generado para la credencial de autenticación. Puedes encontrar información detallada de tokens en la sección de [API de administración](https://docs.modyo.com/es/platform/core/api.html#bearer-token)
+	- Secret Token: El token de acceso del usuario administrativo de Modyo generado para la credencial de autenticación. Puedes encontrar información detallada de tokens en la sección de [API de administración](https://docs.modyo.com/es/platform/core/api#bearer-token)
 6. En la sección de Configuración puedes personalizar el envío de notificaciones y seleccionar el umbral de eliminación accidental. Para más información acerca de estas configuraciones, revisa la documentación de [Azure](https://learn.microsoft.com/es-es/azure/active-directory/app-provisioning/user-provisioning)
 7. Da click en **Probar configuración** para verificar la conexión
 8. Una vez confirmada la configuración da click en **Guardar**
@@ -85,4 +85,4 @@ Nombre del usuario y correo electrónico son campos requeridos para generar usua
 
 ### Referencias
 - Para construir un API de SCIM compatible con Azure AD, sigue esta guía de Microsoft. [Use SCIM to Provision Users and Groups](https://docs.microsoft.com/en-us/azure/active-directory/app-provisioning/use-scim-to-provision-users-and-groups)
-- Para más información de las APIs que Modyo ofrece, ve [API de administración](https://docs.modyo.com/es/platform/core/api.html).
+- Para más información de las APIs que Modyo ofrece, ve [API de administración](https://docs.modyo.com/es/platform/core/api).
