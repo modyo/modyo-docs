@@ -10,6 +10,10 @@ We're excited to have you on board and exploring our platform!
 
 We've designed this documentation to make your experience as easy and satisfying as possible. You can browse these documents from start to finish or navigate to a specific section; all contents are interconnected to facilitate your learning process.
 
+:::tip Modyo 10
+This documentation refers to the latest version of Modyo. For documentation on previous versions, please consult our support channels.
+:::
+
 ### What is Modyo?
 
 Modyo is a digital experience platform that helps you create integrated digital experiences for your customers, accelerating web and mobile development securely, and allowing you to unify native and third-party applications in a single area to manage your digital channels.
@@ -45,4 +49,4 @@ For Modyo Platform support, visit the [official support site](https://support.mo
 
 To get started, you just need a compatible web browser. Modyo is compatible with the latest versions of Google Chrome, Firefox, and Microsoft Edge. The entire product interface can be accessed through its web interface.
 
-We're excited to have you join us on this digital adventure with Modyo!
+We're excited to accompany you on this digital adventure with Modyo!
