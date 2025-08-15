@@ -1,22 +1,10 @@
 ---
 search: true
-collapsible: true
-sidebarDepth: 3
 ---
 
 # Drops
 
 Los Drops (también conocidos como Objetos o Variables Liquid) permiten acceder a información dinámica en Modyo Platform. Están disponibles para los contextos de cuenta, content, channels y customers.
-
-## Cuenta
-
-Los drops de Cuenta se utilizan principalmente en el contexto de autenticación de cuentas, lo que significa que pueden ser llamados desde cualquier lugar al ser de escala global. Los atributos disponibles son:
-
-| Drop | Descripción | Ejemplo |
-|---|---|---|
-| **account.url** | La URL de Modyo Platform, incluyendo el protocolo y sub-dominio. | ```https://test.modyo.com``` |
-| **account.host** | El nombre del sub-dominio de Modyo Platform. | ```test``` |
-| **account.google_key** | Si existe autenticación con Google, devuelve la clave de la credencial; de lo contrario, devuelve vacío (void). | ```AIzaSyDmrYmbFpzqdIxHycHbgtJrs9lhKOfggEE``` |
 
 ## Administrador
 
@@ -48,14 +36,6 @@ Objeto de tipo asset. Contiene la información relevante de un archivo dentro de
 | **asset.thumbnail_url** | URL del thumbnail del asset. | ```/uploads/7b1b3f82-c9f5-4c51-87dc-b93fc9918c9c/C50x50/foto.jpg``` |
 | **asset.url** | URL donde se encuentra el asset. | ```/uploads/7b1b3f82-c9f5-4c51-87dc-b93fc9918c9c/original/foto.jpg``` |
 
-### Audio
-
-El drop de Audio es una subclase que hereda los mismos atributos que Asset. Se puede utilizar `audio_asset` en lugar de `asset`.
-
-Se heredan los siguientes atributos de [Asset](#asset):
-
-`.data_file_name, .description, .title, .uuid, .alt, .alt_text, .content_type, .name, .size, .thumbnail_url, .url`
-
 ### Archivo
 
 El drop de Archivo es una subclase que hereda los mismos atributos que Asset. Se puede utilizar `file_asset` en lugar de `asset`.
@@ -75,6 +55,14 @@ Se heredan los siguientes atributos de [Asset](#asset):
 | **file_asset.is_pdf?** | Booleano que indica si el archivo es un PDF. | ```false``` |
 | **file_asset.is_another?** | Booleano que indica si el archivo es de otro tipo no especificado. | ```false``` |
 
+### Audio
+
+El drop de Audio es una subclase que hereda los mismos atributos que Asset. Se puede utilizar `audio_asset` en lugar de `asset`.
+
+Se heredan los siguientes atributos de [Asset](#asset):
+
+`.data_file_name, .description, .title, .uuid, .alt, .alt_text, .content_type, .name, .size, .thumbnail_url, .url`
+
 ### Video
 
 El drop de Video es una subclase que hereda los mismos atributos que Asset. Se puede utilizar `video_asset` en lugar de `asset`.
@@ -83,6 +71,15 @@ El drop de Video es una subclase que hereda los mismos atributos que Asset. Se p
 |---|---|---|
 | **video_asset.url** | La URL del video. | ```/uploads/8de5a204-74e6-4d6b-a319-6f7896c09135/original/caverna.webm``` |
 | **video_asset.thumbnail_url** | La URL del thumbnail del video. | ```/uploads/7b1b3f82-c9f5-4c51-87dc-b93fc9918c9c/C50x50/platon.jpg``` |
+
+## Campo
+
+Muestra toda la información de los campos de una entrada.
+
+| Drop | Descripción | Ejemplo |
+|---|---|---|
+| **field.name** | Nombre del campo personalizado. | ```Field1``` |
+| **field.type** | Nombre del tipo asociado al campo. | ```Type1``` |
 
 ## Categoría
 
@@ -97,6 +94,16 @@ Objeto de tipo categoría (Tag). Contiene la información relevante de las categ
 | **category.children** | Array de objetos de tipo `category` con todos los hijos de la categoría. |  |
 | **category.parent** | Objeto de tipo `category` correspondiente al padre de la categoría. |  |
 | **category.siblings** | Array de objetos de tipo `category` con todos los hermanos de la categoría. |  |
+
+## Cuenta
+
+Los drops de Cuenta se utilizan principalmente en el contexto de autenticación de cuentas, lo que significa que pueden ser llamados desde cualquier lugar al ser de escala global. Los atributos disponibles son:
+
+| Drop | Descripción | Ejemplo |
+|---|---|---|
+| **account.url** | La URL de Modyo Platform, incluyendo el protocolo y sub-dominio. | ```https://test.modyo.com``` |
+| **account.host** | El nombre del sub-dominio de Modyo Platform. | ```test``` |
+| **account.google_key** | Si existe autenticación con Google, devuelve la clave de la credencial; de lo contrario, devuelve vacío (void). | ```AIzaSyDmrYmbFpzqdIxHycHbgtJrs9lhKOfggEE``` |
 
 ## Entrada
 
@@ -118,15 +125,15 @@ Crea contenido dinámico en tus espacios usando Entradas. En este objeto tienes 
 | **entry.meta** | Objeto con los siguientes atributos de metadatos: uuid, published_at, locale, slug, created_at, updated_at, unpublished_at y private. |
 | **entry.fields** | Array de objetos con los campos de la entrada. |  |
 
-## Campo
+## Espacio
 
-Muestra toda la información de los campos de una entrada.
+Muestra contenido dinámico creado en tus espacios desde cualquier parte de tu sitio. En este objeto tienes acceso a toda la información relevante de las entradas, los tipos de contenido y el gestor de archivos. Los atributos disponibles son:
 
 | Drop | Descripción | Ejemplo |
 |---|---|---|
-| **field.name** | Nombre del campo personalizado. | ```Field1``` |
-| **field.type** | Nombre del tipo asociado al campo. | ```Type1``` |
-
+| **spaces['nombre_del_espacio'].categories** | Array de objetos de tipo categoría que contiene todas las categorías del espacio. |  |
+| **spaces['nombre_del_espacio'].entries** | Objeto de tipo Página que cumple con los parámetros de búsqueda. |  |
+| **space['nombre_del_espacio'].name** | Nombre del espacio. | ```Espacio Nuevo``` |
 
 ## Formulario
 
@@ -154,14 +161,6 @@ Estos drops permiten obtener información a través de Liquid para un formulario
 | **answer.text_field** | Campo de texto asociado a la respuesta. | ```Este es la respuesta en el campo de texto``` |
 | **answer.type** | Tipo de respuesta. | ```text_answer``` |
 
-### Response
-
-| Drop | Descripción | Ejemplo |
-|---|---|---|
-| **form_response.description** | Descripción del formulario. | ```Este formulario es el nuevo formulario de los usuarios``` |
-| **form_response.name** | Nombre del formulario. | ```El nuevo formulario``` |
-| **form_response.questions** | Array con las preguntas del formulario. | ```[{"title"=>"¿Cual es tu puesto de trabajo?", "type"=>"textquestion", "answer"=>"Software developer"}]``` |
-
 ### Question
 
 Estos drops permiten obtener información a través de Liquid para las preguntas de un formulario del módulo Customers.
@@ -174,6 +173,14 @@ Estos drops permiten obtener información a través de Liquid para las preguntas
 | **question.form** | Objeto de tipo formulario. |  |
 | **question.id** | Devuelve el ID de la pregunta. | ```3``` |
 | **question.label** | Etiqueta de la pregunta. | ```La primera pregunta``` |
+
+### Response
+
+| Drop | Descripción | Ejemplo |
+|---|---|---|
+| **form_response.description** | Descripción del formulario. | ```Este formulario es el nuevo formulario de los usuarios``` |
+| **form_response.name** | Nombre del formulario. | ```El nuevo formulario``` |
+| **form_response.questions** | Array con las preguntas del formulario. | ```[{"title"=>"¿Cual es tu puesto de trabajo?", "type"=>"textquestion", "answer"=>"Software developer"}]``` |
 
 ## Grid
 
@@ -282,16 +289,6 @@ Extiende la funcionalidad del drop Grid y contiene los siguientes atributos adic
 | **side_right_three_cols_grid.col3_widgets** | Array de objetos de tipo widget. |  |
 
 
-## Ubicación
-
-Objeto de tipo ubicación. Contiene la información relevante de un punto de geolocalización.
-
-| Drop | Descripción | Ejemplo |
-|---|---|---|
-| **location.location_street** | Nombre de la ubicación en Google Maps. | ```Main street 3883``` |
-| **location.latitude** | Latitud del punto en Google Maps. | ```-33.3982607``` |
-| **location.longitude** | Longitud del punto en Google Maps. | ```-70.6003616``` |
-
 ## Menú
 
 Objeto de tipo menú. Contiene la información relevante de los ítems de un menú.
@@ -313,6 +310,16 @@ Objeto de tipo menú. Contiene la información relevante de los ítems de un men
 | **menu_item.position** | Posición asociada al ítem de menú (0 como primera posición). | ```0``` |
 | **menu_item.url** | URL asociada al ítem de menú. | ```https://test.modyo.com/newsite/``` |
 
+## Navegador de Sitio
+
+Estos drops permiten obtener información del navegador de un sitio.
+
+| Drop | Descripción | Ejemplo |
+|---|---|---|
+| **sitesearch.have_results** | Booleano que determina si la búsqueda tiene resultados. |  |
+| **sitesearch.results** | Objeto de tipo Página que cumple con los parámetros de búsqueda. |  |
+| **sitesearch.have_less_relevant_results** | Booleano que determina si hay más resultados que exceden el límite máximo. |  |
+
 ## Notificación
 
 Estos drops permiten obtener información a través de Liquid para las notificaciones del módulo Customers.
@@ -326,14 +333,9 @@ Estos drops permiten obtener información a través de Liquid para las notificac
 | **notification.subject** | Asunto de la notificación. | ```Modyo Developers Update``` |
 | **notification.url** | URL de la notificación. | ```https://test.modyo.com/profile?notification_id=65345``` |
 
-
-# Orden
+## Orden
 
 Estos drops permiten obtener información a través de Liquid para las órdenes del módulo Commerce.
-
-## Notificación
-
-Estos drops te permiten obtener información a través de Liquid para las notificaciones del módulo Customers.
 
 | Drop | Descripción | Ejemplo |
 |---|---|---|
@@ -354,7 +356,7 @@ Estos drops te permiten obtener información a través de Liquid para las notifi
 | **order.order_description** | String con la descripción de la orden. |  |
 | **order.order.reference_id** | String con el ID de referencia para esta orden. |  |
 
-## Item de Orden
+### Item de Orden
 
 
 | Drop | Descripción | Ejemplo |
@@ -450,26 +452,6 @@ Los drops de Sitio se utilizan para obtener toda la información de un sitio. Lo
 | **site.service_worker_url** | String con la URL del service worker para el sitio. |  |
 | **site.url** | String con la URL asociada al sitio. |  |
 
-## Navegador de Sitio
-
-Estos drops permiten obtener información del navegador de un sitio.
-
-| Drop | Descripción | Ejemplo |
-|---|---|---|
-| **sitesearch.have_results** | Booleano que determina si la búsqueda tiene resultados. |  |
-| **sitesearch.results** | Objeto de tipo Página que cumple con los parámetros de búsqueda. |  |
-| **sitesearch.have_less_relevant_results** | Booleano que determina si hay más resultados que exceden el límite máximo. |  |
-
-## Espacio
-
-Muestra contenido dinámico creado en tus espacios desde cualquier parte de tu sitio. En este objeto tienes acceso a toda la información relevante de las entradas, los tipos de contenido y el gestor de archivos. Los atributos disponibles son:
-
-| Drop | Descripción | Ejemplo |
-|---|---|---|
-| **spaces['nombre_del_espacio'].categories** | Array de objetos de tipo categoría que contiene todas las categorías del espacio. |  |
-| **spaces['nombre_del_espacio'].entries** | Objeto de tipo Página que cumple con los parámetros de búsqueda. |  |
-| **space['nombre_del_espacio'].name** | Nombre del espacio. | ```Espacio Nuevo``` |
-
 ## Target
 
 Estos drops permiten obtener información de Targets. Los atributos disponibles son:
@@ -490,9 +472,30 @@ Usa los drops de Content Type para obtener información de tus tipos de contenid
 | **type.entry** | Objeto de la primera entrada del tipo seleccionado. Esto también es utilizado con entradas de cardinalidad individual. |  |
 | **type.name** | Nombre del tipo. | ```TipoNuevo``` |
 
+## Ubicación
 
-# Usuario
+Objeto de tipo ubicación. Contiene la información relevante de un punto de geolocalización.
 
+| Drop | Descripción | Ejemplo |
+|---|---|---|
+| **location.location_street** | Nombre de la ubicación en Google Maps. | ```Main street 3883``` |
+| **location.latitude** | Latitud del punto en Google Maps. | ```-33.3982607``` |
+| **location.longitude** | Longitud del punto en Google Maps. | ```-70.6003616``` |
+
+## User Agent
+
+Usa los drops de user agent para obtener información del agente del navegador web.
+
+| Drop | Descripción | Ejemplo |
+|---|---|---|
+| **user_agent.agent** | Un string con el tipo de agente que está corriendo. |  |
+| **user_agent.as_json** | Un string en formato JSON con toda la configuración del agente corriendo. |  |
+| **user_agent.browser** | Un string con el nombre del navegador para el agente. |  |
+| **user_agent.browser_version** | Un string con la versión del navegador para el agente. |  |
+| **user_agent.is_modyo_shell** | Boolean que determina si el agente está siendo gestionado por una aplicación de Modyo |  |
+| **user_agent.platform** | Un string con la versión del sistema operativo del agente. |  |
+
+## Usuario
 
 Usa los drops de user para obtener información de tus usuarios del módulo Customers.
 
@@ -529,21 +532,7 @@ Usa los drops de user para obtener información de tus usuarios del módulo Cust
 | **user.uuid** | El uuid del usuario. | ```cdc7f0e2-b5c3-4b92-aa34-962ffa0bi572``` |
 | **user.realm_uid** | El reino del usuario. | ```my-realm``` |
 
-## User Agent
-
-Usa los drops de user agent para obtener información del agente del navegador web.
-
-| Drop | Descripción | Ejemplo |
-|---|---|---|
-| **user_agent.agent** | Un string con el tipo de agente que está corriendo. |  |
-| **user_agent.as_json** | Un string en formato JSON con toda la configuración del agente corriendo. |  |
-| **user_agent.browser** | Un string con el nombre del navegador para el agente. |  |
-| **user_agent.browser_version** | Un string con la versión del navegador para el agente. |  |
-| **user_agent.is_modyo_shell** | Boolean que determina si el agente está siendo gestionado por una aplicación de Modyo |  |
-| **user_agent.platform** | Un string con la versión del sistema operativo del agente. |  |
-
-
-# Widget
+## Widget
 
 Estos drops obtienen la información relevante a los Widgets.
 
@@ -588,18 +577,11 @@ Estos drops obtienen la información relevante a los Widgets.
 |---|---|---|
 | **rich_text_widget.html** | El contenido html del widget. | ```<p><strong><span style=\"color: rgb(216, 55, 98);\">Hello World&nbsp;<span class=\"fr-emoticon fr-deletable\">😃</span>&nbsp;</span></strong></p>``` |
 
-
 ### Text Widget
 
 | Drop | Descripción | Ejemplo |
 |---|---|---|
 | **text_widget.html** | El html asociado al text widget. | ```Hola mundo``` |
-
-
-
-
-
-
 
 <style>
 table, th, td {

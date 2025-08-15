@@ -1,7 +1,5 @@
 ---
 search: true
-collapsible: true
-sidebarDepth: 3
 ---
 
 # Drops
@@ -98,6 +96,17 @@ Category type object (Tag). Contains relevant information about an entry's categ
 | **category.parent** | `category` type object corresponding to the category's parent. |  |
 | **category.siblings** | Array of `category` type objects with all the siblings in the category. |  |
 
+## Content Type
+
+Use Content Type drops to get information about your content types from the Content module.
+
+| Drop | Description | Example |
+|---|---|---|
+| **type.entries** | Array of entry objects containing all entries of the type. |  |
+| **type.fields** | Array of field objects within the selected content type. |  |
+| **type.entry** | Object of the first entry of the selected type. This is also used with single cardinality entries. |  |
+| **type.name** | Type name. | ```NewType``` |
+
 ## Entry
 
 Create dynamic content in your spaces using Entries. In this object you have access to all relevant information about the entries. The available attributes are:
@@ -127,7 +136,6 @@ Displays all information about an entry's fields.
 | **field.name** | Custom field name. | ```Field1``` |
 | **field.type** | Name of the type associated with the field. | ```Type1``` |
 
-
 ## Form
 
 These drops allow you to get information via Liquid for a form in the Customers module.
@@ -154,14 +162,6 @@ These drops allow you to get information via Liquid for a form in the Customers 
 | **answer.text_field** | Text field associated with the answer. | ```This is the answer in the text field``` |
 | **answer.type** | Response type. | ```text_answer``` |
 
-### Response
-
-| Drop | Description | Example |
-|---|---|---|
-| **form_response.description** | Form description. | ```This form is the new user form``` |
-| **form_response.name** | Form name. | ```The new form``` |
-| **form_response.questions** | Array with the form questions. | ```[{"title"=>"What is your job title?", "type"=>"textquestion", "answer"=>"Software developer"}]``` |
-
 ### Question
 
 These drops allow you to get information via Liquid for questions on a form in the Customers module.
@@ -176,6 +176,14 @@ These drops allow you to get information via Liquid for questions on a form in t
 | **question.label** | The label of the question. | ```The first question``` |
 | **question.name** | The name of the question. | ```The first question``` |
 | **question.uid** | The uid of the question. | ```text-question-1``` |
+
+### Response
+
+| Drop | Description | Example |
+|---|---|---|
+| **form_response.description** | Form description. | ```This form is the new user form``` |
+| **form_response.name** | Form name. | ```The new form``` |
+| **form_response.questions** | Array with the form questions. | ```[{"title"=>"What is your job title?", "type"=>"textquestion", "answer"=>"Software developer"}]``` |
 
 ## Grid
 
@@ -283,7 +291,6 @@ Extends the functionality of the Grid drop and contains the following additional
 | **side_right_three_cols_grid.col2_widgets** | Array of widget type objects. |  |
 | **side_right_three_cols_grid.col3_widgets** | Array of widget type objects. |  |
 
-
 ## Location
 
 Location type object. Contains relevant information about a geolocation point.
@@ -328,14 +335,9 @@ These drops allow you to get information via Liquid for notifications in the Cus
 | **notification.subject** | Notification subject. | ```Modyo Developers Update``` |
 | **notification.url** | Notification URL. | ```https://test.modyo.com/profile?notification_id=65345``` |
 
-
-# Order
+## Order
 
 These drops allow you to get information via Liquid for Commerce module orders.
-
-## Notification
-
-These drops allow you to get information via Liquid for notifications in the Customers module.
 
 | Drop | Description | Example |
 |---|---|---|
@@ -356,7 +358,7 @@ These drops allow you to get information via Liquid for notifications in the Cus
 | **order.order_description** | String with the order description. |  |
 | **order.order.reference_id** | String with the reference ID for this order. |  |
 
-## Order Item
+### Order Item
 
 
 | Drop | Description | Example |
@@ -368,7 +370,7 @@ These drops allow you to get information via Liquid for notifications in the Cus
 | **order_item.quantity** | Number of items in the order. |  |
 | **order_item.updated_at** | Last update date of the order item. |  |
 
-# Origination
+## Origination
 
 These drops obtain the information relevant to Originations.
 
@@ -381,7 +383,6 @@ These drops obtain the information relevant to Originations.
 | **origination.uid** | Origination UID. | ```https://test.modyo.com/new-site/myorigination``` |
 | **origination.url** | Origination Page URL. |  |
 | **origination.steps['step_uid']** | Step with provided UID. |  |
-
 
 ## Page
 
@@ -434,7 +435,6 @@ These drops allow you to obtain information from Segments. The available attribu
 |---|---|---|
 | **segment.id** | A string with the ID associated with the segment. |  |
 | **segment.name** | A string with the name associated with the segment. |  |
-
 
 ## Site
 
@@ -508,8 +508,6 @@ These drops obtain the information relevant to Origination Steps.
 | **step.uid** | UID of the step | ```first-step``` |
 | **step.tasks** | Array of tasks |  |
 
-
-
 ## Submission
 
 These drops obtain the information relevant to the Submissions.
@@ -529,15 +527,6 @@ These drops obtain the information relevant to the Submissions.
 | **submission.uuid** | Origination UUID. | ```abcd-1234-5678-0000``` |
 | **submission.tasks['task_uid']** | Task response of task with provided UID. Task responses types are described on next section |  |
 
-### Input Task Response
-
-Responses to the User Input Tasks 
-
-| Drop | Description | Example |
-|---|---|---|
-| **user_input_task_response.fields['field_uid']** | Answer of the question with provided UID. |  |
-
-
 ### Code Snippet Task Response
 
 Responses to the Code Snippet Tasks
@@ -546,14 +535,6 @@ Responses to the Code Snippet Tasks
 |---|---|---|
 | **code_snippet_task_response.data** | The data response on JSON format. | ```{ user_form: { field_1: 'some information', field_2: 1000  } }``` |
 
-### Origination Flow Task Response
-
-Responses to the Origination Flow Tasks
-
-| Drop | Description | Example |
-|---|---|---|
-| **origination_flow_task_response.submission** | A submission object of related task |  |
-
 ### Digital Signature Task Response
 
 Responses to the Digital Signature Tasks
@@ -561,6 +542,22 @@ Responses to the Digital Signature Tasks
 | Drop | Description | Example |
 |---|---|---|
 | **digital_signature_task_response.signed** | Boolean to check if digital signature task was signed | ```true``` |
+
+### Input Task Response
+
+Responses to the User Input Tasks 
+
+| Drop | Description | Example |
+|---|---|---|
+| **user_input_task_response.fields['field_uid']** | Answer of the question with provided UID. |  |
+
+### Origination Flow Task Response
+
+Responses to the Origination Flow Tasks
+
+| Drop | Description | Example |
+|---|---|---|
+| **origination_flow_task_response.submission** | A submission object of related task |  |
 
 ### Pending Review Task Response
 
@@ -578,7 +575,6 @@ Responses to the Validation Tasks
 |---|---|---|
 | **validation_task_response.validated** | Boolean to check if validation task was validated | ```true``` |
 
-
 ## Task
 
 These drops obtain the information relevant to Origination Tasks.
@@ -590,21 +586,7 @@ These drops obtain the information relevant to Origination Tasks.
 | **task.description** | Description of the task | ```Task to validate basic personal data``` |
 | **task.fields** | Specific to User Input tasks. Returns a Question Array |  |
 
-
-## Content Type
-
-Use Content Type drops to get information about your content types from the Content module.
-
-| Drop | Description | Example |
-|---|---|---|
-| **type.entries** | Array of entry objects containing all entries of the type. |  |
-| **type.fields** | Array of field objects within the selected content type. |  |
-| **type.entry** | Object of the first entry of the selected type. This is also used with single cardinality entries. |  |
-| **type.name** | Type name. | ```NewType``` |
-
-
 ## User
-
 
 Use user drops to get information about your users from the Customers module.
 
@@ -655,8 +637,7 @@ Use user agent drops to get information from the web browser agent.
 | **user_agent.is_modyo_shell** | Boolean that determines if the agent is being managed by a Modyo application |  |
 | **user_agent.platform** | A string with the agent's operating system version. |  |
 
-
-# Widget
+## Widget
 
 These drops obtain relevant information about Widgets.
 
@@ -701,16 +682,11 @@ These drops obtain relevant information about Widgets.
 |---|---|---|
 | **rich_text_widget.html** | The HTML content of the widget. | ```<p><strong><span style="color: rgb(216, 55, 98);">Hello World&nbsp;<span class="fr-emoticon fr-deletable">😃</span>&nbsp;</span></strong></p>``` |
 
-
 ### Text Widget
 
 | Drop | Description | Example |
 |---|---|---|
 | **text_widget.html** | The HTML associated with the text widget. | ```Hello world``` |
-
-
-
-
 
 <style>
 table, th, td {

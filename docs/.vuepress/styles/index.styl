@@ -53,6 +53,13 @@ a.sidebar-link {
 	background-color: #F3F8FA;
 }
 
+.sidebar-group.is-sub-group .sidebar-group-items a.sidebar-link.active {
+	background-color: transparent;
+	color: #4081E2;
+	border-left-color: #4081E2;
+	font-weight: 600;
+}
+
 .sidebar-group ul.sidebar-sub-headers a.sidebar-link.active {
 	background-color: #FFFFFF;
 }
@@ -155,4 +162,25 @@ table.no-border td {
 
 table.table-dark tr td {
 	border-color: #444C60 !important;
+}
+
+// Sidebar improvements for sub-groups only (depth-1 and higher)
+// Hide arrows only for sub-groups to match H2 behavior
+.sidebar-group.depth-1 .sidebar-heading .arrow,
+.sidebar-group.depth-2 .sidebar-heading .arrow {
+	display: none !important;
+}
+
+// Active state styling for sub-group headings only when they are the actual active route
+.sidebar-group.is-sub-group > .sidebar-heading.clickable.active {
+	color: #4081E2 !important;
+	background-color: #F3F8FA !important;
+	font-weight: 600 !important;
+	border-left: 0.25rem solid #4081E2 !important;
+}
+
+// Hover state for sub-group headings
+.sidebar-group.depth-1 .sidebar-heading.clickable:hover,
+.sidebar-group.depth-2 .sidebar-heading.clickable:hover {
+	color: #4081E2 !important;
 }

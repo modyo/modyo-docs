@@ -4,6 +4,8 @@ search: true
 
 # Filtros
 
+Un filtro es un método Ruby que toma uno o más parámetros y devuelve un valor. Los parámetros se pasan a los filtros por posición: el primer parámetro es la expresión que precede al carácter de barra vertical, y se pueden pasar parámetros adicionales usando la sintaxis `name: arg1, arg2`.
+
 El marcado Output puede aceptar filtros, que modifican el resultado de la sentencia Output. Puede invocar filtros siguiendo la expresión principal de la sentencia Output con:
 
 - Un caracter de barra vertical (`|`)
@@ -19,7 +21,7 @@ Hello {{ '*tobi*' | textilize | upcase }}
 Hello {{ 'now' | date: "%Y %h" }}
 ```
 
-Un filtro es un método Ruby que toma uno o más parámetros y devuelve un valor. Los parámetros se pasan a los filtros por posición: el primer parámetro es la expresión que precede al carácter de barra vertical, y se pueden pasar parámetros adicionales usando la sintaxis `name: arg1, arg2`.
+## Básicos
 
 ### Append
 
@@ -53,13 +55,13 @@ División de enteros *e.g.*
 
 Convierte un string de entrada en minúsculas.
 
-### Escape once
-
-Devuelve una versión escape de html sin afectar a las entidades escape existentes.
-
 ### Escape
 
 Escape HTML a un string.
+
+### Escape once
+
+Devuelve una versión escape de html sin afectar a las entidades escape existentes.
 
 ### First
 
@@ -111,17 +113,17 @@ Suma *e.g.*
 Precede un string *e.g.*
 <span v-pre>`{{ 'bar' | prepend:'foo' }} #=> 'foobar'`</span>
 
-### Remove First
-Elimina la primera incidencia *e.g.* <span v-pre>`{{ 'barbar' | remove_first:'bar' }} #=> 'bar'`</span>
-
 ### Remove
 Elimina todas las incidencias *e.g.* <span v-pre>`{{ 'foobarfoobar' | remove:'foo' }} #=> 'barbar'`</span>
 
-### Replace First
-Reemplaza la primera incidencia *e.g.* <span v-pre>`{{ 'barbar' | replace_first:'bar','foo' }} #=> 'foobar'`</span>
+### Remove First
+Elimina la primera incidencia *e.g.* <span v-pre>`{{ 'barbar' | remove_first:'bar' }} #=> 'bar'`</span>
 
 ### Replace
 Reemplaza todas las incidencias *e.g.* <span v-pre>`{{ 'foofoo' | replace:'foo','bar' }} #=> 'barbar'`</span>
+
+### Replace First
+Reemplaza la primera incidencia *e.g.* <span v-pre>`{{ 'barbar' | replace_first:'bar','foo' }} #=> 'foobar'`</span>
 
 ### Reverse
 Invierte el array dado.
@@ -483,32 +485,6 @@ Devuelve el Origination con el UID seleccionado. *ej.*
 - originations (ArrayOrigination) - array con originations
 - uid (String) - UID del Origination
 
-## Step
-
-Estos son los filtros liquid que alteran valores relacionados con steps en Modyo Platform.
-
-### By UID
-
-Devuelve el Step con el UID seleccionado. *ej.*
-<span v-pre>`{% assign my_step = origination.steps | by_uid: 'step-01' %}`</span>
-
-**Parámetros:**
-- steps (ArrayStep) - array con steps
-- uid (String) - UID del Step
-
-## Task
-
-Estos son los filtros liquid que alteran valores relacionados con tasks en Modyo Platform.
-
-### By UID
-
-Devuelve el Task con el UID seleccionado. *ej.*
-<span v-pre>`{% assign my_task = step.tasks | by_uid: 'task-01' %}`</span>
-
-**Parámetros:**
-- tasks (ArrayTask) - array con tasks
-- uid (String) - UID del Task
-
 ## Site
 
 Estos filtros Liquid alteran valores relacionados con los Sitios en Modyo Platform.
@@ -577,10 +553,6 @@ Traduce una fecha a formato DateTime (ej. <span v-pre>`{{ time | format_datetime
 ### Format Short Date
 
 Traduce una fecha a un formato reducido (dd-mm-yyyy) (ej. <span v-pre>`{{ time | format_short_date }}`</span>).
-
-### Asset Image Tag
-
-Devuelve la etiqueta de una imagen (ej. <span v-pre>`{{ url | asset_image_tag }}`</span>).
 
 ### Link To
 
@@ -672,6 +644,19 @@ Agrega un reproductor de video en código HTML usando un asset del Gestor de Arc
 - `width` (Integer) — Ancho para el video.
 - `height` (Integer) — Alto para el video.
 
+## Step
+
+Estos son los filtros liquid que alteran valores relacionados con steps en Modyo Platform.
+
+### By UID
+
+Devuelve el Step con el UID seleccionado. *ej.*
+<span v-pre>`{% assign my_step = origination.steps | by_uid: 'step-01' %}`</span>
+
+**Parámetros:**
+- steps (ArrayStep) - array con steps
+- uid (String) - UID del Step
+
 ## Submission
 
 Estos son los filtros liquid que alteran valores relacionados con submissions en Modyo Platform.
@@ -694,9 +679,31 @@ Devuelve los Submissions con el estado seleccionado. *ej.*
 - submissions (ArraySubmission) - array con submissions del usuario
 - status (String) - Estado de los Originations. Los valores soportados son 'pending', 'completed' y 'all'
 
+## Task
+
+Estos son los filtros liquid que alteran valores relacionados con tasks en Modyo Platform.
+
+### By UID
+
+Devuelve el Task con el UID seleccionado. *ej.*
+<span v-pre>`{% assign my_task = step.tasks | by_uid: 'task-01' %}`</span>
+
+**Parámetros:**
+- tasks (ArrayTask) - array con tasks
+- uid (String) - UID del Task
+
 ## User
 
 Estos filtros Liquid alteran valores relacionados con los Usuarios.
+
+### Default Avatar Image
+
+Muestra la imagen por defecto del avatar (ej. <span v-pre>`{{ user | avatar_for: 'C50x50' }}`</span>).
+
+**Parámetros**
+
+- `user` (User) — Objeto User.
+- `size` (Integer) (default: 'C50x50') — Tamaño para la imagen.
 
 ### Image For
 
@@ -707,15 +714,6 @@ Muestra el código HTML para la imagen de un usuario (ej. <span v-pre>`{{ user |
 - `user` (User) — Objeto User.
 - `size` (Integer) (default: 'C50x50') — Tamaño para la imagen.
 - `link` (Boolean) (default: true) — `true` agrega un enlace hacia el perfil del usuario.
-
-### Default Avatar Image
-
-Muestra la imagen por defecto del avatar (ej. <span v-pre>`{{ user | avatar_for: 'C50x50' }}`</span>).
-
-**Parámetros**
-
-- `user` (User) — Objeto User.
-- `size` (Integer) (default: 'C50x50') — Tamaño para la imagen.
 
 ## Widget
 

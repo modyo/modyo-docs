@@ -39,7 +39,8 @@ export default {
 
   data () {
     return {
-      openGroupIndex: 0
+      openGroupIndex: 0,
+      manuallyToggled: false
     }
   },
 
@@ -59,12 +60,22 @@ export default {
         this.$route,
         this.items
       )
-      if (index > -1) {
+      
+      // If navigating by route (not manual toggle)
+      if (!this.manuallyToggled) {
+        // Always update to match the active route
         this.openGroupIndex = index
+      } else if (index > -1) {
+        // If manually toggled but there's an active group, open it
+        this.openGroupIndex = index
+        this.manuallyToggled = false
       }
+      // Reset the manual flag after navigation
+      this.manuallyToggled = false
     },
 
     toggleGroup (index) {
+      this.manuallyToggled = true
       this.openGroupIndex = index === this.openGroupIndex ? -1 : index
     },
 
@@ -86,6 +97,11 @@ function resolveOpenGroupIndex (route, items) {
 
 function descendantIsActive (route, item) {
   if (item.type === 'group') {
+    // First check if the group itself has a path and if we're on it
+    if (item.path && isActive(route, item.path)) {
+      return true
+    }
+    // Then check if any child is active
     return item.children.some(child => {
       if (child.type === 'group') {
         return descendantIsActive(route, child)

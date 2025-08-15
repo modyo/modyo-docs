@@ -127,12 +127,12 @@ module.exports = {
                                 collapsable: true,
                                 children: [
                                     "/en/platform/channels/liquid-markup/variables",
+                                    "/en/platform/channels/liquid-markup/drops",
                                     "/en/platform/channels/liquid-markup/filters",
                                     "/en/platform/channels/liquid-markup/tags",
                                     "/en/platform/channels/liquid-markup/examples",
                                 ],
                             },
-                            "/en/platform/channels/drops",
                         ],
                       },
                       {
@@ -180,7 +180,7 @@ module.exports = {
                   ],
                   "/en/connect/": [{
                           title: "Modyo Connect",
-                          collapsable: false,
+                          collapsable: true,
                           children: [
                               ["/en/connect/", "What is Modyo Connect?"],
                               "/en/connect/architecture",
@@ -208,7 +208,7 @@ module.exports = {
                   ],
                   "/en/architecture/": [{
                           title: "Architecture",
-                          collapsable: false,
+                          collapsable: true,
                           children: [
                               ["/en/architecture/", "Introduction"],
                               ["/en/architecture/why-modyo", "Why Modyo?"],
@@ -331,12 +331,12 @@ module.exports = {
                                 collapsable: true,
                                 children: [
                                     "/es/platform/channels/liquid-markup/variables",
+                                    "/es/platform/channels/liquid-markup/drops",
                                     "/es/platform/channels/liquid-markup/filters",
                                     "/es/platform/channels/liquid-markup/tags",
                                     "/es/platform/channels/liquid-markup/examples",
                                 ],
                             },
-                            "/es/platform/channels/drops",
                         ],
                       },
                       {
@@ -384,7 +384,7 @@ module.exports = {
                   ],
                   "/es/connect/": [{
                           title: "Modyo Connect",
-                          collapsable: false,
+                          collapsable: true,
                           children: [
                               ["/es/connect/", "¿Qué es Modyo Connect?"],
                               "/es/connect/architecture",
@@ -412,7 +412,7 @@ module.exports = {
                   ],
                   "/es/dynamic/": [{
                       title: "Dynamic Framework",
-                      collapsable: false,
+                      collapsable: true,
                       children: [
                           "/es/dynamic/",
                       ],
@@ -431,7 +431,7 @@ module.exports = {
                   ],
                   "/es/architecture/": [{
                           title: "Arquitectura",
-                          collapsable: false,
+                          collapsable: true,
                           children: [
                               ["/es/architecture/", "Introducción"],
                               ["/es/architecture/why-modyo", "¿Por qué Modyo?"],

@@ -4,6 +4,8 @@ search: true
 
 # Filters
 
+A filter is a Ruby method that takes one or more parameters and returns a value. Parameters are passed to filters by position: the first parameter is the expression preceding the pipe character, and additional parameters can be passed using the `name: arg1, arg2` syntax described above.
+
 Output markup can take filters, which modify the result of the output statement. You can invoke filters by following the output statement's main expression with:
 
 - A pipe character (`|`)
@@ -19,7 +21,7 @@ Hello {{ '*tobi*' | textilize | upcase }}
 Hello {{ 'now' | date: "%Y %h" }}
 ```
 
-A filter is a Ruby method that takes one or more parameters and returns a value. Parameters are passed to filters by position: the first parameter is the expression preceding the pipe character, and additional parameters can be passed using the `name: arg1, arg2` syntax described above.
+## Basics
 
 ### Append
 
@@ -53,13 +55,13 @@ Integer division *e.g.*
 
 Converts an input string to lowercase.
 
-### Escape eleven
-
-Returns an escape version of html without affecting existing escape entities.
-
 ### Escape
 
 HTML escape to a string.
+
+### Escape eleven
+
+Returns an escape version of html without affecting existing escape entities.
 
 ### First
 
@@ -111,17 +113,17 @@ Sums *e.g.*
 Prepends a string *e.g.*
 <span v-pre>`{{ 'bar' | prepend:'foo' }} #=> 'foobar'`</span>
 
-### Remove First
-Removes the first occurrence *e.g.* <span v-pre>`{{ 'barbar' | remove_first:'bar' }} #=> 'bar'`.</span>
-
 ### Remove
 Removes all occurrences *e.g.* <span v-pre>`{{ 'foobarfoobar' | remove:'foo' }} #=> 'barbar'`.</span>
 
-### Replace First
-Replaces the first occurrence *e.g.* <span v-pre>`{{ 'barbar' | replace_first:'bar','foo' }} #=> 'foobar'`</span>.
+### Remove First
+Removes the first occurrence *e.g.* <span v-pre>`{{ 'barbar' | remove_first:'bar' }} #=> 'bar'`.</span>
 
 ### Replace
 Replace all occurrences *e.g.* <span v-pre>`{{ 'foofoo' | replace:'foo','bar' }} #=> 'barbar'`.</span>
+
+### Replace First
+Replaces the first occurrence *e.g.* <span v-pre>`{{ 'barbar' | replace_first:'bar','foo' }} #=> 'foobar'`</span>.
 
 ### Reverse
 Inverts the given array.
@@ -504,34 +506,6 @@ Returns the Origination with selected UID. *e.g.*
 - originations (ArrayOrigination) - array with originations
 - uid (String) - Origination UID
 
-## Step
-
-These are the liquid filters that alter values related to steps in Modyo Platform.
-
-### By UID
-
-Returns the Step with selected UID. *e.g.*
-<span v-pre>`{% assign my_step = origination.steps | by_uid: 'step-01' %}`</span>
-
-**Parameters:**
-- steps (ArrayStep) - array with steps
-- uid (String) - Step UID
-
-## Task
-
-These are the liquid filters that alter values related to tasks in Modyo Platform.
-
-### By UID
-
-Returns the Task with selected UID. *e.g.*
-<span v-pre>`{% assign my_task = step.tasks | by_uid: 'task-01' %}`</span>
-
-**Parameters:**
-- tasks (ArrayTask) - array with tasks
-- uid (String) - Task UID
-
-
-
 ## Site
 
 These are the liquid filters that alter values related to Sites in Modyo Platform.
@@ -612,11 +586,6 @@ Translates a date to DateTime format. *e.g.*
 
 Translates a date to a reduced format. dd-mm-yyyy *e.g.*
 <span v-pre>`{{ time | format_short_date }}`</span>
-
-### Asset Image Tag
-
-Returns the tag of an image. *e.g.*
-<span v-pre>`{{ url | asset_image_tag }}`</span>
 
 ### Link To
 
@@ -724,6 +693,19 @@ Adds a video player in HTML code using a File Manager asset. *e.g.*
 - width (Integer) - video width
 - height (Integer) - video length
 
+## Step
+
+These are the liquid filters that alter values related to steps in Modyo Platform.
+
+### By UID
+
+Returns the Step with selected UID. *e.g.*
+<span v-pre>`{% assign my_step = origination.steps | by_uid: 'step-01' %}`</span>
+
+**Parameters:**
+- steps (ArrayStep) - array with steps
+- uid (String) - Step UID
+
 ## Submission
 
 These are the liquid filters that alter values related to submissions in Modyo Platform.
@@ -746,11 +728,32 @@ Returns the Submissions with selected status. *e.g.*
 - submissions (ArraySubmission) - array with user submissions
 - status (String) - Originations status. Supported values are 'pending', 'completed' and 'all'
 
+## Task
 
+These are the liquid filters that alter values related to tasks in Modyo Platform.
+
+### By UID
+
+Returns the Task with selected UID. *e.g.*
+<span v-pre>`{% assign my_task = step.tasks | by_uid: 'task-01' %}`</span>
+
+**Parameters:**
+- tasks (ArrayTask) - array with tasks
+- uid (String) - Task UID
 
 ## User
 
 These are the liquid filters that alter values related to Users.
+
+### Default Avatar Image
+
+Displays the default avatar image. *e.g.*
+<span v-pre>`{{  user | avatar_for: 'C50x50' }}`</span>
+
+**Parameters**
+
+- user - User object
+- size (Integer) (default: 'C50x50') - Image size
 
 ### Image For
 
@@ -762,16 +765,6 @@ Deploys the HTML code for a user's image. *e.g.*
 - user - User object
 - size (Integer) (default: 'C50x50') - Image size
 - link (Boolean) (default: true) - True adds a link to the user's profile.
-
-### Default Avatar Image
-
-Displays the default avatar image. *e.g.*
-<span v-pre>`{{  user | avatar_for: 'C50x50' }}`</span>
-
-**Parameters**
-
-- user - User object
-- size (Integer) (default: 'C50x50') - Image size
 
 ## Widget
 

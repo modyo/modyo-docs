@@ -1,6 +1,5 @@
 ---
 search: true
-sidebarDepth: 3
 ---
 
 # API
