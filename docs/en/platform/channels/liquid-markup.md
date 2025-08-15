@@ -64,7 +64,7 @@ With Tags, you can add flow and iteration control to your pages. You need to enc
 ### Drops
 Modyo extends Liquid's functionality through variables created for Modyo Platform, called Drops. Currently, we offer drops from more than 20 different categories for all modules on the platform.
 
-For more information on how to use Drops, go to [Drops](/en/platform/channels/drops).
+For more information on how to use Drops, go to [Drops](/en/platform/channels/liquid-markup/drops).
 
 
 ## Expressions and Variables

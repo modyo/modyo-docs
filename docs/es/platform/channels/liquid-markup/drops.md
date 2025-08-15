@@ -452,6 +452,31 @@ Los drops de Sitio se utilizan para obtener toda la información de un sitio. Lo
 | **site.service_worker_url** | String con la URL del service worker para el sitio. |  |
 | **site.url** | String con la URL asociada al sitio. |  |
 
+## Submission
+
+Estos drops obtienen la información relevante a las Respuestas de Origination.
+
+| Drop | Descripción | Ejemplo |
+|---|---|---|
+| **submission.status** | El estado de la respuesta. | ```completed``` |
+| **submission.progress** | El porcentaje de progreso de completitud de la respuesta. | ```100%``` |
+| **submission.assignee** | El Administrador asignado a esta respuesta. |  |
+| **submission.created_at** | La fecha en que la respuesta fue creada. | ```Tue, 15 Feb 2025 15:14:03 UTC +00:00``` |
+| **submission.updated_at** | La última fecha en que la respuesta fue actualizada. | ```Tue, 15 Feb 2025 20:30:10 UTC +00:00``` |
+| **submission.started_at** | La fecha en que la respuesta fue iniciada. | ```Tue, 15 Feb 2025 15:14:03 UTC +00:00``` |
+| **submission.completed_at** | La fecha en que la respuesta fue completada. | ```Tue, 15 Feb 2025 20:30:10 UTC +00:00``` |
+| **submission.due_date** | La fecha de vencimiento de la respuesta. | ```Tue, 22 Feb 2025 12:00:00 UTC +00:00``` |
+| **submission.origination** | Origination de la respuesta. |  |
+| **submission.url** | URL de la página de Origination. | ```https://test.modyo.com/new-site/myorigination``` |
+| **submission.uuid** | UUID de Origination. | ```abcd-1234-5678-0000``` |
+| **submission.tasks['task_uid']** | Respuesta de tarea con el UID proporcionado. Los tipos de respuestas de tareas se describen en la siguiente sección. |  |
+| **submission.sequence_id** | Número de secuencia de la respuesta actual. | ```77``` |
+| **submission.fields** | Array con respuestas almacenadas dentro de la respuesta actual. | ```[{"question": {"label": "What's your name?"},"text_field": "Jorge Regula"}]``` |
+| **submission.QUESTION_ID** | Al usar el ID de una pregunta específica (ej: submission.123456) se accede directamente a su información. | ```{"question": {"label": "What's your name?"},"text_field": "John Doe"}``` |
+| **submission.origination.name** | Nombre de la originación. | ```My Origination``` |
+| **submission.origination.steps** | Array con los nombres de los steps en la originación. | ```[{"uid": "step 1"}, {"uid": "step 2"}]``` |
+| **submission.origination.tasks** | Array con todos los tasks en la originación y el step al que corresponden. | ```[{"task_id": "67890","name": "Task 1", "step": {"uid": "abcd1234"}}]``` |
+
 ## Target
 
 Estos drops permiten obtener información de Targets. Los atributos disponibles son:

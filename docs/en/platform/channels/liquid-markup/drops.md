@@ -526,6 +526,12 @@ These drops obtain the information relevant to the Submissions.
 | **submission.url** | Origination Page URL. | ```https://test.modyo.com/new-site/myorigination``` |
 | **submission.uuid** | Origination UUID. | ```abcd-1234-5678-0000``` |
 | **submission.tasks['task_uid']** | Task response of task with provided UID. Task responses types are described on next section |  |
+| **submission.sequence_id** | Sequence number of the current submission. | ```77``` |
+| **submission.fields** | Array with answers stored within the current submission. | ```[{"question": {"label": "What's your name?"},"text_field": "Jorge Regula"}]``` |
+| **submission.QUESTION_ID** | By using the ID of a specific question (e.g., submission.123456), its information is directly accessed. | ```{"question": {"label": "What's your name?"},"text_field": "John Doe"}``` |
+| **submission.origination.name** | Name of the origination. | ```My Origination``` |
+| **submission.origination.steps** | Array with the names of the steps in the origination. | ```[{"uid": "step 1"}, {"uid": "step 2"}]``` |
+| **submission.origination.tasks** | Array with all the tasks in the origination and the step they correspond to. | ```[{"task_id": "67890","name": "Task 1", "step": {"uid": "abcd1234"}}]``` |
 
 ### Code Snippet Task Response
 

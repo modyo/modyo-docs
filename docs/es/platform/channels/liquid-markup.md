@@ -64,7 +64,7 @@ Con Tags se puede agregar control de flujo e iteración a tus páginas. Se neces
 ### Drops
 Modyo extiende la funcionalidad de Liquid a través de variables creadas para Modyo Platform, llamadas Drops. Actualmente, ofrecemos drops de más de 20 categorías diferentes para todos los módulos de la plataforma. 
 
-Para ver más información sobre cómo usar Drops, ve a [Drops](/es/platform/channels/drops).
+Para ver más información sobre cómo usar Drops, ve a [Drops](/es/platform/channels/liquid-markup/drops).
 
 
 ## Expresiones y variables

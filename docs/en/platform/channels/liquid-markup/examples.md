@@ -8,7 +8,7 @@ In any part of Channels (Sites, Widgets, and Templates) you can use Liquid to cr
 
 ## Display list of Entries of a Type
 
-In [Content Pages](/en/platform/channels/pages#content-page) you can generate a list of all Entries of a Type. In this case, we take all the Entries of the `product` Type in the `My Bank` Space. The variable `entries` on line 1 gets an array of the drop [Entry](/en/platform/channels/drops#entry). This array is traversed to display the `meta.uuid` and `meta.title` of each Entry by line. 
+In [Content Pages](/en/platform/channels/pages#content-page) you can generate a list of all Entries of a Type. In this case, we take all the Entries of the `product` Type in the `My Bank` Space. The variable `entries` on line 1 gets an array of the drop [Entry](/en/platform/channels/liquid-markup/drops#entry). This array is traversed to display the `meta.uuid` and `meta.title` of each Entry by line. 
 
 ```liquid
 {% assign entries = spaces['my-bank'].types['product'].entries %}
