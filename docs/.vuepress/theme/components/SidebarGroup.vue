@@ -85,7 +85,9 @@ export default {
       })
     }
   },
-  methods: { isActive }
+  methods: { 
+    isActive
+  }
 }
 </script>
 
@@ -119,6 +121,8 @@ export default {
   color $textColor
   transition color .15s ease
   cursor pointer
+  &.clickable
+    cursor pointer
   font-size 1.1em
   font-weight bold
   // text-transform uppercase
