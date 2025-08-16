@@ -164,7 +164,7 @@ En un flujo de originación, cada respuesta representa el proceso en curso de un
 |---|---|
 | **submission.sequence_id** Número de secuencia de la actual respuesta.  | ``` 77 ``` |
 | **submission.assignee.name** Nombre de la persona asignada.  | ```John``` |
-| **submission.fields** Array con respuestas almacenadas dentro de la respuesta actual. | ```[{"question": {"label": "What's your name?"},"text_field": "Jorge Regula"}]``` |
+| **submission.fields** Array con los campos almacenados dentro de la respuesta actual. | ```[{"question": {"label": "What's your name?"},"text_field": "Jorge Regula"}]``` |
 | **submission.QUESTION_ID** Al usar el ID de una pregunta específica ( ej: submission.123456) se accede directamente a su información | ```{"question": {"label": "What's your name?"},"text_field": "John Doe"}``` |
 | **submission.origination.name** Nombre de la originación. | ```My Origination``` |
 | **submission.origination.steps** Array con los nombres de los steps en la originación | ```[ {"uid": "step 1"}, {"uid": "step 2"}]``` |

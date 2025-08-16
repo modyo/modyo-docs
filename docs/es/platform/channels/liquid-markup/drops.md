@@ -471,7 +471,7 @@ Estos drops obtienen la información relevante a las Respuestas de Origination.
 | **submission.uuid** | UUID de Origination. | ```abcd-1234-5678-0000``` |
 | **submission.tasks['task_uid']** | Respuesta de tarea con el UID proporcionado. Los tipos de respuestas de tareas se describen en la siguiente sección. |  |
 | **submission.sequence_id** | Número de secuencia de la respuesta actual. | ```77``` |
-| **submission.fields** | Array con respuestas almacenadas dentro de la respuesta actual. | ```[{"question": {"label": "What's your name?"},"text_field": "Jorge Regula"}]``` |
+| **submission.fields** | Array con los campos almacenados dentro de la respuesta actual. | ```[{"question": {"label": "What's your name?"},"text_field": "Jorge Regula"}]``` |
 | **submission.QUESTION_ID** | Al usar el ID de una pregunta específica (ej: submission.123456) se accede directamente a su información. | ```{"question": {"label": "What's your name?"},"text_field": "John Doe"}``` |
 | **submission.origination.name** | Nombre de la originación. | ```My Origination``` |
 | **submission.origination.steps** | Array con los nombres de los steps en la originación. | ```[{"uid": "step 1"}, {"uid": "step 2"}]``` |
