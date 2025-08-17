@@ -14,7 +14,7 @@ Liquid está diseñado con requisitos muy específicos:
 - Debe ser no evaluable y seguro. Las plantillas Liquid están diseñadas para que los usuarios puedan editarlas, evitando la ejecución de código inseguro en el servidor.
 - No debe tener estado. Los pasos de compilación y renderizado deben estar separados para que el análisis sintáctico y la compilación se realicen una sola vez, y luego se pueda renderizar pasando un hash con objetos locales y variables.
 
-### ¿Por qué usar Liquid?
+### ¿por qué usar Liquid?
 
 - Deseas permitir que los usuarios editen la apariencia de tu aplicación sin ejecutar **código inseguro en tu servidor**.
 - Quieres renderizar tus plantillas directamente desde la base de datos.
