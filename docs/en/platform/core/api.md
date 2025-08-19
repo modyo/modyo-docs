@@ -12,7 +12,7 @@ In this way, it is possible to carry out administrative tasks by consuming the A
 It is important to ensure that the API portal is not publicly exposed to the Internet. Calls to the APIs should be made from a secure environment using appropriate security protocols (HTTPS) and authentication tokens should not be shared.
 :::
 
-## General Information
+## General information
 
 To start benefiting from the Modyo API, it is important to first know which services are available to you, the operations that can be invoked, and how to use them.
 

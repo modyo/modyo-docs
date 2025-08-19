@@ -12,7 +12,7 @@ In this tutorial we will integrate Salesforce, a customer relationship managemen
 
 - A Modyo platform account with Administrator permissions
 
-## Step 1: Initial Setup
+## Step 1 Initial setup
 
 The first thing we need to do is log into our Salesforce account, where we'll set up the integration with Modyo Platform.
 
@@ -24,7 +24,7 @@ The link to <b> Setup </b> is located in the upper right corner of our screen, a
 
 <img src="/assets/img/tutorials/salesforce/setup.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;" alt="Image with closeup to the Setup button"/>
 
-## Step 2: Apex Class
+## Step 2 Apex class
 
 The first thing we have to do inside the Setup is in the search engine type <b> Apex Classes </b> to go and generate a new Apex Class, which will be used to create the Authentication Provider. 
 
@@ -142,7 +142,7 @@ global class Modyo_Connector extends Auth.AuthProviderPluginClass {
 
 Click Save.
 
-## Step 3: Custom Metadata Types
+## Step 3 Custom metadata types
 
 The purpose of Custom Metadata Types is to define which fields we should collect for authentication.
 
@@ -222,7 +222,7 @@ Click <b>Save</b> and on the settings of <b>Custom Metadata Types
  </tr>
 </table>
 
-## Step 4: Authentication Providers
+## Step 4 Authentication providers
 
 Once the Apex Class configuration and Custom Metadata Types are ready, you need to generate an authentication provider, which will use the newly defined Apex class.
 
@@ -332,7 +332,7 @@ Fill in the following data:
 </table>
 
 
-## Step 5: Named Credentials
+## Step 5 Named credentials
 
 Named Credentials allow users to authenticate to an external service provider. There are several default options, in order to connect to Modyo, we need to create a custom authentication.
 
@@ -417,7 +417,7 @@ To generate one, we are going to search for <b>Named Credentials</b> inside Setu
 
 Click on <b> Save </b>.
 
-## Step 6: Remote Site
+## Step 6 Remote site
 
 The last step is the definition of the external service within Salesforce. 
 
@@ -757,7 +757,7 @@ Click on <b>Create</b>, activate it in the 3 points and save.
 
 <img src="/assets/img/tutorials/salesforce/activate.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image activating the custom field in Modyo."/>
 
-## Step 8: Creating Flow
+## Step 8 Creating flow
 
 After the setup to connect Salesforce to Modyo is complete, the flow needs to be created to synchronize Salesforce users with Modyo.
 
@@ -963,7 +963,7 @@ And connect all the dots so that the Flow looks like this:
 
 Finally, save and test that it is working correctly.
 
-## Step 9: Creating Process
+## Step 9 Creating process
 
 Now we need to search <b>Process builder</b> in the search engine,
 

@@ -71,13 +71,13 @@ Modyo asigna roles predeterminados según el contexto o sección en la que se ut
 
 Los roles predeterminados que existen, según contexto, son:
 
-#### Roles por cuenta:
+#### Roles por cuenta
 
 - **Default user**: Tiene todos los permisos existentes,  excepto la edición de la configuración de cada contexto. Debe ser invitado a cada contexto para poder acceder a sus funcionalidades.
 - **Default admin**: Tiene todos los permisos existentes, pero debe ser invitado a cada contexto para poder acceder a sus funciones. A nivel de cuenta de Modyo Platform, solo puede ver variables globales y actividad.
 - **Owner**: Tiene todos los permisos existentes y puede acceder a todos los contextos sin necesidad de ser invitado a ellos.
 
-#### Roles por sitio:
+#### Roles por sitio
 
 - **Site viewer**: Puede ver entradas, ver diferencias entre versiones y puede dejar comentarios. También puede acceder a la vista de sincronización y ver los cambios pendientes de sincronizar. Sin embargo, este rol no tiene autorización para realizar ninguna acción que implique un cambio en la plataforma.
 - **Site developer**: Solamente puede editar recursos. No puede publicar, eliminar, hacer rollback o editar la configuración.
@@ -85,7 +85,7 @@ Los roles predeterminados que existen, según contexto, son:
 - **Site reviewer**:  Tiene todos los permisos del rol de site admin, excepto los permisos para editar la configuración del sitio.
 - **Site admin**: Tiene todos los permisos a nivel de un sitio, pero no puede crear nuevos sitios.
 
-#### Roles por espacio:
+#### Roles por espacio
 
 - **Space viewer**: Este rol permite ver el contenido de un espacio, ver diferencias entre versiones y dejar comentarios. Su acceso está limitado a la visualización y participación mediante comentarios, no puede realizar modificaciones en el contenido o realizar acciones que afecten la configuración.
 - **Space writer**: Este rol solo puede editar el contenido en un espacio. No tiene permisos para publicar, eliminar, realizar rollback o editar la configuración.
@@ -94,12 +94,12 @@ Los roles predeterminados que existen, según contexto, son:
 
 El usuario más importante tendrá el rol de Default Admin o Administrador. Este rol tiene todas las funciones habilitadas para gestionar la plataforma y los sitios.
 
-#### Roles por reino:
+#### Roles por reino
 
 - **Realm User**: Este rol puede añadir usuarios, crear, modificar y enviar a revisión campañas, formularios y segmentos.
 - **Realm Admin**: Puede acceder a todas las configuraciones y secciones del reino. Además, puede añadir y eliminar usuarios y miembros del equipo, así como eliminar el reino.
 
-### Roles a medida:
+### Roles a medida
 Los roles a medida te permiten crear perfiles con accesos y permisos únicos, combinando roles existentes o configurándolos según las necesidades específicas de tu organización.
 
 #### Crear roles a medida
@@ -115,7 +115,7 @@ Al crear un nuevo rol o seleccionar uno existente, podrás ver y modificar todos
 
 Para conservar los cambios, presiona el botón **Guardar**.
 
-### Acceso a las aplicaciones:
+### Acceso a las aplicaciones
 Modyo tiene roles que permiten acceder a todas las aplicaciones sin restricción alguna; por ello, Modyo permite restringir el acceso a ciertas aplicaciones configurando los roles de los miembros del equipo. De esta manera, es posible otorgar a un usuario un acceso total (Owner) solo en la aplicación de Channels, mientras restringe su acceso a otras aplicaciones.
 
 ### Asignar un rol por cuenta

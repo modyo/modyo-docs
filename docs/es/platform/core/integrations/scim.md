@@ -16,14 +16,14 @@ La sincronización es unidireccional, lo que significa que los datos modificados
 :::
 
 
-### Paso 1: Crea tu aplicación en Azure Entra ID
+### Paso 1 Crea tu aplicación en Azure Entra ID
 1. Accede al panel de administración de **Azure Entra ID**
 1. En el menú lateral selecciona **Enterprise Application**
 1. Selecciona la opción **Crea tu propia aplicación** en la parte superior de la galería de Azure
 1. Nombra tu aplicación y selecciona la opción **Integrar cualquier otra aplicación que no se encuentre en la página** como objetivo de la aplicación
 1. Haz click en **Crear**
 
-### Paso 2: Aprovisionamiento
+### Paso 2 Aprovisionamiento
 1. Accede a tu aplicación en Azure
 2. En el menú lateral selecciona **Aprovisamiento**
 3. Da click en **Introducción**
@@ -37,7 +37,7 @@ La sincronización es unidireccional, lo que significa que los datos modificados
 8. Si la configuración y guardado es correcto, debajo del botón de probar conexión podrás configurar la sección de **Asignaciones**
 9. Selecciona una asignación para proceder al paso de asignación de atributos
 
-### Paso 3: Asignación de atributos
+### Paso 3 Asignación de atributos
 #### Grupos
 1. Selecciona la asignación **Provision Azure Entra ID Groups** para configurar sus atributos.
 2. Selecciona las acciones del objeto de destino: Crear, actualizar y/ eliminar. Confirma que el mapeo sea:

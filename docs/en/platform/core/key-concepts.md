@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Key concepts
+# Concepts
 
 ## Team Review
 

@@ -12,7 +12,7 @@ Both Modyo Cloud and Enterprise Cloud, our cloud solutions, offer an excellent l
 
 This guide presents the most relevant recommendations for achieving this objective.
 
-## Password Policy
+## Password policy
 
 In this section, you can set the password security policy for team members. The available options are:
 
@@ -66,7 +66,7 @@ If you generate a new key, all requests for private content must go through Mody
 
 The key or _secret_ has a specified duration in seconds. You can set this time in the provided field; by default, the duration is one hour (3600 seconds). It is recommended to avoid a very short duration, as it may affect the platform's performance.
 
-## Two-Factor Authentication (2FA)
+## Two-factor authentication (2FA)
 
 Two-step authentication adds a layer of security to your account and reduces the risk of unauthorized access. When activated, each time team members log in, they will have to enter their password and a dynamic key provided by the Google Authenticator application from their phones.
 
@@ -103,7 +103,7 @@ If the authenticator is lost or stolen, it will not be possible to access the ac
 If you have activated the option to force authentication, the next time the user tries to log in, they will need to initialize the authenticator first. Once the authenticator is active, the user can proceed with the login process.
 :::
 
-## Best Practices
+## Best practices
 
 ### Important concepts
 - **Limit access**: Reduce the chances of a malicious actor gaining access to the system.
@@ -120,28 +120,28 @@ We recommend that you update Modyo periodically to ensure that your installation
 
 In addition, we recommend that you perform major version upgrades at least twice a year. This will not only keep you on the latest supported version, but will also provide you with the latest features and functionalities.
 
-### Set up a Strong Password in the Admin Panel
+### Set up a strong password in the admin panel
 The Administration Panel is Modyo's most powerful management tool. Through it, you can have control over various configurations and actions that are fundamental to the operation of Modyo. In addition, it provides you with administrative access to all the organizations defined on the platform.
 
 We recommend that you set a secure password and change it regularly, for example, after every major platform update.
 
-### Enable Transport Layer Security (TLS)
+### Enable transport layer security (TLS)
 Forcing connections to be TLS only in your installation ensures that all incoming and outgoing traffic is encrypted. In addition, we recommend using only modern versions of the protocol, in particular versions 1.2 or 1.3.
 
-### Differentiate Subdomains
+### Differentiate subdomains
 Differentiating subdomains is essential, as there are multiple places where Modyo supports HTML development. If not activated, the HTML of sites developed on Modyo can become an entry point for attacks that could affect other Modyo components through the cross-site scripting (XSS) technique.
 
-### Review the Backup Processors
+### Review the backup processors
 Running backup processes on a regular basis is very important in a secure Modyo implementation.
 
 In the case of Cloud and Enterprise Cloud, this is done automatically. For Enterprise On Premise, each customer's operations team is responsible for carrying out this activity.
 
 Modyo backups cover both the database and file shared directories, where static content is stored.
 
-### Using an Exit Proxy Server
+### Using an exit proxy server
 Modyo can establish communications with the Internet, especially with regard to identity providers or integration Webhooks. To manage and control these outbound communications, it is essential to implement an outbound proxy server or to set up a Network Address Translation (NAT) scheme in which the source IP addresses are not exposed.
 
-### Restrict Public Ports of Entry
+### Restrict public ports of entry
 Modyo users must access exclusively through port 443, behind a load balancer that distributes traffic to the different instances of the platform.
 
 Traffic between the load balancer and the platform instances can use ports 443 or 80, depending on the internal security of the network. For example, in isolated, protected networks such as Amazon AWS VPCs, internal traffic may not need to be encrypted.
@@ -152,7 +152,7 @@ The platform keeps a record of all actions performed by administrator users with
 
 We recommend that you review these logs periodically to verify the correct behavior of users within the system. Activity logs are also available through Modyo's administrative API.
 
-### Review Administration Permissions
+### Review administration permissions
 
 The administrators of an organization or site have a high level of access to content and settings that must be private. Impersonating one of these administrators can pose a major security risk. For this reason, we recommend keeping a small and very controlled number of users with a general administration role and ensuring that these users keep additional levels of protection active, such as the second factor of authentication.
 

@@ -12,7 +12,7 @@ De esta forma, es posible realizar labores administrativas consumiendo la API y 
 Es importante asegurarse que el portal de APIs no sea expuesto de manera pública a Internet. Las llamadas hacia las APIs deben realizarse desde un ambiente seguro usando los protocolos de seguridad adecuados (HTTPS) y evita compartir los tokens de autenticación.
 :::  
 
-## Información General
+## Información general
 
 Para comenzar a sacar provecho de la API de Modyo, primero es importante conocer los servicios de los que dispone, las operaciones que es posible invocar y la manera de utilizarlas.
 
@@ -58,7 +58,7 @@ Con estos datos puedes recorrer fácilmente los datos de un servicio determinado
 
 También cada API cuenta con un listado de posibles _responses_ que obtienes al invocar estos métodos, de forma que puedas preparar adecuadamente tu aplicación para manejar los datos.
 
-### example value
+### Example value
 
 Dentro de la sección __Response__, en **Example Value** obtienes un ejemplo de listado de espacios cuando la respuesta es 200:     
 
@@ -107,7 +107,7 @@ Al hacer click en **Model**, verás la estructura JSON que compone la respuesta,
 
 Adicionalmente se muestran posibles casos de fallo que pueden ocurrir para poder controlarlos adecuadamente.
 
-### listado de modelos
+### Listado de modelos
 
 Al final de la documentación, encontrarás una sección llamada "Models" que contiene todos los modelos involucrados en la documentación. Estos te permiten comprender los recursos disponibles y sus atributos utilizados en las APIs.
 
@@ -265,7 +265,7 @@ Modyo provee 2 posibles métodos de autenticación para invocar la API:
 
 A continuación, se explica como utilizar cada uno de estos métodos
 
-### bearer token
+### Bearer token
 
 Lo primero que debes realizar, es registrar la aplicación para consumir la API. Sigue estos pasos para crear un nuevo Bearer Token:
 
@@ -349,7 +349,7 @@ curl  GET https://test.modyo.com/api/admin/roles -v
 ....
 ```
 
-### Cookie session de admin
+### Cookie de sesión de admin
 
 Si estás usando Modyo desde un navegador web y tienes una sesión iniciada como administrador, entonces podrás acceder desde el mismo navegador a las URLs de la API. Podrás hacer _requests_ simplemente por contar con la cookie de sesión en la parte administrativa de la plataforma.
 

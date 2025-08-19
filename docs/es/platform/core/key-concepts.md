@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Conceptos Claves de Modyo
+# Conceptos
 
 ## Revisión en Equipo
 

@@ -103,7 +103,7 @@ Tienes dos opciones principales para crear temas para tus widgets:
 
 Ten en cuenta que los componentes de React en Dynamic Framework tienen su propio conjunto de propiedades personalizadas predefinidas. Puedes aprovechar estas propiedades para personalizar la apariencia y el comportamiento de tus widgets. [Consulta la documentación del componente para obtener una lista detallada de las propiedades disponibles.](https://dynamicbanking.co/components)
 
-### Ejemplo: creación de un componente temático
+### Ejemplo creación de un componente temático
 
 Supongamos que tienes un proyecto de React configurado utilizando el proceso de instalación de Dynamic Framework [detallado en la documentación](https://dynamicframework.dev/docs/getting-started).
 

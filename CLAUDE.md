@@ -69,3 +69,4 @@ GitHub Actions workflow (`/.github/workflows/main.yml`) runs on pull requests to
 - Uses Node.js 16
 - Runs `npm ci` followed by `npm run docs:build`
 - Ensures documentation builds successfully before merging
+- Los títulos H1, H2 y H3 nunca pueden terminar con ":"

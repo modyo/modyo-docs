@@ -111,37 +111,37 @@ Si has activado la opción de forzar autenticación, la próxima vez que el usua
 - **Preparación y conocimiento**:  Mantener copias de seguridad y procedimientos para estar preparados en el caso de posibles desastres.
 - **Fuentes confiables**: Evitar implementar widgets o código de fuentes poco confiables. Asegurar que todas las dependencias cargadas en el sitio provengan de fuentes confiables.
 
-### vulnerabilidades locales
+### Vulnerabilidades locales
 - Asegúrate que los equipos de cómputo de todos los usuarios administradores estén libres de spyware, malware o virus.
 - Asegúrate que los accesos siempre provengan de equipos actualizados y a través de navegadores web confiables y actualizados.
 
-### actualizar Modyo con regularidad
+### Actualizar Modyo con regularidad
 Te recomendamos actualizar Modyo periódicamente para asegurar que tu instalación tenga las últimas correcciones de seguridad y que todos los parches de seguridad están al día. Estos parches están diseñados para aplicarse sin causar interrupciones significativas en el flujo de trabajo.
 
 Además, te recomendamos realizar actualizaciones de versiones mayores al menos dos veces al año. Esto no solo te mantendrá en la última versión con soporte, sino que también te proporcionará las últimas características y funcionalidades.
 
-### Configurar una Contraseña Segura en el Panel de Administración
+### Configurar una contraseña segura en el panel de administración
 El Panel de Administración es la herramienta de administración más potente de Modyo. A través de él, puedes tener control sobre diversas configuraciones y acciones fundamentales en la operación de Modyo. Además, te proporciona acceso administrativo a todas las organizaciones definidas en la plataforma.
 
 Te recomendamos establecer una contraseña segura y cambiarla regularmente, por ejemplo, después de cada actualización importante de la plataforma.
 
-### habilitar Transport Layer Security (TLS)
+### Habilitar Transport Layer Security (TLS)
 Forzar las conexiones a que sean sólo TLS en tu instalación asegura que todo el tráfico entrante y saliente esté encriptado. Además, recomendamos utilizar solo versiones modernas del protocolo, en particular las versiones 1.2 o 1.3.
 
-### diferenciar subdominios
+### Diferenciar subdominios
 La diferenciación de subdominios es esencial, ya que existen múltiples lugares en donde Modyo admite desarrollo mediante HTML. Si no está activado, el HTML de los sitios desarrollados sobre Modyo puede convertirse en un punto de entrada para ataques que podrían afectar a otros componentes de Modyo mediante la técnica de cross-site scripting (XSS).
 
-### Revisar los Proceso de Respaldo
+### Revisar los procesos de respaldo
 Ejecutar procesos de respaldo de forma regular es muy importante en una implementación segura de Modyo.
 
 En el caso de Cloud y Enterprise Cloud esto se realiza de forma automática. Para Enterprise On Premise, el equipo de operaciones de cada cliente es responsable de llevar a cabo esta actividad.
 
 Los respaldos de Modyo contemplan tanto a la base de datos como a los directorios compartidos de archivos, en donde se almacena el contenido estático.
 
-### Utilizar un Servidor Proxy de Salida
+### Utilizar un servidor proxy de salida
 Modyo puede establecer comunicaciones con Internet, especialmente en lo que respecta a proveedores de identidad o Webhooks de integración. Para gestionar y controlar estas comunicaciones de salida, es esencial implementar un servidor proxy de salida o configurar un esquema de Network Address Translation (NAT) en el que las direcciones IP de origen no queden expuestas.
 
-### Restringir los Puertos Públicos de Entrada
+### Restringir los puertos públicos de entrada
 Los usuarios de Modyo deben acceder de forma exclusiva por el puerto 443, detrás de un balanceador de carga que distribuya el tráfico a las diferentes instancias de la plataforma.
 
 El tráfico entre el balanceador de carga y las instancias de la plataforma puede utilizar los puertos 443 o 80, dependiendo de la seguridad interna de la red. Por ejemplo, en redes aisladas y protegidas como las VPC de Amazon AWS, es posible que no sea necesario encriptar el tráfico interno.
@@ -152,7 +152,7 @@ La plataforma guarda un registro de todas las acciones realizadas por los usuari
 
 Te recomendamos revisar estos registros de forma periódica para verificar el correcto comportamiento de los usuarios dentro del sistema. Los registros de actividad también están disponibles a través del API administrativo de Modyo.
 
-### revisar permisos de administración
+### Revisar permisos de administración
 
 Los administradores de una organización o sitio tienen un alto nivel de acceso a contenido y configuraciones que deben ser privadas. Impersonar a uno de estos administradores puede representar un gran riesgo de seguridad. Por esta razón, recomendamos mantener un número pequeño y muy controlado de usuarios con rol de administración general y asegurar que estos usuarios mantengan activos niveles de protección adicionales como el segundo factor de autenticación.
 

@@ -16,14 +16,14 @@ The synchronization is unidirectional, meaning that data changed in Modyo will n
 :::
 
 
-### Step 1: Create your application in Azure Entra ID
+### Step 1 Create your application in Azure Entra ID
 1. Access the **Azure Entra ID admin panel**
 1. In the side menu select **Enterprise Application**
 1. Select the **Create your own app** option at the top of the Azure gallery
 1. Name your application and select the option **Integrate any other application that is not on the page** as the purpose of the application
 1. Click **Create**
 
-### Step 2: Provisioning
+### Step 2 Provisioning
 1. Access your application in Azure
 2. In the side menu, select **Provision**
 3. Click on **Introduction**
@@ -37,7 +37,7 @@ The synchronization is unidirectional, meaning that data changed in Modyo will n
 8. If the configuration and saving are correct, under the test connection button you can configure the **Assignments** section
 9. Select an assignment to proceed to the attribute assignment step
 
-### Step 3: Assigning Attributes
+### Step 3 Assigning attributes
 #### Groups
 1. Select the **Provision Azure Entra ID Groups** assignment to configure its attributes.
 2. Select the actions of the target object: Create, update, and/or delete. Confirm that the mapping is:
