@@ -136,7 +136,7 @@ The services compatible with Modyo login are:
 - Oauth2
 - OpenID Connect
 - Keycloak
-- Azure Active Directory
+- Azure Entra ID
 
 You must have the correct configuration of the associated service so that Modyo can connect to it. Be sure to complete all required fields.
 

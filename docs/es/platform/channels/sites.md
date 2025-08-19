@@ -525,7 +525,7 @@ Una vez que hayas habilitado la revisión en equipo, puedes realizar las siguien
 - **Requerir todos** - Con esta opción activa, exiges que todos los usuarios designados como revisores aprueben el elemento antes de que este pueda ser publicado.
 
 
-### miembros del equipo
+### Miembros del equipo
 
 Para organizar y gestionar eficientemente el trabajo en Modyo, puedes seleccionar los miembros del equipo que participarán en la elaboración de cada sitio, dándoles acceso a las tareas de escritura, revisión y/o publicación.
 

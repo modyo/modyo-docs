@@ -107,7 +107,7 @@ When you click on **Model**, you will see the JSON structure that makes up the r
 
 Additionally, possible cases of failure that may occur are shown, in order to control them properly.
 
-### List of Models
+### List of models
 
 At the end of the documentation, you will find a section called “Models” that contains all the models involved in the documentation. These allow you to explore the resources available and their attributes used in APIs.
 

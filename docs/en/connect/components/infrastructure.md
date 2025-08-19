@@ -16,7 +16,7 @@ Load balancing distributes Internet requests among a group of servers.
 
 Modyo Connect implements load balancing using [AWS Application Load Balancer (ALB)](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html). The ALB integrates natively with other AWS services, offering unique security features such as route and protocol redirection, [SSL/TLS certificates](#ssl-tls-certificates), and the incorporation of [web application firewalls (WAF)](#application-firewall-waf).
 
-### Steps to Activate
+### Steps to activate
 
 To request the creation of an ALB balancer in AWS, a requirement ticket must be created in the [Modyo Support Center](https://support.modyo.com) that includes:
 

@@ -4,7 +4,7 @@ search: true
 
 # Resources and Engagement
 
-### Learning Paths
+### Learning paths
 
 Modyo's [Learning Paths](https://help.modyo.com/en/collections/3962662-learning-paths) offer an interactive and guided learning experience to explore the platform's key functions, providing access to courses, content, and videos on specific topics.
 
@@ -14,11 +14,11 @@ Designed to maximize your utilization of the Modyo platform, Learning Paths cove
 
 Join the [Modyo Community](https://www.modyo.com/community) to access learning resources, invitations to exclusive events, and the support of our experts for any platform-related queries.
 
-### Official Documentation
+### Official documentation
 
 Explore our [official documentation](/en/platform) to deepen your understanding of our product and its core functionalities.
 
-### Modyo Expert
+### Modyo expert
 
 The Modyo Expert service provides consulting and support throughout all stages of your digital product's development, adhering to Modyo's reference architecture. Having a Modyo Expert on your team ensures continuous support for architectural and implementation decisions affecting the platform, micro frontends, and integration microservices.
 

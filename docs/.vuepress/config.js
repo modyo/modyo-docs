@@ -97,7 +97,7 @@ module.exports = {
                                   collapsable: true,
                                   children: [
                                       ["/en/platform/core/integrations/identity-providers", "Identity Providers"],
-                                      ["/en/platform/core/integrations/scim", "SCIM Provision with Microsoft Azure AD"],
+                                      ["/en/platform/core/integrations/scim", "SCIM Provision with Microsoft Entra ID"],
                                       ["/en/platform/core/integrations/oidc", "Manage private sessions using OpenID Connect (OIDC)"],
                                   ],
                               },
@@ -302,7 +302,7 @@ module.exports = {
                                 collapsable: true,
                                 children: [
                                     ["/es/platform/core/integrations/identity-providers", "Proveedores de Identidad"],
-                                    ["/es/platform/core/integrations/scim", "Aprovisionamiento SCIM con Microsoft Azure AD"],
+                                    ["/es/platform/core/integrations/scim", "Aprovisionamiento SCIM con Microsoft Entra ID"],
                                     ["/es/platform/core/integrations/oidc", "Gestión de sesión privada usando OpenID Connect (OIDC)"],
                                 ],
                             },

@@ -62,7 +62,7 @@ To enable or disable the search functionality, follow these steps:
 1. Click **save**.
 
 
-### Search Template
+### Search template
 
 You can control the appearance and search functionalities in your web app using the _search_ [template](/en/platform/channels/sites#search-template/).
 

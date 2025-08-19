@@ -310,7 +310,7 @@ Liquid expressions are tested to determine their "truthiness" similarly to Ruby:
 {% endif %}
 ```
 
-### Case Statement
+### Case statement
 
 If you need more conditions, you can use the `case` statement:
 
@@ -381,7 +381,7 @@ one
 two
 ```
 
-### For Loop
+### For loop
 
 Liquid allows `for` loops over collections:
 

@@ -136,7 +136,7 @@ Los servicios compatibles con el ingreso a Modyo son:
 - Oauth2
 - OpenID Connect
 - Keycloak
-- Azure Active Directory
+- Azure Entra ID
 
 Debes contar con la correcta configuración del servicio asociado para que Modyo pueda conectarse con él. Asegúrate de completar todos los campos requeridos.
 

@@ -6,7 +6,7 @@ search: true
 
 The Digital Factory dashboard displays metrics about team productivity and content creation flow.
 
-### Key Metrics
+### Key metrics
 
 Five counters showing team activity:
 - **Created**: New entries, pages, and widgets
@@ -17,7 +17,7 @@ Five counters showing team activity:
 
 Each counter includes a trend indicator comparing with the previous period.
 
-### Available Filters
+### Available filters
 
 - Date range
 - Sites
@@ -27,11 +27,11 @@ Each counter includes a trend indicator comparing with the previous period.
 When filtering by site, space elements are not included in the count, and vice versa.
 :::
 
-### Created vs Published Resources
+### Created vs published resources
 
 Line chart comparing the volume of content created against published over time, allowing identification of potential bottlenecks in the editorial flow.
 
-### Activity by User
+### Activity by user
 
 Table showing team member activity with columns for:
 - Elements created
@@ -40,7 +40,7 @@ Table showing team member activity with columns for:
 - Approved
 - Published
 
-### Activity by Content
+### Activity by content
 
 Horizontal bar chart comparing activity by element type:
 - Entries

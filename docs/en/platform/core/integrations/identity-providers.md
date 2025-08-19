@@ -13,7 +13,7 @@ The platform is currently compatible with:
 - [OAuth2](#oauth2)
 - [OpenID Connect](#openid-connect)
 - [Keycloak](#keycloak)
-- [Azure Active Directory](#azure-active-directory)
+- [Azure Entra ID](#azure-active-directory)
 
 Remember to have all the required data and certificates at hand before changing them or integrating a service, to avoid any potential issues with user access.
 
@@ -110,7 +110,7 @@ For a correct OpenID Connect integration, it is necessary that the OIDC Provider
 The API for obtaining delegated access tokens via `/auth/openidc/access_token` is deprecated and replaced by `/api/profile/me`.
 :::
 
-### Integration Settings
+### Integration settings
 
 1. Go to **Configuration/Realm Configuration > Realm > Identity Providers > Add > OpenID Connect** and fill in **Client ID** and **Secret** with the client's name and credentials.
 2. In Issuer, fill in the URL of the realm, for example, for the realm `my-realm` the URL it is `https://test.example.com/auth/realms/my-realm`.
@@ -170,14 +170,14 @@ After configuring Keycloak, you now have to complete the integration into Modyo 
 4. Configure the **Scopes** with the scopes required for the application. Use `openid, email, profile` if you don't have custom scopes.
 
 
-## Azure Active Directory
+## Azure Entra ID
 
-Azure Active Directory is a Microsoft Azure cloud identity service that allows you to implement a hybrid identity scheme based on on-premise directories with SSO in the cloud.
+Azure Entra ID is a Microsoft Azure cloud identity service that allows you to implement a hybrid identity scheme based on on-premise directories with SSO in the cloud.
 
 ### Register new client application
 
 1. Log in to the [Azure Portal](https://portal.azure.com/).
-2. In the search bar, search for **Azure Active Directory**, and then select **App registrations > New registration**.
+2. In the search bar, search for **Azure Entra ID**, and then select **App registrations > New registration**.
 
 <img src="/assets/img/platform/aad-registration.png" alt="Microsoft Azure's Register an Application page." width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
 
@@ -195,7 +195,7 @@ Azure Active Directory is a Microsoft Azure cloud identity service that allows y
 
 <img src="/assets/img/platform/aad-secret.png" alt="New client secret button." width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
 
-### Integration Settings
+### Integration settings
 
 The following configuration applies to both Team and Customer user integrations.
 
@@ -209,6 +209,6 @@ The following configuration applies to both Team and Customer user integrations.
    |  Option                                      |       Description                                                                                                                                                                                                                 |
    |----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
    | **Enable refresh token** | Enable token refreshment managed by Modyo. The access tokens will be automatically renewed by the platform if the user maintains activity on the site and has a valid refresh token. |
-   | **Enable logout** | Enable logging out of the provider when logging out of Modyo. This allows the session to be effectively closed, forcing the user to identify again in Azure AD, and disabling the SSO experience. |
-   | **Enable token revocation** | Not supported by Azure AD|
+   | **Enable logout** | Enable logging out of the provider when logging out of Modyo. This allows the session to be effectively closed, forcing the user to identify again in Entra ID, and disabling the SSO experience. |
+   | **Enable token revocation** | Not supported by Entra ID|
    | **Show Delegation Information**                               | Enables more information in the [User Profile API](/en/platform/customers/api) regarding delegated tokens. This is useful when the access token issued by the identity provider is needed to gain access to another service (e.g., an external API). |                   | **Enable Claim Synchronization at Login** | Enables OpenID Connect claim synchronization with custom fields in Modyo. More information in [Claim Synchronization](#claims-synchronization).               |

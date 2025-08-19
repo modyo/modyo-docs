@@ -91,7 +91,7 @@ This adds a new field with the domain name, your user level, and your username.
 Once you have two-factor authentication enabled, the button will say **Remove authenticator**.
 
 
-### Delete Authenticator for a User
+### Delete authenticator for a user
 
 If the authenticator is lost or stolen, it will not be possible to access the account. In this case, a Modyo Platform administrator can help by removing the authenticator linked to the user by following these steps:
 
@@ -105,17 +105,17 @@ If you have activated the option to force authentication, the next time the user
 
 ## Best Practices
 
-### Important Concepts
+### Important concepts
 - **Limit access**: Reduce the chances of a malicious actor gaining access to the system.
 - **Containment**: Configure the system in a way that minimizes possible damage if it is breached by a malicious actor.
 - **Preparation and knowledge**: Maintain backups and procedures to be prepared in the event of potential disasters.
 - **Trusted sources**: Avoid implementing widgets or code from untrustworthy sources. Ensure that all dependencies loaded on the site come from reliable sources.
 
-### Local Vulnerabilities
+### Local vulnerabilities
 - Make sure that the computers of all administrator users are free of spyware, malware, or viruses.
 - Make sure that access always comes from updated computers and through reliable and updated web browsers.
 
-### Update Modyo Regularly
+### Update Modyo regularly
 We recommend that you update Modyo periodically to ensure that your installation has the latest security fixes and that all security patches are up to date. These patches are designed to be applied without causing significant interruptions to the workflow.
 
 In addition, we recommend that you perform major version upgrades at least twice a year. This will not only keep you on the latest supported version, but will also provide you with the latest features and functionalities.
