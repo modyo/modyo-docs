@@ -153,7 +153,7 @@ const privateTypePost = modyoAccount.getContentType("blog", "post", false);
 It is important that this potentially sensitive information be treated with care. Obtaining private content requires cookies and an end user who is logged into Modyo.
 :::
 
-### End User Information
+### End user information
 
 :::warning Warning
 It is important that you treat this sensitive information with care. As with Private Content, this information is only available if working from a browser that supports cookies, and the end user has logged in to the platform.

@@ -73,7 +73,7 @@ Además, para que los usuarios puedan recibir notificaciones WebPush, deben cump
 Si utilizas una versión de Modyo anterior a la 10.0, actualiza tu plantilla con el [código de soporte para WebPush](https://github.com/modyo-community/web-push-support).
 :::
 
-## Estado de envío
+## Estado de Envío
 
 Antes de enviar una campaña, utiliza el botón de **Vista previa** para verificar el contenido. Una vez confirmado, haz clic en **Enviar**.
 El botón contextual te permite realizar estas acciones:
@@ -124,7 +124,7 @@ Borrar una campaña cuando está en proceso de envío, no significa que no llega
 
 Hacer click en el nombre de una campaña te lleva a la sección Entregas de Mensajes.
 
-## Entregas de mensajes
+## Entregas de Mensajes
 
 En la sección Entregas de mensajes, encuentras la lista de usuarios a los cuales les ha llegado un mensaje desde la plataforma. Aquí puedes ver una lista de todos los usuarios que han recibido un correo o notificación única, denominados "Sin Campaña".
 

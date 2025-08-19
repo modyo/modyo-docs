@@ -121,7 +121,7 @@ Al momento de instanciar el widget en una página, verás que ahora todas las va
 Al instanciar el widget en una página se listarán todas las variables que ese widget está usando, por lo que si no ves alguna de las variables que están definidas en el widget, es muy probable que no se esté usando la variable en el código del widget.
 :::
 
-## Carga síncrona
+## Carga Síncrona
 
 :::warning Atención
 Esta es una funcionalidad experimental y puede estar sujeta a cambios.
@@ -250,7 +250,7 @@ function loadLocaleMessages() {
 
 Crea un objeto javascript en Snippets para poder hacer uso de Liquid en tus Widgets.
 
-Los Widgets, al estar desacoplados de la plataforma, tienen la desventaja de no poder usar Liquid directamente y no tenemos acceso a [liquid drops](/es/platform/channels/liquid-markup/drops), para poder trabajar con ellos los tendremos que hacer disponibles mediante javascript desde la plataforma. [**Liquid Markup**](/es/platform/channels/liquid-markup) es una parte importante de la plataforma, de como construimos las vistas, y accedemos al contenido en ella. También nos da acceso a [**drops**](/es/platform/channels/liquid-markup/drops), variables de contexto que nos permiten interactuar con nuestras vistas de manera más dinámica. Por ejemplo, se puede determinar que contenido mostrar al usuario según el segmento al que pertenece, ocultar un menú según la página que se este visitando, etc.
+Los Widgets, al estar desacoplados de la plataforma, tienen la desventaja de no poder usar Liquid directamente y no tenemos acceso a [liquid objetos](/es/platform/channels/liquid-markup/objects), para poder trabajar con ellos los tendremos que hacer disponibles mediante javascript desde la plataforma. [**Liquid Markup**](/es/platform/channels/liquid-markup) es una parte importante de la plataforma, de como construimos las vistas, y accedemos al contenido en ella. También nos da acceso a [**objetos**](/es/platform/channels/liquid-markup/objects), variables de contexto que nos permiten interactuar con nuestras vistas de manera más dinámica. Por ejemplo, se puede determinar que contenido mostrar al usuario según el segmento al que pertenece, ocultar un menú según la página que se este visitando, etc.
 
 
 Sigue estos pasos para crear un snippet con variables de Liquid:

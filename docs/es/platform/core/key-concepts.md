@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Conceptos clave
+# Conceptos Claves de Modyo
 
 ## Revisión en Equipo
 
@@ -70,7 +70,7 @@ Para ellos, los botones "Enviar a revisión" y "Revisar" tienen una opción en e
 
 Esta opción existe porque hay ocasiones en las que es necesario publicar rápidamente, por lo que debes ser cauteloso cuando asignas los roles para tus espacios o sitios.
 :::
-### Mis Tareas
+### Mis tareas
 
 La sección Mis tareas en Modyo te da una visión general de todos los elementos que requieren tu atención. Te permite acceder a información sobre el tipo de elemento, su autor y cuándo fue actualizado por última vez.
 Una vez que un elemento ha sido marcado para revisión, el usuario asignado puede revisarlo y aprobarlo en la sección My Tasks.
@@ -237,7 +237,7 @@ Cuando el Administrador toma el control, el usuario que esté usando el recurso 
 Tras tomar el control, el Administrador solo tiene dos horas para hacer cambios sin guardar. Pasado ese tiempo, el recurso vuelve a liberarse y puede ser tomado por cualquier otro usuario.
 :::
 
-## Modo vista previa
+## Modo Vista Previa
 
 El modo vista previa te permite previsualizar los cambios realizados a elementos publicables como entradas, páginas, navegación, widgets o plantillas. El acceso a este modo está en la parte superior derecha del sitio. Puedes reconocer que estás en modo vista previa, cuando veas la barra en la parte superior del sitio.
 
@@ -258,7 +258,7 @@ La barra de vista previa contiene los siguientes elementos interactivos:
 Cambiar el selector de contenido de la barra de previsualización no tendrá efecto sobre el contenido que estés usando a través del SDK de JavaScript o la API de contenido. Solo tendrá efecto en el contenido que se usa a través del SDK de Liquid.
 :::
 
-## Variables globales
+## Variables Globales
 
 Modyo ofrece la funcionalidad de definir variables globales, las cuales pueden ser utilizadas en todos los sitios donde se utilice Liquid. Esto permite compartir, por ejemplo, un _snippet_ de código entre diferentes sitios.
 

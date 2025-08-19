@@ -6,9 +6,9 @@ search: true
 
 En cualquier parte de Channels (Sitios, Widgets y Plantillas), puedes usar Liquid para crear contenido dinámico. A continuación, se muestran varios ejemplos para diferentes casos de uso.
 
-## Desplegar listado de Entradas de un Tipo
+## Desplegar Listado de Entradas de un Tipo
 
-En [Páginas de Contenido](/es/platform/channels/pages#pagina-de-contenido), puedes generar un listado de todas las Entradas de un Tipo. En este ejemplo, se obtienen todas las Entradas del Tipo `product` en el Espacio `My Bank`. La variable `entries` de la línea 1 obtiene un array del drop [Entry](/es/platform/channels/liquid-markup/drops#entrada). Este array se itera para mostrar el `meta.uuid` y `meta.title` de cada Entrada por fila. 
+En [Páginas de Contenido](/es/platform/channels/pages#pagina-de-contenido), puedes generar un listado de todas las Entradas de un Tipo. En este ejemplo, se obtienen todas las Entradas del Tipo `product` en el Espacio `My Bank`. La variable `entries` de la línea 1 obtiene un array del objeto [Entry](/es/platform/channels/liquid-markup/objects#entrada). Este array se itera para mostrar el `meta.uuid` y `meta.title` de cada Entrada por fila. 
 
 ```liquid
 {% assign entries = spaces['my-bank'].types['product'].entries %}
@@ -28,7 +28,7 @@ En el caso de una entrada de cardinalidad única (ej. un aviso de privacidad), p
 Visit our <a href="{{ spaces['my-bank'].types['privacy'].entry.url }}">Privacy Policy</a>.
 ```
 
-## Desplegar cantidad total de Entradas
+## Desplegar Cantidad Total de Entradas
 
 Para acceder a la cantidad total de entradas que retorna un filtro de contenido, puedes usar el filtro de Liquid `entries.size`, por ejemplo:
 
@@ -37,7 +37,7 @@ Para acceder a la cantidad total de entradas que retorna un filtro de contenido,
 <p>You have a total of {{ entries.size }} products!</p>
 ```
 
-## Filtros
+## Filtrar Entradas
 
 Para filtrar las entradas, puedes usar los siguientes atributos:
   - **by_uuid**
@@ -125,7 +125,7 @@ Ten en cuenta que si tienes más de un widget que use la paginación de contenid
 Para usar la paginación en un widget personalizado, se debe cambiar el filtro asociado a la paginación por <span v-pre>`{{ entries | pagination_links_remote }}`</span>. Esto es necesario dado que los widgets personalizados se cargan de forma asíncrona. Junto con el cambio anterior, se debe asegurar que _JQuery_ esté disponible en el sitio y recordar que al usar los enlaces de paginación, solo cambiará el HTML del widget y no se ejecutará nuevamente el _JavaScript_ del widget.
 :::
 
-## Ordenar
+## Ordenamiento de Entradas
 
 De la misma forma en que se puede filtrar por categoría (`by_category`), tags (`by_tags`) y por UUID (`by_uuid`), se puede crear un filtro para ordenar los resultados por los atributos "meta" (`name`, `slug`, `created_at`, `updated_at`, `published_at`) de las entradas usando los filtros `sort_by`, de la siguiente forma:
 
@@ -145,7 +145,7 @@ Para ordenar por un campo personalizado, debes usar como parámetro el `fields.u
 {% endfor %}
 ```
 
-## Geolocalización
+## Geolocalización de Entradas
 
 Para las entradas con campos de ubicación, se pueden generar mapas fácilmente con los filtros `static_map` y `dynamic_map`, que usan Google Maps Static API y Google Maps Javascript API, respectivamente. El siguiente ejemplo genera mapas para el campo `Locations` con un tamaño de 600x300 px, un zoom de nivel 5, tipo de mapa 'roadmap' y un icono personalizado.
 

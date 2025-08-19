@@ -72,7 +72,7 @@ Obtener el primer elemento del array pasado.
 Redondea un número decimal hacia abajo al entero más cercano, *e.g.*
 <span v-pre>`{{ 4.6 | floor }} #=> 4`</span>
 
-### Format Date
+### Format date
 
 Da formato a una fecha con la localización del sitio, usa la misma sintaxis que `date`.
 
@@ -116,13 +116,13 @@ Precede un string *e.g.*
 ### Remove
 Elimina todas las incidencias *e.g.* <span v-pre>`{{ 'foobarfoobar' | remove:'foo' }} #=> 'barbar'`</span>
 
-### Remove First
+### Remove first
 Elimina la primera incidencia *e.g.* <span v-pre>`{{ 'barbar' | remove_first:'bar' }} #=> 'bar'`</span>
 
 ### Replace
 Reemplaza todas las incidencias *e.g.* <span v-pre>`{{ 'foofoo' | replace:'foo','bar' }} #=> 'barbar'`</span>
 
-### Replace First
+### Replace first
 Reemplaza la primera incidencia *e.g.* <span v-pre>`{{ 'barbar' | replace_first:'bar','foo' }} #=> 'foobar'`</span>
 
 ### Reverse
@@ -134,7 +134,7 @@ Redondea al número entero más cercano o al número especificado de decimales *
 ### Rstrip
 Elimina todos los espacios en blanco del final de un string
 
-### Script Tag
+### Script tag
 Genera el tag HTML `<script>` para un template JavaScript, tomando como parámetros la URL y atributos de la forma `attr: 'value'`, *e.g.* <span v-pre>`{{ 'my-js-url' | script_tag: async: 'async', defer: 'defer' }}`</span> => `<script src='my-js-url' type='text/javascript' async='async' defer='defer'></script>`
 
 ### Size
@@ -164,14 +164,14 @@ Elimina elementos duplicados de un array, utilizando opcionalmente una propiedad
 ### Upcase
 Convierte un string de entrada a mayúsculas
 
-### URL Encode
+### URL encode
 Codifica un string a URL
 
 ## Commerce
 
 Estos son los filtros liquid que alteran valores relacionados con Comercio.
 
-### Format Currency
+### Format currency
 
 Agrega formato de divisa a un valor. *e.g.*
 <span v-pre>`{{ 4 | format_currency }} => $4`</span>
@@ -198,12 +198,12 @@ En caso de que el sitio no tenga un reino asociado y no especifiques parámetros
 
 Estos son los filtros liquid que alteran valores relacionados al módulo de Content en Modyo Platform.
 
-### Asset Image
+### Asset image
 
 Retorna los tags de una imagen usando su uuid del Gestor de Archivos. *e.g.*
 <span v-pre>`{{ uuid | asset_image }}`</span>
 
-### Asset Link
+### Asset link
 
 Retorna el URL de una imagen usando su uuid del Gestor de Archivos. *e.g.*
 <span v-pre>`{{ uuid | asset_link: 'Este es una liga para el asset' }}`</span>
@@ -213,7 +213,7 @@ Retorna el URL de una imagen usando su uuid del Gestor de Archivos. *e.g.*
 Retorna el URL de una imagen usando su uuid del Gestor de Archivos. *e.g.*
 <span v-pre>`{{ uuid | asset_url_by_uuid }}`</span>
 
-### Asset Video
+### Asset video
 
 Retorna los tags de un video usando su uuid del Gestor de Archivos. *e.g.*
 <span v-pre>`{{ uuid | asset_video: 350, 300 }}`</span>
@@ -223,7 +223,7 @@ Retorna los tags de un video usando su uuid del Gestor de Archivos. *e.g.*
 - width (Integer) (default: 300) — ancho
 - height (Integer) (default: 200) — largo
 
-### By Category
+### By category
 
 Retorna una lista de Entradas que pertenecen a la Categoría seleccionada. *e.g.*
 <span v-pre>`{% assign filtered_entries = entries | by_category: 'category2,category1,category3' %}`</span>
@@ -232,7 +232,7 @@ Retorna una lista de Entradas que pertenecen a la Categoría seleccionada. *e.g.
 - entries (ArrayEntry) — array con entradas
 - list (String) (default: '') — String con categorías separadas por coma.
 
-### By Lang
+### By lang
 
 Retorna una lista de Entradas que pertenecen a un lenguaje seleccionado. *e.g.*
 <span v-pre>`{% assign entries = widget.entries | locale: 'es,en,pt' %} => entries`</span>
@@ -241,7 +241,7 @@ Retorna una lista de Entradas que pertenecen a un lenguaje seleccionado. *e.g.*
 - entries (ArrayEntry) — array con entradas
 - locale (String) (default: '') — String con lenguajes separadas por coma.
 
-### By Slug
+### By slug
 
 Retorna una lista de Entradas que pertenecen a un slug seleccionado. *e.g.*
 <span v-pre>`{% assign filtered_entries = entries | by_slug: 'slug2,slug1,slug' %}`</span>
@@ -250,7 +250,7 @@ Retorna una lista de Entradas que pertenecen a un slug seleccionado. *e.g.*
 - entries (ArrayEntry) — array con entradas
 - slug (String) (default: '') — Slug separadas por coma.
 
-### By Tag
+### By tag
 
 Retorna una lista de Entradas que pertenecen a un tag seleccionado. *e.g.*
 <span v-pre>`{% assign entries = widget.entries | by_tag: 'tag2,tag1,tag3' %} => entries`</span>
@@ -259,7 +259,7 @@ Retorna una lista de Entradas que pertenecen a un tag seleccionado. *e.g.*
 - entries (ArrayEntry) — array con entradas
 - locale (String) (default: '') — String con tags separadas por coma.
 
-### By Type
+### By type
 
 Retorna una lista de Entradas que pertenecen a un Tipo de Contenido seleccionado. *e.g.*
 <span v-pre>`{% assign filtered_entries = entries | by_type: 'type2,type1,type3' %}`</span>
@@ -489,7 +489,7 @@ Devuelve el Origination con el UID seleccionado. *ej.*
 
 Estos filtros Liquid alteran valores relacionados con los Sitios en Modyo Platform.
 
-### Asset Image Tag
+### Asset image Tag
 
 Genera la etiqueta HTML de una imagen (ej. <span v-pre>`{{ asset | asset_image_tag: 'original' }}`</span>).
 
@@ -595,7 +595,7 @@ Genera un código QR (ej. <span v-pre>`{{ value | qr_code: 4, 320, 320 }}`</span
 
 Sanitiza las etiquetas HTML de un String (ej. <span v-pre>`{{ '<script>Hello World</script>' | sanitize }} #=> 'Hello World'`</span>).
 
-### Script Tag
+### Script tag
 
 Agrega una etiqueta de script (ej. <span v-pre>`{{ 'test-script' | script_tag }}`</span>).
 

@@ -13,7 +13,7 @@ El dashboard de Customers muestra métricas clave sobre la actividad y engagemen
 - **Inicios de sesión**: Total de autenticaciones exitosas
 - **Nuevos registros**: Usuarios que completaron el registro
 
-### Filtros Disponibles
+### Filtros disponibles
 
 - Rango de fechas
 - Segmentos de usuarios
@@ -37,7 +37,7 @@ Tabla con las últimas 5 campañas ejecutadas mostrando:
 - Cantidad de aperturas
 - Tasa de apertura
 
-### Formularios Recientes
+### Formularios recientes
 
 Lista de formularios más recientes con:
 - Nombre del formulario

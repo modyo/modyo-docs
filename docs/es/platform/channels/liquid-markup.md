@@ -61,13 +61,13 @@ Con Tags se puede agregar control de flujo e iteración a tus páginas. Se neces
 {% endif %}
 ```
 
-### Drops
-Modyo extiende la funcionalidad de Liquid a través de variables creadas para Modyo Platform, llamadas Drops. Actualmente, ofrecemos drops de más de 20 categorías diferentes para todos los módulos de la plataforma. 
+### Objetos
+Modyo extiende la funcionalidad de Liquid a través de variables creadas para Modyo Platform, llamadas Objetos. Actualmente, ofrecemos objetos de más de 20 categorías diferentes para todos los módulos de la plataforma. 
 
-Para ver más información sobre cómo usar Drops, ve a [Drops](/es/platform/channels/liquid-markup/drops).
+Para ver más información sobre cómo usar Objetos, ve a [Objetos](/es/platform/channels/liquid-markup/objects).
 
 
-## Expresiones y variables
+## Expresiones y Variables
 
 Las expresiones son sentencias que tienen valores. Las plantillas de Liquid pueden usar expresiones en muchos lugares; frecuentemente en sentencias output, pero también como argumentos para tags o filtros.
 
@@ -197,7 +197,7 @@ Esto es útil para generar contenido (ej. Mustache, Handlebars) que puede usar u
 {% endraw %}
 ```
 
-### If / Else
+### If / else
 
 Las sentencias `if / else` son comunes en otros lenguajes de programación. Liquid las implementa con los siguientes tags:
 
@@ -310,7 +310,7 @@ Las expresiones de Liquid se prueban para determinar su "veracidad" de forma sim
 {% endif %}
 ```
 
-### Sentencia Case
+### Sentencia case
 
 Si necesitas más condiciones, puedes usar la sentencia `case`:
 
@@ -381,7 +381,7 @@ one
 two
 ```
 
-### Bucle For
+### Bucle for
 
 Liquid permite bucles `for` sobre colecciones:
 

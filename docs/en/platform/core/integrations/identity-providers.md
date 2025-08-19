@@ -17,7 +17,7 @@ The platform is currently compatible with:
 
 Remember to have all the required data and certificates at hand before changing them or integrating a service, to avoid any potential issues with user access.
 
-## Add an identity provider
+## Add an Identity Provider
 
 To add a new identity provider, follow these steps:
 

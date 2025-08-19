@@ -84,7 +84,7 @@ In the right sidebar, there are three tabs:
 - Properties: Allows you to modify the name, excerpt, path, parent, privacy, page grid, and meta tags.
 
 
-### Inserting an Image with Liquid
+### Inserting an image with Liquid
 
 Modyo recommends using the Liquid tag and not the asset URL to insert images into your content. This allows you to resize or replace an image wherever it is in use and ensure that any changes are immediately reflected.
 
@@ -238,7 +238,7 @@ This snippet takes `entry.name`, `entry.published_at`, `request.url`, and `entry
 :::tip Tip
 To learn more about how to use Liquid, go to [Liquid markup](/en/platform/channels/liquid-markup).
 
-To learn what fields you can use with the `entry` drop, see [Content Drops](/en/platform/channels/liquid-markup/drops#entry).
+To learn what fields you can use with the `entry` object, see [Content Objects](/en/platform/channels/liquid-markup/objects#entry).
 It can be complemented with the use of [Content Filters](/en/platform/channels/liquid-markup/filters#content).
 :::
 
@@ -270,7 +270,7 @@ If you enable privacy on a page, a session will be required to view this page. A
 
 Meta tags define the content of a page, and search engines rely on them to provide a search list to the user. In this section, you can add meta tags to pages and modify the value of existing meta tags to enhance the page's SEO. With the tags added to the pages, you can decide whether to use the default value, overwrite the available value for the tag, or remove the tag from the page.
 
-To access the list of meta tags on the page, you must use the Liquid drop <span v-pre>`{{ page.meta_tags }}`</span>. We recommend you see the example in the SEO section of the [Template builder](/en/platform/channels/templates#seo).
+To access the list of meta tags on the page, you must use the Liquid object <span v-pre>`{{ page.meta_tags }}`</span>. We recommend you see the example in the SEO section of the [Template builder](/en/platform/channels/templates#seo).
 
 ### Add a new meta tag
 

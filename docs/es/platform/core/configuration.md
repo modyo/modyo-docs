@@ -29,7 +29,7 @@ Si la zona horaria que eliges está sujeta a cambios de horarios, estos se refle
 - **Logo y favicon de la cuenta**: Personaliza la plataforma subiendo un logo y favicon para todos los usuarios. Estos elementos también serán usados en las páginas y sitios por defecto.
 - **API key de Google**: La API key utilizada para conectar la API de Google Maps en los campos de tipo ubicación en el módulo Content.
 
-## Configuración de perfil
+## Configuración de Perfil
 
 Personaliza tu usuario, cambia tu contraseña, y habilita autenticación de dos factores dentro de tu Perfil.
 

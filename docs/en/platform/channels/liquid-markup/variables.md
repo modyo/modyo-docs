@@ -2,23 +2,164 @@
 search: true
 ---
 
-# Expressions and variables
+# Variables and Data Types
 
-Expressions are statements that have values. Liquid templates can use expressions in several places; most often in output statements, but also as arguments to some tags or filters.
+In Liquid, you work with variables to store and manipulate data. This section covers how to create variables and the different data types available.
 
-Liquid accepts the following kinds of expressions:
+## Variables
 
-- **Variables.** The most basic type of expression is just the name of a variable. Liquid variables are named like Ruby variables: they must contain alphanumeric characters and underscores, should always start with a letter, and not have any kind of leading symbol (that is, they must look like `var_name`, not `$var_name`).
-- **Array or hash access.** If you have an expression (usually a variable) whose value is an array or hash, you can use a single value from that array/hash as follows:
-    * `my_variable[<KEY EXPRESSION>]` — The name of the variable, followed immediately by square brackets containing a key expression.
-        * For arrays, the key must be a literal integer or an expression that resolves to an integer.
-        * For hashes, the key must be a literal quotation string or an expression that resolves to a string.
-    * `my_hash.key` — Hashes also allow a shorter "dot" notation, where the name of the variable is followed by a period and the name of a key. This only works with keys that don't contain spaces, and (unlike the square bracket notation) does not allow the use of a key name stored in a variable.
-    * Note: if the value of an access expression is also an array or hash, you can access values from it in the same way, and can even combine the two methods. (For example, `site.posts[34].title`.)
-- **Array first and last.** If you have an expression whose value is an array, you can follow it with `.first` or `.last` to resolve to its first or last element.
-- **Array or hash size.** If you have an expression whose value is an array or hash, you can follow it with `.size` to resolve to the number of elements in the original expression, as an integer.
-- **Strings.** Literal strings must be surrounded by double or single quotes (``"my string"`` or `'my string'`). There is no difference; neither style allows variable interpolation.
-- **Integers.** Integers must not be quoted.
-- **Booleans and nil.** The literal values `true`, `false`, and `nil`.
+Variables store values that you can reuse in your template. You can create your own variables or use the ones Modyo provides automatically.
 
-To build an input array, you cannot do it in a control statement. You need to do it in a separate statement and then use that as a variable in a control statement.
+### Creating variables
+
+Use `assign` to create new variables:
+
+```liquid
+{% assign name = "John" %}
+{% assign price = 100 %}
+{% assign active = true %}
+
+{{ name }} → John
+{{ price }} → 100
+```
+
+### Access syntax
+
+```liquid
+{{ variable }}                    → Displays the value
+{{ object.property }}           → Accesses a property (dot notation)
+{{ object['property'] }}        → Bracket access (necessary if there are spaces)
+{{ object.nested.property }}    → Nested properties
+```
+
+**Differences between dot notation and brackets:**
+- **Dot**: Simpler but doesn't allow spaces or dynamic variables
+- **Brackets**: Allows spaces, hyphens, and using variables as keys
+
+```liquid
+{{ product.title }}              → Works
+{{ product['title'] }}           → Also works
+{{ product['special-price'] }}   → Necessary with hyphens
+{{ product[variable_name] }}     → Dynamic access with variable
+```
+
+## Data Types
+
+Liquid in Modyo supports the following data types:
+
+### Strings
+
+Strings must be in single or double quotes:
+
+```liquid
+{% assign message = "Hello world" %}
+{% assign name = 'John' %}
+{{ message }} → Hello world
+```
+
+### Numbers
+
+```liquid
+{% assign price = 100 %}         → Integer
+{% assign discount = 0.15 %}     → Decimal
+{{ price | minus: 10 }}          → 90
+```
+
+### Booleans
+
+```liquid
+{% assign active = true %}
+{% assign published = false %}
+
+{% if active %}
+  This content is active
+{% endif %}
+```
+
+### Nil
+
+Represents the absence of value:
+
+```liquid
+{% if user == nil %}
+  No user logged in
+{% endif %}
+```
+
+### Arrays
+
+Ordered collections of elements:
+
+```liquid
+{% assign products = spaces['store'].types['product'].entries %}
+
+{{ products[0].fields.name }}     → First element (index 0)
+{{ products[2] }}                  → Third element (index 2)
+{{ products.first.fields.name }}  → First element (.first method)
+{{ products.last.fields.name }}   → Last element (.last method)
+{{ products.size }}                → Number of elements
+
+{% for product in products %}
+  {{ forloop.index }}: {{ product.fields.name }}
+{% endfor %}
+```
+
+**Note about indices**: Arrays in Liquid start at 0, so the first element is `[0]`, the second is `[1]`, etc.
+
+### Hashes (objects/dictionaries)
+
+Collections of key-value pairs:
+
+```liquid
+{% assign config = site.metadata %}
+
+{{ config.theme }}                  → Dot notation
+{{ config['theme'] }}               → Bracket notation
+{{ config['color-primary'] }}       → Necessary with hyphens
+
+{% for item in config %}
+  {{ item[0] }}: {{ item[1] }}     → Key: Value
+{% endfor %}
+```
+
+## Operations with Data Types
+
+### Type conversion
+
+```liquid
+{{ "100" | plus: 0 }}              → Converts string to number
+{{ 100 | append: "" }}              → Converts number to string
+```
+
+### Type checking
+
+```liquid
+{% if products.size > 0 %}
+  Products available
+{% elsif products == empty %}
+  No products
+{% endif %}
+```
+
+### Default values
+
+```liquid
+{{ user.name | default: "Guest" }}
+{{ product.fields.price | default: 0 }}
+```
+
+:::tip Best Practice
+Always use `default` when you're not sure if a value exists to avoid displaying empty content.
+:::
+
+## Special Modyo Objects
+
+Modyo provides predefined objects that contain system information:
+
+- `user`: Current user
+- `site`: Current site
+- `page`: Current page
+- `spaces`: Access to content spaces
+- `account`: Account information
+
+For a complete and detailed list of all available objects, see the [Objects](/en/platform/channels/liquid-markup/objects) section.

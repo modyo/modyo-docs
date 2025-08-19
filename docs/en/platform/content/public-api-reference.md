@@ -12,7 +12,7 @@ Currently, there is only an official SDK for Javascript. In the future, we plan 
 
 ## API reference
 
-### API Routing Structure
+### API routing structure
 
 To perform any action, it is necessary to know the path structure of the contents in the API, which is done as follows:
 
@@ -26,7 +26,7 @@ https://www.example.com/api/content/spaces/:space_uid/types/:type_uid/entries/:e
 
 Here, `space_uid` and `type_uid` correspond to the slugified name of the Space and the name of the Content Type, respectively.
 
-### JSON Entries Structure
+### JSON entries structure
 
 For any JSON element, in Modyo the structure looks like this:
 
@@ -506,7 +506,7 @@ Entry JSON Schema:
 
 ## Examples
 
-### Display Entries
+### Display entries
 
 To access the list of entries of a type with the uid `type_uid` and of a space with the uid `space_uid`, use:
 

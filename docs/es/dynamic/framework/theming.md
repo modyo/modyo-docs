@@ -89,7 +89,7 @@ Para realizar modificaciones adicionales o crear temas más complejos, simplemen
 
 ---
 
-## Creación de un tema personalizado para un widget
+## Creación de un Tema Personalizado para un Widget
 
 Aunque en la sección de creación de un tema en Modyo se abordó la aplicación de estilos en toda tu aplicación, la tematización de widgets individuales requiere un enfoque ligeramente distinto.
 

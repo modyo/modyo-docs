@@ -58,7 +58,7 @@ Con estos datos puedes recorrer fácilmente los datos de un servicio determinado
 
 También cada API cuenta con un listado de posibles _responses_ que obtienes al invocar estos métodos, de forma que puedas preparar adecuadamente tu aplicación para manejar los datos.
 
-### Example Value
+### example value
 
 Dentro de la sección __Response__, en **Example Value** obtienes un ejemplo de listado de espacios cuando la respuesta es 200:     
 
@@ -107,7 +107,7 @@ Al hacer click en **Model**, verás la estructura JSON que compone la respuesta,
 
 Adicionalmente se muestran posibles casos de fallo que pueden ocurrir para poder controlarlos adecuadamente.
 
-### Listado de Modelos
+### listado de modelos
 
 Al final de la documentación, encontrarás una sección llamada "Models" que contiene todos los modelos involucrados en la documentación. Estos te permiten comprender los recursos disponibles y sus atributos utilizados en las APIs.
 
@@ -265,7 +265,7 @@ Modyo provee 2 posibles métodos de autenticación para invocar la API:
 
 A continuación, se explica como utilizar cada uno de estos métodos
 
-### Bearer Token
+### bearer token
 
 Lo primero que debes realizar, es registrar la aplicación para consumir la API. Sigue estos pasos para crear un nuevo Bearer Token:
 

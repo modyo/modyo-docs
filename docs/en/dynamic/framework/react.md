@@ -41,7 +41,7 @@ To start using React components, follow these steps:
 
 4.  **Run the project**: Start the development server with the command `npm start`.
 
-### Styling React components
+### styling React components
 
 Dynamic Framework simplifies the styling of your React components through:
 

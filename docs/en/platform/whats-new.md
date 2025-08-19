@@ -46,6 +46,6 @@ Modyo now has native support for Progressive Web Applications, allowing you to e
 
 Modyo now uses the Froala rich text editor. This editor allows you to quickly develop content and paste text from documents while maintaining the format.
 
-### Content Pages
+### content pages
 
 Modyo now changes the way you use content views. An automatic migration will be performed starting from Modyo 9.2 to bring your content views in [Templates](/en/platform/channels/templates) to the Pages section. You can create widget or content pages from the same place. To learn more, see [Pages](/en/platform/channels/pages).

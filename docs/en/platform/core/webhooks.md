@@ -87,7 +87,7 @@ Space webhooks are:
 - Type updated
 
 
-### Payload Example
+### Payload example
 
 ``` javascript
 {

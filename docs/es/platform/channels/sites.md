@@ -12,7 +12,7 @@ Una web app puede estar en uno de estos tres estados:
 - **Cambios pendientes**: Existen modificaciones pendientes en la aplicación web. Un administrador puede verificar los cambios y publicar la aplicación web.
 - **Deshabilitado**: No es posible acceder a la aplicación web.
 
-## Crear una aplicación web
+## Crear una Aplicación Web
 
 Para crear una nueva web app, sigue estos pasos:
 
@@ -99,7 +99,7 @@ Personaliza tus consultas de la siguiente manera:
 | **multi=true** | Permite realizar búsquedas en todos las aplicaciones web de la cuenta que tengan habilitada la función de búsqueda. |
 
 
-## Configuración de aplicaciones web
+## Configuración de Aplicaciones Web
 
 En la sección de configuración de la aplicación puedes personalizar tu web app para que tus visitantes, clientes, desarrolladores y administradores visualicen tu web app de manera diferente. Así como para optimizar el SEO de tu aplicación.
 
@@ -525,7 +525,7 @@ Una vez que hayas habilitado la revisión en equipo, puedes realizar las siguien
 - **Requerir todos** - Con esta opción activa, exiges que todos los usuarios designados como revisores aprueben el elemento antes de que este pueda ser publicado.
 
 
-### Miembros del Equipo
+### miembros del equipo
 
 Para organizar y gestionar eficientemente el trabajo en Modyo, puedes seleccionar los miembros del equipo que participarán en la elaboración de cada sitio, dándoles acceso a las tareas de escritura, revisión y/o publicación.
 

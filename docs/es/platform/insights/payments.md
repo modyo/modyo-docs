@@ -12,7 +12,7 @@ El dashboard de Payments proporciona un resumen de las transacciones comerciales
 - **Ítems vendidos**: Total de productos o servicios comercializados
 - **Ingresos totales**: Valor monetario de las transacciones exitosas
 
-### Filtros Disponibles
+### Filtros disponibles
 
 - Rango de fechas
 - Estado de orden

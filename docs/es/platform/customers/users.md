@@ -27,7 +27,7 @@ Marca la casilla junto al nombre de uno o más usuarios y haz clic en el botón 
 - **Exportar**: Exporta la lista de usuarios en formato Excel o CSV.
 - **Agregar o eliminar etiquetas**: Crea nuevas etiquetas y asigna o elimina etiquetas existentes para los usuarios seleccionados.
 
-## Añadir un usuario
+## Añadir un Usuario
 
 Para agregar un nuevo usuario, haz clic en el botón **Nuevo Usuario** y completa los siguientes campos:
 
@@ -48,7 +48,7 @@ Si necesitas agregar campos adicionales al formulario o seleccionar un avatar pr
 
 Para crear o modificar campos personalizados, consulta la sección [Custom Fields](/es/platform/customers/settings#custom-fields).
 
-## Ficha de usuario
+## Ficha de Usuario
 
 Haz clic en el menú lateral de la columna de acciones para ver los detalles de un usuario o para desactivarlo. Selecciona **Ver** para abrir la ficha del usuario, donde encontrarás las siguientes secciones:
 

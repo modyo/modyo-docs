@@ -32,7 +32,7 @@ In the web apps index, you will only see those apps in which you have a role and
 
 On the review and joint publication screen, you can see all the pending changes to be published in your web app. To view the changes, click on the **view** button.
 
-### Publish Jointly
+### Publish jointly
 
 To make a joint publication in your web application, follow these steps:
 
@@ -51,7 +51,7 @@ If you click **publish** on a particular article (e.g., publish a page), the Rev
 
 When you create a web application with Modyo, your users can search your web apps and all their content using the search function. This can be done using the `/search` URL or by accessing the dedicated search page.
 
-### Enable or Disable Search
+### Enable or disable search
 
 To enable or disable the search functionality, follow these steps:
 

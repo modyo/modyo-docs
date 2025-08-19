@@ -26,7 +26,7 @@ https://www.example.com/api/content/spaces/:space_uid/types/:type_uid/entries/:e
 
 Aquí, `space_uid` y `type_uid` corresponden al nombre slugificado del Espacio y al nombre del Tipo de contenidos, respectivamente.
 
-### Estructura JSON Entries
+### Estructura JSON entries
 
 Para cualquier elemento JSON, en Modyo la estructura se hace de esta manera:
 
@@ -504,7 +504,7 @@ Entry JSON Schema:
 
 ## Ejemplos
 
-### Desplegar Entradas
+### Desplegar entradas
 
 Para acceder al listado de entradas de un tipo de uid `type_uid` de un espacio de uid `space_uid` usa:
 

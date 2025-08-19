@@ -6,12 +6,21 @@ search: true
 
 Esta sección cubre los conceptos fundamentales de Liquid que necesitas entender antes de trabajar con plantillas en Modyo.
 
-## ¿qué es Liquid?
+## ¿Qué es Liquid?
 
 Liquid es un lenguaje de plantillas que procesa texto y genera salida dinámica. Funciona en dos etapas:
 
 - **Análisis (Parse)**: Liquid lee tu plantilla y encuentra el código Liquid
 - **Renderizado (Render)**: Liquid ejecuta el código y genera la salida final
+
+### Principios de diseño
+
+Liquid fue diseñado con requisitos específicos:
+
+- **Marcado limpio**: Produce HTML legible y fácil de mantener
+- **Seguro**: Los usuarios pueden editar plantillas sin ejecutar código inseguro
+- **Sin estado**: Compilación y renderizado están separados para mejor rendimiento
+- **Flexible**: Funciona con HTML, JSON, XML, emails y más
 
 ## Sintaxis Básica
 
@@ -62,7 +71,7 @@ Liquid reconoce estos tipos de datos:
 - **Array**: Lista de valores
 - **Hash**: Pares clave-valor
 
-Para detalles completos sobre tipos de datos y operaciones, consulta [Objetos y Tipos de Datos](/es/platform/channels/liquid-markup/variables).
+Para detalles completos sobre tipos de datos y operaciones, consulta [Variables y Tipos de Datos](/es/platform/channels/liquid-markup/variables).
 
 ## Valores Truthy y Falsy
 

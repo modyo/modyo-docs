@@ -12,7 +12,7 @@ Esta funcionalidad no está incluida por defecto en todos los planes de Modyo. P
 
 Origination está diseñado para cualquier organización que busque agilizar procesos complejos, mejorar la colaboración entre los involucrados y asegurar que el flujo de trabajo se gestione de manera estructurada y segura.
 
-## Crear una nueva originación
+## Crear una Nueva Originación
 
 Para crear una nueva originación, sigue estos pasos:
 
@@ -153,10 +153,10 @@ Para almacenar información, los datos deben utilizar formato JSON válido, los 
 
 ### Uso de Liquid en code snippets
 
-Los code snippets pueden utilizar drops de liquid para acceder a datos internos de la respuesta y personalizar la experiencia del usuario.
+Los code snippets pueden utilizar objetos de liquid para acceder a datos internos de la respuesta y personalizar la experiencia del usuario.
 
 
-#### Submission Drops
+#### Submission Objetos
 
 En un flujo de originación, cada respuesta representa el proceso en curso de un usuario específico. Estos son algunos de los principales atributos disponibles a través de Liquid:
 
@@ -170,11 +170,11 @@ En un flujo de originación, cada respuesta representa el proceso en curso de un
 | **submission.origination.steps** Array con los nombres de los steps en la originación | ```[ {"uid": "step 1"}, {"uid": "step 2"}]``` |
 | **submission.origination.tasks** Array con todos los tasks en la originación y el step al que corresponden | ```[{"task_id": "67890","name": "Task 1", description: "step 1": { "uid": "abcd1234" } }]``` |
 
-Puedes aprender más sobre [Liquid Drops](/es/platform/channels/liquid-markup/drops) en nuestra documentación.
+Puedes aprender más sobre [Objetos Liquid](/es/platform/channels/liquid-markup/objects) en nuestra documentación.
 
 ### Ejemplo de Code Snippets
 
-En este ejemplo puede encontrar en uso el  acceso a datos por Drops de Liquid e interacción con la APIs de JavaScript y JSON. Recuerda reemplazar el valor `QUESTION_ID` por el correspondiente en tu respuesta.
+En este ejemplo puede encontrar en uso el  acceso a datos por Objetos de Liquid e interacción con la APIs de JavaScript y JSON. Recuerda reemplazar el valor `QUESTION_ID` por el correspondiente en tu respuesta.
 
 ``` html
 <div class="form-group">
@@ -341,7 +341,7 @@ Para configurar la lógica condicional, sigue estos pasos:
 Considera cómo la lógica condicional puede afectar la experiencia del usuario y asegúrate de que el flujo pueda ser completado con facilidad. 
 :::
 
-### Editar Configuración de la Originación
+### Editar configuración de la originación
 
 Al seleccionar la opción **Editar** en el menu contextual de tu orignación puedes editar sus propiedades.
 
@@ -364,7 +364,7 @@ Si necesitas eliminar una originación de forma permanente:
 Este proceso es irreversible.
 :::
 
-### Ver Detalles de una Originación
+### Ver detalles de una originación
 
 Al acceder a una originación específica, puedes visualizar métricas y datos relevantes en función de la vista que selecciones. Estas vistas te permiten analizar y gestionar de manera eficiente la información asociada con la originación.
 

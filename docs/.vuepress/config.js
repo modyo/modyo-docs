@@ -126,8 +126,9 @@ module.exports = {
                                 path: "/en/platform/channels/liquid-markup/",
                                 collapsable: true,
                                 children: [
+                                    "/en/platform/channels/liquid-markup/basics",
                                     "/en/platform/channels/liquid-markup/variables",
-                                    "/en/platform/channels/liquid-markup/drops",
+                                    "/en/platform/channels/liquid-markup/objects",
                                     "/en/platform/channels/liquid-markup/filters",
                                     "/en/platform/channels/liquid-markup/tags",
                                     "/en/platform/channels/liquid-markup/examples",
@@ -281,8 +282,8 @@ module.exports = {
                           children: [
                             ["/es/platform/", "Bienvenido a Modyo"],
                             ["/es/platform/learn-modyo", "Aprende Modyo"],
-                            ["/es/platform/key-concepts", "Conceptos claves"],
-                            ["/es/platform/release-notes", "Notas del release"],
+                            ["/es/platform/key-concepts", "Conceptos Claves"],
+                            "/es/platform/release-notes",
                           ],
                       },
 
@@ -330,8 +331,9 @@ module.exports = {
                                 path: "/es/platform/channels/liquid-markup/",
                                 collapsable: true,
                                 children: [
+                                    "/es/platform/channels/liquid-markup/basics",
                                     "/es/platform/channels/liquid-markup/variables",
-                                    "/es/platform/channels/liquid-markup/drops",
+                                    "/es/platform/channels/liquid-markup/objects",
                                     "/es/platform/channels/liquid-markup/filters",
                                     "/es/platform/channels/liquid-markup/tags",
                                     "/es/platform/channels/liquid-markup/examples",

@@ -62,7 +62,7 @@ With these endpoints you will be able to obtain the tokens needed for an integra
 
 The only requisite is to have an integration with Zendesk ready before using these APIs.
 
-### Zendesk Token
+### Zendesk token
 
 `test.modyo.com/api/customers/realms/<realm_uid>/integrations/zendesk_token`.
 

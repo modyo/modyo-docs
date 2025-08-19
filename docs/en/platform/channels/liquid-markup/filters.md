@@ -4,13 +4,13 @@ search: true
 
 # Filters
 
-A filter is a Ruby method that takes one or more parameters and returns a value. Parameters are passed to filters by position: the first parameter is the expression preceding the pipe character, and additional parameters can be passed using the `name: arg1, arg2` syntax described above.
+A filter is a Ruby method that takes one or more parameters and returns a value. Parameters are passed to filters by position: the first parameter is the expression that precedes the pipe character, and additional parameters can be passed using the `name: arg1, arg2` syntax.
 
 Output markup can take filters, which modify the result of the output statement. You can invoke filters by following the output statement's main expression with:
 
 - A pipe character (`|`)
 - The name of the filter
-- Optionally, a colon (`:`) and a comma-separated list of additional parameters to the filter. Each additional parameter must be a valid expression, and each filter pre-defines the parameters it accepts and the order in which they must be passed.
+- Optionally, a colon (`:`) and a comma-separated list of additional parameters to the filter. Each additional parameter must be a valid expression, and each filter predefines the parameters it accepts and the order in which they must be passed.
 
 Filters can also be chained together by adding additional filter statements (starting with another pipe character). The output of the previous filter will be the input for the next one.
 
@@ -30,7 +30,7 @@ Adds a string *e.g.*
 
 ### Capitalize
 
-Capitalize the word in the input sentence.
+Capitalizes the word in the input sentence.
 
 ### Ceiling
 
@@ -39,7 +39,7 @@ Rounds up a decimal number to the next integer, *e.g.*
 
 ### Date
 
-Format a date ([syntax reference](https://shopify.dev/api/liquid/filters#date))
+Formats a date ([syntax reference](https://shopify.dev/api/liquid/filters#date))
 
 ### Default
 
@@ -49,7 +49,7 @@ Returns the given variable unless it is null or empty string, then it returns th
 ### Divided by
 
 Integer division *e.g.*
-<span v-pre>`{{10 | divided_by:3}} #=> 3`</span>
+<span v-pre>`{{ 10 | divided_by:3 }} #=> 3`</span>
 
 ### Downcase
 
@@ -57,11 +57,11 @@ Converts an input string to lowercase.
 
 ### Escape
 
-HTML escape to a string.
+HTML escape a string.
 
-### Escape eleven
+### Escape once
 
-Returns an escape version of html without affecting existing escape entities.
+Returns an escaped version of html without affecting existing escape entities.
 
 ### First
 
@@ -72,9 +72,9 @@ Gets the first element of the passed array.
 Rounds a decimal number down to the nearest integer, *e.g.*
 <span v-pre>`{{ 4.6 | floor }} #=> 4`</span>
 
-### Format Date
+### Format date
 
-Formats a date with the location of the site, uses the same syntax as `date`.
+Formats a date with the site's localization, uses the same syntax as `date`.
 
 ### Join
 
@@ -82,11 +82,11 @@ Joins array elements with a certain character between them.
 
 ### Last
 
-Get the last element of the passed array.
+Gets the last element of the passed array.
 
 ### Lstrip
 
-Removes all blanks from the beginning of a string.
+Removes all whitespace from the beginning of a string.
 
 ### Map
 
@@ -94,69 +94,69 @@ Maps/collects an array into a given property.
 
 ### Minus
 
-Remains *e.g.*
-<span v-pre>`{{4 | minus:2}} #=> 2`</span>
+Subtraction *e.g.*
+<span v-pre>`{{ 4 | minus:2 }} #=> 2`</span>
 
-### Module
+### Modulo
 
-*e.g.* module
-<span v-pre>`{{3 | module:2}} #=> 1`</span>
+Modulo *e.g.*
+<span v-pre>`{{ 3 | modulo:2 }} #=> 1`</span>
 
 ### Newline to br
-Replace each newline with HTML space.
+Replaces each newline (\n) with HTML space.
 
 ### Plus
-Sums *e.g.*
-<span v-pre>`{{'1' | plus: '1'}} #=> 2`</span>, <span v-pre>`{{1 | plus:1}} #=> 2`</span>
+Addition *e.g.*
+<span v-pre>`{{ '1' | plus:'1' }} #=> 2`</span>, <span v-pre>`{{ 1 | plus:1 }} #=> 2`</span>
 
 ### Prepend
 Prepends a string *e.g.*
 <span v-pre>`{{ 'bar' | prepend:'foo' }} #=> 'foobar'`</span>
 
 ### Remove
-Removes all occurrences *e.g.* <span v-pre>`{{ 'foobarfoobar' | remove:'foo' }} #=> 'barbar'`.</span>
+Removes all occurrences *e.g.* <span v-pre>`{{ 'foobarfoobar' | remove:'foo' }} #=> 'barbar'`</span>
 
-### Remove First
-Removes the first occurrence *e.g.* <span v-pre>`{{ 'barbar' | remove_first:'bar' }} #=> 'bar'`.</span>
+### Remove first
+Removes the first occurrence *e.g.* <span v-pre>`{{ 'barbar' | remove_first:'bar' }} #=> 'bar'`</span>
 
 ### Replace
-Replace all occurrences *e.g.* <span v-pre>`{{ 'foofoo' | replace:'foo','bar' }} #=> 'barbar'`.</span>
+Replaces all occurrences *e.g.* <span v-pre>`{{ 'foofoo' | replace:'foo','bar' }} #=> 'barbar'`</span>
 
-### Replace First
-Replaces the first occurrence *e.g.* <span v-pre>`{{ 'barbar' | replace_first:'bar','foo' }} #=> 'foobar'`</span>.
+### Replace first
+Replaces the first occurrence *e.g.* <span v-pre>`{{ 'barbar' | replace_first:'bar','foo' }} #=> 'foobar'`</span>
 
 ### Reverse
-Inverts the given array.
+Reverses the given array.
 
 ### Round
-Rounds to the nearest whole number or to the specified number of decimal places *e.g.* <span v-pre>`{{ 4.5612 | round: 2 }} #=> 4.56`</span>.
+Rounds to the nearest integer or to the specified number of decimals *e.g.* <span v-pre>`{{ 4.5612 | round: 2 }} #=> 4.56`</span>
 
 ### Rstrip
 Removes all whitespace from the end of a string
 
-### Script Tag
-Generates the HTML `<script>` for a JavaScript template, taking as parameters the URL and attributes of the form `attr: 'value'`, *e.g.* <span v-pre>`{{ 'my-js-url' | script_tag: async: 'async', defer: 'defer' }}`</span> => `<script src='my-js-url' type='text/javascript' async='async' defer='defer'>`</script>.
+### Script tag
+Generates the HTML `<script>` tag for a JavaScript template, taking as parameters the URL and attributes of the form `attr: 'value'`, *e.g.* <span v-pre>`{{ 'my-js-url' | script_tag: async: 'async', defer: 'defer' }}`</span> => `<script src='my-js-url' type='text/javascript' async='async' defer='defer'></script>`
 
 ### Size
-Return the size of an array or string
+Returns the size of an array or string
 
 ### Slice
-Split a string. The inputs are an offset and a length, *e.g.* <span v-pre>`{{ "hello" | slice: -3, 3 }} #=> llo`</span>
+Splits a string. Takes an offset and a length, *e.g.* <span v-pre>`{{ "hello" | slice: -3, 3 }} #=> llo`</span>
 
 ### Sort
-Sort array elements
+Sorts array elements
 
 ### Split
-Split a string into a matching pattern *e.g.* <span v-pre>`{{ "a~b" | split:"~" }} #=> ['a','b']`</span>.
+Splits a string on a matching pattern *e.g.* <span v-pre>`{{ "a~b" | split:"~" }} #=> ['a','b']`</span>
 
 ### Times
-Multiply *e.g* <span v-pre>`{{ 5 | times:4 }} #=> 20`</span>.
+Multiplies *e.g* <span v-pre>`{{ 5 | times:4 }} #=> 20`</span>
 
 ### Truncate
-Restricts a string to x characters. It also accepts a second parameter to be appended to the string *e.g.* <span v-pre>`{{ 'foobarfoobar' | truncate: 5, '.' }} #=> 'foob.'`</span>.
+Restricts a string to x characters. Also accepts a second parameter that will be appended to the string *e.g.* <span v-pre>`{{ 'foobarfoobar' | truncate: 5, '.' }} #=> 'foob.'`</span>
 
 ### Truncatewords
-Restrict a string to x words
+Restricts a string to x words
 
 ### Uniq
 Removes duplicate elements from an array, optionally using a given property to check for uniqueness.
@@ -164,33 +164,33 @@ Removes duplicate elements from an array, optionally using a given property to c
 ### Upcase
 Converts an input string to uppercase
 
-### URL Encode
-Encodes a string to URL
+### URL encode
+URL-encodes a string
 
 ## Commerce
 
-These are the liquid filters that alter values related to Trade.
+These are the liquid filters that alter values related to Commerce.
 
-### Format Currency
+### Format currency
 
 Adds currency format to a value. *e.g.*
-<span v-pre>`{{4 | format_currency}} => $4`</span>
+<span v-pre>`{{ 4 | format_currency }} => $4`</span>
 
 <span v-pre>`{{ 1890.5123 | format_currency: unit: '¥', separator: ',', delimiter: '.', precision: 3 }} = ¥1.890,512`</span>
 
 :::warning Important
-This filter determines the format of the currency and takes precedence over any other currency settings.
+This filter determines the currency format and takes precedence over any other currency configuration.
 
-If you don't specify currency parameters with the currency filter, Modyo uses the realm's [payment] (/en/platform/customers/settings#payment-settings) settings.
+If you don't specify currency parameters with the currency filter, Modyo uses the realm's [payment](/en/platform/customers/settings#payment-configuration) configuration.
 
-If the site does not have a realm associated to it, and you don't specify parameters, the predefined format of the site's language will be applied.
+If the site doesn't have an associated realm and you don't specify parameters, the predefined format of the site's language will be applied.
 :::
 
 **Parameters**:
 
 - unit - currency symbol.
 - separator - decimal separator.
-- delimiter - separator of thousands.
+- delimiter - thousands separator.
 - precision - number of decimal digits.
 
 
@@ -198,75 +198,75 @@ If the site does not have a realm associated to it, and you don't specify parame
 
 These are the liquid filters that alter values related to the Content module in Modyo Platform.
 
-### Asset Image
+### Asset image
 
 Returns the tags of an image using its uuid from the File Manager. *e.g.*
 <span v-pre>`{{ uuid | asset_image }}`</span>
 
-### Asset Link
+### Asset link
 
-Returns the URL of an image using its File Manager uuid. *e.g.*
-<span v-pre>`{{ uuid | asset_link: 'Este es una liga para el asset' }}`</span>
+Returns the URL of an image using its uuid from the File Manager. *e.g.*
+<span v-pre>`{{ uuid | asset_link: 'This is a link for the asset' }}`</span>
 
 ### Asset URL by UUID
 
-Returns the URL of an image using its File Manager uuid. *e.g.*
+Returns the URL of an image using its uuid from the File Manager. *e.g.*
 <span v-pre>`{{ uuid | asset_url_by_uuid }}`</span>
 
-### Asset Video
+### Asset video
 
 Returns the tags of a video using its uuid from the File Manager. *e.g.*
 <span v-pre>`{{ uuid | asset_video: 350, 300 }}`</span>
 
 **Parameters**:
-- uuid (String) - asset uuid
-- width (Integer) (default: 300) - width
-- height (Integer) (default: 200) - length
+- uuid (String) — asset uuid
+- width (Integer) (default: 300) — width
+- height (Integer) (default: 200) — height
 
-### By Category
+### By category
 
-Returns a list of Entries belonging to the selected Category. *e.g.*
+Returns a list of Entries that belong to the selected Category. *e.g.*
 <span v-pre>`{% assign filtered_entries = entries | by_category: 'category2,category1,category3' %}`</span>
 
 **Parameters**:
-- entries (ArrayEntry) - array with entries
-- list (String) (default: '') - String with comma separated categories.
+- entries (ArrayEntry) — array with entries
+- list (String) (default: '') — String with comma-separated categories.
 
-### By Lang
+### By lang
 
-Returns a list of Entries belonging to a selected language. *e.g.*
+Returns a list of Entries that belong to a selected language. *e.g.*
 <span v-pre>`{% assign entries = widget.entries | locale: 'es,en,pt' %} => entries`</span>
 
 **Parameters**:
-- entries (ArrayEntry) - array with entries
-- locale (String) (default: '') - String with comma-separated languages.
+- entries (ArrayEntry) — array with entries
+- locale (String) (default: '') — String with comma-separated languages.
 
-### By Slug
+### By slug
 
-Returns a list of Entries belonging to a selected slug. *e.g.*
+Returns a list of Entries that belong to a selected slug. *e.g.*
 <span v-pre>`{% assign filtered_entries = entries | by_slug: 'slug2,slug1,slug' %}`</span>
 
 **Parameters**:
-- entries (ArrayEntry) - array with entries
-- slug (String) (default: '') - Slug separated by comma.
+- entries (ArrayEntry) — array with entries
+- slug (String) (default: '') — Comma-separated slugs.
 
-### By Tag
+### By tag
 
-Returns a list of Entries belonging to a selected tag. *e.g.*
-<span v-pre>`{% assign entries = widget.entries | by_tag: 'tag2,tag1,tag3' %} => entries`.</span>
+Returns a list of Entries that belong to a selected tag. *e.g.*
+<span v-pre>`{% assign entries = widget.entries | by_tag: 'tag2,tag1,tag3' %} => entries`</span>
 
 **Parameters**:
-- entries (ArrayEntry) - array with entries
-- locale (String) (default: '') - String with tags separated by comma.
+- entries (ArrayEntry) — array with entries
+- locale (String) (default: '') — String with comma-separated tags.
 
-### By Type
+### By type
 
-Returns a list of Entries belonging to a selected Content Type. *e.g.*
+Returns a list of Entries that belong to a selected Content Type. *e.g.*
 <span v-pre>`{% assign filtered_entries = entries | by_type: 'type2,type1,type3' %}`</span>
 
 **Parameters**:
-- entries (ArrayEntry) - array with entries
-- locale (String) (default: '') - String with comma-separated content types.
+- entries (ArrayEntry) — array with entries
+- locale (String) (default: '') — String with comma-separated content types.
 
 ### Filter By
 
@@ -274,33 +274,33 @@ Returns a list of Entries that match a filter. *e.g.*
 <span v-pre>`{% assign entries = widget.entries | filter_by: field: 'name', eq: 'entry3Cat3' %}`</span>
 
 **Parameters**:
-- entries (ArrayEntry) - array with entries
-- opts (Hash) (default: {}) - hash with field and eq as value
+- entries (ArrayEntry) — array with entries
+- opts (Hash) (default: {}) — hash with field and eq as value
 
-### Filter by Query String
+### Filter By Query String
 
-Returns a list of Entries that meet a query. You can use logical operators, various meta fields, URLs, or Liquid tags.
+Returns a list of Entries that match a query. You can use logical operators, various meta fields, URLs, or Liquid tags.
 
-**Operators:**
+**Operators**:
 
 - gt, lt, in, all, nin
 
 **Fields**:
-- meta.category meta.category_slug meta.category_name meta.uuid meta.name meta.name meta.created_at
+- meta.category meta.category_slug meta.category_name meta.uuid meta.name meta.created_at
  meta.updated_at meta.published_at meta.unpublished_at meta.slug meta.tag
 
 **Url examples**:
 
 - https://company.site.com/testsite?meta.category_slug=category3
 - https://company.site.com/testsite?meta.tag=tag_name
-- https://company.site.com/testsite?meta.tag[in][]=tag1_name&amp;meta.tag[in][]=tag2_name
+- https://company.site.com/testsite?meta.tag[in][]=tag1_name&meta.tag[in][]=tag2_name
 - https://company.site.com/testsite?meta.created_at=1987-11-19T13:13:13
 
 *e.g.*
 <span v-pre>`{% assign entries = widget.entries | filter_by_query_string %}`</span>
 
 **Parameters**:
-- entries (ArrayEntry) - array with entries
+- entries (ArrayEntry) — array with entries
 
 ### From Published Date
 
@@ -309,8 +309,8 @@ Returns a list of Entries that have a publication date more recent than the limi
 `</span>
 
 **Parameters**:
-- entries (ArrayEntry) - array with entries
-- date (Datetime)(default: Time.zone.now) - deadline date
+- entries (ArrayEntry) — array with entries
+- date (Datetime)(default: Time.zone.now) — limit date
 
 ### Limit
 
@@ -318,8 +318,8 @@ Limits the number of results. *e.g.*
 <span v-pre>`{{ entries | limit: 1 }}`</span>
 
 **Parameters**:
-- object(Array) - array
-- limit (Integer)(default: 1) - limit of results
+- object(Array) — array
+- limit (Integer)(default: 1) — result limit
 
 ### Paginated
 
@@ -327,17 +327,17 @@ Separates the results into pages. *e.g.*
 <span v-pre>`{{ objects | paginated: 10, 2 }}`</span>
 
 **Parameters**:
-- object(Array) - array
+- object(Array) — array
 - per_page (Integer) (default: 10) — objects per page
-- page (Integer) (default: 1) - page number to display
+- page (Integer) (default: 1) — page number to display
 
 ### Sort By
 
-Return an array with the entries ordered by a filed *e.g.*
-<span v-pre>`{% assign entries = widgets.entries | sort_by: 'name', 'asc'%}`</span>
+Returns an array with entries sorted by a field *e.g.*
+<span v-pre>`{% assign entries = widgets.entries | sort_by: 'name', 'asc' %}`</span>
 
 **Parameters**:
-- entries (ArrayEntry) - array with entries
+- entries (ArrayEntry) — array with entries
 - attribute (String) — field by which you want to sort
 - order (String) - asc (ascending) or desc (descending)
 
@@ -349,149 +349,128 @@ Returns a list of Entries that have a publication date older than the limit. *e.
 `</span>
 
 **Parameters**:
-- entries (ArrayEntry) - array with entries
-- date (Datetime)(default: Time.zone.now) - deadline date
+- entries (ArrayEntry) — array with entries
+- date (Datetime)(default: Time.zone.now) — limit date
 
 
 ## Crypto
 
-These are liquid filters that alter values related to Cryptology.
+These Liquid filters alter values related to Cryptography.
 
 ### Base64 Decode
 
-Returns the Base64-decoded value of a string *e.g.*
-<span v-pre> `{% 'Hello world' | base64_encode%} # => 'sgvsbg8gd29ybgq='`</span>.
+Returns the Base64-decoded value of a string (e.g. <span v-pre> `{% 'Hello world' | base64_encode %} # => 'SGVsbG8gd29ybGQ='`</span>).
 
 ### Base64 Encode
 
-Returns the Base64-encoded value of a string *e.g.*
-<span v-pre>`{% 'SgvsbG8gd29yBgQ=' | base64_decode%} # => 'Hello world'`</span>.
+Returns the Base64-encoded value of a string (e.g. <span v-pre>`{% 'SGVsbG8gd29ybGQ=' | base64_decode %} # => 'Hello world'`</span>).
 
 ### HMAC SHA1
 
-Returns the SHA-1 hash using a message authentication code (HMAC) from a string. *e.g.*
-<span v-pre>`{% 'Hello world' | hmac_sha1: 'key'%} # => '2a73959742baf046e6e2e27e5ee94bcff0af31b1'`</span>
+Returns the SHA-1 hash using a message authentication code (HMAC) of a string (e.g. <span v-pre>`{% 'Hello world' | hmac_sha1: 'key' %} # => '2a73959742baf046e6e2e27e5ee94bcff0af31b1'`</span>).
 
 ### HMAC SHA256
-Returns the SHA-256 hash using a message authentication code (HMAC) from a string. *e.g.*
-<span v-pre>`{% 'Hello world' | hmac_sha256: 'key'  %} # => 'a82b2e160edaf92a6589dc11160d2a10c04449840a58717db308c1ee3512b039'`</span>
+Returns the SHA-256 hash using a message authentication code (HMAC) of a string (e.g. <span v-pre>`{% 'Hello world' | hmac_sha256: 'key' %} # => 'a82b2e160edaf92a6589dc11160d2a10c04449840a58717db308c1ee3512b039'`</span>).
 
 ### MD5
 
-Returns the MD5 hash of a string. *e.g.*
-<span v-pre>`{% 'Hello World' | md5%} # => '3e25960a79dbc69b674cd4ec67a72c62'`</span>
+Returns the MD5 hash of a string (e.g. <span v-pre>`{% 'Hello world' | md5 %} # => '3e25960a79dbc69b674cd4ec67a72c62'`</span>).
 
 ### SHA1
-Returns the SHA-1 hash of a string. *e.g.* <span v-pre>`{% 'Hello world' | sha1 %} # => '7b502c3a1f48c8609ae212cdfb639dee39673f5e'`</span>.
+Returns the SHA-1 hash of a string (e.g. <span v-pre>`{% 'Hello world' | sha1 %} # => '7b502c3a1f48c8609ae212cdfb639dee39673f5e'`</span>).
 
 ### SHA 256
-Returns the SHA-256 hash of a string. *e.g.* <span v-pre>`{% 'Hello world' | sha256 %} # => '64ec8888ca00b268e5ba1a35678a1b5316d212f4f366b2477232534a8aeca37f3c'`</span>
+Returns the SHA-256 hash of a string (e.g. <span v-pre>`{% 'Hello world' | sha256 %} # => '64ec88ca00b268e5ba1a35678a1b5316d212f4f366b2477232534a8aeca37f3c'`</span>).
 
 ## CSS
 
-These are the liquid filters that alter CSS-related values in Modyo Platform.
+These Liquid filters alter CSS-related values in Modyo Platform.
 
 ### Brighten
 
-Adds sparkle to a color. *e.g.*
-<span v-pre>`{{ '#00ff00' | brighten: 15 }} #=> '#26ff26'`</span>
+Adds brightness to a color (e.g. <span v-pre>`{{ '#00ff00' | brighten: 15 }} #=> '#26ff26'`</span>).
 
 ### Darken
 
-Reduces brightness to a color. *e.g.*
-<span v-pre>`{{ '#00ff00' | darken: 15 }} #=> '#00b300'`</span>
+Reduces the brightness of a color (e.g. <span v-pre>`{{ '#00ff00' | darken: 15 }} #=> '#00b300'`</span>).
 
 ### Desaturate
 
-Desaturates a color. *e.g.*
-<span v-pre>`{{ '#00ff00' | desaturate: 15 }} #=> '#13ec13'`</span>
+Desaturates a color (e.g. <span v-pre>`{{ '#00ff00' | desaturate: 15 }} #=> '#13ec13'`</span>).
 
 ### Grayscale
 
-Converts a color to grayscale. *e.g.*
-<span v-pre>`{{ '#00ff00' | grayscale }} #=> '#808080'`</span>
+Converts a color to grayscale (e.g. <span v-pre>`{{ '#00ff00' | grayscale }} #=> '#808080'`</span>).
 
 ### Lighten
 
-Lightens a color. *e.g.*
-<span v-pre>`{{ '#00ff00' | lighten: 15 }} #=> '#4dff4d'`</span>
+Lightens a color (e.g. <span v-pre>`{{ '#00ff00' | lighten: 15 }} #=> '#4dff4d'`</span>).
 
 ### Opacity
 
-Modifies the opacity of a color. *e.g.*
-<span v-pre>`{{ '#00ff00' | opacity: 0.5 }} #=> 'rgba(0, 255, 0, 0.5)'`</span>
+Modifies the opacity of a color (e.g. <span v-pre>`{{ '#00ff00' | opacity: 0.5 }} #=> 'rgba(0, 255, 0, 0.5)'`</span>).
 
 ### RGB
 
-Transforms a color to its RGB equivalent. *e.g.*
-<span v-pre>`{{ '#00ff00' | rgb }} #=> 'rgb(0, 255, 0)'`</span>
+Transforms a color to its RGB equivalent (e.g. <span v-pre>`{{ '#00ff00' | rgb }} #=> 'rgb(0, 255, 0)'`</span>).
 
 ### Saturate
 
-Saturates a color. *e.g.*
-<span v-pre>`{{ '#00ff00' | saturate: 15 }} #=> '#00ff00'`</span>
+Saturates a color (e.g. <span v-pre>`{{ '#00ff00' | saturate: 15 }} #=> '#00ff00'`</span>).
 
 ### Spin
 
-Rotate clockwise one color.
-<span v-pre>`{{ '#00ff00' | spin: 15 }} #=> 'rgba(0, 255, 0, 0.5)'`</span>
+Rotates a color in degrees clockwise (e.g. <span v-pre>`{{ '#00ff00' | spin: 15 }} #=> 'rgba(0, 255, 0, 0.5)'`</span>).
 
 ## Location
 
-These are the liquid filters that alter values related to Geolocation in Modyo Platform.
+These Liquid filters alter values related to Geolocation in Modyo Platform.
 
 ### Dynamic Map
 
-Returns a dynamic map from Google Maps. *e.g.*
-<span v-pre>`{{  locations | dynamic_map: '600x300', 'true', 'roadmap', true}}`</span>
+Returns a dynamic Google Maps map (e.g. <span v-pre>`{{ locations | dynamic_map: '600x300', 'true', 'roadmap', true}}`</span>).
 
 **Parameters**
 
-- locations (ArrayHash) - Array of hashes with latitude and longitude points.
-- size (String) (default: '600x300') - Size of the map in pixels
-- zoom (String) (default: 10) - Zoom level for the map
-- type (String) (default: 'roadmap') - Type of map
-- icon (String) (default: '') - Icon for the map
-- controls (String) (default: true) - Navigation controls for the map
+- `locations` (ArrayHash) — Array of hashes with latitude and longitude points.
+- `size` (String) (default: '600x300') — Map size in pixels.
+- `zoom` (String) (default: 10) — Zoom level for the map.
+- `type` (String) (default: 'roadmap') — Map type.
+- `icon` (String) (default: '') — Map icon.
+- `controls` (String) (default: true) — Navigation controls for the map.
 
 ### Static Map
 
-Returns a static map from Google Maps. *e.g.*
-<span v-pre>`{{  locations | static_map: '600x300', 'true', 'roadmap'}}`</span>
+Returns a static Google Maps map (e.g. <span v-pre>`{{ locations | static_map: '600x300', 'true', 'roadmap'}}`</span>).
 
 **Parameters**
 
-- locations (ArrayHash) - Array of hashes with latitude and longitude points.
-- size (String) (default: '600x300') - Size of the map in pixels
-- zoom (String) (default: 10) - Zoom level for the map
-- type (String) (default: 'roadmap') - Type of map
-- icon (String) (default: '') - Icon for the map
+- `locations` (ArrayHash) — Array of hashes with latitude and longitude points.
+- `size` (String) (default: '600x300') — Map size in pixels.
+- `zoom` (String) (default: 10) — Zoom level for the map.
+- `type` (String) (default: 'roadmap') — Map type.
+- `icon` (String) (default: '') — Map icon.
 
 
 ## Menu Items
 
-These are the liquid filters that alter values related to menu items in Modyo Platform.
+These Liquid filters alter values related to menu items in Modyo Platform.
 
 ### Active Page
 
-Determines if a URL item is active. Returns 'active' when active. *e.g.*
-<span v-pre>`{{ 'company.modyo.com/jobs' | active_page: 'company.modyo.com/jobs' }} #=> 'active'`</span>
+Determines if a URL item is active. Returns 'active' when active (e.g. <span v-pre>`{{ 'company.modyo.com/jobs' | active_page: 'company.modyo.com/jobs' }} #=> 'active'`</span>).
 
 ### Item Rel
 
-Returns 'noopener noreferrer' if a link is "\_blank". *e.g.*
-<span v-pre>`{{ '_blank' | item_rel }} #=> 'noopener noreferrer'`.</span>
+Returns 'noopener noreferrer' if a link is "\_blank" (e.g. <span v-pre>`{{ '_blank' | item_rel }} #=> 'noopener noreferrer'`</span>).
 
 ### Resolve URL
 
-Resolves the URL of a path and base URL. *e.g.*
-<span v-pre>`{{ 'dynamic_bank' | resolve_url: 'company.modyo.com' }} #=> 'company.modyo.com/dynamic_bank'`.</span>
+Resolves the URL from a path and base URL (e.g. <span v-pre>`{{ 'dynamic_bank' | resolve_url: 'company.modyo.com' }} #=> 'company.modyo.com/dynamic_bank'`</span>).
 
 ### Visible Items
 
-Returns a list of visible items in a list of items. *e.g.*
-<span v-pre>`{{ items | visible_items }}
-`</span>
+Returns a list of visible items in a list of items (e.g. <span v-pre>`{{ items | visible_items }}`</span>).
 
 ## Origination
 
@@ -499,7 +478,7 @@ These are the liquid filters that alter values related to originations in Modyo 
 
 ### By UID
 
-Returns the Origination with selected UID. *e.g.*
+Returns the Origination with the selected UID. *e.g.*
 <span v-pre>`{% assign my_origination = site.originations | by_uid: 'my-origination' %}`</span>
 
 **Parameters:**
@@ -508,190 +487,162 @@ Returns the Origination with selected UID. *e.g.*
 
 ## Site
 
-These are the liquid filters that alter values related to Sites in Modyo Platform.
+These Liquid filters alter values related to Sites in Modyo Platform.
 
-### Asset Image Tag
+### Asset image Tag
 
-Generates the HTML tag of an image. *e.g.*
-<span v-pre>`{{ asset | asset_image_tag: 'original' }}`</span>
+Generates the HTML tag of an image (e.g. <span v-pre>`{{ asset | asset_image_tag: 'original' }}`</span>).
 
 ### Asset Thumbnail Link Tag
 
-Generates the HTML thumbnail tag of an image. *e.g.*
-<span v-pre>`{{ asset | asset_thumbnail_link_tag: 'class', 'target' }}`</span>
+Generates the HTML thumbnail tag of an image (e.g. <span v-pre>`{{ asset | asset_thumbnail_link_tag: 'class', 'target' }}`</span>).
 
 **Parameters**
 
-- asset (Asset) — Asset-type object
-- classes (String) (default: '') - additional HTML classes (optional)
-- target (String) (default: '') - additional HTML targets (optional)
+- `asset` (Asset) — Asset-type object.
+- `classes` (String) (default: '') — Additional HTML classes (optional).
+- `target` (String) (default: '') — Additional HTML targets (optional).
 
 ### Asset URL
 
-Generates the URL of an Asset-type object. *e.g.*
-<span v-pre>`{{ {{ asset | asset_url: 'original' }}`</span>
+Generates the URL of an Asset-type object (e.g. <span v-pre>`{{ asset | asset_url: 'original' }}`</span>).
 
 ### Audio Player
 
-Generates the URL of an Audio-type object. *e.g.*
-<span v-pre>`{{ {{ audio1 | audio_player }}`</span>
+Generates the URL of an Audio-type object (e.g. <span v-pre>`{{ audio1 | audio_player }}`</span>).
 
 ### Bar Code
 
-Generates the URL of a barcode. *e.g.*
-<span v-pre>`{{  value | bar_code: 320, 320 }}`</span>
+Generates the URL of a barcode (e.g. <span v-pre>`{{ value | bar_code: 320, 320 }}`</span>).
 
 **Parameters**
 
-- value (String) - Value of the bar code
-- width (Integer) (default: 100) - Width
-- height (Integer) (default: 100) - Height
+- `value` (String) — Barcode value.
+- `width` (Integer) (default: 100) — Width.
+- `height` (Integer) (default: 100) — Height.
 
 ### Button To
 
-Generate a button. *e.g.*
-<span v-pre>`{{ 'Hello World' | button_to: 'http://www.google.com' }}`</span>
+Generates a button (e.g. <span v-pre>`{{ 'Hello World' | button_to: 'http://www.google.com' }}`</span>).
 
 ### Cookie Value
 
-Returns the value of a cookie. *e.g.*
-<span v-pre>`{{ 32 | cookie_value }}`</span>
+Returns the value of a cookie (e.g. <span v-pre>`{{ 32 | cookie_value }}`</span>).
 
 ### Embedded Video
 
-Return the URL of an embedded video. *e.g.*
-<span v-pre>`{{ movie2 | embedded_video }}`</span>
+Returns the URL of an embedded video (e.g. <span v-pre>`{{ movie2 | embedded_video }}`</span>).
 
 ### Escape JS
 
-Avoids interpreting JavaScript code. *e.g.*
-<span v-pre>`{{ '<script>alert("hello world");</script>' | escape_js }}`</span>
+Prevents JavaScript code interpretation (e.g. <span v-pre>`{{ '<script>alert("hello world");</script>' | escape_js }}`</span>).
 
 ### Format Date
 
-Translates a date to another format. *e.g.*
-<span v-pre>`{{ time | format_date: '%e %b, %Y' }}`</span>
+Translates a date to another format (e.g. <span v-pre>`{{ time | format_date: '%e %b, %Y' }}`</span>).
 
 **Parameters**
 
-- time (DateTime) - Date
-- format_date (String) (default: '') - The new format for the date
+- `time` (DateTime) — Date.
+- `format_date` (String) (default: '') — The new format for the date.
 
 ### Format DateTime
 
-Translates a date to DateTime format. *e.g.*
-<span v-pre>`{{ time | format_datetime }}`</span>
+Translates a date to DateTime format (e.g. <span v-pre>`{{ time | format_datetime }}`</span>).
 
 ### Format Short Date
 
-Translates a date to a reduced format. dd-mm-yyyy *e.g.*
-<span v-pre>`{{ time | format_short_date }}`</span>
+Translates a date to a reduced format (dd-mm-yyyy) (e.g. <span v-pre>`{{ time | format_short_date }}`</span>).
 
 ### Link To
 
-Adds an anchor link tag. *e.g.*
-<span v-pre>`{{ 'Hello World' | link_to: 'http://www.google.com', 'this is my alt', 'small', '_blank' }}`</span>
+Adds an anchor link tag (e.g. <span v-pre>`{{ 'Hello World' | link_to: 'http://www.google.com', 'this is my alt', 'small', '_blank' }}`</span>).
 
 **Parameters**
 
-- text (String) (default: '') - link text
-- link (String) (default: '/') - link url
-- alt (String) (default: '') - link alt
-- class (String) (default: '') - link class
-- target (String) (default: '') - link target
+- `text` (String) (default: '') — Link text.
+- `link` (String) (default: '/') — Link URL.
+- `alt` (String) (default: '') — Alternative text for the link.
+- `class` (String) (default: '') — CSS class for the link.
+- `target` (String) (default: '') — Target for the link.
 
 ### Notifications
 
-Deploys the flash message variable. *e.g.*
-<span v-pre>`{{ 'alert-error' | notifications }}`</span>
+Shows the flash message variable (e.g. <span v-pre>`{{ 'alert-error' | notifications }}`</span>).
 
 ### Primary button to
 
-Generates a primary type button. *e.g.*
-<span v-pre>`{{ 'Hello World' | primary_button_to: 'http://www.google.com', 'large' }}`</span>
+Generates a primary type button (e.g. <span v-pre>`{{ 'Hello World' | primary_button_to: 'http://www.google.com', 'large' }}`</span>).
 
 **Parameters**
 
-- text (String) (default: '') - link text
-- link (String) (default: '/') - link url
-- size (String) (default: 'large') - link size
+- `text` (String) (default: '') — Link text.
+- `link` (String) (default: '/') — Link URL.
+- `size` (String) (default: 'large') — Size for the link.
 
 ### QR Code
 
-Generates a qr code. *e.g*
-<span v-pre>`{{  value | qr_code: 4, 320, 320 }}`</span>
+Generates a QR code (e.g. <span v-pre>`{{ value | qr_code: 4, 320, 320 }}`</span>).
 
 **Parameters**
 
-- value (String) (default: '') - qr value
-- qr_size (Integer) (default: 4) - qr size
-- width (Integer) (default: 100) - qr width
-- height (Integer) (default: 100) - qr length
+- `value` (String) (default: '') — QR value.
+- `qr_size` (Integer) (default: 4) — QR size.
+- `width` (Integer) (default: 100) — QR width.
+- `height` (Integer) (default: 100) — QR height.
 
 ### Sanitize HTML
 
-Sanitizes the HTML tags in a String. *e.g.*
-<span v-pre>`{{ '<script>Hello World</script>' | sanitize }} #=> 'Hello World'`</span>
+Sanitizes HTML tags from a String (e.g. <span v-pre>`{{ '<script>Hello World</script>' | sanitize }} #=> 'Hello World'`</span>).
 
-### Script Tag
+### Script tag
 
-Adds a script tag. *e.g.*
-<span v-pre>`{{ 'test-script' | script_tag }}`</span>
+Adds a script tag (e.g. <span v-pre>`{{ 'test-script' | script_tag }}`</span>).
 
 ### Search Box
 
-Adds a search engine field. *e.g.*
-<span v-pre>`{{ 'testsite' | search_box }}`</span>
+Adds a search field (e.g. <span v-pre>`{{ 'testsite' | search_box }}`</span>).
 
 ### Strftime
 
-Converts a datetime to String format. *e.g.*
-<span v-pre>`{{ time | strftime: '%m/%d/%y' }}
-`</span>
+Converts a datetime to String format (e.g. <span v-pre>`{{ time | strftime: '%m/%d/%y' }}`</span>).
 
 ### Strip tag
 
-Removes all HTML tags and their content from a String. *e.g.*
-<span v-pre>`{{ '<script>Hello World</script>' | strip_tags }} #=> ""`</span>
+Removes all HTML tags and their content from a String (e.g. <span v-pre>`{{ '<script>Hello World</script>' | strip_tags }} #=> ""`</span>).
 
 ### Stylesheet Tag
-Generates the HTML tag `<link>`for a CSS template, taking as parameters the URL and attributes of the form `attr: 'value'`, *e.g.* <span v-pre>`{{ 'my-css-url' | stylesheet_tag: media: 'screen', title: 'color style' }}`</span> => `<link href='my-css-url' rel='stylesheet' type='text/css' media='screen' title='color style' />`
+Generates the HTML `<link>` tag for a CSS template, taking as parameters the URL and attributes (e.g. `attr: 'value'`, <span v-pre>`{{ 'my-css-url' | stylesheet_tag: media: 'screen', title: 'color style' }}`</span> => `<link href='my-css-url' rel='stylesheet' type='text/css' media='screen' title='color style' />`).
 
-### Javascript Theme
+### Theme Javascript
 
-Adds a theme tag in Javascript. *e.g.*
-<span v-pre>`{{ 'home-page-javascript' | theme_javascript }}`</span>
+Adds a theme tag in Javascript (e.g. <span v-pre>`{{ 'home-page-javascript' | theme_javascript }}`</span>).
 
-### Stylesheet Theme 
+### Theme Stylesheet
 
-Adds a theme tag in CSS. *e.g.*
-<span v-pre>`{{ 'home-page-stylesheet' | theme_stylesheet }}`</span>
+Adds a theme tag in CSS (e.g. <span v-pre>`{{ 'home-page-stylesheet' | theme_stylesheet }}`</span>).
 
 ### Time Ago in Words
 
-Converts a date in String to words. *e.g.*
-<span v-pre>`{{ '01-02-2019' | time_ago_in_words }} #=> 'over 3 years'`</span>
+Converts a date in String to words (e.g. <span v-pre>`{{ '01-02-2019' | time_ago_in_words }} #=> 'over 3 years'`</span>).
 
 ### Translate
 
-Solves the translation text for Site keys. Custom values will be returned if they exist. *e.g.*
-<span v-pre>`{{ 'admin.logs.errors.no_logs_yet' | translate }}`</span>
+Resolves the translation text for Site keys. Custom values will be returned if they exist (e.g. <span v-pre>`{{ 'admin.logs.errors.no_logs_yet' | translate }}`</span>).
 
 ### Truncate HTML
 
-Returns a String after truncating it. *e.g.*
-<span v-pre>`{{ html | truncate_html: 10 }}`</span>
+Returns a String after truncating it (e.g. <span v-pre>`{{ html | truncate_html: 10 }}`</span>).
 
 ### Video Player
 
-Adds a video player in HTML code using a File Manager asset. *e.g.*
-<span v-pre>`{{ movie1 | video_player: 320, 320 }}`</span>
+Adds a video player in HTML code using a File Manager asset (e.g. <span v-pre>`{{ movie1 | video_player: 320, 320 }}`</span>).
 
 **Parameters**
 
-- video (Asset) - Video type object in the File Manager
-- width (Integer) - video width
-- height (Integer) - video length
+- `video` (Asset) — Video-type object from the File Manager.
+- `width` (Integer) — Video width.
+- `height` (Integer) — Video height.
 
 ## Step
 
@@ -699,7 +650,7 @@ These are the liquid filters that alter values related to steps in Modyo Platfor
 
 ### By UID
 
-Returns the Step with selected UID. *e.g.*
+Returns the Step with the selected UID. *e.g.*
 <span v-pre>`{% assign my_step = origination.steps | by_uid: 'step-01' %}`</span>
 
 **Parameters:**
@@ -721,7 +672,7 @@ Returns the Submissions filtered by Origination UID. *e.g.*
 
 ### By Status
 
-Returns the Submissions with selected status. *e.g.*
+Returns the Submissions with the selected status. *e.g.*
 <span v-pre>`{% assign filtered_submissions = user.submissions | by_status: 'completed' %}`</span>
 
 **Parameters:**
@@ -734,7 +685,7 @@ These are the liquid filters that alter values related to tasks in Modyo Platfor
 
 ### By UID
 
-Returns the Task with selected UID. *e.g.*
+Returns the Task with the selected UID. *e.g.*
 <span v-pre>`{% assign my_task = step.tasks | by_uid: 'task-01' %}`</span>
 
 **Parameters:**
@@ -743,54 +694,48 @@ Returns the Task with selected UID. *e.g.*
 
 ## User
 
-These are the liquid filters that alter values related to Users.
+These Liquid filters alter values related to Users.
 
 ### Default Avatar Image
 
-Displays the default avatar image. *e.g.*
-<span v-pre>`{{  user | avatar_for: 'C50x50' }}`</span>
+Shows the default avatar image (e.g. <span v-pre>`{{ user | avatar_for: 'C50x50' }}`</span>).
 
 **Parameters**
 
-- user - User object
-- size (Integer) (default: 'C50x50') - Image size
+- `user` (User) — User object.
+- `size` (Integer) (default: 'C50x50') — Image size.
 
 ### Image For
 
-Deploys the HTML code for a user's image. *e.g.*
-<span v-pre>`{{  user | avatar_for: 'C50x50', true }}`</span>
+Shows the HTML code for a user's image (e.g. <span v-pre>`{{ user | avatar_for: 'C50x50', true }}`</span>).
 
 **Parameters**
 
-- user - User object
-- size (Integer) (default: 'C50x50') - Image size
-- link (Boolean) (default: true) - True adds a link to the user's profile.
+- `user` (User) — User object.
+- `size` (Integer) (default: 'C50x50') — Image size.
+- `link` (Boolean) (default: true) — `true` adds a link to the user's profile.
 
 ## Widget
 
-These are the liquid filters that alter values related to Widgets.
+These Liquid filters alter values related to Widgets.
 
 ### Entry Limit
 
-Determines the entry limit for a widget. *e.g.*
-<span v-pre>`{{  widget1 | entry_limit }}`</span>
+Determines the entry limit for a widget (e.g. <span v-pre>`{{ widget1 | entry_limit }}`</span>).
 
 ### Resolve Home Widget List
 
-Returns a list of all the widgets that belong to a Site. *e.g.*
-<span v-pre>`{{  site | resolve_home_widget_list }}`</span>
+Returns a list of all widgets that belong to a Site (e.g. <span v-pre>`{{ site | resolve_home_widget_list }}`</span>).
 
 ### Resolve Me Widget List
 
-Returns a list of all the widgets that belong to a “me” page. *e.g.*
-<span v-pre>`{{  site | resolve_me_widget_list }}`</span>
+Returns a list of all widgets that belong to a "me" page (e.g. <span v-pre>`{{ site | resolve_me_widget_list }}`</span>).
 
 ### Resolve Widget List
 
-Returns a list of all the widgets that belong to a page. *e.g.*
-<span v-pre>`{{  site | resolve_widget_list: page }}`</span>
+Returns a list of all widgets that belong to a page (e.g. <span v-pre>`{{ site | resolve_widget_list: page }}`</span>).
 
 **Parameters**
 
-- site (Site) - Object of type Site
-- page (Page) - Object of type Page
+- `site` (Site) — Site-type object.
+- `page` (Page) — Page-type object.

@@ -7,7 +7,7 @@ search: true
 Modyo Customers contiene una variedad de APIs con las que podrás obtener la información de Reinos, las notificaciones y sus usuarios.
 
 
-## API de customers
+## API de Customers
 
 Accede a la API de Customers para gestionar reinos y usuarios a través de la URL `ACCOUNT_URL/api/customers/docs`. Ejemplos de endpoints:
 

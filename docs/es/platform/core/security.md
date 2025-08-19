@@ -23,7 +23,7 @@ En esta sección puedes establecer la política de seguridad de contraseñas par
 
 Al guardar esta configuración, los usuarios deberán cumplir con estas condiciones al momento de cambiar su contraseña.
 
-## Política de expiración de sesiones
+## Política de Expiración de Sesiones
 
 En esta sección puedes configurar el tiempo que permanecerá activa una sesión.
 
@@ -31,7 +31,7 @@ En esta sección puedes configurar el tiempo que permanecerá activa una sesión
 
 **Período de inactividad de usuario**: Cuando un usuario está inactivo se cierra la sesión automáticamente, una vez transcurrido el tiempo seleccionado. Se considera acciones de navegación, teclado y mouse como actividades de usuario. Esta opción protege al usuario en caso de dejar su estación de trabajo desatendida.
 
-## Política de periodo de inactividad de los usuarios
+## Política de Periodo de Inactividad de los Usuarios
 
 Al activar esta opción, y una vez transcurrido el tiempo seleccionad sin interacción del usuario en la plataforma, Modyo realizará automáticamente un cambio en el estado del usuario a _inactivo_.
 
@@ -50,13 +50,13 @@ Los **dueños de las cuentas** pueden cambiar el estado de un usuario entre inac
 Puedes localizar esta opción al editar un usuario en la sección **Equipo**, en la pestaña de **Editar**. Si seleccionas la casilla, el usuario es marcado como inactivo y al desactivarla el usuario estará activo.
 :::
 
-## Control de acceso HTTP (Cross-Origin Resource Sharing CORS)
+## Control de Acceso HTTP (Cross-Origin Resource Sharing CORS)
 
 Habilita la funcionalidad de Compartir Recursos de Origen Cruzado (CORS) para permitir el acceso a los recursos de Modyo desde otras páginas web.
 
 Para dar acceso a dominios externos, escríbelos separados por comas, por ejemplo `http://api.mydomain.com, http://mysubdomain.mydomain.com`. Por defecto, los wildcards no están permitidos en esta sección. Para habilitarlos, deberás deshabilitar manualemente el SSL a través de un ticket enviado area de [soporte de Modyo](https://support.modyo.com/hc/en-us).
 
-## Token de entrega de contenido (JWT - JSON Web Token)
+## Token de Entrega de Contenido (JWT - JSON Web Token)
 
 Esta clave o _secret_ es usada por Modyo para firmar los JWT de los usuarios y así poder acceder al [contenido privado a través de la API](/es/platform/content/public-api-reference#contenido-privado).
 
@@ -66,7 +66,7 @@ Si generas una nueva clave, todas las solicitudes de contenido privado deberán 
 
 La clave o _secret_ tiene un tiempo determinado de duración en segundos. Puedes configurar este tiempo en el campo proporcionado; por defecto, la duración es una hora (3600 segundos). Se recomienda evitar un período de duración muy corto, ya que puede afectar el rendimiento de la plataforma.
 
-## Autenticación de dos pasos 2FA
+## Autenticación de Dos Pasos 2FA
 
 La autenticación en dos pasos añade una capa de seguridad a tu cuenta y reduce el riesgo de acceso no autorizado. Al activarla, cada vez que los miembros del equipo inician sesión, tendrán que ingresar su contraseña y una clave dinámica proporcionada por la aplicación Google Authenticator desde sus teléfonos.
 
@@ -111,11 +111,11 @@ Si has activado la opción de forzar autenticación, la próxima vez que el usua
 - **Preparación y conocimiento**:  Mantener copias de seguridad y procedimientos para estar preparados en el caso de posibles desastres.
 - **Fuentes confiables**: Evitar implementar widgets o código de fuentes poco confiables. Asegurar que todas las dependencias cargadas en el sitio provengan de fuentes confiables.
 
-### Vulnerabilidades Locales
+### vulnerabilidades locales
 - Asegúrate que los equipos de cómputo de todos los usuarios administradores estén libres de spyware, malware o virus.
 - Asegúrate que los accesos siempre provengan de equipos actualizados y a través de navegadores web confiables y actualizados.
 
-### Actualizar Modyo con Regularidad
+### actualizar Modyo con regularidad
 Te recomendamos actualizar Modyo periódicamente para asegurar que tu instalación tenga las últimas correcciones de seguridad y que todos los parches de seguridad están al día. Estos parches están diseñados para aplicarse sin causar interrupciones significativas en el flujo de trabajo.
 
 Además, te recomendamos realizar actualizaciones de versiones mayores al menos dos veces al año. Esto no solo te mantendrá en la última versión con soporte, sino que también te proporcionará las últimas características y funcionalidades.
@@ -125,10 +125,10 @@ El Panel de Administración es la herramienta de administración más potente de
 
 Te recomendamos establecer una contraseña segura y cambiarla regularmente, por ejemplo, después de cada actualización importante de la plataforma.
 
-### Habilitar Transport Layer Security (TLS)
+### habilitar Transport Layer Security (TLS)
 Forzar las conexiones a que sean sólo TLS en tu instalación asegura que todo el tráfico entrante y saliente esté encriptado. Además, recomendamos utilizar solo versiones modernas del protocolo, en particular las versiones 1.2 o 1.3.
 
-### Diferenciar Subdominios
+### diferenciar subdominios
 La diferenciación de subdominios es esencial, ya que existen múltiples lugares en donde Modyo admite desarrollo mediante HTML. Si no está activado, el HTML de los sitios desarrollados sobre Modyo puede convertirse en un punto de entrada para ataques que podrían afectar a otros componentes de Modyo mediante la técnica de cross-site scripting (XSS).
 
 ### Revisar los Proceso de Respaldo
@@ -152,13 +152,13 @@ La plataforma guarda un registro de todas las acciones realizadas por los usuari
 
 Te recomendamos revisar estos registros de forma periódica para verificar el correcto comportamiento de los usuarios dentro del sistema. Los registros de actividad también están disponibles a través del API administrativo de Modyo.
 
-### Revisar Permisos de Administración
+### revisar permisos de administración
 
 Los administradores de una organización o sitio tienen un alto nivel de acceso a contenido y configuraciones que deben ser privadas. Impersonar a uno de estos administradores puede representar un gran riesgo de seguridad. Por esta razón, recomendamos mantener un número pequeño y muy controlado de usuarios con rol de administración general y asegurar que estos usuarios mantengan activos niveles de protección adicionales como el segundo factor de autenticación.
 
 Además, los administradores pueden generar tokens para acceder a las APIs de administración de la plataforma. Estos tokens frecuentemente se utilizan para automatizar tareas administrativas comunes, por lo que es importante asegurar que solo se usen dentro de sistemas seguros que garanticen su protección.
 
-## Reportar una vulnerabilidad
+## Reportar una Vulnerabilidad
 
 Si crees que has identificado una vulnerabilidad de seguridad en Modyo, por favor, ayúdanos reportando el problema.
 

@@ -51,18 +51,18 @@ $ modyo-cli autocomplete zsh
 $ modyo-cli autocomplete bash
 ```
 
-## Configuración del entorno
+## Configuración del Entorno
 
 El siguiente paso es configurar tu proyecto para facilitar la carga de widgets en la plataforma Modyo y su inclusión en las páginas. Aunque puedes especificar todo como parámetros en la llamada `push`, se recomienda definir un conjunto de variables de entorno en un archivo `.env`. Este archivo te permitirá especificar atributos como la URL de la cuenta, el sitio donde se alojará y el token de acceso, entre otros.
 
-#### Acciones Previas
+#### Acciones previas
 
 1. **Obtener un token de acceso a Modyo**: Para obtener el token, necesitas tener un usuario o [crear uno](/es/platform/core/roles#crear-usuario) con al menos el [rol](/es/platform/core/roles#roles) de `site developer-cli` en los sitios o stages donde desplegarás tu widget. Una vez creado el usuario, puedes [configurarle un token de acceso](/es/platform/core/api#autenticacion). Este token se utilizará para configurar y activar los despliegues en la plataforma.
 
 2. **Identificar la aplicación donde publicarás**:
 Para obtener el ID de tu aplicación, ve al resumen de tu aplicación. Se recomienda utilizar este valor siempre que sea posible. Si necesitas utilizar el site host, lo encontrarás en la sección general de la configuración de tu aplicación.
 
-#### Configuración del Archivo .env
+#### Configuración del archivo .env
 
  Después de obtener la información de tu aplicación y generar los tokens requeridos, configura el archivo `.env` con los datos correspondientes.
 
@@ -87,7 +87,7 @@ MODYO_WIDGET_NAME=my-project
 MODYO_DISABLE_LIQUID_REGEX=raw
 ```
 
-#### Descripción de Variables en el .env
+#### Descripción de variables en el .env
 
 - `MODYO_ACCOUNT_URL` URL del dominio donde se hará el despliegue en Modyo.
 - `MODYO_SITE_HOST` Host del sitio donde quieres desplegar el widget. No es necesario si especificas el ID del sitio.
@@ -98,7 +98,7 @@ MODYO_DISABLE_LIQUID_REGEX=raw
 - `MODYO_WIDGET_NAME` Nombre que tendrá el widget después de ser desplegado en la plataforma.
 - `MODYO_DISABLE_LIQUID_REGEX` Define una expresión regular para seleccionar archivos que necesitan deshabilitar el uso de Liquid, por ejemplo, archivos de plantillas donde es probable que la definición o el uso de variables colisionen con el uso en Liquid.
 
-## Inicialización de un nuevo proyecto
+## Inicialización de un Nuevo Proyecto
 
 La forma más rápida y fácil de crear tu primer widget es utilizando la plantilla base en React de nuestro framework mediante el comando `get`.
 
@@ -235,7 +235,7 @@ Para utilizar el comando `preview`, asegúrate de cumplir con los siguientes req
 - Un archivo [.env](https://docs.modyo.com/es/platform/channels/cli#configuracion-inicial) correctamente configurado. Los campos `MODYO_ACCOUNT_URL`, `MODYO_SITE_HOST` o `MODYO_SITE_ID` y `MODYO_TOKEN ` son requeridos.
 - Un servidor local en ejecución con el widget que deseas previsualizar.
 
-#### Pasos para Previsualizar un Widget
+#### Pasos para previsualizar un widget
 
 Una vez tengas tu archivo `.env` configurado y tu proyecto funcionando en el servidor local, sigue estos pasos:
 
@@ -248,7 +248,7 @@ Para visualizar un cambio, debes refrescar manualmente tu web app. Haz click en 
 
 :::
 
-#### Variables Predeterminadas
+#### Variables predeterminadas
 Modyo usa variables predeterminadas para la previsualización de widgets, puedes modificarlas según requieras. Las variables predefinadas son:
 
   - `MODYO_LOCAL_PORT`: Puerto del servidor local (por defecto: `8080`)
@@ -276,7 +276,7 @@ Estos comandos te permiten seleccionar los entry points locales que quieres usar
 
 
 
-### Code Splitting
+### Code splitting
 
 Los [widgets](/es/platform/channels/widgets#widgets) te permiten desarrollar funcionalidades complejas en tus aplicaciones web de Modyo, incrementando así la funcionalidad de tus sitios.
 

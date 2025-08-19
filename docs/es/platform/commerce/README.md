@@ -15,7 +15,7 @@ Actualmente, Modyo Commerce solo permite la integración con medios de pago en L
 
 Para esto, existen dos opciones que pueden ser vistas desde el mismo sidebar:
 
-## Configuración de commerce
+## Configuración de Commerce
 
 La configuración permitirá dar forma al commerce en todos los aspectos técnicos, permitiendo ajustar valores predeterminados y uniformarlos en todo el sitio
 

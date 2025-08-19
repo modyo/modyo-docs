@@ -13,7 +13,9 @@ You can access our new courses independently and without the need for registrati
 
 Take as many courses as you need according to your role, or take them all to become a true Modyo specialist.
 
-## Basic Level
+## Learning Paths
+
+### Basic level
 Basic level courses are designed for those learning to use Modyo for the first time. It is recommended to start with "Introduction to Modyo" before continuing with other courses.
 
 <a href="https://help.modyo.com/en/articles/6871283-introduccion-a-modyo" target="_blank">
@@ -24,7 +26,7 @@ Basic level courses are designed for those learning to use Modyo for the first t
     <img src="https://cdn.modyo.cloud/uploads/54c82443-84d7-4bba-b19d-909b89192d59/original/ES-02-content-management.png" width="500" alt="Content Management" />
 </a>
 
-## Intermediate Level
+### Intermediate level
 For users with basic knowledge of Modyo, these courses offer a deeper view of the tool.
 
 <a href="https://help.modyo.com/en/articles/6849565-learning-path-creacion-de-sitios-web" target="_blank">
@@ -35,7 +37,7 @@ For users with basic knowledge of Modyo, these courses offer a deeper view of th
     <img src="https://cdn.modyo.cloud/uploads/dab8974d-7a2a-401c-b54a-f105c3b23cf4/original/Learning_path_04_Widget_builder_ES.png" width="500" alt="Microfrontends with the Widget Builder" />
 </a>
 
-## Advanced Level
+### Advanced level
 Users with knowledge and experience in creating sites in Modyo, as well as skills in web application development, will find useful resources in these advanced courses:
 
 <a href="https://help.modyo.com/en/articles/6873935-crea-microfrontends-con-el-cli-de-modyo" target="_blank">
@@ -50,6 +52,5 @@ Users with knowledge and experience in creating sites in Modyo, as well as skill
 
 In addition to these courses, you can always find information on our specialized sites:
 
-**[Modyo Community:](https://es.modyo.com/comunidad)** This section offers practical use cases, frequently asked questions, and pre-recorded webinars to go beyond theory and find solutions to everyday problems.
-
-**[Webinars:](https://es.modyo.com/webinars)**: Periodically, our users receive invitations to live sessions with our community, where they can ask questions and solve them with our specialists.
+- **[Modyo Community](https://es.modyo.com/comunidad)**: This section offers practical use cases, frequently asked questions, and pre-recorded webinars to go beyond theory and find solutions to everyday problems.
+- **[Webinars](https://es.modyo.com/webinars)**: Periodically, our users receive invitations to live sessions with our community, where they can ask questions and solve them with our specialists.

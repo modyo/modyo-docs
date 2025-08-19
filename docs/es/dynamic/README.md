@@ -24,7 +24,7 @@ Para integrar los widgets HTML de Dynamic Framework en tu sitio web, puedes util
 
 Una vez que Dynamic Framework esté enlazado en tu documento HTML, podrás empezar a utilizar sus funcionalidades. Para más detalles sobre la personalización de widgets y componentes, consulta nuestra documentación en [cómo personalizar widgets y componentes](https://dynamicbanking.co/docs/styling-components).
 
-## Instalación vía gestor de paquetes
+## Instalación vía Gestor de Paquetes
 
 Para el desarrollo de widgets CLI o proyectos basados en React, puedes instalar los estilos y archivos JavaScript de Dynamic Framework mediante NPM.
 

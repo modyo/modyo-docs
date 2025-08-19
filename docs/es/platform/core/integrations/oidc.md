@@ -35,7 +35,7 @@ Además activa **Mostrar home a visitas públicas** para poder redireccionar usu
     * Habilitar sincronización de claims
 7. Asocia los campos del proveedor con los campos personalizados que tengas en Modyo [OpenID Connect 1.0 specification for Standard Claims](http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims)
 
-## 2. Usar Axios para hacer la integración
+## 2. Usar Axios para Hacer la Integración
 
 Usaremos la librería `axios` para realizar una integración desde Modyo. Un patrón que resulta conveniente es crear 3 snippets distintos que se harán cargo de los aspectos básicos de una integración.
 

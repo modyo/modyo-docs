@@ -92,7 +92,7 @@ En la sección lateral derecha, puedes ver una barra que cambia de acuerdo al í
 - **Privado**: Hace que el elemento seleccionado sea visible solo cuando hay una sesión de usuario activa en el sitio.
 - **Segmentos**: Si hay segmentos creados, también podrás segmentar este elemento para que los usuarios puedan ver este ítem de menú solo cuando tengan una sesión activa y que además se encuentren dentro de los segmentos seleccionados.
 
-## Ejemplos de Menu
+## Ejemplos de Menú
 
 El snippet general `menu` puede satisfacer las necesidades básicas de un sitio, desplegando un menú en forma de dropdown. A continuación, se explican las partes más importantes de este snippet y cómo se puede extender a más funcionalidades.
 
@@ -173,7 +173,7 @@ A continuación, tenemos un menú que también llama a `main`, pero ahora en for
 </ul>
 ```
 
-### Menu tres niveles
+### Menú tres niveles
 
 Para poder desplegar un menú de tres niveles, se tiene que agregar otro bucle que considere si los items hijos contienen más items. Para esto, se asigna la variable `grandchildren` al final del primer bucle y este tiene que iterar sobre los items de los hijos (osase los items nietos):
 

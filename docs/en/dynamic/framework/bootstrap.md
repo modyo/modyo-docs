@@ -16,7 +16,7 @@ Dynamic Framework is built upon Bootstrap, leveraging its robustness and popular
 
 -   **Solid and Standardized Foundation**: By using Bootstrap as its foundation, Dynamic Framework inherits a well-documented, tested, and community-maintained codebase. This not only accelerates development but also ensures that built experiences are robust, accessible, and compatible with modern web standards.
 
-### Exploring Bootstrap Components
+### exploring Bootstrap components
 
 To better understand how Dynamic Framework leverages Bootstrap, we recommend exploring the official Bootstrap documentation and its components:
 

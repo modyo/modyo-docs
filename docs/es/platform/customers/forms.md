@@ -14,7 +14,7 @@ Desde este listado también puedes acceder a la vista de análisis individual, h
 
 Para habilitar o deshabilitar los formularios y permitir que usuario puedan o no enviar sus respuestas, debes ir a la vista de análisis y seleccionar la acción respectiva entre las opciones desplegadas en la sección superior derecha.
 
-## Crear formulario
+## Crear Formulario
 
 Para crear un nuevo formulario, sigues estos pasos:
 
@@ -53,7 +53,7 @@ En caso de ser un formulario público, los usuarios que no tienen una sesión ac
 Si un usuario no tiene una sesión activa, llena el formulario, y el correo electrónico coincide con uno de los usuario ya registrados en Modyo, entonces la respuesta quedará asociada al usuario ya existente y no se creará uno nuevo.
 :::
 
-## Editar formulario
+## Editar Formulario
 
 Para modificar un formulario, sigue estos pasos:
 
@@ -105,7 +105,7 @@ Algunos campos cuentan con validaciones, para asegurar que el usuario cumpla con
 
 De la misma forma en que algunos campos cuentan con validaciones, la mayoría cuentan con un valor por defecto que venga preseleccionado al momento de cargar el formulario. Los únicos que no cuentan con un valor por defecto son las preguntas anidadas.
 
-### Expresiones Regulares
+### Expresiones regulares
 
 Para los campos de texto simple y parrafo, podrás agregar validaciones a través de expresiones regulares. Haciendo el click en el botón de funciones, puedes ver las diferentes validaciones predeterminadas:
 

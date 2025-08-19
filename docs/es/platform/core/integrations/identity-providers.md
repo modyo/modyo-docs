@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Proveedores de identidad
+# Proveedores de Identidad
 
 Una de las funcionalidades de Modyo para facilitar la interacción de otros sistemas de usuarios con Modyo son las integraciones con distintos servicios de autenticación.
 
@@ -17,7 +17,7 @@ Actualmente la plataforma es compatible con:
 
 Recuerda tener a mano todos los datos y certificados que se te exigen antes de cambiarlos o integrar algún servicio, para que no se produzcan problemas con el ingreso general de los usuarios.
 
-## Agregar un proveedor de identidad
+## Agregar un Proveedor de Identidad
 
 Para agregar un nuevo proveedor de identidad, sigue estos pasos:
 
@@ -160,7 +160,7 @@ Keycloak es un identity provider certificado de OpenID Connect que implementa la
 3. Configura **Access Type** `confidential` y deja habilitado solo el **Standard Flow**.
 4. Configura las **Valid Redirect URIs** con las URLs de callback y logout de la cuenta Modyo, usando las URLs a la cuenta, agregando `/realms/mi-realm` en caso de estar usando uno. Por ejemplo: `test.modyo.com/realms/mi-realm/auth/openidc/callback` y `test.modyo.com/realms/mi-realm/logout*`.
 
-### Configurar Keycloak en Modyo Platform
+### configurar Keycloak en Modyo Platform
 
 Después de configurar Keycloak, ahora tienes que completar la integración en Modyo Platform.
 

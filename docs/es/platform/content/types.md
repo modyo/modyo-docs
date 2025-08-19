@@ -9,7 +9,7 @@ Los Tipos de contenido son la base para tus Entradas. Definen qué campos y vali
 
 A los Tipos de contenido se les puede asignar una cardinalidad. Esta variable indica cuantas Entradas pueden existir para este Tipo. Puedes agregar idiomas al repositorio y generar Entradas en varios idiomas, almacenadas en un solo lugar. Además, puedes crear Usuarios, con diferentes roles y permisos, logrando así una división de trabajo llamada Revisión de Equipo.
 
-## Sobre la Interfaz
+## Sobre la interfaz
 
 Al ingresar por primera vez en la sección Tipos, haz click en el botón verde **+Nuevo Tipo** para crear un nuevo Tipo.
 
@@ -97,7 +97,7 @@ Utiliza este campo para agregar una lista fija de elementos para seleccionar sol
 
 Este campo te permite agregar una lista de la cual puedes seleccionar más de una opción o dejar en blanco.
 
-### Opciones Múltiples
+### Opciones múltiples
 
 Este campo te permite agregar un campo de texto en el cual puedes escribir para seleccionar una opción; puede ser predeterminada o propuesta.
 

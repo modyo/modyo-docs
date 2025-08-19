@@ -309,4 +309,4 @@ Para meta tags específicos al mostrar entradas de una categoría, copia el sigu
 
 En este código, se crea una variable `category_name` que contiene el nombre de la categoría tomado del URL, después se utiliza un `{% if category_path.size > 0 %}` para añadir metadata pertinente a la categoría.
 
-Liquid te permite crear contenido dinámico para tu sitio. Para conocer más acerca de Liquid y como usar Liquid Drops, visita [Liquid Markup](/es/platform/channels/liquid-markup).
+Liquid te permite crear contenido dinámico para tu sitio. Para conocer más acerca de Liquid y como usar Liquid Objetos, visita [Liquid Markup](/es/platform/channels/liquid-markup).

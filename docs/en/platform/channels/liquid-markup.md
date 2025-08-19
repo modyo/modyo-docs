@@ -61,10 +61,10 @@ With Tags, you can add flow and iteration control to your pages. You need to enc
 {% endif %}
 ```
 
-### Drops
-Modyo extends Liquid's functionality through variables created for Modyo Platform, called Drops. Currently, we offer drops from more than 20 different categories for all modules on the platform.
+### Objects
+Modyo extends Liquid's functionality through variables created for Modyo Platform, called Objects. Currently, we offer objects from more than 20 different categories for all modules on the platform.
 
-For more information on how to use Drops, go to [Drops](/en/platform/channels/liquid-markup/drops).
+For more information on how to use Objects, go to [Objects](/en/platform/channels/liquid-markup/objects).
 
 
 ## Expressions and Variables
@@ -107,7 +107,7 @@ Hello {{ 'now' | date: "%Y %h" }}
 
 A filter is a Ruby method that takes one or more parameters and returns a value. Parameters are passed to filters by position: the first parameter is the expression preceding the vertical bar character, and additional parameters can be passed using the `name: arg1, arg2` syntax.
 
-### Standard Filters
+### Standard filters
 
 - `append`: Adds a string (e.g., <span v-pre>`{{ 'foo' | append:'bar' }}`</span>).
 - `asset_url`: Generates the URL of an Asset object with a specific size (e.g., <span v-pre>`{{ asset_obj | asset_url: '640x480' }}`</span>). It can also generate the URL of a CSS or JavaScript template (e.g., <span v-pre>`{{ 'my-css' | asset_url: 'css' }}`</span> or <span v-pre>`{{ 'my-js' | asset_url: 'js' }}`</span>).

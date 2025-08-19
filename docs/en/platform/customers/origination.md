@@ -106,7 +106,7 @@ Modyo provides a JavaScript API for interacting with code snippets at run time.
 - **`getUrl()`**: Returns the URL of the current origination flow.
 - **`enableButton()`**: Enables the task's action button and allows the user to continue with the flow.
 
-### JSON API for Code Snippets
+### JSON API for code snippets
 
 Code Snippets can communicate with the origination API using data in **JSON** format.
 
@@ -152,10 +152,10 @@ To store information, the data must use valid JSON format; format errors will no
 
 ### Using Liquid in code snippets
 
-Code snippets can use liquid drops to access internal submission data and personalize the user experience.
+Code snippets can use liquid objects to access internal submission data and personalize the user experience.
 
 
-#### Submission Drops
+#### Submission Objects
 
 In an origination flow, each submission represents the ongoing process of a specific user. Here are some of the main attributes available through Liquid:
 
@@ -169,11 +169,11 @@ In an origination flow, each submission represents the ongoing process of a spec
 | **submission.origination.steps** Array with the names of the steps in the origination | ```[ {"uid": "step 1"}, {"uid": "step 2"}]``` |
 | **submission.origination.tasks** Array with all the tasks in the origination and the step they correspond to | ```[{"task_id": "67890","name": "Task 1", description: "step 1": { "uid": "abcd1234" } }]``` |
 
-You can learn more about [Liquid Drops](/en/platform/channels/liquid-markup/drops.html) in our documentation.
+You can learn more about [Liquid Objects](/en/platform/channels/liquid-markup/objects.html) in our documentation.
 
 ### Code snippets example
 
-In this example, you can find the use of data access by Liquid Drops and interaction with JavaScript and JSON APIs. Remember to replace the `QUESTION_ID` value with the corresponding one in your submission.
+In this example, you can find the use of data access by Liquid Objects and interaction with JavaScript and JSON APIs. Remember to replace the `QUESTION_ID` value with the corresponding one in your submission.
 
 ``` html
 <div class="form-group">

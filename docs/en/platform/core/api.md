@@ -58,7 +58,7 @@ With this data, you can easily traverse the data of a given service by passing t
 
 Each API also has a list of possible _responses_ that you get by invoking these methods, so that you can properly prepare your application to handle the data.
 
-### Example Value
+### Example value
 
 Within the __Response__ section, in **Example Value** you get an example of listing spaces when the answer is 200:     
 
@@ -265,7 +265,7 @@ Modyo provides 2 possible authentication methods to invoke the API:
 
 We will explain how to use each of these methods below.
 
-### Bearer Token
+### Bearer token
 
 The first thing you need to do is register the application to consume the API. Follow these steps to create a new Bearer Token:
 

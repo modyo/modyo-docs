@@ -38,7 +38,7 @@ Esto es útil para generar contenido (ej. Mustache, Handlebars) que puede usar u
 {% endraw %}
 ```
 
-### If / Else
+### If / else
 
 Las sentencias `if / else` son comunes en otros lenguajes de programación. Liquid las implementa con los siguientes tags:
 
@@ -150,7 +150,7 @@ Las expresiones de Liquid son probadas para determinar su "veracidad" en lo que 
 {% endif %}
 ```
 
-### Sentencia Case
+### Sentencia case
 
 Si necesita más condiciones, puede usar la sentencia "case":
 
@@ -221,7 +221,7 @@ one
 two
 ```
 
-### Bucle For
+### Bucle for
 
 Liquid permite bucles `for` sobre colecciones:
 

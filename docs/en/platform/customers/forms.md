@@ -105,7 +105,7 @@ Some fields have validations, to ensure that the user meets certain requirements
 
 Just as some fields have validations, most have a default value that is pre-selected when loading the form. The only ones that don't have a default value are nested questions.
 
-### Regular Expressions
+### Regular expressions
 
 For simple text and paragraph fields, you can add validations through regular expressions. By clicking on the functions button, you can see the different default validations:
 

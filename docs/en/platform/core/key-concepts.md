@@ -70,7 +70,7 @@ For them, the "Submit for Review" and "Review" buttons have an option in the dro
 
 This option exists because there are times when you need to publish quickly, so you should be cautious when assigning roles for your spaces or sites.
 :::
-### My Tasks
+### My tasks
 
 The My Tasks section in Modyo gives you an overview of all the items that require your attention. It allows you to access information about the type of item, its author, and when it was last updated.
 Once an item has been marked for review, the assigned user can review and approve it in the My Tasks section.
@@ -128,7 +128,7 @@ As a backup mechanism, when publishing an item, Modyo automatically generates an
 
 This system is available for Widgets, Pages, Navigation, Templates, and Spaces.
 
-### Resource Versions
+### Resource versions
 
 #### Editable
 

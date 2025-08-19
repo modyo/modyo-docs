@@ -6,7 +6,7 @@ search: true
 
 The Modyo Command Line Interface (CLI) is a tool based on two fundamental principles: acceleration and integration, implemented through the `get` and `push` commands, respectively.
 
- #### Benefits of the Modyo CLI
+#### Benefits of the Modyo CLI
 
 - **Local work**: Allows you to create widgets of any size or complexity from your local environment.
 - **Local repository storage**: Facilitates widget management and collaboration with other developers using version control systems.
@@ -51,18 +51,18 @@ $ modyo-cli autocomplete zsh
 $ modyo-cli autocomplete bash
 ```
 
-## Environment setup
+## Environment Setup
 
 The next step is to configure your project to facilitate uploading widgets to the Modyo platform and including them in your pages. Although you can specify everything as parameters in the `push` call, it is recommended to define a set of environment variables in a `.env` file. This file will allow you to specify attributes such as the account URL, the site where it will be hosted, and the access token, among others.
 
-#### Previous Actions
+#### Previous actions
 
 1. **Get a Modyo access token**: To obtain the token, you need to have a user or [create one](/en/platform/core/roles#create-user) with at least the `site developer-cli` [role](/en/platform/core/roles#roles) in the sites or stages where you will deploy your widget. Once the user is created, you can [configure an access token](/en/platform/core/api#authentication). This token will be used to configure and activate deployments on the platform.
 
 2. **Identify the application where you will publish**:
 To get your application ID, go to your application summary. It is recommended to use this value whenever possible. If you need to use the site host, you will find it in the general configuration section of your application.
 
-#### .env File Configuration
+#### .env file configuration
 
  After obtaining your application information and generating the required tokens, configure the `.env` file with the corresponding data.
 
@@ -87,7 +87,7 @@ MODYO_WIDGET_NAME=my-project
 MODYO_DISABLE_LIQUID_REGEX=raw
 ```
 
-#### Description of Variables in the .env
+#### Description of variables in the .env
 
 - `MODYO_ACCOUNT_URL` URL of the domain where the deployment will be made in Modyo.
 - `MODYO_SITE_HOST` Host of the site where you want to deploy the widget. Not necessary if you specify the site ID.
@@ -98,7 +98,7 @@ MODYO_DISABLE_LIQUID_REGEX=raw
 - `MODYO_WIDGET_NAME` Name that the widget will have after being deployed on the platform.
 - `MODYO_DISABLE_LIQUID_REGEX` Defines a regular expression to select files that need to disable the use of Liquid, for example, template files where the definition or use of variables is likely to collide with their use in Liquid.
 
-## Initializing a new project
+## Initializing a New Project
 
 The fastest and easiest way to create your first widget is by using the React base template of our framework with the `get` command.
 
@@ -235,7 +235,7 @@ To use the `preview` command, make sure you meet the following requirements:
 - A properly configured [.env](/en/platform/channels/cli#configuracion-del-entorno) file. The `MODYO_ACCOUNT_URL`, `MODYO_SITE_HOST` or `MODYO_SITE_ID` and `MODYO_TOKEN` fields are required.
 - A local server running with the widget you want to preview.
 
-#### Steps to Preview a Widget
+#### Steps to preview a widget
 
 Once you have your `.env` file configured and your project running on the local server, follow these steps:
 
@@ -248,7 +248,7 @@ To see a change, you must manually refresh your web app. Click **refresh** to lo
 
 :::
 
-#### Default Variables
+#### Default variables
 Modyo uses default variables for widget preview, you can modify them as needed. The predefined variables are:
 
   - `MODYO_LOCAL_PORT`: Local server port (default: `8080`)
@@ -276,7 +276,7 @@ These commands allow you to select the local entry points you want to use.
 
 
 
-### Code Splitting
+### Code splitting
 
 [Widgets](/en/platform/channels/widgets#widgets) allow you to develop complex functionalities in your Modyo web applications, thus increasing the functionality of your sites.
 

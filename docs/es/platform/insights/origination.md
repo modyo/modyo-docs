@@ -12,7 +12,7 @@ El dashboard de Origination muestra métricas clave de los flujos de onboarding 
 - **Porcentaje de conversión**: Ratio de usuarios que iniciaron vs completaron
 - **Tiempo promedio total**: Duración promedio del proceso completo
 
-### Filtros Disponibles
+### Filtros disponibles
 
 - Rango de fechas
 - Tipo de flujo
