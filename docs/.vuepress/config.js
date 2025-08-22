@@ -74,7 +74,7 @@ module.exports = {
               ],
               sidebar: {
                   "/en/platform/": [{
-                      title: "Getting Started",
+                      title: "First Steps",
                       path: "/en/platform/",
                       collapsable: true,
                       children: [
