@@ -213,7 +213,7 @@ Para poder localizar los mensajes de error que el validador nos muestra, tenemos
 
 1. Importamos los mensajes de error en los idiomas que necesitamos.
 2. En la función **loadLocaleMessages**, agregamos los mensajes del validador en el idioma que corresponde.
-3. Retornamos el objeto **messages** modificado.
+3. retornamos el objeto **messages** modificado.
 
 ```js
 import esCL from 'vee-validate/dist/locale/es-CL.json';

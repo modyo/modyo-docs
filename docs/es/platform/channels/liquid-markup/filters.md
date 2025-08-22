@@ -43,7 +43,7 @@ Da formato a una fecha ([syntax reference](https://shopify.dev/api/liquid/filter
 
 ### Default
 
-Devuelve la variable dada a menos que sea nula o string vacío, entonces devuelve el valor dado, *e.g.*
+devuelve la variable dada a menos que sea nula o string vacío, entonces devuelve el valor dado, *e.g.*
 <span v-pre>`{{ undefined_variable | default: "Default value" }} #=> "Default value"`</span>
 
 ### Divided by
@@ -61,7 +61,7 @@ Escape HTML a un string.
 
 ### Escape once
 
-Devuelve una versión escape de html sin afectar a las entidades escape existentes.
+devuelve una versión escape de html sin afectar a las entidades escape existentes.
 
 ### First
 
@@ -200,22 +200,22 @@ Estos son los filtros liquid que alteran valores relacionados al módulo de Cont
 
 ### Asset image
 
-Retorna los tags de una imagen usando su uuid del Gestor de Archivos. *e.g.*
+retorna los tags de una imagen usando su uuid del Gestor de Archivos. *e.g.*
 <span v-pre>`{{ uuid | asset_image }}`</span>
 
 ### Asset link
 
-Retorna el URL de una imagen usando su uuid del Gestor de Archivos. *e.g.*
+retorna el URL de una imagen usando su uuid del Gestor de Archivos. *e.g.*
 <span v-pre>`{{ uuid | asset_link: 'Este es una liga para el asset' }}`</span>
 
 ### Asset URL by UUID
 
-Retorna el URL de una imagen usando su uuid del Gestor de Archivos. *e.g.*
+retorna el URL de una imagen usando su uuid del Gestor de Archivos. *e.g.*
 <span v-pre>`{{ uuid | asset_url_by_uuid }}`</span>
 
 ### Asset video
 
-Retorna los tags de un video usando su uuid del Gestor de Archivos. *e.g.*
+retorna los tags de un video usando su uuid del Gestor de Archivos. *e.g.*
 <span v-pre>`{{ uuid | asset_video: 350, 300 }}`</span>
 
 **Parametros**:
@@ -225,7 +225,7 @@ Retorna los tags de un video usando su uuid del Gestor de Archivos. *e.g.*
 
 ### By category
 
-Retorna una lista de Entradas que pertenecen a la Categoría seleccionada. *e.g.*
+retorna una lista de Entradas que pertenecen a la Categoría seleccionada. *e.g.*
 <span v-pre>`{% assign filtered_entries = entries | by_category: 'category2,category1,category3' %}`</span>
 
 **Parametros**:
@@ -234,7 +234,7 @@ Retorna una lista de Entradas que pertenecen a la Categoría seleccionada. *e.g.
 
 ### By lang
 
-Retorna una lista de Entradas que pertenecen a un lenguaje seleccionado. *e.g.*
+retorna una lista de Entradas que pertenecen a un lenguaje seleccionado. *e.g.*
 <span v-pre>`{% assign entries = widget.entries | locale: 'es,en,pt' %} => entries`</span>
 
 **Parametros**:
@@ -359,28 +359,28 @@ Estos filtros Liquid alteran valores relacionados con la Criptografía.
 
 ### Base64 Decode
 
-Devuelve el valor Base64-decoded de un string (ej. <span v-pre> `{% 'Hello world' | base64_encode %} # => 'SGVsbG8gd29ybGQ='`</span>).
+devuelve el valor Base64-decoded de un string (ej. <span v-pre> `{% 'Hello world' | base64_encode %} # => 'SGVsbG8gd29ybGQ='`</span>).
 
 ### Base64 Encode
 
-Devuelve el valor Base64-encoded de un string (ej. <span v-pre>`{% 'SGVsbG8gd29ybGQ=' | base64_decode %} # => 'Hello world'`</span>).
+devuelve el valor Base64-encoded de un string (ej. <span v-pre>`{% 'SGVsbG8gd29ybGQ=' | base64_decode %} # => 'Hello world'`</span>).
 
 ### HMAC SHA1
 
-Devuelve el hash SHA-1 usando un código de autenticación de mensajes (HMAC) de un string (ej. <span v-pre>`{% 'Hello world' | hmac_sha1: 'key' %} # => '2a73959742baf046e6e2e27e5ee94bcff0af31b1'`</span>).
+devuelve el hash SHA-1 usando un código de autenticación de mensajes (HMAC) de un string (ej. <span v-pre>`{% 'Hello world' | hmac_sha1: 'key' %} # => '2a73959742baf046e6e2e27e5ee94bcff0af31b1'`</span>).
 
 ### HMAC SHA256
-Devuelve el hash SHA-256 usando un código de autenticación de mensajes (HMAC) de un string (ej. <span v-pre>`{% 'Hello world' | hmac_sha256: 'key' %} # => 'a82b2e160edaf92a6589dc11160d2a10c04449840a58717db308c1ee3512b039'`</span>).
+devuelve el hash SHA-256 usando un código de autenticación de mensajes (HMAC) de un string (ej. <span v-pre>`{% 'Hello world' | hmac_sha256: 'key' %} # => 'a82b2e160edaf92a6589dc11160d2a10c04449840a58717db308c1ee3512b039'`</span>).
 
 ### MD5
 
-Devuelve el hash MD5 de un string (ej. <span v-pre>`{% 'Hello world' | md5 %} # => '3e25960a79dbc69b674cd4ec67a72c62'`</span>).
+devuelve el hash MD5 de un string (ej. <span v-pre>`{% 'Hello world' | md5 %} # => '3e25960a79dbc69b674cd4ec67a72c62'`</span>).
 
 ### SHA1
-Devuelve el hash SHA-1 de un string (ej. <span v-pre>`{% 'Hello world' | sha1 %} # => '7b502c3a1f48c8609ae212cdfb639dee39673f5e'`</span>).
+devuelve el hash SHA-1 de un string (ej. <span v-pre>`{% 'Hello world' | sha1 %} # => '7b502c3a1f48c8609ae212cdfb639dee39673f5e'`</span>).
 
 ### SHA 256
-Devuelve el hash SHA-256 de un string (ej. <span v-pre>`{% 'Hello world' | sha256 %} # => '64ec88ca00b268e5ba1a35678a1b5316d212f4f366b2477232534a8aeca37f3c'`</span>).
+devuelve el hash SHA-256 de un string (ej. <span v-pre>`{% 'Hello world' | sha256 %} # => '64ec88ca00b268e5ba1a35678a1b5316d212f4f366b2477232534a8aeca37f3c'`</span>).
 
 ## CSS
 
@@ -428,7 +428,7 @@ Estos filtros Liquid alteran valores relacionados con la Geolocalización en Mod
 
 ### Dynamic Map
 
-Devuelve un mapa dinámico de Google Maps (ej. <span v-pre>`{{ locations | dynamic_map: '600x300', 'true', 'roadmap', true}}`</span>).
+devuelve un mapa dinámico de Google Maps (ej. <span v-pre>`{{ locations | dynamic_map: '600x300', 'true', 'roadmap', true}}`</span>).
 
 **Parametros**
 
@@ -441,7 +441,7 @@ Devuelve un mapa dinámico de Google Maps (ej. <span v-pre>`{{ locations | dynam
 
 ### Static Map
 
-Devuelve un mapa estático de Google Maps (ej. <span v-pre>`{{ locations | static_map: '600x300', 'true', 'roadmap'}}`</span>).
+devuelve un mapa estático de Google Maps (ej. <span v-pre>`{{ locations | static_map: '600x300', 'true', 'roadmap'}}`</span>).
 
 **Parametros**
 
