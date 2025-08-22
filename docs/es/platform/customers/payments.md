@@ -2,11 +2,11 @@
 search: true
 ---
 
-# Modyo Commerce
-**Modyo Commerce** es una aplicación de Modyo que permite a los equipos de desarrollo efectuar cobros a usuarios registrados en el sitio (o autenticados vía alguno de los sistemas de Single Sign-On).
+# Pagos
+**Pagos** es una módulo de Modyo Customers que permite a los equipos de desarrollo efectuar cobros a usuarios registrados en el sitio (o autenticados vía alguno de los sistemas de Single Sign-On).
 
-:::tip Medios de Pago
-Actualmente, Modyo Commerce solo permite la integración con medios de pago en Latinoamérica.
+:::tip Latinoamérica
+Actualmente, Payments solo permite la integración con medios de pago en Latinoamérica.
 :::
 
 ## Estructura
@@ -15,7 +15,7 @@ Actualmente, Modyo Commerce solo permite la integración con medios de pago en L
 
 Para esto, existen dos opciones que pueden ser vistas desde el mismo sidebar:
 
-## Configuración de Commerce
+### Configuración de Commerce
 
 La configuración permitirá dar forma al commerce en todos los aspectos técnicos, permitiendo ajustar valores predeterminados y uniformarlos en todo el sitio
 
@@ -27,7 +27,7 @@ Además, se permite activar el envío de un correo electrónico automático cuan
 
 Para este recibo, es fundamental adaptarlo hacia el commerce, por lo que es fundamental que el código que se implemente como plantilla, esté correctamente alineado con los datos del pedido del usuario que la plataforma escribirá automáticamente.
 
-### Formas de pago
+## Medios de Pago
 
 **Modyo** permite insertar varias formas de pago, que pueden hacer más cómoda la operación de cualquier empresa y cliente.
 

@@ -78,9 +78,10 @@ module.exports = {
                       path: "/en/platform/",
                       collapsable: true,
                       children: [
-                          "/en/platform/",
-                          "/en/platform/learn-modyo",
-                          "/en/platform/key-concepts",
+                          ["/en/platform/", "Welcome to Modyo"],
+                          ["/en/platform/learn-modyo", "Learn Modyo"],
+                          ["/en/platform/key-concepts", "Key Concepts"],
+                          ["/en/platform/whats-new", "What's New"],
                           "/en/platform/release-notes",
                       ],
                   },
@@ -89,7 +90,7 @@ module.exports = {
                           path: "/en/platform/core/",
                           collapsable: true,
                           children: [
-                              "/en/platform/core/key-concepts",
+                              ["/en/platform/core/", "Introduction"],
                               "/en/platform/core/configuration",
                               {
                                   title: "Integrations",
@@ -113,14 +114,14 @@ module.exports = {
                         path: "/en/platform/channels/",
                         collapsable: true,
                         children: [
+                            ["/en/platform/channels/", "Introduction"],
                             "/en/platform/channels/sites",
-                            "/en/platform/channels/global-variables",
-                            "/en/platform/channels/global-snippets",
                             "/en/platform/channels/pages",
                             "/en/platform/channels/navigation",
                             "/en/platform/channels/widgets",
-                            "/en/platform/channels/cli",
                             "/en/platform/channels/templates",
+                            "/en/platform/channels/global-variables",
+                            "/en/platform/channels/global-snippets",
                             {
                                 title: "Liquid Markup",
                                 path: "/en/platform/channels/liquid-markup/",
@@ -134,6 +135,7 @@ module.exports = {
                                     "/en/platform/channels/liquid-markup/examples",
                                 ],
                             },
+                            "/en/platform/channels/cli",
                         ],
                       },
                       {
@@ -141,6 +143,7 @@ module.exports = {
                         path: "/en/platform/customers/",
                         collapsable: true,
                         children: [
+                            ["/en/platform/customers/", "Introduction"],
                             "/en/platform/customers/overview",
                             "/en/platform/customers/users",
                             "/en/platform/customers/events",
@@ -148,6 +151,7 @@ module.exports = {
                             "/en/platform/customers/forms",
                             "/en/platform/customers/origination",
                             "/en/platform/customers/messaging",
+                            "/en/platform/customers/payments",
                             "/en/platform/customers/settings",
                             "/en/platform/customers/profile",
                             "/en/platform/customers/api",
@@ -158,6 +162,7 @@ module.exports = {
                           path: "/en/platform/content/",
                           collapsable: true,
                           children: [
+                              ["/en/platform/content/", "Introduction"],
                               "/en/platform/content/spaces",
                               "/en/platform/content/types",
                               "/en/platform/content/entries",
@@ -171,6 +176,7 @@ module.exports = {
                           path: "/en/platform/insights/",
                           collapsable: true,
                           children: [
+                              ["/en/platform/insights/", "Introduction"],
                               "/en/platform/insights/apps",
                               "/en/platform/insights/customers",
                               "/en/platform/insights/digital-factory",
@@ -283,6 +289,7 @@ module.exports = {
                             ["/es/platform/", "Bienvenido a Modyo"],
                             ["/es/platform/learn-modyo", "Aprende Modyo"],
                             ["/es/platform/key-concepts", "Conceptos Claves"],
+                            ["/es/platform/whats-new", "Novedades"],
                             "/es/platform/release-notes",
                           ],
                       },
@@ -292,9 +299,7 @@ module.exports = {
                         path: "/es/platform/core/",
                         collapsable: true,
                         children: [
-                            "/es/platform/core/key-concepts",
-                            /*"/es/platform/core/integration",*/
-                            /*"/es/platform/core/installation",*/
+                            ["/es/platform/core/", "Introducción"],
                             "/es/platform/core/configuration",
                             {
                                 title: "Integraciones",
@@ -318,14 +323,14 @@ module.exports = {
                         path: "/es/platform/channels/",
                         collapsable: true,
                         children: [
+                            ["/es/platform/channels/", "Introducción"],
                             "/es/platform/channels/sites",
-                            "/es/platform/channels/global-variables",
-                            "/es/platform/channels/global-snippets",
                             "/es/platform/channels/pages",
                             "/es/platform/channels/navigation",
                             "/es/platform/channels/widgets",
-                            "/es/platform/channels/cli",
                             "/es/platform/channels/templates",
+                            "/es/platform/channels/global-variables",
+                            "/es/platform/channels/global-snippets",
                             {
                                 title: "Liquid Markup",
                                 path: "/es/platform/channels/liquid-markup/",
@@ -339,6 +344,7 @@ module.exports = {
                                     "/es/platform/channels/liquid-markup/examples",
                                 ],
                             },
+                            "/es/platform/channels/cli",
                         ],
                       },
                       {
@@ -346,6 +352,7 @@ module.exports = {
                           path: "/es/platform/customers/",
                           collapsable: true,
                           children: [
+                              ["/es/platform/customers/", "Introducción"],
                               "/es/platform/customers/overview",
                               "/es/platform/customers/users",
                               "/es/platform/customers/events",
@@ -353,6 +360,7 @@ module.exports = {
                               "/es/platform/customers/forms",
                               "/es/platform/customers/origination",
                               "/es/platform/customers/messaging",
+                              "/es/platform/customers/payments",
                               "/es/platform/customers/settings",
                               "/es/platform/customers/profile",
                               "/es/platform/customers/api",
@@ -363,6 +371,7 @@ module.exports = {
                           path: "/es/platform/content/",
                           collapsable: true,
                           children: [
+                              ["/es/platform/content/", "Introducción"],
                               "/es/platform/content/spaces",
                               "/es/platform/content/types",
                               "/es/platform/content/entries",
@@ -376,6 +385,7 @@ module.exports = {
                           path: "/es/platform/insights/",
                           collapsable: true,
                           children: [
+                              ["/es/platform/insights/", "Introducción"],
                               "/es/platform/insights/apps",
                               "/es/platform/insights/customers",
                               "/es/platform/insights/digital-factory",

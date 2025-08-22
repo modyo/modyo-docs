@@ -8,7 +8,7 @@ Un snippet es una porción de código reutilizable que modulariza y descompone f
 
 Los snippets globales en Modyo permiten compartir código entre diferentes aplicaciones web.
 
-:::tip Tip
+:::tip Código compartido
 Un cambio en un snippet global afecta a todas las aplicaciones web donde se utiliza. Por ello, solo los usuarios con rol de administrador pueden acceder a los snippets globales.
 :::
 
@@ -77,7 +77,7 @@ Para modificar un snippet, sigue estos pasos:
 1. Selecciona si quieres publicar tu snippet global inmediatamente o en una fecha específica. También puedes seleccionar una fecha de despublicación, si lo deseas.
 
 
-:::danger Peligro
+:::warning Publicación inmediata
 Realizar cambios en un snippet global afecta a todas las aplicaciones web donde esté publicado. Procede con cuidado antes de editar o eliminar un snippet.
 :::
 

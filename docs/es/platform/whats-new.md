@@ -4,7 +4,7 @@ search: true
 
 # Novedades en Modyo
 
-Modyo Cloud y Modyo Enterprise Cloud versión 9 son las últimas versiones de la plataforma y representan una evolución significativa en rendimiento, modularidad, disponibilidad y funcionalidades para mejorar el control y la gestión de la experiencia digital de los clientes. 
+Modyo Cloud y Modyo Enterprise Cloud versión 10 son las últimas versiones de la plataforma y representan una evolución significativa en rendimiento, modularidad, disponibilidad y funcionalidades para mejorar el control y la gestión de la experiencia digital de los clientes. 
 
 Esta nueva versión de la plataforma incluye las siguientes mejoras y funcionalidades destacadas:
 
@@ -46,6 +46,6 @@ Modyo ahora tiene soporte nativo para Aplicaciones Web Progresivas, que permiten
 
 Modyo ahora usa el editor de texto enriquecido Froala. Este editor permite desarrollar contenido rápidamente y pegar texto de documentos manteniendo el formato.
 
-### Páginas de Contenido
+### Páginas de contenido
 
-Modyo ahora cambia la forma en que utilizas las vistas de contenido. Se realizará una migración automática a partir de Modyo 9.2 para llevar tus vistas de contenido en [Plantillas](/es/platform/channels/templates) hacia la sección de Páginas. Podrás crear páginas de widgets o de contenido desde el mismo lugar. Para conocer más, ve [Páginas](/es/platform/channels/pages).
+Modyo ahora cambia la forma en que utilizas las vistas de contenido. Se realizará una migración automática a partir de Modyo 10 para llevar tus vistas de contenido en [Plantillas](/es/platform/channels/templates) hacia la sección de Páginas. Podrás crear páginas de widgets o de contenido desde el mismo lugar. Para conocer más, ve [Páginas](/es/platform/channels/pages).

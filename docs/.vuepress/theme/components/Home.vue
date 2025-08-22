@@ -247,8 +247,8 @@
 
 <style lang="stylus">
 .bg-hero {
-  background-image: url(https://cloud.modyocdn.com/uploads/2f8ca73b-4108-4017-9515-d50d9da158f9/original/bg-docs.png);
-  background-size: 60%;
+  background-image: url(https://cdn.modyo.cloud/uploads/24b575f5-81c2-43bc-8716-86f8e9b5dcf5/original/banner_footer.png);
+  background-size: 40%;
   background-repeat: no-repeat;
   background-position: top right;
 }
@@ -413,7 +413,7 @@ a.shadow:hover {
 }
 @media (min-width: 992px) {
 	.bg-ornamental {
-		background-image: url(https://cloud.modyocdn.com/uploads/cfec71ea-28bc-453a-8eac-e84e93e63235/original/ornamental.png);
+		background-image: url(https://cdn.modyo.cloud/uploads/1289097a-1359-45ca-898a-ad32519d5152/original/clouds.png);
 		background-size: 250px;
 		background-repeat: no-repeat;
 		background-position: bottom right 10%;
