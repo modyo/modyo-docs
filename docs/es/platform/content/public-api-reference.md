@@ -578,7 +578,7 @@ Ejemplo:
 
 - `../entries?meta.created_at[in][]=1987-11-19T13:13:13&meta.created_at[in][]=1987-11-19T14:14:14` buscará entries creadas el 11 de noviembre, tanto a las 13:13 como 14:14
 
-##### Campos Retornados
+##### Campos retornados
 
 Mediante el parámetro fields se puede escoger qué parámetros se devuelven en el documento:
 

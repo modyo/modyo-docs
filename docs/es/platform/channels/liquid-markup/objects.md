@@ -556,7 +556,7 @@ Usa los objetos de user para obtener información de tus usuarios del módulo Cu
 | **user.female_sex_value** | El valor por defecto cuando el sexo es femenino. | ```1``` |
 | **user.first_name** | Retorna el primer nombre del usuario. | ```Ivan``` |
 | **user.genders** | Los géneros presentes en la plataforma. | ```{:id=>0, :name=>"Male"}{:id=>1, :name=>"Female"}``` |
-| **user.generated_password** | Boolenano que determina si el password fue generado automáticamente (true) o creado por el usuario (false). | ```false``` |
+| **user.generated_password** | Booleano que determina si el password fue generado automáticamente (true) o creado por el usuario (false). | ```false``` |
 | **user.id** | El id del usuario. | ```16``` |
 | **user.initials** | Las iniciales del nombre de usuario. | ```IM``` |
 | **user.last_name** | El apellido del del usuario. | ```Modyo``` |
