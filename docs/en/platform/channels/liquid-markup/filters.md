@@ -30,7 +30,7 @@ Adds a string *e.g.*
 
 ### Capitalize
 
-Capitalizes the word in the input sentence.
+Capitalizes the first letter of each word in the input string.
 
 ### Ceiling
 
@@ -57,7 +57,7 @@ Converts an input string to lowercase.
 
 ### Escape
 
-HTML escape a string.
+HTML escapes a string.
 
 ### Escape once
 
@@ -103,10 +103,10 @@ Modulo *e.g.*
 <span v-pre>`{{ 3 | modulo:2 }} #=> 1`</span>
 
 ### Newline to br
-Replaces each newline (\n) with HTML space.
+Replaces each newline (\n) with HTML break tag.
 
 ### Plus
-Addition *e.g.*
+Performs addition *e.g.*
 <span v-pre>`{{ '1' | plus:'1' }} #=> 2`</span>, <span v-pre>`{{ 1 | plus:1 }} #=> 2`</span>
 
 ### Prepend
@@ -135,13 +135,13 @@ Rounds to the nearest integer or to the specified number of decimals *e.g.* <spa
 Removes all whitespace from the end of a string
 
 ### Script tag
-Generates the HTML `<script>` tag for a JavaScript template, taking as parameters the URL and attributes of the form `attr: 'value'`, *e.g.* <span v-pre>`{{ 'my-js-url' | script_tag: async: 'async', defer: 'defer' }}`</span> => `<script src='my-js-url' type='text/javascript' async='async' defer='defer'></script>`
+Generates the HTML `<script>` tag for JavaScript, taking as parameters the URL and attributes of the form `attr: 'value'`, *e.g.* <span v-pre>`{{ 'my-js-url' | script_tag: async: 'async', defer: 'defer' }}`</span> => `<script src='my-js-url' type='text/javascript' async='async' defer='defer'></script>`
 
 ### Size
 Returns the size of an array or string
 
 ### Slice
-Splits a string. Takes an offset and a length, *e.g.* <span v-pre>`{{ "hello" | slice: -3, 3 }} #=> llo`</span>
+Splits a string. Takes an offset and length, *e.g.* <span v-pre>`{{ "hello" | slice: -3, 3 }} #=> llo`</span>
 
 ### Sort
 Sorts array elements
@@ -150,7 +150,7 @@ Sorts array elements
 Splits a string on a matching pattern *e.g.* <span v-pre>`{{ "a~b" | split:"~" }} #=> ['a','b']`</span>
 
 ### Times
-Multiplies *e.g* <span v-pre>`{{ 5 | times:4 }} #=> 20`</span>
+Multiplies *e.g.* <span v-pre>`{{ 5 | times:4 }} #=> 20`</span>
 
 ### Truncate
 Restricts a string to x characters. Also accepts a second parameter that will be appended to the string *e.g.* <span v-pre>`{{ 'foobarfoobar' | truncate: 5, '.' }} #=> 'foob.'`</span>

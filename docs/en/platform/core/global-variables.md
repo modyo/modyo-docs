@@ -4,7 +4,7 @@ search: true
 
 # Global Variables
 
-Modyo has a feature to define global variables that you can use everywhere Liquid can be used, so you can for example, share a code _snippets_ between sites.
+Modyo has a feature to define global variables that you can use everywhere Liquid can be used, so you can, for example, share code snippets between sites.
 
 :::tip Tip
 You can use plain text, HTML, JavaScript, and CSS within global variables, however you can't use Liquid code inside them. You should keep in mind that the content is a maximum of 65,535 characters.
