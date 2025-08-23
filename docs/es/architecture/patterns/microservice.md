@@ -94,7 +94,7 @@ Los microservicios de Dynamic Framework se desarrollan siguiendo los principios 
 
 #### Otras consideraciones
 
-- **Tareas pesadas**: Para servicios lentos o sensibles a fluctuaciones de tráfico, se recomienda el procesamiento en segundo plano mediante [colas de mensajería](/es/connect/components/infrastructure#colas-de-mensajeria).
+- **Tareas pesadas**: Para servicios lentos o sensibles a fluctuaciones de tráfico, se recomienda el procesamiento en segundo plano mediante [colas de mensajes](/es/connect/components/infrastructure#colas-de-mensajeria).
 - **Programación de tareas**: Para microservicios que requieran agendamiento de tareas programadas, se recomienda usar [ShedLock](https://www.baeldung.com/shedlock-spring).
 - **Workflows y máquina de estado**: Se recomienda el uso de [máquinas de estados](https://www.baeldung.com/spring-state-machine) para la orquestación de procesos complejos, e integrar tecnologías de workflows con Spring Boot.
 - **Arquitectura hexagonal**: Este patrón de diseño de software separa la lógica de negocio de una aplicación de sus servicios externos, facilitando un desarrollo, pruebas y mantenimiento más flexibles y centrados en el dominio.

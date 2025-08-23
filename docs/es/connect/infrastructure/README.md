@@ -52,7 +52,7 @@ Protección contra ataques web comunes con AWS WAF.
 
 ## Componentes de Mensajería y Comunicación
 
-#### [Colas de Mensajería](message-queues.html)
+#### [Colas de Mensajes](message-queues.html)
 Comunicación asíncrona entre servicios con AWS SQS.
 
 #### [Envío de Correos/SMS](email-sms.html)

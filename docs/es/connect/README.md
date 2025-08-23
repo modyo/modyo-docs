@@ -11,7 +11,7 @@ Modyo Connect permite implementar servicios para cubrir los requisitos comunes d
 - API Gateway
 - Infraestructura de contenedores para [microservicios](/es/architecture/patterns/microservice)
 - Bases de datos
-- Colas de mensajería
+- Colas de mensajes
 - Repositorios de objetos
 
 
