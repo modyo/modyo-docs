@@ -49,7 +49,7 @@ Modyo implements multiple security controls for its personnel and infrastructure
 
 Modyo Connect is deployed on isolated AWS accounts (Single Tenant) within Modyo Enterprise Cloud, ensuring that no infrastructure component is shared between clients. Within each account, isolated virtual private networks are used per environment, configured with subnets for different infrastructure layers, restricting communication between them through security groups.
 
-### shared responsibility model
+### Shared Responsibility Model
 
 
 Modyo and its clients share responsibility for security and operation. Modyo is responsible for complex infrastructure controls, while the client is responsible for the development and configuration of the platform deployed on the service. The shared responsibility model is detailed in the following diagram:

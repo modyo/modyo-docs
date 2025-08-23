@@ -16,7 +16,7 @@ The Modyo Connect managed service is activated through a contract or annex indep
 
 The container capacity is calculated based on the estimated production traffic, subject to adjustments for actual consumption and high availability criteria.
 
-### Requirement ticket
+### Requirement Ticket
 
 Request management is conducted through the [Modyo Support Center](https://support.modyo.com), by creating requirement tickets and following the provided instructions.
 
