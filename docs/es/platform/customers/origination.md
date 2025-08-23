@@ -104,7 +104,7 @@ Modyo proporciona una API en JavaScript para interactuar con los code snippets e
 
 #### Métodos disponibles
 
-- **`getUrl()`**: retorna la URL del flujo de originación actual.
+- **`getUrl()`**: Retorna la URL del flujo de originación actual.
 - **`enableButton()`**: Habilita el botón de acción de la tarea y permite al usuario continuar con el flujo.
 
 ### API JSON para Code Snippets

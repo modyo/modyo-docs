@@ -84,7 +84,7 @@ Liquid acepta los siguientes tipos de expresiones:
 - **Tamaño de array o hash**: Si tienes una expresión cuyo valor es un array o hash, puedes usar `.size` para obtener el número de elementos de la expresión original como un entero.
 - **Strings**: Los strings literales deben estar rodeados de comillas dobles o simples (ej. `"mi cuerda"` o `'mi cuerda'`). No hay diferencia; ningún estilo permite interpolación variable.
 - **Enteros**: Los números enteros no pueden ser citados.
-- **booleanos y nil**: Los valores literales `true`, `false` y `nil`.
+- **Booleanos y nil**: Los valores literales `true`, `false` y `nil`.
 
 Ten en cuenta que no hay manera de escribir un array literal o hash como expresión; los arrays y hashes deben pasarse a la plantilla o construirse oblicuamente con un tag o una declaración output.
 
@@ -111,28 +111,28 @@ Un filtro es un método Ruby que toma uno o más parámetros y devuelve un valor
 
 - `append`: Añade un string (ej. <span v-pre>`{{ 'foo' | append:'bar' }} #=> 'foobar'`</span>).
 - `asset_url`: Genera la URL de un objeto tipo Asset con un tamaño determinado (ej. <span v-pre>`{{ asset_obj | asset_url: '640x480' }}`</span>). También puede generar la URL de un template CSS o JavaScript (ej. <span v-pre>`{{ 'my-css' | asset_url: 'css' }}`</span> o <span v-pre>`{{ 'my-js' | asset_url: 'js' }}`</span>).
-- `base64_decode`: devuelve el valor Base64-decoded de un string (ej. <span v-pre> `{% 'Hello world' | base64_encode %} # => 'SGVsbG8gd29ybGQ='`</span>).
-- `base64_encode`: devuelve el valor Base64-encoded de un string (ej. <span v-pre>`{% 'SGVsbG8gd29ybGQ=' | base64_decode %} # => 'Hello world'`</span>).
+- `base64_decode`: Devuelve el valor Base64-decoded de un string (ej. <span v-pre> `{% 'Hello world' | base64_encode %} # => 'SGVsbG8gd29ybGQ='`</span>).
+- `base64_encode`: Devuelve el valor Base64-encoded de un string (ej. <span v-pre>`{% 'SGVsbG8gd29ybGQ=' | base64_decode %} # => 'Hello world'`</span>).
 - `capitalize`: Convierte la primera letra de cada palabra en mayúscula en la frase de entrada.
 - `ceil`: Redondea un número decimal hacia arriba al entero más próximo (ej. <span v-pre>`{{ 4.6 | ceil }} #=> 5`</span>).
 - `date`: Formatea una fecha ([referencia de sintaxis](https://shopify.dev/api/liquid/filters#date)).
-- `default`: devuelve la variable dada, a menos que sea nula o un string vacío; en ese caso, devuelve el valor especificado (ej. <span v-pre>`{{ undefined_variable | default: "Default value" }} #=> "Default value"`</span>).
+- `default`: Devuelve la variable dada, a menos que sea nula o un string vacío; en ese caso, devuelve el valor especificado (ej. <span v-pre>`{{ undefined_variable | default: "Default value" }} #=> "Default value"`</span>).
 - `divided_by`: Realiza una división de enteros (ej. <span v-pre>`{{ 10 | divided_by:3 }} #=> 3`</span>).
 - `downcase`: Convierte un string de entrada a minúsculas.
-- `escape_once`: devuelve una versión HTML escapada sin afectar a las entidades de escape existentes.
+- `escape_once`: Devuelve una versión HTML escapada sin afectar a las entidades de escape existentes.
 - `escape`: Escapa HTML a un string.
 - `first`: Obtiene el primer elemento del array.
 - `floor`: Redondea un número decimal hacia abajo al entero más cercano (ej. <span v-pre>`{{ 4.6 | floor }} #=> 4`</span>).
 - `format_date`: Formatea una fecha con la localización del sitio, usando la misma sintaxis que `date`.
-- `hmac_sha1`: devuelve el hash SHA-1 usando un código de autenticación de mensajes (HMAC) de un string (ej. <span v-pre>`{% 'Hello world' | hmac_sha1: 'key' %} # => '2a73959742baf046e6e2e27e5ee94bcff0af31b1'`</span>).
-- `hmac_sha256`: devuelve el hash SHA-256 usando un código de autenticación de mensajes (HMAC) de un string (ej. <span v-pre>`{% 'Hello world' | hmac_sha256: 'key' %} # => 'a82b2e160edaf92a6589dc11160d2a10c04449840a58717db308c1ee3512b039'`</span>).
+- `hmac_sha1`: Devuelve el hash SHA-1 usando un código de autenticación de mensajes (HMAC) de un string (ej. <span v-pre>`{% 'Hello world' | hmac_sha1: 'key' %} # => '2a73959742baf046e6e2e27e5ee94bcff0af31b1'`</span>).
+- `hmac_sha256`: Devuelve el hash SHA-256 usando un código de autenticación de mensajes (HMAC) de un string (ej. <span v-pre>`{% 'Hello world' | hmac_sha256: 'key' %} # => 'a82b2e160edaf92a6589dc11160d2a10c04449840a58717db308c1ee3512b039'`</span>).
 - `join`: Une elementos del array con un carácter específico entre ellos.
 - `last`: Obtiene el último elemento del array.
 - `lstrip`: Elimina todos los espacios en blanco al principio de un string.
 - `map`: Mapea/colecciona un array en una propiedad dada.
-- `md5`: devuelve el hash MD5 de un string (ej. <span v-pre>`{% 'Hello world' | md5 %} # => '3e25960a79dbc69b674cd4ec67a72c62'`</span>).
+- `md5`: Devuelve el hash MD5 de un string (ej. <span v-pre>`{% 'Hello world' | md5 %} # => '3e25960a79dbc69b674cd4ec67a72c62'`</span>).
 - `minus`: Resta (ej. <span v-pre>`{{ 4 | minus:2 }} #=> 2`</span>).
-- `modulo`: devuelve el resto (ej. <span v-pre>`{{ 3 | modulo:2 }} #=> 1`</span>).
+- `modulo`: Devuelve el resto (ej. <span v-pre>`{{ 3 | modulo:2 }} #=> 1`</span>).
 - `newline_to_br`: Reemplaza cada nueva línea (`\n`) con un salto de línea HTML (`<br>`).
 - `plus`: Suma (ej. <span v-pre>`{{ '1' | plus:'1' }} #=> 2`</span>, <span v-pre>`{{ 1 | plus:1 }} #=> 2`</span>).
 - `prepend`: Antepone un string (ej. <span v-pre>`{{ 'bar' | prepend:'foo' }} #=> 'foobar'`</span>).
@@ -144,9 +144,9 @@ Un filtro es un método Ruby que toma uno o más parámetros y devuelve un valor
 - `round`: Redondea al número entero más cercano o al número especificado de decimales (ej. <span v-pre>`{{ 4.5612 | round: 2 }} #=> 4.56`</span>).
 - `rstrip`: Elimina todos los espacios en blanco al final de un string.
 - `script_tag`: Genera la etiqueta HTML `<script>` para un template JavaScript, tomando como parámetros la URL y atributos (ej. `attr: 'value'`, <span v-pre>`{{ 'my-js-url' | script_tag: async: 'async', defer: 'defer' }}`</span> => `<script src='my-js-url' type='text/javascript' async='async' defer='defer'></script>`).
-- `sha1`: devuelve el hash SHA-1 de un string (ej. <span v-pre>`{% 'Hello world' | sha1 %} # => '7b502c3a1f48c8609ae212cdfb639dee39673f5e'`</span>).
-- `sha256`: devuelve el hash SHA-256 de un string (ej. <span v-pre>`{% 'Hello world' | sha256 %} # => '64ec88ca00b268e5ba1a35678a1b5316d212f4f366b2477232534a8aeca37f3c'`</span>).
-- `size`: devuelve el tamaño de un array o string.
+- `sha1`: Devuelve el hash SHA-1 de un string (ej. <span v-pre>`{% 'Hello world' | sha1 %} # => '7b502c3a1f48c8609ae212cdfb639dee39673f5e'`</span>).
+- `sha256`: Devuelve el hash SHA-256 de un string (ej. <span v-pre>`{% 'Hello world' | sha256 %} # => '64ec88ca00b268e5ba1a35678a1b5316d212f4f366b2477232534a8aeca37f3c'`</span>).
+- `size`: Devuelve el tamaño de un array o string.
 - `slice`: Divide un string. Toma un desplazamiento y una longitud (ej. <span v-pre>`{{ "hello" | slice: -3, 3 }} #=> llo`</span>).
 - `sort`: Ordena elementos del array.
 - `split`: Divide un string en un patrón coincidente (ej. <span v-pre>`{{ "a~b" | split:"~" }} #=> ['a','b']`</span>).
