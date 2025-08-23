@@ -9,11 +9,8 @@
 Dynamic Framework se construye sobre Bootstrap, aprovechando su robustez y popularidad para ofrecer funcionalidades y componentes específicos para experiencias financieras y empresariales. En lugar de reinventar la rueda, Dynamic potencia las capacidades de Bootstrap de las siguientes maneras:
 
 - **Estilización y Tematización Consistente**: Dynamic Framework aplica una capa de estilos y variables CSS personalizadas sobre Bootstrap, asegurando que todos los componentes (nativos de Bootstrap y específicos de Dynamic) mantengan una apariencia y sensación coherente con la identidad de marca de Modyo. Esto es crucial para la uniformidad visual en todas las experiencias.
-
 - **Componentes Específicos para el Sector**: Dynamic Framework introduce componentes de UI adicionales diseñados específicamente para las necesidades del sector financiero y empresarial (ej. tablas de datos avanzadas, gráficos interactivos, formularios de transacciones complejos), pre-estilizados y optimizados para el ecosistema Dynamic.
-
 - **Optimización para Microfrontends**: Al extender Bootstrap, Dynamic Framework facilita la construcción de microfrontends, proporcionando una base estandarizada que permite a los equipos de desarrollo crear y desplegar componentes de forma independiente, asegurando una integración visual y funcional sin fricciones.
-
 - **Base Sólida y Estandarizada**: Al utilizar Bootstrap como fundamento, Dynamic Framework hereda una base de código bien documentada, probada y mantenida por una gran comunidad. Esto acelera el desarrollo y garantiza que las experiencias construidas sean robustas, accesibles y compatibles con los estándares web modernos.
 
 ### Explorando los componentes de Bootstrap

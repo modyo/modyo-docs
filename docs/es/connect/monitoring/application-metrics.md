@@ -9,13 +9,9 @@ El monitoreo de métricas aplicativas es un tipo de monitoreo "caja blanca" que 
 Modyo Connect implementa su servicio de monitoreo de métricas aplicativas con [NewRelic APM](https://www.newrelic.com). El APM de NewRelic captura métricas de rendimiento en tiempo real y las centraliza en dashboards accesibles desde la web, destacando:
 
 - Tiempos de respuesta promedio y percentiles
-
 - Tasa de error
-
 - [Apdex](https://en.wikipedia.org/wiki/Apdex)
-
 - Estado de servicios o APIs externos
-
 - Trazas lentas dentro de la aplicación
 
 

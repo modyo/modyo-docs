@@ -9,13 +9,9 @@ Application metrics monitoring is a type of "white box" monitoring that instrume
 Modyo Connect implements its application metrics monitoring service with [NewRelic APM](https://www.newrelic.com). NewRelic APM captures real-time performance metrics and centralizes them in web-accessible dashboards, highlighting:
 
 - Average response times and percentiles
-
 - Error rate
-
 - [Apdex](https://en.wikipedia.org/wiki/Apdex)
-
 - Status of external services or APIs
-
 - Slow traces within the application
 
 
