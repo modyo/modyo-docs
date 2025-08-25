@@ -259,7 +259,7 @@ module.exports = {
                       ],
                   },
                   {
-                      title: "Getting Started",
+                      title: "Guides",
                       path: "/en/dynamic/getting-started/",
                       collapsable: true,
                       children: [
@@ -547,7 +547,7 @@ module.exports = {
                       ],
                   },
                   {
-                      title: "Inicio Rápido",
+                      title: "Guías",
                       path: "/es/dynamic/getting-started/",
                       collapsable: true,
                       children: [

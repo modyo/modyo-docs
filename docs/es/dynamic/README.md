@@ -11,7 +11,7 @@ Framework de componentes React especializado para aplicaciones financieras, cons
 ### Arquitectura
 - **[Visión General Técnica](overview.html)** - Arquitectura, tecnologías y patrones de diseño
 
-### [Inicio Rápido](getting-started/)
+### [Guías](getting-started/)
 Todo lo necesario para comenzar a desarrollar con Dynamic.
 
 - **[Instalación](getting-started/installation.html)** - Métodos de instalación y configuración
@@ -74,7 +74,7 @@ Aplicación disponible en `http://localhost:8080`
 
 ## Guías de Desarrollo
 
-### Inicio Rápido
+### Guías
 1. [Instalación](getting-started/installation.html) - Setup del entorno
 2. [Primera App](getting-started/first-app.html) - Tutorial paso a paso
 3. [Estructura](getting-started/project-structure.html) - Organización del proyecto
