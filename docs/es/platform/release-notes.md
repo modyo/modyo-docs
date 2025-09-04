@@ -6,6 +6,17 @@ search: true
 
 ## 10.1
 
+### 10.1.3
+
+:::tip Fecha del release
+4 de septiembre de 2025
+:::
+
+| Módulo | Mejoras |
+|--------|---------|
+| **Channels** | • Corrige stepper en modo mobile, ahora indica correctamente el número de paso en relación a los pasos totales |
+
+
 ### 10.1.2
 
 :::tip Fecha del release

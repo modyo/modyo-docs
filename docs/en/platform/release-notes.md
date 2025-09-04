@@ -6,6 +6,17 @@ search: true
 
 ## 10.1
 
+### 10.1.3
+
+:::tip Release date
+September 4, 2025
+:::
+
+| Module | Improvements |
+|--------|---------|
+| **Channels** | • Fixes stepper in mobile mode, now correctly indicates the step number in relation to total steps |
+
+
 ### 10.1.2
 
 :::tip Release date
