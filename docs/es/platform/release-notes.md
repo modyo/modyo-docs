@@ -6,6 +6,29 @@ search: true
 
 ## 10.1
 
+### 10.1.3
+
+:::tip Fecha del release
+4 de septiembre de 2025
+:::
+
+| Módulo | Mejoras |
+|--------|---------|
+| **Channels** | • Corrige stepper en modo mobile, ahora indica correctamente el número de paso en relación a los pasos totales |
+
+
+### 10.1.2
+
+:::tip Fecha del release
+2 de septiembre de 2025
+:::
+
+| Módulo | Mejoras |
+|--------|---------|
+| **Channels** | • Mejora en clonado de sitios<br>• Agrega la posibilidad de cambiar la originación de una página<br>• Agrega auto refresco en tareas del tipo pending review<br>• Permite especificar el dominio en las urls de destino de las redirecciones<br>• Corrige problemas en la sincronización de páginas de originación<br>• Corrige error de cruce de originaciones entre stages<br>• Corrige problemas de acceso a las originaciones en distintos estados<br>• Corrige feedback del último editor de las tasks al ver una submission en el backoffice |
+| **Customers** | • Nuevos tipos de fields para la creación de originaciones: currency y date range<br>• Agrega impersonación de usuarios, ahora se puede ir a contestar una originación como el usuario. Toda acción queda registrada.<br>• Agrega a la actividad de las submissions cuando se abre un correo de invitación<br>• Corrige detección incorrecta de content type de archivos OpenXML<br>• Corrige problema que evitaba que administradores pertenecientes a grupos aparezcan como agentes en las originaciones |
+| **Content** | • Corrige problema de renombrado de archivo cuando se sube un nuevo asset<br>• Corrige problema de invalidación de cache de cloudflare al actualizar imágenes<br>• Corrige problema que evitaba que las imágenes de las entries se refresquen correctamente |
+
 
 ### Modyo 10.1.1
 

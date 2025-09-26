@@ -6,6 +6,29 @@ search: true
 
 ## 10.1
 
+### 10.1.3
+
+:::tip Release date
+September 4, 2025
+:::
+
+| Module | Improvements |
+|--------|---------|
+| **Channels** | • Fixes stepper in mobile mode, now correctly indicates the step number in relation to total steps |
+
+
+### 10.1.2
+
+:::tip Release date
+September 2, 2025
+:::
+
+| Module | Improvements |
+|--------|---------|
+| **Channels** | • Improvement in site cloning<br>• Adds the ability to change the origination of a page<br>• Adds auto refresh in pending review tasks<br>• Allows specifying the domain in destination URLs of redirections<br>• Fixes issues in origination page synchronization<br>• Fixes error of origination crossing between stages<br>• Fixes access issues to originations in different states<br>• Fixes feedback from the last editor of tasks when viewing a submission in the backoffice |
+| **Customers** | • New field types for origination creation: currency and date range<br>• Adds user impersonation, now you can answer an origination as the user. All actions are recorded.<br>• Adds to submission activity when an invitation email is opened<br>• Fixes incorrect content type detection of OpenXML files<br>• Fixes issue that prevented administrators belonging to groups from appearing as agents in originations |
+| **Content** | • Fixes file rename issue when uploading a new asset<br>• Fixes cloudflare cache invalidation issue when updating images<br>• Fixes issue that prevented entry images from refreshing correctly |
+
 
 ### Modyo 10.1.1
 
