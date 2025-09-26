@@ -8,7 +8,7 @@ search: true
 
 ### 10.1.3
 
-:::tip Release date
+:::info Release date
 September 4, 2025
 :::
 
@@ -19,7 +19,7 @@ September 4, 2025
 
 ### 10.1.2
 
-:::tip Release date
+:::info Release date
 September 2, 2025
 :::
 

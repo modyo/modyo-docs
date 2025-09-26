@@ -8,7 +8,7 @@ search: true
 
 ### 10.1.3
 
-:::tip Fecha del release
+:::info Fecha del release
 4 de septiembre de 2025
 :::
 
@@ -19,7 +19,7 @@ search: true
 
 ### 10.1.2
 
-:::tip Fecha del release
+:::info Fecha del release
 2 de septiembre de 2025
 :::
 
