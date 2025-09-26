@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Inicio Rápido con Dynamic Framework
+# Inicio Rápido
 
 Esta guía te ayudará a comenzar rápidamente con Dynamic Framework, desde la instalación hasta tu primera aplicación funcional.
 

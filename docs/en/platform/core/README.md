@@ -9,9 +9,7 @@ version: 9.2
 
 # {{ $frontmatter.title }}
 
-{{ $frontmatter.meta[0].content }}
-
-Modyo Platform presents the main Modyo interface from which you have access to all relevant sections.
+{{ $frontmatter.meta[0].content }} It presents the main interface from which you have access to all relevant sections of the platform.
 
 
 ## Get Started! 🚀
@@ -23,27 +21,13 @@ The Let's Get Started! section can be disabled from the account's general option
 :::
 
 
-## My Tasks
+## Team Review
 
-Team Review is a tool that allows you to control the content publishing process in Modyo. When activated, each element must go through review stages before publication.
+Team Review is a tool that allows you to control the content publishing process in Modyo. When activated, each element must go through review stages before publication, adding a level of supervision and collaboration between the content editor and a team of reviewers. This tool is configured individually for each Site and Space.
 
-Team Review adds a level of supervision and collaboration between the content editor and a team of reviewers. This tool is configured individually for each Site and Space.
+When an editor or developer considers that the element they are working on is ready, they can submit it for review. This task can be performed by users enabled by default or by a team selected by the editor. These reviewers are responsible for approving or rejecting the element, determining if it is ready for publication. Each step of this process takes the element through different states, which are recorded in a history for later auditing.
 
-### Team Review
-
-Team Review is a tool that allows you to control the content publishing process in Modyo. When activated, each element must go through review stages before publication.
-
-Team Review adds a level of supervision and collaboration between the content editor and a team of reviewers. This tool is configured individually for each Site and Space.
-
-When an editor or developer considers that the element they are working on is ready, they can submit it for review.
-
-This task can be performed by users enabled by default or by a team selected by the editor.
-
-These reviewers are responsible for approving or rejecting the element, and determine if it is ready for publication.
-
-Each step of this process takes the element through different states, which are recorded in a history for later auditing.
-
-#### Configuration
+### Configuration
 
 To activate team review, follow these steps:
 
@@ -57,54 +41,37 @@ The available options are:
 - **Number of approvals**: Determines the number of users who must approve the element for it to be ready for publication. When the required number of approvals is reached, the element's status will change from "Awaiting review" to "Approved".
 - **Restrict reviewer selection**: By default, any user with the necessary permissions can approve elements awaiting review. However, when this option is enabled, only reviewers selected by the editor can perform the approval.
 
-:::tip Attention
-While approval is limited, any user with permissions can comment on the element.
-:::
-
 - **Force review**: This option allows you to select a list of users, from which at least one approval is required for the element to change to "Approved" status. This is independent of the number of approvals configured previously. Even if an element has the necessary number of approvals, it will remain in "Awaiting approval" status if no user from the list has approved it.
-
 - **Require all**: This option extends the previous restriction to all selected users. In this case, approval from all users on the list will be required for the element to change to "Approved" status.
 
-:::warning Attention
-When you make changes to the team review configuration, elements that were already awaiting review will continue to be governed by the rules prior to the changes.
-
-For those elements to adjust to the new configuration, they need to be rejected and submitted for review again.
+:::tip Attention
+- While approval may be limited, any user with permissions can comment on the element.
+- When you make changes to the team review configuration, elements that were already awaiting review will continue to be governed by the rules prior to the changes.
+- For those elements to adjust to the new configuration, they need to be rejected and submitted for review again.
 :::
 
 ## About the Interface
 
+The Modyo administration interface provides a unified management environment that centralizes all platform functionality through a modular and cohesive architecture. The interface design follows enterprise usability principles, implementing consistent navigation patterns, clear visual hierarchies, and standardized UI elements that facilitate adoption by multidisciplinary teams. The responsive architecture ensures complete accessibility from different devices, while the modular organization allows users to efficiently access Content Management, Site Builder, Widgets, Customer Insights, and system configuration functionalities from a central console.
 
-## Team Review
+The access and permission management system implements a role-based security model (RBAC) that allows granular control over resources and functionalities. Administrators can configure permissions at the organization, workspace, site, and specific content levels, establishing customizable approval workflows and centralized governance policies. This integrated security architecture eliminates the need to manage multiple authentication and authorization systems, providing complete traceability of accesses and actions performed on the platform.
 
-When the team review option is activated and changes are saved, the main green button **Submit for review** is displayed.
+The user experience is optimized for operational productivity, incorporating features such as configurable dashboards with real-time metrics, contextual search tools with advanced filters, batch operations for mass content management, and adaptive navigation that presents relevant options according to the user's context and permissions. The interface abstracts the underlying technical complexity while exposing advanced configuration capabilities, allowing both business users and developers to fully leverage the digital platform's capabilities.
 
-When submitting for review, the bar changes status to indicate if conditions are missing or if you don't have sufficient permission.
 
-When clicking, the right side section will indicate the requirements to publish the element.
+### Review Process
 
-If review from any reviewer is required, `(required)` will appear next to their name in the list of reviewers.
+When the team review option is activated and changes are saved, the main green button **Submit for review** is displayed. When submitting for review, the bar changes status to indicate if conditions are missing or if you don't have sufficient permission. When clicking, the right side section will indicate the requirements to publish the element.
 
-To the right of each reviewer is their review status. A yellow circle is shown if they haven't reviewed, and a green check if they have approved the element.
+If review from any reviewer is required, `(required)` will appear next to their name in the list of reviewers. To the right of each reviewer is their review status: a yellow circle is shown if they haven't reviewed, and a green check if they have approved the element. All users who have access to the element's editing view will see an **Approve** button below the list of reviewers, although only those with the necessary permissions can click to approve the element.
 
-All users who have access to the element's editing view will see an **Approve** button below the list of reviewers.
-
-Users with the necessary permissions can click the **Approve** button to approve the element. Those without permissions see the button disabled.
-
-When approving the element, the user's approval is recorded and a green check is shown next to their name in the list of reviewers.
-
-When enabling team review, in the element's action bar, to the left of the main green button and to the right of the differences button, you can find the option to open the element's activity tab.
-
-Opening this tab shows a chronological list of actions performed on the element, with the option to view details of each action. At the end of the tab is the option to leave a comment.
-
-When a comment is left or an action is executed on the element, a notification is sent both to the person who submitted for review and to users on the list of reviewers.
+When approving the element, the user's approval is recorded and a green check is shown next to their name in the list of reviewers. In the element's action bar, to the left of the main green button and to the right of the differences button, you can find the option to open the element's activity tab, where a chronological list of actions performed is shown with the option to view details of each action and leave comments. When a comment is left or an action is executed on the element, a notification is sent both to the person who submitted for review and to users on the list of reviewers.
 
 
 
 ## Versioning
 
-As a backup mechanism, when publishing an element, Modyo automatically generates and maintains a number of versions that can later be recovered if necessary.
-
-This system is available for Widgets, Pages, Navigation, Templates, and Spaces.
+As a backup mechanism, when publishing an element, Modyo automatically generates and maintains a number of versions that can later be recovered if necessary. This system is available for Widgets, Pages, Navigation, Templates, and Spaces.
 
 ### Version Types
 
@@ -126,9 +93,7 @@ This value can be modified through environment variables and is applicable to al
 
 ### Revert a Change
 
-Within versioning, there are two actions that allow you to interact with backups: reset and rollback. By default, the differences modal shows the published version on the left and the editable version on the right.
-
-You can change which versions to compare by changing the values in the version selectors at the top of the modal.
+Within versioning, there are two actions that allow you to interact with backups: reset and rollback. By default, the differences modal shows the published version on the left and the editable version on the right. You can change which versions to compare by changing the values in the version selectors at the top of the modal.
 
 Follow these steps to revert to a published version in an Entry:
 
@@ -139,7 +104,7 @@ Follow these steps to revert to a published version in an Entry:
 
 When any of the actions is applied, the version selected on the left is always taken, so that if reset, the version on the left will be taken to the editable version, and if rollback is done, the version on the left will be taken to the published version.
 
-:::tip Tip
+:::tip Supported Modules
 Versioning can be performed in the following modules:
 - In Content: **Entries**.
 - In Channels: **Pages**, **Navigation**, **Templates**, and **Widgets**.
@@ -155,7 +120,7 @@ In this case, the backup returns directly to the **published** version of the el
 
 This is useful when something was published by mistake and it's necessary to return to one of the stable versions. Allowing you to resolve the problems that the version with errors may have had.
 
-:::warning Important
+:::tip Administration Permissions
 Since this is a potentially risky action, only site or space administrators have permission to execute this action.
 :::
 
@@ -163,28 +128,18 @@ Since this is a potentially risky action, only site or space administrators have
 
 Locks is a Modyo functionality that allows you to modify a resource safely, avoiding concurrency issues that may occur when another user is working on it simultaneously. This way, Modyo prevents work loss or document overwriting.
 
-#### What Elements Use Locks?
+Locks is mainly used in [Content](/en/platform/content/) and [Channels](/en/platform/channels/), but can also be used in other sections where elements are edited such as Settings and [Customers](/en/platform/customers/). The implementation varies by section: in Content and Channels, multiple users can enter a resource, with only one being able to edit and save those changes, while others will only see the last version saved on the platform. If a second person tries to make a change, a message will appear indicating that the element already has changes and that what they are trying to modify is obsolete.
 
-Locks is mainly used in [Content](/en/platform/content/) and [Channels](/en/platform/channels/), but can also be used in other sections where elements are edited such as Settings and [Customers](/en/platform/customers/).
-
-#### How to Use Locks?
-
-Locks is implemented in different ways within the platform. In [Content](/en/platform/content/) and [Channels](/en/platform/channels/), multiple users can enter a resource, with only one being able to edit and save those changes, while others will only see the last version saved on the platform.
-
-If a second person tries to make a change, a message will appear indicating that the element already has changes and that what they are trying to modify is obsolete.
-
-In other sections like [Customers](/en/platform/customers/) and Settings, Locks will not allow simultaneous viewing of the resource, so if it is being edited, another user cannot access the work view.
-
-In this case, only an Administrator can take control, activating editing for themselves and discarding the unsaved progress of the user working on it.
+In other sections like Customers and Settings, Locks will not allow simultaneous viewing of the resource, so if it is being edited, another user cannot access the work view. In this case, only an Administrator can take control, activating editing for themselves and discarding the unsaved progress of the user working on it.
 
 
-:::warning Take Control
+:::tip Take Control
 
 If an Administrator wants to take control of a view, they must click on the element in use and on the next screen, click the **Take Control** button.
 
 When the Administrator takes control, the user using the resource receives a message preventing them from continuing to make changes, so any changes the user is making must be saved and backed up offline.
 
-After taking control, the Administrator only has two hours to make unsaved changes. After that time, the resource is released again and can be taken by any other user.
+After taking control, the Administrator only **has two hours to make changes** without saving. After that time, the resource is released again and can be taken by any other user.
 :::
 
 ### Preview Modes
@@ -198,6 +153,15 @@ The preview bar contains the following interactive elements:
 - **Navigation selector**: Allows you to switch between the published and editable version of elements belonging to the navigation builder.
 - **Page selector**: Allows you to toggle between the published and editable version of elements belonging to the page builder.
 - **Content view selector**: Allows you to switch between the published and editable version of the content entry being previewed in custom content views. This view doesn't directly use the Liquid content SDK, so content in these views won't be affected by the content SDK selector.
+- **Widget selector**: If pages containing custom widgets are being previewed, a list of widgets present on the page will be displayed, allowing you to select whether to view the editable or published version of each. Once selected, you must click the "refresh" button for the widget configuration to take effect.
+- **Minimize tab**: Allows you to hide the preview bar to avoid interference with elements located at the top of the site. Once minimized, the tab will remain visible to restore the bar in preview mode.
+- **Edit element**: When clicked, you access the edit view of the element being viewed, whether it's an entry, a page, a widget, or a default site template.
+- **Share link**: Allows you to copy a link that can be shared with other users. Opening the link provides direct access to preview mode with the configuration that was in place when the link was copied. To access preview mode, you must have an active session in the administrator account.
+- **Exit preview mode**: Closes preview mode, removing the bar and keeping the tab at the site's current URL.
+
+:::warning JavaScript SDK
+Changing the content selector in the preview bar will not affect content you are using through the JavaScript SDK or the content API. It will only affect content used through the Liquid SDK.
+:::
 - **Widget selector**: If you are previewing pages that contain custom widgets, a list of widgets present on the page will be displayed, allowing you to select whether you want to view the editable or published version of each one. Once the selection is made, you must click the "refresh" button for the widget configuration to take effect.
 - **Minimize tab**: Allows you to hide the preview bar to avoid interference with elements located at the top of the site. Once minimized, the tab will remain visible to restore the bar in preview mode.
 - **Edit element**: When clicked, you access the editing view of the element being viewed, whether it's an entry, page, widget, or default site template.

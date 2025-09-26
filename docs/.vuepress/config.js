@@ -15,7 +15,16 @@ module.exports = {
           description: "Bienvenido a la documentación oficial de Modyo.",
       },
   },
-  plugins: [],
+  plugins: [
+    ['container', {
+      type: 'info',
+      defaultTitle: {
+        '/es/': 'INFORMACIÓN',
+        '/en/': 'INFO',
+        '/': 'INFO'
+      }
+    }]
+  ],
   head: [
       ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
       ['link', { rel: 'preconnect', href: 'https://cloud.modyocdn.com' }],
@@ -135,7 +144,6 @@ module.exports = {
                                     "/en/platform/channels/liquid-markup/examples",
                                 ],
                             },
-                            "/en/platform/channels/cli",
                         ],
                       },
                       {
@@ -183,6 +191,17 @@ module.exports = {
                               "/en/platform/insights/origination",
                               "/en/platform/insights/payments",
                           ],
+                      },
+                      {
+                        title: "Tools",
+                        path: "/en/platform/tools/",
+                        collapsable: true,
+                        children: [
+                          ["/en/platform/tools/", "Introduction"],
+                          "/en/platform/tools/cli",
+                          "/en/platform/tools/sdk",
+                          "/en/platform/tools/mcp",
+                        ],
                       },
                   ],
                   "/en/connect/": [{
@@ -422,7 +441,6 @@ module.exports = {
                                     "/es/platform/channels/liquid-markup/examples",
                                 ],
                             },
-                            "/es/platform/channels/cli",
                         ],
                       },
                       {
@@ -470,6 +488,17 @@ module.exports = {
                               "/es/platform/insights/origination",
                               "/es/platform/insights/payments",
                           ],
+                      },
+                      {
+                        title: "Utilidades",
+                        path: "/es/platform/tools/",
+                        collapsable: true,
+                        children: [
+                          ["/es/platform/tools/", "Introducción"],
+                          "/es/platform/tools/cli",
+                          "/es/platform/tools/sdk",
+                          "/es/platform/tools/mcp",
+                        ],
                       },
                   ],
                   "/es/connect/": [{

@@ -6,7 +6,7 @@ search: true
 
 La Interfaz de Línea de Comandos de Modyo (CLI) es una herramienta basada en dos principios fundamentales: aceleración e integración, implementados a través de los comandos `get` y `push`, respectivamente.
 
- #### Beneficios de la CLI de Modyo
+## Beneficios de la CLI de Modyo
 
 - **Trabajo local**: Permite crear widgets de cualquier tamaño o complejidad desde tu entorno local.
 - **Almacenamiento en repositorios locales**: Facilita la gestión de widgets y la colaboración con otros desarrolladores mediante sistemas de control de versiones.
@@ -55,18 +55,18 @@ $ modyo-cli autocomplete bash
 
 El siguiente paso es configurar tu proyecto para facilitar la carga de widgets en la plataforma Modyo y su inclusión en las páginas. Aunque puedes especificar todo como parámetros en la llamada `push`, se recomienda definir un conjunto de variables de entorno en un archivo `.env`. Este archivo te permitirá especificar atributos como la URL de la cuenta, el sitio donde se alojará y el token de acceso, entre otros.
 
-#### Acciones previas
+### Acciones previas
 
-1. **Obtener un token de acceso a Modyo**: Para obtener el token, necesitas tener un usuario o [crear uno](/es/platform/core/roles#crear-usuario) con al menos el [rol](/es/platform/core/roles#roles) de `site developer-cli` en los sitios o stages donde desplegarás tu widget. Una vez creado el usuario, puedes [configurarle un token de acceso](/es/platform/core/api#autenticacion). Este token se utilizará para configurar y activar los despliegues en la plataforma.
+- **Obtener un token de acceso a Modyo**: Para obtener el token, necesitas tener un usuario o [crear uno](/es/platform/core/roles#crear-usuario) con al menos el [rol](/es/platform/core/roles#roles) de `site developer-cli` en los sitios o stages donde desplegarás tu widget. Una vez creado el usuario, puedes [configurarle un token de acceso](/es/platform/core/api#autenticacion). Este token se utilizará para configurar y activar los despliegues en la plataforma.
 
-2. **Identificar la aplicación donde publicarás**:
+- **Identificar la aplicación donde publicarás**:
 Para obtener el ID de tu aplicación, ve al resumen de tu aplicación. Se recomienda utilizar este valor siempre que sea posible. Si necesitas utilizar el site host, lo encontrarás en la sección general de la configuración de tu aplicación.
 
-#### Configuración del archivo .env
+### Configuración del archivo .env
 
- Después de obtener la información de tu aplicación y generar los tokens requeridos, configura el archivo `.env` con los datos correspondientes.
+Después de obtener la información de tu aplicación y generar los tokens requeridos, configura el archivo `.env` con los datos correspondientes.
 
- Puedes utilizar el archivo de ejemplo `.env.example` incluido en la plantilla base. Este archivo contiene las variables necesarias predefinidas y una breve descripción de cada una.
+Puedes utilizar el archivo de ejemplo `.env.example` incluido en la plantilla base. Este archivo contiene las variables necesarias predefinidas y una breve descripción de cada una.
 
 
 ```bash
@@ -87,7 +87,7 @@ MODYO_WIDGET_NAME=my-project
 MODYO_DISABLE_LIQUID_REGEX=raw
 ```
 
-#### Descripción de variables en el .env
+### Descripción de variables en el .env
 
 - `MODYO_ACCOUNT_URL` URL del dominio donde se hará el despliegue en Modyo.
 - `MODYO_SITE_HOST` Host del sitio donde quieres desplegar el widget. No es necesario si especificas el ID del sitio.
@@ -228,19 +228,19 @@ EXAMPLE
 
 El comando `preview` te permite previsualizar un widget localmente para depurar su código en un entorno local antes de publicarlo.
 
-#### Requisitos
+### Requisitos
 
 Para utilizar el comando `preview`, asegúrate de cumplir con los siguientes requisitos:
 
 - Un archivo [.env](https://docs.modyo.com/es/platform/channels/cli#configuracion-inicial) correctamente configurado. Los campos `MODYO_ACCOUNT_URL`, `MODYO_SITE_HOST` o `MODYO_SITE_ID` y `MODYO_TOKEN ` son requeridos.
 - Un servidor local en ejecución con el widget que deseas previsualizar.
 
-#### Pasos para previsualizar un widget
+### Pasos para previsualizar un widget
 
 Una vez tengas tu archivo `.env` configurado y tu proyecto funcionando en el servidor local, sigue estos pasos:
 
-1. Abre una nueva ventana de terminal.
-2. Ejecuta el comando `modyo-cli preview`.
+- Abre una nueva ventana de terminal.
+- Ejecuta el comando `modyo-cli preview`.
 
 :::warning Importante
 
@@ -248,7 +248,7 @@ Para visualizar un cambio, debes refrescar manualmente tu web app. Haz click en 
 
 :::
 
-#### Variables predeterminadas
+### Variables predeterminadas
 Modyo usa variables predeterminadas para la previsualización de widgets, puedes modificarlas según requieras. Las variables predefinadas son:
 
   - `MODYO_LOCAL_PORT`: Puerto del servidor local (por defecto: `8080`)
@@ -289,7 +289,7 @@ La técnica de _code splitting_ te permite dividir el código de tus widgets en 
 - Eliminación de restricciones en el tamaño de los widgets.
 - Aumento del rendimiento.
 
-#### Comandos de CLI para code splitting
+### Comandos de CLI para code splitting
 
 Con la interfaz de línea de comandos (CLI) de Modyo, puedes publicar y actualizar un widget desarrollado externamente o en el que has implementado code splitting.
 
@@ -299,9 +299,9 @@ En el caso de widgets creados con code splitting, debes especificar cuál es el 
 
 Para empaquetar un archivo como zip en Modyo CLI usa las siguientes opciones:
 
- * zip: empaqueta el bundle del widget para enviarlo a la plataforma.
- * zip-entry-css: archivo CSS principal del widget.
- * zip-entry-js: archivo JS principal del widget.
+- zip: empaqueta el bundle del widget para enviarlo a la plataforma.
+- zip-entry-css: archivo CSS principal del widget.
+- zip-entry-js: archivo JS principal del widget.
 
 Ejemplo:
 
