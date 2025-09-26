@@ -3,23 +3,38 @@ search: true
 title: Modyo Platform
 meta:
   - name: description
-    content: Modyo Platform es la base tecnológica sobre la cual operan las aplicaciones de Modyo como Channels, Content y Customers. En ella, encontramos todo lo necesario para poder realizar las configuraciones transversales más relevantes. 
+    content: Modyo Platform es la base tecnológica sobre la cual operan las aplicaciones de Modyo como Channels, Content y Customers. En ella, encontramos todo lo necesario para poder realizar las configuraciones más relevantes. 
 version: 9.2
 ---
 
 # {{ $frontmatter.title }}
 
-{{ $frontmatter.meta[0].content }} Presenta la interfaz principal desde la cual se tiene acceso a todas las secciones relevantes de la plataforma.
+{{ $frontmatter.meta[0].content }}
+
+A continuación, exploraremos las secciones más relevantes y temas transversales de la plataforma.
 
 
 ## ¡Empieza! 🚀
 
-Modyo a todos sus usuarios administradores una sección de aprendizaje con links y contenido desde nuestra comunidad.
+Para usuarios nuevos en Modyo Platform, te sugerimos seguir este flujo de trabajo inicial:
 
-:::tip Opcional
-La sección ¡Empieza! puede ser desactivada desde las opciones generales de la cuenta.
+1. **Configuración inicial**: Revisa las [configuraciones generales](/es/platform/core/configuration) de la cuenta
+2. **Gestión de usuarios**: Configura [roles y permisos](/es/platform/core/roles) para tu equipo
+3. **Seguridad**: Implementa las [políticas de seguridad](/es/platform/core/security) recomendadas
+4. **Integraciones**: Conecta tus [sistemas externos](/es/platform/core/integrations) si es necesario
+
+Modyo ofrece a todos sus usuarios administradores una sección de aprendizaje con enlaces y contenido especializado desde nuestra comunidad para acelerar la adopción de la plataforma. Esta sección incluye temas cómo:
+
+- **Guías de inicio rápido**: Tutoriales paso a paso para configurar tu primera aplicación
+- **Casos de uso comunes**: Ejemplos prácticos de implementaciones exitosas
+- **Mejores prácticas**: Recomendaciones del equipo de Modyo para optimizar tu experiencia
+- **Recursos de la comunidad**: Enlaces directos a documentación, videos y foros especializados
+- **Actualizaciones de plataforma**: Información sobre nuevas funcionalidades y mejoras
+
+
+:::tip Activación opcional
+La sección ¡Empieza! puede ser desactivada desde las opciones generales de la cuenta según las necesidades de tu organización.
 :::
-
 
 ## Revisión en Equipo
 

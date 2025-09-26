@@ -3,21 +3,37 @@ search: true
 title: Modyo Platform
 meta:
   - name: description
-    content: Modyo Platform is the technological foundation on which Modyo applications such as Channels, Content, and Customers operate. Here you will find everything necessary to perform the most relevant cross-cutting configurations. 
+    content: Modyo Platform is the technological foundation on which Modyo applications such as Channels, Content, and Customers operate. Here you will find everything necessary to perform the most relevant configurations. 
 version: 9.2
 ---
 
 # {{ $frontmatter.title }}
 
-{{ $frontmatter.meta[0].content }} It presents the main interface from which you have access to all relevant sections of the platform.
+{{ $frontmatter.meta[0].content }}
+
+Below, we will explore the most relevant sections and cross-cutting topics of the platform.
 
 
 ## Get Started! 🚀
 
-Modyo provides all its administrator users with a learning section containing links and content from our community.
+For users new to Modyo Platform, we suggest following this initial workflow:
 
-:::tip Optional
-The Let's Get Started! section can be disabled from the account's general options.
+1. **Initial setup**: Review the [general configurations](/en/platform/core/configuration) of the account
+2. **User management**: Configure [roles and permissions](/en/platform/core/roles) for your team
+3. **Security**: Implement the recommended [security policies](/en/platform/core/security)
+4. **Integrations**: Connect your [external systems](/en/platform/core/integrations) if necessary
+
+Modyo provides all its administrator users with a learning section containing specialized links and content from our community to accelerate platform adoption. This section includes topics such as:
+
+- **Quick start guides**: Step-by-step tutorials to set up your first application
+- **Common use cases**: Practical examples of successful implementations
+- **Best practices**: Recommendations from the Modyo team to optimize your experience
+- **Community resources**: Direct links to documentation, videos, and specialized forums
+- **Platform updates**: Information about new features and improvements
+
+
+:::tip Optional activation
+The Get Started! section can be disabled from the account's general options according to your organization's needs.
 :::
 
 
