@@ -11,7 +11,7 @@ version: 9.2
 
 {{ $frontmatter.meta[0].content }}
 
-Below, we will explore the most relevant sections and cross-cutting topics of the platform.
+Below, we will explore the most relevant cross-cutting sections and topics of the platform.
 
 
 ## Get Started! 🚀
@@ -23,7 +23,7 @@ For users new to Modyo Platform, we suggest following this initial workflow:
 3. **Security**: Implement the recommended [security policies](/en/platform/core/security)
 4. **Integrations**: Connect your [external systems](/en/platform/core/integrations) if necessary
 
-Modyo provides all its administrator users with a learning section containing specialized links and content from our community to accelerate platform adoption. This section includes topics such as:
+Modyo provides all its administrator users with a learning section called Get Started! with specialized links and content from our community to accelerate platform adoption. This section includes topics such as:
 
 - **Quick start guides**: Step-by-step tutorials to set up your first application
 - **Common use cases**: Practical examples of successful implementations
@@ -31,40 +31,12 @@ Modyo provides all its administrator users with a learning section containing sp
 - **Community resources**: Direct links to documentation, videos, and specialized forums
 - **Platform updates**: Information about new features and improvements
 
+The Get Started! section is an excellent starting point for new users joining the organization.
 
 :::tip Optional activation
 The Get Started! section can be disabled from the account's general options according to your organization's needs.
 :::
 
-
-## Team Review
-
-Team Review is a tool that allows you to control the content publishing process in Modyo. When activated, each element must go through review stages before publication, adding a level of supervision and collaboration between the content editor and a team of reviewers. This tool is configured individually for each Site and Space.
-
-When an editor or developer considers that the element they are working on is ready, they can submit it for review. This task can be performed by users enabled by default or by a team selected by the editor. These reviewers are responsible for approving or rejecting the element, determining if it is ready for publication. Each step of this process takes the element through different states, which are recorded in a history for later auditing.
-
-### Configuration
-
-To activate team review, follow these steps:
-
-1. From the side menu in Modyo Platform, select a space or site.
-2. Expand **Space/Site Settings** and select **Team Review**.
-3. Click **Enable team review**.
-
-The available options are:
-
-- **Enable team review**: Activates or completely deactivates team review in this context (site or space).
-- **Number of approvals**: Determines the number of users who must approve the element for it to be ready for publication. When the required number of approvals is reached, the element's status will change from "Awaiting review" to "Approved".
-- **Restrict reviewer selection**: By default, any user with the necessary permissions can approve elements awaiting review. However, when this option is enabled, only reviewers selected by the editor can perform the approval.
-
-- **Force review**: This option allows you to select a list of users, from which at least one approval is required for the element to change to "Approved" status. This is independent of the number of approvals configured previously. Even if an element has the necessary number of approvals, it will remain in "Awaiting approval" status if no user from the list has approved it.
-- **Require all**: This option extends the previous restriction to all selected users. In this case, approval from all users on the list will be required for the element to change to "Approved" status.
-
-:::tip Attention
-- While approval may be limited, any user with permissions can comment on the element.
-- When you make changes to the team review configuration, elements that were already awaiting review will continue to be governed by the rules prior to the changes.
-- For those elements to adjust to the new configuration, they need to be rejected and submitted for review again.
-:::
 
 ## About the Interface
 
@@ -72,16 +44,7 @@ The Modyo administration interface provides a unified management environment tha
 
 The access and permission management system implements a role-based security model (RBAC) that allows granular control over resources and functionalities. Administrators can configure permissions at the organization, workspace, site, and specific content levels, establishing customizable approval workflows and centralized governance policies. This integrated security architecture eliminates the need to manage multiple authentication and authorization systems, providing complete traceability of accesses and actions performed on the platform.
 
-The user experience is optimized for operational productivity, incorporating features such as configurable dashboards with real-time metrics, contextual search tools with advanced filters, batch operations for mass content management, and adaptive navigation that presents relevant options according to the user's context and permissions. The interface abstracts the underlying technical complexity while exposing advanced configuration capabilities, allowing both business users and developers to fully leverage the digital platform's capabilities.
-
-
-### Review Process
-
-When the team review option is activated and changes are saved, the main green button **Submit for review** is displayed. When submitting for review, the bar changes status to indicate if conditions are missing or if you don't have sufficient permission. When clicking, the right side section will indicate the requirements to publish the element.
-
-If review from any reviewer is required, `(required)` will appear next to their name in the list of reviewers. To the right of each reviewer is their review status: a yellow circle is shown if they haven't reviewed, and a green check if they have approved the element. All users who have access to the element's editing view will see an **Approve** button below the list of reviewers, although only those with the necessary permissions can click to approve the element.
-
-When approving the element, the user's approval is recorded and a green check is shown next to their name in the list of reviewers. In the element's action bar, to the left of the main green button and to the right of the differences button, you can find the option to open the element's activity tab, where a chronological list of actions performed is shown with the option to view details of each action and leave comments. When a comment is left or an action is executed on the element, a notification is sent both to the person who submitted for review and to users on the list of reviewers.
+The user experience is optimized for operational productivity, incorporating features such as configurable dashboards with real-time metrics, contextual search tools with advanced filters, batch operations for mass content management, and adaptive navigation that presents relevant options according to the user's context and permissions. The interface abstracts the platform's technical complexity while exposing advanced configuration capabilities, allowing both business users and developers to fully leverage the digital platform's capabilities.
 
 
 
@@ -178,12 +141,39 @@ The preview bar contains the following interactive elements:
 :::warning JavaScript SDK
 Changing the content selector in the preview bar will not affect content you are using through the JavaScript SDK or the content API. It will only affect content used through the Liquid SDK.
 :::
-- **Widget selector**: If you are previewing pages that contain custom widgets, a list of widgets present on the page will be displayed, allowing you to select whether you want to view the editable or published version of each one. Once the selection is made, you must click the "refresh" button for the widget configuration to take effect.
-- **Minimize tab**: Allows you to hide the preview bar to avoid interference with elements located at the top of the site. Once minimized, the tab will remain visible to restore the bar in preview mode.
-- **Edit element**: When clicked, you access the editing view of the element being viewed, whether it's an entry, page, widget, or default site template.
-- **Share link**: Allows you to copy a link that can be shared with other users. Opening the link provides direct access to preview mode with the configuration that was in place when the link was copied. To access preview mode, you need to have a session initiated in the administrator account.
-- **Exit preview mode**: Closes preview mode, removing the bar and keeping the tab at the current site URL.
+## Team Review
 
-:::warning Attention
-Changing the content selector in the preview bar will have no effect on content you are using through the JavaScript SDK or content API. It will only affect content used through the Liquid SDK.
+Team Review is a tool that allows you to control the content publishing process in Modyo. When activated, each element must go through review stages before publication, adding a level of supervision and collaboration between the content editor and a team of reviewers. This tool is configured individually for each Site and Space.
+
+When an editor or developer considers that the element they are working on is ready, they can submit it for review. This task can be performed by users enabled by default or by a team selected by the editor. These reviewers are responsible for approving or rejecting the element, determining if it is ready for publication. Each step of this process takes the element through different states, which are recorded in a history for later auditing.
+
+### Configuration
+
+To activate team review, follow these steps:
+
+1. From the side menu in Modyo Platform, select a space or site.
+2. Expand **Space/Site Settings** and select **Team Review**.
+3. Click **Enable team review**.
+
+The available options are:
+
+- **Enable team review**: Activates or completely deactivates team review in this context (site or space).
+- **Number of approvals**: Determines the number of users who must approve the element for it to be ready for publication. When the required number of approvals is reached, the element's status will change from "Awaiting review" to "Approved".
+- **Restrict reviewer selection**: By default, any user with the necessary permissions can approve elements awaiting review. However, when this option is enabled, only reviewers selected by the editor can perform the approval.
+
+- **Force review**: This option allows you to select a list of users, from which at least one approval is required for the element to change to "Approved" status. This is independent of the number of approvals configured previously. Even if an element has the necessary number of approvals, it will remain in "Awaiting approval" status if no user from the list has approved it.
+- **Require all**: This option extends the previous restriction to all selected users. In this case, approval from all users on the list will be required for the element to change to "Approved" status.
+
+:::tip Attention
+- While approval may be limited, any user with permissions can comment on the element.
+- When you make changes to the team review configuration, elements that were already awaiting review will continue to be governed by the rules prior to the changes.
+- For those elements to adjust to the new configuration, they need to be rejected and submitted for review again.
 :::
+
+### Review Process
+
+When the team review option is activated and changes are saved, the main green button **Submit for review** is displayed. When submitting for review, the bar changes status to indicate if conditions are missing or if you don't have sufficient permission. When clicking, the right side section will indicate the requirements to publish the element.
+
+If review from any reviewer is required, `(required)` will appear next to their name in the list of reviewers. To the right of each reviewer is their review status: a yellow circle is shown if they haven't reviewed, and a green check if they have approved the element. All users who have access to the element's editing view will see an **Approve** button below the list of reviewers, although only those with the necessary permissions can click to approve the element.
+
+When approving the element, the user's approval is recorded and a green check is shown next to their name in the list of reviewers. In the element's action bar, to the left of the main green button and to the right of the differences button, you can find the option to open the element's activity tab, where a chronological list of actions performed is shown with the option to view details of each action and leave comments. When a comment is left or an action is executed on the element, a notification is sent both to the person who submitted for review and to users on the list of reviewers.

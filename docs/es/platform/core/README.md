@@ -11,7 +11,7 @@ version: 9.2
 
 {{ $frontmatter.meta[0].content }}
 
-A continuación, exploraremos las secciones más relevantes y temas transversales de la plataforma.
+A continuación, exploraremos las secciones y temas transversales más relevantes de la plataforma.
 
 
 ## ¡Empieza! 🚀
@@ -23,7 +23,7 @@ Para usuarios nuevos en Modyo Platform, te sugerimos seguir este flujo de trabaj
 3. **Seguridad**: Implementa las [políticas de seguridad](/es/platform/core/security) recomendadas
 4. **Integraciones**: Conecta tus [sistemas externos](/es/platform/core/integrations) si es necesario
 
-Modyo ofrece a todos sus usuarios administradores una sección de aprendizaje con enlaces y contenido especializado desde nuestra comunidad para acelerar la adopción de la plataforma. Esta sección incluye temas cómo:
+Modyo ofrece a todos sus usuarios administradores una sección de aprendizaje llamada ¡Empieza! con enlaces y contenido especializado desde nuestra comunidad para acelerar la adopción de la plataforma. Esta sección incluye temas cómo:
 
 - **Guías de inicio rápido**: Tutoriales paso a paso para configurar tu primera aplicación
 - **Casos de uso comunes**: Ejemplos prácticos de implementaciones exitosas
@@ -31,37 +31,10 @@ Modyo ofrece a todos sus usuarios administradores una sección de aprendizaje co
 - **Recursos de la comunidad**: Enlaces directos a documentación, videos y foros especializados
 - **Actualizaciones de plataforma**: Información sobre nuevas funcionalidades y mejoras
 
+La sección ¡Empieza! es un excelente punto de partida para nuevos usuarios que se están sumando a la organización.
 
 :::tip Activación opcional
 La sección ¡Empieza! puede ser desactivada desde las opciones generales de la cuenta según las necesidades de tu organización.
-:::
-
-## Revisión en Equipo
-
-La Revisión en Equipo (o Team Review) es una herramienta que permite controlar el proceso de publicación de contenidos en Modyo. Al activarla, cada elemento debe pasar por etapas de revisión antes de su publicación, añadiendo un nivel de supervisión y colaboración entre el editor de contenidos y un equipo de revisores. Esta herramienta se configura de forma individual para cada Sitio y Espacio.
-
-Cuando un editor o desarrollador considera que el elemento en el que está trabajando está listo, puede enviarlo a revisión. Esta tarea puede ser realizada por usuarios habilitados por defecto o por un equipo seleccionado por el editor. Estos revisores son los responsables de aprobar o rechazar el elemento, determinando si está listo para su publicación. Cada paso de este proceso lleva al elemento a través de distintos estados, que quedan registrados en un historial para su posterior auditoría.
-
-### Configuración
-
-Para activar la revisión de equipo, sigue estos pasos:
-
-1. Desde el menú lateral en Modyo Platform, selecciona un espacio o sitio.
-2. Expande **Configuración del espacio/sitio** y selecciona **Revisión en Equipo**.
-3. Haz click en **Habilita la revisión en equipo**.
-
-Las opciones disponibles son:
-
-- **Habilitar revisión en equipo**: Activa o desactiva por completo la revisión en equipo en este contexto (sitio o espacio).
-- **Número de aprobaciones**: Determina la cantidad de usuarios que deben aprobar el elemento para que esté listo para su publicación. Cuando se alcanza el número requerido de aprobaciones, el estado del elemento cambiará de "Esperando revisión" a "Aprobado".
-- **Restringir la selección de revisores**: Por defecto, cualquier usuario con los permisos necesarios puede aprobar elementos en espera de revisión. Sin embargo, al habilitar esta opción, solo los revisores seleccionados por el editor podrán llevar a cabo la aprobación.
-- **Forzar revisión**: Esta opción te permite seleccionar una lista de usuarios, de los cuales se requiere al menos una aprobación para que el elemento pueda cambiar a estado "Aprobado". Esto es independiente del número de aprobaciones configurado anteriormente. Incluso si un elemento tiene la cantidad de aprobaciones necesarias, permanecerá en estado "Esperando aprobación" si ningún usuario de la lista lo ha aprobado.
-- **Requerir todos**: Esta opción extiende la restricción anterior a todos los usuarios seleccionados. En este caso, se requerirá la aprobación de todos los usuarios de la lista para que el elemento pueda cambiar a estado "Aprobado".
-
-:::tip Atención
-- Si bien la aprobación se podría encontrar limitada, cualquier usuario con permisos puede hacer comentarios sobre el elemento.
-- Cuando haces cambios en la configuración de revisión en equipo, los elementos que ya estaban esperando revisión seguirán rigiéndose por las reglas anteriores a los cambios.
-- Para que esos elementos se ajusten a la nueva configuración, es necesario que sean rechazados y enviados a revisión nuevamente.
 :::
 
 ## Sobre la Interfaz
@@ -70,17 +43,7 @@ La interfaz de administración de Modyo proporciona un entorno unificado de gest
 
 El sistema de gestión de accesos y permisos implementa un modelo de seguridad basado en roles (RBAC) que permite un control granular sobre recursos y funcionalidades. Los administradores pueden configurar permisos a nivel de organización, espacios de trabajo, sitios y contenidos específicos, estableciendo workflows de aprobación personalizables y políticas de governance centralizadas. Esta arquitectura de seguridad integrada elimina la necesidad de gestionar múltiples sistemas de autenticación y autorización, proporcionando trazabilidad completa de accesos y acciones realizadas en la plataforma.
 
-La experiencia de usuario está optimizada para la productividad operativa, incorporando funcionalidades como dashboards configurables con métricas en tiempo real, herramientas de búsqueda contextual con filtros avanzados, operaciones batch para gestión masiva de contenidos, y navegación adaptativa que presenta opciones relevantes según el contexto y permisos del usuario. La interfaz abstrae la complejidad técnica subyacente mientras expone capacidades avanzadas de configuración, permitiendo que tanto usuarios de negocio como desarrolladores puedan aprovechar completamente las capacidades de la plataforma digital.
-
-
-### Proceso de Revisión
-
-Cuando se activa la opción de revisión en equipo y se guardan los cambios, se muestra el botón verde principal **Enviar a revisión**. Al enviar a revisión, la barra cambia de estado para indicar si faltan condiciones o si no se tiene permiso suficiente. Al hacer click, en la sección lateral derecha se indicarán los requerimientos para publicar el elemento.
-
-Si se requiere la revisión de algún revisor, aparecerá `(requerido)` junto a su nombre en el listado de revisores. A la derecha de cada revisor está el estado de su revisión: se muestra un círculo amarillo si no ha hecho su revisión, y un check verde en caso de haber aprobado el elemento. Todos los usuarios que tienen acceso a la vista de edición del elemento verán un botón **Aprobar** debajo del listado de revisores, aunque solo aquellos con los permisos necesarios podrán hacer click para aprobar el elemento.
-
-Al aprobar el elemento, la aprobación del usuario queda registrada y se muestra un check verde junto a su nombre en el listado de revisores. En la barra de acciones del elemento, a la izquierda del botón principal de color verde y a la derecha del botón de diferencias, puedes encontrar la opción para abrir la pestaña de actividad del elemento, donde se muestra una lista cronológica de las acciones realizadas con la opción de ver los detalles de cada acción y dejar comentarios. Cuando se deja un comentario o se ejecuta alguna acción sobre el elemento, se envía una notificación tanto a quien envió a revisión como a los usuarios que están en la lista de revisores.
-
+La experiencia de usuario está optimizada para la productividad operativa, incorporando funcionalidades como dashboards configurables con métricas en tiempo real, herramientas de búsqueda contextual con filtros avanzados, operaciones batch para gestión masiva de contenidos, y navegación adaptativa que presenta opciones relevantes según el contexto y permisos del usuario. La interfaz abstrae la complejidad técnica de la plataforma mientras expone capacidades avanzadas de configuración, permitiendo que tanto usuarios de negocio como desarrolladores puedan aprovechar completamente las capacidades de la plataforma digital.
 
 
 ## Versionado
@@ -176,4 +139,44 @@ La barra de vista previa contiene los siguientes elementos interactivos:
 :::warning SDK de Javascript
 Cambiar el selector de contenido de la barra de previsualización no tendrá efecto sobre el contenido que estés usando a través del SDK de JavaScript o la API de contenido. Solo tendrá efecto en el contenido que se usa a través del SDK de Liquid.
 :::
+
+
+## Revisión en Equipo
+
+La Revisión en Equipo (o Team Review) es una herramienta que permite controlar el proceso de publicación de contenidos en Modyo. Al activarla, cada elemento debe pasar por etapas de revisión antes de su publicación, añadiendo un nivel de supervisión y colaboración entre el editor de contenidos y un equipo de revisores. Esta herramienta se configura de forma individual para cada Sitio y Espacio.
+
+Cuando un editor o desarrollador considera que el elemento en el que está trabajando está listo, puede enviarlo a revisión. Esta tarea puede ser realizada por usuarios habilitados por defecto o por un equipo seleccionado por el editor. Estos revisores son los responsables de aprobar o rechazar el elemento, determinando si está listo para su publicación. Cada paso de este proceso lleva al elemento a través de distintos estados, que quedan registrados en un historial para su posterior auditoría.
+
+### Configuración
+
+Para activar la revisión de equipo, sigue estos pasos:
+
+1. Desde el menú lateral en Modyo Platform, selecciona un espacio o sitio.
+2. Expande **Configuración del espacio/sitio** y selecciona **Revisión en Equipo**.
+3. Haz click en **Habilita la revisión en equipo**.
+
+Las opciones disponibles son:
+
+- **Habilitar revisión en equipo**: Activa o desactiva por completo la revisión en equipo en este contexto (sitio o espacio).
+- **Número de aprobaciones**: Determina la cantidad de usuarios que deben aprobar el elemento para que esté listo para su publicación. Cuando se alcanza el número requerido de aprobaciones, el estado del elemento cambiará de "Esperando revisión" a "Aprobado".
+- **Restringir la selección de revisores**: Por defecto, cualquier usuario con los permisos necesarios puede aprobar elementos en espera de revisión. Sin embargo, al habilitar esta opción, solo los revisores seleccionados por el editor podrán llevar a cabo la aprobación.
+- **Forzar revisión**: Esta opción te permite seleccionar una lista de usuarios, de los cuales se requiere al menos una aprobación para que el elemento pueda cambiar a estado "Aprobado". Esto es independiente del número de aprobaciones configurado anteriormente. Incluso si un elemento tiene la cantidad de aprobaciones necesarias, permanecerá en estado "Esperando aprobación" si ningún usuario de la lista lo ha aprobado.
+- **Requerir todos**: Esta opción extiende la restricción anterior a todos los usuarios seleccionados. En este caso, se requerirá la aprobación de todos los usuarios de la lista para que el elemento pueda cambiar a estado "Aprobado".
+
+:::tip Atención
+- Si bien la aprobación se podría encontrar limitada, cualquier usuario con permisos puede hacer comentarios sobre el elemento.
+- Cuando haces cambios en la configuración de revisión en equipo, los elementos que ya estaban esperando revisión seguirán rigiéndose por las reglas anteriores a los cambios.
+- Para que esos elementos se ajusten a la nueva configuración, es necesario que sean rechazados y enviados a revisión nuevamente.
+  :::
+
+
+### Proceso de Revisión
+
+Cuando se activa la opción de revisión en equipo y se guardan los cambios, se muestra el botón verde principal **Enviar a revisión**. Al enviar a revisión, la barra cambia de estado para indicar si faltan condiciones o si no se tiene permiso suficiente. Al hacer click, en la sección lateral derecha se indicarán los requerimientos para publicar el elemento.
+
+Si se requiere la revisión de algún revisor, aparecerá `(requerido)` junto a su nombre en el listado de revisores. A la derecha de cada revisor está el estado de su revisión: se muestra un círculo amarillo si no ha hecho su revisión, y un check verde en caso de haber aprobado el elemento. Todos los usuarios que tienen acceso a la vista de edición del elemento verán un botón **Aprobar** debajo del listado de revisores, aunque solo aquellos con los permisos necesarios podrán hacer click para aprobar el elemento.
+
+Al aprobar el elemento, la aprobación del usuario queda registrada y se muestra un check verde junto a su nombre en el listado de revisores. En la barra de acciones del elemento, a la izquierda del botón principal de color verde y a la derecha del botón de diferencias, puedes encontrar la opción para abrir la pestaña de actividad del elemento, donde se muestra una lista cronológica de las acciones realizadas con la opción de ver los detalles de cada acción y dejar comentarios. Cuando se deja un comentario o se ejecuta alguna acción sobre el elemento, se envía una notificación tanto a quien envió a revisión como a los usuarios que están en la lista de revisores.
+
+
 

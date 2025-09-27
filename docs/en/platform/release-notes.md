@@ -271,7 +271,7 @@ September 06, 2024
 | **Content** | • Adds exact filter by `full_path` and `uuid` to the content API categories endpoint |
 | **Customers** | • Fixes synchronous segment calculation at login when enabled |
 
-:::tip Release date
+:::info Release date
 November 04, 2024
 :::
 
@@ -283,7 +283,7 @@ November 04, 2024
 
 ### 10.0.9
 
-:::tip Release date
+:::info Release date
 October 14, 2024
 :::
 
@@ -294,7 +294,7 @@ October 14, 2024
 
 ### 10.0.8
 
-:::tip Release date
+:::info Release date
 September 16, 2024
 :::
 
@@ -304,7 +304,7 @@ September 16, 2024
 
 ### 10.0.7
 
-:::tip Release date
+:::info Release date
 September 06, 2024
 :::
 
@@ -317,7 +317,7 @@ September 06, 2024
 
 ### 10.0.6
 
-:::tip Release date
+:::info Release date
 August 14, 2024
 :::
 
@@ -329,7 +329,7 @@ August 14, 2024
 
 ### 10.0.5
 
-:::tip Release date
+:::info Release date
 August 02, 2024
 :::
 
@@ -339,7 +339,7 @@ August 02, 2024
 
 ### 10.0.4
 
-:::tip Release date
+:::info Release date
 July 30, 2024
 :::
 
@@ -350,7 +350,7 @@ July 30, 2024
 
 ### 10.0.3
 
-:::tip Release date
+:::info Release date
 July 12, 2024
 :::
 
@@ -361,7 +361,7 @@ July 12, 2024
 
 ### 10.0.2
 
-:::tip Release date
+:::info Release date
 July 08, 2024
 :::
 
@@ -374,7 +374,7 @@ July 08, 2024
 
 ### 10.0.1
 
-:::tip Release date
+:::info Release date
 May 31, 2024
 :::
 

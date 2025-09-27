@@ -2,14 +2,14 @@
 search: true
 ---
 
-# Logs de actividad
+# Logs de Actividad
 
 Esta sección muestra un registro cronológico detallado de las actividades realizadas por los administradores de la cuenta, útil para tareas de seguimiento y monitoreo, ya que proporciona un historial detallado de sus acciones.
 
 La auditabilidad que te ofrece Modyo en este espacio, garantiza la posibilidad de examinar todas las acciones realizadas por cualquier administrador. Esto es fundamental para determinar de manera precisa las responsabilidades que corresponden en cada operación.
 
 
-## Sobre la interfaz
+## Sobre la Interfaz
 
 En la interfaz de logs de actividad puedes ver una lista de los administradores que han realizado tareas, qué tipos de tareas y cuándo las llevaron a cabo.
 

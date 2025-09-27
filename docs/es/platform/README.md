@@ -6,12 +6,12 @@ search: true
 
 ### ¡Hola! 👋
 
-¡Estamos emocionados de tenerte a bordo y explorando nuestra plataforma!
+¡Estamos emocionados de tenerte a bordo y acompañarte en esta aventura digital con Modyo!
 
 Queremos que tu experiencia sea lo más fácil y satisfactoria posible, por lo que hemos diseñado esta documentación pensando en ti. Puedes navegar estos documentos de principio a fin o dirigirte a una sección específica; los contenidos están todos relacionados entre sí para facilitar tu proceso de aprendizaje.
 
 :::tip Modyo 10
-Esta documentación hace referencia a la última versión de Modyo. Para la documentación de versiones anteriores, favor consulta en nuestros canales de soporte.
+Esta documentación hace referencia a la última versión de Modyo. Para obtener la documentación de versiones anteriores, favor consulta en nuestros canales de soporte.
 :::
 
 ### ¿Qué es Modyo?
@@ -48,6 +48,4 @@ Para obtener soporte de la Plataforma Modyo, visita el [sitio oficial de soporte
 
 ### Requisitos para usar Modyo
 
-Para comenzar, solo necesitas un navegador web compatible. Modyo es compatible con las últimas versiones de Google Chrome, Firefox y Microsoft Edge. Toda la interfaz del producto puede ser accedida mediante su interfaz Web.
-
-¡Estamos emocionados de acompañarte en esta aventura digital con Modyo!
+Para comenzar, solo necesitas un navegador web compatible. Modyo es compatible con las últimas versiones de Google Chrome, Firefox y Microsoft Edge. Toda la funcionalidad del producto puede ser accedida mediante su interfaz Web.

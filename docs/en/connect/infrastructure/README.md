@@ -42,7 +42,7 @@ Centralized management of credentials and tokens with AWS Secrets Manager.
 AES 256 encryption managed with AWS KMS for all stored data.
 
 #### [SSL/TLS Certificates](ssl-tls-certificates.html)
-Automated certificate management with AWS Certificate Manager.
+Automated certificate management with AWS Certificate Manager and Cloudflare.
 
 #### [Single Sign On (SSO)](single-sign-on.html)
 Unified authentication implemented with KeyCloak in high availability.
@@ -73,10 +73,10 @@ TLD domain registration and management.
 
 To activate infrastructure components:
 
-1. Identify the components needed for your architecture
-2. Create a ticket in the [Modyo Support Center](https://support.modyo.com)
-3. Provide the required information for each component
-4. Coordinate with the Modyo team for implementation
+- Identify the components needed for your architecture
+- Create a ticket in the [Modyo Support Center](https://support.modyo.com)
+- Provide the required information for each component
+- Coordinate with the Modyo team for implementation
 
 ## Important Considerations
 

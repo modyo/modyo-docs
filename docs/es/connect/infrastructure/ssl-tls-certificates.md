@@ -6,10 +6,10 @@ search: true
 
 Los certificados SSL/TLS aseguran una encriptación segura para todas las operaciones en tránsito desde los endpoints HTTPS del servicio. Se pueden activar a nivel del balanceador de carga, la red de distribución de contenido (CDN) y el API Gateway.
 
-Para generar y mantener actualizados los certificados SSL/TLS, Modyo Connect utiliza AWS Certificate Manager (ACM). Los certificados generados por ACM requieren una verificación en el dominio, que debe ser realizada por el cliente incorporando los registros DNS de tipo CNAME indicados en el proceso de generación. Una vez emitido el certificado, el cliente tiene tres días para configurar su DNS; de lo contrario, el certificado deberá emitirse nuevamente.
+Para generar y mantener actualizados los certificados SSL/TLS, Modyo Connect utiliza AWS Certificate Manager (ACM) y Cloudflare. Los certificados generados podrían requerir una verificación de dominio, la que debe realizar el cliente incorporando registros DNS de tipo CNAME o TXT indicados en el proceso de generación, según corresponda.
 
 :::warning Seguridad de llaves privadas
-Modyo no posee acceso a las claves privadas de los certificados emitidos por AWS ACM, ni podrán ser utilizados fuera de los servicios soportados en la cuenta AWS configurada para el cliente.
+Modyo no posee acceso a las claves privadas de los certificados emitidos por AWS ACM y Cloudflare, ni podrán ser utilizados fuera de los servicios soportados en la cuenta configurada para el cliente.
 :::
 
 ## Pasos de Activación
@@ -19,7 +19,7 @@ Para solicitar la emisión de un certificado TLS, se deben indicar los dominios 
 Al momento de la solicitud, Modyo emitirá un certificado "pendiente de validación" que requiere validación mediante registros DNS.
 
 :::warning Validación de dominios por DNS
-Los registros DNS utilizados para la validación del certificado no deben eliminarse, ya que AWS ACM los utilizará para su renovación periódica. Es responsabilidad del cliente asegurar la existencia de estos registros en su sistema DNS.
+Los registros DNS utilizados para la validación del certificado no deben eliminarse, ya que AWS ACM y Cloudflare los utilizarán para su renovación periódica. Es responsabilidad del cliente asegurar la existencia de estos registros en su sistema DNS.
 :::
 
 Consideraciones adicionales:

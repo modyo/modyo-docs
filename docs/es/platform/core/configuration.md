@@ -2,11 +2,11 @@
 search: true
 ---
 
-# Configuración
+# Configuraciones
 
 En esta sección, puedes personalizar tu cuenta y la plataforma de acuerdo a tus necesidades.
 
-## General
+## Configuración General
 
 Las opciones generales de una cuenta en Modyo Platform son:
 
@@ -17,7 +17,7 @@ Las opciones generales de una cuenta en Modyo Platform son:
 - **Idioma predeterminado**: Selecciona el idioma por defecto de la plataforma. Los usuarios existentes pueden cambiar el idioma para ellos en la configuración de usuario de su perfil.
 - **Zona horaria**: Define el horario para toda la plataforma. Esta será la zona horaria por defecto para los nuevos sitios y campañas de correo.
 
-:::tip Tip
+:::tip Zona Horaria
 Si la zona horaria que eliges está sujeta a cambios de horarios, estos se reflejarán automáticamente cuando cambie el horario en la zona o el país seleccionado.
 :::
 
@@ -47,15 +47,15 @@ En la pantalla de tu Perfil, puedes modificar los siguientes campos:
 
 Para cambiar tu contraseña, sigue estos pasos:
 
-1. Dentro de tu Perfil, en la esquina superior derecha, haz click en `...` y selecciona **Cambiar mi contraseña**.
-1. Escribe tu contraseña actual y tu nueva contraseña.
-1. Haz click en **Guardar**.
+- Dentro de tu Perfil, en la esquina superior derecha, haz click en `...` y selecciona **Cambiar mi contraseña**.
+- Escribe tu contraseña actual y tu nueva contraseña.
+- Haz click en **Guardar**.
 
 ### Configuración de autenticador (2FA)
 
 Para configurar tu autenticador, sigue estos pasos:
 
-1. Dentro de tu Perfil, en la esquina superior derecha, haz click en `...` y selecciona **Configurar autenticador**.
-1. En la pantalla de Configurar autenticador, escanea el código QR con tu dispositivo móvil.
-1. Escribe en la pantalla el código que te da la app de Google Authenticator.
-1. Haz click en **Guardar**.
+- Dentro de tu Perfil, en la esquina superior derecha, haz click en `...` y selecciona **Configurar autenticador**.
+- En la pantalla de Configurar autenticador, escanea el código QR con tu dispositivo móvil.
+- Escribe en la pantalla el código que te da la app de Google Authenticator.
+- Haz click en **Guardar**.
