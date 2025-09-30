@@ -1,31 +1,33 @@
 <template>
   <main id="test-deployment-01" class="home" aria-labelledby="main-title">
     <div class=" m-0 p-0">
-      <div class="bg-dark">
-        <div class="container pb-0 pb-md-5 pt-5 mt-5 bg-hero">
-          <div class="row d-flex align-items-center">
-            <div class="col-12 col-md-6 my-5">
-              <h1 class="top-green text-white m-0 mb-2" style="font-size: 4rem;">{{ data.heroText || $title || 'Hello' }}</h1>
-              <h3 class="text-white m-0" style="font-size: 2rem;font-weight: normal;">{{ data.tagline || $description || 'Welcome to your VuePress site' }}</h3>
+      <div class="bg-modyo">
+        <div class="bg-dark">
+          <div class="container pb-0 pb-md-5 pt-5 mt-5 bg-hero">
+            <div class="row d-flex align-items-center">
+              <div class="col-12 col-md-6 my-5">
+                <h1 class="top-green text-white m-0 mb-2" style="font-size: 4rem;">{{ data.heroText || $title || 'Hello' }}</h1>
+                <h3 class="text-white m-0" style="font-size: 2rem;font-weight: normal;">{{ data.tagline || $description || 'Welcome to your VuePress site' }}</h3>
+              </div>
+              <!--<div class="d-none d-md-flex col-md-6">
+                <img
+                  :src="data.heroImage"
+                  alt="Modyo Platform" style="margin-bottom: -3.5rem;">
+              </div>-->
             </div>
-            <!--<div class="d-none d-md-flex col-md-6">
-              <img
-                :src="data.heroImage"
-                alt="Modyo Platform" style="margin-bottom: -3.5rem;">
-            </div>-->
           </div>
         </div>
-      </div>
-      
-      <div class="half-dark search mb-5 pb-md-5">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-12 col-md-9">
-              <div class="bg-white shadow p-5 search_box rounded">
-                <div class="m-0 m-md-3">
-                  <h3 class="m-0 mb-3 text-center w-100">{{ data.search }} <span class="text-primary">Modyo Docs</span></h3>
-                  <AlgoliaSearchBox v-if="isAlgoliaSearch" :options="algolia"/>
-                  <SearchBox v-else-if="$site.themeConfig.search !== false && $page.frontmatter.search !== false"/>
+
+        <div class="half-dark search mb-5 pb-md-5">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-12 col-md-9">
+                <div class="bg-white shadow p-5 search_box rounded">
+                  <div class="m-0 m-md-3">
+                    <h3 class="m-0 mb-3 text-center w-100">{{ data.search }} <span class="text-primary">Modyo Docs</span></h3>
+                    <AlgoliaSearchBox v-if="isAlgoliaSearch" :options="algolia"/>
+                    <SearchBox v-else-if="$site.themeConfig.search !== false && $page.frontmatter.search !== false"/>
+                  </div>
                 </div>
               </div>
             </div>
@@ -245,8 +247,8 @@
 
 <style lang="stylus">
 .bg-hero {
-  background-image: url(https://cloud.modyocdn.com/uploads/2f8ca73b-4108-4017-9515-d50d9da158f9/original/bg-docs.png);
-  background-size: 60%;
+  background-image: url(https://cdn.modyo.cloud/uploads/24b575f5-81c2-43bc-8716-86f8e9b5dcf5/original/banner_footer.png);
+  background-size: 40%;
   background-repeat: no-repeat;
   background-position: top right;
 }
@@ -255,9 +257,9 @@
 .text-primary {color: #3DC681}
 .text-white {color: #fff}
 .text-muted {color: #737988}
-.text-dark {color: #151F38}
+.text-dark {color: #0a1627}
 .small {font-size: .9rem;line-height: 1.6;}
-html {color:#151F38}
+html {color:#0a1627}
 .home h3 {font-size: 3rem;line-height: 1.1;}
 .home h3.h3-xl {font-size: 3.5rem;line-height: 1.1}
 .home h5 {font-size: 1.5rem;font-weight: normal;}
@@ -270,11 +272,16 @@ html {color:#151F38}
 }
 @media (max-width: 768px) {
   .home h3 {font-size: 2.5rem;line-height: 1.1;}
-  .home .search h3 {font-size: 2rem;line-height: 1;}
+  .hom .search h3 {font-size: 2rem;line-height: 1;}
   .home h3.h3-xl {font-size: 3rem;line-height: 1.1}
   .home h5 {font-size: 1.1rem;font-weight: normal;line-height: 1.3}
 }
-.bg-dark {background:#151F38;}
+
+
+
+.bg-dark {
+  background:#0a1627;
+}
 .top-green {position:relative}
 .top-green::before {
   content: "";
@@ -296,7 +303,7 @@ a.shadow:hover {
   box-shadow: 0 0 1.5rem rgba(21, 31, 56, 0.25)!important;
 }
 .half-dark {
-  background: linear-gradient(180deg, #151F38 50%, #FFF 50%);
+  background: linear-gradient(180deg, #0a1627 50%, #FFF 50%);
 }
 .rounded {
   border-radius: 8px;
@@ -406,7 +413,7 @@ a.shadow:hover {
 }
 @media (min-width: 992px) {
 	.bg-ornamental {
-		background-image: url(https://cloud.modyocdn.com/uploads/cfec71ea-28bc-453a-8eac-e84e93e63235/original/ornamental.png);
+		background-image: url(https://cdn.modyo.cloud/uploads/1289097a-1359-45ca-898a-ad32519d5152/original/clouds.png);
 		background-size: 250px;
 		background-repeat: no-repeat;
 		background-position: bottom right 10%;

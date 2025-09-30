@@ -7,7 +7,7 @@ search: true
 Modyo Customers contiene una variedad de APIs con las que podrás obtener la información de Reinos, las notificaciones y sus usuarios.
 
 
-## API de customers
+## API de Customers
 
 Accede a la API de Customers para gestionar reinos y usuarios a través de la URL `ACCOUNT_URL/api/customers/docs`. Ejemplos de endpoints:
 
@@ -23,7 +23,7 @@ Al habilitar la opción de [**Mostrar información de delegación**](/es/platfor
 Si habilitas la opción de [**Mostrar información de delegación**](/es/platform/core/integrations/identity-providers) en los proveedores de identidad, el endpoint `account_url/api/customers/realms/{realm_uid}/me` incluirá un JSON con información de tokens delegados:
 
 
-``curl -X GET test.miModyo.com/api/customers/realms/miRealm/me``
+``curl -X GET test.modyo.com/api/customers/realms/miRealm/me``
 
 ```json
 {

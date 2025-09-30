@@ -19,31 +19,31 @@ Modyo Insights is the platform's business intelligence center, where all data ge
 
 Modyo Insights collects and processes information from multiple sources within the platform:
 
-### From Channels
+### From channels
 - Site traffic and visits
 - Widget and page interactions
 - Navigation performance
 - Usage patterns by device
 
-### From Content
+### From content
 - Publications and updates
 - Content performance
 - Team editorial activity
 - Asset and resource usage
 
-### From Customers
+### From customers
 - User registrations and activity
 - Segmentation and behavior
 - Form conversions
 - Campaign engagement
 
-### From Payments
+### From payments
 - Transactions and orders
 - Payment methods used
 - Purchase trends
 - Processing statuses
 
-### From Origination
+### From origination
 - Completed onboarding flows
 - Conversion rates by stage
 - Average completion time

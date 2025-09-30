@@ -26,7 +26,7 @@ SSO in Modyo delegates authentication to a central system, facilitating user man
 1. Through the [SSO component](/en/connect/components/infrastructure#single-sign-on-sso) of [Modyo Connect](/en/connect).
 2. Through integration with a client's existing SSO system.
 
-Both options benefit from the platform's ability to integrate with standards such as OpenID Connect (OIDC), SAML, Azure AD, Google, and OAuth2, among others.
+Both options benefit from the platform's ability to integrate with standards such as OpenID Connect (OIDC), SAML, Entra ID, Google, and OAuth2, among others.
 
 By activating SSO in Modyo, user authentication is delegated to the selected system. This means that Modyo relies on the SSO system to verify user identity and grant access to applications and services. A key advantage of this delegation is the ability to apply specific security policies centrally within the SSO system, providing an additional level of control and security over resource access.
 
@@ -35,7 +35,7 @@ The Modyo platform supports delegation to SSO systems in two main ways:
 1. For administrator users with access to the web console.
 2. For end users through the configurations in the [user realms](/en/platform/customers/overview).
 
-Both forms of integration are independent, allowing for the definition of specific topologies for each client (e.g., Azure AD (SAML) for administrators, KeyCloak (OIDC) for users with access to the transactional application, Azure AD (OIDC) for agents with access to the internal sales application).
+Both forms of integration are independent, allowing for the definition of specific topologies for each client (e.g., Entra ID (SAML) for administrators, KeyCloak (OIDC) for users with access to the transactional application, Entra ID (OIDC) for agents with access to the internal sales application).
 
 :::warning Session Times
 When a user is unsubscribed from the SSO or the source system, changes in Modyo may not be immediately reflected in the next authentication attempt. This can result in an additional period during which the deleted user still has system access. To avoid this, it is recommended to use session expiration times in accordance with the company's security requirements or to implement advanced session termination flows, such as Single Logout.

@@ -78,7 +78,7 @@ This field allows you to enter single-line texts. It has the following restricti
 - **Maximum length**: Allows you to limit the maximum number of characters for the entered text.
 - **Validation by regular expression**: Allows you to add a regular expression to validate that the entered text, when creating or modifying an entry, complies with a certain format.
 
-### Rich Text
+### Rich text
 
 This field results in a multi-line WYSIWYG text editor that also allows you to modify the HTML code of the text. This field has the following restrictions:
 
@@ -133,16 +133,16 @@ Use this field to select a geographical address, based on the fields in Google M
 :::warning Attention
 To ensure that location maps work properly with the Google API key configured in your account, the key must have permissions to access:
 
-* JavaScript Maps API
-* Places API
-* Geocoding API
+- JavaScript Maps API
+- Places API
+- Geocoding API
 :::
 
 ### File
 
 This field allows you to attach a single file to the entry, using the file manager.
 
-### Asset List
+### Asset list
 
 This field allows you to attach multiple files to the entry, using the file manager.
 
@@ -152,7 +152,7 @@ Use this field to link an Entry to another existing and published Entry within t
 
 - **Restrict type**: Allows you to select a default type so that only entries of the specified type can be selected as a link.
 
-### Content List (link to many)
+### Content list (link to many)
 
 This field allows you to link more than one existing Entry within the Space to another Entry. This field has the following restrictions:
 

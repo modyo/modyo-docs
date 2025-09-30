@@ -1,15 +1,14 @@
 ---
 search: true
-sidebarDepth: 2
 ---
 
-# Global snippets
+# Global Snippets
 
 A snippet is a reusable piece of code that modularizes and breaks down complex functionalities into simpler parts. Global snippets are dynamically rendered when the page loads.
 
 Global snippets in Modyo allow you to share code between your different web applications.
 
-:::tip Tip
+:::tip Shared Code
 A change in a global snippet affects all web applications where it is used. Therefore, only users with an administrator role can access global snippets.
 :::
 
@@ -18,7 +17,7 @@ In the snippet editing view, you can create and manage your global snippets. The
 - **Differences**: Allows you to compare changes between multiple versions of a snippet, select versions to compare, and reset or rollback to previous versions.
 - **Other actions**:
     - **Archive**: To archive a snippet, you must first publish it.
-    - **Delete**: To delete a snippet, you must first archive it.
+    - - **Delete**: To delete a snippet, you must first archive it.
 - **Save**: Once your snippet is saved, this button changes status to **publish**.
 
 The following sections are above the work area:
@@ -30,7 +29,7 @@ The following sections are above the work area:
 
 
 
-### Create and publish a global snippet
+### Create and Publish a Global Snippet
 
 To create and publish a global snippet, follow these steps:
 
@@ -42,7 +41,7 @@ To create and publish a global snippet, follow these steps:
 1. Click **Publish**.
 1. Select whether you want to publish your global snippet immediately or on a specific date. You can also select an unpublish date, if desired.
 
-### Upload a global snippet
+### Load a Global Snippet
 To load and use a previously created global snippet:
 
 1. In the side menu, click Channels.
@@ -54,8 +53,8 @@ To load and use a previously created global snippet:
 1. Click **Publish**.
 1. Select whether you want to publish the global snippet immediately or on a specific date. You can also select an unpublish date, if desired.
 
-### Preview a snippet
-To preview a global snippet in your web app:
+### Preview a Snippet
+To preview a global snippet in your web application:
 
 1. In the side menu, click Channels.
 1. Select your web application.
@@ -66,7 +65,7 @@ To preview a global snippet in your web app:
 1. Click on the preview icon.
 
 
-### Edit a snippet
+### Edit a Snippet
 To modify a snippet, follow these steps:
 
 1. In the side menu, click Channels.
@@ -78,6 +77,6 @@ To modify a snippet, follow these steps:
 1. Select whether you want to publish your global snippet immediately or on a specific date. You can also select an unpublish date, if desired.
 
 
-:::danger Danger
+:::warning Immediate Publication
 Making changes to a global snippet affects all web applications where it is published. Proceed with caution before editing or deleting a snippet.
 :::

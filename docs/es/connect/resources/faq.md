@@ -36,9 +36,9 @@ Modyo Connect es un servicio gestionado de plataforma en la nube. No provee inte
 
 Modyo Connect es un servicio gestionado, totalmente independiente de los servicios de desarrollo proporcionados por el área de Servicios Profesionales de Modyo. Todos los clientes con el servicio Modyo Connect contratado pueden acceder directamente a los ambientes de desarrollo y solicitar la incorporación o remoción de elementos.
 
-### ¿Dónde reside el código fuente de los Widgets y microservicios desarrollados para Modyo Connect?
+### ¿Dónde reside el código fuente de los widgets y microservicios desarrollados para Modyo Connect?
 
-Modyo Connect ofrece servicios gestionados de DevOps de punta a punta. La custodia segura y privada del código fuente de Widgets y microservicios está incluida como parte del servicio mediante un repositorio Git al que tendrán acceso los desarrolladores habilitados. 
+Modyo Connect ofrece servicios gestionados de DevOps de punta a punta. La custodia segura y privada del código fuente de widgets y microservicios está incluida como parte del servicio mediante un repositorio Git al que tendrán acceso los desarrolladores habilitados. 
 
 Debido a la naturaleza distribuida de Git, los clientes pueden usar su propio control de versiones (ej. GitHub, GitLab, Bitbucket) siempre que configuren el repositorio Git de Modyo Connect como un upstream adicional para sincronizar los cambios entre ambientes.
 

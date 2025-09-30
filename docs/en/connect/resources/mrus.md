@@ -10,7 +10,7 @@ The Modyo Resource Unit (MRU) is an abstraction for sizing resource and license 
 Each component request may lead to a variation in the total number of MRUs billed. Therefore, some requests will require formal client approval.
 :::
 
-## Cost estimation
+## Cost Estimation
 
 Modyo assists with cost estimation for service infrastructure running on Modyo Connect. A solution architect from our professional services team will perform an analysis that includes criteria such as:
 

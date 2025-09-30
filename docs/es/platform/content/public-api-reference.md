@@ -1,6 +1,5 @@
 ---
 search: true
-sidebarDepth: 3
 ---
 
 # API
@@ -27,7 +26,7 @@ https://www.example.com/api/content/spaces/:space_uid/types/:type_uid/entries/:e
 
 Aquí, `space_uid` y `type_uid` corresponden al nombre slugificado del Espacio y al nombre del Tipo de contenidos, respectivamente.
 
-### Estructura JSON Entries
+### Estructura JSON entries
 
 Para cualquier elemento JSON, en Modyo la estructura se hace de esta manera:
 
@@ -505,7 +504,7 @@ Entry JSON Schema:
 
 ## Ejemplos
 
-### Desplegar Entradas
+### Desplegar entradas
 
 Para acceder al listado de entradas de un tipo de uid `type_uid` de un espacio de uid `space_uid` usa:
 
@@ -579,7 +578,7 @@ Ejemplo:
 
 - `../entries?meta.created_at[in][]=1987-11-19T13:13:13&meta.created_at[in][]=1987-11-19T14:14:14` buscará entries creadas el 11 de noviembre, tanto a las 13:13 como 14:14
 
-##### Campos Retornados
+##### Campos retornados
 
 Mediante el parámetro fields se puede escoger qué parámetros se devuelven en el documento:
 

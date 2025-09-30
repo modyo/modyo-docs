@@ -27,7 +27,7 @@ Los tipos de archivos permitidos son:
 
 
 
-## Acerca de la interfaz
+## Acerca de la Interfaz
 
 La interfaz te muestra una lista de todos los archivos que existen dentro de la plataforma.
 
@@ -85,7 +85,7 @@ En la interfaz de archivos, da click en el nombre de un archivo para abrir la in
 
 Da click en **Actualizar información** para confirmar los cambios o en **Cerrar** para cancelarlos.
 
-## Subir de nuevo una imagen
+## Subir de Nuevo una Imagen
 
 Para cargar un archivo nuevo manteniendo el nombre y el enlace originales, sigue estos pasos:
 

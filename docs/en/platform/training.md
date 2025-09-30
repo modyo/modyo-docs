@@ -17,7 +17,7 @@ Training on the Modyo Platform is crucial for any user, as it provides the minim
 
 Below, we will show you how to access the information and resources necessary to facilitate your experience with Modyo.
 
-#### General Concepts
+#### General concepts
 Modyo is a next-generation digital experience platform that powers solutions for interacting with digital customers, accelerating web and mobile development securely and efficiently, and creating a centralized space to govern your digital channels.
 
 Modyo features the following main modules, which you will learn about during your training:
@@ -30,7 +30,7 @@ Modyo features the following main modules, which you will learn about during you
 The [tutorials](https://help.modyo.com/en/collections/4032221-tutoriales) are the easiest way to get started on the Modyo Platform. Only a [test environment](/en/platform/training#test-environment) and time are required to learn the fundamental concepts step by step.
 It is recommended to follow the tutorials in order, completing all the steps presented in them.
 
-#### Learning Paths
+#### Learning paths
 Modyo offers various [Learning Paths](https://help.modyo.com/en/articles/6928873-learning-how-to-use-modyo) for clients and business partners. These provide dynamic alternatives to learn how to use our tools at your own pace.
 
 Take the courses you need according to your role or take them all to become a Modyo specialist. The only requirement to start our Learning Paths is an environment.

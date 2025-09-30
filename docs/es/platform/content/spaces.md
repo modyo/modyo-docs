@@ -1,6 +1,5 @@
 ---
 search: true
-sidebarDepth: 3
 ---
 
 # Espacios
@@ -21,7 +20,7 @@ Puedes ordenar las columnas alfabéticamente por nombre de espacio o identificad
 Solamente puedes ver aquellos espacios en los cuales eres parte del equipo de trabajo con algún rol.
 :::
 
-## Crear un espacio
+## Crear un Espacio
 
 Para crear un espacio, sigue estos pasos:
 

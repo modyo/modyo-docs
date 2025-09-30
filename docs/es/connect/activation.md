@@ -16,7 +16,7 @@ El servicio gestionado de Modyo Connect se activa mediante un contrato o anexo i
 
 La capacidad de los contenedores se calcula según el tráfico estimado en producción, sujeta a ajustes por consumo real y criterios de alta disponibilidad.
 
-### Ticket de requerimiento
+### Ticket de Requerimiento
 
 La gestión de solicitudes se realiza a través del [Centro de Soporte de Modyo](https://support.modyo.com), creando tickets de requerimientos y siguiendo las instrucciones indicadas.
 

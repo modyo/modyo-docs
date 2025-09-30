@@ -46,9 +46,9 @@ Modyo Connect is implemented in high availability mode and is operated by a team
 
 Modyo Connect features a variety of services or components categorized into three groups:
 
-- [Development](components/development.md)
-- [Infrastructure](components/infrastructure.md)
-- [Monitoring](components/monitoring.md)
+- [Development](development/README.md)
+- [Infrastructure](infrastructure/README.md)
+- [Monitoring](monitoring/README.md)
 
 To activate a component, a requirement ticket is necessary. It is recommended to have an active account in the [Modyo Support Center](https://support.modyo.com) before using the service. For questions on how to activate accounts in the Support Center, contact the assigned account executive.
 

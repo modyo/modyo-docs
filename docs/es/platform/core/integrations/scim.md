@@ -2,28 +2,28 @@
 search: true
 ---
 
-# Aprovisionamiento de grupos y usuarios de SCIM con Microsoft Azure AD
+# Aprovisionamiento de grupos y usuarios de SCIM con Microsoft Entra ID
 
 El sistema de gestión de identidades multidominio (SCIM) establece una comunicación estandarizada entre Modyo y Microsoft Azure para sincronizar automáticamente datos de usuarios y grupos. Esto te permite:
 - Crear usuarios en Microsoft Azure y aprovisionarlos automáticamente en Modyo.
 - Actualizar datos de usuario en Microsoft Azure y reflejar los cambios en Modyo.
 - Eliminar usuarios en Microsoft Azure y desaprovisionarlos en Modyo.
 
-Esta integración de grupos y usuarios entre Modyo y Microsoft Azure Active Directory con la API SCIM de Modyo, simplifica la gestión de usuarios en diferentes sistemas y reduce errores, favoreciendo una administración eficiente.
+Esta integración de grupos y usuarios entre Modyo y Microsoft Azure Entra ID con la API SCIM de Modyo, simplifica la gestión de usuarios en diferentes sistemas y reduce errores, favoreciendo una administración eficiente.
 
 :::warning Atención
 La sincronización es unidireccional, lo que significa que los datos modificados en Modyo no afectarán los datos del usuario en Azure. Además, cualquier cambio realizado en Azure puede sobrescribir las modificaciones realizadas en Modyo.
 :::
 
 
-### Paso 1: Crea tu aplicación en Azure Active Directory
-1. Accede al panel de administración de **Azure Active Directory**
+### Paso 1 Crea tu aplicación en Azure Entra ID
+1. Accede al panel de administración de **Azure Entra ID**
 1. En el menú lateral selecciona **Enterprise Application**
 1. Selecciona la opción **Crea tu propia aplicación** en la parte superior de la galería de Azure
 1. Nombra tu aplicación y selecciona la opción **Integrar cualquier otra aplicación que no se encuentre en la página** como objetivo de la aplicación
 1. Haz click en **Crear**
 
-### Paso 2: Aprovisionamiento
+### Paso 2 Aprovisionamiento
 1. Accede a tu aplicación en Azure
 2. En el menú lateral selecciona **Aprovisamiento**
 3. Da click en **Introducción**
@@ -37,12 +37,12 @@ La sincronización es unidireccional, lo que significa que los datos modificados
 8. Si la configuración y guardado es correcto, debajo del botón de probar conexión podrás configurar la sección de **Asignaciones**
 9. Selecciona una asignación para proceder al paso de asignación de atributos
 
-### Paso 3: Asignación de atributos
+### Paso 3 Asignación de atributos
 #### Grupos
-1. Selecciona la asignación **Provision Azure Active Directory Groups** para configurar sus atributos.
+1. Selecciona la asignación **Provision Azure Entra ID Groups** para configurar sus atributos.
 2. Selecciona las acciones del objeto de destino: Crear, actualizar y/ eliminar. Confirma que el mapeo sea:
 
-| Azure Active Directory Attribute | customApp Attribute |
+| Azure Entra ID Attribute | customApp Attribute |
 | ------------------------------- | ------------------ |
 | displayName | displayName |
 | objectId | externalId |
@@ -50,10 +50,10 @@ La sincronización es unidireccional, lo que significa que los datos modificados
 3. Da click en **Guardar**
 
 #### Usuarios
-1. Selecciona la asignación **Provision Azure Active Directory Users** para configurar los atributos de tus grupos.
+1. Selecciona la asignación **Provision Azure Entra ID Users** para configurar los atributos de tus grupos.
 2. Selecciona únicamente las acciones: Crear y actualizar. Asegúrate que el mapeo sea:
 
-| Azure Active Directory Attribute | customApp Attribute |
+| Azure Entra ID Attribute | customApp Attribute |
 | ------------------------------- | ------------------ |
 | userPrincipalName | userName |
 | Switch([IsSoftDeleted],, "False", "True", "True", "False") | active |
@@ -84,5 +84,5 @@ Nombre del usuario y correo electrónico son campos requeridos para generar usua
 
 
 ### Referencias
-- Para construir un API de SCIM compatible con Azure AD, sigue esta guía de Microsoft. [Use SCIM to Provision Users and Groups](https://docs.microsoft.com/en-us/azure/active-directory/app-provisioning/use-scim-to-provision-users-and-groups)
+- Para construir un API de SCIM compatible con Entra ID, sigue esta guía de Microsoft. [Use SCIM to Provision Users and Groups](https://docs.microsoft.com/en-us/azure/active-directory/app-provisioning/use-scim-to-provision-users-and-groups)
 - Para más información de las APIs que Modyo ofrece, ve [API de administración](https://docs.modyo.com/es/platform/core/api).

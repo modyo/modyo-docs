@@ -14,7 +14,7 @@
       class="sidebar-heading clickable"
       :class="{
         open,
-        'active': isActive($route, item.path)
+        'active': isActive($route, item.path) || hasActiveChild
       }"
       :to="item.path"
       @click.native="$emit('toggle')"
@@ -65,7 +65,29 @@ export default {
   beforeCreate () {
     this.$options.components.SidebarLinks = require('./SidebarLinks.vue').default
   },
-  methods: { isActive }
+  computed: {
+    hasActiveChild () {
+      // Only apply to sub-groups, not to top-level groups
+      if (this.depth === 0) return false
+      if (!this.item.children) return false
+      
+      // Check if the current route is actually within this group's children
+      const currentPath = this.$route.path
+      return this.item.children.some(child => {
+        if (typeof child === 'string') {
+          // Only return true if we're actually on this child path
+          return this.isActive(this.$route, child)
+        } else if (child.path) {
+          // Only return true if we're actually on this child path
+          return this.isActive(this.$route, child.path)
+        }
+        return false
+      })
+    }
+  },
+  methods: { 
+    isActive
+  }
 }
 </script>
 
@@ -84,6 +106,8 @@ export default {
       font-size 1em
       font-weight normal
       padding-left 2rem
+      padding-top 0.75rem
+      padding-bottom 0.75rem
     & > .sidebar-group-items
       padding-left 1rem
       & > li > .sidebar-link
@@ -97,6 +121,8 @@ export default {
   color $textColor
   transition color .15s ease
   cursor pointer
+  &.clickable
+    cursor pointer
   font-size 1.1em
   font-weight bold
   // text-transform uppercase

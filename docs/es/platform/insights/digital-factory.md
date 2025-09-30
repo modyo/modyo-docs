@@ -17,7 +17,7 @@ Cinco contadores que muestran la actividad del equipo:
 
 Cada contador incluye un indicador de tendencia comparando con el período anterior.
 
-### Filtros Disponibles
+### Filtros disponibles
 
 - Rango de fechas
 - Sitios
@@ -27,7 +27,7 @@ Cada contador incluye un indicador de tendencia comparando con el período anter
 Al filtrar por sitio, los elementos de espacios no se incluyen en el conteo, y viceversa.
 :::
 
-### Recursos Creados vs Publicados
+### Recursos creados vs publicados
 
 Gráfico de líneas que compara el volumen de contenido creado contra el publicado en el tiempo, permitiendo identificar posibles cuellos de botella en el flujo editorial.
 

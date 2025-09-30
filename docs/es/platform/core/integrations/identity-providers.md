@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Proveedores de identidad
+# Proveedores de Identidad
 
 Una de las funcionalidades de Modyo para facilitar la interacción de otros sistemas de usuarios con Modyo son las integraciones con distintos servicios de autenticación.
 
@@ -13,11 +13,11 @@ Actualmente la plataforma es compatible con:
 - [OAuth2](#oauth2)
 - [OpenID Connect](#openid-connect)
 - [Keycloak](#keycloak)
-- [Azure Active Directory](#azure-active-directory)
+- [Azure Entra ID](#azure-active-directory)
 
 Recuerda tener a mano todos los datos y certificados que se te exigen antes de cambiarlos o integrar algún servicio, para que no se produzcan problemas con el ingreso general de los usuarios.
 
-## Agregar un proveedor de identidad
+## Agregar un Proveedor de Identidad
 
 Para agregar un nuevo proveedor de identidad, sigue estos pasos:
 
@@ -170,14 +170,14 @@ Después de configurar Keycloak, ahora tienes que completar la integración en M
 4. Configura los **Scopes** con los scopes requeridos para la aplicación. Usa `openid,email,profile` en caso de que no cuentes con scopes personalizados.
 
 
-## Azure Active Directory
+## Azure Entra ID
 
-Azure Active Directory es un servicio de identidad cloud de Microsoft Azure que permite implementar un esquema híbrido de identidad basado en directorios on-premise con SSO en la nube.
+Azure Entra ID es un servicio de identidad cloud de Microsoft Azure que permite implementar un esquema híbrido de identidad basado en directorios on-premise con SSO en la nube.
 
 ### Registrar nueva aplicación cliente
 
 1. Inicia sesión en [Azure Portal](https://portal.azure.com/).
-2. En la barra de búsqueda, busca por **Azure Active Directory**, y luego selecciona **App registrations > New registration**.
+2. En la barra de búsqueda, busca por **Azure Entra ID**, y luego selecciona **App registrations > New registration**.
 
 <img src="/assets/img/platform/aad-registration.png" alt="Microsoft Azure's Register an Application page." width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
 
@@ -209,6 +209,6 @@ La siguiente configuración es válida tanto para las integraciones de usuarios 
    |  Opción                                      |       Descripción                                                                                                                                                                                                                 |
    |----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
    | **Habilitar refresh token**                   | Habilita el refresco de tokens administrado por Modyo. Los access tokens serán renovados automáticamente por la plataforma si el usuario mantiene actividad en el sitio y cuenta con un refresh token válido.          |
-   | **Habilitar cierre de sesión**                   | Habilita el cierre de sesión en el provider al cerrar la sesión en Modyo. Esto permite cerrar efectivamente la sesión, obligando al usuario a identificarse nuevamente en Azure AD, y deshabilitando la experiencia SSO. |
-   | **Habilitar revocación de token**                | No soportado por Azure AD|
+   | **Habilitar cierre de sesión**                   | Habilita el cierre de sesión en el provider al cerrar la sesión en Modyo. Esto permite cerrar efectivamente la sesión, obligando al usuario a identificarse nuevamente en Entra ID, y deshabilitando la experiencia SSO. |
+   | **Habilitar revocación de token**                | No soportado por Entra ID|
    | **Mostrar información de delegación**                               | Habilita más información en la [API de perfil de usuario](/es/platform/customers/api#api-de-customers) con respecto a tokens delegados. Esto es útil cuando se necesita el access token que emite el proveedor de identidad para conseguir acceso a algún otro servicio (e.g. una API externa). |                   | **Habilitar sincronización de claims al momento de iniciar sesión** | Habilita la sincronización de claims OpenID Connect con custom fields en Modyo. Más información en  [Sincronización de claims](#sincronizacion-de-claims).               |

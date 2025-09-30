@@ -2,7 +2,7 @@ $nprogressColor = #4081E2
 $accentColor = #2068D5
 $textColor = #444C60
 $navbarHeight = 4rem
-$contentWidth = 1024px
+$contentWidth = 900px
 
 html,
 body {
@@ -51,6 +51,13 @@ a.sidebar-link {
 	color: #4081E2;
 	border-left-color: #4081E2;
 	background-color: #F3F8FA;
+}
+
+.sidebar-group.is-sub-group .sidebar-group-items a.sidebar-link.active {
+	background-color: transparent;
+	color: #4081E2;
+	border-left-color: #4081E2;
+	font-weight: 600;
 }
 
 .sidebar-group ul.sidebar-sub-headers a.sidebar-link.active {
@@ -113,4 +120,83 @@ code {
 	margin:0px;
 	height:auto;
 	overflow: visible;
+}
+
+// Table styles from theme - with higher specificity for production
+.theme-default-content table,
+table {
+	border-collapse: collapse;
+	margin: 1rem 0;
+	display: block;
+	overflow-x: auto;
+}
+
+.theme-default-content tr,
+tr {
+	border-top: 1px solid #dfe2e5 !important;
+}
+
+.theme-default-content tr:nth-child(2n),
+tr:nth-child(2n) {
+	background-color: #f6f8fa;
+}
+
+.theme-default-content th,
+.theme-default-content td,
+th, td {
+	border: 1px solid #dfe2e5 !important;
+	padding: .6em 1em;
+}
+
+table.no-border tr {
+	border: none;
+}
+
+table.no-border tr:nth-child(2n) {
+	background-color: #fff;
+}
+
+table.no-border td {
+	border: none;
+}
+
+table.table-dark tr td {
+	border-color: #444C60 !important;
+}
+
+// Sidebar improvements for sub-groups only (depth-1 and higher)
+// Hide arrows only for sub-groups to match H2 behavior
+.sidebar-group.depth-1 .sidebar-heading .arrow,
+.sidebar-group.depth-2 .sidebar-heading .arrow {
+	display: none !important;
+}
+
+// Active state styling for sub-group headings only when they are the actual active route
+.sidebar-group.is-sub-group > .sidebar-heading.clickable.active {
+	color: #4081E2 !important;
+	background-color: #F3F8FA !important;
+	font-weight: 600 !important;
+	border-left: 0.25rem solid #4081E2 !important;
+}
+
+// Hover state for sub-group headings
+.sidebar-group.depth-1 .sidebar-heading.clickable:hover,
+.sidebar-group.depth-2 .sidebar-heading.clickable:hover {
+	color: #4081E2 !important;
+}
+
+// Custom container styles for info block
+.custom-block.info {
+	background-color: #E3F2FD;
+	border-left-width: 0.5rem;
+	border-left-style: solid;
+	border-left-color: #2196F3;
+	padding: 0.1rem 1.5rem;
+	margin: 1rem 0;
+}
+
+.custom-block.info .custom-block-title {
+	font-weight: 600;
+	color: #1565C0;
+	margin-bottom: -0.4rem;
 }

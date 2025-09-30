@@ -6,20 +6,20 @@ search: true
 
 The Customers dashboard displays key metrics about end-user activity and engagement on your platform.
 
-### Key Metrics
+### Key metrics
 
 - **Active Users**: Users with at least two interactions in the selected period
 - **Total Activity**: Sum of all interactions (logins, forms, emails, notifications)
 - **Login Sessions**: Total successful authentications
 - **New Registrations**: Users who completed registration
 
-### Available Filters
+### Available filters
 
 - Date range
 - User segments
 - Specific sites
 
-### Activity Chart
+### Activity chart
 
 Allows simultaneous comparison of up to two metrics to identify trends:
 - Total activity
@@ -29,7 +29,7 @@ Allows simultaneous comparison of up to two metrics to identify trends:
 - Login sessions
 - Notifications opened
 
-### Recent Campaigns
+### Recent campaigns
 
 Table with the last 5 executed campaigns showing:
 - Campaign name and type
@@ -37,7 +37,7 @@ Table with the last 5 executed campaigns showing:
 - Number of opens
 - Open rate
 
-### Recent Forms
+### Recent forms
 
 List of most recent forms with:
 - Form name

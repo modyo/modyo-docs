@@ -15,7 +15,7 @@ You will apply these formatting rules to all text:
 - **H1 headers (#)**: MUST be capitalized. Every significant word should start with a capital letter (title case).
 - **H2 headers (##)**: MUST be capitalized. Every significant word should start with a capital letter (title case).
 - **H3 headers (###)**: MUST NOT be capitalized. Use sentence case (only first word and proper nouns capitalized).
-- **H4 and below (####, #####, etc.)**: Use sentence case unless specified otherwise.
+- **H4 and below (####, #####, etc.)**: MUST NOT be capitalized. Use sentence case (only first word and proper nouns capitalized).
 
 ### List Formatting
 - **Always prefer bullet points** over numbered lists unless the order is explicitly meaningful (like step-by-step instructions).

@@ -71,13 +71,13 @@ Modyo assigns default roles depending on the context or section in which they ar
 
 The default roles that exist, depending on the context, are:
 
-#### Account-level roles:
+#### Account-level roles
 
 - **Default user**: Has all existing permissions, except for editing the configuration of each context. Must be invited to each context to access its functionalities.
 - **Default admin**: Has all existing permissions, but must be invited to each context to access its functions. At the Modyo Platform account level, this role can only view global variables and activity.
 - **Owner**: Has all existing permissions and can access all contexts without needing to be invited to them.
 
-#### Site-level roles:
+#### Site-level roles
 
 - **Site viewer**: You can view entries, see differences between versions, and leave comments. You can also access the synchronization view and see pending changes to synchronize. However, this role is not authorized to perform any action that implies a change in the platform.
 - **Site developer**: Can only edit resources. Cannot publish, delete, rollback, or edit the configuration.
@@ -85,7 +85,7 @@ The default roles that exist, depending on the context, are:
 - **Site reviewer**: Has all the permissions of the site admin role, except for permissions to edit the site settings.
 - **Site admin**: Has all the permissions at the level of a site, but cannot create new sites.
 
-#### Space-level roles:
+#### Space-level roles
 
 - **Space viewer**: This role allows you to view the contents of a space, see differences between versions, and leave comments. Access is limited to viewing and participating through comments; you cannot make modifications to the content or take actions that affect the configuration.
 - **Space writer**: This role can only edit content in a space. You do not have permissions to publish, delete, perform rollback, or edit the configuration.
@@ -94,12 +94,12 @@ The default roles that exist, depending on the context, are:
 
 The most important user will have the Default Admin or Administrator role. This role has all the features enabled to manage the platform and sites.
 
-#### Roles by realm:
+#### Roles by realm
 
 - **Realm User**: This role can add users, create, modify, and submit campaigns, forms, and segments for review.
 - **Realm Admin**: Can access all the configurations and sections of the realm. In addition, can add and remove users and team members, as well as delete the realm.
 
-### Custom roles:
+### Custom roles
 Custom roles allow you to create profiles with unique access and permissions, combining existing roles or configuring them according to the specific needs of your organization.
 
 #### Create custom roles
@@ -115,7 +115,7 @@ When you create a new role or select an existing one, you will be able to view a
 
 To keep the changes, press the **Save** button.
 
-### Access to applications:
+### Access to applications
 Modyo has roles that allow access to all applications without any restrictions; therefore, Modyo allows you to restrict access to certain applications by configuring the roles of team members. In this way, it is possible to grant a user full access (Owner) only to the Channels application, while restricting their access to other applications.
 
 ### Assign one role per account

@@ -43,7 +43,7 @@ Si tu página está en estado _borrador_, no aparecerá el icono de diferencias,
 Una vez que completes la acción de copiado, serás redirigido a la nueva página, por lo que es importante guardar todos los cambios antes de usar esta acción para evitar la pérdida de información importante.
 :::
 
-## Crear una página
+## Crear una Página
 Para crear una nueva página, sigue estos pasos:
 
 1. Dentro del menú principal de Modyo Platform, expande Channels y haz clic en Sitios.
@@ -66,9 +66,9 @@ Para conocer más acerca de páginas de contenido, consulta [Página de Contenid
 - Publicar: Si la página está aprobada, puedes ir a la [vista de publicación conjunta](/es/platform/core/key-concepts) usando esta acción.
 
 :::tip Tip
-* Si una página tiene un padre, solo puedes publicarla si este se encuentra publicado.
-* Si una página tiene hijos, solo puedes despublicarla si todos ellos se encuentran despublicados.
-* Si una página tiene hijos, solo puedes archivarla si todos ellos se encuentran archivados.
+- Si una página tiene un padre, solo puedes publicarla si este se encuentra publicado.
+- Si una página tiene hijos, solo puedes despublicarla si todos ellos se encuentran despublicados.
+- Si una página tiene hijos, solo puedes archivarla si todos ellos se encuentran archivados.
 :::
 
 **Acciones secundarias**:
@@ -131,13 +131,13 @@ Una vez seleccionado un widget en la sección central, el foco pasará a la pest
 
 En esta pestaña encontrarás opciones propiedades comunes de todas las páginas:
 
-* Nombre
-* Padre
-* Ruta
-* Extracto
-* Grilla
-* Privacidad
-* Meta tags personalizados
+- Nombre
+- Padre
+- Ruta
+- Extracto
+- Grilla
+- Privacidad
+- Meta tags personalizados
 
 :::warning Atención
 Modyo cuenta con rutas reservadas para las página, por lo que no podrás usarlos como rutas de tus páginas personalizadas:
@@ -187,8 +187,8 @@ Despliega las [entradas](/es/platform/content/entries) de tus [tipos de contenid
 
 Para poder mostrar contenido en un sitio, debes cumplir con ciertas condiciones:
 
-* Contar con un espacio con al menos un idioma (el mismo del sitio) y con por lo menos un Tipo de contenido. Para más información, ve a [Crear un Espacio](/es/platform/content/spaces#crear-un-espacio) y [Crear un Tipo](/es/platform/content/types#crear-un-tipo)
-* Contar con entradas publicadas en el idioma del sitio. Para más información, ve [Entradas](/es/platform/content/entries) y [Localización](/es/platform/content/spaces#localizacion)
+- Contar con un espacio con al menos un idioma (el mismo del sitio) y con por lo menos un Tipo de contenido. Para más información, ve a [Crear un Espacio](/es/platform/content/spaces#crear-un-espacio) y [Crear un Tipo](/es/platform/content/types#crear-un-tipo)
+- Contar con entradas publicadas en el idioma del sitio. Para más información, ve [Entradas](/es/platform/content/entries) y [Localización](/es/platform/content/spaces#localizacion)
 
 :::tip Tip
 Puedes usar el nombre que desees para las vistas, sin importar a que tipo o espacio lo quieras asociar. Siempre debes tener en consideración que las entradas solo se mostrarán si tienen una versión publicada en el idioma del sitio en el que estás creando estas vistas.
@@ -238,7 +238,7 @@ Este snippet toma `entry.name`, `entry.published_at`, `request.url`, y `entry.de
 :::tip Tip
 Para aprender más sobre cómo usar Liquid, dirígete a [Liquid markup](/es/platform/channels/liquid-markup).
 
-Para aprender que campos puedes utilizar con el drop `entry`, ve [Drops de Content](/es/platform/channels/drops#entrada).
+Para aprender que campos puedes utilizar con el objeto `entry`, ve [Objetos de Content](/es/platform/channels/liquid-markup/objects#entrada).
 Se puede complementar con el uso de [Filtros de contenido](/es/platform/channels/liquid-markup/filters#content).
 :::
 
@@ -270,7 +270,7 @@ Si habilitas la privacidad en una página, entonces se requerirá una sesión pa
 
 Los meta tags definen el contenido de una página y los motores de búsqueda dependen de estos para proveer el listado de una búsqueda al usuario. En esta sección podrás añadir meta tags a las páginas y modificar el valor de los meta tags existentes, para enriquecer el SEO de la página. Con los tags añadidos a las páginas, podrás decidir si usar el valor por defecto, sobrescribir el valor disponible para el tag, o eliminar el tag de la página.
 
-Para acceder al listado de meta tags de la página, debes usar el drop de Liquid <span v-pre>`{{ page.meta_tags }}`</span>. Te recomendamos ver el ejemplo en la sección SEO del [Template builder](/es/platform/channels/templates#seo).
+Para acceder al listado de meta tags de la página, debes usar el objeto de Liquid <span v-pre>`{{ page.meta_tags }}`</span>. Te recomendamos ver el ejemplo en la sección SEO del [Template builder](/es/platform/channels/templates#seo).
 
 ### Agregar un nuevo meta tag
 

@@ -26,7 +26,7 @@ El SSO en Modyo delega la autenticación a un sistema central, facilitando la ge
 1. Mediante el [componente de SSO](/es/connect/components/infrastructure#single-sign-on-sso) de [Modyo Connect](/es/connect).
 2. A través de la integración con un sistema de SSO del cliente.
 
-Ambas opciones se benefician de la capacidad de integración de la plataforma con estándares como OpenID Connect (OIDC), SAML, Azure AD, Google, OAuth2, entre otros.
+Ambas opciones se benefician de la capacidad de integración de la plataforma con estándares como OpenID Connect (OIDC), SAML, Entra ID, Google, OAuth2, entre otros.
 
 Al activar SSO en Modyo, se delega la autenticación de usuarios al sistema seleccionado. Esto significa que Modyo confía en el sistema SSO para verificar la identidad de los usuarios y permitirles acceder a las aplicaciones y servicios. Una ventaja clave de esta delegación es la posibilidad de aplicar políticas de seguridad específicas de forma centralizada en el sistema SSO, lo que proporciona un nivel adicional de control y seguridad sobre el acceso a los recursos.
 
@@ -35,7 +35,7 @@ La plataforma Modyo soporta la delegación a sistemas de SSO de dos formas princ
 1. Para usuarios administradores con acceso a la consola web.
 2. Para usuarios finales mediante las configuraciones en los [reinos de usuarios](/es/platform/customers/overview).
 
-Ambas formas de integración son independientes, permitiendo definir topologías específicas para cada cliente (ej. Azure AD (SAML) para administradores, KeyCloak (OIDC) para usuarios con acceso a la aplicación transaccional, Azure AD (OIDC) para agentes con acceso a la aplicación interna de ventas).
+Ambas formas de integración son independientes, permitiendo definir topologías específicas para cada cliente (ej. Entra ID (SAML) para administradores, KeyCloak (OIDC) para usuarios con acceso a la aplicación transaccional, Entra ID (OIDC) para agentes con acceso a la aplicación interna de ventas).
 
 :::warning Tiempos de sesión
 Cuando un usuario es dado de baja en el SSO o en el sistema de origen, los cambios en Modyo pueden no reflejarse de inmediato en el siguiente intento de autenticación. Esto puede resultar en un tiempo adicional durante el cual el usuario eliminado aún tiene acceso al sistema. Para evitarlo, se recomienda utilizar tiempos de expiración de sesión acordes a los requisitos de seguridad de la empresa o implementar flujos de terminación de sesión avanzados, como Single Logout.

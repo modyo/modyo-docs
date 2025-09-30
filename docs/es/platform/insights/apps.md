@@ -13,7 +13,7 @@ El dashboard de Apps proporciona analítica básica sobre el uso de tus aplicaci
 - **Usuarios únicos**: Visitantes individuales identificados
 - **Tasa de rebote**: Porcentaje de usuarios que abandonan sin interactuar
 
-### Filtros Disponibles
+### Filtros disponibles
 
 - Rango de fechas
 - Sitio específico

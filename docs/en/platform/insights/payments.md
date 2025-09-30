@@ -6,23 +6,23 @@ search: true
 
 The Payments dashboard provides a summary of commercial transactions processed through your platform.
 
-### Key Metrics
+### Key metrics
 
 - **Total Orders**: Number of transactions in the period
 - **Items Sold**: Total products or services sold
 - **Total Revenue**: Monetary value of successful transactions
 
-### Available Filters
+### Available filters
 
 - Date range
 - Order status
 - Payment method
 
-### Transaction Activity
+### Transaction activity
 
 Chart showing order evolution over time with comparison to the previous period.
 
-### Order Status
+### Order status
 
 Visualization of order distribution by status:
 - Completed
@@ -31,7 +31,7 @@ Visualization of order distribution by status:
 - Canceled
 - Processing
 
-### Payment Methods
+### Payment methods
 
 Chart showing transaction distribution by payment method used:
 - Credit cards

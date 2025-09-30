@@ -2,23 +2,164 @@
 search: true
 ---
 
-# Expresiones y Variables
+# Variables y Tipos de Datos
 
-Las expresiones son sentencias que tienen valores. Las plantillas de Liquid pueden usar expresiones en muchos lugares; frecuentemente en sentencias output, pero también como argumentos para tags o filtros.
+En Liquid, trabajas con variables para almacenar y manipular datos. Esta sección cubre cómo crear variables y los diferentes tipos de datos disponibles.
 
-Liquid acepta los siguientes tipos de expresiones:
+## Variables
 
-* **Variables**: El tipo más básico de expresión es el nombre de una variable. Las variables de Liquid se nombran como las variables de Ruby: deben contener caracteres alfanuméricos y guiones bajos, siempre deben comenzar con una letra y no contener ningún tipo de símbolo (es decir, deben verse como `var_name`, y no `$var_name`).
-* **Acceso de array/hashes**: Si tienes una expresión (normalmente una variable) cuyo valor es un array o hash, puedes usar un único valor de ese array/hash de la siguiente manera:
-    * `my_variable[<KEY EXPRESSION>]` — El nombre de la variable, seguido inmediatamente de corchetes que contienen una expresión clave.
-        * Para arrays, la clave debe ser un entero literal o una expresión que se resuelva a un entero.
-        * Para hashes, la clave debe ser un string literal entre comillas o una expresión que se resuelva a un string.
-    * `my_hash.key`: Los hashes también permiten una notación de "punto" más corta, donde el nombre de la variable es seguido por un punto y el nombre de una clave. Esto solo funciona con claves que no contienen espacios y (a diferencia de la notación entre corchetes) no permite el uso de un nombre de clave almacenado en una variable.
-    * Nota: Si el valor de una expresión de acceso es también un array o hash, puedes acceder a los valores de la misma manera, e incluso combinar los dos métodos (ej. `site.posts[34].title`).
-* **Primer y último elemento de array**: Si tienes una expresión cuyo valor es un array, puedes usar `.first` o `.last` para obtener su primer o último elemento.
-* **Tamaño de array o hash**: Si tienes una expresión cuyo valor es un array o hash, puedes usar `.size` para obtener el número de elementos de la expresión original como un entero.
-* **Strings**: Los strings literales deben estar rodeados de comillas dobles o simples (ej. `"mi cuerda"` o `'mi cuerda'`). No hay diferencia; ningún estilo permite interpolación variable.
-* **Enteros**: Los números enteros no pueden ser citados.
-* **Booleanos y nil**: Los valores literales `true`, `false` y `nil`.
+Las variables almacenan valores que puedes reutilizar en tu plantilla. Puedes crear tus propias variables o usar las que Modyo proporciona automáticamente.
 
-Ten en cuenta que no hay manera de escribir un array literal o hash como expresión; los arrays y hashes deben pasarse a la plantilla o construirse oblicuamente con un tag o una declaración output.
+### Crear variables
+
+Usa `assign` para crear nuevas variables:
+
+```liquid
+{% assign nombre = "Juan" %}
+{% assign precio = 100 %}
+{% assign activo = true %}
+
+{{ nombre }} → Juan
+{{ precio }} → 100
+```
+
+### Sintaxis de acceso
+
+```liquid
+{{ variable }}                    → Muestra el valor
+{{ objeto.propiedad }}           → Accede a una propiedad (notación de punto)
+{{ objeto['propiedad'] }}        → Acceso con corchetes (necesario si hay espacios)
+{{ objeto.anidado.propiedad }}   → Propiedades anidadas
+```
+
+**Diferencias entre notación de punto y corchetes:**
+- **Punto**: Más simple pero no permite espacios ni variables dinámicas
+- **Corchetes**: Permite espacios, guiones y usar variables como claves
+
+```liquid
+{{ producto.titulo }}              → Funciona
+{{ producto['titulo'] }}           → También funciona
+{{ producto['precio-especial'] }}  → Necesario con guiones
+{{ producto[nombre_variable] }}    → Acceso dinámico con variable
+```
+
+## Tipos de Datos
+
+Liquid en Modyo soporta los siguientes tipos de datos:
+
+### Strings (cadenas de texto)
+
+Las cadenas deben estar entre comillas simples o dobles:
+
+```liquid
+{% assign mensaje = "Hola mundo" %}
+{% assign nombre = 'Juan' %}
+{{ mensaje }} → Hola mundo
+```
+
+### Numbers (números)
+
+```liquid
+{% assign precio = 100 %}         → Entero
+{% assign descuento = 0.15 %}     → Decimal
+{{ precio | minus: 10 }}          → 90
+```
+
+### Booleans (booleanos)
+
+```liquid
+{% assign activo = true %}
+{% assign publicado = false %}
+
+{% if activo %}
+  Este contenido está activo
+{% endif %}
+```
+
+### Nil (nulo)
+
+Representa la ausencia de valor:
+
+```liquid
+{% if user == nil %}
+  No hay usuario logueado
+{% endif %}
+```
+
+### Arrays (arreglos)
+
+Colecciones ordenadas de elementos:
+
+```liquid
+{% assign productos = spaces['tienda'].types['producto'].entries %}
+
+{{ productos[0].fields.name }}     → Primer elemento (índice 0)
+{{ productos[2] }}                  → Tercer elemento (índice 2)
+{{ productos.first.fields.name }}  → Primer elemento (método .first)
+{{ productos.last.fields.name }}   → Último elemento (método .last)
+{{ productos.size }}                → Cantidad de elementos
+
+{% for producto in productos %}
+  {{ forloop.index }}: {{ producto.fields.name }}
+{% endfor %}
+```
+
+**Nota sobre índices**: Los arrays en Liquid comienzan en 0, por lo que el primer elemento es `[0]`, el segundo es `[1]`, etc.
+
+### Hashes (objetos/diccionarios)
+
+Colecciones de pares clave-valor:
+
+```liquid
+{% assign config = site.metadata %}
+
+{{ config.theme }}                  → Notación de punto
+{{ config['theme'] }}               → Notación de corchetes
+{{ config['color-primary'] }}       → Necesario con guiones
+
+{% for item in config %}
+  {{ item[0] }}: {{ item[1] }}     → Clave: Valor
+{% endfor %}
+```
+
+## Operaciones con Tipos de Datos
+
+### Conversión de tipos
+
+```liquid
+{{ "100" | plus: 0 }}              → Convierte string a número
+{{ 100 | append: "" }}              → Convierte número a string
+```
+
+### Verificación de tipos
+
+```liquid
+{% if productos.size > 0 %}
+  Hay productos disponibles
+{% elsif productos == empty %}
+  No hay productos
+{% endif %}
+```
+
+### Valores por defecto
+
+```liquid
+{{ user.name | default: "Invitado" }}
+{{ producto.fields.precio | default: 0 }}
+```
+
+:::tip Buena práctica
+Siempre usa `default` cuando no estés seguro si un valor existe para evitar mostrar contenido vacío.
+:::
+
+## Objetos Especiales de Modyo
+
+Modyo proporciona objetos predefinidos que contienen información del sistema:
+
+- `user`: Usuario actual
+- `site`: Sitio actual  
+- `page`: Página actual
+- `spaces`: Acceso a espacios de contenido
+- `account`: Información de la cuenta
+
+Para una lista completa y detallada de todos los objetos disponibles, consulta la sección [Objetos](/es/platform/channels/liquid-markup/objects).

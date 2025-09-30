@@ -142,7 +142,7 @@ To unpublish:
 1. Click **Unpublish**.
 
 
-### Delete Entries
+### Delete entries
 
 To delete an entry:
 

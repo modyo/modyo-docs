@@ -34,57 +34,57 @@ Para crear un webhook, sigue estos pasos:
 
 Los webhooks de sitio son:
 
-* Página creada
-* Página eliminada
-* Página publicada
-* Página despublicada
-* Página actualizada
-* Inicio de sesión
-* Cierre de sesión
-* Navegación aprobada
-* Navegación publicada
-* Navegación enviada a revisión
-* Navegación actualizada
-* Perfil actualizado
-* Sitio creado
-* Sitio eliminado
-* Sitio desactivado
-* Sitio habilitado
-* Sitio oculto
-* Sitio puesto en desarrollo
-* Sitio visible
-* Sitio actualizado
-* Templates aprobados
-* Templates enviados para su revisión
-* Templates actualizados
-* Tema instalado
-* Tema restablecido
-* Tema actualizado
-* Widget aprobado
-* Widget clonado
-* Widget creado
-* Widget publicado
-* Widget restaurado
-* Widget enviado a revisión
-* Widget despublicado
-* Widget actualizado
+- Página creada
+- Página eliminada
+- Página publicada
+- Página despublicada
+- Página actualizada
+- Inicio de sesión
+- Cierre de sesión
+- Navegación aprobada
+- Navegación publicada
+- Navegación enviada a revisión
+- Navegación actualizada
+- Perfil actualizado
+- Sitio creado
+- Sitio eliminado
+- Sitio desactivado
+- Sitio habilitado
+- Sitio oculto
+- Sitio puesto en desarrollo
+- Sitio visible
+- Sitio actualizado
+- Templates aprobados
+- Templates enviados para su revisión
+- Templates actualizados
+- Tema instalado
+- Tema restablecido
+- Tema actualizado
+- Widget aprobado
+- Widget clonado
+- Widget creado
+- Widget publicado
+- Widget restaurado
+- Widget enviado a revisión
+- Widget despublicado
+- Widget actualizado
 
 Los webhooks de espacios son:
 
-* Categoría creada
-* Categoría eliminada
-* Categoría actualizada
-* Entrada aprobada
-* Entrada creada
-* Entrada publicada
-* Entrada enviada a revisión
-* Entrada despublicada
-* Entrada actualizada
-* Espacio creado
-* Espacio actualizado
-* Tipo creado
-* Tipo eliminado
-* Tipo actualizado
+- Categoría creada
+- Categoría eliminada
+- Categoría actualizada
+- Entrada aprobada
+- Entrada creada
+- Entrada publicada
+- Entrada enviada a revisión
+- Entrada despublicada
+- Entrada actualizada
+- Espacio creado
+- Espacio actualizado
+- Tipo creado
+- Tipo eliminado
+- Tipo actualizado
 
 
 ### Ejemplo de Payload
@@ -135,9 +135,9 @@ Para crear un webhook, sigue estos pasos:
 
 Los webhooks de reino con sus payloads respectivos:
 
-* Respuesta de formulario creada
-* Respuesta de formulario actualizada
-* Respuesta de originación creada
+- Respuesta de formulario creada
+- Respuesta de formulario actualizada
+- Respuesta de originación creada
 ``` javascript
 {
    "ip":"172.71.194.146",
@@ -153,7 +153,7 @@ Los webhooks de reino con sus payloads respectivos:
    "submission_uuid":"4c23599f-2aa6-4a8c-b2ae-66be46b7b938"
 }
 ```
-* Respuesta de originación iniciada
+- Respuesta de originación iniciada
 ``` javascript
 {
    "ip":"172.71.194.146",
@@ -169,7 +169,7 @@ Los webhooks de reino con sus payloads respectivos:
    "submission_uuid":"4c23599f-2aa6-4a8c-b2ae-66be46b7b938"
 }
 ```
-* Tarea de respuesta de originación enviada
+- Tarea de respuesta de originación enviada
 ``` javascript
 {
    "ip":"172.71.195.36",
@@ -186,7 +186,7 @@ Los webhooks de reino con sus payloads respectivos:
    "submission_uuid":"4c23599f-2aa6-4a8c-b2ae-66be46b7b938"
 }
 ```
-* Respuesta de originación completada
+- Respuesta de originación completada
 ``` javascript
 {
    "id":35914440,
@@ -214,7 +214,7 @@ Los webhooks de reino con sus payloads respectivos:
    "trigger_entry_space_uid":null
 }
 ```
-* Respuesta de originación cancelada
+- Respuesta de originación cancelada
 ``` javascript
 {
    "ip":"172.71.195.41",
@@ -230,16 +230,16 @@ Los webhooks de reino con sus payloads respectivos:
    "submission_uuid":"04bf572a-9e00-4474-ae8a-6a0bc17d4c1a"
 }
 ```
-* Login
-* Login with code
-* Logout
-* Error trying to log in
-* Error trying to log in with code
-* User created
-* User updated
-* User enabled
-* User registration
-* Restore password
-* User deleted
+- Login
+- Login with code
+- Logout
+- Error trying to log in
+- Error trying to log in with code
+- User created
+- User updated
+- User enabled
+- User registration
+- Restore password
+- User deleted
 
 Nota: El webhook es llamado a través de un POST cuando se genera un log del tipo seleccionado. Una vez creado el webhook, podrás enviar una notificación de prueba con información falsa para probar que tu URL está recibiendo correctamente los POSTs desde Modyo.

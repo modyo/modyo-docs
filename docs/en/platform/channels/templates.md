@@ -54,9 +54,9 @@ In the main work area, there are two sections:
 
 Modyo offers three predefined layouts:
 
-* **Home**: Exclusively for the main page of the site.
-* **Base**: All pages, except the home page, use this layout.
-* **Error**: Used in error views (404, 401), showcasing a clean design.
+- **Home**: Exclusively for the main page of the site.
+- **Base**: All pages, except the home page, use this layout.
+- **Error**: Used in error views (404, 401), showcasing a clean design.
 
 To create a new layout:
 1. In the **Templates** section, click on the **Views** tab
@@ -127,10 +127,10 @@ It is necessary that your account's CDN is in the cloud for changes to be reflec
 
 In the views section, you can customize four types of errors:
 
-* **Disabled**: Displayed when the site you are trying to access is [disabled](/en/platform/channels/sites).
-* **404**: If in the [site restrictions](/en/platform/channels/sites#privacy) configuration you decide to show 404 instead of redirecting to the home page, this error appears when entering an undefined URL.
-* **Privacy**: Shown when you do not have permissions to access the [site](/en/platform/channels/sites#privacy) or one of its [pages](/en/platform/channels/pages#privacy).
-* **Template**: Visible when the loaded page has a Liquid syntax error. It is unlikely that you will see this view, as from Modyo 8.1 onwards, the platform performs a syntax check before saving and publishing changes to Templates.
+- **Disabled**: Displayed when the site you are trying to access is [disabled](/en/platform/channels/sites).
+- **404**: If in the [site restrictions](/en/platform/channels/sites#privacy) configuration you decide to show 404 instead of redirecting to the home page, this error appears when entering an undefined URL.
+- **Privacy**: Shown when you do not have permissions to access the [site](/en/platform/channels/sites#privacy) or one of its [pages](/en/platform/channels/pages#privacy).
+- **Template**: Visible when the loaded page has a Liquid syntax error. It is unlikely that you will see this view, as from Modyo 8.1 onwards, the platform performs a syntax check before saving and publishing changes to Templates.
 
 ## CSS and JavaScript
 
@@ -309,4 +309,4 @@ For specific meta tags when displaying entries from a category, copy the followi
 
 In this code, a `category_name` variable is created that contains the name of the category taken from the URL. Then, an `{% if category_path.size > 0 %}` is used to add relevant metadata to the category.
 
-Liquid allows you to create dynamic content for your site. To learn more about Liquid and how to use Liquid Drops, visit [Liquid Markup](/en/platform/channels/liquid-markup).
+Liquid allows you to create dynamic content for your site. To learn more about Liquid and how to use Liquid Objects, visit [Liquid Markup](/en/platform/channels/liquid-markup).

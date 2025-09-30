@@ -34,60 +34,60 @@ To create a webhook, follow these steps:
 
 Site webhooks are:
 
-* Page created
-* Page deleted
-* Page published
-* Page unpublished
-* Page updated
-* Login
-* Logout
-* Navigation approved
-* Navigation published
-* Navigation sent for review
-* Navigation updated
-* Profile updated
-* Site created
-* Site deleted
-* Site disabled
-* Site enabled
-* Site hidden
-* Site staged
-* Site visible
-* Site updated
-* Templates approved
-* Templates sent for review
-* Templates updated
-* Theme installed
-* Theme restored
-* Theme updated
-* Widget approved
-* Widget cloned
-* Widget created
-* Widget published
-* Widget restored
-* Widget sent for review
-* Widget unpublished
-* Widget updated
+- Page created
+- Page deleted
+- Page published
+- Page unpublished
+- Page updated
+- Login
+- Logout
+- Navigation approved
+- Navigation published
+- Navigation sent for review
+- Navigation updated
+- Profile updated
+- Site created
+- Site deleted
+- Site disabled
+- Site enabled
+- Site hidden
+- Site staged
+- Site visible
+- Site updated
+- Templates approved
+- Templates sent for review
+- Templates updated
+- Theme installed
+- Theme restored
+- Theme updated
+- Widget approved
+- Widget cloned
+- Widget created
+- Widget published
+- Widget restored
+- Widget sent for review
+- Widget unpublished
+- Widget updated
 
 Space webhooks are:
 
-* Category created
-* Category deleted
-* Category updated
-* Entry approved
-* Entry created
-* Entry published
-* Entry sent for review
-* Entry unpublished
-* Entry updated
-* Space created
-* Space updated
-* Type created
-* Type deleted
-* Type updated
+- Category created
+- Category deleted
+- Category updated
+- Entry approved
+- Entry created
+- Entry published
+- Entry sent for review
+- Entry unpublished
+- Entry updated
+- Space created
+- Space updated
+- Type created
+- Type deleted
+- Type updated
 
 
-### Payload Example
+### Payload example
 
 ``` javascript
 {
@@ -135,9 +135,9 @@ To create a webhook, follow these steps:
 
 Realm webhooks with their respective payloads:
 
-* Form response created
-* Form response updated
-* Origination response created
+- Form response created
+- Form response updated
+- Origination response created
 ``` javascript
 {
    "ip":"172.71.194.146",
@@ -153,7 +153,7 @@ Realm webhooks with their respective payloads:
    "submission_uuid":"4c23599f-2aa6-4a8c-b2ae-66be46b7b938"
 }
 ```
-* Origination response started
+- Origination response started
 ``` javascript
 {
    "ip":"172.71.194.146",
@@ -169,7 +169,7 @@ Realm webhooks with their respective payloads:
    "submission_uuid":"4c23599f-2aa6-4a8c-b2ae-66be46b7b938"
 }
 ```
-* Origination response task submitted
+- Origination response task submitted
 ``` javascript
 {
    "ip":"172.71.195.36",
@@ -186,7 +186,7 @@ Realm webhooks with their respective payloads:
    "submission_uuid":"4c23599f-2aa6-4a8c-b2ae-66be46b7b938"
 }
 ```
-* Origination response completed
+- Origination response completed
 ``` javascript
 {
    "id":35914440,
@@ -214,7 +214,7 @@ Realm webhooks with their respective payloads:
    "trigger_entry_space_uid":null
 }
 ```
-* Origination response canceled
+- Origination response canceled
 ``` javascript
 {
    "ip":"172.71.195.41",
@@ -230,16 +230,16 @@ Realm webhooks with their respective payloads:
    "submission_uuid":"04bf572a-9e00-4474-ae8a-6a0bc17d4c1a"
 }
 ```
-* Login
-* Login with code
-* Logout
-* Error trying to log in
-* Error trying to log in with code
-* User created
-* User updated
-* User enabled
-* User registration
-* Restore password
-* User deleted
+- Login
+- Login with code
+- Logout
+- Error trying to log in
+- Error trying to log in with code
+- User created
+- User updated
+- User enabled
+- User registration
+- Restore password
+- User deleted
 
 Note: The webhook is called via a POST when the selected log type is generated. Once the webhook is created, you can send a test notification with false information to test that your URL is correctly receiving POSTs from Modyo.

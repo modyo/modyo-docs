@@ -12,7 +12,7 @@ En este tutorial, integraremos Salesforce, una plataforma de gestión de las rel
 
 - Una cuenta a la plataforma Modyo con permisos de Administrador
 
-## Paso 1: Configuración Inicial
+## Paso 1 Configuración inicial
 
 Lo primero que tenemos que hacer es ingresar a nuestra cuenta de Salesforce, donde configuraremos la integración con Modyo Platform.
 
@@ -24,7 +24,7 @@ El link de <b>Setup</b> se encuentra en la esquina superior derecha de nuestra p
 
 <img src="/assets/img/tutorials/salesforce/setup.png" style="border: 1px solid rgb(238, 238, 238);max-width: 300px;margin: auto 0;" alt="Image with closeup to the Setup button"/>
 
-## Paso 2: Apex Class
+## Paso 2 Apex class
 
 Lo primero que tenemos hacer dentro del Setup es en el buscador escribir <b>Apex Classes</b> para ir a generar un nuevo Apex Class, el cual se utilizará para crear el Proveedor de Autenticación. 
 
@@ -142,7 +142,7 @@ global class Modyo_Connector extends Auth.AuthProviderPluginClass {
 
 Haz click en guardar.
 
-## Paso 3: Custom Metadata Types
+## Paso 3 Custom metadata types
 
 El propósito del Custom Metadata Types es definir qué campos debemos recopilar para la autenticación.
  
@@ -222,7 +222,7 @@ Haz click en <b>Save</b> y en la configuración de <b>Custom Metadata Types
  </tr>
 </table>
 
-## Paso 4: Authentication Providers
+## Paso 4 Authentication providers
 
 Una vez la configuración de Apex Class y el Custom Metadata Types estén listos, hay que generar un  proveedor de autenticación, que utilizará la clase Apex recién definida.
 
@@ -332,7 +332,7 @@ Llenamos los siguientes datos:
 </table>
 
 
-## Paso 5: Named Credentials
+## Paso 5 Named credentials
 
 Las "Named Credentials" permiten a los usuarios autenticar a un proveedor de servicios externo. Hay varias opciones predeterminadas, para conectarnos a Modyo, tenemos que crear una autenticación personalizada.
 
@@ -417,7 +417,7 @@ Para generar una vamos a buscar <b>Named Credentials</b> dentro de Setup, y hace
 
 Haz click en <b>Save</b>.
 
-## Paso 6: Remote Site
+## Paso 6 Remote site
 
 El último paso es la definición del servicio externo dentro de Salesforce. 
 
@@ -757,7 +757,7 @@ Haz click en <b>Create</b>, lo activamos en los 3 puntos y guardamos.
 
 <img src="/assets/img/tutorials/salesforce/activate.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image activating the custom field in Modyo."/>
 
-## Paso 8: Creación de Flow
+## Paso 8 Creación de flow
 
 Una vez terminada la configuración para conectar Salesforce con Modyo, se tiene que crear el flujo para sincronizar los usuarios de Salesforce con Modyo.
 
@@ -963,7 +963,7 @@ Y conecta todos los puntos para que el Flujo quede de la siguiente forma:
 
 Para finalizar, guarda y prueba que esté funcionando correctamente.
 
-## Paso 9: Creación de Process
+## Paso 9 Creación de process
 
 Ahora tenemos que buscar <b>Process builder</b> en el buscador,
 

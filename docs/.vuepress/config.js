@@ -15,7 +15,16 @@ module.exports = {
           description: "Bienvenido a la documentación oficial de Modyo.",
       },
   },
-  plugins: [],
+  plugins: [
+    ['container', {
+      type: 'info',
+      defaultTitle: {
+        '/es/': 'INFORMACIÓN',
+        '/en/': 'INFO',
+        '/': 'INFO'
+      }
+    }]
+  ],
   head: [
       ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
       ['link', { rel: 'preconnect', href: 'https://cloud.modyocdn.com' }],
@@ -74,13 +83,14 @@ module.exports = {
               ],
               sidebar: {
                   "/en/platform/": [{
-                      title: "Getting Started",
+                      title: "First Steps",
                       path: "/en/platform/",
                       collapsable: true,
                       children: [
-                          "/en/platform/",
-                          "/en/platform/learn-modyo",
-                          "/en/platform/key-concepts",
+                          ["/en/platform/", "Welcome to Modyo"],
+                          ["/en/platform/learn-modyo", "Learn Modyo"],
+                          ["/en/platform/key-concepts", "Key Concepts"],
+                          ["/en/platform/whats-new", "What's New"],
                           "/en/platform/release-notes",
                       ],
                   },
@@ -89,7 +99,7 @@ module.exports = {
                           path: "/en/platform/core/",
                           collapsable: true,
                           children: [
-                              "/en/platform/core/key-concepts",
+                              ["/en/platform/core/", "Introduction"],
                               "/en/platform/core/configuration",
                               {
                                   title: "Integrations",
@@ -97,7 +107,7 @@ module.exports = {
                                   collapsable: true,
                                   children: [
                                       ["/en/platform/core/integrations/identity-providers", "Identity Providers"],
-                                      ["/en/platform/core/integrations/scim", "SCIM Provision with Microsoft Azure AD"],
+                                      ["/en/platform/core/integrations/scim", "SCIM Provision with Microsoft Entra ID"],
                                       ["/en/platform/core/integrations/oidc", "Manage private sessions using OpenID Connect (OIDC)"],
                                   ],
                               },
@@ -113,26 +123,27 @@ module.exports = {
                         path: "/en/platform/channels/",
                         collapsable: true,
                         children: [
+                            ["/en/platform/channels/", "Introduction"],
                             "/en/platform/channels/sites",
-                            "/en/platform/channels/global-variables",
-                            "/en/platform/channels/global-snippets",
                             "/en/platform/channels/pages",
                             "/en/platform/channels/navigation",
                             "/en/platform/channels/widgets",
-                            "/en/platform/channels/cli",
                             "/en/platform/channels/templates",
+                            "/en/platform/channels/global-variables",
+                            "/en/platform/channels/global-snippets",
                             {
                                 title: "Liquid Markup",
                                 path: "/en/platform/channels/liquid-markup/",
                                 collapsable: true,
                                 children: [
+                                    "/en/platform/channels/liquid-markup/basics",
                                     "/en/platform/channels/liquid-markup/variables",
+                                    "/en/platform/channels/liquid-markup/objects",
                                     "/en/platform/channels/liquid-markup/filters",
                                     "/en/platform/channels/liquid-markup/tags",
                                     "/en/platform/channels/liquid-markup/examples",
                                 ],
                             },
-                            "/en/platform/channels/drops",
                         ],
                       },
                       {
@@ -140,6 +151,7 @@ module.exports = {
                         path: "/en/platform/customers/",
                         collapsable: true,
                         children: [
+                            ["/en/platform/customers/", "Introduction"],
                             "/en/platform/customers/overview",
                             "/en/platform/customers/users",
                             "/en/platform/customers/events",
@@ -147,6 +159,7 @@ module.exports = {
                             "/en/platform/customers/forms",
                             "/en/platform/customers/origination",
                             "/en/platform/customers/messaging",
+                            "/en/platform/customers/payments",
                             "/en/platform/customers/settings",
                             "/en/platform/customers/profile",
                             "/en/platform/customers/api",
@@ -157,6 +170,7 @@ module.exports = {
                           path: "/en/platform/content/",
                           collapsable: true,
                           children: [
+                              ["/en/platform/content/", "Introduction"],
                               "/en/platform/content/spaces",
                               "/en/platform/content/types",
                               "/en/platform/content/entries",
@@ -170,6 +184,7 @@ module.exports = {
                           path: "/en/platform/insights/",
                           collapsable: true,
                           children: [
+                              ["/en/platform/insights/", "Introduction"],
                               "/en/platform/insights/apps",
                               "/en/platform/insights/customers",
                               "/en/platform/insights/digital-factory",
@@ -177,10 +192,21 @@ module.exports = {
                               "/en/platform/insights/payments",
                           ],
                       },
+                      {
+                        title: "Tools",
+                        path: "/en/platform/tools/",
+                        collapsable: true,
+                        children: [
+                          ["/en/platform/tools/", "Introduction"],
+                          "/en/platform/tools/cli",
+                          "/en/platform/tools/sdk",
+                          "/en/platform/tools/mcp",
+                        ],
+                      },
                   ],
                   "/en/connect/": [{
                           title: "Modyo Connect",
-                          collapsable: false,
+                          collapsable: true,
                           children: [
                               ["/en/connect/", "What is Modyo Connect?"],
                               "/en/connect/architecture",
@@ -189,12 +215,48 @@ module.exports = {
                           ],
                       },
                       {
-                          title: "Components",
+                          title: "Development",
                           collapsable: true,
+                          path: "/en/connect/development/",
                           children: [
-                              "/en/connect/components/development",
-                              "/en/connect/components/infrastructure",
-                              "/en/connect/components/monitoring",
+                              "/en/connect/development/developer-access",
+                              "/en/connect/development/code-repository",
+                              "/en/connect/development/continuous-integration",
+                              "/en/connect/development/artifact-repository",
+                          ],
+                      },
+                      {
+                          title: "Infrastructure",
+                          collapsable: true,
+                          path: "/en/connect/infrastructure/",
+                          children: [
+                              "/en/connect/infrastructure/load-balancing",
+                              "/en/connect/infrastructure/api-gateway",
+                              "/en/connect/infrastructure/containers",
+                              "/en/connect/infrastructure/secrets-management",
+                              "/en/connect/infrastructure/encryption",
+                              "/en/connect/infrastructure/ssl-tls-certificates",
+                              "/en/connect/infrastructure/single-sign-on",
+                              "/en/connect/infrastructure/object-storage",
+                              "/en/connect/infrastructure/content-delivery-network",
+                              "/en/connect/infrastructure/databases",
+                              "/en/connect/infrastructure/cache-nosql",
+                              "/en/connect/infrastructure/message-queues",
+                              "/en/connect/infrastructure/email-sms",
+                              "/en/connect/infrastructure/web-application-firewall",
+                              "/en/connect/infrastructure/virtual-private-network",
+                              "/en/connect/infrastructure/domain-name-service",
+                              "/en/connect/infrastructure/domain-registration",
+                          ],
+                      },
+                      {
+                          title: "Monitoring",
+                          collapsable: true,
+                          path: "/en/connect/monitoring/",
+                          children: [
+                              "/en/connect/monitoring/application-metrics",
+                              "/en/connect/monitoring/infrastructure-metrics",
+                              "/en/connect/monitoring/log-registry",
                           ],
                       },
                       {
@@ -206,9 +268,51 @@ module.exports = {
                           ],
                       },
                   ],
+                  "/en/dynamic/": [{
+                      title: "Dynamic Framework",
+                      path: "/en/dynamic/",
+                      collapsable: true,
+                      children: [
+                          ["/en/dynamic/", "Introduction"],
+                          "/en/dynamic/overview",
+                      ],
+                  },
+                  {
+                      title: "Guides",
+                      path: "/en/dynamic/getting-started/",
+                      collapsable: true,
+                      children: [
+                          "/en/dynamic/getting-started/installation",
+                          "/en/dynamic/getting-started/first-app",
+                          "/en/dynamic/getting-started/project-structure",
+                      ],
+                  },
+                  {
+                      title: "Development",
+                      path: "/en/dynamic/development/",
+                      collapsable: true,
+                      children: [
+                          "/en/dynamic/development/components",
+                          "/en/dynamic/development/experiences",
+                          "/en/dynamic/development/react-integration",
+                          "/en/dynamic/development/widgets",
+                          "/en/dynamic/development/api-integration",
+                      ],
+                  },
+                  {
+                      title: "Customization",
+                      path: "/en/dynamic/customization/",
+                      collapsable: true,
+                      children: [
+                          "/en/dynamic/customization/theming",
+                          "/en/dynamic/customization/styling",
+                          "/en/dynamic/customization/extending",
+                      ],
+                  },
+                  ],
                   "/en/architecture/": [{
                           title: "Architecture",
-                          collapsable: false,
+                          collapsable: true,
                           children: [
                               ["/en/architecture/", "Introduction"],
                               ["/en/architecture/why-modyo", "Why Modyo?"],
@@ -281,8 +385,9 @@ module.exports = {
                           children: [
                             ["/es/platform/", "Bienvenido a Modyo"],
                             ["/es/platform/learn-modyo", "Aprende Modyo"],
-                            ["/es/platform/key-concepts", "Conceptos claves"],
-                            ["/es/platform/release-notes", "Notas del release"],
+                            ["/es/platform/key-concepts", "Conceptos Claves"],
+                            ["/es/platform/whats-new", "Novedades"],
+                            "/es/platform/release-notes",
                           ],
                       },
 
@@ -291,9 +396,7 @@ module.exports = {
                         path: "/es/platform/core/",
                         collapsable: true,
                         children: [
-                            "/es/platform/core/key-concepts",
-                            /*"/es/platform/core/integration",*/
-                            /*"/es/platform/core/installation",*/
+                            ["/es/platform/core/", "Introducción"],
                             "/es/platform/core/configuration",
                             {
                                 title: "Integraciones",
@@ -301,7 +404,7 @@ module.exports = {
                                 collapsable: true,
                                 children: [
                                     ["/es/platform/core/integrations/identity-providers", "Proveedores de Identidad"],
-                                    ["/es/platform/core/integrations/scim", "Aprovisionamiento SCIM con Microsoft Azure AD"],
+                                    ["/es/platform/core/integrations/scim", "Aprovisionamiento SCIM con Microsoft Entra ID"],
                                     ["/es/platform/core/integrations/oidc", "Gestión de sesión privada usando OpenID Connect (OIDC)"],
                                 ],
                             },
@@ -317,26 +420,27 @@ module.exports = {
                         path: "/es/platform/channels/",
                         collapsable: true,
                         children: [
+                            ["/es/platform/channels/", "Introducción"],
                             "/es/platform/channels/sites",
-                            "/es/platform/channels/global-variables",
-                            "/es/platform/channels/global-snippets",
                             "/es/platform/channels/pages",
                             "/es/platform/channels/navigation",
                             "/es/platform/channels/widgets",
-                            "/es/platform/channels/cli",
                             "/es/platform/channels/templates",
+                            "/es/platform/channels/global-variables",
+                            "/es/platform/channels/global-snippets",
                             {
                                 title: "Liquid Markup",
                                 path: "/es/platform/channels/liquid-markup/",
                                 collapsable: true,
                                 children: [
+                                    "/es/platform/channels/liquid-markup/basics",
                                     "/es/platform/channels/liquid-markup/variables",
+                                    "/es/platform/channels/liquid-markup/objects",
                                     "/es/platform/channels/liquid-markup/filters",
                                     "/es/platform/channels/liquid-markup/tags",
                                     "/es/platform/channels/liquid-markup/examples",
                                 ],
                             },
-                            "/es/platform/channels/drops",
                         ],
                       },
                       {
@@ -344,6 +448,7 @@ module.exports = {
                           path: "/es/platform/customers/",
                           collapsable: true,
                           children: [
+                              ["/es/platform/customers/", "Introducción"],
                               "/es/platform/customers/overview",
                               "/es/platform/customers/users",
                               "/es/platform/customers/events",
@@ -351,6 +456,7 @@ module.exports = {
                               "/es/platform/customers/forms",
                               "/es/platform/customers/origination",
                               "/es/platform/customers/messaging",
+                              "/es/platform/customers/payments",
                               "/es/platform/customers/settings",
                               "/es/platform/customers/profile",
                               "/es/platform/customers/api",
@@ -361,6 +467,7 @@ module.exports = {
                           path: "/es/platform/content/",
                           collapsable: true,
                           children: [
+                              ["/es/platform/content/", "Introducción"],
                               "/es/platform/content/spaces",
                               "/es/platform/content/types",
                               "/es/platform/content/entries",
@@ -374,6 +481,7 @@ module.exports = {
                           path: "/es/platform/insights/",
                           collapsable: true,
                           children: [
+                              ["/es/platform/insights/", "Introducción"],
                               "/es/platform/insights/apps",
                               "/es/platform/insights/customers",
                               "/es/platform/insights/digital-factory",
@@ -381,10 +489,22 @@ module.exports = {
                               "/es/platform/insights/payments",
                           ],
                       },
+                      {
+                        title: "Utilidades",
+                        path: "/es/platform/tools/",
+                        collapsable: true,
+                        children: [
+                          ["/es/platform/tools/", "Introducción"],
+                          "/es/platform/tools/cli",
+                          "/es/platform/tools/sdk",
+                          "/es/platform/tools/mcp",
+                        ],
+                      },
                   ],
                   "/es/connect/": [{
                           title: "Modyo Connect",
-                          collapsable: false,
+                          collapsable: true,
+                          path: "/es/connect/",
                           children: [
                               ["/es/connect/", "¿Qué es Modyo Connect?"],
                               "/es/connect/architecture",
@@ -393,13 +513,49 @@ module.exports = {
                           ],
                       },
                       {
-                          title: "Componentes",
+                          title: "Desarrollo",
                           collapsable: true,
+                          path: "/es/connect/development/",
                           children: [
-                              "/es/connect/components/development",
-                              "/es/connect/components/infrastructure",
-                              "/es/connect/components/monitoring",
+                              "/es/connect/development/developer-access",
+                              "/es/connect/development/code-repository",
+                              "/es/connect/development/continuous-integration",
+                              "/es/connect/development/artifact-repository",
                           ],
+                      },
+                      {
+                        title: "Infraestructura",
+                        collapsable: true,
+                        path: "/es/connect/infrastructure/",
+                        children: [
+                          "/es/connect/infrastructure/load-balancing",
+                          "/es/connect/infrastructure/api-gateway",
+                          "/es/connect/infrastructure/containers",
+                          "/es/connect/infrastructure/secrets-management",
+                          "/es/connect/infrastructure/encryption",
+                          "/es/connect/infrastructure/ssl-tls-certificates",
+                          "/es/connect/infrastructure/single-sign-on",
+                          "/es/connect/infrastructure/object-storage",
+                          "/es/connect/infrastructure/content-delivery-network",
+                          "/es/connect/infrastructure/databases",
+                          "/es/connect/infrastructure/cache-nosql",
+                          "/es/connect/infrastructure/message-queues",
+                          "/es/connect/infrastructure/email-sms",
+                          "/es/connect/infrastructure/web-application-firewall",
+                          "/es/connect/infrastructure/virtual-private-network",
+                          "/es/connect/infrastructure/domain-name-service",
+                          "/es/connect/infrastructure/domain-registration",
+                        ],
+                      },
+                      {
+                        title: "Monitoreo",
+                        collapsable: true,
+                        path: "/es/connect/monitoring/",
+                        children: [
+                          "/es/connect/monitoring/application-metrics",
+                          "/es/connect/monitoring/infrastructure-metrics",
+                          "/es/connect/monitoring/log-registry",
+                        ],
                       },
                       {
                           title: "Recursos",
@@ -411,27 +567,50 @@ module.exports = {
                       },
                   ],
                   "/es/dynamic/": [{
-                      title: "Dynamic Framework",
-                      collapsable: false,
+                      title: "Dynamic",
+                      path: "/es/dynamic/",
+                      collapsable: true,
                       children: [
-                          "/es/dynamic/",
+                          ["/es/dynamic/", "Introducción"],
+                          "/es/dynamic/overview",
                       ],
                   },
                   {
-                      title: "Framework",
-                      path: "/es/dynamic/framework/",
+                      title: "Guías",
+                      path: "/es/dynamic/getting-started/",
                       collapsable: true,
                       children: [
-                          "/es/dynamic/framework/",
-                          "/es/dynamic/framework/react",
-                          "/es/dynamic/framework/widgets",
-                          "/es/dynamic/framework/theming",
+                          "/es/dynamic/getting-started/installation",
+                          "/es/dynamic/getting-started/first-app",
+                          "/es/dynamic/getting-started/project-structure",
+                      ],
+                  },
+                  {
+                      title: "Desarrollo",
+                      path: "/es/dynamic/development/",
+                      collapsable: true,
+                      children: [
+                          "/es/dynamic/development/components",
+                          "/es/dynamic/development/experiences",
+                          "/es/dynamic/development/react-integration",
+                          "/es/dynamic/development/widgets",
+                          "/es/dynamic/development/api-integration",
+                      ],
+                  },
+                  {
+                      title: "Personalización",
+                      path: "/es/dynamic/customization/",
+                      collapsable: true,
+                      children: [
+                          "/es/dynamic/customization/theming",
+                          "/es/dynamic/customization/styling",
+                          "/es/dynamic/customization/extending",
                       ],
                   },
                   ],
                   "/es/architecture/": [{
                           title: "Arquitectura",
-                          collapsable: false,
+                          collapsable: true,
                           children: [
                               ["/es/architecture/", "Introducción"],
                               ["/es/architecture/why-modyo", "¿Por qué Modyo?"],

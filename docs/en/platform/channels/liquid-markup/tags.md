@@ -4,24 +4,24 @@ search: true
 
 # Tags
 
-Tags (tags) are used for template logic. Here is a list of currently supported tags:
+Tags are used for template logic. Here is a list of currently supported tags:
 
-* **assign** - Assigns a value to a variable
-* **capture** - Tag block that captures text to a variable.
-* **case** - Tag block, case standard statement.
-* **comment** - Block tag, comment on the text in the block.
-* **cycle** - Cycle is generally used within a loop to toggle between values, such as colors or DOM classes.
-* **for** - Loop for
-* **break** - Exits a loop
-* **continue** Skip the remaining code in the current loop and continue with the next loop.
-* **if** - Standard if/else block.
-* **include** - Includes another template; useful for partials
-* **raw** - Temporarily disable tag processing to avoid syntax conflicts.
-* **unless** - Copy of the if statement.
+- **assign**: Assigns a value to a variable.
+- **capture**: Block tag that captures text into a variable.
+- **case**: Block tag, standard `case` statement.
+- **comment**: Block tag, comments out text in the block.
+- **cycle**: Usually used within a loop to alternate between values, like colors or DOM classes.
+- **for**: `for` loop.
+- **break**: Exits a loop.
+- **continue**: Skips the remaining code in the current iteration and continues with the next loop iteration.
+- **if**: Standard `if/else` block.
+- **include**: Includes another template; useful for partials.
+- **raw**: Temporarily disables tag processing to avoid syntax conflicts.
+- **unless**: Mirror of the `if` statement.
 
 ### Comments
 
-Any content that is written between the tags `{% comment %}` and `{% endcomment %}` will be converted to a comment.
+Any content written between `{% comment %}` and `{% endcomment %}` tags will become a comment.
 
 ```liquid
 We made 1 million dollars {% comment %} in losses {% endcomment %} this year
@@ -29,8 +29,8 @@ We made 1 million dollars {% comment %} in losses {% endcomment %} this year
 
 ### Raw
 
-Raw is used to temporarily disable the tag process.
-This is useful for generating content (eg, Mustache, Handlebars) that can use conflicting syntax with other elements.
+Raw is used to temporarily disable tag processing.
+This is useful for generating content (e.g. Mustache, Handlebars) that may use conflicting syntax with other elements.
 
 ```liquid
 {% raw %}
@@ -38,38 +38,38 @@ This is useful for generating content (eg, Mustache, Handlebars) that can use co
 {% endraw %}
 ```
 
-### If/Else
+### If / else
 
-The `if/else` statements should be known from other programming languages. Liquid implements them with the following tags:
+`if / else` statements are common in other programming languages. Liquid implements them with the following tags:
 
-* `{% if <CONDITION> %} ... {% endif %}` — Attach a section of the template that will only be executed if the condition is true.
-* `{% elsif <CONDITION> %}` — Can optionally be used within an `if .... endif` block. Specifies another condition; If the initial "if" fails, Liquid tests the "elsif",, and if it passes, executes the next section of the template. Any number of elsif statements can be used in an `if` * `{% else %}` - Can be used within an `if... endif` block, _after_ any "elsif" tag. If all the above conditions fail, Liquid will execute the template section following the "else" tag.
-* `{% unless <CONDITION> %} ... {% endunless %}` — The reverse of an "if" statement. Do not use "elsif" or "else" with an unless statement.
+- `{% if <CONDITION> %}`: Attaches a section of the template that will only execute if the condition is `true`.
+- `{% elsif <CONDITION> %}`: Can optionally be used within an `if ... endif` block. Specifies another condition; if the initial `if` fails, Liquid tests the `elsif` and executes the following section of the template if it succeeds. Any number of `elsif` can be used in an `if` block.
+- `{% else %}`: Can optionally be used within an `if... endif` block, after any `elsif` tags. If all previous conditions fail, Liquid executes the template section following the `else` tag.
 
-The condition of an `if`,` elsif` or `unless` tag must be a normal Liquid expression or a _comparison_ using Liquid expressions. Note that relational operators are implemented using tags similar to "if"; they don't work anywhere else in Liquid.
+The condition of an `if`, `elsif` or `unless` tag must be a normal Liquid expression or a _comparison_ using Liquid expressions. Note that comparison operators are implemented through tags similar to `if`; they don't work anywhere else in Liquid.
 
 The available relational operators are:
 
-* `==,! =, `and` <> `— equal and unequal (the last two are synonyms)
-    * There is a special secret value "empty" (without quotes) to compare arrays; The comparison is true if the array has no items.
-* `<, <=, >, >=` — less/greater than
-* `contains` - a wrapper around Ruby's `include?` method, which is implemented in strings, arrays and hashes. If the left argument is a string and the right is not, this will convert the right to a string.
+- `==, !=,` and `<>`: Equal and not equal (the last two are synonyms).
+    * There is a special "empty" value (without quotes) that arrays can be compared to; the comparison is true if the array has no members.
+- `<, <=, >, >=`: Less than/greater than.
+- `contains`: A _wrapper_ around Ruby's `include?` method, implemented in strings, arrays and hashes. If the left argument is a string and the right one isn't, it converts the right one to string.
 
-The available Boolean operators are:
+The available boolean operators are:
 
-* `and`
-* `or`
+- `and`.
+- `or`.
 
-Note that there is NO "no" operator, and you CANNOT use parentheses to control the order of operations, as the precedence of each operator will appear unspecified. When in doubt, use nested "if" statements.
+Note that there is NO "not" operator, and you CANNOT use parentheses to control the order of operations, as operator precedence seems to be unspecified. When in doubt, use nested `if` statements.
 
-Liquid expressions are tested to determine their "truthiness" in similar to Ruby:
+Liquid expressions are tested to determine their "truthfulness" in what appears to be a Ruby-like way:
 
-* `true` is true
-* `false` is false.
-* Any string is true, including an empty string.
-* Any array is true.
-* Any hash is true.
-* Any non-existent/null value (as a missing part of a hash) is false.
+- `true` is true
+- `false` is false.
+- Any string is true, including an empty string.
+- Any array is true.
+- Any hash is true.
+- Any non-existent/null value (like a missing part of a hash) is false.
 
 ```liquid
 {% if user %}
@@ -150,9 +150,9 @@ Liquid expressions are tested to determine their "truthiness" in similar to Ruby
 {% endif %}
 ```
 
-### Case Statement
+### Case statement
 
-If you need to evaluate multiple conditions, you can use the "case" statement:
+If you need more conditions, you can use the "case" statement:
 
 ```liquid
 {% case condition %}
@@ -165,7 +165,7 @@ hit 2 or 3
 {% endcase %}
 ```
 
-*Example: *
+*Example:*
 
 ```liquid
 {% case template %}
@@ -181,7 +181,7 @@ hit 2 or 3
 
 ### Cycle
 
-You often have to alternate between different colors or similar tasks. Liquid has built-in support for such operations, using the `cycle` tag.
+Often you need to alternate between different colors or similar tasks. Liquid has built-in support for such operations, using the `cycle` tag.
 
 ```liquid
 {% cycle 'one', 'two', 'three' %}
@@ -200,10 +200,10 @@ one
 ```
 
 If no name is provided for the cycle group, then it is assumed that multiple
-Calls with the same parameters are a group.
+calls with the same parameters are one group.
 
-If you want to have full control over the cycle groups, you can optionally specify
-The name of the group. This can even be a variable.
+If you want to have full control over cycle groups, you can optionally specify
+the group name. This can even be a variable.
 
 ```liquid
 {% cycle 'group 1': 'one', 'two', 'three' %}
@@ -221,7 +221,7 @@ one
 two
 ```
 
-### For Loop
+### For loop
 
 Liquid allows `for` loops over collections:
 
@@ -231,11 +231,11 @@ Liquid allows `for` loops over collections:
 {% endfor %}
 ```
 
-#### Types of collections allowed
+#### Allowed collection types
 
-For loops can iterate over **arrays, hashes and integer ranges.**
+For loops can iterate over **arrays, hashes, and ranges of integers.**
 
-When iterating over a hash, `element[0]` contains the key, and `element[1]` contains the value:
+When iterating a hash, `item[0]` contains the key, and `item[1]` contains the value:
 
 ```liquid
 {% for item in hash %}
@@ -243,7 +243,7 @@ When iterating over a hash, `element[0]` contains the key, and `element[1]` cont
 {% endfor %}
 ```
 
-Instead of looping over an existing collection, you can also loop through a range of numbers. The ranges appear as `(1..10)`—parentheses that contain an initial value, two points and an end value. The initial and final values must be integers or expressions that are resolved to whole numbers.
+Instead of looping over an existing collection, you can also loop through a range of numbers. Ranges look like `(1..10)` - parentheses containing a start value, two periods, and an end value. The start and end values must be integers or expressions that resolve to integers.
 
 ```liquid
 # if item.quantity is 4...
@@ -255,10 +255,10 @@ Instead of looping over an existing collection, you can also loop through a rang
 
 #### Break and continue
 
-You can exit a loop early with the following tags:
+You can exit early from a loop with the following tags:
 
-* `{% continue%}` - immediately ends the current iteration, and continues the "for" loop with the following value.
-* `{% break%}` - immediately ends the current iteration, then exits the "for" loop.
+- `{% continue %}` - immediately ends the current iteration, and continues the "for" loop with the next value.
+- `{% break %}` - immediately ends the current iteration, then completely ends the "for" loop.
 
 Both are only useful when combined with something like an "if" statement.
 
@@ -269,13 +269,13 @@ Both are only useful when combined with something like an "if" statement.
     {% continue %}
 {% endif %}
 # If it's not hidden, print it.
-* [page.title](page.url)
+- [page.title](page.url)
 {% endfor %}
 ```
 
 ``` liquid
 {% for page in pages %}
-* [page.title](page.url)
+- [page.title](page.url)
 # After we reach the "cutoff" page, stop the list and get on with whatever's after the "for" loop:
 {% if cutoff_page == page.url %}
     {% break %}
@@ -283,9 +283,9 @@ Both are only useful when combined with something like an "if" statement.
 {% endfor %}
 ```
 
-#### Help variables
+#### Helper variables
 
-During each `for` loop, the following help variables are available for additional style needs:
+During each `for` loop, the following helper variables are available for additional styling needs:
 
 ```liquid
 forloop.length      # => length of the entire for loop
@@ -299,13 +299,13 @@ forloop.last        # => is this the last iteration?
 
 #### Optional arguments
 
-There are several optional arguments in the `for` tag that can influence the elements you receive in your loop and in the order in which they appear:
+There are several optional arguments to the `for` tag that can influence which items you receive in your loop and the order in which they appear:
 
-* `limit: <INTEGER> ` allows you to restrict the amount of objects to obtain.
-* `offset: <INTEGER> ` allows you to start the collection with the nth item.
-* `reversed` iterates over the collection from the last to the first.
+- `limit:<INTEGER>` allows you to restrict the number of items you get.
+- `offset:<INTEGER>` allows you to start the collection with the nth item.
+- `reversed` iterates over the collection from last to first.
 
-Restriction elements:
+Restricting elements:
 
 ```liquid
 # array = [1,2,3,4,5,6]
@@ -315,7 +315,7 @@ Restriction elements:
 # results in 3,4
 ```
 
-Loop Inversion:
+Reversing the loop:
 
 ```liquid
 {% for item in collection reversed %} {{item}} {% endfor %}
@@ -334,7 +334,7 @@ A for loop can take an optional `else` clause to display a block of text when th
 
 ### Variable assignment
 
-You can store data in your own variables and use them in output tags or any other tags you wish. The easiest way to create a variable is with the `assign` tag with simple syntax:
+You can store data in your own variables, for use in output tags or other tags as desired. The simplest way to create a variable is with the `assign` tag, which has a very straightforward syntax:
 
 ```liquid
 {% assign name = 'freestyle' %}
@@ -358,7 +358,7 @@ Another way to do this would be to assign `true/false` values to the variable:
 {% endif %}
 ```
 
-If you want to combine several strings into one and save it in one variable, you can do it with the `capture` tag, which "captures" whatever is displayed inside, and then assigns the captured value to the given variable.
+If you want to combine several strings into one and save it in a variable, you can do so with the `capture` tag, which "captures" whatever is displayed inside it, and then assigns the captured value to the given variable instead of displaying it on the screen.
 
 ```liquid
   {% capture attribute_name %}{{ item.title | handleize }}-{{ i }}-color{% endcapture %}

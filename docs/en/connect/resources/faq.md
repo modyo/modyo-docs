@@ -28,7 +28,7 @@ As an alternative, clients can consider their own implementation, utilizing thei
 ### How compatible is Modyo with integration solutions other than Modyo Connect?
 API implementation can be performed on any system that allows exposing HTTP(s) endpoints publicly. Endpoints containing private user information must have an authentication system based on JWT tokens, integrable via OIDC within the Modyo platform.
 
-### How does Modyo Connect integrate with different business systems (CRMs, ERPs, Core Systems, etc.)?
+### How does Modyo Connect integrate with different business systems (CRMs, ERPs, core systems, etc.)?
 
 Modyo Connect is a managed cloud platform service. It does not provide direct integration with external systems but supports the deployment of containers (microservices) responsible for such integration. For common integration microservices, Modyo provides its Enterprise clients with Java/Spring Boot code templates that can serve as a working base for development teams.
 
@@ -36,7 +36,7 @@ Modyo Connect is a managed cloud platform service. It does not provide direct in
 
 Modyo Connect is a managed service, entirely independent of the development services provided by Modyo Professional Services. All clients with a Modyo Connect service contract can directly access the development environments and submit requests for the incorporation or removal of elements.
 
-### Where does the source code for Widgets and microservices developed for Modyo Connect reside?
+### Where does the source code for widgets and microservices developed for Modyo Connect reside?
 
 Modyo Connect offers end-to-end managed DevOps services. Secure and private custody of Widget and microservice source code is included as part of the service through a Git repository accessible to enabled developers.
 

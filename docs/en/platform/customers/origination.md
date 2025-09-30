@@ -106,20 +106,20 @@ Modyo provides a JavaScript API for interacting with code snippets at run time.
 - **`getUrl()`**: Returns the URL of the current origination flow.
 - **`enableButton()`**: Enables the task's action button and allows the user to continue with the flow.
 
-### JSON API for Code Snippets
+### JSON API for code snippets
 
 Code Snippets can communicate with the origination API using data in **JSON** format.
 
-To get data stored in the current application, use the `getUrl()` method to build the request. To save information, a **POST request** must be made to the same URL.
+To get data stored in the current submission, use the `getUrl()` method to build the request. To save information, a **POST request** must be made to the same URL.
 
 
 #### JSON structure example
 
-When you consume data from the JSON API, you will get an object with all the data stored in the current application.
+When you consume data from the JSON API, you will get an object with all the data stored in the current submission.
 
 ```json
 {
-  "application": {
+  "submission": {
     "sequence_id": "12345",
     "fields": [
       {
@@ -152,33 +152,33 @@ To store information, the data must use valid JSON format; format errors will no
 
 ### Using Liquid in code snippets
 
-Code snippets can use liquid drops to access internal application data and personalize the user experience.
+Code snippets can use liquid objects to access internal submission data and personalize the user experience.
 
 
-#### Application Drops
+#### Submission Objects
 
-In an origination flow, each application represents the ongoing process of a specific user. Here are some of the main attributes available through Liquid:
+In an origination flow, each submission represents the ongoing process of a specific user. Here are some of the main attributes available through Liquid:
 
 | Description  | Example  |
-|---|
-| **application.sequence_id** Sequence number of the current application.  | ``` 77 ``` |
-| **application.assignee.name** Name of the assigned person.  | ```John``` |
-| **application.fields** Array with answers stored within the current application. | ```[{"question": {"label": "What's your name?"},"text_field": "Jorge Regula"}]``` |
-| **application.QUESTION_ID** By using the ID of a specific question (e.g., application.123456), its information is directly accessed | ```{"question": {"label": "What's your name?"},"text_field": "John Doe"}``` |
-| **application.origination.name** Name of the origination. | ```My Origination``` |
+|---|---|
+| **submission.sequence_id** Sequence number of the current submission.  | ``` 77 ``` |
+| **submission.assignee.name** Name of the assigned person.  | ```John``` |
+| **submission.fields** Array with answers stored within the current submission. | ```[{"question": {"label": "What's your name?"},"text_field": "Jorge Regula"}]``` |
+| **submission.QUESTION_ID** By using the ID of a specific question (e.g., submission.123456), its information is directly accessed | ```{"question": {"label": "What's your name?"},"text_field": "John Doe"}``` |
+| **submission.origination.name** Name of the origination. | ```My Origination``` |
 | **submission.origination.steps** Array with the names of the steps in the origination | ```[ {"uid": "step 1"}, {"uid": "step 2"}]``` |
 | **submission.origination.tasks** Array with all the tasks in the origination and the step they correspond to | ```[{"task_id": "67890","name": "Task 1", description: "step 1": { "uid": "abcd1234" } }]``` |
 
-You can learn more about [Liquid Drops](/platform/channels/drops.html) in our documentation.
+You can learn more about [Liquid Objects](/en/platform/channels/liquid-markup/objects.html) in our documentation.
 
 ### Code snippets example
 
-In this example, you can find the use of data access by Liquid Drops and interaction with JavaScript and JSON APIs. Remember to replace the `QUESTION_ID` value with the corresponding one in your application.
+In this example, you can find the use of data access by Liquid Objects and interaction with JavaScript and JSON APIs. Remember to replace the `QUESTION_ID` value with the corresponding one in your submission.
 
 ``` html
 <div class="form-group">
 	<h5>Hello, {{ user.name }}!</h5>
-	<p class="mb-6">You are in the origination {{ application.origination.name }}</p>
+	<p class="mb-6">You are in the origination {{ submission.origination.name }}</p>
 	<div class="form-group">
 		<label for="productDropdown" class="form-label">Select the brand of your favorite products <span class="req">*</span></label>
 		<select class="form-select" id="productDropdown" disabled>
@@ -193,8 +193,8 @@ In this example, you can find the use of data access by Liquid Drops and interac
 	async function initializeDropdown() {
 		const savedData = await getRequestJson();
 		let selectedValue = null;
-		if (savedData?.application?.fields?.[0]?.answers) {
-			const productAnswer = savedData.application.fields[0].answers.find(answer => answer.question.label === 'PRODUCT');
+		if (savedData?.submission?.fields?.[0]?.answers) {
+			const productAnswer = savedData.submission.fields[0].answers.find(answer => answer.question.label === 'PRODUCT');
 			selectedValue = productAnswer?.text_field;
 		}
 
@@ -235,12 +235,12 @@ In this example, you can find the use of data access by Liquid Drops and interac
 
 	async function sendData() {
 		const jsonData = {
-			"application": {
-				"sequence_id": "{{application.sequence_id}}",
+			"submission": {
+				"sequence_id": "{{submission.sequence_id}}",
 				"fields": [{ "answers": [{ "question": { "label": "PRODUCT" }, "text_field": dropdown.value }] }]
 			},
 			"task": { "task_id": "{{task.task_id}}", "step": { "uid": "{{task.step.uid}}" } },
-			"page": { "name": "{{application.origination.name}}" }
+			"page": { "name": "{{submission.origination.name}}" }
 		};
 		await postRequestJson(jsonData);
 	}
@@ -284,7 +284,7 @@ In this example, you can find the use of data access by Liquid Drops and interac
 </script>
 ```
 
-:::tip Tip
+:::tip Valid JSON
 The content parameter that is sent must be a valid json. If it has to be empty, {} must be sent.
 :::
 ### Fields
@@ -317,11 +317,11 @@ In this section, you can edit the values of the selected task. You can find thes
 - **Description**: A brief explanatory text about the task, which will be visible to the user.
 ### Conditional Logic
 
-Conditional logic allows you to create more dynamic and intelligent workflows. With this functionality, you can define rules for showing or hiding **Steps**, **Tasks**, and **Input task fields** based on answers provided by users or on existing data within the application. This allows you to personalize the user experience, presenting only relevant information at each stage of the process and simplifying or bifurcating the interaction. Conditional logic gives you the flexibility to:
+Conditional logic allows you to create more dynamic and intelligent workflows. With this functionality, you can define rules for showing or hiding **Steps**, **Tasks**, and **Input task fields** based on answers provided by users or on existing data within the submission. This allows you to personalize the user experience, presenting only relevant information at each stage of the process and simplifying or bifurcating the interaction. Conditional logic gives you the flexibility to:
 
-* **Hide or show complete steps:** Guides users through different paths within the origination flow based on their previous answers.
-* **Hide or show individual tasks:** Within a step, you can show or hide specific tasks. This is useful for requesting additional information only when needed.
-* **Hide or show Input task fields:** Within an Input task, you can show or hide specific fields. This allows you to omit or request data based on the answers provided by the user.
+- **Hide or show complete steps:** Guides users through different paths within the origination flow based on their previous answers.
+- **Hide or show individual tasks:** Within a step, you can show or hide specific tasks. This is useful for requesting additional information only when needed.
+- **Hide or show Input task fields:** Within an Input task, you can show or hide specific fields. This allows you to omit or request data based on the answers provided by the user.
 
 #### Configure Conditional Logic
 
@@ -337,7 +337,9 @@ To set up conditional logic, follow these steps:
    3. **Define the action:** Select the action and the element on which it will be executed when the rule is met. The available actions are **Show** and **Hide**.
 4. **Save the changes:** Once you have defined your rules, save the changes.
 
-:::tip Consider how conditional logic can affect the user experience and ensure that the flow can be completed. :::
+:::tip User experience
+Consider how conditional logic can affect the user experience and ensure that the flow can be completed.
+:::
 
 ### Edit origination settings
 
@@ -346,9 +348,9 @@ By selecting the **Edit** option in the context menu of your origination, you ca
 - **Name**: Defines the name of the origination, visible to users in the interface.
 - **Description**: Includes a brief explanatory text about the purpose of the origination.
 - **Completed message**: This is the message that will appear to the user at the end of the origination process.
-- **Default application assignee**: specifies the person who will be automatically assigned when receiving a new origination.
+- **Default submission assignee**: specifies the person who will be automatically assigned when receiving a new origination.
 - **Due In**: Sets a maximum deadline for completing origination.
-- **Completion Rules**: Defines the completion behavior for each application.
+- **Completion Rules**: Defines the completion behavior for each submission.
 - **Privacy**: Allows you to restrict access to the origination flow to certain predefined user segments.
 
 #### Delete origination
@@ -367,7 +369,7 @@ This process is irreversible.
 By accessing a specific origination, you can view relevant metrics and data based on the view you select. These views allow you to efficiently analyze and manage the information associated with the origination.
 
 - **Summary**: Presents an overview of the key metrics associated with the origination, providing a quick view of performance and progress.
-- **Applications**: Shows a detailed list of all applications made within this origination. It is ideal for reviewing the history and status of each request.
+- **Submissions**: Shows a detailed list of all submissions made within this origination. It is ideal for reviewing the history and status of each request.
 - **Assignees**: Provides a list of the people assigned to this origination, along with their management metrics, making it easier to track performance and workload.
 
 ### Origination Overview
@@ -381,33 +383,33 @@ The overview of an origination gives you a summary of key metrics related to the
 
 ### Submission management
 
-The application view allows you to individually review and manage the status and information of each application at this origin. You can select a specific application to access its details and manage its key elements.
+The submission view allows you to individually review and manage the status and information of each submission at this origin. You can select a specific submission to access its details and manage its key elements.
 
 In the details view, you will find the following main sections:
 
-- **Details**: General information about the application, such as the name, description, and current status.
+- **Details**: General information about the submission, such as the name, description, and current status.
 - **Tasks**: List of tasks associated with the origination flow, along with their progress status.
 - **Fields**: Fields configured in the flow to collect user information.
 - **Documents**: Files uploaded by users or required for the origination process.
 - **Signatures**: Tracking of the digital signatures collected during the flow.
 - **Validations**: Validations carried out by administrators to authorize progress.
-- **Activity**: Record of activities and changes made to the application, useful for monitoring and auditing.
+- **Activity**: Record of activities and changes made to the submission, useful for monitoring and auditing.
 
-This structure provides you with a comprehensive and detailed view of each application, allowing you to effectively manage all aspects related to the applications.
+This structure provides you with a comprehensive and detailed view of each submission, allowing you to effectively manage all aspects related to the submissions.
 
-#### Assign application
+#### Assign submission
 
-In the list of applications, select the actions menu and press the **Assign** option. In the context menu, select an administrator for this application.
+In the list of submissions, select the actions menu and press the **Assign** option. In the context menu, select an administrator for this submission.
 
-#### Cancel application
+#### Cancel submission
 
-Select an application and press the context menu. By selecting the **Cancel** option to permanently change the status of an application to canceled.
+Select a submission and press the context menu. By selecting the **Cancel** option to permanently change the status of a submission to canceled.
 
-#### Delete application
+#### Delete submission
 
-To delete an individual application, select the menu in the actions column and press the delete option. This will delete the application.
+To delete an individual submission, select the menu in the actions column and press the delete option. This will delete the submission.
 
-To delete several applications at the same time, select each entry by checking the corresponding box and press the delete button.
+To delete several submissions at the same time, select each entry by checking the corresponding box and press the delete button.
 
 #### Invite users
 
@@ -416,13 +418,13 @@ You can invite users to enter information in an origination. When inviting a use
 - **Name**: The first name of the user who will use the origination.
 - **Surname**: The last name of the user.
 - **Email**: The user's email address, where they will receive the invitation to access the origination.
-- **Assign the application**: In the drop-down list, select an administrator who will manage this particular origination. If an administrator is not selected, the application will remain unassigned.
+- **Assign the submission**: In the drop-down list, select an administrator who will manage this particular origination. If an administrator is not selected, the submission will remain unassigned.
 
 ### Assignee management
 
-In the assignee view, you can monitor and manage the administrators responsible for the applications within a realm. This view facilitates the tracking of performance and workload of administrators. You can filter the assigned apps by date ranges.
+In the assignee view, you can monitor and manage the administrators responsible for the submissions within a realm. This view facilitates the tracking of performance and workload of administrators. You can filter the assigned submissions by date ranges.
 
-By selecting an administrator, you will be able to see all the applications assigned to them and their corresponding status.
+By selecting an administrator, you will be able to see all the submissions assigned to them and their corresponding status.
 
 ## Create an origination page
 

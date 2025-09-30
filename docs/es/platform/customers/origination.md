@@ -12,7 +12,7 @@ Esta funcionalidad no está incluida por defecto en todos los planes de Modyo. P
 
 Origination está diseñado para cualquier organización que busque agilizar procesos complejos, mejorar la colaboración entre los involucrados y asegurar que el flujo de trabajo se gestione de manera estructurada y segura.
 
-## Crear una nueva originación
+## Crear una Nueva Originación
 
 Para crear una nueva originación, sigue estos pasos:
 
@@ -111,16 +111,16 @@ Modyo proporciona una API en JavaScript para interactuar con los code snippets e
 
 Los Code Snippets pueden comunicarse con la API de originación utilizando datos en formato **JSON**.
 
-Para obtener datos almacenados en la aplicación actual, usa el método `getUrl()` para construir la solicitud. Para guardar información, se debe realizar una **petición POST** a la misma URL.
+Para obtener datos almacenados en la respuesta actual, usa el método `getUrl()` para construir la solicitud. Para guardar información, se debe realizar una **petición POST** a la misma URL.
 
 
 #### Ejemplo de estructura JSON
 
-Cuando consumes datos de la API JSON obtendrás un objeto con todas los datos almacenados en la aplicación actual.
+Cuando consumes datos de la API JSON obtendrás un objeto con todas los datos almacenados en la respuesta actual.
 
 ```json
 {
-  "application": {
+  "submission": {
     "sequence_id": "12345",
     "fields": [
       {
@@ -153,33 +153,33 @@ Para almacenar información, los datos deben utilizar formato JSON válido, los 
 
 ### Uso de Liquid en code snippets
 
-Los code snippets pueden utilizar drops de liquid para acceder a datos internos de la aplicación y personalizar la experiencia del usuario.
+Los code snippets pueden utilizar objetos de liquid para acceder a datos internos de la respuesta y personalizar la experiencia del usuario.
 
 
-#### Application Drops
+#### Submission Objetos
 
-En un flujo de originación, cada aplicación representa el proceso en curso de un usuario específico. Estos son algunos de los principales atributos disponibles a través de Liquid:
+En un flujo de originación, cada respuesta representa el proceso en curso de un usuario específico. Estos son algunos de los principales atributos disponibles a través de Liquid:
 
 | Descripción  | Ejemplo  |
 |---|---|
-| **application.sequence_id** Número de secuencia de la actual aplicación.  | ``` 77 ``` |
-| **application.assignee.name** Nombre de la persona asignada.  | ```John``` |
-| **application.fields** Array con respuestas almacenadas dentro de la aplicación actual. | ```[{"question": {"label": "What's your name?"},"text_field": "Jorge Regula"}]``` |
-| **application.QUESTION_ID** Al usar el ID de una pregunta específica ( ej: aplication.123456) se accede directamente a su información | ```{"question": {"label": "What's your name?"},"text_field": "John Doe"}``` |
-| **application.origination.name** Nombre de la originación. | ```My Origination``` |
-| **application.origination.steps** Array con los nombres de los steps en la originación | ```[ {"uid": "step 1"}, {"uid": "step 2"}]``` |
-| **application.origination.tasks** Array con todos los tasks en la originación y el step al que corresponden | ```[{"task_id": "67890","name": "Task 1", description: "step 1": { "uid": "abcd1234" } }]``` |
+| **submission.sequence_id** Número de secuencia de la actual respuesta.  | ``` 77 ``` |
+| **submission.assignee.name** Nombre de la persona asignada.  | ```John``` |
+| **submission.fields** Array con los campos almacenados dentro de la respuesta actual. | ```[{"question": {"label": "What's your name?"},"text_field": "Jorge Regula"}]``` |
+| **submission.QUESTION_ID** Al usar el ID de una pregunta específica ( ej: submission.123456) se accede directamente a su información | ```{"question": {"label": "What's your name?"},"text_field": "John Doe"}``` |
+| **submission.origination.name** Nombre de la originación. | ```My Origination``` |
+| **submission.origination.steps** Array con los nombres de los steps en la originación | ```[ {"uid": "step 1"}, {"uid": "step 2"}]``` |
+| **submission.origination.tasks** Array con todos los tasks en la originación y el step al que corresponden | ```[{"task_id": "67890","name": "Task 1", description: "step 1": { "uid": "abcd1234" } }]``` |
 
-Puedes aprender más sobre [Liquid Drops](/es/platform/channels/drops) en nuestra documentación.
+Puedes aprender más sobre [Objetos Liquid](/es/platform/channels/liquid-markup/objects) en nuestra documentación.
 
 ### Ejemplo de Code Snippets
 
-En este ejemplo puede encontrar en uso el  acceso a datos por Drops de Liquid e interacción con la APIs de JavaScript y JSON. Recuerda reemplazar el valor `QUESTION_ID` por el correspondiente en tu aplicación.
+En este ejemplo puede encontrar en uso el  acceso a datos por Objetos de Liquid e interacción con la APIs de JavaScript y JSON. Recuerda reemplazar el valor `QUESTION_ID` por el correspondiente en tu respuesta.
 
 ``` html
 <div class="form-group">
 	<h5>Hola, {{ user.name }}!</h5>
-	<p class="mb-6">Estas en la originacion {{ application.origination.name }}</p>
+	<p class="mb-6">Estas en la originacion {{ submission.origination.name }}</p>
 	<div class="form-group">
 		<label for="productDropdown" class="form-label">Selecciona la marca de tus productos favoritos <span class="req">*</span></label>
 		<select class="form-select" id="productDropdown" disabled>
@@ -194,8 +194,8 @@ En este ejemplo puede encontrar en uso el  acceso a datos por Drops de Liquid e 
 	async function initializeDropdown() {
 		const savedData = await getRequestJson();
 		let selectedValue = null;
-		if (savedData?.application?.fields?.[0]?.answers) {
-			const productAnswer = savedData.application.fields[0].answers.find(answer => answer.question.label === 'PRODUCT');
+		if (savedData?.submission?.fields?.[0]?.answers) {
+			const productAnswer = savedData.submission.fields[0].answers.find(answer => answer.question.label === 'PRODUCT');
 			selectedValue = productAnswer?.text_field;
 		}
 
@@ -236,12 +236,12 @@ En este ejemplo puede encontrar en uso el  acceso a datos por Drops de Liquid e 
 
 	async function sendData() {
 		const jsonData = {
-			"application": {
-				"sequence_id": "{{application.sequence_id}}",
+			"submission": {
+				"sequence_id": "{{submission.sequence_id}}",
 				"fields": [{ "answers": [{ "question": { "label": "PRODUCT" }, "text_field": dropdown.value }] }]
 			},
 			"task": { "task_id": "{{task.task_id}}", "step": { "uid": "{{task.step.uid}}" } },
-			"page": { "name": "{{application.origination.name}}" }
+			"page": { "name": "{{submission.origination.name}}" }
 		};
 		await postRequestJson(jsonData);
 	}
@@ -284,7 +284,7 @@ En este ejemplo puede encontrar en uso el  acceso a datos por Drops de Liquid e 
 	});
 </script>
 ```
-:::tip Tip
+:::tip JSON válido
 El parámetro content que se envía tiene que ser un json válido. En caso de que tenga que ser vacío se tiene que enviar {}.
 :::
 ### Campos
@@ -317,11 +317,11 @@ En este apartado se pueden editar los valores de la tarea seleccionada, puedes e
 - **Descripción**: Un breve texto explicativo sobre la tarea, que será visible para el usuario.
 ### Lógica Condicional
 
-La lógica condicional te permite crear flujos de trabajo más dinámicos e inteligentes. Con esta funcionalidad, puedes definir reglas para mostrar u ocultar **Pasos**, **Tareas** y **campos de tareas Input** basándote en las respuestas proporcionadas por los usuarios o en datos existentes dentro de la aplicación. Esto te permite personalizar la experiencia del usuario, presentando solo la información relevante en cada etapa del proceso y simplificando o bifurcando la interacción. La lógica condicional te ofrece la flexibilidad de:
+La lógica condicional te permite crear flujos de trabajo más dinámicos e inteligentes. Con esta funcionalidad, puedes definir reglas para mostrar u ocultar **Pasos**, **Tareas** y **campos de tareas Input** basándote en las respuestas proporcionadas por los usuarios o en datos existentes dentro de la respuesta. Esto te permite personalizar la experiencia del usuario, presentando solo la información relevante en cada etapa del proceso y simplificando o bifurcando la interacción. La lógica condicional te ofrece la flexibilidad de:
 
-* **Ocultar o mostrar pasos completos:** Dirige a los usuarios a través de diferentes caminos dentro del flujo de originación según sus respuestas previas.
-* **Ocultar o mostrar tareas individuales:** Dentro de un paso, puedes mostrar u ocultar tareas específicas. Esto es útil para solicitar información adicional solo cuando es necesaria.
-* **Ocultar o mostrar campos de tareas Input:** Dentro de una tarea de tipo Input, puedes mostrar u ocultar campos específicos. Esto te permite omitir o solicitar datos de acuerdo a las respuestas que proporciona el usuario. 
+- **Ocultar o mostrar pasos completos:** Dirige a los usuarios a través de diferentes caminos dentro del flujo de originación según sus respuestas previas.
+- **Ocultar o mostrar tareas individuales:** Dentro de un paso, puedes mostrar u ocultar tareas específicas. Esto es útil para solicitar información adicional solo cuando es necesaria.
+- **Ocultar o mostrar campos de tareas Input:** Dentro de una tarea de tipo Input, puedes mostrar u ocultar campos específicos. Esto te permite omitir o solicitar datos de acuerdo a las respuestas que proporciona el usuario. 
 
 #### Configurar Lógica Condicional
 
@@ -337,18 +337,20 @@ Para configurar la lógica condicional, sigue estos pasos:
    3. **Define la acción:** Selecciona la acción y el elemento sobre el cual se ejecutará cuando la regla se cumpla. Las acciones disponibles son **Mostrar** y **Ocultar**.
 4. **Guarda los cambios:** Una vez que hayas definido tus reglas, guarda los cambios.
 
-:::tip Considera cómo la lógica condicional puede afectar la experiencia del usuario y asegúrate de que el flujo se pueda completar. :::
+:::tip Experiencia de usuario
+Considera cómo la lógica condicional puede afectar la experiencia del usuario y asegúrate de que el flujo pueda ser completado con facilidad. 
+:::
 
-### Editar Configuración de la Originación
+### Editar configuración de la originación
 
 Al seleccionar la opción **Editar** en el menu contextual de tu orignación puedes editar sus propiedades.
 
 - **Nombre**: Define el nombre de la originación, visible para los usuarios en la interfaz.
 - **Descripción**: Incluye un breve texto explicativo sobre el propósito de la originación.
 - **Mensaje de completado**: Es el mensaje que aparecerá al usuario al finalizar el proceso de originación.
-- **Asignado por defecto de la aplicación**: especifica la persona que será asignada automáticamente al recibir una nueva originación.
+- **Asignado por defecto de la respuesta**: especifica la persona que será asignada automáticamente al recibir una nueva originación.
 - **Vence en**:  Establece un plazo máximo para completar la originación.
-- **Reglas de completado**:  Define el comportamiento de completado para cada aplicación.
+- **Reglas de completado**:  Define el comportamiento de completado para cada respuesta.
 - **Privacidad**: Permite restringir el acceso al flujo de originación a ciertos segmentos de usuarios predefinidos.
 
 #### Eliminar originación
@@ -362,12 +364,12 @@ Si necesitas eliminar una originación de forma permanente:
 Este proceso es irreversible.
 :::
 
-### Ver Detalles de una Originación
+### Ver detalles de una originación
 
 Al acceder a una originación específica, puedes visualizar métricas y datos relevantes en función de la vista que selecciones. Estas vistas te permiten analizar y gestionar de manera eficiente la información asociada con la originación.
 
 - **Resumen**: Presenta un panorama general de las métricas principales asociadas a la originación, proporcionando una visión rápida del rendimiento y progreso.
-- **Aplicaciones**: Muestra un listado detallado de todas las aplicaciones realizadas dentro de esta originación. Es ideal para revisar el historial y el estado de cada solicitud.
+- **Respuestas**: Muestra un listado detallado de todas las respuestas realizadas dentro de esta originación. Es ideal para revisar el historial y el estado de cada solicitud.
 - **Asignados**: Proporciona un listado de las personas asignadas a esta originación, junto con sus métricas de gestión, lo que facilita el seguimiento del desempeño y la carga de trabajo.
 
 ### Resumen de Originación
@@ -379,35 +381,35 @@ La vista resumen de una originación te ofrece un resumen de las métricas clave
 - **Canceladas**: Refleja las solicitudes que han sido canceladas por el usuario o el administrador.
 - **Total**: Representa el número total de solicitudes, incluyendo las pendientes, completadas y canceladas.
 
-### Gestión de Aplicaciones
+### Gestión de Respuestas
 
-La vista de aplicaciones te permite revisar y administrar individualmente el estado e información de cada aplicación a esta originación. Puedes seleccionar una aplicación específica para acceder a sus detalles y gestionar sus elementos clave.
+La vista de respuestas te permite revisar y administrar individualmente el estado e información de cada respuesta a esta originación. Puedes seleccionar una respuesta específica para acceder a sus detalles y gestionar sus elementos clave.
 
 En la vista de detalles, encontrarás las siguientes secciones principales:
 
-- **Detalles**: Información general de la aplicación, como el nombre, descripción y estado actual.
+- **Detalles**: Información general de la respuesta, como el nombre, descripción y estado actual.
 - **Tareas**: Listado de tareas asociadas al flujo de originación, junto con su estado de avance.
 - **Campos**: Campos configurados en el flujo para recopilar información del usuario.
 - **Documentos**: Archivos subidos por los usuarios o necesarios para el proceso de originación.
 - **Firmas**: Seguimiento de las firmas digitales recolectadas durante el flujo.
 - **Validaciones**: Validaciones realizadas por los administradores para autorizar el progreso.
-- **Actividad**: Registro de actividades y cambios realizados en la aplicación, útil para seguimiento y auditoría.
+- **Actividad**: Registro de actividades y cambios realizados en la respuesta, útil para seguimiento y auditoría.
 
-Esta estructura te brinda una visión integral y detallada de cada aplicación, permitiéndote gestionar de manera efectiva todos los aspectos relacionados con las aplicaciones.
+Esta estructura te brinda una visión integral y detallada de cada respuesta, permitiéndote gestionar de manera efectiva todos los aspectos relacionados con las respuestas.
 
-#### Asignar aplicación
+#### Asignar respuesta
 
-En el listado de aplicaciones, selecciona el menú acciones y presiona la opción **Asignar**. En el menú contextual selecciona a un administrador para esta aplicación.
+En el listado de respuestas, selecciona el menú acciones y presiona la opción **Asignar**. En el menú contextual selecciona a un administrador para esta respuesta.
 
-#### Cancelar aplicación
+#### Cancelar respuesta
 
-Selecciona una aplicación y presiona el menu contextual. Al seleccionar la opción **Cancelar** para modificar permanentemente el estatus de una aplicación a cancelado.
+Selecciona una respuesta y presiona el menu contextual. Al seleccionar la opción **Cancelar** para modificar permanentemente el estatus de una respuesta a cancelado.
 
-#### Eliminar aplicación
+#### Eliminar respuesta
 
-Para eliminar una aplicación individual, selecciona el menú en la columna actions y presiona la opción delete. Esto eliminará la aplicación.
+Para eliminar una respuesta individual, selecciona el menú en la columna actions y presiona la opción delete. Esto eliminará la respuesta.
 
-Para eliminar varias aplicaciones al mismo tiempo, selecciona cada entrada marcando la casilla correspondiente y presiona el botón eliminar.
+Para eliminar varias respuestas al mismo tiempo, selecciona cada entrada marcando la casilla correspondiente y presiona el botón eliminar.
 
 #### Invitar usuarios
 
@@ -416,13 +418,13 @@ Puedes invitar a usuarios para que ingresen información en una originación. Al
 - **Nombre**: El primer nombre del usuario que utilizará la originación.
 - **Apellido**: El apellido del usuario.
 - **Email**: La dirección de correo electrónico del usuario, donde recibirá la invitación para acceder a la originación.
-- **Asignar la aplicación**: En la lista desplegable, selecciona un administrador que gestionará esta originación en particular. Si no se selecciona un administrador, la aplicación quedará sin asignar.
+- **Asignar la respuesta**: En la lista desplegable, selecciona un administrador que gestionará esta originación en particular. Si no se selecciona un administrador, la respuesta quedará sin asignar.
 
 ### Gestión de Asignados
 
-En la vista de asignados,  puedes  monitorear y administrar a los administradores responsables de las aplicaciones dentro de un reino. Esta vista facilita el seguimiento del desempeño y la carga de trabajo de los administradores. Puedes filtrar las aplicaciones asignadas por rangos de fecha
+En la vista de asignados,  puedes  monitorear y administrar a los administradores responsables de las respuestas dentro de un reino. Esta vista facilita el seguimiento del desempeño y la carga de trabajo de los administradores. Puedes filtrar las respuestas asignadas por rangos de fecha
 
-Al seleccionar un administrador, podrás ver todas las aplicaciones que tiene asignadas y su correspondiente status
+Al seleccionar un administrador, podrás ver todas las respuestas que tiene asignadas y su correspondiente status
 
 ## Crear una Página de Originación
 

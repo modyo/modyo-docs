@@ -1,0 +1,28 @@
+---
+search: true
+---
+
+# SSL/TLS Certificates
+
+SSL/TLS certificates ensure secure encryption for all in-transit operations from the service's HTTPS endpoints. They can be activated at the load balancer, CDN, and API Gateway levels.
+
+To generate and keep SSL/TLS certificates updated, Modyo Connect uses AWS Certificate Manager (ACM) and Cloudflare. Generated certificates may require domain verification, which must be performed by the client by incorporating CNAME or TXT DNS records indicated in the generation process, as applicable.
+
+:::warning Private key security
+Modyo does not have access to the private keys of certificates issued by AWS ACM and Cloudflare, nor can they be used outside of the services supported in the account configured for the client.
+:::
+
+## Activation Steps
+
+To request the issuance of a TLS certificate, the domains or subdomains to be included must be indicated. The applicant must first ensure they have access to the DNS management panel for the domain or have the availability of the person who has access. Additionally, the client can select a [security policy](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies) for the certificate.
+
+At the time of the request, Modyo will issue a "pending validation" certificate that requires validation via DNS records.
+
+:::warning Domain validation by DNS
+DNS records used for certificate validation should not be deleted, as AWS ACM and Cloudflare will use them for periodic renewal. It is the client's responsibility to ensure the existence of these records in their DNS system.
+:::
+
+Additional considerations:
+
+- Modyo does not recommend the use of wildcard certificates (*.domain.com) within the services.
+- Modyo uses the encryption policy recommended by AWS, which guarantees security and maintains some compatibility with older devices. If the client wishes to activate more secure [encryption policies](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies) (at the risk of decreasing compatibility), this must be specified in the ticket.

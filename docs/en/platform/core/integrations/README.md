@@ -31,16 +31,16 @@ Modyo supports integration to SSO systems in two ways:
 For more information on these integrations, see the [Identity Providers](https://docs.modyo.com/en/platform/core/integrations/identity-providers) section.
 
 
-### Messaging Integration
+### Messaging integration
 Integration with messaging systems allows the sending of notification messages and marketing campaigns to end users who are enabled within a realm in Modyo Customers.
 
 We currently support the following messaging channels:
-* Email
-* SMS
-* Whatsapp for Business
-* Web Push
-* Push
-* Web application notifications.
+- Email
+- SMS
+- Whatsapp for Business
+- Web Push
+- Push
+- Web application notifications.
 
 Integration microservices can also send notifications to users and track users using the Modyo Customers messaging API.
 
@@ -71,7 +71,7 @@ Web sites and applications built on Modyo can be natively integrated into a larg
 
 The following correspond to the most commonly requested integrations.
 
-### Analytics Tools
+### Analytics tools
 Web analytics tools integrated into each of the pages of a site by including scripts within the decorators or layouts. In this category we can mention tools such as:
 - Google Analytics
 - Google Tag Manager
@@ -82,21 +82,21 @@ Web analytics tools integrated into each of the pages of a site by including scr
 
 By using Liquid specific tags, Modyo Channels is able to interpolate context information to tracking events, such as username, email, unique identifiers, segments to which the user belongs, among many others.
 
-### Marketing Tools
+### Marketing tools
 Digital marketing tools that allow altering the user experience according to previously established rules, such as A/B testing or similar. In this category we can mention tools such as:
 
 - SalesForce Marketing Cloud
 
 By accessing the source code of the pages and widgets that make up the Web site or application, Modyo Channels allows the inclusion of special brands in each HTML component that make the use of this type of digital marketing tools more efficient.
 
-### Chat Tools
+### Chat tools
 Chat tools are commonly used in support or conversational marketing actions. The integration of these components is done using a Javascript code that installs the communication agent on the website, typically in an area of the screen that does not interrupt the display of content. In this category we can mention tools such as:
 - Intercom
 - Drift
 - Zendesk Chat
 - SalesForce Service Cloud
 
-### Product Management Tools
+### Product management tools
 Product management tools are implemented using Javascript codes that are installed in different locations on the page depending on the purpose. This allows you to integrate features such as product tours, NPS capture, feedback, and capture metrics oriented to authenticated users. In this category we can mention tools such as:
 - Pendo
 - Qualtrics

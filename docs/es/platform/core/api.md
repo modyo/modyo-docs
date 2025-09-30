@@ -2,14 +2,14 @@
 search: true
 ---
 
-# API de administración
+# API de Administración
 
 Además de la funcionalidad que provee la plataforma Modyo, esta cuenta con una API administrativa. Te permite, de forma autenticada, acceder externamente a distintas acciones como listar, crear y eliminar elementos como formularios, layouts, contenido, campos personalizados, menús de navegación, campañas de correo, entre otros.
 
 De esta forma, es posible realizar labores administrativas consumiendo la API y sin depender de la interfaz de Modyo, lo que te otorga mayor libertad para controlar tu trabajo.
 
-:::danger Peligro
-Es importante asegurarse que el portal de APIs no sea expuesto de manera pública a Internet. Las llamadas hacia las APIs deben realizarse desde un ambiente seguro usando los protocolos de seguridad adecuados (HTTPS) y evita compartir los tokens de autenticación.
+:::warning Permisos 
+La API Key generada para un usuario, heredará los mismos permisos que tenga él por sobre la consola de administración.
 :::  
 
 ## Información General
@@ -58,7 +58,7 @@ Con estos datos puedes recorrer fácilmente los datos de un servicio determinado
 
 También cada API cuenta con un listado de posibles _responses_ que obtienes al invocar estos métodos, de forma que puedas preparar adecuadamente tu aplicación para manejar los datos.
 
-### Example Value
+### Example value
 
 Dentro de la sección __Response__, en **Example Value** obtienes un ejemplo de listado de espacios cuando la respuesta es 200:     
 
@@ -107,7 +107,7 @@ Al hacer click en **Model**, verás la estructura JSON que compone la respuesta,
 
 Adicionalmente se muestran posibles casos de fallo que pueden ocurrir para poder controlarlos adecuadamente.
 
-### Listado de Modelos
+### Listado de modelos
 
 Al final de la documentación, encontrarás una sección llamada "Models" que contiene todos los modelos involucrados en la documentación. Estos te permiten comprender los recursos disponibles y sus atributos utilizados en las APIs.
 
@@ -260,12 +260,12 @@ Para utilizar la API de Modyo, es necesario primero poder autenticar a un usuari
 
 Modyo provee 2 posibles métodos de autenticación para invocar la API:
 
-* Bearer Token
-* Cookie de sesión del admin
+- Bearer Token
+- Cookie de sesión del admin
 
 A continuación, se explica como utilizar cada uno de estos métodos
 
-### Bearer Token
+### Bearer token
 
 Lo primero que debes realizar, es registrar la aplicación para consumir la API. Sigue estos pasos para crear un nuevo Bearer Token:
 
@@ -349,7 +349,7 @@ curl  GET https://test.modyo.com/api/admin/roles -v
 ....
 ```
 
-### Cookie session de admin
+### Cookie de sesión de admin
 
 Si estás usando Modyo desde un navegador web y tienes una sesión iniciada como administrador, entonces podrás acceder desde el mismo navegador a las URLs de la API. Podrás hacer _requests_ simplemente por contar con la cookie de sesión en la parte administrativa de la plataforma.
 
@@ -483,10 +483,10 @@ El objeto `meta` contiene la información relevante para poder recorrer una gran
 
 Los 4 atributos son:
 
-* `total_entries`: El número total de items del recurso consultado
-* `per_page`: La cantidad de items que se entregarán por cada página
-* `current_page`: La ventana actual de datos
-* `total_pages`: El total de páginas, o grupos de elementos que puedes consultar.
+- `total_entries`: El número total de items del recurso consultado
+- `per_page`: La cantidad de items que se entregarán por cada página
+- `current_page`: La ventana actual de datos
+- `total_pages`: El total de páginas, o grupos de elementos que puedes consultar.
 
 En el ejemplo anterior, aparte de contar con los primeros 10 registros, existen un total de 1078 entradas, agrupadas en 108 páginas. Si quieres obtener la segunda página de estos datos, se necesita agregar el parámetro `page` con valor igual a 2, invocando nuevamente la URL. Para modificar la cantidad de registros por página, agrega el parámetro `per_page` con el valor deseado.
 

@@ -1,11 +1,17 @@
 ---
 search: true
-sidebarDepth: 2
 ---
 
-# Variables globales
+# Variables Globales
 
-Modyo ofrece la funcionalidad de definir elementos globalmente y reutilizarlos en todos los sitios que utilizan Liquid, permitiendo compartir código entre diferentes sitios.
+En Modyo Channels, las variables son elementos clave para crear contenido dinámico y reutilizable. Funcionan dentro del motor de plantillas de Modyo, que utiliza Liquid Markup, un lenguaje de plantillas simple y seguro.
+
+Las variables en Modyo Channels no son solo un concepto de programación; son una funcionalidad de la plataforma que te permite:
+- **Reutilizar información**: Definir valores que pueden ser utilizados en múltiples lugares, como plantillas, widgets y páginas, sin tener que escribir el mismo código una y otra vez.
+- **Personalizar el contenido**: Insertar datos que cambian (como nombres de usuarios, títulos de artículos, precios de productos) en tus plantillas para que la experiencia del usuario sea personalizada.
+- **Gestionar configuraciones globales**: Controlar aspectos de diseño o funcionalidad de manera centralizada.
+
+Modyo ofrece la funcionalidad de definir variables globalmente y reutilizarlas en todos las aplicaciones que utilizan Liquid, permitiendo compartir código entre diferentes sitios.
 
 :::tip Tip
 Puedes usar texto plano, HTML, JavaScript y CSS dentro de las variables globales; sin embargo, no puedes usar código Liquid. El contenido tiene un máximo de 65.535 caracteres.

@@ -39,7 +39,7 @@ You can only select a site that belongs to the same realm, within the **Site Set
 After a division, you will be able to see the options to modify the redirect after a user answers the form.
 
 - **Default options**: After answering the form, the user is redirected to the home of the site associated with the form.
-- **Redirect URL**: Allows you to enter a URL to which the user will be redirected after completing the form. It is necessary to type the entire URL (e.g. https://test.miModyo.com/home).
+- **Redirect URL**: Allows you to enter a URL to which the user will be redirected after completing the form. It is necessary to type the entire URL (e.g. https://test.modyo.com/home).
 - **Thank you page**: Allows you to add a personalized thank you message after a user answers the form, along with a button that will take them to a page on the site. The button URL is a relative URL of the site associated with the form. You can also determine if you want the user to be automatically redirected to that page after a certain amount of time.
 
 
@@ -105,7 +105,7 @@ Some fields have validations, to ensure that the user meets certain requirements
 
 Just as some fields have validations, most have a default value that is pre-selected when loading the form. The only ones that don't have a default value are nested questions.
 
-### Regular Expressions
+### Regular expressions
 
 For simple text and paragraph fields, you can add validations through regular expressions. By clicking on the functions button, you can see the different default validations:
 

@@ -7,11 +7,11 @@ Modyo Connect es un servicio de gestión de infraestructura y DevOps en la nube 
 
 Modyo Connect permite implementar servicios para cubrir los requisitos comunes de una iniciativa de integración compleja, incluyendo:
 
- - Single Sign-On (SSO)
- - API Gateway
+- Single Sign-On (SSO)
+- API Gateway
 - Infraestructura de contenedores para [microservicios](/es/architecture/patterns/microservice)
 - Bases de datos
-- Colas de mensajería
+- Colas de mensajes
 - Repositorios de objetos
 
 
@@ -47,9 +47,9 @@ Modyo Connect se implementa en modalidad de alta disponibilidad y es operado por
 
 Modyo Connect cuenta con una variedad de servicios o componentes que se agrupan en tres categorías:
 
-- [Desarrollo](components/development.md)
-- [Infraestructura](components/infrastructure.md)
-- [Monitoreo](components/monitoring.md)
+- [Desarrollo](development/README.md)
+- [Infraestructura](infrastructure/README.md)
+- [Monitoreo](monitoring/README.md)
 
 Para activar un componente, se requiere un ticket de requerimiento. Se recomienda tener una cuenta activa en el [Centro de Soporte de Modyo](https://support.modyo.com) antes de utilizar el servicio. Para dudas sobre cómo activar cuentas en el Centro de Soporte, contactar al ejecutivo de cuentas asignado.
 

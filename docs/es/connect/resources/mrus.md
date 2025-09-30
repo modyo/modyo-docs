@@ -10,7 +10,7 @@ El Modyo Resource Unit (MRU) es una abstracción para dimensionar el consumo de 
 Cada solicitud de componentes podría implicar una variación en el número total de MRUs facturados. Por ello, algunas solicitudes requerirán aprobación formal del cliente.
 :::
 
-## Estimación de costos
+## Estimación de Costos
 
 Modyo apoya en la estimación de costos de una infraestructura de servicios sobre Modyo Connect. Para ello, un arquitecto de soluciones de nuestra área de servicios profesionales realizará un análisis que incluirá criterios como:
 

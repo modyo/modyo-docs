@@ -76,7 +76,7 @@ La velocidad de la actualización depende de la carga del sistema, por lo que al
 :::
 
 
-## Borrar un segmento
+## Borrar un Segmento
 
 Puedes borrar un segmento desde la vista general. en el botón de acciones, seleccionando la opción borrar.
 
