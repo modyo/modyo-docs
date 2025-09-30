@@ -53,4 +53,4 @@ Users with knowledge and experience in creating sites in Modyo, as well as skill
 In addition to these courses, you can always find information on our specialized sites:
 
 - **[Modyo Community](https://es.modyo.com/comunidad)**: This section offers practical use cases, frequently asked questions, and pre-recorded webinars to go beyond theory and find solutions to everyday problems.
-- **[Webinars](https://es.modyo.com/webinars)**: Periodically, our users receive invitations to live sessions with our community, where they can ask questions and solve them with our specialists.
+- **[Webinars](https://www.modyo.com/community/webinars)**: Periodically, our users receive invitations to live sessions with our community, where they can ask questions and solve them with our specialists.
