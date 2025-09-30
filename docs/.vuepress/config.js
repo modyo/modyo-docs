@@ -152,7 +152,7 @@ module.exports = {
                         collapsable: true,
                         children: [
                             ["/en/platform/customers/", "Introduction"],
-                            "/en/platform/customers/overview",
+                            "/en/platform/customers/realms",
                             "/en/platform/customers/users",
                             "/en/platform/customers/events",
                             "/en/platform/customers/segments",
@@ -449,7 +449,7 @@ module.exports = {
                           collapsable: true,
                           children: [
                               ["/es/platform/customers/", "Introducción"],
-                              "/es/platform/customers/overview",
+                              "/es/platform/customers/realms",
                               "/es/platform/customers/users",
                               "/es/platform/customers/events",
                               "/es/platform/customers/segments",
