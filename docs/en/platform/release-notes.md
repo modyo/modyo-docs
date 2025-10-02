@@ -6,6 +6,19 @@ search: true
 
 ## 10.1
 
+### 10.1.4
+
+:::info Release date
+October 2, 2025
+:::
+
+| Module | Improvements |
+|--------|---------|
+| **Customers** | • Fixes dataset listing in origination and forms builder options, now all available datasets are displayed<br>• Fixes form views to display correctly when a content security policy header exists<br>• Adds Google Tag Manager configuration for profile and login pages in realms |
+| **Channels** | • Fixes multi-site search with stages, now search is limited to main sites and not their stages<br>• Fixes "resend code" translation in soft login |
+| **Content** | • Fixes error where hint was not shown in multiple choice fields |
+
+
 ### 10.1.3
 
 :::info Release date
