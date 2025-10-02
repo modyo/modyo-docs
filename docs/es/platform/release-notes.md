@@ -6,6 +6,19 @@ search: true
 
 ## 10.1
 
+### 10.1.4
+
+:::info Fecha del release
+2 de octubre de 2025
+:::
+
+| Módulo | Mejoras |
+|--------|---------|
+| **Customers** | • Corrige listado de datasets en opciones del builder de originación y formularios, ahora se muestran todos los datasets disponibles<br>• Corrige vista de formularios para que se muestren correctamente cuando existe un header de content security policy<br>• Agrega configuración de google tag manager para las páginas de profile y login en reinos |
+| **Channels** | • Corrige búsqueda multi-sitio con stages, ahora la búsqueda se limita a los sitios principales y no a sus stages<br>• Corrige traducción de resend code en el soft login |
+| **Content** | • Corrige error donde no se mostraba el hint en los campos de múltiples opciones |
+
+
 ### 10.1.3
 
 :::info Fecha del release
