@@ -397,6 +397,10 @@ En la vista de detalles, encontrarás las siguientes secciones principales:
 
 Esta estructura te brinda una visión integral y detallada de cada respuesta, permitiéndote gestionar de manera efectiva todos los aspectos relacionados con las respuestas.
 
+:::tip Tip
+Desde la vista de una respuesta en el menú de acciones (identificado con …) se puede [impersonar](/es/platform/customers/users) al usuario para ayudarlo a contestar la originación. Esto depende de los roles del usuario
+:::
+
 #### Asignar respuesta
 
 En el listado de respuestas, selecciona el menú acciones y presiona la opción **Asignar**. En el menú contextual selecciona a un administrador para esta respuesta.
