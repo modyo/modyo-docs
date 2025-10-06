@@ -397,6 +397,10 @@ In the details view, you will find the following main sections:
 
 This structure provides you with a comprehensive and detailed view of each submission, allowing you to effectively manage all aspects related to the submissions.
 
+:::tip Tip
+From the submission view in the actions menu (identified with ...), you can [impersonate](/en/platform/customers/users) the user to help them answer the origination. This depends on the admin's roles.
+:::
+
 #### Assign submission
 
 In the list of submissions, select the actions menu and press the **Assign** option. In the context menu, select an administrator for this submission.
