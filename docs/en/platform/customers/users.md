@@ -70,7 +70,7 @@ The impersonation feature allows realm administrators with the appropriate roles
 
 This functionality can be accessed from the User Profile: you'll find the "Impersonate" button in the actions menu (identified with three dots).
 
-### Impersonation Process
+### Impersonation process
 When you click the "Impersonate" button, a new browser tab will open, taking you directly to the user's profile in the front end with that active session.
 
 Purpose: Once inside, you can navigate the web app exactly as the user would, viewing their segmented content, user experience, and the status of their originations.
