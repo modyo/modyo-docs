@@ -65,13 +65,13 @@ General user information:
 - **Segments**: List of segments the user belongs to, if applicable.
 - **Tags**: List of tags assigned to the user, if applicable.
 
-### Impersonation
+## Impersonation
 The impersonation feature allows realm administrators with the appropriate roles to temporarily assume the identity of an end-user and navigate the website as if they were that user. This is an invaluable tool for support, debugging, and verifying the customer experience.
 
 This functionality can be accessed from the User Profile: you'll find the "Impersonate" button in the actions menu (identified with three dots).
 
-## Impersonation Process
-When you click the "Impersonate" button, a new browser tab will open, taking you directly to the site's front end with that user's active session.
+### Impersonation Process
+When you click the "Impersonate" button, a new browser tab will open, taking you directly to the user's profile in the front end with that active session.
 
 Purpose: Once inside, you can navigate the web app exactly as the user would, viewing their segmented content, user experience, and the status of their originations.
 
