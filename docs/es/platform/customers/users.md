@@ -66,11 +66,11 @@ Datos generales del usuario:
 - **Tags**: Listado de etiquetas en los que está incluido, si aplica.
 
 ### Impersonado
-La Funcionalidad de Impersonación permite a los administradores del reino, con los roles adecuados, tomar temporalmente la identidad de un usuario final y navegar por el sitio web como si fueran ese usuario. Esto es una herramienta invaluable para el soporte, la depuración y la verificación de la experiencia del cliente.
+La funcionalidad de impersonación permite a los administradores del reino, con los roles adecuados, tomar temporalmente la identidad de un usuario final y navegar por el sitio web como si fueran ese usuario. Esto es una herramienta invaluable para el soporte, la depuración y la verificación de la experiencia del cliente.
 
 Esta funcionalidad se puede usar desde la Ficha de Usuario: encontrarás el botón "Impersonar" en el menú de acciones (identificado con tres puntos).
 
-### Proceso de Impersonación
+### Proceso de impersonación
 Al hacer clic en el botón "Impersonar", se abrirá una nueva pestaña del navegador que lo llevará directamente al perfil del usuario en el front end con su sesión activa.
 
 Propósito: Una vez dentro, podrás navegar el sitio (Channels) exactamente como lo haría el usuario, viendo su contenido segmentado, su experiencia de usuario y el estado de sus originaciones.
