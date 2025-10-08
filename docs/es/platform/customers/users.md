@@ -75,7 +75,7 @@ Al hacer clic en el botón "Impersonar", se abrirá una nueva pestaña del naveg
 
 Propósito: Una vez dentro, podrás navegar el sitio (Channels) exactamente como lo haría el usuario, viendo su contenido segmentado, su experiencia de usuario y el estado de sus originaciones.
 :::tip Tip
-Toda la actividad hecha mientras se impersone el usuario quedará en los logs marcada como impersonada.
+Toda la actividad realizada mientras se impersone el usuario quedará en los logs marcada como impersonada.
 :::
 
 :::warning Atención
