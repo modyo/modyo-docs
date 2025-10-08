@@ -77,6 +77,7 @@ Propósito: Una vez dentro, podrás navegar el sitio (Channels) exactamente como
 :::tip Tip
 Toda la actividad hecha mientras se impersone el usuario quedará en los logs marcada como impersonada.
 :::
+
 :::warning Atención
 La sesión de impersonación es temporal y debe finalizarse para evitar confusiones. Para cerrar la sesión hay que darle click al botón salir en la barra de impersonado o simplemente desloggearse.
 :::
