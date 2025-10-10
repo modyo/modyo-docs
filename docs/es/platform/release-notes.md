@@ -6,6 +6,18 @@ search: true
 
 ## 10.1
 
+### 10.1.5
+
+:::info Fecha del release
+10 de octubre de 2025
+:::
+
+| Módulo | Mejoras |
+|--------|---------|
+| **Channels** | • Corrige filtro asset_url ahora entrega correctamente la url con optimizaciones de cloudflare cuando está disponible<br>• Corrige problemas de encoding al procesar widgets desde el cli cuando se envían comprimidos en un archivo zip |
+| **Customers** | • Corrige error al indexar algunos BusinessEvents |
+
+
 ### 10.1.4
 
 :::info Fecha del release
