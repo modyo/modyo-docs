@@ -176,7 +176,7 @@ These are the liquid filters that alter values related to Commerce.
 Adds currency format to a value. *e.g.*
 <span v-pre>`{{ 4 | format_currency }} => $4`</span>
 
-<span v-pre>`{{ 1890.5123 | format_currency: unit: '\u00a5', separator: ',', delimiter: '.', precision: 3 }} = \u00a51.890,512`</span>
+<span v-pre>`{{ 1890.5123 | format_currency: unit: '¥', separator: ',', delimiter: '.', precision: 3 }} = ¥1.890,512`</span>
 
 :::warning Important
 This filter determines the currency format and takes precedence over any other currency configuration.
