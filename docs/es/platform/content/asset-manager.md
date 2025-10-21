@@ -5,7 +5,7 @@ search: true
 # Media
 
 :::tip Tip
-- En `Modyo 9` este espacio se llama **Gestor de archivos**. Si migras de Modyo 9 a Modyo 10 todos los assets se conservan y podrás elegir previamente a cuál espacio moverlos.
+- En `Modyo 9` este espacio se llama **Gestor de archivos**. Si migras de Modyo 9 a Modyo 10 todos los assets se conservan y se mueven al espacio **default media**.
 :::
 
 Este espacio te permite cargar, organizar y gestionar tus archivos de forma simple y eficiente.
