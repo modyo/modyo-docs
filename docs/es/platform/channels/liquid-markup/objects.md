@@ -46,7 +46,7 @@ Los administradores de la Cuenta son usuarios con privilegios para realizar camb
 
 ## asset
 
-Objeto de tipo asset. Contiene la información relevante de un archivo dentro del [Gestor de Archivos](/es/platform/content/asset-manager).
+Objeto de tipo asset. Contiene la información relevante de un archivo dentro del [Gestor de Archivos](/es/platform/content/asset-manager.html).
 
 | Objeto | Descripción | Ejemplo |
 |---|---|---|
@@ -88,6 +88,8 @@ Se heredan los siguientes atributos de [Asset](#asset):
 | **file_asset.is_audio?** | Booleano que indica si el archivo es un audio. | ```false``` |
 | **file_asset.is_pdf?** | Booleano que indica si el archivo es un PDF. | ```false``` |
 | **file_asset.is_another?** | Booleano que indica si el archivo es de otro tipo no especificado. | ```false``` |
+| **file_asset.pdf_thumbnail_url** | URL del thumbnail del PDF (si el asset es un PDF). | ```/uploads/.../thumb.pdf.png``` |
+| **file_asset.temp_url** | URL efímera (con expiración) para acceso seguro. | ```https://cdn.example.com/temporary/abc123``` |
 
 ### video_asset
 
@@ -131,6 +133,7 @@ Crea contenido dinámico en tus espacios usando Entradas. En este objeto tienes 
 | **entry.author** | Objeto del usuario autor de la entrada. |  |
 | **entry.meta** | Objeto con los siguientes atributos de metadatos: uuid, published_at, locale, slug, created_at, updated_at, unpublished_at y private. |
 | **entry.fields** | Array de objetos con los campos de la entrada. |  |
+| **entry.as_json** | Representación JSON (meta + fields). | ```{"meta":{"uuid":"abc"},"fields":[{"name":"title","value":"Hello"}]}``` |
 
 ## field
 
@@ -140,6 +143,16 @@ Muestra toda la información de los campos de una entrada.
 |---|---|---|
 | **field.name** | Nombre del campo personalizado. | ```Field1``` |
 | **field.type** | Nombre del tipo asociado al campo. | ```Type1``` |
+| **repeatable_group_field.fields_schema** | Esquema de los campos en un grupo repetible. | ```[{"name":"item","type":"text"}]``` |
+| **repeatable_group_field.json_format** | Valor del grupo como string JSON. | ```"[{\"item\":\"Value\"}]"``` |
+| **repeatable_group_field.representation** | Representación legible del grupo. | ```"Item: Value"``` |
+| **repeatable_group_field.editable?** | Indica si el grupo es editable. | ```true``` |
+| **repeatable_group_field.locale** | Locale del contenido del grupo. | ```"es"``` |
+| **repeatable_group_field.space** | Identificador del espacio para el grupo. | ```"marketing"``` |
+| **repeatable_group_field.as_json** | Representación JSON del grupo. | ```{"fields":[{"item":"Value"}]}``` |
+| **asset_field.pdf_thumbnail_url** | Thumbnail del PDF cuando el campo referencia un asset PDF. | ```/uploads/.../pdf-thumb.png``` |
+| **asset_field.temp_url** | URL efímera del asset referenciado. | ```https://cdn.example.com/tmp/xyz``` |
+| **asset_field.special_image?** | Indica si es una variante especial de imagen. | ```false``` |
 
 ## form
 
@@ -166,6 +179,8 @@ Estos objetos permiten obtener información a través de Liquid para un formular
 | **answer.response** | Objeto de tipo respuesta asociado a la respuesta. |  |
 | **answer.text_field** | Campo de texto asociado a la respuesta. | ```Este es la respuesta en el campo de texto``` |
 | **answer.type** | Tipo de respuesta. | ```text_answer``` |
+| **answer.alternative** | Alternativa seleccionada (para selección múltiple). |  |
+| **answer.dynamic_target_url** | URL dinámica basada en el valor de la respuesta. | ```https://example.com/path``` |
 
 ### form_response
 
@@ -187,6 +202,8 @@ Estos objetos permiten obtener información a través de Liquid para las pregunt
 | **question.form** | Objeto de tipo formulario. |  |
 | **question.id** | Devuelve el ID de la pregunta. | ```3``` |
 | **question.label** | Etiqueta de la pregunta. | ```La primera pregunta``` |
+| **question.name** | Nombre interno de la pregunta. | ```La primera pregunta``` |
+| **question.uid** | UID de la pregunta. | ```text-question-1``` |
 
 ## grid
 
@@ -303,6 +320,12 @@ Objeto de tipo ubicación. Contiene la información relevante de un punto de geo
 | **location.location_street** | Nombre de la ubicación en Google Maps. | ```Main street 3883``` |
 | **location.latitude** | Latitud del punto en Google Maps. | ```-33.3982607``` |
 | **location.longitude** | Longitud del punto en Google Maps. | ```-70.6003616``` |
+| **location.country** | Nombre/código del país. | ```Chile``` |
+| **location.administrative_area_level_1** | División administrativa de primer nivel. | ```Región Metropolitana de Santiago``` |
+| **location.administrative_area_level_2** | División administrativa de segundo nivel. | ```Santiago``` |
+| **location.administrative_area_level_3** | División administrativa de tercer nivel. |  |
+| **location.administrative_area_level_4** | División administrativa de cuarto nivel. |  |
+| **location.administrative_area_level_5** | División administrativa de quinto nivel. |  |
 
 ## menu
 
@@ -324,6 +347,7 @@ Objeto de tipo menú. Contiene la información relevante de los ítems de un men
 | **menu_item.parameterized_label** | Etiqueta parametrizada asociada al ítem de menú. | ```home``` |
 | **menu_item.position** | Posición asociada al ítem de menú (0 como primera posición). | ```0``` |
 | **menu_item.url** | URL asociada al ítem de menú. | ```https://test.modyo.com/newsite/``` |
+| **menu_item.target** | Target del enlace (p.e. _blank, _self). | ```_blank``` |
 
 ## notification
 
@@ -360,6 +384,7 @@ Estos objetos permiten obtener información a través de Liquid para las órdene
 | **order.customer_name** | String con el nombre completo del cliente asociado. |  |
 | **order.order_description** | String con la descripción de la orden. |  |
 | **order.order.reference_id** | String con el ID de referencia para esta orden. |  |
+| **order.reference_order** | Identificador de una orden relacionada/de referencia. | ```REF-2025-01``` |
 
 ### order_item
 
@@ -386,6 +411,13 @@ Estos drops permiten acceder a información de originación en páginas de origi
 | **origination.uid** | UID de la originación. | ```mi-originacion``` |
 | **origination.url** | URL de la página de originación. | ```https://test.modyo.com/new-site/myorigination``` |
 | **origination.steps['step_uid']** | Step con el UID proporcionado. |  |
+| **origination.can_begin** | El usuario puede iniciar la originación. | ```true``` |
+| **origination.can_create** | El usuario puede crear una nueva submission. | ```true``` |
+| **origination.can_resume** | El usuario puede reanudar una submission pendiente. | ```true``` |
+| **origination.begin_message** | Mensaje antes de iniciar. | ```"¡Bienvenido!"``` |
+| **origination.completion_message** | Mensaje al completar. | ```"Todo listo"``` |
+| **origination.ordered_steps** | Steps ordenados para ejecución. | ```[{"uid":"step-01"}]``` |
+| **origination.new_submission_url** | URL para iniciar una submission. | ```/originations/mi-originacion/new``` |
 
 ## page
 
@@ -430,6 +462,15 @@ Estos drops permiten obtener información al momento de realizar una solicitud (
 | **request.refresh_url** | URL de refresco de la solicitud. | ```https://test.modyo.com/newsite/requests/refresh``` |
 | **request.url** | URL de la solicitud. | ```https://test.modyo.com/ivansite/the-new-type/newentry``` |
 
+## segment
+
+Estos drops permiten obtener información de Segmentos. Los atributos disponibles son:
+
+| Objeto | Descripción | Ejemplo |
+|---|---|---|
+| **segment.id** | String con el ID asociado al segmento. |  |
+| **segment.name** | String con el nombre asociado al segmento. |  |
+
 ## site
 
 Los objetos de Sitio se utilizan para obtener toda la información de un sitio. Los atributos disponibles son:
@@ -471,6 +512,9 @@ Los objetos de Sitio se utilizan para obtener toda la información de un sitio. 
 | **site.service_worker_scope** | String con el scope del service worker del sitio. |  |
 | **site.service_worker_url** | String con la URL del service worker para el sitio. |  |
 | **site.url** | String con la URL asociada al sitio. |  |
+| **site.vapid_public_key** | Clave pública VAPID para Web Push. | ```BNa...xyz``` |
+| **site.time_zone** | Zona horaria del sitio. | ```America/Santiago``` |
+| **site.realm_slug** | Slug del realm al que pertenece el sitio. | ```default``` |
 
 ## sitesearch
 
@@ -489,8 +533,8 @@ Muestra contenido dinámico creado en tus espacios desde cualquier parte de tu s
 | Objeto | Descripción | Ejemplo |
 |---|---|---|
 | **spaces['nombre_del_espacio'].categories** | Array de objetos de tipo categoría que contiene todas las categorías del espacio. |  |
-| **spaces['nombre_del_espacio'].entries** | Objeto de tipo Página que cumple con los parámetros de búsqueda. |  |
-| **space['nombre_del_espacio'].name** | Nombre del espacio. | ```Espacio Nuevo``` |
+| **spaces['nombre_del_espacio'].entries** | Array de objetos de tipo Entry que cumplen con los parámetros de búsqueda. |  |
+| **spaces['nombre_del_espacio'].name** | Nombre del espacio. | ```Espacio Nuevo``` |
 
 ## submission
 
@@ -516,6 +560,22 @@ Estos objetos obtienen la información relevante a las Respuestas de Origination
 | **submission.origination.name** | Nombre de la originación. | ```My Origination``` |
 | **submission.origination.steps** | Array con los nombres de los steps en la originación. | ```[{"uid": "step 1"}, {"uid": "step 2"}]``` |
 | **submission.origination.tasks** | Array con todos los tasks en la originación y el step al que corresponden. | ```[{"task_id": "67890","name": "Task 1", "step": {"uid": "abcd1234"}}]``` |
+| **submission.resume_url** | URL para reanudar una submission pendiente. | ```/originations/mi-originacion/submissions/uuid/resume``` |
+| **submission.start_info** | Metadata sobre condiciones de inicio. | ```{"started_by":"user","at":"2025-02-15"}``` |
+| **submission.steps** | Array de objetos step de la submission. | ```[{"uid":"step-01"}]``` |
+| **submission.tasks** | Array de objetos de respuesta de tarea. | ```[{"task_id":"t1"}]``` |
+
+### Tipos de Respuesta de Tareas
+
+| Objeto | Descripción | Ejemplo |
+|---|---|---|
+| **pending_review_task_response.approved** | Indica si una tarea de revisión fue aprobada. | ```true``` |
+| **code_snippet_task_response.data** | Payload de datos de una tarea de snippet de código. | ```{"language":"rb","snippet":"puts 'Hi'"}``` |
+| **code_snippet_task_response.completed** | Indica si la tarea de snippet fue completada. | ```false``` |
+| **user_input_task_response.fields** | Campos recopilados de una tarea de entrada de usuario. | ```[{"label":"Nombre","value":"Jane"}]``` |
+| **validation_task_response.validated** | Indica el resultado de validación. | ```true``` |
+| **digital_signature_task_response.signed** | Indica si se completó la firma digital. | ```false``` |
+| **origination_flow_task_response.submission** | Objeto submission para la tarea de flujo. |  |
 
 ## target
 
@@ -544,35 +604,49 @@ Usa los objetos de user para obtener información de tus usuarios del módulo Cu
 | Objeto | Descripción | Ejemplo |
 |---|---|---|
 | **user.access_token** | El access token del usuario. | ```Uel7k61VuWhSxX3dJDILB7BtM1I_KQi1wEkV9PtnHLQ``` |
-| **user.age** | La edad del usuario | ```39``` |
-| **user.avatar** | Objecto del tipo asset que representa el avatar de usuario. |  |
+| **user.age** | Edad del usuario. | ```39``` |
+| **user.avatar** | Objeto de tipo asset que representa el avatar del usuario. |  |
 | **type.name** | Nombre del tipo. | ```508``` |
-| **user.birth_at** | La fecha de nacimiento del usuario. | ```1982-09-01``` |
-| **user.change_password_url** | La URL de cambio de password. | ```https://test.modyo.com/newsite/password/change``` |
-| **user.custom_fields** | Hash con los datos de los custom fields del usuario. | ```{"_ucf_job"=>"Software Engineer"}``` |
-| **user.email** | El correo electrónico del usuario. | ```ivan@modyo.com``` |
-| **user.external_access_token** | El external access token del usuario, en caso de no tener, despliega vacío (void). | ```Uel7k69VuWhSxX9dJDILB7BtM1I_KQipwEkV9PtnHLQ``` |
-| **user.external_user_id** | El external user id del usuario en caso de tener uno. | ```aswerr1m@mdaa.com``` |
-| **user.female_sex_value** | El valor por defecto cuando el sexo es femenino. | ```1``` |
-| **user.first_name** | Retorna el primer nombre del usuario. | ```Ivan``` |
-| **user.genders** | Los géneros presentes en la plataforma. | ```{:id=>0, :name=>"Male"}{:id=>1, :name=>"Female"}``` |
-| **user.generated_password** | Booleano que determina si el password fue generado automáticamente (true) o creado por el usuario (false). | ```false``` |
-| **user.id** | El id del usuario. | ```16``` |
-| **user.initials** | Las iniciales del nombre de usuario. | ```IM``` |
-| **user.last_name** | El apellido del del usuario. | ```Modyo``` |
-| **user.male_sex_value** | El valor por defecto cuando el sexo es masculino. | ```0``` |
-| **user.member_since** | La fecha desde la cual es usuario es miembro del sitio. | ```2021-11-23 18:25:07 UTC``` |
-| **user.name** | El nombre completo del usuario. | ```Ivan Modyo Gonzalez``` |
-| **user.notifications** | Array de objetos del tipo notification. |  |
-| **user.profile_url** | La URL del perfil del usuario. | ```https://test.modyo.com/realms/default/profile``` |
-| **user.sex** | El valor del sexo configurado para el usuario. | ```0``` |
-| **user.targets** | Array de objetos del tipo target. |  |
-| **user.undefined_sex_value** | El valor por defecto cuando el sexo es indefinido. | ```3``` |
-| **user.unread_notifications** | Array de objetos del tipo notificación. |  |
-| **user.unread_notifications_count** | El conteo de las notificaciones no leídas. | ```2``` |
-| **user.username** | El username del usuario. | ```ivan@modyo.com``` |
-| **user.uuid** | El uuid del usuario. | ```cdc7f0e2-b5c3-4b92-aa34-962ffa0bi572``` |
-| **user.realm_uid** | El reino del usuario. | ```my-realm``` |
+| **user.birth_at** | Fecha de nacimiento del usuario. | ```1982-09-01``` |
+| **user.change_password_url** | URL para cambio de contraseña. | ```https://test.modyo.com/newsite/password/change``` |
+| **user.custom_fields** | Hash con los datos de los campos personalizados del usuario. | ```{"_UCF_Job"=>"Software Engineer"}``` |
+| **user.email** | Correo electrónico del usuario. | ```ivan@modyo.com``` |
+| **user.external_access_token** | External access token del usuario (vacío si no existe). | ```UEL7K69VUWhSXxX9DjDil...``` |
+| **user.external_user_id** | ID externo del usuario si existe. | ```ext-12345``` |
+| **user.female_sex_value** | Valor constante para género femenino. | ```1``` |
+| **user.first_name** | Primer nombre del usuario. | ```Ivan``` |
+| **user.genders** | Géneros presentes en la plataforma. | ```{:id=>0,:name=>"Male"}{:id=>1,:name=>"Female"}``` |
+| **user.generated_password** | Password auto-generado (true) o creado por el usuario (false). | ```false``` |
+| **user.id** | ID del usuario. | ```16``` |
+| **user.initials** | Iniciales del usuario. | ```IM``` |
+| **user.last_name** | Apellido del usuario. | ```Modyo``` |
+| **user.male_sex_value** | Valor constante para género masculino. | ```0``` |
+| **user.member_since** | Fecha desde la cual el usuario es miembro. | ```2021-11-23 18:25:07 UTC``` |
+| **user.name** | Nombre completo del usuario. | ```Ivan Modyo Gonzalez``` |
+| **user.notifications** | Array de objetos notification. |  |
+| **user.profile_url** | URL del perfil del usuario. | ```https://test.modyo.com/realms/default/profile``` |
+| **user.sex** | Valor del género configurado para el usuario. | ```0``` |
+| **user.submissions** | Array de objetos submission. |  |
+| **user.segments** | Array de objetos segment. |  |
+| **user.phone** | Número telefónico del usuario. | ```+56 9 5555 5555``` |
+| **user.responses** | Colección de objetos form_response. | ```[{"name":"Onboarding"}]``` |
+| **user.segment_names** | Array de nombres de segmentos. | ```["vip","beta"]``` |
+| **user.target_names** | Array de nombres de audiencias objetivo. | ```["retail","premium"]``` |
+| **user.targets** | Array de objetos de audiencia objetivo. | ```[{"name":"retail"}]``` |
+| **user.realm_default_avatar** | Avatar por defecto del realm (asset). |  |
+| **user.non_binary_sex_value** | Valor constante para género no binario. | ```4``` |
+| **user.other_sex_value** | Valor constante para género otro. | ```5``` |
+| **user.prefer_not_to_say_sex_value** | Valor constante para género "prefiere no decir". | ```6``` |
+| **user.current_login_at** | Timestamp del login actual. | ```2025-10-21 11:00:00 UTC``` |
+| **user.current_login_ip** | IP utilizada en el login actual. | ```203.0.113.10``` |
+| **user.last_login_at** | Timestamp del login previo. | ```2025-10-19 09:30:01 UTC``` |
+| **user.last_login_ip** | IP del login previo. | ```198.51.100.7``` |
+| **user.undefined_sex_value** | Valor constante para género indefinido. | ```3``` |
+| **user.unread_notifications** | Array de objetos notification no leídos. |  |
+| **user.unread_notifications_count** | Conteo de notificaciones no leídas. | ```2``` |
+| **user.username** | Username del usuario. | ```ivan@modyo.com``` |
+| **user.uuid** | UUID del usuario. | ```cdc7f0e2-b5c3-4b92-aa34-962ffa0bi572``` |
+| **user.realm_uid** | Realm del usuario. | ```my-realm``` |
 
 ## user_agent
 
@@ -588,8 +662,9 @@ No aplica para sitios públicos, ya que en estos casos las respuestas del servid
 | **user_agent.as_json** | Un string en formato JSON con toda la configuración del agente corriendo. |  |
 | **user_agent.browser** | Un string con el nombre del navegador para el agente. |  |
 | **user_agent.browser_version** | Un string con la versión del navegador para el agente. |  |
-| **user_agent.is_modyo_shell** | Boolean que determina si el agente está siendo gestionado por una aplicación de Modyo |  |
+| **user_agent.is_modyo_shell** | Boolean que determina si el agente está siendo gestionado por una aplicación de Modyo. |  |
 | **user_agent.platform** | Un string con la versión del sistema operativo del agente. |  |
+| **user_agent.platform_version** | Versión del sistema operativo/plataforma del usuario. | ```"14.7"``` |
 
 ## widget
 
@@ -641,3 +716,23 @@ Estos objetos obtienen la información relevante a los Widgets.
 | Objeto | Descripción | Ejemplo |
 |---|---|---|
 | **text_widget.html** | El html asociado al text widget. | ```Hola mundo``` |
+
+## Deprecated Attributes
+
+Los siguientes atributos están deprecados y deben evitarse en nuevo desarrollo. Donde sea posible, usa el reemplazo sugerido.
+
+| Atributo | Reemplazo | Notas |
+|---|---|---|
+| entry.meta.created_at (directo) | entry.meta.created_at | Usa propiedad anidada en lugar de acceso directo. |
+| entry.meta.updated_at (directo) | entry.meta.updated_at | Usa propiedad anidada en lugar de acceso directo. |
+| entry.meta.published_at (directo) | entry.meta.published_at | Usa propiedad anidada en lugar de acceso directo. |
+| entry.meta.unpublished_at (directo) | entry.meta.unpublished_at | Usa propiedad anidada en lugar de acceso directo. |
+| entry.meta.slug (directo) | entry.meta.slug | Usa propiedad anidada en lugar de acceso directo. |
+| entry.meta.uuid (directo) | entry.meta.uuid | Usa propiedad anidada en lugar de acceso directo. |
+| entry.meta.private (directo) | entry.meta.private | Usa propiedad anidada en lugar de acceso directo. |
+| location.location | location.location_street | `location` deprecado; usar `location_street`. |
+| widget.uuid | widget.wid | `uuid` deprecado; usar `wid`. |
+| match_path_url | (eliminar) | Helper de routing legado eliminado. |
+| without_category_url | entry.url | URL sin categoría eliminada. |
+| location.latitude / longitude (flags deprecadas) | location.latitude / longitude | Flags antiguas reemplazadas por los mismos nombres. |
+
