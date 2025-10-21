@@ -5,7 +5,7 @@ search: true
 # Media
 
 :::tip Tip
-- In `Modyo 9`, this space is called **File Manager**. If you migrate from Modyo 9 to Modyo 10, all assets are preserved, and you can choose beforehand which space to move them to.
+- In `Modyo 9`, this space is called **File Manager**. If you migrate from Modyo 9 to Modyo 10, all assets are preserved, and are moved to the **default media** space.
 :::
 
 This space allows you to upload, organize, and manage your files in a simple and efficient way.
