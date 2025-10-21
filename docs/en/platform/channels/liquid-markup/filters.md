@@ -176,12 +176,12 @@ These are the liquid filters that alter values related to Commerce.
 Adds currency format to a value. *e.g.*
 <span v-pre>`{{ 4 | format_currency }} => $4`</span>
 
-<span v-pre>`{{ 1890.5123 | format_currency: unit: '¥', separator: ',', delimiter: '.', precision: 3 }} = ¥1.890,512`</span>
+<span v-pre>`{{ 1890.5123 | format_currency: unit: '\u00a5', separator: ',', delimiter: '.', precision: 3 }} = \u00a51.890,512`</span>
 
 :::warning Important
 This filter determines the currency format and takes precedence over any other currency configuration.
 
-If you don't specify currency parameters with the currency filter, Modyo uses the realm's [payment](/en/platform/customers/settings#payment-configuration) configuration.
+If you don't specify currency parameters with the currency filter, Modyo uses the realm's [payment](/en/platform/customers/settings.html#payment-configuration) configuration.
 
 If the site doesn't have an associated realm and you don't specify parameters, the predefined format of the site's language will be applied.
 :::
@@ -268,6 +268,36 @@ Returns a list of Entries that belong to a selected Content Type. *e.g.*
 - entries (ArrayEntry) — array with entries
 - locale (String) (default: '') — String with comma-separated content types.
 
+### By UUID
+
+Filters an array of entries by one or more UUIDs.
+
+**Parameters**:
+- entries (ArrayEntry) — collection (object before the pipe)
+- uuid_list (String) — comma-separated list of UUIDs
+
+Defaults: If `uuid_list` is blank returns the original collection.
+
+*e.g.* <span v-pre>`{% assign filtered = entries | by_uuid: 'uuid2,uuid1,uuid3' %}`</span>
+
+### Composite Entry Filter (`by`)
+
+Applies multiple entry filters in one call. Supported option keys (all optional):
+- types: comma-separated type slugs (applies `by_type`)
+- categories: comma-separated category slugs (applies `by_category`)
+- tags: comma-separated tags (applies `by_tag`)
+- slugs: comma-separated entry slugs (applies `by_slug`)
+- uuids: comma-separated UUIDs (applies `by_uuid`)
+- locale: locale code (applies `by_lang`)
+- from_published_date: date string (>= `published_at`)
+- to_published_date: date string (<= `published_at`)
+- sort_by: field name (`name`, `slug`, `created_at`, `updated_at`, `published_at`, or a field path)
+- order: `asc` | `desc` (default: `desc`)
+- per_page: integer results per page (enables pagination if provided; default: 10)
+- page: integer page number (default: 1)
+
+*e.g.* <span v-pre>`{% assign entries = spaces['testing'].entries | by: types: 'promo,basic', locale: 'es', categories: 'starred,favorites', tags: 'test,test2', slugs: 'slug2,slug1', uuids: 'uuid2,uuid1', sort_by: 'name', order: 'asc', per_page: 10, page: 2 %}`</span>
+
 ### Filter By
 
 Returns a list of Entries that match a filter. *e.g.*
@@ -275,7 +305,27 @@ Returns a list of Entries that match a filter. *e.g.*
 
 **Parameters**:
 - entries (ArrayEntry) — array with entries
-- opts (Hash) (default: {}) — hash with field and eq as value
+- opts (Hash) (default: {}) — hash with field and operator/value pairs
+
+**Supported Operators** (use as keys in `opts`):
+- `eq` — equals (implicit when only `field` and value provided)
+- `gt`, `lt` — greater than / less than
+- `in` — field value must be one of the comma-separated values
+- `nin` — field value must NOT be one of the comma-separated values
+- `has` — array-type field must contain all of the comma-separated values
+
+All multi-value operators take a comma-separated string.
+
+**Examples**:
+
+Filter entries where the `status` field is either 'published' or 'featured':
+<span v-pre>`{% assign entries = entries | filter_by: field: 'status', in: 'published,featured' %}`</span>
+
+Filter entries where the `author_id` is not 1 or 5:
+<span v-pre>`{% assign entries = entries | filter_by: field: 'author_id', nin: '1,5' %}`</span>
+
+Filter entries that have both 'tech' and 'news' in their `categories` array field:
+<span v-pre>`{% assign entries = entries | filter_by: field: 'categories', has: 'tech,news' %}`</span>
 
 ### Filter By Query String
 
@@ -289,7 +339,7 @@ Returns a list of Entries that match a query. You can use logical operators, var
 - meta.category meta.category_slug meta.category_name meta.uuid meta.name meta.created_at
  meta.updated_at meta.published_at meta.unpublished_at meta.slug meta.tag
 
-**Url examples**:
+**URL Examples**:
 
 - https://company.site.com/testsite?meta.category_slug=category3
 - https://company.site.com/testsite?meta.tag=tag_name
@@ -305,8 +355,7 @@ Returns a list of Entries that match a query. You can use logical operators, var
 ### From Published Date
 
 Returns a list of Entries that have a publication date more recent than the limit. *e.g.*
-<span v-pre>`{% assign entries = widgets.entries | from_published_date: date %}
-`</span>
+<span v-pre>`{% assign entries = widgets.entries | from_published_date: date %}`</span>
 
 **Parameters**:
 - entries (ArrayEntry) — array with entries
@@ -341,17 +390,14 @@ Returns an array with entries sorted by a field *e.g.*
 - attribute (String) — field by which you want to sort
 - order (String) - asc (ascending) or desc (descending)
 
-
 ### To Published Date
 
 Returns a list of Entries that have a publication date older than the limit. *e.g.*
-<span v-pre>`{% assign entries = widgets.entries | to_published_date: date %}
-`</span>
+<span v-pre>`{% assign entries = widgets.entries | to_published_date: date %}`</span>
 
 **Parameters**:
 - entries (ArrayEntry) — array with entries
 - date (Datetime)(default: Time.zone.now) — limit date
-
 
 ## Crypto
 
@@ -400,7 +446,7 @@ Desaturates a color (e.g. <span v-pre>`{{ '#00ff00' | desaturate: 15 }} #=> '#13
 
 ### Grayscale
 
-Converts a color to grayscale (e.g. <span v-pre>`{{ '#00ff00' | grayscale }} #=> '#808080'`</span>).
+Converts a color to grayscale (e.g. <span v-pre>`{{ '#00ff00' | grayscale }} #=> '#808080'`</span>). Alias: `greyscale` (same output).
 
 ### Lighten
 
@@ -462,7 +508,7 @@ Determines if a URL item is active. Returns 'active' when active (e.g. <span v-p
 
 ### Item Rel
 
-Returns 'noopener noreferrer' if a link is "\_blank" (e.g. <span v-pre>`{{ '_blank' | item_rel }} #=> 'noopener noreferrer'`</span>).
+Returns 'noopener noreferrer' if a link is "_blank" (e.g. <span v-pre>`{{ '_blank' | item_rel }} #=> 'noopener noreferrer'`</span>).
 
 ### Resolve URL
 
@@ -553,6 +599,18 @@ Translates a date to DateTime format (e.g. <span v-pre>`{{ time | format_datetim
 ### Format Short Date
 
 Translates a date to a reduced format (dd-mm-yyyy) (e.g. <span v-pre>`{{ time | format_short_date }}`</span>).
+
+### Get Session ID
+
+Returns the current session identifier.
+
+*e.g.* <span v-pre>`{{ '' | get_session_id }}`</span>
+
+### Image Tag (Generic URL)
+
+Generates a simple `<img>` tag for a raw image URL (not an Asset object).
+
+*e.g.* <span v-pre>`{{ 'https://cdn.example.com/logo.png' | image_tag }}`</span>
 
 ### Link To
 
@@ -679,6 +737,36 @@ Returns the Submissions with the selected status. *e.g.*
 - submissions (ArraySubmission) - array with user submissions
 - status (String) - Originations status. Supported values are 'pending', 'completed' and 'all'
 
+### Completed
+
+Checks whether an element (step/task wrapper) is completed for a given submission.
+
+*e.g.* <span v-pre>`{{ submission | completed: step }}`</span>
+
+**Parameters:**
+- submission (Submission) — the current submission (object before pipe)
+- element (Step|TaskResponse wrapper) — element to test
+
+Returns: Boolean (true/false)
+
+### URL (Step URL for Submission)
+
+Generates a navigable URL for a step within a submission (first visible task). Only returns a value if submission is pending and either the step is completed or origination step ordering permits navigation.
+
+*e.g.* <span v-pre>`{{ step | url: submission }}`</span>
+
+### Resume Link
+
+Returns an HTML anchor tag to resume a pending step for a submission, or the step name if no URL is available.
+
+*e.g.* <span v-pre>`{{ step | resume_link: submission }}`</span>
+
+### Submissions Selector
+
+Renders a dropdown HTML fragment to select among multiple pending submissions (excludes current submission). Returns nothing if fewer than 2 pending submissions.
+
+*e.g.* <span v-pre>`{{ pending_submissions | submissions_selector }}`</span>
+
 ## Task
 
 These are the liquid filters that alter values related to tasks in Modyo Platform.
@@ -691,6 +779,10 @@ Returns the Task with the selected UID. *e.g.*
 **Parameters:**
 - tasks (ArrayTask) - array with tasks
 - uid (String) - Task UID
+
+### Navigation / Completion Helpers
+
+The filters `completed`, `url`, and `resume_link` (documented under Submission) also apply when piping a Step or Task in the context of a submission navigation flow.
 
 ## User
 
@@ -714,6 +806,37 @@ Shows the HTML code for a user's image (e.g. <span v-pre>`{{ user | avatar_for: 
 - `user` (User) — User object.
 - `size` (Integer) (default: 'C50x50') — Image size.
 - `link` (Boolean) (default: true) — `true` adds a link to the user's profile.
+
+### By Form Slug
+
+Returns user form responses filtered by a specific form slug.
+
+*e.g.* <span v-pre>`{% assign responses = user.responses | by_form_slug: 'onboarding-form' %}`</span>
+
+**Parameters:**
+- responses (Array&lt;FormResponse&gt;) — user.responses
+- form_slug (String) — form slug to match
+
+### By Response Date Range
+
+Returns form responses created within a date range (inclusive).
+
+*e.g.* <span v-pre>`{% assign responses = user.responses | by_response_date_range: '2025-03-10', '2025-03-20' %}`</span>
+
+**Parameters:**
+- responses (Array&lt;FormResponse&gt;) — user.responses
+- date_from (String/Date) — start date (YYYY-MM-DD recommended)
+- date_to (String/Date) — end date (YYYY-MM-DD recommended)
+
+### By Answer Text
+
+Returns form responses containing an answer whose `answers.text_field` matches exactly the provided text.
+
+*e.g.* <span v-pre>`{% assign responses = user.responses | by_answer_text: 'Blue' %}`</span>
+
+**Parameters:**
+- responses (Array&lt;FormResponse&gt;) — user.responses
+- answer_text (String) — exact text to match
 
 ## Widget
 
@@ -739,3 +862,7 @@ Returns a list of all widgets that belong to a page (e.g. <span v-pre>`{{ site |
 
 - `site` (Site) — Site-type object.
 - `page` (Page) — Page-type object.
+
+---
+
+NOTE: Composite and submission-related filters depend on internal preview/origination logic; behavior may vary in preview mode versus published mode.
