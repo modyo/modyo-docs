@@ -200,12 +200,12 @@ These are the liquid filters that alter values related to the Content module in 
 
 ### Asset image
 
-Returns the tags of an image using its uuid from the File Manager. *e.g.*
-<span v-pre>`{{ uuid | asset_image }}`</span>
+Returns the tags of an image using its uuid from the File Manager. If using Cloudflare for image optimization, you can use these additional parameters: width, height, blur, and quality. *e.g.*
+<span v-pre>`{{ uuid | asset_image: width: 40 }}`</span>
 
 ### Asset link
 
-Returns the URL of an image using its uuid from the File Manager. *e.g.*
+Returns the URL of an image using its uuid from the File Manager. If using Cloudflare for image optimization, you can use these additional parameters: width, height, blur, and quality. *e.g.*
 <span v-pre>`{{ uuid | asset_link: 'This is a link for the asset' }}`</span>
 
 ### Asset URL by UUID
