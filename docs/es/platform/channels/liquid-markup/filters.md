@@ -181,7 +181,7 @@ Agrega formato de divisa a un valor. *e.g.*
 :::warning Importante
 Este filtro determina el formato de la moneda y tiene prioridad sobre cualquier otra configuración de divisa.
 
-Si no especificas parámetros de divisa con el filtro de currency, Modyo utiliza la configuración de [payment](/es/platform/customers/settings#configuracion-de-payment) del reino.
+Si no especificas parámetros de divisa con el filtro de currency, Modyo utiliza la configuración de [payment](/es/platform/customers/settings.html#configuracion-de-payment) del reino.
 
 En caso de que el sitio no tenga un reino asociado y no especifiques parámetros, se aplicará el formato predefinido del idioma del sitio.
 :::
@@ -268,14 +268,63 @@ Retorna una lista de Entradas que pertenecen a un Tipo de Contenido seleccionado
 - entries (ArrayEntry) — array con entradas
 - locale (String) (default: '') — String con tipos de contenido separados por coma.
 
-### Filter By
+### By UUID
 
-Retorna una lista de Entradas que cumplen con un filtro. *e.g.*
-<span v-pre>`{% assign entries = widget.entries | filter_by: field: 'name', eq: 'entry3Cat3' %}`</span>
+Filtra un arreglo de entradas por uno o más UUIDs.
 
-**Parametros**:
+**Parámetros**:
+- entries (ArrayEntry) — colección (objeto antes de la barra)
+- uuid_list (String) — lista de UUIDs separada por comas
+
+Predeterminado: Si `uuid_list` está en blanco retorna la colección original.
+
+*ej.* <span v-pre>`{% assign filtradas = entries | by_uuid: 'uuid2,uuid1,uuid3' %}`</span>
+
+### Filtro de Entrada Compuesto (`by`)
+
+Aplica múltiples filtros de entradas en una sola llamada. Claves soportadas (todas opcionales):
+- types: slugs de tipos separados por comas (aplica `by_type`)
+- categories: slugs de categorías separados por comas (aplica `by_category`)
+- tags: tags separados por comas (aplica `by_tag`)
+- slugs: slugs de entradas separados por comas (aplica `by_slug`)
+- uuids: UUIDs separados por comas (aplica `by_uuid`)
+- locale: código de idioma (aplica `by_lang`)
+- from_published_date: fecha límite inicial (>= `published_at`)
+- to_published_date: fecha límite final (<= `published_at`)
+- sort_by: nombre de campo (`name`, `slug`, `created_at`, `updated_at`, `published_at` u otro path de campo)
+- order: `asc` | `desc` (default: `desc`)
+- per_page: cantidad de resultados por página (habilita paginación; default: 10)
+- page: número de página (default: 1)
+
+*ej.* <span v-pre>`{% assign entries = spaces['testing'].entries | by: types: 'promo,basic', locale: 'es', categories: 'destacadas,favoritas', tags: 'test,test2', slugs: 'slug2,slug1', uuids: 'uuid2,uuid1', sort_by: 'name', order: 'asc', per_page: 10, page: 2 %}`</span>
+
+### Filter By (Operadores Extendidos)
+
+Retorna una lista de Entradas que cumplen con un filtro.
+
+**Parámetros**:
 - entries (ArrayEntry) — array con entradas
-- opts (Hash) (default: {}) — hash con el campo y eq como el valor
+- opts (Hash) (default: {}) — hash con campo y pares operador/valor
+
+**Operadores soportados** (usar como llaves dentro de `opts`):
+- `eq` — igual a (implícito cuando solo se provee `field` y valor)
+- `gt`, `lt` — mayor que / menor que
+- `in` — el valor del campo debe estar dentro de los valores separados por comas
+- `nin` — el valor del campo NO debe estar dentro de los valores separados por comas
+- `has` — el campo (tipo array) debe contener todos los valores separados por comas
+
+Todos los operadores multi-valor aceptan un string separado por comas.
+
+**Ejemplos**:
+
+Filtrar entradas donde el campo `status` sea 'published' o 'featured':
+<span v-pre>`{% assign entries = entries | filter_by: field: 'status', in: 'published,featured' %}`</span>
+
+Filtrar entradas donde `author_id` no sea 1 ni 5:
+<span v-pre>`{% assign entries = entries | filter_by: field: 'author_id', nin: '1,5' %}`</span>
+
+Filtrar entradas que tengan ambos 'tech' y 'news' en su campo array `categories`:
+<span v-pre>`{% assign entries = entries | filter_by: field: 'categories', has: 'tech,news' %}`</span>
 
 ### Filter By Query String
 
@@ -400,7 +449,7 @@ Desatura un color (ej. <span v-pre>`{{ '#00ff00' | desaturate: 15 }} #=> '#13ec1
 
 ### Grayscale
 
-Convierte un color a escala de grises (ej. <span v-pre>`{{ '#00ff00' | grayscale }} #=> '#808080'`</span>).
+Convierte un color a escala de grises (ej. <span v-pre>`{{ '#00ff00' | grayscale }} #=> '#808080'`</span>). Alias: `greyscale` (mismo resultado).
 
 ### Lighten
 
@@ -554,6 +603,18 @@ Traduce una fecha a formato DateTime (ej. <span v-pre>`{{ time | format_datetime
 
 Traduce una fecha a un formato reducido (dd-mm-yyyy) (ej. <span v-pre>`{{ time | format_short_date }}`</span>).
 
+### Get Session ID
+
+Devuelve el identificador de la sesión actual.
+
+*ej.* <span v-pre>`{{ '' | get_session_id }}`</span>
+
+### Image Tag (URL Genérica)
+
+Genera una etiqueta `<img>` simple para una URL cruda de imagen (no un objeto Asset).
+
+*ej.* <span v-pre>`{{ 'https://cdn.example.com/logo.png' | image_tag }}`</span>
+
 ### Link To
 
 Agrega una etiqueta de enlace (anchor link) (ej. <span v-pre>`{{ 'Hello World' | link_to: 'http://www.google.com', 'this is my alt', 'small', '_blank' }}`</span>).
@@ -679,6 +740,36 @@ Devuelve los Submissions con el estado seleccionado. *ej.*
 - submissions (ArraySubmission) - array con submissions del usuario
 - status (String) - Estado de los Originations. Los valores soportados son 'pending', 'completed' y 'all'
 
+### Completed
+
+Verifica si un elemento (wrapper de step/task) está completado para un submission dado.
+
+*ej.* <span v-pre>`{{ submission | completed: step }}`</span>
+
+**Parámetros:**
+- submission (Submission) — submission actual (objeto antes de la barra)
+- element (Step|TaskResponse wrapper) — elemento a evaluar
+
+Retorna: Boolean (true/false)
+
+### URL (URL del Step para Submission)
+
+Genera una URL navegable para un step dentro de un submission (primer task visible). Solo retorna valor si el submission está pendiente y el step está completado o el orden de steps permite navegación.
+
+*ej.* <span v-pre>`{{ step | url: submission }}`</span>
+
+### Resume Link
+
+Retorna un tag HTML de enlace para retomar un step pendiente dentro de un submission, o el nombre del step si no hay URL disponible.
+
+*ej.* <span v-pre>`{{ step | resume_link: submission }}`</span>
+
+### Submissions Selector
+
+Renderiza un fragmento HTML (dropdown) para seleccionar entre múltiples submissions pendientes (excluye el actual). No retorna nada si hay menos de 2 submissions pendientes.
+
+*ej.* <span v-pre>`{{ pending_submissions | submissions_selector }}`</span>
+
 ## Task
 
 Estos son los filtros liquid que alteran valores relacionados con tasks en Modyo Platform.
@@ -714,6 +805,37 @@ Muestra el código HTML para la imagen de un usuario (ej. <span v-pre>`{{ user |
 - `user` (User) — Objeto User.
 - `size` (Integer) (default: 'C50x50') — Tamaño para la imagen.
 - `link` (Boolean) (default: true) — `true` agrega un enlace hacia el perfil del usuario.
+
+### By Form Slug
+
+Retorna respuestas de formulario del usuario filtradas por un slug específico.
+
+*ej.* <span v-pre>`{% assign responses = user.responses | by_form_slug: 'onboarding-form' %}`</span>
+
+**Parámetros:**
+- responses (Array&lt;FormResponse&gt;) — user.responses
+- form_slug (String) — slug del formulario a coincidir
+
+### By Response Date Range
+
+Retorna respuestas de formulario creadas dentro de un rango de fechas (inclusivo).
+
+*ej.* <span v-pre>`{% assign responses = user.responses | by_response_date_range: '2025-03-10', '2025-03-20' %}`</span>
+
+**Parámetros:**
+- responses (Array&lt;FormResponse&gt;) — user.responses
+- date_from (String/Date) — fecha inicial (recomendado YYYY-MM-DD)
+- date_to (String/Date) — fecha final (recomendado YYYY-MM-DD)
+
+### By Answer Text
+
+Retorna respuestas de formulario que contienen una respuesta cuyo `answers.text_field` coincide exactamente con el texto provisto.
+
+*ej.* <span v-pre>`{% assign responses = user.responses | by_answer_text: 'Blue' %}`</span>
+
+**Parámetros:**
+- responses (Array&lt;FormResponse&gt;) — user.responses
+- answer_text (String) — texto exacto a coincidir
 
 ## Widget
 
