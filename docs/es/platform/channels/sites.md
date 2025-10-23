@@ -595,6 +595,10 @@ La jerarquía de ubicaciones en los sitios de Modyo sigue este orden:
 Para que una redirección sea exitosa, la ruta de origen no puede existir o tiene que estar despublicada. Si el origen es una página publicada con subpáginas, tienes que despublicar las subpáginas antes de despublicar la página principal.
 :::
 
+:::tip Tip
+A partir de la versión 10.1 se pueden hacer redirecciones hacia sitios fuera de la cuenta de Modyo.
+:::
+
 ### Security headers
 
 Habilita este módulo para tu sitio para configurar los encabezados de seguridad HTTP. Ten en cuenta que esta acción no se puede deshacer. Una vez habilitado, tendrás control total sobre los encabezados que deseas utilizar.
