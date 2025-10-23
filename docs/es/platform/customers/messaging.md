@@ -42,7 +42,7 @@ Las campañas de correo te permiten contactar a los usuarios a través de email.
 - **Nombre**: Identificador de la campaña.
 - **Tipo**: Selecciona **Correo** para activar esta opción.
 - **Asunto**: Texto que aparecerá en la línea de asunto del mensaje.
-- **Responder a**: Dirección de correo electrónico para las respuestas de los usuarios.
+- **Responder a**: Dirección de correo electrónico para las respuestas de los usuarios. Si este campo se deja en blanco se usará el correo por defecto del reino.
 - **Plantilla**: Selecciona una [plantilla](/es/platform/customers/messaging#plantillas). Si no seleccionas una, se enviará una plantilla en blanco.
 - **Habilitar segmentación**: Selecciona un segmento específico o deja esta opción desmarcada para enviar el mensaje a todos los usuarios.
 
