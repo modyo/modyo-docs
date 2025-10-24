@@ -203,7 +203,7 @@ These objects allow you to get information via Liquid for questions on a form in
 | **question.id**                  | Returns the question id.                               | ```3```                  |
 | **question.label**               | The label of the question.                             | ```The first question``` |
 | **question.name**                | The name of the question.                              | ```The first question``` |
-| **question.uid**                 | The uid of the question.                               | ```text-question-1```    |
+| **question.uid**                 | The identifier of the question.                        | ```text-question-1```    |
 
 ## grid
 
@@ -553,21 +553,21 @@ These objects obtain the information relevant to the Submissions.
 
 ### step
 
-| Objeto         | Descripción                          | Ejemplo                    |
-|----------------|--------------------------------------|----------------------------|
-| **step.uid**   | Unique identifier (UID) of the step. | ```step-01```              |
-| **step.name**  | Step name.                           | ```Personal Information``` |
-| **step.tasks** | Step tasks (array of tasks).         | ```[{"uid":"task-01"}]```  |
+| Objeto         | Descripción                  | Ejemplo                    |
+|----------------|------------------------------|----------------------------|
+| **step.uid**   | Identifier of the step.      | ```step-01```              |
+| **step.name**  | Step name.                   | ```Personal Information``` |
+| **step.tasks** | Step tasks (array of tasks). | ```[{"uid":"task-01"}]```  |
 
 ### task
 
-| Objeto               | Descripción                          | Ejemplo                                |
-|----------------------|--------------------------------------|----------------------------------------|
-| **task.uid**         | Unique identifier (UID) of the task. | ```task-01```                          |
-| **task.step**        | Step to which the task belongs.      |                                        |
-| **task.name**        | Name of the task.                    | ```Enter your personal information:``` |
-| **task.type**        | Task type.                           | ```user_input```                       |
-| **task.description** | Task description.                    | ```Collect user data```                |
+| Objeto               | Descripción                     | Ejemplo                                |
+|----------------------|---------------------------------|----------------------------------------|
+| **task.uid**         | Identifier of the task.         | ```task-01```                          |
+| **task.step**        | Step to which the task belongs. |                                        |
+| **task.name**        | Name of the task.               | ```Enter your personal information:``` |
+| **task.type**        | Task type.                      | ```user_input```                       |
+| **task.description** | Task description.               | ```Collect user data```                |
 
 
 ### Task Response Types

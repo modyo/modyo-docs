@@ -203,7 +203,7 @@ Estos objetos permiten obtener información a través de Liquid para las pregunt
 | **question.id**                  | Devuelve el ID de la pregunta.                          | ```3```                   |
 | **question.label**               | Etiqueta de la pregunta.                                | ```La primera pregunta``` |
 | **question.name**                | Nombre interno de la pregunta.                          | ```La primera pregunta``` |
-| **question.uid**                 | UID de la pregunta.                                     | ```text-question-1```     |
+| **question.uid**                 | Identifier de la pregunta                               | ```text-question-1```     |
 
 ## grid
 
@@ -560,21 +560,21 @@ Estos objetos obtienen la información relevante a las Submissions.
 
 ### step
 
-| Objeto         | Descripción                         | Ejemplo                    |
-|----------------|-------------------------------------|----------------------------|
-| **step.uid**   | Identificador único (UID) del step. | ```step-01```              |
-| **step.name**  | Nombre del step.                    | ```Información Personal``` |
-| **step.tasks** | Tasks del step (array de tasks).    | ```[{"uid":"task-01"}]```  |
+| Objeto         | Descripción                      | Ejemplo                    |
+|----------------|----------------------------------|----------------------------|
+| **step.uid**   | Identificador del step.          | ```step-01```              |
+| **step.name**  | Nombre del step.                 | ```Información Personal``` |
+| **step.tasks** | Tasks del step (array de tasks). | ```[{"uid":"task-01"}]```  |
 
 ### task
 
-| Objeto               | Descripción                           | Ejemplo                               |
-|----------------------|---------------------------------------|---------------------------------------|
-| **task.uid**         | Identificador único (UID) de la task. | ```task-01```                         |
-| **task.step**        | Step al que pertenece la task.        |                                       |
-| **task.name**        | Nombre de la task.                    | ```Ingresa tu información personal``` |
-| **task.type**        | Tipo de la task.                      | ```user_input```                      |
-| **task.description** | Descripción de la task.               | ```Recolecta datos personales```      |
+| Objeto               | Descripción                    | Ejemplo                               |
+|----------------------|--------------------------------|---------------------------------------|
+| **task.uid**         | Identificador de la task.      | ```task-01```                         |
+| **task.step**        | Step al que pertenece la task. |                                       |
+| **task.name**        | Nombre de la task.             | ```Ingresa tu información personal``` |
+| **task.type**        | Tipo de la task.               | ```user_input```                      |
+| **task.description** | Descripción de la task.        | ```Recolecta datos personales```      |
 
 ### Tipos de Respuesta de Tareas
 
