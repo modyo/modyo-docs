@@ -85,6 +85,12 @@ MODYO_BUILD_DIRECTORY=build
 MODYO_WIDGET_NAME=my-project
 # Directive necessary for safely removing some libraries from the liquid parser
 MODYO_DISABLE_LIQUID_REGEX=raw
+# Enable ZIP deployment for code splitting (optional)
+MODYO_ZIP=true
+# Main JavaScript entry file for code splitting (optional, default: main.js)
+MODYO_ZIP_ENTRY_JS=main.js
+# Main CSS entry file for code splitting (optional, default: main.css)
+MODYO_ZIP_ENTRY_CSS=main.css
 ```
 
 ### Description of variables in .env
@@ -97,6 +103,9 @@ MODYO_DISABLE_LIQUID_REGEX=raw
 - `MODYO_BUILD_DIRECTORY` Name of the folder containing the build result, such as "dist" or "build" depending on the framework used.
 - `MODYO_WIDGET_NAME` Name the widget will have after being deployed to the platform.
 - `MODYO_DISABLE_LIQUID_REGEX` Defines a regular expression to select files that need to disable Liquid usage, for example, template files where the definition or use of variables is likely to collide with Liquid usage.
+- `MODYO_ZIP` Enables ZIP deployment mode for code splitting. Set to `true` for widgets with multiple files (default: `false`).
+- `MODYO_ZIP_ENTRY_JS` Specifies the main JavaScript entry file when using ZIP deployment (default: `main.js`).
+- `MODYO_ZIP_ENTRY_CSS` Specifies the main CSS entry file when using ZIP deployment (default: `main.css`).
 
 ## Initializing a New Project
 
@@ -276,7 +285,7 @@ These commands allow you to select the local entry points you want to use.
 
 
 
-### Code splitting
+## Code Splitting
 
 [Widgets](/en/platform/channels/widgets.html#widgets) allow you to develop complex functionalities in your Modyo web applications, thus increasing the functionality of your sites.
 
@@ -284,30 +293,245 @@ However, when including external libraries or increasing the complexity of a wid
 
 The _code splitting_ technique allows you to divide your widget code into components that load on demand or in parallel, solving these problems. The benefits of code splitting include:
 
-- Reduction in loading speed.
-- Improvement in interaction time.
+- Significant reduction in initial load time (up to 99% smaller initial bundle).
+- Faster Time to Interactive (TTI) and improved Core Web Vitals.
 - Elimination of widget size restrictions.
-- Performance increase.
+- Better caching strategy for vendor and custom code.
+- Improved overall performance and user experience.
+
+### How code splitting works in Modyo
+
+Code splitting divides your widget into multiple files:
+- **Entry point** (`main.js`): A small file (typically 4-10 KB) that loads immediately.
+- **Chunks**: Larger files containing the main application code, loaded asynchronously.
+- **CSS files**: Separated into vendor and custom stylesheets for better caching.
+
+The entry point configures the runtime environment and then dynamically imports the main application code, allowing the browser to start rendering faster while the rest of the application loads in the background.
+
+### Requirements for code splitting
+
+To implement code splitting in Modyo widgets, you need:
+
+1. **Build tool support**: Webpack 5+ (Vite and other bundlers can also be configured).
+2. **Multiple output files**: Your build must generate a main entry file and one or more chunks.
+3. **Runtime public path configuration**: The widget must be able to resolve the correct CDN path for chunks at runtime.
+4. **ZIP deployment**: All files must be packaged and deployed together using the `--zip` flag.
+
+### Platform integration
+
+Modyo provides runtime information about where widget assets are hosted through a global variable. This enables your widget to load chunks from the correct CDN location regardless of the environment (development, staging, production).
+
+The platform injects the following variable before loading your widget:
+
+```javascript
+window['resourceBasePath-{​{widget.wid}}'] = "https://site.com/widget_manager/{​{widget.wid}}/{​{widget.version}}/";
+```
+
+Your widget's entry point must read this variable and configure the bundler's public path accordingly.
+
+### Implementing code splitting with Webpack
+
+For a Webpack-based widget, follow these steps:
+
+#### 1. Create a public path configuration file
+
+Create a `src/public-path.js` file (plain JavaScript, not TypeScript):
+
+```javascript
+// eslint-disable-next-line no-undef
+__webpack_public_path__ = process.env.NODE_ENV === 'development'
+  ? '/'
+  : window['resourceBasePath-{​{widget.wid}}'];
+```
+
+This file must be imported **first** in your entry point, before any other imports.
+
+#### 2. Update your entry point
+
+Modify your `src/index.tsx` (or `index.js`) to lazy load the main application:
+
+```typescript
+// MUST BE FIRST IMPORT
+import './public-path';
+
+// Import CSS synchronously (ensures styles load immediately)
+import './styles/base.scss';
+
+// Lazy load the main application
+import('./bootstrap')
+  .then(() => console.log('App loaded successfully'))
+  .catch((error) => console.error('Error loading app:', error));
+```
+
+#### 3. Create a bootstrap file
+
+Create `src/bootstrap.tsx` with your main application initialization:
+
+```typescript
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+
+// Initialize React
+const root = ReactDOM.createRoot(
+  document.getElementById('widgetName') as Element
+);
+
+root.render(<App />);
+```
+
+#### 4. Configure Webpack output
+
+Ensure your Webpack configuration does **not** include a hardcoded `publicPath`:
+
+```javascript
+// .config/webpack.config.js
+module.exports = {
+  output: {
+    path: path.resolve(__dirname, '../build'),
+    filename: '[name].js',
+    chunkFilename: '[name].[contenthash:8].chunk.js',
+    // ⚠️ DO NOT set publicPath here
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'initial',
+      cacheGroups: {
+        defaultVendors: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'app-modules',
+        },
+      },
+    },
+  },
+};
+```
 
 ### CLI commands for code splitting
 
-With the Modyo command line interface (CLI), you can publish and update a widget developed externally or one in which you have implemented code splitting.
-
-When you create a widget with Modyo CLI, it will have a tag with the CLI text next to its name.
-
-In the case of widgets created with code splitting, you must specify which is the main file and which are the chunks that will be loaded dynamically, as required.
-
-To package a file as zip in Modyo CLI use the following options:
-
-- zip: packages the widget bundle to send it to the platform.
-- zip-entry-css: main CSS file of the widget.
-- zip-entry-js: main JS file of the widget.
-
-Example:
+When deploying a widget with code splitting, you must use the `--zip` flag to package all files together:
 
 ```bash
+# Basic deployment with ZIP
+modyo-cli push --zip
+
+# Specify custom entry points
 modyo-cli push --zip --zip-entry-css=main.css --zip-entry-js=main.js
+
+# Deploy and publish immediately
+modyo-cli push --zip -p
 ```
+
+#### Available options
+
+- `--zip` or `-z`: Packages the widget bundle as a ZIP file (required for code splitting).
+- `--zip-entry-css`: Specifies the main CSS file (default: `main.css`).
+- `--zip-entry-js`: Specifies the main JavaScript file (default: `main.js`).
+
+#### Using environment variables
+
+Alternatively, you can configure these options in your `.env` file to avoid passing flags every time:
+
+```bash
+MODYO_ZIP=true
+MODYO_ZIP_ENTRY_JS=main.js
+MODYO_ZIP_ENTRY_CSS=main.css
+```
+
+With these environment variables set, you can simply run:
+
+```bash
+modyo-cli push
+```
+
+:::warning Important
+The `--zip` flag (or `MODYO_ZIP=true` in `.env`) is **mandatory** for widgets with code splitting. Without it, only the main.js file will be uploaded, and chunks will fail to load in production.
+:::
+
+### Build output structure
+
+After building a code-split widget, your build directory should look similar to this:
+
+```
+build/
+├── main.js                        # 4-10 KB - Entry point
+├── main.css                       # Small - Custom styles
+├── app-modules.css                # Large - Vendor CSS
+├── bootstrap.[hash].chunk.js      # Large - Main app code
+├── [other-chunks].[hash].chunk.js # Additional chunks
+└── asset-manifest.json            # Asset manifest
+```
+
+### Verifying code splitting works
+
+After deploying your widget, verify it works correctly:
+
+1. **Open browser DevTools** and go to the Network tab.
+2. **Reload the page** containing your widget.
+3. **Check the waterfall**:
+   - `main.js` should load first (small file, 4-10 KB).
+   - CSS files should load immediately after.
+   - Chunks (e.g., `bootstrap.[hash].chunk.js`) should load shortly after.
+4. **Check the Console** for any error messages related to chunk loading.
+
+### Common issues and solutions
+
+#### Chunks return 404 errors
+
+**Cause**: The runtime public path is not configured correctly.
+
+**Solution**:
+- Verify that `public-path.js` is imported **first** in your entry point.
+- Check that `window['resourceBasePath-{​{widget.wid}}']` is defined (inspect HTML source).
+- Ensure you deployed with the `--zip` flag.
+
+#### Styles load late (FOUC - Flash of Unstyled Content)
+
+**Cause**: CSS is imported in the lazy-loaded bootstrap file instead of the entry point.
+
+**Solution**: Move all CSS imports to `index.tsx` (entry point), not `bootstrap.tsx`.
+
+#### Widget fails silently after deployment
+
+**Cause**: Missing `--zip` flag during deployment.
+
+**Solution**: Redeploy using `modyo-cli push --zip`.
+
+### Performance recommendations
+
+- **Analyze bundle composition**: Use webpack-bundle-analyzer to identify large dependencies.
+- **Split by routes**: For multi-page widgets, lazy load route components.
+- **Monitor metrics**: Track First Contentful Paint (FCP) and Time to Interactive (TTI).
+- **Target bundle sizes**:
+  - Entry point: < 10 KB
+  - Total CSS: < 100 KB (gzipped)
+  - Main chunk: < 500 KB (gzipped)
+
+### Reference implementation
+
+Modyo provides a reference template with code splitting already configured:
+
+```bash
+modyo-cli get dynamic-react-base-template-codesplit@main my-widget
+```
+
+This template includes:
+- Pre-configured Webpack setup
+- Runtime public path configuration
+- Lazy loading pattern
+- Optimized CSS splitting
+- Ready for production deployment
+
+**GitHub Repository**: [dynamic-react-base-template-codesplit](https://github.com/modyo-community/dynamic-react-base-template-codesplit)
+
+The repository includes complete documentation on:
+- Architecture decisions and technical context
+- Step-by-step implementation guide
+- Troubleshooting common issues
+- Performance optimization recommendations
+- Example configurations for different scenarios
+
+For more details on implementing code splitting, including architecture decisions and advanced configurations, refer to the template's documentation.
 
 
 ## Deployment

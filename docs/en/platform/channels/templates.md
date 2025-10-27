@@ -143,8 +143,8 @@ Create custom CSS and JavaScript views to import your libraries to Modyo Platfor
 1. Once you have finished editing the Style Sheet or Javascript, you must include it in your layout. To do this, you can use the following Liquid filters:
 
 - `asset_url`: To define the file type
-- `stylesheet_tag`: Generates a <link> tag to include the CSS view.
-- `script_tag`: Generates a <script> tag to include the Javascript view.
+- `stylesheet_tag`: Generates a `<link>` tag to include the CSS view.
+- `script_tag`: Generates a `<script>` tag to include the Javascript view.
 
 ### Examples
 - A custom CSS view with media: screen
