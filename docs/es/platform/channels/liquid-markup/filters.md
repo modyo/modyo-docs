@@ -200,12 +200,12 @@ Estos son los filtros liquid que alteran valores relacionados al módulo de Cont
 
 ### Asset image
 
-Retorna los tags de una imagen usando su uuid del Gestor de Archivos. *e.g.*
-<span v-pre>`{{ uuid | asset_image }}`</span>
+Retorna los tags de una imagen usando su uuid del Gestor de Archivos. Al usar Cloudflare para la optimización de imágenes, puedes usar estos parámetros adicionales: width, height, blur y quality *e.g.*
+<span v-pre>`{{ uuid | asset_image: width: 40 }}`</span>
 
 ### Asset link
 
-Retorna el URL de una imagen usando su uuid del Gestor de Archivos. *e.g.*
+Retorna el URL de una imagen usando su uuid del Gestor de Archivos. Al usar Cloudflare para la optimización de imágenes, puedes usar estos parámetros adicionales: width, height, blur y quality *e.g.*
 <span v-pre>`{{ uuid | asset_link: 'Este es una liga para el asset' }}`</span>
 
 ### Asset URL by UUID

@@ -41,7 +41,7 @@ Email campaigns allow you to contact users via email. To set up an email campaig
 
 - **Name**: The identifier for the campaign.
 - **Type**: Select **Email** to enable this option.
-- **Subject**: The text that will appear in the message's subject line.
+- **Subject**: The text that will appear in the message's subject line. If this field is left blank, the realm's default email will be used.
 - **Reply To**: The email address for user responses.
 - **Template**: Select a [template](/en/platform/customers/messaging#templates). If no template is selected, a blank one will be used.
 - **Enable Segmentation**: Select a specific segment or leave this option unchecked to send the message to all users.
