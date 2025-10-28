@@ -553,7 +553,7 @@ These objects obtain the information relevant to the Submissions.
 
 ### step
 
-| Objeto         | Descripción                  | Ejemplo                    |
+| Object         | Description                  | Example                    |
 |----------------|------------------------------|----------------------------|
 | **step.uid**   | Identifier of the step.      | ```step-01```              |
 | **step.name**  | Step name.                   | ```Personal Information``` |
@@ -561,7 +561,7 @@ These objects obtain the information relevant to the Submissions.
 
 ### task
 
-| Objeto               | Descripción                     | Ejemplo                                |
+| Object               | Description                     | Example                                |
 |----------------------|---------------------------------|----------------------------------------|
 | **task.uid**         | Identifier of the task.         | ```task-01```                          |
 | **task.step**        | Step to which the task belongs. |                                        |
