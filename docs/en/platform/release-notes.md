@@ -6,6 +6,20 @@ search: true
 
 ## 10.1
 
+### 10.1.6
+
+:::info Release date
+October 29, 2025
+:::
+
+| Module | Improvements |
+|--------|---------|
+| **Core** | • Swagger improvements |
+| **Channels** | • Adds fit and format to supported options for image optimization via Cloudflare<br>• Adds new liquid filter handle or handleize<br>• Removes content_view templates, obsolete functionality since 9.2.0 |
+| **Customers** | • Improves date picker displayed in originations<br>• Restores optional kid support in openid integrations<br>• Adds administrative API for obtaining perishable token |
+| **Content** | • Fixes clone link permission |
+
+
 ### 10.1.5
 
 :::info Release date
