@@ -200,12 +200,12 @@ Estos son los filtros liquid que alteran valores relacionados al módulo de Cont
 
 ### Asset image
 
-Retorna los tags de una imagen usando su uuid del Gestor de Archivos. Al usar Cloudflare para la optimización de imágenes, puedes usar estos parámetros adicionales: width, height, blur y quality *e.g.*
-<span v-pre>`{{ uuid | asset_image: width: 40 }}`</span>
+Retorna los tags de una imagen usando su uuid del Gestor de Archivos. Al usar Cloudflare para la optimización de imágenes, puedes usar estos parámetros adicionales: width, height, blur, quality, format y fit *e.g.*
+<span v-pre>`{{ uuid | asset_image: width: 40, format: 'auto', fit: 'cover' }}`</span>
 
 ### Asset link
 
-Retorna el URL de una imagen usando su uuid del Gestor de Archivos. Al usar Cloudflare para la optimización de imágenes, puedes usar estos parámetros adicionales: width, height, blur y quality *e.g.*
+Retorna el URL de una imagen usando su uuid del Gestor de Archivos. *e.g.*
 <span v-pre>`{{ uuid | asset_link: 'Este es una liga para el asset' }}`</span>
 
 ### Asset URL by UUID
@@ -540,7 +540,7 @@ Estos filtros Liquid alteran valores relacionados con los Sitios en Modyo Platfo
 
 ### Asset image Tag
 
-Genera la etiqueta HTML de una imagen (ej. <span v-pre>`{{ asset | asset_image_tag: 'original' }}`</span>).
+Genera la etiqueta HTML de una imagen Al usar Cloudflare para la optimización de imágenes (ej. <span v-pre>`{{ asset | asset_image_tag: 'original' }}`</span>).
 
 ### Asset Thumbnail Link Tag
 
@@ -554,7 +554,7 @@ Genera la etiqueta HTML del thumbnail de una imagen (ej. <span v-pre>`{{ asset |
 
 ### Asset URL
 
-Genera la URL de un objeto tipo Asset (ej. <span v-pre>`{{ asset | asset_url: 'original' }}`</span>).
+Genera la URL de un objeto tipo Asset. Al usar Cloudflare para la optimización de imágenes, puedes usar estos parámetros adicionales: width, height, blur, quality, format y fit  (ej. <span v-pre>`{{ assets['asset_uid'] | asset_url: blur: 40, format: 'auto', fit: 'cover' }}`</span>).
 
 ### Audio Player
 
