@@ -125,6 +125,12 @@ To do this, insert the attributes below the editor into the code and paste them 
 
 Every time you make a change to the code, you must click on the **Save** button located at the top of the screen.
 
+You can use [liquid drops](/en/platform/channels/liquid-markup/objects.html) in the email to access the following information: user, site, account, origination, submission and assignee.
+
+:::tip Tip
+The assignee liquid drop refers to the adminuser drop.
+:::
+
 ### Identity Providers
 
 To facilitate access to the platform, you can set up login and registration through standard services.

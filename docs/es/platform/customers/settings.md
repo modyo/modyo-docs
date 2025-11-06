@@ -125,6 +125,12 @@ Para ello, inserta en el código los atributos que están debajo del editor y p�
 
 Cada vez que hagas un cambio en el código, debes hacer click en el botón **Guardar** ubicado en la parte superior de la pantalla.
 
+Puedes usar [drops de liquid](/es/platform/channels/liquid-markup/objects.html) en el correo para acceder a la siguiente información: user, site, account, origination, submission y assignee.
+
+:::tip Tip
+El drop de liquid de assignee se refiere al drop de adminuser.
+:::
+
 ### Proveedores de identidad
 
 Para facilitar el acceso a la plataforma, puedes configurar el inicio de sesión y el registro a través de servicios estándar.
