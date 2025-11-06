@@ -540,7 +540,7 @@ Estos filtros Liquid alteran valores relacionados con los Sitios en Modyo Platfo
 
 ### Asset image Tag
 
-Genera la etiqueta HTML de una imagen Al usar Cloudflare para la optimización de imágenes (ej. <span v-pre>`{{ asset | asset_image_tag: 'original' }}`</span>).
+Genera la etiqueta HTML de una imagen (ej. <span v-pre>`{{ asset | asset_image_tag: 'original' }}`</span>).
 
 ### Asset Thumbnail Link Tag
 
