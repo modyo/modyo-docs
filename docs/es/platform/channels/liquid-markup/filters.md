@@ -554,7 +554,7 @@ Genera la etiqueta HTML del thumbnail de una imagen (ej. <span v-pre>`{{ asset |
 
 ### Asset URL
 
-Genera la URL de un objeto tipo Asset. Al usar Cloudflare para la optimización de imágenes, puedes usar estos parámetros adicionales: width, height, blur, quality, format y fit  (ej. <span v-pre>`{{ assets['asset_uid'] | asset_url: blur: 40, format: 'auto', fit: 'cover' }}`</span>).
+Genera la URL de un objeto tipo Asset. Al usar Cloudflare para la optimización de imágenes, puedes usar estos parámetros adicionales: width, height, blur, quality, format y fit  (ej. <span v-pre>`{{ assets['asset_uuid'] | asset_url: blur: 40, format: 'auto', fit: 'cover' }}`</span>).
 
 ### Audio Player
 
