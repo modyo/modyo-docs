@@ -551,7 +551,8 @@ Generates the HTML thumbnail tag of an image (e.g. <span v-pre>`{{ asset | asset
 
 ### Asset URL
 
-Generates the URL of an Asset-type object. If using Cloudflare for image optimization, you can use these additional parameters: width, height, blur, quality, format and fit. (e.g. <span v-pre>`{{ assets['asset_uuid'] | asset_url: blur: 40, format: 'auto', fit: 'cover'  }}`</span>).
+Generates the URL of an Asset object or a template asset path. For Asset objects using Cloudflare for image optimization, you can use the following additional parameters: width, height, blur, quality, format and fit. (e.g. <span v-pre{{ assets['asset_uuid'] | asset_url: blur: 40, format: 'auto', fit: 'cover'  }}</span>).
+For template asset paths from the template builder, specify the asset type as the second argument (e.g. <span v-pre{{ 'base' | asset_url: 'js'  }}</span>). You can also use the script_tag or stylesheet_tag filters to automatically generate the complete HTML <script> or <link> tag (e.g. <span v-pre{{ 'base' | asset_url: 'css' | stylesheet_tag: media: 'screen' }}</span>).
 
 ### Audio Player
 
