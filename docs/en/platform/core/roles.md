@@ -102,6 +102,10 @@ The most important user will have the Default Admin or Administrator role. This 
 ### Custom roles
 Custom roles allow you to create profiles with unique access and permissions, combining existing roles or configuring them according to the specific needs of your organization.
 
+:::tip Tip
+Custom roles are available from version 10.1 onwards.
+:::
+
 #### Create custom roles
 
 To create a custom role, select the **New Role** button and define its **scope**. This will assign permissions depending on your selection:

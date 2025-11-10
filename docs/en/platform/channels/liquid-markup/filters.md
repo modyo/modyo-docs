@@ -200,12 +200,12 @@ These are the liquid filters that alter values related to the Content module in 
 
 ### Asset image
 
-Returns the tags of an image using its uuid from the File Manager. If using Cloudflare for image optimization, you can use these additional parameters: width, height, blur, and quality. *e.g.*
-<span v-pre>`{{ uuid | asset_image: width: 40 }}`</span>
+Returns the tags of an image using its uuid from the File Manager. If using Cloudflare for image optimization, you can use these additional parameters: width, height, blur, quality, format and fit. *e.g.*
+<span v-pre>`{{ uuid | asset_image: width: 40, format: 'auto', fit: 'cover' }}`</span>
 
 ### Asset link
 
-Returns the URL of an image using its uuid from the File Manager. If using Cloudflare for image optimization, you can use these additional parameters: width, height, blur, and quality. *e.g.*
+Returns the URL of an image using its uuid from the File Manager. *e.g.*
 <span v-pre>`{{ uuid | asset_link: 'This is a link for the asset' }}`</span>
 
 ### Asset URL by UUID
@@ -551,7 +551,8 @@ Generates the HTML thumbnail tag of an image (e.g. <span v-pre>`{{ asset | asset
 
 ### Asset URL
 
-Generates the URL of an Asset-type object (e.g. <span v-pre>`{{ asset | asset_url: 'original' }}`</span>).
+Generates the URL of an Asset object or a template asset path. For Asset objects using Cloudflare for image optimization, you can use the following additional parameters: width, height, blur, quality, format and fit. (e.g. <span v-pre>`{{ assets['asset_uuid'] | asset_url: blur: 40, format: 'auto', fit: 'cover'  }}`</span>).
+For template asset paths from the template builder, specify the asset type as the second argument (e.g. <span v-pre>`{{ 'base' | asset_url: 'js'  }}`</span>). You can also use the script_tag or stylesheet_tag filters to automatically generate the complete HTML <script> or <link> tag (e.g. <span v-pre>`{{ 'base' | asset_url: 'css' | stylesheet_tag: media: 'screen' }}`</span>).
 
 ### Audio Player
 

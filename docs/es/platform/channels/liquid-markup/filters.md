@@ -200,12 +200,12 @@ Estos son los filtros liquid que alteran valores relacionados al módulo de Cont
 
 ### Asset image
 
-Retorna los tags de una imagen usando su uuid del Gestor de Archivos. Al usar Cloudflare para la optimización de imágenes, puedes usar estos parámetros adicionales: width, height, blur y quality *e.g.*
-<span v-pre>`{{ uuid | asset_image: width: 40 }}`</span>
+Retorna los tags de una imagen usando su uuid del Gestor de Archivos. Al usar Cloudflare para la optimización de imágenes, puedes usar estos parámetros adicionales: width, height, blur, quality, format y fit *e.g.*
+<span v-pre>`{{ uuid | asset_image: width: 40, format: 'auto', fit: 'cover' }}`</span>
 
 ### Asset link
 
-Retorna el URL de una imagen usando su uuid del Gestor de Archivos. Al usar Cloudflare para la optimización de imágenes, puedes usar estos parámetros adicionales: width, height, blur y quality *e.g.*
+Retorna el URL de una imagen usando su uuid del Gestor de Archivos. *e.g.*
 <span v-pre>`{{ uuid | asset_link: 'Este es una liga para el asset' }}`</span>
 
 ### Asset URL by UUID
@@ -554,7 +554,8 @@ Genera la etiqueta HTML del thumbnail de una imagen (ej. <span v-pre>`{{ asset |
 
 ### Asset URL
 
-Genera la URL de un objeto tipo Asset (ej. <span v-pre>`{{ asset | asset_url: 'original' }}`</span>).
+Genera la URL de un objeto **Asset** o una ruta de activo de plantilla. Para los objetos Asset que utilizan Cloudflare para la optimización de imágenes, puedes usar los siguientes parámetros adicionales: width, height, blur, quality, format y fit. (ej. <span v-pre>{{ assets['asset_uuid'] | asset_url: blur: 40, format: 'auto', fit: 'cover' }}</span>).
+Para las rutas de assets de plantilla (template asset paths) desde el template builder, especifica el tipo de asset como el segundo argumento (ej. <span v-pre>{{ 'base' | asset_url: 'js' }}</span>). También puedes usar los filtros `script_tag` o `stylesheet_tag` para generar automáticamente la etiqueta HTML `<script>` o `<link>` completa (ej. <span v-pre>{{ 'base' | asset_url: 'css' | stylesheet_tag: media: 'screen' }}</span>).
 
 ### Audio Player
 

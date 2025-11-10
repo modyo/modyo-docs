@@ -102,6 +102,10 @@ El usuario más importante tendrá el rol de Default Admin o Administrador. Este
 ### Roles a medida
 Los roles a medida te permiten crear perfiles con accesos y permisos únicos, combinando roles existentes o configurándolos según las necesidades específicas de tu organización.
 
+:::tip Tip
+Los roles a medida están desde la versión 10.1 en adelante.
+:::
+
 #### Crear roles a medida
 
 Para crear un rol a medida, selecciona el botón **Nuevo Rol** y define su **scope**. Esto asignará permisos según la selección que realices:
