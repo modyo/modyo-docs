@@ -6,6 +6,20 @@ search: true
 
 ## 10.1
 
+### 10.1.7
+
+:::info Fecha del release
+25 de noviembre de 2025
+:::
+
+| Módulo | Mejoras |
+|--------|---------|
+| **Channels** | • Corrige permisos para las acciones de sincronización<br>• Corrige filtros de contenidos para contenidos relacionados<br>• Corrige buscador de templates |
+| **Customers** | • Aumenta el tamaño de almacenamiento para urls en los webhooks<br>• Agrega CORS para la API de customers<br>• Mejora reCAPTCHA en formularios<br>• Mejora de experiencia en selección de fechas |
+| **Content** | • Corrige detección de content types en archivos subidos mediante el modal de archivos |
+| **Core** | • Mejora construcción de roles mediante permisos más granulares de las settings de sitios y contenidos |
+
+
 ### 10.1.6
 
 :::info Fecha del release
