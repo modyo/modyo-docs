@@ -220,13 +220,13 @@ En este ejemplo puede encontrar en uso el  acceso a datos por Objetos de Liquid 
     ];
 
     const staticColors = [
-	 { id: 'white', name: 'Blanco' },  
-	{ id: 'red', name: 'Rojo' },
-        { id: 'blue', name: 'Azul' },
-        { id: 'black', name: 'Negro' },    
-        { id: 'silver', name: 'Plateado' },
-        { id: 'green', name: 'Verde' },
-        { id: 'yellow', name: 'Amarillo' }
+	 { id: 'white', name: 'White' },  
+	{ id: 'red', name: 'Red' },
+        { id: 'blue', name: 'Blue' },
+        { id: 'black', name: 'Black' },    
+        { id: 'silver', name: 'Silver' },
+        { id: 'green', name: 'Green' },
+        { id: 'yellow', name: 'Yellow' }
     ];
 
     const productDropdown = document.getElementById('productDropdown');
