@@ -177,110 +177,179 @@ In this example, you can find the use of data access by Liquid Objects and inter
 
 ``` html
 <div class="form-group">
-	<h5>Hello, {{ user.name }}!</h5>
-	<p class="mb-6">You are in the origination {{ submission.origination.name }}</p>
-	<div class="form-group">
-		<label for="productDropdown" class="form-label">Select the brand of your favorite products <span class="req">*</span></label>
-		<select class="form-select" id="productDropdown" disabled>
-			<option value="" selected>Loading...</option>
-		</select>
-	</div>
+    <div class="form-group">
+        <label for="productDropdown" class="form-label">Select a car <span class="req">*</span></label>
+        <select class="form-select" id="productDropdown" disabled>
+            <option value="" selected>Loading...</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="colorDropdown" class="form-label">Select your favorite color <span class="req">*</span></label>
+        <select class="form-select" id="colorDropdown" disabled>
+            <option value="" selected>Loading...</option>
+        </select>
+    </div>
+	  <div class="form-group">
+        <label for="yearInput" class="form-label">Year <span class="req">*</span></label>
+        <input type="number" class="form-control" id="yearInput" placeholder="e.g., 2023">
+    </div>
+	  <div class="form-group">
+        <label for="dateInput" class="form-label">Driver license expiration<span class="req">*</span></label>
+        <input type="date" class="form-control" id="dateInput">
+    </div>
+	 <div class="form-group">
+     <label for="extrasSelect" class="form-label">Select extras (multi-select)</label>
+       <select class="form-select" id="extrasSelect" multiple>
+         <option value="ac">Air Conditioning</option>
+         <option value="gps">GPS</option>
+         <option value="sunroof">Sunroof</option>
+         <option value="leather_seats">Leather Seats</option>
+       </select>
+   </div>
 </div>
-
 <script>
-	const dropdown = document.getElementById('productDropdown');
+    const staticProducts = [
+        { id: 'ferrari', title: 'Ferrari' },
+        { id: 'lamborghini', title: 'Lamborghini' },
+        { id: 'maserati', title: 'Maserati' },
+        { id: 'alfa_romeo', title: 'Alfa Romeo' },
+        { id: 'fiat', title: 'Fiat' },
+        { id: 'lancia', title: 'Lancia' },
+        { id: 'pagani', title: 'Pagani' }
+    ];
 
-	async function initializeDropdown() {
-		const savedData = await getRequestJson();
-		let selectedValue = null;
-		if (savedData?.submission?.fields?.[0]?.answers) {
-			const productAnswer = savedData.submission.fields[0].answers.find(answer => answer.question.label === 'PRODUCT');
-			selectedValue = productAnswer?.text_field;
-		}
+    const staticColors = [
+	 { id: 'white', name: 'White' },  
+	{ id: 'red', name: 'Red' },
+        { id: 'blue', name: 'Blue' },
+        { id: 'black', name: 'Black' },    
+        { id: 'silver', name: 'Silver' },
+        { id: 'green', name: 'Green' },
+        { id: 'yellow', name: 'Yellow' }
+    ];
 
-		try {
-			const response = await fetch('https://dummyjson.com/products');
-			if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-			const data = await response.json();
+    const productDropdown = document.getElementById('productDropdown');
+    const colorDropdown = document.getElementById('colorDropdown');
+	  const yearInput = document.getElementById('yearInput');
+	  const dateInput = document.getElementById('dateInput');
+	  const extrasSelect = document.getElementById('extrasSelect'); 
 
-			let optionsHtml = '<option value="">Select ...</option>';
-			data.products.forEach(product => {
-				optionsHtml += `<option value="${product.id}" ${selectedValue && product.id.toString() === selectedValue ? 'selected' : ''}>${product.title}</option>`;
-			});
-			dropdown.innerHTML = optionsHtml;
-			dropdown.disabled = false;
-			if (dropdown.value) enableButton();
+    async function initializeDropdowns() {
+        const savedData = await getRequestJson();
+        let selectedProductValue = null;
+        let selectedColorValue = null;
 
-		} catch (error) {
-			console.error("Error fetching product data:", error);
-			dropdown.innerHTML = '<option value="">Error loading</option>';
-		}
-	}
+        if (savedData?.application?.fields?.[0]?.answers) {
+            const productAnswer = savedData.application.fields[0].answers.find(answer => answer.question.label === 'PRODUCT');
+            selectedProductValue = productAnswer?.text_field;
 
-	dropdown.addEventListener('change', () => {
-		if (dropdown.value) enableButton();
-	});
+            const colorAnswer = savedData.application.fields[0].answers.find(answer => answer.question.label === 'COLOR');
+            selectedColorValue = colorAnswer?.text_field;
+        }
 
-	async function getRequestJson() {
-		try {
-			const url = getUrl();
-			const response = await fetch(url);
-			if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
-			return await response.json();
-		} catch (error) {
-			console.error("Error in getRequestJson:", error);
-			return null;
-		}
-	}
+        let productOptionsHtml = '<option value="">Seleccionar ...</option>';
+        staticProducts.forEach(product => {
+            productOptionsHtml += `<option value="${product.id}" ${selectedProductValue && product.id === selectedProductValue ? 'selected' : ''}>${product.title}</option>`;
+        });
+        productDropdown.innerHTML = productOptionsHtml;
+        productDropdown.disabled = false;
+        if (productDropdown.value) enableButton();
 
-	async function sendData() {
-		const jsonData = {
-			"submission": {
-				"sequence_id": "{{submission.sequence_id}}",
-				"fields": [{ "answers": [{ "question": { "label": "PRODUCT" }, "text_field": dropdown.value }] }]
-			},
-			"task": { "task_id": "{{task.task_id}}", "step": { "uid": "{{task.step.uid}}" } },
-			"page": { "name": "{{submission.origination.name}}" }
-		};
-		await postRequestJson(jsonData);
-	}
+        let colorOptionsHtml = '<option value="">Seleccionar ...</option>';
+        staticColors.forEach(color => {
+            colorOptionsHtml += `<option value="${color.id}" ${selectedColorValue && color.id === selectedColorValue ? 'selected' : ''}>${color.name}</option>`;
+        });
+        colorDropdown.innerHTML = colorOptionsHtml;
+        colorDropdown.disabled = false;
+        if (colorDropdown.value && productDropdown.value) enableButton();
+    }
 
-	async function postRequestJson(content) {
-		try {
-			const response = await fetch(getUrl().concat(`?content=${encodeURIComponent(JSON.stringify(content))}`), {
-				method: 'POST',
-				headers: { 'Content-Type': 'application/json', 'Accept': 'application/json', 'X-CSRF-Token': document.querySelector('meta[name=csrf-token]').content }
-			});
-			if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-			await response.json();
-		} catch (error) {
-			console.error('Error:', error);
-		}
-	}
-	async function postRequestJson2(content) {
-		try {
-			const response = await fetch(getUrl(), {
-				method: "POST",
-				headers: {
-					'X-CSRF-TOKEN': document.querySelector('meta[name=csrf-token]').content,
-					'Accept': 'application/json',
-      		'Content-Type': 'application/json'
-				},
-				body: JSON.stringify({content: content}),
-			});
-			if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-			await response.json();
-		} catch (error) {
-			console.error('Error:', error);
-		}
-	}
+    productDropdown.addEventListener('change', () => {
+        if (productDropdown.value && colorDropdown.value) enableButton();
+    });
 
-	document.addEventListener('DOMContentLoaded', async function() {
-		await initializeDropdown();
-		document.querySelector('form')?.addEventListener("submit", function(event) {
-			sendData();
-		});
-	});
+    colorDropdown.addEventListener('change', () => {
+        if (productDropdown.value && colorDropdown.value) enableButton();
+    });
+
+    async function getRequestJson() {
+        try {
+            const url = getUrl();
+            const response = await fetch(url);
+            if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
+            return await response.json();
+        } catch (error) {
+            console.error("Error in getRequestJson:", error);
+            return null;
+        }
+    }
+
+    async function sendData() {
+			  const selectedExtras = Array.from(extrasSelect.selectedOptions).map(option => option.value);
+			
+        const jsonData = {
+            "submission": {
+                "fields": {
+                    "car": productDropdown.value,
+                    "color": colorDropdown.value,
+		   "year": yearInput.value ? parseInt(yearInput.value, 10) : null,
+		   "expiration": dateInput.value,
+		   "extras": selectedExtras
+                }
+            }
+        };
+        return await postRequestJson(jsonData);
+    }
+    
+    async function postRequestJson(content) {
+        try {
+            const response = await fetch(getUrl().concat(`?content=${encodeURIComponent(JSON.stringify(content))}`), {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json', 'X-CSRF-Token': document.querySelector('meta[name=csrf-token]').content }
+            });
+            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+            await response.json();
+        } catch (error) {
+                console.error('Error:', error);
+        }
+    }
+
+    async function postRequestJson2(content) {
+        try {
+            const response = await fetch(getUrl(), {
+                method: "POST",
+                headers: {
+                    'X-CSRF-TOKEN': document.querySelector('meta[name=csrf-token]').content,
+                    'Accept': 'application/json',
+            'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({content: content}),
+            });
+            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+            await response.json();
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', async function() {
+        await initializeDropdowns();
+	   const mainForm = document.querySelector('form');
+	    mainForm.addEventListener("submit", async function(event) {
+            event.preventDefault();
+            const submitHandler = async (e) => {
+                e.preventDefault(); 
+                try {
+                    const responseData = await sendData(); 
+                    mainForm.removeEventListener("submit", submitHandler);
+                    mainForm.submit(); 
+                } catch (error) {
+                    console.error("Error durante el envío de datos:", error);
+                }
+            };
+	   submitHandler(event);
+        });
+    });
 </script>
 ```
 
