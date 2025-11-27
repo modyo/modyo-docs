@@ -135,6 +135,29 @@ To change how each widget loads, go to the edit view of the page containing the 
 You should consider that using very heavy widgets synchronously can decrease your page's performance, so you should carefully decide which widgets will load synchronously and which will load asynchronously.
 :::
 
+## ES Module loading
+
+:::warning Attention
+This is an experimental feature and may be subject to changes.
+:::
+
+You can load your widgets as ES Modules instead of traditional scripts. This enables modern JavaScript features like native `import`/`export` syntax and provides better scope isolation, preventing conflicts with global variables.
+
+To enable ES Module loading, go to the edit view of the page containing the widget, select the widget, and check the "Load as ES Module" option in the Properties panel.
+
+When enabled, the widget's JavaScript will be loaded with `type="module"`:
+
+- **Async mode** (default): The widget's script tag will include `type="module"` when loaded dynamically.
+- **Sync mode**: The inline script will be rendered with `type="module"`.
+
+:::tip Tip
+ES Module loading is especially useful for widgets built with modern frameworks that use native ES module syntax, such as those based on [Dynamic Framework](https://dynamicframework.dev).
+:::
+
+:::warning Attention
+ES Modules have strict CORS requirements and are always loaded in strict mode. Ensure your widget code is compatible with ES module semantics before enabling this option.
+:::
+
 ## Use Internationalization (i18n)
 
 With i18n, you can configure and add new languages to your widgets.
