@@ -135,6 +135,29 @@ Para cambiar la forma en que se carga cada widget, debes ir a la vista de edici�
 Debes tener en consideración que usar widgets muy pesados de forma sincrónica puede hacer que se vea disminuido el rendimiento de tu página, por lo que debes decidir con cuidado cuáles widgets se cargarán de forma síncrona y cuáles de forma asíncrona.
 :::
 
+## Carga como ES Module
+
+:::warning Atención
+Esta es una funcionalidad experimental y puede estar sujeta a cambios.
+:::
+
+Puedes cargar tus widgets como ES Modules en lugar de scripts tradicionales. Esto habilita características modernas de JavaScript como la sintaxis nativa de `import`/`export` y proporciona mejor aislamiento de scope, evitando conflictos con variables globales.
+
+Para habilitar la carga como ES Module, ve a la vista de edición de la página que contiene el widget, selecciona el widget y marca la opción "Cargar como ES Module" en el panel de Propiedades.
+
+Cuando está habilitado, el JavaScript del widget se cargará con `type="module"`:
+
+- **Modo asíncrono** (por defecto): La etiqueta script del widget incluirá `type="module"` cuando se cargue dinámicamente.
+- **Modo síncrono**: El script inline se renderizará con `type="module"`.
+
+:::tip Tip
+La carga como ES Module es especialmente útil para widgets construidos con frameworks modernos que usan sintaxis nativa de ES modules, como los basados en [Dynamic Framework](https://dynamicframework.dev).
+:::
+
+:::warning Atención
+Los ES Modules tienen requisitos estrictos de CORS y siempre se cargan en modo estricto. Asegúrate de que el código de tu widget sea compatible con la semántica de ES modules antes de habilitar esta opción.
+:::
+
 ## Usar Internacionalización (i18n)
 
 Con i18n puedes configurar y agregar nuevos idiomas a tus widgets.
