@@ -120,17 +120,17 @@ Create dynamic content in your spaces using Entries. In this object you have acc
 
 | Object                  | Description                                                                                  | Example                                                                   |
 |-------------------------|----------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|
-| **entry.space**         | Name of the space associated with the entry.                                                 | ```space1```                                                              |
-| **entry.category**      | Category path for this entry.                                                                | ```category-1/category-2```                                               |
-| **entry.category_name** | Category name for this entry.                                                                | ```category 2```                                                          |
-| **entry.category_slug** | This entry's category slug.                                                                  | ```category-2```                                                          |
-| **entry.type**          | Entry type.                                                                                  | ``type2``                                                                 |
-| **entry.type_uid**      | Unique ID of the entry type.                                                                 | ``type2``                                                                 |
-| **entry.tags**          | Array of strings with the tags for this entry.                                               | ```tag1, tag2```                                                          |
-| **entry.excerpt**       | Excerpt associated with the entry.                                                           | ```This is the excerpt of a very cool entry```                            |
-| **entry.account_url**   | Account URL.                                                                                 | ```https://test.modyo.com```                                              |
-| **entry.url**           | Canonical URL of the entry.                                                                  | ```https://test.modyo.com/entry```                                        |
-| **entry.author**        | User object who wrote the entry.                                                             |                                                                           |
+| **entry.meta.space**         | Name of the space associated with the entry.                                                 | ```space1```                                                              |
+| **entry.meta.category**      | Category path for this entry.                                                                | ```category-1/category-2```                                               |
+| **entry.meta.category_name** | Category name for this entry.                                                                | ```category 2```                                                          |
+| **entry.meta.category_slug** | This entry's category slug.                                                                  | ```category-2```                                                          |
+| **entry.meta.type**          | Entry type.                                                                                  | ``type2``                                                                 |
+| **entry.meta.type_uid**      | Unique ID of the entry type.                                                                 | ``type2``                                                                 |
+| **entry.meta.tags**          | Array of strings with the tags for this entry.                                               | ```tag1, tag2```                                                          |
+| **entry.meta.excerpt**       | Excerpt associated with the entry.                                                           | ```This is the excerpt of a very cool entry```                            |
+| **entry.meta.account_url**   | Account URL.                                                                                 | ```https://test.modyo.com```                                              |
+| **entry.meta.url**           | Canonical URL of the entry.                                                                  | ```https://test.modyo.com/entry```                                        |
+| **entry.meta.author**        | User object who wrote the entry.                                                             |                                                                           |
 | **entry.meta**          | Metadata: uuid, published_at, locale, slug, created_at, updated_at, unpublished_at, private. |                                                                           |
 | **entry.fields**        | Array of objects with the entry's fields.                                                    |                                                                           |
 | **entry.as_json**       | JSON representation (meta + fields).                                                         | ```{"meta":{"uuid":"abc"},"fields":[{"name":"title","value":"Hello"}]}``` |
@@ -145,8 +145,6 @@ Displays all information about an entry's fields.
 | **field.type**                            | Name of the type associated with the field.    | ```Type1```                           |
 | **repeatable_group_field.fields_schema**  | Schema for fields in a repeatable group.       | ```[{"name":"item","type":"text"}]``` |
 | **repeatable_group_field.json_format**    | Group value as JSON string.                    | ```"[{\"item\":\"Value\"}]"```        |
-| **repeatable_group_field.representation** | Human-readable group representation.           | ```"Item: Value"```                   |
-| **repeatable_group_field.editable?**      | Indicates if the group is editable.            | ```true```                            |
 | **repeatable_group_field.locale**         | Locale of the group's content.                 | ```"en"```                            |
 | **repeatable_group_field.space**          | Space identifier for the group.                | ```"marketing"```                     |
 | **repeatable_group_field.as_json**        | JSON representation of the group.              | ```{"fields":[{"item":"Value"}]}```   |
