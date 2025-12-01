@@ -28,6 +28,10 @@ The server is organized into four independent modules:
 
 To use the Modyo MCP Server, you must first clone and build the project on your local machine. This will enable the MCP servers that allow AI assistants to interact with your Modyo platforms.
 
+:::warning Important
+The repository is currently private and only accessible to Modyo internal team members. Contact your administrator if you need access.
+:::
+
 ```bash
 $ git clone https://github.com/modyo/modyo-mcp
 $ cd modyo-mcp
