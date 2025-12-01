@@ -6,6 +6,18 @@ search: true
 
 ## 10.1
 
+### 10.1.8
+
+:::info Release date
+December 1, 2025
+:::
+
+| Module | Improvements |
+|--------|---------|
+| **Channels** | • Fixes error in content liquid filters when applying multiple filters<br>• Increases URL length in redirects<br>• Adds flag to load widgets as modules on pages |
+| **Content** | • Adds reviewer permission to the default Space Editor role |
+
+
 ### 10.1.7
 
 :::info Release date

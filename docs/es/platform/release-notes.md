@@ -6,6 +6,18 @@ search: true
 
 ## 10.1
 
+### 10.1.8
+
+:::info Fecha del release
+1 de diciembre de 2025
+:::
+
+| Módulo | Mejoras |
+|--------|---------|
+| **Channels** | • Corrige error en filtros liquid de contenido al aplicar múltiples filtros<br>• Aumenta el largo de las urls en las redirecciones<br>• Agrega flag para cargar como módulo los widgets en las páginas |
+| **Content** | • Agrega el permiso de revisor al rol por defecto de Space Editor |
+
+
 ### 10.1.7
 
 :::info Fecha del release
