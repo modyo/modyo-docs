@@ -9,7 +9,7 @@ The Modyo MCP (Model Context Protocol) Server is a tool based on two fundamental
 ## Benefits of the MCP Server
 
 - **Multi-Platform Support**: Allows you to connect to multiple Modyo instances simultaneously from a single configuration.
-- **110+ Tools**: Provides comprehensive API coverage for content, channels, customers, and admin operations.
+- **66 Tools**: Smart "manage" tools that combine multiple operations with 70-90% token reduction.
 - **Secure Authentication**: Uses token-based authentication per platform for secure access.
 - **Universal Client Support**: Works with Claude Code, VS Code, Cursor, and other MCP-compatible clients.
 
@@ -20,8 +20,8 @@ The server is organized into four independent modules:
 | Module | Description | Port (HTTP) | Status |
 |--------|-------------|-------------|--------|
 | **Content** | Headless CMS - spaces, entries, types, assets, categories | 3001 | Beta |
-| **Channels** | Digital Experience - sites, pages, widgets, templates, navigation | 3002 | Alpha |
-| **Customers** | Identity Management - realms, users, forms, submissions | 3003 | Alpha |
+| **Channels** | Digital Experience - sites, pages, widgets, templates, navigation | 3002 | Beta |
+| **Customers** | Identity Management - realms, users, forms, submissions | 3003 | Beta |
 | **Admin** | Platform Administration - team users, groups, roles, settings | 3004 | Beta |
 
 ## Installation
@@ -201,13 +201,9 @@ For stdio transport:
 After modifying `settings.json`, reload your window to activate the MCP servers.
 :::
 
-## Tools Reference (High-Level)
+## Tools Reference
 
-The following tools are available with the default `high` abstraction level. These combine multiple operations into smart workflows.
-
-:::tip Tip
-Additional low-level tools are available for debugging and advanced use cases. Set `MODYO_ABSTRACTION_LEVEL=low` to access the full 110+ tool catalog.
-:::
+The following tools are available. These are smart "manage" tools that combine multiple operations into efficient workflows with 70-90% token reduction.
 
 :::tip Best Practice
 Most LLM clients allow you to enable or disable individual tools or entire MCP servers. Keep only the tools you need enabled to maintain a clean context and help the AI focus on what matters. For example, if you're only working with content, enable just the Content module.
@@ -218,66 +214,86 @@ Most LLM clients allow you to enable or disable individual tools or entire MCP s
 | Tool | Description |
 |------|-------------|
 | `spaces-manage` | Complete space lifecycle (list/get/create/update/delete) |
-| `types-manage` | Content type schema management with field updates |
+| `space-copy` | Clone spaces across platforms |
+| `space-get` | Get space details |
+| `spaces-list` | List all spaces |
+| `types-manage` | Content type schema management with incremental field updates |
 | `type-update-or-create` | Idempotent type management - creates or updates by UID |
-| `entries-manage` | Entry lifecycle including publish/unpublish/archive |
+| `type-copy` | Copy content types across spaces/platforms |
+| `type-get` | Get type details |
+| `types-list` | List types in a space |
+| `entries-manage` | Entry lifecycle including publish/unpublish/archive/clone |
 | `entry-update-or-create` | Idempotent entry management - creates or updates by slug |
-| `entries-bulk-manage` | Bulk operations with preview |
+| `entries-bulk-manage` | Bulk operations with preview (publish/unpublish/archive/delete) |
+| `entry-get` | Get entry details |
+| `entries-list` | List entries with filters |
 | `assets-manage` | Asset binary and metadata management |
+| `assets-bulk-create` | Enhanced bulk asset upload with error handling |
+| `asset-get` | Get asset details |
+| `assets-list` | List assets |
 | `categories-manage` | Category hierarchy management |
+| `category-get` | Get category details |
+| `categories-list` | List categories
 
 ### Channels Module (mcp-channels)
 
 | Tool | Description |
 |------|-------------|
-| `page-widget-manage` | Complete widget page lifecycle |
-| `page-content-manage` | Complete content page lifecycle |
-| `widget-definition-update-or-create` | Idempotent widget management |
-| `template-update-or-create` | Idempotent template management |
+| `sites-manage` | Complete site lifecycle (create/get/update/delete/list) |
+| `site-assets-manage` | Site asset upload management (single and bulk) |
+| `site-get-overview` | Get complete site overview (pages, widgets, templates, menus) |
+| `page-manage` | General page lifecycle (get/update/delete/archive/unpublish/list) |
+| `page-widget-manage` | Complete widget page lifecycle with widget positioning |
+| `page-content-manage` | Complete content page lifecycle with Liquid templates |
+| `page-copy` | Copy pages within same site or cross-site |
+| `widget-definition-manage` | Complete widget lifecycle (get/create/update/delete/archive/clone/list) |
+| `widget-definition-update-or-create` | Idempotent widget management by name |
+| `widget-definition-copy` | Copy widget definitions across sites/platforms |
+| `template-manage` | Complete template lifecycle (get/create/update/delete/unpublish/list) |
+| `template-update-or-create` | Idempotent template management by name and category |
 | `template-find` | Find templates by name or category |
+| `template-copy` | Copy templates across sites/platforms |
+| `navigation-menu-manage` | Menu lifecycle management (create/get/update/delete/list) |
+| `navigation-menu-item-manage` | Menu item hierarchy management (add/update/delete/list) |
+| `navigation-menu-copy` | Copy menus across sites/platforms |
+| `global-variables-manage` | Variable lifecycle with bulk operations |
 | `smart-publish` | One-step publishing workflow |
+| `account-template-manage` | Global/account-level template management |
+| `locks-manage` | Concurrent editing locks (acquire/get/list/release) |
 
 ### Customers Module (mcp-customers)
 
 | Tool | Description |
 |------|-------------|
-| `realms-manage` | Complete realm lifecycle |
-| `realm-user-manage` | Customer user management |
-| `realm-users-bulk-manage` | Bulk user operations with preview |
-| `origination-step-manage` | Origination step configuration |
-| `origination-rules-manage` | Origination rules configuration |
-| `origination-step-clone` | Clone origination steps |
+| `realms-manage` | Complete realm lifecycle (list/get/create/delete/appearance/logo) |
+| `realm-user-manage` | Idempotent user create/update by email |
+| `realm-users-bulk-manage` | Bulk user operations with error handling |
+| `forms-manage` | Complete form lifecycle (list/get/create/update/delete/enable/disable) |
+| `forms-copy` | Copy forms across realms/platforms |
+| `data-sets-manage` | Complete data set lifecycle with nested hierarchy support |
+| `data-set-copy` | Copy data sets across realms/platforms |
+| `originations-manage` | Complete origination lifecycle (list/get/create/update/delete) |
+| `origination-step-manage` | Step lifecycle with merge/replace strategies |
+| `origination-rules-manage` | Validation rules management (conditional logic) |
+| `origination-validate-structure` | Structure validation utility |
+| `origination-step-clone` | Clone step utility with new UUIDs |
+| `submissions-manage` | Complete submission lifecycle (list/get/create/update/status/assign) |
+| `submissions-bulk-manage` | Bulk operations with preview (status/assign) |
 
 ### Admin Module (mcp-admin)
 
 | Tool | Description |
 |------|-------------|
 | `admin-users-manage` | Complete team user lifecycle (list/create/update/sessions) |
-| `admin-users-update-or-create` | Idempotent user operations |
+| `admin-users-update-or-create` | Idempotent user operations by email/username |
 | `admin-users-bulk-manage` | Bulk activate/deactivate with preview |
-| `admin-groups-manage` | Complete group lifecycle |
-| `admin-groups-update-or-create` | Idempotent group operations |
-| `admin-roles-list` | List available roles by context |
-| `platforms-list` | List configured platforms |
+| `admin-groups-manage` | Complete group lifecycle (create/update/delete/list) |
+| `admin-groups-update-or-create` | Idempotent group operations by name |
+| `admin-team-members-manage` | Assign users/groups to sites/spaces/realms with roles |
+| `admin-roles-list` | List available roles by context (account/site/space/realm) |
+| `platforms-list` | List configured platforms with optional version detection |
 | `settings-get` | Read platform settings |
-| `settings-manage` | Update platform settings |
-
-## Abstraction Levels
-
-The MCP server supports different abstraction levels to balance simplicity versus control:
-
-| Level | Tools | Use Case |
-|-------|-------|----------|
-| `high` | ~15/module | **Default** - Smart workflows, reduced context |
-| `low` | 110+ total | Full API control, verbose responses |
-
-If not set, the abstraction level defaults to `high`. To change it, add the following environment variable to your MCP client configuration:
-
-```json
-"env": {
-  "MODYO_ABSTRACTION_LEVEL": "high"
-}
-```
+| `settings-manage` | Update platform settings with verification |
 
 ## Usage Examples
 
@@ -293,12 +309,15 @@ Once configured, you can interact with Modyo using natural language:
 "Show all published widgets for site ID 5"
 
 "Publish all pending pages and widgets for site 4605"
+
+"Assign user john@example.com to the marketing site with editor role"
+
+"Create a navigation menu for the main site with Home, About, and Contact items"
 ```
 
 ## Environment Variables
 
 - `MODYO_CONFIG_PATH` Path to platforms.json (default: `~/.platforms.json`).
-- `MODYO_ABSTRACTION_LEVEL` Tool filtering level (default: `high`).
 - `DANGEROUSLY_OMIT_AUTH` Skip authentication for testing only (default: `false`).
 
 ## MCP Inspector
