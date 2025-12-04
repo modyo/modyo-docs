@@ -6,6 +6,18 @@ search: true
 
 ## 10.1
 
+### 10.1.9
+
+:::info Fecha del release
+3 de diciembre de 2025
+:::
+
+| Módulo | Mejoras |
+|--------|---------|
+| **Customers** | • Homologa CORS configurados en la cuenta en los nuevos CORS de Customers para mantener comportamiento previo a la adición de estos CORS |
+| **Insights** | • Agrega selección de todos los reinos al dashboard de Customers, ahora se puede ver todos los usuarios activos en la totalidad de los reinos |
+
+
 ### 10.1.8
 
 :::info Fecha del release

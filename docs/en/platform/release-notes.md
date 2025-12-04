@@ -6,6 +6,18 @@ search: true
 
 ## 10.1
 
+### 10.1.9
+
+:::info Release date
+December 3, 2025
+:::
+
+| Module | Improvements |
+|--------|---------|
+| **Customers** | • Aligns CORS configured in the account with the new Customers CORS to maintain behavior prior to adding these CORS |
+| **Insights** | • Adds selection of all realms to the Customers dashboard, now you can view all active users across all realms |
+
+
 ### 10.1.8
 
 :::info Release date
