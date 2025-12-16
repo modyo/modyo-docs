@@ -2,6 +2,12 @@
 
 React component framework specialized for financial applications, built on Bootstrap 5 and optimized for micro frontends with Modyo platform.
 
+:::tip Version 2.0 Available
+Dynamic UI 2.0 brings a new visual language, Lucide icons, and 8 new components.
+- [See what's new in v2.0](whats-new-v2.html)
+- [Migration guide](getting-started/migration-v2.html)
+:::
+
 ## Technical Features
 
 ### Components

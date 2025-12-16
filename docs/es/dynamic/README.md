@@ -6,6 +6,12 @@ search: true
 
 Framework de componentes React especializado para aplicaciones financieras, construido sobre Bootstrap 5 y optimizado para micro frontends con la plataforma Modyo.
 
+:::tip Version 2.0 Disponible
+Dynamic UI 2.0 trae un nuevo lenguaje visual, iconos Lucide, y 8 nuevos componentes.
+- [Ver novedades en v2.0](whats-new-v2.html)
+- [Guia de migracion](getting-started/migration-v2.html)
+:::
+
 ## Documentación Técnica
 
 ### Arquitectura
