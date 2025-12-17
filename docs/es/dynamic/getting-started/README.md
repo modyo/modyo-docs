@@ -30,11 +30,11 @@ Comprende la organización de un proyecto Dynamic:
 - Convenciones
 
 ### [Migrar a v2.0](migration-v2.html)
-Guia paso a paso para actualizar desde Dynamic UI 1.36.x:
+Guía paso a paso para actualizar desde Dynamic UI 1.36.x:
 - Nuevos requisitos y dependencias
-- Migracion de iconos Bootstrap a Lucide
+- Migración de iconos Bootstrap a Lucide
 - Cambios de API y componentes eliminados
-- Checklist de migracion
+- Checklist de migración
 
 ## Prerrequisitos
 
