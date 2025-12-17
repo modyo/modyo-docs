@@ -29,6 +29,13 @@ Understand the organization of a Dynamic project:
 - Best practices
 - Conventions
 
+### [Migrate to v2.0](migration-v2.html)
+Step-by-step guide to upgrade from Dynamic UI 1.36.x:
+- New requirements and dependencies
+- Bootstrap to Lucide icons migration
+- API changes and removed components
+- Migration checklist
+
 ## Prerequisites
 
 Before starting, make sure you have:
