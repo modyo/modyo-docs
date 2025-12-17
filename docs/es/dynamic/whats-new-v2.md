@@ -4,42 +4,42 @@ search: true
 
 # Novedades en Dynamic UI 2.0
 
-La version 2.0 de Dynamic UI representa una evolucion significativa del Design System, con un nuevo lenguaje visual, modernizacion tecnologica y nuevos componentes de alto nivel.
+La versión 2.0 de Dynamic UI representa una evolución significativa del Design System, con un nuevo lenguaje visual, modernización tecnológica y nuevos componentes de alto nivel.
 
 ## Resumen de Cambios
 
-- **Nuevo lenguaje visual**: Tipografia Jost, iconos Lucide, paleta de colores renovada
-- **Modernizacion tecnologica**: Compatibilidad con React 19, Storybook 9, animaciones con Framer Motion
+- **Nuevo lenguaje visual**: Tipografía Jost, iconos Lucide, paleta de colores renovada
+- **Modernización tecnológica**: Compatibilidad con React 19, Storybook 9, animaciones con Framer Motion
 - **8 nuevos componentes**: DBox, DLayout, DCreditCard, DDropdown, DTimeline, DOtp, DPasswordStrengthMeter, DVoucher
 - **API simplificada**: Componentes obsoletos eliminados, props estandarizadas
 
 ## Nuevo Lenguaje Visual
 
-### Tipografia: Jost
+### Tipografía: Jost
 
-Se ha establecido **Jost** como la fuente principal del Design System, aportando una estetica moderna y distintiva.
+Se ha establecido **Jost** como la fuente principal del Design System, aportando una estética moderna y distintiva.
 
 ```css
 font-family: "Jost", sans-serif;
 ```
 
-### Iconografia: Lucide Icons
+### Iconografía: Lucide Icons
 
-Dynamic UI 2.0 migra de Bootstrap Icons a [Lucide Icons](https://lucide.dev), una biblioteca de iconos moderna con mejor integracion React.
+Dynamic UI 2.0 migra de Bootstrap Icons a [Lucide Icons](https://lucide.dev), una biblioteca de iconos moderna con mejor integración React.
 
-**Caracteristicas:**
+**Características:**
 - Iconos SVG optimizados
-- Tree-shaking automatico (solo se incluyen los iconos usados)
+- Tree-shaking automático (solo se incluyen los iconos usados)
 - Soporte completo de TypeScript
 - Nombres en PascalCase
 
 ```jsx
-// Uso basico
+// Uso básico
 <DIcon icon="Home" />
 <DIcon icon="Settings" />
 <DIcon icon="CheckCircle" />
 
-// Con tamano responsivo
+// Con tamaño responsivo
 <DContextProvider>
   <DIcon
     icon="Settings"
@@ -55,17 +55,17 @@ Dynamic UI 2.0 migra de Bootstrap Icons a [Lucide Icons](https://lucide.dev), un
 
 ### Nueva Paleta de Colores
 
-La paleta de colores ha sido completamente rediseñada para un aspecto mas fresco y profesional, afectando todos los componentes.
+La paleta de colores ha sido completamente rediseñada para un aspecto más fresco y profesional, afectando todos los componentes.
 
 ## Nuevos Componentes
 
 ### DBox
 
-Contenedor semantico pre-estilizado para enmarcar secciones de contenido.
+Contenedor semántico pre-estilizado para enmarcar secciones de contenido.
 
 ```jsx
 <DBox className="p-4">
-  <h4>Titulo de la seccion</h4>
+  <h4>Título de la sección</h4>
   <p>Contenido dentro del DBox.</p>
 </DBox>
 ```
@@ -87,7 +87,7 @@ Componente de layout basado en CSS Grid para estructuras responsivas complejas.
 
 ### DCreditCard
 
-Componente visual para mostrar tarjetas de credito o debito.
+Componente visual para mostrar tarjetas de crédito o débito.
 
 ```jsx
 <DCreditCard
@@ -99,7 +99,7 @@ Componente visual para mostrar tarjetas de credito o debito.
 
 ### DDropdown
 
-Menu desplegable configurable con posicionamiento automatico.
+Menú desplegable configurable con posicionamiento automático.
 
 ```jsx
 <DDropdown
@@ -114,7 +114,7 @@ Menu desplegable configurable con posicionamiento automatico.
 
 ### DTimeline
 
-Componente para mostrar eventos en orden cronologico.
+Componente para mostrar eventos en orden cronológico.
 
 ```jsx
 <DTimeline
@@ -128,7 +128,7 @@ Componente para mostrar eventos en orden cronologico.
 
 ### DOtp
 
-Componente completo para flujos de autenticacion OTP.
+Componente completo para flujos de autenticación OTP.
 
 ```jsx
 <DOtp
@@ -144,7 +144,7 @@ Input de contraseña con indicador visual de fortaleza.
 
 ```jsx
 <DPasswordStrengthMeter
-  label="Nueva Contrasena"
+  label="Nueva Contraseña"
   value={password}
   onChange={setPassword}
 />
@@ -161,19 +161,19 @@ Componente para mostrar recibos y comprobantes, con capacidad de descarga.
   title="Pago Exitoso"
   amount="$125.00"
 >
-  {/* Detalles de la transaccion */}
+  {/* Detalles de la transacción */}
 </DVoucher>
 ```
 
-## Mejoras Tecnicas
+## Mejoras Técnicas
 
 ### Compatibilidad con React 19
 
-Dynamic UI 2.0 es compatible tanto con React 18 como con React 19, permitiendo adoptar las ultimas caracteristicas de React.
+Dynamic UI 2.0 es compatible tanto con React 18 como con React 19, permitiendo adoptar las últimas características de React.
 
 ### Storybook 9
 
-La documentacion interactiva ha sido actualizada a Storybook 9, con mejor rendimiento y nueva interfaz.
+La documentación interactiva ha sido actualizada a Storybook 9, con mejor rendimiento y nueva interfaz.
 
 ### Animaciones con Framer Motion
 
@@ -181,7 +181,7 @@ Los componentes `DModal` y `DOffcanvas` ahora incluyen animaciones suaves gracia
 
 ### Nuevos Requisitos de Sistema
 
-| Requisito | Version |
+| Requisito | Versión |
 |-----------|---------|
 | Node.js | >=22.0.0 |
 | React | >=18 <20 |
@@ -191,7 +191,7 @@ Los componentes `DModal` y `DOffcanvas` ahora incluyen animaciones suaves gracia
 
 ## Breaking Changes
 
-Para una guia detallada de migracion, consulta la [Guia de Migracion a v2.0](getting-started/migration-v2.html).
+Para una guía detallada de migración, consulta la [Guía de Migración a v2.0](getting-started/migration-v2.html).
 
 ### Resumen de cambios incompatibles
 
@@ -202,7 +202,7 @@ Para una guia detallada de migracion, consulta la [Guia de Migracion a v2.0](get
 
 ## Recursos
 
-- [Guia de Migracion](getting-started/migration-v2.html)
-- [Catalogo de Iconos Lucide](https://lucide.dev/icons/)
+- [Guía de Migración](getting-started/migration-v2.html)
+- [Catálogo de Iconos Lucide](https://lucide.dev/icons/)
 - [Storybook Interactivo](https://react.dynamicframework.dev)
 - [Repositorio en GitHub](https://github.com/dynamic-framework/dynamic-ui)

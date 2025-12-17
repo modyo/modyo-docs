@@ -4,11 +4,11 @@ search: true
 
 # Migrar a Dynamic UI 2.0
 
-Esta guia te ayudara a migrar tu proyecto de Dynamic UI v1.36.x a la version 2.0.
+Esta guía te ayudará a migrar tu proyecto de Dynamic UI v1.36.x a la versión 2.0.
 
 ## Requisitos Previos
 
-Antes de comenzar la migracion, asegurate de cumplir con los nuevos requisitos:
+Antes de comenzar la migración, asegúrate de cumplir con los nuevos requisitos:
 
 | Requisito | v1.36.x | v2.0 |
 |-----------|---------|------|
@@ -19,7 +19,7 @@ Antes de comenzar la migracion, asegurate de cumplir con los nuevos requisitos:
 
 ### Instalar nuevas peer dependencies
 
-La version 2.0 requiere nuevas dependencias que debes instalar en tu proyecto:
+La versión 2.0 requiere nuevas dependencias que debes instalar en tu proyecto:
 
 ```bash
 npm install framer-motion@">=12 <13"
@@ -35,7 +35,7 @@ npm install @dynamic-framework/ui-react@^2.0.0
 
 ### package.json resultante
 
-Tu `package.json` deberia incluir:
+Tu `package.json` debería incluir:
 
 ```json
 {
@@ -53,26 +53,26 @@ Tu `package.json` deberia incluir:
 
 ## Paso 2: Migrar Iconos (Bootstrap Icons a Lucide)
 
-El cambio mas significativo en v2.0 es la migracion de Bootstrap Icons a [Lucide Icons](https://lucide.dev).
+El cambio más significativo en v2.0 es la migración de Bootstrap Icons a [Lucide Icons](https://lucide.dev).
 
 ### Cambios clave
 
 1. **Los nombres de iconos ahora usan PascalCase** en lugar de kebab-case
-2. **No mas sufijo `-fill`** - Lucide usa la prop `strokeWidth` o `fill` en su lugar
-3. **Nueva dependencia**: `lucide-react` se incluye automaticamente
+2. **No más sufijo `-fill`** - Lucide usa la prop `strokeWidth` o `fill` en su lugar
+3. **Nueva dependencia**: `lucide-react` se incluye automáticamente
 
-### Antes vs Despues
+### Antes vs Después
 
 ```diff
 // Antes (v1.36.x)
 - <DIcon icon="house-door" />
 - <DIcon icon="check-circle-fill" />
-- <DButton iconStart="gear" text="Configuracion" />
+- <DButton iconStart="gear" text="Configuración" />
 
-// Despues (v2.0)
+// Después (v2.0)
 + <DIcon icon="Home" />
 + <DIcon icon="CircleCheck" />
-+ <DButton iconStart="Settings" text="Configuracion" />
++ <DButton iconStart="Settings" text="Configuración" />
 ```
 
 ### Tabla de equivalencias comunes
@@ -134,7 +134,7 @@ La prop `theme` ha sido renombrada a `color` en todos los componentes para estan
 - `DProgress`
 - Y otros componentes con variantes de color
 
-### Antes vs Despues
+### Antes vs Después
 
 ```diff
 // Antes (v1.36.x)
@@ -142,7 +142,7 @@ La prop `theme` ha sido renombrada a `color` en todos los componentes para estan
 - <DBadge theme="success">Activo</DBadge>
 - <DButton theme="danger">Eliminar</DButton>
 
-// Despues (v2.0)
+// Después (v2.0)
 + <DAlert color="primary">Mensaje</DAlert>
 + <DBadge color="success">Activo</DBadge>
 + <DButton color="danger">Eliminar</DButton>
@@ -157,7 +157,7 @@ grep -r 'theme="' src/
 
 ## Paso 4: Actualizar Componentes Eliminados
 
-Varios componentes han sido eliminados en v2.0. Aqui estan las alternativas:
+Varios componentes han sido eliminados en v2.0. Aquí están las alternativas:
 
 ### DSkeleton
 
@@ -168,7 +168,7 @@ Varios componentes han sido eliminados en v2.0. Aqui estan las alternativas:
 - import { DSkeleton } from '@dynamic-framework/ui-react';
 - <DSkeleton width={200} height={20} />
 
-// Despues (v2.0)
+// Después (v2.0)
 + <div className="placeholder-glow">
 +   <span className="placeholder col-6"></span>
 + </div>
@@ -183,7 +183,7 @@ Varios componentes han sido eliminados en v2.0. Aqui estan las alternativas:
 - import { DInputSearch } from '@dynamic-framework/ui-react';
 - <DInputSearch placeholder="Buscar..." />
 
-// Despues (v2.0)
+// Después (v2.0)
 + import { DInput } from '@dynamic-framework/ui-react';
 + <DInput
 +   placeholder="Buscar..."
@@ -193,7 +193,7 @@ Varios componentes han sido eliminados en v2.0. Aqui estan las alternativas:
 
 ### DList y DListItem
 
-**Eliminados.** Usa el nuevo y mas potente `DListGroup`:
+**Eliminados.** Usa el nuevo y más potente `DListGroup`:
 
 ```diff
 // Antes (v1.36.x)
@@ -203,7 +203,7 @@ Varios componentes han sido eliminados en v2.0. Aqui estan las alternativas:
 -   <DListItem>Item 2</DListItem>
 - </DList>
 
-// Despues (v2.0)
+// Después (v2.0)
 + import { DListGroup } from '@dynamic-framework/ui-react';
 + <DListGroup>
 +   <DListGroup.Item>Item 1</DListGroup.Item>
@@ -224,7 +224,7 @@ Varios componentes han sido eliminados en v2.0. Aqui estan las alternativas:
 -   icon="arrow-right"
 - />
 
-// Despues (v2.0)
+// Después (v2.0)
 + import { DButton } from '@dynamic-framework/ui-react';
 + <DButton
 +   iconEnd="ArrowRight"
@@ -245,17 +245,17 @@ La prop `pill` ha sido eliminada de `DButton`. Usa clases de utilidad:
 // Antes (v1.36.x)
 - <DButton color="primary" pill>Redondeado</DButton>
 
-// Despues (v2.0)
+// Después (v2.0)
 + <DButton color="primary" className="rounded-pill">Redondeado</DButton>
 ```
 
 ## Paso 6: Actualizar Animaciones (Opcional)
 
-Los componentes `DModal` y `DOffcanvas` ahora usan Framer Motion para animaciones mas suaves. Esto funciona automaticamente si tienes `framer-motion` instalado.
+Los componentes `DModal` y `DOffcanvas` ahora usan Framer Motion para animaciones más suaves. Esto funciona automáticamente si tienes `framer-motion` instalado.
 
-Si necesitas personalizar las animaciones, consulta la [documentacion de Framer Motion](https://motion.dev/).
+Si necesitas personalizar las animaciones, consulta la [documentación de Framer Motion](https://motion.dev/).
 
-## Checklist de Migracion
+## Checklist de Migración
 
 - [ ] Node.js actualizado a v22+
 - [ ] Nuevas peer dependencies instaladas (`framer-motion`, `i18next`, `react-i18next`)
@@ -265,18 +265,18 @@ Si necesitas personalizar las animaciones, consulta la [documentacion de Framer 
 - [ ] Componentes eliminados reemplazados con alternativas
 - [ ] Prop `pill` reemplazada con `className="rounded-pill"`
 - [ ] Tests ejecutados y pasando
-- [ ] Revision visual de la aplicacion
+- [ ] Revisión visual de la aplicación
 
 ## Recursos Adicionales
 
-- [Catalogo de iconos Lucide](https://lucide.dev/icons/)
+- [Catálogo de iconos Lucide](https://lucide.dev/icons/)
 - [What's New en v2.0](../whats-new-v2.html)
 - [Storybook de Dynamic UI](https://react.dynamicframework.dev)
 
-## Necesitas Ayuda?
+## ¿Necesitas Ayuda?
 
-Si encuentras problemas durante la migracion:
+Si encuentras problemas durante la migración:
 
-1. Revisa la [documentacion de componentes](../development/components.html)
+1. Revisa la [documentación de componentes](../development/components.html)
 2. Busca en la [comunidad](https://community.modyo.com)
 3. Reporta issues en [GitHub](https://github.com/dynamic-framework/dynamic-ui/issues)
