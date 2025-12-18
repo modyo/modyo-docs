@@ -2,17 +2,17 @@
 search: true
 ---
 
-# Tu Primera Aplicacion
+# Tu Primera Aplicación
 
-Esta guia te llevara paso a paso a crear tu primera aplicacion con Dynamic Framework, usando componentes reales y patrones correctos.
+Esta guía te llevará paso a paso a crear tu primera aplicación con Dynamic Framework, usando componentes reales y patrones correctos.
 
 ## Requisitos Previos
 
-Antes de comenzar, asegurate de tener:
+Antes de comenzar, asegúrate de tener:
 
 - Node.js v22 o superior
 - NPM 10.x o superior
-- Un editor de codigo (VS Code recomendado)
+- Un editor de código (VS Code recomendado)
 
 ## Paso 1: Crear el Proyecto
 
@@ -32,7 +32,7 @@ npm install
 npm run start
 ```
 
-Tu aplicacion estara disponible en `http://localhost:8080`.
+Tu aplicación estará disponible en `http://localhost:8080`.
 
 ## Paso 2: Tu Primer Componente
 
@@ -119,7 +119,7 @@ function CounterCard() {
 
         {showAlert && (
           <DAlert color="success" className="mt-3">
-            Has llegado a 5 o mas.
+            ¡Has llegado a 5 o más!
           </DAlert>
         )}
       </DCard.Body>
@@ -304,10 +304,10 @@ import { DButton, DIcon } from '@dynamic-framework/ui-react';
 | flecha derecha | `ArrowRight` | Siguiente |
 | flecha izquierda | `ArrowLeft` | Anterior |
 | papelera | `Trash` | Eliminar |
-| lapiz | `Pencil` | Editar |
+| lápiz | `Pencil` | Editar |
 | disco | `Save` | Guardar |
 | lupa | `Search` | Buscar |
-| engranaje | `Settings` | Configuracion |
+| engranaje | `Settings` | Configuración |
 
 ## Errores Comunes a Evitar
 
@@ -323,10 +323,10 @@ import { DButton, DIcon } from '@dynamic-framework/ui-react';
 <DAlert color="danger">Error</DAlert>
 ```
 
-### 2. Iconos en minusculas
+### 2. Iconos en minúsculas
 
 ```jsx
-// INCORRECTO - minusculas
+// INCORRECTO - minúsculas
 <DButton text="Guardar" iconStart="save" />
 <DIcon icon="settings" />
 
@@ -363,17 +363,17 @@ import { DCard, DButton, DAlert, DInput } from '@dynamic-framework/ui-react';
 // Para layout usar clases Bootstrap: container, row, col-*
 ```
 
-## Proximos Pasos
+## Próximos Pasos
 
-Ahora que tienes tu primera aplicacion funcionando:
+Ahora que tienes tu primera aplicación funcionando:
 
-1. Explora mas componentes en [Storybook](https://react.dynamicframework.dev/)
+1. Explora más componentes en [Storybook](https://react.dynamicframework.dev/)
 2. Aprende sobre [estructura del proyecto](./project-structure.md)
-3. Revisa la [guia de migracion](./migration-v2.md) si vienes de v1.x
+3. Revisa la [guía de migración](./migration-v2.md) si vienes de v1.x
 4. Consulta [novedades de v2.0](../whats-new-v2.md)
 
 ## Recursos
 
-- [Storybook - Catalogo de Componentes](https://react.dynamicframework.dev/)
+- [Storybook - Catálogo de Componentes](https://react.dynamicframework.dev/)
 - [Iconos Lucide](https://lucide.dev/icons/)
 - [Bootstrap 5 - Utilidades CSS](https://getbootstrap.com/docs/5.3/utilities/api/)
