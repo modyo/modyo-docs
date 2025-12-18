@@ -242,7 +242,7 @@ export default ContactForm;
 
 ## Paso 5: Integrar Todo en App.jsx
 
-Ahora integra tus componentes en la aplicacion principal:
+Ahora integra tus componentes en la aplicación principal:
 
 ```jsx
 // src/App.jsx
