@@ -126,7 +126,7 @@ const {
   --df-spacing-md: 1rem;
   
   // Tipografía
-  --df-font-family: 'Jost', sans-serif;
+  --bs-font-family: 'Jost', sans-serif;
   --df-font-size-base: 1rem;
   
   // Bordes

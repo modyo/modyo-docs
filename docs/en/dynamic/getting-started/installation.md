@@ -80,6 +80,7 @@ npm install react react-dom
 npm install framer-motion@">=12 <13"
 npm install i18next@">=25 <26"
 npm install react-i18next@">=16 <17"
+npm install react-hot-toast@">=2 <3"
 ```
 
 > **Note:** `lucide-react` is automatically included as a dependency of Dynamic UI 2.0 for the icon system.
