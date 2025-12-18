@@ -10,7 +10,7 @@ This guide will help you get started quickly with Dynamic Framework, from instal
 
 Before starting, make sure you have installed:
 
-- **Node.js** v20 or higher
+- **Node.js** v22 or higher
 - **NPM** 10.x or higher
 - **Git** for version control
 - **Modyo Account** with access to Dynamic Framework
@@ -73,11 +73,17 @@ For existing React projects:
 
 ```bash
 # Install the main package
-npm install @dynamic-framework/ui-react
+npm install @dynamic-framework/ui-react@^2.0.0
 
-# Install peer dependencies
-npm install react react-dom bootstrap
+# Install required peer dependencies
+npm install react react-dom
+npm install framer-motion@">=12 <13"
+npm install i18next@">=25 <26"
+npm install react-i18next@">=16 <17"
+npm install react-hot-toast@">=2 <3"
 ```
+
+> **Note:** `lucide-react` is automatically included as a dependency of Dynamic UI 2.0 for the icon system.
 
 ## Project Structure
 

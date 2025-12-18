@@ -13,21 +13,18 @@ Aprende cómo crear componentes personalizados y extender los componentes existe
 Dynamic Framework favorece la composición sobre la herencia:
 
 ```jsx
-// Evitar: Herencia directa
-class MyButton extends DynamicButton {
-  // Problemático para mantenimiento
-}
+// Evitar: Herencia directa (no aplica en React funcional)
+// class MyButton extends DButton { ... }
 
 // Preferir: Composición
-const MyButton = ({ children, ...props }) => {
+const MyButton = ({ text, ...props }) => {
   return (
-    <DynamicButton 
+    <DButton
       {...props}
+      text={text}
+      iconStart="ArrowRight"
       className="my-custom-button"
-    >
-      <Icon name="arrow" />
-      {children}
-    </DynamicButton>
+    />
   );
 };
 ```
@@ -41,17 +38,16 @@ Crea componentes wrapper que agregan funcionalidad:
 ```jsx
 // src/components/extended/PrimaryButton.jsx
 import React from 'react';
-import { Button } from '@dynamic-framework/ui-react';
+import { DButton } from '@dynamic-framework/ui-react';
 import { trackEvent } from '@/utils/analytics';
 
-const PrimaryButton = ({ 
-  children, 
+const PrimaryButton = ({
+  text,
   onClick,
   trackingLabel,
-  size = 'large',
-  ...props 
+  ...props
 }) => {
-  const handleClick = (e) => {
+  const handleClick = () => {
     // Agregar analytics
     if (trackingLabel) {
       trackEvent('button_click', {
@@ -59,21 +55,19 @@ const PrimaryButton = ({
         component: 'PrimaryButton'
       });
     }
-    
+
     // Llamar onClick original
-    onClick?.(e);
+    onClick?.();
   };
 
   return (
-    <Button
-      variant="primary"
-      size={size}
+    <DButton
+      text={text}
+      color="primary"
       onClick={handleClick}
       className="primary-button-extended"
       {...props}
-    >
-      {children}
-    </Button>
+    />
   );
 };
 
@@ -87,7 +81,7 @@ Crea HOCs para agregar funcionalidad transversal:
 ```jsx
 // src/hocs/withLoading.jsx
 import React, { useState } from 'react';
-import { Spinner } from '@dynamic-framework/ui-react';
+import { DProgress } from '@dynamic-framework/ui-react';
 
 const withLoading = (WrappedComponent) => {
   return function WithLoadingComponent(props) {
@@ -99,7 +93,7 @@ const withLoading = (WrappedComponent) => {
     if (isLoading) {
       return (
         <div className="loading-container">
-          <Spinner size="large" />
+          <DProgress indeterminate />
         </div>
       );
     }
@@ -128,30 +122,35 @@ const EnhancedTransferForm = withLoading(TransferForm);
 ```jsx
 // src/components/extended/AccountCard/index.jsx
 import React from 'react';
-import { Card } from '@dynamic-framework/ui-react';
+import { DCard } from '@dynamic-framework/ui-react';
 import AccountHeader from './AccountHeader';
 import AccountBalance from './AccountBalance';
 import AccountActions from './AccountActions';
 
 const AccountCard = ({ account, onAction }) => {
   return (
-    <Card className="account-card-extended">
-      <AccountHeader 
-        name={account.name}
-        number={account.number}
-        type={account.type}
-      />
-      <AccountBalance 
-        balance={account.balance}
-        currency={account.currency}
-        trend={account.trend}
-      />
-      <AccountActions 
-        accountId={account.id}
-        onAction={onAction}
-        availableActions={account.actions}
-      />
-    </Card>
+    <DCard className="account-card-extended">
+      <DCard.Header>
+        <AccountHeader
+          name={account.name}
+          number={account.number}
+          type={account.type}
+        />
+      </DCard.Header>
+      <DCard.Body>
+        <AccountBalance
+          balance={account.balance}
+          currency={account.currency}
+        />
+      </DCard.Body>
+      <DCard.Footer>
+        <AccountActions
+          accountId={account.id}
+          onAction={onAction}
+          availableActions={account.actions}
+        />
+      </DCard.Footer>
+    </DCard>
   );
 };
 
@@ -168,22 +167,16 @@ export default AccountCard;
 ```jsx
 // src/components/extended/AccountCard/AccountBalance.jsx
 import React from 'react';
-import { Typography, TrendIndicator } from '@dynamic-framework/ui-react';
-import { formatCurrency } from '@/utils/formatters';
+import { DCurrencyText, DBadge } from '@dynamic-framework/ui-react';
 
-const AccountBalance = ({ balance, currency, trend }) => {
+const AccountBalance = ({ balance, currency }) => {
   return (
     <div className="account-balance">
-      <Typography variant="h2" className="balance-amount">
-        {formatCurrency(balance, currency)}
-      </Typography>
-      {trend && (
-        <TrendIndicator 
-          value={trend.value}
-          direction={trend.direction}
-          period={trend.period}
-        />
-      )}
+      <DCurrencyText
+        value={balance}
+        currencyCode={currency}
+        className="balance-amount"
+      />
     </div>
   );
 };
@@ -371,8 +364,8 @@ const DataProvider = ({
 <DataProvider
   loader={accountService.getAccounts}
   params={{ userId: currentUser.id }}
-  renderLoading={() => <Spinner />}
-  renderError={(error) => <ErrorMessage error={error} />}
+  renderLoading={() => <DProgress indeterminate />}
+  renderError={(error) => <DAlert color="danger">{error.message}</DAlert>}
 >
   {({ data: accounts }) => (
     <AccountList accounts={accounts} />
@@ -479,19 +472,19 @@ export const useTheme = () => {
 };
 
 // Componente que usa el contexto
-const ThemedButton = ({ children, ...props }) => {
+const ThemedButton = ({ text, ...props }) => {
   const { theme, customColors } = useTheme();
-  
+
   return (
-    <Button
-      {...props}
+    <DButton
+      text={text}
+      color="primary"
       style={{
-        backgroundColor: customColors.primary || 'default',
-        color: theme === 'dark' ? 'white' : 'black'
+        backgroundColor: customColors.primary || undefined,
+        color: theme === 'dark' ? 'white' : undefined
       }}
-    >
-      {children}
-    </Button>
+      {...props}
+    />
   );
 };
 ```
@@ -503,18 +496,18 @@ const ThemedButton = ({ children, ...props }) => {
 ```jsx
 // src/components/extended/LazyChart.jsx
 import React, { lazy, Suspense } from 'react';
-import { Spinner } from '@dynamic-framework/ui-react';
+import { DProgress } from '@dynamic-framework/ui-react';
 
 // Lazy load del componente pesado
 const HeavyChart = lazy(() => import('./HeavyChart'));
 
 const LazyChart = ({ data, ...props }) => {
   return (
-    <Suspense 
+    <Suspense
       fallback={
         <div className="chart-loading">
-          <Spinner />
-          <p>Cargando gráfico...</p>
+          <DProgress indeterminate />
+          <p>Cargando grafico...</p>
         </div>
       }
     >
@@ -534,7 +527,7 @@ export default LazyChart;
 // src/components/extended/AnimatedCard.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Card } from '@dynamic-framework/ui-react';
+import { DCard } from '@dynamic-framework/ui-react';
 
 const AnimatedCard = ({ children, delay = 0, ...props }) => {
   return (
@@ -542,19 +535,21 @@ const AnimatedCard = ({ children, delay = 0, ...props }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
-      transition={{ 
-        duration: 0.3, 
+      transition={{
+        duration: 0.3,
         delay,
         ease: 'easeOut'
       }}
-      whileHover={{ 
+      whileHover={{
         scale: 1.02,
         boxShadow: '0 10px 30px rgba(0,0,0,0.1)'
       }}
     >
-      <Card {...props}>
-        {children}
-      </Card>
+      <DCard {...props}>
+        <DCard.Body>
+          {children}
+        </DCard.Body>
+      </DCard>
     </motion.div>
   );
 };
@@ -576,26 +571,25 @@ import * as analytics from '@/utils/analytics';
 jest.mock('@/utils/analytics');
 
 describe('PrimaryButton', () => {
-  it('should render children correctly', () => {
-    render(<PrimaryButton>Click me</PrimaryButton>);
+  it('should render text correctly', () => {
+    render(<PrimaryButton text="Click me" />);
     expect(screen.getByText('Click me')).toBeInTheDocument();
   });
 
   it('should track analytics on click', () => {
     const trackEventSpy = jest.spyOn(analytics, 'trackEvent');
     const handleClick = jest.fn();
-    
+
     render(
-      <PrimaryButton 
+      <PrimaryButton
+        text="Test Button"
         onClick={handleClick}
         trackingLabel="test-button"
-      >
-        Test Button
-      </PrimaryButton>
+      />
     );
-    
+
     fireEvent.click(screen.getByText('Test Button'));
-    
+
     expect(trackEventSpy).toHaveBeenCalledWith('button_click', {
       label: 'test-button',
       component: 'PrimaryButton'
@@ -603,10 +597,10 @@ describe('PrimaryButton', () => {
     expect(handleClick).toHaveBeenCalled();
   });
 
-  it('should apply default size', () => {
-    const { container } = render(<PrimaryButton>Button</PrimaryButton>);
+  it('should have primary color', () => {
+    const { container } = render(<PrimaryButton text="Button" />);
     const button = container.querySelector('button');
-    expect(button).toHaveClass('btn-large');
+    expect(button).toHaveClass('btn-primary');
   });
 });
 ```

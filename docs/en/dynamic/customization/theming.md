@@ -111,17 +111,17 @@ Suppose you have a React project set up using the Dynamic Framework installation
 - **Replace the code:** Replace the existing code with the List component:
 
     ```javascript
-    import { DList, DListItem } from '@dynamic-framework/ui-react';
+    import { DListGroup } from '@dynamic-framework/ui-react';
 
     export default function MyComponent() {
        	const items = ['Item 1', 'Item 2', 'Item 3'];
        	return (
        		<div id="my-component">
-       			<DList>
+       			<DListGroup>
        				{items.map((item) => (
-       					<DListItem key={item}>{item}</DListItem>
+       					<DListGroup.Item key={item}>{item}</DListGroup.Item>
        				))}
-       			</DList>
+       			</DListGroup>
        		</div>
        	);
     }

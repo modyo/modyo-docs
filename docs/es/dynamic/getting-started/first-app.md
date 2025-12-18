@@ -2,487 +2,378 @@
 search: true
 ---
 
-# Primera Aplicación
+# Tu Primera Aplicación
 
-Esta guía te llevará paso a paso a través de la creación de tu primera aplicación bancaria con Dynamic Framework.
+Esta guía te llevará paso a paso a crear tu primera aplicación con Dynamic Framework, usando componentes reales y patrones correctos.
 
-## Objetivo
+## Requisitos Previos
 
-Al finalizar esta guía, habrás creado una aplicación bancaria funcional con:
-- Dashboard de cuentas
-- Vista de transacciones
-- Transferencias básicas
-- Integración con APIs
+Antes de comenzar, asegúrate de tener:
 
-## Prerequisitos
-
-Asegúrate de haber completado la [instalación](installation.html) de Dynamic Framework.
+- Node.js v22 o superior
+- NPM 10.x o superior
+- Un editor de código (VS Code recomendado)
 
 ## Paso 1: Crear el Proyecto
 
+Usa Modyo CLI para crear un nuevo proyecto:
+
 ```bash
-# Crear proyecto con plantilla Dynamic
+# Crear proyecto con plantilla base
 npx @modyo/cli@latest get dynamic-react-base-template mi-primera-app
 
-# Entrar al directorio
+# Navegar al directorio
 cd mi-primera-app
 
 # Instalar dependencias
 npm install
+
+# Iniciar servidor de desarrollo
+npm run start
 ```
 
-## Paso 2: Estructura Inicial
+Tu aplicación estará disponible en `http://localhost:8080`.
 
-Tu proyecto tendrá esta estructura:
+## Paso 2: Tu Primer Componente
 
-```
-mi-primera-app/
-├── src/
-│   ├── App.jsx         # Componente principal
-│   ├── index.js        # Punto de entrada
-│   └── styles/         # Estilos personalizados
-├── public/
-│   └── index.html      # HTML template
-└── package.json        # Configuración
-```
-
-## Paso 3: Crear el Dashboard
-
-### Dashboard Component
+Crea un componente simple usando `DCard` y `DButton`. Estos son componentes reales de Dynamic UI.
 
 ```jsx
-// src/components/Dashboard.jsx
-import React from 'react';
-import { 
-  Container, 
-  Row, 
-  Col, 
-  Card,
-  Typography 
-} from '@dynamic-framework/ui-react';
+// src/components/WelcomeCard.jsx
+import { DCard, DButton } from '@dynamic-framework/ui-react';
 
-const Dashboard = ({ user }) => {
+function WelcomeCard({ userName }) {
   return (
-    <Container>
-      <Row className="mb-4">
-        <Col>
-          <Typography variant="h1">
-            Bienvenido, {user.name}
-          </Typography>
-        </Col>
-      </Row>
-      
-      <Row>
-        <Col md={6}>
-          <Card>
-            <Card.Header>
-              <Typography variant="h3">Cuenta Corriente</Typography>
-            </Card.Header>
-            <Card.Body>
-              <Typography variant="h2" className="text-primary">
-                $125,430.00
-              </Typography>
-              <Typography variant="body2" className="text-muted">
-                Disponible
-              </Typography>
-            </Card.Body>
-          </Card>
-        </Col>
-        
-        <Col md={6}>
-          <Card>
-            <Card.Header>
-              <Typography variant="h3">Cuenta de Ahorros</Typography>
-            </Card.Header>
-            <Card.Body>
-              <Typography variant="h2" className="text-success">
-                $45,200.00
-              </Typography>
-              <Typography variant="body2" className="text-muted">
-                Disponible
-              </Typography>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-    </Container>
+    <DCard>
+      <DCard.Header>
+        <h5 className="mb-0">Bienvenido</h5>
+      </DCard.Header>
+      <DCard.Body>
+        <p>Hola, {userName}. Esta es tu primera app con Dynamic Framework.</p>
+        <DButton
+          text="Comenzar"
+          color="primary"
+          onClick={() => console.log('Clic!')}
+        />
+      </DCard.Body>
+    </DCard>
   );
-};
+}
 
-export default Dashboard;
+export default WelcomeCard;
 ```
 
-## Paso 4: Lista de Transacciones
+### Puntos Clave
 
-### TransactionList Component
+- `DCard` usa subcomponentes: `DCard.Header`, `DCard.Body`, `DCard.Footer`
+- `DButton` usa `text` para el contenido y `color` para el estilo
+- No existe `variant="primary"` - usa `color="primary"`
+
+## Paso 3: Agregar Interactividad
+
+Ahora agreguemos estado con `useState` para hacer la app interactiva:
 
 ```jsx
-// src/components/TransactionList.jsx
-import React from 'react';
-import { 
-  Table,
-  Badge,
-  Typography 
-} from '@dynamic-framework/ui-react';
+// src/components/CounterCard.jsx
+import { useState } from 'react';
+import { DCard, DButton, DAlert } from '@dynamic-framework/ui-react';
 
-const TransactionList = ({ transactions }) => {
-  const getStatusBadge = (status) => {
-    const variants = {
-      completed: 'success',
-      pending: 'warning',
-      failed: 'danger'
-    };
-    return variants[status] || 'secondary';
+function CounterCard() {
+  const [count, setCount] = useState(0);
+  const [showAlert, setShowAlert] = useState(false);
+
+  const handleIncrement = () => {
+    const newCount = count + 1;
+    setCount(newCount);
+
+    if (newCount >= 5) {
+      setShowAlert(true);
+    }
   };
 
   return (
-    <div className="transaction-list">
-      <Typography variant="h2" className="mb-3">
-        Últimas Transacciones
-      </Typography>
-      
-      <Table responsive hover>
-        <thead>
-          <tr>
-            <th>Fecha</th>
-            <th>Descripción</th>
-            <th>Monto</th>
-            <th>Estado</th>
-          </tr>
-        </thead>
-        <tbody>
-          {transactions.map((transaction) => (
-            <tr key={transaction.id}>
-              <td>{transaction.date}</td>
-              <td>{transaction.description}</td>
-              <td className={transaction.amount > 0 ? 'text-success' : 'text-danger'}>
-                ${Math.abs(transaction.amount).toFixed(2)}
-              </td>
-              <td>
-                <Badge variant={getStatusBadge(transaction.status)}>
-                  {transaction.status}
-                </Badge>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </Table>
-    </div>
-  );
-};
+    <DCard>
+      <DCard.Header>
+        <h5 className="mb-0">Contador Interactivo</h5>
+      </DCard.Header>
+      <DCard.Body>
+        <p className="display-4 text-center">{count}</p>
 
-export default TransactionList;
+        <div className="d-flex gap-2 justify-content-center">
+          <DButton
+            text="Incrementar"
+            color="primary"
+            iconStart="Plus"
+            onClick={handleIncrement}
+          />
+          <DButton
+            text="Reiniciar"
+            color="secondary"
+            variant="outline"
+            onClick={() => {
+              setCount(0);
+              setShowAlert(false);
+            }}
+          />
+        </div>
+
+        {showAlert && (
+          <DAlert color="success" className="mt-3">
+            ¡Has llegado a 5 o más!
+          </DAlert>
+        )}
+      </DCard.Body>
+    </DCard>
+  );
+}
+
+export default CounterCard;
 ```
 
-## Paso 5: Formulario de Transferencia
+### Puntos Clave
 
-### TransferForm Component
+- `DAlert` usa `color` (no `variant` ni `theme`)
+- `DAlert` usa `children` para el contenido (no prop `text`)
+- `DButton` con `iconStart` usa nombres de iconos Lucide en PascalCase (`Plus`, no `plus`)
+
+## Paso 4: Formulario con Inputs
+
+Crea un formulario simple usando los componentes de entrada de Dynamic UI:
 
 ```jsx
-// src/components/TransferForm.jsx
-import React, { useState } from 'react';
-import { 
-  Form,
-  Input,
-  Select,
-  Button,
-  Alert 
-} from '@dynamic-framework/ui-react';
+// src/components/ContactForm.jsx
+import { useState } from 'react';
+import { DCard, DButton, DInput, DAlert } from '@dynamic-framework/ui-react';
 
-const TransferForm = ({ accounts, onTransfer }) => {
+function ContactForm() {
   const [formData, setFormData] = useState({
-    fromAccount: '',
-    toAccount: '',
-    amount: '',
-    description: ''
+    name: '',
+    email: '',
+    message: ''
   });
-  const [error, setError] = useState('');
-  const [success, setSuccess] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = async (e) => {
+  const handleChange = (field) => (value) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+  };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setError('');
-    setSuccess(false);
-
-    try {
-      await onTransfer(formData);
-      setSuccess(true);
-      setFormData({
-        fromAccount: '',
-        toAccount: '',
-        amount: '',
-        description: ''
-      });
-    } catch (err) {
-      setError(err.message);
-    }
+    console.log('Datos enviados:', formData);
+    setSubmitted(true);
   };
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  return (
-    <Form onSubmit={handleSubmit}>
-      {error && <Alert variant="danger">{error}</Alert>}
-      {success && <Alert variant="success">Transferencia exitosa</Alert>}
-      
-      <Form.Group>
-        <Form.Label>Cuenta Origen</Form.Label>
-        <Select
-          name="fromAccount"
-          value={formData.fromAccount}
-          onChange={handleChange}
-          required
-        >
-          <option value="">Seleccionar cuenta</option>
-          {accounts.map(account => (
-            <option key={account.id} value={account.id}>
-              {account.name} - ${account.balance}
-            </option>
-          ))}
-        </Select>
-      </Form.Group>
-
-      <Form.Group>
-        <Form.Label>Cuenta Destino</Form.Label>
-        <Input
-          type="text"
-          name="toAccount"
-          value={formData.toAccount}
-          onChange={handleChange}
-          placeholder="Número de cuenta"
-          required
-        />
-      </Form.Group>
-
-      <Form.Group>
-        <Form.Label>Monto</Form.Label>
-        <Input
-          type="number"
-          name="amount"
-          value={formData.amount}
-          onChange={handleChange}
-          placeholder="0.00"
-          min="0.01"
-          step="0.01"
-          required
-        />
-      </Form.Group>
-
-      <Form.Group>
-        <Form.Label>Descripción</Form.Label>
-        <Input
-          type="text"
-          name="description"
-          value={formData.description}
-          onChange={handleChange}
-          placeholder="Concepto de la transferencia"
-        />
-      </Form.Group>
-
-      <Button type="submit" variant="primary" block>
-        Realizar Transferencia
-      </Button>
-    </Form>
-  );
-};
-
-export default TransferForm;
-```
-
-## Paso 6: Integrar Todo en App
-
-### App Component Principal
-
-```jsx
-// src/App.jsx
-import React, { useState, useEffect } from 'react';
-import { ThemeProvider, Tabs, Tab } from '@dynamic-framework/ui-react';
-import Dashboard from './components/Dashboard';
-import TransactionList from './components/TransactionList';
-import TransferForm from './components/TransferForm';
-import { fetchUser, fetchAccounts, fetchTransactions, createTransfer } from './services/api';
-
-function App() {
-  const [user, setUser] = useState(null);
-  const [accounts, setAccounts] = useState([]);
-  const [transactions, setTransactions] = useState([]);
-  const [activeTab, setActiveTab] = useState('dashboard');
-
-  useEffect(() => {
-    // Cargar datos iniciales
-    loadData();
-  }, []);
-
-  const loadData = async () => {
-    try {
-      const userData = await fetchUser();
-      const accountsData = await fetchAccounts();
-      const transactionsData = await fetchTransactions();
-      
-      setUser(userData);
-      setAccounts(accountsData);
-      setTransactions(transactionsData);
-    } catch (error) {
-      console.error('Error loading data:', error);
-    }
-  };
-
-  const handleTransfer = async (transferData) => {
-    await createTransfer(transferData);
-    // Recargar datos después de la transferencia
-    await loadData();
-  };
-
-  if (!user) {
-    return <div>Cargando...</div>;
+  if (submitted) {
+    return (
+      <DCard>
+        <DCard.Body>
+          <DAlert color="success">
+            Gracias por tu mensaje, {formData.name}.
+          </DAlert>
+          <DButton
+            text="Enviar otro mensaje"
+            color="primary"
+            variant="outline"
+            onClick={() => {
+              setFormData({ name: '', email: '', message: '' });
+              setSubmitted(false);
+            }}
+          />
+        </DCard.Body>
+      </DCard>
+    );
   }
 
   return (
-    <ThemeProvider>
-      <div className="app">
-        <Tabs activeKey={activeTab} onSelect={setActiveTab}>
-          <Tab eventKey="dashboard" title="Dashboard">
-            <Dashboard user={user} />
-          </Tab>
-          <Tab eventKey="transactions" title="Transacciones">
-            <TransactionList transactions={transactions} />
-          </Tab>
-          <Tab eventKey="transfer" title="Transferir">
-            <TransferForm accounts={accounts} onTransfer={handleTransfer} />
-          </Tab>
-        </Tabs>
+    <DCard>
+      <DCard.Header>
+        <h5 className="mb-0">Contacto</h5>
+      </DCard.Header>
+      <DCard.Body>
+        <form onSubmit={handleSubmit}>
+          <div className="mb-3">
+            <DInput
+              label="Nombre *"
+              value={formData.name}
+              onChange={handleChange('name')}
+              placeholder="Tu nombre"
+            />
+          </div>
+
+          <div className="mb-3">
+            <DInput
+              label="Email *"
+              type="email"
+              value={formData.email}
+              onChange={handleChange('email')}
+              placeholder="tu@email.com"
+            />
+          </div>
+
+          <div className="mb-3">
+            <DInput
+              label="Mensaje"
+              value={formData.message}
+              onChange={handleChange('message')}
+              placeholder="Tu mensaje..."
+            />
+          </div>
+
+          <DButton
+            text="Enviar"
+            color="primary"
+            type="submit"
+            iconEnd="Send"
+          />
+        </form>
+      </DCard.Body>
+    </DCard>
+  );
+}
+
+export default ContactForm;
+```
+
+### Puntos Clave sobre DInput
+
+- `onChange` recibe el valor directamente, **NO** un evento
+- Correcto: `onChange={(value) => setValue(value)}`
+- Incorrecto: `onChange={(e) => setValue(e.target.value)}`
+
+## Paso 5: Integrar Todo en App.jsx
+
+Ahora integra tus componentes en la aplicación principal:
+
+```jsx
+// src/App.jsx
+import WelcomeCard from './components/WelcomeCard';
+import CounterCard from './components/CounterCard';
+import ContactForm from './components/ContactForm';
+
+import '@dynamic-framework/ui-react/dist/css/dynamic-ui.css';
+
+function App() {
+  return (
+    <div className="container py-4">
+      <h1 className="mb-4">Mi Primera App con Dynamic</h1>
+
+      <div className="row g-4">
+        <div className="col-12 col-md-6">
+          <WelcomeCard userName="Usuario" />
+        </div>
+
+        <div className="col-12 col-md-6">
+          <CounterCard />
+        </div>
+
+        <div className="col-12">
+          <ContactForm />
+        </div>
       </div>
-    </ThemeProvider>
+    </div>
   );
 }
 
 export default App;
 ```
 
-## Paso 7: Servicios API
+## Paso 6: Agregar Iconos
 
-### API Service
+Dynamic UI 2.0 usa iconos de [Lucide](https://lucide.dev/icons/). Los nombres deben estar en PascalCase:
 
-```javascript
-// src/services/api.js
-const API_BASE = process.env.REACT_APP_API_URL || 'http://localhost:3001';
+```jsx
+import { DButton, DIcon } from '@dynamic-framework/ui-react';
 
-export const fetchUser = async () => {
-  const response = await fetch(`${API_BASE}/user`);
-  return response.json();
-};
+// Botones con iconos
+<DButton text="Guardar" iconStart="Save" color="primary" />
+<DButton text="Siguiente" iconEnd="ArrowRight" color="primary" />
+<DButton text="Eliminar" iconStart="Trash" color="danger" />
 
-export const fetchAccounts = async () => {
-  const response = await fetch(`${API_BASE}/accounts`);
-  return response.json();
-};
-
-export const fetchTransactions = async () => {
-  const response = await fetch(`${API_BASE}/transactions`);
-  return response.json();
-};
-
-export const createTransfer = async (data) => {
-  const response = await fetch(`${API_BASE}/transfers`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(data),
-  });
-  
-  if (!response.ok) {
-    throw new Error('Error en la transferencia');
-  }
-  
-  return response.json();
-};
+// Icono independiente
+<DIcon icon="Settings" size="24px" />
+<DIcon icon="CheckCircle" color="success" />
 ```
 
-## Paso 8: Ejecutar la Aplicación
+### Iconos Comunes
 
-```bash
-# Iniciar el servidor de desarrollo
-npm start
+| Icono | Nombre | Uso |
+|-------|--------|-----|
+| + | `Plus` | Agregar |
+| check | `Check` | Confirmar |
+| x | `X` | Cerrar |
+| flecha derecha | `ArrowRight` | Siguiente |
+| flecha izquierda | `ArrowLeft` | Anterior |
+| papelera | `Trash` | Eliminar |
+| lápiz | `Pencil` | Editar |
+| disco | `Save` | Guardar |
+| lupa | `Search` | Buscar |
+| engranaje | `Settings` | Configuración |
 
-# La aplicación estará disponible en http://localhost:8080
+## Errores Comunes a Evitar
+
+### 1. Prop `theme` vs `color`
+
+```jsx
+// INCORRECTO - theme no existe
+<DButton text="Clic" theme="primary" />
+<DAlert theme="danger">Error</DAlert>
+
+// CORRECTO - usar color
+<DButton text="Clic" color="primary" />
+<DAlert color="danger">Error</DAlert>
 ```
 
-## Paso 9: Personalización
+### 2. Iconos en minúsculas
 
-### Agregar Estilos Personalizados
+```jsx
+// INCORRECTO - minúsculas
+<DButton text="Guardar" iconStart="save" />
+<DIcon icon="settings" />
 
-```scss
-// src/styles/custom.scss
-.app {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  padding: 20px;
-}
-
-.card {
-  border-radius: 12px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
-  
-  &:hover {
-    transform: translateY(-5px);
-  }
-}
-
-.transaction-list {
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-}
+// CORRECTO - PascalCase
+<DButton text="Guardar" iconStart="Save" />
+<DIcon icon="Settings" />
 ```
 
-## Paso 10: Desplegar a Modyo
+### 3. Handlers de DInput
 
-```bash
-# Construir para producción
-npm run build
+```jsx
+// INCORRECTO - intentar acceder a e.target.value
+<DInput
+  value={value}
+  onChange={(e) => setValue(e.target.value)}
+/>
 
-# Configurar Modyo CLI
-npx @modyo/cli init
-
-# Desplegar a Modyo
-npx @modyo/cli push
+// CORRECTO - el handler recibe el valor directamente
+<DInput
+  value={value}
+  onChange={(value) => setValue(value)}
+/>
 ```
 
-## Resultado Final
+### 4. Componentes que no existen
 
-¡Felicitaciones! Has creado tu primera aplicación bancaria con Dynamic Framework que incluye:
+```jsx
+// INCORRECTO - estos componentes NO existen en Dynamic UI
+import { Typography, Container, Row, Col } from '@dynamic-framework/ui-react';
+import { ThemeProvider, ConfigProvider } from '@dynamic-framework/ui-react';
 
-- Dashboard con resumen de cuentas
-- Lista de transacciones recientes
-- Formulario de transferencias
-- Integración con APIs
-- Diseño responsive y moderno
-- Listo para desplegar en Modyo
+// CORRECTO - usar componentes reales
+import { DCard, DButton, DAlert, DInput } from '@dynamic-framework/ui-react';
+// Para layout usar clases Bootstrap: container, row, col-*
+```
 
 ## Próximos Pasos
 
-- Explora más [componentes](../development/components.html)
-- Implementa [autenticación](../development/api-integration.html#autenticacion)
-- Agrega [validaciones avanzadas](../development/components.html#validacion)
-- Personaliza el [tema](../customization/theming.html)
+Ahora que tienes tu primera aplicación funcionando:
+
+1. Explora más componentes en [Storybook](https://react.dynamicframework.dev/)
+2. Aprende sobre [estructura del proyecto](./project-structure.md)
+3. Revisa la [guía de migración](./migration-v2.md) si vienes de v1.x
+4. Consulta [novedades de v2.0](../whats-new-v2.md)
 
 ## Recursos
 
-- [Código completo en GitHub](https://github.com/modyo/dynamic-first-app)
-- [Demo en vivo](https://demo.dynamic.modyo.com/first-app)
-- [Video tutorial](https://youtube.com/watch?v=...)
-
-## ¿Necesitas Ayuda?
-
-Si encuentras problemas:
-1. Revisa la [documentación de componentes](../development/components.html)
-2. Busca en los [FAQs](https://support.modyo.com/hc/es)
-3. Pregunta en la [comunidad](https://community.modyo.com)
-4. Contacta [soporte](https://support.modyo.com)
+- [Storybook - Catálogo de Componentes](https://react.dynamicframework.dev/)
+- [Iconos Lucide](https://lucide.dev/icons/)
+- [Bootstrap 5 - Utilidades CSS](https://getbootstrap.com/docs/5.3/utilities/api/)

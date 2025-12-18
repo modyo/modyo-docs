@@ -26,4 +26,4 @@ En Dynamic Framework, los widgets son componentes reutilizables que encapsulan f
     </div>
     ```
 
-Este código renderizará un componente de tarjeta listo para usar. Explora más componentes en nuestro [catálogo de componentes](https://dynamic.modyo.cloud/develop-dynamic-ui/components/cards).
+Este código renderizará un componente de tarjeta listo para usar. Explora más componentes en nuestro [catálogo de componentes](https://react.dynamicframework.dev/).

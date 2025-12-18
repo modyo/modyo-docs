@@ -4,272 +4,392 @@ search: true
 
 # Dynamic Framework Components
 
-Dynamic Framework offers more than 30 specialized components for the financial industry, designed to cover the most common needs in banking and financial applications.
-
-## Component Types
-
-### HTML Components
-HTML components are static interface elements or with minimal interactivity, ideal for:
-
-- **Public sites** with high traffic
-- **Marketing pages** that require SEO
-- **Informational content** that doesn't change frequently
-- **Simple interfaces** without complex logic
-
-#### Features:
-- Performance optimized
-- SEO compatible
-- Accessible by default
-- Fast and efficient loading
-- Don't require JavaScript to function
-
-#### Usage Examples:
-```html
-<!-- Banking product card -->
-<div class="df-card">
-  <div class="df-card-body">
-    <h3 class="df-card-title">Savings Account</h3>
-    <p class="df-card-text">Save with the best market rates</p>
-    <a href="#" class="df-btn df-btn-primary">Open Account</a>
-  </div>
-</div>
-
-<!-- Interest rates table -->
-<table class="df-table">
-  <thead>
-    <tr>
-      <th>Term</th>
-      <th>Annual Rate</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>30 days</td>
-      <td>3.5%</td>
-    </tr>
-    <tr>
-      <td>90 days</td>
-      <td>4.2%</td>
-    </tr>
-  </tbody>
-</table>
-```
-
-### React Components
-React components provide advanced interactivity and state management, perfect for:
-
-- **Transactional applications** that require real-time updates
-- **Complex forms** with dynamic validation
-- **Interactive dashboards** with data visualization
-- **User flows** with multiple steps
-
-#### Features:
-- Complex state management
-- Real-time updates
-- API integration
-- Reusable components
-- Conditional rendering
-
-#### Usage Examples:
-```jsx
-// Bank transfer component
-import { TransferForm, AccountSelector, AmountInput } from '@dynamic-framework/ui-react';
-
-function BankTransfer() {
-  return (
-    <TransferForm onSubmit={handleTransfer}>
-      <AccountSelector 
-        label="Source Account"
-        accounts={userAccounts}
-      />
-      <AccountSelector 
-        label="Destination Account"
-        allowExternal={true}
-      />
-      <AmountInput 
-        currency="USD"
-        max={availableBalance}
-      />
-    </TransferForm>
-  );
-}
-
-// Account statement component
-import { AccountStatement, TransactionList } from '@dynamic-framework/ui-react';
-
-function AccountDashboard() {
-  return (
-    <AccountStatement accountId={selectedAccount}>
-      <TransactionList 
-        filterable={true}
-        sortable={true}
-        paginated={true}
-        itemsPerPage={20}
-      />
-    </AccountStatement>
-  );
-}
-```
+Dynamic Framework offers more than 45 specialized React components for financial applications, built on Bootstrap 5 and designed to cover the most common needs in banking applications.
 
 ## Component Catalog
 
+### Layout Components
+
+| Component | Description |
+|-----------|-------------|
+| `DBox` | Semantic container with visual variants |
+| `DCard` | Card with header, body, and footer |
+| `DLayout` | CSS Grid-based grid system |
+| `DCollapse` | Collapsible panel with animation |
+
+```jsx
+import { DCard, DBox } from '@dynamic-framework/ui-react';
+
+// Basic card
+<DCard>
+  <DCard.Header>
+    <h5 className="mb-0">Title</h5>
+  </DCard.Header>
+  <DCard.Body>
+    Card content
+  </DCard.Body>
+  <DCard.Footer>
+    <DButton text="Action" color="primary" />
+  </DCard.Footer>
+</DCard>
+
+// Box with variant
+<DBox className="p-3">
+  Box content
+</DBox>
+```
+
 ### Navigation Components
-- **Navbar**: Main navigation bar with dropdown menus
-- **Sidebar**: Side panel for secondary navigation
-- **Breadcrumb**: Location indicator in hierarchy
-- **Tabs**: Navigation between related sections
-- **Pagination**: Pagination control for listings
 
-### Form Components
-- **Input**: Text fields with integrated validation
-- **Select**: Dropdown lists with search
-- **DatePicker**: Date selector with calendar
-- **FileUpload**: Document upload with preview
-- **Checkbox/Radio**: Multiple and single selection controls
-
-### Data Components
-- **Table**: Tables with sorting and filters
-- **Chart**: Charts for data visualization
-- **Card**: Cards for information presentation
-- **List**: Lists with different presentation styles
-- **Timeline**: Timeline for event history
-
-### Feedback Components
-- **Alert**: User notification messages
-- **Modal**: Pop-up windows for important actions
-- **Toast**: Non-intrusive temporary notifications
-- **Progress**: Progress indicators for operations
-- **Skeleton**: Placeholders during content loading
-
-### Specialized Financial Components
-- **AccountCard**: Account summary card
-- **TransactionItem**: Transaction item with details
-- **BalanceDisplay**: Balance display with formatting
-- **CurrencyInput**: Input field for amounts
-- **CardSelector**: Visual selector for credit/debit cards
-
-## Component Customization
-
-### Themes and CSS Variables
-```css
-/* Global theme variables */
-:root {
-  --df-primary-color: #004B8D;
-  --df-secondary-color: #00A0DF;
-  --df-success-color: #28A745;
-  --df-danger-color: #DC3545;
-  --df-font-family: 'Inter', sans-serif;
-  --df-border-radius: 8px;
-  --df-spacing-unit: 8px;
-}
-
-/* Specific component customization */
-.df-card {
-  --df-card-bg: var(--df-white);
-  --df-card-border: 1px solid var(--df-gray-200);
-  --df-card-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  --df-card-padding: calc(var(--df-spacing-unit) * 3);
-}
-```
-
-### Props and Configuration
-```jsx
-// Customization through props
-<Button 
-  variant="primary"
-  size="large"
-  icon="arrow-right"
-  loading={isLoading}
-  disabled={!isValid}
-  fullWidth
->
-  Continue
-</Button>
-
-// Global component configuration
-import { ConfigProvider } from '@dynamic-framework/ui-react';
-
-<ConfigProvider 
-  theme={{
-    colors: {
-      primary: '#004B8D',
-      secondary: '#00A0DF'
-    },
-    typography: {
-      fontFamily: 'Inter, sans-serif'
-    }
-  }}
->
-  <App />
-</ConfigProvider>
-```
-
-## Component Composition
-
-Dynamic Framework components are designed to work together harmoniously:
+| Component | Description |
+|-----------|-------------|
+| `DTabs` | Tab navigation with content |
+| `DStepper` | Step indicator for wizards |
+| `DPaginator` | Pagination control |
+| `DDropdown` | Dropdown menu |
 
 ```jsx
-// Example composition for account opening flow
-import { 
-  Stepper, 
-  Form, 
-  PersonalInfoFields,
-  DocumentUpload,
-  AccountTypeSelector,
-  TermsAndConditions,
-  ConfirmationScreen 
-} from '@dynamic-framework/ui-react';
+import { DTabs, DTabOption } from '@dynamic-framework/ui-react';
+import { useState, useMemo } from 'react';
 
-function AccountOpening() {
-  const steps = [
-    { label: 'Personal Information', component: PersonalInfoFields },
-    { label: 'Documentation', component: DocumentUpload },
-    { label: 'Account Type', component: AccountTypeSelector },
-    { label: 'Terms', component: TermsAndConditions },
-    { label: 'Confirmation', component: ConfirmationScreen }
-  ];
+function TabsExample() {
+  const tabs: DTabOption[] = useMemo(() => [
+    { label: 'Summary', tab: 'summary' },
+    { label: 'Transactions', tab: 'transactions' },
+    { label: 'Details', tab: 'details' },
+  ], []);
+
+  const [selectedTab, setSelectedTab] = useState<DTabOption>(tabs[0]);
 
   return (
-    <Stepper steps={steps} onComplete={handleAccountCreation}>
-      {({ CurrentStep, navigation }) => (
-        <Form>
-          <CurrentStep />
-          <navigation.Controls />
-        </Form>
-      )}
-    </Stepper>
+    <DTabs
+      options={tabs}
+      defaultSelected={selectedTab.tab}
+      onChange={setSelectedTab}
+    >
+      <DTabs.Tab tab="summary">
+        <p>Summary content</p>
+      </DTabs.Tab>
+      <DTabs.Tab tab="transactions">
+        <p>Transaction list</p>
+      </DTabs.Tab>
+      <DTabs.Tab tab="details">
+        <p>Account details</p>
+      </DTabs.Tab>
+    </DTabs>
+  );
+}
+```
+
+### Form Components
+
+| Component | Description |
+|-----------|-------------|
+| `DInput` | Text field with label and validation |
+| `DInputCurrency` | Amount input with formatting |
+| `DInputPassword` | Password field with toggle |
+| `DInputPhone` | Phone field with country code |
+| `DInputPin` | Numeric PIN input |
+| `DInputMask` | Input with format mask |
+| `DInputCheck` | Checkbox with label |
+| `DInputSwitch` | Toggle switch |
+| `DInputRange` | Range slider |
+| `DInputCounter` | Numeric counter with +/- |
+| `DSelect` | Dropdown list |
+| `DInputSelect` | Select with search |
+| `DDatePicker` | Date selector |
+| `DOtp` | OTP code input |
+| `DBoxFile` | File upload |
+
+```jsx
+import { DInput, DInputCurrency, DButton } from '@dynamic-framework/ui-react';
+import { useState } from 'react';
+
+function TransferForm() {
+  const [amount, setAmount] = useState<number | undefined>();
+  const [description, setDescription] = useState('');
+
+  return (
+    <form>
+      <div className="mb-3">
+        <DInputCurrency
+          label="Amount to transfer"
+          value={amount}
+          onChange={setAmount}
+          currencyCode="USD"
+          placeholder="0.00"
+        />
+      </div>
+
+      <div className="mb-3">
+        <DInput
+          label="Description"
+          value={description}
+          onChange={setDescription}
+          placeholder="Transfer concept"
+        />
+      </div>
+
+      <DButton
+        text="Transfer"
+        color="primary"
+        iconEnd="Send"
+        type="submit"
+      />
+    </form>
+  );
+}
+```
+
+### Button Components
+
+| Component | Description |
+|-----------|-------------|
+| `DButton` | Button with variants and states |
+| `DButtonIcon` | Icon-only button |
+
+```jsx
+import { DButton, DButtonIcon } from '@dynamic-framework/ui-react';
+
+// Buttons with different colors
+<DButton text="Primary" color="primary" />
+<DButton text="Secondary" color="secondary" />
+<DButton text="Success" color="success" />
+<DButton text="Danger" color="danger" />
+
+// Style variants
+<DButton text="Solid" color="primary" />
+<DButton text="Outline" color="primary" variant="outline" />
+<DButton text="Link" color="primary" variant="link" />
+
+// With icons (Lucide, PascalCase)
+<DButton text="Save" iconStart="Save" color="primary" />
+<DButton text="Next" iconEnd="ArrowRight" color="primary" />
+
+// Icon only
+<DButtonIcon icon="Settings" color="secondary" />
+<DButtonIcon icon="Trash" color="danger" />
+```
+
+### Feedback Components
+
+| Component | Description |
+|-----------|-------------|
+| `DAlert` | Alert messages |
+| `DToast` | Temporary notifications |
+| `DToastContainer` | Toast container |
+| `DProgress` | Progress bar |
+| `DModal` | Modal window |
+| `DOffcanvas` | Sliding side panel |
+| `DPopover` | Popover with content |
+| `DTooltip` | Informative tooltip |
+
+```jsx
+import { DAlert, DModal, DButton } from '@dynamic-framework/ui-react';
+import { useState } from 'react';
+
+function FeedbackExample() {
+  const [showModal, setShowModal] = useState(false);
+
+  return (
+    <>
+      {/* Alerts */}
+      <DAlert color="success">
+        Operation completed successfully
+      </DAlert>
+
+      <DAlert color="danger" dismissible onClose={() => {}}>
+        An error has occurred
+      </DAlert>
+
+      {/* Modal */}
+      <DButton
+        text="Open Modal"
+        color="primary"
+        onClick={() => setShowModal(true)}
+      />
+
+      <DModal
+        isOpen={showModal}
+        onClose={() => setShowModal(false)}
+        title="Confirm action"
+      >
+        <p>Are you sure you want to perform this action?</p>
+        <div className="d-flex gap-2 justify-content-end">
+          <DButton
+            text="Cancel"
+            color="secondary"
+            variant="outline"
+            onClick={() => setShowModal(false)}
+          />
+          <DButton
+            text="Confirm"
+            color="primary"
+            onClick={() => setShowModal(false)}
+          />
+        </div>
+      </DModal>
+    </>
+  );
+}
+```
+
+### Data Components
+
+| Component | Description |
+|-----------|-------------|
+| `DBadge` | Labels and counters |
+| `DChip` | Removable tags |
+| `DAvatar` | User avatar |
+| `DListGroup` | Grouped list |
+| `DTimeline` | Timeline |
+| `DCarousel` | Content carousel |
+
+```jsx
+import { DBadge, DChip, DListGroup } from '@dynamic-framework/ui-react';
+
+// Badges
+<DBadge text="New" color="primary" />
+<DBadge text="Pending" color="warning" soft />
+<DBadge text="5" color="danger" pill />
+
+// Removable chips
+<DChip
+  label="Tag"
+  onClose={() => handleRemove()}
+  color="primary"
+/>
+
+// Grouped list
+<DListGroup>
+  <DListGroup.Item>Item 1</DListGroup.Item>
+  <DListGroup.Item>Item 2</DListGroup.Item>
+  <DListGroup.Item>Item 3</DListGroup.Item>
+</DListGroup>
+```
+
+### Financial Components
+
+| Component | Description |
+|-----------|-------------|
+| `DCreditCard` | Credit/debit card display |
+| `DCurrencyText` | Text with currency format |
+| `DVoucher` | Transaction receipt/voucher |
+| `DPasswordStrengthMeter` | Password strength indicator |
+
+```jsx
+import { DCreditCard, DCurrencyText, DVoucher } from '@dynamic-framework/ui-react';
+
+// Credit card
+<DCreditCard
+  lastFourDigits="4532"
+  cardHolder="JOHN DOE"
+  expirationDate="12/28"
+  franchise="visa"
+/>
+
+// Text with currency format
+<DCurrencyText
+  value={1250.50}
+  currencyCode="USD"
+/>
+
+// Transaction voucher
+<DVoucher
+  title="Transfer successful"
+  items={[
+    { label: 'Amount', value: '$500.00' },
+    { label: 'Destination', value: 'Account ***1234' },
+    { label: 'Date', value: '12/18/2025' },
+  ]}
+/>
+```
+
+### Icons
+
+Dynamic UI 2.0 uses [Lucide Icons](https://lucide.dev/icons/). Names must be in **PascalCase**:
+
+```jsx
+import { DIcon } from '@dynamic-framework/ui-react';
+
+// Basic icons
+<DIcon icon="Home" />
+<DIcon icon="Settings" />
+<DIcon icon="User" />
+
+// With size and color
+<DIcon icon="CheckCircle" size="32px" color="success" />
+<DIcon icon="AlertTriangle" size="24px" color="warning" />
+
+// In buttons
+<DButton text="Edit" iconStart="Pencil" color="primary" />
+<DButton text="Delete" iconStart="Trash" color="danger" />
+```
+
+## Common Props
+
+### The `color` Prop
+
+Most components use `color` (not `variant` or `theme`):
+
+```jsx
+// CORRECT
+<DButton text="Action" color="primary" />
+<DAlert color="success">Message</DAlert>
+<DBadge text="Status" color="warning" />
+
+// INCORRECT - these props DO NOT exist
+<DButton text="Action" theme="primary" />
+<DButton text="Action" variant="primary" />
+```
+
+Available values: `primary`, `secondary`, `success`, `danger`, `warning`, `info`, `light`, `dark`
+
+### Input Handlers
+
+Input components receive the value directly, **not** an event:
+
+```jsx
+// CORRECT
+<DInput
+  value={value}
+  onChange={(newValue) => setValue(newValue)}
+/>
+
+// INCORRECT
+<DInput
+  value={value}
+  onChange={(e) => setValue(e.target.value)}
+/>
+```
+
+## Global Configuration
+
+Use `DContextProvider` for global application configuration:
+
+```jsx
+import { DContextProvider } from '@dynamic-framework/ui-react';
+
+function App() {
+  return (
+    <DContextProvider>
+      <MyApplication />
+    </DContextProvider>
   );
 }
 ```
 
 ## Accessibility
 
-All Dynamic Framework components comply with WCAG 2.1 level AA standards:
+All Dynamic Framework components comply with WCAG 2.1 level AA:
 
-- Complete **keyboard navigation**
-- **Screen reader** compatible
-- Adequate **color contrast**
-- Appropriate **ARIA labels**
-- Descriptive **error messages**
+- Complete keyboard navigation
+- Screen reader compatibility
+- Adequate color contrast
+- Appropriate ARIA labels
 
-## Performance
+## Resources
 
-Components are optimized for performance:
-
-- **Lazy loading** of heavy components
-- Automatic **code splitting**
-- **Memoization** of expensive calculations
-- **Virtual scrolling** for long lists
-- **Re-render optimization**
-
-## Documentation and Support
-
-Each component includes:
-
-- Detailed documentation of props and methods
-- Interactive code examples
-- Best practice guides
-- Common use cases
-- Playground for experimentation
-
-Access complete documentation at [dynamic.modyo.com/docs](https://dynamic.modyo.com/docs)
+- [Storybook - Interactive Catalog](https://react.dynamicframework.dev/)
+- [Lucide Icons](https://lucide.dev/icons/)
+- [Bootstrap 5 - CSS Utilities](https://getbootstrap.com/docs/5.3/utilities/api/)

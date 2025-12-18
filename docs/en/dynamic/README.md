@@ -11,7 +11,7 @@ Dynamic UI 2.0 brings a new visual language, Lucide icons, and 8 new components.
 ## Technical Features
 
 ### Components
-- **30+ React components** specialized for banking
+- **45+ React components** specialized for banking
 - **Design system** based on Bootstrap 5
 - **Full TypeScript** support
 - **WCAG 2.1 accessibility** integrated
@@ -61,12 +61,11 @@ npm start
 ### CDN
 
 ```html
-<!-- CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@dynamic-framework/ui-react@1.27.0/dist/css/dynamic-ui.css">
-
-<!-- JavaScript (optional) -->
-<script src="https://cdn.jsdelivr.net/npm/@dynamic-framework/ui-react@1.27.0/dist/js/bootstrap.min.js"></script>
+<!-- CSS (replace X.X.X with the latest version) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@dynamic-framework/ui-react@X.X.X/dist/css/dynamic-ui.css">
 ```
+
+Check the latest version at [npmjs.com/@dynamic-framework/ui-react](https://www.npmjs.com/package/@dynamic-framework/ui-react).
 
 ### NPM Package
 
@@ -75,7 +74,7 @@ npm install @dynamic-framework/ui-react
 ```
 
 **Requirements:**
-- Node.js v20+
+- Node.js v22+
 - NPM 10.x+
 
 For React component integration, see [React guide](development/react-integration.html).
