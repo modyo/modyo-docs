@@ -13,7 +13,7 @@ Dynamic Framework es un framework de componentes React especializado para aplica
 ```
 @dynamic-framework/
 ├── ui-react/           # Componentes React
-│   ├── components/     # 30+ componentes UI
+│   ├── components/     # ~47 componentes UI
 │   ├── hooks/         # Custom React hooks
 │   └── utils/         # Utilidades
 ├── styles/            # Sistema de diseño
@@ -24,7 +24,7 @@ Dynamic Framework es un framework de componentes React especializado para aplica
 
 ### Stack Tecnológico
 
-- **React 18+**: Con Hooks, Suspense y Concurrent Features
+- **React 18/19**: Con Hooks, Suspense y Concurrent Features
 - **TypeScript**: Tipado estático completo
 - **Bootstrap 5.3+**: Base del sistema de diseño
 - **Webpack 5**: Module Federation para micro frontends
@@ -61,13 +61,13 @@ Dynamic Framework es un framework de componentes React especializado para aplica
    - Alerts y Toasts
    - Modals y Dialogs
    - Progress indicators
-   - Spinners y Skeletons
+   - Spinners
 
 6. **Financial Components**
-   - AccountCard
-   - TransactionList
-   - BalanceDisplay
-   - CurrencyInput
+   - DCreditCard (visualización de tarjetas)
+   - DInputCurrency (entrada de moneda)
+   - DVoucher (comprobantes/recibos)
+   - DCurrencyText (formato de moneda)
 
 ## Patrones de Implementación
 
@@ -126,7 +126,7 @@ const {
   --df-spacing-md: 1rem;
   
   // Tipografía
-  --df-font-family: 'Inter', sans-serif;
+  --df-font-family: 'Jost', sans-serif;
   --df-font-size-base: 1rem;
   
   // Bordes
@@ -306,7 +306,7 @@ window.registerWidget({
 ### Semantic Versioning
 
 ```
-@dynamic-framework/ui-react@1.27.0
+@dynamic-framework/ui-react@2.0.0
 │                           │ │ │
 │                           │ │ └─ Patch: Bug fixes
 │                           │ └─── Minor: New features

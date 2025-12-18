@@ -23,17 +23,17 @@ To start using React components, follow these steps:
 3.  **Create the React component**: Replace the existing code in `MyComponent.tsx` with the following example to create a simple list component:
 
     ```javascript
-    import { DList, DListItem } from '@dynamic-framework/ui-react';
+    import { DListGroup } from '@dynamic-framework/ui-react';
 
     export default function MyComponent() {
        	const items = ['Item 1', 'Item 2', 'Item 3'];
        	return (
        		<div id="my-component">
-       			<DList>
+       			<DListGroup>
        				{items.map((item) => (
-       					<DListItem key={item} >{item}</DListItem>
+       					<DListGroup.Item key={item}>{item}</DListGroup.Item>
        				))}
-       			</DList>
+       			</DListGroup>
        		</div>
        	);
     }
@@ -45,10 +45,10 @@ To start using React components, follow these steps:
 
 Dynamic Framework simplifies React component styling through:
 
-1.  **Component properties**: Many components offer properties to control their appearance (e.g. `color`, `size`). Check the Dynamic Framework React components documentation for more details. For example, you can modify a component's color palette by assigning a theme property:
+1.  **Component properties**: Many components offer properties to control their appearance (e.g. `color`, `size`). Check the Dynamic Framework React components documentation for more details. For example, you can modify a component's color palette by assigning the `color` property:
 
     ```javascript
-    <DListItem key={item} theme="primary">{item}</DListItem>
+    <DButton color="primary">Action</DButton>
     ```
 
 2.  **CSS classes**: Use Dynamic Framework CSS classes or custom CSS classes to directly style component elements.

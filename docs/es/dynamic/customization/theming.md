@@ -111,17 +111,17 @@ Supongamos que tienes un proyecto de React configurado utilizando el proceso de 
 - **Reemplaza el código:** Reemplaza el código existente con el componente Lista:
 
     ```javascript
-    import { DList, DListItem } from '@dynamic-framework/ui-react';
+    import { DListGroup } from '@dynamic-framework/ui-react';
 
     export default function MyComponent() {
        	const items = ['Item 1', 'Item 2', 'Item 3'];
        	return (
        		<div id="my-component">
-       			<DList>
+       			<DListGroup>
        				{items.map((item) => (
-       					<DListItem key={item}>{item}</DListItem>
+       					<DListGroup.Item key={item}>{item}</DListGroup.Item>
        				))}
-       			</DList>
+       			</DListGroup>
        		</div>
        	);
     }

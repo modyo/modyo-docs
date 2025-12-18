@@ -196,7 +196,7 @@ config/
     "modyo:preview": "modyo-cli preview"
   },
   "dependencies": {
-    "@dynamic-framework/ui-react": "^1.27.0",
+    "@dynamic-framework/ui-react": "^2.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.0.0",
