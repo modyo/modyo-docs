@@ -22,13 +22,6 @@ To create a new origination, follow these steps:
 - Choose a name and select the type of origination you want to create.
 - Click **Create** to finish and begin configuring the steps of the new origination flow.
 
-### Origination types
-
-The origination types determine the purpose and specific functionality of the flows you want to implement. When creating a new origination, you can choose between the following types:
-
-- **Person**: Allows your origination to collect data from natural persons such as an identity document or electronic signature.
-- **Organization**: Collects information from institutions such as legal registrations or multiple shareholders.
-
 ## Origination flows
 
 The flows are composed of **Steps** and **Tasks**, which define the structure and actions needed to complete the flow.
