@@ -22,12 +22,6 @@ Para crear una nueva originación, sigue estos pasos:
 - Asigna un nombre y selecciona el tipo de originación que deseas crear.
 - Haz clic en **Crear** para finalizar y comenzar a configurar los pasos del nuevo flujo de originación.
 
-### Tipos de Originación
-
-Los tipos de originación determinan el propósito y las funcionalidades específicas de los flujos que deseas implementar. Al crear una nueva originación, puedes elegir entre los siguientes tipos:
-
-- **Persona**: Permite que tu originación recopile datos de personas naturales como documento de identidad o firma electrónica.
-- **Organización**: Recopila información de instituciones tales como inscripciones legales o múltiples accionistas.
 
 ## Flujos de Originación
 
