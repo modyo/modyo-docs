@@ -38,6 +38,10 @@ Para agregar un paso, presiona el botón **Añadir** y designa los valores
 - **Nombre**: El nombre que se mostrará en la interfaz del usuario para identificar el Paso.
 - **Identificador**: Un valor único que se incluirá en la URL del flujo de originación.
 
+:::warning Atención
+ Cada paso debe incluir al menos una tarea válida para ser guardado.
+:::
+
 ### Tareas
 
 Las tareas son las acciones individuales dentro de cada paso. Estas tareas recopilan información, realizan validaciones o solicitan acciones específicas del usuario. Las tareas se completan de manera secuencial, y al validarse, permiten avanzar al siguiente paso del flujo.
@@ -59,14 +63,55 @@ Los tipos de tareas disponibles son:
 - **Validación**: Requieren que un administrador valide la tarea antes de avanzar al siguiente paso.
 - **Firma**: Solicitan al usuario una firma digital.
 - **Revisión pendiente**: Pausa el proceso hasta que un administrador autorice el avance al siguiente paso.
+- **Snippet de código**: Permiten agregar código a la medida.
+- **Proceso de originación**: Llaman a otro flujo de originación dentro de este.
+- **Invitación**: Permiten invitar a otros usuarios a llenar datos necesarios en el flujo.
 
-:::warning Atención
- Cada paso debe incluir al menos una tarea válida para ser guardado.
-:::
+##### Propiedades de la tarea
 
-## Code Snippets
+En este apartado se pueden editar los valores de la tarea seleccionada, puedes encontrar estos valores
 
-Los **code snippets** permiten agregar bloques personalizados de código en los flujos de originación. Estos bloques soportan **HTML, JavaScript y CSS**, lo que facilita la creación de componentes interactivos o la personalización del flujo según las necesidades del usuario.
+- **Nombre**: El nombre de la tarea que será visible para el usuario.
+- **Identificador**: Un identificador único que se incluirá en la URL de la originación.
+- **Descripción**: Un breve texto explicativo sobre la tarea, que será visible para el usuario.
+
+### Input
+
+En las tareas Input puedes incorporar una amplia variedad de campos en tus formularios para personalizar la recolección de datos de tus usuarios.
+
+#### Añadir campos
+
+Para incluir un nuevo campo debes seleccionar una tarea y seleccionar la pestaña **Añadir**
+
+Origination soporta todos los tipos de entrada disponibles en formularios. Puedes ver el listado completo de tipos en la [documentación de formularios](https://docs.modyo.com/es/platform/customers/forms#anadir)
+
+
+#### Editar campos
+
+Al seleccionar un campo, puedes modificar sus propiedades al dirigirte a  la pestaña **Editar** Allí encontrarás diferentes propiedades según las características del campo seleccionado. Las principales propiedades son:
+
+- **Título del campo**:Es el nombre del campo que se mostrará en la interfaz del usuario. Este debe ser claro y descriptivo para facilitar la interacción.
+- **Requerido**: Determina si el campo es obligatorio o no. Si está activado, el usuario deberá completarlo antes de continuar con el flujo.
+- **Instrucciones del campo**: proporciona orientación adicional para que el usuario comprenda cómo completar el campo. Estas instrucciones se muestran directamente en la interfaz, debajo del campo.
+- **Agregar campo Pop-up de instruciones**: Agrega un ícono de ayuda junto al campo. Al hacer clic en este ícono, se despliega un mensaje con información adicional o consejos útiles relacionados con el campo.
+- **Opciones**: Propiedades adicionales de acuerdo al tipo de campo seleccionado.
+
+### Validación
+
+La tarea de validación requiere una revisión manual del agente asignado. Este debe validar los datos entregados por el usuario para desbloquear la siguiente tarea del flujo.
+
+### Firma
+
+La tarea de firma permite una firma simple con un checkbox o una avanzada cuando hay algun proveedor de firma digital instalado en las integraciones del reino.
+
+### Revisión pendiente
+
+La tarea de revisión pendiente pausa el proseso de originación. Se usa para gatillar procesos asíncronos, generalmente en sistemas externos.
+
+
+### Snippet de código
+
+Los **snippets de código** o code snippets, permiten agregar bloques personalizados de código en los flujos de originación. Estos bloques soportan **HTML, JavaScript y CSS**, lo que facilita la creación de componentes interactivos o la personalización del flujo según las necesidades del usuario.
 
 Los **code snippets** pueden:
 
@@ -74,7 +119,7 @@ Los **code snippets** pueden:
 - Desplegar datos en tiempo real desde la aplicación.
 - Almacenar y consumir información relevante para el proceso.
 
-### Insertar un Code Snippet
+#### Insertar un Code Snippet
 
 Para agregar un **code snippet** en una tarea de originación, sigue estos pasos:
 
@@ -82,7 +127,7 @@ Para agregar un **code snippet** en una tarea de originación, sigue estos pasos
 2. Selecciona el tipo de tarea **Snippet de código**.
 3. Configura las propiedades de la tarea.
 
-### Propiedades del Snippet de código
+#### Propiedades del Snippet de código
 
 - **Task ID**: Identificador único de la tarea. Se genera automáticamente al guardar la tarea y permite acceder a los datos desde la API.
 - **Nombre**: Nombre de la tarea, visible para el usuario.
@@ -92,7 +137,7 @@ Para agregar un **code snippet** en una tarea de originación, sigue estos pasos
 Si se marca, la acción de continuar se desactivará por defecto para esta tarea y requerirá que el desarrollador notifique el estado de finalización mediante la API de JavaScript.
 
 
-### API de JavaScript para Code Snippets
+#### API de JavaScript para Code Snippets
 
 Modyo proporciona una API en JavaScript para interactuar con los code snippets en tiempo de ejecución.
 
@@ -101,7 +146,7 @@ Modyo proporciona una API en JavaScript para interactuar con los code snippets e
 - **`getUrl()`**: Retorna la URL del flujo de originación actual.
 - **`enableButton()`**: Habilita el botón de acción de la tarea y permite al usuario continuar con el flujo.
 
-### API JSON para Code Snippets
+#### API JSON para Code Snippets
 
 Los Code Snippets pueden comunicarse con la API de originación utilizando datos en formato **JSON**.
 
@@ -145,7 +190,7 @@ Cuando consumes datos de la API JSON obtendrás un objeto con todas los datos al
 Para almacenar información, los datos deben utilizar formato JSON válido, los errores de formato no serán procesados.
 :::
 
-### Uso de Liquid en code snippets
+#### Uso de Liquid en code snippets
 
 Los code snippets pueden utilizar objetos de liquid para acceder a datos internos de la respuesta y personalizar la experiencia del usuario.
 
@@ -166,7 +211,7 @@ En un flujo de originación, cada respuesta representa el proceso en curso de un
 
 Puedes aprender más sobre [Objetos Liquid](/es/platform/channels/liquid-markup/objects) en nuestra documentación.
 
-### Ejemplo de Code Snippets
+#### Ejemplo de Code Snippets
 
 En este ejemplo puede encontrar en uso el  acceso a datos por Objetos de Liquid e interacción con la APIs de JavaScript y JSON. Recuerda reemplazar el valor `QUESTION_ID` por el correspondiente en tu respuesta.
 
@@ -350,34 +395,22 @@ En este ejemplo puede encontrar en uso el  acceso a datos por Objetos de Liquid 
 :::tip JSON válido
 El parámetro content que se envía tiene que ser un json válido. En caso de que tenga que ser vacío se tiene que enviar {}.
 :::
-### Campos
 
-Puedes incorporar una amplia variedad de campos en tus formularios para personalizar la recolección de datos de tus usuarios.
+### Proceso de originación
 
-#### Añadir campos
+La tarea de tipo proceso de originación permite insertar otra originación en el flujo.
+Esto porque muchas veces en diferentes flujos se comparten unos pasos o datos que se requieren del usuario.
+Al usar un una tarea de porceso de originación, si el usuario ya tiene respuestas anteriores podría usarlas en lugar de volver a entregar los mismos datos una y otra vez.
+Permitir o no el uso de datos anteriores se define al agregar la tarea de proceso de originación.
 
-Para incluir un nuevo campo debes seleccionar una tarea y seleccionar la pestaña **Añadir**
+### Invitación
 
-Origination soporta todos los tipos de entrada disponibles en formularios. Puedes ver el listado completo de tipos en la [documentación de formularios](https://docs.modyo.com/es/platform/customers/forms#anadir)
+La tarea de Invitación es la que permite tener flujos de originación multiusuario.
+Para poder crear una tarea de invitación, primero tienes que crear roles en la edición de la originación. Allí eliges si el usuario principal puede tener ese rol si requiere invitación y si tiene límite de invitaciones.
+Al tener al menos un rol se desbloquea el uso de la tarea de invitación.
+La invitación solo puede ser para tareas o pasos anteriores a la tarea de invitación.
+En la tarea se elige el rol, el correo que se envía y cuales son las tareas que tiene que realizar el rol.
 
-
-#### Editar campos
-
-Al seleccionar un campo, puedes modificar sus propiedades al dirigirte a  la pestaña **Editar** Allí encontrarás diferentes propiedades según las características del campo seleccionado. Las principales propiedades son:
-
-- **Título del campo**:Es el nombre del campo que se mostrará en la interfaz del usuario. Este debe ser claro y descriptivo para facilitar la interacción.
-- **Requerido**: Determina si el campo es obligatorio o no. Si está activado, el usuario deberá completarlo antes de continuar con el flujo.
-- **Instrucciones del campo**: proporciona orientación adicional para que el usuario comprenda cómo completar el campo. Estas instrucciones se muestran directamente en la interfaz, debajo del campo.
-- **Agregar campo Pop-up de instruciones**: Agrega un ícono de ayuda junto al campo. Al hacer clic en este ícono, se despliega un mensaje con información adicional o consejos útiles relacionados con el campo.
-- **Opciones**: Propiedades adicionales de acuerdo al tipo de campo seleccionado.
-
-##### Propiedades de la tarea
-
-En este apartado se pueden editar los valores de la tarea seleccionada, puedes encontrar estos valores
-
-- **Nombre**: El nombre de la tarea que será visible para el usuario.
-- **Identificador**: Un identificador único que se incluirá en la URL de la originación.
-- **Descripción**: Un breve texto explicativo sobre la tarea, que será visible para el usuario.
 ### Lógica Condicional
 
 La lógica condicional te permite crear flujos de trabajo más dinámicos e inteligentes. Con esta funcionalidad, puedes definir reglas para mostrar u ocultar **Pasos**, **Tareas** y **campos de tareas Input** basándote en las respuestas proporcionadas por los usuarios o en datos existentes dentro de la respuesta. Esto te permite personalizar la experiencia del usuario, presentando solo la información relevante en cada etapa del proceso y simplificando o bifurcando la interacción. La lógica condicional te ofrece la flexibilidad de:
