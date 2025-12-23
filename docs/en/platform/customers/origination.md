@@ -116,7 +116,7 @@ The pending review task pauses the origination process. It is used to trigger as
 **Code snippets** can:
 
 - Adjust to any scenario within the origination flow.
-- Deploy real-time data from the application.
+- Deploy real-time data from the submission.
 - Store and consume information relevant to the process.
 
 #### Insert a Code Snippet
@@ -133,8 +133,7 @@ To add a **code snippet** to an origination task, follow these steps:
 - **Name**: Name of the task, visible to the user.
 - **Identifier**: Unique value included in the origination URL.
 - **Description**: Short explanatory text describing the task.
-- **Complete the task using the API**:
-If checked, the continue action will be disabled by default for this task and will require the developer to report the completion status using the JavaScript API.
+- **Complete the task using the API**: If checked, the continue action will be disabled by default for this task and will require the developer to report the completion status using the JavaScript API.
 
 
 #### JavaScript API for Code Snippets
