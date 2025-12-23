@@ -13,13 +13,13 @@ Dynamic Framework is a React component framework specialized for financial appli
 ```
 @dynamic-framework/
 ├── ui-react/           # React components
-│   ├── components/     # 30+ UI components
+│   ├── components/     # 48+ UI components
 │   ├── hooks/         # Custom React hooks
 │   └── utils/         # Utilities
-├── styles/            # Design system
+├── styles/            # Design system (Bootstrap 5.3)
 │   ├── theme/         # Variables and themes
 │   └── components/    # Per-component styles
-└── widgets/           # Standalone widgets
+└── contexts/          # React contexts
 ```
 
 ### Technology Stack
@@ -52,22 +52,21 @@ Dynamic Framework is a React component framework specialized for financial appli
    - Form validation hooks
 
 4. **Navigation**
-   - Responsive Navbar
-   - Sidebar with sub-menus
-   - Breadcrumbs
-   - Pagination
+   - DTabs for tab navigation
+   - DStepper for multi-step flows
+   - DPaginator for pagination
 
 5. **Feedback**
-   - Alerts and Toasts
-   - Modals and Dialogs
-   - Progress indicators
-   - Spinners and Skeletons
+   - DAlert and DToast
+   - DModal and DOffcanvas
+   - DProgress indicators
+   - DPopover and DTooltip
 
 6. **Financial Components**
-   - AccountCard
-   - TransactionList
-   - BalanceDisplay
-   - CurrencyInput
+   - DCreditCard display
+   - DCurrencyText formatting
+   - DInputCurrency for amounts
+   - DPasswordStrengthMeter
 
 ## Implementation Patterns
 
@@ -100,13 +99,15 @@ const {
 } = useApiData('/api/accounts');
 ```
 
-### Theme Provider Pattern
+### Context Provider Pattern
 
 ```jsx
-// Centralized theming
-<ThemeProvider theme={customTheme}>
+// Centralized configuration
+import { DContextProvider } from '@dynamic-framework/ui-react';
+
+<DContextProvider>
   <App />
-</ThemeProvider>
+</DContextProvider>
 ```
 
 ## Design System
@@ -233,16 +234,15 @@ describe('Button', () => {
 });
 
 // Integration testing
-describe('TransferForm', () => {
-  it('submits transfer data', async () => {
-    const onSubmit = jest.fn();
-    render(<TransferForm onSubmit={onSubmit} />);
-    
-    // Fill form...
-    fireEvent.click(screen.getByText('Submit'));
-    
+describe('DInput', () => {
+  it('validates input correctly', async () => {
+    const onChange = jest.fn();
+    render(<DInput id="test" onChange={onChange} />);
+
+    fireEvent.change(screen.getByRole('textbox'), { target: { value: 'test' } });
+
     await waitFor(() => {
-      expect(onSubmit).toHaveBeenCalled();
+      expect(onChange).toHaveBeenCalled();
     });
   });
 });

@@ -19,15 +19,17 @@ class MyButton extends DynamicButton {
 }
 
 // Preferir: Composición
+import { DButton, DIcon } from '@dynamic-framework/ui-react';
+
 const MyButton = ({ children, ...props }) => {
   return (
-    <DynamicButton 
+    <DButton
       {...props}
       className="my-custom-button"
     >
-      <Icon name="arrow" />
+      <DIcon icon="arrow-right" />
       {children}
-    </DynamicButton>
+    </DButton>
   );
 };
 ```
@@ -41,15 +43,15 @@ Crea componentes wrapper que agregan funcionalidad:
 ```jsx
 // src/components/extended/PrimaryButton.jsx
 import React from 'react';
-import { Button } from '@dynamic-framework/ui-react';
+import { DButton } from '@dynamic-framework/ui-react';
 import { trackEvent } from '@/utils/analytics';
 
-const PrimaryButton = ({ 
-  children, 
+const PrimaryButton = ({
+  children,
   onClick,
   trackingLabel,
-  size = 'large',
-  ...props 
+  size = 'lg',
+  ...props
 }) => {
   const handleClick = (e) => {
     // Agregar analytics
@@ -59,21 +61,21 @@ const PrimaryButton = ({
         component: 'PrimaryButton'
       });
     }
-    
+
     // Llamar onClick original
     onClick?.(e);
   };
 
   return (
-    <Button
-      variant="primary"
+    <DButton
+      color="primary"
       size={size}
       onClick={handleClick}
       className="primary-button-extended"
       {...props}
     >
       {children}
-    </Button>
+    </DButton>
   );
 };
 
@@ -87,7 +89,7 @@ Crea HOCs para agregar funcionalidad transversal:
 ```jsx
 // src/hocs/withLoading.jsx
 import React, { useState } from 'react';
-import { Spinner } from '@dynamic-framework/ui-react';
+import { DProgress } from '@dynamic-framework/ui-react';
 
 const withLoading = (WrappedComponent) => {
   return function WithLoadingComponent(props) {
@@ -99,7 +101,7 @@ const withLoading = (WrappedComponent) => {
     if (isLoading) {
       return (
         <div className="loading-container">
-          <Spinner size="large" />
+          <DProgress />
         </div>
       );
     }
@@ -118,7 +120,7 @@ const withLoading = (WrappedComponent) => {
 export default withLoading;
 
 // Uso
-const EnhancedTransferForm = withLoading(TransferForm);
+const EnhancedForm = withLoading(MyFormComponent);
 ```
 
 ## Componentes Compuestos
@@ -126,69 +128,71 @@ const EnhancedTransferForm = withLoading(TransferForm);
 ### Crear Componentes Modulares
 
 ```jsx
-// src/components/extended/AccountCard/index.jsx
+// src/components/extended/ProductCard/index.jsx
 import React from 'react';
-import { Card } from '@dynamic-framework/ui-react';
-import AccountHeader from './AccountHeader';
-import AccountBalance from './AccountBalance';
-import AccountActions from './AccountActions';
+import { DCard } from '@dynamic-framework/ui-react';
+import ProductHeader from './ProductHeader';
+import ProductDetails from './ProductDetails';
+import ProductActions from './ProductActions';
 
-const AccountCard = ({ account, onAction }) => {
+const ProductCard = ({ product, onAction }) => {
   return (
-    <Card className="account-card-extended">
-      <AccountHeader 
-        name={account.name}
-        number={account.number}
-        type={account.type}
-      />
-      <AccountBalance 
-        balance={account.balance}
-        currency={account.currency}
-        trend={account.trend}
-      />
-      <AccountActions 
-        accountId={account.id}
-        onAction={onAction}
-        availableActions={account.actions}
-      />
-    </Card>
+    <DCard className="product-card-extended">
+      <DCard.Header>
+        <ProductHeader
+          name={product.name}
+          code={product.code}
+          type={product.type}
+        />
+      </DCard.Header>
+      <DCard.Body>
+        <ProductDetails
+          description={product.description}
+          features={product.features}
+        />
+      </DCard.Body>
+      <DCard.Footer>
+        <ProductActions
+          productId={product.id}
+          onAction={onAction}
+        />
+      </DCard.Footer>
+    </DCard>
   );
 };
 
 // Exponer sub-componentes para flexibilidad
-AccountCard.Header = AccountHeader;
-AccountCard.Balance = AccountBalance;
-AccountCard.Actions = AccountActions;
+ProductCard.Header = ProductHeader;
+ProductCard.Details = ProductDetails;
+ProductCard.Actions = ProductActions;
 
-export default AccountCard;
+export default ProductCard;
 ```
 
 ### Sub-componentes
 
 ```jsx
-// src/components/extended/AccountCard/AccountBalance.jsx
+// src/components/extended/ProductCard/ProductDetails.jsx
 import React from 'react';
-import { Typography, TrendIndicator } from '@dynamic-framework/ui-react';
-import { formatCurrency } from '@/utils/formatters';
+import { DCurrencyText, DBadge } from '@dynamic-framework/ui-react';
 
-const AccountBalance = ({ balance, currency, trend }) => {
+const ProductDetails = ({ description, features, price }) => {
   return (
-    <div className="account-balance">
-      <Typography variant="h2" className="balance-amount">
-        {formatCurrency(balance, currency)}
-      </Typography>
-      {trend && (
-        <TrendIndicator 
-          value={trend.value}
-          direction={trend.direction}
-          period={trend.period}
-        />
+    <div className="product-details">
+      <p className="description">{description}</p>
+      <div className="features">
+        {features.map((feature, index) => (
+          <DBadge key={index} color="info">{feature}</DBadge>
+        ))}
+      </div>
+      {price && (
+        <DCurrencyText value={price} />
       )}
     </div>
   );
 };
 
-export default AccountBalance;
+export default ProductDetails;
 ```
 
 ## Hooks Personalizados para Componentes
@@ -371,7 +375,7 @@ const DataProvider = ({
 <DataProvider
   loader={accountService.getAccounts}
   params={{ userId: currentUser.id }}
-  renderLoading={() => <Spinner />}
+  renderLoading={() => <DProgress />}
   renderError={(error) => <ErrorMessage error={error} />}
 >
   {({ data: accounts }) => (
@@ -503,17 +507,17 @@ const ThemedButton = ({ children, ...props }) => {
 ```jsx
 // src/components/extended/LazyChart.jsx
 import React, { lazy, Suspense } from 'react';
-import { Spinner } from '@dynamic-framework/ui-react';
+import { DProgress } from '@dynamic-framework/ui-react';
 
 // Lazy load del componente pesado
 const HeavyChart = lazy(() => import('./HeavyChart'));
 
 const LazyChart = ({ data, ...props }) => {
   return (
-    <Suspense 
+    <Suspense
       fallback={
         <div className="chart-loading">
-          <Spinner />
+          <DProgress />
           <p>Cargando gráfico...</p>
         </div>
       }
@@ -534,7 +538,7 @@ export default LazyChart;
 // src/components/extended/AnimatedCard.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Card } from '@dynamic-framework/ui-react';
+import { DCard } from '@dynamic-framework/ui-react';
 
 const AnimatedCard = ({ children, delay = 0, ...props }) => {
   return (
@@ -547,14 +551,14 @@ const AnimatedCard = ({ children, delay = 0, ...props }) => {
         delay,
         ease: 'easeOut'
       }}
-      whileHover={{ 
+      whileHover={{
         scale: 1.02,
         boxShadow: '0 10px 30px rgba(0,0,0,0.1)'
       }}
     >
-      <Card {...props}>
+      <DCard {...props}>
         {children}
-      </Card>
+      </DCard>
     </motion.div>
   );
 };

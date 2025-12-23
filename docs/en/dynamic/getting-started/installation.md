@@ -137,18 +137,17 @@ export default WelcomeBanner;
 
 Create a complete view using multiple components:
 
-```jsx
-// src/views/Dashboard.jsx
+```tsx
+// src/views/Dashboard.tsx
 import React, { useState, useEffect } from 'react';
-import { 
-  Container, 
-  Row, 
-  Col, 
-  AccountCard,
-  TransactionList,
-  QuickActions 
+import {
+  DCard,
+  DListGroup,
+  DListGroupItem,
+  DButton,
+  DIcon,
+  DCurrencyText
 } from '@dynamic-framework/ui-react';
-import WelcomeBanner from '../components/WelcomeBanner';
 
 const Dashboard = () => {
   const [accounts, setAccounts] = useState([]);
@@ -161,46 +160,61 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <Container>
-      <Row>
-        <Col xs={12}>
-          <WelcomeBanner userName="John Doe" />
-        </Col>
-      </Row>
-      
-      <Row className="mt-4">
-        <Col md={8}>
+    <div className="container">
+      <div className="row">
+        <div className="col-12">
+          <h1 className="mb-4">Welcome, John Doe</h1>
+        </div>
+      </div>
+
+      <div className="row mt-4">
+        <div className="col-md-8">
           <h3>My Accounts</h3>
           {accounts.map(account => (
-            <AccountCard 
-              key={account.id}
-              account={account}
-              onSelect={() => handleAccountSelect(account)}
-            />
+            <DCard key={account.id} className="mb-3">
+              <DCard.Body className="d-flex justify-content-between align-items-center">
+                <div>
+                  <h5>{account.name}</h5>
+                  <small className="text-muted">{account.number}</small>
+                </div>
+                <DCurrencyText value={account.balance} className="fs-4" />
+              </DCard.Body>
+            </DCard>
           ))}
-        </Col>
-        
-        <Col md={4}>
-          <QuickActions 
-            actions={[
-              { label: 'Transfer', icon: 'transfer', onClick: handleTransfer },
-              { label: 'Pay', icon: 'payment', onClick: handlePayment },
-              { label: 'Top Up', icon: 'topup', onClick: handleTopUp }
-            ]}
-          />
-        </Col>
-      </Row>
-      
-      <Row className="mt-4">
-        <Col xs={12}>
+        </div>
+
+        <div className="col-md-4">
+          <DCard>
+            <DCard.Header>Quick Actions</DCard.Header>
+            <DCard.Body>
+              <div className="d-grid gap-2">
+                <DButton color="primary">
+                  <DIcon icon="arrow-right-left" className="me-2" />
+                  Transfer
+                </DButton>
+                <DButton color="secondary">
+                  <DIcon icon="credit-card" className="me-2" />
+                  Pay
+                </DButton>
+              </div>
+            </DCard.Body>
+          </DCard>
+        </div>
+      </div>
+
+      <div className="row mt-4">
+        <div className="col-12">
           <h3>Recent Transactions</h3>
-          <TransactionList 
-            transactions={transactions}
-            onTransactionClick={handleTransactionDetail}
-          />
-        </Col>
-      </Row>
-    </Container>
+          <DListGroup>
+            {transactions.map(tx => (
+              <DListGroupItem key={tx.id}>
+                {tx.description} - <DCurrencyText value={tx.amount} />
+              </DListGroupItem>
+            ))}
+          </DListGroup>
+        </div>
+      </div>
+    </div>
   );
 };
 
@@ -209,53 +223,42 @@ export default Dashboard;
 
 ### 3. Theme Configuration
 
-Customize your application theme:
+Customize your application using CSS variables and DContextProvider:
 
-```jsx
-// src/App.jsx
+```tsx
+// src/App.tsx
 import React from 'react';
-import { ThemeProvider } from '@dynamic-framework/ui-react';
+import { DContextProvider } from '@dynamic-framework/ui-react';
 import Dashboard from './views/Dashboard';
 
-const customTheme = {
-  colors: {
-    primary: '#1E3A5F',
-    secondary: '#4A90E2',
-    success: '#52C41A',
-    danger: '#F5222D',
-    warning: '#FAAD14',
-    info: '#1890FF'
-  },
-  typography: {
-    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-    fontSize: {
-      base: '16px',
-      small: '14px',
-      large: '18px'
-    }
-  },
-  spacing: {
-    unit: 8,
-    small: 4,
-    medium: 16,
-    large: 24
-  },
-  borderRadius: {
-    small: '4px',
-    medium: '8px',
-    large: '16px'
-  }
-};
+// Import Dynamic UI styles
+import '@dynamic-framework/ui-react/dist/css/dynamic-ui.css';
+
+// Your custom styles can override CSS variables
+import './styles/custom.css';
 
 function App() {
   return (
-    <ThemeProvider theme={customTheme}>
+    <DContextProvider>
       <Dashboard />
-    </ThemeProvider>
+    </DContextProvider>
   );
 }
 
 export default App;
+```
+
+```css
+/* src/styles/custom.css */
+:root {
+  --bs-primary: #1E3A5F;
+  --bs-secondary: #4A90E2;
+  --bs-success: #52C41A;
+  --bs-danger: #F5222D;
+  --bs-warning: #FAAD14;
+  --bs-info: #1890FF;
+  --bs-body-font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
 ```
 
 ## Connect with APIs

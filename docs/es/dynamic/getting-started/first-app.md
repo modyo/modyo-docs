@@ -53,59 +53,43 @@ mi-primera-app/
 ```jsx
 // src/components/Dashboard.jsx
 import React from 'react';
-import { 
-  Container, 
-  Row, 
-  Col, 
-  Card,
-  Typography 
-} from '@dynamic-framework/ui-react';
+import { DCard, DCurrencyText } from '@dynamic-framework/ui-react';
 
 const Dashboard = ({ user }) => {
   return (
-    <Container>
-      <Row className="mb-4">
-        <Col>
-          <Typography variant="h1">
-            Bienvenido, {user.name}
-          </Typography>
-        </Col>
-      </Row>
-      
-      <Row>
-        <Col md={6}>
-          <Card>
-            <Card.Header>
-              <Typography variant="h3">Cuenta Corriente</Typography>
-            </Card.Header>
-            <Card.Body>
-              <Typography variant="h2" className="text-primary">
-                $125,430.00
-              </Typography>
-              <Typography variant="body2" className="text-muted">
-                Disponible
-              </Typography>
-            </Card.Body>
-          </Card>
-        </Col>
-        
-        <Col md={6}>
-          <Card>
-            <Card.Header>
-              <Typography variant="h3">Cuenta de Ahorros</Typography>
-            </Card.Header>
-            <Card.Body>
-              <Typography variant="h2" className="text-success">
-                $45,200.00
-              </Typography>
-              <Typography variant="body2" className="text-muted">
-                Disponible
-              </Typography>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-    </Container>
+    <div className="container">
+      <div className="row mb-4">
+        <div className="col">
+          <h1>Bienvenido, {user.name}</h1>
+        </div>
+      </div>
+
+      <div className="row">
+        <div className="col-md-6 mb-3">
+          <DCard>
+            <DCard.Header>
+              <h5>Cuenta Corriente</h5>
+            </DCard.Header>
+            <DCard.Body>
+              <DCurrencyText value={125430} className="fs-2 text-primary" />
+              <p className="text-muted mb-0">Disponible</p>
+            </DCard.Body>
+          </DCard>
+        </div>
+
+        <div className="col-md-6 mb-3">
+          <DCard>
+            <DCard.Header>
+              <h5>Cuenta de Ahorros</h5>
+            </DCard.Header>
+            <DCard.Body>
+              <DCurrencyText value={45200} className="fs-2 text-success" />
+              <p className="text-muted mb-0">Disponible</p>
+            </DCard.Body>
+          </DCard>
+        </div>
+      </div>
+    </div>
   );
 };
 
@@ -116,57 +100,44 @@ export default Dashboard;
 
 ### TransactionList Component
 
-```jsx
-// src/components/TransactionList.jsx
+```tsx
+// src/components/TransactionList.tsx
 import React from 'react';
-import { 
-  Table,
-  Badge,
-  Typography 
-} from '@dynamic-framework/ui-react';
+import { DListGroup, DListGroupItem, DBadge, DCurrencyText } from '@dynamic-framework/ui-react';
 
 const TransactionList = ({ transactions }) => {
-  const getStatusBadge = (status) => {
-    const variants = {
+  const getStatusColor = (status) => {
+    const colors = {
       completed: 'success',
       pending: 'warning',
       failed: 'danger'
     };
-    return variants[status] || 'secondary';
+    return colors[status] || 'secondary';
   };
 
   return (
     <div className="transaction-list">
-      <Typography variant="h2" className="mb-3">
-        Últimas Transacciones
-      </Typography>
-      
-      <Table responsive hover>
-        <thead>
-          <tr>
-            <th>Fecha</th>
-            <th>Descripción</th>
-            <th>Monto</th>
-            <th>Estado</th>
-          </tr>
-        </thead>
-        <tbody>
-          {transactions.map((transaction) => (
-            <tr key={transaction.id}>
-              <td>{transaction.date}</td>
-              <td>{transaction.description}</td>
-              <td className={transaction.amount > 0 ? 'text-success' : 'text-danger'}>
-                ${Math.abs(transaction.amount).toFixed(2)}
-              </td>
-              <td>
-                <Badge variant={getStatusBadge(transaction.status)}>
-                  {transaction.status}
-                </Badge>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </Table>
+      <h2 className="mb-3">Últimas Transacciones</h2>
+
+      <DListGroup>
+        {transactions.map((transaction) => (
+          <DListGroupItem key={transaction.id} className="d-flex justify-content-between align-items-center">
+            <div>
+              <strong>{transaction.description}</strong>
+              <small className="d-block text-muted">{transaction.date}</small>
+            </div>
+            <div className="text-end">
+              <DCurrencyText
+                value={Math.abs(transaction.amount)}
+                className={transaction.amount > 0 ? 'text-success' : 'text-danger'}
+              />
+              <DBadge color={getStatusColor(transaction.status)} className="ms-2">
+                {transaction.status}
+              </DBadge>
+            </div>
+          </DListGroupItem>
+        ))}
+      </DListGroup>
     </div>
   );
 };
@@ -178,22 +149,23 @@ export default TransactionList;
 
 ### TransferForm Component
 
-```jsx
-// src/components/TransferForm.jsx
+```tsx
+// src/components/TransferForm.tsx
 import React, { useState } from 'react';
-import { 
-  Form,
-  Input,
-  Select,
-  Button,
-  Alert 
+import {
+  DCard,
+  DInput,
+  DInputSelect,
+  DInputCurrency,
+  DButton,
+  DAlert
 } from '@dynamic-framework/ui-react';
 
 const TransferForm = ({ accounts, onTransfer }) => {
   const [formData, setFormData] = useState({
     fromAccount: '',
     toAccount: '',
-    amount: '',
+    amount: 0,
     description: ''
   });
   const [error, setError] = useState('');
@@ -207,87 +179,62 @@ const TransferForm = ({ accounts, onTransfer }) => {
     try {
       await onTransfer(formData);
       setSuccess(true);
-      setFormData({
-        fromAccount: '',
-        toAccount: '',
-        amount: '',
-        description: ''
-      });
+      setFormData({ fromAccount: '', toAccount: '', amount: 0, description: '' });
     } catch (err) {
       setError(err.message);
     }
   };
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
+  const accountOptions = accounts.map(account => ({
+    value: account.id,
+    label: `${account.name} - $${account.balance}`
+  }));
 
   return (
-    <Form onSubmit={handleSubmit}>
-      {error && <Alert variant="danger">{error}</Alert>}
-      {success && <Alert variant="success">Transferencia exitosa</Alert>}
-      
-      <Form.Group>
-        <Form.Label>Cuenta Origen</Form.Label>
-        <Select
-          name="fromAccount"
-          value={formData.fromAccount}
-          onChange={handleChange}
-          required
-        >
-          <option value="">Seleccionar cuenta</option>
-          {accounts.map(account => (
-            <option key={account.id} value={account.id}>
-              {account.name} - ${account.balance}
-            </option>
-          ))}
-        </Select>
-      </Form.Group>
+    <DCard>
+      <DCard.Body>
+        <form onSubmit={handleSubmit}>
+          {error && <DAlert color="danger">{error}</DAlert>}
+          {success && <DAlert color="success">Transferencia exitosa</DAlert>}
 
-      <Form.Group>
-        <Form.Label>Cuenta Destino</Form.Label>
-        <Input
-          type="text"
-          name="toAccount"
-          value={formData.toAccount}
-          onChange={handleChange}
-          placeholder="Número de cuenta"
-          required
-        />
-      </Form.Group>
+          <DInputSelect
+            id="fromAccount"
+            label="Cuenta Origen"
+            options={accountOptions}
+            value={formData.fromAccount}
+            onChange={(value) => setFormData({ ...formData, fromAccount: value })}
+          />
 
-      <Form.Group>
-        <Form.Label>Monto</Form.Label>
-        <Input
-          type="number"
-          name="amount"
-          value={formData.amount}
-          onChange={handleChange}
-          placeholder="0.00"
-          min="0.01"
-          step="0.01"
-          required
-        />
-      </Form.Group>
+          <DInput
+            id="toAccount"
+            label="Cuenta Destino"
+            value={formData.toAccount}
+            onChange={(e) => setFormData({ ...formData, toAccount: e.target.value })}
+            placeholder="Número de cuenta"
+          />
 
-      <Form.Group>
-        <Form.Label>Descripción</Form.Label>
-        <Input
-          type="text"
-          name="description"
-          value={formData.description}
-          onChange={handleChange}
-          placeholder="Concepto de la transferencia"
-        />
-      </Form.Group>
+          <DInputCurrency
+            id="amount"
+            label="Monto"
+            value={formData.amount}
+            onChange={(value) => setFormData({ ...formData, amount: value })}
+            currencyCode="USD"
+          />
 
-      <Button type="submit" variant="primary" block>
-        Realizar Transferencia
-      </Button>
-    </Form>
+          <DInput
+            id="description"
+            label="Descripción"
+            value={formData.description}
+            onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+            placeholder="Concepto de la transferencia"
+          />
+
+          <DButton type="submit" color="primary" className="w-100 mt-3">
+            Realizar Transferencia
+          </DButton>
+        </form>
+      </DCard.Body>
+    </DCard>
   );
 };
 
@@ -298,14 +245,20 @@ export default TransferForm;
 
 ### App Component Principal
 
-```jsx
-// src/App.jsx
+```tsx
+// src/App.tsx
 import React, { useState, useEffect } from 'react';
-import { ThemeProvider, Tabs, Tab } from '@dynamic-framework/ui-react';
+import { DContextProvider, DTabs, DProgress } from '@dynamic-framework/ui-react';
 import Dashboard from './components/Dashboard';
 import TransactionList from './components/TransactionList';
 import TransferForm from './components/TransferForm';
 import { fetchUser, fetchAccounts, fetchTransactions, createTransfer } from './services/api';
+
+const tabs = [
+  { label: 'Dashboard', tab: 'dashboard' },
+  { label: 'Transacciones', tab: 'transactions' },
+  { label: 'Transferir', tab: 'transfer' },
+];
 
 function App() {
   const [user, setUser] = useState(null);
@@ -314,16 +267,16 @@ function App() {
   const [activeTab, setActiveTab] = useState('dashboard');
 
   useEffect(() => {
-    // Cargar datos iniciales
     loadData();
   }, []);
 
   const loadData = async () => {
     try {
-      const userData = await fetchUser();
-      const accountsData = await fetchAccounts();
-      const transactionsData = await fetchTransactions();
-      
+      const [userData, accountsData, transactionsData] = await Promise.all([
+        fetchUser(),
+        fetchAccounts(),
+        fetchTransactions()
+      ]);
       setUser(userData);
       setAccounts(accountsData);
       setTransactions(transactionsData);
@@ -334,30 +287,28 @@ function App() {
 
   const handleTransfer = async (transferData) => {
     await createTransfer(transferData);
-    // Recargar datos después de la transferencia
     await loadData();
   };
 
   if (!user) {
-    return <div>Cargando...</div>;
+    return <DProgress />;
   }
 
   return (
-    <ThemeProvider>
+    <DContextProvider>
       <div className="app">
-        <Tabs activeKey={activeTab} onSelect={setActiveTab}>
-          <Tab eventKey="dashboard" title="Dashboard">
-            <Dashboard user={user} />
-          </Tab>
-          <Tab eventKey="transactions" title="Transacciones">
-            <TransactionList transactions={transactions} />
-          </Tab>
-          <Tab eventKey="transfer" title="Transferir">
-            <TransferForm accounts={accounts} onTransfer={handleTransfer} />
-          </Tab>
-        </Tabs>
+        <DTabs
+          options={tabs}
+          defaultSelected={activeTab}
+          onChange={(tab) => setActiveTab(tab)}
+        />
+        <div className="tab-content mt-3">
+          {activeTab === 'dashboard' && <Dashboard user={user} />}
+          {activeTab === 'transactions' && <TransactionList transactions={transactions} />}
+          {activeTab === 'transfer' && <TransferForm accounts={accounts} onTransfer={handleTransfer} />}
+        </div>
       </div>
-    </ThemeProvider>
+    </DContextProvider>
   );
 }
 
