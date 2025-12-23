@@ -100,15 +100,11 @@ Aplicación disponible en `http://localhost:8080`
 
 ### Documentación
 - [Storybook Components](https://react.dynamicframework.dev) - Catálogo interactivo
-- [API Reference](https://dynamic.modyo.com/docs/api) - Documentación de APIs
-- [GitHub](https://github.com/modyo/dynamic-framework) - Código fuente
+- [API Reference](https://dynamic.modyo.com/docs) - Documentación de APIs
+- [NPM Package](https://www.npmjs.com/package/@dynamic-framework/ui-react) - Registro de paquetes
 
 ### Herramientas de Desarrollo
 - [Modyo CLI](https://www.npmjs.com/package/@modyo/cli) - Herramienta de línea de comandos
-- [Figma UI Kit](https://figma.com/@modyo) - Recursos de diseño
-- [CodeSandbox Templates](https://codesandbox.io/s/dynamic-framework) - Plantillas de inicio
 
 ### Soporte Técnico
-- [Issues](https://github.com/modyo/dynamic-framework/issues) - Reportar problemas
-- [Stack Overflow](https://stackoverflow.com/questions/tagged/dynamic-framework) - Preguntas técnicas
-- [Comunidad](https://community.modyo.com) - Foro de desarrolladores
+- [Soporte](https://support.modyo.com) - Soporte técnico

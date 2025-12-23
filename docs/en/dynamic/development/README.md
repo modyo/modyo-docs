@@ -187,18 +187,13 @@ try {
 
 ### Technical Documentation
 - [API Reference](https://dynamic.modyo.com/api)
-- [Component Specs](https://dynamic.modyo.com/specs)
-- [Architecture Guide](https://dynamic.modyo.com/architecture)
+- [Component Reference](https://dynamic.modyo.com/docs)
 
 ### Examples and Demos
-- [CodeSandbox Examples](https://codesandbox.io/s/dynamic-framework)
-- [GitHub Repos](https://github.com/modyo/dynamic-examples)
-- [Live Demos](https://demo.dynamic.modyo.com)
+- [Storybook](https://react.dynamicframework.dev) - Interactive examples
 
-### Community
-- [Discord Server](https://discord.gg/modyo)
-- [Stack Overflow](https://stackoverflow.com/questions/tagged/dynamic-framework)
-- [Dev.to Articles](https://dev.to/t/dynamicframework)
+### Support
+- [Support Portal](https://support.modyo.com)
 
 ## Next Steps
 

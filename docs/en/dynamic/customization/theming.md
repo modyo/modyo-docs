@@ -12,7 +12,7 @@ Dynamic Framework, like Bootstrap, uses CSS variables (or tokens) to optimize st
 
 CSS variables act as placeholders for values within stylesheets. You can define a variable once and then reference it multiple times in the code, which reduces redundancy and facilitates style management and updates.
 
-Dynamic Framework provides a comprehensive set of CSS variables that cover a wide range of style aspects, including colors, typography, spacing and more. [You can find a detailed list of these variables in the official Dynamic Framework documentation.](https://dynamicbanking.co/docs/variables-overview)
+Dynamic Framework provides a comprehensive set of CSS variables that cover a wide range of style aspects, including colors, typography, spacing and more. You can find a detailed list of these variables in the [Storybook documentation](https://react.dynamicframework.dev).
 
 **Creating a theme in Modyo**
 
@@ -20,7 +20,7 @@ With Dynamic Framework integrated by default into every new Modyo application, c
 
 **1\. Prepare your custom CSS**
 
-Before working with theming in Dynamic Framework, make sure you have a custom CSS file ready to house your styles. You can follow Modyo's developer tips on [how to set up a custom CSS file](https://www.modyo.com/resources/community/developer-tips/customize-your-ui-in-modyo-con-modular-css).
+Before working with theming in Dynamic Framework, make sure you have a custom CSS file ready to house your styles.
 
 ### Add HTML components
 
@@ -101,29 +101,29 @@ You have two main options for creating themes for your widgets:
 
 - **Embedded in React CSS:** If your widget is a React application, you can embed the theme directly in its CSS file. This provides a more encapsulated and modular way to design your widget.
 
-Keep in mind that React components in Dynamic Framework have their own set of predefined custom properties. You can leverage these properties to customize the appearance and behavior of your widgets. [Check the component documentation for a detailed list of available properties.](https://dynamicbanking.co/components)
+Keep in mind that React components in Dynamic Framework have their own set of predefined custom properties. You can leverage these properties to customize the appearance and behavior of your widgets. Check the [Storybook](https://react.dynamicframework.dev) for a detailed list of available properties.
 
 ### Example creating a themed component
 
-Suppose you have a React project set up using the Dynamic Framework installation process [detailed in the documentation](https://dynamicframework.dev/docs/getting-started).
+Suppose you have a React project set up using the Dynamic Framework [installation process](../getting-started/installation.html).
 
 - **Navigate to your component:** Open the `src/components/myComponent.tsx` file.
-- **Replace the code:** Replace the existing code with the List component:
+- **Replace the code:** Replace the existing code with the ListGroup component:
 
-    ```javascript
-    import { DList, DListItem } from '@dynamic-framework/ui-react';
+    ```tsx
+    import { DListGroup, DListGroupItem } from '@dynamic-framework/ui-react';
 
     export default function MyComponent() {
-       	const items = ['Item 1', 'Item 2', 'Item 3'];
-       	return (
-       		<div id="my-component">
-       			<DList>
-       				{items.map((item) => (
-       					<DListItem key={item}>{item}</DListItem>
-       				))}
-       			</DList>
-       		</div>
-       	);
+      const items = ['Item 1', 'Item 2', 'Item 3'];
+      return (
+        <div id="my-component">
+          <DListGroup>
+            {items.map((item) => (
+              <DListGroupItem key={item}>{item}</DListGroupItem>
+            ))}
+          </DListGroup>
+        </div>
+      );
     }
     ```
 

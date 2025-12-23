@@ -399,17 +399,16 @@ npm run modyo:preview
 ## Additional Resources
 
 - **Complete Documentation**: [dynamic.modyo.com/docs](https://dynamic.modyo.com/docs)
-- **Code Examples**: [github.com/modyo/dynamic-examples](https://github.com/modyo/dynamic-examples)
-- **Community**: [community.modyo.com](https://community.modyo.com)
+- **Storybook**: [react.dynamicframework.dev](https://react.dynamicframework.dev)
 - **Support**: [support.modyo.com](https://support.modyo.com)
 
 ## Next Steps
 
 Now that you have your application running:
 
-1. Explore the [component catalog](components.html)
-2. Learn about [theme customization](theming.html)
-3. Review [experience templates](experiences.html)
-4. Implement [API integrations](api-integration.html)
+1. Explore the [component catalog](../development/components.html)
+2. Learn about [theme customization](../customization/theming.html)
+3. Review [experience templates](../development/experiences.html)
+4. Implement [API integrations](../development/api-integration.html)
 
 Congratulations! You're now ready to build extraordinary financial experiences with Dynamic Framework.

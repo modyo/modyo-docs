@@ -473,16 +473,9 @@ npx @modyo/cli push
 - Agrega [validaciones avanzadas](../development/components.html#validacion)
 - Personaliza el [tema](../customization/theming.html)
 
-## Recursos
-
-- [Código completo en GitHub](https://github.com/modyo/dynamic-first-app)
-- [Demo en vivo](https://demo.dynamic.modyo.com/first-app)
-- [Video tutorial](https://youtube.com/watch?v=...)
-
 ## ¿Necesitas Ayuda?
 
 Si encuentras problemas:
 1. Revisa la [documentación de componentes](../development/components.html)
-2. Busca en los [FAQs](https://support.modyo.com/hc/es)
-3. Pregunta en la [comunidad](https://community.modyo.com)
-4. Contacta [soporte](https://support.modyo.com)
+2. Consulta el [Storybook](https://react.dynamicframework.dev) para ejemplos interactivos
+3. Contacta [Soporte](https://support.modyo.com)

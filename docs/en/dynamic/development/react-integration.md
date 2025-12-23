@@ -4,7 +4,7 @@ Develop interactive and engaging user experiences for Modyo applications with Dy
 
 Our components are designed to optimize development workflow and facilitate the creation of modern and scalable microfrontends.
 
-Explore the complete catalog of React components and access detailed reference documentation in the [official Dynamic Framework documentation for React components.](https://react.dynamicframework.dev/)
+Explore the complete catalog of React components and access detailed reference documentation in the [official Storybook](https://react.dynamicframework.dev/).
 
 ### Getting Started with React Components
 
@@ -16,26 +16,26 @@ To start using React components, follow these steps:
     npx @modyo/cli@latest get dynamic-react-base-template
     ```
 
-    Check the [installation guide](https://dynamicbanking.co/docs/getting-started) to complete the project setup.
+    Check the [installation guide](../getting-started/installation.html) to complete the project setup.
 
 2.  **Access the component file**: Once the project is installed, open the `src/components/MyComponent.tsx` file.
 
 3.  **Create the React component**: Replace the existing code in `MyComponent.tsx` with the following example to create a simple list component:
 
-    ```javascript
-    import { DList, DListItem } from '@dynamic-framework/ui-react';
+    ```tsx
+    import { DListGroup, DListGroupItem } from '@dynamic-framework/ui-react';
 
     export default function MyComponent() {
-       	const items = ['Item 1', 'Item 2', 'Item 3'];
-       	return (
-       		<div id="my-component">
-       			<DList>
-       				{items.map((item) => (
-       					<DListItem key={item} >{item}</DListItem>
-       				))}
-       			</DList>
-       		</div>
-       	);
+      const items = ['Item 1', 'Item 2', 'Item 3'];
+      return (
+        <div id="my-component">
+          <DListGroup>
+            {items.map((item) => (
+              <DListGroupItem key={item}>{item}</DListGroupItem>
+            ))}
+          </DListGroup>
+        </div>
+      );
     }
     ```
 
@@ -45,25 +45,25 @@ To start using React components, follow these steps:
 
 Dynamic Framework simplifies React component styling through:
 
-1.  **Component properties**: Many components offer properties to control their appearance (e.g. `color`, `size`). Check the Dynamic Framework React components documentation for more details. For example, you can modify a component's color palette by assigning a theme property:
+1.  **Component properties**: Many components offer properties to control their appearance (e.g. `color`, `size`). Check the [Storybook](https://react.dynamicframework.dev) for more details. For example, you can modify a button's color using the `color` property:
 
-    ```javascript
-    <DListItem key={item} theme="primary">{item}</DListItem>
+    ```tsx
+    <DButton color="primary">Primary Button</DButton>
+    <DButton color="secondary">Secondary Button</DButton>
     ```
 
 2.  **CSS classes**: Use Dynamic Framework CSS classes or custom CSS classes to directly style component elements.
 
     ```css
     :root {
-    // --bs-danger-100: #45e031;
-       	--custom-widget-text-color: #fff;
-       	--custom-widget-background-color: #cb9832;
+      --custom-widget-text-color: #fff;
+      --custom-widget-background-color: #cb9832;
     }
 
-    #my-component .list-group-item{
-       	color: var(--custom-widget-text-color);
-       	background-color: var(--custom-widget-background-color);
+    #my-component .list-group-item {
+      color: var(--custom-widget-text-color);
+      background-color: var(--custom-widget-background-color);
     }
     ```
 
-    You can combine component properties with custom CSS classes. For more information, check the [component styling section](https://dynamicbanking.co/docs/styling-components).
+    You can combine component properties with custom CSS classes. For more information, check the [theming section](../customization/theming.html).

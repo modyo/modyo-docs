@@ -321,7 +321,6 @@ window.registerWidget({
 
 ## Recursos Técnicos
 
-- [API Reference](https://dynamic.modyo.com/docs/api)
+- [API Reference](https://dynamic.modyo.com/docs)
 - [Storybook](https://react.dynamicframework.dev)
-- [GitHub](https://github.com/modyo/dynamic-framework)
 - [NPM Package](https://www.npmjs.com/package/@dynamic-framework/ui-react)

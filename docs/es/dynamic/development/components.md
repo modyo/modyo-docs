@@ -4,242 +4,164 @@ search: true
 
 # Componentes de Dynamic Framework
 
-Dynamic Framework ofrece más de 30 componentes especializados para la industria financiera, diseñados para cubrir las necesidades más comunes en aplicaciones bancarias y financieras.
-
-## Tipos de Componentes
-
-### Componentes HTML
-Los componentes HTML son elementos de interfaz estáticos o con mínima interactividad, ideales para:
-
-- **Sitios públicos** con alto tráfico
-- **Páginas de marketing** que requieren SEO
-- **Contenido informativo** que no cambia frecuentemente
-- **Interfaces simples** sin lógica compleja
-
-#### Características:
-- Optimizados para rendimiento
-- Compatibles con SEO
-- Accesibles por defecto
-- Carga rápida y eficiente
-- No requieren JavaScript para funcionar
-
-#### Ejemplos de Uso:
-```html
-<!-- Card de producto bancario -->
-<div class="df-card">
-  <div class="df-card-body">
-    <h3 class="df-card-title">Cuenta de Ahorros</h3>
-    <p class="df-card-text">Ahorra con las mejores tasas del mercado</p>
-    <a href="#" class="df-btn df-btn-primary">Abrir Cuenta</a>
-  </div>
-</div>
-
-<!-- Tabla de tasas de interés -->
-<table class="df-table">
-  <thead>
-    <tr>
-      <th>Plazo</th>
-      <th>Tasa Anual</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>30 días</td>
-      <td>3.5%</td>
-    </tr>
-    <tr>
-      <td>90 días</td>
-      <td>4.2%</td>
-    </tr>
-  </tbody>
-</table>
-```
-
-### Componentes React
-Los componentes React proporcionan interactividad avanzada y gestión de estado, perfectos para:
-
-- **Aplicaciones transaccionales** que requieren actualizaciones en tiempo real
-- **Formularios complejos** con validación dinámica
-- **Dashboards interactivos** con visualización de datos
-- **Flujos de usuario** con múltiples pasos
-
-#### Características:
-- Gestión de estado compleja
-- Actualizaciones en tiempo real
-- Integración con APIs
-- Componentes reutilizables
-- Renderizado condicional
-
-#### Ejemplos de Uso:
-```jsx
-// Componente de transferencia bancaria
-import { TransferForm, AccountSelector, AmountInput } from '@dynamic-framework/ui-react';
-
-function BankTransfer() {
-  return (
-    <TransferForm onSubmit={handleTransfer}>
-      <AccountSelector 
-        label="Cuenta Origen"
-        accounts={userAccounts}
-      />
-      <AccountSelector 
-        label="Cuenta Destino"
-        allowExternal={true}
-      />
-      <AmountInput 
-        currency="USD"
-        max={availableBalance}
-      />
-    </TransferForm>
-  );
-}
-
-// Componente de estado de cuenta
-import { AccountStatement, TransactionList } from '@dynamic-framework/ui-react';
-
-function AccountDashboard() {
-  return (
-    <AccountStatement accountId={selectedAccount}>
-      <TransactionList 
-        filterable={true}
-        sortable={true}
-        paginated={true}
-        itemsPerPage={20}
-      />
-    </AccountStatement>
-  );
-}
-```
+Dynamic Framework ofrece más de 48 componentes React especializados para la industria financiera, diseñados para cubrir las necesidades más comunes en aplicaciones bancarias y financieras.
 
 ## Catálogo de Componentes
 
+Explora todos los componentes de forma interactiva en nuestro [Storybook](https://react.dynamicframework.dev).
+
+### Componentes de Layout
+- **DBox**: Contenedor con opciones de estilo flexibles
+- **DCard**: Contenedor de tarjeta con sub-componentes Header, Body y Footer
+- **DLayout**: Sistema de layout de página con LayoutPane para diseños responsivos
+- **DCollapse**: Secciones de contenido colapsables
+
 ### Componentes de Navegación
-- **Navbar**: Barra de navegación principal con menús desplegables
-- **Sidebar**: Panel lateral para navegación secundaria
-- **Breadcrumb**: Indicador de ubicación en la jerarquía
-- **Tabs**: Navegación entre secciones relacionadas
-- **Pagination**: Control de paginación para listados
+- **DTabs**: Navegación por pestañas con DTabContent para cambio de paneles
+- **DStepper**: Navegación multi-paso (con variantes DStepperDesktop y DStepperMobile)
+- **DPaginator**: Control de paginación para listados
 
-### Componentes de Formularios
-- **Input**: Campos de texto con validación integrada
-- **Select**: Listas desplegables con búsqueda
-- **DatePicker**: Selector de fechas con calendario
-- **FileUpload**: Carga de documentos con preview
-- **Checkbox/Radio**: Controles de selección múltiple y única
+### Componentes de Formulario
+- **DInput**: Input de texto con estados de validación
+- **DInputCheck**: Input de checkbox
+- **DInputSwitch**: Input de toggle switch
+- **DInputCounter**: Contador numérico con incremento/decremento
+- **DInputCurrency**: Input formateado para moneda
+- **DInputMask**: Input con máscara para datos formateados
+- **DInputPassword**: Input de contraseña con toggle de visibilidad
+- **DInputPhone**: Input de número telefónico internacional
+- **DInputPin**: Input de PIN/código con cajas de dígitos individuales
+- **DInputRange**: Input de rango deslizante
+- **DInputSelect**: Input de selección desplegable
+- **DSelect**: Select avanzado con búsqueda (usa react-select)
+- **DDatePicker**: Selector de fecha con calendario
+- **DOtp**: Input de contraseña de un solo uso
+- **DBoxFile**: Carga de archivos con drag-and-drop
 
-### Componentes de Datos
-- **Table**: Tablas con ordenamiento y filtros
-- **Chart**: Gráficos para visualización de datos
-- **Card**: Tarjetas para presentación de información
-- **List**: Listas con diferentes estilos de presentación
-- **Timeline**: Línea de tiempo para historial de eventos
+### Componentes de Visualización de Datos
+- **DListGroup**: Contenedor de lista con DListGroupItem
+- **DTimeline**: Línea de tiempo para historial de eventos
+- **DCarousel**: Carrusel/slider con DCarouselSlide
+- **DCurrencyText**: Visualización de moneda formateada
+- **DProgress**: Indicador de barra de progreso
+- **DVoucher**: Componente de visualización de voucher/recibo
 
-### Componentes de Feedback
-- **Alert**: Mensajes de notificación al usuario
-- **Modal**: Ventanas emergentes para acciones importantes
-- **Toast**: Notificaciones temporales no intrusivas
-- **Progress**: Indicadores de progreso de operaciones
-- **Skeleton**: Placeholders durante la carga de contenido
+### Componentes de Retroalimentación
+- **DAlert**: Mensajes de notificación al usuario
+- **DModal**: Diálogo modal con Header, Body, Footer
+- **DOffcanvas**: Panel deslizante con Header, Body, Footer
+- **DToast**: Notificaciones toast temporales (con DToastContainer)
+- **DPopover**: Popover contextual
+- **DTooltip**: Tooltips al pasar el mouse
+- **DDropdown**: Menú desplegable
+
+### Componentes Visuales
+- **DAvatar**: Visualización de avatar de usuario
+- **DBadge**: Badges de estado/conteo
+- **DChip**: Elemento compacto para etiquetas/filtros
+- **DButton**: Botón de acción con estado de carga
+- **DButtonIcon**: Botón solo con icono
+- **DIcon**: Componente de icono (usa Lucide Icons)
+- **DIconBase**: Icono base con soporte de tamaño responsivo
 
 ### Componentes Financieros Especializados
-- **AccountCard**: Tarjeta de resumen de cuenta
-- **TransactionItem**: Elemento de transacción con detalles
-- **BalanceDisplay**: Visualización de saldos con formato
-- **CurrencyInput**: Campo de entrada para montos
-- **CardSelector**: Selector visual de tarjetas de crédito/débito
+- **DCreditCard**: Visualización de tarjeta de crédito/débito con animación flip
+- **DPasswordStrengthMeter**: Indicador de fortaleza de contraseña con validación
 
-## Personalización de Componentes
+## Uso de Componentes
 
-### Temas y Variables CSS
-```css
-/* Variables globales del tema */
-:root {
-  --df-primary-color: #004B8D;
-  --df-secondary-color: #00A0DF;
-  --df-success-color: #28A745;
-  --df-danger-color: #DC3545;
-  --df-font-family: 'Inter', sans-serif;
-  --df-border-radius: 8px;
-  --df-spacing-unit: 8px;
-}
+Todos los componentes se importan desde `@dynamic-framework/ui-react`:
 
-/* Personalización de componente específico */
-.df-card {
-  --df-card-bg: var(--df-white);
-  --df-card-border: 1px solid var(--df-gray-200);
-  --df-card-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  --df-card-padding: calc(var(--df-spacing-unit) * 3);
-}
-```
-
-### Props y Configuración
-```jsx
-// Personalización mediante props
-<Button 
-  variant="primary"
-  size="large"
-  icon="arrow-right"
-  loading={isLoading}
-  disabled={!isValid}
-  fullWidth
->
-  Continuar
-</Button>
-
-// Configuración global de componentes
-import { ConfigProvider } from '@dynamic-framework/ui-react';
-
-<ConfigProvider 
-  theme={{
-    colors: {
-      primary: '#004B8D',
-      secondary: '#00A0DF'
-    },
-    typography: {
-      fontFamily: 'Inter, sans-serif'
-    }
-  }}
->
-  <App />
-</ConfigProvider>
-```
-
-## Composición de Componentes
-
-Los componentes de Dynamic Framework están diseñados para trabajar juntos de manera armoniosa:
-
-```jsx
-// Ejemplo de composición para un flujo de apertura de cuenta
-import { 
-  Stepper, 
-  Form, 
-  PersonalInfoFields,
-  DocumentUpload,
-  AccountTypeSelector,
-  TermsAndConditions,
-  ConfirmationScreen 
+```tsx
+import {
+  DButton,
+  DCard,
+  DInput,
+  DAlert
 } from '@dynamic-framework/ui-react';
 
-function AccountOpening() {
-  const steps = [
-    { label: 'Información Personal', component: PersonalInfoFields },
-    { label: 'Documentación', component: DocumentUpload },
-    { label: 'Tipo de Cuenta', component: AccountTypeSelector },
-    { label: 'Términos', component: TermsAndConditions },
-    { label: 'Confirmación', component: ConfirmationScreen }
-  ];
-
+function MyComponent() {
   return (
-    <Stepper steps={steps} onComplete={handleAccountCreation}>
-      {({ CurrentStep, navigation }) => (
-        <Form>
-          <CurrentStep />
-          <navigation.Controls />
-        </Form>
-      )}
-    </Stepper>
+    <DCard>
+      <DCard.Header>
+        <h5>Detalles de la Cuenta</h5>
+      </DCard.Header>
+      <DCard.Body>
+        <DInput
+          id="account-name"
+          label="Nombre de la Cuenta"
+          placeholder="Ingresa el nombre de la cuenta"
+        />
+        <DButton color="primary">
+          Guardar Cambios
+        </DButton>
+      </DCard.Body>
+    </DCard>
   );
 }
+```
+
+## Props de Componentes
+
+### Props Comunes
+
+La mayoría de los componentes comparten estas props comunes:
+
+| Prop | Tipo | Descripción |
+|------|------|-------------|
+| `className` | `string` | Clases CSS adicionales |
+| `style` | `CSSProperties` | Estilos en línea |
+| `id` | `string` | ID del elemento |
+
+### Variantes de Color
+
+Los componentes que soportan colores usan la prop `color`:
+
+```tsx
+<DButton color="primary">Primario</DButton>
+<DButton color="secondary">Secundario</DButton>
+<DButton color="success">Éxito</DButton>
+<DButton color="danger">Peligro</DButton>
+<DButton color="warning">Advertencia</DButton>
+<DButton color="info">Info</DButton>
+```
+
+### Variantes de Tamaño
+
+Los componentes que soportan tamaños usan la prop `size`:
+
+```tsx
+<DButton size="sm">Pequeño</DButton>
+<DButton>Por defecto</DButton>
+<DButton size="lg">Grande</DButton>
+```
+
+## Context Provider
+
+Envuelve tu aplicación con `DContextProvider` para configuración global:
+
+```tsx
+import { DContextProvider } from '@dynamic-framework/ui-react';
+
+function App() {
+  return (
+    <DContextProvider>
+      <TuApp />
+    </DContextProvider>
+  );
+}
+```
+
+## Sistema de Iconos
+
+Dynamic UI 2.0 usa [Lucide Icons](https://lucide.dev). Usa el componente `DIcon`:
+
+```tsx
+import { DIcon } from '@dynamic-framework/ui-react';
+
+<DIcon icon="check" />
+<DIcon icon="alert-circle" size="lg" />
+<DIcon icon="arrow-right" color="primary" />
 ```
 
 ## Accesibilidad
@@ -247,29 +169,17 @@ function AccountOpening() {
 Todos los componentes de Dynamic Framework cumplen con los estándares WCAG 2.1 nivel AA:
 
 - **Navegación por teclado** completa
-- **Lectores de pantalla** compatibles
-- **Contraste de colores** adecuado
+- Compatible con **lectores de pantalla**
+- **Contraste de color** adecuado
 - **Etiquetas ARIA** apropiadas
 - **Mensajes de error** descriptivos
 
-## Rendimiento
-
-Los componentes están optimizados para rendimiento:
-
-- **Lazy loading** de componentes pesados
-- **Code splitting** automático
-- **Memorización** de cálculos costosos
-- **Virtual scrolling** para listas largas
-- **Optimización de re-renderizados**
-
 ## Documentación y Soporte
 
-Cada componente incluye:
+Cada componente incluye documentación interactiva en nuestro Storybook:
 
 - Documentación detallada de props y métodos
 - Ejemplos de código interactivos
 - Guías de mejores prácticas
-- Casos de uso comunes
-- Playground para experimentación
 
-Accede a la documentación completa en [dynamic.modyo.com/docs](https://dynamic.modyo.com/docs)
+Accede a la documentación completa en [react.dynamicframework.dev](https://react.dynamicframework.dev)

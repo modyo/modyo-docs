@@ -66,7 +66,7 @@ Tu aplicación estará disponible en `http://localhost:8080` 🎉
 
 ### Para Desarrolladores Nuevos en Dynamic
 
-1. Lee sobre [¿Qué es Dynamic?](../what-is-dynamic.html)
+1. Lee sobre [¿Qué es Dynamic?](../overview.html)
 2. Sigue la guía de [Instalación](installation.html)
 3. Completa el tutorial de [Primera Aplicación](first-app.html)
 4. Explora los [Componentes](../development/components.html)

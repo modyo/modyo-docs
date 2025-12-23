@@ -473,16 +473,9 @@ Congratulations! You've created your first banking application with Dynamic Fram
 - Add [advanced validations](../development/components.html#validation)
 - Customize the [theme](../customization/theming.html)
 
-## Resources
-
-- [Complete code on GitHub](https://github.com/modyo/dynamic-first-app)
-- [Live demo](https://demo.dynamic.modyo.com/first-app)
-- [Video tutorial](https://youtube.com/watch?v=...)
-
 ## Need Help?
 
 If you encounter problems:
 1. Review the [component documentation](../development/components.html)
-2. Search the [FAQs](https://support.modyo.com/hc/es)
-3. Ask in the [community](https://community.modyo.com)
-4. Contact [support](https://support.modyo.com)
+2. Check the [Storybook](https://react.dynamicframework.dev) for interactive examples
+3. Contact [Support](https://support.modyo.com)

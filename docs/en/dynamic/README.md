@@ -84,18 +84,14 @@ For React component integration, see [React guide](development/react-integration
 
 ### Documentation
 - [Storybook Components](https://react.dynamicframework.dev) - Interactive catalog
-- [API Reference](https://dynamic.modyo.com/docs/api) - API documentation
-- [GitHub](https://github.com/modyo/dynamic-framework) - Source code
+- [API Reference](https://dynamic.modyo.com/docs) - API documentation
+- [NPM Package](https://www.npmjs.com/package/@dynamic-framework/ui-react) - Package registry
 
 ### Development Tools
 - [Modyo CLI](https://www.npmjs.com/package/@modyo/cli) - Command line tool
-- [Figma UI Kit](https://figma.com/@modyo) - Design resources
-- [CodeSandbox Templates](https://codesandbox.io/s/dynamic-framework) - Starter templates
 
 ### Technical Support
-- [Issues](https://github.com/modyo/dynamic-framework/issues) - Report issues
-- [Stack Overflow](https://stackoverflow.com/questions/tagged/dynamic-framework) - Technical questions
-- [Community](https://community.modyo.com) - Developer forum
+- [Support](https://support.modyo.com) - Technical support
 
 ## Technology Stack
 

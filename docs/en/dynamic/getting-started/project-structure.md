@@ -424,6 +424,5 @@ docs/
 
 ## Resources
 
-- [Code style guide](https://github.com/modyo/style-guide)
-- [Project template](https://github.com/modyo/dynamic-template)
-- [Structure examples](https://github.com/modyo/project-structures)
+- [Storybook](https://react.dynamicframework.dev) - Interactive component catalog
+- [NPM Package](https://www.npmjs.com/package/@dynamic-framework/ui-react) - Package details

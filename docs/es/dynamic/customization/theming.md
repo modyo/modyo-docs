@@ -12,7 +12,7 @@ Dynamic Framework, al igual que Bootstrap, utiliza variables CSS (o tokens) para
 
 Las variables CSS actúan como marcadores de posición para los valores dentro de las hojas de estilo. Se puede definir una variable una vez y luego referenciarla múltiples veces en el código, lo que reduce la redundancia y facilita la gestión y actualización de los estilos.
 
-Dynamic Framework proporciona un conjunto completo de variables CSS que cubren una amplia gama de aspectos de estilo, incluidos colores, tipografía, espaciado y más. [Puedes encontrar una lista detallada de estas variables en la documentación oficial de Dynamic Framework.](https://dynamicbanking.co/docs/variables-overview)
+Dynamic Framework proporciona un conjunto completo de variables CSS que cubren una amplia gama de aspectos de estilo, incluidos colores, tipografía, espaciado y más. Puedes encontrar una lista detallada de estas variables en el [Storybook](https://react.dynamicframework.dev).
 
 **Creación de un tema en Modyo**
 
@@ -20,7 +20,7 @@ Con Dynamic Framework integrado por defecto en cada nueva aplicación de Modyo, 
 
 **1\. Prepara tu CSS personalizado**
 
-Antes de trabajar con la tematización en Dynamic Framework, asegúrate de tener un archivo CSS personalizado listo para albergar tus estilos. Puedes seguir los consejos para desarrolladores de Modyo sobre [cómo configurar un archivo CSS personalizado](https://www.modyo.com/resources/community/developer-tips/customize-your-ui-in-modyo-con-modular-css).
+Antes de trabajar con la tematización en Dynamic Framework, asegúrate de tener un archivo CSS personalizado listo para albergar tus estilos.
 
 ### Agrega componentes HTML
 
@@ -101,29 +101,29 @@ Tienes dos opciones principales para crear temas para tus widgets:
 
 - **Incrustado en el CSS de React:** Si tu widget es una aplicación de React, puedes incrustar el tema directamente en su archivo CSS. Esto proporciona una forma más encapsulada y modular de diseñar tu widget.
 
-Ten en cuenta que los componentes de React en Dynamic Framework tienen su propio conjunto de propiedades personalizadas predefinidas. Puedes aprovechar estas propiedades para personalizar la apariencia y el comportamiento de tus widgets. [Consulta la documentación del componente para obtener una lista detallada de las propiedades disponibles.](https://dynamicbanking.co/components)
+Ten en cuenta que los componentes de React en Dynamic Framework tienen su propio conjunto de propiedades personalizadas predefinidas. Puedes aprovechar estas propiedades para personalizar la apariencia y el comportamiento de tus widgets. Consulta el [Storybook](https://react.dynamicframework.dev) para obtener una lista detallada de las propiedades disponibles.
 
 ### Ejemplo creación de un componente temático
 
-Supongamos que tienes un proyecto de React configurado utilizando el proceso de instalación de Dynamic Framework [detallado en la documentación](https://dynamicframework.dev/docs/getting-started).
+Supongamos que tienes un proyecto de React configurado utilizando el [proceso de instalación](../getting-started/installation.html) de Dynamic Framework.
 
 - **Navega a tu componente:** Abre el archivo `src/components/myComponent.tsx`.
-- **Reemplaza el código:** Reemplaza el código existente con el componente Lista:
+- **Reemplaza el código:** Reemplaza el código existente con el componente ListGroup:
 
-    ```javascript
-    import { DList, DListItem } from '@dynamic-framework/ui-react';
+    ```tsx
+    import { DListGroup, DListGroupItem } from '@dynamic-framework/ui-react';
 
     export default function MyComponent() {
-       	const items = ['Item 1', 'Item 2', 'Item 3'];
-       	return (
-       		<div id="my-component">
-       			<DList>
-       				{items.map((item) => (
-       					<DListItem key={item}>{item}</DListItem>
-       				))}
-       			</DList>
-       		</div>
-       	);
+      const items = ['Item 1', 'Item 2', 'Item 3'];
+      return (
+        <div id="my-component">
+          <DListGroup>
+            {items.map((item) => (
+              <DListGroupItem key={item}>{item}</DListGroupItem>
+            ))}
+          </DListGroup>
+        </div>
+      );
     }
     ```
 
