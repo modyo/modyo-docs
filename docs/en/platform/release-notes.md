@@ -6,6 +6,18 @@ search: true
 
 ## 10.1
 
+### 10.1.10
+
+:::info Release date
+December 29, 2025
+:::
+
+| Module | Improvements |
+|--------|---------|
+| **Customers** | • Adds the redirect_uri parameter to specify the post-login redirect URL. The URL is validated against the account's registered domains<br>• Performance improvement when retrieving form responses via the forms API |
+| **Content** | • Fixes issue with scheduled publications, now when publishing an entry directly, the previous scheduled publication is removed |
+
+
 ### 10.1.9
 
 :::info Release date

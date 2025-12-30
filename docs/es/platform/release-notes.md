@@ -6,6 +6,18 @@ search: true
 
 ## 10.1
 
+### 10.1.10
+
+:::info Fecha del release
+29 de diciembre de 2025
+:::
+
+| Módulo | Mejoras |
+|--------|---------|
+| **Customers** | • Agrega el parámetro redirect_uri para especificar la URL de redirección post login. La URL se valida contra los dominios registrados de la cuenta<br>• Mejora de rendimiento al obtener las respuestas de formularios mediante la API de formularios |
+| **Content** | • Corrige problema con las publicaciones programadas, ahora al publicar directamente una entrada, la publicación programada previa se elimina |
+
+
 ### 10.1.9
 
 :::info Fecha del release
