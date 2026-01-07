@@ -23,29 +23,29 @@ Basic level courses are designed for those learning to use Modyo for the first t
 </a>
 
 <a href="https://help.modyo.com/en/articles/6872056-introduccion-a-la-gestion-de-contenidos" target="_blank">
-    <img src="https://cdn.modyo.cloud/uploads/54c82443-84d7-4bba-b19d-909b89192d59/original/ES-02-content-management.png" width="500" alt="Content Management" />
+    <img src="https://cdn.modyo.cloud/uploads/6e152b2f-7aa7-4d57-a083-b1dea0dc8d5e/original/EN-02-content-management.webp" width="500" alt="Content Management" />
 </a>
 
 ### Intermediate level
 For users with basic knowledge of Modyo, these courses offer a deeper view of the tool.
 
 <a href="https://help.modyo.com/en/articles/6849565-learning-path-creacion-de-sitios-web" target="_blank">
-    <img src="https://cdn.modyo.cloud/uploads/7c8e3f90-8715-48ac-999d-3563932cd80c/original/ES-03-building-websites.png" width="500" alt="Website Development" />
+    <img src="https://cdn.modyo.cloud/uploads/7245d408-fb9f-45f3-8eee-0178bc09f898/original/EN_create_a_webapp_1_.webp" width="500" alt="Website Development" />
 </a>
 
 <a href="https://help.modyo.com/en/articles/6873913-crea-microfrontends-con-el-widget-builder" target="_blank">
-    <img src="https://cdn.modyo.cloud/uploads/dab8974d-7a2a-401c-b54a-f105c3b23cf4/original/Learning_path_04_Widget_builder_ES.png" width="500" alt="Microfrontends with the Widget Builder" />
+    <img src="https://cdn.modyo.cloud/uploads/d6f4ab78-4576-4885-ad88-408b6616a645/original/EN-06-CLI.webp" width="500" alt="Microfrontends with the Widget Builder" />
 </a>
 
 ### Advanced level
 Users with knowledge and experience in creating sites in Modyo, as well as skills in web application development, will find useful resources in these advanced courses:
 
-<a href="https://help.modyo.com/en/articles/6873935-crea-microfrontends-con-el-cli-de-modyo" target="_blank">
+<a href="https://cdn.modyo.cloud/uploads/d6f4ab78-4576-4885-ad88-408b6616a645/original/EN-06-CLI.webp" target="_blank">
     <img src="https://cdn.modyo.cloud/uploads/9c9a6fe1-62bb-4d5b-a526-7a7d8cfa5a72/original/ES-06-CLI.png" width="500" alt="Microfrontends with the CLI" />
 </a>
 
 <a href="https://help.modyo.com/en/articles/6873957-desarrollo-multiplataforma-con-pwas" target="_blank">
-    <img src="https://cdn.modyo.cloud/uploads/267c3da7-4ac3-4061-b9cf-d145fede3317/original/ES-05-PWA.png" width="500" alt="Cross-Platform Apps with PWA" />
+    <img src="https://cdn.modyo.cloud/uploads/3c75c740-4042-41c3-b784-4b5d037827e9/original/EN-05-PWA.jpg" width="500" alt="Cross-Platform Apps with PWA" />
 </a>
 
 ## Additional Resources
