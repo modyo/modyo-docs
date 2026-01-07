@@ -19,7 +19,7 @@ Take as many courses as you need according to your role, or take them all to bec
 Basic level courses are designed for those learning to use Modyo for the first time. It is recommended to start with "Introduction to Modyo" before continuing with other courses.
 
 <a href="https://help.modyo.com/en/articles/6871283-introduccion-a-modyo" target="_blank">
-    <img src="https://cdn.modyo.cloud/uploads/07374707-2f79-40ad-ad1f-6f69f3b9bf9a/original/ES-01-intro-modyo.png" width="500" alt="Introduction to Modyo" />
+    <img src="https://cdn.modyo.cloud/uploads/1646f557-ec49-44a7-87dd-3443eed53cc2/original/EN-01-intro-modyo.webp" width="500" alt="Introduction to Modyo" />
 </a>
 
 <a href="https://help.modyo.com/en/articles/6872056-introduccion-a-la-gestion-de-contenidos" target="_blank">
