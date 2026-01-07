@@ -34,14 +34,14 @@ For users with basic knowledge of Modyo, these courses offer a deeper view of th
 </a>
 
 <a href="https://help.modyo.com/en/articles/6873913-crea-microfrontends-con-el-widget-builder" target="_blank">
-    <img src="https://cdn.modyo.cloud/uploads/d6f4ab78-4576-4885-ad88-408b6616a645/original/EN-06-CLI.webp" width="500" alt="Microfrontends with the Widget Builder" />
+    <img src="https://cdn.modyo.cloud/uploads/1e54a266-5f38-4bd4-83a1-a5ae27e14002/original/Learning_path_04_Widget_builder_1_.webp" width="500" alt="Microfrontends with the Widget Builder" />
 </a>
 
 ### Advanced level
 Users with knowledge and experience in creating sites in Modyo, as well as skills in web application development, will find useful resources in these advanced courses:
 
-<a href="https://cdn.modyo.cloud/uploads/d6f4ab78-4576-4885-ad88-408b6616a645/original/EN-06-CLI.webp" target="_blank">
-    <img src="https://cdn.modyo.cloud/uploads/9c9a6fe1-62bb-4d5b-a526-7a7d8cfa5a72/original/ES-06-CLI.png" width="500" alt="Microfrontends with the CLI" />
+<a href="https://help.modyo.com/en/articles/6873935-crea-microfrontends-con-el-cli-de-modyo" target="_blank">
+    <img src="https://cdn.modyo.cloud/uploads/d6f4ab78-4576-4885-ad88-408b6616a645/original/EN-06-CLI.webp" width="500" alt="Microfrontends with the CLI" />
 </a>
 
 <a href="https://help.modyo.com/en/articles/6873957-desarrollo-multiplataforma-con-pwas" target="_blank">
