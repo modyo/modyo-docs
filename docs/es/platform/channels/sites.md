@@ -244,7 +244,8 @@ Puedes configurar:
 - **Archivo robots.txt personalizado**: Archivo que indica a los robots rastreadores las partes de la aplicación pueden o no indexar.
 
 :::tip Tip
-Los archivos robots.txt y sitemap.xml solo son visibles con dominios personalizados. De lo contrario, se encuentran solo a nivel de plataforma, tienen sus valores por defecto y no se pueden personalizar.
+La actualización manual del archivo robots.txt solo se puede habilitar para dominios personalizados.
+También existen configuraciones de archivos sitemap.xml y robots.txt a nivel de la cuenta.
 :::
 
 - **Meta tags personalizados**: Te permite configurar meta tags para todas las páginas y sus valores por defecto. Da click en **nuevo meta tag** para crear uno nuevo.
