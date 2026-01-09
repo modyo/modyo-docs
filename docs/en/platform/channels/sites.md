@@ -244,7 +244,8 @@ You can configure:
 - **Custom robots.txt file**: File that tells web crawlers which parts of the application they may or may not index.
 
 :::tip Tip
-Robots.txt and sitemap.xml files are only visible with custom domains. Otherwise, they are only found at the platform level, have default values, and cannot be customized.
+Manual updates to the robots.txt file can only be enabled for custom domains. 
+There are also sitemap.xml and robots.txt files at the account level.
 :::
 
 - **Custom meta tags**: Allows you to configure meta tags for all pages and their default values. Click **+ new meta tag** to create a new one.
