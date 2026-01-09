@@ -75,7 +75,7 @@ Los roles predeterminados que existen, según contexto, son:
 
 - **Default user**: Tiene todos los permisos existentes,  excepto la edición de la configuración de cada contexto. Debe ser invitado a cada contexto para poder acceder a sus funcionalidades.
 - **Default admin**: Tiene todos los permisos existentes, pero debe ser invitado a cada contexto para poder acceder a sus funciones. A nivel de cuenta de Modyo Platform, solo puede ver variables globales y actividad.
-- **Full Admin**: Tiene todos los permisos existentes y puede acceder a todos los contextos sin necesidad de ser invitado a ellos.
+- **Full admin**: Tiene todos los permisos existentes y puede acceder a todos los contextos sin necesidad de ser invitado a ellos.
 
 #### Roles por sitio
 
