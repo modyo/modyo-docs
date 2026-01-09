@@ -245,7 +245,7 @@ Puedes configurar:
 
 :::tip Tip
 La actualización manual del archivo robots.txt solo se puede habilitar para dominios personalizados.
-También existen archivos sitemap.xml y robots.txt a nivel de la cuenta.
+También existen configuraciones de archivos sitemap.xml y robots.txt a nivel de la cuenta.
 :::
 
 - **Meta tags personalizados**: Te permite configurar meta tags para todas las páginas y sus valores por defecto. Da click en **nuevo meta tag** para crear uno nuevo.
