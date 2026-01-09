@@ -245,7 +245,7 @@ You can configure:
 
 :::tip Tip
 Manual updates to the robots.txt file can only be enabled for custom domains. 
-There are also sitemap.xml and robots.txt files at the account level.
+There are also sitemap.xml and robots.txt file configurations at the account level.
 :::
 
 - **Custom meta tags**: Allows you to configure meta tags for all pages and their default values. Click **+ new meta tag** to create a new one.
