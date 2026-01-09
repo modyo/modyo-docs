@@ -476,7 +476,8 @@ En la sección de resumen de tu aplicación web puedes ver los detalles del stag
 #### Sincronizar un stage
 
 :::warning Atención
-La plataforma no permite sincronizar cambios que todavía no están publicados. Asegúrate de no tener cambios pendientes por publicar antes de iniciar la sincronización.
+- No es posible sincronizar elementos que hayan sido creados manualmente de manera separa en diferentes stages antes de la sincronización. En estos casos, los elementos creados a mano deben ser eliminados primero y luego serán recreados automáticamente a través del proceso de sincronización.
+- La plataforma solo permite sincronizar cambios publicados. Asegúrate de no tener cambios pendientes por publicar antes de iniciar la sincronización.
 :::
 
 Para sincronizar un stage sigue estos pasos:

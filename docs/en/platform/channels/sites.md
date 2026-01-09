@@ -476,7 +476,8 @@ In the summary section of your web application, you can see the details of the c
 #### Synchronize a Stage
 
 :::warning Attention
-The platform does not allow you to synchronize changes that have not yet been published. Make sure you don't have any pending changes to publish before starting the synchronization.
+- It is not possible to synchronize elements that were created manually and separately in different stages prior to synchronization. In these cases, the manually created elements must first be deleted, and they will then be automatically recreated through the synchronization process.
+- The platform only allows the synchronization of published changes. Ensure that you do not have any pending changes to be published before starting the synchronization.
 :::
 
 To synchronize a stage, follow these steps:
