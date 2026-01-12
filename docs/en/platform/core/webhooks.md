@@ -245,4 +245,6 @@ Realm webhooks with their respective payloads:
 - Restore password
 - User deleted
 
-Note: The webhook is called via a POST when the selected log type is generated. Once the webhook is created, you can send a test notification with false information to test that your URL is correctly receiving POSTs from Modyo.
+:::tip Tip
+The webhook is called via a POST when the selected log type is generated. Once the webhook is created, you can send a test notification with false information to test that your URL is correctly receiving POSTs from Modyo.
+:::
