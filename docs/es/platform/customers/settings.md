@@ -280,6 +280,12 @@ Utiliza un cliente de autenticación para enviar los tokens de acceso de tu inte
 - Confidencial: Existen dos tipos de clientes OAuth, confidencial o públicos. Selecciona la opción confidencial si tu aplicación puede autenticarse de manera segura con el servidor de autenticación. Los clientes públicos suelen ser aplicaciones que se ejecutan en dispositivos móviles o navegadores.
 - Scopes: Si tu servicio de autenticación OAuth2 usa múltiples espacios o ambientes para separar a los usuarios y quieres usar uno en específico en esta integración, defínelo en este campo.
 
+### Webhooks
+
+La plataforma permite la creación de Webhooks para ciertos eventos específicos de los usuarios del reino.
+
+Para más información sobre cuáles eventos y la creación de los webhooks de reino dirigirse a [Webhooks](/es/platform/core/webhooks.html).
+
 ### Miembros del equipo
 
 Modyo permite seleccionar los miembros del equipo que trabajan en cada reino y así controlar el acceso a los distintos aspectos del reino.

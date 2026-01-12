@@ -280,6 +280,12 @@ Use an authentication client to send your integration access tokens to your reso
 - Confidential: There are two types of OAuth clients, confidential or public. Select the confidential option if your application can securely authenticate with the authentication server. Public clients are usually applications that run on mobile devices or browsers.
 - Scopes: If your OAuth2 authentication service uses multiple spaces or environments to separate users, and you want to use a specific one in this integration, define it in this field.
 
+### Webhooks
+
+The platform allows the creation of Webhooks for specific events related to realm users.
+
+For more information on which events are available and how to create realm webhooks, please go to [Webhooks](/en/platform/core/webhooks.html).
+
 ### Team Members
 
 Modyo allows you to select the team members that work in each realm, and thus control access to the different aspects of the realms.

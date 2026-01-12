@@ -16,6 +16,9 @@ When creating a webhook, you must have the URL to which you want to send the inf
 
 After this, you will be able to see all active webhooks in the list.
 
+:::warning Warning 
+In the version 10.0.0, realm webhooks are added for end-user events. If you were using these in previous versions, these Webhooks must be recreated within the realm.
+:::
 
 ### Create an Administrative Webhook
 
@@ -242,4 +245,6 @@ Realm webhooks with their respective payloads:
 - Restore password
 - User deleted
 
-Note: The webhook is called via a POST when the selected log type is generated. Once the webhook is created, you can send a test notification with false information to test that your URL is correctly receiving POSTs from Modyo.
+:::tip Tip
+The webhook is called via a POST when the selected log type is generated. Once the webhook is created, you can send a test notification with false information to test that your URL is correctly receiving POSTs from Modyo.
+:::

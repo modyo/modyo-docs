@@ -16,6 +16,10 @@ Al crear un webhook, debes tener la URL a la que quieres enviar la información,
 
 Luego de esto, podrás ver en la lista todos los webhooks que estén activos.
 
+:::warning Attention
+En la versión 10.0.0 se agregan los Webhooks de reinos para los eventos de usuarios finales. Esos Webhooks tienen que volver a ser creados en el reino en caso de ser usados desde versiones anteriores.
+:::
+
 
 ### Crear un Webhook Administrativo
 
@@ -242,4 +246,6 @@ Los webhooks de reino con sus payloads respectivos:
 - Restore password
 - User deleted
 
-Nota: El webhook es llamado a través de un POST cuando se genera un log del tipo seleccionado. Una vez creado el webhook, podrás enviar una notificación de prueba con información falsa para probar que tu URL está recibiendo correctamente los POSTs desde Modyo.
+:::tip Tip
+El webhook es llamado a través de un POST cuando se genera un log del tipo seleccionado. Una vez creado el webhook, podrás enviar una notificación de prueba con información falsa para probar que tu URL está recibiendo correctamente los POSTs desde Modyo.
+:::
