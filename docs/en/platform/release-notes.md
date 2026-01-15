@@ -6,6 +6,19 @@ search: true
 
 ## 10.1
 
+### 10.1.11
+
+:::info Release date
+January 15, 2026
+:::
+
+| Module | Improvements |
+|--------|---------|
+| **Core** | • Adds TTL to Redis objects when the session cookie is configured as "Session" |
+| **Channels** | • Improves performance of user custom fields loading in me API calls<br>• Fixes 404 page cache, now generated per session user<br>• Fixes nonce issue in forms, now by default includes the hash of the involved asset |
+| **Customers** | • Fixes selection issue in conditional logic selectors<br>• Fixes permission issue when unpublishing an origination by a Realm admin |
+
+
 ### 10.1.10
 
 :::info Release date
