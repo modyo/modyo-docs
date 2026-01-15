@@ -17,7 +17,7 @@ When creating a webhook, you must have the URL to which you want to send the inf
 After this, you will be able to see all active webhooks in the list.
 
 :::warning Warning 
-In the version 10.0.0, realm webhooks are added for end-user events. If you were using these in previous versions, these Webhooks must be recreated within the realm.
+In the version 10.1.0, realm webhooks are added for end-user events. If you were using these in previous versions, these Webhooks must be recreated within the realm.
 :::
 
 ### Create an Administrative Webhook
