@@ -6,6 +6,19 @@ search: true
 
 ## 10.1
 
+### 10.1.11
+
+:::info Fecha del release
+15 de enero de 2026
+:::
+
+| Módulo | Mejoras |
+|--------|---------|
+| **Core** | • Agrega TTL a los objetos Redis cuando se configura en "Session" la cookie de sesión |
+| **Channels** | • Mejora el rendimiento de carga de custom fields de usuario en las llamadas al endpoint /me<br>• Corrige el caché de páginas 404, ahora se genera por usuario en sesión<br>• Corrige problema de nonce en formularios, ahora por defecto se incluye el hash del asset involucrado |
+| **Customers** | • Corrige problema de selección en los selectores del conditional logic<br>• Corrige problema de permiso al despublicar una originación por un Realm admin |
+
+
 ### 10.1.10
 
 :::info Fecha del release
