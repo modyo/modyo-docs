@@ -11,7 +11,7 @@ Dynamic UI 2.0 brings a new visual language, Lucide icons, and 8 new components.
 ## Technical Features
 
 ### Components
-- **30+ React components** specialized for banking
+- **43 React components** specialized for banking
 - **Design system** based on Bootstrap 5
 - **Full TypeScript** support
 - **WCAG 2.1 accessibility** integrated
@@ -62,11 +62,15 @@ npm start
 
 ```html
 <!-- CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@dynamic-framework/ui-react@1.27.0/dist/css/dynamic-ui.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@dynamic-framework/ui-react@2/dist/css/dynamic-ui.css">
 
 <!-- JavaScript (optional) -->
-<script src="https://cdn.jsdelivr.net/npm/@dynamic-framework/ui-react@1.27.0/dist/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@dynamic-framework/ui-react@2/dist/js/bootstrap.min.js"></script>
 ```
+
+:::tip
+For production, pin to a specific version like `@2.1.1` instead of `@2`.
+:::
 
 ### NPM Package
 
@@ -75,8 +79,9 @@ npm install @dynamic-framework/ui-react
 ```
 
 **Requirements:**
-- Node.js v20+
+- Node.js v22+
 - NPM 10.x+
+- React 19.x
 
 For React component integration, see [React guide](development/react-integration.html).
 
@@ -95,9 +100,9 @@ For React component integration, see [React guide](development/react-integration
 
 ## Technology Stack
 
-- **React**: 18+ with Hooks and Suspense
+- **React**: 19.x (requires ~19.2.1 as peer dependency)
 - **TypeScript**: Full static typing
-- **Bootstrap**: 5.3+ customizable
+- **Bootstrap**: 5.3.8 customizable
 - **Build Tools**: Webpack 5, Vite support
 - **Testing**: Jest, React Testing Library
 - **Linting**: ESLint, Prettier

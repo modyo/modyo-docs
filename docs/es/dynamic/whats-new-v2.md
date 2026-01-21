@@ -19,9 +19,26 @@ La versión 2.0 de Dynamic UI representa una evolución significativa del Design
 
 Se ha establecido **Jost** como la fuente principal del Design System, aportando una estética moderna y distintiva.
 
+**Cómo cargar Jost:**
+
+```html
+<!-- Opción 1: Google Fonts (recomendado) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+```
+
 ```css
+/* Opción 2: CSS @import */
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap');
+
+/* La fuente se aplica vía variable CSS */
 font-family: "Jost", sans-serif;
 ```
+
+:::tip
+El template base ya incluye Jost. Solo agrega estos imports si construyes desde cero.
+:::
 
 ### Iconografía: Lucide Icons
 
@@ -130,6 +147,10 @@ Componente para mostrar eventos en orden cronológico.
 
 Componente completo para flujos de autenticación OTP.
 
+:::warning Nota de Versión
+DOtp requiere versión **2.1.1 o superior**. Se corrigió un bug de exportación en v2.1.1.
+:::
+
 ```jsx
 <DOtp
   otpSize={6}
@@ -181,13 +202,14 @@ Los componentes `DModal` y `DOffcanvas` ahora incluyen animaciones suaves gracia
 
 ### Nuevos Requisitos de Sistema
 
-| Requisito | Versión |
-|-----------|---------|
-| Node.js | >=22.0.0 |
-| React | >=18 <20 |
-| framer-motion | >=12 <13 |
-| i18next | >=25 <26 |
-| react-i18next | >=16 <17 |
+| Requisito | Versión | Notas |
+|-----------|---------|-------|
+| Node.js | >=22.0.0 | Requerido |
+| React | ~19.2.1 | Peer dependency (React 19.x requerido) |
+| react-dom | ~19.2.1 | Peer dependency |
+| react-i18next | ~16.2.4 | Peer dependency |
+| react-hot-toast | ~2.6.0 | Peer dependency |
+| framer-motion | 12.x | Incluido como dependencia |
 
 ## Breaking Changes
 
@@ -195,10 +217,15 @@ Para una guía detallada de migración, consulta la [Guía de Migración a v2.0]
 
 ### Resumen de cambios incompatibles
 
-1. **Iconos**: Bootstrap Icons reemplazados por Lucide Icons
+1. **Iconos**: Bootstrap Icons reemplazados por Lucide Icons (usar PascalCase: `"Search"` no `"search"`)
 2. **Props**: `theme` renombrado a `color`
 3. **DButton**: Prop `pill` eliminada (usar `className="rounded-pill"`)
-4. **Componentes eliminados**: DSkeleton, DInputSearch, DList, DQuickAction*, DTableHead
+4. **Componentes eliminados** (ver [Guía de Migración](getting-started/migration-v2.html) para reemplazos):
+   - `DSkeleton` → Usar utilidades placeholder de Bootstrap
+   - `DInputSearch` → Usar `DInput` con `iconStart="Search"`
+   - `DList/DListItem` → Usar `DListGroup/DListGroupItem`
+   - `DQuickAction*` → Usar componentes base
+   - `DTableHead` → Eliminado (sin reemplazo)
 
 ## Recursos
 

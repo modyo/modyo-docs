@@ -13,7 +13,7 @@ Dynamic Framework is a React component framework specialized for financial appli
 ```
 @dynamic-framework/
 ├── ui-react/           # React components
-│   ├── components/     # 48+ UI components
+│   ├── components/     # 43 UI components
 │   ├── hooks/         # Custom React hooks
 │   └── utils/         # Utilities
 ├── styles/            # Design system (Bootstrap 5.3)
@@ -24,9 +24,9 @@ Dynamic Framework is a React component framework specialized for financial appli
 
 ### Technology Stack
 
-- **React 18+**: With Hooks, Suspense and Concurrent Features
+- **React 19.x**: With Hooks, Suspense and Concurrent Features (requires ~19.2.1)
 - **TypeScript**: Full static typing
-- **Bootstrap 5.3+**: Design system foundation
+- **Bootstrap 5.3.8**: Design system foundation
 - **Webpack 5**: Module Federation for micro frontends
 - **CSS Modules**: Encapsulated styles
 - **PostCSS**: Advanced CSS processing
@@ -36,36 +36,34 @@ Dynamic Framework is a React component framework specialized for financial appli
 ### Component Categories
 
 1. **Layout Components**
-   - Container, Grid, Row, Col
+   - DBox, DCard, DLayout, DCollapse
    - Flexbox utilities
    - Spacing system
 
-2. **Data Display**
-   - Tables with sorting and filtering
-   - Cards with multiple variants
-   - Lists and ListGroups
-
-3. **Forms & Inputs**
-   - Input with integrated validation
-   - Select, Checkbox, Radio
-   - DatePicker, TimePicker
-   - Form validation hooks
-
-4. **Navigation**
+2. **Navigation Components**
    - DTabs for tab navigation
    - DStepper for multi-step flows
    - DPaginator for pagination
 
-5. **Feedback**
-   - DAlert and DToast
-   - DModal and DOffcanvas
-   - DProgress indicators
-   - DPopover and DTooltip
+3. **Form Components**
+   - DInput, DInputPassword, DInputCurrency
+   - DSelect, DInputSelect, DDatePicker
+   - DInputCheck, DInputSwitch, DOtp
 
-6. **Financial Components**
+4. **Data Display Components**
+   - DListGroup, DTimeline, DCarousel
+   - DCurrencyText, DProgress, DVoucher
+
+5. **Feedback Components**
+   - DAlert, DToast, DModal, DOffcanvas
+   - DPopover, DTooltip, DDropdown
+
+6. **Visual Components**
+   - DAvatar, DBadge, DChip
+   - DButton, DButtonIcon, DIcon
+
+7. **Financial Components**
    - DCreditCard display
-   - DCurrencyText formatting
-   - DInputCurrency for amounts
    - DPasswordStrengthMeter
 
 ## Implementation Patterns
@@ -202,12 +200,19 @@ function App() {
 
 ### Bundle Size
 
+Bundle size varies based on tree-shaking and which components are imported. Use bundle analysis tools to measure your specific usage:
+
+```bash
+npm run analyze
 ```
-@dynamic-framework/ui-react: ~150KB gzipped
-├── react: 42KB
-├── components: 85KB
-└── styles: 23KB
+
+:::tip Optimization
+Import only the components you need to minimize bundle size:
+```tsx
+// ✅ Tree-shakeable import
+import { DButton, DCard } from '@dynamic-framework/ui-react';
 ```
+:::
 
 ## Testing
 
@@ -215,8 +220,8 @@ function App() {
 
 ```json
 {
-  "jest": "^29.0.0",
-  "@testing-library/react": "^14.0.0",
+  "jest": "^29.7.0",
+  "@testing-library/react": "^16.3.0",
   "@testing-library/jest-dom": "^6.0.0",
   "cypress": "^13.0.0"
 }
@@ -306,7 +311,7 @@ window.registerWidget({
 ### Semantic Versioning
 
 ```
-@dynamic-framework/ui-react@1.27.0
+@dynamic-framework/ui-react@2.1.1
 │                           │ │ │
 │                           │ │ └─ Patch: Bug fixes
 │                           │ └─── Minor: New features

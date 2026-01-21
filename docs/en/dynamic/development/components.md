@@ -4,7 +4,7 @@ search: true
 
 # Dynamic Framework Components
 
-Dynamic Framework offers 48+ specialized React components for the financial industry, designed to cover the most common needs in banking and financial applications.
+Dynamic Framework offers 43 specialized React components for the financial industry, designed to cover the most common needs in banking and financial applications.
 
 ## Component Catalog
 
@@ -14,7 +14,7 @@ Explore all components interactively in our [Storybook](https://react.dynamicfra
 - **DBox**: Container with flexible styling options
 - **DCard**: Card container with Header, Body, and Footer sub-components
 - **DLayout**: Page layout system with LayoutPane for responsive designs
-- **DCollapse**: Collapsible content sections
+- **DCollapse**: Collapsible content sections (supports controlled and uncontrolled modes)
 
 ### Navigation Components
 - **DTabs**: Tab navigation with DTabContent for panel switching
@@ -156,13 +156,117 @@ function App() {
 
 Dynamic UI 2.0 uses [Lucide Icons](https://lucide.dev). Use the `DIcon` component:
 
+:::danger Critical: PascalCase Format Required
+Icons **must** use PascalCase format. Using kebab-case will show a "?" placeholder.
+:::
+
 ```tsx
 import { DIcon } from '@dynamic-framework/ui-react';
 
+// ✅ Correct - PascalCase
+<DIcon icon="Check" />
+<DIcon icon="AlertCircle" size="lg" />
+<DIcon icon="ArrowRight" color="primary" />
+<DIcon icon="CreditCard" />
+
+// ❌ Wrong - kebab-case (will show "?")
 <DIcon icon="check" />
-<DIcon icon="alert-circle" size="lg" />
-<DIcon icon="arrow-right" color="primary" />
+<DIcon icon="alert-circle" />
+<DIcon icon="arrow-right" />
 ```
+
+Common icons: `Home`, `Settings`, `User`, `Search`, `Plus`, `Minus`, `Check`, `X`, `ChevronDown`, `ChevronRight`, `CreditCard`, `Calendar`, `Eye`, `EyeOff`, `Trash2`, `Pencil`
+
+## DSelect Critical Usage Pattern
+
+:::danger Common Mistake
+DSelect uses `react-select` internally and requires a specific value/onChange pattern. Using `e.target.value` will NOT work.
+:::
+
+### Correct Pattern
+
+```tsx
+import { DSelect } from '@dynamic-framework/ui-react';
+
+// Options must be objects with value and label
+const options = [
+  { value: 'usd', label: 'US Dollar' },
+  { value: 'eur', label: 'Euro' },
+  { value: 'gbp', label: 'British Pound' },
+];
+
+function CurrencySelect() {
+  // State holds the full option object, not just the value
+  const [selected, setSelected] = useState<{ value: string; label: string } | null>(null);
+
+  return (
+    <DSelect
+      id="currency"
+      label="Select Currency"
+      options={options}
+      value={selected}  // Full option object or null
+      onChange={(option) => setSelected(option)}  // Receives full option object
+    />
+  );
+}
+```
+
+### What NOT to Do
+
+```tsx
+// ❌ Wrong - Using e.target.value (doesn't work with DSelect)
+onChange={(e) => setValue(e.target.value)}
+
+// ❌ Wrong - Passing just the value string
+value={selectedValue}  // Should be the full option object
+
+// ❌ Wrong - Options as simple strings
+options={['USD', 'EUR', 'GBP']}  // Must be { value, label } objects
+```
+
+### DSelect vs DInputSelect
+
+| Component | Use Case | Value Format |
+|-----------|----------|--------------|
+| `DSelect` | Advanced select with search | `{ value, label }` object |
+| `DInputSelect` | Simple dropdown | String value with `e.target.value` |
+
+## DCollapse Usage Patterns
+
+DCollapse supports both **controlled** and **uncontrolled** modes (updated in v2.1.1).
+
+### Uncontrolled Mode (Default)
+
+The component manages its own open/closed state internally:
+
+```tsx
+<DCollapse>
+  <DCollapse.Toggle>Click to expand</DCollapse.Toggle>
+  <DCollapse.Content>
+    Hidden content here
+  </DCollapse.Content>
+</DCollapse>
+```
+
+### Controlled Mode
+
+You manage the state externally via `isOpen` and `onToggle`:
+
+```tsx
+const [isOpen, setIsOpen] = useState(false);
+
+<DCollapse isOpen={isOpen} onToggle={() => setIsOpen(!isOpen)}>
+  <DCollapse.Toggle>Click to expand</DCollapse.Toggle>
+  <DCollapse.Content>
+    Hidden content here
+  </DCollapse.Content>
+</DCollapse>
+```
+
+:::tip When to Use Each Mode
+- **Uncontrolled**: Simple accordions, FAQ sections
+- **Controlled**: When you need to sync with external state, programmatic open/close, or multiple panels coordination
+:::
 
 ## Accessibility
 

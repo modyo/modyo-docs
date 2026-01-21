@@ -27,7 +27,7 @@ Todo lo necesario para comenzar a desarrollar con Dynamic.
 ### [Desarrollo](development/)
 Guías técnicas para construir aplicaciones con Dynamic.
 
-- **[Componentes](development/components.html)** - Catálogo de 30+ componentes especializados
+- **[Componentes](development/components.html)** - Catálogo de 43 componentes especializados
 - **[Experiencias y Plantillas](development/experiences.html)** - Soluciones prediseñadas por industria
 - **[Integración con React](development/react-integration.html)** - Desarrollo avanzado con React
 - **[Widgets](development/widgets.html)** - Creación de widgets modulares
@@ -58,7 +58,7 @@ Aplicación disponible en `http://localhost:8080`
 ## Características Técnicas
 
 ### Componentes
-- **30+ componentes React** especializados para banca
+- **43 componentes React** especializados para banca
 - **Sistema de diseño** basado en Bootstrap 5
 - **TypeScript** support completo
 - **Accesibilidad WCAG 2.1** integrada
@@ -71,9 +71,9 @@ Aplicación disponible en `http://localhost:8080`
 
 ## Stack Tecnológico
 
-- **React**: 18+ con Hooks y Suspense
+- **React**: 19.x (requiere ~19.2.1 como peer dependency)
 - **TypeScript**: Tipado estático completo
-- **Bootstrap**: 5.3+ customizable
+- **Bootstrap**: 5.3.8 customizable
 - **Build Tools**: Webpack 5, Vite support
 - **Testing**: Jest, React Testing Library
 - **Linting**: ESLint, Prettier
