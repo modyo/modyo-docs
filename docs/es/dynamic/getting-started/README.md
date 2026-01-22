@@ -36,6 +36,13 @@ Guía paso a paso para actualizar desde Dynamic UI 1.36.x:
 - Cambios de API y componentes eliminados
 - Checklist de migración
 
+### [Checklist de Producción](production-checklist.html)
+Checklist completo antes de desplegar a producción:
+- Optimización de rendimiento
+- Mejores prácticas de seguridad
+- Cumplimiento de accesibilidad (WCAG 2.1 AA)
+- Manejo de errores y monitoreo
+
 ## Prerrequisitos
 
 Antes de comenzar, asegúrate de tener:
@@ -51,7 +58,7 @@ Si ya cumples con los prerrequisitos, puedes comenzar inmediatamente:
 
 ```bash
 # 1. Crear proyecto con plantilla Dynamic
-npx @modyo/cli@latest get dynamic-react-base-template mi-banco
+npx @modyo/cli@latest get dynamic-react-vite-base-template mi-banco
 
 # 2. Instalar dependencias
 cd mi-banco && npm install
@@ -74,9 +81,8 @@ Tu aplicación estará disponible en `http://localhost:8080` 🎉
 ### Para Desarrolladores con Experiencia
 
 1. Revisa la [Estructura del Proyecto](project-structure.html)
-2. Explora las [Experiencias Prediseñadas](../development/experiences.html)
-3. Aprende sobre [Personalización](../customization/)
-4. Implementa [Integraciones con APIs](../development/api-integration.html)
+2. Aprende sobre [Personalización](../customization/)
+3. Implementa [Integraciones con APIs](../development/api-integration.html)
 
 ## Recursos de Apoyo
 

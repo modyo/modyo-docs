@@ -183,28 +183,130 @@ function App() {
 
 ## Icon System
 
-Dynamic UI 2.0 uses [Lucide Icons](https://lucide.dev). Use the `DIcon` component:
+Dynamic UI 2.0 uses [Lucide Icons](https://lucide.dev), a modern, consistent icon library with 1000+ icons. Use the `DIcon` component to render icons.
 
 :::danger Critical: PascalCase Format Required
 Icons **must** use PascalCase format. Using kebab-case will show a "?" placeholder.
 :::
+
+### Basic Usage
 
 ```tsx
 import { DIcon } from '@dynamic-framework/ui-react';
 
 // ✅ Correct - PascalCase
 <DIcon icon="Check" />
-<DIcon icon="AlertCircle" size="lg" />
-<DIcon icon="ArrowRight" color="primary" />
+<DIcon icon="AlertCircle" />
+<DIcon icon="ArrowRight" />
 <DIcon icon="CreditCard" />
 
 // ❌ Wrong - kebab-case (will show "?")
 <DIcon icon="check" />
 <DIcon icon="alert-circle" />
-<DIcon icon="arrow-right" />
 ```
 
-Common icons: `Home`, `Settings`, `User`, `Search`, `Plus`, `Minus`, `Check`, `X`, `ChevronDown`, `ChevronRight`, `CreditCard`, `Calendar`, `Eye`, `EyeOff`, `Trash2`, `Pencil`
+### Icon Sizing
+
+Use the `size` prop to control icon dimensions:
+
+```tsx
+<DIcon icon="Home" size="sm" />   {/* Small */}
+<DIcon icon="Home" />              {/* Default */}
+<DIcon icon="Home" size="lg" />   {/* Large */}
+```
+
+For custom sizes, use the `style` prop:
+
+```tsx
+<DIcon icon="Home" style={{ width: 48, height: 48 }} />
+```
+
+### Icon Colors
+
+Icons inherit their color from the parent's `color` CSS property by default. Use the `color` prop for theme colors:
+
+```tsx
+<DIcon icon="Check" color="success" />
+<DIcon icon="X" color="danger" />
+<DIcon icon="AlertCircle" color="warning" />
+<DIcon icon="Info" color="info" />
+<DIcon icon="Star" color="primary" />
+```
+
+For custom colors, use CSS:
+
+```tsx
+<DIcon icon="Heart" style={{ color: '#e91e63' }} />
+```
+
+### Finding Icons
+
+Browse all available icons at [lucide.dev/icons](https://lucide.dev/icons). When you find an icon:
+
+1. Note the icon name (e.g., `arrow-right`)
+2. Convert to PascalCase (e.g., `ArrowRight`)
+3. Use in DIcon: `<DIcon icon="ArrowRight" />`
+
+### Icons by Category
+
+#### Navigation
+`Home`, `Menu`, `X`, `ChevronLeft`, `ChevronRight`, `ChevronUp`, `ChevronDown`, `ArrowLeft`, `ArrowRight`, `ExternalLink`, `MoreHorizontal`, `MoreVertical`
+
+#### Actions
+`Plus`, `Minus`, `Check`, `X`, `Edit`, `Pencil`, `Trash2`, `Copy`, `Download`, `Upload`, `Share`, `Send`, `Save`, `RefreshCw`
+
+#### User & Account
+`User`, `Users`, `UserPlus`, `UserMinus`, `UserCheck`, `LogIn`, `LogOut`, `Key`, `Lock`, `Unlock`, `Shield`, `Settings`
+
+#### Communication
+`Mail`, `MessageSquare`, `MessageCircle`, `Phone`, `Bell`, `BellOff`, `AtSign`
+
+#### Media
+`Image`, `Camera`, `Video`, `Play`, `Pause`, `Volume2`, `VolumeX`, `Mic`, `MicOff`
+
+#### Files & Data
+`File`, `FileText`, `Folder`, `FolderOpen`, `Archive`, `Clipboard`, `Database`
+
+#### Financial (Banking Apps)
+`CreditCard`, `Wallet`, `DollarSign`, `Banknote`, `PiggyBank`, `TrendingUp`, `TrendingDown`, `BarChart`, `PieChart`, `Receipt`, `Calculator`
+
+#### Status & Feedback
+`AlertCircle`, `AlertTriangle`, `Info`, `HelpCircle`, `CheckCircle`, `XCircle`, `Clock`, `Loader`
+
+#### Misc
+`Search`, `Filter`, `Calendar`, `MapPin`, `Globe`, `Link`, `Eye`, `EyeOff`, `Star`, `Heart`, `ThumbsUp`, `ThumbsDown`
+
+### Using DIconBase for Responsive Icons
+
+For icons that need to scale with viewport, use `DIconBase`:
+
+```tsx
+import { DIconBase } from '@dynamic-framework/ui-react';
+
+<DIconBase icon="CreditCard" responsiveSize />
+```
+
+### Icons in Buttons
+
+Use `DButtonIcon` for icon-only buttons with proper accessibility:
+
+```tsx
+import { DButtonIcon } from '@dynamic-framework/ui-react';
+
+<DButtonIcon icon="Pencil" ariaLabel="Edit item" />
+<DButtonIcon icon="Trash2" ariaLabel="Delete item" color="danger" />
+<DButtonIcon icon="Plus" ariaLabel="Add new" variant="outline" />
+```
+
+For buttons with both icon and text, use `DButton` with `iconStart` or `iconEnd`:
+
+```tsx
+import { DButton } from '@dynamic-framework/ui-react';
+
+<DButton iconStart="Plus">Add Account</DButton>
+<DButton iconEnd="ArrowRight">Continue</DButton>
+<DButton iconStart="Download" iconEnd="ChevronDown">Export</DButton>
+```
 
 ## DSelect Critical Usage Pattern
 
@@ -299,13 +401,33 @@ const [isOpen, setIsOpen] = useState(false);
 
 ## Accessibility
 
-All Dynamic Framework components comply with WCAG 2.1 level AA standards:
+Dynamic Framework components are designed with accessibility in mind and follow [WAI-ARIA](https://www.w3.org/WAI/ARIA/apg/) standards. However, the library cannot make your application fully accessible on its own—you must take action to ensure accessibility.
 
-- Complete **keyboard navigation**
-- **Screen reader** compatible
-- Adequate **color contrast**
-- Appropriate **ARIA labels**
-- Descriptive **error messages**
+### What the Components Provide
+
+| Component | Built-in Accessibility |
+|-----------|------------------------|
+| DInput | Connects label with input automatically via `id` |
+| DButton | Keyboard focus, `aria-busy` for loading states |
+| DModal | Focus trap, `aria-modal`, Escape to close |
+| DSelect | `aria-expanded`, arrow key navigation |
+| DAlert | `role="alert"` for screen reader announcements |
+
+### Your Responsibility
+
+You must provide the necessary props for full accessibility:
+
+- **Inputs**: Always provide `label` or `aria-label`
+- **Buttons**: Provide `text` or `aria-label` for icon-only buttons
+- **Images**: Always include descriptive `alt` text
+
+```tsx
+// ✅ Accessible input
+<DInput id="search" label="Search accounts" />
+
+// ✅ Accessible icon-only button
+<DButtonIcon icon="Trash2" ariaLabel="Delete item" />
+```
 
 ## Documentation and Support
 

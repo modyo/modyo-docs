@@ -286,6 +286,8 @@ module.exports = {
                           "/en/dynamic/getting-started/installation",
                           "/en/dynamic/getting-started/first-app",
                           "/en/dynamic/getting-started/project-structure",
+                          "/en/dynamic/getting-started/migration-v2",
+                          "/en/dynamic/getting-started/production-checklist",
                       ],
                   },
                   {
@@ -294,9 +296,6 @@ module.exports = {
                       collapsable: true,
                       children: [
                           "/en/dynamic/development/components",
-                          "/en/dynamic/development/experiences",
-                          "/en/dynamic/development/react-integration",
-                          "/en/dynamic/development/widgets",
                           "/en/dynamic/development/api-integration",
                       ],
                   },
@@ -306,7 +305,6 @@ module.exports = {
                       collapsable: true,
                       children: [
                           "/en/dynamic/customization/theming",
-                          "/en/dynamic/customization/styling",
                           "/en/dynamic/customization/extending",
                       ],
                   },
@@ -585,6 +583,8 @@ module.exports = {
                           "/es/dynamic/getting-started/installation",
                           "/es/dynamic/getting-started/first-app",
                           "/es/dynamic/getting-started/project-structure",
+                          "/es/dynamic/getting-started/migration-v2",
+                          "/es/dynamic/getting-started/production-checklist",
                       ],
                   },
                   {
@@ -593,9 +593,6 @@ module.exports = {
                       collapsable: true,
                       children: [
                           "/es/dynamic/development/components",
-                          "/es/dynamic/development/experiences",
-                          "/es/dynamic/development/react-integration",
-                          "/es/dynamic/development/widgets",
                           "/es/dynamic/development/api-integration",
                       ],
                   },
@@ -605,7 +602,6 @@ module.exports = {
                       collapsable: true,
                       children: [
                           "/es/dynamic/customization/theming",
-                          "/es/dynamic/customization/styling",
                           "/es/dynamic/customization/extending",
                       ],
                   },

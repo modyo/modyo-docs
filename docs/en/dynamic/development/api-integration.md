@@ -4,11 +4,9 @@ search: true
 
 # API Integration
 
-Learn how to connect your Dynamic Framework application with backend services, handle authentication, and optimize API calls.
+Learn how to connect your Dynamic Framework application with backend services using modern patterns and best practices.
 
 ## Recommended Stack
-
-Dynamic Framework recommends:
 
 | Library | Purpose | Version |
 |---------|---------|---------|
@@ -16,7 +14,7 @@ Dynamic Framework recommends:
 | **TanStack Query** | Server state management (caching, sync, updates) | ^5.x |
 
 :::tip Why TanStack Query?
-TanStack Query (formerly React Query) handles caching, background updates, stale data, and loading/error states automatically. Combined with Axios for the HTTP layer, this provides a robust data fetching solution.
+TanStack Query handles caching, background updates, stale data, and loading/error states automatically. Combined with Axios for the HTTP layer, this provides a robust data fetching solution without manual `useState` + `useEffect` patterns.
 :::
 
 ## Initial Setup
@@ -25,56 +23,39 @@ TanStack Query (formerly React Query) handles caching, background updates, stale
 
 Configure Axios as your HTTP client:
 
-```javascript
-// src/services/api/client.js
+```typescript
+// src/services/api/client.ts
 import axios from 'axios';
 
 const apiClient = axios.create({
-  baseURL: process.env.REACT_APP_API_URL || 'https://api.mydigitalbank.com',
+  baseURL: import.meta.env.VITE_API_BASE_URL,
   timeout: 30000,
   headers: {
     'Content-Type': 'application/json',
     'Accept': 'application/json',
-  }
+  },
 });
 
 // Request interceptor
 apiClient.interceptors.request.use(
   (config) => {
-    // Add authentication token
     const token = localStorage.getItem('authToken');
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
-    
-    // Add custom headers
-    config.headers['X-Request-ID'] = generateRequestId();
-    
     return config;
   },
-  (error) => {
-    return Promise.reject(error);
-  }
+  (error) => Promise.reject(error)
 );
 
-// Response interceptor
+// Response interceptor for error handling
 apiClient.interceptors.response.use(
-  (response) => {
-    // Process successful response
-    return response.data;
-  },
+  (response) => response,
   (error) => {
-    // Centralized error handling
     if (error.response?.status === 401) {
-      // Expired or invalid token
-      handleUnauthorized();
+      // Handle unauthorized - redirect to login or refresh token
+      window.location.href = '/login';
     }
-    
-    if (error.response?.status === 429) {
-      // Rate limiting
-      handleRateLimiting(error.response);
-    }
-    
     return Promise.reject(error);
   }
 );
@@ -82,598 +63,655 @@ apiClient.interceptors.response.use(
 export default apiClient;
 ```
 
-## Authentication
+### TanStack Query Setup
 
-### OAuth 2.0 / OpenID Connect
+Configure the QueryClient provider in your app:
 
-```javascript
-// src/services/auth/authService.js
-import { UserManager, WebStorageStateStore } from 'oidc-client';
+```tsx
+// src/providers/QueryProvider.tsx
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import type { ReactNode } from 'react';
 
-class AuthService {
-  constructor() {
-    this.userManager = new UserManager({
-      authority: process.env.REACT_APP_AUTH_URL,
-      client_id: process.env.REACT_APP_CLIENT_ID,
-      redirect_uri: `${window.location.origin}/callback`,
-      response_type: 'code',
-      scope: 'openid profile email api',
-      post_logout_redirect_uri: window.location.origin,
-      userStore: new WebStorageStateStore({ store: window.localStorage }),
-      automaticSilentRenew: true,
-      silent_redirect_uri: `${window.location.origin}/silent-renew.html`,
-    });
-  }
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 5 * 60 * 1000, // 5 minutes
+      gcTime: 10 * 60 * 1000, // 10 minutes (formerly cacheTime)
+      retry: 3,
+      refetchOnWindowFocus: false,
+    },
+  },
+});
 
-  async login() {
-    return this.userManager.signinRedirect();
-  }
-
-  async handleCallback() {
-    return this.userManager.signinRedirectCallback();
-  }
-
-  async logout() {
-    return this.userManager.signoutRedirect();
-  }
-
-  async getUser() {
-    return this.userManager.getUser();
-  }
-
-  async getAccessToken() {
-    const user = await this.getUser();
-    return user?.access_token;
-  }
-
-  async refreshToken() {
-    return this.userManager.signinSilent();
-  }
+interface QueryProviderProps {
+  children: ReactNode;
 }
 
-export default new AuthService();
+export function QueryProvider({ children }: QueryProviderProps) {
+  return (
+    <QueryClientProvider client={queryClient}>
+      {children}
+    </QueryClientProvider>
+  );
+}
 ```
 
-### JWT Token Management
+## Liquid Environment Pattern (Modyo Deployment)
 
-```javascript
-// src/services/auth/tokenManager.js
-class TokenManager {
-  constructor() {
-    this.tokenKey = 'auth_token';
-    this.refreshTokenKey = 'refresh_token';
-    this.expiryKey = 'token_expiry';
-  }
+When deploying React micro frontends to Modyo, you often need to pass runtime configuration from the platform to your application. This is achieved through Modyo's Liquid templating engine.
 
-  setTokens(accessToken, refreshToken, expiresIn) {
-    localStorage.setItem(this.tokenKey, accessToken);
-    localStorage.setItem(this.refreshTokenKey, refreshToken);
-    
-    const expiry = new Date().getTime() + (expiresIn * 1000);
-    localStorage.setItem(this.expiryKey, expiry);
-  }
+### Why Use Liquid for Configuration?
 
-  getAccessToken() {
-    return localStorage.getItem(this.tokenKey);
-  }
+- **Runtime configuration**: Values are injected at page render time, not build time
+- **Environment-specific**: Different values per Modyo site/environment without rebuilding
+- **Platform integration**: Access to Modyo user data, site settings, and custom variables
+- **Security**: Sensitive values stay server-side and are injected only when needed
 
-  getRefreshToken() {
-    return localStorage.getItem(this.refreshTokenKey);
-  }
+### Basic Pattern
 
-  isTokenExpired() {
-    const expiry = localStorage.getItem(this.expiryKey);
-    if (!expiry) return true;
-    
-    return new Date().getTime() > parseInt(expiry);
-  }
+In your Modyo page, wrap your widget with a configuration script:
 
-  async refreshAccessToken() {
-    const refreshToken = this.getRefreshToken();
-    if (!refreshToken) {
-      throw new Error('No refresh token available');
-    }
+::: v-pre
+```html
+<script>
+  window.widgetConfig = {
+    // API Configuration
+    apiBaseUrl: '{{site.variables.api_base_url}}',
+    apiKey: '{{site.variables.api_key}}',
 
-    const response = await fetch('/api/auth/refresh', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
+    // Environment
+    environment: '{{site.variables.environment | default: "production"}}',
+
+    // Feature flags
+    features: {
+      enableTransfers: {{site.variables.enable_transfers | default: true}},
+      enableInvestments: {{site.variables.enable_investments | default: false}},
+    },
+
+    // User context (when authenticated)
+    {% if user %}
+    user: {
+      id: '{{user.id}}',
+      email: '{{user.email}}',
+      name: '{{user.name}}',
+    },
+    {% endif %}
+
+    // Locale
+    locale: '{{site.language}}',
+  };
+</script>
+
+<!-- Your widget container -->
+<div id="dynamic-widget"></div>
+```
+:::
+
+### Accessing Configuration in React
+
+Create a configuration service to access these values safely:
+
+```typescript
+// src/config/widgetConfig.ts
+
+interface WidgetConfig {
+  apiBaseUrl: string;
+  apiKey: string;
+  environment: 'development' | 'staging' | 'production';
+  features: {
+    enableTransfers: boolean;
+    enableInvestments: boolean;
+  };
+  user?: {
+    id: string;
+    email: string;
+    name: string;
+  };
+  locale: string;
+}
+
+// Default configuration for local development
+const defaultConfig: WidgetConfig = {
+  apiBaseUrl: import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000/api',
+  apiKey: 'dev-key',
+  environment: 'development',
+  features: {
+    enableTransfers: true,
+    enableInvestments: true,
+  },
+  locale: 'en',
+};
+
+export function getWidgetConfig(): WidgetConfig {
+  const windowConfig = (window as Window & { widgetConfig?: Partial<WidgetConfig> }).widgetConfig;
+
+  if (windowConfig) {
+    return {
+      ...defaultConfig,
+      ...windowConfig,
+      features: {
+        ...defaultConfig.features,
+        ...windowConfig.features,
       },
-      body: JSON.stringify({ refreshToken }),
-    });
-
-    if (!response.ok) {
-      throw new Error('Failed to refresh token');
-    }
-
-    const data = await response.json();
-    this.setTokens(data.accessToken, data.refreshToken, data.expiresIn);
-    
-    return data.accessToken;
+    };
   }
 
-  clearTokens() {
-    localStorage.removeItem(this.tokenKey);
-    localStorage.removeItem(this.refreshTokenKey);
-    localStorage.removeItem(this.expiryKey);
+  return defaultConfig;
+}
+
+export const widgetConfig = getWidgetConfig();
+```
+
+### Using Configuration in Components
+
+```tsx
+import { widgetConfig } from '@/config/widgetConfig';
+import { DButton } from '@dynamic-framework/ui-react';
+
+function TransferButton() {
+  if (!widgetConfig.features.enableTransfers) {
+    return null;
+  }
+
+  return <DButton text="Make Transfer" />;
+}
+```
+
+### Available Liquid Variables
+
+::: v-pre
+| Variable | Description | Example |
+|----------|-------------|---------|
+| `{{site.variables.X}}` | Custom site variables | `{{site.variables.api_url}}` |
+| `{{site.language}}` | Current site language | `en`, `es` |
+| `{{site.name}}` | Site name | `My Bank` |
+| `{{user.id}}` | Authenticated user ID | `12345` |
+| `{{user.email}}` | User email | `user@example.com` |
+| `{{user.name}}` | User display name | `John Doe` |
+| `{{user.access_token}}` | OAuth access token | (JWT string) |
+:::
+
+:::warning Security Considerations
+- Never expose sensitive API keys in client-side JavaScript
+- Use <code v-pre>{{user.access_token}}</code> only over HTTPS
+- Validate all Liquid-injected values in your application
+- Consider using Modyo's backend proxy for sensitive operations
+:::
+
+### TypeScript Integration
+
+For full type safety, declare the global window config:
+
+```typescript
+// src/types/global.d.ts
+declare global {
+  interface Window {
+    widgetConfig?: {
+      apiBaseUrl: string;
+      apiKey: string;
+      environment: string;
+      features: Record<string, boolean>;
+      user?: {
+        id: string;
+        email: string;
+        name: string;
+      };
+      locale: string;
+    };
   }
 }
 
-export default new TokenManager();
+export {};
 ```
 
-## Data Services
+## Repository Pattern
 
-### Account Service
+Use the repository pattern to encapsulate API calls with proper TypeScript types and AbortSignal support for cancellation.
 
-```javascript
-// src/services/accounts/accountService.js
-import apiClient from '../api/client';
+### Account Repository
 
-class AccountService {
-  async getAccounts() {
-    return apiClient.get('/accounts');
-  }
+```typescript
+// src/repositories/accountRepository.ts
+import apiClient from '@/services/api/client';
 
-  async getAccountById(accountId) {
-    return apiClient.get(`/accounts/${accountId}`);
-  }
-
-  async getAccountBalance(accountId) {
-    return apiClient.get(`/accounts/${accountId}/balance`);
-  }
-
-  async getAccountTransactions(accountId, params = {}) {
-    return apiClient.get(`/accounts/${accountId}/transactions`, { params });
-  }
-
-  async updateAccount(accountId, data) {
-    return apiClient.put(`/accounts/${accountId}`, data);
-  }
-
-  async closeAccount(accountId, reason) {
-    return apiClient.post(`/accounts/${accountId}/close`, { reason });
-  }
+export interface Account {
+  id: string;
+  name: string;
+  balance: number;
+  currency: string;
+  type: 'checking' | 'savings';
 }
 
-export default new AccountService();
-```
-
-### Transfer Service
-
-```javascript
-// src/services/transfers/transferService.js
-import apiClient from '../api/client';
-
-class TransferService {
-  async validateTransfer(data) {
-    return apiClient.post('/transfers/validate', data);
-  }
-
-  async createTransfer(data) {
-    return apiClient.post('/transfers', data);
-  }
-
-  async getTransferStatus(transferId) {
-    return apiClient.get(`/transfers/${transferId}/status`);
-  }
-
-  async getTransferHistory(params = {}) {
-    return apiClient.get('/transfers/history', { params });
-  }
-
-  async cancelTransfer(transferId, reason) {
-    return apiClient.post(`/transfers/${transferId}/cancel`, { reason });
-  }
-
-  async scheduleTransfer(data) {
-    return apiClient.post('/transfers/schedule', data);
-  }
+export async function getAccounts(signal?: AbortSignal): Promise<Account[]> {
+  const response = await apiClient.get<Account[]>('/accounts', { signal });
+  return response.data;
 }
 
-export default new TransferService();
+export async function getAccountById(
+  accountId: string,
+  signal?: AbortSignal
+): Promise<Account> {
+  const response = await apiClient.get<Account>(`/accounts/${accountId}`, { signal });
+  return response.data;
+}
+
+export async function getAccountBalance(
+  accountId: string,
+  signal?: AbortSignal
+): Promise<{ balance: number; currency: string }> {
+  const response = await apiClient.get(`/accounts/${accountId}/balance`, { signal });
+  return response.data;
+}
 ```
 
-## Custom Hooks (Implementation Patterns)
+### Transfer Repository
+
+```typescript
+// src/repositories/transferRepository.ts
+import apiClient from '@/services/api/client';
+
+export interface Transfer {
+  id: string;
+  fromAccountId: string;
+  toAccountId: string;
+  amount: number;
+  currency: string;
+  status: 'pending' | 'completed' | 'failed';
+  createdAt: string;
+}
+
+export interface CreateTransferRequest {
+  fromAccountId: string;
+  toAccountId: string;
+  amount: number;
+  description?: string;
+}
+
+export async function createTransfer(
+  data: CreateTransferRequest,
+  signal?: AbortSignal
+): Promise<Transfer> {
+  const response = await apiClient.post<Transfer>('/transfers', data, { signal });
+  return response.data;
+}
+
+export async function getTransferHistory(
+  params?: { limit?: number; offset?: number },
+  signal?: AbortSignal
+): Promise<Transfer[]> {
+  const response = await apiClient.get<Transfer[]>('/transfers', { params, signal });
+  return response.data;
+}
+```
+
+## TanStack Query Hooks
+
+Create hooks that use TanStack Query v5 with the repository functions.
 
 :::warning These are patterns, not library exports
 The hooks below are **examples of how to implement** data fetching in your application. They are NOT exported from `@dynamic-framework/ui-react`. You need to create them in your project.
 :::
 
-### useApi Hook (Basic Pattern)
+### useAccounts Hook
 
-```javascript
-// src/hooks/useApi.js
-import { useState, useEffect, useCallback } from 'react';
+```typescript
+// src/hooks/useAccounts.ts
+import { useQuery } from '@tanstack/react-query';
+import { getAccounts, getAccountById } from '@/repositories/accountRepository';
 
-export const useApi = (apiFunction, immediate = true) => {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(immediate);
-  const [error, setError] = useState(null);
+export function useAccounts() {
+  return useQuery({
+    queryKey: ['accounts'],
+    queryFn: ({ signal }) => getAccounts(signal),
+  });
+}
 
-  const execute = useCallback(async (...params) => {
-    setLoading(true);
-    setError(null);
-    
-    try {
-      const result = await apiFunction(...params);
-      setData(result);
-      return result;
-    } catch (err) {
-      setError(err);
-      throw err;
-    } finally {
-      setLoading(false);
-    }
-  }, [apiFunction]);
-
-  useEffect(() => {
-    if (immediate) {
-      execute();
-    }
-  }, [execute, immediate]);
-
-  return { data, loading, error, execute, refetch: execute };
-};
+export function useAccount(accountId: string) {
+  return useQuery({
+    queryKey: ['accounts', accountId],
+    queryFn: ({ signal }) => getAccountById(accountId, signal),
+    enabled: Boolean(accountId),
+  });
+}
 ```
 
-### useAccounts Hook (TanStack Query Pattern)
+### useTransfers Hook
 
-```javascript
-// src/hooks/useAccounts.js
+```typescript
+// src/hooks/useTransfers.ts
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import accountService from '../services/accounts/accountService';
+import {
+  getTransferHistory,
+  createTransfer,
+  type CreateTransferRequest,
+} from '@/repositories/transferRepository';
 
-export const useAccounts = () => {
-  return useQuery(
-    'accounts',
-    () => accountService.getAccounts(),
-    {
-      staleTime: 5 * 60 * 1000, // 5 minutes
-      cacheTime: 10 * 60 * 1000, // 10 minutes
-      retry: 3,
-      retryDelay: attemptIndex => Math.min(1000 * 2 ** attemptIndex, 30000),
-    }
-  );
-};
+export function useTransferHistory() {
+  return useQuery({
+    queryKey: ['transfers'],
+    queryFn: ({ signal }) => getTransferHistory(undefined, signal),
+  });
+}
 
-export const useAccountBalance = (accountId) => {
-  return useQuery(
-    ['account-balance', accountId],
-    () => accountService.getAccountBalance(accountId),
-    {
-      enabled: !!accountId,
-      refetchInterval: 30000, // Update every 30 seconds
-    }
-  );
-};
-
-export const useUpdateAccount = () => {
+export function useCreateTransfer() {
   const queryClient = useQueryClient();
-  
-  return useMutation(
-    ({ accountId, data }) => accountService.updateAccount(accountId, data),
-    {
-      onSuccess: () => {
-        queryClient.invalidateQueries('accounts');
-      },
-    }
+
+  return useMutation({
+    mutationFn: (data: CreateTransferRequest) => createTransfer(data),
+    onSuccess: () => {
+      // Invalidate related queries to refetch fresh data
+      queryClient.invalidateQueries({ queryKey: ['accounts'] });
+      queryClient.invalidateQueries({ queryKey: ['transfers'] });
+    },
+  });
+}
+```
+
+### Usage in Components
+
+```tsx
+// src/components/AccountList.tsx
+import { useAccounts } from '@/hooks/useAccounts';
+import { DCard, DCurrencyText, DAlert } from '@dynamic-framework/ui-react';
+
+export function AccountList() {
+  const { data: accounts, isLoading, error } = useAccounts();
+
+  if (isLoading) {
+    return <div>Loading accounts...</div>;
+  }
+
+  if (error) {
+    return (
+      <DAlert type="error">
+        Failed to load accounts: {error.message}
+      </DAlert>
+    );
+  }
+
+  return (
+    <div className="d-flex flex-column gap-3">
+      {accounts?.map((account) => (
+        <DCard key={account.id}>
+          <DCard.Body>
+            <h5>{account.name}</h5>
+            <DCurrencyText value={account.balance} />
+          </DCard.Body>
+        </DCard>
+      ))}
+    </div>
   );
-};
+}
+```
+
+## Authentication
+
+### OAuth 2.0 with oidc-client-ts
+
+```typescript
+// src/services/auth/authService.ts
+import { UserManager, WebStorageStateStore, type User } from 'oidc-client-ts';
+
+const userManager = new UserManager({
+  authority: import.meta.env.VITE_AUTH_URL,
+  client_id: import.meta.env.VITE_CLIENT_ID,
+  redirect_uri: `${window.location.origin}/callback`,
+  response_type: 'code',
+  scope: 'openid profile email',
+  post_logout_redirect_uri: window.location.origin,
+  userStore: new WebStorageStateStore({ store: window.sessionStorage }),
+  automaticSilentRenew: true,
+});
+
+export async function login(): Promise<void> {
+  await userManager.signinRedirect();
+}
+
+export async function handleCallback(): Promise<User> {
+  return userManager.signinRedirectCallback();
+}
+
+export async function logout(): Promise<void> {
+  await userManager.signoutRedirect();
+}
+
+export async function getUser(): Promise<User | null> {
+  return userManager.getUser();
+}
+
+export async function getAccessToken(): Promise<string | null> {
+  const user = await getUser();
+  return user?.access_token ?? null;
+}
+```
+
+### Auth Hook
+
+```typescript
+// src/hooks/useAuth.ts
+import { useQuery, useQueryClient } from '@tanstack/react-query';
+import { getUser, login, logout } from '@/services/auth/authService';
+
+export function useAuth() {
+  const queryClient = useQueryClient();
+
+  const { data: user, isLoading } = useQuery({
+    queryKey: ['auth', 'user'],
+    queryFn: getUser,
+    staleTime: Infinity,
+  });
+
+  const handleLogin = async () => {
+    await login();
+  };
+
+  const handleLogout = async () => {
+    await logout();
+    queryClient.clear();
+  };
+
+  return {
+    user,
+    isLoading,
+    isAuthenticated: Boolean(user),
+    login: handleLogin,
+    logout: handleLogout,
+  };
+}
 ```
 
 ## Error Handling
 
-### Global Error Handler
+### Centralized Error Handler
 
-```javascript
-// src/services/api/errorHandler.js
-class ErrorHandler {
-  constructor() {
-    this.errorHandlers = new Map();
-    this.setupDefaultHandlers();
-  }
+```typescript
+// src/services/api/errorHandler.ts
+import type { AxiosError } from 'axios';
 
-  setupDefaultHandlers() {
-    // Network errors
-    this.registerHandler('NetworkError', (error) => {
-      console.error('Network error:', error);
-      this.showNotification('Connection error. Please check your internet.');
-    });
-
-    // Validation errors
-    this.registerHandler('ValidationError', (error) => {
-      const messages = error.response?.data?.errors || [];
-      messages.forEach(msg => this.showNotification(msg, 'warning'));
-    });
-
-    // Server errors
-    this.registerHandler('ServerError', (error) => {
-      console.error('Server error:', error);
-      this.showNotification('Server error. Please try again later.');
-    });
-
-    // Rate limiting
-    this.registerHandler('RateLimitError', (error) => {
-      const retryAfter = error.response?.headers['retry-after'];
-      this.showNotification(`Too many requests. Try again in ${retryAfter} seconds.`);
-    });
-  }
-
-  registerHandler(errorType, handler) {
-    this.errorHandlers.set(errorType, handler);
-  }
-
-  handle(error) {
-    const errorType = this.getErrorType(error);
-    const handler = this.errorHandlers.get(errorType);
-    
-    if (handler) {
-      handler(error);
-    } else {
-      this.handleUnknownError(error);
-    }
-  }
-
-  getErrorType(error) {
-    if (!error.response) return 'NetworkError';
-    
-    const status = error.response.status;
-    if (status === 400) return 'ValidationError';
-    if (status === 429) return 'RateLimitError';
-    if (status >= 500) return 'ServerError';
-    
-    return 'UnknownError';
-  }
-
-  handleUnknownError(error) {
-    console.error('Unknown error:', error);
-    this.showNotification('An unexpected error has occurred.');
-  }
-
-  showNotification(message, type = 'error') {
-    // Implement according to your notification system
-    console.log(`[${type}] ${message}`);
-  }
+interface ApiError {
+  message: string;
+  code?: string;
+  details?: Record<string, string[]>;
 }
 
-export default new ErrorHandler();
+export function handleApiError(error: AxiosError<ApiError>): string {
+  if (!error.response) {
+    return 'Network error. Please check your connection.';
+  }
+
+  const { status, data } = error.response;
+
+  switch (status) {
+    case 400:
+      return data?.message || 'Invalid request. Please check your input.';
+    case 401:
+      return 'Session expired. Please log in again.';
+    case 403:
+      return 'You do not have permission to perform this action.';
+    case 404:
+      return 'The requested resource was not found.';
+    case 429:
+      return 'Too many requests. Please try again later.';
+    case 500:
+    default:
+      return 'An unexpected error occurred. Please try again.';
+  }
+}
 ```
 
-## Optimization and Caching
+### Error Boundary with TanStack Query
 
-### TanStack Query Setup
+```tsx
+// src/components/QueryErrorBoundary.tsx
+import { QueryErrorResetBoundary } from '@tanstack/react-query';
+import { ErrorBoundary } from 'react-error-boundary';
+import { DButton, DAlert } from '@dynamic-framework/ui-react';
+import type { ReactNode } from 'react';
 
-```javascript
-// src/providers/QueryProvider.tsx
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+interface Props {
+  children: ReactNode;
+}
 
-export const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      staleTime: 5 * 60 * 1000, // 5 minutes
-      cacheTime: 10 * 60 * 1000, // 10 minutes
-      retry: 3,
-      refetchOnWindowFocus: false,
-      refetchOnReconnect: 'always',
-    },
-    mutations: {
-      retry: 1,
-    },
+export function QueryErrorBoundary({ children }: Props) {
+  return (
+    <QueryErrorResetBoundary>
+      {({ reset }) => (
+        <ErrorBoundary
+          onReset={reset}
+          fallbackRender={({ error, resetErrorBoundary }) => (
+            <DAlert type="error">
+              <p>{error.message}</p>
+              <DButton
+                text="Try again"
+                variant="outline"
+                onClick={resetErrorBoundary}
+              />
+            </DAlert>
+          )}
+        >
+          {children}
+        </ErrorBoundary>
+      )}
+    </QueryErrorResetBoundary>
+  );
+}
+```
+
+## API Testing with MSW
+
+Use Mock Service Worker (MSW) v2 for API mocking during development and testing.
+
+### Setup Handlers
+
+```typescript
+// src/mocks/handlers.ts
+import { http, HttpResponse } from 'msw';
+import type { Account } from '@/repositories/accountRepository';
+
+const mockAccounts: Account[] = [
+  {
+    id: '1',
+    name: 'Checking Account',
+    balance: 125430.0,
+    currency: 'USD',
+    type: 'checking',
   },
-});
-```
-
-### Cache with Service Worker
-
-```javascript
-// src/serviceWorker/apiCache.js
-self.addEventListener('fetch', (event) => {
-  const { request } = event;
-  const url = new URL(request.url);
-
-  // Cache only GET calls to the API
-  if (request.method === 'GET' && url.pathname.startsWith('/api/')) {
-    event.respondWith(
-      caches.open('api-cache-v1').then(async (cache) => {
-        const cachedResponse = await cache.match(request);
-        
-        if (cachedResponse) {
-          // Return from cache and update in background
-          const fetchPromise = fetch(request).then((networkResponse) => {
-            cache.put(request, networkResponse.clone());
-            return networkResponse;
-          });
-          
-          return cachedResponse;
-        }
-        
-        // If not in cache, fetch
-        const networkResponse = await fetch(request);
-        cache.put(request, networkResponse.clone());
-        return networkResponse;
-      })
-    );
-  }
-});
-```
-
-## WebSockets and Real Time
-
-### Socket.io Integration
-
-```javascript
-// src/services/realtime/socketService.js
-import io from 'socket.io-client';
-
-class SocketService {
-  constructor() {
-    this.socket = null;
-    this.listeners = new Map();
-  }
-
-  connect(token) {
-    this.socket = io(process.env.REACT_APP_SOCKET_URL, {
-      auth: { token },
-      transports: ['websocket'],
-      reconnection: true,
-      reconnectionAttempts: 5,
-      reconnectionDelay: 1000,
-    });
-
-    this.socket.on('connect', () => {
-      console.log('Socket connected');
-      this.emit('subscribe', { channels: ['accounts', 'transactions'] });
-    });
-
-    this.socket.on('disconnect', (reason) => {
-      console.log('Socket disconnected:', reason);
-    });
-
-    this.setupEventListeners();
-  }
-
-  setupEventListeners() {
-    // Balance updates
-    this.on('balance:update', (data) => {
-      this.notifyListeners('balanceUpdate', data);
-    });
-
-    // Transaction notifications
-    this.on('transaction:new', (data) => {
-      this.notifyListeners('newTransaction', data);
-    });
-
-    // System alerts
-    this.on('alert:system', (data) => {
-      this.notifyListeners('systemAlert', data);
-    });
-  }
-
-  on(event, callback) {
-    if (this.socket) {
-      this.socket.on(event, callback);
-    }
-  }
-
-  emit(event, data) {
-    if (this.socket) {
-      this.socket.emit(event, data);
-    }
-  }
-
-  subscribe(event, callback) {
-    if (!this.listeners.has(event)) {
-      this.listeners.set(event, new Set());
-    }
-    this.listeners.get(event).add(callback);
-  }
-
-  unsubscribe(event, callback) {
-    if (this.listeners.has(event)) {
-      this.listeners.get(event).delete(callback);
-    }
-  }
-
-  notifyListeners(event, data) {
-    if (this.listeners.has(event)) {
-      this.listeners.get(event).forEach(callback => callback(data));
-    }
-  }
-
-  disconnect() {
-    if (this.socket) {
-      this.socket.disconnect();
-      this.socket = null;
-    }
-  }
-}
-
-export default new SocketService();
-```
-
-## API Testing
-
-### Mock Service Worker
-
-```javascript
-// src/mocks/handlers.js
-import { rest } from 'msw';
+  {
+    id: '2',
+    name: 'Savings Account',
+    balance: 45200.0,
+    currency: 'USD',
+    type: 'savings',
+  },
+];
 
 export const handlers = [
-  rest.get('/api/accounts', (req, res, ctx) => {
-    return res(
-      ctx.status(200),
-      ctx.json([
-        {
-          id: '1',
-          name: 'Checking Account',
-          balance: 125430.00,
-          currency: 'USD',
-        },
-        {
-          id: '2',
-          name: 'Savings Account',
-          balance: 45200.00,
-          currency: 'USD',
-        },
-      ])
-    );
+  http.get('/api/accounts', () => {
+    return HttpResponse.json(mockAccounts);
   }),
 
-  rest.post('/api/transfers', (req, res, ctx) => {
-    const { amount } = req.body;
-    
-    if (amount > 100000) {
-      return res(
-        ctx.status(400),
-        ctx.json({
-          error: 'Amount exceeds maximum limit',
-        })
+  http.get('/api/accounts/:id', ({ params }) => {
+    const account = mockAccounts.find((a) => a.id === params.id);
+    if (!account) {
+      return new HttpResponse(null, { status: 404 });
+    }
+    return HttpResponse.json(account);
+  }),
+
+  http.post('/api/transfers', async ({ request }) => {
+    const body = await request.json() as { amount: number };
+
+    if (body.amount > 100000) {
+      return HttpResponse.json(
+        { message: 'Amount exceeds maximum limit' },
+        { status: 400 }
       );
     }
-    
-    return res(
-      ctx.status(201),
-      ctx.json({
+
+    return HttpResponse.json(
+      {
         id: 'transfer-123',
         status: 'completed',
-        amount,
-      })
+        ...body,
+      },
+      { status: 201 }
     );
   }),
 ];
 ```
 
+### Browser Setup
+
+```typescript
+// src/mocks/browser.ts
+import { setupWorker } from 'msw/browser';
+import { handlers } from './handlers';
+
+export const worker = setupWorker(...handlers);
+```
+
+### Initialize in Development
+
+```typescript
+// src/main.tsx
+async function enableMocking() {
+  if (import.meta.env.DEV) {
+    const { worker } = await import('./mocks/browser');
+    return worker.start({ onUnhandledRequest: 'bypass' });
+  }
+}
+
+enableMocking().then(() => {
+  // Render your app
+});
+```
+
 ## Best Practices
 
-### 1. Security
-- Never store tokens in localStorage for sensitive applications
-- Use httpOnly cookies when possible
-- Implement CSRF protection
-- Validate all inputs on client and server
-
-### 2. Performance
-- Implement pagination for large lists
-- Use debounce for searches
-- Cache responses when appropriate
-- Implement lazy loading of data
-
-### 3. State Management
+### 1. State Management
 - Use **TanStack Query** for server state (API data)
 - Use **Zustand** for UI state (filters, selections, modals)
-- Keep React Context for framework-specific state (DContext)
 - Never mix server state with UI state
 
-### 4. Monitoring
-- Log all failed API calls
-- Implement performance metrics
-- Use correlation IDs for tracking
+### 2. Security
+- Store tokens in `sessionStorage` or httpOnly cookies, not `localStorage`
+- Always validate inputs on both client and server
+- Use HTTPS in production
+
+### 3. Performance
+- Use query keys that reflect the data hierarchy
+- Implement pagination for large lists
+- Use `enabled` option to prevent unnecessary requests
+
+### 4. TypeScript
+- Define interfaces for all API responses
+- Use generics with Axios for type-safe responses
+- Export types from repositories for reuse
 
 ## Resources
 
 - [Axios Documentation](https://axios-http.com)
-- [TanStack Query Docs](https://tanstack.com/query/latest)
+- [TanStack Query v5 Docs](https://tanstack.com/query/latest)
 - [Zustand Documentation](https://zustand-demo.pmnd.rs/)
-- [Socket.io Guide](https://socket.io/docs)
-- [MSW Documentation](https://mswjs.io)
+- [MSW v2 Documentation](https://mswjs.io)
+- [oidc-client-ts](https://github.com/authts/oidc-client-ts)

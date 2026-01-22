@@ -4,11 +4,9 @@ search: true
 
 # Integración con APIs
 
-Aprende cómo conectar tu aplicación Dynamic Framework con servicios backend, manejar autenticación, y optimizar las llamadas a APIs.
+Aprende cómo conectar tu aplicación Dynamic Framework con servicios backend usando patrones modernos y mejores prácticas.
 
 ## Stack Recomendado
-
-Dynamic Framework recomienda:
 
 | Librería | Propósito | Versión |
 |----------|-----------|---------|
@@ -16,7 +14,7 @@ Dynamic Framework recomienda:
 | **TanStack Query** | Gestión de estado del servidor (caché, sync, updates) | ^5.x |
 
 :::tip ¿Por qué TanStack Query?
-TanStack Query (anteriormente React Query) maneja caché, actualizaciones en background, datos obsoletos, y estados de loading/error automáticamente. Combinado con Axios para la capa HTTP, proporciona una solución robusta de data fetching.
+TanStack Query maneja caché, actualizaciones en background, datos obsoletos, y estados de loading/error automáticamente. Combinado con Axios para la capa HTTP, proporciona una solución robusta de data fetching sin patrones manuales de `useState` + `useEffect`.
 :::
 
 ## Configuración Inicial
@@ -25,56 +23,39 @@ TanStack Query (anteriormente React Query) maneja caché, actualizaciones en bac
 
 Configura Axios como tu cliente HTTP:
 
-```javascript
-// src/services/api/client.js
+```typescript
+// src/services/api/client.ts
 import axios from 'axios';
 
 const apiClient = axios.create({
-  baseURL: process.env.REACT_APP_API_URL || 'https://api.mibancodigital.com',
+  baseURL: import.meta.env.VITE_API_BASE_URL,
   timeout: 30000,
   headers: {
     'Content-Type': 'application/json',
     'Accept': 'application/json',
-  }
+  },
 });
 
 // Request interceptor
 apiClient.interceptors.request.use(
   (config) => {
-    // Agregar token de autenticación
     const token = localStorage.getItem('authToken');
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
-    
-    // Agregar headers personalizados
-    config.headers['X-Request-ID'] = generateRequestId();
-    
     return config;
   },
-  (error) => {
-    return Promise.reject(error);
-  }
+  (error) => Promise.reject(error)
 );
 
-// Response interceptor
+// Response interceptor para manejo de errores
 apiClient.interceptors.response.use(
-  (response) => {
-    // Procesar respuesta exitosa
-    return response.data;
-  },
+  (response) => response,
   (error) => {
-    // Manejo centralizado de errores
     if (error.response?.status === 401) {
-      // Token expirado o inválido
-      handleUnauthorized();
+      // Manejar no autorizado - redirigir a login o refrescar token
+      window.location.href = '/login';
     }
-    
-    if (error.response?.status === 429) {
-      // Rate limiting
-      handleRateLimiting(error.response);
-    }
-    
     return Promise.reject(error);
   }
 );
@@ -82,598 +63,655 @@ apiClient.interceptors.response.use(
 export default apiClient;
 ```
 
-## Autenticación
+### Configuración de TanStack Query
 
-### OAuth 2.0 / OpenID Connect
+Configura el QueryClient provider en tu aplicación:
 
-```javascript
-// src/services/auth/authService.js
-import { UserManager, WebStorageStateStore } from 'oidc-client';
+```tsx
+// src/providers/QueryProvider.tsx
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import type { ReactNode } from 'react';
 
-class AuthService {
-  constructor() {
-    this.userManager = new UserManager({
-      authority: process.env.REACT_APP_AUTH_URL,
-      client_id: process.env.REACT_APP_CLIENT_ID,
-      redirect_uri: `${window.location.origin}/callback`,
-      response_type: 'code',
-      scope: 'openid profile email api',
-      post_logout_redirect_uri: window.location.origin,
-      userStore: new WebStorageStateStore({ store: window.localStorage }),
-      automaticSilentRenew: true,
-      silent_redirect_uri: `${window.location.origin}/silent-renew.html`,
-    });
-  }
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 5 * 60 * 1000, // 5 minutos
+      gcTime: 10 * 60 * 1000, // 10 minutos (anteriormente cacheTime)
+      retry: 3,
+      refetchOnWindowFocus: false,
+    },
+  },
+});
 
-  async login() {
-    return this.userManager.signinRedirect();
-  }
-
-  async handleCallback() {
-    return this.userManager.signinRedirectCallback();
-  }
-
-  async logout() {
-    return this.userManager.signoutRedirect();
-  }
-
-  async getUser() {
-    return this.userManager.getUser();
-  }
-
-  async getAccessToken() {
-    const user = await this.getUser();
-    return user?.access_token;
-  }
-
-  async refreshToken() {
-    return this.userManager.signinSilent();
-  }
+interface QueryProviderProps {
+  children: ReactNode;
 }
 
-export default new AuthService();
+export function QueryProvider({ children }: QueryProviderProps) {
+  return (
+    <QueryClientProvider client={queryClient}>
+      {children}
+    </QueryClientProvider>
+  );
+}
 ```
 
-### JWT Token Management
+## Patrón de Configuración con Liquid (Despliegue en Modyo)
 
-```javascript
-// src/services/auth/tokenManager.js
-class TokenManager {
-  constructor() {
-    this.tokenKey = 'auth_token';
-    this.refreshTokenKey = 'refresh_token';
-    this.expiryKey = 'token_expiry';
-  }
+Al desplegar micro frontends React en Modyo, frecuentemente necesitas pasar configuración en tiempo de ejecución desde la plataforma a tu aplicación. Esto se logra a través del motor de plantillas Liquid de Modyo.
 
-  setTokens(accessToken, refreshToken, expiresIn) {
-    localStorage.setItem(this.tokenKey, accessToken);
-    localStorage.setItem(this.refreshTokenKey, refreshToken);
-    
-    const expiry = new Date().getTime() + (expiresIn * 1000);
-    localStorage.setItem(this.expiryKey, expiry);
-  }
+### ¿Por qué usar Liquid para Configuración?
 
-  getAccessToken() {
-    return localStorage.getItem(this.tokenKey);
-  }
+- **Configuración en runtime**: Los valores se inyectan al renderizar la página, no al compilar
+- **Específico por ambiente**: Diferentes valores por sitio/ambiente Modyo sin recompilar
+- **Integración con la plataforma**: Acceso a datos de usuario, configuración del sitio y variables personalizadas
+- **Seguridad**: Los valores sensibles permanecen en el servidor y se inyectan solo cuando es necesario
 
-  getRefreshToken() {
-    return localStorage.getItem(this.refreshTokenKey);
-  }
+### Patrón Básico
 
-  isTokenExpired() {
-    const expiry = localStorage.getItem(this.expiryKey);
-    if (!expiry) return true;
-    
-    return new Date().getTime() > parseInt(expiry);
-  }
+En tu página Modyo, envuelve tu widget con un script de configuración:
 
-  async refreshAccessToken() {
-    const refreshToken = this.getRefreshToken();
-    if (!refreshToken) {
-      throw new Error('No refresh token available');
-    }
+::: v-pre
+```html
+<script>
+  window.widgetConfig = {
+    // Configuración de API
+    apiBaseUrl: '{{site.variables.api_base_url}}',
+    apiKey: '{{site.variables.api_key}}',
 
-    const response = await fetch('/api/auth/refresh', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
+    // Ambiente
+    environment: '{{site.variables.environment | default: "production"}}',
+
+    // Feature flags
+    features: {
+      enableTransfers: {{site.variables.enable_transfers | default: true}},
+      enableInvestments: {{site.variables.enable_investments | default: false}},
+    },
+
+    // Contexto de usuario (cuando está autenticado)
+    {% if user %}
+    user: {
+      id: '{{user.id}}',
+      email: '{{user.email}}',
+      name: '{{user.name}}',
+    },
+    {% endif %}
+
+    // Idioma
+    locale: '{{site.language}}',
+  };
+</script>
+
+<!-- Contenedor de tu widget -->
+<div id="dynamic-widget"></div>
+```
+:::
+
+### Accediendo a la Configuración en React
+
+Crea un servicio de configuración para acceder a estos valores de forma segura:
+
+```typescript
+// src/config/widgetConfig.ts
+
+interface WidgetConfig {
+  apiBaseUrl: string;
+  apiKey: string;
+  environment: 'development' | 'staging' | 'production';
+  features: {
+    enableTransfers: boolean;
+    enableInvestments: boolean;
+  };
+  user?: {
+    id: string;
+    email: string;
+    name: string;
+  };
+  locale: string;
+}
+
+// Configuración por defecto para desarrollo local
+const defaultConfig: WidgetConfig = {
+  apiBaseUrl: import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000/api',
+  apiKey: 'dev-key',
+  environment: 'development',
+  features: {
+    enableTransfers: true,
+    enableInvestments: true,
+  },
+  locale: 'es',
+};
+
+export function getWidgetConfig(): WidgetConfig {
+  const windowConfig = (window as Window & { widgetConfig?: Partial<WidgetConfig> }).widgetConfig;
+
+  if (windowConfig) {
+    return {
+      ...defaultConfig,
+      ...windowConfig,
+      features: {
+        ...defaultConfig.features,
+        ...windowConfig.features,
       },
-      body: JSON.stringify({ refreshToken }),
-    });
-
-    if (!response.ok) {
-      throw new Error('Failed to refresh token');
-    }
-
-    const data = await response.json();
-    this.setTokens(data.accessToken, data.refreshToken, data.expiresIn);
-    
-    return data.accessToken;
+    };
   }
 
-  clearTokens() {
-    localStorage.removeItem(this.tokenKey);
-    localStorage.removeItem(this.refreshTokenKey);
-    localStorage.removeItem(this.expiryKey);
+  return defaultConfig;
+}
+
+export const widgetConfig = getWidgetConfig();
+```
+
+### Usando la Configuración en Componentes
+
+```tsx
+import { widgetConfig } from '@/config/widgetConfig';
+import { DButton } from '@dynamic-framework/ui-react';
+
+function TransferButton() {
+  if (!widgetConfig.features.enableTransfers) {
+    return null;
+  }
+
+  return <DButton text="Realizar Transferencia" />;
+}
+```
+
+### Variables Liquid Disponibles
+
+::: v-pre
+| Variable | Descripción | Ejemplo |
+|----------|-------------|---------|
+| `{{site.variables.X}}` | Variables personalizadas del sitio | `{{site.variables.api_url}}` |
+| `{{site.language}}` | Idioma actual del sitio | `en`, `es` |
+| `{{site.name}}` | Nombre del sitio | `Mi Banco` |
+| `{{user.id}}` | ID del usuario autenticado | `12345` |
+| `{{user.email}}` | Email del usuario | `usuario@ejemplo.com` |
+| `{{user.name}}` | Nombre del usuario | `Juan Pérez` |
+| `{{user.access_token}}` | Token de acceso OAuth | (cadena JWT) |
+:::
+
+:::warning Consideraciones de Seguridad
+- Nunca expongas API keys sensibles en JavaScript del cliente
+- Usa <code v-pre>{{user.access_token}}</code> solo sobre HTTPS
+- Valida todos los valores inyectados por Liquid en tu aplicación
+- Considera usar el proxy backend de Modyo para operaciones sensibles
+:::
+
+### Integración con TypeScript
+
+Para seguridad de tipos completa, declara la configuración global de window:
+
+```typescript
+// src/types/global.d.ts
+declare global {
+  interface Window {
+    widgetConfig?: {
+      apiBaseUrl: string;
+      apiKey: string;
+      environment: string;
+      features: Record<string, boolean>;
+      user?: {
+        id: string;
+        email: string;
+        name: string;
+      };
+      locale: string;
+    };
   }
 }
 
-export default new TokenManager();
+export {};
 ```
 
-## Servicios de Datos
+## Patrón Repository
 
-### Servicio de Cuentas
+Usa el patrón repository para encapsular llamadas API con tipos TypeScript apropiados y soporte para AbortSignal para cancelación.
 
-```javascript
-// src/services/accounts/accountService.js
-import apiClient from '../api/client';
+### Repository de Cuentas
 
-class AccountService {
-  async getAccounts() {
-    return apiClient.get('/accounts');
-  }
+```typescript
+// src/repositories/accountRepository.ts
+import apiClient from '@/services/api/client';
 
-  async getAccountById(accountId) {
-    return apiClient.get(`/accounts/${accountId}`);
-  }
-
-  async getAccountBalance(accountId) {
-    return apiClient.get(`/accounts/${accountId}/balance`);
-  }
-
-  async getAccountTransactions(accountId, params = {}) {
-    return apiClient.get(`/accounts/${accountId}/transactions`, { params });
-  }
-
-  async updateAccount(accountId, data) {
-    return apiClient.put(`/accounts/${accountId}`, data);
-  }
-
-  async closeAccount(accountId, reason) {
-    return apiClient.post(`/accounts/${accountId}/close`, { reason });
-  }
+export interface Account {
+  id: string;
+  name: string;
+  balance: number;
+  currency: string;
+  type: 'checking' | 'savings';
 }
 
-export default new AccountService();
-```
-
-### Servicio de Transferencias
-
-```javascript
-// src/services/transfers/transferService.js
-import apiClient from '../api/client';
-
-class TransferService {
-  async validateTransfer(data) {
-    return apiClient.post('/transfers/validate', data);
-  }
-
-  async createTransfer(data) {
-    return apiClient.post('/transfers', data);
-  }
-
-  async getTransferStatus(transferId) {
-    return apiClient.get(`/transfers/${transferId}/status`);
-  }
-
-  async getTransferHistory(params = {}) {
-    return apiClient.get('/transfers/history', { params });
-  }
-
-  async cancelTransfer(transferId, reason) {
-    return apiClient.post(`/transfers/${transferId}/cancel`, { reason });
-  }
-
-  async scheduleTransfer(data) {
-    return apiClient.post('/transfers/schedule', data);
-  }
+export async function getAccounts(signal?: AbortSignal): Promise<Account[]> {
+  const response = await apiClient.get<Account[]>('/accounts', { signal });
+  return response.data;
 }
 
-export default new TransferService();
+export async function getAccountById(
+  accountId: string,
+  signal?: AbortSignal
+): Promise<Account> {
+  const response = await apiClient.get<Account>(`/accounts/${accountId}`, { signal });
+  return response.data;
+}
+
+export async function getAccountBalance(
+  accountId: string,
+  signal?: AbortSignal
+): Promise<{ balance: number; currency: string }> {
+  const response = await apiClient.get(`/accounts/${accountId}/balance`, { signal });
+  return response.data;
+}
 ```
 
-## Hooks Personalizados (Patrones de Implementación)
+### Repository de Transferencias
+
+```typescript
+// src/repositories/transferRepository.ts
+import apiClient from '@/services/api/client';
+
+export interface Transfer {
+  id: string;
+  fromAccountId: string;
+  toAccountId: string;
+  amount: number;
+  currency: string;
+  status: 'pending' | 'completed' | 'failed';
+  createdAt: string;
+}
+
+export interface CreateTransferRequest {
+  fromAccountId: string;
+  toAccountId: string;
+  amount: number;
+  description?: string;
+}
+
+export async function createTransfer(
+  data: CreateTransferRequest,
+  signal?: AbortSignal
+): Promise<Transfer> {
+  const response = await apiClient.post<Transfer>('/transfers', data, { signal });
+  return response.data;
+}
+
+export async function getTransferHistory(
+  params?: { limit?: number; offset?: number },
+  signal?: AbortSignal
+): Promise<Transfer[]> {
+  const response = await apiClient.get<Transfer[]>('/transfers', { params, signal });
+  return response.data;
+}
+```
+
+## Hooks con TanStack Query
+
+Crea hooks que usen TanStack Query v5 con las funciones del repository.
 
 :::warning Estos son patrones, no exports de la librería
 Los hooks a continuación son **ejemplos de cómo implementar** data fetching en tu aplicación. NO se exportan desde `@dynamic-framework/ui-react`. Necesitas crearlos en tu proyecto.
 :::
 
-### useApi Hook (Patrón Básico)
+### Hook useAccounts
 
-```javascript
-// src/hooks/useApi.js
-import { useState, useEffect, useCallback } from 'react';
+```typescript
+// src/hooks/useAccounts.ts
+import { useQuery } from '@tanstack/react-query';
+import { getAccounts, getAccountById } from '@/repositories/accountRepository';
 
-export const useApi = (apiFunction, immediate = true) => {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(immediate);
-  const [error, setError] = useState(null);
+export function useAccounts() {
+  return useQuery({
+    queryKey: ['accounts'],
+    queryFn: ({ signal }) => getAccounts(signal),
+  });
+}
 
-  const execute = useCallback(async (...params) => {
-    setLoading(true);
-    setError(null);
-    
-    try {
-      const result = await apiFunction(...params);
-      setData(result);
-      return result;
-    } catch (err) {
-      setError(err);
-      throw err;
-    } finally {
-      setLoading(false);
-    }
-  }, [apiFunction]);
-
-  useEffect(() => {
-    if (immediate) {
-      execute();
-    }
-  }, [execute, immediate]);
-
-  return { data, loading, error, execute, refetch: execute };
-};
+export function useAccount(accountId: string) {
+  return useQuery({
+    queryKey: ['accounts', accountId],
+    queryFn: ({ signal }) => getAccountById(accountId, signal),
+    enabled: Boolean(accountId),
+  });
+}
 ```
 
-### useAccounts Hook (Patrón TanStack Query)
+### Hook useTransfers
 
-```javascript
-// src/hooks/useAccounts.js
+```typescript
+// src/hooks/useTransfers.ts
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import accountService from '../services/accounts/accountService';
+import {
+  getTransferHistory,
+  createTransfer,
+  type CreateTransferRequest,
+} from '@/repositories/transferRepository';
 
-export const useAccounts = () => {
-  return useQuery(
-    'accounts',
-    () => accountService.getAccounts(),
-    {
-      staleTime: 5 * 60 * 1000, // 5 minutos
-      cacheTime: 10 * 60 * 1000, // 10 minutos
-      retry: 3,
-      retryDelay: attemptIndex => Math.min(1000 * 2 ** attemptIndex, 30000),
-    }
-  );
-};
+export function useTransferHistory() {
+  return useQuery({
+    queryKey: ['transfers'],
+    queryFn: ({ signal }) => getTransferHistory(undefined, signal),
+  });
+}
 
-export const useAccountBalance = (accountId) => {
-  return useQuery(
-    ['account-balance', accountId],
-    () => accountService.getAccountBalance(accountId),
-    {
-      enabled: !!accountId,
-      refetchInterval: 30000, // Actualizar cada 30 segundos
-    }
-  );
-};
-
-export const useUpdateAccount = () => {
+export function useCreateTransfer() {
   const queryClient = useQueryClient();
-  
-  return useMutation(
-    ({ accountId, data }) => accountService.updateAccount(accountId, data),
-    {
-      onSuccess: () => {
-        queryClient.invalidateQueries('accounts');
-      },
-    }
+
+  return useMutation({
+    mutationFn: (data: CreateTransferRequest) => createTransfer(data),
+    onSuccess: () => {
+      // Invalidar queries relacionadas para obtener datos frescos
+      queryClient.invalidateQueries({ queryKey: ['accounts'] });
+      queryClient.invalidateQueries({ queryKey: ['transfers'] });
+    },
+  });
+}
+```
+
+### Uso en Componentes
+
+```tsx
+// src/components/AccountList.tsx
+import { useAccounts } from '@/hooks/useAccounts';
+import { DCard, DCurrencyText, DAlert } from '@dynamic-framework/ui-react';
+
+export function AccountList() {
+  const { data: accounts, isLoading, error } = useAccounts();
+
+  if (isLoading) {
+    return <div>Cargando cuentas...</div>;
+  }
+
+  if (error) {
+    return (
+      <DAlert type="error">
+        Error al cargar cuentas: {error.message}
+      </DAlert>
+    );
+  }
+
+  return (
+    <div className="d-flex flex-column gap-3">
+      {accounts?.map((account) => (
+        <DCard key={account.id}>
+          <DCard.Body>
+            <h5>{account.name}</h5>
+            <DCurrencyText value={account.balance} />
+          </DCard.Body>
+        </DCard>
+      ))}
+    </div>
   );
-};
+}
+```
+
+## Autenticación
+
+### OAuth 2.0 con oidc-client-ts
+
+```typescript
+// src/services/auth/authService.ts
+import { UserManager, WebStorageStateStore, type User } from 'oidc-client-ts';
+
+const userManager = new UserManager({
+  authority: import.meta.env.VITE_AUTH_URL,
+  client_id: import.meta.env.VITE_CLIENT_ID,
+  redirect_uri: `${window.location.origin}/callback`,
+  response_type: 'code',
+  scope: 'openid profile email',
+  post_logout_redirect_uri: window.location.origin,
+  userStore: new WebStorageStateStore({ store: window.sessionStorage }),
+  automaticSilentRenew: true,
+});
+
+export async function login(): Promise<void> {
+  await userManager.signinRedirect();
+}
+
+export async function handleCallback(): Promise<User> {
+  return userManager.signinRedirectCallback();
+}
+
+export async function logout(): Promise<void> {
+  await userManager.signoutRedirect();
+}
+
+export async function getUser(): Promise<User | null> {
+  return userManager.getUser();
+}
+
+export async function getAccessToken(): Promise<string | null> {
+  const user = await getUser();
+  return user?.access_token ?? null;
+}
+```
+
+### Hook de Autenticación
+
+```typescript
+// src/hooks/useAuth.ts
+import { useQuery, useQueryClient } from '@tanstack/react-query';
+import { getUser, login, logout } from '@/services/auth/authService';
+
+export function useAuth() {
+  const queryClient = useQueryClient();
+
+  const { data: user, isLoading } = useQuery({
+    queryKey: ['auth', 'user'],
+    queryFn: getUser,
+    staleTime: Infinity,
+  });
+
+  const handleLogin = async () => {
+    await login();
+  };
+
+  const handleLogout = async () => {
+    await logout();
+    queryClient.clear();
+  };
+
+  return {
+    user,
+    isLoading,
+    isAuthenticated: Boolean(user),
+    login: handleLogin,
+    logout: handleLogout,
+  };
+}
 ```
 
 ## Manejo de Errores
 
-### Error Handler Global
+### Error Handler Centralizado
 
-```javascript
-// src/services/api/errorHandler.js
-class ErrorHandler {
-  constructor() {
-    this.errorHandlers = new Map();
-    this.setupDefaultHandlers();
-  }
+```typescript
+// src/services/api/errorHandler.ts
+import type { AxiosError } from 'axios';
 
-  setupDefaultHandlers() {
-    // Errores de red
-    this.registerHandler('NetworkError', (error) => {
-      console.error('Network error:', error);
-      this.showNotification('Error de conexión. Por favor, verifica tu internet.');
-    });
-
-    // Errores de validación
-    this.registerHandler('ValidationError', (error) => {
-      const messages = error.response?.data?.errors || [];
-      messages.forEach(msg => this.showNotification(msg, 'warning'));
-    });
-
-    // Errores de servidor
-    this.registerHandler('ServerError', (error) => {
-      console.error('Server error:', error);
-      this.showNotification('Error del servidor. Por favor, intenta más tarde.');
-    });
-
-    // Rate limiting
-    this.registerHandler('RateLimitError', (error) => {
-      const retryAfter = error.response?.headers['retry-after'];
-      this.showNotification(`Demasiadas solicitudes. Intenta en ${retryAfter} segundos.`);
-    });
-  }
-
-  registerHandler(errorType, handler) {
-    this.errorHandlers.set(errorType, handler);
-  }
-
-  handle(error) {
-    const errorType = this.getErrorType(error);
-    const handler = this.errorHandlers.get(errorType);
-    
-    if (handler) {
-      handler(error);
-    } else {
-      this.handleUnknownError(error);
-    }
-  }
-
-  getErrorType(error) {
-    if (!error.response) return 'NetworkError';
-    
-    const status = error.response.status;
-    if (status === 400) return 'ValidationError';
-    if (status === 429) return 'RateLimitError';
-    if (status >= 500) return 'ServerError';
-    
-    return 'UnknownError';
-  }
-
-  handleUnknownError(error) {
-    console.error('Unknown error:', error);
-    this.showNotification('Ha ocurrido un error inesperado.');
-  }
-
-  showNotification(message, type = 'error') {
-    // Implementar según tu sistema de notificaciones
-    console.log(`[${type}] ${message}`);
-  }
+interface ApiError {
+  message: string;
+  code?: string;
+  details?: Record<string, string[]>;
 }
 
-export default new ErrorHandler();
+export function handleApiError(error: AxiosError<ApiError>): string {
+  if (!error.response) {
+    return 'Error de red. Por favor verifica tu conexión.';
+  }
+
+  const { status, data } = error.response;
+
+  switch (status) {
+    case 400:
+      return data?.message || 'Solicitud inválida. Por favor verifica tus datos.';
+    case 401:
+      return 'Sesión expirada. Por favor inicia sesión nuevamente.';
+    case 403:
+      return 'No tienes permiso para realizar esta acción.';
+    case 404:
+      return 'El recurso solicitado no fue encontrado.';
+    case 429:
+      return 'Demasiadas solicitudes. Por favor intenta más tarde.';
+    case 500:
+    default:
+      return 'Ha ocurrido un error inesperado. Por favor intenta de nuevo.';
+  }
+}
 ```
 
-## Optimización y Caché
+### Error Boundary con TanStack Query
 
-### TanStack Query Setup
+```tsx
+// src/components/QueryErrorBoundary.tsx
+import { QueryErrorResetBoundary } from '@tanstack/react-query';
+import { ErrorBoundary } from 'react-error-boundary';
+import { DButton, DAlert } from '@dynamic-framework/ui-react';
+import type { ReactNode } from 'react';
 
-```javascript
-// src/providers/QueryProvider.tsx
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+interface Props {
+  children: ReactNode;
+}
 
-export const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      staleTime: 5 * 60 * 1000, // 5 minutos
-      cacheTime: 10 * 60 * 1000, // 10 minutos
-      retry: 3,
-      refetchOnWindowFocus: false,
-      refetchOnReconnect: 'always',
-    },
-    mutations: {
-      retry: 1,
-    },
+export function QueryErrorBoundary({ children }: Props) {
+  return (
+    <QueryErrorResetBoundary>
+      {({ reset }) => (
+        <ErrorBoundary
+          onReset={reset}
+          fallbackRender={({ error, resetErrorBoundary }) => (
+            <DAlert type="error">
+              <p>{error.message}</p>
+              <DButton
+                text="Intentar de nuevo"
+                variant="outline"
+                onClick={resetErrorBoundary}
+              />
+            </DAlert>
+          )}
+        >
+          {children}
+        </ErrorBoundary>
+      )}
+    </QueryErrorResetBoundary>
+  );
+}
+```
+
+## Testing de APIs con MSW
+
+Usa Mock Service Worker (MSW) v2 para mocking de APIs durante desarrollo y testing.
+
+### Configurar Handlers
+
+```typescript
+// src/mocks/handlers.ts
+import { http, HttpResponse } from 'msw';
+import type { Account } from '@/repositories/accountRepository';
+
+const mockAccounts: Account[] = [
+  {
+    id: '1',
+    name: 'Cuenta Corriente',
+    balance: 125430.0,
+    currency: 'USD',
+    type: 'checking',
   },
-});
-```
-
-### Caché con Service Worker
-
-```javascript
-// src/serviceWorker/apiCache.js
-self.addEventListener('fetch', (event) => {
-  const { request } = event;
-  const url = new URL(request.url);
-
-  // Cachear solo llamadas GET a la API
-  if (request.method === 'GET' && url.pathname.startsWith('/api/')) {
-    event.respondWith(
-      caches.open('api-cache-v1').then(async (cache) => {
-        const cachedResponse = await cache.match(request);
-        
-        if (cachedResponse) {
-          // Retornar del caché y actualizar en background
-          const fetchPromise = fetch(request).then((networkResponse) => {
-            cache.put(request, networkResponse.clone());
-            return networkResponse;
-          });
-          
-          return cachedResponse;
-        }
-        
-        // Si no está en caché, hacer fetch
-        const networkResponse = await fetch(request);
-        cache.put(request, networkResponse.clone());
-        return networkResponse;
-      })
-    );
-  }
-});
-```
-
-## WebSockets y Tiempo Real
-
-### Socket.io Integration
-
-```javascript
-// src/services/realtime/socketService.js
-import io from 'socket.io-client';
-
-class SocketService {
-  constructor() {
-    this.socket = null;
-    this.listeners = new Map();
-  }
-
-  connect(token) {
-    this.socket = io(process.env.REACT_APP_SOCKET_URL, {
-      auth: { token },
-      transports: ['websocket'],
-      reconnection: true,
-      reconnectionAttempts: 5,
-      reconnectionDelay: 1000,
-    });
-
-    this.socket.on('connect', () => {
-      console.log('Socket connected');
-      this.emit('subscribe', { channels: ['accounts', 'transactions'] });
-    });
-
-    this.socket.on('disconnect', (reason) => {
-      console.log('Socket disconnected:', reason);
-    });
-
-    this.setupEventListeners();
-  }
-
-  setupEventListeners() {
-    // Balance updates
-    this.on('balance:update', (data) => {
-      this.notifyListeners('balanceUpdate', data);
-    });
-
-    // Transaction notifications
-    this.on('transaction:new', (data) => {
-      this.notifyListeners('newTransaction', data);
-    });
-
-    // System alerts
-    this.on('alert:system', (data) => {
-      this.notifyListeners('systemAlert', data);
-    });
-  }
-
-  on(event, callback) {
-    if (this.socket) {
-      this.socket.on(event, callback);
-    }
-  }
-
-  emit(event, data) {
-    if (this.socket) {
-      this.socket.emit(event, data);
-    }
-  }
-
-  subscribe(event, callback) {
-    if (!this.listeners.has(event)) {
-      this.listeners.set(event, new Set());
-    }
-    this.listeners.get(event).add(callback);
-  }
-
-  unsubscribe(event, callback) {
-    if (this.listeners.has(event)) {
-      this.listeners.get(event).delete(callback);
-    }
-  }
-
-  notifyListeners(event, data) {
-    if (this.listeners.has(event)) {
-      this.listeners.get(event).forEach(callback => callback(data));
-    }
-  }
-
-  disconnect() {
-    if (this.socket) {
-      this.socket.disconnect();
-      this.socket = null;
-    }
-  }
-}
-
-export default new SocketService();
-```
-
-## Testing de APIs
-
-### Mock Service Worker
-
-```javascript
-// src/mocks/handlers.js
-import { rest } from 'msw';
+  {
+    id: '2',
+    name: 'Cuenta de Ahorros',
+    balance: 45200.0,
+    currency: 'USD',
+    type: 'savings',
+  },
+];
 
 export const handlers = [
-  rest.get('/api/accounts', (req, res, ctx) => {
-    return res(
-      ctx.status(200),
-      ctx.json([
-        {
-          id: '1',
-          name: 'Cuenta Corriente',
-          balance: 125430.00,
-          currency: 'USD',
-        },
-        {
-          id: '2',
-          name: 'Cuenta de Ahorros',
-          balance: 45200.00,
-          currency: 'USD',
-        },
-      ])
-    );
+  http.get('/api/accounts', () => {
+    return HttpResponse.json(mockAccounts);
   }),
 
-  rest.post('/api/transfers', (req, res, ctx) => {
-    const { amount } = req.body;
-    
-    if (amount > 100000) {
-      return res(
-        ctx.status(400),
-        ctx.json({
-          error: 'Amount exceeds maximum limit',
-        })
+  http.get('/api/accounts/:id', ({ params }) => {
+    const account = mockAccounts.find((a) => a.id === params.id);
+    if (!account) {
+      return new HttpResponse(null, { status: 404 });
+    }
+    return HttpResponse.json(account);
+  }),
+
+  http.post('/api/transfers', async ({ request }) => {
+    const body = await request.json() as { amount: number };
+
+    if (body.amount > 100000) {
+      return HttpResponse.json(
+        { message: 'El monto excede el límite máximo' },
+        { status: 400 }
       );
     }
-    
-    return res(
-      ctx.status(201),
-      ctx.json({
+
+    return HttpResponse.json(
+      {
         id: 'transfer-123',
         status: 'completed',
-        amount,
-      })
+        ...body,
+      },
+      { status: 201 }
     );
   }),
 ];
 ```
 
+### Configuración del Browser
+
+```typescript
+// src/mocks/browser.ts
+import { setupWorker } from 'msw/browser';
+import { handlers } from './handlers';
+
+export const worker = setupWorker(...handlers);
+```
+
+### Inicializar en Desarrollo
+
+```typescript
+// src/main.tsx
+async function enableMocking() {
+  if (import.meta.env.DEV) {
+    const { worker } = await import('./mocks/browser');
+    return worker.start({ onUnhandledRequest: 'bypass' });
+  }
+}
+
+enableMocking().then(() => {
+  // Renderiza tu app
+});
+```
+
 ## Mejores Prácticas
 
-### 1. Seguridad
-- Nunca almacenes tokens en localStorage para aplicaciones sensibles
-- Usa httpOnly cookies cuando sea posible
-- Implementa CSRF protection
-- Valida todos los inputs en el cliente y servidor
-
-### 2. Performance
-- Implementa paginación para listas grandes
-- Usa debounce para búsquedas
-- Cachea respuestas cuando sea apropiado
-- Implementa lazy loading de datos
-
-### 3. Manejo de Estado
+### 1. Gestión de Estado
 - Usa **TanStack Query** para estado del servidor (datos de API)
 - Usa **Zustand** para estado de UI (filtros, selecciones, modales)
-- Mantén React Context para estado específico del framework (DContext)
 - Nunca mezcles estado del servidor con estado de UI
 
-### 4. Monitoreo
-- Registra todas las llamadas API fallidas
-- Implementa métricas de performance
-- Usa correlation IDs para tracking
+### 2. Seguridad
+- Almacena tokens en `sessionStorage` o cookies httpOnly, no en `localStorage`
+- Siempre valida inputs tanto en cliente como en servidor
+- Usa HTTPS en producción
+
+### 3. Performance
+- Usa query keys que reflejen la jerarquía de datos
+- Implementa paginación para listas grandes
+- Usa la opción `enabled` para prevenir requests innecesarios
+
+### 4. TypeScript
+- Define interfaces para todas las respuestas de API
+- Usa generics con Axios para respuestas type-safe
+- Exporta tipos desde los repositories para reutilización
 
 ## Recursos
 
 - [Documentación de Axios](https://axios-http.com)
-- [TanStack Query Docs](https://tanstack.com/query/latest)
+- [TanStack Query v5 Docs](https://tanstack.com/query/latest)
 - [Documentación de Zustand](https://zustand-demo.pmnd.rs/)
-- [Socket.io Guide](https://socket.io/docs)
-- [MSW Documentation](https://mswjs.io)
+- [MSW v2 Documentation](https://mswjs.io)
+- [oidc-client-ts](https://github.com/authts/oidc-client-ts)

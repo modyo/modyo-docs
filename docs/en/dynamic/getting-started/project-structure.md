@@ -8,161 +8,52 @@ Understand how a Dynamic Framework project is organized and best practices to ke
 
 ## Base Structure
 
-A typical Dynamic Framework project follows this structure:
+A typical Dynamic Framework widget follows this structure:
 
 ```
-my-dynamic-project/
+my-widget/
 ├── src/                      # Source code
 │   ├── components/          # Reusable components
-│   ├── views/              # Complete views/pages
-│   ├── services/           # Business logic and APIs
-│   ├── hooks/              # Custom React hooks
-│   ├── utils/              # Utilities and helpers
-│   ├── styles/             # Global styles and themes
-│   ├── assets/             # Images, fonts, etc.
-│   ├── locales/            # Translation files
-│   ├── config/             # App configuration
-│   ├── App.jsx             # Root component
-│   └── index.js            # Entry point
-├── public/                  # Static public files
-│   ├── index.html          # HTML template
-│   ├── favicon.ico         # Favicon
-│   └── manifest.json       # PWA manifest
-├── tests/                   # Tests
-│   ├── unit/              # Unit tests
-│   ├── integration/       # Integration tests
-│   └── e2e/               # End-to-end tests
-├── .modyo/                  # Modyo configuration
-│   └── config.json        # Deploy config
-├── .github/                 # GitHub Actions
-│   └── workflows/         # CI/CD workflows
-├── docs/                    # Project documentation
-├── .env.example            # Environment variables example
+│   ├── config/              # Configuration files
+│   ├── locales/             # Translation files (i18n)
+│   ├── providers/           # React context providers
+│   ├── services/            # API services
+│   ├── store/               # Zustand stores (UI state)
+│   ├── styles/              # SCSS styles
+│   ├── types/               # TypeScript type definitions
+│   ├── utils/               # Utility functions
+│   ├── App.tsx              # Root component
+│   └── main.tsx             # Entry point
+├── tests/                   # Test files
+│   └── setup.ts            # Test configuration
+├── public/                  # Static files
+│   └── index.html          # HTML template
+├── .env.example            # Environment variables template
 ├── .eslintrc.js            # ESLint configuration
-├── .prettierrc             # Prettier configuration
-├── jest.config.js          # Jest configuration
-├── webpack.config.js       # Webpack configuration
+├── tsconfig.json           # TypeScript configuration
+├── vite.config.ts          # Vite configuration
 ├── package.json            # Dependencies and scripts
-└── README.md               # Main documentation
+└── README.md               # Project documentation
 ```
 
 ## Main Directories
 
 ### `/src/components/`
 
-Reusable application components:
+Reusable widget components with barrel exports:
 
 ```
 components/
-├── common/                 # Generic components
-│   ├── Button/
-│   │   ├── Button.jsx
-│   │   ├── Button.styles.js
-│   │   ├── Button.test.js
-│   │   └── index.js
-│   ├── Card/
-│   └── Modal/
-├── forms/                  # Form components
-│   ├── Input/
-│   ├── Select/
-│   └── DatePicker/
-├── layout/                 # Layout components
-│   ├── Header/
-│   ├── Footer/
-│   └── Sidebar/
-└── business/              # Business components
-    ├── AccountCard/
-    ├── TransactionItem/
-    └── TransferForm/
-```
-
-### `/src/views/`
-
-Complete pages and views:
-
-```
-views/
-├── Dashboard/
-│   ├── Dashboard.jsx
-│   ├── Dashboard.styles.js
-│   ├── Dashboard.test.js
-│   └── components/        # View-specific components
-├── Accounts/
-├── Transfers/
-├── Investments/
-└── Settings/
-```
-
-### `/src/services/`
-
-Business logic and API communication:
-
-```
-services/
-├── api/
-│   ├── client.js          # Configured HTTP client
-│   ├── endpoints.js       # Endpoint definitions
-│   └── interceptors.js    # Request/response interceptors
-├── auth/
-│   ├── authService.js     # Authentication
-│   └── tokenManager.js    # Token management
-├── accounts/
-│   └── accountService.js  # Account services
-└── transactions/
-    └── transactionService.js
-```
-
-### `/src/hooks/`
-
-Custom React hooks:
-
-```
-hooks/
-├── useAuth.js             # Authentication hook
-├── useApi.js              # API calls hook
-├── useAccounts.js         # Accounts hook
-├── useTransactions.js     # Transactions hook
-└── useTheme.js            # Theme hook
-```
-
-### `/src/utils/`
-
-Utility functions:
-
-```
-utils/
-├── formatters/
-│   ├── currency.js        # Currency formatting
-│   ├── date.js           # Date formatting
-│   └── number.js         # Number formatting
-├── validators/
-│   ├── account.js        # Account validation
-│   └── transfer.js       # Transfer validation
-├── constants/
-│   ├── routes.js         # Route constants
-│   └── messages.js       # App messages
-└── helpers/
-    ├── storage.js        # LocalStorage helpers
-    └── analytics.js      # Analytics helpers
-```
-
-### `/src/styles/`
-
-Styles and themes:
-
-```
-styles/
-├── base/
-│   ├── _reset.scss       # CSS Reset
-│   ├── _typography.scss  # Typography
-│   └── _variables.scss   # Global variables
-├── components/
-│   └── _buttons.scss     # Component styles
-├── themes/
-│   ├── default.js        # Default theme
-│   ├── dark.js          # Dark theme
-│   └── custom.js        # Custom theme
-└── main.scss             # Main styles file
+├── index.ts                # Barrel export
+├── ErrorBoundary.tsx       # Error boundary wrapper
+├── DataStateWrapper.tsx    # Loading/error/empty states handler
+├── LoadingState.tsx        # Loading skeleton variants
+├── ErrorState.tsx          # Error UI with retry
+├── EmptyState.tsx          # Empty data UI
+└── AccountCard/
+    ├── AccountCard.tsx
+    ├── AccountCard.test.tsx
+    └── index.ts
 ```
 
 ### `/src/config/`
@@ -171,10 +62,81 @@ Application configuration:
 
 ```
 config/
-├── app.config.js         # General configuration
-├── api.config.js         # API configuration
-├── theme.config.js       # Theme configuration
-└── routes.config.js      # Routes configuration
+├── widgetConfig.ts        # Widget configuration from Liquid
+├── i18nConfig.ts          # i18next setup
+└── liquidConfig.ts        # LiquidJS parser initialization
+```
+
+### `/src/services/`
+
+API communication layer following the repository pattern:
+
+```
+services/
+├── api/
+│   └── client.ts          # Axios HTTP client with interceptors
+├── repositories/          # Data access layer
+│   ├── accountRepository.ts
+│   └── transactionRepository.ts
+└── hooks/                 # TanStack Query hooks
+    ├── useAccounts.ts
+    └── useTransactions.ts
+```
+
+### `/src/store/`
+
+UI state management with Zustand:
+
+```
+store/
+└── useUIStore.ts          # UI state (filters, modals, selections)
+```
+
+:::warning Zustand for UI State Only
+Use Zustand exclusively for UI state (filters, modals, active tabs). Server data should be managed with TanStack Query, not Zustand.
+:::
+
+### `/src/providers/`
+
+React context providers:
+
+```
+providers/
+└── QueryProvider.tsx      # TanStack Query configuration
+```
+
+### `/src/types/`
+
+Centralized TypeScript definitions:
+
+```
+types/
+└── index.ts               # All type definitions
+```
+
+**Type naming conventions:**
+- `Entity` - Domain types
+- `ApiEntity` - API response mapping
+- `CreateEntityData` / `UpdateEntityData` - Payload types
+- `EntityFilters` - Filter parameters
+
+### `/src/locales/`
+
+Internationalization files:
+
+```
+locales/
+├── en.json               # English translations
+└── es.json               # Spanish translations
+```
+
+### `/src/styles/`
+
+Widget styles:
+
+```
+styles/
+└── base.scss             # Widget-specific styles
 ```
 
 ## Configuration Files
@@ -183,82 +145,121 @@ config/
 
 ```json
 {
-  "name": "my-dynamic-project",
+  "name": "my-widget",
   "version": "1.0.0",
+  "type": "module",
   "scripts": {
-    "start": "webpack serve --mode development",
-    "build": "webpack --mode production",
-    "test": "jest",
-    "lint": "eslint src/",
-    "format": "prettier --write src/",
-    "analyze": "webpack-bundle-analyzer",
-    "modyo:push": "modyo-cli push",
-    "modyo:preview": "modyo-cli preview"
+    "start": "vite",
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint .",
+    "push": "npm run build && npx @modyo/cli@latest push"
   },
   "dependencies": {
-    "@dynamic-framework/ui-react": "^1.27.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.0.0",
-    "axios": "^1.0.0"
+    "@dynamic-framework/ui-react": "^2.0.0",
+    "@tanstack/react-query": "^5.60.0",
+    "axios": "^1.13.0",
+    "i18next": "^24.0.0",
+    "liquidjs": "^10.24.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-i18next": "^16.0.0",
+    "zustand": "^5.0.0"
   },
   "devDependencies": {
-    "@modyo/cli": "^3.0.0",
-    "webpack": "^5.0.0",
-    "jest": "^29.0.0",
-    "eslint": "^8.0.0",
-    "prettier": "^2.0.0"
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.5.0",
+    "eslint": "^9.0.0",
+    "sass-embedded": "^1.93.0",
+    "typescript": "^5.9.0",
+    "vite": "^7.0.0",
+    "vitest": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=22.0.0"
   }
 }
+```
+
+### `vite.config.ts`
+
+```typescript
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import svgr from 'vite-plugin-svgr';
+
+export default defineConfig({
+  plugins: [react(), svgr()],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        quietDeps: true,
+        silenceDeprecations: ['legacy-js-api'],
+      },
+    },
+  },
+  build: {
+    outDir: 'build',
+    assetsDir: '',
+    rollupOptions: {
+      output: {
+        entryFileNames: 'main.js',
+        chunkFileNames: '[name].[hash].chunk.js',
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name?.endsWith('.css')) {
+            return 'main.css';
+          }
+          return '[name].[hash][extname]';
+        },
+      },
+    },
+    chunkSizeWarningLimit: 2000,
+    minify: 'esbuild',
+  },
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './tests/setup.ts',
+  },
+});
 ```
 
 ### `.env.example`
 
 ```bash
 # API Configuration
-REACT_APP_API_URL=https://api.example.com
-REACT_APP_API_KEY=your-api-key
-
-# Modyo Configuration
-REACT_APP_MODYO_ACCOUNT=your-account
-REACT_APP_MODYO_SITE=your-site
+VITE_API_BASE_URL=https://api.example.com
 
 # Feature Flags
-REACT_APP_ENABLE_INVESTMENTS=true
-REACT_APP_ENABLE_LOANS=false
-
-# Analytics
-REACT_APP_GA_ID=UA-XXXXXXXXX
+VITE_ENABLE_DEVTOOLS=true
 ```
 
-### `.modyo/config.json`
+:::tip Vite Environment Variables
+Vite uses the `VITE_` prefix for environment variables. Access them via `import.meta.env.VITE_*`.
+:::
+
+### `tsconfig.json`
 
 ```json
 {
-  "account": "my-bank",
-  "site": "web-banking",
-  "widget": {
-    "name": "dynamic-app",
-    "description": "Banking application with Dynamic Framework",
-    "category": "banking",
-    "tags": ["react", "dynamic", "banking"]
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true
   },
-  "deploy": {
-    "environments": {
-      "development": {
-        "site": "web-banking-dev",
-        "variables": {
-          "API_URL": "https://api-dev.example.com"
-        }
-      },
-      "production": {
-        "site": "web-banking",
-        "variables": {
-          "API_URL": "https://api.example.com"
-        }
-      }
-    }
-  }
+  "include": ["src"]
 }
 ```
 
@@ -266,120 +267,141 @@ REACT_APP_GA_ID=UA-XXXXXXXXX
 
 ### 1. Component Organization
 
-**Component Structure**:
+**Simple component:**
 ```
-Button/
-├── Button.jsx           # Main component
-├── Button.styles.js     # Styles (styled-components or CSS modules)
-├── Button.test.js       # Tests
-├── Button.stories.js    # Storybook stories
-└── index.js            # Public export
+AccountCard.tsx      # Component with collocated styles/tests if small
 ```
 
-**index.js**:
-```javascript
-export { default } from './Button';
-export * from './Button';
+**Complex component:**
+```
+AccountCard/
+├── AccountCard.tsx     # Main component
+├── AccountCard.test.tsx # Tests
+└── index.ts            # Public export
 ```
 
 ### 2. Naming Conventions
 
-- **Components**: PascalCase (`AccountCard.jsx`)
-- **Functions/Hooks**: camelCase (`useAuth.js`)
-- **Constants**: UPPER_SNAKE_CASE (`API_ENDPOINTS.js`)
-- **CSS Files**: kebab-case (`button-styles.scss`)
+- **Components**: PascalCase (`AccountCard.tsx`)
+- **Hooks**: camelCase with `use` prefix (`useAccounts.ts`)
+- **Stores**: camelCase with `use` prefix (`useUIStore.ts`)
+- **Utils**: camelCase (`formatCurrency.ts`)
+- **Types**: PascalCase (`Account`, `ApiAccount`)
 
 ### 3. Organized Imports
 
-```javascript
-// 1. External dependencies
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+```typescript
+// 1. React and external libraries
+import { useState } from 'react';
 
 // 2. Dynamic Framework components
-import { Button, Card, Input } from '@dynamic-framework/ui-react';
+import { DButton, DCard, DIcon } from '@dynamic-framework/ui-react';
 
-// 3. Internal components
-import Header from '@/components/layout/Header';
-import AccountCard from '@/components/business/AccountCard';
+// 3. Internal modules (hooks, stores, types)
+import { useAccounts } from '../services/hooks/useAccounts';
+import { useUIStore } from '../store/useUIStore';
+import type { Account } from '../types';
 
-// 4. Services and utilities
-import { accountService } from '@/services/accounts';
-import { formatCurrency } from '@/utils/formatters';
-
-// 5. Styles
-import styles from './Dashboard.module.scss';
+// 4. Styles
+import '../styles/base.scss';
 ```
 
-### 4. Path Aliases
+### 4. State Management Strategy
 
-Configure aliases in webpack for cleaner imports:
+**UI State (Zustand):**
+```typescript
+// store/useUIStore.ts
+import { create } from 'zustand';
 
-```javascript
-// webpack.config.js
-resolve: {
-  alias: {
-    '@': path.resolve(__dirname, 'src'),
-    '@components': path.resolve(__dirname, 'src/components'),
-    '@services': path.resolve(__dirname, 'src/services'),
-    '@utils': path.resolve(__dirname, 'src/utils'),
-  }
+interface UIState {
+  selectedAccountId: string | null;
+  isModalOpen: boolean;
+  setSelectedAccount: (id: string | null) => void;
+  toggleModal: () => void;
+}
+
+export const useUIStore = create<UIState>((set) => ({
+  selectedAccountId: null,
+  isModalOpen: false,
+  setSelectedAccount: (id) => set({ selectedAccountId: id }),
+  toggleModal: () => set((state) => ({ isModalOpen: !state.isModalOpen })),
+}));
+```
+
+**Server State (TanStack Query + Repository):**
+```typescript
+// services/repositories/accountRepository.ts
+import { api } from '../api/client';
+import type { Account } from '../../types';
+
+export async function getAccounts(signal?: AbortSignal): Promise<Account[]> {
+  const response = await api.get('/accounts', { signal });
+  return response.data;
+}
+
+// services/hooks/useAccounts.ts
+import { useQuery } from '@tanstack/react-query';
+import { getAccounts } from '../repositories/accountRepository';
+
+export function useAccounts() {
+  return useQuery({
+    queryKey: ['accounts'],
+    queryFn: ({ signal }) => getAccounts(signal),
+  });
 }
 ```
 
 ### 5. Separation of Concerns
 
-- **Components**: Only presentation and UI state
-- **Services**: Business logic and APIs
-- **Hooks**: Reusable logic and shared state
+- **Components**: Presentation and UI interactions only
+- **Providers**: Context configuration (Query, i18n)
+- **Services**: API communication
+- **Store**: UI state only (not server data)
 - **Utils**: Pure utility functions
+- **Types**: TypeScript definitions
 
-## Scalability
+## Entry Point Pattern
 
-### For Small Projects
+### `main.tsx`
 
-Simplified structure:
-```
-src/
-├── components/
-├── pages/
-├── services/
-├── App.jsx
-└── index.js
-```
+```tsx
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { DContextProvider } from '@dynamic-framework/ui-react';
 
-### For Large Projects
+import App from './App';
+import './config/i18nConfig';
+import './styles/base.scss';
 
-Structure by features:
-```
-src/
-├── features/
-│   ├── accounts/
-│   │   ├── components/
-│   │   ├── services/
-│   │   ├── hooks/
-│   │   └── index.js
-│   ├── transfers/
-│   └── investments/
-├── shared/
-│   ├── components/
-│   └── utils/
-└── core/
-    ├── auth/
-    └── api/
+const container = document.getElementById('root');
+if (container) {
+  createRoot(container).render(
+    <StrictMode>
+      <DContextProvider>
+        <App />
+      </DContextProvider>
+    </StrictMode>
+  );
+}
 ```
 
-### For Monorepos
+### `App.tsx`
 
-Structure with workspaces:
-```
-packages/
-├── web-app/
-├── mobile-app/
-├── shared-components/
-├── business-logic/
-└── design-system/
+```tsx
+import { QueryProvider } from './providers/QueryProvider';
+import { ErrorBoundary } from './components';
+
+function App() {
+  return (
+    <QueryProvider>
+      <ErrorBoundary>
+        {/* Widget content */}
+      </ErrorBoundary>
+    </QueryProvider>
+  );
+}
+
+export default App;
 ```
 
 ## Testing
@@ -388,41 +410,31 @@ packages/
 
 ```
 tests/
-├── unit/
-│   ├── components/
-│   ├── services/
-│   └── utils/
-├── integration/
-│   ├── flows/
-│   └── api/
-└── e2e/
-    ├── scenarios/
-    └── fixtures/
-```
-
-### Naming Conventions
-
-- Unit tests: `Component.test.js`
-- Integration tests: `feature.integration.test.js`
-- E2E tests: `scenario.e2e.test.js`
-
-## Documentation
-
-### Documentation Structure
-
-```
-docs/
-├── getting-started/
-│   └── README.md
+├── setup.ts              # Vitest setup (jsdom, mocks)
+src/
 ├── components/
-│   └── catalog.md
-├── api/
-│   └── reference.md
-└── architecture/
-    └── decisions/
+│   └── AccountCard.test.tsx  # Collocated component tests
+├── utils/
+│   └── formatters.test.ts    # Collocated util tests
+```
+
+### Test Example
+
+```typescript
+// src/components/AccountCard.test.tsx
+import { render, screen } from '@testing-library/react';
+import { AccountCard } from './AccountCard';
+
+describe('AccountCard', () => {
+  it('displays account name', () => {
+    render(<AccountCard name="Savings" balance={1000} />);
+    expect(screen.getByText('Savings')).toBeInTheDocument();
+  });
+});
 ```
 
 ## Resources
 
 - [Storybook](https://react.dynamicframework.dev) - Interactive component catalog
 - [NPM Package](https://www.npmjs.com/package/@dynamic-framework/ui-react) - Package details
+- [Vite Documentation](https://vite.dev) - Build tool documentation

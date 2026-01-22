@@ -34,14 +34,10 @@ Dynamic UI 2.0 brings a new visual language, Lucide icons, and 8 new components.
 
 ### [Development](development/)
 - **[Components](development/components.html)** - Catalog and APIs
-- **[React Patterns](development/react-integration.html)** - Hooks and patterns
 - **[API Integration](development/api-integration.html)** - Backend connectivity
-- **[Widgets](development/widgets.html)** - Modular components
-- **[Experiences](development/experiences.html)** - Pre-built templates
 
 ### [Customization](customization/)
 - **[Theming](customization/theming.html)** - Variables and themes
-- **[Styling](customization/styling.html)** - CSS and SCSS
 - **[Extending](customization/extending.html)** - Custom components
 
 ## Modyo Integration
@@ -52,10 +48,10 @@ Dynamic Framework is automatically included when creating applications with Dyna
 
 ### Modyo CLI
 ```bash
-npx @modyo/cli@latest get dynamic-react-base-template my-app
+npx @modyo/cli@latest get dynamic-react-vite-base-template my-app
 cd my-app
 npm install
-npm start
+npm run start
 ```
 
 ### CDN
@@ -63,9 +59,6 @@ npm start
 ```html
 <!-- CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@dynamic-framework/ui-react@2/dist/css/dynamic-ui.css">
-
-<!-- JavaScript (optional) -->
-<script src="https://cdn.jsdelivr.net/npm/@dynamic-framework/ui-react@2/dist/js/bootstrap.min.js"></script>
 ```
 
 :::tip
@@ -83,13 +76,10 @@ npm install @dynamic-framework/ui-react
 - NPM 10.x+
 - React 19.x
 
-For React component integration, see [React guide](development/react-integration.html).
-
 ## Technical Resources
 
 ### Documentation
 - [Storybook Components](https://react.dynamicframework.dev) - Interactive catalog
-- [API Reference](https://dynamic.modyo.com/docs) - API documentation
 - [NPM Package](https://www.npmjs.com/package/@dynamic-framework/ui-react) - Package registry
 
 ### Development Tools
@@ -103,6 +93,6 @@ For React component integration, see [React guide](development/react-integration
 - **React**: 19.x (requires ~19.2.1 as peer dependency)
 - **TypeScript**: Full static typing
 - **Bootstrap**: 5.3.8 customizable
-- **Build Tools**: Webpack 5, Vite support
+- **Build Tools**: Vite
 - **Testing**: Jest, React Testing Library
 - **Linting**: ESLint, Prettier

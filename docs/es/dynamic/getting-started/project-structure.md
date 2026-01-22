@@ -4,165 +4,56 @@ search: true
 
 # Estructura del Proyecto
 
-Comprende cómo está organizado un proyecto Dynamic Framework y las mejores prácticas para mantenerlo escalable y mantenible.
+Comprende cómo se organiza un proyecto de Dynamic Framework y las mejores prácticas para mantenerlo escalable y mantenible.
 
 ## Estructura Base
 
-Un proyecto típico de Dynamic Framework sigue esta estructura:
+Un widget típico de Dynamic Framework sigue esta estructura:
 
 ```
-mi-proyecto-dynamic/
+my-widget/
 ├── src/                      # Código fuente
 │   ├── components/          # Componentes reutilizables
-│   ├── views/              # Vistas/páginas completas
-│   ├── services/           # Lógica de negocio y APIs
-│   ├── hooks/              # Custom React hooks
-│   ├── utils/              # Utilidades y helpers
-│   ├── styles/             # Estilos globales y temas
-│   ├── assets/             # Imágenes, fonts, etc.
-│   ├── locales/            # Archivos de traducción
-│   ├── config/             # Configuración de la app
-│   ├── App.jsx             # Componente raíz
-│   └── index.js            # Punto de entrada
-├── public/                  # Archivos públicos estáticos
-│   ├── index.html          # Template HTML
-│   ├── favicon.ico         # Favicon
-│   └── manifest.json       # PWA manifest
-├── tests/                   # Tests
-│   ├── unit/              # Tests unitarios
-│   ├── integration/       # Tests de integración
-│   └── e2e/               # Tests end-to-end
-├── .modyo/                  # Configuración de Modyo
-│   └── config.json        # Config de despliegue
-├── .github/                 # GitHub Actions
-│   └── workflows/         # CI/CD workflows
-├── docs/                    # Documentación del proyecto
-├── .env.example            # Variables de entorno ejemplo
-├── .eslintrc.js            # Configuración ESLint
-├── .prettierrc             # Configuración Prettier
-├── jest.config.js          # Configuración Jest
-├── webpack.config.js       # Configuración Webpack
+│   ├── config/              # Archivos de configuración
+│   ├── locales/             # Archivos de traducción (i18n)
+│   ├── providers/           # Proveedores de contexto React
+│   ├── services/            # Servicios de API
+│   ├── store/               # Stores de Zustand (estado UI)
+│   ├── styles/              # Estilos SCSS
+│   ├── types/               # Definiciones de tipos TypeScript
+│   ├── utils/               # Funciones utilitarias
+│   ├── App.tsx              # Componente raíz
+│   └── main.tsx             # Punto de entrada
+├── tests/                   # Archivos de tests
+│   └── setup.ts            # Configuración de tests
+├── public/                  # Archivos estáticos
+│   └── index.html          # Template HTML
+├── .env.example            # Template de variables de entorno
+├── .eslintrc.js            # Configuración de ESLint
+├── tsconfig.json           # Configuración de TypeScript
+├── vite.config.ts          # Configuración de Vite
 ├── package.json            # Dependencias y scripts
-└── README.md               # Documentación principal
+└── README.md               # Documentación del proyecto
 ```
 
 ## Directorios Principales
 
 ### `/src/components/`
 
-Componentes reutilizables de la aplicación:
+Componentes reutilizables del widget con barrel exports:
 
 ```
 components/
-├── common/                 # Componentes genéricos
-│   ├── Button/
-│   │   ├── Button.jsx
-│   │   ├── Button.styles.js
-│   │   ├── Button.test.js
-│   │   └── index.js
-│   ├── Card/
-│   └── Modal/
-├── forms/                  # Componentes de formulario
-│   ├── Input/
-│   ├── Select/
-│   └── DatePicker/
-├── layout/                 # Componentes de layout
-│   ├── Header/
-│   ├── Footer/
-│   └── Sidebar/
-└── business/              # Componentes de negocio
-    ├── AccountCard/
-    ├── TransactionItem/
-    └── TransferForm/
-```
-
-### `/src/views/`
-
-Páginas y vistas completas:
-
-```
-views/
-├── Dashboard/
-│   ├── Dashboard.jsx
-│   ├── Dashboard.styles.js
-│   ├── Dashboard.test.js
-│   └── components/        # Componentes específicos de esta vista
-├── Accounts/
-├── Transfers/
-├── Investments/
-└── Settings/
-```
-
-### `/src/services/`
-
-Lógica de negocio y comunicación con APIs:
-
-```
-services/
-├── api/
-│   ├── client.js          # Cliente HTTP configurado
-│   ├── endpoints.js       # Definición de endpoints
-│   └── interceptors.js    # Interceptores de request/response
-├── auth/
-│   ├── authService.js     # Autenticación
-│   └── tokenManager.js    # Gestión de tokens
-├── accounts/
-│   └── accountService.js  # Servicios de cuentas
-└── transactions/
-    └── transactionService.js
-```
-
-### `/src/hooks/`
-
-Custom React hooks:
-
-```
-hooks/
-├── useAuth.js             # Hook de autenticación
-├── useApi.js              # Hook para llamadas API
-├── useAccounts.js         # Hook para cuentas
-├── useTransactions.js     # Hook para transacciones
-└── useTheme.js            # Hook para tema
-```
-
-### `/src/utils/`
-
-Funciones de utilidad:
-
-```
-utils/
-├── formatters/
-│   ├── currency.js        # Formateo de moneda
-│   ├── date.js           # Formateo de fechas
-│   └── number.js         # Formateo de números
-├── validators/
-│   ├── account.js        # Validación de cuentas
-│   └── transfer.js       # Validación de transferencias
-├── constants/
-│   ├── routes.js         # Constantes de rutas
-│   └── messages.js       # Mensajes de la app
-└── helpers/
-    ├── storage.js        # LocalStorage helpers
-    └── analytics.js      # Analytics helpers
-```
-
-### `/src/styles/`
-
-Estilos y temas:
-
-```
-styles/
-├── base/
-│   ├── _reset.scss       # Reset CSS
-│   ├── _typography.scss  # Tipografía
-│   └── _variables.scss   # Variables globales
-├── components/
-│   └── _buttons.scss     # Estilos de componentes
-├── themes/
-│   ├── default.js        # Tema por defecto
-│   ├── dark.js          # Tema oscuro
-│   └── custom.js        # Tema personalizado
-└── main.scss             # Archivo principal de estilos
+├── index.ts                # Barrel export
+├── ErrorBoundary.tsx       # Wrapper de error boundary
+├── DataStateWrapper.tsx    # Manejador de estados loading/error/empty
+├── LoadingState.tsx        # Variantes de skeleton de carga
+├── ErrorState.tsx          # UI de error con retry
+├── EmptyState.tsx          # UI de datos vacíos
+└── AccountCard/
+    ├── AccountCard.tsx
+    ├── AccountCard.test.tsx
+    └── index.ts
 ```
 
 ### `/src/config/`
@@ -171,10 +62,81 @@ Configuración de la aplicación:
 
 ```
 config/
-├── app.config.js         # Configuración general
-├── api.config.js         # Configuración de API
-├── theme.config.js       # Configuración de tema
-└── routes.config.js      # Configuración de rutas
+├── widgetConfig.ts        # Configuración del widget desde Liquid
+├── i18nConfig.ts          # Configuración de i18next
+└── liquidConfig.ts        # Inicialización del parser LiquidJS
+```
+
+### `/src/services/`
+
+Capa de comunicación con APIs siguiendo el patrón repository:
+
+```
+services/
+├── api/
+│   └── client.ts          # Cliente HTTP Axios con interceptores
+├── repositories/          # Capa de acceso a datos
+│   ├── accountRepository.ts
+│   └── transactionRepository.ts
+└── hooks/                 # Hooks de TanStack Query
+    ├── useAccounts.ts
+    └── useTransactions.ts
+```
+
+### `/src/store/`
+
+Gestión de estado UI con Zustand:
+
+```
+store/
+└── useUIStore.ts          # Estado UI (filtros, modales, selecciones)
+```
+
+:::warning Zustand Solo para Estado UI
+Usa Zustand exclusivamente para estado de UI (filtros, modales, tabs activos). Los datos del servidor deben manejarse con TanStack Query, no con Zustand.
+:::
+
+### `/src/providers/`
+
+Proveedores de contexto React:
+
+```
+providers/
+└── QueryProvider.tsx      # Configuración de TanStack Query
+```
+
+### `/src/types/`
+
+Definiciones centralizadas de TypeScript:
+
+```
+types/
+└── index.ts               # Todas las definiciones de tipos
+```
+
+**Convenciones de nombrado de tipos:**
+- `Entity` - Tipos de dominio
+- `ApiEntity` - Mapeo de respuesta de API
+- `CreateEntityData` / `UpdateEntityData` - Tipos de payload
+- `EntityFilters` - Parámetros de filtro
+
+### `/src/locales/`
+
+Archivos de internacionalización:
+
+```
+locales/
+├── en.json               # Traducciones en inglés
+└── es.json               # Traducciones en español
+```
+
+### `/src/styles/`
+
+Estilos del widget:
+
+```
+styles/
+└── base.scss             # Estilos específicos del widget
 ```
 
 ## Archivos de Configuración
@@ -183,82 +145,121 @@ config/
 
 ```json
 {
-  "name": "mi-proyecto-dynamic",
+  "name": "my-widget",
   "version": "1.0.0",
+  "type": "module",
   "scripts": {
-    "start": "webpack serve --mode development",
-    "build": "webpack --mode production",
-    "test": "jest",
-    "lint": "eslint src/",
-    "format": "prettier --write src/",
-    "analyze": "webpack-bundle-analyzer",
-    "modyo:push": "modyo-cli push",
-    "modyo:preview": "modyo-cli preview"
+    "start": "vite",
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint .",
+    "push": "npm run build && npx @modyo/cli@latest push"
   },
   "dependencies": {
-    "@dynamic-framework/ui-react": "^1.27.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.0.0",
-    "axios": "^1.0.0"
+    "@dynamic-framework/ui-react": "^2.0.0",
+    "@tanstack/react-query": "^5.60.0",
+    "axios": "^1.13.0",
+    "i18next": "^24.0.0",
+    "liquidjs": "^10.24.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-i18next": "^16.0.0",
+    "zustand": "^5.0.0"
   },
   "devDependencies": {
-    "@modyo/cli": "^3.0.0",
-    "webpack": "^5.0.0",
-    "jest": "^29.0.0",
-    "eslint": "^8.0.0",
-    "prettier": "^2.0.0"
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.5.0",
+    "eslint": "^9.0.0",
+    "sass-embedded": "^1.93.0",
+    "typescript": "^5.9.0",
+    "vite": "^7.0.0",
+    "vitest": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=22.0.0"
   }
 }
+```
+
+### `vite.config.ts`
+
+```typescript
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import svgr from 'vite-plugin-svgr';
+
+export default defineConfig({
+  plugins: [react(), svgr()],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        quietDeps: true,
+        silenceDeprecations: ['legacy-js-api'],
+      },
+    },
+  },
+  build: {
+    outDir: 'build',
+    assetsDir: '',
+    rollupOptions: {
+      output: {
+        entryFileNames: 'main.js',
+        chunkFileNames: '[name].[hash].chunk.js',
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name?.endsWith('.css')) {
+            return 'main.css';
+          }
+          return '[name].[hash][extname]';
+        },
+      },
+    },
+    chunkSizeWarningLimit: 2000,
+    minify: 'esbuild',
+  },
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './tests/setup.ts',
+  },
+});
 ```
 
 ### `.env.example`
 
 ```bash
-# API Configuration
-REACT_APP_API_URL=https://api.example.com
-REACT_APP_API_KEY=your-api-key
-
-# Modyo Configuration
-REACT_APP_MODYO_ACCOUNT=your-account
-REACT_APP_MODYO_SITE=your-site
+# Configuración de API
+VITE_API_BASE_URL=https://api.example.com
 
 # Feature Flags
-REACT_APP_ENABLE_INVESTMENTS=true
-REACT_APP_ENABLE_LOANS=false
-
-# Analytics
-REACT_APP_GA_ID=UA-XXXXXXXXX
+VITE_ENABLE_DEVTOOLS=true
 ```
 
-### `.modyo/config.json`
+:::tip Variables de Entorno en Vite
+Vite usa el prefijo `VITE_` para variables de entorno. Accede a ellas mediante `import.meta.env.VITE_*`.
+:::
+
+### `tsconfig.json`
 
 ```json
 {
-  "account": "mi-banco",
-  "site": "web-banking",
-  "widget": {
-    "name": "dynamic-app",
-    "description": "Aplicación bancaria con Dynamic Framework",
-    "category": "banking",
-    "tags": ["react", "dynamic", "banking"]
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true
   },
-  "deploy": {
-    "environments": {
-      "development": {
-        "site": "web-banking-dev",
-        "variables": {
-          "API_URL": "https://api-dev.example.com"
-        }
-      },
-      "production": {
-        "site": "web-banking",
-        "variables": {
-          "API_URL": "https://api.example.com"
-        }
-      }
-    }
-  }
+  "include": ["src"]
 }
 ```
 
@@ -266,120 +267,141 @@ REACT_APP_GA_ID=UA-XXXXXXXXX
 
 ### 1. Organización de Componentes
 
-**Estructura de Componente**:
+**Componente simple:**
 ```
-Button/
-├── Button.jsx           # Componente principal
-├── Button.styles.js     # Estilos (styled-components o CSS modules)
-├── Button.test.js       # Tests
-├── Button.stories.js    # Storybook stories
-└── index.js            # Export público
+AccountCard.tsx      # Componente con estilos/tests colocados si es pequeño
 ```
 
-**index.js**:
-```javascript
-export { default } from './Button';
-export * from './Button';
+**Componente complejo:**
+```
+AccountCard/
+├── AccountCard.tsx     # Componente principal
+├── AccountCard.test.tsx # Tests
+└── index.ts            # Export público
 ```
 
-### 2. Nomenclatura
+### 2. Convenciones de Nombrado
 
-- **Componentes**: PascalCase (`AccountCard.jsx`)
-- **Funciones/Hooks**: camelCase (`useAuth.js`)
-- **Constantes**: UPPER_SNAKE_CASE (`API_ENDPOINTS.js`)
-- **Archivos CSS**: kebab-case (`button-styles.scss`)
+- **Componentes**: PascalCase (`AccountCard.tsx`)
+- **Hooks**: camelCase con prefijo `use` (`useAccounts.ts`)
+- **Stores**: camelCase con prefijo `use` (`useUIStore.ts`)
+- **Utils**: camelCase (`formatCurrency.ts`)
+- **Tipos**: PascalCase (`Account`, `ApiAccount`)
 
 ### 3. Imports Organizados
 
-```javascript
-// 1. Dependencias externas
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+```typescript
+// 1. React y librerías externas
+import { useState } from 'react';
 
 // 2. Componentes de Dynamic Framework
-import { Button, Card, Input } from '@dynamic-framework/ui-react';
+import { DButton, DCard, DIcon } from '@dynamic-framework/ui-react';
 
-// 3. Componentes internos
-import Header from '@/components/layout/Header';
-import AccountCard from '@/components/business/AccountCard';
+// 3. Módulos internos (hooks, stores, tipos)
+import { useAccounts } from '../services/hooks/useAccounts';
+import { useUIStore } from '../store/useUIStore';
+import type { Account } from '../types';
 
-// 4. Servicios y utilidades
-import { accountService } from '@/services/accounts';
-import { formatCurrency } from '@/utils/formatters';
-
-// 5. Estilos
-import styles from './Dashboard.module.scss';
+// 4. Estilos
+import '../styles/base.scss';
 ```
 
-### 4. Alias de Rutas
+### 4. Estrategia de Gestión de Estado
 
-Configura alias en webpack para imports más limpios:
+**Estado UI (Zustand):**
+```typescript
+// store/useUIStore.ts
+import { create } from 'zustand';
 
-```javascript
-// webpack.config.js
-resolve: {
-  alias: {
-    '@': path.resolve(__dirname, 'src'),
-    '@components': path.resolve(__dirname, 'src/components'),
-    '@services': path.resolve(__dirname, 'src/services'),
-    '@utils': path.resolve(__dirname, 'src/utils'),
-  }
+interface UIState {
+  selectedAccountId: string | null;
+  isModalOpen: boolean;
+  setSelectedAccount: (id: string | null) => void;
+  toggleModal: () => void;
+}
+
+export const useUIStore = create<UIState>((set) => ({
+  selectedAccountId: null,
+  isModalOpen: false,
+  setSelectedAccount: (id) => set({ selectedAccountId: id }),
+  toggleModal: () => set((state) => ({ isModalOpen: !state.isModalOpen })),
+}));
+```
+
+**Estado del Servidor (TanStack Query + Repository):**
+```typescript
+// services/repositories/accountRepository.ts
+import { api } from '../api/client';
+import type { Account } from '../../types';
+
+export async function getAccounts(signal?: AbortSignal): Promise<Account[]> {
+  const response = await api.get('/accounts', { signal });
+  return response.data;
+}
+
+// services/hooks/useAccounts.ts
+import { useQuery } from '@tanstack/react-query';
+import { getAccounts } from '../repositories/accountRepository';
+
+export function useAccounts() {
+  return useQuery({
+    queryKey: ['accounts'],
+    queryFn: ({ signal }) => getAccounts(signal),
+  });
 }
 ```
 
 ### 5. Separación de Responsabilidades
 
-- **Componentes**: Solo presentación y estado UI
-- **Services**: Lógica de negocio y APIs
-- **Hooks**: Lógica reutilizable y estado compartido
-- **Utils**: Funciones puras de utilidad
+- **Components**: Solo presentación e interacciones UI
+- **Providers**: Configuración de contexto (Query, i18n)
+- **Services**: Comunicación con APIs
+- **Store**: Solo estado UI (no datos del servidor)
+- **Utils**: Funciones utilitarias puras
+- **Types**: Definiciones de TypeScript
 
-## Escalabilidad
+## Patrón de Punto de Entrada
 
-### Para Proyectos Pequeños
+### `main.tsx`
 
-Estructura simplificada:
-```
-src/
-├── components/
-├── pages/
-├── services/
-├── App.jsx
-└── index.js
-```
+```tsx
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { DContextProvider } from '@dynamic-framework/ui-react';
 
-### Para Proyectos Grandes
+import App from './App';
+import './config/i18nConfig';
+import './styles/base.scss';
 
-Estructura por features:
-```
-src/
-├── features/
-│   ├── accounts/
-│   │   ├── components/
-│   │   ├── services/
-│   │   ├── hooks/
-│   │   └── index.js
-│   ├── transfers/
-│   └── investments/
-├── shared/
-│   ├── components/
-│   └── utils/
-└── core/
-    ├── auth/
-    └── api/
+const container = document.getElementById('root');
+if (container) {
+  createRoot(container).render(
+    <StrictMode>
+      <DContextProvider>
+        <App />
+      </DContextProvider>
+    </StrictMode>
+  );
+}
 ```
 
-### Para Monorepos
+### `App.tsx`
 
-Estructura con workspaces:
-```
-packages/
-├── web-app/
-├── mobile-app/
-├── shared-components/
-├── business-logic/
-└── design-system/
+```tsx
+import { QueryProvider } from './providers/QueryProvider';
+import { ErrorBoundary } from './components';
+
+function App() {
+  return (
+    <QueryProvider>
+      <ErrorBoundary>
+        {/* Contenido del widget */}
+      </ErrorBoundary>
+    </QueryProvider>
+  );
+}
+
+export default App;
 ```
 
 ## Testing
@@ -388,41 +410,31 @@ packages/
 
 ```
 tests/
-├── unit/
-│   ├── components/
-│   ├── services/
-│   └── utils/
-├── integration/
-│   ├── flows/
-│   └── api/
-└── e2e/
-    ├── scenarios/
-    └── fixtures/
-```
-
-### Convención de Nombres
-
-- Tests unitarios: `Component.test.js`
-- Tests de integración: `feature.integration.test.js`
-- Tests E2E: `scenario.e2e.test.js`
-
-## Documentación
-
-### Estructura de Docs
-
-```
-docs/
-├── getting-started/
-│   └── README.md
+├── setup.ts              # Setup de Vitest (jsdom, mocks)
+src/
 ├── components/
-│   └── catalog.md
-├── api/
-│   └── reference.md
-└── architecture/
-    └── decisions/
+│   └── AccountCard.test.tsx  # Tests colocados con componentes
+├── utils/
+│   └── formatters.test.ts    # Tests colocados con utils
+```
+
+### Ejemplo de Test
+
+```typescript
+// src/components/AccountCard.test.tsx
+import { render, screen } from '@testing-library/react';
+import { AccountCard } from './AccountCard';
+
+describe('AccountCard', () => {
+  it('muestra el nombre de la cuenta', () => {
+    render(<AccountCard name="Ahorros" balance={1000} />);
+    expect(screen.getByText('Ahorros')).toBeInTheDocument();
+  });
+});
 ```
 
 ## Recursos
 
 - [Storybook](https://react.dynamicframework.dev) - Catálogo interactivo de componentes
 - [NPM Package](https://www.npmjs.com/package/@dynamic-framework/ui-react) - Detalles del paquete
+- [Documentación de Vite](https://vite.dev) - Documentación de la herramienta de build

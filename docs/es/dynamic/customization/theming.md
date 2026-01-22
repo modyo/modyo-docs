@@ -1,148 +1,311 @@
-# Theming
+---
+search: true
+---
 
-**La personalización de temas en Dynamic Framework permite adaptar la apariencia y el estilo de los widgets a requisitos de diseño específicos.**
+# Sistema de Temas
 
-Explora los conceptos básicos del diseño de temas, las variables CSS (o tokens) disponibles y aprende a crear tu propio tema.
+Personaliza la apariencia visual de los componentes de Dynamic Framework usando variables CSS y el sistema de temas de Bootstrap.
 
-La gestión de temas en Dynamic Framework implica establecer un conjunto de estilos que controlan la apariencia visual de los widgets en toda la aplicación. Esto promueve la coherencia en elementos de diseño como colores, tipografía, espaciado y otros aspectos visuales, asegurando una experiencia de usuario cohesiva.
+## Cómo Funciona el Theming
 
-**Descripción general de las variables o tokens CSS disponibles**
+Dynamic Framework está construido sobre Bootstrap 5, que usa propiedades personalizadas CSS (variables) extensivamente. Puedes personalizar la apariencia mediante:
 
-Dynamic Framework, al igual que Bootstrap, utiliza variables CSS (o tokens) para optimizar la personalización de estilos en las interfaces de usuario. Este enfoque ofrece una forma potente y eficiente de mantener un lenguaje visual coherente en todas las aplicaciones.
+1. **Sobrescribir variables CSS** - Cambiar valores en tiempo de ejecución
+2. **Sobrescribir variables SCSS** - Cambiar valores en tiempo de compilación
+3. **Agregar CSS personalizado** - Estilizar componentes específicos
 
-Las variables CSS actúan como marcadores de posición para los valores dentro de las hojas de estilo. Se puede definir una variable una vez y luego referenciarla múltiples veces en el código, lo que reduce la redundancia y facilita la gestión y actualización de los estilos.
+## Referencia de Variables CSS
 
-Dynamic Framework proporciona un conjunto completo de variables CSS que cubren una amplia gama de aspectos de estilo, incluidos colores, tipografía, espaciado y más. Puedes encontrar una lista detallada de estas variables en el [Storybook](https://react.dynamicframework.dev).
+### Colores Base
 
-**Creación de un tema en Modyo**
-
-Con Dynamic Framework integrado por defecto en cada nueva aplicación de Modyo, la creación de temas personalizados resulta sencilla. A continuación, se explica cómo crear tu tema personalizado.
-
-**1\. Prepara tu CSS personalizado**
-
-Antes de trabajar con la tematización en Dynamic Framework, asegúrate de tener un archivo CSS personalizado listo para albergar tus estilos.
-
-### Agrega componentes HTML
-
-Una vez que tu CSS personalizado esté listo, puedes agregar cualquier componente HTML del catálogo de Modyo a tu aplicación. Tomemos este componente Hero como ejemplo:
-
-```html
-<section class="bg-white py-8 df-hero-component">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-7 d-lg-flex mb-lg-4 align-items-center">
-					<div>
-						<span class="badge text-bg-light mb-2">Beneficios</span>
-						<h2 class="h3 mb-4">Desbloquea la libertad financiera con Dynamic Bank</h2>
-						<h5 class="fw-normal text-gray-500 mb-3">Potencia tu viaje hacia la riqueza con Dynamic Bank</h5>
-
-						<div class="mt-4">
-							<a href="" class="btn btn-primary btn-lg rounded-pill">Solicitar una demostración</a>
-							<a href="" class="btn btn-link-secondary btn-lg rounded-pill">Solicitar una demostración</a>
-						</div>
-			</div>
-			<div class="col-lg-5">
-				<picture>
-					<img class="mw-100 h-100 rounded-3" src="https://cdn.modyo.cloud/uploads/16ceb73d-4b61-4b8e-ad60-d572013ad8ea/original/Frame_33428.png">
-				</picture>
-			</div>
-		</div>
-	</div>
-</section>
-```
-
-Ten en cuenta que hemos agregado una clase `.df-hero-component` a la etiqueta `<section>` en nuestro HTML para garantizar que los estilos se apliquen correctamente.
-
-### Define variables CSS personalizadas
-
-Ahora, agreguemos variables CSS personalizadas a tu hoja de estilo para adaptar la apariencia de este componente:
+Bootstrap define estas variables de color que afectan todos los componentes:
 
 ```css
 :root {
-	--df-hero-background-color: #f0f0f0;
-	--df-hero-font-family: monospace;
-	--df-hero-button-background-color: #ff5722;
-	--df-hero-button-text-color: #fff;
+  /* Colores del tema */
+  --bs-primary: #0d6efd;
+  --bs-secondary: #6c757d;
+  --bs-success: #198754;
+  --bs-info: #0dcaf0;
+  --bs-warning: #ffc107;
+  --bs-danger: #dc3545;
+  --bs-light: #f8f9fa;
+  --bs-dark: #212529;
+
+  /* Versiones RGB (para uso con rgba()) */
+  --bs-primary-rgb: 13, 110, 253;
+  --bs-secondary-rgb: 108, 117, 125;
+  /* ... */
+
+  /* Body */
+  --bs-body-color: #212529;
+  --bs-body-bg: #fff;
 }
 ```
 
-### Aplica estilos personalizados
-
-Ahora que las variables CSS están disponibles, puedes aplicarlas al componente usando reglas CSS. Añade este código a la misma hoja de estilo:
+### Tipografía
 
 ```css
-.df-hero-component {
-	background-color: var(--df-hero-background-color);
-	color: var(--df-hero-text-color);
-	font-family: var(--df-hero-font-family);
-}
-
-.df-hero-component .btn-primary {
-	background-color: var(--df-hero-button-background-color);
-	color: var(--df-hero-button-text-color);
+:root {
+  --bs-body-font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --bs-body-font-size: 1rem;
+  --bs-body-font-weight: 400;
+  --bs-body-line-height: 1.5;
 }
 ```
 
-### Continúa personalizando
+### Espaciado y Dimensiones
 
-Para realizar modificaciones adicionales o crear temas más complejos, simplemente añade reglas CSS adicionales en tu hoja de estilo personalizada. Este enfoque te permite mantener un control total sobre la presentación visual de tus aplicaciones de Modyo mientras aprovechas la potencia y la flexibilidad de Dynamic Framework.
+```css
+:root {
+  --bs-border-width: 1px;
+  --bs-border-radius: 0.375rem;
+  --bs-border-radius-sm: 0.25rem;
+  --bs-border-radius-lg: 0.5rem;
+  --bs-border-radius-xl: 1rem;
+  --bs-border-radius-pill: 50rem;
+}
+```
 
----
+## Personalizando tu Tema
 
-## Creación de un Tema Personalizado para un Widget
+### Método 1: Sobrescritura con Archivo CSS
 
-Aunque en la sección de creación de un tema en Modyo se abordó la aplicación de estilos en toda tu aplicación, la tematización de widgets individuales requiere un enfoque ligeramente distinto.
+Crea un archivo CSS que sobrescriba las variables por defecto:
 
-Crear un tema para tus widgets puede contribuir a que tu aplicación sea más modular y fácil de mantener. Ten en cuenta que los estilos CSS globales que definas podrían afectar inadvertidamente el comportamiento del CSS de tu widget individual. En algunos casos, es posible que necesites emplear una mayor especificidad de CSS para garantizar que tus estilos se apliquen correctamente.
+```css
+/* src/styles/theme.css */
+:root {
+  /* Colores de tu marca */
+  --bs-primary: #004B8D;
+  --bs-primary-rgb: 0, 75, 141;
+  --bs-secondary: #00A0DF;
+  --bs-secondary-rgb: 0, 160, 223;
 
-Tienes dos opciones principales para crear temas para tus widgets:
+  /* Tipografía */
+  --bs-body-font-family: 'Inter', system-ui, sans-serif;
 
-- **CSS global en tu aplicación:** Define tu tema dentro del archivo CSS principal de tu sitio. Este es un enfoque sencillo, pero podría requerir el uso de selectores más específicos para apuntar a los elementos del widget.
+  /* Bordes redondeados */
+  --bs-border-radius: 0.5rem;
+  --bs-border-radius-lg: 0.75rem;
+}
+```
 
-- **Incrustado en el CSS de React:** Si tu widget es una aplicación de React, puedes incrustar el tema directamente en su archivo CSS. Esto proporciona una forma más encapsulada y modular de diseñar tu widget.
+Importa este archivo **después** del CSS de Dynamic Framework:
 
-Ten en cuenta que los componentes de React en Dynamic Framework tienen su propio conjunto de propiedades personalizadas predefinidas. Puedes aprovechar estas propiedades para personalizar la apariencia y el comportamiento de tus widgets. Consulta el [Storybook](https://react.dynamicframework.dev) para obtener una lista detallada de las propiedades disponibles.
+```tsx
+// src/main.tsx
+import '@dynamic-framework/ui-react/dist/css/dynamic-ui.css';
+import './styles/theme.css'; // Tus sobrescrituras
+```
 
-### Ejemplo creación de un componente temático
+### Método 2: Personalización SCSS
 
-Supongamos que tienes un proyecto de React configurado utilizando el [proceso de instalación](../getting-started/installation.html) de Dynamic Framework.
+Para personalización en tiempo de compilación con más control:
 
-- **Navega a tu componente:** Abre el archivo `src/components/myComponent.tsx`.
-- **Reemplaza el código:** Reemplaza el código existente con el componente ListGroup:
+```scss
+// src/styles/theme.scss
 
-    ```tsx
-    import { DListGroup, DListGroupItem } from '@dynamic-framework/ui-react';
+// 1. Sobrescribir variables de Bootstrap
+$primary: #004B8D;
+$secondary: #00A0DF;
+$font-family-base: 'Inter', system-ui, sans-serif;
+$border-radius: 0.5rem;
+$border-radius-lg: 0.75rem;
 
-    export default function MyComponent() {
-      const items = ['Item 1', 'Item 2', 'Item 3'];
-      return (
-        <div id="my-component">
-          <DListGroup>
-            {items.map((item) => (
-              <DListGroupItem key={item}>{item}</DListGroupItem>
-            ))}
-          </DListGroup>
-        </div>
-      );
-    }
-    ```
+// Específico para botones
+$btn-border-radius: 2rem;
+$btn-padding-y: 0.625rem;
+$btn-padding-x: 1.5rem;
 
-Ten en cuenta la adición del atributo `id="my-component"` al div contenedor. Esto mejorará la especificidad de CSS para el estilo.
+// Específico para cards
+$card-border-radius: 1rem;
+$card-border-width: 0;
+$card-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 
-- **Define tus variables personalizadas:** Agrega las siguientes variables CSS a tu archivo `styles/base.css` (o a tu archivo CSS principal del sitio):
+// 2. Importar Bootstrap (esto usa tus variables)
+@import 'bootstrap/scss/bootstrap';
 
-    ```css
-    :root {
-       	--custom-widget-text-color: #fff;
-       	--custom-widget-background-color: #4848b7;
-    }
+// 3. Tus estilos adicionales
+.custom-class {
+  // ...
+}
+```
 
-    #my-component .list-group-item{
-       	color: var(--custom-widget-text-color);
-       	background-color: var(--custom-widget-background-color);
-    }
-    ```
+## Theming por Componente
 
-Puedes crear temas complejos personalizados para tus widgets mezclando variables CSS, propiedades de componentes y clases de Bootstrap.
+### Botones
 
-Recuerda que siempre puedes agregar más reglas CSS a tu hoja de estilo para personalizar aún más la apariencia y el comportamiento de tu widget.
+```css
+/* Todos los botones */
+.btn {
+  --bs-btn-padding-x: 1.5rem;
+  --bs-btn-padding-y: 0.625rem;
+  --bs-btn-font-size: 0.875rem;
+  --bs-btn-font-weight: 600;
+  --bs-btn-border-radius: 2rem;
+}
+
+/* Botón primario */
+.btn-primary {
+  --bs-btn-bg: #004B8D;
+  --bs-btn-border-color: #004B8D;
+  --bs-btn-hover-bg: #003d73;
+  --bs-btn-hover-border-color: #003d73;
+  --bs-btn-active-bg: #00315c;
+  --bs-btn-disabled-bg: #6c9dc4;
+}
+```
+
+### Cards
+
+```css
+.card {
+  --bs-card-spacer-y: 1.5rem;
+  --bs-card-spacer-x: 1.5rem;
+  --bs-card-border-radius: 1rem;
+  --bs-card-border-color: transparent;
+  --bs-card-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+```
+
+### Controles de Formulario
+
+```css
+.form-control {
+  --bs-border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-color: #dee2e6;
+}
+
+.form-control:focus {
+  border-color: var(--bs-primary);
+  box-shadow: 0 0 0 0.2rem rgba(0, 75, 141, 0.15);
+}
+```
+
+### Alertas
+
+```css
+.alert-primary {
+  --bs-alert-bg: #e7f1f9;
+  --bs-alert-border-color: #b8d4ea;
+  --bs-alert-color: #003d73;
+}
+```
+
+## Estilizando Componentes Dynamic
+
+Los componentes de Dynamic Framework usan clases de Bootstrap. Consulta el [Storybook](https://react.dynamicframework.dev) para propiedades CSS específicas de cada componente.
+
+### DButton
+
+```tsx
+import { DButton } from '@dynamic-framework/ui-react';
+
+// El componente renderiza clases de botón de Bootstrap
+<DButton text="Clic aquí" variant="primary" />
+// Renderiza: <button class="btn btn-primary">Clic aquí</button>
+```
+
+Estiliza con CSS estándar de botones Bootstrap:
+
+```css
+.btn-primary {
+  /* Tus estilos */
+}
+```
+
+### DCard
+
+```tsx
+import { DCard } from '@dynamic-framework/ui-react';
+
+<DCard>
+  <DCard.Header>Título</DCard.Header>
+  <DCard.Body>Contenido</DCard.Body>
+</DCard>
+// Renderiza estructura de card de Bootstrap
+```
+
+Estiliza con CSS estándar de cards Bootstrap:
+
+```css
+.card {
+  /* Tus estilos */
+}
+
+.card-header {
+  /* Estilos del header */
+}
+
+.card-body {
+  /* Estilos del body */
+}
+```
+
+### DInput
+
+```tsx
+import { DInput } from '@dynamic-framework/ui-react';
+
+<DInput label="Email" type="email" />
+// Renderiza form-control de Bootstrap
+```
+
+Estiliza con clases de formulario:
+
+```css
+.form-control {
+  /* Tus estilos */
+}
+
+.form-label {
+  /* Estilos del label */
+}
+```
+
+## Modo Oscuro
+
+Implementa modo oscuro definiendo valores de variables alternativos:
+
+```css
+/* Modo claro (por defecto) */
+:root {
+  --bs-body-bg: #ffffff;
+  --bs-body-color: #212529;
+  --bs-card-bg: #ffffff;
+}
+
+/* Modo oscuro */
+[data-bs-theme="dark"] {
+  --bs-body-bg: #121212;
+  --bs-body-color: #e0e0e0;
+  --bs-card-bg: #1e1e1e;
+  --bs-border-color: #2d2d2d;
+}
+```
+
+Alternar con JavaScript:
+
+```tsx
+function toggleDarkMode() {
+  const html = document.documentElement;
+  const current = html.getAttribute('data-bs-theme');
+  html.setAttribute('data-bs-theme', current === 'dark' ? 'light' : 'dark');
+}
+```
+
+## Mejores Prácticas
+
+1. **Usa variables CSS para valores dinámicos** - Colores que pueden cambiar en runtime
+2. **Usa SCSS para cambios estructurales** - Espaciado, dimensiones, estructura de componentes
+3. **No sobrescribas con `!important`** - Usa especificidad CSS adecuada
+4. **Prueba ratios de contraste** - Asegura accesibilidad con [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/)
+5. **Revisa Storybook** - Ve propiedades CSS de componentes en [react.dynamicframework.dev](https://react.dynamicframework.dev)
+
+## Recursos
+
+- [Variables CSS de Bootstrap](https://getbootstrap.com/docs/5.3/customize/css-variables/)
+- [Variables Sass de Bootstrap](https://getbootstrap.com/docs/5.3/customize/sass/)
+- [Dynamic Storybook](https://react.dynamicframework.dev)

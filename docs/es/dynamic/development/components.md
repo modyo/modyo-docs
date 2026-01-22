@@ -183,28 +183,130 @@ function App() {
 
 ## Sistema de Iconos
 
-Dynamic UI 2.0 usa [Lucide Icons](https://lucide.dev). Usa el componente `DIcon`:
+Dynamic UI 2.0 usa [Lucide Icons](https://lucide.dev), una librería de iconos moderna y consistente con más de 1000 iconos. Usa el componente `DIcon` para renderizar iconos.
 
 :::danger Crítico: Formato PascalCase Requerido
 Los iconos **deben** usar formato PascalCase. Usar kebab-case mostrará un "?" como placeholder.
 :::
+
+### Uso Básico
 
 ```tsx
 import { DIcon } from '@dynamic-framework/ui-react';
 
 // ✅ Correcto - PascalCase
 <DIcon icon="Check" />
-<DIcon icon="AlertCircle" size="lg" />
-<DIcon icon="ArrowRight" color="primary" />
+<DIcon icon="AlertCircle" />
+<DIcon icon="ArrowRight" />
 <DIcon icon="CreditCard" />
 
 // ❌ Incorrecto - kebab-case (mostrará "?")
 <DIcon icon="check" />
 <DIcon icon="alert-circle" />
-<DIcon icon="arrow-right" />
 ```
 
-Iconos comunes: `Home`, `Settings`, `User`, `Search`, `Plus`, `Minus`, `Check`, `X`, `ChevronDown`, `ChevronRight`, `CreditCard`, `Calendar`, `Eye`, `EyeOff`, `Trash2`, `Pencil`
+### Tamaño de Iconos
+
+Usa la prop `size` para controlar las dimensiones del icono:
+
+```tsx
+<DIcon icon="Home" size="sm" />   {/* Pequeño */}
+<DIcon icon="Home" />              {/* Por defecto */}
+<DIcon icon="Home" size="lg" />   {/* Grande */}
+```
+
+Para tamaños personalizados, usa la prop `style`:
+
+```tsx
+<DIcon icon="Home" style={{ width: 48, height: 48 }} />
+```
+
+### Colores de Iconos
+
+Los iconos heredan su color de la propiedad CSS `color` del padre por defecto. Usa la prop `color` para colores del tema:
+
+```tsx
+<DIcon icon="Check" color="success" />
+<DIcon icon="X" color="danger" />
+<DIcon icon="AlertCircle" color="warning" />
+<DIcon icon="Info" color="info" />
+<DIcon icon="Star" color="primary" />
+```
+
+Para colores personalizados, usa CSS:
+
+```tsx
+<DIcon icon="Heart" style={{ color: '#e91e63' }} />
+```
+
+### Encontrar Iconos
+
+Explora todos los iconos disponibles en [lucide.dev/icons](https://lucide.dev/icons). Cuando encuentres un icono:
+
+1. Nota el nombre del icono (ej. `arrow-right`)
+2. Convierte a PascalCase (ej. `ArrowRight`)
+3. Usa en DIcon: `<DIcon icon="ArrowRight" />`
+
+### Iconos por Categoría
+
+#### Navegación
+`Home`, `Menu`, `X`, `ChevronLeft`, `ChevronRight`, `ChevronUp`, `ChevronDown`, `ArrowLeft`, `ArrowRight`, `ExternalLink`, `MoreHorizontal`, `MoreVertical`
+
+#### Acciones
+`Plus`, `Minus`, `Check`, `X`, `Edit`, `Pencil`, `Trash2`, `Copy`, `Download`, `Upload`, `Share`, `Send`, `Save`, `RefreshCw`
+
+#### Usuario y Cuenta
+`User`, `Users`, `UserPlus`, `UserMinus`, `UserCheck`, `LogIn`, `LogOut`, `Key`, `Lock`, `Unlock`, `Shield`, `Settings`
+
+#### Comunicación
+`Mail`, `MessageSquare`, `MessageCircle`, `Phone`, `Bell`, `BellOff`, `AtSign`
+
+#### Media
+`Image`, `Camera`, `Video`, `Play`, `Pause`, `Volume2`, `VolumeX`, `Mic`, `MicOff`
+
+#### Archivos y Datos
+`File`, `FileText`, `Folder`, `FolderOpen`, `Archive`, `Clipboard`, `Database`
+
+#### Financieros (Apps Bancarias)
+`CreditCard`, `Wallet`, `DollarSign`, `Banknote`, `PiggyBank`, `TrendingUp`, `TrendingDown`, `BarChart`, `PieChart`, `Receipt`, `Calculator`
+
+#### Estado y Feedback
+`AlertCircle`, `AlertTriangle`, `Info`, `HelpCircle`, `CheckCircle`, `XCircle`, `Clock`, `Loader`
+
+#### Varios
+`Search`, `Filter`, `Calendar`, `MapPin`, `Globe`, `Link`, `Eye`, `EyeOff`, `Star`, `Heart`, `ThumbsUp`, `ThumbsDown`
+
+### Usando DIconBase para Iconos Responsivos
+
+Para iconos que necesitan escalar con el viewport, usa `DIconBase`:
+
+```tsx
+import { DIconBase } from '@dynamic-framework/ui-react';
+
+<DIconBase icon="CreditCard" responsiveSize />
+```
+
+### Iconos en Botones
+
+Usa `DButtonIcon` para botones solo con icono con accesibilidad apropiada:
+
+```tsx
+import { DButtonIcon } from '@dynamic-framework/ui-react';
+
+<DButtonIcon icon="Pencil" ariaLabel="Editar elemento" />
+<DButtonIcon icon="Trash2" ariaLabel="Eliminar elemento" color="danger" />
+<DButtonIcon icon="Plus" ariaLabel="Agregar nuevo" variant="outline" />
+```
+
+Para botones con icono y texto, usa `DButton` con `iconStart` o `iconEnd`:
+
+```tsx
+import { DButton } from '@dynamic-framework/ui-react';
+
+<DButton iconStart="Plus">Agregar Cuenta</DButton>
+<DButton iconEnd="ArrowRight">Continuar</DButton>
+<DButton iconStart="Download" iconEnd="ChevronDown">Exportar</DButton>
+```
 
 ## Patrón Crítico de Uso de DSelect
 
@@ -299,13 +401,33 @@ const [isOpen, setIsOpen] = useState(false);
 
 ## Accesibilidad
 
-Todos los componentes de Dynamic Framework cumplen con los estándares WCAG 2.1 nivel AA:
+Los componentes de Dynamic Framework están diseñados con accesibilidad en mente y siguen los estándares [WAI-ARIA](https://www.w3.org/WAI/ARIA/apg/). Sin embargo, la librería no puede hacer tu aplicación completamente accesible por sí sola—debes tomar acción para asegurar la accesibilidad.
 
-- **Navegación por teclado** completa
-- Compatible con **lectores de pantalla**
-- **Contraste de color** adecuado
-- **Etiquetas ARIA** apropiadas
-- **Mensajes de error** descriptivos
+### Lo que Proveen los Componentes
+
+| Componente | Accesibilidad Incluida |
+|------------|------------------------|
+| DInput | Conecta label con input automáticamente vía `id` |
+| DButton | Keyboard focus, `aria-busy` para estados de carga |
+| DModal | Focus trap, `aria-modal`, Escape para cerrar |
+| DSelect | `aria-expanded`, navegación con flechas |
+| DAlert | `role="alert"` para anuncios a screen readers |
+
+### Tu Responsabilidad
+
+Debes proveer los props necesarios para accesibilidad completa:
+
+- **Inputs**: Siempre provee `label` o `aria-label`
+- **Botones**: Provee `text` o `aria-label` para botones de solo icono
+- **Imágenes**: Siempre incluye texto `alt` descriptivo
+
+```tsx
+// ✅ Input accesible
+<DInput id="search" label="Buscar cuentas" />
+
+// ✅ Botón de solo icono accesible
+<DButtonIcon icon="Trash2" ariaLabel="Eliminar elemento" />
+```
 
 ## Documentación y Soporte
 

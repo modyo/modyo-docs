@@ -1,148 +1,311 @@
+---
+search: true
+---
+
 # Theming
 
-**Theme customization in Dynamic Framework allows you to adapt the appearance and style of widgets to specific design requirements.**
+Customize the visual appearance of Dynamic Framework components using CSS variables and Bootstrap's theming system.
 
-Explore the basic concepts of theme design, available CSS variables (or tokens) and learn how to create your own theme.
+## How Theming Works
 
-Theme management in Dynamic Framework involves establishing a set of styles that control the visual appearance of widgets throughout the application. This promotes consistency in design elements such as colors, typography, spacing and other visual aspects, ensuring a cohesive user experience.
+Dynamic Framework is built on Bootstrap 5, which uses CSS custom properties (variables) extensively. You can customize the appearance by:
 
-**Overview of available CSS variables or tokens**
+1. **Overriding CSS variables** - Change values at runtime
+2. **Overriding SCSS variables** - Change values at build time
+3. **Adding custom CSS** - Style specific components
 
-Dynamic Framework, like Bootstrap, uses CSS variables (or tokens) to optimize style customization in user interfaces. This approach offers a powerful and efficient way to maintain a consistent visual language across all applications.
+## CSS Variables Reference
 
-CSS variables act as placeholders for values within stylesheets. You can define a variable once and then reference it multiple times in the code, which reduces redundancy and facilitates style management and updates.
+### Core Colors
 
-Dynamic Framework provides a comprehensive set of CSS variables that cover a wide range of style aspects, including colors, typography, spacing and more. You can find a detailed list of these variables in the [Storybook documentation](https://react.dynamicframework.dev).
-
-**Creating a theme in Modyo**
-
-With Dynamic Framework integrated by default into every new Modyo application, creating custom themes is straightforward. Below is how to create your custom theme.
-
-**1\. Prepare your custom CSS**
-
-Before working with theming in Dynamic Framework, make sure you have a custom CSS file ready to house your styles.
-
-### Add HTML components
-
-Once your custom CSS is ready, you can add any HTML component from Modyo's catalog to your application. Let's take this Hero component as an example:
-
-```html
-<section class="bg-white py-8 df-hero-component">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-7 d-lg-flex mb-lg-4 align-items-center">
-					<div>
-						<span class="badge text-bg-light mb-2">Benefits</span>
-						<h2 class="h3 mb-4">Unlock financial freedom with Dynamic Bank</h2>
-						<h5 class="fw-normal text-gray-500 mb-3">Power your wealth journey with Dynamic Bank</h5>
-
-						<div class="mt-4">
-							<a href="" class="btn btn-primary btn-lg rounded-pill">Request a demo</a>
-							<a href="" class="btn btn-link-secondary btn-lg rounded-pill">Request a demo</a>
-						</div>
-			</div>
-			<div class="col-lg-5">
-				<picture>
-					<img class="mw-100 h-100 rounded-3" src="https://cdn.modyo.cloud/uploads/16ceb73d-4b61-4b8e-ad60-d572013ad8ea/original/Frame_33428.png">
-				</picture>
-			</div>
-		</div>
-	</div>
-</section>
-```
-
-Note that we've added a `.df-hero-component` class to the `<section>` tag in our HTML to ensure styles are applied correctly.
-
-### Define custom CSS variables
-
-Now, let's add custom CSS variables to your stylesheet to adapt the appearance of this component:
+Bootstrap defines these color variables that affect all components:
 
 ```css
 :root {
-	--df-hero-background-color: #f0f0f0;
-	--df-hero-font-family: monospace;
-	--df-hero-button-background-color: #ff5722;
-	--df-hero-button-text-color: #fff;
+  /* Theme colors */
+  --bs-primary: #0d6efd;
+  --bs-secondary: #6c757d;
+  --bs-success: #198754;
+  --bs-info: #0dcaf0;
+  --bs-warning: #ffc107;
+  --bs-danger: #dc3545;
+  --bs-light: #f8f9fa;
+  --bs-dark: #212529;
+
+  /* RGB versions (for rgba() usage) */
+  --bs-primary-rgb: 13, 110, 253;
+  --bs-secondary-rgb: 108, 117, 125;
+  /* ... */
+
+  /* Body */
+  --bs-body-color: #212529;
+  --bs-body-bg: #fff;
 }
 ```
 
-### Apply custom styles
-
-Now that CSS variables are available, you can apply them to the component using CSS rules. Add this code to the same stylesheet:
+### Typography
 
 ```css
-.df-hero-component {
-	background-color: var(--df-hero-background-color);
-	color: var(--df-hero-text-color);
-	font-family: var(--df-hero-font-family);
-}
-
-.df-hero-component .btn-primary {
-	background-color: var(--df-hero-button-background-color);
-	color: var(--df-hero-button-text-color);
+:root {
+  --bs-body-font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --bs-body-font-size: 1rem;
+  --bs-body-font-weight: 400;
+  --bs-body-line-height: 1.5;
 }
 ```
 
-### Continue customizing
+### Spacing and Sizing
 
-To make additional modifications or create more complex themes, simply add additional CSS rules to your custom stylesheet. This approach allows you to maintain full control over the visual presentation of your Modyo applications while leveraging the power and flexibility of Dynamic Framework.
+```css
+:root {
+  --bs-border-width: 1px;
+  --bs-border-radius: 0.375rem;
+  --bs-border-radius-sm: 0.25rem;
+  --bs-border-radius-lg: 0.5rem;
+  --bs-border-radius-xl: 1rem;
+  --bs-border-radius-pill: 50rem;
+}
+```
 
----
+## Customizing Your Theme
 
-## Creating a Custom Theme for a Widget
+### Method 1: CSS File Override
 
-While the theme creation section in Modyo covered applying styles throughout your application, theming individual widgets requires a slightly different approach.
+Create a CSS file that overrides the default variables:
 
-Creating a theme for your widgets can help make your application more modular and easier to maintain. Keep in mind that global CSS styles you define could inadvertently affect your individual widget's CSS behavior. In some cases, you may need to employ higher CSS specificity to ensure your styles are applied correctly.
+```css
+/* src/styles/theme.css */
+:root {
+  /* Your brand colors */
+  --bs-primary: #004B8D;
+  --bs-primary-rgb: 0, 75, 141;
+  --bs-secondary: #00A0DF;
+  --bs-secondary-rgb: 0, 160, 223;
 
-You have two main options for creating themes for your widgets:
+  /* Typography */
+  --bs-body-font-family: 'Inter', system-ui, sans-serif;
 
-- **Global CSS in your application:** Define your theme within your site's main CSS file. This is a straightforward approach, but might require using more specific selectors to target widget elements.
+  /* Rounded corners */
+  --bs-border-radius: 0.5rem;
+  --bs-border-radius-lg: 0.75rem;
+}
+```
 
-- **Embedded in React CSS:** If your widget is a React application, you can embed the theme directly in its CSS file. This provides a more encapsulated and modular way to design your widget.
+Import this file **after** the Dynamic Framework CSS:
 
-Keep in mind that React components in Dynamic Framework have their own set of predefined custom properties. You can leverage these properties to customize the appearance and behavior of your widgets. Check the [Storybook](https://react.dynamicframework.dev) for a detailed list of available properties.
+```tsx
+// src/main.tsx
+import '@dynamic-framework/ui-react/dist/css/dynamic-ui.css';
+import './styles/theme.css'; // Your overrides
+```
 
-### Example creating a themed component
+### Method 2: SCSS Customization
 
-Suppose you have a React project set up using the Dynamic Framework [installation process](../getting-started/installation.html).
+For build-time customization with more control:
 
-- **Navigate to your component:** Open the `src/components/myComponent.tsx` file.
-- **Replace the code:** Replace the existing code with the ListGroup component:
+```scss
+// src/styles/theme.scss
 
-    ```tsx
-    import { DListGroup, DListGroupItem } from '@dynamic-framework/ui-react';
+// 1. Override Bootstrap variables
+$primary: #004B8D;
+$secondary: #00A0DF;
+$font-family-base: 'Inter', system-ui, sans-serif;
+$border-radius: 0.5rem;
+$border-radius-lg: 0.75rem;
 
-    export default function MyComponent() {
-      const items = ['Item 1', 'Item 2', 'Item 3'];
-      return (
-        <div id="my-component">
-          <DListGroup>
-            {items.map((item) => (
-              <DListGroupItem key={item}>{item}</DListGroupItem>
-            ))}
-          </DListGroup>
-        </div>
-      );
-    }
-    ```
+// Button-specific
+$btn-border-radius: 2rem;
+$btn-padding-y: 0.625rem;
+$btn-padding-x: 1.5rem;
 
-Note the addition of the `id="my-component"` attribute to the container div. This will improve CSS specificity for styling.
+// Card-specific
+$card-border-radius: 1rem;
+$card-border-width: 0;
+$card-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 
-- **Define your custom variables:** Add the following CSS variables to your `styles/base.css` file (or your site's main CSS file):
+// 2. Import Bootstrap (this uses your variables)
+@import 'bootstrap/scss/bootstrap';
 
-    ```css
-    :root {
-       	--custom-widget-text-color: #fff;
-       	--custom-widget-background-color: #4848b7;
-    }
+// 3. Your additional styles
+.custom-class {
+  // ...
+}
+```
 
-    #my-component .list-group-item{
-       	color: var(--custom-widget-text-color);
-       	background-color: var(--custom-widget-background-color);
-    }
-    ```
+## Component-Specific Theming
 
-You can create complex custom themes for your widgets by mixing CSS variables, component properties and Bootstrap classes.
+### Buttons
 
-Remember that you can always add more CSS rules to your stylesheet to further customize the appearance and behavior of your widget.
+```css
+/* All buttons */
+.btn {
+  --bs-btn-padding-x: 1.5rem;
+  --bs-btn-padding-y: 0.625rem;
+  --bs-btn-font-size: 0.875rem;
+  --bs-btn-font-weight: 600;
+  --bs-btn-border-radius: 2rem;
+}
+
+/* Primary button */
+.btn-primary {
+  --bs-btn-bg: #004B8D;
+  --bs-btn-border-color: #004B8D;
+  --bs-btn-hover-bg: #003d73;
+  --bs-btn-hover-border-color: #003d73;
+  --bs-btn-active-bg: #00315c;
+  --bs-btn-disabled-bg: #6c9dc4;
+}
+```
+
+### Cards
+
+```css
+.card {
+  --bs-card-spacer-y: 1.5rem;
+  --bs-card-spacer-x: 1.5rem;
+  --bs-card-border-radius: 1rem;
+  --bs-card-border-color: transparent;
+  --bs-card-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+```
+
+### Form Controls
+
+```css
+.form-control {
+  --bs-border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-color: #dee2e6;
+}
+
+.form-control:focus {
+  border-color: var(--bs-primary);
+  box-shadow: 0 0 0 0.2rem rgba(0, 75, 141, 0.15);
+}
+```
+
+### Alerts
+
+```css
+.alert-primary {
+  --bs-alert-bg: #e7f1f9;
+  --bs-alert-border-color: #b8d4ea;
+  --bs-alert-color: #003d73;
+}
+```
+
+## Dynamic Component Styling
+
+Dynamic Framework components use Bootstrap classes. Reference the [Storybook](https://react.dynamicframework.dev) for component-specific CSS properties.
+
+### DButton
+
+```tsx
+import { DButton } from '@dynamic-framework/ui-react';
+
+// The component renders Bootstrap button classes
+<DButton text="Click me" variant="primary" />
+// Renders: <button class="btn btn-primary">Click me</button>
+```
+
+Style with standard Bootstrap button CSS:
+
+```css
+.btn-primary {
+  /* Your styles */
+}
+```
+
+### DCard
+
+```tsx
+import { DCard } from '@dynamic-framework/ui-react';
+
+<DCard>
+  <DCard.Header>Title</DCard.Header>
+  <DCard.Body>Content</DCard.Body>
+</DCard>
+// Renders Bootstrap card structure
+```
+
+Style with standard Bootstrap card CSS:
+
+```css
+.card {
+  /* Your styles */
+}
+
+.card-header {
+  /* Header styles */
+}
+
+.card-body {
+  /* Body styles */
+}
+```
+
+### DInput
+
+```tsx
+import { DInput } from '@dynamic-framework/ui-react';
+
+<DInput label="Email" type="email" />
+// Renders Bootstrap form-control
+```
+
+Style with form classes:
+
+```css
+.form-control {
+  /* Your styles */
+}
+
+.form-label {
+  /* Label styles */
+}
+```
+
+## Dark Mode
+
+Implement dark mode by defining alternate variable values:
+
+```css
+/* Light mode (default) */
+:root {
+  --bs-body-bg: #ffffff;
+  --bs-body-color: #212529;
+  --bs-card-bg: #ffffff;
+}
+
+/* Dark mode */
+[data-bs-theme="dark"] {
+  --bs-body-bg: #121212;
+  --bs-body-color: #e0e0e0;
+  --bs-card-bg: #1e1e1e;
+  --bs-border-color: #2d2d2d;
+}
+```
+
+Toggle with JavaScript:
+
+```tsx
+function toggleDarkMode() {
+  const html = document.documentElement;
+  const current = html.getAttribute('data-bs-theme');
+  html.setAttribute('data-bs-theme', current === 'dark' ? 'light' : 'dark');
+}
+```
+
+## Best Practices
+
+1. **Use CSS variables for dynamic values** - Colors that might change at runtime
+2. **Use SCSS for structural changes** - Spacing, sizing, component structure
+3. **Don't override with `!important`** - Use proper CSS specificity
+4. **Test contrast ratios** - Ensure accessibility with [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/)
+5. **Check Storybook** - View component CSS properties at [react.dynamicframework.dev](https://react.dynamicframework.dev)
+
+## Resources
+
+- [Bootstrap CSS Variables](https://getbootstrap.com/docs/5.3/customize/css-variables/)
+- [Bootstrap Sass Variables](https://getbootstrap.com/docs/5.3/customize/sass/)
+- [Dynamic Storybook](https://react.dynamicframework.dev)

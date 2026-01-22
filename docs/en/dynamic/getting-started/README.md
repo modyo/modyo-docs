@@ -36,6 +36,13 @@ Step-by-step guide to upgrade from Dynamic UI 1.36.x:
 - API changes and removed components
 - Migration checklist
 
+### [Production Checklist](production-checklist.html)
+Comprehensive checklist before deploying to production:
+- Performance optimization
+- Security best practices
+- Accessibility compliance (WCAG 2.1 AA)
+- Error handling and monitoring
+
 ## Prerequisites
 
 Before starting, make sure you have:
@@ -51,7 +58,7 @@ If you already meet the prerequisites, you can start immediately:
 
 ```bash
 # 1. Create project with Dynamic template
-npx @modyo/cli@latest get dynamic-react-base-template my-bank
+npx @modyo/cli@latest get dynamic-react-vite-base-template my-bank
 
 # 2. Install dependencies
 cd my-bank && npm install
@@ -74,9 +81,8 @@ Your application will be available at `http://localhost:8080` 🎉
 ### For Experienced Developers
 
 1. Review the [Project Structure](project-structure.html)
-2. Explore [Pre-designed Experiences](../development/experiences.html)
-3. Learn about [Customization](../customization/)
-4. Implement [API Integrations](../development/api-integration.html)
+2. Learn about [Customization](../customization/)
+3. Implement [API Integrations](../development/api-integration.html)
 
 ## Support Resources
 

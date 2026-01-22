@@ -4,333 +4,205 @@ search: true
 
 # Customization
 
-Learn how to customize Dynamic Framework to perfectly fit your institution's identity and needs.
+Learn how to customize Dynamic Framework to fit your institution's visual identity.
 
 ## Section Contents
 
 ### [Theme System](theming.html)
-Complete look & feel customization:
-- Theme variables
-- Color palettes
+Customize the visual appearance:
+- Bootstrap CSS variables
+- Color customization
 - Typography
-- Spacing and sizes
-
-### [Styles and CSS](styling.html)
-Advanced styling techniques:
-- CSS Modules
-- Styled Components
-- CSS utilities
-- Responsive design
+- Component-level styling
 
 ### [Extend Components](extending.html)
-Create your own components or extend existing ones:
-- Component inheritance
-- Advanced composition
-- Custom props
+Create custom components:
+- Composition patterns
 - Wrapper components
+- Custom hooks
 
-## Customization Levels
+## Customization Approaches
 
-### Level 1: Basic Configuration
-Simple changes through configuration variables:
+Dynamic Framework is built on Bootstrap 5, which means customization follows Bootstrap's established patterns.
 
-```javascript
-// theme.config.js
-export default {
-  colors: {
-    primary: '#004B8D',
-    secondary: '#00A0DF'
-  },
-  typography: {
-    fontFamily: 'Inter, sans-serif'
-  }
-};
+### 1. CSS Variables (Runtime)
+
+Override Bootstrap CSS variables for runtime customization:
+
+```css
+/* src/styles/custom.css */
+:root {
+  /* Colors */
+  --bs-primary: #004B8D;
+  --bs-secondary: #6c757d;
+  --bs-success: #198754;
+  --bs-danger: #dc3545;
+
+  /* Typography */
+  --bs-body-font-family: 'Inter', sans-serif;
+  --bs-body-font-size: 1rem;
+  --bs-body-line-height: 1.5;
+
+  /* Border radius */
+  --bs-border-radius: 0.375rem;
+  --bs-border-radius-lg: 0.5rem;
+
+  /* Spacing (used by utilities) */
+  --bs-spacer: 1rem;
+}
 ```
 
-### Level 2: CSS Styles
-Override specific styles:
+### 2. SCSS Variables (Build Time)
+
+For deeper customization, override Bootstrap SCSS variables before importing:
 
 ```scss
-// custom.scss
-.df-button {
-  border-radius: 12px;
+// src/styles/custom.scss
+
+// Override Bootstrap variables BEFORE importing
+$primary: #004B8D;
+$secondary: #00A0DF;
+$font-family-base: 'Inter', sans-serif;
+$border-radius: 0.5rem;
+$btn-border-radius: 2rem; // Pill buttons
+
+// Import Dynamic/Bootstrap styles
+@import '@dynamic-framework/ui-react/dist/css/dynamic-ui.css';
+
+// Your additional styles AFTER importing
+.my-custom-class {
+  // ...
+}
+```
+
+### 3. Component-Level Styling
+
+Style specific components using their CSS classes:
+
+```css
+/* Target Dynamic components */
+.btn {
   text-transform: uppercase;
-  
-  &--primary {
-    background: linear-gradient(135deg, $primary, $secondary);
-  }
+  letter-spacing: 0.05em;
+}
+
+.card {
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-control:focus {
+  border-color: var(--bs-primary);
+  box-shadow: 0 0 0 0.25rem rgba(0, 75, 141, 0.25);
 }
 ```
 
-### Level 3: Extended Components
-Extend base component functionality:
+## DContextProvider Configuration
 
-```jsx
-// CustomButton.jsx
-import { Button } from '@dynamic-framework/ui-react';
+Dynamic Framework uses `DContextProvider` to configure component behavior:
 
-const CustomButton = ({ children, ...props }) => (
-  <Button 
-    {...props}
-    className="custom-button"
-    onClick={(e) => {
-      analytics.track('button_click');
-      props.onClick?.(e);
-    }}
-  >
-    {children}
-  </Button>
-);
-```
+```tsx
+// src/main.tsx
+import { DContextProvider } from '@dynamic-framework/ui-react';
 
-### Level 4: Custom Components
-Create completely new components:
+const config = {
+  language: 'en',
+  currency: {
+    symbol: '$',
+    precision: 2,
+    separator: ',',
+    decimal: '.',
+  },
+};
 
-```jsx
-// BiometricAuth.jsx
-const BiometricAuth = ({ onSuccess, onError }) => {
-  // Custom implementation
+function App() {
   return (
-    <div className="biometric-auth">
-      {/* Your unique component */}
-    </div>
+    <DContextProvider {...config}>
+      {/* Your app */}
+    </DContextProvider>
   );
-};
-```
-
-## Customization Strategies
-
-### Complete White Labeling
-
-For institutions that need a unique visual identity:
-
-1. **Define your design system**
-   - Corporate colors
-   - Custom typography
-   - Personalized iconography
-   - Visual patterns
-
-2. **Implement the theme**
-   - Create variables file
-   - Override base components
-   - Add unique elements
-
-3. **Maintain consistency**
-   - Document decisions
-   - Create style guide
-   - Automate validations
-
-### Progressive Customization
-
-Recommended approach for quick implementations:
-
-```
-Phase 1: Use Dynamic defaults
-↓
-Phase 2: Adjust colors and logos
-↓
-Phase 3: Customize key components
-↓
-Phase 4: Add custom components
-↓
-Phase 5: Continuous refinement
-```
-
-### Multi-tenancy
-
-For institutions with multiple brands:
-
-```javascript
-// multi-theme.js
-const themes = {
-  'brand-a': {
-    primary: '#FF0000',
-    logo: '/logos/brand-a.svg'
-  },
-  'brand-b': {
-    primary: '#00FF00',
-    logo: '/logos/brand-b.svg'
-  }
-};
-
-// Apply theme dynamically
-<ThemeProvider theme={themes[currentBrand]}>
-  <App />
-</ThemeProvider>
-```
-
-## Customization Tools
-
-### Theme Builder
-Visual tool for creating themes:
-- Real-time preview
-- Variable export
-- Accessibility validation
-- Documentation generation
-
-### Design Tokens
-Token system to maintain consistency:
-
-```json
-{
-  "color": {
-    "primary": {
-      "value": "#004B8D",
-      "type": "color"
-    }
-  },
-  "spacing": {
-    "small": {
-      "value": "8px",
-      "type": "spacing"
-    }
-  }
 }
 ```
 
-### Storybook
-Document and test customizations:
-- Component catalog
-- Visual variants
-- Interactive states
-- Living documentation
+## Common Customizations
 
-## Common Use Cases
+### Brand Colors
 
-### Dark Mode
-```scss
-[data-theme="dark"] {
-  --df-bg-primary: #1a1a1a;
-  --df-text-primary: #ffffff;
-  --df-border-color: #333333;
+```css
+:root {
+  --bs-primary: #your-brand-color;
+  --bs-primary-rgb: r, g, b; /* RGB values for opacity utilities */
+
+  /* Generate color variants */
+  --bs-link-color: var(--bs-primary);
+  --bs-link-hover-color: #darker-shade;
 }
 ```
 
-### High Contrast Mode
-```scss
-[data-contrast="high"] {
-  --df-text-primary: #000000;
-  --df-bg-primary: #ffffff;
-  --df-border-width: 2px;
+### Custom Fonts
+
+```css
+/* Import your font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --bs-body-font-family: 'Inter', system-ui, sans-serif;
+  --bs-headings-font-family: 'Inter', system-ui, sans-serif;
 }
 ```
 
-### Seasonal Themes
-```javascript
-const seasonalThemes = {
-  christmas: {
-    primary: '#c41e3a',
-    secondary: '#165b33'
-  },
-  summer: {
-    primary: '#ffd700',
-    secondary: '#00bfff'
-  }
-};
+### Button Styles
+
+```css
+/* Rounded pill buttons */
+.btn {
+  --bs-btn-border-radius: 2rem;
+}
+
+/* Specific button variants */
+.btn-primary {
+  --bs-btn-bg: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+  --bs-btn-hover-bg: #003d73;
+  --bs-btn-hover-border-color: #003d73;
+}
+```
+
+### Card Styles
+
+```css
+.card {
+  --bs-card-border-radius: 1rem;
+  --bs-card-border-color: transparent;
+  --bs-card-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
 ```
 
 ## Best Practices
 
-### Recommendations
+### Do's
 
-1. **Maintain accessibility**
-   - Verify color contrast
-   - Test with screen readers
-   - Validate keyboard navigation
+- **Use CSS variables** for runtime theming (dark mode, brand switching)
+- **Use SCSS variables** for build-time customization
+- **Follow Bootstrap patterns** to ensure compatibility
+- **Test accessibility** - verify color contrast ratios
+- **Check Storybook** for component-specific CSS properties
 
-2. **Document changes**
-   - Create customization changelog
-   - Keep style guide updated
-   - Comment custom code
+### Don'ts
 
-3. **Version themes**
-   - Use version control
-   - Tag important releases
-   - Maintain backups
-
-4. **Optimize performance**
-   - Minimize custom CSS
-   - Use CSS variables for dynamic themes
-   - Lazy load alternative themes
-
-### Precautions
-
-1. **Don't modify core**
-   - Never edit Dynamic files directly
-   - Use extension, not modification
-   - Maintain upgradeability
-
-2. **Avoid !important**
-   - Use correct specificity
-   - Leverage CSS cascade
-   - Keep code clean
-
-3. **Test cross-browser**
-   - Test on all target browsers
-   - Validate on different devices
-   - Consider progressive enhancement
-
-## Real Examples
-
-### Bank with Strong Identity
-```scss
-// Complete customization maintaining Dynamic
-.df-component {
-  // Respect base structure
-  @extend %df-component-base;
-  
-  // Add customization
-  border-radius: var(--bank-radius);
-  box-shadow: var(--bank-shadow);
-  
-  &::before {
-    content: '';
-    background: url('/bank-pattern.svg');
-  }
-}
-```
-
-### Minimalist Fintech
-```javascript
-// Minimalist theme
-const minimalTheme = {
-  colors: {
-    primary: '#000000',
-    secondary: '#ffffff',
-    accent: '#0066ff'
-  },
-  typography: {
-    fontFamily: 'Helvetica Neue, sans-serif',
-    scale: 1.25
-  },
-  spacing: {
-    unit: 16
-  },
-  borders: {
-    radius: 0,
-    width: 1
-  }
-};
-```
+- **Don't use `!important`** - use proper specificity instead
+- **Don't modify node_modules** - override via CSS/SCSS
+- **Don't hardcode colors** - use CSS variables for consistency
+- **Don't skip testing** - verify changes across browsers
 
 ## Resources
 
-- **Figma UI Kit**: Design with Dynamic components
-- **Theme Gallery**: Customization examples
-- **Color Tools**: Accessible palette generators
-- **Icon Library**: Financial icon library
-
-## Support
-
-Need help with customization?
-
-- **Design consultation**: Sessions with UX experts
-- **Accessibility review**: Customization audit
-- **Optimization**: Performance analysis
-- **Training**: Customization workshops
+- [Bootstrap CSS Variables](https://getbootstrap.com/docs/5.3/customize/css-variables/) - Complete variable reference
+- [Bootstrap SCSS Variables](https://getbootstrap.com/docs/5.3/customize/sass/) - Sass customization guide
+- [Dynamic Storybook](https://react.dynamicframework.dev) - Component CSS properties
+- [Contrast Checker](https://webaim.org/resources/contrastchecker/) - Accessibility validation
 
 ## Next Steps
 
-- Explore the [theme system](theming.html)
-- Learn about [styles and CSS](styling.html)
+- Learn about [CSS variables and theming](theming.html)
 - Discover how to [extend components](extending.html)

@@ -28,29 +28,25 @@ Todo lo necesario para comenzar a desarrollar con Dynamic.
 Guías técnicas para construir aplicaciones con Dynamic.
 
 - **[Componentes](development/components.html)** - Catálogo de 43 componentes especializados
-- **[Experiencias y Plantillas](development/experiences.html)** - Soluciones prediseñadas por industria
-- **[Integración con React](development/react-integration.html)** - Desarrollo avanzado con React
-- **[Widgets](development/widgets.html)** - Creación de widgets modulares
 - **[Integración con APIs](development/api-integration.html)** - Conexión con servicios backend
 
 ### [Personalización](customization/)
 Adapta Dynamic a tu identidad y necesidades específicas.
 
 - **[Sistema de Temas](customization/theming.html)** - Personalización visual completa
-- **[Estilos y CSS](customization/styling.html)** - Técnicas avanzadas de estilizado
 - **[Extender Componentes](customization/extending.html)** - Crea y modifica componentes
 
 ## Instalación Rápida
 
 ```bash
 # Crear proyecto con Dynamic Framework
-npx @modyo/cli@latest get dynamic-react-base-template my-app
+npx @modyo/cli@latest get dynamic-react-vite-base-template my-app
 
 # Instalar dependencias
 cd my-app && npm install
 
 # Iniciar servidor de desarrollo
-npm start
+npm run start
 ```
 
 Aplicación disponible en `http://localhost:8080`
@@ -74,7 +70,7 @@ Aplicación disponible en `http://localhost:8080`
 - **React**: 19.x (requiere ~19.2.1 como peer dependency)
 - **TypeScript**: Tipado estático completo
 - **Bootstrap**: 5.3.8 customizable
-- **Build Tools**: Webpack 5, Vite support
+- **Build Tools**: Vite
 - **Testing**: Jest, React Testing Library
 - **Linting**: ESLint, Prettier
 
@@ -87,20 +83,16 @@ Aplicación disponible en `http://localhost:8080`
 
 ### Desarrollo Avanzado
 1. [Componentes](development/components.html) - Catálogo y APIs
-2. [React Patterns](development/react-integration.html) - Hooks y patterns
-3. [API Integration](development/api-integration.html) - Backend connectivity
-4. [Widgets](development/widgets.html) - Componentes modulares
+2. [API Integration](development/api-integration.html) - Backend connectivity
 
 ### Personalización
 1. [Theming](customization/theming.html) - Variables y temas
-2. [Styling](customization/styling.html) - CSS y SCSS
-3. [Extending](customization/extending.html) - Componentes custom
+2. [Extending](customization/extending.html) - Componentes custom
 
 ## Recursos Técnicos
 
 ### Documentación
 - [Storybook Components](https://react.dynamicframework.dev) - Catálogo interactivo
-- [API Reference](https://dynamic.modyo.com/docs) - Documentación de APIs
 - [NPM Package](https://www.npmjs.com/package/@dynamic-framework/ui-react) - Registro de paquetes
 
 ### Herramientas de Desarrollo

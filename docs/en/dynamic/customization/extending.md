@@ -4,642 +4,277 @@ search: true
 
 # Extend Components
 
-Learn how to create custom components and extend existing Dynamic Framework components to adapt them to your specific needs.
+Learn how to create custom components that wrap and extend Dynamic Framework components.
 
-## Fundamental Concepts
+## Composition Over Inheritance
 
-### Composition vs Inheritance
+Dynamic Framework favors composition over inheritance. Instead of extending classes, wrap components to add functionality:
 
-Dynamic Framework favors composition over inheritance:
+```tsx
+// ✗ Avoid: inheritance
+class MyButton extends DButton { }
 
-```jsx
-// Avoid: Direct inheritance
-class MyButton extends DynamicButton {
-  // Problematic for maintenance
+// ✓ Prefer: composition
+import { DButton } from '@dynamic-framework/ui-react';
+
+function MyButton(props: ButtonProps) {
+  return <DButton {...props} />;
 }
-
-// Prefer: Composition
-import { DButton, DIcon } from '@dynamic-framework/ui-react';
-
-const MyButton = ({ children, ...props }) => {
-  return (
-    <DButton
-      {...props}
-      className="my-custom-button"
-    >
-      <DIcon icon="arrow-right" />
-      {children}
-    </DButton>
-  );
-};
 ```
 
-## Extending Basic Components
+## Wrapper Components
 
-### Wrapper Components
+Create wrapper components to add functionality like analytics, default props, or custom styling.
 
-Create wrapper components that add functionality:
+### Basic Wrapper
 
-```jsx
-// src/components/extended/PrimaryButton.jsx
-import React from 'react';
-import { DButton } from '@dynamic-framework/ui-react';
-import { trackEvent } from '@/utils/analytics';
+```tsx
+// src/components/PrimaryButton.tsx
+import { DButton, type DButtonProps } from '@dynamic-framework/ui-react';
 
-const PrimaryButton = ({
-  children,
+interface PrimaryButtonProps extends Omit<DButtonProps, 'variant'> {
+  trackingLabel?: string;
+}
+
+export function PrimaryButton({
   onClick,
   trackingLabel,
-  size = 'lg',
   ...props
-}) => {
-  const handleClick = (e) => {
-    // Add analytics
+}: PrimaryButtonProps) {
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (trackingLabel) {
-      trackEvent('button_click', {
-        label: trackingLabel,
-        component: 'PrimaryButton'
-      });
+      // Your analytics logic
+      console.log('Track:', trackingLabel);
     }
-
-    // Call original onClick
     onClick?.(e);
   };
 
   return (
     <DButton
-      color="primary"
-      size={size}
+      variant="primary"
       onClick={handleClick}
-      className="primary-button-extended"
       {...props}
-    >
-      {children}
-    </DButton>
+    />
   );
-};
-
-export default PrimaryButton;
+}
 ```
 
-### Higher-Order Components (HOCs)
+### Usage
 
-Create HOCs to add cross-cutting functionality:
-
-```jsx
-// src/hocs/withLoading.jsx
-import React, { useState } from 'react';
-import { DProgress } from '@dynamic-framework/ui-react';
-
-const withLoading = (WrappedComponent) => {
-  return function WithLoadingComponent(props) {
-    const [isLoading, setIsLoading] = useState(false);
-
-    const startLoading = () => setIsLoading(true);
-    const stopLoading = () => setIsLoading(false);
-
-    if (isLoading) {
-      return (
-        <div className="loading-container">
-          <DProgress />
-        </div>
-      );
-    }
-
-    return (
-      <WrappedComponent
-        {...props}
-        isLoading={isLoading}
-        startLoading={startLoading}
-        stopLoading={stopLoading}
-      />
-    );
-  };
-};
-
-export default withLoading;
-
-// Usage
-const EnhancedForm = withLoading(MyFormComponent);
+```tsx
+<PrimaryButton
+  text="Submit"
+  trackingLabel="submit-form"
+  onClick={() => handleSubmit()}
+/>
 ```
 
 ## Compound Components
 
-### Create Modular Components
+Create modular components using Dynamic's compound component pattern.
 
-```jsx
-// src/components/extended/ProductCard/index.jsx
-import React from 'react';
-import { DCard } from '@dynamic-framework/ui-react';
-import ProductHeader from './ProductHeader';
-import ProductDetails from './ProductDetails';
-import ProductActions from './ProductActions';
+### Product Card Example
 
-const ProductCard = ({ product, onAction }) => {
+```tsx
+// src/components/ProductCard.tsx
+import { DCard, DCurrencyText, DButton } from '@dynamic-framework/ui-react';
+import type { ReactNode } from 'react';
+
+interface Product {
+  id: string;
+  name: string;
+  description: string;
+  price: number;
+}
+
+interface ProductCardProps {
+  product: Product;
+  onSelect?: (id: string) => void;
+}
+
+export function ProductCard({ product, onSelect }: ProductCardProps) {
   return (
-    <DCard className="product-card-extended">
+    <DCard>
       <DCard.Header>
-        <ProductHeader
-          name={product.name}
-          code={product.code}
-          type={product.type}
-        />
+        <h5 className="mb-0">{product.name}</h5>
       </DCard.Header>
       <DCard.Body>
-        <ProductDetails
-          description={product.description}
-          features={product.features}
-        />
+        <p className="text-muted">{product.description}</p>
+        <DCurrencyText value={product.price} />
       </DCard.Body>
       <DCard.Footer>
-        <ProductActions
-          productId={product.id}
-          onAction={onAction}
+        <DButton
+          text="Select"
+          variant="primary"
+          onClick={() => onSelect?.(product.id)}
         />
       </DCard.Footer>
     </DCard>
   );
-};
-
-// Expose sub-components for flexibility
-ProductCard.Header = ProductHeader;
-ProductCard.Details = ProductDetails;
-ProductCard.Actions = ProductActions;
-
-export default ProductCard;
+}
 ```
 
-### Sub-components
+### Creating Your Own Compound Component
 
-```jsx
-// src/components/extended/ProductCard/ProductDetails.jsx
-import React from 'react';
-import { DCurrencyText, DBadge } from '@dynamic-framework/ui-react';
+```tsx
+// src/components/InfoCard/index.tsx
+import { DCard } from '@dynamic-framework/ui-react';
+import type { ReactNode } from 'react';
 
-const ProductDetails = ({ description, features, price }) => {
+interface InfoCardProps {
+  children: ReactNode;
+  className?: string;
+}
+
+interface InfoCardTitleProps {
+  children: ReactNode;
+}
+
+interface InfoCardContentProps {
+  children: ReactNode;
+}
+
+function InfoCard({ children, className }: InfoCardProps) {
   return (
-    <div className="product-details">
-      <p className="description">{description}</p>
-      <div className="features">
-        {features.map((feature, index) => (
-          <DBadge key={index} color="info">{feature}</DBadge>
-        ))}
-      </div>
-      {price && (
-        <DCurrencyText value={price} />
-      )}
-    </div>
+    <DCard className={className}>
+      {children}
+    </DCard>
   );
-};
+}
 
-export default ProductDetails;
+function InfoCardTitle({ children }: InfoCardTitleProps) {
+  return (
+    <DCard.Header>
+      <h5 className="mb-0">{children}</h5>
+    </DCard.Header>
+  );
+}
+
+function InfoCardContent({ children }: InfoCardContentProps) {
+  return <DCard.Body>{children}</DCard.Body>;
+}
+
+// Attach sub-components
+InfoCard.Title = InfoCardTitle;
+InfoCard.Content = InfoCardContent;
+
+export { InfoCard };
 ```
 
-## Custom Hooks for Components
+### Usage
 
-### useComponentState Hook
-
-```jsx
-// src/hooks/useComponentState.js
-import { useState, useCallback, useRef } from 'react';
-
-export const useComponentState = (initialState = {}) => {
-  const [state, setState] = useState(initialState);
-  const previousStateRef = useRef(initialState);
-
-  const updateState = useCallback((updates) => {
-    setState(prevState => {
-      const newState = { ...prevState, ...updates };
-      previousStateRef.current = prevState;
-      return newState;
-    });
-  }, []);
-
-  const resetState = useCallback(() => {
-    setState(initialState);
-    previousStateRef.current = initialState;
-  }, [initialState]);
-
-  const hasChanged = useCallback((key) => {
-    return state[key] !== previousStateRef.current[key];
-  }, [state]);
-
-  return {
-    state,
-    updateState,
-    resetState,
-    hasChanged,
-    previousState: previousStateRef.current
-  };
-};
+```tsx
+<InfoCard>
+  <InfoCard.Title>Account Summary</InfoCard.Title>
+  <InfoCard.Content>
+    <p>Your account details here</p>
+  </InfoCard.Content>
+</InfoCard>
 ```
 
-### useFormValidation Hook
+## Custom Hooks
 
-```jsx
-// src/hooks/useFormValidation.js
+Create hooks to encapsulate reusable logic.
+
+### useToggle
+
+```tsx
+// src/hooks/useToggle.ts
 import { useState, useCallback } from 'react';
 
-export const useFormValidation = (validationRules) => {
-  const [errors, setErrors] = useState({});
-  const [touched, setTouched] = useState({});
+export function useToggle(initialValue = false) {
+  const [value, setValue] = useState(initialValue);
 
-  const validate = useCallback((name, value) => {
-    const rules = validationRules[name];
-    if (!rules) return true;
+  const toggle = useCallback(() => setValue((v) => !v), []);
+  const setTrue = useCallback(() => setValue(true), []);
+  const setFalse = useCallback(() => setValue(false), []);
 
-    for (const rule of rules) {
-      const error = rule(value);
-      if (error) {
-        setErrors(prev => ({ ...prev, [name]: error }));
-        return false;
-      }
-    }
-
-    setErrors(prev => {
-      const newErrors = { ...prev };
-      delete newErrors[name];
-      return newErrors;
-    });
-    return true;
-  }, [validationRules]);
-
-  const validateAll = useCallback((values) => {
-    const newErrors = {};
-    let isValid = true;
-
-    Object.keys(validationRules).forEach(name => {
-      const rules = validationRules[name];
-      const value = values[name];
-
-      for (const rule of rules) {
-        const error = rule(value);
-        if (error) {
-          newErrors[name] = error;
-          isValid = false;
-          break;
-        }
-      }
-    });
-
-    setErrors(newErrors);
-    return isValid;
-  }, [validationRules]);
-
-  const markTouched = useCallback((name) => {
-    setTouched(prev => ({ ...prev, [name]: true }));
-  }, []);
-
-  const resetValidation = useCallback(() => {
-    setErrors({});
-    setTouched({});
-  }, []);
-
-  return {
-    errors,
-    touched,
-    validate,
-    validateAll,
-    markTouched,
-    resetValidation,
-    isValid: Object.keys(errors).length === 0
-  };
-};
+  return { value, toggle, setTrue, setFalse };
+}
 ```
 
-## Render Props Pattern
+### Usage with Modal
 
-### Component with Render Props
+```tsx
+import { DModal, DButton } from '@dynamic-framework/ui-react';
+import { useToggle } from '@/hooks/useToggle';
 
-```jsx
-// src/components/extended/DataProvider.jsx
-import React, { useState, useEffect } from 'react';
-
-const DataProvider = ({ 
-  loader, 
-  params, 
-  children, 
-  renderLoading, 
-  renderError,
-  cacheKey 
-}) => {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const loadData = async () => {
-      try {
-        setLoading(true);
-        setError(null);
-        
-        // Check cache
-        if (cacheKey) {
-          const cached = sessionStorage.getItem(cacheKey);
-          if (cached) {
-            setData(JSON.parse(cached));
-            setLoading(false);
-            return;
-          }
-        }
-        
-        const result = await loader(params);
-        setData(result);
-        
-        // Save to cache
-        if (cacheKey) {
-          sessionStorage.setItem(cacheKey, JSON.stringify(result));
-        }
-      } catch (err) {
-        setError(err);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    loadData();
-  }, [loader, params, cacheKey]);
-
-  if (loading && renderLoading) {
-    return renderLoading();
-  }
-
-  if (error && renderError) {
-    return renderError(error);
-  }
-
-  return children({ data, loading, error, refetch: loadData });
-};
-
-// Usage
-<DataProvider
-  loader={accountService.getAccounts}
-  params={{ userId: currentUser.id }}
-  renderLoading={() => <Spinner />}
-  renderError={(error) => <ErrorMessage error={error} />}
->
-  {({ data: accounts }) => (
-    <AccountList accounts={accounts} />
-  )}
-</DataProvider>
-```
-
-## Polymorphic Components
-
-### Component that can render as different elements
-
-```jsx
-// src/components/extended/Box.jsx
-import React from 'react';
-import clsx from 'clsx';
-
-const Box = ({ 
-  as: Component = 'div',
-  className,
-  padding,
-  margin,
-  display,
-  flexDirection,
-  justifyContent,
-  alignItems,
-  gap,
-  children,
-  ...props 
-}) => {
-  const classes = clsx(
-    'box',
-    className,
-    {
-      [`p-${padding}`]: padding,
-      [`m-${margin}`]: margin,
-      [`d-${display}`]: display,
-      [`flex-${flexDirection}`]: flexDirection,
-      [`justify-${justifyContent}`]: justifyContent,
-      [`align-${alignItems}`]: alignItems,
-      [`gap-${gap}`]: gap,
-    }
-  );
+function MyComponent() {
+  const modal = useToggle();
 
   return (
-    <Component className={classes} {...props}>
-      {children}
-    </Component>
+    <>
+      <DButton text="Open Modal" onClick={modal.setTrue} />
+      <DModal isOpen={modal.value} onClose={modal.setFalse}>
+        <DModal.Header>
+          <h5>Title</h5>
+        </DModal.Header>
+        <DModal.Body>
+          <p>Modal content</p>
+        </DModal.Body>
+      </DModal>
+    </>
   );
-};
-
-// Usage
-<Box as="section" display="flex" flexDirection="column" gap={3}>
-  <Box as="header" padding={2}>
-    <h1>Title</h1>
-  </Box>
-  <Box as="main" padding={4}>
-    Main content
-  </Box>
-</Box>
+}
 ```
 
-## Components with Global State
+## Testing Components
 
-### Using Context API
+Use Vitest and React Testing Library to test your extended components.
 
-```jsx
-// src/contexts/ThemeContext.jsx
-import React, { createContext, useContext, useState } from 'react';
+### Setup
 
-const ThemeContext = createContext();
-
-export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState('light');
-  const [customColors, setCustomColors] = useState({});
-
-  const toggleTheme = () => {
-    setTheme(prev => prev === 'light' ? 'dark' : 'light');
-  };
-
-  const updateColors = (colors) => {
-    setCustomColors(prev => ({ ...prev, ...colors }));
-  };
-
-  const value = {
-    theme,
-    customColors,
-    toggleTheme,
-    updateColors
-  };
-
-  return (
-    <ThemeContext.Provider value={value}>
-      {children}
-    </ThemeContext.Provider>
-  );
-};
-
-export const useTheme = () => {
-  const context = useContext(ThemeContext);
-  if (!context) {
-    throw new Error('useTheme must be used within ThemeProvider');
-  }
-  return context;
-};
-
-// Component that uses context
-const ThemedButton = ({ children, ...props }) => {
-  const { theme, customColors } = useTheme();
-  
-  return (
-    <Button
-      {...props}
-      style={{
-        backgroundColor: customColors.primary || 'default',
-        color: theme === 'dark' ? 'white' : 'black'
-      }}
-    >
-      {children}
-    </Button>
-  );
-};
+```bash
+npm install -D vitest @testing-library/react @testing-library/jest-dom
 ```
 
-## Lazy Components and Code Splitting
+### Test Example
 
-### Lazy Loading of Heavy Components
-
-```jsx
-// src/components/extended/LazyChart.jsx
-import React, { lazy, Suspense } from 'react';
-import { DProgress } from '@dynamic-framework/ui-react';
-
-// Lazy load heavy component
-const HeavyChart = lazy(() => import('./HeavyChart'));
-
-const LazyChart = ({ data, ...props }) => {
-  return (
-    <Suspense
-      fallback={
-        <div className="chart-loading">
-          <DProgress />
-          <p>Loading chart...</p>
-        </div>
-      }
-    >
-      <HeavyChart data={data} {...props} />
-    </Suspense>
-  );
-};
-
-export default LazyChart;
-```
-
-## Components with Animations
-
-### Using Framer Motion
-
-```jsx
-// src/components/extended/AnimatedCard.jsx
-import React from 'react';
-import { motion } from 'framer-motion';
-import { DCard } from '@dynamic-framework/ui-react';
-
-const AnimatedCard = ({ children, delay = 0, ...props }) => {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
-      transition={{
-        duration: 0.3,
-        delay,
-        ease: 'easeOut'
-      }}
-      whileHover={{
-        scale: 1.02,
-        boxShadow: '0 10px 30px rgba(0,0,0,0.1)'
-      }}
-    >
-      <DCard {...props}>
-        {children}
-      </DCard>
-    </motion.div>
-  );
-};
-
-export default AnimatedCard;
-```
-
-## Testing Extended Components
-
-### Wrapper Component Test
-
-```jsx
-// src/components/extended/__tests__/PrimaryButton.test.jsx
-import React from 'react';
+```tsx
+// src/components/__tests__/PrimaryButton.test.tsx
 import { render, screen, fireEvent } from '@testing-library/react';
-import PrimaryButton from '../PrimaryButton';
-import * as analytics from '@/utils/analytics';
-
-jest.mock('@/utils/analytics');
+import { describe, it, expect, vi } from 'vitest';
+import { PrimaryButton } from '../PrimaryButton';
 
 describe('PrimaryButton', () => {
-  it('should render children correctly', () => {
-    render(<PrimaryButton>Click me</PrimaryButton>);
+  it('renders with text', () => {
+    render(<PrimaryButton text="Click me" />);
     expect(screen.getByText('Click me')).toBeInTheDocument();
   });
 
-  it('should track analytics on click', () => {
-    const trackEventSpy = jest.spyOn(analytics, 'trackEvent');
-    const handleClick = jest.fn();
-    
-    render(
-      <PrimaryButton 
-        onClick={handleClick}
-        trackingLabel="test-button"
-      >
-        Test Button
-      </PrimaryButton>
-    );
-    
-    fireEvent.click(screen.getByText('Test Button'));
-    
-    expect(trackEventSpy).toHaveBeenCalledWith('button_click', {
-      label: 'test-button',
-      component: 'PrimaryButton'
-    });
-    expect(handleClick).toHaveBeenCalled();
+  it('calls onClick when clicked', () => {
+    const handleClick = vi.fn();
+    render(<PrimaryButton text="Click" onClick={handleClick} />);
+
+    fireEvent.click(screen.getByText('Click'));
+
+    expect(handleClick).toHaveBeenCalledTimes(1);
   });
 
-  it('should apply default size', () => {
-    const { container } = render(<PrimaryButton>Button</PrimaryButton>);
-    const button = container.querySelector('button');
-    expect(button).toHaveClass('btn-large');
+  it('logs tracking label when provided', () => {
+    const consoleSpy = vi.spyOn(console, 'log');
+    render(
+      <PrimaryButton text="Track me" trackingLabel="test-button" />
+    );
+
+    fireEvent.click(screen.getByText('Track me'));
+
+    expect(consoleSpy).toHaveBeenCalledWith('Track:', 'test-button');
   });
 });
 ```
 
 ## Best Practices
 
-### 1. Maintain Compatibility
-- Preserve original component API
-- Add props, don't remove them
-- Document changes clearly
-
-### 2. Performance
-- Use React.memo for pure components
-- Implement shouldComponentUpdate when necessary
-- Avoid unnecessary re-renders
-
-### 3. Documentation
-- Document all new props
-- Provide usage examples
-- Maintain a changelog
-
-### 4. Testing
-- Unit tests for each extended component
-- Integration tests with Dynamic components
-- Visual regression tests
+1. **Preserve the original API** - Your wrapper should accept all props the original component accepts
+2. **Use TypeScript** - Extend component prop types for type safety
+3. **Keep it simple** - Only wrap when you need to add real value
+4. **Test your components** - Ensure wrappers behave correctly
+5. **Document custom props** - Make it clear what your wrapper adds
 
 ## Resources
 
-- [React Patterns](https://reactpatterns.com)
-- [Component Composition](https://react.dev/learn/thinking-in-react)
-- [Custom Hooks Guide](https://react.dev/learn/reusing-logic-with-custom-hooks)
-- [Testing Best Practices](https://testing-library.com/docs/react-testing-library/intro)
+- [React Composition](https://react.dev/learn/thinking-in-react)
+- [Custom Hooks](https://react.dev/learn/reusing-logic-with-custom-hooks)
+- [Vitest Documentation](https://vitest.dev/)
+- [Testing Library](https://testing-library.com/docs/react-testing-library/intro)

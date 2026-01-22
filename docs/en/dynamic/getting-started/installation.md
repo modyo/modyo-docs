@@ -24,7 +24,7 @@ The fastest way to start is using Modyo CLI with a Dynamic Framework template:
 
 ```bash
 # Create a new project with the React base template
-npx @modyo/cli@latest get dynamic-react-base-template my-digital-bank
+npx @modyo/cli@latest get dynamic-react-vite-base-template my-digital-bank
 
 # Navigate to the project directory
 cd my-digital-bank
@@ -38,45 +38,13 @@ npm run start
 
 Your application will be available at `http://localhost:8080`
 
-### Option 2: Integration in Modyo Platform
+### Option 2: Adding to an Existing React Project
 
-If you're creating a new web application in Modyo:
-
-1. Go to **Channels > Sites** in your Modyo account
-2. Create a new site
-3. Select **"Dynamic Minimal Theme"** as template
-4. Dynamic Framework will be installed automatically
-
-### Option 3: Installation via CDN
-
-For simple projects or quick prototypes:
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <!-- Dynamic Framework CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@dynamic-framework/ui-react@latest/dist/css/dynamic-ui.css">
-</head>
-<body>
-  <!-- Your content here -->
-  
-  <!-- Dynamic Framework JavaScript (optional) -->
-  <script src="https://cdn.jsdelivr.net/npm/@dynamic-framework/ui-react@latest/dist/js/bootstrap.min.js"></script>
-</body>
-</html>
-```
-
-### Option 4: Installation via NPM
-
-For existing React projects:
+For existing React projects, install the package via NPM:
 
 ```bash
 # Install the main package
 npm install @dynamic-framework/ui-react
-
-# Install peer dependencies
-npm install react react-dom bootstrap
 ```
 
 ## Project Structure
@@ -96,7 +64,7 @@ my-digital-bank/
 │   └── index.js           # Entry point
 ├── public/
 │   └── index.html         # HTML template
-├── .modyo/                # Modyo configuration
+├── .env                   # Modyo CLI configuration (account URL, site, token)
 ├── package.json           # Dependencies and scripts
 └── README.md             # Project documentation
 ```
@@ -107,30 +75,29 @@ my-digital-bank/
 
 Create your first component using Dynamic Framework:
 
-```jsx
-// src/components/WelcomeBanner.jsx
-import React from 'react';
-import { Card, Button, Typography } from '@dynamic-framework/ui-react';
+```tsx
+// src/components/WelcomeBanner.tsx
+import { DCard, DButton } from '@dynamic-framework/ui-react';
 
-const WelcomeBanner = ({ userName }) => {
-  return (
-    <Card className="welcome-banner">
-      <Card.Body>
-        <Typography variant="h2">
-          Welcome, {userName}
-        </Typography>
-        <Typography variant="body1">
-          Manage your finances simply and securely
-        </Typography>
-        <Button variant="primary" size="large">
-          View my accounts
-        </Button>
-      </Card.Body>
-    </Card>
-  );
+type Props = {
+  userName: string;
 };
 
-export default WelcomeBanner;
+export default function WelcomeBanner({ userName }: Props) {
+  return (
+    <DCard className="welcome-banner">
+      <DCard.Body>
+        <h2>Welcome, {userName}</h2>
+        <p>Manage your finances simply and securely</p>
+        <DButton
+          color="primary"
+          size="lg"
+          text="View my accounts"
+        />
+      </DCard.Body>
+    </DCard>
+  );
+}
 ```
 
 ### 2. Dashboard View
@@ -145,7 +112,6 @@ import {
   DListGroup,
   DListGroupItem,
   DButton,
-  DIcon,
   DCurrencyText
 } from '@dynamic-framework/ui-react';
 
@@ -188,14 +154,16 @@ const Dashboard = () => {
             <DCard.Header>Quick Actions</DCard.Header>
             <DCard.Body>
               <div className="d-grid gap-2">
-                <DButton color="primary">
-                  <DIcon icon="arrow-right-left" className="me-2" />
-                  Transfer
-                </DButton>
-                <DButton color="secondary">
-                  <DIcon icon="credit-card" className="me-2" />
-                  Pay
-                </DButton>
+                <DButton
+                  color="primary"
+                  text="Transfer"
+                  iconStart="ArrowRightLeft"
+                />
+                <DButton
+                  color="secondary"
+                  text="Pay"
+                  iconStart="CreditCard"
+                />
               </div>
             </DCard.Body>
           </DCard>
@@ -263,74 +231,114 @@ export default App;
 
 ## Connect with APIs
 
-### Configure Services
+Dynamic widgets use **TanStack Query** for server state management and **axios** for HTTP requests.
 
-```javascript
-// src/services/api.js
+### 1. API Client
+
+```typescript
+// src/services/api/client.ts
 import axios from 'axios';
+import { API_BASE_URL } from '../../config/widgetConfig';
 
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://api.mydigitalbank.com';
-
-const api = axios.create({
-  baseURL: API_BASE_URL,
+export const api = axios.create({
+  baseURL: API_BASE_URL || import.meta.env.VITE_API_BASE_URL || '/api',
+  timeout: 30000,
   headers: {
-    'Content-Type': 'application/json'
-  }
+    'Content-Type': 'application/json',
+  },
 });
 
-// Interceptor to add authentication token
-api.interceptors.request.use(config => {
-  const token = localStorage.getItem('authToken');
-  if (token) {
-    config.headers.Authorization = `Bearer ${token}`;
-  }
-  return config;
-});
-
-// Specific services
-export const accountService = {
-  getAccounts: () => api.get('/accounts'),
-  getAccountById: (id) => api.get(`/accounts/${id}`),
-  getTransactions: (accountId) => api.get(`/accounts/${accountId}/transactions`)
-};
-
-export const transferService = {
-  createTransfer: (data) => api.post('/transfers', data),
-  getTransferStatus: (id) => api.get(`/transfers/${id}/status`)
-};
+// Logging interceptor for development
+api.interceptors.response.use(
+  (response) => {
+    if (import.meta.env.DEV) {
+      console.log(`[API] ${response.config.method?.toUpperCase()} ${response.config.url}`, response.data);
+    }
+    return response;
+  },
+  (error) => {
+    if (import.meta.env.DEV) {
+      console.error('[API Error]', error.response?.data || error.message);
+    }
+    return Promise.reject(error);
+  },
+);
 ```
 
-### Use Custom Hooks
+### 2. Repository Pattern
 
-```javascript
-// src/hooks/useAccounts.js
-import { useState, useEffect } from 'react';
-import { accountService } from '../services/api';
+```typescript
+// src/services/repositories/accountRepository.ts
+import { api } from '../api/client';
+import type { Account } from '../../types';
 
-export const useAccounts = () => {
-  const [accounts, setAccounts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+export async function getAccounts(signal?: AbortSignal): Promise<Account[]> {
+  const response = await api.get('/accounts', { signal });
+  return response.data;
+}
 
-  useEffect(() => {
-    const fetchAccounts = async () => {
-      try {
-        setLoading(true);
-        const response = await accountService.getAccounts();
-        setAccounts(response.data);
-      } catch (err) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchAccounts();
-  }, []);
-
-  return { accounts, loading, error };
-};
+export async function getAccountById(id: string, signal?: AbortSignal): Promise<Account> {
+  const response = await api.get(`/accounts/${id}`, { signal });
+  return response.data;
+}
 ```
+
+### 3. TanStack Query Hooks
+
+```typescript
+// src/services/hooks/useAccounts.ts
+import { useQuery } from '@tanstack/react-query';
+import { getAccounts } from '../repositories/accountRepository';
+
+export function useAccounts() {
+  return useQuery({
+    queryKey: ['accounts'],
+    queryFn: ({ signal }) => getAccounts(signal),
+  });
+}
+```
+
+**Usage in components:**
+
+```tsx
+function AccountList() {
+  const { data: accounts, isLoading, error } = useAccounts();
+
+  if (isLoading) return <DSkeleton />;
+  if (error) return <DAlert type="error">{error.message}</DAlert>;
+
+  return (
+    <DListGroup>
+      {accounts?.map(account => (
+        <DListGroup.Item key={account.id}>
+          {account.name}
+        </DListGroup.Item>
+      ))}
+    </DListGroup>
+  );
+}
+```
+
+### 4. Mutations
+
+```typescript
+// src/services/hooks/useCreateTransfer.ts
+import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { createTransfer } from '../repositories/transferRepository';
+
+export function useCreateTransfer() {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: createTransfer,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['accounts'] });
+    },
+  });
+}
+```
+
+For detailed patterns, see [API Integration](../development/api-integration.html).
 
 ## Development Scripts
 
@@ -339,69 +347,77 @@ In your `package.json`, you'll have these useful scripts:
 ```json
 {
   "scripts": {
-    "start": "webpack serve --mode development",
-    "build": "webpack --mode production",
-    "test": "jest",
-    "lint": "eslint src/",
-    "format": "prettier --write 'src/**/*.{js,jsx,json,css}'",
-    "modyo:push": "modyo-cli push",
-    "modyo:preview": "modyo-cli preview"
+    "start": "vite",
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint .",
+    "push": "npm run build && npx @modyo/cli@latest push"
   }
 }
 ```
 
 ## Deploy to Modyo
 
-### 1. Configure Modyo CLI
+### 1. Configure Environment
+
+Create a `.env` file with your Modyo credentials:
 
 ```bash
-# Initialize Modyo configuration
-npx @modyo/cli@latest init
-
-# Follow the prompts to configure:
-# - Your Modyo account URL
-# - API token
-# - Target site
+# .env (required variables)
+MODYO_ACCOUNT_URL=https://your-account.modyo.cloud
+MODYO_TOKEN=your-api-token
+# Use either MODYO_SITE_HOST or MODYO_SITE_ID (not both)
+MODYO_SITE_HOST=your-site-host
+# MODYO_SITE_ID=123  # Preferred: works with site stages
 ```
+
+To get your API token, go to **Modyo Admin > Settings > API Access > Access Tokens**.
+
+See the [Modyo CLI documentation](/en/platform/tools/cli.html) for all available environment variables.
+
+:::warning
+Never commit the `.env` file with real tokens. Add it to `.gitignore`.
+:::
 
 ### 2. Build and Deploy
 
 ```bash
-# Build the application for production
-npm run build
+# Build and push to Modyo
+npm run push
 
-# Deploy to Modyo
-npm run modyo:push
-
-# Or preview before deploying
-npm run modyo:preview
+# Or with auto-publish
+npm run build && npx @modyo/cli@latest push --publish
 ```
+
+For all CLI options, see the [Modyo CLI documentation](/en/platform/tools/cli.html).
 
 ## Best Practices
 
-### 1. Code Organization
+### 1. State Management
+- Use **TanStack Query** for server state (API data)
+- Use **Zustand** for UI state (selections, filters, modals)
+- Never use `useState` + `useEffect` for data fetching
+
+### 2. Data States
+- Always handle **loading**, **error**, and **empty** states
+- Use `ErrorBoundary` to prevent white screens on errors
+- Provide retry actions for failed requests
+
+### 3. Code Organization
 - Keep components small and focused
-- Use folders to group related functionality
+- Use repositories for API calls with `AbortSignal` support
 - Separate business logic from UI components
 
-### 2. Performance
-- Implement lazy loading for routes
-- Use React.memo for heavy components
-- Optimize images and assets
-
-### 3. Security
-- Never hardcode credentials
-- Validate all user inputs
-- Use HTTPS for all communications
-
 ### 4. Testing
-- Write unit tests for critical logic
-- Implement integration tests for main flows
-- Use tools like Jest and React Testing Library
+- Write tests for custom hooks in `services/hooks/`
+- Use **Vitest** and React Testing Library
+- Test loading, error, and success scenarios
 
 ## Additional Resources
 
-- **Complete Documentation**: [dynamic.modyo.com/docs](https://dynamic.modyo.com/docs)
 - **Storybook**: [react.dynamicframework.dev](https://react.dynamicframework.dev)
 - **Support**: [support.modyo.com](https://support.modyo.com)
 
@@ -411,7 +427,6 @@ Now that you have your application running:
 
 1. Explore the [component catalog](../development/components.html)
 2. Learn about [theme customization](../customization/theming.html)
-3. Review [experience templates](../development/experiences.html)
-4. Implement [API integrations](../development/api-integration.html)
+3. Implement [API integrations](../development/api-integration.html)
 
 Congratulations! You're now ready to build extraordinary financial experiences with Dynamic Framework.

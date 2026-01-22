@@ -9,195 +9,93 @@ This section covers all technical aspects of development with Dynamic Framework,
 ## Section Contents
 
 ### [Components](components.html)
-Complete catalog of available components:
-- HTML vs React components
-- Navigation components
-- Form components
+Complete catalog of 43 specialized React components:
+- Layout and navigation components
+- Form and input components
+- Feedback and visual components
 - Specialized financial components
-
-### [Experiences and Templates](experiences.html)
-Pre-designed solutions to accelerate development:
-- Retail Banking
-- Corporate Banking
-- Investments
-- Marketing and Onboarding
-
-### [React Integration](react-integration.html)
-Complete guide for developing with React:
-- Environment setup
-- Custom hooks
-- State management
-- Best practices
-
-### [Widgets](widgets.html)
-Modular widget development:
-- Creating widgets
-- Publishing and distribution
-- Versioning
-- Testing
 
 ### [API Integration](api-integration.html)
 Connect your application with backend services:
-- Service configuration
-- Authentication and security
+- API client configuration
+- Repository pattern
+- TanStack Query hooks
 - Error handling
-- Cache and optimization
 
-## Fundamental Concepts
+## Development Principles
 
-### Component Architecture
-
-Dynamic Framework follows a component-based architecture that promotes:
-
-- **Reusability**: Use the same component in multiple places
-- **Isolation**: Each component is independent
-- **Composition**: Combine components to create complex interfaces
-- **Maintainability**: Update a component, update all its uses
-
-### Development Flow
-
-```
-1. Design → 2. Components → 3. Composition → 4. Integration → 5. Testing → 6. Deployment
-```
-
-### Development Principles
-
-1. **Mobile First**: Design for mobile first
-2. **Accessibility**: Every component must be accessible
-3. **Performance**: Optimize from the start
-4. **Security**: Validate all inputs
-5. **Testing**: Write tests while developing
-
-## Development Tools
-
-### Modyo CLI
-```bash
-# Essential commands
-modyo-cli init          # Initialize project
-modyo-cli serve         # Development server
-modyo-cli build         # Build for production
-modyo-cli push          # Deploy to Modyo
-modyo-cli preview       # Preview before deploying
-```
-
-### Dynamic DevTools
-- Component inspector
-- Performance monitor
-- State debugger
-- Accessibility analyzer
-
-### Testing
-- **Unit Testing**: Jest + React Testing Library
-- **Integration Testing**: Cypress
-- **Visual Testing**: Storybook
-- **Performance Testing**: Lighthouse
+1. **Component-based**: Reusable, isolated components
+2. **TypeScript**: Full static typing for safety
+3. **Accessibility**: WCAG 2.1 compliant components
+4. **Mobile First**: Responsive design from the start
 
 ## Development Patterns
 
 ### Component Composition
-```jsx
-// Small and focused components
-const AccountBalance = ({ account }) => (
-  <Card>
-    <CardHeader>{account.name}</CardHeader>
-    <CardBody>
-      <Amount value={account.balance} currency={account.currency} />
-    </CardBody>
-  </Card>
-);
 
-// Composition to create complex interfaces
-const Dashboard = () => (
-  <Layout>
-    <Header />
-    <Grid>
-      {accounts.map(account => (
-        <AccountBalance key={account.id} account={account} />
-      ))}
-    </Grid>
-  </Layout>
-);
-```
+```tsx
+import { DCard, DCurrencyText, DButton } from '@dynamic-framework/ui-react';
 
-### State Management
-```jsx
-// Local state for UI
-const [isOpen, setIsOpen] = useState(false);
-
-// Global state for application data
-const { accounts, loading, error } = useAccounts();
-
-// Server state with cache
-const { data } = useQuery('transactions', fetchTransactions);
-```
-
-### Error Handling
-```jsx
-// Error boundaries for components
-<ErrorBoundary fallback={<ErrorMessage />}>
-  <RiskyComponent />
-</ErrorBoundary>
-
-// Try-catch for async operations
-try {
-  const result = await transferFunds(data);
-  showSuccess(result);
-} catch (error) {
-  showError(error.message);
-  logError(error);
+function AccountBalance({ account }: { account: Account }) {
+  return (
+    <DCard>
+      <DCard.Header>
+        <h5 className="card-title mb-0">{account.name}</h5>
+      </DCard.Header>
+      <DCard.Body>
+        <DCurrencyText value={account.balance} />
+      </DCard.Body>
+    </DCard>
+  );
 }
 ```
 
-## Best Practices
+### State Management
 
-### DO's
-- Use TypeScript for type safety
-- Implement lazy loading for heavy components
-- Cache expensive API calls
-- Write tests for critical logic
-- Document complex components
+```tsx
+// Server state with TanStack Query
+const { data: accounts, isLoading, error } = useAccounts();
 
-### DON'Ts
-- Don't hardcode sensitive values
-- Don't ignore accessibility warnings
-- Don't optimize prematurely
-- Don't copy code, reuse components
-- Don't skip code review
+// UI state with Zustand
+const { selectedAccountId, setSelectedAccountId } = useUIStore();
+```
 
-## Workflows
+### Error Handling
 
-### New Feature Development
-1. Create branch from `develop`
-2. Implement feature with TDD
-3. Ensure 80%+ coverage
-4. Pass linters and formatters
-5. Create PR with clear description
-6. Code review by 2+ developers
-7. Merge after approval
+```tsx
+// Error boundaries for components
+<ErrorBoundary fallback={<ErrorState onRetry={refetch} />}>
+  <AccountList />
+</ErrorBoundary>
 
-### Debugging
-1. Reproduce issue locally
-2. Use React DevTools to inspect
-3. Add temporary logs if needed
-4. Identify problematic component
-5. Fix + test to prevent regression
-6. Document the solution
+// Data states in queries
+if (isLoading) return <LoadingState />;
+if (error) return <ErrorState message={error.message} onRetry={refetch} />;
+if (!data?.length) return <EmptyState />;
+```
 
-## Advanced Resources
+## Testing
 
-### Technical Documentation
-- [API Reference](https://dynamic.modyo.com/api)
-- [Component Reference](https://dynamic.modyo.com/docs)
+- **Unit Testing**: Vitest + React Testing Library
+- **Visual Testing**: Storybook
+- **Integration Testing**: Cypress (optional)
 
-### Examples and Demos
-- [Storybook](https://react.dynamicframework.dev) - Interactive examples
+```bash
+# Run tests
+npm run test
 
-### Support
-- [Support Portal](https://support.modyo.com)
+# Watch mode
+npm run test:watch
+```
+
+## Resources
+
+- [Storybook](https://react.dynamicframework.dev) - Interactive component catalog
+- [NPM Package](https://www.npmjs.com/package/@dynamic-framework/ui-react) - Package registry
+- [Support](https://support.modyo.com) - Technical support
 
 ## Next Steps
 
 - Explore the [component catalog](components.html)
-- Try [pre-designed experiences](experiences.html)
 - Learn about [customization](../customization/)
 - Implement your first [API integration](api-integration.html)

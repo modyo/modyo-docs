@@ -112,7 +112,7 @@ MODYO_ZIP_ENTRY_CSS=main.css
 The quickest and easiest way to create your first widget is by using our framework's React base template through the `get` command.
 
 ```bash
-$ modyo-cli get dynamic-react-base-template my-project-name
+$ modyo-cli get dynamic-react-vite-base-template my-project-name
 ```
 This initializes a functional project to start new development.
 
@@ -509,20 +509,20 @@ After deploying your widget, verify it works correctly:
 
 ### Reference implementation
 
-Modyo provides a reference template with code splitting already configured:
+Modyo provides a reference template with code splitting already configured. Use the `feat/with-chunks` branch:
 
 ```bash
-modyo-cli get dynamic-react-base-template-codesplit@main my-widget
+modyo-cli get dynamic-react-vite-base-template@feat/with-chunks my-widget
 ```
 
 This template includes:
-- Pre-configured Webpack setup
+- Pre-configured Vite setup
 - Runtime public path configuration
 - Lazy loading pattern
 - Optimized CSS splitting
 - Ready for production deployment
 
-**GitHub Repository**: [dynamic-react-base-template-codesplit](https://github.com/modyo-community/dynamic-react-base-template-codesplit)
+**GitHub Repository**: [dynamic-react-vite-base-template](https://github.com/dynamic-framework/dynamic-react-vite-base-template) (branch: `feat/with-chunks`)
 
 The repository includes complete documentation on:
 - Architecture decisions and technical context

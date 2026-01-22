@@ -4,333 +4,205 @@ search: true
 
 # Personalización
 
-Aprende cómo personalizar Dynamic Framework para que se ajuste perfectamente a la identidad y necesidades de tu institución.
+Aprende cómo personalizar Dynamic Framework para ajustarlo a la identidad visual de tu institución.
 
 ## Contenido de la Sección
 
 ### [Sistema de Temas](theming.html)
-Personalización completa del look & feel:
-- Variables de tema
-- Paletas de colores
+Personaliza la apariencia visual:
+- Variables CSS de Bootstrap
+- Personalización de colores
 - Tipografía
-- Espaciados y tamaños
-
-### [Estilos y CSS](styling.html)
-Técnicas avanzadas de estilizado:
-- CSS Modules
-- Styled Components
-- Utilidades CSS
-- Responsive design
+- Estilos a nivel de componente
 
 ### [Extender Componentes](extending.html)
-Crea tus propios componentes o extiende los existentes:
-- Herencia de componentes
-- Composición avanzada
-- Props personalizados
+Crea componentes personalizados:
+- Patrones de composición
 - Componentes wrapper
+- Hooks personalizados
 
-## Niveles de Personalización
+## Enfoques de Personalización
 
-### Nivel 1: Configuración Básica
-Cambios simples mediante variables de configuración:
+Dynamic Framework está construido sobre Bootstrap 5, lo que significa que la personalización sigue los patrones establecidos de Bootstrap.
 
-```javascript
-// theme.config.js
-export default {
-  colors: {
-    primary: '#004B8D',
-    secondary: '#00A0DF'
-  },
-  typography: {
-    fontFamily: 'Inter, sans-serif'
-  }
-};
+### 1. Variables CSS (Runtime)
+
+Sobrescribe variables CSS de Bootstrap para personalización en tiempo de ejecución:
+
+```css
+/* src/styles/custom.css */
+:root {
+  /* Colores */
+  --bs-primary: #004B8D;
+  --bs-secondary: #6c757d;
+  --bs-success: #198754;
+  --bs-danger: #dc3545;
+
+  /* Tipografía */
+  --bs-body-font-family: 'Inter', sans-serif;
+  --bs-body-font-size: 1rem;
+  --bs-body-line-height: 1.5;
+
+  /* Border radius */
+  --bs-border-radius: 0.375rem;
+  --bs-border-radius-lg: 0.5rem;
+
+  /* Espaciado (usado por utilidades) */
+  --bs-spacer: 1rem;
+}
 ```
 
-### Nivel 2: Estilos CSS
-Sobrescribe estilos específicos:
+### 2. Variables SCSS (Build Time)
+
+Para personalización más profunda, sobrescribe variables SCSS de Bootstrap antes de importar:
 
 ```scss
-// custom.scss
-.df-button {
-  border-radius: 12px;
+// src/styles/custom.scss
+
+// Sobrescribir variables de Bootstrap ANTES de importar
+$primary: #004B8D;
+$secondary: #00A0DF;
+$font-family-base: 'Inter', sans-serif;
+$border-radius: 0.5rem;
+$btn-border-radius: 2rem; // Botones pill
+
+// Importar estilos de Dynamic/Bootstrap
+@import '@dynamic-framework/ui-react/dist/css/dynamic-ui.css';
+
+// Tus estilos adicionales DESPUÉS de importar
+.my-custom-class {
+  // ...
+}
+```
+
+### 3. Estilos a Nivel de Componente
+
+Estiliza componentes específicos usando sus clases CSS:
+
+```css
+/* Apuntar a componentes Dynamic */
+.btn {
   text-transform: uppercase;
-  
-  &--primary {
-    background: linear-gradient(135deg, $primary, $secondary);
-  }
+  letter-spacing: 0.05em;
+}
+
+.card {
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-control:focus {
+  border-color: var(--bs-primary);
+  box-shadow: 0 0 0 0.25rem rgba(0, 75, 141, 0.25);
 }
 ```
 
-### Nivel 3: Componentes Extendidos
-Extiende funcionalidad de componentes base:
+## Configuración de DContextProvider
 
-```jsx
-// CustomButton.jsx
-import { Button } from '@dynamic-framework/ui-react';
+Dynamic Framework usa `DContextProvider` para configurar el comportamiento de los componentes:
 
-const CustomButton = ({ children, ...props }) => (
-  <Button 
-    {...props}
-    className="custom-button"
-    onClick={(e) => {
-      analytics.track('button_click');
-      props.onClick?.(e);
-    }}
-  >
-    {children}
-  </Button>
-);
-```
+```tsx
+// src/main.tsx
+import { DContextProvider } from '@dynamic-framework/ui-react';
 
-### Nivel 4: Componentes Propios
-Crea componentes completamente nuevos:
+const config = {
+  language: 'es',
+  currency: {
+    symbol: '$',
+    precision: 2,
+    separator: '.',
+    decimal: ',',
+  },
+};
 
-```jsx
-// BiometricAuth.jsx
-const BiometricAuth = ({ onSuccess, onError }) => {
-  // Implementación personalizada
+function App() {
   return (
-    <div className="biometric-auth">
-      {/* Tu componente único */}
-    </div>
+    <DContextProvider {...config}>
+      {/* Tu app */}
+    </DContextProvider>
   );
-};
-```
-
-## Estrategias de Personalización
-
-### White Labeling Completo
-
-Para instituciones que necesitan una identidad visual única:
-
-1. **Define tu sistema de diseño**
-   - Colores corporativos
-   - Tipografías propias
-   - Iconografía personalizada
-   - Patrones visuales
-
-2. **Implementa el tema**
-   - Crea archivo de variables
-   - Sobrescribe componentes base
-   - Agrega elementos únicos
-
-3. **Mantén consistencia**
-   - Documenta decisiones
-   - Crea guía de estilo
-   - Automatiza validaciones
-
-### Personalización Progresiva
-
-Enfoque recomendado para implementaciones rápidas:
-
-```
-Fase 1: Usa defaults de Dynamic
-↓
-Fase 2: Ajusta colores y logos
-↓
-Fase 3: Personaliza componentes clave
-↓
-Fase 4: Agrega componentes propios
-↓
-Fase 5: Refinamiento continuo
-```
-
-### Multi-tenancy
-
-Para instituciones con múltiples marcas:
-
-```javascript
-// multi-theme.js
-const themes = {
-  'brand-a': {
-    primary: '#FF0000',
-    logo: '/logos/brand-a.svg'
-  },
-  'brand-b': {
-    primary: '#00FF00',
-    logo: '/logos/brand-b.svg'
-  }
-};
-
-// Aplicar tema dinámicamente
-<ThemeProvider theme={themes[currentBrand]}>
-  <App />
-</ThemeProvider>
-```
-
-## Herramientas de Personalización
-
-### Theme Builder
-Herramienta visual para crear temas:
-- Preview en tiempo real
-- Exportación de variables
-- Validación de accesibilidad
-- Generación de documentación
-
-### Design Tokens
-Sistema de tokens para mantener consistencia:
-
-```json
-{
-  "color": {
-    "primary": {
-      "value": "#004B8D",
-      "type": "color"
-    }
-  },
-  "spacing": {
-    "small": {
-      "value": "8px",
-      "type": "spacing"
-    }
-  }
 }
 ```
 
-### Storybook
-Documenta y prueba personalizaciones:
-- Catálogo de componentes
-- Variantes visuales
-- Estados interactivos
-- Documentación viva
+## Personalizaciones Comunes
 
-## Casos de Uso Comunes
+### Colores de Marca
 
-### Dark Mode
-```scss
-[data-theme="dark"] {
-  --df-bg-primary: #1a1a1a;
-  --df-text-primary: #ffffff;
-  --df-border-color: #333333;
+```css
+:root {
+  --bs-primary: #tu-color-de-marca;
+  --bs-primary-rgb: r, g, b; /* Valores RGB para utilidades de opacidad */
+
+  /* Generar variantes de color */
+  --bs-link-color: var(--bs-primary);
+  --bs-link-hover-color: #tono-más-oscuro;
 }
 ```
 
-### Modo Alto Contraste
-```scss
-[data-contrast="high"] {
-  --df-text-primary: #000000;
-  --df-bg-primary: #ffffff;
-  --df-border-width: 2px;
+### Fuentes Personalizadas
+
+```css
+/* Importar tu fuente */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --bs-body-font-family: 'Inter', system-ui, sans-serif;
+  --bs-headings-font-family: 'Inter', system-ui, sans-serif;
 }
 ```
 
-### Temas Estacionales
-```javascript
-const seasonalThemes = {
-  christmas: {
-    primary: '#c41e3a',
-    secondary: '#165b33'
-  },
-  summer: {
-    primary: '#ffd700',
-    secondary: '#00bfff'
-  }
-};
+### Estilos de Botones
+
+```css
+/* Botones redondeados tipo pill */
+.btn {
+  --bs-btn-border-radius: 2rem;
+}
+
+/* Variantes específicas de botones */
+.btn-primary {
+  --bs-btn-bg: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+  --bs-btn-hover-bg: #003d73;
+  --bs-btn-hover-border-color: #003d73;
+}
+```
+
+### Estilos de Cards
+
+```css
+.card {
+  --bs-card-border-radius: 1rem;
+  --bs-card-border-color: transparent;
+  --bs-card-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
 ```
 
 ## Mejores Prácticas
 
-### Recomendaciones
+### Hacer
 
-1. **Mantén la accesibilidad**
-   - Verifica contraste de colores
-   - Prueba con screen readers
-   - Valida navegación por teclado
+- **Usar variables CSS** para temas dinámicos (modo oscuro, cambio de marca)
+- **Usar variables SCSS** para personalización en tiempo de compilación
+- **Seguir patrones de Bootstrap** para asegurar compatibilidad
+- **Probar accesibilidad** - verificar ratios de contraste de color
+- **Revisar Storybook** para propiedades CSS específicas de componentes
 
-2. **Documenta cambios**
-   - Crea changelog de personalizaciones
-   - Mantén guía de estilo actualizada
-   - Comenta código personalizado
+### No Hacer
 
-3. **Versiona temas**
-   - Usa control de versiones
-   - Tag releases importantes
-   - Mantén backups
-
-4. **Optimiza performance**
-   - Minimiza CSS personalizado
-   - Usa CSS variables para temas dinámicos
-   - Lazy load temas alternativos
-
-### Precauciones
-
-1. **No modifiques core**
-   - Nunca edites archivos de Dynamic directamente
-   - Usa extensión, no modificación
-   - Mantén upgradeability
-
-2. **Evita !important**
-   - Usa especificidad correcta
-   - Aprovecha cascada CSS
-   - Mantén código limpio
-
-3. **Test cross-browser**
-   - Prueba en todos los navegadores objetivo
-   - Valida en diferentes dispositivos
-   - Considera progressive enhancement
-
-## Ejemplos Reales
-
-### Banco con Identidad Fuerte
-```scss
-// Personalización completa manteniendo Dynamic
-.df-component {
-  // Respeta estructura base
-  @extend %df-component-base;
-  
-  // Agrega personalización
-  border-radius: var(--bank-radius);
-  box-shadow: var(--bank-shadow);
-  
-  &::before {
-    content: '';
-    background: url('/bank-pattern.svg');
-  }
-}
-```
-
-### Fintech Minimalista
-```javascript
-// Tema minimalista
-const minimalTheme = {
-  colors: {
-    primary: '#000000',
-    secondary: '#ffffff',
-    accent: '#0066ff'
-  },
-  typography: {
-    fontFamily: 'Helvetica Neue, sans-serif',
-    scale: 1.25
-  },
-  spacing: {
-    unit: 16
-  },
-  borders: {
-    radius: 0,
-    width: 1
-  }
-};
-```
+- **No usar `!important`** - usa especificidad adecuada en su lugar
+- **No modificar node_modules** - sobrescribe via CSS/SCSS
+- **No hardcodear colores** - usa variables CSS para consistencia
+- **No saltarse las pruebas** - verifica cambios en todos los navegadores
 
 ## Recursos
 
-- **Figma UI Kit**: Diseña con componentes Dynamic
-- **Theme Gallery**: Ejemplos de personalizaciones
-- **Color Tools**: Generadores de paletas accesibles
-- **Icon Library**: Biblioteca de iconos financieros
-
-## Soporte
-
-¿Necesitas ayuda con personalización?
-
-- **Consultoría de diseño**: Sesiones con expertos UX
-- **Review de accesibilidad**: Auditoría de personalización
-- **Optimización**: Análisis de performance
-- **Training**: Workshops de personalización
+- [Variables CSS de Bootstrap](https://getbootstrap.com/docs/5.3/customize/css-variables/) - Referencia completa de variables
+- [Variables SCSS de Bootstrap](https://getbootstrap.com/docs/5.3/customize/sass/) - Guía de personalización Sass
+- [Dynamic Storybook](https://react.dynamicframework.dev) - Propiedades CSS de componentes
+- [Contrast Checker](https://webaim.org/resources/contrastchecker/) - Validación de accesibilidad
 
 ## Próximos Pasos
 
-- Explora el [sistema de temas](theming.html)
-- Aprende sobre [estilos y CSS](styling.html)
+- Aprende sobre [variables CSS y temas](theming.html)
 - Descubre cómo [extender componentes](extending.html)
