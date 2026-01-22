@@ -67,7 +67,7 @@ Aplicación disponible en `http://localhost:8080`
 - **Micro Frontends** con Module Federation
 - **API-first** design
 - **Lazy loading** y code splitting
-- **State management** con Context API
+- **State management**: Zustand (UI) + TanStack Query (server)
 
 ## Stack Tecnológico
 

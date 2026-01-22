@@ -6,11 +6,24 @@ search: true
 
 Aprende cómo conectar tu aplicación Dynamic Framework con servicios backend, manejar autenticación, y optimizar las llamadas a APIs.
 
+## Stack Recomendado
+
+Dynamic Framework recomienda:
+
+| Librería | Propósito | Versión |
+|----------|-----------|---------|
+| **Axios** | Cliente HTTP para llamadas API | ^1.x |
+| **TanStack Query** | Gestión de estado del servidor (caché, sync, updates) | ^5.x |
+
+:::tip ¿Por qué TanStack Query?
+TanStack Query (anteriormente React Query) maneja caché, actualizaciones en background, datos obsoletos, y estados de loading/error automáticamente. Combinado con Axios para la capa HTTP, proporciona una solución robusta de data fetching.
+:::
+
 ## Configuración Inicial
 
-### Cliente HTTP
+### Cliente HTTP (Axios)
 
-Dynamic Framework recomienda usar Axios para las llamadas HTTP:
+Configura Axios como tu cliente HTTP:
 
 ```javascript
 // src/services/api/client.js
@@ -261,9 +274,13 @@ class TransferService {
 export default new TransferService();
 ```
 
-## Hooks Personalizados
+## Hooks Personalizados (Patrones de Implementación)
 
-### useApi Hook
+:::warning Estos son patrones, no exports de la librería
+Los hooks a continuación son **ejemplos de cómo implementar** data fetching en tu aplicación. NO se exportan desde `@dynamic-framework/ui-react`. Necesitas crearlos en tu proyecto.
+:::
+
+### useApi Hook (Patrón Básico)
 
 ```javascript
 // src/hooks/useApi.js
@@ -300,11 +317,11 @@ export const useApi = (apiFunction, immediate = true) => {
 };
 ```
 
-### useAccounts Hook
+### useAccounts Hook (Patrón TanStack Query)
 
 ```javascript
 // src/hooks/useAccounts.js
-import { useQuery, useMutation, useQueryClient } from 'react-query';
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import accountService from '../services/accounts/accountService';
 
 export const useAccounts = () => {
@@ -425,11 +442,11 @@ export default new ErrorHandler();
 
 ## Optimización y Caché
 
-### React Query Setup
+### TanStack Query Setup
 
 ```javascript
-// src/config/queryClient.js
-import { QueryClient } from 'react-query';
+// src/providers/QueryProvider.tsx
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 export const queryClient = new QueryClient({
   defaultOptions: {
@@ -643,9 +660,10 @@ export const handlers = [
 - Implementa lazy loading de datos
 
 ### 3. Manejo de Estado
-- Usa React Query o SWR para estado del servidor
-- Mantén el estado local mínimo
-- Sincroniza estado con el backend regularmente
+- Usa **TanStack Query** para estado del servidor (datos de API)
+- Usa **Zustand** para estado de UI (filtros, selecciones, modales)
+- Mantén React Context para estado específico del framework (DContext)
+- Nunca mezcles estado del servidor con estado de UI
 
 ### 4. Monitoreo
 - Registra todas las llamadas API fallidas
@@ -655,6 +673,7 @@ export const handlers = [
 ## Recursos
 
 - [Documentación de Axios](https://axios-http.com)
-- [React Query Docs](https://react-query.tanstack.com)
+- [TanStack Query Docs](https://tanstack.com/query/latest)
+- [Documentación de Zustand](https://zustand-demo.pmnd.rs/)
 - [Socket.io Guide](https://socket.io/docs)
 - [MSW Documentation](https://mswjs.io)

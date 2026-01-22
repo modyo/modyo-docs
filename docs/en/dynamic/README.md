@@ -20,7 +20,7 @@ Dynamic UI 2.0 brings a new visual language, Lucide icons, and 8 new components.
 - **Micro Frontends** with Module Federation
 - **API-first** design
 - **Lazy loading** and code splitting
-- **State management** with Context API
+- **State management**: Zustand (UI) + TanStack Query (server)
 
 ## Technical Documentation
 

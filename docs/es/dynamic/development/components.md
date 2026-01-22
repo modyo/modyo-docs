@@ -136,6 +136,35 @@ Los componentes que soportan tamaños usan la prop `size`:
 <DButton size="lg">Grande</DButton>
 ```
 
+## Hooks Exportados por la Librería
+
+Estos hooks son **realmente exportados** desde `@dynamic-framework/ui-react`:
+
+```tsx
+import {
+  // Hooks de contexto
+  useDContext,           // Acceso a valores de DContextProvider
+  useDPortalContext,     // Acceso al contexto de portal para modales
+
+  // Hooks específicos de componentes
+  useDToast,             // Notificaciones toast programáticas
+  useDAlert,             // Alertas programáticas
+  useTabContext,         // Acceso al estado de tabs dentro de DTabs
+  useStepper,            // Acceso al estado de stepper dentro de DStepper
+  useSlide,              // Acceso al estado de slide del carousel
+
+  // Hooks utilitarios
+  useFormatCurrency,     // Utilidades de formateo de moneda
+  useInputCurrency,      // Manejo de input de moneda
+  useScreenDimensions,   // Detección de breakpoints responsivos
+  useStackState,         // Gestión de estado basada en stack
+} from '@dynamic-framework/ui-react';
+```
+
+:::warning Patrones de Implementación vs Exports de la Librería
+Hooks como `useApi`, `useAccounts`, o `useFormValidation` mostrados en la documentación son **patrones de implementación** que creas en tu proyecto, NO exports de la librería. Ver [Integración con APIs](api-integration.html) para ejemplos de patrones.
+:::
+
 ## Context Provider
 
 Envuelve tu aplicación con `DContextProvider` para configuración global:
