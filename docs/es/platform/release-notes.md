@@ -6,6 +6,19 @@ search: true
 
 ## 10.1
 
+### 10.1.12
+
+:::info Fecha del release
+26 de enero de 2026
+:::
+
+| Módulo | Mejoras |
+|--------|---------|
+| **Channels** | • Agrega soporte para la directiva report-to en el header CSP y el header Reporting-Endpoints requerido para esta directiva |
+| **Customers** | • Corrige problema de evaluación de completitud de las pending review tasks |
+| **Content** | • Corrige el orden en que se entregan los valores de los elementos de selección múltiple en los contenidos, ahora se muestran según el orden definido en el type |
+
+
 ### 10.1.11
 
 :::info Fecha del release
