@@ -6,6 +6,19 @@ search: true
 
 ## 10.1
 
+### 10.1.12
+
+:::info Release date
+January 26, 2026
+:::
+
+| Module | Improvements |
+|--------|---------|
+| **Channels** | • Adds support for the report-to directive in the CSP header and the required Reporting-Endpoints header for this directive |
+| **Customers** | • Fixes completeness evaluation issue in pending review tasks |
+| **Content** | • Fixes the order in which multiple selection element values are delivered in content, now displayed according to the order defined in the type |
+
+
 ### 10.1.11
 
 :::info Release date
