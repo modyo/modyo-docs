@@ -11,8 +11,7 @@ Personaliza la apariencia visual de los componentes de Dynamic Framework usando 
 Dynamic Framework está construido sobre Bootstrap 5, que usa propiedades personalizadas CSS (variables) extensivamente. Puedes personalizar la apariencia mediante:
 
 1. **Sobrescribir variables CSS** - Cambiar valores en tiempo de ejecución
-2. **Sobrescribir variables SCSS** - Cambiar valores en tiempo de compilación
-3. **Agregar CSS personalizado** - Estilizar componentes específicos
+2. **Agregar CSS personalizado** - Estilizar componentes específicos
 
 ## Referencia de Variables CSS
 
@@ -69,7 +68,7 @@ Bootstrap define estas variables de color que afectan todos los componentes:
 
 ## Personalizando tu Tema
 
-### Método 1: Sobrescritura con Archivo CSS
+### Sobrescritura con Archivo CSS
 
 Crea un archivo CSS que sobrescriba las variables por defecto:
 
@@ -97,39 +96,6 @@ Importa este archivo **después** del CSS de Dynamic Framework:
 // src/main.tsx
 import '@dynamic-framework/ui-react/dist/css/dynamic-ui.css';
 import './styles/theme.css'; // Tus sobrescrituras
-```
-
-### Método 2: Personalización SCSS
-
-Para personalización en tiempo de compilación con más control:
-
-```scss
-// src/styles/theme.scss
-
-// 1. Sobrescribir variables de Bootstrap
-$primary: #004B8D;
-$secondary: #00A0DF;
-$font-family-base: 'Inter', system-ui, sans-serif;
-$border-radius: 0.5rem;
-$border-radius-lg: 0.75rem;
-
-// Específico para botones
-$btn-border-radius: 2rem;
-$btn-padding-y: 0.625rem;
-$btn-padding-x: 1.5rem;
-
-// Específico para cards
-$card-border-radius: 1rem;
-$card-border-width: 0;
-$card-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-
-// 2. Importar Bootstrap (esto usa tus variables)
-@import 'bootstrap/scss/bootstrap';
-
-// 3. Tus estilos adicionales
-.custom-class {
-  // ...
-}
 ```
 
 ## Theming por Componente
@@ -299,13 +265,11 @@ function toggleDarkMode() {
 ## Mejores Prácticas
 
 1. **Usa variables CSS para valores dinámicos** - Colores que pueden cambiar en runtime
-2. **Usa SCSS para cambios estructurales** - Espaciado, dimensiones, estructura de componentes
-3. **No sobrescribas con `!important`** - Usa especificidad CSS adecuada
-4. **Prueba ratios de contraste** - Asegura accesibilidad con [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/)
-5. **Revisa Storybook** - Ve propiedades CSS de componentes en [react.dynamicframework.dev](https://react.dynamicframework.dev)
+2. **No sobrescribas con `!important`** - Usa especificidad CSS adecuada
+3. **Prueba ratios de contraste** - Asegura accesibilidad con [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/)
+4. **Revisa Storybook** - Ve propiedades CSS de componentes en [react.dynamicframework.dev](https://react.dynamicframework.dev)
 
 ## Recursos
 
 - [Variables CSS de Bootstrap](https://getbootstrap.com/docs/5.3/customize/css-variables/)
-- [Variables Sass de Bootstrap](https://getbootstrap.com/docs/5.3/customize/sass/)
 - [Dynamic Storybook](https://react.dynamicframework.dev)

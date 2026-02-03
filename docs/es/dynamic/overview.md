@@ -48,11 +48,11 @@ Dynamic Framework es un framework de componentes React especializado para aplica
 3. **Componentes de Formulario**
    - DInput, DInputPassword, DInputCurrency
    - DSelect, DInputSelect, DDatePicker
-   - DInputCheck, DInputSwitch, DOtp
+   - DInputCheck, DInputSwitch, DPasswordStrengthMeter
 
 4. **Componentes de Visualización de Datos**
    - DListGroup, DTimeline, DCarousel
-   - DCurrencyText, DProgress, DVoucher
+   - DCurrencyText, DProgress
 
 5. **Componentes de Retroalimentación**
    - DAlert, DToast, DModal, DOffcanvas
@@ -63,8 +63,8 @@ Dynamic Framework es un framework de componentes React especializado para aplica
    - DButton, DButtonIcon, DIcon
 
 7. **Componentes Financieros**
-   - DCreditCard visualización
-   - DPasswordStrengthMeter
+   - DCreditCard, DVoucher
+   - DOtp
 
 ## Patrones de Implementación
 

@@ -35,7 +35,7 @@ Explora todos los componentes de forma interactiva en nuestro [Storybook](https:
 - **DInputSelect**: Input de selección desplegable
 - **DSelect**: Select avanzado con búsqueda (usa react-select)
 - **DDatePicker**: Selector de fecha con calendario
-- **DOtp**: Input de contraseña de un solo uso
+- **DPasswordStrengthMeter**: Indicador de fortaleza de contraseña con validación
 - **DBoxFile**: Carga de archivos con drag-and-drop
 
 ### Componentes de Visualización de Datos
@@ -44,7 +44,6 @@ Explora todos los componentes de forma interactiva en nuestro [Storybook](https:
 - **DCarousel**: Carrusel/slider con DCarouselSlide
 - **DCurrencyText**: Visualización de moneda formateada
 - **DProgress**: Indicador de barra de progreso
-- **DVoucher**: Componente de visualización de voucher/recibo
 
 ### Componentes de Retroalimentación
 - **DAlert**: Mensajes de notificación al usuario
@@ -62,11 +61,11 @@ Explora todos los componentes de forma interactiva en nuestro [Storybook](https:
 - **DButton**: Botón de acción con estado de carga
 - **DButtonIcon**: Botón solo con icono
 - **DIcon**: Componente de icono (usa Lucide Icons)
-- **DIconBase**: Icono base con soporte de tamaño responsivo
 
 ### Componentes Financieros Especializados
 - **DCreditCard**: Visualización de tarjeta de crédito/débito con animación flip
-- **DPasswordStrengthMeter**: Indicador de fortaleza de contraseña con validación
+- **DVoucher**: Componente de visualización de voucher/recibo
+- **DOtp**: Input de contraseña de un solo uso
 
 ## Uso de Componentes
 
@@ -148,16 +147,33 @@ import {
 
   // Hooks específicos de componentes
   useDToast,             // Notificaciones toast programáticas
-  useDAlert,             // Alertas programáticas
   useTabContext,         // Acceso al estado de tabs dentro de DTabs
-  useStepper,            // Acceso al estado de stepper dentro de DStepper
-  useSlide,              // Acceso al estado de slide del carousel
+  useErrorBoundary,      // Control de error boundary (reset, show)
 
-  // Hooks utilitarios
+  // Hooks de moneda
   useFormatCurrency,     // Utilidades de formateo de moneda
   useInputCurrency,      // Manejo de input de moneda
-  useScreenDimensions,   // Detección de breakpoints responsivos
+
+  // Hooks responsivos
+  useMediaQuery,         // Detección de media query personalizado
+  useMediaBreakpointUpSm,  // Detección de breakpoint (sm y superior)
+  useMediaBreakpointUpMd,  // Detección de breakpoint (md y superior)
+  useMediaBreakpointUpLg,  // Detección de breakpoint (lg y superior)
+  useMediaBreakpointUpXl,  // Detección de breakpoint (xl y superior)
+  useMediaBreakpointUpXxl, // Detección de breakpoint (xxl y superior)
+
+  // Hooks utilitarios
   useStackState,         // Gestión de estado basada en stack
+  usePortal,             // Gestión de portales
+  useItemSelection,      // Gestión de selección de items en listas
+} from '@dynamic-framework/ui-react';
+```
+
+### Utilidades Adicionales
+
+```tsx
+import {
+  getErrorMessage,       // Extraer mensaje de error de errores desconocidos
 } from '@dynamic-framework/ui-react';
 ```
 
@@ -207,19 +223,31 @@ import { DIcon } from '@dynamic-framework/ui-react';
 
 ### Tamaño de Iconos
 
-Usa la prop `size` para controlar las dimensiones del icono:
+Usa la prop `size` con valores CSS exactos:
 
 ```tsx
-<DIcon icon="Home" size="sm" />   {/* Pequeño */}
-<DIcon icon="Home" />              {/* Por defecto */}
-<DIcon icon="Home" size="lg" />   {/* Grande */}
+<DIcon icon="Home" size="1rem" />    {/* 16px */}
+<DIcon icon="Home" size="1.5rem" />  {/* 24px - por defecto */}
+<DIcon icon="Home" size="2rem" />    {/* 32px */}
+<DIcon icon="Home" size="48px" />    {/* 48px */}
 ```
 
-Para tamaños personalizados, usa la prop `style`:
+#### Tamaños Responsivos
+
+Los iconos soportan tamaños responsivos con valores específicos por breakpoint:
 
 ```tsx
-<DIcon icon="Home" style={{ width: 48, height: 48 }} />
+<DIcon
+  icon="Home"
+  size={{
+    xs: "1rem",      // Móvil
+    md: "1.5rem",    // Tablet
+    lg: "2rem"       // Desktop
+  }}
+/>
 ```
+
+Breakpoints disponibles: `xs`, `sm`, `md`, `lg`, `xl`, `xxl`
 
 ### Colores de Iconos
 
@@ -275,16 +303,6 @@ Explora todos los iconos disponibles en [lucide.dev/icons](https://lucide.dev/ic
 
 #### Varios
 `Search`, `Filter`, `Calendar`, `MapPin`, `Globe`, `Link`, `Eye`, `EyeOff`, `Star`, `Heart`, `ThumbsUp`, `ThumbsDown`
-
-### Usando DIconBase para Iconos Responsivos
-
-Para iconos que necesitan escalar con el viewport, usa `DIconBase`:
-
-```tsx
-import { DIconBase } from '@dynamic-framework/ui-react';
-
-<DIconBase icon="CreditCard" responsiveSize />
-```
 
 ### Iconos en Botones
 

@@ -304,8 +304,16 @@ export function useAccounts() {
 function AccountList() {
   const { data: accounts, isLoading, error } = useAccounts();
 
-  if (isLoading) return <DSkeleton />;
-  if (error) return <DAlert type="error">{error.message}</DAlert>;
+  if (isLoading) {
+    return (
+      <div className="placeholder-glow">
+        <span className="placeholder col-12 mb-2"></span>
+        <span className="placeholder col-12 mb-2"></span>
+        <span className="placeholder col-8"></span>
+      </div>
+    );
+  }
+  if (error) return <DAlert color="danger">{error.message}</DAlert>;
 
   return (
     <DListGroup>

@@ -30,7 +30,7 @@ npm install react-i18next@">=16 <17"
 ### Update Dynamic UI
 
 ```bash
-npm install @dynamic-framework/ui-react@^2.0.0
+npm install @dynamic-framework/ui-react@^2.1.1
 ```
 
 ### Resulting package.json
@@ -40,7 +40,7 @@ Your `package.json` should include:
 ```json
 {
   "dependencies": {
-    "@dynamic-framework/ui-react": "^2.0.0",
+    "@dynamic-framework/ui-react": "^2.1.1",
     "framer-motion": "^12.0.0",
     "i18next": "^25.0.0",
     "react": "^18.0.0 || ^19.0.0",

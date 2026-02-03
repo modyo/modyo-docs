@@ -35,7 +35,7 @@ Explore all components interactively in our [Storybook](https://react.dynamicfra
 - **DInputSelect**: Dropdown select input
 - **DSelect**: Advanced select with search (uses react-select)
 - **DDatePicker**: Date picker with calendar
-- **DOtp**: One-time password input
+- **DPasswordStrengthMeter**: Password strength indicator with validation
 - **DBoxFile**: File upload with drag-and-drop
 
 ### Data Display Components
@@ -44,7 +44,6 @@ Explore all components interactively in our [Storybook](https://react.dynamicfra
 - **DCarousel**: Carousel/slider with DCarouselSlide
 - **DCurrencyText**: Formatted currency display
 - **DProgress**: Progress bar indicator
-- **DVoucher**: Voucher/receipt display component
 
 ### Feedback Components
 - **DAlert**: User notification messages
@@ -62,11 +61,11 @@ Explore all components interactively in our [Storybook](https://react.dynamicfra
 - **DButton**: Action button with loading state
 - **DButtonIcon**: Icon-only button
 - **DIcon**: Icon component (uses Lucide Icons)
-- **DIconBase**: Base icon with responsive size support
 
 ### Specialized Financial Components
 - **DCreditCard**: Credit/debit card display with flip animation
-- **DPasswordStrengthMeter**: Password strength indicator with validation
+- **DVoucher**: Voucher/receipt display component
+- **DOtp**: One-time password input
 
 ## Component Usage
 
@@ -148,16 +147,33 @@ import {
 
   // Component-specific hooks
   useDToast,             // Programmatic toast notifications
-  useDAlert,             // Programmatic alerts
   useTabContext,         // Access tab state within DTabs
-  useStepper,            // Access stepper state within DStepper
-  useSlide,              // Access carousel slide state
+  useErrorBoundary,      // Error boundary control (reset, show)
 
-  // Utility hooks
+  // Currency hooks
   useFormatCurrency,     // Currency formatting utilities
   useInputCurrency,      // Currency input handling
-  useScreenDimensions,   // Responsive breakpoint detection
+
+  // Responsive hooks
+  useMediaQuery,         // Custom media query detection
+  useMediaBreakpointUpSm,  // Breakpoint detection (sm and up)
+  useMediaBreakpointUpMd,  // Breakpoint detection (md and up)
+  useMediaBreakpointUpLg,  // Breakpoint detection (lg and up)
+  useMediaBreakpointUpXl,  // Breakpoint detection (xl and up)
+  useMediaBreakpointUpXxl, // Breakpoint detection (xxl and up)
+
+  // Utility hooks
   useStackState,         // Stack-based state management
+  usePortal,             // Portal management
+  useItemSelection,      // List item selection management
+} from '@dynamic-framework/ui-react';
+```
+
+### Additional Utilities
+
+```tsx
+import {
+  getErrorMessage,       // Extract error message from unknown errors
 } from '@dynamic-framework/ui-react';
 ```
 
@@ -207,19 +223,31 @@ import { DIcon } from '@dynamic-framework/ui-react';
 
 ### Icon Sizing
 
-Use the `size` prop to control icon dimensions:
+Use the `size` prop with exact CSS values:
 
 ```tsx
-<DIcon icon="Home" size="sm" />   {/* Small */}
-<DIcon icon="Home" />              {/* Default */}
-<DIcon icon="Home" size="lg" />   {/* Large */}
+<DIcon icon="Home" size="1rem" />    {/* 16px */}
+<DIcon icon="Home" size="1.5rem" />  {/* 24px - default */}
+<DIcon icon="Home" size="2rem" />    {/* 32px */}
+<DIcon icon="Home" size="48px" />    {/* 48px */}
 ```
 
-For custom sizes, use the `style` prop:
+#### Responsive Sizes
+
+Icons support responsive sizing with breakpoint-specific values:
 
 ```tsx
-<DIcon icon="Home" style={{ width: 48, height: 48 }} />
+<DIcon
+  icon="Home"
+  size={{
+    xs: "1rem",      // Mobile
+    md: "1.5rem",    // Tablet
+    lg: "2rem"       // Desktop
+  }}
+/>
 ```
+
+Available breakpoints: `xs`, `sm`, `md`, `lg`, `xl`, `xxl`
 
 ### Icon Colors
 
@@ -275,16 +303,6 @@ Browse all available icons at [lucide.dev/icons](https://lucide.dev/icons). When
 
 #### Misc
 `Search`, `Filter`, `Calendar`, `MapPin`, `Globe`, `Link`, `Eye`, `EyeOff`, `Star`, `Heart`, `ThumbsUp`, `ThumbsDown`
-
-### Using DIconBase for Responsive Icons
-
-For icons that need to scale with viewport, use `DIconBase`:
-
-```tsx
-import { DIconBase } from '@dynamic-framework/ui-react';
-
-<DIconBase icon="CreditCard" responsiveSize />
-```
 
 ### Icons in Buttons
 

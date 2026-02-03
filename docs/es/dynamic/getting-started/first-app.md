@@ -196,7 +196,7 @@ export function useCreateTransfer() {
 
 ```tsx
 // src/components/Dashboard.tsx
-import { DCard, DCurrencyText, DSkeleton, DAlert } from '@dynamic-framework/ui-react';
+import { DCard, DCurrencyText, DAlert } from '@dynamic-framework/ui-react';
 import { useUser, useAccounts } from '../services/hooks';
 
 export default function Dashboard() {
@@ -204,7 +204,15 @@ export default function Dashboard() {
   const { data: accounts, isLoading: accountsLoading, error: accountsError } = useAccounts();
 
   if (userLoading || accountsLoading) {
-    return <DSkeleton />;
+    return (
+      <div className="placeholder-glow">
+        <span className="placeholder col-6 mb-4"></span>
+        <div className="row">
+          <div className="col-md-6 mb-3"><span className="placeholder col-12" style={{ height: '120px' }}></span></div>
+          <div className="col-md-6 mb-3"><span className="placeholder col-12" style={{ height: '120px' }}></span></div>
+        </div>
+      </div>
+    );
   }
 
   if (userError || accountsError) {
@@ -245,7 +253,7 @@ export default function Dashboard() {
 
 ```tsx
 // src/components/TransactionList.tsx
-import { DListGroup, DBadge, DCurrencyText, DSkeleton, DAlert } from '@dynamic-framework/ui-react';
+import { DListGroup, DBadge, DCurrencyText, DAlert } from '@dynamic-framework/ui-react';
 import { useTransactions } from '../services/hooks';
 
 export default function TransactionList() {
@@ -260,7 +268,16 @@ export default function TransactionList() {
     return colors[status] || 'secondary';
   };
 
-  if (isLoading) return <DSkeleton />;
+  if (isLoading) {
+    return (
+      <div className="placeholder-glow">
+        <span className="placeholder col-4 mb-3"></span>
+        <span className="placeholder col-12 mb-2"></span>
+        <span className="placeholder col-12 mb-2"></span>
+        <span className="placeholder col-12"></span>
+      </div>
+    );
+  }
   if (error) return <DAlert color="danger">Error al cargar transacciones</DAlert>;
   if (!transactions?.length) return <DAlert color="info">No hay transacciones</DAlert>;
 

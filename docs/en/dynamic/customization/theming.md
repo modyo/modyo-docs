@@ -11,8 +11,7 @@ Customize the visual appearance of Dynamic Framework components using CSS variab
 Dynamic Framework is built on Bootstrap 5, which uses CSS custom properties (variables) extensively. You can customize the appearance by:
 
 1. **Overriding CSS variables** - Change values at runtime
-2. **Overriding SCSS variables** - Change values at build time
-3. **Adding custom CSS** - Style specific components
+2. **Adding custom CSS** - Style specific components
 
 ## CSS Variables Reference
 
@@ -69,7 +68,7 @@ Bootstrap defines these color variables that affect all components:
 
 ## Customizing Your Theme
 
-### Method 1: CSS File Override
+### CSS File Override
 
 Create a CSS file that overrides the default variables:
 
@@ -97,39 +96,6 @@ Import this file **after** the Dynamic Framework CSS:
 // src/main.tsx
 import '@dynamic-framework/ui-react/dist/css/dynamic-ui.css';
 import './styles/theme.css'; // Your overrides
-```
-
-### Method 2: SCSS Customization
-
-For build-time customization with more control:
-
-```scss
-// src/styles/theme.scss
-
-// 1. Override Bootstrap variables
-$primary: #004B8D;
-$secondary: #00A0DF;
-$font-family-base: 'Inter', system-ui, sans-serif;
-$border-radius: 0.5rem;
-$border-radius-lg: 0.75rem;
-
-// Button-specific
-$btn-border-radius: 2rem;
-$btn-padding-y: 0.625rem;
-$btn-padding-x: 1.5rem;
-
-// Card-specific
-$card-border-radius: 1rem;
-$card-border-width: 0;
-$card-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-
-// 2. Import Bootstrap (this uses your variables)
-@import 'bootstrap/scss/bootstrap';
-
-// 3. Your additional styles
-.custom-class {
-  // ...
-}
 ```
 
 ## Component-Specific Theming
@@ -299,13 +265,11 @@ function toggleDarkMode() {
 ## Best Practices
 
 1. **Use CSS variables for dynamic values** - Colors that might change at runtime
-2. **Use SCSS for structural changes** - Spacing, sizing, component structure
-3. **Don't override with `!important`** - Use proper CSS specificity
-4. **Test contrast ratios** - Ensure accessibility with [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/)
-5. **Check Storybook** - View component CSS properties at [react.dynamicframework.dev](https://react.dynamicframework.dev)
+2. **Don't override with `!important`** - Use proper CSS specificity
+3. **Test contrast ratios** - Ensure accessibility with [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/)
+4. **Check Storybook** - View component CSS properties at [react.dynamicframework.dev](https://react.dynamicframework.dev)
 
 ## Resources
 
 - [Bootstrap CSS Variables](https://getbootstrap.com/docs/5.3/customize/css-variables/)
-- [Bootstrap Sass Variables](https://getbootstrap.com/docs/5.3/customize/sass/)
 - [Dynamic Storybook](https://react.dynamicframework.dev)
