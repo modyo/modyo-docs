@@ -398,7 +398,7 @@ Estos objetos permiten obtener información a través de Liquid para las órdene
 
 ## origination
 
-Estos objetos obtienen la información relevante de los flujos de Originación.
+Estos objetos obtienen la información relevante de los flujos de originación.
 
 | Objeto                             | Descripción                                                          | Ejemplo                                                                                                                                 |
 |------------------------------------|----------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
@@ -408,7 +408,7 @@ Estos objetos obtienen la información relevante de los flujos de Originación.
 | **origination.due_unit**           | Unidad del período de vencimiento (por ejemplo: "days", "weeks").    | ```days```                                                                                                                              |
 | **origination.uid**                | Identificador único (UID) del flujo de originación.                  | ```mi-originacion```                                                                                                                    |
 | **origination.url**                | URL de la página del flujo de originación.                           | ```https://test.modyo.com/new-site/myorigination```                                                                                     |
-| **origination.steps**              | Steps del flujo de originación.                                      | ```[{"uid":"step-01"}]```                                                                                                               |
+| **origination.steps**              | Lista de objetos step | [ver documentación del step](/es/platform/channels/liquid-markup/objects.html#step) |
 | **origination.can_begin**          | Indica si el usuario puede iniciar el flujo de originación.          | ```true```                                                                                                                              |
 | **origination.can_create**         | Indica si el usuario puede crear una nueva submission para el flujo. | ```true```                                                                                                                              |
 | **origination.can_resume**         | Indica si el usuario puede reanudar una submission del flujo.        | ```true```                                                                                                                              |
@@ -542,19 +542,19 @@ Estos objetos obtienen la información relevante a las Submissions.
 |------------------------------------------------|----------------------------------------------------------------|------------------------------------------------------------|
 | **submission.status**                          | Estado de la submission (por ejemplo: "pending", "completed"). | ```completed```                                            |
 | **submission.progress**                        | Progreso de la submission como porcentaje (sin símbolo).       | ```100```                                                  |
-| **submission.assignee**                        | Usuario asignado a la submission.                              |                                                            |
+| **submission.assignee**                        | Objeto del usuario administrador asigando.                     |  [ver documentación de adminuser](/es/platform/channels/liquid-markup/objects.html#adminuser)                                                          |
 | **submission.created_at**                      | Fecha y hora de creación de la submission.                     | ```Tue, 15 Feb 2025 15:14:03 UTC +00:00```                 |
 | **submission.updated_at**                      | Fecha y hora de la última actualización de la submission.      | ```Tue, 15 Feb 2025 20:30:10 UTC +00:00```                 |
 | **submission.started_at**                      | Fecha y hora en que se inició la submission.                   | ```Tue, 15 Feb 2025 15:14:03 UTC +00:00```                 |
 | **submission.completed_at**                    | Fecha y hora en que se completó la submission.                 | ```Tue, 15 Feb 2025 20:30:10 UTC +00:00```                 |
 | **submission.due_date**                        | Fecha de vencimiento de la submission.                         | ```Tue, 22 Feb 2025 12:00:00 UTC +00:00```                 |
-| **submission.origination**                     | Flujo de originación asociado a la submission.                 |                                                            |
+| **submission.origination**                     | Objeto de la originación.                | [ver documentación de origination](/es/platform/channels/liquid-markup/objects.html#origination)                                                           |
 | **submission.url**                             | URL de la página de la submission.                             | ```https://test.modyo.com/new-site/myorigination```        |
 | **submission.uuid**                            | Identificador único (UUID) de la submission.                   | ```abcd-1234-5678-0000```                                  |
 | **submission.tasks['identificador_del_task']** | Respuestas de tareas para la submission.                       | ```[{"task_id":"t1"}]```                                   |
 | **submission.resume_url**                      | URL para reanudar la submission.                               | ```/originations/mi-originacion/submissions/uuid/resume``` |
 | **submission.start_info**                      | Información sobre el inicio de la submission.                  | ```{"started_by":"user","at":"2025-02-15"}```              |
-| **submission.steps**                           | Steps de la submission.                                        | ```[{"uid":"step-01"}]```                                  |
+| **submission.steps**                           | Steps de la submission.                                        | ```[{"uid"=>"step-1", "name"=>"step 1", "is_completed"=>true, "link"=>"step 1"}{"uid"=>"step-2", "name"=>"step 2", "is_completed"=>false, "link"=>"step 2"}]```                                  |
 
 ### step
 
@@ -562,7 +562,7 @@ Estos objetos obtienen la información relevante a las Submissions.
 |----------------|----------------------------------|----------------------------|
 | **step.uid**   | Identificador del step.          | ```step-01```              |
 | **step.name**  | Nombre del step.                 | ```Información Personal``` |
-| **step.tasks** | Tasks del step (array de tasks). | ```[{"uid":"task-01"}]```  |
+| **step.tasks** | Lista de objetos de tipo task. | [ver documentación de task](/es/platform/channels/liquid-markup/objects.html#task) |
 
 ### task
 
@@ -573,6 +573,21 @@ Estos objetos obtienen la información relevante a las Submissions.
 | **task.name**        | Nombre de la task.             | ```Ingresa tu información personal``` |
 | **task.type**        | Tipo de la task.               | ```user_input```                      |
 | **task.description** | Descripción de la task.        | ```Recolecta datos personales```      |
+
+Adicionalmente según el tipo de tarea pueden haber atributos adicionales.
+
+#### user_input_task
+
+| Objeto                     | Descripción                                  | Ejemplo                                                          |
+|----------------------------|----------------------------------------------|------------------------------------------------------------------|
+| **user_input_task.fields** | Lista los objetos de tipo question. | [ver documentación de question](/es/platform/channels/liquid-markup/objects.html#question) |
+
+#### invitation_task
+
+| Objeto                     | Descripción                                  | Ejemplo                                                          |
+|----------------------------|----------------------------------------------|------------------------------------------------------------------|
+| **user_input_task.target_tasks** | Lista los objetos de tipo task. | [ver documentación de question](/es/platform/channels/liquid-markup/objects.html#task) |
+| **user_input_task.max_invitation** | Número máximo de invitados. | ```12``` |
 
 ### Tipos de Respuesta de Tareas
 
@@ -586,12 +601,6 @@ Estos objetos obtienen la información relevante a las Submissions.
 | **validation_task_response.validated**        | Indica si la tarea fue validada.                        | ```true```                                    |
 | **digital_signature_task_response.signed**    | Indica si la tarea fue firmada digitalmente.            | ```false```                                   |
 | **origination_flow_task_response.submission** | Submission asociada a la tarea de flujo de originación. |                                               |
-
-### user_input_task
-
-| Objeto                     | Descripción                                  | Ejemplo                                                          |
-|----------------------------|----------------------------------------------|------------------------------------------------------------------|
-| **user_input_task.fields** | Preguntas de la tarea de entrada de usuario. | ```[{"id":1,"uid":"question-1","label":"What is your name?"}]``` |
 
 ### user_input_task_response
 
