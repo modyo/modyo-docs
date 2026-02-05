@@ -1,4 +1,4 @@
----
+https://github.com/modyo/modyo/pull/19032---
 search: true
 ---
 
@@ -106,7 +106,7 @@ La tarea de firma permite una firma simple con un checkbox o una avanzada cuando
 
 ### Revisión pendiente
 
-La tarea de revisión pendiente pausa el proseso de originación. Se usa para gatillar procesos asíncronos, generalmente en sistemas externos.
+La tarea de revisión pendiente pausa el proceso de originación. Se usa para gatillar procesos asíncronos, generalmente en sistemas externos.
 
 
 ### Snippet de código
@@ -400,7 +400,7 @@ El parámetro content que se envía tiene que ser un json válido. En caso de qu
 
 La tarea de tipo proceso de originación permite insertar otra originación en el flujo.
 Esto porque muchas veces en diferentes flujos se comparten unos pasos o datos que se requieren del usuario.
-Al usar un una tarea de porceso de originación, si el usuario ya tiene respuestas anteriores podría usarlas en lugar de volver a entregar los mismos datos una y otra vez.
+Al usar un una tarea de proceso de originación, si el usuario ya tiene respuestas anteriores podría usarlas en lugar de volver a entregar los mismos datos una y otra vez.
 Permitir o no el uso de datos anteriores se define al agregar la tarea de proceso de originación.
 
 ### Invitación
