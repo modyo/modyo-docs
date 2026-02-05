@@ -194,20 +194,7 @@ Para almacenar información, los datos deben utilizar formato JSON válido, los 
 
 Los code snippets pueden utilizar objetos de liquid para acceder a datos internos de la respuesta y personalizar la experiencia del usuario.
 
-
-#### Submission Objetos
-
 En un flujo de originación, cada respuesta representa el proceso en curso de un usuario específico. Estos son algunos de los principales atributos disponibles a través de Liquid:
-
-| Descripción  | Ejemplo  |
-|---|---|
-| **submission.sequence_id** Número de secuencia de la actual respuesta.  | ``` 77 ``` |
-| **submission.assignee.name** Nombre de la persona asignada.  | ```John``` |
-| **submission.fields** Array con los campos almacenados dentro de la respuesta actual. | ```[{"question": {"label": "What's your name?"},"text_field": "Jorge Regula"}]``` |
-| **submission.QUESTION_ID** Al usar el ID de una pregunta específica ( ej: submission.123456) se accede directamente a su información | ```{"question": {"label": "What's your name?"},"text_field": "John Doe"}``` |
-| **submission.origination.name** Nombre de la originación. | ```My Origination``` |
-| **submission.origination.steps** Array con los nombres de los steps en la originación | ```[ {"uid": "step 1"}, {"uid": "step 2"}]``` |
-| **submission.origination.tasks** Array con todos los tasks en la originación y el step al que corresponden | ```[{"task_id": "67890","name": "Task 1", description: "step 1": { "uid": "abcd1234" } }]``` |
 
 Puedes aprender más sobre [Objetos Liquid](/es/platform/channels/liquid-markup/objects) en nuestra documentación.
 
