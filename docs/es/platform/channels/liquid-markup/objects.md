@@ -595,19 +595,20 @@ Adicionalmente según el tipo de tarea pueden haber atributos adicionales.
 |-----------------------------------------------|---------------------------------------------------------|-----------------------------------------------|
 | **pending_review_task_response.approved**     | Indica si la tarea de revisión fue aprobada.            | ```true```                                    |
 | **pending_review_task_response.content**      | Contenido de la revisión.                               | ```Este es el contenido de la revisión```     |
-| **code_snippet_task_response.data**           | Contenido del snippet de código (alias de `content`).   | ```{"language":"rb","snippet":"puts 'Hi'"}``` |
+| **code_snippet_task_response.data**           | Contenido del snippet de código (alias de `content`).   | ```{"submission"=>{"fields"=>{"car"=>"fiat", "year"=>1999, "color"=>"black", "extras"=>["ac", "gps", "sunroof"], "expiration"=>"2026-02-01"}}}``` |
 | **code_snippet_task_response.completed**      | Indica si la tarea de snippet fue completada.           | ```false```                                   |
-| **code_snippet_task_response.content**        | Contenido del snippet de código.                        | ```puts 'Hi'```                               |
+| **code_snippet_task_response.content**        | Contenido del snippet de código.                        | ```{"submission"=>{"fields"=>{"car"=>"fiat", "year"=>1999, "color"=>"black", "extras"=>["ac", "gps", "sunroof"], "expiration"=>"2026-02-01"}}}```                               |
 | **validation_task_response.validated**        | Indica si la tarea fue validada.                        | ```true```                                    |
 | **digital_signature_task_response.signed**    | Indica si la tarea fue firmada digitalmente.            | ```false```                                   |
-| **origination_flow_task_response.submission** | Submission asociada a la tarea de flujo de originación. |                                               |
+| **origination_flow_task_response.submission** | Submission asociada a la tarea de flujo de originación. | [ver documentación de sumbission](/es/platform/channels/liquid-markup/objects.html#submission)                                              |
+| **invitation_task_response.completed** | Indica si la tarea de invitación fue completada. | ```true```                                             |
 
 ### user_input_task_response
 
 | Objeto                                                              | Descripción                                                  | Ejemplo                                                                                   |
 |---------------------------------------------------------------------|--------------------------------------------------------------|-------------------------------------------------------------------------------------------|
 | **user_input_task_response.task**                                   | Tarea de entrada de usuario a la que pertenece la respuesta. |                                                                                           |
-| **user_input_task_response.fields['identificador_de_la_pregunta']** | Respuestas de la tarea de entrada de usuario.                | ```[{"id":1,"text_field":"John Doe","question":{"id":1,"label":"What is your name?"}}]``` |
+| **user_input_task_response.fields['identificador_de_la_pregunta']** | Respuestas de la tarea de entrada de usuario.                | ```respuesta``` |
 
 ## target
 
