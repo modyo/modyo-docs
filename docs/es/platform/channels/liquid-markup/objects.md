@@ -602,6 +602,19 @@ Adicionalmente según el tipo de tarea pueden haber atributos adicionales.
 | **digital_signature_task_response.signed**    | Indica si la tarea fue firmada digitalmente.            | ```false```                                   |
 | **origination_flow_task_response.submission** | Submission asociada a la tarea de flujo de originación. | [ver documentación de sumbission](/es/platform/channels/liquid-markup/objects.html#submission)                                              |
 | **invitation_task_response.completed** | Indica si la tarea de invitación fue completada. | ```true```                                             |
+| **identity_verification_task_response.verification_status** | Indica si la tarea de verificación fue verificada. | ```verified```                                             |
+| **identity_verification_task_response.document_status** | Indica si el documento en la tarea de verificación fue verificado. | ```document_verified```                                             |
+| **identity_verification_task_response.biometric_status** | Indica si la biometria en la tarea de verificación fue verificada. | ```biometric_verified```                                             |
+| **identity_verification_task_response.session_id** |  | ``````                                             |
+| **identity_verification_task_response.verification_url** |  | ``````                                             |
+| **identity_verification_task_response.verification_date** | Indica la fecha en que la tarea de verificación fue verificada. | ```2026-02-11T09:26:49.257-03:00```                                             |
+| **identity_verification_task_response.verification_details** | Da los detalles de la tarea de verificación. | ```{:session_id=>nil, :verification_url=>nil, :document_type=>nil, :document_status=>"document_verified", :biometric_status=>"biometric_verified", :verification_date=>"2026-02-11T09:26:49.257-03:00", :face_match_score=>95.93251037597656, :liveness_score=>98.41004943847656}```                                             |
+| **identity_verification_task_response.is_verified** | Indica si la tarea de verificación fue verificada. | ```true```                                             |
+| **identity_verification_task_response.requires_review** | Indica si la tarea de verificación está pendiente de revisión. | ```false```                                             |
+| **identity_verification_task_response.can_retry** | Indica si la tarea de verificación puede ser reintentada. | ```false```                                             |
+| **identity_verification_task_response.rejection_reasons** | Indica la razón por la que la tarea de verificación fue rechazada. | ```Score: 89.43626403808594 < 90.0```                                             |
+| **identity_verification_task_response.verification_expired** | Indica si la tarea de verificación está expirada. | ```false```                                             |
+
 
 ### user_input_task_response
 
