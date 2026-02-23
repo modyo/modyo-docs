@@ -586,7 +586,7 @@ Adicionalmente según el tipo de tarea pueden haber atributos adicionales.
 
 | Objeto                     | Descripción                                  | Ejemplo                                                          |
 |----------------------------|----------------------------------------------|------------------------------------------------------------------|
-| **user_input_task.target_tasks** | Lista los objetos de tipo task. | [ver documentación de question](/es/platform/channels/liquid-markup/objects.html#task) |
+| **user_input_task.target_tasks** | Lista los objetos de tipo task. | [ver documentación de task](/es/platform/channels/liquid-markup/objects.html#task) |
 | **user_input_task.max_invitation** | Número máximo de invitados. | ```12``` |
 
 ### Tipos de Respuesta de Tareas
