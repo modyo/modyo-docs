@@ -197,6 +197,10 @@ Code snippets can use Liquid objects to access internal submission data and pers
 
 #### Code Snippets Example
 
+In an origination flow, each response represents the ongoing process of a specific user.
+
+You can learn more about [Liquid Objects](/en/platform/channels/liquid-markup/objects) in our documentation.
+
 In this example, you can find the use of data access by Liquid Objects and interaction with JavaScript and JSON APIs. Remember to replace the `QUESTION_ID` value with the corresponding one in your submission.
 
 ``` html
