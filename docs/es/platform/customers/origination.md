@@ -196,7 +196,7 @@ Para almacenar información, los datos deben utilizar formato JSON válido, los 
 
 Los code snippets pueden utilizar objetos de liquid para acceder a datos internos de la respuesta y personalizar la experiencia del usuario.
 
-En un flujo de originación, cada respuesta representa el proceso en curso de un usuario específico. Estos son algunos de los principales atributos disponibles a través de Liquid:
+En un flujo de originación, cada respuesta representa el proceso en curso de un usuario específico.
 
 Puedes aprender más sobre [Objetos Liquid](/es/platform/channels/liquid-markup/objects) en nuestra documentación.
 
