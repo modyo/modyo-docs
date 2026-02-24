@@ -99,6 +99,7 @@ When selecting a field, you can modify its properties by going to the **Edit** t
 ### Validation
 
 The validation task requires manual review by the assigned agent. They must validate the data provided by the user to unlock the next task in the flow.
+The task is refreshed every 5 seconds so that the end user knows if the task has been validated.
 
 ### Signature
 
@@ -107,6 +108,7 @@ The signature task allows for a simple signature with a checkbox or an advanced 
 ### Pending Review
 
 The pending review task pauses the origination process. It is used to trigger asynchronous processes, usually in external systems.
+The task is refreshed every 5 seconds so that the end user knows if the task has been reviewed.
 
 
 ### Code Snippet
@@ -193,24 +195,11 @@ To store information, the data must use valid JSON format; format errors will no
 
 Code snippets can use Liquid objects to access internal submission data and personalize the user experience.
 
+#### Code Snippets Example
 
-#### Submission Objects
-
-In an origination flow, each submission represents the ongoing process of a specific user. Here are some of the main attributes available through Liquid:
-
-| Description  | Example  |
-|---|---|
-| **submission.sequence_id** Sequence number of the current submission.  | ``` 77 ``` |
-| **submission.assignee.name** Name of the assigned person.  | ```John``` |
-| **submission.fields** Array with the fields stored within the current submission. | ```[{"question": {"label": "What's your name?"},"text_field": "Jorge Regula"}]``` |
-| **submission.QUESTION_ID** By using the ID of a specific question (e.g., submission.123456), its information is directly accessed | ```{"question": {"label": "What's your name?"},"text_field": "John Doe"}``` |
-| **submission.origination.name** Name of the origination. | ```My Origination``` |
-| **submission.origination.steps** Array with the names of the steps in the origination | ```[ {"uid": "step 1"}, {"uid": "step 2"}]``` |
-| **submission.origination.tasks** Array with all the tasks in the origination and the step they correspond to | ```[{"task_id": "67890","name": "Task 1", description: "step 1": { "uid": "abcd1234" } }]``` |
+In an origination flow, each response represents the ongoing process of a specific user.
 
 You can learn more about [Liquid Objects](/en/platform/channels/liquid-markup/objects) in our documentation.
-
-#### Code Snippets Example
 
 In this example, you can find the use of data access by Liquid Objects and interaction with JavaScript and JSON APIs. Remember to replace the `QUESTION_ID` value with the corresponding one in your submission.
 

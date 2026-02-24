@@ -398,7 +398,7 @@ Estos objetos permiten obtener información a través de Liquid para las órdene
 
 ## origination
 
-Estos objetos obtienen la información relevante de los flujos de Originación.
+Estos objetos obtienen la información relevante de los flujos de originación.
 
 | Objeto                             | Descripción                                                          | Ejemplo                                                                                                                                 |
 |------------------------------------|----------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
@@ -408,7 +408,7 @@ Estos objetos obtienen la información relevante de los flujos de Originación.
 | **origination.due_unit**           | Unidad del período de vencimiento (por ejemplo: "days", "weeks").    | ```days```                                                                                                                              |
 | **origination.uid**                | Identificador único (UID) del flujo de originación.                  | ```mi-originacion```                                                                                                                    |
 | **origination.url**                | URL de la página del flujo de originación.                           | ```https://test.modyo.com/new-site/myorigination```                                                                                     |
-| **origination.steps**              | Steps del flujo de originación.                                      | ```[{"uid":"step-01"}]```                                                                                                               |
+| **origination.steps**              | Lista de objetos step | [ver documentación del step](/es/platform/channels/liquid-markup/objects.html#step) |
 | **origination.can_begin**          | Indica si el usuario puede iniciar el flujo de originación.          | ```true```                                                                                                                              |
 | **origination.can_create**         | Indica si el usuario puede crear una nueva submission para el flujo. | ```true```                                                                                                                              |
 | **origination.can_resume**         | Indica si el usuario puede reanudar una submission del flujo.        | ```true```                                                                                                                              |
@@ -542,19 +542,19 @@ Estos objetos obtienen la información relevante a las Submissions.
 |------------------------------------------------|----------------------------------------------------------------|------------------------------------------------------------|
 | **submission.status**                          | Estado de la submission (por ejemplo: "pending", "completed"). | ```completed```                                            |
 | **submission.progress**                        | Progreso de la submission como porcentaje (sin símbolo).       | ```100```                                                  |
-| **submission.assignee**                        | Usuario asignado a la submission.                              |                                                            |
+| **submission.assignee**                        | Objeto del usuario administrador asigando.                     |  [ver documentación de adminuser](/es/platform/channels/liquid-markup/objects.html#adminuser)                                                          |
 | **submission.created_at**                      | Fecha y hora de creación de la submission.                     | ```Tue, 15 Feb 2025 15:14:03 UTC +00:00```                 |
 | **submission.updated_at**                      | Fecha y hora de la última actualización de la submission.      | ```Tue, 15 Feb 2025 20:30:10 UTC +00:00```                 |
 | **submission.started_at**                      | Fecha y hora en que se inició la submission.                   | ```Tue, 15 Feb 2025 15:14:03 UTC +00:00```                 |
 | **submission.completed_at**                    | Fecha y hora en que se completó la submission.                 | ```Tue, 15 Feb 2025 20:30:10 UTC +00:00```                 |
 | **submission.due_date**                        | Fecha de vencimiento de la submission.                         | ```Tue, 22 Feb 2025 12:00:00 UTC +00:00```                 |
-| **submission.origination**                     | Flujo de originación asociado a la submission.                 |                                                            |
+| **submission.origination**                     | Objeto de la originación.                | [ver documentación de origination](/es/platform/channels/liquid-markup/objects.html#origination)                                                           |
 | **submission.url**                             | URL de la página de la submission.                             | ```https://test.modyo.com/new-site/myorigination```        |
 | **submission.uuid**                            | Identificador único (UUID) de la submission.                   | ```abcd-1234-5678-0000```                                  |
-| **submission.tasks['identificador_del_task']** | Respuestas de tareas para la submission.                       | ```[{"task_id":"t1"}]```                                   |
+| **submission.tasks['identificador_del_task']** | Respuestas de tareas para la submission. Se debe proveer el uid de la task | [ver documentación de tipo de respuesta de tareas](/es/platform/channels/liquid-markup/objects.html#tipos-de-respuesta-de-tareas)                                   |
 | **submission.resume_url**                      | URL para reanudar la submission.                               | ```/originations/mi-originacion/submissions/uuid/resume``` |
 | **submission.start_info**                      | Información sobre el inicio de la submission.                  | ```{"started_by":"user","at":"2025-02-15"}```              |
-| **submission.steps**                           | Steps de la submission.                                        | ```[{"uid":"step-01"}]```                                  |
+| **submission.steps**                           | Steps de la submission.                                        | ```[{"uid"=>"step-1", "name"=>"step 1", "is_completed"=>true, "link"=>"step 1"}{"uid"=>"step-2", "name"=>"step 2", "is_completed"=>false, "link"=>"step 2"}]```                                  |
 
 ### step
 
@@ -562,7 +562,7 @@ Estos objetos obtienen la información relevante a las Submissions.
 |----------------|----------------------------------|----------------------------|
 | **step.uid**   | Identificador del step.          | ```step-01```              |
 | **step.name**  | Nombre del step.                 | ```Información Personal``` |
-| **step.tasks** | Tasks del step (array de tasks). | ```[{"uid":"task-01"}]```  |
+| **step.tasks** | Lista de objetos de tipo task. | [ver documentación de task](/es/platform/channels/liquid-markup/objects.html#task) |
 
 ### task
 
@@ -574,31 +574,53 @@ Estos objetos obtienen la información relevante a las Submissions.
 | **task.type**        | Tipo de la task.               | ```user_input```                      |
 | **task.description** | Descripción de la task.        | ```Recolecta datos personales```      |
 
+Adicionalmente según el tipo de tarea pueden haber atributos adicionales.
+
+#### user_input_task
+
+| Objeto                     | Descripción                                  | Ejemplo                                                          |
+|----------------------------|----------------------------------------------|------------------------------------------------------------------|
+| **user_input_task.fields** | Lista los objetos de tipo question. | [ver documentación de question](/es/platform/channels/liquid-markup/objects.html#question) |
+
+#### invitation_task
+
+| Objeto                     | Descripción                                  | Ejemplo                                                          |
+|----------------------------|----------------------------------------------|------------------------------------------------------------------|
+| **user_input_task.target_tasks** | Lista los objetos de tipo task. | [ver documentación de task](/es/platform/channels/liquid-markup/objects.html#task) |
+| **user_input_task.max_invitation** | Número máximo de invitados. | ```12``` |
+
 ### Tipos de Respuesta de Tareas
 
 | Objeto                                        | Descripción                                             | Ejemplo                                       |
 |-----------------------------------------------|---------------------------------------------------------|-----------------------------------------------|
 | **pending_review_task_response.approved**     | Indica si la tarea de revisión fue aprobada.            | ```true```                                    |
 | **pending_review_task_response.content**      | Contenido de la revisión.                               | ```Este es el contenido de la revisión```     |
-| **code_snippet_task_response.data**           | Contenido del snippet de código (alias de `content`).   | ```{"language":"rb","snippet":"puts 'Hi'"}``` |
+| **code_snippet_task_response.data**           | Contenido del snippet de código (alias de `content`).   | ```{"submission"=>{"fields"=>{"car"=>"fiat", "year"=>1999, "color"=>"black", "extras"=>["ac", "gps", "sunroof"], "expiration"=>"2026-02-01"}}}``` |
 | **code_snippet_task_response.completed**      | Indica si la tarea de snippet fue completada.           | ```false```                                   |
-| **code_snippet_task_response.content**        | Contenido del snippet de código.                        | ```puts 'Hi'```                               |
+| **code_snippet_task_response.content**        | Contenido del snippet de código.                        | ```{"submission"=>{"fields"=>{"car"=>"fiat", "year"=>1999, "color"=>"black", "extras"=>["ac", "gps", "sunroof"], "expiration"=>"2026-02-01"}}}```                               |
 | **validation_task_response.validated**        | Indica si la tarea fue validada.                        | ```true```                                    |
 | **digital_signature_task_response.signed**    | Indica si la tarea fue firmada digitalmente.            | ```false```                                   |
-| **origination_flow_task_response.submission** | Submission asociada a la tarea de flujo de originación. |                                               |
+| **origination_flow_task_response.submission** | Submission asociada a la tarea de flujo de originación. | [ver documentación de sumbission](/es/platform/channels/liquid-markup/objects.html#submission)                                              |
+| **invitation_task_response.completed** | Indica si la tarea de invitación fue completada. | ```true```                                             |
+| **identity_verification_task_response.verification_status** | Indica si la tarea de verificación fue verificada. | ```verified```                                             |
+| **identity_verification_task_response.document_status** | Indica si el documento en la tarea de verificación fue verificado. | ```document_verified```                                             |
+| **identity_verification_task_response.biometric_status** | Indica si la biometria en la tarea de verificación fue verificada. | ```biometric_verified```                                             |
+| **identity_verification_task_response.session_id** | Indica el session ID de la tarea de verificación. | ```e0a27d34-a335-4101-a53d-3e8a6b8aa3a2```                                                            |
+| **identity_verification_task_response.verification_date** | Indica la fecha en que la tarea de verificación fue verificada. | ```2026-02-11T09:26:49.257-03:00```                                             |
+| **identity_verification_task_response.verification_details** | Da los detalles de la tarea de verificación. | ```{:session_id=>nil, :verification_url=>nil, :document_type=>nil, :document_status=>"document_verified", :biometric_status=>"biometric_verified", :verification_date=>"2026-02-11T09:26:49.257-03:00", :face_match_score=>95.93251037597656, :liveness_score=>98.41004943847656}```                                             |
+| **identity_verification_task_response.is_verified** | Indica si la tarea de verificación fue verificada. | ```true```                                             |
+| **identity_verification_task_response.requires_review** | Indica si la tarea de verificación está pendiente de revisión. | ```false```                                             |
+| **identity_verification_task_response.can_retry** | Indica si la tarea de verificación puede ser reintentada. | ```false```                                             |
+| **identity_verification_task_response.rejection_reasons** | Indica la razón por la que la tarea de verificación fue rechazada. | ```Score: 89.43626403808594 < 90.0```                                             |
+| **identity_verification_task_response.verification_expired** | Indica si la tarea de verificación está expirada. | ```false```                                             |
 
-### user_input_task
-
-| Objeto                     | Descripción                                  | Ejemplo                                                          |
-|----------------------------|----------------------------------------------|------------------------------------------------------------------|
-| **user_input_task.fields** | Preguntas de la tarea de entrada de usuario. | ```[{"id":1,"uid":"question-1","label":"What is your name?"}]``` |
 
 ### user_input_task_response
 
 | Objeto                                                              | Descripción                                                  | Ejemplo                                                                                   |
 |---------------------------------------------------------------------|--------------------------------------------------------------|-------------------------------------------------------------------------------------------|
 | **user_input_task_response.task**                                   | Tarea de entrada de usuario a la que pertenece la respuesta. |                                                                                           |
-| **user_input_task_response.fields['identificador_de_la_pregunta']** | Respuestas de la tarea de entrada de usuario.                | ```[{"id":1,"text_field":"John Doe","question":{"id":1,"label":"What is your name?"}}]``` |
+| **user_input_task_response.fields['identificador_de_la_pregunta']** | Respuestas de la tarea de entrada de usuario.                | ```respuesta``` |
 
 ## target
 
