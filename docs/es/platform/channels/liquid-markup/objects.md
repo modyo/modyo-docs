@@ -605,8 +605,7 @@ Adicionalmente según el tipo de tarea pueden haber atributos adicionales.
 | **identity_verification_task_response.verification_status** | Indica si la tarea de verificación fue verificada. | ```verified```                                             |
 | **identity_verification_task_response.document_status** | Indica si el documento en la tarea de verificación fue verificado. | ```document_verified```                                             |
 | **identity_verification_task_response.biometric_status** | Indica si la biometria en la tarea de verificación fue verificada. | ```biometric_verified```                                             |
-| **identity_verification_task_response.session_id** |  | ``````                                             |
-| **identity_verification_task_response.verification_url** |  | ``````                                             |
+| **identity_verification_task_response.session_id** | Indica el session ID de la tarea de verificación. | ```e0a27d34-a335-4101-a53d-3e8a6b8aa3a2```                                                            |
 | **identity_verification_task_response.verification_date** | Indica la fecha en que la tarea de verificación fue verificada. | ```2026-02-11T09:26:49.257-03:00```                                             |
 | **identity_verification_task_response.verification_details** | Da los detalles de la tarea de verificación. | ```{:session_id=>nil, :verification_url=>nil, :document_type=>nil, :document_status=>"document_verified", :biometric_status=>"biometric_verified", :verification_date=>"2026-02-11T09:26:49.257-03:00", :face_match_score=>95.93251037597656, :liveness_score=>98.41004943847656}```                                             |
 | **identity_verification_task_response.is_verified** | Indica si la tarea de verificación fue verificada. | ```true```                                             |
