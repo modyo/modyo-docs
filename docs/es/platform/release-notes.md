@@ -6,6 +6,19 @@ search: true
 
 ## 10.1
 
+### 10.1.13
+
+:::info Fecha del release
+25 de febrero de 2026
+:::
+
+| Módulo | Mejoras |
+|--------|---------|
+| **Customers** | • Corrige error al publicar originaciones tras un error en una publicación anterior. Ahora la actualización de las submissions pendientes se controla correctamente<br>• Mejora el control de errores en los formularios<br>• Corrige business events que generaban errores al indexarse<br>• Corrige descarga de formularios que contemplan datasets |
+| **Channels** | • Agrega soporte para un parámetro type al preview local de widgets desde el CLI, de esta forma podemos cargar el JavaScript del widget con type=module para el caso de uso de módulos en los widgets |
+| **Content** | • Corrige un error visual de superposición de elementos al tener un campo de tipo fecha y un campo de párrafo en la edición de entradas<br>• Corrige problema que provocaba que la programación de despublicaciones de entries se perdiera<br>• Corrige problema de click en label en campos de tipo checkbox |
+
+
 ### 10.1.12
 
 :::info Fecha del release

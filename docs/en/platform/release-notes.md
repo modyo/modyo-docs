@@ -6,6 +6,19 @@ search: true
 
 ## 10.1
 
+### 10.1.13
+
+:::info Release date
+February 25, 2026
+:::
+
+| Module | Improvements |
+|--------|---------|
+| **Customers** | • Fixes error when publishing originations after a failure in a previous publication. The update of pending submissions is now correctly controlled<br>• Improves error handling in forms<br>• Fixes business events that caused errors when being indexed<br>• Fixes download of forms that include datasets |
+| **Channels** | • Adds support for a type parameter in the local widget preview from the CLI, allowing the widget JavaScript to be loaded with type=module for module use cases in widgets |
+| **Content** | • Fixes a visual overlap issue when having a date field and a paragraph field in entry editing<br>• Fixes an issue that caused scheduled unpublications of entries to be lost<br>• Fixes click issue on labels in checkbox fields |
+
+
 ### 10.1.12
 
 :::info Release date
