@@ -30,7 +30,10 @@ Create wrapper components to add functionality like analytics, default props, or
 
 ```tsx
 // src/components/PrimaryButton.tsx
-import { DButton, type DButtonProps } from '@dynamic-framework/ui-react';
+import { DButton } from '@dynamic-framework/ui-react';
+import type { ComponentPropsWithoutRef } from 'react';
+
+type DButtonProps = ComponentPropsWithoutRef<typeof DButton>;
 
 interface PrimaryButtonProps extends Omit<DButtonProps, 'variant'> {
   trackingLabel?: string;

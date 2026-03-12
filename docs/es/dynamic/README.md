@@ -46,10 +46,10 @@ npx @modyo/cli@latest get dynamic-react-vite-base-template my-app
 cd my-app && npm install
 
 # Iniciar servidor de desarrollo
-npm run start
+npm run dev
 ```
 
-Aplicación disponible en `http://localhost:8080`
+Aplicación disponible en `http://localhost:5173`
 
 ## Características Técnicas
 
@@ -67,12 +67,12 @@ Aplicación disponible en `http://localhost:8080`
 
 ## Stack Tecnológico
 
-- **React**: 19.x (requiere ~19.2.1 como peer dependency)
+- **React**: 18.x / 19.x compatible
 - **TypeScript**: Tipado estático completo
-- **Bootstrap**: 5.3.8 customizable
-- **Build Tools**: Vite
-- **Testing**: Jest, React Testing Library
-- **Linting**: ESLint, Prettier
+- **Bootstrap**: 5.3.x customizable
+- **Build Tools**: Vite (widgets), Rollup (design system)
+- **Testing**: Vitest (widgets), Jest (design system), React Testing Library
+- **Linting**: ESLint
 
 ## Guías de Desarrollo
 

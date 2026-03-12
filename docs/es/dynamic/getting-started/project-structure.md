@@ -27,7 +27,7 @@ my-widget/
 ├── tests/                   # Archivos de tests
 │   └── setup.ts            # Configuración de tests
 ├── public/                  # Archivos estáticos
-│   └── index.html          # Template HTML
+├── index.html              # Template HTML (punto de entrada de Vite)
 ├── .env.example            # Template de variables de entorno
 ├── .eslintrc.js            # Configuración de ESLint
 ├── tsconfig.json           # Configuración de TypeScript

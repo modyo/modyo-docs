@@ -70,7 +70,7 @@ module.exports = {
                   },
                   {
                       text: "Dynamic",
-                      link: "https://dynamicframework.dev"
+                      link: "/en/dynamic/"
                   },
                   {
                       text: "Modyo",
@@ -365,7 +365,7 @@ module.exports = {
                   },
                   {
                       text: "Dynamic",
-                      link: "https://dynamicframework.dev"
+                      link: "/es/dynamic/"
                   },
                   {
                       text: "Modyo",

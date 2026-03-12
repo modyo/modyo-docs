@@ -33,10 +33,10 @@ cd my-digital-bank
 npm install
 
 # Start the development server
-npm run start
+npm run dev
 ```
 
-Your application will be available at `http://localhost:8080`
+Your application will be available at `http://localhost:5173`
 
 ### Option 2: Adding to an Existing React Project
 

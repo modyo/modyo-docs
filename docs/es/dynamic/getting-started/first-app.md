@@ -462,9 +462,9 @@ export default function App() {
 
 ```bash
 # Iniciar el servidor de desarrollo
-npm run start
+npm run dev
 
-# La aplicación estará disponible en http://localhost:8080
+# La aplicación estará disponible en http://localhost:5173
 ```
 
 ## Paso 11: Personalización

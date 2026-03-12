@@ -233,7 +233,7 @@ Style with form classes:
 
 ## Dark Mode
 
-Implement dark mode by defining alternate variable values:
+Dynamic Framework supports dark mode through the `.dark` CSS class on the `body` element or via the OS `prefers-color-scheme` media query. Define alternate variable values for dark mode:
 
 ```css
 /* Light mode (default) */
@@ -243,12 +243,22 @@ Implement dark mode by defining alternate variable values:
   --bs-card-bg: #ffffff;
 }
 
-/* Dark mode */
-[data-bs-theme="dark"] {
+/* Dark mode via .dark class on body */
+body.dark {
   --bs-body-bg: #121212;
   --bs-body-color: #e0e0e0;
   --bs-card-bg: #1e1e1e;
   --bs-border-color: #2d2d2d;
+}
+
+/* Dark mode via OS preference */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bs-body-bg: #121212;
+    --bs-body-color: #e0e0e0;
+    --bs-card-bg: #1e1e1e;
+    --bs-border-color: #2d2d2d;
+  }
 }
 ```
 
@@ -256,9 +266,7 @@ Toggle with JavaScript:
 
 ```tsx
 function toggleDarkMode() {
-  const html = document.documentElement;
-  const current = html.getAttribute('data-bs-theme');
-  html.setAttribute('data-bs-theme', current === 'dark' ? 'light' : 'dark');
+  document.body.classList.toggle('dark');
 }
 ```
 

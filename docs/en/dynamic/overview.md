@@ -28,7 +28,7 @@ Dynamic Framework is a React component framework specialized for financial appli
 - **TypeScript**: Full static typing
 - **Bootstrap 5.3.8**: Design system foundation
 - **Vite**: Fast builds and HMR for development
-- **CSS Modules**: Encapsulated styles
+- **SCSS/Bootstrap**: Component styles with Bootstrap 5 variables
 - **PostCSS**: Advanced CSS processing
 
 ## Core Components
@@ -134,8 +134,8 @@ Dynamic Framework uses Bootstrap 5's standard breakpoints:
 #### Using Breakpoints in CSS
 
 ```scss
-// SCSS with Bootstrap mixins
-@import "bootstrap/scss/mixins/breakpoints";
+// SCSS with Dynamic Framework abstracts (includes Bootstrap mixins)
+@use "@dynamic-framework/ui-react/src/style/abstracts/_+import" as *;
 
 .my-component {
   padding: 1rem;
@@ -152,23 +152,31 @@ Dynamic Framework uses Bootstrap 5's standard breakpoints:
 
 #### Using Breakpoints in React
 
-Dynamic exports the `useScreenDimensions` hook for responsive logic in components:
+Dynamic exports responsive hooks that match Bootstrap 5 breakpoints:
 
 ```tsx
-import { useScreenDimensions } from '@dynamic-framework/ui-react';
+import {
+  useMediaBreakpointUpSm,
+  useMediaBreakpointUpMd,
+  useMediaBreakpointUpLg,
+} from '@dynamic-framework/ui-react';
 
 function ResponsiveComponent() {
-  const { isMobile, isTablet, isDesktop } = useScreenDimensions();
+  const isSmUp = useMediaBreakpointUpSm();
+  const isMdUp = useMediaBreakpointUpMd();
+  const isLgUp = useMediaBreakpointUpLg();
 
   return (
     <div>
-      {isMobile && <MobileLayout />}
-      {isTablet && <TabletLayout />}
-      {isDesktop && <DesktopLayout />}
+      {!isSmUp && <MobileLayout />}
+      {isSmUp && !isLgUp && <TabletLayout />}
+      {isLgUp && <DesktopLayout />}
     </div>
   );
 }
 ```
+
+Available hooks: `useMediaBreakpointUpSm`, `useMediaBreakpointUpMd`, `useMediaBreakpointUpLg`, `useMediaBreakpointUpXl`, `useMediaBreakpointUpXxl`, and `useMediaQuery` for custom queries.
 
 ## Micro Frontends
 
@@ -187,8 +195,7 @@ my-widget/
 │   ├── providers/       # React providers
 │   ├── services/        # API services
 │   └── store/           # Zustand stores
-├── public/
-│   └── index.html       # Development template
+├── index.html           # Development template (Vite entry)
 └── vite.config.ts       # Build configuration
 ```
 
@@ -202,6 +209,7 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { DContextProvider } from '@dynamic-framework/ui-react';
 
+import '@dynamic-framework/ui-react/dist/css/dynamic-ui.css';
 import App from './App';
 import './config/i18nConfig';
 import './styles/base.scss';
@@ -281,20 +289,21 @@ Use internal code splitting only when your widget has multiple distinct views. F
 
 ```json
 {
-  "jest": "^29.7.0",
+  "vitest": "^3.0.0",
   "@testing-library/react": "^16.3.0",
-  "@testing-library/jest-dom": "^6.0.0",
-  "cypress": "^13.0.0"
+  "@testing-library/jest-dom": "^6.0.0"
 }
 ```
 
 ### Testing Patterns
 
 ```jsx
+import { describe, it, expect, vi } from 'vitest';
+
 // Unit testing
 describe('Button', () => {
   it('renders correctly', () => {
-    render(<Button>Click me</Button>);
+    render(<Button text="Click me" />);
     expect(screen.getByText('Click me')).toBeInTheDocument();
   });
 });
@@ -302,7 +311,7 @@ describe('Button', () => {
 // Integration testing
 describe('DInput', () => {
   it('validates input correctly', async () => {
-    const onChange = jest.fn();
+    const onChange = vi.fn();
     render(<DInput id="test" onChange={onChange} />);
 
     fireEvent.change(screen.getByRole('textbox'), { target: { value: 'test' } });
@@ -320,8 +329,8 @@ describe('DInput', () => {
 
 ```bash
 # Vite dev server with HMR
-npm run start
-# Available at http://localhost:8080
+npm run dev
+# Available at http://localhost:5173
 ```
 
 ### Production Build
@@ -330,13 +339,6 @@ npm run start
 # Optimized production build
 npm run build
 # Output in dist/
-```
-
-### Bundle Analysis
-
-```bash
-# Bundle analyzer
-npm run analyze
 ```
 
 ## Modyo Integration

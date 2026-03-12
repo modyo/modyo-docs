@@ -51,19 +51,8 @@ Dynamic Framework is automatically included when creating applications with Dyna
 npx @modyo/cli@latest get dynamic-react-vite-base-template my-app
 cd my-app
 npm install
-npm run start
+npm run dev
 ```
-
-### CDN
-
-```html
-<!-- CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@dynamic-framework/ui-react@2/dist/css/dynamic-ui.css">
-```
-
-:::tip
-For production, pin to a specific version like `@2.1.1` instead of `@2`.
-:::
 
 ### NPM Package
 
@@ -74,7 +63,7 @@ npm install @dynamic-framework/ui-react
 **Requirements:**
 - Node.js v22+
 - NPM 10.x+
-- React 19.x
+- React 18.x / 19.x
 
 ## Technical Resources
 
@@ -90,9 +79,9 @@ npm install @dynamic-framework/ui-react
 
 ## Technology Stack
 
-- **React**: 19.x (requires ~19.2.1 as peer dependency)
+- **React**: 18.x / 19.x compatible
 - **TypeScript**: Full static typing
-- **Bootstrap**: 5.3.8 customizable
-- **Build Tools**: Vite
-- **Testing**: Jest, React Testing Library
-- **Linting**: ESLint, Prettier
+- **Bootstrap**: 5.3.x customizable
+- **Build Tools**: Vite (widgets), Rollup (design system)
+- **Testing**: Vitest (widgets), Jest (design system), React Testing Library
+- **Linting**: ESLint

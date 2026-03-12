@@ -33,10 +33,10 @@ cd mi-banco-digital
 npm install
 
 # Iniciar el servidor de desarrollo
-npm run start
+npm run dev
 ```
 
-Tu aplicación estará disponible en `http://localhost:8080`
+Tu aplicación estará disponible en `http://localhost:5173`
 
 ### Opción 2: Agregar a un Proyecto React Existente
 

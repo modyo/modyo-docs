@@ -148,7 +148,7 @@ import {
   // Hooks específicos de componentes
   useDToast,             // Notificaciones toast programáticas
   useTabContext,         // Acceso al estado de tabs dentro de DTabs
-  useErrorBoundary,      // Control de error boundary (reset, show)
+  useErrorBoundary,      // Control de error boundary (de react-error-boundary)
 
   // Hooks de moneda
   useFormatCurrency,     // Utilidades de formateo de moneda
@@ -382,39 +382,66 @@ options={['USD', 'EUR', 'GBP']}  // Deben ser objetos { value, label }
 
 ## Patrones de Uso de DCollapse
 
-DCollapse soporta modos **controlado** y **no controlado** (actualizado en v2.1.1).
+DCollapse es un **componente controlado** que usa las props `collapsed` y `onChange`. Debes manejar el estado abierto/cerrado externamente.
 
-### Modo No Controlado (Por Defecto)
-
-El componente maneja su propio estado abierto/cerrado internamente:
+### Uso Básico
 
 ```tsx
-<DCollapse>
-  <DCollapse.Toggle>Clic para expandir</DCollapse.Toggle>
-  <DCollapse.Content>
-    Contenido oculto aquí
-  </DCollapse.Content>
-</DCollapse>
+import { useState } from 'react';
+import { DCollapse, DButton } from '@dynamic-framework/ui-react';
+
+function CollapseExample() {
+  const [collapsed, setCollapsed] = useState(false);
+
+  return (
+    <div>
+      <DButton
+        text={collapsed ? 'Mostrar Detalles' : 'Ocultar Detalles'}
+        onClick={() => setCollapsed(!collapsed)}
+      />
+
+      <DCollapse collapsed={collapsed} onChange={setCollapsed}>
+        <div className="p-3 border mt-2">
+          <h6>Información Adicional</h6>
+          <p>Este contenido puede colapsarse para ahorrar espacio.</p>
+        </div>
+      </DCollapse>
+    </div>
+  );
+}
 ```
 
-### Modo Controlado
-
-Tú manejas el estado externamente vía `isOpen` y `onToggle`:
+### Patrón Acordeón
 
 ```tsx
-const [isOpen, setIsOpen] = useState(false);
+function FAQ({ items }: { items: { question: string; answer: string }[] }) {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-<DCollapse isOpen={isOpen} onToggle={() => setIsOpen(!isOpen)}>
-  <DCollapse.Toggle>Clic para expandir</DCollapse.Toggle>
-  <DCollapse.Content>
-    Contenido oculto aquí
-  </DCollapse.Content>
-</DCollapse>
+  return (
+    <div>
+      {items.map((item, index) => (
+        <div key={index}>
+          <button onClick={() => setOpenIndex(openIndex === index ? null : index)}>
+            {item.question}
+          </button>
+          <DCollapse
+            collapsed={openIndex !== index}
+            onChange={(c) => {
+              if (!c) setOpenIndex(index);
+              else setOpenIndex(null);
+            }}
+          >
+            <div className="p-3">{item.answer}</div>
+          </DCollapse>
+        </div>
+      ))}
+    </div>
+  );
+}
 ```
 
-:::tip Cuándo Usar Cada Modo
-- **No controlado**: Acordeones simples, secciones FAQ
-- **Controlado**: Cuando necesitas sincronizar con estado externo, abrir/cerrar programáticamente, o coordinar múltiples paneles
+:::warning Componente Controlado
+DCollapse requiere manejo de estado. Usar `<DCollapse>Contenido</DCollapse>` sin las props `collapsed` y `onChange` no funcionará.
 :::
 
 ## Accesibilidad

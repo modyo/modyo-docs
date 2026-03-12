@@ -28,7 +28,7 @@ Dynamic Framework es un framework de componentes React especializado para aplica
 - **TypeScript**: Tipado estático completo
 - **Bootstrap 5.3.8**: Base del sistema de diseño
 - **Vite**: Builds rápidos y HMR para desarrollo
-- **CSS Modules**: Estilos encapsulados
+- **SCSS/Bootstrap**: Estilos de componentes con variables de Bootstrap 5
 - **PostCSS**: Procesamiento avanzado de CSS
 
 ## Componentes Core
@@ -134,8 +134,8 @@ Dynamic Framework usa los breakpoints estándar de Bootstrap 5:
 #### Usando Breakpoints en CSS
 
 ```scss
-// SCSS con mixins de Bootstrap
-@import "bootstrap/scss/mixins/breakpoints";
+// SCSS con abstracts de Dynamic Framework (incluye mixins de Bootstrap)
+@use "@dynamic-framework/ui-react/src/style/abstracts/_+import" as *;
 
 .my-component {
   padding: 1rem;
@@ -152,23 +152,31 @@ Dynamic Framework usa los breakpoints estándar de Bootstrap 5:
 
 #### Usando Breakpoints en React
 
-Dynamic exporta el hook `useScreenDimensions` para lógica responsiva en componentes:
+Dynamic exporta hooks responsivos que corresponden a los breakpoints de Bootstrap 5:
 
 ```tsx
-import { useScreenDimensions } from '@dynamic-framework/ui-react';
+import {
+  useMediaBreakpointUpSm,
+  useMediaBreakpointUpMd,
+  useMediaBreakpointUpLg,
+} from '@dynamic-framework/ui-react';
 
 function ResponsiveComponent() {
-  const { isMobile, isTablet, isDesktop } = useScreenDimensions();
+  const isSmUp = useMediaBreakpointUpSm();
+  const isMdUp = useMediaBreakpointUpMd();
+  const isLgUp = useMediaBreakpointUpLg();
 
   return (
     <div>
-      {isMobile && <MobileLayout />}
-      {isTablet && <TabletLayout />}
-      {isDesktop && <DesktopLayout />}
+      {!isSmUp && <MobileLayout />}
+      {isSmUp && !isLgUp && <TabletLayout />}
+      {isLgUp && <DesktopLayout />}
     </div>
   );
 }
 ```
+
+Hooks disponibles: `useMediaBreakpointUpSm`, `useMediaBreakpointUpMd`, `useMediaBreakpointUpLg`, `useMediaBreakpointUpXl`, `useMediaBreakpointUpXxl`, y `useMediaQuery` para consultas personalizadas.
 
 ## Micro Frontends
 
@@ -187,8 +195,7 @@ my-widget/
 │   ├── providers/       # Proveedores React
 │   ├── services/        # Servicios de API
 │   └── store/           # Stores de Zustand
-├── public/
-│   └── index.html       # Template de desarrollo
+├── index.html           # Template de desarrollo (entrada de Vite)
 └── vite.config.ts       # Configuración de build
 ```
 
@@ -202,6 +209,7 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { DContextProvider } from '@dynamic-framework/ui-react';
 
+import '@dynamic-framework/ui-react/dist/css/dynamic-ui.css';
 import App from './App';
 import './config/i18nConfig';
 import './styles/base.scss';
@@ -281,20 +289,21 @@ Usa code splitting interno solo cuando tu widget tiene múltiples vistas distint
 
 ```json
 {
-  "jest": "^29.7.0",
+  "vitest": "^3.0.0",
   "@testing-library/react": "^16.3.0",
-  "@testing-library/jest-dom": "^6.0.0",
-  "cypress": "^13.0.0"
+  "@testing-library/jest-dom": "^6.0.0"
 }
 ```
 
 ### Testing Patterns
 
 ```jsx
+import { describe, it, expect, vi } from 'vitest';
+
 // Unit testing
 describe('Button', () => {
   it('renders correctly', () => {
-    render(<Button>Click me</Button>);
+    render(<Button text="Click me" />);
     expect(screen.getByText('Click me')).toBeInTheDocument();
   });
 });
@@ -302,7 +311,7 @@ describe('Button', () => {
 // Integration testing
 describe('DInput', () => {
   it('validates input correctly', async () => {
-    const onChange = jest.fn();
+    const onChange = vi.fn();
     render(<DInput id="test" onChange={onChange} />);
 
     fireEvent.change(screen.getByRole('textbox'), { target: { value: 'test' } });
@@ -320,8 +329,8 @@ describe('DInput', () => {
 
 ```bash
 # Vite dev server con HMR
-npm run start
-# Disponible en http://localhost:8080
+npm run dev
+# Disponible en http://localhost:5173
 ```
 
 ### Production Build
@@ -330,13 +339,6 @@ npm run start
 # Optimized production build
 npm run build
 # Output en dist/
-```
-
-### Análisis de Bundle
-
-```bash
-# Bundle analyzer
-npm run analyze
 ```
 
 ## Integración con Modyo

@@ -233,7 +233,7 @@ Estiliza con clases de formulario:
 
 ## Modo Oscuro
 
-Implementa modo oscuro definiendo valores de variables alternativos:
+Dynamic Framework soporta modo oscuro a través de la clase CSS `.dark` en el elemento `body` o mediante la media query `prefers-color-scheme` del sistema operativo. Define valores de variables alternativos para modo oscuro:
 
 ```css
 /* Modo claro (por defecto) */
@@ -243,12 +243,22 @@ Implementa modo oscuro definiendo valores de variables alternativos:
   --bs-card-bg: #ffffff;
 }
 
-/* Modo oscuro */
-[data-bs-theme="dark"] {
+/* Modo oscuro vía clase .dark en body */
+body.dark {
   --bs-body-bg: #121212;
   --bs-body-color: #e0e0e0;
   --bs-card-bg: #1e1e1e;
   --bs-border-color: #2d2d2d;
+}
+
+/* Modo oscuro vía preferencia del sistema */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bs-body-bg: #121212;
+    --bs-body-color: #e0e0e0;
+    --bs-card-bg: #1e1e1e;
+    --bs-border-color: #2d2d2d;
+  }
 }
 ```
 
@@ -256,9 +266,7 @@ Alternar con JavaScript:
 
 ```tsx
 function toggleDarkMode() {
-  const html = document.documentElement;
-  const current = html.getAttribute('data-bs-theme');
-  html.setAttribute('data-bs-theme', current === 'dark' ? 'light' : 'dark');
+  document.body.classList.toggle('dark');
 }
 ```
 
