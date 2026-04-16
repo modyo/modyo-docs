@@ -6,6 +6,19 @@ search: true
 
 ## 10.1
 
+### 10.1.14
+
+:::info Fecha del release
+16 de abril de 2026
+:::
+
+| Módulo | Mejoras |
+|--------|---------|
+| **Core** | • Mejora obtención de la IP del usuario final |
+| **Customers** | • Corrige problema de rendimiento en vista de edición de segmentos cuando existen muchos elementos |
+| **Content** | • Corrige problema que dejaba versiones programadas de los contenidos después de publicados<br>• Corrige problema visual al mostrar el datepicker en un richtext |
+
+
 ### 10.1.13
 
 :::info Fecha del release
