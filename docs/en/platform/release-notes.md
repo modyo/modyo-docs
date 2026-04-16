@@ -14,9 +14,9 @@ April 16, 2026
 
 | Module | Improvements |
 |--------|---------|
+| **Core** | • Improves retrieval of the end user's IP address |
 | **Customers** | • Fixes performance issue in the segment editing view when there are many elements |
 | **Content** | • Fixes issue that left scheduled versions of content after being published<br>• Fixes visual issue when displaying the datepicker in a richtext field |
-| **Core** | • Improves retrieval of the end user's IP address |
 
 
 ### 10.1.13
