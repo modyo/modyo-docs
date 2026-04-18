@@ -89,13 +89,22 @@ El versionado se puede realizar en los siguientes módulos:
 
 ### Resetear
 
-En este caso, el respaldo toma el lugar de la versión editable, por lo que se perderán todos los cambios existentes, y así podrás seguir trabajando en cambios potenciales a esa versión para volverla a publicar.
+El reset es una forma para restaurar el área de trabajo.
+La acción de Reset toma la versión seleccionada en el panel izquierdo y la copia sobre la Versión Editable (derecha).
+Resultado: Se descartan todos los cambios actuales en los que estés trabajando y tu área de trabajo se sincroniza con la versión de referencia.
+Uso: Ideal cuando deseas "limpiar" tu borrador y comenzar de nuevo basándote en un estado anterior.
 
 ### Rollback
 
-En este caso, el respaldo se regresa directamente a la versión **publicada** del elemento, sin tocar la versión editable.
+El rollback sirve para restaurar la versión publicada.
+La acción de Rollback toma la versión seleccionada en el panel izquierdo y la envía directamente a la Versión Publicada, sin modificar tu área de trabajo actual.
+Resultado: El contenido que ven los usuarios finales cambia instantáneamente. Tu versión editable (borrador) permanece intacta, permitiéndote seguir trabajando en ella sin interrupciones.
+Uso: Ideal para correcciones de emergencia en el sitio en vivo sin perder el progreso de tus ediciones actuales.
 
-Esto es útil cuando se publicó algo por error y es necesario volver a alguna de las versiones estables. Permitiendo el resolver los problemas que la versión con errores pudo haber tenido.
+| Acción | ¿Qué se sobreescribe? | Impacto en el sitio público | Caso de uso |
+|--------------|--------------|--------------|--------------|
+| Reset | La Versión Editable (Borrador) | Ninguno | Solo afecta tu área de trabajo | Descartar cambios locales para volver a la última versión estable |
+| Rollback |La Versión Publicada | Inmediato | El sitio web se actualiza | Revertir un error en producción usando una versión previa |
 
 :::tip Permisos de administración
 Dado que esta es una acción potencialmente riesgosa, solo los administradores de sitios o espacios tienen el permiso para ejecutar esta acción.
