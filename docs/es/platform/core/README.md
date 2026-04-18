@@ -98,13 +98,14 @@ Uso: Ideal cuando deseas "limpiar" tu borrador y comenzar de nuevo basándote en
 
 El rollback sirve para restaurar la versión publicada.
 La acción de Rollback toma la versión seleccionada en el panel izquierdo y la envía directamente a la Versión Publicada, sin modificar tu área de trabajo actual.
-Resultado: El contenido que ven los usuarios finales cambia instantáneamente. Tu versión editable (borrador) permanece intacta, permitiéndote seguir trabajando en ella sin interrupciones.
+Resultado: El contenido que ven los usuarios finales cambia instantáneamente. Tu versión editable permanece intacta, permitiéndote seguir trabajando en ella sin interrupciones.
 Uso: Ideal para correcciones de emergencia en el sitio en vivo sin perder el progreso de tus ediciones actuales.
 
-| Acción | ¿Qué se sobreescribe? | Impacto en el sitio público | Caso de uso |
+| Acción | ¿Qué se sobreescribe? | Impacto en el sitio publicado | Caso de uso |
 |--------------|--------------|--------------|--------------|
-| Reset | La Versión Editable (Borrador) | Ninguno | Solo afecta tu área de trabajo | Descartar cambios locales para volver a la última versión estable |
+| Reset | La Versión Editable | Ninguno | Solo afecta tu área de trabajo | Descartar cambios locales para volver a la última versión estable |
 | Rollback |La Versión Publicada | Inmediato | El sitio web se actualiza | Revertir un error en producción usando una versión previa |
+
 
 :::tip Permisos de administración
 Dado que esta es una acción potencialmente riesgosa, solo los administradores de sitios o espacios tienen el permiso para ejecutar esta acción.
