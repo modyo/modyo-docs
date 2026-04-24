@@ -92,7 +92,7 @@ Versioning can be performed in the following modules:
 ### Reset
 
 Reset is a way to restore the workspace.
-The Reset action takes the version selected in the left panel and copies it over the Editable Version (right).
+The Reset action takes the version selected in the left panel and copies it over the Editable Version.
 Result: All current changes you are working on are discarded, and your workspace is synchronized with the reference version.
 Use: Ideal when you want to "clean" your draft and start over based on a previous state.
 
