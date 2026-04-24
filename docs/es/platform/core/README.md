@@ -90,7 +90,7 @@ El versionado se puede realizar en los siguientes módulos:
 ### Resetear
 
 El reset es una forma para restaurar el área de trabajo.
-La acción de Reset toma la versión seleccionada en el panel izquierdo y la copia sobre la Versión Editable (derecha).
+La acción de Reset toma la versión seleccionada en el panel izquierdo y la copia sobre la Versión Editable.
 Resultado: Se descartan todos los cambios actuales en los que estés trabajando y tu área de trabajo se sincroniza con la versión de referencia.
 Uso: Ideal cuando deseas "limpiar" tu borrador y comenzar de nuevo basándote en un estado anterior.
 
