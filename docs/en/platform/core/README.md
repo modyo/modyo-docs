@@ -91,13 +91,23 @@ Versioning can be performed in the following modules:
 
 ### Reset
 
-In this case, the backup takes the place of the editable version, so all existing changes will be lost, and you can continue working on potential changes to that version to republish it.
+Reset is a way to restore the workspace.
+The Reset action takes the version selected in the left panel and copies it over the Editable Version.
+Result: All current changes you are working on are discarded, and your workspace is synchronized with the reference version.
+Use: Ideal when you want to "clean" your draft and start over based on a previous state.
 
 ### Rollback
 
-In this case, the backup returns directly to the **published** version of the element, without touching the editable version.
+Rollback is used to restore the published version.
+The Rollback action takes the version selected in the left panel and sends it directly to the Published Version, without modifying your current workspace.
+Result: The content seen by end users changes instantly. Your editable version remains intact, allowing you to continue working on it without interruptions.
+Use: Ideal for emergency fixes on the live site without losing the progress of your current edits.
 
-This is useful when something was published by mistake and it's necessary to return to one of the stable versions. Allowing you to resolve the problems that the version with errors may have had.
+| Action | What is overwritten? | Impact on the published site | Use case |
+|--------------|--------------|--------------|--------------|
+| Reset | The Editable Version | None | Only affects your workspace | Discard local changes to return to the last stable version |
+| Rollback | The Published Version | Immediate | The website is updated | Revert a production error using a previous version |
+
 
 :::tip Administration Permissions
 Since this is a potentially risky action, only site or space administrators have permission to execute this action.
