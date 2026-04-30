@@ -14,7 +14,7 @@ search: true
 
 | Módulo | Mejoras |
 |--------|---------|
-| **Core** | • Soporte de credenciales vía form al actualizar el refresh_token<br>• Corrige carga de tags y atributos customs con wildcards en froala |
+| **Core** | • Soporte de credenciales vía form al actualizar el refresh_token<br>• Corrige carga de tags y atributos custom con wildcards en froala |
 | **Customers** | • Corrige problema de permisos al cambiar el estado de una submission mediante el API |
 
 
