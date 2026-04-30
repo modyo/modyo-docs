@@ -6,6 +6,18 @@ search: true
 
 ## 10.1
 
+### 10.1.15
+
+:::info Fecha del release
+30 de abril de 2026
+:::
+
+| Módulo | Mejoras |
+|--------|---------|
+| **Core** | • Soporte de credenciales vía form al actualizar el refresh_token<br>• Corrige carga de tags y atributos customs con wildcards en froala |
+| **Customers** | • Corrige problema de permisos al cambiar el estado de una submission mediante el API |
+
+
 ### 10.1.14
 
 :::info Fecha del release
