@@ -6,6 +6,19 @@ search: true
 
 ## 10.1
 
+### 10.1.16
+
+:::info Fecha del release
+2 de junio de 2026
+:::
+
+| Módulo | Mejoras |
+|--------|---------|
+| **Core** | • Actualizaciones de seguridad de dependencias |
+| **Content** | • Corrige problema de alternación de formato al ingresar manualmente una fecha en los datepickers |
+| **Customers** | • Corrige exportación de eventos de usuarios |
+
+
 ### 10.1.15
 
 :::info Fecha del release
