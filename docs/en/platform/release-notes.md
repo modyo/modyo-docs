@@ -6,6 +6,19 @@ search: true
 
 ## 10.1
 
+### 10.1.16
+
+:::info Release date
+June 2, 2026
+:::
+
+| Module | Improvements |
+|--------|---------|
+| **Core** | • Dependency security updates |
+| **Content** | • Fixes format alternation issue when manually entering a date in the datepickers |
+| **Customers** | • Fixes user events export |
+
+
 ### 10.1.15
 
 :::info Release date
