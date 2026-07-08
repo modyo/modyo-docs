@@ -489,7 +489,7 @@ From the submission view in the actions menu (identified with ...), you can [imp
 
 The submission list includes a search box that allows you to find submissions by the user's data, the values of their custom fields, the answers entered in the flow fields, and the content of the tasks.
 
-The search requires a minimum of 3 characters, is case- and accent-insensitive, and finds partial matches. For example, `lau` finds "Claudio" and `peres` finds "Pérez".
+The search requires a minimum of 3 characters, is case- and accent-insensitive, and finds partial matches. For example, `lau` finds "Claudio" and `perez` finds "Pérez".
 
 You can search in two ways, which you can also combine in the same query:
 
