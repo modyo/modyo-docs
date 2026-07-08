@@ -485,6 +485,54 @@ This structure provides you with a comprehensive and detailed view of each submi
 From the submission view in the actions menu (identified with ...), you can [impersonate](/en/platform/customers/users) the user to help them answer the origination. This depends on the user's roles.
 :::
 
+#### Search submissions
+
+The submission list includes a search box that allows you to find submissions by the user's data, the values of their custom fields, the answers entered in the flow fields, and the content of the tasks.
+
+The search requires a minimum of 3 characters, is case- and accent-insensitive, and finds partial matches. For example, `lau` finds "Claudio" and `perez` finds "Pérez".
+
+You can search in two ways, which you can also combine in the same query:
+
+- **Free text**: Type one or more terms and the search will find them in the user's data, the values of their custom fields, and the content of the answers.
+- **Key=value pairs**: Type the key of a field followed by `=` and the value to search for, to narrow the search down to that specific field.
+
+The available keys for `key=value` pairs are:
+
+- **User fields**: `first_name`, `last_name`, `second_last_name`, `email`, `username`, `uuid`, and `id`.
+- **User custom fields**: The custom field key, with or without the `_ucf_` prefix. For example, `pais=Chile` and `_ucf_pais=Chile` are equivalent.
+- **Flow questions**: The question identifier defined in the origination flow. For example, `rut=18301757`.
+
+When using `key=value` pairs, keep the following in mind:
+
+- The key must be written in full, while the value does allow partial matches.
+- To search for values or phrases with spaces, use double quotes. For example, `first_name="Jean Pierre"` or `"crédito hipotecario"`.
+- All conditions are combined together, so a submission must satisfy every term and pair in the query to appear in the results.
+- If the key does not exist or the value is empty, the term is searched as free text without generating errors.
+
+Some search examples:
+
+| Search | Result |
+|---|---|
+| `Claudio` | Submissions whose user or content includes "Claudio". |
+| `first_name=Claudio` | Submissions whose user contains "Claudio" in their name. |
+| `pais=Chile` | Submissions whose user has "Chile" in the `pais` custom field. |
+| `rut=18301757` | Submissions where the question with identifier `rut` contains "18301757". |
+| `first_name="Jean Pierre"` | Submissions whose user contains "Jean Pierre" in their name. |
+| `pais=Chile rut=18301757 hipotecario` | Submissions that meet all three conditions at once. |
+
+:::tip Results update
+Recent changes to a submission may take a few seconds to be reflected in the search results. Changes to the user's data, the values of their custom fields, and segments are reflected in a deferred manner.
+:::
+
+#### Filter submissions
+
+In addition to the search, you can narrow down the submission list with the following filters, which can be combined with each other and with the search:
+
+- **Date range**: Filters by the creation date of the submission.
+- **Status**: Filters by the current status of the submission: **Not started**, **Pending**, **Completed**, or **Canceled**.
+- **Assigned**: Shows the submissions assigned to the selected administrator.
+- **Segment**: Shows the submissions of users who belong to the selected [segment](/en/platform/customers/segments.html).
+
 #### Assign submission
 
 In the list of submissions, select the actions menu and press the **Assign** option. In the context menu, select an administrator for this submission.

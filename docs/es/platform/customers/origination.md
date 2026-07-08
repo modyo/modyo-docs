@@ -486,6 +486,54 @@ Esta estructura te brinda una visión integral y detallada de cada respuesta, pe
 Desde la vista de una respuesta en el menú de acciones (identificado con …) se puede [impersonar](/es/platform/customers/users) al usuario para ayudarlo a contestar la originación. Esto depende de los roles del usuario
 :::
 
+#### Buscar respuestas
+
+El listado de respuestas incluye una caja de búsqueda que te permite encontrar respuestas por los datos del usuario, los valores de sus campos personalizados, las respuestas ingresadas en los campos del flujo y el contenido de las tareas.
+
+La búsqueda requiere un mínimo de 3 caracteres, no distingue mayúsculas ni acentos y encuentra coincidencias parciales. Por ejemplo, `lau` encuentra a "Claudio" y `perez` encuentra a "Pérez".
+
+Puedes buscar de dos formas, que además puedes combinar en una misma consulta:
+
+- **Texto libre**: Escribe uno o más términos y la búsqueda los encontrará en los datos del usuario, los valores de sus campos personalizados y el contenido de las respuestas.
+- **Pares clave=valor**: Escribe la clave de un campo seguida de `=` y el valor a buscar para acotar la búsqueda a ese campo específico.
+
+Las claves disponibles para los pares `clave=valor` son:
+
+- **Campos del usuario**: `first_name`, `last_name`, `second_last_name`, `email`, `username`, `uuid` e `id`.
+- **Campos personalizados del usuario**: La clave del campo personalizado, con o sin el prefijo `_ucf_`. Por ejemplo, `pais=Chile` y `_ucf_pais=Chile` son equivalentes.
+- **Preguntas del flujo**: El identificador de la pregunta definido en el flujo de originación. Por ejemplo, `rut=18301757`.
+
+Al usar pares `clave=valor` ten en cuenta lo siguiente:
+
+- La clave debe escribirse completa, mientras que el valor sí admite coincidencias parciales.
+- Para buscar valores o frases con espacios usa comillas dobles. Por ejemplo, `first_name="Jean Pierre"` o `"crédito hipotecario"`.
+- Todas las condiciones se combinan entre sí, por lo que una respuesta debe cumplir todos los términos y pares de la consulta para aparecer en los resultados.
+- Si la clave no existe o el valor está vacío, el término se busca como texto libre sin generar errores.
+
+Algunos ejemplos de búsquedas:
+
+| Búsqueda | Resultado |
+|---|---|
+| `Claudio` | Respuestas cuyo usuario o contenido incluye "Claudio". |
+| `first_name=Claudio` | Respuestas cuyo usuario contiene "Claudio" en su nombre. |
+| `pais=Chile` | Respuestas cuyo usuario tiene "Chile" en el campo personalizado `pais`. |
+| `rut=18301757` | Respuestas donde la pregunta con identificador `rut` contiene "18301757". |
+| `first_name="Jean Pierre"` | Respuestas cuyo usuario contiene "Jean Pierre" en su nombre. |
+| `pais=Chile rut=18301757 hipotecario` | Respuestas que cumplen las tres condiciones a la vez. |
+
+:::tip Actualización de los resultados
+Los cambios recientes en una respuesta pueden tardar unos segundos en reflejarse en los resultados de la búsqueda. Los cambios en los datos del usuario, en los valores de sus campos personalizados y en los segmentos se reflejan de forma diferida.
+:::
+
+#### Filtrar respuestas
+
+Además de la búsqueda, puedes acotar el listado de respuestas con los siguientes filtros, combinables entre sí y con la búsqueda:
+
+- **Rango de fechas**: Filtra por la fecha de creación de la respuesta.
+- **Estado**: Filtra por el estado actual de la respuesta: **No Iniciada**, **Pendiente**, **Completada** o **Cancelada**.
+- **Asignado**: Muestra las respuestas asignadas al administrador seleccionado.
+- **Segmento**: Muestra las respuestas de los usuarios que pertenecen al [segmento](/es/platform/customers/segments.html) seleccionado.
+
 #### Asignar respuesta
 
 En el listado de respuestas, selecciona el menú acciones y presiona la opción **Asignar**. En el menú contextual selecciona a un administrador para esta respuesta.
