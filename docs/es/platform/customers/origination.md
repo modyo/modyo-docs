@@ -490,7 +490,7 @@ Desde la vista de una respuesta en el menú de acciones (identificado con …) s
 
 El listado de respuestas incluye una caja de búsqueda que te permite encontrar respuestas por los datos del usuario, los valores de sus campos personalizados, las respuestas ingresadas en los campos del flujo y el contenido de las tareas.
 
-La búsqueda requiere un mínimo de 3 caracteres, no distingue mayúsculas ni acentos y encuentra coincidencias parciales. Por ejemplo, `lau` encuentra a "Claudio" y `peres` encuentra a "Pérez".
+La búsqueda requiere un mínimo de 3 caracteres, no distingue mayúsculas ni acentos y encuentra coincidencias parciales. Por ejemplo, `lau` encuentra a "Claudio" y `perez` encuentra a "Pérez".
 
 Puedes buscar de dos formas, que además puedes combinar en una misma consulta:
 
