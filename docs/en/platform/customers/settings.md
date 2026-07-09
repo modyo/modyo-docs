@@ -280,6 +280,23 @@ Use an authentication client to send your integration access tokens to your reso
 - Confidential: There are two types of OAuth clients, confidential or public. Select the confidential option if your application can securely authenticate with the authentication server. Public clients are usually applications that run on mobile devices or browsers.
 - Scopes: If your OAuth2 authentication service uses multiple spaces or environments to separate users, and you want to use a specific one in this integration, define it in this field.
 
+### Amazon Rekognition
+
+The Amazon Rekognition integration, of the **Identity Verification** category, enables biometric verification in the realm's originations: identity document capture, face comparison, and liveness detection.
+
+To configure it, you need:
+
+- **AWS Region**: The region where the AWS services operate.
+- **AWS Access Key ID** and **AWS Secret Access Key**: IAM credentials with Rekognition permissions.
+- **Cognito Identity Pool ID**: Required for liveness detection in the browser.
+- **S3 Bucket Name**: Bucket where session results and images are stored.
+- **SNS Topic ARN**: Optional.
+- **Confidence Threshold (%)**: Minimum score to approve the verification. Defaults to 90.
+- **Enable Audit Images**: Stores audit images of each liveness detection session.
+- **Enable Photosensitivity Check**: Enables the color challenge during liveness detection.
+
+Once enabled, the provider becomes available in the [Identity Verification](/en/platform/customers/origination.html#identity-verification) tasks of the realm's originations.
+
 ### Webhooks
 
 The platform allows the creation of Webhooks for specific events related to realm users.
