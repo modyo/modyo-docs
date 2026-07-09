@@ -66,6 +66,7 @@ The available task types are:
 - **Code snippet**: Allows adding custom code.
 - **Origination process**: Calls another origination flow within this one.
 - **Invitation**: Allows inviting other users to fill in necessary data in the flow.
+- **Confirmation**: Asks the user to confirm the answers provided in previous tasks.
 
 ##### Task properties
 
@@ -398,6 +399,16 @@ To create an invitation task, you must first create roles in the origination edi
 Having at least one role unlocks the use of the invitation task.
 The invitation can only be for tasks or steps prior to the invitation task.
 In the task, you select the role, the email that is sent, and which tasks the role must complete.
+
+### Confirmation
+
+The Confirmation task shows the user a summary of the answers they provided in previous Input tasks, so they can review and confirm them before continuing with the flow.
+
+When configuring the task, in **Select items to confirm** you choose the tasks whose answers will be included in the summary, grouped by step. You can only select **Input** type tasks prior to the confirmation task.
+
+The user sees each selected task with its answers and an **Edit** link that takes them directly to that task to correct it. Pressing **Confirm** completes the task and the flow continues. To complete the task, all configured items must be confirmed.
+
+In the details of a submission, completed confirmation tasks show the list of **Confirmed Tasks**.
 
 ### Conditional Logic
 

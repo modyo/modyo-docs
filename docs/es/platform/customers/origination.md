@@ -66,6 +66,7 @@ Los tipos de tareas disponibles son:
 - **Snippet de código**: Permiten agregar código a la medida.
 - **Proceso de originación**: Llaman a otro flujo de originación dentro de este.
 - **Invitación**: Permiten invitar a otros usuarios a llenar datos necesarios en el flujo.
+- **Confirmación**: Solicitan al usuario confirmar las respuestas entregadas en tareas anteriores.
 
 ##### Propiedades de la tarea
 
@@ -399,6 +400,16 @@ Para poder crear una tarea de invitación, primero tienes que crear roles en la 
 Al tener al menos un rol se desbloquea el uso de la tarea de invitación.
 La invitación solo puede ser para tareas o pasos anteriores a la tarea de invitación.
 En la tarea se elige el rol, el correo que se envía y cuales son las tareas que tiene que realizar el rol.
+
+### Confirmación
+
+La tarea de Confirmación muestra al usuario un resumen de las respuestas que entregó en tareas Input anteriores, para que las revise y confirme antes de continuar con el flujo.
+
+Al configurar la tarea, en **Seleccionar ítems a confirmar** eliges las tareas cuyas respuestas se incluirán en el resumen, agrupadas por paso. Solo puedes seleccionar tareas de tipo **Input** anteriores a la tarea de confirmación.
+
+El usuario ve cada tarea seleccionada con sus respuestas y un enlace **Editar** que lo lleva directamente a esa tarea para corregirla. Al presionar **Confirmar**, la tarea se completa y el flujo continúa. Para completar la tarea, todos los ítems configurados deben estar confirmados.
+
+En los detalles de una respuesta, las tareas de confirmación completadas muestran el listado de **Tareas confirmadas**.
 
 ### Lógica Condicional
 
