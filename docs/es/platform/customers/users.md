@@ -19,7 +19,7 @@ Puedes utilizar los filtros en la parte superior de la tabla para encontrar grup
 Puedes ordenar los usuarios en la tabla por nombre, fecha de inscripción, último ingreso o cantidad de sesiones iniciadas haciendo clic en las cabeceras de las columnas.
 
 :::tip Alcance por segmentos
-Si tu rol en el reino tiene segmentos asignados, este listado solo muestra los usuarios que pertenecen a esos segmentos. Conoce más en [Restringir el alcance con segmentos](/es/platform/customers/settings.html#restringir-el-alcance-con-segmentos).
+Si tu acceso al reino está restringido por segmentos, este listado solo muestra los usuarios que pertenecen a los segmentos de tu alcance. Conoce más en [Restringir el alcance con segmentos](/es/platform/customers/settings.html#restringir-el-alcance-con-segmentos).
 :::
 
 ### Acciones masivas

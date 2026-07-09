@@ -33,7 +33,7 @@ If you delete a campaign, you will not be able to recover it, and its record wil
 :::
 
 :::tip Segment scope
-If your role in the realm is [restricted by segments](/en/platform/customers/settings.html#restrict-scope-with-segments), you can only target campaigns to segments within your scope. Campaigns targeting segments outside your scope are displayed in **Read only** mode: you can see their metadata, but not their metrics or recipients, and you cannot edit, send, duplicate, or delete them.
+If your access to the realm is [restricted by segments](/en/platform/customers/settings.html#restrict-scope-with-segments), you can only target campaigns to segments within your scope. Campaigns targeting segments outside your scope are displayed in **Read only** mode: you can see their metadata, but not their metrics or recipients, and you cannot edit, send, duplicate, or delete them.
 :::
 
 ## Create a campaign

@@ -33,7 +33,7 @@ Si borras una campaña, no podrás recuperarla, y su registro se eliminará del 
 :::
 
 :::tip Alcance por segmentos
-Si tu rol en el reino está [restringido por segmentos](/es/platform/customers/settings.html#restringir-el-alcance-con-segmentos), solo puedes dirigir campañas a segmentos dentro de tu alcance. Las campañas dirigidas a segmentos fuera de tu alcance se muestran en modo **Solo lectura**: puedes ver sus metadatos, pero no sus métricas ni destinatarios, y no puedes editarlas, enviarlas, duplicarlas ni borrarlas.
+Si tu acceso al reino está [restringido por segmentos](/es/platform/customers/settings.html#restringir-el-alcance-con-segmentos), solo puedes dirigir campañas a segmentos dentro de tu alcance. Las campañas dirigidas a segmentos fuera de tu alcance se muestran en modo **Solo lectura**: puedes ver sus metadatos, pero no sus métricas ni destinatarios, y no puedes editarlas, enviarlas, duplicarlas ni borrarlas.
 :::
 
 ## Crear una campaña

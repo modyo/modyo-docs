@@ -19,7 +19,7 @@ You can use the filters at the top of the table to quickly find user groups. The
 You can sort the users in the table by name, registration date, last login, or number of sessions started by clicking on the column headers.
 
 :::tip Segment scope
-If your role in the realm has segments assigned, this list only shows the users that belong to those segments. Learn more in [Restrict scope with segments](/en/platform/customers/settings.html#restrict-scope-with-segments).
+If your access to the realm is restricted by segments, this list only shows the users that belong to the segments within your scope. Learn more in [Restrict scope with segments](/en/platform/customers/settings.html#restrict-scope-with-segments).
 :::
 
 ### Bulk actions

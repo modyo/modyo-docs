@@ -487,7 +487,7 @@ Desde la vista de una respuesta en el menú de acciones (identificado con …) s
 :::
 
 :::tip Alcance por segmentos
-Si tu rol en el reino está [restringido por segmentos](/es/platform/customers/settings.html#restringir-el-alcance-con-segmentos), solo verás las respuestas de los usuarios de tu alcance. Las respuestas que tengas asignadas siguen visibles y operables aunque el usuario pertenezca a segmentos fuera de tu alcance.
+Si tu acceso al reino está [restringido por segmentos](/es/platform/customers/settings.html#restringir-el-alcance-con-segmentos), solo verás las respuestas de los usuarios de tu alcance. Las respuestas que tengas asignadas siguen visibles y operables aunque el usuario pertenezca a segmentos fuera de tu alcance.
 :::
 
 #### Buscar respuestas

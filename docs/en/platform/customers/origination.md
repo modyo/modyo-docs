@@ -486,7 +486,7 @@ From the submission view in the actions menu (identified with ...), you can [imp
 :::
 
 :::tip Segment scope
-If your role in the realm is [restricted by segments](/en/platform/customers/settings.html#restrict-scope-with-segments), you will only see the submissions of the users within your scope. Submissions assigned to you remain visible and operable even if the user belongs to segments outside your scope.
+If your access to the realm is [restricted by segments](/en/platform/customers/settings.html#restrict-scope-with-segments), you will only see the submissions of the users within your scope. Submissions assigned to you remain visible and operable even if the user belongs to segments outside your scope.
 :::
 
 #### Search submissions
