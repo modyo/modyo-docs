@@ -101,6 +101,12 @@ Al seleccionar un campo, puedes modificar sus propiedades al dirigirte a  la pes
 La tarea de validación requiere una revisión manual del agente asignado. Este debe validar los datos entregados por el usuario para desbloquear la siguiente tarea del flujo. 
 Se hace un refrezco de la tarea cada 5 segundo para que usuario final sepa si la tarea fue validada.
 
+Al configurar la tarea puedes definir un **Asignado**: un administrador o un grupo de administradores responsable de las validaciones. Al seleccionar un grupo puedes asignar a todo el grupo o a un usuario específico dentro de él. Si no defines un asignado, las validaciones se asignan de forma predeterminada al asignado de la respuesta.
+
+Los administradores asignados reciben un correo cuando una validación queda pendiente y también pueden revisarla desde la vista **Mis tareas** del menú principal, filtrando por el tipo de tarea **Revisión de validación**. El usuario recibe una notificación interna cuando su tarea es aprobada o rechazada.
+
+En una respuesta específica, puedes reasignar la validación desde la pestaña **Validaciones** de la respuesta, una vez que el usuario haya completado las tareas a validar.
+
 ### Firma
 
 La tarea de firma permite una firma simple con un checkbox o una avanzada cuando hay algun proveedor de firma digital instalado en las integraciones del reino.
@@ -109,6 +115,8 @@ La tarea de firma permite una firma simple con un checkbox o una avanzada cuando
 
 La tarea de revisión pendiente pausa el proceso de originación. Se usa para gatillar procesos asíncronos, generalmente en sistemas externos.
 Se hace un refrezco de la tarea cada 5 segundo para que usuario final sepa si la tarea fue revisada.
+
+Al igual que en las tareas de validación, puedes definir un **Asignado** para la tarea: un administrador o un grupo de administradores. Si no defines uno, la revisión se asigna de forma predeterminada al asignado de la respuesta.
 
 
 ### Snippet de código
@@ -433,7 +441,7 @@ Al seleccionar la opción **Editar** en el menu contextual de tu orignación pue
 - **Nombre**: Define el nombre de la originación, visible para los usuarios en la interfaz.
 - **Descripción**: Incluye un breve texto explicativo sobre el propósito de la originación.
 - **Mensaje de completado**: Es el mensaje que aparecerá al usuario al finalizar el proceso de originación.
-- **Asignado por defecto de la respuesta**: especifica la persona que será asignada automáticamente al recibir una nueva originación.
+- **Asignado por defecto de la respuesta**: Especifica el administrador o grupo de administradores que será asignado automáticamente a cada nueva respuesta. Al seleccionar un grupo, puedes usar la opción **Asignar a todo el grupo** o elegir un usuario específico dentro de él.
 - **Vence en**:  Establece un plazo máximo para completar la originación.
 - **Reglas de completado**:  Define el comportamiento de completado para cada respuesta.
 - **Privacidad**: Permite restringir el acceso al flujo de originación a ciertos segmentos de usuarios predefinidos.
@@ -536,7 +544,9 @@ Además de la búsqueda, puedes acotar el listado de respuestas con los siguient
 
 #### Asignar respuesta
 
-En el listado de respuestas, selecciona el menú acciones y presiona la opción **Asignar**. En el menú contextual selecciona a un administrador para esta respuesta.
+En el listado de respuestas, selecciona el menú acciones y presiona la opción **Asignar**. En el modal puedes asignar la respuesta a un administrador, a un grupo de administradores completo o a un usuario específico dentro de un grupo. También puedes usar la opción **Asígname** para asignarte la respuesta directamente.
+
+Al asignar a todo un grupo, todos sus miembros pueden ver y gestionar la respuesta. La columna **Asignado** del listado muestra el grupo o el administrador asignado; si el administrador fue elegido desde un grupo, se muestra también el nombre del grupo.
 
 #### Cancelar respuesta
 
