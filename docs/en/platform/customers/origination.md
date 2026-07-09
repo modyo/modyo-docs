@@ -539,7 +539,11 @@ In the list of submissions, select the actions menu and press the **Assign** opt
 
 #### Cancel submission
 
-Select a submission and press the context menu. Select the **Cancel** option to permanently change the status of a submission to canceled.
+To cancel a submission, open it and press the **Cancel** button in the submission view. In the modal, you can optionally enter a **Cancellation reason** and then confirm the action. Canceling permanently changes the status of the submission to canceled.
+
+You can cancel submissions in **Not started**, **Pending**, or **Completed** status.
+
+The details of a canceled submission show the cancellation date in the **Canceled at** field and the **Cancellation reason** entered. If no reason was entered, the field shows `--`.
 
 #### Delete submission
 
