@@ -366,8 +366,13 @@ It is essential to inform all platform members about any changes you make in thi
 
 Activate the checkbox to make changes. The variables you can modify are:
 - **Host**: Location of the web application on the server.
-- **Primary domain**: Main address of the web application.
+- **Primary domain**: Main address of the web application. Alternative domains will be redirected to this domain.
 - **Alternative domain**: Secondary address to redirect in case of failure in the primary.
+- **Redirect type for alternative domains**: The HTTP code with which alternative domains redirect to the primary domain: **301 Moved Permanently**, which transfers SEO ranking to the new domain, or **302 Found (Temporary)**. New configurations use 301 by default; sites that already had alternative domains configured keep 302 until you choose to change it.
+
+:::tip Permanent redirects
+Browsers cache 301 redirects aggressively: if you later switch to 302, visitors who already received the permanent redirect may take a while to see the change.
+:::
 
 
 :::warning Attention
