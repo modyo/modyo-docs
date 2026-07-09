@@ -29,7 +29,7 @@ Before enabling the option to disable Modyo credentials in the realm, make sure 
   - Moderate: Users who register must wait for a realm administrator to activate their account before they can log in.
   - Disabled: New users cannot be registered in the realm. Already registered and activated users can still log in.
 - **Default Avatar Image**: Image shown on the avatar of users who do not have a custom image.
-- **Enable Soft Login**: By activating this option you can access your account without entering your credentials each time. You will receive a security code in your email for easy login without the need for passwords.
+- **Enable Soft Login**: By activating this option you can access your account without entering your credentials each time. You will receive a security code through the configured delivery channel (email or WhatsApp) for easy login without the need for passwords.
 - **OTP delivery channel**: Default channel for the soft login security codes: **Email** sends the code to the user's address; **Phone** sends it via WhatsApp and requires an enabled messaging integration, such as [Auronix](#auronix).
 - **Registration form**: Here you can enable or disable different attributes in the registration form, such as the second surname, email confirmation, user avatar, date of birth, gender, and phone number.
 - **Delete realm**: Deletes the realm. This process is performed in the background, so you may not see the realm disappear immediately after executing the action. To confirm the deletion, you must enter the full name of the realm.
