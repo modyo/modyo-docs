@@ -486,6 +486,10 @@ Esta estructura te brinda una visión integral y detallada de cada respuesta, pe
 Desde la vista de una respuesta en el menú de acciones (identificado con …) se puede [impersonar](/es/platform/customers/users) al usuario para ayudarlo a contestar la originación. Esto depende de los roles del usuario
 :::
 
+:::tip Alcance por segmentos
+Si tu rol en el reino está [restringido por segmentos](/es/platform/customers/settings.html#restringir-el-alcance-con-segmentos), solo verás las respuestas de los usuarios de tu alcance. Las respuestas que tengas asignadas siguen visibles y operables aunque el usuario pertenezca a segmentos fuera de tu alcance.
+:::
+
 #### Buscar respuestas
 
 El listado de respuestas incluye una caja de búsqueda que te permite encontrar respuestas por los datos del usuario, los valores de sus campos personalizados, las respuestas ingresadas en los campos del flujo y el contenido de las tareas.

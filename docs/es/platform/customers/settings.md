@@ -308,6 +308,35 @@ Puedes elegir entre dos roles:
 
 Para eliminar a un administrador del reino, selecciona la casilla a la izquierda de su nombre y haz click en el botón **Borrar** en la parte inferior.
 
+#### Restringir el alcance con segmentos
+
+Al agregar o editar un miembro del equipo del reino, puedes asignar uno o más [segmentos](/es/platform/customers/segments.html) a su rol mediante el campo **Segmentos**. El rol define qué acciones puede ejecutar el miembro, mientras que los segmentos acotan sobre qué usuarios del reino puede aplicarlas:
+
+- **Sin segmentos**: El rol da acceso a todos los usuarios del reino.
+- **Con segmentos**: El miembro solo ve y opera los usuarios que pertenecen a esos segmentos.
+
+Esto aplica tanto a los roles asignados directamente a un miembro como a los asignados a través de sus [grupos](/es/platform/core/roles.html#grupos). En el listado de miembros del equipo, la columna **Segmentos** muestra los segmentos asignados a cada miembro o grupo.
+
+El alcance efectivo de un miembro considera todos los roles que tiene en el reino:
+
+- Los roles a nivel de cuenta con acceso total a los reinos (como **Owner** o **Full Admin**) no se restringen por segmentos.
+- Si alguno de sus roles en el reino no tiene segmentos asignados, el miembro tiene acceso a todos los usuarios del reino.
+- Si todos sus roles en el reino tienen segmentos asignados, su alcance es la unión de los segmentos de todos ellos.
+
+El alcance se aplica en todas las secciones del reino que muestran u operan sobre usuarios: el listado de usuarios y sus fichas, las acciones masivas y exportaciones, las respuestas de formularios, las respuestas de originaciones, las órdenes de pago, los eventos de negocio, las notas, la mensajería directa y las campañas.
+
+Un miembro restringido por segmentos tiene además las siguientes consideraciones:
+
+- **Usuarios**: No puede acceder a la ficha de un usuario fuera de su alcance.
+- **Segmentos**: No puede crear segmentos nuevos, ya que estos parten del universo total de usuarios del reino. Sí puede editar y borrar los segmentos de su alcance.
+- **Campañas**: Solo puede dirigir campañas a segmentos dentro de su alcance. Las campañas dirigidas a segmentos fuera de su alcance se muestran en modo **Solo lectura**: puede ver sus metadatos (nombre, estado, autor, fechas y segmentos), pero no sus métricas ni destinatarios, y no puede editarlas, enviarlas, duplicarlas ni borrarlas.
+- **Respuestas de originación**: Las respuestas que tenga asignadas siguen visibles y operables aunque el usuario pertenezca a segmentos fuera de su alcance.
+- **Miembros del equipo**: Solo puede asignar segmentos dentro de su alcance y no puede dejar roles del reino sin segmentos. Los miembros cuyos segmentos están fuera de su alcance se muestran con la etiqueta **Fuera de tu alcance** y no puede editarlos.
+
+:::tip Actualización del alcance
+La pertenencia de los usuarios a los segmentos se actualiza en un proceso en segundo plano, por lo que los cambios en los segmentos pueden tardar unos minutos en reflejarse en el alcance de los miembros. Puedes conocer más en la sección de [Segmentos](/es/platform/customers/segments.html#filtros).
+:::
+
 ### Custom fields
 
 En esta sección, puedes crear campos personalizados para distinguir el perfil del usuario. Es importante que estos campos estén correctamente identificados para su mejor uso.

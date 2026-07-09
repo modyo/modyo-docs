@@ -30,6 +30,10 @@ To create a segment, follow these steps:
 Make sure each customer's profile is complete, as incomplete data will prevent a user from being included in a segment based on those criteria.
 :::
 
+:::warning Restricted scope
+If your access to the realm is [restricted by segments](/en/platform/customers/settings.html#restrict-scope-with-segments), you cannot create new segments, since these start from the realm's entire universe of users. You can edit and delete the segments within your scope.
+:::
+
 ## Filters
 
 Filters allow you to create segments based on user profile information and their activity on the site. You can include users who meet certain criteria or exclude those who do not.

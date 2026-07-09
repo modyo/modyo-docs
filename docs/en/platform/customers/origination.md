@@ -485,6 +485,10 @@ This structure provides you with a comprehensive and detailed view of each submi
 From the submission view in the actions menu (identified with ...), you can [impersonate](/en/platform/customers/users) the user to help them answer the origination. This depends on the user's roles.
 :::
 
+:::tip Segment scope
+If your role in the realm is [restricted by segments](/en/platform/customers/settings.html#restrict-scope-with-segments), you will only see the submissions of the users within your scope. Submissions assigned to you remain visible and operable even if the user belongs to segments outside your scope.
+:::
+
 #### Search submissions
 
 The submission list includes a search box that allows you to find submissions by the user's data, the values of their custom fields, the answers entered in the flow fields, and the content of the tasks.

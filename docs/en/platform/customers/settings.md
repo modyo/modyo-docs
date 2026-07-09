@@ -308,6 +308,35 @@ You can choose between two roles:
 
 To remove an administrator from the realm, check the box to the left of their name and click the **Delete** button at the bottom.
 
+#### Restrict scope with segments
+
+When adding or editing a realm team member, you can assign one or more [segments](/en/platform/customers/segments.html) to their role using the **Segments** field. The role defines which actions the member can perform, while the segments limit which realm users they can apply them to:
+
+- **Without segments**: The role grants access to all users in the realm.
+- **With segments**: The member only sees and operates on the users that belong to those segments.
+
+This applies both to roles assigned directly to a member and to those assigned through their [groups](/en/platform/core/roles.html#groups). In the team members list, the **Segments** column shows the segments assigned to each member or group.
+
+The effective scope of a member considers all the roles they have in the realm:
+
+- Account-level roles with full access to realms (such as **Owner** or **Full Admin**) are not restricted by segments.
+- If any of their roles in the realm has no segments assigned, the member has access to all users in the realm.
+- If all of their roles in the realm have segments assigned, their scope is the union of the segments of all of them.
+
+The scope is enforced in every realm section that displays or operates on users: the user list and their profiles, bulk actions and exports, form responses, origination submissions, payment orders, business events, notes, direct messaging, and campaigns.
+
+A member restricted by segments also has the following considerations:
+
+- **Users**: They cannot access the profile of a user outside their scope.
+- **Segments**: They cannot create new segments, since these start from the realm's entire universe of users. They can edit and delete the segments within their scope.
+- **Campaigns**: They can only target campaigns to segments within their scope. Campaigns targeting segments outside their scope are displayed in **Read only** mode: they can see their metadata (name, status, author, dates, and segments), but not their metrics or recipients, and they cannot edit, send, duplicate, or delete them.
+- **Origination submissions**: Submissions assigned to them remain visible and operable even if the user belongs to segments outside their scope.
+- **Team members**: They can only assign segments within their scope and cannot leave realm roles without segments. Members whose segments are outside their scope are displayed with the **Out of your scope** label and cannot be edited.
+
+:::tip Scope updates
+User membership in segments is updated in a background process, so segment changes may take a few minutes to be reflected in the members' scope. You can learn more in the [Segments](/en/platform/customers/segments.html#filters) section.
+:::
+
 ### Custom fields
 
 In this section, you can create custom fields to distinguish the user's profile. For best use, it is important that these fields are correctly identified.
