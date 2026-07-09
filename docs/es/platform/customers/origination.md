@@ -555,6 +555,16 @@ Para eliminar una respuesta individual, selecciona el menú en la columna action
 
 Para eliminar varias respuestas al mismo tiempo, selecciona cada entrada marcando la casilla correspondiente y presiona el botón eliminar.
 
+#### Reabrir tareas de una respuesta
+
+A través de la [API de administración](/es/platform/core/api.html) puedes gestionar individualmente las respuestas a tareas de una respuesta: consultarlas, cambiarlas de estado (iniciar, completar o **reabrir** una tarea ya completada para que el usuario vuelva a responderla) y eliminarlas de forma individual o masiva.
+
+Considera lo siguiente:
+
+- Cambiar el estado de una respuesta a tarea requiere el permiso **Cambiar estado de la Respuesta de una Tarea**; eliminar respuestas a tareas requiere el permiso **Eliminar Respuestas**.
+- Estas operaciones solo están disponibles mientras la respuesta está en estado **No Iniciada** o **Pendiente**.
+- Todas las operaciones quedan registradas en la actividad de la plataforma.
+
 #### Invitar usuarios
 
 Puedes invitar a usuarios para que ingresen información en una originación. Al invitar a un usuario, deberás ingresar su información básica
