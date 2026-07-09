@@ -572,6 +572,14 @@ In this view, you will find a table with all the redirects that currently exist 
 
 To create a new redirect, click on the **New** button in the upper right corner of the view. Fill in the **_Source URL_** and **_Destination URL_** fields and the redirection code, then save the changes.
 
+#### Enable and disable redirects
+
+Each redirect has a switch in the **Enabled** column that allows you to temporarily disable it without deleting it, and re-enable it when you need it. You can also enable or disable several redirects at once by selecting them and using the **Enable** and **Disable** bulk actions.
+
+A disabled redirect stops applying immediately: its source URL resolves again as a normal site resource (an existing page or a 404 error). When re-enabled, it redirects again immediately, preserving the configured 301 or 302 code.
+
+New redirects, including those imported via CSV, are created enabled.
+
 :::warning Attention
 The redirects table is the second to last in precedence, so if there is a URL on the site that points to a [page](/en/platform/channels/pages) or a default view, you will see that view instead of being redirected through the custom redirects table.
 :::

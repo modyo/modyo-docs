@@ -572,6 +572,14 @@ En esta vista encuentras una tabla con todas las redirecciones que existen actua
 
 Para crear una nueva redirección, haz click en el botón **Nuevo** en la esquina superior derecha de la vista. Completa los campos **_URL_ de Origen** y **_URL_ de destino** y código de redirección y luego guarda los cambios.
 
+#### Activar y desactivar redirecciones
+
+Cada redirección cuenta con un interruptor en la columna **Activa** que te permite desactivarla temporalmente sin borrarla, y volver a activarla cuando la necesites. También puedes activar o desactivar varias redirecciones a la vez seleccionándolas y usando las acciones masivas **Activar** y **Desactivar**.
+
+Una redirección desactivada deja de aplicar de inmediato: su URL de origen vuelve a resolverse como un recurso normal del sitio (una página existente o un error 404). Al reactivarla, vuelve a redirigir de inmediato conservando el código 301 o 302 configurado.
+
+Las redirecciones nuevas, incluidas las importadas por CSV, se crean activadas.
+
 :::warning Atención
 La tabla de redirecciones es la penúltima en precedencia, de tal forma que si existe una URL en el sitio que apunta a una [página](/es/platform/channels/pages) o una vista por defecto, verás esa vista en vez de ser redirigido mediante la tabla de redirecciones personalizadas.
 :::
