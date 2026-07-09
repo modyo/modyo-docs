@@ -293,7 +293,7 @@ To configure it, you need:
 - **SNS Topic ARN**: Optional.
 - **Confidence Threshold (%)**: Minimum score to approve the verification. Defaults to 90.
 - **Enable Audit Images**: Stores audit images of each liveness detection session.
-- **Enable Photosensitivity Check**: Enables the color challenge during liveness detection.
+- **Enable Photosensitivity Check**: Enables the color challenge during liveness detection and includes a photosensitivity warning for the user.
 
 Once enabled, the provider becomes available in the [Identity Verification](/en/platform/customers/origination.html#identity-verification) tasks of the realm's originations.
 

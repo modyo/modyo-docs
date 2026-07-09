@@ -100,7 +100,7 @@ Al seleccionar un campo, puedes modificar sus propiedades al dirigirte a  la pes
 ### Validación
 
 La tarea de validación requiere una revisión manual del agente asignado. Este debe validar los datos entregados por el usuario para desbloquear la siguiente tarea del flujo. 
-Se hace un refrezco de la tarea cada 5 segundo para que usuario final sepa si la tarea fue validada.
+Se hace un refresco de la tarea cada 5 segundos para que el usuario final sepa si la tarea fue validada.
 
 ### Firma
 
@@ -109,7 +109,7 @@ La tarea de firma permite una firma simple con un checkbox o una avanzada cuando
 ### Revisión pendiente
 
 La tarea de revisión pendiente pausa el proceso de originación. Se usa para gatillar procesos asíncronos, generalmente en sistemas externos.
-Se hace un refrezco de la tarea cada 5 segundo para que usuario final sepa si la tarea fue revisada.
+Se hace un refresco de la tarea cada 5 segundos para que el usuario final sepa si la tarea fue revisada.
 
 ### Verificación de Identidad
 
