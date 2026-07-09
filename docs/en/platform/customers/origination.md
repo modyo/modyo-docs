@@ -547,6 +547,16 @@ To delete an individual submission, select the menu in the actions column and pr
 
 To delete several submissions at the same time, select each entry by checking the corresponding box and press the delete button.
 
+#### Reopen tasks of a submission
+
+Through the [administration API](/en/platform/core/api.html), you can individually manage the task responses of a submission: view them, transition their status (start, complete, or **reopen** an already completed task so the user can answer it again), and delete them individually or in bulk.
+
+Consider the following:
+
+- Changing the status of a task response requires the **Change Status of Task Response** permission; deleting them requires the delete submissions permission.
+- These operations are only available while the submission is in **Not started** or **Pending** status.
+- All operations are recorded in the platform activity.
+
 #### Invite users
 
 You can invite users to enter information in an origination. When inviting a user, you will need to enter their basic information:
