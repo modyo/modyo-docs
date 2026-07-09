@@ -68,6 +68,40 @@ Para recuperar un valor específico de una entrada, accede a la vista de edició
 Las acciones masivas se ejecutan en segundo plano y es posible que no veas los cambios inmediatamente, por lo que deberás esperar un momento y refrescar la vista luego de ejecutar una acción masiva.
 :::
 
+### Creación masiva vía API
+
+A través de la [API de administración](/es/platform/core/api.html) puedes crear hasta **100 entradas** en una sola solicitud, por ejemplo para alimentar un espacio desde una fuente externa:
+
+```
+POST /api/admin/content/spaces/{space_id}/entries/bulk?bulk_action=create
+Content-Type: application/json
+```
+
+```json
+{
+  "target_locale": "es-cl",
+  "entries": [
+    {
+      "content_type_id": 123,
+      "name": "Mi primera entrada",
+      "slug": "mi-primera-entrada",
+      "tags": ["alpha"],
+      "field_values": [
+        { "field_id": 10, "type": "string", "value": "hola" }
+      ]
+    }
+  ]
+}
+```
+
+Considera lo siguiente:
+
+- La creación es **asíncrona**: el endpoint responde `202` con un `job_id`, y puedes consultar el progreso y los resultados en `GET /api/admin/background_jobs/{uuid}`. El resultado incluye los `uuid` de las entradas creadas y los errores de validación por índice.
+- Las entradas inválidas se reportan en los resultados sin abortar el resto del lote.
+- Las entradas se crean como **borradores**: para publicarlas usa la acción masiva de publicación con los `uuid` creados.
+- Si omites `target_locale`, se usa el idioma por defecto del espacio. Para crear la **traducción** de una entrada existente, envía su `uuid` junto con otro `target_locale`.
+- Los `field_values` soportan los mismos tipos de campos que la creación individual de entradas.
+
 
 
 ## Crear y publicar una entrada
