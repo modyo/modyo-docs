@@ -23,6 +23,7 @@ Before enabling the option to disable Modyo credentials in the realm, make sure 
 
 - **After logging in, redirect to**: Allows you to choose a specific URL to direct the user to, once they have entered the realm. If you don't activate the “Force Redirect” option, the user will be redirected to the URL entered only if it is not possible to return to the URL from which they logged in.
 - **Force redirection to**: By activating this option, the user will always be redirected to the URL specified in the login redirect field, regardless of where they started the session.
+- **On session required redirect to**: Defines where a visitor without a session is sent when trying to access content that requires authentication: to the **Login page** (default option) or to the realm's **Signup page**. In both cases, after authenticating, the user returns to the URL they were trying to access.
 - **Account Activation**:
   - Direct: Users who register can log in directly.
   - Activation email: Users who register must activate their account by clicking on a link sent to their email before being able to log in.
