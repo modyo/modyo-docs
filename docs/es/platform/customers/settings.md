@@ -23,7 +23,7 @@ Antes de habilitar la opción de deshabilitar las credenciales de Modyo en el re
 
 - **Después de iniciar sesión, redirigir a**: Te permite elegir una URL específica a la cual dirigir al usuario, una vez que haya ingresado al reino. Si no activas la opción de "Forzar redirección", el usuario será redirigido a la URL ingresada solo si no es posible volver a la URL desde la que inició sesión.
 - **Forzar la redirección a**: Al activar esta opción, el usuario siempre será redirigido a la URL especificada en el campo de redirección del inicio de sesión, sin importar desde dónde inició la sesión.
-- **Cuando se requiere iniciar sesión, redirigir a**: Define a dónde se dirige a un visitante sin sesión cuando intenta acceder a contenido que requiere autenticación: a la **Página de inicio de sesión** (opción por defecto) o a la **Página de registro** del reino. En ambos casos, tras autenticarse, el usuario vuelve a la URL a la que intentaba acceder.
+- **Cuando se requiere iniciar sesión, redirigir a**: Define a dónde se redirige a un visitante sin sesión cuando intenta acceder a contenido que requiere autenticación: a la **Página de inicio de sesión** (opción por defecto) o a la **Página de registro** del reino. En ambos casos, tras autenticarse, el usuario vuelve a la URL a la que intentaba acceder.
 - **Activación de la cuenta**:
   - Directa: Los usuarios que se registren pueden iniciar sesión directamente.
   - E-mail de activación: Los usuarios que se registren deben activar su cuenta mediante un enlace enviado a su correo electrónico previo a poder iniciar sesión.
