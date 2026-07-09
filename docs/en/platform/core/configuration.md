@@ -26,8 +26,20 @@ If the time zone you choose is subject to time changes, these will be automatica
 ### Visualization
 
 - **Don't show the first steps page**: Enabling this option hides the first steps button for all users.
-- **Account logo and favicon**: Personalize the platform by uploading a logo and favicon for all users. These elements will also be used on default pages and sites.
+- **Account logo**: Personalize the platform by uploading a logo for all users. The logo is also displayed on the platform login, password recovery, and transactional emails.
+- **Account favicon**: Favicon for the account pages and default in the apps.
 - **Google API key**: The API key used to connect the Google Maps API to the location-type fields in the Content module.
+
+#### Theme colors
+
+In this section, you can customize the color palette of the entire account administration interface, including the login page. The colors you can define are:
+
+- **Primary color** and **Primary hover color**: Colors for the main buttons and elements.
+- **Accent color** and **Accent hover color**: Colors for secondary elements and links.
+- **Navigation selected text** and **Navigation selected background**: Colors of the active element in the navigation.
+- **Page background**: General background color of the interface.
+
+When saving a color change, the page reloads to apply the new theme across the entire interface. The **Reset to default** button returns you to the original Modyo palette.
 
 ## Profile Settings
 
