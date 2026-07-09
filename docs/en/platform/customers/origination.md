@@ -105,7 +105,7 @@ When configuring the task, you can define an **Assignee**: an administrator or a
 
 Assigned administrators receive an email when a validation is pending and can also review it from the **My tasks** view in the main menu, filtering by the **Validation review** task type. The user receives an internal notification when their task is approved or rejected.
 
-In a specific submission, you can reassign the validation from the **Validations** tab of the submission, once the user has completed the tasks to validate.
+In a specific submission, you can reassign the validation from the **Validations** tab, once the user has completed the tasks to validate.
 
 ### Signature
 
