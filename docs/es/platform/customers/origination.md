@@ -540,7 +540,7 @@ En el listado de respuestas, selecciona el menú acciones y presiona la opción 
 
 #### Cancelar respuesta
 
-Para cancelar una respuesta, ábrela y presiona el botón **Cancelar** en la vista de la respuesta. En el modal puedes ingresar de manera opcional una **Razón de cancelación** y luego confirmar la acción. La cancelación modifica permanentemente el estado de la respuesta a cancelada.
+Para cancelar una respuesta, ábrela y presiona el botón **Cancelar** en la vista de la respuesta. En el modal puedes ingresar de manera opcional una **Razón de cancelación** y luego confirmar la acción. La cancelación modifica permanentemente el estado de la respuesta a **Cancelada**.
 
 Puedes cancelar respuestas en estado **No Iniciada**, **Pendiente** o **Completada**.
 
