@@ -30,6 +30,7 @@ Antes de habilitar la opción de deshabilitar las credenciales de Modyo en el re
   - Deshabilitada: No se pueden registrar nuevos usuarios en el reino. Los usuarios ya registrados y activados aún pueden iniciar sesión.
 - **Imagen de Avatar por defecto**: Imagen que se muestra en el avatar de los usuarios que no tienen una imagen personalizada.
 - **Habilitar Soft login**: Activando esta opción puedes acceder a tu cuenta sin introducir tus credenciales cada vez. Recibirás un código de seguridad en tu email para ingresar fácilmente sin necesidad de contraseñas.
+- **Canal de envío del OTP**: Canal por defecto para los códigos de seguridad del soft login: **Email** envía el código al correo del usuario; **Phone** lo envía por WhatsApp y requiere una integración de mensajería habilitada, como [Auronix](#auronix).
 - **Formulario de registro**: Aquí puedes habilitar o deshabilitar diferentes atributos en el formulario de registro, como el segundo apellido, confirmación de correo electrónico, avatar de usuario, fecha de nacimiento, género y número de teléfono.
 - **Eliminar reino**: Elimina el reino. Este proceso se realiza en segundo plano y es posible que no veas el reino desaparecer inmediatamente después de ejecutar la acción. Para confirmar la eliminación, debes ingresar el nombre completo del reino.
 
@@ -279,6 +280,30 @@ Utiliza un cliente de autenticación para enviar los tokens de acceso de tu inte
 - Descripción
 - Confidencial: Existen dos tipos de clientes OAuth, confidencial o públicos. Selecciona la opción confidencial si tu aplicación puede autenticarse de manera segura con el servidor de autenticación. Los clientes públicos suelen ser aplicaciones que se ejecutan en dispositivos móviles o navegadores.
 - Scopes: Si tu servicio de autenticación OAuth2 usa múltiples espacios o ambientes para separar a los usuarios y quieres usar uno en específico en esta integración, defínelo en este campo.
+
+### Auronix
+
+La integración de Auronix, de la categoría de mensajería, permite el envío de mensajes de WhatsApp mediante templates pre-aprobados por Meta. Se utiliza para enviar el código OTP del soft login por WhatsApp.
+
+Para habilitarla, el formulario de registro del reino debe tener el campo de teléfono **habilitado y requerido**. Mientras la integración esté habilitada, esas opciones del formulario de registro quedan bloqueadas.
+
+En la sección **Credenciales** completa:
+
+- **API Key**: API Key de Auronix para autenticación.
+- **Canal WhatsApp**: Número de la línea de salida de WhatsApp. Debe ser un número de teléfono mexicano válido.
+- **URL Base**: Déjala en blanco para usar el valor por defecto de la plataforma; úsala solo para sandbox o ambientes a medida.
+
+En la sección **Configuración OTP** completa:
+
+- **Template OTP ID**: ID del template para mensajes OTP en Auronix.
+- **Locale OTP**: Código de locale del template. Por ejemplo: `es_MX`, `en_US`, `pt_BR`.
+- **Variables del Template OTP**: Variables separadas por coma. Las disponibles son `otp_code`, `realm_name`, `user_name` y `user_first_name`.
+
+Una vez habilitada la integración, selecciona **Phone** en el **Canal de envío del OTP** de la configuración General para que los códigos del soft login se envíen por WhatsApp. Si el envío por WhatsApp falla, el usuario puede solicitar el código a su correo con la opción **Enviar código al correo**.
+
+:::warning Atención
+No puedes deshabilitar ni eliminar la integración de Auronix mientras el canal de envío OTP del reino esté configurado como Phone.
+:::
 
 ### Webhooks
 

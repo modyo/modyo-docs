@@ -30,6 +30,7 @@ Before enabling the option to disable Modyo credentials in the realm, make sure 
   - Disabled: New users cannot be registered in the realm. Already registered and activated users can still log in.
 - **Default Avatar Image**: Image shown on the avatar of users who do not have a custom image.
 - **Enable Soft Login**: By activating this option you can access your account without entering your credentials each time. You will receive a security code in your email for easy login without the need for passwords.
+- **OTP delivery channel**: Default channel for the soft login security codes: **Email** sends the code to the user's address; **Phone** sends it via WhatsApp and requires an enabled messaging integration, such as [Auronix](#auronix).
 - **Registration form**: Here you can enable or disable different attributes in the registration form, such as the second surname, email confirmation, user avatar, date of birth, gender, and phone number.
 - **Delete realm**: Deletes the realm. This process is performed in the background, so you may not see the realm disappear immediately after executing the action. To confirm the deletion, you must enter the full name of the realm.
 
@@ -279,6 +280,30 @@ Use an authentication client to send your integration access tokens to your reso
 - Description
 - Confidential: There are two types of OAuth clients, confidential or public. Select the confidential option if your application can securely authenticate with the authentication server. Public clients are usually applications that run on mobile devices or browsers.
 - Scopes: If your OAuth2 authentication service uses multiple spaces or environments to separate users, and you want to use a specific one in this integration, define it in this field.
+
+### Auronix
+
+The Auronix integration, of the messaging category, allows sending WhatsApp messages using Meta-approved templates. It is used to send the soft login OTP code via WhatsApp.
+
+To enable it, the realm's registration form must have the phone field **enabled and required**. While the integration is enabled, those registration form options remain locked.
+
+In the **Credentials** section, complete:
+
+- **API Key**: Auronix API Key for authentication.
+- **WhatsApp Channel**: WhatsApp outgoing line number. It must be a valid Mexican phone number.
+- **Base URL**: Leave it blank to use the platform default; only override it for sandbox or custom environments.
+
+In the **OTP Configuration** section, complete:
+
+- **OTP Template ID**: Template ID for OTP messages in Auronix.
+- **OTP Locale**: Locale code for the template. For example: `es_MX`, `en_US`, `pt_BR`.
+- **OTP Template Variables**: Comma-separated variables. The available ones are `otp_code`, `realm_name`, `user_name`, and `user_first_name`.
+
+Once the integration is enabled, select **Phone** in the **OTP delivery channel** of the General settings so that soft login codes are sent via WhatsApp. If WhatsApp delivery fails, the user can request the code by email with the **Send code by email instead** option.
+
+:::warning Attention
+You cannot disable or remove the Auronix integration while the realm's OTP delivery channel is set to Phone.
+:::
 
 ### Webhooks
 
