@@ -26,8 +26,8 @@ If the time zone you choose is subject to time changes, these will be automatica
 ### Visualization
 
 - **Don't show the first steps page**: Enabling this option hides the first steps button for all users.
-- **Account logo**: Personalize the platform by uploading a logo for all users. The logo is also displayed on the platform login, password recovery, and transactional emails.
-- **Account favicon**: Favicon for the account pages and default in the apps.
+- **Account logo**: Personalize the platform by uploading a logo for all users. The logo is also displayed on the platform login page, password recovery, and transactional emails.
+- **Account favicon**: Favicon displayed on the account pages and used by default in the apps.
 - **Google API key**: The API key used to connect the Google Maps API to the location-type fields in the Content module.
 
 #### Theme colors

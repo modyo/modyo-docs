@@ -27,7 +27,7 @@ Si la zona horaria que eliges está sujeta a cambios de horarios, estos se refle
 
 - **No mostrar la página de primeros pasos**: Al habilitar esta opción ocultas el botón de primeros pasos para todos los usuarios.
 - **Logo de la cuenta**: Personaliza la plataforma subiendo un logo para todos los usuarios. El logo se muestra también en el inicio de sesión de la plataforma, en la recuperación de contraseña y en los correos transaccionales.
-- **Favicon de la cuenta**: Favicon para las páginas de la cuenta y por defecto en las aplicaciones.
+- **Favicon de la cuenta**: Favicon que se muestra en las páginas de la cuenta y se usa por defecto en las aplicaciones.
 - **API key de Google**: La API key utilizada para conectar la API de Google Maps en los campos de tipo ubicación en el módulo Content.
 
 #### Colores del tema
