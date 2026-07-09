@@ -554,7 +554,7 @@ A través de la [API de administración](/es/platform/core/api.html) puedes gest
 
 Considera lo siguiente:
 
-- Cambiar el estado de una respuesta a tarea requiere el permiso **Cambiar estado de la Respuesta de una Tarea**; eliminarlas requiere el permiso de eliminar respuestas.
+- Cambiar el estado de una respuesta a tarea requiere el permiso **Cambiar estado de la Respuesta de una Tarea**; eliminar respuestas a tareas requiere el permiso **Eliminar Respuestas**.
 - Estas operaciones solo están disponibles mientras la respuesta está en estado **No Iniciada** o **Pendiente**.
 - Todas las operaciones quedan registradas en la actividad de la plataforma.
 

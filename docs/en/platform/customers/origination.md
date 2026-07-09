@@ -553,7 +553,7 @@ Through the [administration API](/en/platform/core/api.html), you can individual
 
 Consider the following:
 
-- Changing the status of a task response requires the **Change Status of Task Response** permission; deleting them requires the delete submissions permission.
+- Changing the status of a task response requires the **Change Status of Task Response** permission; deleting task responses requires the **Delete Submissions** permission.
 - These operations are only available while the submission is in **Not started** or **Pending** status.
 - All operations are recorded in the platform activity.
 
