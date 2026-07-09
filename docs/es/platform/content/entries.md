@@ -96,7 +96,7 @@ Content-Type: application/json
 
 Considera lo siguiente:
 
-- La creación es **asíncrona**: el endpoint responde `202` con un `job_id`, y puedes consultar el progreso y los resultados en `GET /api/admin/background_jobs/{uuid}`. El resultado incluye los `uuid` de las entradas creadas y los errores de validación por índice.
+- La creación es **asíncrona**: el endpoint responde `202` con un `job_id`, que es el UUID del background job y el valor que debes usar en `GET /api/admin/background_jobs/{uuid}` para consultar el progreso y los resultados. El resultado incluye los `uuid` de las entradas creadas y los errores de validación por índice.
 - Las entradas inválidas se reportan en los resultados sin abortar el resto del lote.
 - Las entradas se crean como **borradores**: para publicarlas usa la acción masiva de publicación con los `uuid` creados.
 - Si omites `target_locale`, se usa el idioma por defecto del espacio. Para crear la **traducción** de una entrada existente, envía su `uuid` junto con otro `target_locale`.

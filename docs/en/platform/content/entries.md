@@ -96,7 +96,7 @@ Content-Type: application/json
 
 Consider the following:
 
-- Creation is **asynchronous**: the endpoint responds `202` with a `job_id`, and you can check the progress and results at `GET /api/admin/background_jobs/{uuid}`. The result includes the `uuid` of the created entries and the validation errors per index.
+- Creation is **asynchronous**: the endpoint responds `202` with a `job_id`, which is the background job UUID and the value to use in `GET /api/admin/background_jobs/{uuid}` to check the progress and results. The result includes the `uuid` of the created entries and the validation errors per index.
 - Invalid entries are reported in the results without aborting the rest of the batch.
 - Entries are created as **drafts**: to publish them, use the bulk publish action with the created `uuid`s.
 - If you omit `target_locale`, the space's default locale is used. To create the **translation** of an existing entry, send its `uuid` along with a different `target_locale`.
