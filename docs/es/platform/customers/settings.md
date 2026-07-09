@@ -323,7 +323,7 @@ El alcance efectivo de un miembro considera todos los roles que tiene en el rein
 - Si alguno de sus roles en el reino no tiene segmentos asignados, el miembro tiene acceso a todos los usuarios del reino.
 - Si todos sus roles en el reino tienen segmentos asignados, su alcance es la unión de los segmentos de todos ellos.
 
-El alcance se aplica en todas las secciones del reino que muestran u operan sobre usuarios: el listado de usuarios y sus fichas, las acciones masivas y exportaciones, las respuestas de formularios, las respuestas de originaciones, las órdenes de pago, los eventos de negocio, las notas, la mensajería directa y las campañas.
+El alcance se aplica en todas las secciones del reino que muestran u operan sobre usuarios: el listado de usuarios y sus fichas, las acciones masivas y exportaciones, las respuestas de formularios, las respuestas de originación, las órdenes de pago, los eventos de negocio, las notas, la mensajería directa y las campañas.
 
 Un miembro restringido por segmentos tiene además las siguientes consideraciones:
 
