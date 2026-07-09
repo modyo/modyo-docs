@@ -38,6 +38,8 @@ Los filtros predeterminados en la plataforma incluyen:
 
 - Estado de activación
 - Edad
+- Estado de respuesta (de una originación)
+- Estado de tarea (de una originación)
 - Respuestas de formulario
 - Fecha de nacimiento
 - Valor de custom field
@@ -75,6 +77,16 @@ La actualización de segmentos a los que pertenece un usuario se realiza en un p
 La velocidad de la actualización depende de la carga del sistema, por lo que algunos usuarios podrían no ver contenido segmentado de inmediato tras realizar acciones que los incluyen o excluyen de un segmento.
 :::
 
+### Filtros de originación
+
+Los filtros **Estado de respuesta** y **Estado de tarea** te permiten segmentar usuarios según su avance en las [originaciones](/es/platform/customers/origination.html) del reino:
+
+- **Estado de respuesta**: Selecciona una originación y el estado de la respuesta: **No Iniciada**, **Pendiente**, **Completada** o **Cancelada**. Si la originación permite múltiples respuestas por usuario, defines además una condición: **Todos** (todas las respuestas del usuario deben cumplir el estado) o **Cualquiera** (basta con que una lo cumpla).
+- **Estado de tarea**: Selecciona una originación y luego una tarea específica dentro de sus pasos, junto con el estado de esa tarea: **No Iniciada**, **Pendiente** o **Completada**.
+
+Ambos filtros incluyen el campo **desde [X] o más días**, que acota el segmento a los usuarios que llevan al menos esa cantidad de días en el estado seleccionado. Por ejemplo, puedes crear un segmento con los usuarios que llevan más de 3 días con una tarea pendiente y enviarles una campaña de recordatorio.
+
+Para excluir usuarios que cumplen la condición, usa la opción **Usuarios que no coinciden** del filtro.
 
 ## Borrar un Segmento
 
