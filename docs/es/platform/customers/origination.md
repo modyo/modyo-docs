@@ -66,7 +66,7 @@ Los tipos de tareas disponibles son:
 - **Snippet de código**: Permiten agregar código a la medida.
 - **Proceso de originación**: Llaman a otro flujo de originación dentro de este.
 - **Invitación**: Permiten invitar a otros usuarios a llenar datos necesarios en el flujo.
-- **Confirmación**: Solicitan al usuario confirmar las respuestas entregadas en tareas anteriores.
+- **Confirmación**: Solicitan al usuario confirmar las respuestas entregadas en tareas Input anteriores.
 
 ##### Propiedades de la tarea
 
