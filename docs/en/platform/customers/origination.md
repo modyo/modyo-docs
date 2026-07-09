@@ -434,7 +434,7 @@ By selecting the **Edit** option in the context menu of your origination, you ca
 - **Completed message**: This is the message that will appear to the user at the end of the origination process.
 - **Default submission assignee**: Specifies the person who will be automatically assigned when receiving a new origination.
 - **Due in**: Sets a maximum deadline for completing the origination.
-- **Automatically cancel submissions that exceed the due date**: Available only if you have configured a due date. When this option is enabled, pending submissions that exceed their due date are automatically canceled.
+- **Automatically cancel submissions that exceed the due date**: Available only if you have configured a due date. When this option is enabled, submissions in **Pending** status that exceed their due date are automatically canceled.
 - **Completion rules**: Defines the completion behavior for each submission.
 - **Privacy**: Allows you to restrict access to the origination flow to certain predefined user segments.
 
