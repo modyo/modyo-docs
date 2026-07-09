@@ -576,7 +576,7 @@ Para crear una nueva redirección, haz click en el botón **Nuevo** en la esquin
 
 Cada redirección cuenta con un interruptor en la columna **Activa** que te permite desactivarla temporalmente sin borrarla, y volver a activarla cuando la necesites. También puedes activar o desactivar varias redirecciones a la vez seleccionándolas y usando las acciones masivas **Activar** y **Desactivar**.
 
-Una redirección desactivada deja de aplicar de inmediato: su URL de origen vuelve a resolverse como un recurso normal del sitio (una página existente o un error 404). Al reactivarla, vuelve a redirigir de inmediato conservando el código 301 o 302 configurado.
+Una redirección desactivada deja de aplicarse de inmediato: su URL de origen vuelve a resolverse como un recurso normal del sitio (una página existente o un error 404). Al reactivarla, vuelve a redirigir de inmediato conservando el código 301 o 302 configurado.
 
 Las redirecciones nuevas, incluidas las importadas por CSV, se crean activadas.
 
