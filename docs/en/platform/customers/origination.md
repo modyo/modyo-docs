@@ -435,6 +435,9 @@ By selecting the **Edit** option in the context menu of your origination, you ca
 - **Default submission assignee**: Specifies the person who will be automatically assigned when receiving a new origination.
 - **Due in**: Sets a maximum deadline for completing the origination.
 - **Completion rules**: Defines the completion behavior for each submission.
+- **Cancellation rules**: Defines who can cancel a submission from the origination page:
+  - **Everyone can cancel the submission**: Default option.
+  - **Only administrators can cancel the submission**: The **Cancel** button is no longer shown to the user on the origination page, and cancellation remains available only to administrators.
 - **Privacy**: Allows you to restrict access to the origination flow to certain predefined user segments.
 
 #### Delete origination
