@@ -436,6 +436,7 @@ Al seleccionar la opción **Editar** en el menu contextual de tu orignación pue
 - **Asignado por defecto de la respuesta**: especifica la persona que será asignada automáticamente al recibir una nueva originación.
 - **Vence en**:  Establece un plazo máximo para completar la originación.
 - **Reglas de completado**:  Define el comportamiento de completado para cada respuesta.
+- **Reglas de cancelación**: Define quién puede cancelar una respuesta desde la página de originación: **Cualquiera puede cancelar la respuesta** (opción por defecto) o **Solo los administradores pueden cancelar la respuesta**. Con la segunda opción, el botón **Cancelar** deja de mostrarse al usuario en la página de originación y la cancelación queda disponible solo para los administradores.
 - **Privacidad**: Permite restringir el acceso al flujo de originación a ciertos segmentos de usuarios predefinidos.
 
 #### Eliminar originación
