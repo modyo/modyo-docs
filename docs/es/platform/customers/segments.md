@@ -30,6 +30,10 @@ Para crear un segmento, sigue estos pasos:
 Asegúrate de que la ficha de cada cliente esté completa, ya que los datos incompletos impedirán que un usuario sea incluido en un segmento basado en esos criterios.
 :::
 
+:::warning Alcance restringido
+Si tu acceso al reino está [restringido por segmentos](/es/platform/customers/settings.html#restringir-el-alcance-con-segmentos), no puedes crear segmentos nuevos, ya que estos parten del universo total de usuarios del reino. Sí puedes editar y borrar los segmentos de tu alcance.
+:::
+
 ## Filtros
 
 Los filtros te permiten crear segmentos basados en la información de las fichas de usuario y su actividad en el sitio. Puedes incluir usuarios que coincidan con ciertos criterios o excluir a los que no los cumplan.
