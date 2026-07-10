@@ -75,6 +75,10 @@ In this section, you can edit the values of the selected task. You can find thes
 - **Identifier**: A unique identifier that will be included in the origination URL.
 - **Description**: A brief explanatory text about the task, which will be visible to the user.
 
+:::warning Editing identifiers
+When editing an already saved step, task, or field, the **Identifier** field appears locked with a padlock. To modify it, you must press the padlock and confirm the **Unlock Identifier field** warning: changing an identifier breaks references to it from external systems or through the Liquid SDK and, in the case of fields, submissions can no longer be searched by that field. The identifier is only generated automatically from the name during creation; when editing, changing the name no longer modifies it.
+:::
+
 ### Input
 
 In Input tasks, you can incorporate a wide variety of fields in your forms to customize the collection of data from your users.
