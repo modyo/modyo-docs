@@ -365,9 +365,14 @@ Es esencial informar a todos los miembros de la plataforma sobre cualquier cambi
 :::
 
 Activa la casilla para realizar modificaciones. Las variables que puedes modificar son:
-- **Host**: Ubicación de la aplicación web en del servidor.
-- **Dominio primario**: Dirección principal de la aplicación web.
-- **Dominio alternativo**: Dirección secundaria para redireccionar en caso de fallo en el primario.
+- **Host**: Ubicación de la aplicación web en el servidor.
+- **Dominio primario**: Dirección principal de la aplicación web. Los dominios alternativos serán redirigidos a este dominio.
+- **Dominio alternativo**: Dirección secundaria que redirige automáticamente al dominio primario.
+- **Tipo de redirección para los dominios alternativos**: El código HTTP con el que los dominios alternativos redirigen al dominio primario: **301 Moved Permanently (permanente)**, que indica a los buscadores traspasar el posicionamiento SEO al dominio primario, o **302 Found (temporal)**. Las configuraciones nuevas usan 301 por defecto; los sitios que ya tenían dominios alternativos configurados conservan 302 hasta que elijas cambiarlo.
+
+:::tip Redirecciones permanentes
+Los navegadores guardan en caché las redirecciones 301 de forma agresiva: si luego cambias a 302, los visitantes que ya recibieron la redirección permanente pueden tardar en ver el cambio.
+:::
 
 
 :::warning Atención
