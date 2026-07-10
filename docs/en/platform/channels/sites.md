@@ -51,6 +51,8 @@ If you click **publish** on a particular article (e.g., publish a page), the Rev
 
 When you create a web application with Modyo, your users can search your web apps and all their content using the search function. This can be done using the `/search` URL or by accessing the dedicated search page.
 
+The search engine also finds partial matches within words, starting at 3 characters: for example, a page named `GTCMujer` appears when searching for `GTC` or `Mujer`. Exact matches are still shown first in the results.
+
 ### Enable or disable search
 
 To enable or disable the search functionality, follow these steps:
