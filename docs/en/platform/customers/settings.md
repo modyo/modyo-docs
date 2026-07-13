@@ -281,6 +281,23 @@ Use an authentication client to send your integration access tokens to your reso
 - Confidential: There are two types of OAuth clients, confidential or public. Select the confidential option if your application can securely authenticate with the authentication server. Public clients are usually applications that run on mobile devices or browsers.
 - Scopes: If your OAuth2 authentication service uses multiple spaces or environments to separate users, and you want to use a specific one in this integration, define it in this field.
 
+### Custom SMS
+
+The Custom SMS integration, of the messaging category, allows sending the soft login OTP code via SMS through your own service, using a generic HTTP endpoint.
+
+To enable it, the realm's registration form must have the phone field **enabled and required**. While a phone OTP integration is enabled, those registration form options remain locked.
+
+In the **Credentials** section, complete:
+
+- **Endpoint URL**: The OTP code is sent as a POST request to this URL, with a JSON body containing `phone` and `code`.
+- **Auth Token**: Sent in the `Authorization` header as a Bearer token.
+
+Once the integration is enabled, select **Phone** in the **OTP delivery channel** of the General settings. Custom SMS can coexist with other phone OTP integrations, such as Auronix: both send the code on each login independently, and the failure of one does not interrupt the other.
+
+:::warning Attention
+You cannot disable or remove the last enabled phone OTP integration while the realm's OTP delivery channel is set to Phone.
+:::
+
 ### Webhooks
 
 The platform allows the creation of Webhooks for specific events related to realm users.
