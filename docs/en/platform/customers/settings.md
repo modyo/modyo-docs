@@ -287,13 +287,13 @@ The Auronix integration, of the messaging category, allows sending WhatsApp mess
 
 To enable it, the realm's registration form must have the phone field **enabled and required**. While the integration is enabled, those registration form options remain locked.
 
-In the **Credentials** section, complete:
+In the **Credentials** section, fill in the following fields:
 
 - **API Key**: Auronix API Key for authentication.
 - **WhatsApp Channel**: WhatsApp outgoing line number. It must be a valid Mexican phone number.
 - **Base URL**: Leave it blank to use the platform default; only override it for sandbox or custom environments.
 
-In the **OTP Configuration** section, complete:
+In the **OTP Configuration** section, fill in the following fields:
 
 - **OTP Template ID**: Template ID for OTP messages in Auronix.
 - **OTP Locale**: Locale code for the template. For example: `es_MX`, `en_US`, `pt_BR`.

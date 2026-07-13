@@ -302,7 +302,7 @@ En la sección **Configuración OTP** completa:
 Una vez habilitada la integración, selecciona **Phone** en el **Canal de envío del OTP** de la configuración General para que los códigos del soft login se envíen por WhatsApp. Si el envío por WhatsApp falla, el usuario puede solicitar el código a su correo con la opción **Enviar código al correo**.
 
 :::warning Atención
-No puedes deshabilitar ni eliminar la integración de Auronix mientras el canal de envío OTP del reino esté configurado como Phone.
+No puedes deshabilitar ni eliminar la integración de Auronix mientras el canal de envío del OTP del reino esté configurado como Phone.
 :::
 
 ### Webhooks
