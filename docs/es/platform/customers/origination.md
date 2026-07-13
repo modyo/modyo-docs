@@ -446,11 +446,16 @@ Al seleccionar la opción **Editar** en el menú contextual de tu originación p
 - **Mensaje de completado**: Es el mensaje que aparecerá al usuario al finalizar el proceso de originación.
 - **Asignado por defecto de la respuesta**: especifica la persona que será asignada automáticamente al recibir una nueva originación.
 - **Vence en**:  Establece un plazo máximo para completar la originación.
+- **Cancelar automáticamente las respuestas que excedan la fecha de vencimiento**: Disponible solo si configuraste un vencimiento. Al activar esta opción, las respuestas en estado **Pendiente** que superen su fecha de vencimiento se cancelan automáticamente.
 - **Reglas de completado**:  Define el comportamiento de completado para cada respuesta.
 - **Reglas de cancelación**: Define quién puede cancelar una respuesta desde la página de originación:
   - **Cualquiera puede cancelar la respuesta**: Opción por defecto.
   - **Solo los administradores pueden cancelar la respuesta**: El botón **Cancelar** deja de mostrarse al usuario en la página de originación y la cancelación queda disponible solo para los administradores.
 - **Privacidad**: Permite restringir el acceso al flujo de originación a ciertos segmentos de usuarios predefinidos.
+
+:::tip Cancelación automática por vencimiento
+La cancelación automática se ejecuta en un proceso en segundo plano una vez al día, por lo que puede no ser inmediata al momento del vencimiento. Solo cancela respuestas en estado **Pendiente** y registra **Auto-cancelada por vencimiento** como razón de cancelación, visible en los detalles de la respuesta.
+:::
 
 #### Eliminar originación
 
