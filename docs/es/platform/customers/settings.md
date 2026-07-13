@@ -295,7 +295,7 @@ En la sección **Credenciales** completa:
 Una vez habilitada la integración, selecciona **Phone** en el **Canal de envío del OTP** de la configuración General. Custom SMS puede convivir con otras integraciones de OTP por teléfono, como Auronix: ambas envían el código en cada inicio de sesión de forma independiente, y el fallo de una no interrumpe a la otra.
 
 :::warning Atención
-No puedes deshabilitar ni eliminar la última integración de OTP por teléfono habilitada mientras el canal de envío OTP del reino esté configurado como Phone.
+No puedes deshabilitar ni eliminar la última integración de OTP por teléfono habilitada mientras el canal de envío del OTP del reino esté configurado como Phone.
 :::
 
 ### Webhooks

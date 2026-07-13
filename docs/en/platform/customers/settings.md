@@ -287,7 +287,7 @@ The Custom SMS integration, of the messaging category, allows sending the soft l
 
 To enable it, the realm's registration form must have the phone field **enabled and required**. While a phone OTP integration is enabled, those registration form options remain locked.
 
-In the **Credentials** section, complete:
+In the **Credentials** section, fill in the following fields:
 
 - **Endpoint URL**: The OTP code is sent as a POST request to this URL, with a JSON body containing `phone` and `code`.
 - **Auth Token**: Sent in the `Authorization` header as a Bearer token.
