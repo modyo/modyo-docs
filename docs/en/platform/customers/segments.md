@@ -42,6 +42,8 @@ The default filters available on the platform include:
 
 - Activation status
 - Age
+- Submission status (of an origination)
+- Task status (of an origination)
 - Form responses
 - Birth date
 - Custom field value
@@ -79,6 +81,16 @@ The update of segments to which a user belongs is performed as a background proc
 The speed of the update depends on the system load, so some users might not see segmented content immediately after performing actions that include or exclude them from a segment.
 :::
 
+### Origination filters
+
+The **Submission status** and **Task status** filters allow you to segment users according to their progress in the realm's [originations](/en/platform/customers/origination.html):
+
+- **Submission status**: Select an origination and the status of the submission: **Not started**, **Pending**, **Completed**, or **Canceled**. If the origination allows multiple submissions per user, you also define a condition: **All** (all of the user's submissions must meet the status) or **Any** (one is enough).
+- **Task status**: Select an origination and then a specific task within its steps, along with the status of that task: **Not started**, **Pending**, or **Completed**.
+
+Both filters include the **since [X] days or more** field, which narrows the segment down to users who have been in the selected status for at least that many days. For example, you can create a segment with the users who have had a pending task for at least 3 days and send them a reminder campaign.
+
+To exclude users who meet the condition, use the filter's **Users who don't match** option.
 
 ## Delete a segment
 
