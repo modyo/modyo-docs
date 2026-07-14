@@ -66,6 +66,7 @@ Los tipos de tareas disponibles son:
 - **Snippet de código**: Permiten agregar código a la medida.
 - **Proceso de originación**: Llaman a otro flujo de originación dentro de este.
 - **Invitación**: Permiten invitar a otros usuarios a llenar datos necesarios en el flujo.
+- **Confirmación**: Solicitan al usuario confirmar las respuestas entregadas en tareas Input anteriores.
 
 ##### Propiedades de la tarea
 
@@ -74,6 +75,10 @@ En este apartado se pueden editar los valores de la tarea seleccionada, puedes e
 - **Nombre**: El nombre de la tarea que será visible para el usuario.
 - **Identificador**: Un identificador único que se incluirá en la URL de la originación.
 - **Descripción**: Un breve texto explicativo sobre la tarea, que será visible para el usuario.
+
+:::warning Edición de identificadores
+Al editar un paso, una tarea o un campo ya guardados, el campo **Identificador** aparece bloqueado con un candado. Para modificarlo debes presionar el candado y confirmar la advertencia **Desbloquear campo identificador**: cambiar un identificador rompe las referencias desde sistemas externos o mediante el SDK de Liquid y, en el caso de los campos, las respuestas dejan de poder buscarse por ese campo. El identificador solo se genera automáticamente a partir del nombre durante la creación; al editar, cambiar el nombre no lo modifica.
+:::
 
 ### Input
 
@@ -99,7 +104,13 @@ Al seleccionar un campo, puedes modificar sus propiedades al dirigirte a  la pes
 ### Validación
 
 La tarea de validación requiere una revisión manual del agente asignado. Este debe validar los datos entregados por el usuario para desbloquear la siguiente tarea del flujo. 
-Se hace un refrezco de la tarea cada 5 segundo para que usuario final sepa si la tarea fue validada.
+Se hace un refresco de la tarea cada 5 segundos para que el usuario final sepa si la tarea fue validada.
+
+Al configurar la tarea, puedes definir un **Asignado**: un administrador o un grupo de administradores responsable de las validaciones. Al seleccionar un grupo, puedes asignar a todo el grupo o a un usuario específico dentro de él. Si no defines un asignado, las validaciones se asignan de forma predeterminada al asignado de la respuesta.
+
+Los administradores asignados reciben un correo cuando una validación queda pendiente y también pueden revisarla desde la vista **Mis tareas** del menú principal, filtrando por el tipo de tarea **Revisión de validación**. El usuario recibe una notificación interna cuando su tarea es aprobada o rechazada.
+
+En una respuesta específica, puedes reasignar la validación desde la pestaña **Validaciones**, una vez que el usuario haya completado las tareas a validar.
 
 ### Firma
 
@@ -108,7 +119,9 @@ La tarea de firma permite una firma simple con un checkbox o una avanzada cuando
 ### Revisión pendiente
 
 La tarea de revisión pendiente pausa el proceso de originación. Se usa para gatillar procesos asíncronos, generalmente en sistemas externos.
-Se hace un refrezco de la tarea cada 5 segundo para que usuario final sepa si la tarea fue revisada.
+Se hace un refresco de la tarea cada 5 segundos para que el usuario final sepa si la tarea fue revisada.
+
+Al igual que en las tareas de validación, puedes definir un **Asignado** para la tarea: un administrador o un grupo de administradores. Si no defines uno, la revisión se asigna de forma predeterminada al asignado de la respuesta.
 
 
 ### Snippet de código
@@ -400,6 +413,16 @@ Al tener al menos un rol se desbloquea el uso de la tarea de invitación.
 La invitación solo puede ser para tareas o pasos anteriores a la tarea de invitación.
 En la tarea se elige el rol, el correo que se envía y cuales son las tareas que tiene que realizar el rol.
 
+### Confirmación
+
+La tarea de Confirmación muestra al usuario un resumen de las respuestas que entregó en tareas Input anteriores, para que las revise y confirme antes de continuar con el flujo.
+
+Al configurar la tarea, en **Seleccionar ítems a confirmar** eliges las tareas cuyas respuestas se incluirán en el resumen, agrupadas por paso. Solo puedes seleccionar tareas de tipo **Input** anteriores a la tarea de confirmación.
+
+El usuario ve cada tarea seleccionada con sus respuestas y un enlace **Editar** que lo lleva directamente a esa tarea para corregirla. Al presionar **Confirmar**, la tarea se completa y el flujo continúa. Para completar la tarea, todos los ítems configurados deben estar confirmados.
+
+En los detalles de una respuesta, las tareas de confirmación completadas muestran el listado de **Tareas confirmadas**.
+
 ### Lógica Condicional
 
 La lógica condicional te permite crear flujos de trabajo más dinámicos e inteligentes. Con esta funcionalidad, puedes definir reglas para mostrar u ocultar **Pasos**, **Tareas** y **campos de tareas Input** basándote en las respuestas proporcionadas por los usuarios o en datos existentes dentro de la respuesta. Esto te permite personalizar la experiencia del usuario, presentando solo la información relevante en cada etapa del proceso y simplificando o bifurcando la interacción. La lógica condicional te ofrece la flexibilidad de:
@@ -428,15 +451,23 @@ Considera cómo la lógica condicional puede afectar la experiencia del usuario 
 
 ### Editar configuración de la originación
 
-Al seleccionar la opción **Editar** en el menu contextual de tu orignación puedes editar sus propiedades.
+Al seleccionar la opción **Editar** en el menú contextual de tu originación puedes editar sus propiedades.
 
 - **Nombre**: Define el nombre de la originación, visible para los usuarios en la interfaz.
 - **Descripción**: Incluye un breve texto explicativo sobre el propósito de la originación.
 - **Mensaje de completado**: Es el mensaje que aparecerá al usuario al finalizar el proceso de originación.
-- **Asignado por defecto de la respuesta**: especifica la persona que será asignada automáticamente al recibir una nueva originación.
+- **Asignado por defecto de la respuesta**: Especifica el administrador o grupo de administradores que será asignado automáticamente a cada nueva respuesta. Al seleccionar un grupo, puedes usar la opción **Asignar a todo el grupo** o elegir un usuario específico dentro de él.
 - **Vence en**:  Establece un plazo máximo para completar la originación.
+- **Cancelar automáticamente las respuestas que excedan la fecha de vencimiento**: Disponible solo si configuraste un vencimiento. Al activar esta opción, las respuestas en estado **Pendiente** que superen su fecha de vencimiento se cancelan automáticamente.
 - **Reglas de completado**:  Define el comportamiento de completado para cada respuesta.
+- **Reglas de cancelación**: Define quién puede cancelar una respuesta desde la página de originación:
+  - **Cualquiera puede cancelar la respuesta**: Opción por defecto.
+  - **Solo los administradores pueden cancelar la respuesta**: El botón **Cancelar** deja de mostrarse al usuario en la página de originación y la cancelación queda disponible solo para los administradores.
 - **Privacidad**: Permite restringir el acceso al flujo de originación a ciertos segmentos de usuarios predefinidos.
+
+:::tip Cancelación automática por vencimiento
+La cancelación automática se ejecuta en un proceso en segundo plano una vez al día, por lo que puede no ser inmediata al momento del vencimiento. Solo cancela respuestas en estado **Pendiente** y registra **Auto-cancelada por vencimiento** como razón de cancelación, visible en los detalles de la respuesta.
+:::
 
 #### Eliminar originación
 
@@ -484,6 +515,10 @@ Esta estructura te brinda una visión integral y detallada de cada respuesta, pe
 
 :::tip Tip
 Desde la vista de una respuesta en el menú de acciones (identificado con …) se puede [impersonar](/es/platform/customers/users) al usuario para ayudarlo a contestar la originación. Esto depende de los roles del usuario
+:::
+
+:::tip Alcance por segmentos
+Si tu acceso al reino está [restringido por segmentos](/es/platform/customers/settings.html#restringir-el-alcance-con-segmentos), solo verás las respuestas de los usuarios de tu alcance. Las respuestas que tengas asignadas siguen visibles y operables aunque el usuario pertenezca a segmentos fuera de tu alcance.
 :::
 
 #### Buscar respuestas
@@ -536,17 +571,33 @@ Además de la búsqueda, puedes acotar el listado de respuestas con los siguient
 
 #### Asignar respuesta
 
-En el listado de respuestas, selecciona el menú acciones y presiona la opción **Asignar**. En el menú contextual selecciona a un administrador para esta respuesta.
+En el listado de respuestas, selecciona el menú de acciones y presiona la opción **Asignar**. En el modal puedes asignar la respuesta a un administrador, a un grupo completo de administradores o a un usuario específico dentro de un grupo. También puedes usar la opción **Asígname** para asignarte la respuesta directamente.
+
+Al asignar a todo un grupo, todos sus miembros pueden ver y gestionar la respuesta. La columna **Asignado** del listado muestra el grupo o el administrador asignado; si el administrador fue elegido desde un grupo, se muestra también el nombre del grupo.
 
 #### Cancelar respuesta
 
-Selecciona una respuesta y presiona el menu contextual. Al seleccionar la opción **Cancelar** para modificar permanentemente el estatus de una respuesta a cancelado.
+Para cancelar una respuesta, ábrela y presiona el botón **Cancelar** en la vista de la respuesta. En el modal puedes ingresar de manera opcional una **Razón de cancelación** y luego confirmar la acción. La cancelación modifica permanentemente el estado de la respuesta a **Cancelada**.
+
+Puedes cancelar respuestas en estado **No Iniciada**, **Pendiente** o **Completada**.
+
+En los detalles de una respuesta cancelada se muestra la fecha de cancelación en el campo **Cancelada el** y la **Razón de cancelación** ingresada. Si no se ingresó una razón, el campo muestra `--`.
 
 #### Eliminar respuesta
 
 Para eliminar una respuesta individual, selecciona el menú en la columna actions y presiona la opción delete. Esto eliminará la respuesta.
 
 Para eliminar varias respuestas al mismo tiempo, selecciona cada entrada marcando la casilla correspondiente y presiona el botón eliminar.
+
+#### Reabrir tareas de una respuesta
+
+A través de la [API de administración](/es/platform/core/api.html) puedes gestionar individualmente las respuestas a tareas de una respuesta: consultarlas, cambiarlas de estado (iniciar, completar o **reabrir** una tarea ya completada para que el usuario vuelva a responderla) y eliminarlas de forma individual o masiva.
+
+Considera lo siguiente:
+
+- Cambiar el estado de una respuesta a tarea requiere el permiso **Cambiar estado de la Respuesta de una Tarea**; eliminar respuestas a tareas requiere el permiso **Eliminar Respuestas**.
+- Estas operaciones solo están disponibles mientras la respuesta está en estado **No Iniciada** o **Pendiente**.
+- Todas las operaciones quedan registradas en la actividad de la plataforma.
 
 #### Invitar usuarios
 

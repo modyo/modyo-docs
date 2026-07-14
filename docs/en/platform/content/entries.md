@@ -68,6 +68,40 @@ To retrieve a specific value from an entry, access the entry editing view and se
 Bulk actions run in the background, and you may not see the changes immediately. You will need to wait a moment and refresh your view after executing a bulk action.
 :::
 
+### Bulk creation via API
+
+Through the [administration API](/en/platform/core/api.html), you can create up to **100 entries** in a single request, for example, to feed a space from an external source:
+
+```
+POST /api/admin/content/spaces/{space_id}/entries/bulk?bulk_action=create
+Content-Type: application/json
+```
+
+```json
+{
+  "target_locale": "es-cl",
+  "entries": [
+    {
+      "content_type_id": 123,
+      "name": "My first entry",
+      "slug": "my-first-entry",
+      "tags": ["alpha"],
+      "field_values": [
+        { "field_id": 10, "type": "string", "value": "hello" }
+      ]
+    }
+  ]
+}
+```
+
+Consider the following:
+
+- Creation is **asynchronous**: the endpoint responds `202` with a `job_id`, which is the background job UUID and the value to use in `GET /api/admin/background_jobs/{uuid}` to check the progress and results. The result includes the `uuid` of the created entries and the validation errors per index.
+- Invalid entries are reported in the results without aborting the rest of the batch.
+- Entries are created as **drafts**: to publish them, use the bulk publish action with the created `uuid`s.
+- If you omit `target_locale`, the space's default locale is used. To create the **translation** of an existing entry, send its `uuid` along with a different `target_locale`.
+- The `field_values` support the same field types as individual entry creation.
+
 
 
 ## Create and Publish an Entry

@@ -23,6 +23,7 @@ Before enabling the option to disable Modyo credentials in the realm, make sure 
 
 - **After logging in, redirect to**: Allows you to choose a specific URL to direct the user to, once they have entered the realm. If you don't activate the “Force Redirect” option, the user will be redirected to the URL entered only if it is not possible to return to the URL from which they logged in.
 - **Force redirection to**: By activating this option, the user will always be redirected to the URL specified in the login redirect field, regardless of where they started the session.
+- **On session required redirect to**: Defines where a visitor without a session is sent when trying to access content that requires authentication: to the **Login page** (default option) or to the realm's **Signup page**. In both cases, after authenticating, the user returns to the URL they were trying to access.
 - **Account Activation**:
   - Direct: Users who register can log in directly.
   - Activation email: Users who register must activate their account by clicking on a link sent to their email before being able to log in.
@@ -302,7 +303,24 @@ In the **OTP Configuration** section, fill in the following fields:
 Once the integration is enabled, select **Phone** in the **OTP delivery channel** of the General settings so that soft login codes are sent via WhatsApp. If WhatsApp delivery fails, the user can request the code by email with the **Send code by email instead** option.
 
 :::warning Attention
-You cannot disable or remove the Auronix integration while the realm's OTP delivery channel is set to Phone.
+You cannot disable or remove the last enabled phone OTP integration while the realm's OTP delivery channel is set to Phone.
+:::
+
+### Custom SMS
+
+The Custom SMS integration, of the messaging category, allows sending the soft login OTP code via SMS through your own service, using a generic HTTP endpoint.
+
+To enable it, the realm's registration form must have the phone field **enabled and required**. While a phone OTP integration is enabled, those registration form options remain locked.
+
+In the **Credentials** section, fill in the following fields:
+
+- **Endpoint URL**: The OTP code is sent as a POST request to this URL, with a JSON body containing `phone` and `code`.
+- **Auth Token**: Sent in the `Authorization` header as a Bearer token.
+
+Once the integration is enabled, select **Phone** in the **OTP delivery channel** of the General settings. Custom SMS can coexist with other phone OTP integrations, such as Auronix: both send the code on each login independently, and the failure of one does not interrupt the other.
+
+:::warning Attention
+You cannot disable or remove the last enabled phone OTP integration while the realm's OTP delivery channel is set to Phone.
 :::
 
 ### Webhooks
@@ -332,6 +350,35 @@ You can choose between two roles:
 - **Realm Admin**: Has access to all the settings and sections of the realms, can add and remove users and team members. Can also delete the realm.
 
 To remove an administrator from the realm, check the box to the left of their name and click the **Delete** button at the bottom.
+
+#### Restrict scope with segments
+
+When adding or editing a realm team member, you can assign one or more [segments](/en/platform/customers/segments.html) to their role using the **Segments** field. The role defines which actions the member can perform, while the segments limit which realm users they can apply them to:
+
+- **Without segments**: The role grants access to all users in the realm.
+- **With segments**: The member only sees and operates on the users that belong to those segments.
+
+This applies both to roles assigned directly to a member and to those assigned through their [groups](/en/platform/core/roles.html#groups). In the team members list, the **Segments** column shows the segments assigned to each member or group.
+
+The effective scope of a member considers all the roles they have in the realm:
+
+- Account-level roles with full access to realms (such as **Owner** or **Full Admin**) are not restricted by segments.
+- If any of their roles in the realm has no segments assigned, the member has access to all users in the realm.
+- If all of their roles in the realm have segments assigned, their scope is the union of the segments of all of them.
+
+The scope is enforced in every realm section that displays or operates on users: the user list and their profiles, bulk actions and exports, form responses, origination submissions, payment orders, business events, notes, direct messaging, and campaigns.
+
+A member restricted by segments also has the following considerations:
+
+- **Users**: They cannot access the profile of a user outside their scope.
+- **Segments**: They cannot create new segments, since these start from the realm's entire universe of users. They can edit and delete the segments within their scope.
+- **Campaigns**: They can only target campaigns to segments within their scope. Campaigns targeting segments outside their scope are displayed in **Read only** mode: they can see their metadata (name, status, author, dates, and segments), but not their metrics or recipients, and they cannot edit, send, duplicate, or delete them.
+- **Origination submissions**: Submissions assigned to them remain visible and operable even if the user belongs to segments outside their scope.
+- **Team members**: They can only assign segments within their scope and cannot leave realm roles without segments. Members whose segments are outside their scope are displayed with the **Out of your scope** label and cannot be edited.
+
+:::tip Scope updates
+User membership in segments is updated in a background process, so segment changes may take a few minutes to be reflected in the members' scope. You can learn more in the [Segments](/en/platform/customers/segments.html#filters) section.
+:::
 
 ### Custom fields
 
