@@ -76,7 +76,7 @@ En este apartado se pueden editar los valores de la tarea seleccionada, puedes e
 - **Descripción**: Un breve texto explicativo sobre la tarea, que será visible para el usuario.
 
 :::warning Edición de identificadores
-Al editar un paso, una tarea o un campo ya guardados, el campo **Identificador** aparece bloqueado con un candado. Para modificarlo debes presionar el candado y confirmar la advertencia **Desbloquear campo identificador**: cambiar un identificador rompe las referencias desde sistemas externos o mediante el SDK de Liquid y, en el caso de los campos, las respuestas dejan de poder buscarse por ese campo. El identificador solo se genera automáticamente a partir del nombre durante la creación; al editar, cambiar el nombre ya no lo modifica.
+Al editar un paso, una tarea o un campo ya guardados, el campo **Identificador** aparece bloqueado con un candado. Para modificarlo debes presionar el candado y confirmar la advertencia **Desbloquear campo identificador**: cambiar un identificador rompe las referencias desde sistemas externos o mediante el SDK de Liquid y, en el caso de los campos, las respuestas dejan de poder buscarse por ese campo. El identificador solo se genera automáticamente a partir del nombre durante la creación; al editar, cambiar el nombre no lo modifica.
 :::
 
 ### Input
