@@ -23,6 +23,7 @@ Antes de habilitar la opción de deshabilitar las credenciales de Modyo en el re
 
 - **Después de iniciar sesión, redirigir a**: Te permite elegir una URL específica a la cual dirigir al usuario, una vez que haya ingresado al reino. Si no activas la opción de "Forzar redirección", el usuario será redirigido a la URL ingresada solo si no es posible volver a la URL desde la que inició sesión.
 - **Forzar la redirección a**: Al activar esta opción, el usuario siempre será redirigido a la URL especificada en el campo de redirección del inicio de sesión, sin importar desde dónde inició la sesión.
+- **Cuando se requiere iniciar sesión, redirigir a**: Define a dónde se redirige a un visitante sin sesión cuando intenta acceder a contenido que requiere autenticación: a la **Página de inicio de sesión** (opción por defecto) o a la **Página de registro** del reino. En ambos casos, tras autenticarse, el usuario vuelve a la URL a la que intentaba acceder.
 - **Activación de la cuenta**:
   - Directa: Los usuarios que se registren pueden iniciar sesión directamente.
   - E-mail de activación: Los usuarios que se registren deben activar su cuenta mediante un enlace enviado a su correo electrónico previo a poder iniciar sesión.
@@ -280,6 +281,23 @@ Utiliza un cliente de autenticación para enviar los tokens de acceso de tu inte
 - Confidencial: Existen dos tipos de clientes OAuth, confidencial o públicos. Selecciona la opción confidencial si tu aplicación puede autenticarse de manera segura con el servidor de autenticación. Los clientes públicos suelen ser aplicaciones que se ejecutan en dispositivos móviles o navegadores.
 - Scopes: Si tu servicio de autenticación OAuth2 usa múltiples espacios o ambientes para separar a los usuarios y quieres usar uno en específico en esta integración, defínelo en este campo.
 
+### Custom SMS
+
+La integración de Custom SMS, de la categoría de mensajería, permite enviar el código OTP del soft login por SMS mediante tu propio servicio, a través de un endpoint HTTP genérico.
+
+Para habilitarla, el formulario de registro del reino debe tener el campo de teléfono **habilitado y requerido**. Mientras exista una integración de OTP por teléfono activa, esas opciones del formulario de registro quedan bloqueadas.
+
+En la sección **Credenciales** completa:
+
+- **URL del endpoint**: El código OTP se envía como una petición POST a esta URL, con un cuerpo JSON que contiene `phone` y `code`.
+- **Token de autenticación**: Se envía en el header `Authorization` como Bearer token.
+
+Una vez habilitada la integración, selecciona **Phone** en el **Canal de envío del OTP** de la configuración General. Custom SMS puede convivir con otras integraciones de OTP por teléfono, como Auronix: ambas envían el código en cada inicio de sesión de forma independiente, y el fallo de una no interrumpe a la otra.
+
+:::warning Atención
+No puedes deshabilitar ni eliminar la última integración de OTP por teléfono habilitada mientras el canal de envío del OTP del reino esté configurado como Phone.
+:::
+
 ### Webhooks
 
 La plataforma permite la creación de Webhooks para ciertos eventos específicos de los usuarios del reino.
@@ -307,6 +325,35 @@ Puedes elegir entre dos roles:
 - **Realm Admin**:  Tiene acceso a todas las configuraciones y secciones del reino, puede añadir y eliminar usuarios y miembros del equipo.  Puede también eliminar el reino.
 
 Para eliminar a un administrador del reino, selecciona la casilla a la izquierda de su nombre y haz click en el botón **Borrar** en la parte inferior.
+
+#### Restringir el alcance con segmentos
+
+Al agregar o editar un miembro del equipo del reino, puedes asignar uno o más [segmentos](/es/platform/customers/segments.html) a su rol mediante el campo **Segmentos**. El rol define qué acciones puede ejecutar el miembro, mientras que los segmentos acotan sobre qué usuarios del reino puede aplicarlas:
+
+- **Sin segmentos**: El rol da acceso a todos los usuarios del reino.
+- **Con segmentos**: El miembro solo ve y opera los usuarios que pertenecen a esos segmentos.
+
+Esto aplica tanto a los roles asignados directamente a un miembro como a los asignados a través de sus [grupos](/es/platform/core/roles.html#grupos). En el listado de miembros del equipo, la columna **Segmentos** muestra los segmentos asignados a cada miembro o grupo.
+
+El alcance efectivo de un miembro considera todos los roles que tiene en el reino:
+
+- Los roles a nivel de cuenta con acceso total a los reinos (como **Owner** o **Full Admin**) no se restringen por segmentos.
+- Si alguno de sus roles en el reino no tiene segmentos asignados, el miembro tiene acceso a todos los usuarios del reino.
+- Si todos sus roles en el reino tienen segmentos asignados, su alcance es la unión de los segmentos de todos ellos.
+
+El alcance se aplica en todas las secciones del reino que muestran u operan sobre usuarios: el listado de usuarios y sus fichas, las acciones masivas y exportaciones, las respuestas de formularios, las respuestas de originación, las órdenes de pago, los eventos de negocio, las notas, la mensajería directa y las campañas.
+
+Un miembro restringido por segmentos tiene además las siguientes consideraciones:
+
+- **Usuarios**: No puede acceder a la ficha de un usuario fuera de su alcance.
+- **Segmentos**: No puede crear segmentos nuevos, ya que estos parten del universo total de usuarios del reino. Sí puede editar y borrar los segmentos de su alcance.
+- **Campañas**: Solo puede dirigir campañas a segmentos dentro de su alcance. Las campañas dirigidas a segmentos fuera de su alcance se muestran en modo **Solo lectura**: puede ver sus metadatos (nombre, estado, autor, fechas y segmentos), pero no sus métricas ni destinatarios, y no puede editarlas, enviarlas, duplicarlas ni borrarlas.
+- **Respuestas de originación**: Las respuestas que tenga asignadas siguen visibles y operables aunque el usuario pertenezca a segmentos fuera de su alcance.
+- **Miembros del equipo**: Solo puede asignar segmentos dentro de su alcance y no puede dejar roles del reino sin segmentos. Los miembros cuyos segmentos están fuera de su alcance se muestran con la etiqueta **Fuera de tu alcance** y no puede editarlos.
+
+:::tip Actualización del alcance
+La pertenencia de los usuarios a los segmentos se actualiza en un proceso en segundo plano, por lo que los cambios en los segmentos pueden tardar unos minutos en reflejarse en el alcance de los miembros. Puedes conocer más en la sección de [Segmentos](/es/platform/customers/segments.html#filtros).
+:::
 
 ### Custom fields
 

@@ -46,7 +46,17 @@ The access and permission management system implements a role-based security mod
 
 The user experience is optimized for operational productivity, incorporating features such as configurable dashboards with real-time metrics, contextual search tools with advanced filters, batch operations for mass content management, and adaptive navigation that presents relevant options according to the user's context and permissions. The interface abstracts the platform's technical complexity while exposing advanced configuration capabilities, allowing both business users and developers to fully leverage the digital platform's capabilities.
 
+### Bookmarks
 
+Bookmarks allow you to create shortcuts to the sections of the platform you use the most. They are personal: each administrator manages their own bookmarks.
+
+To create a bookmark, click the bookmark icon with the **Add Bookmark** tooltip that appears next to the items in the side menus of each module and next to the pages of a site. The icon fills in to indicate that the section has been bookmarked; click it again to remove the bookmark.
+
+To use your bookmarks, click the **Bookmarks** icon at the top of the main sidebar. The **My Bookmarks** window opens with your saved shortcuts, sorted with the most used first. Click a bookmark to navigate to that section, or use the trash icon to delete it.
+
+:::tip Tip
+Bookmarking the same section twice does not create duplicates: if the bookmark already exists, the original is kept.
+:::
 
 ## Versioning
 

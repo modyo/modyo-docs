@@ -45,6 +45,17 @@ El sistema de gestión de accesos y permisos implementa un modelo de seguridad b
 
 La experiencia de usuario está optimizada para la productividad operativa, incorporando funcionalidades como dashboards configurables con métricas en tiempo real, herramientas de búsqueda contextual con filtros avanzados, operaciones batch para gestión masiva de contenidos, y navegación adaptativa que presenta opciones relevantes según el contexto y permisos del usuario. La interfaz abstrae la complejidad técnica de la plataforma mientras expone capacidades avanzadas de configuración, permitiendo que tanto usuarios de negocio como desarrolladores puedan aprovechar completamente las capacidades de la plataforma digital.
 
+### Marcadores
+
+Los marcadores te permiten crear accesos directos a las secciones de la plataforma que más utilizas. Son personales: cada administrador gestiona sus propios marcadores.
+
+Para crear un marcador, haz clic en el ícono de marcador con el tooltip **Añadir Marcador** que aparece junto a los ítems de los menús laterales de cada módulo y junto a las páginas de un sitio. El ícono se rellena para indicar que la sección quedó marcada; haz clic nuevamente para quitar el marcador.
+
+Para usar tus marcadores, haz clic en el ícono **Marcadores** en la parte superior de la barra lateral principal. Se abre la ventana **Mis Marcadores** con tus accesos guardados, ordenados con los más utilizados primero. Haz clic en un marcador para navegar a esa sección, o usa el ícono de papelera para eliminarlo.
+
+:::tip Tip
+Marcar dos veces la misma sección no crea duplicados: si el marcador ya existe, se conserva el original.
+:::
 
 ## Versionado
 

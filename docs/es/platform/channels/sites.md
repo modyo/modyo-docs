@@ -51,6 +51,8 @@ Si haces click en **publicar** en un artículo en particular (e.g. publicar una 
 
 Cuando creas una aplicación web con Modyo, tus usuarios pueden realizar búsquedas en tus web apps y en todo su contenido mediante la función de búsqueda. Esto puede hacerse utilizando la URL `/search` o accediendo a la página de búsqueda dedicada.
 
+El buscador encuentra también coincidencias parciales dentro de las palabras, a partir de 3 caracteres: por ejemplo, una página llamada `Sunflower` aparece al buscar `sun` o `flower`. Las coincidencias exactas siguen mostrándose primero en los resultados.
+
 ### Habilitar o deshabilitar búsqueda
 
 Para habilitar o deshabilitar la funcionalidad de búsqueda, sigue estos pasos:
@@ -365,9 +367,14 @@ Es esencial informar a todos los miembros de la plataforma sobre cualquier cambi
 :::
 
 Activa la casilla para realizar modificaciones. Las variables que puedes modificar son:
-- **Host**: Ubicación de la aplicación web en del servidor.
-- **Dominio primario**: Dirección principal de la aplicación web.
-- **Dominio alternativo**: Dirección secundaria para redireccionar en caso de fallo en el primario.
+- **Host**: Ubicación de la aplicación web en el servidor.
+- **Dominio primario**: Dirección principal de la aplicación web. Los dominios alternativos serán redirigidos a este dominio.
+- **Dominio alternativo**: Dirección secundaria que redirige automáticamente al dominio primario.
+- **Tipo de redirección para los dominios alternativos**: El código HTTP con el que los dominios alternativos redirigen al dominio primario: **301 Moved Permanently (permanente)**, que indica a los buscadores traspasar el posicionamiento SEO al dominio primario, o **302 Found (temporal)**. Las configuraciones nuevas usan 301 por defecto; los sitios que ya tenían dominios alternativos configurados conservan 302 hasta que elijas cambiarlo.
+
+:::tip Redirecciones permanentes
+Los navegadores guardan en caché las redirecciones 301 de forma agresiva: si luego cambias a 302, los visitantes que ya recibieron la redirección permanente pueden tardar en ver el cambio.
+:::
 
 
 :::warning Atención
@@ -571,6 +578,14 @@ Modyo cuenta con un sistema de redirecciones personalizadas que te permitirá to
 En esta vista encuentras una tabla con todas las redirecciones que existen actualmente en el sitio. Puedes buscar por path o descripción.
 
 Para crear una nueva redirección, haz click en el botón **Nuevo** en la esquina superior derecha de la vista. Completa los campos **_URL_ de Origen** y **_URL_ de destino** y código de redirección y luego guarda los cambios.
+
+#### Activar y desactivar redirecciones
+
+Cada redirección cuenta con un interruptor en la columna **Activa** que te permite desactivarla temporalmente sin borrarla, y volver a activarla cuando la necesites. También puedes activar o desactivar varias redirecciones a la vez seleccionándolas y usando las acciones masivas **Activar** y **Desactivar**.
+
+Una redirección desactivada deja de aplicarse de inmediato: su URL de origen vuelve a resolverse como un recurso normal del sitio (una página existente o un error 404). Al reactivarla, vuelve a redirigir de inmediato conservando el código 301 o 302 configurado.
+
+Las redirecciones nuevas, incluidas las importadas por CSV, se crean activadas.
 
 :::warning Atención
 La tabla de redirecciones es la penúltima en precedencia, de tal forma que si existe una URL en el sitio que apunta a una [página](/es/platform/channels/pages) o una vista por defecto, verás esa vista en vez de ser redirigido mediante la tabla de redirecciones personalizadas.

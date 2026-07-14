@@ -32,6 +32,10 @@ Each campaign row includes a menu with the following actions:
 If you delete a campaign, you will not be able to recover it, and its record will be deleted from the system.
 :::
 
+:::tip Segment scope
+If your access to the realm is [restricted by segments](/en/platform/customers/settings.html#restrict-scope-with-segments), you can only target campaigns to segments within your scope. Campaigns targeting segments outside your scope are displayed in **Read only** mode: you can see their metadata, but not their metrics or recipients, and you cannot edit, send, duplicate, or delete them.
+:::
+
 ## Create a campaign
 Campaigns allow you to contact your users directly via email or direct notifications, including support for WebPush notifications. To create a new campaign, click the **New Campaign** button.
 
