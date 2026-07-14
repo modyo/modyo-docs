@@ -66,6 +66,7 @@ Los tipos de tareas disponibles son:
 - **Snippet de código**: Permiten agregar código a la medida.
 - **Proceso de originación**: Llaman a otro flujo de originación dentro de este.
 - **Invitación**: Permiten invitar a otros usuarios a llenar datos necesarios en el flujo.
+- **Verificación de Identidad**: Solicitan al usuario verificar su identidad con captura de documento y biometría a través de un proveedor.
 - **Confirmación**: Solicitan al usuario confirmar las respuestas entregadas en tareas Input anteriores.
 
 ##### Propiedades de la tarea
@@ -122,6 +123,22 @@ La tarea de revisión pendiente pausa el proceso de originación. Se usa para ga
 Se hace un refresco de la tarea cada 5 segundos para que el usuario final sepa si la tarea fue revisada.
 
 Al igual que en las tareas de validación, puedes definir un **Asignado** para la tarea: un administrador o un grupo de administradores. Si no defines uno, la revisión se asigna de forma predeterminada al asignado de la respuesta.
+
+### Verificación de Identidad
+
+La tarea de Verificación de Identidad solicita al usuario verificar su identidad mediante la captura de una selfie, su documento de identidad y detección de vida (liveness), a través de un proveedor de verificación.
+
+Para usar esta tarea, primero debes habilitar una integración de la categoría **Verificación de Identidad** en las [integraciones del reino](/es/platform/customers/settings.html#integraciones), como **Amazon Rekognition**.
+
+Al configurar la tarea defines:
+
+- **Proveedor**: La integración de verificación de identidad que procesará la verificación.
+- **Características**: Las verificaciones que incluye la tarea: **Selfie** (siempre requerida), **Documento** (captura del frente y reverso del documento de identidad con extracción de sus datos) y **Liveness** (detección de vida).
+- **Ajustes de Liveness**: Si activaste Liveness, puedes definir el **Umbral de confianza** (de **Flexible** a **Estricto**) y **Habilitar desafío de color**, que muestra luces de colores durante la verificación e incluye una advertencia de fotosensibilidad para el usuario.
+
+Durante el flujo, el usuario captura su selfie y su documento guiado por la interfaz; la plataforma valida la calidad de las imágenes, extrae los datos del documento y compara el rostro del documento con la selfie.
+
+En los detalles de una respuesta, la pestaña **Verificación de Identidad** muestra el estado de la verificación, los puntajes de coincidencia facial (**Face Match Score**) y de detección de vida (**Liveness Score**), los datos extraídos del documento y las imágenes capturadas.
 
 
 ### Snippet de código

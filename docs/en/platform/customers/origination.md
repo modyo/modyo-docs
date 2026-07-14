@@ -66,6 +66,7 @@ The available task types are:
 - **Code snippet**: Allows adding custom code.
 - **Origination process**: Calls another origination flow within this one.
 - **Invitation**: Allows inviting other users to fill in necessary data in the flow.
+- **Identity Verification**: Asks the user to verify their identity with document capture and biometrics through a provider.
 - **Confirmation**: Asks the user to confirm the answers provided in previous Input tasks.
 
 ##### Task properties
@@ -122,6 +123,22 @@ The pending review task pauses the origination process. It is used to trigger as
 The task is refreshed every 5 seconds so that the end user knows if the task has been reviewed.
 
 As with validation tasks, you can define an **Assignee** for the task: an administrator or a group of administrators. If you do not define one, the review is assigned by default to the submission assignee.
+
+### Identity Verification
+
+The Identity Verification task asks the user to verify their identity by capturing a selfie, their identity document, and liveness detection, through a verification provider.
+
+To use this task, you must first enable an integration of the **Identity Verification** category in the [realm integrations](/en/platform/customers/settings.html#integrations), such as **Amazon Rekognition**.
+
+When configuring the task, you define:
+
+- **Provider**: The identity verification integration that will process the verification.
+- **Features**: The verifications included in the task: **Selfie** (always required), **Document** (capture of the front and back of the identity document with data extraction), and **Liveness** (liveness detection).
+- **Liveness Settings**: If you enabled Liveness, you can define the **Confidence Threshold** (from **Lenient** to **Strict**) and **Enable color challenge**, which displays colored lights during the verification and includes a photosensitivity warning for the user.
+
+During the flow, the user captures their selfie and document guided by the interface; the platform validates the quality of the images, extracts the document data, and compares the face on the document with the selfie.
+
+In the details of a submission, the **Identity Verification** tab shows the verification status, the **Face Match Score** and **Liveness Score**, the data extracted from the document, and the captured images.
 
 
 ### Code Snippet

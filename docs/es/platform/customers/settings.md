@@ -281,6 +281,23 @@ Utiliza un cliente de autenticación para enviar los tokens de acceso de tu inte
 - Confidencial: Existen dos tipos de clientes OAuth, confidencial o públicos. Selecciona la opción confidencial si tu aplicación puede autenticarse de manera segura con el servidor de autenticación. Los clientes públicos suelen ser aplicaciones que se ejecutan en dispositivos móviles o navegadores.
 - Scopes: Si tu servicio de autenticación OAuth2 usa múltiples espacios o ambientes para separar a los usuarios y quieres usar uno en específico en esta integración, defínelo en este campo.
 
+### Amazon Rekognition
+
+La integración de Amazon Rekognition, de la categoría **Verificación de Identidad**, habilita la verificación biométrica en las originaciones del reino: captura de documento de identidad, comparación facial y detección de vida (liveness).
+
+Para configurarla necesitas:
+
+- **Región AWS**: La región donde operan los servicios de AWS.
+- **ID de clave de acceso AWS** y **Clave de acceso secreta AWS**: Credenciales IAM con permisos de Rekognition.
+- **ID de Pool de Identidad de Cognito**: Requerido para la detección de vida en el navegador.
+- **Nombre del Bucket S3**: Bucket donde se almacenan los resultados de las sesiones y las imágenes.
+- **ARN del tópico SNS**: Opcional.
+- **Umbral de confianza (%)**: Puntaje mínimo para aprobar la verificación. Por defecto es 90.
+- **Habilitar imágenes de auditoría**: Guarda imágenes de auditoría de cada sesión de detección de vida.
+- **Habilitar verificación de fotosensibilidad**: Activa el desafío de colores durante la detección de vida e incluye una advertencia de fotosensibilidad para el usuario.
+
+Una vez habilitada, el proveedor queda disponible en las tareas de [Verificación de Identidad](/es/platform/customers/origination.html#verificacion-de-identidad) de las originaciones del reino.
+
 ### Custom SMS
 
 La integración de Custom SMS, de la categoría de mensajería, permite enviar el código OTP del soft login por SMS mediante tu propio servicio, a través de un endpoint HTTP genérico.
