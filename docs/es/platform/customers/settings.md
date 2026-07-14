@@ -281,6 +281,23 @@ Utiliza un cliente de autenticación para enviar los tokens de acceso de tu inte
 - Confidencial: Existen dos tipos de clientes OAuth, confidencial o públicos. Selecciona la opción confidencial si tu aplicación puede autenticarse de manera segura con el servidor de autenticación. Los clientes públicos suelen ser aplicaciones que se ejecutan en dispositivos móviles o navegadores.
 - Scopes: Si tu servicio de autenticación OAuth2 usa múltiples espacios o ambientes para separar a los usuarios y quieres usar uno en específico en esta integración, defínelo en este campo.
 
+### Custom SMS
+
+La integración de Custom SMS, de la categoría de mensajería, permite enviar el código OTP del soft login por SMS mediante tu propio servicio, a través de un endpoint HTTP genérico.
+
+Para habilitarla, el formulario de registro del reino debe tener el campo de teléfono **habilitado y requerido**. Mientras exista una integración de OTP por teléfono activa, esas opciones del formulario de registro quedan bloqueadas.
+
+En la sección **Credenciales** completa:
+
+- **URL del endpoint**: El código OTP se envía como una petición POST a esta URL, con un cuerpo JSON que contiene `phone` y `code`.
+- **Token de autenticación**: Se envía en el header `Authorization` como Bearer token.
+
+Una vez habilitada la integración, selecciona **Phone** en el **Canal de envío del OTP** de la configuración General. Custom SMS puede convivir con otras integraciones de OTP por teléfono, como Auronix: ambas envían el código en cada inicio de sesión de forma independiente, y el fallo de una no interrumpe a la otra.
+
+:::warning Atención
+No puedes deshabilitar ni eliminar la última integración de OTP por teléfono habilitada mientras el canal de envío del OTP del reino esté configurado como Phone.
+:::
+
 ### Webhooks
 
 La plataforma permite la creación de Webhooks para ciertos eventos específicos de los usuarios del reino.
