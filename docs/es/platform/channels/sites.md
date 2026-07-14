@@ -51,6 +51,8 @@ Si haces click en **publicar** en un artículo en particular (e.g. publicar una 
 
 Cuando creas una aplicación web con Modyo, tus usuarios pueden realizar búsquedas en tus web apps y en todo su contenido mediante la función de búsqueda. Esto puede hacerse utilizando la URL `/search` o accediendo a la página de búsqueda dedicada.
 
+El buscador encuentra también coincidencias parciales dentro de las palabras, a partir de 3 caracteres: por ejemplo, una página llamada `Sunflower` aparece al buscar `sun` o `flower`. Las coincidencias exactas siguen mostrándose primero en los resultados.
+
 ### Habilitar o deshabilitar búsqueda
 
 Para habilitar o deshabilitar la funcionalidad de búsqueda, sigue estos pasos:
