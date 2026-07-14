@@ -102,6 +102,12 @@ When selecting a field, you can modify its properties by going to the **Edit** t
 The validation task requires manual review by the assigned agent. They must validate the data provided by the user to unlock the next task in the flow.
 The task is refreshed every 5 seconds so that the end user knows if the task has been validated.
 
+When configuring the task, you can define an **Assignee**: an administrator or a group of administrators responsible for the validations. When selecting a group, you can assign the whole group or a specific user within it. If you do not define an assignee, validations are assigned by default to the submission assignee.
+
+Assigned administrators receive an email when a validation is pending and can also review it from the **My tasks** view in the main menu, filtering by the **Validation review** task type. The user receives an internal notification when their task is approved or rejected.
+
+In a specific submission, you can reassign the validation from the **Validations** tab, once the user has completed the tasks to validate.
+
 ### Signature
 
 The signature task allows for a simple signature with a checkbox or an advanced one when a digital signature provider is installed in the realm integrations.
@@ -110,6 +116,8 @@ The signature task allows for a simple signature with a checkbox or an advanced 
 
 The pending review task pauses the origination process. It is used to trigger asynchronous processes, usually in external systems.
 The task is refreshed every 5 seconds so that the end user knows if the task has been reviewed.
+
+As with validation tasks, you can define an **Assignee** for the task: an administrator or a group of administrators. If you do not define one, the review is assigned by default to the submission assignee.
 
 
 ### Code Snippet
@@ -443,7 +451,7 @@ By selecting the **Edit** option in the context menu of your origination, you ca
 - **Name**: Defines the name of the origination, visible to users in the interface.
 - **Description**: Includes a brief explanatory text about the purpose of the origination.
 - **Completed message**: This is the message that will appear to the user at the end of the origination process.
-- **Default submission assignee**: Specifies the person who will be automatically assigned when receiving a new origination.
+- **Default submission assignee**: Specifies the administrator or group of administrators that will be automatically assigned to each new submission. When selecting a group, you can use the **Assign to whole group** option or choose a specific user within it.
 - **Due in**: Sets a maximum deadline for completing the origination.
 - **Automatically cancel submissions that exceed the due date**: Available only if you have configured a due date. When this option is enabled, submissions in **Pending** status that exceed their due date are automatically canceled.
 - **Completion rules**: Defines the completion behavior for each submission.
@@ -558,7 +566,9 @@ In addition to the search, you can narrow down the submission list with the foll
 
 #### Assign submission
 
-In the list of submissions, select the actions menu and press the **Assign** option. In the context menu, select an administrator for this submission.
+In the list of submissions, select the actions menu and press the **Assign** option. In the modal, you can assign the submission to an administrator, to a whole group of administrators, or to a specific user within a group. You can also use the **Assign to me** option to assign the submission directly to yourself.
+
+When assigning to a whole group, all its members can view and manage the submission. The **Assigned** column of the list shows the assigned group or administrator; if the administrator was chosen from a group, the group name is also displayed.
 
 #### Cancel submission
 
