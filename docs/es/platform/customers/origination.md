@@ -19,7 +19,7 @@ Para crear una nueva originación, sigue estos pasos:
 - En el menú lateral, navega a **Customers** > **Reinos** y selecciona el Reino en el que deseas trabajar.
 - Dirígete a la opción **Origination**.
 - Haz clic en el botón **+ Nueva originación**.
-- Asigna un nombre y selecciona el tipo de originación que deseas crear.
+- Asigna un nombre a la originación.
 - Haz clic en **Crear** para finalizar y comenzar a configurar los pasos del nuevo flujo de originación.
 
 
@@ -407,11 +407,25 @@ Permitir o no el uso de datos anteriores se define al agregar la tarea de proces
 
 ### Invitación
 
-La tarea de Invitación es la que permite tener flujos de originación multiusuario.
-Para poder crear una tarea de invitación, primero tienes que crear roles en la edición de la originación. Allí eliges si el usuario principal puede tener ese rol si requiere invitación y si tiene límite de invitaciones.
-Al tener al menos un rol se desbloquea el uso de la tarea de invitación.
-La invitación solo puede ser para tareas o pasos anteriores a la tarea de invitación.
-En la tarea se elige el rol, el correo que se envía y cuales son las tareas que tiene que realizar el rol.
+La tarea de Invitación permite crear flujos de originación **multiusuario**: el usuario principal de la respuesta invita a otras personas para que completen tareas específicas del flujo.
+
+Para poder crear una tarea de invitación, primero debes crear al menos un [rol](#roles) en la edición de la originación. Cada rol puede usarse en una sola tarea de invitación de la originación.
+
+Al configurar la tarea defines:
+
+- **Rol**: El rol que asumirán los usuarios invitados.
+- **Plantilla de correo**: El código HTML/Liquid del correo de invitación. Tienes disponibles variables de Liquid como `invitation.first_name`, `invitation.last_name`, `invitation.email`, `invitation_url`, `submission`, `task`, `origination` y `site`.
+- **Tareas objetivo**: Las tareas que los usuarios invitados podrán completar. Solo puedes seleccionar tareas anteriores a la tarea de invitación; otras tareas de invitación y las tareas de proceso de originación no son seleccionables.
+
+Además, en las propiedades de cada tarea incluida en una tarea de invitación encontrarás la opción **Mostrar esta tarea al usuario principal**, que controla si el usuario principal también ve esa tarea en su flujo.
+
+En la página de originación, el usuario principal puede invitar a personas nuevas (nombre, apellido y correo electrónico) o a usuarios ya invitados en otras tareas, y puede reenviar o cancelar las invitaciones pendientes. Cada invitado recibe un correo con un enlace de acceso y, al ingresar, solo ve las tareas que le fueron asignadas; si tiene más de un rol, ve la unión de las tareas de todos sus roles. El usuario invitado no puede cancelar la respuesta.
+
+La tarea de invitación se completa cuando todos los invitados terminan sus tareas. Si el rol no requiere invitaciones y el usuario principal no invita a nadie, la tarea se completa automáticamente al continuar. La cantidad de invitaciones activas está limitada por el **Número máximo de usuarios** del rol.
+
+:::tip Plantilla para usuarios invitados
+La página de la originación incluye la plantilla **Reanudar (Invitado)**, que es la vista que ven los usuarios invitados al volver a ingresar a la respuesta. Puedes personalizarla como el resto de las plantillas de la página.
+:::
 
 ### Confirmación
 
@@ -469,6 +483,14 @@ Al seleccionar la opción **Editar** en el menú contextual de tu originación p
 La cancelación automática se ejecuta en un proceso en segundo plano una vez al día, por lo que puede no ser inmediata al momento del vencimiento. Solo cancela respuestas en estado **Pendiente** y registra **Auto-cancelada por vencimiento** como razón de cancelación, visible en los detalles de la respuesta.
 :::
 
+#### Roles
+
+En la edición de la originación encontrarás la sección **Roles**, donde defines los roles que usarán las [tareas de invitación](#invitacion) de los flujos multiusuario. Para crear un rol, presiona el botón **Agregar Rol** y completa:
+
+- **Nombre**: El nombre del rol, único dentro de la originación.
+- **Requiere invitaciones**: Si está activo, el usuario principal debe invitar al menos a una persona para completar la tarea de invitación que use este rol.
+- **Número máximo de usuarios**: La cantidad máxima de usuarios que pueden tener este rol en una misma respuesta.
+
 #### Eliminar originación
 
 Si necesitas eliminar una originación de forma permanente:
@@ -512,6 +534,8 @@ En la vista de detalles, encontrarás las siguientes secciones principales:
 - **Actividad**: Registro de actividades y cambios realizados en la respuesta, útil para seguimiento y auditoría.
 
 Esta estructura te brinda una visión integral y detallada de cada respuesta, permitiéndote gestionar de manera efectiva todos los aspectos relacionados con las respuestas.
+
+En las respuestas multiusuario, las pestañas **Tareas**, **Revisiones** y **Validaciones** incluyen el selector **Viendo tareas de**, que te permite alternar entre el **Usuario Principal** y cada usuario invitado para revisar el avance individual de sus tareas.
 
 :::tip Tip
 Desde la vista de una respuesta en el menú de acciones (identificado con …) se puede [impersonar](/es/platform/customers/users) al usuario para ayudarlo a contestar la originación. Esto depende de los roles del usuario

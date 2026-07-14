@@ -19,7 +19,7 @@ To create a new origination, follow these steps:
 - In the side menu, navigate to **Customers** > **Realms** and select the Realm you want to work in.
 - Go to the **Origination** option.
 - Click the **+ New origination** button.
-- Assign a name and select the type of origination you want to create.
+- Assign a name to the origination.
 - Click **Create** to finish and begin configuring the steps of the new origination flow.
 
 
@@ -406,11 +406,25 @@ Whether or not to allow the use of previous data is defined when adding the orig
 
 ### Invitation
 
-The Invitation task is what enables multi-user origination flows.
-To create an invitation task, you must first create roles in the origination editing. There you choose if the main user can have that role, if it requires invitation, and if it has an invitation limit.
-Having at least one role unlocks the use of the invitation task.
-The invitation can only be for tasks or steps prior to the invitation task.
-In the task, you select the role, the email that is sent, and which tasks the role must complete.
+The Invitation task enables **multi-user** origination flows: the main user of the submission invites other people to complete specific tasks in the flow.
+
+To create an invitation task, you must first create at least one [role](#roles) in the origination editing. Each role can be used in only one invitation task of the origination.
+
+When configuring the task, you define:
+
+- **Role**: The role that invited users will assume.
+- **Email template**: The HTML/Liquid code of the invitation email. Liquid variables such as `invitation.first_name`, `invitation.last_name`, `invitation.email`, `invitation_url`, `submission`, `task`, `origination`, and `site` are available.
+- **Target tasks**: The tasks that invited users will be able to complete. You can only select tasks prior to the invitation task; other invitation tasks and origination process tasks are not selectable.
+
+In addition, the properties of each task included in an invitation task have the option **Show this task to the main user**, which controls whether the main user also sees that task in their flow.
+
+On the origination page, the main user can invite new people (first name, last name, and email address) or users already invited in other tasks, and can resend or cancel pending invitations. Each invitee receives an email with an access link and, upon entering, only sees the tasks assigned to them; if they have more than one role, they see the union of the tasks of all their roles. The invited user cannot cancel the submission.
+
+The invitation task is completed when all invitees finish their tasks. If the role does not require invitations and the main user does not invite anyone, the task is automatically completed when continuing. The number of active invitations is limited by the role's **Maximum number of users**.
+
+:::tip Template for invited users
+The origination page includes the **Resume (Invited)** template, which is the view invited users see when they return to the submission. You can customize it like the rest of the page templates.
+:::
 
 ### Confirmation
 
@@ -468,6 +482,14 @@ By selecting the **Edit** option in the context menu of your origination, you ca
 Automatic cancellation runs in a background process once a day, so it may not happen immediately when the submission becomes overdue. It only cancels submissions in **Pending** status and records **Auto-Cancelled Overdue** as the cancellation reason, visible in the submission details.
 :::
 
+#### Roles
+
+In the origination editing, you will find the **Roles** section, where you define the roles used by the [invitation tasks](#invitation) of multi-user flows. To create a role, press the **Add Role** button and complete:
+
+- **Name**: The name of the role, unique within the origination.
+- **Require invitations**: If enabled, the main user must invite at least one person to complete the invitation task that uses this role.
+- **Maximum number of users**: The maximum number of users that can have this role in the same submission.
+
 #### Delete origination
 
 If you need to permanently delete an origination:
@@ -511,6 +533,8 @@ In the details view, you will find the following main sections:
 - **Activity**: Record of activities and changes made to the submission, useful for monitoring and auditing.
 
 This structure provides you with a comprehensive and detailed view of each submission, allowing you to effectively manage all aspects related to the submissions.
+
+In multi-user submissions, the **Tasks**, **Reviews**, and **Validations** tabs include the **Viewing tasks for** selector, which allows you to switch between the **Main User** and each invited user to review the individual progress of their tasks.
 
 :::tip Tip
 From the submission view in the actions menu (identified with ...), you can [impersonate](/en/platform/customers/users) the user to help them answer the origination. This depends on the user's roles.
