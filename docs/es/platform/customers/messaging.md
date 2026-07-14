@@ -32,6 +32,10 @@ En cada fila de campaña, encontrarás un menú con las siguientes acciones:
 Si borras una campaña, no podrás recuperarla, y su registro se eliminará del sistema.
 :::
 
+:::tip Alcance por segmentos
+Si tu acceso al reino está [restringido por segmentos](/es/platform/customers/settings.html#restringir-el-alcance-con-segmentos), solo puedes dirigir campañas a segmentos dentro de tu alcance. Las campañas dirigidas a segmentos fuera de tu alcance se muestran en modo **Solo lectura**: puedes ver sus metadatos, pero no sus métricas ni destinatarios, y no puedes editarlas, enviarlas, duplicarlas ni borrarlas.
+:::
+
 ## Crear una campaña
 Las campañas te permiten contactar directamente a tus usuarios mediante correo electrónico o notificaciones directas, incluyendo soporte para notificaciones WebPush. Para generar una nueva campaña haz click en el botón **Nueva Campaña**
 

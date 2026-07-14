@@ -51,6 +51,8 @@ If you click **publish** on a particular article (e.g., publish a page), the Rev
 
 When you create a web application with Modyo, your users can search your web apps and all their content using the search function. This can be done using the `/search` URL or by accessing the dedicated search page.
 
+The search engine also finds partial matches within words, starting at 3 characters: for example, a page named `Sunflower` appears when searching for `sun` or `flower`. Exact matches are still shown first in the results.
+
 ### Enable or disable search
 
 To enable or disable the search functionality, follow these steps:
@@ -366,8 +368,13 @@ It is essential to inform all platform members about any changes you make in thi
 
 Activate the checkbox to make changes. The variables you can modify are:
 - **Host**: Location of the web application on the server.
-- **Primary domain**: Main address of the web application.
-- **Alternative domain**: Secondary address to redirect in case of failure in the primary.
+- **Primary domain**: Main address of the web application. Alternative domains will be redirected to this domain.
+- **Alternative domain**: Secondary address that automatically redirects to the primary domain.
+- **Redirect type for alternative domains**: The HTTP code with which alternative domains redirect to the primary domain: **301 Moved Permanently**, which signals search engines to transfer SEO ranking to the primary domain, or **302 Found (Temporary)**. New configurations use 301 by default; sites that already had alternative domains configured keep 302 until you choose to change it.
+
+:::tip Permanent redirects
+Browsers cache 301 redirects aggressively: if you later switch to 302, visitors who already received the permanent redirect may take a while to see the change.
+:::
 
 
 :::warning Attention
@@ -571,6 +578,14 @@ Modyo has a custom redirect system that will allow you to take a URL from your s
 In this view, you will find a table with all the redirects that currently exist on the site. You can search by path or description.
 
 To create a new redirect, click on the **New** button in the upper right corner of the view. Fill in the **_Source URL_** and **_Destination URL_** fields and the redirection code, then save the changes.
+
+#### Enable and disable redirects
+
+Each redirect has a switch in the **Enabled** column that allows you to temporarily disable it without deleting it, and re-enable it when you need it. You can also enable or disable several redirects at once by selecting them and using the **Enable** and **Disable** bulk actions.
+
+A disabled redirect stops applying immediately: its source URL resolves again as a normal site resource (an existing page or a 404 error). When re-enabled, it redirects again immediately, preserving the configured 301 or 302 code.
+
+New redirects, including those imported via CSV, are created enabled.
 
 :::warning Attention
 The redirects table is the second to last in precedence, so if there is a URL on the site that points to a [page](/en/platform/channels/pages) or a default view, you will see that view instead of being redirected through the custom redirects table.

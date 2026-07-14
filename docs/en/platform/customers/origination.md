@@ -67,6 +67,7 @@ The available task types are:
 - **Origination process**: Calls another origination flow within this one.
 - **Invitation**: Allows inviting other users to fill in necessary data in the flow.
 - **Identity Verification**: Asks the user to verify their identity with document capture and biometrics through a provider.
+- **Confirmation**: Asks the user to confirm the answers provided in previous Input tasks.
 
 ##### Task properties
 
@@ -75,6 +76,10 @@ In this section, you can edit the values of the selected task. You can find thes
 - **Name**: The name of the task that will be visible to the user.
 - **Identifier**: A unique identifier that will be included in the origination URL.
 - **Description**: A brief explanatory text about the task, which will be visible to the user.
+
+:::warning Editing identifiers
+When editing an already saved step, task, or field, the **Identifier** field appears locked with a padlock. To modify it, you must press the padlock and confirm the **Unlock Identifier field** warning: changing an identifier breaks references to it from external systems or through the Liquid SDK and, in the case of fields, submissions can no longer be searched by that field. The identifier is only generated automatically from the name during creation; when editing, changing the name doesn't modify it.
+:::
 
 ### Input
 
@@ -102,6 +107,12 @@ When selecting a field, you can modify its properties by going to the **Edit** t
 The validation task requires manual review by the assigned agent. They must validate the data provided by the user to unlock the next task in the flow.
 The task is refreshed every 5 seconds so that the end user knows if the task has been validated.
 
+When configuring the task, you can define an **Assignee**: an administrator or a group of administrators responsible for the validations. When selecting a group, you can assign the whole group or a specific user within it. If you do not define an assignee, validations are assigned by default to the submission assignee.
+
+Assigned administrators receive an email when a validation is pending and can also review it from the **My tasks** view in the main menu, filtering by the **Validation review** task type. The user receives an internal notification when their task is approved or rejected.
+
+In a specific submission, you can reassign the validation from the **Validations** tab, once the user has completed the tasks to validate.
+
 ### Signature
 
 The signature task allows for a simple signature with a checkbox or an advanced one when a digital signature provider is installed in the realm integrations.
@@ -110,6 +121,8 @@ The signature task allows for a simple signature with a checkbox or an advanced 
 
 The pending review task pauses the origination process. It is used to trigger asynchronous processes, usually in external systems.
 The task is refreshed every 5 seconds so that the end user knows if the task has been reviewed.
+
+As with validation tasks, you can define an **Assignee** for the task: an administrator or a group of administrators. If you do not define one, the review is assigned by default to the submission assignee.
 
 ### Identity Verification
 
@@ -416,6 +429,16 @@ Having at least one role unlocks the use of the invitation task.
 The invitation can only be for tasks or steps prior to the invitation task.
 In the task, you select the role, the email that is sent, and which tasks the role must complete.
 
+### Confirmation
+
+The Confirmation task shows the user a summary of the answers they provided in previous Input tasks, so they can review and confirm them before continuing with the flow.
+
+When configuring the task, in **Select items to confirm** you choose the tasks whose answers will be included in the summary, grouped by step. You can only select **Input** tasks prior to the confirmation task.
+
+The user sees each selected task with its answers and an **Edit** link that takes them directly to that task to correct it. Pressing **Confirm** completes the task and the flow continues. To complete the task, all configured items must be confirmed.
+
+In the details of a submission, completed confirmation tasks show the list of **Confirmed Tasks**.
+
 ### Conditional Logic
 
 Conditional logic allows you to create more dynamic and intelligent workflows. With this functionality, you can define rules for showing or hiding **Steps**, **Tasks**, and **Input task fields** based on answers provided by users or on existing data within the submission. This allows you to personalize the user experience, presenting only relevant information at each stage of the process and simplifying or bifurcating the interaction. Conditional logic gives you the flexibility to:
@@ -449,10 +472,18 @@ By selecting the **Edit** option in the context menu of your origination, you ca
 - **Name**: Defines the name of the origination, visible to users in the interface.
 - **Description**: Includes a brief explanatory text about the purpose of the origination.
 - **Completed message**: This is the message that will appear to the user at the end of the origination process.
-- **Default submission assignee**: Specifies the person who will be automatically assigned when receiving a new origination.
+- **Default submission assignee**: Specifies the administrator or group of administrators that will be automatically assigned to each new submission. When selecting a group, you can use the **Assign to whole group** option or choose a specific user within it.
 - **Due in**: Sets a maximum deadline for completing the origination.
+- **Automatically cancel submissions that exceed the due date**: Available only if you have configured a due date. When this option is enabled, submissions in **Pending** status that exceed their due date are automatically canceled.
 - **Completion rules**: Defines the completion behavior for each submission.
+- **Cancellation rules**: Defines who can cancel a submission from the origination page:
+  - **Everyone can cancel the submission**: Default option.
+  - **Only administrators can cancel the submission**: The **Cancel** button is no longer shown to the user on the origination page, and cancellation remains available only to administrators.
 - **Privacy**: Allows you to restrict access to the origination flow to certain predefined user segments.
+
+:::tip Automatic cancellation by due date
+Automatic cancellation runs in a background process once a day, so it may not happen immediately when the submission becomes overdue. It only cancels submissions in **Pending** status and records **Auto-Cancelled Overdue** as the cancellation reason, visible in the submission details.
+:::
 
 #### Delete origination
 
@@ -500,6 +531,10 @@ This structure provides you with a comprehensive and detailed view of each submi
 
 :::tip Tip
 From the submission view in the actions menu (identified with ...), you can [impersonate](/en/platform/customers/users) the user to help them answer the origination. This depends on the user's roles.
+:::
+
+:::tip Segment scope
+If your access to the realm is [restricted by segments](/en/platform/customers/settings.html#restrict-scope-with-segments), you will only see the submissions of the users within your scope. Submissions assigned to you remain visible and operable even if the user belongs to segments outside your scope.
 :::
 
 #### Search submissions
@@ -552,17 +587,33 @@ In addition to the search, you can narrow down the submission list with the foll
 
 #### Assign submission
 
-In the list of submissions, select the actions menu and press the **Assign** option. In the context menu, select an administrator for this submission.
+In the list of submissions, select the actions menu and press the **Assign** option. In the modal, you can assign the submission to an administrator, to a whole group of administrators, or to a specific user within a group. You can also use the **Assign to me** option to assign the submission directly to yourself.
+
+When assigning to a whole group, all its members can view and manage the submission. The **Assigned** column of the list shows the assigned group or administrator; if the administrator was chosen from a group, the group name is also displayed.
 
 #### Cancel submission
 
-Select a submission and press the context menu. Select the **Cancel** option to permanently change the status of a submission to canceled.
+To cancel a submission, open it and press the **Cancel** button in the submission view. In the modal, you can optionally enter a **Cancellation reason** and then confirm the action. Canceling permanently changes the status of the submission to **Canceled**.
+
+You can cancel submissions in **Not started**, **Pending**, or **Completed** status.
+
+The details of a canceled submission show the cancellation date in the **Canceled at** field and the **Cancellation reason** entered. If no reason was entered, the field shows `--`.
 
 #### Delete submission
 
 To delete an individual submission, select the menu in the actions column and press the delete option. This will delete the submission.
 
 To delete several submissions at the same time, select each entry by checking the corresponding box and press the delete button.
+
+#### Reopen tasks of a submission
+
+Through the [administration API](/en/platform/core/api.html), you can individually manage the task responses of a submission: view them, transition their status (start, complete, or **reopen** an already completed task so the user can answer it again), and delete them individually or in bulk.
+
+Consider the following:
+
+- Changing the status of a task response requires the **Change Status of Task Response** permission; deleting task responses requires the **Delete Submissions** permission.
+- These operations are only available while the submission is in **Not started** or **Pending** status.
+- All operations are recorded in the platform activity.
 
 #### Invite users
 
