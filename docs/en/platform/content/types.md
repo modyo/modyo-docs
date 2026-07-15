@@ -101,6 +101,19 @@ This field allows you to add a list from which you can select more than one opti
 
 This field allows you to add a text field in which you can type to select an option; it can be predetermined or proposed.
 
+#### Allowed values
+
+In choice fields (Dropdown, Radio, Checkbox, and Multiple choice), the options are managed in the field's **Allowed values** section: use **Add value** and **Delete value** to manage them, and the selector to mark the **Default value**. Before saving, the interface marks the values as **New** or **Edited** so you can review your changes.
+
+Each value is an individual element of the content type:
+
+- When **renaming a value**, the entries that had it selected keep their selection with the new name, across all their versions.
+- When **deleting a value in use**, it is archived: it is no longer offered for new selections, but the entries that already had it selected continue to display it, with no loss of historical data.
+
+:::tip Tip
+The name of an active value does not allow line breaks or starting with the `*` character.
+:::
+
 ### Boolean
 
 This field allows you to add a question or statement (True or False).
