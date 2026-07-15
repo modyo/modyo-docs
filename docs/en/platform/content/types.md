@@ -101,7 +101,7 @@ This field allows you to add a list from which you can select more than one opti
 
 This field allows you to add a text field in which you can type to select an option; it can be predetermined or proposed.
 
-#### Allowed values
+### Allowed values
 
 In choice fields (Dropdown, Radio, Checkbox, and Multiple choice), the options are managed in the field's **Allowed values** section: use **Add value** and **Delete value** to manage them, and the selector to mark the **Default value**. Before saving, the interface marks the values as **New** or **Edited** so you can review your changes.
 

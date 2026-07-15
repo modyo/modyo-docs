@@ -101,9 +101,9 @@ Este campo te permite agregar una lista de la cual puedes seleccionar más de un
 
 Este campo te permite agregar un campo de texto en el cual puedes escribir para seleccionar una opción; puede ser predeterminada o propuesta.
 
-#### Valores permitidos
+### Valores permitidos
 
-En los campos de elección (Dropdown, Radio, Checkbox y Opciones múltiples), las opciones se gestionan en la sección **Valores permitidos** del campo: usa **Agregar valor** y **Eliminar valor** para administrarlas, y el selector para marcar el **Valor predeterminado**. Antes de guardar, la interfaz marca los valores como **Nueva** o **Modificada** para que revises tus cambios.
+En los campos de elección (Dropdown, Radio, Checkbox y Opciones múltiples), las opciones se gestionan en la sección **Valores permitidos** del campo: usa **Agregar valor** y **Eliminar valor** para administrarlas, y el selector para marcar el **Valor predeterminado**. Antes de guardar, la interfaz marca las opciones como **Nueva** o **Modificada** para que revises tus cambios.
 
 Cada valor es un elemento individual del tipo de contenido:
 
