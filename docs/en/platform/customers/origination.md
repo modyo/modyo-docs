@@ -453,6 +453,31 @@ The user sees each selected task with its answers and an **Edit** link that take
 
 In the details of a submission, completed confirmation tasks show the list of **Confirmed Tasks**.
 
+### Tasks answered by agents
+
+Each task in the flow has the **Assigned to** option, which defines who answers it:
+
+- **User**: The task is answered by the end user on the origination page.
+- **Agent**: The task is answered by an administrator from the admin. **Validation** and **Pending review** tasks are always agent tasks; **Input** and **Code snippet** tasks can be configured in either mode.
+
+When the flow reaches an agent task, the assigned administrators receive an email with a direct link to the task and also see it in the **My tasks** view. The effective assignee is resolved in this order: the assignee of the task response, the assignee configured on the task and, failing that, the assignee of the submission; you can reassign a specific task from the submission view, which notifies the new assignee.
+
+From the submission view, the agent opens the task and answers the form with the same experience as the site: live conditional logic, file uploads, repeatable groups, and code snippets. While the task awaits the agent's action, the user sees on the origination page the text configured in **Waiting message shown to the user**.
+
+Additional options depending on the task type:
+
+- **Disable manual completion** (Pending review): Hides the Complete button so the task cannot be completed manually from the admin. Administrators with the **Change Status of Task Response** permission can still complete it.
+- **Allow same-origin** (Code snippet): Grants the task iframe access to the admin origin (session and cookies), disabling the sandbox isolation. Enable it only for trusted snippets.
+
+#### Agent verification for external services
+
+When an agent answers a Code snippet task, your code can obtain a short-lived credential (5 minutes) so an external service can verify that the caller is an agent authorized for that task and submission:
+
+1. From the task iframe, request the credential at `GET .../agent_task_forms/{step_task_id}/assertion` (accepts the optional `audience` parameter with the target service identifier) and send it to the external service.
+2. The external service validates it at `POST /api/admin/customers/{realm_uid}/originations/agent_assertions/introspect` (requires API Access with the view submissions permission). The response indicates `active: true` with the identifiers of the agent, submission, task, and acted user, or `active: false` if the credential expired or the authorization was revoked — validation always checks the current state, not just the signature.
+
+You can find the endpoint details in the [API](/en/platform/core/api.html) Swagger documentation.
+
 ### Conditional Logic
 
 Conditional logic allows you to create more dynamic and intelligent workflows. With this functionality, you can define rules for showing or hiding **Steps**, **Tasks**, and **Input task fields** based on answers provided by users or on existing data within the submission. This allows you to personalize the user experience, presenting only relevant information at each stage of the process and simplifying or bifurcating the interaction. Conditional logic gives you the flexibility to:
