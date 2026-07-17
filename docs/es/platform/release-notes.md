@@ -6,6 +6,19 @@ search: true
 
 ## 10.1
 
+### 10.1.17
+
+:::info Fecha del release
+17 de julio de 2026
+:::
+
+| Módulo | Mejoras |
+|--------|---------|
+| **Core** | • Habilita jemalloc en los contenedores para mitigar el riesgo de falta de memoria (OOM) bajo alta concurrencia<br>• Corrige problema de performance al validar permisos<br>• Actualiza nokogiri para corregir bugs de memoria de baja severidad<br>• Corrige error al consultar el endpoint `me` del admin user con sesión vía SAML<br>• Corrige activación de CORS en los reinos<br>• Corrige visualización del ícono de channel en el menú lateral para usuarios con permisos heredados de grupos |
+| **Content** | • Corrige tags autorizados en rich text para que funcionen con wildcard |
+| **Customers** | • Corrige reindexación en OpenSearch al actualizar solo los custom fields de un usuario<br>• Corrige indexaciones múltiples de un mismo usuario<br>• Corrige error al indexar eventos de usuario de tipo error de inicio de sesión<br>• Agrega opción para ocultar el link de cancelar en la página de originación mediante configuración |
+
+
 ### 10.1.16
 
 :::info Fecha del release
