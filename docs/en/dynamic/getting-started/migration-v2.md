@@ -176,20 +176,23 @@ Several components have been removed in v2.0. Here are the alternatives:
 
 ### DInputSearch
 
-**Removed.** Use `DInput` with icons:
+**Removed in v2.0, reintroduced in v2.6.** If you migrate straight to v2.6 or later, `DInputSearch` is available again as a component with built-in debounce and you don't need to replace it. In the v2.0–v2.5 range it doesn't exist; use `DInput` with icons:
 
 ```diff
-// Before (v1.36.x)
+// Valid replacement only in v2.0–v2.5
 - import { DInputSearch } from '@dynamic-framework/ui-react';
 - <DInputSearch placeholder="Search..." />
 
-// After (v2.0)
 + import { DInput } from '@dynamic-framework/ui-react';
 + <DInput
 +   placeholder="Search..."
 +   iconStart="Search"
 + />
 ```
+
+:::tip On v2.6+ use DInputSearch directly
+As of v2.6, the `DInputSearch` import is a live export. See [Components](../development/components.html#dinputsearch).
+:::
 
 ### DList and DListItem
 

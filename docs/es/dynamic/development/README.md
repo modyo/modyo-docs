@@ -9,7 +9,7 @@ Esta sección cubre todos los aspectos técnicos del desarrollo con Dynamic Fram
 ## Contenido de la Sección
 
 ### [Componentes](components.html)
-Catálogo completo de 43 componentes React especializados:
+Catálogo completo de más de 46 componentes React especializados:
 - Componentes de layout y navegación
 - Componentes de formularios e inputs
 - Componentes de feedback y visuales

@@ -270,6 +270,20 @@ function toggleDarkMode() {
 }
 ```
 
+## CSS Utilities (2.1-2.7)
+
+Between v2.1 and v2.7, new utility classes were added to the library's CSS:
+
+| Utility | Version | Description |
+|---------|---------|-------------|
+| Dark mode utilities | v2.2 | Classes to style dark mode specifically |
+| Hover variants for text and border | v2.5 | `hover:` for text and border color |
+| Responsive `shadow`, `text-opacity`, `rounded`, `border` | v2.3 | Per-breakpoint variants (`sm`, `md`, `lg`…) |
+| `fade-in` | v2.3 | Fade-in utility |
+| CSS grid utilities | v2.5 | Classes for CSS grid layouts |
+
+These classes are available automatically when you import the Dynamic UI CSS; see the [Storybook](https://react.dynamicframework.dev) for the full list and interactive examples.
+
 ## Best Practices
 
 1. **Use CSS variables for dynamic values** - Colors that might change at runtime

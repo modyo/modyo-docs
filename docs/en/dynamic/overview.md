@@ -13,7 +13,7 @@ Dynamic Framework is a React component framework specialized for financial appli
 ```
 @dynamic-framework/
 ├── ui-react/           # React components
-│   ├── components/     # 43 UI components
+│   ├── components/     # more than 46 UI components
 │   ├── hooks/         # Custom React hooks
 │   └── utils/         # Utilities
 ├── styles/            # Design system (Bootstrap 5.3)
@@ -363,6 +363,10 @@ See the [Modyo CLI documentation](/en/platform/tools/cli.html) for all available
 │                           │ └─── Minor: New features
 │                           └───── Major: Breaking changes
 ```
+
+## CDN Distribution
+
+In addition to npm, Dynamic UI and its assets are available through a versioned CDN at `https://cdn.dynamicframework.dev/assets/{version}/ui-react`, useful as an alternative when you'd rather not install the library from npm.
 
 ## Technical Resources
 

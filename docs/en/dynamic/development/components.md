@@ -4,7 +4,7 @@ search: true
 
 # Dynamic Framework Components
 
-Dynamic Framework offers 43 specialized React components for the financial industry, designed to cover the most common needs in banking and financial applications.
+Dynamic Framework offers more than 46 specialized React components for the financial industry, designed to cover the most common needs in banking and financial applications.
 
 ## Component Catalog
 
@@ -23,6 +23,7 @@ Explore all components interactively in our [Storybook](https://react.dynamicfra
 
 ### Form Components
 - **DInput**: Text input with validation states
+- **DInputSearch**: Search input with built-in debounce (reintroduced in v2.6)
 - **DInputCheck**: Checkbox input
 - **DInputSwitch**: Toggle switch input
 - **DInputCounter**: Numeric counter with increment/decrement
@@ -66,6 +67,10 @@ Explore all components interactively in our [Storybook](https://react.dynamicfra
 - **DCreditCard**: Credit/debit card display with flip animation
 - **DVoucher**: Voucher/receipt display component
 - **DOtp**: One-time password input
+
+### State & Utility Components
+- **DDataStateWrapper**: Declarative handling of loading/error/empty states when rendering lists (also exports `EmptyState`, `ErrorState`, `LoadingState`)
+- **DErrorBoundary**: Error boundary with a configurable fallback (based on `react-error-boundary`)
 
 ## Component Usage
 
@@ -135,6 +140,166 @@ Components that support sizes use the `size` prop:
 <DButton size="lg">Large</DButton>
 ```
 
+#### Responsive Sizes (v2.3)
+
+`DButton` and `DBadge` accept a responsive object in `size` with per-breakpoint values (`xs`, `sm`, `md`, `lg`, `xl`, `xxl`), just like `DIcon`:
+
+```tsx
+<DButton size={{ xs: 'sm', md: 'lg' }} text="Continue" />
+<DBadge size={{ xs: 'sm', lg: 'md' }} color="success">Active</DBadge>
+```
+
+### Soft Variant (v2.5)
+
+`DButton` supports `variant="soft"`, which generates the `.btn-soft-{color}` class for a subtle-background style. It combines with `color` and `size`:
+
+```tsx
+<DButton variant="soft" color="primary" text="Soft action" />
+<DButton variant="soft" color="danger" text="Delete" />
+```
+
+## State Components (2.1-2.7)
+
+### DInputSearch
+
+Search input with built-in debounce. Extends `DInput` (omits `onChange`/`defaultValue`/`type`). Unlike `DInput`, its `onChange` returns the **string** directly, not the event.
+
+**Own props:**
+
+| Prop | Type | Description |
+|------|------|-------------|
+| `debounceMs` | `number` | Debounce delay (default `300`) |
+| `onChange` | `(value: string) => void` | Fires after the debounce, receives the string |
+| `onImmediateChange` | `(value: string) => void` | Fires on every keystroke, no debounce |
+| `value` | `string` | Controlled mode |
+| `defaultValue` | `string` | Uncontrolled mode |
+| `placeholder` | `string` | Placeholder text (default `'Search...'`) |
+
+```tsx
+import { DInputSearch } from '@dynamic-framework/ui-react';
+
+// Uncontrolled, with default debounce (300ms)
+<DInputSearch
+  label="Search"
+  placeholder="Search accounts..."
+  onChange={(value) => fetchResults(value)}       // string, after debounce
+  onImmediateChange={(value) => setQuery(value)}  // string, immediate
+/>
+
+// Controlled + custom debounce
+<DInputSearch
+  value={query}
+  debounceMs={500}
+  onChange={(value) => search(value)}
+/>
+```
+
+### DDataStateWrapper
+
+Wraps the rendering of a list and automatically shows loading, error, and empty states. It also exports the `EmptyState`, `ErrorState`, and `LoadingState` sub-components for standalone use.
+
+**Props (`DDataStateWrapperProps<T>`):**
+
+| Prop | Type | Description |
+|------|------|-------------|
+| `isLoading` | `boolean` | Loading state |
+| `isError` | `boolean` | Error state |
+| `data` | `T[] \| undefined` | Data to render |
+| `onRetry` | `() => void` | Retry callback |
+| `messages` | `DDataStateMessages` | Customizable `{ loading?, empty?, error?, retry? }` |
+| `renderLoading` / `renderEmpty` / `renderError` | `ReactNode \| (() => ReactNode)` | Full override of each state |
+| `children` | `(data: T[]) => ReactNode` | Renders the list with guaranteed data |
+
+```tsx
+import { DDataStateWrapper } from '@dynamic-framework/ui-react';
+
+<DDataStateWrapper
+  isLoading={query.isLoading}
+  isError={query.isError}
+  data={query.data}
+  onRetry={query.refetch}
+  messages={{
+    loading: 'Loading transactions...',
+    empty: 'No transactions',
+    error: 'We could not load the transactions',
+    retry: 'Retry',
+  }}
+>
+  {(transactions) => (
+    <DListGroup>
+      {transactions.map((t) => <DListGroupItem key={t.id}>{t.title}</DListGroupItem>)}
+    </DListGroup>
+  )}
+</DDataStateWrapper>
+```
+
+> Pairs with the TanStack Query pattern. See [API Integration](api-integration.html#state-handling-with-ddatastatewrapper).
+
+### DErrorBoundary
+
+Error boundary with a configurable fallback, based on `react-error-boundary`. The library also exports the `useErrorBoundary` hook.
+
+**Props (`DErrorBoundaryProps`):**
+
+| Prop | Type | Description |
+|------|------|-------------|
+| `name` | `string` | Boundary identifier name |
+| `fallback` | `(props: FallbackProps) => ReactNode` | Override of the default fallback |
+| `onError` | `(error: unknown, info: ErrorInfo) => void` | Callback when an error is caught |
+| `children` | `ReactNode` | Protected content |
+
+```tsx
+import { DErrorBoundary } from '@dynamic-framework/ui-react';
+
+<DErrorBoundary
+  name="dashboard"
+  onError={(error, info) => logError(error, info)}
+>
+  <Dashboard />
+</DErrorBoundary>
+```
+
+## API Changes to Existing Components (2.1-2.7)
+
+### DVoucher — icon and href (v2.2)
+
+- `icon` accepts `false | null | string | Partial<DIconProps>`: a Lucide name, a `DIcon` props object, or `false`/`null` to hide it.
+- `amount`, `amountDetails` (`ReactNode`), and `title` (required).
+- The voucher buttons support `href` in addition to `onClick`.
+
+```tsx
+<DVoucher
+  icon={{ icon: 'CircleCheckBig', color: 'success' }}
+  title="Payment Successful"
+  amount="$125.00"
+/>
+```
+
+### DOffcanvas — responsive (v2.7)
+
+- `openFrom`: in addition to `'start' | 'end' | 'top' | 'bottom'`, accepts a responsive object `{ xs?, sm?, md?, lg?, xl?, xxl? }`.
+- `width` / `height`: accept any CSS length (`'320px'`, `'50vw'`, `'100%'`) or a `ResponsiveProp`.
+
+```tsx
+<DOffcanvas
+  openFrom={{ xs: 'bottom', md: 'end' }}
+  width={{ xs: '100%', md: '480px' }}
+/>
+```
+
+### DCarousel — custom arrows (v2.7)
+
+`iconArrowLeft` / `iconArrowRight` accept `DIcon` props:
+
+```tsx
+<DCarousel
+  iconArrowLeft={{ icon: 'ArrowLeft', color: 'primary' }}
+  iconArrowRight={{ icon: 'ArrowRight', color: 'primary' }}
+>
+  {/* slides */}
+</DCarousel>
+```
+
 ## Hooks Exported by the Library
 
 These hooks are **actually exported** from `@dynamic-framework/ui-react`:
@@ -147,6 +312,7 @@ import {
 
   // Component-specific hooks
   useDToast,             // Programmatic toast notifications
+  useConfirmModal,       // Programmatic confirmation (requires DConfirmModalContainer)
   useTabContext,         // Access tab state within DTabs
   useErrorBoundary,      // Error boundary control (from react-error-boundary)
 
@@ -180,6 +346,44 @@ import {
 :::warning Implementation Patterns vs Library Exports
 Hooks like `useApi`, `useAccounts`, or `useFormValidation` shown in documentation are **implementation patterns** you create in your project, NOT exports from the library. See [API Integration](api-integration.html) for pattern examples.
 :::
+
+### useConfirmModal — programmatic confirmation
+
+Hook to open a confirmation modal from code. It requires mounting `DConfirmModalContainer` once near the root (next to `DContextProvider`) and being inside `DContextProvider`.
+
+**Config (`UseConfirmModalConfig`):**
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `title` / `message` | `string` | Modal title and message |
+| `confirmLabel` / `cancelLabel` | `string` | Button labels |
+| `confirmColor` | `'primary' \| 'danger' \| 'warning'` | Confirm button color |
+| `onConfirm` | `() => void \| Promise<void>` | Confirmation callback (required) |
+| `onClose` | `() => void` | Callback on close |
+| `critical` | `{ code: string; codeLabel?: string; inputPlaceholder?: string }` | Critical confirmation that requires typing an exact code |
+
+The hook returns `{ open: () => void }`.
+
+```tsx
+import { useConfirmModal, DConfirmModalContainer } from '@dynamic-framework/ui-react';
+
+// 1. Mount the container once (next to DContextProvider)
+<DConfirmModalContainer />
+
+// 2. Use the hook
+function DeleteAccountButton() {
+  const confirm = useConfirmModal({
+    title: 'Delete account',
+    message: 'This action cannot be undone.',
+    confirmColor: 'danger',
+    confirmLabel: 'Delete',
+    critical: { code: 'DELETE ACCOUNT' }, // the user must type this
+    onConfirm: async () => { await deleteAccount(); },
+  });
+
+  return <DButton color="danger" text="Delete" onClick={confirm.open} />;
+}
+```
 
 ## Context Provider
 
@@ -266,6 +470,31 @@ For custom colors, use CSS:
 ```tsx
 <DIcon icon="Heart" style={{ color: '#e91e63' }} />
 ```
+
+### Custom Icons (v2.7)
+
+In addition to Lucide icons, `DIcon` accepts your own icons in two ways:
+
+**1. Pass a React component directly.** The `icon` prop accepts `string | IconComponent`:
+
+```tsx
+import { MyIconSvg } from './icons';
+
+<DIcon icon={MyIconSvg} />
+```
+
+**2. Register icons by name** in `DContextProvider` with the `iconRegistry` prop:
+
+```tsx
+const iconRegistry = { NMChevron: MyIconSvg };
+
+<DContextProvider iconRegistry={iconRegistry}>
+  <DIcon icon="NMChevron" />   {/* resolves from the registry */}
+  <DIcon icon="Home" />        {/* falls back to Lucide */}
+</DContextProvider>
+```
+
+The `iconRegistry` **takes precedence over Lucide** when the name matches in both. If the name is not in the registry, it falls back to Lucide.
 
 ### Finding Icons
 

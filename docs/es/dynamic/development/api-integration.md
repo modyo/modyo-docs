@@ -444,6 +444,47 @@ export function AccountList() {
 }
 ```
 
+## Manejo de Estados con DDataStateWrapper
+
+En lugar de escribir manualmente los `if (isLoading)` / `if (error)` en cada componente, `DDataStateWrapper` (disponible desde v2.5) maneja de forma declarativa los estados de loading, error y empty a partir del resultado de un `useQuery`. Ver [Componentes](components.html#ddatastatewrapper) para la referencia completa de props.
+
+```tsx
+// src/components/AccountList.tsx
+import { DDataStateWrapper, DListGroup, DListGroupItem, DCurrencyText } from '@dynamic-framework/ui-react';
+import { useAccounts } from '@/hooks/useAccounts';
+
+export function AccountList() {
+  const { data, isLoading, isError, refetch } = useAccounts();
+
+  return (
+    <DDataStateWrapper
+      isLoading={isLoading}
+      isError={isError}
+      data={data}
+      onRetry={refetch}
+      messages={{
+        loading: 'Cargando cuentas...',
+        empty: 'No tienes cuentas',
+        error: 'No pudimos cargar tus cuentas',
+        retry: 'Reintentar',
+      }}
+    >
+      {(accounts) => (
+        <DListGroup>
+          {accounts.map((account) => (
+            <DListGroupItem key={account.id}>
+              {account.name} — <DCurrencyText value={account.balance} />
+            </DListGroupItem>
+          ))}
+        </DListGroup>
+      )}
+    </DDataStateWrapper>
+  );
+}
+```
+
+Los datos que llegan al `children` están garantizados como no vacíos: el wrapper solo lo invoca cuando hay datos, y muestra el estado empty automáticamente cuando el array está vacío.
+
 ## Autenticación
 
 ### OAuth 2.0 con oidc-client-ts

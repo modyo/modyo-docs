@@ -13,7 +13,7 @@ Dynamic Framework es un framework de componentes React especializado para aplica
 ```
 @dynamic-framework/
 ├── ui-react/           # Componentes React
-│   ├── components/     # 43 componentes UI
+│   ├── components/     # más de 46 componentes UI
 │   ├── hooks/         # Custom React hooks
 │   └── utils/         # Utilidades
 ├── styles/            # Sistema de diseño
@@ -363,6 +363,10 @@ Consulta la [documentación del Modyo CLI](/es/platform/tools/cli.html) para tod
 │                           │ └─── Minor: New features
 │                           └───── Major: Breaking changes
 ```
+
+## Distribución vía CDN
+
+Además de npm, Dynamic UI y sus assets están disponibles a través de un CDN versionado en `https://cdn.dynamicframework.dev/assets/{version}/ui-react`, útil como alternativa cuando no quieres instalar la librería desde npm.
 
 ## Recursos Técnicos
 

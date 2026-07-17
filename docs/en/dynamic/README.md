@@ -11,7 +11,7 @@ Dynamic UI 2.0 brings a new visual language, Lucide icons, and 8 new components.
 ## Technical Features
 
 ### Components
-- **43 React components** specialized for banking
+- **More than 46 React components** specialized for banking
 - **Design system** based on Bootstrap 5
 - **Full TypeScript** support
 - **WCAG 2.1 accessibility** integrated

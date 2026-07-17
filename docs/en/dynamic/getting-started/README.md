@@ -47,7 +47,7 @@ Comprehensive checklist before deploying to production:
 
 Before starting, make sure you have:
 
-- **Node.js** v20 or higher
+- **Node.js** >=22.0.0
 - **NPM** 10.x or higher
 - **Git** for version control
 - **Modyo Account** with access to Dynamic Framework

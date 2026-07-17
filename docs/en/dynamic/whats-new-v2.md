@@ -186,6 +186,33 @@ Component for displaying receipts and vouchers, with download capability.
 </DVoucher>
 ```
 
+## Highlights After 2.0 (2.1-2.7)
+
+Between January and July 2026, seven releases (v2.1 → v2.7) shipped new components, a new hook, API changes to existing components, and CSS utilities.
+
+### New components
+
+- **DInputSearch** (reintroduced in v2.6): search input with built-in debounce. Its `onChange` returns the **string** directly (not the event). See [Components](development/components.html#dinputsearch).
+- **DDataStateWrapper** (+ `EmptyState` / `ErrorState` / `LoadingState`): declarative handling of loading/error/empty states when rendering lists. Pairs with TanStack Query — see [API Integration](development/api-integration.html#state-handling-with-ddatastatewrapper).
+- **DErrorBoundary**: error boundary with a configurable fallback, based on `react-error-boundary`.
+
+### New hook
+
+- **useConfirmModal** (+ `DConfirmModalContainer`): programmatic confirmation, with support for critical confirmation that requires typing an exact code. See [Components](development/components.html#hooks-exported-by-the-library).
+
+### API changes to existing components
+
+- **DButton**: new `variant="soft"` (v2.5) and responsive per-breakpoint sizes (v2.3).
+- **DBadge**: responsive per-breakpoint sizes (v2.3).
+- **DIcon**: custom icons via `iconRegistry` — accepts a direct React component or a name registered in `DContextProvider` (v2.7).
+- **DOffcanvas**: responsive `openFrom`, `width`, and `height` per breakpoint (v2.7).
+- **DCarousel**: customizable arrows with `iconArrowLeft` / `iconArrowRight` (v2.7).
+- **DVoucher**: `icon` prop (Lucide name, `DIcon` props object, or `false`/`null`) and `href` support on its buttons (v2.2).
+
+### CSS utilities
+
+New utilities for dark mode, hover variants for text/border, responsive `shadow`/`rounded`/`border`/`text-opacity`, `fade-in`, and CSS grid. See [Theming](customization/theming.html#css-utilities-2-1-2-7).
+
 ## Technical Improvements
 
 ### React 19 Compatibility
@@ -222,10 +249,13 @@ For a detailed migration guide, see the [Migration Guide to v2.0](getting-starte
 3. **DButton**: `pill` prop removed (use `className="rounded-pill"`)
 4. **Removed components** (see [Migration Guide](getting-started/migration-v2.html) for replacements):
    - `DSkeleton` → Use Bootstrap placeholder utilities
-   - `DInputSearch` → Use `DInput` with `iconStart="Search"`
    - `DList/DListItem` → Use `DListGroup/DListGroupItem`
    - `DQuickAction*` → Use base components
    - `DTableHead` → Removed (no replacement)
+
+:::tip DInputSearch is back in v2.6
+`DInputSearch` did not exist in v2.0 (the recommendation was `DInput` with `iconStart="Search"`), but it was **reintroduced in v2.6** as a new component with built-in debounce. See [Highlights After 2.0](#highlights-after-2-0-2-1-2-7).
+:::
 
 ## Resources
 

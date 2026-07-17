@@ -127,16 +127,18 @@ Before deploying your Dynamic Framework application to production, use this chec
 
 ### User-Facing Errors
 
-- [ ] **Error boundaries** wrap major sections
+- [ ] **Error boundaries** wrap major sections — use the library's `DErrorBoundary` (based on `react-error-boundary`) with its `onError` prop for logging
   ```tsx
-  <ErrorBoundary fallback={<ErrorFallback />}>
+  import { DErrorBoundary } from '@dynamic-framework/ui-react';
+
+  <DErrorBoundary name="dashboard" onError={(error, info) => logError(error, info)}>
     <Dashboard />
-  </ErrorBoundary>
+  </DErrorBoundary>
   ```
 
 - [ ] **API errors** display user-friendly messages
 - [ ] **Network failures** handled gracefully with retry options
-- [ ] **Empty states** designed for no-data scenarios
+- [ ] **Data states (loading / error / empty)** covered — `DDataStateWrapper` handles them declaratively when rendering lists, with `onRetry` for retries (see [Components](../development/components.html#ddatastatewrapper))
 
 ### Error Tracking
 

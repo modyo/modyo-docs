@@ -27,7 +27,7 @@ Todo lo necesario para comenzar a desarrollar con Dynamic.
 ### [Desarrollo](development/)
 Guías técnicas para construir aplicaciones con Dynamic.
 
-- **[Componentes](development/components.html)** - Catálogo de 43 componentes especializados
+- **[Componentes](development/components.html)** - Catálogo de más de 46 componentes especializados
 - **[Integración con APIs](development/api-integration.html)** - Conexión con servicios backend
 
 ### [Personalización](customization/)
@@ -54,7 +54,7 @@ Aplicación disponible en `http://localhost:5173`
 ## Características Técnicas
 
 ### Componentes
-- **43 componentes React** especializados para banca
+- **Más de 46 componentes React** especializados para banca
 - **Sistema de diseño** basado en Bootstrap 5
 - **TypeScript** support completo
 - **Accesibilidad WCAG 2.1** integrada

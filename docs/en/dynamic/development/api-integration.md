@@ -444,6 +444,47 @@ export function AccountList() {
 }
 ```
 
+## State Handling with DDataStateWrapper
+
+Instead of manually writing `if (isLoading)` / `if (error)` in every component, `DDataStateWrapper` (available since v2.5) declaratively handles loading, error, and empty states from a `useQuery` result. See [Components](components.html#ddatastatewrapper) for the full props reference.
+
+```tsx
+// src/components/AccountList.tsx
+import { DDataStateWrapper, DListGroup, DListGroupItem, DCurrencyText } from '@dynamic-framework/ui-react';
+import { useAccounts } from '@/hooks/useAccounts';
+
+export function AccountList() {
+  const { data, isLoading, isError, refetch } = useAccounts();
+
+  return (
+    <DDataStateWrapper
+      isLoading={isLoading}
+      isError={isError}
+      data={data}
+      onRetry={refetch}
+      messages={{
+        loading: 'Loading accounts...',
+        empty: 'You have no accounts',
+        error: 'We could not load your accounts',
+        retry: 'Retry',
+      }}
+    >
+      {(accounts) => (
+        <DListGroup>
+          {accounts.map((account) => (
+            <DListGroupItem key={account.id}>
+              {account.name} — <DCurrencyText value={account.balance} />
+            </DListGroupItem>
+          ))}
+        </DListGroup>
+      )}
+    </DDataStateWrapper>
+  );
+}
+```
+
+The data reaching `children` is guaranteed to be non-empty: the wrapper only invokes it when data is present, and shows the empty state automatically when the array is empty.
+
 ## Authentication
 
 ### OAuth 2.0 with oidc-client-ts

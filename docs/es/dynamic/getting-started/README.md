@@ -47,7 +47,7 @@ Checklist completo antes de desplegar a producción:
 
 Antes de comenzar, asegúrate de tener:
 
-- **Node.js** v20 o superior
+- **Node.js** >=22.0.0
 - **NPM** 10.x o superior
 - **Git** para control de versiones
 - **Cuenta Modyo** con acceso a Dynamic Framework

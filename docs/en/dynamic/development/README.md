@@ -9,7 +9,7 @@ This section covers all technical aspects of development with Dynamic Framework,
 ## Section Contents
 
 ### [Components](components.html)
-Complete catalog of 43 specialized React components:
+Complete catalog of more than 46 specialized React components:
 - Layout and navigation components
 - Form and input components
 - Feedback and visual components

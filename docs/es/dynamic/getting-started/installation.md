@@ -10,7 +10,7 @@ Esta guía te ayudará a comenzar rápidamente con Dynamic Framework, desde la i
 
 Antes de comenzar, asegúrate de tener instalado:
 
-- **Node.js** v20 o superior
+- **Node.js** >=22.0.0
 - **NPM** 10.x o superior
 - **Git** para control de versiones
 - **Cuenta Modyo** con acceso a Dynamic Framework

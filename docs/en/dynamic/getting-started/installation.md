@@ -10,7 +10,7 @@ This guide will help you get started quickly with Dynamic Framework, from instal
 
 Before starting, make sure you have installed:
 
-- **Node.js** v20 or higher
+- **Node.js** >=22.0.0
 - **NPM** 10.x or higher
 - **Git** for version control
 - **Modyo Account** with access to Dynamic Framework

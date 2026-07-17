@@ -270,6 +270,20 @@ function toggleDarkMode() {
 }
 ```
 
+## Utilidades CSS (2.1-2.7)
+
+Entre v2.1 y v2.7 se agregaron nuevas clases de utilidad al CSS de la librería:
+
+| Utilidad | Versión | Descripción |
+|----------|---------|-------------|
+| Utilidades de modo oscuro | v2.2 | Clases para estilizar específicamente el modo oscuro |
+| Variantes hover de texto y borde | v2.5 | `hover:` para color de texto y borde |
+| Responsive en `shadow`, `text-opacity`, `rounded`, `border` | v2.3 | Variantes por breakpoint (`sm`, `md`, `lg`…) |
+| `fade-in` | v2.3 | Utilidad de aparición gradual |
+| Utilidades de CSS grid | v2.5 | Clases para layouts con CSS grid |
+
+Estas clases están disponibles automáticamente al importar el CSS de Dynamic UI; consulta el [Storybook](https://react.dynamicframework.dev) para el listado completo y ejemplos interactivos.
+
 ## Mejores Prácticas
 
 1. **Usa variables CSS para valores dinámicos** - Colores que pueden cambiar en runtime

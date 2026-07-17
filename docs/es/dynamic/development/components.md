@@ -4,7 +4,7 @@ search: true
 
 # Componentes de Dynamic Framework
 
-Dynamic Framework ofrece 43 componentes React especializados para la industria financiera, diseñados para cubrir las necesidades más comunes en aplicaciones bancarias y financieras.
+Dynamic Framework ofrece más de 46 componentes React especializados para la industria financiera, diseñados para cubrir las necesidades más comunes en aplicaciones bancarias y financieras.
 
 ## Catálogo de Componentes
 
@@ -23,6 +23,7 @@ Explora todos los componentes de forma interactiva en nuestro [Storybook](https:
 
 ### Componentes de Formulario
 - **DInput**: Input de texto con estados de validación
+- **DInputSearch**: Input de búsqueda con debounce integrado (reintroducido en v2.6)
 - **DInputCheck**: Input de checkbox
 - **DInputSwitch**: Input de toggle switch
 - **DInputCounter**: Contador numérico con incremento/decremento
@@ -66,6 +67,10 @@ Explora todos los componentes de forma interactiva en nuestro [Storybook](https:
 - **DCreditCard**: Visualización de tarjeta de crédito/débito con animación flip
 - **DVoucher**: Componente de visualización de voucher/recibo
 - **DOtp**: Input de contraseña de un solo uso
+
+### Componentes de Estado y Utilidad
+- **DDataStateWrapper**: Manejo declarativo de estados loading/error/empty al renderizar listas (exporta también `EmptyState`, `ErrorState`, `LoadingState`)
+- **DErrorBoundary**: Límite de error con fallback configurable (basado en `react-error-boundary`)
 
 ## Uso de Componentes
 
@@ -135,6 +140,166 @@ Los componentes que soportan tamaños usan la prop `size`:
 <DButton size="lg">Grande</DButton>
 ```
 
+#### Tamaños Responsive (v2.3)
+
+`DButton` y `DBadge` aceptan un objeto responsive en `size` con valores por breakpoint (`xs`, `sm`, `md`, `lg`, `xl`, `xxl`), igual que `DIcon`:
+
+```tsx
+<DButton size={{ xs: 'sm', md: 'lg' }} text="Continuar" />
+<DBadge size={{ xs: 'sm', lg: 'md' }} color="success">Activo</DBadge>
+```
+
+### Variante Soft (v2.5)
+
+`DButton` soporta `variant="soft"`, que genera la clase `.btn-soft-{color}` para un estilo de fondo tenue. Combina con `color` y `size`:
+
+```tsx
+<DButton variant="soft" color="primary" text="Acción suave" />
+<DButton variant="soft" color="danger" text="Eliminar" />
+```
+
+## Componentes de Estado (2.1-2.7)
+
+### DInputSearch
+
+Input de búsqueda con debounce integrado. Extiende `DInput` (omite `onChange`/`defaultValue`/`type`). A diferencia de `DInput`, su `onChange` entrega directamente el **string**, no el evento.
+
+**Props propias:**
+
+| Prop | Tipo | Descripción |
+|------|------|-------------|
+| `debounceMs` | `number` | Retardo del debounce (default `300`) |
+| `onChange` | `(value: string) => void` | Se dispara tras el debounce, recibe el string |
+| `onImmediateChange` | `(value: string) => void` | Se dispara en cada tecla, sin debounce |
+| `value` | `string` | Modo controlado |
+| `defaultValue` | `string` | Modo no controlado |
+| `placeholder` | `string` | Texto placeholder (default `'Search...'`) |
+
+```tsx
+import { DInputSearch } from '@dynamic-framework/ui-react';
+
+// No controlado, con debounce por defecto (300ms)
+<DInputSearch
+  label="Buscar"
+  placeholder="Buscar cuentas..."
+  onChange={(value) => fetchResults(value)}       // string, tras debounce
+  onImmediateChange={(value) => setQuery(value)}  // string, inmediato
+/>
+
+// Controlado + debounce personalizado
+<DInputSearch
+  value={query}
+  debounceMs={500}
+  onChange={(value) => search(value)}
+/>
+```
+
+### DDataStateWrapper
+
+Envuelve el renderizado de una lista y muestra automáticamente los estados de loading, error y empty. Exporta también los sub-componentes `EmptyState`, `ErrorState` y `LoadingState` para usarlos por separado.
+
+**Props (`DDataStateWrapperProps<T>`):**
+
+| Prop | Tipo | Descripción |
+|------|------|-------------|
+| `isLoading` | `boolean` | Estado de carga |
+| `isError` | `boolean` | Estado de error |
+| `data` | `T[] \| undefined` | Datos a renderizar |
+| `onRetry` | `() => void` | Callback de reintento |
+| `messages` | `DDataStateMessages` | `{ loading?, empty?, error?, retry? }` personalizables |
+| `renderLoading` / `renderEmpty` / `renderError` | `ReactNode \| (() => ReactNode)` | Override total de cada estado |
+| `children` | `(data: T[]) => ReactNode` | Render de la lista con datos garantizados |
+
+```tsx
+import { DDataStateWrapper } from '@dynamic-framework/ui-react';
+
+<DDataStateWrapper
+  isLoading={query.isLoading}
+  isError={query.isError}
+  data={query.data}
+  onRetry={query.refetch}
+  messages={{
+    loading: 'Cargando movimientos...',
+    empty: 'No hay movimientos',
+    error: 'No pudimos cargar los movimientos',
+    retry: 'Reintentar',
+  }}
+>
+  {(movimientos) => (
+    <DListGroup>
+      {movimientos.map((m) => <DListGroupItem key={m.id}>{m.title}</DListGroupItem>)}
+    </DListGroup>
+  )}
+</DDataStateWrapper>
+```
+
+> Encaja con el patrón TanStack Query. Ver [Integración con APIs](api-integration.html#manejo-de-estados-con-ddatastatewrapper).
+
+### DErrorBoundary
+
+Límite de error con fallback configurable, basado en `react-error-boundary`. La librería también exporta el hook `useErrorBoundary`.
+
+**Props (`DErrorBoundaryProps`):**
+
+| Prop | Tipo | Descripción |
+|------|------|-------------|
+| `name` | `string` | Nombre identificador del boundary |
+| `fallback` | `(props: FallbackProps) => ReactNode` | Override del fallback por defecto |
+| `onError` | `(error: unknown, info: ErrorInfo) => void` | Callback al capturar un error |
+| `children` | `ReactNode` | Contenido protegido |
+
+```tsx
+import { DErrorBoundary } from '@dynamic-framework/ui-react';
+
+<DErrorBoundary
+  name="dashboard"
+  onError={(error, info) => logError(error, info)}
+>
+  <Dashboard />
+</DErrorBoundary>
+```
+
+## Cambios de API en Componentes Existentes (2.1-2.7)
+
+### DVoucher — icono y href (v2.2)
+
+- `icon` acepta `false | null | string | Partial<DIconProps>`: un nombre de Lucide, un objeto de props de `DIcon`, o `false`/`null` para ocultarlo.
+- `amount`, `amountDetails` (`ReactNode`) y `title` (requerido).
+- Los botones del voucher soportan `href` además de `onClick`.
+
+```tsx
+<DVoucher
+  icon={{ icon: 'CircleCheckBig', color: 'success' }}
+  title="Pago Exitoso"
+  amount="$125.00"
+/>
+```
+
+### DOffcanvas — responsive (v2.7)
+
+- `openFrom`: además de `'start' | 'end' | 'top' | 'bottom'`, acepta un objeto responsive `{ xs?, sm?, md?, lg?, xl?, xxl? }`.
+- `width` / `height`: aceptan cualquier CSS length (`'320px'`, `'50vw'`, `'100%'`) o un `ResponsiveProp`.
+
+```tsx
+<DOffcanvas
+  openFrom={{ xs: 'bottom', md: 'end' }}
+  width={{ xs: '100%', md: '480px' }}
+/>
+```
+
+### DCarousel — flechas personalizadas (v2.7)
+
+`iconArrowLeft` / `iconArrowRight` aceptan las props de `DIcon`:
+
+```tsx
+<DCarousel
+  iconArrowLeft={{ icon: 'ArrowLeft', color: 'primary' }}
+  iconArrowRight={{ icon: 'ArrowRight', color: 'primary' }}
+>
+  {/* slides */}
+</DCarousel>
+```
+
 ## Hooks Exportados por la Librería
 
 Estos hooks son **realmente exportados** desde `@dynamic-framework/ui-react`:
@@ -147,6 +312,7 @@ import {
 
   // Hooks específicos de componentes
   useDToast,             // Notificaciones toast programáticas
+  useConfirmModal,       // Confirmación programática (requiere DConfirmModalContainer)
   useTabContext,         // Acceso al estado de tabs dentro de DTabs
   useErrorBoundary,      // Control de error boundary (de react-error-boundary)
 
@@ -180,6 +346,44 @@ import {
 :::warning Patrones de Implementación vs Exports de la Librería
 Hooks como `useApi`, `useAccounts`, o `useFormValidation` mostrados en la documentación son **patrones de implementación** que creas en tu proyecto, NO exports de la librería. Ver [Integración con APIs](api-integration.html) para ejemplos de patrones.
 :::
+
+### useConfirmModal — confirmación programática
+
+Hook para abrir un modal de confirmación desde código. Requiere montar `DConfirmModalContainer` una vez cerca de la raíz (junto al `DContextProvider`) y estar dentro de `DContextProvider`.
+
+**Config (`UseConfirmModalConfig`):**
+
+| Campo | Tipo | Descripción |
+|-------|------|-------------|
+| `title` / `message` | `string` | Título y mensaje del modal |
+| `confirmLabel` / `cancelLabel` | `string` | Textos de los botones |
+| `confirmColor` | `'primary' \| 'danger' \| 'warning'` | Color del botón de confirmación |
+| `onConfirm` | `() => void \| Promise<void>` | Callback de confirmación (requerido) |
+| `onClose` | `() => void` | Callback al cerrar |
+| `critical` | `{ code: string; codeLabel?: string; inputPlaceholder?: string }` | Confirmación crítica que exige teclear un código exacto |
+
+El hook retorna `{ open: () => void }`.
+
+```tsx
+import { useConfirmModal, DConfirmModalContainer } from '@dynamic-framework/ui-react';
+
+// 1. Montar el contenedor una vez (junto a DContextProvider)
+<DConfirmModalContainer />
+
+// 2. Usar el hook
+function DeleteAccountButton() {
+  const confirm = useConfirmModal({
+    title: 'Eliminar cuenta',
+    message: 'Esta acción no se puede deshacer.',
+    confirmColor: 'danger',
+    confirmLabel: 'Eliminar',
+    critical: { code: 'ELIMINAR CUENTA' }, // el usuario debe teclear esto
+    onConfirm: async () => { await deleteAccount(); },
+  });
+
+  return <DButton color="danger" text="Eliminar" onClick={confirm.open} />;
+}
+```
 
 ## Context Provider
 
@@ -266,6 +470,31 @@ Para colores personalizados, usa CSS:
 ```tsx
 <DIcon icon="Heart" style={{ color: '#e91e63' }} />
 ```
+
+### Iconos Personalizados (v2.7)
+
+Además de los iconos de Lucide, `DIcon` acepta iconos propios de dos formas:
+
+**1. Pasar un componente React directamente.** La prop `icon` acepta `string | IconComponent`:
+
+```tsx
+import { MiIconoSvg } from './icons';
+
+<DIcon icon={MiIconoSvg} />
+```
+
+**2. Registrar iconos por nombre** en `DContextProvider` con la prop `iconRegistry`:
+
+```tsx
+const iconRegistry = { NMChevron: MiIconoSvg };
+
+<DContextProvider iconRegistry={iconRegistry}>
+  <DIcon icon="NMChevron" />   {/* resuelve desde el registry */}
+  <DIcon icon="Home" />        {/* fallback a Lucide */}
+</DContextProvider>
+```
+
+El `iconRegistry` **tiene prioridad sobre Lucide** cuando el nombre coincide en ambos. Si el nombre no está en el registry, cae a Lucide.
 
 ### Encontrar Iconos
 

@@ -186,6 +186,33 @@ Componente para mostrar recibos y comprobantes, con capacidad de descarga.
 </DVoucher>
 ```
 
+## Novedades posteriores a 2.0 (2.1-2.7)
+
+Entre enero y julio de 2026 se publicaron siete releases (v2.1 → v2.7) que agregan componentes, un hook nuevo, cambios de API en componentes existentes y utilidades CSS.
+
+### Nuevos componentes
+
+- **DInputSearch** (reintroducido en v2.6): input de búsqueda con debounce integrado. Su `onChange` entrega directamente el **string** (no el evento). Ver [Componentes](development/components.html#dinputsearch).
+- **DDataStateWrapper** (+ `EmptyState` / `ErrorState` / `LoadingState`): manejo declarativo de estados de loading/error/empty al renderizar listas. Encaja con TanStack Query — ver [Integración con APIs](development/api-integration.html#manejo-de-estados-con-ddatastatewrapper).
+- **DErrorBoundary**: límite de error con fallback configurable, basado en `react-error-boundary`.
+
+### Nuevo hook
+
+- **useConfirmModal** (+ `DConfirmModalContainer`): confirmación programática, con soporte para confirmación crítica que exige teclear un código exacto. Ver [Componentes](development/components.html#hooks-exportados-por-la-libreria).
+
+### Cambios de API en componentes existentes
+
+- **DButton**: nueva `variant="soft"` (v2.5) y tamaños responsive por breakpoint (v2.3).
+- **DBadge**: tamaños responsive por breakpoint (v2.3).
+- **DIcon**: iconos personalizados vía `iconRegistry` — acepta un componente React directo o un nombre registrado en `DContextProvider` (v2.7).
+- **DOffcanvas**: `openFrom`, `width` y `height` responsive por breakpoint (v2.7).
+- **DCarousel**: flechas personalizables con `iconArrowLeft` / `iconArrowRight` (v2.7).
+- **DVoucher**: props `icon` (nombre Lucide, objeto de props de `DIcon`, o `false`/`null`) y soporte de `href` en sus botones (v2.2).
+
+### Utilidades CSS
+
+Nuevas utilidades para modo oscuro, variantes hover de texto/borde, responsive en `shadow`/`rounded`/`border`/`text-opacity`, `fade-in` y CSS grid. Ver [Sistema de Temas](customization/theming.html#utilidades-css-2-1-2-7).
+
 ## Mejoras Técnicas
 
 ### Compatibilidad con React 19
@@ -222,10 +249,13 @@ Para una guía detallada de migración, consulta la [Guía de Migración a v2.0]
 3. **DButton**: Prop `pill` eliminada (usar `className="rounded-pill"`)
 4. **Componentes eliminados** (ver [Guía de Migración](getting-started/migration-v2.html) para reemplazos):
    - `DSkeleton` → Usar utilidades placeholder de Bootstrap
-   - `DInputSearch` → Usar `DInput` con `iconStart="Search"`
    - `DList/DListItem` → Usar `DListGroup/DListGroupItem`
    - `DQuickAction*` → Usar componentes base
    - `DTableHead` → Eliminado (sin reemplazo)
+
+:::tip DInputSearch volvió en v2.6
+`DInputSearch` no existía en v2.0 (se recomendaba `DInput` con `iconStart="Search"`), pero fue **reintroducido en v2.6** como componente nuevo con debounce integrado. Ver [Novedades posteriores a 2.0](#novedades-posteriores-a-2-0-2-1-2-7).
+:::
 
 ## Recursos
 
