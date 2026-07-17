@@ -6,6 +6,19 @@ search: true
 
 ## 10.1
 
+### 10.1.17
+
+:::info Release date
+July 17, 2026
+:::
+
+| Module | Improvements |
+|--------|---------|
+| **Core** | • Enables jemalloc in containers to mitigate out-of-memory (OOM) risk under high concurrency<br>• Fixes performance issue when validating permissions<br>• Updates nokogiri to fix low-severity memory bugs<br>• Fixes error when querying the admin user's `me` endpoint with a SAML session<br>• Fixes CORS activation in realms<br>• Fixes visibility of the channel icon in the side menu for users with permissions inherited from groups |
+| **Content** | • Fixes authorized rich text tags so they work with wildcards |
+| **Customers** | • Fixes OpenSearch reindexing when only a user's custom fields are updated<br>• Fixes duplicate indexing of the same user<br>• Fixes error when indexing login-error type user events<br>• Adds option to hide the cancel link on the origination page via configuration |
+
+
 ### 10.1.16
 
 :::info Release date
