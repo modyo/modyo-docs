@@ -466,15 +466,15 @@ From the submission view, the agent opens the task and answers the form with the
 
 Additional options depending on the task type:
 
-- **Disable manual completion** (Pending review): Hides the Complete button so the task cannot be completed manually from the admin. Administrators with the **Change Status of Task Response** permission can still complete it.
+- **Disable manual completion** (Pending review): Hides the **Complete** button so the task cannot be completed manually from the admin. Administrators with the **Change Status of Task Response** permission can still complete it.
 - **Allow same-origin** (Code snippet): Grants the task iframe access to the admin origin (session and cookies), disabling the sandbox isolation. Enable it only for trusted snippets.
 
 #### Agent verification for external services
 
 When an agent answers a Code snippet task, your code can obtain a short-lived credential (5 minutes) so an external service can verify that the caller is an agent authorized for that task and submission:
 
-1. From the task iframe, request the credential at `GET .../agent_task_forms/{step_task_id}/assertion` (accepts the optional `audience` parameter with the target service identifier) and send it to the external service.
-2. The external service validates it at `POST /api/admin/customers/{realm_uid}/originations/agent_assertions/introspect` (requires API Access with the view submissions permission). The response indicates `active: true` with the identifiers of the agent, submission, task, and acted user, or `active: false` if the credential expired or the authorization was revoked — validation always checks the current state, not just the signature.
+1. From the task iframe, request the credential at `GET /admin/customers/{realm_uid}/originations/{origination_id}/submissions/{submission_id}/agent_task_forms/{step_task_id}/assertion` (same admin base where the iframe runs; accepts the optional `audience` parameter with the target service identifier) and send it to the external service.
+2. The external service validates it at `POST /api/admin/customers/{realm_uid}/originations/agent_assertions/introspect` (requires API Access with a permission that includes viewing submissions: **View All Submissions** or **View Assigned Submissions**). The response indicates `active: true` with the identifiers of the agent, submission, task, and acted user, or `active: false` if the credential expired or the authorization was revoked — validation always checks the current state, not just the signature.
 
 You can find the endpoint details in the [API](/en/platform/core/api.html) Swagger documentation.
 
