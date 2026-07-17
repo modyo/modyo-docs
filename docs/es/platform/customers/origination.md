@@ -454,6 +454,31 @@ El usuario ve cada tarea seleccionada con sus respuestas y un enlace **Editar** 
 
 En los detalles de una respuesta, las tareas de confirmación completadas muestran el listado de **Tareas confirmadas**.
 
+### Tareas respondidas por agentes
+
+Cada tarea del flujo tiene la opción **Asignado a**, que define quién la responde:
+
+- **Usuario**: La tarea la responde el usuario final en la página de originación.
+- **Agente**: La tarea la responde un administrador desde el admin. Las tareas de **Validación** y **Revisión pendiente** son siempre de agente; las tareas **Input** y **Snippet de código** pueden configurarse en cualquiera de los dos modos.
+
+Cuando el flujo llega a una tarea de agente, los administradores asignados reciben un correo con el enlace directo a la tarea y también la ven en la vista **Mis tareas**. El asignado efectivo se resuelve en este orden: el asignado de la respuesta a la tarea, el asignado configurado en la tarea y, en su defecto, el asignado general de la respuesta; puedes reasignar una tarea específica desde la vista de la respuesta, lo que notifica al nuevo asignado.
+
+Desde la vista de la respuesta, el agente abre la tarea y responde el formulario con la misma experiencia del sitio: lógica condicional en vivo, carga de archivos, grupos repetibles y snippets de código. Mientras la tarea espera la acción del agente, el usuario ve en la página de originación el texto configurado en **Mensaje de espera que ve el usuario**.
+
+Opciones adicionales según el tipo de tarea:
+
+- **Desactivar el completado manual** (Revisión pendiente): Oculta el botón **Completar** para que la tarea no pueda completarse manualmente desde el admin. Los administradores con el permiso **Cambiar estado de la Respuesta de una Tarea** pueden completarla de todas formas.
+- **Permitir same-origin** (Snippet de código): Otorga al iframe de la tarea acceso al origen del admin (sesión y cookies), desactivando el aislamiento del sandbox. Actívalo solo para snippets de confianza.
+
+#### Verificación de agentes para servicios externos
+
+Cuando un agente responde una tarea de Snippet de código, tu código puede obtener una credencial de corta vida (5 minutos) para que un servicio externo verifique que quien lo invoca es un agente autorizado sobre esa tarea y respuesta:
+
+1. Desde el iframe de la tarea, solicita la credencial en `GET /admin/customers/{realm_uid}/originations/{origination_id}/submissions/{submission_id}/agent_task_forms/{step_task_id}/assertion` (misma base del admin en la que corre el iframe; acepta el parámetro opcional `audience` con el identificador del servicio destino) y envíala al servicio externo.
+2. El servicio externo la valida en `POST /api/admin/customers/{realm_uid}/originations/agent_assertions/introspect` (requiere API Access con un permiso que incluya ver respuestas: **Ver Todas las Respuestas** o **Ver Respuestas Asignadas**). La respuesta indica `active: true` con los identificadores del agente, la respuesta, la tarea y el usuario actuado, o `active: false` si la credencial expiró o la autorización fue revocada — la validación siempre revisa el estado vigente, no solo la firma.
+
+Puedes conocer el detalle de los endpoints en la documentación Swagger de la [API](/es/platform/core/api.html).
+
 ### Lógica Condicional
 
 La lógica condicional te permite crear flujos de trabajo más dinámicos e inteligentes. Con esta funcionalidad, puedes definir reglas para mostrar u ocultar **Pasos**, **Tareas** y **campos de tareas Input** basándote en las respuestas proporcionadas por los usuarios o en datos existentes dentro de la respuesta. Esto te permite personalizar la experiencia del usuario, presentando solo la información relevante en cada etapa del proceso y simplificando o bifurcando la interacción. La lógica condicional te ofrece la flexibilidad de:
