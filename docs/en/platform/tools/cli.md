@@ -108,7 +108,7 @@ MODYO_ZIP_ENTRY_CSS=main.css
 - `MODYO_ZIP_ENTRY_CSS` Specifies the main CSS entry file when using ZIP deployment (default: `main.css`).
 
 :::warning Code splitting on existing sites
-The dynamic loading of chunks requires the site's custom widget template to include the `resourceBasePath` variable. Sites created before this functionality must update their template; see [Code splitting](/en/platform/channels/widgets.html#code-splitting).
+The dynamic loading of chunks requires the site's custom widget template to define the `resourceBasePath-<widget id>` global variable (one per widget). Sites created before this functionality must update their template; see [Code splitting](/en/platform/channels/widgets.html#code-splitting).
 :::
 
 ## Initializing a New Project
