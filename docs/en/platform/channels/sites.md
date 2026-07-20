@@ -239,14 +239,13 @@ SEO (Search Engine Optimization) is fundamental for search engine positioning. U
 You can configure:
 
 - **Tagline**: Description in search engines, below the web application name.
-- **Automatically update the sitemap.xml file for me**: Allows Modyo to automatically create and maintain the sitemap.xml. Disable this option to use a custom sitemap.
-- **Sitemap**: This XML file allows search engines to index the site's content.
-- **Custom sitemap.xml file**: File that allows search engines to index the web app's content.
-- **Automatically update the robots.txt file for me**: Allows Modyo to automatically create and maintain robots.txt. Disable this option to provide custom instructions to web app crawlers.
-- **Custom robots.txt file**: File that tells web crawlers which parts of the application they may or may not index.
+- **Enable sitemap.xml from this site**: Publishes the web application's `sitemap.xml` file, available for all sites. If you disable it, the file URL responds with a 404 error.
+- **Automatically update the sitemap.xml file for me**: Allows Modyo to automatically create and maintain the sitemap.xml. Disable this option to edit the custom file.
+- **Custom sitemap.xml file**: Sitemap content that allows search engines to index the web app's content. Editable when the automatic update is disabled.
+- **Enable robots.txt from this site**: Publishes the site's `robots.txt` file and enables its editing. This option is only available for sites with a custom domain enabled; if it is disabled, the file URL responds with a 404 error.
+- **Custom robots.txt file**: Content of the robots.txt, which tells web crawlers which parts of the application they may or may not index.
 
 :::tip Tip
-Manual updates to the robots.txt file can only be enabled for custom domains. 
 There are also sitemap.xml and robots.txt file configurations at the account level.
 :::
 
