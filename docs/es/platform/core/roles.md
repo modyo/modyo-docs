@@ -20,6 +20,8 @@ Para crear un usuario interno, sigue estos pasos:
 1. Completa los campos de nombre, apellido, nombre de usuario, correo electrónico y contraseña.
 1. Haz click en **Guardar**.
 
+El nombre de usuario solo puede contener letras (de la a a la z), números y los símbolos `| # @ % . _ - ' + /`. No se permiten espacios ni otros caracteres.
+
 :::tip Tip
 Si deseas que el nuevo miembro reciba un correo electrónico con los datos de su cuenta en la plataforma, marca la casilla "Enviar contraseña al correo electrónico del usuario".
 :::
@@ -34,6 +36,10 @@ Dentro de la pantalla de edición de usuario, los administradores de la platafor
 - Editar: Modifica los datos del usuario como nombre, correo electrónico y contraseña.
 - Grupos: Muestra una lista de todos los grupos a los que pertenece el usuario.
 - Dispositivos: Muestra un listado de todos los dispositivos en los que el usuario tiene una sesión activa.  Despliega datos como navegador, sistema operativo, último inicio de sesión y dirección IP. Aquí, además, puedes cerrar la sesión de forma remota para cada dispositivo.
+
+:::warning Nombres de usuario creados en versiones anteriores
+Los usuarios creados antes de que existiera la validación de caracteres pueden tener nombres de usuario hoy no permitidos (por ejemplo, con espacios). Mientras el nombre de usuario no cumpla la validación, cualquier actualización de ese usuario fallará — incluidas acciones administrativas como eliminar su autenticador (2FA), que puede mostrar un mensaje de éxito sin aplicarse realmente. Antes de realizar acciones sobre uno de estos usuarios, corrige primero su nombre de usuario.
+:::
 
 ## Grupos
 
