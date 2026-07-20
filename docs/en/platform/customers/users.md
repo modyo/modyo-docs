@@ -38,7 +38,7 @@ To add a new user, click the **New User** button and complete the following fiel
 - **First Name**: **[Required]**. The user's legal first name.
 - **Surname**
 - **Maternal surname**
-- **Username**: **[Required]**. Unique identifier on the platform. It can only contain letters (a to z), numbers, and the symbols `| # @ % . _ - ' + /`; spaces are not allowed.
+- **Username**: **[Required]**. Unique identifier on the platform. It can only contain letters A to Z (uppercase or lowercase), numbers, and the symbols `| # @ % . _ - ' + /`; spaces are not allowed.
 - **Email**: **[Required]**
 - **Password**: **[Required]**. Must be at least 8 characters long.
 - **Password Confirmation**: **[Required]**

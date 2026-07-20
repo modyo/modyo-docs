@@ -20,7 +20,7 @@ Para crear un usuario interno, sigue estos pasos:
 1. Completa los campos de nombre, apellido, nombre de usuario, correo electrónico y contraseña.
 1. Haz click en **Guardar**.
 
-El nombre de usuario solo puede contener letras (de la a a la z), números y los símbolos `| # @ % . _ - ' + /`. No se permiten espacios ni otros caracteres.
+El nombre de usuario solo puede contener letras de la A a la Z (mayúsculas o minúsculas), números y los símbolos `| # @ % . _ - ' + /`. No se permiten espacios ni otros caracteres.
 
 :::tip Tip
 Si deseas que el nuevo miembro reciba un correo electrónico con los datos de su cuenta en la plataforma, marca la casilla "Enviar contraseña al correo electrónico del usuario".

@@ -20,7 +20,7 @@ To create an internal user, follow these steps:
 1. Fill in the first name, last name, username, email, and password fields.
 1. Click **Save**.
 
-The username can only contain letters (a to z), numbers, and the symbols `| # @ % . _ - ' + /`. Spaces and other characters are not allowed.
+The username can only contain letters A to Z (uppercase or lowercase), numbers, and the symbols `| # @ % . _ - ' + /`. Spaces and other characters are not allowed.
 
 :::tip Tip
 If you want the new member to receive an email with their account details on the platform, check the box “Send password to the user's email”.

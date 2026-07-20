@@ -38,7 +38,7 @@ Para agregar un nuevo usuario, haz clic en el botón **Nuevo Usuario** y complet
 - **Nombre**: **[Requerido]**. Nombre legal del usuario.
 - **Apellido**
 - **Apellido materno**
-- **Nombre de usuario**: **[Requerido]**. Identificador único en la plataforma. Solo puede contener letras (de la a a la z), números y los símbolos `| # @ % . _ - ' + /`; no se permiten espacios.
+- **Nombre de usuario**: **[Requerido]**. Identificador único en la plataforma. Solo puede contener letras de la A a la Z (mayúsculas o minúsculas), números y los símbolos `| # @ % . _ - ' + /`; no se permiten espacios.
 - **Email**: **[Requerido]**
 - **Contraseña**: **[Requerido]**. Debe contener al menos 8 caracteres.
 - **Confirmación de contraseña**: **[Requerido]**
