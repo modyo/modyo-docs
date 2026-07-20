@@ -158,6 +158,28 @@ La carga como ES Module es especialmente útil para widgets construidos con fram
 Los ES Modules tienen requisitos estrictos de CORS y siempre se cargan en modo estricto. Asegúrate de que el código de tu widget sea compatible con la semántica de ES modules antes de habilitar esta opción.
 :::
 
+## Code splitting
+
+Los widgets que despliegas mediante el [CLI de Modyo](/es/platform/tools/cli.html) pueden dividirse en múltiples archivos (*chunks*) además de sus archivos de entrada. La plataforma almacena y sirve cada chunk individualmente, y el widget los carga de forma dinámica solo cuando los necesita, con lo que la carga inicial de widgets grandes es más liviana.
+
+Para desplegar un widget con code splitting, habilita el despliegue ZIP en el CLI con las variables `MODYO_ZIP`, `MODYO_ZIP_ENTRY_JS` y `MODYO_ZIP_ENTRY_CSS`. Los archivos del build adicionales a los de entrada (`js`, `css`, `map`, `wasm`) se suben como chunks del widget.
+
+### Requisito de la plantilla en sitios existentes
+
+La carga dinámica de los chunks utiliza una variable global que define la plantilla del custom widget de cada sitio. Los sitios creados desde que existe esta funcionalidad ya la incluyen; los sitios creados antes conservan su plantilla original y requieren agregarla manualmente.
+
+Para habilitarla en un sitio existente, ve a **Channels**, selecciona tu sitio y haz click en **Plantillas**; en la sección de vistas, bajo la categoría widgets, edita la plantilla **custom_widget** agregando al inicio este bloque, y luego publica la plantilla:
+
+```liquid
+<script nonce="{{csp_nonce}}">
+  window['resourceBasePath-{{widget.wid}}'] = "{{site.url}}/widget_manager/{{widget.wid}}/{{widget.version}}/";
+</script>
+```
+
+:::warning Atención
+Sin este bloque, los widgets desplegados con code splitting no pueden resolver la URL de sus chunks en ese sitio y su carga dinámica falla.
+:::
+
 ## Usar Internacionalización (i18n)
 
 Con i18n puedes configurar y agregar nuevos idiomas a tus widgets.

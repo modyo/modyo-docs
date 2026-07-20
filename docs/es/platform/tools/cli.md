@@ -107,6 +107,10 @@ MODYO_ZIP_ENTRY_CSS=main.css
 - `MODYO_ZIP_ENTRY_JS` Especifica el archivo JavaScript de entrada principal al usar despliegue ZIP (por defecto: `main.js`).
 - `MODYO_ZIP_ENTRY_CSS` Especifica el archivo CSS de entrada principal al usar despliegue ZIP (por defecto: `main.css`).
 
+:::warning Code splitting en sitios existentes
+La carga dinámica de los chunks requiere que la plantilla del custom widget del sitio incluya la variable `resourceBasePath`. Los sitios creados antes de esta funcionalidad deben actualizar su plantilla; consulta [Code splitting](/es/platform/channels/widgets.html#code-splitting).
+:::
+
 ## Inicialización de un Nuevo Proyecto
 
 La forma más rápida y fácil de crear tu primer widget es utilizando la plantilla base en React de nuestro framework mediante el comando `get`.
