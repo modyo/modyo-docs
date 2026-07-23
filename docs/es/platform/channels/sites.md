@@ -239,8 +239,8 @@ El SEO (Search Engine Optimization) es fundamental para el posicionamiento en mo
 Puedes configurar:
 
 - **Tagline**: Descripción en los motores de búsqueda, debajo del nombre de la aplicación web.
-- **Habilitar sitemap.xml de este sitio**: Publica el archivo `sitemap.xml` de la aplicación web, disponible para todos los sitios. Si lo deshabilitas, la URL del archivo responde con un error 404.
-- **Actualizar automáticamente el archivo sitemap.xml para mí**: Permite a Modyo crear y mantener el sitemap.xml automáticamente. Desactiva esta opción para editar el archivo personalizado.
+- **Habilitar sitemap.xml de este sitio**: Publica el archivo `sitemap.xml` de la aplicación web, disponible para todos los sitios públicos. Si lo deshabilitas, o si el sitio no es público, la URL del archivo responde con un error 404.
+- **Actualizar automáticamente el archivo sitemap.xml para mí**: Permite a Modyo crear y mantener el sitemap.xml automáticamente; el archivo generado no incluye páginas privadas. Desactiva esta opción para editar el archivo personalizado.
 - **Archivo sitemap.xml personalizado**: Contenido del sitemap que permite a los motores de búsqueda indexar el contenido de la web app. Editable cuando la actualización automática está desactivada.
 - **Habilitar robots.txt de este sitio**: Publica el archivo `robots.txt` del sitio y habilita su edición. Esta opción solo está disponible para sitios con dominio personalizado habilitado; si está deshabilitada, la URL del archivo responde con un error 404.
 - **Archivo robots.txt personalizado**: Contenido del robots.txt, que indica a los robots rastreadores qué partes de la aplicación pueden o no indexar.
