@@ -244,10 +244,13 @@ Puedes configurar:
 - **Archivo sitemap.xml personalizado**: Archivo que permite a los motores de búsqueda indexar el contenido de la web app.
 - **Actualizar automáticamente el archivo robots.xml para mí**: Permite a Modyo crear y mantener robots.txt automáticamente. Desactiva esta opción para proporcionar instrucciones personalizadas a los rastreadores de web apps.
 - **Archivo robots.txt personalizado**: Archivo que indica a los robots rastreadores las partes de la aplicación pueden o no indexar.
+- **Habilitar llms.txt de este sitio**: Publica el archivo `llms.txt` de la aplicación web en la ruta `/llms.txt`. Es un archivo en formato Markdown que ayuda a los modelos de lenguaje (LLMs) a entender el contenido del sitio, y está disponible para todos los sitios públicos. Esta opción viene deshabilitada por defecto; si está deshabilitada, o si el sitio no es público, la URL del archivo responde con un error 404.
+- **Actualizar automáticamente el archivo llms.txt para mí**: Permite a Modyo crear y mantener el llms.txt automáticamente con el nombre, el tagline y la descripción de la aplicación web, más los enlaces a sus páginas agrupados en las secciones **Pages** y **Content**. Las páginas privadas nunca se incluyen. Desactiva esta opción para editar el archivo personalizado.
+- **Archivo llms.txt personalizado**: Contenido del llms.txt cuando la actualización automática está desactivada.
 
 :::tip Tip
 La actualización manual del archivo robots.txt solo se puede habilitar para dominios personalizados.
-También existen configuraciones de archivos sitemap.xml y robots.txt a nivel de la cuenta.
+También existen configuraciones de archivos sitemap.xml, robots.txt y llms.txt a nivel de la cuenta. El llms.txt de la cuenta está habilitado por defecto, se genera con los sitios públicos en producción y sin dominio personalizado que agregues a su lista, y también admite un archivo personalizado.
 :::
 
 - **Meta tags personalizados**: Te permite configurar meta tags para todas las páginas y sus valores por defecto. Da click en **nuevo meta tag** para crear uno nuevo.
