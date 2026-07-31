@@ -244,9 +244,12 @@ You can configure:
 - **Custom sitemap.xml file**: Sitemap content that allows search engines to index the web app's content. Editable when the automatic update is disabled.
 - **Enable robots.txt from this site**: Publishes the site's `robots.txt` file and enables its editing. This option is only available for sites with a custom domain enabled; if it is disabled, the file URL responds with a 404 error.
 - **Custom robots.txt file**: Content of the robots.txt, which tells web crawlers which parts of the application they may or may not index.
+- **Enable llms.txt from this site**: Publishes the web application's `llms.txt` file at the `/llms.txt` path. It is a Markdown file that helps large language models (LLMs) understand the site's content, and it is available for all public sites. This option is disabled by default; if it is disabled, or if the site is not public, the file URL responds with a 404 error.
+- **Automatically update the llms.txt file for me**: Allows Modyo to automatically create and maintain the llms.txt with the web application's name, tagline, and description, plus links to its pages grouped into the **Pages** and **Content** sections. Private pages are never included. Disable this option to edit the custom file.
+- **Custom llms.txt file**: Content of the llms.txt when automatic updates are disabled.
 
 :::tip Tip
-There are also sitemap.xml and robots.txt file configurations at the account level.
+There are also sitemap.xml, robots.txt, and llms.txt file configurations at the account level. The account's llms.txt is enabled by default, is generated from the public production sites without a custom domain that you add to its list, and also supports a custom file.
 :::
 
 - **Custom meta tags**: Allows you to configure meta tags for all pages and their default values. Click **+ new meta tag** to create a new one.
