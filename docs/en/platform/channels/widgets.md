@@ -158,6 +158,28 @@ ES Module loading is especially useful for widgets built with modern frameworks 
 ES Modules have strict CORS requirements and are always loaded in strict mode. Ensure your widget code is compatible with ES module semantics before enabling this option.
 :::
 
+## Code splitting
+
+Widgets deployed through the [Modyo CLI](/en/platform/tools/cli.html) can be split into multiple files (*chunks*) in addition to their entry files. The platform stores and serves each chunk individually, and the widget loads them dynamically only when needed, making the initial load of large widgets lighter.
+
+To deploy a widget with code splitting, enable ZIP deployment in the CLI with the `MODYO_ZIP`, `MODYO_ZIP_ENTRY_JS`, and `MODYO_ZIP_ENTRY_CSS` variables. The build files other than the entry points (`js`, `css`, `map`, `wasm`) are uploaded as widget chunks.
+
+### Template requirement on existing sites
+
+The dynamic loading of chunks uses a global variable defined by each site's custom widget template. Sites created since this functionality exists already include it; sites created earlier keep their original template and require adding it manually.
+
+To enable it on an existing site, go to **Channels**, select your site, and click on **Templates**; in the views section, under the widgets category, edit the **custom_widget** template by adding this block at the beginning, and then publish the template:
+
+```liquid
+<script nonce="{{csp_nonce}}">
+  window['resourceBasePath-{{widget.wid}}'] = "{{site.url}}/widget_manager/{{widget.wid}}/{{widget.version}}/";
+</script>
+```
+
+:::warning Attention
+Without this block, widgets deployed with code splitting cannot resolve the URL of their chunks on that site and their dynamic loading fails.
+:::
+
 ## Use Internationalization (i18n)
 
 With i18n, you can configure and add new languages to your widgets.
