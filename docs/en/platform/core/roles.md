@@ -20,6 +20,8 @@ To create an internal user, follow these steps:
 1. Fill in the first name, last name, username, email, and password fields.
 1. Click **Save**.
 
+The username can only contain letters A to Z (uppercase or lowercase), numbers, and the symbols `| # @ % . _ - ' + /`. Spaces and other characters are not allowed.
+
 :::tip Tip
 If you want the new member to receive an email with their account details on the platform, check the box “Send password to the user's email”.
 :::
@@ -34,6 +36,10 @@ Within the user edit screen, platform administrators have access to the followin
 - Edit: Modify user data such as name, email, and password.
 - Groups: Shows a list of all the groups to which the user belongs.
 - Devices: Shows a list of all devices where the user has an active session. It displays data such as browser, operating system, last login, and IP address. Here, in addition, you can remotely log out for each device.
+
+:::warning Usernames created in earlier versions
+Users created before the character validation existed may have usernames that are no longer allowed (for example, containing spaces). While the username does not meet the validation, any update to that user will fail — including administrative actions such as removing their authenticator (2FA), which may show a success message without actually taking effect. Before performing actions on one of these users, correct their username first.
+:::
 
 ## Groups
 
