@@ -239,17 +239,16 @@ SEO (Search Engine Optimization) is fundamental for search engine positioning. U
 You can configure:
 
 - **Tagline**: Description in search engines, below the web application name.
-- **Automatically update the sitemap.xml file for me**: Allows Modyo to automatically create and maintain the sitemap.xml. Disable this option to use a custom sitemap.
-- **Sitemap**: This XML file allows search engines to index the site's content.
-- **Custom sitemap.xml file**: File that allows search engines to index the web app's content.
-- **Automatically update the robots.txt file for me**: Allows Modyo to automatically create and maintain robots.txt. Disable this option to provide custom instructions to web app crawlers.
-- **Custom robots.txt file**: File that tells web crawlers which parts of the application they may or may not index.
+- **Enable sitemap.xml from this site**: Publishes the web application's `sitemap.xml` file, available for all public sites. If you disable it, or if the site is not public, the file URL responds with a 404 error.
+- **Automatically update the sitemap.xml file for me**: Allows Modyo to automatically create and maintain the sitemap.xml; the generated file does not include private pages. Disable this option to edit the custom file.
+- **Custom sitemap.xml file**: Sitemap content that allows search engines to index the web app's content. Editable when the automatic update is disabled.
+- **Enable robots.txt from this site**: Publishes the site's `robots.txt` file and enables its editing. This option is only available for sites with a custom domain enabled; if it is disabled, the file URL responds with a 404 error.
+- **Custom robots.txt file**: Content of the robots.txt, which tells web crawlers which parts of the application they may or may not index.
 - **Enable llms.txt from this site**: Publishes the web application's `llms.txt` file at the `/llms.txt` path. It is a Markdown file that helps large language models (LLMs) understand the site's content, and it is available for all public sites. This option is disabled by default; if it is disabled, or if the site is not public, the file URL responds with a 404 error.
 - **Automatically update the llms.txt file for me**: Allows Modyo to automatically create and maintain the llms.txt with the web application's name, tagline, and description, plus links to its pages grouped into the **Pages** and **Content** sections. Private pages are never included. Disable this option to edit the custom file.
 - **Custom llms.txt file**: Content of the llms.txt when automatic updates are disabled.
 
 :::tip Tip
-Manual updates to the robots.txt file can only be enabled for custom domains. 
 There are also sitemap.xml, robots.txt, and llms.txt file configurations at the account level. The account's llms.txt is enabled by default, is generated from the public production sites without a custom domain that you add to its list, and also supports a custom file.
 :::
 

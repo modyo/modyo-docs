@@ -239,17 +239,16 @@ El SEO (Search Engine Optimization) es fundamental para el posicionamiento en mo
 Puedes configurar:
 
 - **Tagline**: Descripción en los motores de búsqueda, debajo del nombre de la aplicación web.
-- **Actualizar automáticamente el archivo sitemap.xml para mí**: Permite a Modyo crear y mantener el sitemap.xml automáticamente. Desactiva esta opción para usar un mapa de sitio personalizado.
-- **Sitemap**: Este archivo XML permite a los motores de búsqueda indexar el contenido del sitio.
-- **Archivo sitemap.xml personalizado**: Archivo que permite a los motores de búsqueda indexar el contenido de la web app.
-- **Actualizar automáticamente el archivo robots.xml para mí**: Permite a Modyo crear y mantener robots.txt automáticamente. Desactiva esta opción para proporcionar instrucciones personalizadas a los rastreadores de web apps.
-- **Archivo robots.txt personalizado**: Archivo que indica a los robots rastreadores las partes de la aplicación pueden o no indexar.
+- **Habilitar sitemap.xml de este sitio**: Publica el archivo `sitemap.xml` de la aplicación web, disponible para todos los sitios públicos. Si lo deshabilitas, o si el sitio no es público, la URL del archivo responde con un error 404.
+- **Actualizar automáticamente el archivo sitemap.xml para mí**: Permite a Modyo crear y mantener el sitemap.xml automáticamente; el archivo generado no incluye páginas privadas. Desactiva esta opción para editar el archivo personalizado.
+- **Archivo sitemap.xml personalizado**: Contenido del sitemap que permite a los motores de búsqueda indexar el contenido de la web app. Editable cuando la actualización automática está desactivada.
+- **Habilitar robots.txt de este sitio**: Publica el archivo `robots.txt` del sitio y habilita su edición. Esta opción solo está disponible para sitios con dominio personalizado habilitado; si está deshabilitada, la URL del archivo responde con un error 404.
+- **Archivo robots.txt personalizado**: Contenido del robots.txt, que indica a los robots rastreadores qué partes de la aplicación pueden o no indexar.
 - **Habilitar llms.txt de este sitio**: Publica el archivo `llms.txt` de la aplicación web en la ruta `/llms.txt`. Es un archivo en formato Markdown que ayuda a los modelos de lenguaje (LLMs) a entender el contenido del sitio, y está disponible para todos los sitios públicos. Esta opción viene deshabilitada por defecto; si está deshabilitada, o si el sitio no es público, la URL del archivo responde con un error 404.
 - **Actualizar automáticamente el archivo llms.txt para mí**: Permite a Modyo crear y mantener el llms.txt automáticamente con el nombre, el tagline y la descripción de la aplicación web, más los enlaces a sus páginas agrupados en las secciones **Pages** y **Content**. Las páginas privadas nunca se incluyen. Desactiva esta opción para editar el archivo personalizado.
 - **Archivo llms.txt personalizado**: Contenido del llms.txt cuando la actualización automática está desactivada.
 
 :::tip Tip
-La actualización manual del archivo robots.txt solo se puede habilitar para dominios personalizados.
 También existen configuraciones de archivos sitemap.xml, robots.txt y llms.txt a nivel de la cuenta. El llms.txt de la cuenta está habilitado por defecto, se genera con los sitios públicos en producción y sin dominio personalizado que agregues a su lista, y también admite un archivo personalizado.
 :::
 
