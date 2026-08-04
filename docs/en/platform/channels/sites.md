@@ -219,7 +219,7 @@ Proceed with caution when modifying these options, as they can affect access to 
 :::
 
 - **Change host**: This action modifies the visibility and accessibility of the application. Changing the host can impact the visibility and availability of the web application.
-- **Change realm**: Displays the application's realm. When you change the realm, you lose all privacy settings in your web apps, pages, and navigation.
+- **Change realm**: Displays the application's realm. When you change the realm, you lose all privacy settings in your web apps, pages, and navigation, and the site's origination pages lose the reference to their current origination.
 - **Change status**: Changes the application's status. Options are:
 	* Enabled: Editable and visible to the public. This is the default state of a web app.
 	* Editable: Modifiable but not visible to the public. Requires login to access. Robots.txt, PWAs, and the manifest are disabled in this state.
@@ -464,6 +464,7 @@ The main advantages of having different stages in your web apps are:
 - Custom PWAs and redirections are disabled in stages. They can only be used in the `main` stage.
 - The team members section is separate in each `main` stage. Add members to enable team review.
 - You can have the same members with different roles and permissions for each stage.
+- Origination pages are copied to the new stage without their linked origination. Since each origination allows only one page, to use them in the stage you must link a different origination from the same realm.
 :::
 
 #### Add a New Stage
@@ -501,7 +502,8 @@ To synchronize a stage, follow these steps:
 
 
 :::warning Attention
-Elements of a stage associated with a segment are not synchronized. You must repeat the process manually in the new stage, once the synchronization is complete.
+- Elements of a stage associated with a segment are not synchronized. You must repeat the process manually in the new stage, once the synchronization is complete.
+- The origination linked to an origination page is not synchronized either: each stage keeps its own, and that difference does not appear in the list of elements to synchronize.
 :::
 
 #### Delete a Stage
