@@ -15,7 +15,7 @@ En esta sección, puedes configurar aspectos generales del reino, como:
 
 - **Título**.
 - **Identificador**: La URL de las vistas de perfil, inicio de sesión, registro y recuperación de contraseña del reino.
-- **Deshabilitar credenciales**: Al marcar esta casilla, desactivas las credenciales de Modyo en el reino y permites únicamente el acceso a través de SSO.
+- **Deshabilitar credenciales de la plataforma**: Al marcar esta casilla, desactivas las credenciales de Modyo en el reino y permites únicamente el acceso a través de SSO.
 
 :::danger Peligro
 Antes de habilitar la opción de deshabilitar las credenciales de Modyo en el reino, asegúrate de tener configurado un proveedor de identidad SSO para el reino. De lo contrario, los usuarios no podrán iniciar sesión.
@@ -26,14 +26,38 @@ Antes de habilitar la opción de deshabilitar las credenciales de Modyo en el re
 - **Cuando se requiere iniciar sesión, redirigir a**: Define a dónde se redirige a un visitante sin sesión cuando intenta acceder a contenido que requiere autenticación: a la **Página de inicio de sesión** (opción por defecto) o a la **Página de registro** del reino. En ambos casos, tras autenticarse, el usuario vuelve a la URL a la que intentaba acceder.
 - **Activación de la cuenta**:
   - Directa: Los usuarios que se registren pueden iniciar sesión directamente.
+  - Activación por OTP: Los usuarios que se registren no pasan por un correo de activación: reciben un código de un solo uso y su cuenta queda activa cuando lo ingresan correctamente. Solo puedes seleccionar esta opción si el reino tiene activo **Habilitar Soft login**; si no lo está, aparece deshabilitada. Revisa el detalle en [Soft login](#soft-login).
   - E-mail de activación: Los usuarios que se registren deben activar su cuenta mediante un enlace enviado a su correo electrónico previo a poder iniciar sesión.
   - Moderada: Los usuarios que se registren deberán esperar a que un administrador del reino active su cuenta para poder iniciar sesión.
   - Deshabilitada: No se pueden registrar nuevos usuarios en el reino. Los usuarios ya registrados y activados aún pueden iniciar sesión.
 - **Imagen de Avatar por defecto**: Imagen que se muestra en el avatar de los usuarios que no tienen una imagen personalizada.
-- **Habilitar Soft login**: Activando esta opción puedes acceder a tu cuenta sin introducir tus credenciales cada vez. Recibirás un código de seguridad por el canal de envío configurado (email o WhatsApp) para ingresar fácilmente sin necesidad de contraseñas.
-- **Canal de envío del OTP**: Canal por defecto para los códigos de seguridad del soft login: **Email** envía el código al correo del usuario; **Phone** lo envía por WhatsApp y requiere una integración de mensajería habilitada, como [Auronix](#auronix).
+- **Soft login**: Habilita el ingreso con un código de un solo uso (OTP) en lugar de contraseña, y define su validez, el tiempo de espera para reenviarlo y los canales por los que se envía. Revisa el detalle en [Soft login](#soft-login).
 - **Formulario de registro**: Aquí puedes habilitar o deshabilitar diferentes atributos en el formulario de registro, como el segundo apellido, confirmación de correo electrónico, avatar de usuario, fecha de nacimiento, género y número de teléfono.
 - **Eliminar reino**: Elimina el reino. Este proceso se realiza en segundo plano y es posible que no veas el reino desaparecer inmediatamente después de ejecutar la acción. Para confirmar la eliminación, debes ingresar el nombre completo del reino.
+
+
+### Soft login
+
+El Soft login permite que tus usuarios inicien sesión con un código de un solo uso (OTP) de 6 dígitos en lugar de una contraseña. Al activar **Habilitar Soft login**:
+
+- La vista de inicio de sesión del reino pide el identificador del usuario y le envía el código, en lugar de pedirle una contraseña.
+- El formulario de registro del reino deja de pedir contraseña y confirmación de contraseña.
+- La casilla **Deshabilitar credenciales de la plataforma** queda bloqueada, porque el ingreso con código usa las credenciales de la plataforma.
+- Queda disponible la opción **Activación por OTP** de **Activación de la cuenta**.
+
+Junto al interruptor puedes configurar estos campos, que solo se pueden editar con el Soft login activo:
+
+- **Validez de duración de OTP (en minutos)**: Minutos que el código sigue siendo válido desde que se envía, entre 1 y 30. Por defecto son 5. Cuando expira, el usuario tiene que pedir uno nuevo.
+- **Tiempo de espera para reenvío de OTP (en minutos)**: Minutos que el usuario espera en la pantalla del código antes de que aparezca el enlace **Reenviar código**, entre 1 y 5. Por defecto son 5.
+- **Canal de envío del OTP**: Canales por los que se envía el código. **Email** lo envía al correo del usuario y **Phone** lo envía por las integraciones de mensajería habilitadas en el reino: [Auronix](#auronix) por WhatsApp y [Custom SMS](#custom-sms) por SMS. Puedes marcar los dos canales a la vez y, con el Soft login activo, tienes que dejar al menos uno marcado. **Phone** solo está disponible si el reino tiene habilitada una integración de OTP por teléfono, y si tienes habilitadas Auronix y Custom SMS el código se envía por las dos. Si el reino no tiene ninguna integración de OTP por teléfono, **Email** queda marcado y bloqueado como único canal.
+
+:::warning Atención
+El usuario tiene 5 intentos para ingresar el código. Al superarlos, el código queda invalidado: aunque después escriba el correcto, no podrá iniciar sesión y tendrá que pedir uno nuevo.
+:::
+
+:::warning Atención
+Si desactivas **Habilitar Soft login** mientras **Activación de la cuenta** está en **Activación por OTP**, al guardar el reino vuelve a **E-mail de activación** sin avisarte.
+:::
 
 
 ## Redireccionar Login ##
