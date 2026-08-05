@@ -158,8 +158,10 @@ The preview bar contains the following interactive elements:
 - **Share link**: Allows you to copy a link that can be shared with other users. Opening the link provides direct access to preview mode with the configuration that was in place when the link was copied. To access preview mode, you must have an active session in the administrator account.
 - **Exit preview mode**: Closes preview mode, removing the bar and keeping the tab at the site's current URL.
 
-:::warning JavaScript SDK
-Changing the content selector in the preview bar will not affect content you are using through the JavaScript SDK or the content API. It will only affect content used through the Liquid SDK.
+:::warning Content SDK
+The **Content SDK** selector affects content used through the Liquid SDK and also the public content API: if the browser making the request has preview mode open and the selector set to **Draft**, the content API responds with the draft versions of the entries.
+
+This only happens when the request travels with the administrator session of that browser. An anonymous end user, or any server-side consumer, always receives published content. See [Preview](/en/platform/content/public-api-reference.html#preview) for the details.
 :::
 ## Team Review
 

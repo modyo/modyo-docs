@@ -516,23 +516,28 @@ curl -X GET "https://test.modyo.com/api/content/spaces/{my_space}/types/{type}/e
 
 ### Display total number of Entries
 
-To access the total amount of entries returned by a content filter, you can use the liquid `total_entries` filter, for example:
+Every entry listing includes a `meta` object at the root of the response with the total number of entries that match the query, in the `total_entries` field. That total refers to the whole query, not to the page you are viewing.
 
+If you only need the count, request a single-item page with `per_page=1` and read `meta.total_entries`:
 
 ```shell
-curl -X GET "https://test.modyo.com/api/content/spaces/{my_space}/entries?category_id=25"
+curl -X GET "https://test.modyo.com/api/content/spaces/blog/types/post/entries?meta.category=news&per_page=1"
 ```
 
-The response contains the `meta` object that includes a field that will help you navigate it. The returned object will look something like this:
+The returned object will look something like this:
 
 ```json
 "meta": {
     "total_entries": 4,
-    "per_page": 10,
+    "per_page": 1,
     "current_page": 1,
-    "total_pages": 1
+    "total_pages": 4
   },
 ```
+
+:::warning Attention
+Entries are always queried under a content type: the only available route is `/spaces/:space_uid/types/:type_uid/entries` and there is no `/spaces/:space_uid/entries`. To filter by category, use `meta.category` with the category's full path, since `category_id` is not a valid parameter and the request responds `400` with <code v-pre>{"error":{"query":{"category_id":["Unknown parameter"]}}}</code>.
+:::
 
 ### Filter
 
@@ -554,16 +559,19 @@ Metadata (e.g., Tags, Category, Dates): SQL searches will be queried by `meta.pa
     - <span v-pre>`.../?fields.{{field_name}}[geohash]=66j`</span>. With the field called `location`, it would be: `.../?fields.location[geohash]=66j`
   - `.../entries?fields.color=black`
 
-###### Language filter
+##### Language filter
 
-Modyo API delivers entries in the Space's default language, unless another language is explicitly requested via the query string locale parameter or the Accept-Language header.
+The content API delivers entries in the Space's default language. To request another language, use the `locale` query string parameter, which is the only way available: the content API does not read the `Accept-Language` header.
 
 For example, to get entries in the Spanish-Chile language (es-cl):
 
-```plain
-Query string: GET .../posts/entries?locale=es-cl
-Header: Set Accept-Language es-cl
+```shell
+curl -X GET "https://test.modyo.com/api/content/spaces/blog/types/post/entries?locale=es-cl"
 ```
+
+:::warning Attention
+The language you request must be enabled in the Space. If it isn't, the request does not fall back to the default language: it responds `400` with <code v-pre>{"error":"Locale not available for this space"}</code>.
+:::
 
 ##### Operators
 
@@ -604,16 +612,63 @@ Fields that search multiple items (checkboxes, multiple) can use the following s
 
 ### Order
 
-In the same way that you can filter by category `by_category`, tags `by_tags`, and by uuid `by_uuid`, you can create a filter to order the results by meta attributes `name`, `slug`, `created_at`, `updated_at`, and `published_at` of the entries using the filter `sort_by`, in the following way:
+The order of the results is specified with the `sort_by` and `order` parameters:
 
-The order of the results must be specified with the `sort_by` and `order` parameters:
+- `sort_by`: name of the attribute you want to sort by, always with the `meta.` or `fields.` prefix. A name without a prefix, or an attribute that is not sortable, responds `400` with <code v-pre>{"error":{"query":{"sort_by":["Key not sortable"]}}}</code>.
+- `order`: `asc` or `desc`. It is optional and defaults to `asc`. If you send `sort_by` with a different `order`, the request responds `400` with <code v-pre>{"error":{"query":{"order":["Supported values: asc, desc. asc is selected when no order is specified"]}}}</code>.
 
-- `sort_by`: indicating the name of the attribute (e.g., meta.tags, or fields.name)
-- `order`: ['asc','desc'] (optional, asc by default)
+The metadata attributes you can use in `sort_by` are:
+
+- `meta.uuid`
+- `meta.name`
+- `meta.slug`
+- `meta.created_at`
+- `meta.updated_at`
+- `meta.published_at`
+- `meta.unpublished_at`
 
 ```shell
-curl -X GET "https://test.modyo.com/api/content/spaces/{my_space}/types/{type}/entries?sort_by=id&order=desc"
+curl -X GET "https://test.modyo.com/api/content/spaces/blog/types/post/entries?sort_by=meta.published_at&order=desc"
 ```
+
+You can also sort by a field of the content type using the `fields.` prefix, as long as the field is of type Boolean, Checkbox, Date, Decimal, Dropdown, Integer, Radio, or Single-line text. The remaining [field types](/en/platform/content/types.html), such as Rich text, Multiple choice, Location, File, or Group, are not sortable.
+
+For example, to sort by a field called `priority` of type Integer:
+
+```shell
+curl -X GET "https://test.modyo.com/api/content/spaces/blog/types/post/entries?sort_by=fields.priority&order=asc"
+```
+
+:::warning Attention
+`meta.tags` is not sortable, it only works as a filter. Don't use `meta.category`, `meta.category_slug`, or `meta.category_name` as sorting criteria either: the API accepts them as a parameter, but it cannot resolve the order and the request fails.
+:::
+
+### Preview
+
+By default, the content API delivers only the published versions of entries. If the browser making the request has an administrator session with [preview mode](/en/platform/core/#preview-modes) open, and the **Content SDK** selector in the preview bar is set to **Draft**, the API delivers the draft versions of the entries instead of the published ones. In those responses, `meta.version_type` comes back with the value `editable`.
+
+This applies both to the entry listing and to a single entry:
+
+```bash
+https://www.example.com/api/content/spaces/:space_uid/types/:type_uid/entries
+
+https://www.example.com/api/content/spaces/:space_uid/types/:type_uid/entries/:entry_uuid
+```
+
+Only the entry endpoints switch versions. The content type schema, the categories, and the locations are not affected by the selector.
+
+While the preview session is open, the response is no longer cacheable: the `cache-control` header goes from `public, no-cache` to `no-store, must-revalidate, private, max-age=0`, so that neither the browser nor the CDN stores a draft version. This happens even when the selector is set to **Published**.
+
+The API goes back to delivering published content when any of these conditions is met:
+
+- The request doesn't carry the admin panel session cookie, or there is no preview session open.
+- The administrator session is impersonating a user.
+- The session lost its authorization, for example because it was logged out or an administrator revoked the access.
+- The account validates the browser fingerprint and the request doesn't match the browser that opened the session.
+
+:::warning Attention
+API preview depends on the session of the browser making the request, so it never exposes draft versions to an anonymous end user or to a server-side consumer. The risk is the opposite one: if you develop your consumer layer in the same browser where you have preview mode open, you will see draft versions where your production application will see published content. Check your responses in a window without the administrator session before taking them as final.
+:::
 
 ### Private content
 

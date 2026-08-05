@@ -157,8 +157,10 @@ La barra de vista previa contiene los siguientes elementos interactivos:
 - **Compartir link**: Permite copiar un enlace que se puede compartir con otros usuarios. Al abrir el enlace, se accede directamente al modo vista previa con la configuración que se tenía al momento de copiar el enlace. Para acceder al modo vista previa, es necesario tener una sesión iniciada en la cuenta de administradora.
 - **Salir del modo vista previa**: Cierra el modo vista previa, eliminando la barra y manteniendo la pestaña en la URL actual del sitio.
 
-:::warning SDK de Javascript
-Cambiar el selector de contenido de la barra de previsualización no tendrá efecto sobre el contenido que estés usando a través del SDK de JavaScript o la API de contenido. Solo tendrá efecto en el contenido que se usa a través del SDK de Liquid.
+:::warning SDK de contenido
+El selector **SDK de contenido** afecta al contenido que se usa a través del SDK de Liquid y también a la API pública de contenido: si el navegador que hace la petición tiene el modo vista previa abierto y el selector en **Editable**, la API de contenido responde con las versiones editables de las entradas.
+
+Esto sólo ocurre cuando la petición viaja con la sesión de administrador de ese navegador. Un usuario final anónimo, o cualquier consumo desde un servidor, siempre recibe contenido publicado. Revisa [Vista previa](/es/platform/content/public-api-reference.html#vista-previa) para el detalle.
 :::
 
 
