@@ -226,7 +226,7 @@ Retorna los tags de una imagen usando su uuid del Gestor de Archivos. Al usar Cl
 Emite una etiqueta de enlace HTML que apunta al archivo del Gestor de Archivos identificado por su UUID. El argumento es el texto visible del enlace y, si lo omites, se usa el nombre de archivo del asset. *e.g.*
 <span v-pre>`{{ uuid | asset_link: 'Descarga el instructivo' }}`</span> => `<a href='https://midominio.com/uploads/instructivo.pdf'>Descarga el instructivo</a>`
 
-**Parametros**:
+**Parámetros**:
 - uuid (String) — asset uuid
 - label (String) (default: nombre de archivo del asset) — texto visible del enlace
 
