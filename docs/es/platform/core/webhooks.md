@@ -37,7 +37,7 @@ Para crear un webhook, sigue estos pasos:
 8. Haz click en **Guardar**
 
 
-::: tip Tip
+:::tip Tip
 El valor de la columna `trigger_uid` es el que viaja en el campo `trigger_uid` del payload, así que es el dato con el que tu endpoint distingue un disparador de otro.
 :::
 
@@ -109,7 +109,7 @@ Los disparadores del tipo de contexto **Reino** son:
 | Usuario deshabilitado | `user_disabled_log` |
 | Usuario borrado | `user_deleted_log` |
 
-::: warning Atención
+:::warning Atención
 Estos cinco disparadores son los únicos que ofrece el tipo de contexto **Reino** desde **Configuración** > **Webhooks**, y cubren la gestión de usuarios que hace tu equipo. No son los mismos que ves en **Configuración del reino** > **Webhooks**, que escucha los eventos de los usuarios finales del reino y no incluye **Usuario deshabilitado**. Si necesitas los dos grupos de eventos, crea un webhook en cada lugar.
 :::
 
@@ -188,11 +188,11 @@ Los disparadores disponibles son los 24 eventos de usuario final del reino:
 | Restaurar contraseña | `user_password_reset_log` | Se solicita la restauración de la contraseña. |
 | Usuario borrado | `user_deleted_log` | Se borra un usuario final. |
 
-::: warning Atención
+:::warning Atención
 Este formulario no tiene selectores de **Tipo de contexto** ni de **Contexto**: el webhook queda siempre acotado al reino desde el que lo creas. **Usuario deshabilitado** no está en esta lista, porque solo existe en los webhooks de tipo de contexto **Reino** que creas desde **Configuración** > **Webhooks**.
 :::
 
-::: tip Tip
+:::tip Tip
 Un mismo disparador puede llegarte en dos formas. Si la acción la hace el usuario final desde el sitio, el payload es compacto y trae el evento en `e_c` y `e_a`. Si la hace un administrador desde el panel, o si la plataforma la hace sola, el payload trae el log completo, con `trigger_uid`, `trigger_entity` y el detalle del evento dentro de `options`. Deja tu endpoint preparado para las dos.
 :::
 

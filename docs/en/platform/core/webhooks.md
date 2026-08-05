@@ -36,7 +36,7 @@ To create a webhook, follow these steps:
 8. Click **Save**.
 
 
-::: tip Tip
+:::tip Tip
 The value in the `trigger_uid` column is what travels in the payload's `trigger_uid` field, so it is the data your endpoint uses to tell one trigger from another.
 :::
 
@@ -108,7 +108,7 @@ The triggers of the **Realm** context type are:
 | User disabled | `user_disabled_log` |
 | User deleted | `user_deleted_log` |
 
-::: warning Attention
+:::warning Attention
 These five triggers are the only ones the **Realm** context type offers from **Settings** > **Webhooks**, and they cover the user management your team does. They are not the same ones you see in **Realm Settings** > **Webhooks**, which listens to the realm's end-user events and does not include **User disabled**. If you need both groups of events, create one webhook in each place.
 :::
 
@@ -187,11 +187,11 @@ The available triggers are the realm's 24 end-user events:
 | User password reset | `user_password_reset_log` | A password reset is requested. |
 | User deleted | `user_deleted_log` | An end user is deleted. |
 
-::: warning Attention
+:::warning Attention
 This form has no **Context type** or **Context** selectors: the webhook is always scoped to the realm you create it from. **User disabled** is not on this list, because it only exists in the **Realm** context type webhooks you create from **Settings** > **Webhooks**.
 :::
 
-::: tip Tip
+:::tip Tip
 The same trigger can reach you in two shapes. When the end user performs the action from the site, the payload is compact and carries the event in `e_c` and `e_a`. When an administrator performs it from the admin panel, or the platform performs it on its own, the payload carries the full log, with `trigger_uid`, `trigger_entity`, and the event detail inside `options`. Keep your endpoint ready for both.
 :::
 
