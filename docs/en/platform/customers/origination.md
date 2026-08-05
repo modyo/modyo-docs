@@ -571,6 +571,7 @@ In the details view, you will find the following main sections:
 - **Fields**: Fields configured in the flow to collect user information.
 - **Documents**: Files uploaded by users or required for the origination process.
 - **Signatures**: Tracking of the digital signatures collected during the flow.
+- **Identity Verification**: Result of the user's identity verification when the flow includes it.
 - **Validations**: Validations carried out by administrators to authorize progress.
 - **Activity**: Record of activities and changes made to the submission, useful for monitoring and auditing.
 
@@ -584,6 +585,27 @@ From the submission view in the actions menu (identified with ...), you can [imp
 
 :::tip Segment scope
 If your access to the realm is [restricted by segments](/en/platform/customers/settings.html#restrict-scope-with-segments), you will only see the submissions of the users within your scope. Submissions assigned to you remain visible and operable even if the user belongs to segments outside your scope.
+:::
+
+#### Submission visibility permissions
+
+The role's permissions decide which submissions a team member sees and how much of each one. In the role's Customers permissions there are four that work in tiers:
+
+- **List Assigned Submissions**: in the list they only see the submissions assigned to them and, when opening one, only the **Details** section.
+- **List All Submissions**: they see every submission, not only the ones assigned to them. It includes **List Assigned Submissions**.
+- **View Submission Tasks**: adds the **Tasks** section, with the ability to assign and complete tasks and to approve or reject validations. It includes **List Assigned Submissions**.
+- **View Full Submission**: adds the remaining sections, **Fields**, **Documents**, **Signatures**, **Identity Verification**, **Validations** and **Activity**. It includes **View Submission Tasks**.
+
+When you check a permission, the platform also checks the ones that permission includes. The sections a role cannot see do not appear in the submission menu.
+
+The action permissions build on those tiers: **Edit Submissions** requires **View Full Submission**; **Assign Submissions** requires **List All Submissions**; **Delete Submissions** and **Complete Submissions** require **List Assigned Submissions**.
+
+:::tip Tip
+**Start Submissions** is independent from the visibility permissions: a role can create submissions on behalf of a user without seeing the full list or the detail.
+:::
+
+:::warning Attention
+The roles you already had keep the access they had: those that saw the full detail keep **View Full Submission**, and those that had **Start Submissions** also keep **Assign Submissions** and **List All Submissions**. The separate tiers apply when you edit the role.
 :::
 
 #### Search submissions

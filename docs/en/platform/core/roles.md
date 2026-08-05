@@ -123,6 +123,8 @@ To create a custom role, select the **New Role** button and define its **scope**
 
 When you create a new role or select an existing one, you will be able to view and modify all its associated permissions and accesses. If you select the **All** option, you will automatically assign all permissions to the role.
 
+Some permissions include others: when you check one, the platform also checks the ones that permission needs to work. The most granular case is origination submissions, with three tiers of detail visibility; review [submission visibility permissions](/en/platform/customers/origination.html#submission-visibility-permissions).
+
 To keep the changes, press the **Save** button.
 
 ### Access to applications
