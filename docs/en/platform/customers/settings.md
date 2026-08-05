@@ -26,14 +26,38 @@ Before enabling the option to disable Modyo credentials in the realm, make sure 
 - **On session required redirect to**: Defines where a visitor without a session is sent when trying to access content that requires authentication: to the **Login page** (default option) or to the realm's **Signup page**. In both cases, after authenticating, the user returns to the URL they were trying to access.
 - **Account Activation**:
   - Direct: Users who register can log in directly.
+  - OTP activation: Users who register don't go through an activation email: they receive a one-time code and their account becomes active as soon as they enter it correctly. You can only select this option if the realm has **Enable soft login** active; if it isn't, the option appears disabled. See the details in [Soft login](#soft-login).
   - Activation email: Users who register must activate their account by clicking on a link sent to their email before being able to log in.
   - Moderate: Users who register must wait for a realm administrator to activate their account before they can log in.
   - Disabled: New users cannot be registered in the realm. Already registered and activated users can still log in.
 - **Default Avatar Image**: Image shown on the avatar of users who do not have a custom image.
-- **Enable Soft Login**: By activating this option you can access your account without entering your credentials each time. You will receive a security code through the configured delivery channel (email or WhatsApp) for easy login without the need for passwords.
-- **OTP delivery channel**: Default channel for the soft login security codes: **Email** sends the code to the user's address; **Phone** sends it via WhatsApp and requires an enabled messaging integration, such as [Auronix](#auronix).
+- **Soft login**: Enables logging in with a one-time code (OTP) instead of a password, and defines its validity, the wait time to resend it, and the channels used to send it. See the details in [Soft login](#soft-login).
 - **Registration form**: Here you can enable or disable different attributes in the registration form, such as the second surname, email confirmation, user avatar, date of birth, gender, and phone number.
 - **Delete realm**: Deletes the realm. This process is performed in the background, so you may not see the realm disappear immediately after executing the action. To confirm the deletion, you must enter the full name of the realm.
+
+
+### Soft login
+
+Soft login lets your users log in with a 6-digit one-time code (OTP) instead of a password. When you turn on **Enable soft login**:
+
+- The realm's login view asks for the user's identifier and sends them the code, instead of asking for a password.
+- The signup form stops asking for a password and its confirmation.
+- The **Disable platform credentials** checkbox is locked, because logging in with a code uses the platform credentials.
+- The **OTP activation** option of **Account Activation** becomes available.
+
+Next to the switch you can configure these fields, which can only be edited with soft login active:
+
+- **OTP validity duration (in minutes)**: Minutes the code stays valid after it is sent, between 1 and 30. It defaults to 5. Once it expires, the user has to request a new one.
+- **OTP resend wait time (in minutes)**: Minutes the user waits on the code screen before the **Resend code** link appears, between 1 and 5. It defaults to 5.
+- **OTP delivery channel**: Channels used to send the code. **Email** sends it to the user's address and **Phone** sends it through the messaging integrations enabled in the realm: [Auronix](#auronix) via WhatsApp and [Custom SMS](#custom-sms) via SMS. You can check both channels at the same time and, with soft login active, you must leave at least one checked. **Phone** is only available if the realm has an enabled phone OTP integration, and if you have both Auronix and Custom SMS enabled, the code is sent through both. If the realm has no phone OTP integration, **Email** stays checked and locked as the only channel.
+
+:::warning Attention
+The user has 5 attempts to enter the code. Once they are exceeded, the code is invalidated: even if they later type the right one, they won't be able to log in and will have to request a new code.
+:::
+
+:::warning Attention
+If you turn off **Enable soft login** while **Account Activation** is set to **OTP activation**, the realm goes back to **Activation email** when you save, without warning you.
+:::
 
 
 ## Redirect Login ##
