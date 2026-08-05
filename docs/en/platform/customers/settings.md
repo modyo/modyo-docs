@@ -15,7 +15,7 @@ In this section, you can configure general aspects of the realm, such as:
 
 - **Title**
 - **Identifier**: The URL of the realm's profile, login, registration, and password recovery views.
-- **Disable credentials**: By checking this box, you deactivate Modyo credentials in the realm and only allow access via SSO.
+- **Disable platform credentials**: By checking this box, you deactivate Modyo credentials in the realm and only allow access via SSO.
 
 :::danger Danger
 Before enabling the option to disable Modyo credentials in the realm, make sure that you have configured an SSO identity provider for the realm. Otherwise, users won't be able to sign in.
@@ -32,7 +32,7 @@ Before enabling the option to disable Modyo credentials in the realm, make sure 
   - Disabled: New users cannot be registered in the realm. Already registered and activated users can still log in.
 - **Default Avatar Image**: Image shown on the avatar of users who do not have a custom image.
 - **Soft login**: Enables logging in with a one-time code (OTP) instead of a password, and defines its validity, the wait time to resend it, and the channels used to send it. See the details in [Soft login](#soft-login).
-- **Registration form**: Here you can enable or disable different attributes in the registration form, such as the second surname, email confirmation, user avatar, date of birth, gender, and phone number.
+- **Signup form**: Here you can enable or disable different attributes in the registration form, such as the second surname, email confirmation, user avatar, date of birth, gender, and phone number.
 - **Delete realm**: Deletes the realm. This process is performed in the background, so you may not see the realm disappear immediately after executing the action. To confirm the deletion, you must enter the full name of the realm.
 
 
@@ -41,7 +41,7 @@ Before enabling the option to disable Modyo credentials in the realm, make sure 
 Soft login lets your users log in with a 6-digit one-time code (OTP) instead of a password. When you turn on **Enable soft login**:
 
 - The realm's login view asks for the user's identifier and sends them the code, instead of asking for a password.
-- The signup form stops asking for a password and its confirmation.
+- The realm's registration form stops asking for a password and its confirmation.
 - The **Disable platform credentials** checkbox is locked, because logging in with a code uses the platform credentials.
 - The **OTP activation** option of **Account Activation** becomes available.
 

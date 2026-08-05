@@ -15,7 +15,7 @@ En esta sección, puedes configurar aspectos generales del reino, como:
 
 - **Título**.
 - **Identificador**: La URL de las vistas de perfil, inicio de sesión, registro y recuperación de contraseña del reino.
-- **Deshabilitar credenciales**: Al marcar esta casilla, desactivas las credenciales de Modyo en el reino y permites únicamente el acceso a través de SSO.
+- **Deshabilitar credenciales de la plataforma**: Al marcar esta casilla, desactivas las credenciales de Modyo en el reino y permites únicamente el acceso a través de SSO.
 
 :::danger Peligro
 Antes de habilitar la opción de deshabilitar las credenciales de Modyo en el reino, asegúrate de tener configurado un proveedor de identidad SSO para el reino. De lo contrario, los usuarios no podrán iniciar sesión.
@@ -41,7 +41,7 @@ Antes de habilitar la opción de deshabilitar las credenciales de Modyo en el re
 El Soft login permite que tus usuarios inicien sesión con un código de un solo uso (OTP) de 6 dígitos en lugar de una contraseña. Al activar **Habilitar Soft login**:
 
 - La vista de inicio de sesión del reino pide el identificador del usuario y le envía el código, en lugar de pedirle una contraseña.
-- El formulario de registro deja de pedir contraseña y confirmación de contraseña.
+- El formulario de registro del reino deja de pedir contraseña y confirmación de contraseña.
 - La casilla **Deshabilitar credenciales de la plataforma** queda bloqueada, porque el ingreso con código usa las credenciales de la plataforma.
 - Queda disponible la opción **Activación por OTP** de **Activación de la cuenta**.
 
