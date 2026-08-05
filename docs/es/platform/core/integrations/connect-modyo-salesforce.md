@@ -270,7 +270,7 @@ Llenamos los siguientes datos:
    API_User_Url	
   </td>
   <td>
-   [ Modyo Account ]/api/admin/admin_users/me
+   [ Modyo Account ]/api/admin/profile
   </td>
  </tr>
  <tr>
@@ -330,6 +330,10 @@ Llenamos los siguientes datos:
   </td>
  </tr>
 </table>
+
+:::tip Tip
+El valor de **API_User_Url** apunta al perfil del usuario administrador autenticado. Desde Modyo 10.2 ese dato se obtiene en `[ Modyo Account ]/api/admin/profile`: el endpoint `/api/admin/admin_users/me` ya no existe y responde 404. Si migras una integración creada con una versión anterior, actualiza el valor en el Authentication Provider.
+:::
 
 
 ## Paso 5 Named credentials
@@ -706,6 +710,10 @@ Escribe un nombre, selecciona el Named Credential que creaste y en la parte infe
 Haz click en <b>Save & Next</b>, selecciona todos lo operadores y haz click en Next y Done.
 
 Haz click en <b>Save & Next</b>, selecciona todos lo operadores y haz click en Next y Done.
+
+## Paso 7 Creación de custom fields
+
+Para que la sincronización identifique a cada usuario y transporte el atributo personalizado, crea los campos en los dos extremos: primero en Salesforce y luego en Modyo.
 
 Dentro de <b>Setup</b>, haz click en <b>Contact</b> para crear los campos que necesitaremos.
 
