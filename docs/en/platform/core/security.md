@@ -17,19 +17,37 @@ This guide presents the most relevant recommendations for achieving this objecti
 In this section, you can set the password security policy for team members. The available options are:
 
 - **Minimum password length value**: This value determines the minimum length a password must have; it must be between 12 and 128 characters.
-- **Require at least one lowercase letter (a - z)**: This option ensures that the password contains at least one lowercase letter.
-- **Require at least one capital letter (A - Z)**: This option ensures that the password contains at least one capital letter.
-- **Require at least one non-alphanumeric character (! @ # $ % ^ & * () _ + - = [] {} |)**: This option requires that team members' passwords contain at least one of the specified special characters.
+- **Require at least one lowercase letter from Latin alphabet (a to z)**: This option ensures that the password contains at least one lowercase letter.
+- **Require at least one uppercase letter from Latin alphabet (A to Z)**: This option ensures that the password contains at least one uppercase letter.
+- **Require at least one of these special characters**: This option requires that team members' passwords contain at least one of the symbols that the checkbox itself lists in parentheses. The default set is `! @ # $ % ^ & * ( ) _ + º - = [ ] { } | " . ' ¿ / ¡ : ;`, and the list you see on screen is always the one your installation validates.
 
 When saving this configuration, existing users will have to comply with these conditions when changing their password.
 
+:::warning Attention
+When you enable **Require at least one of these special characters**, the password is also limited to that alphabet: only letters from `a` to `z`, uppercase or lowercase, digits, and the symbols on the list are accepted. Any other character causes the password to be rejected, even if it is long and meets all the other conditions. This includes accented vowels, `ñ`, and symbols such as `~`, `<`, or `>`.
+:::
+
+## Lockout after failed login attempts
+
+In addition to the password policy, Modyo protects the login process against brute force attacks. After 10 consecutive failed attempts, the user is temporarily locked out for 15 minutes, and the error message tells them how long is left before the lockout is lifted:
+
+_Consecutive failed logins limit exceeded. Your account has been temporarily disabled. Please wait 14 minutes for your account to be unlocked._
+
+This protection applies both to team members signing in to the admin panel and to end users signing in to a realm. The lockout is released only by waiting: there is no manual unlock action in the panel, you have to wait for the time to elapse.
+
+:::tip Tip
+This temporary lockout is different from the _inactive_ status of the [User inactivity period policy](#user-inactivity-period-policy). If a team member reports being unable to sign in, check which of the two cases applies: the failed attempts lockout clears on its own after 15 minutes, whereas the inactive status remains until the user reactivates their account or an account owner activates it again.
+:::
+
 ## Session expiration policy
 
-In this section, you can configure how long a session will remain active.
+In this section, you can configure how long a session will remain active. Both fields are fixed option lists: you choose one of the available values, you do not type a free-form time.
 
-**Session Expiration**: At the end of the selected time, Modyo automatically closes the user's session.
+**Session expiration**: At the end of the selected time, Modyo automatically closes the user's session. The options are 15 minutes, 30 minutes, 1 hour, 2 hours, 12 hours, 1 day, 1 week, 2 weeks, 1 month, and 3 months. If the duration defined in your installation does not match any of them, it also appears as one more option on the list.
 
-**User inactivity period**: When a user is inactive, the session is automatically closed after the selected time has elapsed. Navigation, keyboard, and mouse actions are considered user activities. This option protects the user if they leave their workstation unattended.
+**User idle period**: When a user is inactive, the session is automatically closed after the selected time has elapsed. Navigation, keyboard, and mouse actions are considered user activities. This option protects the user if they leave their workstation unattended. To be able to choose a value, first check the **Enable user idle period** box; the options are 5 minutes, 15 minutes, 30 minutes, 1 hour, and 6 hours.
+
+This session closing is measured in minutes and only ends the open session. Do not confuse it with the [User inactivity period policy](#user-inactivity-period-policy), which is measured in days and marks the user as inactive so that they cannot sign in again.
 
 ## User inactivity period policy
 
@@ -52,9 +70,21 @@ You can locate this option when editing a user in the **Team** section, in the *
 
 ## HTTP access control (Cross-Origin Resource Sharing CORS)
 
-Enables the Cross-Origin Resource Sharing (CORS) functionality to allow access to Modyo resources from other websites.
+The **Cross Origin Resource Sharing** section defines which domains can access Modyo resources. It has three controls:
 
-To grant access to external domains, write them separated by commas, for example, `http://api.mydomain.com, http://mysubdomain.mydomain.com`. By default, wildcards are not allowed in this section. To enable them, you must manually disable SSL through a ticket sent to the [Modyo support area](https://support.modyo.com/hc/en-us).
+- **Enable CORS**: turns the feature on. When you check it, the custom domains of your apps are included automatically, without you having to list them.
+- **Allow all origins**: adds the `*` wildcard to the list of allowed origins, so that any domain can consume your public information in JSON format. When you check it, Modyo asks for confirmation with the notice "If enabled, all domains will have access to your public JSON information. Would you like to continue?".
+- **Alternative origins**: text field to grant access to external domains. Write them separated by commas, for example, `http://api.mydomain.com, http://mysubdomain.mydomain.com`. Wildcards are not accepted in this field: if you include a `*`, the configuration is not saved. From each entry, Modyo keeps only the scheme, the domain, and the port, and discards paths.
+
+When you are done, click **Save**.
+
+:::warning Attention
+**Allow all origins** is enabled from this same screen, with no need to open a support ticket or make any other change to your installation. Because it puts your account's public information within reach of any domain, reserve it for development or testing environments and, in production, list the domains in **Alternative origins**.
+:::
+
+:::tip Tip
+The automatic inclusion covers the primary domain of each app. If you publish an app on an alternative domain, or if the origin making the calls uses a different scheme or port, add it in **Alternative origins**, because the origin comparison is exact.
+:::
 
 ## Content Delivery Token (JWT - JSON Web Token)
 
