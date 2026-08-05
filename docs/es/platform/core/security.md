@@ -45,7 +45,7 @@ En esta sección puedes configurar el tiempo que permanecerá activa una sesión
 
 **Expiración de sesión**: Al concluirse el tiempo seleccionado, Modyo cierra la sesión del usuario automáticamente. Las opciones son 15 minutos, 30 minutos, 1 hora, 2 horas, 12 horas, 1 día, 1 semana, 2 semanas, 1 mes y 3 meses. Si la duración definida en tu instalación no coincide con ninguna de ellas, aparece además como una opción más de la lista.
 
-**Período de inactividad del usuario**: Cuando un usuario está inactivo se cierra la sesión automáticamente, una vez transcurrido el tiempo seleccionado. Se considera acciones de navegación, teclado y mouse como actividades de usuario. Esta opción protege al usuario en caso de dejar su estación de trabajo desatendida. Para poder elegir un valor, primero marca la casilla **Activar el periodo de inactividad del usuario**; las opciones son 5 minutos, 15 minutos, 30 minutos, 1 hora y 6 horas.
+**Período de inactividad del usuario**: Cuando un usuario está inactivo se cierra la sesión automáticamente, una vez transcurrido el tiempo seleccionado. Se consideran las acciones de navegación, teclado y mouse como actividades de usuario. Esta opción protege al usuario en caso de dejar su estación de trabajo desatendida. Para poder elegir un valor, primero marca la casilla **Activar el periodo de inactividad del usuario**; las opciones son 5 minutos, 15 minutos, 30 minutos, 1 hora y 6 horas.
 
 Este cierre de sesión se mide en minutos y solo termina la sesión abierta. No lo confundas con la [Política de Periodo de Inactividad de los Usuarios](#politica-de-periodo-de-inactividad-de-los-usuarios), que se mide en días y marca al usuario como inactivo para que no pueda volver a iniciar sesión.
 
