@@ -572,6 +572,7 @@ En la vista de detalles, encontrarás las siguientes secciones principales:
 - **Campos**: Campos configurados en el flujo para recopilar información del usuario.
 - **Documentos**: Archivos subidos por los usuarios o necesarios para el proceso de originación.
 - **Firmas**: Seguimiento de las firmas digitales recolectadas durante el flujo.
+- **Verificación de Identidad**: Resultado de la verificación de identidad del usuario cuando el flujo la incluye.
 - **Validaciones**: Validaciones realizadas por los administradores para autorizar el progreso.
 - **Actividad**: Registro de actividades y cambios realizados en la respuesta, útil para seguimiento y auditoría.
 
@@ -585,6 +586,27 @@ Desde la vista de una respuesta en el menú de acciones (identificado con …) s
 
 :::tip Alcance por segmentos
 Si tu acceso al reino está [restringido por segmentos](/es/platform/customers/settings.html#restringir-el-alcance-con-segmentos), solo verás las respuestas de los usuarios de tu alcance. Las respuestas que tengas asignadas siguen visibles y operables aunque el usuario pertenezca a segmentos fuera de tu alcance.
+:::
+
+#### Permisos de visibilidad de las respuestas
+
+Los permisos del rol deciden qué respuestas ve un miembro del equipo y cuánto ve de cada una. En los permisos de Customers del rol hay cuatro que funcionan por niveles:
+
+- **Listar Respuestas Asignadas**: en el listado ve solo las respuestas que tiene asignadas y, al abrir una, solo la sección **Detalles**.
+- **Listar Todas las Respuestas**: ve todas las respuestas, no solo las que tiene asignadas. Incluye **Listar Respuestas Asignadas**.
+- **Ver Tareas de la Respuesta**: agrega la sección **Tareas**, con la posibilidad de asignar y completar tareas y de aprobar o rechazar validaciones. Incluye **Listar Respuestas Asignadas**.
+- **Ver Respuesta Completa**: agrega las secciones restantes, **Campos**, **Documentos**, **Firmas**, **Verificación de Identidad**, **Validaciones** y **Actividad**. Incluye **Ver Tareas de la Respuesta**.
+
+Al marcar un permiso, la plataforma marca también los que ese permiso incluye. Las secciones que el rol no puede ver no aparecen en el menú de la respuesta.
+
+Los permisos de acción se apoyan en esos niveles: **Editar Respuestas** requiere **Ver Respuesta Completa**; **Asignar Respuestas** requiere **Listar Todas las Respuestas**; **Eliminar Respuestas** y **Completar Respuestas** requieren **Listar Respuestas Asignadas**.
+
+:::tip Tip
+**Iniciar Respuestas** es independiente de los permisos de visibilidad: un rol puede crear respuestas en nombre de un usuario sin ver el listado completo ni el detalle.
+:::
+
+:::warning Atención
+Los roles que ya tenías conservan el acceso que tenían: los que veían el detalle completo mantienen **Ver Respuesta Completa**, y los que tenían **Iniciar Respuestas** mantienen además **Asignar Respuestas** y **Listar Todas las Respuestas**. Los niveles separados aplican cuando edites el rol.
 :::
 
 #### Buscar respuestas

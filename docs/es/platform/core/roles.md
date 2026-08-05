@@ -123,6 +123,8 @@ Para crear un rol a medida, selecciona el botón **Nuevo Rol** y define su **sco
 
 Al crear un nuevo rol o seleccionar uno existente, podrás ver y modificar todos sus permisos y accesos asociados. Si seleccionas la opción **Todos**, asignarás automáticamente todos los permisos al rol.
 
+Algunos permisos incluyen a otros: al marcar uno, la plataforma marca también los que ese permiso necesita para funcionar. El caso más granular son las respuestas de originación, con tres niveles de visibilidad del detalle; revisa [permisos de visibilidad de las respuestas](/es/platform/customers/origination.html#permisos-de-visibilidad-de-las-respuestas).
+
 Para conservar los cambios, presiona el botón **Guardar**.
 
 ### Acceso a las aplicaciones
