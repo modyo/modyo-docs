@@ -713,31 +713,21 @@ No aplica para sitios públicos, ya que en estos casos las respuestas del servid
 
 ## widget
 
-Estos objetos obtienen la información relevante a los Widgets.
+Estos objetos obtienen la información relevante a los Widgets. Los subtipos vigentes son `custom_widget`, `rich_text_widget` y `text_widget`.
 
 | Objeto                       | Descripción                                                | Ejemplo                                                     |
 |------------------------------|------------------------------------------------------------|-------------------------------------------------------------|
-| **widget.cache_key**         | La key del cache asociada al widget.                       | ```widgets/content_list_widgets/506-20220215151403000000``` |
+| **widget.cache_key**         | La key del cache asociada al widget.                       | ```widgets/rich_text_widgets/506-20220215151403000000```    |
 | **widget.created_at**        | La fecha de creación del widget.                           | ```Tue, 15 Feb 2022 15:14:03 UTC +00:00```                  |
 | **widget.id**                | El ID asociado al widget respectivo.                       | ```506```                                                   |
-| **widget.resolve_type**      | El tipo del widget con underscore.                         | ```content_list_widget```                                   |
-| **widget.title**             | El título del widget.                                      | ```Content list```                                          |
-| **widget.css_class**         | La clase de css asociado al widget.                        | ```content-list-widget```                                   |
-| **widget.name**              | El nombre del widget.                                      | ```Content list```                                          |
-| **widget.type**              | El tipo del widget.                                        | ```content-list```                                          |
+| **widget.resolve_type**      | El tipo del widget con underscore.                         | ```rich_text_widget```                                      |
+| **widget.title**             | El título del widget.                                      | ```Bienvenida```                                            |
+| **widget.css_class**         | La clase de css asociado al widget.                        | ```rich-text-widget```                                      |
+| **widget.name**              | El nombre del widget.                                      | ```Bienvenida```                                            |
+| **widget.type**              | El tipo del widget.                                        | ```rich-text```                                             |
 | **widget.use_default_title** | Booleano indicando si el widget usa el titulo por defecto. | ```false```                                                 |
 | **widget.wid**               | El wid del widget.                                         | ```63ae60e2-d152-4c70-a5b0-ffa9916162e3```                  |
 | **widget.width**             | El ancho configurado en el widget.                         | ```full```                                                  |
-
-### content_list_widget
-
-| Objeto                                 | Descripción                                             | Ejemplo                                                                                          |
-|----------------------------------------|---------------------------------------------------------|--------------------------------------------------------------------------------------------------|
-| **content_list_widget.context_params** | Los parametros de contexto asociado al widget.          | ```{:page=>1, :per_page=>10, :account=>#account_object, :user=>nil, :version_type=>:currents}``` |
-| **content_list_widget.entries**        | Arreglo de Objetos de tipo Entries asociadas al widget. |                                                                                                  |
-| **content_list_widget.show_caption**   | Booleano si la opción de show caption está activa.      | ```true```                                                                                       |
-| **content_list_widget.space_id**       | El id del Espacio asociado al widget.                   | ```5```                                                                                          |
-| **content_list_widget.type_uid**       | El uid del type asociado al widget.                     | ```the-new-type```                                                                               |
 
 ### custom_widget
 

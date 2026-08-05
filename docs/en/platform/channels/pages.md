@@ -6,9 +6,15 @@ search: true
 
 Pages allow you to create a structure for your site, add unstructured content, and customize the routes where that content is displayed.
 
-You can create two types of pages: widget or content. Widget pages are based on a modular scheme that allows you to create your custom site using HTML, JS, and CSS. You can drag and drop different predefined or custom widgets created by your team.
+You can create four types of pages: **Widget page**, **Content page**, **Origination page**, and **Support page**. You choose the type when you create the page and you cannot change it afterwards.
+
+Widget pages are based on a modular scheme that allows you to create your custom site using HTML, JS, and CSS. You can drag and drop different predefined or custom widgets created by your team.
 
 Content pages connect the Content modules with Channels. Here you can create the index that contains the entries and the structure for all of them using HTML, JS, CSS, and Liquid.
+
+Origination pages display an [Origination](/en/platform/customers/origination.html) flow to end users. You can only create them if your plan includes Origination and the site is connected to a [realm](/en/platform/customers/realms.html). Each origination can be linked to a single page, and the page is always private: its segment restriction is configured in the origination, not in the page.
+
+Support pages allow end users to create and manage support tickets. You can only create them if your plan includes Support, they allow a single support page per site, and they are always private and restricted to authenticated users.
 
 To edit a page, click on the edit icon or on the page name to go to the edit view.
 
@@ -50,14 +56,24 @@ To create a new page, follow these steps:
 2. Select the site you want to add a new page.
 3. Click **Pages**.
 4. Click **New Page**.
-5. Select the type of page (**Widget** or **Content**) you want to create.
-6. Enter the Layout Name, Path, and if necessary, select the parent layout, then press **Create**.
-7. Customize the page according to the type: adding or editing widgets for Widget Page, or editing the Index and Show for Content Page.
-8. Once finished, click **Publish**.
+5. In **Type**, select the type of page you want to create: **Widget page**, **Content page**, **Origination page**, or **Support page**.
+6. Fill in the fields required by the chosen type:
+   - **Content page**: select the **Space** and the content **Type** that the page will display.
+   - **Origination page**: select the **Origination** you want to display. Only published originations from the site's realm that do not have an associated page yet are listed.
+   - **Widget page** and **Support page**: they do not require additional fields.
+7. Enter the **Name**, the **Path**, and if necessary, select the **Parent page**, then press **Create**.
+8. Customize the page according to the type: adding or editing widgets on the widget page, editing the **Index** and the **Show** on the content page, or editing the flow views on the origination and support pages.
+9. Once finished, click **Publish**.
 
-To learn about the types of widgets you can add, see [Widgets](/en/platform/channels/pages#widget-page).
+:::warning Attention
+If your plan does not include Origination or Support, those types are not shown in the selector. If they are shown but you cannot select them, a prerequisite is missing: the origination page requires the site to be connected to a realm, and the support page requires the site not to have a support page already.
+:::
 
-To learn more about content pages, see [Content Page](/en/platform/channels/pages#content-page).
+To learn about the types of widgets you can add, see [Widget Page](/en/platform/channels/pages.html#widget-page).
+
+To learn more about content pages, see [Content Page](/en/platform/channels/pages.html#content-page).
+
+To learn more about origination pages, see [Create an Origination Page](/en/platform/customers/origination.html#create-an-origination-page).
 
 **Main action**: It is the green button in the upper right that can take different forms:
 
@@ -79,9 +95,9 @@ The central grid is where you can position your widgets. You can move them using
 
 In the right sidebar, there are three tabs:
 
-- Add widgets: Allows you to select widgets from a list to add them to the grid.
-- Edit widget: Allows you to change properties and filters for each widget.
-- Properties: Allows you to modify the name, excerpt, path, parent, privacy, page grid, and meta tags.
+- **Add**: Allows you to select widgets from a list to add them to the grid.
+- **Edit**: Allows you to change the configuration options of the selected widget.
+- **Properties**: Allows you to modify the page's name, parent page, layout, path, excerpt, route delegation, grid, privacy, and custom meta tags.
 
 
 ### Inserting an image with Liquid
@@ -113,31 +129,35 @@ It is necessary that your account's CDN is in the cloud for changes to be reflec
 
 ## Widget Page
 
-Here you can customize your page using preset widgets from the following list:
-
+In the sidebar's **Add** tab you will find two groups. Under **Blocks** are the preset widgets that Modyo ships:
 
 - **HTML**: Allows you to enter HTML and CSS code without validations. It will not allow you to enter Javascript code.
 - **Rich text**: Allows you to use a rich text editor, in which you can format text and switch between code view and rich text.
 :::warning Attention
 The rich text widget has an automatic formatter, so the code you write in the code view may be affected.
 :::
-- **Content list**: Displays content lists using filters by space, type, language, tags, and category. To modify how these widgets look, you must do so in the Widgets section in [Templates](/en/platform/channels/templates).
-- **Featured content**: Displays a list of entries as "hero" images in a carousel.
-- **Custom**: You will find a list of all the widgets you have created and published in the widget builder.
+
+Under **Widgets** are your custom widgets, that is, the ones you created and published in the [widget builder](/en/platform/channels/widgets.html). There you have a shortcut to five of them, and with **View all widgets** you open the site's complete list.
+
+:::tip Tip
+The **Content list** and **Featured content** widgets no longer exist in the product. To display entry lists and their detail, use a [Content Page](/en/platform/channels/pages.html#content-page), and to build carousels or custom highlights, create a [custom widget](/en/platform/channels/widgets.html).
+:::
 
 Once a widget is selected in the central section, the focus will shift to the side tab, where you can find different configuration options for the widget. If you select a custom widget, you will find a link to go directly to its editing view in [widget builder](/en/platform/channels/widgets) and the list of variables the widget is using. If you want to overwrite the value of a particular variable for that instance of the widget on that page, you must select the checkbox to the left of the variable and change the value it takes.
 
 ### Properties
 
-In this tab you will find common properties options for all pages:
+In this tab you will find the widget page controls, in the same order they appear in the panel. **Grid** and **Delegate child routes to this page** only exist here and on the home page: content, origination, and support pages do not have those controls.
 
-- Name
-- Parent
-- Path
-- Excerpt
-- Grid
-- Privacy
-- Custom meta tags
+- **Name**: The name of the page.
+- **Parent page**: The page under which this one is nested. You can only choose widget pages of the site that are published, scheduled, or unpublished.
+- **Layout**: The site's published layout template that wraps the page. You manage them in [Templates](/en/platform/channels/templates.html).
+- **Path**: The relative path of the page, for example `my-awesome-page`.
+- **Excerpt**: A summary of up to 255 characters that is used in the page's meta tags.
+- **Delegate child routes to this page**: See [Route delegation](/en/platform/channels/pages.html#route-delegation).
+- **Grid**: See [Grids](/en/platform/channels/pages.html#grids).
+- **Privacy**: See [Privacy](/en/platform/channels/pages.html#privacy).
+- **Custom meta tags**: See [Meta tags](/en/platform/channels/pages.html#meta-tags).
 
 :::warning Attention
 Modyo has reserved paths for pages, so you cannot use them as paths for your custom pages:
@@ -177,6 +197,32 @@ Modyo has reserved paths for pages, so you cannot use them as paths for your cus
 <li>widget_manager</li>
 </ul></td>
 </tr></table>
+:::
+
+### Grids
+
+The grid defines the zones of the page where you can drop widgets. When you change the grid, widgets are rearranged into the zones of the new grid. In the selector you choose among nine grids, identified by the same value that `grid.resolve_type` returns in Liquid:
+
+| Grid                         | Zones                                             |
+|------------------------------|---------------------------------------------------|
+| `full_grid`                  | A single full-width main zone.                    |
+| `full_two_cols_grid`         | Full-width main zone plus two columns.            |
+| `full_three_cols_grid`       | Full-width main zone plus three columns.          |
+| `side_left_grid`             | Main zone plus a left sidebar.                    |
+| `side_right_grid`            | Main zone plus a right sidebar.                   |
+| `side_left_one_col_grid`     | Main zone, left sidebar, and a full-width zone.   |
+| `side_right_one_col_grid`    | Main zone, right sidebar, and a full-width zone.  |
+| `side_left_three_cols_grid`  | Main zone, left sidebar, and three columns.       |
+| `side_right_three_cols_grid` | Main zone, right sidebar, and three columns.      |
+
+To iterate over the widgets of each zone from your templates, see the [grid](/en/platform/channels/liquid-markup/objects.html#grid) objects.
+
+### Route delegation
+
+When you enable **Delegate child routes to this page**, Modyo serves this same page for any sub-route that does not match another page of the site, and your JavaScript router takes absolute control of those sub-routes.
+
+:::tip Tip
+On content pages you do not need to delegate routes: the **Index** resolves the list route and the **Show** resolves the sub-route of each entry.
 :::
 
 ## Content Page
@@ -257,10 +303,6 @@ The excerpt is added as part of the meta tags to improve SEO. This is possible f
 ```html
 <meta name="description" content="{{ page.excerpt }}"/>
 ```
-
-#### Route delegation
-
-Enables route delegation to allow absolute control over the page's sub-routes through the JavaScript router.
 
 ## Privacy
 

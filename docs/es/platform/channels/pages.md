@@ -6,9 +6,15 @@ search: true
 
 Las Páginas (o pages) permiten crear una estructura para tu sitio, añadir contenido no estructurado y personalizar las rutas donde se muestra ese contenido.
 
-Puedes crear dos tipos de páginas: de widgets o de contenido. Las páginas de widgets se basan en un esquema modular que permite crear tu sitio a medida usando HTML, JS y CSS. Podrás arrastrar y acomodar diferentes widgets predefinidos o personalizados creados por tu equipo.
+Puedes crear cuatro tipos de páginas: **Página de Widget**, **Página de contenido**, **Página de originación** y **Página de soporte**. Eliges el tipo al crear la página y no puedes cambiarlo después.
+
+Las páginas de widget se basan en un esquema modular que permite crear tu sitio a medida usando HTML, JS y CSS. Podrás arrastrar y acomodar diferentes widgets predefinidos o personalizados creados por tu equipo.
 
 Las páginas de contenido conectan los módulos de Content con Channels. Aquí podrás crear el índice que contiene las entradas y la estructura para todas ellas usando HTML, JS, CSS y Liquid.
+
+Las páginas de originación despliegan un flujo de [Originación](/es/platform/customers/origination.html) a los usuarios finales. Solo puedes crearlas si tu plan incluye Originación y el sitio está conectado a un [reino](/es/platform/customers/realms.html). Cada originación se puede vincular a una sola página, y la página siempre es privada: su restricción por segmentos se configura en la originación, no en la página.
+
+Las páginas de soporte permiten a los usuarios finales crear y gestionar tickets de soporte. Solo puedes crearlas si tu plan incluye Soporte, admiten una sola página de soporte por sitio y son siempre privadas y restringidas a usuarios autenticados.
 
 Para editar una página, haz clic en el icono de edición o en el nombre de la página para ir a la vista de edición.
 
@@ -50,14 +56,24 @@ Para crear una nueva página, sigue estos pasos:
 2. Selecciona el sitio al que desees agregar una nueva página.
 3. Haz clic en **Pages**.
 4. Haz clic en **Nueva Página**.
-5. Selecciona el tipo de página (**Widget** o **Content**) que quieres crear.
-6. Ingresa el Nombre del Layout, la Ruta y, si es necesario, selecciona el layout padre, luego presiona **Crear**.
-7. Personaliza la página según el tipo: agregando o editando widgets para Página de Widget, o editando el Index y Show para Página de Contenido.
-8. Una vez terminado, haz clic en **Publicar**.
+5. En **Tipo**, selecciona el tipo de página que quieres crear: **Página de Widget**, **Página de contenido**, **Página de originación** o **Página de soporte**.
+6. Completa los campos que pide el tipo elegido:
+   - **Página de contenido**: selecciona el **Espacio** y el **Tipo** de contenido que va a desplegar la página.
+   - **Página de originación**: selecciona la **Originación** que quieres desplegar. Solo aparecen las originaciones publicadas del reino del sitio que todavía no tienen una página asociada.
+   - **Página de Widget** y **Página de soporte**: no piden campos adicionales.
+7. Ingresa el **Nombre**, la **Ruta** y, si es necesario, selecciona la **Página padre**, luego presiona **Crear**.
+8. Personaliza la página según el tipo: agregando o editando widgets en la página de widget, editando el **Index** y el **Show** en la página de contenido, o editando las vistas del flujo en las páginas de originación y de soporte.
+9. Una vez terminado, haz clic en **Publicar**.
 
-Para conocer los tipos de widgets que puedes agregar, consulta [Widgets](/es/platform/channels/pages#pagina-de-widget).
+:::warning Atención
+Si tu plan no incluye Originación o Soporte, esos tipos no aparecen en el selector. Si aparecen pero no puedes seleccionarlos, falta una precondición: la página de originación necesita que el sitio esté conectado a un reino, y la página de soporte necesita que el sitio no tenga ya una página de soporte.
+:::
 
-Para conocer más acerca de páginas de contenido, consulta [Página de Contenido](/es/platform/channels/pages#pagina-de-contenido).
+Para conocer los tipos de widgets que puedes agregar, consulta [Página de Widget](/es/platform/channels/pages.html#pagina-de-widget).
+
+Para conocer más acerca de páginas de contenido, consulta [Página de Contenido](/es/platform/channels/pages.html#pagina-de-contenido).
+
+Para conocer más acerca de páginas de originación, consulta [Crear una Página de Originación](/es/platform/customers/origination.html#crear-una-pagina-de-originacion).
 
 **Acción principal**: Es el botón verde en la parte superior derecha que puede tomar distintas formas:
 
@@ -79,9 +95,9 @@ La grilla central es donde puedes posicionar tus widgets. Puedes moverlos utiliz
 
 En la sección lateral derecha, hay tres pestañas:
 
-- Añadir widgets: Permite seleccionar widgets de un listado para añadirlos a la grilla.
-- Editar widget: Permite cambiar propiedades y filtros para cada widget.
-- Propiedades: Permite modificar el nombre, excerpt, ruta, padre, privacidad, grilla de la página y meta tags.
+- **Añadir**: Permite seleccionar widgets de un listado para añadirlos a la grilla.
+- **Editar**: Permite cambiar las opciones de configuración del widget seleccionado.
+- **Propiedades**: Permite modificar el nombre, la página padre, el layout, la ruta, el extracto, la delegación de rutas, la grilla, la privacidad y los meta tags personalizados de la página.
 
 
 ### Insertar una imagen con Liquid
@@ -113,31 +129,35 @@ Es necesario que el CDN de tu cuenta esté en la nube para que los cambios se re
 
 ## Página de Widget
 
-Aquí puedes personalizar tu página usando widgets preestablecidos de la siguiente lista:
-
+En la pestaña **Añadir** de la barra lateral encuentras dos grupos. Bajo **Bloques** están los widgets preestablecidos que trae Modyo:
 
 - **HTML**: Te permite ingresar código HTML y CSS sin validaciones. No te permitirá ingresar código Javascript.
 - **Texto enriquecido**: Te permitirá hacer uso de un editor de texto enriquecido, en el que puedes darle formato al texto y cambiar entre la vista de código y texto enriquecido.
 :::warning Atención
 El widget de texto enriquecido cuenta con un formateador automático, por lo que el código que escribas en la vista de código puede verse afectado.
 :::
-- **Listado de contenido**: Muestra listados de contenido haciendo uso de filtros por espacio, tipo, idioma, tags, y categoría. Para modificar como se ven estos widgets, debes hacerlo en la sección de Widgets en [Templates](/es/platform/channels/templates).
-- **Contenido destacado**: Muestra un listado de entradas como imágenes "hero" en un carrusel.
-- **Personalizado**: Encontrarás un listado de todos los widgets que has creado y publicado en el widget builder.
+
+Bajo **Widgets** están tus widgets personalizados, es decir, los que creaste y publicaste en el [widget builder](/es/platform/channels/widgets.html). Ahí tienes un acceso directo a cinco de ellos y con **Ver todos los widgets** abres el listado completo del sitio.
+
+:::tip Tip
+Los widgets **Listado de contenido** y **Contenido destacado** ya no existen en el producto. Para desplegar listados de entradas y su detalle usa una [Página de Contenido](/es/platform/channels/pages.html#pagina-de-contenido), y para carruseles o destacados a medida crea un [widget personalizado](/es/platform/channels/widgets.html).
+:::
 
 Una vez seleccionado un widget en la sección central, el foco pasará a la pestaña lateral, donde podrás encontrar distintas opciones de configuración del widget y en caso de seleccionar un widget personalizado, encontrarás un link para ir directamente a su vista de edición en [widget builder](/es/platform/channels/widgets) y el listado de variables que el widget está usando. Si quieres sobrescribir el valor de una variable en particular para esa instancia del widget en esa página, debes seleccionar el checkbox a la izquierda de la variable y cambiar el valor que toma.
 
 ### Propiedades
 
-En esta pestaña encontrarás opciones propiedades comunes de todas las páginas:
+En esta pestaña encontrarás los controles de la página de widget, en el mismo orden en que aparecen en el panel. **Grilla** y **Delegar rutas hijas a esta página** solo existen aquí y en la página home: las páginas de contenido, de originación y de soporte no tienen esos controles.
 
-- Nombre
-- Padre
-- Ruta
-- Extracto
-- Grilla
-- Privacidad
-- Meta tags personalizados
+- **Nombre**: El nombre de la página.
+- **Página padre**: La página bajo la cual se anida esta. Solo puedes elegir páginas de widget del sitio que estén publicadas, programadas o despublicadas.
+- **Layout**: La plantilla de layout publicada del sitio que envuelve la página. Las administras en [Plantillas](/es/platform/channels/templates.html).
+- **Ruta**: El path relativo de la página, por ejemplo `mi-increible-pagina`.
+- **Extracto**: Un resumen de hasta 255 caracteres que se usa en los meta tags de la página.
+- **Delegar rutas hijas a esta página**: Revisa [Delegación de rutas](/es/platform/channels/pages.html#delegacion-de-rutas).
+- **Grilla**: Revisa [Grillas](/es/platform/channels/pages.html#grillas).
+- **Privacidad**: Revisa [Privacidad](/es/platform/channels/pages.html#privacidad).
+- **Meta tags personalizados**: Revisa [Meta tags](/es/platform/channels/pages.html#meta-tags).
 
 :::warning Atención
 Modyo cuenta con rutas reservadas para las página, por lo que no podrás usarlos como rutas de tus páginas personalizadas:
@@ -177,6 +197,32 @@ Modyo cuenta con rutas reservadas para las página, por lo que no podrás usarlo
 <li>widget_manager</li>
 </ul></td>
 </tr></table>
+:::
+
+### Grillas
+
+La grilla define las zonas de la página en las que puedes soltar widgets. Al cambiar de grilla, los widgets se reacomodan en las zonas de la grilla nueva. En el selector eliges entre nueve grillas, identificadas por el mismo valor que devuelve `grid.resolve_type` en Liquid:
+
+| Grilla                       | Zonas                                                                   |
+|------------------------------|-------------------------------------------------------------------------|
+| `full_grid`                  | Una zona principal a todo el ancho.                                     |
+| `full_two_cols_grid`         | Zona principal a todo el ancho más dos columnas.                        |
+| `full_three_cols_grid`       | Zona principal a todo el ancho más tres columnas.                       |
+| `side_left_grid`             | Zona principal más una barra lateral a la izquierda.                    |
+| `side_right_grid`            | Zona principal más una barra lateral a la derecha.                      |
+| `side_left_one_col_grid`     | Zona principal, barra lateral a la izquierda y una zona a todo el ancho.|
+| `side_right_one_col_grid`    | Zona principal, barra lateral a la derecha y una zona a todo el ancho.  |
+| `side_left_three_cols_grid`  | Zona principal, barra lateral a la izquierda y tres columnas.           |
+| `side_right_three_cols_grid` | Zona principal, barra lateral a la derecha y tres columnas.             |
+
+Para recorrer los widgets de cada zona desde tus plantillas, revisa los objetos de [grilla](/es/platform/channels/liquid-markup/objects.html#grid).
+
+### Delegación de rutas
+
+Al activar **Delegar rutas hijas a esta página**, Modyo entrega esta misma página para cualquier sub-ruta que no corresponda a otra página del sitio, y tu router de JavaScript toma el control absoluto de esas sub-rutas.
+
+:::tip Tip
+En las páginas de contenido no necesitas delegar rutas: el **Index** resuelve la ruta del listado y el **Show** resuelve la sub-ruta de cada entrada.
 :::
 
 ## Página de Contenido
@@ -257,10 +303,6 @@ El extracto se agrega como parte de los meta tags para mejorar el SEO. Esto es p
 ```html
 <meta name="description" content="{{ page.excerpt }}"/>
 ```
-
-#### Delegación de rutas
-
-Habilita la delegación de rutas para permitir el control absoluto de las sub-rutas de la página a través del router de JavaScript.
 
 ## Privacidad
 
