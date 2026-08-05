@@ -232,7 +232,6 @@ Extiende la funcionalidad del objeto Grid y contiene los siguientes atributos ad
 | **full_three_cols_grid.col1_widgets**       | Array de objetos de tipo widget. |         |
 | **full_three_cols_grid.col2_widgets**       | Array de objetos de tipo widget. |         |
 | **full_three_cols_grid.col3_widgets**       | Array de objetos de tipo widget. |         |
-| **side_right_three_cols_grid.main_widgets** | Array de objetos de tipo widget. |         |
 
 
 ### full_two_cols_grid
@@ -304,6 +303,7 @@ Extiende la funcionalidad del objeto Grid y contiene los siguientes atributos ad
 
 | Objeto                                            | Descripción                      | Ejemplo |
 |---------------------------------------------------|----------------------------------|---------|
+| **side_right_three_cols_grid.main_widgets**       | Array de objetos de tipo widget. |         |
 | **side_right_three_cols_grid.side_right_widgets** | Array de objetos de tipo widget. |         |
 | **side_right_three_cols_grid.col1_widgets**       | Array de objetos de tipo widget. |         |
 | **side_right_three_cols_grid.col2_widgets**       | Array de objetos de tipo widget. |         |
@@ -337,7 +337,6 @@ Objeto de tipo menú. Contiene la información relevante de los ítems de un men
 
 | Objeto                            | Descripción                                                  | Ejemplo                               |
 |-----------------------------------|--------------------------------------------------------------|---------------------------------------|
-| **menu_item.category**            | Categoría asociada al ítem de menú.                          | ```home```                            |
 | **menu_item.child_items**         | Array de objetos de ítems hijos del ítem actual.             |                                       |
 | **menu_item.classes**             | Clases CSS asociadas a este ítem.                            | ```mdi, mdi-circle```                 |
 | **menu_item.description**         | Descripción para este ítem.                                  |                                       |
@@ -355,8 +354,7 @@ Estos objetos permiten obtener información a través de Liquid para las notific
 |---------------------------|-----------------------------------------------------|------------------------------------------------------------------------------|
 | **notification.opened**   | Booleano que indica si la notificación fue abierta. | ```true```                                                                   |
 | **notification.sent_at**  | Fecha de envío de la notificación.                  | ```2012-11-16 00:46:40```                                                    |
-| **notification.body**     | Cuerpo de la notificación.                          | ```mdi, mdi-circle```                                                        |
-| **menu_item.description** | Descripción para este ítem.                         | ```<p>Este es un mensaje de prueba en las campañas via notificaciones</p>``` |
+| **notification.body**     | Cuerpo de la notificación.                          | ```<p>Este es un mensaje de prueba en las campañas vía notificaciones</p>``` |
 | **notification.subject**  | Asunto de la notificación.                          | ```Modyo Developers Update```                                                |
 | **notification.url**      | URL de la notificación.                             | ```https://test.modyo.com/profile?notification_id=65345```                   |
 
@@ -453,11 +451,8 @@ Estos drops permiten obtener información al momento de realizar una solicitud (
 | **request.host**          | Host de la solicitud.                                                                     | ```test.modyo.com```                                                                                                            |
 | **request.protocol**      | Protocolo asociado a la solicitud.                                                        | ```https://```                                                                                                                  |
 | **request.user_agent**    | Detalles del user agent.                                                                  | ```mozilla/5.0 (macintosh; intel mac os x 10_15_2) applewebkit/537.36 (khtml, like gecko) chrome/96.0.4664.110 safari/537.36``` |
-| **request.comments_url**  | URL de comentarios de la solicitud.                                                       | ```https://test.modyo.com/newsite/requests/123124/comments```                                                                   |
-| **request.interact_url**  | URL de interacción de la solicitud.                                                       | ```https://test.modyo.com/newsite/requests```                                                                                   |
 | **request.is_app_shell?** | Booleano que indica si el user agent de la solicitud pertenece a una aplicación de Modyo. | ```false```                                                                                                                     |
 | **request.path**          | Ruta de la solicitud.                                                                     | ```/newsite/the-new-type/newentry```                                                                                            |
-| **request.refresh_url**   | URL de refresco de la solicitud.                                                          | ```https://test.modyo.com/newsite/requests/refresh```                                                                           |
 | **request.url**           | URL de la solicitud.                                                                      | ```https://test.modyo.com/ivansite/the-new-type/newentry```                                                                     |
 
 ## segment
@@ -481,7 +476,6 @@ Los objetos de Sitio se utilizan para obtener toda la información de un sitio. 
 | **site.description**            | String con la descripción del sitio.                                                                                        |                        |
 | **site.favicon_link**           | String con el enlace al favicon.                                                                                            |                        |
 | **site.host**                   | String con el host del sitio.                                                                                               |                        |
-| **site.keywords**               | String con todas las palabras clave separadas por coma en el sitio.                                                         |                        |
 | **site.language**               | String con el idioma del sitio.                                                                                             |                        |
 | **site.login_url**              | String con la URL para iniciar sesión en el sitio.                                                                          |                        |
 | **site.logo**                   | String con la ubicación del logo para el sitio.                                                                             |                        |
@@ -584,12 +578,14 @@ Adicionalmente según el tipo de tarea pueden haber atributos adicionales.
 
 #### invitation_task
 
-| Objeto                     | Descripción                                  | Ejemplo                                                          |
-|----------------------------|----------------------------------------------|------------------------------------------------------------------|
-| **user_input_task.target_tasks** | Lista los objetos de tipo task. | [ver documentación de task](/es/platform/channels/liquid-markup/objects.html#task) |
-| **user_input_task.max_invitation** | Número máximo de invitados. | ```12``` |
+| Objeto                              | Descripción                                                                                                           | Ejemplo                                                                            |
+|-------------------------------------|-----------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
+| **invitation_task.target_tasks**    | Lista los objetos de tipo task que debe completar el invitado. Vacía si la tarea no tiene una invitación configurada. | [ver documentación de task](/es/platform/channels/liquid-markup/objects.html#task) |
+| **invitation_task.max_invitations** | Número máximo de invitaciones que puedes enviar desde esta tarea.                                                     | ```12```                                                                           |
 
 ### Tipos de Respuesta de Tareas
+
+Toda respuesta de tarea comparte los atributos que hereda de la respuesta base: `task`, `user`, `created_at`, `updated_at`, `started_at`, `completed_at` y `status`. La tabla siguiente lista únicamente los atributos propios de cada tipo de respuesta.
 
 | Objeto                                        | Descripción                                             | Ejemplo                                       |
 |-----------------------------------------------|---------------------------------------------------------|-----------------------------------------------|
@@ -602,18 +598,16 @@ Adicionalmente según el tipo de tarea pueden haber atributos adicionales.
 | **digital_signature_task_response.signed**    | Indica si la tarea fue firmada digitalmente.            | ```false```                                   |
 | **origination_flow_task_response.submission** | Submission asociada a la tarea de flujo de originación. | [ver documentación de sumbission](/es/platform/channels/liquid-markup/objects.html#submission)                                              |
 | **invitation_task_response.completed** | Indica si la tarea de invitación fue completada. | ```true```                                             |
-| **identity_verification_task_response.verification_status** | Indica si la tarea de verificación fue verificada. | ```verified```                                             |
-| **identity_verification_task_response.document_status** | Indica si el documento en la tarea de verificación fue verificado. | ```document_verified```                                             |
-| **identity_verification_task_response.biometric_status** | Indica si la biometria en la tarea de verificación fue verificada. | ```biometric_verified```                                             |
-| **identity_verification_task_response.session_id** | Indica el session ID de la tarea de verificación. | ```e0a27d34-a335-4101-a53d-3e8a6b8aa3a2```                                                            |
-| **identity_verification_task_response.verification_date** | Indica la fecha en que la tarea de verificación fue verificada. | ```2026-02-11T09:26:49.257-03:00```                                             |
-| **identity_verification_task_response.verification_details** | Da los detalles de la tarea de verificación. | ```{:session_id=>nil, :verification_url=>nil, :document_type=>nil, :document_status=>"document_verified", :biometric_status=>"biometric_verified", :verification_date=>"2026-02-11T09:26:49.257-03:00", :face_match_score=>95.93251037597656, :liveness_score=>98.41004943847656}```                                             |
-| **identity_verification_task_response.is_verified** | Indica si la tarea de verificación fue verificada. | ```true```                                             |
-| **identity_verification_task_response.requires_review** | Indica si la tarea de verificación está pendiente de revisión. | ```false```                                             |
-| **identity_verification_task_response.can_retry** | Indica si la tarea de verificación puede ser reintentada. | ```false```                                             |
-| **identity_verification_task_response.rejection_reasons** | Indica la razón por la que la tarea de verificación fue rechazada. | ```Score: 89.43626403808594 < 90.0```                                             |
-| **identity_verification_task_response.verification_expired** | Indica si la tarea de verificación está expirada. | ```false```                                             |
+| **identity_verification_task_response.verification_details** | Hash con el detalle de la verificación: `document_type`, `document_status`, `biometric_status`, `verification_date`, `face_match_score` y `liveness_score`. | ```{:document_type=>"national_id", :document_status=>"document_verified", :biometric_status=>"biometric_verified", :verification_date=>"2026-02-11T09:26:49.257-03:00", :face_match_score=>95.93251037597656, :liveness_score=>98.41004943847656}``` |
+| **identity_verification_task_response.ocr_data** | Accesor unificado e independiente del proveedor: entrega `ocr` y, cuando viene vacío, cae a `extracted_information`. Úsalo para recorrer los campos del documento sin condicionar por proveedor. | ```{"nombre"=>"Ivan Modyo", "numero_documento"=>"12.345.678-9"}``` |
+| **identity_verification_task_response.ocr** | Hash con los pares campo/valor que el proveedor extrajo del documento. Vacío si el proveedor no entrega esa estructura. | ```{"nombre"=>"Ivan Modyo", "numero_documento"=>"12.345.678-9"}``` |
+| **identity_verification_task_response.extracted_information** | Hash con los campos que el proveedor ya interpretó del documento. Vacío si el proveedor no entrega esa estructura. | ```{"first_name"=>"Ivan", "last_name"=>"Modyo"}``` |
+| **identity_verification_task_response.provider_raw_response** | Respuesta cruda del proveedor de identidad, tal como la entregó. | ```{"document_ocr":{"all_key_value_pairs":{"nombre":"Ivan Modyo"}}}``` |
+| **identity_verification_task_response.provider_raw_response_data** | La misma respuesta cruda, ya parseada como hash. Entrega un hash vacío si la respuesta no es un JSON válido. | ```{"document_ocr"=>{"all_key_value_pairs"=>{"nombre"=>"Ivan Modyo"}}}``` |
 
+:::warning Atención
+`provider_raw_response` y `provider_raw_response_data` entregan la respuesta del proveedor de identidad tal como llegó, con datos personales sensibles: número y tipo de documento, e indicadores biométricos. No las imprimas en plantillas de páginas o widgets accesibles sin sesión, ni las dejes en el HTML para depurar. Para mostrar información al usuario usa `verification_details` u `ocr_data`, y limita la salida a los campos que necesitas.
+:::
 
 ### user_input_task_response
 
@@ -651,7 +645,6 @@ Usa los objetos de user para obtener información de tus usuarios del módulo Cu
 | **user.access_token**                | El access token del usuario.                                   | ```Uel7k61VuWhSxX3dJDILB7BtM1I_KQi1wEkV9PtnHLQ```    |
 | **user.age**                         | Edad del usuario.                                              | ```39```                                             |
 | **user.avatar**                      | Objeto de tipo asset que representa el avatar del usuario.     |                                                      |
-| **type.name**                        | Nombre del tipo.                                               | ```508```                                            |
 | **user.birth_at**                    | Fecha de nacimiento del usuario.                               | ```1982-09-01```                                     |
 | **user.change_password_url**         | URL para cambio de contraseña.                                 | ```https://test.modyo.com/newsite/password/change``` |
 | **user.custom_fields**               | Hash con los datos de los campos personalizados del usuario.   | ```{"_UCF_Job"=>"Software Engineer"}```              |
@@ -686,7 +679,6 @@ Usa los objetos de user para obtener información de tus usuarios del módulo Cu
 | **user.current_login_ip**            | IP utilizada en el login actual.                               | ```203.0.113.10```                                   |
 | **user.last_login_at**               | Timestamp del login previo.                                    | ```2025-10-19 09:30:01 UTC```                        |
 | **user.last_login_ip**               | IP del login previo.                                           | ```198.51.100.7```                                   |
-| **user.undefined_sex_value**         | Valor constante para género indefinido.                        | ```3```                                              |
 | **user.unread_notifications**        | Array de objetos notification no leídas.                       |                                                      |
 | **user.unread_notifications_count**  | Conteo de notificaciones no leídas.                            | ```2```                                              |
 | **user.username**                    | Username del usuario.                                          | ```ivan@modyo.com```                                 |
@@ -764,7 +756,11 @@ Estos objetos obtienen la información relevante a los Widgets.
 
 ## Deprecated Attributes
 
-Los siguientes atributos están deprecados y deben evitarse en nuevo desarrollo. Donde sea posible, usa el reemplazo sugerido.
+Los siguientes atributos están deprecados o fueron eliminados, y debes evitarlos en nuevo desarrollo. Donde sea posible, usa el reemplazo sugerido.
+
+:::warning Atención
+Cuando una plantilla invoca un atributo que ya no existe, Liquid lo resuelve como vacío y la página se renderiza sin ningún error visible. Si un bloque queda en blanco sin motivo aparente, revisa primero que el atributo siga listado en esta referencia.
+:::
 
 | Atributo                                         | Reemplazo                     | Notas                                               |
 |--------------------------------------------------|-------------------------------|-----------------------------------------------------|
@@ -780,4 +776,7 @@ Los siguientes atributos están deprecados y deben evitarse en nuevo desarrollo.
 | match_path_url                                   | (eliminar)                    | Helper de routing legado eliminado.                 |
 | without_category_url                             | entry.url                     | URL sin categoría eliminada.                        |
 | location.latitude / longitude (flags deprecadas) | location.latitude / longitude | Flags antiguas reemplazadas por los mismos nombres. |
+| request.comments_url                             | (eliminar)                    | Eliminado en 10.2; hoy se resuelve como vacío.      |
+| request.interact_url                             | (eliminar)                    | Eliminado en 10.2; hoy se resuelve como vacío.      |
+| request.refresh_url                              | (eliminar)                    | Eliminado en 10.2; hoy se resuelve como vacío.      |
 
