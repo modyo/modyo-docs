@@ -707,9 +707,7 @@ Escribe un nombre, selecciona el Named Credential que creaste y en la parte infe
 ```
 <img src="/assets/img/tutorials/salesforce/add_an_external_service.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image with Add an External Service in Salesforce."/>
 
-Haz click en <b>Save & Next</b>, selecciona todos lo operadores y haz click en Next y Done.
-
-Haz click en <b>Save & Next</b>, selecciona todos lo operadores y haz click en Next y Done.
+Haz click en <b>Save & Next</b>, selecciona todos los operadores y haz click en Next y Done.
 
 ## Paso 7 Creación de custom fields
 

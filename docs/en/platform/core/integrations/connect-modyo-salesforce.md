@@ -709,8 +709,6 @@ Enter a name, select the Named Credential you created and at the bottom we paste
 
 Click <b>Save & Next</b>, select all operators and click Next and Done.
 
-Click <b>Save & Next</b>, select all operators and click Next and Done.
-
 ## Step 7 Creating custom fields
 
 So the sync can identify each user and carry the custom attribute, create the fields on both ends: first in Salesforce and then in Modyo.
