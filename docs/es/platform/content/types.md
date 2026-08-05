@@ -47,7 +47,7 @@ La cardinalidad se refiere al número de entradas que pueden existir para ese ti
 :::
 
 :::warning Atención
-El número de tipos de contenido que puedes crear por espacio lo define el plan de tu cuenta, y por defecto son 50. Al intentar crear uno más allá del cupo, la creación falla con el mensaje "Has alcanzado el número máximo de tipos de contenido para el plan actual". Si necesitas un cupo mayor, conversa con tu ejecutivo de cuenta en Modyo.
+El número de tipos de contenido que puedes crear por espacio lo define el plan de tu cuenta, y por defecto es 50. Al intentar crear uno más allá del cupo, la creación falla con el mensaje "Has alcanzado el número máximo de tipos de contenido para el plan actual". Si necesitas un cupo mayor, conversa con tu ejecutivo de cuenta en Modyo.
 :::
 
 En la interfaz de creación, encontrarás una plantilla vacía en el centro de la pantalla y al lado derecho, una tabla con tres pestañas: 
@@ -196,7 +196,7 @@ No hay límite en la cantidad de campos que puedes incluir dentro de un grupo.
 
 Puedes validar el contenido de los campos de la siguiente forma: 
 
-- **Requerido**: Marca la casilla **Requirido** para obligar a que se complete el grupo o campo.
+- **Requerido**: Marca la casilla **Requerido** para obligar a que se complete el grupo o campo.
   - Si marcas el grupo como requerido, al menos un elemento dentro del grupo deberá ser completado. 
   - Si marcas un elemento como requerido, ese elemento tiene que tener contenido.
 - **Único**: No aplica dentro de un grupo. La casilla aparece al configurar un campo de [Texto de una línea](#texto-de-una-linea) que esté dentro del grupo, pero la validación no se evalúa y los valores repetidos se guardan sin error.
