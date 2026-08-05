@@ -692,4 +692,18 @@ Users will be able to access the origination page to perform the configured flow
 
 Access to this page will be restricted depending on the privacy and segmentation settings established in the origination. This ensures that only authorized segments can interact with the flow, maintaining control and security of the information.
 
-It is important to note that each origination can only be linked to one page. If you need to create a new origination page, you will first need to unlink or delete the existing page to avoid conflicts and ensure proper configuration.
+It is important to note that each origination can only be linked to one page across your entire organization. This includes pages on other sites and pages on the stages of the same site: if the origination is already linked to another page, the platform does not let you save the new one. If you need to create a new origination page, you will first need to unlink or delete the existing page to avoid conflicts and ensure proper configuration.
+
+The origination you link must belong to the same realm as the site where you create the page. If the site is connected to a different realm, the platform rejects the link and indicates that the origination must belong to the site's realm.
+
+### Pages without a linked origination
+
+An origination page can be left without a linked origination. While it is in that state, the page responds to end users with a 404 error, so you must link an origination to deploy the flow again.
+
+This happens in three situations:
+
+- **You delete the origination**: the page remains on the site, but without a linked origination.
+- **You change the site's realm**: all origination pages on that site lose the reference, because each origination belongs to a realm. The application settings form warns you about this before you confirm the change.
+- **You create a stage**: origination pages are copied to the stage without their linked origination. Since each origination allows only one page, in the stage you must link a different origination from the same realm.
+
+For more details on how stages behave, review the [stages](/en/platform/channels/sites.html#stages) section of web applications.

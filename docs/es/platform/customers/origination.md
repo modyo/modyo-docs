@@ -693,4 +693,18 @@ Los usuarios podrán acceder a la página de originación para realizar el flujo
 
 El acceso a esta página estará restringido según las configuraciones de privacidad y segmentación establecidas en la originación. Esto asegura que solo los segmentos autorizados puedan interactuar con el flujo, manteniendo el control y la seguridad de la información.
 
-Es importante tener en cuenta que cada originación puede estar vinculada únicamente a una página. Si necesitas crear una nueva página de originación, primero será necesario desvincular o eliminar la página existente para evitar conflictos y asegurar una configuración adecuada.
+Es importante tener en cuenta que cada originación puede estar vinculada únicamente a una página en toda tu organización. Esto incluye las páginas de otros sitios y las de los stages de un mismo sitio: si la originación ya está vinculada a otra página, la plataforma no te permite guardar la nueva. Si necesitas crear una nueva página de originación, primero será necesario desvincular o eliminar la página existente para evitar conflictos y asegurar una configuración adecuada.
+
+La originación que vincules debe pertenecer al mismo reino que el sitio donde creas la página. Si el sitio está conectado a otro reino, la plataforma rechaza el vínculo e indica que la originación debe pertenecer al reino del sitio.
+
+### Páginas sin originación vinculada
+
+Una página de originación puede quedar sin originación vinculada. Mientras esté en ese estado, la página responde a los usuarios finales con un error 404, por lo que debes vincularle una originación para volver a desplegar el flujo.
+
+Esto ocurre en tres situaciones:
+
+- **Eliminas la originación**: la página se mantiene en el sitio, pero sin originación vinculada.
+- **Cambias el reino del sitio**: todas las páginas de originación de ese sitio pierden la referencia, porque cada originación pertenece a un reino. El formulario de configuración de la aplicación te advierte de esto antes de que confirmes el cambio.
+- **Creas un stage**: las páginas de originación se copian al stage sin la originación vinculada. Como cada originación admite una sola página, en el stage debes vincular una originación distinta del mismo reino.
+
+Para más detalles sobre el comportamiento de los stages, revisa la sección [stages](/es/platform/channels/sites.html#stages) de las aplicaciones web.

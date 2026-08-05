@@ -219,7 +219,7 @@ Procede con cautela al modificar estas opciones, ya que pueden afectar el acceso
 :::
 
 - **Cambiar host**: Esta acción modifica la visibilidad y accesibilidad de la aplicación. Realizar un cambio de host puede impactar la visibilidad y disponibilidad de la aplicación web.
-- **Cambiar reino**: Despliega el reino de la aplicación. Al cambiar de reino pierdes toda la configuración de privacidad en tus web apps, páginas y navegación.
+- **Cambiar reino**: Despliega el reino de la aplicación. Al cambiar de reino pierdes toda la configuración de privacidad en tus web apps, páginas y navegación, y las páginas de originación del sitio pierden la referencia a su originación actual.
 - **Cambiar estado**: Cambia el estado de la aplicación, las opciones son:
 	* Habilitado: Editable y visible al público. Este es el estado por defecto de una web app.
 	* Editable: Modificable pero no visible al público. Requiere inicio de sesión para acceder. Robots.txt, PWAs y el manifiesto están deshabilitados en este estado.
@@ -464,6 +464,7 @@ Las principales ventajas de tener distintas etapas en tus web apps son:
 - Las PWAs y redirecciones personalizadas se deshabilitan en los stages. Solo se pueden usar en el stage `main`.
 - La sección de miembros del equipos es independiente en cada stage `main`. Agrega miembros para habilitar la revisión de equipo.
 - Puedes tener los mismos miembros con diferentes roles y permisos para cada stage.
+- Las páginas de originación se copian al nuevo stage sin la originación vinculada. Como cada originación admite una sola página, para usarlas en el stage debes vincular una originación distinta del mismo reino.
 :::
 
 #### Agregar un nuevo stage
@@ -501,7 +502,8 @@ Para sincronizar un stage sigue estos pasos:
 
 
 :::warning Atención
-Los elementos de un stage asociados a un segmento no se sincronizan. Deberás repetir el proceso manualmente en el nuevo stage, una vez concluida la sincronización.
+- Los elementos de un stage asociados a un segmento no se sincronizan. Deberás repetir el proceso manualmente en el nuevo stage, una vez concluida la sincronización.
+- La originación vinculada a una página de originación tampoco se sincroniza: cada stage conserva la suya y esa diferencia no aparece en el listado de elementos por sincronizar.
 :::
 
 #### Eliminar un stage
