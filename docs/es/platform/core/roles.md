@@ -37,6 +37,10 @@ Dentro de la pantalla de edición de usuario, los administradores de la platafor
 - Grupos: Muestra una lista de todos los grupos a los que pertenece el usuario.
 - Dispositivos: Muestra un listado de todos los dispositivos en los que el usuario tiene una sesión activa.  Despliega datos como navegador, sistema operativo, último inicio de sesión y dirección IP. Aquí, además, puedes cerrar la sesión de forma remota para cada dispositivo.
 
+:::warning Atención
+Cuando defines o cambias la contraseña de otro miembro del equipo desde **Editar**, la plataforma marca esa contraseña como pendiente de cambio y revoca de inmediato todas sus sesiones activas: el miembro queda desconectado en todos sus dispositivos y, en su siguiente inicio de sesión, tiene que definir una contraseña nueva antes de poder navegar el panel. Lo mismo ocurre al crear un miembro del equipo con una contraseña. Avísale antes de hacerlo.
+:::
+
 :::warning Nombres de usuario creados en versiones anteriores
 Los usuarios creados antes de que existiera la validación de caracteres pueden tener nombres de usuario hoy no permitidos (por ejemplo, con espacios). Mientras el nombre de usuario no cumpla la validación, cualquier actualización de ese usuario fallará — incluidas acciones administrativas como eliminar su autenticador (2FA), que puede mostrar un mensaje de éxito sin aplicarse realmente. Antes de realizar acciones sobre uno de estos usuarios, corrige primero su nombre de usuario.
 :::
@@ -69,7 +73,9 @@ Una vez creado un grupo, lo puedes ver en el panel de Grupos. Además, al editar
 
 Puedes aplicar roles en los distintos módulos para personalizar la experiencia de tu equipo de trabajo. Cada rol se aplica de manera específica a un módulo en particular. Por ejemplo, puedes seleccionar a los administradores de un espacio o a los miembros que pueden interactuar con el CLI en algún sitio.
 
-Modyo tiene 10 roles predeterminados con diferentes funciones para cada contexto, lo que te permite distribuir y controlar el acceso a las distintas secciones de cada contexto de la plataforma.
+Modyo tiene 15 roles predeterminados con diferentes funciones para cada contexto, lo que te permite distribuir y controlar el acceso a las distintas secciones de cada contexto de la plataforma.
+
+Cada rol tiene el nombre que ves en el panel y un nombre técnico, la _key_, que aparece entre paréntesis en las listas de abajo. La _key_ es el valor que devuelve la API de roles y el que usas cuando asignas roles por API.
 
 ### Roles predeterminados
 
@@ -79,31 +85,43 @@ Los roles predeterminados que existen, según contexto, son:
 
 #### Roles por cuenta
 
-- **Default user**: Tiene todos los permisos existentes,  excepto la edición de la configuración de cada contexto. Debe ser invitado a cada contexto para poder acceder a sus funcionalidades.
-- **Default admin**: Tiene todos los permisos existentes, pero debe ser invitado a cada contexto para poder acceder a sus funciones. A nivel de cuenta de Modyo Platform, solo puede ver variables globales y actividad.
-- **Full admin**: Tiene todos los permisos existentes y puede acceder a todos los contextos sin necesidad de ser invitado a ellos.
+- **Default user** (`account_user`): Tiene todos los permisos existentes, excepto la edición de la configuración de cada contexto. Debe ser invitado a cada contexto para poder acceder a sus funcionalidades.
+- **Default admin** (`account_admin`): Tiene todos los permisos existentes, pero debe ser invitado a cada contexto para poder acceder a sus funciones. A nivel de cuenta de Modyo Platform, solo puede ver variables globales y actividad.
+- **Full admin** (`account_owner`): Tiene todos los permisos existentes y puede acceder a todos los contextos sin necesidad de ser invitado a ellos.
 
 #### Roles por sitio
 
-- **Site viewer**: Puede ver entradas, ver diferencias entre versiones y puede dejar comentarios. También puede acceder a la vista de sincronización y ver los cambios pendientes de sincronizar. Sin embargo, este rol no tiene autorización para realizar ninguna acción que implique un cambio en la plataforma.
-- **Site developer**: Solamente puede editar recursos. No puede publicar, eliminar, hacer rollback o editar la configuración.
-- **Site developer CLI**: Tiene los mismos permisos que Site developer; en adición, puede interactuar con modyo-cli.
-- **Site reviewer**:  Tiene todos los permisos del rol de site admin, excepto los permisos para editar la configuración del sitio.
-- **Site admin**: Tiene todos los permisos a nivel de un sitio, pero no puede crear nuevos sitios.
+- **Site Viewer** (`site_viewer`): Puede ver entradas, ver diferencias entre versiones y puede dejar comentarios. También puede acceder a la vista de sincronización y ver los cambios pendientes de sincronizar. Sin embargo, este rol no tiene autorización para realizar ninguna acción que implique un cambio en la plataforma.
+- **Site Developer** (`site_developer`): Solamente puede editar recursos. No puede publicar, eliminar, hacer rollback o editar la configuración.
+- **Site Developer CLI** (`site_developer_cli`): Tiene los mismos permisos que Site Developer; en adición, puede interactuar con modyo-cli.
+- **Site Reviewer** (`site_reviewer`): Tiene todos los permisos del rol de Site Admin, excepto los permisos para editar la configuración del sitio.
+- **Site Admin** (`site_admin`): Tiene todos los permisos a nivel de un sitio, pero no puede crear nuevos sitios.
 
 #### Roles por espacio
 
-- **Space viewer**: Este rol permite ver el contenido de un espacio, ver diferencias entre versiones y dejar comentarios. Su acceso está limitado a la visualización y participación mediante comentarios, no puede realizar modificaciones en el contenido o realizar acciones que afecten la configuración.
-- **Space writer**: Este rol solo puede editar el contenido en un espacio. No tiene permisos para publicar, eliminar, realizar rollback o editar la configuración.
-- **Space editor**: Tiene todos los permisos de un space admin, excepto permisos para editar la configuración del espacio. No tiene permisos sobre los assets y no puede crear tipos.
-- **Space admin**: Este rol tiene todos los permisos a nivel de un espacio, pero no puede crear nuevos espacios. Puede crear y eliminar assets.
+- **Space Viewer** (`space_viewer`): Este rol permite ver el contenido de un espacio, ver diferencias entre versiones y dejar comentarios. Su acceso está limitado a la visualización y participación mediante comentarios, no puede realizar modificaciones en el contenido o realizar acciones que afecten la configuración.
+- **Space Writer** (`space_writer`): Este rol solo puede editar el contenido en un espacio. No tiene permisos para publicar, eliminar, realizar rollback o editar la configuración.
+- **Space Editor** (`space_editor`): Tiene todos los permisos de un Space Admin, excepto permisos para editar la configuración del espacio. No tiene permisos sobre los assets y no puede crear tipos.
+- **Space Admin** (`space_admin`): Este rol tiene todos los permisos a nivel de un espacio, pero no puede crear nuevos espacios. Puede crear y eliminar assets.
 
 El usuario más importante tendrá el rol de Default Admin o Administrador. Este rol tiene todas las funciones habilitadas para gestionar la plataforma y los sitios.
 
 #### Roles por reino
 
-- **Realm User**: Este rol puede añadir usuarios, crear, modificar y enviar a revisión campañas, formularios y segmentos.
-- **Realm Admin**: Puede acceder a todas las configuraciones y secciones del reino. Además, puede añadir y eliminar usuarios y miembros del equipo, así como eliminar el reino.
+- **Realm User** (`realm_user`): Este rol puede añadir usuarios, crear, modificar y enviar a revisión campañas, formularios y segmentos.
+- **Realm Admin** (`realm_admin`): Puede acceder a todas las configuraciones y secciones del reino. Además, puede añadir y eliminar usuarios y miembros del equipo, así como eliminar el reino.
+- **Realm Viewer** (`realm_viewer`): Es un rol de solo lectura sobre Customers. Trae los permisos **Ver Usuarios**, **Ver Segmentos**, **Ver Eventos**, **Ver Órdenes de Pago**, **Ver Plantillas de Campañas**, **Ver Formularios** y **Ver Entregas de Mensajes**. No puede crear ni modificar nada dentro del reino.
+
+#### Editar y eliminar los roles predeterminados
+
+**Full admin** es el único rol de solo lectura de la plataforma: no puedes cambiarle el nombre, ni sus permisos, ni eliminarlo. Los otros 14 roles predeterminados se comportan como cualquier rol a medida y los administras desde **Configuración** > **Roles**:
+
+- Para cambiar su nombre o sus permisos, haz click sobre el nombre del rol en el listado.
+- Para eliminarlo, en la columna **Acciones** de su fila elige **Borrar** y confirma.
+
+:::warning Atención
+Un rol solo se puede eliminar si no está asignado a nadie. Si algún miembro del equipo o algún grupo lo tiene asignado en cualquier contexto, la plataforma bloquea el borrado y muestra un error. Reasigna primero a esos miembros y grupos, y recién entonces elimina el rol.
+:::
 
 ### Roles a medida
 Los roles a medida te permiten crear perfiles con accesos y permisos únicos, combinando roles existentes o configurándolos según las necesidades específicas de tu organización.
@@ -128,7 +146,21 @@ Algunos permisos incluyen a otros: al marcar uno, la plataforma marca también l
 Para conservar los cambios, presiona el botón **Guardar**.
 
 ### Acceso a las aplicaciones
-Modyo tiene roles que permiten acceder a todas las aplicaciones sin restricción alguna; por ello, Modyo permite restringir el acceso a ciertas aplicaciones configurando los roles de los miembros del equipo. De esta manera, es posible otorgar a un usuario un acceso total (Owner) solo en la aplicación de Channels, mientras restringe su acceso a otras aplicaciones.
+
+Además del rol, cada miembro del equipo tiene un interruptor por aplicación que decide qué módulos ve en el panel. Las aplicaciones que puedes habilitar o deshabilitar son cuatro: **Content**, **Channels**, **Customers** e **Insights**.
+
+El bloque **Acceso a aplicaciones** aparece en dos lugares:
+
+- En la pestaña **Acceso** de un miembro del equipo, sobre el selector de rol.
+- Al crear o editar un grupo, sobre el campo **Rol de grupo**.
+
+El acceso es aditivo entre la ficha del miembro y sus grupos: si cualquiera de los grupos a los que pertenece tiene una aplicación habilitada, el miembro la ve, aunque en su ficha individual esa casilla esté apagada. Para quitarle una aplicación tienes que apagarla en su ficha y también en todos los grupos que se la entregan.
+
+Deshabilitar una aplicación no le quita el rol al miembro: el rol sigue asignado, pero la plataforma le descuenta los permisos de esa aplicación, así que deja de ver esa sección del panel aunque su rol se los diera.
+
+:::tip Tip
+Algunas casillas se marcan solas y quedan deshabilitadas según el rol de cuenta seleccionado. En la pestaña **Acceso** de un miembro, el dueño de la cuenta tiene fijas las cuatro aplicaciones y el rol **Default admin** deja fijas **Content**, **Channels** y **Customers**. En el formulario de un grupo, **Default admin** deja fijas las cuatro.
+:::
 
 ### Asignar un rol por cuenta
 
