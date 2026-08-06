@@ -245,7 +245,7 @@ El comando `preview` te permite previsualizar un widget localmente para depurar 
 
 Para utilizar el comando `preview`, asegúrate de cumplir con los siguientes requisitos:
 
-- Un archivo [.env](/es/platform/tools/cli.html#configuracion-del-entorno) correctamente configurado. Los campos `MODYO_ACCOUNT_URL`, `MODYO_SITE_HOST` o `MODYO_SITE_ID` y `MODYO_TOKEN ` son requeridos.
+- Un archivo [.env](/es/platform/tools/cli.html#configuracion-del-entorno) correctamente configurado. Los campos `MODYO_ACCOUNT_URL`, `MODYO_SITE_HOST` o `MODYO_SITE_ID` y `MODYO_TOKEN` son requeridos.
 - Un servidor local en ejecución con el widget que deseas previsualizar.
 
 ### Pasos para previsualizar un widget
