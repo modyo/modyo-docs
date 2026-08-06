@@ -177,7 +177,7 @@ El siguiente listado describe las variables importantes para el menú:
 - children_to_show: Si existen hijos del ítem actual, toma los ítems en esta variable y los despliega como segundo nivel en la jerarquía del menú.
 - grandchildren_to_show: Si existen hijos del ítem hijo, toma los ítems en esta variable y los despliega como tercer nivel dentro del mismo dropdown.
 
-Al entrar a la sección de Plantillas de tu sitio en Modyo Platform, podrás hacer clic en el snippet general `menu` para ver el HTML del menú. Se ve de la siguiente manera:
+Al entrar a la sección de Plantillas de tu sitio en Modyo Platform, podrás hacer clic en el snippet general `menu` para ver el HTML del menú. Se ve de la siguiente manera:
 
 `menu`
 

@@ -71,7 +71,7 @@ In the right sidebar, you will see a bar that changes according to the item sele
 
 - **Name**: Name of the element as it appears on the site.
 - **Description**: Free text to accompany the item. It is not printed on the site by itself: it is available in Liquid as `menu_item.description` so you can use it in your own markup, for example as a subtitle for the item or as the text of a notification.
-- **Classes**: String to be used in a class attribute for a HTML tag, for example `mdi mdi-circle`. Just like the description, it is available in Liquid as `menu_item.classes` and you are the one who prints it in the `class` attribute of your markup. Check both attributes in [Objects](/en/platform/channels/liquid-markup/objects.html#menu).
+- **Classes**: String to be used in a class attribute for an HTML tag, for example `mdi mdi-circle`. Just like the description, it is available in Liquid as `menu_item.classes` and you are the one who prints it in the `class` attribute of your markup. Check both attributes in [Objects](/en/platform/channels/liquid-markup/objects.html#menu).
 - **Link**: Destination of the item. You can choose one of the site pages, **URL** to write a custom address, or **Site Search** to point to the site's search page.
 - **URL**: If you chose **URL** in the previous item, you have different options to configure this item:
 	- HTTP(s): Points to an address using HTTP(s). Examples:
@@ -177,7 +177,7 @@ The following list describes the important variables for the menu:
 - children_to_show: If the current item has children, it takes the items in this variable and displays them as the second level in the menu hierarchy.
 - grandchildren_to_show: If the child item has children, it takes the items in this variable and displays them as the third level inside the same dropdown.
 
-When you enter the Templates section of your site in Modyo Platform, you can click on the general `menu` snippet to see the HTML of the menu. It	looks	like	this:
+When you enter the Templates section of your site in Modyo Platform, you can click on the general `menu` snippet to see the HTML of the menu. It looks like this:
 
 `menu`
 
