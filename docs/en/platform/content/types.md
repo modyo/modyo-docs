@@ -47,7 +47,7 @@ Cardinality refers to the number of entries that can exist for that content type
 :::
 
 :::warning Attention
-Please note that there is a limit of 50 Content Types per Space.
+The number of content types you can create per space is set by your account plan, and the default is 50. If you try to create one beyond the quota, creation fails with the message "You've reached the maximum number of content types on this space". If you need a larger quota, talk to your Modyo account manager.
 :::
 
 In the creation interface, you'll find an empty template in the center of the screen and on the right side, a table with three tabs:
@@ -77,6 +77,13 @@ This field allows you to enter single-line texts. It has the following restricti
 - **Minimum length**: Allows you to require a minimum number of characters for the entered text.
 - **Maximum length**: Allows you to limit the maximum number of characters for the entered text.
 - **Validation by regular expression**: Allows you to add a regular expression to validate that the entered text, when creating or modifying an entry, complies with a certain format.
+- **Unique**: Requires that the value isn't repeated in other entries of the same type. This is the platform's only uniqueness validation, and Single-line text is the only field that offers it. If the value is already in use, the entry isn't saved and the field shows "Must be unique".
+
+The scope of **Unique** is the whole type: the comparison goes through every entry of the type, including drafts, scheduled entries, and translations into other languages. Backup versions and the entry you are editing are left out, so republishing an entry never collides with itself. An empty field is never considered repeated.
+
+:::warning Attention
+**Unique** has no effect on a field that lives inside a **Group**. The checkbox is still displayed when you configure the field, but the validation isn't evaluated and repeated values are saved without an error. If you need to guarantee uniqueness, keep the field outside the group.
+:::
 
 ### Rich text
 
@@ -99,7 +106,11 @@ This field allows you to add a list from which you can select more than one opti
 
 ### Multiple choice
 
-This field allows you to add a text field in which you can type to select an option; it can be predetermined or proposed.
+This field allows you to pick one or more values from a search box that filters as you type. The search box only offers the values defined in the type: when you edit an entry, you can't propose a new value from the field. Values are managed in **Allowed values**, when you configure the field.
+
+:::warning Attention
+If you load this field through the API, send the exact labels of the allowed values or the identifiers the API returns. Text that doesn't match any label is silently discarded: the entry is saved without that value and without an error message. A numeric identifier that doesn't belong to the field, on the other hand, prevents the entry from being saved.
+:::
 
 ### Allowed values
 
@@ -120,17 +131,21 @@ This field allows you to add a question or statement (True or False).
 
 ### Integer
 
-This field allows you to add an integer. By default, the value must be in the range of `-65325` to `+65325`. However, you can adjust these limits by applying the following restrictions:
+This field allows you to add an integer between `-2147483648` and `2147483647`. You can narrow that range with the following restrictions:
 
-- **Minimum length**: Sets the minimum number of characters for the entered text.
-- **Maximum length**: Sets the maximum number of characters for the entered text.
+- **Min value**: Rejects values lower than the number you set.
+- **Max value**: Rejects values higher than the number you set.
+
+Both restrictions bound the value of the number, not the number of digits. Leave them empty to apply no such limit. If the number falls outside the range, the entry isn't saved and the field shows "Invalid number. Must be greater than or equal to 18" or "Invalid number. Must be less than or equal to 120", with the limits you configured.
 
 ### Decimal
 
-Use this field to enter a decimal number. The number must be, obligatorily, between `-65325` and `+65325`. However, it can be limited by making use of the restrictions:
+Use this field to enter a number with decimals. It supports up to two decimal places and values between `-9999999999999.99` and `9999999999999.99`. If you save more than two decimal places, the value is rounded without warning you: `10.567` is stored as `10.57`. You can narrow the range with the following restrictions:
 
-- **Minimum length**: Allows you to set a minimum number of characters for the entered text.
-- **Maximum length**: Allows you to limit the maximum number of characters for the entered text.
+- **Min value**: Rejects values lower than the number you set.
+- **Max value**: Rejects values higher than the number you set.
+
+Both restrictions bound the value of the number, not the number of digits, and they only accept whole numbers: to require a positive amount, for example, use `0` as **Min value**. If the number falls outside the range, the entry isn't saved and the field shows "Invalid number. Must be less than or equal to", with the limit you configured.
 
 ### Date
 
@@ -163,13 +178,13 @@ This field allows you to attach multiple files to the entry, using the file mana
 
 Use this field to link an Entry to another existing and published Entry within the Space. This field has the following restrictions:
 
-- **Restrict type**: Allows you to select a default type so that only entries of the specified type can be selected as a link.
+- **Allowed content type**: Limits the link to entries of one type. You select a single type, and the default value is **All**, which doesn't restrict anything. If the linked entry isn't of the chosen type, the entry isn't saved and the field shows "Does not match with allowed value", followed by the name of the required type.
 
 ### Content list (link to many)
 
 This field allows you to link more than one existing Entry within the Space to another Entry. This field has the following restrictions:
 
-- **Restrict type**: Allows you to select a default type so that only entries of the selected type can be selected as a link.
+- **Allowed content type**: Limits the links to entries of one type. You select a single type, which applies to every entry you link, and the default value is **All**, which doesn't restrict anything. If any of the linked entries isn't of the chosen type, the entry isn't saved and the field shows "Does not match with allowed value", followed by the name of the required type.
 
 ### Group
 
@@ -184,7 +199,7 @@ You can validate the contents of the fields as follows:
 - **Required**: Check the **Required** box to force the group or field to be completed.
   - If you mark the group as required, at least one item within the group must be completed.
   - If you mark an item as required, that item must have content.
-- **Unique**: When you mark an entry as unique, its content cannot be repeated within the same group.
+- **Unique**: Doesn't apply inside a group. The checkbox does appear when you configure a [Single-line text](#single-line-text) field that lives inside the group, but the validation isn't evaluated and repeated values are saved without an error.
 
 :::tip Tip
 A group can host any type of field, except another group.

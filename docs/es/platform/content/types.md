@@ -47,7 +47,7 @@ La cardinalidad se refiere al número de entradas que pueden existir para ese ti
 :::
 
 :::warning Atención
-Es importante tener en cuenta que existe un límite de 50 Tipos de Contenido por Espacio.
+El número de tipos de contenido que puedes crear por espacio lo define el plan de tu cuenta, y por defecto es 50. Al intentar crear uno más allá del cupo, la creación falla con el mensaje "Has alcanzado el número máximo de tipos de contenido para el plan actual". Si necesitas un cupo mayor, conversa con tu ejecutivo de cuenta en Modyo.
 :::
 
 En la interfaz de creación, encontrarás una plantilla vacía en el centro de la pantalla y al lado derecho, una tabla con tres pestañas: 
@@ -77,6 +77,13 @@ Este campo te permite ingresar textos de una sola linea. Cuenta con las siguient
 - **Largo mínimo**: Permite exigir un mínimo de caracteres para el texto ingresado.
 - **Largo máximo**: Permite  limitar la cantidad máxima de caracteres para el texto ingresado.
 - **Validación por expresión regular**: Te permite añadir una expresión regular para validar que el texto ingresado, al crear o modificar una entrada, cumpla con un formato determinado.
+- **Único**: Exige que el valor no se repita en otras entradas del mismo tipo. Es la única validación de unicidad de la plataforma, y Texto de una línea es el único campo que la ofrece. Si el valor ya está en uso, la entrada no se guarda y el campo muestra "Debe ser único".
+
+El alcance de **Único** es el tipo completo: la comparación recorre todas las entradas del tipo, incluidas las que están en borrador o programadas y las traducciones a otros idiomas. Quedan fuera las versiones de respaldo y la propia entrada que estás editando, así que volver a publicar una entrada no choca consigo misma. Un campo vacío no se considera repetido.
+
+:::warning Atención
+**Único** no tiene efecto sobre un campo que está dentro de un **Grupo**. La casilla se sigue mostrando al configurar el campo, pero la validación no se evalúa y los valores repetidos se guardan sin error. Si necesitas garantizar unicidad, deja el campo fuera del grupo.
+:::
 
 ### Texto enriquecido
 
@@ -99,7 +106,11 @@ Este campo te permite agregar una lista de la cual puedes seleccionar más de un
 
 ### Opciones múltiples
 
-Este campo te permite agregar un campo de texto en el cual puedes escribir para seleccionar una opción; puede ser predeterminada o propuesta.
+Este campo te permite elegir uno o más valores desde un buscador que filtra a medida que escribes. El buscador solo ofrece los valores definidos en el tipo: al editar una entrada no puedes proponer un valor nuevo desde el campo. Los valores se administran en **Valores permitidos**, al configurar el campo.
+
+:::warning Atención
+Si cargas este campo por la API, envía las etiquetas exactas de los valores permitidos o los identificadores que devuelve la API. Un texto que no coincide con ninguna etiqueta se descarta en silencio: la entrada se guarda sin ese valor y sin mensaje de error. Un identificador numérico que no pertenece al campo, en cambio, impide guardar la entrada.
+:::
 
 ### Valores permitidos
 
@@ -120,17 +131,21 @@ Este campo te permite agregar una pregunta o afirmación (Verdadero/True o Falso
 
 ### Entero
 
-Este campo te permite agregar un número entero.  Por defecto, el valor debe estar en el rango de `-65325`a `+65325`. Sin embargo, puedes ajustar estos límites aplicando las siguientes restricciones:
+Este campo te permite agregar un número entero entre `-2147483648` y `2147483647`. Puedes acotar ese rango con las siguientes restricciones:
 
-- **Largo mínimo**: Establece el número mínimo de caracteres para el texto ingresado.
-- **Largo máximo**: Establece el número máximo de caracteres para el texto ingresado.
+- **Valor mínimo**: Rechaza los valores menores al número que indiques.
+- **Valor máximo**: Rechaza los valores mayores al número que indiques.
+
+Ambas restricciones acotan el valor del número, no la cantidad de dígitos. Déjalas vacías para no aplicar ese límite. Si el número queda fuera del rango, la entrada no se guarda y el campo muestra "Número inválido. Debe ser mayor o igual que 18" o "Número inválido. Debe ser menor o igual que 120", con los límites que hayas configurado.
 
 ### Decimal
 
-Utiliza este campo para ingresar un número decimal. El número debe ser, obligatoriamente, entre `-65325` y `+65325`. Sin embargo, se puede acotar haciendo uso de las restricciones:
+Utiliza este campo para ingresar un número con decimales. Admite hasta dos decimales y valores entre `-9999999999999.99` y `9999999999999.99`. Si guardas más de dos decimales, el valor se redondea sin avisarte: `10.567` queda almacenado como `10.57`. Puedes acotar el rango con las siguientes restricciones:
 
-- **Largo mínimo**: Permite establecer un mínimo de caracteres para el texto ingresado.
-- **Largo máximo**: Permite limitar la cantidad máxima de caracteres para el texto ingresado.
+- **Valor mínimo**: Rechaza los valores menores al número que indiques.
+- **Valor máximo**: Rechaza los valores mayores al número que indiques.
+
+Ambas restricciones acotan el valor del número, no la cantidad de dígitos, y solo aceptan números enteros: para exigir un monto positivo, por ejemplo, usa `0` como **Valor mínimo**. Si el número queda fuera del rango, la entrada no se guarda y el campo muestra "Número inválido. Debe ser menor o igual que", con el límite que hayas configurado.
 
 ### Fecha
 
@@ -163,13 +178,13 @@ Este campo te permite adjuntar múltiples archivos a la entrada, usando el gesto
 
 Utiliza este campo para vincular una Entrada a otra Entrada existente y publicada dentro del Espacio. Este campo tiene las siguientes restricciones:
 
-- **Restringir tipo**: Te permite seleccionar un tipo predeterminado para que solo se puedan seleccionar, como enlace, entradas del tipo especificado.
+- **Tipos de contenido permitidos**: Limita el enlace a las entradas de un tipo. Pese al plural del nombre, seleccionas un único tipo; el valor por defecto es **Todos**, que no restringe nada. Si la entrada enlazada no es del tipo elegido, la entrada no se guarda y el campo muestra "No calza con los valores permitidos", seguido del nombre del tipo exigido.
 
 ### Listado de Contenido (enlace a varias)
 
 Este campo te permite vincular más de una Entrada existente dentro del Espacio a otra Entrada. Este campo tiene las siguientes restricciones:
 
-- **Restringir tipo**: Te permite seleccionar un tipo predeterminado para solo se puedan seleccionar, como enlace, entradas del tipo seleccionado.
+- **Tipos de contenido permitidos**: Limita los enlaces a las entradas de un tipo. Pese al plural del nombre, seleccionas un único tipo, que aplica a todas las entradas que enlaces; el valor por defecto es **Todos**, que no restringe nada. Si cualquiera de las entradas enlazadas no es del tipo elegido, la entrada no se guarda y el campo muestra "No calza con los valores permitidos", seguido del nombre del tipo exigido.
 
 ### Grupo
 
@@ -181,10 +196,10 @@ No hay límite en la cantidad de campos que puedes incluir dentro de un grupo.
 
 Puedes validar el contenido de los campos de la siguiente forma: 
 
-- **Requerido**: Marca la casilla **Requirido** para obligar a que se complete el grupo o campo.
+- **Requerido**: Marca la casilla **Requerido** para obligar a que se complete el grupo o campo.
   - Si marcas el grupo como requerido, al menos un elemento dentro del grupo deberá ser completado. 
   - Si marcas un elemento como requerido, ese elemento tiene que tener contenido.
-- **Unique**: Cuando marcas una entrada como única, no puede repetirse su contenido dentro del mismo grupo. 
+- **Único**: No aplica dentro de un grupo. La casilla aparece al configurar un campo de [Texto de una línea](#texto-de-una-linea) que esté dentro del grupo, pero la validación no se evalúa y los valores repetidos se guardan sin error.
 
 :::tip Tip
 Un grupo puede albergar cualquier tipo de campo, menos otro grupo. 
