@@ -187,7 +187,7 @@ Estas cuatro colecciones se inyectan en todos los renderizados, sin importar el 
 |----------|--------------|--------------|
 | `content_for_layout` | El HTML ya renderizado de la vista. Marca el punto del layout donde se inserta la página. | Solo en los layouts |
 | `page` | La página actual. Consulta [page](/es/platform/channels/liquid-markup/objects.html#page). | Todas menos la de resultados de búsqueda |
-| `page_context` | El tipo de página que se resolvió: `context-home`, `context-custom`, `context-content`, `context-origination`, `context-support` o `context-search`. | Todas |
+| `page_context` | El tipo de página que se resolvió: `context-home`, `context-custom`, `context-content`, `context-origination` o `context-search`. | Todas |
 | `page_name` | El mismo identificador con el sufijo `-show`, por ejemplo `context-content-show`. | Todas |
 | `page_title` | El nombre de la página. En la portada y en la búsqueda es el texto traducido de la plataforma. | Todas |
 | `page_id` | `page_name` seguido de la ruta de la página, por ejemplo `context-custom-show-contacto`. En la portada es solo `context-home-show`. | Todas menos la de resultados de búsqueda |
@@ -217,8 +217,6 @@ El tag <code v-pre>{% body %}</code> escribe `page_context`, `page_name` y `page
 | `params_query` | El término buscado, saneado y escapado, listo para imprimirse. Solo existe si la URL trae el parámetro. |
 | `params_more` | El filtro adicional de la búsqueda, saneado y escapado. Solo existe si la URL lo trae. |
 
-### De las páginas de Origination y de Soporte
+### De las páginas de Origination
 
 En las páginas de Origination se inyectan además `origination`, el flujo de la página; `pending_submissions`, las respuestas pendientes del usuario en ese flujo; `submission`, la respuesta que se está resolviendo; y, mientras esa respuesta está en curso, `current_step` y `current_task`.
-
-En las páginas de Soporte se inyectan `cases` en el listado de casos y `case` en la vista de detalle de un caso.
