@@ -119,6 +119,27 @@ La API para obtención de access tokens delegados vía  `/auth/openidc/access_to
 
 <img src="/assets/img/platform/keycloak-new-idp.png" alt="Modyo's new identity provider page." width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
 
+### Método de autenticación y PKCE
+
+**Método de autenticación** es un campo obligatorio que define cómo Modyo entrega las credenciales del cliente a tu proveedor. Tiene tres valores posibles:
+
+| Opción | Descripción |
+|:--|:--|
+| **Client secret enviado como cabecera de autenticación básica** | El **Secreto** viaja en la cabecera `Authorization`, con autenticación básica. Es el valor por defecto. |
+| **Client secret enviado como parámetro de formulario** | El **Secreto** viaja en el cuerpo de la solicitud, como un parámetro más. |
+| **Deshabilitado, client secret no es enviado** | Modyo no envía el **Secreto** al proveedor y el campo deja de ser obligatorio. Úsalo cuando el proveedor registró la aplicación como cliente público. |
+
+El método que elijas se aplica a todas las llamadas que Modyo hace al proveedor con las credenciales del cliente: el intercambio del código de autorización, la renovación con refresh token y la revocación de tokens.
+
+Si tu proveedor exige proof key for code exchange, activa **Habilitar proof key for code exchange (PKCE)**. Al hacerlo, **Método de proof key for code exchange** pasa a ser obligatorio y admite dos valores:
+
+- **S256**: Modyo envía el desafío como hash SHA-256 del verificador. Es el valor por defecto.
+- **plain**: Modyo envía el verificador sin transformar. Úsalo solo si tu proveedor no soporta S256.
+
+:::tip Tip
+Si el proveedor registró la aplicación como cliente público, combina **Deshabilitado, client secret no es enviado** con PKCE habilitado en **S256**.
+:::
+
 ### Configuraciones opcionales de la integración
 
 Al momento de realizar una integración específica, Modyo te permite habilitar ciertas configuraciones para controlar las siguientes características de sesión:
@@ -127,11 +148,13 @@ Al momento de realizar una integración específica, Modyo te permite habilitar 
 |:--------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Habilitar cierre de sesión**                                      | Habilita el cierre de sesión en el provider al cerrar la sesión en Modyo. Esto permite cerrar efectivamente la sesión, obligando al usuario a identificarse nuevamente en el Proveedor de Identidad y deshabilitando la experiencia SSO.                                                                                                         |
 | **Habilitar refresh token**                                         | Habilita el refresco de tokens administrado por Modyo. Los access tokens serán renovados automáticamente por la plataforma si el usuario mantiene actividad en el sitio y cuenta con un refresh token válido.                                                                                                                   |
-| **Tolerancia en segundos para access token**                        | Número en segundos que será usado como margen de tolerancia para obtener un access token utilizando el refresh token.                                                                                                                                                                                                           |
+| **Tiempo en segundos para la anticipación preventiva del refresh token** | Número en segundos que será usado como margen de tolerancia para obtener un access token utilizando el refresh token. Admite valores entre 0 y 100. |
 | **Habilitar revocación de token**                                   | Habilita la revocación de access tokens a través de API. Para la revocación, puedes usar el endpoint del proveedor para revokar tokens.                              |
 | **Activar token de actualización (Refresh Token)**                  | Habilita el uso de tokens de actualización de OAuth 2.0. Para refrescar tu access token, puedes usar el POST endpoint del proveedor enviando como headers <tt>grant_type: refresh_token, refresh_token: **mi-refresh-token**, client_id: **mi-client-id**</tt> |
 | **Mostrar información de delegación**                               | Habilita más información en la [API de perfil de usuario](/es/platform/customers/api#api-de-customers) con respecto a tokens delegados. Esto es útil cuando se necesita el access token que emite el proveedor de identidad para conseguir acceso a algún otro servicio (e.g. una API externa).                           |
 | **Habilitar sincronización de claims al momento de iniciar sesión** | Habilita la sincronización de claims OpenID Connect con custom fields en Modyo. Más información en  [Sincronización de claims](#sincronizacion-de-claims).                                                                                                                                                                      |
+| **Habilitar User Info** | Permite que Modyo consulte el endpoint de User Info del proveedor para completar los datos del usuario. Viene habilitada por defecto y, mientras esté activa, **Endpoint de User Info** es obligatorio; el servicio de descubrimiento lo completa por ti. Si la desactivas, Modyo usa solo los claims que vienen en el id_token. |
+| **Incluir id_token_hint al cerrar sesión** | Agrega el parámetro `id_token_hint`, con el id_token de la sesión, a la URL de cierre de sesión remoto. Muchos proveedores lo usan para identificar la sesión que se cierra y omitir la pantalla de confirmación. Solo tiene efecto si el cierre de sesión remoto está habilitado. |
 
 
 

@@ -83,6 +83,24 @@ Nombre del usuario y correo electrónico son campos requeridos para generar usua
 :::
 
 
+### Contrato del servidor SCIM
+
+Además de Entra ID, puedes conectar cualquier cliente SCIM 2.0 contra el servidor de Modyo. La URL base es `https://[account_host]/api/admin/scim` y las llamadas se autentican con el token del usuario administrativo, igual que en el resto de la [API de administración](/es/platform/core/api.html#bearer-token). Los usuarios que administra este servidor son los de **Equipo**, no los de Customers.
+
+| Recurso | Métodos | Descripción |
+|:--|:--|:--|
+| `/Users` | `GET`, `POST` | Lista y crea usuarios. El listado admite paginación con `startIndex` y `count`, y los filtros `userName eq` y `externalId eq`. |
+| `/Users/:id` | `GET`, `PATCH` | Consulta y actualiza un usuario. El `PATCH` acepta operaciones sobre `userName`, `name`, `emails` y `active`. |
+| `/Groups` | `GET`, `POST` | Lista y crea grupos. |
+| `/Groups/:id` | `GET`, `PATCH`, `DELETE` | Consulta, actualiza y elimina un grupo. |
+| `/Schemas` | `GET` | Devuelve la definición de los esquemas `urn:ietf:params:scim:schemas:core:2.0:User` y `urn:ietf:params:scim:schemas:core:2.0:Group` con todos sus atributos. Úsalo si tu cliente descubre el esquema antes de aprovisionar. Este endpoint no aparece en el portal Swagger, así que esta tabla es su referencia. |
+
+Todas las respuestas, incluidas las de error, usan el content type `application/scim+json` y no el `application/json` que declara el resto de la API de administración. Asegúrate de que tu cliente lo acepte.
+
+:::warning Atención
+La baja de usuarios no se hace con `DELETE`. La ruta `DELETE /api/admin/scim/Users/:id` existe, pero no tiene implementación: la solicitud termina en un error genérico, sin respuesta SCIM, y el usuario no cambia. Para desaprovisionar, envía un `PATCH` a `/Users/:id` con la propiedad `active` en `false`. En grupos, `DELETE` sí está implementado.
+:::
+
 ### Referencias
 - Para construir un API de SCIM compatible con Entra ID, sigue esta guía de Microsoft. [Use SCIM to Provision Users and Groups](https://docs.microsoft.com/en-us/azure/active-directory/app-provisioning/use-scim-to-provision-users-and-groups)
 - Para más información de las APIs que Modyo ofrece, ve [API de administración](https://docs.modyo.com/es/platform/core/api).
