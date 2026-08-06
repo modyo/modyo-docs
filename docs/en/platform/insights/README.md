@@ -61,7 +61,7 @@ Modyo Insights offers different data presentation formats depending on the type 
 - **Time-series charts**: Line and bar visualizations to analyze trends and evolution over time
 - **Lists**: Name and value panels, such as **Recent Campaigns** and **Recent Forms** in the Customers dashboard. They are not tables: they show up to five rows and cannot be sorted or filtered
 - **Heat maps**: Visual representation of activity patterns, such as **Activity by User** in the Digital Factory dashboard
-- **Pie and funnel charts**: Visualizations of proportion over the total, such as **Engagement** in the Customers dashboard or the **Conversion Funnel** in the Origination one
+- **Pie and funnel charts**: Visualizations of proportion over the total, such as **Engagement** in the Customers dashboard or the **Conversion Funnel** in the Origination dashboard
 
 ## Analysis Capabilities
 
