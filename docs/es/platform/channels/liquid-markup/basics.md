@@ -270,10 +270,10 @@ O usa HTML entities:
 ### 1. Variables no definidas
 
 ```liquid
-<!-- Mal: causará error si user no existe -->
+<!-- Ambiguo: si user no existe, esto imprime vacío sin ningún aviso -->
 {{ user.name.first }}
 
-<!-- Bien: validar primero -->
+<!-- Mejor: valida primero y controla el caso vacío -->
 {% if user %}
   {{ user.name.first }}
 {% endif %}
@@ -308,6 +308,59 @@ O usa HTML entities:
 <!-- Bien: con pipe -->
 {{ texto | upcase }}
 ```
+
+## Comportamiento ante Errores de Renderizado
+
+Modyo revisa la sintaxis de Liquid cuando guardas una plantilla, pero esa revisión solo cubre el análisis: detecta un tag mal cerrado o un argumento inválido y te impide guardar. Todo lo que falla durante el renderizado pasa esa revisión sin problemas y llega a la página publicada.
+
+En tiempo de renderizado la plataforma corre en modo no estricto: el render no rompe la página, la degrada en silencio. Estos son los cuatro síntomas que vas a encontrar y qué significa cada uno.
+
+### Una variable o un atributo que no existe imprime vacío
+
+Las variables no son estrictas. Una variable que no está en el contexto, o un atributo que el objeto no tiene, no lanza ningún error: se imprime como una cadena vacía.
+
+```liquid
+{{ page_titulo }}
+{{ page.titulo_inventado }}
+```
+
+Las dos líneas producen exactamente lo mismo que un valor vacío legítimo, así que un nombre mal escrito, un dato que todavía no se cargó y una variable usada fuera de su contexto son indistinguibles en la página publicada. Cuando algo no aparece, revisa primero la ortografía del nombre y después que la variable exista en ese tipo de página; consulta [Variables de Contexto](/es/platform/channels/liquid-markup/variables.html#variables-de-contexto).
+
+### Un filtro que no existe devuelve el valor sin transformar
+
+Los filtros tampoco son estrictos. Si escribes un filtro que la plataforma no tiene, Liquid no falla ni lo omite: devuelve el valor de entrada tal como llegó.
+
+```liquid
+{{ "texto" | filtro_que_no_existe }}
+```
+
+Esa línea imprime `texto`. El caso grave es cuando el valor de entrada es un objeto de Modyo en lugar de un texto: como nada lo transforma, la página publica el nombre interno del objeto, por ejemplo `Liquid::Drops::Assets::VideoAssetDrop`. No hay excepción, ni mensaje, ni pista visible de la causa. Es el síntoma que comparten los filtros mal escritos y los que fueron retirados de la plataforma; revisa el catálogo en [Filtros](/es/platform/channels/liquid-markup/filters.html).
+
+### Un error de renderizado deja un comentario en el HTML
+
+Cuando el renderizado sí falla, Modyo atrapa el error, lo registra del lado del servidor y en el HTML publicado deja el comentario `<!-- Liquid Error -->` justo en el lugar donde falló. El visitante no ve ningún mensaje: ve un hueco.
+
+Buscar `Liquid Error` en el código fuente de la página publicada es la forma más rápida de ubicar el punto exacto de la plantilla que falló.
+
+#### La excepción: indexar un identificador que no existe
+
+Hay accesos que no rinden vacío sino que abortan el renderizado. Son los que buscan un elemento por su identificador:
+
+- <code v-pre>spaces['uid']</code> y <code v-pre>spaces['uid'].types['uid']</code>
+- <code v-pre>menus['slug']</code>
+- <code v-pre>fields['uid']</code> sobre la respuesta de una tarea de Origination
+
+Si el identificador no corresponde a nada, no obtienes un valor vacío: obtienes un error de renderizado y el comentario en su lugar. No hay forma de comprobarlo antes, porque cualquier comprobación pasa por indexar. Lo que sí puedes hacer es contener el daño: agrupa el acceso y su uso dentro del mismo <code v-pre>{% if %}</code>, para que el error se lleve ese bloque completo en vez de dejar el comentario en medio de un atributo HTML y romper el marcado.
+
+### Los snippets se pueden anidar hasta 99 niveles
+
+Las cadenas de snippets tienen tope. Puedes anidar hasta 99 niveles; el intento de abrir el nivel 100 no se ejecuta y, en su lugar, la página publica el texto literal `[Liquid Internal Error] Nesting too deep`.
+
+Ver ese texto en una página casi siempre significa que un snippet se incluye a sí mismo, directa o indirectamente. Revisa la cadena de <code v-pre>{% snippet %}</code> a partir del punto donde aparece el mensaje.
+
+:::warning Atención
+Ninguno de estos cuatro comportamientos se detecta al guardar la plantilla, porque todos ocurren en tiempo de renderizado. Una plantilla puede guardarse y publicarse sin una sola advertencia y aun así imprimir vacíos, comentarios de error o el nombre interno de un objeto. Consulta [Errores en Vistas](/es/platform/channels/templates.html#errores-en-vistas).
+:::
 
 ## Convenciones y Mejores Prácticas
 
