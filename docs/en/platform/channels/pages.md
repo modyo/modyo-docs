@@ -6,7 +6,7 @@ search: true
 
 Pages allow you to create a structure for your site, add unstructured content, and customize the routes where that content is displayed.
 
-You can create four types of pages: **Widget page**, **Content page**, **Origination page**, and **Support page**. You choose the type when you create the page and you cannot change it afterwards.
+You can create three types of pages: **Widget page**, **Content page**, and **Origination page**. You choose the type when you create the page and you cannot change it afterwards.
 
 Widget pages are based on a modular scheme that allows you to create your custom site using HTML, JS, and CSS. You can drag and drop different predefined or custom widgets created by your team.
 
@@ -14,7 +14,6 @@ Content pages connect the Content modules with Channels. Here you can create the
 
 Origination pages display an [Origination](/en/platform/customers/origination.html) flow to end users. You can only create them if your plan includes Origination and the site is connected to a [realm](/en/platform/customers/realms.html). Each origination can be linked to a single page, and the page is always private: its segment restriction is configured in the origination, not in the page.
 
-Support pages allow end users to create and manage support tickets. You can only create them if your plan includes Support, they allow a single support page per site, and they are always private and restricted to authenticated users.
 
 To edit a page, click on the edit icon or on the page name to go to the edit view.
 
@@ -56,17 +55,17 @@ To create a new page, follow these steps:
 2. Select the site you want to add a new page.
 3. Click **Pages**.
 4. Click **New Page**.
-5. In **Type**, select the type of page you want to create: **Widget page**, **Content page**, **Origination page**, or **Support page**.
+5. In **Type**, select the type of page you want to create: **Widget page**, **Content page**, or **Origination page**.
 6. Fill in the fields required by the chosen type:
    - **Content page**: select the **Space** and the content **Type** that the page will display.
    - **Origination page**: select the **Origination** you want to display. Only published originations from the site's realm that do not have an associated page yet are listed.
-   - **Widget page** and **Support page**: they do not require additional fields.
+   - **Widget page**: it does not require additional fields.
 7. Enter the **Name**, the **Path**, and if necessary, select the **Parent page**, then press **Create**.
-8. Customize the page according to the type: adding or editing widgets on the widget page, editing the **Index** and the **Show** on the content page, or editing the flow views on the origination and support pages.
+8. Customize the page according to the type: adding or editing widgets on the widget page, editing the **Index** and the **Show** on the content page, or editing the flow views on the origination page.
 9. Once finished, click **Publish**.
 
 :::warning Attention
-If your plan does not include Origination or Support, those types are not shown in the selector. If they are shown but you cannot select them, a prerequisite is missing: the origination page requires the site to be connected to a realm, and the support page requires the site not to have a support page already.
+If your plan does not include Origination, that type is not shown in the selector. If it is shown but you cannot select it, a prerequisite is missing: the origination page requires the site to be connected to a realm.
 :::
 
 To learn about the types of widgets you can add, see [Widget Page](/en/platform/channels/pages.html#widget-page).
@@ -147,7 +146,7 @@ Once a widget is selected in the central section, the focus will shift to the si
 
 ### Properties
 
-In this tab you will find the widget page controls, in the same order they appear in the panel. **Grid** and **Delegate child routes to this page** only exist here and on the home page: content, origination, and support pages do not have those controls.
+In this tab you will find the widget page controls, in the same order they appear in the panel. **Grid** and **Delegate child routes to this page** only exist here and on the home page: content and origination pages do not have those controls.
 
 - **Name**: The name of the page.
 - **Parent page**: The page under which this one is nested. You can only choose widget pages of the site that are published, scheduled, or unpublished.

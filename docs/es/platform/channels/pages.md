@@ -6,7 +6,7 @@ search: true
 
 Las Páginas (o pages) permiten crear una estructura para tu sitio, añadir contenido no estructurado y personalizar las rutas donde se muestra ese contenido.
 
-Puedes crear cuatro tipos de páginas: **Página de Widget**, **Página de contenido**, **Página de originación** y **Página de soporte**. Eliges el tipo al crear la página y no puedes cambiarlo después.
+Puedes crear tres tipos de páginas: **Página de Widget**, **Página de contenido** y **Página de originación**. Eliges el tipo al crear la página y no puedes cambiarlo después.
 
 Las páginas de widget se basan en un esquema modular que permite crear tu sitio a medida usando HTML, JS y CSS. Podrás arrastrar y acomodar diferentes widgets predefinidos o personalizados creados por tu equipo.
 
@@ -14,7 +14,6 @@ Las páginas de contenido conectan los módulos de Content con Channels. Aquí p
 
 Las páginas de originación despliegan un flujo de [Originación](/es/platform/customers/origination.html) a los usuarios finales. Solo puedes crearlas si tu plan incluye Originación y el sitio está conectado a un [reino](/es/platform/customers/realms.html). Cada originación se puede vincular a una sola página, y la página siempre es privada: su restricción por segmentos se configura en la originación, no en la página.
 
-Las páginas de soporte permiten a los usuarios finales crear y gestionar tickets de soporte. Solo puedes crearlas si tu plan incluye Soporte, admiten una sola página de soporte por sitio y son siempre privadas y restringidas a usuarios autenticados.
 
 Para editar una página, haz clic en el icono de edición o en el nombre de la página para ir a la vista de edición.
 
@@ -56,17 +55,17 @@ Para crear una nueva página, sigue estos pasos:
 2. Selecciona el sitio al que desees agregar una nueva página.
 3. Haz clic en **Pages**.
 4. Haz clic en **Nueva Página**.
-5. En **Tipo**, selecciona el tipo de página que quieres crear: **Página de Widget**, **Página de contenido**, **Página de originación** o **Página de soporte**.
+5. En **Tipo**, selecciona el tipo de página que quieres crear: **Página de Widget**, **Página de contenido** o **Página de originación**.
 6. Completa los campos que pide el tipo elegido:
    - **Página de contenido**: selecciona el **Espacio** y el **Tipo** de contenido que va a desplegar la página.
    - **Página de originación**: selecciona la **Originación** que quieres desplegar. Solo aparecen las originaciones publicadas del reino del sitio que todavía no tienen una página asociada.
-   - **Página de Widget** y **Página de soporte**: no piden campos adicionales.
+   - **Página de Widget**: no pide campos adicionales.
 7. Ingresa el **Nombre**, la **Ruta** y, si es necesario, selecciona la **Página padre**, luego presiona **Crear**.
-8. Personaliza la página según el tipo: agregando o editando widgets en la página de widget, editando el **Index** y el **Show** en la página de contenido, o editando las vistas del flujo en las páginas de originación y de soporte.
+8. Personaliza la página según el tipo: agregando o editando widgets en la página de widget, editando el **Index** y el **Show** en la página de contenido, o editando las vistas del flujo en la página de originación.
 9. Una vez terminado, haz clic en **Publicar**.
 
 :::warning Atención
-Si tu plan no incluye Originación o Soporte, esos tipos no aparecen en el selector. Si aparecen pero no puedes seleccionarlos, falta una precondición: la página de originación necesita que el sitio esté conectado a un reino, y la página de soporte necesita que el sitio no tenga ya una página de soporte.
+Si tu plan no incluye Originación, ese tipo no aparece en el selector. Si aparece pero no puedes seleccionarlo, falta una precondición: la página de originación necesita que el sitio esté conectado a un reino.
 :::
 
 Para conocer los tipos de widgets que puedes agregar, consulta [Página de Widget](/es/platform/channels/pages.html#pagina-de-widget).
@@ -147,7 +146,7 @@ Una vez seleccionado un widget en la sección central, el foco pasará a la pest
 
 ### Propiedades
 
-En esta pestaña encontrarás los controles de la página de widget, en el mismo orden en que aparecen en el panel. **Grilla** y **Delegar rutas hijas a esta página** solo existen aquí y en la página home: las páginas de contenido, de originación y de soporte no tienen esos controles.
+En esta pestaña encontrarás los controles de la página de widget, en el mismo orden en que aparecen en el panel. **Grilla** y **Delegar rutas hijas a esta página** solo existen aquí y en la página home: las páginas de contenido y de originación no tienen esos controles.
 
 - **Nombre**: El nombre de la página.
 - **Página padre**: La página bajo la cual se anida esta. Solo puedes elegir páginas de widget del sitio que estén publicadas, programadas o despublicadas.
