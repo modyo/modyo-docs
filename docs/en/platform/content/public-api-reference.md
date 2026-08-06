@@ -521,7 +521,7 @@ Every entry listing includes a `meta` object at the root of the response with th
 If you only need the count, request a single-item page with `per_page=1` and read `meta.total_entries`:
 
 ```shell
-curl -X GET "https://test.modyo.com/api/content/spaces/blog/types/post/entries?meta.category=news&per_page=1"
+curl -X GET "https://my_account.modyo.com/api/content/spaces/my_space/types/my_type/entries?meta.category=my_category&per_page=1"
 ```
 
 The returned object will look something like this:
@@ -563,10 +563,10 @@ Metadata (e.g., Tags, Category, Dates): SQL searches will be queried by `meta.pa
 
 The content API delivers entries in the Space's default language. To request another language, use the `locale` query string parameter, which is the only way available: the content API does not read the `Accept-Language` header.
 
-For example, to get entries in the Spanish-Chile language (es-cl):
+For example, to get entries in the Spanish language (es):
 
 ```shell
-curl -X GET "https://test.modyo.com/api/content/spaces/blog/types/post/entries?locale=es-cl"
+curl -X GET "https://my_account.modyo.com/api/content/spaces/my_space/types/my_type/entries?locale=es"
 ```
 
 :::warning Attention
@@ -628,7 +628,7 @@ The metadata attributes you can use in `sort_by` are:
 - `meta.unpublished_at`
 
 ```shell
-curl -X GET "https://test.modyo.com/api/content/spaces/blog/types/post/entries?sort_by=meta.published_at&order=desc"
+curl -X GET "https://my_account.modyo.com/api/content/spaces/my_space/types/my_type/entries?sort_by=meta.published_at&order=desc"
 ```
 
 You can also sort by a field of the content type using the `fields.` prefix, as long as the field is of type Boolean, Checkbox, Date, Decimal, Dropdown, Integer, Radio, or Single-line text. The remaining [field types](/en/platform/content/types.html), such as Rich text, Multiple choice, Location, File, or Group, are not sortable.
@@ -636,7 +636,7 @@ You can also sort by a field of the content type using the `fields.` prefix, as 
 For example, to sort by a field called `priority` of type Integer:
 
 ```shell
-curl -X GET "https://test.modyo.com/api/content/spaces/blog/types/post/entries?sort_by=fields.priority&order=asc"
+curl -X GET "https://my_account.modyo.com/api/content/spaces/my_space/types/my_type/entries?sort_by=fields.priority&order=asc"
 ```
 
 :::warning Attention

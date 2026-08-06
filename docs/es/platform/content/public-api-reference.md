@@ -519,7 +519,7 @@ Todo listado de entradas incluye en la raíz de la respuesta un objeto `meta` co
 Si sólo necesitas el conteo, pide una página de un elemento con `per_page=1` y lee `meta.total_entries`:
 
 ```shell
-curl -X GET "https://test.modyo.com/api/content/spaces/blog/types/post/entries?meta.category=noticias&per_page=1"
+curl -X GET "https://my_account.modyo.com/api/content/spaces/my_space/types/my_type/entries?meta.category=my_category&per_page=1"
 ```
 
 La forma del objeto retornado será algo como esto:
@@ -561,10 +561,10 @@ Metadata (ej: Tags, Category, Fechas): Búsquedas por SQL, serán consultables m
 
 La API de contenido entrega las entradas en el idioma por defecto del Espacio. Para pedir otro idioma usa el parámetro de query string `locale`, que es la única vía disponible: la API de contenido no lee la cabecera `Accept-Language`.
 
-Por ejemplo, para obtener entradas en el idioma Español-Chile (es-cl):
+Por ejemplo, para obtener entradas en el idioma Español (es):
 
 ```shell
-curl -X GET "https://test.modyo.com/api/content/spaces/blog/types/post/entries?locale=es-cl"
+curl -X GET "https://my_account.modyo.com/api/content/spaces/my_space/types/my_type/entries?locale=es"
 ```
 
 :::warning Atención
@@ -626,7 +626,7 @@ Los atributos de metadata que puedes usar en `sort_by` son:
 - `meta.unpublished_at`
 
 ```shell
-curl -X GET "https://test.modyo.com/api/content/spaces/blog/types/post/entries?sort_by=meta.published_at&order=desc"
+curl -X GET "https://my_account.modyo.com/api/content/spaces/my_space/types/my_type/entries?sort_by=meta.published_at&order=desc"
 ```
 
 También puedes ordenar por un campo propio del tipo de contenido usando el prefijo `fields.`, siempre que el campo sea de tipo Booleano, Checkbox, Decimal, Dropdown, Entero, Fecha, Radio o Texto de una línea. El resto de los [tipos de campo](/es/platform/content/types.html), como Texto enriquecido, Opciones múltiples, Ubicación, Archivo o Grupo, no son ordenables.
@@ -634,7 +634,7 @@ También puedes ordenar por un campo propio del tipo de contenido usando el pref
 Por ejemplo, para ordenar por un campo llamado `priority` de tipo Entero:
 
 ```shell
-curl -X GET "https://test.modyo.com/api/content/spaces/blog/types/post/entries?sort_by=fields.priority&order=asc"
+curl -X GET "https://my_account.modyo.com/api/content/spaces/my_space/types/my_type/entries?sort_by=fields.priority&order=asc"
 ```
 
 :::warning Atención
