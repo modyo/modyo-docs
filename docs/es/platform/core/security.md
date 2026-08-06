@@ -17,19 +17,37 @@ Esta guía te presenta las recomendaciones más relevantes para lograr este obje
 En esta sección puedes establecer la política de seguridad de contraseñas para los miembros del equipo.  Las opciones disponibles son:
 
 - **Valor mínimo de longitud de contraseña**: Este valor determina la longitud mínima que debe tener una contraseña, debe tener entre 12 y 128 caracteres.
-- **Requerir por lo menos una letra minúscula (a - z)**: Esta opción garantiza que la contraseña contenga al menos una letra minúscula.
-- **Requerir por lo menos una letra mayúscula (A - Z)**: Esta opción garantiza que la contraseña contenga al menos una letra mayúscula.
-- **Requerir por lo menos un carácter no alfanumérico (! @ # $ % ^ & * () _ + - = [] {} |)**: Esta opción exige que las contraseñas de los miembros del equipo contengan al menos uno de los caracteres especiales indicados.
+- **Requerir por lo menos una letra minúscula del alfabeto Latino (a - z)**: Esta opción garantiza que la contraseña contenga al menos una letra minúscula.
+- **Requerir por lo menos una letra mayúscula del alfabeto Latino (A - Z)**: Esta opción garantiza que la contraseña contenga al menos una letra mayúscula.
+- **Se requiere al menos uno de estos caracteres especiales**: Esta opción exige que las contraseñas de los miembros del equipo contengan al menos uno de los símbolos que la propia casilla enumera entre paréntesis. El conjunto predeterminado es `! @ # $ % ^ & * ( ) _ + º - = [ ] { } | " . ' ¿ / ¡ : ;`, y el listado que ves en pantalla es siempre el que valida tu instalación.
 
 Al guardar esta configuración, los usuarios deberán cumplir con estas condiciones al momento de cambiar su contraseña.
 
+:::warning Atención
+Al activar **Se requiere al menos uno de estos caracteres especiales**, la contraseña también queda limitada a ese alfabeto: solo se aceptan letras de la `a` a la `z`, en mayúscula o minúscula, dígitos y los símbolos del listado. Cualquier otro carácter hace que la contraseña se rechace, aunque sea larga y cumpla el resto de las condiciones. Esto incluye las vocales acentuadas, la `ñ` y símbolos como `~`, `<` o `>`.
+:::
+
+## Bloqueo por Intentos Fallidos de Inicio de Sesión
+
+Además de la política de contraseñas, Modyo protege el inicio de sesión frente a ataques de fuerza bruta. Tras 10 intentos fallidos consecutivos, el usuario queda bloqueado temporalmente durante 15 minutos y el mensaje de error le indica cuánto falta para el desbloqueo:
+
+_Se superó el límite de inicios de sesión fallidos. Tu cuenta ha sido deshabilitada temporalmente. Por favor, espere 14 minutos para que tu cuenta se desbloquee._
+
+Esta protección aplica tanto a los miembros del equipo que entran al panel de administración como a los usuarios finales que inician sesión en un reino. El bloqueo se libera solo por tiempo: no hay una acción de desbloqueo manual en el panel, hay que esperar a que se cumpla el plazo.
+
+:::tip Tip
+Este bloqueo temporal es distinto del estado _inactivo_ de la [Política de Periodo de Inactividad de los Usuarios](#politica-de-periodo-de-inactividad-de-los-usuarios). Si un miembro del equipo reporta que no puede entrar, revisa cuál de los dos casos aplica: el bloqueo por intentos fallidos se levanta por sí solo a los 15 minutos, mientras que el estado inactivo se mantiene hasta que el usuario reactiva su cuenta o un dueño de la cuenta lo vuelve a activar.
+:::
+
 ## Política de Expiración de Sesiones
 
-En esta sección puedes configurar el tiempo que permanecerá activa una sesión.
+En esta sección puedes configurar el tiempo que permanecerá activa una sesión. Los dos campos son listas de opciones fijas: eliges uno de los valores disponibles, no escribes un tiempo libre.
 
-**Expiración de sesión**: Al concluirse el tiempo seleccionado, Modyo cierra la sesión del usuario automáticamente.
+**Expiración de sesión**: Al concluirse el tiempo seleccionado, Modyo cierra la sesión del usuario automáticamente. Las opciones son 15 minutos, 30 minutos, 1 hora, 2 horas, 12 horas, 1 día, 1 semana, 2 semanas, 1 mes y 3 meses. Si la duración definida en tu instalación no coincide con ninguna de ellas, aparece además como una opción más de la lista.
 
-**Período de inactividad de usuario**: Cuando un usuario está inactivo se cierra la sesión automáticamente, una vez transcurrido el tiempo seleccionado. Se considera acciones de navegación, teclado y mouse como actividades de usuario. Esta opción protege al usuario en caso de dejar su estación de trabajo desatendida.
+**Período de inactividad del usuario**: Cuando un usuario está inactivo se cierra la sesión automáticamente, una vez transcurrido el tiempo seleccionado. Se consideran las acciones de navegación, teclado y mouse como actividades de usuario. Esta opción protege al usuario en caso de dejar su estación de trabajo desatendida. Para poder elegir un valor, primero marca la casilla **Activar el periodo de inactividad del usuario**; las opciones son 5 minutos, 15 minutos, 30 minutos, 1 hora y 6 horas.
+
+Este cierre de sesión se mide en minutos y solo termina la sesión abierta. No lo confundas con la [Política de Periodo de Inactividad de los Usuarios](#politica-de-periodo-de-inactividad-de-los-usuarios), que se mide en días y marca al usuario como inactivo para que no pueda volver a iniciar sesión.
 
 ## Política de Periodo de Inactividad de los Usuarios
 
@@ -52,9 +70,21 @@ Puedes localizar esta opción al editar un usuario en la sección **Equipo**, en
 
 ## Control de Acceso HTTP (Cross-Origin Resource Sharing CORS)
 
-Habilita la funcionalidad de Compartir Recursos de Origen Cruzado (CORS) para permitir el acceso a los recursos de Modyo desde otras páginas web.
+La sección **Cross Origin Resource Sharing** define desde qué dominios se puede acceder a los recursos de Modyo. Tiene tres controles:
 
-Para dar acceso a dominios externos, escríbelos separados por comas, por ejemplo `http://api.mydomain.com, http://mysubdomain.mydomain.com`. Por defecto, los wildcards no están permitidos en esta sección. Para habilitarlos, deberás deshabilitar manualemente el SSL a través de un ticket enviado area de [soporte de Modyo](https://support.modyo.com/hc/en-us).
+- **Habilitar CORS**: activa la funcionalidad. Al marcarla, los dominios personalizados de tus aplicaciones se incluyen automáticamente, sin que tengas que listarlos.
+- **Permitir todos los orígenes**: agrega el comodín `*` a la lista de orígenes permitidos, de modo que cualquier dominio puede consumir la información pública en formato JSON. Al marcarla, Modyo pide confirmación con el aviso "Si está activado, todos los dominios tendrán acceso al JSON público ¿Te gustaría continuar?".
+- **Orígenes alternativos**: campo de texto para dar acceso a dominios externos. Escríbelos separados por comas, por ejemplo `http://api.mydomain.com, http://mysubdomain.mydomain.com`. En este campo no se aceptan comodines: si incluyes un `*`, la configuración no se guarda. De cada entrada, Modyo conserva solo el esquema, el dominio y el puerto, y descarta las rutas.
+
+Cuando termines, haz clic en **Guardar**.
+
+:::warning Atención
+**Permitir todos los orígenes** se activa desde esta misma pantalla, sin necesidad de abrir un ticket de soporte ni de hacer ningún otro cambio en tu instalación. Como deja la información pública de tu cuenta al alcance de cualquier dominio, resérvala para ambientes de desarrollo o pruebas y, en producción, enumera los dominios en **Orígenes alternativos**.
+:::
+
+:::tip Tip
+La inclusión automática cubre el dominio principal de cada aplicación. Si publicas una aplicación en un dominio alternativo, o si el origen que hace las llamadas usa otro esquema u otro puerto, agrégalo en **Orígenes alternativos**, porque la comparación del origen es exacta.
+:::
 
 ## Token de Entrega de Contenido (JWT - JSON Web Token)
 
