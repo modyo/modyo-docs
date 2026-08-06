@@ -28,6 +28,16 @@ Hello {{ 'now' | date: "%Y %h" }}
 Adds a string *e.g.*
 <span v-pre>`{{ 'foo' | append:'bar' }} #=> 'foobar'`</span>
 
+### Base64 decode
+
+Decodes a Base64-encoded string *e.g.*
+<span v-pre>`{{ 'SGVsbG8gd29ybGQ=' | base64_decode }} #=> 'Hello world'`</span>
+
+### Base64 encode
+
+Encodes a string to Base64 *e.g.*
+<span v-pre>`{{ 'Hello world' | base64_encode }} #=> 'SGVsbG8gd29ybGQ='`</span>
+
 ### Capitalize
 
 Capitalizes the first letter of each word in the input string.
@@ -198,6 +208,14 @@ If the site doesn't have an associated realm and you don't specify parameters, t
 
 These are the liquid filters that alter values related to the Content module in Modyo Platform.
 
+### Asset lookup by UUID
+
+The `asset_image`, `asset_link`, `asset_url_by_uuid` and `asset_video` filters look the file up by its UUID within the account, not within the site.
+
+:::warning Attention
+If the UUID doesn't match any file in the account, none of the four fails or returns empty: they print the message `Liquid error: Asset with uuid 'the-requested-uuid' does not exist`, which ends up published on the page. Check the UUIDs whenever you move templates or content across accounts.
+:::
+
 ### Asset image
 
 Returns the tags of an image using its uuid from the File Manager. If using Cloudflare for image optimization, you can use these additional parameters: width, height, blur, quality, format and fit. *e.g.*
@@ -205,8 +223,16 @@ Returns the tags of an image using its uuid from the File Manager. If using Clou
 
 ### Asset link
 
-Returns the URL of an image using its uuid from the File Manager. *e.g.*
-<span v-pre>`{{ uuid | asset_link: 'This is a link for the asset' }}`</span>
+Emits an HTML anchor tag pointing to the File Manager file identified by its UUID. The argument is the visible link text and, if you omit it, the asset's file name is used instead. *e.g.*
+<span v-pre>`{{ uuid | asset_link: 'Download the guide' }}`</span> => `<a href='https://mydomain.com/uploads/guide.pdf'>Download the guide</a>`
+
+**Parameters**:
+- uuid (String) — asset uuid
+- label (String) (default: the asset's file name) — visible link text
+
+:::tip Tip
+If all you need is the file's address, to build your own markup, use `asset_url_by_uuid`.
+:::
 
 ### Asset URL by UUID
 
@@ -234,12 +260,20 @@ Returns a list of Entries that belong to the selected Category. *e.g.*
 
 ### By lang
 
-Returns a list of Entries that belong to a selected language. *e.g.*
-<span v-pre>`{% assign entries = widget.entries | locale: 'es,en,pt' %} => entries`</span>
+Returns a list of Entries in the given language. The filter is called `by_lang`: `locale` is the name of the parameter, not the name of the filter. *e.g.*
+<span v-pre>`{% assign entries = widget.entries | by_lang: 'es' %} => entries`</span>
 
 **Parameters**:
 - entries (ArrayEntry) — array with entries
-- locale (String) (default: '') — String with comma-separated languages.
+- locale (String) (default: '') — a single locale code
+
+`by_lang` replaces any language condition the collection already had, it doesn't add to it: the last `by_lang` in the chain wins.
+
+:::warning Attention
+It doesn't take a comma-separated list. A value such as `'es,en,pt'` is compared as-is against each entry's language, so the result is an empty collection instead of the union of the three languages. If you need several languages, resolve one collection per language and iterate them separately.
+
+Applied to anything that isn't a collection of entries, the filter aborts and the published HTML keeps the comment `<!-- Liquid Error -->` in place of the block.
+:::
 
 ### By slug
 
@@ -288,7 +322,7 @@ Applies multiple entry filters in one call. Supported option keys (all optional)
 - tags: comma-separated tags (applies `by_tag`)
 - slugs: comma-separated entry slugs (applies `by_slug`)
 - uuids: comma-separated UUIDs (applies `by_uuid`)
-- locale: locale code (applies `by_lang`)
+- locale: a single locale code (applies `by_lang`; a comma-separated list is not supported)
 - from_published_date: date string (>= `published_at`)
 - to_published_date: date string (<= `published_at`)
 - sort_by: field name (`name`, `slug`, `created_at`, `updated_at`, `published_at`, or a field path)
@@ -301,31 +335,53 @@ Applies multiple entry filters in one call. Supported option keys (all optional)
 ### Filter By
 
 Returns a list of Entries that match a filter. *e.g.*
-<span v-pre>`{% assign entries = widget.entries | filter_by: field: 'name', eq: 'entry3Cat3' %}`</span>
+<span v-pre>`{% assign entries = widget.entries | filter_by: field: 'meta.name', eq: 'entry3Cat3' %}`</span>
 
 **Parameters**:
 - entries (ArrayEntry) — array with entries
 - opts (Hash) (default: {}) — hash with field and operator/value pairs
 
+The value of `field` is always written with its prefix:
+
+- `fields.<name>` for the content type's fields.
+- `meta.<attribute>` for metadata, with these attributes available: `meta.uuid`, `meta.name`, `meta.slug`, `meta.category`, `meta.category_slug`, `meta.category_name`, `meta.created_at`, `meta.updated_at`, `meta.published_at` and `meta.unpublished_at`. To filter by tags use `by_tag`.
+
+:::warning Attention
+A field name without a prefix is silently discarded: the filter raises no error and returns the whole collection, unfiltered. If a listing shows you every entry, check first that the value of `field` starts with `fields.` or with `meta.`.
+:::
+
 **Supported Operators** (use as keys in `opts`):
 - `eq` — equals (implicit when only `field` and value provided)
+- `not` — not equal to. With `nil` as the value it returns the entries that do have a value in the field
 - `gt`, `lt` — greater than / less than
 - `in` — field value must be one of the comma-separated values
 - `nin` — field value must NOT be one of the comma-separated values
 - `has` — array-type field must contain all of the comma-separated values
+- `search` — searches the text in the attributes of the entry's locations; requires a location field
+- `geohash` — searches by proximity with a base 32 geohash; requires a location field
 
-All multi-value operators take a comma-separated string.
+Only `in`, `nin` and `has` take a comma-separated string; the rest take a single value. `search` and `geohash` behave just like in the [Content public API](/en/platform/content/public-api-reference.html#operators). The `all` operator, which appears in the Filter By Query String list, is not available in `filter_by`.
 
 **Examples**:
 
 Filter entries where the `status` field is either 'published' or 'featured':
-<span v-pre>`{% assign entries = entries | filter_by: field: 'status', in: 'published,featured' %}`</span>
+<span v-pre>`{% assign entries = entries | filter_by: field: 'fields.status', in: 'published,featured' %}`</span>
 
 Filter entries where the `author_id` is not 1 or 5:
-<span v-pre>`{% assign entries = entries | filter_by: field: 'author_id', nin: '1,5' %}`</span>
+<span v-pre>`{% assign entries = entries | filter_by: field: 'fields.author_id', nin: '1,5' %}`</span>
 
 Filter entries that have both 'tech' and 'news' in their `categories` array field:
-<span v-pre>`{% assign entries = entries | filter_by: field: 'categories', has: 'tech,news' %}`</span>
+<span v-pre>`{% assign entries = entries | filter_by: field: 'fields.categories', has: 'tech,news' %}`</span>
+
+Filter entries whose `subtitle` field has any value:
+<span v-pre>`{% assign entries = entries | filter_by: field: 'fields.subtitle', not: nil %}`</span>
+
+Filter entries published after a date:
+<span v-pre>`{% assign entries = entries | filter_by: field: 'meta.published_at', gt: '2026-01-01' %}`</span>
+
+:::warning Attention
+There are two cases where `filter_by` aborts and the published HTML keeps the comment `<!-- Liquid Error -->` in place of the block: when you call it without `field`, and when you apply it to a collection whose content type can't be resolved, such as <span v-pre>`spaces['blog'].entries`</span>. Always start from a collection scoped to a single type, such as <span v-pre>`spaces['blog'].types['post'].entries`</span> or <span v-pre>`widget.entries`</span>.
+:::
 
 ### Filter By Query String
 
@@ -403,34 +459,25 @@ Returns a list of Entries that have a publication date older than the limit. *e.
 
 These Liquid filters alter values related to Cryptography.
 
-### Base64 Decode
-
-Returns the Base64-decoded value of a string (e.g. <span v-pre> `{% 'Hello world' | base64_encode %} # => 'SGVsbG8gd29ybGQ='`</span>).
-
-### Base64 Encode
-
-Returns the Base64-encoded value of a string (e.g. <span v-pre>`{% 'SGVsbG8gd29ybGQ=' | base64_decode %} # => 'Hello world'`</span>).
-
-### HMAC SHA1
-
-Returns the SHA-1 hash using a message authentication code (HMAC) of a string (e.g. <span v-pre>`{% 'Hello world' | hmac_sha1: 'key' %} # => '2a73959742baf046e6e2e27e5ee94bcff0af31b1'`</span>).
+:::warning Attention
+The only hash filters in Modyo Platform are `hmac_sha256` and `sha256`. `md5`, `sha1` and `hmac_sha1` do not exist and, because an unknown filter doesn't interrupt rendering, Liquid returns the input value untransformed: the page publishes the data in the clear where you expected a hash. Review your templates before signing an integration with them.
+:::
 
 ### HMAC SHA256
-Returns the SHA-256 hash using a message authentication code (HMAC) of a string (e.g. <span v-pre>`{% 'Hello world' | hmac_sha256: 'key' %} # => 'a82b2e160edaf92a6589dc11160d2a10c04449840a58717db308c1ee3512b039'`</span>).
 
-### MD5
-
-Returns the MD5 hash of a string (e.g. <span v-pre>`{% 'Hello world' | md5 %} # => '3e25960a79dbc69b674cd4ec67a72c62'`</span>).
-
-### SHA1
-Returns the SHA-1 hash of a string (e.g. <span v-pre>`{% 'Hello world' | sha1 %} # => '7b502c3a1f48c8609ae212cdfb639dee39673f5e'`</span>).
+Returns the SHA-256 hash of a string using a message authentication code (HMAC), with the key as the argument (e.g. <span v-pre>`{{ 'Hello world' | hmac_sha256: 'key' }} #=> 'a82b2e160edaf92a6589dc11160d2a10c04449840a58717db308c1ee3512b039'`</span>).
 
 ### SHA 256
-Returns the SHA-256 hash of a string (e.g. <span v-pre>`{% 'Hello world' | sha256 %} # => '64ec88ca00b268e5ba1a35678a1b5316d212f4f366b2477232534a8aeca37f3c'`</span>).
+
+Returns the SHA-256 hash of a string (e.g. <span v-pre>`{{ 'Hello world' | sha256 }} #=> '64ec88ca00b268e5ba1a35678a1b5316d212f4f366b2477232534a8aeca37f3c'`</span>).
 
 ## CSS
 
 These Liquid filters alter CSS-related values in Modyo Platform.
+
+:::warning Attention
+Every color filter aborts if the input value isn't a valid color, for example a variable that doesn't exist in the context. When that happens, the published HTML keeps the comment `<!-- Liquid Error -->` in place of the color and the CSS rule that used it is lost.
+:::
 
 ### Brighten
 
@@ -446,7 +493,15 @@ Desaturates a color (e.g. <span v-pre>`{{ '#00ff00' | desaturate: 15 }} #=> '#13
 
 ### Grayscale
 
-Converts a color to grayscale (e.g. <span v-pre>`{{ '#00ff00' | grayscale }} #=> '#808080'`</span>). Alias: `greyscale` (same output).
+Converts a color to grayscale (e.g. <span v-pre>`{{ '#00ff00' | grayscale }} #=> '#808080'`</span>). It accepts a second argument, but that argument doesn't change the result because the grayscale conversion never uses it.
+
+### Greyscale
+
+Converts a color to grayscale, with the same output as `grayscale`, but it only takes the color (e.g. <span v-pre>`{{ '#00ff00' | greyscale }} #=> '#808080'`</span>).
+
+:::warning Attention
+`greyscale` and `grayscale` are not interchangeable: `greyscale` doesn't accept a second argument. A template that passes an amount, such as <span v-pre>`{{ color | greyscale: 15 }}`</span>, aborts because of the number of arguments and the published HTML keeps the comment `<!-- Liquid Error -->`. The same template with `grayscale` works.
+:::
 
 ### Lighten
 
@@ -535,38 +590,41 @@ Returns the Origination with the selected UID. *e.g.*
 
 These Liquid filters alter values related to Sites in Modyo Platform.
 
+### Removed filters
+
+As of version 10.2 the `video_player`, `audio_player`, `embedded_video` and `asset_thumbnail_link_tag` filters no longer exist. The `bar_code` and `qr_code` filters never existed in Modyo Platform.
+
+:::warning Attention
+An unknown filter doesn't interrupt rendering: Liquid returns the input value untransformed. A template that still invokes these filters on an asset no longer shows the player or the link, and publishes the internal name of the object it received instead, for example `Liquid::Drops::Assets::VideoAssetDrop`. There is no error message or visible hint of the cause on the page, so review your templates before upgrading.
+:::
+
+To replace `video_player` and `audio_player`, build the markup with the file's address, available in `url`:
+
+```liquid
+{% assign video = assets['video-uuid'] %}
+<video src="{{ video.url }}" width="320" height="320" controls="controls"></video>
+
+{% assign audio = assets['audio-uuid'] %}
+<audio src="{{ audio.url }}" controls="controls"></audio>
+```
+
+To replace `asset_thumbnail_link_tag`, wrap the thumbnail, available in `thumbnail_url`, in a link to the file:
+
+```liquid
+{% assign image = assets['image-uuid'] %}
+<a href="{{ image.url }}" class="thumbnail"><img src="{{ image.thumbnail_url }}" alt="{{ image.alt_text }}"></a>
+```
+
+`embedded_video`, `bar_code` and `qr_code` have no replacement: the platform doesn't currently offer an equivalent filter.
+
 ### Asset image Tag
 
 Generates the HTML tag of an image (e.g. <span v-pre>`{{ asset | asset_image_tag: 'original' }}`</span>).
-
-### Asset Thumbnail Link Tag
-
-Generates the HTML thumbnail tag of an image (e.g. <span v-pre>`{{ asset | asset_thumbnail_link_tag: 'class', 'target' }}`</span>).
-
-**Parameters**
-
-- `asset` (Asset) — Asset-type object.
-- `classes` (String) (default: '') — Additional HTML classes (optional).
-- `target` (String) (default: '') — Additional HTML targets (optional).
 
 ### Asset URL
 
 Generates the URL of an Asset object or a template asset path. For Asset objects using Cloudflare for image optimization, you can use the following additional parameters: width, height, blur, quality, format and fit. (e.g. <span v-pre>`{{ assets['asset_uuid'] | asset_url: blur: 40, format: 'auto', fit: 'cover'  }}`</span>).
 For template asset paths from the template builder, specify the asset type as the second argument (e.g. <span v-pre>`{{ 'base' | asset_url: 'js'  }}`</span>). You can also use the script_tag or stylesheet_tag filters to automatically generate the complete HTML <script> or <link> tag (e.g. <span v-pre>`{{ 'base' | asset_url: 'css' | stylesheet_tag: media: 'screen' }}`</span>).
-
-### Audio Player
-
-Generates the URL of an Audio-type object (e.g. <span v-pre>`{{ audio1 | audio_player }}`</span>).
-
-### Bar Code
-
-Generates the URL of a barcode (e.g. <span v-pre>`{{ value | bar_code: 320, 320 }}`</span>).
-
-**Parameters**
-
-- `value` (String) — Barcode value.
-- `width` (Integer) (default: 100) — Width.
-- `height` (Integer) (default: 100) — Height.
 
 ### Button To
 
@@ -575,10 +633,6 @@ Generates a button (e.g. <span v-pre>`{{ 'Hello World' | button_to: 'http://www.
 ### Cookie Value
 
 Returns the value of a cookie (e.g. <span v-pre>`{{ 32 | cookie_value }}`</span>).
-
-### Embedded Video
-
-Returns the URL of an embedded video (e.g. <span v-pre>`{{ movie2 | embedded_video }}`</span>).
 
 ### Escape JS
 
@@ -639,17 +693,6 @@ Generates a primary type button (e.g. <span v-pre>`{{ 'Hello World' | primary_bu
 - `link` (String) (default: '/') — Link URL.
 - `size` (String) (default: 'large') — Size for the link.
 
-### QR Code
-
-Generates a QR code (e.g. <span v-pre>`{{ value | qr_code: 4, 320, 320 }}`</span>).
-
-**Parameters**
-
-- `value` (String) (default: '') — QR value.
-- `qr_size` (Integer) (default: 4) — QR size.
-- `width` (Integer) (default: 100) — QR width.
-- `height` (Integer) (default: 100) — QR height.
-
 ### Sanitize HTML
 
 Sanitizes HTML tags from a String (e.g. <span v-pre>`{{ '<script>Hello World</script>' | sanitize }} #=> 'Hello World'`</span>).
@@ -692,16 +735,6 @@ Resolves the translation text for Site keys. Custom values will be returned if t
 ### Truncate HTML
 
 Returns a String after truncating it (e.g. <span v-pre>`{{ html | truncate_html: 10 }}`</span>).
-
-### Video Player
-
-Adds a video player in HTML code using a File Manager asset (e.g. <span v-pre>`{{ movie1 | video_player: 320, 320 }}`</span>).
-
-**Parameters**
-
-- `video` (Asset) — Video-type object from the File Manager.
-- `width` (Integer) — Video width.
-- `height` (Integer) — Video height.
 
 ## Step
 
@@ -789,24 +822,34 @@ The filters `completed`, `url`, and `resume_link` (documented under Submission) 
 
 These Liquid filters alter values related to Users.
 
+### Avatar For
+
+Shows the HTML code for a user's image. If the user has no avatar of their own, it returns the default avatar (e.g. <span v-pre>`{{ user | avatar_for: 'C50x50', true }}`</span>).
+
+**Parameters**
+
+- `user` (User) — User object.
+- `size` (String) (default: 'C50x50') — Image size.
+- `link` (Boolean) (default: true) — `true` adds a link to the user's profile.
+
 ### Default Avatar Image
 
-Shows the default avatar image (e.g. <span v-pre>`{{ user | avatar_for: 'C50x50' }}`</span>).
+Shows the HTML code of the default avatar. The signature is the reverse of what the name suggests: the value before the pipe is the **size**, and the user is the first, optional argument (e.g. <span v-pre>`{{ 'C50x50' | default_avatar_image: user }}`</span>).
 
 **Parameters**
 
-- `user` (User) — User object.
-- `size` (Integer) (default: 'C50x50') — Image size.
+- `size` (String) — Image size, using the avatar version format: `C25x25`, `C50x50`, `C75x75`, `C100x100`, `C125x125`, `C160x160`, `C200x200` or `C250x250`.
+- `user` (User) (default: nil) — User object from the Liquid context. It has to be the object, not an id or an email.
 
-### Image For
+It returns one of three images, depending on what it receives:
 
-Shows the HTML code for a user's image (e.g. <span v-pre>`{{ user | avatar_for: 'C50x50', true }}`</span>).
+- With a user whose realm has a **Default avatar image** configured in [Realm Settings](/en/platform/customers/settings.html#general), the realm's image in the requested size.
+- With a user whose realm doesn't have it configured, the placeholder image in the requested size.
+- With no user, the placeholder image in the requested size.
 
-**Parameters**
-
-- `user` (User) — User object.
-- `size` (Integer) (default: 'C50x50') — Image size.
-- `link` (Boolean) (default: true) — `true` adds a link to the user's profile.
+:::tip Tip
+For the usual case you don't need to call it: `avatar_for` already falls back to `default_avatar_image` when the user has no avatar of their own. Call it directly only when you want the default avatar without looking at the user's own.
+:::
 
 ### By Form Slug
 

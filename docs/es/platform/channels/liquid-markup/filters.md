@@ -28,6 +28,16 @@ Hello {{ 'now' | date: "%Y %h" }}
 Añade un string *e.g.*
 <span v-pre>`{{ 'foo' | append:'bar' }} #=> 'foobar'`</span>
 
+### Base64 decode
+
+Decodifica un string codificado en Base64 *e.g.*
+<span v-pre>`{{ 'SGVsbG8gd29ybGQ=' | base64_decode }} #=> 'Hello world'`</span>
+
+### Base64 encode
+
+Codifica un string en Base64 *e.g.*
+<span v-pre>`{{ 'Hello world' | base64_encode }} #=> 'SGVsbG8gd29ybGQ='`</span>
+
 ### Capitalize
 
 Poner palabra en mayúscula en la frase de entrada.
@@ -198,6 +208,14 @@ En caso de que el sitio no tenga un reino asociado y no especifiques parámetros
 
 Estos son los filtros liquid que alteran valores relacionados al módulo de Content en Modyo Platform.
 
+### Búsqueda de assets por UUID
+
+Los filtros `asset_image`, `asset_link`, `asset_url_by_uuid` y `asset_video` buscan el archivo por su UUID en el ámbito de la cuenta, no del sitio.
+
+:::warning Atención
+Si el UUID no corresponde a ningún archivo de la cuenta, ninguno de los cuatro falla ni devuelve vacío: imprimen el mensaje `Error de liquid: No existe el archivo con UUID 'el-uuid-pedido'`, que queda publicado en la página. Revisa los UUID cuando muevas plantillas o contenido entre cuentas.
+:::
+
 ### Asset image
 
 Retorna los tags de una imagen usando su uuid del Gestor de Archivos. Al usar Cloudflare para la optimización de imágenes, puedes usar estos parámetros adicionales: width, height, blur, quality, format y fit *e.g.*
@@ -205,8 +223,16 @@ Retorna los tags de una imagen usando su uuid del Gestor de Archivos. Al usar Cl
 
 ### Asset link
 
-Retorna el URL de una imagen usando su uuid del Gestor de Archivos. *e.g.*
-<span v-pre>`{{ uuid | asset_link: 'Este es una liga para el asset' }}`</span>
+Emite una etiqueta de enlace HTML que apunta al archivo del Gestor de Archivos identificado por su UUID. El argumento es el texto visible del enlace y, si lo omites, se usa el nombre de archivo del asset. *e.g.*
+<span v-pre>`{{ uuid | asset_link: 'Descarga el instructivo' }}`</span> => `<a href='https://midominio.com/uploads/instructivo.pdf'>Descarga el instructivo</a>`
+
+**Parámetros**:
+- uuid (String) — asset uuid
+- label (String) (default: nombre de archivo del asset) — texto visible del enlace
+
+:::tip Tip
+Si lo que necesitas es solo la dirección del archivo, para armar tu propio markup, usa `asset_url_by_uuid`.
+:::
 
 ### Asset URL by UUID
 
@@ -234,12 +260,20 @@ Retorna una lista de Entradas que pertenecen a la Categoría seleccionada. *e.g.
 
 ### By lang
 
-Retorna una lista de Entradas que pertenecen a un lenguaje seleccionado. *e.g.*
-<span v-pre>`{% assign entries = widget.entries | locale: 'es,en,pt' %} => entries`</span>
+Retorna una lista de Entradas en el idioma indicado. El filtro se llama `by_lang`: `locale` es el nombre del parámetro, no el del filtro. *e.g.*
+<span v-pre>`{% assign entries = widget.entries | by_lang: 'es' %} => entries`</span>
 
 **Parametros**:
 - entries (ArrayEntry) — array con entradas
-- locale (String) (default: '') — String con lenguajes separadas por coma.
+- locale (String) (default: '') — un único código de idioma
+
+`by_lang` reemplaza la condición de idioma que la colección ya tuviera, no la acumula: el último `by_lang` de la cadena es el que manda.
+
+:::warning Atención
+No acepta una lista separada por comas. Un valor como `'es,en,pt'` se compara tal cual contra el idioma de cada entrada, así que el resultado es una colección vacía en lugar de la unión de los tres idiomas. Si necesitas varios idiomas, resuelve una colección por idioma y recórrelas por separado.
+
+Aplicado sobre algo que no sea una colección de entradas, el filtro aborta y en el HTML publicado queda el comentario `<!-- Liquid Error -->` en lugar del bloque.
+:::
 
 ### By slug
 
@@ -288,7 +322,7 @@ Aplica múltiples filtros de entradas en una sola llamada. Claves soportadas (to
 - tags: tags separados por comas (aplica `by_tag`)
 - slugs: slugs de entradas separados por comas (aplica `by_slug`)
 - uuids: UUIDs separados por comas (aplica `by_uuid`)
-- locale: código de idioma (aplica `by_lang`)
+- locale: un único código de idioma (aplica `by_lang`; no acepta lista separada por comas)
 - from_published_date: fecha límite inicial (>= `published_at`)
 - to_published_date: fecha límite final (<= `published_at`)
 - sort_by: nombre de campo (`name`, `slug`, `created_at`, `updated_at`, `published_at` u otro path de campo)
@@ -306,25 +340,47 @@ Retorna una lista de Entradas que cumplen con un filtro.
 - entries (ArrayEntry) — array con entradas
 - opts (Hash) (default: {}) — hash con campo y pares operador/valor
 
+El valor de `field` se escribe siempre con su prefijo:
+
+- `fields.<nombre>` para los campos del tipo de contenido.
+- `meta.<atributo>` para los metadatos, con estos atributos disponibles: `meta.uuid`, `meta.name`, `meta.slug`, `meta.category`, `meta.category_slug`, `meta.category_name`, `meta.created_at`, `meta.updated_at`, `meta.published_at` y `meta.unpublished_at`. Para filtrar por tags usa `by_tag`.
+
+:::warning Atención
+Un nombre de campo sin prefijo se descarta en silencio: el filtro no lanza error y devuelve la colección completa, sin filtrar. Si un listado te muestra todas las entradas, revisa primero que el valor de `field` empiece por `fields.` o por `meta.`.
+:::
+
 **Operadores soportados** (usar como llaves dentro de `opts`):
 - `eq` — igual a (implícito cuando solo se provee `field` y valor)
+- `not` — distinto de. Con `nil` como valor devuelve las entradas que tienen algún valor en el campo
 - `gt`, `lt` — mayor que / menor que
 - `in` — el valor del campo debe estar dentro de los valores separados por comas
 - `nin` — el valor del campo NO debe estar dentro de los valores separados por comas
 - `has` — el campo (tipo array) debe contener todos los valores separados por comas
+- `search` — busca el texto en los atributos de las ubicaciones de la entrada; necesita un campo de tipo ubicación
+- `geohash` — busca por proximidad con un geohash en base 32; necesita un campo de tipo ubicación
 
-Todos los operadores multi-valor aceptan un string separado por comas.
+Solo `in`, `nin` y `has` aceptan un string separado por comas; el resto toma un valor único. `search` y `geohash` se comportan igual que en la [API pública de Content](/es/platform/content/public-api-reference.html#operadores). El operador `all`, que aparece en la lista de Filter By Query String, no está disponible en `filter_by`.
 
 **Ejemplos**:
 
 Filtrar entradas donde el campo `status` sea 'published' o 'featured':
-<span v-pre>`{% assign entries = entries | filter_by: field: 'status', in: 'published,featured' %}`</span>
+<span v-pre>`{% assign entries = entries | filter_by: field: 'fields.status', in: 'published,featured' %}`</span>
 
 Filtrar entradas donde `author_id` no sea 1 ni 5:
-<span v-pre>`{% assign entries = entries | filter_by: field: 'author_id', nin: '1,5' %}`</span>
+<span v-pre>`{% assign entries = entries | filter_by: field: 'fields.author_id', nin: '1,5' %}`</span>
 
 Filtrar entradas que tengan ambos 'tech' y 'news' en su campo array `categories`:
-<span v-pre>`{% assign entries = entries | filter_by: field: 'categories', has: 'tech,news' %}`</span>
+<span v-pre>`{% assign entries = entries | filter_by: field: 'fields.categories', has: 'tech,news' %}`</span>
+
+Filtrar entradas cuyo campo `subtitle` tenga algún valor:
+<span v-pre>`{% assign entries = entries | filter_by: field: 'fields.subtitle', not: nil %}`</span>
+
+Filtrar entradas publicadas después de una fecha:
+<span v-pre>`{% assign entries = entries | filter_by: field: 'meta.published_at', gt: '2026-01-01' %}`</span>
+
+:::warning Atención
+En dos casos `filter_by` aborta y en el HTML publicado queda el comentario `<!-- Liquid Error -->` en lugar del bloque: cuando lo llamas sin `field` y cuando lo aplicas sobre una colección de la que no se puede resolver el tipo de contenido, como <span v-pre>`spaces['blog'].entries`</span>. Parte siempre de una colección acotada a un tipo, como <span v-pre>`spaces['blog'].types['post'].entries`</span> o <span v-pre>`widget.entries`</span>.
+:::
 
 ### Filter By Query String
 
@@ -406,34 +462,25 @@ Retorna una lista de Entradas que tengan una fecha de publicación más vieja qu
 
 Estos filtros Liquid alteran valores relacionados con la Criptografía.
 
-### Base64 Decode
-
-Devuelve el valor Base64-decoded de un string (ej. <span v-pre> `{% 'Hello world' | base64_encode %} # => 'SGVsbG8gd29ybGQ='`</span>).
-
-### Base64 Encode
-
-Devuelve el valor Base64-encoded de un string (ej. <span v-pre>`{% 'SGVsbG8gd29ybGQ=' | base64_decode %} # => 'Hello world'`</span>).
-
-### HMAC SHA1
-
-Devuelve el hash SHA-1 usando un código de autenticación de mensajes (HMAC) de un string (ej. <span v-pre>`{% 'Hello world' | hmac_sha1: 'key' %} # => '2a73959742baf046e6e2e27e5ee94bcff0af31b1'`</span>).
+:::warning Atención
+Los únicos filtros de hash de Modyo Platform son `hmac_sha256` y `sha256`. `md5`, `sha1` y `hmac_sha1` no existen y, como un filtro desconocido no interrumpe el renderizado, Liquid devuelve el valor de entrada sin transformar: la página publica el dato en claro donde esperabas un hash. Revisa tus plantillas antes de firmar una integración con ellos.
+:::
 
 ### HMAC SHA256
-Devuelve el hash SHA-256 usando un código de autenticación de mensajes (HMAC) de un string (ej. <span v-pre>`{% 'Hello world' | hmac_sha256: 'key' %} # => 'a82b2e160edaf92a6589dc11160d2a10c04449840a58717db308c1ee3512b039'`</span>).
 
-### MD5
-
-Devuelve el hash MD5 de un string (ej. <span v-pre>`{% 'Hello world' | md5 %} # => '3e25960a79dbc69b674cd4ec67a72c62'`</span>).
-
-### SHA1
-Devuelve el hash SHA-1 de un string (ej. <span v-pre>`{% 'Hello world' | sha1 %} # => '7b502c3a1f48c8609ae212cdfb639dee39673f5e'`</span>).
+Devuelve el hash SHA-256 de un string usando un código de autenticación de mensajes (HMAC), con la clave como argumento (ej. <span v-pre>`{{ 'Hello world' | hmac_sha256: 'key' }} #=> 'a82b2e160edaf92a6589dc11160d2a10c04449840a58717db308c1ee3512b039'`</span>).
 
 ### SHA 256
-Devuelve el hash SHA-256 de un string (ej. <span v-pre>`{% 'Hello world' | sha256 %} # => '64ec88ca00b268e5ba1a35678a1b5316d212f4f366b2477232534a8aeca37f3c'`</span>).
+
+Devuelve el hash SHA-256 de un string (ej. <span v-pre>`{{ 'Hello world' | sha256 }} #=> '64ec88ca00b268e5ba1a35678a1b5316d212f4f366b2477232534a8aeca37f3c'`</span>).
 
 ## CSS
 
 Estos filtros Liquid alteran valores relacionados con CSS en Modyo Platform.
+
+:::warning Atención
+Todos los filtros de color abortan si el valor de entrada no es un color válido, por ejemplo una variable que no existe en el contexto. Cuando eso pasa, en el HTML publicado queda el comentario `<!-- Liquid Error -->` en lugar del color y la regla CSS que lo usaba se pierde.
+:::
 
 ### Brighten
 
@@ -449,7 +496,15 @@ Desatura un color (ej. <span v-pre>`{{ '#00ff00' | desaturate: 15 }} #=> '#13ec1
 
 ### Grayscale
 
-Convierte un color a escala de grises (ej. <span v-pre>`{{ '#00ff00' | grayscale }} #=> '#808080'`</span>). Alias: `greyscale` (mismo resultado).
+Convierte un color a escala de grises (ej. <span v-pre>`{{ '#00ff00' | grayscale }} #=> '#808080'`</span>). Acepta un segundo argumento, pero no altera el resultado porque la conversión a escala de grises no lo usa.
+
+### Greyscale
+
+Convierte un color a escala de grises, con el mismo resultado que `grayscale`, pero recibe solo el color (ej. <span v-pre>`{{ '#00ff00' | greyscale }} #=> '#808080'`</span>).
+
+:::warning Atención
+`greyscale` y `grayscale` no son intercambiables: `greyscale` no admite un segundo argumento. Una plantilla que pase intensidad, como <span v-pre>`{{ color | greyscale: 15 }}`</span>, aborta por el número de argumentos y en el HTML publicado queda el comentario `<!-- Liquid Error -->`. La misma plantilla con `grayscale` funciona.
+:::
 
 ### Lighten
 
@@ -538,38 +593,41 @@ Devuelve el Origination con el UID seleccionado. *ej.*
 
 Estos filtros Liquid alteran valores relacionados con los Sitios en Modyo Platform.
 
+### Filtros retirados
+
+Desde la versión 10.2 los filtros `video_player`, `audio_player`, `embedded_video` y `asset_thumbnail_link_tag` ya no existen. Los filtros `bar_code` y `qr_code` nunca existieron en Modyo Platform.
+
+:::warning Atención
+Un filtro desconocido no interrumpe el renderizado: Liquid devuelve el valor de entrada sin transformar. Una plantilla que todavía invoque estos filtros sobre un asset ya no muestra el reproductor ni el enlace y publica en su lugar el nombre interno del objeto que recibió, por ejemplo `Liquid::Drops::Assets::VideoAssetDrop`. No hay mensaje de error ni pista visible de la causa en la página, así que revisa tus plantillas antes de actualizar.
+:::
+
+Para reemplazar `video_player` y `audio_player`, arma el markup con la dirección del archivo, disponible en `url`:
+
+```liquid
+{% assign video = assets['uuid-del-video'] %}
+<video src="{{ video.url }}" width="320" height="320" controls="controls"></video>
+
+{% assign audio = assets['uuid-del-audio'] %}
+<audio src="{{ audio.url }}" controls="controls"></audio>
+```
+
+Para reemplazar `asset_thumbnail_link_tag`, envuelve la miniatura, disponible en `thumbnail_url`, en un enlace al archivo:
+
+```liquid
+{% assign image = assets['uuid-de-la-imagen'] %}
+<a href="{{ image.url }}" class="thumbnail"><img src="{{ image.thumbnail_url }}" alt="{{ image.alt_text }}"></a>
+```
+
+`embedded_video`, `bar_code` y `qr_code` no tienen reemplazo: la plataforma no ofrece hoy un filtro equivalente.
+
 ### Asset image Tag
 
 Genera la etiqueta HTML de una imagen (ej. <span v-pre>`{{ asset | asset_image_tag: 'original' }}`</span>).
-
-### Asset Thumbnail Link Tag
-
-Genera la etiqueta HTML del thumbnail de una imagen (ej. <span v-pre>`{{ asset | asset_thumbnail_link_tag: 'class', 'target' }}`</span>).
-
-**Parametros**
-
-- `asset` (Asset) — Objeto de tipo Asset.
-- `classes` (String) (default: '') — Clases HTML adicionales (opcional).
-- `target` (String) (default: '') — Targets HTML adicionales (opcional).
 
 ### Asset URL
 
 Genera la URL de un objeto **Asset** o una ruta de activo de plantilla. Para los objetos Asset que utilizan Cloudflare para la optimización de imágenes, puedes usar los siguientes parámetros adicionales: width, height, blur, quality, format y fit. (ej. <span v-pre>{{ assets['asset_uuid'] | asset_url: blur: 40, format: 'auto', fit: 'cover' }}</span>).
 Para las rutas de assets de plantilla (template asset paths) desde el template builder, especifica el tipo de asset como el segundo argumento (ej. <span v-pre>{{ 'base' | asset_url: 'js' }}</span>). También puedes usar los filtros `script_tag` o `stylesheet_tag` para generar automáticamente la etiqueta HTML `<script>` o `<link>` completa (ej. <span v-pre>{{ 'base' | asset_url: 'css' | stylesheet_tag: media: 'screen' }}</span>).
-
-### Audio Player
-
-Genera la URL de un objeto tipo Audio (ej. <span v-pre>`{{ audio1 | audio_player }}`</span>).
-
-### Bar Code
-
-Genera la URL de un código de barras (ej. <span v-pre>`{{ value | bar_code: 320, 320 }}`</span>).
-
-**Parametros**
-
-- `value` (String) — Valor del código de barras.
-- `width` (Integer) (default: 100) — Ancho.
-- `height` (Integer) (default: 100) — Alto.
 
 ### Button To
 
@@ -578,10 +636,6 @@ Genera un botón (ej. <span v-pre>`{{ 'Hello World' | button_to: 'http://www.goo
 ### Cookie Value
 
 Devuelve el valor de una cookie (ej. <span v-pre>`{{ 32 | cookie_value }}`</span>).
-
-### Embedded Video
-
-Devuelve la URL de un video integrado (ej. <span v-pre>`{{ movie2 | embedded_video }}`</span>).
 
 ### Escape JS
 
@@ -642,17 +696,6 @@ Genera un botón de tipo primario (ej. <span v-pre>`{{ 'Hello World' | primary_b
 - `link` (String) (default: '/') — URL para el enlace.
 - `size` (String) (default: 'large') — Tamaño para el enlace.
 
-### QR Code
-
-Genera un código QR (ej. <span v-pre>`{{ value | qr_code: 4, 320, 320 }}`</span>).
-
-**Parametros**
-
-- `value` (String) (default: '') — Valor para el QR.
-- `qr_size` (Integer) (default: 4) — Tamaño del QR.
-- `width` (Integer) (default: 100) — Ancho del QR.
-- `height` (Integer) (default: 100) — Alto del QR.
-
 ### Sanitize HTML
 
 Sanitiza las etiquetas HTML de un String (ej. <span v-pre>`{{ '<script>Hello World</script>' | sanitize }} #=> 'Hello World'`</span>).
@@ -695,16 +738,6 @@ Resuelve el texto de traducción para claves de Sitios. Se devolverán valores p
 ### Truncate HTML
 
 Devuelve un String después de truncarlo (ej. <span v-pre>`{{ html | truncate_html: 10 }}`</span>).
-
-### Video Player
-
-Agrega un reproductor de video en código HTML usando un asset del Gestor de Archivos (ej. <span v-pre>`{{ movie1 | video_player: 320, 320 }}`</span>).
-
-**Parámetros**
-
-- `video` (Asset) — Objeto de tipo Video del Gestor de Archivos.
-- `width` (Integer) — Ancho para el video.
-- `height` (Integer) — Alto para el video.
 
 ## Step
 
@@ -788,24 +821,34 @@ Devuelve el Task con el UID seleccionado. *ej.*
 
 Estos filtros Liquid alteran valores relacionados con los Usuarios.
 
+### Avatar For
+
+Muestra el código HTML de la imagen de un usuario. Si el usuario no tiene avatar propio, entrega el avatar por defecto (ej. <span v-pre>`{{ user | avatar_for: 'C50x50', true }}`</span>).
+
+**Parámetros**
+
+- `user` (User) — Objeto User.
+- `size` (String) (default: 'C50x50') — Tamaño para la imagen.
+- `link` (Boolean) (default: true) — `true` agrega un enlace hacia el perfil del usuario.
+
 ### Default Avatar Image
 
-Muestra la imagen por defecto del avatar (ej. <span v-pre>`{{ user | avatar_for: 'C50x50' }}`</span>).
+Muestra el código HTML del avatar por defecto. La firma es al revés de lo que sugiere el nombre: el valor que va antes de la barra es el **tamaño**, y el usuario es el primer argumento, opcional (ej. <span v-pre>`{{ 'C50x50' | default_avatar_image: user }}`</span>).
 
 **Parámetros**
 
-- `user` (User) — Objeto User.
-- `size` (Integer) (default: 'C50x50') — Tamaño para la imagen.
+- `size` (String) — Tamaño para la imagen, con el formato de las versiones de avatar: `C25x25`, `C50x50`, `C75x75`, `C100x100`, `C125x125`, `C160x160`, `C200x200` o `C250x250`.
+- `user` (User) (default: nulo) — Objeto User del contexto Liquid. Tiene que ser el objeto, no un id ni un correo.
 
-### Image For
+Devuelve una de tres imágenes, según lo que reciba:
 
-Muestra el código HTML para la imagen de un usuario (ej. <span v-pre>`{{ user | avatar_for: 'C50x50', true }}`</span>).
+- Con un usuario cuyo reino tiene configurada la **Imagen de avatar por defecto** en [Configuración de reino](/es/platform/customers/settings.html#general), la imagen del reino en el tamaño pedido.
+- Con un usuario cuyo reino no la tiene configurada, la imagen de marcador de posición en el tamaño pedido.
+- Sin usuario, la imagen de marcador de posición en el tamaño pedido.
 
-**Parámetros**
-
-- `user` (User) — Objeto User.
-- `size` (Integer) (default: 'C50x50') — Tamaño para la imagen.
-- `link` (Boolean) (default: true) — `true` agrega un enlace hacia el perfil del usuario.
+:::tip Tip
+Para el caso habitual no necesitas llamarlo: `avatar_for` ya recurre a `default_avatar_image` cuando el usuario no tiene avatar propio. Llámalo directo solo cuando quieras el avatar por defecto sin consultar el del usuario.
+:::
 
 ### By Form Slug
 
