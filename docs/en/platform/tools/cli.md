@@ -245,7 +245,7 @@ The `preview` command allows you to preview a widget locally to debug its code i
 
 To use the `preview` command, make sure you meet the following requirements:
 
-- A properly configured [.env](https://docs.modyo.com/en/platform/channels/cli.html#initial-configuration) file. The `MODYO_ACCOUNT_URL`, `MODYO_SITE_HOST` or `MODYO_SITE_ID` and `MODYO_TOKEN` fields are required.
+- A properly configured [.env](/en/platform/tools/cli.html#environment-configuration) file. The `MODYO_ACCOUNT_URL`, `MODYO_SITE_HOST` or `MODYO_SITE_ID` and `MODYO_TOKEN` fields are required.
 - A local server running with the widget you want to preview.
 
 ### Steps to preview a widget
