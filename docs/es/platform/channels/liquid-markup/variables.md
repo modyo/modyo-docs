@@ -162,7 +162,7 @@ Modyo proporciona objetos predefinidos que contienen información del sistema:
 - `spaces`: Acceso a espacios de contenido
 - `account`: Información de la cuenta
 
-Para una lista completa y detallada de todos los objetos disponibles, consulta la sección [Objetos](/es/platform/channels/liquid-markup/objects).
+Para una lista completa y detallada de todos los objetos disponibles, consulta la sección [Objetos](/es/platform/channels/liquid-markup/objects.html).
 
 ## Variables de Contexto
 
