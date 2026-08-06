@@ -114,7 +114,7 @@ The most important user will have the Default Admin or Administrator role. This 
 
 #### Edit and delete the default roles
 
-**Full admin** is the only read-only role on the platform: you cannot rename it, change its permissions, or delete it. The other 14 default roles behave like any custom role and you manage them from **Settings** > **Roles**:
+**Full admin** is the only default role the platform marks as non-editable: you cannot rename it, change its permissions, or delete it. This does not limit its permissions, which are still all of them. The other 14 default roles behave like any custom role and you manage them from **Settings** > **Roles**:
 
 - To change its name or its permissions, click on the role name in the list.
 - To delete it, in the **Actions** column of its row choose **Delete** and confirm.

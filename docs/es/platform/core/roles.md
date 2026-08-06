@@ -114,7 +114,7 @@ El usuario más importante tendrá el rol de Default Admin o Administrador. Este
 
 #### Editar y eliminar los roles predeterminados
 
-**Full admin** es el único rol de solo lectura de la plataforma: no puedes cambiarle el nombre, ni sus permisos, ni eliminarlo. Los otros 14 roles predeterminados se comportan como cualquier rol a medida y los administras desde **Configuración** > **Roles**:
+**Full admin** es el único rol predeterminado que la plataforma marca como no editable: no puedes cambiarle el nombre, ni sus permisos, ni eliminarlo. Esto no limita sus permisos, que siguen siendo todos los de la plataforma. Los otros 14 roles predeterminados se comportan como cualquier rol a medida y los administras desde **Configuración** > **Roles**:
 
 - Para cambiar su nombre o sus permisos, haz click sobre el nombre del rol en el listado.
 - Para eliminarlo, en la columna **Acciones** de su fila elige **Borrar** y confirma.
