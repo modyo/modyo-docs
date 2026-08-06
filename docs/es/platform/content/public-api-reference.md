@@ -514,23 +514,28 @@ curl -X GET "https://test.modyo.com/api/content/spaces/{my_space}/types/{type}/e
 
 ### Desplegar cantidad total de Entradas
 
-Para acceder a la cantidad total de entradas que retorna un filtro de contenido, puedes usar el filtro de liquid `total_entries`, por ejemplo:
+Todo listado de entradas incluye en la raíz de la respuesta un objeto `meta` con el total de entradas que coinciden con la consulta, en el campo `total_entries`. Ese total corresponde a la consulta completa, no a la página que estás viendo.
 
+Si sólo necesitas el conteo, pide una página de un elemento con `per_page=1` y lee `meta.total_entries`:
 
 ```shell
-curl -X GET "https://test.modyo.com/api/content/spaces/{my_space}/entries?category_id=25"
+curl -X GET "https://my_account.modyo.com/api/content/spaces/my_space/types/my_type/entries?meta.category=my_category&per_page=1"
 ```
 
-La respuesta contiene el objeto `meta` que incluye un campo que te ayudará a navegarlo. La forma del objeto retornado será algo como esto:
+La forma del objeto retornado será algo como esto:
 
 ```json
 "meta": {
     "total_entries": 4,
-    "per_page": 10,
+    "per_page": 1,
     "current_page": 1,
-    "total_pages": 1
+    "total_pages": 4
   },
 ```
+
+:::warning Atención
+Las entradas siempre se consultan bajo un tipo de contenido: la única ruta disponible es `/spaces/:space_uid/types/:type_uid/entries` y no existe `/spaces/:space_uid/entries`. Para filtrar por categoría usa `meta.category` con la ruta completa de la categoría, ya que `category_id` no es un parámetro válido y la petición responde `400` con <code v-pre>{"error":{"query":{"category_id":["Unknown parameter"]}}}</code>.
+:::
 
 ### Filtrar
 
@@ -552,16 +557,19 @@ Metadata (ej: Tags, Category, Fechas): Búsquedas por SQL, serán consultables m
     - <span v-pre>`.../?fields.{{field_name}}[geohash]=66j`</span>. Con el campo llamado `location` quedaría: `.../?fields.location[geohash]=66j`
   - `.../entries?fields.color=black`
 
-###### Filtro de idiomas
+##### Filtro de idiomas
 
-La API de Modyo entrega entries en el idioma por defecto del Espacio, a menos que se pida explícitamente otro idioma a través del parámetro de query string locale o el Accept-Language header.
+La API de contenido entrega las entradas en el idioma por defecto del Espacio. Para pedir otro idioma usa el parámetro de query string `locale`, que es la única vía disponible: la API de contenido no lee la cabecera `Accept-Language`.
 
-Por ejemplo, para obtener entries en el idioma Español-Chile (es-cl):
+Por ejemplo, para obtener entradas en el idioma Español (es):
 
-```plain
-Query string: GET .../posts/entries?locale=es-cl
-Header: Setear Accept-Language es-cl
+```shell
+curl -X GET "https://my_account.modyo.com/api/content/spaces/my_space/types/my_type/entries?locale=es"
 ```
+
+:::warning Atención
+El idioma que pidas tiene que estar habilitado en el Espacio. Si no lo está, la petición no cae al idioma por defecto: responde `400` con <code v-pre>{"error":"Locale not available for this space"}</code>.
+:::
 
 ##### Operadores
 
@@ -602,16 +610,63 @@ Los campos que buscan en elementos múltiples (checkboxes, multiple) pueden usar
 
 ### Ordenar
 
-De la misma forma en que se puede filtrar por categoría `by_category`, tags `by_tags` y por uuid `by_uuid`, se puede crear un filtro para ordenar los resultados por los atributos "meta" `name`, `slug`, `created_at`, `updated_at`, `published_at` de las entradas usando los filtros `sort_by`, de la siguiente forma:
+El orden de los resultados se especifica con los parámetros `sort_by` y `order`:
 
-El orden de los resultados se debe especificar con los parámetros `sort_by` y `order`:
+- `sort_by`: nombre del atributo por el que quieres ordenar, siempre con el prefijo `meta.` o `fields.`. Un nombre sin prefijo, o un atributo que no sea ordenable, responde `400` con <code v-pre>{"error":{"query":{"sort_by":["Key not sortable"]}}}</code>.
+- `order`: `asc` o `desc`. Es opcional y su valor por defecto es `asc`. Si envías `sort_by` con un `order` distinto, la petición responde `400` con <code v-pre>{"error":{"query":{"order":["Supported values: asc, desc. asc is selected when no order is specified"]}}}</code>.
 
-- `sort_by`: indicando el nombre del atributo (ej: meta.tags, o fields.name)
-- `order`: ['asc','desc'] (opcional, asc por default)
+Los atributos de metadata que puedes usar en `sort_by` son:
+
+- `meta.uuid`
+- `meta.name`
+- `meta.slug`
+- `meta.created_at`
+- `meta.updated_at`
+- `meta.published_at`
+- `meta.unpublished_at`
 
 ```shell
-curl -X GET "https://test.modyo.com/api/content/spaces/{my_space}/types/{type}/entries?sort_by=id&order=desc"
+curl -X GET "https://my_account.modyo.com/api/content/spaces/my_space/types/my_type/entries?sort_by=meta.published_at&order=desc"
 ```
+
+También puedes ordenar por un campo propio del tipo de contenido usando el prefijo `fields.`, siempre que el campo sea de tipo Booleano, Checkbox, Decimal, Dropdown, Entero, Fecha, Radio o Texto de una línea. El resto de los [tipos de campo](/es/platform/content/types.html), como Texto enriquecido, Opciones múltiples, Ubicación, Archivo o Grupo, no son ordenables.
+
+Por ejemplo, para ordenar por un campo llamado `priority` de tipo Entero:
+
+```shell
+curl -X GET "https://my_account.modyo.com/api/content/spaces/my_space/types/my_type/entries?sort_by=fields.priority&order=asc"
+```
+
+:::warning Atención
+`meta.tags` no es ordenable, sólo sirve como filtro. Tampoco uses `meta.category`, `meta.category_slug` ni `meta.category_name` como criterio de orden: la API los acepta como parámetro, pero no puede resolver el orden y la petición falla.
+:::
+
+### Vista previa
+
+Por defecto, la API de contenido entrega sólo las versiones publicadas de las entradas. Si el navegador que hace la petición tiene una sesión de administrador con el [modo vista previa](/es/platform/core/#modos-de-vista-previa) abierto, y el selector **SDK de contenido** de la barra de vista previa está en **Editable**, la API entrega las versiones editables de las entradas en lugar de las publicadas. En esas respuestas, `meta.version_type` llega con el valor `editable`.
+
+Esto aplica tanto al listado de entradas como a una entrada puntual:
+
+```bash
+https://www.example.com/api/content/spaces/:space_uid/types/:type_uid/entries
+
+https://www.example.com/api/content/spaces/:space_uid/types/:type_uid/entries/:entry_uuid
+```
+
+Sólo los endpoints de entradas cambian de versión. El esquema del tipo de contenido, las categorías y las ubicaciones no se ven afectados por el selector.
+
+Mientras la sesión de vista previa está abierta, la respuesta deja de ser cacheable: la cabecera `cache-control` pasa de `public, no-cache` a `no-store, must-revalidate, private, max-age=0`, para que ni el navegador ni la CDN guarden una versión editable. Esto ocurre incluso cuando el selector está en **Publicada**.
+
+La API vuelve a entregar contenido publicado cuando se cumple cualquiera de estas condiciones:
+
+- La petición no viaja con la cookie de sesión del panel de administración, o no hay una sesión de vista previa abierta.
+- La sesión de administrador está impersonando a un usuario.
+- La sesión perdió su autorización, por ejemplo porque se cerró sesión o un administrador revocó el acceso.
+- La cuenta valida la huella del navegador y la petición no coincide con el navegador que abrió la sesión.
+
+:::warning Atención
+La vista previa de la API depende de la sesión del navegador que hace la petición, así que nunca expone versiones editables a un usuario final anónimo ni a un consumo desde servidor. El riesgo es el opuesto: si desarrollas tu capa de consumo en el mismo navegador donde tienes el modo vista previa abierto, vas a ver versiones editables donde tu aplicación en producción verá contenido publicado. Verifica las respuestas en una ventana sin la sesión de administrador antes de darlas por buenas.
+:::
 
 ### Contenido privado
 
