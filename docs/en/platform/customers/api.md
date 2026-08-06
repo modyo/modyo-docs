@@ -56,6 +56,154 @@ If you enable the [**Show delegation information**](/en/platform/core/integratio
 If you do not have the **Show delegation information** option enabled, null (void) will be displayed.
 :::
 
+### Update user information
+
+With `PUT ACCOUNT_URL/api/customers/realms/{realm_uid}/me` the session user updates their own data. Besides the profile attributes, the body accepts `custom_fields` as an array of `key` and `value` pairs.
+
+:::warning Attention
+Custom fields that do not have **Visible to front end users** and **Editable by front end users** checked in the [realm settings](/en/platform/customers/settings.html#custom-fields) are silently discarded: the response is `200`, the rest of the attributes are saved and those fields keep their previous value, with no error to signal it.
+:::
+
+## Origination submissions
+
+### Get a submission
+
+`GET ACCOUNT_URL/api/customers/realms/{realm_uid}/submissions/{uuid}`
+
+Returns the [origination submission](/en/platform/customers/origination.html#submission-management) identified by `uuid`, as long as it belongs to the session user. If the identifier does not exist or the submission belongs to another user, the endpoint returns `404`.
+
+The body carries the following attributes:
+
+| Attribute | Description |
+|-----------|-------------|
+| `id`, `uuid` | Submission identifiers. |
+| `status` | `not_started`, `pending`, `completed` or `canceled`. |
+| `progress` | Percentage of completed tasks, as text. For example, `25%`. |
+| `due` | Ready-to-display text with the deadline and its status. |
+| `due_deadline_at` | Raw deadline date and time. It is `null` when the origination has no deadline configured or when the submission has not started, is completed or is canceled. |
+| `due_label` | Label that replaces the date when there is no deadline, such as `Not started` or `--`. It is `null` when `due_deadline_at` carries a value. |
+| `due_status_label` | Deadline status label in parentheses, such as `(On track)`, `(Due soon)` or `(Overdue)`. It is `null` when the submission is not pending. |
+| `due_extension_days` | Extension days granted to the deadline, or `null` if the origination has no deadline configured. |
+| `created_at`, `updated_at`, `started_at` | Creation, last update and start dates of the submission. |
+| `origination_name`, `origination_uuid` | Name and identifier of the origination. |
+| `cancellation_reason` | Cancellation reason entered when the submission was canceled, or `null`. |
+| `user` | Owner of the submission, with `id`, `uuid`, `name`, `first_name` and `last_name`. |
+| `assignee` | Assigned admin or group, or `null` if the submission is not assigned. |
+| `tasks` | Array with the responses to the origination tasks. |
+
+:::tip Tip
+`due`, `due_label` and `due_status_label` are texts meant to be displayed as they arrive. To make decisions in your code use `status` and `due_deadline_at`.
+:::
+
+#### The assignee object
+
+Up to version 10.1, `assignee` was a flat object with the assigned admin data: `id`, `uuid`, `name`, `first_name` and `last_name`. From 10.2 a submission can be assigned to a whole group or to an admin picked inside a group, as described in [Assign submission](/en/platform/customers/origination.html#assign-submission), so `assignee` adds the `type` attribute and the rest of its content changes according to that value:
+
+| `type` | Attributes |
+|--------|------------|
+| `group` | `id` and `name` of the assigned group, and `label` with the group name. It does not carry `uuid`, `first_name` or `last_name`. |
+| `user_in_group` | `id`, `uuid`, `name`, `first_name` and `last_name` of the admin, `group_id` and `group_name` of the group they were picked from, and `label` with the format `Admin name (Group name)`. |
+| `user` | `id`, `uuid`, `name`, `first_name` and `last_name` of the admin, and `label` with their name. |
+
+```json
+{
+  "assignee": {
+    "type": "group",
+    "id": 14,
+    "name": "Account managers",
+    "label": "Account managers"
+  }
+}
+```
+
+:::warning Attention
+If your application reads `assignee.uuid` without checking `type`, it breaks when the submission is assigned to a group: that variant does not include `uuid` and its `id` belongs to the group, not to an admin. Always check `assignee.type` before reading the rest of the attributes, and use `assignee.label` when you only need to display the assignee.
+:::
+
+#### The task responses
+
+Each element of `tasks` carries `task`, with the `uid`, `name`, `type` and `step_name` of the task; `status`, with `not_started`, `pending` or `completed`; `user_id`, and the assignee data of that task in `assignee_id`, `assignee_group_id`, `assignee_context_group_id` and `assignee_label`. Input tasks add `fields` with the user answers, and pending review tasks add `content`. Task responses whose task no longer exists in the origination are not included in the array.
+
+:::warning Attention
+Pending review tasks stopped returning the boolean `completed` key in 10.2. To know whether the review is finished, compare `status` with `completed`.
+:::
+
+## OTP code verification
+
+`POST ACCOUNT_URL/api/customers/realms/{realm_uid}/verify_otp_code`
+
+Verifies the one-time code of [Soft login](/en/platform/customers/settings.html#soft-login). It is the only Customers API endpoint that does not require an active session. The body carries `identifier`, with the username, and `code`, with the received code.
+
+| Code | Meaning |
+|------|---------|
+| `200` | The code is valid. The body arrives as an empty object. |
+| `409` | The code is not valid or already expired. |
+| `429` | The maximum of five failed attempts was exceeded. New in 10.2. |
+
+Both `409` and `429` carry the `errors` array with a ready-to-display text:
+
+```json
+{
+  "errors": ["You have exceeded the maximum number of attempts."]
+}
+```
+
+:::warning Attention
+After five failed attempts the endpoint responds `429` even when the code sent is the correct one, because the validation stops at the attempt count before comparing the code. Treat `429` as a case apart from `409`: the user cannot keep retrying and the only way out is to request a new code, which resets the counter.
+:::
+
+The code stops being valid once the time set in **OTP validity duration (in minutes)** of the realm goes by, five minutes by default. Check [Soft login](/en/platform/customers/settings.html#soft-login) for the details of that setting.
+
+## Submission attachments
+
+File questions of an origination receive their attachments through these two endpoints. Both require an active session, always work on the files of the session user, and do not appear in the interactive reference at `ACCOUNT_URL/api/customers/docs`.
+
+### Upload a file
+
+`POST ACCOUNT_URL/api/customers/realms/{realm_uid}/private_upload/answer`
+
+Send a `multipart/form-data` request with these parameters:
+
+- `file`: the file to upload. It is required.
+- `question_id`: identifier of the file question the attachment belongs to. It is optional.
+
+With `200`, the body describes the stored file:
+
+```json
+{
+  "id": 431,
+  "uuid": "586e591c-1f07-4f6d-b886-a66fea953afe",
+  "name": "receipt.pdf",
+  "size": 60548,
+  "url": "/uploads/586e591c-1f07-4f6d-b886-a66fea953afe/original/receipt.pdf"
+}
+```
+
+The file is stored as private and associated with the session user. Use the numeric `id` as the value of the answer to the file question, and the `uuid` to delete the attachment.
+
+| Code | Meaning |
+|------|---------|
+| `401` | There is no active session. |
+| `404` | The `question_id` sent does not match any file question. |
+| `422` | The file did not pass the validations. |
+
+The `422` body carries the `errors` array with one text per rejection reason, prefixed with the file name. A file is rejected when it is missing, when its extension is not allowed on the platform, when its content does not match the declared extension, or when it exceeds the maximum size allowed on your account.
+
+### Delete a file
+
+`DELETE ACCOUNT_URL/api/customers/realms/{realm_uid}/private_upload/answer/{uuid}`
+
+Deletes the attachment identified by `uuid`. With `200` the body arrives empty.
+
+| Code | Meaning |
+|------|---------|
+| `401` | There is no active session. |
+| `404` | There is no attachment with that `uuid` among the files of the session user. |
+
+:::warning Attention
+The deletion is immediate and cannot be undone. If the attachment was already associated with the answer to a question, that answer is left without a file.
+:::
+
 ## Zendesk API
 
 With these endpoints you will be able to obtain the tokens needed for an integration with Modyo and Zendesk.
