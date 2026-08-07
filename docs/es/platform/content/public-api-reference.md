@@ -685,28 +685,28 @@ El token de acceso al contenido es un token público en formato [JWT](https://to
 
 El token de acceso a contenido (content delivery token) contiene los siguientes atributos:
 
-- **iss**: URL base de la API de customers
-- **aud**: URL base de la API de contenido
-- **sub**: Nombre del space
-- **exp**: Tiempo de expiración del token
-- **access_type**: delivery,
-- **segmentos**: Array de segmentos
+- **iss**: URL con la que Modyo identifica al emisor del token. Es informativa y trae un segmento `/profile/` que no corresponde a ninguna ruta real, así que no la uses como la dirección a la que llamar.
+- **aud**: URL base de la API de contenido.
+- **sub**: UUID de la cuenta, no el nombre del space. La API de contenido compara este valor con el UUID de la cuenta que atiende la petición y sólo habilita el contenido privado cuando coinciden.
+- **exp**: Momento de expiración del token, calculado con el tiempo de vida configurado en la cuenta. Revisa [Token de Entrega de Contenido (JWT - JSON Web Token)](/es/platform/core/security.html#token-de-entrega-de-contenido-jwt-json-web-token) para cambiarlo.
+- **access_type**: Siempre `delivery`.
+- **segments**: Arreglo con los UUID de los segmentos a los que pertenece el usuario.
 
 Por ejemplo:
 
 ```javascript
 {
-  "iss": "http://my-account.modyo.me/api/customers",
-  "aud": "http://my-account.modyo.me/api/content",
-  "sub": "account_uuid",
+  "iss": "https://my_account.modyo.com/api/customers/realms/my_realm/profile/delivery_token",
+  "aud": "https://my_account.modyo.com/api/content",
+  "sub": "0f3d1b6c-5a2e-4c81-9b7f-2d84a6e05c19",
   "exp": 1516242622,
   "access_type": "delivery",
-  "segments": ["segment1", "segment2"]
+  "segments": ["7a41c9d2-3e58-4b60-8f13-95c2d7ae61b0", "c86b0f45-19da-4e27-b3a8-6f04d5217e9c"]
 }
 ```
 
 :::warning Atención
-Para poder acceder a la URL de obtención del token, debes asegurarte de tener una sesión iniciada con un usuario en la cuenta o al menos en un sitio de la misma, de lo contrario recibirás un error `404 - Not found`.
+Para pedir el token necesitas la credencial de un usuario con sesión iniciada en el reino. Sin ella el endpoint responde `401` con <code v-pre>{"error":{"user_session":"user not found"}}</code>, no `404`. El `404` es otra cosa: aparece cuando el `realm_uid` de la URL no corresponde a ningún reino activo de la cuenta. La referencia interactiva de `ACCOUNT_URL/api/customers/docs` sólo declara el `404` para este endpoint, así que no te guíes por ella en este punto. Las credenciales que acepta la API de Customers están en [Autenticación](/es/platform/customers/api.html#autenticacion).
 :::
 
 :::warning Atención

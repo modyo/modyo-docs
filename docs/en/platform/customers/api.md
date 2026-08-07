@@ -7,6 +7,80 @@ search: true
 Modyo Customers contains a variety of APIs with which you can obtain information about Realms, notifications, and users.
 
 
+## Authentication
+
+Every endpoint under `ACCOUNT_URL/api/customers/realms/{realm_uid}/` answers on behalf of an end user of the realm, so each call needs a credential for that user. The only exception is [OTP code verification](#otp-code-verification).
+
+The realm accepts two credentials:
+
+- **OAuth2 access token**, in the `Authorization: Bearer` header. It takes precedence: when the request carries a recognized access token, the session cookie is not evaluated.
+- **Session cookie** of the user in the realm. It is used when the request does not carry a recognized access token. It is the natural option when your application runs inside a Modyo site, because the browser sends it on its own.
+
+Both resolve to the same user and grant access to the same endpoints. Choose the access token when your application lives outside the account domains, for example a mobile application or a front end on another domain.
+
+### Get an access token
+
+Each realm exposes its own OAuth2 server:
+
+| Endpoint | What it is for |
+|----------|----------------|
+| `ACCOUNT_URL/realms/{realm_uid}/oauth/authorize` | Authorizes the user and returns the code. |
+| `ACCOUNT_URL/realms/{realm_uid}/oauth/token` | Exchanges the code for the access token. |
+| `ACCOUNT_URL/realms/{realm_uid}/oauth/revoke` | Invalidates an already issued token. |
+
+The only supported flow is `authorization_code`. The realm does not issue tokens with `client_credentials`, `password` or `implicit`, and it does not deliver refresh tokens either.
+
+To start you need an OAuth client of the realm, created as described in [OAuth client](/en/platform/customers/settings.html#oauth-client). Clicking the client name shows its **UID** and its **Secret**, which are the `client_id` and the `client_secret` of the flow, together with the ready-made authorization URL in **Client Web** and the realm endpoints ready to copy in **Client Mobile**.
+
+1. Send the user to `ACCOUNT_URL/realms/{realm_uid}/oauth/authorize` with the `response_type=code`, `client_id` and `redirect_uri` parameters and, if you need them, `scope` and `state`.
+2. If the user does not have a session in the realm yet, Modyo sends them to the login screen and resumes the authorization when they finish. There is no consent screen: as soon as there is a session, Modyo redirects to your **Redirect URI** with the `code` parameter.
+3. Exchange the code at the token endpoint. The code lives ten minutes and works only once.
+4. Use the `access_token` from the response in the `Authorization` header of your calls.
+
+The code exchange looks like this:
+
+```shell
+curl -X POST "ACCOUNT_URL/realms/{realm_uid}/oauth/token" \
+  -d "grant_type=authorization_code" \
+  -d "code=THE_CODE" \
+  -d "client_id=THE_CLIENT_UID" \
+  -d "client_secret=THE_CLIENT_SECRET" \
+  -d "redirect_uri=YOUR_REDIRECT_URI"
+```
+
+And an already authenticated call, like this:
+
+```shell
+curl -X GET "ACCOUNT_URL/api/customers/realms/{realm_uid}/me" \
+  -H "Authorization: Bearer THE_ACCESS_TOKEN"
+```
+
+The realm recognizes `public` as the default scope and `admin` as the only optional scope. The `scope` you request must be among those values and, if the OAuth client defines **Scopes**, within its own as well; otherwise the authorization fails before delivering the code.
+
+Public clients, such as a mobile application or a front end without a backend, can use PKCE: if you send `code_challenge` and `code_challenge_method` in the authorization step, you must send the matching `code_verifier` when exchanging the code.
+
+:::warning Attention
+The OAuth client belongs to the realm where you created it and can only authorize users of that same realm. If your account has several realms, you need one client for each one.
+:::
+
+:::warning Attention
+The access token does not carry an expiration of its own, but that does not make it eternal: it is tied to the session of the user who authorized the flow. When that session expires because of the realm session expiration policy, when the user logs out, or when their sessions are revoked from the panel, the token stops working. While it keeps being used, the session renews itself before expiring, so a token in continuous use does not fall on its own.
+:::
+
+### Authentication errors
+
+Every Customers API endpoint shares these error bodies:
+
+| Code | Body | When it happens |
+|------|------|-----------------|
+| `401` | <code v-pre>{"error":{"user_session":"user not found"}}</code> | The request carries no usable credentials, the access token does not match a user of the realm, or the user is inactive. |
+| `401` | <code v-pre>{"error":{"grant_expired":"session expired"}}</code> | The credential identifies a user, but the session behind it expired or was revoked. |
+| `404` | <code v-pre>{}</code> | The `realm_uid` in the URL does not match any active realm of the account. |
+
+:::tip Tip
+Telling the two `401` apart saves you debugging time. `user_session` means that no usable credential ever arrived, so check the `Authorization` header or the cookie. `grant_expired` means that the credential was correct and what ran out was the session, so what you need is to authenticate the user again instead of retrying.
+:::
+
 ## Customer APIs
 
 Access the Customers API to manage realms and users through the URL `ACCOUNT_URL/api/customers/docs`. Examples of endpoints:
