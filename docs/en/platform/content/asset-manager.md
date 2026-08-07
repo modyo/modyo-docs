@@ -26,7 +26,7 @@ Allowed file types are:
 - **Files**: 7z, ai, apk, css, csv, doc, docx, fon, ico, iso, jar, js, msi, ods, odt, otf, pdf, ppt, pptx, rar, rss, rtf, scss, tar, tex, ttf, txt, vcf, wdp, xhtml, xls, xlsm, xlsx, xml, zip, one, ecf, pub, xps, json, svg, woff, woff2, ics
 
 :::warning Attention
-The `svg` format depends on an account setting. The **Allow use of SVG** box, under **Settings** > **Security**, comes disabled, and while it stays that way any attempt to upload or update an SVG file is rejected with the message _Can't upload or update SVG files due to configured security policies_. Before enabling it, review [SVG images](/en/platform/core/security.html#svg-images), because it has security implications.
+The `svg` format depends on an account setting. The **Allow use of SVG** box, under **Settings** > **Security**, is disabled by default, and while it stays that way any attempt to upload or update an SVG file is rejected with the message _Can't upload or update SVG files due to configured security policies_. Before enabling it, review [SVG images](/en/platform/core/security.html#svg-images), because it has security implications.
 :::
 
 Modyo also checks the file name: it cannot contain more than one dot, so a name like `styles.min.css` is rejected with the message _shouldn't include dots_. In addition, when saving, every character that is not an unaccented letter, a number, or a hyphen is replaced with an underscore, so `Presentación final.pdf` is stored as `Presentaci_n_final.pdf`.

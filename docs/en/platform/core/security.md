@@ -135,7 +135,7 @@ If you have activated the option to force authentication, the next time the user
 
 ## SVG images
 
-The **Enable use of SVG images** section defines whether your account accepts SVG files. It comes disabled, and only team members with the **Admin Security** permission can change it.
+The **Enable use of SVG images** section defines whether your account accepts SVG files. It is disabled by default, and only team members with the **Admin Security** permission can change it.
 
 To allow SVG file uploads, follow these steps:
 
