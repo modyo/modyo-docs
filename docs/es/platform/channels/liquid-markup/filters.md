@@ -776,7 +776,8 @@ Devuelve los Submissions con el estado seleccionado. *ej.*
 
 En Modyo 10.2 una respuesta puede estar en cuatro estados: **No Iniciada**, **Pendiente**, **Completada** y **Cancelada**. El filtro reconoce solo tres valores y no hay correspondencia directa con esos estados:
 
-- `'pending'` devuelve las respuestas **Pendiente** y `'completed'`, las **Completada**.
+- `'pending'` devuelve las respuestas **Pendiente**.
+- `'completed'` devuelve las respuestas **Completada**.
 - `'all'` no devuelve todas: entrega las **Pendiente** más las **Completada**, y deja fuera las **No Iniciada** y las **Cancelada**.
 - `'not_started'` y `'canceled'` no están soportados. El filtro no falla ni deja rastro en la página: devuelve una colección vacía, así que el listado que los use se ve en blanco.
 

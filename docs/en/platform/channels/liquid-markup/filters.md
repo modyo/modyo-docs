@@ -773,7 +773,8 @@ Returns the Submissions with the selected status. *e.g.*
 
 In Modyo 10.2 a submission can be in one of four statuses: **Not started**, **Pending**, **Completed**, and **Canceled**. The filter recognizes only three values, and they don't map directly onto those statuses:
 
-- `'pending'` returns the **Pending** submissions and `'completed'`, the **Completed** ones.
+- `'pending'` returns the **Pending** submissions.
+- `'completed'` returns the **Completed** ones.
 - `'all'` doesn't return all of them: it delivers the **Pending** ones plus the **Completed** ones, and leaves out the **Not started** and the **Canceled** ones.
 - `'not_started'` and `'canceled'` aren't supported. The filter doesn't fail and leaves no trace on the page: it returns an empty collection, so any listing that uses them shows up blank.
 
