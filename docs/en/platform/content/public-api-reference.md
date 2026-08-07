@@ -687,28 +687,28 @@ The content access token is a public token in [JWT](https://tools.ietf.org/html/
 
 The content delivery token contains the following attributes:
 
-- **iss**: Base URL of the customers API
-- **aud**: Base URL of the Content API
-- **sub**: Name of the space
-- **exp**: Token expiration time
-- **access_type**: delivery,
-- **segments**: Array of segments
+- **iss**: URL with which Modyo identifies the issuer of the token. It is informative and carries a `/profile/` segment that does not match any real route, so do not use it as the address to call.
+- **aud**: Base URL of the Content API.
+- **sub**: UUID of the account, not the name of the space. The Content API compares this value with the UUID of the account serving the request and only enables private content when they match.
+- **exp**: Expiration moment of the token, calculated with the lifetime configured in the account. Check [Content Delivery Token (JWT - JSON Web Token)](/en/platform/core/security.html#content-delivery-token-jwt-json-web-token) to change it.
+- **access_type**: Always `delivery`.
+- **segments**: Array with the UUIDs of the segments the user belongs to.
 
 For example:
 
 ```javascript
 {
-  "iss": "http://my-account.modyo.me/api/customers",
-  "aud": "http://my-account.modyo.me/api/content",
-  "sub": "account_uuid",
+  "iss": "https://my_account.modyo.com/api/customers/realms/my_realm/profile/delivery_token",
+  "aud": "https://my_account.modyo.com/api/content",
+  "sub": "0f3d1b6c-5a2e-4c81-9b7f-2d84a6e05c19",
   "exp": 1516242622,
   "access_type": "delivery",
-  "segments": ["segment1", "segment2"]
+  "segments": ["7a41c9d2-3e58-4b60-8f13-95c2d7ae61b0", "c86b0f45-19da-4e27-b3a8-6f04d5217e9c"]
 }
 ```
 
 :::warning Attention
-To access the token acquisition URL, you must ensure you have an active session with a user in the account or at least in a site of the same; otherwise, you will receive a `404 - Not found` error.
+To request the token you need the credential of a user with an active session in the realm. Without it the endpoint responds `401` with <code v-pre>{"error":{"user_session":"user not found"}}</code>, not `404`. The `404` is a different matter: it shows up when the `realm_uid` in the URL does not match any active realm of the account. The interactive reference at `ACCOUNT_URL/api/customers/docs` only declares the `404` for this endpoint, so do not rely on it on this point. The credentials accepted by the Customers API are in [Authentication](/en/platform/customers/api.html#authentication).
 :::
 
 :::warning Attention
