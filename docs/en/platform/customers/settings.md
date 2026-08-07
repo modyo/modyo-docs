@@ -29,6 +29,7 @@ Before enabling the option to disable Modyo credentials in the realm, make sure 
   - OTP activation: Users who register don't go through an activation email: they receive a one-time code and their account becomes active as soon as they enter it correctly. You can only select this option if the realm has **Enable soft login** active; if it isn't, the option appears disabled. See the details in [Soft login](#soft-login).
   - Activation email: Users who register must activate their account by clicking on a link sent to their email before being able to log in.
   - Moderate: Users who register must wait for a realm administrator to activate their account before they can log in.
+  - Invitation only: New users cannot register from the site, same as with Disabled, but the new users you invite from an origination are created active and can complete the flow right away. A user who already existed and was deactivated is not reactivated when invited. See the details in [invite users](/en/platform/customers/origination.html#invite-users).
   - Disabled: New users cannot be registered in the realm. Already registered and activated users can still log in.
 - **Default Avatar Image**: Image shown on the avatar of users who do not have a custom image.
 - **Soft login**: Enables logging in with a one-time code (OTP) instead of a password, and defines its validity, the wait time to resend it, and the channels used to send it. See the details in [Soft login](#soft-login).

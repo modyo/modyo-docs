@@ -695,6 +695,10 @@ You can invite users to enter information in an origination. When inviting a use
 - **Email**: The user's email address, where they will receive the invitation to access the origination.
 - **Assign the submission**: In the drop-down list, select an administrator who will manage this particular origination. If an administrator is not selected, the submission will remain unassigned.
 
+To invite users, the realm's **Account Activation** cannot be set to **Disabled**. With that option the **Invite** button appears disabled and, on hover, shows the message _Invitations are unavailable because sign up is disabled for this realm_. The same happens on the origination page with the form used to invite new users, although from there you can still invite users who already exist in the realm.
+
+If **Account Activation** is set to **Invitation only**, the new user you invite is created active and can complete the flow right away, with no activation email and no waiting. A user who already existed and was deactivated is not reactivated when invited: they keep their status. Review the options in the [realm settings](/en/platform/customers/settings.html#general).
+
 ### Assignee Management
 
 In the assignees view, you can monitor and manage the administrators responsible for the submissions within a realm. This view facilitates the tracking of performance and workload of administrators. You can filter the assigned submissions by date ranges.
