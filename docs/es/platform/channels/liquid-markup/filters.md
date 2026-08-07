@@ -772,7 +772,28 @@ Devuelve los Submissions con el estado seleccionado. *ej.*
 
 **Parámetros:**
 - submissions (ArraySubmission) - array con submissions del usuario
-- status (String) - Estado de los Originations. Los valores soportados son 'pending', 'completed' y 'all'
+- status (String) - Estado de la respuesta. Los valores soportados son 'pending', 'completed' y 'all'
+
+En Modyo 10.2 una respuesta puede estar en cuatro estados: **No Iniciada**, **Pendiente**, **Completada** y **Cancelada**. El filtro reconoce solo tres valores y no hay correspondencia directa con esos estados:
+
+- `'pending'` devuelve las respuestas **Pendiente** y `'completed'`, las **Completada**.
+- `'all'` no devuelve todas: entrega las **Pendiente** más las **Completada**, y deja fuera las **No Iniciada** y las **Cancelada**.
+- `'not_started'` y `'canceled'` no están soportados. El filtro no falla ni deja rastro en la página: devuelve una colección vacía, así que el listado que los use se ve en blanco.
+
+:::warning Atención
+Una respuesta nace **No Iniciada** y pasa a **Pendiente** recién cuando se guarda la primera respuesta a una de sus tareas, así que las recién creadas no aparecen en los listados construidos con este filtro. Además, `user.submissions` ya viene acotado a las respuestas **Pendiente** y **Completada**, de modo que ninguna combinación de `by_status` alcanza a las **No Iniciada** ni a las **Cancelada** de esa colección.
+:::
+
+Para listar los estados que el filtro no cubre, recorre una colección sin acotar, como `user.invited_submissions`, sin pasar por `by_status`, y compara [`submission.status`](/es/platform/channels/liquid-markup/objects.html#submission) dentro del ciclo:
+
+```liquid
+{% assign invited = user.invited_submissions | by_origination: 'my-origination' %}
+{% for invited_submission in invited %}
+  {% if invited_submission.status == 'not_started' %}
+    <a href="{{ invited_submission.resume_url }}">{{ invited_submission.origination.name }}</a>
+  {% endif %}
+{% endfor %}
+```
 
 ### Completed
 
@@ -786,17 +807,35 @@ Verifica si un elemento (wrapper de step/task) está completado para un submissi
 
 Retorna: Boolean (true/false)
 
+Desde Modyo 10.2 el filtro resuelve el estado contra el usuario presente en el contexto de render y no contra el titular de la respuesta: un step cuenta como completado solo si ese usuario tiene una respuesta completada en cada una de las tareas que ve. En un flujo con usuarios invitados, la misma plantilla entrega resultados distintos según quién la mire, y un step que en 10.1 aparecía completado puede aparecer incompleto.
+
+:::warning Atención
+El filtro necesita el objeto `user` en el contexto de la plantilla. Si no está, la evaluación aborta apenas la respuesta tiene al menos una tarea completada, y en el HTML publicado queda el comentario `<!-- Liquid Error -->` en lugar del bloque, sin ningún aviso para quien navega. Protege el bloque con <span v-pre>`{% if user %}`</span> y asegúrate de que la plantilla reciba el usuario.
+:::
+
 ### URL (URL del Step para Submission)
 
 Genera una URL navegable para un step dentro de un submission (primer task visible). Solo retorna valor si el submission está pendiente y el step está completado o el orden de steps permite navegación.
 
 *ej.* <span v-pre>`{{ step | url: submission }}`</span>
 
+Igual que `completed`, resuelve el step completado y la primera task visible contra el usuario del contexto de render, con las mismas consecuencias en flujos con usuarios invitados y el mismo comportamiento si falta `user` en el contexto.
+
+:::warning Atención
+Una respuesta recién creada está **No Iniciada**, no **Pendiente**, así que el filtro no devuelve valor justo en el caso más frecuente de una plantilla para retomar una respuesta. La respuesta pasa a **Pendiente** cuando se guarda la primera respuesta a una de sus tareas; hasta entonces, lleva al usuario al inicio del flujo con [`submission.resume_url`](/es/platform/channels/liquid-markup/objects.html#submission), que no depende del estado.
+:::
+
 ### Resume Link
 
 Retorna un tag HTML de enlace para retomar un step pendiente dentro de un submission, o el nombre del step si no hay URL disponible.
 
 *ej.* <span v-pre>`{{ step | resume_link: submission }}`</span>
+
+El enlace lo arma `url`, así que hereda todas sus condiciones: cuando `url` no devuelve valor, `resume_link` imprime el nombre del step como texto plano.
+
+:::warning Atención
+Sobre una respuesta **No Iniciada** el filtro imprime el nombre del step como texto plano y la página no muestra ningún error: la plantilla se ve completa, pero el usuario no tiene por dónde entrar. Lo mismo pasa cuando `url` no entrega enlace para ese step con el usuario del contexto. Revisa el estado de la respuesta antes de renderizar el listado y ofrece [`submission.resume_url`](/es/platform/channels/liquid-markup/objects.html#submission) mientras no esté **Pendiente**.
+:::
 
 ### Submissions Selector
 
