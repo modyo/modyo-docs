@@ -100,6 +100,7 @@ module.exports = {
                           collapsable: true,
                           children: [
                               ["/en/platform/core/", "Introduction"],
+                              "/en/platform/core/my-tasks",
                               "/en/platform/core/configuration",
                               {
                                   title: "Integrations",
@@ -396,6 +397,7 @@ module.exports = {
                         collapsable: true,
                         children: [
                             ["/es/platform/core/", "Introducción"],
+                            "/es/platform/core/my-tasks",
                             "/es/platform/core/configuration",
                             {
                                 title: "Integraciones",
