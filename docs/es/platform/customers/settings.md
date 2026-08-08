@@ -14,7 +14,7 @@ Aquí puedes modificar tanto la experiencia visual del usuario como la configura
 En esta sección, puedes configurar aspectos generales del reino, como:
 
 - **Título**.
-- **Identificador**: La URL de las vistas de perfil, inicio de sesión, registro y recuperación de contraseña del reino.
+- **Identificador**: La URL de las vistas de perfil, inicio de sesión, registro y recuperación de contraseña del reino. Revisa el listado completo en [Rutas del reino](/es/platform/customers/profile.html#rutas-del-reino).
 - **Deshabilitar credenciales de la plataforma**: Al marcar esta casilla, desactivas las credenciales de Modyo en el reino y permites únicamente el acceso a través de SSO.
 
 :::danger Peligro
