@@ -45,7 +45,13 @@ Para agregar un nuevo usuario, haz clic en el botón **Nuevo Usuario** y complet
 - **Tags**: Etiquetas para identificar al usuario.
 
 :::tip Tip
-Para enviar la contraseña al correo del usuario, marca la casilla debajo del campo de correo electrónico. El usuario puede cambiar la contraseña una vez que acceda a la plataforma.
+Para enviar la contraseña al correo del usuario, marca la casilla debajo del campo de correo electrónico.
+:::
+
+Los usuarios que creas desde el administrador quedan con el cambio de contraseña pendiente: la primera vez que inicien sesión, la plataforma los lleva a la pantalla de cambio de contraseña y no los deja continuar hasta que definan una nueva. Lo mismo ocurre cuando un administrador les fija una contraseña desde **Editar**.
+
+:::tip Tip
+Si el reino tiene habilitado el [Soft login](/es/platform/customers/settings.html#soft-login), a los usuarios no se les pide contraseña para entrar, así que este cambio obligatorio no aplica.
 :::
 
 Si necesitas agregar campos adicionales al formulario o seleccionar un avatar predeterminado para usuarios sin avatar, ve a la sección **Regístrate** en la [Configuración de Reino](/es/platform/customers/settings).
@@ -104,15 +110,20 @@ Aquí puedes agregar notas personalizadas sobre los usuarios. Solo los administr
 
 #### Dispositivos
 
-Muestra los dispositivos del usuario que tienen una sesión activa. Un administrador puede cerrar sesiones de forma remota.
+Muestra los dispositivos del usuario que tienen una sesión activa, con el navegador y el sistema operativo, la fecha de inicio y la **Dirección IP** de cada uno. Un administrador puede cerrar esas sesiones de forma remota:
+
+- Para cerrar una sesión puntual, haz click en **Cerrar sesión** junto al dispositivo.
+- Para cerrarlas todas de una vez, haz click en **Cerrar sesión en todos los dispositivos**, sobre el listado. Esta opción aparece cuando hay más de una sesión activa.
+
+Al revocar una sesión, el dispositivo pierde el acceso y el usuario tiene que autenticarse de nuevo para volver a entrar.
 
 ### Opciones adicionales
 
 En el menú contextual puedes ejecutar las siguientes acciones:
 
-- **Editar**: Abre el modal de edición de usuario.
-- **Desactivar**: Desactiva un usuario e impide que pueda iniciar sesión.
-- **Eliminar**: Borra al usuario de la plataforma. Solo los administradores pueden realizar esta acción.
+- **Editar**: Abre el modal de edición de usuario. Si le asignas una contraseña nueva, el usuario tiene que cambiarla la próxima vez que inicie sesión.
+- **Desactivar**: Desactiva un usuario, le impide volver a iniciar sesión y revoca todas sus sesiones activas, por lo que también lo saca de las sesiones que tuviera abiertas en ese momento.
+- **Borrar**: Borra al usuario de la plataforma. Solo los administradores pueden realizar esta acción. La plataforma lo desactiva de inmediato y el borrado definitivo corre en un proceso en segundo plano, así que su registro puede seguir apareciendo un rato en el listado.
 
 :::tip Tip
 - Modificar un usuario puede resultar en que se modifique el listado de segmentos a los que pertenece ese usuario.

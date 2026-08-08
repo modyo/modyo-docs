@@ -45,7 +45,13 @@ To add a new user, click the **New User** button and complete the following fiel
 - **Tags**: Labels to identify the user.
 
 :::tip Tip
-To send the password to the user's email, check the box below the email field. The user can change the password once they access the platform.
+To send the password to the user's email, check the box below the email field.
+:::
+
+Users you create from the admin are left with a pending password change: the first time they log in, the platform takes them to the password change screen and doesn't let them continue until they set a new one. The same happens when an administrator sets a password for them from **Edit**.
+
+:::tip Tip
+If the realm has [Soft login](/en/platform/customers/settings.html#soft-login) enabled, users aren't asked for a password to log in, so this forced change doesn't apply.
 :::
 
 If you need to add additional fields to the form or select a default avatar for users without one, go to the **Sign Up** section in the [Realm Settings](/en/platform/customers/settings).
@@ -105,15 +111,20 @@ Here, you can add custom notes about users. Only administrators can view, add, o
 
 #### Devices
 
-Displays the user's devices with active sessions. An administrator can remotely end sessions.
+Displays the user's devices with active sessions, including the browser and operating system, the start date, and the **IP Address** of each one. An administrator can remotely end those sessions:
+
+- To end a single session, click **Log out** next to the device.
+- To end all of them at once, click **Log out all devices**, above the list. This option shows up when there is more than one active session.
+
+When you revoke a session, the device loses access and the user has to authenticate again to get back in.
 
 ### Additional options
 
 In the contextual menu, you can perform the following actions:
 
-- **Edit**: Opens the user editing modal.
-- **Deactivate**: Deactivates a user, preventing them from logging in.
-- **Delete**: Removes the user from the platform. Only administrators can perform this action.
+- **Edit**: Opens the user editing modal. If you assign them a new password, the user must change it the next time they log in.
+- **Deactivate**: Deactivates a user, prevents them from logging in again, and revokes all their active sessions, which also signs them out of any session they had open at that moment.
+- **Delete**: Removes the user from the platform. Only administrators can perform this action. The platform deactivates them immediately and the final deletion runs in a background process, so their record may still show up in the list for a while.
 
 :::tip Tip
 - Modifying a user may result in changes to the list of segments they belong to.

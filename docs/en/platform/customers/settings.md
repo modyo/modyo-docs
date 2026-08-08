@@ -14,7 +14,7 @@ Here you can modify both the user's visual experience and the settings related t
 In this section, you can configure general aspects of the realm, such as:
 
 - **Title**
-- **Identifier**: The URL of the realm's profile, login, registration, and password recovery views.
+- **Identifier**: The URL of the realm's profile, login, registration, and password recovery views. See the full list in [Realm routes](/en/platform/customers/profile.html#realm-routes).
 - **Disable platform credentials**: By checking this box, you deactivate Modyo credentials in the realm and only allow access via SSO.
 
 :::danger Danger
