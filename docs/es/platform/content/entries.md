@@ -28,7 +28,7 @@ También puedes filtrar la vista con filtros predeterminados:
 - **Tipo**: [Tipo](/es/platform/content/types) de contenido.
 - **Estado**: Borrador, publicado, programado y archivado.
 - **Categoría**: Categoría asignada a las entradas. El resultado incluye también las entradas asignadas a las subcategorías de la categoría que elijas.
-- **Idioma** Idioma del contenido.
+- **Idioma**: Idioma del contenido.
 - **Traducción**: Estado de traducción de la entrada. Si una entrada no tiene versión en el idioma seleccionado, se considera "no traducida".
 - **Tags**: Etiquetas disponibles en la cuenta.
 - **Autor**: Administrador que creó la entrada. La lista solo ofrece a los usuarios que tienen al menos una entrada en el espacio.
