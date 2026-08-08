@@ -32,14 +32,24 @@ If the time zone you choose is subject to time changes, these will be automatica
 
 #### Theme colors
 
-In this section, you can customize the color palette of the entire account administration interface, including the login page. The colors you can define are:
+In this section, you can customize the color palette of the entire account administration interface, including the login page. Each color has a visual picker and a text field with the HEX value, and both do the same thing: you can pick the shade in the picker or type the code by hand. The text field doesn't validate the format, so always type a six-digit HEX, because a malformed value leaves that element with its base style.
 
-- **Primary color** and **Primary hover color**: Colors for the main buttons and elements.
-- **Accent color** and **Accent hover color**: Colors for secondary elements and links.
-- **Navigation selected text** and **Navigation selected background**: Colors of the active element in the navigation.
-- **Page background**: General background color of the interface.
+The colors you can define, with their default value, are:
 
-When saving a color change, the page reloads to apply the new theme across the entire interface. The **Reset to default** button returns you to the original Modyo palette.
+- **Primary color** (`#32ae70`) and **Primary hover color** (`#2a9c63`): Colors for the main buttons and elements.
+- **Accent color** (`#2068d5`) and **Accent hover color** (`#1e60c4`): Colors for secondary elements and links.
+- **Navigation selected text** (`#2068d5`) and **Navigation selected background** (`#f6f9fd`): Colors of the active element in the navigation.
+- **Page background** (`#f6f9fd`): General background color of the interface.
+
+To apply the palette, adjust the colors you need and click **Save**. The page reloads so the new theme is visible across the entire interface.
+
+**Primary color**, **Primary hover color**, and **Page background** are also applied outside the admin: they are the background, link, and button colors of the transactional emails the platform sends, so a palette change is also visible in the emails your users receive. The other four colors only affect the administration interface.
+
+To go back to the original Modyo palette, click **Reset to default** and confirm in the message that appears. You don't need to save afterwards: the change is applied immediately and the page reloads.
+
+:::warning Attention
+**Reset to default** doesn't distinguish between colors: it discards all seven custom values at once, not just the one you are editing. If you have a brand palette loaded, write down its codes before resetting, because you will have to enter them again one by one.
+:::
 
 ## Profile Settings
 
