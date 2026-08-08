@@ -49,9 +49,13 @@ La experiencia de usuario está optimizada para la productividad operativa, inco
 
 Los marcadores te permiten crear accesos directos a las secciones de la plataforma que más utilizas. Son personales: cada administrador gestiona sus propios marcadores.
 
-Para crear un marcador, haz clic en el ícono de marcador con el tooltip **Añadir Marcador** que aparece junto a los ítems de los menús laterales de cada módulo y junto a las páginas de un sitio. El ícono se rellena para indicar que la sección quedó marcada; haz clic nuevamente para quitar el marcador.
+Para crear un marcador, haz clic en el ícono de marcador con el tooltip **Añadir Marcador** que aparece junto a los ítems de los menús laterales del panel: las secciones de configuración de la cuenta, los módulos y las secciones internas de un sitio, un espacio de contenido o un reino. El ícono se rellena para indicar que la sección quedó marcada; haz clic nuevamente para quitar el marcador.
+
+Los ítems que solo despliegan un submenú y no llevan a una sección propia no muestran el ícono, por lo que no se pueden marcar.
 
 Para usar tus marcadores, haz clic en el ícono **Marcadores** en la parte superior de la barra lateral principal. Se abre la ventana **Mis Marcadores** con tus accesos guardados, ordenados con los más utilizados primero. Haz clic en un marcador para navegar a esa sección, o usa el ícono de papelera para eliminarlo.
+
+Si todavía no tienes marcadores guardados, la ventana muestra un estado vacío que te indica cómo agregar el primero. Si la sección de un marcador ya no está disponible, Modyo muestra un aviso y no te lleva a ella; puedes eliminar el marcador desde la misma ventana.
 
 :::tip Tip
 Marcar dos veces la misma sección no crea duplicados: si el marcador ya existe, se conserva el original.
