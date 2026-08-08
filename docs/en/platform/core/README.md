@@ -50,9 +50,13 @@ The user experience is optimized for operational productivity, incorporating fea
 
 Bookmarks allow you to create shortcuts to the sections of the platform you use the most. They are personal: each administrator manages their own bookmarks.
 
-To create a bookmark, click the bookmark icon with the **Add Bookmark** tooltip that appears next to the items in the side menus of each module and next to the pages of a site. The icon fills in to indicate that the section has been bookmarked; click it again to remove the bookmark.
+To create a bookmark, click the bookmark icon with the **Add Bookmark** tooltip that appears next to the items in the admin side menus: the account settings sections, the modules, and the inner sections of a site, a content space, or a realm. The icon fills in to indicate that the section has been bookmarked; click it again to remove the bookmark.
+
+Items that only expand a submenu and do not lead to a section of their own do not show the icon, so they cannot be bookmarked.
 
 To use your bookmarks, click the **Bookmarks** icon at the top of the main sidebar. The **My Bookmarks** window opens with your saved shortcuts, sorted with the most used first. Click a bookmark to navigate to that section, or use the trash icon to delete it.
+
+If you do not have any saved bookmarks yet, the window shows an empty state that tells you how to add the first one. If the section behind a bookmark is no longer available, Modyo shows a notice and does not take you there; you can delete the bookmark from the same window.
 
 :::tip Tip
 Bookmarking the same section twice does not create duplicates: if the bookmark already exists, the original is kept.
