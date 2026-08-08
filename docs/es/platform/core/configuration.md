@@ -32,7 +32,7 @@ Si la zona horaria que eliges está sujeta a cambios de horarios, estos se refle
 
 #### Colores del tema
 
-En esta sección puedes personalizar la paleta de colores de toda la interfaz de administración de la cuenta, incluida la página de inicio de sesión. Cada color tiene un selector visual y un campo de texto con el valor HEX, y los dos hacen lo mismo: puedes elegir el tono en el selector o escribir el código a mano. El campo de texto no valida el formato, así que escribe siempre un HEX de seis dígitos, porque un valor mal escrito deja ese elemento con su estilo base.
+En esta sección puedes personalizar la paleta de colores de toda la interfaz de administración de la cuenta, incluida la página de inicio de sesión. Cada color tiene un selector visual y un campo de texto con el valor HEX, y los dos hacen lo mismo: puedes elegir el tono en el selector o escribir el código a mano. El campo de texto no valida el formato, así que escribe siempre el código HEX completo, con el `#` inicial y seis dígitos (`#RRGGBB`), porque un valor mal escrito deja ese elemento con su estilo base.
 
 Los colores que puedes definir, con su valor por defecto, son:
 

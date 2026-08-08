@@ -32,7 +32,7 @@ If the time zone you choose is subject to time changes, these will be automatica
 
 #### Theme colors
 
-In this section, you can customize the color palette of the entire account administration interface, including the login page. Each color has a visual picker and a text field with the HEX value, and both do the same thing: you can pick the shade in the picker or type the code by hand. The text field doesn't validate the format, so always type a six-digit HEX, because a malformed value leaves that element with its base style.
+In this section, you can customize the color palette of the entire account administration interface, including the login page. Each color has a visual picker and a text field with the HEX value, and both do the same thing: you can pick the shade in the picker or type the code by hand. The text field doesn't validate the format, so always type the full HEX code, with the leading `#` and six digits (`#RRGGBB`), because a malformed value leaves that element with its base style.
 
 The colors you can define, with their default value, are:
 
