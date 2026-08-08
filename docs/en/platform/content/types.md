@@ -85,6 +85,20 @@ The scope of **Unique** is the whole type: the comparison goes through every ent
 **Unique** has no effect on a field that lives inside a **Group**. The checkbox is still displayed when you configure the field, but the validation isn't evaluated and repeated values are saved without an error. If you need to guarantee uniqueness, keep the field outside the group.
 :::
 
+### Multiline text
+
+This field allows you to enter plain text on several lines, with no formatting options. Unlike **Single-line text**, which accepts up to 255 characters, here you can store long texts. It has the following restrictions:
+
+- **Minimum length**: Allows you to require a minimum number of characters for the entered text.
+- **Maximum length**: Allows you to limit the maximum number of characters for the entered text.
+- **Validation by regular expression**: Allows you to add a regular expression to validate that the entered text, when creating or modifying an entry, complies with a certain format.
+
+This field doesn't offer the **Unique** validation: uniqueness is only available in [Single-line text](#single-line-text).
+
+:::warning Attention
+As of version 10.2, the value of this field is delivered HTML-escaped when you print it with Liquid: any tags you wrote are shown as literal text instead of being interpreted as markup. If you need to publish HTML from an entry, use a [Rich text](#rich-text) field. Review the templates that were using this field to inject HTML.
+:::
+
 ### Rich text
 
 This field results in a multi-line WYSIWYG text editor that also allows you to modify the HTML code of the text. This field has the following restrictions:
@@ -116,9 +130,15 @@ If you load this field through the API, send the exact labels of the allowed val
 
 In choice fields (Dropdown, Radio, Checkbox, and Multiple choice), the options are managed in the field's **Allowed values** section: use **Add value** and **Delete value** to manage them, and the selector to mark the **Default value**. Before saving, the interface marks the values as **New** or **Edited** so you can review your changes.
 
+The **Default value** is applied automatically when you create a new entry, and only when the field doesn't already carry a value: it isn't applied when you edit an existing entry and it never replaces what you loaded.
+
+:::warning Attention
+That automatic assignment only reaches the choice fields that are at the first level of the type. If you mark a **Default value** on a choice field that lives inside a **Group**, the value isn't applied to new entries and the interface doesn't warn you. Keep the field outside the group if you need that behavior.
+:::
+
 Each value is an individual element of the content type:
 
-- When **renaming a value**, the entries that had it selected keep their selection with the new name, across all their versions.
+- When **renaming a value**, the entries that had it selected keep their selection with the new name, across all their versions. The new text is propagated to the entries in the background, so the public API may take a moment to return it.
 - When **deleting a value in use**, it is archived: it is no longer offered for new selections, but the entries that already had it selected continue to display it, with no loss of historical data.
 
 :::tip Tip
@@ -156,7 +176,16 @@ Use this field to add a date picker. Limit the selectable dates by applying the 
 
 ### Location
 
-Use this field to select a geographical address, based on the fields in Google Maps. If you do not have a Google API key, you can manually enter the location's name, latitude, longitude, and political divisions. These administrative divisions are not standard and vary by country. In the case of Chile, the divisions are: Region, Province, Commune, and City.
+Use this field to select one or more geographical addresses, based on the fields in Google Maps. A single Location field stores an ordered list of locations: add as many as you need and use **Delete location** to remove one from the list. The order you leave them in is the order delivered by the API and the SDKs.
+
+If you do not have a Google API key, you can manually enter the **Location Street**, the **Latitude**, the **Longitude**, and the political divisions of the location. **Latitude** accepts values between -90 and 90, and **Longitude** between -180 and 180; outside that range the entry isn't saved. These administrative divisions are not standard and vary by country. In the case of Chile, the divisions are: Region, Province, Commune, and City.
+
+In the public API and in the SDKs, the value of the field is an array with one object per location, and each object always carries the same eight keys:
+
+- `location_street`: the address written in the **Location Street** field.
+- `location`: object with the `lat` and `lon` coordinates.
+- `country`: the country of the location.
+- `administrative_area_level_1` through `administrative_area_level_5`: the five levels of administrative division, from largest to smallest. The levels the country doesn't use are delivered with no data.
 
 :::warning Attention
 To ensure that location maps work properly with the Google API key configured in your account, the key must have permissions to access:
@@ -168,11 +197,17 @@ To ensure that location maps work properly with the Google API key configured in
 
 ### File
 
-This field allows you to attach a single file to the entry, using the file manager.
+This field allows you to attach a single file to the entry, using the file manager. It has the following restriction:
+
+- **Allowed Types**: Limits the type of file you can attach. You can pick one or more values among **Images**, **Video**, **Audio**, and **Documents**; if you pick none, any file is accepted. If the attached file is of another type, the entry isn't saved and the field shows "Does not match with allowed types", followed by the types you configured.
+
+The check runs against the type the file manager gave the file when you uploaded it, not against its extension.
 
 ### Asset list
 
-This field allows you to attach multiple files to the entry, using the file manager.
+This field allows you to attach multiple files to the entry, using the file manager. It has the following restriction:
+
+- **Allowed Types**: Limits the type of the files you can attach, with the same options and the same behavior as in [File](#file). A single attached file of another type is enough to prevent the entry from being saved.
 
 ### Content (link to one)
 
@@ -193,6 +228,39 @@ Use the Group field to house another field within it. You can assign a name to t
 Once you have more than one type of field within a group, you can drag and order them as needed.
 
 There is no limit to the number of fields you can include within a group.
+
+In an entry, the group behaves as a repeatable list: the same set of child fields can be filled in several times. To work with the repetitions:
+
+1. Open the entry and find the group.
+2. Click **Add new item** to add a repetition with the same fields.
+3. Fill in the fields of that repetition.
+4. Drag the repetitions to change their order.
+5. To delete a repetition, click its delete icon and confirm.
+
+The order you leave the repetitions in is preserved and is the order delivered by the API and the SDKs.
+
+That is why the value of a Group field is always an array of objects, even when it has a single repetition: each object carries the child fields under the name you gave them.
+
+```json
+{
+  "fields": {
+    "my_group": {
+      "fields": [
+        { "my_field": "First item" },
+        { "my_field": "Second item" }
+      ]
+    }
+  }
+}
+```
+
+From Liquid, loop over the repetitions and read the child fields inside the loop. Each repetition is exposed as a [repeatable_group_field](/en/platform/channels/liquid-markup/objects.html#field) object:
+
+```liquid
+{% for item in entry["my_group"] %}
+  {{ item["my_field"] }}
+{% endfor %}
+```
 
 You can validate the contents of the fields as follows:
 
