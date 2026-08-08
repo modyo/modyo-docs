@@ -44,7 +44,7 @@ In this section, each user can modify their profile data. Depending on the [real
 
 Additionally, users have the option to permanently delete their account.
 
-:::danger Peligro
+:::danger Danger
 Account deletion is irreversible. If a user performs this action, they will need to register again to access the platform.
 :::
 

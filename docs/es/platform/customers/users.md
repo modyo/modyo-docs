@@ -112,8 +112,8 @@ Aquí puedes agregar notas personalizadas sobre los usuarios. Solo los administr
 
 Muestra los dispositivos del usuario que tienen una sesión activa, con el navegador y el sistema operativo, la fecha de inicio y la **Dirección IP** de cada uno. Un administrador puede cerrar esas sesiones de forma remota:
 
-- Para cerrar una sesión puntual, haz click en **Cerrar sesión** junto al dispositivo.
-- Para cerrarlas todas de una vez, haz click en **Cerrar sesión en todos los dispositivos**, sobre el listado. Esta opción aparece cuando hay más de una sesión activa.
+- Para cerrar una sesión puntual, haz clic en **Cerrar sesión** junto al dispositivo.
+- Para cerrarlas todas de una vez, haz clic en **Cerrar sesión en todos los dispositivos**, sobre el listado. Esta opción aparece cuando hay más de una sesión activa.
 
 Al revocar una sesión, el dispositivo pierde el acceso y el usuario tiene que autenticarse de nuevo para volver a entrar.
 
