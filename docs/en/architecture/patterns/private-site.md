@@ -34,7 +34,7 @@ Although private sites have their particularities, they also share similarities 
 
 
 ### User Management
-In a private site, user management is essential. Modyo offers the functionality of [user realms](/en/platform/customers/overview), which are completely independent and can have their own configurations, such as the authentication method.
+In a private site, user management is essential. Modyo offers the functionality of [user realms](/en/platform/customers/realms.html), which are completely independent and can have their own configurations, such as the authentication method.
 
 #### User Events
 User realms store events and allow the definition of segments based on the user's profile or behavior within the system.

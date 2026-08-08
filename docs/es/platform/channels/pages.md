@@ -16,7 +16,7 @@ En la vista de edición, encontrarás una barra superior con acciones, una grill
 
 En la barra superior, encontrarás distintas acciones e información:
 
-**Título**: Se encuentra en la parte superior izquierda e indica el nombre de la página que estás modificando. A la derecha del nombre, encontrarás el estado actual de la página: "Borrador", "En revisión", "Aprobado", "Cambios pendientes" o "Publicado". Para aprender más sobre estos estados, puedes revisar la sección de [Versionado y Revisión en Equipo](/es/platform/core/key-concepts).
+**Título**: Se encuentra en la parte superior izquierda e indica el nombre de la página que estás modificando. A la derecha del nombre, encontrarás el estado actual de la página: "Borrador", "En revisión", "Aprobado", "Cambios pendientes" o "Publicado". Para aprender más sobre estos estados, puedes revisar la sección de [Versionado](/es/platform/core/#versionado).
 
 **Fecha de publicación**: Si la página ha sido publicada, indicará la fecha de la última publicación.
 
@@ -26,10 +26,10 @@ En la barra superior, encontrarás distintas acciones e información:
 Puedes previsualizar las páginas como usuario sin sesión o con sesión de Modyo. Para esto, es recomendable iniciar o cerrar la sesión de Modyo en el sitio antes de entrar al modo vista previa, ya que hacerlo dentro de este modo puede generar errores de seguridad como _x-frame-options_ o _mixed-content_, dependiendo de la configuración de dominios personalizados y SSL del sitio.
 :::
 
-**Diferencias**: Al hacer clic en el icono de diferencias, accedes a la vista de diferencias de la página, donde puedes seleccionar dos versiones a comparar, permitiendo ejecutar las acciones [restablecer y rollback](/es/platform/core/key-concepts#revertir-un-cambio).
+**Diferencias**: Al hacer clic en el icono de diferencias, accedes a la vista de diferencias de la página, donde puedes seleccionar dos versiones a comparar, permitiendo ejecutar las acciones [restablecer y rollback](/es/platform/core/#revertir-un-cambio).
 
 :::tip Tip
-Si tu página está en estado _borrador_, no aparecerá el icono de diferencias, dado que no hay nada con qué comparar la versión editable actual. Para aprender más sobre las diferencias y respaldos, revisa la sección de [versionado](/es/platform/core/key-concepts#versionado).
+Si tu página está en estado _borrador_, no aparecerá el icono de diferencias, dado que no hay nada con qué comparar la versión editable actual. Para aprender más sobre las diferencias y respaldos, revisa la sección de [versionado](/es/platform/core/#versionado).
 :::
 
 **Actividad**: Despliega una barra lateral que muestra la actividad asociada a la página, como modificaciones, publicaciones y comentarios. En la parte inferior de esta barra, puedes escribir comentarios. Si la página está en revisión, todos los revisores asignados recibirán una notificación con el comentario.
@@ -63,7 +63,7 @@ Para conocer más acerca de páginas de contenido, consulta [Página de Contenid
 
 - Guardar: Permite guardar los cambios realizados en la página.
 - Enviar a revisión: Si la revisión en equipo está habilitada y no hay cambios pendientes, esta acción permite enviar la página a revisión y asignar revisores.
-- Publicar: Si la página está aprobada, puedes ir a la [vista de publicación conjunta](/es/platform/core/key-concepts) usando esta acción.
+- Publicar: Si la página está aprobada, puedes ir a la [vista de publicación conjunta](/es/platform/channels/sites.html#revision-y-publicacion-conjunta) usando esta acción.
 
 :::tip Tip
 - Si una página tiene un padre, solo puedes publicarla si este se encuentra publicado.

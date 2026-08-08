@@ -14,8 +14,8 @@ En la parte superior de la vista, encontrarás el estado de publicación del men
 
 - **Publicado**: Este estado aparece después de haber hecho una publicación y cuando las versiones editable y publicada son iguales.
 - **Cambios pendientes**: Este estado aparece si ya hay una versión publicada, pero hay cambios pendientes de publicar en tu versión editable.
-- **En revisión**: Este estado aparece cuando esté habilitada la [Revisión en Equipo](/es/platform/core/key-concepts) y se haya enviado a revisión la versión editable.
-- **Aprobado**: Este estado aparece cuando esté habilitada la [Revisión en Equipo](/es/platform/core/key-concepts) y si se cumplieron las condiciones de revisión del elemento. Si se encuentra en este estado, tus plantillas ya pueden ser publicadas.
+- **En revisión**: Este estado aparece cuando esté habilitada la [Revisión en Equipo](/es/platform/core/#revision-en-equipo) y se haya enviado a revisión la versión editable.
+- **Aprobado**: Este estado aparece cuando esté habilitada la [Revisión en Equipo](/es/platform/core/#revision-en-equipo) y si se cumplieron las condiciones de revisión del elemento. Si se encuentra en este estado, tus plantillas ya pueden ser publicadas.
 
 En la parte superior derecha, encuentras la última fecha de publicación y las acciones disponibles:
 
@@ -29,7 +29,7 @@ Puedes previsualizar los cambios como usuario sin sesión o usuario con sesión 
 El menú que has creado solo se visualizará en una página si lo agregas a través de una plantilla publicada. De lo contrario, el menú no se solicitará y no aparecerá en la página.
 :::
 
-**Diferencias**: Haz clic aquí para acceder a la [vista de diferencias](/es/platform/core/key-concepts#revertir-un-cambio), en la cual puedes comparar los cambios entre diferentes versiones de tu menú.
+**Diferencias**: Haz clic aquí para acceder a la [vista de diferencias](/es/platform/core/#revertir-un-cambio), en la cual puedes comparar los cambios entre diferentes versiones de tu menú.
 
 Por defecto, inicias comparando la versión publicada con la versión editable. Usa los selectores de versiones para comparar con versiones de respaldo.
 
@@ -38,10 +38,10 @@ Cada vez que publicas una versión, la versión que estaba publicada pasa a ser 
 
 Por defecto, se guardan hasta 20 respaldos, de tal forma que los veinte respaldos más recientes se pueden comparar, restaurar y hacer rollback.
 
-Para más información sobre el versionamiento, revisa la sección de [Versionado](/es/platform/core/key-concepts#versionado).
+Para más información sobre el versionamiento, revisa la sección de [Versionado](/es/platform/core/#versionado).
 :::
 
-**Actividad/Comentarios**: Solo aparece habilitada si tienes activada la [revisión en equipo](/es/platform/core/key-concepts). Al hacer clic, despliega una barra lateral con el historial de actividad y comentarios del menú.
+**Actividad/Comentarios**: Solo aparece habilitada si tienes activada la [revisión en equipo](/es/platform/core/#revision-en-equipo). Al hacer clic, despliega una barra lateral con el historial de actividad y comentarios del menú.
 
 Al final de la barra lateral, ves una caja de texto donde puedes escribir un comentario. Junto a cada actividad, puedes hacer clic en _ver detalle_ para mostrar la información completa de ese registro de actividad.
 

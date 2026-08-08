@@ -34,7 +34,7 @@ Aunque los sitios privados tienen sus particularidades, comparten también simil
 
 
 ### Gestión de Usuarios
-En un sitio privado, la gestión de usuarios es esencial. Modyo ofrece la funcionalidad de [reinos de usuarios](/es/platform/customers/overview), que son completamente independientes y pueden tener configuraciones propias, como el método de autenticación.
+En un sitio privado, la gestión de usuarios es esencial. Modyo ofrece la funcionalidad de [reinos de usuarios](/es/platform/customers/realms.html), que son completamente independientes y pueden tener configuraciones propias, como el método de autenticación.
 
 #### Eventos de usuario
 Los reinos de usuarios almacenan eventos y permiten definir segmentos basados en el perfil o comportamiento del usuario dentro del sistema.
@@ -91,7 +91,7 @@ En sitios privados que, por políticas internas, requieran desarrollo en ambient
 Para mantener sincronizadas las dependencias base de la plataforma entre los micro frontends, se recomienda trabajar con ambientes previos virtualizados mediante el uso de stages, como se explica en la siguiente sección.
 
 #### Uso de Stages
-Se recomienda el uso de [stages](/es/platform/channels/sites.md#stages) en Modyo cuando los micro frontends o [widgets](/es/platform/channels/widgets) requieren compartir dependencias resueltas desde la base de la plataforma (Javascript o [snippets](/es/platform/channels/templates.md#snippets)). En estos casos, se puede implementar un ambiente de preproducción virtualizado que sincroniza cambios y permite flujos de trabajo de publicación más directos.
+Se recomienda el uso de [stages](/es/platform/channels/sites.html#stages) en Modyo cuando los micro frontends o [widgets](/es/platform/channels/widgets.html) requieren compartir dependencias resueltas desde la base de la plataforma (Javascript o [snippets](/es/platform/channels/templates.html#snippets)). En estos casos, se puede implementar un ambiente de preproducción virtualizado que sincroniza cambios y permite flujos de trabajo de publicación más directos.
 
 #### Uso de Sistemas de Diseño
 El uso de [sistemas de diseño](/es/architecture/patterns/design-system) en la arquitectura de una aplicación mejora su gobernabilidad al proporcionar una estructura y pautas coherentes para el desarrollo. Esto resulta en mayor consistencia de la interfaz de usuario, mejor colaboración entre equipos, desarrollo más rápido, mantenimiento y escalabilidad más eficientes, y asegura la accesibilidad y usabilidad. En conjunto, estos factores contribuyen a un control y gestión más eficientes de la aplicación, reflejándose en una mayor eficacia en su diseño y operación.

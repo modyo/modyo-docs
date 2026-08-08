@@ -66,7 +66,7 @@ To enable or disable the search functionality, follow these steps:
 
 ### Search template
 
-You can control the appearance and search functionalities in your web app using the _search_ [template](/en/platform/channels/sites#search-template/).
+You can control the appearance and search functionalities in your web app using the _search_ [template](/en/platform/channels/sites.html#search-template).
 
 This template is available by default in the templates section and contains all the Liquid code needed to carry out queries in your web app. By default, when making a query, the records are displayed in list form, with their title, description, and a link to their address. You can modify the template to adapt it to your needs.
 
@@ -716,7 +716,7 @@ For more information, see the [MDN Cross-Origin-Resource-Policy](https://develop
 
 ### Site Variables
 
-Modyo has [global variables](/en/platform/core/key-concepts#global-variables) that you can use on multiple sites. However, you can also create specific variables for a particular site or overwrite the value of an existing global variable with a value specific to that particular site.
+Modyo has [global variables](/en/platform/channels/global-variables.html) that you can use on multiple sites. However, you can also create specific variables for a particular site or overwrite the value of an existing global variable with a value specific to that particular site.
 
 Using variables allows you to reuse HTML, JS, CSS, or text code across different sites, widgets, or templates. If you have code that is repeated in several parts of your account, you can assign that value to a variable to simplify your processes, and if you edit the variable's value, the change will be reflected wherever the variable is in use.
 

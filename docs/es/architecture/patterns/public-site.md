@@ -36,7 +36,7 @@ Al usar organizaciones, considera los límites de tu licencia. El límite máxim
 :::
 
 #### Uso de Páginas y Layouts
-Los [layouts](/es/platform/channels/templates.md#layouts) son una excelente forma de diferenciar contextos dentro de un sitio. Un layout puede ser compartido por múltiples [páginas](/es/platform/channels/pages), y cada página puede tener un solo layout. Dentro del layout, se pueden definir elementos reutilizables entre las páginas, como encabezados, pies de página y meta etiquetas.
+Los [layouts](/es/platform/channels/templates.html#layouts) son una excelente forma de diferenciar contextos dentro de un sitio. Un layout puede ser compartido por múltiples [páginas](/es/platform/channels/pages), y cada página puede tener un solo layout. Dentro del layout, se pueden definir elementos reutilizables entre las páginas, como encabezados, pies de página y meta etiquetas.
 
 Los layouts aseguran coherencia visual entre las páginas, aunque casos específicos (ej. una página de promoción) pueden requerir layouts diferentes.
 
@@ -45,7 +45,7 @@ Además, las páginas pueden agruparse en jerarquías, asegurando una estructura
 #### Uso de Templates y Snippets
 Los [templates](/es/platform/channels/templates) o plantillas son documentos Liquid que se renderizan dinámicamente en la plataforma. Pueden representar páginas HTML, layouts, hojas de estilo CSS o archivos JavaScript.
 
-Los [snippets](/es/platform/channels/templates.md#snippets) o fragmentos son útiles para organizar código fuente y pueden referenciarse desde diferentes plantillas Liquid del mismo sitio. Permiten modularizar y reutilizar funciones, facilitando la descomposición de funcionalidades complejas en partes más simples. Los snippets se renderizan dinámicamente al cargar la página.
+Los [snippets](/es/platform/channels/templates.html#snippets) o fragmentos son útiles para organizar código fuente y pueden referenciarse desde diferentes plantillas Liquid del mismo sitio. Permiten modularizar y reutilizar funciones, facilitando la descomposición de funcionalidades complejas en partes más simples. Los snippets se renderizan dinámicamente al cargar la página.
 
 :::warning Recursividad y rendimiento
 Un error común al usar snippets es la llamada recursiva de referencias circulares. En tal caso, la plataforma detiene la ejecución para evitar la saturación de recursos.
@@ -120,7 +120,7 @@ En Modyo, un mismo contenido puede desplegarse en múltiples páginas de diversa
 :::
 
 #### Uso de Team Review
-El [team review](/es/platform/core/key-concepts.md#revision-en-equipo) o revisión de equipos es una funcionalidad de Modyo que permite configurar de forma simple y flexible a los usuarios responsables de revisar elementos antes de su publicación. Los revisores pueden previsualizar el cambio o contenido y hacer comentarios para corregir aspectos necesarios. El menú de team review es accesible desde la configuración de los espacios de contenido y los sitios.
+El [team review](/es/platform/core/#revision-en-equipo) o revisión de equipos es una funcionalidad de Modyo que permite configurar de forma simple y flexible a los usuarios responsables de revisar elementos antes de su publicación. Los revisores pueden previsualizar el cambio o contenido y hacer comentarios para corregir aspectos necesarios. El menú de team review es accesible desde la configuración de los espacios de contenido y los sitios.
 
 El uso de team review es altamente recomendable en sitios públicos donde se busca máxima agilidad en la publicación y, al mismo tiempo, minimizar los controles de aprobación para revisiones simples.
 
@@ -138,7 +138,7 @@ Modyo recomienda el uso de ambientes físicos para pruebas de nuevas versiones d
 :::
 
 #### Uso de Stages
-En sitios públicos, Modyo recomienda gestionar ambientes previos utilizando la funcionalidad de [stages](/es/platform/channels/sites.md#stages), que permite crear entornos pre-productivos virtualizados dentro del mismo despliegue de producción. Esta técnica evita la necesidad de mover cambios y archivos entre ambientes, reduciendo la posibilidad de errores en la publicación.
+En sitios públicos, Modyo recomienda gestionar ambientes previos utilizando la funcionalidad de [stages](/es/platform/channels/sites.html#stages), que permite crear entornos pre-productivos virtualizados dentro del mismo despliegue de producción. Esta técnica evita la necesidad de mover cambios y archivos entre ambientes, reduciendo la posibilidad de errores en la publicación.
 
 El uso de stages posibilita la creación de entornos separados y aislados para construir, probar y verificar el funcionamiento del sitio antes de su despliegue en producción. Esto ayuda a prevenir fallos que podrían afectar a los usuarios finales. Para sitios públicos, se pueden definir, por ejemplo, los siguientes stages:
 
