@@ -39,7 +39,7 @@ Cada servicio se diseña para manejar capacidades empresariales específicas, ce
 
 ### Implementación de microservicios con Modyo
 
-[Modyo Connect](/es/connect) permite el desarrollo y despliegue de microservicios en la nube sobre su plataforma de [contenedores](/es/connect/components/infrastructure.md#contenedores). Para ello, se requiere un [repositorio de código](/es/connect/components/development.md#repositorio-de-codigo) y procesos de [integración continua](/es/connect/components/development.md#integracion-continua) activos.
+[Modyo Connect](/es/connect) permite el desarrollo y despliegue de microservicios en la nube sobre su plataforma de [contenedores](/es/connect/infrastructure/containers.html). Para ello, se requiere un [repositorio de código](/es/connect/development/code-repository.html) y procesos de [integración continua](/es/connect/development/continuous-integration.html) activos.
 
 Los microservicios desarrollados en Modyo Connect escalan horizontalmente, permitiendo el incremento automático de instancias según la demanda y el reemplazo de aquellas con problemas. Además, pueden desplegarse en múltiples regiones y zonas de disponibilidad para garantizar su resiliencia ante fallos de infraestructura.
 
@@ -94,7 +94,7 @@ Los microservicios de Dynamic Framework se desarrollan siguiendo los principios 
 
 #### Otras consideraciones
 
-- **Tareas pesadas**: Para servicios lentos o sensibles a fluctuaciones de tráfico, se recomienda el procesamiento en segundo plano mediante [colas de mensajes](/es/connect/components/infrastructure#colas-de-mensajeria).
+- **Tareas pesadas**: Para servicios lentos o sensibles a fluctuaciones de tráfico, se recomienda el procesamiento en segundo plano mediante [colas de mensajes](/es/connect/infrastructure/message-queues.html).
 - **Programación de tareas**: Para microservicios que requieran agendamiento de tareas programadas, se recomienda usar [ShedLock](https://www.baeldung.com/shedlock-spring).
 - **Workflows y máquina de estado**: Se recomienda el uso de [máquinas de estados](https://www.baeldung.com/spring-state-machine) para la orquestación de procesos complejos, e integrar tecnologías de workflows con Spring Boot.
 - **Arquitectura hexagonal**: Este patrón de diseño de software separa la lógica de negocio de una aplicación de sus servicios externos, facilitando un desarrollo, pruebas y mantenimiento más flexibles y centrados en el dominio.

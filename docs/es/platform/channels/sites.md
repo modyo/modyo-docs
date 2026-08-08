@@ -66,7 +66,7 @@ Para habilitar o deshabilitar la funcionalidad de búsqueda, sigue estos pasos:
 
 ### Plantilla de búsqueda
 
-Puedes controlar la apariencia y funcionalidades de búsqueda en tu web app utilizando la [plantilla](/es/platform/channels/sites#plantilla-de-busqueda/) _search_.
+Puedes controlar la apariencia y funcionalidades de búsqueda en tu web app utilizando la [plantilla](/es/platform/channels/sites.html#plantilla-de-busqueda) _search_.
 
 Esta plantilla está disponible de forma predeterminada en la sección de plantillas y contiene todo el código Liquid necesario para realizar cabo consultas en tu web app. Por defecto, al realizar una consulta, los registros se muestran en forma de lista con su título, descripción y un enlace hacia su dirección. Puedes modificar la plantilla para adaptarla a tus necesidades.
 
@@ -716,7 +716,7 @@ Para mas información, consulta la [Cross-Origin-Resource-Policy de MDN](https:/
 
 ### Variables del sitio
 
-Modyo cuenta con [variables globales](/es/platform/core/key-concepts#variables-globales) que puedes utilizar en múltiples sitios. Sin embargo, también puedes crear variables específicas para un sitio en particular o sobreescribir el valor de una variable global existente, con un valor específico para el sitio en particular.
+Modyo cuenta con [variables globales](/es/platform/channels/global-variables.html) que puedes utilizar en múltiples sitios. Sin embargo, también puedes crear variables específicas para un sitio en particular o sobreescribir el valor de una variable global existente, con un valor específico para el sitio en particular.
 
 Usar variables te permite reutilizar código HTML, JS, CSS o texto a través de distintos sitios, widgets o plantillas. Si tienes código que se repite en varias partes de tu cuenta, puedes asignar ese valor a una variable para simplificar tus procesos y en caso de que edites el valor de la variable, el cambio se verá reflejado en todos los lugares donde esté en uso la variable.
 

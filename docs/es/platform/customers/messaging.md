@@ -183,7 +183,7 @@ En esta sección, encuentras una lista de los usuarios que se han dado de baja d
 
 Usa la barra de búsqueda para encontrar un usuario específico. Puedes ingresar su nombre o correo electrónico.
 
-Cuando haces click en el nombre del usuario, puedes ver la [ficha de usuario](/es/platform/customers/users#ficha-de-usuarios) con todas las actividades que ha hecho en la plataforma.
+Cuando haces click en el nombre del usuario, puedes ver la [ficha de usuario](/es/platform/customers/users.html#ficha-de-usuario) con todas las actividades que ha hecho en la plataforma.
 
 Al final de cada nombre de usuario hay un botón que te permite reinscribir al usuario a cualquier campaña del sitio.
 

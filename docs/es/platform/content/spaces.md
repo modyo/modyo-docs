@@ -116,8 +116,7 @@ Las opciones de configuración de la revisión en equipo son las siguientes:
 - **Forzar revisión**: Obliga a que al menos un usuario específico revise el contenido.
 - **Requerir todos**: Obliga a que todos los usuarios seleccionados aprueben el elemento antes de que se publique.
 
-Para más información sobre cómo configurar esta opción, revisa la sección de
- [Team Review](/es/platform/core/key-concepts)
+Para más información sobre cómo configurar esta opción, revisa la sección de [Revisión en Equipo](/es/platform/core/#revision-en-equipo).
 
 ### Miembros del equipo
 
