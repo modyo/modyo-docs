@@ -696,7 +696,9 @@ Puedes invitar a usuarios para que ingresen información en una originación. Al
 - **Email**: La dirección de correo electrónico del usuario, donde recibirá la invitación para acceder a la originación.
 - **Asignar la respuesta**: En la lista desplegable, selecciona un administrador que gestionará esta originación en particular. Si no se selecciona un administrador, la respuesta quedará sin asignar.
 
-Para poder invitar usuarios, la **Activación de la cuenta** del reino no puede estar en **Deshabilitada**. Con esa opción el botón **Invitar** aparece deshabilitado y, al pasar el cursor, muestra el mensaje _Las invitaciones no están disponibles porque el registro está deshabilitado en este realm_. En la página de originación pasa lo mismo con el formulario de invitación a usuarios nuevos, aunque desde ahí sí puedes seguir invitando a usuarios que ya existen en el reino.
+Para invitar usuarios desde el panel, la **Activación de la cuenta** del reino no puede estar en **Deshabilitada**: con esa opción el botón **Invitar** aparece deshabilitado y, al pasar el cursor, muestra el mensaje _Las invitaciones no están disponibles porque el registro está deshabilitado en este realm_.
+
+En la página de originación la restricción es más acotada: con **Deshabilitada** se bloquea el formulario de invitación a usuarios nuevos, pero desde ahí se puede seguir invitando a usuarios que ya existen en el reino.
 
 Si la **Activación de la cuenta** está en **Solo por invitación**, el usuario nuevo que invites queda activo y puede completar el flujo de inmediato, sin correo de activación ni espera. Un usuario que ya existía y estaba desactivado no se reactiva al invitarlo: mantiene su estado. Revisa las opciones en la [configuración del reino](/es/platform/customers/settings.html#general).
 
