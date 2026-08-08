@@ -113,7 +113,7 @@ Tres de ellos trabajan sobre el mismo dato y conviene no confundirlos: **Correos
 
 Otros trabajan con una lista cerrada de valores: **Estado de activación** acepta **Activado** o **Desactivado**, y **Dispositivo** acepta **Escritorio**, **Móvil** o **Tablet**.
 
-Para crear un filtro avanzado, que se ajuste a tus necesidades, , consulta la sección [Custom Fields](/es/platform/customers/settings#custom-fields).
+Para crear un filtro avanzado que se ajuste a tus necesidades, consulta la sección [Custom Fields](/es/platform/customers/settings#custom-fields).
 
 :::warning Atención
 La actualización de segmentos a los que pertenece un usuario se realiza en un proceso en segundo plano y puede no ser inmediata. Esto ocurre:
