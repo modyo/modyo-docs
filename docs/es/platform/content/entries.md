@@ -27,14 +27,33 @@ También puedes filtrar la vista con filtros predeterminados:
 
 - **Tipo**: [Tipo](/es/platform/content/types) de contenido.
 - **Estado**: Borrador, publicado, programado y archivado.
-- **Categoría**: Categoría asignada a las entradas.
+- **Categoría**: Categoría asignada a las entradas. El resultado incluye también las entradas asignadas a las subcategorías de la categoría que elijas.
 - **Idioma** Idioma del contenido.
 - **Traducción**: Estado de traducción de la entrada. Si una entrada no tiene versión en el idioma seleccionado, se considera "no traducida".
 - **Tags**: Etiquetas disponibles en la cuenta.
+- **Autor**: Administrador que creó la entrada. La lista solo ofrece a los usuarios que tienen al menos una entrada en el espacio.
+- **Segmentos**: Segmentos asignados a las entradas. Este filtro aparece solo cuando el espacio está asociado a un reino de usuarios.
 - **Barra de búsqueda**: Filtra por el contenido del título de las entradas.
 
 :::tip Tip
 Da click en el menú de Filters en la parte superior derecha de la lista de entradas para agregar o eliminar cualquiera de las opciones de filtrado del encabezado.
+:::
+
+### Filtros por campos del tipo
+
+Cuando filtras el listado por **Tipo**, debajo de los filtros comunes aparece el bloque **Filtros de campos de contenido**, con un filtro por cada campo filtrable del tipo que elegiste. Con ellos acotas el listado a las entradas que tienen un valor determinado en uno de sus campos.
+
+Solo ocho tipos de campo se pueden usar como filtro: **Booleano**, **Checkbox**, **Decimal**, **Dropdown**, **Entero**, **Fecha**, **Opciones múltiples** y **Radio**. Los demás tipos de campo del tipo de contenido no aparecen en el bloque.
+
+Cada filtro se adapta al campo que representa:
+
+- **Fecha**: filtra por un rango de fechas.
+- **Entero** y **Decimal**: filtran por una comparación numérica.
+- **Booleano**: filtra por True o False.
+- **Checkbox**, **Dropdown**, **Opciones múltiples** y **Radio**: filtran por los **Valores permitidos** que definiste en el campo. En **Checkbox** y en **Opciones múltiples** puedes marcar más de un valor a la vez.
+
+:::tip Tip
+El bloque solo existe mientras el filtro de **Tipo** esté activo, porque cada tipo de contenido define sus propios campos. Si cambias o quitas el filtro de **Tipo**, los filtros por campo se descartan.
 :::
 
 
@@ -59,10 +78,17 @@ Al usar la edición masiva de entradas estás sobreescribiendo los valores para 
 Para recuperar un valor específico de una entrada, accede a la vista de edición de entradas y selecciona la opción **Diferencias** para revisar los valores previos de una entrada.
 :::
 
+- **Agregar o quitar tags**: Abre una ventana para modificar los tags de toda la selección. En **Añadir nuevos tags** escribes o eliges los tags que quieres sumar, y bajo **Tags en los elementos seleccionados** ves los tags que ya tienen esas entradas, con la cantidad de entradas que usa cada uno: **Aplicar a todas** suma ese tag al resto de la selección y el ícono de eliminar lo quita de todas. Da click en **Guardar** y confirma para aplicar los cambios.
 - **Publicar**:  Publica las entradas seleccionadas que tengan cambios pendientes o estén en estado borrador.
 - **Forzar publicación**: Si está habilitada la revisión en equipo, los administradores del espacio pueden usar esta acción para forzar la publicación de entradas que tienen cambios pendientes o estén en estado borrador, sin necesidad de pasar por el proceso de revisión.
 - **Despublicar**
 - **Archivar**: Archivar en masa solo tiene efecto en las entradas seleccionadas que no estén publicadas. Si intentas archivar una entrada publicada, la acción no tendrá efecto.
+- **Restaurar**: Saca del archivo las entradas seleccionadas y las devuelve al estado borrador. Solo alcanza a las entradas archivadas, así que conviene filtrar el listado por el estado **Archivado** antes de usarla.
+- **Borrar**: Elimina las entradas archivadas de la selección. Requiere el permiso **Eliminar Entradas**.
+
+:::danger Peligro
+**Borrar** elimina las entradas seleccionadas junto con todos sus respaldos y no se puede deshacer. El borrado alcanza solo al idioma que tienes seleccionado en el listado: las traducciones de esas entradas a otros idiomas se conservan.
+:::
 
 :::tip Tip
 Las acciones masivas se ejecutan en segundo plano y es posible que no veas los cambios inmediatamente, por lo que deberás esperar un momento y refrescar la vista luego de ejecutar una acción masiva.
@@ -176,6 +202,34 @@ Para despublicar:
 1. Haz click en **Despublicar**.
 
 
+### Programar la publicación de una entrada
+
+En lugar de publicar de inmediato, puedes fijar la fecha y la hora en que la entrada aparece en tus sitios y, en la misma ventana, la fecha en que deja de estar visible.
+
+1. En el menú lateral, selecciona Content.
+1. Haz click en tu espacio.
+1. Selecciona Entradas.
+1. Del listado de entradas, da click en la entrada que quieres programar.
+1. En la parte superior de la pantalla, haz click en **Publicar** para abrir la ventana **Opciones de Publicación**.
+1. Marca **Publicar en** y elige la fecha y la hora en **Selecciona una fecha**.
+1. Si además quieres que la entrada deje de estar visible en una fecha determinada, marca **Despublicar en** y elige la fecha y la hora.
+1. Haz click en **Programar publicación**.
+
+Al confirmar, la entrada queda con una versión programada y aparece en el listado con el estado **Programado**. Puedes seguir trabajando en su versión editable sin alterar lo que quedó programado.
+
+Ten en cuenta:
+
+- Cada entrada admite una sola publicación programada por idioma. Si programas una segunda publicación, la ventana te advierte con "Vas a sobreescribir la actual publicación programada" y la nueva reemplaza a la anterior.
+- Si eliges **Publicar ahora** cuando ya hay una publicación programada, la ventana te advierte con "La publicación programada será cancelada": al confirmar, la entrada se publica de inmediato y la programación se descarta.
+- Si eliges una fecha de publicación que ya pasó, la entrada se publica de inmediato en lugar de quedar programada.
+- La fecha de despublicación no puede estar en el pasado. Si lo intentas, Modyo rechaza la operación con el mensaje "La fecha de despublicación programada no puede estar en el pasado".
+
+Para programar solo la despublicación de una entrada que ya está publicada, haz click en **Despublicar** en la parte superior de la pantalla, marca **Despublicar en** en la ventana **Opciones de despublicación**, elige la fecha y la hora, y confirma con **Programar despublicación**.
+
+:::tip Tip
+El comportamiento completo de la versión programada, incluida la notificación que recibes cuando la acción se ejecuta, está en la sección de [versionado](/es/platform/core/#versionado).
+:::
+
 ### Eliminar entradas
 
 Para eliminar una entrada:
@@ -223,6 +277,32 @@ Para editar una entrada, sigue estos pasos:
 1. Modifica los campos que requieras.
 1. Da click en **Guardar**.
 1. Da click en **Publicar**.  Si la entrada está en proceso de revisión en equipo, los revisores deberán actualizar su vista para notar los cambios.
+
+
+### Clonar una entrada
+
+**Clonar** crea una entrada nueva a partir de la que estás viendo, con los mismos valores en todos sus campos, sus tags y sus segmentos, y replica también las traducciones que ya existan.
+
+1. En el menú lateral, selecciona Content.
+1. Haz click en tu espacio.
+1. Selecciona Entradas.
+1. Del listado de entradas, da click en la entrada que quieres clonar.
+1. Haz click en el botón de más acciones (...) y selecciona **Clonar**.
+
+Cuando la copia termina, Modyo te lleva a la entrada nueva. Ten en cuenta:
+
+- La copia nace en estado borrador: para que aparezca en tus sitios tienes que publicarla.
+- La copia es una entrada independiente. Su nombre queda como "Copia de" seguido del nombre original y su identificador se genera con el prefijo `copy-of-`, así que las referencias a la entrada original desde la API o los SDKs siguen apuntando a la original.
+- El autor de la copia es el usuario que ejecuta la acción, no el autor de la entrada original.
+- La acción requiere el permiso **Clonar Entradas**.
+
+:::warning Atención
+Al clonar serás redirigido a la entrada nueva, así que guarda los cambios pendientes de la entrada actual antes de usar esta acción.
+:::
+
+:::tip Tip
+No confundas **Clonar** con **Copiar desde idioma**: **Copiar desde idioma** trae el contenido de otra traducción a la entrada que estás editando y no crea una entrada nueva.
+:::
 
 
 ## Categorías
@@ -276,6 +356,13 @@ Si eliminas una categoría padre, se eliminarán todas las subcategorías asocia
 Los tags permiten agregar mayor detalle a tus entradas al combinarlos con Liquid en tus páginas de contenido.
 
 Al crear entradas, puedes agregar un tag que aparecerá tanto en el código fuente como en nuestra API de contenido, permitiéndote agregar funcionalidades específicas a ese tag.
+
+
+### Extracto
+
+El extracto es un resumen breve de la entrada. Lo editas en el panel **Propiedades** de la vista de edición, junto a la categoría y a los tags, y admite hasta 255 caracteres.
+
+A diferencia de los campos, el extracto no se define en el tipo de contenido: está disponible en todas las entradas sin que tengas que crearlo. Se publica junto con la entrada y lo recuperas en `meta.excerpt` en la API de contenido, o con `entry.meta.excerpt` en Liquid.
 
 
 ### Identificador
