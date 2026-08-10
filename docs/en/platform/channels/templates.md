@@ -56,7 +56,7 @@ Modyo offers three predefined layouts:
 
 - **Home**: Exclusively for the main page of the site.
 - **Base**: All pages, except the home page, use this layout.
-- **Error**: Used in error views (404, 401), showcasing a clean design.
+- **Error**: Used in the site's three error views (**404**, **disabled**, and **template**), showcasing a clean design.
 
 To create a new layout:
 1. In the **Templates** section, click on the **Views** tab
@@ -65,30 +65,40 @@ To create a new layout:
 
 This allows you to define a new base structure for use on pages.
 
-You can use this code as a base that contains everything necessary for your pages to use the elements of the site, such as the header, footer, service worker, and Google Tag Manager configuration. You can also modify the code as needed.
-
+When you create a layout, Modyo initializes it with a minimal structure. If you want your pages to use every element of the site, such as the header, the footer, the service worker, and the Google Tag Manager configuration, replace that content with the same code that ships in the **Base** layout and adjust it as needed:
 
 ```liquid
-{% html5 %}
+{% html5 %} <!-- HTML header with browser directives -->
 <head>
   {% snippet 'shared/general/head' %}
 </head>
-
-{% body %}
+{% body %} <!-- Body with automatic context classes -->
 {% snippet 'shared/general/body_tag_manager' %}
+<div id="modyo-site-alert-wrapper"></div>
 {% snippet 'shared/general/header' %}
-
-{{ site.breadcrumb }}
-<div id="main-layout">
-{{ content_for_layout }}
-</div>
-
-<script>{% snippet "shared/serviceworker/register_js" %}</script>
+<main id="content">
+  <div id="breadcrumb" class="mt-8">
+    <div class="container breadcrumb-inner">
+      {{ site.breadcrumb }}
+    </div>
+  </div>
+  {{ content_for_layout }}
+</main>
+<script nonce="{{csp_nonce}}">{% snippet "shared/service_worker/register_js" %}</script>
 {% snippet 'shared/general/footer' %}
-
 {% endbody %}
 {% endhtml5 %}
 ```
+
+If you write your own layout, watch out for these three details:
+
+- `<div id="modyo-site-alert-wrapper"></div>` is the container where the site injects its alerts. If you leave it out, the alerts are not displayed.
+- `<main id="content">` wraps the page content and is the anchor used by the theme and by the site's error views.
+- The <span v-pre>`nonce="{{csp_nonce}}"`</span> attribute is required on every inline `<script>` or `<style>` tag when your web app's [Content-Security-Policy](/en/platform/channels/sites#content-security-policy-csp) includes the nonce directive. Without it, the browser blocks the script and the service worker is never registered.
+
+:::warning Attention
+The path of the snippet that registers the service worker is `shared/service_worker/register_js`, with an underscore between `service` and `worker`. If you write it any other way, the snippet does not resolve and the registration is not injected into the page.
+:::
 
 To apply a new layout to a page, follow these steps:
 1. Go to the **Pages** section
@@ -125,12 +135,17 @@ It is necessary that your account's CDN is in the cloud for changes to be reflec
 
 ## Errors in Views
 
-In the views section, you can customize four types of errors:
+In the **Views** tab, inside the **errors** group, you can customize the three error views that the site ships with. All of them are rendered with the **Error** layout:
 
-- **Disabled**: Displayed when the site you are trying to access is [disabled](/en/platform/channels/sites).
-- **404**: If in the [site restrictions](/en/platform/channels/sites#privacy) configuration you decide to show 404 instead of redirecting to the home page, this error appears when entering an undefined URL.
-- **Privacy**: Shown when you do not have permissions to access the [site](/en/platform/channels/sites#privacy) or one of its [pages](/en/platform/channels/pages#privacy).
-- **Template**: Visible when the loaded page has a Liquid syntax error. It is unlikely that you will see this view, as from Modyo 8.1 onwards, the platform performs a syntax check before saving and publishing changes to Templates.
+- **disabled**: Displayed when the site you are trying to access is [disabled](/en/platform/channels/sites).
+- **404**: Displayed when you enter a URL that does not resolve, and also when a signed-in user opens a private page whose [segments](/en/platform/customers/segments) do not apply to them. If you enable **Redirect to home when a URL is not found** in the web app settings, the visitor goes to the home page instead of seeing this view.
+- **template**: Visible when the loaded page has a Liquid syntax error. It is unlikely that you will see this view, as from Modyo 8.1 onwards, the platform performs a syntax check before saving and publishing changes to Templates.
+
+There is no error view for privacy. When a visitor without a session requests a private site or page, the platform does not render any error view: it redirects them to the site's login page, or to the signup page if the web app is configured that way, and returns them to the URL they requested once they sign in.
+
+:::tip Tip
+As of Modyo 10.2, origination pages also respond with the **404** view and the site's styles when the URL does not resolve. They previously returned an empty body, so any customization you make to this view is also reflected on those URLs.
+:::
 
 ## CSS and JavaScript
 
