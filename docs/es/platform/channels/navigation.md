@@ -57,7 +57,7 @@ Para crear un Menú, sigue estos pasos:
 7. Una vez terminado, haz clic en **Publicar**.
 
 :::tip Tip
-Tu menú en este momento ya es público, pero no se manda a llamar. Se necesita usar una plantilla para que se despliegue en pantalla. Modyo ofrece un snippet de uso general en **Snippets, General, menu** y es llamado en la plantilla `base` usando <pre v-pre>`{% snippet 'shared/general/menu' %}`</pre>.
+Tu menú en este momento ya es público, pero no se manda a llamar. Se necesita usar una plantilla para que se despliegue en pantalla. Modyo ofrece un snippet de uso general en **Snippets, General, menu**, que el snippet **header** invoca dos veces (una para la barra de escritorio y otra para el panel lateral en móvil) y que llega a tus páginas porque la plantilla `base` incluye <pre v-pre>`{% snippet 'shared/general/header' %}`</pre>.
 :::
 
 **Acción principal**
@@ -70,8 +70,10 @@ Tu menú en este momento ya es público, pero no se manda a llamar. Se necesita 
 En la sección lateral derecha, puedes ver una barra que cambia de acuerdo al ítem seleccionado en el área principal. En esta sección, puedes ver las opciones:
 
 - **Nombre**: Nombre del elemento que aparecerá en el sitio.
-- **Página asociada**: Se puede asociar directamente a una página o a una URL personalizada.
-- **URL**: Si escogiste una URL personalizada en el elemento anterior, tienes diferentes opciones para configurar este ítem:
+- **Descripción**: Texto libre para acompañar al ítem. No se imprime solo en el sitio: queda disponible en Liquid como `menu_item.description` para que lo uses en tu propio marcado, por ejemplo como bajada del ítem o como texto de una notificación.
+- **Clases**: Cadena que se utilizará en un atributo de clase para una etiqueta HTML, por ejemplo `mdi mdi-circle`. Al igual que la descripción, queda disponible en Liquid como `menu_item.classes` y eres tú quien la imprime en el atributo `class` de tu marcado. Revisa ambos atributos en [Objetos](/es/platform/channels/liquid-markup/objects.html#menu).
+- **Layout Page asociado**: Destino del ítem. Puedes elegir una de las páginas del sitio, **URL** para escribir una dirección personalizada, o **Búsqueda en el sitio** para apuntar al buscador del sitio.
+- **URL**: Si escogiste **URL** en el elemento anterior, tienes diferentes opciones para configurar este ítem:
 	- HTTP(s): Apunta a una dirección usando HTTP(s). Ejemplos:
 		- http://www.example.com
 		- https://www.example.com
@@ -88,9 +90,76 @@ En la sección lateral derecha, puedes ver una barra que cambia de acuerdo al í
 		- sms:+569-123-45678,9-123-45678?body=hello%20there&param1=a%20value
 	- Email: Genera un enlace con el URI `mailto`. Ejemplos:
 		- mailto:info@example.com?subject=subject&cc=cc@example.com
-- **Abrir en pestaña nueva**: Añade el atributo `target='blank'` al elemento HTML del ítem del menú, para que al hacer clic, se abra en una pestaña nueva.
+- **Abrir en una pestaña nueva**: Solo aparece cuando el destino es una **URL**. Añade los atributos `target="_blank"` y `rel="noopener noreferrer"` al enlace del ítem, para que al hacer clic se abra en una pestaña nueva.
 - **Privado**: Hace que el elemento seleccionado sea visible solo cuando hay una sesión de usuario activa en el sitio.
 - **Segmentos**: Si hay segmentos creados, también podrás segmentar este elemento para que los usuarios puedan ver este ítem de menú solo cuando tengan una sesión activa y que además se encuentren dentro de los segmentos seleccionados.
+
+## El tag menu
+
+El tag <span v-pre>`{% menu %}`</span> imprime un menú completo, con sus dropdowns, sin que tengas que escribir el marcado. Es el camino rápido: si necesitas control total sobre el HTML, arma el menú a mano recorriendo `menus`, como se muestra en los ejemplos de más abajo.
+
+### Cómo se invoca
+
+El tag no recibe parámetros: lee la variable `menu` del contexto, así que tienes que asignarla antes con el identificador del menú que quieres imprimir.
+
+```liquid
+{% assign menu = menus['main'] %}
+{% menu %}
+```
+
+Las variables que asignas en una plantilla o en un snippet quedan disponibles en los snippets que se invocan desde ahí, de modo que puedes hacer el `assign` una sola vez y reutilizarlo.
+
+:::warning Atención
+Si invocas el tag sin haber asignado `menu`, o si el identificador no corresponde a ningún menú del sitio, la página imprime un comentario `<!-- Liquid Error -->` en lugar del menú.
+:::
+
+### HTML que genera
+
+El tag emite siempre la misma estructura, pensada para el sistema de dropdown de Bootstrap:
+
+```html
+<ul class="nav navbar-nav">
+	<li class='nav-item nav-item-inicio active'>
+		<a class='nav-link ' href='https://tusitio.com/mi-sitio/inicio'><span>Inicio</span></a>
+	</li>
+	<li class='nav-item nav-item-productos dropdown menu-item'>
+		<a class='nav-link dropdown-toggle' href='https://tusitio.com/mi-sitio/productos'><span>Productos</span></a>
+		<div class='submenu-1 dropdown-menu'>
+			<a class='dropdown-item' href='https://tusitio.com/mi-sitio/productos/cuentas'><span>Cuentas</span> </a>
+		</div>
+	</li>
+</ul>
+```
+
+Estos son los ganchos que tienes para aplicar tus estilos:
+
+| Elemento | Clases |
+| -------- | ------ |
+| Lista contenedora | `nav navbar-nav` |
+| Ítem | `nav-item` y `nav-item-` seguido de la etiqueta del ítem parametrizada, por ejemplo `nav-item-mis-productos`. Se agrega `dropdown menu-item` si el ítem tiene hijos y `active` si el ítem corresponde a la página que se está viendo |
+| Enlace del ítem | `nav-link`, más `dropdown-toggle` si el ítem tiene hijos |
+| Contenedor de los hijos | `submenu-N dropdown-menu`, donde `N` es la posición del ítem padre entre los ítems visibles, partiendo de 0 |
+| Enlace de un hijo | `dropdown-item` |
+
+La etiqueta de cada ítem viene envuelta en un `<span>`, tanto en el primer nivel como en el segundo.
+
+:::warning Atención
+El tag renderiza solo dos niveles: los ítems raíz y sus hijos directos. Aunque la navegación te deja anidar hasta tres niveles, los nietos no aparecen en el HTML que genera el tag. Si necesitas el tercer nivel, arma el menú a mano, como hace el snippet general `menu`.
+:::
+
+### Enlaces que genera
+
+- Si el ítem tiene marcada la opción **Abrir en una pestaña nueva**, el enlace se emite con `target="_blank"` y `rel="noopener noreferrer"`.
+- Las URLs que empiezan con `http://`, `https://`, `tel:`, `mailto:` o `sms:` se emiten tal cual.
+- Cualquier otra URL se reescribe como absoluta sobre la URL base del sitio. Un ítem con la URL `/contacto` se emite como `https://tusitio.com/mi-sitio/contacto`, y un ancla como `#seccion` se emite como `https://tusitio.com/mi-sitio/#seccion`, es decir, apuntando a la portada del sitio y no a la página en la que está el visitante.
+
+### Ítems que se muestran
+
+- Los ítems marcados como **Privado** no se imprimen para los visitantes sin sesión.
+- Si además tienen segmentos asociados, solo se imprimen para los usuarios cuya sesión pertenece a alguno de esos segmentos.
+- Las dos reglas se aplican por igual a los ítems raíz y a sus hijos: si un ítem padre queda oculto, su dropdown tampoco se imprime.
+
+El menú resultante se reutiliza mientras no cambien la página, el usuario ni la versión del menú, así que los cambios que publiques en la navegación se ven en la siguiente visita.
 
 ## Ejemplos de Menú
 
@@ -98,39 +167,52 @@ El snippet general `menu` puede satisfacer las necesidades básicas de un sitio,
 
 Las primeras líneas encapsuladas por <span v-pre>{{ }} o {% %}</span> pertenecen a Liquid y se utilizan para asignar variables o comenzar un bucle para desplegar información del menú.
 
+A diferencia de los ejemplos que vienen más abajo, este snippet no asigna la variable `menu`: la hereda del snippet **header**, que la declara en su primera línea con <span v-pre>`{% assign menu = menus['main'] %}`</span> y desde ahí lo invoca dos veces. Si copias este marcado a otra plantilla, acuérdate de asignar `menu` antes de usarlo.
+
 El siguiente listado describe las variables importantes para el menú:
 
-- menu: Esta variable toma el menú con identificador `main` dentro de Modyo Platform -> Navegación.
+- menu: Menú que se va a imprimir. Se hereda del snippet que invoca a `menu`; si armas el tuyo desde cero, asígnalo con <span v-pre>`{% assign menu = menus['main'] %}`</span>.
 - items_to_show: Toma los ítems de menú que son visibles.
 - active: Utilizado para agregar una clase CSS llamada `active` en caso de que este ítem sea activado.
 - children_to_show: Si existen hijos del ítem actual, toma los ítems en esta variable y los despliega como segundo nivel en la jerarquía del menú.
+- grandchildren_to_show: Si existen hijos del ítem hijo, toma los ítems en esta variable y los despliega como tercer nivel dentro del mismo dropdown.
 
 Al entrar a la sección de Plantillas de tu sitio en Modyo Platform, podrás hacer clic en el snippet general `menu` para ver el HTML del menú. Se ve de la siguiente manera:
 
 `menu`
 
 ```html
-{% assign menu = menus['main'] %}
-<ul class="nav navbar-nav" role="menu" aria-label="Main menu {{responsive}}">
+<ul class="nav navbar-nav justify-content-end flex-grow-1" role="menu" aria-label="Main menu {{responsive}}">
 	{% assign items_to_show = menu.items | visible_items %}
 	{% for item in items_to_show %}
 	{% assign active = item.url | active_page: request.url %}
 	{% assign children_to_show = item.child_items | visible_items %}
-	{% if children_to_show.size > 0 %}
 	<li class="nav-item nav-item-{{ item.parameterized_label }} dropdown menu-item {{ active }}" role="none">
-		<a target="{{ item.target }}" rel="{{ item.target | item_rel}}" class="nav-link dropdown-toggle {% for child in children_to_show %}{% if child.url == request.url  %}active{% endif %}{% endfor %}" href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dropdown{{ item.label | replace: ' ','' | replace: 'ñ','n' | capitalize }}Button{{ responsive }}" role="menuitem">
-			{{ item.label }} <span class="sr-only">dropdown</span>
+		{% if children_to_show.size > 0 %}
+		<button type="button" class="nav-link {{ active }} dropdown-toggle {% for child in children_to_show %}{% if child.url == request.url %}active{% endif %}{% endfor %}" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown{{ item.label | replace: ' ','' | replace: 'ñ','n' | capitalize }}Button{{ responsive }}" role="menuitem">
+			{{ item.label }} <span class="visually-hidden">dropdown</span>
+		</button>
+		{% else %}
+		<a target="{{ item.target }}" rel="{{ item.target | item_rel}}" class="nav-link {{ active }}" href="{{ item.url }}" id="dropdown{{ item.label | replace: ' ','' | replace: 'ñ','n' | capitalize }}Button{{ responsive }}" role="menuitem">
+			{{ item.label }}
 		</a>
-		<div class="submenu-{{ item.label | replace: ' ','' | replace: 'ñ','n' | capitalize }} dropdown-menu" aria-labelledby="dropdown{{ item.label | replace: ' ','' | replace: 'ñ','n' | capitalize }}Button{{responsive}}" aria-expanded="false">
+		{% endif %}
+		{% if children_to_show.size > 0 %}
+		<div class="dropdown-menu submenu-{{ item.label | replace: ' ','' | replace: 'ñ','n' | capitalize }}" aria-labelledby="dropdown{{ item.label | replace: ' ','' | replace: 'ñ','n' | capitalize }}Button{{responsive}}">
 			{% for child in children_to_show %}
 			<a target="{{ child.target }}" rel="{{ child.target | item_rel}}" class="dropdown-item" href="{{ child.url }}" {% if child.url == request.url %}aria-current="page"{% endif %}>
 				{{ child.label }}
 			</a>
+			{% assign grandchildren_to_show = child.child_items | visible_items %}
+			{% if grandchildren_to_show.size > 0 %}
+			{% for child in grandchildren_to_show %}
+			<a target="{{ child.target }}" rel="{{ child.target | item_rel}}" class="dropdown-item small ms-2" href="{{ child.url }}" {% if child.url == request.url %}aria-current="page"{% endif %}>
+				{{ child.label }}
+			</a>
+			{% endfor %}
+			{% endif %}
 			{% endfor %}
 		</div>
-		{% else %}
-	<li class="nav-item nav-item-{{ item.parameterized_label }} {{ active }}" role="none">
-		<a target="{{ item.target }}" class="nav-link" rel="{{ item.target | item_rel}}" href="{{ item.url }}" {% if item.url == request.url %}aria-current="page" {% endif %} role="menuitem" aria-label="{{ item.label }} {{responsive}}">{{ item.label }}</a>
 		{% endif %}
 	</li>
 	{% endfor %}
@@ -175,7 +257,7 @@ A continuación, tenemos un menú que también llama a `main`, pero ahora en for
 
 ### Menú tres niveles
 
-Para poder desplegar un menú de tres niveles, se tiene que agregar otro bucle que considere si los items hijos contienen más items. Para esto, se asigna la variable `grandchildren` al final del primer bucle y este tiene que iterar sobre los items de los hijos (osase los items nietos):
+El snippet general ya despliega el tercer nivel como enlaces indentados dentro del mismo dropdown. Si prefieres agruparlos en una lista anidada, agrega otro bucle que considere si los ítems hijos contienen más ítems: se asigna la variable `grandchildren_to_show` al final del segundo bucle y se itera sobre los ítems nietos:
 
 ```html
 {% assign menu = menus['main'] %}
