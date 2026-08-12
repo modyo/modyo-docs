@@ -613,22 +613,23 @@ Los roles que ya tenías conservan el acceso que tenían: los que veían el deta
 
 El listado de respuestas incluye una caja de búsqueda que te permite encontrar respuestas por los datos del usuario, los valores de sus campos personalizados, las respuestas ingresadas en los campos del flujo y el contenido de las tareas.
 
-La búsqueda requiere un mínimo de 3 caracteres, no distingue mayúsculas ni acentos y encuentra coincidencias parciales. Por ejemplo, `lau` encuentra a "Claudio" y `perez` encuentra a "Pérez".
+La búsqueda requiere un mínimo de 3 caracteres, no distingue mayúsculas ni acentos y encuentra coincidencias parciales. Por ejemplo, `lau` encuentra a "Claudio" y `perez` encuentra a "Pérez". Las claves `id` y `uuid` son la excepción y se explican más abajo.
 
 Puedes buscar de dos formas, que además puedes combinar en una misma consulta:
 
-- **Texto libre**: Escribe uno o más términos y la búsqueda los encontrará en los datos del usuario, los valores de sus campos personalizados y el contenido de las respuestas.
+- **Texto libre**: Escribe uno o más términos y la búsqueda los encontrará en los datos del usuario, los valores de sus campos personalizados, las respuestas ingresadas en los campos del flujo y el contenido de las tareas.
 - **Pares clave=valor**: Escribe la clave de un campo seguida de `=` y el valor a buscar para acotar la búsqueda a ese campo específico.
 
 Las claves disponibles para los pares `clave=valor` son:
 
-- **Campos del usuario**: `first_name`, `last_name`, `second_last_name`, `email`, `username`, `uuid` e `id`.
+- **Datos del usuario**: `first_name`, `last_name`, `second_last_name`, `email` y `username`.
+- **Identificadores**: `id` y `uuid`. Estas dos no se comportan como el resto: cada una busca en dos lugares a la vez y exige el valor exacto. Se explican en [Buscar por identificador](/es/platform/customers/origination.html#buscar-por-identificador).
 - **Campos personalizados del usuario**: La clave del campo personalizado, con o sin el prefijo `_ucf_`. Por ejemplo, `pais=Chile` y `_ucf_pais=Chile` son equivalentes.
 - **Preguntas del flujo**: El identificador de la pregunta definido en el flujo de originación. Por ejemplo, `rut=18301757`.
 
 Al usar pares `clave=valor` ten en cuenta lo siguiente:
 
-- La clave debe escribirse completa, mientras que el valor sí admite coincidencias parciales.
+- La clave debe escribirse completa, mientras que el valor sí admite coincidencias parciales. Las claves `id` y `uuid` son la excepción: exigen el valor exacto.
 - Para buscar valores o frases con espacios usa comillas dobles. Por ejemplo, `first_name="Jean Pierre"` o `"crédito hipotecario"`.
 - Todas las condiciones se combinan entre sí, por lo que una respuesta debe cumplir todos los términos y pares de la consulta para aparecer en los resultados.
 - Si la clave no existe o el valor está vacío, el término se busca como texto libre sin generar errores.
@@ -643,6 +644,25 @@ Algunos ejemplos de búsquedas:
 | `rut=18301757` | Respuestas donde la pregunta con identificador `rut` contiene "18301757". |
 | `first_name="Jean Pierre"` | Respuestas cuyo usuario contiene "Jean Pierre" en su nombre. |
 | `pais=Chile rut=18301757 hipotecario` | Respuestas que cumplen las tres condiciones a la vez. |
+| `id=42` | La respuesta cuyo id es 42 y, además, todas las respuestas del usuario cuyo id es 42. |
+
+##### Buscar por identificador
+
+Las claves `id` y `uuid` son distintas del resto: cada una busca **en dos lugares a la vez** y basta que coincida uno de los dos para que la respuesta aparezca en los resultados.
+
+| Clave  | Dónde busca                                        |
+|--------|----------------------------------------------------|
+| `id`   | El id del usuario **o** el id de la respuesta.     |
+| `uuid` | El uuid del usuario **o** el uuid de la respuesta. |
+
+La consecuencia práctica es que un mismo valor puede traer resultados de dos orígenes distintos. Por ejemplo, `id=42` devuelve la respuesta cuyo id es 42 y, además, todas las respuestas del usuario cuyo id es 42, aunque no tengan ninguna relación entre sí. Si lo que buscas es una respuesta puntual, revisa la columna del usuario para descartar las que llegaron por la otra vía.
+
+Ambas claves exigen el valor exacto, a diferencia del resto de la búsqueda:
+
+- `uuid` distingue mayúsculas de minúsculas y no admite coincidencias parciales. Copia el identificador completo tal como aparece en la plataforma: la mitad de un uuid no devuelve nada.
+- `id` se interpreta como un número entero y solo conserva los dígitos iniciales del valor. Escríbelo únicamente con dígitos: `id=18.301.757` busca la respuesta con id `18`, y `id=abc` no devuelve resultados. En ninguno de los dos casos aparece un aviso.
+
+Si pegas un uuid en la caja sin la clave, la búsqueda lo trata como texto libre y solo encuentra la respuesta con ese uuid, no las del usuario con ese uuid. Para lo segundo tienes que escribir `uuid=`.
 
 :::tip Actualización de los resultados
 Los cambios recientes en una respuesta pueden tardar unos segundos en reflejarse en los resultados de la búsqueda. Los cambios en los datos del usuario, en los valores de sus campos personalizados y en los segmentos se reflejan de forma diferida.
