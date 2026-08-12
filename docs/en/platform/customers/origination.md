@@ -612,22 +612,23 @@ The roles you already had keep the access they had: those that saw the full deta
 
 The submission list includes a search box that allows you to find submissions by the user's data, the values of their custom fields, the answers entered in the flow fields, and the content of the tasks.
 
-The search requires a minimum of 3 characters, is case- and accent-insensitive, and finds partial matches. For example, `lau` finds "Claudio" and `perez` finds "Pérez".
+The search requires a minimum of 3 characters, is case- and accent-insensitive, and finds partial matches. For example, `lau` finds "Claudio" and `perez` finds "Pérez". The `id` and `uuid` keys are the exception and are explained below.
 
 You can search in two ways, which you can also combine in the same query:
 
-- **Free text**: Type one or more terms and the search will find them in the user's data, the values of their custom fields, and the content of the answers.
+- **Free text**: Type one or more terms and the search will find them in the user's data, the values of their custom fields, the answers entered in the flow fields, and the content of the tasks.
 - **Key=value pairs**: Type the key of a field followed by `=` and the value to search for, to narrow the search down to that specific field.
 
 The available keys for `key=value` pairs are:
 
-- **User fields**: `first_name`, `last_name`, `second_last_name`, `email`, `username`, `uuid`, and `id`.
+- **User data**: `first_name`, `last_name`, `second_last_name`, `email`, and `username`.
+- **Identifiers**: `id` and `uuid`. These two do not behave like the rest: each one searches two places at once and does not allow partial matches. They are explained in [Search by identifier](/en/platform/customers/origination.html#search-by-identifier).
 - **User custom fields**: The custom field key, with or without the `_ucf_` prefix. For example, `pais=Chile` and `_ucf_pais=Chile` are equivalent.
 - **Flow questions**: The question identifier defined in the origination flow. For example, `rut=18301757`.
 
 When using `key=value` pairs, keep the following in mind:
 
-- The key must be written in full, while the value does allow partial matches.
+- The key must be written in full, while the value does allow partial matches. The `id` and `uuid` keys are the exception: they do not allow partial matches.
 - To search for values or phrases with spaces, use double quotes. For example, `first_name="Jean Pierre"` or `"crédito hipotecario"`.
 - All conditions are combined together, so a submission must satisfy every term and pair in the query to appear in the results.
 - If the key does not exist or the value is empty, the term is searched as free text without generating errors.
@@ -642,6 +643,25 @@ Some search examples:
 | `rut=18301757` | Submissions where the question with identifier `rut` contains "18301757". |
 | `first_name="Jean Pierre"` | Submissions whose user contains "Jean Pierre" in their name. |
 | `pais=Chile rut=18301757 hipotecario` | Submissions that meet all three conditions at once. |
+| `id=42` | The submission whose id is 42 and, in addition, every submission of the user whose id is 42. |
+
+##### Search by identifier
+
+The `id` and `uuid` keys are different from the rest: each one searches **two places at once**, and a match in either one is enough for the submission to show up in the results.
+
+| Key    | Where it searches                                      |
+|--------|--------------------------------------------------------|
+| `id`   | The user's id **or** the submission's id.              |
+| `uuid` | The user's uuid **or** the submission's uuid.          |
+
+The practical consequence is that a single value can bring results from two different sources. For example, `id=42` returns the submission whose id is 42 and, in addition, every submission of the user whose id is 42, even though they are unrelated. If you are after one specific submission, check the user column to rule out the ones that came in through the other path.
+
+Neither key allows partial matches, unlike the rest of the search:
+
+- `uuid` is also case-sensitive. Copy the full identifier exactly as it appears in the platform: half a uuid returns nothing.
+- `id` is read as a whole number and only keeps the leading digits of the value. Type digits only: `id=18.301.757` searches for the submission with id `18`, and `id=abc` returns no results. Neither case shows any warning.
+
+If you paste a uuid into the box without the key, the search treats it as free text and only finds the submission with that uuid, not the submissions of the user with that uuid. For the latter you have to type `uuid=`.
 
 :::tip Results update
 Recent changes to a submission may take a few seconds to be reflected in the search results. Changes to the user's data, the values of their custom fields, and segments are reflected in a deferred manner.
