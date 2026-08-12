@@ -633,8 +633,8 @@ A repeatable group brings together several questions the user can answer more th
 | **repeatable_group.fields['question_identifier']**      | The answer to that question inside the repeatable group. | ```response``` |
 
 ```liquid
-{% for group in user_input_task_response.fields['group_identifier'] %}
-  {{ group.fields['question_identifier'] }}
+{% for answered_group in user_input_task_response.fields['group_identifier'] %}
+  {{ answered_group.fields['question_identifier'] }}
 {% endfor %}
 ```
 

@@ -640,8 +640,8 @@ Un grupo repetible reúne varias preguntas que el usuario puede responder más d
 | **repeatable_group.fields['identificador_de_la_pregunta']** | Respuesta de esa pregunta dentro del grupo repetible.       | ```respuesta``` |
 
 ```liquid
-{% for grupo in user_input_task_response.fields['identificador_del_grupo'] %}
-  {{ grupo.fields['identificador_de_la_pregunta'] }}
+{% for grupo_respondido in user_input_task_response.fields['identificador_del_grupo'] %}
+  {{ grupo_respondido.fields['identificador_de_la_pregunta'] }}
 {% endfor %}
 ```
 
