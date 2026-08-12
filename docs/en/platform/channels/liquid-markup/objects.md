@@ -31,6 +31,7 @@ Account objects are mainly used in the context of account authentication, which 
 | **account.url**        | The Modyo Platform URL, including the protocol and sub-domain.                                             | ```https://test.modyo.com```                  |
 | **account.host**       | The name of the Modyo Platform sub-domain.                                                                 | ```test```                                    |
 | **account.google_key** | If there is authentication with Google, it returns the credential key; otherwise, it returns empty (void). | ```AIzaSyDmrYmbFpzqdIxHycHbgtJrs9lhKOfggEE``` |
+| **account.name**       | The name of the account.                                                                                   | ```Modyo```                                   |
 
 ## adminuser
 
@@ -121,6 +122,7 @@ Create dynamic content in your spaces using Entries. In this object you have acc
 | Object                  | Description                                                                                  | Example                                                                   |
 |-------------------------|----------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|
 | **entry.meta.space**         | Name of the space associated with the entry.                                                 | ```space1```                                                              |
+| **entry.meta.space_uid**     | Unique ID of the space associated with the entry. While `entry.meta.space` returns the display name, this is the identifier used to index `spaces` in templates. | ```space-1```                                                             |
 | **entry.meta.category**      | Category path for this entry.                                                                | ```category-1/category-2```                                               |
 | **entry.meta.category_name** | Category name for this entry.                                                                | ```category 2```                                                          |
 | **entry.meta.category_slug** | This entry's category slug.                                                                  | ```category-2```                                                          |
@@ -303,6 +305,17 @@ Extends the functionality of the Grid object and contains the following addition
 | **side_right_three_cols_grid.col1_widgets**       | Array of widget type objects. |         |
 | **side_right_three_cols_grid.col2_widgets**       | Array of widget type objects. |         |
 | **side_right_three_cols_grid.col3_widgets**       | Array of widget type objects. |         |
+
+## group
+
+Group objects represent a group of account administrators. They are not an end user segment: they group the people who work in the admin. The available attributes are:
+
+| Object         | Description         | Example                                    |
+|----------------|---------------------|--------------------------------------------|
+| **group.uuid** | The group's UUID.   | ```9f1c0c2e-3f5a-4a1b-9c3d-2b6f8a1e4d70``` |
+| **group.name** | The group's name.   | ```Risk analysts```                        |
+
+You reach this object from the `assignee_group` attribute of a pending review, a task validation or a pending review task response, which is where the group the work was assigned to is recorded.
 
 ## location
 
@@ -584,6 +597,8 @@ Every task response shares the attributes it inherits from the base response: `t
 |-----------------------------------------------|---------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
 | **pending_review_task_response.approved**     | Whether the task has been approved.                                 | ```true```                                                                                                                                        |
 | **pending_review_task_response.content**      | The content of the review.                                          | ```This is the content of the review```                                                                                                           |
+| **pending_review_task_response.assignee**     | Administrator assigned to the review. Returns an adminuser object.  |                                                                                                                                                   |
+| **pending_review_task_response.assignee_group** | Administrator group assigned to the review. Returns a group object. |                                                                                                                                                 |
 | **code_snippet_task_response.data**           | The content of the code snippet. Alias for the `content` attribute. | ```{"submission"=>{"fields"=>{"car"=>"fiat", "year"=>1999, "color"=>"black", "extras"=>["ac", "gps", "sunroof"], "expiration"=>"2026-02-01"}}}``` |
 | **code_snippet_task_response.completed**      | Whether the task has been completed.                                | ```false```                                                                                                                                       |
 | **code_snippet_task_response.content**        | The content of the code snippet.                                    | ```{"submission"=>{"fields"=>{"car"=>"fiat", "year"=>1999, "color"=>"black", "extras"=>["ac", "gps", "sunroof"], "expiration"=>"2026-02-01"}}}``` |
@@ -608,6 +623,24 @@ Every task response shares the attributes it inherits from the base response: `t
 |------------------------------------------------------------|----------------------------------------------------|----------------|
 | **user_input_task_response.task**                          | The user input task to which the response belongs. |                |
 | **user_input_task_response.fields['question_identifier']** | The answers for the user input task response.      | ```response``` |
+
+### repeatable_group
+
+A repeatable group brings together several questions the user can answer more than once, for example to enter the details of each dependent. To read the answers, index `fields` with the identifier of the group question: you get the collection of answered groups, and on each element you index `fields` again with the identifier of the question you want to read.
+
+| Object                                                  | Description                                            | Example        |
+|---------------------------------------------------------|--------------------------------------------------------|----------------|
+| **repeatable_group.fields['question_identifier']**      | The answer to that question inside the repeatable group. | ```response``` |
+
+```liquid
+{% for group in user_input_task_response.fields['group_identifier'] %}
+  {{ group.fields['question_identifier'] }}
+{% endfor %}
+```
+
+:::warning Attention
+Do not confuse this object with `repeatable_group_field`, which appears in the [field](/en/platform/channels/liquid-markup/objects.html#field) reference. That one is a content field from the Content module; `repeatable_group` holds the answers to a form from the Customers module. They share the name and are unrelated.
+:::
 
 ## type
 
@@ -655,6 +688,14 @@ Use user objects to get information about your users from the Customers module.
 | **user.username**                    | The user's username.                                    | ```ivan@modyo.com```                                 |
 | **user.uuid**                        | The uuid of the user.                                   | ```cdc7f0e2-b5c3-4b92-aa34-962ffa0bi572```           |
 | **user.realm_uid**                   | The user's realm.                                       | ```my-realm```                                       |
+| **user.invited_submissions**         | Collection of submissions the user was invited to through an active invitation. Cancelled invitations are excluded and the order goes from the most recent to the oldest. |                     |
+| **user.unsubscribe_link**            | The user's unsubscribe link, for messaging templates.   | ```https://test.modyo.com/realms/default/mailing/unsubscribe?unsubscribe_token=ab12cd34``` |
+
+`user.invited_submissions` returns a collection, so it composes with the [by_origination](/en/platform/channels/liquid-markup/filters.html) filter to keep only the submissions of a given origination:
+
+```liquid
+{% assign source = user.invited_submissions | by_origination: origination.uid | first %}
+```
 | **user.current_login_at**            | Timestamp of current login.                             | ```2025-10-21 11:00:00 UTC```                        |
 | **user.current_login_ip**            | IP used for current login.                              | ```203.0.113.10```                                   |
 | **user.last_login_at**               | Timestamp of previous login.                            | ```2025-10-19 09:30:01 UTC```                        |
