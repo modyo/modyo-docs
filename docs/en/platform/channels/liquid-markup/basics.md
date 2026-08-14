@@ -270,10 +270,10 @@ Or use HTML entities:
 ### 1. Undefined variables
 
 ```liquid
-<!-- Wrong: will cause error if user doesn't exist -->
+<!-- Ambiguous: if user doesn't exist, this prints empty with no warning -->
 {{ user.name.first }}
 
-<!-- Right: validate first -->
+<!-- Better: validate first and handle the empty case -->
 {% if user %}
   {{ user.name.first }}
 {% endif %}
@@ -308,6 +308,59 @@ Or use HTML entities:
 <!-- Right: with pipe -->
 {{ text | upcase }}
 ```
+
+## Render Error Behavior
+
+Modyo checks your Liquid syntax when you save a template, but that check only covers parsing: it catches an unclosed tag or an invalid argument and stops you from saving. Anything that fails during rendering passes that check and reaches the published page.
+
+At render time the platform runs in non-strict mode: rendering never breaks the page, it degrades it silently. These are the four symptoms you will run into and what each one means.
+
+### A variable or attribute that doesn't exist prints empty
+
+Variables aren't strict. A variable that isn't in the context, or an attribute the object doesn't have, raises no error: it prints as an empty string.
+
+```liquid
+{{ page_titles }}
+{{ page.made_up_title }}
+```
+
+Both lines produce exactly the same output as a legitimately empty value, so a misspelled name, data that hasn't loaded yet and a variable used outside its context are indistinguishable on the published page. When something doesn't show up, check the spelling first and then that the variable exists on that page type; see [Context Variables](/en/platform/channels/liquid-markup/variables.html#context-variables).
+
+### A filter that doesn't exist returns the value untransformed
+
+Filters aren't strict either. If you write a filter the platform doesn't have, Liquid neither fails nor skips it: it returns the input value exactly as it arrived.
+
+```liquid
+{{ "text" | filter_that_does_not_exist }}
+```
+
+That line prints `text`. The serious case is when the input value is a Modyo object instead of a string: since nothing transforms it, the page publishes the object's internal name, for example `Liquid::Drops::Assets::VideoAssetDrop`. There is no exception, no message and no visible hint of the cause. It is the symptom shared by misspelled filters and by filters that were removed from the platform; check the catalog in [Filters](/en/platform/channels/liquid-markup/filters.html).
+
+### A render error leaves a comment in the HTML
+
+When rendering does fail, Modyo catches the error, logs it server side and leaves the comment `<!-- Liquid Error -->` in the published HTML, right where it failed. The visitor sees no message: they see a gap.
+
+Searching for `Liquid Error` in the published page source is the fastest way to locate the exact spot in the template that failed.
+
+#### The exception: indexing an identifier that doesn't exist
+
+Some accesses don't render empty, they abort rendering. They are the ones that look an element up by its identifier:
+
+- <code v-pre>spaces['uid']</code> and <code v-pre>spaces['uid'].types['uid']</code>
+- <code v-pre>menus['slug']</code>
+- <code v-pre>fields['uid']</code> on an Origination task response
+
+If the identifier matches nothing, you don't get an empty value: you get a render error and the comment in its place. There is no way to check beforehand, because any check goes through indexing. What you can do is contain the damage: group the access and its use inside the same <code v-pre>{% if %}</code>, so the error takes that whole block instead of leaving the comment in the middle of an HTML attribute and breaking the markup.
+
+### Snippets can nest up to 99 levels
+
+Snippet chains have a ceiling. You can nest up to 99 levels; the attempt to open level 100 doesn't run and the page publishes the literal text `[Liquid Internal Error] Nesting too deep` instead.
+
+Seeing that text on a page almost always means a snippet includes itself, directly or indirectly. Review the <code v-pre>{% snippet %}</code> chain from the point where the message appears.
+
+:::warning Attention
+None of these four behaviors is caught when you save the template, because they all happen at render time. A template can be saved and published without a single warning and still print blanks, error comments or an object's internal name. See [Errors in Views](/en/platform/channels/templates.html#errors-in-views).
+:::
 
 ## Conventions and Best Practices
 
