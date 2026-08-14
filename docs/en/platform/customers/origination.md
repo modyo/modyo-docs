@@ -109,7 +109,7 @@ The task is refreshed every 5 seconds so that the end user knows if the task has
 
 When configuring the task, you can define an **Assignee**: an administrator or a group of administrators responsible for the validations. When selecting a group, you can assign the whole group or a specific user within it. If you do not define an assignee, validations are assigned by default to the submission assignee.
 
-Assigned administrators receive an email when a validation is pending and can also review it from the **My tasks** view in the main menu, filtering by the **Validation review** task type. The user receives an internal notification when their task is approved or rejected.
+Assigned administrators receive an email when a validation is pending and can also review it from the [**My tasks**](/en/platform/core/my-tasks.html) view in the main menu, filtering by the **Validation review** task type. The user receives an internal notification when their task is approved or rejected.
 
 In a specific submission, you can reassign the validation from the **Validations** tab, once the user has completed the tasks to validate.
 
@@ -460,7 +460,7 @@ Each task in the flow has the **Assigned to** option, which defines who answers 
 - **User**: The task is answered by the end user on the origination page.
 - **Agent**: The task is answered by an administrator from the admin. **Validation** and **Pending review** tasks are always agent tasks; **Input** and **Code snippet** tasks can be configured in either mode.
 
-When the flow reaches an agent task, the assigned administrators receive an email with a direct link to the task and also see it in the **My tasks** view. The effective assignee is resolved in this order: the assignee of the task response, the assignee configured on the task and, failing that, the assignee of the submission; you can reassign a specific task from the submission view, which notifies the new assignee.
+When the flow reaches an agent task, the assigned administrators receive an email with a direct link to the task and also see it in the [**My tasks**](/en/platform/core/my-tasks.html) view. The effective assignee is resolved in this order: the assignee of the task response, the assignee configured on the task and, failing that, the assignee of the submission; you can reassign a specific task from the submission view, which notifies the new assignee.
 
 From the submission view, the agent opens the task and answers the form with the same experience as the site: live conditional logic, file uploads, repeatable groups, and code snippets. While the task awaits the agent's action, the user sees on the origination page the text configured in **Waiting message shown to the user**.
 

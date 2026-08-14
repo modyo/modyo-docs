@@ -109,7 +109,7 @@ Se hace un refresco de la tarea cada 5 segundos para que el usuario final sepa s
 
 Al configurar la tarea, puedes definir un **Asignado**: un administrador o un grupo de administradores responsable de las validaciones. Al seleccionar un grupo, puedes asignar a todo el grupo o a un usuario específico dentro de él. Si no defines un asignado, las validaciones se asignan de forma predeterminada al asignado de la respuesta.
 
-Los administradores asignados reciben un correo cuando una validación queda pendiente y también pueden revisarla desde la vista **Mis tareas** del menú principal, filtrando por el tipo de tarea **Revisión de validación**. El usuario recibe una notificación interna cuando su tarea es aprobada o rechazada.
+Los administradores asignados reciben un correo cuando una validación queda pendiente y también pueden revisarla desde la vista [**Mis tareas**](/es/platform/core/my-tasks.html) del menú principal, filtrando por el tipo de tarea **Revisión de validación**. El usuario recibe una notificación interna cuando su tarea es aprobada o rechazada.
 
 En una respuesta específica, puedes reasignar la validación desde la pestaña **Validaciones**, una vez que el usuario haya completado las tareas a validar.
 
@@ -461,7 +461,7 @@ Cada tarea del flujo tiene la opción **Asignado a**, que define quién la respo
 - **Usuario**: La tarea la responde el usuario final en la página de originación.
 - **Agente**: La tarea la responde un administrador desde el admin. Las tareas de **Validación** y **Revisión pendiente** son siempre de agente; las tareas **Input** y **Snippet de código** pueden configurarse en cualquiera de los dos modos.
 
-Cuando el flujo llega a una tarea de agente, los administradores asignados reciben un correo con el enlace directo a la tarea y también la ven en la vista **Mis tareas**. El asignado efectivo se resuelve en este orden: el asignado de la respuesta a la tarea, el asignado configurado en la tarea y, en su defecto, el asignado general de la respuesta; puedes reasignar una tarea específica desde la vista de la respuesta, lo que notifica al nuevo asignado.
+Cuando el flujo llega a una tarea de agente, los administradores asignados reciben un correo con el enlace directo a la tarea y también la ven en la vista [**Mis tareas**](/es/platform/core/my-tasks.html). El asignado efectivo se resuelve en este orden: el asignado de la respuesta a la tarea, el asignado configurado en la tarea y, en su defecto, el asignado general de la respuesta; puedes reasignar una tarea específica desde la vista de la respuesta, lo que notifica al nuevo asignado.
 
 Desde la vista de la respuesta, el agente abre la tarea y responde el formulario con la misma experiencia del sitio: lógica condicional en vivo, carga de archivos, grupos repetibles y snippets de código. Mientras la tarea espera la acción del agente, el usuario ve en la página de originación el texto configurado en **Mensaje de espera que ve el usuario**.
 
