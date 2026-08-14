@@ -91,6 +91,8 @@ Para incluir un nuevo campo debes seleccionar una tarea y seleccionar la pestañ
 
 Origination soporta todos los tipos de entrada disponibles en formularios. Puedes ver el listado completo de tipos en la [documentación de formularios](https://docs.modyo.com/es/platform/customers/forms#anadir)
 
+Además, las tareas Input ofrecen tres tipos de campo que **solo existen en Origination** y no están disponibles en los formularios: **Documento**, **Documento de identidad** y **Selfie**. Los tres se describen en [Campos especializados de subida de archivos](/es/platform/customers/origination.html#campos-especializados-de-subida-de-archivos).
+
 
 #### Editar campos
 
@@ -101,6 +103,92 @@ Al seleccionar un campo, puedes modificar sus propiedades al dirigirte a  la pes
 - **Instrucciones del campo**: proporciona orientación adicional para que el usuario comprenda cómo completar el campo. Estas instrucciones se muestran directamente en la interfaz, debajo del campo.
 - **Agregar campo Pop-up de instruciones**: Agrega un ícono de ayuda junto al campo. Al hacer clic en este ícono, se despliega un mensaje con información adicional o consejos útiles relacionados con el campo.
 - **Opciones**: Propiedades adicionales de acuerdo al tipo de campo seleccionado.
+
+#### Campos especializados de subida de archivos
+
+Las tareas Input incluyen tres tipos de campo pensados para recolectar documentos e imágenes con procesamiento automático. Los tres solo están disponibles dentro de una tarea Input de una originación.
+
+| Campo | Para qué sirve |
+|---|---|
+| **Documento** | Sube un archivo y, opcionalmente, extrae su texto. |
+| **Documento de identidad** | Captura una cédula por ambos lados o un pasaporte, y extrae sus datos. |
+| **Selfie** | Captura una foto del rostro y, opcionalmente, ejecuta una verificación de vida. |
+
+Los tres se agregan desde la pestaña **Añadir** del constructor, igual que cualquier otro campo, y comparten las propiedades comunes descritas en [Editar campos](/es/platform/customers/origination.html#editar-campos).
+
+##### La integración de verificación de identidad
+
+La extracción de datos y la verificación de vida dependen de la integración **Amazon Rekognition Face Liveness**, de la categoría **Verificación de Identidad**. Se instala y habilita por reino, en **Configuración de reino** → **Integraciones**.
+
+Si la integración no está habilitada, los tres campos siguen apareciendo en el constructor y siguen funcionando para el usuario final como una subida de archivos normal. Lo único que cambia es que las casillas de extracción y de verificación de vida aparecen deshabilitadas, con el mensaje **Para habilitar esta opción, configura la integración de verificación de identidad de Amazon Rekognition en el realm.** El valor que ya tuvieras guardado no se pierde.
+
+:::tip Configuración de la integración
+Para editar una integración primero tienes que deshabilitarla: mientras está habilitada, la edición no está disponible. Dos ajustes de la integración cambian el comportamiento de estos campos: el **Umbral de confianza (%)**, que decide cuándo una verificación de vida se aprueba o se rechaza (90% de manera predeterminada), y el **ID de Pool de Identidad de Cognito**, sin el cual el desafío de verificación de vida no puede iniciarse.
+:::
+
+##### Documento
+
+Sube un archivo y, si lo activas, extrae su texto automáticamente. Tiene dos opciones propias:
+
+- **Extensiones permitidas**: Lista separada por comas con las extensiones que aceptas en este campo, por ejemplo `pdf, doc, txt`. Si la dejas vacía se acepta cualquier extensión permitida por la plataforma. Las extensiones que escribas deben estar permitidas a nivel de plataforma; si no, el campo no se guarda y aparece el mensaje **Estas extensiones no están permitidas**.
+- **Extraer datos del documento (OCR)**: Activa la extracción del texto del archivo. Viene desactivada.
+
+El campo acepta un solo archivo, con el tamaño máximo definido en la plataforma (10 MB de manera predeterminada). El usuario final ve la misma zona de carga que en el campo **Archivo**, con la lista de formatos permitidos y la ayuda del tamaño máximo.
+
+La extracción funciona con archivos `jpg`, `jpeg`, `png`, `tiff`, `tif`, `pdf` y `docx`. Cualquier otra extensión se puede subir igual, pero queda con el estado **Tipo de archivo no soportado**: no se le extrae texto. Conviene tenerlo presente con formatos que parecen obvios y no lo son, como `doc`, `txt` o `csv`.
+
+La extracción pasa por los estados **Pendiente**, **Procesando**, **Completada**, **Falló** y **Tipo de archivo no soportado**. Si el usuario reemplaza el archivo, la extracción se reinicia y el resultado anterior se descarta.
+
+##### Documento de identidad
+
+Captura un documento de identidad y extrae sus datos. Tiene tres opciones propias:
+
+- **Tipos de documento aceptados**: Casillas para **Cédula de identidad (fotos de frente y reverso)** y **Pasaporte (una foto)**. No puedes dejar las dos desmarcadas. Un campo creado desde el constructor nace con solo la cédula marcada; uno creado por la API sin especificar tipos acepta ambos.
+- **País por defecto**: Fija el país del documento. Si lo dejas en **El usuario selecciona el país**, el usuario elige el país al responder; si eliges uno, el selector no se le muestra y el país queda fijado.
+- **Extraer datos del documento (OCR)**: Activa la extracción de los datos del documento. Viene desactivada.
+
+El campo acepta imágenes `jpg`, `jpeg` y `png`, y ese formato no es configurable.
+
+Al responder, el usuario elige entre **Usar cámara** y **Subir archivo**. Con una cédula, el flujo es en dos pasos: primero el **Frente** y luego el **Reverso**, con una guía de encuadre en cada uno. Al terminar el primer lado la pantalla vuelve al inicio con el título del lado que falta, y el usuario debe pulsar de nuevo **Usar cámara** o **Subir archivo**; la cámara no se abre sola. Con un pasaporte se pide una sola foto de la página de datos. Las opciones **Rehacer frente** y **Rehacer reverso** eliminan la imagen ya subida, no solo la vista previa.
+
+El país tiene un efecto concreto sobre la extracción: se usa para interpretar las fechas del documento. Si el país no está definido y una fecha es ambigua —por ejemplo `03/04/1990`, donde ambos números pueden ser mes o día—, la fecha se guarda tal como venía, sin normalizar. Por eso, cuando sabes de antemano el país de tus usuarios, conviene fijarlo.
+
+La extracción pasa por los estados **Pendiente**, **Procesando**, **Completada** y **Falló**.
+
+##### Selfie
+
+Captura una foto del rostro del usuario. Tiene una sola opción propia:
+
+- **Verificación de vida (liveness)**: Agrega un desafío que confirma que hay una persona real frente a la cámara. Viene desactivada.
+
+El campo acepta imágenes `jpg`, `jpeg` y `png`, y ese formato no es configurable. El usuario puede tomarse la foto con la cámara o subir un archivo; no hay forma de restringirlo a una sola vía. La cámara frontal se muestra en espejo, y la imagen se guarda tal como se ve en la vista previa.
+
+Cuando la verificación de vida está activa, el bloque correspondiente aparece **después** de que el usuario haya capturado o subido la selfie, con el botón **Iniciar verificación de vida**. Completarla nunca es obligatorio: aunque marques el campo como requerido, lo único obligatorio es la foto.
+
+Al terminar el desafío, el usuario solo ve que se completó. El veredicto se calcula después de enviar la respuesta y no se le muestra. Los estados posibles son **Pendiente**, **Procesando**, **Verificada**, **Rechazada**, **Falló** y **Omitida**.
+
+:::warning Contra qué se compara la selfie
+La comparación facial se hace contra la imagen que captura el propio desafío de verificación de vida, **no** contra el documento de identidad. Sirve para confirmar que quien envía la selfie es la misma persona que hizo el desafío, no para validar que la selfie corresponde al titular del documento.
+:::
+
+Si el usuario vuelve a capturar la selfie, la verificación anterior se descarta y tiene que hacerla de nuevo.
+
+##### Dónde se ve el resultado
+
+El estado de la extracción y el de la verificación de vida **no se muestran hoy en las pantallas de administración**. La pestaña **Documentos** de la respuesta lista los archivos de los tres campos con su nombre, tamaño y miniatura, y en el detalle de la tarea el campo Documento de identidad muestra el tipo de documento, el país y los enlaces a **Frente** y **Reverso**; los campos Documento y Selfie se ven igual que un campo Archivo.
+
+Los resultados sí quedan disponibles para integrar:
+
+- En **plantillas Liquid**, la respuesta de un campo Documento entrega el archivo, el estado de la extracción y el texto extraído; la de un campo Selfie entrega el archivo, el estado de la verificación de vida y el nivel de confianza.
+- En la **API de administración**, además de lo anterior, se expone el código de error cuando la extracción o la verificación fallan.
+
+:::tip Verificación de vida rechazada sin motivo
+Una verificación **Rechazada** sin código de error asociado significa que el nivel de confianza quedó por debajo del **Umbral de confianza (%)** configurado en la integración. Es el caso más frecuente y no indica una falla técnica.
+:::
+
+##### Uso en la lógica condicional
+
+Los tres campos se pueden usar en la lógica condicional de la originación, pero solo con los operadores **está vacío** y **tiene algún valor**. No es posible condicionar por el contenido del documento, por el país ni por el resultado de la verificación de vida.
 
 ### Validación
 

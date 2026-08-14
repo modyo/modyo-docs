@@ -91,6 +91,8 @@ To include a new field, you must select a task and select the **Add** tab.
 
 Origination supports all types of input available in forms. You can see the full list of types in the [forms documentation](https://docs.modyo.com/en/platform/customers/forms#add)
 
+In addition, Input tasks offer three field types that **exist only in Origination** and are not available in forms: **Document**, **Identity document**, and **Selfie**. All three are described in [Specialized file upload fields](/en/platform/customers/origination.html#specialized-file-upload-fields).
+
 
 #### Edit fields
 
@@ -101,6 +103,92 @@ When selecting a field, you can modify its properties by going to the **Edit** t
 - **Field instructions**: Provides additional guidance for the user to understand how to complete the field. These instructions are displayed directly on the interface, below the field.
 - **Add instructions pop-up field**: Adds a help icon next to the field. When you click on this icon, a message appears with additional information or useful tips related to the field.
 - **Options**: Additional properties according to the type of field selected.
+
+#### Specialized file upload fields
+
+Input tasks include three field types designed to collect documents and images with automatic processing. All three are available only inside an Input task of an origination.
+
+| Field | What it is for |
+|---|---|
+| **Document** | Uploads a file and, optionally, extracts its text. |
+| **Identity document** | Captures an ID card on both sides or a passport, and extracts its data. |
+| **Selfie** | Captures a photo of the face and, optionally, runs a liveness check. |
+
+All three are added from the **Add** tab of the builder, like any other field, and share the common properties described in [Edit fields](/en/platform/customers/origination.html#edit-fields).
+
+##### The identity verification integration
+
+Data extraction and the liveness check depend on the **Amazon Rekognition Face Liveness** integration, in the **Identity Verification** category. It is installed and enabled per realm, in **Realm settings** → **Integrations**.
+
+If the integration is not enabled, the three fields still appear in the builder and still work for the end user as a regular file upload. The only difference is that the extraction and liveness checkboxes appear disabled, with the message **To enable this option, set up the Amazon Rekognition identity verification integration for this realm.** Any value you had already saved is not lost.
+
+:::tip Integration setup
+To edit an integration you first have to disable it: while it is enabled, editing is not available. Two integration settings change how these fields behave: the **Confidence Threshold (%)**, which decides when a liveness check passes or is rejected (90% by default), and the **Cognito Identity Pool ID**, without which the liveness challenge cannot start.
+:::
+
+##### Document
+
+Uploads a file and, if you enable it, extracts its text automatically. It has two specific options:
+
+- **Allowed Extensions**: A comma-separated list of the extensions you accept in this field, for example `pdf, doc, txt`. If you leave it empty, any extension allowed by the platform is accepted. The extensions you type must be allowed at the platform level; otherwise the field is not saved and the message **These extensions are not allowed** appears.
+- **Extract document data (OCR)**: Enables text extraction from the file. It is off by default.
+
+The field accepts a single file, with the maximum size defined in the platform (10 MB by default). The end user sees the same upload area as in the **File** field, with the list of allowed formats and the maximum size hint.
+
+Extraction works with `jpg`, `jpeg`, `png`, `tiff`, `tif`, `pdf`, and `docx` files. Any other extension can still be uploaded, but it ends up with the **Unsupported file type** status: no text is extracted from it. This is worth keeping in mind with formats that look obvious and are not, such as `doc`, `txt`, or `csv`.
+
+Extraction goes through the **Pending**, **Processing**, **Completed**, **Failed**, and **Unsupported file type** statuses. If the user replaces the file, extraction restarts and the previous result is discarded.
+
+##### Identity document
+
+Captures an identity document and extracts its data. It has three specific options:
+
+- **Accepted document types**: Checkboxes for **ID card (front and back photos)** and **Passport (single photo)**. You cannot leave both unchecked. A field created from the builder starts with only the ID card checked; one created through the API without specifying types accepts both.
+- **Default country**: Sets the country of the document. If you leave it as **The user selects the country**, the user picks the country when answering; if you choose one, the selector is not shown to them and the country is fixed.
+- **Extract document data (OCR)**: Enables extraction of the document data. It is off by default.
+
+The field accepts `jpg`, `jpeg`, and `png` images, and that format is not configurable.
+
+When answering, the user chooses between **Use camera** and **Upload file**. With an ID card, the flow has two steps: first the **Front side** and then the **Back side**, with a framing guide for each. When the first side is done, the screen returns to the start with the title of the remaining side, and the user has to press **Use camera** or **Upload file** again; the camera does not open on its own. With a passport, a single photo of the data page is requested. The **Redo front** and **Redo back** options delete the image already uploaded, not just the preview.
+
+The country has a concrete effect on extraction: it is used to interpret the dates on the document. If the country is not set and a date is ambiguous — for example `03/04/1990`, where both numbers could be month or day — the date is stored exactly as it came, without normalizing. So when you know your users' country in advance, it is worth fixing it.
+
+Extraction goes through the **Pending**, **Processing**, **Completed**, and **Failed** statuses.
+
+##### Selfie
+
+Captures a photo of the user's face. It has a single specific option:
+
+- **Face liveness check**: Adds a challenge that confirms there is a real person in front of the camera. It is off by default.
+
+The field accepts `jpg`, `jpeg`, and `png` images, and that format is not configurable. The user can take the photo with the camera or upload a file; there is no way to restrict it to one path. The front camera is shown mirrored, and the image is saved exactly as it looks in the preview.
+
+When the liveness check is enabled, its block appears **after** the user has captured or uploaded the selfie, with the **Start liveness check** button. Completing it is never mandatory: even if you mark the field as required, the only mandatory part is the photo.
+
+When the challenge finishes, the user only sees that it was completed. The verdict is calculated after the submission is sent and is not shown to them. The possible statuses are **Pending**, **Processing**, **Verified**, **Rejected**, **Failed**, and **Skipped**.
+
+:::warning What the selfie is compared against
+The face comparison is made against the image captured by the liveness challenge itself, **not** against the identity document. It confirms that whoever submits the selfie is the same person who took the challenge, not that the selfie matches the holder of the document.
+:::
+
+If the user captures the selfie again, the previous check is discarded and they have to take it again.
+
+##### Where the result is shown
+
+The extraction status and the liveness check status **are not shown today on any administration screen**. The **Documents** tab of the submission lists the files of all three fields with their name, size, and thumbnail, and in the task detail the Identity document field shows the document type, the country, and the links to **Front side** and **Back side**; the Document and Selfie fields look the same as a File field.
+
+The results are available for integration:
+
+- In **Liquid templates**, the answer of a Document field returns the file, the extraction status, and the extracted text; the answer of a Selfie field returns the file, the liveness status, and the confidence level.
+- In the **Admin API**, in addition to the above, the error code is exposed when extraction or the check fails.
+
+:::tip Liveness check rejected with no reason
+A **Rejected** check with no associated error code means the confidence level fell below the **Confidence Threshold (%)** configured in the integration. It is the most frequent case and does not indicate a technical failure.
+:::
+
+##### Use in conditional logic
+
+All three fields can be used in the conditional logic of the origination, but only with the **has no value** and **has any value** operators. It is not possible to set conditions based on the content of the document, the country, or the result of the liveness check.
 
 ### Validation
 
