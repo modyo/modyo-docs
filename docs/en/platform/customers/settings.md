@@ -306,6 +306,8 @@ Use an authentication client to send your integration access tokens to your reso
 - Confidential: There are two types of OAuth clients, confidential or public. Select the confidential option if your application can securely authenticate with the authentication server. Public clients are usually applications that run on mobile devices or browsers.
 - Scopes: If your OAuth2 authentication service uses multiple spaces or environments to separate users, and you want to use a specific one in this integration, define it in this field.
 
+Clicking the client name shows its **UID** and its **Secret**, plus two blocks ready to copy: **Client Web**, with the ready-made authorization URL, and **Client Mobile**, with the authorization, token, revocation and logout endpoints of the realm. With those values your application completes the realm `authorization_code` flow and gets the access token it uses to call the public Customers API on behalf of the user. The step by step is in [Authentication](/en/platform/customers/api.html#authentication).
+
 ### Amazon Rekognition
 
 The Amazon Rekognition integration, of the **Identity Verification** category, enables biometric verification in the realm's originations: identity document capture, face comparison, and liveness detection.

@@ -306,6 +306,8 @@ Utiliza un cliente de autenticación para enviar los tokens de acceso de tu inte
 - Confidencial: Existen dos tipos de clientes OAuth, confidencial o públicos. Selecciona la opción confidencial si tu aplicación puede autenticarse de manera segura con el servidor de autenticación. Los clientes públicos suelen ser aplicaciones que se ejecutan en dispositivos móviles o navegadores.
 - Scopes: Si tu servicio de autenticación OAuth2 usa múltiples espacios o ambientes para separar a los usuarios y quieres usar uno en específico en esta integración, defínelo en este campo.
 
+Al hacer click en el nombre del cliente, el panel muestra su **UID** y su **Secreto**, y además dos bloques listos para copiar: **Cliente web**, con la URL de autorización ya armada, y **Cliente móvil**, con los endpoints de autorización, token, revocación y cierre de sesión del reino. Con esos valores tu aplicación completa el flujo `authorization_code` del reino y obtiene el access token con el que llama a la API pública de Customers en nombre del usuario. El paso a paso está en [Autenticación](/es/platform/customers/api.html#autenticacion).
+
 ### Amazon Rekognition
 
 La integración de Amazon Rekognition, de la categoría **Verificación de Identidad**, habilita la verificación biométrica en las originaciones del reino: captura de documento de identidad, comparación facial y detección de vida (liveness).

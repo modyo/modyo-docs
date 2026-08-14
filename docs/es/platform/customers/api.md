@@ -7,6 +7,80 @@ search: true
 Modyo Customers contiene una variedad de APIs con las que podrás obtener la información de Reinos, las notificaciones y sus usuarios.
 
 
+## Autenticación
+
+Todos los endpoints bajo `ACCOUNT_URL/api/customers/realms/{realm_uid}/` responden en nombre de un usuario final del reino, así que cada llamada necesita una credencial de ese usuario. La única excepción es [Verificación de código OTP](#verificacion-de-codigo-otp).
+
+El reino acepta dos credenciales:
+
+- **Access token de OAuth2**, en la cabecera `Authorization: Bearer`. Tiene precedencia: cuando la petición trae un access token reconocido, la cookie de sesión no se evalúa.
+- **Cookie de sesión** del usuario en el reino. Se usa cuando la petición no trae un access token reconocido. Es la opción natural cuando tu aplicación corre dentro de un sitio de Modyo, porque el navegador la envía sola.
+
+Las dos resuelven al mismo usuario y dan acceso a los mismos endpoints. Elige el access token cuando tu aplicación vive fuera de los dominios de la cuenta, por ejemplo una aplicación móvil o un front en otro dominio.
+
+### Obtener un access token
+
+Cada reino expone su propio servidor OAuth2:
+
+| Endpoint | Para qué sirve |
+|----------|----------------|
+| `ACCOUNT_URL/realms/{realm_uid}/oauth/authorize` | Autoriza al usuario y entrega el código. |
+| `ACCOUNT_URL/realms/{realm_uid}/oauth/token` | Canjea el código por el access token. |
+| `ACCOUNT_URL/realms/{realm_uid}/oauth/revoke` | Invalida un token ya emitido. |
+
+El único flujo soportado es `authorization_code`. El reino no emite tokens con `client_credentials`, `password` ni `implicit`, y tampoco entrega refresh tokens.
+
+Para empezar necesitas un cliente OAuth del reino, creado como se describe en [Cliente OAuth](/es/platform/customers/settings.html#cliente-oauth). Al hacer click en el nombre del cliente, el panel muestra su **UID** y su **Secreto**, que son el `client_id` y el `client_secret` del flujo, junto con la URL de autorización ya armada en **Cliente web** y los endpoints del reino listos para copiar en **Cliente móvil**.
+
+1. Lleva al usuario a `ACCOUNT_URL/realms/{realm_uid}/oauth/authorize` con los parámetros `response_type=code`, `client_id`, `redirect_uri` y, si los necesitas, `scope` y `state`.
+2. Si el usuario todavía no tiene sesión en el reino, Modyo lo manda al inicio de sesión y retoma la autorización cuando termina. No hay pantalla de consentimiento: apenas hay sesión, Modyo redirige a tu **URI de redirección** con el parámetro `code`.
+3. Canjea el código en el endpoint de token. El código vive diez minutos y sirve una sola vez.
+4. Usa el `access_token` de la respuesta en la cabecera `Authorization` de tus llamadas.
+
+El canje del código se ve así:
+
+```shell
+curl -X POST "ACCOUNT_URL/realms/{realm_uid}/oauth/token" \
+  -d "grant_type=authorization_code" \
+  -d "code=EL_CODIGO" \
+  -d "client_id=EL_UID_DEL_CLIENTE" \
+  -d "client_secret=EL_SECRETO_DEL_CLIENTE" \
+  -d "redirect_uri=TU_URI_DE_REDIRECCION"
+```
+
+Y una llamada ya autenticada, así:
+
+```shell
+curl -X GET "ACCOUNT_URL/api/customers/realms/{realm_uid}/me" \
+  -H "Authorization: Bearer EL_ACCESS_TOKEN"
+```
+
+El reino reconoce `public` como scope por defecto y `admin` como único scope opcional. El `scope` que pidas tiene que estar entre esos valores y, si el cliente OAuth define **Scopes**, también dentro de los suyos; si no, la autorización falla antes de entregar el código.
+
+Los clientes públicos, como una aplicación móvil o un front sin backend, pueden usar PKCE: si envías `code_challenge` y `code_challenge_method` en el paso de autorización, tienes que enviar el `code_verifier` correspondiente al canjear el código.
+
+:::warning Atención
+El cliente OAuth pertenece al reino donde lo creaste y sólo puede autorizar usuarios de ese mismo reino. Si tu cuenta tiene varios reinos, necesitas un cliente por cada uno.
+:::
+
+:::warning Atención
+El access token no lleva vencimiento propio, pero eso no lo hace eterno: queda amarrado a la sesión del usuario que autorizó el flujo. Cuando esa sesión caduca por la política de expiración de sesiones del reino, cuando el usuario cierra sesión o cuando sus sesiones se revocan desde el panel, el token deja de servir. Mientras se sigue usando, la sesión se renueva sola antes de vencer, así que un token en uso continuo no se cae por sí solo.
+:::
+
+### Errores de autenticación
+
+Todos los endpoints de la API de Customers comparten estos cuerpos de error:
+
+| Código | Cuerpo | Cuándo ocurre |
+|--------|--------|---------------|
+| `401` | <code v-pre>{"error":{"user_session":"user not found"}}</code> | La petición no trae credenciales utilizables, el access token no corresponde a un usuario del reino o el usuario está inactivo. |
+| `401` | <code v-pre>{"error":{"grant_expired":"session expired"}}</code> | La credencial identifica a un usuario, pero la sesión que la respalda venció o fue revocada. |
+| `404` | <code v-pre>{}</code> | El `realm_uid` de la URL no corresponde a ningún reino activo de la cuenta. |
+
+:::tip Tip
+Separar los dos `401` te ahorra tiempo de depuración. `user_session` significa que nunca llegó una credencial utilizable, así que revisa la cabecera `Authorization` o la cookie. `grant_expired` significa que la credencial era correcta y lo que se acabó fue la sesión, así que corresponde volver a autenticar al usuario en vez de reintentar.
+:::
+
 ## API de Customers
 
 Accede a la API de Customers para gestionar reinos y usuarios a través de la URL `ACCOUNT_URL/api/customers/docs`. Ejemplos de endpoints:
