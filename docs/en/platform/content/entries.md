@@ -27,14 +27,33 @@ You can also filter the view with predefined filters:
 
 - **Type**: Content [type](/en/platform/content/types).
 - **Status**: Draft, Published, Scheduled, or Archived.
-- **Category**: Category assigned to entries.
+- **Category**: Category assigned to entries. The result also includes the entries assigned to the subcategories of the category you choose.
 - **Language**: Content language.
 - **Translation**: Entry translation status. If an entry has no version in the selected language, it is considered "not translated".
 - **Tags**: Labels available in the account.
+- **Author**: Administrator who created the entry. The list only offers the users who have at least one entry in the space.
+- **Segments**: Segments assigned to the entries. This filter only appears when the space is associated with a user realm.
 - **Search bar**: Type a word to display entries that contain that word in their name or metadata.
 
 :::tip Tip
 Click on the Filters menu in the upper right of the entry list to add or remove any of the filtering options in the header.
+:::
+
+### Type field filters
+
+When you filter the list by **Type**, a **Type fields filters** block appears below the common filters, with one filter for each filterable field of the type you chose. With them you narrow the list down to the entries that hold a given value in one of their fields.
+
+Only eight field types can be used as a filter: **Boolean**, **Checkbox**, **Date**, **Decimal**, **Dropdown**, **Integer**, **Multiple options**, and **Radio**. The remaining field types of the content type do not appear in the block.
+
+Each filter adapts to the field it represents:
+
+- **Date**: filters by a date range.
+- **Integer** and **Decimal**: filter by a numeric comparison.
+- **Boolean**: filters by True or False.
+- **Checkbox**, **Dropdown**, **Multiple options**, and **Radio**: filter by the **Allowed values** you defined in the field. In **Checkbox** and in **Multiple options** you can select more than one value at a time.
+
+:::tip Tip
+The block only exists while the **Type** filter is active, because each content type defines its own fields. If you change or remove the **Type** filter, the field filters are discarded.
 :::
 
 
@@ -59,10 +78,17 @@ By using bulk editing of entries, you are overwriting the values for the selecte
 To retrieve a specific value from an entry, access the entry editing view and select the **Differences** option to review the previous values of an entry.
 :::
 
+- **Add or remove tags**: Opens a window to change the tags of the whole selection. In **Add new tags** you type or pick the tags you want to add, and under **Tags among selected elements** you see the tags those entries already have, with the number of entries that use each one: **Apply to all** adds that tag to the rest of the selection and the delete icon removes it from all of them. Click **Save** and confirm to apply the changes.
 - **Publish**: Publishes selected entries that have pending changes or are in draft status.
 - **Force publication**: If team review is enabled, space administrators can use this action to force the publication of entries that have pending changes or are in draft status, without having to go through the review process.
 - **Unpublish**
 - **Archive**: Bulk archiving only affects selected entries that are not published. If you try to archive a published entry, the action will have no effect.
+- **Restore**: Takes the selected entries out of the archive and returns them to draft status. It only reaches archived entries, so it is worth filtering the list by the **Archived** status before using it.
+- **Delete**: Deletes the archived entries in the selection. It requires the **Delete Entries** permission.
+
+:::danger Danger
+**Delete** removes the selected entries along with all their backups, and it cannot be undone. The deletion only reaches the language you have selected in the list: the translations of those entries into other languages are kept.
+:::
 
 :::tip Tip
 Bulk actions run in the background, and you may not see the changes immediately. You will need to wait a moment and refresh your view after executing a bulk action.
@@ -176,6 +202,34 @@ To unpublish:
 1. Click **Unpublish**.
 
 
+### Schedule the publication of an entry
+
+Instead of publishing right away, you can set the date and time when the entry shows up on your sites and, in the same window, the date when it stops being visible.
+
+1. In the side menu, select Content.
+1. Click on your space.
+1. Select Entries.
+1. From the list of entries, click on the entry you want to schedule.
+1. At the top of the screen, click **Publish** to open the **Publish Options** window.
+1. Check **Publish on** and choose the date and time in **Select a date**.
+1. If you also want the entry to stop being visible on a given date, check **Unpublish on** and choose the date and time.
+1. Click **Schedule publication**.
+
+Once you confirm, the entry keeps a scheduled version and shows up in the list with the **Scheduled** status. You can keep working on its editable version without altering what was scheduled.
+
+Consider the following:
+
+- Each entry allows a single scheduled publication per language. If you schedule a second publication, the window warns you with "You are going to override the current scheduled publication" and the new one replaces the previous one.
+- If you choose **Publish now** when there is already a scheduled publication, the window warns you with "The scheduled publication will be cancelled": once you confirm, the entry is published immediately and the schedule is discarded.
+- If you choose a publication date that has already passed, the entry is published immediately instead of being scheduled.
+- The unpublish date cannot be in the past. If you try, Modyo rejects the operation with the message "The scheduled unpublish date can't be in the past".
+
+To schedule only the unpublishing of an entry that is already published, click **Unpublish** at the top of the screen, check **Unpublish on** in the **Unpublish Options** window, choose the date and time, and confirm with **Schedule unpublish**.
+
+:::tip Tip
+The full behavior of the scheduled version, including the notification you get when the action runs, is in the [versioning](/en/platform/core/#versioning) section.
+:::
+
 ### Delete entries
 
 To delete an entry:
@@ -223,6 +277,32 @@ To edit an entry, follow these steps:
 1. Modify the fields you require.
 1. Click **Save**.
 1. Click **Publish**. If the entry is undergoing team review, reviewers should update their view to note the changes.
+
+
+### Clone an Entry
+
+**Clone** creates a new entry from the one you are viewing, with the same values in all of its fields, its tags, and its segments, and it also replicates the translations that already exist.
+
+1. In the side menu, select Content.
+1. Click on your space.
+1. Select Entries.
+1. From the list of entries, click on the entry you want to clone.
+1. Click on the more actions button (...) and select **Clone**.
+
+When the copy is done, Modyo takes you to the new entry. Consider the following:
+
+- The copy is born in draft status: to make it show up on your sites you have to publish it.
+- The copy is an independent entry. Its name becomes "Copy of" followed by the original name, and its identifier is generated with the `copy-of-` prefix, so the references to the original entry from the API or the SDKs keep pointing to the original.
+- The author of the copy is the user who runs the action, not the author of the original entry.
+- The action requires the **Clone Entries** permission.
+
+:::warning Attention
+When you clone, you are redirected to the new entry, so save the pending changes of the current entry before using this action.
+:::
+
+:::tip Tip
+Do not confuse **Clone** with **Copy from Language**: **Copy from Language** brings the content of another translation into the entry you are editing and does not create a new entry.
+:::
 
 
 ## Categories
@@ -276,6 +356,13 @@ If you delete a parent category, all subcategories associated with it will be de
 Tags allow you to add more detail to your entries by combining them with Liquid on your content pages.
 
 When creating entries, you can add a tag that will appear both in the source code and in our content API, allowing you to add specific functionality to that tag.
+
+
+### Excerpt
+
+The excerpt is a short summary of the entry. You edit it in the **Properties** panel of the editing view, next to the category and the tags, and it allows up to 255 characters.
+
+Unlike fields, the excerpt is not defined in the content type: it is available in every entry without you having to create it. It is published along with the entry, and you retrieve it in `meta.excerpt` in the content API, or with `entry.meta.excerpt` in Liquid.
 
 
 ### Identifier
