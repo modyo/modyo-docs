@@ -195,7 +195,7 @@ El tráfico entre el balanceador de carga y las instancias de la plataforma pued
 
 ### Registros de actividad
 
-La plataforma guarda un registro de todas las acciones realizadas por los usuarios administradores dentro de ella. Puedes revisar estos registros en la sección "Registros de actividad".
+La plataforma guarda un registro de todas las acciones realizadas por los usuarios administradores dentro de ella y también de las que ejecuta por su cuenta, sin una persona detrás: estas últimas quedan registradas con **Sistema** como autor. Puedes revisar estos registros en la sección [Logs de actividad](/es/platform/core/activity-logs.html).
 
 Te recomendamos revisar estos registros de forma periódica para verificar el correcto comportamiento de los usuarios dentro del sistema. Los registros de actividad también están disponibles a través del API administrativo de Modyo.
 
