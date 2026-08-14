@@ -534,13 +534,15 @@ Finalmente, la API siempre retornará la primera página (`current_page: 1`) de 
 
 ## Registros (Logs)
 
-Con la API de Logs puedes obtener todos los registros que suceden dentro de Modyo Platform, puedes elegir entre logs de Usuarios o Administradores. Si quieres consultar los logs de Usuarios, usa:  
+Con la API de Logs obtienes los registros de actividad que suceden dentro de Modyo Platform. Cada registro guarda el tipo de acción (`type`), el administrador que la ejecutó (`user`, vacío cuando la acción es automática), el objeto afectado (`loggeable_type` y `loggeable_id`) y el contexto donde ocurrió (`site_id`, `space_id`). La actividad de los usuarios finales llega con tipos de registro propios, como `user_login_log` o `form_response_created_log`.
+
+Para obtener el listado, llama al recurso sin parámetros:  
 
 ```shell script
-curl -X GET https://test.modyo.com/api/admin/logs?user_type=User"   -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
+curl -X GET https://test.modyo.com/api/admin/logs -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
 ```
 
-Esta consulta obtuvo todos los registros y los despliega en un JSON:
+La consulta devuelve los registros que alcanzas a ver, del más reciente al más antiguo, y los despliega en un JSON:
 
 ```json
 {
@@ -600,6 +602,143 @@ Esta consulta obtuvo todos los registros y los despliega en un JSON:
 }
 ```
 
-Si quieres conocer los registros de administradores, cambia el tipo de usuario por: `user_type=AdminUser`
+### Qué registros ves
+
+El alcance de la respuesta depende del usuario dueño del token:
+
+- Si es el dueño de la cuenta, tiene el rol **Full admin** a nivel de cuenta o pertenece a un grupo con ese rol, recibe todos los registros de la cuenta.
+- Cualquier otro administrador recibe solo sus propios registros cuando no acota la consulta, con `HTTP 200 OK` y sin ninguna advertencia en la respuesta.
+- Para ver la actividad de un contexto completo, agrega `realm_id`, `site_id` o `space_id` con el identificador de un contexto donde el usuario tenga un rol asignado, o donde tenga alcance completo por los permisos agrupados **Gestionar Clientes**, **Gestionar Canales** o **Gestionar Contenido**. Si envías más de uno, la validación del alcance se hace sobre el primero que esté presente en este orden: `realm_id`, `site_id` y `space_id`.
+- Si acotas la consulta a un contexto donde el usuario no tiene rol, vuelves a recibir solo sus propios registros de ese contexto, que suele ser una lista vacía.
+
+:::warning Atención
+Hasta 10.1, los usuarios con el rol **Default admin** a nivel de cuenta también recibían todos los registros. Desde 10.2 solo el dueño de la cuenta y el rol **Full admin** conservan ese alcance. Si tu integración consulta `/api/admin/logs` con un token que no tiene ese rol, agrega `realm_id`, `site_id` o `space_id` a la llamada: de lo contrario los registros que antes recibías dejan de aparecer, sin ningún error que lo advierta.
+:::
+
+### Filtros de la consulta
+
+`GET /api/admin/logs` acepta estos parámetros:
+
+- `type`: un tipo de registro, por ejemplo `entry_published_log`.
+- `types`: varios tipos en un solo valor, separados por coma y espacio, con el espacio codificado como `%20`. Si envías `type` y `types` en la misma llamada, manda `types`.
+- `not_in_type`: excluye tipos de registro, con el mismo formato de `types`.
+- `from_date` y `to_date`: rango de creación en formato ISO 8601, por ejemplo `2026-07-01T00:00:00-03:00`. Si los omites, la consulta abarca todo el historial hasta el final del día en curso. Una fecha que no se puede interpretar devuelve `HTTP 409 Conflict`.
+- `date_range`: atajo del rango anterior. Recibe dos fechas como arreglo (`date_range[]=2026-07-01&date_range[]=2026-07-15`) y las expande al inicio del primer día y al final del segundo. Tiene prioridad sobre `from_date` y `to_date`, y si alguna de las dos fechas no se puede interpretar la plataforma descarta el rango completo en silencio y responde con el historial sin filtrar por fecha.
+- `realm_id`, `site_id` y `space_id`: acotan los registros al realm, sitio o espacio indicado, y definen el alcance de la consulta.
+- `user_uuid`: registros de un administrador puntual, por su `uuid`. Con el valor literal `system` obtienes solo los registros automáticos, es decir, los que no tienen un administrador detrás.
+- `loggeable_type` y `loggeable_id`: el objeto afectado por la acción, por ejemplo `loggeable_type=Content::Entry`.
+- `application`: con el valor `core` acota a los objetos del núcleo de la plataforma, como sitios, espacios, entradas, roles, formularios y webhooks.
+- `query`: texto libre. Busca por prefijo en el título del registro y en el nombre y el correo de su autor.
+- `admin_actions`: con `true` deja fuera la actividad de los usuarios finales.
+- `sort_by` y `order`: orden del listado.
+- `page` y `per_page`: paginación, tal como se describe en [Paginación](/es/platform/core/api.html#paginacion).
+
+:::warning Atención
+`user_type` y `user_id` no filtran nada. Todavía aparecen entre los parámetros del recurso en `/api/admin/docs`, pero el listado los ignora: una llamada con `user_type=User` o con `user_type=AdminUser` devuelve el mismo resultado que la llamada sin parámetros. Si los usas para separar la actividad de los administradores de la de los usuarios finales, en realidad estás recibiendo el listado completo.
+:::
+
+### Separar la actividad de administración
+
+`admin_actions=true` es el filtro que sí distingue ambas actividades: excluye los registros de tipo `email_delivered_log`, `email_opened_log`, `email_spam_report_log`, `form_response_created_log`, `notification_opened_log` y `user_login_log`.
+
+```shell script
+curl -X GET "https://test.modyo.com/api/admin/logs?admin_actions=true" -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
+```
+
+Si el usuario del token no es el dueño de la cuenta ni tiene un rol a nivel de cuenta, `admin_actions=true` limita además la respuesta a los sitios donde tenga un rol asignado, e ignora el `site_id` que hayas enviado.
+
+No existe el filtro inverso. Para quedarte solo con la actividad de los usuarios finales, enumera los tipos que te interesan en `types`:
+
+```shell script
+curl -X GET "https://test.modyo.com/api/admin/logs?types=user_login_log,%20form_response_created_log" -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
+```
+
+### Orden de los resultados
+
+`sort_by` acepta `created_at`, `type` y `loggeable_type`, y `order` acepta `asc` y `desc`. De manera predeterminada el listado llega ordenado por `created_at` en `desc`, del registro más nuevo al más antiguo.
+
+:::tip Tip
+El catálogo Swagger publica `sort_by` con el valor de ejemplo `COMPLETAR`, que no es un valor válido. Usa `created_at`, `type` o `loggeable_type`.
+:::
+
+### Detalle y tipos de registro
+
+- `GET /api/admin/logs/{id}` devuelve un registro puntual.
+- `GET /api/admin/logs/types` devuelve los tipos de registro que existen en la cuenta y cuántos registros hay de cada uno. Es la forma de conocer los valores válidos de `type`, `types` y `not_in_type`.
+
+Ambas llamadas se rigen por el permiso agrupado **Ver Logs de Actividad**. El listado `GET /api/admin/logs` no exige un permiso puntual: lo que cambia según el usuario es el alcance de la respuesta.
+
+## Perfil del usuario autenticado
+
+El recurso `/api/admin/profile` trabaja siempre sobre el usuario dueño del token, sin recibir identificadores, y no exige permisos: basta con estar autenticado. Es el recurso que reemplaza a `GET /api/admin/admin_users/me`, que ya no existe.
+
+El catálogo Swagger de `/api/admin/docs` todavía no lista este recurso, por lo que sus llamadas son las siguientes:
+
+```http request
+GET    /api/admin/profile                              Perfil del usuario autenticado
+PUT    /api/admin/profile                              Actualiza nombre, apellido, idioma y avatar
+PUT    /api/admin/profile/update_protected_attributes  Actualiza nombre de usuario y correo
+DELETE /api/admin/profile/remove_otp                   Elimina el segundo factor
+GET    /api/admin/profile/sessions                     Lista las sesiones activas
+DELETE /api/admin/profile/revoke_session               Revoca sesiones activas
+```
+
+### Consultar y actualizar el perfil
+
+`GET /api/admin/profile` devuelve los datos del usuario del token: `id`, `uuid`, `name`, `first_name`, `last_name`, `email`, `username`, `avatar`, `lang`, `time_zone`, `active`, `created_at`, `updated_at`, `last_login_at`, `last_login_ip`, los roles asignados (`roles`) y las aplicaciones a las que tiene acceso (`application_access`).
+
+```shell script
+curl -X GET https://test.modyo.com/api/admin/profile -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
+```
+
+`PUT /api/admin/profile` actualiza solo `first_name`, `last_name`, `lang` y `avatar_id`. `lang` acepta `en`, `es` y `pt`, y `avatar_id` es el identificador de un avatar creado con `/api/admin/profile_avatar`.
+
+```shell script
+curl -X PUT https://test.modyo.com/api/admin/profile -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56' -H 'Content-Type: application/json' -d '{"first_name":"Sam","last_name":"Johnson","lang":"es"}'
+```
+
+:::tip Tip
+Si incluyes `username` o `email` en esta llamada, la plataforma los descarta y responde `HTTP 200 OK` con esos campos sin cambios. Para modificarlos usa la llamada de atributos protegidos.
+:::
+
+### Cambiar el nombre de usuario o el correo
+
+`username` y `email` son atributos protegidos: se actualizan solo con `PUT /api/admin/profile/update_protected_attributes`, y la llamada debe incluir `current_password` con la contraseña actual del usuario.
+
+```shell script
+curl -X PUT https://test.modyo.com/api/admin/profile/update_protected_attributes -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56' -H 'Content-Type: application/json' -d '{"email":"sam.johnson@modyo.com","current_password":"tu-contrasena-actual"}'
+```
+
+Ten en cuenta que:
+
+- El cambio de `username` se aplica de inmediato y responde `HTTP 200 OK`.
+- El cambio de `email` no se aplica de inmediato: la plataforma envía un correo de confirmación a la nueva dirección y la mantiene pendiente hasta que el usuario la confirma.
+- Si `current_password` es incorrecta o viene vacía, la respuesta es `HTTP 422 Unprocessable Entity` y nada se actualiza.
+
+:::danger Peligro
+Los intentos fallidos con contraseña incorrecta se acumulan. Al alcanzar el límite configurado para tu cuenta, la plataforma revoca todas las sesiones activas del usuario, así que quien esté trabajando en el panel de administración queda con la sesión cerrada. Controla el `HTTP 422` en tu integración y no reintentes en bucle.
+:::
+
+### Segundo factor
+
+`DELETE /api/admin/profile/remove_otp` elimina la configuración de segundo factor del usuario autenticado y responde `HTTP 200 OK`, incluso si el usuario no tenía segundo factor configurado.
+
+:::warning Atención
+Esta llamada no pide la contraseña actual, así que cualquier token válido del usuario alcanza para desactivar su segundo factor. Trata los tokens de la API de administración con el mismo cuidado que una contraseña.
+:::
+
+### Sesiones activas
+
+`GET /api/admin/profile/sessions` lista las sesiones vigentes del usuario, de la más reciente a la más antigua. Cada sesión trae su `uuid`, la fecha en que se abrió (`created_at`), la IP desde donde se abrió (`request_ip`), el navegador (`device_name`), el sistema operativo (`device_os`), el tipo de dispositivo (`device_type`, con valor `Desktop` o `Mobile`) y, cuando corresponde, el nombre del administrador que la abrió por impersonación (`impersonator`).
+
+`DELETE /api/admin/profile/revoke_session` revoca sesiones: con `grant_uuid` revocas una sesión puntual y con `all=true` revocas todas las sesiones activas. La respuesta es `HTTP 204 No Content`, y `HTTP 404 Not Found` si la sesión ya estaba revocada.
+
+```shell script
+curl -X DELETE "https://test.modyo.com/api/admin/profile/revoke_session?all=true" -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
+```
+
+:::tip Tip
+La sesión asociada a la llamada queda fuera de la revocación, incluso si envías su propio `grant_uuid`: la respuesta es `HTTP 204 No Content` y la sesión sigue activa.
+:::
 
 Para conocer más acerca de cómo hacer consultas a la información de Content vía API, ve nuestra guía y ejemplos en [API](/es/platform/content/public-api-reference).
