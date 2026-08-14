@@ -19,6 +19,8 @@ Los tags (etiquetas) se utilizan para la lógica de la plantilla. Aquí hay una 
 - **raw**: Desactiva temporalmente el procesamiento de tags para evitar conflictos de sintaxis.
 - **unless**: Copia de la sentencia `if`.
 
+Además de estos, Modyo registra tags propios de la plataforma que no existen en Liquid estándar: consulta [Tags propios de Modyo](/es/platform/channels/liquid-markup/tags.html#tags-propios-de-modyo).
+
 ### Comentarios
 
 Cualquier contenido escrito entre los tags `{% comment %}` y `{% endcomment %}` se convertirá en un comentario.
@@ -370,3 +372,69 @@ Si quieres combinar varios strings en uno solo y guardarlo en una variable, pued
     <option value="blue">Blue</option>
   </select>
 ```
+
+## Tags propios de Modyo
+
+Además de los tags estándar de Liquid, la plataforma registra tags propios. Los siguientes vienen en los layouts y plantillas por defecto de todo sitio nuevo, así que conviene saber qué emiten antes de modificarlos.
+
+### Bloque html5
+
+<code v-pre>{% html5 %}</code> es un bloque, no un tag simple: necesita su cierre <code v-pre>{% endhtml5 %}</code> y todo lo que escribas entre ambos se renderiza dentro del documento que genera.
+
+El bloque emite la declaración `<!DOCTYPE html>` y la etiqueta `<html>` con la clase `no-js` y el atributo `lang` tomado del idioma configurado del sitio, luego el contenido del bloque, y el cierre `</html>`:
+
+```html
+<!DOCTYPE html>
+<html class="no-js" lang='es'>
+  <!-- contenido del bloque -->
+</html>
+```
+
+Si el sitio no tiene idioma configurado, el atributo `lang` se omite por completo. Por eso un layout de Modyo no lleva escritas a mano las etiquetas `<!DOCTYPE html>` ni `<html>`: las escribe este bloque, y el layout **Base** de todo sitio nuevo ya viene envuelto en él. Consulta [Layouts](/es/platform/channels/templates.html#layouts).
+
+### Bloque body
+
+<code v-pre>{% body %}</code> también es un bloque y necesita su cierre <code v-pre>{% endbody %}</code>. Genera la etiqueta `<body>` completa, con un `id` y tres clases que la plataforma deriva del contexto en el que se resolvió la página:
+
+```html
+<body id="<id del contexto>" class="<page_context> <page_name> <page_id>">
+  <!-- contenido del bloque -->
+</body>
+```
+
+Esas clases son el gancho para escribir CSS o JavaScript por tipo de página sin imprimir nada en la plantilla. Estos son los valores que asigna la plataforma:
+
+| `page_context` | Dónde se resuelve | `id` del body | `page_name` | `page_id` |
+|----------------|-------------------|---------------|-------------|-----------|
+| `context-home` | Portada del sitio | `home` | `context-home-show` | `context-home-show` |
+| `context-custom` | Páginas personalizadas | `custom` | `context-custom-show` | `context-custom-show-<ruta de la página>` |
+| `context-content` | Páginas de contenido | `content` | `context-content-show` | `context-content-show-<ruta de la página>` |
+| `context-search` | Vista de resultados de búsqueda | `search` | `context-search-show` | (vacío) |
+| `context-origination` | Páginas de originación | `base` | `context-origination-show` | `context-origination-show-<ruta de la página>` |
+| `context-support` | Páginas de soporte | `base` | `context-support-show` | `context-support-show-<ruta de la página>` |
+| `context-forms` | Formularios, vista del formulario | `base` | `context-forms-form_response` | `context-forms-show-<slug del formulario>` |
+| `context-forms` | Formularios, página de agradecimiento | `base` | `context-forms-thank_you` | `context-forms-thank_you-<slug del formulario>` |
+| `context-people` | Vista previa desde el administrador | `base` | (vacío) | (vacío) |
+
+:::tip Tip
+El `id` solo distingue portada, páginas personalizadas, páginas de contenido y búsqueda. Todos los demás contextos comparten `id="base"`, así que para estilarlos usa la clase de `page_context`.
+:::
+
+Consulta [Variables de Contexto](/es/platform/channels/liquid-markup/variables.html#variables-de-contexto) para ver qué contiene cada una de estas variables.
+
+### Tags de CSRF
+
+Modyo registra dos tags que emiten el token CSRF de la sesión:
+
+| Tag | Qué emite |
+|-----|-----------|
+| `{% csrf_meta %}` | Las etiquetas `<meta name="csrf-param">` y `<meta name="csrf-token">`, para leer el token desde JavaScript. |
+| `{% csrf_param %}` | Un `<input type="hidden">` con el nombre del parámetro y el token, para enviarlo dentro de un formulario. |
+
+Ambos vienen incluidos en las plantillas por defecto: <code v-pre>{% csrf_meta %}</code> en el snippet `shared/general/head` del tema, y <code v-pre>{% csrf_param %}</code> dentro de los formularios de las plantillas de originación.
+
+:::warning Atención
+Los dos tags rinden una cadena vacía cuando el visitante no tiene sesión iniciada en el sitio. Un formulario propio que dependa de ellos se envía sin token para visitantes anónimos, y en el HTML no queda ninguna marca de que el tag estuvo ahí. Úsalos en vistas que ya requieren sesión.
+:::
+
+El atributo `site.csrf_meta_tag` no es un equivalente de <code v-pre>{% csrf_meta %}</code>: siempre se resuelve como vacío. Consulta [Deprecated Attributes](/es/platform/channels/liquid-markup/objects.html#deprecated-attributes).

@@ -504,7 +504,6 @@ Los objetos de Sitio se utilizan para obtener toda la información de un sitio. 
 | **site.account_url**            | String con la URL de la cuenta asociada al sitio.                                                                           |                        |
 | **site.breadcrumb**             | String con la clase CSS del div de breadcrumb.                                                                              |                        |
 | **site.cache_version**          | String con la clave de caché de esta versión del sitio.                                                                     |                        |
-| **site.csrf_meta_tag**          | String con la meta etiqueta CSRF.                                                                                           |                        |
 | **site.css_path**               | String con la ubicación del archivo CSS del sitio.                                                                          |                        |
 | **site.current_year**           | String con el año actual del sitio.                                                                                         |                        |
 | **site.js_path**                | String con la ubicación del archivo JS del sitio.                                                                           |                        |
@@ -810,4 +809,5 @@ Cuando una plantilla invoca un atributo que ya no existe, Liquid lo resuelve com
 | request.comments_url                             | (eliminar)                    | Eliminado en 10.2; hoy se resuelve como vacío.      |
 | request.interact_url                             | (eliminar)                    | Eliminado en 10.2; hoy se resuelve como vacío.      |
 | request.refresh_url                              | (eliminar)                    | Eliminado en 10.2; hoy se resuelve como vacío.      |
+| site.csrf_meta_tag                               | `{% csrf_meta %}`             | Siempre se resuelve como vacío; usa el tag.         |
 

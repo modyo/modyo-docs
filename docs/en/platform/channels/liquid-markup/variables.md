@@ -187,8 +187,8 @@ These four collections are injected on every render, no matter the page type and
 |----------|---------------|-----------------|
 | `content_for_layout` | The already rendered HTML of the view. Marks the spot in the layout where the page is inserted. | Layouts only |
 | `page` | The current page. See [page](/en/platform/channels/liquid-markup/objects.html#page). | All but the search results page |
-| `page_context` | The page type that was resolved: `context-home`, `context-custom`, `context-content`, `context-origination` or `context-search`. | All |
-| `page_name` | The same identifier with the `-show` suffix, for example `context-content-show`. | All |
+| `page_context` | The page type that was resolved, for example `context-home`, `context-custom` or `context-content`. See the full list in [The body block](/en/platform/channels/liquid-markup/tags.html#the-body-block). | All |
+| `page_name` | The context identifier with a suffix that indicates the view, almost always `-show`, for example `context-content-show`. | All |
 | `page_title` | The page name. On the home page and on search it is the platform's translated text. | All |
 | `page_id` | `page_name` followed by the page path, for example `context-custom-show-contact`. On the home page it is just `context-home-show`. | All but the search results page |
 | `url` | The URL being resolved, including the category path or the entry slug when applicable. | All but the search results page |

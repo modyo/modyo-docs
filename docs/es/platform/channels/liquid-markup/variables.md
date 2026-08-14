@@ -187,8 +187,8 @@ Estas cuatro colecciones se inyectan en todos los renderizados, sin importar el 
 |----------|--------------|--------------|
 | `content_for_layout` | El HTML ya renderizado de la vista. Marca el punto del layout donde se inserta la página. | Solo en los layouts |
 | `page` | La página actual. Consulta [page](/es/platform/channels/liquid-markup/objects.html#page). | Todas menos la de resultados de búsqueda |
-| `page_context` | El tipo de página que se resolvió: `context-home`, `context-custom`, `context-content`, `context-origination` o `context-search`. | Todas |
-| `page_name` | El mismo identificador con el sufijo `-show`, por ejemplo `context-content-show`. | Todas |
+| `page_context` | El tipo de página que se resolvió, por ejemplo `context-home`, `context-custom` o `context-content`. Consulta la lista completa en [Bloque body](/es/platform/channels/liquid-markup/tags.html#bloque-body). | Todas |
+| `page_name` | El identificador del contexto con un sufijo que indica la vista, casi siempre `-show`, por ejemplo `context-content-show`. | Todas |
 | `page_title` | El nombre de la página. En la portada y en la búsqueda es el texto traducido de la plataforma. | Todas |
 | `page_id` | `page_name` seguido de la ruta de la página, por ejemplo `context-custom-show-contacto`. En la portada es solo `context-home-show`. | Todas menos la de resultados de búsqueda |
 | `url` | La URL que se está resolviendo, incluida la ruta de la categoría o el slug de la entrada cuando corresponde. | Todas menos la de resultados de búsqueda |
