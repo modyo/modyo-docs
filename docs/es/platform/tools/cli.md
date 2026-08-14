@@ -566,3 +566,50 @@ El usuario dueño del token debe tener un rol de [site reviewer o admin](/es/pla
 Una vez que un widget está desplegado y publicado en Modyo, está disponible para ser utilizado en las páginas del sitio al que pertenece.
 
 Si has definido [variables](/es/platform/channels/global-variables.html) sus valores pueden ser especificados a nivel global o particular a cada instancia del widget.
+
+## Widgets CLI en el panel
+
+Un widget creado o actualizado con `modyo-cli push` queda marcado en la plataforma como widget de solo lectura, porque su código fuente vive en tu repositorio y no en Modyo. Es una consecuencia directa de desplegar con el CLI y conviene conocerla antes de adoptarlo.
+
+En el listado de widgets del sitio, estos widgets se reconocen por la etiqueta **CLI** junto a su nombre. Al abrir uno no encontrarás las pestañas de código, sino la pantalla **Resumen del widget**, con:
+
+- **Nombre**: el nombre del widget en Modyo.
+- **Tipo**: la etiqueta CLI.
+- **Tamaño**: el peso total de los archivos del widget.
+- **Chunks**: la cantidad de archivos adicionales a los de entrada, sin contar los source maps.
+- **Actualizado por última vez en**: la fecha y hora del último despliegue.
+- **Actualizado por última vez por**: el usuario que hizo el último despliegue.
+
+Sobre el resumen aparece el aviso "Los widgets CLI no se pueden editar en Modyo. Descárgalo para revisar su contenido." junto al botón **Descargar**.
+
+El resto del ciclo de vida es el de cualquier widget: conserva versión editable y publicada, admite [variables](/es/platform/channels/widgets.html#variables-del-widget), pasa por [revisión en equipo](/es/platform/core/#revision-en-equipo) y se instancia en las páginas desde el [Page Builder](/es/platform/channels/pages.html). En la columna de propiedades siguen visibles el nombre, los tags y el listado de páginas que usan el widget.
+
+### Diferencias de código
+
+Al comparar versiones de un widget CLI, ya sea en la vista de **Diferencias** del widget, en la [revisión y publicación conjunta](/es/platform/channels/sites.html#revision-y-publicacion-conjunta) o en la [sincronización entre stages](/es/platform/channels/sites.html#stages), la plataforma detecta que hay cambios pero no muestra el diff línea a línea. En su lugar aparece el mensaje "El archivo tiene diferencias, pero los widgets CLI no se pueden mostrar".
+
+El mismo comportamiento aplica a cualquier plantilla que supere el límite de tamaño permitido, con el mensaje "El archivo tiene diferencias, pero su tamaño supera el límite permitido y no se puede mostrar".
+
+Tampoco puedes usar **Resetear a esta versión** para devolver un widget CLI a una versión anterior. Para revisar o revertir cambios entre despliegues, usa el historial de tu repositorio y vuelve a ejecutar `modyo-cli push` con la versión que necesites.
+
+### El ZIP del botón Descargar
+
+El botón **Descargar** llama a `GET /api/admin/sites/{site_id}/widget_definitions/{id}/download` y arma un ZIP al vuelo a partir de las plantillas guardadas en la plataforma. No es el archivo que subiste, y su contenido no coincide con tu build:
+
+- Los archivos de entrada salen renombrados con el identificador del widget: `<uuid>.js`, `<uuid>.css` y `<uuid>.html`, en lugar de `main.js` y `main.css`.
+- Los chunks pierden su ruta: solo se conserva el último segmento, así que un build organizado en subdirectorios queda aplanado y dos archivos con el mismo nombre en carpetas distintas colisionan.
+- Los archivos `.wasm` se entregan decodificados.
+
+:::warning Atención
+El ZIP de **Descargar** sirve para inspeccionar qué código está corriendo en la plataforma, no como respaldo: no se puede volver a desplegar tal cual. La fuente de verdad de un widget CLI es siempre tu repositorio.
+:::
+
+### Permisos y despliegues desde un pipeline propio
+
+Para desplegar con `push`, el usuario dueño del token necesita el permiso **Crear Widgets CLI**, incluido en el rol [Site Developer CLI](/es/platform/core/roles.html#roles) y superiores. Para usar el botón **Descargar** basta con el permiso **Ver Widgets**.
+
+La marca de solo lectura la decide la plataforma al crear el widget, según cómo se identifica la petición: solo se aplica cuando la cabecera `User-Agent` corresponde al CLI de Modyo.
+
+:::warning Atención
+Si integras el despliegue desde un pipeline propio que llama al mismo endpoint sin identificarse como el CLI de Modyo, el widget se crea editable, se le exige el permiso normal de edición de widgets en lugar de **Crear Widgets CLI**, y queda abierto a cambios desde el panel que tu siguiente despliegue sobrescribirá. Si el widget ya estaba marcado como widget CLI, una petición que no se identifica como el CLI responde con éxito pero no actualiza su código.
+:::
