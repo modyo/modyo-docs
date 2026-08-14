@@ -16,8 +16,8 @@ Along the **top bar**, on the left, you can see the widget name and current stat
 - **Draft**: This status appears when a widget has just been created or when it has been unpublished.
 - **Published**: This status appears after a publication and when the editable and published versions are the same.
 - **Pending changes**: This status appears if there is already a published version of a widget, but there are pending changes to be published in the editable version.
-- **In review**: This status appears when [team review](/en/platform/core/key-concepts) is enabled and this widget is in review.
-- **Approved**: This status appears when [team review](/en/platform/core/key-concepts) is enabled and the review conditions for the item are met. When in this state, templates are ready to be published.
+- **In review**: This status appears when [team review](/en/platform/core/#team-review) is enabled and this widget is in review.
+- **Approved**: This status appears when [team review](/en/platform/core/#team-review) is enabled and the review conditions for the item are met. When in this state, templates are ready to be published.
 
 On the right, you'll find the following actions:
 **Preview**: Opens the preview of the editable version of the widget in a new tab.
@@ -26,7 +26,7 @@ On the right, you'll find the following actions:
 You can preview the widgets as a user without a session or a user with a Modyo session. For this, it is recommended to start or close the Modyo session on the site before entering preview mode. This is because starting or closing a session within preview mode can generate security errors such as _x-frame-options_ or _mixed-content_, depending on the site's custom domain and SSL settings.
 :::
 
-**Differences**: Takes you to the [differences view](/en/platform/core/key-concepts), where you can compare the changes between multiple versions of the widget.
+**Differences**: Takes you to the [differences view](/en/platform/core/#revert-a-change), where you can compare the changes between multiple versions of the widget.
 
 By default, you start by comparing the published version with the editable version. Use the version selectors to compare with backup versions. If the icon does not appear, it means that there is no published version of this widget.
 
@@ -38,7 +38,7 @@ By default, you start by comparing the published version with the editable versi
 
 - **Save**: Saves current changes.
 - **Submit for review**: If team review is enabled, you can submit the widget for review and notify reviewers that the widget is ready for review.
-- **Publish**: Takes you to the [joint publication](/en/platform/core/key-concepts#review-and-joint-publication) view where you can publish your widgets.
+- **Publish**: Takes you to the [joint publication](/en/platform/channels/sites.html#review-and-joint-publication) view where you can publish your widgets.
 
 **Other main actions**:
 
@@ -56,7 +56,7 @@ Archived widgets will not appear in the initial list or in the widget selection 
 Once a widget is published, it will be visible in the custom widget selection modal in the [Page Builder](/en/platform/channels/pages).
 
 :::tip Tip
-To learn more about the publication flow, review the [Versioning](/en/platform/core/key-concepts#versioning) section.
+To learn more about the publication flow, review the [Versioning](/en/platform/core/#versioning) section.
 :::
 
 In the work area you can see:
@@ -109,7 +109,7 @@ In the variables tab, you can see the list of variables created in the widget, a
 - **Modify** the variable
 - **Delete** the variable.
 
-Next to the name of each variable, you will see an "overwritten" indicator if the variable also exists at the account or site level in the [global variables](/en/platform/core/key-concepts#global-variables).
+Next to the name of each variable, you will see an "overwritten" indicator if the variable also exists at the account or site level in the [global variables](/en/platform/channels/global-variables.html).
 
 When modifying a variable, you can decide the name and default value that this variable will take in the widget. In addition, you can decide if you want to make a list of values available so that when a widget is instantiated on a page, it is possible to choose between these different values.
 

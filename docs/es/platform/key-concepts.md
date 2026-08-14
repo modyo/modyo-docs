@@ -72,14 +72,14 @@ A continuación, algunos términos clave en Modyo y sus definiciones:
 - **Cuenta**: Punto de acceso a todas las funcionalidades de Modyo.
 - [**Equipo**:](/es/platform/core/roles#equipo) Todos los usuarios con acceso al admin de Modyo. Se les puede asignar roles y permisos.
 - [**Integraciones**:](/es/platform/core/integrations) Forma para delegar o federar el proceso de inicio de autenticación de usuarios o miembros del equipo.
-- [**Política de contraseña**:](/es/platform/core/security#politica-de-contrasena) Permite definir reglas para la creación o modificación de contraseñas.
-- [**Revisión en equipo**:](/es/platform/core/key-concepts#revision-en-equipo) Flujo de revisión de los elementos versionados. Se puede solicitar la aprobación de múltiples miembros del equipo.
-- [**Sitio**:](/es/platform/channels/sites) Herramienta para crear canales digitales dentro de Modyo. La operación de sitios abarca el desarrollo, diseño y flujo de navegación.
-- [**Versión editable**:](/es/platform/core/key-concepts#editable) La versión que puedes modificar y previsualizar de los elementos versionados.
-- [**Variables globales**:](/es/platform/core/key-concepts#variables-globales) Elementos que puedes definir de forma global y reutilizar en distintos sitios.
-- [**Versión programada**:](/es/platform/core/key-concepts#programado) Versión que será publicada en una fecha y hora determinada.
-- [**Versión publicada**:](/es/platform/core/key-concepts#publicado) Versión visible o productiva de los elementos versionados. Esta versión no se puede modificar.
-- [**Versión de respaldo**:](/es/platform/core/key-concepts#respaldos) Versiones publicadas previamente.
+- [**Política de contraseña**:](/es/platform/core/security.html#politica-de-contrasenas) Permite definir reglas para la creación o modificación de contraseñas.
+- [**Revisión en equipo**:](/es/platform/core/#revision-en-equipo) Flujo de revisión de los elementos versionados. Se puede solicitar la aprobación de múltiples miembros del equipo.
+- [**Sitio**:](/es/platform/channels/sites.html) Herramienta para crear canales digitales dentro de Modyo. La operación de sitios abarca el desarrollo, diseño y flujo de navegación.
+- [**Versión editable**:](/es/platform/core/#tipos-de-version) La versión que puedes modificar y previsualizar de los elementos versionados.
+- [**Variables globales**:](/es/platform/channels/global-variables.html) Elementos que puedes definir de forma global y reutilizar en distintos sitios.
+- [**Versión programada**:](/es/platform/core/#tipos-de-version) Versión que será publicada en una fecha y hora determinada.
+- [**Versión publicada**:](/es/platform/core/#tipos-de-version) Versión visible o productiva de los elementos versionados. Esta versión no se puede modificar.
+- [**Versión de respaldo**:](/es/platform/core/#tipos-de-version) Versiones publicadas previamente.
 - [**Webhook**:](/es/platform/core/webhooks) Envía información automáticamente a un sistema externo cuando ocurre un evento determinado.
 
 

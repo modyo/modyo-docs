@@ -16,8 +16,8 @@ En la barra superior se encuentran las siguientes secciones:
 - **Borrador**: Este estado aparece cuando recién se haya creado un widget o cuando se haya despublicado.
 - **Publicado**: Este estado aparece luego de haber hecho una publicación y cuando las versiones editable y publicada son iguales.
 - **Cambios pendientes**: Este estado aparece si ya hay una versión publicada, pero hay cambios pendientes de publicar en versión editable.
-- **En revisión**: Este estado aparece cuando esté habilitada la [revisión en equipo](/es/platform/core/key-concepts) y se haya enviado a revisión la versión editable.
-- **Aprobado**: Este estado aparece cuando esté habilitada la [revisión en equipo](/es/platform/core/key-concepts) y se cumplen las condiciones de revisión del elemento. Si está en este estado, las plantillas están listas para ser publicadas.
+- **En revisión**: Este estado aparece cuando esté habilitada la [revisión en equipo](/es/platform/core/#revision-en-equipo) y se haya enviado a revisión la versión editable.
+- **Aprobado**: Este estado aparece cuando esté habilitada la [revisión en equipo](/es/platform/core/#revision-en-equipo) y se cumplen las condiciones de revisión del elemento. Si está en este estado, las plantillas están listas para ser publicadas.
 
 A la derecha, encuentras las siguientes acciones:
 **Vista previa**: Abre en una nueva pestaña la vista previa de la versión editable del widget.
@@ -26,7 +26,7 @@ A la derecha, encuentras las siguientes acciones:
 Puedes previsualizar los widgets como usuario sin sesión o usuario con sesión de Modyo. Para esto, es recomendable iniciar o cerrar la sesión de Modyo en el sitio antes de entrar al modo vista previa. Esto se debe a que iniciar o cerrar sesión dentro del modo de vista previa puede generar errores de seguridad como _x-frame-options_ o _mixed-content_, dependiendo de la configuración de dominios personalizados y SSL del sitio.
 :::
 
-**Diferencias**: Te lleva a la [vista de diferencias](/es/platform/core/key-concepts), en la cual puedes comparar los cambios que hay entre múltiples versiones del widget.
+**Diferencias**: Te lleva a la [vista de diferencias](/es/platform/core/#revertir-un-cambio), en la cual puedes comparar los cambios que hay entre múltiples versiones del widget.
 
 Por defecto comienzas comparando la versión publicada con la versión editable. Usa los selectores de versiones para comparar con versiones de respaldo. Si el ícono no aparece, significa que no hay versión publicada de este widget.
 
@@ -38,7 +38,7 @@ Por defecto comienzas comparando la versión publicada con la versión editable.
 
 - **Guardar**: Guarda los cambios actuales.
 - **Enviar a revisión**: Si está habilitada la revisión en equipo, puedes enviar el widget a revisión y notificar a los revisores que el widget está listo para ser revisado.
-- **Publicar**: Te lleva a la vista de [publicación conjunta](/es/platform/core/key-concepts#revision-y-publicacion-conjunta) donde puedes publicar tus widgets.
+- **Publicar**: Te lleva a la vista de [publicación conjunta](/es/platform/channels/sites.html#revision-y-publicacion-conjunta) donde puedes publicar tus widgets.
 
 **Otras acciones principales**:
 
@@ -56,7 +56,7 @@ Los widgets archivados no aparecerán en el listado inicial ni tampoco en el mod
 Una vez que un widget está publicado, este será visible en el modal de selección de widgets personalizados en el [Page Builder.](/es/platform/channels/pages)
 
 :::tip Tip
-Para aprender más sobre el flujo de publicación, revise la sección de [Versionado.](/es/platform/core/key-concepts#versionado)
+Para aprender más sobre el flujo de publicación, revise la sección de [Versionado.](/es/platform/core/#versionado)
 :::
 
 En el área de trabajo se puede ver:
@@ -109,7 +109,7 @@ En la pestaña de variables puedes ver el listado de variables creadas en el wid
 - **Modificar** la variable
 - **Eliminar** la variable.
 
-Junto al nombre de cada variable verás un indicador "sobreescrita" si la variable también existe a nivel de cuenta o sitio en las [variables globales](/es/platform/core/key-concepts#variables-globales).
+Junto al nombre de cada variable verás un indicador "sobreescrita" si la variable también existe a nivel de cuenta o sitio en las [variables globales](/es/platform/channels/global-variables.html).
 
 Al modificar una variable, podrás decidir el nombre y valor por defecto que tomará esa variable en el widget. Además, podrás decidir si quieres disponibilizar un listado de valores para que al momento de instanciar el widget en una página, se pueda elegir entre estos distintos valores.
 

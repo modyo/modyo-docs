@@ -565,4 +565,4 @@ The token owner user must have a role of [site reviewer or admin](/en/platform/c
 
 Once a widget is deployed and published in Modyo, it's available to be used on the pages of the site it belongs to.
 
-If you have defined [variables](/en/platform/core/key-concepts.html#global-variables), their values can be specified at a global level or particular to each widget instance.
+If you have defined [variables](/en/platform/channels/global-variables.html), their values can be specified at a global level or particular to each widget instance.

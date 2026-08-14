@@ -12,8 +12,8 @@ En la sección de plantillas, el menú principal se oculta para optimizar el ár
 
 - **Publicado**: Hay una versión publicada y que la versión editable es idéntica.
 - **Cambios pendientes**: Existe una versión publicada, pero hay modificaciones pendientes de publicar en tu versión editable.
-- **En revisión**: La [revisión en equipo](/es/platform/core/key-concepts) está activada y se ha enviado a revisión la versión editable.
-- **Aprobado**: La [revisión en equipo](/es/platform/core/key-concepts) está activada y las condiciones de revisión del elemento se han cumplido. En este estado, la plantilla está lista para ser publicada.
+- **En revisión**: La [revisión en equipo](/es/platform/core/#revision-en-equipo) está activada y se ha enviado a revisión la versión editable.
+- **Aprobado**: La [revisión en equipo](/es/platform/core/#revision-en-equipo) está activada y las condiciones de revisión del elemento se han cumplido. En este estado, la plantilla está lista para ser publicada.
 
 En la parte superior derecha, puedes ver la última fecha de publicación e íconos con las acciones disponibles:
 
@@ -28,7 +28,7 @@ Puedes previsualizar los cambios como usuario sin sesión o usuario con sesión 
 :::tip Tip
 Cada vez que publicas una versión, la versión que estaba publicada pasa a ser una versión de respaldo. Por defecto, se guardan hasta 20 respaldos, permitiéndote comparar, restaurar y hacer rollback a las últimas 20 versiones
 
-Para más información sobre el versionamiento, consulta la sección de [versionado](/es/platform/core/key-concepts#versionado).
+Para más información sobre el versionamiento, consulta la sección de [versionado](/es/platform/core/#versionado).
 :::
 
 **Buscar en plantillas**: Despliega una barra lateral con un buscador de texto que explora todas las plantillas editables.
@@ -224,7 +224,7 @@ Las sub-versiones son específicas a cada plantilla, por lo que algunos pueden t
 :::
 
 :::tip Tip
-Si restableces una versión anterior a la versión editable, puedes acceder a las sub-versiones de cada template de esa versión. Puedes aprender más sobre [versionado](/platform/core/key-concepts.html#versionado) aquí.
+Si restableces una versión anterior a la versión editable, puedes acceder a las sub-versiones de cada template de esa versión. Puedes aprender más sobre [versionado](/es/platform/core/#versionado) aquí.
 :::
 
 Para restaurar todas las plantillas a su versión original, haz click en la acción secundaria de la barra superior **Restaurar todo**. Para que los cambios tengan efecto, debes publicar las plantillas.

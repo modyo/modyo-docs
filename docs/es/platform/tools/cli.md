@@ -565,4 +565,4 @@ El usuario dueño del token debe tener un rol de [site reviewer o admin](/es/pla
 
 Una vez que un widget está desplegado y publicado en Modyo, está disponible para ser utilizado en las páginas del sitio al que pertenece.
 
-Si has definido [variables](/es/platform/core/key-concepts#variables-globales) sus valores pueden ser especificados a nivel global o particular a cada instancia del widget.
+Si has definido [variables](/es/platform/channels/global-variables.html) sus valores pueden ser especificados a nivel global o particular a cada instancia del widget.

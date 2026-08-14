@@ -21,7 +21,7 @@ In the edit view, you will find a top bar with actions, a central grid, and a si
 
 In the top bar, you will find different actions and information:
 
-**Title**: Located in the upper left, it indicates the name of the page you are modifying. To the right of the name, you will find the current status of the page: "Draft", "Under review", "Approved", "Pending changes", or "Published". To learn more about these statuses, you can review the [Versioning and Team Review](/en/platform/core/key-concepts) section.
+**Title**: Located in the upper left, it indicates the name of the page you are modifying. To the right of the name, you will find the current status of the page: "Draft", "Under review", "Approved", "Pending changes", or "Published". To learn more about these statuses, you can review the [Versioning](/en/platform/core/#versioning) section.
 
 **Publication date**: If the page has been published, it will indicate the date of the last publication.
 
@@ -31,10 +31,10 @@ In the top bar, you will find different actions and information:
 You can preview the pages as a user without a session or with a Modyo session. For this, it is recommended to start or close the Modyo session on the site before entering preview mode, as doing so within this mode can generate security errors such as _x-frame-options_ or _mixed-content_, depending on the custom domain and SSL configuration of the site.
 :::
 
-**Differences**: By clicking on the differences icon, you access the page's differences view, where you can select two versions to compare, allowing you to execute the actions [reset and rollback](/en/platform/core/key-concepts#revert-a-change).
+**Differences**: By clicking on the differences icon, you access the page's differences view, where you can select two versions to compare, allowing you to execute the actions [reset and rollback](/en/platform/core/#revert-a-change).
 
 :::tip Tip
-If your page is in _draft_ status, the differences icon will not appear, as there is nothing to compare the current editable version with. To learn more about differences and backups, see the [versioning](/en/platform/core/key-concepts#versioning) section.
+If your page is in _draft_ status, the differences icon will not appear, as there is nothing to compare the current editable version with. To learn more about differences and backups, see the [versioning](/en/platform/core/#versioning) section.
 :::
 
 **Activity**: Displays a sidebar that shows the activity associated with the page, such as modifications, publications, and comments. At the bottom of this bar, you can type comments. If the page is under review, all assigned reviewers will receive a notification with the comment.
@@ -78,7 +78,7 @@ To learn more about origination pages, see [Create an Origination Page](/en/plat
 
 - Save: Allows you to save the changes made to the page.
 - Send to review: If team review is enabled and there are no pending changes, this action allows you to submit the page for review and assign reviewers.
-- Publish: If the page is approved, you can go to the [joint publication view](/en/platform/core/key-concepts) using this action.
+- Publish: If the page is approved, you can go to the [joint publication view](/en/platform/channels/sites.html#review-and-joint-publication) using this action.
 
 :::tip Tip
 - If a page has a parent, you can only publish it if it is published.

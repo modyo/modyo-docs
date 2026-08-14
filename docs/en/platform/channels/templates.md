@@ -12,8 +12,8 @@ In the templates section, the main menu is hidden to optimize the work area. At 
 
 - **Published**: There is a published version and the editable version is identical.
 - **Pending changes**: There is a published version, but there are changes pending publication in your editable version.
-- **Under review**: [Team review](/en/platform/core/key-concepts) is active, and the editable version has been submitted for review.
-- **Approved**: [Team review](/en/platform/core/key-concepts) is active and the item's review conditions have been met. In this state, the template is ready to be published.
+- **Under review**: [Team review](/en/platform/core/#team-review) is active, and the editable version has been submitted for review.
+- **Approved**: [Team review](/en/platform/core/#team-review) is active and the item's review conditions have been met. In this state, the template is ready to be published.
 
 At the top right, you can see the last date of publication and icons with the available actions:
 
@@ -28,7 +28,7 @@ You can preview the changes as a non-session user or a user with an active Modyo
 :::tip Tip
 Every time you publish a version, the version that was published becomes a backup version. By default, up to 20 backups are saved, allowing you to compare, restore, and roll back to the last 20 versions
 
-For more information on versioning, see the section on [versioning](/en/platform/core/key-concepts#versioning).
+For more information on versioning, see the section on [versioning](/en/platform/core/#versioning).
 :::
 
 **Search in templates**: Displays a sidebar with a text search engine that explores all editable templates.
@@ -224,7 +224,7 @@ Subversions are specific to each template, so some may have changes and others m
 :::
 
 :::tip Tip
-If you restore a previous version to the editable version, you can access the sub-versions of each template in that version. You can learn more about [versioning](/en/platform/core/key-concepts#versioning) here.
+If you restore a previous version to the editable version, you can access the sub-versions of each template in that version. You can learn more about [versioning](/en/platform/core/#versioning) here.
 :::
 
 To restore all templates to their original version, click on the secondary action in the top bar **Restore All**. For the changes to take effect, you must publish the templates.
