@@ -532,6 +532,88 @@ Lo que entrega un response como el siguiente:
 
 Finalmente, la API siempre retornará la primera página (`current_page: 1`) de recursos agrupados por páginas de 10 elementos (`per_page: 10`) de manera predeterminada.
 
+### Límite de registros por página
+
+`per_page` tiene un tope de 100 registros. Si pides un valor mayor, la API lo recorta en silencio: responde `HTTP 200 OK` con 100 registros, sin error y sin ninguna advertencia en el cuerpo. El único lugar donde ves cuántos registros trae realmente cada página es `meta.per_page`, así que conviene leerlo en vez de dar por hecho el valor que enviaste.
+
+Los valores fuera de rango tampoco fallan, caen a un valor predeterminado sin avisar:
+
+- `per_page=0`, un valor negativo o un valor que no es un número no traen "todo": la página queda en los 10 registros predeterminados.
+- `page=0`, un valor negativo o un valor que no es un número devuelven la primera página.
+- Existe un tercer parámetro, `paginate`, que tampoco desactiva la paginación. Con `paginate=false` o `paginate=0` la página pasa a 100 registros, exactamente lo mismo que `per_page=100`.
+
+No hay ninguna combinación de parámetros que devuelva una colección completa en una sola llamada. Para llevarte todos los registros de un recurso, recorre las páginas hasta `meta.total_pages`.
+
+:::warning Atención
+El catálogo Swagger de `GET /api/admin/sites` declara `per_page` con la descripción "Number of items per page (0 for all)", un máximo de 1000 y un valor predeterminado de 25. Las tres cosas son falsas: ese listado pagina como el resto de la API, con tope 100, 10 registros predeterminados y `per_page=0` devolviendo 10. Una sincronización de sitios escrita con `per_page=0` confiando en esa descripción recibe 10 sitios y `HTTP 200 OK`, sin ninguna señal de que faltan los demás.
+:::
+
+## Parámetros comunes de las colecciones
+
+Los listados de la API de administración comparten un grupo de parámetros de query que se comportan igual en todos los recursos, aunque el catálogo Swagger no los declare en todas las operaciones. Comparten también la misma forma de fallar: un valor que la plataforma no entiende no devuelve un error, se ignora y la consulta responde con su comportamiento predeterminado.
+
+### Selección de atributos con only
+
+`only` recorta los atributos que trae la respuesta y está disponible en la mayoría de los listados y detalles de la API de administración. Se envía como arreglo, repitiendo el parámetro una vez por atributo:
+
+```shell script
+curl -X GET "https://test.modyo.com/api/admin/messaging/campaigns?only[]=id&only[]=name" -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
+```
+
+Un atributo que no existe en el recurso simplemente no aparece en la respuesta y no genera error.
+
+:::warning Atención
+No uses `only` como lista separada por comas. Algunas operaciones del catálogo Swagger lo declaran así, con ejemplos del estilo `id,name,admin_users_count` (es el caso de `/api/admin/groups` y de `/api/admin/customers/{realm_uid}/forms`), pero la plataforma no divide el valor por comas: toma `id,name` como el nombre de un único atributo, no encuentra ninguno que se llame así y devuelve la colección con todos sus objetos vacíos, con `HTTP 200 OK`.
+:::
+
+:::tip Tip
+En `GET /api/admin/versions`, `only` significa otra cosa: no recorta atributos, sino que filtra las versiones por tipo con una lista separada por comas de `editable`, `current`, `backup` y `scheduled`, por ejemplo `only=editable,current`. Es el único recurso donde `only` se interpreta de esta forma.
+:::
+
+### Orden con sort_by y order
+
+`sort_by` elige el atributo por el que se ordena la colección y `order` el sentido, con los valores `ASC` y `DESC`. `order` no distingue mayúsculas de minúsculas, así que `asc` y `desc` también sirven.
+
+Salvo que el recurso indique otra cosa, el orden predeterminado es `updated_at` en `DESC`, del registro modificado más recientemente al más antiguo.
+
+Ambos parámetros caen a ese orden predeterminado en silencio cuando el valor no sirve:
+
+- `order` con cualquier valor distinto de `ASC` o `DESC` se ignora por completo.
+- `sort_by` solo se respeta si nombra un atributo real del recurso y, cuando el recurso publica en el catálogo Swagger una lista de atributos ordenables, si pertenece a esa lista. Un atributo mal escrito o fuera de la lista se ignora.
+
+Un listado ordenado por un `sort_by` inválido se ve igual que uno ordenado correctamente, así que revisa el orden de los registros en la respuesta antes de dar la consulta por buena.
+
+Estos recursos aceptan `sort_by` y `order` aunque el catálogo Swagger no los declare entre sus parámetros:
+
+- `GET /api/admin/customers/{realm_uid}/forms`
+- `GET /api/admin/customers/{realm_uid}/originations`
+- `GET /api/admin/customers/{realm_uid}/users/{user_id}/submissions`, que además no aparece en el catálogo
+- Los listados de `/api/admin/team_members`, que declaran `order` en algunas operaciones pero nunca `sort_by`
+
+### Rangos de fecha
+
+`date_range` acota una colección por la fecha de creación de sus registros y `updated_date_range` por la fecha de la última modificación. Los dos reciben las dos fechas como arreglo:
+
+```shell script
+curl -X GET "https://test.modyo.com/api/admin/logs?date_range[]=2026-07-01&date_range[]=2026-07-15" -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
+```
+
+La plataforma expande cada fecha al día completo: el primer valor pasa al inicio de ese día y el segundo al final. La hora que envíes no cambia nada, `date_range[]=2026-07-15T18:00:00` cubre igualmente el 15 de julio entero, y un rango con la misma fecha en los dos valores cubre ese día completo. Internamente el rango se traduce a los parámetros `from_date` y `to_date` (o `updated_from_date` y `updated_to_date`), y tiene prioridad sobre ellos cuando los envías en la misma llamada.
+
+:::warning Atención
+Si alguna de las dos fechas no se puede interpretar, o si envías el arreglo con un solo valor, la plataforma descarta el rango completo y responde la colección sin ningún filtro de fecha, con `HTTP 200 OK` y sin mensaje de error. En esa misma llamada también se descartan los `from_date` y `to_date` que hayas enviado por separado. En vez de un `4xx` recibes muchos más registros de los que pediste, así que valida las fechas antes de armar la llamada y compara `meta.total_entries` con lo que esperabas.
+:::
+
+Los recursos que aceptan `date_range` son:
+
+- `GET /api/admin/logs`
+- `GET /api/admin/business_events`, que lo acepta sin declararlo en el catálogo Swagger
+- `GET /api/admin/customers/{realm_uid}/payments/orders`
+- `GET /api/admin/customers/{realm_uid}/originations/{id}/submissions`, el único que acepta también `updated_date_range`
+- `GET /api/admin/customers/{realm_uid}/originations/{id}/assignees`
+
+En las respuestas de una originación y en sus asignados, el filtro solo se aplica cuando el rango llega con las dos fechas; en cualquier otro caso la colección se devuelve sin filtrar.
+
 ## Registros (Logs)
 
 Con la API de Logs obtienes los registros de actividad que suceden dentro de Modyo Platform. Cada registro guarda el tipo de acción (`type`), el administrador que la ejecutó (`user`, vacío cuando la acción es automática), el objeto afectado (`loggeable_type` y `loggeable_id`) y el contexto donde ocurrió (`site_id`, `space_id`). La actividad de los usuarios finales llega con tipos de registro propios, como `user_login_log` o `form_response_created_log`.
