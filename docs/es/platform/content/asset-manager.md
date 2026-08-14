@@ -20,12 +20,20 @@ Puedes cargar diversos tipos de media a este espacio, considerando las siguiente
 - **Archivos**: 10 MB
 
 Los tipos de archivos permitidos son:
-- **Imágenes**: apng, avif, bmp, gif, ico, jpeg, jpg, png, tif, tiff, webp
+- **Imágenes**: apng, avif, bmp, gif, ico, jpeg, jpg, png, svg, tif, tiff, webp
 - **Videos**: av, avi, f4v, flv, mkv, mov, mp4, mpeg, webm, wmv
 - **Audios**: 3gp, aac, alac, dsd, flac, mp3, pcm, wav, m4a, ogg, wma
 - **Archivos**: 7z, ai, apk, css, csv, doc, docx, fon, ico, iso, jar, js, msi, ods, odt, otf, pdf, ppt, pptx, rar, rss, rtf, scss, tar, tex, ttf, txt, vcf, wdp, xhtml, xls, xlsm, xlsx, xml, zip, one, ecf, pub, xps, json, svg, woff, woff2, ics
 
+:::warning Atención
+El formato `svg` depende de una configuración de tu cuenta. La casilla **Permitir el uso de SVG**, en **Configuración** > **Seguridad**, viene desactivada, y mientras siga así cualquier intento de subir o de actualizar un archivo SVG se rechaza con el mensaje _No se pueden cargar ni actualizar archivos SVG debido a las políticas de seguridad configuradas_. Antes de activarla, revisa [Imágenes SVG](/es/platform/core/security.html#imagenes-svg), porque tiene implicancias de seguridad.
+:::
 
+Modyo también revisa el nombre del archivo: no puede contener más de un punto, así que un nombre como `estilos.min.css` se rechaza con el mensaje _no debe incluir puntos_. Al guardar, además, cualquier carácter que no sea una letra sin acento, un número o un guion se reemplaza por un guion bajo, por lo que `Presentación final.pdf` queda almacenado como `Presentaci_n_final.pdf`.
+
+:::warning Atención
+Desde Modyo 10.2, además de la extensión y del tamaño, se comprueba que el tipo de contenido real del archivo corresponda a su extensión. Si no coinciden, la subida falla y el panel muestra el nombre del archivo junto al mensaje _el tipo de contenido no coincide con la extensión del archivo_. La comprobación se aplica a los cuatro tipos de media, tanto en el panel como en la API de administración, así que un PNG renombrado a `.jpg` o un CSV renombrado a `.xlsx` dejan de subirse. Si te encuentras con este error, renombra el archivo con su extensión real o vuelve a exportarlo en el formato que necesitas.
+:::
 
 ## Acerca de la Interfaz
 

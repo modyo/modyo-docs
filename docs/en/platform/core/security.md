@@ -133,6 +133,23 @@ If the authenticator is lost or stolen, it will not be possible to access the ac
 If you have activated the option to force authentication, the next time the user tries to log in, they will need to initialize the authenticator first. Once the authenticator is active, the user can proceed with the login process.
 :::
 
+## SVG images
+
+The **Enable use of SVG images** section defines whether your account accepts SVG files. It is disabled by default, and only team members with the **Admin Security** permission can change it.
+
+To allow SVG file uploads, follow these steps:
+
+1. In the side menu, expand **Settings** and click **Security**.
+2. Scroll down to the **Enable use of SVG images** section.
+3. Check the **Allow use of SVG** box.
+4. Click **Save**.
+
+While the box is unchecked, any attempt to upload or update an SVG file in [Media](/en/platform/content/asset-manager.html) is rejected with the message _Can't upload or update SVG files due to configured security policies_. The rejection applies both in the panel and through the admin API, and it also reaches the SVG files that already exist in the account: while the box stays unchecked, you cannot save changes to their title, alternative text, description, or tags either.
+
+:::warning Attention
+The panel itself warns you that "The use of SVG images can leave you vulnerable to XSS attacks and may be insecure". An SVG is an XML document that can carry scripts and external references inside, and the browser interprets it with the same privileges as the page that displays it. Enable it only if your teams need this format and you control the origin of the files they upload.
+:::
+
 ## Best practices
 
 ### Important concepts

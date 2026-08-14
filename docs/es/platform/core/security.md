@@ -133,6 +133,23 @@ En caso de extravío o robo del autenticador, no será posible entrar a la cuent
 Si has activado la opción de forzar autenticación, la próxima vez que el usuario intente iniciar sesión, será necesario que primero inicialice el autenticador. Una vez que el autenticador esté activo, el usuario puede proceder con el proceso de inicio de sesión.
 :::
 
+## Imágenes SVG
+
+La sección **Habilitar el uso de imágenes SVG** define si tu cuenta acepta archivos SVG. Viene desactivada, y solo pueden cambiarla los miembros del equipo con el permiso **Administrar Seguridad**.
+
+Para permitir la carga de archivos SVG, sigue estos pasos:
+
+1. En el menú lateral, expande **Configuración** y haz click en **Seguridad**.
+2. Baja hasta la sección **Habilitar el uso de imágenes SVG**.
+3. Marca la casilla **Permitir el uso de SVG**.
+4. Haz click en **Guardar**.
+
+Mientras la casilla está desmarcada, cualquier intento de subir o de actualizar un archivo SVG en [Media](/es/platform/content/asset-manager.html) se rechaza con el mensaje _No se pueden cargar ni actualizar archivos SVG debido a las políticas de seguridad configuradas_. El rechazo aplica tanto en el panel como en la API de administración, y alcanza también a los SVG que ya existan en la cuenta: mientras la casilla siga desmarcada tampoco puedes guardar cambios en su título, texto alternativo, descripción o etiquetas.
+
+:::warning Atención
+El propio panel advierte que "El uso de imágenes SVG te puede dejar vulnerable a los ataques XSS y puede resultar inseguro". Un SVG es un documento XML que puede llevar scripts y referencias externas dentro, y el navegador lo interpreta con los mismos privilegios que la página que lo muestra. Actívalo solo si tus equipos necesitan este formato y controlas el origen de los archivos que suben.
+:::
+
 ## Mejores Prácticas
 
 ### Conceptos importantes

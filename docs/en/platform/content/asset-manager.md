@@ -20,12 +20,20 @@ Different types of media can be uploaded to this space, considering the followin
 - **Files**: 10 MB
 
 Allowed file types are:
-- **Images**: apng, avif, bmp, gif, ico, jpeg, jpg, png, tif, tiff, webp
+- **Images**: apng, avif, bmp, gif, ico, jpeg, jpg, png, svg, tif, tiff, webp
 - **Videos**: av, avi, f4v, flv, mkv, mov, mp4, mpeg, webm, wmv
 - **Audios**: 3gp, aac, alac, dsd, flac, mp3, pcm, wav, m4a, ogg, wma
 - **Files**: 7z, ai, apk, css, csv, doc, docx, fon, ico, iso, jar, js, msi, ods, odt, otf, pdf, ppt, pptx, rar, rss, rtf, scss, tar, tex, ttf, txt, vcf, wdp, xhtml, xls, xlsm, xlsx, xml, zip, one, ecf, pub, xps, json, svg, woff, woff2, ics
 
+:::warning Attention
+The `svg` format depends on an account setting. The **Allow use of SVG** box, under **Settings** > **Security**, is disabled by default, and while it stays that way any attempt to upload or update an SVG file is rejected with the message _Can't upload or update SVG files due to configured security policies_. Before enabling it, review [SVG images](/en/platform/core/security.html#svg-images), because it has security implications.
+:::
 
+Modyo also checks the file name: it cannot contain more than one dot, so a name like `styles.min.css` is rejected with the message _shouldn't include dots_. In addition, when saving, every character that is not an unaccented letter, a number, or a hyphen is replaced with an underscore, so `Presentación final.pdf` is stored as `Presentaci_n_final.pdf`.
+
+:::warning Attention
+Since Modyo 10.2, in addition to the extension and the size, Modyo checks that the file's actual content type matches its extension. If they do not match, the upload fails and the panel shows the file name next to the message _content type does not match the file's extension_. The check applies to the four media types, both in the panel and through the admin API, so a PNG renamed to `.jpg` or a CSV renamed to `.xlsx` can no longer be uploaded. If you run into this error, rename the file with its real extension or export it again in the format you need.
+:::
 
 ## About the Interface
 
