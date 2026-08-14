@@ -769,7 +769,29 @@ Returns the Submissions with the selected status. *e.g.*
 
 **Parameters:**
 - submissions (ArraySubmission) - array with user submissions
-- status (String) - Originations status. Supported values are 'pending', 'completed' and 'all'
+- status (String) - Submission status. Supported values are 'pending', 'completed' and 'all'
+
+In Modyo 10.2 a submission can be in one of four statuses: **Not started**, **Pending**, **Completed**, and **Canceled**. The filter recognizes only three values, and they don't map directly onto those statuses:
+
+- `'pending'` returns the **Pending** submissions.
+- `'completed'` returns the **Completed** ones.
+- `'all'` doesn't return all of them: it delivers the **Pending** ones plus the **Completed** ones, and leaves out the **Not started** and the **Canceled** ones.
+- `'not_started'` and `'canceled'` aren't supported. The filter doesn't fail and leaves no trace on the page: it returns an empty collection, so any listing that uses them shows up blank.
+
+:::warning Attention
+A submission is born **Not started** and only moves to **Pending** when the first response to one of its tasks is saved, so newly created ones don't show up in listings built with this filter. On top of that, `user.submissions` is already scoped to the **Pending** and **Completed** submissions, so no combination of `by_status` can reach the **Not started** or **Canceled** ones in that collection.
+:::
+
+To list the statuses the filter doesn't cover, loop over an unscoped collection, such as `user.invited_submissions`, without going through `by_status`, and compare [`submission.status`](/en/platform/channels/liquid-markup/objects.html#submission) inside the loop:
+
+```liquid
+{% assign invited = user.invited_submissions | by_origination: 'my-origination' %}
+{% for invited_submission in invited %}
+  {% if invited_submission.status == 'not_started' %}
+    <a href="{{ invited_submission.resume_url }}">{{ invited_submission.origination.name }}</a>
+  {% endif %}
+{% endfor %}
+```
 
 ### Completed
 
@@ -783,17 +805,35 @@ Checks whether an element (step/task wrapper) is completed for a given submissio
 
 Returns: Boolean (true/false)
 
+As of Modyo 10.2 the filter resolves the status against the user present in the render context, not against the submission owner: a step counts as completed only if that user has a completed response for every task they can see. In a flow with invited users, the same template delivers different results depending on who is looking, and a step that showed up as completed in 10.1 may now show up as incomplete.
+
+:::warning Attention
+The filter needs the `user` object in the template context. If it isn't there, evaluation aborts as soon as the submission has at least one completed task, and the published HTML shows the `<!-- Liquid Error -->` comment instead of the block, with no warning for whoever is browsing. Guard the block with <span v-pre>`{% if user %}`</span> and make sure the template receives the user.
+:::
+
 ### URL (Step URL for Submission)
 
 Generates a navigable URL for a step within a submission (first visible task). Only returns a value if submission is pending and either the step is completed or origination step ordering permits navigation.
 
 *e.g.* <span v-pre>`{{ step | url: submission }}`</span>
 
+Just like `completed`, it resolves the completed step and the first visible task against the user in the render context, with the same consequences in flows with invited users and the same behavior when `user` is missing from the context.
+
+:::warning Attention
+A newly created submission is **Not started**, not **Pending**, so the filter returns no value in the most common case of a template meant to resume a submission. The submission moves to **Pending** when the first response to one of its tasks is saved; until then, take the user to the start of the flow with [`submission.resume_url`](/en/platform/channels/liquid-markup/objects.html#submission), which doesn't depend on the status.
+:::
+
 ### Resume Link
 
 Returns an HTML anchor tag to resume a pending step for a submission, or the step name if no URL is available.
 
 *e.g.* <span v-pre>`{{ step | resume_link: submission }}`</span>
+
+The link is built by `url`, so it inherits all of its conditions: when `url` returns no value, `resume_link` prints the step name as plain text.
+
+:::warning Attention
+On a **Not started** submission the filter prints the step name as plain text and the page shows no error: the template looks complete, but the user has no way in. The same happens when `url` returns no link for that step with the context user. Check the submission status before rendering the listing and offer [`submission.resume_url`](/en/platform/channels/liquid-markup/objects.html#submission) while it isn't **Pending** yet.
+:::
 
 ### Submissions Selector
 
