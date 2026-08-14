@@ -465,6 +465,93 @@ Al eliminar un campo personalizable, eliminas permanentemente todos los valores 
 Además de guardar valores específicos de los usuarios, puedes utilizar los valores de los campos personalizables para crear filtros de [segmentos](/es/platform/customers/segments) lo que te permite separar a los usuarios según sus valores personalizados.
 :::
 
+### Data Sets
+
+Un data set es una lista de alternativas reutilizable que vive dentro del reino. En vez de repetir las mismas opciones en cada formulario, las defines una vez y las usas en **formularios**, en **originaciones** y en **campos personalizados de usuario** de tipo lista desplegable.
+
+Los encuentras en el menú lateral del reino, en **Configuración de reino** → **Data Set**. Para administrarlos necesitas el permiso agrupado **Administrar Data Sets**.
+
+#### Tipos de data set
+
+Al crear un data set eliges su tipo, y esa elección no se puede cambiar después:
+
+- **Simple**: Una lista plana de alternativas. Alimenta campos de tipo **Lista desplegable** y campos personalizados de usuario de tipo lista desplegable.
+- **Anidado**: Un árbol de alternativas, donde cada opción puede tener opciones hijas. Alimenta campos de tipo **Preguntas Anidadas**. Admite hasta 5 niveles de profundidad de manera predeterminada; si te pasas, el guardado falla indicando la alternativa que excede el límite.
+
+Las etiquetas de las alternativas no se pueden repetir, sin distinguir mayúsculas. En un data set simple la restricción alcanza a toda la lista; en uno anidado se aplica **entre alternativas hermanas**, así que dos ramas distintas sí pueden tener una opción con el mismo nombre.
+
+#### Usar un data set en un campo
+
+En el editor del campo, marca **Usar data set** y elige el data set en el selector. La casilla solo está disponible mientras el campo es nuevo: una vez guardado, un campo normal no se puede convertir en campo de data set ni al revés.
+
+El editor del data set muestra un panel **Uso del data set** con los formularios, las originaciones y los campos personalizados que lo usan. Un data set en uso no se puede eliminar.
+
+#### Carga masiva de alternativas
+
+Para cargar muchas alternativas de una vez, marca **Utilizar ingreso masivo de alternativas** y pega el listado. La casilla solo está disponible mientras el data set no tenga alternativas: sirve para poblarlo, no para agregar a lo que ya existe.
+
+- En un data set **simple**, una alternativa por línea.
+- En un data set **anidado**, una rama completa por línea, con los niveles separados por punto y coma o por tabulación. Esto último permite pegar directamente desde una planilla.
+
+Las líneas en blanco se descartan y las repetidas se ignoran. En los anidados, las ramas que comparten los primeros niveles se fusionan: `Chile;Región Metropolitana;Providencia` y `Chile;Región Metropolitana;Las Condes` producen un solo `Chile` con una sola `Región Metropolitana`.
+
+#### Identificadores externos
+
+Una alternativa se identifica por su etiqueta, que es un texto pensado para el usuario final: puede llevar tildes y espacios, y cambia con el tiempo. Si un sistema externo necesita reconocer la opción elegida, atarse a ese texto es frágil. Para eso están los identificadores externos: un código estable por alternativa, que tú defines y que los integradores reciben junto con la respuesta.
+
+Para activarlos, marca **Usar external ids** en el editor del data set. Aparece una columna **EXTERNAL ID** con un campo por alternativa; en los data sets anidados, en todos los niveles del árbol.
+
+##### Reglas del identificador externo
+
+- **Es obligatorio en todas las alternativas.** Con la casilla marcada no puedes guardar si alguna quedó vacía. Esto incluye activarla sobre un data set que ya tenía alternativas: hay que completarlas todas antes de poder guardar.
+- **Solo admite letras, números, guion medio y guion bajo.** Nada de espacios, puntos ni tildes. El editor normaliza lo que escribes mientras tecleas, así que no puedes ingresar caracteres inválidos a mano.
+- **Se guarda siempre en minúsculas**, sin espacios al principio ni al final.
+- **Es único en todo el data set.** A diferencia de las etiquetas, la unicidad no se limita a las alternativas hermanas: un código usado en una rama no se puede repetir en otra ni en otro nivel. La comparación ignora mayúsculas.
+
+Al **desactivar** la casilla se borran los identificadores externos de todas las alternativas del data set. La plataforma te pide confirmación antes de aplicarlo, con el mensaje **Al desactivar los external ids se borrará el external id de todas las alternativas de este data set. ¿Deseas continuar?**
+
+##### Carga masiva con identificadores externos
+
+Con la casilla marcada, el formato de la carga masiva cambia: cada alternativa se escribe como `etiqueta:identificador`.
+
+- En un data set **simple**, una alternativa por línea:
+
+```text
+Cuenta Corriente:001
+Cuenta Vista:002
+Cuenta de Ahorro:003
+```
+
+- En un data set **anidado**, una rama por línea, con cada nivel en el mismo formato:
+
+```text
+Chile:cl; Región Metropolitana:rm; Providencia:prov
+Chile:cl; Región Metropolitana:rm; Las Condes:lcd
+Perú:pe; Lima:lim; Miraflores:mir
+```
+
+Si una sola línea está mal formada, **no se importa ninguna alternativa**: la carga se rechaza completa y el mensaje indica la línea y el texto que causaron el problema. Se rechaza una línea sin `:`, una sin identificador, una sin etiqueta, y una con un identificador que no cumple el formato. También se rechaza que una misma etiqueta llegue con dos identificadores distintos.
+
+:::warning Atención
+En los data sets anidados el ejemplo de ayuda menciona solo el punto y coma como separador de niveles, pero la tabulación también funciona, igual que en la carga masiva sin identificadores.
+:::
+
+##### Cómo se consumen
+
+Una vez configurados, los identificadores externos quedan disponibles donde los integradores los necesitan:
+
+- Al consultar el data set por la **API de administración**, cada alternativa incluye su `external_id`, y el data set informa si tiene la opción activada mediante `use_external_ids`.
+- Al consultar la respuesta de un usuario por la **API de administración**, se incluye el `external_id` de la alternativa elegida.
+- En **plantillas Liquid**, la respuesta expone `answer.external_id`.
+
+En un data set anidado, el identificador que se entrega es el de la **hoja** seleccionada, no el de la rama completa: la respuesta apunta a una sola alternativa, la del último nivel.
+
+:::tip Data sets sin identificadores externos
+Leer `external_id` de un data set que no tiene la opción activada nunca produce un error. En Liquid devuelve una cadena vacía, y lo mismo ocurre al leerlo desde una respuesta que no es de data set. Puedes agregar la lectura a tus plantillas antes de terminar de configurar los data sets sin romper nada.
+:::
+
+Activar los identificadores externos no cambia cómo se elige ni cómo se guarda una respuesta, ni afecta la lógica condicional de las originaciones. Los data sets que ya tenías siguen funcionando igual mientras no marques la casilla.
+
 ### Seguridad
 
 #### Política de Contraseña
