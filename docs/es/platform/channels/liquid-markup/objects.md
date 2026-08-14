@@ -31,6 +31,7 @@ Los objetos de Cuenta se utilizan principalmente en el contexto de autenticació
 | **account.url**        | La URL de Modyo Platform, incluido el protocolo y el subdominio.                                          | ```https://test.modyo.com```                  |
 | **account.host**       | El nombre del subdominio de Modyo Platform.                                                               | ```test```                                    |
 | **account.google_key** | Si hay autenticación con Google, devuelve la clave de credencial; de lo contrario, devuelve vacío (void). | ```AIzaSyDmrYmbFpzqdIxHycHbgtJrs9lhKOfggEE``` |
+| **account.name**       | El nombre de la cuenta.                                                                                   | ```Modyo```                                   |
 
 ## adminuser
 
@@ -121,6 +122,7 @@ Crea contenido dinámico en tus espacios usando Entradas. En este objeto tienes 
 | Objeto                  | Descripción                                                                                                                           | Ejemplo                                                                   |
 |-------------------------|---------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|
 | **entry.meta.space**         | Nombre del espacio asociado a la entrada.                                                                                             | ```espacio1```                                                            |
+| **entry.meta.space_uid**     | ID único del espacio asociado a la entrada. Mientras `entry.meta.space` devuelve el nombre visible, este es el identificador con el que se indexa `spaces` en las plantillas. | ```espacio-1```                                                           |
 | **entry.meta.category**      | Ruta de la categoría de esta entrada.                                                                                                 | ```category-1/category-2```                                               |
 | **entry.meta.category_name** | Nombre de la categoría de esta entrada.                                                                                               | ```category 2```                                                          |
 | **entry.meta.category_slug** | Slug de la categoría de esta entrada.                                                                                                 | ```category-2```                                                          |
@@ -308,6 +310,17 @@ Extiende la funcionalidad del objeto Grid y contiene los siguientes atributos ad
 | **side_right_three_cols_grid.col1_widgets**       | Array de objetos de tipo widget. |         |
 | **side_right_three_cols_grid.col2_widgets**       | Array de objetos de tipo widget. |         |
 | **side_right_three_cols_grid.col3_widgets**       | Array de objetos de tipo widget. |         |
+
+## group
+
+Los objetos de group representan un grupo de administradores de la cuenta. No son un segmento de usuarios finales: agrupan a quienes trabajan en el panel. Los atributos disponibles son:
+
+| Objeto         | Descripción       | Ejemplo                                    |
+|----------------|-------------------|--------------------------------------------|
+| **group.uuid** | UUID del grupo.   | ```9f1c0c2e-3f5a-4a1b-9c3d-2b6f8a1e4d70``` |
+| **group.name** | Nombre del grupo. | ```Analistas de riesgo```                  |
+
+Llegas a este objeto desde el atributo `assignee_group` de una revisión pendiente, de una validación de tarea o de una respuesta de tarea de revisión, que es donde queda registrado el grupo al que se asignó el trabajo.
 
 ## location
 
@@ -591,6 +604,8 @@ Toda respuesta de tarea comparte los atributos que hereda de la respuesta base: 
 |-----------------------------------------------|---------------------------------------------------------|-----------------------------------------------|
 | **pending_review_task_response.approved**     | Indica si la tarea de revisión fue aprobada.            | ```true```                                    |
 | **pending_review_task_response.content**      | Contenido de la revisión.                               | ```Este es el contenido de la revisión```     |
+| **pending_review_task_response.assignee**     | Administrador asignado a la revisión. Devuelve un objeto adminuser. |                                   |
+| **pending_review_task_response.assignee_group** | Grupo de administradores asignado a la revisión. Devuelve un objeto group. |                          |
 | **code_snippet_task_response.data**           | Contenido del snippet de código (alias de `content`).   | ```{"submission"=>{"fields"=>{"car"=>"fiat", "year"=>1999, "color"=>"black", "extras"=>["ac", "gps", "sunroof"], "expiration"=>"2026-02-01"}}}``` |
 | **code_snippet_task_response.completed**      | Indica si la tarea de snippet fue completada.           | ```false```                                   |
 | **code_snippet_task_response.content**        | Contenido del snippet de código.                        | ```{"submission"=>{"fields"=>{"car"=>"fiat", "year"=>1999, "color"=>"black", "extras"=>["ac", "gps", "sunroof"], "expiration"=>"2026-02-01"}}}```                               |
@@ -615,6 +630,24 @@ Toda respuesta de tarea comparte los atributos que hereda de la respuesta base: 
 |---------------------------------------------------------------------|--------------------------------------------------------------|-------------------------------------------------------------------------------------------|
 | **user_input_task_response.task**                                   | Tarea de entrada de usuario a la que pertenece la respuesta. |                                                                                           |
 | **user_input_task_response.fields['identificador_de_la_pregunta']** | Respuestas de la tarea de entrada de usuario.                | ```respuesta``` |
+
+### repeatable_group
+
+Un grupo repetible reúne varias preguntas que el usuario puede responder más de una vez, por ejemplo para cargar los datos de cada carga familiar. Para leer las respuestas, indexa `fields` con el identificador de la pregunta de tipo grupo: obtienes la colección de grupos respondidos, y sobre cada elemento vuelves a indexar `fields` con el identificador de la pregunta que quieres leer.
+
+| Objeto                                                     | Descripción                                                 | Ejemplo         |
+|------------------------------------------------------------|-------------------------------------------------------------|-----------------|
+| **repeatable_group.fields['identificador_de_la_pregunta']** | Respuesta de esa pregunta dentro del grupo repetible.       | ```respuesta``` |
+
+```liquid
+{% for grupo_respondido in user_input_task_response.fields['identificador_del_grupo'] %}
+  {{ grupo_respondido.fields['identificador_de_la_pregunta'] }}
+{% endfor %}
+```
+
+:::warning Atención
+No confundas este objeto con `repeatable_group_field`, que aparece en la ficha de [field](/es/platform/channels/liquid-markup/objects.html#field). Ese es un campo de contenido del módulo Content; `repeatable_group` corresponde a las respuestas de un formulario del módulo Customers. Comparten el nombre y no tienen relación.
+:::
 
 ## target
 
@@ -684,6 +717,14 @@ Usa los objetos de user para obtener información de tus usuarios del módulo Cu
 | **user.username**                    | Username del usuario.                                          | ```ivan@modyo.com```                                 |
 | **user.uuid**                        | UUID del usuario.                                              | ```cdc7f0e2-b5c3-4b92-aa34-962ffa0bi572```           |
 | **user.realm_uid**                   | Realm del usuario.                                             | ```my-realm```                                       |
+| **user.invited_submissions**         | Colección de respuestas a las que el usuario fue invitado mediante una invitación activa. Se excluyen las invitaciones canceladas y el orden va de la más reciente a la más antigua. |                     |
+| **user.unsubscribe_link**            | Enlace de baja del usuario, para plantillas de mensajería.     | ```https://test.modyo.com/realms/default/mailing/unsubscribe?unsubscribe_token=ab12cd34``` |
+
+`user.invited_submissions` entrega una colección, así que se compone con el filtro [by_origination](/es/platform/channels/liquid-markup/filters.html) para quedarte con las respuestas de una originación puntual:
+
+```liquid
+{% assign source = user.invited_submissions | by_origination: origination.uid | first %}
+```
 
 ## user_agent
 
