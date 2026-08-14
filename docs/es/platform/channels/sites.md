@@ -6,11 +6,15 @@ search: true
 
 Una aplicación web (web app) despliega el contenido creado en Content y Channels para crear tu canal digital personalizado. En la aplicación web se lleva a cabo todo el desarrollo, diseño y flujo de navegación.
 
-Una web app puede estar en uno de estos tres estados:
+Una aplicación web puede estar en uno de estos tres estados, que eliges en **Configuración de la aplicación** > [General](/es/platform/channels/sites.html#general) > **Cambiar estado**:
 
-- **Habilitado**: Estado por defecto de las aplicaciones web recién creadas y aquellas que están habilitadas para uso.
-- **Cambios pendientes**: Existen modificaciones pendientes en la aplicación web. Un administrador puede verificar los cambios y publicar la aplicación web.
-- **Deshabilitado**: No es posible acceder a la aplicación web.
+- **Habilitado**: La aplicación web es editable y visible para el público.
+- **Editable**: La aplicación web es modificable, pero no visible para el público: requiere iniciar sesión para acceder. Es el estado con el que nace toda aplicación web recién creada.
+- **Deshabilitado**: La aplicación web no es editable ni accesible.
+
+:::tip Estados transitorios
+Además de estos tres, la plataforma usa dos estados que asigna por su cuenta y que no puedes elegir en el selector: el de una copia mientras se está clonando y el de una aplicación mientras se está eliminando. En ambos casos la aplicación no aparece en el listado de aplicaciones mientras dura el proceso.
+:::
 
 ## Crear una Aplicación Web
 
@@ -19,14 +23,104 @@ Para crear una nueva web app, sigue estos pasos:
 1. En el menú lateral, haz click en **channels**.
 1. Haz click en **nueva aplicación**.
 1. Escribe el nombre y el host (ruta principal de la aplicación web).
+1. En **Tema**, selecciona el tema con el que parte la aplicación web.
 1. Si es necesario, selecciona a qué reino pertenece.
 1. Haz click en **crear**.
 
-Una vez creada, la aplicación web se habilita automáticamente y el sistema te lleva a la pantalla de resumen.
+Una vez creada, la aplicación web queda en estado **Editable** y el sistema te lleva a la pantalla de [Resumen](/es/platform/channels/sites.html#resumen-de-la-aplicacion). Para que sea visible al público, cambia su estado a **Habilitado** en **Configuración de la aplicación** > [General](/es/platform/channels/sites.html#general) > **Cambiar estado**.
 
 :::warning Atención
 En el índice de web apps, solo verás aquellas apps en las cuales tienes algún rol y eres parte del equipo de trabajo.
 :::
+
+### Tema
+
+El tema es el conjunto de plantillas, snippets, CSS y JavaScript con el que nace la aplicación web. Determina su punto de partida y nada más: es un molde inicial, no una dependencia permanente.
+
+- La lista de temas disponibles depende del plan contratado en la cuenta.
+- Si solo hay un tema disponible, el selector queda deshabilitado y la aplicación se crea con el tema por defecto.
+- Una vez creada la aplicación, sus [plantillas](/es/platform/channels/templates.html) se editan libremente y no existe una opción para cambiar de tema.
+
+## Clonar una aplicación web
+
+Clonar crea una copia independiente de una aplicación web dentro de la misma cuenta. Es útil para partir de una aplicación ya construida, con sus páginas, plantillas y widgets, sin rehacerla desde cero.
+
+Para clonar una aplicación web, sigue estos pasos:
+
+1. En el menú lateral, haz click en **channels**.
+1. En el listado de aplicaciones, ubica la que quieres copiar y, en la columna **Acciones**, haz click en **Clonar**.
+1. En la ventana **Clonar aplicación**, haz click en el botón **Clonar aplicación**.
+1. Espera a que el proceso termine. Al finalizar, el listado se actualiza con la copia ya creada.
+
+La copia toma el nombre y el host de la original precedidos de **Copia de**. Si ese nombre o ese host ya existen en la cuenta, Modyo agrega un número al final.
+
+**Qué se copia**:
+
+- Las plantillas y los snippets.
+- Los widgets y las páginas, con su jerarquía.
+- La navegación.
+- Las variables de la aplicación.
+- Los meta tags personalizados, las redirecciones personalizadas y los revisores forzados.
+- Los miembros del equipo con sus roles.
+- El logo, el favicon y el icono de Apple.
+
+**Qué no se copia**:
+
+- El dominio personalizado y los dominios alternativos: la copia queda accesible solo por su host.
+- El ID de Google Tag Manager.
+- Las páginas de originación.
+- Los stages de la aplicación original.
+- El estado: la copia siempre nace en estado **Editable**, aunque la original esté **Habilitado**.
+
+Todo el contenido de la copia nace sin publicar, así que debes publicarlo antes de que sea visible.
+
+:::tip Tip
+El clonado toma un tiempo y ocurre en segundo plano. Mientras dura, la ventana muestra el mensaje "Esto demorará un tiempo, la aplicación está siendo clonada" y la copia todavía no aparece en el listado de aplicaciones.
+:::
+
+:::warning Atención
+El clonado está sujeto al máximo de aplicaciones de tu plan. Si ya alcanzaste ese máximo, la operación falla con el mensaje "Has alcanzado el número máximo de aplicaciones para el plan actual".
+:::
+
+:::tip Clonar no es lo mismo que crear un stage
+[Agregar un stage](/es/platform/channels/sites.html#agregar-un-nuevo-stage) también copia una aplicación web, pero el resultado es otra etapa de la misma aplicación, pensada para desarrollar y luego sincronizar los cambios de vuelta. Clonar, en cambio, produce una aplicación independiente que no se sincroniza con la original.
+:::
+
+## Resumen de la aplicación
+
+**Resumen** es la pantalla de entrada de toda aplicación web: es a donde llegas al seleccionarla en el listado de aplicaciones, y a donde vuelves con la opción **Resumen** del menú lateral.
+
+En la columna principal encuentras:
+
+- Accesos directos a **Páginas**, **Navegación**, **Widgets** y **Plantillas**, cada uno con la cantidad de elementos de la aplicación.
+- **Actividad**: la bitácora de las acciones que los administradores han realizado sobre la aplicación.
+
+En la columna lateral encuentras los datos de identificación de la aplicación:
+
+- **Etapa**: el stage en el que estás trabajando, junto al acceso a la vista de sincronización.
+- **Estado**: **Cambios pendientes** si hay elementos sin publicar, o **Publicado** si no los hay.
+- **Reino**: el reino al que está vinculada la aplicación, o **Ninguno**.
+- **Privacidad**: **Público** o **Privado**.
+- **Zona horaria**, **Lenguaje**, **Descripción** e **ID** de la aplicación.
+
+En el encabezado ves la fecha del último release, el acceso a la **Vista previa** de la aplicación y el botón **Publicar**, que abre la pantalla de [Revisión y publicación conjunta](/es/platform/channels/sites.html#revision-y-publicacion-conjunta). **Publicar** solo está disponible para quienes tienen el permiso **Administrar Sincronizaciones** o **Gestionar Canales**, y se deshabilita cuando no hay cambios pendientes.
+
+### Cambios pendientes por publicar
+
+Cuando la aplicación tiene la [revisión en equipo](/es/platform/channels/sites.html#revision-en-equipo) activada, bajo el estado **Cambios pendientes** aparece uno de estos tres mensajes:
+
+- **Todos los cambios están aprobados**: se cumplen las condiciones de revisión y puedes publicar.
+- **Los cambios requieren revisión**: todavía no hay ninguna aprobación, y el botón **Publicar** permanece deshabilitado.
+- **Algunos cambios no se han aprobado y necesitan revisión**: hay aprobaciones parciales.
+
+### Acceso a la sincronización
+
+El bloque **Etapa** solo aparece si tu rol tiene alguno de los permisos de sincronización, y el botón cambia según cuál sea:
+
+- Con **Administrar Sincronizaciones** ves **Sincronizar** y puedes [sincronizar el stage](/es/platform/channels/sites.html#sincronizar-un-stage).
+- Con **Ver Sincronizaciones** ves **Sincronizar (solo lectura)**: entras a la vista de sincronización y revisas las diferencias, pero no puedes aplicarlas.
+
+Si la aplicación tiene cambios sin publicar, junto al nombre del stage aparece un ícono de advertencia con el mensaje "Tienes que publicar todos los cambios antes de sincronizar", y al hacer click en **Sincronizar** Modyo te pide confirmación antes de continuar.
 
 ## Revisión y publicación conjunta
 
@@ -221,8 +315,8 @@ Procede con cautela al modificar estas opciones, ya que pueden afectar el acceso
 - **Cambiar host**: Esta acción modifica la visibilidad y accesibilidad de la aplicación. Realizar un cambio de host puede impactar la visibilidad y disponibilidad de la aplicación web.
 - **Cambiar reino**: Despliega el reino de la aplicación. Al cambiar de reino pierdes toda la configuración de privacidad en tus web apps, páginas y navegación, y las páginas de originación del sitio pierden la referencia a su originación actual.
 - **Cambiar estado**: Cambia el estado de la aplicación, las opciones son:
-	* Habilitado: Editable y visible al público. Este es el estado por defecto de una web app.
-	* Editable: Modificable pero no visible al público. Requiere inicio de sesión para acceder. Robots.txt, PWAs y el manifiesto están deshabilitados en este estado.
+	* Habilitado: Editable y visible al público.
+	* Editable: Modificable pero no visible al público. Requiere inicio de sesión para acceder. Es el estado con el que nace toda aplicación web recién creada. Robots.txt, PWAs y el manifiesto están deshabilitados en este estado.
 	* Deshabilitado: No editable ni visible. En este estado, no es accesible ni visible para los usuarios.
 - **Eliminar aplicación**: Inicia la eliminación asíncrona de la aplicación y de todos sus elementos, como páginas y widgets.
 
