@@ -66,7 +66,7 @@ These are the types the platform records on its own, grouped by module. Remember
 | `user_password_reset_log` | User password reset |
 | `user_web_push_subscribed` | WebPush notification subscription |
 
-The four creation variants share the **User created** label and are told apart by their type: `user_created_via_form_log` when the user was created by submitting a form, `user_created_via_order_log` when an order was generated, and `user_created_via_invitation_log` when they were invited as a participant of an origination.
+The four creation variants share the **User created** label and are told apart only by their type: `user_created_log` is the base type, `user_created_via_form_log` is the user created by submitting a form, `user_created_via_order_log` when an order was generated, and `user_created_via_invitation_log` when they were invited as a participant of an origination. Since all four share the same label, the type is the only thing that tells you how the user came in.
 
 ### Email
 

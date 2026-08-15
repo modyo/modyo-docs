@@ -66,7 +66,7 @@ Estos son los tipos que la plataforma registra por sí sola, agrupados por módu
 | `user_password_reset_log` | Restaurar contraseña |
 | `user_web_push_subscribed` | Suscripción a notificaciones WebPush |
 
-Las cuatro variantes de alta comparten la etiqueta **Usuario creado** y se distinguen por el tipo: `user_created_via_form_log` cuando el usuario se creó al enviar un formulario, `user_created_via_order_log` al generarse una orden y `user_created_via_invitation_log` al invitarlo como participante de una originación.
+Las cuatro variantes de alta comparten la etiqueta **Usuario creado** y solo se distinguen por su tipo: `user_created_log` es el tipo base, `user_created_via_form_log` corresponde al usuario creado al enviar un formulario, `user_created_via_order_log` al generarse una orden y `user_created_via_invitation_log` al invitarlo como participante de una originación. Como la etiqueta es la misma en las cuatro, el tipo es el único dato que te dice por dónde entró el usuario.
 
 ### Correo
 
