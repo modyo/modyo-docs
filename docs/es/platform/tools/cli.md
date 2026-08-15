@@ -569,7 +569,9 @@ Si has definido [variables](/es/platform/channels/global-variables.html) sus val
 
 ## Widgets CLI en el panel
 
-Un widget creado o actualizado con `modyo-cli push` queda marcado en la plataforma como widget de solo lectura, porque su código fuente vive en tu repositorio y no en Modyo. Es una consecuencia directa de desplegar con el CLI y conviene conocerla antes de adoptarlo.
+Un widget **creado** con `modyo-cli push` queda marcado en la plataforma como widget de solo lectura, porque su código fuente vive en tu repositorio y no en Modyo. Es una consecuencia directa de desplegar con el CLI y conviene conocerla antes de adoptarlo.
+
+La marca se decide en ese momento y no vuelve a evaluarse: un widget que ya existía en el panel y que después recibe un despliegue del CLI conserva su edición y no queda de solo lectura.
 
 En el listado de widgets del sitio, estos widgets se reconocen por la etiqueta **CLI** junto a su nombre. Al abrir uno no encontrarás las pestañas de código, sino la pantalla **Resumen del widget**, con:
 

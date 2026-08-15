@@ -160,7 +160,7 @@ Los ES Modules tienen requisitos estrictos de CORS y siempre se cargan en modo e
 
 ## Widgets CLI
 
-Los widgets que llegan al sitio con `modyo-cli push` quedan marcados como widgets de solo lectura, porque su código fuente vive en tu repositorio y no en Modyo. En el listado de widgets del sitio los reconoces por la etiqueta **CLI** junto a su nombre.
+Los widgets **creados** en el sitio con `modyo-cli push` quedan marcados como widgets de solo lectura, porque su código fuente vive en tu repositorio y no en Modyo. En el listado de widgets del sitio los reconoces por la etiqueta **CLI** junto a su nombre.
 
 Al abrir uno de estos widgets no verás las pestañas de código, sino la pantalla **Resumen del widget**, con su **Nombre**, **Tipo**, **Tamaño**, **Chunks**, **Actualizado por última vez en** y **Actualizado por última vez por**, encabezada por el aviso "Los widgets CLI no se pueden editar en Modyo. Descárgalo para revisar su contenido." y el botón **Descargar**.
 

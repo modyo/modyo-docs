@@ -160,7 +160,7 @@ ES Modules have strict CORS requirements and are always loaded in strict mode. E
 
 ## CLI widgets
 
-Widgets that reach the site through `modyo-cli push` are marked as read-only widgets, because their source code lives in your repository and not in Modyo. In the site's widget list you recognize them by the **CLI** badge next to their name.
+Widgets **created** in the site through `modyo-cli push` are marked as read-only widgets, because their source code lives in your repository and not in Modyo. In the site's widget list you recognize them by the **CLI** badge next to their name.
 
 When you open one of these widgets you won't see the code tabs, but the **Widget summary** screen, with its **Name**, **Type**, **Size**, **Chunks**, **Last updated at**, and **Last updated by**, headed by the notice "CLI Widgets can't be edited in Modyo. Download it to review its content." and the **Download** button.
 

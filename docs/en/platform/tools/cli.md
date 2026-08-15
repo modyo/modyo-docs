@@ -569,7 +569,9 @@ If you have defined [variables](/en/platform/channels/global-variables.html), th
 
 ## CLI widgets in the admin
 
-A widget created or updated with `modyo-cli push` is marked in the platform as a read-only widget, because its source code lives in your repository and not in Modyo. This is a direct consequence of deploying with the CLI, and it's worth knowing before adopting it.
+A widget **created** with `modyo-cli push` is marked in the platform as a read-only widget, because its source code lives in your repository and not in Modyo. This is a direct consequence of deploying with the CLI, and it's worth knowing before adopting it.
+
+The mark is decided at that moment and is never re-evaluated: a widget that already existed in the panel and later receives a CLI deploy keeps its editing and does not become read-only.
 
 In the site's widget list, these widgets are identified by the **CLI** badge next to their name. When you open one you won't find the code tabs, but the **Widget summary** screen, with:
 
