@@ -291,7 +291,7 @@ Retorna una lista de Entradas que pertenecen a un tag seleccionado. *e.g.*
 
 **Parametros**:
 - entries (ArrayEntry) — array con entradas
-- list (String) (default: '') — String con tags separadas por coma.
+- list (String) (default: '') — String con tags separados por coma.
 
 ### By type
 
@@ -789,7 +789,7 @@ Convierte una fecha en String a palabras (ej. <span v-pre>`{{ '01-02-2019' | tim
 
 Resuelve el texto de traducción para claves de Sitios. Se devolverán valores personalizados si existen (ej. <span v-pre>`{{ 'admin.logs.errors.no_logs_yet' | translate }}`</span>).
 
-**Parametros**
+**Parámetros**
 
 - `value` (String) — clave de la traducción (objeto antes de la barra).
 - `count` (Integer) (default: nil) — cantidad con la que se pluraliza la clave.
