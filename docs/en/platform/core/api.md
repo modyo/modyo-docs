@@ -540,7 +540,7 @@ Finally, the API will always return the first page (`current_page: 1`) of resour
 
 `per_page` has a cap of 100 records. If you ask for a larger value, the API trims it silently: it responds `HTTP 200 OK` with 100 records, with no error and no warning in the body. The only place where you see how many records each page actually carries is `meta.per_page`, so read it instead of assuming the value you sent.
 
-Out-of-range values do not fail either, they silently fall back to a default:
+Out-of-range values do not fail either; they silently fall back to a default:
 
 - `per_page=0`, a negative value, or a non-numeric value do not bring "everything": the page stays at the default 10 records.
 - `page=0`, a negative value, or a non-numeric value return the first page.

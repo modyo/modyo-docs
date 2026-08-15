@@ -536,7 +536,7 @@ Finalmente, la API siempre retornará la primera página (`current_page: 1`) de 
 
 `per_page` tiene un tope de 100 registros. Si pides un valor mayor, la API lo recorta en silencio: responde `HTTP 200 OK` con 100 registros, sin error y sin ninguna advertencia en el cuerpo. El único lugar donde ves cuántos registros trae realmente cada página es `meta.per_page`, así que conviene leerlo en vez de dar por hecho el valor que enviaste.
 
-Los valores fuera de rango tampoco fallan, caen a un valor predeterminado sin avisar:
+Los valores fuera de rango tampoco fallan, sino que caen a un valor predeterminado sin avisar:
 
 - `per_page=0`, un valor negativo o un valor que no es un número no traen "todo": la página queda en los 10 registros predeterminados.
 - `page=0`, un valor negativo o un valor que no es un número devuelven la primera página.
