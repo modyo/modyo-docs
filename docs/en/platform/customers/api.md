@@ -138,6 +138,48 @@ With `PUT ACCOUNT_URL/api/customers/realms/{realm_uid}/me` the session user upda
 Custom fields that do not have **Visible to front end users** and **Editable by front end users** checked in the [realm settings](/en/platform/customers/settings.html#custom-fields) are silently discarded: the response is `200`, the rest of the attributes are saved and those fields keep their previous value, with no error to signal it.
 :::
 
+## User events
+
+`GET ACCOUNT_URL/api/customers/realms/{realm_uid}/events`
+
+Returns the [business events](/en/platform/customers/events.html) of the session user, from the most recent to the oldest. It is the same log an admin sees in **Customers > Realms > Events**, narrowed down to that user. It does not appear in the interactive reference at `ACCOUNT_URL/api/customers/docs`.
+
+It accepts these parameters, all optional:
+
+| Parameter | Description |
+|-----------|-------------|
+| `sort_by` | Field to sort by: `created_at`, which is the default, or `type` to sort by the event type. |
+| `order` | `asc` or `desc`. Defaults to `desc`. Any other value is treated as `desc`. |
+| `page` | Page to return. Defaults to `1`. |
+| `per_page` | Items per page. Defaults to `10` and caps at `100`. |
+| `not_impersonated` | With any value present, it leaves out the events generated while an admin was [impersonating the user](/en/platform/customers/users.html#impersonation). |
+
+The events arrive under the `events` root and the pagination under `meta`:
+
+```json
+{
+  "events": [
+    {
+      "title": "Login",
+      "description": "Realm: Personal Banking",
+      "created_at": "2026-05-12T14:03:21.000+00:00"
+    }
+  ],
+  "meta": {
+    "total_entries": 128,
+    "per_page": 10,
+    "current_page": 1,
+    "total_pages": 13
+  }
+}
+```
+
+`title` is the name of the event type and `description` the realm where it happened. Both arrive as already translated texts, ready to display. The full catalog of types is in [Event types](/en/platform/customers/events.html#event-types).
+
+:::warning Attention
+The response includes neither an event identifier nor its technical type: only `title`, `description` and `created_at`. Since `title` is a translated text, it is not fit to tell events apart in your code, and events of your own types arrive with it empty because they have no label. Use this endpoint to display a history, not to make decisions based on the event type.
+:::
+
 ## Origination submissions
 
 ### Get a submission

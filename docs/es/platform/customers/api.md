@@ -138,6 +138,48 @@ Con `PUT ACCOUNT_URL/api/customers/realms/{realm_uid}/me` el usuario de la sesi�
 Los custom fields que no tengan marcadas **Visible para usuarios de los sitios** y **Editable por usuarios de los sitios** en la [configuración del reino](/es/platform/customers/settings.html#custom-fields) se descartan en silencio: la respuesta es `200`, el resto de los atributos se guarda y esos campos conservan su valor anterior, sin ningún error que lo indique.
 :::
 
+## Eventos del usuario
+
+`GET ACCOUNT_URL/api/customers/realms/{realm_uid}/events`
+
+Devuelve los [eventos de negocio](/es/platform/customers/events.html) del usuario de la sesión, del más reciente al más antiguo. Es el mismo registro que un administrador ve en **Customers > Reinos > Eventos**, acotado a ese usuario. No aparece en la referencia interactiva de `ACCOUNT_URL/api/customers/docs`.
+
+Acepta estos parámetros, todos opcionales:
+
+| Parámetro | Descripción |
+|-----------|-------------|
+| `sort_by` | Campo por el que ordenar: `created_at`, que es el valor por defecto, o `type` para ordenar por el tipo del evento. |
+| `order` | `asc` o `desc`. Por defecto `desc`. Cualquier otro valor se trata como `desc`. |
+| `page` | Página a devolver. Por defecto `1`. |
+| `per_page` | Elementos por página. Por defecto `10` y como máximo `100`. |
+| `not_impersonated` | Con cualquier valor presente, deja fuera los eventos generados mientras un administrador estaba [impersonando al usuario](/es/platform/customers/users.html#impersonado). |
+
+Los eventos llegan bajo la raíz `events` y la paginación en `meta`:
+
+```json
+{
+  "events": [
+    {
+      "title": "Inicio de sesión",
+      "description": "Reino: Banca Personal",
+      "created_at": "2026-05-12T14:03:21.000+00:00"
+    }
+  ],
+  "meta": {
+    "total_entries": 128,
+    "per_page": 10,
+    "current_page": 1,
+    "total_pages": 13
+  }
+}
+```
+
+`title` es el nombre del tipo de evento y `description` el reino donde ocurrió. Los dos llegan como textos ya traducidos, listos para mostrar. El catálogo completo de tipos está en [Tipos de evento](/es/platform/customers/events.html#tipos-de-evento).
+
+:::warning Atención
+La respuesta no incluye un identificador del evento ni su tipo técnico: sólo `title`, `description` y `created_at`. Como `title` es un texto traducido, no sirve para distinguir eventos en tu código, y los eventos de tipos propios lo traen vacío porque no tienen etiqueta. Usa este endpoint para mostrar un historial, no para tomar decisiones sobre el tipo de evento.
+:::
+
 ## Respuestas de originación
 
 ### Consultar una respuesta
