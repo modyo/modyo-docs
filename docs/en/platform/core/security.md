@@ -195,7 +195,7 @@ Traffic between the load balancer and the platform instances can use ports 443 o
 
 ### Activity logs
 
-The platform keeps a record of all actions performed by administrator users within it. You can review these logs in the “Activity Logs” section.
+The platform keeps a record of all actions performed by administrator users within it, and also of those it runs on its own, with no person behind them: the latter are recorded with **System** as the author. You can review these logs in the [Activity logs](/en/platform/core/activity-logs.html) section.
 
 We recommend that you review these logs periodically to verify the correct behavior of users within the system. Activity logs are also available through Modyo's administrative API.
 
