@@ -468,6 +468,93 @@ Deleting a customizable field permanently deletes all user values associated wit
 In addition to saving user-specific values, you can use customizable field values to create [segments](/en/platform/customers/segments) filters, allowing you to separate users based on their custom values.
 :::
 
+### Data Sets
+
+A data set is a reusable list of alternatives that lives inside the realm. Instead of repeating the same options in every form, you define them once and use them in **forms**, in **originations**, and in **user custom fields** of the dropdown type.
+
+You will find them in the realm side menu, under **Realm settings** → **Data Set**. To manage them you need the **Admin Data Sets** grouped permission.
+
+#### Data set types
+
+When you create a data set you choose its type, and that choice cannot be changed later:
+
+- **Simple**: A flat list of alternatives. It feeds **Dropdown** fields and user custom fields of the dropdown type.
+- **Nested**: A tree of alternatives, where each option can have child options. It feeds **Nested Questions** fields. It supports up to 5 levels of depth by default; if you go beyond that, saving fails and points to the alternative that exceeds the limit.
+
+Alternative labels cannot be repeated, regardless of case. In a simple data set the restriction covers the whole list; in a nested one it applies **between sibling alternatives**, so two different branches can each have an option with the same name.
+
+#### Using a data set in a field
+
+In the field editor, check **Use data set** and pick the data set from the selector. The checkbox is only available while the field is new: once saved, a regular field cannot be turned into a data set field, nor the other way around.
+
+The data set editor shows a **Data set usage** panel with the forms, originations, and custom fields that use it. A data set in use cannot be deleted.
+
+#### Bulk load of alternatives
+
+To load many alternatives at once, check **Use bulk alternatives** and paste the list. The checkbox is only available while the data set has no alternatives: it is meant to populate it, not to add to what is already there.
+
+- In a **simple** data set, one alternative per line.
+- In a **nested** data set, one full branch per line, with levels separated by a semicolon or a tab. The latter lets you paste straight from a spreadsheet.
+
+Blank lines are discarded and repeated ones are ignored. In nested data sets, branches that share their first levels are merged: `Chile;Región Metropolitana;Providencia` and `Chile;Región Metropolitana;Las Condes` produce a single `Chile` with a single `Región Metropolitana`.
+
+#### External identifiers
+
+An alternative is identified by its label, which is a text meant for the end user: it can carry accents and spaces, and it changes over time. If an external system needs to recognize the chosen option, tying itself to that text is fragile. That is what external identifiers are for: a stable code per alternative, which you define and integrators receive along with the answer.
+
+To turn them on, check **Use external ids** in the data set editor. An **EXTERNAL ID** column appears with one field per alternative; in nested data sets, at every level of the tree.
+
+##### External identifier rules
+
+- **It is mandatory on every alternative.** With the checkbox on, you cannot save if any one is empty. That includes turning it on for a data set that already had alternatives: you have to fill them all in before you can save.
+- **It only accepts letters, numbers, hyphens, and underscores.** No spaces, dots, or accents. The editor normalizes what you type as you type it, so you cannot enter invalid characters by hand.
+- **It is always stored in lowercase**, with no leading or trailing spaces.
+- **It is unique across the whole data set.** Unlike labels, uniqueness is not limited to sibling alternatives: a code used in one branch cannot be repeated in another one or at another level. The comparison ignores case.
+
+Turning the checkbox **off** deletes the external identifiers of every alternative in the data set. The platform asks for confirmation before applying it, with the message **Disabling external ids will delete the external id of every alternative in this data set. Do you want to continue?**
+
+##### Bulk load with external identifiers
+
+With the checkbox on, the bulk load format changes: each alternative is written as `label:identifier`.
+
+- In a **simple** data set, one alternative per line:
+
+```text
+Checking Account:001
+Sight Account:002
+Savings Account:003
+```
+
+- In a **nested** data set, one branch per line, with each level in the same format:
+
+```text
+Chile:cl; Región Metropolitana:rm; Providencia:prov
+Chile:cl; Región Metropolitana:rm; Las Condes:lcd
+Perú:pe; Lima:lim; Miraflores:mir
+```
+
+If a single line is malformed, **no alternative is imported**: the whole load is rejected and the message points to the line and the text that caused the problem. A line with no `:`, one with no identifier, one with no label, and one whose identifier does not match the format are all rejected. The same label arriving with two different identifiers is rejected too.
+
+:::warning Attention
+In nested data sets the help example mentions only the semicolon as the level separator, but a tab works as well, just like in the bulk load without identifiers.
+:::
+
+##### How they are consumed
+
+Once configured, external identifiers are available where integrators need them:
+
+- When you query the data set through the **Admin API**, each alternative includes its `external_id`, and the data set reports whether the option is on through `use_external_ids`.
+- When you query a user's answer through the **Admin API**, the `external_id` of the chosen alternative is included.
+- In **Liquid templates**, the answer exposes `answer.external_id`.
+
+In a nested data set, the identifier delivered is the one of the selected **leaf**, not the one of the whole branch: the answer points to a single alternative, the one at the last level.
+
+:::tip Data sets without external identifiers
+Reading `external_id` from a data set that does not have the option enabled never raises an error. In Liquid it returns an empty string, and the same happens when reading it from an answer that is not a data set answer. You can add the read to your templates before you finish configuring the data sets without breaking anything.
+:::
+
+Turning external identifiers on does not change how an answer is chosen or stored, and it does not affect the conditional logic of originations. The data sets you already had keep working the same way as long as you do not check the box.
+
 ### Security
 
 #### Password Policy
