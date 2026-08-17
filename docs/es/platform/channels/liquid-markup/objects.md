@@ -427,6 +427,7 @@ Estos objetos obtienen la información relevante de los flujos de originación.
 | **origination.completion_message** | Mensaje al completar el flujo de originación.                        | ```"Todo listo"```                                                                                                                      |
 | **origination.ordered_steps**      | Indica si los steps del flujo de originación están ordenados.        | ```true```                                                                                                                              |
 | **origination.new_submission_url** | URL para crear una nueva submission del flujo.                       | ```/originations/mi-originacion/new```                                                                                                  |
+| **origination.cancel_overdue**     | Indica si la originación cancela automáticamente las respuestas que superan su fecha de vencimiento.                 | ```false```                                                                                                                             |
 
 ## page
 
@@ -546,14 +547,14 @@ Estos objetos obtienen la información relevante a las Submissions.
 
 | Objeto                                         | Descripción                                                    | Ejemplo                                                    |
 |------------------------------------------------|----------------------------------------------------------------|------------------------------------------------------------|
-| **submission.status**                          | Estado de la submission (por ejemplo: "pending", "completed"). | ```completed```                                            |
+| **submission.status**                          | Estado de la submission: `not_started`, `pending`, `completed` o `canceled`. Puedes revisar su significado y sus transiciones en el [ciclo de vida de una respuesta](/es/platform/customers/origination.html#ciclo-de-vida-de-una-respuesta). | ```completed```                                            |
 | **submission.progress**                        | Progreso de la submission como porcentaje (sin símbolo).       | ```100```                                                  |
 | **submission.assignee**                        | Objeto del usuario administrador asigando.                     |  [ver documentación de adminuser](/es/platform/channels/liquid-markup/objects.html#adminuser)                                                          |
 | **submission.created_at**                      | Fecha y hora de creación de la submission.                     | ```Tue, 15 Feb 2025 15:14:03 UTC +00:00```                 |
 | **submission.updated_at**                      | Fecha y hora de la última actualización de la submission.      | ```Tue, 15 Feb 2025 20:30:10 UTC +00:00```                 |
 | **submission.started_at**                      | Fecha y hora en que se inició la submission.                   | ```Tue, 15 Feb 2025 15:14:03 UTC +00:00```                 |
 | **submission.completed_at**                    | Fecha y hora en que se completó la submission.                 | ```Tue, 15 Feb 2025 20:30:10 UTC +00:00```                 |
-| **submission.due_date**                        | Fecha de vencimiento de la submission. Se calcula a partir del disparador configurado en el flujo de originación: el inicio de la submission (por omisión) o la respuesta a una pregunta de tipo Fecha del flujo. Queda vacía si el flujo no tiene vencimiento configurado o si el disparador es una pregunta de tipo Fecha y aún no hay respuesta. | ```Tue, 22 Feb 2025 12:00:00 UTC +00:00```                 |
+| **submission.due_date**                        | Fecha de vencimiento de la submission. Se calcula sumando al disparador configurado en el flujo de originación —el inicio de la submission (por omisión) o la respuesta a una pregunta de tipo Fecha del flujo— los días de vencimiento de la originación más los días de extensión de esa submission. Queda vacía si el flujo no tiene vencimiento configurado, si el disparador es el inicio y la submission aún no se inicia, o si el disparador es una pregunta de tipo Fecha y aún no hay respuesta. | ```Tue, 22 Feb 2025 12:00:00 UTC +00:00```                 |
 | **submission.origination**                     | Objeto de la originación.                | [ver documentación de origination](/es/platform/channels/liquid-markup/objects.html#origination)                                                           |
 | **submission.url**                             | URL de la página de la submission.                             | ```https://test.modyo.com/new-site/myorigination```        |
 | **submission.uuid**                            | Identificador único (UUID) de la submission.                   | ```abcd-1234-5678-0000```                                  |
@@ -597,7 +598,7 @@ Adicionalmente según el tipo de tarea pueden haber atributos adicionales.
 
 ### Tipos de Respuesta de Tareas
 
-Toda respuesta de tarea comparte los atributos que hereda de la respuesta base: `task`, `user`, `created_at`, `updated_at`, `started_at`, `completed_at` y `status`. La tabla siguiente lista únicamente los atributos propios de cada tipo de respuesta.
+Toda respuesta de tarea comparte los atributos que hereda de la respuesta base: `task`, `user`, `created_at`, `updated_at`, `started_at`, `completed_at` y `status`. En `status` obtienes `not_started`, `pending` o `completed`, según el [estado de la respuesta a la tarea](/es/platform/customers/origination.html#estados-de-las-respuestas-a-tareas); si solo comparas contra `completed`, tu plantilla no distingue una tarea que nadie abrió de una que quedó a medio responder. La tabla siguiente lista únicamente los atributos propios de cada tipo de respuesta.
 
 | Objeto                                        | Descripción                                             | Ejemplo                                       |
 |-----------------------------------------------|---------------------------------------------------------|-----------------------------------------------|

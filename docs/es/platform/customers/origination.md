@@ -632,6 +632,63 @@ Si necesitas eliminar una originación de forma permanente:
 Este proceso es irreversible.
 :::
 
+### Ciclo de vida de una respuesta
+
+Cada respuesta a una originación tiene un estado que refleja su avance en el flujo. Lo ves en la columna **Estado** del listado de respuestas, en el [filtro por estado](/es/platform/customers/origination.html#filtrar-respuestas) y en la sección **Detalles** de la respuesta.
+
+- **No Iniciada**: La respuesta ya existe, pero todavía no se guardó ninguna respuesta a sus tareas y no tiene fecha de inicio.
+- **Pendiente**: La respuesta está en curso. Es el único estado en el que se puede seguir respondiendo el flujo.
+- **Completada**: El flujo terminó. La fecha queda registrada en **Completada el**.
+- **Cancelada**: La respuesta se detuvo definitivamente. La fecha queda registrada en **Cancelada el**, junto con la **Razón de cancelación**.
+
+Las transiciones entre estados son las siguientes:
+
+| Transición | Cuándo ocurre |
+|---|---|
+| No Iniciada → Pendiente | Al guardarse la primera respuesta a una de sus tareas. En ese momento se registra la fecha de inicio en **Comenzó el**. |
+| Pendiente → Completada | De forma automática, cuando ya no quedan tareas visibles por responder, o de forma manual con el botón **Completar** cuando las **Reglas de completado** de la originación piden completado manual. |
+| No Iniciada, Pendiente o Completada → Cancelada | Al [cancelar la respuesta](/es/platform/customers/origination.html#cancelar-respuesta) o al cancelarse automáticamente por vencimiento. |
+
+**Cancelada** es un estado final y no tiene vuelta atrás. **Completada** tampoco regresa a **Pendiente**, ni siquiera al [reabrir una de sus tareas](/es/platform/customers/origination.html#reabrir-tareas-de-una-respuesta): mientras la respuesta esté **Completada** o **Cancelada**, la plataforma rechaza cualquier cambio sobre sus tareas y sus invitaciones.
+
+:::warning Atención con las respuestas No Iniciada
+Una respuesta nace **No Iniciada** y solo pasa a **Pendiente** cuando alguien guarda su primera tarea, así que las respuestas creadas desde el panel o por invitación se quedan ahí hasta que el usuario entre al flujo. Las tarjetas **Pendientes**, **Completadas** y **Canceladas** del resumen no las cuentan, y en Liquid el filtro [`by_status`](/es/platform/channels/liquid-markup/filters.html#by-status) tampoco las alcanza. Para encontrarlas, usa el filtro **Estado** del listado de respuestas.
+:::
+
+#### Estados de las respuestas a tareas
+
+Además del estado de la respuesta completa, cada respuesta a una tarea lleva su propio estado, con sus propias fechas de inicio y de completado:
+
+- **No iniciada**: La tarea todavía no tiene ninguna respuesta guardada.
+- **Pendiente**: La tarea se abrió y tiene una respuesta guardada, pero no está terminada.
+- **Completada**: La tarea se dio por terminada, ya sea por el usuario, por el agente asignado o de forma automática.
+
+Una tarea **Completada** puede volver a **Pendiente** al [reabrirla](/es/platform/customers/origination.html#reabrir-tareas-de-una-respuesta), lo que borra su fecha de completado y deja el registro correspondiente en la pestaña **Actividad** de la respuesta. La reapertura de una tarea no cambia el estado de la respuesta completa.
+
+En la pestaña **Tareas** de la respuesta, la plataforma muestra cada tarea como **Completada** o **Pendiente**, sin distinguir las **No iniciada**. El estado exacto lo obtienes en `task_response.status` desde [Liquid](/es/platform/channels/liquid-markup/objects.html#tipos-de-respuesta-de-tareas) y desde la [API de administración](/es/platform/core/api.html).
+
+:::tip Tip
+Una plantilla o un reporte que solo pregunten por `completed` no distinguen una tarea que nadie abrió de una que quedó a medio responder. Si necesitas esa diferencia, compara contra los tres valores `not_started`, `pending` y `completed`.
+:::
+
+### Vencimiento de las respuestas
+
+Cuando la originación tiene configurado **Vence en**, cada respuesta lleva además un estado de vencimiento, independiente de su [estado en el flujo](/es/platform/customers/origination.html#ciclo-de-vida-de-una-respuesta):
+
+- **A tiempo**: Todavía no se consume el 75% del plazo.
+- **Vence pronto**: Ya se consumió el 75% del plazo, pero la fecha límite aún no pasa.
+- **Vencido**: La fecha límite ya pasó.
+
+El plazo se cuenta desde el disparador configurado en la originación: el inicio de la respuesta o la fecha respondida en una pregunta de tipo Fecha del flujo. El estado de vencimiento solo aplica a las respuestas **Pendiente**: al completarse o cancelarse, la respuesta deja de mostrarlo.
+
+En el listado de respuestas, la columna **Vence en** muestra la fecha límite seguida de la etiqueta entre paréntesis, por ejemplo `22/02/2026 (Vence pronto)`. Si la respuesta todavía no arranca, muestra **No iniciado**, y cuando no corresponde una fecha límite muestra `--`.
+
+Puedes extender el plazo de una respuesta concreta agregándole días adicionales con el parámetro `due_extension_days` del endpoint de actualización de respuestas de la [API de administración](/es/platform/core/api.html). Los días se suman a los del **Vence en** de la originación y desplazan tanto la fecha límite como el umbral de **Vence pronto**, y el cambio queda registrado en la actividad de la respuesta.
+
+:::tip Actualización del estado de vencimiento
+El estado de vencimiento se recalcula en un proceso en segundo plano que corre una vez al día, así que una respuesta puede tardar hasta 24 horas en aparecer como **Vence pronto** o **Vencido**. Extender el plazo de una respuesta sí recalcula su estado de inmediato.
+:::
+
 ### Ver detalles de una originación
 
 Al acceder a una originación específica, puedes visualizar métricas y datos relevantes en función de la vista que selecciones. Estas vistas te permiten analizar y gestionar de manera eficiente la información asociada con la originación.
@@ -648,6 +705,12 @@ La vista resumen de una originación te ofrece un resumen de las métricas clave
 - **Completadas**: Indica la cantidad de solicitudes que han finalizado exitosamente el flujo de originación.
 - **Canceladas**: Refleja las solicitudes que han sido canceladas por el usuario o el administrador.
 - **Total**: Representa el número total de solicitudes, incluyendo las pendientes, completadas y canceladas.
+
+El **Total** cuenta también las respuestas **No Iniciada**, que no tienen tarjeta propia: si la suma de las otras tres no cuadra con el total, la diferencia son las respuestas que se crearon y nunca se iniciaron.
+
+Debajo de las tarjetas, un gráfico de distribución reparte las respuestas en cinco categorías que combinan el [estado de la respuesta](/es/platform/customers/origination.html#ciclo-de-vida-de-una-respuesta) con su [estado de vencimiento](/es/platform/customers/origination.html#vencimiento-de-las-respuestas): **No Iniciada**, **A tiempo**, **Vence pronto**, **Vencido** y **Completada**. Las respuestas **Pendiente** se reparten entre **A tiempo**, **Vence pronto** y **Vencido**; si la originación no tiene **Vence en** configurado, todas quedan en **A tiempo**. Las **Cancelada** no aparecen en el gráfico.
+
+Junto al gráfico, el **Tiempo promedio de completado** muestra cuánto tardan en promedio las respuestas completadas de esta originación.
 
 ### Gestión de Respuestas
 

@@ -631,6 +631,63 @@ If you need to permanently delete an origination:
 This process is irreversible.
 :::
 
+### Submission lifecycle
+
+Every submission to an origination has a status that reflects its progress through the flow. You see it in the **Status** column of the submission list, in the [status filter](/en/platform/customers/origination.html#filter-submissions), and in the **Details** section of the submission.
+
+- **Not started**: The submission already exists, but no response to any of its tasks has been saved yet, and it has no start date.
+- **Pending**: The submission is in progress. This is the only status in which the flow can still be answered.
+- **Completed**: The flow is finished. The date is recorded in **Completed at**.
+- **Canceled**: The submission was stopped for good. The date is recorded in **Canceled at**, along with the **Cancellation reason**.
+
+The transitions between statuses are the following:
+
+| Transition | When it happens |
+|---|---|
+| Not started → Pending | When the first response to one of its tasks is saved. At that moment the start date is recorded in **Started at**. |
+| Pending → Completed | Automatically, when there are no visible tasks left to answer, or manually with the **Complete** button when the **Completion rules** of the origination require manual completion. |
+| Not started, Pending, or Completed → Canceled | When you [cancel the submission](/en/platform/customers/origination.html#cancel-submission) or when it is automatically canceled because it is overdue. |
+
+**Canceled** is a final status with no way back. **Completed** does not return to **Pending** either, not even when you [reopen one of its tasks](/en/platform/customers/origination.html#reopen-tasks-of-a-submission): while the submission is **Completed** or **Canceled**, the platform rejects any change to its tasks and its invitations.
+
+:::warning Watch out for Not started submissions
+A submission is born **Not started** and only moves to **Pending** when someone saves its first task, so submissions created from the admin or by invitation stay there until the user enters the flow. The **Pending**, **Completed**, and **Canceled** cards of the summary don't count them, and in Liquid the [`by_status`](/en/platform/channels/liquid-markup/filters.html#by-status) filter doesn't reach them either. To find them, use the **Status** filter of the submission list.
+:::
+
+#### Task response statuses
+
+Beyond the status of the whole submission, each task response carries its own status, with its own start and completion dates:
+
+- **Not started**: The task has no saved response yet.
+- **Pending**: The task was opened and has a saved response, but it isn't finished.
+- **Completed**: The task was finished, either by the user, by the assigned agent, or automatically.
+
+A **Completed** task can go back to **Pending** when you [reopen it](/en/platform/customers/origination.html#reopen-tasks-of-a-submission), which clears its completion date and leaves the corresponding record in the **Activity** tab of the submission. Reopening a task does not change the status of the whole submission.
+
+In the **Tasks** tab of the submission, the platform shows each task as **Completed** or **Pending**, without distinguishing the **Not started** ones. You get the exact status from `task_response.status` in [Liquid](/en/platform/channels/liquid-markup/objects.html#task-response-types) and from the [administration API](/en/platform/core/api.html).
+
+:::tip Tip
+A template or a report that only checks for `completed` cannot tell a task nobody opened from one that was left half answered. If you need that distinction, compare against the three values `not_started`, `pending`, and `completed`.
+:::
+
+### Submission due dates
+
+When the origination has **Due in** configured, each submission also carries a due status, independent from its [status in the flow](/en/platform/customers/origination.html#submission-lifecycle):
+
+- **On track**: Less than 75% of the period has elapsed.
+- **Due soon**: 75% of the period has elapsed, but the deadline hasn't passed yet.
+- **Overdue**: The deadline has already passed.
+
+The period is counted from the trigger configured in the origination: the start of the submission, or the date answered in a Date-type question of the flow. The due status only applies to **Pending** submissions: once completed or canceled, the submission stops showing it.
+
+In the submission list, the **Due in** column shows the deadline followed by the label in parentheses, for example `02/22/2026 (Due soon)`. If the submission hasn't started yet, it shows **Not started**, and when no deadline applies it shows `--`.
+
+You can extend the period of a specific submission by adding extra days with the `due_extension_days` parameter of the submission update endpoint of the [administration API](/en/platform/core/api.html). Those days are added to the origination's **Due in** and shift both the deadline and the **Due soon** threshold, and the change is recorded in the submission activity.
+
+:::tip Due status updates
+The due status is recalculated in a background process that runs once a day, so a submission can take up to 24 hours to show up as **Due soon** or **Overdue**. Extending the period of a submission does recalculate its status right away.
+:::
+
 ### View Details of an Origination
 
 By accessing a specific origination, you can view relevant metrics and data based on the view you select. These views allow you to efficiently analyze and manage the information associated with the origination.
@@ -647,6 +704,12 @@ The summary view of an origination gives you a summary of key metrics related to
 - **Completed**: Indicates the number of requests that have successfully completed the origination flow.
 - **Canceled**: Reflects requests that have been canceled by the user or administrator.
 - **Total**: Represents the total number of requests, including pending, completed, and canceled.
+
+The **Total** also counts the **Not started** submissions, which have no card of their own: if the sum of the other three doesn't match the total, the difference is the submissions that were created and never started.
+
+Below the cards, a distribution chart splits the submissions into five categories that combine the [submission status](/en/platform/customers/origination.html#submission-lifecycle) with its [due status](/en/platform/customers/origination.html#submission-due-dates): **Not started**, **On track**, **Due soon**, **Overdue**, and **Completed**. The **Pending** submissions are split among **On track**, **Due soon**, and **Overdue**; if the origination has no **Due in** configured, they all land in **On track**. The **Canceled** ones don't appear in the chart.
+
+Next to the chart, **Average Time to Complete** shows how long the completed submissions of this origination take on average.
 
 ### Submission Management
 
