@@ -6,11 +6,15 @@ search: true
 
 A web application or web app displays the content created in Content and Channels to create your personalized digital channel. All the development, design, and navigation flow is carried out in the web application.
 
-A web app can be in one of these three states:
+A web application can be in one of these three states, which you choose in **Application settings** > [General](/en/platform/channels/sites.html#general) > **Change status**:
 
-- **Enabled**: Default status of newly created web applications and those that are enabled for use.
-- **Pending changes**: There are pending changes in the web application. An administrator can verify the changes and publish the web application.
-- **Disabled**: The web application cannot be accessed.
+- **Enabled**: The web application is editable and visible to the public.
+- **Draft**: The web application is modifiable but not visible to the public: it requires logging in to access. This is the state in which every newly created web application starts.
+- **Disabled**: The web application is neither editable nor accessible.
+
+:::tip Transient states
+In addition to these three, the platform uses two states that it assigns on its own and that you cannot choose in the selector: one for a copy while it is being cloned, and another for an application while it is being deleted. In both cases, the application does not appear in the applications list while the process lasts.
+:::
 
 ## Create a Web Application
 
@@ -19,14 +23,104 @@ To create a new web app, follow these steps:
 1. In the side menu, click on **channels**.
 1. Click on **+ new application**.
 1. Type the name and host (main path of the web application).
+1. In **Theme**, select the theme the web application starts from.
 1. If necessary, select which realm it belongs to.
 1. Click **create**.
 
-Once created, the web application is automatically enabled and the system takes you to the summary screen.
+Once created, the web application is in **Draft** status and the system takes you to the [Overview](/en/platform/channels/sites.html#application-overview) screen. To make it visible to the public, change its status to **Enabled** in **Application settings** > [General](/en/platform/channels/sites.html#general) > **Change status**.
 
 :::warning Attention
 In the web apps index, you will only see those apps in which you have a role and are part of the team.
 :::
+
+### Theme
+
+The theme is the set of templates, snippets, CSS, and JavaScript the web application is born with. It determines its starting point and nothing else: it is an initial mold, not a permanent dependency.
+
+- The list of available themes depends on the plan contracted for the account.
+- If only one theme is available, the selector is disabled and the application is created with the default theme.
+- Once the application is created, its [templates](/en/platform/channels/templates.html) can be edited freely, and there is no option to change the theme.
+
+## Clone a Web Application
+
+Cloning creates an independent copy of a web application within the same account. It is useful for starting from an application that is already built, with its pages, templates, and widgets, without redoing it from scratch.
+
+To clone a web application, follow these steps:
+
+1. In the side menu, click on **channels**.
+1. In the applications list, find the one you want to copy and, in the **Actions** column, click **Clone**.
+1. In the **Clone app** window, click the **Clone app** button.
+1. Wait for the process to finish. When it does, the list refreshes with the copy already created.
+
+The copy takes the name and host of the original, preceded by **Copy of**. If that name or host already exists in the account, Modyo appends a number.
+
+**What is copied**:
+
+- Templates and snippets.
+- Widgets and pages, with their hierarchy.
+- Navigation.
+- App variables.
+- Custom meta tags, custom redirects, and forced reviewers.
+- Team members with their roles.
+- The logo, the favicon, and the Apple icon.
+
+**What is not copied**:
+
+- The custom domain and the alternative domains: the copy is reachable only through its host.
+- The Google Tag Manager ID.
+- Origination pages.
+- The stages of the original application.
+- The status: the copy always starts in **Draft**, even if the original is **Enabled**.
+
+All the content of the copy starts unpublished, so you must publish it before it becomes visible.
+
+:::tip Tip
+Cloning takes some time and runs in the background. While it lasts, the window shows the message "This will take some time, the app is being cloned" and the copy does not appear in the applications list yet.
+:::
+
+:::warning Attention
+Cloning is subject to your plan's maximum number of applications. If you have already reached that maximum, the operation fails with the message "You've reached the maximum number of apps for your current plan".
+:::
+
+:::tip Cloning is not the same as creating a stage
+[Adding a stage](/en/platform/channels/sites.html#add-a-new-stage) also copies a web application, but the result is another stage of the same application, meant for developing and then synchronizing the changes back. Cloning, on the other hand, produces an independent application that does not synchronize with the original.
+:::
+
+## Application Overview
+
+**Overview** is the entry screen of every web application: it is where you land when you select it in the applications list, and where you return with the **Overview** option in the side menu.
+
+In the main column you find:
+
+- Direct access to **Pages**, **Navigation**, **Widgets**, and **Templates**, each with the number of elements in the application.
+- **Activity**: the log of the actions administrators have performed on the application.
+
+In the side column you find the application's identification data:
+
+- **Stage**: the stage you are working on, next to the access to the synchronization view.
+- **Status**: **Pending changes** if there are unpublished elements, or **Published** if there are none.
+- **Realm**: the realm the application is linked to, or **None**.
+- **Privacy**: **Public** or **Private**.
+- **Time zone**, **Language**, **Description**, and **ID** of the application.
+
+In the header you see the date of the last release, the access to the application's **Preview**, and the **Publish** button, which opens the [Review and Joint Publication](/en/platform/channels/sites.html#review-and-joint-publication) screen. **Publish** is only available to those with the **Admin Synchronizations** or **Manage Channels** permission, and it is disabled when there are no pending changes.
+
+### Pending changes to publish
+
+When the application has [team review](/en/platform/channels/sites.html#team-review) enabled, one of these three messages appears under the **Pending changes** status:
+
+- **All changes are approved**: the review conditions are met and you can publish.
+- **Changes need review**: there are no approvals yet, and the **Publish** button remains disabled.
+- **Some changes are not approved and need review**: there are partial approvals.
+
+### Access to synchronization
+
+The **Stage** block only appears if your role has one of the synchronization permissions, and the button changes depending on which one:
+
+- With **Admin Synchronizations** you see **Synchronize** and you can [synchronize the stage](/en/platform/channels/sites.html#synchronize-a-stage).
+- With **View Synchronizations** you see **Synchronize (read only)**: you enter the synchronization view and review the differences, but you cannot apply them.
+
+If the application has unpublished changes, a warning icon appears next to the stage name with the message "Before sync you have to publish all your changes", and when you click **Synchronize**, Modyo asks for confirmation before continuing.
 
 ## Review and Joint Publication
 
@@ -221,8 +315,8 @@ Proceed with caution when modifying these options, as they can affect access to 
 - **Change host**: This action modifies the visibility and accessibility of the application. Changing the host can impact the visibility and availability of the web application.
 - **Change realm**: Displays the application's realm. When you change the realm, you lose all privacy settings in your web apps, pages, and navigation, and the site's origination pages lose the reference to their current origination.
 - **Change status**: Changes the application's status. Options are:
-	* Enabled: Editable and visible to the public. This is the default state of a web app.
-	* Editable: Modifiable but not visible to the public. Requires login to access. Robots.txt, PWAs, and the manifest are disabled in this state.
+	* Enabled: Editable and visible to the public.
+	* Draft: Modifiable but not visible to the public. Requires login to access. This is the state in which every newly created web application starts. Robots.txt, PWAs, and the manifest are disabled in this state.
 	* Disabled: Not editable or visible. In this state, it is not accessible or visible to users.
 - **Delete application**: Initiates the asynchronous deletion of the application and all its elements, such as pages and widgets.
 
