@@ -32,14 +32,24 @@ Si la zona horaria que eliges está sujeta a cambios de horarios, estos se refle
 
 #### Colores del tema
 
-En esta sección puedes personalizar la paleta de colores de toda la interfaz de administración de la cuenta, incluida la página de inicio de sesión. Los colores que puedes definir son:
+En esta sección puedes personalizar la paleta de colores de toda la interfaz de administración de la cuenta, incluida la página de inicio de sesión. Cada color tiene un selector visual y un campo de texto con el valor HEX, y los dos hacen lo mismo: puedes elegir el tono en el selector o escribir el código a mano. El campo de texto no valida el formato, así que escribe siempre el código HEX completo, con el `#` inicial y seis dígitos (`#RRGGBB`), porque un valor mal escrito deja ese elemento con su estilo base.
 
-- **Color principal** y **Color principal al pasar el cursor**: Colores de los botones y elementos principales.
-- **Color de acento** y **Color de acento al pasar el cursor**: Colores de los elementos secundarios y enlaces.
-- **Texto de navegación seleccionado** y **Fondo de navegación seleccionado**: Colores del elemento activo en la navegación.
-- **Fondo de página**: Color de fondo general de la interfaz.
+Los colores que puedes definir, con su valor por defecto, son:
 
-Al guardar un cambio de color, la página se recarga para aplicar el nuevo tema en toda la interfaz. Con el botón **Restablecer a predeterminado** vuelves a la paleta original de Modyo.
+- **Color principal** (`#32ae70`) y **Color principal al pasar el cursor** (`#2a9c63`): Colores de los botones y elementos principales.
+- **Color de acento** (`#2068d5`) y **Color de acento al pasar el cursor** (`#1e60c4`): Colores de los elementos secundarios y enlaces.
+- **Texto de navegación seleccionado** (`#2068d5`) y **Fondo de navegación seleccionado** (`#f6f9fd`): Colores del elemento activo en la navegación.
+- **Fondo de página** (`#f6f9fd`): Color de fondo general de la interfaz.
+
+Para aplicar la paleta, ajusta los colores que necesites y haz click en **Guardar**. La página se recarga para que el nuevo tema se vea en toda la interfaz.
+
+**Color principal**, **Color principal al pasar el cursor** y **Fondo de página** se aplican además fuera del panel: son los colores del fondo, los enlaces y los botones de los correos transaccionales que envía la plataforma, así que un cambio de paleta también se nota en los correos que reciben tus usuarios. Los otros cuatro colores solo afectan a la interfaz de administración.
+
+Para volver a la paleta original de Modyo, haz click en **Restablecer a predeterminado** y confirma en el mensaje que aparece. No necesitas guardar después: el cambio se aplica de inmediato y la página se recarga.
+
+:::warning Atención
+**Restablecer a predeterminado** no distingue entre colores: descarta los siete valores personalizados de una sola vez, no solo el que estás editando. Si tienes cargada una paleta de marca, anota sus códigos antes de restablecer, porque tendrás que volver a ingresarlos uno por uno.
+:::
 
 ## Configuración de Perfil
 
