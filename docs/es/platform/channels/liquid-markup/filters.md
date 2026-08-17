@@ -291,7 +291,7 @@ Retorna una lista de Entradas que pertenecen a un tag seleccionado. *e.g.*
 
 **Parametros**:
 - entries (ArrayEntry) — array con entradas
-- locale (String) (default: '') — String con tags separadas por coma.
+- list (String) (default: '') — String con tags separados por coma.
 
 ### By type
 
@@ -300,7 +300,7 @@ Retorna una lista de Entradas que pertenecen a un Tipo de Contenido seleccionado
 
 **Parametros**:
 - entries (ArrayEntry) — array con entradas
-- locale (String) (default: '') — String con tipos de contenido separados por coma.
+- list (String) (default: '') — String con tipos de contenido separados por coma.
 
 ### By UUID
 
@@ -325,12 +325,20 @@ Aplica múltiples filtros de entradas en una sola llamada. Claves soportadas (to
 - locale: un único código de idioma (aplica `by_lang`; no acepta lista separada por comas)
 - from_published_date: fecha límite inicial (>= `published_at`)
 - to_published_date: fecha límite final (<= `published_at`)
-- sort_by: nombre de campo (`name`, `slug`, `created_at`, `updated_at`, `published_at` u otro path de campo)
+- sort_by: nombre de campo (default: `created_at`). Admite `name`, `slug`, `created_at`, `updated_at` y `published_at`, o un campo con su prefijo (`fields.<nombre>` o `meta.<atributo>`); ver [Sort By](/es/platform/channels/liquid-markup/filters.html#sort-by)
 - order: `asc` | `desc` (default: `desc`)
 - per_page: cantidad de resultados por página (habilita paginación; default: 10)
-- page: número de página (default: 1)
+- page: número de página (habilita paginación; default: 1)
 
 *ej.* <span v-pre>`{% assign entries = spaces['testing'].entries | by: types: 'promo,basic', locale: 'es', categories: 'destacadas,favoritas', tags: 'test,test2', slugs: 'slug2,slug1', uuids: 'uuid2,uuid1', sort_by: 'name', order: 'asc', per_page: 10, page: 2 %}`</span>
+
+`sort_by` y `order` son opcionales en la invocación, pero no en el efecto: `by` aplica siempre `sort_by`, con `created_at` y `desc` como valores por defecto. Una colección que ya venía ordenada por otro criterio, como la de un widget con su propio orden, sale reordenada por fecha de creación descendente aunque la plantilla no pida ningún ordenamiento, y no hay forma de pedirle a `by` que no ordene. Si necesitas conservar el orden de origen, encadena los filtros simples (`by_type`, `by_category`, `by_tag`, `by_slug`…) en lugar de usar `by`.
+
+La paginación, en cambio, sí es opcional: solo se aplica si pasas `per_page` o `page`. Los valores por defecto de esas dos claves son los que toma el filtro cuando indicas una y omites la otra, y quedan sujetos a la precedencia de los parámetros de la URL descrita en [Paginated](/es/platform/channels/liquid-markup/filters.html#paginated).
+
+:::warning Atención
+Las claves que `by` no reconoce se ignoran en silencio, sin error ni aviso: un `type:` en singular o un `tag:` mal escrito no filtran nada y el listado sale completo. Revisa los nombres contra la lista de arriba antes de dar por perdido un filtro que no parece hacer nada.
+:::
 
 ### Filter By (Operadores Extendidos)
 
@@ -432,9 +440,17 @@ Separa los resultados en páginas. *e.g.*
 <span v-pre>`{{ objects | paginated: 10, 2 }}`</span>
 
 **Parametros**:
-- objeto(Array) — array
+- objeto(Array) — colección de entradas (objeto antes de la barra)
 - per_page (Integer) (default: 10) — objetos por página
 - page (Integer) (default: 1) — número de página a mostrar
+
+Los parámetros `page` y `per_page` de la URL tienen precedencia sobre los argumentos escritos en la plantilla. Con el ejemplo de arriba, una visita a `mi-pagina.com/landing?page=5` muestra la página 5 y no la 2: los argumentos actúan como valores iniciales, para la primera visita sin parámetros en la URL. Y como esos parámetros son globales para la página, alcanzan a la vez a todos los listados paginados que haya en ella.
+
+El filtro acota los dos valores, vengan del argumento o de la URL: `per_page` se limita a un mínimo de 1 y a un máximo de 100, y `page` a un mínimo de 1. Un `per_page` de 500 entrega 100 resultados por página.
+
+:::warning Atención
+Aplicado sobre algo que no sea una colección de entradas, por ejemplo un array ya materializado por `sort`, por `map` o definido en la propia plantilla, el filtro devuelve la entrada intacta: no pagina y tampoco falla. El listado se ve completo, los enlaces de paginación no aparecen y no queda ninguna pista del motivo. Encadena `paginated` directamente sobre la colección de entradas.
+:::
 
 ### Sort By
 
@@ -442,9 +458,24 @@ Retorna un array con las entradas ordenadas por un campo *e.g.*
 <span v-pre>`{% assign entries = widgets.entries | sort_by: 'name', 'asc' %}`</span>
 
 **Parametros**:
-- entries (ArrayEntry) — array con entradas
-- atributo (String) — campo por el cual se quiere ordenar
-- orden (String) - asc (asecendente) o desc (desciendiente)
+- coleccion (ArrayEntry | ArrayCategory) — colección a ordenar (objeto antes de la barra)
+- field (String) — campo por el cual se quiere ordenar
+- order (String) (default: 'desc') — `asc` o `desc`
+
+El orden por defecto es descendente y cualquier valor que no sea exactamente `asc` se trata como `desc`: un `'ascending'` o un `'asc '` con un espacio de más ordenan al revés de lo pedido, sin ningún aviso.
+
+Los campos admitidos dependen de la colección que recibe el filtro:
+
+- **Colección de categorías**: solo `name`, `slug` y `uuid`.
+- **Colección de entradas**: los cinco atributos meta `name`, `slug`, `created_at`, `updated_at` y `published_at` se ordenan de forma directa. Cualquier otro nombre lo resuelve la capa de búsqueda, que exige el prefijo del contenedor, igual que [Filter By](/es/platform/channels/liquid-markup/filters.html#filter-by-operadores-extendidos): `fields.<nombre>` para un campo del tipo de contenido y `meta.<atributo>` para el resto de los metadatos.
+
+:::warning Atención
+Sobre una colección de categorías, un campo fuera de `name`, `slug` y `uuid` devuelve una colección vacía sin ningún error: el listado se ve en blanco y parece que no hay datos.
+
+Sobre una colección de entradas, un nombre sin prefijo, como `'precio'` en lugar de `'fields.precio'`, no ordena por el campo que esperas. Además, ordenar por `fields.<nombre>` necesita, igual que `filter_by`, una colección acotada a un tipo de contenido: sobre algo como <span v-pre>`spaces['blog'].entries`</span> el filtro aborta y en el HTML publicado queda el comentario `<!-- Liquid Error -->` en lugar del bloque. Parte de <span v-pre>`spaces['blog'].types['post'].entries`</span> o de <span v-pre>`widget.entries`</span>.
+
+El filtro aborta también, con el mismo comentario en la salida, si el campo o el orden no llegan como cadena, por ejemplo <span v-pre>`| sort_by: 'name', 1`</span>.
+:::
 
 
 ### To Published Date
@@ -532,28 +563,32 @@ Estos filtros Liquid alteran valores relacionados con la Geolocalización en Mod
 
 ### Dynamic Map
 
-Devuelve un mapa dinámico de Google Maps (ej. <span v-pre>`{{ locations | dynamic_map: '600x300', 'true', 'roadmap', true}}`</span>).
+Devuelve un mapa dinámico de Google Maps (ej. <span v-pre>`{{ locations | dynamic_map: '600x300', 10, 'roadmap', '', true }}`</span>).
 
 **Parametros**
 
 - `locations` (ArrayHash) — Array de hashes con los puntos de latitud y longitud.
 - `size` (String) (default: '600x300') — Tamaño en píxeles del mapa.
-- `zoom` (String) (default: 10) — Nivel de zoom para el mapa.
+- `zoom` (Integer) (default: 10) — Nivel de zoom para el mapa.
 - `type` (String) (default: 'roadmap') — Tipo de mapa.
 - `icon` (String) (default: '') — Icono para el mapa.
-- `controls` (String) (default: true) — Controles de navegación para el mapa.
+- `controls` (Boolean) (default: true) — Controles de navegación para el mapa.
 
 ### Static Map
 
-Devuelve un mapa estático de Google Maps (ej. <span v-pre>`{{ locations | static_map: '600x300', 'true', 'roadmap'}}`</span>).
+Devuelve un mapa estático de Google Maps (ej. <span v-pre>`{{ locations | static_map: '600x300', 15, 'roadmap' }}`</span>).
 
 **Parametros**
 
 - `locations` (ArrayHash) — Array de hashes con los puntos de latitud y longitud.
 - `size` (String) (default: '600x300') — Tamaño en píxeles del mapa.
-- `zoom` (String) (default: 10) — Nivel de zoom para el mapa.
+- `zoom` (String) (default: '') — Nivel de zoom para el mapa. Sin valor, la URL de Google Maps se arma con `zoom=` vacío y el encuadre queda a criterio de Google; pásalo siempre que necesites un encuadre fijo.
 - `type` (String) (default: 'roadmap') — Tipo de mapa.
 - `icon` (String) (default: '') — Icono para el mapa.
+
+:::warning Atención
+En los dos filtros el argumento que sigue a `size` es `zoom`, no `controls`. Un ejemplo del tipo <span v-pre>`{{ locations | static_map: '600x300', 'true', 'roadmap' }}`</span> arma la URL de Google Maps con `zoom=true` y el mapa no se encuadra como esperas. En `dynamic_map` el orden es `size`, `zoom`, `type`, `icon`, `controls`, así que para llegar a `controls` hay que pasar los cuatro argumentos anteriores.
+:::
 
 
 ## Menu Items
@@ -582,12 +617,31 @@ Estos son los filtros liquid que alteran valores relacionados con originations e
 
 ### By UID
 
-Devuelve el Origination con el UID seleccionado. *ej.*
-<span v-pre>`{% assign my_origination = site.originations | by_uid: 'my-origination' %}`</span>
+Devuelve el objeto con el UID indicado dentro de una colección del módulo Origination. Es un único filtro, `by_uid`, que admite cuatro clases de colección:
+
+- `site.originations` — los originations del sitio.
+- `origination.steps` — los steps de un origination.
+- `step.tasks` — las tareas de un step.
+- `task.fields` — las preguntas de una tarea de entrada de usuario. Es la única forma de tomar una pregunta concreta por su UID; los objetos que devuelve son [question](/es/platform/channels/liquid-markup/objects.html#question).
 
 **Parámetros:**
-- originations (ArrayOrigination) - array con originations
-- uid (String) - UID del Origination
+- coleccion (ArrayOrigination | ArrayStep | ArrayTask | ArrayQuestion) - colección sobre la que se busca
+- uid (String) - UID del objeto buscado
+
+El filtro devuelve un único objeto, no una colección: su resultado se usa directamente y no se recorre con un ciclo. Si ningún elemento de la colección tiene ese UID, no devuelve nada.
+
+*ej.*
+
+```liquid
+{% assign my_origination = site.originations | by_uid: 'my-origination' %}
+{% assign my_step = my_origination.steps | by_uid: 'step-01' %}
+{% assign my_task = my_step.tasks | by_uid: 'task-01' %}
+{% assign my_question = my_task.fields | by_uid: 'question-01' %}
+```
+
+:::warning Atención
+En dos casos el filtro aborta y en el HTML publicado queda el comentario `<!-- Liquid Error -->` en lugar del bloque: cuando se aplica sobre algo que no es una colección y cuando se aplica sobre una colección de una clase no admitida. En el segundo caso el mensaje incluye el nombre de la clase recibida, lo que permite identificar qué se pasó por error.
+:::
 
 ## Site
 
@@ -735,6 +789,15 @@ Convierte una fecha en String a palabras (ej. <span v-pre>`{{ '01-02-2019' | tim
 
 Resuelve el texto de traducción para claves de Sitios. Se devolverán valores personalizados si existen (ej. <span v-pre>`{{ 'admin.logs.errors.no_logs_yet' | translate }}`</span>).
 
+**Parámetros**
+
+- `value` (String) — clave de la traducción (objeto antes de la barra).
+- `count` (Integer) (default: nil) — cantidad con la que se pluraliza la clave.
+
+`t` es el alias corto del filtro y hace exactamente lo mismo: <span v-pre>`{{ 'admin.logs.errors.no_logs_yet' | t }}`</span>.
+
+El segundo parámetro pluraliza la clave y solo se aplica cuando llega como entero (ej. <span v-pre>`{{ 'site.results.count' | t: total }}`</span>). Si llega como cadena, por ejemplo `'3'`, el filtro lo descarta sin avisar y resuelve la clave sin pluralizar.
+
 ### Truncate HTML
 
 Devuelve un String después de truncarlo (ej. <span v-pre>`{{ html | truncate_html: 10 }}`</span>).
@@ -751,6 +814,8 @@ Devuelve el Step con el UID seleccionado. *ej.*
 **Parámetros:**
 - steps (ArrayStep) - array con steps
 - uid (String) - UID del Step
+
+Es el mismo filtro `by_uid` del módulo Origination. La referencia completa, con las cuatro clases de colección admitidas y los errores que aborta, está en [By UID](/es/platform/channels/liquid-markup/filters.html#by-uid).
 
 ## Submission
 
@@ -856,6 +921,8 @@ Devuelve el Task con el UID seleccionado. *ej.*
 **Parámetros:**
 - tasks (ArrayTask) - array con tasks
 - uid (String) - UID del Task
+
+Es el mismo filtro `by_uid` del módulo Origination, que también acepta la colección `fields` de una tarea de entrada de usuario para tomar una de sus preguntas por UID: <span v-pre>`{% assign my_question = my_task.fields | by_uid: 'question-01' %}`</span>. La referencia completa está en [By UID](/es/platform/channels/liquid-markup/filters.html#by-uid).
 
 ## User
 

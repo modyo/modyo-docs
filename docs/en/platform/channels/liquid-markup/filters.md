@@ -291,7 +291,7 @@ Returns a list of Entries that belong to a selected tag. *e.g.*
 
 **Parameters**:
 - entries (ArrayEntry) — array with entries
-- locale (String) (default: '') — String with comma-separated tags.
+- list (String) (default: '') — String with comma-separated tags.
 
 ### By type
 
@@ -300,7 +300,7 @@ Returns a list of Entries that belong to a selected Content Type. *e.g.*
 
 **Parameters**:
 - entries (ArrayEntry) — array with entries
-- locale (String) (default: '') — String with comma-separated content types.
+- list (String) (default: '') — String with comma-separated content types.
 
 ### By UUID
 
@@ -325,12 +325,20 @@ Applies multiple entry filters in one call. Supported option keys (all optional)
 - locale: a single locale code (applies `by_lang`; a comma-separated list is not supported)
 - from_published_date: date string (>= `published_at`)
 - to_published_date: date string (<= `published_at`)
-- sort_by: field name (`name`, `slug`, `created_at`, `updated_at`, `published_at`, or a field path)
+- sort_by: field name (default: `created_at`). Accepts `name`, `slug`, `created_at`, `updated_at` and `published_at`, or a field with its prefix (`fields.<name>` or `meta.<attribute>`); see [Sort By](/en/platform/channels/liquid-markup/filters.html#sort-by)
 - order: `asc` | `desc` (default: `desc`)
 - per_page: integer results per page (enables pagination if provided; default: 10)
-- page: integer page number (default: 1)
+- page: integer page number (enables pagination if provided; default: 1)
 
 *e.g.* <span v-pre>`{% assign entries = spaces['testing'].entries | by: types: 'promo,basic', locale: 'es', categories: 'starred,favorites', tags: 'test,test2', slugs: 'slug2,slug1', uuids: 'uuid2,uuid1', sort_by: 'name', order: 'asc', per_page: 10, page: 2 %}`</span>
+
+`sort_by` and `order` are optional in the call, but not in effect: `by` always applies `sort_by`, using `created_at` and `desc` as defaults. A collection that already came sorted by another criterion, such as a widget with its own order, comes out re-sorted by creation date descending even if the template requests no ordering at all, and there is no way to tell `by` not to sort. If you need to preserve the original order, chain the simple filters (`by_type`, `by_category`, `by_tag`, `by_slug`…) instead of using `by`.
+
+Pagination, on the other hand, is optional: it is applied only if you pass `per_page` or `page`. The defaults of those two keys are what the filter uses when you set one and omit the other, and they are subject to the URL parameter precedence described in [Paginated](/en/platform/channels/liquid-markup/filters.html#paginated).
+
+:::warning Attention
+Keys that `by` does not recognize are ignored silently, with no error or warning: a singular `type:` or a misspelled `tag:` filters nothing and the listing comes out complete. Check the key names against the list above before giving up on a filter that seems to do nothing.
+:::
 
 ### Filter By
 
@@ -432,9 +440,17 @@ Separates the results into pages. *e.g.*
 <span v-pre>`{{ objects | paginated: 10, 2 }}`</span>
 
 **Parameters**:
-- object(Array) — array
+- object(Array) — entry collection (object before the pipe)
 - per_page (Integer) (default: 10) — objects per page
 - page (Integer) (default: 1) — page number to display
+
+The `page` and `per_page` URL parameters take precedence over the arguments written in the template. With the example above, a visit to `my-page.com/landing?page=5` shows page 5 and not page 2: the arguments act as initial values, for the first visit without parameters in the URL. And because those parameters are global to the page, they reach every paginated listing on it at once.
+
+The filter clamps both values, whether they come from the argument or from the URL: `per_page` is limited to a minimum of 1 and a maximum of 100, and `page` to a minimum of 1. A `per_page` of 500 returns 100 results per page.
+
+:::warning Attention
+Applied to something that is not an entry collection, for example an array already materialized by `sort`, by `map` or defined in the template itself, the filter returns the input untouched: it does not paginate and it does not fail either. The listing looks complete, the pagination links do not appear and no clue is left as to why. Chain `paginated` directly onto the entry collection.
+:::
 
 ### Sort By
 
@@ -442,9 +458,24 @@ Returns an array with entries sorted by a field *e.g.*
 <span v-pre>`{% assign entries = widgets.entries | sort_by: 'name', 'asc' %}`</span>
 
 **Parameters**:
-- entries (ArrayEntry) — array with entries
-- attribute (String) — field by which you want to sort
-- order (String) - asc (ascending) or desc (descending)
+- collection (ArrayEntry | ArrayCategory) — collection to sort (object before the pipe)
+- field (String) — field by which you want to sort
+- order (String) (default: 'desc') — `asc` or `desc`
+
+The default order is descending and any value that is not exactly `asc` is treated as `desc`: an `'ascending'` or an `'asc '` with an extra space sort the opposite way from what you asked, with no warning at all.
+
+The accepted fields depend on the collection the filter receives:
+
+- **Category collection**: only `name`, `slug` and `uuid`.
+- **Entry collection**: the five meta attributes `name`, `slug`, `created_at`, `updated_at` and `published_at` are sorted directly. Any other name is resolved by the search layer, which requires the container prefix, just like [Filter By](/en/platform/channels/liquid-markup/filters.html#filter-by): `fields.<name>` for a content type field and `meta.<attribute>` for the remaining metadata.
+
+:::warning Attention
+On a category collection, a field outside `name`, `slug` and `uuid` returns an empty collection with no error at all: the listing looks blank and seems to have no data.
+
+On an entry collection, a name without a prefix, such as `'price'` instead of `'fields.price'`, does not sort by the field you expect. Also, sorting by `fields.<name>` requires, just like `filter_by`, a collection scoped to a content type: on something like <span v-pre>`spaces['blog'].entries`</span> the filter aborts and the published HTML keeps the `<!-- Liquid Error -->` comment in place of the block. Start from <span v-pre>`spaces['blog'].types['post'].entries`</span> or from <span v-pre>`widget.entries`</span>.
+
+The filter also aborts, with the same comment in the output, if the field or the order do not arrive as strings, for example <span v-pre>`| sort_by: 'name', 1`</span>.
+:::
 
 ### To Published Date
 
@@ -529,28 +560,32 @@ These Liquid filters alter values related to Geolocation in Modyo Platform.
 
 ### Dynamic Map
 
-Returns a dynamic Google Maps map (e.g. <span v-pre>`{{ locations | dynamic_map: '600x300', 'true', 'roadmap', true}}`</span>).
+Returns a dynamic Google Maps map (e.g. <span v-pre>`{{ locations | dynamic_map: '600x300', 10, 'roadmap', '', true }}`</span>).
 
 **Parameters**
 
 - `locations` (ArrayHash) — Array of hashes with latitude and longitude points.
 - `size` (String) (default: '600x300') — Map size in pixels.
-- `zoom` (String) (default: 10) — Zoom level for the map.
+- `zoom` (Integer) (default: 10) — Zoom level for the map.
 - `type` (String) (default: 'roadmap') — Map type.
 - `icon` (String) (default: '') — Map icon.
-- `controls` (String) (default: true) — Navigation controls for the map.
+- `controls` (Boolean) (default: true) — Navigation controls for the map.
 
 ### Static Map
 
-Returns a static Google Maps map (e.g. <span v-pre>`{{ locations | static_map: '600x300', 'true', 'roadmap'}}`</span>).
+Returns a static Google Maps map (e.g. <span v-pre>`{{ locations | static_map: '600x300', 15, 'roadmap' }}`</span>).
 
 **Parameters**
 
 - `locations` (ArrayHash) — Array of hashes with latitude and longitude points.
 - `size` (String) (default: '600x300') — Map size in pixels.
-- `zoom` (String) (default: 10) — Zoom level for the map.
+- `zoom` (String) (default: '') — Zoom level for the map. With no value, the Google Maps URL is built with an empty `zoom=` and the framing is left to Google; always pass it when you need a fixed framing.
 - `type` (String) (default: 'roadmap') — Map type.
 - `icon` (String) (default: '') — Map icon.
+
+:::warning Attention
+In both filters the argument that follows `size` is `zoom`, not `controls`. An example such as <span v-pre>`{{ locations | static_map: '600x300', 'true', 'roadmap' }}`</span> builds the Google Maps URL with `zoom=true` and the map is not framed as you expect. In `dynamic_map` the order is `size`, `zoom`, `type`, `icon`, `controls`, so reaching `controls` means passing the four preceding arguments.
+:::
 
 
 ## Menu Items
@@ -579,12 +614,31 @@ These are the liquid filters that alter values related to originations in Modyo 
 
 ### By UID
 
-Returns the Origination with the selected UID. *e.g.*
-<span v-pre>`{% assign my_origination = site.originations | by_uid: 'my-origination' %}`</span>
+Returns the object with the given UID inside an Origination module collection. It is a single filter, `by_uid`, that accepts four collection classes:
+
+- `site.originations` — the originations of the site.
+- `origination.steps` — the steps of an origination.
+- `step.tasks` — the tasks of a step.
+- `task.fields` — the questions of a user input task. This is the only way to take a specific question by its UID; the objects it returns are [question](/en/platform/channels/liquid-markup/objects.html#question).
 
 **Parameters:**
-- originations (ArrayOrigination) - array with originations
-- uid (String) - Origination UID
+- collection (ArrayOrigination | ArrayStep | ArrayTask | ArrayQuestion) - collection to search in
+- uid (String) - UID of the object to find
+
+The filter returns a single object, not a collection: its result is used directly and is not traversed with a loop. If no element in the collection has that UID, it returns nothing.
+
+*e.g.*
+
+```liquid
+{% assign my_origination = site.originations | by_uid: 'my-origination' %}
+{% assign my_step = my_origination.steps | by_uid: 'step-01' %}
+{% assign my_task = my_step.tasks | by_uid: 'task-01' %}
+{% assign my_question = my_task.fields | by_uid: 'question-01' %}
+```
+
+:::warning Attention
+In two cases the filter aborts and the published HTML keeps the `<!-- Liquid Error -->` comment in place of the block: when it is applied to something that is not a collection, and when it is applied to a collection of an unsupported class. In the second case the message includes the name of the class received, which makes it possible to identify what was passed by mistake.
+:::
 
 ## Site
 
@@ -732,6 +786,15 @@ Converts a date in String to words (e.g. <span v-pre>`{{ '01-02-2019' | time_ago
 
 Resolves the translation text for Site keys. Custom values will be returned if they exist (e.g. <span v-pre>`{{ 'admin.logs.errors.no_logs_yet' | translate }}`</span>).
 
+**Parameters**
+
+- `value` (String) — translation key (object before the pipe).
+- `count` (Integer) (default: nil) — count used to pluralize the key.
+
+`t` is the short alias of the filter and does exactly the same: <span v-pre>`{{ 'admin.logs.errors.no_logs_yet' | t }}`</span>.
+
+The second parameter pluralizes the key and is applied only when it arrives as an integer (e.g. <span v-pre>`{{ 'site.results.count' | t: total }}`</span>). If it arrives as a string, for example `'3'`, the filter discards it without warning and resolves the key without pluralizing.
+
 ### Truncate HTML
 
 Returns a String after truncating it (e.g. <span v-pre>`{{ html | truncate_html: 10 }}`</span>).
@@ -748,6 +811,8 @@ Returns the Step with the selected UID. *e.g.*
 **Parameters:**
 - steps (ArrayStep) - array with steps
 - uid (String) - Step UID
+
+This is the same `by_uid` filter from the Origination module. The full reference, with the four supported collection classes and the errors it aborts with, is in [By UID](/en/platform/channels/liquid-markup/filters.html#by-uid).
 
 ## Submission
 
@@ -853,6 +918,8 @@ Returns the Task with the selected UID. *e.g.*
 **Parameters:**
 - tasks (ArrayTask) - array with tasks
 - uid (String) - Task UID
+
+This is the same `by_uid` filter from the Origination module, which also accepts the `fields` collection of a user input task to take one of its questions by UID: <span v-pre>`{% assign my_question = my_task.fields | by_uid: 'question-01' %}`</span>. The full reference is in [By UID](/en/platform/channels/liquid-markup/filters.html#by-uid).
 
 ### Navigation / Completion Helpers
 
