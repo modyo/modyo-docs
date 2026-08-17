@@ -52,9 +52,9 @@ The number of content types you can create per space is set by your account plan
 
 In the creation interface, you'll find an empty template in the center of the screen and on the right side, a table with three tabs:
 
-- **Add fields**
-- **Field Configuration**
-- **Configuration**
+- **Add**
+- **Field**
+- **Settings**
 
 This interface allows you to create each of the types and format them as needed, according to your needs.
 
@@ -66,13 +66,25 @@ The name of the field is of utmost importance, as it will be used to access its 
 For more information, go to the [API reference](/en/platform/content/public-api-reference)
 :::
 
-All fields that can be added to a type have a name and can optionally be set as required.
+Every field you can add to a type shares three properties, which you configure in the **Field** tab of the right-hand panel:
 
-When a field is marked as required, when creating or modifying an entry, you must provide a value for that field. Otherwise, you will not be able to save the changes made.
+- **Name**: Identifies the field and is the key you use to access its value from Liquid, the SDKs, and the API. It is required, accepts up to 255 characters, and cannot begin with an underscore (`_`), contain dots, or include the `<`, `>`, and `;` characters. If you type a character that isn't allowed, the panel discards what you typed and shows "Field names cannot begin with underscore nor contain dots".
+- **Hint**: Optional help text. It is displayed below the field when creating or modifying an entry, to guide whoever fills it in.
+- **Required**: When creating or modifying an entry, you must provide a value for that field. Otherwise, you will not be able to save the changes made.
+
+Within the same type, two fields can't share a name: if you repeat one, the type isn't saved and you'll see the message "Cannot save this type because it has repeated field names".
+
+:::warning Attention
+Renaming a field changes the key you use to read its value from Liquid, the SDKs, and the API. Before renaming a field that is already in use, review the templates and integrations that consume it.
+:::
+
+:::danger Danger
+Deleting a field from a type erases that field's value in every entry of the type, and it can't be undone. When you remove it, the panel asks you to confirm with the message "Are you sure you want to delete this field? Once you save, this action will remove this field from all entries of this type, and cannot be undone." and warns you again when you save. As long as you don't save, the field and its values stay intact: if you made a mistake, leave the screen without saving.
+:::
 
 ### Single-line text
 
-This field allows you to enter single-line texts. It has the following restrictions:
+This field allows you to enter single-line texts, with a hard limit of 255 characters. If you need to store a longer text, use [Multiline text](#multiline-text). It has the following restrictions:
 
 - **Minimum length**: Allows you to require a minimum number of characters for the entered text.
 - **Maximum length**: Allows you to limit the maximum number of characters for the entered text.
@@ -221,9 +233,13 @@ This field allows you to link more than one existing Entry within the Space to a
 
 - **Allowed content type**: Limits the links to entries of one type. You select a single type, which applies to every entry you link, and the default value is **All**, which doesn't restrict anything. If any of the linked entries isn't of the chosen type, the entry isn't saved and the field shows "Does not match with allowed value", followed by the name of the required type.
 
+:::tip Tip
+Each entry can link up to 10 entries in a single Content list field. If you select more, the panel shows "Max reference items (10) reached, extra items will be excluded" and keeps only the first 10. That cap is defined per installation: if you need more references, talk to your Modyo account manager.
+:::
+
 ### Group
 
-Use the Group field to house another field within it. You can assign a name to the group according to your needs, as well as name the fields within the group. In the hint field, include the text you want to display to help your users complete the field correctly.
+Use the Group field to house another field within it. You can assign a name to the group according to your needs, as well as name the fields within the group and use each field's **Hint** to guide whoever fills in the entry.
 
 Once you have more than one type of field within a group, you can drag and order them as needed.
 
@@ -274,17 +290,48 @@ A group can host any type of field, except another group.
 :::
 
 
+## Saving changes to a type
+
+The changes you make to a type (adding, renaming, reordering, or deleting fields) are only applied when you click **Save**.
+
+:::warning Attention
+If the type already has entries, when you save the panel asks you to confirm with the message "Updating a type will result in the reindex and direct modification of any published entry of this type. Be aware that this process can take some time and in the meantime the entries of that type will not reflect the changes until the process is finished.". While that process is running, the button shows "Reindexing..." and you can't save the type again: hovering over it shows "This Content Type is currently being processed by a reindex process. Saving changes won't be available until it finishes.".
+:::
+
 ## Properties
 
-In this tab, you can see the name and UID of the type. The UID is important, as it is used to refer to the type from the Liquid SDKs, JavaScript, and the API. Next, you will see a button that can be in 2 states:
+In the **Settings** tab of the right-hand panel you can review and edit the general data of the type:
 
-- **Reindex**: Allows you to re-index the model in case of problems with the public API.
-- **Cancel reindexing**: If a reindexing is in progress, you can cancel the process by clicking this button.
+- **Name**: The name the type is listed under.
+- **Identifier**: The UID of the type. It is important, as it is used to refer to the type from the Liquid SDKs, JavaScript, and the API.
+- **Description**: Free text of up to 4,095 characters. Use it to document, for the rest of the team, what this type is for.
+- **Cardinality**: Switch between **Multiple** and **Single**. You can't switch to **Single** if the type already has more than one entry.
+
+In the actions menu of the type editor header you'll also find an option that can be in 2 states:
+
+- **Reindex type**: Allows you to re-index the model in case of problems with the public API.
+- **Cancel reindex**: If a reindexing is in progress, you can cancel the process by clicking this option.
 
 :::warning Attention
 When you reindex one of your types, the previously indexed model will remain available until the new indexing is complete. Once the reindexing is complete, the old index will be overwritten with the new index.
 :::
 
 :::warning Attention
-Note that depending on the [cache settings you have in your space](/en/platform/content/spaces#cache), you may not see the changes immediately after you have finished reindexing.
+Note that, depending on the cache settings between your browser and the platform, you may not see the changes immediately after you have finished reindexing.
+:::
+
+## Clone a type
+
+Cloning a type creates, within the same space, a copy with all its fields and validations. It's useful for starting from a proven structure without rebuilding it field by field. To clone a type:
+
+1. From the main menu, click **Content**.
+2. Select the space where the type lives.
+3. Click on **Types**.
+4. In the **Actions** column of the type's row, click **Clone**.
+5. In the **Clone type** window, confirm by clicking **Clone type**.
+
+The clone takes the name of the original prefixed with "Copy of" and the identifier prefixed with "copy-of-". If a type with that name or identifier already exists, a number is appended so it isn't repeated. Only the structure is copied: the entries of the original type aren't duplicated.
+
+:::tip Tip
+Cloning runs in the background and may take a while: while it completes, the window shows "This will take some time, the type is being cloned.". When it finishes you'll see "Type cloned successfully" and the new type will appear in the list.
 :::
