@@ -497,7 +497,6 @@ Site objects are used to get all the information about a site. The available att
 | **site.account_url**            | A string with the URL of the account associated with the site.                                         |                        |
 | **site.breadcrumb**             | A string with the CSS class of the breadcrumb div.                                                     |                        |
 | **site.cache_version**          | A string with the cache key for this version of the site.                                              |                        |
-| **site.csrf_meta_tag**          | A string with the CSRF meta tag.                                                                       |                        |
 | **site.css_path**               | A string with the location of the site's CSS file.                                                     |                        |
 | **site.current_year**           | A string with the current year of the site.                                                            |                        |
 | **site.js_path**                | A string with the location of the site's JS file.                                                      |                        |
@@ -794,3 +793,4 @@ When a template calls an attribute that no longer exists, Liquid resolves it as 
 | request.comments_url                             | (remove)                      | Removed in 10.2; now resolves as empty.         |
 | request.interact_url                             | (remove)                      | Removed in 10.2; now resolves as empty.         |
 | request.refresh_url                              | (remove)                      | Removed in 10.2; now resolves as empty.         |
+| site.csrf_meta_tag                               | `{% csrf_meta %}`             | Always resolves as empty; use the tag instead.  |

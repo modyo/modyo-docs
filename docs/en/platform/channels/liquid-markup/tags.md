@@ -19,6 +19,8 @@ Tags are used for template logic. Here is a list of currently supported tags:
 - **raw**: Temporarily disables tag processing to avoid syntax conflicts.
 - **unless**: Mirror of the `if` statement.
 
+Beyond these, Modyo registers platform-specific tags that do not exist in standard Liquid: see [Modyo-specific tags](/en/platform/channels/liquid-markup/tags.html#modyo-specific-tags).
+
 ### Comments
 
 Any content written between `{% comment %}` and `{% endcomment %}` tags will become a comment.
@@ -370,3 +372,69 @@ If you want to combine several strings into one and save it in a variable, you c
     <option value="blue">Blue</option>
   </select>
 ```
+
+## Modyo-specific tags
+
+Beyond the standard Liquid tags, the platform registers its own. The following ones ship with the default layouts and templates of every new site, so it is worth knowing what they emit before changing them.
+
+### The html5 block
+
+<code v-pre>{% html5 %}</code> is a block, not a simple tag: it needs its closing <code v-pre>{% endhtml5 %}</code>, and everything you write between them is rendered inside the document it generates.
+
+The block emits the `<!DOCTYPE html>` declaration and the `<html>` element with the `no-js` class and a `lang` attribute taken from the site's configured language, then the block's content, and the closing `</html>`:
+
+```html
+<!DOCTYPE html>
+<html class="no-js" lang='en'>
+  <!-- block content -->
+</html>
+```
+
+If the site has no configured language, the `lang` attribute is omitted entirely. That is why a Modyo layout does not write the `<!DOCTYPE html>` and `<html>` tags by hand: this block writes them, and the **Base** layout of every new site already comes wrapped in it. See [Layouts](/en/platform/channels/templates.html#layouts).
+
+### The body block
+
+<code v-pre>{% body %}</code> is also a block and needs its closing <code v-pre>{% endbody %}</code>. It generates the full `<body>` element, with an `id` and three classes the platform derives from the context the page was resolved in:
+
+```html
+<body id="<context id>" class="<page_context> <page_name> <page_id>">
+  <!-- block content -->
+</body>
+```
+
+Those classes are the hook for writing CSS or JavaScript per page type without printing anything in the template. These are the values the platform assigns:
+
+| `page_context` | Where it resolves | body `id` | `page_name` | `page_id` |
+|----------------|-------------------|-----------|-------------|-----------|
+| `context-home` | Site home page | `home` | `context-home-show` | `context-home-show` |
+| `context-custom` | Custom pages | `custom` | `context-custom-show` | `context-custom-show-<page path>` |
+| `context-content` | Content pages | `content` | `context-content-show` | `context-content-show-<page path>` |
+| `context-search` | Search results view | `search` | `context-search-show` | (empty) |
+| `context-origination` | Origination pages | `base` | `context-origination-show` | `context-origination-show-<page path>` |
+| `context-support` | Support pages | `base` | `context-support-show` | `context-support-show-<page path>` |
+| `context-forms` | Forms, form view | `base` | `context-forms-form_response` | `context-forms-show-<form slug>` |
+| `context-forms` | Forms, thank you page | `base` | `context-forms-thank_you` | `context-forms-thank_you-<form slug>` |
+| `context-people` | Preview from the admin | `base` | (empty) | (empty) |
+
+:::tip Tip
+The `id` only distinguishes the home page, custom pages, content pages and search. Every other context shares `id="base"`, so to style those use the `page_context` class.
+:::
+
+See [Context Variables](/en/platform/channels/liquid-markup/variables.html#context-variables) for what each of these variables holds.
+
+### CSRF tags
+
+Modyo registers two tags that emit the session's CSRF token:
+
+| Tag | What it emits |
+|-----|---------------|
+| `{% csrf_meta %}` | The `<meta name="csrf-param">` and `<meta name="csrf-token">` elements, so the token can be read from JavaScript. |
+| `{% csrf_param %}` | An `<input type="hidden">` with the parameter name and the token, to send it inside a form. |
+
+Both come included in the default templates: <code v-pre>{% csrf_meta %}</code> in the theme's `shared/general/head` snippet, and <code v-pre>{% csrf_param %}</code> inside the forms of the default origination templates.
+
+:::warning Warning
+Both tags render an empty string when the visitor has no session on the site. A form of your own that relies on them is submitted without a token for anonymous visitors, and the HTML leaves no trace that the tag was ever there. Use them in views that already require a session.
+:::
+
+The `site.csrf_meta_tag` attribute is not an equivalent of <code v-pre>{% csrf_meta %}</code>: it always resolves as empty. See [Deprecated Attributes](/en/platform/channels/liquid-markup/objects.html#deprecated-attributes).
