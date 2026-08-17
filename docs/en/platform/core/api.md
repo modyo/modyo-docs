@@ -335,6 +335,58 @@ The response obtained from the service is an `HTTP 200 OK`, and contains the rol
 }
 ```
 
+#### The OAuth2 client behind API access
+
+The three values that **API access** shows you when you save the application are not Modyo-specific: they are the credentials of an OAuth2 client. **Application ID** is the `client_id`, **Secret** is the `client_secret`, and the redirect URI is the `redirect_uri` that the platform sends the authorization code back to.
+
+Modyo mounts both ends of the flow under `/admin/oauth`:
+
+```http request
+GET  https://[account_host]/admin/oauth/authorize
+POST https://[account_host]/admin/oauth/token
+```
+
+The only enabled flow is `authorization_code`, in two steps:
+
+1. Send the administrator to `/admin/oauth/authorize` with `client_id`, `redirect_uri`, `response_type=code` and, if you need it, `state`. This step requires an open administrator session in that browser: if there is none, the platform redirects to the login screen and returns to the authorization once the user is in. There is no consent screen, so with an open session the redirect to `redirect_uri` with the `code` parameter is immediate.
+2. Exchange the `code` for a token at `/admin/oauth/token`:
+
+```shell script
+curl -X POST https://test.modyo.com/admin/oauth/token \
+  -d grant_type=authorization_code \
+  -d code=THE_RECEIVED_CODE \
+  -d redirect_uri=https://my-integration.example.com/callback \
+  -d client_id=THE_APPLICATION_ID \
+  -d client_secret=THE_SECRET
+```
+
+The limits of the flow matter when you design your integration:
+
+- `authorization_code` is the only enabled `grant_type`. There is no `client_credentials`, so there is no way to get a token without an administrator behind it: every token belongs to a person and inherits their permissions.
+- The platform does not issue _refresh tokens_. The `/admin/oauth/token` response returns `access_token` but no `refresh_token`, and there is no `grant_type=refresh_token` to fall back on.
+- The authorization code expires after 10 minutes and is good for a single exchange.
+- The application must belong to the account of the administrator granting access. Authorizing an application from another account fails.
+- The token's default scope is `public`, with `admin` as an optional scope, but the admin API does not require either one: what the token can do is decided by the permissions of the user who owns it.
+
+:::tip Tip
+You do not need to implement this flow to use the API. The path described above, creating the application and generating the token from the console, yields the same `access_token` and is enough for most integrations. The full OAuth2 flow makes sense when an external application has to obtain tokens on behalf of different administrators.
+:::
+
+#### Access token lifecycle
+
+The _access token_ you copy from **Manage Access Tokens** never expires. Modyo issues admin API tokens with no expiration date, so they stay valid indefinitely as long as they exist, no matter how much time has passed since they were generated or whether the administrator closed their browser sessions.
+
+That means a token stops working only when someone deletes it. You have two ways to do that:
+
+- **Delete the token**, from the **API access** tab of the team member, in the **Manage Access Tokens** section. This affects only that token.
+- **Delete the application**, from **Settings** > **API access**. This deletes every token issued with that application at once, across all administrators, so any integration using it stops authenticating.
+
+Deactivating the administrator who owns the token also cuts off access: the platform resolves the token only if the user is still active.
+
+:::warning Attention
+The platform does not rotate or renew tokens on its own. There is no automatic expiration and no _refresh token_, so any rotation policy is up to whoever operates the integration: generate the new token, swap it in the client, and only then delete the old one. And treat the _access token_ as a permanent credential, because that is what it is: if it leaks, it keeps working until someone deletes it from the console.
+:::
+
 #### Unauthenticated requests
 
 What happens if someone tries to make a _request_ to the API without having a valid token? If you try to make a call without authentication or with an invalid token, the system will respond with an `HTTP 401 Unauthorized` error:
@@ -356,6 +408,85 @@ curl  GET https://test.modyo.com/api/admin/roles -v
 If you are using Modyo from a web browser and have a session started as an administrator, then you can access the API URLs from the same browser. You will be able to make _requests_ simply by having the session cookie in the administrative part of the platform.
 
 Remember that you will only be able to access the same sections of the API that you are allowed to access from the Modyo interface.
+
+This method is meant for exploring the read side of the API from the browser, and it has two limits that the Swagger catalog does not declare:
+
+- **With the cookie alone, only `GET` requests work.** When the platform resolves the credential from the cookie it turns on cross-site request forgery protection, so a `POST`, `PUT`, `PATCH` or `DELETE` without a CSRF token gets an `HTTP 403 Forbidden` with an empty body and no message explaining why. To write using the cookie you also have to send the page's CSRF token in the `X-CSRF-Token` header. With a Bearer token that protection does not apply.
+- **Session validity is checked.** Unlike the Bearer token, the cookie carries the browser session along with it. If that session expired or was revoked, the response is an `HTTP 401 Unauthorized` with this body:
+
+```json
+{
+  "error": {
+    "grant_expired": "Session expired"
+  }
+}
+```
+
+:::tip Tip
+For automation, use a Bearer token: it does not depend on a browser session, does not require a CSRF token, and does not expire. Leave the session cookie for exploring the API while you work in the console.
+:::
+
+## Error handling
+
+The whole admin API shares the same way of reporting failures, even though the Swagger catalog does not declare it on every operation. It is worth coding your error handling against this cross-cutting contract instead of against the response list of a single call.
+
+### The error envelope
+
+When there is something to explain, the response carries a single `errors` object with a list inside. The simple form is a list of strings, already translated into the language of the user who owns the credential:
+
+```json
+{
+  "errors": [
+    "This element cannot be deleted"
+  ]
+}
+```
+
+Resource validation errors and publishing errors use a structured form, where each element identifies the field that failed:
+
+```json
+{
+  "errors": [
+    {
+      "field": "name",
+      "messages": [
+        "Name can't be blank"
+      ],
+      "details": [
+        {
+          "error": "blank"
+        }
+      ]
+    }
+  ]
+}
+```
+
+- `field` is the affected attribute. Nested attributes arrive with the full path, in the form `parent[child]`, and collection items include their position, `parent[0][child]`.
+- `messages` carries the text you can show to a person.
+- `details` carries the error code, so you can branch without depending on the translated text.
+
+Treat `errors` as a list that can arrive in either form: check whether the element is a string or an object before reading `field`.
+
+### Status codes
+
+The default status of a failed operation in the admin API is `409 Conflict`. When the controller does not set another one, any business error or resource validation error comes back as `409` with the `errors` envelope, not as the `400` or `422` you would expect from other APIs. If your client treats `409` as a concurrency conflict and retries, it will retry in vain.
+
+| Status | Body | When you get it |
+| --- | --- | --- |
+| `401 Unauthorized` | <code v-pre>{}</code> | There is no valid credential: the `Authorization` header is missing, the token does not exist, or the administrator who owns the token is deactivated. |
+| `401 Unauthorized` | Empty | The credential is valid, but the user lacks the permission the operation requires. |
+| `401 Unauthorized` | <code v-pre>{"error": {"grant_expired": "..."}}</code> | The administrator cookie session expired or was revoked. |
+| `403 Forbidden` | Empty | CSRF token verification failed on a write authenticated with a session cookie. |
+| `404 Not Found` | <code v-pre>{}</code> or <code v-pre>{"errors": [...]}</code> | The resource or the site in the path does not exist, or the user cannot see them. |
+| `409 Conflict` | <code v-pre>{"errors": [...]}</code> | Default status of a failed operation. |
+| `422 Unprocessable Entity` | <code v-pre>{"errors": [...]}</code> or empty | The parameters of the call are not valid. |
+
+:::warning Attention
+Three of these responses arrive with no body and no message explaining the reason: the CSRF `403`, the `401` for insufficient permissions, and some of the `422`s. And since `401` covers both "you are not authenticated" and "you do not have permission", the only signal that tells them apart is the body: <code v-pre>{}</code> points to the credential and an empty body points to permissions. Log the status and the path in your integration, because the response will not give you more clues.
+:::
+
+None of these errors gets better on a retry: a `401`, a `403` or a `409` will fail the same way until you change the credential, the CSRF token, or the data of the call.
 
 ## Pagination
 
