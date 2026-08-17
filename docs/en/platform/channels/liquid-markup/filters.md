@@ -204,6 +204,43 @@ If the site doesn't have an associated realm and you don't specify parameters, t
 - precision - number of decimal digits.
 
 
+## Common
+
+These Liquid filters are available in any template and don't depend on a module.
+
+### Handle
+
+Turns a text into a URL-friendly identifier, *e.g.*
+<span v-pre>`{{ ' A s.?%$!' | handle }} #=> 'a-s'`</span>
+
+**Parameters**
+
+- `string` (String) — text to convert (object before the pipe).
+- `separator` (String) (default: '-') — character that replaces whitespace and special characters.
+- `preserve_case` (Boolean) (default: false) — with `true` it keeps the original text's casing.
+
+The rules it applies are:
+
+- It lowercases everything, unless `preserve_case` is `true`.
+- It replaces whitespace and special characters with the separator.
+- It collapses a sequence of consecutive whitespace or special characters into a single separator.
+- It removes the separators at the beginning and at the end.
+- With an empty text it returns an empty text.
+
+*e.g.*
+
+<span v-pre>`{{ 'Hello   World!!!' | handle }} #=> 'hello-world'`</span>
+
+<span v-pre>`{{ '---Hello---World---' | handle }} #=> 'hello-world'`</span>
+
+<span v-pre>`{{ 'CamelCase Words' | handle: '-', true }} #=> 'CamelCase-Words'`</span>
+
+<span v-pre>`{{ ' A s.?%$!' | handle: '.', true }} #=> 'A.s'`</span>
+
+### Handleize
+
+Alias of `handle`, with the same signature and the same result (e.g. <span v-pre>`{{ ' A s.?%$!' | handleize }} #=> 'a-s'`</span>). It exists for templates coming from Shopify; in new templates use `handle`.
+
 ## Content
 
 These are the liquid filters that alter values related to the Content module in Modyo Platform.
@@ -218,8 +255,38 @@ If the UUID doesn't match any file in the account, none of the four fails or ret
 
 ### Asset image
 
-Returns the tags of an image using its uuid from the File Manager. If using Cloudflare for image optimization, you can use these additional parameters: width, height, blur, quality, format and fit. *e.g.*
+Returns the tags of an image using its uuid from the File Manager. If using Cloudflare for image optimization, you can use these additional parameters: width, height, blur, quality, format, fit, widths, sizes and style. *e.g.*
 <span v-pre>`{{ uuid | asset_image: width: 40, format: 'auto', fit: 'cover' }}`</span>
+
+**Parameters**:
+- uuid (String) — asset uuid
+- width (Integer) — width in pixels
+- height (Integer) — height in pixels
+- quality (Integer) — quality percentage
+- blur (Integer) — blur level
+- fit (String) — how the image fits its box
+- format (String) — output format
+- widths (String) — comma-separated list of widths; emits a `srcset` attribute with an `Nw` descriptor for each width
+- sizes (String) — emitted as is, as the `sizes` attribute
+- style (String) — emitted as is, as the `style` attribute
+
+The image's `alt` comes from the file's **Alt text**, edited in [Media](/en/platform/content/asset-manager.html#edit-a-file).
+
+The filter has three possible outputs:
+
+- **Without options, or with CDN image processing disabled**: an `<img>` with the file's original URL. All the options are ignored.
+- **With options and processing enabled**: an `<img>` with the transformed URL.
+- **With `widths`**: on top of the transformed URL in `src`, a `srcset` with one variant per width in the list, plus the `sizes` and `style` attributes if you passed them.
+
+*e.g.* <span v-pre>`{{ uuid | asset_image: width: 800, quality: 80, widths: '300, 600, 900', sizes: '(min-width: 400px) 298px, 78.75vw' }}`</span>
+
+:::warning Attention
+`sizes` and `style` are only emitted when you also pass `widths`: without it, the filter returns an `<img>` with `src` and `alt` and nothing else. And only `width`, `quality`, `blur` and `height` are propagated to each `srcset` variant, not `fit` or `format`, so if you need the same crop or the same format at every resolution, build the `srcset` by hand with several calls to the filter.
+:::
+
+:::tip Tip
+CDN image processing is an account setting. While it isn't enabled, all nine options are ignored without an error and the page publishes the image at its original size.
+:::
 
 ### Asset link
 
@@ -639,6 +706,81 @@ The filter returns a single object, not a collection: its result is used directl
 :::warning Attention
 In two cases the filter aborts and the published HTML keeps the `<!-- Liquid Error -->` comment in place of the block: when it is applied to something that is not a collection, and when it is applied to a collection of an unsupported class. In the second case the message includes the name of the class received, which makes it possible to identify what was passed by mistake.
 :::
+
+## Pagination
+
+These Liquid filters build the navigation of a listing already paginated with [Paginated](/en/platform/channels/liquid-markup/filters.html#paginated). Apply them to the paginated collection, not to the original one.
+
+The `page` and `per_page` URL parameters are global to the page, so they reach every paginated listing on it at once.
+
+### Pagination links
+
+Returns the complete navigation bar of a paginated listing. *e.g.*
+<span v-pre>`{{ paginated_entries | pagination_links }}`</span>
+
+**Parameters**
+
+- `collection` (ArrayEntry) — collection already paginated (object before the pipe).
+
+The output is a `<nav aria-label="Pagination">` with a `<ul class="pagination">` inside, using Bootstrap's pagination classes:
+
+- The current page comes out as `<li class="page-item active" aria-current="page">`.
+- The other pages come out as `<li class="page-item">` with an `<a class="page-link">`.
+- The gap between blocks of pages comes out as `<li class="page-item disabled" aria-hidden="true">` with `&hellip;`.
+- The previous and next arrows come out as `<li class="page-item">` with `aria-label="Previous"` and `aria-label="Next"`. When there is no page to go to, the `<li>` also carries the `disabled` class.
+
+The arrow labels are fixed, `&laquo;` and `&raquo;`. The filter declares three more optional parameters, an anchor and the two labels, but none of them reaches the output: to change the symbols, the language or the structure of the bar you have to build your own markup with `?page=N` links.
+
+When the listing fits in a single page, the filter prints nothing.
+
+:::warning Attention
+The disabled arrow is still emitted as a link, with `href="false"`. Bootstrap's styles cancel the click with the `.page-item.disabled .page-link` rule; if you write your own pagination styles, replicate it or the user will be able to click an arrow that leads nowhere.
+:::
+
+:::warning Attention
+If the template is rendered outside the lifecycle of a site page, the filter can't build the page addresses and publishes a red error paragraph instead, starting with `(Will Paginate Liquidized) Error:`. If you find that text on a page, check where the template is being rendered from.
+:::
+
+### Pagination links remote
+
+Does the same as `pagination_links` and additionally adds `data-remote="true"` to every link in the bar. *e.g.*
+<span v-pre>`{{ paginated_entries | pagination_links_remote }}`</span>
+
+This is the version to use in custom widgets, which are loaded asynchronously. The conditions of that case are in [Examples](/en/platform/channels/liquid-markup/examples.html#filter-entries).
+
+### Total entries
+
+Returns the total number of items in the collection, not the ones on the current page. *e.g.*
+<span v-pre>`{{ paginated_entries | total_entries }}`</span>
+
+**Parameters**
+
+- `collection` (ArrayEntry) — collection (object before the pipe).
+
+It is the counterpart of `paginated`: on a collection that is already paginated, `size` returns the items on the page and `total_entries` the total of the listing. On an empty collection or on an array it returns its size, without an error.
+
+```liquid
+{% assign paginated_entries = entries | paginated: 10 %}
+<ul>
+  {% for entry in paginated_entries %}
+  <li>{{ entry.meta.name }}</li>
+  {% endfor %}
+</ul>
+<p>Showing {{ paginated_entries.size }} of {{ paginated_entries | total_entries }} results</p>
+{{ paginated_entries | pagination_links }}
+```
+
+### Page entries info liquid
+
+Returns a text legend with the range of results on the current page and the total of the collection. *e.g.*
+<span v-pre>`{{ paginated_entries | page_entries_info_liquid }}`</span>
+
+**Parameters**
+
+- `collection` (ArrayEntry) — collection already paginated (object before the pipe).
+- `model_name` (String) (default: null) — name of the entity being listed, to name it inside the legend.
+
+The legend is built in English and doesn't go through the site translations. If you need it in the site's language, or with another format, build it with `total_entries` as in the example above.
 
 ## Site
 
