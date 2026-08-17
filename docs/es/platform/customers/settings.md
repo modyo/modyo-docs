@@ -578,6 +578,37 @@ Puedes habilitar o no reCAPTCHA en el reino, una vez habilitado ingresa:
 Modyo soporta la versión V3 de reCAPTCHA básico, no soporta el enterprise.
 :::
 
+#### Límites de solicitudes y bloqueos
+
+Las pantallas públicas del reino que envían un correo o piden la contraseña actual están protegidas contra el abuso. Estos límites son fijos y no se configuran desde el panel.
+
+**Recuperación de contraseña**
+
+La pantalla de recuperación responde siempre con el mismo mensaje, exista o no el usuario y se envíe o se descarte el correo:
+
+_Si has introducido un nombre de usuario válido, recibirás una contraseña temporal en tu correo electrónico._
+
+Por dentro se aplican dos límites:
+
+- Dos solicitudes seguidas para el mismo usuario, con menos de 10 segundos entre una y otra, hacen que la segunda se descarte y no se envíe ningún correo.
+- Cuando se acumulan más de tres solicitudes para el mismo usuario, las siguientes se descartan durante 24 horas, contadas desde la última solicitud aceptada.
+
+En ambos casos el usuario ve el mensaje de éxito y el correo nunca llega. Es la causa más frecuente del reporte "pedí la recuperación y no me llegó nada".
+
+**Cambio de contraseña desde el perfil**
+
+Una vez que un usuario cambia su contraseña, no puede volver a cambiarla desde su perfil durante las 24 horas siguientes. Si lo intenta, vuelve al perfil con el mensaje _El número de solicitudes de cambio de contraseña ha superado el máximo permitido_. El plazo empieza a contar también cuando la contraseña se definió desde un enlace de recuperación.
+
+**Cambio de correo desde el perfil**
+
+Para cambiar su dirección de correo, el usuario tiene que escribir su contraseña actual. Si se equivoca, ve el mensaje _La contraseña proporcionada es incorrecta_ y puede volver a intentarlo. Al superar el límite de intentos, en cambio, ve _Has superado el número de intentos posibles_ y la plataforma le cierra la sesión de inmediato y lo lleva a la pantalla de salida.
+
+Cuando la contraseña sí es correcta, la dirección nueva queda pendiente y el usuario recibe un correo de verificación, con el aviso _Si has facilitado una dirección de correo electrónico válida, recibirás un correo de verificación._ La dirección no se reemplaza hasta que el usuario abre ese enlace.
+
+:::tip Tip
+Los intentos de recuperación de contraseña y los intentos de cambio de correo comparten el mismo contador, así que las solicitudes de un flujo cuentan para el bloqueo del otro. Y estos bloqueos se levantan solo por tiempo: no hay una acción en la ficha del usuario ni en el panel para liberarlos antes de plazo.
+:::
+
 ### Configuración de payment
 
 Al habilitar la función de pago en tu reino, tienes acceso a las siguientes opciones:
