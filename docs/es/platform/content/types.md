@@ -85,6 +85,20 @@ El alcance de **Único** es el tipo completo: la comparación recorre todas las 
 **Único** no tiene efecto sobre un campo que está dentro de un **Grupo**. La casilla se sigue mostrando al configurar el campo, pero la validación no se evalúa y los valores repetidos se guardan sin error. Si necesitas garantizar unicidad, deja el campo fuera del grupo.
 :::
 
+### Texto de múltiples líneas
+
+Este campo te permite ingresar texto plano en varias líneas, sin opciones de formato. A diferencia de **Texto de una línea**, que admite hasta 255 caracteres, aquí puedes guardar textos largos. Cuenta con las siguientes restricciones:
+
+- **Largo mínimo**: Permite exigir un mínimo de caracteres para el texto ingresado.
+- **Largo máximo**: Permite limitar la cantidad máxima de caracteres para el texto ingresado.
+- **Validación por expresión regular**: Te permite añadir una expresión regular para validar que el texto ingresado, al crear o modificar una entrada, cumpla con un formato determinado.
+
+Este campo no ofrece la validación **Único**: la unicidad solo está disponible en [Texto de una línea](#texto-de-una-linea).
+
+:::warning Atención
+Desde la versión 10.2, el valor de este campo se entrega escapado como HTML al imprimirlo con Liquid: las etiquetas que hayas escrito aparecen como texto literal en lugar de interpretarse como marcado. Si necesitas publicar HTML desde una entrada, usa un campo [Texto enriquecido](#texto-enriquecido). Revisa las plantillas que venían usando este campo para inyectar HTML.
+:::
+
 ### Texto enriquecido
 
 Este campo se traduce en un editor WYSIWYG de texto de múltiples líneas que también te permite modificar el código HTML del texto. Este campo cuenta con las siguientes restricciones:
@@ -116,9 +130,15 @@ Si cargas este campo por la API, envía las etiquetas exactas de los valores per
 
 En los campos de elección (Dropdown, Radio, Checkbox y Opciones múltiples), las opciones se gestionan en la sección **Valores permitidos** del campo: usa **Agregar valor** y **Eliminar valor** para administrarlas, y el selector para marcar el **Valor predeterminado**. Antes de guardar, la interfaz marca las opciones como **Nueva** o **Modificada** para que revises tus cambios.
 
+El **Valor predeterminado** se aplica automáticamente al crear una entrada nueva, y solo cuando el campo aún no trae un valor: no se aplica al editar una entrada que ya existe ni reemplaza lo que hayas cargado.
+
+:::warning Atención
+Esa aplicación automática solo alcanza a los campos de elección que están en el primer nivel del tipo. Si marcas un **Valor predeterminado** en un campo de elección que está dentro de un **Grupo**, el valor no se aplica a las entradas nuevas y la interfaz no te lo advierte. Deja el campo fuera del grupo si necesitas ese comportamiento.
+:::
+
 Cada valor es un elemento individual del tipo de contenido:
 
-- Al **renombrar un valor**, las entradas que lo tenían seleccionado conservan su selección con el nuevo nombre, en todas sus versiones.
+- Al **renombrar un valor**, las entradas que lo tenían seleccionado conservan su selección con el nuevo nombre, en todas sus versiones. El texto nuevo se propaga a las entradas en segundo plano, así que la API pública puede tardar un momento en devolverlo.
 - Al **eliminar un valor en uso**, este se archiva: deja de ofrecerse para nuevas selecciones, pero las entradas que ya lo tenían seleccionado lo siguen mostrando, sin pérdida de datos históricos.
 
 :::tip Tip
@@ -156,7 +176,16 @@ Utiliza este campo para agregar un selector de fechas. Limita las fechas selecci
 
 ### Ubicación
 
-Utiliza este campo para seleccionar una dirección geográfica, según los campos de Google Maps. En caso de que no dispongas de una clave de API de Google, puedes ingresar manualmente el nombre, la latitud, la longitud y las divisiones políticas de la ubicación. Estas divisiones administrativas no son estándar y varían según cada país. En el caso de Chile, las divisiones son: Región, Provincia, Comuna y Ciudad.
+Utiliza este campo para seleccionar una o más direcciones geográficas, según los campos de Google Maps. Un mismo campo Ubicación guarda una lista ordenada de ubicaciones: agrega las que necesites y usa **Eliminar ubicación** para quitar una de la lista. El orden en que las dejes es el que se entrega en la API y en los SDK.
+
+En caso de que no dispongas de una clave de API de Google, puedes ingresar manualmente la **Dirección**, la **Latitud**, la **Longitud** y las divisiones políticas de la ubicación. La **Latitud** acepta valores entre -90 y 90, y la **Longitud** entre -180 y 180; fuera de ese rango la entrada no se guarda. Estas divisiones administrativas no son estándar y varían según cada país. En el caso de Chile, las divisiones son: Región, Provincia, Comuna y Ciudad.
+
+En la API pública y en los SDK, el valor del campo es un arreglo con un objeto por ubicación, y cada objeto trae siempre las mismas ocho claves:
+
+- `location_street`: la dirección escrita en el campo **Dirección**.
+- `location`: objeto con las coordenadas `lat` y `lon`.
+- `country`: el país de la ubicación.
+- `administrative_area_level_1` a `administrative_area_level_5`: los cinco niveles de división administrativa, del mayor al menor. Los niveles que el país no usa llegan sin dato.
 
 :::warning Atención
 Para garantizar el correcto funcionamiento de los mapas de ubicación con la clave de API de Google configurada en tu cuenta, la clave tiene que tener permisos para acceder a:
@@ -168,11 +197,17 @@ Para garantizar el correcto funcionamiento de los mapas de ubicación con la cla
 
 ### Archivo
 
-Este campo te permite adjuntar un solo archivo a la entrada, utilizando el gestor de archivos.
+Este campo te permite adjuntar un solo archivo a la entrada, utilizando el gestor de archivos. Cuenta con la siguiente restricción:
+
+- **Tipos permitidos**: Limita el tipo de archivo que se puede adjuntar. Puedes elegir uno o varios valores entre **Imágenes**, **Vídeo**, **Audio** y **Documentos**; si no eliges ninguno, se acepta cualquier archivo. Si el archivo adjunto es de otro tipo, la entrada no se guarda y el campo muestra "No coincide con los tipos permitidos", seguido de los tipos que configuraste.
+
+La comprobación se hace sobre el tipo con el que el gestor de archivos clasificó el archivo al subirlo, no sobre su extensión.
 
 ### Listado de Archivos
 
-Este campo te permite adjuntar múltiples archivos a la entrada, usando el gestor de archivos.
+Este campo te permite adjuntar múltiples archivos a la entrada, usando el gestor de archivos. Cuenta con la siguiente restricción:
+
+- **Tipos permitidos**: Limita el tipo de los archivos que se pueden adjuntar, con las mismas opciones y el mismo comportamiento que en [Archivo](#archivo). Basta con que uno de los archivos adjuntos sea de otro tipo para que la entrada no se guarde.
 
 ### Contenido (enlace a una)
 
@@ -193,6 +228,39 @@ Utiliza el campo Grupo para albergar otro campo dentro él. Puedes asignar un no
 Una vez que tengas más de un tipo de campo dentro de un grupo, puedes arrastrarlos y ordenarlos según requieras. 
 
 No hay límite en la cantidad de campos que puedes incluir dentro de un grupo. 
+
+En una entrada, el grupo se comporta como una lista repetible: el mismo conjunto de campos hijos se puede completar varias veces. Para trabajar con las repeticiones:
+
+1. Abre la entrada y ubica el grupo.
+2. Haz click en **Añadir un nuevo elemento** para agregar una repetición con los mismos campos.
+3. Completa los campos de esa repetición.
+4. Arrastra las repeticiones para cambiar su orden.
+5. Para borrar una repetición, haz click en su ícono de eliminar y confirma.
+
+El orden en que dejes las repeticiones se conserva y es el que se entrega en la API y en los SDK.
+
+Por eso el valor de un campo Grupo es siempre un arreglo de objetos, incluso cuando tiene una sola repetición: cada objeto trae los campos hijos con el nombre que les diste.
+
+```json
+{
+  "fields": {
+    "my_group": {
+      "fields": [
+        { "my_field": "Primer elemento" },
+        { "my_field": "Segundo elemento" }
+      ]
+    }
+  }
+}
+```
+
+Desde Liquid, recorre las repeticiones con un ciclo y lee los campos hijos dentro de él. Cada repetición se expone como un objeto [repeatable_group_field](/es/platform/channels/liquid-markup/objects.html#field):
+
+```liquid
+{% for item in entry["my_group"] %}
+  {{ item["my_field"] }}
+{% endfor %}
+```
 
 Puedes validar el contenido de los campos de la siguiente forma: 
 
