@@ -462,10 +462,11 @@ En la sección de dominios puedes ver y modificar la ubicación pública de tu a
 Es esencial informar a todos los miembros de la plataforma sobre cualquier cambio que realices en esta sección.
 :::
 
-Activa la casilla para realizar modificaciones. Las variables que puedes modificar son:
-- **Host**: Ubicación de la aplicación web en el servidor.
+El **Host** es la ubicación de la aplicación web dentro del dominio de la plataforma y se cambia desde **Configuración del sitio > General**, en la sección **Zona peligrosa**.
+
+Activa la casilla **Activar dominios personalizados** para habilitar los campos de esta sección:
 - **Dominio primario**: Dirección principal de la aplicación web. Los dominios alternativos serán redirigidos a este dominio.
-- **Dominio alternativo**: Dirección secundaria que redirige automáticamente al dominio primario.
+- **Dominio alternativo 1 (opcional)** y **Dominio alternativo 2 (opcional)**: Direcciones adicionales desde las que también se puede llegar a la aplicación web. No son un respaldo del dominio primario: cada visita que entra por uno de estos dominios se redirige siempre al dominio primario, conservando la ruta solicitada.
 - **Tipo de redirección para los dominios alternativos**: El código HTTP con el que los dominios alternativos redirigen al dominio primario: **301 Moved Permanently (permanente)**, que indica a los buscadores traspasar el posicionamiento SEO al dominio primario, o **302 Found (temporal)**. Las configuraciones nuevas usan 301 por defecto; los sitios que ya tenían dominios alternativos configurados conservan 302 hasta que elijas cambiarlo.
 
 :::tip Redirecciones permanentes
@@ -748,6 +749,18 @@ Indica si tu sitio puede ser incluido en un `frame`, `iframe`, `embed`, or `obje
 
 Indica que se deben seguir los _MIME types_ anunciados en el _header_ `Content-Type` para evitar _MIME type sniffing_.
 
+#### Reporting-Endpoints
+
+Declara los destinos a los que el navegador envía los reportes que generan otros _headers_, como las violaciones de la política de seguridad de contenido. Es el _header_ que necesitas habilitar para poder usar la directiva `report-to` dentro de tu CSP.
+
+En el área de texto escribe uno o más destinos con la forma `nombre="URL"`, separados por coma:
+
+```bash
+default="https://example.com/reports", csp-endpoint="https://example.com/csp"
+```
+
+Después referencia el nombre del destino desde tu política, por ejemplo `report-to csp-endpoint`.
+
 #### Content-Security-Policy (CSP)
 
 Controla qué recursos puede cargar el navegador en el sitio para mitigar ataques de inyección de datos y _cross site scripting_. El valor predeterminado *permite cargar recursos desde cualquier lugar*, por lo que es importante diseñar una política de seguridad de contenido adecuada para tu sitio.
@@ -766,9 +779,17 @@ default-src 'self'; img-src 'self' https://cloud.modyocdn.com; font-src 'self' h
 
 La política debe incluir una directiva `default-src 'self'`, que sirve de _fallback_ para cualquier otro tipo de recurso. También debe incluir directivas `script-src` y `style-src` para evitar la evaluación de tags _inline_ `style` y `script`.
 
-- **Nonce**: El servidor agregará un CSP nonce a las directivas `script-src` y `style-src` si están presentes.
+La forma vigente de trabajar con nonce es interpolar la variable <code v-pre>{{csp_nonce}}</code> directamente en tu política. Modyo genera un nonce nuevo en cada _request_ y reemplaza la variable tanto en el _header_ como en las plantillas del sitio:
 
-Si tienes el nonce presente en tu política, puedes agregar a la lista permitida los _tags_ `script` y `style` en tus _templates_ usando la variable `csp_nonce`.
+```bash
+script-src 'self' 'nonce-{{csp_nonce}}'; style-src 'self' 'nonce-{{csp_nonce}}'
+```
+
+:::warning La casilla Habilitar nonce está obsoleta
+**Habilitar nonce** agrega el nonce automáticamente a las directivas `script-src` y `style-src` cuando están presentes, pero está marcada como obsoleta en el producto. En configuraciones nuevas interpola <code v-pre>{{csp_nonce}}</code> en la política, así decides exactamente en qué directivas se aplica. Ten en cuenta que si el nonce del _header_ no coincide con el de los _tags_ `script` y `style` de tus plantillas, el navegador bloquea esos recursos y el sitio se renderiza incompleto.
+:::
+
+Con el nonce presente en tu política, agrega a la lista permitida los _tags_ `script` y `style` de tus _templates_ usando la misma variable:
 
 ```liquid
 <script nonce="{{csp_nonce}}">
@@ -780,6 +801,12 @@ Estas herramientas te pueden ayudar a diseñar una política de seguridad sólid
 - [Google CSP evaluator](https://csp-evaluator.withgoogle.com)
 - [ReportURI](https://report-uri.com/home/analyse)
 - [CSP validator](https://cspvalidator.org)
+
+#### Content-Security-Policy-Report-Only
+
+Evalúa una política de seguridad de contenido sin aplicarla. El navegador no bloquea nada: solo reporta lo que la política habría bloqueado, lo que te permite probar una política estricta sobre el sitio antes de moverla al _header_ `Content-Security-Policy`.
+
+El área de texto acepta la misma sintaxis que el CSP, incluida la variable <code v-pre>{{csp_nonce}}</code>, y tiene su propia casilla **Habilitar nonce**, igualmente obsoleta. Para recibir los reportes, la política tiene que incluir una directiva `report-to` que apunte a un destino declarado en [Reporting-Endpoints](/es/platform/channels/sites.html#reporting-endpoints).
 
 #### Permissions-Policy
 
@@ -807,6 +834,16 @@ Transmite el deseo de bloquear las solicitudes de origen cruzado/sitio cruzado s
 
 Para mas información, consulta la [Cross-Origin-Resource-Policy de MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Resource-Policy).
 
+
+#### Service-Worker-Allowed
+
+Amplía el alcance (_scope_) máximo que puede registrar un _service worker_. Por defecto un _service worker_ solo controla las rutas que cuelgan de su propia ubicación; con este _header_ puedes servirlo desde una ruta y darle alcance sobre otra.
+
+- **Directiva**: La ruta que quieres autorizar como alcance, por ejemplo `/`.
+
+:::tip Sitios sin dominio personalizado
+En los sitios que no tienen los dominios personalizados activados, Modyo ya envía el _header_ `Service-Worker-Allowed` apuntando a la ruta del sitio cuando entrega el _service worker_ de la [PWA](/es/platform/channels/sites.html#pwa), por lo que no necesitas configurarlo para ese caso.
+:::
 
 ### Variables del sitio
 
