@@ -432,7 +432,7 @@ The whole admin API shares the same way of reporting failures, even though the S
 
 ### The error envelope
 
-When there is something to explain, the response carries a single `errors` object with a list inside. The simple form is a list of strings, already translated into the language of the user who owns the credential:
+When there is something to explain, the response carries an object with a single `errors` key whose value is a list. The simple form is a list of strings, already translated into the language of the user who owns the credential:
 
 ```json
 {

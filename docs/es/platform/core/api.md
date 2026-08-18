@@ -430,7 +430,7 @@ Toda la API de administración comparte la misma manera de informar los fallos, 
 
 ### El sobre de error
 
-Cuando hay algo que explicar, la respuesta trae un único objeto `errors` con una lista dentro. La forma simple es una lista de textos, ya traducidos al idioma del usuario dueño de la credencial:
+Cuando hay algo que explicar, la respuesta trae un objeto con una única clave `errors`, cuyo valor es una lista. La forma simple es una lista de textos, ya traducidos al idioma del usuario dueño de la credencial:
 
 ```json
 {
