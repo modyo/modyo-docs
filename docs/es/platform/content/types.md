@@ -68,7 +68,7 @@ Para más información ve a la [referencia de la API](/es/platform/content/publi
 
 Todos los campos que puedes añadir a un tipo comparten tres propiedades, que se configuran en la pestaña **Campo** del panel derecho:
 
-- **Nombre**: Identifica al campo y es la clave con la que accedes a su valor desde Liquid, los SDK y la API. Es obligatorio, admite hasta 255 caracteres, y no puede empezar con guion bajo (`_`), contener puntos, ni incluir los caracteres `<`, `>` y `;`. Si escribes un carácter no permitido, el panel descarta lo que escribiste y muestra "Los nombres de campos no pueden empezar con guión ni contener puntos".
+- **Nombre**: Identifica al campo y es la clave con la que accedes a su valor desde Liquid, los SDK y la API. Es obligatorio, admite hasta 255 caracteres, y no puede empezar con guion bajo (`_`) ni contener puntos. Si escribes un carácter no permitido, el panel descarta lo que escribiste y muestra el aviso "Los nombres de campos no pueden empezar con guión ni contener puntos". Ese aviso dice "guión", pero lo que la plataforma rechaza es el guion bajo inicial: un nombre que empiece con guion medio se guarda sin problema.
 - **Indicación**: Texto de ayuda opcional. Se muestra bajo el campo al crear o modificar una entrada, para orientar a quien la completa.
 - **Requerido**: Al crear o modificar una entrada, se debe proporcionar un valor para ese campo. De lo contrario, no podrás guardar los cambios realizados.
 
@@ -84,7 +84,7 @@ Eliminar un campo de un tipo borra el valor de ese campo en todas las entradas d
 
 ### Texto de una línea
 
-Este campo te permite ingresar textos de una sola linea, con un tope de 255 caracteres. Si necesitas guardar un texto más largo, usa [Texto de múltiples líneas](#texto-de-multiples-lineas). Cuenta con las siguientes restricciones:
+Este campo te permite ingresar textos de una sola línea, con un tope de 255 caracteres. Si necesitas guardar un texto más largo, usa [Texto de múltiples líneas](#texto-de-multiples-lineas). Cuenta con las siguientes restricciones:
 
 - **Largo mínimo**: Permite exigir un mínimo de caracteres para el texto ingresado.
 - **Largo máximo**: Permite  limitar la cantidad máxima de caracteres para el texto ingresado.

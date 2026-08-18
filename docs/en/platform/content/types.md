@@ -68,7 +68,7 @@ For more information, go to the [API reference](/en/platform/content/public-api-
 
 Every field you can add to a type shares three properties, which you configure in the **Field** tab of the right-hand panel:
 
-- **Name**: Identifies the field and is the key you use to access its value from Liquid, the SDKs, and the API. It is required, accepts up to 255 characters, and cannot begin with an underscore (`_`), contain dots, or include the `<`, `>`, and `;` characters. If you type a character that isn't allowed, the panel discards what you typed and shows "Field names cannot begin with underscore nor contain dots".
+- **Name**: Identifies the field and is the key you use to access its value from Liquid, the SDKs, and the API. It is required, accepts up to 255 characters, and cannot begin with an underscore (`_`) or contain dots. If you type a character that isn't allowed, the panel discards what you typed and shows "Field names cannot begin with underscore nor contain dots".
 - **Hint**: Optional help text. It is displayed below the field when creating or modifying an entry, to guide whoever fills it in.
 - **Required**: When creating or modifying an entry, you must provide a value for that field. Otherwise, you will not be able to save the changes made.
 
