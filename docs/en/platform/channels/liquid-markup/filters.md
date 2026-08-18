@@ -255,7 +255,7 @@ If the UUID doesn't match any file in the account, none of the four fails or ret
 
 ### Asset image
 
-Returns the tags of an image using its uuid from the File Manager. If using Cloudflare for image optimization, you can use these additional parameters: width, height, blur, quality, format, fit, widths, sizes and style. *e.g.*
+Returns the tags of an image using its uuid from the File Manager. With CDN image processing active, you can use these additional parameters: width, height, blur, quality, format, fit, widths, sizes and style. *e.g.*
 <span v-pre>`{{ uuid | asset_image: width: 40, format: 'auto', fit: 'cover' }}`</span>
 
 **Parameters**:
