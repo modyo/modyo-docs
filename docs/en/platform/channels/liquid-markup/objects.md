@@ -421,6 +421,7 @@ These objects obtain the information relevant to originations.
 | **origination.completion_message** | The message to display upon completion of the origination flow.            | ```"All done"```                                                                                        |
 | **origination.ordered_steps**      | Whether the steps of the origination flow are ordered.                     | ```true```                                                                                              |
 | **origination.new_submission_url** | The URL to create a new submission for the origination flow.               | ```/originations/my-origination/new```                                                                  |
+| **origination.cancel_overdue**     | Whether the origination automatically cancels the submissions that exceed their due date.  | ```false```                                                                                             |
 
 ## page
 
@@ -539,14 +540,14 @@ These objects obtain the information relevant to the Submissions.
 
 | Object                                  | Description                                                      | Example                                                                                                        |
 |-----------------------------------------|------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
-| **submission.status**                   | The status of the submission (e.g., "pending", "completed").     | ```completed```                                                                                                |
+| **submission.status**                   | The status of the submission: `not_started`, `pending`, `completed`, or `canceled`. You can review their meaning and transitions in the [submission lifecycle](/en/platform/customers/origination.html#submission-lifecycle). | ```completed```                                                                                                |
 | **submission.progress**                 | The progress of the submission as a percentage.                  | ```100```                                                                                                      |
 | **submission.assignee**                 | Assigned admin user object                                       | [view adminuser documentation](/en/platform/channels/liquid-markup/objects.html#adminuser)                     |
 | **submission.created_at**               | The date and time when the submission was created.               | ```Tue, 15 Feb 2025 15:14:03 UTC +00:00```                                                                     |
 | **submission.updated_at**               | The date and time when the submission was last updated.          | ```Tue, 15 Feb 2025 20:30:10 UTC +00:00```                                                                     |
 | **submission.started_at**               | The date and time when the submission was started.               | ```Tue, 15 Feb 2025 15:14:03 UTC +00:00```                                                                     |
 | **submission.completed_at**             | The date and time when the submission was completed.             | ```Tue, 15 Feb 2025 20:30:10 UTC +00:00```                                                                     |
-| **submission.due_date**                 | The due date of the submission. It is calculated from the trigger configured in the origination flow: the submission start (default) or the answer to a Date-type question in the flow. It is empty if the flow has no due date configured, or if the trigger is a Date-type question and there is no answer yet. | ```Tue, 22 Feb 2025 12:00:00 UTC +00:00```                                                                     |
+| **submission.due_date**                 | The due date of the submission. It is calculated by adding to the trigger configured in the origination flow —the submission start (default) or the answer to a Date-type question in the flow— the origination's due days plus that submission's extension days. It is empty if the flow has no due date configured, if the trigger is the submission start and the submission hasn't started yet, or if the trigger is a Date-type question and there is no answer yet. | ```Tue, 22 Feb 2025 12:00:00 UTC +00:00```                                                                     |
 | **submission.origination**              | Origination object.                                              | [view origination documentation](/en/platform/channels/liquid-markup/objects.html#origination)                 |
 | **submission.url**                      | The URL of the submission page.                                  | ```https://test.modyo.com/new-site/myorigination```                                                            |
 | **submission.uuid**                     | The unique identifier of the submission.                         | ```abcd-1234-5678-0000```                                                                                      |
@@ -590,7 +591,7 @@ Additionally, depending on the task type, there may be further attributes.
 
 ### Task Response Types
 
-Every task response shares the attributes it inherits from the base response: `task`, `user`, `created_at`, `updated_at`, `started_at`, `completed_at`, and `status`. The table below lists only the attributes specific to each response type.
+Every task response shares the attributes it inherits from the base response: `task`, `user`, `created_at`, `updated_at`, `started_at`, `completed_at`, and `status`. In `status` you get `not_started`, `pending`, or `completed`, according to the [task response status](/en/platform/customers/origination.html#task-response-statuses); if you only compare against `completed`, your template cannot tell a task nobody opened from one that was left half answered. The table below lists only the attributes specific to each response type.
 
 | Object                                        | Description                                                         | Example                                                                                                                                           |
 |-----------------------------------------------|---------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
