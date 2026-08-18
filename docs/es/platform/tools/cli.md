@@ -599,8 +599,9 @@ Tampoco puedes usar **Resetear a esta versión** para devolver un widget CLI a u
 El botón **Descargar** llama a `GET /api/admin/sites/{site_id}/widget_definitions/{id}/download` y arma un ZIP al vuelo a partir de las plantillas guardadas en la plataforma. No es el archivo que subiste, y su contenido no coincide con tu build:
 
 - Los archivos de entrada salen renombrados con el identificador del widget: `<uuid>.js`, `<uuid>.css` y `<uuid>.html`, en lugar de `main.js` y `main.css`.
-- Los chunks pierden su ruta: solo se conserva el último segmento, así que un build organizado en subdirectorios queda aplanado y dos archivos con el mismo nombre en carpetas distintas colisionan.
+- Los chunks pierden su ruta: solo se conserva el último segmento del nombre, así que la estructura de carpetas no se reconstruye.
 - Los archivos `.wasm` se entregan decodificados.
+- El ZIP incluye los source maps, a diferencia del contador **Chunks** de la pantalla Resumen, que los deja fuera. Por eso el ZIP suele traer más archivos de los que anuncia ese número.
 
 :::warning Atención
 El ZIP de **Descargar** sirve para inspeccionar qué código está corriendo en la plataforma, no como respaldo: no se puede volver a desplegar tal cual. La fuente de verdad de un widget CLI es siempre tu repositorio.
@@ -610,8 +611,8 @@ El ZIP de **Descargar** sirve para inspeccionar qué código está corriendo en 
 
 Para desplegar con `push`, el usuario dueño del token necesita el permiso **Crear Widgets CLI**, incluido en el rol [Site Developer CLI](/es/platform/core/roles.html#roles) y superiores. Para usar el botón **Descargar** basta con el permiso **Ver Widgets**.
 
-La marca de solo lectura la decide la plataforma al crear el widget, según cómo se identifica la petición: solo se aplica cuando la cabecera `User-Agent` corresponde al CLI de Modyo.
+La marca de solo lectura la decide la plataforma al crear el widget, según cómo se identifica la petición: solo se aplica cuando la cabecera `User-Agent` corresponde a uno de los CLI reconocidos por la plataforma. Son los de Modyo y los de Dynamic, y la lista es configurable por instalación, así que si tienes dudas confírmala con quien administre la tuya.
 
 :::warning Atención
-Si integras el despliegue desde un pipeline propio que llama al mismo endpoint sin identificarse como el CLI de Modyo, el widget se crea editable, se le exige el permiso normal de edición de widgets en lugar de **Crear Widgets CLI**, y queda abierto a cambios desde el panel que tu siguiente despliegue sobrescribirá. Si el widget ya estaba marcado como widget CLI, una petición que no se identifica como el CLI responde con éxito pero no actualiza su código.
+Si integras el despliegue desde un pipeline propio que llama al mismo endpoint sin identificarse como uno de esos CLI, el widget se crea editable, se le exige el permiso normal de edición de widgets en lugar de **Crear Widgets CLI**, y queda abierto a cambios desde el panel que tu siguiente despliegue sobrescribirá. Si el widget ya estaba marcado como widget CLI, una petición que no se identifica como el CLI responde con éxito pero no actualiza su código.
 :::

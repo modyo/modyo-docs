@@ -599,8 +599,9 @@ You also can't use **Reset to this version** to take a CLI widget back to a prev
 The **Download** button calls `GET /api/admin/sites/{site_id}/widget_definitions/{id}/download` and builds a ZIP on the fly from the templates stored in the platform. It is not the file you uploaded, and its content does not match your build:
 
 - Entry files are renamed with the widget identifier: `<uuid>.js`, `<uuid>.css`, and `<uuid>.html`, instead of `main.js` and `main.css`.
-- Chunks lose their path: only the last segment is kept, so a build organized in subdirectories is flattened and two files with the same name in different folders collide.
+- Chunks lose their path: only the last segment of the name is kept, so the folder structure is not rebuilt.
 - `.wasm` files are delivered decoded.
+- The ZIP includes the source maps, unlike the **Chunks** counter in the Summary screen, which leaves them out. That is why the ZIP usually carries more files than that number announces.
 
 :::warning Attention
 The ZIP from **Download** is meant to inspect what code is running on the platform, not as a backup: it can't be redeployed as is. The source of truth for a CLI widget is always your repository.
@@ -610,8 +611,8 @@ The ZIP from **Download** is meant to inspect what code is running on the platfo
 
 To deploy with `push`, the user who owns the token needs the **Create Widgets CLI** permission, included in the [Site Developer CLI](/en/platform/core/roles.html#roles) role and above. To use the **Download** button, the **View Widgets** permission is enough.
 
-The read-only mark is decided by the platform when the widget is created, based on how the request identifies itself: it is only applied when the `User-Agent` header corresponds to the Modyo CLI.
+The read-only mark is decided by the platform when the widget is created, based on how the request identifies itself: it is only applied when the `User-Agent` header corresponds to one of the CLIs the platform recognizes. Those are the Modyo and Dynamic ones, and the list is configurable per installation, so check with whoever administers yours if you are unsure.
 
 :::warning Attention
-If you integrate the deployment from your own pipeline that calls the same endpoint without identifying itself as the Modyo CLI, the widget is created as editable, the regular widget editing permission is required instead of **Create Widgets CLI**, and it stays open to changes from the admin that your next deployment will overwrite. If the widget was already marked as a CLI widget, a request that doesn't identify itself as the CLI responds successfully but does not update its code.
+If you integrate the deployment from your own pipeline that calls the same endpoint without identifying itself as one of those CLIs, the widget is created as editable, the regular widget editing permission is required instead of **Create Widgets CLI**, and it stays open to changes from the admin that your next deployment will overwrite. If the widget was already marked as a CLI widget, a request that doesn't identify itself as the CLI responds successfully but does not update its code.
 :::
