@@ -576,7 +576,7 @@ You can enable reCAPTCHA in the realm or not, once enabled, enter:
 
 #### Request limits and lockouts
 
-The realm's public screens that send an email or ask for the current password are protected against abuse. These limits are fixed and are not configured from the panel.
+The realm screens that send an email or ask for the current password are protected against abuse, both the ones used without a session and the ones in the user's profile. These limits are fixed and are not configured from the panel.
 
 **Password recovery**
 

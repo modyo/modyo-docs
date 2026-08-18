@@ -580,7 +580,7 @@ Modyo soporta la versión V3 de reCAPTCHA básico, no soporta el enterprise.
 
 #### Límites de solicitudes y bloqueos
 
-Las pantallas públicas del reino que envían un correo o piden la contraseña actual están protegidas contra el abuso. Estos límites son fijos y no se configuran desde el panel.
+Las pantallas del reino que envían un correo o piden la contraseña actual están protegidas contra el abuso, tanto las que se usan sin sesión como las del perfil del usuario. Estos límites son fijos y no se configuran desde el panel.
 
 **Recuperación de contraseña**
 
