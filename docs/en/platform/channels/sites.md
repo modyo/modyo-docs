@@ -462,7 +462,7 @@ In the domains section, you can view and modify the public location of your web 
 It is essential to inform all platform members about any changes you make in this section.
 :::
 
-The **Host** is the location of the web application within the platform domain, and it is changed from **Site settings > General**, in the **Danger zone** section.
+The **Host** is the location of the web application within the platform domain, and you can change it in **Site settings > General**, in the **Danger zone** section.
 
 Activate the **Enable custom domains** checkbox to enable the fields in this section:
 - **Primary domain**: Main address of the web application. Alternative domains will be redirected to this domain.
