@@ -409,7 +409,7 @@ If you are using Modyo from a web browser and have a session started as an admin
 
 Remember that you will only be able to access the same sections of the API that you are allowed to access from the Modyo interface.
 
-This method is meant for exploring the read side of the API from the browser, and it has two limits that the Swagger catalog does not declare:
+This method is meant for exploring the read side of the API from the browser, and it has two limits:
 
 - **With the cookie alone, only `GET` requests work.** When the platform resolves the credential from the cookie it turns on cross-site request forgery protection, so a `POST`, `PUT`, `PATCH` or `DELETE` without a CSRF token gets an `HTTP 403 Forbidden` with an empty body and no message explaining why. To write using the cookie you also have to send the page's CSRF token in the `X-CSRF-Token` header. With a Bearer token that protection does not apply.
 - **Session validity is checked.** Unlike the Bearer token, the cookie carries the browser session along with it. If that session expired or was revoked, the response is an `HTTP 401 Unauthorized` with this body:
@@ -428,7 +428,7 @@ For automation, use a Bearer token: it does not depend on a browser session, doe
 
 ## Error handling
 
-The whole admin API shares the same way of reporting failures, even though the Swagger catalog does not declare it on every operation. It is worth coding your error handling against this cross-cutting contract instead of against the response list of a single call.
+The whole admin API shares the same way of reporting failures. It is worth coding your error handling against this cross-cutting contract instead of against the response list of a single call.
 
 ### The error envelope
 

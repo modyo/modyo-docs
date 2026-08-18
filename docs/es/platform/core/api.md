@@ -407,7 +407,7 @@ Si estás usando Modyo desde un navegador web y tienes una sesión iniciada como
 
 Recuerda que solo podrás acceder a las mismas secciones de la API a las que tengas permitido acceder desde la interfaz de Modyo.
 
-Este método sirve para explorar la API de lectura desde el navegador, y tiene dos límites que el catálogo Swagger no declara:
+Este método sirve para explorar la API de lectura desde el navegador, y tiene dos límites:
 
 - **Con la cookie sola únicamente funcionan los `GET`.** Cuando la plataforma resuelve la credencial desde la cookie activa la protección contra falsificación de peticiones, de modo que un `POST`, `PUT`, `PATCH` o `DELETE` sin token CSRF recibe `HTTP 403 Forbidden` con el cuerpo vacío y sin ningún mensaje que explique el motivo. Para escribir con cookie hay que enviar además el token CSRF de la página en la cabecera `X-CSRF-Token`. Con Bearer token esa protección no se aplica.
 - **La vigencia de la sesión sí se valida.** A diferencia del Bearer token, la cookie arrastra la sesión del navegador. Si esa sesión expiró o fue revocada, la respuesta es `HTTP 401 Unauthorized` con este cuerpo:
@@ -426,7 +426,7 @@ Para automatizar usa Bearer token: no depende de una sesión de navegador, no ex
 
 ## Manejo de errores
 
-Toda la API de administración comparte la misma manera de informar los fallos, aunque el catálogo Swagger no la declare en cada operación. Conviene programar el manejo de errores contra este contrato transversal y no contra la lista de respuestas de una llamada puntual.
+Toda la API de administración comparte la misma manera de informar los fallos. Conviene programar el manejo de errores contra este contrato transversal y no contra la lista de respuestas de una llamada puntual.
 
 ### El sobre de error
 
