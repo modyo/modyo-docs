@@ -149,10 +149,10 @@ Una vez que tengas el código Liquid de la imagen, accede al área de trabajo do
 
 1. Pega el código Liquid. Debe verse similar a esto:
 <span v-pre>`{{ 'ec0a3e4-ccdb-48c5-87be-5e1eca560dee' | asset_image }}`</span>
-2. Agrega el filtro de Liquid, puede ser height, width o quality, siguiendo cualquiera de  estos  formatos:
+2. Agrega al filtro los parámetros que necesites. Los disponibles son `width`, `height`, `quality`, `blur`, `fit` y `format`, más `widths`, `sizes` y `style` para imágenes responsivas. Puedes seguir cualquiera de estos formatos:
 - <span v-pre>`asset_image: width: XXX`</span> donde XXX es el tamaño en píxeles deseado.
 - <span v-pre>`asset_image: quality: XX`</span> donde XX es el porcentaje de calidad deseado.
-- <span v-pre>`asset_image: width: XXX, quality: XX, widths: 'XXX, XXX, XXX, sizes: (min-width: XXXpx) XXXpx`</span> adaptando los valores según tus necesidades para asegurar que la imagen se ajuste a las diferentes pantallas y resoluciones de los dispositivos de tus usuarios, usando el atributo [srcset](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/srcset) para soporte responsivo.
+- <span v-pre>`asset_image: width: 800, quality: 80, widths: '300, 600, 900', sizes: '(min-width: 400px) 298px, 78.75vw'`</span> adaptando los valores según tus necesidades para asegurar que la imagen se ajuste a las diferentes pantallas y resoluciones de los dispositivos de tus usuarios, usando el atributo [srcset](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/srcset) para soporte responsivo.
 3. Da click en **guardar**.
 4. Da click en **publicar**.
 
@@ -161,6 +161,13 @@ Una vez que tengas el código Liquid de la imagen, accede al área de trabajo do
 Al redimensionar imágenes, se conserva la relación de aspecto original, por lo que la imagen se ajusta de manera proporcional, sin distorsionarse.
 
 Si incluyes solamente la altura o ancho de la imagen, automáticamente se calcula el valor faltante para mantener la relación de aspecto correcta de la imagen.
+:::
+
+
+:::warning Atención
+Las opciones de `asset_image` dependen del procesamiento de imágenes por CDN de tu cuenta. Si no está activo, el filtro publica la imagen original y las ignora todas en silencio: no hay error ni aviso, solo una imagen del tamaño original. Si el tamaño no cambia por más que ajustes los valores, consúltalo con el equipo que administra tu cuenta.
+
+`sizes` y `style` solo se emiten cuando pasas también `widths`, y de cada variante del `srcset` solo se propagan `width`, `quality`, `blur` y `height`. La ficha completa del filtro está en [Asset image](/es/platform/channels/liquid-markup/filters.html#asset-image).
 :::
 
 
