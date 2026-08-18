@@ -651,7 +651,7 @@ Las transiciones entre estados son las siguientes:
 
 **Cancelada** es un estado final y no tiene vuelta atrás. **Completada** tampoco regresa a **Pendiente**, ni siquiera al [reabrir una de sus tareas](/es/platform/customers/origination.html#reabrir-tareas-de-una-respuesta): mientras la respuesta esté **Completada** o **Cancelada**, la plataforma rechaza cualquier cambio sobre sus tareas y sus invitaciones.
 
-:::warning Atención con las respuestas No Iniciada
+:::warning Atención con las respuestas en estado No Iniciada
 Una respuesta nace **No Iniciada** y solo pasa a **Pendiente** cuando alguien guarda su primera tarea, así que las respuestas creadas desde el panel o por invitación se quedan ahí hasta que el usuario entre al flujo. Las tarjetas **Pendientes**, **Completadas** y **Canceladas** del resumen no las cuentan, y en Liquid el filtro [`by_status`](/es/platform/channels/liquid-markup/filters.html#by-status) tampoco las alcanza. Para encontrarlas, usa el filtro **Estado** del listado de respuestas.
 :::
 
