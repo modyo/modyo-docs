@@ -574,6 +574,37 @@ You can enable reCAPTCHA in the realm or not, once enabled, enter:
 - **Secret**
 - **Threshold**
 
+#### Request limits and lockouts
+
+The realm screens that send an email or ask for the current password are protected against abuse, both the ones used without a session and the ones in the user's profile. These limits are fixed and are not configured from the panel.
+
+**Password recovery**
+
+The recovery screen always answers with the same message, whether the user exists or not and whether the email is sent or discarded:
+
+_If a valid username has been entered, you will receive a temporary password to your email._
+
+Underneath, two limits apply:
+
+- Two requests in a row for the same user, less than 10 seconds apart, cause the second one to be discarded and no email to be sent.
+- When more than three requests pile up for the same user, the following ones are discarded for 24 hours, counted from the last accepted request.
+
+In both cases the user sees the success message and the email never arrives. This is the most frequent cause of the "I asked for the recovery and nothing arrived" report.
+
+**Password change from the profile**
+
+Once a user changes their password, they cannot change it again from their profile for the next 24 hours. If they try, they are sent back to the profile with the message _The number of password change request has exceeded the maximum permitted_. The clock also starts when the password was set from a recovery link.
+
+**Email change from the profile**
+
+To change their email address, the user has to type their current password. If they get it wrong, they see the message _The password you provided is incorrect_ and can try again. When they exceed the attempt limit, however, they see _You exceeded the amount of possible tries_ and the platform closes their session right away and takes them to the logout screen.
+
+When the password is correct, the new address stays pending and the user receives a verification email, with the notice _If you provided a valid email address you will receive a verification email._ The address is not replaced until the user opens that link.
+
+:::tip Tip
+Password recovery attempts and email change attempts share the same counter, so requests from one flow count towards the lockout of the other. And these lockouts clear only by waiting: there is no action in the user's record or in the panel to release them ahead of time.
+:::
+
 ### Payment settings
 
 By enabling the payment feature in your realm, you have access to the following options:

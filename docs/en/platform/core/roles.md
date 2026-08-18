@@ -35,7 +35,7 @@ Within the user edit screen, platform administrators have access to the followin
 - API access: Generate new access tokens to use your APIs. You must generate a token for each site.
 - Edit: Modify user data such as name, email, and password.
 - Groups: Shows a list of all the groups to which the user belongs.
-- Devices: Shows a list of all devices where the user has an active session. It displays data such as browser, operating system, last login, and IP address. Here, in addition, you can remotely log out for each device.
+- Devices: Shows a list of all devices where the user has an active session. It displays data such as browser, operating system, last login, and IP address. Here, in addition, you can remotely log out for each device. When a team member signs in from a device they had not used before, Modyo sends them a notice by email; see [Sign-in notice from a new device](/en/platform/core/security.html#sign-in-notice-from-a-new-device).
 
 :::warning Attention
 When you set or change another team member's password from **Edit**, the platform marks that password as pending change and immediately revokes all their active sessions: the member is logged out on every device and, on their next login, must set a new password before they can browse the panel. The same happens when you create a team member with a password. Let them know beforehand.

@@ -39,6 +39,54 @@ This protection applies both to team members signing in to the admin panel and t
 This temporary lockout is different from the _inactive_ status of the [User inactivity period policy](#user-inactivity-period-policy). If a team member reports being unable to sign in, check which of the two cases applies: the failed attempts lockout clears on its own after 15 minutes, whereas the inactive status remains until the user reactivates their account or an account owner activates it again.
 :::
 
+## Expiration of panel links and codes
+
+Besides the session, several links and codes that Modyo sends by email or shows on screen have their own expiration time. These times are fixed: they are not configured from the panel.
+
+| Link or code | How long it lasts |
+| --- | --- |
+| Password recovery link | 3 days from the moment the email is sent. |
+| Account activation link, in the welcome email | 1 week from the moment the email is sent. |
+| Reactivation link for an account marked as inactive | 10 minutes from the moment the email is sent. |
+| Two-factor authenticator setup link | 5 minutes from the moment the screen is opened. |
+| Confirmation link for a new email address | 5 minutes from the moment the email is sent. |
+
+Once the time is up, the link stops working: the platform sends the person back to the login screen with an error message. The fix is always to request a new one, never to forward the old email.
+
+:::warning Attention
+All these links share the same single-use code. Every time a new one is generated, for example when password recovery is requested a second time, the previous one is invalidated immediately, even if it was still within its time window. If a team member requests several emails in a row, only the link in the last one they received works.
+:::
+
+## Request limits and temporary lockouts
+
+Beyond the password policy and the login lockout, Modyo limits how often a team member can request a recovery email or change the sensitive data in their profile. These limits are fixed and are not configured from the panel either.
+
+### Password recovery requests
+
+The recovery screen always answers with the same message, whether the username exists or not and whether the email is sent or discarded:
+
+_If a valid username has been entered, you will receive a temporary password to your email._
+
+Underneath, two limits apply:
+
+- Two requests in a row for the same team member, less than 10 seconds apart, cause the second one to be discarded and no email to be sent.
+- When more than three requests pile up for the same team member, the following ones are discarded for 24 hours, counted from the last accepted request.
+
+In both cases the person sees the success message and the email never arrives. This is the most frequent cause of the "I asked for the recovery and nothing arrived" report.
+
+### Password, email, and username changes from the profile
+
+The **Profile** screen asks for the current password before changing the password, the email address, or the username. Two more limits apply there:
+
+- **One password change every 24 hours**: once a team member changes their password, they cannot change it again from their profile for the next 24 hours. If they try, the platform sends them back to the profile with the message _The number of password change request has exceeded the maximum permitted_. The clock also starts when the password was set from a recovery link.
+- **Three failed attempts and a 15-minute lockout**: when three failed attempts to change the password, the email, or the username pile up, the next one is rejected with the message _You've reached the limit tries to change sensitive data on your profile. Your session will be closed for safety reasons_ and the platform closes the session. When the email or the username is being changed, it also revokes all of the team member's active sessions, so they are logged out on every device.
+
+The lockout lasts 15 minutes and clears only by waiting: there is no action in the panel to release it earlier. Once the time is up, the team member gets their attempts back.
+
+:::tip Tip
+This lockout is different from the [Lockout after failed login attempts](#lockout-after-failed-login-attempts), which triggers after 10 attempts on the login screen. The profile one triggers after 3 attempts, with the session already open, and its visible effect is that the person is thrown out of the platform right after mistyping their current password. If someone reports that "the panel kicked me out while I was changing my email", this is why.
+:::
+
 ## Session expiration policy
 
 In this section, you can configure how long a session will remain active. Both fields are fixed option lists: you choose one of the available values, you do not type a free-form time.
@@ -48,6 +96,18 @@ In this section, you can configure how long a session will remain active. Both f
 **User idle period**: When a user is inactive, the session is automatically closed after the selected time has elapsed. Navigation, keyboard, and mouse actions are considered user activities. This option protects the user if they leave their workstation unattended. To be able to choose a value, first check the **Enable user idle period** box; the options are 5 minutes, 15 minutes, 30 minutes, 1 hour, and 6 hours.
 
 This session closing is measured in minutes and only ends the open session. Do not confuse it with the [User inactivity period policy](#user-inactivity-period-policy), which is measured in days and marks the user as inactive so that they cannot sign in again.
+
+## Sign-in notice from a new device
+
+Every time a team member enters the panel from a browser or a device they had not used before, Modyo automatically sends them an email with the subject _New Sign-in to your Modyo account_. The email states the account and the email address used to sign in, the browser and the operating system, the date of the sign-in, and the IP address, and it includes a button to change the password right away in case the access was not theirs.
+
+This notice is part of the platform: there is no option to turn it on, turn it off, or word it differently. It is not sent on the very first sign-in of a newly created team member either, because at that point there are no previous accesses to compare against.
+
+Modyo decides that a device is new by comparing the fingerprint of the current access with the fingerprints of that same team member's previous accesses, the same information you see in the **Devices** tab of their record in [Team](/en/platform/core/roles.html#edit-user).
+
+:::tip Tip
+Getting this email does not by itself mean that someone else entered the account. The fingerprint changes when using another browser, updating it, clearing cookies, or signing in from another computer, so the same team member can receive the notice for perfectly legitimate accesses. Before escalating, compare the device and the IP address in the email with the **Devices** tab and with the [Activity logs](/en/platform/core/activity-logs.html).
+:::
 
 ## User inactivity period policy
 
