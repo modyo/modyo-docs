@@ -566,3 +566,53 @@ The token owner user must have a role of [site reviewer or admin](/en/platform/c
 Once a widget is deployed and published in Modyo, it's available to be used on the pages of the site it belongs to.
 
 If you have defined [variables](/en/platform/channels/global-variables.html), their values can be specified at a global level or particular to each widget instance.
+
+## CLI widgets in the admin
+
+A widget **created** with `modyo-cli push` is marked in the platform as a read-only widget, because its source code lives in your repository and not in Modyo. This is a direct consequence of deploying with the CLI, and it's worth knowing before adopting it.
+
+The mark is decided at that moment and is never re-evaluated: a widget that already existed in the panel and later receives a CLI deploy keeps its editing and does not become read-only.
+
+In the site's widget list, these widgets are identified by the **CLI** badge next to their name. When you open one you won't find the code tabs, but the **Widget summary** screen, with:
+
+- **Name**: the widget's name in Modyo.
+- **Type**: the CLI badge.
+- **Size**: the total weight of the widget's files.
+- **Chunks**: the number of files beyond the entry points, not counting source maps.
+- **Last updated at**: the date and time of the last deployment.
+- **Last updated by**: the user who performed the last deployment.
+
+Above the summary, the notice "CLI Widgets can't be edited in Modyo. Download it to review its content." is displayed next to the **Download** button.
+
+The rest of the lifecycle is that of any widget: it keeps an editable and a published version, supports [variables](/en/platform/channels/widgets.html#widget-variables), goes through [team review](/en/platform/core/#team-review), and is instantiated on pages from the [Page Builder](/en/platform/channels/pages.html). The properties column still shows the name, the tags, and the list of pages using the widget.
+
+### Code differences
+
+When comparing versions of a CLI widget, whether in the widget's **Differences** view, in [review and joint publication](/en/platform/channels/sites.html#review-and-joint-publication), or in [synchronization between stages](/en/platform/channels/sites.html#stages), the platform detects that there are changes but does not show the line-by-line diff. Instead, the message "The file has differences but CLI Widgets can not be displayed" is shown.
+
+The same behavior applies to any template that exceeds the allowed size limit, with the message "The file has differences but the size of the file surpass the limit permitted and can not be displayed".
+
+You also can't use **Reset to this version** to take a CLI widget back to a previous version. To review or revert changes between deployments, use your repository history and run `modyo-cli push` again with the version you need.
+
+### The ZIP from the Download button
+
+The **Download** button calls `GET /api/admin/sites/{site_id}/widget_definitions/{id}/download` and builds a ZIP on the fly from the templates stored in the platform. It is not the file you uploaded, and its content does not match your build:
+
+- Entry files are renamed with the widget identifier: `<uuid>.js`, `<uuid>.css`, and `<uuid>.html`, instead of `main.js` and `main.css`.
+- Chunks lose their path: only the last segment of the name is kept, so the folder structure is not rebuilt.
+- `.wasm` files are delivered decoded.
+- The ZIP always carries three more files than the **Chunks** counter shows: that counter only counts chunks, while the ZIP also includes the three entry files.
+
+:::warning Attention
+The ZIP from **Download** is meant to inspect what code is running on the platform, not as a backup: it can't be redeployed as is. The source of truth for a CLI widget is always your repository.
+:::
+
+### Permissions and deployments from your own pipeline
+
+To deploy with `push`, the user who owns the token needs the **Create Widgets CLI** permission, included in the [Site Developer CLI](/en/platform/core/roles.html#roles) role and above. To use the **Download** button, the **View Widgets** permission is enough.
+
+The read-only mark is decided by the platform when the widget is created, based on how the request identifies itself: it is only applied when the `User-Agent` header corresponds to one of the CLIs the platform recognizes. Those are the Modyo and Dynamic ones, and the list is configurable per installation, so check with whoever administers yours if you are unsure.
+
+:::warning Attention
+If you integrate the deployment from your own pipeline that calls the same endpoint without identifying itself as one of those CLIs, the widget is created as editable, the regular widget editing permission is required instead of **Create Widgets CLI**, and it stays open to changes from the admin that your next deployment will overwrite. If the widget was already marked as a CLI widget, a request that doesn't identify itself as the CLI responds successfully but does not update its code.
+:::

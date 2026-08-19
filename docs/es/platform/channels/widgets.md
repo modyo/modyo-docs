@@ -158,6 +158,18 @@ La carga como ES Module es especialmente útil para widgets construidos con fram
 Los ES Modules tienen requisitos estrictos de CORS y siempre se cargan en modo estricto. Asegúrate de que el código de tu widget sea compatible con la semántica de ES modules antes de habilitar esta opción.
 :::
 
+## Widgets CLI
+
+Los widgets **creados** en el sitio con `modyo-cli push` quedan marcados como widgets de solo lectura, porque su código fuente vive en tu repositorio y no en Modyo. En el listado de widgets del sitio los reconoces por la etiqueta **CLI** junto a su nombre.
+
+Al abrir uno de estos widgets no verás las pestañas de código, sino la pantalla **Resumen del widget**, con su **Nombre**, **Tipo**, **Tamaño**, **Chunks**, **Actualizado por última vez en** y **Actualizado por última vez por**, encabezada por el aviso "Los widgets CLI no se pueden editar en Modyo. Descárgalo para revisar su contenido." y el botón **Descargar**.
+
+El resto del ciclo de vida es el de cualquier widget: conserva versión editable y publicada, admite [variables](#variables-del-widget), pasa por [revisión en equipo](/es/platform/core/#revision-en-equipo) y se instancia en las páginas desde el [Page Builder](/es/platform/channels/pages.html). Los cambios de código, en cambio, nunca se muestran como diferencias: en la vista de **Diferencias**, en la [revisión y publicación conjunta](/es/platform/channels/sites.html#revision-y-publicacion-conjunta) y en la [sincronización entre stages](/es/platform/channels/sites.html#stages) aparece el mensaje "El archivo tiene diferencias, pero los widgets CLI no se pueden mostrar". Tampoco puedes usar **Resetear a esta versión** para devolver el widget a una versión anterior: la vuelta atrás se hace volviendo a desplegar desde tu repositorio.
+
+:::warning Atención
+El ZIP que entrega **Descargar** se arma desde las plantillas guardadas en la plataforma y no es el bundle que subiste: los archivos de entrada salen renombrados y los chunks aplanados. Sirve para inspeccionar el código publicado, no como respaldo. Revisa [Widgets CLI en el panel](/es/platform/tools/cli.html#widgets-cli-en-el-panel) para el detalle completo.
+:::
+
 ## Code splitting
 
 Los widgets que despliegas mediante el [CLI de Modyo](/es/platform/tools/cli.html) pueden dividirse en múltiples archivos (*chunks*) además de sus archivos de entrada. La plataforma almacena y sirve cada chunk individualmente, y el widget los carga de forma dinámica solo cuando los necesita, con lo que la carga inicial de widgets grandes es más liviana.
