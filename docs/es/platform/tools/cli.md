@@ -601,7 +601,7 @@ El botón **Descargar** llama a `GET /api/admin/sites/{site_id}/widget_definitio
 - Los archivos de entrada salen renombrados con el identificador del widget: `<uuid>.js`, `<uuid>.css` y `<uuid>.html`, en lugar de `main.js` y `main.css`.
 - Los chunks pierden su ruta: solo se conserva el último segmento del nombre, así que la estructura de carpetas no se reconstruye.
 - Los archivos `.wasm` se entregan decodificados.
-- El ZIP incluye los source maps, a diferencia del contador **Chunks** de la pantalla Resumen, que los deja fuera. Por eso el ZIP suele traer más archivos de los que anuncia ese número.
+- El ZIP trae siempre tres archivos más que el número del contador **Chunks**: ese contador cuenta solo los chunks, mientras que el ZIP incluye además los tres archivos de entrada.
 
 :::warning Atención
 El ZIP de **Descargar** sirve para inspeccionar qué código está corriendo en la plataforma, no como respaldo: no se puede volver a desplegar tal cual. La fuente de verdad de un widget CLI es siempre tu repositorio.

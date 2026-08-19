@@ -601,7 +601,7 @@ The **Download** button calls `GET /api/admin/sites/{site_id}/widget_definitions
 - Entry files are renamed with the widget identifier: `<uuid>.js`, `<uuid>.css`, and `<uuid>.html`, instead of `main.js` and `main.css`.
 - Chunks lose their path: only the last segment of the name is kept, so the folder structure is not rebuilt.
 - `.wasm` files are delivered decoded.
-- The ZIP includes the source maps, unlike the **Chunks** counter in the Summary screen, which leaves them out. That is why the ZIP usually carries more files than that number announces.
+- The ZIP always carries three more files than the **Chunks** counter shows: that counter only counts chunks, while the ZIP also includes the three entry files.
 
 :::warning Attention
 The ZIP from **Download** is meant to inspect what code is running on the platform, not as a backup: it can't be redeployed as is. The source of truth for a CLI widget is always your repository.
