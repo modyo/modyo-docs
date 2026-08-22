@@ -146,6 +146,10 @@ Estos cinco disparadores son los únicos que ofrece el tipo de contexto **Reino*
    "trigger_entry_space_uid":"space-test"
 }
 ```
+:::tip Identificadores de originación en el payload
+Cuando el webhook informa un hecho del ámbito de originación, el payload incluye en su raíz los identificadores `origination_uuid`, `origination_uid`, `submission_uuid` y `task_uid`, según correspondan al hecho. Los lees al mismo nivel que el resto de los campos, sin tener que abrir los metadatos del registro. Revisa [Identificadores de trazabilidad de originación](/es/platform/core/activity-logs.html#identificadores-de-trazabilidad-de-originacion) para el detalle de cada uno.
+:::
+
 ### Crear un Webhook de Reino
 
 Llama a tus canales de gestión a través de un webhook.

@@ -145,6 +145,10 @@ These five triggers are the only ones the **Realm** context type offers from **S
    "trigger_entry_space_uid":"space-test"
 }
 ```
+:::tip Origination identifiers in the payload
+When the webhook reports a fact in the origination scope, the payload includes the `origination_uuid`, `origination_uid`, `submission_uuid`, and `task_uid` identifiers at its root, as they apply to the fact. You read them at the same level as the rest of the fields, without having to open the record metadata. See [Origination traceability identifiers](/en/platform/core/activity-logs.html#origination-traceability-identifiers) for the detail of each one.
+:::
+
 ### Create a Realm Webhook
 
 Call your management channels through a webhook.
