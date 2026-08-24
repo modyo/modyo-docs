@@ -6,6 +6,20 @@ search: true
 
 ## 10.1
 
+### 10.1.18
+
+:::info Release date
+August 24, 2026
+:::
+
+| Module | Improvements |
+|--------|---------|
+| **Core** | • Restores automatic deletion of revoked session grants, which had not been brought over to version 10.1<br>• Improves the orphaned-data cleanup job so it deletes in batches and no longer locks tables for long periods |
+| **Channels** | • Fixes the timeout when publishing widgets, pages, and site templates on installations with a high volume of accumulated versions<br>• Improves page render performance with additional indexes and by avoiding repeated snippet queries within the same render |
+| **Content** | • Fixes the loss of empty inline tags used as icons, such as `<i>` and `<span>`, when switching between the WYSIWYG view and the code view |
+| **Customers** | • Fixes an error when entering the backend of an origination that has questions created without a type via MCP |
+
+
 ### 10.1.17
 
 :::info Release date

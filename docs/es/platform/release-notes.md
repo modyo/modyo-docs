@@ -6,6 +6,20 @@ search: true
 
 ## 10.1
 
+### 10.1.18
+
+:::info Fecha del release
+24 de agosto de 2026
+:::
+
+| Módulo | Mejoras |
+|--------|---------|
+| **Core** | • Restablece el borrado automático de los session grants revocados, que no se había traído a la versión 10.1<br>• Mejora el job de limpieza de datos huérfanos para que borre por lotes y deje de bloquear tablas por períodos prolongados |
+| **Channels** | • Corrige el timeout al publicar widgets, páginas y plantillas de sitio en instalaciones con un alto volumen de versiones acumuladas<br>• Mejora el rendimiento del render de páginas con índices adicionales y evitando consultas repetidas de snippets dentro de un mismo render |
+| **Content** | • Corrige la pérdida de tags inline vacíos usados como íconos, por ejemplo `<i>` y `<span>`, al cambiar entre la vista WYSIWYG y la vista de código |
+| **Customers** | • Corrige error al ingresar al backend de una originación que tiene preguntas creadas sin tipo mediante MCP |
+
+
 ### 10.1.17
 
 :::info Fecha del release
