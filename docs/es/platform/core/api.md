@@ -333,6 +333,58 @@ La respuesta obtenida desde el servicio es un `HTTP 200 OK`, y contiene la infor
 }
 ```
 
+#### El cliente OAuth2 del Acceso a la API
+
+Los tres datos que te muestra **Acceso a la API** al guardar la aplicación no son propios de Modyo: son las credenciales de un cliente OAuth2. **Application ID** es el `client_id`, **Secret** es el `client_secret` y la URI de redirección es el `redirect_uri` al que la plataforma devuelve el código de autorización.
+
+Modyo monta los dos extremos del flujo bajo `/admin/oauth`:
+
+```http request
+GET  https://[account_host]/admin/oauth/authorize
+POST https://[account_host]/admin/oauth/token
+```
+
+El único flujo habilitado es `authorization_code`, en dos pasos:
+
+1. Lleva al administrador a `/admin/oauth/authorize` con `client_id`, `redirect_uri`, `response_type=code` y, si lo necesitas, `state`. El paso exige una sesión de administrador abierta en ese navegador: si no la hay, la plataforma redirige a la pantalla de inicio de sesión y vuelve a la autorización una vez dentro. No hay pantalla de consentimiento, así que con la sesión abierta la redirección al `redirect_uri` con el parámetro `code` es inmediata.
+2. Canjea el `code` por un token en `/admin/oauth/token`:
+
+```shell script
+curl -X POST https://test.modyo.com/admin/oauth/token \
+  -d grant_type=authorization_code \
+  -d code=EL_CODIGO_RECIBIDO \
+  -d redirect_uri=https://mi-integracion.example.com/callback \
+  -d client_id=EL_APPLICATION_ID \
+  -d client_secret=EL_SECRET
+```
+
+Las limitaciones del flujo importan al momento de diseñar la integración:
+
+- `authorization_code` es el único `grant_type` habilitado. No existe `client_credentials`, así que no hay manera de obtener un token sin un administrador de por medio: todo token pertenece a una persona y hereda sus permisos.
+- La plataforma no emite _refresh tokens_. La respuesta de `/admin/oauth/token` trae `access_token` pero no `refresh_token`, y no hay `grant_type=refresh_token` al que recurrir.
+- El código de autorización caduca a los 10 minutos y sirve para un solo canje.
+- La aplicación tiene que pertenecer a la cuenta del administrador que autoriza. Autorizar una aplicación de otra cuenta falla.
+- El alcance predeterminado del token es `public`, con `admin` como alcance opcional, pero la API de administración no exige ninguno de los dos: lo que decide qué puede hacer el token son los permisos del usuario dueño.
+
+:::tip Tip
+No necesitas implementar este flujo para usar la API. El camino descrito más arriba, crear la aplicación y generar el token desde la consola, entrega el mismo `access_token` y basta para la mayoría de las integraciones. El flujo OAuth2 completo tiene sentido cuando una aplicación externa debe obtener tokens en nombre de distintos administradores.
+:::
+
+#### Ciclo de vida del token de acceso
+
+El _access token_ que copias desde **Administrar Tokens de Acceso** no caduca. Modyo emite los tokens de la API de administración sin fecha de expiración, así que siguen siendo válidos indefinidamente mientras existan, sin importar cuánto tiempo pase desde que se generaron ni si el administrador cerró sus sesiones del navegador.
+
+De ahí que un token deje de servir solo cuando alguien lo elimina. Tienes dos formas de hacerlo:
+
+- **Eliminar el token**, desde la pestaña **Acceso a la API** del miembro del equipo, en la sección **Administrar Tokens de Acceso**. Afecta únicamente a ese token.
+- **Eliminar la aplicación**, desde **Configuración** > **Acceso a la API**. Elimina de una vez todos los tokens emitidos con esa aplicación, de todos los administradores, así que cualquier integración que la use deja de autenticar.
+
+Desactivar al administrador dueño del token también corta el acceso: la plataforma resuelve el token solo si el usuario sigue activo.
+
+:::warning Atención
+La plataforma no rota ni renueva los tokens por sí sola. No hay caducidad automática ni _refresh token_, de modo que cualquier política de rotación queda en manos de quien opera la integración: genera el token nuevo, cámbialo en el cliente y recién entonces elimina el anterior. Y trata el _access token_ como una credencial permanente, porque lo es: si se filtra, seguirá funcionando hasta que alguien lo elimine desde la consola.
+:::
+
 #### Requests no autenticados
 
 ¿Qué ocurre si alguien intenta realizar un _request_ al API sin contar con un token válido? Si intentas realizar una llamada sin autenticar o con un token inválido, el sistema responderá con un error `HTTP 401 Unauthorized`:
@@ -354,6 +406,85 @@ curl  GET https://test.modyo.com/api/admin/roles -v
 Si estás usando Modyo desde un navegador web y tienes una sesión iniciada como administrador, entonces podrás acceder desde el mismo navegador a las URLs de la API. Podrás hacer _requests_ simplemente por contar con la cookie de sesión en la parte administrativa de la plataforma.
 
 Recuerda que solo podrás acceder a las mismas secciones de la API a las que tengas permitido acceder desde la interfaz de Modyo.
+
+Este método sirve para explorar la API de lectura desde el navegador, y tiene dos límites:
+
+- **Con la cookie sola únicamente funcionan los `GET`.** Cuando la plataforma resuelve la credencial desde la cookie activa la protección contra falsificación de peticiones, de modo que un `POST`, `PUT`, `PATCH` o `DELETE` sin token CSRF recibe `HTTP 403 Forbidden` con el cuerpo vacío y sin ningún mensaje que explique el motivo. Para escribir con cookie hay que enviar además el token CSRF de la página en la cabecera `X-CSRF-Token`. Con Bearer token esa protección no se aplica.
+- **La vigencia de la sesión sí se valida.** A diferencia del Bearer token, la cookie arrastra la sesión del navegador. Si esa sesión expiró o fue revocada, la respuesta es `HTTP 401 Unauthorized` con este cuerpo:
+
+```json
+{
+  "error": {
+    "grant_expired": "Sesión expirada"
+  }
+}
+```
+
+:::tip Tip
+Para automatizar usa Bearer token: no depende de una sesión de navegador, no exige token CSRF y no expira. Deja la cookie de sesión para explorar la API mientras trabajas en la consola.
+:::
+
+## Manejo de errores
+
+Toda la API de administración comparte la misma manera de informar los fallos. Conviene programar el manejo de errores contra este contrato transversal y no contra la lista de respuestas de una llamada puntual.
+
+### El sobre de error
+
+Cuando hay algo que explicar, la respuesta trae un objeto con una única clave `errors`, cuyo valor es una lista. La forma simple es una lista de textos, ya traducidos al idioma del usuario dueño de la credencial:
+
+```json
+{
+  "errors": [
+    "No es posible eliminar este elemento"
+  ]
+}
+```
+
+Los errores de validación de un recurso y los de publicación usan una forma estructurada, donde cada elemento identifica el campo que falló:
+
+```json
+{
+  "errors": [
+    {
+      "field": "name",
+      "messages": [
+        "Nombre no puede estar en blanco"
+      ],
+      "details": [
+        {
+          "error": "blank"
+        }
+      ]
+    }
+  ]
+}
+```
+
+- `field` es el atributo afectado. Los atributos anidados llegan con la ruta completa, en la forma `padre[hijo]`, y los elementos de una colección incluyen su posición, `padre[0][hijo]`.
+- `messages` trae los textos que puedes mostrar a una persona.
+- `details` trae el código del error, para que puedas ramificar sin depender del texto traducido.
+
+Trata `errors` como una lista que puede venir en cualquiera de las dos formas: revisa si el elemento es un texto o un objeto antes de leer `field`.
+
+### Códigos de estado
+
+El estado por omisión de una operación que falla en la API de administración es `409 Conflict`. Cuando el controlador no indica otro, cualquier error de negocio o de validación de un recurso sale como `409` con el sobre `errors`, no como el `400` o el `422` que se esperaría en otras APIs. Si tu cliente trata el `409` como un conflicto de concurrencia y reintenta, va a reintentar en vano.
+
+| Estado | Cuerpo | Cuándo lo recibes |
+| --- | --- | --- |
+| `401 Unauthorized` | <code v-pre>{}</code> | No hay credencial válida: falta la cabecera `Authorization`, el token no existe o el administrador dueño del token está desactivado. |
+| `401 Unauthorized` | Vacío | La credencial es válida, pero el usuario no tiene el permiso que exige la operación. |
+| `401 Unauthorized` | <code v-pre>{"error": {"grant_expired": "..."}}</code> | La sesión de la cookie de administrador expiró o fue revocada. |
+| `403 Forbidden` | Vacío | Falló la verificación del token CSRF en una escritura autenticada con cookie de sesión. |
+| `404 Not Found` | <code v-pre>{}</code> o <code v-pre>{"errors": [...]}</code> | El recurso o el sitio de la ruta no existen, o el usuario no alcanza a verlos. |
+| `409 Conflict` | <code v-pre>{"errors": [...]}</code> | Estado por omisión de una operación fallida. |
+| `422 Unprocessable Entity` | <code v-pre>{"errors": [...]}</code> o vacío | Los parámetros de la llamada no son válidos. |
+
+:::warning Atención
+Tres de estas respuestas llegan sin cuerpo y sin ningún mensaje que explique el motivo: el `403` de CSRF, el `401` por permisos insuficientes y parte de los `422`. Y como el `401` cubre tanto "no estás autenticado" como "no tienes permiso", la única señal para distinguirlos es el cuerpo: <code v-pre>{}</code> apunta a la credencial y el cuerpo vacío apunta a los permisos. Registra el estado y la ruta en tu integración, porque la respuesta no te va a dar más pistas.
+:::
+
+Ninguno de estos errores mejora al reintentarlo: un `401`, un `403` o un `409` vuelven a fallar igual mientras no cambies la credencial, el token CSRF o los datos de la llamada.
 
 ## Paginación
 
