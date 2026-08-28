@@ -78,6 +78,29 @@ Estos son los dominios que quedan auditados:
 | Pagos | Órdenes, con su creación, confirmación, pago, rechazo y seguimiento, y los errores de cada uno de esos pasos; tarjetas tokenizadas, con su inscripción, activación, baja y fallos. |
 | Integraciones y automatización | Integraciones y sus sincronizaciones, exitosas y fallidas; webhooks; tareas de proceso; desinstalación de aplicaciones. |
 
+## Identificadores de trazabilidad de originación
+
+Los registros del ámbito de originación incluyen los identificadores de las entidades que describen, para poder correlacionarlos con lo que ocurre en tus propios sistemas. Son cuatro y cada uno aparece solo cuando aplica al hecho registrado:
+
+| Campo | Qué identifica |
+|---|---|
+| `origination_uuid` | El flujo de originación. Es un identificador durable: no cambia si le cambias el nombre. |
+| `origination_uid` | El mismo flujo, por su identificador legible. Es el que usa la API de administración para resolver una originación, así que es el que necesitas para operar sobre ella. |
+| `submission_uuid` | La respuesta. |
+| `task_uid` | La tarea. |
+
+Un campo que no aplica **no viaja vacío: no viaja**. Si el registro es de una originación pero no de una respuesta en particular, `submission_uuid` simplemente no está en el payload.
+
+:::warning Atención
+`origination_uid` es un identificador editable. Si alguien lo cambia, los registros anteriores conservan el valor que tenía en ese momento, así que no sirve para agrupar el historial completo de un flujo: para eso usa `origination_uuid`, que no cambia.
+:::
+
+Hay un caso borde que conviene conocer: si la originación fue eliminada y solo queda la respuesta, el registro **conserva `origination_uuid` y omite `origination_uid`**. Se puede seguir sabiendo a qué flujo pertenecía, aunque ya no se pueda resolver por su identificador legible.
+
+:::tip Registros anteriores al cambio
+Estos identificadores aparecen en los registros generados desde que la versión está disponible. Los anteriores quedan tal como estaban, sin estos campos, y no se completan de forma retroactiva. Un análisis que cruce ambos períodos va a encontrar esa discontinuidad.
+:::
+
 ## Eventos que no aparecen en este listado
 
 Los eventos del flujo de revisión quedan fuera de esta pantalla a propósito: creación, edición, comentarios, envío a revisión, aprobación, rechazo, vuelta a edición, término, archivado, restauración y alta o baja de revisores. Para revisarlos, usa el panel **Actividad** del **Resumen** de la aplicación, el espacio o el reino donde ocurrieron, que no aplica esa exclusión.

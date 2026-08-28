@@ -125,6 +125,14 @@ The emails of an origination submission have their own types, with the same seve
 | `origination_submission_email_unsubscribed_log` | Submission email unsubscribed |
 | `origination_submission_email_spam_report_log` | Submission email spam report |
 
+### Origination traceability identifiers
+
+Events in the origination scope carry, in addition to their own data, the identifiers of the entities they describe: `origination_uuid` and `origination_uid` for the flow, `submission_uuid` for the submission, and `task_uid` for the task. Each one only appears when it applies to the recorded fact, and the ones that do not apply are absent from the payload.
+
+In business events these identifiers are top-level payload fields. In activity logs they travel inside the record metadata. And in [webhooks](/en/platform/core/webhooks.html) they are always delivered at the payload root, so a consumer reads them in the same place regardless of which channel the notice arrived through.
+
+The detail of each identifier, the deleted-origination case, and the time scope of this change are in [Origination traceability identifiers](/en/platform/core/activity-logs.html#origination-traceability-identifiers).
+
 ### Orders and payments
 
 | Type | Label in the panel |

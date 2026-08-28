@@ -78,6 +78,29 @@ These are the domains that get audited:
 | Payments | Orders, with their creation, confirmation, payment, rejection, and tracking, plus the errors of each of those steps; tokenized cards, with their enrollment, activation, removal, and failures. |
 | Integrations and automation | Integrations and their synchronizations, both successful and failed; webhooks; process tasks; app uninstallation. |
 
+## Origination traceability identifiers
+
+Records in the origination scope include the identifiers of the entities they describe, so you can correlate them with what happens in your own systems. There are four, and each one only appears when it applies to the recorded fact:
+
+| Field | What it identifies |
+|---|---|
+| `origination_uuid` | The origination flow. It is a durable identifier: it does not change if you rename the flow. |
+| `origination_uid` | The same flow, by its readable identifier. It is the one the Admin API resolves originations by, so it is the one you need in order to act on it. |
+| `submission_uuid` | The submission. |
+| `task_uid` | The task. |
+
+A field that does not apply **does not travel empty: it does not travel at all**. If the record belongs to an origination but not to a particular submission, `submission_uuid` is simply absent from the payload.
+
+:::warning Attention
+`origination_uid` is an editable identifier. If someone changes it, earlier records keep the value it had at that time, so it is not suitable for grouping the full history of a flow: use `origination_uuid` for that, which never changes.
+:::
+
+There is an edge case worth knowing: if the origination was deleted and only the submission remains, the record **keeps `origination_uuid` and omits `origination_uid`**. You can still tell which flow it belonged to, even though it can no longer be resolved by its readable identifier.
+
+:::tip Records created before this change
+These identifiers appear in records generated from the moment this version is available. Earlier ones stay as they were, without these fields, and they are not filled in retroactively. An analysis spanning both periods will find that discontinuity.
+:::
+
 ## Events that do not appear in this list
 
 Review workflow events are deliberately left out of this screen: creation, editing, comments, submission for review, approval, rejection, back to editing, completion, archiving, restoration, and adding or removing reviewers. To review them, use the **Activity** panel in the **Overview** of the app, space, or realm where they happened, which does not apply that exclusion.
