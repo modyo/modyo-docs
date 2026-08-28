@@ -144,9 +144,6 @@ Rounds to the nearest integer or to the specified number of decimals *e.g.* <spa
 ### Rstrip
 Removes all whitespace from the end of a string
 
-### Script tag
-Generates the HTML `<script>` tag for JavaScript, taking as parameters the URL and attributes of the form `attr: 'value'`, *e.g.* <span v-pre>`{{ 'my-js-url' | script_tag: async: 'async', defer: 'defer' }}`</span> => `<script src='my-js-url' type='text/javascript' async='async' defer='defer'></script>`
-
 ### Size
 Returns the size of an array or string
 
@@ -678,7 +675,9 @@ Generates the HTML tag of an image (e.g. <span v-pre>`{{ asset | asset_image_tag
 ### Asset URL
 
 Generates the URL of an Asset object or a template asset path. For Asset objects using Cloudflare for image optimization, you can use the following additional parameters: width, height, blur, quality, format and fit. (e.g. <span v-pre>`{{ assets['asset_uuid'] | asset_url: blur: 40, format: 'auto', fit: 'cover'  }}`</span>).
-For template asset paths from the template builder, specify the asset type as the second argument (e.g. <span v-pre>`{{ 'base' | asset_url: 'js'  }}`</span>). You can also use the script_tag or stylesheet_tag filters to automatically generate the complete HTML <script> or <link> tag (e.g. <span v-pre>`{{ 'base' | asset_url: 'css' | stylesheet_tag: media: 'screen' }}`</span>).
+For template asset paths from the template builder, specify the asset type as the second argument (e.g. <span v-pre>`{{ 'base' | asset_url: 'js'  }}`</span>). You can also use the script_tag or stylesheet_tag filters to automatically generate the complete HTML `<script>` or `<link>` tag (e.g. <span v-pre>`{{ 'base' | asset_url: 'css' | stylesheet_tag: media: 'screen' }}`</span>).
+
+The URL generated for a template asset path includes a version that updates when you publish the site, so visitors always get the current file without you having to rename it. In preview mode the file is never served from cache. For details on how these views are served and how to control the way they load, see [How site CSS and JavaScript are served](/en/platform/channels/templates.html#how-site-css-and-javascript-are-served).
 
 ### Button To
 
@@ -753,7 +752,9 @@ Sanitizes HTML tags from a String (e.g. <span v-pre>`{{ '<script>Hello World</sc
 
 ### Script tag
 
-Adds a script tag (e.g. <span v-pre>`{{ 'test-script' | script_tag }}`</span>).
+Generates the HTML `<script>` tag from a URL, taking additional attributes of the form `attr: 'value'` (e.g. <span v-pre>`{{ 'my-js-url' | script_tag: async: 'async', defer: 'defer' }}`</span> => `<script src='my-js-url' type='text/javascript' async='async' defer='defer'></script>`).
+
+Chain it with [Asset URL](#asset-url) to include a site JavaScript view and add the attributes you need (e.g. <span v-pre>`{{ 'base' | asset_url: 'js' | script_tag: defer: 'defer' }}`</span>). Unlike [Theme Javascript](#theme-javascript), this combination accepts any attribute.
 
 ### Search Box
 
@@ -768,15 +769,30 @@ Converts a datetime to String format (e.g. <span v-pre>`{{ time | strftime: '%m/
 Removes all HTML tags and their content from a String (e.g. <span v-pre>`{{ '<script>Hello World</script>' | strip_tags }} #=> ""`</span>).
 
 ### Stylesheet Tag
+
 Generates the HTML `<link>` tag for a CSS template, taking as parameters the URL and attributes (e.g. `attr: 'value'`, <span v-pre>`{{ 'my-css-url' | stylesheet_tag: media: 'screen', title: 'color style' }}`</span> => `<link href='my-css-url' rel='stylesheet' type='text/css' media='screen' title='color style' />`).
+
+Chain it with [Asset URL](#asset-url) to include a site CSS view and add the attributes you need (e.g. <span v-pre>`{{ 'base' | asset_url: 'css' | stylesheet_tag: media: 'screen' }}`</span>). Unlike [Theme Stylesheet](#theme-stylesheet), this combination accepts any attribute.
 
 ### Theme Javascript
 
-Adds a theme tag in Javascript (e.g. <span v-pre>`{{ 'home-page-javascript' | theme_javascript }}`</span>).
+Generates the HTML `<script>` tag that includes a site JavaScript view. It takes the path of the view created in **Templates**, not a URL (e.g. <span v-pre>`{{ 'home-page-javascript' | theme_javascript }}`</span> => `<script src='https://your-site.com/javascript/site-home-page-javascript-VERSION.js' type='text/javascript'></script>`).
+
+The URL it generates includes a version that updates when you publish the site, so visitors always get the current file without you having to rename the view or edit the template. In preview mode the file is never served from cache, so you see your changes right away.
+
+:::warning Attention
+`theme_javascript` does not accept additional attributes: it always emits the same tag. If you need `defer`, `async` or any other attribute, use [Asset URL](#asset-url) chained with [Script tag](#script-tag) (e.g. <span v-pre>`{{ 'home-page-javascript' | asset_url: 'js' | script_tag: defer: 'defer' }}`</span>), which produces the same versioned URL.
+:::
 
 ### Theme Stylesheet
 
-Adds a theme tag in CSS (e.g. <span v-pre>`{{ 'home-page-stylesheet' | theme_stylesheet }}`</span>).
+Generates the HTML `<link>` tag that includes a site CSS view. It takes the path of the view created in **Templates**, not a URL (e.g. <span v-pre>`{{ 'home-page-stylesheet' | theme_stylesheet }}`</span> => `<link href='https://your-site.com/stylesheets/site-home-page-stylesheet-VERSION.css' media='screen' rel='stylesheet' type='text/css' />`).
+
+As with [Theme Javascript](#theme-javascript), the URL includes a version that updates when you publish the site, and in preview mode the file is never served from cache.
+
+:::warning Attention
+`theme_stylesheet` does not accept additional attributes and always emits `media='screen'`. If you need a different `media` value or attributes such as `title`, use [Asset URL](#asset-url) chained with [Stylesheet Tag](#stylesheet-tag) (e.g. <span v-pre>`{{ 'home-page-stylesheet' | asset_url: 'css' | stylesheet_tag: media: 'print' }}`</span>), which produces the same versioned URL.
+:::
 
 ### Time Ago in Words
 
