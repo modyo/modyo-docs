@@ -149,10 +149,10 @@ Once you have the Liquid code of the image, access the work area where you want 
 
 1. Paste the Liquid code. It should look something like this:
 <span v-pre>`{{ 'ec0a3e4-ccdb-48c5-87be-5e1eca560dee' | asset_image }}`</span>
-2. Add the Liquid filter, it can be height, width, or quality, following any of these formats:
+2. Add to the filter the parameters you need. The available ones are `width`, `height`, `quality`, `blur`, `fit` and `format`, plus `widths`, `sizes` and `style` for responsive images. You can follow any of these formats:
 - <span v-pre>`asset_image: width: XXX`</span> where XXX is the desired pixel size.
 - <span v-pre>`asset_image: quality: XX`</span> where XX is the desired percentage of quality.
-- <span v-pre>`asset_image: width: XXX, quality: XX, widths: 'XXX, XXX, XXX, sizes: (min-width: XXXpx) XXXpx`</span> adapting the values according to your needs to ensure that the image fits the different screens and resolutions of your user's devices, using the [srcset](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/srcset) attribute for responsive support.
+- <span v-pre>`asset_image: width: 800, quality: 80, widths: '300, 600, 900', sizes: '(min-width: 400px) 298px, 78.75vw'`</span> adapting the values according to your needs to ensure that the image fits the different screens and resolutions of your user's devices, using the [srcset](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/srcset) attribute for responsive support.
 3. Click **save**.
 4. Click on **publish**.
 
@@ -161,6 +161,13 @@ Once you have the Liquid code of the image, access the work area where you want 
 When resizing images, the original aspect ratio is preserved, so the image is adjusted proportionally, without distortion.
 
 If you only include the height or width of the image, the missing value is automatically calculated to maintain the correct aspect ratio of the image.
+:::
+
+
+:::warning Attention
+The `asset_image` options depend on your account's CDN image processing. If it isn't enabled, the filter publishes the original image and silently ignores all of them: there is no error or notice, just an image at its original size. If the size doesn't change no matter how you adjust the values, check with the team that administers your account.
+
+`sizes` and `style` are only emitted when you also pass `widths`, and only `width`, `quality`, `blur` and `height` are propagated to each `srcset` variant. The full filter reference is in [Asset image](/en/platform/channels/liquid-markup/filters.html#asset-image).
 :::
 
 
