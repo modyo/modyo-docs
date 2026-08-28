@@ -50,6 +50,55 @@ This section also includes relevant information such as the main configurations 
 
 This overview allows you to efficiently manage each realm and understand how it connects with users and other key elements of the platform.
 
+## Security headers
+
+The realm's own pages — sign in, sign up, verification code, password recovery, and profile — can have their own security policy, independent from the web app and from the platform's global configuration.
+
+You configure them in **Realm settings** → **Security headers**, and you need the **Admin Security Headers** grouped permission to view and edit them.
+
+### Enabling the realm headers
+
+A realm's headers start disabled. While they are, the screen shows **Headers disabled** with the notice "Security headers are currently disabled for this realm. Enable this module to access the configuration", and an **Enable security headers for this realm** button.
+
+:::danger This action cannot be undone
+Enabling a realm's headers **cannot be reverted**: there is no way back to the disabled state from the admin. The platform warns you before applying it with the message "Customizing the realm security headers overrides the platform global configuration. This action cannot be undone, please check the documentation".
+:::
+
+When you enable them for the first time, the configuration is seeded with **the values the platform was already applying at that moment**. In other words, enabling does not change the realm's behavior on day one: you take control of a policy that until then was imposed, with the same content. Any change from there on is yours.
+
+### The four configurable headers
+
+| Header | What you can configure |
+|---|---|
+| **Content-Security-Policy** | Enabling it, its directive, and the nonce option. |
+| **Content-Security-Policy-Report-Only** | The same as above, but it only reports: it does not block. It needs **Reporting-Endpoints** for the reports to reach anywhere. |
+| **Reporting-Endpoints** | Enabling it and declaring the destinations the browser sends reports to. |
+| **Referrer-Policy** | Enabling it and choosing the directive. |
+
+The rest of the headers a web app offers are not configurable per realm, and keep coming from the platform.
+
+:::warning The Referrer-Policy list is shorter than the web app one
+The realm selector offers `no-referrer`, `origin`, `origin-when-cross-origin`, `same-origin`, `strict-origin`, and `strict-origin-when-cross-origin`. It deliberately leaves out `unsafe-url` and `no-referrer-when-downgrade`, which you can choose in a web app. The reason is concrete: the password recovery link carries its token in the URL, and those two policies would leak it to third parties through the `Referer` header.
+:::
+
+### The CSP nonce
+
+If you turn on the nonce option in **Content-Security-Policy** or **Content-Security-Policy-Report-Only**, the platform adds each response's nonce to the `script-src` and `style-src` directives.
+
+You can also write <code v-pre>{{csp_nonce}}</code> inside the directive: when the page is served, that placeholder is replaced with the nonce of that response. The same nonce is applied to the sign in markup, including the custom JavaScript and CSS you may have defined for that screen, so you can harden the CSP without your own code failing to run.
+
+### Where they apply
+
+The configuration covers **every HTML response of the realm**: sign in, sign up, verification code, password recovery, profile, the error pages of that scope, and the authorization screen.
+
+It does not cover redirects, because the browser applies these policies to the document it renders and not to the intermediate hop, nor API responses, which do not carry these headers.
+
+:::tip Showing sign in inside an iframe
+This is the most common reason to configure a realm's CSP. By adding the portal's origin to the `frame-ancestors` directive of the realm CSP, its sign in screen can render inside an iframe hosted at that origin; any origin not on the list is still blocked by the browser.
+
+For the whole flow to work inside the iframe — redirect to sign in, authentication, and return — the embedding portal has to be on the same domain as your account host. In practice that means having your own host configured. With the default platform domain the screen shows up but the session is not kept.
+:::
+
 ## Delete a Realm
 
 To delete a realm, go to its [Realm Settings](/en/platform/customers/settings.html#general) and use the **Delete realm** field in the **General** section. To confirm, you must type the realm's full name exactly as it appears in the list: if the text doesn't match, the platform doesn't run the action.
