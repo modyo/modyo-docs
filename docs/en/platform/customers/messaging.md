@@ -50,7 +50,7 @@ Email campaigns allow you to contact users via email. To set up an email campaig
 - **Template**: Select a [template](/en/platform/customers/messaging#templates). If no template is selected, a blank one will be used.
 - **Enable Segmentation**: Select a specific segment or leave this option unchecked to send the message to all users.
 
-Click **Save and Continue** to open the WYSIWYG editor, where you can customize the selected template's content. Once edited, select **Save** to confirm the changes and access the **Send Status** view.
+Click **Save and Continue** to open the WYSIWYG editor, where you can customize the selected template's content and use [personalization variables](/en/platform/customers/messaging.html#personalization-variables). Once edited, select **Save** to confirm the changes and access the **Send Status** view.
 
 
 ### Notification Campaigns
@@ -93,10 +93,25 @@ Once you have sent a campaign, you cannot send it again. If you want to send the
 You can cancel a campaign when it is in queue or while it is being sent.
 
 :::warning Attention
-A campaign can only be resent if its sending was previously canceled when it was queued or in progress.
+A campaign can be sent again as long as it is not **Completed**: the **Send** button comes back both when the delivery was canceled and when it failed.
 
-You must indicate whether you want to send messages again to all users or only to those who did not receive them previously. In this case, the number of message deliveries may be greater than the total reach of users of the campaign.
+When you send it, the **Do not send this campaign to people who have previously received it.** checkbox leaves out anyone who already received a message from this campaign. If you leave it unchecked, the delivery goes through every user in scope again and the number of message deliveries may be greater than the total reach of users of the campaign.
 :::
+
+### Campaign statuses
+
+This view shows the campaign's current status next to its metrics. The possible statuses are:
+
+- **Inactive**: The campaign is created and has not been sent yet.
+- **Pending**: The delivery was already requested and is queued, but has not started processing.
+- **Sending**: The delivery is in progress and deliveries are generated in groups of users.
+- **Completed**: The delivery finished going through every recipient.
+- **Canceled**: Someone stopped the delivery while it was **Pending** or **Sending**. The deliveries generated up to that point are not reverted.
+- **Failed**: The delivery was interrupted by an error before finishing. The campaign keeps the deliveries it managed to generate.
+
+The view's main button changes with the status: **Inactive**, **Canceled**, and **Failed** show **Send**; **Pending** and **Sending** show **Cancel**. **Completed** shows neither, and the **Message Editor** and **Edit** actions also disappear from the contextual menu: a completed campaign can no longer be modified or resent, only cloned.
+
+### Delivery results
 
 In campaigns sent by email, you can view:
 
@@ -132,7 +147,20 @@ Clicking on the name of a campaign takes you to the Message Deliveries section.
 
 In the Message Deliveries section, you will find the list of users who have received a message from the platform. Here, you can see a list of all users who have received a unique email or notification, referred to as “No Campaign”.
 
-"No Campaign" refers to an email or notification sent specifically to a user on a certain date. These messages are not considered campaigns, as they are personalized and contain information not sent to other users. For more information on how these messages work, see the [Management API](/en/platform/core/api).
+"No Campaign" refers to an email or notification sent specifically to a user on a certain date. These messages are not considered campaigns, as they are personalized and contain information not sent to other users.
+
+These messages are not created from the admin, but from the management API:
+
+- `POST /api/admin/customers/{realm_uid}/messaging/mailer` sends an email to a realm user.
+- `POST /api/admin/customers/{realm_uid}/messaging/notifications` sends a notification to a realm user.
+
+In both cases the recipient is identified by username, not by email, and must be within your [segment scope](/en/platform/customers/settings.html#restrict-scope-with-segments): if it is not, the email call answers `409` and the notification call `404`. The field-by-field detail of each call is in the service catalog, under the **Mailer** and **Notifications** resources; to open it, follow [Call using the Swagger Portal](/en/platform/core/api.html#call-using-the-swagger-portal).
+
+The email is queued, so a successful response confirms that the call was accepted, not that the message was already delivered. Its body accepts `%{name}`, `%{first_name}`, `%{last_name}`, `%{email}`, and `%{unsubscribe_link}`, a subset of the campaign [personalization variables](/en/platform/customers/messaging.html#personalization-variables): `%{show_link}` and `%{show_url}` are not available.
+
+:::warning Attention
+There is also a legacy route, `POST /api/admin/mailer`, which reaches the same action but does not appear in the service catalog and does not carry the realm in the URL: you have to pass `realm_uid` as a parameter or the call answers `404`. It is kept for compatibility; use the realm route in new integrations.
+:::
 
 In the initial view, the messages are ordered in these categories:
 
@@ -176,6 +204,40 @@ When you create a campaign, remember to add in the footer all the legal informat
 
 To automate footer insertion, read [Realm Configuration](/en/platform/customers/settings#emails)
 :::
+
+## Personalization variables
+
+The campaign message editor and the template editor accept variables that the platform replaces with each recipient's data at delivery time. Both editors list them under the label **Allowed attributes (will be dynamically replaced with data)**.
+
+The syntax is `%{variable}` and the list is closed: you cannot invent variables or use Liquid drops. The realm's [automated emails](/en/platform/customers/settings.html#personalize-emails) do use Liquid, but messaging campaigns and templates do not.
+
+Templates and email campaigns give you seven variables:
+
+| Variable | Replaced with |
+| --- | --- |
+| `%{name}` | The recipient's full name. |
+| `%{first_name}` | The recipient's first name. |
+| `%{last_name}` | The recipient's last name. |
+| `%{email}` | The recipient's email address. |
+| `%{show_link}` | A ready-to-paste HTML link, with the text "Email not displaying correctly? View it in your browser.", that opens the web version of the message. |
+| `%{show_url}` | The address of that web version, unformatted, so you can build your own link. |
+| `%{unsubscribe_link}` | The address the recipient uses to unsubscribe from the realm's deliveries. |
+
+Notification campaigns only have `%{name}`, `%{first_name}`, and `%{last_name}`.
+
+Including `%{unsubscribe_link}` in the message footer is what lets the recipient unsubscribe, and those opt-outs are the ones that show up in [Unsubscriptions](/en/platform/customers/messaging.html#unsubscriptions).
+
+:::warning Attention
+If you write a variable that is not on the channel's list, the platform does not save the message and shows the error **The attributes specified are not valid**.
+
+The template editor does not run that check: a template can be saved with an invalid variable, and the error only shows up when you save the message of the campaign that uses it.
+:::
+
+:::tip Incomplete data
+The platform only replaces variables the recipient has data for. If a user has no last name on file, for example, the message reaches them with the text `%{last_name}` in plain sight. Before using variables from optional fields, check that they are filled in for the segment you are targeting.
+:::
+
+A campaign's **Preview** resolves these variables with your own administrator account data and with a sample unsubscribe link, so it is useful to review the design, not to check what data each recipient will see.
 
 ## Unsubscriptions
 
