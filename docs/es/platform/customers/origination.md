@@ -76,6 +76,7 @@ En este apartado se pueden editar los valores de la tarea seleccionada, puedes e
 - **Nombre**: El nombre de la tarea que será visible para el usuario.
 - **Identificador**: Un identificador único que se incluirá en la URL de la originación.
 - **Descripción**: Un breve texto explicativo sobre la tarea, que será visible para el usuario.
+- **Mostrar esta tarea al usuario principal**: Aparece solo cuando la tarea está seleccionada como tarea objetivo de una [tarea de invitación](/es/platform/customers/origination.html#invitacion). Viene activada y define si el usuario principal de la respuesta también ve y puede responder esa tarea, o si queda reservada para el invitado en quien la delegó.
 
 :::warning Edición de identificadores
 Al editar un paso, una tarea o un campo ya guardados, el campo **Identificador** aparece bloqueado con un candado. Para modificarlo debes presionar el candado y confirmar la advertencia **Desbloquear campo identificador**: cambiar un identificador rompe las referencias desde sistemas externos o mediante el SDK de Liquid y, en el caso de los campos, las respuestas dejan de poder buscarse por ese campo. El identificador solo se genera automáticamente a partir del nombre durante la creación; al editar, cambiar el nombre no lo modifica.
@@ -519,10 +520,10 @@ Para poder crear una tarea de invitación, primero debes crear al menos un [rol]
 Al configurar la tarea defines:
 
 - **Rol**: El rol que asumirán los usuarios invitados.
-- **Plantilla de correo**: El código HTML/Liquid del correo de invitación. Tienes disponibles variables de Liquid como `invitation.first_name`, `invitation.last_name`, `invitation.email`, `invitation_url`, `submission`, `task`, `origination` y `site`.
-- **Tareas objetivo**: Las tareas que los usuarios invitados podrán completar. Solo puedes seleccionar tareas anteriores a la tarea de invitación; otras tareas de invitación y las tareas de proceso de originación no son seleccionables.
+- **Plantilla de correo**: El código HTML/Liquid del correo que recibe cada invitado, con las [variables de Liquid de la invitación](#plantilla-del-correo-de-invitacion).
+- **Tareas objetivo**: Las tareas que los usuarios invitados podrán completar, agrupadas por paso. Puedes seleccionar tareas de cualquier paso de la originación; las otras tareas de invitación y las tareas de proceso de originación no son seleccionables.
 
-Además, en las propiedades de cada tarea incluida en una tarea de invitación encontrarás la opción **Mostrar esta tarea al usuario principal**, que controla si el usuario principal también ve esa tarea en su flujo.
+Además, en las propiedades de cada tarea seleccionada como objetivo aparece la opción **Mostrar esta tarea al usuario principal**, activada de manera predeterminada. Al desactivarla, la tarea deja de mostrarse en el flujo del usuario principal y queda reservada para el invitado que la resuelve. Si más adelante quitas esa tarea de las **Tareas objetivo**, la opción se vuelve a activar sola para que no quede oculta sin nadie que la responda.
 
 En la página de originación, el usuario principal puede invitar a personas nuevas (nombre, apellido y correo electrónico) o a usuarios ya invitados en otras tareas, y puede reenviar o cancelar las invitaciones pendientes. Cada invitado recibe un correo con un enlace de acceso y, al ingresar, solo ve las tareas que le fueron asignadas; si tiene más de un rol, ve la unión de las tareas de todos sus roles. El usuario invitado no puede cancelar la respuesta.
 
@@ -530,6 +531,47 @@ La tarea de invitación se completa cuando todos los invitados terminan sus tare
 
 :::tip Plantilla para usuarios invitados
 La página de la originación incluye la plantilla **Reanudar (Invitado)**, que es la vista que ven los usuarios invitados al volver a ingresar a la respuesta. Puedes personalizarla como el resto de las plantillas de la página.
+:::
+
+#### Plantilla del correo de invitación
+
+Cada tarea de invitación tiene su propia plantilla de correo. Al crear la tarea, el editor **Plantilla de correo** se precarga con un ejemplo funcional que ya trae el botón de aceptación, y puedes reemplazarlo por completo. El asunto no se configura: la plataforma usa el nombre de la originación y el nombre de la tarea.
+
+Dentro de la plantilla tienes disponibles estas variables de Liquid:
+
+| Variable | Contenido |
+|---|---|
+| <code v-pre>{{ invitation_url }}</code> | El enlace de acceso personal del invitado. Es la única variable imprescindible de la plantilla. |
+| <code v-pre>{{ invitation.first_name }}</code>, <code v-pre>{{ invitation.last_name }}</code>, <code v-pre>{{ invitation.email }}</code> | Los datos con los que se envió la invitación. |
+| <code v-pre>{{ invitation.status }}</code>, <code v-pre>{{ invitation.token }}</code>, <code v-pre>{{ invitation.created_at }}</code>, <code v-pre>{{ invitation.accepted_at }}</code> | El estado de la invitación, su token y sus fechas. |
+| <code v-pre>{{ user }}</code> | El usuario invitado. |
+| <code v-pre>{{ submission }}</code>, <code v-pre>{{ task }}</code>, <code v-pre>{{ origination }}</code>, <code v-pre>{{ site }}</code> | La respuesta, la tarea de invitación, la originación y el sitio. |
+
+El enlace de aceptación mínimo se escribe así:
+
+```liquid
+<a href="{{ invitation_url }}">Haz clic aquí para aceptar la invitación</a>
+```
+
+:::warning Sin plantilla no se envía el correo
+Si dejas vacía la **Plantilla de correo**, la invitación se crea igual y aparece en la lista de la tarea, pero el invitado nunca recibe el mensaje con su enlace de acceso. Revisa siempre que la plantilla incluya el enlace de aceptación.
+:::
+
+#### Ciclo de vida de una invitación
+
+En la tarea de invitación, el usuario principal ve la lista de las personas que invitó con su nombre, su correo, su rol, una barra de progreso de las tareas que tiene delegadas y una etiqueta con el estado de la invitación:
+
+- `pending`: La invitación se envió y el invitado todavía no entra al flujo.
+- `accepted`: El invitado abrió su enlace y entró a la respuesta.
+- `completed`: El invitado terminó todas las tareas objetivo de su rol.
+- `cancelled`: El usuario principal canceló la invitación antes de que fuera aceptada.
+
+Las acciones disponibles dependen del estado: **Reenviar invitación** y **Cancelar invitación** solo se muestran mientras la invitación está en `pending`. Una vez aceptada ya no se puede cancelar ni reenviar. Una invitación cancelada no ocupa cupo en el **Número máximo de usuarios** del rol, así que puedes volver a invitar a la misma persona.
+
+Cuando se completa la última invitación activa de la tarea, la respuesta a la tarea de invitación se completa sola y el flujo continúa. A partir de ese momento ya no se pueden enviar invitaciones nuevas desde esa tarea.
+
+:::tip Espera entre reenvíos
+Entre un reenvío y el siguiente hay que esperar unos minutos. Si presionas **Reenviar invitación** antes de tiempo, la plataforma te indica cuántos minutos faltan en lugar de enviar el correo.
 :::
 
 ### Confirmación
@@ -619,7 +661,10 @@ En la edición de la originación encontrarás la sección **Roles**, donde defi
 
 - **Nombre**: El nombre del rol, único dentro de la originación.
 - **Requiere invitaciones**: Si está activo, el usuario principal debe invitar al menos a una persona para completar la tarea de invitación que use este rol.
-- **Número máximo de usuarios**: La cantidad máxima de usuarios que pueden tener este rol en una misma respuesta.
+- **Puede ser asumido por el usuario principal**: Si está activo, el propio usuario principal aparece en la lista de personas a invitar de la tarea, identificado como **Tú**, y puede tomar el rol él mismo. Esa invitación no envía correo: queda aceptada al instante y se completa apenas termine las tareas objetivo. Si está desactivado y se intenta invitar al titular de la respuesta, la plataforma responde **No puedes invitar al propietario de la submission**.
+- **Número máximo de usuarios**: La cantidad máxima de usuarios que pueden tener este rol en una misma respuesta. Viene en 1 y acepta hasta 100. Es el valor que limita cuántas invitaciones activas admite la tarea de invitación que usa el rol; al alcanzarlo, el formulario de invitación se bloquea con el mensaje **No se pueden enviar más invitaciones, esta tarea está completada o ha alcanzado el número máximo de invitaciones permitidas**.
+
+Puedes editar o eliminar los roles desde la misma sección. Como cada rol solo puede usarse en una tarea de invitación, si todos los roles de la originación ya están tomados el tipo **Invitación** aparece deshabilitado al agregar una tarea, con el aviso **No hay roles disponibles para asignar a esta tarea.** Para crear otra tarea de invitación tienes que agregar antes un rol nuevo.
 
 #### Eliminar originación
 
