@@ -76,6 +76,7 @@ In this section, you can edit the values of the selected task. You can find thes
 - **Name**: The name of the task that will be visible to the user.
 - **Identifier**: A unique identifier that will be included in the origination URL.
 - **Description**: A brief explanatory text about the task, which will be visible to the user.
+- **Show this task to the main user**: Appears only when the task is selected as a target task of an [invitation task](/en/platform/customers/origination.html#invitation). It comes enabled and defines whether the submission's main user also sees and can answer that task, or whether it is reserved for the invitee it was delegated to.
 
 :::warning Editing identifiers
 When editing an already saved step, task, or field, the **Identifier** field appears locked with a padlock. To modify it, you must press the padlock and confirm the **Unlock Identifier field** warning: changing an identifier breaks references to it from external systems or through the Liquid SDK and, in the case of fields, submissions can no longer be searched by that field. The identifier is only generated automatically from the name during creation; when editing, changing the name doesn't modify it.
@@ -518,10 +519,10 @@ To create an invitation task, you must first create at least one [role](#roles) 
 When configuring the task, you define:
 
 - **Role**: The role that invited users will assume.
-- **Email template**: The HTML/Liquid code of the invitation email. Liquid variables such as `invitation.first_name`, `invitation.last_name`, `invitation.email`, `invitation_url`, `submission`, `task`, `origination`, and `site` are available.
-- **Target tasks**: The tasks that invited users will be able to complete. You can only select tasks prior to the invitation task; other invitation tasks and origination process tasks are not selectable.
+- **Email template**: The HTML/Liquid code of the email each invitee receives, with the invitation's [Liquid variables](#invitation-email-template).
+- **Target tasks**: The tasks that invited users will be able to complete, grouped by step. You can select tasks from any step of the origination; other invitation tasks and origination process tasks are not selectable.
 
-In addition, the properties of each task included in an invitation task have the option **Show this task to the main user**, which controls whether the main user also sees that task in their flow.
+In addition, the properties of each task selected as a target show the **Show this task to the main user** option, enabled by default. When you disable it, the task stops appearing in the main user's flow and is reserved for the invitee who resolves it. If you later remove that task from the **Target tasks**, the option is enabled again on its own so it doesn't remain hidden with nobody to answer it.
 
 On the origination page, the main user can invite new people (first name, last name, and email address) or users already invited in other tasks, and can resend or cancel pending invitations. Each invitee receives an email with an access link and, upon entering, only sees the tasks assigned to them; if they have more than one role, they see the union of the tasks of all their roles. The invited user cannot cancel the submission.
 
@@ -529,6 +530,47 @@ The invitation task is completed when all invitees finish their tasks. If the ro
 
 :::tip Template for invited users
 The origination page includes the **Resume (Invited)** template, which is the view invited users see when they return to the submission. You can customize it like the rest of the page templates.
+:::
+
+#### Invitation email template
+
+Each invitation task has its own email template. When the task is created, the **Email template** editor is preloaded with a working example that already includes the acceptance button, and you can replace it entirely. The subject is not configurable: the platform uses the origination name and the task name.
+
+Inside the template, these Liquid variables are available:
+
+| Variable | Content |
+|---|---|
+| <code v-pre>{{ invitation_url }}</code> | The invitee's personal access link. It is the only essential variable of the template. |
+| <code v-pre>{{ invitation.first_name }}</code>, <code v-pre>{{ invitation.last_name }}</code>, <code v-pre>{{ invitation.email }}</code> | The data the invitation was sent with. |
+| <code v-pre>{{ invitation.status }}</code>, <code v-pre>{{ invitation.token }}</code>, <code v-pre>{{ invitation.created_at }}</code>, <code v-pre>{{ invitation.accepted_at }}</code> | The invitation status, its token, and its dates. |
+| <code v-pre>{{ user }}</code> | The invited user. |
+| <code v-pre>{{ submission }}</code>, <code v-pre>{{ task }}</code>, <code v-pre>{{ origination }}</code>, <code v-pre>{{ site }}</code> | The submission, the invitation task, the origination, and the site. |
+
+The minimum acceptance link is written like this:
+
+```liquid
+<a href="{{ invitation_url }}">Click here to accept the invitation</a>
+```
+
+:::warning No template means no email
+If you leave the **Email template** empty, the invitation is still created and appears in the task's list, but the invitee never receives the message with their access link. Always check that the template includes the acceptance link.
+:::
+
+#### Invitation lifecycle
+
+In the invitation task, the main user sees the list of the people they invited with their name, email, role, a progress bar of the tasks delegated to them, and a badge with the invitation status:
+
+- `pending`: The invitation was sent and the invitee hasn't entered the flow yet.
+- `accepted`: The invitee opened their link and entered the submission.
+- `completed`: The invitee finished all the target tasks of their role.
+- `cancelled`: The main user canceled the invitation before it was accepted.
+
+The available actions depend on the status: **Resend invitation** and **Cancel invitation** are only shown while the invitation is `pending`. Once accepted, it can no longer be canceled or resent. A canceled invitation doesn't take up a slot in the role's **Maximum number of users**, so you can invite the same person again.
+
+When the last active invitation of the task is completed, the invitation task response completes on its own and the flow continues. From that moment on, no new invitations can be sent from that task.
+
+:::tip Wait between resends
+You must wait a few minutes between one resend and the next. If you press **Resend invitation** too soon, the platform tells you how many minutes are left instead of sending the email.
 :::
 
 ### Confirmation
@@ -618,7 +660,10 @@ In the origination editing, you will find the **Roles** section, where you defin
 
 - **Name**: The name of the role, unique within the origination.
 - **Require invitations**: If enabled, the main user must invite at least one person to complete the invitation task that uses this role.
-- **Maximum number of users**: The maximum number of users that can have this role in the same submission.
+- **Can be assumed by main user**: If enabled, the main user themselves appears in the task's list of people to invite, identified as **You**, and can take the role. That invitation doesn't send an email: it is accepted instantly and completes as soon as they finish the target tasks. If it is disabled and someone tries to invite the submission owner, the platform responds **You cannot invite the submission owner**.
+- **Maximum number of users**: The maximum number of users that can have this role in the same submission. It starts at 1 and accepts up to 100. It is the value that limits how many active invitations the invitation task using the role accepts; when the limit is reached, the invitation form is blocked with the message **Cannot send more invitations, this task is completed or has reached the maximum number of allowed invitations**.
+
+You can edit or delete roles from the same section. Since each role can only be used in one invitation task, if all the origination's roles are already taken, the **Invitation** type appears disabled when adding a task, with the notice **No roles available to assign to this task.** To create another invitation task, you must first add a new role.
 
 #### Delete origination
 
