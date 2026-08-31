@@ -375,7 +375,7 @@ If you want to combine several strings into one and save it in a variable, you c
 
 ## Modyo-specific tags
 
-Beyond the standard Liquid tags, the platform registers its own. The following ones ship with the default layouts and templates of every new site, so it is worth knowing what they emit before changing them.
+Beyond the standard Liquid tags, the platform registers its own. Most of them ship with the default layouts and templates of every new site, so it is worth knowing what they emit before changing them.
 
 ### The html5 block
 
@@ -421,6 +421,34 @@ The `id` only distinguishes the home page, custom pages, content pages and searc
 :::
 
 See [Context Variables](/en/platform/channels/liquid-markup/variables.html#context-variables) for what each of these variables holds.
+
+### The search tag
+
+<code v-pre>{% search %}</code> emits a `GET` form pointing at `site.search_url`, with a text field named `query` that requires at least 3 characters and a submit button:
+
+```html
+<form action="<site search url>" method="get" checked="1">
+  <input class="search" id="query" name="query" type="text" pattern=".{3,}">
+  <input type="hidden" name="pages" value="true">
+  <input type="hidden" name="resources" value="true">
+  <input type="hidden" name="people" value="true">
+  <input type="hidden" name="pages_and_resources" value="true">
+  <button type="submit" name="commit"><i class="icon-search"></i></button>
+</form>
+```
+
+The markup is left over from an earlier version of the theme. The four hidden fields come from the days when the search was narrowed down by resource type, and none of them is read today: the only parameter the search engine takes from this form is `query`. The button also relies on the `icon-search` class, which the current theme does not include, so it renders empty.
+
+That is why it is better to write the form by hand pointing at `site.search_url`, which is what the platform's **search** template does and what lets you control classes, copy and accessibility:
+
+```liquid
+<form action="{{ site.search_url }}" method="get">
+  <input type="text" class="form-control" name="query" placeholder="Search" aria-label="Search" value="{{ params_query }}">
+  <input class="btn btn-primary" title="Search" type="submit" name="commit" value="Search">
+</form>
+```
+
+See [Search](/en/platform/channels/sites.html#search) for how the search is enabled and which parameters the query accepts.
 
 ### CSRF tags
 
