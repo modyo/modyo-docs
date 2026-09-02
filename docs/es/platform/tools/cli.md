@@ -305,7 +305,7 @@ El modo módulo viaja en la URL que abre el comando y la barra de la vista previ
 
 #### Opciones de la barra de la vista previa
 
-La vista previa se abre dentro de tu sitio, con la barra de preview en el borde de la ventana. Para un widget local, la barra ofrece:
+La vista previa se abre dentro de tu sitio, con la barra de la vista previa en el borde de la ventana. Para un widget local, la barra ofrece:
 
 - **Templates**: elige si el widget se monta sobre las plantillas **Publicada** o **Editable** del sitio.
 - **Snippets globales**: el mismo conmutador **Publicada** / **Editable** para los snippets globales.
