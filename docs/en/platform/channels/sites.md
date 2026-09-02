@@ -187,13 +187,34 @@ To access this API, add "search.json" to your web app's URL along with your quer
 Customize your queries as follows:
 
 
-|  Parameter       |       Description    |
-|------------------|----------------------|
-| **query** | Performs queries to the search API. This search engine queries all published pages of your web app and all public entries in the spaces linked to the web app. |
-| **per_page** | Divides the total number of records by the number of selected pages. |
-| **page** | Selects the specific page you want to query, in case there are multiple pages of records to query. |
-| **multi=true** | Allows you to search in all web applications in the account that have the search function enabled. |
+| Parameter | Description |
+|-----------|-------------|
+| **query** | The term you want to search for. The query goes through all published pages of your web app and all public entries in the spaces linked to the web app. The search engine only takes its first 15 characters into account. |
+| **page** | The results page you want to get. Defaults to 1. |
+| **per_page** | How many results each page carries. Defaults to 15. |
+| **more** | A free value the search engine does not use to filter: it is only made available to the search template as the `params_more` variable. |
 
+Each result carries four fields: `title`, `description`, `url` and `site_name`. The response also includes a `meta` object with `total_entries`, `per_page`, `current_page` and `total_pages`, which comes back empty when the query finds nothing.
+
+:::warning Warning
+`multi=true` is not a parameter of this API and adding it to the URL has no effect at all. Searching across several web apps is resolved solely from the settings of the web app you are querying from.
+:::
+
+:::tip Tip
+The total number of results is capped at 100, no matter the `per_page` you ask for: from there on the following pages come back empty and you need to refine the query. In the search template, [site_search.have_less_relevant_results](/en/platform/channels/liquid-markup/objects.html#site-search) tells you when results were left out of that cap.
+:::
+
+### Searching across several web apps
+
+A search can span several web apps in the same account. That mode is not turned on from the URL: it depends on two checkboxes in the **Privacy** section of the settings of the web app the search runs from, **Enable search** and **Enable search on multiple sites**. The second one can only be checked if the first one is checked.
+
+With both checked, the search goes through the originating web app and every web app in the account that meets these three conditions:
+
+- It has **Enable search** checked.
+- It is not a stage of another web app.
+- It has the same language as the web app the search runs from.
+
+In this mode each result states which web app it comes from in its `site_name` field, and in the search template [site_search.multi](/en/platform/channels/liquid-markup/objects.html#site-search) lets you show it only when the search spans several web apps.
 
 ## Web Application Settings
 
@@ -299,10 +320,10 @@ When you press the delete button, the system will ask you to enter the textual n
 - **Show home to public visitors**: The web app's home page is shown to all visitors, even those who are not logged in. When navigating to any other page, registration or login is required.
 - **Redirect to home when a URL is not found**: By default, the web application shows a 404 error when the user accesses a non-existent URL. If you check this option, the user will be redirected to the web app's home page instead of the 404.
 - **Enable search**: Activates the search function in the web app.
-- **Enable multi-application search**
+- **Enable search on multiple sites**: Extends this web app's search to the rest of the web apps in the account. The checkbox stays disabled while **Enable search** is unchecked.
 
 :::tip Tip
-If you enable search in your web app and use the `multi=true` parameter from another web app, you can also search in your current app.
+This mode is not requested from the query URL: `multi=true` in `search.json` has no effect at all. Check which web apps take part in the search in [Searching across several web apps](/en/platform/channels/sites.html#searching-across-several-web-apps).
 :::
 
 
