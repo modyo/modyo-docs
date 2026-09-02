@@ -424,7 +424,7 @@ See [Context Variables](/en/platform/channels/liquid-markup/variables.html#conte
 
 ### The search tag
 
-<code v-pre>{% search %}</code> emits a `GET` form pointing at `site.search_url`, with a text field named `query` that requires at least 3 characters and a submit button:
+<code v-pre>{% search %}</code> emits a `GET` form pointing at `site.search_url`, with a text field named `query` and a submit button. The field carries `pattern=".{3,}"`, so the browser blocks submitting fewer than three characters, but it is **not required**: with the field empty the form submits anyway and the results page shows up with no results.
 
 ```html
 <form action="<site search url>" method="get" checked="1">

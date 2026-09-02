@@ -424,7 +424,7 @@ Consulta [Variables de Contexto](/es/platform/channels/liquid-markup/variables.h
 
 ### Tag de búsqueda
 
-<code v-pre>{% search %}</code> emite un formulario `GET` hacia `site.search_url`, con un campo de texto llamado `query` que exige un mínimo de 3 caracteres y un botón de envío:
+<code v-pre>{% search %}</code> emite un formulario `GET` hacia `site.search_url`, con un campo de texto llamado `query` y un botón de envío. El campo lleva `pattern=".{3,}"`, así que el navegador impide enviar menos de tres caracteres, pero **no es obligatorio**: con el campo vacío el formulario se envía igual y la página de resultados aparece sin resultados.
 
 ```html
 <form action="<url de búsqueda del sitio>" method="get" checked="1">
