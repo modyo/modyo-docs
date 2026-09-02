@@ -47,7 +47,7 @@ Las campañas de correo te permiten contactar a los usuarios a través de email.
 - **Tipo**: Selecciona **Correo** para activar esta opción.
 - **Asunto**: Texto que aparecerá en la línea de asunto del mensaje.
 - **Responder a**: Dirección de correo electrónico para las respuestas de los usuarios. Si este campo se deja en blanco se usará el correo por defecto del reino.
-- **Plantilla**: Selecciona una [plantilla](/es/platform/customers/messaging#plantillas). Si no seleccionas una, se enviará una plantilla en blanco.
+- **Plantilla**: Selecciona una [plantilla](/es/platform/customers/messaging.html#plantillas). Si no seleccionas una, se enviará una plantilla en blanco.
 - **Habilitar segmentación**: Selecciona un segmento específico o deja esta opción desmarcada para enviar el mensaje a todos los usuarios.
 
 Haz clic en **Guardar y continuar** para abrir el editor WYSIWYG, donde puedes personalizar el contenido de la plantilla seleccionada y usar [variables de personalización](/es/platform/customers/messaging.html#variables-de-personalizacion). Una vez editado, selecciona **Guardar** para confirmar los cambios y acceder a la vista **Estado de envío**.
