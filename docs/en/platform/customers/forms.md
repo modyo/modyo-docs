@@ -121,6 +121,96 @@ For simple text and paragraph fields, you can add validations through regular ex
 
 Selecting any of the different options and clicking **Add** will autocomplete the expression to the field.
 
+### Input masks
+
+An input mask restricts what the user can type in a field and formats the value as they write. Unlike a regular expression, which validates the complete value only on submit, the mask acts key by key: the user never gets to enter a value in the wrong format.
+
+Masks are configured in the **Options** section of the field, both in the form builder and in the Input task builder of [originations](/en/platform/customers/origination.html). They are available in the **Single line text** and **Number** fields. The **Email** and **URL** fields come with a fixed factory mask, which prevents typing characters those formats never accept and is neither configurable nor removable.
+
+#### Mask modes
+
+The **Input mask** selector defines the mode. The modes are mutually exclusive, and switching modes is the only way to enable or disable the mask:
+
+| Mode | What it does | Available in |
+|---|---|---|
+| **No mask** | Default value. The field doesn't restrict what is typed. | Single line text and Number |
+| **Pattern** | The field inserts the separators on its own and accepts, in each position, only the kind of character that belongs there. It defines a fixed length, for example `00/00/0000` or `0000 0000 0000 0000`. | Single line text |
+| **RegExp** | The field filters which characters can be typed, with no fixed length and no separators. For example, letters and spaces only. | Single line text and Number |
+| **Number** | Applies the thousands separator as the user writes, with a variable length. | Number |
+
+#### Mask catalog
+
+The **Mask catalog** button offers predefined masks that preload the pattern and leave it editable:
+
+- **Credit card**
+- **RUT (Chile)**
+- **License plate (Chile)**
+- **Text without emojis**
+- **Letters and spaces only**
+
+You can also write your own pattern from scratch, without starting from a preset.
+
+#### Pattern tokens
+
+In **Pattern** mode, each position of the pattern is written with one of these tokens. Any other character is taken as a literal and the mask inserts it on its own:
+
+| Token | Meaning |
+|---|---|
+| `0` | Digit |
+| `a` | Any letter, from any alphabet |
+| `*` | Any character |
+| `[ ]` | Optional positions, each one may be left empty |
+| `\` | Escapes the next character so it is treated as a literal |
+
+Some presets add their own blocks for positions the basic tokens don't cover. The Chilean RUT, for example, uses a `V` block for the check digit, which accepts digits and the letter K. The builder shows the preset blocks next to the token table.
+
+The **Test the mask** field lets you type a test value and see the result before publishing.
+
+#### How the value is stored and displayed
+
+The value is stored and returned by the API **always unformatted**: the mask is a capture aid, it doesn't change the data. The formatted value is displayed in the administration panel, in the submission detail, and in [Liquid](/en/platform/channels/liquid-markup) templates.
+
+:::warning Rules are evaluated against the unformatted value
+The [conditional logic](/en/platform/customers/origination.html#conditional-logic) of originations and the [segment](/en/platform/customers/segments.html) filters compare against the stored value, not against the one the user sees. A rule written as `12.345.678-9` never matches if the stored value is `123456789`. The editor shows a notice with both forms of the value when you pick a masked field.
+:::
+
+#### Considerations
+
+- **The mask is also validated on the server.** It can't be bypassed from the API or from the agent panel: a value that doesn't match the pattern or the expression is rejected with a validation error.
+- **In RegExp mode, the expression filters every keystroke**, so it must also accept partially typed values. Use `*` or `?` instead of `+`: write `^[a-z]?0*$` and not `[a-z]0+`. An expression that rejects every single-character value leaves the field impossible to type into, and the builder warns you about it.
+- **Pattern mode disables the minimum and maximum length**, because the pattern already defines length and format. The values you had configured are kept and become active again if you choose **No mask** or **RegExp**.
+- **Number mode keeps the minimum and maximum active**, and uses them to prevent the user from typing a value out of range. It accepts up to 16 digits; a Number field without a mask has no such cap.
+- **The mask and the regular expression complement each other.** The mask restricts the shape while typing; the regular expression validates the complete value on submit.
+- **A mask doesn't validate meaning.** An identity document preset guarantees the shape of the data, not that the check digit is correct or that the date exists.
+- **Values stored before configuring the mask are neither migrated nor reformatted.** If the user edits an answer whose value doesn't match the new mask, the field is edited without the mask and server validation still applies.
+
+### Links in form texts
+
+Field titles, their instructions, and alternative labels accept links written with HTML, for cases like pointing to the terms and conditions or the privacy policy without taking the user out of the form:
+
+```html
+I accept the <a href="/terms" target="_blank">terms and conditions</a>
+```
+
+This applies both to forms and to the Input tasks of originations, which share the same rendering.
+
+What you can write is limited:
+
+| | What is accepted |
+|---|---|
+| Tags | Only `a`. Any other tag is discarded and only its text remains. |
+| Attributes | `href`, `target`, `rel`, and `title`. |
+| `target` values | `_blank` and `_self`. `_top` and `_parent` are discarded, because they break a form embedded in a widget. |
+| `href` schemes | `http`, `https`, `mailto`, and `tel`, plus relative paths and anchors. `javascript:`, `data:`, and any other are discarded. |
+| `rel` | On links with `target="_blank"`, `noopener noreferrer` is enforced, whether you write it or not. |
+| `script` and `style` | They are removed along with their content. |
+
+The link renders as such in the site form, in the summaries of the confirmation and validation tasks of an origination, and in the agent view form. On every other surface the text comes out plain, without markup: the submission detail in the panel, the CSV and XLS export, the notification email, the API, and Liquid templates.
+
+:::tip Where to put the links
+The natural place is the question title or its instructions. They also work in alternative labels, except in the **Dropdown** and **Nested questions** fields, where the browser doesn't accept markup inside an option and the label comes out as text. Besides, the label of an alternative is stored as a copy in the user's answer, so it is better to keep it short and avoid the semicolon, which is the level separator in nested questions.
+:::
+
 ### Form properties
 
 This section allows you to change the form's general behavior. It is similar to the creation view of a new form, but it adds a couple of new options, as detailed below.

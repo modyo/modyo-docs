@@ -76,6 +76,13 @@ In this section, you can edit the values of the selected task. You can find thes
 - **Name**: The name of the task that will be visible to the user.
 - **Identifier**: A unique identifier that will be included in the origination URL.
 - **Description**: A brief explanatory text about the task, which will be visible to the user.
+- **Lock answers on completion**: Prevents the answers of that task from being modified once it has been completed. It is available in every task type and comes unchecked, both in new tasks and in the ones you already had configured.
+
+:::tip Locked answers and rejected reviews
+**Lock answers on completion** is independent from the **Validation rules** of validation tasks: both can coexist in the same task.
+
+The lock applies on the site flow, in the agent view, and in the [administration API](/en/platform/core/api.html), which responds with an error when trying to write answers of a locked task. If the task has a rejected validation review, the lock is suspended while the user corrects their answer, and it is re-enabled when the task is completed again. To allow editing without unchecking the option, [reopen the task response](/en/platform/customers/origination.html#reopen-tasks-of-a-submission).
+:::
 
 :::warning Editing identifiers
 When editing an already saved step, task, or field, the **Identifier** field appears locked with a padlock. To modify it, you must press the padlock and confirm the **Unlock Identifier field** warning: changing an identifier breaks references to it from external systems or through the Liquid SDK and, in the case of fields, submissions can no longer be searched by that field. The identifier is only generated automatically from the name during creation; when editing, changing the name doesn't modify it.
@@ -93,6 +100,11 @@ Origination supports all types of input available in forms. You can see the full
 
 In addition, Input tasks offer three field types that **exist only in Origination** and are not available in forms: **Document**, **Identity document**, and **Selfie**. All three are described in [Specialized file upload fields](/en/platform/customers/origination.html#specialized-file-upload-fields).
 
+The **Add** tab groups the fields under two headings:
+
+- **Content fields**: Fields that only display information to the user and don't capture an answer. For now the group has a single option, [Rich text](/en/platform/customers/origination.html#rich-text).
+- **Input fields**: The rest of the fields, the ones that do ask the user for data.
+
 
 #### Edit fields
 
@@ -102,7 +114,27 @@ When selecting a field, you can modify its properties by going to the **Edit** t
 - **Required**: Determines if the field is mandatory or not. If activated, the user must complete it before continuing with the flow.
 - **Field instructions**: Provides additional guidance for the user to understand how to complete the field. These instructions are displayed directly on the interface, below the field.
 - **Add instructions pop-up field**: Adds a help icon next to the field. When you click on this icon, a message appears with additional information or useful tips related to the field.
-- **Options**: Additional properties according to the type of field selected.
+- **Options**: Additional properties according to the type of field selected. Among them is the **Input mask** of the **Single line text** and **Number** fields, which restricts what the user can type and formats the value as they write. It is configured the same way as in forms: check [Input masks](/en/platform/customers/forms.html#input-masks).
+
+#### Rich text
+
+**Rich text** is a content field: it displays a block of text inside the step and doesn't generate any answer. It is useful for instructions, disclaimers, summaries, or any informative content you want to place between the fields without it counting as a question to answer.
+
+To add it, select an Input task, go to the **Add** tab, and choose **Rich text** in the **Content fields** group. When you select it, the **Edit** tab shows a rich text editor, the same one used by Content fields, with only the **Field title** and the **Identifier** as properties: it has no **Required**, no instructions, and no instructions pop-up.
+
+The content accepts HTML and [Liquid](/en/platform/channels/liquid-markup), with access to the context available at that point of the flow: the submission, the task, and the user. For example:
+
+```liquid
+<p>Hi {{ user.first_name }}, review your data before continuing.</p>
+```
+
+Keep the following in mind:
+
+- The field is reordered along with the rest of the fields of the step, by dragging it like any other.
+- It doesn't appear in the submission data: it is not exported, it doesn't reach the API, and it is not shown in the **Fields** tab of the submission nor in the summaries of the **Confirmation** and **Validation** tasks.
+- It is rendered both in the site form and in the agent view form.
+- In [conditional logic](/en/platform/customers/origination.html#conditional-logic) you can show or hide it with a rule, but you can't use it as a condition, because it has no value to compare.
+- The content of each field accepts up to about 64 KB of HTML. If you exceed it, the field isn't saved and the platform shows a validation error; nothing is silently truncated.
 
 #### Specialized file upload fields
 
@@ -141,15 +173,18 @@ Extraction goes through the **Pending**, **Processing**, **Completed**, **Failed
 
 ##### Identity document
 
-Captures an identity document and extracts its data. It has three specific options:
+Captures an identity document and extracts its data. It has these specific options:
 
 - **Accepted document types**: Checkboxes for **ID card (front and back photos)** and **Passport (single photo)**. You cannot leave both unchecked. A field created from the builder starts with only the ID card checked; one created through the API without specifying types accepts both.
-- **Default country**: Sets the country of the document. If you leave it as **The user selects the country**, the user picks the country when answering; if you choose one, the selector is not shown to them and the country is fixed.
+- **Allow file upload**: The camera is always available. Enable this option if you also want the user to be able to pick an image already stored on their device. It is off by default.
+- **Request the document country**: Shows the country selector in the form. It is off by default, and while it is off the form doesn't ask for the country and the server discards any country it receives. Turning it on reveals two more options:
+  - **Default country**: Sets the country of the document. If you leave it as **The user selects the country**, the user picks the country when answering; if you choose one, the selector is not shown to them and the country is fixed.
+  - **Require the country**: Makes the country mandatory. The field is marked with an asterisk and the user cannot move forward without filling it in, no matter whether the document was captured with the camera or uploaded as a file.
 - **Extract document data (OCR)**: Enables extraction of the document data. It is off by default.
 
 The field accepts `jpg`, `jpeg`, and `png` images, and that format is not configurable.
 
-When answering, the user chooses between **Use camera** and **Upload file**. With an ID card, the flow has two steps: first the **Front side** and then the **Back side**, with a framing guide for each. When the first side is done, the screen returns to the start with the title of the remaining side, and the user has to press **Use camera** or **Upload file** again; the camera does not open on its own. With a passport, a single photo of the data page is requested. The **Redo front** and **Redo back** options delete the image already uploaded, not just the preview.
+When answering, the user captures the document with **Use camera** and, if you enabled **Allow file upload**, they can also use **Upload file**. With an ID card, the flow has two steps: first the **Front side** and then the **Back side**, with a framing guide for each. When the first side is done, the screen returns to the start with the title of the remaining side, and the user has to press the capture option again; the camera does not open on its own. With a passport, a single photo of the data page is requested. The **Redo front** and **Redo back** options delete the image already uploaded, not just the preview.
 
 The country has a concrete effect on extraction: it is used to interpret the dates on the document. If the country is not set and a date is ambiguous — for example `03/04/1990`, where both numbers could be month or day — the date is stored exactly as it came, without normalizing. So when you know your users' country in advance, it is worth fixing it.
 
@@ -157,11 +192,16 @@ Extraction goes through the **Pending**, **Processing**, **Completed**, and **Fa
 
 ##### Selfie
 
-Captures a photo of the user's face. It has a single specific option:
+Captures a photo of the user's face. It has two specific options:
 
+- **Allow file upload**: The camera is always available. Enable this option if you also want the user to be able to pick an image already stored on their device. It is off by default, which is the recommended setting when you need a photo taken on the spot.
 - **Face liveness check**: Adds a challenge that confirms there is a real person in front of the camera. It is off by default.
 
-The field accepts `jpg`, `jpeg`, and `png` images, and that format is not configurable. The user can take the photo with the camera or upload a file; there is no way to restrict it to one path. The front camera is shown mirrored, and the image is saved exactly as it looks in the preview.
+The field accepts `jpg`, `jpeg`, and `png` images, and that format is not configurable. The front camera is shown mirrored, and the image is saved exactly as it looks in the preview.
+
+:::warning The upload restriction is interface only
+**Allow file upload** decides which options the user sees in the form, but the camera and the file picker send the same image to the same endpoint, so the server cannot tell them apart. If what you need is to make sure the person is really in front of the camera, the effective control is the **Face liveness check**, not this toggle.
+:::
 
 When the liveness check is enabled, its block appears **after** the user has captured or uploaded the selfie, with the **Start liveness check** button. Completing it is never mandatory: even if you mark the field as required, the only mandatory part is the photo.
 
@@ -175,12 +215,18 @@ If the user captures the selfie again, the previous check is discarded and they 
 
 ##### Where the result is shown
 
-The extraction status and the liveness check status **are not shown today on any administration screen**. The **Documents** tab of the submission lists the files of all three fields with their name, size, and thumbnail, and in the task detail the Identity document field shows the document type, the country, and the links to **Front side** and **Back side**; the Document and Selfie fields look the same as a File field.
+The **Fields** tab of the submission shows the OCR result of the **Identity document** field when the **Extract document data (OCR)** option is enabled: the extraction status, the data read from the document — **Full name**, **Document number**, **Document type**, **Date of birth**, **Place of birth**, **Sex**, **Country**, **Issue date**, and **Expiration date** — and, if the extraction failed, the reason in readable text instead of the error code.
 
-The results are available for integration:
+The rest stays the same: the **Documents** tab of the submission lists the files of all three fields with their name, size, and thumbnail, and in the task detail the Identity document field shows the document type, the country, and the links to **Front side** and **Back side**. The extraction status of the **Document** field and the liveness status of the **Selfie** field are not shown on the administration screens.
+
+The results are also available for integration:
 
 - In **Liquid templates**, the answer of a Document field returns the file, the extraction status, and the extracted text; the answer of a Selfie field returns the file, the liveness status, and the confidence level.
 - In the **Admin API**, in addition to the above, the error code is exposed when extraction or the check fails.
+
+:::warning The OCR result follows the toggle
+In the **Identity document** field, the extraction status, the data read, and the error code are returned by the API and by Liquid only while **Extract document data (OCR)** is enabled. If you turn the option off, those fields stop appearing in answers of that type, not just on the administration screen. The **Document** field doesn't change: it keeps returning its own status and extracted text.
+:::
 
 :::tip Liveness check rejected with no reason
 A **Rejected** check with no associated error code means the confidence level fell below the **Confidence Threshold (%)** configured in the integration. It is the most frequent case and does not indicate a technical failure.
@@ -312,6 +358,47 @@ To store information, the data must use valid JSON format; format errors will no
 #### Using Liquid in code snippets
 
 Code snippets can use Liquid objects to access internal submission data and personalize the user experience.
+
+#### Show a file from the submission
+
+When an agent task requires the operator to review a file the user uploaded earlier in the flow — a bank statement, a payslip, the back of an identity document — the link can't be written by hand. The agent form lives in an isolated iframe that can't open new tabs or start downloads, so an `<a target="_blank">` or a `window.open()` against the file URL are blocked by the browser.
+
+That's what the `file_link` Liquid filter is for: it builds the right link and lets the platform open the file from the window that contains the iframe:
+
+```liquid
+{{ submission.tasks.documents.fields.bank_statement | file_link }}
+```
+
+The filter prints a link with the file name as its text. To download the file instead of opening it, pass `'download'`:
+
+```liquid
+{{ submission.tasks.documents.fields.bank_statement | file_link: 'download' }}
+```
+
+With the **Document**, **Identity document**, and **Selfie** fields, the answer exposes the file in `file`:
+
+```liquid
+{{ submission.tasks.identity.fields.id_card.file | file_link }}
+```
+
+Keep the following in mind:
+
+- The filter is available on the three surfaces that render Liquid inside the flow: **code snippets**, **pending review** tasks, and [**Rich text**](/en/platform/customers/origination.html#rich-text) fields.
+- If the answer has no file, the filter prints nothing. It doesn't raise an error or leave a broken link.
+- On the site origination page the link works natively. Outside the admin iframe, the browser ignores the `'download'` mode because the file is served from another origin: the file opens in a new tab instead of being downloaded.
+- Viewing files from an agent task requires the same permission as opening the task, **View Submission Tasks**.
+
+If you need to open the file from your own JavaScript — for example, with a button instead of a link — the iframe exposes `window.openSubmissionFile(uuid, download)`, where `uuid` is the file identifier that `file_link` leaves in the `data-submission-file` attribute of the link:
+
+```html
+<button type="button" onclick="openSubmissionFile('{{ submission.tasks.documents.fields.bank_statement.uuid }}')">
+  View the bank statement
+</button>
+```
+
+:::tip If the browser blocks the tab
+The file opens in the window that contains the iframe and needs a click from the operator. If the pop-up blocker stops it, the platform shows a notice with a link to open the file manually. That's why it is better to trigger `openSubmissionFile` from the click and not from the snippet load.
+:::
 
 #### Code Snippets Example
 
@@ -824,8 +911,12 @@ In addition to the search, you can narrow down the submission list with the foll
 
 - **Date range**: Filters by the creation date of the submission.
 - **Status**: Filters by the current status of the submission: **Not started**, **Pending**, **Completed**, or **Canceled**.
+- **Due in**: Filters by the [due status](/en/platform/customers/origination.html#submission-due-dates) of the submission: **On track**, **Due soon**, or **Overdue**.
 - **Assigned**: Shows the submissions assigned to the selected administrator.
 - **Segment**: Shows the submissions of users who belong to the selected [segment](/en/platform/customers/segments.html).
+
+:::tip The Due in filter only reaches pending submissions
+The due status only applies while the submission is **Pending**, so the **Due in** filter leaves out the **Completed**, **Canceled**, and **Not started** ones. That is what you want most of the time: a submission canceled automatically for being overdue keeps its overdue mark, but there is nothing left to manage in it. To find those, filter by **Status**.
 
 #### Assign submission
 
