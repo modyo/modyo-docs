@@ -76,6 +76,13 @@ En este apartado se pueden editar los valores de la tarea seleccionada, puedes e
 - **Nombre**: El nombre de la tarea que será visible para el usuario.
 - **Identificador**: Un identificador único que se incluirá en la URL de la originación.
 - **Descripción**: Un breve texto explicativo sobre la tarea, que será visible para el usuario.
+- **Bloquear las respuestas al completar**: Impide que las respuestas de esa tarea se modifiquen una vez que quedó completada. Está disponible en todos los tipos de tarea y viene desmarcada, tanto en las tareas nuevas como en las que ya tenías configuradas.
+
+:::tip Bloqueo de respuestas y revisiones rechazadas
+**Bloquear las respuestas al completar** es independiente de las **Reglas de validación** de las tareas de validación: las dos pueden convivir en la misma tarea.
+
+El bloqueo aplica en el flujo del sitio, en la vista de agente y en la [API de administración](/es/platform/core/api.html), que responde con un error al intentar escribir respuestas de una tarea bloqueada. Si la tarea tiene una revisión de validación rechazada, el bloqueo se suspende mientras el usuario corrige su respuesta y se reactiva cuando la tarea se vuelve a completar. Para habilitar la edición sin desmarcar la opción, [reabre la respuesta a la tarea](/es/platform/customers/origination.html#reabrir-tareas-de-una-respuesta).
+:::
 
 :::warning Edición de identificadores
 Al editar un paso, una tarea o un campo ya guardados, el campo **Identificador** aparece bloqueado con un candado. Para modificarlo debes presionar el candado y confirmar la advertencia **Desbloquear campo identificador**: cambiar un identificador rompe las referencias desde sistemas externos o mediante el SDK de Liquid y, en el caso de los campos, las respuestas dejan de poder buscarse por ese campo. El identificador solo se genera automáticamente a partir del nombre durante la creación; al editar, cambiar el nombre no lo modifica.
@@ -93,6 +100,11 @@ Origination soporta todos los tipos de entrada disponibles en formularios. Puede
 
 Además, las tareas Input ofrecen tres tipos de campo que **solo existen en Origination** y no están disponibles en los formularios: **Documento**, **Documento de identidad** y **Selfie**. Los tres se describen en [Campos especializados de subida de archivos](/es/platform/customers/origination.html#campos-especializados-de-subida-de-archivos).
 
+La pestaña **Añadir** agrupa los campos en dos encabezados:
+
+- **Campos de contenido**: Campos que solo muestran información al usuario y no capturan una respuesta. Por ahora el grupo tiene una sola opción, [Texto enriquecido](/es/platform/customers/origination.html#texto-enriquecido).
+- **Campos de input**: El resto de los campos, los que sí piden un dato al usuario.
+
 
 #### Editar campos
 
@@ -102,7 +114,27 @@ Al seleccionar un campo, puedes modificar sus propiedades al dirigirte a  la pes
 - **Requerido**: Determina si el campo es obligatorio o no. Si está activado, el usuario deberá completarlo antes de continuar con el flujo.
 - **Instrucciones del campo**: proporciona orientación adicional para que el usuario comprenda cómo completar el campo. Estas instrucciones se muestran directamente en la interfaz, debajo del campo.
 - **Agregar campo Pop-up de instruciones**: Agrega un ícono de ayuda junto al campo. Al hacer clic en este ícono, se despliega un mensaje con información adicional o consejos útiles relacionados con el campo.
-- **Opciones**: Propiedades adicionales de acuerdo al tipo de campo seleccionado.
+- **Opciones**: Propiedades adicionales de acuerdo al tipo de campo seleccionado. Entre ellas está la **Máscara de entrada** de los campos **Texto simple** y **Número**, que restringe lo que el usuario puede teclear y formatea el valor mientras escribe. Se configura igual que en los formularios: revisa [Máscaras de entrada](/es/platform/customers/forms.html#mascaras-de-entrada).
+
+#### Texto enriquecido
+
+El **Texto enriquecido** es un campo de contenido: muestra un bloque de texto dentro del paso y no genera ninguna respuesta. Sirve para instrucciones, disclaimers, resúmenes o cualquier contenido informativo que quieras intercalar entre los campos sin que cuente como una pregunta por responder.
+
+Para agregarlo, selecciona una tarea Input, ve a la pestaña **Añadir** y elige **Texto enriquecido** en el grupo **Campos de contenido**. Al seleccionarlo, la pestaña **Editar** muestra un editor de texto enriquecido, el mismo que usan los campos de Content, con solo el **Título del campo** y el **Identificador** como propiedades: no tiene **Requerido**, ni instrucciones, ni pop-up de instrucciones.
+
+El contenido acepta HTML y [Liquid](/es/platform/channels/liquid-markup), con acceso al contexto disponible en ese punto del flujo: la respuesta, la tarea y el usuario. Por ejemplo:
+
+```liquid
+<p>Hola {{ user.first_name }}, revisa los datos antes de continuar.</p>
+```
+
+Ten en cuenta lo siguiente:
+
+- El campo se reordena con el resto de los campos del paso, arrastrándolo como cualquier otro.
+- No aparece en los datos de la respuesta: no se exporta, no llega a la API y no se ve en la pestaña **Campos** de la respuesta ni en los resúmenes de las tareas de **Confirmación** y **Validación**.
+- Se renderiza tanto en el formulario del sitio como en el formulario de la vista de agente.
+- En la [lógica condicional](/es/platform/customers/origination.html#logica-condicional) puedes mostrarlo u ocultarlo con una regla, pero no puedes usarlo como condición, porque no tiene un valor que comparar.
+- El contenido de cada campo admite hasta unos 64 KB de HTML. Si te pasas, el campo no se guarda y la plataforma muestra un error de validación; nada se recorta en silencio.
 
 #### Campos especializados de subida de archivos
 
@@ -141,15 +173,18 @@ La extracción pasa por los estados **Pendiente**, **Procesando**, **Completada*
 
 ##### Documento de identidad
 
-Captura un documento de identidad y extrae sus datos. Tiene tres opciones propias:
+Captura un documento de identidad y extrae sus datos. Tiene estas opciones propias:
 
 - **Tipos de documento aceptados**: Casillas para **Cédula de identidad (fotos de frente y reverso)** y **Pasaporte (una foto)**. No puedes dejar las dos desmarcadas. Un campo creado desde el constructor nace con solo la cédula marcada; uno creado por la API sin especificar tipos acepta ambos.
-- **País por defecto**: Fija el país del documento. Si lo dejas en **El usuario selecciona el país**, el usuario elige el país al responder; si eliges uno, el selector no se le muestra y el país queda fijado.
+- **Permitir subir un archivo**: La cámara siempre está disponible. Activa esta opción si además quieres que el usuario pueda elegir una imagen ya guardada en su dispositivo. Viene desactivada.
+- **Solicitar el país del documento**: Muestra el selector de país en el formulario. Viene desactivada, y con ella apagada el formulario no pregunta el país y el servidor descarta cualquier país que llegue. Al activarla aparecen dos opciones más:
+  - **País por defecto**: Fija el país del documento. Si lo dejas en **El usuario selecciona el país**, el usuario elige el país al responder; si eliges uno, el selector no se le muestra y el país queda fijado.
+  - **Requerir el país**: Hace obligatorio el país. El campo se marca con asterisco y el usuario no puede avanzar sin completarlo, sin importar si el documento se capturó con la cámara o se subió como archivo.
 - **Extraer datos del documento (OCR)**: Activa la extracción de los datos del documento. Viene desactivada.
 
 El campo acepta imágenes `jpg`, `jpeg` y `png`, y ese formato no es configurable.
 
-Al responder, el usuario elige entre **Usar cámara** y **Subir archivo**. Con una cédula, el flujo es en dos pasos: primero el **Frente** y luego el **Reverso**, con una guía de encuadre en cada uno. Al terminar el primer lado la pantalla vuelve al inicio con el título del lado que falta, y el usuario debe pulsar de nuevo **Usar cámara** o **Subir archivo**; la cámara no se abre sola. Con un pasaporte se pide una sola foto de la página de datos. Las opciones **Rehacer frente** y **Rehacer reverso** eliminan la imagen ya subida, no solo la vista previa.
+Al responder, el usuario captura el documento con **Usar cámara** y, si activaste **Permitir subir un archivo**, también puede usar **Subir archivo**. Con una cédula, el flujo es en dos pasos: primero el **Frente** y luego el **Reverso**, con una guía de encuadre en cada uno. Al terminar el primer lado la pantalla vuelve al inicio con el título del lado que falta, y el usuario debe pulsar de nuevo la opción de captura; la cámara no se abre sola. Con un pasaporte se pide una sola foto de la página de datos. Las opciones **Rehacer frente** y **Rehacer reverso** eliminan la imagen ya subida, no solo la vista previa.
 
 El país tiene un efecto concreto sobre la extracción: se usa para interpretar las fechas del documento. Si el país no está definido y una fecha es ambigua —por ejemplo `03/04/1990`, donde ambos números pueden ser mes o día—, la fecha se guarda tal como venía, sin normalizar. Por eso, cuando sabes de antemano el país de tus usuarios, conviene fijarlo.
 
@@ -157,11 +192,16 @@ La extracción pasa por los estados **Pendiente**, **Procesando**, **Completada*
 
 ##### Selfie
 
-Captura una foto del rostro del usuario. Tiene una sola opción propia:
+Captura una foto del rostro del usuario. Tiene dos opciones propias:
 
+- **Permitir subir un archivo**: La cámara siempre está disponible. Activa esta opción si además quieres que el usuario pueda elegir una imagen ya guardada en su dispositivo. Viene desactivada, que es lo recomendado cuando necesitas una foto tomada en el momento.
 - **Verificación de vida (liveness)**: Agrega un desafío que confirma que hay una persona real frente a la cámara. Viene desactivada.
 
-El campo acepta imágenes `jpg`, `jpeg` y `png`, y ese formato no es configurable. El usuario puede tomarse la foto con la cámara o subir un archivo; no hay forma de restringirlo a una sola vía. La cámara frontal se muestra en espejo, y la imagen se guarda tal como se ve en la vista previa.
+El campo acepta imágenes `jpg`, `jpeg` y `png`, y ese formato no es configurable. La cámara frontal se muestra en espejo, y la imagen se guarda tal como se ve en la vista previa.
+
+:::warning La restricción de subida es de interfaz
+**Permitir subir un archivo** decide qué opciones ve el usuario en el formulario, pero la cámara y el selector de archivos envían la misma imagen al mismo endpoint, así que el servidor no puede distinguirlas. Si lo que necesitas es asegurar que la persona está realmente frente a la cámara, el control efectivo es la **Verificación de vida (liveness)**, no este toggle.
+:::
 
 Cuando la verificación de vida está activa, el bloque correspondiente aparece **después** de que el usuario haya capturado o subido la selfie, con el botón **Iniciar verificación de vida**. Completarla nunca es obligatorio: aunque marques el campo como requerido, lo único obligatorio es la foto.
 
@@ -175,12 +215,18 @@ Si el usuario vuelve a capturar la selfie, la verificación anterior se descarta
 
 ##### Dónde se ve el resultado
 
-El estado de la extracción y el de la verificación de vida **no se muestran hoy en las pantallas de administración**. La pestaña **Documentos** de la respuesta lista los archivos de los tres campos con su nombre, tamaño y miniatura, y en el detalle de la tarea el campo Documento de identidad muestra el tipo de documento, el país y los enlaces a **Frente** y **Reverso**; los campos Documento y Selfie se ven igual que un campo Archivo.
+La pestaña **Campos** de la respuesta muestra el resultado del OCR del campo **Documento de identidad** cuando la opción **Extraer datos del documento (OCR)** está activa: el estado de la extracción, los datos leídos del documento —**Nombre completo**, **Número de documento**, **Tipo de documento**, **Fecha de nacimiento**, **Lugar de nacimiento**, **Sexo**, **País**, **Fecha de emisión** y **Fecha de vencimiento**— y, si la extracción falló, el motivo en texto legible en lugar del código de error.
 
-Los resultados sí quedan disponibles para integrar:
+El resto sigue igual: la pestaña **Documentos** de la respuesta lista los archivos de los tres campos con su nombre, tamaño y miniatura, y en el detalle de la tarea el campo Documento de identidad muestra el tipo de documento, el país y los enlaces a **Frente** y **Reverso**. El estado de la extracción del campo **Documento** y el de la verificación de vida del campo **Selfie** no se muestran en las pantallas de administración.
+
+Los resultados quedan además disponibles para integrar:
 
 - En **plantillas Liquid**, la respuesta de un campo Documento entrega el archivo, el estado de la extracción y el texto extraído; la de un campo Selfie entrega el archivo, el estado de la verificación de vida y el nivel de confianza.
 - En la **API de administración**, además de lo anterior, se expone el código de error cuando la extracción o la verificación fallan.
+
+:::warning El resultado del OCR sigue al toggle
+En el campo **Documento de identidad**, el estado de la extracción, los datos leídos y el código de error se entregan por la API y por Liquid solo cuando **Extraer datos del documento (OCR)** está activa. Si desactivas la opción, esos campos dejan de aparecer en las respuestas de ese tipo, no solo en la pantalla de administración. El campo **Documento** no cambia: sigue entregando su propio estado y su texto extraído.
+:::
 
 :::tip Verificación de vida rechazada sin motivo
 Una verificación **Rechazada** sin código de error asociado significa que el nivel de confianza quedó por debajo del **Umbral de confianza (%)** configurado en la integración. Es el caso más frecuente y no indica una falla técnica.
@@ -317,6 +363,47 @@ Los code snippets pueden utilizar objetos de liquid para acceder a datos interno
 En un flujo de originación, cada respuesta representa el proceso en curso de un usuario específico.
 
 Puedes aprender más sobre [Objetos Liquid](/es/platform/channels/liquid-markup/objects) en nuestra documentación.
+
+#### Mostrar un archivo de la respuesta
+
+Cuando una tarea de agente necesita que el operador revise un archivo que el usuario subió antes en el flujo —un estado de cuenta, una liquidación de sueldo, el reverso de un documento—, el enlace no puede escribirse a mano. El formulario del agente vive en un iframe aislado que no puede abrir pestañas nuevas ni iniciar descargas, así que un `<a target="_blank">` o un `window.open()` contra la URL del archivo quedan bloqueados por el navegador.
+
+Para eso está el filtro Liquid `file_link`, que arma el enlace correcto y deja que la plataforma se encargue de abrir el archivo desde la ventana que contiene al iframe:
+
+```liquid
+{{ submission.tasks.documentos.fields.estado_de_cuenta | file_link }}
+```
+
+El filtro imprime un enlace con el nombre del archivo como texto. Para que el archivo se descargue en vez de abrirse, pásale `'download'`:
+
+```liquid
+{{ submission.tasks.documentos.fields.estado_de_cuenta | file_link: 'download' }}
+```
+
+Con los campos **Documento**, **Documento de identidad** y **Selfie**, la respuesta expone el archivo en `file`:
+
+```liquid
+{{ submission.tasks.identidad.fields.cedula.file | file_link }}
+```
+
+Considera lo siguiente:
+
+- El filtro está disponible en las tres superficies que renderizan Liquid dentro del flujo: los **snippets de código**, las tareas de **revisión pendiente** y los campos de [**Texto enriquecido**](/es/platform/customers/origination.html#texto-enriquecido).
+- Si la respuesta no tiene archivo, el filtro no imprime nada. No produce un error ni deja un enlace roto.
+- En la página de originación del sitio el enlace funciona de forma nativa. Fuera del iframe del panel, el navegador ignora el modo `'download'` porque el archivo se sirve desde otro origen: el archivo se abre en una pestaña nueva en vez de descargarse.
+- Ver los archivos desde una tarea de agente requiere el mismo permiso que abrir la tarea, **Ver Tareas de la Respuesta**.
+
+Si necesitas abrir el archivo desde tu propio JavaScript —por ejemplo, con un botón en vez de un enlace—, el iframe expone `window.openSubmissionFile(uuid, download)`, donde `uuid` es el identificador del archivo que `file_link` deja en el atributo `data-submission-file` del enlace:
+
+```html
+<button type="button" onclick="openSubmissionFile('{{ submission.tasks.documentos.fields.estado_de_cuenta.uuid }}')">
+  Ver el estado de cuenta
+</button>
+```
+
+:::tip Si el navegador bloquea la pestaña
+La apertura ocurre en la ventana que contiene al iframe y necesita un clic del operador. Si el bloqueador de ventanas emergentes la frena, la plataforma muestra un aviso con un enlace para abrir el archivo manualmente. Por eso conviene disparar `openSubmissionFile` desde el clic y no desde la carga del snippet.
+:::
 
 #### Ejemplo de Code Snippets
 
@@ -825,8 +912,12 @@ Además de la búsqueda, puedes acotar el listado de respuestas con los siguient
 
 - **Rango de fechas**: Filtra por la fecha de creación de la respuesta.
 - **Estado**: Filtra por el estado actual de la respuesta: **No Iniciada**, **Pendiente**, **Completada** o **Cancelada**.
+- **Vence en**: Filtra por el [estado de vencimiento](/es/platform/customers/origination.html#vencimiento-de-las-respuestas) de la respuesta: **A tiempo**, **Vence pronto** o **Vencido**.
 - **Asignado**: Muestra las respuestas asignadas al administrador seleccionado.
 - **Segmento**: Muestra las respuestas de los usuarios que pertenecen al [segmento](/es/platform/customers/segments.html) seleccionado.
+
+:::tip El filtro Vence en solo alcanza a las respuestas pendientes
+El estado de vencimiento solo aplica mientras la respuesta está **Pendiente**, así que el filtro **Vence en** deja fuera las **Completada**, las **Cancelada** y las **No Iniciada**. Es lo que buscas la mayoría de las veces: una respuesta cancelada automáticamente por vencimiento conserva su marca de vencida, pero ya no hay nada que gestionar en ella. Para encontrar esas, filtra por **Estado**.
 
 #### Asignar respuesta
 

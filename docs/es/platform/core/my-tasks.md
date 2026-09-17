@@ -19,6 +19,14 @@ La bandeja reúne dos orígenes de trabajo distintos:
 
 Para abrir la bandeja, haz clic en el ícono **Mis tareas** del menú lateral de Modyo Platform.
 
+Junto al ítem del menú aparece un contador con el total de tareas **Pendiente** que tienes, sin importar su tipo, con el mismo comportamiento del contador de **Validaciones**. Cuando no tienes nada pendiente, el contador no muestra ningún número.
+
+El contador se actualiza solo, sin recargar la página: se refresca cada minuto, al volver a la pestaña del navegador y cada vez que el listado de **Mis tareas** recarga sus filas. Mientras la pestaña está en segundo plano el refresco se detiene y se retoma al volver a ella.
+
+:::tip Color del contador
+El contador usa los **Colores del tema** configurados en la cuenta. Si la cuenta no definió el par de colores de la navegación, toma el mismo color que el contador de **Validaciones**.
+:::
+
 El listado tiene estos filtros:
 
 - **Tipo de tarea**: muestra solo las tareas de **Revisión del flujo de trabajo** o solo las de **Revisión de validación**.

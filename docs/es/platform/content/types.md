@@ -95,8 +95,18 @@ Este campo te permite ingresar texto plano en varias líneas, sin opciones de fo
 
 Este campo no ofrece la validación **Único**: la unicidad solo está disponible en [Texto de una línea](#texto-de-una-linea).
 
+Al imprimir el valor de este campo con Liquid, Modyo lo sanitiza con una lista de etiquetas y atributos permitidos, en vez de escaparlo completo como hacía la versión 10.2. El marcado benigno que hayas guardado se renderiza, y lo que queda fuera de la lista se descarta:
+
+- **Etiquetas permitidas**: `a`, `abbr`, `acronym`, `address`, `b`, `big`, `blockquote`, `br`, `cite`, `code`, `dd`, `del`, `dfn`, `div`, `dl`, `dt`, `em`, `h1` a `h6`, `hr`, `i`, `img`, `ins`, `kbd`, `li`, `mark`, `ol`, `p`, `pre`, `samp`, `small`, `span`, `strong`, `sub`, `sup`, `time`, `tt`, `ul` y `var`.
+- **Atributos permitidos**: `abbr`, `alt`, `cite`, `class`, `datetime`, `height`, `href`, `lang`, `name`, `src`, `title`, `width` y `xml:lang`.
+- **Esquemas de URL permitidos**: `http`, `https`, `mailto` y `tel`, además de las rutas relativas. Cualquier otro esquema, incluidos `javascript:` y `data:`, se descarta.
+
+Todo lo demás —`script`, `style`, `iframe`, `form`, los atributos de evento como `onclick` y los estilos en línea— se elimina antes de publicar la página.
+
 :::warning Atención
-Desde la versión 10.2, el valor de este campo se entrega escapado como HTML al imprimirlo con Liquid: las etiquetas que hayas escrito aparecen como texto literal en lugar de interpretarse como marcado. Si necesitas publicar HTML desde una entrada, usa un campo [Texto enriquecido](#texto-enriquecido). Revisa las plantillas que venían usando este campo para inyectar HTML.
+La sanitización ocurre al renderizar con Liquid. Las [APIs de contenido](/es/platform/content/public-api-reference.html) siguen entregando el valor tal como se guardó, así que una aplicación headless que consuma este campo tiene que sanitizarlo por su cuenta antes de inyectarlo en el DOM.
+
+Si necesitas publicar HTML sin restricciones desde una entrada, usa un campo [Texto enriquecido](#texto-enriquecido).
 :::
 
 ### Texto enriquecido

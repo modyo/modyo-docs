@@ -19,6 +19,14 @@ The inbox brings together two different sources of work:
 
 To open the inbox, click the **My tasks** icon in the Modyo Platform side menu.
 
+Next to the menu item there is a counter with the total number of **Pending** tasks you have, regardless of their type, behaving just like the **Validations** counter. When you have nothing pending, the counter shows no number.
+
+The counter updates on its own, without reloading the page: it refreshes every minute, when you come back to the browser tab, and every time the **My tasks** list reloads its rows. While the tab is in the background the refresh stops, and it resumes when you return to it.
+
+:::tip Counter color
+The counter uses the **Theme colors** configured in the account. If the account didn't define the navigation color pair, it takes the same color as the **Validations** counter.
+:::
+
 The list has these filters:
 
 - **Task type**: shows only **Workflow review** tasks or only **Validation review** tasks.
