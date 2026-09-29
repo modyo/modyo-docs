@@ -167,7 +167,7 @@ Los disparadores disponibles son los 24 eventos de usuario final del reino:
 | Respuesta de formulario actualizada | `form_response_updated_log` | Se actualiza una respuesta de formulario ya enviada. |
 | Respuesta de originación creada | `origination_submission_created_log` | Se crea la respuesta de una originación. |
 | Respuesta de originación iniciada | `origination_submission_started_log` | El usuario final entra a la primera tarea y la respuesta queda iniciada. |
-| Tarea de respuesta de originación enviada | `origination_submission_task_submitted_log` | El usuario final envía una tarea de la respuesta con el botón **Siguiente**. |
+| Tarea de respuesta de originación enviada | `origination_submission_task_submitted_log` | El usuario final envía una tarea de la respuesta con el botón **Siguiente**. En un code snippet con **Bloquear las respuestas al completar**, también se registra cuando el code snippet completa la tarea con su POST, y en ese caso **Siguiente** no lo vuelve a registrar. |
 | Respuesta de originación completada | `origination_submission_completed_log` | La respuesta queda completada. |
 | Respuesta de originación cancelada | `origination_submission_canceled_log` | Alguien cancela la respuesta. |
 | Respuesta de originación cancelada por vencimiento | `origination_submission_canceled_overdue_log` | La plataforma cancela sola una respuesta que pasó su fecha de vencimiento. Nuevo en 10.2. |
@@ -197,7 +197,7 @@ Un mismo disparador puede llegarte en dos formas. Si la acción la hace el usuar
 :::
 
 :::tip Tip
-Para saber cuándo una tarea queda completada, usa **Respuesta a tarea de originación completada**: se registra sin importar cómo se completó la tarea. **Tarea de respuesta de originación enviada** solo se registra cuando el usuario presiona **Siguiente**, y un code snippet puede completar su tarea sin pasar por ese botón. Revisa [Completar la tarea desde el code snippet](/es/platform/customers/origination.html#completar-la-tarea-desde-el-code-snippet).
+Para saber cuándo una tarea queda completada, usa **Respuesta a tarea de originación completada**: se registra sin importar cómo se completó la tarea. **Tarea de respuesta de originación enviada** se registra cuando el usuario presiona **Siguiente**, y un code snippet puede completar su tarea sin pasar por ese botón. La excepción son los code snippets con **Bloquear las respuestas al completar**: si el code snippet completa la tarea con su POST, el evento se registra en ese momento y **Siguiente** no lo vuelve a registrar. Revisa [Completar la tarea desde el code snippet](/es/platform/customers/origination.html#completar-la-tarea-desde-el-code-snippet).
 :::
 
 Estos son los payloads de ejemplo de los disparadores de originación:

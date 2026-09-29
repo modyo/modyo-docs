@@ -320,12 +320,26 @@ La petición POST a la URL de `getUrl()` guarda los datos y también puede cambi
 
 Usa solo `true` o `false` en `completed`. Cualquier otro valor se interpreta como `false`.
 
+`completed` va al mismo nivel que `content`, no dentro de él. Por ejemplo, para guardar datos sin completar la tarea:
+
+```js
+await fetch(getUrl(), {
+  method: 'POST',
+  headers: {
+    'X-CSRF-TOKEN': document.querySelector('meta[name=csrf-token]').content,
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({ content: { plan: 'basic' }, completed: false })
+});
+```
+
 Completar la tarea desde el code snippet no equivale a presionar **Siguiente**. Cada camino registra eventos distintos:
 
 - **POST que completa la tarea**: registra **Respuesta a tarea de originación completada** (`origination_task_response_completed_log`) y **Tarea de respuesta de originación actualizada** (`origination_submission_task_updated_log`).
-- **Botón Siguiente**: registra **Tarea de respuesta de originación enviada** (`origination_submission_task_submitted_log`).
+- **Botón Siguiente**: registra **Tarea de respuesta de originación enviada** (`origination_submission_task_submitted_log`). En las tareas con **Bloquear las respuestas al completar**, este evento lo registra el POST que completa la tarea, como se explica más abajo.
 
-Si el usuario completa la tarea con el POST y deja el flujo sin presionar **Siguiente** (por ejemplo, porque el code snippet navega con `window.location` o el usuario vuelve más tarde desde el enlace para retomar la respuesta), la tarea queda completada, pero no se registra **Tarea de respuesta de originación enviada**.
+Si la tarea no tiene activada esa opción y el usuario la completa con el POST, pero deja el flujo sin presionar **Siguiente** (por ejemplo, porque el code snippet navega con `window.location` o el usuario vuelve más tarde desde el enlace para retomar la respuesta), la tarea queda completada, pero no se registra **Tarea de respuesta de originación enviada**.
 
 :::tip Tip
 Para que una integración sepa que el usuario terminó un code snippet, suscribe tu [webhook](/es/platform/core/webhooks.html) a **Respuesta a tarea de originación completada** (`origination_task_response_completed_log`). Ese evento se registra siempre que la tarea queda completada, sin importar el camino. Si necesitas que el code snippet avance solo al paso siguiente, habilita el botón con `enableButton()` y deja que el usuario presione **Siguiente**, en lugar de redirigir con `window.location`.

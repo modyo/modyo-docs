@@ -319,12 +319,26 @@ The POST request to the `getUrl()` URL saves the data and can also change the ta
 
 Use only `true` or `false` in `completed`. Any other value is read as `false`.
 
+`completed` goes at the same level as `content`, not inside it. For example, to save data without completing the task:
+
+```js
+await fetch(getUrl(), {
+  method: 'POST',
+  headers: {
+    'X-CSRF-TOKEN': document.querySelector('meta[name=csrf-token]').content,
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({ content: { plan: 'basic' }, completed: false })
+});
+```
+
 Completing the task from the code snippet is not the same as clicking **Next**. Each path records different events:
 
 - **POST that completes the task**: records **Origination task response completed** (`origination_task_response_completed_log`) and **Origination submission task updated** (`origination_submission_task_updated_log`).
-- **Next button**: records **Origination submission task submitted** (`origination_submission_task_submitted_log`).
+- **Next button**: records **Origination submission task submitted** (`origination_submission_task_submitted_log`). In tasks with **Lock responses once completed**, this event is recorded by the POST that completes the task, as explained below.
 
-If the user completes the task with the POST and leaves the flow without clicking **Next** (for example, because the code snippet navigates with `window.location`, or the user comes back later through the link to resume the submission), the task is completed, but **Origination submission task submitted** is not recorded.
+If the task does not have that option enabled and the user completes it with the POST, but leaves the flow without clicking **Next** (for example, because the code snippet navigates with `window.location`, or the user comes back later through the link to resume the submission), the task is completed, but **Origination submission task submitted** is not recorded.
 
 :::tip Tip
 For an integration to know that the user finished a code snippet, subscribe your [webhook](/en/platform/core/webhooks.html) to **Origination task response completed** (`origination_task_response_completed_log`). That event is recorded whenever the task becomes completed, whatever the path. If you need the code snippet to move on to the next step by itself, enable the button with `enableButton()` and let the user click **Next**, instead of redirecting with `window.location`.
