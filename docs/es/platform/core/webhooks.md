@@ -167,7 +167,7 @@ Los disparadores disponibles son los 24 eventos de usuario final del reino:
 | Respuesta de formulario actualizada | `form_response_updated_log` | Se actualiza una respuesta de formulario ya enviada. |
 | Respuesta de originación creada | `origination_submission_created_log` | Se crea la respuesta de una originación. |
 | Respuesta de originación iniciada | `origination_submission_started_log` | El usuario final entra a la primera tarea y la respuesta queda iniciada. |
-| Tarea de respuesta de originación enviada | `origination_submission_task_submitted_log` | El usuario final envía una tarea de la respuesta. |
+| Tarea de respuesta de originación enviada | `origination_submission_task_submitted_log` | El usuario final envía una tarea de la respuesta con el botón **Siguiente**. |
 | Respuesta de originación completada | `origination_submission_completed_log` | La respuesta queda completada. |
 | Respuesta de originación cancelada | `origination_submission_canceled_log` | Alguien cancela la respuesta. |
 | Respuesta de originación cancelada por vencimiento | `origination_submission_canceled_overdue_log` | La plataforma cancela sola una respuesta que pasó su fecha de vencimiento. Nuevo en 10.2. |
@@ -194,6 +194,10 @@ Este formulario no tiene selectores de **Tipo de contexto** ni de **Contexto**: 
 
 :::tip Tip
 Un mismo disparador puede llegarte en dos formas. Si la acción la hace el usuario final desde el sitio, el payload es compacto y trae el evento en `e_c` y `e_a`. Si la hace un administrador desde el panel, o si la plataforma la hace sola, el payload trae el log completo, con `trigger_uid`, `trigger_entity` y el detalle del evento dentro de `options`. Deja tu endpoint preparado para las dos.
+:::
+
+:::tip Tip
+Para saber cuándo una tarea queda completada, usa **Respuesta a tarea de originación completada**: se registra sin importar cómo se completó la tarea. **Tarea de respuesta de originación enviada** solo se registra cuando el usuario presiona **Siguiente**, y un code snippet puede completar su tarea sin pasar por ese botón. Revisa [Completar la tarea desde el code snippet](/es/platform/customers/origination.html#completar-la-tarea-desde-el-code-snippet).
 :::
 
 Estos son los payloads de ejemplo de los disparadores de originación:

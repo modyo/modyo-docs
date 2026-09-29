@@ -166,7 +166,7 @@ The available triggers are the realm's 24 end-user events:
 | Form response updated | `form_response_updated_log` | An already submitted form response is updated. |
 | Origination submission created | `origination_submission_created_log` | An origination submission is created. |
 | Origination submission started | `origination_submission_started_log` | The end user enters the first task and the submission becomes started. |
-| Origination submission task submitted | `origination_submission_task_submitted_log` | The end user submits a task of the submission. |
+| Origination submission task submitted | `origination_submission_task_submitted_log` | The end user submits a task of the submission with the **Next** button. |
 | Origination submission completed | `origination_submission_completed_log` | The submission becomes completed. |
 | Origination submission canceled | `origination_submission_canceled_log` | Someone cancels the submission. |
 | Origination submission canceled due to expiration | `origination_submission_canceled_overdue_log` | The platform cancels an overdue submission on its own. New in 10.2. |
@@ -193,6 +193,10 @@ This form has no **Context type** or **Context** selectors: the webhook is alway
 
 :::tip Tip
 The same trigger can reach you in two shapes. When the end user performs the action from the site, the payload is compact and carries the event in `e_c` and `e_a`. When an administrator performs it from the admin panel, or the platform performs it on its own, the payload carries the full log, with `trigger_uid`, `trigger_entity`, and the event detail inside `options`. Keep your endpoint ready for both.
+:::
+
+:::tip Tip
+To know when a task becomes completed, use **Origination task response completed**: it is recorded however the task was completed. **Origination submission task submitted** is only recorded when the user clicks **Next**, and a code snippet can complete its task without going through that button. See [Completing the task from the code snippet](/en/platform/customers/origination.html#completing-the-task-from-the-code-snippet).
 :::
 
 These are the payload examples of the origination triggers:
