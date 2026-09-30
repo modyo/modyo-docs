@@ -197,7 +197,7 @@ Un mismo disparador puede llegarte en dos formas. Si la acción la hace el usuar
 :::
 
 :::tip Tip
-Para saber cuándo una tarea queda completada, usa **Respuesta a tarea de originación completada**: se registra sin importar cómo se completó la tarea. **Tarea de respuesta de originación enviada** se registra cuando el usuario presiona **Siguiente**, y un code snippet puede completar su tarea sin pasar por ese botón. La excepción son los code snippets con **Bloquear las respuestas al completar**: si el code snippet completa la tarea con su POST, el evento se registra en ese momento y **Siguiente** no lo vuelve a registrar. Revisa [Completar la tarea desde el code snippet](/es/platform/customers/origination.html#completar-la-tarea-desde-el-code-snippet).
+Para saber cuándo un code snippet queda completado, usa **Respuesta a tarea de originación completada**: se registra tanto si la tarea se completa con el POST del code snippet como con el botón **Siguiente**. **Tarea de respuesta de originación enviada** se registra cuando el usuario presiona **Siguiente**, y un code snippet puede completar su tarea sin pasar por ese botón. La excepción son los code snippets con **Bloquear las respuestas al completar**: si el code snippet completa la tarea con su POST, el evento se registra en ese momento y **Siguiente** no lo vuelve a registrar. Revisa [Completar la tarea desde el code snippet](/es/platform/customers/origination.html#completar-la-tarea-desde-el-code-snippet).
 :::
 
 Estos son los payloads de ejemplo de los disparadores de originación:

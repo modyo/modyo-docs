@@ -341,7 +341,7 @@ Completing the task from the code snippet is not the same as clicking **Next**. 
 If the task does not have that option enabled and the user completes it with the POST, but leaves the flow without clicking **Next** (for example, because the code snippet navigates with `window.location`, or the user comes back later through the link to resume the submission), the task is completed, but **Origination submission task submitted** is not recorded.
 
 :::tip Tip
-For an integration to know that the user finished a code snippet, subscribe your [webhook](/en/platform/core/webhooks.html) to **Origination task response completed** (`origination_task_response_completed_log`). That event is recorded whenever the task becomes completed, whatever the path. If you need the code snippet to move on to the next step by itself, enable the button with `enableButton()` and let the user click **Next**, instead of redirecting with `window.location`.
+For an integration to know that the user finished a code snippet, subscribe your [webhook](/en/platform/core/webhooks.html) to **Origination task response completed** (`origination_task_response_completed_log`). In a code snippet, that event is recorded when the task becomes completed, either with the POST or with the **Next** button. If you need the code snippet to move on to the next step by itself, enable the button with `enableButton()` and let the user click **Next**, instead of redirecting with `window.location`.
 :::
 
 If the task has the **Lock responses once completed** option enabled, the POST that completes it also records **Origination submission task submitted**, because after that the **Next** button no longer submits the task again.

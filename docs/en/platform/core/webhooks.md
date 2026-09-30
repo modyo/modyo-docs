@@ -196,7 +196,7 @@ The same trigger can reach you in two shapes. When the end user performs the act
 :::
 
 :::tip Tip
-To know when a task becomes completed, use **Origination task response completed**: it is recorded however the task was completed. **Origination submission task submitted** is recorded when the user clicks **Next**, and a code snippet can complete its task without going through that button. The exception is code snippets with **Lock responses once completed**: if the code snippet completes the task with its POST, the event is recorded at that moment and **Next** does not record it again. See [Completing the task from the code snippet](/en/platform/customers/origination.html#completing-the-task-from-the-code-snippet).
+To know when a code snippet becomes completed, use **Origination task response completed**: it is recorded whether the task is completed with the code snippet POST or with the **Next** button. **Origination submission task submitted** is recorded when the user clicks **Next**, and a code snippet can complete its task without going through that button. The exception is code snippets with **Lock responses once completed**: if the code snippet completes the task with its POST, the event is recorded at that moment and **Next** does not record it again. See [Completing the task from the code snippet](/en/platform/customers/origination.html#completing-the-task-from-the-code-snippet).
 :::
 
 These are the payload examples of the origination triggers:
