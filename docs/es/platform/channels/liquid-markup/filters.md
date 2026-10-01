@@ -144,9 +144,6 @@ Redondea al número entero más cercano o al número especificado de decimales *
 ### Rstrip
 Elimina todos los espacios en blanco del final de un string
 
-### Script tag
-Genera el tag HTML `<script>` para un template JavaScript, tomando como parámetros la URL y atributos de la forma `attr: 'value'`, *e.g.* <span v-pre>`{{ 'my-js-url' | script_tag: async: 'async', defer: 'defer' }}`</span> => `<script src='my-js-url' type='text/javascript' async='async' defer='defer'></script>`
-
 ### Size
 Devolver el tamaño de un array o string
 
@@ -683,6 +680,8 @@ Genera la etiqueta HTML de una imagen (ej. <span v-pre>`{{ asset | asset_image_t
 Genera la URL de un objeto **Asset** o una ruta de activo de plantilla. Para los objetos Asset que utilizan Cloudflare para la optimización de imágenes, puedes usar los siguientes parámetros adicionales: width, height, blur, quality, format y fit. (ej. <span v-pre>{{ assets['asset_uuid'] | asset_url: blur: 40, format: 'auto', fit: 'cover' }}</span>).
 Para las rutas de assets de plantilla (template asset paths) desde el template builder, especifica el tipo de asset como el segundo argumento (ej. <span v-pre>{{ 'base' | asset_url: 'js' }}</span>). También puedes usar los filtros `script_tag` o `stylesheet_tag` para generar automáticamente la etiqueta HTML `<script>` o `<link>` completa (ej. <span v-pre>{{ 'base' | asset_url: 'css' | stylesheet_tag: media: 'screen' }}</span>).
 
+La URL que se genera para una vista de plantilla incluye una versión que se actualiza al publicar el sitio, así que los visitantes reciben siempre el archivo vigente sin que tengas que renombrarlo. En el modo de vista previa el archivo nunca se sirve desde la caché. Para conocer en detalle cómo se sirven estas vistas y cómo controlar su carga, consulta [Cómo se sirven las vistas de CSS y JavaScript](/es/platform/channels/templates.html#como-se-sirven-las-vistas-de-css-y-javascript).
+
 ### Button To
 
 Genera un botón (ej. <span v-pre>`{{ 'Hello World' | button_to: 'http://www.google.com' }}`</span>).
@@ -756,7 +755,9 @@ Sanitiza las etiquetas HTML de un String (ej. <span v-pre>`{{ '<script>Hello Wor
 
 ### Script tag
 
-Agrega una etiqueta de script (ej. <span v-pre>`{{ 'test-script' | script_tag }}`</span>).
+Genera la etiqueta HTML `<script>` a partir de una URL, tomando como parámetros adicionales atributos de la forma `attr: 'value'` (ej. <span v-pre>`{{ 'my-js-url' | script_tag: async: 'async', defer: 'defer' }}`</span> => `<script src='my-js-url' type='text/javascript' async='async' defer='defer'></script>`).
+
+Encádenalo con [Asset URL](#asset-url) para incluir una vista de JavaScript del sitio y agregarle los atributos que necesites (ej. <span v-pre>`{{ 'base' | asset_url: 'js' | script_tag: defer: 'defer' }}`</span>). A diferencia de [Theme Javascript](#theme-javascript), esta combinación admite cualquier atributo.
 
 ### Search Box
 
@@ -771,15 +772,30 @@ Convierte un datetime a formato String (ej. <span v-pre>`{{ time | strftime: '%m
 Elimina todas las etiquetas HTML y su contenido de un String (ej. <span v-pre>`{{ '<script>Hello World</script>' | strip_tags }} #=> ""`</span>).
 
 ### Stylesheet Tag
+
 Genera la etiqueta HTML `<link>` para un template CSS, tomando como parámetros la URL y atributos (ej. `attr: 'value'`, <span v-pre>`{{ 'my-css-url' | stylesheet_tag: media: 'screen', title: 'color style' }}`</span> => `<link href='my-css-url' rel='stylesheet' type='text/css' media='screen' title='color style' />`).
+
+Encádenalo con [Asset URL](#asset-url) para incluir una vista de CSS del sitio y agregarle los atributos que necesites (ej. <span v-pre>`{{ 'base' | asset_url: 'css' | stylesheet_tag: media: 'screen' }}`</span>). A diferencia de [Theme Stylesheet](#theme-stylesheet), esta combinación admite cualquier atributo.
 
 ### Theme Javascript
 
-Agrega una etiqueta de tema en Javascript (ej. <span v-pre>`{{ 'home-page-javascript' | theme_javascript }}`</span>).
+Genera la etiqueta HTML `<script>` que incluye una vista de JavaScript del sitio. Toma como parámetro la ruta de la vista creada en **Plantillas**, no una URL (ej. <span v-pre>`{{ 'home-page-javascript' | theme_javascript }}`</span> => `<script src='https://tu-sitio.com/javascript/site-home-page-javascript-VERSION.js' type='text/javascript'></script>`).
+
+La URL que genera incluye una versión que se actualiza al publicar el sitio, de modo que los visitantes reciben el archivo vigente sin que tengas que renombrar la vista ni modificar la plantilla. En el modo de vista previa el archivo nunca se sirve desde la caché, para que veas tus cambios de inmediato.
+
+:::warning Atención
+`theme_javascript` no admite atributos adicionales: siempre emite la misma etiqueta. Si necesitas `defer`, `async` u otro atributo, usa [Asset URL](#asset-url) encadenado con [Script tag](#script-tag) (ej. <span v-pre>`{{ 'home-page-javascript' | asset_url: 'js' | script_tag: defer: 'defer' }}`</span>), que produce la misma URL versionada.
+:::
 
 ### Theme Stylesheet
 
-Agrega una etiqueta de tema en CSS (ej. <span v-pre>`{{ 'home-page-stylesheet' | theme_stylesheet }}`</span>).
+Genera la etiqueta HTML `<link>` que incluye una vista de CSS del sitio. Toma como parámetro la ruta de la vista creada en **Plantillas**, no una URL (ej. <span v-pre>`{{ 'home-page-stylesheet' | theme_stylesheet }}`</span> => `<link href='https://tu-sitio.com/stylesheets/site-home-page-stylesheet-VERSION.css' media='screen' rel='stylesheet' type='text/css' />`).
+
+Igual que [Theme Javascript](#theme-javascript), la URL incluye una versión que se actualiza al publicar el sitio, y en el modo de vista previa el archivo nunca se sirve desde la caché.
+
+:::warning Atención
+`theme_stylesheet` no admite atributos adicionales y siempre emite `media='screen'`. Si necesitas otro valor de `media` o atributos como `title`, usa [Asset URL](#asset-url) encadenado con [Stylesheet Tag](#stylesheet-tag) (ej. <span v-pre>`{{ 'home-page-stylesheet' | asset_url: 'css' | stylesheet_tag: media: 'print' }}`</span>), que produce la misma URL versionada.
+:::
 
 ### Time Ago in Words
 

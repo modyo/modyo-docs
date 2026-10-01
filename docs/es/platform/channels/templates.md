@@ -180,8 +180,43 @@ Una vez guardado y publicado, se traduce al siguiente código HTML:
 <script src='my-js' type='text/javascript' async='async' defer='defer'></script>
 ```
 
-Para obtener información detallada y conocer los parámetros admitidos por estos filtros, consulta la sección de [filtros de Liquid](/es/platform/channels/liquid-markup#filtros-estandar).
+Para obtener información detallada y conocer los parámetros admitidos por estos filtros, consulta las fichas de [Asset URL](/es/platform/channels/liquid-markup/filters.html#asset-url), [Script tag](/es/platform/channels/liquid-markup/filters.html#script-tag), [Stylesheet Tag](/es/platform/channels/liquid-markup/filters.html#stylesheet-tag), [Theme Javascript](/es/platform/channels/liquid-markup/filters.html#theme-javascript) y [Theme Stylesheet](/es/platform/channels/liquid-markup/filters.html#theme-stylesheet).
 
+
+### Cómo se sirven las vistas de CSS y JavaScript
+
+Cada vista de CSS o JavaScript que creas en Plantillas se publica como un archivo con URL propia, que los filtros de Liquid resuelven por ti. Esa URL incluye una versión que se actualiza al publicar el sitio, lo que significa que:
+
+- Los visitantes reciben el archivo nuevo apenas publicas, sin que tengas que renombrar la vista ni pedir que se limpie ninguna caché.
+- Mientras la versión no cambie, el navegador puede reutilizar el archivo entre las distintas páginas del sitio en lugar de descargarlo de nuevo en cada una.
+- En el modo de vista previa el archivo nunca se sirve desde la caché, para que veas tus cambios de inmediato.
+
+### Controlar cómo se carga el archivo
+
+Por omisión, una hoja de estilos bloquea el pintado de la página hasta que termina de descargarse, y un script bloquea el análisis del HTML. Los filtros `script_tag` y `stylesheet_tag` aceptan cualquier atributo, así que puedes ajustar ese comportamiento sin dejar de usar la URL versionada:
+
+```html
+<head>
+  {{ 'base'      | asset_url: 'css' | stylesheet_tag: media: 'screen' }}
+  {{ 'print'     | asset_url: 'css' | stylesheet_tag: media: 'print' }}
+  {{ 'main'      | asset_url: 'js'  | script_tag: defer: 'defer' }}
+  {{ 'analytics' | asset_url: 'js'  | script_tag: async: 'async' }}
+</head>
+```
+
+- `defer` descarga el script en paralelo y lo ejecuta cuando el documento terminó de analizarse, respetando el orden en que declaraste los scripts.
+- `async` lo ejecuta apenas está disponible, sin garantizar el orden. Úsalo solo para scripts independientes entre sí.
+- `media` limita una hoja de estilos a un contexto determinado, como la impresión.
+
+Los filtros `theme_javascript` y `theme_stylesheet` producen la misma URL versionada, pero no admiten atributos. Si necesitas alguno, usa la combinación de arriba.
+
+### Vista del tema o código inline
+
+Escribir el CSS o el JavaScript directamente en la plantilla, dentro de una etiqueta `<style>` o `<script>`, ahorra una petición de red, pero traslada esos bytes al documento HTML, que se descarga completo en cada página que visita el usuario y no se reutiliza entre ellas. Como criterio general:
+
+- Publica como vista del tema todo el CSS y el JavaScript que compartan varias páginas. Se descarga una vez y se reutiliza en el resto del sitio.
+- Reserva el código inline para fragmentos pequeños y específicos de una página, o para el mínimo de estilos que necesita la primera pantalla visible.
+- Ten presente que un bloque `<style>` inline también bloquea el pintado de la página: escribirlo en la plantilla no lo vuelve gratuito.
 
 ## Snippets
 
