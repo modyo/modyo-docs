@@ -222,7 +222,9 @@ Convierte un texto en un identificador apto para una URL, *e.g.*
 Las reglas que aplica son:
 
 - Pasa todo a minúsculas, salvo que `preserve_case` sea `true`.
+- Translitera los caracteres acentuados a su equivalente sin acento antes de reemplazar: `ñ` pasa a `n` y `á` a `a`.
 - Reemplaza los espacios y los caracteres especiales por el separador.
+- Conserva los guiones (`-`) y los guiones bajos (`_`) del texto original, aunque uses otro separador.
 - Colapsa una secuencia de espacios o caracteres especiales consecutivos en un solo separador.
 - Elimina los separadores del comienzo y del final.
 - Con un texto vacío devuelve un texto vacío.
@@ -236,6 +238,12 @@ Las reglas que aplica son:
 <span v-pre>`{{ 'CamelCase Words' | handle: '-', true }} #=> 'CamelCase-Words'`</span>
 
 <span v-pre>`{{ ' A s.?%$!' | handle: '.', true }} #=> 'A.s'`</span>
+
+<span v-pre>`{{ 'Año Nuevo' | handle }} #=> 'ano-nuevo'`</span>
+
+<span v-pre>`{{ 'mi_archivo final' | handle }} #=> 'mi_archivo-final'`</span>
+
+<span v-pre>`{{ 'a-b c' | handle: '.' }} #=> 'a-b.c'`</span>
 
 ### Handleize
 
@@ -285,7 +293,7 @@ El filtro tiene tres salidas posibles:
 :::
 
 :::tip Tip
-El procesamiento de imágenes por CDN es una configuración de la cuenta. Mientras no esté activo, las nueve opciones se ignoran sin error y la página publica la imagen en su tamaño original.
+El procesamiento de imágenes por CDN se habilita para toda la plataforma, no por cuenta, así que no es algo que puedas activar desde la administración de tu cuenta. Mientras no esté activo, las nueve opciones se ignoran sin error y la página publica la imagen en su tamaño original. Con el procesamiento activo, las opciones que llegan a la URL transformada son por defecto `width`, `height`, `quality`, `blur`, `fit` y `format`, pero la plataforma puede tener configurada otra lista.
 :::
 
 ### Asset link
@@ -749,7 +757,12 @@ Si la plantilla se renderiza fuera del ciclo de una página del sitio, el filtro
 Hace lo mismo que `pagination_links` y además agrega `data-remote="true"` a cada enlace de la barra. *ej.*
 <span v-pre>`{{ paginated_entries | pagination_links_remote }}`</span>
 
-Es la versión que corresponde usar en los widgets personalizados, que se cargan de forma asíncrona. Las condiciones de ese caso están en [Ejemplos](/es/platform/channels/liquid-markup/examples.html#filtrar-entradas).
+Es la versión que corresponde usar en los widgets personalizados, que se cargan de forma asíncrona, y depende de dos condiciones:
+
+- El sitio tiene que cargar jQuery antes de que terminen de cargarse los widgets. Sin jQuery, los enlaces de la barra no se resuelven de forma remota y nada avisa del problema.
+- Al cambiar de página solo se reemplaza el HTML del widget: su JavaScript no se vuelve a ejecutar, así que lo que ese JavaScript inicializa no se aplica al contenido nuevo.
+
+El ejemplo completo está en [Ejemplos](/es/platform/channels/liquid-markup/examples.html#filter-by).
 
 ### Total entries
 

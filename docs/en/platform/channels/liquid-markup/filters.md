@@ -222,7 +222,9 @@ Turns a text into a URL-friendly identifier, *e.g.*
 The rules it applies are:
 
 - It lowercases everything, unless `preserve_case` is `true`.
+- It transliterates accented characters to their unaccented equivalent before replacing: `ñ` becomes `n` and `á` becomes `a`.
 - It replaces whitespace and special characters with the separator.
+- It keeps the hyphens (`-`) and underscores (`_`) of the original text, even if you use another separator.
 - It collapses a sequence of consecutive whitespace or special characters into a single separator.
 - It removes the separators at the beginning and at the end.
 - With an empty text it returns an empty text.
@@ -236,6 +238,12 @@ The rules it applies are:
 <span v-pre>`{{ 'CamelCase Words' | handle: '-', true }} #=> 'CamelCase-Words'`</span>
 
 <span v-pre>`{{ ' A s.?%$!' | handle: '.', true }} #=> 'A.s'`</span>
+
+<span v-pre>`{{ 'Año Nuevo' | handle }} #=> 'ano-nuevo'`</span>
+
+<span v-pre>`{{ 'my_file final' | handle }} #=> 'my_file-final'`</span>
+
+<span v-pre>`{{ 'a-b c' | handle: '.' }} #=> 'a-b.c'`</span>
 
 ### Handleize
 
@@ -285,7 +293,7 @@ The filter has three possible outputs:
 :::
 
 :::tip Tip
-CDN image processing is an account setting. While it isn't enabled, all nine options are ignored without an error and the page publishes the image at its original size.
+CDN image processing is enabled for the whole platform, not per account, so it isn't something you can turn on from your account's administration. While it isn't enabled, all nine options are ignored without an error and the page publishes the image at its original size. With processing enabled, the options that reach the transformed URL are `width`, `height`, `quality`, `blur`, `fit` and `format` by default, but the platform may have a different list configured.
 :::
 
 ### Asset link
@@ -746,7 +754,12 @@ If the template is rendered outside the lifecycle of a site page, the filter can
 Does the same as `pagination_links` and additionally adds `data-remote="true"` to every link in the bar. *e.g.*
 <span v-pre>`{{ paginated_entries | pagination_links_remote }}`</span>
 
-This is the version to use in custom widgets, which are loaded asynchronously. The conditions of that case are in [Examples](/en/platform/channels/liquid-markup/examples.html#filter-entries).
+This is the version to use in custom widgets, which are loaded asynchronously, and it depends on two conditions:
+
+- The site must load jQuery before the widgets finish loading. Without jQuery, the bar's links aren't resolved remotely and nothing warns you about it.
+- Changing pages only replaces the widget's HTML: its JavaScript isn't executed again, so whatever that JavaScript initializes isn't applied to the new content.
+
+The full example is in [Examples](/en/platform/channels/liquid-markup/examples.html#filter-by).
 
 ### Total entries
 
