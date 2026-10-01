@@ -37,6 +37,24 @@ Later, in the space configuration, you can define secondary languages for the en
 
 :::
 
+## Clone a space
+
+Cloning a space creates a full copy within the same account: its categories, its content types, its entries, the files in its media library, and the team members with their roles are all copied. To clone a space:
+
+1. In the side menu, select **Content**.
+1. In the **Actions** column of the space's row, click **Clone**.
+1. In the **Clone space** window, confirm by clicking **Clone space**.
+
+The clone takes the name of the original prefixed with "Copy of" and the identifier prefixed with "copy-of-". If a space with that name or identifier already exists, a number is appended so it isn't repeated.
+
+:::tip Tip
+Cloning runs in the background and may take a while: while it completes, the window shows "This will take some time, the space is being cloned.". When it finishes you'll see "Space cloned successfully" and the list is refreshed with the new space.
+:::
+
+:::warning Attention
+The number of spaces you can have is set by your account plan. If you've already reached that quota, cloning doesn't start and you'll see the message "You've reached the maximum number of spaces for your current plan". If you need a larger quota, talk to your Modyo account manager.
+:::
+
 ## Space Settings
 
 In this section, you can customize and adjust the options available for your space, according to your specific needs. To access the configuration of your space, follow these steps:

@@ -52,8 +52,8 @@ El número de tipos de contenido que puedes crear por espacio lo define el plan 
 
 En la interfaz de creación, encontrarás una plantilla vacía en el centro de la pantalla y al lado derecho, una tabla con tres pestañas: 
 
-- **Añadir campos**
-- **Configuración del campo**
+- **Añadir**
+- **Campo**
 - **Configuración**
 
 Esta interfaz te permite crear cada uno de los tipos y darles el formato necesario, según tus requisitos.
@@ -66,13 +66,25 @@ El nombre del campo es de suma importancia, ya que será utilizado para acceder 
 Para más información ve a la [referencia de la API](/es/platform/content/public-api-reference)
 :::
 
-Todos los campos que se pueden añadir en un tipo, tienen un nombre, y la posibilidad de ser requeridos.
+Todos los campos que puedes añadir a un tipo comparten tres propiedades, que se configuran en la pestaña **Campo** del panel derecho:
 
-Cuando un campo es marcado como requerido, al crear o modificar una entrada, se debes proporcionar un valor para ese campo. De lo contrario, no podrás guardar los cambios realizados.
+- **Nombre**: Identifica al campo y es la clave con la que accedes a su valor desde Liquid, los SDK y la API. Es obligatorio, admite hasta 255 caracteres, y no puede empezar con guion bajo (`_`) ni contener puntos. Si escribes un carácter no permitido, el panel descarta lo que escribiste y muestra el aviso "Los nombres de campos no pueden empezar con guión ni contener puntos". Ese aviso dice "guión", pero lo que la plataforma rechaza es el guion bajo inicial: un nombre que empiece con guion medio se guarda sin problema.
+- **Indicación**: Texto de ayuda opcional. Se muestra bajo el campo al crear o modificar una entrada, para orientar a quien la completa.
+- **Requerido**: Al crear o modificar una entrada, se debe proporcionar un valor para ese campo. De lo contrario, no podrás guardar los cambios realizados.
+
+Dentro de un mismo tipo, dos campos no pueden llamarse igual: si repites un nombre, el tipo no se guarda y verás el mensaje "No se puede guardar el tipo porque hay nombres repetidos en sus campos".
+
+:::warning Atención
+Renombrar un campo cambia la clave con la que lees su valor desde Liquid, los SDK y la API. Antes de renombrar un campo que ya está en uso, revisa las plantillas y las integraciones que lo consumen.
+:::
+
+:::danger Peligro
+Eliminar un campo de un tipo borra el valor de ese campo en todas las entradas del tipo, y no se puede deshacer. Al quitarlo, el panel te pide confirmar con el mensaje "¿Estás seguro que quieres eliminar este campo? Una vez guardes, esta acción eliminará este campo de todas las entradas de este tipo y no se podrá deshacer." y vuelve a advertirte al guardar. Mientras no guardes, el campo y sus valores siguen intactos: si te equivocaste, sal de la pantalla sin guardar.
+:::
 
 ### Texto de una línea
 
-Este campo te permite ingresar textos de una sola linea. Cuenta con las siguientes restricciones:
+Este campo te permite ingresar textos de una sola línea, con un tope de 255 caracteres. Si necesitas guardar un texto más largo, usa [Texto de múltiples líneas](#texto-de-multiples-lineas). Cuenta con las siguientes restricciones:
 
 - **Largo mínimo**: Permite exigir un mínimo de caracteres para el texto ingresado.
 - **Largo máximo**: Permite  limitar la cantidad máxima de caracteres para el texto ingresado.
@@ -221,9 +233,13 @@ Este campo te permite vincular más de una Entrada existente dentro del Espacio 
 
 - **Tipos de contenido permitidos**: Limita los enlaces a las entradas de un tipo. Pese al plural del nombre, seleccionas un único tipo, que aplica a todas las entradas que enlaces; el valor por defecto es **Todos**, que no restringe nada. Si cualquiera de las entradas enlazadas no es del tipo elegido, la entrada no se guarda y el campo muestra "No calza con los valores permitidos", seguido del nombre del tipo exigido.
 
+:::tip Tip
+Cada entrada puede enlazar hasta 10 entradas en un mismo campo Listado de Contenido. Si seleccionas más, el panel muestra "Se ha alcanzado el máximo de referencias (10), se excluirán los elementos adicionales" y conserva solo las 10 primeras. Ese tope se define por instalación: si necesitas más referencias, conversa con tu ejecutivo de cuenta en Modyo.
+:::
+
 ### Grupo
 
-Utiliza el campo Grupo para albergar otro campo dentro él. Puedes asignar un nombre al grupo según tus necesidades, así como nombrar los campos dentro del grupo. En casilla pista, incluye el texto que deseas mostrar para ayudar a tus usuarios a completar correctamente el campo. 
+Utiliza el campo Grupo para albergar otro campo dentro él. Puedes asignar un nombre al grupo según tus necesidades, así como nombrar los campos dentro del grupo y usar la **Indicación** de cada uno para orientar a quien completa la entrada. 
 
 Una vez que tengas más de un tipo de campo dentro de un grupo, puedes arrastrarlos y ordenarlos según requieras. 
 
@@ -274,11 +290,26 @@ Un grupo puede albergar cualquier tipo de campo, menos otro grupo.
 :::
 
 
+## Guardar los cambios de un tipo
+
+Los cambios que haces en un tipo (añadir, renombrar, reordenar o eliminar campos) solo se aplican cuando haces click en **Guardar**.
+
+:::warning Atención
+Si el tipo ya tiene entradas, al guardar el panel te pide confirmar con el mensaje "Actualizar el tipo de contenido reindexará todas las entradas y afectará todo el contenido publicado de este tipo. Ten en cuenta que este proceso puede tomar un tiempo y mientras tanto, las entradas de este tipo no reflejarán los cambios hasta que el proceso de reindexación termine.". Mientras ese proceso está en curso, el botón muestra "Reindexando..." y no puedes volver a guardar el tipo: al pasar el cursor sobre él verás "Hay un proceso de reindexación activo para este tipo de contenido. Puedes guardar cuando termine.".
+:::
+
 ## Propiedades
 
-En esta pestaña, puedes ver el nombre y UID del tipo. El UID es importante, ya que se utiliza para referirse al tipo desde los SDK de Liquid, JavaScript y la API. A continuación, verás un botón que puede estar en 2 estados:
+En la pestaña **Configuración** del panel derecho puedes revisar y editar los datos generales del tipo:
 
-- **Reindexar**: Te permite volver a indexar el modelo en caso de problemas con la API pública.
+- **Nombre**: El nombre con el que aparece el tipo en el listado.
+- **Identificador**: El UID del tipo. Es importante, ya que se utiliza para referirse al tipo desde los SDK de Liquid, JavaScript y la API.
+- **Descripción**: Texto libre de hasta 4.095 caracteres. Úsalo para dejar documentado, para el resto del equipo, cuál es el propósito de este tipo.
+- **Cardinalidad**: Cambia entre **Múltiple** e **Individual**. No puedes cambiarla a **Individual** si el tipo ya tiene más de una entrada.
+
+En el menú de acciones del encabezado del editor del tipo encontrarás además una opción que puede estar en 2 estados:
+
+- **Reindexar este contenido**: Te permite volver a indexar el modelo en caso de problemas con la API pública.
 - **Cancelar reindexación**: Si hay una reindexación en curso, puedes cancelar el proceso haciendo click en este botón. 
 
 :::warning Atención
@@ -286,5 +317,21 @@ Al reindexar uno de tus tipos, el modelo previamente indexado seguirá disponibl
 :::
 
 :::warning Atención
-Ten en cuenta que dependiendo de la [configuración de caché que tengas en tu espacio](/es/platform/content/spaces#cache), es posible que no veas los cambios inmediatamente después de haber terminado la reindexación.
+Ten en cuenta que, según la configuración de caché entre tu navegador y la plataforma, es posible que no veas los cambios inmediatamente después de haber terminado la reindexación.
+:::
+
+## Clonar un tipo
+
+Clonar un tipo crea, dentro del mismo espacio, una copia con todos sus campos y sus validaciones. Es útil para partir de una estructura ya probada sin rehacerla campo por campo. Para clonar un tipo:
+
+1. Desde el menú principal, haz click en **Contenido**.
+2. Selecciona el espacio donde está el tipo.
+3. Haz click en **Tipos**.
+4. En la columna **Acciones** de la fila del tipo, haz click en **Clonar**.
+5. En la ventana **Clonar tipo**, confirma haciendo click en **Clonar tipo**.
+
+El clon toma el nombre del original precedido de "Copia de" y el identificador precedido de "copia-de-". Si ya existe un tipo con ese nombre o identificador, se le añade un número al final para no repetirlo. Solo se copia la estructura: las entradas del tipo original no se duplican.
+
+:::tip Tip
+El clonado se ejecuta en segundo plano y puede tardar: mientras se completa, la ventana muestra "Esto demorará un tiempo, el tipo está siendo clonado.". Al terminar verás "Tipo clonado correctamente" y el nuevo tipo aparecerá en el listado.
 :::
