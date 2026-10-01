@@ -88,7 +88,7 @@ El botón contextual te permite realizar estas acciones:
 - **Clonar la campaña**: Crea una copia con todo el contenido de una campaña.
 - **Borrar la campaña**: Elimina una campaña.
 
-Una vez que hayas enviado una campaña, no puedes enviarla nuevamente. Si deseas enviar de nuevo la misma campaña, selecciona la opción de clonar. Esto  crea una una nueva campaña con los mismos datos de nombre, segmentos y contenido, mientras que la información estadística parte de cero.
+Una vez que una campaña queda **Completada**, no puedes enviarla nuevamente. Si deseas enviar de nuevo la misma campaña, selecciona la opción de clonar. Esto crea una nueva campaña con los mismos datos de nombre, segmentos y contenido, mientras que la información estadística parte de cero.
 
 Puedes cancelar el envío de una campaña cuando la campaña está en cola o en proceso de envío.
 
@@ -156,7 +156,9 @@ Estos mensajes no se crean desde el panel, sino desde la API de administración:
 
 En ambos casos el destinatario se identifica por su nombre de usuario, no por su correo, y tiene que estar dentro de tu [alcance por segmentos](/es/platform/customers/settings.html#restringir-el-alcance-con-segmentos): si no lo está, el correo responde `409` y la notificación `404`. El detalle de los campos de cada llamada está en el catálogo de servicios, bajo los recursos **Mailer** y **Notifications**; para abrirlo, sigue [Llama usando el portal Swagger](/es/platform/core/api.html#llama-usando-el-portal-swagger).
 
-El correo queda encolado, así que una respuesta correcta confirma que la llamada fue aceptada, no que el mensaje ya se entregó. Su cuerpo admite `%{name}`, `%{first_name}`, `%{last_name}`, `%{email}` y `%{unsubscribe_link}`, un subconjunto de las [variables de personalización](/es/platform/customers/messaging.html#variables-de-personalizacion) de las campañas: `%{show_link}` y `%{show_url}` no están disponibles.
+El correo queda encolado, así que una respuesta correcta confirma que la llamada fue aceptada, no que el mensaje ya se entregó. Su cuerpo admite `%{name}`, `%{first_name}`, `%{last_name}`, `%{email}` y `%{unsubscribe_link}`, un subconjunto de las [variables de personalización](/es/platform/customers/messaging.html#variables-de-personalizacion) de las campañas: `%{show_link}` y `%{show_url}` no están disponibles. Si el cuerpo usa otra variable, la llamada responde `409` con el error `Body content is not valid`. También responde `409` si `from` no es una dirección de correo válida, con el error `Email '…' is not valid`.
+
+La notificación, en cambio, no admite variables, aunque las campañas de notificación sí las tengan: cualquier `%{…}` en su cuerpo hace que la llamada responda `409` con el cuerpo `null`, sin detalle del error, y la notificación no se crea.
 
 :::warning Atención
 Existe además una ruta heredada, `POST /api/admin/mailer`, que llega a la misma acción pero no aparece en el catálogo de servicios y no lleva el reino en la URL: hay que pasarle `realm_uid` como parámetro o la llamada responde `404`. Se mantiene por compatibilidad; en integraciones nuevas usa la ruta del reino.
@@ -230,11 +232,11 @@ Incluir `%{unsubscribe_link}` en el pie del mensaje es lo que permite al destina
 :::warning Atención
 Si escribes una variable que no está en la lista del canal, la plataforma no guarda el mensaje y muestra el error **Los atributos especificados no son válidos**.
 
-El editor de plantillas no hace esa comprobación: una plantilla puede guardarse con una variable inválida, y el error recién aparece al guardar el mensaje de la campaña que la usa.
+El editor de plantillas no hace esa comprobación: una plantilla puede guardarse con una variable inválida, y el error recién aparece cuando una campaña de correo la usa. Si la eliges al crear la campaña, **Guardar y continuar** no la crea y muestra **No se pudo crear la campaña.** con el detalle en el formulario. Si la cargas después desde el editor de mensajes con **Cambiar plantilla**, la plantilla no se aplica y el aviso es **Hubo un error cargando la plantilla. Intenta nuevamente en unos minutos**, que no menciona la variable.
 :::
 
 :::tip Datos incompletos
-La plataforma solo reemplaza las variables de las que el destinatario tiene dato. Si un usuario no tiene apellido cargado, por ejemplo, el mensaje le llega con el texto `%{last_name}` a la vista. Antes de usar variables de campos opcionales, revisa que estén completos en el segmento al que apuntas.
+Si un destinatario no tiene cargado el dato de una variable, el resultado depende de dónde lea el mensaje. En el correo, la variable se reemplaza por un texto vacío. En la versión web del correo, la que abren `%{show_link}` y `%{show_url}`, y en las notificaciones, la variable no se reemplaza: si un usuario no tiene apellido cargado, por ejemplo, ve el texto `%{last_name}`. Antes de usar variables de campos opcionales, revisa que estén completos en el segmento al que apuntas.
 :::
 
 La **Vista previa** de una campaña resuelve estas variables con los datos de tu propia cuenta de administrador y con un enlace de baja de ejemplo, así que sirve para revisar el diseño, no para comprobar qué datos verá cada destinatario.

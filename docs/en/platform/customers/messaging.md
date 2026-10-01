@@ -50,7 +50,7 @@ Email campaigns allow you to contact users via email. To set up an email campaig
 - **Template**: Select a [template](/en/platform/customers/messaging.html#templates). If no template is selected, a blank one will be used.
 - **Enable Segmentation**: Select a specific segment or leave this option unchecked to send the message to all users.
 
-Click **Save and Continue** to open the WYSIWYG editor, where you can customize the selected template's content and use [personalization variables](/en/platform/customers/messaging.html#personalization-variables). Once edited, select **Save** to confirm the changes and access the **Send Status** view.
+Click **Save and continue** to open the WYSIWYG editor, where you can customize the selected template's content and use [personalization variables](/en/platform/customers/messaging.html#personalization-variables). Once edited, select **Save** to confirm the changes and access the **Send Status** view.
 
 
 ### Notification Campaigns
@@ -88,7 +88,7 @@ The contextual button allows you to perform these actions:
 - **Clone Campaign**: Create a copy with all the campaign's content.
 - **Delete campaign**: Deletes a campaign.
 
-Once you have sent a campaign, you cannot send it again. If you want to send the same campaign again, select the clone option. This creates a new campaign with the same name data, segments, and content, while the statistical information starts from scratch.
+Once a campaign is **Completed**, you cannot send it again. If you want to send the same campaign again, select the clone option. This creates a new campaign with the same name data, segments, and content, while the statistical information starts from scratch.
 
 You can cancel a campaign when it is in queue or while it is being sent.
 
@@ -156,7 +156,9 @@ These messages are not created from the admin, but from the management API:
 
 In both cases the recipient is identified by username, not by email, and must be within your [segment scope](/en/platform/customers/settings.html#restrict-scope-with-segments): if it is not, the email call answers `409` and the notification call `404`. The field-by-field detail of each call is in the service catalog, under the **Mailer** and **Notifications** resources; to open it, follow [Call using the Swagger Portal](/en/platform/core/api.html#call-using-the-swagger-portal).
 
-The email is queued, so a successful response confirms that the call was accepted, not that the message was already delivered. Its body accepts `%{name}`, `%{first_name}`, `%{last_name}`, `%{email}`, and `%{unsubscribe_link}`, a subset of the campaign [personalization variables](/en/platform/customers/messaging.html#personalization-variables): `%{show_link}` and `%{show_url}` are not available.
+The email is queued, so a successful response confirms that the call was accepted, not that the message was already delivered. Its body accepts `%{name}`, `%{first_name}`, `%{last_name}`, `%{email}`, and `%{unsubscribe_link}`, a subset of the campaign [personalization variables](/en/platform/customers/messaging.html#personalization-variables): `%{show_link}` and `%{show_url}` are not available. If the body uses any other variable, the call answers `409` with the error `Body content is not valid`. It also answers `409` when `from` is not a valid email address, with the error `Email '…' is not valid`.
+
+Notifications, on the other hand, do not accept variables, even though notification campaigns do: any `%{…}` in the body makes the call answer `409` with a `null` body, without error details, and the notification is not created.
 
 :::warning Attention
 There is also a legacy route, `POST /api/admin/mailer`, which reaches the same action but does not appear in the service catalog and does not carry the realm in the URL: you have to pass `realm_uid` as a parameter or the call answers `404`. It is kept for compatibility; use the realm route in new integrations.
@@ -230,11 +232,11 @@ Including `%{unsubscribe_link}` in the message footer is what lets the recipient
 :::warning Attention
 If you write a variable that is not on the channel's list, the platform does not save the message and shows the error **The attributes specified are not valid**.
 
-The template editor does not run that check: a template can be saved with an invalid variable, and the error only shows up when you save the message of the campaign that uses it.
+The template editor does not run that check: a template can be saved with an invalid variable, and the error only shows up when an email campaign uses it. If you pick it when creating the campaign, **Save and continue** does not create it and shows **The campaign could not be created.** with the detail in the form. If you load it later from the message editor with **Change Template**, the template is not applied and the notice is **There was an error loading the template, try again in a few minutes**, which does not mention the variable.
 :::
 
 :::tip Incomplete data
-The platform only replaces variables the recipient has data for. If a user has no last name on file, for example, the message reaches them with the text `%{last_name}` in plain sight. Before using variables from optional fields, check that they are filled in for the segment you are targeting.
+If a recipient has no data for a variable, the result depends on where they read the message. In the email, the variable is replaced with empty text. In the email's web version, the one that `%{show_link}` and `%{show_url}` open, and in notifications, the variable is not replaced: if a user has no last name on file, for example, they see the text `%{last_name}`. Before using variables from optional fields, check that they are filled in for the segment you are targeting.
 :::
 
 A campaign's **Preview** resolves these variables with your own administrator account data and with a sample unsubscribe link, so it is useful to review the design, not to check what data each recipient will see.
