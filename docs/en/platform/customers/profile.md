@@ -75,6 +75,8 @@ Every session and profile view of a realm hangs from the same prefix, built with
 
 You can review the details of the login with a code in [Soft login](/en/platform/customers/settings.html#soft-login).
 
+The password recovery and email change routes also have anti-abuse limits that can keep an email from being sent or close the user's session, without the screen showing any error. See [Request limits and lockouts](/en/platform/customers/settings.html#request-limits-and-lockouts).
+
 :::tip Tip
 There is no Liquid drop that returns the registration URL: build it with the realm identifier. For login, logout, and the profile you do have **site.login_url**, **site.logout_url**, and **site.profile_url**, which you can review in [Objects](/en/platform/channels/liquid-markup/objects.html#site).
 :::
