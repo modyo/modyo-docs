@@ -145,9 +145,6 @@ These five triggers are the only ones the **Realm** context type offers from **S
    "trigger_entry_space_uid":"space-test"
 }
 ```
-:::tip Origination identifiers in the payload
-When the webhook reports a fact in the origination scope, the payload includes the `origination_uuid`, `origination_uid`, `submission_uuid`, and `task_uid` identifiers at its root, as they apply to the fact. You read them at the same level as the rest of the fields, without having to open the record metadata. See [Origination traceability identifiers](/en/platform/core/activity-logs.html#origination-traceability-identifiers) for the detail of each one.
-:::
 
 ### Create a Realm Webhook
 
@@ -196,7 +193,11 @@ This form has no **Context type** or **Context** selectors: the webhook is alway
 :::
 
 :::tip Tip
-The same trigger can reach you in two shapes. When the end user performs the action from the site, the payload is compact and carries the event in `e_c` and `e_a`. When an administrator performs it from the admin panel, or the platform performs it on its own, the payload carries the full log, with `trigger_uid`, `trigger_entity`, and the event detail inside `options`. Keep your endpoint ready for both.
+The same trigger can reach you in two shapes. When the end user performs the action from the site, the payload is compact and carries the event in `e_c` and `e_a`. When an administrator performs it from the admin panel, or the platform performs it on its own, the payload carries the full log, with `trigger_uid`, `trigger_entity`, and the event detail inside the `options` block. Keep your endpoint ready for both.
+:::
+
+:::tip Origination identifiers in the payload
+When the webhook reports a fact in the origination scope, the payload includes the `origination_uuid`, `origination_uid`, `submission_uuid`, and `task_uid` identifiers at its root, as they apply to the fact. In the compact payload they are top-level fields, like `e_c` and `e_a`. In the full log payload they come inside the `options` block and are also copied to the root, so you read them in the same place regardless of the shape the notice arrives in. If you validate the payload against a closed schema, update it to accept these fields. See [Origination traceability identifiers](/en/platform/core/activity-logs.html#origination-traceability-identifiers) for the detail of each one.
 :::
 
 These are the payload examples of the origination triggers:
@@ -214,7 +215,8 @@ These are the payload examples of the origination triggers:
    "realm_uid":"jordana",
    "account_id":381,
    "origination_uid":"ori",
-   "submission_uuid":"4c23599f-2aa6-4a8c-b2ae-66be46b7b938"
+   "submission_uuid":"4c23599f-2aa6-4a8c-b2ae-66be46b7b938",
+   "origination_uuid":"8d3f6b2e-1c4a-4f7e-9b5d-2a6c8e0f4b13"
 }
 ```
 - Origination submission started
@@ -230,7 +232,8 @@ These are the payload examples of the origination triggers:
    "realm_uid":"jordana",
    "account_id":381,
    "origination_uid":"ori",
-   "submission_uuid":"4c23599f-2aa6-4a8c-b2ae-66be46b7b938"
+   "submission_uuid":"4c23599f-2aa6-4a8c-b2ae-66be46b7b938",
+   "origination_uuid":"8d3f6b2e-1c4a-4f7e-9b5d-2a6c8e0f4b13"
 }
 ```
 - Origination submission task submitted
@@ -242,12 +245,15 @@ These are the payload examples of the origination triggers:
    "e_c":"origination_submission",
    "uid":2300345,
    "idsite":4521,
-   "task_id":157,
+   "changes":{"nombre":[null,"Ana"]},
    "realm_id":681,
+   "task_uid":"datos-personales",
    "realm_uid":"jordana",
+   "task_uuid":"b7e1c9a2-5d3f-4a8b-9c6e-1f2d3a4b5c6d",
    "account_id":381,
    "origination_uid":"ori",
-   "submission_uuid":"4c23599f-2aa6-4a8c-b2ae-66be46b7b938"
+   "submission_uuid":"4c23599f-2aa6-4a8c-b2ae-66be46b7b938",
+   "origination_uuid":"8d3f6b2e-1c4a-4f7e-9b5d-2a6c8e0f4b13"
 }
 ```
 - Origination submission completed
@@ -255,6 +261,7 @@ These are the payload examples of the origination triggers:
 {
    "id":35914440,
    "account_id":381,
+   "automated":false,
    "site_id":null,
    "user_id":1177351,
    "value_1":null,
@@ -264,7 +271,12 @@ These are the payload examples of the origination triggers:
    "request_user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
    "loggeable_id":419,
    "loggeable_type":"Origination::Submission",
-   "options":{"title":null},
+   "options":{
+      "origination_uuid":"8d3f6b2e-1c4a-4f7e-9b5d-2a6c8e0f4b13",
+      "origination_uid":"ori",
+      "submission_uuid":"4c23599f-2aa6-4a8c-b2ae-66be46b7b938",
+      "title":null
+   },
    "created_at":"2025-06-16T10:50:22.000-04:00",
    "space_id":null,
    "log_type_id":415405,
@@ -275,7 +287,10 @@ These are the payload examples of the origination triggers:
    "trigger_entity_id":419,
    "trigger_entry_uuid":null,
    "trigger_content_uuid":null,
-   "trigger_entry_space_uid":null
+   "trigger_entry_space_uid":null,
+   "origination_uuid":"8d3f6b2e-1c4a-4f7e-9b5d-2a6c8e0f4b13",
+   "origination_uid":"ori",
+   "submission_uuid":"4c23599f-2aa6-4a8c-b2ae-66be46b7b938"
 }
 ```
 - Origination submission canceled
@@ -291,7 +306,8 @@ These are the payload examples of the origination triggers:
    "realm_uid":"jordana",
    "account_id":381,
    "origination_uid":"ori",
-   "submission_uuid":"04bf572a-9e00-4474-ae8a-6a0bc17d4c1a"
+   "submission_uuid":"04bf572a-9e00-4474-ae8a-6a0bc17d4c1a",
+   "origination_uuid":"8d3f6b2e-1c4a-4f7e-9b5d-2a6c8e0f4b13"
 }
 ```
 - Origination submission canceled due to expiration
@@ -310,7 +326,11 @@ These are the payload examples of the origination triggers:
    "request_user_agent":null,
    "loggeable_id":419,
    "loggeable_type":"Origination::Submission",
-   "options":null,
+   "options":{
+      "origination_uuid":"8d3f6b2e-1c4a-4f7e-9b5d-2a6c8e0f4b13",
+      "origination_uid":"ori",
+      "submission_uuid":"4c23599f-2aa6-4a8c-b2ae-66be46b7b938"
+   },
    "created_at":"2026-07-02T09:15:04.000-04:00",
    "log_type_id":415412,
    "realm_id":681,
@@ -320,7 +340,10 @@ These are the payload examples of the origination triggers:
    "trigger_entity_id":419,
    "trigger_entry_uuid":null,
    "trigger_content_uuid":null,
-   "trigger_entry_space_uid":null
+   "trigger_entry_space_uid":null,
+   "origination_uuid":"8d3f6b2e-1c4a-4f7e-9b5d-2a6c8e0f4b13",
+   "origination_uid":"ori",
+   "submission_uuid":"4c23599f-2aa6-4a8c-b2ae-66be46b7b938"
 }
 ```
 This is the only trigger on the list that nobody performs: it arrives with `automated` set to `true` and without `user_id`, because the platform is the one canceling the overdue submission.
@@ -335,6 +358,7 @@ This is the only trigger on the list that nobody performs: it arrives with `auto
    "idsite":4521,
    "submission_uuid":"4c23599f-2aa6-4a8c-b2ae-66be46b7b938",
    "origination_uid":"ori",
+   "origination_uuid":"8d3f6b2e-1c4a-4f7e-9b5d-2a6c8e0f4b13",
    "realm_uid":"jordana",
    "realm_id":681,
    "task_uid":"datos-personales",
@@ -344,7 +368,9 @@ This is the only trigger on the list that nobody performs: it arrives with `auto
    "ip":"172.71.194.146"
 }
 ```
-The origination task response started, reopened, and assigned triggers use the same shape, with `e_a` set to `started_log`, `reopened_log`, or `assigned_log`, and `task_uid` tells you which task of the origination the event belongs to.
+The origination task response started and reopened triggers use the same shape, with `e_a` set to `started_log` or `reopened_log`, and `task_uid` tells you which task of the origination the event belongs to.
+
+**Origination task response assigned** has no compact shape: the assignment is always made by an administrator, so it arrives as a full log, with `trigger_uid` set to `origination_task_response_assigned_log` and the new assignee in `value_3`. The `options` block carries `task_response_id`, `task_response_type`, `target_user_id`, `previous_assignee_id`, and `previous_assignee_group_id`, along with the origination identifiers.
 
 :::tip Tip
 The webhook is called via a POST when the selected log type is generated. Once the webhook is created, you can send a test notification with false information to test that your URL is correctly receiving POSTs from Modyo.

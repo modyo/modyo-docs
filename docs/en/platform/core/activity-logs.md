@@ -89,7 +89,9 @@ Records in the origination scope include the identifiers of the entities they de
 | `submission_uuid` | The submission. |
 | `task_uid` | The task. |
 
-A field that does not apply **does not travel empty: it does not travel at all**. If the record belongs to an origination but not to a particular submission, `submission_uuid` is simply absent from the payload.
+In the **Log details** window, these fields appear inside the `options` block.
+
+A field that does not apply **does not travel empty: it does not travel at all**. If the record belongs to an origination but not to a particular submission, `submission_uuid` is simply absent from the `options` block.
 
 :::warning Attention
 `origination_uid` is an editable identifier. If someone changes it, earlier records keep the value it had at that time, so it is not suitable for grouping the full history of a flow: use `origination_uuid` for that, which never changes.

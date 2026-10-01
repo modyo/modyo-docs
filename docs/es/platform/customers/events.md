@@ -129,7 +129,11 @@ Los correos de una respuesta de originación tienen sus propios tipos, con las m
 
 Los eventos del ámbito de originación traen, además de sus datos propios, los identificadores de las entidades que describen: `origination_uuid` y `origination_uid` para el flujo, `submission_uuid` para la respuesta y `task_uid` para la tarea. Cada uno aparece solo cuando aplica al hecho registrado, y el que no aplica no viaja en el payload.
 
-En los eventos de negocio estos identificadores son campos de primer nivel del payload. En los registros de actividad viajan dentro de los metadatos del registro. Y en los [webhooks](/es/platform/core/webhooks.html) se entregan siempre en la raíz del payload, de modo que un consumidor los lee en el mismo lugar sin importar por qué canal llegó el aviso.
+En los eventos de negocio estos identificadores son campos de primer nivel del payload. En los registros de actividad viajan dentro del bloque `options`. Y en los [webhooks](/es/platform/core/webhooks.html) se entregan siempre en la raíz del payload, de modo que un consumidor los lee en el mismo lugar sin importar por qué canal llegó el aviso.
+
+:::warning Atención
+Por ahora estos identificadores se leen, pero no sirven como filtro. `GET /api/admin/business_events` todavía no acepta `origination_uuid`, `origination_uid` ni `task_uid`: si los envías, la API los ignora en silencio y devuelve los eventos sin ese filtro. Para acotar la consulta a una respuesta, usa `submission_uuid`, que sí es un filtro disponible.
+:::
 
 El detalle de cada identificador, el caso de una originación eliminada y el alcance temporal del cambio están en [Identificadores de trazabilidad de originación](/es/platform/core/activity-logs.html#identificadores-de-trazabilidad-de-originacion).
 

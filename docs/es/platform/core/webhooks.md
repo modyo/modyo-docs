@@ -146,9 +146,6 @@ Estos cinco disparadores son los únicos que ofrece el tipo de contexto **Reino*
    "trigger_entry_space_uid":"space-test"
 }
 ```
-:::tip Identificadores de originación en el payload
-Cuando el webhook informa un hecho del ámbito de originación, el payload incluye en su raíz los identificadores `origination_uuid`, `origination_uid`, `submission_uuid` y `task_uid`, según correspondan al hecho. Los lees al mismo nivel que el resto de los campos, sin tener que abrir los metadatos del registro. Revisa [Identificadores de trazabilidad de originación](/es/platform/core/activity-logs.html#identificadores-de-trazabilidad-de-originacion) para el detalle de cada uno.
-:::
 
 ### Crear un Webhook de Reino
 
@@ -197,7 +194,11 @@ Este formulario no tiene selectores de **Tipo de contexto** ni de **Contexto**: 
 :::
 
 :::tip Tip
-Un mismo disparador puede llegarte en dos formas. Si la acción la hace el usuario final desde el sitio, el payload es compacto y trae el evento en `e_c` y `e_a`. Si la hace un administrador desde el panel, o si la plataforma la hace sola, el payload trae el log completo, con `trigger_uid`, `trigger_entity` y el detalle del evento dentro de `options`. Deja tu endpoint preparado para las dos.
+Un mismo disparador puede llegarte en dos formas. Si la acción la hace el usuario final desde el sitio, el payload es compacto y trae el evento en `e_c` y `e_a`. Si la hace un administrador desde el panel, o si la plataforma la hace sola, el payload trae el log completo, con `trigger_uid`, `trigger_entity` y el detalle del evento dentro del bloque `options`. Deja tu endpoint preparado para las dos.
+:::
+
+:::tip Identificadores de originación en el payload
+Cuando el webhook informa un hecho del ámbito de originación, el payload incluye en su raíz los identificadores `origination_uuid`, `origination_uid`, `submission_uuid` y `task_uid`, según correspondan al hecho. En el payload compacto son campos de primer nivel, como `e_c` y `e_a`. En el payload de log completo vienen dentro del bloque `options` y, además, se copian a la raíz, así que los lees en el mismo lugar sin importar la forma en que llegue el aviso. Si validas el payload contra un esquema cerrado, actualízalo para aceptar estos campos. Revisa [Identificadores de trazabilidad de originación](/es/platform/core/activity-logs.html#identificadores-de-trazabilidad-de-originacion) para el detalle de cada uno.
 :::
 
 Estos son los payloads de ejemplo de los disparadores de originación:
@@ -215,7 +216,8 @@ Estos son los payloads de ejemplo de los disparadores de originación:
    "realm_uid":"jordana",
    "account_id":381,
    "origination_uid":"ori",
-   "submission_uuid":"4c23599f-2aa6-4a8c-b2ae-66be46b7b938"
+   "submission_uuid":"4c23599f-2aa6-4a8c-b2ae-66be46b7b938",
+   "origination_uuid":"8d3f6b2e-1c4a-4f7e-9b5d-2a6c8e0f4b13"
 }
 ```
 - Respuesta de originación iniciada
@@ -231,7 +233,8 @@ Estos son los payloads de ejemplo de los disparadores de originación:
    "realm_uid":"jordana",
    "account_id":381,
    "origination_uid":"ori",
-   "submission_uuid":"4c23599f-2aa6-4a8c-b2ae-66be46b7b938"
+   "submission_uuid":"4c23599f-2aa6-4a8c-b2ae-66be46b7b938",
+   "origination_uuid":"8d3f6b2e-1c4a-4f7e-9b5d-2a6c8e0f4b13"
 }
 ```
 - Tarea de respuesta de originación enviada
@@ -243,12 +246,15 @@ Estos son los payloads de ejemplo de los disparadores de originación:
    "e_c":"origination_submission",
    "uid":2300345,
    "idsite":4521,
-   "task_id":157,
+   "changes":{"nombre":[null,"Ana"]},
    "realm_id":681,
+   "task_uid":"datos-personales",
    "realm_uid":"jordana",
+   "task_uuid":"b7e1c9a2-5d3f-4a8b-9c6e-1f2d3a4b5c6d",
    "account_id":381,
    "origination_uid":"ori",
-   "submission_uuid":"4c23599f-2aa6-4a8c-b2ae-66be46b7b938"
+   "submission_uuid":"4c23599f-2aa6-4a8c-b2ae-66be46b7b938",
+   "origination_uuid":"8d3f6b2e-1c4a-4f7e-9b5d-2a6c8e0f4b13"
 }
 ```
 - Respuesta de originación completada
@@ -256,6 +262,7 @@ Estos son los payloads de ejemplo de los disparadores de originación:
 {
    "id":35914440,
    "account_id":381,
+   "automated":false,
    "site_id":null,
    "user_id":1177351,
    "value_1":null,
@@ -265,7 +272,12 @@ Estos son los payloads de ejemplo de los disparadores de originación:
    "request_user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
    "loggeable_id":419,
    "loggeable_type":"Origination::Submission",
-   "options":{"title":null},
+   "options":{
+      "origination_uuid":"8d3f6b2e-1c4a-4f7e-9b5d-2a6c8e0f4b13",
+      "origination_uid":"ori",
+      "submission_uuid":"4c23599f-2aa6-4a8c-b2ae-66be46b7b938",
+      "title":null
+   },
    "created_at":"2025-06-16T10:50:22.000-04:00",
    "space_id":null,
    "log_type_id":415405,
@@ -276,7 +288,10 @@ Estos son los payloads de ejemplo de los disparadores de originación:
    "trigger_entity_id":419,
    "trigger_entry_uuid":null,
    "trigger_content_uuid":null,
-   "trigger_entry_space_uid":null
+   "trigger_entry_space_uid":null,
+   "origination_uuid":"8d3f6b2e-1c4a-4f7e-9b5d-2a6c8e0f4b13",
+   "origination_uid":"ori",
+   "submission_uuid":"4c23599f-2aa6-4a8c-b2ae-66be46b7b938"
 }
 ```
 - Respuesta de originación cancelada
@@ -292,7 +307,8 @@ Estos son los payloads de ejemplo de los disparadores de originación:
    "realm_uid":"jordana",
    "account_id":381,
    "origination_uid":"ori",
-   "submission_uuid":"04bf572a-9e00-4474-ae8a-6a0bc17d4c1a"
+   "submission_uuid":"04bf572a-9e00-4474-ae8a-6a0bc17d4c1a",
+   "origination_uuid":"8d3f6b2e-1c4a-4f7e-9b5d-2a6c8e0f4b13"
 }
 ```
 - Respuesta de originación cancelada por vencimiento
@@ -311,7 +327,11 @@ Estos son los payloads de ejemplo de los disparadores de originación:
    "request_user_agent":null,
    "loggeable_id":419,
    "loggeable_type":"Origination::Submission",
-   "options":null,
+   "options":{
+      "origination_uuid":"8d3f6b2e-1c4a-4f7e-9b5d-2a6c8e0f4b13",
+      "origination_uid":"ori",
+      "submission_uuid":"4c23599f-2aa6-4a8c-b2ae-66be46b7b938"
+   },
    "created_at":"2026-07-02T09:15:04.000-04:00",
    "log_type_id":415412,
    "realm_id":681,
@@ -321,7 +341,10 @@ Estos son los payloads de ejemplo de los disparadores de originación:
    "trigger_entity_id":419,
    "trigger_entry_uuid":null,
    "trigger_content_uuid":null,
-   "trigger_entry_space_uid":null
+   "trigger_entry_space_uid":null,
+   "origination_uuid":"8d3f6b2e-1c4a-4f7e-9b5d-2a6c8e0f4b13",
+   "origination_uid":"ori",
+   "submission_uuid":"4c23599f-2aa6-4a8c-b2ae-66be46b7b938"
 }
 ```
 Este disparador es el único de la lista que nadie ejecuta: llega con `automated` en `true` y sin `user_id`, porque es la plataforma la que cancela la respuesta vencida.
@@ -336,6 +359,7 @@ Este disparador es el único de la lista que nadie ejecuta: llega con `automated
    "idsite":4521,
    "submission_uuid":"4c23599f-2aa6-4a8c-b2ae-66be46b7b938",
    "origination_uid":"ori",
+   "origination_uuid":"8d3f6b2e-1c4a-4f7e-9b5d-2a6c8e0f4b13",
    "realm_uid":"jordana",
    "realm_id":681,
    "task_uid":"datos-personales",
@@ -345,7 +369,9 @@ Este disparador es el único de la lista que nadie ejecuta: llega con `automated
    "ip":"172.71.194.146"
 }
 ```
-Los disparadores de respuesta a tarea de originación iniciada, reabierta y asignada usan la misma estructura, con `e_a` en `started_log`, `reopened_log` o `assigned_log`, y `task_uid` te dice a qué tarea de la originación corresponde el evento.
+Los disparadores de respuesta a tarea de originación iniciada y reabierta usan la misma estructura, con `e_a` en `started_log` o `reopened_log`, y `task_uid` te dice a qué tarea de la originación corresponde el evento.
+
+**Respuesta a tarea de originación asignada** no tiene forma compacta: la asignación la hace siempre un administrador, así que llega como log completo, con `trigger_uid` en `origination_task_response_assigned_log` y el nuevo responsable en `value_3`. El bloque `options` trae `task_response_id`, `task_response_type`, `target_user_id`, `previous_assignee_id` y `previous_assignee_group_id`, además de los identificadores de originación.
 
 :::tip Tip
 El webhook es llamado a través de un POST cuando se genera un log del tipo seleccionado. Una vez creado el webhook, podrás enviar una notificación de prueba con información falsa para probar que tu URL está recibiendo correctamente los POSTs desde Modyo.

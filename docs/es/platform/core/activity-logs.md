@@ -89,7 +89,9 @@ Los registros del ámbito de originación incluyen los identificadores de las en
 | `submission_uuid` | La respuesta. |
 | `task_uid` | La tarea. |
 
-Un campo que no aplica **no viaja vacío: no viaja**. Si el registro es de una originación pero no de una respuesta en particular, `submission_uuid` simplemente no está en el payload.
+En la ventana **Detalles del log**, estos campos aparecen dentro del bloque `options`.
+
+Un campo que no aplica **no viaja vacío: no viaja**. Si el registro es de una originación pero no de una respuesta en particular, `submission_uuid` simplemente no está en el bloque `options`.
 
 :::warning Atención
 `origination_uid` es un identificador editable. Si alguien lo cambia, los registros anteriores conservan el valor que tenía en ese momento, así que no sirve para agrupar el historial completo de un flujo: para eso usa `origination_uuid`, que no cambia.
