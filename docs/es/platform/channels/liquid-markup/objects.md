@@ -521,15 +521,20 @@ Los objetos de Sitio se utilizan para obtener toda la información de un sitio. 
 | **site.time_zone**              | Zona horaria del sitio.                                                                                                     | ```America/Santiago``` |
 | **site.realm_slug**             | Slug del realm al que pertenece el sitio.                                                                                   | ```default```          |
 
-## sitesearch
+## site_search
 
-Estos drops permiten obtener información del navegador de un sitio.
+Estos drops entregan la búsqueda de la aplicación web ya resuelta, con sus resultados. La variable se inyecta con el nombre `site_search` y solo existe en la página de resultados de búsqueda; consulta [Variables de contexto](/es/platform/channels/liquid-markup/variables.html#de-la-pagina-de-resultados-de-busqueda).
 
-| Objeto                                    | Descripción                                                                | Ejemplo |
-|-------------------------------------------|----------------------------------------------------------------------------|---------|
-| **sitesearch.have_results**               | Booleano que determina si la búsqueda tiene resultados.                    |         |
-| **sitesearch.results**                    | Objeto de tipo Página que cumple con los parámetros de búsqueda.           |         |
-| **sitesearch.have_less_relevant_results** | Booleano que determina si hay más resultados que exceden el límite máximo. |         |
+| Objeto | Descripción | Ejemplo |
+|--------|-------------|---------|
+| **site_search.have_results** | Booleano que determina si la búsqueda tiene resultados. Es falso cuando la URL no trae el parámetro `query`. | |
+| **site_search.results** | Colección paginada con los resultados de la búsqueda. Cada resultado tiene solo cuatro claves: `title`, `description`, `url` y `site_name`. Acepta el filtro `pagination_links` para imprimir la navegación entre páginas. | |
+| **site_search.have_less_relevant_results** | Booleano que determina si hay más resultados que exceden el límite máximo de 100. | |
+| **site_search.multi** | Booleano que determina si la búsqueda abarca varias aplicaciones web de la cuenta. Es verdadero solo cuando la aplicación tiene marcadas **Habilitar búsqueda** y **Habilitar la búsqueda en múltiples sitios**. Úsalo para mostrar `site_name` únicamente cuando el resultado puede venir de otra aplicación. | |
+
+:::warning Atención
+El objeto se llama `site_search`, con guion bajo. `sitesearch` no existe en el contexto de Liquid: una plantilla que lo use no falla, simplemente imprime vacío y no deja ninguna pista del motivo.
+:::
 
 ## space
 
