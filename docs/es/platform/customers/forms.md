@@ -121,6 +121,96 @@ Para los campos de texto simple y parrafo, podrás agregar validaciones a travé
 
 Al seleccionar cualquiera de las diferentes opciones y al hacer click en **Añadir**, se autocompletará la expresión al campo.
 
+### Máscaras de entrada
+
+Una máscara de entrada restringe lo que el usuario puede teclear en un campo y formatea el valor mientras escribe. A diferencia de la expresión regular, que valida el valor completo recién al enviar el formulario, la máscara actúa tecla por tecla: el usuario no llega a ingresar un valor con el formato equivocado.
+
+Las máscaras se configuran en la sección **Opciones** del campo, tanto en el constructor de formularios como en el de las tareas Input de las [originaciones](/es/platform/customers/origination.html). Están disponibles en los campos **Texto simple** y **Número**. Los campos **Correo electrónico** y **URL** traen una máscara fija de fábrica, que impide teclear caracteres que esos formatos nunca admiten y no se configura ni se desactiva.
+
+#### Modos de la máscara
+
+El selector **Máscara de entrada** define el modo. Los modos son excluyentes, y cambiar de modo es la única forma de activar o desactivar la máscara:
+
+| Modo | Qué hace | Disponible en |
+|---|---|---|
+| **Sin máscara** | Valor por defecto. El campo no restringe lo que se teclea. | Texto simple y Número |
+| **Patrón** | El campo inserta los separadores por su cuenta y acepta en cada posición solo el tipo de carácter que corresponde. Define un largo fijo, por ejemplo `00/00/0000` o `0000 0000 0000 0000`. | Texto simple |
+| **RegExp** | El campo filtra qué caracteres se pueden teclear, sin largo fijo ni separadores. Por ejemplo, solo letras y espacios. | Texto simple y Número |
+| **Número** | Aplica el separador de miles mientras se escribe, con largo variable. | Número |
+
+#### Catálogo de máscaras
+
+El botón **Catálogo de máscaras** ofrece máscaras predefinidas que precargan el patrón y lo dejan editable:
+
+- **Tarjeta de crédito**
+- **RUT (Chile)**
+- **Patente (Chile)**
+- **Texto sin emojis**
+- **Solo letras y espacios**
+
+También puedes escribir tu propio patrón desde cero, sin partir de un preset.
+
+#### Tokens del patrón
+
+En el modo **Patrón**, cada posición del patrón se escribe con uno de estos tokens. Cualquier otro carácter se toma como literal y la máscara lo inserta sola:
+
+| Token | Significado |
+|---|---|
+| `0` | Dígito |
+| `a` | Cualquier letra, de cualquier alfabeto |
+| `*` | Cualquier carácter |
+| `[ ]` | Posiciones opcionales, cada una puede quedar vacía |
+| `\` | Escapa el carácter siguiente para tratarlo como literal |
+
+Algunos presets agregan bloques propios para posiciones que los tokens básicos no cubren. El RUT chileno, por ejemplo, usa un bloque `V` para el dígito verificador, que acepta números y la letra K. El constructor muestra los bloques del preset junto a la tabla de tokens.
+
+El campo **Probar la máscara** te permite escribir un valor de prueba y ver el resultado antes de publicar.
+
+#### Cómo se guarda y cómo se muestra el valor
+
+El valor se guarda y se entrega por la API **siempre sin formato**: la máscara es una ayuda de captura, no cambia el dato. El valor formateado se muestra en el panel de administración, en la ficha de la respuesta y en las plantillas [Liquid](/es/platform/channels/liquid-markup).
+
+:::warning Las reglas se evalúan sobre el valor sin formato
+La [lógica condicional](/es/platform/customers/origination.html#logica-condicional) de las originaciones y los filtros de [segmentos](/es/platform/customers/segments.html) comparan contra el valor guardado, no contra el que ve el usuario. Una regla escrita como `12.345.678-9` nunca calza si el valor almacenado es `123456789`. El editor te muestra un aviso con las dos formas del valor cuando eliges un campo con máscara.
+:::
+
+#### Consideraciones
+
+- **La máscara también se valida en el servidor.** No se puede evadir desde la API ni desde el panel de agente: un valor que no calza con el patrón o con la expresión se rechaza con un error de validación.
+- **En el modo RegExp, la expresión filtra cada tecla**, así que debe aceptar también los valores a medio escribir. Usa `*` o `?` en lugar de `+`: escribe `^[a-z]?0*$` y no `[a-z]0+`. Una expresión que rechace todo valor de un solo carácter deja el campo sin poder escribirse, y el constructor te lo advierte.
+- **El modo Patrón desactiva el largo mínimo y máximo**, porque el patrón ya define el largo y el formato. Los valores que tuvieras configurados se conservan y vuelven a activarse si eliges **Sin máscara** o **RegExp**.
+- **El modo Número mantiene activos el mínimo y el máximo**, y los usa para impedir que el usuario escriba un valor fuera de rango. Admite hasta 16 dígitos; un campo Número sin máscara no tiene ese tope.
+- **La máscara y la expresión regular son complementarias.** La máscara restringe la forma mientras se escribe; la expresión regular valida el valor completo al enviar.
+- **Una máscara no valida el significado.** Un preset de documento de identidad asegura la forma del dato, no que el dígito verificador sea correcto ni que la fecha exista.
+- **Los valores guardados antes de configurar la máscara no se migran ni se reformatean.** Si el usuario vuelve a editar una respuesta cuyo valor no calza con la máscara nueva, el campo se edita sin máscara y la validación del servidor se aplica igual.
+
+### Enlaces en los textos del formulario
+
+Los títulos de los campos, sus instrucciones y las etiquetas de las alternativas admiten enlaces escritos con HTML, para casos como remitir a los términos y condiciones o a la política de privacidad sin sacar al usuario del formulario:
+
+```html
+Acepto los <a href="/terminos" target="_blank">términos y condiciones</a>
+```
+
+Esto aplica tanto a los formularios como a las tareas Input de las originaciones, que comparten el mismo renderizado.
+
+Lo que se permite escribir es acotado:
+
+| | Qué se acepta |
+|---|---|
+| Etiquetas | Solo `a`. Cualquier otra etiqueta se descarta y queda solo su texto. |
+| Atributos | `href`, `target`, `rel` y `title`. |
+| Valores de `target` | `_blank` y `_self`. `_top` y `_parent` se descartan, porque rompen un formulario embebido en un widget. |
+| Esquemas de `href` | `http`, `https`, `mailto` y `tel`, además de rutas relativas y anclas. `javascript:`, `data:` y cualquier otro se descartan. |
+| `rel` | En los enlaces con `target="_blank"` se fuerza `noopener noreferrer`, lo escribas o no. |
+| `script` y `style` | Se eliminan junto con su contenido. |
+
+El enlace se ve como tal en el formulario del sitio, en los resúmenes de las tareas de confirmación y validación de una originación, y en el formulario de la vista de agente. En el resto de las superficies el texto sale plano, sin markup: el detalle de la respuesta en el panel, la exportación a CSV y XLS, el correo de notificación, la API y las plantillas Liquid.
+
+:::tip Dónde conviene poner los enlaces
+El lugar natural es el título o las instrucciones de la pregunta. En las etiquetas de las alternativas también funcionan, salvo en los campos **Dropdown** y **Preguntas anidadas**, donde el navegador no admite markup dentro de una opción y la etiqueta sale como texto. Además, la etiqueta de una alternativa se guarda como copia en la respuesta del usuario, así que conviene mantenerla corta y evitar el punto y coma, que es el separador de niveles en las preguntas anidadas.
+:::
+
 ### Propiedades del formulario
 
 Esta sección te permitirá cambiar el comportamiento general del formulario. Contiene lo mismo que la vista de creación de un formulario nuevo, pero a su vez agrega un par de opciones nuevas las que se detalla a continuación.

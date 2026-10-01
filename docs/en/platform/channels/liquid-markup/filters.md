@@ -876,6 +876,26 @@ As of Modyo 10.2 the filter resolves the status against the user present in the 
 The filter needs the `user` object in the template context. If it isn't there, evaluation aborts as soon as the submission has at least one completed task, and the published HTML shows the `<!-- Liquid Error -->` comment instead of the block, with no warning for whoever is browsing. Guard the block with <span v-pre>`{% if user %}`</span> and make sure the template receives the user.
 :::
 
+### File Link
+
+Returns an HTML link tag pointing to a file uploaded in a submission, with the file name as its text. Returns an empty string if the answer has no file.
+
+*e.g.* <span v-pre>`{{ submission.tasks.documents.fields.bank_statement | file_link }}`</span>
+
+**Parameters:**
+- file (Asset|Hash) — the answer of a file field, or the file of a document, identity document, or selfie answer
+- mode (String) — optional. With the value `'download'`, the link downloads the file instead of opening it
+
+With the **Document**, **Identity document**, and **Selfie** fields of an origination, the file is obtained from `file`:
+
+<span v-pre>`{{ submission.tasks.identity.fields.id_card.file | file_link }}`</span>
+
+The link this filter generates is the only supported way to show a submission file inside an [agent task](/en/platform/customers/origination.html#tasks-answered-by-agents), where the iframe isolation prevents opening tabs and starting downloads on your own. Check [Show a file from the submission](/en/platform/customers/origination.html#show-a-file-from-the-submission) for the details.
+
+:::warning The download mode only applies inside the panel
+On the site origination page, the browser ignores the `download` attribute because the file is served from another origin, so the file opens in a new tab instead of being downloaded. The download is honored only inside the form of an agent task.
+:::
+
 ### URL (Step URL for Submission)
 
 Generates a navigable URL for a step within a submission (first visible task). Only returns a value if submission is pending and either the step is completed or origination step ordering permits navigation.

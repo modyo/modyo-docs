@@ -326,6 +326,37 @@ To configure it, you need:
 
 Once enabled, the provider becomes available in the [Identity Verification](/en/platform/customers/origination.html#identity-verification) tasks of the realm's originations.
 
+### Captcha
+
+The **Security** category of the realm integrations groups the three captcha providers Modyo supports. Each one is installed separately with its **Install** button, and you can have several installed at the same time in the same realm. Which one actually protects the forms is decided afterwards, in [Captcha](/en/platform/customers/settings.html#captcha-2) of the **Security** section.
+
+#### Google reCAPTCHA v3
+
+Protects forms with invisible, score-based challenges. To install it you need:
+
+- **Site key**: Your reCAPTCHA v3 site key.
+- **Secret key**: Your reCAPTCHA v3 secret key.
+- **Threshold**: Minimum score required to consider an interaction valid, between `0.0` and `1.0`.
+
+#### Google reCAPTCHA Enterprise
+
+The alternative to reCAPTCHA v3 when you need advanced bot protection and risk analysis, or when you exceed the one million request limit of v3. To install it you need:
+
+- **Site key**: Your reCAPTCHA Enterprise site key.
+- **Project ID**: Your Google Cloud project ID.
+- **API key**: Your Google Cloud API key.
+
+:::warning The key has to be score based
+reCAPTCHA Enterprise allows creating score-based keys and checkbox keys. Modyo works with the former: a checkbox key always fails verification.
+:::
+
+#### Cloudflare Turnstile
+
+A privacy-focused alternative to CAPTCHA that doesn't require the user to solve a visual challenge. To install it you need:
+
+- **Site key**: Your Turnstile site key.
+- **Secret key**: Your Turnstile secret key.
+
 ### Auronix
 
 The Auronix integration, of the messaging category, allows sending WhatsApp messages using Meta-approved templates. It is used to send the soft login OTP code via WhatsApp.
@@ -566,13 +597,28 @@ The options available to set a password policy on the Modyo platform are:
 - Require at least one capital letter (A - Z)
 - Require at least one non-alphanumeric character (! @ # $% ^ & * () _ + - = [] {} |)
 
-#### reCAPTCHA
+#### Captcha
 
-You can enable reCAPTCHA in the realm or not, once enabled, enter:
+Captcha protection is applied to user registration, form submission, sign in, and password recovery of the realm.
 
-- **Site Key**
-- **Secret**
-- **Threshold**
+The section has two controls:
+
+- **Captcha enabled**: Turns the protection on or off in the realm.
+- **Active captcha integration**: Choose which of the installed and enabled [captcha integrations](/en/platform/customers/settings.html#captcha) protects the realm. Only one can be active at a time.
+
+If the realm has no captcha integration installed and enabled, the selector appears empty with the message **There are no captcha integrations installed and enabled in this realm** and a **Go to Integrations** link to install one.
+
+When you change the active integration, the platform asks for confirmation, because the change affects every captcha-protected form of the realm.
+
+:::warning Captcha enabled with no integration selected
+If you leave **Captcha enabled** checked but with no active integration, the forms are **not** protected. The screen warns you with the message **Captcha is enabled but no integration is selected, so forms are NOT being protected**.
+:::
+
+:::tip To disable or delete a captcha integration
+An integration that is the active captcha of the realm can't be disabled or deleted. First select another integration here, or uncheck **Captcha enabled**, save the changes, and only then go back to **Integrations**.
+:::
+
+Realms that already had reCAPTCHA configured were migrated automatically: the platform created the **Google reCAPTCHA v3** integration with the same credentials and left it as the active integration, with nothing for you to reconfigure.
 
 ### Payment settings
 
