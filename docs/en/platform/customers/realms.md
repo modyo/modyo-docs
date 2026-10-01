@@ -56,12 +56,14 @@ The realm's own pages — sign in, sign up, verification code, password recovery
 
 You configure them in **Realm settings** → **Security headers**, and you need the **Admin Security Headers** grouped permission to view and edit them.
 
+You can also read and update this configuration through the admin API, at `/api/admin/customers/{realm_uid}/settings/security_headers`.
+
 ### Enabling the realm headers
 
-A realm's headers start disabled. While they are, the screen shows **Headers disabled** with the notice "Security headers are currently disabled for this realm. Enable this module to access the configuration", and an **Enable security headers for this realm** button.
+A realm's headers start disabled. While they are, the screen shows **Headers disabled** with the notice "Security headers are currently disabled for this realm. Enable this module to access the settings", and an **Enable security headers for this realm** button.
 
 :::danger This action cannot be undone
-Enabling a realm's headers **cannot be reverted**: there is no way back to the disabled state from the admin. The platform warns you before applying it with the message "Customizing the realm security headers overrides the platform global configuration. This action cannot be undone, please check the documentation".
+Enabling a realm's headers **cannot be reverted**: there is no way back to the disabled state from the admin. The platform warns you before applying it with the message "Realm security headers customization overrides the platform global configuration. This action cannot be undone, please refer to the documentation".
 :::
 
 When you enable them for the first time, the configuration is seeded with **the values the platform was already applying at that moment**. In other words, enabling does not change the realm's behavior on day one: you take control of a policy that until then was imposed, with the same content. Any change from there on is yours.
@@ -77,6 +79,8 @@ When you enable them for the first time, the configuration is seeded with **the 
 
 The rest of the headers a web app offers are not configurable per realm, and keep coming from the platform.
 
+Disabling one of these four headers does not remove it from the response either: the platform value applies again. If you disable the realm's **Content-Security-Policy**, for example, the pages go back to the platform CSP, which by default includes `frame-ancestors 'self'`, and a sign in embedded in an iframe from another origin is blocked again. As for **Content-Security-Policy-Report-Only** and **Reporting-Endpoints**, once disabled they are only present if the platform defines them too.
+
 :::warning The Referrer-Policy list is shorter than the web app one
 The realm selector offers `no-referrer`, `origin`, `origin-when-cross-origin`, `same-origin`, `strict-origin`, and `strict-origin-when-cross-origin`. It deliberately leaves out `unsafe-url` and `no-referrer-when-downgrade`, which you can choose in a web app. The reason is concrete: the password recovery link carries its token in the URL, and those two policies would leak it to third parties through the `Referer` header.
 :::
@@ -87,11 +91,15 @@ If you turn on the nonce option in **Content-Security-Policy** or **Content-Secu
 
 You can also write <code v-pre>{{csp_nonce}}</code> inside the directive: when the page is served, that placeholder is replaced with the nonce of that response. The same nonce is applied to the sign in markup, including the custom JavaScript and CSS you may have defined for that screen, so you can harden the CSP without your own code failing to run.
 
+The two mechanisms are independent. If you turn on the nonce option and also write <code v-pre>{{csp_nonce}}</code> in `script-src` or `style-src`, the nonce shows up twice in that directive, for example `script-src 'nonce-…' 'nonce-…'`. It is a valid CSP and the browser applies it without issues: it is not a platform error. It can happen without you setting it up: if the policy the platform was applying already used a nonce, the initial seeding leaves both turned on.
+
 ### Where they apply
 
-The configuration covers **every HTML response of the realm**: sign in, sign up, verification code, password recovery, profile, the error pages of that scope, and the authorization screen.
+The configuration covers **the realm's HTML responses**: sign in, sign up, verification code, password recovery, profile, the authorization screen, and the error pages generated while serving those screens.
 
 It does not cover redirects, because the browser applies these policies to the document it renders and not to the intermediate hop, nor API responses, which do not carry these headers.
+
+It does not cover two error cases either: a URL under the realm scope that does not match any of its screens, and an unexpected server error. Those responses do not go through the realm configuration; the first one, for example, goes out with `X-Frame-Options: DENY`, so inside an iframe it shows up as a browser block instead of a 404, even if `frame-ancestors` is configured correctly.
 
 :::tip Showing sign in inside an iframe
 This is the most common reason to configure a realm's CSP. By adding the portal's origin to the `frame-ancestors` directive of the realm CSP, its sign in screen can render inside an iframe hosted at that origin; any origin not on the list is still blocked by the browser.
