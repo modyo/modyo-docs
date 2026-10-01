@@ -309,6 +309,43 @@ When you consume data from the JSON API, you will get an object with all the dat
 To store information, the data must use valid JSON format; format errors will not be processed.
 :::
 
+#### Completing the task from the code snippet
+
+The POST request to the `getUrl()` URL saves the data and can also change the task status, depending on the `completed` parameter:
+
+- **Without `completed`**: saves the data and marks the task as completed.
+- **`completed: true`**: saves the data and marks the task as completed.
+- **`completed: false`**: saves the data without completing the task. If the task was already completed, it goes back to in progress.
+
+Use only `true` or `false` in `completed`. Any other value is read as `false`.
+
+`completed` goes at the same level as `content`, not inside it. For example, to save data without completing the task:
+
+```js
+await fetch(getUrl(), {
+  method: 'POST',
+  headers: {
+    'X-CSRF-TOKEN': document.querySelector('meta[name=csrf-token]').content,
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({ content: { plan: 'basic' }, completed: false })
+});
+```
+
+Completing the task from the code snippet is not the same as clicking **Next**. Each path records different events:
+
+- **POST that completes the task**: records **Origination task response completed** (`origination_task_response_completed_log`) and **Origination submission task updated** (`origination_submission_task_updated_log`).
+- **Next button**: records **Origination submission task submitted** (`origination_submission_task_submitted_log`). In tasks with **Lock responses once completed**, this event is recorded by the POST that completes the task, as explained below.
+
+If the task does not have that option enabled and the user completes it with the POST, but leaves the flow without clicking **Next** (for example, because the code snippet navigates with `window.location`, or the user comes back later through the link to resume the submission), the task is completed, but **Origination submission task submitted** is not recorded.
+
+:::tip Tip
+For an integration to know that the user finished a code snippet, subscribe your [webhook](/en/platform/core/webhooks.html) to **Origination task response completed** (`origination_task_response_completed_log`). In a code snippet, that event is recorded when the task becomes completed, either with the POST or with the **Next** button. If you need the code snippet to move on to the next step by itself, enable the button with `enableButton()` and let the user click **Next**, instead of redirecting with `window.location`.
+:::
+
+If the task has the **Lock responses once completed** option enabled, the POST that completes it also records **Origination submission task submitted**, because after that the **Next** button no longer submits the task again.
+
 #### Using Liquid in code snippets
 
 Code snippets can use Liquid objects to access internal submission data and personalize the user experience.

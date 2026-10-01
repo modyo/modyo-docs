@@ -310,6 +310,43 @@ Cuando consumes datos de la API JSON obtendrás un objeto con todas los datos al
 Para almacenar información, los datos deben utilizar formato JSON válido, los errores de formato no serán procesados.
 :::
 
+#### Completar la tarea desde el code snippet
+
+La petición POST a la URL de `getUrl()` guarda los datos y también puede cambiar el estado de la tarea, según el parámetro `completed`:
+
+- **Sin `completed`**: guarda los datos y marca la tarea como completada.
+- **`completed: true`**: guarda los datos y marca la tarea como completada.
+- **`completed: false`**: guarda los datos sin completar la tarea. Si la tarea ya estaba completada, vuelve a quedar en curso.
+
+Usa solo `true` o `false` en `completed`. Cualquier otro valor se interpreta como `false`.
+
+`completed` va al mismo nivel que `content`, no dentro de él. Por ejemplo, para guardar datos sin completar la tarea:
+
+```js
+await fetch(getUrl(), {
+  method: 'POST',
+  headers: {
+    'X-CSRF-TOKEN': document.querySelector('meta[name=csrf-token]').content,
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({ content: { plan: 'basic' }, completed: false })
+});
+```
+
+Completar la tarea desde el code snippet no equivale a presionar **Siguiente**. Cada camino registra eventos distintos:
+
+- **POST que completa la tarea**: registra **Respuesta a tarea de originación completada** (`origination_task_response_completed_log`) y **Tarea de respuesta de originación actualizada** (`origination_submission_task_updated_log`).
+- **Botón Siguiente**: registra **Tarea de respuesta de originación enviada** (`origination_submission_task_submitted_log`). En las tareas con **Bloquear las respuestas al completar**, este evento lo registra el POST que completa la tarea, como se explica más abajo.
+
+Si la tarea no tiene activada esa opción y el usuario la completa con el POST, pero deja el flujo sin presionar **Siguiente** (por ejemplo, porque el code snippet navega con `window.location` o el usuario vuelve más tarde desde el enlace para retomar la respuesta), la tarea queda completada, pero no se registra **Tarea de respuesta de originación enviada**.
+
+:::tip Tip
+Para que una integración sepa que el usuario terminó un code snippet, suscribe tu [webhook](/es/platform/core/webhooks.html) a **Respuesta a tarea de originación completada** (`origination_task_response_completed_log`). En un code snippet, ese evento se registra cuando la tarea queda completada, ya sea con el POST o con el botón **Siguiente**. Si necesitas que el code snippet avance solo al paso siguiente, habilita el botón con `enableButton()` y deja que el usuario presione **Siguiente**, en lugar de redirigir con `window.location`.
+:::
+
+Si la tarea tiene activada la opción **Bloquear las respuestas al completar**, el POST que la completa también registra **Tarea de respuesta de originación enviada**, porque después de eso el botón **Siguiente** ya no vuelve a enviar la tarea.
+
 #### Uso de Liquid en code snippets
 
 Los code snippets pueden utilizar objetos de liquid para acceder a datos internos de la respuesta y personalizar la experiencia del usuario.
