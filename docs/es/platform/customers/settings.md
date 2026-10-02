@@ -580,7 +580,7 @@ Modyo soporta la versión V3 de reCAPTCHA básico, no soporta el enterprise.
 
 ### Headers de seguridad
 
-Desde **Headers de seguridad** controlas la política de seguridad de las páginas propias del reino, independiente de la del web app. Revisa cómo habilitarla y qué headers puedes configurar en [Security headers](/es/platform/customers/realms.html#security-headers).
+Desde **Headers de seguridad** controlas la política de seguridad de las páginas propias del reino, independiente de la del web app. Revisa cómo habilitarla y qué headers puedes configurar en [Headers de seguridad](/es/platform/customers/realms.html#security-headers).
 
 ### Configuración de payment
 
