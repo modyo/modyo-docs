@@ -188,7 +188,7 @@ Estos objetos permiten obtener información a través de Liquid para un formular
 |-------------------------------|-----------------------------------------|-------------------------------------------------------------------------------------------------------------|
 | **form_response.description** | Descripción del formulario.             | ```Este formulario es el nuevo formulario de los usuarios```                                                |
 | **form_response.name**        | Nombre del formulario.                  | ```El nuevo formulario```                                                                                   |
-| **form_response.questions**   | Array con las preguntas del formulario. | ```[{"title"=>"¿Cual es tu puesto de trabajo?", "type"=>"textquestion", "answer"=>"Software developer"}]``` |
+| **form_response.questions**   | Array con las preguntas del formulario que capturan una respuesta. Los campos de contenido, como **Texto enriquecido**, no se incluyen. | ```[{"title"=>"¿Cual es tu puesto de trabajo?", "type"=>"textquestion", "answer"=>"Software developer"}]``` |
 
 ### question
 
