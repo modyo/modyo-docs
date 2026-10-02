@@ -370,7 +370,7 @@ This is the only trigger on the list that nobody performs: it arrives with `auto
 ```
 The origination task response started and reopened triggers use the same shape, with `e_a` set to `started_log` or `reopened_log`, and `task_uid` tells you which task of the origination the event belongs to.
 
-**Origination task response assigned** has no compact shape: the assignment is always made by an administrator, so it arrives as a full log, with `trigger_uid` set to `origination_task_response_assigned_log` and the new assignee in `value_3`. The `options` block carries `task_response_id`, `task_response_type`, `target_user_id`, `previous_assignee_id`, and `previous_assignee_group_id`, along with the origination identifiers.
+**Origination task response assigned** has no compact shape: the assignment is always made by an administrator, so it arrives as a full log, with `trigger_uid` set to `origination_task_response_assigned_log` and the new assignee in `value_3`. The `options` block carries `task_response_id`, `task_response_type`, `target_user_id`, `previous_assignee_id`, `previous_assignee_group_id`, and `title`, along with the origination identifiers.
 
 :::tip Tip
 The webhook is called via a POST when the selected log type is generated. Once the webhook is created, you can send a test notification with false information to test that your URL is correctly receiving POSTs from Modyo.

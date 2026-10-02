@@ -130,7 +130,7 @@ Estos cinco disparadores son los únicos que ofrece el tipo de contexto **Reino*
    "loggeable_id":5,
    "loggeable_type":"Content::Entry",
    "options":{
-      "title":"test entries (6111a767-71dc-485c-bea3-80229edf7450)}"
+      "title":"test entries (6111a767-71dc-485c-bea3-80229edf7450)"
    },
    "created_at":"2021-08-13T17:08:46.000Z",
    "user_type":"AdminUser",
@@ -371,7 +371,7 @@ Este disparador es el único de la lista que nadie ejecuta: llega con `automated
 ```
 Los disparadores de respuesta a tarea de originación iniciada y reabierta usan la misma estructura, con `e_a` en `started_log` o `reopened_log`, y `task_uid` te dice a qué tarea de la originación corresponde el evento.
 
-**Respuesta a tarea de originación asignada** no tiene forma compacta: la asignación la hace siempre un administrador, así que llega como log completo, con `trigger_uid` en `origination_task_response_assigned_log` y el nuevo responsable en `value_3`. El bloque `options` trae `task_response_id`, `task_response_type`, `target_user_id`, `previous_assignee_id` y `previous_assignee_group_id`, además de los identificadores de originación.
+**Respuesta a tarea de originación asignada** no tiene forma compacta: la asignación la hace siempre un administrador, así que llega como log completo, con `trigger_uid` en `origination_task_response_assigned_log` y el nuevo responsable en `value_3`. El bloque `options` trae `task_response_id`, `task_response_type`, `target_user_id`, `previous_assignee_id`, `previous_assignee_group_id` y `title`, además de los identificadores de originación.
 
 :::tip Tip
 El webhook es llamado a través de un POST cuando se genera un log del tipo seleccionado. Una vez creado el webhook, podrás enviar una notificación de prueba con información falsa para probar que tu URL está recibiendo correctamente los POSTs desde Modyo.
