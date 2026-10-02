@@ -228,7 +228,7 @@ Añade funcionalidad como una validación personalizada a tu formulario usando J
 :::tip Tip
 Este script va a correr en seguida del div que contiene el formulario, por lo que es importante tomar en cuenta que puede ser afectado por el resto de la configuración del sitio. Por ejemplo si este formulario es embebido en otro sitio externo que no puede correr Javascript.
 
-Para usuarios sin sesión, la pregunta de tipo **Archivo** usa un campo de archivo del navegador con el mismo diseño, en lugar del cargador que sube el archivo al seleccionarlo. Un script que dependa de ese cargador no aplica en ese caso.
+Para usuarios sin sesión, la pregunta de tipo **Archivo** usa un campo de archivo del navegador con el mismo diseño, en lugar del cargador que sube el archivo al seleccionarlo. Lo mismo ocurre en el snippet embebido en un sitio con dominio propio, incluso para usuarios con sesión, porque ahí el formulario se muestra sin la sesión. Un script que dependa de ese cargador no aplica en esos casos.
 :::
 
 ## Respuestas

@@ -228,7 +228,7 @@ Add functionality, such as custom validation, to your form using Javascript by f
 :::tip Tip
 This script will run after the div containing the form, so it's important to keep in mind that it can be affected by the rest of the site's configuration. For example, if this form is embedded in another external site that cannot run Javascript.
 
-For users without a session, the **File** question uses a browser file field with the same design, instead of the uploader that sends the file when it is selected. A script that relies on that uploader does not apply in that case.
+For users without a session, the **File** question uses a browser file field with the same design, instead of the uploader that sends the file when it is selected. The same happens in the snippet embedded in a site with a custom domain, even for users with a session, because there the form is shown without the session. A script that relies on that uploader does not apply in those cases.
 :::
 
 ## Answers
