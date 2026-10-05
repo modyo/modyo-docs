@@ -122,7 +122,7 @@ Keep the following in mind:
 
 This section will allow you to modify the options for each of the questions on your form, you must select a field from the main section in order to make use of this section.
 
-All the fields you can add have a title, which will be the question associated with the answer, the option to make it a required field in order to submit the form, and a brief description, if instructions are needed, to answer the field.
+All input fields have a title, which will be the question associated with the answer, the option to make it a required field in order to submit the form, and a brief description, if instructions are needed, to answer the field.
 
 Some fields have validations, to ensure that the user meets certain requirements to fill in the field, some of these restrictions are:
 
@@ -134,7 +134,7 @@ Some fields have validations, to ensure that the user meets certain requirements
 - **Minimum Date**: The date entered cannot be earlier than this value
 - **Maximum Date**: The date entered cannot be later than this value.
 
-Just as some fields have validations, most have a default value that is pre-selected when loading the form. The only ones that don't have a default value are nested questions.
+Just as some fields have validations, most input fields have a default value that is pre-selected when loading the form. The only ones that don't have a default value are nested questions. Since [Rich Text](/en/platform/customers/forms.html#rich-text) does not capture an answer, it only has a title, an identifier, and content.
 
 ### Regular expressions
 
