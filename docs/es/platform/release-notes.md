@@ -35,6 +35,17 @@ search: true
 
 ## 10.1
 
+### 10.1.19
+
+:::info Fecha del release
+6 de octubre de 2026
+:::
+
+| Módulo | Mejoras |
+|--------|---------|
+| **Channels** | • Mejora la creación de stages, ahora sus elementos se clonan en segundo plano para evitar el timeout en sitios grandes. Si falla un elemento, el proceso sigue igual, y el modal de creación muestra los elementos que no se pudieron clonar, con el detalle en el log de creación del stage<br>• Corrige el clonado de sitios y la creación de stages en sitios grandes, que se cortaba a la mitad al superar el rate limit de Cloudflare. Ahora no se purga la caché de CDN de los elementos recién creados |
+
+
 ### 10.1.18
 
 :::info Fecha del release

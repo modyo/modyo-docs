@@ -35,6 +35,17 @@ August 11, 2026
 
 ## 10.1
 
+### 10.1.19
+
+:::info Release date
+October 6, 2026
+:::
+
+| Module | Improvements |
+|--------|---------|
+| **Channels** | • Improves stage creation, elements are now cloned in the background to avoid timeouts on large sites. If an element fails, the process continues, and the creation modal shows the elements that could not be cloned, with the details in the stage creation log<br>• Fixes site cloning and stage creation on large sites, which stopped halfway when exceeding the Cloudflare rate limit. The CDN cache is no longer purged for newly created elements |
+
+
 ### 10.1.18
 
 :::info Release date
