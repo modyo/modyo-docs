@@ -514,15 +514,20 @@ Site objects are used to get all the information about a site. The available att
 | **site.time_zone**              | Site time zone identifier.                                                                             | ```America/New_York``` |
 | **site.realm_slug**             | Slug of the realm the site belongs to.                                                                 | ```default```          |
 
-## sitesearch
+## site_search
 
-These drops allow you to get information from a site's browser.
+These drops hold the web app's search already resolved, with its results. The variable is injected under the name `site_search` and only exists on the search results page; see [Context variables](/en/platform/channels/liquid-markup/variables.html#from-the-search-results-page).
 
-| Object                                    | Description                                                                      | Example |
-|-------------------------------------------|----------------------------------------------------------------------------------|---------|
-| **sitesearch.have_results**               | Boolean that determines if the search has results.                               |         |
-| **sitesearch.results**                    | Page type object that meets the search parameters.                               |         |
-| **sitesearch.have_less_relevant_results** | Boolean that determines if there are more results that exceed the maximum limit. |         |
+| Object | Description | Example |
+|--------|-------------|---------|
+| **site_search.have_results** | Boolean that determines if the search has results. It is false when the URL carries no `query` parameter. | |
+| **site_search.results** | Paginated collection with the search results. Each result has only four keys: `title`, `description`, `url` and `site_name`. It accepts the `pagination_links` filter to print the navigation between pages. | |
+| **site_search.have_less_relevant_results** | Boolean that determines if there are more results that exceed the maximum limit of 100. | |
+| **site_search.multi** | Boolean that determines if the search spans several web apps in the account. It is true only when the web app has **Enable search** and **Enable search on multiple sites** checked. Use it to show `site_name` only when the result may come from another web app. | |
+
+:::warning Warning
+The object is named `site_search`, with an underscore. `sitesearch` does not exist in the Liquid context: a template that uses it does not fail, it simply prints nothing and leaves no clue about why.
+:::
 
 ## space
 
