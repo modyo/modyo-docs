@@ -542,6 +542,8 @@ These hosts are reserved by Modyo. They are not available as hosts for your web 
 </tr></table>
 :::
 
+A [realm](/en/platform/customers/settings.html#domains) of your own account can use the same custom domain as your web app: the `/realms` routes are answered by the realm and the rest by the web app. On a custom domain, the `/realms` routes are always answered by a realm, and if none uses that domain, they answer 404.
+
 ### Stages
 
 Using stages in your web application allows you to implement a continuous integration and deployment (CI/CD) approach to add new functionality without affecting what is already published.

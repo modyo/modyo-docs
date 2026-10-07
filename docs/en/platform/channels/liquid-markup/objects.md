@@ -364,7 +364,7 @@ These objects allow you to get information via Liquid for notifications in the C
 | **notification.sent_at**  | Notification sent date.                            | ```2012-11-16 00:46:40```                                          |
 | **notification.body**     | Notification body.                                 | ```<p>This is a test message in campaigns via notifications</p>``` |
 | **notification.subject**  | Notification subject.                              | ```Modyo Developers Update```                                      |
-| **notification.url**      | Notification URL.                                  | ```https://test.modyo.com/profile?notification_id=65345```         |
+| **notification.url**      | Notification URL.                                  | ```https://test.modyo.com/realms/default/profile?notification_id=65345``` |
 
 ## order
 
@@ -445,8 +445,8 @@ These objects are very useful for creating dynamic pages using Liquid.
 | Object                              | Description                                                                                   | Example |
 |-------------------------------------|-----------------------------------------------------------------------------------------------|---------|
 | **realm.disable_modyo_credentials** | Boolean that determines if Modyo credentials are deactivated. `true` deactivates credentials. |         |
-| **realm.oauth2_callback_url**       | String that determines the OAuth2 callback URL.                                               |         |
-| **realm.oidc_callback_url**         | String that determines the OIDC callback URL.                                                 |         |
+| **realm.oauth2_callback_url**       | String that determines the OAuth2 callback URL. Uses the realm's custom domain if it has one. |         |
+| **realm.oidc_callback_url**         | String that determines the OIDC callback URL. Uses the realm's custom domain if it has one.   |         |
 
 ## request
 
@@ -663,7 +663,7 @@ Use user objects to get information about your users from the Customers module.
 | **user.age**                         | The user's age                                          | ```39```                                             |
 | **user.avatar**                      | Asset type object that represents the user avatar.      |                                                      |
 | **user.birth_at**                    | The user's date of birth.                               | ```1982-09-01```                                     |
-| **user.change_password_url**         | The password change URL.                                | ```https://test.modyo.com/newsite/password/change``` |
+| **user.change_password_url**         | The password change URL.                                | ```https://test.modyo.com/realms/default/password/change``` |
 | **user.custom_fields**               | Hash with the user's custom field data.                 | ```{"_UCF_Job"=>"Software Engineer"}```              |
 | **user.email**                       | The user's email.                                       | ```ivan@modyo.com```                                 |
 | **user.external_access_token**       | The user's external access token, or empty if none.     | ```UEL7K69VUWhSXxX9DjDil...```                       |

@@ -542,6 +542,8 @@ Estos hosts están reservados por Modyo. No están disponibles como hosts para t
 </tr></table>
 :::
 
+Un [reino](/es/platform/customers/settings.html#dominios) de tu misma cuenta puede usar el mismo dominio personalizado que tu aplicación web: las rutas `/realms` las responde el reino y el resto, la aplicación web. En un dominio personalizado, las rutas `/realms` siempre las responde un reino, y si ninguno usa ese dominio, responden 404.
+
 ### Stages
 
 Usar stages en tu aplicación web te permite implementar un enfoque de integración y despliegue continuo (CI/CD) para añadir nuevas funcionalidades sin afectar lo que ya está publicado.

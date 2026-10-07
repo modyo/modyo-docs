@@ -50,7 +50,7 @@ La eliminación de la cuenta es irreversible. Si un usuario realiza esta acción
 
 ## Rutas del reino
 
-Todas las vistas de sesión y de perfil de un reino cuelgan del mismo prefijo, formado por la URL de tu cuenta y el identificador del reino: `https://my_account.modyo.com/realms/my_realm/`.
+Todas las vistas de sesión y de perfil de un reino cuelgan del mismo prefijo, formado por la URL de tu cuenta y el identificador del reino: `https://my_account.modyo.com/realms/my_realm/`. Si el reino tiene un [dominio personalizado](/es/platform/customers/settings.html#dominios), el prefijo es `https://<tu-dominio>/realms/`, sin el identificador.
 
 | Ruta | Para qué sirve |
 | --- | --- |
@@ -85,4 +85,4 @@ No existe un drop de Liquid que entregue la URL de registro: ármala con el iden
 - `redirect_uri`: URL a la que se envía al usuario después de iniciar sesión. Las rutas del reino que lo aceptan son `/login`, `/otp_login`, `/activate/:activation_code` y `/session/access/:token`.
 - `redirect_to`: URL a la que se envía al usuario después de cerrar sesión en `/logout`. Es también el parámetro que usa la ruta `/login` de un sitio, como se explica en [Redireccionar Login](/es/platform/customers/settings.html#redireccionar-login).
 
-La URL de destino tiene que ser una ruta relativa o apuntar a un sitio de tu misma cuenta. Si no lo es, la plataforma la descarta y aplica la redirección definida en **Después de iniciar sesión, redirigir a** de la [Configuración de reino](/es/platform/customers/settings.html#general).
+La URL de destino tiene que ser una ruta relativa, apuntar a un sitio de tu misma cuenta o a uno de los dominios personalizados del reino. Si no lo es, la plataforma la descarta y aplica la redirección definida en **Después de iniciar sesión, redirigir a** de la [Configuración de reino](/es/platform/customers/settings.html#general).

@@ -14,7 +14,7 @@ Aquí puedes modificar tanto la experiencia visual del usuario como la configura
 En esta sección, puedes configurar aspectos generales del reino, como:
 
 - **Título**.
-- **Identificador**: La URL de las vistas de perfil, inicio de sesión, registro y recuperación de contraseña del reino. Revisa el listado completo en [Rutas del reino](/es/platform/customers/profile.html#rutas-del-reino).
+- **Identificador**: La URL de las vistas de perfil, inicio de sesión, registro y recuperación de contraseña del reino. Revisa el listado completo en [Rutas del reino](/es/platform/customers/profile.html#rutas-del-reino). Si el reino tiene un [dominio personalizado](/es/platform/customers/settings.html#dominios), sus rutas en ese dominio no incluyen el identificador.
 - **Deshabilitar credenciales de la plataforma**: Al marcar esta casilla, desactivas las credenciales de Modyo en el reino y permites únicamente el acceso a través de SSO.
 
 :::danger Peligro
@@ -588,3 +588,57 @@ Al habilitar la función de pago en tu reino, tienes acceso a las siguientes opc
 - **Asunto del correo**: Encabezado del correo enviado a los usuarios.
 - **Cuerpo del correo**: Contenido del mensaje enviado a los usuarios.
 
+### Dominios
+
+Desde **Dominios** sirves las páginas de inicio de sesión, registro, recuperación de contraseña y perfil del reino en un dominio propio, por ejemplo `login.mibanco.com`, en lugar del dominio de tu cuenta. En ese dominio las rutas del reino van bajo `/realms` y sin el identificador del reino: `https://login.mibanco.com/realms/login` en lugar de `https://my_account.modyo.com/realms/my_realm/login`.
+
+Para ver esta sección necesitas el permiso agrupado **Ver Dominios**, y para modificarla, **Administrar Dominios**.
+
+#### Configurar el dominio
+
+Activa la casilla **Activar dominios personalizados** y completa los campos:
+
+- **Dominio primario**: Dominio en el que se sirve el reino. Escribe solo el dominio, sin ruta ni puerto: la pantalla ya agrega `https://`.
+- **Dominio alternativo 1 (opcional)** y **Dominio alternativo 2 (opcional)**: Dominios adicionales que redirigen siempre al dominio primario con un 301, conservando la ruta y los parámetros. A diferencia de las [aplicaciones web](/es/platform/channels/sites.html#dominios), no puedes elegir el tipo de redirección.
+
+Bajo la casilla, la pantalla indica a qué destino debe apuntar el registro CNAME del dominio en tu DNS. Al terminar, haz click en **Guardar**.
+
+:::warning Atención
+Al activar o cambiar el dominio, se cierra la sesión de todos los usuarios con una sesión abierta en el dominio anterior. Por eso, al guardar, la plataforma te pide confirmación. Cambiar solo los dominios alternativos no cierra sesiones.
+:::
+
+:::tip Tip
+Modyo habilita el dominio en su infraestructura. Coordina ese paso con el [Centro de Soporte de Modyo](https://support.modyo.com) antes de activar el dominio: si lo activas antes, los enlaces de los correos del reino apuntarán a un dominio que todavía no responde.
+:::
+
+Ten en cuenta estas reglas:
+
+- Cada dominio es único en la plataforma, y los tres dominios de un reino deben ser distintos entre sí.
+- No puede ser el dominio de la plataforma ni el de una cuenta.
+- Puede ser el mismo dominio de una aplicación web de tu cuenta: las rutas `/realms` las responde el reino y el resto, la aplicación web. No puede ser el dominio de una aplicación web de otra cuenta. Por eso `realms` es una [ruta reservada](/es/platform/channels/pages.html) para las páginas.
+- No está disponible en cuentas de prueba, y en entornos no productivos se guarda pero no se aplica: la pantalla lo indica con un aviso.
+
+#### Qué cambia al activar el dominio
+
+- Las rutas del reino en el dominio de tu cuenta redirigen al dominio personalizado, sin el identificador y conservando los parámetros, como `site` o `return_to`.
+- En el dominio personalizado, una ruta `/realms` que no corresponde a ninguna vista del reino responde 404, aunque el dominio también sirva una aplicación web.
+- Los correos del reino (activación, recuperación de contraseña, confirmación, invitaciones, campañas y desuscripción), las URLs de los [objetos Liquid](/es/platform/channels/liquid-markup/objects.html) del reino y del usuario, **Ir al reino**, la impersonación y los endpoints que muestra **Cliente OAuth** usan el dominio del reino. Los enlaces de desuscripción enviados antes del cambio siguen funcionando.
+- El inicio de sesión desde tus aplicaciones web, y el cierre de sesión, el perfil y el registro que se abren desde ellas, se hacen en el dominio del reino.
+- La [API de Customers](/es/platform/customers/api.html) sigue respondiendo solo en el dominio de tu cuenta. Los endpoints de token y revocación de OAuth también siguen funcionando ahí.
+
+:::warning Atención
+En el perfil servido en el dominio personalizado no funcionan la lista de actividad, marcar las notificaciones como leídas ni subir el avatar, porque esas acciones usan la API de Customers, que no responde en ese dominio.
+:::
+
+#### URLs de los proveedores de identidad
+
+En **URL del perfil público** ves la dirección base del reino, y en **URLs de los proveedores de identidad**, la URL de callback de cada [proveedor de identidad](/es/platform/core/integrations/identity-providers.html) habilitado en el reino. Después de guardar, actualízalas en cada proveedor; si no, el inicio de sesión con ese proveedor fallará.
+
+| Proveedor | URL con dominio personalizado |
+| --- | --- |
+| SAML | `https://<tu-dominio>/realms/auth/saml/callback` |
+| OpenID Connect, Keycloak y Azure Entra ID | `https://<tu-dominio>/realms/auth/openidc/callback` |
+| Google | `https://<tu-dominio>/realms/auth/google_oauth2/callback` |
+| OAuth2 | `https://<tu-dominio>/realms/auth/oauth2/authorize` |
+
+En OpenID Connect, la URL a la que vuelve el usuario después de cerrar sesión pasa a ser `https://<tu-dominio>/realms/logout`.

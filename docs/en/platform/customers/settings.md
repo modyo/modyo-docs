@@ -14,7 +14,7 @@ Here you can modify both the user's visual experience and the settings related t
 In this section, you can configure general aspects of the realm, such as:
 
 - **Title**
-- **Identifier**: The URL of the realm's profile, login, registration, and password recovery views. See the full list in [Realm routes](/en/platform/customers/profile.html#realm-routes).
+- **Identifier**: The URL of the realm's profile, login, registration, and password recovery views. See the full list in [Realm routes](/en/platform/customers/profile.html#realm-routes). If the realm has a [custom domain](/en/platform/customers/settings.html#domains), its routes on that domain don't include the identifier.
 - **Disable platform credentials**: By checking this box, you deactivate Modyo credentials in the realm and only allow access via SSO.
 
 :::danger Danger
@@ -584,3 +584,57 @@ By enabling the payment feature in your realm, you have access to the following 
 - **Email subject**: Header of the email sent to users.
 - **Body of the mail**: Content of the message sent to users.
 
+### Domains
+
+From **Domains** you serve the realm's login, signup, password recovery, and profile pages on your own domain, for example `login.mybank.com`, instead of your account's domain. On that domain the realm routes go under `/realms` and without the realm identifier: `https://login.mybank.com/realms/login` instead of `https://my_account.modyo.com/realms/my_realm/login`.
+
+To view this section you need the **View Domains** grouped permission, and to modify it, **Admin Domains**.
+
+#### Configure the domain
+
+Check **Enable custom domains** and fill in the fields:
+
+- **Primary domain**: Domain the realm is served on. Write only the domain, without path or port: the screen already adds `https://`.
+- **Alternative domain 1 (optional)** and **Alternative domain 2 (optional)**: Additional domains that always redirect to the primary domain with a 301, keeping the path and parameters. Unlike [web apps](/en/platform/channels/sites.html#domains), you can't choose the redirection type.
+
+Below the checkbox, the screen shows the target the domain's CNAME record in your DNS must point to. When you're done, click **Save**.
+
+:::warning Attention
+Activating or changing the domain signs out every user with an open session on the previous domain. That's why the platform asks for confirmation when you save. Changing only the alternative domains doesn't sign anyone out.
+:::
+
+:::tip Tip
+Modyo enables the domain on its infrastructure. Coordinate that step with the [Modyo Support Center](https://support.modyo.com) before activating the domain: if you activate it earlier, the links in the realm's emails will point to a domain that doesn't respond yet.
+:::
+
+Keep these rules in mind:
+
+- Each domain is unique on the platform, and the three domains of a realm must be different from each other.
+- It can't be the platform domain or the domain of an account.
+- It can be the same domain as a web app of your account: the `/realms` routes are answered by the realm and the rest by the web app. It can't be the domain of a web app of another account. That's why `realms` is a [reserved path](/en/platform/channels/pages.html) for pages.
+- It isn't available in trial accounts, and in non-production environments it's saved but not applied: the screen shows a notice about it.
+
+#### What changes when you activate the domain
+
+- The realm routes on your account's domain redirect to the custom domain, without the identifier and keeping the parameters, such as `site` or `return_to`.
+- On the custom domain, a `/realms` route that doesn't match any realm view answers 404, even if the domain also serves a web app.
+- The realm's emails (activation, password recovery, confirmation, invitations, campaigns, and unsubscription), the URLs of the realm and user [Liquid objects](/en/platform/channels/liquid-markup/objects.html), **Go to realm**, impersonation, and the endpoints shown by **OAuth Client** use the realm's domain. Unsubscription links sent before the change keep working.
+- Sign in from your web apps, and the sign out, profile, and signup opened from them, happen on the realm's domain.
+- The [Customers API](/en/platform/customers/api.html) keeps answering only on your account's domain. The OAuth token and revocation endpoints keep working there too.
+
+:::warning Attention
+On the profile served on the custom domain, the activity list, marking notifications as read, and uploading the avatar don't work, because those actions use the Customers API, which doesn't answer on that domain.
+:::
+
+#### Identity provider URLs
+
+In **Public profile URL** you see the realm's base address, and in **Identity provider URLs**, the callback URL of each [identity provider](/en/platform/core/integrations/identity-providers.html) enabled in the realm. After saving, update them on each provider; otherwise, signing in with that provider will fail.
+
+| Provider | URL with custom domain |
+| --- | --- |
+| SAML | `https://<your-domain>/realms/auth/saml/callback` |
+| OpenID Connect, Keycloak, and Azure Entra ID | `https://<your-domain>/realms/auth/openidc/callback` |
+| Google | `https://<your-domain>/realms/auth/google_oauth2/callback` |
+| OAuth2 | `https://<your-domain>/realms/auth/oauth2/authorize` |
+
+In OpenID Connect, the URL the user returns to after signing out becomes `https://<your-domain>/realms/logout`.
