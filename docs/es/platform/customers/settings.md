@@ -578,6 +578,10 @@ Puedes habilitar o no reCAPTCHA en el reino, una vez habilitado ingresa:
 Modyo soporta la versión V3 de reCAPTCHA básico, no soporta el enterprise.
 :::
 
+### Headers de seguridad
+
+Desde **Headers de seguridad** controlas la política de seguridad de las páginas propias del reino, independiente de la del web app. Revisa cómo habilitarla y qué headers puedes configurar en [Headers de seguridad](/es/platform/customers/realms.html#security-headers).
+
 ### Configuración de payment
 
 Al habilitar la función de pago en tu reino, tienes acceso a las siguientes opciones:

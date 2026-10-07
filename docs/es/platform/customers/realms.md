@@ -50,6 +50,63 @@ En esta sección, también encontrarás información relevante, como las configu
 
 Este resumen te permite administrar eficientemente cada reino y entender cómo se conecta con los usuarios y otros elementos clave de la plataforma.
 
+## Security headers
+
+Las páginas propias del reino —inicio de sesión, registro, código de verificación, recuperación de contraseña y perfil— pueden tener su propia política de seguridad, independiente de la del web app y de la configuración global de la plataforma.
+
+Se configuran en **Configuración de reino** → **Headers de seguridad**, y para verlos y editarlos necesitas el permiso agrupado **Administrar Headers de Seguridad**.
+
+También puedes consultar y modificar esta configuración desde la API de administración, en `/api/admin/customers/{realm_uid}/settings/security_headers`.
+
+### Habilitar los headers del reino
+
+Los headers de un reino nacen deshabilitados. Mientras lo estén, la pantalla muestra **Headers deshabilitados** con el aviso "Los headers de seguridad actualmente están deshabilitados para este reino. Habilita este módulo para acceder a la configuración", y un botón **Habilitar los headers de seguridad para este reino**.
+
+:::danger Es una acción irreversible
+Habilitar los headers de un reino **no se puede deshacer**: no hay forma de volver al estado deshabilitado desde el panel. La plataforma lo advierte antes de aplicarlo con el mensaje "La personalización de los headers de seguridad del reino anula la configuración global de la plataforma. Esta acción no se puede deshacer, por favor consulta la documentación".
+:::
+
+Al habilitarlos por primera vez, la configuración se inicializa con **los valores que la plataforma ya estaba aplicando en ese momento**. Es decir, habilitar no cambia el comportamiento del reino el primer día: pasas a controlar una política que hasta entonces venía impuesta, con el mismo contenido. A partir de ahí cualquier cambio es tuyo.
+
+### Los cuatro headers configurables
+
+| Header | Qué puedes configurar |
+|---|---|
+| **Content-Security-Policy** | Habilitarlo, su directiva y la opción de nonce. |
+| **Content-Security-Policy-Report-Only** | Lo mismo que el anterior, pero solo reporta: no bloquea. Necesita **Reporting-Endpoints** para que los reportes lleguen a alguna parte. |
+| **Reporting-Endpoints** | Habilitarlo y declarar los destinos a los que el navegador envía los reportes. |
+| **Referrer-Policy** | Habilitarlo y elegir la directiva. |
+
+El resto de los headers que sí ofrece un web app no se configuran por reino, y siguen viniendo de la plataforma.
+
+Deshabilitar uno de estos cuatro headers tampoco lo quita de la respuesta: vuelve a aplicarse el valor de la plataforma. Si deshabilitas el **Content-Security-Policy** del reino, por ejemplo, las páginas vuelven a llevar el CSP de la plataforma, que por omisión incluye `frame-ancestors 'self'`, y un inicio de sesión embebido en un iframe de otro origen vuelve a bloquearse. En el caso de **Content-Security-Policy-Report-Only** y **Reporting-Endpoints**, al deshabilitarlos solo siguen presentes si la plataforma también los define.
+
+:::warning La lista de Referrer-Policy es más corta que la del web app
+El selector del reino ofrece `no-referrer`, `origin`, `origin-when-cross-origin`, `same-origin`, `strict-origin` y `strict-origin-when-cross-origin`. Deja fuera a propósito `unsafe-url` y `no-referrer-when-downgrade`, que en un web app sí puedes elegir. El motivo es concreto: el enlace de recuperación de contraseña lleva su token en la URL, y esas dos políticas lo filtrarían a terceros por la cabecera `Referer`.
+:::
+
+### El nonce del CSP
+
+Si activas la opción de nonce en **Content-Security-Policy** o en **Content-Security-Policy-Report-Only**, la plataforma agrega el nonce de cada respuesta a las directivas `script-src` y `style-src`.
+
+También puedes escribir <code v-pre>{{csp_nonce}}</code> dentro de la directiva: al servir la página, ese marcador se reemplaza por el nonce de esa respuesta. El mismo nonce se aplica al markup del inicio de sesión, incluidos el JavaScript y el CSS personalizados que hayas definido para esa pantalla, así que puedes endurecer el CSP sin que tu código propio deje de ejecutarse.
+
+Los dos mecanismos son independientes. Si activas la opción de nonce y además escribes <code v-pre>{{csp_nonce}}</code> en `script-src` o `style-src`, el nonce aparece dos veces en esa directiva, por ejemplo `script-src 'nonce-…' 'nonce-…'`. Es un CSP válido y el navegador lo aplica sin problemas: no es un error de la plataforma. Puede pasar sin que lo configures tú: si la política que la plataforma aplicaba ya usaba nonce, la siembra inicial deja activados los dos.
+
+### Dónde se aplican
+
+La configuración alcanza a **las respuestas HTML del reino**: inicio de sesión, registro, código de verificación, recuperación de contraseña, perfil, la pantalla de autorización y las páginas de error que se generan al atender esas pantallas.
+
+No alcanza a las redirecciones, porque el navegador aplica estas políticas al documento que muestra y no al salto intermedio, ni a las respuestas de la API, que no llevan estos headers.
+
+Tampoco alcanza a dos casos de error: una URL bajo el ámbito del reino que no corresponde a ninguna de sus pantallas y un error inesperado del servidor. Esas respuestas no pasan por la configuración del reino; la primera, por ejemplo, sale con `X-Frame-Options: DENY`, así que dentro de un iframe se ve como un bloqueo del navegador y no como un 404, aunque `frame-ancestors` esté bien configurado.
+
+:::tip Mostrar el inicio de sesión dentro de un iframe
+Este es el motivo más habitual para configurar el CSP de un reino. Agregando el origen del portal a la directiva `frame-ancestors` del CSP del reino, su pantalla de inicio de sesión puede renderizarse dentro de un iframe alojado en ese origen; cualquier origen que no esté en la lista lo sigue bloqueando el navegador.
+
+Para que el flujo completo funcione dentro del iframe —redirección al inicio de sesión, autenticación y regreso— el portal que embebe tiene que estar en el mismo dominio que el host de tu cuenta. En la práctica eso significa tener un host propio configurado. Con el dominio de la plataforma por defecto, la pantalla se muestra pero la sesión no se conserva.
+:::
+
 ## Eliminar un Reino
 
 Para eliminar un reino, entra a su [Configuración de reino](/es/platform/customers/settings.html#general) y usa el campo **Eliminar reino** de la sección **General**. Para confirmar tienes que escribir el nombre completo del reino, tal como aparece en el listado: si el texto no coincide exactamente, la plataforma no ejecuta la acción.

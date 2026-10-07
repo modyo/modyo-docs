@@ -574,6 +574,10 @@ You can enable reCAPTCHA in the realm or not, once enabled, enter:
 - **Secret**
 - **Threshold**
 
+### Security headers
+
+From **Security headers** you control the security policy of the realm's own pages, independent from the web app. See how to enable it and which headers you can configure in [Security headers](/en/platform/customers/realms.html#security-headers).
+
 ### Payment settings
 
 By enabling the payment feature in your realm, you have access to the following options:
