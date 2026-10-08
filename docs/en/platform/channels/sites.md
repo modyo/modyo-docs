@@ -542,7 +542,7 @@ These hosts are reserved by Modyo. They are not available as hosts for your web 
 </tr></table>
 :::
 
-A [realm](/en/platform/customers/settings.html#domains) of your own account can use the same custom domain as your web app: the `/realms` routes are answered by the realm and the rest by the web app. On a custom domain, the `/realms` routes are always answered by a realm, and if none uses that domain, they answer 404.
+A [realm](/en/platform/customers/settings.html#domains) of your own account can use the same custom domain as your web app: the `/realms` routes are answered by the realm and the rest by the web app. On a custom domain, the `/realms` path is reserved for realms: if no realm uses that domain, the platform answers 404 and the web app doesn't handle it.
 
 ### Stages
 

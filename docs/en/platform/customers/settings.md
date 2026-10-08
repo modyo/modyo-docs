@@ -609,7 +609,7 @@ Modyo enables the domain on its infrastructure. Coordinate that step with the [M
 
 Keep these rules in mind:
 
-- Each domain is unique on the platform, and the three domains of a realm must be different from each other.
+- No other realm on the platform can use the same domain, and the three domains of a realm must be different from each other.
 - It can't be the platform domain or the domain of an account.
 - It can be the same domain as a web app of your account: the `/realms` routes are answered by the realm and the rest by the web app. It can't be the domain of a web app of another account. That's why `realms` is a [reserved path](/en/platform/channels/pages.html) for pages.
 - It isn't available in trial accounts, and in non-production environments it's saved but not applied: the screen shows a notice about it.

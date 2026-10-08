@@ -613,7 +613,7 @@ Modyo habilita el dominio en su infraestructura. Coordina ese paso con el [Centr
 
 Ten en cuenta estas reglas:
 
-- Cada dominio es único en la plataforma, y los tres dominios de un reino deben ser distintos entre sí.
+- Ningún otro reino de la plataforma puede usar el mismo dominio, y los tres dominios de un reino deben ser distintos entre sí.
 - No puede ser el dominio de la plataforma ni el de una cuenta.
 - Puede ser el mismo dominio de una aplicación web de tu cuenta: las rutas `/realms` las responde el reino y el resto, la aplicación web. No puede ser el dominio de una aplicación web de otra cuenta. Por eso `realms` es una [ruta reservada](/es/platform/channels/pages.html) para las páginas.
 - No está disponible en cuentas de prueba, y en entornos no productivos se guarda pero no se aplica: la pantalla lo indica con un aviso.
