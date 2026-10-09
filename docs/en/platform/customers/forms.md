@@ -65,7 +65,16 @@ Once you enter the editing section of a form, you will be able to see 2 sections
 
 ### Add
 
-This section will allow you to add as many fields as necessary to complete the form, or delete the ones that are not necessary. These are the fields you can add to a form:
+This section will allow you to add as many fields as necessary to complete the form, or delete the ones that are not necessary. The fields are grouped under two headings:
+
+- **Content fields**: Fields that only show information to the user and do not capture an answer.
+- **Input fields**: Fields that ask the user for a value.
+
+The **Content fields** group has one option:
+
+- **Rich Text**: Shows a block of formatted text, such as instructions or a legal notice. See [Rich Text](/en/platform/customers/forms.html#rich-text).
+
+These are the field types of the **Input fields** group:
 
 - **Simple Text**: Allows the user to enter text up to 256 characters.
 - **Paragraph**: Allows the user to enter multiline text up to 65535 characters.
@@ -76,10 +85,11 @@ This section will allow you to add as many fields as necessary to complete the f
 - **Date**: Allows you to add a date field where the user can select one within the allowed range.
 - **Nested questions**: Allows you to add a series of alternatives that can be nested, so that the user is asked to select one of the possible nested options within the option they selected.
 - **File**: Allows you to upload files.
+- **Email**: Field for entering an email address.
+- **URL**: Field for entering a web address.
 - **Country**: Country selector.
 - **Phone**: Field for entering phone numbers.
 - **Address**: Structured field for capturing addresses.
-- **Group**: Group a list of several repeatable fields. You can see more details about this format in the [documentation on Repeatable Groups](/en/platform/content/types#group)
 
 You can delete one of the fields from the form by clicking on the trash can icon to the right of each field in the main section. The deletion will be effective once you save the changes.
 
@@ -87,11 +97,32 @@ You can delete one of the fields from the form by clicking on the trash can icon
 If your form is already activated, and you already have answers, be very careful when deleting questions from it, because by doing so, you will be removing the values from those answers that users have already submitted. This action is irreversible.
 :::
 
+#### Rich Text
+
+The **Rich Text** field is a content field: it shows a block of text inside the form and does not generate any answer. Use it for instructions, legal notices, or any informative content you want to place between the fields, including images or files to download.
+
+When you select it, the editing section shows the **Field title**, the **Identifier**, and a rich text editor. It has no required option and no instructions. If you fill in the **Field title**, the form shows it as the heading of the block.
+
+From the editor you can insert images and files from the realm library. The options to upload, edit, or delete files appear according to your permissions on that library.
+
+The content accepts HTML and [Liquid](/en/platform/channels/liquid-markup/), with access to the site variables (`vars`) and to the signed-in user (`user`), which is empty in anonymous answers. For example:
+
+```liquid
+<p>Hi {{ user.first_name }}, review the terms before submitting the form.</p>
+```
+
+Keep the following in mind:
+
+- If the Liquid has a syntax error, the field is not saved and the platform shows the error.
+- The content of each field accepts up to about 64 KB of HTML.
+- It does not appear in the answers: it is not shown in the detail of an answer or in the new answer notification email, it is not included in the export or in the form statistics, and it is not available to filter segments by answers.
+- If an answer carries a value for this field, for example through the API, the platform discards it.
+
 ### Field properties
 
 This section will allow you to modify the options for each of the questions on your form, you must select a field from the main section in order to make use of this section.
 
-All the fields you can add have a title, which will be the question associated with the answer, the option to make it a required field in order to submit the form, and a brief description, if instructions are needed, to answer the field.
+All input fields have a title, which will be the question associated with the answer, the option to make it a required field in order to submit the form, and a brief description, if instructions are needed, to answer the field.
 
 Some fields have validations, to ensure that the user meets certain requirements to fill in the field, some of these restrictions are:
 
@@ -103,7 +134,7 @@ Some fields have validations, to ensure that the user meets certain requirements
 - **Minimum Date**: The date entered cannot be earlier than this value
 - **Maximum Date**: The date entered cannot be later than this value.
 
-Just as some fields have validations, most have a default value that is pre-selected when loading the form. The only ones that don't have a default value are nested questions.
+Just as some fields have validations, most input fields have a default value that is pre-selected when loading the form. The only ones that don't have a default value are nested questions. Since [Rich Text](/en/platform/customers/forms.html#rich-text) does not capture an answer, it only has a title, an identifier, and content.
 
 ### Regular expressions
 

@@ -188,7 +188,7 @@ These objects allow you to get information via Liquid for a form in the Customer
 |-------------------------------|--------------------------------|------------------------------------------------------------------------------------------------------|
 | **form_response.description** | Form description.              | ```This form is the new user form```                                                                 |
 | **form_response.name**        | Form name.                     | ```The new form```                                                                                   |
-| **form_response.questions**   | Array with the form questions. | ```[{"title"=>"What is your job title?", "type"=>"textquestion", "answer"=>"Software developer"}]``` |
+| **form_response.questions**   | Array with the form questions that capture an answer. Content fields, such as **Rich Text**, are not included. | ```[{"title"=>"What is your job title?", "type"=>"textquestion", "answer"=>"Software developer"}]``` |
 
 ### question
 

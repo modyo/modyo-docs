@@ -65,7 +65,16 @@ Una vez que entres en la sección de edición de un formulario, podrás ver 2 se
 
 ### Añadir
 
-En esta sección, puedes agregar campos para completar tu formulario o eliminar los que no necesites. Los tipos de campos que puedes agregar son:
+En esta sección, puedes agregar campos para completar tu formulario o eliminar los que no necesites. Los campos se agrupan en dos encabezados:
+
+- **Campos de contenido**: Campos que solo muestran información a la persona usuaria y no capturan una respuesta.
+- **Campos de input**: Campos que piden un dato a la persona usuaria.
+
+El grupo **Campos de contenido** tiene una opción:
+
+- **Texto enriquecido**: Muestra un bloque de texto con formato, como instrucciones o un aviso legal. Revisa [Texto enriquecido](/es/platform/customers/forms.html#texto-enriquecido).
+
+Los tipos de campos del grupo **Campos de input** son:
 
 - **Texto simple**: Permite ingresar hasta 256 caracteres.
 - **Párrafo**: Permite ingresar texto en múltiples líneas de hasta 65,535 caracteres.
@@ -76,10 +85,11 @@ En esta sección, puedes agregar campos para completar tu formulario o eliminar 
 - **Fecha**: Permite seleccionar una fecha dentro de un rango permitido
 - **Preguntas anidadas**: Permite agregar opciones dentro de otras opciones. El usuario selecciona una opción principal y, según su elección, puede elegir entre las opciones relacionadas que se despliegan.
 - **Archivo**: Permite cargar archivos.
+- **Correo electrónico**: Campo para ingresar una dirección de correo electrónico.
+- **URL**: Campo para ingresar una dirección web.
 - **País**: Selector de países.
 - **Teléfono**: Campo para ingresar números telefónicos.
 - **Dirección**: Campo estructurado para capturar direcciones.
-- **Grupo**: Agrupa un listado de varios campos repetibles. Puedes ver más detalles sobre este formato en la [documentación sobre Grupos repetibles](/es/platform/content/types#grupo)
 
 Puedes eliminar uno de los campos del formulario haciendo click en el icono de basurero a la derecha de cada campo en la sección principal. La eliminación será efectiva una vez que guardes los cambios.
 
@@ -87,11 +97,32 @@ Puedes eliminar uno de los campos del formulario haciendo click en el icono de b
 Si tu formulario ya está activado y ya tienes respuestas, ten mucho cuidado al eliminar preguntas de el, ya que al hacerlo, estarás eliminando los valores de esas respuestas que los usuario ya enviaron. Esta acción es irreversible.
 :::
 
+#### Texto enriquecido
+
+El **Texto enriquecido** es un campo de contenido: muestra un bloque de texto dentro del formulario y no genera ninguna respuesta. Sirve para instrucciones, avisos legales o cualquier contenido informativo que quieras intercalar entre los campos, incluidas imágenes o archivos para descargar.
+
+Al seleccionarlo, la sección de edición muestra el **Título del campo**, el **Identificador** y un editor de texto enriquecido. No tiene la opción de campo requerido ni instrucciones. Si completas el **Título del campo**, el formulario lo muestra como encabezado del bloque.
+
+Desde el editor puedes insertar imágenes y archivos de la biblioteca del reino. Las opciones para subir, editar o eliminar archivos aparecen según tus permisos sobre esa biblioteca.
+
+El contenido acepta HTML y [Liquid](/es/platform/channels/liquid-markup/), con acceso a las variables del sitio (`vars`) y a la persona usuaria con sesión iniciada (`user`), que queda vacío en las respuestas anónimas. Por ejemplo:
+
+```liquid
+<p>Hola {{ user.first_name }}, revisa las condiciones antes de enviar el formulario.</p>
+```
+
+Ten en cuenta lo siguiente:
+
+- Si el Liquid tiene un error de sintaxis, el campo no se guarda y la plataforma muestra el error.
+- El contenido de cada campo admite hasta unos 64 KB de HTML.
+- No aparece en las respuestas: no se ve en el detalle de una respuesta ni en el correo de notificación de nuevas respuestas, no se incluye en la exportación ni en las estadísticas del formulario, y no está disponible para filtrar segmentos por respuestas.
+- Si una respuesta trae un valor para este campo, por ejemplo desde la API, la plataforma lo descarta.
+
 ### Propiedades del campo
 
 Esta sección te permitirá modificar las opciones para cada una de las preguntas de tu formulario, deberás seleccionar un campo de la sección principal para poder hacer uso de esta sección.
 
-Todos los campos que puedes añadir cuentan con un título, que será la pregunta asociada a la respuesta, la opción de hacer ese campo requerido para enviar el formulario, y una breve descripción en caso de que para responder el campo sean necesarias instrucciones.
+Todos los campos de input cuentan con un título, que será la pregunta asociada a la respuesta, la opción de hacer ese campo requerido para enviar el formulario, y una breve descripción en caso de que para responder el campo sean necesarias instrucciones.
 
 Algunos campos cuentan con validaciones, para asegurar que el usuario cumpla con ciertos requisitos para rellenar el campo, algunas de esas restricciones son:
 
@@ -103,7 +134,7 @@ Algunos campos cuentan con validaciones, para asegurar que el usuario cumpla con
 - **Fecha mínima**: La fecha ingresada no puede ser anterior a este valor
 - **Fecha máxima**: La fecha ingresada no puede ser posterior a este valor.
 
-De la misma forma en que algunos campos cuentan con validaciones, la mayoría cuentan con un valor por defecto que venga preseleccionado al momento de cargar el formulario. Los únicos que no cuentan con un valor por defecto son las preguntas anidadas.
+De la misma forma en que algunos campos cuentan con validaciones, la mayoría de los campos de input cuentan con un valor por defecto que venga preseleccionado al momento de cargar el formulario. Los únicos que no cuentan con un valor por defecto son las preguntas anidadas. El [Texto enriquecido](/es/platform/customers/forms.html#texto-enriquecido), como no captura una respuesta, solo tiene título, identificador y contenido.
 
 ### Expresiones regulares
 
