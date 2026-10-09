@@ -135,6 +135,15 @@ Para cambiar la forma en que se carga cada widget, debes ir a la vista de edici�
 Debes tener en consideración que usar widgets muy pesados de forma sincrónica puede hacer que se vea disminuido el rendimiento de tu página, por lo que debes decidir con cuidado cuáles widgets se cargarán de forma síncrona y cuáles de forma asíncrona.
 :::
 
+:::warning Atención
+En la carga asíncrona, el HTML del widget se inserta en la página después de que esta termina de cargar, y el navegador no ejecuta las etiquetas `<script>` que llegan de esa forma. Esto incluye los scripts de un snippet que incluyas en el HTML del widget: su marcado se muestra, pero su código no se ejecuta y el navegador no muestra ningún error.
+
+El código de la pestaña de JavaScript del widget no tiene esta limitación, porque la plataforma lo carga por separado. Si el widget necesita ejecutar un script que hoy está en su HTML, tienes dos alternativas:
+
+- Mover ese código a la pestaña de JavaScript del widget.
+- Marcar la opción "Carga síncrona" en el widget, para que su HTML se renderice junto con la página y sus scripts se ejecuten.
+:::
+
 ## Carga como ES Module
 
 :::warning Atención

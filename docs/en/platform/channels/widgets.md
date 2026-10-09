@@ -135,6 +135,15 @@ To change how each widget loads, go to the edit view of the page containing the 
 You should consider that using very heavy widgets synchronously can decrease your page's performance, so you should carefully decide which widgets will load synchronously and which will load asynchronously.
 :::
 
+:::warning Attention
+With asynchronous loading, the widget's HTML is inserted into the page after the page finishes loading, and the browser does not run the `<script>` tags that arrive that way. This includes the scripts of a snippet you include in the widget's HTML: its markup is shown, but its code does not run and the browser shows no error.
+
+The code in the widget's JavaScript tab does not have this limitation, because the platform loads it separately. If the widget needs to run a script that is currently in its HTML, you have two alternatives:
+
+- Move that code to the widget's JavaScript tab.
+- Check the "Synchronous loading" option on the widget, so its HTML is rendered along with the page and its scripts run.
+:::
+
 ## ES Module loading
 
 :::warning Attention
