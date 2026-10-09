@@ -95,8 +95,18 @@ This field allows you to enter plain text on several lines, with no formatting o
 
 This field doesn't offer the **Unique** validation: uniqueness is only available in [Single-line text](#single-line-text).
 
+When you print the value of this field with Liquid, Modyo sanitizes it with an allowlist of tags and attributes, instead of escaping it completely as version 10.2 did. The benign markup you stored is rendered, and anything outside the list is discarded:
+
+- **Allowed tags**: `a`, `abbr`, `acronym`, `address`, `b`, `big`, `blockquote`, `br`, `cite`, `code`, `dd`, `del`, `dfn`, `div`, `dl`, `dt`, `em`, `h1` to `h6`, `hr`, `i`, `img`, `ins`, `kbd`, `li`, `mark`, `ol`, `p`, `pre`, `samp`, `small`, `span`, `strong`, `sub`, `sup`, `time`, `tt`, `ul`, and `var`.
+- **Allowed attributes**: `abbr`, `alt`, `cite`, `class`, `datetime`, `height`, `href`, `lang`, `name`, `src`, `title`, `width`, and `xml:lang`.
+- **Allowed URL schemes**: `http`, `https`, `mailto`, and `tel`, plus relative paths. Any other scheme, including `javascript:` and `data:`, is discarded.
+
+Everything else — `script`, `style`, `iframe`, `form`, event attributes like `onclick`, and inline styles — is removed before the page is published.
+
 :::warning Attention
-As of version 10.2, the value of this field is delivered HTML-escaped when you print it with Liquid: any tags you wrote are shown as literal text instead of being interpreted as markup. If you need to publish HTML from an entry, use a [Rich text](#rich-text) field. Review the templates that were using this field to inject HTML.
+Sanitization happens when rendering with Liquid. The [content APIs](/en/platform/content/public-api-reference.html) still return the value exactly as it was stored, so a headless application consuming this field has to sanitize it on its own before injecting it into the DOM.
+
+If you need to publish HTML without restrictions from an entry, use a [Rich text](#rich-text) field.
 :::
 
 ### Rich text

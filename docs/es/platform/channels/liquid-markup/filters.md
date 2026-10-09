@@ -879,6 +879,26 @@ Desde Modyo 10.2 el filtro resuelve el estado contra el usuario presente en el c
 El filtro necesita el objeto `user` en el contexto de la plantilla. Si no está, la evaluación aborta apenas la respuesta tiene al menos una tarea completada, y en el HTML publicado queda el comentario `<!-- Liquid Error -->` en lugar del bloque, sin ningún aviso para quien navega. Protege el bloque con <span v-pre>`{% if user %}`</span> y asegúrate de que la plantilla reciba el usuario.
 :::
 
+### File Link
+
+Retorna un tag HTML de enlace hacia un archivo cargado en un submission, con el nombre del archivo como texto. Retorna una cadena vacía si la respuesta no tiene archivo.
+
+*ej.* <span v-pre>`{{ submission.tasks.documentos.fields.estado_de_cuenta | file_link }}`</span>
+
+**Parámetros:**
+- file (Asset|Hash) — la respuesta de un campo de archivo, o el archivo de una respuesta de documento, documento de identidad o selfie
+- mode (String) — opcional. Con el valor `'download'`, el enlace descarga el archivo en lugar de abrirlo
+
+Con los campos **Documento**, **Documento de identidad** y **Selfie** de una originación, el archivo se obtiene desde `file`:
+
+<span v-pre>`{{ submission.tasks.identidad.fields.cedula.file | file_link }}`</span>
+
+El enlace que genera el filtro es el único mecanismo soportado para mostrar un archivo del submission dentro de una [tarea de agente](/es/platform/customers/origination.html#tareas-respondidas-por-agentes), donde el aislamiento del iframe impide abrir pestañas e iniciar descargas por cuenta propia. Revisa [Mostrar un archivo de la respuesta](/es/platform/customers/origination.html#mostrar-un-archivo-de-la-respuesta) para el detalle.
+
+:::warning El modo download solo aplica dentro del panel
+En la página de originación del sitio, el navegador ignora el atributo `download` porque el archivo se sirve desde otro origen, así que el archivo se abre en una pestaña nueva en vez de descargarse. La descarga se cumple únicamente dentro del formulario de una tarea de agente.
+:::
+
 ### URL (URL del Step para Submission)
 
 Genera una URL navegable para un step dentro de un submission (primer task visible). Solo retorna valor si el submission está pendiente y el step está completado o el orden de steps permite navegación.
