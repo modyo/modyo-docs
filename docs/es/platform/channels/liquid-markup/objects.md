@@ -369,7 +369,7 @@ Estos objetos permiten obtener información a través de Liquid para las notific
 | **notification.sent_at**  | Fecha de envío de la notificación.                  | ```2012-11-16 00:46:40```                                                    |
 | **notification.body**     | Cuerpo de la notificación.                          | ```<p>Este es un mensaje de prueba en las campañas vía notificaciones</p>``` |
 | **notification.subject**  | Asunto de la notificación.                          | ```Modyo Developers Update```                                                |
-| **notification.url**      | URL de la notificación.                             | ```https://test.modyo.com/profile?notification_id=65345```                   |
+| **notification.url**      | URL de la notificación.                             | ```https://test.modyo.com/realms/default/profile?notification_id=65345```    |
 
 ## order
 
@@ -452,8 +452,8 @@ Estos objetos son de gran utilidad para crear páginas dinámicas usando Liquid.
 | Objeto                              | Descripción                                                                                                | Ejemplo |
 |-------------------------------------|------------------------------------------------------------------------------------------------------------|---------|
 | **realm.disable_modyo_credentials** | Booleano que determina si las credenciales de Modyo están desactivadas. `true` desactiva las credenciales. |         |
-| **realm.oauth2_callback_url**       | String que determina la URL de callback de OAuth2.                                                         |         |
-| **realm.oidc_callback_url**         | String que determina la URL de callback de OIDC.                                                           |         |
+| **realm.oauth2_callback_url**       | String que determina la URL de callback de OAuth2. Usa el dominio personalizado del reino si lo tiene.      |         |
+| **realm.oidc_callback_url**         | String que determina la URL de callback de OIDC. Usa el dominio personalizado del reino si lo tiene.        |         |
 
 ## request
 
@@ -679,7 +679,7 @@ Usa los objetos de user para obtener información de tus usuarios del módulo Cu
 | **user.age**                         | Edad del usuario.                                              | ```39```                                             |
 | **user.avatar**                      | Objeto de tipo asset que representa el avatar del usuario.     |                                                      |
 | **user.birth_at**                    | Fecha de nacimiento del usuario.                               | ```1982-09-01```                                     |
-| **user.change_password_url**         | URL para cambio de contraseña.                                 | ```https://test.modyo.com/newsite/password/change``` |
+| **user.change_password_url**         | URL para cambio de contraseña.                                 | ```https://test.modyo.com/realms/default/password/change``` |
 | **user.custom_fields**               | Hash con los datos de los campos personalizados del usuario.   | ```{"_UCF_Job"=>"Software Engineer"}```              |
 | **user.email**                       | Correo electrónico del usuario.                                | ```ivan@modyo.com```                                 |
 | **user.external_access_token**       | External access token del usuario (vacío si no existe).        | ```UEL7K69VUWhSXxX9DjDil...```                       |

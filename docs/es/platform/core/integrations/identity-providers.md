@@ -17,6 +17,10 @@ Actualmente la plataforma es compatible con:
 
 Recuerda tener a mano todos los datos y certificados que se te exigen antes de cambiarlos o integrar algún servicio, para que no se produzcan problemas con el ingreso general de los usuarios.
 
+:::tip Reinos con dominio personalizado
+Las URLs de callback de esta página usan la forma `https://my_account.modyo.com/realms/my_realm/auth/...`. Si el reino tiene un [dominio personalizado](/es/platform/customers/settings.html#dominios), pasan a `https://<tu-dominio>/realms/auth/...`, sin el identificador del reino, y debes actualizarlas en tu proveedor. Las encuentras en **Configuración de reino** > **Dominios**.
+:::
+
 ## Agregar un Proveedor de Identidad
 
 Para agregar un nuevo proveedor de identidad, sigue estos pasos:

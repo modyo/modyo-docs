@@ -11,6 +11,8 @@ Modyo Customers contiene una variedad de APIs con las que podrás obtener la inf
 
 Todos los endpoints bajo `ACCOUNT_URL/api/customers/realms/{realm_uid}/` responden en nombre de un usuario final del reino, así que cada llamada necesita una credencial de ese usuario. La única excepción es [Verificación de código OTP](#verificacion-de-codigo-otp).
 
+Si el reino tiene un [dominio personalizado](/es/platform/customers/settings.html#dominios), la API de Customers sigue respondiendo solo en `ACCOUNT_URL`. La autorización de OAuth se hace en `https://<tu-dominio>/realms/oauth/authorize`, y `ACCOUNT_URL/realms/{realm_uid}/oauth/authorize` redirige allí. Los endpoints de token y revocación siguen respondiendo en `ACCOUNT_URL`.
+
 El reino acepta dos credenciales:
 
 - **Access token de OAuth2**, en la cabecera `Authorization: Bearer`. Tiene precedencia: cuando la petición trae un access token reconocido, la cookie de sesión no se evalúa.
