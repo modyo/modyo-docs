@@ -37,6 +37,24 @@ Posteriormente, en la configuración del espacio podrás definir idiomas secunda
 
 :::
 
+## Clonar un espacio
+
+Clonar un espacio crea una copia completa dentro de la misma cuenta: se copian sus categorías, sus tipos de contenido, sus entradas, los archivos de su biblioteca de multimedia y los miembros del equipo con sus roles. Para clonar un espacio:
+
+1. En el menú lateral selecciona **Content**.
+1. En la columna **Acciones** de la fila del espacio, haz click en **Clonar**.
+1. En la ventana **Clonar espacio**, confirma haciendo click en **Clonar espacio**.
+
+El clon toma el nombre del original precedido de "Copia de" y el identificador precedido de "copia-de-". Si ya existe un espacio con ese nombre o identificador, se le añade un número al final para no repetirlo.
+
+:::tip Tip
+El clonado se ejecuta en segundo plano y puede tardar: mientras se completa, la ventana muestra "Esto demorará un tiempo, el espacio está siendo clonado.". Al terminar verás "Espacio clonado correctamente" y el listado se actualiza con el nuevo espacio.
+:::
+
+:::warning Atención
+El número de espacios que puedes tener lo define el plan de tu cuenta. Si ya alcanzaste ese cupo, el clonado no se inicia y verás el mensaje "Has alcanzado el número máximo de espacios para el plan actual". Si necesitas un cupo mayor, conversa con tu ejecutivo de cuenta en Modyo.
+:::
+
 ## Configuración del espacio
 
 En esta sección puedes personalizar y ajustar las opciones disponibles para tu espacio, según tus necesidades específicas. Para acceder a la configuración de tu espacio sigue estos pasos:
