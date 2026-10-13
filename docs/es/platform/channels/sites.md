@@ -187,13 +187,34 @@ Para acceder a esta API, agrega "search.json" a la URL de tu web app junto con t
 Personaliza tus consultas de la siguiente manera:
 
 
-|  Parámetro       |       Descripción    |
-|------------------|----------------------|
-| **query** | Realiza consultas a la API de búsqueda. Este buscador lleva a cabo consultas en todas las páginas publicadas de tu web app y en todas las entradas públicas de los espacios vinculados a la web app. |
-| **per_page** | Divide el número total de registros en el número de páginas seleccionadas. |
-| **page** | Selecciona la página específica que deseas consultar, en caso de que existan múltiples páginas de registros para la consulta. |
-| **multi=true** | Permite realizar búsquedas en todos las aplicaciones web de la cuenta que tengan habilitada la función de búsqueda. |
+| Parámetro | Descripción |
+|-----------|-------------|
+| **query** | El término que quieres buscar. La consulta recorre todas las páginas publicadas de tu web app y todas las entradas públicas de los espacios vinculados a la web app. El buscador solo considera sus primeros 15 caracteres. |
+| **page** | La página de resultados que quieres obtener. Por omisión, 1. |
+| **per_page** | Cuántos resultados trae cada página. Por omisión, 15. |
+| **more** | Valor libre que el buscador no usa para filtrar: solo queda disponible en la plantilla de búsqueda como la variable `params_more`. |
 
+Cada resultado trae cuatro campos: `title`, `description`, `url` y `site_name`. La respuesta incluye además un objeto `meta` con `total_entries`, `per_page`, `current_page` y `total_pages`, que viene vacío cuando la consulta no encuentra nada.
+
+:::warning Atención
+`multi=true` no es un parámetro de esta API y agregarlo a la URL no tiene ningún efecto. La búsqueda en varias aplicaciones se resuelve solo desde la configuración de la web app desde la que consultas.
+:::
+
+:::tip Tip
+El total de resultados está topado en 100, sin importar el `per_page` que pidas: de ahí en adelante las páginas siguientes vienen vacías y hay que refinar la consulta. En la plantilla de búsqueda, [site_search.have_less_relevant_results](/es/platform/channels/liquid-markup/objects.html#site-search) te avisa cuando quedaron resultados fuera de ese tope.
+:::
+
+### Buscar en varias aplicaciones web
+
+Una búsqueda puede abarcar varias aplicaciones web de la misma cuenta. Ese modo no se activa desde la URL: depende de dos casillas de la sección **Privacidad** de la configuración de la aplicación desde la que se busca, **Habilitar búsqueda** y **Habilitar la búsqueda en múltiples sitios**. La segunda solo se puede marcar si la primera está marcada.
+
+Con las dos marcadas, la búsqueda recorre la aplicación de origen y todas las aplicaciones web de la cuenta que cumplan estas tres condiciones:
+
+- Tienen **Habilitar búsqueda** marcada.
+- No son un stage de otra aplicación.
+- Tienen el mismo idioma que la aplicación desde la que se busca.
+
+En este modo cada resultado indica de qué aplicación proviene en su campo `site_name`, y en la plantilla de búsqueda [site_search.multi](/es/platform/channels/liquid-markup/objects.html#site-search) te permite mostrarlo solo cuando la búsqueda abarca varias aplicaciones.
 
 ## Configuración de Aplicaciones Web
 
@@ -299,10 +320,10 @@ Al presionar el botón de eliminado, el sistema te pedirá que ingreses el nombr
 - **Mostrar home a visitas públicas**: La página de inicio de la web app se muestra a todos los visitantes, incluso aquellos que no hayan iniciado sesión. Al navegar a cualquier otra página, se solicita registro o inicio de sesión.
 - **Redireccionar al home cuando una URL no se encuentra**: Por defecto, la aplicación web muestra un error 404 cuando el usuario accede a una URL inexistente. Si marcas esta opción, el usuario será redirigido a la página de inicio de la web app en lugar del 404.
 - **Habilitar búsqueda**: Activa la función de búsqueda en la web app.
-- **Habilitar la búsqueda en múltiples aplicaciones**
+- **Habilitar la búsqueda en múltiples sitios**: Extiende la búsqueda de esta web app al resto de las aplicaciones web de la cuenta. La casilla queda deshabilitada mientras **Habilitar búsqueda** esté desmarcada.
 
 :::tip Tip
-Si habilitas la búsqueda en tu web app y usas el parámetro `multi=true` desde otra web app, también puedes buscar en tu app actual.
+Este modo no se pide desde la URL de la consulta: `multi=true` en `search.json` no tiene ningún efecto. Revisa qué aplicaciones entran en la búsqueda en [Buscar en varias aplicaciones web](/es/platform/channels/sites.html#buscar-en-varias-aplicaciones-web).
 :::
 
 

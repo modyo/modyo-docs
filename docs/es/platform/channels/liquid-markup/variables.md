@@ -213,9 +213,9 @@ El tag <code v-pre>{% body %}</code> escribe `page_context`, `page_name` y `page
 
 | Variable | Qué contiene |
 |----------|--------------|
-| `site_search` | La búsqueda ya resuelta, con sus resultados. Consulta [sitesearch](/es/platform/channels/liquid-markup/objects.html#sitesearch). |
+| `site_search` | La búsqueda ya resuelta, con sus resultados. Consulta [site_search](/es/platform/channels/liquid-markup/objects.html#site-search). |
 | `params_query` | El término buscado, saneado y escapado, listo para imprimirse. Solo existe si la URL trae el parámetro. |
-| `params_more` | El filtro adicional de la búsqueda, saneado y escapado. Solo existe si la URL lo trae. |
+| `params_more` | El valor del parámetro `more` de la URL, saneado y escapado. El buscador no lo usa para filtrar: queda disponible por si tu plantilla lo necesita. Solo existe si la URL lo trae. |
 
 ### De las páginas de Origination
 

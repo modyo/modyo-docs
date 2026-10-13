@@ -375,7 +375,7 @@ Si quieres combinar varios strings en uno solo y guardarlo en una variable, pued
 
 ## Tags propios de Modyo
 
-Además de los tags estándar de Liquid, la plataforma registra tags propios. Los siguientes vienen en los layouts y plantillas por defecto de todo sitio nuevo, así que conviene saber qué emiten antes de modificarlos.
+Además de los tags estándar de Liquid, la plataforma registra tags propios. La mayoría viene en los layouts y plantillas por defecto de todo sitio nuevo, así que conviene saber qué emiten antes de modificarlos.
 
 ### Bloque html5
 
@@ -421,6 +421,34 @@ El `id` solo distingue portada, páginas personalizadas, páginas de contenido y
 :::
 
 Consulta [Variables de Contexto](/es/platform/channels/liquid-markup/variables.html#variables-de-contexto) para ver qué contiene cada una de estas variables.
+
+### Tag de búsqueda
+
+<code v-pre>{% search %}</code> emite un formulario `GET` hacia `site.search_url`, con un campo de texto llamado `query` y un botón de envío. El campo lleva `pattern=".{3,}"`, así que el navegador impide enviar menos de tres caracteres, pero **no es obligatorio**: con el campo vacío el formulario se envía igual y la página de resultados aparece sin resultados.
+
+```html
+<form action="<url de búsqueda del sitio>" method="get" checked="1">
+  <input class="search" id="query" name="query" type="text" pattern=".{3,}">
+  <input type="hidden" name="pages" value="true">
+  <input type="hidden" name="resources" value="true">
+  <input type="hidden" name="people" value="true">
+  <input type="hidden" name="pages_and_resources" value="true">
+  <button type="submit" name="commit"><i class="icon-search"></i></button>
+</form>
+```
+
+El marcado quedó de una versión anterior del tema. Los cuatro campos ocultos vienen de cuando la búsqueda se acotaba por tipo de recurso y hoy ninguno se lee: el único parámetro que el buscador toma de este formulario es `query`. El botón, además, se apoya en la clase `icon-search`, que el tema actual no incluye, así que se ve vacío.
+
+Por eso conviene escribir el formulario a mano apuntando a `site.search_url`, que es lo que hace la plantilla **search** de la plataforma y lo que te deja controlar clases, textos y accesibilidad:
+
+```liquid
+<form action="{{ site.search_url }}" method="get">
+  <input type="text" class="form-control" name="query" placeholder="Buscar" aria-label="Buscar" value="{{ params_query }}">
+  <input class="btn btn-primary" title="Buscar" type="submit" name="commit" value="Buscar">
+</form>
+```
+
+Consulta [Buscador](/es/platform/channels/sites.html#buscador) para ver cómo se habilita la búsqueda y qué parámetros acepta la consulta.
 
 ### Tags de CSRF
 
