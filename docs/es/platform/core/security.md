@@ -39,6 +39,54 @@ Esta protección aplica tanto a los miembros del equipo que entran al panel de a
 Este bloqueo temporal es distinto del estado _inactivo_ de la [Política de Periodo de Inactividad de los Usuarios](#politica-de-periodo-de-inactividad-de-los-usuarios). Si un miembro del equipo reporta que no puede entrar, revisa cuál de los dos casos aplica: el bloqueo por intentos fallidos se levanta por sí solo a los 15 minutos, mientras que el estado inactivo se mantiene hasta que el usuario reactiva su cuenta o un dueño de la cuenta lo vuelve a activar.
 :::
 
+## Vigencia de los Enlaces y Códigos del Panel
+
+Además de la sesión, varios enlaces y códigos que Modyo envía por correo o muestra en pantalla tienen su propio plazo de vencimiento. Estos plazos son fijos: no se configuran desde el panel.
+
+| Enlace o código | Cuánto dura |
+| --- | --- |
+| Enlace de recuperación de contraseña | 3 días desde que se envía el correo. |
+| Enlace de activación de la cuenta, en el correo de bienvenida | 1 semana desde que se envía el correo. |
+| Enlace de reactivación de una cuenta marcada como inactiva | 10 minutos desde que se envía el correo. |
+| Enlace de configuración del autenticador de dos pasos | 5 minutos desde que se abre la pantalla. |
+| Enlace de confirmación de una dirección de correo nueva | 5 minutos desde que se envía el correo. |
+
+Cumplido el plazo, el enlace deja de servir: la plataforma devuelve a la persona a la pantalla de inicio de sesión con un mensaje de error. La solución siempre es pedir uno nuevo, nunca reenviar el correo viejo.
+
+:::warning Atención
+Todos estos enlaces comparten el mismo código de un solo uso. Cada vez que se genera uno nuevo, por ejemplo al pedir por segunda vez la recuperación de la contraseña, el anterior queda invalidado de inmediato, aunque todavía estuviera dentro de su plazo. Si un miembro del equipo pide varios correos seguidos, solo funciona el enlace del último que recibió.
+:::
+
+## Límites de Solicitudes y Bloqueos Temporales
+
+Más allá de la política de contraseñas y del bloqueo de inicio de sesión, Modyo limita cada cuánto un miembro del equipo puede pedir un correo de recuperación o cambiar los datos sensibles de su perfil. Estos límites son fijos y tampoco se configuran desde el panel.
+
+### Solicitudes de recuperación de contraseña
+
+La pantalla de recuperación responde siempre con el mismo mensaje, exista o no el nombre de usuario y se envíe o se descarte el correo:
+
+_Si has introducido un nombre de usuario válido, recibirás una contraseña temporal en tu correo electrónico._
+
+Por dentro se aplican dos límites:
+
+- Dos solicitudes seguidas para el mismo miembro del equipo, con menos de 10 segundos entre una y otra, hacen que la segunda se descarte y no se envíe ningún correo.
+- Cuando se acumulan más de tres solicitudes para el mismo miembro del equipo, las siguientes se descartan durante 24 horas, contadas desde la última solicitud aceptada.
+
+En ambos casos la persona ve el mensaje de éxito y el correo nunca llega. Es la causa más frecuente del reporte "pedí la recuperación y no me llegó nada".
+
+### Cambios de contraseña, correo y nombre de usuario desde el perfil
+
+La pantalla de **Perfil** pide la contraseña actual antes de cambiar la contraseña, el correo electrónico o el nombre de usuario. Ahí se aplican dos límites más:
+
+- **Un cambio de contraseña cada 24 horas**: una vez que un miembro del equipo cambia su contraseña, no puede volver a cambiarla desde su perfil durante las 24 horas siguientes. Si lo intenta, la plataforma lo devuelve al perfil con el mensaje _El número de solicitudes de cambio de contraseña ha superado el máximo permitido_. El plazo empieza a contar también cuando la contraseña se definió desde un enlace de recuperación.
+- **Tres intentos fallidos y bloqueo de 15 minutos**: cuando se acumulan tres intentos fallidos de cambiar la contraseña, el correo o el nombre de usuario, el siguiente se rechaza con el mensaje _Has alcanzado el límite de intentos para modificar datos sensibles en tu perfil. Tu sesión ha sido cerrada por seguridad_ y la plataforma cierra la sesión. Al cambiar el correo o el nombre de usuario, además, revoca todas las sesiones activas del miembro del equipo, así que queda desconectado en todos sus dispositivos.
+
+El bloqueo dura 15 minutos y se levanta solo por tiempo: no hay una acción en el panel para liberarlo antes. Cumplido el plazo, el miembro del equipo vuelve a disponer de sus intentos.
+
+:::tip Tip
+Este bloqueo es distinto del [Bloqueo por Intentos Fallidos de Inicio de Sesión](#bloqueo-por-intentos-fallidos-de-inicio-de-sesion), que se dispara con 10 intentos en la pantalla de acceso. El del perfil se dispara con 3 intentos, ya con la sesión iniciada, y su efecto visible es que a la persona la sacan de la plataforma justo después de escribir mal su contraseña actual. Si alguien reporta que "el panel me echó mientras cambiaba mi correo", este es el motivo.
+:::
+
 ## Política de Expiración de Sesiones
 
 En esta sección puedes configurar el tiempo que permanecerá activa una sesión. Los dos campos son listas de opciones fijas: eliges uno de los valores disponibles, no escribes un tiempo libre.
@@ -48,6 +96,18 @@ En esta sección puedes configurar el tiempo que permanecerá activa una sesión
 **Período de inactividad del usuario**: Cuando un usuario está inactivo se cierra la sesión automáticamente, una vez transcurrido el tiempo seleccionado. Se consideran las acciones de navegación, teclado y mouse como actividades de usuario. Esta opción protege al usuario en caso de dejar su estación de trabajo desatendida. Para poder elegir un valor, primero marca la casilla **Activar el periodo de inactividad del usuario**; las opciones son 5 minutos, 15 minutos, 30 minutos, 1 hora y 6 horas.
 
 Este cierre de sesión se mide en minutos y solo termina la sesión abierta. No lo confundas con la [Política de Periodo de Inactividad de los Usuarios](#politica-de-periodo-de-inactividad-de-los-usuarios), que se mide en días y marca al usuario como inactivo para que no pueda volver a iniciar sesión.
+
+## Aviso de Inicio de Sesión desde un Dispositivo Nuevo
+
+Cada vez que un miembro del equipo entra al panel desde un navegador o un dispositivo que no había usado antes, Modyo le envía automáticamente un correo con el asunto _Nuevo inicio de sesión en tu cuenta de Modyo_. El correo indica la cuenta y la dirección de correo con la que se entró, el navegador y el sistema operativo, la fecha del inicio de sesión y la dirección IP, e incluye un botón para cambiar la contraseña de inmediato por si el acceso no fue suyo.
+
+Este aviso forma parte de la plataforma: no hay una opción para activarlo, desactivarlo ni redactarlo de otra manera. Tampoco se envía en el primer inicio de sesión de un miembro del equipo recién creado, porque en ese momento todavía no hay accesos anteriores con los que comparar.
+
+Modyo decide que un dispositivo es nuevo comparando la huella del acceso actual con la de los accesos anteriores de ese mismo miembro del equipo, la misma información que ves en la pestaña **Dispositivos** de su ficha en [Equipo](/es/platform/core/roles.html#editar-usuario).
+
+:::tip Tip
+Recibir este correo no significa por sí solo que alguien más haya entrado a la cuenta. La huella cambia al usar otro navegador, al actualizarlo, al borrar las cookies o al entrar desde otro equipo, así que el mismo miembro del equipo puede recibir el aviso por accesos totalmente legítimos. Antes de escalar, contrasta el dispositivo y la dirección IP del correo con la pestaña **Dispositivos** y con los [Logs de actividad](/es/platform/core/activity-logs.html).
+:::
 
 ## Política de Periodo de Inactividad de los Usuarios
 

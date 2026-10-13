@@ -100,6 +100,10 @@ En esta sección puedes ver un registro de todas las acciones realizadas por el 
 Estos registros no se pueden borrar ni editar.
 :::
 
+:::tip Tip
+Si un usuario reporta que pidió recuperar su contraseña y el correo nunca le llegó, revisa esta actividad: las solicitudes que la plataforma procesa quedan registradas aquí, y las que descarta por exceso de intentos no dejan ningún rastro. El detalle de esos límites está en [Límites de solicitudes y bloqueos](/es/platform/customers/settings.html#limites-de-solicitudes-y-bloqueos).
+:::
+
 ### Respuestas a formularios
 
 Esta sección contiene una lista de formularios rellenados por el usuario. Haz clic en un formulario para ver sus respuestas. Para más información, consulta la sección [Formularios](/es/platform/customers/forms).
