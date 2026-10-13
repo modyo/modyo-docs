@@ -11,7 +11,7 @@ Modyo Customers contains a variety of APIs with which you can obtain information
 
 Every endpoint under `ACCOUNT_URL/api/customers/realms/{realm_uid}/` answers on behalf of an end user of the realm, so each call needs a credential for that user. The only exception is [OTP code verification](#otp-code-verification).
 
-If the realm has a [custom domain](/en/platform/customers/settings.html#domains), the Customers API keeps answering only on `ACCOUNT_URL`. OAuth authorization happens at `https://<your-domain>/realms/oauth/authorize`, and `ACCOUNT_URL/realms/{realm_uid}/oauth/authorize` redirects there. The token and revocation endpoints keep answering on `ACCOUNT_URL`.
+If the realm has a [custom domain](/en/platform/customers/settings.html#domains), the Customers API also answers on `https://<your-domain>/api/customers/realms/{realm_uid}/`, with the same realm identifier in the path and the same responses as on `ACCOUNT_URL`, where it keeps answering without redirecting. On the custom domain, a `realm_uid` of another realm answers 404, and on the realm's alternative domains the API answers 404, without redirecting. OAuth authorization happens at `https://<your-domain>/realms/oauth/authorize`, and `ACCOUNT_URL/realms/{realm_uid}/oauth/authorize` redirects there. The token and revocation endpoints keep answering on `ACCOUNT_URL`.
 
 The realm accepts two credentials:
 
@@ -77,7 +77,7 @@ Every Customers API endpoint shares these error bodies:
 |------|------|-----------------|
 | `401` | <code v-pre>{"error":{"user_session":"user not found"}}</code> | The request carries no usable credentials, the access token does not match a user of the realm, or the user is inactive. |
 | `401` | <code v-pre>{"error":{"grant_expired":"session expired"}}</code> | The credential identifies a user, but the session behind it expired or was revoked. |
-| `404` | <code v-pre>{}</code> | The `realm_uid` in the URL does not match any active realm of the account. |
+| `404` | <code v-pre>{}</code> | The `realm_uid` in the URL does not match any active realm of the account or, on a custom domain, does not match the realm of that domain. |
 
 :::tip Tip
 Telling the two `401` apart saves you debugging time. `user_session` means that no usable credential ever arrived, so check the `Authorization` header or the cookie. `grant_expired` means that the credential was correct and what ran out was the session, so what you need is to authenticate the user again instead of retrying.
