@@ -35,6 +35,18 @@ August 11, 2026
 
 ## 10.1
 
+### 10.1.20
+
+:::info Release date
+October 14, 2026
+:::
+
+| Module | Improvements |
+|--------|---------|
+| **Core** | • Dependency security updates |
+| **Channels** | • Fixes site cloning and stage creation on large sites, which were interrupted when the background process ran out of memory, leaving the resulting site or stage incomplete<br>• Fixes site cloning and stage creation, which still purged the CDN cache when copying widgets with global variables and could again exceed the Cloudflare rate limit. The CDN cache is now also not purged for newly created widgets |
+
+
 ### 10.1.19
 
 :::info Release date
