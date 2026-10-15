@@ -35,6 +35,18 @@ search: true
 
 ## 10.1
 
+### 10.1.20
+
+:::info Fecha del release
+14 de octubre de 2026
+:::
+
+| Módulo | Mejoras |
+|--------|---------|
+| **Core** | • Actualizaciones de seguridad de dependencias |
+| **Channels** | • Corrige el clonado de sitios y la creación de stages en sitios grandes, que se interrumpía cuando el proceso en segundo plano se quedaba sin memoria y dejaba el sitio o stage resultante incompleto<br>• Corrige el clonado de sitios y la creación de stages, que seguían purgando la caché de CDN al copiar widgets con variables globales y podían volver a superar el rate limit de Cloudflare. Ahora tampoco se purga la caché de CDN de los widgets recién creados |
+
+
 ### 10.1.19
 
 :::info Fecha del release
