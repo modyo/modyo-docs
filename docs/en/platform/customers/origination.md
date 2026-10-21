@@ -712,7 +712,7 @@ When you publish a version that changes the period or the trigger, or that turns
 If automatic cancellation is on and the change leaves pending submissions already overdue, before publishing the platform tells you how many will be canceled and asks you to confirm with **Publish anyway?**. The submissions are canceled in the next run of the automatic cancellation. If you schedule the publication, the count refers to the submissions that would be overdue today, and the ones overdue at the time of publication are canceled.
 
 :::warning Due dates in weeks and months
-Originations that had their due date in weeks now have it in days, at 7 days per week. The ones that had it in months now count calendar months instead of 30 days, so the due date of their submissions can move by one or two days.
+Originations that had their due date in weeks now have it in days, at 7 days per week. The ones that had it in months now count calendar months instead of 30 days, so the due date of their submissions can move by several days: the difference depends on the trigger date and the number of months. For example, 12 months from January 1, 2026 used to be due on December 27, 2026 and are now due on January 1, 2027.
 :::
 
 #### Roles

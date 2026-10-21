@@ -713,7 +713,7 @@ Al publicar una versión que cambia la duración o el disparador, o que activa o
 Si la cancelación automática está activa y el cambio deja respuestas pendientes ya vencidas, antes de publicar la plataforma te indica cuántas se cancelarán y te pide confirmar con **¿Publicar de todas formas?**. Las respuestas se cancelan en la siguiente ejecución de la cancelación automática. Si programas la publicación, el conteo corresponde a las respuestas que estarían vencidas hoy, y se cancelan las que estén vencidas al momento de publicarse.
 
 :::warning Atención con los vencimientos en semanas y en meses
-Las originaciones que tenían el vencimiento en semanas lo tienen ahora en días, a razón de 7 días por semana. Las que lo tenían en meses ahora cuentan meses calendario en lugar de 30 días, así que la fecha de vencimiento de sus respuestas puede moverse uno o dos días.
+Las originaciones que tenían el vencimiento en semanas lo tienen ahora en días, a razón de 7 días por semana. Las que lo tenían en meses ahora cuentan meses calendario en lugar de 30 días, así que la fecha de vencimiento de sus respuestas puede moverse varios días: la diferencia depende de la fecha del disparador y de la cantidad de meses. Por ejemplo, 12 meses desde el 1 de enero de 2026 vencían el 27 de diciembre de 2026 y ahora vencen el 1 de enero de 2027.
 :::
 
 #### Roles
