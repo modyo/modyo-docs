@@ -415,11 +415,11 @@ To avoid processing the same notification twice:
 - Store the `webhook-id` of each notification you process with a unique index and discard the ones you already have.
 - Don't use `modyo-attempt` or `webhook-timestamp` as part of that key, because they change on each attempt.
 - Don't compare the full body: the same delivery can arrive with different bytes between attempts if the way the event is serialized changed.
-- Answer with a 2xx code as soon as you receive the notification and process it afterwards, so you don't exceed the timeout and cause unnecessary retries.
+- Store the notification and its `webhook-id` durably, for example in your database or in a durable queue, answer with a 2xx code, and process it afterwards. That way you don't exceed the timeout or cause unnecessary retries. If you couldn't store it, answer with a 5xx code so Modyo retries it: once you answer 2xx, the delivery becomes **Delivered** and isn't sent again.
 
 #### Event order
 
-Modyo doesn't guarantee the order of notifications: a retry can arrive after a notification of a more recent event. If order matters, use the event date carried in the payload, such as `created_at`.
+Modyo doesn't guarantee the order of notifications: a retry can arrive after a notification of a more recent event. If order matters and the payload carries the full log, use its `created_at`. The compact payload of end-user events, with `e_c` and `e_a`, doesn't carry the event date, so your endpoint must tolerate those events arriving out of order. `webhook-timestamp` doesn't help with ordering either, because it indicates the time of the attempt, not of the event.
 
 ### Delivery log
 
