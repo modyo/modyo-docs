@@ -680,7 +680,7 @@ Al seleccionar la opción **Editar** en el menú contextual de tu originación p
 - **Descripción**: Incluye un breve texto explicativo sobre el propósito de la originación.
 - **Mensaje de completado**: Es el mensaje que aparecerá al usuario al finalizar el proceso de originación.
 - **Asignado por defecto de la respuesta**: Especifica el administrador o grupo de administradores que será asignado automáticamente a cada nueva respuesta. Al seleccionar un grupo, puedes usar la opción **Asignar a todo el grupo** o elegir un usuario específico dentro de él.
-- **Vence en**:  Establece un plazo máximo para completar la originación.
+- **Vence en**: Establece el plazo de vencimiento de cada respuesta y desde cuándo se cuenta. Revisa el detalle en [Configurar el vencimiento](#configurar-el-vencimiento).
 - **Cancelar automáticamente las respuestas que excedan la fecha de vencimiento**: Disponible solo si configuraste un vencimiento. Al activar esta opción, las respuestas en estado **Pendiente** que superen su fecha de vencimiento se cancelan automáticamente.
 - **Reglas de completado**:  Define el comportamiento de completado para cada respuesta.
 - **Reglas de cancelación**: Define quién puede cancelar una respuesta desde la página de originación:
@@ -689,7 +689,31 @@ Al seleccionar la opción **Editar** en el menú contextual de tu originación p
 - **Privacidad**: Permite restringir el acceso al flujo de originación a ciertos segmentos de usuarios predefinidos.
 
 :::tip Cancelación automática por vencimiento
-La cancelación automática se ejecuta en un proceso en segundo plano una vez al día, por lo que puede no ser inmediata al momento del vencimiento. Solo cancela respuestas en estado **Pendiente** y registra **Auto-cancelada por vencimiento** como razón de cancelación, visible en los detalles de la respuesta.
+La cancelación automática se ejecuta en un proceso en segundo plano, así que la respuesta se cancela hasta una hora después de su fecha de vencimiento. Funciona igual con cualquiera de los disparadores del vencimiento, solo cancela respuestas en estado **Pendiente** y registra **Auto-cancelada por vencimiento** como razón de cancelación, visible en los detalles de la respuesta.
+:::
+
+#### Configurar el vencimiento
+
+En la sección **Vence en**, marca la casilla **Marcar una respuesta como vencida después** y completa:
+
+- **Meses**, **Días** y **Horas**: La duración del plazo. Puedes combinar los tres, por ejemplo 1 mes, 3 días y 2 horas, y la suma tiene que ser mayor que 0. Un mes es un mes calendario, no un bloque de 30 días.
+- **Contar el plazo desde**: El disparador desde el que se cuenta la duración:
+  - **El inicio de la respuesta**: Opción por defecto. El plazo parte cuando la respuesta pasa a **Pendiente**, es decir, en su fecha **Comenzó el**.
+  - **La finalización de una tarea**: El plazo parte cuando el usuario principal completa la tarea que eliges en **Tarea**. El selector muestra todas las tareas del flujo como `Paso › Tarea`. Si la tarea se reabre y se vuelve a completar, el plazo se cuenta desde la última vez que se completó. Si eliges una tarea que no se muestra al usuario principal, la pantalla te advierte que, si esa tarea nunca se completa, la respuesta queda sin vencimiento.
+  - **El valor de un campo de fecha**: El plazo parte en la fecha respondida en el campo que eliges en **Campo de fecha**. El selector muestra como `Tarea › Pregunta` las preguntas de tipo fecha de primer nivel de las tareas de input; las que están dentro de un grupo no aparecen. Si el campo no tiene hora, el plazo parte a las 00:00 de esa fecha en la zona horaria de la cuenta. Si varios participantes responden el campo, manda la respuesta del usuario principal, y si la respuesta cambia, la fecha de vencimiento se recalcula.
+
+Si la duración incluye horas, la fecha de vencimiento se muestra con su hora en el listado y en el detalle de la respuesta.
+
+Mientras el disparador no ocurre, la respuesta queda **Sin vencimiento**: no tiene fecha límite y no se cancela automáticamente. No hay un disparador de respaldo, así que si eliges una tarea o un campo que nunca se responde, por ejemplo porque la [lógica condicional](#logica-condicional) lo oculta, esa respuesta nunca vence.
+
+La tarea o la pregunta que usas como disparador no se pueden eliminar, ni tampoco el paso que las contiene. La pregunta tampoco se puede mover a un grupo ni cambiar de tipo. Si lo intentas, al guardar el flujo la plataforma te avisa que primero tienes que cambiar la regla de vencimiento.
+
+Al publicar una versión que cambia la duración o el disparador, o que activa o desactiva el vencimiento, la plataforma recalcula en segundo plano la fecha de vencimiento de las respuestas **Pendiente**, sin cambiar su estado. Si solo cambió la duración, el plazo se sigue contando desde el mismo momento; si cambió el disparador, se vuelve a buscar en cada respuesta. Si desactivas el vencimiento, las respuestas quedan sin fecha límite.
+
+Si la cancelación automática está activa y el cambio deja respuestas pendientes ya vencidas, antes de publicar la plataforma te indica cuántas se cancelarán y te pide confirmar con **¿Publicar de todas formas?**. Las respuestas se cancelan en la siguiente ejecución de la cancelación automática. Si programas la publicación, el conteo corresponde a las respuestas que estarían vencidas hoy, y se cancelan las que estén vencidas al momento de publicarse.
+
+:::warning Atención con los vencimientos en semanas y en meses
+Las originaciones que tenían el vencimiento en semanas lo tienen ahora en días, a razón de 7 días por semana. Las que lo tenían en meses ahora cuentan meses calendario en lugar de 30 días, así que la fecha de vencimiento de sus respuestas puede moverse uno o dos días.
 :::
 
 #### Roles
@@ -761,14 +785,14 @@ Cuando la originación tiene configurado **Vence en**, cada respuesta lleva adem
 - **Vence pronto**: Ya se consumió el 75% del plazo, pero la fecha límite aún no pasa.
 - **Vencido**: La fecha límite ya pasó.
 
-El plazo se cuenta desde el disparador configurado en la originación: el inicio de la respuesta o la fecha respondida en una pregunta de tipo Fecha del flujo. El estado de vencimiento solo aplica a las respuestas **Pendiente**: al completarse o cancelarse, la respuesta deja de mostrarlo.
+El plazo se cuenta desde el disparador configurado en la originación: el inicio de la respuesta, la finalización de una tarea o la fecha respondida en un campo de fecha del flujo. Revisa cómo se configura en [Configurar el vencimiento](#configurar-el-vencimiento). El estado de vencimiento solo aplica a las respuestas **Pendiente**: al completarse o cancelarse, la respuesta deja de mostrarlo.
 
-En el listado de respuestas, la columna **Vence en** muestra la fecha límite seguida de la etiqueta entre paréntesis, por ejemplo `22/02/2026 (Vence pronto)`. Si la respuesta todavía no arranca, muestra **No iniciado**, y cuando no corresponde una fecha límite muestra `--`.
+En el listado de respuestas, la columna **Vence en** muestra la fecha límite seguida de la etiqueta entre paréntesis, por ejemplo `22/02/2026 (Vence pronto)`. Si la respuesta todavía no arranca, muestra **No iniciado**; si ya arrancó pero el disparador todavía no ocurre, muestra **Sin vencimiento**, y cuando no corresponde una fecha límite muestra `--`. El campo **Vence en** de la pestaña **Detalles** de la respuesta muestra lo mismo. Una respuesta **Sin vencimiento** cuenta como **A tiempo** en el filtro y en el resumen de la originación.
 
-Puedes extender el plazo de una respuesta concreta agregándole días adicionales con el parámetro `due_extension_days` del endpoint de actualización de respuestas de la [API de administración](/es/platform/core/api.html). Los días se suman a los del **Vence en** de la originación y desplazan tanto la fecha límite como el umbral de **Vence pronto**, y el cambio queda registrado en la actividad de la respuesta.
+Puedes extender el plazo de una respuesta concreta agregándole días adicionales con el parámetro `due_extension_days` del endpoint de actualización de respuestas de la [API de administración](/es/platform/core/api.html). Los días se suman a la fecha de vencimiento calculada y desplazan tanto la fecha límite como el umbral de **Vence pronto**, y el cambio queda registrado en la actividad de la respuesta.
 
 :::tip Actualización del estado de vencimiento
-El estado de vencimiento se recalcula en un proceso en segundo plano que corre una vez al día, así que una respuesta puede tardar hasta 24 horas en aparecer como **Vence pronto** o **Vencido**. Extender el plazo de una respuesta sí recalcula su estado de inmediato.
+El estado de vencimiento se recalcula en un proceso en segundo plano que corre cada hora, así que una respuesta puede tardar hasta una hora en aparecer como **Vence pronto** o **Vencido**. Extender el plazo de una respuesta sí recalcula su estado de inmediato. Si cambias la zona horaria de la cuenta, la plataforma recalcula la fecha de vencimiento de las respuestas pendientes cuyo disparador es un campo de fecha sin hora.
 :::
 
 ### Ver detalles de una originación
