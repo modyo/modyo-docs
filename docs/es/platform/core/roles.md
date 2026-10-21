@@ -55,6 +55,8 @@ Además, desde la sección "Grupos" en el perfil de cada miembro del equipo, pue
 Todos los usuarios que pertenecen a un grupo tendrán el rol del grupo. En caso de asignarle individualmente un rol particular a un miembro del equipo, el rol con más privilegios toma precedencia.
 :::
 
+En Customers, los grupos también definen equipos de trabajo: con el permiso **Listar Respuestas del Grupo**, un supervisor ve las respuestas de originación asignadas a los miembros de sus grupos. Revisa [Ver el trabajo de un equipo](/es/platform/customers/origination.html#ver-el-trabajo-de-un-equipo).
+
 ### Crear un grupo
 
 Para crear un grupo, sigue estos pasos:

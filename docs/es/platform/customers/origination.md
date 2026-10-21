@@ -200,7 +200,7 @@ Al configurar la tarea, puedes definir un **Asignado**: un administrador o un gr
 
 Los administradores asignados reciben un correo cuando una validación queda pendiente y también pueden revisarla desde la vista [**Mis tareas**](/es/platform/core/my-tasks.html) del menú principal, filtrando por el tipo de tarea **Revisión de validación**. El usuario recibe una notificación interna cuando su tarea es aprobada o rechazada.
 
-En una respuesta específica, puedes reasignar la validación desde la pestaña **Validaciones**, una vez que el usuario haya completado las tareas a validar.
+En una respuesta específica, puedes reasignar la validación desde la pestaña **Validaciones**, una vez que el usuario haya completado las tareas a validar. Reasignarla requiere el permiso **(Re)asignar Tareas**.
 
 ### Firma
 
@@ -628,7 +628,7 @@ Cada tarea del flujo tiene la opción **Asignado a**, que define quién la respo
 - **Usuario**: La tarea la responde el usuario final en la página de originación.
 - **Agente**: La tarea la responde un administrador desde el admin. Las tareas de **Validación** y **Revisión pendiente** son siempre de agente; las tareas **Input** y **Snippet de código** pueden configurarse en cualquiera de los dos modos.
 
-Cuando el flujo llega a una tarea de agente, los administradores asignados reciben un correo con el enlace directo a la tarea y también la ven en la vista [**Mis tareas**](/es/platform/core/my-tasks.html). El asignado efectivo se resuelve en este orden: el asignado de la respuesta a la tarea, el asignado configurado en la tarea y, en su defecto, el asignado general de la respuesta; puedes reasignar una tarea específica desde la vista de la respuesta, lo que notifica al nuevo asignado.
+Cuando el flujo llega a una tarea de agente, los administradores asignados reciben un correo con el enlace directo a la tarea y también la ven en la vista [**Mis tareas**](/es/platform/core/my-tasks.html). El asignado efectivo se resuelve en este orden: el asignado de la respuesta a la tarea, el asignado configurado en la tarea y, en su defecto, el asignado general de la respuesta. Con el permiso **(Re)asignar Tareas** puedes reasignar una tarea específica desde la vista de la respuesta, lo que notifica al nuevo asignado.
 
 Desde la vista de la respuesta, el agente abre la tarea y responde el formulario con la misma experiencia del sitio: lógica condicional en vivo, carga de archivos, grupos repetibles y snippets de código. Mientras la tarea espera la acción del agente, el usuario ve en la página de originación el texto configurado en **Mensaje de espera que ve el usuario**.
 
@@ -818,21 +818,32 @@ Desde la vista de una respuesta en el menú de acciones (identificado con …) s
 :::
 
 :::tip Alcance por segmentos
-Si tu acceso al reino está [restringido por segmentos](/es/platform/customers/settings.html#restringir-el-alcance-con-segmentos), solo verás las respuestas de los usuarios de tu alcance. Las respuestas que tengas asignadas siguen visibles y operables aunque el usuario pertenezca a segmentos fuera de tu alcance.
+Si tu acceso al reino está [restringido por segmentos](/es/platform/customers/settings.html#restringir-el-alcance-con-segmentos), solo verás las respuestas de los usuarios de tu alcance. Las respuestas que tengas asignadas siguen visibles y operables aunque el usuario pertenezca a segmentos fuera de tu alcance. Lo mismo ocurre con las respuestas de tu equipo si tu rol tiene **Listar Respuestas del Grupo**.
 :::
 
 #### Permisos de visibilidad de las respuestas
 
-Los permisos del rol deciden qué respuestas ve un miembro del equipo y cuánto ve de cada una. En los permisos de Customers del rol hay cuatro que funcionan por niveles:
+Los permisos del rol deciden qué respuestas ve un miembro del equipo y cuánto ve de cada una. En los permisos de Customers del rol hay cinco que funcionan por niveles:
 
 - **Listar Respuestas Asignadas**: en el listado ve solo las respuestas que tiene asignadas y, al abrir una, solo la sección **Detalles**.
+- **Listar Respuestas del Grupo**: además de sus respuestas asignadas, ve las asignadas individualmente a los miembros de sus grupos. Incluye **Listar Respuestas Asignadas**. Revisa [Ver el trabajo de un equipo](#ver-el-trabajo-de-un-equipo).
 - **Listar Todas las Respuestas**: ve todas las respuestas, no solo las que tiene asignadas. Incluye **Listar Respuestas Asignadas**.
-- **Ver Tareas de la Respuesta**: agrega la sección **Tareas**, con la posibilidad de asignar y completar tareas y de aprobar o rechazar validaciones. Incluye **Listar Respuestas Asignadas**.
+- **Ver Tareas de la Respuesta**: agrega la sección **Tareas**, con la posibilidad de completar tareas y de aprobar o rechazar validaciones. Incluye **Listar Respuestas Asignadas**.
 - **Ver Respuesta Completa**: agrega las secciones restantes, **Campos**, **Documentos**, **Firmas**, **Verificación de Identidad**, **Validaciones** y **Actividad**. Incluye **Ver Tareas de la Respuesta**.
 
 Al marcar un permiso, la plataforma marca también los que ese permiso incluye. Las secciones que el rol no puede ver no aparecen en el menú de la respuesta.
 
-Los permisos de acción se apoyan en esos niveles: **Editar Respuestas** requiere **Ver Respuesta Completa**; **Asignar Respuestas** requiere **Listar Todas las Respuestas**; **Eliminar Respuestas** y **Completar Respuestas** requieren **Listar Respuestas Asignadas**.
+Una respuesta está asignada a un miembro del equipo cuando se cumple alguna de estas condiciones:
+
+- La respuesta está asignada a él o a uno de sus grupos.
+- Alguna de sus tareas, de cualquier tipo, está asignada a él o a uno de sus grupos, aunque ya esté completada.
+- El flujo está en una tarea configurada para él o para uno de sus grupos, y en esa respuesta la tarea no se asignó a otra persona.
+
+Ser el asignado configurado de una tarea a la que el flujo todavía no llega no hace visible la respuesta. Si una tarea se reasigna, la respuesta pasa a verla el nuevo asignado y deja de verla el anterior, salvo que tenga otra asignación en ella.
+
+Los permisos de acción se apoyan en esos niveles: **Editar Respuestas** requiere **Ver Respuesta Completa**; **Asignar Respuestas** requiere **Listar Todas las Respuestas**; **(Re)asignar Tareas** requiere **Ver Tareas de la Respuesta**; **Eliminar Respuestas** y **Completar Respuestas** requieren **Listar Respuestas Asignadas**.
+
+**Asignar Respuestas** asigna la respuesta completa. **(Re)asignar Tareas** permite asignar, reasignar o quitar la asignación de una tarea específica, desde la vista de la tarea o por la [API de administración](/es/platform/core/api.html). El **Full admin** y los miembros con **Gestionar Clientes** pueden reasignar tareas sin este permiso.
 
 :::tip Tip
 **Iniciar Respuestas** es independiente de los permisos de visibilidad: un rol puede crear respuestas en nombre de un usuario sin ver el listado completo ni el detalle.
@@ -841,6 +852,38 @@ Los permisos de acción se apoyan en esos niveles: **Editar Respuestas** requier
 :::warning Atención
 Los roles que ya tenías conservan el acceso que tenían: los que veían el detalle completo mantienen **Ver Respuesta Completa**, y los que tenían **Iniciar Respuestas** mantienen además **Asignar Respuestas** y **Listar Todas las Respuestas**. Los niveles separados aplican cuando edites el rol.
 :::
+
+:::warning Cambios desde la versión 10.2.2
+- **Ver Tareas de la Respuesta** ya no permite asignar tareas; para eso se necesita **(Re)asignar Tareas**. Ningún rol existente lo recibe automáticamente, tampoco **Realm Admin**: agrégalo a los roles que deban reasignar tareas. En las cuentas creadas desde esta versión, el rol **Realm Admin** ya lo incluye.
+- Por la API de administración, un rol con **Listar Respuestas Asignadas** y sin **Listar Todas las Respuestas** recibe un error de no encontrado al pedir el detalle, las tareas o las invitaciones de una respuesta que no está en su listado.
+:::
+
+##### Ver el trabajo de un equipo
+
+Con **Listar Respuestas del Grupo**, un supervisor ve el trabajo de su equipo sin ver todas las respuestas del reino. El equipo se arma con los [grupos](/es/platform/core/roles.html#grupos) de la cuenta:
+
+1. Crea un grupo con el supervisor y los agentes del equipo.
+1. Crea un rol de reino con **Listar Respuestas del Grupo** y los demás permisos que necesite el supervisor, por ejemplo **Ver Respuesta Completa**.
+1. Asigna ese rol al supervisor en el reino.
+
+Además de sus respuestas asignadas, el supervisor ve las respuestas y tareas asignadas individualmente a los miembros de sus grupos:
+
+- Las asignadas a un miembro elegido desde uno de los grupos del supervisor. Las sigue viendo aunque el miembro salga de ese grupo, mientras sigan asignadas a él.
+- Las asignadas directamente a un miembro, sin grupo, mientras ese miembro comparta al menos un grupo con el supervisor.
+
+El supervisor no ve:
+
+- Las asignadas a un miembro elegido desde un grupo al que el supervisor no pertenece.
+- Las asignadas a un grupo completo al que el supervisor no pertenece.
+- El trabajo de los equipos de otros supervisores, aunque supervise a esos supervisores. La jerarquía es de un solo nivel.
+
+Considera lo siguiente:
+
+- La pertenencia a los grupos se evalúa al consultar: si agregas o quitas a alguien de un grupo, el cambio se refleja de inmediato.
+- Los grupos son de la cuenta y los roles, de cada reino. Un grupo funciona como equipo solo en los reinos donde el rol del supervisor tiene el permiso.
+- El permiso solo amplía qué respuestas ve el supervisor. Lo que puede hacer en ellas depende de los demás permisos de su rol, y las acciones reservadas al asignado siguen siéndolo. Por ejemplo, si la originación la cierra manualmente el asignado, el supervisor no puede cerrar la respuesta de un agente de su equipo.
+- El supervisor no recibe correos ni ve en **Mis tareas** las tareas asignadas a su equipo.
+- El filtro **Asignado** del listado y la vista **Asignados** muestran al supervisor y a los miembros de sus grupos. Un miembro que salió del grupo no aparece, aunque el supervisor siga viendo las respuestas que se le asignaron desde ese grupo. Las métricas de cada miembro incluyen respuestas asignadas desde otros grupos, que el supervisor no puede abrir.
 
 #### Buscar respuestas
 
@@ -898,7 +941,7 @@ Ninguna de las dos admite coincidencias parciales, a diferencia del resto de la 
 Si pegas un uuid en la caja sin la clave, la búsqueda lo trata como texto libre y solo encuentra la respuesta con ese uuid, no las del usuario con ese uuid. Para lo segundo tienes que escribir `uuid=`.
 
 :::tip Actualización de los resultados
-Los cambios recientes en una respuesta pueden tardar unos segundos en reflejarse en los resultados de la búsqueda. Los cambios en los datos del usuario, en los valores de sus campos personalizados y en los segmentos se reflejan de forma diferida.
+Los cambios recientes en una respuesta pueden tardar unos segundos en reflejarse en los resultados de la búsqueda. Los cambios en los datos del usuario, en los valores de sus campos personalizados y en los segmentos se reflejan de forma diferida. Si cambias el asignado configurado de una tarea del flujo, la búsqueda puede seguir aplicando el asignado anterior a las respuestas que están en esa tarea, hasta que cada una vuelva a modificarse.
 :::
 
 #### Filtrar respuestas
@@ -907,7 +950,7 @@ Además de la búsqueda, puedes acotar el listado de respuestas con los siguient
 
 - **Rango de fechas**: Filtra por la fecha de creación de la respuesta.
 - **Estado**: Filtra por el estado actual de la respuesta: **No Iniciada**, **Pendiente**, **Completada** o **Cancelada**.
-- **Asignado**: Muestra las respuestas asignadas al administrador seleccionado.
+- **Asignado**: Muestra las respuestas asignadas al administrador seleccionado. Si tu rol solo lista respuestas asignadas, puedes elegirte a ti y, con **Listar Respuestas del Grupo**, a los miembros de tus grupos.
 - **Segmento**: Muestra las respuestas de los usuarios que pertenecen al [segmento](/es/platform/customers/segments.html) seleccionado.
 
 #### Asignar respuesta
@@ -960,6 +1003,8 @@ Si la **Activación de la cuenta** está en **Solo por invitación**, el usuario
 En la vista de asignados,  puedes  monitorear y administrar a los administradores responsables de las respuestas dentro de un reino. Esta vista facilita el seguimiento del desempeño y la carga de trabajo de los administradores. Puedes filtrar las respuestas asignadas por rangos de fecha
 
 Al seleccionar un administrador, podrás ver todas las respuestas que tiene asignadas y su correspondiente status
+
+Si tu rol solo lista respuestas asignadas, la vista muestra solo tus métricas y, con **Listar Respuestas del Grupo**, también las de los miembros de tus grupos.
 
 ## Crear una Página de Originación
 
