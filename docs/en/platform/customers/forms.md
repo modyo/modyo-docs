@@ -53,6 +53,12 @@ In case of a public form, users who do not have an active session in Modyo, will
 If a user, who doesn't have an active session, completes the form, and their email matches an already registered user in Modyo, the response will be linked to the existing user, and a new user will not be created.
 :::
 
+:::warning Attention
+**File** questions are also available to users without a session. In that case, the file is not uploaded when it is selected: it is sent with the form and linked to the user of the response.
+
+When the file is selected, the form checks its extension, its size, that its name has a single dot, and that its content matches its extension. If the submission is rejected for another reason, the file must be selected again; the form says which one.
+:::
+
 ## Edit form
 
 To modify a form, follow these steps:
@@ -252,6 +258,8 @@ Add functionality, such as custom validation, to your form using Javascript by f
 
 :::tip Tip
 This script will run after the div containing the form, so it's important to keep in mind that it can be affected by the rest of the site's configuration. For example, if this form is embedded in another external site that cannot run Javascript.
+
+For users without a session, the **File** question uses a browser file field with the same design, instead of the uploader that sends the file when it is selected. The same happens in the snippet embedded in a site with a custom domain, even for users with a session, because there the form is shown without the session. A script that relies on that uploader does not apply in those cases.
 :::
 
 ## Answers

@@ -53,6 +53,12 @@ En caso de ser un formulario público, los usuarios que no tienen una sesión ac
 Si un usuario no tiene una sesión activa, llena el formulario, y el correo electrónico coincide con uno de los usuario ya registrados en Modyo, entonces la respuesta quedará asociada al usuario ya existente y no se creará uno nuevo.
 :::
 
+:::warning Atención
+Las preguntas de tipo **Archivo** también están disponibles para usuarios sin sesión. En ese caso, el archivo no se sube al seleccionarlo: se envía junto con el formulario y queda asociado al usuario de la respuesta.
+
+Al seleccionar el archivo, el formulario revisa la extensión, el tamaño, que el nombre tenga un solo punto y que el contenido corresponda a la extensión. Si el envío es rechazado por otro motivo, hay que volver a seleccionar el archivo; el formulario indica cuál.
+:::
+
 ## Editar Formulario
 
 Para modificar un formulario, sigue estos pasos:
@@ -252,6 +258,8 @@ Añade funcionalidad como una validación personalizada a tu formulario usando J
 
 :::tip Tip
 Este script va a correr en seguida del div que contiene el formulario, por lo que es importante tomar en cuenta que puede ser afectado por el resto de la configuración del sitio. Por ejemplo si este formulario es embebido en otro sitio externo que no puede correr Javascript.
+
+Para usuarios sin sesión, la pregunta de tipo **Archivo** usa un campo de archivo del navegador con el mismo diseño, en lugar del cargador que sube el archivo al seleccionarlo. Lo mismo ocurre en el snippet embebido en un sitio con dominio propio, incluso para usuarios con sesión, porque ahí el formulario se muestra sin la sesión. Un script que dependa de ese cargador no aplica en esos casos.
 :::
 
 ## Respuestas
