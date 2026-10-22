@@ -347,6 +347,113 @@ Este disparador es el único de la lista que nadie ejecuta: llega con `automated
 ```
 Los disparadores de respuesta a tarea de originación iniciada, reabierta y asignada usan la misma estructura, con `e_a` en `started_log`, `reopened_log` o `assigned_log`, y `task_uid` te dice a qué tarea de la originación corresponde el evento.
 
-:::tip Tip
-El webhook es llamado a través de un POST cuando se genera un log del tipo seleccionado. Una vez creado el webhook, podrás enviar una notificación de prueba con información falsa para probar que tu URL está recibiendo correctamente los POSTs desde Modyo.
-:::
+### Habilitar o deshabilitar un webhook
+
+Cada webhook tiene el switch **Habilitado** en su formulario. Un webhook deshabilitado deja de enviar notificaciones:
+
+- Sus entregas en estado **Pendiente** o **Programada** pasan a **Cancelada**, con el motivo **El webhook fue deshabilitado**.
+- Los eventos que ocurren mientras está deshabilitado no generan entregas, así que después no se pueden re-disparar.
+- Sus entregas no se pueden re-disparar hasta que lo vuelvas a habilitar.
+
+Al volver a habilitarlo, las entregas canceladas no se reenvían solas: si las necesitas, [re-dispáralas](#re-disparar-entregas).
+
+En la columna **Estado** del listado de webhooks ves si cada uno está **Activo**, **Deshabilitado** o [**Degradado**](#webhooks-degradados).
+
+### Probar un webhook
+
+En las acciones del webhook, en el listado, haz click en **Enviar notificación de prueba**. La plataforma envía un único POST a la URL del webhook con datos ficticios del primer disparador configurado y con los mismos headers que una entrega real, y te muestra el resultado:
+
+- Si tu endpoint responde con un código 2xx, ves **Notificación de prueba enviada**.
+- Si responde con otro código, ves **El endpoint respondió con el estado HTTP** seguido del código, y si la comunicación falla, el motivo, por ejemplo **El endpoint no respondió a tiempo**.
+
+La notificación de prueba no queda en el [registro de entregas](#registro-de-entregas), lleva un `webhook-id` distinto en cada prueba y se envía aunque el webhook esté deshabilitado.
+
+### Entrega de las notificaciones
+
+Modyo envía cada notificación al menos una vez: si tu endpoint no la recibe, la reintenta, así que una misma notificación puede llegarte más de una vez. Cada entrega lleva un identificador estable para que tu endpoint la procese una sola vez.
+
+#### Headers de cada entrega
+
+Además de los headers que configuraste en el webhook, cada POST lleva estos headers:
+
+| Header | Valor |
+| --- | --- |
+| `webhook-id` | Identificador único de la entrega. Es el mismo en todos sus reintentos y al re-dispararla, y es distinto para cada webhook suscrito a un mismo evento. |
+| `webhook-timestamp` | Momento del intento, en segundos Unix. No es la fecha del evento. |
+| `modyo-event-type` | El `trigger_uid` del disparador, por ejemplo `entry_published_log`. |
+| `modyo-attempt` | Número del intento. No vuelve a 1 al re-disparar una entrega: sigue contando desde los intentos ya hechos. |
+| `content-type` | Siempre `application/json`. |
+| `user-agent` | `Modyo-Webhooks/1.0`, salvo que configures tu propio `User-Agent` en el webhook. |
+
+```
+webhook-id: 4f9c2b1e-7d3a-4b8e-9a61-2c5e8f0d1a7b
+webhook-timestamp: 1760620800
+modyo-event-type: entry_published_log
+modyo-attempt: 1
+content-type: application/json
+user-agent: Modyo-Webhooks/1.0
+```
+
+Los prefijos `webhook-` y `modyo-` están reservados para estos headers, así que no puedes usarlos en los nombres de los headers que agregas al webhook. Si la URL del webhook incluye usuario y contraseña, por ejemplo `https://usuario:clave@mi-dominio.com/webhooks`, Modyo los envía en el header `Authorization` con autenticación básica.
+
+Las notificaciones no van firmadas. Para que tu endpoint rechace las llamadas que no vienen de Modyo, agrega al webhook un header con un valor secreto y valídalo en cada llamada.
+
+#### Respuesta de tu endpoint y reintentos
+
+Tu endpoint tiene unos 5 segundos para responder. La entrega se da por exitosa con cualquier código 2xx, y el resultado de cada intento define qué pasa después:
+
+- **Se reintenta**: si el endpoint responde con un código 5xx, `408` o `429`, si no responde a tiempo o si falla la conexión, la resolución del host o la conexión segura.
+- **No se reintenta**: si el endpoint responde con un código 3xx, porque las redirecciones no se siguen, o con cualquier otro código 4xx. Tampoco si la URL o un header del webhook no son válidos. La entrega queda **Fallida**.
+
+Por defecto, Modyo hace hasta 7 intentos: el primero apenas ocurre el evento y los reintentos después de esperas de unos 5 segundos, 5 minutos, 30 minutos, 2 horas, 5 horas y 10 horas, con una pequeña variación aleatoria. Si tu endpoint responde `408` o `429` con el header `Retry-After`, Modyo espera lo que indica, hasta un máximo de 10 horas. Si se agotan los intentos, la entrega queda **Agotada** y puedes [re-dispararla](#re-disparar-entregas).
+
+Cada intento usa la URL y los headers vigentes del webhook, así que si los corriges, los reintentos pendientes ya salen con la configuración nueva. El cuerpo de la notificación se arma de nuevo en cada intento a partir del evento y mantiene la misma forma de los [ejemplos de payload](#ejemplo-de-payload).
+
+#### Procesar cada entrega una sola vez
+
+Para no procesar dos veces la misma notificación:
+
+- Guarda el `webhook-id` de cada notificación que procesas con un índice único y descarta las que ya tienes.
+- No uses `modyo-attempt` ni `webhook-timestamp` como parte de esa clave, porque cambian en cada intento.
+- No compares el cuerpo completo: una misma entrega puede llegar con bytes distintos entre intentos si cambió la forma en que se serializa el evento.
+- Guarda la notificación y su `webhook-id` de forma persistente, por ejemplo en tu base de datos o en una cola durable, responde con un código 2xx y procésala después. Así no excedes el tiempo de espera ni provocas reintentos innecesarios. Si no pudiste guardarla, responde con un código 5xx para que Modyo la reintente: una vez que respondes 2xx, la entrega queda **Entregada** y no se vuelve a enviar.
+
+#### Orden de los eventos
+
+Modyo no garantiza el orden de las notificaciones: un reintento puede llegar después de una notificación de un evento más reciente. Si el orden importa y el payload trae el log completo, usa su `created_at`. El payload compacto de los eventos de usuario final, con `e_c` y `e_a`, no trae la fecha del evento, así que tu endpoint tiene que tolerar que esos eventos lleguen en desorden. `webhook-timestamp` tampoco sirve para ordenar, porque indica el momento del intento y no el del evento.
+
+### Registro de entregas
+
+Cada vez que un evento dispara un webhook habilitado, se registra una entrega. En el listado de webhooks, haz click en **Ver entregas** en las acciones del webhook para abrir la página **Entregas**, con las columnas **Estado**, **Evento**, **Intentos**, **Último resultado**, **Creada** y **Próximo intento**. Puedes filtrar por **Estado** y por la fecha de creación, que por defecto muestra la última semana.
+
+Con **Detalle de la entrega** ves el `webhook-id`, con un botón para copiarlo, el evento, los intentos, el último estado HTTP, el último error, la duración del intento, el cuerpo de la respuesta de tu endpoint y el payload enviado.
+
+Las entregas terminadas se conservan por defecto 30 días desde su último cambio, y el cuerpo de la respuesta de tu endpoint, 7 días.
+
+Para ver las entregas necesitas permiso para ver los webhooks, y para re-dispararlas, el permiso agrupado **Administrar Webhooks**. Las entregas también están disponibles en la [API de administración](/es/platform/core/api.html), bajo `/api/admin/webhooks/{webhook_id}/deliveries` para los webhooks de la cuenta y `/api/admin/customers/{realm_uid}/webhooks/{webhook_id}/deliveries` para los de un reino.
+
+#### Estados de una entrega
+
+- **Pendiente**: La entrega espera su envío.
+- **En curso**: Modyo está enviando la notificación.
+- **Programada**: Un intento falló y la entrega espera su siguiente reintento. La columna **Próximo intento** indica cuándo.
+- **Entregada**: Tu endpoint respondió con un código 2xx.
+- **Fallida**: Tu endpoint respondió con un error que no se reintenta, o la URL o un header del webhook no son válidos.
+- **Agotada**: Se hicieron todos los intentos sin éxito.
+- **Irrecuperable**: El evento o su payload ya no existen, así que la entrega no se puede re-disparar.
+- **Cancelada**: El webhook se deshabilitó o se eliminó antes de completar la entrega.
+
+#### Re-disparar entregas
+
+Re-disparar una entrega la envía de nuevo a la URL actual del webhook, con el mismo `webhook-id`, y le da otra vez el calendario completo de reintentos. El webhook tiene que estar habilitado.
+
+- **Una entrega**: Haz click en **Re-disparar** en una entrega **Entregada**, **Fallida**, **Agotada** o **Cancelada** y confirma.
+- **Varias entregas**: Selecciónalas, o selecciona todas las que coinciden con los filtros, y usa **Re-disparo masivo**. Solo se re-disparan las entregas **Fallida**, **Agotada** o **Cancelada**, por defecto hasta 1000 por vez y a un ritmo de 60 por minuto.
+
+Cada re-disparo queda registrado en la actividad como **Webhook re-disparado**, y el detalle de la entrega muestra cuándo y quién la re-disparó.
+
+### Webhooks degradados
+
+Si un webhook acumula 5 entregas **Agotada** sin ninguna entrega exitosa entre medio, queda **Degradado**. El listado de webhooks lo muestra con esa etiqueta y la fecha desde la que está degradado, y la página **Entregas** muestra un aviso.
+
+Un webhook degradado sigue enviando el primer intento de cada evento, pero reintenta una sola vez, unas 10 horas después. Vuelve a la normalidad apenas una entrega llega con éxito o cuando haces un re-disparo masivo. Modyo nunca deshabilita un webhook por sus fallos: corrige el endpoint y re-dispara las entregas fallidas.

@@ -346,6 +346,113 @@ This is the only trigger on the list that nobody performs: it arrives with `auto
 ```
 The origination task response started, reopened, and assigned triggers use the same shape, with `e_a` set to `started_log`, `reopened_log`, or `assigned_log`, and `task_uid` tells you which task of the origination the event belongs to.
 
-:::tip Tip
-The webhook is called via a POST when the selected log type is generated. Once the webhook is created, you can send a test notification with false information to test that your URL is correctly receiving POSTs from Modyo.
-:::
+### Enable or disable a webhook
+
+Each webhook has the **Enabled** switch in its form. A disabled webhook stops sending notifications:
+
+- Its deliveries in **Pending** or **Scheduled** status become **Canceled**, with the reason **The webhook was disabled**.
+- Events that happen while it's disabled don't generate deliveries, so they can't be redelivered later.
+- Its deliveries can't be redelivered until you enable it again.
+
+When you enable it again, the canceled deliveries aren't sent on their own: if you need them, [redeliver them](#redeliver-deliveries).
+
+The **Status** column of the webhook list shows whether each one is **Active**, **Disabled**, or [**Degraded**](#degraded-webhooks).
+
+### Test a webhook
+
+In the webhook actions, in the list, click **Send test notification**. The platform sends a single POST to the webhook URL with dummy data of the first configured trigger and with the same headers as a real delivery, and shows you the result:
+
+- If your endpoint answers with a 2xx code, you see **Test notification sent**.
+- If it answers with another code, you see **The endpoint answered with HTTP status** followed by the code, and if the communication fails, the reason, for example **The endpoint did not answer in time**.
+
+The test notification isn't recorded in the [delivery log](#delivery-log), carries a different `webhook-id` on each test, and is sent even if the webhook is disabled.
+
+### Notification delivery
+
+Modyo sends each notification at least once: if your endpoint doesn't receive it, Modyo retries it, so the same notification can reach you more than once. Each delivery carries a stable identifier so your endpoint processes it only once.
+
+#### Headers of each delivery
+
+Besides the headers you configured in the webhook, each POST carries these headers:
+
+| Header | Value |
+| --- | --- |
+| `webhook-id` | Unique identifier of the delivery. It's the same across all its retries and when it's redelivered, and it's different for each webhook subscribed to the same event. |
+| `webhook-timestamp` | Time of the attempt, in Unix seconds. It isn't the date of the event. |
+| `modyo-event-type` | The `trigger_uid` of the trigger, for example `entry_published_log`. |
+| `modyo-attempt` | Attempt number. It doesn't go back to 1 when a delivery is redelivered: it keeps counting from the attempts already made. |
+| `content-type` | Always `application/json`. |
+| `user-agent` | `Modyo-Webhooks/1.0`, unless you configure your own `User-Agent` in the webhook. |
+
+```
+webhook-id: 4f9c2b1e-7d3a-4b8e-9a61-2c5e8f0d1a7b
+webhook-timestamp: 1760620800
+modyo-event-type: entry_published_log
+modyo-attempt: 1
+content-type: application/json
+user-agent: Modyo-Webhooks/1.0
+```
+
+The `webhook-` and `modyo-` prefixes are reserved for these headers, so you can't use them in the names of the headers you add to the webhook. If the webhook URL includes a user and password, for example `https://user:password@my-domain.com/webhooks`, Modyo sends them in the `Authorization` header with basic authentication.
+
+Notifications aren't signed. To have your endpoint reject calls that don't come from Modyo, add a header with a secret value to the webhook and validate it on every call.
+
+#### Your endpoint's response and retries
+
+Your endpoint has about 5 seconds to answer. The delivery succeeds with any 2xx code, and the result of each attempt defines what happens next:
+
+- **It's retried**: if the endpoint answers with a 5xx, `408`, or `429` code, if it doesn't answer in time, or if the connection, the host resolution, or the secure connection fails.
+- **It isn't retried**: if the endpoint answers with a 3xx code, because redirects aren't followed, or with any other 4xx code. Nor if the webhook URL or one of its headers isn't valid. The delivery becomes **Failed**.
+
+By default, Modyo makes up to 7 attempts: the first one as soon as the event happens, and the retries after waits of about 5 seconds, 5 minutes, 30 minutes, 2 hours, 5 hours, and 10 hours, with a small random variation. If your endpoint answers `408` or `429` with the `Retry-After` header, Modyo waits as indicated, up to 10 hours. If the attempts run out, the delivery becomes **Exhausted** and you can [redeliver it](#redeliver-deliveries).
+
+Each attempt uses the current URL and headers of the webhook, so if you fix them, the pending retries already go out with the new configuration. The notification body is built again on each attempt from the event and keeps the same shape as the [payload examples](#payload-example).
+
+#### Process each delivery only once
+
+To avoid processing the same notification twice:
+
+- Store the `webhook-id` of each notification you process with a unique index and discard the ones you already have.
+- Don't use `modyo-attempt` or `webhook-timestamp` as part of that key, because they change on each attempt.
+- Don't compare the full body: the same delivery can arrive with different bytes between attempts if the way the event is serialized changed.
+- Store the notification and its `webhook-id` durably, for example in your database or in a durable queue, answer with a 2xx code, and process it afterwards. That way you don't exceed the timeout or cause unnecessary retries. If you couldn't store it, answer with a 5xx code so Modyo retries it: once you answer 2xx, the delivery becomes **Delivered** and isn't sent again.
+
+#### Event order
+
+Modyo doesn't guarantee the order of notifications: a retry can arrive after a notification of a more recent event. If order matters and the payload carries the full log, use its `created_at`. The compact payload of end-user events, with `e_c` and `e_a`, doesn't carry the event date, so your endpoint must tolerate those events arriving out of order. `webhook-timestamp` doesn't help with ordering either, because it indicates the time of the attempt, not of the event.
+
+### Delivery log
+
+Each time an event triggers an enabled webhook, a delivery is recorded. In the webhook list, click **View deliveries** in the webhook actions to open the **Deliveries** page, with the **Status**, **Event**, **Attempts**, **Last result**, **Created**, and **Next attempt** columns. You can filter by **Status** and by creation date, which shows the last week by default.
+
+With **Delivery detail** you see the `webhook-id`, with a button to copy it, the event, the attempts, the last HTTP status, the last error, the duration of the attempt, the response body of your endpoint, and the payload sent.
+
+Finished deliveries are kept for 30 days from their last change by default, and the response body of your endpoint, for 7 days.
+
+To see deliveries you need permission to view webhooks, and to redeliver them, the **Admin Webhooks** grouped permission. Deliveries are also available in the [administration API](/en/platform/core/api.html), under `/api/admin/webhooks/{webhook_id}/deliveries` for account webhooks and `/api/admin/customers/{realm_uid}/webhooks/{webhook_id}/deliveries` for realm webhooks.
+
+#### Delivery statuses
+
+- **Pending**: The delivery is waiting to be sent.
+- **In flight**: Modyo is sending the notification.
+- **Scheduled**: An attempt failed and the delivery is waiting for its next retry. The **Next attempt** column shows when.
+- **Delivered**: Your endpoint answered with a 2xx code.
+- **Failed**: Your endpoint answered with an error that isn't retried, or the webhook URL or one of its headers isn't valid.
+- **Exhausted**: All attempts were made without success.
+- **Unrecoverable**: The event or its payload no longer exists, so the delivery can't be redelivered.
+- **Canceled**: The webhook was disabled or deleted before the delivery was completed.
+
+#### Redeliver deliveries
+
+Redelivering a delivery sends it again to the current URL of the webhook, with the same `webhook-id`, and gives it the full retry schedule again. The webhook must be enabled.
+
+- **One delivery**: Click **Redeliver** on a **Delivered**, **Failed**, **Exhausted**, or **Canceled** delivery and confirm.
+- **Several deliveries**: Select them, or select all the ones that match the filters, and use **Redeliver in bulk**. Only **Failed**, **Exhausted**, or **Canceled** deliveries are redelivered, up to 1000 at a time by default and at a rate of 60 per minute.
+
+Each redelivery is recorded in the activity as **Webhook redelivered**, and the delivery detail shows when and who redelivered it.
+
+### Degraded webhooks
+
+If a webhook accumulates 5 **Exhausted** deliveries without any successful delivery in between, it becomes **Degraded**. The webhook list shows it with that label and the date since it's been degraded, and the **Deliveries** page shows a notice.
+
+A degraded webhook still sends the first attempt of each event, but retries only once, about 10 hours later. It goes back to normal as soon as a delivery succeeds or when you make a bulk redelivery. Modyo never disables a webhook because of its failures: fix the endpoint and redeliver the failed deliveries.
