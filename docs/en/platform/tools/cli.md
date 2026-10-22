@@ -241,53 +241,79 @@ EXAMPLE
 
 The `preview` command allows you to preview a widget locally to debug its code in a local environment before publishing it.
 
-### Requirements
+#### Requirements
 
 To use the `preview` command, make sure you meet the following requirements:
 
+- An active administrator session in your browser, on the same Modyo account. The command opens the preview in your default browser, and that URL requires an administrator session: if there is none, it takes you to the admin login instead of showing the widget. Neither the `.env` file nor the local server replaces this requirement.
 - A properly configured [.env](/en/platform/tools/cli.html#environment-configuration) file. The `MODYO_ACCOUNT_URL`, `MODYO_SITE_HOST` or `MODYO_SITE_ID` and `MODYO_TOKEN` fields are required.
 - A local server running with the widget you want to preview.
 
-### Steps to preview a widget
+#### Steps to preview a widget
 
-Once you have your `.env` file configured and your project running on the local server, follow these steps:
+Once you have your `.env` file configured, your administrator session open, and your project running on the local server, follow these steps:
 
 - Open a new terminal window.
 - Run the `modyo-cli preview` command.
 
 :::warning Important
 
-To visualize a change, you must manually refresh your web app. Click **refresh** to load the changes.
+To visualize a change, you must manually refresh your web app. Click **Refresh** to load the changes.
 
 :::
 
-### Default variables
+#### Default variables
+
 Modyo uses default variables for widget previewing, you can modify them as needed. The predefined variables are:
 
-  - `MODYO_LOCAL_PORT`: Local server port (default: `8080`)
-  - `MODYO_LOCAL_DOM_ID`: The ID of the widget container element (default: `widgetName`)
-  - `MODYO_LOCAL_ENTRY_JS`: The main JavaScript file (default: `main.js`)
+- `MODYO_LOCAL_PORT`: Local server port (default: `8080`)
+- `MODYO_LOCAL_DOM_ID`: The ID of the widget container element (default: `widgetName`)
+- `MODYO_LOCAL_ENTRY_JS`: The main JavaScript file (default: `main.js`)
+- `MODYO_LOCAL_MODULE`: Loads the entry file as an ES module (default: `false`)
 
+Each variable has an equivalent command line option, and the option takes precedence over the `.env` file:
 
-Additionally, you can select whether you want to preview your widget in the published version of your site or in the editable version. To do this, click the checkbox below **templates**. The text will change from **published** to **editable**.
+```bash
+USAGE
+  $ modyo-cli preview -t <value> -u <value> [-h] [-v 8|9|10] [-i <value> | -n <value>] [-p <value>] [-s <value>] [-j <value>] [-m]
 
+FLAGS
+  -h, --help                 Output usage information
+  -i, --site-id=<value>      [env: MODYO_SITE_ID] Id of the site where the widget will be previewed
+  -j, --entry-js=<value>     [default: main.js, env: MODYO_LOCAL_ENTRY_JS] Entry JS file of the widget
+  -m, --module               [env: MODYO_LOCAL_MODULE] Load entry JS as an ES module (type="module")
+  -n, --site-host=<value>    [env: MODYO_SITE_HOST] Host of the site where the widget will be previewed
+  -p, --port=<value>         [default: 8080, env: MODYO_LOCAL_PORT] Deploy port local widget running
+  -s, --dom-id=<value>       [default: widgetName, env: MODYO_LOCAL_DOM_ID] Container id of the widget
+  -t, --token=<value>        (required) [env: MODYO_TOKEN] Modyo Api token
+  -u, --account-url=<value>  (required) [env: MODYO_ACCOUNT_URL] URL of your Modyo account ex("https://account.modyo.com")
+  -v, --version=<option>     [default: 9, env: MODYO_VERSION] Version of Modyo platform <options: 8|9|10>
 
-These commands allow you to select the local entry points you want to use.
+EXAMPLE
+  $ modyo-cli preview -p 5173 -j main.js -m
+```
 
+#### Previewing a widget loaded as an ES Module
 
-    OPTIONS
+By default, the preview inserts your entry file with the `defer` attribute. A project that compiles to ES modules, such as the React base template with Vite, does not start that way and the preview stays empty.
 
-    -p, –port=<value> [default: 8080) Deploy port local widget running
-    -s, –dom-id=<value> [default: widgetName] Container id of the widget
-    -j, –entry-js=<value> [default: main.js] Entry JS file of the widget
+With the `-m` option (or `MODYO_LOCAL_MODULE=true`) the script is inserted with `type="module"`. This is the local equivalent of the **Load as ES Module (Experimental)** option for widgets instantiated on a page, described in [ES Module loading](/en/platform/channels/widgets.html#es-module-loading).
 
-    EXAMPLE
+:::warning Attention
+Module mode travels in the URL opened by the command and the preview bar does not preserve it: as soon as you change any option in the bar or click **Refresh**, the widget loads with `defer` again. To get it back, run `modyo-cli preview -m` again.
+:::
 
-    MODYO_LOCAL_PORT=8080
-    MODYO_LOCAL_DOM_ID=widgetName
-    MODYO_LOCAL_ENTRY_JS=main.js
+#### Preview bar options
 
+The preview opens inside your site, with the preview bar at the edge of the window. For a local widget, the bar offers:
 
+- **Templates**: choose whether the widget is mounted on the site's **Published** or **Draft** templates.
+- **Global Snippets**: the same **Published** / **Draft** switch for global snippets.
+- **Layout**: choose the site layout the widget is mounted with; the default is `base`. The list is built from the layouts of the template set selected in **Templates**, so it changes when you switch from published to draft. If the chosen layout does not exist in the active set, the preview falls back to `base`.
+- **Port**, **Mount DOM element** and **Entry JS**: the same values as the command, editable without going back to the terminal.
+- **Refresh**, **Share** and **Exit**: reload the preview with the chosen options, copy its URL to share it, or leave the preview.
+
+A local widget does not offer the **Content SDK** or **Navigation** options, nor the **Edit widget** button, because its code lives in your project and not on the platform.
 
 ## Code Splitting
 
