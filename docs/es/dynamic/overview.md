@@ -89,7 +89,7 @@ Dynamic Framework es un framework de componentes React especializado para aplica
 
 ### Design Tokens
 
-Dynamic UI expone su sistema de diseño como custom properties `--bs-*` en el selector `:root, [data-bs-theme="dynamic"]`. Un theme es una hoja de estilos cargada después del CSS de Dynamic que sobrescribe esas variables con el mismo selector. Los colores se sobrescriben en su triplete `R, G, B` (`--bs-primary-rgb`), nunca en el wrapper (`--bs-primary`), y un cambio de marca incluye la rampa completa del role:
+Dynamic UI expone su sistema de diseño como custom properties `--bs-*` en el selector `:root, [data-bs-theme="dynamic"]`. Un theme es una hoja de estilos cargada después del CSS de Dynamic que sobrescribe esas variables con el mismo selector. Los colores se sobrescriben en su triplete `R, G, B` (`--bs-body-bg-rgb`), nunca en el wrapper (`--bs-body-bg`). Cambiar el color de un role, como `primary`, incluye además su rampa completa: el contrato, con las rampas, la tipografía y las zonas, está en [Sistema de temas](customization/theming.html).
 
 ```css
 :root,
@@ -98,8 +98,6 @@ Dynamic UI expone su sistema de diseño como custom properties `--bs-*` en el se
   --bs-border-radius: 0.75rem;
 }
 ```
-
-El contrato completo, con las rampas de color, la tipografía, las zonas y las herramientas para generar y validar un theme, está en [Sistema de temas](customization/theming.html).
 
 ### Breakpoints Responsivos
 

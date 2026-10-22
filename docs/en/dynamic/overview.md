@@ -89,7 +89,7 @@ Dynamic Framework is a React component framework specialized for financial appli
 
 ### Design Tokens
 
-Dynamic UI exposes its design system as `--bs-*` custom properties on the `:root, [data-bs-theme="dynamic"]` selector. A theme is a stylesheet loaded after the Dynamic CSS that overrides those variables with the same selector. Colors are overridden on their `R, G, B` triplet (`--bs-primary-rgb`), never on the wrapper (`--bs-primary`), and a rebrand includes the role's full ramp:
+Dynamic UI exposes its design system as `--bs-*` custom properties on the `:root, [data-bs-theme="dynamic"]` selector. A theme is a stylesheet loaded after the Dynamic CSS that overrides those variables with the same selector. Colors are overridden on their `R, G, B` triplet (`--bs-body-bg-rgb`), never on the wrapper (`--bs-body-bg`). Changing the color of a role, such as `primary`, also includes its full ramp: the contract, with ramps, typography and zones, is in [Theming](customization/theming.html).
 
 ```css
 :root,
@@ -98,8 +98,6 @@ Dynamic UI exposes its design system as `--bs-*` custom properties on the `:root
   --bs-border-radius: 0.75rem;
 }
 ```
-
-The full contract, with color ramps, typography, zones and the tools to generate and validate a theme, is in [Theming](customization/theming.html).
 
 ### Responsive Breakpoints
 
