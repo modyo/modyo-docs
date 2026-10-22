@@ -211,7 +211,7 @@ Between January and July 2026, seven releases (v2.1 → v2.7) shipped new compon
 
 ### CSS utilities
 
-New utilities for dark mode, hover variants for text/border, responsive `shadow`/`rounded`/`border`/`text-opacity`, `fade-in`, and CSS grid. See [Theming](customization/theming.html#css-utilities-2-1-2-7).
+New utilities for dark mode, hover variants for text/border, responsive `shadow`/`rounded`/`border`/`text-opacity`, `fade-in`, and CSS grid. See [Extended Utilities in Storybook](https://react.dynamicframework.dev/v2.12.0/?path=/docs/design-system-foundations-extended-utilities--docs).
 
 ## Technical Improvements
 

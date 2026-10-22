@@ -23,21 +23,21 @@ This is the official Modyo technical documentation built with VuePress v1.9.10.
 
 ### Content Organization
 - **Spanish (Primary)**: `/docs/es/` - All original documentation is written in Spanish first (Spanish default)
-- **English (Secondary)**: `/docs/en/` - Translations has to be generated every time an spanish file changes (changes will be overwritten)
+- **English (Secondary)**: `/docs/en/` - Translated by hand from `/docs/es/` in the same PR that changes the Spanish file, keeping the same heading structure
 - **Configuration**: `/docs/.vuepress/config.js` - Controls navigation, sidebar, and site settings
 - **Public Assets**: `/docs/.vuepress/public/` - Static assets
 
 ### Key Documentation Areas
 - **Platform**: Core Modyo platform documentation (`/platform/`)
 - **Connect**: Modyo Connect module documentation (`/connect/`)
-- **Dynamic**: Dynamic Framework documentation (external site)
+- **Dynamic**: Dynamic Framework documentation (`/docs/{es,en}/dynamic/`)
 - **Architecture**: Patterns and architectural guidance (`/architecture/`)
 
 ## Important Guidelines
 
 ### Language and Translation
 - Spanish is the source of truth - always prioritize accuracy in Spanish documentation
-- English files has to be auto-generated using AI - manual changes will be overwritten
+- English files are translated by hand in the same PR as the Spanish change, with `es/` as the source
 - Target audience is developers and technical users of the Modyo platform
 
 ### Link Conventions
@@ -66,7 +66,7 @@ Files follow the filesystem structure plus language prefix:
 ## CI/CD Pipeline
 
 GitHub Actions workflow (`/.github/workflows/main.yml`) runs on pull requests to master:
-- Uses Node.js 16
+- Uses Node.js 20
 - Runs `npm ci` followed by `npm run docs:build`
 - Ensures documentation builds successfully before merging
 - Los títulos H1, H2 y H3 nunca pueden terminar con ":"

@@ -89,34 +89,15 @@ Dynamic Framework es un framework de componentes React especializado para aplica
 
 ### Design Tokens
 
-Dynamic Framework usa las propiedades CSS personalizadas (variables) de Bootstrap 5 con el prefijo `--bs-`:
+Dynamic UI expone su sistema de diseño como custom properties `--bs-*` en el selector `:root, [data-bs-theme="dynamic"]`. Un theme es una hoja de estilos cargada después del CSS de Dynamic que sobrescribe esas variables con el mismo selector. Los colores se sobrescriben en su triplete `R, G, B` (`--bs-body-bg-rgb`), nunca en el wrapper (`--bs-body-bg`). Cambiar el color de un role, como `primary`, incluye además su rampa completa: el contrato, con las rampas, la tipografía y las zonas, está en [Sistema de temas](customization/theming.html).
 
 ```css
-:root {
-  /* Colores del tema */
-  --bs-primary: #0d6efd;
-  --bs-secondary: #6c757d;
-  --bs-success: #198754;
-  --bs-danger: #dc3545;
-  --bs-warning: #ffc107;
-  --bs-info: #0dcaf0;
-
-  /* Tipografía */
-  --bs-body-font-family: var(--bs-font-sans-serif);
-  --bs-body-font-size: 1rem;
-  --bs-body-font-weight: 400;
-  --bs-body-line-height: 1.5;
-
-  /* Bordes */
-  --bs-border-radius: 0.375rem;
-  --bs-border-radius-sm: 0.25rem;
-  --bs-border-radius-lg: 0.5rem;
-  --bs-border-width: 1px;
-  --bs-border-color: #dee2e6;
+:root,
+[data-bs-theme="dynamic"] {
+  --bs-body-bg-rgb: 255, 255, 255;
+  --bs-border-radius: 0.75rem;
 }
 ```
-
-Para personalizar estos valores, sobrescríbelos en tu CSS o SCSS. Consulta [Sistema de Temas](customization/theming.html) para guías detalladas de personalización y el [Storybook](https://react.dynamicframework.dev) para una lista completa de variables disponibles.
 
 ### Breakpoints Responsivos
 

@@ -2,296 +2,331 @@
 search: true
 ---
 
-# Sistema de Temas
+# Sistema de temas
 
-Personaliza la apariencia visual de los componentes de Dynamic Framework usando variables CSS y el sistema de temas de Bootstrap.
+Un theme de Dynamic Framework es una hoja de estilos que se carga después del CSS de Dynamic UI y sobrescribe sus custom properties `--bs-*`. Esta página describe el contrato de Dynamic UI 2.12.0 para quien escribe esa hoja: qué variables se sobrescriben, con qué formato y en qué selector, y qué partes del sistema no siguen solas a un cambio de marca.
 
-## Cómo Funciona el Theming
+## Dónde se carga el theme
 
-Dynamic Framework está construido sobre Bootstrap 5, que usa propiedades personalizadas CSS (variables) extensivamente. Puedes personalizar la apariencia mediante:
+Dynamic UI declara sus tokens en el selector `:root, [data-bs-theme="dynamic"]` y no usa `@layer`. La hoja del theme se carga después:
 
-1. **Sobrescribir variables CSS** - Cambiar valores en tiempo de ejecución
-2. **Agregar CSS personalizado** - Estilizar componentes específicos
+```html
+<link rel="stylesheet" href="https://cdn.dynamicframework.dev/assets/2.12.0/ui-react/css/dynamic-ui.min.css" />
+<link rel="stylesheet" href="/css/theme.css" />
+```
 
-## Referencia de Variables CSS
+### Sin @layer
 
-### Colores Base
-
-Bootstrap define estas variables de color que afectan todos los componentes:
+Un theme gana si su regla tiene al menos la especificidad de la de Dynamic y llega después en la cascada. Usa el mismo selector: un elemento con `data-bs-theme="dynamic"` vuelve a recibir los valores de la librería, y una regla que solo apunte a `:root` no lo alcanza.
 
 ```css
-:root {
-  /* Colores del tema */
-  --bs-primary: #0d6efd;
-  --bs-secondary: #6c757d;
-  --bs-success: #198754;
-  --bs-info: #0dcaf0;
-  --bs-warning: #ffc107;
-  --bs-danger: #dc3545;
-  --bs-light: #f8f9fa;
-  --bs-dark: #212529;
+/* ✅ */
+:root,
+[data-bs-theme="dynamic"] {
+  --bs-border-radius: 0.75rem;
+}
 
-  /* Versiones RGB (para uso con rgba()) */
-  --bs-primary-rgb: 13, 110, 253;
-  --bs-secondary-rgb: 108, 117, 125;
-  /* ... */
-
-  /* Body */
-  --bs-body-color: #212529;
-  --bs-body-bg: #fff;
+/* ❌ :where() tiene especificidad cero y la regla de Dynamic le gana */
+:where(:root) {
+  --bs-border-radius: 0.75rem;
 }
 ```
 
-### Tipografía
+### Con @layer
+
+Los estilos que no pertenecen a ninguna capa ganan a los de cualquier capa. Si el theme vive en una capa y Dynamic no, el theme pierde siempre, aunque se cargue después:
 
 ```css
-:root {
-  --bs-body-font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --bs-body-font-size: 1rem;
-  --bs-body-font-weight: 400;
-  --bs-body-line-height: 1.5;
-}
-```
-
-### Espaciado y Dimensiones
-
-```css
-:root {
-  --bs-border-width: 1px;
-  --bs-border-radius: 0.375rem;
-  --bs-border-radius-sm: 0.25rem;
-  --bs-border-radius-lg: 0.5rem;
-  --bs-border-radius-xl: 1rem;
-  --bs-border-radius-pill: 50rem;
-}
-```
-
-## Personalizando tu Tema
-
-### Sobrescritura con Archivo CSS
-
-Crea un archivo CSS que sobrescriba las variables por defecto:
-
-```css
-/* src/styles/theme.css */
-:root {
-  /* Colores de tu marca */
-  --bs-primary: #004B8D;
-  --bs-primary-rgb: 0, 75, 141;
-  --bs-secondary: #00A0DF;
-  --bs-secondary-rgb: 0, 160, 223;
-
-  /* Tipografía */
-  --bs-body-font-family: 'Inter', system-ui, sans-serif;
-
-  /* Bordes redondeados */
-  --bs-border-radius: 0.5rem;
-  --bs-border-radius-lg: 0.75rem;
-}
-```
-
-Importa este archivo **después** del CSS de Dynamic Framework:
-
-```tsx
-// src/main.tsx
-import '@dynamic-framework/ui-react/dist/css/dynamic-ui.css';
-import './styles/theme.css'; // Tus sobrescrituras
-```
-
-## Theming por Componente
-
-### Botones
-
-```css
-/* Todos los botones */
-.btn {
-  --bs-btn-padding-x: 1.5rem;
-  --bs-btn-padding-y: 0.625rem;
-  --bs-btn-font-size: 0.875rem;
-  --bs-btn-font-weight: 600;
-  --bs-btn-border-radius: 2rem;
-}
-
-/* Botón primario */
-.btn-primary {
-  --bs-btn-bg: #004B8D;
-  --bs-btn-border-color: #004B8D;
-  --bs-btn-hover-bg: #003d73;
-  --bs-btn-hover-border-color: #003d73;
-  --bs-btn-active-bg: #00315c;
-  --bs-btn-disabled-bg: #6c9dc4;
-}
-```
-
-### Cards
-
-```css
-.card {
-  --bs-card-spacer-y: 1.5rem;
-  --bs-card-spacer-x: 1.5rem;
-  --bs-card-border-radius: 1rem;
-  --bs-card-border-color: transparent;
-  --bs-card-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-```
-
-### Controles de Formulario
-
-```css
-.form-control {
-  --bs-border-radius: 0.5rem;
-  padding: 0.75rem 1rem;
-  border-color: #dee2e6;
-}
-
-.form-control:focus {
-  border-color: var(--bs-primary);
-  box-shadow: 0 0 0 0.2rem rgba(0, 75, 141, 0.15);
-}
-```
-
-### Alertas
-
-```css
-.alert-primary {
-  --bs-alert-bg: #e7f1f9;
-  --bs-alert-border-color: #b8d4ea;
-  --bs-alert-color: #003d73;
-}
-```
-
-## Estilizando Componentes Dynamic
-
-Los componentes de Dynamic Framework usan clases de Bootstrap. Consulta el [Storybook](https://react.dynamicframework.dev) para propiedades CSS específicas de cada componente.
-
-### DButton
-
-```tsx
-import { DButton } from '@dynamic-framework/ui-react';
-
-// El componente renderiza clases de botón de Bootstrap
-<DButton text="Clic aquí" variant="primary" />
-// Renderiza: <button class="btn btn-primary">Clic aquí</button>
-```
-
-Estiliza con CSS estándar de botones Bootstrap:
-
-```css
-.btn-primary {
-  /* Tus estilos */
-}
-```
-
-### DCard
-
-```tsx
-import { DCard } from '@dynamic-framework/ui-react';
-
-<DCard>
-  <DCard.Header>Título</DCard.Header>
-  <DCard.Body>Contenido</DCard.Body>
-</DCard>
-// Renderiza estructura de card de Bootstrap
-```
-
-Estiliza con CSS estándar de cards Bootstrap:
-
-```css
-.card {
-  /* Tus estilos */
-}
-
-.card-header {
-  /* Estilos del header */
-}
-
-.card-body {
-  /* Estilos del body */
-}
-```
-
-### DInput
-
-```tsx
-import { DInput } from '@dynamic-framework/ui-react';
-
-<DInput label="Email" type="email" />
-// Renderiza form-control de Bootstrap
-```
-
-Estiliza con clases de formulario:
-
-```css
-.form-control {
-  /* Tus estilos */
-}
-
-.form-label {
-  /* Estilos del label */
-}
-```
-
-## Modo Oscuro
-
-Dynamic Framework soporta modo oscuro a través de la clase CSS `.dark` en el elemento `body` o mediante la media query `prefers-color-scheme` del sistema operativo. Define valores de variables alternativos para modo oscuro:
-
-```css
-/* Modo claro (por defecto) */
-:root {
-  --bs-body-bg: #ffffff;
-  --bs-body-color: #212529;
-  --bs-card-bg: #ffffff;
-}
-
-/* Modo oscuro vía clase .dark en body */
-body.dark {
-  --bs-body-bg: #121212;
-  --bs-body-color: #e0e0e0;
-  --bs-card-bg: #1e1e1e;
-  --bs-border-color: #2d2d2d;
-}
-
-/* Modo oscuro vía preferencia del sistema */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bs-body-bg: #121212;
-    --bs-body-color: #e0e0e0;
-    --bs-card-bg: #1e1e1e;
-    --bs-border-color: #2d2d2d;
+/* ❌ Dynamic se cargó sin capa: este bloque no gana nunca */
+@layer theme {
+  :root,
+  [data-bs-theme="dynamic"] {
+    --bs-border-radius: 0.75rem;
   }
 }
 ```
 
-Alternar con JavaScript:
+Si usas capas, importa Dynamic dentro de una capa y declara la del theme después. Entre capas gana la última declarada:
 
-```tsx
-function toggleDarkMode() {
-  document.body.classList.toggle('dark');
+```css
+/* ✅ */
+@layer framework, theme;
+
+@import url("https://cdn.dynamicframework.dev/assets/2.12.0/ui-react/css/dynamic-ui.min.css") layer(framework);
+
+@layer theme {
+  :root,
+  [data-bs-theme="dynamic"] {
+    --bs-border-radius: 0.75rem;
+  }
 }
 ```
 
-## Utilidades CSS (2.1-2.7)
+## El contrato de color
 
-Entre v2.1 y v2.7 se agregaron nuevas clases de utilidad al CSS de la librería:
+Cada color de Dynamic se guarda como un triplete `R, G, B` en una variable `-rgb`. La variable sin sufijo es un wrapper calculado a partir de él: `--bs-primary: rgb(var(--bs-primary-rgb))`. Las utilidades (`.bg-primary`, `.text-primary`) y todo lo que usa opacidad leen el triplete con `rgba(var(--bs-primary-rgb), …)`, y los botones leen la rampa, que también cuelga del triplete. Un hex en el wrapper solo llega a lo que lee el wrapper, y la marca queda a medias.
 
-| Utilidad | Versión | Descripción |
-|----------|---------|-------------|
-| Utilidades de modo oscuro | v2.2 | Clases para estilizar específicamente el modo oscuro |
-| Variantes hover de texto y borde | v2.5 | `hover:` para color de texto y borde |
-| Responsive en `shadow`, `text-opacity`, `rounded`, `border` | v2.3 | Variantes por breakpoint (`sm`, `md`, `lg`…) |
-| `fade-in` | v2.3 | Utilidad de aparición gradual |
-| Utilidades de CSS grid | v2.5 | Clases para layouts con CSS grid |
+```css
+/* ❌ */
+:root {
+  --bs-primary: #166e62;
+}
 
-Estas clases están disponibles automáticamente al importar el CSS de Dynamic UI; consulta el [Storybook](https://react.dynamicframework.dev) para el listado completo y ejemplos interactivos.
+/* ✅ */
+:root,
+[data-bs-theme="dynamic"] {
+  --bs-primary-rgb: 22, 110, 98;
+}
+```
 
-## Mejores Prácticas
+El ✅ tiene el formato correcto, pero todavía no es un cambio de marca completo: falta la rampa.
 
-1. **Usa variables CSS para valores dinámicos** - Colores que pueden cambiar en runtime
-2. **No sobrescribas con `!important`** - Usa especificidad CSS adecuada
-3. **Prueba ratios de contraste** - Asegura accesibilidad con [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/)
-4. **Revisa Storybook** - Ve propiedades CSS de componentes en [react.dynamicframework.dev](https://react.dynamicframework.dev)
+### Roles y rampas
+
+Dynamic tiene ocho roles de color. Seis tienen rampa de 25 a 900: `primary`, `secondary`, `success`, `info`, `warning` y `danger`. `light` y `dark` solo tienen su base (`--bs-light-rgb`, `--bs-dark-rgb`).
+
+Las hojas de la rampa son literales, no se calculan a partir de la base. Si cambias solo la base, el hover y el active de los botones (`--bs-btn-primary-hover-bg: var(--bs-primary-600)`), los fondos suaves (`--bs-primary-bg-subtle: var(--bs-primary-100)`) y el texto enfatizado siguen en el tono anterior. Un cambio de marca de un role con rampa son 12 variables: la base, las 10 hojas y el color de texto de `.text-bg-<role>`. El paso 500 no se declara con un valor propio: sigue a la base.
+
+```css
+:root,
+[data-bs-theme="dynamic"] {
+  --bs-primary-rgb: 22, 110, 98;
+  --bs-primary-text-bg-color: var(--bs-white);
+  --bs-primary-25-rgb: 243, 248, 247;
+  --bs-primary-50-rgb: 232, 241, 239;
+  --bs-primary-100-rgb: 208, 226, 224;
+  --bs-primary-200-rgb: 162, 197, 192;
+  --bs-primary-300-rgb: 115, 168, 161;
+  --bs-primary-400-rgb: 69, 139, 129;
+  --bs-primary-500-rgb: var(--bs-primary-rgb);
+  --bs-primary-600-rgb: 18, 88, 78;
+  --bs-primary-700-rgb: 13, 66, 59;
+  --bs-primary-800-rgb: 9, 44, 39;
+  --bs-primary-900-rgb: 4, 22, 20;
+}
+```
+
+Los enlaces siguen al role: `--bs-link-color-rgb` apunta a `--bs-primary-rgb` y `--bs-link-hover-color-rgb` a `--bs-primary-700-rgb`. Solo necesitan un override si los enlaces llevan otro color.
+
+Las hojas de un color nuevo se pueden calcular a mano, con cualquier herramienta de paletas o con el generador que incluye Dynamic. Dynamic obtiene las suyas mezclando la base con blanco hacia los pasos claros y con negro hacia los oscuros, en sRGB. Para reproducir exactamente ese cálculo, consulta [Generar y validar un theme](theme-tools.html).
+
+### Roles que comparten tono
+
+Algunos roles salen del mismo tono de la paleta: `primary` e `info` son el mismo azul (`--bs-blue-rgb`), y `danger`, `success` y `warning` salen de `red`, `green` y `yellow`. Por defecto, un cambio de marca toca solo el role que se rebrandea, e `info` sigue siendo azul. Si `info` también debe pasar al color de marca o debe quedarse como color de estado, lo decide quien hace el rebrand, y en el primer caso se reescribe también su rampa.
+
+### La rampa de secondary
+
+La rampa de `secondary` no es monótona: la base apunta a `--bs-gray-800-rgb`, y como el paso 500 sigue a la base, `--bs-secondary-500-rgb` (43, 43, 52) es más oscuro que el 600 (87, 87, 104) y que el 700 (65, 65, 78). Cambiar la base no corrige esa forma. Para rebrandear `secondary` hay que escribir a mano las 10 hojas con una rampa coherente, o dejar el role como está.
+
+### Superficies del documento
+
+El fondo, el texto base y el borde del documento tienen sus propias variables:
+
+```css
+:root,
+[data-bs-theme="dynamic"] {
+  --bs-body-bg-rgb: 245, 246, 250;
+  --bs-body-color-rgb: 21, 21, 26;
+  --bs-border-color: rgb(var(--bs-gray-100-rgb));
+}
+```
+
+`--bs-body-bg-rgb` y `--bs-body-color-rgb` son tripletes como los de los roles. `--bs-border-color` no tiene pareja `-rgb`: lleva un valor de color directamente. Los valores del ejemplo son los de Dynamic.
+
+## Texto sobre fondo
+
+Dynamic elige el color de texto de cada par texto/fondo en Sass, con `color-contrast()`, al compilar la librería. El resultado queda escrito en el CSS y no se recalcula cuando un theme cambia el color de fondo.
+
+- **`.text-bg-<role>`** lee su texto de `--bs-<role>-text-bg-color`, que vale `var(--bs-white)` o `var(--bs-gray-700)` según el role. Si cambias la base a un tono claro, declara un valor oscuro junto con la rampa, como en el ejemplo de arriba. `secondary` no tiene esta variable: `.text-bg-secondary` pinta `--bs-secondary-700` sobre `--bs-secondary-50` y sigue a su rampa.
+- **`.btn-<role>`** no lee `--bs-<role>-text-bg-color`. Su texto también queda resuelto al compilar: en `primary` es `var(--bs-white)` en todos los estados. Si la base nueva no contrasta con ese texto, se cambia en el bloque del componente:
+
+```css
+.btn-primary {
+  --bs-btn-color: var(--bs-gray-900);
+  --bs-btn-hover-color: var(--bs-gray-900);
+  --bs-btn-active-color: var(--bs-gray-900);
+  --bs-btn-disabled-color: var(--bs-gray-900);
+}
+```
+
+## Tipografía, radios y espaciado
+
+### Familia tipográfica
+
+La familia de texto se sobrescribe en `--bs-font-sans-serif`. La leen el cuerpo del documento (`--bs-body-font-family`), los tooltips y los popovers. El CSS de Dynamic no incluye `@font-face`, así que la fuente debe cargarse aparte, antes del theme:
+
+```css
+:root,
+[data-bs-theme="dynamic"] {
+  --bs-font-sans-serif: "Inter", sans-serif;
+}
+```
+
+No existe `--bs-headings-font-family`: los encabezados heredan la familia del documento.
+
+### Tamaños de texto
+
+Los encabezados y las clases `.fs-N` leen `--bs-fs-N`, que es solo un alias de `--bs-rfs-fs-N`. El valor se sobrescribe en `--bs-rfs-fs-N` (y en `--bs-rfs-display-N` para `.display-N`). Sobrescribir el alias rompe la relación con RFS.
+
+Los pasos 1 a 4 y los `display` son fluidos por debajo de 1200px (`calc(1.425rem + 2.1vw)` en el paso 1) y fijos desde 1200px (`3rem`). Si declaras un valor fluido, declara también su tope en el mismo media query, o seguirá creciendo en pantallas anchas:
+
+```css
+/* ❌ el alias, no el valor */
+:root,
+[data-bs-theme="dynamic"] {
+  --bs-fs-1: 2.75rem;
+}
+
+/* ✅ */
+:root,
+[data-bs-theme="dynamic"] {
+  --bs-rfs-fs-1: calc(1.4rem + 1.8vw);
+  --bs-rfs-fs-2: calc(1.35rem + 1.2vw);
+}
+
+@media (min-width: 1200px) {
+  :root,
+  [data-bs-theme="dynamic"] {
+    --bs-rfs-fs-1: 2.75rem;
+    --bs-rfs-fs-2: 2.25rem;
+  }
+}
+```
+
+Los pasos 5 y 6 son fijos (`1.25rem` y `1rem`) y se sobrescriben con un único valor.
+
+### Radios
+
+Los radios son variantes independientes, no una escala derivada de la base: cambiar `--bs-border-radius` no mueve los demás.
+
+```css
+:root,
+[data-bs-theme="dynamic"] {
+  --bs-border-radius: 0.5rem;
+  --bs-border-radius-sm: 0.25rem;
+  --bs-border-radius-lg: 1rem;
+  --bs-border-radius-xl: 1.5rem;
+  --bs-border-radius-xxl: 2rem;
+  --bs-border-radius-pill: 50rem;
+}
+```
+
+Los valores son los de Dynamic. `--bs-border-radius-2xl` es un alias de `--bs-border-radius-xxl` y no se declara.
+
+### Espaciado
+
+El espaciado vive en 31 niveles literales, `--bs-ref-spacer-0` a `--bs-ref-spacer-30`, en pasos de `0.25rem` (`--bs-ref-spacer-4` es `1rem`). No existe `--bs-spacer`. Los componentes leen estos niveles (por ejemplo `--bs-modal-padding: var(--bs-ref-spacer-4)`). Las utilidades como `.p-3` o `.gap-3` llevan su valor escrito y no cambian con ellos.
+
+```css
+:root,
+[data-bs-theme="dynamic"] {
+  --bs-ref-spacer-4: 1.125rem;
+}
+```
+
+## Variables de componente
+
+Cada componente expone sus propias variables `--bs-<componente>-*` y las declara en su selector, así que se sobrescriben ahí, no en `:root`:
+
+```css
+.card {
+  --bs-card-border-color: var(--bs-gray-100);
+  --bs-card-border-radius: var(--bs-border-radius-lg);
+}
+```
+
+Los iconos de validación de formularios y del acordeón llevan el color escrito dentro de un data-URI: no cambian con el role, y para cambiarlos se reemplaza la variable completa (`--bs-form-feedback-icon-valid`, `--bs-default-accordion-btn-icon`).
+
+## Zonas en lugar de modo oscuro
+
+Dynamic UI no trae esquema oscuro: el modo oscuro de Bootstrap está desactivado al compilar la librería. Para que una parte de la página tenga otra paleta, como una cabecera oscura en un sitio claro, se usa una zona: un subárbol con `data-bs-theme="<nombre>"` que redefine los colores.
+
+```html
+<header data-bs-theme="oscura">…</header>
+```
+
+Una zona hereda del documento, y hay tres cosas que no ocurren solas:
+
+1. **Triplete y wrapper.** Los wrappers como `--bs-body-color` se calculan en `:root` y se heredan ya resueltos. Si la zona cambia solo `--bs-body-color-rgb`, lo que lee `var(--bs-body-color)` sigue con el color del documento. La zona declara los dos.
+2. **`color` y `background-color`.** Dynamic aplica el fondo y el color de texto sobre `body`, y un subárbol nunca pasa por esa regla. La zona los declara sobre el propio elemento.
+3. **Componentes con superficie propia.** El texto blanco de la zona llega a todo el subárbol, incluidos los componentes que mantienen fondo blanco: `.form-control`, `.form-select` y `.modal` necesitan un bloque que les devuelva un texto oscuro. `.nav`, `.list-group` y los botones `.btn-outline-*` necesitan colores legibles sobre el fondo de la zona. Las variables de `.nav-pills` no se alcanzan desde `.nav` y van en un bloque propio.
+
+```css
+[data-bs-theme="oscura"] {
+  --bs-body-bg-rgb: var(--bs-gray-900-rgb);
+  --bs-body-bg: rgb(var(--bs-gray-900-rgb));
+  --bs-body-color-rgb: var(--bs-white-rgb);
+  --bs-body-color: rgb(var(--bs-white-rgb));
+  --bs-secondary-color-rgb: var(--bs-white-rgb);
+  --bs-secondary-color: rgba(var(--bs-white-rgb), .75);
+  --bs-tertiary-color-rgb: var(--bs-white-rgb);
+  --bs-tertiary-color: rgba(var(--bs-white-rgb), .5);
+  --bs-emphasis-color-rgb: var(--bs-white-rgb);
+  --bs-emphasis-color: rgb(var(--bs-white-rgb));
+  --bs-link-color-rgb: var(--bs-primary-200-rgb);
+  --bs-link-color: rgb(var(--bs-primary-200-rgb));
+  --bs-link-hover-color-rgb: var(--bs-primary-100-rgb);
+  --bs-link-hover-color: rgb(var(--bs-primary-100-rgb));
+  --bs-border-color: rgba(var(--bs-white-rgb), .25);
+  color: var(--bs-body-color);
+  background-color: var(--bs-body-bg);
+}
+
+[data-bs-theme="oscura"] .nav {
+  --bs-nav-link-color: rgb(var(--bs-white-rgb));
+  --bs-nav-link-hover-color: rgb(var(--bs-primary-200-rgb));
+}
+
+[data-bs-theme="oscura"] .nav-pills {
+  --bs-nav-pills-link-active-color: rgb(var(--bs-gray-900-rgb));
+  --bs-nav-pills-link-active-bg: rgb(var(--bs-white-rgb));
+}
+
+[data-bs-theme="oscura"] .btn-outline-primary {
+  --bs-btn-color: rgb(var(--bs-primary-200-rgb));
+  --bs-btn-border-color: rgb(var(--bs-primary-200-rgb));
+  --bs-btn-hover-color: rgb(var(--bs-gray-900-rgb));
+  --bs-btn-hover-bg: rgb(var(--bs-primary-200-rgb));
+  --bs-btn-hover-border-color: rgb(var(--bs-primary-200-rgb));
+}
+
+[data-bs-theme="oscura"] .list-group {
+  --bs-list-group-color: rgb(var(--bs-white-rgb));
+  --bs-list-group-action-color: rgb(var(--bs-white-rgb));
+  --bs-list-group-border-color: rgba(var(--bs-white-rgb), .25);
+}
+
+[data-bs-theme="oscura"] .form-control,
+[data-bs-theme="oscura"] .form-select {
+  --bs-body-color: rgb(var(--bs-gray-900-rgb));
+}
+
+[data-bs-theme="oscura"] .modal {
+  --bs-modal-color: rgb(var(--bs-gray-900-rgb));
+}
+```
+
+Un `.modal` solo recibe la zona si se renderiza dentro de ella. Una paleta oscura en `@media (prefers-color-scheme: dark)` sobre `:root` no es una alternativa: tiene los mismos tres problemas en todo el documento y cambia la marca para todo el que tenga el sistema en modo oscuro.
+
+## Compilar desde Sass
+
+Las variables Sass solo tienen efecto si compilas Dynamic desde sus fuentes. El paquete incluye el punto de entrada `src/style/dynamic-ui.scss`, que se compila con `node_modules` y la raíz del proyecto como rutas de carga. Importar el CSS compilado desde SCSS ignora cualquier `$variable` declarada antes:
+
+```scss
+// ❌ dist/css es CSS ya compilado: $border-radius no tiene efecto
+$border-radius: 0.75rem;
+@import "@dynamic-framework/ui-react/dist/css/dynamic-ui.css";
+
+// ✅
+$border-radius: 0.75rem;
+@import "@dynamic-framework/ui-react/src/style/dynamic-ui";
+```
+
+Compilar desde Sass significa compilar también Bootstrap dentro de tu build y mantener esa cadena en cada actualización de Dynamic. Para un theme basta con sobrescribir custom properties como describe esta página.
 
 ## Recursos
 
-- [Variables CSS de Bootstrap](https://getbootstrap.com/docs/5.3/customize/css-variables/)
-- [Dynamic Storybook](https://react.dynamicframework.dev)
+- [Generar y validar un theme](theme-tools.html): el flujo opcional con `dynamic-theme-expand` y `dynamic-theme-validate`.
+- [Storybook de Dynamic UI 2.12.0](https://react.dynamicframework.dev/v2.12.0/)
+- [CSS de Dynamic UI 2.12.0](https://cdn.dynamicframework.dev/assets/2.12.0/ui-react/css/dynamic-ui.min.css)
+- [`token-overrides.json` 2.12.0](https://cdn.dynamicframework.dev/assets/2.12.0/ui-react/tokens/token-overrides.json): el descriptor de los tokens sobrescribibles.

@@ -308,6 +308,7 @@ module.exports = {
                       collapsable: true,
                       children: [
                           "/en/dynamic/customization/theming",
+                          "/en/dynamic/customization/theme-tools",
                           "/en/dynamic/customization/extending",
                       ],
                   },
@@ -608,6 +609,7 @@ module.exports = {
                       collapsable: true,
                       children: [
                           "/es/dynamic/customization/theming",
+                          "/es/dynamic/customization/theme-tools",
                           "/es/dynamic/customization/extending",
                       ],
                   },
