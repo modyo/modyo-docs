@@ -941,7 +941,7 @@ Ninguna de las dos admite coincidencias parciales, a diferencia del resto de la 
 Si pegas un uuid en la caja sin la clave, la búsqueda lo trata como texto libre y solo encuentra la respuesta con ese uuid, no las del usuario con ese uuid. Para lo segundo tienes que escribir `uuid=`.
 
 :::tip Actualización de los resultados
-Los cambios recientes en una respuesta pueden tardar unos segundos en reflejarse en los resultados de la búsqueda. Los cambios en los datos del usuario, en los valores de sus campos personalizados y en los segmentos se reflejan de forma diferida. Si cambias el asignado configurado de una tarea del flujo, la búsqueda puede seguir aplicando el asignado anterior a las respuestas que están en esa tarea, hasta que cada una vuelva a modificarse.
+Los cambios recientes en una respuesta pueden tardar unos segundos en reflejarse en los resultados de la búsqueda. Los cambios en los datos del usuario, en los valores de sus campos personalizados y en los segmentos se reflejan de forma diferida. Si publicas una versión de la originación que cambia el asignado configurado de una tarea del flujo, la búsqueda puede seguir aplicando el asignado anterior a las respuestas en curso que están en esa tarea, hasta que cada una vuelva a modificarse. El listado sin búsqueda y el acceso al detalle aplican el asignado nuevo una vez que la publicación termina de pasar las respuestas en curso a la nueva versión.
 :::
 
 #### Filtrar respuestas

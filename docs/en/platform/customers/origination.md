@@ -940,7 +940,7 @@ Neither key allows partial matches, unlike the rest of the search:
 If you paste a uuid into the box without the key, the search treats it as free text and only finds the submission with that uuid, not the submissions of the user with that uuid. For the latter you have to type `uuid=`.
 
 :::tip Results update
-Recent changes to a submission may take a few seconds to be reflected in the search results. Changes to the user's data, the values of their custom fields, and segments are reflected in a deferred manner. If you change the configured assignee of a task in the flow, the search may keep applying the previous assignee to the submissions that are at that task, until each one changes again.
+Recent changes to a submission may take a few seconds to be reflected in the search results. Changes to the user's data, the values of their custom fields, and segments are reflected in a deferred manner. If you publish a version of the origination that changes the configured assignee of a task in the flow, the search may keep applying the previous assignee to the in-progress submissions that are at that task, until each one changes again. The list without search and the access to the detail apply the new assignee once the publication finishes moving the in-progress submissions to the new version.
 :::
 
 #### Filter submissions
