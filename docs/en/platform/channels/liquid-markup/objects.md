@@ -706,6 +706,7 @@ Use user objects to get information about your users from the Customers module.
 | **user.segment_names**               | Array of segment names.                                 | ```["vip","beta"]```                                 |
 | **user.target_names**                | Array of target audience names.                         | ```["retail","premium"]```                           |
 | **user.targets**                     | Array of target audience group objects.                 | ```[{"name":"retail"}]```                            |
+| **user.realm_base_url**              | Public base URL of the user's realm: its [custom domain](/en/platform/customers/settings.html#domains) if active, otherwise the account URL. Use it to call the realm's Customers API. | ```https://login.mybank.com``` |
 | **user.realm_default_avatar**        | Default realm avatar (asset).                           |                                                      |
 | **user.non_binary_sex_value**        | Constant value for non-binary gender.                   | ```4```                                              |
 | **user.other_sex_value**             | Constant value for other gender.                        | ```5```                                              |
