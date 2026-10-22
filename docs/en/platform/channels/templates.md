@@ -180,8 +180,43 @@ Once saved and published, it translates into the following HTML code:
 <script src='my-js' type='text/javascript' async='async' defer='defer'></script>
 ```
 
-To obtain detailed information and learn about the parameters supported by these filters, refer to the [Liquid filters section](/en/platform/channels/liquid-markup#standard-filters).
+To obtain detailed information and learn about the parameters supported by these filters, refer to the [Asset URL](/en/platform/channels/liquid-markup/filters.html#asset-url), [Script tag](/en/platform/channels/liquid-markup/filters.html#script-tag), [Stylesheet Tag](/en/platform/channels/liquid-markup/filters.html#stylesheet-tag), [Theme Javascript](/en/platform/channels/liquid-markup/filters.html#theme-javascript) and [Theme Stylesheet](/en/platform/channels/liquid-markup/filters.html#theme-stylesheet) entries.
 
+
+### How site CSS and JavaScript are served
+
+Every CSS or JavaScript view you create in Templates is published as a file with its own URL, which the Liquid filters resolve for you. That URL includes a version that updates when you publish the site, which means that:
+
+- Visitors get the new file as soon as you publish, without you having to rename the view or ask for any cache to be cleared.
+- As long as the version does not change, the browser can reuse the file across the different pages of the site instead of downloading it again on each one.
+- In preview mode the file is never served from cache, so you see your changes right away.
+
+### Controlling how the file loads
+
+By default, a stylesheet blocks the page from painting until it finishes downloading, and a script blocks HTML parsing. The `script_tag` and `stylesheet_tag` filters accept any attribute, so you can adjust that behavior while still using the versioned URL:
+
+```html
+<head>
+  {{ 'base'      | asset_url: 'css' | stylesheet_tag: media: 'screen' }}
+  {{ 'print'     | asset_url: 'css' | stylesheet_tag: media: 'print' }}
+  {{ 'main'      | asset_url: 'js'  | script_tag: defer: 'defer' }}
+  {{ 'analytics' | asset_url: 'js'  | script_tag: async: 'async' }}
+</head>
+```
+
+- `defer` downloads the script in parallel and runs it once the document has finished parsing, preserving the order in which you declared the scripts.
+- `async` runs it as soon as it is available, with no guaranteed order. Use it only for scripts that are independent of each other.
+- `media` limits a stylesheet to a specific context, such as printing.
+
+The `theme_javascript` and `theme_stylesheet` filters produce the same versioned URL, but do not accept attributes. If you need any, use the combination above.
+
+### Theme view or inline code
+
+Writing the CSS or JavaScript directly in the template, inside a `<style>` or `<script>` tag, saves one network request, but moves those bytes into the HTML document, which is downloaded in full on every page the user visits and is not reused between them. As a general rule:
+
+- Publish as a theme view all the CSS and JavaScript shared by several pages. It is downloaded once and reused across the rest of the site.
+- Reserve inline code for small fragments specific to one page, or for the minimum styles the first visible screen needs.
+- Keep in mind that an inline `<style>` block also blocks the page from painting: writing it in the template does not make it free.
 
 ## Snippets
 
