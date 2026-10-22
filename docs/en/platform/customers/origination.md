@@ -679,7 +679,7 @@ By selecting the **Edit** option in the context menu of your origination, you ca
 - **Description**: Includes a brief explanatory text about the purpose of the origination.
 - **Completed message**: This is the message that will appear to the user at the end of the origination process.
 - **Default submission assignee**: Specifies the administrator or group of administrators that will be automatically assigned to each new submission. When selecting a group, you can use the **Assign to whole group** option or choose a specific user within it.
-- **Due in**: Sets a maximum deadline for completing the origination.
+- **Due in**: Sets the due period of each submission and when it starts counting. See the details in [Configure the due date](#configure-the-due-date).
 - **Automatically cancel submissions that exceed the due date**: Available only if you have configured a due date. When this option is enabled, submissions in **Pending** status that exceed their due date are automatically canceled.
 - **Completion rules**: Defines the completion behavior for each submission.
 - **Cancellation rules**: Defines who can cancel a submission from the origination page:
@@ -688,7 +688,31 @@ By selecting the **Edit** option in the context menu of your origination, you ca
 - **Privacy**: Allows you to restrict access to the origination flow to certain predefined user segments.
 
 :::tip Automatic cancellation by due date
-Automatic cancellation runs in a background process once a day, so it may not happen immediately when the submission becomes overdue. It only cancels submissions in **Pending** status and records **Auto-Cancelled Overdue** as the cancellation reason, visible in the submission details.
+Automatic cancellation runs in a background process, so the submission is canceled up to one hour after its due date. It works the same with any of the due date triggers, only cancels submissions in **Pending** status, and records **Auto-Cancelled Overdue** as the cancellation reason, visible in the submission details.
+:::
+
+#### Configure the due date
+
+In the **Due in** section, check **Mark a submission as due after** and fill in:
+
+- **Months**, **Days**, and **Hours**: The length of the period. You can combine the three, for example 1 month, 3 days, and 2 hours, and the total must be greater than 0. A month is a calendar month, not a block of 30 days.
+- **Count the due date from**: The trigger the period is counted from:
+  - **The start of the submission**: Default option. The period starts when the submission becomes **Pending**, that is, on its **Started at** date.
+  - **The completion of a task**: The period starts when the main user completes the task you choose in **Task**. The selector shows every task of the flow as `Step › Task`. If the task is reopened and completed again, the period is counted from the last time it was completed. If you choose a task that isn't shown to the main user, the screen warns you that, if that task is never completed, the submission has no due date.
+  - **The value of a date field**: The period starts on the date answered in the field you choose in **Date field**. The selector shows, as `Task › Question`, the top-level date questions of the input tasks; the ones inside a group don't appear. If the field has no time, the period starts at 00:00 of that date in the account time zone. If several participants answer the field, the main user's answer prevails, and if the answer changes, the due date is recalculated.
+
+If the period includes hours, the due date is shown with its time in the list and in the submission details.
+
+While the trigger hasn't happened, the submission has **No due date**: it has no deadline and isn't canceled automatically. There's no fallback trigger, so if you choose a task or a field that's never answered, for example because [conditional logic](#conditional-logic) hides it, that submission never becomes due.
+
+The task or question you use as the trigger can't be deleted, and neither can the step that contains them. The question can't be moved into a group or changed to another type either. If you try, when you save the flow the platform tells you to change the due date rule first.
+
+When you publish a version that changes the period or the trigger, or that turns the due date on or off, the platform recalculates in the background the due date of the **Pending** submissions, without changing their status. If only the period changed, it keeps counting from the same moment; if the trigger changed, it's looked up again in each submission. If you turn the due date off, the submissions are left without a deadline.
+
+If automatic cancellation is on and the change leaves pending submissions already overdue, before publishing the platform tells you how many will be canceled and asks you to confirm with **Publish anyway?**. The submissions are canceled in the next run of the automatic cancellation. If you schedule the publication, the count refers to the submissions that would be overdue today, and the ones overdue at the time of publication are canceled.
+
+:::warning Due dates in weeks and months
+Originations that had their due date in weeks now have it in days, at 7 days per week. The ones that had it in months now count calendar months instead of 30 days, so the due date of their submissions can move by several days: the difference depends on the trigger date and the number of months. For example, 12 months from January 1, 2026 used to be due on December 27, 2026 and are now due on January 1, 2027.
 :::
 
 #### Roles
@@ -760,14 +784,14 @@ When the origination has **Due in** configured, each submission also carries a d
 - **Due soon**: 75% of the period has elapsed, but the deadline hasn't passed yet.
 - **Overdue**: The deadline has already passed.
 
-The period is counted from the trigger configured in the origination: the start of the submission, or the date answered in a Date-type question of the flow. The due status only applies to **Pending** submissions: once completed or canceled, the submission stops showing it.
+The period is counted from the trigger configured in the origination: the start of the submission, the completion of a task, or the date answered in a date field of the flow. See how to configure it in [Configure the due date](#configure-the-due-date). The due status only applies to **Pending** submissions: once completed or canceled, the submission stops showing it.
 
-In the submission list, the **Due in** column shows the deadline followed by the label in parentheses, for example `02/22/2026 (Due soon)`. If the submission hasn't started yet, it shows **Not started**, and when no deadline applies it shows `--`.
+In the submission list, the **Due in** column shows the deadline followed by the label in parentheses, for example `02/22/2026 (Due soon)`. If the submission hasn't started yet, it shows **Not started**; if it has started but the trigger hasn't happened yet, it shows **No due date**, and when no deadline applies it shows `--`. The **Due in** field in the **Details** tab of the submission shows the same. A submission with **No due date** counts as **On track** in the filter and in the origination overview.
 
-You can extend the period of a specific submission by adding extra days with the `due_extension_days` parameter of the submission update endpoint of the [administration API](/en/platform/core/api.html). Those days are added to the origination's **Due in** and shift both the deadline and the **Due soon** threshold, and the change is recorded in the submission activity.
+You can extend the period of a specific submission by adding extra days with the `due_extension_days` parameter of the submission update endpoint of the [administration API](/en/platform/core/api.html). Those days are added to the calculated due date and shift both the deadline and the **Due soon** threshold, and the change is recorded in the submission activity.
 
 :::tip Due status updates
-The due status is recalculated in a background process that runs once a day, so a submission can take up to 24 hours to show up as **Due soon** or **Overdue**. Extending the period of a submission does recalculate its status right away.
+The due status is recalculated in a background process that runs every hour, so a submission can take up to one hour to show up as **Due soon** or **Overdue**. Extending the period of a submission does recalculate its status right away. If you change the account time zone, the platform recalculates the due date of the pending submissions whose trigger is a date field without time.
 :::
 
 ### View Details of an Origination

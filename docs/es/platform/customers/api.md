@@ -198,8 +198,9 @@ El cuerpo trae los siguientes atributos:
 | `status` | `not_started`, `pending`, `completed` o `canceled`. |
 | `progress` | Porcentaje de tareas completadas, como texto. Por ejemplo, `25%`. |
 | `due` | Texto ya armado con la fecha límite y su estado, listo para mostrar. |
-| `due_deadline_at` | Fecha y hora límite sin formatear. Es `null` cuando la originación no tiene plazo configurado o cuando la respuesta no ha comenzado, está completada o está cancelada. |
-| `due_label` | Etiqueta que reemplaza a la fecha cuando no hay fecha límite, como `No iniciado` o `--`. Es `null` cuando `due_deadline_at` trae un valor. |
+| `due_deadline_at` | Fecha y hora límite sin formatear, con los días de extensión incluidos. Es `null` cuando la originación no tiene plazo configurado, cuando el disparador del plazo todavía no ocurre o cuando la respuesta no ha comenzado, está completada o está cancelada. |
+| `due_label` | Etiqueta que reemplaza a la fecha cuando no hay fecha límite, como `No iniciado`, `Sin vencimiento` o `--`. Es `null` cuando `due_deadline_at` trae un valor. |
+| `due_with_time` | `true` si la duración del plazo de la originación incluye horas, así que la fecha límite debe mostrarse con su hora. |
 | `due_status_label` | Etiqueta del estado del plazo entre paréntesis, como `(A tiempo)`, `(Vence pronto)` o `(Vencido)`. Es `null` cuando la respuesta no está pendiente. |
 | `due_extension_days` | Días de extensión otorgados al plazo, o `null` si la originación no tiene plazo configurado. |
 | `created_at`, `updated_at`, `started_at` | Fechas de creación, de última actualización y de inicio de la respuesta. |
