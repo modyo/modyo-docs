@@ -89,34 +89,17 @@ Dynamic Framework is a React component framework specialized for financial appli
 
 ### Design Tokens
 
-Dynamic Framework uses Bootstrap 5's CSS custom properties (variables) with the `--bs-` prefix:
+Dynamic UI exposes its design system as `--bs-*` custom properties on the `:root, [data-bs-theme="dynamic"]` selector. A theme is a stylesheet loaded after the Dynamic CSS that overrides those variables with the same selector. Colors are overridden on their `R, G, B` triplet (`--bs-primary-rgb`), never on the wrapper (`--bs-primary`), and a rebrand includes the role's full ramp:
 
 ```css
-:root {
-  /* Theme colors */
-  --bs-primary: #0d6efd;
-  --bs-secondary: #6c757d;
-  --bs-success: #198754;
-  --bs-danger: #dc3545;
-  --bs-warning: #ffc107;
-  --bs-info: #0dcaf0;
-
-  /* Typography */
-  --bs-body-font-family: var(--bs-font-sans-serif);
-  --bs-body-font-size: 1rem;
-  --bs-body-font-weight: 400;
-  --bs-body-line-height: 1.5;
-
-  /* Borders */
-  --bs-border-radius: 0.375rem;
-  --bs-border-radius-sm: 0.25rem;
-  --bs-border-radius-lg: 0.5rem;
-  --bs-border-width: 1px;
-  --bs-border-color: #dee2e6;
+:root,
+[data-bs-theme="dynamic"] {
+  --bs-body-bg-rgb: 255, 255, 255;
+  --bs-border-radius: 0.75rem;
 }
 ```
 
-To customize these values, override them in your CSS or SCSS. See [Theming](customization/theming.html) for detailed customization guides and the [Storybook](https://react.dynamicframework.dev) for a complete list of available variables.
+The full contract, with color ramps, typography, zones and the tools to generate and validate a theme, is in [Theming](customization/theming.html).
 
 ### Responsive Breakpoints
 
