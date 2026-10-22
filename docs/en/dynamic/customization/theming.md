@@ -147,7 +147,7 @@ The default font is `--bs-font-sans-serif: "Jost", sans-serif`, and `--bs-body-f
 
 Components and the `.h1`–`.h6`, `.fs-*` and `.display-*` classes read `--bs-fs-N` and `--bs-fs-display-N`, which are aliases: `--bs-fs-1: var(--bs-rfs-fs-1)`. The value lives in `--bs-rfs-fs-N` and `--bs-rfs-display-N`, which are the variables you override.
 
-Steps `fs-1` to `fs-4` and `display-1` to `display-6` are fluid: below 1200px they're a `calc()` that grows with the viewport, and Dynamic redefines them with a fixed size in `@media (min-width: 1200px)`. An override of those steps also needs its own block at that breakpoint. This example sets `h1` to the size `h2` has by default:
+Steps `fs-1` to `fs-4` and `display-1` to `display-6` are fluid: below 1200px they're a `calc()` that grows with the viewport, and Dynamic redefines them with a fixed size in `@media (min-width: 1200px)`. A theme loaded after Dynamic wins at every width, because the media query doesn't add specificity. If the value you declare is fixed, one declaration is enough. If it's fluid (with `vw`), it needs its cap at that breakpoint; without it, it keeps growing on desktop. This example keeps the fluid behavior and sets `h1` to the size `h2` has by default:
 
 ```css
 :root,
@@ -195,7 +195,7 @@ Component spacing lives in 31 literal variables, from `--bs-ref-spacer-0` (`0`) 
 
 ## Theme zones
 
-Dynamic UI doesn't ship a dark scheme: it's built with `$enable-dark-mode: false`. To give part of the page its own palette, such as a dark header in a light application, use a zone: a subtree with `data-bs-theme="<name>"`.
+Dynamic UI doesn't ship a dark token scheme: it's built with `$enable-dark-mode: false`. What it does ship are `dark:` utility variants (for example, the `dark:fs-1` class), which apply with the system dark scheme or under an ancestor with the `.dark` class. Those variants don't change any `--bs-*` variable. To give part of the page its own palette, such as a dark header in a light application, use a zone: a subtree with `data-bs-theme="<name>"`.
 
 ```html
 <header data-bs-theme="highlight">…</header>
@@ -407,7 +407,7 @@ Sass variables only take effect if you compile Dynamic from its sources, and the
 }
 ```
 
-**The typography alias.** `--bs-fs-1` is an alias and, without the 1200px block, Dynamic's desktop value wins on large screens.
+**The typography alias.** `--bs-fs-1` is an alias of `--bs-rfs-fs-1`. A value of your own on the alias cuts that link and turns off RFS fluid scaling, and `dynamic-theme-validate` reports it as an error.
 
 ```css
 /* ❌ */
@@ -431,7 +431,7 @@ Sass variables only take effect if you compile Dynamic from its sources, and the
 }
 ```
 
-**A dark mode with a class on `body`.** Dynamic has no dark scheme, and a class that only redefines triplets leaves the wrappers as they were resolved at the root.
+**A dark palette with a class on `body`.** The `.dark` class turns on the `dark:` utility variants, but doesn't change the tokens. A class that only redefines triplets leaves the wrappers as they were resolved at the root.
 
 ```css
 /* ❌ */

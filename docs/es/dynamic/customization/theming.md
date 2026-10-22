@@ -147,7 +147,7 @@ La fuente por defecto es `--bs-font-sans-serif: "Jost", sans-serif`, y `--bs-bod
 
 Los componentes y las clases `.h1`–`.h6`, `.fs-*` y `.display-*` leen `--bs-fs-N` y `--bs-fs-display-N`, que son alias: `--bs-fs-1: var(--bs-rfs-fs-1)`. El valor vive en `--bs-rfs-fs-N` y `--bs-rfs-display-N`, que son las variables que se sobrescriben.
 
-Los pasos `fs-1` a `fs-4` y `display-1` a `display-6` son fluidos: por debajo de 1200px valen un `calc()` que crece con el viewport, y Dynamic los redefine con un tamaño fijo en `@media (min-width: 1200px)`. Un override de esos pasos necesita también su bloque en ese breakpoint. Este ejemplo lleva `h1` al tamaño que `h2` tiene por defecto:
+Los pasos `fs-1` a `fs-4` y `display-1` a `display-6` son fluidos: por debajo de 1200px valen un `calc()` que crece con el viewport, y Dynamic los redefine con un tamaño fijo en `@media (min-width: 1200px)`. Un theme cargado después de Dynamic gana en todas las anchuras, porque la media query no aumenta la especificidad. Si el valor que declaras es fijo, basta una declaración. Si es fluido (con `vw`), necesita su tope en ese breakpoint; sin él, sigue creciendo en escritorio. Este ejemplo conserva el comportamiento fluido y lleva `h1` al tamaño que `h2` tiene por defecto:
 
 ```css
 :root,
@@ -195,7 +195,7 @@ El espaciado de los componentes vive en 31 variables literales, de `--bs-ref-spa
 
 ## Zonas de theme
 
-Dynamic UI no trae un esquema oscuro: se compila con `$enable-dark-mode: false`. Para que una parte de la página tenga su propia paleta, por ejemplo una cabecera oscura en una aplicación clara, se usa una zona: un subárbol con `data-bs-theme="<nombre>"`.
+Dynamic UI no trae un esquema oscuro de tokens: se compila con `$enable-dark-mode: false`. Lo que sí trae son variantes `dark:` de las utilidades (por ejemplo, la clase `dark:fs-1`), que se activan con el esquema oscuro del sistema o bajo un ancestro con la clase `.dark`. Esas variantes no cambian ninguna variable `--bs-*`. Para que una parte de la página tenga su propia paleta, por ejemplo una cabecera oscura en una aplicación clara, se usa una zona: un subárbol con `data-bs-theme="<nombre>"`.
 
 ```html
 <header data-bs-theme="destacada">…</header>
@@ -407,7 +407,7 @@ Las variables Sass solo tienen efecto si compilas Dynamic desde sus fuentes, y e
 }
 ```
 
-**El alias tipográfico.** `--bs-fs-1` es un alias y, sin el bloque de 1200px, el valor de escritorio de Dynamic gana en pantallas grandes.
+**El alias tipográfico.** `--bs-fs-1` es un alias de `--bs-rfs-fs-1`. Un valor propio en el alias corta ese vínculo y desactiva el escalado fluido de RFS, y `dynamic-theme-validate` lo marca como error.
 
 ```css
 /* ❌ */
@@ -431,7 +431,7 @@ Las variables Sass solo tienen efecto si compilas Dynamic desde sus fuentes, y e
 }
 ```
 
-**Un modo oscuro con una clase en `body`.** Dynamic no tiene esquema oscuro, y una clase que solo redefine tripletes deja los wrappers tal como se resolvieron en la raíz.
+**Una paleta oscura con una clase en `body`.** La clase `.dark` activa las variantes `dark:` de las utilidades, pero no cambia los tokens. Una clase que solo redefine tripletes deja los wrappers tal como se resolvieron en la raíz.
 
 ```css
 /* ❌ */

@@ -211,7 +211,7 @@ Entre enero y julio de 2026 se publicaron siete releases (v2.1 → v2.7) que agr
 
 ### Utilidades CSS
 
-Nuevas utilidades para modo oscuro, variantes hover de texto/borde, responsive en `shadow`/`rounded`/`border`/`text-opacity`, `fade-in` y CSS grid. Ver [Sistema de Temas](customization/theming.html#utilidades-css-2-1-2-7).
+Nuevas utilidades para modo oscuro, variantes hover de texto/borde, responsive en `shadow`/`rounded`/`border`/`text-opacity`, `fade-in` y CSS grid. Ver [Extended Utilities en Storybook](https://react.dynamicframework.dev/v2.12.0/?path=/docs/design-system-foundations-extended-utilities--docs).
 
 ## Mejoras Técnicas
 
