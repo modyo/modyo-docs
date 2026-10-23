@@ -200,7 +200,7 @@ When configuring the task, you can define an **Assignee**: an administrator or a
 
 Assigned administrators receive an email when a validation is pending and can also review it from the [**My tasks**](/en/platform/core/my-tasks.html) view in the main menu, filtering by the **Validation review** task type. The user receives an internal notification when their task is approved or rejected.
 
-In a specific submission, you can reassign the validation from the **Validations** tab, once the user has completed the tasks to validate.
+In a specific submission, you can reassign the validation from the **Validations** tab, once the user has completed the tasks to validate. Reassigning it requires the **Assign Tasks** permission.
 
 ### Signature
 
@@ -627,7 +627,7 @@ Each task in the flow has the **Assigned to** option, which defines who answers 
 - **User**: The task is answered by the end user on the origination page.
 - **Agent**: The task is answered by an administrator from the admin. **Validation** and **Pending review** tasks are always agent tasks; **Input** and **Code snippet** tasks can be configured in either mode.
 
-When the flow reaches an agent task, the assigned administrators receive an email with a direct link to the task and also see it in the [**My tasks**](/en/platform/core/my-tasks.html) view. The effective assignee is resolved in this order: the assignee of the task response, the assignee configured on the task and, failing that, the assignee of the submission; you can reassign a specific task from the submission view, which notifies the new assignee.
+When the flow reaches an agent task, the assigned administrators receive an email with a direct link to the task and also see it in the [**My tasks**](/en/platform/core/my-tasks.html) view. The effective assignee is resolved in this order: the assignee of the task response, the assignee configured on the task and, failing that, the assignee of the submission. With the **Assign Tasks** permission you can reassign a specific task from the submission view, which notifies the new assignee.
 
 From the submission view, the agent opens the task and answers the form with the same experience as the site: live conditional logic, file uploads, repeatable groups, and code snippets. While the task awaits the agent's action, the user sees on the origination page the text configured in **Waiting message shown to the user**.
 
@@ -841,21 +841,32 @@ From the submission view in the actions menu (identified with ...), you can [imp
 :::
 
 :::tip Segment scope
-If your access to the realm is [restricted by segments](/en/platform/customers/settings.html#restrict-scope-with-segments), you will only see the submissions of the users within your scope. Submissions assigned to you remain visible and operable even if the user belongs to segments outside your scope.
+If your access to the realm is [restricted by segments](/en/platform/customers/settings.html#restrict-scope-with-segments), you will only see the submissions of the users within your scope. Submissions assigned to you remain visible and operable even if the user belongs to segments outside your scope. The same applies to your team's submissions if your role has **List Group Submissions**.
 :::
 
 #### Submission visibility permissions
 
-The role's permissions decide which submissions a team member sees and how much of each one. In the role's Customers permissions there are four that work in tiers:
+The role's permissions decide which submissions a team member sees and how much of each one. In the role's Customers permissions there are five that work in tiers:
 
 - **List Assigned Submissions**: in the list they only see the submissions assigned to them and, when opening one, only the **Details** section.
+- **List Group Submissions**: besides their assigned submissions, they see the ones individually assigned to the members of their groups. It includes **List Assigned Submissions**. See [View the work of a team](#view-the-work-of-a-team).
 - **List All Submissions**: they see every submission, not only the ones assigned to them. It includes **List Assigned Submissions**.
-- **View Submission Tasks**: adds the **Tasks** section, with the ability to assign and complete tasks and to approve or reject validations. It includes **List Assigned Submissions**.
+- **View Submission Tasks**: adds the **Tasks** section, with the ability to complete tasks and to approve or reject validations. It includes **List Assigned Submissions**.
 - **View Full Submission**: adds the remaining sections, **Fields**, **Documents**, **Signatures**, **Identity Verification**, **Validations** and **Activity**. It includes **View Submission Tasks**.
 
 When you check a permission, the platform also checks the ones that permission includes. The sections a role cannot see do not appear in the submission menu.
 
-The action permissions build on those tiers: **Edit Submissions** requires **View Full Submission**; **Assign Submissions** requires **List All Submissions**; **Delete Submissions** and **Complete Submissions** require **List Assigned Submissions**.
+A submission is assigned to a team member when any of these conditions is met:
+
+- The submission is assigned to them or to one of their groups.
+- Any of its tasks, of any type, is assigned to them or to one of their groups, even if it is already completed.
+- The flow is at a task configured for them or for one of their groups, and in that submission the task was not assigned to someone else.
+
+Being the configured assignee of a task the flow has not reached yet does not make the submission visible. If a task is reassigned, the new assignee starts seeing the submission and the previous one stops seeing it, unless they have another assignment in it.
+
+The action permissions build on those tiers: **Edit Submissions** requires **View Full Submission**; **Assign Submissions** requires **List All Submissions**; **Assign Tasks** requires **View Submission Tasks**; **Delete Submissions** and **Complete Submissions** require **List Assigned Submissions**.
+
+**Assign Submissions** assigns the whole submission. **Assign Tasks** lets you assign, reassign or unassign a specific task, from the task view or through the [administration API](/en/platform/core/api.html). The **Full admin** and the members with **Manage Customers** can reassign tasks without this permission.
 
 :::tip Tip
 **Start Submissions** is independent from the visibility permissions: a role can create submissions on behalf of a user without seeing the full list or the detail.
@@ -864,6 +875,38 @@ The action permissions build on those tiers: **Edit Submissions** requires **Vie
 :::warning Attention
 The roles you already had keep the access they had: those that saw the full detail keep **View Full Submission**, and those that had **Start Submissions** also keep **Assign Submissions** and **List All Submissions**. The separate tiers apply when you edit the role.
 :::
+
+:::warning Changes since version 10.2.2
+- **View Submission Tasks** no longer allows assigning tasks; that requires **Assign Tasks**. Existing **Realm Admin** roles that have **View Submission Tasks** receive it when upgrading to this version, and in new accounts that role already includes it. No other existing role receives it: add it to the roles that must assign tasks.
+- Through the administration API, a role with **List Assigned Submissions** and without **List All Submissions** receives a not found error when requesting the detail, the tasks or the invitations of a submission that is not in its list.
+:::
+
+##### View the work of a team
+
+With **List Group Submissions**, a supervisor sees the work of their team without seeing every submission of the realm. The team is built with the account [groups](/en/platform/core/roles.html#groups):
+
+1. Create a group with the supervisor and the team agents.
+1. Create a realm role with **List Group Submissions** and the other permissions the supervisor needs, for example **View Full Submission**.
+1. Assign that role to the supervisor in the realm.
+
+Besides their assigned submissions, the supervisor sees the submissions and tasks individually assigned to the members of their groups:
+
+- The ones assigned to a member chosen from one of the supervisor's groups. The supervisor keeps seeing them even if the member leaves that group, as long as they are still assigned to that member.
+- The ones assigned directly to a member, with no group, as long as that member shares at least one group with the supervisor.
+
+The supervisor does not see:
+
+- The ones assigned to a member chosen from a group the supervisor does not belong to.
+- The ones assigned to a whole group the supervisor does not belong to.
+- The work of the teams of other supervisors, even if they supervise those supervisors. The hierarchy has a single level.
+
+Consider the following:
+
+- Group membership is evaluated when querying: if you add someone to a group or remove them from it, the change is reflected immediately.
+- Groups belong to the account and roles to each realm. A group works as a team only in the realms where the supervisor's role has the permission.
+- The permission only widens which submissions the supervisor sees. What they can do with them depends on the other permissions of their role, and the actions reserved to the assignee remain so. For example, if the origination is closed manually by the assignee, the supervisor cannot close the submission of an agent of their team.
+- The supervisor does not receive emails nor see in **My tasks** the tasks assigned to their team.
+- The **Assigned** filter of the list and the **Assignees** view show the supervisor and the members of their groups. A member who left the group does not appear, even if the supervisor still sees the submissions assigned to them from that group. Each member's metrics include submissions assigned from other groups, which the supervisor cannot open.
 
 #### Search submissions
 
@@ -921,7 +964,7 @@ Neither key allows partial matches, unlike the rest of the search:
 If you paste a uuid into the box without the key, the search treats it as free text and only finds the submission with that uuid, not the submissions of the user with that uuid. For the latter you have to type `uuid=`.
 
 :::tip Results update
-Recent changes to a submission may take a few seconds to be reflected in the search results. Changes to the user's data, the values of their custom fields, and segments are reflected in a deferred manner.
+Recent changes to a submission may take a few seconds to be reflected in the search results. Changes to the user's data, the values of their custom fields, and segments are reflected in a deferred manner. If you publish a version of the origination that changes the configured assignee of a task in the flow, the search may keep applying the previous assignee to the in-progress submissions that are at that task, until each one changes again. The list without search and the access to the detail apply the new assignee once the publication finishes moving the in-progress submissions to the new version.
 :::
 
 #### Filter submissions
@@ -930,7 +973,7 @@ In addition to the search, you can narrow down the submission list with the foll
 
 - **Date range**: Filters by the creation date of the submission.
 - **Status**: Filters by the current status of the submission: **Not started**, **Pending**, **Completed**, or **Canceled**.
-- **Assigned**: Shows the submissions assigned to the selected administrator.
+- **Assigned**: Shows the submissions assigned to the selected administrator. If your role only lists assigned submissions, you can choose yourself and, with **List Group Submissions**, the members of your groups.
 - **Segment**: Shows the submissions of users who belong to the selected [segment](/en/platform/customers/segments.html).
 
 #### Assign submission
@@ -983,6 +1026,8 @@ If **Account Activation** is set to **Invitation only**, the new user you invite
 In the assignees view, you can monitor and manage the administrators responsible for the submissions within a realm. This view facilitates the tracking of performance and workload of administrators. You can filter the assigned submissions by date ranges.
 
 By selecting an administrator, you will be able to see all the submissions assigned to them and their corresponding status.
+
+If your role only lists assigned submissions, the view only shows your metrics and, with **List Group Submissions**, also those of the members of your groups.
 
 ## Create an Origination Page
 

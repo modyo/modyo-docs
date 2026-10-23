@@ -55,6 +55,8 @@ In addition, from the “Groups” section in each team member's profile, you ca
 All users who belong to a group will have the roles of the group. In case a particular role is individually assigned to a team member, the role with the most privileges takes precedence.
 :::
 
+In Customers, groups also define work teams: with the **List Group Submissions** permission, a supervisor sees the origination submissions assigned to the members of their groups. See [View the work of a team](/en/platform/customers/origination.html#view-the-work-of-a-team).
+
 ### Create a group
 
 To create a group, follow these steps:
