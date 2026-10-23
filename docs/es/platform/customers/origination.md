@@ -200,7 +200,7 @@ Al configurar la tarea, puedes definir un **Asignado**: un administrador o un gr
 
 Los administradores asignados reciben un correo cuando una validación queda pendiente y también pueden revisarla desde la vista [**Mis tareas**](/es/platform/core/my-tasks.html) del menú principal, filtrando por el tipo de tarea **Revisión de validación**. El usuario recibe una notificación interna cuando su tarea es aprobada o rechazada.
 
-En una respuesta específica, puedes reasignar la validación desde la pestaña **Validaciones**, una vez que el usuario haya completado las tareas a validar. Reasignarla requiere el permiso **(Re)asignar Tareas**.
+En una respuesta específica, puedes reasignar la validación desde la pestaña **Validaciones**, una vez que el usuario haya completado las tareas a validar. Reasignarla requiere el permiso **Asignar Tareas**.
 
 ### Firma
 
@@ -628,7 +628,7 @@ Cada tarea del flujo tiene la opción **Asignado a**, que define quién la respo
 - **Usuario**: La tarea la responde el usuario final en la página de originación.
 - **Agente**: La tarea la responde un administrador desde el admin. Las tareas de **Validación** y **Revisión pendiente** son siempre de agente; las tareas **Input** y **Snippet de código** pueden configurarse en cualquiera de los dos modos.
 
-Cuando el flujo llega a una tarea de agente, los administradores asignados reciben un correo con el enlace directo a la tarea y también la ven en la vista [**Mis tareas**](/es/platform/core/my-tasks.html). El asignado efectivo se resuelve en este orden: el asignado de la respuesta a la tarea, el asignado configurado en la tarea y, en su defecto, el asignado general de la respuesta. Con el permiso **(Re)asignar Tareas** puedes reasignar una tarea específica desde la vista de la respuesta, lo que notifica al nuevo asignado.
+Cuando el flujo llega a una tarea de agente, los administradores asignados reciben un correo con el enlace directo a la tarea y también la ven en la vista [**Mis tareas**](/es/platform/core/my-tasks.html). El asignado efectivo se resuelve en este orden: el asignado de la respuesta a la tarea, el asignado configurado en la tarea y, en su defecto, el asignado general de la respuesta. Con el permiso **Asignar Tareas** puedes reasignar una tarea específica desde la vista de la respuesta, lo que notifica al nuevo asignado.
 
 Desde la vista de la respuesta, el agente abre la tarea y responde el formulario con la misma experiencia del sitio: lógica condicional en vivo, carga de archivos, grupos repetibles y snippets de código. Mientras la tarea espera la acción del agente, el usuario ve en la página de originación el texto configurado en **Mensaje de espera que ve el usuario**.
 
@@ -841,9 +841,9 @@ Una respuesta está asignada a un miembro del equipo cuando se cumple alguna de 
 
 Ser el asignado configurado de una tarea a la que el flujo todavía no llega no hace visible la respuesta. Si una tarea se reasigna, la respuesta pasa a verla el nuevo asignado y deja de verla el anterior, salvo que tenga otra asignación en ella.
 
-Los permisos de acción se apoyan en esos niveles: **Editar Respuestas** requiere **Ver Respuesta Completa**; **Asignar Respuestas** requiere **Listar Todas las Respuestas**; **(Re)asignar Tareas** requiere **Ver Tareas de la Respuesta**; **Eliminar Respuestas** y **Completar Respuestas** requieren **Listar Respuestas Asignadas**.
+Los permisos de acción se apoyan en esos niveles: **Editar Respuestas** requiere **Ver Respuesta Completa**; **Asignar Respuestas** requiere **Listar Todas las Respuestas**; **Asignar Tareas** requiere **Ver Tareas de la Respuesta**; **Eliminar Respuestas** y **Completar Respuestas** requieren **Listar Respuestas Asignadas**.
 
-**Asignar Respuestas** asigna la respuesta completa. **(Re)asignar Tareas** permite asignar, reasignar o quitar la asignación de una tarea específica, desde la vista de la tarea o por la [API de administración](/es/platform/core/api.html). El **Full admin** y los miembros con **Gestionar Clientes** pueden reasignar tareas sin este permiso.
+**Asignar Respuestas** asigna la respuesta completa. **Asignar Tareas** permite asignar, reasignar o quitar la asignación de una tarea específica, desde la vista de la tarea o por la [API de administración](/es/platform/core/api.html). El **Full admin** y los miembros con **Gestionar Clientes** pueden reasignar tareas sin este permiso.
 
 :::tip Tip
 **Iniciar Respuestas** es independiente de los permisos de visibilidad: un rol puede crear respuestas en nombre de un usuario sin ver el listado completo ni el detalle.
@@ -854,7 +854,7 @@ Los roles que ya tenías conservan el acceso que tenían: los que veían el deta
 :::
 
 :::warning Cambios desde la versión 10.2.2
-- **Ver Tareas de la Respuesta** ya no permite asignar tareas; para eso se necesita **(Re)asignar Tareas**. Ningún rol existente lo recibe automáticamente, tampoco **Realm Admin**: agrégalo a los roles que deban reasignar tareas. En las cuentas creadas desde esta versión, el rol **Realm Admin** ya lo incluye.
+- **Ver Tareas de la Respuesta** ya no permite asignar tareas; para eso se necesita **Asignar Tareas**. Los roles **Realm Admin** existentes que tienen **Ver Tareas de la Respuesta** lo reciben al actualizar a esta versión, y en las cuentas nuevas ese rol ya lo incluye. Ningún otro rol existente lo recibe: agrégalo a los roles que deban asignar tareas.
 - Por la API de administración, un rol con **Listar Respuestas Asignadas** y sin **Listar Todas las Respuestas** recibe un error de no encontrado al pedir el detalle, las tareas o las invitaciones de una respuesta que no está en su listado.
 :::
 
