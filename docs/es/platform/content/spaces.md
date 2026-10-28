@@ -56,7 +56,7 @@ En esta sección puedes:
 Al guardar esta opción, se reindexan todas las entradas del espacio. Los cambios se reflejarán una vez el proceso haya concluido.
 :::
 
-- **Modificar el reino del espacio**: Al cambiar el reino de usuarios, perderás todas las configuraciones de privacidad.
+- **Modificar el reino del espacio**: Al cambiar el reino de usuarios, perderás todas las configuraciones de privacidad. Puedes elegir un reino o uno de sus [stages](/es/platform/customers/realms.html#stages). Mientras el espacio tenga seleccionado un reino o uno de sus stages, ese reino no se puede eliminar.
 - **Modificar el identificador del espacio**: El identificador o UID del espacio es el atributo con el cual accedes desde la API pública de contenido, el SDK de Javascript y el SDK de Liquid. Asegúrate de que sea único y sin tildes ni caracteres especiales, ya que será usado en las URL para acceder al contenido.
 - **Eliminar el espacio**: Elimina definitivamente el espacio y todos sus elementos.
 :::danger Peligro

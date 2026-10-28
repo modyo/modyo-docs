@@ -34,7 +34,7 @@ Before enabling the option to disable Modyo credentials in the realm, make sure 
 - **Default Avatar Image**: Image shown on the avatar of users who do not have a custom image.
 - **Soft login**: Enables logging in with a one-time code (OTP) instead of a password, and defines its validity, the wait time to resend it, and the channels used to send it. See the details in [Soft login](#soft-login).
 - **Signup form**: Here you can enable or disable different attributes in the registration form, such as the second surname, email confirmation, user avatar, date of birth, gender, and phone number.
-- **Delete realm**: Deletes the realm. This process is performed in the background, so you may not see the realm disappear immediately after executing the action. To confirm the deletion, you must enter the full name of the realm.
+- **Delete realm**: Deletes the realm and all its stages. This process is performed in the background, so you may not see the realm disappear immediately after executing the action. To confirm the deletion, you must enter the full name of the realm. It only shows up if you have the **Admin General** permission, and you can't use it while a web app or space has the realm or any of its stages selected. In a stage, the button is called **Delete stage** and asks for the stage's name. See the details in [Delete a Realm](/en/platform/customers/realms.html#delete-a-realm) and [Delete a stage](/en/platform/customers/realms.html#delete-a-stage).
 
 
 ### Soft login
@@ -373,9 +373,17 @@ The platform allows the creation of Webhooks for specific events related to real
 
 For more information on which events are available and how to create realm webhooks, please go to [Webhooks](/en/platform/core/webhooks.html).
 
+### Stages
+
+In this section you create the realm's stages: copies of its configuration where you can try out changes without affecting its users, and that you later sync with another stage of the same realm. The list shows each stage with its **Original stage** and its creation date, and marks with **Cloning** or **Failed** the ones that are still being created or whose cloning failed.
+
+To see this section you need the **Admin Stages** permission. See how to create, sync, and delete stages in [Stages](/en/platform/customers/realms.html#stages).
+
 ### Team Members
 
 Modyo allows you to select the team members that work in each realm, and thus control access to the different aspects of the realms.
+
+To add, modify, or remove members you need the **Admin Team Members** permission. If the realm has [stages](/en/platform/customers/realms.html#stages), each stage has its own team: creating a stage copies the members of the source stage and, from then on, the changes in one stage don't affect the others.
 
 To add a member to a realm, follow these steps:
 1. Click the **Add Member** button at the top right.
@@ -391,7 +399,7 @@ To modify the role of a team member:
 You can choose between two roles:
 
 - **Realm User**: Can add users, create, modify, and review campaigns, forms, and segments.
-- **Realm Admin**: Has access to all the settings and sections of the realms, can add and remove users and team members. Can also delete the realm.
+- **Realm Admin**: Has access to all the settings and sections of the realms, can add and remove users and team members. Can also delete the realm, and create and sync its [stages](/en/platform/customers/realms.html#stages).
 
 To remove an administrator from the realm, check the box to the left of their name and click the **Delete** button at the bottom.
 
