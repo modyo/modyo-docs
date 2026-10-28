@@ -54,7 +54,7 @@ Este resumen te permite administrar eficientemente cada reino y entender cómo s
 
 ## Stages
 
-Los stages te permiten probar cambios en la configuración de un reino sin afectar a sus usuarios. Por ejemplo, puedes configurar un proveedor de identidad de prueba, ajustar un formulario o cambiar una originación en un stage y, cuando el cambio esté listo, llevarlo al reino principal.
+Los stages te permiten probar cambios en la configuración de un reino sin afectar a sus usuarios. Por ejemplo, puedes ajustar un formulario o cambiar una originación en un stage y, cuando el cambio esté listo, llevarlo al reino principal. También puedes probar un proveedor de identidad en un stage sin tocar el del reino principal, pero ese cambio no se lleva a otro stage: los proveedores de identidad no se sincronizan, así que cada stage configura los suyos.
 
 Funcionan como los [stages de las aplicaciones web](/es/platform/channels/sites.html#stages): creas un stage a partir de otro, trabajas en él de forma aislada y, cuando quieras, sincronizas los cambios eligiendo qué elementos llevar.
 
@@ -204,7 +204,7 @@ No puedes eliminar un stage mientras alguna aplicación web o espacio lo tenga s
 - **Administrar Sincronizaciones**: permite sincronizar e incluye **Ver Sincronizaciones**.
 - Para eliminar un stage necesitas el permiso **Administración General** en ese stage, el mismo con el que se elimina un reino.
 
-Los roles predeterminados **Realm Admin** y **Realm Viewer** incluyen estos permisos en las cuentas creadas a partir de la versión 10.2.2. En las cuentas anteriores, los roles que tienen **Administrar Configuración de Reino** reciben **Administrar Stages**, pero **Ver Sincronizaciones** y **Administrar Sincronizaciones** hay que agregarlos a mano en **Configuración** > [Roles](/es/platform/core/roles.html).
+En las cuentas creadas a partir de la versión 10.2.2, el rol predeterminado **Realm Admin** incluye **Administrar Stages** y **Administrar Sincronizaciones**, y **Realm Viewer** incluye solo **Ver Sincronizaciones**, así que puede revisar las diferencias pero no crear, sincronizar ni eliminar stages. En las cuentas anteriores, los roles que tienen **Administrar Configuración de Reino** reciben **Administrar Stages**, pero **Ver Sincronizaciones** y **Administrar Sincronizaciones** hay que agregarlos a mano en **Configuración** > [Roles](/es/platform/core/roles.html).
 
 ## Eliminar un Reino
 

@@ -54,7 +54,7 @@ This overview allows you to efficiently manage each realm and understand how it 
 
 ## Stages
 
-Stages let you try out changes to a realm's configuration without affecting its users. For example, you can set up a test identity provider, adjust a form, or change an origination in a stage and, once the change is ready, take it to the main realm.
+Stages let you try out changes to a realm's configuration without affecting its users. For example, you can adjust a form or change an origination in a stage and, once the change is ready, take it to the main realm. You can also try out an identity provider in a stage without touching the main realm's, but that change isn't taken to another stage: identity providers aren't synced, so each stage sets up its own.
 
 They work like [web app stages](/en/platform/channels/sites.html#stages): you create a stage from another one, work on it in isolation and, whenever you want, sync the changes by choosing which elements to take.
 
@@ -204,7 +204,7 @@ You can't delete a stage while a web app or space has it selected as its realm: 
 - **Admin Synchronizations**: lets you sync and includes **View Synchronizations**.
 - To delete a stage you need the **Admin General** permission in that stage, the same one used to delete a realm.
 
-The **Realm Admin** and **Realm Viewer** default roles include these permissions in accounts created starting with version 10.2.2. In earlier accounts, the roles that have **Admin Settings Realm** get **Admin Stages**, but **View Synchronizations** and **Admin Synchronizations** must be added manually in **Settings** > [Roles](/en/platform/core/roles.html).
+In accounts created starting with version 10.2.2, the **Realm Admin** default role includes **Admin Stages** and **Admin Synchronizations**, and **Realm Viewer** includes only **View Synchronizations**, so it can review the differences but can't create, sync, or delete stages. In earlier accounts, the roles that have **Admin Settings Realm** get **Admin Stages**, but **View Synchronizations** and **Admin Synchronizations** must be added manually in **Settings** > [Roles](/en/platform/core/roles.html).
 
 ## Delete a Realm
 
