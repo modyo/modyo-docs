@@ -637,6 +637,8 @@ Opciones adicionales según el tipo de tarea:
 - **Desactivar el completado manual** (Revisión pendiente): Oculta el botón **Completar** para que la tarea no pueda completarse manualmente desde el admin. Los administradores con el permiso **Cambiar estado de la Respuesta de una Tarea** pueden completarla de todas formas.
 - **Permitir same-origin** (Snippet de código): Otorga al iframe de la tarea acceso al origen del admin (sesión y cookies), desactivando el aislamiento del sandbox. Actívalo solo para snippets de confianza.
 
+También puedes asignar una tarea de agente a un agente o a un grupo según las respuestas del usuario, con la acción **Asignar** de la [lógica condicional](#asignar-tareas-con-logica-condicional).
+
 #### Verificación de agentes para servicios externos
 
 Cuando un agente responde una tarea de Snippet de código, tu código puede obtener una credencial de corta vida (5 minutos) para que un servicio externo verifique que quien lo invoca es un agente autorizado sobre esa tarea y respuesta:
@@ -648,11 +650,12 @@ Puedes conocer el detalle de los endpoints en la documentación Swagger de la [A
 
 ### Lógica Condicional
 
-La lógica condicional te permite crear flujos de trabajo más dinámicos e inteligentes. Con esta funcionalidad, puedes definir reglas para mostrar u ocultar **Pasos**, **Tareas** y **campos de tareas Input** basándote en las respuestas proporcionadas por los usuarios o en datos existentes dentro de la respuesta. Esto te permite personalizar la experiencia del usuario, presentando solo la información relevante en cada etapa del proceso y simplificando o bifurcando la interacción. La lógica condicional te ofrece la flexibilidad de:
+La lógica condicional te permite crear flujos de trabajo más dinámicos e inteligentes. Con esta funcionalidad, puedes definir reglas para mostrar u ocultar **Pasos**, **Tareas** y **campos de tareas Input**, y para asignar tareas de agente, basándote en las respuestas proporcionadas por los usuarios o en datos existentes dentro de la respuesta. Esto te permite personalizar la experiencia del usuario, presentando solo la información relevante en cada etapa del proceso y simplificando o bifurcando la interacción. La lógica condicional te ofrece la flexibilidad de:
 
 - **Ocultar o mostrar pasos completos:** Dirige a los usuarios a través de diferentes caminos dentro del flujo de originación según sus respuestas previas.
 - **Ocultar o mostrar tareas individuales:** Dentro de un paso, puedes mostrar u ocultar tareas específicas. Esto es útil para solicitar información adicional solo cuando es necesaria.
 - **Ocultar o mostrar campos de tareas Input:** Dentro de una tarea de tipo Input, puedes mostrar u ocultar campos específicos. Esto te permite omitir o solicitar datos de acuerdo a las respuestas que proporciona el usuario. 
+- **Asignar tareas de agente:** Según las respuestas del usuario, asigna una tarea de agente a un agente o a un grupo específico. Revisa el detalle en [Asignar tareas con lógica condicional](#asignar-tareas-con-logica-condicional).
 
 #### Configurar Lógica Condicional
 
@@ -660,16 +663,54 @@ Para configurar la lógica condicional, sigue estos pasos:
 
 1. **Entra en el editor:** En la vista Build de una originación, presiona el botón de **Lógica condicional**.
 2. **Edita la visibilidad de los elementos:** Por defecto, todos los pasos, tareas y campos estarán visibles. En la sección **Estructura**, puedes marcar como no visibles los elementos que quieras presionando el ícono del ojo.
-3. **Define reglas:** En la sección **Reglas**, puedes definir las condiciones que determinarán si un elemento se muestra u oculta. Las reglas se componen de: (1) una o más condiciones evaluadas mediante  operadores **AND** y **OR** y (2) una acción a ejecutar cuando las condiciones se cumplan.
+3. **Define reglas:** En la sección **Reglas**, puedes definir las condiciones que determinarán si un elemento se muestra u oculta. Las reglas se componen de: (1) una o más condiciones evaluadas mediante  operadores **AND** y **OR** y (2) una o más acciones a ejecutar cuando las condiciones se cumplan.
    1. **Agrega una regla**: Presiona el botón **Añadir**.
    2. **Define las condiciones:** Las condiciones pueden estar basadas en:
       * **Respuestas a campos Input:** Compara la respuesta proporcionada por el usuario en un campo específico con un valor determinado. Puedes utilizar operadores como "es igual a", "no es igual a", "contiene", "es mayor que", "es menor que", etc.
       * **Completitud de un Paso o Tarea:** Evalúa si un paso o tarea fue completada.
-   3. **Define la acción:** Selecciona la acción y el elemento sobre el cual se ejecutará cuando la regla se cumpla. Las acciones disponibles son **Mostrar** y **Ocultar**.
+   3. **Define las acciones:** En **Entonces**, selecciona la acción y el elemento sobre el cual se ejecutará cuando la regla se cumpla. Las acciones disponibles son **Mostrar**, **Ocultar** y **Asignar**. Para agregar otra acción a la misma regla, presiona **+ Agregar acción**. Usa los íconos **Subir** y **Bajar** para cambiar el orden de una acción y **Quitar acción** para eliminarla.
 4. **Guarda los cambios:** Una vez que hayas definido tus reglas, guarda los cambios.
+
+Cuando se cumplen las condiciones de una regla, se ejecutan todas sus acciones, en orden. Si dos acciones se contradicen, por ejemplo **Mostrar** y **Ocultar** sobre el mismo elemento, prevalece la última, tanto dentro de una misma regla como entre reglas distintas. Las reglas que ya tenías, con una sola acción, siguen funcionando igual.
+
+:::warning Atención
+Como prevalece la última acción, cambiar el orden de las reglas o de sus acciones puede cambiar qué elementos ve el usuario o a quién se asigna una tarea.
+:::
 
 :::tip Experiencia de usuario
 Considera cómo la lógica condicional puede afectar la experiencia del usuario y asegúrate de que el flujo pueda ser completado con facilidad. 
+:::
+
+#### Asignar tareas con lógica condicional
+
+La acción **Asignar** asigna una tarea de agente a un agente o a un grupo cuando se cumplen las condiciones de la regla. Te sirve, por ejemplo, para que una tarea llegue a un equipo distinto según el producto que eligió el usuario.
+
+Para configurarla en una regla:
+
+1. En **Entonces**, elige **Asignar**.
+2. Elige la tarea. Solo puedes elegir tareas en modo agente: las de **Validación** y **Revisión pendiente**, y las **Input** y **Snippet de código** que tienen **Asignado a** en **Agente**. Las demás aparecen deshabilitadas.
+3. En **Selecciona un agente o grupo**, elige un agente, un grupo o un agente dentro de un grupo.
+
+Solo puedes elegir agentes activos que puedan ver las tareas de las respuestas del reino, por ejemplo con el permiso **Ver Tareas de la Respuesta**. Si eliges un agente dentro de un grupo, además tiene que pertenecer a ese grupo. No puedes guardar una acción **Asignar** sin tarea o sin agente o grupo: el editor muestra el aviso "Selecciona una tarea y un agente o grupo para guardar esta acción."
+
+Si después configuras la tarea en modo **Usuario**, la acción muestra el aviso "Esta tarea no está en modo agente. La acción no tendrá efecto hasta que la tarea se configure en modo agente." y la plataforma la ignora mientras la tarea siga en ese modo.
+
+Así se aplica la asignación:
+
+- La regla asigna la tarea cuando sus condiciones pasan de no cumplirse a cumplirse. Si después dejan de cumplirse, la tarea conserva la asignación, y si vuelven a cumplirse, la regla la asigna otra vez.
+- Si varias acciones **Asignar** apuntan a la misma tarea, prevalece la última.
+- Si el agente o el grupo de la acción ya no es válido, porque el agente está inactivo o suspendido, perdió el permiso, ya no pertenece al grupo o fue eliminado, la plataforma ignora esa acción y aplica la acción **Asignar** válida anterior. Si no queda ninguna, la tarea vuelve a la asignación por defecto de [Tareas respondidas por agentes](#tareas-respondidas-por-agentes).
+- Una reasignación manual hecha después de que la regla asignó la tarea se mantiene. Si la regla vuelve a dispararse, su asignación reemplaza a la manual.
+- La regla puede asignar una tarea a la que el usuario todavía no llega. La respuesta queda visible para el agente o el grupo desde que se dispara la regla, y la asignación se mantiene cuando el flujo llega a la tarea.
+- El correo al asignado se envía cuando el flujo llega a la tarea, no cuando se dispara la regla. Si la tarea ya estaba en curso y la regla la reasigna, el nuevo asignado recibe el correo igual que en una reasignación manual.
+- Una tarea asignada por una regla se comporta como cualquier tarea de agente: el usuario no puede avanzar hasta que el agente la complete. Si el usuario retoma el flujo, vuelve a la primera tarea que no completó.
+- La regla no cambia tareas ya completadas ni tareas que la lógica condicional le oculta al usuario. En los flujos multiusuario, la regla se evalúa con las respuestas de cada participante y solo asigna las tareas que le corresponden a ese participante.
+- Editar una regla no cambia las respuestas en las que ya se ejecutó: conservan la asignación que hizo, y la configuración nueva se aplica cuando la regla se dispare de nuevo.
+- La asignación automática que ocurre al llegar a la tarea no reemplaza la que hizo una regla.
+- Las asignaciones que hace una regla no quedan en los logs de actividad.
+
+:::warning Atención
+Si consumes la API de administración de originaciones, ten en cuenta que cada regla ahora tiene `targets`, una lista ordenada de acciones, en lugar de `target`. Al guardar, la API sigue aceptando `target`, pero siempre responde con `targets`, y una originación sin reglas responde `rules: []`. La acción **Asignar** se envía como un target con `action: assign`. Revisa el detalle en la documentación Swagger de la [API](/es/platform/core/api.html).
 :::
 
 ### Editar configuración de la originación

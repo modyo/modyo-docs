@@ -636,6 +636,8 @@ Additional options depending on the task type:
 - **Disable manual completion** (Pending review): Hides the **Complete** button so the task cannot be completed manually from the admin. Administrators with the **Change Status of Task Response** permission can still complete it.
 - **Allow same-origin** (Code snippet): Grants the task iframe access to the admin origin (session and cookies), disabling the sandbox isolation. Enable it only for trusted snippets.
 
+You can also assign an agent task to an agent or a group based on the user's answers, with the **Assign** action of [conditional logic](#assign-tasks-with-conditional-logic).
+
 #### Agent verification for external services
 
 When an agent answers a Code snippet task, your code can obtain a short-lived credential (5 minutes) so an external service can verify that the caller is an agent authorized for that task and submission:
@@ -647,11 +649,12 @@ You can find the endpoint details in the [API](/en/platform/core/api.html) Swagg
 
 ### Conditional Logic
 
-Conditional logic allows you to create more dynamic and intelligent workflows. With this functionality, you can define rules for showing or hiding **Steps**, **Tasks**, and **Input task fields** based on answers provided by users or on existing data within the submission. This allows you to personalize the user experience, presenting only relevant information at each stage of the process and simplifying or bifurcating the interaction. Conditional logic gives you the flexibility to:
+Conditional logic allows you to create more dynamic and intelligent workflows. With this functionality, you can define rules for showing or hiding **Steps**, **Tasks**, and **Input task fields**, and for assigning agent tasks, based on answers provided by users or on existing data within the submission. This allows you to personalize the user experience, presenting only relevant information at each stage of the process and simplifying or bifurcating the interaction. Conditional logic gives you the flexibility to:
 
 - **Hide or show complete steps:** Guides users through different paths within the origination flow based on their previous answers.
 - **Hide or show individual tasks:** Within a step, you can show or hide specific tasks. This is useful for requesting additional information only when needed.
 - **Hide or show Input task fields:** Within an Input task, you can show or hide specific fields. This allows you to omit or request data based on the answers provided by the user.
+- **Assign agent tasks:** Based on the user's answers, assign an agent task to a specific agent or group. See the details in [Assign tasks with conditional logic](#assign-tasks-with-conditional-logic).
 
 #### Configure Conditional Logic
 
@@ -659,16 +662,54 @@ To set up conditional logic, follow these steps:
 
 1. **Enter the editor:** In the Build view of an origination, press the **Conditional logic** button.
 2. **Edit the visibility of items:** By default, all steps, tasks, and fields will be visible. In the **Structure** section, you can mark as not visible the elements you want by pressing the eye icon.
-3. **Define rules:** In the **Rules** section, you can define the conditions that will determine if an element is shown or hidden. The rules are composed of: (1) one or more conditions evaluated using **AND** and **OR** operators and (2) an action to be executed when the conditions are met.
+3. **Define rules:** In the **Rules** section, you can define the conditions that will determine if an element is shown or hidden. The rules are composed of: (1) one or more conditions evaluated using **AND** and **OR** operators and (2) one or more actions to be executed when the conditions are met.
    1. **Add a rule**: Press the **Add** button.
    2. **Define the conditions:** Conditions can be based on:
       * **Responses to Input fields:** Compares the response provided by the user in a specific field with a given value. You can use operators such as "is equal to", "is not equal to", "contains", "is greater than", "is less than", etc.
       * **Completeness of a Step or Task:** Evaluates if a step or task was completed.
-   3. **Define the action:** Select the action and the element on which it will be executed when the rule is met. The available actions are **Show** and **Hide**.
+   3. **Define the actions:** In **Then**, select the action and the element on which it will be executed when the rule is met. The available actions are **Show**, **Hide**, and **Assign**. To add another action to the same rule, press **+ Add action**. Use the **Move up** and **Move down** icons to change the order of an action and **Remove action** to delete it.
 4. **Save the changes:** Once you have defined your rules, save the changes.
+
+When a rule's conditions are met, all its actions run, in order. If two actions contradict each other, for example **Show** and **Hide** on the same element, the last one prevails, both within the same rule and across different rules. The rules you already had, with a single action, keep working the same way.
+
+:::warning Attention
+Since the last action prevails, changing the order of the rules or of their actions can change which elements the user sees or who a task is assigned to.
+:::
 
 :::tip User experience
 Consider how conditional logic can affect the user experience and ensure that the flow can be completed easily.
+:::
+
+#### Assign tasks with conditional logic
+
+The **Assign** action assigns an agent task to an agent or a group when the rule's conditions are met. It's useful, for example, to route a task to a different team depending on the product the user chose.
+
+To set it up in a rule:
+
+1. In **Then**, choose **Assign**.
+2. Choose the task. You can only choose tasks in agent mode: **Validation** and **Pending review** tasks, and the **Input** and **Code snippet** tasks whose **Assigned to** is set to **Agent**. The others show up disabled.
+3. In **Select an agent or group**, choose an agent, a group, or an agent within a group.
+
+You can only choose active agents who can view the realm's submission tasks, for example with the **View Submission Tasks** permission. If you choose an agent within a group, they also have to belong to that group. You can't save an **Assign** action without a task or without an agent or group: the editor shows the notice "Select a task and an agent or group to save this action."
+
+If you later set the task to **User** mode, the action shows the notice "This task is not in agent mode. This action has no effect until the task is set to agent mode." and the platform ignores it while the task stays in that mode.
+
+This is how the assignment is applied:
+
+- The rule assigns the task when its conditions go from not met to met. If they later stop being met, the task keeps the assignment, and if they're met again, the rule assigns it again.
+- If several **Assign** actions point to the same task, the last one prevails.
+- If the action's agent or group is no longer valid, because the agent is inactive or suspended, lost the permission, no longer belongs to the group, or was deleted, the platform ignores that action and applies the previous valid **Assign** action. If none is left, the task goes back to the default assignment described in [Tasks answered by agents](#tasks-answered-by-agents).
+- A manual reassignment made after the rule assigned the task is kept. If the rule fires again, its assignment replaces the manual one.
+- The rule can assign a task the user hasn't reached yet. The submission becomes visible to the agent or group as soon as the rule fires, and the assignment is kept when the flow reaches the task.
+- The email to the assignee is sent when the flow reaches the task, not when the rule fires. If the task was already in progress and the rule reassigns it, the new assignee gets the email just like in a manual reassignment.
+- A task assigned by a rule behaves like any other agent task: the user can't move forward until the agent completes it. If the user resumes the flow, they go back to the first task they didn't complete.
+- The rule doesn't change tasks that are already completed or tasks that conditional logic hides from the user. In multi-user flows, the rule is evaluated with each participant's answers and only assigns the tasks that belong to that participant.
+- Editing a rule doesn't change the submissions where it already ran: they keep the assignment it made, and the new configuration applies the next time the rule fires.
+- The automatic assignment that happens when the flow reaches the task doesn't replace the one made by a rule.
+- The assignments a rule makes aren't recorded in the activity logs.
+
+:::warning Attention
+If you consume the originations admin API, keep in mind that each rule now has `targets`, an ordered list of actions, instead of `target`. When saving, the API still accepts `target`, but it always responds with `targets`, and an origination without rules responds `rules: []`. The **Assign** action is sent as a target with `action: assign`. See the details in the [API](/en/platform/core/api.html) Swagger documentation.
 :::
 
 ### Edit Origination Settings
