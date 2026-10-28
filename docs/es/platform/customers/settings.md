@@ -599,7 +599,7 @@ Para ver esta sección necesitas el permiso agrupado **Ver Dominios**, y para mo
 Activa la casilla **Activar dominios personalizados** y completa los campos:
 
 - **Dominio primario**: Dominio en el que se sirve el reino. Escribe solo el dominio, sin ruta ni puerto: la pantalla ya agrega `https://`.
-- **Dominio alternativo 1 (opcional)** y **Dominio alternativo 2 (opcional)**: Dominios adicionales que redirigen siempre al dominio primario con un 301, conservando la ruta y los parámetros. A diferencia de las [aplicaciones web](/es/platform/channels/sites.html#dominios), no puedes elegir el tipo de redirección.
+- **Dominio alternativo 1 (opcional)** y **Dominio alternativo 2 (opcional)**: Dominios adicionales que redirigen siempre al dominio primario con un 301, conservando la ruta y los parámetros. La única excepción es la [API de Customers](/es/platform/customers/api.html), que en estos dominios responde 404, sin redirigir. A diferencia de las [aplicaciones web](/es/platform/channels/sites.html#dominios), no puedes elegir el tipo de redirección.
 
 Bajo la casilla, la pantalla indica a qué destino debe apuntar el registro CNAME del dominio en tu DNS. Al terminar, haz click en **Guardar**.
 
@@ -615,19 +615,21 @@ Ten en cuenta estas reglas:
 
 - Ningún otro reino de la plataforma puede usar el mismo dominio, y los tres dominios de un reino deben ser distintos entre sí.
 - No puede ser el dominio de la plataforma ni el de una cuenta.
-- Puede ser el mismo dominio de una aplicación web de tu cuenta: las rutas `/realms` las responde el reino y el resto, la aplicación web. No puede ser el dominio de una aplicación web de otra cuenta. Por eso `realms` es una [ruta reservada](/es/platform/channels/pages.html) para las páginas.
+- Puede ser el mismo dominio de una aplicación web de tu cuenta: las rutas `/realms` y `/api/customers/realms` las responde el reino y el resto, la aplicación web. No puede ser el dominio de una aplicación web de otra cuenta. Por eso `realms` es una [ruta reservada](/es/platform/channels/pages.html) para las páginas.
 - No está disponible en cuentas de prueba, y en entornos no productivos se guarda pero no se aplica: la pantalla lo indica con un aviso.
 
 #### Qué cambia al activar el dominio
 
 - Las rutas del reino en el dominio de tu cuenta redirigen al dominio personalizado, sin el identificador y conservando los parámetros, como `site` o `return_to`.
-- En el dominio personalizado, una ruta `/realms` que no corresponde a ninguna vista del reino responde 404, aunque el dominio también sirva una aplicación web.
+- En el dominio personalizado, una ruta `/realms` o `/api/customers/realms` que no corresponde a ninguna vista ni endpoint del reino responde 404, aunque el dominio también sirva una aplicación web.
 - Los correos del reino (activación, recuperación de contraseña, confirmación, invitaciones, campañas y desuscripción), las URLs de los [objetos Liquid](/es/platform/channels/liquid-markup/objects.html) del reino y del usuario, **Ir al reino**, la impersonación y los endpoints que muestra **Cliente OAuth** usan el dominio del reino. Los enlaces de desuscripción enviados antes del cambio siguen funcionando.
 - El inicio de sesión desde tus aplicaciones web, y el cierre de sesión, el perfil y el registro que se abren desde ellas, se hacen en el dominio del reino.
-- La [API de Customers](/es/platform/customers/api.html) sigue respondiendo solo en el dominio de tu cuenta. Los endpoints de token y revocación de OAuth también siguen funcionando ahí.
+- La [API de Customers](/es/platform/customers/api.html) también responde en el dominio personalizado, con el identificador del reino en la ruta, por ejemplo `https://login.mibanco.com/api/customers/realms/my_realm/me`. En el dominio de tu cuenta sigue respondiendo igual, sin redirigir, y los endpoints de token y revocación de OAuth siguen funcionando ahí.
 
-:::warning Atención
-En el perfil servido en el dominio personalizado no funcionan la lista de actividad, marcar las notificaciones como leídas ni subir el avatar, porque esas acciones usan la API de Customers, que no responde en ese dominio.
+:::tip Notificaciones en tus aplicaciones web
+El template base de las aplicaciones web marca las notificaciones como leídas llamando a la API de Customers en el dominio del reino. Si la aplicación web está en otro dominio, por ejemplo el de tu cuenta, activa **Habilitar CORS** en la sección **Cross Origin Resource Sharing** de [Seguridad](#seguridad): las aplicaciones web asociadas al reino quedan permitidas sin que tengas que agregarlas como orígenes.
+
+Las aplicaciones web que ya existían conservan la llamada al dominio de tu cuenta, que sigue funcionando. Toman el cambio al restaurar sus [plantillas](/es/platform/channels/templates.html) con **Restaurar todo**.
 :::
 
 #### URLs de los proveedores de identidad
