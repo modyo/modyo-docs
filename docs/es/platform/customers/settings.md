@@ -34,7 +34,7 @@ Antes de habilitar la opción de deshabilitar las credenciales de Modyo en el re
 - **Imagen de Avatar por defecto**: Imagen que se muestra en el avatar de los usuarios que no tienen una imagen personalizada.
 - **Soft login**: Habilita el ingreso con un código de un solo uso (OTP) en lugar de contraseña, y define su validez, el tiempo de espera para reenviarlo y los canales por los que se envía. Revisa el detalle en [Soft login](#soft-login).
 - **Formulario de registro**: Aquí puedes habilitar o deshabilitar diferentes atributos en el formulario de registro, como el segundo apellido, confirmación de correo electrónico, avatar de usuario, fecha de nacimiento, género y número de teléfono.
-- **Eliminar reino**: Elimina el reino. Este proceso se realiza en segundo plano y es posible que no veas el reino desaparecer inmediatamente después de ejecutar la acción. Para confirmar la eliminación, debes ingresar el nombre completo del reino.
+- **Eliminar reino**: Elimina el reino y todos sus stages. Este proceso se realiza en segundo plano y es posible que no veas el reino desaparecer inmediatamente después de ejecutar la acción. Para confirmar la eliminación, debes ingresar el nombre completo del reino. Solo aparece si tienes el permiso **Administración General**, y no puedes usarlo mientras alguna aplicación web o espacio tenga seleccionado el reino o alguno de sus stages. En un stage, el botón se llama **Eliminar stage** y pide el nombre del stage. Revisa el detalle en [Eliminar un Reino](/es/platform/customers/realms.html#eliminar-un-reino) y [Eliminar un stage](/es/platform/customers/realms.html#eliminar-un-stage).
 
 
 ### Soft login
@@ -373,9 +373,17 @@ La plataforma permite la creación de Webhooks para ciertos eventos específicos
 
 Para más información sobre cuáles eventos y la creación de los webhooks de reino dirigirse a [Webhooks](/es/platform/core/webhooks.html).
 
+### Stages
+
+En esta sección creas los stages del reino: copias de su configuración en las que puedes probar cambios sin afectar a sus usuarios y que después sincronizas con otro stage del mismo reino. El listado muestra cada stage con su **Stage original** y su fecha de creación, y marca con **Clonando** o **Falló** los que todavía se están creando o cuyo clonado falló.
+
+Para ver esta sección necesitas el permiso **Administrar Stages**. Revisa cómo crear, sincronizar y eliminar stages en [Stages](/es/platform/customers/realms.html#stages).
+
 ### Miembros del equipo
 
 Modyo permite seleccionar los miembros del equipo que trabajan en cada reino y así controlar el acceso a los distintos aspectos del reino.
+
+Para agregar, modificar o quitar miembros necesitas el permiso **Administrar Miembros del Equipo**. Si el reino tiene [stages](/es/platform/customers/realms.html#stages), cada stage tiene su propio equipo: al crear un stage se copian los miembros del stage de origen y, desde ahí, los cambios en un stage no afectan a los demás.
 
 Para añadir un miembro al reino, sigue estos pasos:
 1. Haz click en el botón **Agregar miembro** en la parte superior derecha.
@@ -391,7 +399,7 @@ Para modificar el rol de un miembro del equipo:
 Puedes elegir entre dos roles:
 
 - **Realm User**: Puede añadir usuarios, crear, modificar y enviar a revisión campañas, formularios y segmentos.
-- **Realm Admin**:  Tiene acceso a todas las configuraciones y secciones del reino, puede añadir y eliminar usuarios y miembros del equipo.  Puede también eliminar el reino.
+- **Realm Admin**:  Tiene acceso a todas las configuraciones y secciones del reino, puede añadir y eliminar usuarios y miembros del equipo.  Puede también eliminar el reino, y crear y sincronizar sus [stages](/es/platform/customers/realms.html#stages).
 
 Para eliminar a un administrador del reino, selecciona la casilla a la izquierda de su nombre y haz click en el botón **Borrar** en la parte inferior.
 

@@ -109,8 +109,12 @@ The most important user will have the Default Admin or Administrator role. This 
 #### Roles by realm
 
 - **Realm User** (`realm_user`): This role can add users, create, modify, and submit campaigns, forms, and segments for review.
-- **Realm Admin** (`realm_admin`): Can access all the configurations and sections of the realm. In addition, can add and remove users and team members, as well as delete the realm.
-- **Realm Viewer** (`realm_viewer`): A read-only role over Customers. It carries the **View User**, **View Segments**, **View Events**, **View Payment Orders**, **View Campaign Templates**, **View Forms**, and **View Campaign Deliveries** permissions. It cannot create or modify anything inside the realm.
+- **Realm Admin** (`realm_admin`): Can access all the configurations and sections of the realm. In addition, can add and remove users and team members, delete the realm, and create and sync its [stages](/en/platform/customers/realms.html#stages) with the **Admin Stages** and **Admin Synchronizations** permissions.
+- **Realm Viewer** (`realm_viewer`): A read-only role over Customers. It carries the **View User**, **View Segments**, **View Events**, **View Payment Orders**, **View Campaign Templates**, **View Forms**, **View Campaign Deliveries**, and **View Synchronizations** permissions. It cannot create or modify anything inside the realm.
+
+:::tip Tip
+In accounts created before version 10.2.2, **Realm Admin** and **Realm Viewer** don't automatically get **Admin Synchronizations** or **View Synchronizations**: add them to the role if you need them. See [Stage permissions](/en/platform/customers/realms.html#stage-permissions).
+:::
 
 #### Edit and delete the default roles
 
