@@ -217,7 +217,7 @@ As with validation tasks, you can define an **Assignee** for the task: an admini
 
 The Identity Verification task asks the user to verify their identity by capturing a selfie, their identity document, and liveness detection, through a verification provider.
 
-To use this task, you must first enable an integration of the **Identity Verification** category in the [realm integrations](/en/platform/customers/settings.html#integrations), such as **Amazon Rekognition**.
+To use this task, you must first enable an integration of the **Identity Verification** category in the [realm integrations](/en/platform/customers/settings.html#integrations), such as **Amazon Rekognition** or **Incode**.
 
 When configuring the task, you define:
 
@@ -225,10 +225,61 @@ When configuring the task, you define:
 - **Features**: The verifications included in the task: **Selfie** (always required), **Document** (capture of the front and back of the identity document with data extraction), and **Liveness** (liveness detection).
 - **Liveness Settings**: If you enabled Liveness, you can define the **Confidence Threshold** (from **Lenient** to **Strict**) and **Enable color challenge**, which displays colored lights during the verification and includes a photosensitivity warning for the user.
 
+If the provider is **Incode**, the task does not show **Features** or **Liveness Settings**: **Incode settings** appears instead, because the verifications that run are defined in Incode. See [Verification with Incode](#verification-with-incode) for details.
+
 During the flow, the user captures their selfie and document guided by the interface; the platform validates the quality of the images, extracts the document data, and compares the face on the document with the selfie.
 
 In the details of a submission, the **Identity Verification** tab shows the verification status, the **Face Match Score** and **Liveness Score**, the data extracted from the document, and the captured images.
 
+#### Verification with Incode
+
+With the **Incode** provider, the whole verification takes place on an Incode page, outside the site, and the user returns to the same step of the flow when they finish, abandon, or fail. The modules that run (document validation with OCR, liveness, face match, and government database validation) are defined by the flow you configure in the Incode Dashboard, not by the task.
+
+Before using it, you must [install the Incode integration](/en/platform/customers/settings.html#incode) in the realm. Then, in **Incode settings** you define:
+
+- **Modality**: How the verification is integrated into the flow. Currently the only option is **Hosted URL**, where the user completes the verification on an Incode page and returns to the same step of the flow.
+- **Incode flow ID**: The identifier of the flow to run, 24 hexadecimal characters long. You get it in the Incode Dashboard, under **Flows** → **...** → **Copy ID**, or under **Workflows** → **...** → **Copy ID** if your organization uses workflows.
+
+Both fields are required: the origination is not saved if the modality is not valid or if the ID does not have 24 hexadecimal characters. If you configure the task through the administration API, the fields are `incode_modality` (only `hosted_url` is accepted) and `incode_workflow_id`, inside the task's identity verification configuration.
+
+##### What the user sees
+
+The task shows the verification status and the **Start verification** button, which takes the user to the Incode page. When the user returns, the task reflects the verification status:
+
+- **Verified**: The task is completed automatically and the user continues with the flow.
+- **Pending Review**: Incode left the verification in manual review. The user cannot restart it and must come back later to see the result.
+- **Rejected**, **Expired**, or **Error**: The user can try again with **Start the verification again**.
+- **In Progress**: Modyo does not have the result yet. The screen updates by itself when it arrives and, if the user did not complete the process in Incode, they can start it again.
+
+Each new attempt discards the images and results of the previous one. If Incode returns an error when starting the verification, the user sees a service unavailable message and the submission records the **Incode error in identity verification** log, which suggests checking the integration API key and the task flow ID.
+
+##### How the result is decided
+
+Modyo maps the overall status returned by Incode:
+
+- **OK** or **MANUAL_OK**: **Verified**.
+- **FAIL**, **MANUAL_FAIL**, or **WARN**: **Rejected**.
+- **MANUAL** or **MANUAL_PENDING**: **Pending Review**.
+
+If a reviewer approves or rejects the verification manually in Incode, that decision prevails over the overall status. If the session expires in Incode before it finishes, the status becomes **Expired**.
+
+::: tip The result may take some time
+Modyo checks the result in Incode when the user returns to the step, when Incode notifies it through the [webhook](/en/platform/customers/settings.html#incode-webhook), and periodically during the first 24 hours after the verification started. A manual review decision made after that period only reaches Modyo through the webhook.
+:::
+
+::: warning Rejection after approval
+If Incode rejects in manual review a verification that had already been approved, the task remains completed: Modyo does not roll back the progress of the flow. In that case, the submission records the **Incode rejection after approving the identity verification** log, so you can review it.
+:::
+
+##### Results in the submission
+
+With Incode, the **Identity Verification** tab of the submission shows:
+
+- **Verification Status**: The status, the **Incode session ID**, and the **Verification Date**.
+- **Verification modules**: The status returned by Incode for **Document validation**, **Liveness**, **Face match**, and **Government database validation**, only for the modules included in the flow, along with the **Face Match Score** and the **Liveness Score**.
+- **OCR Results**: The document data returned by Incode: **Full name**, **Document type**, **Document number**, **Personal number**, **Birth date**, **Gender**, **Nationality**, **Issuing country**, **Expiration**, and **Address**.
+- **Verification Images**: The **Selfie**, the **Document Front**, and the **Document Back**.
+- **Rejection Reasons**: The modules that failed and the reason reported by Incode, when the verification was not approved.
 
 ### Code Snippet
 
