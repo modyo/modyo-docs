@@ -326,6 +326,31 @@ Para configurarla necesitas:
 
 Una vez habilitada, el proveedor queda disponible en las tareas de [Verificación de Identidad](/es/platform/customers/origination.html#verificacion-de-identidad) de las originaciones del reino.
 
+### Incode
+
+La integración de Incode, de la categoría **Verificación de Identidad**, permite verificar la identidad del usuario en las originaciones del reino con validación del documento y OCR, prueba de vida, face match y validación contra bases de gobierno. Puede estar habilitada al mismo tiempo que las demás integraciones de verificación de identidad del reino.
+
+Para configurarla necesitas:
+
+- **URL de la API**: URL base de la API del ambiente de Incode, por ejemplo `https://demo-api.incodesmile.com`. Debe usar HTTPS y pertenecer a un dominio de Incode (`incodesmile.com`).
+- **API key**: La API key de Incode.
+- **Email del usuario administrador** y **Contraseña del usuario administrador**: Las credenciales de un usuario con rol Admin en el Dashboard de Incode. Incode solo permite leer los resultados de una verificación con el token de un usuario con ese rol.
+
+Cuando cambias alguna credencial o habilitas la integración, Modyo valida las credenciales contra Incode y no guarda los cambios si Incode las rechaza o no responde. La contraseña se guarda cifrada y no se vuelve a mostrar: al editar la integración, deja el campo en blanco para mantenerla.
+
+::: warning Usa un usuario administrador dedicado
+Si el usuario administrador se elimina o cambia su contraseña en Incode, Modyo deja de obtener los resultados de las verificaciones. Usa un usuario dedicado a esta integración y actualiza la contraseña en Modyo cuando cambie.
+:::
+
+#### Webhook de Incode
+
+Después de guardar la integración, la sección **Webhook de Incode** muestra la **URL del webhook**, el **Nombre del header** y el **Valor del header**, en campos de solo lectura con un botón para copiarlos. En el Dashboard de Incode, configura el webhook de estado de onboarding con esa URL y agrega un header personalizado con ese nombre y ese valor.
+
+- El webhook es de la cuenta: es el mismo para todos sus reinos y se configura una sola vez en cada organización de Incode que uses.
+- Es obligatorio: una decisión de revisión manual tomada en Incode más de 24 horas después de iniciar la verificación solo llega a Modyo por este webhook.
+
+Una vez habilitada, Incode queda disponible como proveedor en las tareas de Verificación de Identidad de las originaciones del reino. La configuración de la tarea está en [Verificación con Incode](/es/platform/customers/origination.html#verificacion-con-incode).
+
 ### Auronix
 
 La integración de Auronix, de la categoría de mensajería, permite el envío de mensajes de WhatsApp mediante plantillas preaprobadas por Meta. Se utiliza para enviar el código OTP del soft login por WhatsApp.
