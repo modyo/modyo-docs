@@ -8,7 +8,7 @@ Customizing Dynamic Framework doesn't modify the package. A theme is a styleshee
 
 ## Overriding variables
 
-[Theming](theming.html) describes the contract of the Dynamic UI 2.12.0 `--bs-*` tokens for whoever maintains the variable stylesheet by hand:
+[Theming](theming.html) describes the contract of the Dynamic UI 2.12.1 `--bs-*` tokens for whoever maintains the variable stylesheet by hand:
 
 - Where the theme is loaded and why it wins, with and without `@layer`
 - The color contract: `R, G, B` triplets, ramps and a full rebrand of a role
@@ -29,5 +29,5 @@ Customizing Dynamic Framework doesn't modify the package. A theme is a styleshee
 
 ## Resources
 
-- [Dynamic UI 2.12.0 Storybook](https://react.dynamicframework.dev/v2.12.0/)
-- [Dynamic UI 2.12.0 CSS](https://cdn.dynamicframework.dev/assets/2.12.0/ui-react/css/dynamic-ui.min.css)
+- [Dynamic UI 2.12.1 Storybook](https://react.dynamicframework.dev/v2.12.1/)
+- [Dynamic UI 2.12.1 CSS](https://cdn.dynamicframework.dev/assets/2.12.1/ui-react/css/dynamic-ui.min.css)

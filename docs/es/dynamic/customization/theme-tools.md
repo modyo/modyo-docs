@@ -23,7 +23,7 @@ Para un ajuste puntual, como un radio o un color de enlace, basta con editar la 
 ## Instalación y uso
 
 ```bash
-npm i -D @dynamic-framework/ui-react@2.12.0
+npm i -D @dynamic-framework/ui-react@2.12.1
 npx dynamic-theme-expand theme.json -o theme.css
 npx dynamic-theme-validate theme.css --strict
 ```
@@ -55,33 +55,36 @@ Los colores aceptan hex, triplete `"R, G, B"` o cualquier color CSS.
 | `name`, `version` | no | Encabezan el CSS generado |
 | `roles.<role>` | al menos un role, o `gray` | Color base de `primary`, `secondary`, `success`, `info`, `warning`, `danger`, `light` o `dark`. Genera la base, la rampa (si el role la tiene) y, salvo en `secondary`, el texto de `.text-bg-<role>` |
 | `gray` | no | Deriva la rampa de grises a partir de un color. Cambia el carácter del neutro, no solo su tono |
-| `body.bg`, `body.color` | sí | Fondo y texto del documento |
+| `body.bg`, `body.color` | en un theme completo | Fondo y texto del documento |
 | `body.borderColor` | no | Color de borde. Por defecto, el de Dynamic |
-| `typography.fontFamily` | sí | La familia tipográfica |
+| `typography.fontFamily` | en un theme completo | La familia tipográfica. Sale como `--bs-font-sans-serif` |
 | `typography.scale.<1-6>` | no | Tamaño de encabezado por paso, en `rem`. Los pasos fluidos salen con su tope en `@media (min-width: 1200px)` |
-| `radius` | sí | Radio base en `rem`. `sm`, `lg`, `xl` y `xxl` se derivan de él (×0,5, ×2, ×3, ×4) |
+| `radius` | en un theme completo | Radio base en `rem`. `sm`, `lg`, `xl` y `xxl` se derivan de él (×0,5, ×2, ×3, ×4) |
 | `root` | no | Mapa `--bs-*` → valor, emitido tal cual en el bloque raíz |
 | `components` | no | Lista de `{ selector, vars, declarations }`: un bloque por selector. `declarations` admite solo `padding`, `border-radius`, `border-color`, `font-family` y `font-variant-numeric` |
-| `zones` | no | Mapa `<nombre>` → `{ vars, nav, components }`: un bloque `[data-bs-theme="<nombre>"]` (con `color` y `background-color` si declara `--bs-body-color` o `--bs-body-bg`), un bloque para `.nav` y otro para `.nav-pills`, y un bloque por componente dentro de la zona |
+| `zones` | no | Mapa `<nombre>` → `{ vars, nav, components }`: un bloque `[data-bs-theme="<nombre>"]`, un bloque para `.nav` y otro para `.nav-pills`, y un bloque por componente dentro de la zona. En `vars` bastan los tripletes: el generador emite detrás el wrapper de cada triplete que la zona redefine, y emite `color` y `background-color` cuando la zona redefine el triplete de fondo o de texto del cuerpo (basta con uno de los dos) |
+
+Sin `body`, `typography` ni `radius`, el theme es parcial: ver [Solo un role](#solo-un-role).
 
 Toda referencia `var(--bs-…)` en `root`, `components` y `zones` se comprueba contra las variables que existen en el CSS de la versión instalada. Una referencia a una variable inexistente es un error.
 
 ## Solo un role
 
-Para rebrandear un único role sin reescribir nada más, genera un theme mínimo con los valores por defecto de Dynamic y copia a tu hoja solo el bloque del role:
+Un JSON sin `body`, `typography` ni `radius` genera solo las rampas de los roles indicados, en un bloque para incorporar a una hoja de theme existente. Admite `roles`, `gray`, `name` y `version`.
 
 ```json
-{
-  "roles": { "primary": "#166e62" },
-  "body": { "bg": "245, 246, 250", "color": "21, 21, 26" },
-  "typography": { "fontFamily": "\"Jost\", sans-serif" },
-  "radius": "0.5rem"
-}
+{ "roles": { "primary": "#166e62" } }
 ```
 
-El bloque del role en el CSS generado:
-
 ```css
+/*
+ * Para @dynamic-framework/ui-react 2.12.1.
+ * Bloque parcial para incorporar a una hoja de theme existente.
+ * Se carga después del CSS de Dynamic UI.
+ */
+
+:root,
+[data-bs-theme="dynamic"] {
   /* Role primary */
   --bs-primary-rgb: 22, 110, 98;
   --bs-primary-text-bg-color: var(--bs-white);
@@ -96,9 +99,8 @@ El bloque del role en el CSS generado:
   --bs-primary-700-rgb: 13, 66, 59;
   --bs-primary-800-rgb: 9, 44, 39;
   --bs-primary-900-rgb: 4, 22, 20;
+}
 ```
-
-Esas 13 líneas van dentro del bloque `:root, [data-bs-theme="dynamic"]` de tu hoja. El resto del CSS generado repite los valores de Dynamic y no hace falta copiarlo.
 
 Las hojas salen de mezclar la base en sRGB con blanco (95, 90, 80, 60, 40 y 20 % para los pasos 25 a 400) y con negro (20, 40, 60 y 80 % para los pasos 600 a 900), con la misma receta que usa Dynamic para su paleta.
 
@@ -108,14 +110,15 @@ Las hojas salen de mezclar la base en sRGB con blanco (95, 90, 80, 60, 40 y 20 %
 
 | Severidad | Reglas |
 |---|---|
-| Error | `vacio`, `triplete`, `wrapper`, `rampa-incompleta`, `paso-500`, `superficie-faltante`, `border-color`, `fix-bg`, `where`, `tipografia`, `tipografia-breakpoint`, `monotonia`, `contraste-boton`, `contraste-nav-pills`, `contraste-zona`, `contraste-horneado`, `contraste-enlace-zona` por debajo de 3:1 |
-| Aviso | `rampa-inexistente`, `rampa-irresoluble`, `contraste-irresoluble`, `contraste-preexistente`, `contraste-horneado` en `.text-bg-secondary`, `contraste-enlace-zona` entre 3:1 y 4,5:1 |
+| Error | `vacio`, `triplete`, `ciclo`, `wrapper`, `rampa-incompleta`, `paso-500`, `superficie-faltante`, `border-color`, `where`, `tipografia`, `tipografia-breakpoint`, `monotonia`, `contraste-boton`, `contraste-nav-pills`, `contraste-zona`, `contraste-horneado`, `contraste-enlace-zona` por debajo de 3:1 |
+| Aviso | `wrapper-faltante-zona`, `rampa-inexistente`, `rampa-irresoluble`, `tipografia-familia`, `contraste-irresoluble`, `contraste-superficie`, `zona-pegada`, `contraste-preexistente`, `contraste-horneado` en `.text-bg-secondary`, `contraste-enlace-zona` entre 3:1 y 4,5:1 |
+| Nota | `superficie-heredada`, `literal` |
 
-Con errores, el comando sale con código 1. Con `--strict`, también sale con código 1 si solo hay avisos.
+Con errores, el comando sale con código 1. Con `--strict`, también sale con código 1 si hay avisos; las notas no cambian el código de salida.
 
 ## El descriptor token-overrides.json
 
-`token-overrides.json` describe qué variables de Dynamic se pueden sobrescribir y cómo se comportan. Se publica por versión, junto al CSS de esa misma versión: `https://cdn.dynamicframework.dev/assets/2.12.0/ui-react/tokens/token-overrides.json`. Está pensado para las herramientas y los agentes que generan themes. `dynamic-theme-expand` y `dynamic-theme-validate` no lo descargan: comprueban los nombres de variable contra `known-tokens.json`, el inventario que viene en el paquete instalado. Un theme escrito a mano no necesita el descriptor.
+`token-overrides.json` describe qué variables de Dynamic se pueden sobrescribir y cómo se comportan. Se publica por versión, junto al CSS de esa misma versión: `https://cdn.dynamicframework.dev/assets/2.12.1/ui-react/tokens/token-overrides.json`. Está pensado para las herramientas y los agentes que generan themes. `dynamic-theme-expand` y `dynamic-theme-validate` no lo descargan: comprueban los nombres de variable contra `known-tokens.json`, el inventario que viene en el paquete instalado. Un theme escrito a mano no necesita el descriptor.
 
 Cada variable lleva una clase:
 
@@ -129,5 +132,5 @@ Cada variable lleva una clase:
 ## Recursos
 
 - [Sistema de temas](theming.html): el contrato que cumple el CSS generado.
-- [`token-overrides.json` 2.12.0](https://cdn.dynamicframework.dev/assets/2.12.0/ui-react/tokens/token-overrides.json)
-- [Storybook de Dynamic UI 2.12.0](https://react.dynamicframework.dev/v2.12.0/)
+- [`token-overrides.json` 2.12.1](https://cdn.dynamicframework.dev/assets/2.12.1/ui-react/tokens/token-overrides.json)
+- [Storybook de Dynamic UI 2.12.1](https://react.dynamicframework.dev/v2.12.1/)

@@ -8,7 +8,7 @@ Personalizar Dynamic Framework no modifica el paquete. Un theme es una hoja de e
 
 ## Sobrescribir variables
 
-[Sistema de temas](theming.html) describe el contrato de los tokens `--bs-*` de Dynamic UI 2.12.0 para quien mantiene la hoja de variables a mano:
+[Sistema de temas](theming.html) describe el contrato de los tokens `--bs-*` de Dynamic UI 2.12.1 para quien mantiene la hoja de variables a mano:
 
 - Dónde se carga el theme y por qué gana, con y sin `@layer`
 - El contrato de color: tripletes `R, G, B`, rampas y cambio de marca completo de un role
@@ -29,5 +29,5 @@ Personalizar Dynamic Framework no modifica el paquete. Un theme es una hoja de e
 
 ## Recursos
 
-- [Storybook de Dynamic UI 2.12.0](https://react.dynamicframework.dev/v2.12.0/)
-- [CSS de Dynamic UI 2.12.0](https://cdn.dynamicframework.dev/assets/2.12.0/ui-react/css/dynamic-ui.min.css)
+- [Storybook de Dynamic UI 2.12.1](https://react.dynamicframework.dev/v2.12.1/)
+- [CSS de Dynamic UI 2.12.1](https://cdn.dynamicframework.dev/assets/2.12.1/ui-react/css/dynamic-ui.min.css)

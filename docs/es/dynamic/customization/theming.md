@@ -4,14 +4,14 @@ search: true
 
 # Sistema de temas
 
-Un theme de Dynamic Framework es una hoja de estilos que se carga después del CSS de Dynamic UI y sobrescribe sus custom properties `--bs-*`. Esta página describe el contrato de Dynamic UI 2.12.0 para quien escribe esa hoja: qué variables se sobrescriben, con qué formato y en qué selector, y qué partes del sistema no siguen solas a un cambio de marca.
+Un theme de Dynamic Framework es una hoja de estilos que se carga después del CSS de Dynamic UI y sobrescribe sus custom properties `--bs-*`. Esta página describe el contrato de Dynamic UI 2.12.1 para quien escribe esa hoja: qué variables se sobrescriben, con qué formato y en qué selector, y qué partes del sistema no siguen solas a un cambio de marca.
 
 ## Dónde se carga el theme
 
 Dynamic UI declara sus tokens en el selector `:root, [data-bs-theme="dynamic"]` y no usa `@layer`. La hoja del theme se carga después:
 
 ```html
-<link rel="stylesheet" href="https://cdn.dynamicframework.dev/assets/2.12.0/ui-react/css/dynamic-ui.min.css" />
+<link rel="stylesheet" href="https://cdn.dynamicframework.dev/assets/2.12.1/ui-react/css/dynamic-ui.min.css" />
 <link rel="stylesheet" href="/css/theme.css" />
 ```
 
@@ -52,7 +52,7 @@ Si usas capas, importa Dynamic dentro de una capa y declara la del theme despué
 /* ✅ */
 @layer framework, theme;
 
-@import url("https://cdn.dynamicframework.dev/assets/2.12.0/ui-react/css/dynamic-ui.min.css") layer(framework);
+@import url("https://cdn.dynamicframework.dev/assets/2.12.1/ui-react/css/dynamic-ui.min.css") layer(framework);
 
 @layer theme {
   :root,
@@ -288,6 +288,9 @@ Una zona hereda del documento, y hay tres cosas que no ocurren solas:
   --bs-btn-hover-color: rgb(var(--bs-gray-900-rgb));
   --bs-btn-hover-bg: rgb(var(--bs-primary-200-rgb));
   --bs-btn-hover-border-color: rgb(var(--bs-primary-200-rgb));
+  --bs-btn-active-color: rgb(var(--bs-gray-900-rgb));
+  --bs-btn-active-bg: rgb(var(--bs-primary-200-rgb));
+  --bs-btn-active-border-color: rgb(var(--bs-primary-200-rgb));
 }
 
 [data-bs-theme="oscura"] .list-group {
@@ -327,6 +330,6 @@ Compilar desde Sass significa compilar también Bootstrap dentro de tu build y m
 ## Recursos
 
 - [Generar y validar un theme](theme-tools.html): el flujo opcional con `dynamic-theme-expand` y `dynamic-theme-validate`.
-- [Storybook de Dynamic UI 2.12.0](https://react.dynamicframework.dev/v2.12.0/)
-- [CSS de Dynamic UI 2.12.0](https://cdn.dynamicframework.dev/assets/2.12.0/ui-react/css/dynamic-ui.min.css)
-- [`token-overrides.json` 2.12.0](https://cdn.dynamicframework.dev/assets/2.12.0/ui-react/tokens/token-overrides.json): el descriptor de los tokens sobrescribibles.
+- [Storybook de Dynamic UI 2.12.1](https://react.dynamicframework.dev/v2.12.1/)
+- [CSS de Dynamic UI 2.12.1](https://cdn.dynamicframework.dev/assets/2.12.1/ui-react/css/dynamic-ui.min.css)
+- [`token-overrides.json` 2.12.1](https://cdn.dynamicframework.dev/assets/2.12.1/ui-react/tokens/token-overrides.json): el descriptor de los tokens sobrescribibles.
