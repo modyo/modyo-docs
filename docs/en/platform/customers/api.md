@@ -198,8 +198,9 @@ The body carries the following attributes:
 | `status` | `not_started`, `pending`, `completed` or `canceled`. |
 | `progress` | Percentage of completed tasks, as text. For example, `25%`. |
 | `due` | Ready-to-display text with the deadline and its status. |
-| `due_deadline_at` | Raw deadline date and time. It is `null` when the origination has no deadline configured or when the submission has not started, is completed or is canceled. |
-| `due_label` | Label that replaces the date when there is no deadline, such as `Not started` or `--`. It is `null` when `due_deadline_at` carries a value. |
+| `due_deadline_at` | Raw deadline date and time, including the extension days. It is `null` when the origination has no deadline configured, when the deadline trigger hasn't happened yet, or when the submission has not started, is completed or is canceled. |
+| `due_label` | Label that replaces the date when there is no deadline, such as `Not started`, `No due date` or `--`. It is `null` when `due_deadline_at` carries a value. |
+| `due_with_time` | `true` if the deadline period of the origination includes hours, so the deadline should be shown with its time. |
 | `due_status_label` | Deadline status label in parentheses, such as `(On track)`, `(Due soon)` or `(Overdue)`. It is `null` when the submission is not pending. |
 | `due_extension_days` | Extension days granted to the deadline, or `null` if the origination has no deadline configured. |
 | `created_at`, `updated_at`, `started_at` | Creation, last update and start dates of the submission. |
