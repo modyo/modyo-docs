@@ -13,9 +13,9 @@ Esta guía describe el flujo. Los conceptos de Dynamic (componentes, theming, es
 ## Antes de empezar
 
 - **El MCP instalado** en tu cliente (ver [Instalación](/es/platform/tools/mcp.html#instalacion)). Para este flujo basta el módulo Widgets (`MODYO_MCP_MODULES=widgets`), y crear y validar el widget no requiere credenciales de Modyo.
-- **Node.js 22** o superior.
+- **Node.js 22.13 o una versión posterior de la rama 22, 24 o 26 en adelante.** Es el rango que declara el template (`^22.13.0 || ^24.0.0 || >=26.0.0`).
 - **git** con `user.name` y `user.email` configurados. Sin esa identidad, el proyecto se crea sin commit inicial.
-- **Un token de acceso y un sitio de Modyo** para publicar. No hace falta instalar el Modyo CLI: el proyecto trae el script `npm run push`, que lo ejecuta.
+- **Un token de acceso y un sitio de Modyo** para publicar. No hace falta instalar el Modyo CLI: el proyecto trae los scripts `npm run push` y `npm run push:publish`, que lo ejecutan.
 
 ## El flujo paso a paso
 
@@ -101,7 +101,15 @@ El MCP no publica widgets. Tienes dos caminos, los dos fuera del agente:
   npm run push
   ```
 
-  El script compila el widget y lo sube con el Modyo CLI, usando la configuración de `.modyo`. Ver [`modyo-cli push`](/es/platform/tools/cli.html#modyo-cli-push).
+  El script compila el widget y lo sube con el Modyo CLI, usando la configuración de `.modyo`. La nueva versión queda pendiente de publicar desde Modyo.
+
+  Para subirlo y publicarlo en un solo paso:
+
+  ```bash
+  npm run push:publish
+  ```
+
+  Este script agrega `--publish` al mismo comando. Ver [`modyo-cli push`](/es/platform/tools/cli.html#modyo-cli-push).
 
 - **Desde CI**, con el repositorio git que creó el scaffold.
 

@@ -13,9 +13,9 @@ This guide describes the workflow. The Dynamic concepts (components, theming, pr
 ## Before you start
 
 - **The MCP installed** in your client (see [Installation](/en/platform/tools/mcp.html#installation)). The Widgets module is enough for this workflow (`MODYO_MCP_MODULES=widgets`), and creating and validating the widget does not require Modyo credentials.
-- **Node.js 22** or later.
+- **Node.js 22.13 or a later 22.x release, 24, or 26 and later.** This is the range the template declares (`^22.13.0 || ^24.0.0 || >=26.0.0`).
 - **git** with `user.name` and `user.email` configured. Without that identity, the project is created without an initial commit.
-- **An access token and a Modyo site** to publish. You do not need to install the Modyo CLI: the project includes the `npm run push` script, which runs it.
+- **An access token and a Modyo site** to publish. You do not need to install the Modyo CLI: the project includes the `npm run push` and `npm run push:publish` scripts, which run it.
 
 ## Step-by-step workflow
 
@@ -101,7 +101,15 @@ The MCP does not publish widgets. You have two options, both outside the agent:
   npm run push
   ```
 
-  The script builds the widget and uploads it with the Modyo CLI, using the configuration in `.modyo`. See [`modyo-cli push`](/en/platform/tools/cli.html#modyo-cli-push).
+  The script builds the widget and uploads it with the Modyo CLI, using the configuration in `.modyo`. The new version remains pending publication in Modyo.
+
+  To upload and publish it in one step:
+
+  ```bash
+  npm run push:publish
+  ```
+
+  This script adds `--publish` to the same command. See [`modyo-cli push`](/en/platform/tools/cli.html#modyo-cli-push).
 
 - **From CI**, with the git repository the scaffold created.
 
