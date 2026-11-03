@@ -347,7 +347,7 @@ See the [Modyo CLI documentation](/en/platform/tools/cli.html) for all available
 
 ## CDN Distribution
 
-In addition to npm, Dynamic UI and its assets are available through a versioned CDN at `https://cdn.dynamicframework.dev/assets/{version}/ui-react`, useful as an alternative when you'd rather not install the library from npm.
+In addition to npm, Dynamic UI and its assets are available through a versioned CDN at `https://cdn.dynamicframework.dev/assets/{version}/ui-react`, useful as an alternative when you'd rather not install the library from npm. The files each version publishes for tools and agents are described in [Artifacts for tools and agents](development/agent-artifacts.html).
 
 ## Technical Resources
 
