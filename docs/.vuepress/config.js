@@ -300,6 +300,8 @@ module.exports = {
                       children: [
                           "/en/dynamic/development/components",
                           "/en/dynamic/development/api-integration",
+                          "/en/dynamic/development/i18n",
+                          "/en/dynamic/development/agent-artifacts",
                       ],
                   },
                   {
@@ -601,6 +603,8 @@ module.exports = {
                       children: [
                           "/es/dynamic/development/components",
                           "/es/dynamic/development/api-integration",
+                          "/es/dynamic/development/i18n",
+                          "/es/dynamic/development/agent-artifacts",
                       ],
                   },
                   {
