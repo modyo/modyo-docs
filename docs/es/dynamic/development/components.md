@@ -172,7 +172,7 @@ Las props responsivas leen los breakpoints de las variables `--bs-breakpoint-*` 
 
 | Prop | Tipo | Descripción |
 |------|------|-------------|
-| `language` | `string` | Idioma de los textos por defecto (default `'en'`) |
+| `language` | `string` | Idioma disponible para tu aplicación en `useDContext().language`; ningún componente lo lee ni cambia el idioma de i18next (default `'en'`) |
 | `currency` | `{ symbol: string; precision: number; separator: string; decimal: string }` | Formato de moneda que usan `DCurrencyText`, `DInputCurrency` y `useFormatCurrency` |
 | `icon` | `{ familyClass: string; familyPrefix: string; materialStyle: boolean }` | Familia de iconos de fuente para los nombres que no resuelven ni el registro ni Lucide |
 | `iconMap` | `IconMapProps` | Iconos que usan los componentes internamente (cerrar, chevrons, estados de alerta, adornos de input) |
