@@ -130,7 +130,7 @@ The project's `widget.manifest.json` records the Dynamic UI and template version
 
 ### widgets-scaffold returns TEMPLATE_MISMATCH
 
-The downloaded template does not contain what the tool expects to rename, and the tool stops before renaming. If the project directory was created, delete it before trying again, because the tool does not create a project in a target that already exists.
+The tool cloned the template but could not finish it: either the template does not match the one the MCP pins, and nothing is renamed, or template identifiers are left after renaming. In both cases the directory is left in place without an initial commit. Delete it and run `widgets-scaffold` again, because the tool does not create a project in a destination that already exists.
 
 ### The project name is not accepted
 

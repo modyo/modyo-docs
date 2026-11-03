@@ -130,7 +130,7 @@ El `widget.manifest.json` del proyecto registra la versión de Dynamic UI y del 
 
 ### widgets-scaffold responde TEMPLATE_MISMATCH
 
-El template descargado no contiene lo que la tool espera renombrar, y la tool se detiene antes de renombrar. Si el directorio del proyecto quedó creado, elimínalo antes de volver a intentarlo, porque la tool no crea un proyecto en un destino que ya existe.
+La tool clonó el template, pero no pudo dejarlo listo: o el template no coincide con el que fija el MCP, y entonces no renombra nada, o después de renombrar quedaron identificadores del template. En los dos casos el directorio queda creado y sin commit inicial. Elimínalo y vuelve a ejecutar `widgets-scaffold`, porque la tool no crea un proyecto en un destino que ya existe.
 
 ### El nombre del proyecto no se acepta
 
