@@ -26,6 +26,7 @@ Configura Axios como tu cliente HTTP:
 ```typescript
 // src/services/api/client.ts
 import axios from 'axios';
+import { getAccessToken } from '@/services/auth/authService';
 
 const apiClient = axios.create({
   baseURL: import.meta.env.VITE_API_BASE_URL,
@@ -36,10 +37,11 @@ const apiClient = axios.create({
   },
 });
 
-// Request interceptor
+// Request interceptor: el token sale del servicio de autenticación,
+// que lo guarda en sessionStorage (ver Autenticación)
 apiClient.interceptors.request.use(
-  (config) => {
-    const token = localStorage.getItem('authToken');
+  async (config) => {
+    const token = await getAccessToken();
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
@@ -117,7 +119,6 @@ En tu página Modyo, envuelve tu widget con un script de configuración:
   window.widgetConfig = {
     // Configuración de API
     apiBaseUrl: '{{site.variables.api_base_url}}',
-    apiKey: '{{site.variables.api_key}}',
 
     // Ambiente
     environment: '{{site.variables.environment | default: "production"}}',
@@ -156,7 +157,6 @@ Crea un servicio de configuración para acceder a estos valores de forma segura:
 
 interface WidgetConfig {
   apiBaseUrl: string;
-  apiKey: string;
   environment: 'development' | 'staging' | 'production';
   features: {
     enableTransfers: boolean;
@@ -173,7 +173,6 @@ interface WidgetConfig {
 // Configuración por defecto para desarrollo local
 const defaultConfig: WidgetConfig = {
   apiBaseUrl: import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000/api',
-  apiKey: 'dev-key',
   environment: 'development',
   features: {
     enableTransfers: true,
@@ -248,7 +247,6 @@ declare global {
   interface Window {
     widgetConfig?: {
       apiBaseUrl: string;
-      apiKey: string;
       environment: string;
       features: Record<string, boolean>;
       user?: {
@@ -423,7 +421,7 @@ export function AccountList() {
 
   if (error) {
     return (
-      <DAlert type="error">
+      <DAlert color="danger">
         Error al cargar cuentas: {error.message}
       </DAlert>
     );
@@ -446,7 +444,7 @@ export function AccountList() {
 
 ## Manejo de Estados con DDataStateWrapper
 
-En lugar de escribir manualmente los `if (isLoading)` / `if (error)` en cada componente, `DDataStateWrapper` (disponible desde v2.5) maneja de forma declarativa los estados de loading, error y empty a partir del resultado de un `useQuery`. Ver [Componentes](components.html#ddatastatewrapper) para la referencia completa de props.
+En lugar de escribir manualmente los `if (isLoading)` / `if (error)` en cada componente, `DDataStateWrapper` maneja de forma declarativa los estados de loading, error y empty a partir del resultado de un `useQuery`. Ver [Componentes](components.html#ddatastatewrapper) para la referencia completa de props.
 
 ```tsx
 // src/components/AccountList.tsx
@@ -602,11 +600,17 @@ export function handleApiError(error: AxiosError<ApiError>): string {
 
 ### Error Boundary con TanStack Query
 
+`DErrorBoundary` envuelve `react-error-boundary`, así que no necesitas instalarlo aparte. Con `QueryErrorResetBoundary`, `onReset` limpia los errores de las queries antes de volver a renderizar:
+
 ```tsx
 // src/components/QueryErrorBoundary.tsx
 import { QueryErrorResetBoundary } from '@tanstack/react-query';
-import { ErrorBoundary } from 'react-error-boundary';
-import { DButton, DAlert } from '@dynamic-framework/ui-react';
+import {
+  DAlert,
+  DButton,
+  DErrorBoundary,
+  getErrorMessage,
+} from '@dynamic-framework/ui-react';
 import type { ReactNode } from 'react';
 
 interface Props {
@@ -617,11 +621,12 @@ export function QueryErrorBoundary({ children }: Props) {
   return (
     <QueryErrorResetBoundary>
       {({ reset }) => (
-        <ErrorBoundary
+        <DErrorBoundary
+          name="query"
           onReset={reset}
-          fallbackRender={({ error, resetErrorBoundary }) => (
-            <DAlert type="error">
-              <p>{error.message}</p>
+          fallback={({ error, resetErrorBoundary }) => (
+            <DAlert color="danger">
+              <p>{getErrorMessage(error) ?? 'Ocurrió un error inesperado'}</p>
               <DButton
                 text="Intentar de nuevo"
                 variant="outline"
@@ -631,7 +636,7 @@ export function QueryErrorBoundary({ children }: Props) {
           )}
         >
           {children}
-        </ErrorBoundary>
+        </DErrorBoundary>
       )}
     </QueryErrorResetBoundary>
   );

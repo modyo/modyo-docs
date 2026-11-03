@@ -26,6 +26,7 @@ Configure Axios as your HTTP client:
 ```typescript
 // src/services/api/client.ts
 import axios from 'axios';
+import { getAccessToken } from '@/services/auth/authService';
 
 const apiClient = axios.create({
   baseURL: import.meta.env.VITE_API_BASE_URL,
@@ -36,10 +37,11 @@ const apiClient = axios.create({
   },
 });
 
-// Request interceptor
+// Request interceptor: the token comes from the auth service,
+// which keeps it in sessionStorage (see Authentication)
 apiClient.interceptors.request.use(
-  (config) => {
-    const token = localStorage.getItem('authToken');
+  async (config) => {
+    const token = await getAccessToken();
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
@@ -117,7 +119,6 @@ In your Modyo page, wrap your widget with a configuration script:
   window.widgetConfig = {
     // API Configuration
     apiBaseUrl: '{{site.variables.api_base_url}}',
-    apiKey: '{{site.variables.api_key}}',
 
     // Environment
     environment: '{{site.variables.environment | default: "production"}}',
@@ -156,7 +157,6 @@ Create a configuration service to access these values safely:
 
 interface WidgetConfig {
   apiBaseUrl: string;
-  apiKey: string;
   environment: 'development' | 'staging' | 'production';
   features: {
     enableTransfers: boolean;
@@ -173,7 +173,6 @@ interface WidgetConfig {
 // Default configuration for local development
 const defaultConfig: WidgetConfig = {
   apiBaseUrl: import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000/api',
-  apiKey: 'dev-key',
   environment: 'development',
   features: {
     enableTransfers: true,
@@ -248,7 +247,6 @@ declare global {
   interface Window {
     widgetConfig?: {
       apiBaseUrl: string;
-      apiKey: string;
       environment: string;
       features: Record<string, boolean>;
       user?: {
@@ -423,7 +421,7 @@ export function AccountList() {
 
   if (error) {
     return (
-      <DAlert type="error">
+      <DAlert color="danger">
         Failed to load accounts: {error.message}
       </DAlert>
     );
@@ -446,7 +444,7 @@ export function AccountList() {
 
 ## State Handling with DDataStateWrapper
 
-Instead of manually writing `if (isLoading)` / `if (error)` in every component, `DDataStateWrapper` (available since v2.5) declaratively handles loading, error, and empty states from a `useQuery` result. See [Components](components.html#ddatastatewrapper) for the full props reference.
+Instead of manually writing `if (isLoading)` / `if (error)` in every component, `DDataStateWrapper` declaratively handles loading, error, and empty states from a `useQuery` result. See [Components](components.html#ddatastatewrapper) for the full props reference.
 
 ```tsx
 // src/components/AccountList.tsx
@@ -602,11 +600,17 @@ export function handleApiError(error: AxiosError<ApiError>): string {
 
 ### Error Boundary with TanStack Query
 
+`DErrorBoundary` wraps `react-error-boundary`, so you don't need to install it separately. With `QueryErrorResetBoundary`, `onReset` clears the query errors before rendering again:
+
 ```tsx
 // src/components/QueryErrorBoundary.tsx
 import { QueryErrorResetBoundary } from '@tanstack/react-query';
-import { ErrorBoundary } from 'react-error-boundary';
-import { DButton, DAlert } from '@dynamic-framework/ui-react';
+import {
+  DAlert,
+  DButton,
+  DErrorBoundary,
+  getErrorMessage,
+} from '@dynamic-framework/ui-react';
 import type { ReactNode } from 'react';
 
 interface Props {
@@ -617,11 +621,12 @@ export function QueryErrorBoundary({ children }: Props) {
   return (
     <QueryErrorResetBoundary>
       {({ reset }) => (
-        <ErrorBoundary
+        <DErrorBoundary
+          name="query"
           onReset={reset}
-          fallbackRender={({ error, resetErrorBoundary }) => (
-            <DAlert type="error">
-              <p>{error.message}</p>
+          fallback={({ error, resetErrorBoundary }) => (
+            <DAlert color="danger">
+              <p>{getErrorMessage(error) ?? 'An unexpected error occurred'}</p>
               <DButton
                 text="Try again"
                 variant="outline"
@@ -631,7 +636,7 @@ export function QueryErrorBoundary({ children }: Props) {
           )}
         >
           {children}
-        </ErrorBoundary>
+        </DErrorBoundary>
       )}
     </QueryErrorResetBoundary>
   );
