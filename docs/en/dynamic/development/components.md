@@ -147,7 +147,7 @@ Components that support sizes use the `size` prop, with the values `sm` and `lg`
 
 #### Responsive Sizes
 
-`DButton` and `DBadge` accept in `size` an object with one value per breakpoint (`xs`, `sm`, `md`, `lg`, `xl`, `xxl`). Each value is still `sm` or `lg`; a breakpoint without a value uses the default size:
+`DButton` and `DBadge` accept in `size` an object with one value per breakpoint (`xs`, `sm`, `md`, `lg`, `xl`, `xxl`). Each value is still `sm` or `lg`. The value of the largest defined breakpoint whose minimum width is met applies, so a breakpoint without a value inherits the previous one: in the example, the button keeps `lg` at `xl` and `xxl`. The default size is only used when no defined breakpoint applies, for example `{ md: 'lg' }` on an `xs` viewport:
 
 ```tsx
 <DButton size={{ xs: 'sm', md: 'lg' }} text="Continue" />

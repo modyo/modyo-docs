@@ -147,7 +147,7 @@ Los componentes que soportan tamaños usan la prop `size`, con los valores `sm` 
 
 #### Tamaños Responsivos
 
-`DButton` y `DBadge` aceptan en `size` un objeto con un valor por breakpoint (`xs`, `sm`, `md`, `lg`, `xl`, `xxl`). Cada valor sigue siendo `sm` o `lg`; un breakpoint sin valor usa el tamaño por defecto:
+`DButton` y `DBadge` aceptan en `size` un objeto con un valor por breakpoint (`xs`, `sm`, `md`, `lg`, `xl`, `xxl`). Cada valor sigue siendo `sm` o `lg`. Se aplica el valor del mayor breakpoint definido cuyo ancho mínimo se cumple, así que un breakpoint sin valor hereda el del anterior: en el ejemplo, el botón mantiene `lg` en `xl` y `xxl`. El tamaño por defecto solo se usa cuando ningún breakpoint definido aplica, por ejemplo `{ md: 'lg' }` en un viewport `xs`:
 
 ```tsx
 <DButton size={{ xs: 'sm', md: 'lg' }} text="Continuar" />
