@@ -141,7 +141,7 @@ Dynamic elige el color de texto de cada par texto/fondo en Sass, con `color-cont
 - **`.btn-<role>`** no lee `--bs-<role>-text-bg-color`. Su texto también queda resuelto al compilar: en `primary` es `var(--bs-white)` en todos los estados. Si la base nueva no contrasta con ese texto, se cambia en el bloque del componente:
 
 ```css
-/* Con una base clara, como --bs-primary-rgb: 95, 191, 174 */
+/* Con una base clara, como --bs-primary-rgb: 181, 236, 227 */
 .btn-primary {
   --bs-btn-color: var(--bs-gray-900);
   --bs-btn-hover-color: var(--bs-gray-900);

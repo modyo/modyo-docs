@@ -141,7 +141,7 @@ Dynamic picks the text color of each text/background pair in Sass, with `color-c
 - **`.btn-<role>`** doesn't read `--bs-<role>-text-bg-color`. Its text is also resolved at compile time: in `primary` it is `var(--bs-white)` in every state. If the new base doesn't contrast with that text, change it in the component block:
 
 ```css
-/* With a light base, such as --bs-primary-rgb: 95, 191, 174 */
+/* With a light base, such as --bs-primary-rgb: 181, 236, 227 */
 .btn-primary {
   --bs-btn-color: var(--bs-gray-900);
   --bs-btn-hover-color: var(--bs-gray-900);
