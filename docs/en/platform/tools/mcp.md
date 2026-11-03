@@ -10,6 +10,8 @@ The [Model Context Protocol (MCP)](https://modelcontextprotocol.io) is an open s
 
 It is distributed as the npm package [`@modyo/mcp`](https://www.npmjs.com/package/@modyo/mcp) and runs as a local process that the AI client launches over stdio. This page describes version 0.5.10.
 
+To build a widget end to end with the MCP, see [Develop widgets with the MCP](/en/platform/tools/mcp-widgets.html).
+
 ## Requirements
 
 - Node.js 22 or later.
@@ -498,7 +500,7 @@ Once the server is configured, talk to the agent in natural language.
 
 **Widgets**
 
-A new widget starts with the `widgets-init-project` prompt, invoked as a client slash command (in Claude Code, `/mcp__modyo__widgets-init-project my-widget`), and continues with the description of the functionality in the next turn.
+A new widget starts with the `widgets-init-project` prompt, invoked as a client slash command (in Claude Code, `/mcp__modyo__widgets-init-project my-widget`), and continues with the description of the functionality in the next turn. The full workflow is in [Develop widgets with the MCP](/en/platform/tools/mcp-widgets.html).
 
 ## Troubleshooting
 
@@ -541,6 +543,7 @@ Add `DEBUG=true` to the client's `env` block. The server writes its logs to stde
 
 ## Related links
 
+- Guide: [Develop widgets with the MCP](/en/platform/tools/mcp-widgets.html)
 - npm package: [`@modyo/mcp`](https://www.npmjs.com/package/@modyo/mcp)
 - MCP specification: [modelcontextprotocol.io](https://modelcontextprotocol.io)
 - Other Modyo tools: [CLI](/en/platform/tools/cli.html), [SDK](/en/platform/tools/sdk.html)

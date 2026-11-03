@@ -10,6 +10,8 @@ El [Model Context Protocol (MCP)](https://modelcontextprotocol.io) es un estánd
 
 Se distribuye como el paquete npm [`@modyo/mcp`](https://www.npmjs.com/package/@modyo/mcp) y corre como un proceso local que el cliente de IA lanza por stdio. Esta página describe la versión 0.5.10.
 
+Para construir un widget de punta a punta con el MCP, ve [Desarrollar widgets con el MCP](/es/platform/tools/mcp-widgets.html).
+
 ## Requisitos
 
 - Node.js 22 o superior.
@@ -498,7 +500,7 @@ Una vez configurado el server, conversa con el agente en lenguaje natural.
 
 **Widgets**
 
-Un widget nuevo empieza con el prompt `widgets-init-project`, invocado como slash command del cliente (en Claude Code, `/mcp__modyo__widgets-init-project my-widget`), y sigue con la descripción de la funcionalidad en el turno siguiente.
+Un widget nuevo empieza con el prompt `widgets-init-project`, invocado como slash command del cliente (en Claude Code, `/mcp__modyo__widgets-init-project my-widget`), y sigue con la descripción de la funcionalidad en el turno siguiente. El flujo completo está en [Desarrollar widgets con el MCP](/es/platform/tools/mcp-widgets.html).
 
 ## Problemas frecuentes
 
@@ -541,6 +543,7 @@ Agrega `DEBUG=true` al bloque `env` del cliente. El server escribe sus registros
 
 ## Recursos
 
+- Guía: [Desarrollar widgets con el MCP](/es/platform/tools/mcp-widgets.html)
 - Paquete npm: [`@modyo/mcp`](https://www.npmjs.com/package/@modyo/mcp)
 - Especificación MCP: [modelcontextprotocol.io](https://modelcontextprotocol.io)
 - Otras herramientas de Modyo: [CLI](/es/platform/tools/cli.html), [SDK](/es/platform/tools/sdk.html)
