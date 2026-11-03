@@ -8,7 +8,7 @@ Framework de componentes React especializado para aplicaciones financieras, cons
 
 :::tip Versión 2.0 disponible
 Dynamic UI 2.0 trae un nuevo lenguaje visual, iconos Lucide, y 8 nuevos componentes.
-- [Ver novedades en v2.0](whats-new-v2.html)
+- [Ver novedades en v2.0](https://github.com/dynamic-framework/dynamic-ui/releases)
 - [Guía de migración](getting-started/migration-v2.html)
 :::
 
