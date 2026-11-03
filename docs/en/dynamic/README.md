@@ -4,7 +4,7 @@ React component framework specialized for financial applications, built on Boots
 
 :::tip Version 2.0 Available
 Dynamic UI 2.0 brings a new visual language, Lucide icons, and 8 new components.
-- [See what's new in v2.0](whats-new-v2.html)
+- [See what's new in v2.0](https://github.com/dynamic-framework/dynamic-ui/releases)
 - [Migration guide](getting-started/migration-v2.html)
 :::
 
