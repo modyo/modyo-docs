@@ -10,7 +10,7 @@ Los ejemplos y recuentos de esta página corresponden a Dynamic UI 2.12.1.
 
 ## Artefactos publicados
 
-La base de todas las rutas es `https://cdn.dynamicframework.dev/assets/{version}/ui-react/`.
+La base de todas las rutas es `https://cdn.dynamicframework.dev/assets/`.
 
 | Artefacto | Ruta en el CDN | En el paquete npm | Para qué sirve |
 |-----------|----------------|-------------------|----------------|

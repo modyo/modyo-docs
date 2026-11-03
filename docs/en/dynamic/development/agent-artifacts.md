@@ -10,7 +10,7 @@ The examples and counts on this page are from Dynamic UI 2.12.1.
 
 ## Published Artifacts
 
-The base of every path is `https://cdn.dynamicframework.dev/assets/{version}/ui-react/`.
+The base of every path is `https://cdn.dynamicframework.dev/assets/`.
 
 | Artifact | CDN path | In the npm package | Purpose |
 |----------|----------|--------------------|---------|
