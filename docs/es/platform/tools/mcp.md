@@ -4,60 +4,45 @@ search: true
 
 # Modyo MCP
 
-El [Model Context Protocol (MCP)](https://modelcontextprotocol.io) es un estándar abierto para comunicar asistentes de inteligencia artificial con herramientas y fuentes de datos externas. El **Modyo MCP Server** implementa este protocolo sobre la API de administración de Modyo, permitiendo que un agente IA gestione contenido, sitios, widgets, customers, y administración de la plataforma usando lenguaje natural.
+## Qué es
 
-Distribuido como paquete NPM ([`@modyo/mcp`](https://www.npmjs.com/package/@modyo/mcp)), funciona con cualquier cliente compatible con MCP (Claude Desktop, Claude Code, Cursor, GitHub Copilot, Gemini CLI, etc.).
+El [Model Context Protocol (MCP)](https://modelcontextprotocol.io) es un estándar abierto para conectar asistentes de inteligencia artificial con herramientas y fuentes de datos. El **Modyo MCP Server** conecta un asistente de IA con la API de administración de Modyo, para gestionar la plataforma (contenido, sitios, widgets, customers y administración) y para construir widgets con Dynamic Framework, conversando en lenguaje natural.
 
-:::warning Atención — Permisos
-El MCP server opera con los mismos permisos que el usuario administrador asociado al `MODYO_TOKEN`. Un agente con acceso a este token puede crear, modificar y eliminar contenido, sitios, widgets, usuarios y configuraciones de la plataforma. **Usa un token de un usuario con los permisos mínimos necesarios** y revisa las acciones del agente antes de aprobar operaciones destructivas (eliminación de páginas, despublicación masiva, borrado de realms o usuarios). Si trabajas en producción, considera crear un usuario admin dedicado con un rol acotado y rotar el token periódicamente. Esa rotación es manual: los tokens de la API de administración no caducan y la plataforma no los renueva sola, así que el `MODYO_TOKEN` sigue siendo válido hasta que alguien lo elimina desde la consola. Ve [Ciclo de vida del token de acceso](/es/platform/core/api.html#ciclo-de-vida-del-token-de-acceso).
-:::
+Se distribuye como el paquete npm [`@modyo/mcp`](https://www.npmjs.com/package/@modyo/mcp) y corre como un proceso local que el cliente de IA lanza por stdio. Esta página describe la versión 0.5.10.
+
+Para construir un widget de punta a punta con el MCP, ve [Desarrollar widgets con el MCP](/es/platform/tools/mcp-widgets.html).
 
 ## Requisitos
 
-- Node.js 22 o superior
-- Una instancia de Modyo accesible vía HTTPS
-- Un token de administrador de Modyo (Modyo Admin → Settings → API Access)
+- Node.js 22 o superior.
+- Una instancia de Modyo.
+- Un token de administrador, que se crea en Modyo Admin → Settings → API Access. El MCP opera con los permisos del usuario dueño del token (ver [Permisos del token](#permisos-del-token)).
 
 ## Instalación
 
-El MCP server se ejecuta como un proceso local (transporte stdio) que el cliente IA lanza bajo demanda. La configuración consiste en agregar el server al archivo de configuración del cliente, indicando el comando (`npx -y @modyo/mcp`) y las variables de entorno mínimas.
+El cliente lanza el server con el comando `npx -y @modyo/mcp` y le pasa las variables de entorno `MODYO_URL` y `MODYO_TOKEN`. La instalación consiste en registrar ese comando en la configuración del cliente.
 
-### Claude Desktop
+| Cliente | Dónde se configura | Documentación del cliente |
+|---|---|---|
+| Claude Code | Comando `claude mcp add` | [Claude Code: MCP](https://code.claude.com/docs/en/mcp) |
+| Claude Desktop | `claude_desktop_config.json` | [Connect to local MCP servers](https://modelcontextprotocol.io/docs/develop/connect-local-servers) |
+| Cursor | `~/.cursor/mcp.json` | [Cursor: MCP](https://cursor.com/docs/context/mcp) |
+| GitHub Copilot en VS Code | `MCP: Add Server` → `~/.copilot/mcp-config.json` | [Add MCP servers in VS Code](https://code.visualstudio.com/docs/copilot/customization/mcp-servers) |
+| GitHub Copilot CLI | Comando `copilot mcp add` → `~/.copilot/mcp-config.json` | [Adding MCP servers to Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-mcp-servers) |
+| Otros clientes | Según el cliente | Ver [Otros clientes](#otros-clientes) |
 
-Edita `claude_desktop_config.json`:
-
-- **macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`
-- **Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
-- **Linux:** `~/.config/Claude/claude_desktop_config.json`
-
-```json
-{
-  "mcpServers": {
-    "modyo": {
-      "command": "npx",
-      "args": ["-y", "@modyo/mcp"],
-      "env": {
-        "MODYO_URL": "https://your-org.modyo.com",
-        "MODYO_TOKEN": "your-admin-token"
-      }
-    }
-  }
-}
-```
-
-Reinicia Claude Desktop después de guardar.
+En los ejemplos, reemplaza `https://my-company.modyo.cloud` por la URL de tu plataforma y `your-admin-token` por tu token.
 
 ### Claude Code
 
 ```bash
-claude mcp add modyo \
-  --scope project \
-  --env MODYO_URL=https://your-org.modyo.com \
-  --env MODYO_TOKEN=your-token \
+claude mcp add modyo --scope user \
+  --env MODYO_URL=https://my-company.modyo.cloud \
+  --env MODYO_TOKEN=your-admin-token \
   -- npx -y @modyo/mcp
 ```
 
-Usa `--scope user` en lugar de `--scope project` para aplicar la configuración globalmente.
+Con `--scope user`, el server queda disponible en todos tus proyectos y la configuración se guarda en `~/.claude.json`, fuera de cualquier repositorio. Las opciones `--env` van después del nombre del server y antes de `--`.
 
 Para verificar el registro:
 
@@ -65,9 +50,9 @@ Para verificar el registro:
 claude mcp list
 ```
 
-### Cursor
+El server aparece como `modyo: npx -y @modyo/mcp - ✔ Connected`. Dentro de una sesión, `/mcp` muestra el server y su cantidad de tools.
 
-Edita `~/.cursor/mcp.json`:
+Para compartir la configuración con un equipo a través del repositorio, crea un `.mcp.json` en la raíz del proyecto que lea las credenciales del entorno de cada persona, sin escribirlas en el archivo:
 
 ```json
 {
@@ -76,410 +61,489 @@ Edita `~/.cursor/mcp.json`:
       "command": "npx",
       "args": ["-y", "@modyo/mcp"],
       "env": {
-        "MODYO_URL": "https://your-org.modyo.com",
-        "MODYO_TOKEN": "your-token"
+        "MODYO_URL": "${MODYO_URL}",
+        "MODYO_TOKEN": "${MODYO_TOKEN}"
       }
     }
   }
 }
 ```
 
-### GitHub Copilot en VS Code
+Claude Code reemplaza `${MODYO_URL}` y `${MODYO_TOKEN}` con las variables de entorno de la sesión. La primera vez que se abre el proyecto, el server aparece como `⏸ Pending approval` hasta que lo apruebas.
 
-Requiere Copilot con **Agent Mode** habilitado.
+### Claude Desktop
 
-Crea `.vscode/mcp.json` en la raíz de tu proyecto (configuración por proyecto, recomendado):
+En Claude Desktop, abre **Settings** → **Developer** → **Edit Config**. Se abre (o se crea) `claude_desktop_config.json`:
+
+- **macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`
+- **Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
 
 ```json
 {
-  "servers": {
+  "mcpServers": {
     "modyo": {
       "command": "npx",
       "args": ["-y", "@modyo/mcp"],
       "env": {
-        "MODYO_URL": "https://your-org.modyo.com",
-        "MODYO_TOKEN": "your-token"
+        "MODYO_URL": "https://my-company.modyo.cloud",
+        "MODYO_TOKEN": "your-admin-token"
       }
     }
   }
 }
 ```
 
-Aparecerá un botón **Start** al inicio del archivo. Haz clic para iniciar el server y permitir que Copilot descubra las herramientas.
+Si el archivo ya tiene otros servers, agrega solo la entrada `modyo` dentro de `mcpServers`. Guarda, cierra Claude Desktop por completo y vuelve a abrirlo. El server y sus tools aparecen en **Connectors** → **Manage connectors**.
 
-Para configuración global, usa el Command Palette → `Chat: Open User MCP Configuration` con la misma estructura.
+### Cursor
 
-:::tip Para organizaciones con Copilot Business o Enterprise
-Un administrador debe habilitar la política "MCP servers in Copilot" en la configuración de la organización.
+Edita `~/.cursor/mcp.json` para todos tus proyectos, o `.cursor/mcp.json` para un proyecto:
+
+```json
+{
+  "mcpServers": {
+    "modyo": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modyo/mcp"],
+      "env": {
+        "MODYO_URL": "https://my-company.modyo.cloud",
+        "MODYO_TOKEN": "your-admin-token"
+      }
+    }
+  }
+}
+```
+
+El server se habilita y se revisa desde **Customize** en la barra lateral de Cursor.
+
+### GitHub Copilot en VS Code
+
+1. Abre la paleta de comandos y ejecuta **MCP: Add Server**.
+2. Elige **Command (stdio)** e ingresa `npx -y @modyo/mcp` como comando.
+3. Cuando el flujo pida el nombre, escribe `modyo`. Si no lo escribes, VS Code asigna un nombre genérico.
+4. Como destino, elige **Global** → **Copilot Global**.
+
+VS Code guarda el server en `~/.copilot/mcp-config.json`. Es el mismo archivo que usa [GitHub Copilot CLI](#github-copilot-cli): un server agregado en uno aparece en el otro. Agrega las credenciales en un bloque `env` dentro de la entrada:
+
+```json
+{
+  "mcpServers": {
+    "modyo": {
+      "tools": ["*"],
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modyo/mcp"],
+      "env": {
+        "MODYO_URL": "https://my-company.modyo.cloud",
+        "MODYO_TOKEN": "your-admin-token"
+      }
+    }
+  }
+}
+```
+
+Para iniciar el server, ejecuta **MCP: List Servers**, elige `modyo` y luego **Start Server**. Las tools se ven en el chat, en modo **Agent**, con **Configure Tools**.
+
+:::tip Límite de tools en VS Code
+Una solicitud del chat de VS Code admite hasta 128 tools habilitadas. Si usas el Modyo MCP junto con otros servers, puedes limitar sus módulos con [`MODYO_MCP_MODULES`](#filtrado-por-modulos).
 :::
 
 ### GitHub Copilot CLI
 
-Dentro de una sesión interactiva de Copilot CLI:
-
-```
-/mcp add
-```
-
-Sigue el wizard: selecciona `Local or STDIO`, ingresa `npx -y @modyo/mcp` como comando, y agrega las variables de entorno.
-
-Alternativamente, edita directamente `~/.copilot/mcp-config.json`:
-
-```json
-{
-  "mcpServers": {
-    "modyo": {
-      "type": "local",
-      "command": "npx",
-      "args": ["-y", "@modyo/mcp"],
-      "env": {
-        "MODYO_URL": "https://your-org.modyo.com",
-        "MODYO_TOKEN": "your-token"
-      },
-      "tools": ["*"]
-    }
-  }
-}
+```bash
+copilot mcp add modyo \
+  --env MODYO_URL=https://my-company.modyo.cloud \
+  --env MODYO_TOKEN=your-admin-token \
+  -- npx -y @modyo/mcp
 ```
 
-### Gemini CLI
+Las opciones `--env` van antes de `--`. El subcomando `copilot mcp` requiere una versión reciente de Copilot CLI: si tu versión no lo reconoce, actualiza el CLI.
 
-Edita `~/.gemini/settings.json` para configuración global, o `.gemini/settings.json` en tu proyecto:
+El server queda en `~/.copilot/mcp-config.json`, el mismo archivo que usa [GitHub Copilot en VS Code](#github-copilot-en-vs-code). Para verificarlo, dentro de una sesión de Copilot CLI ejecuta `/mcp show modyo`: muestra el estado del server y sus tools.
 
-```json
-{
-  "mcpServers": {
-    "modyo": {
-      "command": "npx",
-      "args": ["-y", "@modyo/mcp"],
-      "env": {
-        "MODYO_URL": "https://your-org.modyo.com",
-        "MODYO_TOKEN": "your-token"
-      }
-    }
-  }
-}
-```
+### Otros clientes
 
-:::warning Gemini CLI y variables de entorno
-Gemini CLI redacta automáticamente variables de entorno con patrones sensibles como `*TOKEN*`. Siempre declara `MODYO_TOKEN` explícitamente dentro del bloque `env` como se muestra arriba — no dependas de variables exportadas en el shell.
-:::
-
-### Otros clientes MCP
-
-Cualquier cliente que soporte el transporte stdio puede ejecutar:
+Cualquier cliente MCP que lance servers locales por stdio se configura con los mismos tres datos. El formato del archivo depende de cada cliente: consulta su documentación.
 
 ```
 command: npx
 args: ["-y", "@modyo/mcp"]
 env:
-  MODYO_URL: https://your-org.modyo.com
-  MODYO_TOKEN: your-token
+  MODYO_URL: https://my-company.modyo.cloud
+  MODYO_TOKEN: your-admin-token
 ```
 
-:::tip Variables opcionales
-Cualquier variable opcional va en el mismo bloque `env` de tu cliente. Por ejemplo, para auditar un site en producción sin riesgo de modificarlo:
+Algunos clientes no pasan al server las variables de entorno de tu terminal, o descartan las que parecen secretos, como las que contienen `TOKEN`. Declara `MODYO_URL` y `MODYO_TOKEN` en la configuración del server, no solo en tu terminal.
 
-    "env": {
-      "MODYO_URL": "https://your-org.modyo.com",
-      "MODYO_TOKEN": "your-admin-token",
-      "MODYO_MCP_MODULES": "channels",
-      "MODYO_READ_ONLY": "true"
-    }
+## Configuración
 
-Ver [Variables de Entorno](#variables-de-entorno) y [Filtrado de módulos y modo read-only](#filtrado-de-modulos-y-modo-read-only).
-:::
-
-## Variables de Entorno
+El server se configura con variables de entorno, en el bloque `env` del cliente.
 
 | Variable | Requerida | Descripción |
-|----------|-----------|-------------|
-| `MODYO_URL` | Sí | URL de la plataforma (por ejemplo, `https://your-org.modyo.com`) |
-| `MODYO_TOKEN` | Sí | Token de admin obtenido desde Modyo Admin → Settings → API Access |
-| `MODYO_PLATFORM_NAME` | No | Nombre visible de la plataforma (por defecto: `"default"`) |
-| `MODYO_MCP_MODULES` | No | Lista separada por comas de módulos a activar (`core`, `content`, `channels`, `customers`, `widgets`). Sin definir, todos activos. Un valor inválido detiene el arranque con un error explícito. |
-| `MODYO_READ_ONLY` | No | Con `true` (valor exacto), el server no ejecuta ninguna mutación contra la plataforma, aunque el token tenga permisos de escritura. |
-| `MODYO_DEFAULT_SITE_THEME` | No | ID numérico del theme usado al crear un site sin `theme` explícito (por defecto: `208`, específico del tenant). |
-| `DEBUG` | No | Habilita logs de debug si se asigna `true` o `1` |
+|---|---|---|
+| `MODYO_URL` | Sí | URL de la plataforma, por ejemplo `https://my-company.modyo.cloud`. |
+| `MODYO_TOKEN` | Sí | Token de administrador (Modyo Admin → Settings → API Access). |
+| `MODYO_PLATFORM_NAME` | No | Nombre visible de la plataforma. Por defecto, `default`. |
+| `MODYO_MCP_MODULES` | No | Módulos activos, separados por comas: `core`, `content`, `channels`, `customers`, `widgets`. Sin definir, todos. Ver [Filtrado por módulos](#filtrado-por-modulos). |
+| `MODYO_READ_ONLY` | No | Con el valor exacto `true`, activa el modo de solo lectura. Ver [Modo de solo lectura](#modo-de-solo-lectura). |
+| `MODYO_DEFAULT_SITE_THEME` | No | ID del theme que se usa al crear un sitio sin indicar uno. Por defecto, `208`; el ID que corresponde depende de tu instancia. El theme solo se aplica al crear el sitio. |
+| `DEBUG` | No | Con `true` o `1`, el server escribe registros de depuración en stderr, con los valores sensibles ocultos. |
 
-Sin `MODYO_URL` y `MODYO_TOKEN`, el server arranca en **modo público** y expone únicamente las capacidades que no requieren autenticación. Útil para explorar herramientas y recursos disponibles sin conectarse aún a una plataforma.
+### Sin credenciales
 
-## Filtrado de módulos y modo read-only
+Sin `MODYO_URL` y `MODYO_TOKEN`, el server arranca igual y lista todas sus tools, resources y prompts. Al arrancar, escribe en su log:
 
-El server puede levantarse con una superficie reducida de capacidades. Dos variables de entorno controlan esto y se pueden combinar entre sí.
+```
+No platform configured. Set MODYO_URL and MODYO_TOKEN environment variables.
+```
 
-### Filtrado de módulos con `MODYO_MCP_MODULES`
+Las tools del módulo Widgets funcionan sin credenciales. Las demás responden con un error:
 
-Define qué módulos se activan mediante una lista separada por comas. Valores válidos: `core`, `content`, `channels`, `customers`, `widgets`. Sin la variable, todos los módulos quedan activos (comportamiento por defecto).
+```
+Platform not configured. Set MODYO_URL and MODYO_TOKEN environment variables.
+```
 
-El filtro aplica a **tools, resources, prompts y el bloque `instructions`** del handshake inicial. Los resources transversales (documentación, `platforms://list`, `modyo://context/agent-rules`) permanecen siempre disponibles aunque su módulo esté filtrado — son información pura, sin ejecución. Los **workflow prompts** declaran los módulos que requieren y solo se exponen si todos están activos (por ejemplo, `modyo-create-blog` requiere `channels` y `content`).
+## Seguridad y control
 
-Un valor inválido detiene el arranque con exit code 1 y un mensaje explícito (fail-loud intencional):
+### Permisos del token
+
+:::warning Permisos
+El MCP opera con los mismos permisos que el usuario administrador dueño del `MODYO_TOKEN`. Un agente con ese token puede crear, modificar y eliminar contenido, sitios, widgets, usuarios y configuraciones. **Usa el token de un usuario con los permisos mínimos necesarios** y revisa las acciones del agente antes de aprobar operaciones destructivas. En producción, considera un usuario administrador dedicado con un rol acotado.
+:::
+
+Los tokens de la API de administración no caducan y la plataforma no los renueva: el `MODYO_TOKEN` sigue siendo válido hasta que alguien lo elimina desde la consola. Rotarlo es una tarea manual. Ver [Ciclo de vida del token de acceso](/es/platform/core/api.html#ciclo-de-vida-del-token-de-acceso).
+
+### Modo de solo lectura
+
+Con `MODYO_READ_ONLY=true`, el server no ejecuta ningún cambio en la plataforma, aunque el token tenga permisos de escritura. Cualquier otro valor, o la ausencia de la variable, equivale al comportamiento normal. Sirve para auditar o explorar un sitio en producción sin riesgo de modificarlo.
+
+Funciona en dos capas:
+
+1. Las tools que solo escriben o eliminan no se registran: el cliente no las ve.
+2. Las tools que agrupan varias acciones (por ejemplo, las `*-manage`) siguen disponibles, pero solo ejecutan las acciones de lectura: `list`, `get`, `search`, `find` y `status`. La acción `manage` sin campos que cambien algo actúa como una lectura.
+
+Una acción rechazada no es un error (`isError: false`). La respuesta trae el rechazo en `control`:
+
+```json
+{
+  "control": {
+    "readOnly": true,
+    "rejected": "create",
+    "reason": "Server running in read-only mode (MODYO_READ_ONLY). Only read actions are permitted."
+  }
+}
+```
+
+Los prompts siguen listados en modo de solo lectura, pero los pasos que escriben quedan rechazados.
+
+### Filtrado por módulos
+
+`MODYO_MCP_MODULES` define qué módulos se activan, con una lista separada por comas. Valores válidos: `core`, `content`, `channels`, `customers`, `widgets`. Sin la variable, todos los módulos quedan activos.
+
+El filtro aplica a las tools, los resources, los prompts y las instrucciones que el server envía al agente. Los resources transversales (`platforms://list`, `modyo://context/agent-rules` y la guía de widgets) siguen disponibles con cualquier filtro. Un prompt que necesita dos módulos solo aparece si los dos están activos: `modyo-create-blog` requiere `channels` y `content`.
+
+Un valor inválido detiene el arranque con un mensaje explícito:
 
 ```
 Error: Invalid module(s) in MODYO_MCP_MODULES: 'widgetz'.
 Valid values: core, content, channels, customers, widgets.
 ```
 
-Log de startup con el filtrado activo (ejemplo con `MODYO_MCP_MODULES=widgets`):
+### Combinaciones
+
+Las dos variables se combinan. Para auditar un sitio sin riesgo de modificarlo, usa `MODYO_MCP_MODULES=channels` con `MODYO_READ_ONLY=true`:
+
+```json
+"env": {
+  "MODYO_URL": "https://my-company.modyo.cloud",
+  "MODYO_TOKEN": "your-admin-token",
+  "MODYO_MCP_MODULES": "channels",
+  "MODYO_READ_ONLY": "true"
+}
+```
+
+Tools que lista el cliente según la configuración, en la versión 0.5.10:
+
+| Configuración | Tools |
+|---|---|
+| Sin variables | 82 |
+| `MODYO_READ_ONLY=true` | 48 |
+| `MODYO_MCP_MODULES=widgets` | 5 |
+| `MODYO_MCP_MODULES=widgets` y `MODYO_READ_ONLY=true` | 4 |
+| `MODYO_MCP_MODULES=channels` y `MODYO_READ_ONLY=true` | 16 |
+
+El log de arranque confirma la configuración activa. Con `MODYO_MCP_MODULES=widgets`:
 
 ```
 Module filtering active. Modules enabled: widgets. Filtered out: core, content, channels, customers.
-Tools: 5 (filtered from 80). Resources: 8 (filtered from 11). Prompts: 1 (filtered from 9).
+Tools: 5 (filtered from 82). Resources: 7 (filtered from 10). Prompts: 1 (filtered from 9).
 ```
 
-### Modo read-only con `MODYO_READ_ONLY`
-
-Con el valor exacto `true`, el server garantiza que **no ejecuta ninguna mutación** contra la plataforma, aunque el token tenga permisos de escritura. Cualquier otro valor (o la ausencia de la variable) equivale al comportamiento normal. El caso de uso principal es auditar o explorar sitios de clientes en producción sin riesgo de modificarlos.
-
-El mecanismo opera en dos capas:
-
-1. Las tools de propósito único de escritura o borrado **no se registran** — no aparecen en `tools/list`.
-2. Las tools multi-acción (`*-manage`) quedan registradas pero **gatean por acción**: solo `list`, `get`, `search` y `find` ejecutan (y `manage` sin campos mutantes, que actúa como un `get`). El resto recibe un rechazo estructurado (`readOnly: true, rejected: ...`), no un error.
-
-Log de startup en modo read-only:
+En esa línea, "Resources" cuenta juntos los resources y los resource templates. Con `MODYO_READ_ONLY=true`:
 
 ```
-Read-only mode active (MODYO_READ_ONLY). Read tools exposed: 20. Multi-action tools gated: 25. Write/destroy tools skipped: 35.
+Read-only mode active (MODYO_READ_ONLY). Read tools exposed: 22. Multi-action tools gated: 26. Write/destroy tools skipped: 34.
 ```
 
-### Combinación de ambas variables
+### Confirmación de borrados
 
-Las dos variables componen. Conteos reales de `tools/list` según la configuración:
+Las tools que eliminan recursos piden confirmación:
 
-| Configuración | Tools expuestas |
-|---|---|
-| Sin variables | 80 |
-| `MODYO_MCP_MODULES=widgets` | 5 |
-| `MODYO_READ_ONLY=true` | 45 |
-| Ambas (`widgets` + read-only) | 4 |
+- En clientes con confirmación interactiva, la tool pide confirmar antes de borrar. Si la confirmación vence o falla, no borra.
+- En clientes sin confirmación interactiva, una llamada sin `confirmed: true` no ejecuta nada y responde lo que borraría, en `control.aborted`. Para ejecutar el borrado, se repite la llamada con `confirmed: true`.
 
-Para auditar un site sin riesgo de modificarlo, la combinación recomendada es `MODYO_MCP_MODULES=channels` + `MODYO_READ_ONLY=true`.
+Archivar una definición de widget también pide confirmación, porque elimina sus instancias de las páginas del sitio.
 
-## Capacidades Disponibles
+### Respuestas de las escrituras
 
-El server expone tres tipos de capacidades MCP: **tools** (acciones invocables por el agente), **resources** (documentación y datos consultables vía URI) y **prompts** (workflows guiados multi-paso).
+- **Lo que quedó guardado.** Después de escribir, las tools vuelven a leer el recurso y responden ese estado. Si un campo pedido no quedó guardado, responden `FIELDS_NOT_PERSISTED` o `UNSUPPORTED_FIELD`. Un parámetro que la acción no usa vuelve en `ignored`.
+- **Operaciones en segundo plano.** Las que continúan en la plataforma responden `queued` o `deletion_started`.
+- **Identificadores exactos.** Las acciones que escriben o eliminan resuelven el recurso solo por id, UUID, path o slug exactos. Una lectura con varios candidatos responde `AMBIGUOUS_IDENTIFIER` con la lista. En una entrada con varias traducciones, la tool pide el idioma (`LOCALE_REQUIRED`).
 
-### Módulos cubiertos
+## Qué puede hacer
 
-| Módulo | Cobertura |
-|--------|-----------|
-| **Core** | Equipos, usuarios admin, grupos, roles, settings de plataforma |
-| **Content** | Spaces, content types, entries, assets, categorías, jobs asíncronos |
-| **Channels** | Sites, páginas, widgets, templates Liquid, releases, navegación, variables globales |
-| **Customers** | Realms, usuarios finales, segments, forms, submissions, originations |
-| **Widgets** | Generación de widgets transaccionales (React + Dynamic UI): scaffolding desde el template canonical, catálogo de componentes y patterns del Storybook, validación |
+El server expone tres tipos de capacidades: **tools** (acciones que el agente ejecuta), **resources** (información que el agente consulta por URI) y **prompts** (flujos guiados que la persona invoca). El cliente lista el detalle de cada una: cada tool trae su descripción y su `inputSchema`, que el agente lee antes de usarla.
 
-### Tools
+Las tools siguen la convención `{módulo}-{recurso}-{acción}`, por ejemplo `content-spaces-list` o `channels-pages-create`.
 
-Las tools siguen la convención de naming `{módulo}-{recurso}-{acción}`. Por ejemplo, `content-spaces-manage`, `channels-pages-create`, `customers-realms-manage`. La mayoría sigue uno de estos patrones:
+### Core
 
-- `*-list` — Listar recursos con paginación y filtros
-- `*-get` — Obtener un recurso individual por ID, slug, o UUID
-- `*-manage` — Crear, actualizar, eliminar (un toolset CRUD condensado)
-- `*-upsert` — Crear o actualizar (idempotente)
-- `*-bulk` — Operaciones por lotes (asíncronas)
-- `*-copy` — Clonar recursos preservando relaciones
+Administración de la cuenta: usuarios administradores, grupos, roles, membresías y configuración de la plataforma.
 
-#### Resumen por módulo
+- `core-groups-manage`: crea, actualiza, elimina y lista grupos de administradores, y agrega o quita usuarios de un grupo.
+- `core-groups-upsert`: crea o actualiza un grupo por su nombre, con su lista completa de usuarios.
+- `core-members-manage`: asigna, cambia o quita usuarios y grupos en sitios, spaces y realms, y lista los miembros con su rol.
+- `core-roles-create`: crea un rol, con grupos de permisos opcionales.
+- `core-roles-manage`: lista los roles por contexto: cuenta, sitio, space o realm.
+- `core-settings-manage`: actualiza la configuración de la plataforma: nombre, host, idioma, CORS, logo, favicon, sitio por defecto, archivos SEO y colores del administrador.
+- `core-users-bulk`: activa o desactiva administradores en lote.
+- `core-users-manage`: crea, actualiza y lista administradores, consulta sus sesiones y muestra el usuario del token.
+- `core-users-upsert`: crea o actualiza un administrador, que se busca por email o nombre de usuario.
 
-**Core** (~9 tools): `core-groups-manage`, `core-groups-upsert`, `core-members-manage`, `core-roles-create`, `core-roles-manage`, `core-settings-manage`, `core-users-bulk`, `core-users-manage`, `core-users-upsert`.
+### Content
 
-**Content** (~22 tools): gestión de `content-spaces-*`, `content-types-*`, `content-entries-*`, `content-assets-*`, `content-categories-*`, más `content-jobs-manage` para tareas asíncronas.
+Spaces, tipos de contenido, categorías, entradas y assets.
 
-**Channels** (~27 tools): gestión de `channels-sites-*`, `channels-pages-*` (incluyendo `channels-pages-content` y `channels-pages-widget` para el contenido vs. la configuración), `channels-widgets-*` (incluyendo `channels-widgets-code-edit` para edición quirúrgica del código de un widget definition), `channels-templates-*` (incluye `channels-templates-find`, `channels-templates-search`, `channels-templates-replace`), `channels-menus-*`, `channels-menu-items-manage`, `channels-variables-manage`, `channels-locks-manage`, `channels-publish`, `channels-preview`, `channels-download`, `channels-site-assets-manage`, `channels-account-templates-manage`.
+- `content-spaces-list`: lista los spaces de la plataforma.
+- `content-spaces-get`: muestra un space con su configuración e idiomas.
+- `content-spaces-manage`: crea, actualiza y elimina spaces, y asigna un realm a un space que no tiene.
+- `content-spaces-copy`: clona un space completo: tipos de contenido, categorías, entradas en cada idioma (como borradores) y assets.
+- `content-types-list`: lista los tipos de contenido de un space.
+- `content-types-get`: muestra el esquema de un tipo de contenido con sus campos.
+- `content-types-manage`: gestiona el esquema de un tipo de contenido y agrega o quita campos.
+- `content-types-upsert`: crea o actualiza un tipo de contenido por su UID.
+- `content-types-copy`: copia un tipo de contenido a otro space, con o sin sus entradas.
+- `content-categories-list`: lista las categorías de un space con su jerarquía.
+- `content-categories-get`: muestra una categoría y su lugar en la jerarquía.
+- `content-categories-manage`: crea, consulta, actualiza, elimina y lista categorías.
+- `content-entries-list`: lista las entradas de un space.
+- `content-entries-get`: muestra una traducción de una entrada con sus valores.
+- `content-entries-manage`: crea, actualiza, traduce, publica, despublica, archiva, restaura, clona y elimina entradas.
+- `content-entries-upsert`: crea o actualiza una entrada por su slug, en un tipo de contenido y un idioma.
+- `content-entries-bulk`: publica, despublica, archiva, restaura o elimina entradas en lote, en un idioma.
+- `content-assets-list`: lista los assets de un space.
+- `content-assets-get`: muestra un asset con sus metadatos y su URL.
+- `content-assets-manage`: consulta y actualiza los metadatos de un asset, reemplaza su archivo, lo elimina o lista assets.
+- `content-assets-bulk`: sube varios assets a la vez.
+- `content-jobs-manage`: consulta el estado de las copias de spaces y las descargas de sitios iniciadas desde el MCP.
 
-**Customers** (~17 tools): gestión de `customers-realms-*`, `customers-users-*`, `customers-segments-manage`, `customers-forms-*`, `customers-submissions-*`, `customers-datasets-*`, `customers-originations-*` (incluyendo validación y clonado de steps).
+### Channels
 
-**Widgets** (5 tools): `widgets-list-components`, `widgets-get-component-props`, `widgets-list-patterns` (federan el catálogo del Storybook de Dynamic UI), `widgets-scaffold` (inicializa un proyecto de widget nuevo desde el template canonical) y `widgets-validate` (corre `@modyo/widget-validator` y devuelve un reporte con score).
+Sitios, páginas, templates, definiciones de widget, menús, variables y publicación.
 
-:::tip Documentación inline
-Cada tool incluye un link `📚 modyo://docs/tools/{toolPath}` en su descripción que el agente puede leer para detalles de parámetros, ejemplos y restricciones. Pídele al agente "lee la doc de la tool X" si quieres ver los detalles antes de invocarla.
-:::
+- `channels-sites-overview`: muestra el mapa de un sitio: páginas, templates, menús y definiciones de widget.
+- `channels-sites-manage`: crea, actualiza, clona y elimina sitios, y crea sus stages.
+- `channels-site-assets-manage`: sube uno o varios assets a un sitio.
+- `channels-pages-create`: crea una página de widgets, de contenido o de originación.
+- `channels-pages-copy`: copia una página en el mismo sitio o a otro.
+- `channels-pages-manage`: consulta, actualiza, archiva, restaura, despublica, elimina y lista páginas.
+- `channels-pages-content`: gestiona páginas de contenido y sus templates Liquid.
+- `channels-pages-widget`: crea o ubica una página de widgets y reemplaza su composición completa de widgets.
+- `channels-pages-widget-instance`: agrega, consulta, actualiza o quita un solo widget de una página.
+- `channels-pages-widget-variables`: lista, consulta, asigna y quita las variables de un widget personalizado en una página.
+- `channels-templates-find`: busca un template por nombre y categoría.
+- `channels-templates-search`: busca expresiones regulares en el código de los templates.
+- `channels-templates-manage`: gestiona los templates de un sitio: layouts, CSS, JavaScript y snippets.
+- `channels-templates-upsert`: crea o actualiza un template por nombre y categoría.
+- `channels-templates-replace`: busca y reemplaza en el código de los templates, con vista previa de los cambios.
+- `channels-templates-copy`: copia un template a otro sitio.
+- `channels-account-templates-manage`: gestiona los templates globales de la cuenta.
+- `channels-widgets-manage`: crea, actualiza, clona, despublica, archiva, restaura, elimina y lista definiciones de widget.
+- `channels-widgets-upsert`: crea o actualiza una definición de widget por su nombre.
+- `channels-widgets-code-edit`: edita una sección del código de una definición de widget (HTML, CSS o JavaScript) sin reenviar las demás.
+- `channels-widgets-copy`: copia una definición de widget a otro sitio.
+- `channels-variables-manage`: gestiona variables globales de la cuenta, del sitio y de los widgets.
+- `channels-publish`: publica cambios en un paso, con simulación previa y en orden de dependencias.
+- `channels-menus-manage`: crea, consulta, renombra, archiva, despublica, elimina y lista menús.
+- `channels-menu-items-manage`: gestiona los ítems de un menú, incluidos los anidados.
+- `channels-menus-copy`: copia un menú con todos sus ítems al mismo sitio o a otro.
+- `channels-locks-manage`: toma, libera y consulta los bloqueos de edición de páginas, templates, widgets y entradas.
+- `channels-download`: descarga el contexto de un sitio como ZIP.
+- `channels-preview`: genera URLs de vista previa de páginas y widgets.
+
+### Customers
+
+Realms, usuarios, segmentos, formularios, data sets y originaciones.
+
+- `customers-realms-manage`: lista, consulta, crea y actualiza realms, y cambia su logo.
+- `customers-realms-delete`: elimina un realm y sus stages.
+- `customers-users-list`: lista los usuarios de un realm, con filtros.
+- `customers-users-manage`: crea o actualiza un usuario de un realm.
+- `customers-users-bulk`: crea o actualiza usuarios en lote, por email.
+- `customers-segments-manage`: gestiona segmentos dinámicos y cuenta los usuarios que cumplen sus filtros.
+- `customers-forms-manage`: crea, actualiza, elimina, habilita y deshabilita formularios con sus preguntas.
+- `customers-forms-copy`: copia un formulario a otro realm con sus preguntas.
+- `customers-submissions-manage`: lista, consulta, crea y actualiza solicitudes, cambia su estado y las asigna.
+- `customers-submissions-bulk`: opera solicitudes en lote, con vista previa.
+- `customers-datasets-manage`: gestiona data sets simples o anidados.
+- `customers-datasets-copy`: copia un data set a otro realm con todas sus alternativas.
+- `customers-originations-manage`: crea, actualiza, publica, despublica, archiva, elimina y lista originaciones.
+- `customers-originations-validate`: revisa la estructura de una originación y reporta errores y advertencias.
+- `customers-origination-steps-manage`: crea o actualiza los pasos de una originación con sus tareas y preguntas.
+- `customers-origination-steps-clone`: clona pasos con sus tareas, preguntas y alternativas en la misma originación o en otra.
+- `customers-origination-rules-manage`: gestiona las reglas que muestran u ocultan elementos de una originación.
+
+### Widgets
+
+Construcción de widgets con Dynamic Framework: catálogo de componentes y patterns, creación del proyecto y validación. Las tools de este módulo no necesitan credenciales.
+
+- `widgets-list-components`: lista el catálogo de Dynamic UI: componentes, contextos y hooks.
+- `widgets-get-component-props`: devuelve la definición completa de un componente, subcomponente, contexto o hook de Dynamic UI.
+- `widgets-list-patterns`: lista los patterns de composición publicados en el Storybook de Dynamic UI.
+- `widgets-scaffold`: crea un proyecto de widget nuevo a partir del template base de Dynamic.
+- `widgets-validate`: valida un widget contra las convenciones de Dynamic UI, accesibilidad, estados de datos, manejo de errores y pruebas.
+
+### Lo que el MCP no cubre
+
+Para estas tareas, usa el Modyo Admin. El server también se lo indica al agente.
+
+- **Core:** quitar el segundo factor de otro administrador; seguridad de la cuenta (segundo factor obligatorio, política de contraseñas, expiración de sesión); proveedores de identidad (SSO) y SCIM; aplicaciones de acceso a la API y sus tokens; webhooks y assets de la cuenta; registros de actividad y reportes; ver los permisos de un rol, editar roles y eliminarlos.
+- **Content:** revisión en equipo de entradas; programar la publicación o despublicación; historial de versiones, diferencias y restauración; vista previa de una entrada; edición y creación masiva; reindexar un tipo de contenido.
+- **Channels:** revisión en equipo (con revisión en equipo activa, `channels-publish` solo publica lo aprobado); historial de versiones, diferencias y rollback; programar la publicación de un release; redirecciones; actividad y comentarios de páginas; listar, editar y eliminar assets del sitio (`channels-site-assets-manage` solo los sube); publicar snippets globales (`channels-account-templates-manage` los guarda sin publicar); sincronizar stages; descargar una definición de widget como ZIP; cambiar el host de un sitio y su configuración de `llms.txt`; dueños de definiciones de widget.
+- **Customers:** dominios y headers de seguridad del realm; restringir miembros del equipo a segmentos; eliminar usuarios, ver o revocar sus sesiones, notas de usuario e impersonación; campos personalizados de usuario; respuestas y estadísticas de formularios; programar la publicación de una originación; historial de versiones, diferencias y rollback de originaciones; stages del realm y su sincronización; eliminar solicitudes o respuestas de tareas e invitaciones de solicitudes; campañas de mensajería y sus plantillas de correo; integraciones del realm (proveedores de identidad, clientes OAuth) y webhooks; pagos y órdenes.
 
 ### Resources
 
-Los resources son URIs que el agente puede leer para consultar información estructurada:
+| URI | Módulo | Contenido |
+|---|---|---|
+| `platforms://list` | Transversal | Plataformas configuradas. |
+| `modyo://context/agent-rules` | Transversal | Reglas operativas para el agente. |
+| `modyo://docs/widgets/{widgetPath}` | Transversal | Guía de widgets para el agente. Entrada: `modyo://docs/widgets/INDEX`. |
+| `modyo-spaces://list` | Content | Todos los spaces. |
+| `modyo-realms://list` | Customers | Todos los realms. |
+| `modyo://liquid-reference` | Channels | Referencia de Liquid: objetos, propiedades, filtros y tags, con lo que hay disponible en cada contexto. |
+| `modyo://widgets/catalog/components` | Widgets | Lista de componentes de Dynamic UI. |
+| `modyo://widgets/catalog/components/{componentId}` | Widgets | Detalle de un componente: stories con código y props con tipos. |
+| `modyo://widgets/catalog/patterns` | Widgets | Lista de patterns. |
+| `modyo://widgets/catalog/patterns/{patternId}` | Widgets | Contenido completo de un pattern. |
 
-| URI | Descripción |
-|-----|-------------|
-| `platforms://list` | Lista de plataformas configuradas (Modyo MCP soporta multi-plataforma) |
-| `modyo://context/agent-rules` | Reglas operativas para el agente (seguridad, IDs vs UUIDs, patrones recurrentes) |
-| `modyo://docs/tools/{toolPath}` | Documentación de cada tool individual |
-| `modyo://docs/widgets/{docPath}` | Guía de generación de widgets (entry point `modyo://docs/widgets/INDEX`) |
-| `modyo://liquid-reference` | Referencia completa de tags, filtros y drops de Liquid en Modyo |
-| `modyo-spaces://list` | Lista de spaces de Content |
-| `modyo-realms://list` | Lista de realms de Customers |
-| `modyo://widgets/catalog/components` | Lista liviana de componentes (id, name, key, descripción, storyCount) |
-| `modyo://widgets/catalog/components/{componentId}` | Detalle completo del componente (stories con código, props con tipos TS) |
-| `modyo://widgets/catalog/patterns` | Lista liviana de patterns oficiales |
-| `modyo://widgets/catalog/patterns/{patternId}` | Contenido MDX completo del pattern |
-
-Los resources de documentación (`modyo://docs/...`) son transversales: están disponibles aunque su módulo esté filtrado con `MODYO_MCP_MODULES`.
+Los catálogos de widgets corresponden a la versión de Dynamic UI que fija el server.
 
 ### Prompts
 
-Los prompts son workflows guiados multi-paso. Al invocar un prompt, el agente ejecuta una secuencia de tools en orden y pide confirmación en los puntos de decisión.
+Los prompts son flujos guiados que la persona invoca desde el cliente, por lo general como un slash command. Cada uno aparece solo si sus módulos están activos.
 
-| Prompt | Workflow |
-|--------|----------|
-| `modyo-setup-site` | Crear un site nuevo: configurar dominio, layout base, páginas iniciales |
-| `modyo-create-space` | Crear un space de Content con su estructura base |
-| `modyo-create-blog` | Crear un space tipo blog con type "Post" y entradas iniciales |
-| `modyo-create-content-page` | Crear una página de listado de entries de un content type |
-| `modyo-create-widget-page` | Crear una página que aloja un widget definition |
-| `modyo-create-widget-definition` | Crear un widget definition con código inicial |
-| `modyo-manage-templates` | Editar templates Liquid (layouts, snippets, stylesheets) de un site |
-| `modyo-manage-releases` | Revisar cambios pendientes y publicar un release |
-| `widgets-init-project` | Inicializar un proyecto de widget nuevo (React + Dynamic UI) desde el template canonical, vía la tool `widgets-scaffold` |
+| Prompt | Módulos | Flujo |
+|---|---|---|
+| `modyo-create-space` | Content | Crear un space con su estructura base. |
+| `modyo-setup-site` | Channels | Crear un sitio con su configuración y páginas iniciales. |
+| `modyo-create-widget-page` | Channels | Crear una página que aloja una definición de widget. |
+| `modyo-create-content-page` | Channels | Crear una página que lista las entradas de un tipo de contenido. |
+| `modyo-create-widget-definition` | Channels | Crear una definición de widget con código inicial. |
+| `modyo-manage-templates` | Channels | Editar los templates Liquid de un sitio: layouts, snippets y hojas de estilo. |
+| `modyo-manage-releases` | Channels | Revisar los cambios pendientes y publicar un release. |
+| `modyo-create-blog` | Channels y Content | Crear un blog: space, tipo de contenido "Post" y entradas iniciales. |
+| `widgets-init-project` | Widgets | Crear un proyecto de widget nuevo con `widgets-scaffold`. |
 
-Los prompts ligados a un módulo solo aparecen cuando su módulo está activo (ver [Filtrado de módulos](#filtrado-de-modulos-y-modo-read-only)).
+### Forma de la respuesta
 
-## Generación de widgets
+Para quien integra el MCP con código propio: todas las tools publican un `outputSchema` y responden con `structuredContent`. La respuesta trae `platform` (la plataforma usada), `data` (el resultado) y, cuando corresponde, `resource`, `state` (por ejemplo `returned`, `total` y `complete` en los listados) y `control` (rechazos, confirmaciones y parámetros ignorados).
 
-El módulo Widgets permite generar widgets transaccionales (React + Dynamic UI) de forma asistida. El punto de entrada es `widgets-scaffold`, que crea un proyecto de widget nuevo clonando el template canonical (`dynamic-framework/dynamic-react-vite-base-template`) al tag pineado por la matriz de compatibilidad del server.
+## Ejemplos de uso
 
-### Flujo de dos pasos
+Una vez configurado el server, conversa con el agente en lenguaje natural.
 
-1. El operador invoca el prompt `widgets-init-project` (slash command del cliente MCP), cuyo único efecto es que el agente ejecute `widgets-scaffold`.
-2. El operador entrega la descripción funcional del widget en el turno siguiente. El agente no escribe código de widget antes de recibirla.
-
-`widgets-scaffold` recibe dos argumentos: `name` (kebab-case estricto; es un **nombre de proyecto**, nunca una descripción de feature) y `targetDir` (opcional; directorio padre donde se crea `./<name>/`). Su secuencia determinista es: clone al tag pineado → elimina la historia git del template → `git init` + commit inicial → renombra `package.json` → `npm install`.
-
-### Precondiciones fail-closed
-
-La tool falla cerrada, sin tocar nada, si:
-
-- El directorio destino ya existe.
-- El destino está **en cualquier punto dentro de otro proyecto de widget** (raíz o subdirectorio — detecta `@dynamic-framework/ui-react` en las dependencias de cualquier ancestro).
-- `targetDir` no existe o no es un directorio.
-- Git no está disponible.
-
-La garantía diferenciadora es el **anti-anidamiento**: nunca crea un widget dentro de otro ni reinterpreta el nombre como una feature de un widget existente.
-
-### Validación y deploy
-
-El flujo termina en validación con `widgets-validate` (reporte con score; objetivo ≥ 95%) más un smoke test local (`npm run dev`).
-
-**El deploy no es una operación del MCP.** Para llevar el widget a Modyo hay dos caminos, ambos fuera del agente:
-
-- **CI desde el repo del widget** (el scaffold inicializa git justamente para habilitar este camino).
-- **`modyo-cli push` manual y explícito** del developer en su shell.
-
-El agente nunca pushea y nunca lee credenciales (`MODYO_TOKEN`, `.env`, `.modyo`).
-
-:::tip Matriz de compatibilidad
-La fuente de verdad de las versiones es el server. Valores actuales de referencia: Dynamic UI `2.6.0`, template `v1.1.0`, validator `0.2.0`.
-:::
-
-## Ejemplos de Uso
-
-Una vez configurado el server, puedes conversar con el agente en lenguaje natural. Ejemplos:
-
-**Exploración**:
+**Exploración**
 
 > "Lista todos los spaces de mi plataforma"
-> "¿Qué páginas tiene el site con ID 5?"
-> "Muéstrame los content types del space `blog`"
+>
+> "¿Qué páginas tiene el sitio 1001?"
+>
+> "Muéstrame los tipos de contenido del space `blog`"
 
-**Creación**:
+**Creación y edición**
 
-> "Crea un content type llamado 'Products' con campos `name` (string), `price` (number) y `description` (rich text)"
-> "Crea una página `/about` en el site `marketing` usando el layout `base`"
-> "Genera 10 entradas de ejemplo en el content type `Products`"
+> "Crea un tipo de contenido llamado 'Products' con los campos `name` (texto), `price` (número) y `description` (texto enriquecido)"
+>
+> "Crea una página `/about` en el sitio `marketing` con el layout `base`"
+>
+> "Agrega al menú principal del sitio 1001 un ítem 'Contact' que apunte a `/contact`"
+>
+> "Cambia el color primario en el `root.css` del sitio `marketing` a `#ff6600`"
 
-**Edición**:
+**Publicación**
 
-> "Actualiza el menú principal del site 5: agrega un item 'Contact' que apunte a `/contact`"
-> "Cambia el color primario en el `root.css` del site `marketing` a `#ff6600`"
+> "Muéstrame los cambios pendientes del sitio 1001 y publícalos"
+>
+> "Despublica la página `/promo` del sitio `marketing`"
 
-**Publicación**:
+**Usuarios**
 
-> "Muéstrame los cambios pendientes en el site 5 y publícalos"
-> "Despublica temporalmente la página `/promo-2024` del site `marketing`"
+> "Crea el administrador `user@my-company.com` con el rol `site editor` en el sitio `marketing`"
+>
+> "Lista los usuarios del realm `my-realm`"
 
-**Gestión de usuarios**:
+**Auditoría sin riesgo** (con `MODYO_MCP_MODULES=channels` y `MODYO_READ_ONLY=true`)
 
-> "Crea un usuario admin `juan@empresa.com` con rol `site editor` en el site `marketing`"
-> "Lista los usuarios del realm `customers-prod` que se registraron esta semana"
+> "Audita el sitio 1001: revisa páginas, widgets y templates sin modificar nada"
 
-**Generación de widgets** (flujo de dos pasos):
+**Widgets**
 
-*Paso 1 — invocar el prompt del cliente* (no una frase en lenguaje natural):
+Un widget nuevo empieza con el prompt `widgets-init-project`, invocado como slash command del cliente (en Claude Code, `/mcp__modyo__widgets-init-project my-widget`), y sigue con la descripción de la funcionalidad en el turno siguiente. El flujo completo está en [Desarrollar widgets con el MCP](/es/platform/tools/mcp-widgets.html).
 
-    /mcp__modyo__widgets-init-project transfer-detail
+## Problemas frecuentes
 
-La sintaxis depende del cliente (en OpenCode es `/modyo:widgets-init-project transfer-detail`); sin el argumento, el agente pregunta el nombre. El agente ejecuta `widgets-scaffold`: crea `./transfer-detail/` bajo el directorio de trabajo — para otra ubicación, menciónala en la conversación — y se detiene, sin inspeccionar ni tocar otros widgets de la carpeta.
+### El agente responde "Platform not configured"
 
-*Paso 2 — describir la funcionalidad, en el turno siguiente:*
-
-> "El widget muestra el detalle de una transferencia: monto, fecha, origen, destino y estado, con acciones para repetir o agendar"
-
-Recién con esta descripción el agente consulta el catálogo de patterns y genera el código.
-
-::: warning El slash command es deliberado
-"Inicializa un widget" en lenguaje natural es ambiguo (puede interpretarse como un widget definition de Channels) y deja al criterio del agente no explorar ni modificar widgets existentes. El prompt elimina ambas ambigüedades.
-:::
-
-**Auditoría sin riesgo** (requiere levantar el server con `MODYO_MCP_MODULES=channels` + `MODYO_READ_ONLY=true`):
-
-> "Audita el site 5: revisa páginas, widgets y templates sin modificar nada"
-
-## Troubleshooting
-
-### Error "Platform not configured"
+Al server le faltan `MODYO_URL` o `MODYO_TOKEN`. Revisa que las dos estén en el bloque `env` de la configuración del cliente y reinicia el cliente. Para probar el token directamente contra la API:
 
 ```bash
-# Verifica que las variables de entorno estén configuradas
-echo $MODYO_URL
-echo $MODYO_TOKEN
-
-# Prueba el token directamente contra la API
-curl -H "Authorization: Bearer $MODYO_TOKEN" "$MODYO_URL/api/admin/account"
+curl -H "Authorization: Bearer $MODYO_TOKEN" "$MODYO_URL/api/admin/profile"
 ```
 
-Si el `curl` falla, regenera el token desde Modyo Admin → Settings → API Access.
+Con un token válido, la API responde `200` con el usuario dueño del token. Si no, crea un token nuevo en Modyo Admin → Settings → API Access.
 
-### El server no arranca tras configurar módulos
+### El server no arranca después de definir MODYO_MCP_MODULES
 
-Si definiste `MODYO_MCP_MODULES` y el server termina inmediatamente con exit code 1 y un mensaje como:
+Si el server termina al arrancar con un mensaje como este:
 
 ```
 Error: Invalid module(s) in MODYO_MCP_MODULES: 'widgetz'.
 Valid values: core, content, channels, customers, widgets.
 ```
 
-la causa es un typo o un valor no soportado en la lista. El fail-loud es intencional: corrige el valor (los válidos son `core`, `content`, `channels`, `customers`, `widgets`) y vuelve a iniciar.
+la lista tiene un valor que no existe. Corrígelo (los valores válidos son `core`, `content`, `channels`, `customers` y `widgets`) y vuelve a iniciar el cliente.
 
-### Una tool devuelve `readOnly: true, rejected: ...`
+### Una tool responde readOnly: true
 
-El server está corriendo con `MODYO_READ_ONLY=true`. Es un rechazo controlado, no un bug: en modo read-only las acciones mutantes se bloquean aunque el token tenga permisos de escritura. Si necesitas ejecutar la mutación, reinicia el server sin esa variable.
+El server corre con `MODYO_READ_ONLY=true` y la acción pedida escribe en la plataforma. No es un error: el rechazo llega en `control` con `isError: false`. Para ejecutar la acción, quita la variable y reinicia el cliente.
 
-### El agente no detecta las tools después de instalar
+### El agente dice que no borró nada
 
-Reinicia el cliente IA (Claude Desktop, Cursor, VS Code, etc.). El descubrimiento de tools ocurre al iniciar el server, no en runtime.
+En clientes sin confirmación interactiva, un borrado sin `confirmed: true` no se ejecuta: la respuesta trae en `control.aborted` lo que se habría borrado. Revisa la lista y pide al agente que repita la operación con la confirmación.
 
-Para Claude Code, usa `claude mcp list` para confirmar que el server está registrado.
+### El agente no ve las tools
 
-### Gemini CLI — la autenticación falla silenciosamente
+Reinicia el cliente: las tools se descubren cuando el cliente inicia el server. En Claude Code, `claude mcp list` muestra si el server está conectado.
 
-Gemini CLI filtra las variables de entorno que coinciden con `*TOKEN*` antes de pasarlas al MCP server. Asegúrate de declarar `MODYO_TOKEN` explícitamente en el bloque `env` del `settings.json`, no solo de exportarla en el shell.
+### Ver los logs del server
 
-### GitHub Copilot CLI — error `CAPIError: 400` después de tool calls
-
-La auto-compactación de Copilot CLI puede corromper el historial de mensajes durante respuestas grandes de tool calls. Es un [bug conocido del CLI](https://github.com/github/copilot-cli/issues/1050), no un problema del server.
-
-Workarounds:
-
-- Inicia una sesión nueva: `rm -rf ~/.copilot/session-state && copilot --allow-all-tools`
-- Mantén las respuestas pequeñas — pídele al agente campos específicos en lugar de objetos completos. Por ejemplo: *"lista los sites, devuélveme solo id, name y host"*.
-
-### Habilitar logs de debug
-
-Agrega `DEBUG=true` (o `DEBUG=1`) al bloque `env` de la configuración del cliente. Los logs se escriben en `stderr` y son visibles en la consola del cliente IA si soporta mostrarlos.
+Agrega `DEBUG=true` al bloque `env` del cliente. El server escribe sus registros en stderr, y cada cliente los muestra en un lugar distinto. En Claude Desktop, por ejemplo, quedan en `~/Library/Logs/Claude/mcp-server-modyo.log` (macOS) o en `%APPDATA%\Claude\logs` (Windows).
 
 ## Recursos
 
-- Paquete NPM: [`@modyo/mcp`](https://www.npmjs.com/package/@modyo/mcp)
+- Guía: [Desarrollar widgets con el MCP](/es/platform/tools/mcp-widgets.html)
+- Paquete npm: [`@modyo/mcp`](https://www.npmjs.com/package/@modyo/mcp)
 - Especificación MCP: [modelcontextprotocol.io](https://modelcontextprotocol.io)
-- Otras herramientas Modyo: [CLI](/es/platform/tools/cli.html), [SDK](/es/platform/tools/sdk.html)
+- Otras herramientas de Modyo: [CLI](/es/platform/tools/cli.html), [SDK](/es/platform/tools/sdk.html)

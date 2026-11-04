@@ -76,6 +76,7 @@ En este apartado se pueden editar los valores de la tarea seleccionada, puedes e
 - **Nombre**: El nombre de la tarea que será visible para el usuario.
 - **Identificador**: Un identificador único que se incluirá en la URL de la originación.
 - **Descripción**: Un breve texto explicativo sobre la tarea, que será visible para el usuario.
+- **Mostrar esta tarea al usuario principal**: Aparece solo cuando la tarea está seleccionada como tarea objetivo de una [tarea de invitación](/es/platform/customers/origination.html#invitacion). Viene activada y define si el usuario principal de la respuesta también ve y puede responder esa tarea, o si queda reservada para el invitado en quien la delegó.
 - **Bloquear las respuestas al completar**: Impide que las respuestas de esa tarea se modifiquen una vez que quedó completada. Está disponible en todos los tipos de tarea y viene desmarcada, tanto en las tareas nuevas como en las que ya tenías configuradas.
 
 :::tip Bloqueo de respuestas y revisiones rechazadas
@@ -262,7 +263,7 @@ Al igual que en las tareas de validación, puedes definir un **Asignado** para l
 
 La tarea de Verificación de Identidad solicita al usuario verificar su identidad mediante la captura de una selfie, su documento de identidad y detección de vida (liveness), a través de un proveedor de verificación.
 
-Para usar esta tarea, primero debes habilitar una integración de la categoría **Verificación de Identidad** en las [integraciones del reino](/es/platform/customers/settings.html#integraciones), como **Amazon Rekognition**.
+Para usar esta tarea, primero debes habilitar una integración de la categoría **Verificación de Identidad** en las [integraciones del reino](/es/platform/customers/settings.html#integraciones), como **Amazon Rekognition** o **Incode**.
 
 Al configurar la tarea defines:
 
@@ -270,10 +271,61 @@ Al configurar la tarea defines:
 - **Características**: Las verificaciones que incluye la tarea: **Selfie** (siempre requerida), **Documento** (captura del frente y reverso del documento de identidad con extracción de sus datos) y **Liveness** (detección de vida).
 - **Ajustes de Liveness**: Si activaste Liveness, puedes definir el **Umbral de confianza** (de **Flexible** a **Estricto**) y **Habilitar desafío de color**, que muestra luces de colores durante la verificación e incluye una advertencia de fotosensibilidad para el usuario.
 
+Si el proveedor es **Incode**, la tarea no muestra **Características** ni **Ajustes de Liveness**: en su lugar aparece **Configuración de Incode**, porque las verificaciones que se ejecutan se definen en Incode. El detalle está en [Verificación con Incode](#verificacion-con-incode).
+
 Durante el flujo, el usuario captura su selfie y su documento guiado por la interfaz; la plataforma valida la calidad de las imágenes, extrae los datos del documento y compara el rostro del documento con la selfie.
 
 En los detalles de una respuesta, la pestaña **Verificación de Identidad** muestra el estado de la verificación, los puntajes de coincidencia facial (**Face Match Score**) y de detección de vida (**Liveness Score**), los datos extraídos del documento y las imágenes capturadas.
 
+#### Verificación con Incode
+
+Con el proveedor **Incode**, la verificación completa ocurre en una página de Incode, fuera del sitio, y el usuario vuelve al mismo paso del flujo al terminar, abandonar o fallar. Los módulos que se ejecutan (validación del documento con OCR, prueba de vida, face match y validación contra bases de gobierno) los define el flow que configures en el Dashboard de Incode, no la tarea.
+
+Antes de usarlo debes [instalar la integración de Incode](/es/platform/customers/settings.html#incode) en el reino. Luego, en **Configuración de Incode** defines:
+
+- **Modalidad**: Cómo se integra la verificación en el flujo. Hoy la única opción es **Hosted URL**, en la que el usuario completa la verificación en una página de Incode y vuelve al mismo paso del flujo.
+- **ID del flow de Incode**: El identificador del flow que se ejecutará, de 24 caracteres hexadecimales. Lo obtienes en el Dashboard de Incode, en **Flows** → **...** → **Copy ID**, o en **Workflows** → **...** → **Copy ID** si tu organización usa workflows.
+
+Ambos campos son obligatorios: la originación no se guarda si la modalidad no es válida o si el ID no tiene 24 caracteres hexadecimales. Si configuras la tarea por la API de administración, los campos son `incode_modality` (solo admite `hosted_url`) e `incode_workflow_id`, dentro de la configuración de verificación de identidad de la tarea.
+
+##### Qué ve el usuario
+
+La tarea muestra el estado de la verificación y el botón **Iniciar verificación**, que lleva al usuario a la página de Incode. Al volver, la tarea refleja el estado de la verificación:
+
+- **Verificado**: La tarea se completa automáticamente y el usuario continúa con el flujo.
+- **Revisión pendiente**: Incode dejó la verificación en revisión manual. El usuario no puede reiniciarla y debe volver más tarde para conocer el resultado.
+- **Rechazado**, **Expired** o **Error**: El usuario puede intentarlo de nuevo con **Iniciar la verificación nuevamente**.
+- **En progreso**: Modyo todavía no tiene el resultado. La pantalla se actualiza sola cuando llega y, si el usuario no completó el proceso en Incode, puede iniciarlo de nuevo.
+
+Cada intento nuevo descarta las imágenes y los resultados del anterior. Si Incode devuelve un error al iniciar la verificación, el usuario ve un mensaje de servicio no disponible y la respuesta registra el log **Error de Incode en verificación de identidad**, que sugiere revisar la API key de la integración y el ID del flow de la tarea.
+
+##### Cómo se decide el resultado
+
+Modyo traduce el estado general que entrega Incode:
+
+- **OK** o **MANUAL_OK**: **Verificado**.
+- **FAIL**, **MANUAL_FAIL** o **WARN**: **Rechazado**.
+- **MANUAL** o **MANUAL_PENDING**: **Revisión pendiente**.
+
+Si un revisor aprueba o rechaza la verificación manualmente en Incode, esa decisión prevalece sobre el estado general. Si la sesión expira en Incode antes de terminar, el estado pasa a **Expired**.
+
+::: tip El resultado puede tardar
+Modyo consulta el resultado en Incode cuando el usuario vuelve al paso, cuando Incode lo avisa por el [webhook](/es/platform/customers/settings.html#webhook-de-incode) y periódicamente durante las primeras 24 horas desde que se inició la verificación. Una decisión de revisión manual tomada después de ese plazo solo llega a Modyo por el webhook.
+:::
+
+::: warning Rechazo después de aprobar
+Si Incode rechaza en revisión manual una verificación que ya se había aprobado, la tarea sigue completada: Modyo no revierte el avance del flujo. En ese caso la respuesta registra el log **Rechazo de Incode después de aprobar la verificación de identidad**, para que la revises.
+:::
+
+##### Resultados en la respuesta
+
+Con Incode, la pestaña **Verificación de Identidad** de la respuesta muestra:
+
+- **Estado de la Verificación**: El estado, el **ID de sesión de Incode** y la **Fecha de verificación**.
+- **Módulos de verificación**: El estado que entregó Incode para **Validación del documento**, **Prueba de vida**, **Face match** y **Validación contra bases de gobierno**, solo para los módulos que incluye el flow, junto con el **Face Match Score** y el **Liveness Score**.
+- **Sección de OCR**: Los datos leídos del documento que entregue Incode: **Nombre completo**, **Tipo de documento**, **Número de documento**, **Número personal**, **Fecha de nacimiento**, **Género**, **Nacionalidad**, **País emisor**, **Vencimiento** y **Dirección**.
+- **Sección de Imágenes**: La **Selfie**, el **Frente del documento** y el **Reverso del documento**.
+- **Motivos de rechazo**: Los módulos que fallaron y el motivo que informe Incode, cuando la verificación no se aprobó.
 
 ### Snippet de código
 
@@ -355,6 +407,43 @@ Cuando consumes datos de la API JSON obtendrás un objeto con todas los datos al
 :::warning Atención
 Para almacenar información, los datos deben utilizar formato JSON válido, los errores de formato no serán procesados.
 :::
+
+#### Completar la tarea desde el code snippet
+
+La petición POST a la URL de `getUrl()` guarda los datos y también puede cambiar el estado de la tarea, según el parámetro `completed`:
+
+- **Sin `completed`**: guarda los datos y marca la tarea como completada.
+- **`completed: true`**: guarda los datos y marca la tarea como completada.
+- **`completed: false`**: guarda los datos sin completar la tarea. Si la tarea ya estaba completada, vuelve a quedar en curso.
+
+Usa solo `true` o `false` en `completed`. Cualquier otro valor se interpreta como `false`.
+
+`completed` va al mismo nivel que `content`, no dentro de él. Por ejemplo, para guardar datos sin completar la tarea:
+
+```js
+await fetch(getUrl(), {
+  method: 'POST',
+  headers: {
+    'X-CSRF-TOKEN': document.querySelector('meta[name=csrf-token]').content,
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({ content: { plan: 'basic' }, completed: false })
+});
+```
+
+Completar la tarea desde el code snippet no equivale a presionar **Siguiente**. Cada camino registra eventos distintos:
+
+- **POST que completa la tarea**: registra **Respuesta a tarea de originación completada** (`origination_task_response_completed_log`) y **Tarea de respuesta de originación actualizada** (`origination_submission_task_updated_log`).
+- **Botón Siguiente**: registra **Tarea de respuesta de originación enviada** (`origination_submission_task_submitted_log`). En las tareas con **Bloquear las respuestas al completar**, este evento lo registra el POST que completa la tarea, como se explica más abajo.
+
+Si la tarea no tiene activada esa opción y el usuario la completa con el POST, pero deja el flujo sin presionar **Siguiente** (por ejemplo, porque el code snippet navega con `window.location` o el usuario vuelve más tarde desde el enlace para retomar la respuesta), la tarea queda completada, pero no se registra **Tarea de respuesta de originación enviada**.
+
+:::tip Tip
+Para que una integración sepa que el usuario terminó un code snippet, suscribe tu [webhook](/es/platform/core/webhooks.html) a **Respuesta a tarea de originación completada** (`origination_task_response_completed_log`). En un code snippet, ese evento se registra cuando la tarea queda completada, ya sea con el POST o con el botón **Siguiente**. Si necesitas que el code snippet avance solo al paso siguiente, habilita el botón con `enableButton()` y deja que el usuario presione **Siguiente**, en lugar de redirigir con `window.location`.
+:::
+
+Si la tarea tiene activada la opción **Bloquear las respuestas al completar**, el POST que la completa también registra **Tarea de respuesta de originación enviada**, porque después de eso el botón **Siguiente** ya no vuelve a enviar la tarea.
 
 #### Uso de Liquid en code snippets
 
@@ -606,10 +695,10 @@ Para poder crear una tarea de invitación, primero debes crear al menos un [rol]
 Al configurar la tarea defines:
 
 - **Rol**: El rol que asumirán los usuarios invitados.
-- **Plantilla de correo**: El código HTML/Liquid del correo de invitación. Tienes disponibles variables de Liquid como `invitation.first_name`, `invitation.last_name`, `invitation.email`, `invitation_url`, `submission`, `task`, `origination` y `site`.
-- **Tareas objetivo**: Las tareas que los usuarios invitados podrán completar. Solo puedes seleccionar tareas anteriores a la tarea de invitación; otras tareas de invitación y las tareas de proceso de originación no son seleccionables.
+- **Plantilla de correo**: El código HTML/Liquid del correo que recibe cada invitado, con las [variables de Liquid de la invitación](#plantilla-del-correo-de-invitacion).
+- **Tareas objetivo**: Las tareas que los usuarios invitados podrán completar, agrupadas por paso. Puedes seleccionar tareas de cualquier paso de la originación; las otras tareas de invitación y las tareas de proceso de originación no son seleccionables.
 
-Además, en las propiedades de cada tarea incluida en una tarea de invitación encontrarás la opción **Mostrar esta tarea al usuario principal**, que controla si el usuario principal también ve esa tarea en su flujo.
+Además, en las propiedades de cada tarea seleccionada como objetivo aparece la opción **Mostrar esta tarea al usuario principal**, activada de manera predeterminada. Al desactivarla, la tarea deja de mostrarse en el flujo del usuario principal y queda reservada para el invitado que la resuelve. Si más adelante quitas esa tarea de las **Tareas objetivo**, la opción se vuelve a activar sola para que no quede oculta sin nadie que la responda.
 
 En la página de originación, el usuario principal puede invitar a personas nuevas (nombre, apellido y correo electrónico) o a usuarios ya invitados en otras tareas, y puede reenviar o cancelar las invitaciones pendientes. Cada invitado recibe un correo con un enlace de acceso y, al ingresar, solo ve las tareas que le fueron asignadas; si tiene más de un rol, ve la unión de las tareas de todos sus roles. El usuario invitado no puede cancelar la respuesta.
 
@@ -617,6 +706,47 @@ La tarea de invitación se completa cuando todos los invitados terminan sus tare
 
 :::tip Plantilla para usuarios invitados
 La página de la originación incluye la plantilla **Reanudar (Invitado)**, que es la vista que ven los usuarios invitados al volver a ingresar a la respuesta. Puedes personalizarla como el resto de las plantillas de la página.
+:::
+
+#### Plantilla del correo de invitación
+
+Cada tarea de invitación tiene su propia plantilla de correo. Al crear la tarea, el editor **Plantilla de correo** se precarga con un ejemplo funcional que ya trae el botón de aceptación, y puedes reemplazarlo por completo. El asunto no se configura: la plataforma usa el nombre de la originación y el nombre de la tarea.
+
+Dentro de la plantilla tienes disponibles estas variables de Liquid:
+
+| Variable | Contenido |
+|---|---|
+| <code v-pre>{{ invitation_url }}</code> | El enlace de acceso personal del invitado. Es la única variable imprescindible de la plantilla. |
+| <code v-pre>{{ invitation.first_name }}</code>, <code v-pre>{{ invitation.last_name }}</code>, <code v-pre>{{ invitation.email }}</code> | Los datos con los que se envió la invitación. |
+| <code v-pre>{{ invitation.status }}</code>, <code v-pre>{{ invitation.token }}</code>, <code v-pre>{{ invitation.created_at }}</code>, <code v-pre>{{ invitation.accepted_at }}</code> | El estado de la invitación, su token y sus fechas. |
+| <code v-pre>{{ user }}</code> | El usuario invitado. |
+| <code v-pre>{{ submission }}</code>, <code v-pre>{{ task }}</code>, <code v-pre>{{ origination }}</code>, <code v-pre>{{ site }}</code> | La respuesta, la tarea de invitación, la originación y el sitio. |
+
+El enlace de aceptación mínimo se escribe así:
+
+```liquid
+<a href="{{ invitation_url }}">Haz clic aquí para aceptar la invitación</a>
+```
+
+:::warning Sin plantilla no se envía el correo
+Si dejas vacía la **Plantilla de correo**, la invitación se crea igual y aparece en la lista de la tarea, pero el invitado nunca recibe el mensaje con su enlace de acceso. Revisa siempre que la plantilla incluya el enlace de aceptación.
+:::
+
+#### Ciclo de vida de una invitación
+
+En la tarea de invitación, el usuario principal ve la lista de las personas que invitó con su nombre, su correo, su rol, una barra de progreso de las tareas que tiene delegadas y una etiqueta con el estado de la invitación:
+
+- `pending`: La invitación se envió y el invitado todavía no entra al flujo.
+- `accepted`: El invitado abrió su enlace y entró a la respuesta.
+- `completed`: El invitado terminó todas las tareas objetivo de su rol.
+- `cancelled`: El usuario principal canceló la invitación antes de que fuera aceptada.
+
+Las acciones disponibles dependen del estado: **Reenviar invitación** y **Cancelar invitación** solo se muestran mientras la invitación está en `pending`. Una vez aceptada ya no se puede cancelar ni reenviar. Una invitación cancelada no ocupa cupo en el **Número máximo de usuarios** del rol, así que puedes volver a invitar a la misma persona.
+
+Cuando se completa la última invitación activa de la tarea, la respuesta a la tarea de invitación se completa sola y el flujo continúa. A partir de ese momento ya no se pueden enviar invitaciones nuevas desde esa tarea.
+
+:::tip Espera entre reenvíos
+Entre un reenvío y el siguiente hay que esperar unos minutos. Si presionas **Reenviar invitación** antes de tiempo, la plataforma te indica cuántos minutos faltan en lugar de enviar el correo.
 :::
 
 ### Confirmación
@@ -645,6 +775,8 @@ Opciones adicionales según el tipo de tarea:
 - **Desactivar el completado manual** (Revisión pendiente): Oculta el botón **Completar** para que la tarea no pueda completarse manualmente desde el admin. Los administradores con el permiso **Cambiar estado de la Respuesta de una Tarea** pueden completarla de todas formas.
 - **Permitir same-origin** (Snippet de código): Otorga al iframe de la tarea acceso al origen del admin (sesión y cookies), desactivando el aislamiento del sandbox. Actívalo solo para snippets de confianza.
 
+También puedes asignar una tarea de agente a un agente o a un grupo según las respuestas del usuario, con la acción **Asignar** de la [lógica condicional](#asignar-tareas-con-logica-condicional).
+
 #### Verificación de agentes para servicios externos
 
 Cuando un agente responde una tarea de Snippet de código, tu código puede obtener una credencial de corta vida (5 minutos) para que un servicio externo verifique que quien lo invoca es un agente autorizado sobre esa tarea y respuesta:
@@ -656,11 +788,12 @@ Puedes conocer el detalle de los endpoints en la documentación Swagger de la [A
 
 ### Lógica Condicional
 
-La lógica condicional te permite crear flujos de trabajo más dinámicos e inteligentes. Con esta funcionalidad, puedes definir reglas para mostrar u ocultar **Pasos**, **Tareas** y **campos de tareas Input** basándote en las respuestas proporcionadas por los usuarios o en datos existentes dentro de la respuesta. Esto te permite personalizar la experiencia del usuario, presentando solo la información relevante en cada etapa del proceso y simplificando o bifurcando la interacción. La lógica condicional te ofrece la flexibilidad de:
+La lógica condicional te permite crear flujos de trabajo más dinámicos e inteligentes. Con esta funcionalidad, puedes definir reglas para mostrar u ocultar **Pasos**, **Tareas** y **campos de tareas Input**, y para asignar tareas de agente, basándote en las respuestas proporcionadas por los usuarios o en datos existentes dentro de la respuesta. Esto te permite personalizar la experiencia del usuario, presentando solo la información relevante en cada etapa del proceso y simplificando o bifurcando la interacción. La lógica condicional te ofrece la flexibilidad de:
 
 - **Ocultar o mostrar pasos completos:** Dirige a los usuarios a través de diferentes caminos dentro del flujo de originación según sus respuestas previas.
 - **Ocultar o mostrar tareas individuales:** Dentro de un paso, puedes mostrar u ocultar tareas específicas. Esto es útil para solicitar información adicional solo cuando es necesaria.
 - **Ocultar o mostrar campos de tareas Input:** Dentro de una tarea de tipo Input, puedes mostrar u ocultar campos específicos. Esto te permite omitir o solicitar datos de acuerdo a las respuestas que proporciona el usuario. 
+- **Asignar tareas de agente:** Según las respuestas del usuario, asigna una tarea de agente a un agente o a un grupo específico. Revisa el detalle en [Asignar tareas con lógica condicional](#asignar-tareas-con-logica-condicional).
 
 #### Configurar Lógica Condicional
 
@@ -668,16 +801,54 @@ Para configurar la lógica condicional, sigue estos pasos:
 
 1. **Entra en el editor:** En la vista Build de una originación, presiona el botón de **Lógica condicional**.
 2. **Edita la visibilidad de los elementos:** Por defecto, todos los pasos, tareas y campos estarán visibles. En la sección **Estructura**, puedes marcar como no visibles los elementos que quieras presionando el ícono del ojo.
-3. **Define reglas:** En la sección **Reglas**, puedes definir las condiciones que determinarán si un elemento se muestra u oculta. Las reglas se componen de: (1) una o más condiciones evaluadas mediante  operadores **AND** y **OR** y (2) una acción a ejecutar cuando las condiciones se cumplan.
+3. **Define reglas:** En la sección **Reglas**, puedes definir las condiciones que determinarán si un elemento se muestra u oculta. Las reglas se componen de: (1) una o más condiciones evaluadas mediante  operadores **AND** y **OR** y (2) una o más acciones a ejecutar cuando las condiciones se cumplan.
    1. **Agrega una regla**: Presiona el botón **Añadir**.
    2. **Define las condiciones:** Las condiciones pueden estar basadas en:
       * **Respuestas a campos Input:** Compara la respuesta proporcionada por el usuario en un campo específico con un valor determinado. Puedes utilizar operadores como "es igual a", "no es igual a", "contiene", "es mayor que", "es menor que", etc.
       * **Completitud de un Paso o Tarea:** Evalúa si un paso o tarea fue completada.
-   3. **Define la acción:** Selecciona la acción y el elemento sobre el cual se ejecutará cuando la regla se cumpla. Las acciones disponibles son **Mostrar** y **Ocultar**.
+   3. **Define las acciones:** En **Entonces**, selecciona la acción y el elemento sobre el cual se ejecutará cuando la regla se cumpla. Las acciones disponibles son **Mostrar**, **Ocultar** y **Asignar**. Para agregar otra acción a la misma regla, presiona **+ Agregar acción**. Usa los íconos **Subir** y **Bajar** para cambiar el orden de una acción y **Quitar acción** para eliminarla.
 4. **Guarda los cambios:** Una vez que hayas definido tus reglas, guarda los cambios.
+
+Cuando se cumplen las condiciones de una regla, se ejecutan todas sus acciones, en orden. Si dos acciones se contradicen, por ejemplo **Mostrar** y **Ocultar** sobre el mismo elemento, prevalece la última, tanto dentro de una misma regla como entre reglas distintas. Las reglas que ya tenías, con una sola acción, siguen funcionando igual.
+
+:::warning Atención
+Como prevalece la última acción, cambiar el orden de las reglas o de sus acciones puede cambiar qué elementos ve el usuario o a quién se asigna una tarea.
+:::
 
 :::tip Experiencia de usuario
 Considera cómo la lógica condicional puede afectar la experiencia del usuario y asegúrate de que el flujo pueda ser completado con facilidad. 
+:::
+
+#### Asignar tareas con lógica condicional
+
+La acción **Asignar** asigna una tarea de agente a un agente o a un grupo cuando se cumplen las condiciones de la regla. Te sirve, por ejemplo, para que una tarea llegue a un equipo distinto según el producto que eligió el usuario.
+
+Para configurarla en una regla:
+
+1. En **Entonces**, elige **Asignar**.
+2. Elige la tarea. Solo puedes elegir tareas en modo agente: las de **Validación** y **Revisión pendiente**, y las **Input** y **Snippet de código** que tienen **Asignado a** en **Agente**. Las demás aparecen deshabilitadas.
+3. En **Selecciona un agente o grupo**, elige un agente, un grupo o un agente dentro de un grupo.
+
+Solo puedes elegir agentes activos que puedan ver las tareas de las respuestas del reino, por ejemplo con el permiso **Ver Tareas de la Respuesta**. Si eliges un agente dentro de un grupo, además tiene que pertenecer a ese grupo. No puedes guardar una acción **Asignar** sin tarea o sin agente o grupo: el editor muestra el aviso "Selecciona una tarea y un agente o grupo para guardar esta acción."
+
+Si después configuras la tarea en modo **Usuario**, la acción muestra el aviso "Esta tarea no está en modo agente. La acción no tendrá efecto hasta que la tarea se configure en modo agente." y la plataforma la ignora mientras la tarea siga en ese modo.
+
+Así se aplica la asignación:
+
+- La regla asigna la tarea cuando sus condiciones pasan de no cumplirse a cumplirse. Si después dejan de cumplirse, la tarea conserva la asignación, y si vuelven a cumplirse, la regla la asigna otra vez.
+- Si varias acciones **Asignar** apuntan a la misma tarea, prevalece la última.
+- Si el agente o el grupo de la acción ya no es válido, porque el agente está inactivo o suspendido, perdió el permiso, ya no pertenece al grupo o fue eliminado, la plataforma ignora esa acción y aplica la acción **Asignar** válida anterior. Si no queda ninguna, la tarea vuelve a la asignación por defecto de [Tareas respondidas por agentes](#tareas-respondidas-por-agentes).
+- Una reasignación manual hecha después de que la regla asignó la tarea se mantiene. Si la regla vuelve a dispararse, su asignación reemplaza a la manual.
+- La regla puede asignar una tarea a la que el usuario todavía no llega. La respuesta queda visible para el agente o el grupo desde que se dispara la regla, y la asignación se mantiene cuando el flujo llega a la tarea.
+- El correo al asignado se envía cuando el flujo llega a la tarea, no cuando se dispara la regla. Si la tarea ya estaba en curso y la regla la reasigna, el nuevo asignado recibe el correo igual que en una reasignación manual.
+- Una tarea asignada por una regla se comporta como cualquier tarea de agente: el usuario no puede avanzar hasta que el agente la complete. Si el usuario retoma el flujo, vuelve a la primera tarea que no completó.
+- La regla no cambia tareas ya completadas ni tareas que la lógica condicional le oculta al usuario. En los flujos multiusuario, la regla se evalúa con las respuestas de cada participante y solo asigna las tareas que le corresponden a ese participante.
+- Editar una regla no cambia las respuestas en las que ya se ejecutó: conservan la asignación que hizo, y la configuración nueva se aplica cuando la regla se dispare de nuevo.
+- La asignación automática que ocurre al llegar a la tarea no reemplaza la que hizo una regla.
+- Las asignaciones que hace una regla no quedan en los logs de actividad.
+
+:::warning Atención
+Si consumes la API de administración de originaciones, ten en cuenta que cada regla ahora tiene `targets`, una lista ordenada de acciones, en lugar de `target`. Al guardar, la API sigue aceptando `target`, pero siempre responde con `targets`, y una originación sin reglas responde `rules: []`. La acción **Asignar** se envía como un target con `action: assign`. Revisa el detalle en la documentación Swagger de la [API](/es/platform/core/api.html).
 :::
 
 ### Editar configuración de la originación
@@ -688,7 +859,7 @@ Al seleccionar la opción **Editar** en el menú contextual de tu originación p
 - **Descripción**: Incluye un breve texto explicativo sobre el propósito de la originación.
 - **Mensaje de completado**: Es el mensaje que aparecerá al usuario al finalizar el proceso de originación.
 - **Asignado por defecto de la respuesta**: Especifica el administrador o grupo de administradores que será asignado automáticamente a cada nueva respuesta. Al seleccionar un grupo, puedes usar la opción **Asignar a todo el grupo** o elegir un usuario específico dentro de él.
-- **Vence en**:  Establece un plazo máximo para completar la originación.
+- **Vence en**: Establece el plazo de vencimiento de cada respuesta y desde cuándo se cuenta. Revisa el detalle en [Configurar el vencimiento](#configurar-el-vencimiento).
 - **Cancelar automáticamente las respuestas que excedan la fecha de vencimiento**: Disponible solo si configuraste un vencimiento. Al activar esta opción, las respuestas en estado **Pendiente** que superen su fecha de vencimiento se cancelan automáticamente.
 - **Reglas de completado**:  Define el comportamiento de completado para cada respuesta.
 - **Reglas de cancelación**: Define quién puede cancelar una respuesta desde la página de originación:
@@ -697,7 +868,31 @@ Al seleccionar la opción **Editar** en el menú contextual de tu originación p
 - **Privacidad**: Permite restringir el acceso al flujo de originación a ciertos segmentos de usuarios predefinidos.
 
 :::tip Cancelación automática por vencimiento
-La cancelación automática se ejecuta en un proceso en segundo plano una vez al día, por lo que puede no ser inmediata al momento del vencimiento. Solo cancela respuestas en estado **Pendiente** y registra **Auto-cancelada por vencimiento** como razón de cancelación, visible en los detalles de la respuesta.
+La cancelación automática se ejecuta en un proceso en segundo plano, así que la respuesta se cancela hasta una hora después de su fecha de vencimiento. Funciona igual con cualquiera de los disparadores del vencimiento, solo cancela respuestas en estado **Pendiente** y registra **Auto-cancelada por vencimiento** como razón de cancelación, visible en los detalles de la respuesta.
+:::
+
+#### Configurar el vencimiento
+
+En la sección **Vence en**, marca la casilla **Marcar una respuesta como vencida después** y completa:
+
+- **Meses**, **Días** y **Horas**: La duración del plazo. Puedes combinar los tres, por ejemplo 1 mes, 3 días y 2 horas, y la suma tiene que ser mayor que 0. Un mes es un mes calendario, no un bloque de 30 días.
+- **Contar el plazo desde**: El disparador desde el que se cuenta la duración:
+  - **El inicio de la respuesta**: Opción por defecto. El plazo parte cuando la respuesta pasa a **Pendiente**, es decir, en su fecha **Comenzó el**.
+  - **La finalización de una tarea**: El plazo parte cuando el usuario principal completa la tarea que eliges en **Tarea**. El selector muestra todas las tareas del flujo como `Paso › Tarea`. Si la tarea se reabre y se vuelve a completar, el plazo se cuenta desde la última vez que se completó. Si eliges una tarea que no se muestra al usuario principal, la pantalla te advierte que, si esa tarea nunca se completa, la respuesta queda sin vencimiento.
+  - **El valor de un campo de fecha**: El plazo parte en la fecha respondida en el campo que eliges en **Campo de fecha**. El selector muestra como `Tarea › Pregunta` las preguntas de tipo fecha de primer nivel de las tareas de input; las que están dentro de un grupo no aparecen. Si el campo no tiene hora, el plazo parte a las 00:00 de esa fecha en la zona horaria de la cuenta. Si varios participantes responden el campo, manda la respuesta del usuario principal, y si la respuesta cambia, la fecha de vencimiento se recalcula.
+
+Si la duración incluye horas, la fecha de vencimiento se muestra con su hora en el listado y en el detalle de la respuesta.
+
+Mientras el disparador no ocurre, la respuesta queda **Sin vencimiento**: no tiene fecha límite y no se cancela automáticamente. No hay un disparador de respaldo, así que si eliges una tarea o un campo que nunca se responde, por ejemplo porque la [lógica condicional](#logica-condicional) lo oculta, esa respuesta nunca vence.
+
+La tarea o la pregunta que usas como disparador no se pueden eliminar, ni tampoco el paso que las contiene. La pregunta tampoco se puede mover a un grupo ni cambiar de tipo. Si lo intentas, al guardar el flujo la plataforma te avisa que primero tienes que cambiar la regla de vencimiento.
+
+Al publicar una versión que cambia la duración o el disparador, o que activa o desactiva el vencimiento, la plataforma recalcula en segundo plano la fecha de vencimiento de las respuestas **Pendiente**, sin cambiar su estado. Si solo cambió la duración, el plazo se sigue contando desde el mismo momento; si cambió el disparador, se vuelve a buscar en cada respuesta. Si desactivas el vencimiento, las respuestas quedan sin fecha límite.
+
+Si la cancelación automática está activa y el cambio deja respuestas pendientes ya vencidas, antes de publicar la plataforma te indica cuántas se cancelarán y te pide confirmar con **¿Publicar de todas formas?**. Las respuestas se cancelan en la siguiente ejecución de la cancelación automática. Si programas la publicación, el conteo corresponde a las respuestas que estarían vencidas hoy, y se cancelan las que estén vencidas al momento de publicarse.
+
+:::warning Atención con los vencimientos en semanas y en meses
+Las originaciones que tenían el vencimiento en semanas lo tienen ahora en días, a razón de 7 días por semana. Las que lo tenían en meses ahora cuentan meses calendario en lugar de 30 días, así que la fecha de vencimiento de sus respuestas puede moverse varios días: la diferencia depende de la fecha del disparador y de la cantidad de meses. Por ejemplo, 12 meses desde el 1 de enero de 2026 vencían el 27 de diciembre de 2026 y ahora vencen el 1 de enero de 2027.
 :::
 
 #### Roles
@@ -706,7 +901,10 @@ En la edición de la originación encontrarás la sección **Roles**, donde defi
 
 - **Nombre**: El nombre del rol, único dentro de la originación.
 - **Requiere invitaciones**: Si está activo, el usuario principal debe invitar al menos a una persona para completar la tarea de invitación que use este rol.
-- **Número máximo de usuarios**: La cantidad máxima de usuarios que pueden tener este rol en una misma respuesta.
+- **Puede ser asumido por el usuario principal**: Si está activo, el propio usuario principal aparece en la lista de personas a invitar de la tarea, identificado como **Tú**, y puede tomar el rol él mismo. Esa invitación no envía correo: queda aceptada al instante y se completa apenas termine las tareas objetivo. Si está desactivado y se intenta invitar al titular de la respuesta, la plataforma responde **No puedes invitar al propietario de la submission**.
+- **Número máximo de usuarios**: La cantidad máxima de usuarios que pueden tener este rol en una misma respuesta. Viene en 1 y acepta hasta 100. Es el valor que limita cuántas invitaciones activas admite la tarea de invitación que usa el rol; al alcanzarlo, el formulario de invitación se bloquea con el mensaje **No se pueden enviar más invitaciones, esta tarea está completada o ha alcanzado el número máximo de invitaciones permitidas**.
+
+Puedes editar o eliminar los roles desde la misma sección. Como cada rol solo puede usarse en una tarea de invitación, si todos los roles de la originación ya están tomados el tipo **Invitación** aparece deshabilitado al agregar una tarea, con el aviso **No hay roles disponibles para asignar a esta tarea.** Para crear otra tarea de invitación tienes que agregar antes un rol nuevo.
 
 #### Eliminar originación
 
@@ -766,14 +964,14 @@ Cuando la originación tiene configurado **Vence en**, cada respuesta lleva adem
 - **Vence pronto**: Ya se consumió el 75% del plazo, pero la fecha límite aún no pasa.
 - **Vencido**: La fecha límite ya pasó.
 
-El plazo se cuenta desde el disparador configurado en la originación: el inicio de la respuesta o la fecha respondida en una pregunta de tipo Fecha del flujo. El estado de vencimiento solo aplica a las respuestas **Pendiente**: al completarse o cancelarse, la respuesta deja de mostrarlo.
+El plazo se cuenta desde el disparador configurado en la originación: el inicio de la respuesta, la finalización de una tarea o la fecha respondida en un campo de fecha del flujo. Revisa cómo se configura en [Configurar el vencimiento](#configurar-el-vencimiento). El estado de vencimiento solo aplica a las respuestas **Pendiente**: al completarse o cancelarse, la respuesta deja de mostrarlo.
 
-En el listado de respuestas, la columna **Vence en** muestra la fecha límite seguida de la etiqueta entre paréntesis, por ejemplo `22/02/2026 (Vence pronto)`. Si la respuesta todavía no arranca, muestra **No iniciado**, y cuando no corresponde una fecha límite muestra `--`.
+En el listado de respuestas, la columna **Vence en** muestra la fecha límite seguida de la etiqueta entre paréntesis, por ejemplo `22/02/2026 (Vence pronto)`. Si la respuesta todavía no arranca, muestra **No iniciado**; si ya arrancó pero el disparador todavía no ocurre, muestra **Sin vencimiento**, y cuando no corresponde una fecha límite muestra `--`. El campo **Vence en** de la pestaña **Detalles** de la respuesta muestra lo mismo. Una respuesta **Sin vencimiento** cuenta como **A tiempo** en el filtro y en el resumen de la originación.
 
-Puedes extender el plazo de una respuesta concreta agregándole días adicionales con el parámetro `due_extension_days` del endpoint de actualización de respuestas de la [API de administración](/es/platform/core/api.html). Los días se suman a los del **Vence en** de la originación y desplazan tanto la fecha límite como el umbral de **Vence pronto**, y el cambio queda registrado en la actividad de la respuesta.
+Puedes extender el plazo de una respuesta concreta agregándole días adicionales con el parámetro `due_extension_days` del endpoint de actualización de respuestas de la [API de administración](/es/platform/core/api.html). Los días se suman a la fecha de vencimiento calculada y desplazan tanto la fecha límite como el umbral de **Vence pronto**, y el cambio queda registrado en la actividad de la respuesta.
 
 :::tip Actualización del estado de vencimiento
-El estado de vencimiento se recalcula en un proceso en segundo plano que corre una vez al día, así que una respuesta puede tardar hasta 24 horas en aparecer como **Vence pronto** o **Vencido**. Extender el plazo de una respuesta sí recalcula su estado de inmediato.
+El estado de vencimiento se recalcula en un proceso en segundo plano que corre cada hora, así que una respuesta puede tardar hasta una hora en aparecer como **Vence pronto** o **Vencido**. Extender el plazo de una respuesta sí recalcula su estado de inmediato. Si cambias la zona horaria de la cuenta, la plataforma recalcula la fecha de vencimiento de las respuestas pendientes cuyo disparador es un campo de fecha sin hora.
 :::
 
 ### Ver detalles de una originación

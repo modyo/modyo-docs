@@ -50,7 +50,7 @@ Account deletion is irreversible. If a user performs this action, they will need
 
 ## Realm routes
 
-Every session and profile view of a realm hangs from the same prefix, built with your account URL and the realm identifier: `https://my_account.modyo.com/realms/my_realm/`.
+Every session and profile view of a realm hangs from the same prefix, built with your account URL and the realm identifier: `https://my_account.modyo.com/realms/my_realm/`. If the realm has a [custom domain](/en/platform/customers/settings.html#domains), the prefix is `https://<your-domain>/realms/`, without the identifier.
 
 | Route | What it is for |
 | --- | --- |
@@ -85,4 +85,4 @@ There is no Liquid drop that returns the registration URL: build it with the rea
 - `redirect_uri`: URL the user is sent to after logging in. The realm routes that accept it are `/login`, `/otp_login`, `/activate/:activation_code`, and `/session/access/:token`.
 - `redirect_to`: URL the user is sent to after logging out at `/logout`. It is also the parameter used by a site's `/login` route, as explained in [Redirect Login](/en/platform/customers/settings.html#redirect-login).
 
-The destination URL has to be a relative path or point to a site in your own account. If it isn't, the platform discards it and applies the redirection defined in **After logging in, redirect to** of the [Realm Settings](/en/platform/customers/settings.html#general).
+The destination URL has to be a relative path, point to a site in your own account, or to one of the realm's custom domains. If it isn't, the platform discards it and applies the redirection defined in **After logging in, redirect to** of the [Realm Settings](/en/platform/customers/settings.html#general).

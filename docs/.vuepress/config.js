@@ -205,6 +205,7 @@ module.exports = {
                           "/en/platform/tools/cli",
                           "/en/platform/tools/sdk",
                           "/en/platform/tools/mcp",
+                          "/en/platform/tools/mcp-widgets",
                         ],
                       },
                   ],
@@ -300,6 +301,8 @@ module.exports = {
                       children: [
                           "/en/dynamic/development/components",
                           "/en/dynamic/development/api-integration",
+                          "/en/dynamic/development/i18n",
+                          "/en/dynamic/development/agent-artifacts",
                       ],
                   },
                   {
@@ -308,6 +311,7 @@ module.exports = {
                       collapsable: true,
                       children: [
                           "/en/dynamic/customization/theming",
+                          "/en/dynamic/customization/theme-tools",
                           "/en/dynamic/customization/extending",
                       ],
                   },
@@ -504,6 +508,7 @@ module.exports = {
                           "/es/platform/tools/cli",
                           "/es/platform/tools/sdk",
                           "/es/platform/tools/mcp",
+                          "/es/platform/tools/mcp-widgets",
                         ],
                       },
                   ],
@@ -600,6 +605,8 @@ module.exports = {
                       children: [
                           "/es/dynamic/development/components",
                           "/es/dynamic/development/api-integration",
+                          "/es/dynamic/development/i18n",
+                          "/es/dynamic/development/agent-artifacts",
                       ],
                   },
                   {
@@ -608,6 +615,7 @@ module.exports = {
                       collapsable: true,
                       children: [
                           "/es/dynamic/customization/theming",
+                          "/es/dynamic/customization/theme-tools",
                           "/es/dynamic/customization/extending",
                       ],
                   },

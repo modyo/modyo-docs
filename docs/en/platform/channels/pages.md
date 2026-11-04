@@ -181,6 +181,7 @@ Modyo has reserved paths for pages, so you cannot use them as paths for your cus
 <li>ping</li>
 <li>preview</li>
 <li>profile</li>
+<li>realms</li>
 </ul></td>
 <td style="border: none;"><ul>
 <li>robots</li>

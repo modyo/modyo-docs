@@ -273,7 +273,7 @@ Si necesitas personalizar las animaciones, consulta la [documentación de Framer
 ## Recursos Adicionales
 
 - [Catálogo de iconos Lucide](https://lucide.dev/icons/)
-- [What's New en v2.0](../whats-new-v2.html)
+- [Notas de versión de Dynamic UI](https://github.com/dynamic-framework/dynamic-ui/releases)
 - [Storybook de Dynamic UI](https://react.dynamicframework.dev)
 
 ## ¿Necesitas Ayuda?

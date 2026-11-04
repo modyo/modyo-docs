@@ -181,6 +181,7 @@ Modyo cuenta con rutas reservadas para las página, por lo que no podrás usarlo
 <li>ping</li>
 <li>preview</li>
 <li>profile</li>
+<li>realms</li>
 </ul></td>
 <td style="border: none;"><ul>
 <li>robots</li>
