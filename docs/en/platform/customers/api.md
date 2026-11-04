@@ -11,6 +11,8 @@ Modyo Customers contains a variety of APIs with which you can obtain information
 
 Every endpoint under `ACCOUNT_URL/api/customers/realms/{realm_uid}/` answers on behalf of an end user of the realm, so each call needs a credential for that user. The only exception is [OTP code verification](#otp-code-verification).
 
+If the realm has a [custom domain](/en/platform/customers/settings.html#domains), the Customers API also answers on `https://<your-domain>/api/customers/realms/{realm_uid}/`, with the same realm identifier in the path and the same responses as on `ACCOUNT_URL`, where it keeps answering without redirecting. On the custom domain, a `realm_uid` of another realm answers 404, and on the realm's alternative domains the API answers 404, without redirecting. OAuth authorization happens at `https://<your-domain>/realms/oauth/authorize`, and `ACCOUNT_URL/realms/{realm_uid}/oauth/authorize` redirects there. The token and revocation endpoints keep answering on `ACCOUNT_URL`.
+
 The realm accepts two credentials:
 
 - **OAuth2 access token**, in the `Authorization: Bearer` header. It takes precedence: when the request carries a recognized access token, the session cookie is not evaluated.
@@ -75,7 +77,7 @@ Every Customers API endpoint shares these error bodies:
 |------|------|-----------------|
 | `401` | <code v-pre>{"error":{"user_session":"user not found"}}</code> | The request carries no usable credentials, the access token does not match a user of the realm, or the user is inactive. |
 | `401` | <code v-pre>{"error":{"grant_expired":"session expired"}}</code> | The credential identifies a user, but the session behind it expired or was revoked. |
-| `404` | <code v-pre>{}</code> | The `realm_uid` in the URL does not match any active realm of the account. |
+| `404` | <code v-pre>{}</code> | The `realm_uid` in the URL does not match any active realm of the account or, on a custom domain, does not match the realm of that domain. |
 
 :::tip Tip
 Telling the two `401` apart saves you debugging time. `user_session` means that no usable credential ever arrived, so check the `Authorization` header or the cookie. `grant_expired` means that the credential was correct and what ran out was the session, so what you need is to authenticate the user again instead of retrying.
@@ -196,8 +198,9 @@ The body carries the following attributes:
 | `status` | `not_started`, `pending`, `completed` or `canceled`. |
 | `progress` | Percentage of completed tasks, as text. For example, `25%`. |
 | `due` | Ready-to-display text with the deadline and its status. |
-| `due_deadline_at` | Raw deadline date and time. It is `null` when the origination has no deadline configured or when the submission has not started, is completed or is canceled. |
-| `due_label` | Label that replaces the date when there is no deadline, such as `Not started` or `--`. It is `null` when `due_deadline_at` carries a value. |
+| `due_deadline_at` | Raw deadline date and time, including the extension days. It is `null` when the origination has no deadline configured, when the deadline trigger hasn't happened yet, or when the submission has not started, is completed or is canceled. |
+| `due_label` | Label that replaces the date when there is no deadline, such as `Not started`, `No due date` or `--`. It is `null` when `due_deadline_at` carries a value. |
+| `due_with_time` | `true` if the deadline period of the origination includes hours, so the deadline should be shown with its time. |
 | `due_status_label` | Deadline status label in parentheses, such as `(On track)`, `(Due soon)` or `(Overdue)`. It is `null` when the submission is not pending. |
 | `due_extension_days` | Extension days granted to the deadline, or `null` if the origination has no deadline configured. |
 | `created_at`, `updated_at`, `started_at` | Creation, last update and start dates of the submission. |

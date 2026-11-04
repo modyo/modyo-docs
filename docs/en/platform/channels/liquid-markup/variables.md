@@ -213,9 +213,9 @@ The <code v-pre>{% body %}</code> tag writes `page_context`, `page_name` and `pa
 
 | Variable | What it holds |
 |----------|---------------|
-| `site_search` | The resolved search, with its results. See [sitesearch](/en/platform/channels/liquid-markup/objects.html#sitesearch). |
+| `site_search` | The resolved search, with its results. See [site_search](/en/platform/channels/liquid-markup/objects.html#site-search). |
 | `params_query` | The search term, sanitized and escaped, ready to print. Only exists if the URL carries the parameter. |
-| `params_more` | The search's extra filter, sanitized and escaped. Only exists if the URL carries it. |
+| `params_more` | The value of the URL's `more` parameter, sanitized and escaped. The search engine does not use it to filter: it is just made available in case your template needs it. Only exists if the URL carries it. |
 
 ### From Origination pages
 

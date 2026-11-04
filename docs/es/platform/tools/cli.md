@@ -241,53 +241,79 @@ EXAMPLE
 
 El comando `preview` te permite previsualizar un widget localmente para depurar su código en un entorno local antes de publicarlo.
 
-### Requisitos
+#### Requisitos
 
 Para utilizar el comando `preview`, asegúrate de cumplir con los siguientes requisitos:
 
+- Una sesión de administrador activa en el navegador, sobre la misma cuenta de Modyo. El comando abre la vista previa en tu navegador por defecto, y esa URL exige sesión de administrador: si no la hay, te lleva al login del panel en lugar de mostrar el widget. Ni el archivo `.env` ni el servidor local reemplazan este requisito.
 - Un archivo [.env](/es/platform/tools/cli.html#configuracion-del-entorno) correctamente configurado. Los campos `MODYO_ACCOUNT_URL`, `MODYO_SITE_HOST` o `MODYO_SITE_ID` y `MODYO_TOKEN` son requeridos.
 - Un servidor local en ejecución con el widget que deseas previsualizar.
 
-### Pasos para previsualizar un widget
+#### Pasos para previsualizar un widget
 
-Una vez tengas tu archivo `.env` configurado y tu proyecto funcionando en el servidor local, sigue estos pasos:
+Una vez tengas tu archivo `.env` configurado, tu sesión de administrador abierta y tu proyecto funcionando en el servidor local, sigue estos pasos:
 
 - Abre una nueva ventana de terminal.
 - Ejecuta el comando `modyo-cli preview`.
 
 :::warning Importante
 
-Para visualizar un cambio, debes refrescar manualmente tu web app. Haz click en **refresh** para cargar los cambios.
+Para visualizar un cambio, debes refrescar manualmente tu web app. Haz click en **Recargar** para cargar los cambios.
 
 :::
 
-### Variables predeterminadas
-Modyo usa variables predeterminadas para la previsualización de widgets, puedes modificarlas según requieras. Las variables predefinadas son:
+#### Variables predeterminadas
 
-  - `MODYO_LOCAL_PORT`: Puerto del servidor local (por defecto: `8080`)
-  - `MODYO_LOCAL_DOM_ID`: El ID del elemento contenedor del widget (por defecto: `widgetName`)
-  - `MODYO_LOCAL_ENTRY_JS`: El archivo JavaScript principal (por defecto: `main.js`)
+Modyo usa variables predeterminadas para la previsualización de widgets, puedes modificarlas según requieras. Las variables predefinidas son:
 
+- `MODYO_LOCAL_PORT`: Puerto del servidor local (por defecto: `8080`)
+- `MODYO_LOCAL_DOM_ID`: El ID del elemento contenedor del widget (por defecto: `widgetName`)
+- `MODYO_LOCAL_ENTRY_JS`: El archivo JavaScript principal (por defecto: `main.js`)
+- `MODYO_LOCAL_MODULE`: Carga el archivo de entrada como ES module (por defecto: `false`)
 
-Además, puedes seleccionar si quieres previsualizar tu widget en la versión publicada de tu sitio o en la versión editable. Para ello, da click en la casilla debajo de **templates**. El texto cambiará de **publicada** a **editable**.
+Cada variable tiene su opción equivalente en la línea de comandos, y la opción tiene precedencia sobre el `.env`:
 
+```bash
+USAGE
+  $ modyo-cli preview -t <value> -u <value> [-h] [-v 8|9|10] [-i <value> | -n <value>] [-p <value>] [-s <value>] [-j <value>] [-m]
 
-Estos comandos te permiten seleccionar los entry points locales que quieres usar.
+FLAGS
+  -h, --help                 Output usage information
+  -i, --site-id=<value>      [env: MODYO_SITE_ID] Id of the site where the widget will be previewed
+  -j, --entry-js=<value>     [default: main.js, env: MODYO_LOCAL_ENTRY_JS] Entry JS file of the widget
+  -m, --module               [env: MODYO_LOCAL_MODULE] Load entry JS as an ES module (type="module")
+  -n, --site-host=<value>    [env: MODYO_SITE_HOST] Host of the site where the widget will be previewed
+  -p, --port=<value>         [default: 8080, env: MODYO_LOCAL_PORT] Deploy port local widget running
+  -s, --dom-id=<value>       [default: widgetName, env: MODYO_LOCAL_DOM_ID] Container id of the widget
+  -t, --token=<value>        (required) [env: MODYO_TOKEN] Modyo Api token
+  -u, --account-url=<value>  (required) [env: MODYO_ACCOUNT_URL] URL of your Modyo account ex("https://account.modyo.com")
+  -v, --version=<option>     [default: 9, env: MODYO_VERSION] Version of Modyo platform <options: 8|9|10>
 
+EXAMPLE
+  $ modyo-cli preview -p 5173 -j main.js -m
+```
 
-    OPTIONS
+#### Previsualizar un widget que se carga como ES Module
 
-    -p, –port=<value> [default: 8080) Deploy port local widget running
-    -s, –dom-id=<value> [default: widgetName] Container id of the widget
-    -j, –entry-js=<value> [default: main.js] Entry JS file of the widget
+Por defecto, la vista previa inserta tu archivo de entrada con el atributo `defer`. Un proyecto que compila a ES modules, como la plantilla base en React con Vite, no arranca así y la vista previa queda vacía.
 
-    EXAMPLE
+Con la opción `-m` (o `MODYO_LOCAL_MODULE=true`) el script se inserta con `type="module"`. Es el equivalente local de la opción **Cargar como Módulo ES (Experimental)** de los widgets instanciados en una página, descrita en [Carga como ES Module](/es/platform/channels/widgets.html#carga-como-es-module).
 
-    MODYO_LOCAL_PORT=8080
-    MODYO_LOCAL_DOM_ID=widgetName
-    MODYO_LOCAL_ENTRY_JS=main.js
+:::warning Atención
+El modo módulo viaja en la URL que abre el comando y la barra de la vista previa no lo conserva: al cambiar cualquier opción de la barra o hacer click en **Recargar**, el widget vuelve a cargarse con `defer`. Para recuperarlo, vuelve a ejecutar `modyo-cli preview -m`.
+:::
 
+#### Opciones de la barra de la vista previa
 
+La vista previa se abre dentro de tu sitio, con la barra de la vista previa en el borde de la ventana. Para un widget local, la barra ofrece:
+
+- **Templates**: elige si el widget se monta sobre las plantillas **Publicada** o **Editable** del sitio.
+- **Snippets globales**: el mismo conmutador **Publicada** / **Editable** para los snippets globales.
+- **Layout**: elige el layout del sitio con el que se monta el widget; por defecto es `base`. La lista se arma con los layouts del conjunto de plantillas seleccionado en **Templates**, así que cambia al pasar de publicadas a editables. Si el layout elegido no existe en el conjunto activo, la vista previa vuelve a `base`.
+- **Puerto**, **Mount DOM element** y **Entry JS**: los mismos valores del comando, editables sin volver a la terminal.
+- **Recargar**, **Compartir** y **Salir**: vuelve a cargar la vista previa con las opciones elegidas, copia su URL para compartirla, o sal de la vista previa.
+
+Un widget local no ofrece las opciones **SDK de contenido** ni **Navegación**, ni el botón **Editar widget**, porque su código vive en tu proyecto y no en la plataforma.
 
 ## Code Splitting
 

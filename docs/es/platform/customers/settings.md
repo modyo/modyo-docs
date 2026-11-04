@@ -14,7 +14,7 @@ Aquí puedes modificar tanto la experiencia visual del usuario como la configura
 En esta sección, puedes configurar aspectos generales del reino, como:
 
 - **Título**.
-- **Identificador**: La URL de las vistas de perfil, inicio de sesión, registro y recuperación de contraseña del reino. Revisa el listado completo en [Rutas del reino](/es/platform/customers/profile.html#rutas-del-reino).
+- **Identificador**: La URL de las vistas de perfil, inicio de sesión, registro y recuperación de contraseña del reino. Revisa el listado completo en [Rutas del reino](/es/platform/customers/profile.html#rutas-del-reino). Si el reino tiene un [dominio personalizado](/es/platform/customers/settings.html#dominios), sus rutas en ese dominio no incluyen el identificador.
 - **Deshabilitar credenciales de la plataforma**: Al marcar esta casilla, desactivas las credenciales de Modyo en el reino y permites únicamente el acceso a través de SSO.
 
 :::danger Peligro
@@ -34,7 +34,7 @@ Antes de habilitar la opción de deshabilitar las credenciales de Modyo en el re
 - **Imagen de Avatar por defecto**: Imagen que se muestra en el avatar de los usuarios que no tienen una imagen personalizada.
 - **Soft login**: Habilita el ingreso con un código de un solo uso (OTP) en lugar de contraseña, y define su validez, el tiempo de espera para reenviarlo y los canales por los que se envía. Revisa el detalle en [Soft login](#soft-login).
 - **Formulario de registro**: Aquí puedes habilitar o deshabilitar diferentes atributos en el formulario de registro, como el segundo apellido, confirmación de correo electrónico, avatar de usuario, fecha de nacimiento, género y número de teléfono.
-- **Eliminar reino**: Elimina el reino. Este proceso se realiza en segundo plano y es posible que no veas el reino desaparecer inmediatamente después de ejecutar la acción. Para confirmar la eliminación, debes ingresar el nombre completo del reino.
+- **Eliminar reino**: Elimina el reino y todos sus stages. Este proceso se realiza en segundo plano y es posible que no veas el reino desaparecer inmediatamente después de ejecutar la acción. Para confirmar la eliminación, debes ingresar el nombre completo del reino. Solo aparece si tienes el permiso **Administración General**, y no puedes usarlo mientras alguna aplicación web o espacio tenga seleccionado el reino o alguno de sus stages. En un stage, el botón se llama **Eliminar stage** y pide el nombre del stage. Revisa el detalle en [Eliminar un Reino](/es/platform/customers/realms.html#eliminar-un-reino) y [Eliminar un stage](/es/platform/customers/realms.html#eliminar-un-stage).
 
 
 ### Soft login
@@ -326,6 +326,31 @@ Para configurarla necesitas:
 
 Una vez habilitada, el proveedor queda disponible en las tareas de [Verificación de Identidad](/es/platform/customers/origination.html#verificacion-de-identidad) de las originaciones del reino.
 
+### Incode
+
+La integración de Incode, de la categoría **Verificación de Identidad**, permite verificar la identidad del usuario en las originaciones del reino con validación del documento y OCR, prueba de vida, face match y validación contra bases de gobierno. Puede estar habilitada al mismo tiempo que las demás integraciones de verificación de identidad del reino.
+
+Para configurarla necesitas:
+
+- **URL de la API**: URL base de la API del ambiente de Incode, por ejemplo `https://demo-api.incodesmile.com`. Debe usar HTTPS y pertenecer a un dominio de Incode (`incodesmile.com`).
+- **API key**: La API key de Incode.
+- **Email del usuario administrador** y **Contraseña del usuario administrador**: Las credenciales de un usuario con rol Admin en el Dashboard de Incode. Incode solo permite leer los resultados de una verificación con el token de un usuario con ese rol.
+
+Cuando cambias alguna credencial o habilitas la integración, Modyo valida las credenciales contra Incode y no guarda los cambios si Incode las rechaza o no responde. La contraseña se guarda cifrada y no se vuelve a mostrar: al editar la integración, deja el campo en blanco para mantenerla.
+
+::: warning Usa un usuario administrador dedicado
+Si el usuario administrador se elimina o cambia su contraseña en Incode, Modyo deja de obtener los resultados de las verificaciones. Usa un usuario dedicado a esta integración y actualiza la contraseña en Modyo cuando cambie.
+:::
+
+#### Webhook de Incode
+
+Después de guardar la integración, la sección **Webhook de Incode** muestra la **URL del webhook**, el **Nombre del header** y el **Valor del header**, en campos de solo lectura con un botón para copiarlos. En el Dashboard de Incode, configura el webhook de estado de onboarding con esa URL y agrega un header personalizado con ese nombre y ese valor.
+
+- El webhook es de la cuenta: es el mismo para todos sus reinos y se configura una sola vez en cada organización de Incode que uses.
+- Es obligatorio: una decisión de revisión manual tomada en Incode más de 24 horas después de iniciar la verificación solo llega a Modyo por este webhook.
+
+Una vez habilitada, Incode queda disponible como proveedor en las tareas de Verificación de Identidad de las originaciones del reino. La configuración de la tarea está en [Verificación con Incode](/es/platform/customers/origination.html#verificacion-con-incode).
+
 ### Auronix
 
 La integración de Auronix, de la categoría de mensajería, permite el envío de mensajes de WhatsApp mediante plantillas preaprobadas por Meta. Se utiliza para enviar el código OTP del soft login por WhatsApp.
@@ -373,9 +398,17 @@ La plataforma permite la creación de Webhooks para ciertos eventos específicos
 
 Para más información sobre cuáles eventos y la creación de los webhooks de reino dirigirse a [Webhooks](/es/platform/core/webhooks.html).
 
+### Stages
+
+En esta sección creas los stages del reino: copias de su configuración en las que puedes probar cambios sin afectar a sus usuarios y que después sincronizas con otro stage del mismo reino. El listado muestra cada stage con su **Stage original** y su fecha de creación, y marca con **Clonando** o **Falló** los que todavía se están creando o cuyo clonado falló.
+
+Para ver esta sección necesitas el permiso **Administrar Stages**. Revisa cómo crear, sincronizar y eliminar stages en [Stages](/es/platform/customers/realms.html#stages).
+
 ### Miembros del equipo
 
 Modyo permite seleccionar los miembros del equipo que trabajan en cada reino y así controlar el acceso a los distintos aspectos del reino.
+
+Para agregar, modificar o quitar miembros necesitas el permiso **Administrar Miembros del Equipo**. Si el reino tiene [stages](/es/platform/customers/realms.html#stages), cada stage tiene su propio equipo: al crear un stage se copian los miembros del stage de origen y, desde ahí, los cambios en un stage no afectan a los demás.
 
 Para añadir un miembro al reino, sigue estos pasos:
 1. Haz click en el botón **Agregar miembro** en la parte superior derecha.
@@ -391,7 +424,7 @@ Para modificar el rol de un miembro del equipo:
 Puedes elegir entre dos roles:
 
 - **Realm User**: Puede añadir usuarios, crear, modificar y enviar a revisión campañas, formularios y segmentos.
-- **Realm Admin**:  Tiene acceso a todas las configuraciones y secciones del reino, puede añadir y eliminar usuarios y miembros del equipo.  Puede también eliminar el reino.
+- **Realm Admin**:  Tiene acceso a todas las configuraciones y secciones del reino, puede añadir y eliminar usuarios y miembros del equipo.  Puede también eliminar el reino, y crear y sincronizar sus [stages](/es/platform/customers/realms.html#stages).
 
 Para eliminar a un administrador del reino, selecciona la casilla a la izquierda de su nombre y haz click en el botón **Borrar** en la parte inferior.
 
@@ -592,3 +625,59 @@ Al habilitar la función de pago en tu reino, tienes acceso a las siguientes opc
 - **Asunto del correo**: Encabezado del correo enviado a los usuarios.
 - **Cuerpo del correo**: Contenido del mensaje enviado a los usuarios.
 
+### Dominios
+
+Desde **Dominios** sirves las páginas de inicio de sesión, registro, recuperación de contraseña y perfil del reino en un dominio propio, por ejemplo `login.mibanco.com`, en lugar del dominio de tu cuenta. En ese dominio las rutas del reino van bajo `/realms` y sin el identificador del reino: `https://login.mibanco.com/realms/login` en lugar de `https://my_account.modyo.com/realms/my_realm/login`.
+
+Para ver esta sección necesitas el permiso agrupado **Ver Dominios**, y para modificarla, **Administrar Dominios**.
+
+#### Configurar el dominio
+
+Activa la casilla **Activar dominios personalizados** y completa los campos:
+
+- **Dominio primario**: Dominio en el que se sirve el reino. Escribe solo el dominio, sin ruta ni puerto: la pantalla ya agrega `https://`.
+- **Dominio alternativo 1 (opcional)** y **Dominio alternativo 2 (opcional)**: Dominios adicionales que redirigen siempre al dominio primario con un 301, conservando la ruta y los parámetros. La única excepción es la [API de Customers](/es/platform/customers/api.html), que en estos dominios responde 404, sin redirigir. A diferencia de las [aplicaciones web](/es/platform/channels/sites.html#dominios), no puedes elegir el tipo de redirección.
+
+Bajo la casilla, la pantalla indica a qué destino debe apuntar el registro CNAME del dominio en tu DNS. Al terminar, haz click en **Guardar**.
+
+:::warning Atención
+Al activar o cambiar el dominio, se cierra la sesión de todos los usuarios con una sesión abierta en el dominio anterior. Por eso, al guardar, la plataforma te pide confirmación. Cambiar solo los dominios alternativos no cierra sesiones.
+:::
+
+:::tip Tip
+Modyo habilita el dominio en su infraestructura. Coordina ese paso con el [Centro de Soporte de Modyo](https://support.modyo.com) antes de activar el dominio: si lo activas antes, los enlaces de los correos del reino apuntarán a un dominio que todavía no responde.
+:::
+
+Ten en cuenta estas reglas:
+
+- Ningún otro reino de la plataforma puede usar el mismo dominio, y los tres dominios de un reino deben ser distintos entre sí.
+- No puede ser el dominio de la plataforma ni el de una cuenta.
+- Puede ser el mismo dominio de una aplicación web de tu cuenta: las rutas `/realms` y `/api/customers/realms` las responde el reino y el resto, la aplicación web. No puede ser el dominio de una aplicación web de otra cuenta. Por eso `realms` es una [ruta reservada](/es/platform/channels/pages.html) para las páginas.
+- No está disponible en cuentas de prueba, y en entornos no productivos se guarda pero no se aplica: la pantalla lo indica con un aviso.
+
+#### Qué cambia al activar el dominio
+
+- Las rutas del reino en el dominio de tu cuenta redirigen al dominio personalizado, sin el identificador y conservando los parámetros, como `site` o `return_to`.
+- En el dominio personalizado, una ruta `/realms` o `/api/customers/realms` que no corresponde a ninguna vista ni endpoint del reino responde 404, aunque el dominio también sirva una aplicación web.
+- Los correos del reino (activación, recuperación de contraseña, confirmación, invitaciones, campañas y desuscripción), las URLs de los [objetos Liquid](/es/platform/channels/liquid-markup/objects.html) del reino y del usuario, **Ir al reino**, la impersonación y los endpoints que muestra **Cliente OAuth** usan el dominio del reino. Los enlaces de desuscripción enviados antes del cambio siguen funcionando.
+- El inicio de sesión desde tus aplicaciones web, y el cierre de sesión, el perfil y el registro que se abren desde ellas, se hacen en el dominio del reino.
+- La [API de Customers](/es/platform/customers/api.html) también responde en el dominio personalizado, con el identificador del reino en la ruta, por ejemplo `https://login.mibanco.com/api/customers/realms/my_realm/me`. En el dominio de tu cuenta sigue respondiendo igual, sin redirigir, y los endpoints de token y revocación de OAuth siguen funcionando ahí.
+
+:::tip Notificaciones en tus aplicaciones web
+El template base de las aplicaciones web marca las notificaciones como leídas llamando a la API de Customers en el dominio del reino. Si la aplicación web está en otro dominio, por ejemplo el de tu cuenta, activa **Habilitar CORS** en la sección **Cross Origin Resource Sharing** de [Seguridad](#seguridad): las aplicaciones web asociadas al reino quedan permitidas sin que tengas que agregarlas como orígenes.
+
+Las aplicaciones web que ya existían conservan la llamada al dominio de tu cuenta, que sigue funcionando. Toman el cambio al restaurar sus [plantillas](/es/platform/channels/templates.html) con **Restaurar todo**.
+:::
+
+#### URLs de los proveedores de identidad
+
+En **URL del perfil público** ves la dirección base del reino, y en **URLs de los proveedores de identidad**, la URL de callback de cada [proveedor de identidad](/es/platform/core/integrations/identity-providers.html) habilitado en el reino. Después de guardar, actualízalas en cada proveedor; si no, el inicio de sesión con ese proveedor fallará.
+
+| Proveedor | URL con dominio personalizado |
+| --- | --- |
+| SAML | `https://<tu-dominio>/realms/auth/saml/callback` |
+| OpenID Connect, Keycloak y Azure Entra ID | `https://<tu-dominio>/realms/auth/openidc/callback` |
+| Google | `https://<tu-dominio>/realms/auth/google_oauth2/callback` |
+| OAuth2 | `https://<tu-dominio>/realms/auth/oauth2/authorize` |
+
+En OpenID Connect, la URL a la que vuelve el usuario después de cerrar sesión pasa a ser `https://<tu-dominio>/realms/logout`.

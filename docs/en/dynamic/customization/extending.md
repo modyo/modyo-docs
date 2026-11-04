@@ -15,9 +15,12 @@ Dynamic Framework favors composition over inheritance. Instead of extending clas
 class MyButton extends DButton { }
 
 // ✓ Prefer: composition
+import type { ComponentProps } from 'react';
 import { DButton } from '@dynamic-framework/ui-react';
 
-function MyButton(props: ButtonProps) {
+type DButtonProps = ComponentProps<typeof DButton>;
+
+function MyButton(props: DButtonProps) {
   return <DButton {...props} />;
 }
 ```
@@ -31,11 +34,11 @@ Create wrapper components to add functionality like analytics, default props, or
 ```tsx
 // src/components/PrimaryButton.tsx
 import { DButton } from '@dynamic-framework/ui-react';
-import type { ComponentPropsWithoutRef } from 'react';
+import type { ComponentPropsWithoutRef, MouseEvent } from 'react';
 
 type DButtonProps = ComponentPropsWithoutRef<typeof DButton>;
 
-interface PrimaryButtonProps extends Omit<DButtonProps, 'variant'> {
+interface PrimaryButtonProps extends Omit<DButtonProps, 'color'> {
   trackingLabel?: string;
 }
 
@@ -44,7 +47,7 @@ export function PrimaryButton({
   trackingLabel,
   ...props
 }: PrimaryButtonProps) {
-  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
     if (trackingLabel) {
       // Your analytics logic
       console.log('Track:', trackingLabel);
@@ -54,9 +57,9 @@ export function PrimaryButton({
 
   return (
     <DButton
-      variant="primary"
-      onClick={handleClick}
       {...props}
+      color="primary"
+      onClick={handleClick}
     />
   );
 }
@@ -81,7 +84,6 @@ Create modular components using Dynamic's compound component pattern.
 ```tsx
 // src/components/ProductCard.tsx
 import { DCard, DCurrencyText, DButton } from '@dynamic-framework/ui-react';
-import type { ReactNode } from 'react';
 
 interface Product {
   id: string;
@@ -108,7 +110,7 @@ export function ProductCard({ product, onSelect }: ProductCardProps) {
       <DCard.Footer>
         <DButton
           text="Select"
-          variant="primary"
+          color="primary"
           onClick={() => onSelect?.(product.id)}
         />
       </DCard.Footer>
@@ -196,28 +198,60 @@ export function useToggle(initialValue = false) {
 }
 ```
 
-### Usage with Modal
+### Usage to Show or Hide a Value
 
 ```tsx
-import { DModal, DButton } from '@dynamic-framework/ui-react';
+import { DButton, DCurrencyText } from '@dynamic-framework/ui-react';
 import { useToggle } from '@/hooks/useToggle';
 
-function MyComponent() {
-  const modal = useToggle();
+function BalanceCard({ balance }: { balance: number }) {
+  const visible = useToggle();
 
   return (
-    <>
-      <DButton text="Open Modal" onClick={modal.setTrue} />
-      <DModal isOpen={modal.value} onClose={modal.setFalse}>
-        <DModal.Header>
-          <h5>Title</h5>
-        </DModal.Header>
-        <DModal.Body>
-          <p>Modal content</p>
-        </DModal.Body>
-      </DModal>
-    </>
+    <div className="d-flex align-items-center gap-2">
+      {visible.value ? <DCurrencyText value={balance} /> : <span>••••••</span>}
+      <DButton
+        text={visible.value ? 'Hide balance' : 'Show balance'}
+        variant="link"
+        onClick={visible.toggle}
+      />
+    </div>
   );
+}
+```
+
+### Opening a Modal from a Hook
+
+`DModal` doesn't open through a state prop: it is registered as a portal in `DContextProvider` and opened with `openPortal`. See the full pattern in [Portals](../development/components.html#portals). A custom hook can wrap the call so components don't repeat the portal name or the payload shape:
+
+```tsx
+// src/hooks/useTransferConfirm.ts
+import { useCallback } from 'react';
+import { useDPortalContext } from '@dynamic-framework/ui-react';
+
+// The same type DContextProvider<Portals> was configured with
+type Portals = {
+  transferConfirm: { amount: string };
+};
+
+export function useTransferConfirm() {
+  const { openPortal } = useDPortalContext<Portals>();
+
+  return useCallback(
+    (amount: string) => openPortal('transferConfirm', { amount }),
+    [openPortal],
+  );
+}
+```
+
+```tsx
+import { DButton } from '@dynamic-framework/ui-react';
+import { useTransferConfirm } from '@/hooks/useTransferConfirm';
+
+function TransferButton() {
+  const confirmTransfer = useTransferConfirm();
+
+  return <DButton text="Transfer" onClick={() => confirmTransfer('$100,000')} />;
 }
 ```
 
@@ -226,6 +260,8 @@ function MyComponent() {
 Use Vitest and React Testing Library to test your extended components.
 
 ### Setup
+
+If your project doesn't start from the Modyo widget template, install the testing dependencies:
 
 ```bash
 npm install -D vitest @testing-library/react @testing-library/jest-dom
