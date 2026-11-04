@@ -691,12 +691,6 @@ Use user objects to get information about your users from the Customers module.
 | **user.realm_uid**                   | The user's realm.                                       | ```my-realm```                                       |
 | **user.invited_submissions**         | Collection of submissions the user was invited to through an active invitation. Cancelled invitations are excluded and the order goes from the most recent to the oldest. |                     |
 | **user.unsubscribe_link**            | The user's unsubscribe link, for messaging templates.   | ```https://test.modyo.com/realms/default/mailing/unsubscribe?unsubscribe_token=ab12cd34``` |
-
-`user.invited_submissions` returns a collection, so it composes with the [by_origination](/en/platform/channels/liquid-markup/filters.html) filter to keep only the submissions of a given origination:
-
-```liquid
-{% assign source = user.invited_submissions | by_origination: origination.uid | first %}
-```
 | **user.current_login_at**            | Timestamp of current login.                             | ```2025-10-21 11:00:00 UTC```                        |
 | **user.current_login_ip**            | IP used for current login.                              | ```203.0.113.10```                                   |
 | **user.last_login_at**               | Timestamp of previous login.                            | ```2025-10-19 09:30:01 UTC```                        |
@@ -706,10 +700,17 @@ Use user objects to get information about your users from the Customers module.
 | **user.segment_names**               | Array of segment names.                                 | ```["vip","beta"]```                                 |
 | **user.target_names**                | Array of target audience names.                         | ```["retail","premium"]```                           |
 | **user.targets**                     | Array of target audience group objects.                 | ```[{"name":"retail"}]```                            |
+| **user.realm_base_url**              | Public base URL of the user's realm: its [custom domain](/en/platform/customers/settings.html#domains) if active, otherwise the account URL. Use it to call the realm's Customers API. | ```https://login.mybank.com``` |
 | **user.realm_default_avatar**        | Default realm avatar (asset).                           |                                                      |
 | **user.non_binary_sex_value**        | Constant value for non-binary gender.                   | ```4```                                              |
 | **user.other_sex_value**             | Constant value for other gender.                        | ```5```                                              |
 | **user.prefer_not_to_say_sex_value** | Constant for prefer-not-to-say gender.                  | ```6```                                              |
+
+`user.invited_submissions` returns a collection, so it composes with the [by_origination](/en/platform/channels/liquid-markup/filters.html) filter to keep only the submissions of a given origination:
+
+```liquid
+{% assign source = user.invited_submissions | by_origination: origination.uid | first %}
+```
 
 ## user_agent
 

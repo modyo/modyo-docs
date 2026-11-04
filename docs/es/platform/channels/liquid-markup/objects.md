@@ -705,6 +705,7 @@ Usa los objetos de user para obtener información de tus usuarios del módulo Cu
 | **user.segment_names**               | Array de nombres de segmentos.                                 | ```["vip","beta"]```                                 |
 | **user.target_names**                | Array de nombres de audiencias objetivo.                       | ```["retail","premium"]```                           |
 | **user.targets**                     | Array de objetos de audiencia objetivo.                        | ```[{"name":"retail"}]```                            |
+| **user.realm_base_url**              | URL base pública del reino del usuario: su [dominio personalizado](/es/platform/customers/settings.html#dominios) si está activo y, si no, la URL de la cuenta. Úsala para llamar a la API de Customers del reino. | ```https://login.mibanco.com``` |
 | **user.realm_default_avatar**        | Avatar por defecto del realm (asset).                          |                                                      |
 | **user.non_binary_sex_value**        | Valor constante para género no binario.                        | ```4```                                              |
 | **user.other_sex_value**             | Valor constante para género otro.                              | ```5```                                              |

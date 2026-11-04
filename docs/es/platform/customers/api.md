@@ -11,7 +11,7 @@ Modyo Customers contiene una variedad de APIs con las que podrás obtener la inf
 
 Todos los endpoints bajo `ACCOUNT_URL/api/customers/realms/{realm_uid}/` responden en nombre de un usuario final del reino, así que cada llamada necesita una credencial de ese usuario. La única excepción es [Verificación de código OTP](#verificacion-de-codigo-otp).
 
-Si el reino tiene un [dominio personalizado](/es/platform/customers/settings.html#dominios), la API de Customers sigue respondiendo solo en `ACCOUNT_URL`. La autorización de OAuth se hace en `https://<tu-dominio>/realms/oauth/authorize`, y `ACCOUNT_URL/realms/{realm_uid}/oauth/authorize` redirige allí. Los endpoints de token y revocación siguen respondiendo en `ACCOUNT_URL`.
+Si el reino tiene un [dominio personalizado](/es/platform/customers/settings.html#dominios), la API de Customers también responde en `https://<tu-dominio>/api/customers/realms/{realm_uid}/`, con el mismo identificador del reino en la ruta y las mismas respuestas que en `ACCOUNT_URL`, donde sigue respondiendo sin redirigir. En el dominio personalizado, un `realm_uid` de otro reino responde 404, y en los dominios alternativos del reino la API responde 404, sin redirigir. La autorización de OAuth se hace en `https://<tu-dominio>/realms/oauth/authorize`, y `ACCOUNT_URL/realms/{realm_uid}/oauth/authorize` redirige allí. Los endpoints de token y revocación siguen respondiendo en `ACCOUNT_URL`.
 
 El reino acepta dos credenciales:
 
@@ -77,7 +77,7 @@ Todos los endpoints de la API de Customers comparten estos cuerpos de error:
 |--------|--------|---------------|
 | `401` | <code v-pre>{"error":{"user_session":"user not found"}}</code> | La petición no trae credenciales utilizables, el access token no corresponde a un usuario del reino o el usuario está inactivo. |
 | `401` | <code v-pre>{"error":{"grant_expired":"session expired"}}</code> | La credencial identifica a un usuario, pero la sesión que la respalda venció o fue revocada. |
-| `404` | <code v-pre>{}</code> | El `realm_uid` de la URL no corresponde a ningún reino activo de la cuenta. |
+| `404` | <code v-pre>{}</code> | El `realm_uid` de la URL no corresponde a ningún reino activo de la cuenta o, en un dominio personalizado, no corresponde al reino de ese dominio. |
 
 :::tip Tip
 Separar los dos `401` te ahorra tiempo de depuración. `user_session` significa que nunca llegó una credencial utilizable, así que revisa la cabecera `Authorization` o la cookie. `grant_expired` significa que la credencial era correcta y lo que se acabó fue la sesión, así que corresponde volver a autenticar al usuario en vez de reintentar.
