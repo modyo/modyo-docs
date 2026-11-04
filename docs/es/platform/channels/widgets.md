@@ -135,6 +135,15 @@ Para cambiar la forma en que se carga cada widget, debes ir a la vista de edici�
 Debes tener en consideración que usar widgets muy pesados de forma sincrónica puede hacer que se vea disminuido el rendimiento de tu página, por lo que debes decidir con cuidado cuáles widgets se cargarán de forma síncrona y cuáles de forma asíncrona.
 :::
 
+:::warning Atención
+En la carga asíncrona, el HTML del widget se inserta en la página después de que esta termina de cargar, y el navegador no ejecuta las etiquetas `<script>` que llegan de esa forma. Esto incluye los scripts de un snippet que incluyas en el HTML del widget: su marcado se muestra, pero su código no se ejecuta y el navegador no muestra ningún error.
+
+El código de la pestaña de JavaScript del widget no tiene esta limitación, porque la plataforma lo carga por separado. Si el widget necesita ejecutar un script que hoy está en su HTML, tienes dos alternativas:
+
+- Mover ese código a la pestaña de JavaScript del widget.
+- Marcar la opción "Carga síncrona" en el widget, para que su HTML se renderice junto con la página y sus scripts se ejecuten.
+:::
+
 ## Carga como ES Module
 
 :::warning Atención
@@ -156,6 +165,18 @@ La carga como ES Module es especialmente útil para widgets construidos con fram
 
 :::warning Atención
 Los ES Modules tienen requisitos estrictos de CORS y siempre se cargan en modo estricto. Asegúrate de que el código de tu widget sea compatible con la semántica de ES modules antes de habilitar esta opción.
+:::
+
+## Widgets CLI
+
+Los widgets **creados** en el sitio con `modyo-cli push` quedan marcados como widgets de solo lectura, porque su código fuente vive en tu repositorio y no en Modyo. En el listado de widgets del sitio los reconoces por la etiqueta **CLI** junto a su nombre.
+
+Al abrir uno de estos widgets no verás las pestañas de código, sino la pantalla **Resumen del widget**, con su **Nombre**, **Tipo**, **Tamaño**, **Chunks**, **Actualizado por última vez en** y **Actualizado por última vez por**, encabezada por el aviso "Los widgets CLI no se pueden editar en Modyo. Descárgalo para revisar su contenido." y el botón **Descargar**.
+
+El resto del ciclo de vida es el de cualquier widget: conserva versión editable y publicada, admite [variables](#variables-del-widget), pasa por [revisión en equipo](/es/platform/core/#revision-en-equipo) y se instancia en las páginas desde el [Page Builder](/es/platform/channels/pages.html). Los cambios de código, en cambio, nunca se muestran como diferencias: en la vista de **Diferencias**, en la [revisión y publicación conjunta](/es/platform/channels/sites.html#revision-y-publicacion-conjunta) y en la [sincronización entre stages](/es/platform/channels/sites.html#stages) aparece el mensaje "El archivo tiene diferencias, pero los widgets CLI no se pueden mostrar". Tampoco puedes usar **Resetear a esta versión** para devolver el widget a una versión anterior: la vuelta atrás se hace volviendo a desplegar desde tu repositorio.
+
+:::warning Atención
+El ZIP que entrega **Descargar** se arma desde las plantillas guardadas en la plataforma y no es el bundle que subiste: los archivos de entrada salen renombrados y los chunks aplanados. Sirve para inspeccionar el código publicado, no como respaldo. Revisa [Widgets CLI en el panel](/es/platform/tools/cli.html#widgets-cli-en-el-panel) para el detalle completo.
 :::
 
 ## Code splitting

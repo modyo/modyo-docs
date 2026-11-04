@@ -188,7 +188,7 @@ Estos objetos permiten obtener información a través de Liquid para un formular
 |-------------------------------|-----------------------------------------|-------------------------------------------------------------------------------------------------------------|
 | **form_response.description** | Descripción del formulario.             | ```Este formulario es el nuevo formulario de los usuarios```                                                |
 | **form_response.name**        | Nombre del formulario.                  | ```El nuevo formulario```                                                                                   |
-| **form_response.questions**   | Array con las preguntas del formulario. | ```[{"title"=>"¿Cual es tu puesto de trabajo?", "type"=>"textquestion", "answer"=>"Software developer"}]``` |
+| **form_response.questions**   | Array con las preguntas del formulario que capturan una respuesta. Los campos de contenido, como **Texto enriquecido**, no se incluyen. | ```[{"title"=>"¿Cual es tu puesto de trabajo?", "type"=>"textquestion", "answer"=>"Software developer"}]``` |
 
 ### question
 
@@ -369,7 +369,7 @@ Estos objetos permiten obtener información a través de Liquid para las notific
 | **notification.sent_at**  | Fecha de envío de la notificación.                  | ```2012-11-16 00:46:40```                                                    |
 | **notification.body**     | Cuerpo de la notificación.                          | ```<p>Este es un mensaje de prueba en las campañas vía notificaciones</p>``` |
 | **notification.subject**  | Asunto de la notificación.                          | ```Modyo Developers Update```                                                |
-| **notification.url**      | URL de la notificación.                             | ```https://test.modyo.com/profile?notification_id=65345```                   |
+| **notification.url**      | URL de la notificación.                             | ```https://test.modyo.com/realms/default/profile?notification_id=65345```    |
 
 ## order
 
@@ -415,8 +415,9 @@ Estos objetos obtienen la información relevante de los flujos de originación.
 |------------------------------------|----------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
 | **origination.name**               | Nombre del flujo de originación.                                     | ```Mi nueva Originación```                                                                                                              |
 | **origination.description**        | Descripción del flujo de originación.                                | ```Proceso de originación para guiar a los clientes desde el registro de información personal hasta la validación de datos bancarios``` |
-| **origination.due_value**          | Valor del período de vencimiento del flujo de originación.           | ```15```                                                                                                                                |
-| **origination.due_unit**           | Unidad del período de vencimiento (por ejemplo: "days", "weeks").    | ```days```                                                                                                                              |
+| **origination.due_months**         | Meses calendario de la duración del vencimiento del flujo de originación. | ```1``` |
+| **origination.due_days**           | Días de la duración del vencimiento del flujo de originación. | ```3``` |
+| **origination.due_hours**          | Horas de la duración del vencimiento del flujo de originación. | ```2``` |
 | **origination.uid**                | Identificador único (UID) del flujo de originación.                  | ```mi-originacion```                                                                                                                    |
 | **origination.url**                | URL de la página del flujo de originación.                           | ```https://test.modyo.com/new-site/myorigination```                                                                                     |
 | **origination.steps**              | Lista de objetos step | [ver documentación del step](/es/platform/channels/liquid-markup/objects.html#step) |
@@ -427,6 +428,7 @@ Estos objetos obtienen la información relevante de los flujos de originación.
 | **origination.completion_message** | Mensaje al completar el flujo de originación.                        | ```"Todo listo"```                                                                                                                      |
 | **origination.ordered_steps**      | Indica si los steps del flujo de originación están ordenados.        | ```true```                                                                                                                              |
 | **origination.new_submission_url** | URL para crear una nueva submission del flujo.                       | ```/originations/mi-originacion/new```                                                                                                  |
+| **origination.cancel_overdue**     | Indica si la originación cancela automáticamente las respuestas que superan su fecha de vencimiento.                 | ```false```                                                                                                                             |
 
 ## page
 
@@ -451,8 +453,8 @@ Estos objetos son de gran utilidad para crear páginas dinámicas usando Liquid.
 | Objeto                              | Descripción                                                                                                | Ejemplo |
 |-------------------------------------|------------------------------------------------------------------------------------------------------------|---------|
 | **realm.disable_modyo_credentials** | Booleano que determina si las credenciales de Modyo están desactivadas. `true` desactiva las credenciales. |         |
-| **realm.oauth2_callback_url**       | String que determina la URL de callback de OAuth2.                                                         |         |
-| **realm.oidc_callback_url**         | String que determina la URL de callback de OIDC.                                                           |         |
+| **realm.oauth2_callback_url**       | String que determina la URL de callback de OAuth2. Usa el dominio personalizado del reino si lo tiene.      |         |
+| **realm.oidc_callback_url**         | String que determina la URL de callback de OIDC. Usa el dominio personalizado del reino si lo tiene.        |         |
 
 ## request
 
@@ -520,15 +522,20 @@ Los objetos de Sitio se utilizan para obtener toda la información de un sitio. 
 | **site.time_zone**              | Zona horaria del sitio.                                                                                                     | ```America/Santiago``` |
 | **site.realm_slug**             | Slug del realm al que pertenece el sitio.                                                                                   | ```default```          |
 
-## sitesearch
+## site_search
 
-Estos drops permiten obtener información del navegador de un sitio.
+Estos drops entregan la búsqueda de la aplicación web ya resuelta, con sus resultados. La variable se inyecta con el nombre `site_search` y solo existe en la página de resultados de búsqueda; consulta [Variables de contexto](/es/platform/channels/liquid-markup/variables.html#de-la-pagina-de-resultados-de-busqueda).
 
-| Objeto                                    | Descripción                                                                | Ejemplo |
-|-------------------------------------------|----------------------------------------------------------------------------|---------|
-| **sitesearch.have_results**               | Booleano que determina si la búsqueda tiene resultados.                    |         |
-| **sitesearch.results**                    | Objeto de tipo Página que cumple con los parámetros de búsqueda.           |         |
-| **sitesearch.have_less_relevant_results** | Booleano que determina si hay más resultados que exceden el límite máximo. |         |
+| Objeto | Descripción | Ejemplo |
+|--------|-------------|---------|
+| **site_search.have_results** | Booleano que determina si la búsqueda tiene resultados. Es falso cuando la URL no trae el parámetro `query`. | |
+| **site_search.results** | Colección paginada con los resultados de la búsqueda. Cada resultado tiene solo cuatro claves: `title`, `description`, `url` y `site_name`. Acepta el filtro `pagination_links` para imprimir la navegación entre páginas. | |
+| **site_search.have_less_relevant_results** | Booleano que determina si hay más resultados que exceden el límite máximo de 100. | |
+| **site_search.multi** | Booleano que determina si la búsqueda abarca varias aplicaciones web de la cuenta. Es verdadero solo cuando la aplicación tiene marcadas **Habilitar búsqueda** y **Habilitar la búsqueda en múltiples sitios**. Úsalo para mostrar `site_name` únicamente cuando el resultado puede venir de otra aplicación. | |
+
+:::warning Atención
+El objeto se llama `site_search`, con guion bajo. `sitesearch` no existe en el contexto de Liquid: una plantilla que lo use no falla, simplemente imprime vacío y no deja ninguna pista del motivo.
+:::
 
 ## space
 
@@ -546,14 +553,14 @@ Estos objetos obtienen la información relevante a las Submissions.
 
 | Objeto                                         | Descripción                                                    | Ejemplo                                                    |
 |------------------------------------------------|----------------------------------------------------------------|------------------------------------------------------------|
-| **submission.status**                          | Estado de la submission (por ejemplo: "pending", "completed"). | ```completed```                                            |
+| **submission.status**                          | Estado de la submission: `not_started`, `pending`, `completed` o `canceled`. Puedes revisar su significado y sus transiciones en el [ciclo de vida de una respuesta](/es/platform/customers/origination.html#ciclo-de-vida-de-una-respuesta). | ```completed```                                            |
 | **submission.progress**                        | Progreso de la submission como porcentaje (sin símbolo).       | ```100```                                                  |
-| **submission.assignee**                        | Objeto del usuario administrador asigando.                     |  [ver documentación de adminuser](/es/platform/channels/liquid-markup/objects.html#adminuser)                                                          |
+| **submission.assignee**                        | Objeto del usuario administrador asignado.                     |  [ver documentación de adminuser](/es/platform/channels/liquid-markup/objects.html#adminuser)                                                          |
 | **submission.created_at**                      | Fecha y hora de creación de la submission.                     | ```Tue, 15 Feb 2025 15:14:03 UTC +00:00```                 |
 | **submission.updated_at**                      | Fecha y hora de la última actualización de la submission.      | ```Tue, 15 Feb 2025 20:30:10 UTC +00:00```                 |
 | **submission.started_at**                      | Fecha y hora en que se inició la submission.                   | ```Tue, 15 Feb 2025 15:14:03 UTC +00:00```                 |
 | **submission.completed_at**                    | Fecha y hora en que se completó la submission.                 | ```Tue, 15 Feb 2025 20:30:10 UTC +00:00```                 |
-| **submission.due_date**                        | Fecha de vencimiento de la submission. Se calcula a partir del disparador configurado en el flujo de originación: el inicio de la submission (por omisión) o la respuesta a una pregunta de tipo Fecha del flujo. Queda vacía si el flujo no tiene vencimiento configurado o si el disparador es una pregunta de tipo Fecha y aún no hay respuesta. | ```Tue, 22 Feb 2025 12:00:00 UTC +00:00```                 |
+| **submission.due_date**                        | Fecha de vencimiento de la submission. Se calcula sumando al disparador configurado en el flujo de originación —el inicio de la submission (por omisión), la finalización de una tarea o la respuesta a un campo de fecha del flujo— la duración del vencimiento en meses, días y horas, más los días de extensión de esa submission. Queda vacía si el flujo no tiene vencimiento configurado o si el disparador todavía no ocurre. | ```Tue, 22 Feb 2025 12:00:00 UTC +00:00```                 |
 | **submission.origination**                     | Objeto de la originación.                | [ver documentación de origination](/es/platform/channels/liquid-markup/objects.html#origination)                                                           |
 | **submission.url**                             | URL de la página de la submission.                             | ```https://test.modyo.com/new-site/myorigination```        |
 | **submission.uuid**                            | Identificador único (UUID) de la submission.                   | ```abcd-1234-5678-0000```                                  |
@@ -597,7 +604,7 @@ Adicionalmente según el tipo de tarea pueden haber atributos adicionales.
 
 ### Tipos de Respuesta de Tareas
 
-Toda respuesta de tarea comparte los atributos que hereda de la respuesta base: `task`, `user`, `created_at`, `updated_at`, `started_at`, `completed_at` y `status`. La tabla siguiente lista únicamente los atributos propios de cada tipo de respuesta.
+Toda respuesta de tarea comparte los atributos que hereda de la respuesta base: `task`, `user`, `created_at`, `updated_at`, `started_at`, `completed_at` y `status`. En `status` obtienes `not_started`, `pending` o `completed`, según el [estado de la respuesta a la tarea](/es/platform/customers/origination.html#estados-de-las-respuestas-a-tareas); si solo comparas contra `completed`, tu plantilla no distingue una tarea que nadie abrió de una que quedó a medio responder. La tabla siguiente lista únicamente los atributos propios de cada tipo de respuesta.
 
 | Objeto                                        | Descripción                                             | Ejemplo                                       |
 |-----------------------------------------------|---------------------------------------------------------|-----------------------------------------------|
@@ -678,7 +685,7 @@ Usa los objetos de user para obtener información de tus usuarios del módulo Cu
 | **user.age**                         | Edad del usuario.                                              | ```39```                                             |
 | **user.avatar**                      | Objeto de tipo asset que representa el avatar del usuario.     |                                                      |
 | **user.birth_at**                    | Fecha de nacimiento del usuario.                               | ```1982-09-01```                                     |
-| **user.change_password_url**         | URL para cambio de contraseña.                                 | ```https://test.modyo.com/newsite/password/change``` |
+| **user.change_password_url**         | URL para cambio de contraseña.                                 | ```https://test.modyo.com/realms/default/password/change``` |
 | **user.custom_fields**               | Hash con los datos de los campos personalizados del usuario.   | ```{"_UCF_Job"=>"Software Engineer"}```              |
 | **user.email**                       | Correo electrónico del usuario.                                | ```ivan@modyo.com```                                 |
 | **user.external_access_token**       | External access token del usuario (vacío si no existe).        | ```UEL7K69VUWhSXxX9DjDil...```                       |
@@ -703,6 +710,7 @@ Usa los objetos de user para obtener información de tus usuarios del módulo Cu
 | **user.segment_names**               | Array de nombres de segmentos.                                 | ```["vip","beta"]```                                 |
 | **user.target_names**                | Array de nombres de audiencias objetivo.                       | ```["retail","premium"]```                           |
 | **user.targets**                     | Array de objetos de audiencia objetivo.                        | ```[{"name":"retail"}]```                            |
+| **user.realm_base_url**              | URL base pública del reino del usuario: su [dominio personalizado](/es/platform/customers/settings.html#dominios) si está activo y, si no, la URL de la cuenta. Úsala para llamar a la API de Customers del reino. | ```https://login.mibanco.com``` |
 | **user.realm_default_avatar**        | Avatar por defecto del realm (asset).                          |                                                      |
 | **user.non_binary_sex_value**        | Valor constante para género no binario.                        | ```4```                                              |
 | **user.other_sex_value**             | Valor constante para género otro.                              | ```5```                                              |

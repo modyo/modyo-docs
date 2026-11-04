@@ -99,3 +99,4 @@ npm run test:watch
 - Explora el [catálogo de componentes](components.html)
 - Aprende sobre [personalización](../customization/)
 - Implementa tu primera [integración con API](api-integration.html)
+- Configura [idiomas y formatos](i18n.html) para textos, montos y fechas

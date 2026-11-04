@@ -273,7 +273,7 @@ If you need to customize animations, see the [Framer Motion documentation](https
 ## Additional Resources
 
 - [Lucide Icons Catalog](https://lucide.dev/icons/)
-- [What's New in v2.0](../whats-new-v2.html)
+- [Dynamic UI release notes](https://github.com/dynamic-framework/dynamic-ui/releases)
 - [Dynamic UI Storybook](https://react.dynamicframework.dev)
 
 ## Need Help?

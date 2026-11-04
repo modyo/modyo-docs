@@ -76,6 +76,7 @@ In this section, you can edit the values of the selected task. You can find thes
 - **Name**: The name of the task that will be visible to the user.
 - **Identifier**: A unique identifier that will be included in the origination URL.
 - **Description**: A brief explanatory text about the task, which will be visible to the user.
+- **Show this task to the main user**: Appears only when the task is selected as a target task of an [invitation task](/en/platform/customers/origination.html#invitation). It comes enabled and defines whether the submission's main user also sees and can answer that task, or whether it is reserved for the invitee it was delegated to.
 
 :::warning Editing identifiers
 When editing an already saved step, task, or field, the **Identifier** field appears locked with a padlock. To modify it, you must press the padlock and confirm the **Unlock Identifier field** warning: changing an identifier breaks references to it from external systems or through the Liquid SDK and, in the case of fields, submissions can no longer be searched by that field. The identifier is only generated automatically from the name during creation; when editing, changing the name doesn't modify it.
@@ -216,7 +217,7 @@ As with validation tasks, you can define an **Assignee** for the task: an admini
 
 The Identity Verification task asks the user to verify their identity by capturing a selfie, their identity document, and liveness detection, through a verification provider.
 
-To use this task, you must first enable an integration of the **Identity Verification** category in the [realm integrations](/en/platform/customers/settings.html#integrations), such as **Amazon Rekognition**.
+To use this task, you must first enable an integration of the **Identity Verification** category in the [realm integrations](/en/platform/customers/settings.html#integrations), such as **Amazon Rekognition** or **Incode**.
 
 When configuring the task, you define:
 
@@ -224,10 +225,61 @@ When configuring the task, you define:
 - **Features**: The verifications included in the task: **Selfie** (always required), **Document** (capture of the front and back of the identity document with data extraction), and **Liveness** (liveness detection).
 - **Liveness Settings**: If you enabled Liveness, you can define the **Confidence Threshold** (from **Lenient** to **Strict**) and **Enable color challenge**, which displays colored lights during the verification and includes a photosensitivity warning for the user.
 
+If the provider is **Incode**, the task does not show **Features** or **Liveness Settings**: **Incode settings** appears instead, because the verifications that run are defined in Incode. See [Verification with Incode](#verification-with-incode) for details.
+
 During the flow, the user captures their selfie and document guided by the interface; the platform validates the quality of the images, extracts the document data, and compares the face on the document with the selfie.
 
 In the details of a submission, the **Identity Verification** tab shows the verification status, the **Face Match Score** and **Liveness Score**, the data extracted from the document, and the captured images.
 
+#### Verification with Incode
+
+With the **Incode** provider, the whole verification takes place on an Incode page, outside the site, and the user returns to the same step of the flow when they finish, abandon, or fail. The modules that run (document validation with OCR, liveness, face match, and government database validation) are defined by the flow you configure in the Incode Dashboard, not by the task.
+
+Before using it, you must [install the Incode integration](/en/platform/customers/settings.html#incode) in the realm. Then, in **Incode settings** you define:
+
+- **Modality**: How the verification is integrated into the flow. Currently the only option is **Hosted URL**, where the user completes the verification on an Incode page and returns to the same step of the flow.
+- **Incode flow ID**: The identifier of the flow to run, 24 hexadecimal characters long. You get it in the Incode Dashboard, under **Flows** → **...** → **Copy ID**, or under **Workflows** → **...** → **Copy ID** if your organization uses workflows.
+
+Both fields are required: the origination is not saved if the modality is not valid or if the ID does not have 24 hexadecimal characters. If you configure the task through the administration API, the fields are `incode_modality` (only `hosted_url` is accepted) and `incode_workflow_id`, inside the task's identity verification configuration.
+
+##### What the user sees
+
+The task shows the verification status and the **Start verification** button, which takes the user to the Incode page. When the user returns, the task reflects the verification status:
+
+- **Verified**: The task is completed automatically and the user continues with the flow.
+- **Pending Review**: Incode left the verification in manual review. The user cannot restart it and must come back later to see the result.
+- **Rejected**, **Expired**, or **Error**: The user can try again with **Start the verification again**.
+- **In Progress**: Modyo does not have the result yet. The screen updates by itself when it arrives and, if the user did not complete the process in Incode, they can start it again.
+
+Each new attempt discards the images and results of the previous one. If Incode returns an error when starting the verification, the user sees a service unavailable message and the submission records the **Incode error in identity verification** log, which suggests checking the integration API key and the task flow ID.
+
+##### How the result is decided
+
+Modyo maps the overall status returned by Incode:
+
+- **OK** or **MANUAL_OK**: **Verified**.
+- **FAIL**, **MANUAL_FAIL**, or **WARN**: **Rejected**.
+- **MANUAL** or **MANUAL_PENDING**: **Pending Review**.
+
+If a reviewer approves or rejects the verification manually in Incode, that decision prevails over the overall status. If the session expires in Incode before it finishes, the status becomes **Expired**.
+
+::: tip The result may take some time
+Modyo checks the result in Incode when the user returns to the step, when Incode notifies it through the [webhook](/en/platform/customers/settings.html#incode-webhook), and periodically during the first 24 hours after the verification started. A manual review decision made after that period only reaches Modyo through the webhook.
+:::
+
+::: warning Rejection after approval
+If Incode rejects in manual review a verification that had already been approved, the task remains completed: Modyo does not roll back the progress of the flow. In that case, the submission records the **Incode rejection after approving the identity verification** log, so you can review it.
+:::
+
+##### Results in the submission
+
+With Incode, the **Identity Verification** tab of the submission shows:
+
+- **Verification Status**: The status, the **Incode session ID**, and the **Verification Date**.
+- **Verification modules**: The status returned by Incode for **Document validation**, **Liveness**, **Face match**, and **Government database validation**, only for the modules included in the flow, along with the **Face Match Score** and the **Liveness Score**.
+- **OCR Results**: The document data returned by Incode: **Full name**, **Document type**, **Document number**, **Personal number**, **Birth date**, **Gender**, **Nationality**, **Issuing country**, **Expiration**, and **Address**.
+- **Verification Images**: The **Selfie**, the **Document Front**, and the **Document Back**.
+- **Rejection Reasons**: The modules that failed and the reason reported by Incode, when the verification was not approved.
 
 ### Code Snippet
 
@@ -308,6 +360,43 @@ When you consume data from the JSON API, you will get an object with all the dat
 :::warning Attention
 To store information, the data must use valid JSON format; format errors will not be processed.
 :::
+
+#### Completing the task from the code snippet
+
+The POST request to the `getUrl()` URL saves the data and can also change the task status, depending on the `completed` parameter:
+
+- **Without `completed`**: saves the data and marks the task as completed.
+- **`completed: true`**: saves the data and marks the task as completed.
+- **`completed: false`**: saves the data without completing the task. If the task was already completed, it goes back to in progress.
+
+Use only `true` or `false` in `completed`. Any other value is read as `false`.
+
+`completed` goes at the same level as `content`, not inside it. For example, to save data without completing the task:
+
+```js
+await fetch(getUrl(), {
+  method: 'POST',
+  headers: {
+    'X-CSRF-TOKEN': document.querySelector('meta[name=csrf-token]').content,
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({ content: { plan: 'basic' }, completed: false })
+});
+```
+
+Completing the task from the code snippet is not the same as clicking **Next**. Each path records different events:
+
+- **POST that completes the task**: records **Origination task response completed** (`origination_task_response_completed_log`) and **Origination submission task updated** (`origination_submission_task_updated_log`).
+- **Next button**: records **Origination submission task submitted** (`origination_submission_task_submitted_log`). In tasks with **Lock responses once completed**, this event is recorded by the POST that completes the task, as explained below.
+
+If the task does not have that option enabled and the user completes it with the POST, but leaves the flow without clicking **Next** (for example, because the code snippet navigates with `window.location`, or the user comes back later through the link to resume the submission), the task is completed, but **Origination submission task submitted** is not recorded.
+
+:::tip Tip
+For an integration to know that the user finished a code snippet, subscribe your [webhook](/en/platform/core/webhooks.html) to **Origination task response completed** (`origination_task_response_completed_log`). In a code snippet, that event is recorded when the task becomes completed, either with the POST or with the **Next** button. If you need the code snippet to move on to the next step by itself, enable the button with `enableButton()` and let the user click **Next**, instead of redirecting with `window.location`.
+:::
+
+If the task has the **Lock responses once completed** option enabled, the POST that completes it also records **Origination submission task submitted**, because after that the **Next** button no longer submits the task again.
 
 #### Using Liquid in code snippets
 
@@ -518,10 +607,10 @@ To create an invitation task, you must first create at least one [role](#roles) 
 When configuring the task, you define:
 
 - **Role**: The role that invited users will assume.
-- **Email template**: The HTML/Liquid code of the invitation email. Liquid variables such as `invitation.first_name`, `invitation.last_name`, `invitation.email`, `invitation_url`, `submission`, `task`, `origination`, and `site` are available.
-- **Target tasks**: The tasks that invited users will be able to complete. You can only select tasks prior to the invitation task; other invitation tasks and origination process tasks are not selectable.
+- **Email template**: The HTML/Liquid code of the email each invitee receives, with the invitation's [Liquid variables](#invitation-email-template).
+- **Target tasks**: The tasks that invited users will be able to complete, grouped by step. You can select tasks from any step of the origination; other invitation tasks and origination process tasks are not selectable.
 
-In addition, the properties of each task included in an invitation task have the option **Show this task to the main user**, which controls whether the main user also sees that task in their flow.
+In addition, the properties of each task selected as a target show the **Show this task to the main user** option, enabled by default. When you disable it, the task stops appearing in the main user's flow and is reserved for the invitee who resolves it. If you later remove that task from the **Target tasks**, the option is enabled again on its own so it doesn't remain hidden with nobody to answer it.
 
 On the origination page, the main user can invite new people (first name, last name, and email address) or users already invited in other tasks, and can resend or cancel pending invitations. Each invitee receives an email with an access link and, upon entering, only sees the tasks assigned to them; if they have more than one role, they see the union of the tasks of all their roles. The invited user cannot cancel the submission.
 
@@ -529,6 +618,47 @@ The invitation task is completed when all invitees finish their tasks. If the ro
 
 :::tip Template for invited users
 The origination page includes the **Resume (Invited)** template, which is the view invited users see when they return to the submission. You can customize it like the rest of the page templates.
+:::
+
+#### Invitation email template
+
+Each invitation task has its own email template. When the task is created, the **Email template** editor is preloaded with a working example that already includes the acceptance button, and you can replace it entirely. The subject is not configurable: the platform uses the origination name and the task name.
+
+Inside the template, these Liquid variables are available:
+
+| Variable | Content |
+|---|---|
+| <code v-pre>{{ invitation_url }}</code> | The invitee's personal access link. It is the only essential variable of the template. |
+| <code v-pre>{{ invitation.first_name }}</code>, <code v-pre>{{ invitation.last_name }}</code>, <code v-pre>{{ invitation.email }}</code> | The data the invitation was sent with. |
+| <code v-pre>{{ invitation.status }}</code>, <code v-pre>{{ invitation.token }}</code>, <code v-pre>{{ invitation.created_at }}</code>, <code v-pre>{{ invitation.accepted_at }}</code> | The invitation status, its token, and its dates. |
+| <code v-pre>{{ user }}</code> | The invited user. |
+| <code v-pre>{{ submission }}</code>, <code v-pre>{{ task }}</code>, <code v-pre>{{ origination }}</code>, <code v-pre>{{ site }}</code> | The submission, the invitation task, the origination, and the site. |
+
+The minimum acceptance link is written like this:
+
+```liquid
+<a href="{{ invitation_url }}">Click here to accept the invitation</a>
+```
+
+:::warning No template means no email
+If you leave the **Email template** empty, the invitation is still created and appears in the task's list, but the invitee never receives the message with their access link. Always check that the template includes the acceptance link.
+:::
+
+#### Invitation lifecycle
+
+In the invitation task, the main user sees the list of the people they invited with their name, email, role, a progress bar of the tasks delegated to them, and a badge with the invitation status:
+
+- `pending`: The invitation was sent and the invitee hasn't entered the flow yet.
+- `accepted`: The invitee opened their link and entered the submission.
+- `completed`: The invitee finished all the target tasks of their role.
+- `cancelled`: The main user canceled the invitation before it was accepted.
+
+The available actions depend on the status: **Resend invitation** and **Cancel invitation** are only shown while the invitation is `pending`. Once accepted, it can no longer be canceled or resent. A canceled invitation doesn't take up a slot in the role's **Maximum number of users**, so you can invite the same person again.
+
+When the last active invitation of the task is completed, the invitation task response completes on its own and the flow continues. From that moment on, no new invitations can be sent from that task.
+
+:::tip Wait between resends
+You must wait a few minutes between one resend and the next. If you press **Resend invitation** too soon, the platform tells you how many minutes are left instead of sending the email.
 :::
 
 ### Confirmation
@@ -557,6 +687,8 @@ Additional options depending on the task type:
 - **Disable manual completion** (Pending review): Hides the **Complete** button so the task cannot be completed manually from the admin. Administrators with the **Change Status of Task Response** permission can still complete it.
 - **Allow same-origin** (Code snippet): Grants the task iframe access to the admin origin (session and cookies), disabling the sandbox isolation. Enable it only for trusted snippets.
 
+You can also assign an agent task to an agent or a group based on the user's answers, with the **Assign** action of [conditional logic](#assign-tasks-with-conditional-logic).
+
 #### Agent verification for external services
 
 When an agent answers a Code snippet task, your code can obtain a short-lived credential (5 minutes) so an external service can verify that the caller is an agent authorized for that task and submission:
@@ -568,11 +700,12 @@ You can find the endpoint details in the [API](/en/platform/core/api.html) Swagg
 
 ### Conditional Logic
 
-Conditional logic allows you to create more dynamic and intelligent workflows. With this functionality, you can define rules for showing or hiding **Steps**, **Tasks**, and **Input task fields** based on answers provided by users or on existing data within the submission. This allows you to personalize the user experience, presenting only relevant information at each stage of the process and simplifying or bifurcating the interaction. Conditional logic gives you the flexibility to:
+Conditional logic allows you to create more dynamic and intelligent workflows. With this functionality, you can define rules for showing or hiding **Steps**, **Tasks**, and **Input task fields**, and for assigning agent tasks, based on answers provided by users or on existing data within the submission. This allows you to personalize the user experience, presenting only relevant information at each stage of the process and simplifying or bifurcating the interaction. Conditional logic gives you the flexibility to:
 
 - **Hide or show complete steps:** Guides users through different paths within the origination flow based on their previous answers.
 - **Hide or show individual tasks:** Within a step, you can show or hide specific tasks. This is useful for requesting additional information only when needed.
 - **Hide or show Input task fields:** Within an Input task, you can show or hide specific fields. This allows you to omit or request data based on the answers provided by the user.
+- **Assign agent tasks:** Based on the user's answers, assign an agent task to a specific agent or group. See the details in [Assign tasks with conditional logic](#assign-tasks-with-conditional-logic).
 
 #### Configure Conditional Logic
 
@@ -580,16 +713,54 @@ To set up conditional logic, follow these steps:
 
 1. **Enter the editor:** In the Build view of an origination, press the **Conditional logic** button.
 2. **Edit the visibility of items:** By default, all steps, tasks, and fields will be visible. In the **Structure** section, you can mark as not visible the elements you want by pressing the eye icon.
-3. **Define rules:** In the **Rules** section, you can define the conditions that will determine if an element is shown or hidden. The rules are composed of: (1) one or more conditions evaluated using **AND** and **OR** operators and (2) an action to be executed when the conditions are met.
+3. **Define rules:** In the **Rules** section, you can define the conditions that will determine if an element is shown or hidden. The rules are composed of: (1) one or more conditions evaluated using **AND** and **OR** operators and (2) one or more actions to be executed when the conditions are met.
    1. **Add a rule**: Press the **Add** button.
    2. **Define the conditions:** Conditions can be based on:
       * **Responses to Input fields:** Compares the response provided by the user in a specific field with a given value. You can use operators such as "is equal to", "is not equal to", "contains", "is greater than", "is less than", etc.
       * **Completeness of a Step or Task:** Evaluates if a step or task was completed.
-   3. **Define the action:** Select the action and the element on which it will be executed when the rule is met. The available actions are **Show** and **Hide**.
+   3. **Define the actions:** In **Then**, select the action and the element on which it will be executed when the rule is met. The available actions are **Show**, **Hide**, and **Assign**. To add another action to the same rule, press **+ Add action**. Use the **Move up** and **Move down** icons to change the order of an action and **Remove action** to delete it.
 4. **Save the changes:** Once you have defined your rules, save the changes.
+
+When a rule's conditions are met, all its actions run, in order. If two actions contradict each other, for example **Show** and **Hide** on the same element, the last one prevails, both within the same rule and across different rules. The rules you already had, with a single action, keep working the same way.
+
+:::warning Attention
+Since the last action prevails, changing the order of the rules or of their actions can change which elements the user sees or who a task is assigned to.
+:::
 
 :::tip User experience
 Consider how conditional logic can affect the user experience and ensure that the flow can be completed easily.
+:::
+
+#### Assign tasks with conditional logic
+
+The **Assign** action assigns an agent task to an agent or a group when the rule's conditions are met. It's useful, for example, to route a task to a different team depending on the product the user chose.
+
+To set it up in a rule:
+
+1. In **Then**, choose **Assign**.
+2. Choose the task. You can only choose tasks in agent mode: **Validation** and **Pending review** tasks, and the **Input** and **Code snippet** tasks whose **Assigned to** is set to **Agent**. The others show up disabled.
+3. In **Select an agent or group**, choose an agent, a group, or an agent within a group.
+
+You can only choose active agents who can view the realm's submission tasks, for example with the **View Submission Tasks** permission. If you choose an agent within a group, they also have to belong to that group. You can't save an **Assign** action without a task or without an agent or group: the editor shows the notice "Select a task and an agent or group to save this action."
+
+If you later set the task to **User** mode, the action shows the notice "This task is not in agent mode. This action has no effect until the task is set to agent mode." and the platform ignores it while the task stays in that mode.
+
+This is how the assignment is applied:
+
+- The rule assigns the task when its conditions go from not met to met. If they later stop being met, the task keeps the assignment, and if they're met again, the rule assigns it again.
+- If several **Assign** actions point to the same task, the last one prevails.
+- If the action's agent or group is no longer valid, because the agent is inactive or suspended, lost the permission, no longer belongs to the group, or was deleted, the platform ignores that action and applies the previous valid **Assign** action. If none is left, the task goes back to the default assignment described in [Tasks answered by agents](#tasks-answered-by-agents).
+- A manual reassignment made after the rule assigned the task is kept. If the rule fires again, its assignment replaces the manual one.
+- The rule can assign a task the user hasn't reached yet. The submission becomes visible to the agent or group as soon as the rule fires, and the assignment is kept when the flow reaches the task.
+- The email to the assignee is sent when the flow reaches the task, not when the rule fires. If the task was already in progress and the rule reassigns it, the new assignee gets the email just like in a manual reassignment.
+- A task assigned by a rule behaves like any other agent task: the user can't move forward until the agent completes it. If the user resumes the flow, they go back to the first task they didn't complete.
+- The rule doesn't change tasks that are already completed or tasks that conditional logic hides from the user. In multi-user flows, the rule is evaluated with each participant's answers and only assigns the tasks that belong to that participant.
+- Editing a rule doesn't change the submissions where it already ran: they keep the assignment it made, and the new configuration applies the next time the rule fires.
+- The automatic assignment that happens when the flow reaches the task doesn't replace the one made by a rule.
+- The assignments a rule makes aren't recorded in the activity logs.
+
+:::warning Attention
+If you consume the originations admin API, keep in mind that each rule now has `targets`, an ordered list of actions, instead of `target`. When saving, the API still accepts `target`, but it always responds with `targets`, and an origination without rules responds `rules: []`. The **Assign** action is sent as a target with `action: assign`. See the details in the [API](/en/platform/core/api.html) Swagger documentation.
 :::
 
 ### Edit Origination Settings
@@ -600,7 +771,7 @@ By selecting the **Edit** option in the context menu of your origination, you ca
 - **Description**: Includes a brief explanatory text about the purpose of the origination.
 - **Completed message**: This is the message that will appear to the user at the end of the origination process.
 - **Default submission assignee**: Specifies the administrator or group of administrators that will be automatically assigned to each new submission. When selecting a group, you can use the **Assign to whole group** option or choose a specific user within it.
-- **Due in**: Sets a maximum deadline for completing the origination.
+- **Due in**: Sets the due period of each submission and when it starts counting. See the details in [Configure the due date](#configure-the-due-date).
 - **Automatically cancel submissions that exceed the due date**: Available only if you have configured a due date. When this option is enabled, submissions in **Pending** status that exceed their due date are automatically canceled.
 - **Completion rules**: Defines the completion behavior for each submission.
 - **Cancellation rules**: Defines who can cancel a submission from the origination page:
@@ -609,7 +780,31 @@ By selecting the **Edit** option in the context menu of your origination, you ca
 - **Privacy**: Allows you to restrict access to the origination flow to certain predefined user segments.
 
 :::tip Automatic cancellation by due date
-Automatic cancellation runs in a background process once a day, so it may not happen immediately when the submission becomes overdue. It only cancels submissions in **Pending** status and records **Auto-Cancelled Overdue** as the cancellation reason, visible in the submission details.
+Automatic cancellation runs in a background process, so the submission is canceled up to one hour after its due date. It works the same with any of the due date triggers, only cancels submissions in **Pending** status, and records **Auto-Cancelled Overdue** as the cancellation reason, visible in the submission details.
+:::
+
+#### Configure the due date
+
+In the **Due in** section, check **Mark a submission as due after** and fill in:
+
+- **Months**, **Days**, and **Hours**: The length of the period. You can combine the three, for example 1 month, 3 days, and 2 hours, and the total must be greater than 0. A month is a calendar month, not a block of 30 days.
+- **Count the due date from**: The trigger the period is counted from:
+  - **The start of the submission**: Default option. The period starts when the submission becomes **Pending**, that is, on its **Started at** date.
+  - **The completion of a task**: The period starts when the main user completes the task you choose in **Task**. The selector shows every task of the flow as `Step › Task`. If the task is reopened and completed again, the period is counted from the last time it was completed. If you choose a task that isn't shown to the main user, the screen warns you that, if that task is never completed, the submission has no due date.
+  - **The value of a date field**: The period starts on the date answered in the field you choose in **Date field**. The selector shows, as `Task › Question`, the top-level date questions of the input tasks; the ones inside a group don't appear. If the field has no time, the period starts at 00:00 of that date in the account time zone. If several participants answer the field, the main user's answer prevails, and if the answer changes, the due date is recalculated.
+
+If the period includes hours, the due date is shown with its time in the list and in the submission details.
+
+While the trigger hasn't happened, the submission has **No due date**: it has no deadline and isn't canceled automatically. There's no fallback trigger, so if you choose a task or a field that's never answered, for example because [conditional logic](#conditional-logic) hides it, that submission never becomes due.
+
+The task or question you use as the trigger can't be deleted, and neither can the step that contains them. The question can't be moved into a group or changed to another type either. If you try, when you save the flow the platform tells you to change the due date rule first.
+
+When you publish a version that changes the period or the trigger, or that turns the due date on or off, the platform recalculates in the background the due date of the **Pending** submissions, without changing their status. If only the period changed, it keeps counting from the same moment; if the trigger changed, it's looked up again in each submission. If you turn the due date off, the submissions are left without a deadline.
+
+If automatic cancellation is on and the change leaves pending submissions already overdue, before publishing the platform tells you how many will be canceled and asks you to confirm with **Publish anyway?**. The submissions are canceled in the next run of the automatic cancellation. If you schedule the publication, the count refers to the submissions that would be overdue today, and the ones overdue at the time of publication are canceled.
+
+:::warning Due dates in weeks and months
+Originations that had their due date in weeks now have it in days, at 7 days per week. The ones that had it in months now count calendar months instead of 30 days, so the due date of their submissions can move by several days: the difference depends on the trigger date and the number of months. For example, 12 months from January 1, 2026 used to be due on December 27, 2026 and are now due on January 1, 2027.
 :::
 
 #### Roles
@@ -618,7 +813,10 @@ In the origination editing, you will find the **Roles** section, where you defin
 
 - **Name**: The name of the role, unique within the origination.
 - **Require invitations**: If enabled, the main user must invite at least one person to complete the invitation task that uses this role.
-- **Maximum number of users**: The maximum number of users that can have this role in the same submission.
+- **Can be assumed by main user**: If enabled, the main user themselves appears in the task's list of people to invite, identified as **You**, and can take the role. That invitation doesn't send an email: it is accepted instantly and completes as soon as they finish the target tasks. If it is disabled and someone tries to invite the submission owner, the platform responds **You cannot invite the submission owner**.
+- **Maximum number of users**: The maximum number of users that can have this role in the same submission. It starts at 1 and accepts up to 100. It is the value that limits how many active invitations the invitation task using the role accepts; when the limit is reached, the invitation form is blocked with the message **Cannot send more invitations, this task is completed or has reached the maximum number of allowed invitations**.
+
+You can edit or delete roles from the same section. Since each role can only be used in one invitation task, if all the origination's roles are already taken, the **Invitation** type appears disabled when adding a task, with the notice **No roles available to assign to this task.** To create another invitation task, you must first add a new role.
 
 #### Delete origination
 
@@ -629,6 +827,63 @@ If you need to permanently delete an origination:
 
 :::danger Danger
 This process is irreversible.
+:::
+
+### Submission lifecycle
+
+Every submission to an origination has a status that reflects its progress through the flow. You see it in the **Status** column of the submission list, in the [status filter](/en/platform/customers/origination.html#filter-submissions), and in the **Details** section of the submission.
+
+- **Not started**: The submission already exists, but no response to any of its tasks has been saved yet, and it has no start date.
+- **Pending**: The submission is in progress. This is the only status in which the flow can still be answered.
+- **Completed**: The flow is finished. The date is recorded in **Completed at**.
+- **Canceled**: The submission was stopped for good. The date is recorded in **Canceled at**, along with the **Cancellation reason**.
+
+The transitions between statuses are the following:
+
+| Transition | When it happens |
+|---|---|
+| Not started → Pending | When the first response to one of its tasks is saved. At that moment the start date is recorded in **Started at**. |
+| Pending → Completed | Automatically, when there are no visible tasks left to answer, or manually with the **Complete** button when the **Completion rules** of the origination require manual completion. |
+| Not started, Pending, or Completed → Canceled | When you [cancel the submission](/en/platform/customers/origination.html#cancel-submission) or when it is automatically canceled because it is overdue. |
+
+**Canceled** is a final status with no way back. **Completed** does not return to **Pending** either, not even when you [reopen one of its tasks](/en/platform/customers/origination.html#reopen-tasks-of-a-submission): while the submission is **Completed** or **Canceled**, the platform rejects any change to its tasks and its invitations.
+
+:::warning Watch out for Not started submissions
+A submission is born **Not started** and only moves to **Pending** when someone saves its first task, so submissions created from the admin or by invitation stay there until the user enters the flow. The **Pending**, **Completed**, and **Canceled** cards of the summary don't count them, and in Liquid the [`by_status`](/en/platform/channels/liquid-markup/filters.html#by-status) filter doesn't reach them either. To find them, use the **Status** filter of the submission list.
+:::
+
+#### Task response statuses
+
+Beyond the status of the whole submission, each task response carries its own status, with its own start and completion dates:
+
+- **Not started**: The task has no saved response yet.
+- **Pending**: The task was opened and has a saved response, but it isn't finished.
+- **Completed**: The task was finished, either by the user, by the assigned agent, or automatically.
+
+A **Completed** task can go back to **Pending** when you [reopen it](/en/platform/customers/origination.html#reopen-tasks-of-a-submission), which clears its completion date and leaves the corresponding record in the **Activity** tab of the submission. Reopening a task does not change the status of the whole submission.
+
+In the **Tasks** tab of the submission, the platform shows each task as **Completed** or **Pending**, without distinguishing the **Not started** ones. You get the exact status from `task_response.status` in [Liquid](/en/platform/channels/liquid-markup/objects.html#task-response-types) and from the [administration API](/en/platform/core/api.html).
+
+:::tip Tip
+A template or a report that only checks for `completed` cannot tell a task nobody opened from one that was left half answered. If you need that distinction, compare against the three values `not_started`, `pending`, and `completed`.
+:::
+
+### Submission due dates
+
+When the origination has **Due in** configured, each submission also carries a due status, independent from its [status in the flow](/en/platform/customers/origination.html#submission-lifecycle):
+
+- **On track**: Less than 75% of the period has elapsed.
+- **Due soon**: 75% of the period has elapsed, but the deadline hasn't passed yet.
+- **Overdue**: The deadline has already passed.
+
+The period is counted from the trigger configured in the origination: the start of the submission, the completion of a task, or the date answered in a date field of the flow. See how to configure it in [Configure the due date](#configure-the-due-date). The due status only applies to **Pending** submissions: once completed or canceled, the submission stops showing it.
+
+In the submission list, the **Due in** column shows the deadline followed by the label in parentheses, for example `02/22/2026 (Due soon)`. If the submission hasn't started yet, it shows **Not started**; if it has started but the trigger hasn't happened yet, it shows **No due date**, and when no deadline applies it shows `--`. The **Due in** field in the **Details** tab of the submission shows the same. A submission with **No due date** counts as **On track** in the filter and in the origination overview.
+
+You can extend the period of a specific submission by adding extra days with the `due_extension_days` parameter of the submission update endpoint of the [administration API](/en/platform/core/api.html). Those days are added to the calculated due date and shift both the deadline and the **Due soon** threshold, and the change is recorded in the submission activity.
+
+:::tip Due status updates
+The due status is recalculated in a background process that runs every hour, so a submission can take up to one hour to show up as **Due soon** or **Overdue**. Extending the period of a submission does recalculate its status right away. If you change the account time zone, the platform recalculates the due date of the pending submissions whose trigger is a date field without time.
 :::
 
 ### View Details of an Origination
@@ -647,6 +902,12 @@ The summary view of an origination gives you a summary of key metrics related to
 - **Completed**: Indicates the number of requests that have successfully completed the origination flow.
 - **Canceled**: Reflects requests that have been canceled by the user or administrator.
 - **Total**: Represents the total number of requests, including pending, completed, and canceled.
+
+The **Total** also counts the **Not started** submissions, which have no card of their own: if the sum of the other three doesn't match the total, the difference is the submissions that were created and never started.
+
+Below the cards, a distribution chart splits the submissions into five categories that combine the [submission status](/en/platform/customers/origination.html#submission-lifecycle) with its [due status](/en/platform/customers/origination.html#submission-due-dates): **Not started**, **On track**, **Due soon**, **Overdue**, and **Completed**. The **Pending** submissions are split among **On track**, **Due soon**, and **Overdue**; if the origination has no **Due in** configured, they all land in **On track**. The **Canceled** ones don't appear in the chart.
+
+Next to the chart, **Average Time to Complete** shows how long the completed submissions of this origination take on average.
 
 ### Submission Management
 

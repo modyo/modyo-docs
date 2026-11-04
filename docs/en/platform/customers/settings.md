@@ -14,7 +14,7 @@ Here you can modify both the user's visual experience and the settings related t
 In this section, you can configure general aspects of the realm, such as:
 
 - **Title**
-- **Identifier**: The URL of the realm's profile, login, registration, and password recovery views. See the full list in [Realm routes](/en/platform/customers/profile.html#realm-routes).
+- **Identifier**: The URL of the realm's profile, login, registration, and password recovery views. See the full list in [Realm routes](/en/platform/customers/profile.html#realm-routes). If the realm has a [custom domain](/en/platform/customers/settings.html#domains), its routes on that domain don't include the identifier.
 - **Disable platform credentials**: By checking this box, you deactivate Modyo credentials in the realm and only allow access via SSO.
 
 :::danger Danger
@@ -34,7 +34,7 @@ Before enabling the option to disable Modyo credentials in the realm, make sure 
 - **Default Avatar Image**: Image shown on the avatar of users who do not have a custom image.
 - **Soft login**: Enables logging in with a one-time code (OTP) instead of a password, and defines its validity, the wait time to resend it, and the channels used to send it. See the details in [Soft login](#soft-login).
 - **Signup form**: Here you can enable or disable different attributes in the registration form, such as the second surname, email confirmation, user avatar, date of birth, gender, and phone number.
-- **Delete realm**: Deletes the realm. This process is performed in the background, so you may not see the realm disappear immediately after executing the action. To confirm the deletion, you must enter the full name of the realm.
+- **Delete realm**: Deletes the realm and all its stages. This process is performed in the background, so you may not see the realm disappear immediately after executing the action. To confirm the deletion, you must enter the full name of the realm. It only shows up if you have the **Admin General** permission, and you can't use it while a web app or space has the realm or any of its stages selected. In a stage, the button is called **Delete stage** and asks for the stage's name. See the details in [Delete a Realm](/en/platform/customers/realms.html#delete-a-realm) and [Delete a stage](/en/platform/customers/realms.html#delete-a-stage).
 
 
 ### Soft login
@@ -326,6 +326,31 @@ To configure it, you need:
 
 Once enabled, the provider becomes available in the [Identity Verification](/en/platform/customers/origination.html#identity-verification) tasks of the realm's originations.
 
+### Incode
+
+The Incode integration, of the **Identity Verification** category, lets you verify the user's identity in the realm's originations with document validation and OCR, liveness, face match, and government database validation. It can be enabled at the same time as the realm's other identity verification integrations.
+
+To configure it, you need:
+
+- **API URL**: Base URL of the Incode environment API, for example `https://demo-api.incodesmile.com`. It must use HTTPS and belong to an Incode domain (`incodesmile.com`).
+- **API key**: The Incode API key.
+- **Administrator user email** and **Administrator user password**: The credentials of a user with the Admin role in the Incode Dashboard. Incode only allows reading verification results with the token of a user with that role.
+
+When you change a credential or enable the integration, Modyo validates the credentials against Incode and does not save the changes if Incode rejects them or does not respond. The password is stored encrypted and is never shown again: when editing the integration, leave the field blank to keep it.
+
+::: warning Use a dedicated administrator user
+If the administrator user is deleted or its password changes in Incode, Modyo stops getting verification results. Use a user dedicated to this integration and update the password in Modyo when it changes.
+:::
+
+#### Incode webhook
+
+After you save the integration, the **Incode webhook** section shows the **Webhook URL**, the **Header name**, and the **Header value**, in read-only fields with a button to copy them. In the Incode Dashboard, configure the onboarding status webhook with that URL and add a custom header with that name and value.
+
+- The webhook belongs to the account: it is the same for all its realms and is configured once in each Incode organization you use.
+- It is required: a manual review decision made in Incode more than 24 hours after the verification started only reaches Modyo through this webhook.
+
+Once enabled, Incode becomes available as a provider in the Identity Verification tasks of the realm's originations. The task configuration is described in [Verification with Incode](/en/platform/customers/origination.html#verification-with-incode).
+
 ### Auronix
 
 The Auronix integration, of the messaging category, allows sending WhatsApp messages using Meta-approved templates. It is used to send the soft login OTP code via WhatsApp.
@@ -373,9 +398,17 @@ The platform allows the creation of Webhooks for specific events related to real
 
 For more information on which events are available and how to create realm webhooks, please go to [Webhooks](/en/platform/core/webhooks.html).
 
+### Stages
+
+In this section you create the realm's stages: copies of its configuration where you can try out changes without affecting its users, and that you later sync with another stage of the same realm. The list shows each stage with its **Original stage** and its creation date, and marks with **Cloning** or **Failed** the ones that are still being created or whose cloning failed.
+
+To see this section you need the **Admin Stages** permission. See how to create, sync, and delete stages in [Stages](/en/platform/customers/realms.html#stages).
+
 ### Team Members
 
 Modyo allows you to select the team members that work in each realm, and thus control access to the different aspects of the realms.
+
+To add, modify, or remove members you need the **Admin Team Members** permission. If the realm has [stages](/en/platform/customers/realms.html#stages), each stage has its own team: creating a stage copies the members of the source stage and, from then on, the changes in one stage don't affect the others.
 
 To add a member to a realm, follow these steps:
 1. Click the **Add Member** button at the top right.
@@ -391,7 +424,7 @@ To modify the role of a team member:
 You can choose between two roles:
 
 - **Realm User**: Can add users, create, modify, and review campaigns, forms, and segments.
-- **Realm Admin**: Has access to all the settings and sections of the realms, can add and remove users and team members. Can also delete the realm.
+- **Realm Admin**: Has access to all the settings and sections of the realms, can add and remove users and team members. Can also delete the realm, and create and sync its [stages](/en/platform/customers/realms.html#stages).
 
 To remove an administrator from the realm, check the box to the left of their name and click the **Delete** button at the bottom.
 
@@ -605,6 +638,10 @@ When the password is correct, the new address stays pending and the user receive
 Password recovery attempts and email change attempts share the same counter, so requests from one flow count towards the lockout of the other. And these lockouts clear only by waiting: there is no action in the user's record or in the panel to release them ahead of time.
 :::
 
+### Security headers
+
+From **Security headers** you control the security policy of the realm's own pages, independent from the web app. See how to enable it and which headers you can configure in [Security headers](/en/platform/customers/realms.html#security-headers).
+
 ### Payment settings
 
 By enabling the payment feature in your realm, you have access to the following options:
@@ -615,3 +652,59 @@ By enabling the payment feature in your realm, you have access to the following 
 - **Email subject**: Header of the email sent to users.
 - **Body of the mail**: Content of the message sent to users.
 
+### Domains
+
+From **Domains** you serve the realm's login, signup, password recovery, and profile pages on your own domain, for example `login.mybank.com`, instead of your account's domain. On that domain the realm routes go under `/realms` and without the realm identifier: `https://login.mybank.com/realms/login` instead of `https://my_account.modyo.com/realms/my_realm/login`.
+
+To view this section you need the **View Domains** grouped permission, and to modify it, **Admin Domains**.
+
+#### Configure the domain
+
+Check **Enable custom domains** and fill in the fields:
+
+- **Primary domain**: Domain the realm is served on. Write only the domain, without path or port: the screen already adds `https://`.
+- **Alternative domain 1 (optional)** and **Alternative domain 2 (optional)**: Additional domains that always redirect to the primary domain with a 301, keeping the path and parameters. The only exception is the [Customers API](/en/platform/customers/api.html), which answers 404 on these domains, without redirecting. Unlike [web apps](/en/platform/channels/sites.html#domains), you can't choose the redirection type.
+
+Below the checkbox, the screen shows the target the domain's CNAME record in your DNS must point to. When you're done, click **Save**.
+
+:::warning Attention
+Activating or changing the domain signs out every user with an open session on the previous domain. That's why the platform asks for confirmation when you save. Changing only the alternative domains doesn't sign anyone out.
+:::
+
+:::tip Tip
+Modyo enables the domain on its infrastructure. Coordinate that step with the [Modyo Support Center](https://support.modyo.com) before activating the domain: if you activate it earlier, the links in the realm's emails will point to a domain that doesn't respond yet.
+:::
+
+Keep these rules in mind:
+
+- No other realm on the platform can use the same domain, and the three domains of a realm must be different from each other.
+- It can't be the platform domain or the domain of an account.
+- It can be the same domain as a web app of your account: the `/realms` and `/api/customers/realms` routes are answered by the realm and the rest by the web app. It can't be the domain of a web app of another account. That's why `realms` is a [reserved path](/en/platform/channels/pages.html) for pages.
+- It isn't available in trial accounts, and in non-production environments it's saved but not applied: the screen shows a notice about it.
+
+#### What changes when you activate the domain
+
+- The realm routes on your account's domain redirect to the custom domain, without the identifier and keeping the parameters, such as `site` or `return_to`.
+- On the custom domain, a `/realms` or `/api/customers/realms` route that doesn't match any realm view or endpoint answers 404, even if the domain also serves a web app.
+- The realm's emails (activation, password recovery, confirmation, invitations, campaigns, and unsubscription), the URLs of the realm and user [Liquid objects](/en/platform/channels/liquid-markup/objects.html), **Go to realm**, impersonation, and the endpoints shown by **OAuth Client** use the realm's domain. Unsubscription links sent before the change keep working.
+- Sign in from your web apps, and the sign out, profile, and signup opened from them, happen on the realm's domain.
+- The [Customers API](/en/platform/customers/api.html) also answers on the custom domain, with the realm identifier in the path, for example `https://login.mybank.com/api/customers/realms/my_realm/me`. On your account's domain it keeps answering the same way, without redirecting, and the OAuth token and revocation endpoints keep working there.
+
+:::tip Notifications in your web apps
+The base template of web apps marks notifications as read by calling the Customers API on the realm's domain. If the web app is on another domain, such as your account's, turn on **Enable CORS** in the **Cross Origin Resource Sharing** section of [Security](#security): the web apps associated with the realm are allowed without adding them as origins.
+
+Existing web apps keep the call to your account's domain, which still works. They pick up the change when you restore their [templates](/en/platform/channels/templates.html) with **Restore All**.
+:::
+
+#### Identity provider URLs
+
+In **Public profile URL** you see the realm's base address, and in **Identity provider URLs**, the callback URL of each [identity provider](/en/platform/core/integrations/identity-providers.html) enabled in the realm. After saving, update them on each provider; otherwise, signing in with that provider will fail.
+
+| Provider | URL with custom domain |
+| --- | --- |
+| SAML | `https://<your-domain>/realms/auth/saml/callback` |
+| OpenID Connect, Keycloak, and Azure Entra ID | `https://<your-domain>/realms/auth/openidc/callback` |
+| Google | `https://<your-domain>/realms/auth/google_oauth2/callback` |
+| OAuth2 | `https://<your-domain>/realms/auth/oauth2/authorize` |
+
+In OpenID Connect, the URL the user returns to after signing out becomes `https://<your-domain>/realms/logout`.

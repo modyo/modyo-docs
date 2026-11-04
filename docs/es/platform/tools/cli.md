@@ -241,53 +241,79 @@ EXAMPLE
 
 El comando `preview` te permite previsualizar un widget localmente para depurar su código en un entorno local antes de publicarlo.
 
-### Requisitos
+#### Requisitos
 
 Para utilizar el comando `preview`, asegúrate de cumplir con los siguientes requisitos:
 
+- Una sesión de administrador activa en el navegador, sobre la misma cuenta de Modyo. El comando abre la vista previa en tu navegador por defecto, y esa URL exige sesión de administrador: si no la hay, te lleva al login del panel en lugar de mostrar el widget. Ni el archivo `.env` ni el servidor local reemplazan este requisito.
 - Un archivo [.env](/es/platform/tools/cli.html#configuracion-del-entorno) correctamente configurado. Los campos `MODYO_ACCOUNT_URL`, `MODYO_SITE_HOST` o `MODYO_SITE_ID` y `MODYO_TOKEN` son requeridos.
 - Un servidor local en ejecución con el widget que deseas previsualizar.
 
-### Pasos para previsualizar un widget
+#### Pasos para previsualizar un widget
 
-Una vez tengas tu archivo `.env` configurado y tu proyecto funcionando en el servidor local, sigue estos pasos:
+Una vez tengas tu archivo `.env` configurado, tu sesión de administrador abierta y tu proyecto funcionando en el servidor local, sigue estos pasos:
 
 - Abre una nueva ventana de terminal.
 - Ejecuta el comando `modyo-cli preview`.
 
 :::warning Importante
 
-Para visualizar un cambio, debes refrescar manualmente tu web app. Haz click en **refresh** para cargar los cambios.
+Para visualizar un cambio, debes refrescar manualmente tu web app. Haz click en **Recargar** para cargar los cambios.
 
 :::
 
-### Variables predeterminadas
-Modyo usa variables predeterminadas para la previsualización de widgets, puedes modificarlas según requieras. Las variables predefinadas son:
+#### Variables predeterminadas
 
-  - `MODYO_LOCAL_PORT`: Puerto del servidor local (por defecto: `8080`)
-  - `MODYO_LOCAL_DOM_ID`: El ID del elemento contenedor del widget (por defecto: `widgetName`)
-  - `MODYO_LOCAL_ENTRY_JS`: El archivo JavaScript principal (por defecto: `main.js`)
+Modyo usa variables predeterminadas para la previsualización de widgets, puedes modificarlas según requieras. Las variables predefinidas son:
 
+- `MODYO_LOCAL_PORT`: Puerto del servidor local (por defecto: `8080`)
+- `MODYO_LOCAL_DOM_ID`: El ID del elemento contenedor del widget (por defecto: `widgetName`)
+- `MODYO_LOCAL_ENTRY_JS`: El archivo JavaScript principal (por defecto: `main.js`)
+- `MODYO_LOCAL_MODULE`: Carga el archivo de entrada como ES module (por defecto: `false`)
 
-Además, puedes seleccionar si quieres previsualizar tu widget en la versión publicada de tu sitio o en la versión editable. Para ello, da click en la casilla debajo de **templates**. El texto cambiará de **publicada** a **editable**.
+Cada variable tiene su opción equivalente en la línea de comandos, y la opción tiene precedencia sobre el `.env`:
 
+```bash
+USAGE
+  $ modyo-cli preview -t <value> -u <value> [-h] [-v 8|9|10] [-i <value> | -n <value>] [-p <value>] [-s <value>] [-j <value>] [-m]
 
-Estos comandos te permiten seleccionar los entry points locales que quieres usar.
+FLAGS
+  -h, --help                 Output usage information
+  -i, --site-id=<value>      [env: MODYO_SITE_ID] Id of the site where the widget will be previewed
+  -j, --entry-js=<value>     [default: main.js, env: MODYO_LOCAL_ENTRY_JS] Entry JS file of the widget
+  -m, --module               [env: MODYO_LOCAL_MODULE] Load entry JS as an ES module (type="module")
+  -n, --site-host=<value>    [env: MODYO_SITE_HOST] Host of the site where the widget will be previewed
+  -p, --port=<value>         [default: 8080, env: MODYO_LOCAL_PORT] Deploy port local widget running
+  -s, --dom-id=<value>       [default: widgetName, env: MODYO_LOCAL_DOM_ID] Container id of the widget
+  -t, --token=<value>        (required) [env: MODYO_TOKEN] Modyo Api token
+  -u, --account-url=<value>  (required) [env: MODYO_ACCOUNT_URL] URL of your Modyo account ex("https://account.modyo.com")
+  -v, --version=<option>     [default: 9, env: MODYO_VERSION] Version of Modyo platform <options: 8|9|10>
 
+EXAMPLE
+  $ modyo-cli preview -p 5173 -j main.js -m
+```
 
-    OPTIONS
+#### Previsualizar un widget que se carga como ES Module
 
-    -p, –port=<value> [default: 8080) Deploy port local widget running
-    -s, –dom-id=<value> [default: widgetName] Container id of the widget
-    -j, –entry-js=<value> [default: main.js] Entry JS file of the widget
+Por defecto, la vista previa inserta tu archivo de entrada con el atributo `defer`. Un proyecto que compila a ES modules, como la plantilla base en React con Vite, no arranca así y la vista previa queda vacía.
 
-    EXAMPLE
+Con la opción `-m` (o `MODYO_LOCAL_MODULE=true`) el script se inserta con `type="module"`. Es el equivalente local de la opción **Cargar como Módulo ES (Experimental)** de los widgets instanciados en una página, descrita en [Carga como ES Module](/es/platform/channels/widgets.html#carga-como-es-module).
 
-    MODYO_LOCAL_PORT=8080
-    MODYO_LOCAL_DOM_ID=widgetName
-    MODYO_LOCAL_ENTRY_JS=main.js
+:::warning Atención
+El modo módulo viaja en la URL que abre el comando y la barra de la vista previa no lo conserva: al cambiar cualquier opción de la barra o hacer click en **Recargar**, el widget vuelve a cargarse con `defer`. Para recuperarlo, vuelve a ejecutar `modyo-cli preview -m`.
+:::
 
+#### Opciones de la barra de la vista previa
 
+La vista previa se abre dentro de tu sitio, con la barra de la vista previa en el borde de la ventana. Para un widget local, la barra ofrece:
+
+- **Templates**: elige si el widget se monta sobre las plantillas **Publicada** o **Editable** del sitio.
+- **Snippets globales**: el mismo conmutador **Publicada** / **Editable** para los snippets globales.
+- **Layout**: elige el layout del sitio con el que se monta el widget; por defecto es `base`. La lista se arma con los layouts del conjunto de plantillas seleccionado en **Templates**, así que cambia al pasar de publicadas a editables. Si el layout elegido no existe en el conjunto activo, la vista previa vuelve a `base`.
+- **Puerto**, **Mount DOM element** y **Entry JS**: los mismos valores del comando, editables sin volver a la terminal.
+- **Recargar**, **Compartir** y **Salir**: vuelve a cargar la vista previa con las opciones elegidas, copia su URL para compartirla, o sal de la vista previa.
+
+Un widget local no ofrece las opciones **SDK de contenido** ni **Navegación**, ni el botón **Editar widget**, porque su código vive en tu proyecto y no en la plataforma.
 
 ## Code Splitting
 
@@ -566,3 +592,53 @@ El usuario dueño del token debe tener un rol de [site reviewer o admin](/es/pla
 Una vez que un widget está desplegado y publicado en Modyo, está disponible para ser utilizado en las páginas del sitio al que pertenece.
 
 Si has definido [variables](/es/platform/channels/global-variables.html) sus valores pueden ser especificados a nivel global o particular a cada instancia del widget.
+
+## Widgets CLI en el panel
+
+Un widget **creado** con `modyo-cli push` queda marcado en la plataforma como widget de solo lectura, porque su código fuente vive en tu repositorio y no en Modyo. Es una consecuencia directa de desplegar con el CLI y conviene conocerla antes de adoptarlo.
+
+La marca se decide en ese momento y no vuelve a evaluarse: un widget que ya existía en el panel y que después recibe un despliegue del CLI conserva su edición y no queda de solo lectura.
+
+En el listado de widgets del sitio, estos widgets se reconocen por la etiqueta **CLI** junto a su nombre. Al abrir uno no encontrarás las pestañas de código, sino la pantalla **Resumen del widget**, con:
+
+- **Nombre**: el nombre del widget en Modyo.
+- **Tipo**: la etiqueta CLI.
+- **Tamaño**: el peso total de los archivos del widget.
+- **Chunks**: la cantidad de archivos adicionales a los de entrada, sin contar los source maps.
+- **Actualizado por última vez en**: la fecha y hora del último despliegue.
+- **Actualizado por última vez por**: el usuario que hizo el último despliegue.
+
+Sobre el resumen aparece el aviso "Los widgets CLI no se pueden editar en Modyo. Descárgalo para revisar su contenido." junto al botón **Descargar**.
+
+El resto del ciclo de vida es el de cualquier widget: conserva versión editable y publicada, admite [variables](/es/platform/channels/widgets.html#variables-del-widget), pasa por [revisión en equipo](/es/platform/core/#revision-en-equipo) y se instancia en las páginas desde el [Page Builder](/es/platform/channels/pages.html). En la columna de propiedades siguen visibles el nombre, los tags y el listado de páginas que usan el widget.
+
+### Diferencias de código
+
+Al comparar versiones de un widget CLI, ya sea en la vista de **Diferencias** del widget, en la [revisión y publicación conjunta](/es/platform/channels/sites.html#revision-y-publicacion-conjunta) o en la [sincronización entre stages](/es/platform/channels/sites.html#stages), la plataforma detecta que hay cambios pero no muestra el diff línea a línea. En su lugar aparece el mensaje "El archivo tiene diferencias, pero los widgets CLI no se pueden mostrar".
+
+El mismo comportamiento aplica a cualquier plantilla que supere el límite de tamaño permitido, con el mensaje "El archivo tiene diferencias, pero su tamaño supera el límite permitido y no se puede mostrar".
+
+Tampoco puedes usar **Resetear a esta versión** para devolver un widget CLI a una versión anterior. Para revisar o revertir cambios entre despliegues, usa el historial de tu repositorio y vuelve a ejecutar `modyo-cli push` con la versión que necesites.
+
+### El ZIP del botón Descargar
+
+El botón **Descargar** llama a `GET /api/admin/sites/{site_id}/widget_definitions/{id}/download` y arma un ZIP al vuelo a partir de las plantillas guardadas en la plataforma. No es el archivo que subiste, y su contenido no coincide con tu build:
+
+- Los archivos de entrada salen renombrados con el identificador del widget: `<uuid>.js`, `<uuid>.css` y `<uuid>.html`, en lugar de `main.js` y `main.css`.
+- Los chunks pierden su ruta: solo se conserva el último segmento del nombre, así que la estructura de carpetas no se reconstruye.
+- Los archivos `.wasm` se entregan decodificados.
+- El ZIP trae siempre tres archivos más que el número del contador **Chunks**: ese contador cuenta solo los chunks, mientras que el ZIP incluye además los tres archivos de entrada.
+
+:::warning Atención
+El ZIP de **Descargar** sirve para inspeccionar qué código está corriendo en la plataforma, no como respaldo: no se puede volver a desplegar tal cual. La fuente de verdad de un widget CLI es siempre tu repositorio.
+:::
+
+### Permisos y despliegues desde un pipeline propio
+
+Para desplegar con `push`, el usuario dueño del token necesita el permiso **Crear Widgets CLI**, incluido en el rol [Site Developer CLI](/es/platform/core/roles.html#roles) y superiores. Para usar el botón **Descargar** basta con el permiso **Ver Widgets**.
+
+La marca de solo lectura la decide la plataforma al crear el widget, según cómo se identifica la petición: solo se aplica cuando la cabecera `User-Agent` corresponde a uno de los CLI reconocidos por la plataforma. Son los de Modyo y los de Dynamic, y la lista es configurable por instalación, así que si tienes dudas confírmala con quien administre la tuya.
+
+:::warning Atención
+Si integras el despliegue desde un pipeline propio que llama al mismo endpoint sin identificarse como uno de esos CLI, el widget se crea editable, se le exige el permiso normal de edición de widgets en lugar de **Crear Widgets CLI**, y queda abierto a cambios desde el panel que tu siguiente despliegue sobrescribirá. Si el widget ya estaba marcado como widget CLI, una petición que no se identifica como el CLI responde con éxito pero no actualiza su código.
+:::

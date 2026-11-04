@@ -4,60 +4,45 @@ search: true
 
 # Modyo MCP
 
-The [Model Context Protocol (MCP)](https://modelcontextprotocol.io) is an open standard for connecting AI assistants with external tools and data sources. The **Modyo MCP Server** implements this protocol on top of Modyo's admin API, allowing an AI agent to manage content, sites, widgets, customers, and platform administration tasks using natural language.
+## What it is
 
-Distributed as an NPM package ([`@modyo/mcp`](https://www.npmjs.com/package/@modyo/mcp)), it works with any MCP-compatible client (Claude Desktop, Claude Code, Cursor, GitHub Copilot, Gemini CLI, and others).
+The [Model Context Protocol (MCP)](https://modelcontextprotocol.io) is an open standard for connecting AI assistants to tools and data sources. The **Modyo MCP Server** connects an AI assistant to the Modyo Admin API so you can manage the platform (content, sites, widgets, customers, and administration) and build widgets with Dynamic Framework through natural-language conversation.
 
-:::warning Warning — Permissions
-The MCP server operates with the same permissions as the admin user associated with the `MODYO_TOKEN`. An agent with access to this token can create, modify, and delete content, sites, widgets, users, and platform settings. **Use a token with the minimum required scope** and review the agent's actions before approving destructive operations (page deletion, mass unpublishing, deletion of realms or users). For production use, consider creating a dedicated admin user with a narrow role and rotating the token periodically.
-:::
+It is distributed as the npm package [`@modyo/mcp`](https://www.npmjs.com/package/@modyo/mcp) and runs as a local process that the AI client launches over stdio. This page describes version 0.5.10.
+
+To build a widget end to end with the MCP, see [Develop widgets with the MCP](/en/platform/tools/mcp-widgets.html).
 
 ## Requirements
 
-- Node.js 22 or later
-- A Modyo platform instance reachable over HTTPS
-- A Modyo admin token (Modyo Admin → Settings → API Access)
+- Node.js 22 or later.
+- A Modyo instance.
+- An admin token, created in Modyo Admin → Settings → API Access. The MCP operates with the permissions of the user who owns the token (see [Token permissions](#token-permissions)).
 
 ## Installation
 
-The MCP server runs as a local process (stdio transport) that the AI client spawns on demand. Configuration consists of adding the server to the client's configuration file, declaring the command (`npx -y @modyo/mcp`) and the minimum environment variables.
+The client launches the server with the command `npx -y @modyo/mcp` and passes it the `MODYO_URL` and `MODYO_TOKEN` environment variables. Installing means registering that command in the client's configuration.
 
-### Claude Desktop
+| Client | Where it is configured | Client documentation |
+|---|---|---|
+| Claude Code | `claude mcp add` command | [Claude Code: MCP](https://code.claude.com/docs/en/mcp) |
+| Claude Desktop | `claude_desktop_config.json` | [Connect to local MCP servers](https://modelcontextprotocol.io/docs/develop/connect-local-servers) |
+| Cursor | `~/.cursor/mcp.json` | [Cursor: MCP](https://cursor.com/docs/context/mcp) |
+| GitHub Copilot in VS Code | `MCP: Add Server` → `~/.copilot/mcp-config.json` | [Add MCP servers in VS Code](https://code.visualstudio.com/docs/copilot/customization/mcp-servers) |
+| GitHub Copilot CLI | `copilot mcp add` command → `~/.copilot/mcp-config.json` | [Adding MCP servers to Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-mcp-servers) |
+| Other clients | Depends on the client | See [Other clients](#other-clients) |
 
-Edit `claude_desktop_config.json`:
-
-- **macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`
-- **Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
-- **Linux:** `~/.config/Claude/claude_desktop_config.json`
-
-```json
-{
-  "mcpServers": {
-    "modyo": {
-      "command": "npx",
-      "args": ["-y", "@modyo/mcp"],
-      "env": {
-        "MODYO_URL": "https://your-org.modyo.com",
-        "MODYO_TOKEN": "your-admin-token"
-      }
-    }
-  }
-}
-```
-
-Restart Claude Desktop after saving.
+In the examples, replace `https://my-company.modyo.cloud` with your platform URL and `your-admin-token` with your token.
 
 ### Claude Code
 
 ```bash
-claude mcp add modyo \
-  --scope project \
-  --env MODYO_URL=https://your-org.modyo.com \
-  --env MODYO_TOKEN=your-token \
+claude mcp add modyo --scope user \
+  --env MODYO_URL=https://my-company.modyo.cloud \
+  --env MODYO_TOKEN=your-admin-token \
   -- npx -y @modyo/mcp
 ```
 
-Use `--scope user` instead of `--scope project` to apply the configuration globally.
+With `--scope user`, the server is available in all your projects and the configuration is stored in `~/.claude.json`, outside any repository. The `--env` options go after the server name and before `--`.
 
 To verify the registration:
 
@@ -65,9 +50,9 @@ To verify the registration:
 claude mcp list
 ```
 
-### Cursor
+The server appears as `modyo: npx -y @modyo/mcp - ✔ Connected`. Inside a session, `/mcp` shows the server and its number of tools.
 
-Edit `~/.cursor/mcp.json`:
+To share the configuration with a team through the repository, create a `.mcp.json` at the project root that reads credentials from each person's environment instead of writing them in the file:
 
 ```json
 {
@@ -76,410 +61,489 @@ Edit `~/.cursor/mcp.json`:
       "command": "npx",
       "args": ["-y", "@modyo/mcp"],
       "env": {
-        "MODYO_URL": "https://your-org.modyo.com",
-        "MODYO_TOKEN": "your-token"
+        "MODYO_URL": "${MODYO_URL}",
+        "MODYO_TOKEN": "${MODYO_TOKEN}"
       }
     }
   }
 }
 ```
 
-### GitHub Copilot in VS Code
+Claude Code replaces `${MODYO_URL}` and `${MODYO_TOKEN}` with the session's environment variables. The first time the project is opened, the server shows as `⏸ Pending approval` until you approve it.
 
-Requires Copilot with **Agent Mode** enabled.
+### Claude Desktop
 
-Create `.vscode/mcp.json` at your project root (per-project, recommended):
+In Claude Desktop, open **Settings** → **Developer** → **Edit Config**. This opens (or creates) `claude_desktop_config.json`:
+
+- **macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`
+- **Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
 
 ```json
 {
-  "servers": {
+  "mcpServers": {
     "modyo": {
       "command": "npx",
       "args": ["-y", "@modyo/mcp"],
       "env": {
-        "MODYO_URL": "https://your-org.modyo.com",
-        "MODYO_TOKEN": "your-token"
+        "MODYO_URL": "https://my-company.modyo.cloud",
+        "MODYO_TOKEN": "your-admin-token"
       }
     }
   }
 }
 ```
 
-A **Start** button will appear at the top of the file. Click it to start the server and let Copilot discover the available tools.
+If the file already has other servers, add only the `modyo` entry inside `mcpServers`. Save, quit Claude Desktop completely, and reopen it. The server and its tools appear under **Connectors** → **Manage connectors**.
 
-For global setup, use the Command Palette → `Chat: Open User MCP Configuration` with the same structure.
+### Cursor
 
-:::tip For Copilot Business or Enterprise organizations
-An administrator must enable the "MCP servers in Copilot" policy in the organization settings.
+Edit `~/.cursor/mcp.json` for all your projects, or `.cursor/mcp.json` for a single project:
+
+```json
+{
+  "mcpServers": {
+    "modyo": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modyo/mcp"],
+      "env": {
+        "MODYO_URL": "https://my-company.modyo.cloud",
+        "MODYO_TOKEN": "your-admin-token"
+      }
+    }
+  }
+}
+```
+
+You enable and review the server from **Customize** in Cursor's sidebar.
+
+### GitHub Copilot in VS Code
+
+1. Open the command palette and run **MCP: Add Server**.
+2. Choose **Command (stdio)** and enter `npx -y @modyo/mcp` as the command.
+3. When the flow asks for the name, enter `modyo`. If you leave it empty, VS Code assigns a generic name.
+4. As the target, choose **Global** → **Copilot Global**.
+
+VS Code stores the server in `~/.copilot/mcp-config.json`. It is the same file [GitHub Copilot CLI](#github-copilot-cli) uses: a server added in one shows up in the other. Add the credentials in an `env` block inside the entry:
+
+```json
+{
+  "mcpServers": {
+    "modyo": {
+      "tools": ["*"],
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modyo/mcp"],
+      "env": {
+        "MODYO_URL": "https://my-company.modyo.cloud",
+        "MODYO_TOKEN": "your-admin-token"
+      }
+    }
+  }
+}
+```
+
+To start the server, run **MCP: List Servers**, choose `modyo`, and then **Start Server**. You can see the tools in the chat, in **Agent** mode, under **Configure Tools**.
+
+:::tip VS Code tool limit
+A VS Code chat request supports up to 128 enabled tools. If you use the Modyo MCP alongside other servers, you can limit its modules with [`MODYO_MCP_MODULES`](#filtering-by-modules).
 :::
 
 ### GitHub Copilot CLI
 
-Inside an interactive Copilot CLI session:
-
-```
-/mcp add
-```
-
-Follow the wizard: select `Local or STDIO`, enter `npx -y @modyo/mcp` as the command, and add the environment variables.
-
-Alternatively, edit `~/.copilot/mcp-config.json` directly:
-
-```json
-{
-  "mcpServers": {
-    "modyo": {
-      "type": "local",
-      "command": "npx",
-      "args": ["-y", "@modyo/mcp"],
-      "env": {
-        "MODYO_URL": "https://your-org.modyo.com",
-        "MODYO_TOKEN": "your-token"
-      },
-      "tools": ["*"]
-    }
-  }
-}
+```bash
+copilot mcp add modyo \
+  --env MODYO_URL=https://my-company.modyo.cloud \
+  --env MODYO_TOKEN=your-admin-token \
+  -- npx -y @modyo/mcp
 ```
 
-### Gemini CLI
+The `--env` options go before `--`. The `copilot mcp` subcommand requires a recent version of Copilot CLI: if your version does not recognize it, update the CLI.
 
-Edit `~/.gemini/settings.json` for a global setup, or `.gemini/settings.json` in your project:
+The server is stored in `~/.copilot/mcp-config.json`, the same file [GitHub Copilot in VS Code](#github-copilot-in-vs-code) uses. To verify it, run `/mcp show modyo` inside a Copilot CLI session: it shows the server status and its tools.
 
-```json
-{
-  "mcpServers": {
-    "modyo": {
-      "command": "npx",
-      "args": ["-y", "@modyo/mcp"],
-      "env": {
-        "MODYO_URL": "https://your-org.modyo.com",
-        "MODYO_TOKEN": "your-token"
-      }
-    }
-  }
-}
-```
+### Other clients
 
-:::warning Gemini CLI and environment variables
-Gemini CLI automatically redacts environment variables matching sensitive patterns like `*TOKEN*`. Always declare `MODYO_TOKEN` explicitly inside the `env` block as shown above — do not rely on shell-exported variables.
-:::
-
-### Other MCP clients
-
-Any client that supports the stdio transport can run:
+Any MCP client that launches local servers over stdio is configured with the same three values. The file format depends on the client: see its documentation.
 
 ```
 command: npx
 args: ["-y", "@modyo/mcp"]
 env:
-  MODYO_URL: https://your-org.modyo.com
-  MODYO_TOKEN: your-token
+  MODYO_URL: https://my-company.modyo.cloud
+  MODYO_TOKEN: your-admin-token
 ```
 
-:::tip Optional variables
-Any optional variable goes in the same `env` block of your client. For example, to audit a production site with no risk of modifying it:
+Some clients do not pass your terminal's environment variables to the server, or discard those that look like secrets, such as variables containing `TOKEN`. Declare `MODYO_URL` and `MODYO_TOKEN` in the server configuration, not only in your terminal.
 
-    "env": {
-      "MODYO_URL": "https://your-org.modyo.com",
-      "MODYO_TOKEN": "your-admin-token",
-      "MODYO_MCP_MODULES": "channels",
-      "MODYO_READ_ONLY": "true"
-    }
+## Configuration
 
-See [Environment Variables](#environment-variables) and [Module filtering and read-only mode](#module-filtering-and-read-only-mode).
-:::
-
-## Environment Variables
+The server is configured with environment variables, in the client's `env` block.
 
 | Variable | Required | Description |
-|----------|----------|-------------|
-| `MODYO_URL` | Yes | Platform URL (e.g., `https://your-org.modyo.com`) |
-| `MODYO_TOKEN` | Yes | Admin token obtained from Modyo Admin → Settings → API Access |
-| `MODYO_PLATFORM_NAME` | No | Display name for the platform (default: `"default"`) |
-| `MODYO_MCP_MODULES` | No | Comma-separated list of modules to enable (`core`, `content`, `channels`, `customers`, `widgets`). When unset, all are active. An invalid value stops startup with an explicit error. |
-| `MODYO_READ_ONLY` | No | With `true` (exact value), the server performs no mutations against the platform, even if the token has write permissions. |
-| `MODYO_DEFAULT_SITE_THEME` | No | Numeric theme ID used when creating a site without an explicit `theme` (default: `208`, tenant-specific). |
-| `DEBUG` | No | Enable debug logging when set to `true` or `1` |
+|---|---|---|
+| `MODYO_URL` | Yes | Platform URL, for example `https://my-company.modyo.cloud`. |
+| `MODYO_TOKEN` | Yes | Admin token (Modyo Admin → Settings → API Access). |
+| `MODYO_PLATFORM_NAME` | No | Display name of the platform. Defaults to `default`. |
+| `MODYO_MCP_MODULES` | No | Active modules, comma-separated: `core`, `content`, `channels`, `customers`, `widgets`. If unset, all are active. See [Filtering by modules](#filtering-by-modules). |
+| `MODYO_READ_ONLY` | No | With the exact value `true`, enables read-only mode. See [Read-only mode](#read-only-mode). |
+| `MODYO_DEFAULT_SITE_THEME` | No | ID of the theme used when creating a site without specifying one. Defaults to `208`; the matching ID depends on your instance. The theme is applied only when the site is created. |
+| `DEBUG` | No | With `true` or `1`, the server writes debug logs to stderr, with sensitive values masked. |
 
-Without `MODYO_URL` and `MODYO_TOKEN`, the server starts in **public mode** and only exposes capabilities that don't require authentication. Useful for exploring available tools and resources before connecting to a platform.
+### Without credentials
 
-## Module filtering and read-only mode
+Without `MODYO_URL` and `MODYO_TOKEN`, the server still starts and lists all its tools, resources, and prompts. On startup, it writes this to its log:
 
-The server can be started with a reduced surface of capabilities. Two environment variables control this and can be combined with each other.
+```
+No platform configured. Set MODYO_URL and MODYO_TOKEN environment variables.
+```
 
-### Module filtering with `MODYO_MCP_MODULES`
+The Widgets module tools work without credentials. All the others respond with an error:
 
-Defines which modules are enabled via a comma-separated list. Valid values: `core`, `content`, `channels`, `customers`, `widgets`. Without the variable, all modules are active (default behavior).
+```
+Platform not configured. Set MODYO_URL and MODYO_TOKEN environment variables.
+```
 
-The filter applies to **tools, resources, prompts, and the `instructions` block** of the initial handshake. Cross-cutting resources (documentation, `platforms://list`, `modyo://context/agent-rules`) remain available even when their module is filtered out — they are pure information, with no execution. **Workflow prompts** declare the modules they require and are only exposed if all of them are active (for example, `modyo-create-blog` requires `channels` and `content`).
+## Security and control
 
-An invalid value stops startup with exit code 1 and an explicit message (intentional fail-loud):
+### Token permissions
+
+:::warning Permissions
+The MCP operates with the same permissions as the admin user who owns the `MODYO_TOKEN`. An agent with that token can create, modify, and delete content, sites, widgets, users, and settings. **Use the token of a user with the minimum permissions required** and review the agent's actions before approving destructive operations. In production, consider a dedicated admin user with a restricted role.
+:::
+
+Admin API tokens do not expire and the platform does not renew them: the `MODYO_TOKEN` remains valid until someone deletes it from the console. Rotating it is a manual task. See [Access token lifecycle](/en/platform/core/api.html#access-token-lifecycle).
+
+### Read-only mode
+
+With `MODYO_READ_ONLY=true`, the server does not make any change on the platform, even if the token has write permissions. Any other value, or the absence of the variable, is equivalent to normal behavior. It is useful for auditing or exploring a production site with no risk of modifying it.
+
+It works in two layers:
+
+1. Tools that only write or delete are not registered: the client does not see them.
+2. Tools that group several actions (for example, the `*-manage` tools) remain available, but only run read actions: `list`, `get`, `search`, `find`, and `status`. The `manage` action with no fields that change anything acts as a read.
+
+A rejected action is not an error (`isError: false`). The response carries the rejection in `control`:
+
+```json
+{
+  "control": {
+    "readOnly": true,
+    "rejected": "create",
+    "reason": "Server running in read-only mode (MODYO_READ_ONLY). Only read actions are permitted."
+  }
+}
+```
+
+Prompts remain listed in read-only mode, but the steps that write are rejected.
+
+### Filtering by modules
+
+`MODYO_MCP_MODULES` defines which modules are enabled, as a comma-separated list. Valid values: `core`, `content`, `channels`, `customers`, `widgets`. Without the variable, all modules are active.
+
+The filter applies to the tools, resources, prompts, and instructions the server sends to the agent. The cross-module resources (`platforms://list`, `modyo://context/agent-rules`, and the widgets guide) remain available with any filter. A prompt that needs two modules only appears if both are active: `modyo-create-blog` requires `channels` and `content`.
+
+An invalid value stops startup with an explicit message:
 
 ```
 Error: Invalid module(s) in MODYO_MCP_MODULES: 'widgetz'.
 Valid values: core, content, channels, customers, widgets.
 ```
 
-Startup log with filtering active (example with `MODYO_MCP_MODULES=widgets`):
+### Combinations
+
+The two variables can be combined. To audit a site with no risk of modifying it, use `MODYO_MCP_MODULES=channels` with `MODYO_READ_ONLY=true`:
+
+```json
+"env": {
+  "MODYO_URL": "https://my-company.modyo.cloud",
+  "MODYO_TOKEN": "your-admin-token",
+  "MODYO_MCP_MODULES": "channels",
+  "MODYO_READ_ONLY": "true"
+}
+```
+
+Tools the client lists for each configuration, in version 0.5.10:
+
+| Configuration | Tools |
+|---|---|
+| No variables | 82 |
+| `MODYO_READ_ONLY=true` | 48 |
+| `MODYO_MCP_MODULES=widgets` | 5 |
+| `MODYO_MCP_MODULES=widgets` and `MODYO_READ_ONLY=true` | 4 |
+| `MODYO_MCP_MODULES=channels` and `MODYO_READ_ONLY=true` | 16 |
+
+The startup log confirms the active configuration. With `MODYO_MCP_MODULES=widgets`:
 
 ```
 Module filtering active. Modules enabled: widgets. Filtered out: core, content, channels, customers.
-Tools: 5 (filtered from 80). Resources: 8 (filtered from 11). Prompts: 1 (filtered from 9).
+Tools: 5 (filtered from 82). Resources: 7 (filtered from 10). Prompts: 1 (filtered from 9).
 ```
 
-### Read-only mode with `MODYO_READ_ONLY`
-
-With the exact value `true`, the server guarantees it **performs no mutations** against the platform, even if the token has write permissions. Any other value (or the absence of the variable) means normal behavior. The main use case is auditing or exploring customer sites in production without any risk of modifying them.
-
-The mechanism works in two layers:
-
-1. Single-purpose write or delete tools **are not registered** — they don't appear in `tools/list`.
-2. Multi-action tools (`*-manage`) stay registered but **gate by action**: only `list`, `get`, `search`, and `find` execute (plus `manage` with no mutating fields, which acts as a `get`). Everything else receives a structured rejection (`readOnly: true, rejected: ...`), not an error.
-
-Startup log in read-only mode:
+In that line, "Resources" counts resources and resource templates together. With `MODYO_READ_ONLY=true`:
 
 ```
-Read-only mode active (MODYO_READ_ONLY). Read tools exposed: 20. Multi-action tools gated: 25. Write/destroy tools skipped: 35.
+Read-only mode active (MODYO_READ_ONLY). Read tools exposed: 22. Multi-action tools gated: 26. Write/destroy tools skipped: 34.
 ```
 
-### Combining both variables
+### Delete confirmation
 
-The two variables compose. Real `tools/list` counts by configuration:
+Tools that delete resources ask for confirmation:
 
-| Configuration | Exposed tools |
-|---|---|
-| No variables | 80 |
-| `MODYO_MCP_MODULES=widgets` | 5 |
-| `MODYO_READ_ONLY=true` | 45 |
-| Both (`widgets` + read-only) | 4 |
+- In clients with interactive confirmation, the tool asks you to confirm before deleting. If the confirmation times out or fails, nothing is deleted.
+- In clients without interactive confirmation, a call without `confirmed: true` does nothing and responds with what it would delete, in `control.aborted`. To run the deletion, repeat the call with `confirmed: true`.
 
-To audit a site with no risk of modifying it, the recommended combination is `MODYO_MCP_MODULES=channels` + `MODYO_READ_ONLY=true`.
+Archiving a widget definition also asks for confirmation, because it removes its instances from the site's pages.
 
-## Available Capabilities
+### Write responses
 
-The server exposes three types of MCP capabilities: **tools** (actions the agent can invoke), **resources** (documentation and data the agent can query by URI), and **prompts** (guided multi-step workflows).
+- **What was saved.** After writing, the tools re-read the resource and respond with that state. If a requested field was not saved, they respond with `FIELDS_NOT_PERSISTED` or `UNSUPPORTED_FIELD`. A parameter the action does not use comes back in `ignored`.
+- **Background operations.** Operations that continue on the platform respond with `queued` or `deletion_started`.
+- **Exact identifiers.** Actions that write or delete resolve the resource only by exact id, UUID, path, or slug. A read with several candidates responds with `AMBIGUOUS_IDENTIFIER` and the list. For an entry with several translations, the tool asks for the locale (`LOCALE_REQUIRED`).
 
-### Modules covered
+## What it can do
 
-| Module | Coverage |
-|--------|----------|
-| **Core** | Teams, admin users, groups, roles, platform settings |
-| **Content** | Spaces, content types, entries, assets, categories, async jobs |
-| **Channels** | Sites, pages, widgets, Liquid templates, releases, navigation, global variables |
-| **Customers** | Realms, end users, segments, forms, submissions, originations |
-| **Widgets** | Transactional widget generation (React + Dynamic UI): scaffolding from the canonical template, component and pattern catalog from Storybook, validation |
+The server exposes three kinds of capabilities: **tools** (actions the agent runs), **resources** (information the agent looks up by URI), and **prompts** (guided workflows the person invokes). The client lists the details of each: every tool comes with its description and its `inputSchema`, which the agent reads before using it.
 
-### Tools
+Tools follow the `{module}-{resource}-{action}` convention, for example `content-spaces-list` or `channels-pages-create`.
 
-Tools follow the `{module}-{resource}-{action}` naming convention. For example: `content-spaces-manage`, `channels-pages-create`, `customers-realms-manage`. Most follow one of these patterns:
+### Core
 
-- `*-list` — List resources with pagination and filters
-- `*-get` — Fetch a single resource by ID, slug, or UUID
-- `*-manage` — Create, update, delete (a condensed CRUD toolset)
-- `*-upsert` — Create or update (idempotent)
-- `*-bulk` — Batch operations (async)
-- `*-copy` — Clone resources preserving relationships
+Account administration: admin users, groups, roles, memberships, and platform settings.
 
-#### Summary by module
+- `core-groups-manage`: creates, updates, deletes, and lists admin groups, and adds or removes users from a group.
+- `core-groups-upsert`: creates or updates a group by name, with its full list of users.
+- `core-members-manage`: assigns, changes, or removes users and groups in sites, spaces, and realms, and lists members with their role.
+- `core-roles-create`: creates a role, with optional permission groups.
+- `core-roles-manage`: lists roles by context: account, site, space, or realm.
+- `core-settings-manage`: updates platform settings: name, host, language, CORS, logo, favicon, default site, SEO files, and admin colors.
+- `core-users-bulk`: activates or deactivates admins in bulk.
+- `core-users-manage`: creates, updates, and lists admins, retrieves their sessions, and shows the token's user.
+- `core-users-upsert`: creates or updates an admin, looked up by email or username.
 
-**Core** (~9 tools): `core-groups-manage`, `core-groups-upsert`, `core-members-manage`, `core-roles-create`, `core-roles-manage`, `core-settings-manage`, `core-users-bulk`, `core-users-manage`, `core-users-upsert`.
+### Content
 
-**Content** (~22 tools): manage `content-spaces-*`, `content-types-*`, `content-entries-*`, `content-assets-*`, `content-categories-*`, plus `content-jobs-manage` for async tasks.
+Spaces, content types, categories, entries, and assets.
 
-**Channels** (~27 tools): manage `channels-sites-*`, `channels-pages-*` (including `channels-pages-content` and `channels-pages-widget` for content vs. configuration), `channels-widgets-*` (including `channels-widgets-code-edit` for surgical edits to a widget definition's code), `channels-templates-*` (with `channels-templates-find`, `channels-templates-search`, `channels-templates-replace`), `channels-menus-*`, `channels-menu-items-manage`, `channels-variables-manage`, `channels-locks-manage`, `channels-publish`, `channels-preview`, `channels-download`, `channels-site-assets-manage`, `channels-account-templates-manage`.
+- `content-spaces-list`: lists the platform's spaces.
+- `content-spaces-get`: shows a space with its settings and languages.
+- `content-spaces-manage`: creates, updates, and deletes spaces, and assigns a realm to a space that has none.
+- `content-spaces-copy`: clones a whole space: content types, categories, entries in every language (as drafts), and assets.
+- `content-types-list`: lists a space's content types.
+- `content-types-get`: shows a content type's schema with its fields.
+- `content-types-manage`: manages a content type's schema and adds or removes fields.
+- `content-types-upsert`: creates or updates a content type by its UID.
+- `content-types-copy`: copies a content type to another space, with or without its entries.
+- `content-categories-list`: lists a space's categories with their hierarchy.
+- `content-categories-get`: shows a category and its place in the hierarchy.
+- `content-categories-manage`: creates, retrieves, updates, deletes, and lists categories.
+- `content-entries-list`: lists a space's entries.
+- `content-entries-get`: shows one translation of an entry with its values.
+- `content-entries-manage`: creates, updates, translates, publishes, unpublishes, archives, restores, clones, and deletes entries.
+- `content-entries-upsert`: creates or updates an entry by its slug, in a content type and a language.
+- `content-entries-bulk`: publishes, unpublishes, archives, restores, or deletes entries in bulk, in one language.
+- `content-assets-list`: lists a space's assets.
+- `content-assets-get`: shows an asset with its metadata and URL.
+- `content-assets-manage`: retrieves and updates an asset's metadata, replaces its file, deletes it, or lists assets.
+- `content-assets-bulk`: uploads several assets at once.
+- `content-jobs-manage`: checks the status of space copies and site downloads started from the MCP.
 
-**Customers** (~17 tools): manage `customers-realms-*`, `customers-users-*`, `customers-segments-manage`, `customers-forms-*`, `customers-submissions-*`, `customers-datasets-*`, `customers-originations-*` (including validation and step cloning).
+### Channels
 
-**Widgets** (5 tools): `widgets-list-components`, `widgets-get-component-props`, `widgets-list-patterns` (federate the Dynamic UI Storybook catalog), `widgets-scaffold` (initializes a new widget project from the canonical template), and `widgets-validate` (runs `@modyo/widget-validator` and returns a scored report).
+Sites, pages, templates, widget definitions, menus, variables, and publishing.
 
-:::tip Inline documentation
-Every tool includes a `📚 modyo://docs/tools/{toolPath}` link in its description that the agent can read to see parameter details, examples, and constraints. Ask the agent "read the docs for tool X" to inspect the details before invocation.
-:::
+- `channels-sites-overview`: shows a site's map: pages, templates, menus, and widget definitions.
+- `channels-sites-manage`: creates, updates, clones, and deletes sites, and creates their stages.
+- `channels-site-assets-manage`: uploads one or more assets to a site.
+- `channels-pages-create`: creates a widget, content, or origination page.
+- `channels-pages-copy`: copies a page within the same site or to another one.
+- `channels-pages-manage`: retrieves, updates, archives, restores, unpublishes, deletes, and lists pages.
+- `channels-pages-content`: manages content pages and their Liquid templates.
+- `channels-pages-widget`: creates or locates a widget page and replaces its full widget composition.
+- `channels-pages-widget-instance`: adds, retrieves, updates, or removes a single widget on a page.
+- `channels-pages-widget-variables`: lists, retrieves, sets, and removes a custom widget's variables on a page.
+- `channels-templates-find`: finds a template by name and category.
+- `channels-templates-search`: searches templates' code with regular expressions.
+- `channels-templates-manage`: manages a site's templates: layouts, CSS, JavaScript, and snippets.
+- `channels-templates-upsert`: creates or updates a template by name and category.
+- `channels-templates-replace`: searches and replaces in templates' code, with a preview of the changes.
+- `channels-templates-copy`: copies a template to another site.
+- `channels-account-templates-manage`: manages the account's global templates.
+- `channels-widgets-manage`: creates, updates, clones, unpublishes, archives, restores, deletes, and lists widget definitions.
+- `channels-widgets-upsert`: creates or updates a widget definition by its name.
+- `channels-widgets-code-edit`: edits one section of a widget definition's code (HTML, CSS, or JavaScript) without resending the others.
+- `channels-widgets-copy`: copies a widget definition to another site.
+- `channels-variables-manage`: manages global variables for the account, the site, and widgets.
+- `channels-publish`: publishes changes in one step, with a prior dry run and in dependency order.
+- `channels-menus-manage`: creates, retrieves, renames, archives, unpublishes, deletes, and lists menus.
+- `channels-menu-items-manage`: manages a menu's items, including nested ones.
+- `channels-menus-copy`: copies a menu with all its items to the same site or to another one.
+- `channels-locks-manage`: acquires, releases, and checks edit locks on pages, templates, widgets, and entries.
+- `channels-download`: downloads a site's context as a ZIP file.
+- `channels-preview`: generates preview URLs for pages and widgets.
+
+### Customers
+
+Realms, users, segments, forms, data sets, and originations.
+
+- `customers-realms-manage`: lists, retrieves, creates, and updates realms, and changes their logo.
+- `customers-realms-delete`: deletes a realm and its stages.
+- `customers-users-list`: lists a realm's users, with filters.
+- `customers-users-manage`: creates or updates a realm user.
+- `customers-users-bulk`: creates or updates users in bulk, by email.
+- `customers-segments-manage`: manages dynamic segments and counts the users that match their filters.
+- `customers-forms-manage`: creates, updates, deletes, enables, and disables forms with their questions.
+- `customers-forms-copy`: copies a form to another realm with its questions.
+- `customers-submissions-manage`: lists, retrieves, creates, and updates submissions, changes their status, and assigns them.
+- `customers-submissions-bulk`: operates on submissions in bulk, with a preview.
+- `customers-datasets-manage`: manages simple or nested data sets.
+- `customers-datasets-copy`: copies a data set to another realm with all its options.
+- `customers-originations-manage`: creates, updates, publishes, unpublishes, archives, deletes, and lists originations.
+- `customers-originations-validate`: checks an origination's structure and reports errors and warnings.
+- `customers-origination-steps-manage`: creates or updates an origination's steps with their tasks and questions.
+- `customers-origination-steps-clone`: clones steps with their tasks, questions, and options within the same origination or into another one.
+- `customers-origination-rules-manage`: manages the rules that show or hide elements of an origination.
+
+### Widgets
+
+Building widgets with Dynamic Framework: component and pattern catalog, project creation, and validation. The tools in this module do not need credentials.
+
+- `widgets-list-components`: lists the Dynamic UI catalog: components, contexts, and hooks.
+- `widgets-get-component-props`: returns the full definition of a Dynamic UI component, subcomponent, context, or hook.
+- `widgets-list-patterns`: lists the composition patterns published in the Dynamic UI Storybook.
+- `widgets-scaffold`: creates a new widget project from the Dynamic base template.
+- `widgets-validate`: validates a widget against Dynamic UI conventions, accessibility, data states, error handling, and tests.
+
+### What the MCP does not cover
+
+For these tasks, use Modyo Admin. The server also tells the agent so.
+
+- **Core:** removing another admin's second factor; account security (mandatory second factor, password policy, session expiration); identity providers (SSO) and SCIM; API access applications and their tokens; account webhooks and assets; activity logs and reports; viewing a role's permissions, editing roles, and deleting them.
+- **Content:** team review of entries; scheduling publication or unpublication; version history, diffs, and restoring; previewing an entry; bulk editing and creation; reindexing a content type.
+- **Channels:** team review (with team review enabled, `channels-publish` only publishes what is approved); version history, diffs, and rollback; scheduling a release's publication; redirects; page activity and comments; listing, editing, and deleting site assets (`channels-site-assets-manage` only uploads them); publishing global snippets (`channels-account-templates-manage` saves them without publishing); syncing stages; downloading a widget definition as a ZIP file; changing a site's host and its `llms.txt` settings; widget definition owners.
+- **Customers:** realm domains and security headers; restricting team members to segments; deleting users, viewing or revoking their sessions, user notes, and impersonation; custom user fields; form responses and statistics; scheduling an origination's publication; origination version history, diffs, and rollback; realm stages and their sync; deleting submissions or task responses and submission invitations; messaging campaigns and their email templates; realm integrations (identity providers, OAuth clients) and webhooks; payments and orders.
 
 ### Resources
 
-Resources are URIs the agent can read to query structured information:
+| URI | Module | Content |
+|---|---|---|
+| `platforms://list` | Cross-module | Configured platforms. |
+| `modyo://context/agent-rules` | Cross-module | Operating rules for the agent. |
+| `modyo://docs/widgets/{widgetPath}` | Cross-module | Widgets guide for the agent. Entry point: `modyo://docs/widgets/INDEX`. |
+| `modyo-spaces://list` | Content | All spaces. |
+| `modyo-realms://list` | Customers | All realms. |
+| `modyo://liquid-reference` | Channels | Liquid reference: objects, properties, filters, and tags, with what is available in each context. |
+| `modyo://widgets/catalog/components` | Widgets | List of Dynamic UI components. |
+| `modyo://widgets/catalog/components/{componentId}` | Widgets | Component detail: stories with code and props with types. |
+| `modyo://widgets/catalog/patterns` | Widgets | List of patterns. |
+| `modyo://widgets/catalog/patterns/{patternId}` | Widgets | Full content of a pattern. |
 
-| URI | Description |
-|-----|-------------|
-| `platforms://list` | List of configured platforms (Modyo MCP supports multi-platform) |
-| `modyo://context/agent-rules` | Operational rules for the agent (security, IDs vs UUIDs, recurring patterns) |
-| `modyo://docs/tools/{toolPath}` | Per-tool documentation |
-| `modyo://docs/widgets/{docPath}` | Widget generation guide (entry point `modyo://docs/widgets/INDEX`) |
-| `modyo://liquid-reference` | Full reference of Liquid tags, filters, and drops in Modyo |
-| `modyo-spaces://list` | List of Content spaces |
-| `modyo-realms://list` | List of Customers realms |
-| `modyo://widgets/catalog/components` | Lightweight component list (id, name, key, description, storyCount) |
-| `modyo://widgets/catalog/components/{componentId}` | Full component detail (stories with code, props with TS types) |
-| `modyo://widgets/catalog/patterns` | Lightweight list of official patterns |
-| `modyo://widgets/catalog/patterns/{patternId}` | Full MDX content of the pattern |
-
-Documentation resources (`modyo://docs/...`) are cross-cutting: they remain available even when their module is filtered out with `MODYO_MCP_MODULES`.
+The widgets catalogs correspond to the Dynamic UI version the server pins.
 
 ### Prompts
 
-Prompts are guided multi-step workflows. Invoke a prompt and the agent runs a sequence of tools in order, asking for confirmation at decision points.
+Prompts are guided workflows that the person invokes from the client, usually as a slash command. Each one appears only if its modules are active.
 
-| Prompt | Workflow |
-|--------|----------|
-| `modyo-setup-site` | Create a new site: configure domain, base layout, initial pages |
-| `modyo-create-space` | Create a Content space with its base structure |
-| `modyo-create-blog` | Create a blog-style space with a "Post" type and initial entries |
-| `modyo-create-content-page` | Create a page that lists entries from a content type |
-| `modyo-create-widget-page` | Create a page that hosts a widget definition |
-| `modyo-create-widget-definition` | Create a widget definition with starter code |
-| `modyo-manage-templates` | Edit Liquid templates (layouts, snippets, stylesheets) for a site |
-| `modyo-manage-releases` | Review pending changes and publish a release |
-| `widgets-init-project` | Initialize a new widget project (React + Dynamic UI) from the canonical template, via the `widgets-scaffold` tool |
+| Prompt | Modules | Workflow |
+|---|---|---|
+| `modyo-create-space` | Content | Create a space with its base structure. |
+| `modyo-setup-site` | Channels | Create a site with its settings and initial pages. |
+| `modyo-create-widget-page` | Channels | Create a page that hosts a widget definition. |
+| `modyo-create-content-page` | Channels | Create a page that lists the entries of a content type. |
+| `modyo-create-widget-definition` | Channels | Create a widget definition with starter code. |
+| `modyo-manage-templates` | Channels | Edit a site's Liquid templates: layouts, snippets, and stylesheets. |
+| `modyo-manage-releases` | Channels | Review pending changes and publish a release. |
+| `modyo-create-blog` | Channels and Content | Create a blog: space, "Post" content type, and initial entries. |
+| `widgets-init-project` | Widgets | Create a new widget project with `widgets-scaffold`. |
 
-Module-bound prompts only appear when their module is active (see [Module filtering](#module-filtering-and-read-only-mode)).
+### Response shape
 
-## Widget generation
+For those integrating the MCP with their own code: all tools publish an `outputSchema` and respond with `structuredContent`. The response carries `platform` (the platform used), `data` (the result) and, when applicable, `resource`, `state` (for example `returned`, `total`, and `complete` in listings), and `control` (rejections, confirmations, and ignored parameters).
 
-The Widgets module enables assisted generation of transactional widgets (React + Dynamic UI). The entry point is `widgets-scaffold`, which creates a new widget project by cloning the canonical template (`dynamic-framework/dynamic-react-vite-base-template`) at the tag pinned by the server's compatibility matrix.
+## Usage examples
 
-### Two-step flow
+Once the server is configured, talk to the agent in natural language.
 
-1. The operator invokes the `widgets-init-project` prompt (an MCP client slash command), whose only effect is to have the agent run `widgets-scaffold`.
-2. The operator provides the widget's functional description on the next turn. The agent does not write any widget code before receiving it.
+**Exploration**
 
-`widgets-scaffold` takes two arguments: `name` (strict kebab-case; it is a **project name**, never a feature description) and `targetDir` (optional; parent directory where `./<name>/` is created). Its deterministic sequence is: clone at the pinned tag → strip the template's git history → `git init` + initial commit → rename `package.json` → `npm install`.
+> "List all the spaces on my platform"
+>
+> "What pages does site 1001 have?"
+>
+> "Show me the content types in the `blog` space"
 
-### Fail-closed preconditions
+**Creating and editing**
 
-The tool fails closed, touching nothing, if:
-
-- The target directory already exists.
-- The target is **anywhere inside another widget project** (root or subdirectory — it detects `@dynamic-framework/ui-react` in the dependencies of any ancestor).
-- `targetDir` does not exist or is not a directory.
-- Git is not available.
-
-The distinguishing guarantee is **anti-nesting**: it never creates a widget inside another one, nor reinterprets the name as a feature of an existing widget.
-
-### Validation and deployment
-
-The flow ends with validation via `widgets-validate` (scored report; target ≥ 95%) plus a local smoke test (`npm run dev`).
-
-**Deployment is not an MCP operation.** To ship the widget to Modyo there are two paths, both outside the agent:
-
-- **CI from the widget's repo** (the scaffold initializes git precisely to enable this path).
-- **An explicit, manual `modyo-cli push`** by the developer in their shell.
-
-The agent never pushes and never reads credentials (`MODYO_TOKEN`, `.env`, `.modyo`).
-
-:::tip Compatibility matrix
-The source of truth for versions is the server. Current reference values: Dynamic UI `2.6.0`, template `v1.1.0`, validator `0.2.0`.
-:::
-
-## Usage Examples
-
-Once the server is configured, you can converse with the agent in natural language. Examples:
-
-**Exploration**:
-
-> "List all spaces in my platform"
-> "What pages does the site with ID 5 have?"
-> "Show the content types in the `blog` space"
-
-**Creation**:
-
-> "Create a content type called 'Products' with fields `name` (string), `price` (number), and `description` (rich text)"
-> "Create a page at `/about` in the `marketing` site using the `base` layout"
-> "Generate 10 sample entries in the `Products` content type"
-
-**Editing**:
-
-> "Update the main menu of site 5: add a 'Contact' item pointing to `/contact`"
+> "Create a content type called 'Products' with the fields `name` (text), `price` (number), and `description` (rich text)"
+>
+> "Create a `/about` page on the `marketing` site with the `base` layout"
+>
+> "Add a 'Contact' item pointing to `/contact` to the main menu of site 1001"
+>
 > "Change the primary color in the `root.css` of the `marketing` site to `#ff6600`"
 
-**Publishing**:
+**Publishing**
 
-> "Show the pending changes for site 5 and publish them"
-> "Temporarily unpublish the `/promo-2024` page in the `marketing` site"
+> "Show me the pending changes for site 1001 and publish them"
+>
+> "Unpublish the `/promo` page on the `marketing` site"
 
-**User management**:
+**Users**
 
-> "Create an admin user `john@company.com` with the `site editor` role on the `marketing` site"
-> "List the users in the `customers-prod` realm who registered this week"
+> "Create the admin `user@my-company.com` with the `site editor` role on the `marketing` site"
+>
+> "List the users in the `my-realm` realm"
 
-**Widget generation** (two-step flow):
+**Risk-free audit** (with `MODYO_MCP_MODULES=channels` and `MODYO_READ_ONLY=true`)
 
-*Step 1 — invoke the client prompt* (not a natural-language sentence):
+> "Audit site 1001: review pages, widgets, and templates without modifying anything"
 
-    /mcp__modyo__widgets-init-project transfer-detail
+**Widgets**
 
-Syntax depends on the client (in OpenCode it is `/modyo:widgets-init-project transfer-detail`); without the argument, the agent asks for the name. The agent runs `widgets-scaffold`: it creates `./transfer-detail/` under the working directory — mention a different location in the conversation if you need one — and stops, without inspecting or touching other widgets in the folder.
-
-*Step 2 — describe the functionality on the next turn:*
-
-> "The widget shows the detail of a transfer: amount, date, source, destination and status, with actions to repeat or schedule"
-
-Only with this description does the agent consult the patterns catalog and generate the code.
-
-::: warning The slash command is deliberate
-"Initialize a widget" in natural language is ambiguous (it can be read as a Channels widget definition) and leaves it to the agent's judgment not to explore or modify existing widgets. The prompt removes both ambiguities.
-:::
-
-**Risk-free auditing** (requires starting the server with `MODYO_MCP_MODULES=channels` + `MODYO_READ_ONLY=true`):
-
-> "Audit site 5: review pages, widgets, and templates without modifying anything"
+A new widget starts with the `widgets-init-project` prompt, invoked as a client slash command (in Claude Code, `/mcp__modyo__widgets-init-project my-widget`), and continues with the description of the functionality in the next turn. The full workflow is in [Develop widgets with the MCP](/en/platform/tools/mcp-widgets.html).
 
 ## Troubleshooting
 
-### "Platform not configured" error
+### The agent responds "Platform not configured"
+
+The server is missing `MODYO_URL` or `MODYO_TOKEN`. Check that both are in the `env` block of the client configuration and restart the client. To test the token directly against the API:
 
 ```bash
-# Verify environment variables are set
-echo $MODYO_URL
-echo $MODYO_TOKEN
-
-# Test the token directly against the API
-curl -H "Authorization: Bearer $MODYO_TOKEN" "$MODYO_URL/api/admin/account"
+curl -H "Authorization: Bearer $MODYO_TOKEN" "$MODYO_URL/api/admin/profile"
 ```
 
-If the `curl` fails, regenerate the token from Modyo Admin → Settings → API Access.
+With a valid token, the API responds `200` with the user who owns the token. Otherwise, create a new token in Modyo Admin → Settings → API Access.
 
-### The server won't start after configuring modules
+### The server does not start after setting MODYO_MCP_MODULES
 
-If you set `MODYO_MCP_MODULES` and the server exits immediately with exit code 1 and a message like:
+If the server exits on startup with a message like this:
 
 ```
 Error: Invalid module(s) in MODYO_MCP_MODULES: 'widgetz'.
 Valid values: core, content, channels, customers, widgets.
 ```
 
-the cause is a typo or an unsupported value in the list. The fail-loud is intentional: fix the value (valid ones are `core`, `content`, `channels`, `customers`, `widgets`) and start again.
+the list has a value that does not exist. Fix it (the valid values are `core`, `content`, `channels`, `customers`, and `widgets`) and restart the client.
 
-### A tool returns `readOnly: true, rejected: ...`
+### A tool responds readOnly: true
 
-The server is running with `MODYO_READ_ONLY=true`. This is a controlled rejection, not a bug: in read-only mode, mutating actions are blocked even if the token has write permissions. If you need to run the mutation, restart the server without that variable.
+The server is running with `MODYO_READ_ONLY=true` and the requested action writes to the platform. This is not an error: the rejection arrives in `control` with `isError: false`. To run the action, remove the variable and restart the client.
 
-### Agent does not detect the tools after installation
+### The agent says it did not delete anything
 
-Restart the AI client (Claude Desktop, Cursor, VS Code, etc.). Tool discovery happens when the server starts, not at runtime.
+In clients without interactive confirmation, a deletion without `confirmed: true` is not executed: the response carries in `control.aborted` what would have been deleted. Review the list and ask the agent to repeat the operation with confirmation.
 
-For Claude Code, use `claude mcp list` to confirm that the server is registered.
+### The agent does not see the tools
 
-### Gemini CLI — authentication fails silently
+Restart the client: tools are discovered when the client starts the server. In Claude Code, `claude mcp list` shows whether the server is connected.
 
-Gemini CLI filters environment variables matching `*TOKEN*` before passing them to MCP servers. Make sure `MODYO_TOKEN` is declared explicitly in the `env` block of `settings.json`, not just exported in the shell.
+### Viewing the server logs
 
-### GitHub Copilot CLI — `CAPIError: 400` after tool calls
+Add `DEBUG=true` to the client's `env` block. The server writes its logs to stderr, and each client shows them in a different place. In Claude Desktop, for example, they go to `~/Library/Logs/Claude/mcp-server-modyo.log` (macOS) or `%APPDATA%\Claude\logs` (Windows).
 
-Copilot CLI's auto-compaction can corrupt the message history during large tool call responses. This is a [known CLI bug](https://github.com/github/copilot-cli/issues/1050), not a server issue.
+## Related links
 
-Workarounds:
-
-- Start a fresh session: `rm -rf ~/.copilot/session-state && copilot --allow-all-tools`
-- Keep responses small — ask the agent for specific fields instead of full objects. For example: *"list the sites, return only id, name, and host"*.
-
-### Enable debug logs
-
-Add `DEBUG=true` (or `DEBUG=1`) to the `env` block of the client configuration. Logs are written to `stderr` and are visible in the AI client's console if it supports surfacing them.
-
-## Resources
-
-- NPM package: [`@modyo/mcp`](https://www.npmjs.com/package/@modyo/mcp)
+- Guide: [Develop widgets with the MCP](/en/platform/tools/mcp-widgets.html)
+- npm package: [`@modyo/mcp`](https://www.npmjs.com/package/@modyo/mcp)
 - MCP specification: [modelcontextprotocol.io](https://modelcontextprotocol.io)
 - Other Modyo tools: [CLI](/en/platform/tools/cli.html), [SDK](/en/platform/tools/sdk.html)

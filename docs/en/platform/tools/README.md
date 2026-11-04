@@ -19,4 +19,4 @@ meta:
 
 - **[CLI](/en/platform/tools/cli)**: Manage content and configurations from the terminal.
 - **[SDK](/en/platform/tools/sdk)**: Integrate Modyo with your applications using native libraries.
-- **[MCP](/en/platform/tools/mcp)**: Establish real-time communication with external applications.
+- **[MCP](/en/platform/tools/mcp.html)**: Connects AI assistants to the Modyo administration API to manage the platform and to build widgets.

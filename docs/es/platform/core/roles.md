@@ -109,8 +109,12 @@ El usuario más importante tendrá el rol de Default Admin o Administrador. Este
 #### Roles por reino
 
 - **Realm User** (`realm_user`): Este rol puede añadir usuarios, crear, modificar y enviar a revisión campañas, formularios y segmentos.
-- **Realm Admin** (`realm_admin`): Puede acceder a todas las configuraciones y secciones del reino. Además, puede añadir y eliminar usuarios y miembros del equipo, así como eliminar el reino.
-- **Realm Viewer** (`realm_viewer`): Es un rol de solo lectura sobre Customers. Trae los permisos **Ver Usuarios**, **Ver Segmentos**, **Ver Eventos**, **Ver Órdenes de Pago**, **Ver Plantillas de Campañas**, **Ver Formularios** y **Ver Entregas de Mensajes**. No puede crear ni modificar nada dentro del reino.
+- **Realm Admin** (`realm_admin`): Puede acceder a todas las configuraciones y secciones del reino. Además, puede añadir y eliminar usuarios y miembros del equipo, eliminar el reino, y crear y sincronizar sus [stages](/es/platform/customers/realms.html#stages) con los permisos **Administrar Stages** y **Administrar Sincronizaciones**.
+- **Realm Viewer** (`realm_viewer`): Es un rol de solo lectura sobre Customers. Trae los permisos **Ver Usuarios**, **Ver Segmentos**, **Ver Eventos**, **Ver Órdenes de Pago**, **Ver Plantillas de Campañas**, **Ver Formularios**, **Ver Entregas de Mensajes** y **Ver Sincronizaciones**. No puede crear ni modificar nada dentro del reino.
+
+:::tip Tip
+En las cuentas creadas antes de la versión 10.2.2, **Realm Admin** y **Realm Viewer** no reciben automáticamente **Administrar Sincronizaciones** ni **Ver Sincronizaciones**: agrégalos al rol si los necesitas. Revisa [Permisos de los stages](/es/platform/customers/realms.html#permisos-de-los-stages).
+:::
 
 #### Editar y eliminar los roles predeterminados
 

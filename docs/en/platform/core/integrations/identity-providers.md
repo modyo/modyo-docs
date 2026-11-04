@@ -17,6 +17,10 @@ The platform is currently compatible with:
 
 Remember to have all the required data and certificates at hand before changing them or integrating a service, to avoid any potential issues with user access.
 
+:::tip Realms with a custom domain
+The callback URLs on this page use the form `https://my_account.modyo.com/realms/my_realm/auth/...`. If the realm has a [custom domain](/en/platform/customers/settings.html#domains), they become `https://<your-domain>/realms/auth/...`, without the realm identifier, and you must update them on your provider. You find them in **Realm settings** > **Domains**.
+:::
+
 ## Add an Identity Provider
 
 To add a new identity provider, follow these steps:

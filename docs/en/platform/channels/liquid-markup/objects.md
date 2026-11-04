@@ -188,7 +188,7 @@ These objects allow you to get information via Liquid for a form in the Customer
 |-------------------------------|--------------------------------|------------------------------------------------------------------------------------------------------|
 | **form_response.description** | Form description.              | ```This form is the new user form```                                                                 |
 | **form_response.name**        | Form name.                     | ```The new form```                                                                                   |
-| **form_response.questions**   | Array with the form questions. | ```[{"title"=>"What is your job title?", "type"=>"textquestion", "answer"=>"Software developer"}]``` |
+| **form_response.questions**   | Array with the form questions that capture an answer. Content fields, such as **Rich Text**, are not included. | ```[{"title"=>"What is your job title?", "type"=>"textquestion", "answer"=>"Software developer"}]``` |
 
 ### question
 
@@ -364,7 +364,7 @@ These objects allow you to get information via Liquid for notifications in the C
 | **notification.sent_at**  | Notification sent date.                            | ```2012-11-16 00:46:40```                                          |
 | **notification.body**     | Notification body.                                 | ```<p>This is a test message in campaigns via notifications</p>``` |
 | **notification.subject**  | Notification subject.                              | ```Modyo Developers Update```                                      |
-| **notification.url**      | Notification URL.                                  | ```https://test.modyo.com/profile?notification_id=65345```         |
+| **notification.url**      | Notification URL.                                  | ```https://test.modyo.com/realms/default/profile?notification_id=65345``` |
 
 ## order
 
@@ -409,8 +409,9 @@ These objects obtain the information relevant to originations.
 |------------------------------------|----------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **origination.name**               | The name of the origination flow.                                          | ```My new Origination```                                                                                |
 | **origination.description**        | The description of the origination flow.                                   | ```Origination process to guide customers from personal information register to bank data validation``` |
-| **origination.due_value**          | The value of the due date for the origination flow.                        | ```15```                                                                                                |
-| **origination.due_unit**           | The unit of the due date for the origination flow (e.g., "days", "weeks"). | ```days```                                                                                              |
+| **origination.due_months**         | Calendar months of the due date period of the origination flow. | ```1``` |
+| **origination.due_days**           | Days of the due date period of the origination flow. | ```3``` |
+| **origination.due_hours**          | Hours of the due date period of the origination flow. | ```2``` |
 | **origination.uid**                | The unique identifier of the origination flow.                             | ```my-origination```                                                                                    |
 | **origination.url**                | The URL of the origination flow page.                                      | ```https://test.modyo.com/new-site/myorigination```                                                     |
 | **origination.steps**              | List of step objects.                                                      | [view step documentation](/en/platform/channels/liquid-markup/objects.html#step)                        |
@@ -421,6 +422,7 @@ These objects obtain the information relevant to originations.
 | **origination.completion_message** | The message to display upon completion of the origination flow.            | ```"All done"```                                                                                        |
 | **origination.ordered_steps**      | Whether the steps of the origination flow are ordered.                     | ```true```                                                                                              |
 | **origination.new_submission_url** | The URL to create a new submission for the origination flow.               | ```/originations/my-origination/new```                                                                  |
+| **origination.cancel_overdue**     | Whether the origination automatically cancels the submissions that exceed their due date.  | ```false```                                                                                             |
 
 ## page
 
@@ -444,8 +446,8 @@ These objects are very useful for creating dynamic pages using Liquid.
 | Object                              | Description                                                                                   | Example |
 |-------------------------------------|-----------------------------------------------------------------------------------------------|---------|
 | **realm.disable_modyo_credentials** | Boolean that determines if Modyo credentials are deactivated. `true` deactivates credentials. |         |
-| **realm.oauth2_callback_url**       | String that determines the OAuth2 callback URL.                                               |         |
-| **realm.oidc_callback_url**         | String that determines the OIDC callback URL.                                                 |         |
+| **realm.oauth2_callback_url**       | String that determines the OAuth2 callback URL. Uses the realm's custom domain if it has one. |         |
+| **realm.oidc_callback_url**         | String that determines the OIDC callback URL. Uses the realm's custom domain if it has one.   |         |
 
 ## request
 
@@ -513,15 +515,20 @@ Site objects are used to get all the information about a site. The available att
 | **site.time_zone**              | Site time zone identifier.                                                                             | ```America/New_York``` |
 | **site.realm_slug**             | Slug of the realm the site belongs to.                                                                 | ```default```          |
 
-## sitesearch
+## site_search
 
-These drops allow you to get information from a site's browser.
+These drops hold the web app's search already resolved, with its results. The variable is injected under the name `site_search` and only exists on the search results page; see [Context variables](/en/platform/channels/liquid-markup/variables.html#from-the-search-results-page).
 
-| Object                                    | Description                                                                      | Example |
-|-------------------------------------------|----------------------------------------------------------------------------------|---------|
-| **sitesearch.have_results**               | Boolean that determines if the search has results.                               |         |
-| **sitesearch.results**                    | Page type object that meets the search parameters.                               |         |
-| **sitesearch.have_less_relevant_results** | Boolean that determines if there are more results that exceed the maximum limit. |         |
+| Object | Description | Example |
+|--------|-------------|---------|
+| **site_search.have_results** | Boolean that determines if the search has results. It is false when the URL carries no `query` parameter. | |
+| **site_search.results** | Paginated collection with the search results. Each result has only four keys: `title`, `description`, `url` and `site_name`. It accepts the `pagination_links` filter to print the navigation between pages. | |
+| **site_search.have_less_relevant_results** | Boolean that determines if there are more results that exceed the maximum limit of 100. | |
+| **site_search.multi** | Boolean that determines if the search spans several web apps in the account. It is true only when the web app has **Enable search** and **Enable search on multiple sites** checked. Use it to show `site_name` only when the result may come from another web app. | |
+
+:::warning Warning
+The object is named `site_search`, with an underscore. `sitesearch` does not exist in the Liquid context: a template that uses it does not fail, it simply prints nothing and leaves no clue about why.
+:::
 
 ## space
 
@@ -539,14 +546,14 @@ These objects obtain the information relevant to the Submissions.
 
 | Object                                  | Description                                                      | Example                                                                                                        |
 |-----------------------------------------|------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
-| **submission.status**                   | The status of the submission (e.g., "pending", "completed").     | ```completed```                                                                                                |
+| **submission.status**                   | The status of the submission: `not_started`, `pending`, `completed`, or `canceled`. You can review their meaning and transitions in the [submission lifecycle](/en/platform/customers/origination.html#submission-lifecycle). | ```completed```                                                                                                |
 | **submission.progress**                 | The progress of the submission as a percentage.                  | ```100```                                                                                                      |
 | **submission.assignee**                 | Assigned admin user object                                       | [view adminuser documentation](/en/platform/channels/liquid-markup/objects.html#adminuser)                     |
 | **submission.created_at**               | The date and time when the submission was created.               | ```Tue, 15 Feb 2025 15:14:03 UTC +00:00```                                                                     |
 | **submission.updated_at**               | The date and time when the submission was last updated.          | ```Tue, 15 Feb 2025 20:30:10 UTC +00:00```                                                                     |
 | **submission.started_at**               | The date and time when the submission was started.               | ```Tue, 15 Feb 2025 15:14:03 UTC +00:00```                                                                     |
 | **submission.completed_at**             | The date and time when the submission was completed.             | ```Tue, 15 Feb 2025 20:30:10 UTC +00:00```                                                                     |
-| **submission.due_date**                 | The due date of the submission. It is calculated from the trigger configured in the origination flow: the submission start (default) or the answer to a Date-type question in the flow. It is empty if the flow has no due date configured, or if the trigger is a Date-type question and there is no answer yet. | ```Tue, 22 Feb 2025 12:00:00 UTC +00:00```                                                                     |
+| **submission.due_date**                 | The due date of the submission. It is calculated by adding to the trigger configured in the origination flow —the submission start (default), the completion of a task, or the answer to a date field in the flow— the due date period in months, days, and hours, plus that submission's extension days. It is empty if the flow has no due date configured or if the trigger hasn't happened yet. | ```Tue, 22 Feb 2025 12:00:00 UTC +00:00```                                                                     |
 | **submission.origination**              | Origination object.                                              | [view origination documentation](/en/platform/channels/liquid-markup/objects.html#origination)                 |
 | **submission.url**                      | The URL of the submission page.                                  | ```https://test.modyo.com/new-site/myorigination```                                                            |
 | **submission.uuid**                     | The unique identifier of the submission.                         | ```abcd-1234-5678-0000```                                                                                      |
@@ -590,7 +597,7 @@ Additionally, depending on the task type, there may be further attributes.
 
 ### Task Response Types
 
-Every task response shares the attributes it inherits from the base response: `task`, `user`, `created_at`, `updated_at`, `started_at`, `completed_at`, and `status`. The table below lists only the attributes specific to each response type.
+Every task response shares the attributes it inherits from the base response: `task`, `user`, `created_at`, `updated_at`, `started_at`, `completed_at`, and `status`. In `status` you get `not_started`, `pending`, or `completed`, according to the [task response status](/en/platform/customers/origination.html#task-response-statuses); if you only compare against `completed`, your template cannot tell a task nobody opened from one that was left half answered. The table below lists only the attributes specific to each response type.
 
 | Object                                        | Description                                                         | Example                                                                                                                                           |
 |-----------------------------------------------|---------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -662,7 +669,7 @@ Use user objects to get information about your users from the Customers module.
 | **user.age**                         | The user's age                                          | ```39```                                             |
 | **user.avatar**                      | Asset type object that represents the user avatar.      |                                                      |
 | **user.birth_at**                    | The user's date of birth.                               | ```1982-09-01```                                     |
-| **user.change_password_url**         | The password change URL.                                | ```https://test.modyo.com/newsite/password/change``` |
+| **user.change_password_url**         | The password change URL.                                | ```https://test.modyo.com/realms/default/password/change``` |
 | **user.custom_fields**               | Hash with the user's custom field data.                 | ```{"_UCF_Job"=>"Software Engineer"}```              |
 | **user.email**                       | The user's email.                                       | ```ivan@modyo.com```                                 |
 | **user.external_access_token**       | The user's external access token, or empty if none.     | ```UEL7K69VUWhSXxX9DjDil...```                       |
@@ -689,12 +696,6 @@ Use user objects to get information about your users from the Customers module.
 | **user.realm_uid**                   | The user's realm.                                       | ```my-realm```                                       |
 | **user.invited_submissions**         | Collection of submissions the user was invited to through an active invitation. Cancelled invitations are excluded and the order goes from the most recent to the oldest. |                     |
 | **user.unsubscribe_link**            | The user's unsubscribe link, for messaging templates.   | ```https://test.modyo.com/realms/default/mailing/unsubscribe?unsubscribe_token=ab12cd34``` |
-
-`user.invited_submissions` returns a collection, so it composes with the [by_origination](/en/platform/channels/liquid-markup/filters.html) filter to keep only the submissions of a given origination:
-
-```liquid
-{% assign source = user.invited_submissions | by_origination: origination.uid | first %}
-```
 | **user.current_login_at**            | Timestamp of current login.                             | ```2025-10-21 11:00:00 UTC```                        |
 | **user.current_login_ip**            | IP used for current login.                              | ```203.0.113.10```                                   |
 | **user.last_login_at**               | Timestamp of previous login.                            | ```2025-10-19 09:30:01 UTC```                        |
@@ -704,10 +705,17 @@ Use user objects to get information about your users from the Customers module.
 | **user.segment_names**               | Array of segment names.                                 | ```["vip","beta"]```                                 |
 | **user.target_names**                | Array of target audience names.                         | ```["retail","premium"]```                           |
 | **user.targets**                     | Array of target audience group objects.                 | ```[{"name":"retail"}]```                            |
+| **user.realm_base_url**              | Public base URL of the user's realm: its [custom domain](/en/platform/customers/settings.html#domains) if active, otherwise the account URL. Use it to call the realm's Customers API. | ```https://login.mybank.com``` |
 | **user.realm_default_avatar**        | Default realm avatar (asset).                           |                                                      |
 | **user.non_binary_sex_value**        | Constant value for non-binary gender.                   | ```4```                                              |
 | **user.other_sex_value**             | Constant value for other gender.                        | ```5```                                              |
 | **user.prefer_not_to_say_sex_value** | Constant for prefer-not-to-say gender.                  | ```6```                                              |
+
+`user.invited_submissions` returns a collection, so it composes with the [by_origination](/en/platform/channels/liquid-markup/filters.html) filter to keep only the submissions of a given origination:
+
+```liquid
+{% assign source = user.invited_submissions | by_origination: origination.uid | first %}
+```
 
 ## user_agent
 

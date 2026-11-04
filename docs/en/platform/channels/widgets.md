@@ -135,6 +135,15 @@ To change how each widget loads, go to the edit view of the page containing the 
 You should consider that using very heavy widgets synchronously can decrease your page's performance, so you should carefully decide which widgets will load synchronously and which will load asynchronously.
 :::
 
+:::warning Attention
+With asynchronous loading, the widget's HTML is inserted into the page after the page finishes loading, and the browser does not run the `<script>` tags that arrive that way. This includes the scripts of a snippet you include in the widget's HTML: its markup is shown, but its code does not run and the browser shows no error.
+
+The code in the widget's JavaScript tab does not have this limitation, because the platform loads it separately. If the widget needs to run a script that is currently in its HTML, you have two alternatives:
+
+- Move that code to the widget's JavaScript tab.
+- Check the "Synchronous loading" option on the widget, so its HTML is rendered along with the page and its scripts run.
+:::
+
 ## ES Module loading
 
 :::warning Attention
@@ -156,6 +165,18 @@ ES Module loading is especially useful for widgets built with modern frameworks 
 
 :::warning Attention
 ES Modules have strict CORS requirements and are always loaded in strict mode. Ensure your widget code is compatible with ES module semantics before enabling this option.
+:::
+
+## CLI widgets
+
+Widgets **created** in the site through `modyo-cli push` are marked as read-only widgets, because their source code lives in your repository and not in Modyo. In the site's widget list you recognize them by the **CLI** badge next to their name.
+
+When you open one of these widgets you won't see the code tabs, but the **Widget summary** screen, with its **Name**, **Type**, **Size**, **Chunks**, **Last updated at**, and **Last updated by**, headed by the notice "CLI Widgets can't be edited in Modyo. Download it to review its content." and the **Download** button.
+
+The rest of the lifecycle is that of any widget: it keeps an editable and a published version, supports [variables](#widget-variables), goes through [team review](/en/platform/core/#team-review), and is instantiated on pages from the [Page Builder](/en/platform/channels/pages.html). Code changes, however, are never shown as differences: in the **Differences** view, in [review and joint publication](/en/platform/channels/sites.html#review-and-joint-publication), and in [synchronization between stages](/en/platform/channels/sites.html#stages), the message "The file has differences but CLI Widgets can not be displayed" is shown. You also can't use **Reset to this version** to take the widget back to a previous version: rolling back is done by deploying again from your repository.
+
+:::warning Attention
+The ZIP delivered by **Download** is built from the templates stored in the platform and is not the bundle you uploaded: entry files are renamed and chunks are flattened. It's meant to inspect the published code, not as a backup. See [CLI widgets in the admin](/en/platform/tools/cli.html#cli-widgets-in-the-admin) for full details.
 :::
 
 ## Code splitting
