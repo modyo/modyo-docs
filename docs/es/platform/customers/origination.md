@@ -99,7 +99,12 @@ Para incluir un nuevo campo debes seleccionar una tarea y seleccionar la pestañ
 
 Origination soporta todos los tipos de entrada disponibles en formularios. Puedes ver el listado completo de tipos en la [documentación de formularios](https://docs.modyo.com/es/platform/customers/forms#anadir)
 
-Además, las tareas Input ofrecen tres tipos de campo que **solo existen en Origination** y no están disponibles en los formularios: **Documento**, **Documento de identidad** y **Selfie**. Los tres se describen en [Campos especializados de subida de archivos](/es/platform/customers/origination.html#campos-especializados-de-subida-de-archivos).
+Además, las tareas Input ofrecen tipos de campo que **solo existen en Origination** y no están disponibles en los formularios:
+
+- **Moneda**: Permite ingresar un monto en la moneda definida en **Código de moneda**, con el **Formato de moneda** elegido.
+- **Rango de fechas**: Permite seleccionar una **Fecha de inicio** y una **Fecha de término**. Con **Mostrar hora** también se selecciona la hora.
+- **Grupo**: Agrupa campos que el usuario puede repetir, entre la **Cantidad mínima de grupos** y la **Cantidad máxima de grupos**.
+- **Documento**, **Documento de identidad** y **Selfie**: Se describen en [Campos especializados de subida de archivos](/es/platform/customers/origination.html#campos-especializados-de-subida-de-archivos).
 
 La pestaña **Añadir** agrupa los campos en dos encabezados:
 
@@ -1115,7 +1120,8 @@ Además de la búsqueda, puedes acotar el listado de respuestas con los siguient
 - **Segmento**: Muestra las respuestas de los usuarios que pertenecen al [segmento](/es/platform/customers/segments.html) seleccionado.
 
 :::tip El filtro Vence en solo alcanza a las respuestas pendientes
-El estado de vencimiento solo aplica mientras la respuesta está **Pendiente**, así que el filtro **Vence en** deja fuera las **Completada**, las **Cancelada** y las **No Iniciada**. Es lo que buscas la mayoría de las veces: una respuesta cancelada automáticamente por vencimiento conserva su marca de vencida, pero ya no hay nada que gestionar en ella. Para encontrar esas, filtra por **Estado**.
+El estado de vencimiento solo aplica mientras la respuesta está **Pendiente**, así que el filtro **Vence en** deja fuera las respuestas **Completada**, **Cancelada** y **No Iniciada**. Es lo que buscas la mayoría de las veces: una respuesta cancelada automáticamente por vencimiento conserva su marca de vencida, pero ya no hay nada que gestionar en ella. Para encontrar esas, filtra por **Estado**.
+:::
 
 #### Asignar respuesta
 

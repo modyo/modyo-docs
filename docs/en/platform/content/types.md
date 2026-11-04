@@ -85,6 +85,8 @@ The scope of **Unique** is the whole type: the comparison goes through every ent
 **Unique** has no effect on a field that lives inside a **Group**. The checkbox is still displayed when you configure the field, but the validation isn't evaluated and repeated values are saved without an error. If you need to guarantee uniqueness, keep the field outside the group.
 :::
 
+When you print the value of this field with Liquid, Modyo escapes it completely: any HTML tag it contains is shown as text and isn't rendered.
+
 ### Multiline text
 
 This field allows you to enter plain text on several lines, with no formatting options. Unlike **Single-line text**, which accepts up to 255 characters, here you can store long texts. It has the following restrictions:
@@ -101,7 +103,13 @@ When you print the value of this field with Liquid, Modyo sanitizes it with an a
 - **Allowed attributes**: `abbr`, `alt`, `cite`, `class`, `datetime`, `height`, `href`, `lang`, `name`, `src`, `title`, `width`, and `xml:lang`.
 - **Allowed URL schemes**: `http`, `https`, `mailto`, and `tel`, plus relative paths. Any other scheme, including `javascript:` and `data:`, is discarded.
 
-Everything else — `script`, `style`, `iframe`, `form`, event attributes like `onclick`, and inline styles — is removed before the page is published.
+Everything else — `script`, `style`, `iframe`, `form`, event attributes like `onclick`, and inline styles — is removed before the page is published. Sanitization also applies to Multiline text fields that live inside a **Group**.
+
+:::warning JSON and special characters
+Since the value is parsed as HTML, the `&`, `<`, and `>` characters inside the text are printed as entities (`&amp;`, `&lt;`, `&gt;`). The browser decodes them when the value is used as an element's text or as an attribute value, so JSON stored in this field keeps working in those cases. Inside `<script type="application/json">` the browser doesn't decode entities, so a JSON value containing any of those characters arrives altered.
+
+Also, a `<` followed by a letter is read as the start of a tag, and the text from that point on is discarded: `a < b` is kept, `a<b` isn't.
+:::
 
 :::warning Attention
 Sanitization happens when rendering with Liquid. The [content APIs](/en/platform/content/public-api-reference.html) still return the value exactly as it was stored, so a headless application consuming this field has to sanitize it on its own before injecting it into the DOM.

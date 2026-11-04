@@ -204,18 +204,21 @@ The **Test the mask** field lets you type a test value and see the result before
 The value is stored and returned by the API **always unformatted**: the mask is a capture aid, it doesn't change the data. The formatted value is displayed in the administration panel, in the submission detail, and in [Liquid](/en/platform/channels/liquid-markup) templates.
 
 :::warning Rules are evaluated against the unformatted value
-The [conditional logic](/en/platform/customers/origination.html#conditional-logic) of originations and the [segment](/en/platform/customers/segments.html) filters compare against the stored value, not against the one the user sees. A rule written as `12.345.678-9` never matches if the stored value is `123456789`. The editor shows a notice with both forms of the value when you pick a masked field.
+The [conditional logic](/en/platform/customers/origination.html#conditional-logic) of originations and the [segment](/en/platform/customers/segments.html) filters compare against the stored value, not against the one the user sees. A rule written as `12.345.678-9` never matches if the stored value is `123456789`. When you pick a field with a **Pattern** or **Number** mask, the editor shows the notice "This field has a mask configured. The rule is evaluated on the unformatted value", followed by both forms of the value. The notice doesn't appear for **RegExp** masks, which add no characters and store the same value that is displayed, nor when both forms of the value are identical.
 :::
 
 #### Considerations
 
 - **The mask is also validated on the server.** It can't be bypassed from the API or from the agent panel: a value that doesn't match the pattern or the expression is rejected with a validation error.
-- **In RegExp mode, the expression filters every keystroke**, so it must also accept partially typed values. Use `*` or `?` instead of `+`: write `^[a-z]?0*$` and not `[a-z]0+`. An expression that rejects every single-character value leaves the field impossible to type into, and the builder warns you about it.
-- **Pattern mode disables the minimum and maximum length**, because the pattern already defines length and format. The values you had configured are kept and become active again if you choose **No mask** or **RegExp**.
-- **Number mode keeps the minimum and maximum active**, and uses them to prevent the user from typing a value out of range. It accepts up to 16 digits; a Number field without a mask has no such cap.
-- **The mask and the regular expression complement each other.** The mask restricts the shape while typing; the regular expression validates the complete value on submit.
+- **In RegExp mode, the expression filters every keystroke**, so it must also accept partially typed values. Use `*` or `?` instead of `+`: write `^[a-z]?\d*$` and not `^[a-z]\d+$`. An expression that rejects every single-character value leaves the field impossible to type into, and the builder warns you about it.
+- **Pattern mode disables the length limits and the regular expression.** The **Min**, **Max**, and **Regular Expression** fields become inactive because the pattern already defines length and format. The values you had configured are kept and become active again if you choose **No mask** or **RegExp**.
+- **Number mode keeps the minimum and maximum active**, and uses them to prevent the user from typing a value out of range. If you don't set a **Max**, the mask accepts up to 9,007,199,254,740,991, the largest integer the browser represents exactly. Without a mask, the **Number** field accepts up to 9,223,372,036,854,775,807.
+- **In RegExp mode, the mask and the regular expression complement each other.** The mask restricts what can be typed; the **Regular Expression** validates the complete value on submit. In **Pattern** mode the **Regular Expression** is inactive, and **Number** fields don't have one.
 - **A mask doesn't validate meaning.** An identity document preset guarantees the shape of the data, not that the check digit is correct or that the date exists.
 - **Values stored before configuring the mask are neither migrated nor reformatted.** If the user edits an answer whose value doesn't match the new mask, the field is edited without the mask and server validation still applies.
+- **An incomplete value doesn't go through in Pattern mode.** If the user leaves the field half filled, the answer is rejected on submit with the message "The format is invalid. Expected", followed by a sample of the expected format. The sample comes from the preset or, for your own pattern, is generated from it: `11/11/1111` for `00/00/0000`.
+- **An invalid pattern can't be saved.** In **Pattern** mode, the builder shows "The pattern is not valid" if the pattern is empty, uses `{` or `}`, or has no token, and the changes aren't saved until you fix it. In **RegExp** mode, an empty or malformed expression also prevents saving.
+- **Text without emojis accepts letters from other alphabets.** It accepts accented letters, ñ, and letters from non-Latin alphabets, plus digits, spaces, and the signs `.` `,` `'` `’` `(` `)` `/` `-`. It rejects emojis and any other sign, such as `?`, `!`, or `@`.
 
 ### Links in form texts
 
@@ -229,7 +232,7 @@ This applies both to forms and to the Input tasks of originations, which share t
 
 What you can write is limited:
 
-| | What is accepted |
+| Element | What is accepted |
 |---|---|
 | Tags | Only `a`. Any other tag is discarded and only its text remains. |
 | Attributes | `href`, `target`, `rel`, and `title`. |

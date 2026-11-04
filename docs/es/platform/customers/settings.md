@@ -353,7 +353,7 @@ Una vez habilitada, Incode queda disponible como proveedor en las tareas de Veri
 
 ### Captcha
 
-La categoría **Security** de las integraciones del reino reúne los tres proveedores de captcha que Modyo soporta. Cada uno se instala por separado con su botón **Install**, y puedes tener varios instalados a la vez en el mismo reino. Cuál de ellos protege efectivamente los formularios se decide después, en [Captcha](/es/platform/customers/settings.html#captcha-2) de la sección **Seguridad**.
+La categoría **Seguridad** de las integraciones del reino reúne los tres proveedores de captcha que Modyo soporta. Cada uno se instala por separado con su botón **Instalar**, y puedes tener varios instalados a la vez en el mismo reino. Cuál de ellos protege efectivamente los formularios se decide después, en [Captcha](/es/platform/customers/settings.html#captcha-2) de la sección **Seguridad**.
 
 #### Google reCAPTCHA v3
 
@@ -381,6 +381,10 @@ Una alternativa a CAPTCHA centrada en la privacidad, que no requiere que el usua
 
 - **Clave de sitio**: Tu clave de sitio de Turnstile.
 - **Clave secreta**: Tu clave secreta de Turnstile.
+
+:::warning Las credenciales no se verifican contra el proveedor
+Al instalar o editar una integración de captcha, Modyo exige que completes todas sus credenciales y, en reCAPTCHA v3, que el **Umbral** esté entre `0.0` y `1.0`; si falta alguna, la integración no se guarda. Pero no las contrasta con Google ni con Cloudflare: una clave mal copiada se guarda igual y recién falla cuando un usuario envía un formulario protegido, que muestra un error al verificar el captcha. Antes de seleccionarla como integración activa, prueba un formulario del reino.
+:::
 
 ### Auronix
 

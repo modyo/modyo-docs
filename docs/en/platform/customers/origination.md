@@ -99,7 +99,12 @@ To include a new field, you must select a task and select the **Add** tab.
 
 Origination supports all types of input available in forms. You can see the full list of types in the [forms documentation](https://docs.modyo.com/en/platform/customers/forms#add)
 
-In addition, Input tasks offer three field types that **exist only in Origination** and are not available in forms: **Document**, **Identity document**, and **Selfie**. All three are described in [Specialized file upload fields](/en/platform/customers/origination.html#specialized-file-upload-fields).
+In addition, Input tasks offer field types that **exist only in Origination** and are not available in forms:
+
+- **Currency**: Allows the user to enter an amount in the currency set in **Currency Code**, with the selected **Currency Format**.
+- **Date Range**: Allows the user to select a **Start date** and an **End date**. With **Show time**, the time can also be selected.
+- **Group**: Groups fields that the user can repeat, between the **Minimum number of groups** and the **Maximum number of groups**.
+- **Document**, **Identity document**, and **Selfie**: Described in [Specialized file upload fields](/en/platform/customers/origination.html#specialized-file-upload-fields).
 
 The **Add** tab groups the fields under two headings:
 
@@ -1115,6 +1120,7 @@ In addition to the search, you can narrow down the submission list with the foll
 
 :::tip The Due in filter only reaches pending submissions
 The due status only applies while the submission is **Pending**, so the **Due in** filter leaves out the **Completed**, **Canceled**, and **Not started** ones. That is what you want most of the time: a submission canceled automatically for being overdue keeps its overdue mark, but there is nothing left to manage in it. To find those, filter by **Status**.
+:::
 
 #### Assign submission
 

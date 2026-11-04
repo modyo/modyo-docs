@@ -204,18 +204,21 @@ El campo **Probar la máscara** te permite escribir un valor de prueba y ver el 
 El valor se guarda y se entrega por la API **siempre sin formato**: la máscara es una ayuda de captura, no cambia el dato. El valor formateado se muestra en el panel de administración, en la ficha de la respuesta y en las plantillas [Liquid](/es/platform/channels/liquid-markup).
 
 :::warning Las reglas se evalúan sobre el valor sin formato
-La [lógica condicional](/es/platform/customers/origination.html#logica-condicional) de las originaciones y los filtros de [segmentos](/es/platform/customers/segments.html) comparan contra el valor guardado, no contra el que ve el usuario. Una regla escrita como `12.345.678-9` nunca calza si el valor almacenado es `123456789`. El editor te muestra un aviso con las dos formas del valor cuando eliges un campo con máscara.
+La [lógica condicional](/es/platform/customers/origination.html#logica-condicional) de las originaciones y los filtros de [segmentos](/es/platform/customers/segments.html) comparan contra el valor guardado, no contra el que ve el usuario. Una regla escrita como `12.345.678-9` nunca calza si el valor almacenado es `123456789`. Cuando eliges un campo con máscara de modo **Patrón** o **Número**, el editor muestra el aviso «Este campo tiene una máscara configurada. La regla se evalúa sobre el valor sin formato», seguido de las dos formas del valor. El aviso no aparece con las máscaras **RegExp**, que no agregan caracteres y guardan el mismo valor que se ve, ni cuando las dos formas del valor coinciden.
 :::
 
 #### Consideraciones
 
 - **La máscara también se valida en el servidor.** No se puede evadir desde la API ni desde el panel de agente: un valor que no calza con el patrón o con la expresión se rechaza con un error de validación.
-- **En el modo RegExp, la expresión filtra cada tecla**, así que debe aceptar también los valores a medio escribir. Usa `*` o `?` en lugar de `+`: escribe `^[a-z]?0*$` y no `[a-z]0+`. Una expresión que rechace todo valor de un solo carácter deja el campo sin poder escribirse, y el constructor te lo advierte.
-- **El modo Patrón desactiva el largo mínimo y máximo**, porque el patrón ya define el largo y el formato. Los valores que tuvieras configurados se conservan y vuelven a activarse si eliges **Sin máscara** o **RegExp**.
-- **El modo Número mantiene activos el mínimo y el máximo**, y los usa para impedir que el usuario escriba un valor fuera de rango. Admite hasta 16 dígitos; un campo Número sin máscara no tiene ese tope.
-- **La máscara y la expresión regular son complementarias.** La máscara restringe la forma mientras se escribe; la expresión regular valida el valor completo al enviar.
+- **En el modo RegExp, la expresión filtra cada tecla**, así que debe aceptar también los valores a medio escribir. Usa `*` o `?` en lugar de `+`: escribe `^[a-z]?\d*$` y no `^[a-z]\d+$`. Una expresión que rechace todo valor de un solo carácter deja el campo sin poder escribirse, y el constructor te lo advierte.
+- **El modo Patrón desactiva los límites de largo y la expresión regular.** Los campos **Mínimo**, **Máximo** y **Expresión Regular** quedan inactivos porque el patrón ya define el largo y el formato. Los valores que tuvieras configurados se conservan y vuelven a activarse si eliges **Sin máscara** o **RegExp**.
+- **El modo Número mantiene activos el mínimo y el máximo**, y los usa para impedir que el usuario escriba un valor fuera de rango. Si no configuras un **Máximo**, la máscara admite hasta 9.007.199.254.740.991, el mayor entero que el navegador representa con exactitud. Sin máscara, el campo **Número** admite hasta 9.223.372.036.854.775.807.
+- **En el modo RegExp, la máscara y la expresión regular son complementarias.** La máscara restringe lo que se escribe; la **Expresión Regular** valida el valor completo al enviar. En el modo **Patrón** la **Expresión Regular** queda inactiva, y los campos **Número** no la tienen.
 - **Una máscara no valida el significado.** Un preset de documento de identidad asegura la forma del dato, no que el dígito verificador sea correcto ni que la fecha exista.
 - **Los valores guardados antes de configurar la máscara no se migran ni se reformatean.** Si el usuario vuelve a editar una respuesta cuyo valor no calza con la máscara nueva, el campo se edita sin máscara y la validación del servidor se aplica igual.
+- **Un valor incompleto no pasa en el modo Patrón.** Si el usuario deja el campo a medio llenar, la respuesta se rechaza al enviar con el mensaje «El formato no es válido. Se espera», seguido de un ejemplo del formato esperado. El ejemplo sale del preset o, en un patrón propio, se genera a partir del patrón: `11/11/1111` para `00/00/0000`.
+- **Un patrón inválido no se puede guardar.** En el modo **Patrón**, el constructor muestra «El patrón no es válido» si el patrón está vacío, usa `{` o `}`, o no tiene ningún token, y los cambios no se guardan hasta corregirlo. En el modo **RegExp**, una expresión vacía o mal escrita también impide guardar.
+- **Texto sin emojis acepta letras de otros alfabetos.** Admite letras con tilde, la ñ y letras de alfabetos no latinos, además de dígitos, espacios y los signos `.` `,` `'` `’` `(` `)` `/` `-`. Rechaza los emojis y cualquier otro signo, como `?`, `!` o `@`.
 
 ### Enlaces en los textos del formulario
 
@@ -229,7 +232,7 @@ Esto aplica tanto a los formularios como a las tareas Input de las originaciones
 
 Lo que se permite escribir es acotado:
 
-| | Qué se acepta |
+| Elemento | Qué se acepta |
 |---|---|
 | Etiquetas | Solo `a`. Cualquier otra etiqueta se descarta y queda solo su texto. |
 | Atributos | `href`, `target`, `rel` y `title`. |

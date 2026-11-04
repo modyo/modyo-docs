@@ -19,12 +19,12 @@ The inbox brings together two different sources of work:
 
 To open the inbox, click the **My tasks** icon in the Modyo Platform side menu.
 
-Next to the menu item there is a counter with the total number of **Pending** tasks you have, regardless of their type, behaving just like the **Validations** counter. When you have nothing pending, the counter shows no number.
+Next to the menu item there is a counter with the total number of **Pending** tasks you have, regardless of their type. The number is shown in full, without abbreviation, and the icon's tooltip repeats it, for example "My tasks (3 pending)". When you have nothing pending, the counter isn't shown.
 
 The counter updates on its own, without reloading the page: it refreshes every minute, when you come back to the browser tab, and every time the **My tasks** list reloads its rows. While the tab is in the background the refresh stops, and it resumes when you return to it.
 
 :::tip Counter color
-The counter uses the **Theme colors** configured in the account. If the account didn't define the navigation color pair, it takes the same color as the **Validations** counter.
+The counter uses the account's [Theme colors](/en/platform/core/configuration.html#theme-colors): the background takes the **Navigation selected background** and the number takes the **Navigation selected text**. When **My tasks** is the active section, the two colors are swapped. If the account didn't customize either of those two colors, the counter uses the platform's informational blue.
 :::
 
 The list has these filters:

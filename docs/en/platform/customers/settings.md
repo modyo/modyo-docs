@@ -382,6 +382,10 @@ A privacy-focused alternative to CAPTCHA that doesn't require the user to solve 
 - **Site key**: Your Turnstile site key.
 - **Secret key**: Your Turnstile secret key.
 
+:::warning Credentials aren't checked against the provider
+When you install or edit a captcha integration, Modyo requires all its credentials and, in reCAPTCHA v3, a **Threshold** between `0.0` and `1.0`; if any is missing, the integration isn't saved. But it doesn't check them against Google or Cloudflare: a mistyped key is saved anyway and only fails when a user submits a protected form, which shows an error verifying the captcha. Before selecting it as the active integration, test a form of the realm.
+:::
+
 ### Auronix
 
 The Auronix integration, of the messaging category, allows sending WhatsApp messages using Meta-approved templates. It is used to send the soft login OTP code via WhatsApp.
