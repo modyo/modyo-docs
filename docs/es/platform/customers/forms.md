@@ -31,6 +31,8 @@ Para crear un nuevo formulario, sigues estos pasos:
 Solamente podrás seleccionar un sitio que pertenece al mismo reino, dentro de la **Configuración del sitio**, en **General**, asegúrate de que el sitio sea parte del reino correcto.
 :::
 
+Los formularios que se copian a un [stage del reino](/es/platform/customers/realms.html#que-se-copia-a-un-stage) llegan sin sitio. Mientras no tengan uno, el listado de formularios muestra junto a su nombre un ícono con el aviso **Este formulario no tiene una web app asignada**.
+
 - **Habilitado**: Selecciona si el formulario va a comenzar en estado habilitado o no.
 - **Aceptar múltiples respuestas**: Si esta opción está habilitada, cada vez que un usuario responda el formulario, se registrará como una nueva respuesta. Si esta opción está deshabilitada, cada vez que un mismo usuario responda el formulario, estará sobrescribiendo su respuesta anterior.
 - **Solo para usuarios registrados**: Te permite determinar si el formulario solo será visible para usuario registrados en Modyo. Si esta opción está habilitada, un usuario sin sesión no podrá ver el formulario. Si esta opción está deshabilitada, cualquier usuario podrá responder el formulario.

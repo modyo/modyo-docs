@@ -31,6 +31,8 @@ To create a new form, follow these steps:
 You can only select a site that belongs to the same realm, within the **Site Settings**, under **General**, make sure that the site is part of the correct realm.
 :::
 
+Forms copied to a [realm stage](/en/platform/customers/realms.html#what-is-copied-to-a-stage) arrive without a site. Until they have one, the forms list shows an icon next to their name with the notice **This form has no web app assigned**.
+
 - **Enabled**: Select if the form will start in an enabled state or not.
 - **Accept multiple answers**: If this option is enabled, each time a user answers the form, it will be recorded as a new response. If this option is disabled, each time the same user answers the form, they will be overwriting their previous response.
 - **Only for registered users**: Allows you to determine if the form will only be visible to registered Modyo users. If this option is enabled, an unsigned user will not be able to view the form. If this option is disabled, any user can answer the form.

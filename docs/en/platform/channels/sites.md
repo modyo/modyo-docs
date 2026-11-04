@@ -313,7 +313,7 @@ Proceed with caution when modifying these options, as they can affect access to 
 :::
 
 - **Change host**: This action modifies the visibility and accessibility of the application. Changing the host can impact the visibility and availability of the web application.
-- **Change realm**: Displays the application's realm. When you change the realm, you lose all privacy settings in your web apps, pages, and navigation, and the site's origination pages lose the reference to their current origination.
+- **Change realm**: Displays the application's realm. When you change the realm, you lose all privacy settings in your web apps, pages, and navigation, and the site's origination pages lose the reference to their current origination. You can choose a realm or one of its [stages](/en/platform/customers/realms.html#stages). While the application has a realm or one of its stages selected, that realm can't be deleted.
 - **Change status**: Changes the application's status. Options are:
 	* Enabled: Editable and visible to the public.
 	* Draft: Modifiable but not visible to the public. Requires login to access. This is the state in which every newly created web application starts. Robots.txt, PWAs, and the manifest are disabled in this state.
@@ -557,7 +557,7 @@ The main advantages of having different stages in your web apps are:
 :::warning Warning
 - A web app can have a maximum of four stages.
 - Changes you make to a stage are only reflected in that stage.
-- Stages are only available for web applications.
+- Realms also have their own stages, independent from web app stages. See [Stages](/en/platform/customers/realms.html#stages) in Realms.
 - Custom PWAs and redirections are disabled in stages. They can only be used in the `main` stage.
 - The team members section is separate in each `main` stage. Add members to enable team review.
 - You can have the same members with different roles and permissions for each stage.
