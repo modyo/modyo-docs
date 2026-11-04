@@ -217,7 +217,7 @@ Al igual que en las tareas de validación, puedes definir un **Asignado** para l
 
 La tarea de Verificación de Identidad solicita al usuario verificar su identidad mediante la captura de una selfie, su documento de identidad y detección de vida (liveness), a través de un proveedor de verificación.
 
-Para usar esta tarea, primero debes habilitar una integración de la categoría **Verificación de Identidad** en las [integraciones del reino](/es/platform/customers/settings.html#integraciones), como **Amazon Rekognition**.
+Para usar esta tarea, primero debes habilitar una integración de la categoría **Verificación de Identidad** en las [integraciones del reino](/es/platform/customers/settings.html#integraciones), como **Amazon Rekognition** o **Incode**.
 
 Al configurar la tarea defines:
 
@@ -225,10 +225,61 @@ Al configurar la tarea defines:
 - **Características**: Las verificaciones que incluye la tarea: **Selfie** (siempre requerida), **Documento** (captura del frente y reverso del documento de identidad con extracción de sus datos) y **Liveness** (detección de vida).
 - **Ajustes de Liveness**: Si activaste Liveness, puedes definir el **Umbral de confianza** (de **Flexible** a **Estricto**) y **Habilitar desafío de color**, que muestra luces de colores durante la verificación e incluye una advertencia de fotosensibilidad para el usuario.
 
+Si el proveedor es **Incode**, la tarea no muestra **Características** ni **Ajustes de Liveness**: en su lugar aparece **Configuración de Incode**, porque las verificaciones que se ejecutan se definen en Incode. El detalle está en [Verificación con Incode](#verificacion-con-incode).
+
 Durante el flujo, el usuario captura su selfie y su documento guiado por la interfaz; la plataforma valida la calidad de las imágenes, extrae los datos del documento y compara el rostro del documento con la selfie.
 
 En los detalles de una respuesta, la pestaña **Verificación de Identidad** muestra el estado de la verificación, los puntajes de coincidencia facial (**Face Match Score**) y de detección de vida (**Liveness Score**), los datos extraídos del documento y las imágenes capturadas.
 
+#### Verificación con Incode
+
+Con el proveedor **Incode**, la verificación completa ocurre en una página de Incode, fuera del sitio, y el usuario vuelve al mismo paso del flujo al terminar, abandonar o fallar. Los módulos que se ejecutan (validación del documento con OCR, prueba de vida, face match y validación contra bases de gobierno) los define el flow que configures en el Dashboard de Incode, no la tarea.
+
+Antes de usarlo debes [instalar la integración de Incode](/es/platform/customers/settings.html#incode) en el reino. Luego, en **Configuración de Incode** defines:
+
+- **Modalidad**: Cómo se integra la verificación en el flujo. Hoy la única opción es **Hosted URL**, en la que el usuario completa la verificación en una página de Incode y vuelve al mismo paso del flujo.
+- **ID del flow de Incode**: El identificador del flow que se ejecutará, de 24 caracteres hexadecimales. Lo obtienes en el Dashboard de Incode, en **Flows** → **...** → **Copy ID**, o en **Workflows** → **...** → **Copy ID** si tu organización usa workflows.
+
+Ambos campos son obligatorios: la originación no se guarda si la modalidad no es válida o si el ID no tiene 24 caracteres hexadecimales. Si configuras la tarea por la API de administración, los campos son `incode_modality` (solo admite `hosted_url`) e `incode_workflow_id`, dentro de la configuración de verificación de identidad de la tarea.
+
+##### Qué ve el usuario
+
+La tarea muestra el estado de la verificación y el botón **Iniciar verificación**, que lleva al usuario a la página de Incode. Al volver, la tarea refleja el estado de la verificación:
+
+- **Verificado**: La tarea se completa automáticamente y el usuario continúa con el flujo.
+- **Revisión pendiente**: Incode dejó la verificación en revisión manual. El usuario no puede reiniciarla y debe volver más tarde para conocer el resultado.
+- **Rechazado**, **Expired** o **Error**: El usuario puede intentarlo de nuevo con **Iniciar la verificación nuevamente**.
+- **En progreso**: Modyo todavía no tiene el resultado. La pantalla se actualiza sola cuando llega y, si el usuario no completó el proceso en Incode, puede iniciarlo de nuevo.
+
+Cada intento nuevo descarta las imágenes y los resultados del anterior. Si Incode devuelve un error al iniciar la verificación, el usuario ve un mensaje de servicio no disponible y la respuesta registra el log **Error de Incode en verificación de identidad**, que sugiere revisar la API key de la integración y el ID del flow de la tarea.
+
+##### Cómo se decide el resultado
+
+Modyo traduce el estado general que entrega Incode:
+
+- **OK** o **MANUAL_OK**: **Verificado**.
+- **FAIL**, **MANUAL_FAIL** o **WARN**: **Rechazado**.
+- **MANUAL** o **MANUAL_PENDING**: **Revisión pendiente**.
+
+Si un revisor aprueba o rechaza la verificación manualmente en Incode, esa decisión prevalece sobre el estado general. Si la sesión expira en Incode antes de terminar, el estado pasa a **Expired**.
+
+::: tip El resultado puede tardar
+Modyo consulta el resultado en Incode cuando el usuario vuelve al paso, cuando Incode lo avisa por el [webhook](/es/platform/customers/settings.html#webhook-de-incode) y periódicamente durante las primeras 24 horas desde que se inició la verificación. Una decisión de revisión manual tomada después de ese plazo solo llega a Modyo por el webhook.
+:::
+
+::: warning Rechazo después de aprobar
+Si Incode rechaza en revisión manual una verificación que ya se había aprobado, la tarea sigue completada: Modyo no revierte el avance del flujo. En ese caso la respuesta registra el log **Rechazo de Incode después de aprobar la verificación de identidad**, para que la revises.
+:::
+
+##### Resultados en la respuesta
+
+Con Incode, la pestaña **Verificación de Identidad** de la respuesta muestra:
+
+- **Estado de la Verificación**: El estado, el **ID de sesión de Incode** y la **Fecha de verificación**.
+- **Módulos de verificación**: El estado que entregó Incode para **Validación del documento**, **Prueba de vida**, **Face match** y **Validación contra bases de gobierno**, solo para los módulos que incluye el flow, junto con el **Face Match Score** y el **Liveness Score**.
+- **Sección de OCR**: Los datos leídos del documento que entregue Incode: **Nombre completo**, **Tipo de documento**, **Número de documento**, **Número personal**, **Fecha de nacimiento**, **Género**, **Nacionalidad**, **País emisor**, **Vencimiento** y **Dirección**.
+- **Sección de Imágenes**: La **Selfie**, el **Frente del documento** y el **Reverso del documento**.
+- **Motivos de rechazo**: Los módulos que fallaron y el motivo que informe Incode, cuando la verificación no se aprobó.
 
 ### Snippet de código
 
