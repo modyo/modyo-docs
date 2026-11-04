@@ -85,6 +85,8 @@ El alcance de **Único** es el tipo completo: la comparación recorre todas las 
 **Único** no tiene efecto sobre un campo que está dentro de un **Grupo**. La casilla se sigue mostrando al configurar el campo, pero la validación no se evalúa y los valores repetidos se guardan sin error. Si necesitas garantizar unicidad, deja el campo fuera del grupo.
 :::
 
+Al imprimir el valor de este campo con Liquid, Modyo lo escapa completo: cualquier etiqueta HTML que contenga se muestra como texto y no se renderiza.
+
 ### Texto de múltiples líneas
 
 Este campo te permite ingresar texto plano en varias líneas, sin opciones de formato. A diferencia de **Texto de una línea**, que admite hasta 255 caracteres, aquí puedes guardar textos largos. Cuenta con las siguientes restricciones:
@@ -95,8 +97,24 @@ Este campo te permite ingresar texto plano en varias líneas, sin opciones de fo
 
 Este campo no ofrece la validación **Único**: la unicidad solo está disponible en [Texto de una línea](#texto-de-una-linea).
 
+Al imprimir el valor de este campo con Liquid, Modyo lo sanitiza con una lista de etiquetas y atributos permitidos, en vez de escaparlo completo como hacía la versión 10.2. El marcado benigno que hayas guardado se renderiza, y lo que queda fuera de la lista se descarta:
+
+- **Etiquetas permitidas**: `a`, `abbr`, `acronym`, `address`, `b`, `big`, `blockquote`, `br`, `cite`, `code`, `dd`, `del`, `dfn`, `div`, `dl`, `dt`, `em`, `h1` a `h6`, `hr`, `i`, `img`, `ins`, `kbd`, `li`, `mark`, `ol`, `p`, `pre`, `samp`, `small`, `span`, `strong`, `sub`, `sup`, `time`, `tt`, `ul` y `var`.
+- **Atributos permitidos**: `abbr`, `alt`, `cite`, `class`, `datetime`, `height`, `href`, `lang`, `name`, `src`, `title`, `width` y `xml:lang`.
+- **Esquemas de URL permitidos**: `http`, `https`, `mailto` y `tel`, además de las rutas relativas. Cualquier otro esquema, incluidos `javascript:` y `data:`, se descarta.
+
+Todo lo demás —`script`, `style`, `iframe`, `form`, los atributos de evento como `onclick` y los estilos en línea— se elimina antes de publicar la página. La sanitización también se aplica a los campos de Texto de múltiples líneas que están dentro de un **Grupo**.
+
+:::warning JSON y caracteres especiales
+Como el valor se interpreta como HTML, los caracteres `&`, `<` y `>` que aparecen dentro del texto se imprimen como entidad (`&amp;`, `&lt;`, `&gt;`). El navegador las decodifica cuando el valor se usa como texto de un elemento o como valor de un atributo, así que un JSON guardado en este campo sigue funcionando en esos casos. Dentro de `<script type="application/json">` el navegador no decodifica entidades, de modo que un valor del JSON que contenga alguno de esos caracteres llega alterado.
+
+Además, un `<` seguido de una letra se interpreta como el inicio de una etiqueta y el texto desde ese punto se descarta: `a < b` se conserva, `a<b` no.
+:::
+
 :::warning Atención
-Desde la versión 10.2, el valor de este campo se entrega escapado como HTML al imprimirlo con Liquid: las etiquetas que hayas escrito aparecen como texto literal en lugar de interpretarse como marcado. Si necesitas publicar HTML desde una entrada, usa un campo [Texto enriquecido](#texto-enriquecido). Revisa las plantillas que venían usando este campo para inyectar HTML.
+La sanitización ocurre al renderizar con Liquid. Las [APIs de contenido](/es/platform/content/public-api-reference.html) siguen entregando el valor tal como se guardó, así que una aplicación headless que consuma este campo tiene que sanitizarlo por su cuenta antes de inyectarlo en el DOM.
+
+Si necesitas publicar HTML sin restricciones desde una entrada, usa un campo [Texto enriquecido](#texto-enriquecido).
 :::
 
 ### Texto enriquecido

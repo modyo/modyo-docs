@@ -351,6 +351,41 @@ Después de guardar la integración, la sección **Webhook de Incode** muestra l
 
 Una vez habilitada, Incode queda disponible como proveedor en las tareas de Verificación de Identidad de las originaciones del reino. La configuración de la tarea está en [Verificación con Incode](/es/platform/customers/origination.html#verificacion-con-incode).
 
+### Captcha
+
+La categoría **Seguridad** de las integraciones del reino reúne los tres proveedores de captcha que Modyo soporta. Cada uno se instala por separado con su botón **Instalar**, y puedes tener varios instalados a la vez en el mismo reino. Cuál de ellos protege efectivamente los formularios se decide después, en [Captcha](/es/platform/customers/settings.html#captcha-2) de la sección **Seguridad**.
+
+#### Google reCAPTCHA v3
+
+Protege los formularios con desafíos invisibles basados en puntaje. Para instalarlo necesitas:
+
+- **Clave de sitio**: Tu clave de sitio de reCAPTCHA v3.
+- **Clave secreta**: Tu clave secreta de reCAPTCHA v3.
+- **Umbral**: Puntaje mínimo requerido para dar por válida una interacción, entre `0.0` y `1.0`.
+
+#### Google reCAPTCHA Enterprise
+
+La alternativa a reCAPTCHA v3 cuando necesitas protección avanzada contra bots y análisis de riesgo, o cuando superas el límite de un millón de _requests_ de v3. Para instalarlo necesitas:
+
+- **Clave de sitio**: Tu clave de sitio de reCAPTCHA Enterprise.
+- **ID de proyecto**: Tu ID de proyecto de Google Cloud.
+- **Clave API**: Tu clave API de Google Cloud.
+
+:::warning La clave tiene que ser de tipo score
+reCAPTCHA Enterprise permite crear claves basadas en puntaje (_score_) y claves de tipo _checkbox_. Modyo trabaja con las primeras: una clave de tipo _checkbox_ falla siempre la verificación.
+:::
+
+#### Cloudflare Turnstile
+
+Una alternativa a CAPTCHA centrada en la privacidad, que no requiere que el usuario resuelva un desafío visual. Para instalarlo necesitas:
+
+- **Clave de sitio**: Tu clave de sitio de Turnstile.
+- **Clave secreta**: Tu clave secreta de Turnstile.
+
+:::warning Las credenciales no se verifican contra el proveedor
+Al instalar o editar una integración de captcha, Modyo exige que completes todas sus credenciales y, en reCAPTCHA v3, que el **Umbral** esté entre `0.0` y `1.0`; si falta alguna, la integración no se guarda. Pero no las contrasta con Google ni con Cloudflare: una clave mal copiada se guarda igual y recién falla cuando un usuario envía un formulario protegido, que muestra un error al verificar el captcha. Antes de seleccionarla como integración activa, prueba un formulario del reino.
+:::
+
 ### Auronix
 
 La integración de Auronix, de la categoría de mensajería, permite el envío de mensajes de WhatsApp mediante plantillas preaprobadas por Meta. Se utiliza para enviar el código OTP del soft login por WhatsApp.
@@ -599,17 +634,28 @@ Las opciones disponibles para establecer una política de contraseña en la plat
 - Requerir por lo menos una letra mayúscula (A - Z)
 - Requerir por lo menos un caracter no alfanumérico (! @ # $ % ^ & * () _ + - = [] {} |)
 
-#### reCAPTCHA
+#### Captcha
 
-Puedes habilitar o no reCAPTCHA en el reino, una vez habilitado ingresa:
+La protección captcha se aplica al registro de usuarios, al envío de formularios, al inicio de sesión y a la recuperación de contraseña del reino.
 
-- **Clave de sitio**
-- **Secreto**
-- **Umbral**
+La sección tiene dos controles:
 
-:::tip Tip
-Modyo soporta la versión V3 de reCAPTCHA básico, no soporta el enterprise.
+- **Captcha habilitado**: Activa o desactiva la protección en el reino.
+- **Integración de captcha activa**: Elige cuál de las [integraciones de captcha](/es/platform/customers/settings.html#captcha) instaladas y habilitadas protege el reino. Solo puede haber una activa a la vez.
+
+Si el reino no tiene ninguna integración de captcha instalada y habilitada, el selector aparece vacío con el mensaje **No hay integraciones de captcha instaladas y habilitadas en este reino** y un enlace **Ir a Integraciones** para instalar una.
+
+Al cambiar la integración activa, la plataforma te pide confirmación, porque el cambio afecta a todos los formularios protegidos por captcha del reino.
+
+:::warning Captcha habilitado sin integración seleccionada
+Si dejas **Captcha habilitado** marcado pero sin integración activa, los formularios **no** quedan protegidos. La pantalla te lo advierte con el mensaje **El captcha está habilitado pero no hay integración seleccionada, por lo que los formularios NO están siendo protegidos**.
 :::
+
+:::tip Para deshabilitar o eliminar una integración de captcha
+Una integración que sea el captcha activo del reino no se puede deshabilitar ni eliminar. Primero selecciona otra integración aquí, o desmarca **Captcha habilitado**, guarda los cambios, y recién después vuelve a **Integraciones**.
+:::
+
+Los reinos que ya tenían reCAPTCHA configurado quedaron migrados automáticamente: la plataforma creó la integración **Google reCAPTCHA v3** con las mismas credenciales y la dejó como integración activa, sin que tengas que reconfigurar nada.
 
 ### Headers de seguridad
 

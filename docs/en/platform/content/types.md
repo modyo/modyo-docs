@@ -85,6 +85,8 @@ The scope of **Unique** is the whole type: the comparison goes through every ent
 **Unique** has no effect on a field that lives inside a **Group**. The checkbox is still displayed when you configure the field, but the validation isn't evaluated and repeated values are saved without an error. If you need to guarantee uniqueness, keep the field outside the group.
 :::
 
+When you print the value of this field with Liquid, Modyo escapes it completely: any HTML tag it contains is shown as text and isn't rendered.
+
 ### Multiline text
 
 This field allows you to enter plain text on several lines, with no formatting options. Unlike **Single-line text**, which accepts up to 255 characters, here you can store long texts. It has the following restrictions:
@@ -95,8 +97,24 @@ This field allows you to enter plain text on several lines, with no formatting o
 
 This field doesn't offer the **Unique** validation: uniqueness is only available in [Single-line text](#single-line-text).
 
+When you print the value of this field with Liquid, Modyo sanitizes it with an allowlist of tags and attributes, instead of escaping it completely as version 10.2 did. The benign markup you stored is rendered, and anything outside the list is discarded:
+
+- **Allowed tags**: `a`, `abbr`, `acronym`, `address`, `b`, `big`, `blockquote`, `br`, `cite`, `code`, `dd`, `del`, `dfn`, `div`, `dl`, `dt`, `em`, `h1` to `h6`, `hr`, `i`, `img`, `ins`, `kbd`, `li`, `mark`, `ol`, `p`, `pre`, `samp`, `small`, `span`, `strong`, `sub`, `sup`, `time`, `tt`, `ul`, and `var`.
+- **Allowed attributes**: `abbr`, `alt`, `cite`, `class`, `datetime`, `height`, `href`, `lang`, `name`, `src`, `title`, `width`, and `xml:lang`.
+- **Allowed URL schemes**: `http`, `https`, `mailto`, and `tel`, plus relative paths. Any other scheme, including `javascript:` and `data:`, is discarded.
+
+Everything else — `script`, `style`, `iframe`, `form`, event attributes like `onclick`, and inline styles — is removed before the page is published. Sanitization also applies to Multiline text fields that live inside a **Group**.
+
+:::warning JSON and special characters
+Since the value is parsed as HTML, the `&`, `<`, and `>` characters inside the text are printed as entities (`&amp;`, `&lt;`, `&gt;`). The browser decodes them when the value is used as an element's text or as an attribute value, so JSON stored in this field keeps working in those cases. Inside `<script type="application/json">` the browser doesn't decode entities, so a JSON value containing any of those characters arrives altered.
+
+Also, a `<` followed by a letter is read as the start of a tag, and the text from that point on is discarded: `a < b` is kept, `a<b` isn't.
+:::
+
 :::warning Attention
-As of version 10.2, the value of this field is delivered HTML-escaped when you print it with Liquid: any tags you wrote are shown as literal text instead of being interpreted as markup. If you need to publish HTML from an entry, use a [Rich text](#rich-text) field. Review the templates that were using this field to inject HTML.
+Sanitization happens when rendering with Liquid. The [content APIs](/en/platform/content/public-api-reference.html) still return the value exactly as it was stored, so a headless application consuming this field has to sanitize it on its own before injecting it into the DOM.
+
+If you need to publish HTML without restrictions from an entry, use a [Rich text](#rich-text) field.
 :::
 
 ### Rich text
