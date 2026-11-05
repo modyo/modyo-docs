@@ -163,9 +163,9 @@ The preview bar contains the following interactive elements:
 - **Exit preview mode**: Closes preview mode, removing the bar and keeping the tab at the site's current URL.
 
 :::warning Content SDK
-The **Content SDK** selector affects content used through the Liquid SDK and also the public content API: if the browser making the request has preview mode open and the selector set to **Draft**, the content API responds with the draft versions of the entries.
+The **Content SDK** selector affects content used through the Liquid SDK and also the public content API: with the selector set to **Draft**, the calls that the page open in preview mode makes to the content API receive the draft versions of the entries.
 
-This only happens when the request travels with the administrator session of that browser. An anonymous end user, or any server-side consumer, always receives published content. See [Preview](/en/platform/content/public-api-reference.html#preview) for the details.
+This only happens in the requests made by that same page. A request made directly to the API from another tab, an anonymous end user, or any server-side consumer always receives published content. See [Preview](/en/platform/content/public-api-reference.html#preview) for the details.
 :::
 ## Team Review
 
