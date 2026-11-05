@@ -48,7 +48,7 @@ Integration microservices can also send notifications to users and track users u
 ### Integration using WebHooks
 WebHooks integration enables the platform, in reaction to certain events, to send a message to a user-defined endpoint in a JSON format using the HTTP protocol and a simple POST containing information relevant to the event that has just occurred.
 
-This type of integration is only available for events occurring within the Modyo Admin Console. Business events are excluded.
+You can create webhooks for two kinds of events: those occurring within the Modyo Admin Console, from **Settings** > **Webhooks**, and the end-user events of each realm, from **Realm settings** > **Webhooks**. For more information, see [WebHooks](/en/platform/core/webhooks.html).
 
 
 ### Integration with payment methods
