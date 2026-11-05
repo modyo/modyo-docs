@@ -20,19 +20,20 @@ Además activa **Mostrar home a visitas públicas** para poder redireccionar usu
 #### Habilitar la integración a nivel de Reino (para todos los usuarios y sitios que pertenecen al reino)
 
 1. En el menú lateral, selecciona **Customers** y haz click en **Reinos**.
-1. Expande **Configuración de reino** y haz click en **Proveedores de Identidad**.
-1. Haz click en **Añadir**
-1. Selecciona la integración **OpenID Connect** y lleno los siguientes datos:
-  * **Nombre del servicio**
-  * **Client ID**
-  * **Secret**
+1. Haz click en tu reino, expande **Configuración de reino** y haz click en **Integraciones**.
+1. Haz click en la categoría **Proveedores de identidad**.
+1. En **OpenID Connect**, haz click en **Instalar** y llena los siguientes datos:
+  * **Nombre**
+  * **ID de cliente**
+  * **Secreto**
   * **Issuer**
-5. Haz click en **Lanzar servicio de descubrimiento** para asegurar que se logró una conexión.
+5. Haz click en **Ejecutar servicio de detección** para asegurar que se logró una conexión.
 6. Habilita las siguientes opciones si son necesarias:
-    * Habilitar refresh token
-    * Habilitar cierre de sesión remoto
-    * Habilitar revocación de token
-    * Habilitar sincronización de claims
+    * **Activar refresh token**
+    * **Habilitar cierre de sesión remoto**
+    * **Habilitar revocación de tokens**
+    * **Habilitar la sincronización de claims al iniciar sesión**
+    * **Mostrar información de delegación**, necesaria para que el interceptor de la sección siguiente obtenga el access token del proveedor.
 7. Asocia los campos del proveedor con los campos personalizados que tengas en Modyo [OpenID Connect 1.0 specification for Standard Claims](http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims)
 
 ## 2. Usar Axios para Hacer la Integración
@@ -75,11 +76,13 @@ var axios_modyo=axios.create({
 });
 // variable global que representará una instancia de axios que se encargará de hacer las peticiones los json de contenido del sitio
 var axios_modyo_json=axios.create({
-  baseURL: {{site.url}},
+  baseURL: '{{site.url}}',
 });
 // variable global que representará una instancia de axios que se encargará de hacer las peticiones relacionadas con la autenticación
-var axios_auth = axios.create();
-axios_auth.defaults.baseURL = window.baseUrl + '/auth/openidc';
+var axios_auth = axios.create({
+  baseURL: '{{site.account_url}}/api/customers/realms/{{site.realm_slug}}',
+  withCredentials: true
+});
 // función que genera actividad en el sitio con cada petición de autenticación
 var resetIdleTime = function(request){
   sessionManager.resetIdleTime();
@@ -87,8 +90,8 @@ var resetIdleTime = function(request){
 };
 // función que agrega el token a cada uno de los request
 var appendTokenToRequest = function (request) {
-  return axios_auth.get('/access_token').then(function(response){
-    request.headers.authorization='Bearer '+ response.data.access_token;
+  return axios_auth.get('/me').then(function(response){
+    request.headers.authorization='Bearer '+ response.data.delegated_token.access_token;
     return request;
   });
 };
@@ -101,6 +104,10 @@ axios_api.interceptors.request.use(appendTokenToRequest ,errorRequest);
 ```
 
 5. Cambia el nombre `URL DE API` por la URL donde se localice la API de Modyo Platform.
+
+::: tip Token delegado
+El interceptor obtiene el access token que emitió tu proveedor desde la [API de Customers](/es/platform/customers/api.html#tokens-delegados), en el campo `delegated_token.access_token`. Este campo solo trae datos si activaste **Mostrar información de delegación** en la integración; si no, viene vacío (`null`). Si tu sitio usa un dominio personalizado, ese dominio debe compartir el dominio principal con el de tu cuenta (por ejemplo, `www.mibanco.com` y `cuenta.mibanco.com`), porque el navegador no envía la cookie de sesión entre dominios distintos. Además, activa **Habilitar CORS** en la sección **Cross Origin Resource Sharing** de [Seguridad](/es/platform/customers/settings.html#seguridad) del reino.
+:::
 
 ### Un controlador de sesiones
 
@@ -174,9 +181,9 @@ var sessionManager = {
       arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
     if (withRedirect) {
       window.location.href =
-        "{{site.account_url}}/logout?multi=true&redirect_to=https://modyo.com";
+        "{{site.account_url}}/realms/{{site.realm_slug}}/logout?redirect_to={{site.url}}";
     } else {
-      window.location.href = "{{site.account_url}}/logout?site={{site.uuid}}";
+      window.location.href = "{{site.account_url}}/realms/{{site.realm_slug}}/logout?site={{site.uuid}}";
     }
   },
 
@@ -196,7 +203,7 @@ var sessionManager = {
       self
         .raiseModal()
         .then(function(response) {
-          axios_auth.get("/access_token");
+          axios_auth.get("/me");
         })
         .catch(function(err) {
           self.logout();
@@ -210,7 +217,7 @@ var sessionManager = {
 };
 ```
 
-2. Cambia el código `redirect_to=https://modyo.com";` a una URL donde quieras redirigir a tus usuarios.
+2. Si quieres llevar a tus usuarios a otra página al cerrar sesión, cambia el valor de `redirect_to`. Debe ser una URL de tu cuenta, de uno de sus sitios o de un dominio personalizado del reino. Si no lo es, Modyo la ignora y redirige al sitio desde el que el usuario inició sesión o, si no lo identifica, a la página de inicio de sesión del reino.
 
 ### Una ventana modal que informe al usuario que su sesión va a expirar
 

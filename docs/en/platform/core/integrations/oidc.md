@@ -20,19 +20,20 @@ Also enable **Show home to public visitors** to be able to redirect users withou
 #### Enable integration at the Realm level (for all users and sites that belong to the realm)
 
 1. In the side menu, select **Customers** and click **Realms**.
-1. Expand **Realm Settings** and click **Identity Providers**.
-1. Click **Add**
-1. Select the **OpenID Connect** integration and fill in the following information:
-  * **Name of the service**
+1. Click your realm, expand **Realm settings** and click **Integrations**.
+1. Click the **Identity Providers** category.
+1. On **OpenID Connect**, click **Install** and fill in the following information:
+  * **Name**
   * **Client ID**
   * **Secret**
   * **Issuer**
-5. Click **Launch Discovery Service** to ensure that a connection was achieved.
+5. Click **Run discovery service** to ensure that a connection was achieved.
 6. Enable the following options if needed:
-    * Enable refresh token
-    * Enable remote logoff
-    * Enable token revocation
-    * Enable claim synchronization
+    * **Enable refresh token**
+    * **Enable remote logout**
+    * **Enable token revocation**
+    * **Enable claims synchronization on login**
+    * **Display delegation info**, required for the interceptor in the next section to get the provider's access token.
 7. Associate the provider fields with the custom fields you have in Modyo [OpenID Connect 1.0 specification for Standard Claims](http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims)
 
 ## 2. Using Axios to do the integration
@@ -75,11 +76,13 @@ var axios_modyo=axios.create({
 });
 // this global variables is an axios instance in charge of making json petitions to site json content
 var axios_modyo_json=axios.create({
-  baseURL: {{site.url}},
+  baseURL: '{{site.url}}',
 });
 // this global variable is an axios instance in charge of making petitions related with authentication
-var axios_auth = axios.create();
-axios_auth.defaults.baseURL = window.baseUrl + '/auth/openidc';
+var axios_auth = axios.create({
+  baseURL: '{{site.account_url}}/api/customers/realms/{{site.realm_slug}}',
+  withCredentials: true
+});
 // function that generates activity in the site with each authentication petition
 var resetIdleTime = function(request){
   sessionManager.resetIdleTime();
@@ -87,8 +90,8 @@ var resetIdleTime = function(request){
 };
 // function that adds a token to each of the requests
 var appendTokenToRequest = function (request) {
-  return axios_auth.get('/access_token').then(function(response){
-    request.headers.authorization='Bearer '+ response.data.access_token;
+  return axios_auth.get('/me').then(function(response){
+    request.headers.authorization='Bearer '+ response.data.delegated_token.access_token;
     return request;
   });
 };
@@ -101,6 +104,10 @@ axios_api.interceptors.request.use(appendTokenToRequest ,errorRequest);
 ```
 
 5. Change the name `API URL` to the URL where the Modyo Platform API is located.
+
+::: tip Delegated token
+The interceptor gets the access token issued by your provider from the [Customers API](/en/platform/customers/api.html#delegated-tokens), in the `delegated_token.access_token` field. This field only has data if you turned on **Display delegation info** in the integration; otherwise, it comes empty (`null`). If your site uses a custom domain, that domain must share the main domain with your account's (for example, `www.mybank.com` and `account.mybank.com`), because the browser does not send the session cookie across different domains. Also, turn on **Enable CORS** in the **Cross Origin Resource Sharing** section of the realm's [Security](/en/platform/customers/settings.html#security).
+:::
 
 ### A session controller
 
@@ -174,9 +181,9 @@ var sessionManager = {
       arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
     if (withRedirect) {
       window.location.href =
-        "{{site.account_url}}/logout?multi=true&redirect_to=https://modyo.com";
+        "{{site.account_url}}/realms/{{site.realm_slug}}/logout?redirect_to={{site.url}}";
     } else {
-      window.location.href = "{{site.account_url}}/logout?site={{site.uuid}}";
+      window.location.href = "{{site.account_url}}/realms/{{site.realm_slug}}/logout?site={{site.uuid}}";
     }
   },
 
@@ -196,7 +203,7 @@ var sessionManager = {
       self
         .raiseModal()
         .then(function(response) {
-          axios_auth.get("/access_token");
+          axios_auth.get("/me");
         })
         .catch(function(err) {
           self.logout();
@@ -210,7 +217,7 @@ var sessionManager = {
 };
 ```
 
-2. Change the code `redirect_to= https://modyo.com “;` to a URL where you want to redirect your users.
+2. If you want to send your users to another page when they log out, change the value of `redirect_to`. It must be a URL of your account, of one of its sites, or of a custom domain of the realm. Otherwise, Modyo ignores it and redirects to the site where the user logged in or, if it cannot identify it, to the realm's login page.
 
 ### A modal window that informs the user that their session will expire
 
