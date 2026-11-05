@@ -81,7 +81,7 @@ Para conocer más acerca de páginas de originación, consulta [Crear una Págin
 - Publicar: Si la página está aprobada, puedes ir a la [vista de publicación conjunta](/es/platform/channels/sites.html#revision-y-publicacion-conjunta) usando esta acción.
 
 :::tip Tip
-- Si una página tiene un padre, solo puedes publicarla si este se encuentra publicado.
+- Si una página tiene un padre, solo puedes publicarla si este ya está publicado o si lo seleccionas en la misma [publicación conjunta](/es/platform/channels/sites.html#revision-y-publicacion-conjunta).
 - Si una página tiene hijos, solo puedes despublicarla si todos ellos se encuentran despublicados.
 - Si una página tiene hijos, solo puedes archivarla si todos ellos se encuentran archivados.
 :::
@@ -130,8 +130,8 @@ Es necesario que el CDN de tu cuenta esté en la nube para que los cambios se re
 
 En la pestaña **Añadir** de la barra lateral encuentras dos grupos. Bajo **Bloques** están los widgets preestablecidos que trae Modyo:
 
-- **HTML**: Te permite ingresar código HTML y CSS sin validaciones. No te permitirá ingresar código Javascript.
-- **Texto enriquecido**: Te permitirá hacer uso de un editor de texto enriquecido, en el que puedes darle formato al texto y cambiar entre la vista de código y texto enriquecido.
+- **HTML**: Te permite ingresar código HTML, CSS y Liquid. Si el código incluye una etiqueta `<script>`, Modyo no guarda la página y te avisa que los scripts no están permitidos.
+- **Texto enriquecido**: Te permitirá hacer uso de un editor de texto enriquecido, en el que puedes darle formato al texto y cambiar entre la vista de código y texto enriquecido. Al igual que el bloque **HTML**, interpreta Liquid.
 :::warning Atención
 El widget de texto enriquecido cuenta con un formateador automático, por lo que el código que escribas en la vista de código puede verse afectado.
 :::
@@ -146,7 +146,7 @@ Una vez seleccionado un widget en la sección central, el foco pasará a la pest
 
 ### Propiedades
 
-En esta pestaña encontrarás los controles de la página de widget, en el mismo orden en que aparecen en el panel. **Grilla** y **Delegar rutas hijas a esta página** solo existen aquí y en la página home: las páginas de contenido y de originación no tienen esos controles.
+En esta pestaña encontrarás los controles de la página de widget, en el mismo orden en que aparecen en el panel. **Grilla** también está en la página home, y **Delegar rutas hijas a esta página** solo existe aquí: las páginas de contenido y de originación no tienen ninguno de esos controles.
 
 - **Nombre**: El nombre de la página.
 - **Página padre**: La página bajo la cual se anida esta. Solo puedes elegir páginas de widget del sitio que estén publicadas, programadas o despublicadas.
@@ -159,7 +159,11 @@ En esta pestaña encontrarás los controles de la página de widget, en el mismo
 - **Meta tags personalizados**: Revisa [Meta tags](/es/platform/channels/pages.html#meta-tags).
 
 :::warning Atención
-Modyo cuenta con rutas reservadas para las página, por lo que no podrás usarlos como rutas de tus páginas personalizadas:
+La **Ruta** solo admite letras sin acentos ni ñ, números, guion (`-`) y guion bajo (`_`). La ruta completa de la página, que incluye las rutas de sus páginas padre, no puede superar los 255 caracteres. Si cambias la ruta de una página padre y la ruta completa de alguna de sus hijas pasa de ese largo, el cambio no se guarda.
+
+Páginas de distinto tipo pueden compartir la misma ruta. En ese caso, el sitio muestra la página de widget antes que la de contenido, y la de contenido antes que la de originación.
+
+Modyo cuenta con rutas reservadas, por lo que no podrás usarlas como ruta de una página de primer nivel, es decir, una página sin **Página padre**:
 <table style="border: none;"><tr style="border: none;">
 <td style="border: none;"><ul>
 <li>404</li>
@@ -219,7 +223,7 @@ Para recorrer los widgets de cada zona desde tus plantillas, revisa los objetos 
 
 ### Delegación de rutas
 
-Al activar **Delegar rutas hijas a esta página**, Modyo entrega esta misma página para cualquier sub-ruta que no corresponda a otra página del sitio, y tu router de JavaScript toma el control absoluto de esas sub-rutas.
+Al activar **Delegar rutas hijas a esta página**, Modyo entrega esta misma página para cualquier sub-ruta que no corresponda a otra página de widget del sitio, y tu router de JavaScript toma el control absoluto de esas sub-rutas. Esto incluye las páginas de contenido y de originación que anides bajo ella: sus URLs muestran la página que delega.
 
 :::tip Tip
 En las páginas de contenido no necesitas delegar rutas: el **Index** resuelve la ruta del listado y el **Show** resuelve la sub-ruta de cada entrada.
@@ -248,7 +252,7 @@ La página índice que contiene el listado de todas las entradas del tipo de con
 
 #### Edit
 
-- **Habilitar Índice de Entradas**: Deshabilitado por defecto. La ruta que toma es el nombre que se le dio a la página cuando fue creada. Si se deshabilita esta opción, solo las páginas de **Show** serán accesibles y si se intenta acceder se les mostrará un error 404.
+- **Habilitar Index de entradas**: Activado por defecto. El índice responde en la **Ruta** de la página, que incluye las rutas de sus páginas padre, no en su nombre. Si desactivas esta opción, solo son accesibles las URLs de cada entrada (**Show**) y la ruta del índice responde con un error 404.
 - **Layout**: La plantilla Layout que va a cargar para el Index.
 - **Custom Meta Tag**: Agrega custom meta tags para optimizar el SEO del índice. Este meta tag solo será cargado para el Index, no para el Show. También puedes utilizar Liquid para cargar meta tags dinámicos.
 
@@ -290,7 +294,7 @@ Se puede complementar con el uso de [Filtros de contenido](/es/platform/channels
 
 #### Propiedades
 
-Muestra el tipo de contenido y el espacio al cual pertenece esta página. A demás tendrás opciones para cambiar el nombre, la página padre, la ruta, y un extracto.
+Muestra el tipo de contenido y el espacio al cual pertenece esta página. Además tendrás opciones para cambiar el nombre, la página padre, la ruta, el extracto, la opción **Usar categorías** y la [privacidad](/es/platform/channels/pages.html#privacidad). Para conocer cómo **Usar categorías** cambia las URLs de la página, revisa [URLs con categorías](/es/platform/channels/pages.html#urls-con-categorias).
 
 :::tip Tip
 En el caso de que el custom domain esté habilitado, para encontrar la forma de la URL debes ir a ``Configuración del Sitio > Dominios``.
@@ -304,9 +308,23 @@ El extracto se agrega como parte de los meta tags para mejorar el SEO. Esto es p
 <meta name="description" content="{{ page.excerpt }}"/>
 ```
 
+#### URLs con categorías
+
+Con la opción **Usar categorías** activada, la ruta completa de la [categoría](/es/platform/content/categories.html) de cada entrada pasa a formar parte de sus URLs. Por ejemplo, para una página de contenido con ruta `blog`, una categoría `viajes` y una entrada con slug `visita-chile`:
+
+- El índice responde en `blog` con todas las entradas y en `blog/viajes` con las entradas de la categoría `viajes` y de sus subcategorías.
+- Si la entrada pertenece a `viajes`, responde en `blog/viajes/visita-chile`. Si no tiene categoría, responde en `blog/visita-chile`.
+- La URL de la entrada que entrega el objeto `entry` en Liquid incluye la ruta de su categoría.
+
+Con la opción desactivada, todas las entradas responden en `blog/visita-chile`, sin importar su categoría, y el índice solo responde en `blog`. Para leer desde tus plantillas la categoría que viene en la URL, usa las variables `category_path` y `category` de [las páginas de contenido](/es/platform/channels/liquid-markup/variables.html#de-las-paginas-de-contenido).
+
 ## Privacidad
 
-Si habilitas la privacidad en una página, entonces se requerirá una sesión para poder ver esta página. Junto a la privacidad, también puedes asociar [Segmentos](/es/platform/customers/segments), de tal manera que solo los usuarios que pertenezcan a esos segmentos podrán acceder a esta página. Quienes no sean parte del grupo de segmentos seleccionados, serán redirigidos a la página anterior o al home del sitio.
+Si habilitas la privacidad en una página, entonces se requerirá una sesión para poder ver esta página. Junto a la privacidad, también puedes asociar [Segmentos](/es/platform/customers/segments), de tal manera que solo los usuarios que pertenezcan a esos segmentos podrán acceder a esta página. Quienes no tengan sesión son redirigidos para iniciar sesión en el sitio. Quienes tengan sesión pero no pertenezcan a los segmentos seleccionados ven la [vista 404](/es/platform/channels/templates.html#errores-en-vistas) del sitio, o van al home si está activa la opción **Redireccionar al home cuando una URL no se encuentra**.
+
+La privacidad solo está disponible si el sitio está conectado a un [reino](/es/platform/channels/sites.html#general). Sin reino, la casilla **Privado** aparece deshabilitada y no puedes asociar segmentos. Los segmentos que puedes elegir son los del reino del sitio.
+
+Cuando creas una página de widget o de contenido con una **Página padre**, la nueva página toma la privacidad y los segmentos de ese padre. Después puedes cambiarlos en sus **Propiedades** sin afectar al padre.
 
 ## Meta tags
 
