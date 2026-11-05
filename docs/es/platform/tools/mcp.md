@@ -8,7 +8,7 @@ search: true
 
 El [Model Context Protocol (MCP)](https://modelcontextprotocol.io) es un estándar abierto para conectar asistentes de inteligencia artificial con herramientas y fuentes de datos. El **Modyo MCP Server** conecta un asistente de IA con la API de administración de Modyo, para gestionar la plataforma (contenido, sitios, widgets, customers y administración) y para construir widgets con Dynamic Framework, conversando en lenguaje natural.
 
-Se distribuye como el paquete npm [`@modyo/mcp`](https://www.npmjs.com/package/@modyo/mcp) y corre como un proceso local que el cliente de IA lanza por stdio. Esta página describe la versión 0.5.10.
+Se distribuye como el paquete npm [`@modyo/mcp`](https://www.npmjs.com/package/@modyo/mcp) y corre como un proceso local que el cliente de IA lanza por stdio. Esta página describe la versión 0.5.11.
 
 Para construir un widget de punta a punta con el MCP, ve [Desarrollar widgets con el MCP](/es/platform/tools/mcp-widgets.html).
 
@@ -186,7 +186,7 @@ El server se configura con variables de entorno, en el bloque `env` del cliente.
 | `MODYO_TOKEN` | Sí | Token de administrador (Modyo Admin → Settings → API Access). |
 | `MODYO_PLATFORM_NAME` | No | Nombre visible de la plataforma. Por defecto, `default`. |
 | `MODYO_MCP_MODULES` | No | Módulos activos, separados por comas: `core`, `content`, `channels`, `customers`, `widgets`. Sin definir, todos. Ver [Filtrado por módulos](#filtrado-por-modulos). |
-| `MODYO_READ_ONLY` | No | Con el valor exacto `true`, activa el modo de solo lectura. Ver [Modo de solo lectura](#modo-de-solo-lectura). |
+| `MODYO_READ_ONLY` | No | Con `true` o `1` (sin distinguir mayúsculas), activa el modo de solo lectura. Sin definir, vacía, `false` o `0`, queda inactivo. Cualquier otro valor impide que el server arranque. Ver [Modo de solo lectura](#modo-de-solo-lectura). |
 | `MODYO_DEFAULT_SITE_THEME` | No | ID del theme que se usa al crear un sitio sin indicar uno. Por defecto, `208`; el ID que corresponde depende de tu instancia. El theme solo se aplica al crear el sitio. |
 | `DEBUG` | No | Con `true` o `1`, el server escribe registros de depuración en stderr, con los valores sensibles ocultos. |
 
@@ -216,12 +216,21 @@ Los tokens de la API de administración no caducan y la plataforma no los renuev
 
 ### Modo de solo lectura
 
-Con `MODYO_READ_ONLY=true`, el server no ejecuta ningún cambio en la plataforma, aunque el token tenga permisos de escritura. Cualquier otro valor, o la ausencia de la variable, equivale al comportamiento normal. Sirve para auditar o explorar un sitio en producción sin riesgo de modificarlo.
+Con `MODYO_READ_ONLY=true` o `1` (sin distinguir mayúsculas), el server no ejecuta ningún cambio en la plataforma, aunque el token tenga permisos de escritura. Sin definir, vacía, `false` o `0`, la variable queda inactiva y el server se comporta de forma normal. Cualquier otro valor impide que el server arranque y termina con un mensaje como este:
+
+```
+Error: Invalid value in MODYO_READ_ONLY: 'yes'.
+Valid values: true, 1, false, 0 (or unset).
+```
+
+Sirve para auditar o explorar un sitio en producción sin riesgo de modificarlo.
 
 Funciona en dos capas:
 
 1. Las tools que solo escriben o eliminan no se registran: el cliente no las ve.
 2. Las tools que agrupan varias acciones (por ejemplo, las `*-manage`) siguen disponibles, pero solo ejecutan las acciones de lectura: `list`, `get`, `search`, `find` y `status`. La acción `manage` sin campos que cambien algo actúa como una lectura.
+
+Una excepción: `channels-locks-manage` acepta `release` con `lockId`, para liberar un bloqueo del usuario del token, como el que queda al leer un template. `take_over`, `acquire` y `release` por `lockable_type` + `lockable_id` se rechazan.
 
 Una acción rechazada no es un error (`isError: false`). La respuesta trae el rechazo en `control`:
 
@@ -230,7 +239,7 @@ Una acción rechazada no es un error (`isError: false`). La respuesta trae el re
   "control": {
     "readOnly": true,
     "rejected": "create",
-    "reason": "Server running in read-only mode (MODYO_READ_ONLY). Only read actions are permitted."
+    "reason": "Server running in read-only mode (MODYO_READ_ONLY). Only read actions and release of your own locks by lockId are permitted."
   }
 }
 ```
@@ -263,7 +272,7 @@ Las dos variables se combinan. Para auditar un sitio sin riesgo de modificarlo, 
 }
 ```
 
-Tools que lista el cliente según la configuración, en la versión 0.5.10:
+Tools que lista el cliente según la configuración, en la versión 0.5.11:
 
 | Configuración | Tools |
 |---|---|
@@ -298,8 +307,13 @@ Archivar una definición de widget también pide confirmación, porque elimina s
 ### Respuestas de las escrituras
 
 - **Lo que quedó guardado.** Después de escribir, las tools vuelven a leer el recurso y responden ese estado. Si un campo pedido no quedó guardado, responden `FIELDS_NOT_PERSISTED` o `UNSUPPORTED_FIELD`. Un parámetro que la acción no usa vuelve en `ignored`.
+- **Tipo de campo.** En `content-entries-upsert` y `content-entries-manage`, un valor de campo cuyo `type` no coincide con el tipo del campo en el tipo de contenido, también dentro de un grupo, se rechaza con `FIELD_TYPE_MISMATCH` y la lista `mismatches`, sin escribir nada.
 - **Operaciones en segundo plano.** Las que continúan en la plataforma responden `queued` o `deletion_started`.
 - **Identificadores exactos.** Las acciones que escriben o eliminan resuelven el recurso solo por id, UUID, path o slug exactos. Una lectura con varios candidatos responde `AMBIGUOUS_IDENTIFIER` con la lista. En una entrada con varias traducciones, la tool pide el idioma (`LOCALE_REQUIRED`).
+
+### Bloqueos de edición
+
+Leer el código de un template hace que la plataforma tome un bloqueo de edición a nombre del usuario del token. Las tools que leen templates (`channels-templates-search`, `channels-templates-replace`, `channels-templates-manage`, `channels-templates-copy` y `channels-download`) liberan ese bloqueo antes de responder, y nunca tocan uno de otro usuario. Si no pueden liberarlo, lo informan en `lockReleaseErrors`, con el id del bloqueo, el template y el paso que falló. Se libera con `channels-locks-manage`, acción `release` y el `lockId`, también en modo de solo lectura.
 
 ## Qué puede hacer
 
@@ -509,10 +523,10 @@ Un widget nuevo empieza con el prompt `widgets-init-project`, invocado como slas
 Al server le faltan `MODYO_URL` o `MODYO_TOKEN`. Revisa que las dos estén en el bloque `env` de la configuración del cliente y reinicia el cliente. Para probar el token directamente contra la API:
 
 ```bash
-curl -H "Authorization: Bearer $MODYO_TOKEN" "$MODYO_URL/api/admin/profile"
+curl -H "Authorization: Bearer $MODYO_TOKEN" "$MODYO_URL/api/admin/sites?per_page=1"
 ```
 
-Con un token válido, la API responde `200` con el usuario dueño del token. Si no, crea un token nuevo en Modyo Admin → Settings → API Access.
+Con un token válido, la API responde `200`. Si no, crea un token nuevo en Modyo Admin → Settings → API Access.
 
 ### El server no arranca después de definir MODYO_MCP_MODULES
 
@@ -525,13 +539,28 @@ Valid values: core, content, channels, customers, widgets.
 
 la lista tiene un valor que no existe. Corrígelo (los valores válidos son `core`, `content`, `channels`, `customers` y `widgets`) y vuelve a iniciar el cliente.
 
+### El server no arranca después de definir MODYO_READ_ONLY
+
+Si el server termina al arrancar con este mensaje:
+
+```
+Error: Invalid value in MODYO_READ_ONLY: 'yes'.
+Valid values: true, 1, false, 0 (or unset).
+```
+
+el valor no es uno de los aceptados (`true`, `1`, `false`, `0`, o la variable sin definir). Corrígelo y vuelve a iniciar el cliente.
+
 ### Una tool responde readOnly: true
 
-El server corre con `MODYO_READ_ONLY=true` y la acción pedida escribe en la plataforma. No es un error: el rechazo llega en `control` con `isError: false`. Para ejecutar la acción, quita la variable y reinicia el cliente.
+El server corre con `MODYO_READ_ONLY=true` y la acción pedida escribe en la plataforma. No es un error: el rechazo llega en `control` con `isError: false`. Para ejecutar la acción, quita la variable y reinicia el cliente. La única acción que escribe y se acepta en este modo es `release` de `channels-locks-manage` con `lockId`.
 
 ### El agente dice que no borró nada
 
 En clientes sin confirmación interactiva, un borrado sin `confirmed: true` no se ejecuta: la respuesta trae en `control.aborted` lo que se habría borrado. Revisa la lista y pide al agente que repita la operación con la confirmación.
+
+### Un template quedó bloqueado después de que el agente lo leyó
+
+Revisa `lockReleaseErrors` en la respuesta de la tool: trae el `lockId` y el paso que falló. Pide al agente que libere el bloqueo con `channels-locks-manage` (`release` y el `lockId`); funciona también en modo de solo lectura. También puedes liberarlo desde Modyo Admin.
 
 ### El agente no ve las tools
 
