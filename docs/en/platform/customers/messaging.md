@@ -45,10 +45,11 @@ Email campaigns allow you to contact users via email. To set up an email campaig
 
 - **Name**: The identifier for the campaign.
 - **Type**: Select **Email** to enable this option.
-- **Subject**: The text that will appear in the message's subject line. If this field is left blank, the realm's default email will be used.
-- **Reply To**: The email address for user responses.
+- **Subject**: The text that will appear in the message's subject line.
+- **Sender name**: The name that appears in the email's "From" field. It is required.
+- **Reply to email**: The email address the campaign is sent from and where user replies arrive. If this field is left blank, the realm's default email will be used.
 - **Template**: Select a [template](/en/platform/customers/messaging.html#templates). If no template is selected, a blank one will be used.
-- **Enable Segmentation**: Select a specific segment or leave this option unchecked to send the message to all users.
+- **Enable segmenting**: Select one or more segments, or leave this option unchecked to send the message to all users. If your access is [restricted by segments](/en/platform/customers/settings.html#restrict-scope-with-segments) and you do not choose any, the campaign targets every segment in your scope.
 
 Click **Save and continue** to open the WYSIWYG editor, where you can customize the selected template's content and use [personalization variables](/en/platform/customers/messaging.html#personalization-variables). Once edited, select **Save** to confirm the changes and access the **Send Status** view.
 
@@ -59,6 +60,7 @@ Notification campaigns allow you to send direct messages to users. To set up a n
 - **Name**: The identifier for the campaign.
 - **Type**: Select **Notification** to activate this option.
 - **Subject**: The text that will appear in the sent message.
+- **Enable segmenting**: Works the same as in [mailing campaigns](/en/platform/customers/messaging.html#mailing-campaigns).
 
 #### Enable WebPush support
 
@@ -83,7 +85,7 @@ Before sending a campaign, use the **Preview** button to verify the content. Onc
 The contextual button allows you to perform these actions:
 
 - **Message Editor**: Modify the content before sending.
-- **Send test**: Sends a test message to a specific address (It can only be sent to users with access to the Modyo backend).
+- **Send test**: Sends a test message to the recipients you enter, one per line. In mailing campaigns, each line follows the format `name; email` and the email must belong to an administrator of the account. In notification campaigns, the format is `name; username` and the recipient must be a realm user, who gets the test notification among their notifications. The **Send** button stays disabled while any line does not follow that format.
 - **Edit**: Change campaign properties, such as the target segment or reply address.
 - **Clone Campaign**: Create a copy with all the campaign's content.
 - **Delete campaign**: Deletes a campaign.
@@ -129,6 +131,10 @@ If you sent the campaign by notification, you can view:
 - **Sent**: Number of notifications sent.
 - **Opened**: Number of notifications opened.
 
+:::tip Metrics refresh
+Open, click, and spam metrics are recalculated every 15 minutes, not in real time: even if you reload the page, a new open or click does not show up until the next recalculation.
+:::
+
 If you send a campaign through [segments](/en/platform/customers/segments), you can see which group of users the campaign reached. If this section does not appear, it is because the campaign was sent to all contacts.
 
 :::warning Attention
@@ -166,20 +172,18 @@ There is also a legacy route, `POST /api/admin/mailer`, which reaches the same a
 
 In the initial view, the messages are ordered in these categories:
 
-- **Name**: Name of the user to whom the message was sent. The user's email is included, regardless of whether it was sent by email or notification.
+- **User**: Name of the user to whom the message was sent. The user's email is included, regardless of whether it was sent by email or notification.
 - **Campaign**: Campaign under which the message was sent.
 - **Type**: The route through which the message was sent, either email or notification.
-- **Delivery**: Date on which the campaign started.
 - **Sent**: Date the message was sent.
 - **Read**: Alert if the user read or saw the message.
 
 In addition, you can filter the data using the following filters:
 
-- **Campaign Type**: All, mail, or notification.
-- **Campaign Name**: Name given to the campaign in general.
-- **Shipment**: Date on which the campaign was sent.
+- **Type**: Mail or notification.
+- **Campaign**: Campaign under which the message was sent. It includes the **No campaign** option.
 
-The search bar allows you to search for a specific term.
+The search bar allows you to search by the recipient's name or email.
 
 ## Templates
 
@@ -191,6 +195,8 @@ In the **Templates** section, you can create and manage email designs for your c
 - Click **New Template**.
 - Give the template a descriptive name.
 - Use the WYSIWYG editor to customize the design.
+
+If the realm has no templates yet, **Load default templates** appears next to **New Template** and creates three base templates (Example 1, Example 2, and Example 3) that you can edit as you like.
 
 ### Edit Templates
 
@@ -228,6 +234,8 @@ Templates and email campaigns give you seven variables:
 Notification campaigns only have `%{name}`, `%{first_name}`, and `%{last_name}`.
 
 Including `%{unsubscribe_link}` in the message footer is what lets the recipient unsubscribe, and those opt-outs are the ones that show up in [Unsubscriptions](/en/platform/customers/messaging.html#unsubscriptions).
+
+The unsubscribe link in each email works for three months after the delivery. If the recipient opens it after that period, they are not unsubscribed: they see the notice **Something went wrong. You can change your notifications preferences from your profile.** and, to unsubscribe, they must uncheck **Subscribe to mail campaigns** when [editing their profile](/en/platform/customers/profile.html#edit-information).
 
 :::warning Attention
 If you write a variable that is not on the channel's list, the platform does not save the message and shows the error **The attributes specified are not valid**.
