@@ -80,7 +80,7 @@ var axios_modyo_json=axios.create({
 });
 // this global variable is an axios instance in charge of making petitions related with authentication
 var axios_auth = axios.create({
-  baseURL: '{{site.account_url}}/api/customers/realms/{{site.realm_slug}}',
+  baseURL: '{{user.realm_base_url}}/api/customers/realms/{{user.realm_uid}}',
   withCredentials: true
 });
 // function that generates activity in the site with each authentication petition
@@ -106,7 +106,7 @@ axios_api.interceptors.request.use(appendTokenToRequest ,errorRequest);
 5. Change the name `API URL` to the URL where the Modyo Platform API is located.
 
 ::: tip Delegated token
-The interceptor gets the access token issued by your provider from the [Customers API](/en/platform/customers/api.html#delegated-tokens), in the `delegated_token.access_token` field. This field only has data if you turned on **Display delegation info** in the integration; otherwise, it comes empty (`null`). If your site uses a custom domain, that domain must share the main domain with your account's (for example, `www.mybank.com` and `account.mybank.com`), because the browser does not send the session cookie across different domains. Also, turn on **Enable CORS** in the **Cross Origin Resource Sharing** section of the realm's [Security](/en/platform/customers/settings.html#security).
+The interceptor gets the access token issued by your provider from the [Customers API](/en/platform/customers/api.html#delegated-tokens), in the `delegated_token.access_token` field. This field only has data if you turned on **Display delegation info** in the integration; otherwise, it comes empty (`null`). The calls go to `user.realm_base_url`, which is the realm's [custom domain](/en/platform/customers/settings.html#domains) when it is active and, otherwise, your account URL: that is where the user's session lives. If your site uses a different domain, it must share the main domain with the realm's (for example, `www.mybank.com` and `login.mybank.com`), because the browser does not send the session cookie across different domains. Also, turn on **Enable CORS** in the **Cross Origin Resource Sharing** section of the realm's [Security](/en/platform/customers/settings.html#security).
 :::
 
 ### A session controller
@@ -181,9 +181,9 @@ var sessionManager = {
       arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
     if (withRedirect) {
       window.location.href =
-        "{{site.account_url}}/realms/{{site.realm_slug}}/logout?redirect_to={{site.url}}";
+        "{{user.realm_base_url}}/realms/{{user.realm_uid}}/logout?redirect_to={{site.url}}";
     } else {
-      window.location.href = "{{site.account_url}}/realms/{{site.realm_slug}}/logout?site={{site.uuid}}";
+      window.location.href = "{{user.realm_base_url}}/realms/{{user.realm_uid}}/logout?site={{site.uuid}}";
     }
   },
 

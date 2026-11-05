@@ -80,7 +80,7 @@ var axios_modyo_json=axios.create({
 });
 // variable global que representará una instancia de axios que se encargará de hacer las peticiones relacionadas con la autenticación
 var axios_auth = axios.create({
-  baseURL: '{{site.account_url}}/api/customers/realms/{{site.realm_slug}}',
+  baseURL: '{{user.realm_base_url}}/api/customers/realms/{{user.realm_uid}}',
   withCredentials: true
 });
 // función que genera actividad en el sitio con cada petición de autenticación
@@ -106,7 +106,7 @@ axios_api.interceptors.request.use(appendTokenToRequest ,errorRequest);
 5. Cambia el nombre `URL DE API` por la URL donde se localice la API de Modyo Platform.
 
 ::: tip Token delegado
-El interceptor obtiene el access token que emitió tu proveedor desde la [API de Customers](/es/platform/customers/api.html#tokens-delegados), en el campo `delegated_token.access_token`. Este campo solo trae datos si activaste **Mostrar información de delegación** en la integración; si no, viene vacío (`null`). Si tu sitio usa un dominio personalizado, ese dominio debe compartir el dominio principal con el de tu cuenta (por ejemplo, `www.mibanco.com` y `cuenta.mibanco.com`), porque el navegador no envía la cookie de sesión entre dominios distintos. Además, activa **Habilitar CORS** en la sección **Cross Origin Resource Sharing** de [Seguridad](/es/platform/customers/settings.html#seguridad) del reino.
+El interceptor obtiene el access token que emitió tu proveedor desde la [API de Customers](/es/platform/customers/api.html#tokens-delegados), en el campo `delegated_token.access_token`. Este campo solo trae datos si activaste **Mostrar información de delegación** en la integración; si no, viene vacío (`null`). Las llamadas van a `user.realm_base_url`, que es el [dominio personalizado](/es/platform/customers/settings.html#dominios) del reino si está activo y, si no, la URL de tu cuenta: ahí vive la sesión del usuario. Si tu sitio usa otro dominio, este debe compartir el dominio principal con el del reino (por ejemplo, `www.mibanco.com` y `login.mibanco.com`), porque el navegador no envía la cookie de sesión entre dominios distintos. Además, activa **Habilitar CORS** en la sección **Cross Origin Resource Sharing** de [Seguridad](/es/platform/customers/settings.html#seguridad) del reino.
 :::
 
 ### Un controlador de sesiones
@@ -181,9 +181,9 @@ var sessionManager = {
       arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
     if (withRedirect) {
       window.location.href =
-        "{{site.account_url}}/realms/{{site.realm_slug}}/logout?redirect_to={{site.url}}";
+        "{{user.realm_base_url}}/realms/{{user.realm_uid}}/logout?redirect_to={{site.url}}";
     } else {
-      window.location.href = "{{site.account_url}}/realms/{{site.realm_slug}}/logout?site={{site.uuid}}";
+      window.location.href = "{{user.realm_base_url}}/realms/{{user.realm_uid}}/logout?site={{site.uuid}}";
     }
   },
 
