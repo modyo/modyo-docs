@@ -46,4 +46,4 @@ Lista de formularios más recientes con:
 
 ### Engagement
 
-Gráfico circular que muestra el porcentaje de usuarios activos versus inactivos en el período seleccionado.
+Gráfico circular que muestra un porcentaje calculado sobre los usuarios que iniciaron sesión en el período seleccionado. Si nadie inició sesión en ese período, el gráfico se muestra sin datos.
