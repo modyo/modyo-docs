@@ -30,7 +30,7 @@ La sincronización es unidireccional, lo que significa que los datos modificados
 4. Selecciona aprovisionamiento **Automático**
 5. En las credenciales de administración, agrega lo siguiente:
 	- URL de inquilino: El URL de tu servidor de web compatible con SCIM, por ejemplo: https://tudominio.modyo.cloud/api/admin/scim
-	- Secret Token: El token de acceso del usuario administrativo de Modyo generado para la credencial de autenticación. Puedes encontrar información detallada de tokens en la sección de [API de administración](https://docs.modyo.com/es/platform/core/api#bearer-token)
+	- Secret Token: El token de acceso del dueño de la cuenta o de un usuario administrativo de Modyo con el rol **Full admin**, asignado directamente o a través de un grupo. Con otro rol, Modyo rechaza las solicitudes sobre usuarios con un error `401`. Puedes encontrar información detallada de tokens en la sección de [API de administración](https://docs.modyo.com/es/platform/core/api#bearer-token)
 6. En la sección de Configuración puedes personalizar el envío de notificaciones y seleccionar el umbral de eliminación accidental. Para más información acerca de estas configuraciones, revisa la documentación de [Azure](https://learn.microsoft.com/es-es/azure/active-directory/app-provisioning/user-provisioning)
 7. Da click en **Probar configuración** para verificar la conexión
 8. Una vez confirmada la configuración da click en **Guardar**
@@ -85,17 +85,17 @@ Nombre del usuario y correo electrónico son campos requeridos para generar usua
 
 ### Contrato del servidor SCIM
 
-Además de Entra ID, puedes conectar cualquier cliente SCIM 2.0 contra el servidor de Modyo. La URL base es `https://[account_host]/api/admin/scim` y las llamadas se autentican con el token del usuario administrativo, igual que en el resto de la [API de administración](/es/platform/core/api.html#bearer-token). Los usuarios que administra este servidor son los de **Equipo**, no los de Customers.
+Además de Entra ID, puedes conectar cualquier cliente SCIM 2.0 contra el servidor de Modyo. La URL base es `https://[account_host]/api/admin/scim` y las llamadas se autentican con un token, igual que en el resto de la [API de administración](/es/platform/core/api.html#bearer-token). El token debe pertenecer al dueño de la cuenta o a un usuario con el rol **Full admin**, asignado directamente o a través de un grupo; con otro rol, los endpoints de `/Users` y `/Schemas`, y el `DELETE` de grupos, responden `401`. Los usuarios que administra este servidor son los de **Equipo**, no los de Customers.
 
 | Recurso | Métodos | Descripción |
 |:--|:--|:--|
-| `/Users` | `GET`, `POST` | Lista y crea usuarios. El listado admite paginación con `startIndex` y `count`, y los filtros `userName eq` y `externalId eq`. |
-| `/Users/:id` | `GET`, `PATCH` | Consulta y actualiza un usuario. El `PATCH` acepta operaciones sobre `userName`, `name`, `emails` y `active`. |
+| `/Users` | `GET`, `POST` | Lista y crea usuarios. El listado admite paginación con `startIndex` y `count`, y el filtro `userName eq "valor"`; no se admite filtrar por `externalId`. Cualquier otro operador, o un atributo distinto de `userName` y `externalId`, responde `400`. |
+| `/Users/:id` | `GET`, `PATCH`, `PUT` | Consulta y actualiza un usuario. El `PATCH` acepta operaciones sobre `userName`, `name`, `emails` y `active`. `PUT` es un alias de `PATCH` y espera el mismo cuerpo. |
 | `/Groups` | `GET`, `POST` | Lista y crea grupos. |
-| `/Groups/:id` | `GET`, `PATCH`, `DELETE` | Consulta, actualiza y elimina un grupo. |
-| `/Schemas` | `GET` | Devuelve la definición de los esquemas `urn:ietf:params:scim:schemas:core:2.0:User` y `urn:ietf:params:scim:schemas:core:2.0:Group` con todos sus atributos. Úsalo si tu cliente descubre el esquema antes de aprovisionar. Este endpoint no aparece en el portal Swagger, así que esta tabla es su referencia. |
+| `/Groups/:id` | `GET`, `PATCH`, `PUT`, `DELETE` | Consulta, actualiza y elimina un grupo. `PUT` es un alias de `PATCH` y espera el mismo cuerpo. |
+| `/Schemas` | `GET` | Devuelve la definición de los esquemas `urn:ietf:params:scim:schemas:core:2.0:User` y `urn:ietf:params:scim:schemas:core:2.0:Group` con todos sus atributos. Úsalo si tu cliente descubre el esquema antes de aprovisionar. Como el resto de los endpoints SCIM, aparece en el [portal Swagger](/es/platform/core/api.html#llama-usando-el-portal-swagger) de la API de administración. |
 
-Todas las respuestas, incluidas las de error, usan el content type `application/scim+json` y no el `application/json` que declara el resto de la API de administración. Asegúrate de que tu cliente lo acepte.
+Las respuestas de los recursos y sus errores SCIM (`400`, `404`, `409`, `422` y `500`) usan el content type `application/scim+json` y no el `application/json` que declara el resto de la API de administración. Asegúrate de que tu cliente lo acepte. Los errores `401`, por un token ausente o inválido o por falta de permisos, no traen un cuerpo SCIM.
 
 :::warning Atención
 La baja de usuarios no se hace con `DELETE`. La ruta `DELETE /api/admin/scim/Users/:id` existe, pero no tiene implementación: la solicitud termina en un error genérico, sin respuesta SCIM, y el usuario no cambia. Para desaprovisionar, envía un `PATCH` a `/Users/:id` con la propiedad `active` en `false`. En grupos, `DELETE` sí está implementado.
