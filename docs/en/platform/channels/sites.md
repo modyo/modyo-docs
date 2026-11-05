@@ -72,7 +72,7 @@ The copy takes the name and host of the original, preceded by **Copy of**. If th
 - The stages of the original application.
 - The status: the copy always starts in **Draft**, even if the original is **Enabled**.
 
-All the content of the copy starts unpublished, so you must publish it before it becomes visible.
+The copy keeps the publication state of the original: what is published in the original is published in the copy, and unpublished changes remain as pending changes. Since the copy starts in **Draft**, it is not visible to the public until you change its status to **Enabled**.
 
 :::tip Tip
 Cloning takes some time and runs in the background. While it lasts, the window shows the message "This will take some time, the app is being cloned" and the copy does not appear in the applications list yet.
@@ -115,12 +115,12 @@ When the application has [team review](/en/platform/channels/sites.html#team-rev
 
 ### Access to synchronization
 
-The **Stage** block only appears if your role has one of the synchronization permissions, and the button changes depending on which one:
+The **Stage** block only appears if your role has the **Admin Synchronizations**, **View Synchronizations**, or **Manage Channels** permission, and the button changes depending on which one:
 
-- With **Admin Synchronizations** you see **Synchronize** and you can [synchronize the stage](/en/platform/channels/sites.html#synchronize-a-stage).
+- With **Admin Synchronizations** or **Manage Channels** you see **Synchronize** and you can [synchronize the stage](/en/platform/channels/sites.html#synchronize-a-stage). If you are in the `main` stage and the application has no other stages in **Enabled** or **Draft** status, you see **Synchronize (read only)** even if you have these permissions.
 - With **View Synchronizations** you see **Synchronize (read only)**: you enter the synchronization view and review the differences, but you cannot apply them.
 
-If the application has unpublished changes, a warning icon appears next to the stage name with the message "Before sync you have to publish all your changes", and when you click **Synchronize**, Modyo asks for confirmation before continuing.
+If you can synchronize and the application has unpublished changes, a warning icon appears next to the stage name with the message "Before sync you have to publish all your changes", and when you click **Synchronize**, Modyo asks for confirmation before continuing.
 
 ## Review and Joint Publication
 
@@ -579,13 +579,16 @@ The main advantages of having different stages in your web apps are:
 - A web app can have a maximum of four stages.
 - Changes you make to a stage are only reflected in that stage.
 - Realms also have their own stages, independent from web app stages. See [Stages](/en/platform/customers/realms.html#stages) in Realms.
-- Custom PWAs and redirections are disabled in stages. They can only be used in the `main` stage.
+- Custom redirections are disabled in stages. They can only be used in the `main` stage.
+- When it is created, each stage copies the PWA settings of its source stage. You can then change them in each stage separately.
 - The team members section is separate in each `main` stage. Add members to enable team review.
 - You can have the same members with different roles and permissions for each stage.
 - Origination pages are copied to the new stage without their linked origination. Since each origination allows only one page, to use them in the stage you must link a different origination from the same realm.
 :::
 
 #### Add a New Stage
+
+Before you create a stage, publish the pending changes of the source stage. If it has unpublished changes, the window warns you and the **Create** button stays disabled. Publish the changes and open the window again.
 
 To add a new stage to your web app, follow these steps:
 
@@ -595,7 +598,13 @@ To add a new stage to your web app, follow these steps:
 1. Click on stages.
 1. Click on **+ new stage**.
 1. Select the source stage and name your new stage.
-1. Click **create**.
+1. Click **Create**.
+
+The stage creation continues in the background, so you can close the window. While it lasts, the new stage does not appear in the stages list. If you keep the window open, when it finishes you see one of these results:
+
+- If all the elements were cloned, the message "Environment successfully created" appears and the list refreshes.
+- If some elements could not be cloned, the stage is created anyway and the window shows the list of those elements and the reason for each one, along with the message "The stage was created, but some elements could not be cloned. The details are in the stage creation log."
+- If the creation could not be completed, the window shows the message "The stage creation could not be completed".
 
 
 :::tip Tip
@@ -620,7 +629,7 @@ To synchronize a stage, follow these steps:
 
 
 :::warning Attention
-- Elements of a stage associated with a segment are not synchronized. You must repeat the process manually in the new stage, once the synchronization is complete.
+- Pages and menu items associated with segments are also synchronized. If the element already exists in the destination stage with assigned segments, it keeps those segments and does not take the ones from the source stage; if it has none, it receives the ones from the source.
 - The origination linked to an origination page is not synchronized either: each stage keeps its own, and that difference does not appear in the list of elements to synchronize.
 :::
 
@@ -632,7 +641,7 @@ To delete a stage, follow these steps:
 1. Click on application settings.
 1. Click on General.
 1. In the danger zone section, click **delete stage**.
-1. Enter the name of your stage.
+1. In **App name**, enter the full name of the stage exactly as it appears in the **App Name** field of the General section (for example, `qa My site`, not just `qa`).
 1. Click **delete**.
 
 
