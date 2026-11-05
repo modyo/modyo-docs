@@ -46,7 +46,7 @@ Entries JSON:
         "uuid": "9b0a24a6-d84f-4851-8750-a86244947510",
         "space": "myspace",
         "name": "Lorem Ipsum dolor",
-        "slug": "lorem-ipsum-dolor"
+        "slug": "lorem-ipsum-dolor",
         "type": "Post",
         "private": false,
         "targets": [],
@@ -74,7 +74,7 @@ Entries JSON:
         "uuid": "1c9b24a6-d84f-4851-8750-a86244963589",
         "space": "myspace",
         "name": "Lorem Ipsum",
-        "slug": "lorem-ipsum"
+        "slug": "lorem-ipsum",
         "type": "Post",
         "private": false,
         "targets": [],
@@ -98,6 +98,7 @@ Entries JSON:
       }
     }
   ]
+}
 ```
 
 Entries JSON Schema:
@@ -309,7 +310,7 @@ Entry JSON:
       "uuid":"9b0a24a6-d84f-4851-8750-a86244947510",
       "space": "myspace",
       "name": "Lorem Ipsum dolor",
-      "slug": "lorem-ipsum-dolor"
+      "slug": "lorem-ipsum-dolor",
       "type": "Post",
       "private": false,
       "targets": [],
@@ -331,6 +332,7 @@ Entry JSON:
       "excerpt":"Lorem Ipsum dolor",
       "body":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
    }
+}
 ```
 
 Entry JSON Schema:
@@ -539,21 +541,24 @@ Las entradas siempre se consultan bajo un tipo de contenido: la única ruta disp
 
 ### Filtrar
 
-En la búsqueda de contentTypes con filtros, se hará una distinción a nivel de app dependiendo de los filtros solicitados:
-
-Metadata (ej: Tags, Category, Fechas): Búsquedas por SQL, serán consultables mediante parámetros `meta.param_name`. Esto mientras sólo sea la Metadata lo que se esté consultando.
+Puedes filtrar las entradas por sus atributos de metadata, con parámetros `meta.nombre_atributo`, y por los campos del tipo de contenido, con parámetros `fields.nombre_campo`. Puedes combinar ambos tipos de filtro en la misma petición.
 
 - Tags: consultables de dos maneras
   - `meta.tags=tag_name`
   - `meta.tags[in][]=tag1_name&meta.tags[in][]=tag2_name`
-- Categories, consultable de una sola manera: `meta.category=category_full_path` considerará categorías hijas de la consultada
-- Fechas de creación/actualización/publicación/despublicación: consultables usando especificación ISO-8601 y con posibilidad de búsqueda por rangos (lt, gt):
+- Categorías: se consultan con la ruta completa de la categoría y siempre consideran sus categorías hijas. Puedes usarlas de tres maneras:
+  - `meta.category=category_full_path` entrega las entradas de esa categoría y de sus hijas.
+  - `meta.category[in][]=category1_full_path&meta.category[in][]=category2_full_path` entrega las entradas de cualquiera de esas categorías o de sus hijas.
+  - `meta.category[nin][]=category_full_path` excluye las entradas de esa categoría y de sus hijas.
+
+  `meta.category` no admite otros operadores.
+- Fechas de creación/actualización/publicación: consultables usando especificación ISO-8601 y con posibilidad de búsqueda por rangos (lt, gt):
   - `.../entries?meta.created_at=1987-11-19T13:13:13`
   - `.../entries?meta.updated_at[lt]=1987-11-19`
   - `.../entries?meta.published_at[gt]=1987-11-19`
-- Fields: Búsquedas por medio de ElasticSearch, por ejemplo:
-  - Ubicación: la búsqueda será por queryString (y se buscará en los campos street_name, country, admin_area_levels) o por geohash. En ambos casos debes cambiar <span v-pre>`{{field_name}}`</span> por el nombre del campo de ubicación del tipo de contenido
-    - <span v-pre>`.../?fields.{{field_name}}[search]=chile`</span>. Con el campo llamado `location` quedaría: `.../?fields.location[search]=chile` Esta búsqueda no toma en cuenta mayúsculas ni minúsculas, pero sí toma en cuenta los espacios, tildes y caracteres especiales.
+- Campos del tipo de contenido, por ejemplo:
+  - Ubicación: la búsqueda será por queryString (y se buscará en la dirección, el país y las áreas administrativas) o por geohash. En ambos casos debes cambiar <span v-pre>`{{field_name}}`</span> por el nombre de un campo de ubicación del tipo de contenido. Ese nombre sólo habilita el operador: la búsqueda considera todos los campos de ubicación del tipo de contenido, así que si el tipo tiene más de uno, el resultado incluye las entradas que coinciden en cualquiera de ellos.
+    - <span v-pre>`.../?fields.{{field_name}}[search]=chile`</span>. Con el campo llamado `location` quedaría: `.../?fields.location[search]=chile` En la dirección, esta búsqueda no toma en cuenta mayúsculas ni minúsculas, pero sí los espacios, tildes y caracteres especiales. En el país y las áreas administrativas la coincidencia es exacta, así que escribe el valor tal como está guardado, incluidas las mayúsculas.
     - <span v-pre>`.../?fields.{{field_name}}[geohash]=66j`</span>. Con el campo llamado `location` quedaría: `.../?fields.location[geohash]=66j`
   - `.../entries?fields.color=black`
 
@@ -575,7 +580,7 @@ El idioma que pidas tiene que estar habilitado en el Espacio. Si no lo está, la
 
 Las principales operaciones sobre campos son:
 
-- [gt],[lt] = greater/less than, aplicable en enteros y fechas
+- [gt],[lt] = greater/less than, aplicable en campos Booleano, Decimal, Entero y Fecha, y en `meta.created_at`, `meta.updated_at` y `meta.published_at`. Si combinas [gt] y [lt] sobre un mismo campo numérico o de fecha, el valor de [lt] tiene que ser mayor que el de [gt]; si no, la petición responde `400`.
 - [in] = permite incluir varios valores que entran en una consulta tipo OR
 - [has] = permite incluir varios valores, que entran en una consulta tipo AND, sólo funciona en campos múltiples y de texto.
 - [nin] = permite incluir varios valores, que entran en una consulta NOT IN
@@ -584,18 +589,18 @@ Las principales operaciones sobre campos son:
 
 Ejemplo:
 
-- `../entries?meta.created_at[in][]=1987-11-19T13:13:13&meta.created_at[in][]=1987-11-19T14:14:14` buscará entries creadas el 11 de noviembre, tanto a las 13:13 como 14:14
+- `../entries?meta.created_at[in][]=1987-11-19T13:13:13&meta.created_at[in][]=1987-11-19T14:14:14` buscará entries creadas el 19 de noviembre de 1987, exactamente a las 13:13:13 o a las 14:14:14
 
 ##### Campos retornados
 
-Mediante el parámetro fields se puede escoger qué parámetros se devuelven en el documento:
-
-Los campos de metadata se referencian como: meta.attr_name (ej meta.tags)
-Los campos de las entries como: field.attr_name
-Se usa una expresiónJsonPath por ejemplo:
+Mediante el parámetro `fields` puedes escoger qué valores se devuelven, con una expresión JSONPath que se aplica sobre la respuesta completa. En el listado, los atributos de metadata se referencian como `$.entries[*].meta.attr_name` (ej: `$.entries[*].meta.tags`) y los campos de las entradas como `$.entries[*].fields.attr_name`. En una entrada puntual, las rutas son `$.meta.attr_name` y `$.fields.attr_name`. Por ejemplo:
 
 `.../entries?fields=$.entries[*].meta.uuid` para obtener sólo los uuid de la meta-data de los entries.
 `.../entries?fields=$..description` para obtener todos los campos _description_ en los entries.
+
+:::warning Atención
+Cuando usas `fields`, la respuesta deja de ser el objeto original (en el listado, el que tiene `entries` y `meta`) y pasa a ser un arreglo con los valores que coinciden con la expresión, sin `meta.total_entries` ni los datos de paginación. Si la expresión no es válida, la petición responde `400`.
+:::
 
 ##### Igualdades/Desigualdades en arrays
 
@@ -624,6 +629,9 @@ Los atributos de metadata que puedes usar en `sort_by` son:
 - `meta.updated_at`
 - `meta.published_at`
 - `meta.unpublished_at`
+- `meta.category`
+- `meta.category_slug`
+- `meta.category_name`
 
 ```shell
 curl -X GET "https://my_account.modyo.com/api/content/spaces/my_space/types/my_type/entries?sort_by=meta.published_at&order=desc"
@@ -638,12 +646,12 @@ curl -X GET "https://my_account.modyo.com/api/content/spaces/my_space/types/my_t
 ```
 
 :::warning Atención
-`meta.tags` no es ordenable, sólo sirve como filtro. Tampoco uses `meta.category`, `meta.category_slug` ni `meta.category_name` como criterio de orden: la API los acepta como parámetro, pero no puede resolver el orden y la petición falla.
+`meta.tags` no es ordenable, sólo sirve como filtro.
 :::
 
 ### Vista previa
 
-Por defecto, la API de contenido entrega sólo las versiones publicadas de las entradas. Si el navegador que hace la petición tiene una sesión de administrador con el [modo vista previa](/es/platform/core/#modos-de-vista-previa) abierto, y el selector **SDK de contenido** de la barra de vista previa está en **Editable**, la API entrega las versiones editables de las entradas en lugar de las publicadas. En esas respuestas, `meta.version_type` llega con el valor `editable`.
+Por defecto, la API de contenido entrega sólo las versiones publicadas de las entradas. Cuando abres una página del sitio en [modo vista previa](/es/platform/core/#modos-de-vista-previa) con el selector **SDK de contenido** de la barra de vista previa en **Editable**, la plataforma agrega a esa página un token de vista previa. Las llamadas que la página hace a la API de contenido con `fetch` o `XMLHttpRequest`, ya sea a su mismo dominio o al dominio de la cuenta, viajan con ese token, y la API entrega las versiones editables de las entradas en lugar de las publicadas. En esas respuestas, `meta.version_type` llega con el valor `editable`.
 
 Esto aplica tanto al listado de entradas como a una entrada puntual:
 
@@ -655,17 +663,20 @@ https://www.example.com/api/content/spaces/:space_uid/types/:type_uid/entries/:e
 
 Sólo los endpoints de entradas cambian de versión. El esquema del tipo de contenido, las categorías y las ubicaciones no se ven afectados por el selector.
 
-Mientras la sesión de vista previa está abierta, la respuesta deja de ser cacheable: la cabecera `cache-control` pasa de `public, no-cache` a `no-store, must-revalidate, private, max-age=0`, para que ni el navegador ni la CDN guarden una versión editable. Esto ocurre incluso cuando el selector está en **Publicada**.
+Cuando la petición trae un token de vista previa válido, la respuesta deja de ser cacheable: la cabecera `cache-control` pasa de `public, no-cache` a `no-store, must-revalidate, private, max-age=0`, para que ni el navegador ni la CDN guarden una versión editable. Con el selector en **Publicada**, la página no recibe el token y las respuestas mantienen `public, no-cache`.
+
+La plataforma agrega el token a la URL de cada llamada con los parámetros `preview_token` y `preview_nonce`, que la API no considera como filtros.
 
 La API vuelve a entregar contenido publicado cuando se cumple cualquiera de estas condiciones:
 
-- La petición no viaja con la cookie de sesión del panel de administración, o no hay una sesión de vista previa abierta.
+- La petición no lleva el token de vista previa, por ejemplo porque se hace directamente a la API desde otra pestaña, desde un servidor, con `curl` o desde un front-end local, aunque sea en el mismo navegador. Tampoco lo llevan las peticiones que no usan el `fetch` o el `XMLHttpRequest` de la propia página, como las de un web worker.
+- El token venció. Dura 60 minutos desde que se cargó la página: si la mantienes abierta más tiempo, recárgala.
 - La sesión de administrador está impersonando a un usuario.
 - La sesión perdió su autorización, por ejemplo porque se cerró sesión o un administrador revocó el acceso.
 - La cuenta valida la huella del navegador y la petición no coincide con el navegador que abrió la sesión.
 
 :::warning Atención
-La vista previa de la API depende de la sesión del navegador que hace la petición, así que nunca expone versiones editables a un usuario final anónimo ni a un consumo desde servidor. El riesgo es el opuesto: si desarrollas tu capa de consumo en el mismo navegador donde tienes el modo vista previa abierto, vas a ver versiones editables donde tu aplicación en producción verá contenido publicado. Verifica las respuestas en una ventana sin la sesión de administrador antes de darlas por buenas.
+La vista previa de la API depende del token que la plataforma agrega a la página abierta en vista previa, así que un usuario final anónimo o un consumo desde servidor siempre recibe contenido publicado. Para revisar lo que verá tu aplicación en producción, basta con llamar a la API directamente, fuera de esa página, por ejemplo desde otra pestaña.
 :::
 
 ### Contenido privado
@@ -706,7 +717,7 @@ Por ejemplo:
 ```
 
 :::warning Atención
-Para pedir el token necesitas la credencial de un usuario con sesión iniciada en el reino. Sin ella el endpoint responde `401` con <code v-pre>{"error":{"user_session":"user not found"}}</code>, no `404`. El `404` es otra cosa: aparece cuando el `realm_uid` de la URL no corresponde a ningún reino activo de la cuenta. La referencia interactiva de `ACCOUNT_URL/api/customers/docs` sólo declara el `404` para este endpoint, así que no te guíes por ella en este punto. Las credenciales que acepta la API de Customers están en [Autenticación](/es/platform/customers/api.html#autenticacion).
+Para pedir el token necesitas la credencial de un usuario con sesión iniciada en el reino. Sin ella el endpoint responde `401` con <code v-pre>{"error":{"user_session":"user not found"}}</code>, no `404`. El `404` es otra cosa: aparece cuando el `realm_uid` de la URL no corresponde a ningún reino activo de la cuenta. Si el usuario tiene pendiente restablecer su contraseña, el endpoint responde `403` hasta que inicie sesión con su nombre de usuario y contraseña para completar el proceso. Las credenciales que acepta la API de Customers están en [Autenticación](/es/platform/customers/api.html#autenticacion).
 :::
 
 :::warning Atención
