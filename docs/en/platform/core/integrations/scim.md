@@ -89,7 +89,7 @@ Besides Entra ID, you can connect any SCIM 2.0 client to the Modyo server. The b
 
 | Resource | Methods | Description |
 |:--|:--|:--|
-| `/Users` | `GET`, `POST` | Lists and creates users. The listing supports pagination with `startIndex` and `count`, and the `userName eq "value"` filter; filtering by `externalId` is not supported. Any other operator or attribute responds `400`. |
+| `/Users` | `GET`, `POST` | Lists and creates users. The listing supports pagination with `startIndex` and `count`, and the `userName eq "value"` filter; filtering by `externalId` is not supported. Any other operator, or an attribute other than `userName` and `externalId`, responds `400`. |
 | `/Users/:id` | `GET`, `PATCH`, `PUT` | Gets and updates a user. `PATCH` accepts operations on `userName`, `name`, `emails`, and `active`. `PUT` is an alias of `PATCH` and expects the same body. |
 | `/Groups` | `GET`, `POST` | Lists and creates groups. |
 | `/Groups/:id` | `GET`, `PATCH`, `PUT`, `DELETE` | Gets, updates, and deletes a group. `PUT` is an alias of `PATCH` and expects the same body. |

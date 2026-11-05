@@ -89,7 +89,7 @@ Además de Entra ID, puedes conectar cualquier cliente SCIM 2.0 contra el servid
 
 | Recurso | Métodos | Descripción |
 |:--|:--|:--|
-| `/Users` | `GET`, `POST` | Lista y crea usuarios. El listado admite paginación con `startIndex` y `count`, y el filtro `userName eq "valor"`; no se admite filtrar por `externalId`. Otro operador u otro atributo responde `400`. |
+| `/Users` | `GET`, `POST` | Lista y crea usuarios. El listado admite paginación con `startIndex` y `count`, y el filtro `userName eq "valor"`; no se admite filtrar por `externalId`. Cualquier otro operador, o un atributo distinto de `userName` y `externalId`, responde `400`. |
 | `/Users/:id` | `GET`, `PATCH`, `PUT` | Consulta y actualiza un usuario. El `PATCH` acepta operaciones sobre `userName`, `name`, `emails` y `active`. `PUT` es un alias de `PATCH` y espera el mismo cuerpo. |
 | `/Groups` | `GET`, `POST` | Lista y crea grupos. |
 | `/Groups/:id` | `GET`, `PATCH`, `PUT`, `DELETE` | Consulta, actualiza y elimina un grupo. `PUT` es un alias de `PATCH` y espera el mismo cuerpo. |
