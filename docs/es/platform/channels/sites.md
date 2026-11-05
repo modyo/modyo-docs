@@ -72,7 +72,7 @@ La copia toma el nombre y el host de la original precedidos de **Copia de**. Si 
 - Los stages de la aplicación original.
 - El estado: la copia siempre nace en estado **Editable**, aunque la original esté **Habilitado**.
 
-Todo el contenido de la copia nace sin publicar, así que debes publicarlo antes de que sea visible.
+La copia conserva el estado de publicación de la original: lo que está publicado en la original queda publicado en la copia, y los cambios sin publicar quedan como cambios pendientes. Como la copia nace en estado **Editable**, no es visible al público hasta que cambies su estado a **Habilitado**.
 
 :::tip Tip
 El clonado toma un tiempo y ocurre en segundo plano. Mientras dura, la ventana muestra el mensaje "Esto demorará un tiempo, la aplicación está siendo clonada" y la copia todavía no aparece en el listado de aplicaciones.
@@ -115,12 +115,12 @@ Cuando la aplicación tiene la [revisión en equipo](/es/platform/channels/sites
 
 ### Acceso a la sincronización
 
-El bloque **Etapa** solo aparece si tu rol tiene alguno de los permisos de sincronización, y el botón cambia según cuál sea:
+El bloque **Etapa** solo aparece si tu rol tiene el permiso **Administrar Sincronizaciones**, **Ver Sincronizaciones** o **Gestionar Canales**, y el botón cambia según cuál sea:
 
-- Con **Administrar Sincronizaciones** ves **Sincronizar** y puedes [sincronizar el stage](/es/platform/channels/sites.html#sincronizar-un-stage).
+- Con **Administrar Sincronizaciones** o **Gestionar Canales** ves **Sincronizar** y puedes [sincronizar el stage](/es/platform/channels/sites.html#sincronizar-un-stage). Si estás en el stage `main` y la aplicación no tiene otros stages en estado **Habilitado** o **Editable**, ves **Sincronizar (solo lectura)** aunque tengas estos permisos.
 - Con **Ver Sincronizaciones** ves **Sincronizar (solo lectura)**: entras a la vista de sincronización y revisas las diferencias, pero no puedes aplicarlas.
 
-Si la aplicación tiene cambios sin publicar, junto al nombre del stage aparece un ícono de advertencia con el mensaje "Tienes que publicar todos los cambios antes de sincronizar", y al hacer click en **Sincronizar** Modyo te pide confirmación antes de continuar.
+Si puedes sincronizar y la aplicación tiene cambios sin publicar, junto al nombre del stage aparece un ícono de advertencia con el mensaje "Tienes que publicar todos los cambios antes de sincronizar", y al hacer click en **Sincronizar** Modyo te pide confirmación antes de continuar.
 
 ## Revisión y publicación conjunta
 
@@ -579,13 +579,16 @@ Las principales ventajas de tener distintas etapas en tus web apps son:
 - Un web app puede tener un máximo de cuatro stages.
 - Los cambios que realices en un stage solo se reflejan en ese stage.
 - Los reinos también tienen sus propios stages, independientes de los de las aplicaciones web. Revisa [Stages](/es/platform/customers/realms.html#stages) en Reinos.
-- Las PWAs y redirecciones personalizadas se deshabilitan en los stages. Solo se pueden usar en el stage `main`.
+- Las redirecciones personalizadas se deshabilitan en los stages. Solo se pueden usar en el stage `main`.
+- Al crearse, cada stage copia la configuración de PWA de su stage de origen. Después puedes modificarla en cada stage por separado.
 - La sección de miembros del equipos es independiente en cada stage `main`. Agrega miembros para habilitar la revisión de equipo.
 - Puedes tener los mismos miembros con diferentes roles y permisos para cada stage.
 - Las páginas de originación se copian al nuevo stage sin la originación vinculada. Como cada originación admite una sola página, para usarlas en el stage debes vincular una originación distinta del mismo reino.
 :::
 
 #### Agregar un nuevo stage
+
+Antes de crear un stage, publica los cambios pendientes del stage de origen. Si tiene cambios sin publicar, la ventana te avisa y el botón **Crear** queda deshabilitado. Publica los cambios y vuelve a abrir la ventana.
 
 Para agregar un nuevo stage a tu web app, sigue estos pasos:
 
@@ -595,7 +598,13 @@ Para agregar un nuevo stage a tu web app, sigue estos pasos:
 1. Haz click en stages.
 1. Da click en **nuevo stage**.
 1. Selecciona el stage de origen y nombra tu nuevo stage.
-1. Haz click en **crear**.
+1. Haz click en **Crear**.
+
+La creación del stage continúa en segundo plano, así que puedes cerrar la ventana. Mientras dura, el nuevo stage no aparece en el listado de stages. Si mantienes la ventana abierta, al terminar verás uno de estos resultados:
+
+- Si se clonaron todos los elementos, aparece el mensaje "Stage creado exitosamente" y el listado se actualiza.
+- Si algunos elementos no pudieron clonarse, el stage se crea igual y la ventana muestra la lista de esos elementos y el motivo de cada uno, junto al mensaje "El stage se creó, pero algunos elementos no pudieron clonarse. El detalle queda en el log de creación del stage."
+- Si la creación no pudo completarse, la ventana muestra el mensaje "No se pudo completar la creación del stage".
 
 
 :::tip Tip
@@ -620,7 +629,7 @@ Para sincronizar un stage sigue estos pasos:
 
 
 :::warning Atención
-- Los elementos de un stage asociados a un segmento no se sincronizan. Deberás repetir el proceso manualmente en el nuevo stage, una vez concluida la sincronización.
+- Las páginas y los ítems de menú asociados a segmentos también se sincronizan. Si el elemento ya existe en el stage de destino con segmentos asignados, conserva esos segmentos y no toma los del stage de origen; si no los tiene, recibe los del origen.
 - La originación vinculada a una página de originación tampoco se sincroniza: cada stage conserva la suya y esa diferencia no aparece en el listado de elementos por sincronizar.
 :::
 
@@ -632,7 +641,7 @@ Para eliminar un stage, sigue estos pasos:
 1. Haz click en configuración de la aplicación.
 1. Haz click en General.
 1. En la sección zona peligrosa haz click en **eliminar stage**.
-1. Ingresa el nombre de tu stage.
+1. En **Nombre de la aplicación**, escribe el nombre completo del stage tal como aparece en el campo **Nombre de la aplicación** de la sección General (por ejemplo, `qa Mi sitio`, no solo `qa`).
 1. Haz click en **borrar**.
 
 
