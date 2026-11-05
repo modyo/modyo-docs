@@ -111,14 +111,16 @@ Para el correcto funcionamiento de una integración con OpenID Connect, es neces
 :::
 
 :::warning Atención
-La API para obtención de access tokens delegados vía  `/auth/openidc/access_token` está obsoleta y ha sido reemplazada por `/api/profile/me`.
+La API para obtener access tokens delegados vía `/auth/openidc/access_token` fue eliminada. Para obtener el access token que emite el proveedor, usa `/api/customers/realms/{realm_uid}/me` y lee el campo `delegated_token`, como se explica en [Tokens delegados](/es/platform/customers/api.html#tokens-delegados).
 :::
 
 ### Configuración de la integración
 
-1. Accede a **Configuración/Configuración de reino > Reino > Proveedores de Identidad > Añadir > OpenID Connect** y completa **Client ID** y **Secret** con el nombre del cliente y sus credenciales.
+1. Agrega la integración **OpenID Connect** y completa **ID de cliente** y **Secreto** con el nombre del cliente y sus credenciales:
+   * Para usuarios de equipo, sigue los pasos de [Agregar un Proveedor de Identidad](#agregar-un-proveedor-de-identidad).
+   * Para usuarios de un reino, en **Customers > Reinos** haz click en el reino y luego en **Configuración de reino > Integraciones**. En la categoría **Proveedores de identidad**, haz click en **Instalar** en **OpenID Connect**. Una vez instalada, la encuentras en **Instalado**, donde puedes editarla con **Configurar**.
 2. En Issuer, rellena con la URL del realm, por ejemplo, para el realm `my-realm` la URL es `https://test.example.com/auth/realms/my-realm`.
-3. Haz click en **Lanzar servicio de descubrimiento**. Así se completará la mayoría de las configuraciones.
+3. Haz click en **Ejecutar servicio de detección**. Así se completará la mayoría de las configuraciones.
 4. Configura los **Scopes** con los scopes requeridos para la aplicación. Usa `openid,email,profile` en caso de que no cuentes con scopes personalizados.
 
 <img src="/assets/img/platform/keycloak-new-idp.png" alt="Modyo's new identity provider page." width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
@@ -150,13 +152,12 @@ Al momento de realizar una integración específica, Modyo te permite habilitar 
 
 | Opción                                                              | Descripción                                                                                                                                                                                                                                                                                                                     |
 |:--------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Habilitar cierre de sesión**                                      | Habilita el cierre de sesión en el provider al cerrar la sesión en Modyo. Esto permite cerrar efectivamente la sesión, obligando al usuario a identificarse nuevamente en el Proveedor de Identidad y deshabilitando la experiencia SSO.                                                                                                         |
-| **Habilitar refresh token**                                         | Habilita el refresco de tokens administrado por Modyo. Los access tokens serán renovados automáticamente por la plataforma si el usuario mantiene actividad en el sitio y cuenta con un refresh token válido.                                                                                                                   |
+| **Habilitar cierre de sesión remoto**                               | Habilita el cierre de sesión en el provider al cerrar la sesión en Modyo. Esto permite cerrar efectivamente la sesión, obligando al usuario a identificarse nuevamente en el Proveedor de Identidad y deshabilitando la experiencia SSO.                                                                                                         |
+| **Activar refresh token**                                           | Habilita el refresco de tokens administrado por Modyo. Los access tokens serán renovados automáticamente por la plataforma si el usuario mantiene actividad en el sitio y cuenta con un refresh token válido. Si la desactivas o el proveedor no entrega un refresh token, la sesión en Modyo se cierra cuando expira el access token del proveedor. También se cierra si la renovación falla.                                                                                                                   |
 | **Tiempo en segundos para la anticipación preventiva del refresh token** | Número en segundos que será usado como margen de tolerancia para obtener un access token utilizando el refresh token. Admite valores entre 0 y 100. |
-| **Habilitar revocación de token**                                   | Habilita la revocación de access tokens a través de API. Para la revocación, puedes usar el endpoint del proveedor para revokar tokens.                              |
-| **Activar token de actualización (Refresh Token)**                  | Habilita el uso de tokens de actualización de OAuth 2.0. Para refrescar tu access token, puedes usar el POST endpoint del proveedor enviando como headers <tt>grant_type: refresh_token, refresh_token: **mi-refresh-token**, client_id: **mi-client-id**</tt> |
+| **Habilitar revocación de tokens**                                  | Al cerrar sesión en Modyo, la plataforma revoca en el proveedor el refresh token de la sesión o, si no hay refresh token, el access token. Al habilitarla, **Endpoint de revocación de tokens** pasa a ser obligatorio. |
 | **Mostrar información de delegación**                               | Habilita más información en la [API de perfil de usuario](/es/platform/customers/api#api-de-customers) con respecto a tokens delegados. Esto es útil cuando se necesita el access token que emite el proveedor de identidad para conseguir acceso a algún otro servicio (e.g. una API externa).                           |
-| **Habilitar sincronización de claims al momento de iniciar sesión** | Habilita la sincronización de claims OpenID Connect con custom fields en Modyo. Más información en  [Sincronización de claims](#sincronizacion-de-claims).                                                                                                                                                                      |
+| **Habilitar la sincronización de claims al iniciar sesión**         | Habilita la sincronización de claims OpenID Connect con custom fields en Modyo. Más información en  [Sincronización de claims](#sincronizacion-de-claims).                                                                                                                                                                      |
 | **Habilitar User Info** | Permite que Modyo consulte el endpoint de User Info del proveedor para completar los datos del usuario. Viene habilitada por defecto y, mientras esté activa, **Endpoint de User Info** es obligatorio; el servicio de descubrimiento lo completa por ti. Si la desactivas, Modyo usa solo los claims que vienen en el id_token. |
 | **Incluir id_token_hint al cerrar sesión** | Agrega el parámetro `id_token_hint`, con el id_token de la sesión, a la URL de cierre de sesión remoto. Muchos proveedores lo usan para identificar la sesión que se cierra y omitir la pantalla de confirmación. Solo tiene efecto si el cierre de sesión remoto está habilitado. |
 
@@ -168,7 +169,21 @@ Modyo permite sincronizar atributos y otras propiedades de los usuarios de Custo
 
 1. En **Clients > Mappers** crea un nuevo **Protocol Mapper** con el atributo o propiedad del usuario. Asegúrate de que **Add to userinfo** esté habilitado.
 2. En **Customers > Reinos >  Configuración de reino > Custom fields** agrega un nuevo **Custom Field** con un tipo de datos equivalente al claim.
-3. En **Customers > Reinos > Configuración de reino > Proveedores de identidad > OpenID Connect** habilita **Enable _claims_ synchronization on login** y agrega _claims_ mappings para cada uno de tus _claims_.
+3. En **Customers > Reinos > Configuración de reino > Integraciones**, abre **Instalado** y haz click en **Configurar** en **OpenID Connect**. Activa **Habilitar la sincronización de claims al iniciar sesión** y, en **Mapeo de claims**, haz click en **Nuevo** para agregar un mapeo por cada _claim_: escribe en **Nombre** el nombre del _claim_ y elige en **Custom Fields** el campo que lo recibe.
+
+Con la sincronización activa, cada vez que el usuario inicia sesión, Modyo actualiza sus datos con los _claims_ que entrega el proveedor:
+
+- Nombre, apellido y correo, con `given_name`, `family_name` y `email`.
+- Género, con `gender`, si el _claim_ viene. Modyo reconoce los valores `male`, `female`, `nonbinary` y `other`.
+- Fecha de nacimiento, con `birthdate`. Si el _claim_ no viene, la fecha de nacimiento queda vacía.
+- Los custom fields que mapeaste.
+
+Al crear los mapeos, ten en cuenta lo siguiente:
+
+- Para un _claim_ anidado, usa notación con punto, por ejemplo `address.country`. No aplica a custom fields con opciones.
+- Si el custom field tiene opciones, escribe en **Valor** el valor del _claim_ que corresponde a cada opción.
+- Los _claims_ de tipo fecha deben venir en formato ISO 8601 `AAAA-MM-DD`.
+- Cada custom field admite un solo mapeo.
 
 ## Keycloak
 
@@ -191,9 +206,9 @@ Keycloak es un identity provider certificado de OpenID Connect que implementa la
 
 Después de configurar Keycloak, ahora tienes que completar la integración en Modyo Platform.
 
-1. Accede a **Configuración/Configuración de reino > Proveedores de Identidad > OpenID Connect** y completa **Client ID** y **Secret** con el nombre del cliente y las credenciales que aparecen en la tab **Credentials** del cliente en Keycloak.
+1. Agrega la integración **OpenID Connect** como se indica en [Configuración de la integración](#configuracion-de-la-integracion) y completa **ID de cliente** y **Secreto** con el nombre del cliente y las credenciales que aparecen en la tab **Credentials** del cliente en Keycloak.
 2. En Issuer, rellena con la URL del realm, por ejemplo, para el realm my-realm la URL es `https://keycloak.example.com/auth/realms/my-realm`.
-3. Haz click en **Lanzar servicio de descubrimiento**. Así se completará la mayoría de las configuraciones.
+3. Haz click en **Ejecutar servicio de detección**. Así se completará la mayoría de las configuraciones.
 4. Configura los **Scopes** con los scopes requeridos para la aplicación. Usa `openid,email,profile` en caso de que no cuentes con scopes personalizados.
 
 
@@ -226,16 +241,17 @@ Azure Entra ID es un servicio de identidad cloud de Microsoft Azure que permite 
 
 La siguiente configuración es válida tanto para las integraciones de usuarios de Equipos como de Customer.
 
-1. Desde la plataforma de Modyo, selecciona **Configuración/Configuración de reino** y haz click en **Proveedores de indentidad**.
-1. Selecciona **OpenID Connect** y completa **Client ID**, también llamado Id de aplicación, y **Secret** con las credenciales obtenidas del portal de Azure.
+1. Desde la plataforma de Modyo, agrega la integración **OpenID Connect** como se indica en [Configuración de la integración](#configuracion-de-la-integracion).
+1. Completa **ID de cliente**, también llamado Id de aplicación, y **Secreto** con las credenciales obtenidas del portal de Azure.
 1. En el portal de Azure, en Información General, haz click en Puntos de Conexión, y copia la URL de **Documento de Metadatos de OpenID Connect**.
 1. Abre la URL en tu navegador, busca **Issuer**, y copia su valor.
-1. En Modyo Platform, pega el valor en Issuer y haz click en **Run Discovery Service**. Al terminar el proceso, todos los URLs requeridos serán llenados automáticamente.
+1. En Modyo Platform, pega el valor en Issuer y haz click en **Ejecutar servicio de detección**. Al terminar el proceso, todos los URLs requeridos serán llenados automáticamente.
 1. Configura **Scopes** con los scopes requeridos para la aplicación. Usa `openid,profile,email` en caso de que no contar con scopes personalizados.
 1. Habilita características opcionales de la integración.
    |  Opción                                      |       Descripción                                                                                                                                                                                                                 |
    |----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-   | **Habilitar refresh token**                   | Habilita el refresco de tokens administrado por Modyo. Los access tokens serán renovados automáticamente por la plataforma si el usuario mantiene actividad en el sitio y cuenta con un refresh token válido.          |
-   | **Habilitar cierre de sesión**                   | Habilita el cierre de sesión en el provider al cerrar la sesión en Modyo. Esto permite cerrar efectivamente la sesión, obligando al usuario a identificarse nuevamente en Entra ID, y deshabilitando la experiencia SSO. |
-   | **Habilitar revocación de token**                | No soportado por Entra ID|
-   | **Mostrar información de delegación**                               | Habilita más información en la [API de perfil de usuario](/es/platform/customers/api#api-de-customers) con respecto a tokens delegados. Esto es útil cuando se necesita el access token que emite el proveedor de identidad para conseguir acceso a algún otro servicio (e.g. una API externa). |                   | **Habilitar sincronización de claims al momento de iniciar sesión** | Habilita la sincronización de claims OpenID Connect con custom fields en Modyo. Más información en  [Sincronización de claims](#sincronizacion-de-claims).               |
+   | **Activar refresh token** | Habilita el refresco de tokens administrado por Modyo. Los access tokens serán renovados automáticamente por la plataforma si el usuario mantiene actividad en el sitio y cuenta con un refresh token válido. Si la desactivas o el proveedor no entrega un refresh token, la sesión en Modyo se cierra cuando expira el access token del proveedor. También se cierra si la renovación falla. |
+   | **Habilitar cierre de sesión remoto** | Habilita el cierre de sesión en el provider al cerrar la sesión en Modyo. Esto permite cerrar efectivamente la sesión, obligando al usuario a identificarse nuevamente en Entra ID, y deshabilitando la experiencia SSO. |
+   | **Habilitar revocación de tokens** | No soportado por Entra ID |
+   | **Mostrar información de delegación** | Habilita más información en la [API de perfil de usuario](/es/platform/customers/api#api-de-customers) con respecto a tokens delegados. Esto es útil cuando se necesita el access token que emite el proveedor de identidad para conseguir acceso a algún otro servicio (e.g. una API externa). |
+   | **Habilitar la sincronización de claims al iniciar sesión** | Habilita la sincronización de claims OpenID Connect con custom fields en Modyo. Más información en [Sincronización de claims](#sincronizacion-de-claims). |
