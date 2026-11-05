@@ -316,7 +316,7 @@ With the **Use categories** option enabled, the full path of each entry's [categ
 - If the entry belongs to `travel`, it responds at `blog/travel/visit-chile`. If it has no category, it responds at `blog/visit-chile`.
 - The entry URL returned by the `entry` object in Liquid includes the path of its category.
 
-With the option disabled, all entries respond at `blog/visit-chile` regardless of their category, and the index only responds at `blog`. To read the category that comes in the URL from your templates, use the `category_path` and `category` variables [from content pages](/en/platform/channels/liquid-markup/variables.html#from-content-pages).
+With the option disabled, each entry responds at `blog/<slug>` regardless of its category (the one in the example, at `blog/visit-chile`), and the index only responds at `blog`. To read the category that comes in the URL from your templates, use the `category_path` and `category` variables [from content pages](/en/platform/channels/liquid-markup/variables.html#from-content-pages).
 
 ## Privacy
 

@@ -316,7 +316,7 @@ Con la opción **Usar categorías** activada, la ruta completa de la [categoría
 - Si la entrada pertenece a `viajes`, responde en `blog/viajes/visita-chile`. Si no tiene categoría, responde en `blog/visita-chile`.
 - La URL de la entrada que entrega el objeto `entry` en Liquid incluye la ruta de su categoría.
 
-Con la opción desactivada, todas las entradas responden en `blog/visita-chile`, sin importar su categoría, y el índice solo responde en `blog`. Para leer desde tus plantillas la categoría que viene en la URL, usa las variables `category_path` y `category` de [las páginas de contenido](/es/platform/channels/liquid-markup/variables.html#de-las-paginas-de-contenido).
+Con la opción desactivada, cada entrada responde en `blog/<slug>`, sin importar su categoría (la del ejemplo, en `blog/visita-chile`), y el índice solo responde en `blog`. Para leer desde tus plantillas la categoría que viene en la URL, usa las variables `category_path` y `category` de [las páginas de contenido](/es/platform/channels/liquid-markup/variables.html#de-las-paginas-de-contenido).
 
 ## Privacidad
 
