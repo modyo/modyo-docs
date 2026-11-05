@@ -366,13 +366,13 @@ Para almacenar información, los datos deben utilizar formato JSON válido, los 
 
 La petición POST a la URL de `getUrl()` guarda los datos y también puede cambiar el estado de la tarea, según el parámetro `completed`:
 
-- **Sin `completed`**: guarda los datos y marca la tarea como completada.
+- **Sin `completed`**: guarda los datos sin cambiar el estado de la tarea. La tarea se completa cuando el usuario presiona **Siguiente**.
 - **`completed: true`**: guarda los datos y marca la tarea como completada.
 - **`completed: false`**: guarda los datos sin completar la tarea. Si la tarea ya estaba completada, vuelve a quedar en curso.
 
 Usa solo `true` o `false` en `completed`. Cualquier otro valor se interpreta como `false`.
 
-`completed` va al mismo nivel que `content`, no dentro de él. Por ejemplo, para guardar datos sin completar la tarea:
+`completed` va al mismo nivel que `content`, no dentro de él. Por ejemplo, para guardar los datos y completar la tarea:
 
 ```js
 await fetch(getUrl(), {
@@ -382,7 +382,7 @@ await fetch(getUrl(), {
     'Accept': 'application/json',
     'Content-Type': 'application/json'
   },
-  body: JSON.stringify({ content: { plan: 'basic' }, completed: false })
+  body: JSON.stringify({ content: { plan: 'basic' }, completed: true })
 });
 ```
 
@@ -398,6 +398,10 @@ Para que una integración sepa que el usuario terminó un code snippet, suscribe
 :::
 
 Si la tarea tiene activada la opción **Bloquear las respuestas al completar**, el POST que la completa también registra **Tarea de respuesta de originación enviada**, porque después de eso el botón **Siguiente** ya no vuelve a enviar la tarea.
+
+Un POST sin `completed` no completa ni bloquea la tarea: el code snippet puede guardar datos varias veces y se conserva el último contenido, hasta que el usuario presiona **Siguiente** o el code snippet envía `completed: true`.
+
+Si una tarea de validación rechaza la respuesta del code snippet, el usuario puede corregirla aunque la tarea tenga **Bloquear las respuestas al completar**. Mientras corrige, un POST sin `completed: true` solo guarda los datos: el rechazo y su comentario siguen visibles y no se avisa a los validadores. La corrección se envía cuando el usuario presiona **Siguiente** o el code snippet envía `completed: true`. En ese momento se avisa a los validadores y, si la tarea tiene esa opción, vuelve a quedar bloqueada.
 
 #### Uso de Liquid en code snippets
 
