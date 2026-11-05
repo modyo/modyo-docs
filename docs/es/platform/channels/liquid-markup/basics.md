@@ -171,23 +171,33 @@ Verifica si un string contiene otro o si un array contiene un elemento:
 
 ## Orden de Operaciones
 
-Liquid no sigue el orden matemático tradicional. Las operaciones se ejecutan de derecha a izquierda:
+Los filtros se aplican de izquierda a derecha, en el orden en que los escribes, y cada uno recibe el resultado del anterior:
 
 ```liquid
 {{ 10 | plus: 5 | times: 2 }}
 ```
 
 Se ejecuta como:
-- `5 | times: 2` = 10
-- `10 | plus: 10` = 20
+- `10 | plus: 5` = 15
+- `15 | times: 2` = 30
 
-Para controlar el orden, usa paréntesis o variables intermedias:
+Los paréntesis no agrupan operaciones; en Liquid solo sirven para definir rangos, como `(1..5)`. Para controlar el orden, usa variables intermedias:
 
 ```liquid
-{% assign temp = 10 | plus: 5 %}
-{{ temp | times: 2 }}
+{% assign temp = 5 | times: 2 %}
+{{ 10 | plus: temp }}
 ```
-Resultado: 30
+Resultado: 20
+
+En las condiciones, los operadores `and` y `or` se evalúan de derecha a izquierda:
+
+```liquid
+{% if false and false or true %}
+  Este texto no se muestra
+{% endif %}
+```
+
+Liquid evalúa primero `false or true` y después aplica `false and` a ese resultado, así que la condición es falsa. Si necesitas otro orden, usa sentencias `if` anidadas; consulta [If / else](/es/platform/channels/liquid-markup/tags.html#if-else).
 
 ## Trabajando con Variables
 
@@ -313,7 +323,7 @@ O usa HTML entities:
 
 Modyo revisa la sintaxis de Liquid cuando guardas una plantilla, pero esa revisión solo cubre el análisis: detecta un tag mal cerrado o un argumento inválido y te impide guardar. Todo lo que falla durante el renderizado pasa esa revisión sin problemas y llega a la página publicada.
 
-En tiempo de renderizado la plataforma corre en modo no estricto: el render no rompe la página, la degrada en silencio. Estos son los cuatro síntomas que vas a encontrar y qué significa cada uno.
+En tiempo de renderizado la plataforma corre en modo no estricto: el render no rompe la página, la degrada en silencio. Estos son los cinco síntomas que vas a encontrar y qué significa cada uno.
 
 ### Una variable o un atributo que no existe imprime vacío
 
@@ -352,14 +362,22 @@ Hay accesos que no rinden vacío sino que abortan el renderizado. Son los que bu
 
 Si el identificador no corresponde a nada, no obtienes un valor vacío: obtienes un error de renderizado y el comentario en su lugar. No hay forma de comprobarlo antes, porque cualquier comprobación pasa por indexar. Lo que sí puedes hacer es contener el daño: agrupa el acceso y su uso dentro del mismo <code v-pre>{% if %}</code>, para que el error se lleve ese bloque completo en vez de dejar el comentario en medio de un atributo HTML y romper el marcado.
 
+### Un snippet que no existe no imprime nada
+
+Si el nombre que usas en <code v-pre>{% snippet %}</code> no corresponde a ningún snippet disponible para el sitio, el tag no falla: imprime una cadena vacía y no deja el comentario `<!-- Liquid Error -->`. Un nombre mal escrito hace que el contenido del snippet desaparezca de la página sin dejar rastro.
+
+Distinto es un nombre con caracteres que el tag no admite, como un guion medio, un punto o un espacio: en ese caso sí obtienes un error de renderizado y el comentario `<!-- Liquid Error -->` en su lugar. Para que el tag pueda incluirlo, el nombre solo puede tener letras, números y guiones bajos, más `/` para indicar la ruta, como en `shared/general/header`.
+
 ### Los snippets se pueden anidar hasta 99 niveles
 
 Las cadenas de snippets tienen tope. Puedes anidar hasta 99 niveles; el intento de abrir el nivel 100 no se ejecuta y, en su lugar, la página publica el texto literal `[Liquid Internal Error] Nesting too deep`.
 
 Ver ese texto en una página casi siempre significa que un snippet se incluye a sí mismo, directa o indirectamente. Revisa la cadena de <code v-pre>{% snippet %}</code> a partir del punto donde aparece el mensaje.
 
+Ese tope no es exclusivo de los snippets: cada <code v-pre>{% for %}</code> (y cada <code v-pre>{% tablerow %}</code>) en ejecución también suma un nivel de anidamiento, y entre todos no pueden pasar de 99. Por eso un snippet recursivo que se llama dentro de un `for`, como el que recorre un árbol de categorías o un menú, se corta cerca del nivel 50. En ese caso el corte puede aparecer como el texto `[Liquid Internal Error] Nesting too deep` o como el comentario `<!-- Liquid Error -->`, según si el tope lo alcanza el snippet o el `for`.
+
 :::warning Atención
-Ninguno de estos cuatro comportamientos se detecta al guardar la plantilla, porque todos ocurren en tiempo de renderizado. Una plantilla puede guardarse y publicarse sin una sola advertencia y aun así imprimir vacíos, comentarios de error o el nombre interno de un objeto. Consulta [Errores en Vistas](/es/platform/channels/templates.html#errores-en-vistas).
+Ninguno de estos cinco comportamientos se detecta al guardar la plantilla, porque todos ocurren en tiempo de renderizado. Una plantilla puede guardarse y publicarse sin una sola advertencia y aun así imprimir vacíos, comentarios de error o el nombre interno de un objeto. Consulta [Errores en Vistas](/es/platform/channels/templates.html#errores-en-vistas).
 :::
 
 ## Convenciones y Mejores Prácticas
@@ -404,7 +422,9 @@ Liquid es un lenguaje diseñado para ser seguro. No puedes:
 - Acceder al sistema de archivos directamente
 - Ejecutar código arbitrario
 - Modificar datos (solo leer y mostrar)
-- Crear loops infinitos (hay límites de iteración)
+- Crear loops infinitos, porque los bucles siempre recorren una colección o un rango finito
+
+Aun así, no hay un tope de iteraciones: un `for` sobre un rango o una colección muy grande se ejecuta completo y vuelve lento el renderizado de la página.
 :::
 
 :::warning Ejecución desde el Servidor
