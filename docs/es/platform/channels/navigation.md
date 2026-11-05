@@ -94,6 +94,8 @@ En la sección lateral derecha, puedes ver una barra que cambia de acuerdo al í
 - **Privado**: Hace que el elemento seleccionado sea visible solo cuando hay una sesión de usuario activa en el sitio.
 - **Segmentos**: Si hay segmentos creados, también podrás segmentar este elemento para que los usuarios puedan ver este ítem de menú solo cuando tengan una sesión activa y que además se encuentren dentro de los segmentos seleccionados.
 
+**Privado** y **Segmentos** solo aparecen si el sitio está conectado a un [reino](/es/platform/channels/sites.html#general), y los segmentos que puedes elegir son los de ese reino.
+
 ## El tag menu
 
 El tag <span v-pre>`{% menu %}`</span> imprime un menú completo, con sus dropdowns, sin que tengas que escribir el marcado. Es el camino rápido: si necesitas control total sobre el HTML, arma el menú a mano recorriendo `menus`, como se muestra en los ejemplos de más abajo.

@@ -323,7 +323,7 @@ To create a category:
 1. Click on the **New Category** button.
 1. In the pop-up window, enter the name, path, and, optionally, a parent category.
 
-When you assign an entry to a category, Modyo adds the identifier as a prefix to the URL of the entry, for example:
+When you assign an entry to a category and the content page that displays it has the **Use categories** option enabled (see [URLs with categories](/en/platform/channels/pages.html#urls-with-categories)), Modyo adds the category path as a prefix to the URL of the entry, for example:
 
 An entry with URL: test.modyo.com/visita-chile and category 'travel' would now be test.modyo.com/travel/visita-chile.
 

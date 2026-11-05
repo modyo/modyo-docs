@@ -94,6 +94,8 @@ In the right sidebar, you will see a bar that changes according to the item sele
 - **Private**: Makes the selected element visible only when there is an active user session on the site.
 - **Segments**: If segments are created, you can also segment this element so that users can see this menu item only when they have an active session and are also within the selected segments.
 
+**Private** and **Segments** only appear if the site is connected to a [realm](/en/platform/channels/sites.html#general), and the segments you can choose are those of that realm.
+
 ## The menu tag
 
 The <span v-pre>`{% menu %}`</span> tag prints a full menu, dropdowns included, without you having to write the markup. It is the quick path: if you need full control over the HTML, build the menu by hand from `menus`, as shown in the examples below.

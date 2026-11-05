@@ -323,7 +323,7 @@ Para crear una categoría:
 1. Haz click en el botón **Nueva categoría**.
 1. En la ventana emergente, ingresa el nombre, la ruta y, opcionalmente, una categoría padre.
 
-Cuando asignas una entrada a una categoría, Modyo agrega el identificador como prefijo a la URL de la entrada, por ejemplo:
+Cuando asignas una entrada a una categoría y la página de contenido que la despliega tiene activada la opción **Usar categorías** (revisa [URLs con categorías](/es/platform/channels/pages.html#urls-con-categorias)), Modyo agrega la ruta de la categoría como prefijo a la URL de la entrada, por ejemplo:
 
 Una entrada con URL: test.modyo.com/visita-chile y categoría ‘travel’, ahora sería test.modyo.com/travel/visita-chile.
 
