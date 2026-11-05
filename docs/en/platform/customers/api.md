@@ -35,7 +35,7 @@ The only supported flow is `authorization_code`. The realm does not issue tokens
 To start you need an OAuth client of the realm, created as described in [OAuth client](/en/platform/customers/settings.html#oauth-client). Clicking the client name shows its **UID** and its **Secret**, which are the `client_id` and the `client_secret` of the flow, together with the ready-made authorization URL in **Client Web** and the realm endpoints ready to copy in **Client Mobile**.
 
 1. Send the user to `ACCOUNT_URL/realms/{realm_uid}/oauth/authorize` with the `response_type=code`, `client_id` and `redirect_uri` parameters and, if you need them, `scope` and `state`.
-2. If the user does not have a session in the realm yet, Modyo sends them to the login screen and resumes the authorization when they finish. There is no consent screen: as soon as there is a session, Modyo redirects to your **Redirect URI** with the `code` parameter.
+2. If the user does not have a session in the realm yet, Modyo sends them to the login screen. When they finish, Modyo does not resume the authorization: the user lands on the URL set in **After login redirect to** in the [realm settings](/en/platform/customers/settings.html#general) or, if there is none, on their profile. Your application has to send them to the authorization URL again, which now returns the code right away. There is no consent screen: as soon as there is a session, Modyo redirects to your **Redirect URI** with the `code` parameter.
 3. Exchange the code at the token endpoint. The code lives ten minutes and works only once.
 4. Use the `access_token` from the response in the `Authorization` header of your calls.
 
@@ -94,9 +94,7 @@ Access the Customers API to manage realms and users through the URL `ACCOUNT_URL
 
 ### Delegated tokens
 
-By enabling the [**Show delegation information**](/en/platform/core/integrations/identity-providers) option in your identity providers, using the API `account_url/api/customers/realms/{realm_uid}/me`, you'll get a JSON with added information about delegated tokens similar to this:
-
-If you enable the [**Show delegation information**](/en/platform/core/integrations/identity-providers) option in identity providers, the `account_url/api/customers/realms/{realm_uid}/me` endpoint will include a JSON with information about delegated tokens:
+If you enable the [**Display delegation info**](/en/platform/core/integrations/identity-providers.html#optional-integration-settings) option in an OpenID Connect identity provider, the `account_url/api/customers/realms/{realm_uid}/me` endpoint will include a JSON with information about delegated tokens:
 
 
 ``curl -X GET test.modyo.com/api/customers/realms/miRealm/me``
@@ -124,12 +122,15 @@ If you enable the [**Show delegation information**](/en/platform/core/integratio
       "uuid":"af57d947-69dc-4ed7-b5af-418c957d827f",
       "access_token":"TOKEN",
       "access_token_expires_in":300,
-      "access_token_expires_in_datetime":"2021-04-15T21:42:55.995+00:00"
+      "access_token_expires_in_datetime":"2021-04-15T21:42:55.995+00:00",
+      "revalidate_in":280
    }
 ```
 
+`revalidate_in` tells how many seconds are left before the delegated access token must be renewed. If the provider has **Enable refresh token** turned on, the period discounts the margin set in **Time in seconds for the anticipation of the preventive refresh token**. Once the period is over, it is `0`.
+
 :::tip Tip
-If you do not have the **Show delegation information** option enabled, null (void) will be displayed.
+`delegated_token` only carries data when the user started the current session with an OpenID Connect provider that has **Display delegation info** turned on. In any other case it is `null`, even when the user logged in with their Modyo credentials, with SAML, Google or OAuth2, and even if another provider of the realm has the option turned on.
 :::
 
 ### Update user information
@@ -144,7 +145,7 @@ Custom fields that do not have **Visible to front end users** and **Editable by 
 
 `GET ACCOUNT_URL/api/customers/realms/{realm_uid}/events`
 
-Returns the [business events](/en/platform/customers/events.html) of the session user, from the most recent to the oldest. It is the same log an admin sees in **Customers > Realms > Events**, narrowed down to that user. It does not appear in the interactive reference at `ACCOUNT_URL/api/customers/docs`.
+Returns the [business events](/en/platform/customers/events.html) of the session user, from the most recent to the oldest. It is the same log an admin sees in **Customers > Realms > Events**, narrowed down to that user. It is also described in the interactive reference at `ACCOUNT_URL/api/customers/docs`.
 
 It accepts these parameters, all optional:
 
@@ -204,6 +205,7 @@ The body carries the following attributes:
 | `due_status_label` | Deadline status label in parentheses, such as `(On track)`, `(Due soon)` or `(Overdue)`. It is `null` when the submission is not pending. |
 | `due_extension_days` | Extension days granted to the deadline, or `null` if the origination has no deadline configured. |
 | `created_at`, `updated_at`, `started_at` | Creation, last update and start dates of the submission. |
+| `completed_at`, `canceled_at` | Dates when the submission was completed and canceled, or `null` if that has not happened. A submission that was completed and later canceled carries both. |
 | `origination_name`, `origination_uuid` | Name and identifier of the origination. |
 | `cancellation_reason` | Cancellation reason entered when the submission was canceled, or `null`. |
 | `user` | Owner of the submission, with `id`, `uuid`, `name`, `first_name` and `last_name`. |
@@ -241,7 +243,21 @@ If your application reads `assignee.uuid` without checking `type`, it breaks whe
 
 #### The task responses
 
-Each element of `tasks` carries `task`, with the `uid`, `name`, `type` and `step_name` of the task; `status`, with `not_started`, `pending` or `completed`; `user_id`, and the assignee data of that task in `assignee_id`, `assignee_group_id`, `assignee_context_group_id` and `assignee_label`. Input tasks add `fields` with the user answers, and pending review tasks add `content`. Task responses whose task no longer exists in the origination are not included in the array.
+Each element of `tasks` carries `task`, with the `uid`, `name`, `type` and `step_name` of the task; `status`, with `not_started`, `pending` or `completed`; `user_id`; the assignee data of that task in `assignee_id`, `assignee_group_id`, `assignee_context_group_id` and `assignee_label`; `completed_at`, with the date the task was completed, which goes back to `null` if the task is reopened, and `updated_at`. Task responses whose task no longer exists in the origination are not included in the array. Neither are the tasks that a [conditional logic](/en/platform/customers/origination.html#assign-tasks-with-conditional-logic) rule assigned before the flow reached them, as long as they have not started.
+
+Depending on the task type, each element adds these attributes:
+
+| Task type | Additional attributes |
+|-----------|-----------------------|
+| [Input](/en/platform/customers/origination.html#input) | `fields`, with the user answers. |
+| [Pending Review](/en/platform/customers/origination.html#pending-review) | `content`. |
+| [Validation](/en/platform/customers/origination.html#validation) | `reviews`, with one element per task to validate: `task_uid`, `task_name`, `task_type`, `is_hidden` and `review`, with the latest review of that task or `null`. |
+| [Signature](/en/platform/customers/origination.html#signature) | `signature_response`. |
+| [Identity Verification](/en/platform/customers/origination.html#identity-verification) | `verification_status`, `document_status`, `biometric_status` and `verification_data`. |
+| [Code Snippet](/en/platform/customers/origination.html#code-snippet) | `data`, with the JSON saved by the snippet, or an empty object. |
+| [Origination Process](/en/platform/customers/origination.html#origination-process) | `flow_response`. |
+| [Invitation](/en/platform/customers/origination.html#invitation) | `invitations`, with the invitations of the task. |
+| [Confirmation](/en/platform/customers/origination.html#confirmation) | `confirmed`, `confirmed_items` and `confirmation_metadata`. |
 
 :::warning Attention
 Pending review tasks stopped returning the boolean `completed` key in 10.2. To know whether the review is finished, compare `status` with `completed`.
@@ -275,7 +291,7 @@ The code stops being valid once the time set in **OTP validity duration (in minu
 
 ## Submission attachments
 
-File questions of an origination receive their attachments through these two endpoints. Both require an active session, always work on the files of the session user, and do not appear in the interactive reference at `ACCOUNT_URL/api/customers/docs`.
+File questions of an origination receive their attachments through these two endpoints. Both require an active session, always work on the files of the session user, and are also described in the interactive reference at `ACCOUNT_URL/api/customers/docs`.
 
 ### Upload a file
 
@@ -285,6 +301,7 @@ Send a `multipart/form-data` request with these parameters:
 
 - `file`: the file to upload. It is required.
 - `question_id`: identifier of the file question the attachment belongs to. It is optional.
+- `locale`: language of the error messages, for example `en`. It is optional. If you do not send it, the messages use the user language or, if they have none, the account language.
 
 With `200`, the body describes the stored file:
 
@@ -294,11 +311,18 @@ With `200`, the body describes the stored file:
   "uuid": "586e591c-1f07-4f6d-b886-a66fea953afe",
   "name": "receipt.pdf",
   "size": 60548,
-  "url": "/uploads/586e591c-1f07-4f6d-b886-a66fea953afe/original/receipt.pdf"
+  "url": "/uploads/586e591c-1f07-4f6d-b886-a66fea953afe/original/receipt.pdf",
+  "expiring_url": "https://files.example.com/586e591c-1f07-4f6d-b886-a66fea953afe/original/receipt.pdf?signature=..."
 }
 ```
 
-The file is stored as private and associated with the session user. Use the numeric `id` as the value of the answer to the file question, and the `uuid` to delete the attachment.
+The file is stored as private and associated with the session user, so `url` is not publicly readable. To display or link the file use `expiring_url`, a signed URL that stops working after five minutes by default.
+
+Use the `id` as the value of the answer to the file question, sent as text, for example `"431"`. The `uuid` only serves to delete the attachment.
+
+:::warning Attention
+If you send the `id` as a number or use the `uuid` as the value of the answer, the answer is saved without a file and with no error to signal it.
+:::
 
 | Code | Meaning |
 |------|---------|
@@ -306,7 +330,7 @@ The file is stored as private and associated with the session user. Use the nume
 | `404` | The `question_id` sent does not match any file question. |
 | `422` | The file did not pass the validations. |
 
-The `422` body carries the `errors` array with one text per rejection reason, prefixed with the file name. A file is rejected when it is missing, when its extension is not allowed on the platform, when its content does not match the declared extension, or when it exceeds the maximum size allowed on your account.
+The `422` body carries the `errors` array with one text per rejection reason, prefixed with the file name. A file is rejected when it is missing, when its extension is not allowed on the platform, when you sent `question_id` and its extension is not among the ones allowed by that question, when its name has more than one dot, when its content does not match the declared extension, or when it exceeds the maximum size per file, 10 MB by default.
 
 ### Delete a file
 

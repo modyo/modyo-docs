@@ -35,7 +35,7 @@ El único flujo soportado es `authorization_code`. El reino no emite tokens con 
 Para empezar necesitas un cliente OAuth del reino, creado como se describe en [Cliente OAuth](/es/platform/customers/settings.html#cliente-oauth). Al hacer click en el nombre del cliente, el panel muestra su **UID** y su **Secreto**, que son el `client_id` y el `client_secret` del flujo, junto con la URL de autorización ya armada en **Cliente web** y los endpoints del reino listos para copiar en **Cliente móvil**.
 
 1. Lleva al usuario a `ACCOUNT_URL/realms/{realm_uid}/oauth/authorize` con los parámetros `response_type=code`, `client_id`, `redirect_uri` y, si los necesitas, `scope` y `state`.
-2. Si el usuario todavía no tiene sesión en el reino, Modyo lo manda al inicio de sesión y retoma la autorización cuando termina. No hay pantalla de consentimiento: apenas hay sesión, Modyo redirige a tu **URI de redirección** con el parámetro `code`.
+2. Si el usuario todavía no tiene sesión en el reino, Modyo lo manda al inicio de sesión. Al terminar, Modyo no retoma la autorización: el usuario llega a la URL de **Después de iniciar sesión, redirigir a** definida en la [configuración del reino](/es/platform/customers/settings.html#general) o, si no hay una, a su perfil. Tu aplicación tiene que llevarlo otra vez a la URL de autorización, que ahora entrega el código de inmediato. No hay pantalla de consentimiento: apenas hay sesión, Modyo redirige a tu **URI de redirección** con el parámetro `code`.
 3. Canjea el código en el endpoint de token. El código vive diez minutos y sirve una sola vez.
 4. Usa el `access_token` de la respuesta en la cabecera `Authorization` de tus llamadas.
 
@@ -94,9 +94,7 @@ Accede a la API de Customers para gestionar reinos y usuarios a través de la UR
 
 ### Tokens delegados
 
-Al habilitar la opción de [**Mostrar información de delegación**](/es/platform/core/integrations/identity-providers) en tus proveedores de identidad, al hacer uso de la API `account_url/api/customers/realms/{realm_uid}/me`, obtendrás un JSON adicionado con información de tokens delegados parecido a este:
-
-Si habilitas la opción de [**Mostrar información de delegación**](/es/platform/core/integrations/identity-providers) en los proveedores de identidad, el endpoint `account_url/api/customers/realms/{realm_uid}/me` incluirá un JSON con información de tokens delegados:
+Si habilitas la opción de [**Mostrar información de delegación**](/es/platform/core/integrations/identity-providers.html#configuraciones-opcionales-de-la-integracion) en un proveedor de identidad OpenID Connect, el endpoint `account_url/api/customers/realms/{realm_uid}/me` incluirá un JSON con información de tokens delegados:
 
 
 ``curl -X GET test.modyo.com/api/customers/realms/miRealm/me``
@@ -124,12 +122,15 @@ Si habilitas la opción de [**Mostrar información de delegación**](/es/platfor
       "uuid":"af57d947-69dc-4ed7-b5af-418c957d827f",
       "access_token":"TOKEN",
       "access_token_expires_in":300,
-      "access_token_expires_in_datetime":"2021-04-15T21:42:55.995+00:00"
+      "access_token_expires_in_datetime":"2021-04-15T21:42:55.995+00:00",
+      "revalidate_in":280
    }
 ```
 
+`revalidate_in` indica cuántos segundos faltan para que el access token delegado deba renovarse. Si el proveedor tiene marcada la opción **Activar refresh token**, el plazo descuenta el margen de **Tiempo en segundos para la anticipación preventiva del refresh token**. Cuando el plazo ya se cumplió, vale `0`.
+
 :::tip Tip
-En caso de no tener habilitada la opción **Mostrar información de delegación**, se mostrará null (vacío).
+`delegated_token` solo trae datos cuando el usuario inició la sesión actual con un proveedor OpenID Connect que tiene marcada la opción **Mostrar información de delegación**. En cualquier otro caso es `null`, incluso cuando el usuario entró con sus credenciales de Modyo, con SAML, Google u OAuth2, aunque otro proveedor del reino tenga la opción activa.
 :::
 
 ### Actualizar la información del usuario
@@ -144,7 +145,7 @@ Los custom fields que no tengan marcadas **Visible para usuarios de los sitios**
 
 `GET ACCOUNT_URL/api/customers/realms/{realm_uid}/events`
 
-Devuelve los [eventos de negocio](/es/platform/customers/events.html) del usuario de la sesión, del más reciente al más antiguo. Es el mismo registro que un administrador ve en **Customers > Reinos > Eventos**, acotado a ese usuario. No aparece en la referencia interactiva de `ACCOUNT_URL/api/customers/docs`.
+Devuelve los [eventos de negocio](/es/platform/customers/events.html) del usuario de la sesión, del más reciente al más antiguo. Es el mismo registro que un administrador ve en **Customers > Reinos > Eventos**, acotado a ese usuario. También está descrito en la referencia interactiva de `ACCOUNT_URL/api/customers/docs`.
 
 Acepta estos parámetros, todos opcionales:
 
@@ -204,6 +205,7 @@ El cuerpo trae los siguientes atributos:
 | `due_status_label` | Etiqueta del estado del plazo entre paréntesis, como `(A tiempo)`, `(Vence pronto)` o `(Vencido)`. Es `null` cuando la respuesta no está pendiente. |
 | `due_extension_days` | Días de extensión otorgados al plazo, o `null` si la originación no tiene plazo configurado. |
 | `created_at`, `updated_at`, `started_at` | Fechas de creación, de última actualización y de inicio de la respuesta. |
+| `completed_at`, `canceled_at` | Fechas en que se completó y en que se canceló la respuesta, o `null` si eso no ha ocurrido. Una respuesta completada y después cancelada trae las dos. |
 | `origination_name`, `origination_uuid` | Nombre e identificador de la originación. |
 | `cancellation_reason` | Razón de cancelación ingresada al cancelar la respuesta, o `null`. |
 | `user` | Usuario dueño de la respuesta, con `id`, `uuid`, `name`, `first_name` y `last_name`. |
@@ -241,7 +243,21 @@ Si tu aplicación lee `assignee.uuid` sin revisar `type`, deja de funcionar cuan
 
 #### Las respuestas a las tareas
 
-Cada elemento de `tasks` trae `task`, con el `uid`, `name`, `type` y `step_name` de la tarea; `status`, con `not_started`, `pending` o `completed`; `user_id`, y los datos del asignado de esa tarea en `assignee_id`, `assignee_group_id`, `assignee_context_group_id` y `assignee_label`. Las tareas de input agregan `fields` con las respuestas del usuario y las de revisión pendiente agregan `content`. Las respuestas a tareas cuya tarea ya no existe en la originación no se incluyen en el arreglo.
+Cada elemento de `tasks` trae `task`, con el `uid`, `name`, `type` y `step_name` de la tarea; `status`, con `not_started`, `pending` o `completed`; `user_id`; los datos del asignado de esa tarea en `assignee_id`, `assignee_group_id`, `assignee_context_group_id` y `assignee_label`; `completed_at`, con la fecha en que se completó la tarea, que vuelve a `null` si la tarea se reabre, y `updated_at`. Las respuestas a tareas cuya tarea ya no existe en la originación no se incluyen en el arreglo. Tampoco se incluyen las tareas que una regla de [lógica condicional](/es/platform/customers/origination.html#asignar-tareas-con-logica-condicional) asignó antes de que el flujo llegara a ellas, mientras no comienzan.
+
+Según el tipo de tarea, cada elemento agrega estos atributos:
+
+| Tipo de tarea | Atributos adicionales |
+|---------------|-----------------------|
+| [Input](/es/platform/customers/origination.html#input) | `fields`, con las respuestas del usuario. |
+| [Revisión pendiente](/es/platform/customers/origination.html#revision-pendiente) | `content`. |
+| [Validación](/es/platform/customers/origination.html#validacion) | `reviews`, con un elemento por cada tarea a validar: `task_uid`, `task_name`, `task_type`, `is_hidden` y `review`, con la última revisión de esa tarea o `null`. |
+| [Firma](/es/platform/customers/origination.html#firma) | `signature_response`. |
+| [Verificación de Identidad](/es/platform/customers/origination.html#verificacion-de-identidad) | `verification_status`, `document_status`, `biometric_status` y `verification_data`. |
+| [Snippet de código](/es/platform/customers/origination.html#snippet-de-codigo) | `data`, con el JSON que guardó el snippet, o un objeto vacío. |
+| [Proceso de originación](/es/platform/customers/origination.html#proceso-de-originacion) | `flow_response`. |
+| [Invitación](/es/platform/customers/origination.html#invitacion) | `invitations`, con las invitaciones de la tarea. |
+| [Confirmación](/es/platform/customers/origination.html#confirmacion) | `confirmed`, `confirmed_items` y `confirmation_metadata`. |
 
 :::warning Atención
 Las tareas de revisión pendiente dejaron de entregar la clave booleana `completed` en 10.2. Para saber si la revisión terminó, compara `status` con `completed`.
@@ -275,7 +291,7 @@ El código deja de ser válido cuando pasa el tiempo definido en **Validez de du
 
 ## Adjuntos de las respuestas
 
-Las preguntas de tipo archivo de una originación reciben sus adjuntos por estos dos endpoints. Ambos requieren una sesión iniciada, trabajan siempre sobre los archivos del usuario de la sesión y no aparecen en la referencia interactiva de `ACCOUNT_URL/api/customers/docs`.
+Las preguntas de tipo archivo de una originación reciben sus adjuntos por estos dos endpoints. Ambos requieren una sesión iniciada, trabajan siempre sobre los archivos del usuario de la sesión y también están descritos en la referencia interactiva de `ACCOUNT_URL/api/customers/docs`.
 
 ### Subir un archivo
 
@@ -285,6 +301,7 @@ Envía una petición `multipart/form-data` con estos parámetros:
 
 - `file`: el archivo a subir. Es obligatorio.
 - `question_id`: identificador de la pregunta de tipo archivo a la que corresponde el adjunto. Es opcional.
+- `locale`: idioma de los mensajes de error, por ejemplo `es`. Es opcional. Si no lo envías, los mensajes usan el idioma del usuario o, si no tiene uno, el de la cuenta.
 
 Con `200`, el cuerpo describe el archivo guardado:
 
@@ -294,11 +311,18 @@ Con `200`, el cuerpo describe el archivo guardado:
   "uuid": "586e591c-1f07-4f6d-b886-a66fea953afe",
   "name": "comprobante.pdf",
   "size": 60548,
-  "url": "/uploads/586e591c-1f07-4f6d-b886-a66fea953afe/original/comprobante.pdf"
+  "url": "/uploads/586e591c-1f07-4f6d-b886-a66fea953afe/original/comprobante.pdf",
+  "expiring_url": "https://archivos.ejemplo.com/586e591c-1f07-4f6d-b886-a66fea953afe/original/comprobante.pdf?signature=..."
 }
 ```
 
-El archivo queda guardado como privado y asociado al usuario de la sesión. Usa el `id` numérico como valor de la respuesta a la pregunta de tipo archivo y el `uuid` para eliminar el adjunto.
+El archivo queda guardado como privado y asociado al usuario de la sesión, así que `url` no es de acceso público. Para mostrar o enlazar el archivo usa `expiring_url`, una URL firmada que deja de servir a los cinco minutos por defecto.
+
+Usa el `id` como valor de la respuesta a la pregunta de tipo archivo, enviado como texto, por ejemplo `"431"`. El `uuid` solo sirve para eliminar el adjunto.
+
+:::warning Atención
+Si envías el `id` como número o usas el `uuid` como valor de la respuesta, la respuesta se guarda sin archivo y sin ningún error que lo indique.
+:::
 
 | Código | Significado |
 |--------|-------------|
@@ -306,7 +330,7 @@ El archivo queda guardado como privado y asociado al usuario de la sesión. Usa 
 | `404` | El `question_id` enviado no corresponde a ninguna pregunta de tipo archivo. |
 | `422` | El archivo no pasó las validaciones. |
 
-El cuerpo del `422` trae el arreglo `errors` con un texto por cada motivo de rechazo, prefijado con el nombre del archivo. Un archivo se rechaza cuando falta, cuando su extensión no está permitida en la plataforma, cuando su contenido no corresponde a la extensión declarada o cuando supera el tamaño máximo permitido en tu cuenta.
+El cuerpo del `422` trae el arreglo `errors` con un texto por cada motivo de rechazo, prefijado con el nombre del archivo. Un archivo se rechaza cuando falta, cuando su extensión no está permitida en la plataforma, cuando enviaste `question_id` y su extensión no está entre las permitidas por esa pregunta, cuando su nombre tiene más de un punto, cuando su contenido no corresponde a la extensión declarada o cuando supera el tamaño máximo por archivo, de 10 MB por defecto.
 
 ### Eliminar un archivo
 
