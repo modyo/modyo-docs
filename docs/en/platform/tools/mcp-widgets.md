@@ -130,6 +130,7 @@ The MCP pins the versions of the widget stack. Each MCP version can change them.
 
 | Modyo MCP | Dynamic UI | Base template | `@modyo/widget-validator` | Modyo CLI (in `npm run push`) |
 |---|---|---|---|---|
+| 0.5.11 | 2.12.1 | `v1.4.1` | 0.3.1 | 3.6.2 |
 | 0.5.10 | 2.12.1 | `v1.4.1` | 0.3.1 | 3.6.2 |
 
 The project's `widget.manifest.json` records the Dynamic UI and template versions it was created with.

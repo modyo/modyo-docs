@@ -8,7 +8,7 @@ search: true
 
 The [Model Context Protocol (MCP)](https://modelcontextprotocol.io) is an open standard for connecting AI assistants to tools and data sources. The **Modyo MCP Server** connects an AI assistant to the Modyo Admin API so you can manage the platform (content, sites, widgets, customers, and administration) and build widgets with Dynamic Framework through natural-language conversation.
 
-It is distributed as the npm package [`@modyo/mcp`](https://www.npmjs.com/package/@modyo/mcp) and runs as a local process that the AI client launches over stdio. This page describes version 0.5.10.
+It is distributed as the npm package [`@modyo/mcp`](https://www.npmjs.com/package/@modyo/mcp) and runs as a local process that the AI client launches over stdio. This page describes version 0.5.11.
 
 To build a widget end to end with the MCP, see [Develop widgets with the MCP](/en/platform/tools/mcp-widgets.html).
 
@@ -186,7 +186,7 @@ The server is configured with environment variables, in the client's `env` block
 | `MODYO_TOKEN` | Yes | Admin token (Modyo Admin → Settings → API Access). |
 | `MODYO_PLATFORM_NAME` | No | Display name of the platform. Defaults to `default`. |
 | `MODYO_MCP_MODULES` | No | Active modules, comma-separated: `core`, `content`, `channels`, `customers`, `widgets`. If unset, all are active. See [Filtering by modules](#filtering-by-modules). |
-| `MODYO_READ_ONLY` | No | With the exact value `true`, enables read-only mode. See [Read-only mode](#read-only-mode). |
+| `MODYO_READ_ONLY` | No | With `true` or `1` (case-insensitive), enables read-only mode. Unset, empty, `false`, or `0` leaves it off. Any other value prevents the server from starting. See [Read-only mode](#read-only-mode). |
 | `MODYO_DEFAULT_SITE_THEME` | No | ID of the theme used when creating a site without specifying one. Defaults to `208`; the matching ID depends on your instance. The theme is applied only when the site is created. |
 | `DEBUG` | No | With `true` or `1`, the server writes debug logs to stderr, with sensitive values masked. |
 
@@ -216,12 +216,21 @@ Admin API tokens do not expire and the platform does not renew them: the `MODYO_
 
 ### Read-only mode
 
-With `MODYO_READ_ONLY=true`, the server does not make any change on the platform, even if the token has write permissions. Any other value, or the absence of the variable, is equivalent to normal behavior. It is useful for auditing or exploring a production site with no risk of modifying it.
+With `MODYO_READ_ONLY=true` or `1` (case-insensitive), the server does not make any change on the platform, even if the token has write permissions. Unset, empty, `false`, or `0` leaves the variable off and the server behaves normally. Any other value prevents the server from starting, and it exits with a message like this:
+
+```
+Error: Invalid value in MODYO_READ_ONLY: 'yes'.
+Valid values: true, 1, false, 0 (or unset).
+```
+
+It is useful for auditing or exploring a production site with no risk of modifying it.
 
 It works in two layers:
 
 1. Tools that only write or delete are not registered: the client does not see them.
 2. Tools that group several actions (for example, the `*-manage` tools) remain available, but only run read actions: `list`, `get`, `search`, `find`, and `status`. The `manage` action with no fields that change anything acts as a read.
+
+One exception: `channels-locks-manage` accepts `release` with `lockId`, to release a lock held by the token user, such as the one left behind when reading a template. `take_over`, `acquire`, and `release` by `lockable_type` + `lockable_id` are rejected.
 
 A rejected action is not an error (`isError: false`). The response carries the rejection in `control`:
 
@@ -230,7 +239,7 @@ A rejected action is not an error (`isError: false`). The response carries the r
   "control": {
     "readOnly": true,
     "rejected": "create",
-    "reason": "Server running in read-only mode (MODYO_READ_ONLY). Only read actions are permitted."
+    "reason": "Server running in read-only mode (MODYO_READ_ONLY). Only read actions and release of your own locks by lockId are permitted."
   }
 }
 ```
@@ -263,7 +272,7 @@ The two variables can be combined. To audit a site with no risk of modifying it,
 }
 ```
 
-Tools the client lists for each configuration, in version 0.5.10:
+Tools the client lists for each configuration, in version 0.5.11:
 
 | Configuration | Tools |
 |---|---|
@@ -298,8 +307,13 @@ Archiving a widget definition also asks for confirmation, because it removes its
 ### Write responses
 
 - **What was saved.** After writing, the tools re-read the resource and respond with that state. If a requested field was not saved, they respond with `FIELDS_NOT_PERSISTED` or `UNSUPPORTED_FIELD`. A parameter the action does not use comes back in `ignored`.
+- **Field type.** In `content-entries-upsert` and `content-entries-manage`, a field value whose `type` does not match the field type in the content type, including inside a group, is rejected with `FIELD_TYPE_MISMATCH` and the `mismatches` list, without writing anything.
 - **Background operations.** Operations that continue on the platform respond with `queued` or `deletion_started`.
 - **Exact identifiers.** Actions that write or delete resolve the resource only by exact id, UUID, path, or slug. A read with several candidates responds with `AMBIGUOUS_IDENTIFIER` and the list. For an entry with several translations, the tool asks for the locale (`LOCALE_REQUIRED`).
+
+### Edit locks
+
+Reading the code of a template makes the platform take an edit lock in the name of the token user. The tools that read templates (`channels-templates-search`, `channels-templates-replace`, `channels-templates-manage`, `channels-templates-copy`, and `channels-download`) release that lock before responding, and never touch one held by another user. If they cannot release it, they report it in `lockReleaseErrors`, with the lock id, the template, and the step that failed. Release it with `channels-locks-manage`, action `release` and the `lockId`, also in read-only mode.
 
 ## What it can do
 
@@ -509,10 +523,10 @@ A new widget starts with the `widgets-init-project` prompt, invoked as a client 
 The server is missing `MODYO_URL` or `MODYO_TOKEN`. Check that both are in the `env` block of the client configuration and restart the client. To test the token directly against the API:
 
 ```bash
-curl -H "Authorization: Bearer $MODYO_TOKEN" "$MODYO_URL/api/admin/profile"
+curl -H "Authorization: Bearer $MODYO_TOKEN" "$MODYO_URL/api/admin/sites?per_page=1"
 ```
 
-With a valid token, the API responds `200` with the user who owns the token. Otherwise, create a new token in Modyo Admin → Settings → API Access.
+With a valid token, the API responds `200`. Otherwise, create a new token in Modyo Admin → Settings → API Access.
 
 ### The server does not start after setting MODYO_MCP_MODULES
 
@@ -525,13 +539,28 @@ Valid values: core, content, channels, customers, widgets.
 
 the list has a value that does not exist. Fix it (the valid values are `core`, `content`, `channels`, `customers`, and `widgets`) and restart the client.
 
+### The server does not start after setting MODYO_READ_ONLY
+
+If the server exits on startup with this message:
+
+```
+Error: Invalid value in MODYO_READ_ONLY: 'yes'.
+Valid values: true, 1, false, 0 (or unset).
+```
+
+the value is not one of the accepted ones (`true`, `1`, `false`, `0`, or the variable unset). Fix it and restart the client.
+
 ### A tool responds readOnly: true
 
-The server is running with `MODYO_READ_ONLY=true` and the requested action writes to the platform. This is not an error: the rejection arrives in `control` with `isError: false`. To run the action, remove the variable and restart the client.
+The server is running with `MODYO_READ_ONLY=true` and the requested action writes to the platform. This is not an error: the rejection arrives in `control` with `isError: false`. To run the action, remove the variable and restart the client. The only action that writes and is accepted in this mode is `release` of `channels-locks-manage` with `lockId`.
 
 ### The agent says it did not delete anything
 
 In clients without interactive confirmation, a deletion without `confirmed: true` is not executed: the response carries in `control.aborted` what would have been deleted. Review the list and ask the agent to repeat the operation with confirmation.
+
+### A template stayed locked after the agent read it
+
+Check `lockReleaseErrors` in the tool response: it carries the `lockId` and the step that failed. Ask the agent to release the lock with `channels-locks-manage` (`release` and the `lockId`); it also works in read-only mode. You can also release it from Modyo Admin.
 
 ### The agent does not see the tools
 
