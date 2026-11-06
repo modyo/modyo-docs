@@ -73,7 +73,7 @@ Here are some key terms in Modyo and their definitions:
 - [**CORS**:](/en/platform/core/security.html#http-access-control-cross-origin-resource-sharing-cors) Cross Origin Resource Sharing - Allows you to share resources in different domains.
 - **Account**: Access point to all Modyo features.
 - [**Team**:](/en/platform/core/roles#team) All users with access to the Modyo admin. They can be assigned roles and permissions.
-- [**Integrations**:](/en/platform/core/integrations) Way to delegate or federate the process of initiating authentication of users or team members.
+- [**Integrations**:](/en/platform/core/integrations/) Way to delegate or federate the process of initiating authentication of users or team members.
 - [**Password Policy**:](/en/platform/core/security#password-policy) Allows you to define rules for creating or modifying passwords.
 - [**Team review**:](/en/platform/core/#team-review) Review flow for versioned items. Approval can be requested from multiple team members.
 - [**Site**:](/en/platform/channels/sites.html) Tool for creating digital channels within Modyo. Site operation encompasses the development, design and flow of navigation.
@@ -89,7 +89,7 @@ Here are some key terms in Modyo and their definitions:
 
 - [**Assets**:](/en/platform/content/asset-manager#about-the-interface) Files uploaded to the platform for use in content and sites.
 - [**Field**:](/en/platform/content/types#fields) Basic unit for forming content types.
-- [**Categories**:](en/platform/content/entries.html#categories) Hierarchical structure to organize the content of your spaces.
+- [**Categories**:](/en/platform/content/entries.html#categories) Hierarchical structure to organize the content of your spaces.
 - [**Entry**:](/en/platform/content/entries) Set of values associated with fields defined in the content type.
 - [**Space**:](/en/platform/content/spaces) Resource repository where team members define types of content, create and publish entries.
 - **Tags**: Labels for sorting and filtering posts.

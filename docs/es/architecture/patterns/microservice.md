@@ -39,7 +39,7 @@ Cada servicio se diseña para manejar capacidades empresariales específicas, ce
 
 ### Implementación de microservicios con Modyo
 
-[Modyo Connect](/es/connect) permite el desarrollo y despliegue de microservicios en la nube sobre su plataforma de [contenedores](/es/connect/infrastructure/containers.html). Para ello, se requiere un [repositorio de código](/es/connect/development/code-repository.html) y procesos de [integración continua](/es/connect/development/continuous-integration.html) activos.
+[Modyo Connect](/es/connect/) permite el desarrollo y despliegue de microservicios en la nube sobre su plataforma de [contenedores](/es/connect/infrastructure/containers.html). Para ello, se requiere un [repositorio de código](/es/connect/development/code-repository.html) y procesos de [integración continua](/es/connect/development/continuous-integration.html) activos.
 
 Los microservicios desarrollados en Modyo Connect escalan horizontalmente, permitiendo el incremento automático de instancias según la demanda y el reemplazo de aquellas con problemas. Además, pueden desplegarse en múltiples regiones y zonas de disponibilidad para garantizar su resiliencia ante fallos de infraestructura.
 

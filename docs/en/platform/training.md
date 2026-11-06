@@ -4,7 +4,7 @@ search: true
 
 # Training
 
-Training on the Modyo Platform is crucial for any user, as it provides the minimum necessary skills for effective use. Training activities include reviewing [Modyo documentation](/en/platform), [explanatory videos](https://www.youtube.com/channel/UCfss-k1zmkszMoNKzYRoGew), and [Learning Paths](https://help.modyo.com/en/articles/6928873-como-aprender-a-usar-modyo), among other resources.
+Training on the Modyo Platform is crucial for any user, as it provides the minimum necessary skills for effective use. Training activities include reviewing [Modyo documentation](/en/platform/), [explanatory videos](https://www.youtube.com/channel/UCfss-k1zmkszMoNKzYRoGew), and [Learning Paths](https://help.modyo.com/en/articles/6928873-como-aprender-a-usar-modyo), among other resources.
 
 ### Modyo Platform
 
@@ -12,7 +12,7 @@ Training on the Modyo Platform is crucial for any user, as it provides the minim
 - Understand [Modyo and its main modules](https://www.modyo.com/platform).
 - Clearly define your role (e.g., frontend development, content management, digital marketing, system administration).
 - Set up a [test environment](https://platform.modyo.cloud/try) for practice.
-- Have access to the [platform documentation](/en/platform/core).
+- Have access to the [platform documentation](/en/platform/core/).
 - Have access to our [Support Center](https://support.modyo.com/hc/en-us) to report problems and make inquiries.
 
 Below, we will show you how to access the information and resources necessary to facilitate your experience with Modyo.
@@ -21,10 +21,10 @@ Below, we will show you how to access the information and resources necessary to
 Modyo is a next-generation digital experience platform that powers solutions for interacting with digital customers, accelerating web and mobile development securely and efficiently, and creating a centralized space to govern your digital channels.
 
 Modyo features the following main modules, which you will learn about during your training:
-- [**Modyo Content**:](/en/platform/content) A headless architecture application that allows the creation of content spaces consumable through an API (both inside and outside Modyo). Main concepts include: spaces, types, entries, file manager, team review, among others.
-- [**Modyo Channels**:](/en/platform/channels) An application that enables the construction and centralized management of multiple digital channels. Main concepts include: pages, widgets, templates, PWA, Liquid markup, CLI, among others.
-- [**Modyo Customers**:](/en/platform/customers) An application that enables user authentication on Modyo sites, either through its internal account registration system or enterprise integrations with Single Sign-On (SSO) systems. Main concepts include: users, segments, forms, messaging (campaigns and notifications), personalization, among others.
-- [**Modyo Insights**:](/en/platform/insights) An application specialized in representing statistical data for both your site users and the team that creates content and digital channels.
+- [**Modyo Content**:](/en/platform/content/) A headless architecture application that allows the creation of content spaces consumable through an API (both inside and outside Modyo). Main concepts include: spaces, types, entries, file manager, team review, among others.
+- [**Modyo Channels**:](/en/platform/channels/) An application that enables the construction and centralized management of multiple digital channels. Main concepts include: pages, widgets, templates, PWA, Liquid markup, CLI, among others.
+- [**Modyo Customers**:](/en/platform/customers/) An application that enables user authentication on Modyo sites, either through its internal account registration system or enterprise integrations with Single Sign-On (SSO) systems. Main concepts include: users, segments, forms, messaging (campaigns and notifications), personalization, among others.
+- [**Modyo Insights**:](/en/platform/insights/) An application specialized in representing statistical data for both your site users and the team that creates content and digital channels.
 
 #### Tutorials
 The [tutorials](https://help.modyo.com/en/collections/4032221-tutoriales) are the easiest way to get started on the Modyo Platform. Only a [test environment](/en/platform/training#test-environment) and time are required to learn the fundamental concepts step by step.
