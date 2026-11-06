@@ -161,6 +161,10 @@ function openSearch(): void {
 }
 
 .accent {
+  color: var(--modyo-c-green-text);
+}
+
+.news .accent {
   color: var(--modyo-c-green);
 }
 
@@ -385,7 +389,7 @@ function openSearch(): void {
   margin: 0 0 24px;
   font-size: 1.5rem;
   line-height: 1.4;
-  color: var(--modyo-c-muted);
+  color: var(--modyo-c-muted-on-dark);
 }
 
 .help {
@@ -428,7 +432,7 @@ function openSearch(): void {
 
 .button-primary {
   background: var(--modyo-c-green);
-  color: #fff;
+  color: var(--modyo-c-navy);
 }
 
 .button-primary:hover {
@@ -442,13 +446,13 @@ function openSearch(): void {
 
 .button-outline:hover {
   background: var(--modyo-c-green);
-  color: #fff;
+  color: var(--modyo-c-navy);
 }
 
 .footer {
   padding: 2.5rem;
   text-align: center;
-  color: #737a96;
+  color: var(--modyo-c-muted);
 }
 
 @media (min-width: 640px) {

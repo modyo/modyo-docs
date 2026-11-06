@@ -3,9 +3,11 @@
   --modyo-c-blue-light: #4081e2;
   --modyo-c-green: #3dc681;
   --modyo-c-green-light: #71d5a3;
+  --modyo-c-green-text: #1a7f4b;
   --modyo-c-navy: #0a1627;
   --modyo-c-text: #444c60;
-  --modyo-c-muted: #737988;
+  --modyo-c-muted: #5f6573;
+  --modyo-c-muted-on-dark: #b4b9c5;
 
   --vp-c-brand-1: var(--modyo-c-blue);
   --vp-c-brand-2: var(--modyo-c-blue-light);

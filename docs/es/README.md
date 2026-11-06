@@ -43,13 +43,13 @@ FirstSteps1Alt: Descubre por qué Modyo es una plataforma de experiencia digital
 FirstSteps2Title: Lo nuevo en Modyo
 FirstSteps2Text: Conoce las novedades y mejoras de la última versión.
 FirstSteps2Img: https://cloud.modyocdn.com/uploads/4c994d5b-5aa0-44b7-b211-ef3d34cc5237/original/new.png
-FirstSteps2Url: /es/platform/whats-new
+FirstSteps2Url: /es/platform/whats-new.html
 FirstSteps2Alt: Conoce las novedades y mejoras de la última versión.
 
 FirstSteps3Title: Conceptos clave
 FirstSteps3Text: Familiarízate con los conceptos y la terminología clave de la plataforma.
 FirstSteps3Img: https://cloud.modyocdn.com/uploads/9b68c3ae-ca6e-4fce-8097-5c4a5c559277/original/Key_concepts.png
-FirstSteps3Url: /es/platform/key-concepts
+FirstSteps3Url: /es/platform/key-concepts.html
 FirstSteps3Alt: Familiarízate con los conceptos y la terminología clave de la plataforma.
 
 FirstSteps4Title: Dynamic Framework
@@ -72,13 +72,13 @@ architecture: Arquitectura
 architectureText: Aprende sobre las técnicas y patrones avanzados de implementación de Modyo y su arquitectura de referencia.
 
 architectureTitle: Visita nuestra guía de arquitectura
-architectureUrl: /es/architecture
+architectureUrl: /es/architecture/
 
 DontMiss: No te pierdas nada de
 DontMissText: Mantente actualizado sobre los nuevos lanzamientos y conoce nuestra hoja de ruta.
 
 releaseText: Notas del release
-releaseUrl: /es/platform/release-notes
+releaseUrl: /es/platform/release-notes.html
 
 roadmapText: Modyo Roadmap
 roadmapUrl: https://es.modyo.com/roadmap
