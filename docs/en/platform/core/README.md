@@ -21,7 +21,7 @@ For users new to Modyo Platform, we suggest following this initial workflow:
 1. **Initial setup**: Review the [general configurations](/en/platform/core/configuration) of the account
 2. **User management**: Configure [roles and permissions](/en/platform/core/roles) for your team
 3. **Security**: Implement the recommended [security policies](/en/platform/core/security)
-4. **Integrations**: Connect your [external systems](/en/platform/core/integrations) if necessary
+4. **Integrations**: Connect your [external systems](/en/platform/core/integrations/) if necessary
 
 Modyo provides all its administrator users with a learning section called Get Started! with specialized links and content from our community to accelerate platform adoption. This section includes topics such as:
 

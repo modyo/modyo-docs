@@ -32,12 +32,12 @@ Para modelar micro frontends y microservicios desde la perspectiva del negocio, 
 
 
 ### Modyo Connect
-La arquitectura de referencia de Modyo desacopla completamente el frontend del backend, al establecer un contexto delimitado para la comunicación mediante APIs. Mientras que el frontend es administrado completamente por la plataforma, el backend requiere de una [implementación independiente](/es/architecture/patterns/bff). Esta implementación puede ser sobre APIs ya existentes o sobre el servicio de [Modyo Connect](/es/connect).
+La arquitectura de referencia de Modyo desacopla completamente el frontend del backend, al establecer un contexto delimitado para la comunicación mediante APIs. Mientras que el frontend es administrado completamente por la plataforma, el backend requiere de una [implementación independiente](/es/architecture/patterns/bff). Esta implementación puede ser sobre APIs ya existentes o sobre el servicio de [Modyo Connect](/es/connect/).
 
 Modyo Connect es un servicio de infraestructura administrado en modalidad de plataforma como servicio (PaaS). Este servicio es gestionado por Modyo y se despliega en un entorno seguro en la nube empresarial de Modyo.
 
 :::tip Más información
-Para obtener más información sobre Modyo Connect y sus componentes de infraestructura administrados, consulta la [documentación oficial](/es/connect).
+Para obtener más información sobre Modyo Connect y sus componentes de infraestructura administrados, consulta la [documentación oficial](/es/connect/).
 :::
 
 

@@ -20,7 +20,7 @@ Es importante tener en cuenta que, aunque el patrón Repositorio es muy útil, n
 
 ### Implementación del patrón de repositorio con Modyo
 
-El patrón Repositorio puede aplicarse en Modyo tanto a micro frontends como a microservicios mediante la implementación de repositorios intermedios a través de [Modyo Connect](/es/connect). Estos repositorios generan componentes versionados disponibles en un sistema de registro de artefactos, invocables según se requieran en distintos contextos.
+El patrón Repositorio puede aplicarse en Modyo tanto a micro frontends como a microservicios mediante la implementación de repositorios intermedios a través de [Modyo Connect](/es/connect/). Estos repositorios generan componentes versionados disponibles en un sistema de registro de artefactos, invocables según se requieran en distintos contextos.
 
 Para ello, Modyo Connect utiliza la tecnología de [GitHub Enterprise](https://github.com), que proporciona acceso a tres componentes clave para este patrón:
 - Repositorio para almacenar y versionar la librería, con [GitHub Repositories](https://github.com/features).

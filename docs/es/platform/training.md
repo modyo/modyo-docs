@@ -4,7 +4,7 @@ search: true
 
 # Entrenamiento
 
-El entrenamiento en la Plataforma Modyo es clave para cualquier usuario, ya que proporciona las habilidades mínimas necesarias para utilizarla de forma efectiva. Las actividades de entrenamiento incluyen la revisión de la [documentación de Modyo](/es/platform), [videos explicativos](https://www.youtube.com/channel/UCfss-k1zmkszMoNKzYRoGew) y [Learning Paths](https://help.modyo.com/es/articles/6928873-como-aprender-a-usar-modyo), entre otros recursos.
+El entrenamiento en la Plataforma Modyo es clave para cualquier usuario, ya que proporciona las habilidades mínimas necesarias para utilizarla de forma efectiva. Las actividades de entrenamiento incluyen la revisión de la [documentación de Modyo](/es/platform/), [videos explicativos](https://www.youtube.com/channel/UCfss-k1zmkszMoNKzYRoGew) y [Learning Paths](https://help.modyo.com/es/articles/6928873-como-aprender-a-usar-modyo), entre otros recursos.
 
 ### Plataforma Modyo
 
@@ -12,7 +12,7 @@ El entrenamiento en la Plataforma Modyo es clave para cualquier usuario, ya que 
 - Entender qué es [Modyo y sus módulos principales](https://www.modyo.com/platform).
 - Tener claro el rol que desempeñas (ej. desarrollo frontend, gestión de contenido, marketing digital, administración del sistema).
 - Configurar un [ambiente de pruebas](https://platform.modyo.cloud/try) para practicar.
-- Tener acceso a la [documentación de la plataforma](/es/platform/core).
+- Tener acceso a la [documentación de la plataforma](/es/platform/core/).
 - Tener acceso a nuestro [Centro de Soporte](https://support.modyo.com/hc/es) para reportar problemas y hacer consultas.
 
 A continuación, te mostraremos cómo acceder a la información y accesos necesarios para facilitar tu experiencia con Modyo.
@@ -21,10 +21,10 @@ A continuación, te mostraremos cómo acceder a la información y accesos necesa
 Modyo es una plataforma de experiencia digital de próxima generación que potencia soluciones para la interacción con clientes digitales, acelerando el desarrollo web y móvil de forma segura y eficiente, y creando un espacio centralizado para gobernar tus canales digitales.
 
 Modyo cuenta con los siguientes módulos principales, que conocerás durante tu entrenamiento:
-- [**Modyo Content**:](/es/platform/content) Aplicación de arquitectura headless que permite la creación de espacios de contenido consumibles a través de una API (dentro y fuera de Modyo). Conceptos principales: espacios, tipos, entradas, gestor de archivos, team review, entre otros.
-- [**Modyo Channels**:](/es/platform/channels) Aplicación que permite la construcción y gestión centralizada de múltiples canales digitales. Conceptos principales: páginas, widgets, templates, PWA, Liquid markup, CLI, entre otros.
-- [**Modyo Customers**:](/es/platform/customers) Aplicación que permite habilitar la autenticación de usuarios en los sitios de Modyo, ya sea mediante su sistema interno de registro de cuentas o integraciones empresariales a sistemas de Single Sign-On (SSO). Conceptos principales: usuarios, segmentos, formularios, mensajería (campañas y notificaciones), personalización, entre otros.
-- [**Modyo Insights**:](/es/platform/insights) Aplicación especializada en la representación de datos estadísticos de los usuarios de tus sitios y del equipo que crea el contenido y los canales digitales.
+- [**Modyo Content**:](/es/platform/content/) Aplicación de arquitectura headless que permite la creación de espacios de contenido consumibles a través de una API (dentro y fuera de Modyo). Conceptos principales: espacios, tipos, entradas, gestor de archivos, team review, entre otros.
+- [**Modyo Channels**:](/es/platform/channels/) Aplicación que permite la construcción y gestión centralizada de múltiples canales digitales. Conceptos principales: páginas, widgets, templates, PWA, Liquid markup, CLI, entre otros.
+- [**Modyo Customers**:](/es/platform/customers/) Aplicación que permite habilitar la autenticación de usuarios en los sitios de Modyo, ya sea mediante su sistema interno de registro de cuentas o integraciones empresariales a sistemas de Single Sign-On (SSO). Conceptos principales: usuarios, segmentos, formularios, mensajería (campañas y notificaciones), personalización, entre otros.
+- [**Modyo Insights**:](/es/platform/insights/) Aplicación especializada en la representación de datos estadísticos de los usuarios de tus sitios y del equipo que crea el contenido y los canales digitales.
 
 #### Tutoriales
 Los [tutoriales](https://help.modyo.com/es/collections/4032221-tutoriales) son la forma más fácil de iniciarse en la Plataforma Modyo. Solo se requiere un [ambiente de pruebas](/es/platform/training#ambiente-de-pruebas) y tiempo para aprender los conceptos fundamentales paso a paso.

@@ -39,7 +39,7 @@ Each service is designed to handle specific business capabilities, focusing on a
 
 ### Implementation of microservices with Modyo
 
-[Modyo Connect](/en/connect) enables the development and deployment of microservices in the cloud on its [containers](/en/connect/infrastructure/containers.html) platform. This requires a [code repository](/en/connect/development/code-repository.html) and active [continuous integration](/en/connect/development/continuous-integration.html) processes.
+[Modyo Connect](/en/connect/) enables the development and deployment of microservices in the cloud on its [containers](/en/connect/infrastructure/containers.html) platform. This requires a [code repository](/en/connect/development/code-repository.html) and active [continuous integration](/en/connect/development/continuous-integration.html) processes.
 
 Microservices developed in Modyo Connect scale horizontally, allowing for the automatic increase of instances based on demand and the replacement of problematic ones. Additionally, they can be deployed in multiple regions and availability zones to ensure their resilience to infrastructure failures.
 

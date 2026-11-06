@@ -29,7 +29,7 @@ It is crucial to carefully evaluate project needs and requirements before opting
 
 ### Implementation of a SPA with Modyo
 
-To implement an SPA with Modyo, you must leverage the capabilities of [Modyo Connect](/en/connect), which allows you to configure object repositories and content delivery networks (CDNs) for the deployment and maintenance of the SPA.
+To implement an SPA with Modyo, you must leverage the capabilities of [Modyo Connect](/en/connect/), which allows you to configure object repositories and content delivery networks (CDNs) for the deployment and maintenance of the SPA.
 
 Changes are managed directly from the service's code repository. Through automations, you can perform deployments and cache invalidations when incorporating or merging changes.
 
