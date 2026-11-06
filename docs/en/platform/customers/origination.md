@@ -233,25 +233,50 @@ In the details of a submission, the **Identity Verification** tab shows the veri
 
 #### Verification with Incode
 
-With the **Incode** provider, the whole verification takes place on an Incode page, outside the site, and the user returns to the same step of the flow when they finish, abandon, or fail. The modules that run (document validation with OCR, liveness, face match, and government database validation) are defined by the flow you configure in the Incode Dashboard, not by the task.
+With the **Incode** provider, the verification takes place on an Incode page or within the same step of the flow, depending on the modality. The modules that run (document validation with OCR, liveness, face match, and government database validation) are defined by the flow you configure in the Incode Dashboard, not by the task.
 
 Before using it, you must [install the Incode integration](/en/platform/customers/settings.html#incode) in the realm. Then, in **Incode settings** you define:
 
-- **Modality**: How the verification is integrated into the flow. Currently the only option is **Hosted URL**, where the user completes the verification on an Incode page and returns to the same step of the flow.
+- **Modality**: How the verification is integrated into the flow:
+  - **Hosted URL**: The user completes the verification on an Incode page, outside the site, and returns to the same step of the flow when they finish, abandon, or fail.
+  - **Drop-in**: The user completes the verification in the same step, with the Incode Web SDK interface embedded in the page. It requires adjusting the site's content security policy, as explained in [Drop-in requirements](#drop-in-requirements).
 - **Incode flow ID**: The identifier of the flow to run, 24 hexadecimal characters long. You get it in the Incode Dashboard, under **Flows** → **...** → **Copy ID**, or under **Workflows** → **...** → **Copy ID** if your organization uses workflows.
 
-Both fields are required: the origination is not saved if the modality is not valid or if the ID does not have 24 hexadecimal characters. If you configure the task through the administration API, the fields are `incode_modality` (only `hosted_url` is accepted) and `incode_workflow_id`, inside the task's identity verification configuration.
+Both fields are required: the origination is not saved if the modality is not valid or if the ID does not have 24 hexadecimal characters. If you configure the task through the administration API, the fields are `incode_modality` (accepts `hosted_url` or `drop_in`) and `incode_workflow_id`, inside the task's identity verification configuration.
 
 ##### What the user sees
 
-The task shows the verification status and the **Start verification** button, which takes the user to the Incode page. When the user returns, the task reflects the verification status:
+The task shows the verification status and the **Start verification** button. With Hosted URL, the button takes the user to the Incode page; with Drop-in, it opens the verification in the same step. If the browser is not compatible with the Incode Web SDK, the task says so instead of showing the button. When the user finishes, the task reflects the verification status:
 
 - **Verified**: The task is completed automatically and the user continues with the flow.
 - **Pending Review**: Incode left the verification in manual review. The user cannot restart it and must come back later to see the result.
 - **Rejected**, **Expired**, or **Error**: The user can try again with **Start the verification again**.
 - **In Progress**: Modyo does not have the result yet. The screen updates by itself when it arrives and, if the user did not complete the process in Incode, they can start it again.
+- **Processing the result**: The user finished the process in Incode and Modyo is waiting for the result. For the next two hours the user cannot restart the verification, so a finished attempt is not discarded. If the result does not arrive within that time, they can start it again.
 
 Each new attempt discards the images and results of the previous one. If Incode returns an error when starting the verification, the user sees a service unavailable message and the submission records the **Incode error in identity verification** log, which suggests checking the integration API key and the task flow ID.
+
+##### Drop-in requirements
+
+With Drop-in, the Incode Web SDK runs inside the site page, so the site's [content security policy (CSP)](/en/platform/channels/sites.html#content-security-policy-csp) must allow its resources. If the site defines its own policy, add to the existing directives:
+
+```bash
+script-src 'wasm-unsafe-eval' 'unsafe-eval'
+connect-src https://*.incodesmile.com https://*.s3.amazonaws.com https://featureassets.org https://prodregistryv2.org https://api.ipify.org
+img-src blob: https://*.s3.amazonaws.com
+worker-src blob:
+media-src blob:
+```
+
+`'wasm-unsafe-eval'` allows loading the SDK's WebAssembly module, and `'unsafe-eval'` is required by the image processing kit that the SDK downloads from Incode.
+
+::: warning Cost of 'unsafe-eval'
+`'unsafe-eval'` applies to the whole site, not only to the verification step: it allows running code from text and weakens the site's protection against _cross site scripting_. Add it only if you need Drop-in; Hosted URL does not require it.
+:::
+
+If the platform applies a default policy to sites, that policy does not allow the SDK. To use Drop-in, enable [Security headers](/en/platform/channels/sites.html#security-headers) on the site and define in **Content-Security-Policy (CSP)** a policy of its own that includes the directives above: the site policy replaces the platform one.
+
+With a nonce-based policy, the SDK uses its default theme instead of the theme configured in the Incode Dashboard, because Incode inserts that theme without a nonce.
 
 ##### How the result is decided
 
