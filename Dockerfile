@@ -1,4 +1,4 @@
-FROM node:16
+FROM node:24
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -19,4 +19,4 @@ COPY . .
 EXPOSE 8080
 
 
-CMD [ "yarn", "docs:dev" ]
+CMD [ "yarn", "docs:dev", "--host" ]
