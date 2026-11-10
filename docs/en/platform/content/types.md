@@ -87,7 +87,7 @@ The scope of **Unique** is the whole type: the comparison goes through every ent
 
 ### Multiline text
 
-This field allows you to enter plain text on several lines, with no formatting options. Unlike **Single-line text**, which accepts up to 255 characters, here you can store long texts. It has the following restrictions:
+This field allows you to enter text on several lines, with no formatting options in the editor. Unlike **Single-line text**, which accepts up to 255 characters, here you can store long texts. It has the following restrictions:
 
 - **Minimum length**: Allows you to require a minimum number of characters for the entered text.
 - **Maximum length**: Allows you to limit the maximum number of characters for the entered text.
@@ -96,8 +96,39 @@ This field allows you to enter plain text on several lines, with no formatting o
 This field doesn't offer the **Unique** validation: uniqueness is only available in [Single-line text](#single-line-text).
 
 :::warning Attention
-As of version 10.2, the value of this field is delivered HTML-escaped when you print it with Liquid: any tags you wrote are shown as literal text instead of being interpreted as markup. If you need to publish HTML from an entry, use a [Rich text](#rich-text) field. Review the templates that were using this field to inject HTML.
+As of version 10.2.2, the value of this field is published as HTML, limited to a list of allowed tags and attributes:
+
+- **When publishing**: the Liquid written in the field is evaluated first, also inside tags and attributes (for example <span v-pre>`<a href="{{ site.url }}/contact">`</span>). Then the tags, attributes and URI schemes that are not in the list are removed.
+- **When saving**: if the field holds elements outside the list, the entry is not saved and the error names the field and the elements, for example `body: style, <iframe>`. The same applies when editing, publishing, scheduling or restoring a version, and through the administration API.
+- **Copy, clone and bulk actions**: copying an entry is rejected if any of its locales doesn't comply. Cloning a space and the bulk actions to publish, edit and tag skip the entries that don't comply and report each one with the field and the elements.
+- **Existing content**: content saved before is not modified, and the content APIs return it as it is. An entry with content outside the list can be unpublished, archived and deleted, but not edited or published until it is fixed.
 :::
+
+#### Allowed HTML
+
+By default, the field accepts these tags:
+
+`a abbr acronym address b big blockquote br cite code dd del dfn div dl dt em h1 h2 h3 h4 h5 h6 hr i img ins kbd li mark ol p pre samp small span strong sub sup time tt ul var table caption colgroup col thead tbody tfoot tr th td u s strike bdi bdo wbr ruby rt rp article aside section header footer nav main figure figcaption hgroup`
+
+And these attributes:
+
+`abbr alt cite class datetime height href lang name src title width xml:lang colspan rowspan scope dir span`
+
+The `href` and `src` attributes only accept the `http`, `https`, `mailto` and `tel` schemes, plus relative paths. Among others, `script`, `style`, `iframe`, `form`, `input`, `svg`, the `on*` attributes and the `style` attribute are removed.
+
+Each installation can replace these lists with the `MODYO_CONTENT_MULTILINE_HTML_ALLOWED_TAGS` and `MODYO_CONTENT_MULTILINE_HTML_ALLOWED_ATTRS` environment variables. If an entry uses an element the list no longer allows, it can no longer be edited or published until it is fixed.
+
+#### Text that includes the < character
+
+The field is read as HTML, so a `<` followed by a letter opens a tag. For example, `Hello <name>` or `if (a<b && c>d)` are rejected when saving, and `x<y` with no later `>` loses the text that follows. To show the character, write it as `&lt;`. When what is rejected looks like text and not HTML, the error says so.
+
+If a template prints the field as plain text, for example with <span v-pre>`{{ entry.fields.body | escape }}`</span>, `&lt;` is shown literally. In that case, use a [Single-line text](#single-line-text) field or adjust the template.
+
+Liquid that completes the level of a heading, such as <span v-pre>`<h{{ level }}>`</span>, is accepted as long as `h1` to `h6` are in the list.
+
+#### JSON values
+
+<span v-pre>`{{ entry | json }}`</span> delivers the stored value with `<`, `>` and `&` escaped as `\u003c`, `\u003e` and `\u0026`. Use it only inside `<script type="application/json">`, never as the value of an attribute, and read the value with `JSON.parse`.
 
 ### Rich text
 
