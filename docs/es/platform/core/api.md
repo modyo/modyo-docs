@@ -35,13 +35,13 @@ De esta forma, la documentación Swagger pública de la API de contenido de la c
 
 En cada vista de documentación encuentras el detalle de los distintos recursos que Modyo te provee y las operaciones que puedes realizar sobre ellos.
 
-Por ejemplo, en la API Administrativa (/api/admin/docs) se muestran distintas secciones, como "Locks", "Layout pages", "Email templates" o "Content". Si te centras en esta última, ves que cuenta con un listado de operaciones que realiza sobre el módulo Content de Modyo, nos vamos a enfocar en solo en algunas llamadas hacia los Espacios:
+Por ejemplo, en la API Administrativa (/api/admin/docs) se muestran distintas secciones, como "Locks", "Layout Pages", "Email templates" o "Content Spaces". Si te centras en esta última, ves que cuenta con un listado de operaciones que realiza sobre los espacios del módulo Content de Modyo. Nos vamos a enfocar solo en algunas de ellas:
 
 ```http
-Content
+Content Spaces
 
 ...
-GET    /content/spaces   Spaces List
+GET    /content/spaces   List spaces
 POST   /content/spaces   Create a space
 ...
 ```
@@ -88,8 +88,9 @@ Dentro de la sección __Response__, en **Example Value** obtienes un ejemplo de 
       "enforced_review": false,
       "enforce_all_review": false,
       "enforced_reviewers_attributes": [],
-      "cache_max_age": 300,
-      "cache_enabled": false
+      "description": "Space for product content",
+      "show_author": true,
+      "realm_id": 3
     }
   ],
   "meta": {
@@ -115,35 +116,37 @@ El siguiente código es una parte del modelo para objeto **User**:
 
 ```shell
 User{
-schemas	    [...]
-id	        string example: 2441309d85324e7793ae
-externalId	string example: 2441309d85324e7793ae
-meta	      string example: OrderedMap { "resourceType": "User", "created": "2018-03-27T19:59:26.000Z", "lastModified": "2018-03-27T19:59:26.000Z" }
-userName	  string example: Test_User_dfeef4c5-5681-4387-b016-bdf221e82081
-name	      string example: OrderedMap { "familyName": "familyName", "givenName": "givenName" }
-active	    string
-example:    true
-emails	    [...]
+avatar        Avatar{...}
+id            integer example: 2332
+uuid          string example: 5379068f-4bc2-4858-8c37-6f59858e0a5b
+external_id   string example: 11111111-1
+name          string example: Clifton Feil
+first_name    string example: Clifton
+last_name     string example: Feil
+second_last_name string example: Smith
+email         string example: test.user@modyo.com
+username      string example: test.user
+...
 }
 ```
 
 ## Llamar a la API
 
-Una vez que conoces el servicio que consultarás de acuerdo a [Explorando la API](/es/platform/core/api#explorando-el-api) y un método de [Autenticación](/es/platform/core/api#autenticacion)), ya se puede realizar un _request_ a la URL del recurso requerido.
+Una vez que conoces el servicio que consultarás de acuerdo a [Información General](/es/platform/core/api.html#informacion-general) y un método de [Autenticación](/es/platform/core/api.html#autenticacion), ya se puede realizar un _request_ a la URL del recurso requerido.
 
-Para este ejemplo, obtendremos la lista de todas las campañas de correo que se crearon en la plataforma. De acuerdo a la documentación en Swagger _(test.modyo.com/api/admin/docs)_, se necesita llamar a la siguiente URL:
+Para este ejemplo, obtendremos la lista de todas las campañas de correo que se crearon en un reino. De acuerdo a la documentación en Swagger _(test.modyo.com/api/admin/docs)_, se necesita llamar a la siguiente URL, donde `{realm_uid}` es el **Identificador** del reino:
 
 ```http request
-GET https://[account_host]/api/admin/messaging/campaigns
+GET https://[account_host]/api/admin/customers/{realm_uid}/messaging/campaigns
 ```
-Este servicio acepta parámetros vía URL para filtrar por tipos (`mailing` y `notification`) mediante el parámetro `type`. Te permite incluir solo campañas que cuentan con _deliveries_ (parámetro `filtered`) o bien requerir sólo una lista reducida de atributos para ser incluídos en la _response_ (parámetro `only`).
+Este servicio acepta parámetros vía URL para filtrar por tipos (`mailing` y `notification`) mediante el parámetro `type`. Te permite buscar campañas por nombre (parámetro `query`) o bien requerir sólo una lista reducida de atributos para ser incluídos en la _response_ (parámetro `only`).
 
 #### Llama usando cURL
 
-Para el ejemplo solo se desea incluir las campañas de tipo `mailing` (`type=mailing`), de forma que la _request_, después de sumar los headers de autenticación necesarios, quedaría de la siguiente forma:
+Para el ejemplo solo se desea incluir las campañas de tipo `mailing` (`type=mailing`) del reino con identificador `my-realm`, de forma que la _request_, después de sumar los headers de autenticación necesarios, quedaría de la siguiente forma:
 
 ```shell script
-curl -X GET https://test.modyo.com/api/admin/messaging/campaigns?type=mailing -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
+curl -X GET https://test.modyo.com/api/admin/customers/my-realm/messaging/campaigns?type=mailing -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
 ```
 
 Al invocar el servicio, se obtiene un `HTTP 200 OK` y el _response_ que contiene un objeto JSON que se ve de la siguiente forma:
@@ -156,40 +159,44 @@ Al invocar el servicio, se obtiene un `HTTP 200 OK` y el _response_ que contiene
 		"uuid": "52dc64c2-8c31-4de1-b10c-0313ae6486f6",
 		"type": "mailing",
 		"sent_count": 1078,
-		"last_sent": "2019-07-15T17:05:12.000-03:00",
+		"starts_at": "2019-07-15T17:05:12.000-03:00",
 		"segments_enabled": false,
-		"segment_list": "--",
-		"created_at": "2019-07-15T16:58:43.000-03:00"
+		"segments_list": "--",
+		"created_at": "2019-07-15T16:58:43.000-03:00",
+		"read_only_for_admin": false
 	}, {
 		"id": 11,
 		"name": "Test campaing 02 Mar8 1546",
 		"uuid": "2c210b2c-af4e-4f9c-b2c5-b768dde622a2",
 		"type": "mailing",
 		"sent_count": 6,
-		"last_sent": "2019-03-11T15:17:20.000-03:00",
+		"starts_at": "2019-03-11T15:17:20.000-03:00",
 		"segments_enabled": true,
-		"segment_list": "Test Mailing Mar08",
-		"created_at": "2019-03-08T15:46:52.000-03:00"
+		"segments_list": "Test Mailing Mar08",
+		"created_at": "2019-03-08T15:46:52.000-03:00",
+		"read_only_for_admin": false
 	}, {
 		"id": 6,
 		"name": "campaign jan7 1210",
 		"uuid": "7dc46be9-ec5e-4468-b74e-a5ba4b88ecb4",
 		"type": "mailing",
 		"sent_count": 327,
-		"last_sent": "2019-01-07T16:53:33.000-03:00",
+		"starts_at": "2019-01-07T16:53:33.000-03:00",
 		"segments_enabled": true,
-		"segment_list": "--",
-		"created_at": "2019-01-07T12:10:22.000-03:00"
+		"segments_list": "--",
+		"created_at": "2019-01-07T12:10:22.000-03:00",
+		"read_only_for_admin": false
 	}, {
 		"id": 5,
 		"name": "Spanish Campaign",
 		"uuid": "4b13358e-f2b7-48ef-a720-26b55e4f2502",
 		"type": "mailing",
 		"sent_count": 0,
-		"last_sent": null,
+		"starts_at": null,
 		"segments_enabled": false,
-		"segment_list": "--",
-		"created_at": "2019-01-02T15:59:06.000-03:00"
+		"segments_list": "--",
+		"created_at": "2019-01-02T15:59:06.000-03:00",
+		"read_only_for_admin": false
 	}],
 	"meta": {
 		"total_entries": 4,
@@ -204,53 +211,23 @@ Al invocar el servicio, se obtiene un `HTTP 200 OK` y el _response_ que contiene
 
 1. Abre tu portal de la API en tu navegador. (e.g https://un.modyo.test/api/admin/docs)
 2. En la sección Campaigns, expande la llamada **Campaign List**.
-3. Aquí podrás refinar la búsqueda utilizando los parámetros de la llamada. Haz click en **Execute**.
+3. Ingresa el identificador del reino en `realm_uid` y, si quieres, refina la búsqueda utilizando los demás parámetros de la llamada. Haz click en **Execute**.
 4. En el apartado de **Response**, podrás ver lo siguiente:
 - Como ejecutar el mismo comando usando cURL
 - El Request URL
 - La respuesta de la plataforma Modyo.
 
-La respuesta JSON corresponde a una lista (o colección) de campañas de correo (`campaigns`) y los atributos de cada objeto de la colección contienen información relevante para el recurso consultado. En el ejemplo, el nombre de la campaña (`name`), la última fecha en que se envío (`last_sent`), o si esta campaña fue segmentada o no (`segments_enabled`).
+La respuesta JSON corresponde a una lista (o colección) de campañas de correo (`campaigns`) y los atributos de cada objeto de la colección contienen información relevante para el recurso consultado. En el ejemplo, el nombre de la campaña (`name`), la fecha en que comenzó su envío (`starts_at`), o si esta campaña fue segmentada o no (`segments_enabled`).
 
 Aparte de la colección, se puede ver un objeto llamado `meta` que contiene información acerca de la paginación de este recurso.
 
-Siguiendo con el ejercicio, es posible utilizar los datos obtenidos en la consulta anterior para obtener más información. Por ejemplo, podemos estar interesados en saber el número de veces que se ejecutó una campaña en particular (Campaign Deliveries) con el ID de esa campaña. Para esto, puedes volver a revisar el catálogo de servicios, y encontrarás el siguiente _endpoint_:
+Siguiendo con el ejercicio, es posible utilizar los datos obtenidos en la consulta anterior para obtener más información. Por ejemplo, podemos estar interesados en saber a quiénes se les envió una campaña en particular. Para esto, puedes volver a revisar el catálogo de servicios, y en la sección Message Deliveries encontrarás el siguiente _endpoint_:
 
 ```http request
-GET /messaging/campaigns/{campaign_id}/deliveries   Campaign deliveries list
+GET /customers/{realm_uid}/messaging/message_deliveries   List message deliveries
 ```
 
-De esta forma, se puede realizar un _request_ para ver la información específica de los _campaign deliveries_ de la campaña llamada "Test campaign 01", pasando en el parámetro `campaign_id` el ID de la campaña correspondiente (en este caso es el `15`):
-
-```shell script
-curl -X GET https://test.modyo.com/api/admin/messaging/campaigns/15/deliveries  -H 'Authorization: Bearer 8c280cc01fc13361aabb1183bb41b4b82faab23e990148c91406bbf5e452ab56'
-```
-
-Similar al ejemplo anterior, la _response_ se verá de la siguiente forma
-
-```json
-{
-	"deliveries": [{
-		"id": 29,
-		"uuid": "b728b957-78e5-4e2d-b28d-8e699a665a2c",
-		"campaign_id": 15,
-		"starts_at": "2019-07-15T17:05:12.000-03:00",
-		"ends_at": "2019-07-15T17:05:20.000-03:00",
-		"sent_count": 1078,
-		"reach": -1,
-		"status": "completed",
-		"segment_list": "--"
-	}],
-	"meta": {
-		"total_entries": 1,
-		"per_page": 10,
-		"current_page": 1,
-		"total_pages": 1
-	}
-}
-```
-
-Como puedes observar, la _response_ no es más que un objeto JSON que contiene una lista de _deliveries_ de campañas de correo (`deliveries`). En el ejemplo, se verifica que la campaña con ID `15` se ejecutó solo en una oportunidad, esta ya terminó con éxito (su `status` es `completed`) y fue recibida por 1078 personas (atributo `sent_count`).
+Este listado recibe el ID de la campaña en el parámetro `campaign_id` (en el caso de "Test campaign 01" es el `15`) y devuelve una entrega por cada mensaje enviado. En [Paginación](/es/platform/core/api.html#paginacion) verás esta llamada y cómo recorrer su respuesta.
 
 Siguiendo este ejemplo, puedes utilizar el amplio catálogo de servicios de Modyo y construir tu aplicación de la forma que más se acomode a tus necesidades.
 
@@ -490,10 +467,10 @@ Ninguno de estos errores mejora al reintentarlo: un `401`, un `403` o un `409` v
 
 Cuando se trata de APIs, en ocasiones la cantidad de resultados de una consulta es demasiado alto para ser eficiente y ordenado. Para mejorar la comprensión de estos datos por una persona se puede hacer uso de la **paginación**.
 
-Si quieres revisar la lista completa de las entregas de correos a clientes (`message deliveries`) de una campaña de correo determinada (`campaign`) y una ejecución de envío de campaña determinada (`campaign delivery`). Con los datos obtenidos en los _requests_ de las secciones anteriores, puedes utilizar el _endpoint_ que lista los _message deliveries_, pasándo como parámetros el `campaign_id` y `delivery_id` correspondientes:
+Por ejemplo, si quieres revisar la lista completa de las entregas de correos a clientes (`message deliveries`) de una campaña de correo determinada (`campaign`), puedes utilizar el _endpoint_ que lista los _message deliveries_ con el ID de la campaña que obtuviste en [Llamar a la API](/es/platform/core/api.html#llamar-a-la-api), pasándolo en el parámetro `campaign_id`:
 
 ```shell script
-curl -X GET https://test.modyo.com/api/admin/messaging/message_deliveries?campaign_id=15&delivery_id=29  -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
+curl -X GET "https://test.modyo.com/api/admin/customers/my-realm/messaging/message_deliveries?campaign_id=15" -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
 ```
 Por ejemplo, al ver el correspondiente _response_ de esta llamada:
 
@@ -506,9 +483,7 @@ Por ejemplo, al ver el correspondiente _response_ de esta llamada:
 		"type": "admin.messaging.mail",
 		"sent_at": "2019-07-15T17:05:20.000-03:00",
 		"opened": false,
-		"delivery_id": 29,
-		"campaign_name": "Test campaign 01",
-		"delivery_start_date": "2019-07-15T17:05:12.000-03:00"
+		"campaign_name": "Test campaign 01"
 	}, {
 		"id": 1505,
 		"user_name": "John Travolta",
@@ -516,9 +491,7 @@ Por ejemplo, al ver el correspondiente _response_ de esta llamada:
 		"type": "admin.messaging.mail",
 		"sent_at": "2019-07-15T17:05:20.000-03:00",
 		"opened": false,
-		"delivery_id": 29,
-		"campaign_name": "Test campaign 01",
-		"delivery_start_date": "2019-07-15T17:05:12.000-03:00"
+		"campaign_name": "Test campaign 01"
 	}, {
 		"id": 1504,
 		"user_name": "Al Pacino",
@@ -526,9 +499,7 @@ Por ejemplo, al ver el correspondiente _response_ de esta llamada:
 		"type": "admin.messaging.mail",
 		"sent_at": "2019-07-15T17:05:20.000-03:00",
 		"opened": false,
-		"delivery_id": 29,
-		"campaign_name": "Test campaign 01",
-		"delivery_start_date": "2019-07-15T17:05:12.000-03:00"
+		"campaign_name": "Test campaign 01"
 	}, {
 		"id": 1503,
 		"user_name": "Silvester Stallone",
@@ -536,9 +507,7 @@ Por ejemplo, al ver el correspondiente _response_ de esta llamada:
 		"type": "admin.messaging.mail",
 		"sent_at": "2019-07-15T17:05:20.000-03:00",
 		"opened": false,
-		"delivery_id": 29,
-		"campaign_name": "Test campaign 01",
-		"delivery_start_date": "2019-07-15T17:05:12.000-03:00"
+		"campaign_name": "Test campaign 01"
 	}, {
 		"id": 1502,
 		"user_name": "Linda Hamilton",
@@ -546,9 +515,7 @@ Por ejemplo, al ver el correspondiente _response_ de esta llamada:
 		"type": "admin.messaging.mail",
 		"sent_at": "2019-07-15T17:05:20.000-03:00",
 		"opened": false,
-		"delivery_id": 29,
-		"campaign_name": "Test campaign 01",
-		"delivery_start_date": "2019-07-15T17:05:12.000-03:00"
+		"campaign_name": "Test campaign 01"
 	}, {
 		"id": 1501,
 		"user_name": "Sigourney Weaver",
@@ -556,9 +523,7 @@ Por ejemplo, al ver el correspondiente _response_ de esta llamada:
 		"type": "admin.messaging.mail",
 		"sent_at": "2019-07-15T17:05:20.000-03:00",
 		"opened": false,
-		"delivery_id": 29,
-		"campaign_name": "Test campaign 01",
-		"delivery_start_date": "2019-07-15T17:05:12.000-03:00"
+		"campaign_name": "Test campaign 01"
 	}, {
 		"id": 1500,
 		"user_name": "Mark Hamill",
@@ -566,9 +531,7 @@ Por ejemplo, al ver el correspondiente _response_ de esta llamada:
 		"type": "admin.messaging.mail",
 		"sent_at": "2019-07-15T17:05:20.000-03:00",
 		"opened": false,
-		"delivery_id": 29,
-		"campaign_name": "Test campaign 01",
-		"delivery_start_date": "2019-07-15T17:05:12.000-03:00"
+		"campaign_name": "Test campaign 01"
 	}, {
 		"id": 1499,
 		"user_name": "Anthony Daniels",
@@ -576,9 +539,7 @@ Por ejemplo, al ver el correspondiente _response_ de esta llamada:
 		"type": "admin.messaging.mail",
 		"sent_at": "2019-07-15T17:05:20.000-03:00",
 		"opened": false,
-		"delivery_id": 29,
-		"campaign_name": "Test campaign 01",
-		"delivery_start_date": "2019-07-15T17:05:12.000-03:00"
+		"campaign_name": "Test campaign 01"
 	}, {
 		"id": 1498,
 		"user_name": "Harrison Ford",
@@ -586,9 +547,7 @@ Por ejemplo, al ver el correspondiente _response_ de esta llamada:
 		"type": "admin.messaging.mail",
 		"sent_at": "2019-07-15T17:05:20.000-03:00",
 		"opened": false,
-		"delivery_id": 29,
-		"campaign_name": "Test campaign 01",
-		"delivery_start_date": "2019-07-15T17:05:12.000-03:00"
+		"campaign_name": "Test campaign 01"
 	}, {
 		"id": 1497,
 		"user_name": "Meryl Streep",
@@ -596,9 +555,7 @@ Por ejemplo, al ver el correspondiente _response_ de esta llamada:
 		"type": "admin.messaging.mail",
 		"sent_at": "2019-07-15T17:05:20.000-03:00",
 		"opened": false,
-		"delivery_id": 29,
-		"campaign_name": "Test campaign 01",
-		"delivery_start_date": "2019-07-15T17:05:12.000-03:00"
+		"campaign_name": "Test campaign 01"
 	}],
 	"meta": {
 		"total_entries": 1078,
@@ -624,7 +581,7 @@ En el ejemplo anterior, aparte de contar con los primeros 10 registros, existen 
 Por ejemplo, si quieres obtener la página 30, pero esta vez con los _message deliveries_ agrupados en páginas de 5 elementos:
 
 ```shell script
-curl -X GET https://test.modyo.com/api/admin/messaging/message_deliveries?campaign_id=15&delivery_id=29&page=30&per_page=5  -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
+curl -X GET "https://test.modyo.com/api/admin/customers/my-realm/messaging/message_deliveries?campaign_id=15&page=30&per_page=5" -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
 ```
 
 Lo que entrega un response como el siguiente:
@@ -655,7 +612,7 @@ Lo que entrega un response como el siguiente:
 	"meta": {
 		"total_entries": 1078,
 		"per_page": 5,
-		"current_pag": 30,
+		"current_page": 30,
 		"total_pages": 216
 	}
 }
@@ -676,7 +633,9 @@ Los valores fuera de rango tampoco fallan, sino que caen a un valor predetermina
 No hay ninguna combinación de parámetros que devuelva una colección completa en una sola llamada. Para llevarte todos los registros de un recurso, recorre las páginas hasta `meta.total_pages`.
 
 :::warning Atención
-El catálogo Swagger de `GET /api/admin/sites` declara `per_page` con la descripción "Number of items per page (0 for all)", un máximo de 1000 y un valor predeterminado de 25. Las tres cosas son falsas: ese listado pagina como el resto de la API, con tope 100, 10 registros predeterminados y `per_page=0` devolviendo 10. Una sincronización de sitios escrita con `per_page=0` confiando en esa descripción recibe 10 sitios y `HTTP 200 OK`, sin ninguna señal de que faltan los demás.
+`GET /api/admin/business_events` no sigue estas reglas. Su `per_page` no tiene tope de 100: acepta hasta 10000 eventos por página y un valor mayor hace fallar la llamada. Con `paginate=false` y sin `per_page`, la respuesta trae hasta 1000 eventos. En cambio, `meta.per_page` y `meta.total_pages` se calculan como si el tope fuera 100: con `per_page=500` recibes 500 eventos, pero `meta.per_page` vale 100 y `meta.total_pages` cuenta páginas de 100. `meta.total_entries` sí es exacto, así que calcula la cantidad de páginas dividiéndolo por el `per_page` que enviaste.
+
+Tampoco aplica los valores predeterminados: con `per_page=0` recibes un solo evento, y `page=0` hace fallar la llamada. Además, este recurso solo alcanza los primeros 10000 eventos de la consulta: si `page` multiplicado por `per_page` supera ese número, la respuesta vuelve a traer la última página alcanzable, con `HTTP 200 OK`. Para llegar a los demás eventos, acota la consulta con `from_date` y `to_date`.
 :::
 
 ## Parámetros comunes de las colecciones
@@ -688,13 +647,13 @@ Los listados de la API de administración comparten un grupo de parámetros de q
 `only` recorta los atributos que trae la respuesta y está disponible en la mayoría de los listados y detalles de la API de administración. Se envía como arreglo, repitiendo el parámetro una vez por atributo:
 
 ```shell script
-curl -X GET "https://test.modyo.com/api/admin/messaging/campaigns?only[]=id&only[]=name" -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
+curl -X GET "https://test.modyo.com/api/admin/customers/my-realm/messaging/campaigns?only[]=id&only[]=name" -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
 ```
 
 Un atributo que no existe en el recurso simplemente no aparece en la respuesta y no genera error.
 
 :::warning Atención
-No uses `only` como lista separada por comas. Algunas operaciones del catálogo Swagger lo declaran así, con ejemplos del estilo `id,name,admin_users_count` (es el caso de `/api/admin/groups` y de `/api/admin/customers/{realm_uid}/forms`), pero la plataforma no divide el valor por comas: toma `id,name` como el nombre de un único atributo, no encuentra ninguno que se llame así y devuelve la colección con todos sus objetos vacíos, con `HTTP 200 OK`.
+No uses `only` como lista separada por comas. La plataforma no divide el valor por comas: toma `id,name` como el nombre de un único atributo, no encuentra ninguno que se llame así y devuelve la colección con todos sus objetos vacíos, con `HTTP 200 OK`.
 :::
 
 :::tip Tip
@@ -714,13 +673,6 @@ Ambos parámetros caen a ese orden predeterminado en silencio cuando el valor no
 
 Un listado ordenado por un `sort_by` inválido se ve igual que uno ordenado correctamente, así que revisa el orden de los registros en la respuesta antes de dar la consulta por buena.
 
-Estos recursos aceptan `sort_by` y `order` aunque el catálogo Swagger no los declare entre sus parámetros:
-
-- `GET /api/admin/customers/{realm_uid}/forms`
-- `GET /api/admin/customers/{realm_uid}/originations`
-- `GET /api/admin/customers/{realm_uid}/users/{user_id}/submissions`, que además no aparece en el catálogo
-- Los listados de `/api/admin/team_members`, que declaran `order` en algunas operaciones pero nunca `sort_by`
-
 ### Rangos de fecha
 
 `date_range` acota una colección por la fecha de creación de sus registros y `updated_date_range` por la fecha de la última modificación. Los dos reciben las dos fechas como arreglo:
@@ -738,7 +690,7 @@ Si alguna de las dos fechas no se puede interpretar, o si envías el arreglo con
 Los recursos que aceptan `date_range` son:
 
 - `GET /api/admin/logs`
-- `GET /api/admin/business_events`, que lo acepta sin declararlo en el catálogo Swagger
+- `GET /api/admin/business_events`
 - `GET /api/admin/customers/{realm_uid}/payments/orders`
 - `GET /api/admin/customers/{realm_uid}/originations/{id}/submissions`, el único que acepta también `updated_date_range`
 - `GET /api/admin/customers/{realm_uid}/originations/{id}/assignees`
@@ -847,7 +799,7 @@ Hasta 10.1, los usuarios con el rol **Default admin** a nivel de cuenta también
 - `page` y `per_page`: paginación, tal como se describe en [Paginación](/es/platform/core/api.html#paginacion).
 
 :::warning Atención
-`user_type` y `user_id` no filtran nada. Todavía aparecen entre los parámetros del recurso en `/api/admin/docs`, pero el listado los ignora: una llamada con `user_type=User` o con `user_type=AdminUser` devuelve el mismo resultado que la llamada sin parámetros. Si los usas para separar la actividad de los administradores de la de los usuarios finales, en realidad estás recibiendo el listado completo.
+`user_type` y `user_id` no filtran nada. El listado los ignora: una llamada con `user_type=User` o con `user_type=AdminUser` devuelve el mismo resultado que la llamada sin parámetros. Si los usas para separar la actividad de los administradores de la de los usuarios finales, en realidad estás recibiendo el listado completo.
 :::
 
 ### Separar la actividad de administración
@@ -868,11 +820,7 @@ curl -X GET "https://test.modyo.com/api/admin/logs?types=user_login_log,%20form_
 
 ### Orden de los resultados
 
-`sort_by` acepta `created_at`, `type` y `loggeable_type`, y `order` acepta `asc` y `desc`. De manera predeterminada el listado llega ordenado por `created_at` en `desc`, del registro más nuevo al más antiguo.
-
-:::tip Tip
-El catálogo Swagger publica `sort_by` con el valor de ejemplo `COMPLETAR`, que no es un valor válido. Usa `created_at`, `type` o `loggeable_type`.
-:::
+`sort_by` acepta estos campos del registro: `created_at`, `type`, `loggeable_type`, `loggeable_id`, `site_id`, `space_id`, `realm_id`, `user_id`, `user_uuid` o `automated`, y `order` acepta `asc` y `desc`. De manera predeterminada el listado llega ordenado por `created_at` en `desc`, del registro más nuevo al más antiguo.
 
 ### Detalle y tipos de registro
 
@@ -885,7 +833,7 @@ Ambas llamadas se rigen por el permiso agrupado **Ver Logs de Actividad**. El li
 
 El recurso `/api/admin/profile` trabaja siempre sobre el usuario dueño del token, sin recibir identificadores, y no exige permisos: basta con estar autenticado. Es el recurso que reemplaza a `GET /api/admin/admin_users/me`, que ya no existe.
 
-El catálogo Swagger de `/api/admin/docs` todavía no lista este recurso, por lo que sus llamadas son las siguientes:
+El catálogo Swagger de `/api/admin/docs` documenta este recurso en la sección "Admin Profile". Sus llamadas son las siguientes:
 
 ```http request
 GET    /api/admin/profile                              Perfil del usuario autenticado
