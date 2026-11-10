@@ -15,25 +15,25 @@ Additionally, by using the Channels and Customers modules, you can create sites 
 
 In the entry interface, you can see a list of all user-generated content, ordered by the date of the last update.
 
-The columns for sorting the list of entries are:
+The columns of the list of entries are:
 
-- **Status**: Draft, Published, Scheduled, or Archived.
+- **Status**: Status of the entry: **Published**, **Scheduled**, **Draft**, **Pending changes**, **In review**, **Approved**, **Archived**, or **Not translated**.
 - **Name**: Content title.
 - **Type**: Content [type](/en/platform/content/types).
-- **Updated on**: Date of the last saved content update.
+- **Updated on**: Date of the last saved content update. It is the only column you can sort the list by.
 - **Author**: Content author's name.
 
 You can also filter the view with predefined filters:
 
 - **Type**: Content [type](/en/platform/content/types).
-- **Status**: Draft, Published, Scheduled, or Archived.
+- **Status**: **Published**, **Not published**, **Scheduled**, and **Archived**. You can choose more than one status.
 - **Category**: Category assigned to entries. The result also includes the entries assigned to the subcategories of the category you choose.
 - **Language**: Content language.
 - **Translation**: Entry translation status. If an entry has no version in the selected language, it is considered "not translated".
-- **Tags**: Labels available in the account.
+- **Tags**: Tags assigned to the entries of the space.
 - **Author**: Administrator who created the entry. The list only offers the users who have at least one entry in the space.
 - **Segments**: Segments assigned to the entries. This filter only appears when the space is associated with a user realm.
-- **Search bar**: Type a word to display entries that contain that word in their name or metadata.
+- **Search bar**: Displays the entries whose name or identifier contains the text you type.
 
 :::tip Tip
 Click on the Filters menu in the upper right of the entry list to add or remove any of the filtering options in the header.
@@ -67,7 +67,9 @@ Select one or more entries and click on the Bulk Actions box to:
 The option to bulk edit entries is only available for entries of the same type and is only visible if you filter entries by type.
 :::
 
-You can make changes to all fields of the type. Once the changes are made, click **Next** at the top of the screen to see the summary of your changes. Click "Save" to confirm the changes.
+You can change the **Category**, the **Privacy**, and all fields of the type, except the **Group** fields. **Privacy** only appears if the space is associated with a user realm, and it lets you mark the entries as **Private** and assign segments to them. To bulk edit, you need the **Bulk Edit Entries** permission.
+
+Once the changes are made, click **Next** at the top of the screen to see the summary of your changes. Click "Save" to confirm the changes.
 
 These entries will now have pending changes and must be published. To do this, you can use the "Publish" bulk action.
 
@@ -79,8 +81,8 @@ To retrieve a specific value from an entry, access the entry editing view and se
 :::
 
 - **Add or remove tags**: Opens a window to change the tags of the whole selection. In **Add new tags** you type or pick the tags you want to add, and under **Tags among selected elements** you see the tags those entries already have, with the number of entries that use each one: **Apply to all** adds that tag to the rest of the selection and the delete icon removes it from all of them. Click **Save** and confirm to apply the changes.
-- **Publish**: Publishes selected entries that have pending changes or are in draft status.
-- **Force publication**: If team review is enabled, space administrators can use this action to force the publication of entries that have pending changes or are in draft status, without having to go through the review process.
+- **Publish**: Publishes selected entries that have pending changes or are in draft status. Entries with values that fail validation, for example an empty required field, are not published. Check the status of the entries in the list to confirm which ones were published.
+- **Force publish**: If team review is enabled, space administrators see this action instead of **Publish**. It publishes the selected entries that have pending changes or are in draft status, without having to go through the review process.
 - **Unpublish**
 - **Archive**: Bulk archiving only affects selected entries that are not published. If you try to archive a published entry, the action will have no effect.
 - **Restore**: Takes the selected entries out of the archive and returns them to draft status. It only reaches archived entries, so it is worth filtering the list by the **Archived** status before using it.
@@ -145,8 +147,8 @@ To create an entry, follow these steps:
 1. Click **Publish**.
 
 
-:::warning Attention
-If the name field is empty, the default identifier will be the UUID of the entry.
+:::tip Tip
+The name and the identifier are required: the **Create** button is enabled once you choose the content type and fill in both fields. As you type the name, Modyo suggests an identifier based on it, which you can edit before creating the entry.
 :::
 
 ## Translate an Entry
@@ -232,14 +234,21 @@ The full behavior of the scheduled version, including the notification you get w
 
 ### Delete entries
 
+You can only delete archived entries, and **Archive** is not available while the entry is published. If the entry is published, [unpublish it](#unpublish-an-entry) first.
+
 To delete an entry:
 
 1. In the side menu, select Content.
 1. Click on your space.
 1. Select Entries.
 1. From the list of entries, click on the entry you want to delete.
-1. Click on the more actions button (...) and select **Delete**. If the entry is not archived, this option will not be active; first select **Archive** and then select **Delete**.
+1. If the entry is not archived yet, click on the more actions button (...) and select **Archive**.
+1. Click on the more actions button (...) and select **Delete**.
 1. Click **Ok** to confirm.
+
+:::danger Danger
+**Delete** removes the entry only in the language you have selected, along with all its backups, and it cannot be undone. The translations of the entry into other languages are kept. The action requires the **Delete Entries** permission.
+:::
 
 ### Preview
 
@@ -257,7 +266,9 @@ To preview your content:
 1. Click on your space.
 1. Select Entries.
 1. From the list of entries, click on the entry you want to preview.
-1. Click on the preview icon in the upper right.
+1. Click on the preview icon in the upper right. The **Preview** window opens with the JSON of the entry.
+1. In the **App** selector, choose the site where you want to see the entry.
+1. In the **Content page** selector, choose the content page that displays the entry. The preview opens in a new browser tab.
 
 :::warning Attention
 We recommend that you consider:
@@ -323,9 +334,9 @@ To create a category:
 1. Click on the **New Category** button.
 1. In the pop-up window, enter the name, path, and, optionally, a parent category.
 
-When you assign an entry to a category, Modyo adds the identifier as a prefix to the URL of the entry, for example:
+When you assign an entry to a category, Modyo adds the full path of the category, including its parent categories, between the path of the [content page](/en/platform/channels/pages#content-page) and the identifier of the entry. This only happens if the content page has the **Use categories** option turned on, which is off by default. For example:
 
-An entry with URL: test.modyo.com/visita-chile and category 'travel' would now be test.modyo.com/travel/visita-chile.
+An entry with URL: test.modyo.com/blog/visita-chile and category 'travel' would now be test.modyo.com/blog/travel/visita-chile.
 
 :::tip Tip
 When you enter the category name, the path is automatically set as an identifier. To change it, click on the path.
@@ -370,7 +381,7 @@ Unlike fields, the excerpt is not defined in the content type: it is available i
 The identifier is a unique value used to generate the URL of an entry.
 When you create an entry, the platform assigns an identifier to it. If you want to create a more friendly link, you can modify it when creating the entry or later when editing it.
 
-By force, the identifier must be a unique value for entries of the same type. If you try to save two entries with the same identifier, the platform will modify the last one when you publish the entry.
+The identifier must be unique among the entries of the same content type and the same language. If you try to save an entry with an identifier that another entry of that type already uses in that language, Modyo does not save the changes and warns you that the identifier has already been taken.
 
 
 :::warning Important
@@ -382,6 +393,8 @@ If you want to modify the identifier of your entry after its creation, you must 
 ### Private content
 
 Enable the private content option so that your content is exclusive to users who have a session on the platform.
+
+The **Private** option is in the **Privacy** block of the **Properties** panel, and it only appears if the space is associated with a user realm. To associate one, go to the [General](/en/platform/content/spaces#general) section of the space settings.
 
 Depending on how you are consuming the content, you may need to follow some additional steps to access it:
 
@@ -395,8 +408,8 @@ Segmented content is essential for any entity or company that wants to send spec
 
 To enable an entry to be visible to a specific group of users:
 
-1. Check the private content option
-1. Enable segmentation
+1. In the **Privacy** block, check **Private**.
+1. Check **Enable segmenting**.
 1. Select the user segment that the entry is aimed at.
 1. Click **Save**.
 
@@ -448,5 +461,9 @@ URL: `https://test.modyo.com/api/content/spaces/test-space/types/nuevo/entries/4
   }
 }
 ```
+
+:::tip Tip
+**API Link** is disabled while the entry is in draft status. If the entry is private, the content API only returns its content with a delivery token. See [Private content](/en/platform/content/public-api-reference#private-content) in the API reference.
+:::
 
 For more information about our API and the different actions you can perform, see [Management API](/en/platform/core/api).
