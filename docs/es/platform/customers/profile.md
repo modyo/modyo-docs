@@ -75,6 +75,8 @@ Todas las vistas de sesión y de perfil de un reino cuelgan del mismo prefijo, f
 
 Puedes conocer el detalle del ingreso con código en [Soft login](/es/platform/customers/settings.html#soft-login).
 
+Las rutas de recuperación de contraseña y de cambio de correo tienen además límites antiabuso que pueden hacer que un correo no se envíe o que la sesión del usuario se cierre, sin que la pantalla muestre ningún error. Revisa [Límites de solicitudes y bloqueos](/es/platform/customers/settings.html#limites-de-solicitudes-y-bloqueos).
+
 :::tip Tip
 No existe un drop de Liquid que entregue la URL de registro: ármala con el identificador del reino. Para el inicio y el cierre de sesión y para el perfil sí tienes **site.login_url**, **site.logout_url** y **site.profile_url**, que puedes revisar en [Objetos](/es/platform/channels/liquid-markup/objects.html#site).
 :::
