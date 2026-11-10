@@ -791,7 +791,7 @@ Controla qué recursos puede cargar el navegador en el sitio para mitigar ataque
 Especifica libremente tu política de seguridad de contenido en el área de texto. Para obtener una guía completa sobre cómo escribir tu política, consulta [Content Security Policy (CSP) de Mozilla Developer Network.](https://developer.mozilla.org/es/docs/Web/HTTP/CSP)
 
 :::warning Atención
-Un valor muy estricto puede interferir con algunas características como [Google tag manager](/es/platform/channels/sites#google-tag-manager), [PWA](/es/platform/channels/sites#pwa), [Widgets](/es/platform/channels/widgets) y [Asset Manager](/es/platform/content/asset-manager).
+Un valor muy estricto puede interferir con algunas características como [Google tag manager](/es/platform/channels/sites#google-tag-manager), [PWA](/es/platform/channels/sites#pwa), [Widgets](/es/platform/channels/widgets), [Asset Manager](/es/platform/content/asset-manager) y la [modalidad Drop-in de Incode](/es/platform/customers/origination.html#requisitos-de-drop-in).
 :::
 
 Una política apta para producción debe asegurar que todos los recursos, como imágenes y hojas de estilo, se carguen desde fuentes confiables y requiere que todos los scripts sean seguros y confiables para la aplicación. Por ejemplo, una política estricta para el _template minimal_ se vería así:
