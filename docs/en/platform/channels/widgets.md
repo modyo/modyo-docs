@@ -6,7 +6,7 @@ search: true
 
 Widgets allow you to create _micro frontends_ for your sites and applications. Using Widgets extends the capabilities of your sites and allows you to have more control since you can add more functionality by keeping each widget as a separate entity from your site.
 
-When you enter the Widgets section of the site, you can see a list of all the widgets that have been created. In the top bar you can filter the list of widgets by status, author, tags, or do a text search by the name of the widget.
+When you enter the Widgets section of the site, you can see a list of all the widgets that have been created. In the top bar you can filter the list of widgets by status (**Published**, **Not published**, **Scheduled**, or **Archived**), author, tags, or do a text search by the name of the widget. Widgets that no page uses show an information icon next to their name.
 
 
 In the widget editing view, you can see three areas: the top action bar, the main work area and the properties column on the right.
@@ -18,6 +18,8 @@ Along the **top bar**, on the left, you can see the widget name and current stat
 - **Pending changes**: This status appears if there is already a published version of a widget, but there are pending changes to be published in the editable version.
 - **In review**: This status appears when [team review](/en/platform/core/#team-review) is enabled and this widget is in review.
 - **Approved**: This status appears when [team review](/en/platform/core/#team-review) is enabled and the review conditions for the item are met. When in this state, templates are ready to be published.
+- **Scheduled**: This status appears when the widget is not published yet and has a scheduled publication.
+- **Archived**: This status appears when the widget is archived.
 
 On the right, you'll find the following actions:
 **Preview**: Opens the preview of the editable version of the widget in a new tab.
@@ -30,9 +32,13 @@ You can preview the widgets as a user without a session or a user with a Modyo s
 
 By default, you start by comparing the published version with the editable version. Use the version selectors to compare with backup versions. If the icon does not appear, it means that there is no published version of this widget.
 
+:::tip Tip
+If any file of the widget exceeds the allowed size limit, the differences view doesn't show the detail of its changes, but the message "The file has differences but the size of the file surpass the limit permitted and can not be displayed".
+:::
+
 **Activity**: Allows you to display a side tab that shows the widget's activity and comments.
 
-**Other options**: Allows you to archive and create a copy of the current widget.
+**Other options**: Groups the **Archive**, **Delete**, and **Clone** actions for the current widget. **Clone** creates a copy of the widget with the name you enter. **Delete** only appears if your role includes the **Delete Widgets** permission and is only enabled on archived widgets: it deletes the widget along with its backups and can't be undone.
 
 **Main button**:
 
@@ -42,8 +48,8 @@ By default, you start by comparing the published version with the editable versi
 
 **Other main actions**:
 
-- **Unpublish**: If the widget is published, you can take it out of production using this option.
-- **Force publishing**: If you are a site administrator, you can use this option to immediately publish a widget, even if Team Review is enabled.
+- **Unpublish**: If the widget is published, you can take it out of production using this option. You can unpublish it immediately with **Unpublish now** or schedule it with **Unpublish on**. For more information, see [Version Types](/en/platform/core/#version-types).
+- **Force publish**: If your role includes the **Admin Widgets** permission on the site or the **Manage Channels** permission in the organization, you can use this option to immediately publish a widget, even if Team Review is enabled.
 
 :::tip Tip
 Only widgets that have been unpublished can be archived.
@@ -79,12 +85,12 @@ In the three widget tabs, Liquid can be used. For more information, review [the 
 
 In the properties column you can see:
 
-- **Name**: Allows you to change the widget name.
+- **Name**: Shows the widget name as read-only. It's set when you create the widget and can't be changed, because it's used as an identifier.
 - **Tags**: Allows you to add tags to a widget. Tags are for administrative use and serve to search and filter widgets to find them quickly.
-- **Pages using this widget**: You will see a list of pages that are using this widget. While viewing pages in this list, you will not be able to unpublish or archive the widget.
+- **Pages using this widget**: You will see a list of pages that are using this widget.
 
 :::warning Attention
-If you delete a widget from a page and publish, you will still see that page in this list because the widget is still referenced in the backups of that page. From version 9.1.10 onwards, you can unpublish any published widget, even if it is in use. Active references on pages will become inactive, so you will not see the widget on the site if you unpublished it. In addition, you can archive any widget that is not published, so that if there are still references on some pages of the widget you want to archive, these will be deleted when the widget is archived.
+If you delete a widget from a page and publish, you will still see that page in this list because the widget is still referenced in the backups of that page. You can unpublish any published widget, even if it is in use. References on pages will become inactive, so you will not see the widget on the site until you publish it again. In addition, you can archive any widget that is not published: if it still has references on some pages, the platform asks you to confirm, and they are deleted when the widget is archived.
 :::
 
 ## Create a Widget
@@ -92,7 +98,7 @@ To create a new Widget and have a _micro frontend_ for your sites and publicatio
 1. From the Modyo Platform main menu, expand Channels, and click your Site.
 1. Click Widgets.
 1. Click the **New Widget** button.
-1. Type the name of your widget and click **Create**.
+1. Type the name of your widget and click **Create**. The name is used as an identifier and you won't be able to change it later; if you need a different name, use **Clone** to create a copy with the new name.
 1. Customize your widget using HTML, CSS, JavaScript, or Liquid.
 1. Once finished, click **Publish**.
 
@@ -152,12 +158,12 @@ This is an experimental feature and may be subject to changes.
 
 You can load your widgets as ES Modules instead of traditional scripts. This enables modern JavaScript features like native `import`/`export` syntax and provides better scope isolation, preventing conflicts with global variables.
 
-To enable ES Module loading, go to the edit view of the page containing the widget, select the widget, and check the "Load as ES Module" option in the Properties panel.
+To enable ES Module loading, go to the edit view of the page containing the widget, select the widget, and check the **Load as ES Module (Experimental)** option in the Properties panel.
 
 When enabled, the widget's JavaScript will be loaded with `type="module"`:
 
 - **Async mode** (default): The widget's script tag will include `type="module"` when loaded dynamically.
-- **Sync mode**: The inline script will be rendered with `type="module"`.
+- **Sync mode**: The inline script will be rendered with `type="module"`, but the widget code is wrapped in a function. Because of this, you can't use static `import` or `export` statements, since the browser throws a syntax error; only dynamic `import()` works. If your widget needs the full module syntax, use asynchronous loading.
 
 :::tip Tip
 ES Module loading is especially useful for widgets built with modern frameworks that use native ES module syntax, such as those based on [Dynamic Framework](https://dynamicframework.dev).
@@ -314,9 +320,7 @@ function loadLocaleMessages() {
 
 ## Use Liquid in Widgets
 
-Create a javascript object in Snippets to be able to use Liquid in your Widgets.
-
-Widgets, being decoupled from the platform, have the disadvantage of not being able to use Liquid directly, and we do not have access to [liquid objects](/en/platform/channels/liquid-markup/objects). To work with them, you will have to make them available via javascript from the platform. [**Liquid Markup**](/en/platform/channels/liquid-markup) is an important part of the platform, of how we build views, and how we access the content on it. It also gives you access to [**objects**](/en/platform/channels/liquid-markup/objects), context variables that allow you to interact with your views more dynamically. For example, you can determine what content to show the user according to the segment they belong to, hide a menu depending on the page being visited, etc.
+Widgets you create in the panel can use Liquid directly in their three tabs. However, when you develop a widget in your local environment with the [CLI](/en/platform/channels/cli.html), its code doesn't go through Liquid and has no access to [Liquid objects](/en/platform/channels/liquid-markup/objects). To work with them, create a JavaScript object in a snippet that makes them available from the platform. [**Liquid Markup**](/en/platform/channels/liquid-markup) is an important part of the platform, of how we build views, and how we access the content on it. It also gives you access to [**objects**](/en/platform/channels/liquid-markup/objects), context variables that allow you to interact with your views more dynamically. For example, you can determine what content to show the user according to the segment they belong to, hide a menu depending on the page being visited, etc.
 
 
 Follow these steps to create a snippet with Liquid variables:
@@ -347,14 +351,14 @@ In development mode, we will not have access to this object since we are working
 In the following example, const lang takes the value of window.liquid.lang; if the object does not exist, it assigns the default value "es-CL":
 
 ```js
-const lang = window.liquid !== "undefined" ? window.liquid.lang : "es-CL";
+const lang = typeof window.liquid !== "undefined" ? window.liquid.lang : "es-CL";
 ```
 
 ### Inserting an image with Liquid
 
 Modyo recommends using the Liquid tag and not the asset URL to insert images into your content. This allows you to resize or replace an image wherever it is in use and ensure that any changes are immediately reflected.
 
-In addition, Modyo converts the image to webp format with lossless compression quality. This results in lighter images, with shorter loading times, and without loss of quality.
+Modyo doesn't convert the image format on its own: if you use Cloudflare for image optimization, you can request another format, such as webp, with the `format` parameter of the `asset_image` filter. See the available parameters in [Asset image](/en/platform/channels/liquid-markup/filters.html#asset-image).
 
 
 #### To get the Liquid code from an image:
