@@ -53,7 +53,7 @@ The condition of an `if`, `elsif` or `unless` tag must be a normal Liquid expres
 The available relational operators are:
 
 - `==, !=,` and `<>`: Equal and not equal (the last two are synonyms).
-    * There is a special "empty" value (without quotes) that arrays can be compared to; the comparison is true if the array has no members.
+    * There are two special values, without quotes, to compare against: `empty` is true if the string, array or hash has no elements, and `blank` is true in those same cases and also for `nil`, `false` and strings that only contain whitespace. A null value is not `empty`, but it is `blank`.
 - `<, <=, >, >=`: Less than/greater than.
 - `contains`: A _wrapper_ around Ruby's `include?` method, implemented in strings, arrays and hashes. If the left argument is a string and the right one isn't, it converts the right one to string.
 
@@ -170,12 +170,12 @@ hit 2 or 3
 *Example:*
 
 ```liquid
-{% case template %}
+{% case page_context %}
 
-{% when 'label' %}
-     // {{ label.title }}
-{% when 'product' %}
-     // {{ product.vendor | link_to_vendor }} / {{ product.title }}
+{% when 'context-home' %}
+     // {{ site.name }}
+{% when 'context-search' %}
+     // {{ page_title }}: {{ params_query }}
 {% else %}
      // {{page_title}}
 {% endcase %}
@@ -297,6 +297,8 @@ forloop.rindex      # => how many items are still left?
 forloop.rindex0     # => how many items are still left? (zero based)
 forloop.first       # => is this the first iteration?
 forloop.last        # => is this the last iteration?
+forloop.parentloop  # => forloop of the outer loop (nil if the loop is not nested)
+forloop.name        # => name of the loop: variable and collection, e.g. item-array
 ```
 
 #### Optional arguments
@@ -305,6 +307,7 @@ There are several optional arguments to the `for` tag that can influence which i
 
 - `limit:<INTEGER>` allows you to restrict the number of items you get.
 - `offset:<INTEGER>` allows you to start the collection with the nth item.
+- `offset:continue` picks up the collection where the previous loop that used the same variable over the same collection left off.
 - `reversed` iterates over the collection from last to first.
 
 Restricting elements:
@@ -315,6 +318,19 @@ Restricting elements:
   {{ item }}
 {% endfor %}
 # results in 3,4
+```
+
+Continuing a previous loop:
+
+```liquid
+# array = [1,2,3,4,5,6]
+{% for item in array limit:3 %}
+  {{ item }}
+{% endfor %}
+{% for item in array offset:continue %}
+  {{ item }}
+{% endfor %}
+# results in 1,2,3 and then 4,5,6
 ```
 
 Reversing the loop:
@@ -341,7 +357,7 @@ You can store data in your own variables, for use in output tags or other tags a
 ```liquid
 {% assign name = 'freestyle' %}
 
-{% for t in collections.tags %}{% if t == name %}
+{% for post in spaces['blog'].types['post'].entries %}{% if post.meta.category_slug == name %}
   <p>Freestyle!</p>
 {% endif %}{% endfor %}
 ```
@@ -351,7 +367,7 @@ Another way to do this would be to assign `true/false` values to the variable:
 ```liquid
 {% assign freestyle = false %}
 
-{% for t in collections.tags %}{% if t == 'freestyle' %}
+{% for post in spaces['blog'].types['post'].entries %}{% if post.meta.category_slug == 'freestyle' %}
   {% assign freestyle = true %}
 {% endif %}{% endfor %}
 
@@ -363,7 +379,7 @@ Another way to do this would be to assign `true/false` values to the variable:
 If you want to combine several strings into one and save it in a variable, you can do so with the `capture` tag, which "captures" whatever is displayed inside it, and then assigns the captured value to the given variable instead of displaying it on the screen.
 
 ```liquid
-  {% capture attribute_name %}{{ item.title | handleize }}-{{ i }}-color{% endcapture %}
+  {% capture attribute_name %}{{ item.title | downcase | replace: ' ', '-' }}-{{ i }}-color{% endcapture %}
 
   <label for="{{ attribute_name }}">Color:</label>
   <select name="attributes[{{ attribute_name }}]" id="{{ attribute_name }}">
@@ -414,10 +430,13 @@ Those classes are the hook for writing CSS or JavaScript per page type without p
 | `context-support` | Support pages | `base` | `context-support-show` | `context-support-show-<page path>` |
 | `context-forms` | Forms, form view | `base` | `context-forms-form_response` | `context-forms-show-<form slug>` |
 | `context-forms` | Forms, thank you page | `base` | `context-forms-thank_you` | `context-forms-thank_you-<form slug>` |
-| `context-people` | Preview from the admin | `base` | (empty) | (empty) |
+| `context-people` | Widget preview from the admin | `base` | (empty) | (empty) |
+| (none) | Site error pages, such as the 404 | `base` | (empty) | (empty) |
+
+Previewing a page from the admin keeps that page's context: `context-people` only shows up in the widget preview.
 
 :::tip Tip
-The `id` only distinguishes the home page, custom pages, content pages and search. Every other context shares `id="base"`, so to style those use the `page_context` class.
+The `id` only distinguishes the home page, custom pages, content pages and search. Every other context shares `id="base"`, so to style those use the `page_context` class. Error pages don't have that class.
 :::
 
 See [Context Variables](/en/platform/channels/liquid-markup/variables.html#context-variables) for what each of these variables holds.

@@ -162,9 +162,9 @@ La barra de vista previa contiene los siguientes elementos interactivos:
 - **Salir del modo vista previa**: Cierra el modo vista previa, eliminando la barra y manteniendo la pestaña en la URL actual del sitio.
 
 :::warning SDK de contenido
-El selector **SDK de contenido** afecta al contenido que se usa a través del SDK de Liquid y también a la API pública de contenido: si el navegador que hace la petición tiene el modo vista previa abierto y el selector en **Editable**, la API de contenido responde con las versiones editables de las entradas.
+El selector **SDK de contenido** afecta al contenido que se usa a través del SDK de Liquid y también a la API pública de contenido: con el selector en **Editable**, las llamadas que la página abierta en vista previa hace a la API de contenido reciben las versiones editables de las entradas.
 
-Esto sólo ocurre cuando la petición viaja con la sesión de administrador de ese navegador. Un usuario final anónimo, o cualquier consumo desde un servidor, siempre recibe contenido publicado. Revisa [Vista previa](/es/platform/content/public-api-reference.html#vista-previa) para el detalle.
+Esto sólo ocurre en las peticiones que hace esa misma página. Una petición hecha directamente a la API desde otra pestaña, un usuario final anónimo o cualquier consumo desde un servidor siempre recibe contenido publicado. Revisa [Vista previa](/es/platform/content/public-api-reference.html#vista-previa) para el detalle.
 :::
 
 

@@ -53,7 +53,7 @@ La condición de un tag `if`, `elsif` o `unless` debe ser una expresión de Liqu
 Los operadores relacionales disponibles son:
 
 - `==, !=,` y `<>`: Igual y desigual (los dos últimos son sinónimos).
-    * Hay un valor especial "empty" (sin comillas) con el que se pueden comparar los arrays; la comparación es verdadera si el array no tiene miembros.
+    * Hay dos valores especiales, sin comillas, para comparar: `empty` es verdadero si el string, array o hash no tiene elementos, y `blank` lo es en esos mismos casos y además para `nil`, `false` y los strings que solo tienen espacios. Un valor nulo no es `empty`, pero sí `blank`.
 - `<, <=, >, >=`: Menor/mayor que.
 - `contains`: Un _wrapper_ alrededor del método `include?` de Ruby, implementado en strings, arrays y hashes. Si el argumento izquierdo es un string y el derecho no, convierte a string el derecho.
 
@@ -170,12 +170,12 @@ hit 2 or 3
 *Ejemplo:*
 
 ```liquid
-{% case template %}
+{% case page_context %}
 
-{% when 'label' %}
-     // {{ label.title }}
-{% when 'product' %}
-     // {{ product.vendor | link_to_vendor }} / {{ product.title }}
+{% when 'context-home' %}
+     // {{ site.name }}
+{% when 'context-search' %}
+     // {{ page_title }}: {{ params_query }}
 {% else %}
      // {{page_title}}
 {% endcase %}
@@ -297,6 +297,8 @@ forloop.rindex      # => how many items are still left?
 forloop.rindex0     # => how many items are still left? (zero based)
 forloop.first       # => is this the first iteration?
 forloop.last        # => is this the last iteration?
+forloop.parentloop  # => forloop of the outer loop (nil if the loop is not nested)
+forloop.name        # => name of the loop: variable and collection, e.g. item-array
 ```
 
 #### Argumentos opcionales
@@ -305,6 +307,7 @@ Hay varios argumentos opcionales en la etiqueta `for` que pueden influir en los 
 
 - `limit:<INTEGER>` te permite restringir la cantidad de objetos a obtener.
 - `offset:<INTEGER>` permite empezar la colección con el enésimo ítem.
+- `offset:continue` retoma la colección donde terminó el bucle anterior que usó la misma variable sobre la misma colección.
 - `reversed` itera sobre la colección desde el último hasta el primero.
 
 Elementos de restricción:
@@ -315,6 +318,19 @@ Elementos de restricción:
   {{ item }}
 {% endfor %}
 # results in 3,4
+```
+
+Continuación de un bucle anterior:
+
+```liquid
+# array = [1,2,3,4,5,6]
+{% for item in array limit:3 %}
+  {{ item }}
+{% endfor %}
+{% for item in array offset:continue %}
+  {{ item }}
+{% endfor %}
+# results in 1,2,3 and then 4,5,6
 ```
 
 Inversión del bucle:
@@ -341,7 +357,7 @@ Puede almacenar datos en sus propias variables, para utilizarlos en los tags de 
 ```liquid
 {% assign name = 'freestyle' %}
 
-{% for t in collections.tags %}{% if t == name %}
+{% for post in spaces['blog'].types['post'].entries %}{% if post.meta.category_slug == name %}
   <p>Freestyle!</p>
 {% endif %}{% endfor %}
 ```
@@ -351,7 +367,7 @@ Otra forma de hacer esto sería asignar valores `true/false` a la variable:
 ```liquid
 {% assign freestyle = false %}
 
-{% for t in collections.tags %}{% if t == 'freestyle' %}
+{% for post in spaces['blog'].types['post'].entries %}{% if post.meta.category_slug == 'freestyle' %}
   {% assign freestyle = true %}
 {% endif %}{% endfor %}
 
@@ -363,7 +379,7 @@ Otra forma de hacer esto sería asignar valores `true/false` a la variable:
 Si quieres combinar varios strings en uno solo y guardarlo en una variable, puedes hacerlo con el tag `capture`, que "captura" lo que sea que se muestre en su interior, y luego asigna el valor capturado a la variable dada en lugar de mostrarlo en la pantalla.
 
 ```liquid
-  {% capture attribute_name %}{{ item.title | handleize }}-{{ i }}-color{% endcapture %}
+  {% capture attribute_name %}{{ item.title | downcase | replace: ' ', '-' }}-{{ i }}-color{% endcapture %}
 
   <label for="{{ attribute_name }}">Color:</label>
   <select name="attributes[{{ attribute_name }}]" id="{{ attribute_name }}">
@@ -414,10 +430,13 @@ Esas clases son el gancho para escribir CSS o JavaScript por tipo de página sin
 | `context-support` | Páginas de soporte | `base` | `context-support-show` | `context-support-show-<ruta de la página>` |
 | `context-forms` | Formularios, vista del formulario | `base` | `context-forms-form_response` | `context-forms-show-<slug del formulario>` |
 | `context-forms` | Formularios, página de agradecimiento | `base` | `context-forms-thank_you` | `context-forms-thank_you-<slug del formulario>` |
-| `context-people` | Vista previa desde el administrador | `base` | (vacío) | (vacío) |
+| `context-people` | Vista previa de un widget desde el administrador | `base` | (vacío) | (vacío) |
+| (ninguno) | Páginas de error del sitio, como la 404 | `base` | (vacío) | (vacío) |
+
+La vista previa de una página desde el administrador conserva el contexto de esa página: `context-people` solo aparece en la vista previa de un widget.
 
 :::tip Tip
-El `id` solo distingue portada, páginas personalizadas, páginas de contenido y búsqueda. Todos los demás contextos comparten `id="base"`, así que para estilarlos usa la clase de `page_context`.
+El `id` solo distingue portada, páginas personalizadas, páginas de contenido y búsqueda. Todos los demás contextos comparten `id="base"`, así que para estilarlos usa la clase de `page_context`. Las páginas de error no tienen esa clase.
 :::
 
 Consulta [Variables de Contexto](/es/platform/channels/liquid-markup/variables.html#variables-de-contexto) para ver qué contiene cada una de estas variables.

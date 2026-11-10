@@ -40,7 +40,7 @@ Modyo se basa en widgets y rastrea cada cambio en un sistema de control de versi
 
 El generador de widgets de Modyo es una herramienta robusta que simplifica el desarrollo frontend, la publicación y la auditoría. Con esta herramienta, se pueden crear experiencias digitales personalizadas y de alta calidad, de manera rápida y sencilla.
 
-Con el generador de widgets, se puede crear cualquier tipo de widget, incluyendo componentes en HTML, CSS y JavaScript conectados con APIs. Además, se pueden guardar los widgets en la librería para reutilizarlos en otros sitios.
+Con el generador de widgets, se puede crear cualquier tipo de widget, incluyendo componentes en HTML, CSS y JavaScript conectados con APIs. Si desarrollas tus widgets con la [CLI de Modyo](/es/platform/channels/cli), puedes desplegar el mismo código en otros sitios.
 
 ### Widgets prefabricados para servicios financieros
 
@@ -71,7 +71,7 @@ A continuación, algunos términos clave en Modyo y sus definiciones:
 - [**CORS**:](/es/platform/core/security#control-de-acceso-http-cross-origin-resource-sharing-cors) Cross Origin Resource Sharing - Permite compartir recursos en distintos dominios.
 - **Cuenta**: Punto de acceso a todas las funcionalidades de Modyo.
 - [**Equipo**:](/es/platform/core/roles#equipo) Todos los usuarios con acceso al admin de Modyo. Se les puede asignar roles y permisos.
-- [**Integraciones**:](/es/platform/core/integrations/) Forma para delegar o federar el proceso de inicio de autenticación de usuarios o miembros del equipo.
+- [**Integraciones**:](/es/platform/core/integrations/) Conexiones con servicios externos, como proveedores de identidad, CRM, pagos, mensajería, firma digital, verificación de identidad o seguridad, que configuras en la cuenta o en un reino.
 - [**Política de contraseña**:](/es/platform/core/security.html#politica-de-contrasenas) Permite definir reglas para la creación o modificación de contraseñas.
 - [**Revisión en equipo**:](/es/platform/core/#revision-en-equipo) Flujo de revisión de los elementos versionados. Se puede solicitar la aprobación de múltiples miembros del equipo.
 - [**Sitio**:](/es/platform/channels/sites.html) Herramienta para crear canales digitales dentro de Modyo. La operación de sitios abarca el desarrollo, diseño y flujo de navegación.
@@ -96,7 +96,7 @@ A continuación, algunos términos clave en Modyo y sus definiciones:
 
 #### Modyo Channels
 
-- [**Dominios**:](/es/platform/channels/sites#dominios) La URL de tu sitio, puedes modificarla, al igual que los certificados de seguridad de tu sitio.
+- [**Dominios**:](/es/platform/channels/sites#dominios) La URL de tu sitio. Puedes cambiarla o usar dominios personalizados.
 - [**Meta tags**:](/es/platform/channels/pages#meta-tags) Personaliza tus meta etiquetas para mejorar la indexación en motores de búsqueda.
 - [**Navegación**:](/es/platform/channels/navigation) Te permite modificar el menú principal de tu sitio a través de una interfaz sencilla.
 - [**Página**:](/es/platform/channels/pages) Te permiten crear una estructura para tu sitio. Puedes añadir contenido no estructurado y personalizar las rutas donde se muestra el contenido.

@@ -38,7 +38,7 @@ To create a global variable, follow these steps:
 3. Fill in the **Name** and the **Value** of the variable.
 4. Click **Save**.
 
-The text you type in **Name** is normalized as you type: it is lowercased and spaces are replaced with hyphens. That result is the identifier you use to read the variable from Liquid, there is no separate title. The value you save is tied to the app's language and is marked as the default value.
+The text you type in **Name** is normalized as you type: it is lowercased, spaces are replaced with hyphens, accented letters lose their accents, and any other symbol is removed, including the underscore; hyphens are kept. That result is the identifier you use to read the variable from Liquid, there is no separate title. The value you save is tied to the app's language and is marked as the default value.
 
 ## Values per Language
 
@@ -60,12 +60,14 @@ Widget variables do not have this dimension: they store a single value, with no 
 
 ## Activate and Deactivate a Variable
 
-You can deactivate a variable without deleting it. Select one or more variables in the list and use the **Deactivate** bulk action. To revert it, switch the **Active** filter to **No**, select the variables, and use **Activate**.
+You can deactivate a variable. Select one or more variables in the list and use the **Deactivate** bulk action. To revert it, switch the **Active** filter to **No**, select the variables, and use **Activate**.
+
+Account and app variables cannot be deleted, only deactivated. Widget variables, on the other hand, can be deleted from the **Variables** tab of the widget definition.
 
 While a variable is deactivated:
 
 - It cannot be edited. When you open it you see the notice "This variable is deactivated. If you want to edit it you must activate it first" and the save button becomes **Activate**.
-- It stops being available in Liquid: templates that use it start receiving an empty string.
+- It stops providing its value in its scope. If the variable is still active in another scope, Liquid uses that value: for example, when you deactivate an app's overwrite, the account value is used again. Templates only receive an empty string when no scope has the variable active.
 
 ## The Variable List
 
@@ -94,7 +96,7 @@ When rendering, Modyo layers three sets of values and the last one wins:
 Scope inheritance is applied on top of that result: account, then app, and finally widget.
 
 :::tip Tip
-If the identifier does not exist in any scope, or if the variable is deactivated, <code v-pre>vars.identifier</code> returns an empty string and the render continues: no error is raised and the page is not interrupted. Keep this in mind when a variable's value disappears from a template without any signal.
+If the identifier does not exist in any scope, or if the variable is deactivated in every scope where it exists, <code v-pre>vars.identifier</code> returns an empty string and the render continues: no error is raised and the page is not interrupted. Keep this in mind when a variable's value disappears from a template without any signal.
 :::
 
 ## Change a Variable's Identifier
@@ -102,7 +104,7 @@ If the identifier does not exist in any scope, or if the variable is deactivated
 The **Name** of an existing variable is locked. To edit it, you have to unlock the field with **Unlock identifier field** and confirm the notice.
 
 :::warning Attention
-Changing the identifier breaks every reference that already uses that variable: templates, widgets, content, the API, and the SDKs stop finding it and start receiving an empty string. If you need a different identifier, create a new variable, update the references, and only then delete the old one.
+Changing the identifier breaks every reference that already uses that variable: templates, widgets, content, the API, and the SDKs stop finding it and start receiving an empty string. If you need a different identifier, create a new variable, update the references, and only then deactivate the old one.
 :::
 
 :::danger Danger

@@ -791,7 +791,7 @@ Controls which resources the browser can load on the site to mitigate data injec
 Freely specify your content security policy in the text area. For a complete guide on how to write your policy, see [Content Security Policy (CSP) from Mozilla Developer Network.](https://developer.mozilla.org/es/docs/Web/HTTP/CSP)
 
 :::warning Attention
-A very strict value can interfere with some features like [Google Tag Manager](/en/platform/channels/sites#google-tag-manager), [PWA](/en/platform/channels/sites#pwa), [Widgets](/en/platform/channels/widgets), and [Asset Manager](/en/platform/content/asset-manager).
+A very strict value can interfere with some features like [Google Tag Manager](/en/platform/channels/sites#google-tag-manager), [PWA](/en/platform/channels/sites#pwa), [Widgets](/en/platform/channels/widgets), [Asset Manager](/en/platform/content/asset-manager), and the [Incode Drop-in modality](/en/platform/customers/origination.html#drop-in-requirements).
 :::
 
 A production-ready policy must ensure that all resources, such as images and stylesheets, are loaded from trusted sources and requires that all scripts are secure and reliable for the application. For example, a strict policy for the _minimal template_ would look like this:
