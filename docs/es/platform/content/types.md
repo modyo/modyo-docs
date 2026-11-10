@@ -87,7 +87,7 @@ El alcance de **Único** es el tipo completo: la comparación recorre todas las 
 
 ### Texto de múltiples líneas
 
-Este campo te permite ingresar texto plano en varias líneas, sin opciones de formato. A diferencia de **Texto de una línea**, que admite hasta 255 caracteres, aquí puedes guardar textos largos. Cuenta con las siguientes restricciones:
+Este campo te permite ingresar texto en varias líneas, sin opciones de formato en el editor. A diferencia de **Texto de una línea**, que admite hasta 255 caracteres, aquí puedes guardar textos largos. Cuenta con las siguientes restricciones:
 
 - **Largo mínimo**: Permite exigir un mínimo de caracteres para el texto ingresado.
 - **Largo máximo**: Permite limitar la cantidad máxima de caracteres para el texto ingresado.
@@ -96,8 +96,39 @@ Este campo te permite ingresar texto plano en varias líneas, sin opciones de fo
 Este campo no ofrece la validación **Único**: la unicidad solo está disponible en [Texto de una línea](#texto-de-una-linea).
 
 :::warning Atención
-Desde la versión 10.2, el valor de este campo se entrega escapado como HTML al imprimirlo con Liquid: las etiquetas que hayas escrito aparecen como texto literal en lugar de interpretarse como marcado. Si necesitas publicar HTML desde una entrada, usa un campo [Texto enriquecido](#texto-enriquecido). Revisa las plantillas que venían usando este campo para inyectar HTML.
+Desde la versión 10.2.2, el valor de este campo se publica como HTML, limitado a una lista de etiquetas y atributos permitidos:
+
+- **Al publicar**: el Liquid escrito en el campo se evalúa primero, también dentro de etiquetas y atributos (por ejemplo <span v-pre>`<a href="{{ site.url }}/contacto">`</span>). Después se eliminan las etiquetas, los atributos y los esquemas de URI que no están en la lista.
+- **Al guardar**: si el campo contiene elementos fuera de la lista, la entrada no se guarda y el error indica el campo y los elementos, por ejemplo `cuerpo: style, <iframe>`. Lo mismo vale al editar, publicar, programar o restaurar una versión, y por la API de administración.
+- **Copiar, clonar y acciones masivas**: copiar una entrada se rechaza si alguno de sus idiomas no cumple. Clonar un espacio y las acciones masivas de publicar, editar y etiquetar omiten las entradas que no cumplen e informan cada una con el campo y los elementos.
+- **Contenido existente**: lo guardado antes no se modifica, y las APIs de contenido lo devuelven tal como está. Una entrada con contenido fuera de la lista se puede despublicar, archivar y eliminar, pero no editar ni publicar hasta corregirla.
 :::
+
+#### HTML permitido
+
+Por defecto, el campo admite estas etiquetas:
+
+`a abbr acronym address b big blockquote br cite code dd del dfn div dl dt em h1 h2 h3 h4 h5 h6 hr i img ins kbd li mark ol p pre samp small span strong sub sup time tt ul var table caption colgroup col thead tbody tfoot tr th td u s strike bdi bdo wbr ruby rt rp article aside section header footer nav main figure figcaption hgroup`
+
+Y estos atributos:
+
+`abbr alt cite class datetime height href lang name src title width xml:lang colspan rowspan scope dir span`
+
+Los atributos `href` y `src` solo admiten los esquemas `http`, `https`, `mailto` y `tel`, además de rutas relativas. Se eliminan, entre otros, `script`, `style`, `iframe`, `form`, `input`, `svg`, los atributos `on*` y el atributo `style`.
+
+Cada instalación puede reemplazar estas listas con las variables de entorno `MODYO_CONTENT_MULTILINE_HTML_ALLOWED_TAGS` y `MODYO_CONTENT_MULTILINE_HTML_ALLOWED_ATTRS`. Si una entrada usa un elemento que la lista ya no permite, deja de poder editarse y publicarse hasta corregirla.
+
+#### Texto que incluye el carácter <
+
+El campo se interpreta como HTML, así que un `<` seguido de una letra abre una etiqueta. Por ejemplo, `Hola <nombre>` o `if (a<b && c>d)` se rechazan al guardar, y `x<y` sin un `>` posterior pierde el texto que sigue. Para mostrar el carácter, escríbelo como `&lt;`. Cuando lo rechazado parece texto y no HTML, el error lo indica.
+
+Si una plantilla imprime el campo como texto plano, por ejemplo con <span v-pre>`{{ entry.fields.cuerpo | escape }}`</span>, `&lt;` se muestra literal. En ese caso, usa un campo [Texto de una línea](#texto-de-una-linea) o ajusta la plantilla.
+
+El Liquid que completa el nivel de un encabezado, como <span v-pre>`<h{{ nivel }}>`</span>, se acepta mientras `h1` a `h6` estén en la lista.
+
+#### Valores JSON
+
+<span v-pre>`{{ entry | json }}`</span> entrega el valor guardado con `<`, `>` y `&` escapados como `\u003c`, `\u003e` y `\u0026`. Úsalo solo dentro de `<script type="application/json">`, nunca como valor de un atributo, y lee el valor con `JSON.parse`.
 
 ### Texto enriquecido
 
