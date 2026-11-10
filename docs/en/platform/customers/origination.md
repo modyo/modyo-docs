@@ -390,13 +390,13 @@ To store information, the data must use valid JSON format; format errors will no
 
 The POST request to the `getUrl()` URL saves the data and can also change the task status, depending on the `completed` parameter:
 
-- **Without `completed`**: saves the data and marks the task as completed.
+- **Without `completed`**: saves the data without changing the task status. The task is completed when the user clicks **Next**.
 - **`completed: true`**: saves the data and marks the task as completed.
 - **`completed: false`**: saves the data without completing the task. If the task was already completed, it goes back to in progress.
 
 Use only `true` or `false` in `completed`. Any other value is read as `false`.
 
-`completed` goes at the same level as `content`, not inside it. For example, to save data without completing the task:
+`completed` goes at the same level as `content`, not inside it. For example, to save the data and complete the task:
 
 ```js
 await fetch(getUrl(), {
@@ -406,7 +406,7 @@ await fetch(getUrl(), {
     'Accept': 'application/json',
     'Content-Type': 'application/json'
   },
-  body: JSON.stringify({ content: { plan: 'basic' }, completed: false })
+  body: JSON.stringify({ content: { plan: 'basic' }, completed: true })
 });
 ```
 
@@ -422,6 +422,10 @@ For an integration to know that the user finished a code snippet, subscribe your
 :::
 
 If the task has the **Lock responses once completed** option enabled, the POST that completes it also records **Origination submission task submitted**, because after that the **Next** button no longer submits the task again.
+
+A POST without `completed` neither completes nor locks the task: the code snippet can save data several times and the latest content is kept, until the user clicks **Next** or the code snippet sends `completed: true`.
+
+If a validation task rejects the code snippet response, the user can correct it even when the task has **Lock responses once completed**. While correcting, a POST without `completed: true` only saves the data: the rejection and its comment stay visible and the validators are not notified. The correction is submitted when the user clicks **Next** or the code snippet sends `completed: true`. At that point the validators are notified and, if the task has that option, it is locked again.
 
 #### Using Liquid in code snippets
 
