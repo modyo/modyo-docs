@@ -43,8 +43,12 @@ El detalle de los parámetros del comando y de los permisos necesarios para publ
 
 ## Widgets desplegados con la CLI
 
-En el listado de **Widgets** del sitio, los widgets que llegaron con un push se distinguen con la etiqueta **CLI** junto a su nombre y se comportan distinto a los que creas desde el panel:
+En el listado de **Widgets** del sitio, los widgets creados con un push se distinguen con la etiqueta **CLI** junto a su nombre y se comportan distinto a los que creas desde el panel:
 
-- Su código es de solo lectura: puedes abrirlo en el **Widget Builder** para revisarlo, pero no guardar cambios ahí. Para modificarlo, cambia tu proyecto local y vuelve a ejecutar `modyo-cli push`.
+- Su código no se muestra ni se edita en el panel: al abrirlo verás la pantalla **Resumen del widget**, con el botón **Descargar** para revisar su contenido (revisa [Widgets CLI](/es/platform/channels/widgets.html#widgets-cli)). Para modificarlo, cambia tu proyecto local y vuelve a ejecutar `modyo-cli push`.
 - Sus [variables](/es/platform/channels/widgets.html#variables-del-widget) se detectan desde el código que envías y sus valores se siguen administrando desde el panel.
 - Puedes publicarlo e instanciarlo en las [páginas](/es/platform/channels/pages.html) del sitio como cualquier otro widget.
+
+:::warning Atención
+Si el widget ya existía en el sitio porque lo creaste desde el panel, el push actualiza su código, pero no lo marca como CLI ni lo deja de solo lectura: lo puedes seguir editando en el panel y el siguiente push sobrescribe esos cambios. Revisa [Widgets CLI en el panel](/es/platform/tools/cli.html#widgets-cli-en-el-panel).
+:::

@@ -111,14 +111,16 @@ For a correct OpenID Connect integration, it is necessary that the OIDC Provider
 :::
 
 :::warning Warning
-The API for obtaining delegated access tokens via `/auth/openidc/access_token` is deprecated and replaced by `/api/profile/me`.
+The API for obtaining delegated access tokens via `/auth/openidc/access_token` was removed. To get the access token issued by the provider, use `/api/customers/realms/{realm_uid}/me` and read the `delegated_token` field, as explained in [Delegated tokens](/en/platform/customers/api.html#delegated-tokens).
 :::
 
 ### Integration settings
 
-1. Go to **Configuration/Realm Configuration > Realm > Identity Providers > Add > OpenID Connect** and fill in **Client ID** and **Secret** with the client's name and credentials.
+1. Add the **OpenID Connect** integration and fill in **Client ID** and **Secret** with the client's name and credentials:
+   * For team users, follow the steps in [Add an Identity Provider](#add-an-identity-provider).
+   * For realm users, in **Customers > Realms** click the realm and then **Realm settings > Integrations**. In the **Identity Providers** category, click **Install** on **OpenID Connect**. Once installed, you find it in **Installed**, where you can edit it with **Configure**.
 2. In Issuer, fill in the URL of the realm, for example, for the realm `my-realm` the URL it is `https://test.example.com/auth/realms/my-realm`.
-3. Click **Launch discovery service**. This will complete most of the settings.
+3. Click **Run discovery service**. This will complete most of the settings.
 4. Configure the **Scopes** with the scopes required for the application. Use `openid, email, profile` if you don't have custom scopes.
 
 <img src="/assets/img/platform/keycloak-new-idp.png" alt="Modyo's new identity provider page." width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
@@ -150,13 +152,12 @@ When performing a specific integration, Modyo allows you to enable certain setti
 
 | Option                                                              | Description                                                                                                                                                                                                                                                                                                                     |
 |:--------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Enable logout**                                      | Enable logging out of the provider when logging out of Modyo. This allows the session to be effectively closed, forcing the user to identify themselves again with the Identity Provider and disabling the SSO experience.                                                                                                         |
-| **Enable refresh token**                                         | Enable token refreshment managed by Modyo. The access tokens will be automatically renewed by the platform if the user maintains activity on the site and has a valid refresh token.                                                                                                                   |
+| **Enable remote logout**                               | Enable logging out of the provider when logging out of Modyo. This allows the session to be effectively closed, forcing the user to identify themselves again with the Identity Provider and disabling the SSO experience.                                                                                                         |
+| **Enable refresh token**                                         | Enable token refreshment managed by Modyo. The access tokens will be automatically renewed by the platform if the user maintains activity on the site and has a valid refresh token. If you turn it off or the provider does not return a refresh token, the Modyo session ends when the provider's access token expires. It also ends if the renewal fails.                                                                                                                   |
 | **Time in seconds for the anticipation of the preventive refresh token** | Number in seconds that will be used as a margin of tolerance to obtain an access token using the refresh token. It accepts values between 0 and 100. |
-| **Enable token revocation**                                   | Enables revocation of access tokens via API. For revocation, you can use the provider's endpoint to revoke tokens.                              |
-| **Activate refresh token**                  | Enables the use of OAuth 2.0 refresh tokens. To refresh your access token, you can use the provider's POST endpoint by sending <tt> grant_type: refresh_token, refresh_token: **my-refresh-token**, client_id: **my-client-id** </tt>  |
-| **Show delegation information**                               | Enable more information in the [User Profile API](/en/platform/customers/api) regarding delegated tokens. This is useful when the access token issued by the identity provider is needed to gain access to another service (e.g., an external API).                           |
-| **Enable claims synchronization at login** | Enable synchronization of OpenID Connect claims with custom fields in Modyo. More information in [Claims Synchronization](#claims-synchronization).                                                                                                                                                                      |
+| **Enable token revocation**                                   | When the user logs out of Modyo, the platform revokes the session's refresh token on the provider or, if there is no refresh token, the access token. When you turn it on, **Token revocation endpoint** becomes required. |
+| **Display delegation info**                                   | Enable more information in the [User Profile API](/en/platform/customers/api) regarding delegated tokens. This is useful when the access token issued by the identity provider is needed to gain access to another service (e.g., an external API).                           |
+| **Enable claims synchronization on login** | Enable synchronization of OpenID Connect claims with custom fields in Modyo. More information in [Claims Synchronization](#claims-synchronization).                                                                                                                                                                      |
 | **Enable User Info** | Lets Modyo query the provider's User Info endpoint to complete the user's data. It comes enabled by default and, while it is active, **Userinfo endpoint** is required; the discovery service fills it in for you. If you turn it off, Modyo only uses the claims that come in the id_token. |
 | **Include id_token_hint on logout** | Adds the `id_token_hint` parameter, with the session's id_token, to the remote logout URL. Many providers use it to identify the session being closed and skip the confirmation screen. It only takes effect if remote logout is enabled. |
 
@@ -167,8 +168,22 @@ When performing a specific integration, Modyo allows you to enable certain setti
 Modyo allows you to synchronize attributes and other properties of Customer users through standard and additional _claims_ through OpenID Connect.
 
 1. In **Clients > Mappers** create a new **Protocol Mapper** with the attribute or property of the user. Make sure **Add to userinfo** is enabled.
-2. In **Customers > Realms > Realm configuration > Custom Fields** add a new **Custom Field** with a data type equivalent to the claim.
-3. In **Customers > Realms > Realm Settings > Identity Providers > OpenID Connect** enable **Enable _claims_ synchronization on login** and add _claims_ mappings for each of your _claims_.
+2. In **Customers > Realms > Realm settings > Custom Fields** add a new **Custom Field** with a data type equivalent to the claim.
+3. In **Customers > Realms > Realm settings > Integrations**, open **Installed** and click **Configure** on **OpenID Connect**. Turn on **Enable claims synchronization on login** and, in **Claims mapping**, click **New** to add a mapping for each _claim_: type the _claim_ name in **Claim name** and choose in **Custom Field** the field that receives it.
+
+With synchronization on, each time the user logs in, Modyo updates their data with the _claims_ the provider returns:
+
+- First name, last name, and email, with `given_name`, `family_name`, and `email`.
+- Gender, with `gender`, if the _claim_ comes. Modyo recognizes the values `male`, `female`, `nonbinary`, and `other`.
+- Date of birth, with `birthdate`. If the _claim_ does not come, the date of birth is left empty.
+- The custom fields you mapped.
+
+When you create the mappings, keep in mind the following:
+
+- For a nested _claim_, use dot notation, for example `address.country`. This does not apply to custom fields with options.
+- If the custom field has options, type in **Claim value** the _claim_ value that matches each option.
+- Date _claims_ must come in ISO 8601 `YYYY-MM-DD` format.
+- Each custom field accepts only one mapping.
 
 ## Keycloak
 
@@ -191,9 +206,9 @@ Keycloak is a certified OpenID Connect identity provider that implements most of
 
 After configuring Keycloak, you now have to complete the integration into Modyo Platform.
 
-1. Go to **Configuration/Realm Configuration > Identity Providers > OpenID Connect** and fill in **Client ID** and **Secret** with the client's name and credentials that appear on the client's **Credentials** tab in Keycloak.
+1. Add the **OpenID Connect** integration as described in [Integration settings](#integration-settings) and fill in **Client ID** and **Secret** with the client's name and credentials that appear on the client's **Credentials** tab in Keycloak.
 2. In Issuer, fill in the URL of the realm, for example, for realm my-realm the URL is `https://keycloak.example.com/auth/realms/my-realm`.
-3. Click **Launch discovery service**. This will complete most of the settings.
+3. Click **Run discovery service**. This will complete most of the settings.
 4. Configure the **Scopes** with the scopes required for the application. Use `openid, email, profile` if you don't have custom scopes.
 
 
@@ -226,16 +241,17 @@ Azure Entra ID is a Microsoft Azure cloud identity service that allows you to im
 
 The following configuration applies to both Team and Customer user integrations.
 
-1. From the Modyo platform, select **Settings/Realm Settings** and click **Identity Providers**.
-1. Select **OpenID Connect** and complete **Client ID**, also called Application ID, and **Secret** with the credentials obtained from the Azure portal.
+1. From the Modyo platform, add the **OpenID Connect** integration as described in [Integration settings](#integration-settings).
+1. Complete **Client ID**, also called Application ID, and **Secret** with the credentials obtained from the Azure portal.
 1. On the Azure portal, under General Information, click on Connection Points, and copy the URL of **OpenID Connect Metadata Document**.
 1. Open the URL in your browser, search for **Issuer**, and copy its value.
-1. In Modyo Platform, paste the value into Issuer and click on **Run Discovery Service**. At the end of the process, all the required URLs will be filled in automatically.
+1. In Modyo Platform, paste the value into Issuer and click on **Run discovery service**. At the end of the process, all the required URLs will be filled in automatically.
 1. Configure **Scopes** with the scopes required for the application. Use `openid, profile, email` if you don't have custom scopes.
 1. Enable optional integration features.
    |  Option                                      |       Description                                                                                                                                                                                                                 |
    |----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-   | **Enable refresh token** | Enable token refreshment managed by Modyo. The access tokens will be automatically renewed by the platform if the user maintains activity on the site and has a valid refresh token. |
-   | **Enable logout** | Enable logging out of the provider when logging out of Modyo. This allows the session to be effectively closed, forcing the user to identify again in Entra ID, and disabling the SSO experience. |
-   | **Enable token revocation** | Not supported by Entra ID|
-   | **Show Delegation Information**                               | Enables more information in the [User Profile API](/en/platform/customers/api) regarding delegated tokens. This is useful when the access token issued by the identity provider is needed to gain access to another service (e.g., an external API). |                   | **Enable Claim Synchronization at Login** | Enables OpenID Connect claim synchronization with custom fields in Modyo. More information in [Claim Synchronization](#claims-synchronization).               |
+   | **Enable refresh token** | Enable token refreshment managed by Modyo. The access tokens will be automatically renewed by the platform if the user maintains activity on the site and has a valid refresh token. If you turn it off or the provider does not return a refresh token, the Modyo session ends when the provider's access token expires. It also ends if the renewal fails. |
+   | **Enable remote logout** | Enable logging out of the provider when logging out of Modyo. This allows the session to be effectively closed, forcing the user to identify again in Entra ID, and disabling the SSO experience. |
+   | **Enable token revocation** | Not supported by Entra ID |
+   | **Display delegation info** | Enables more information in the [User Profile API](/en/platform/customers/api) regarding delegated tokens. This is useful when the access token issued by the identity provider is needed to gain access to another service (e.g., an external API). |
+   | **Enable claims synchronization on login** | Enables OpenID Connect claim synchronization with custom fields in Modyo. More information in [Claim Synchronization](#claims-synchronization). |

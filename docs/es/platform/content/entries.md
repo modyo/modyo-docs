@@ -15,25 +15,25 @@ Adicionalmente, al emplear los módulos de Channels y Customers, puedes crear si
 
 En la interfaz de entradas, puedes ver una lista con todos los contenidos generados por los usuarios, ordenados por fecha de última actualización.
 
-Las columnas para ordenar la lista de entradas son:
+Las columnas de la lista de entradas son:
 
-- **Estado**: Borrador, publicado, programado o archivado.
+- **Estado**: Estado de la entrada: **Publicado**, **Programado**, **Borrador**, **Cambios pendientes**, **En revisión**, **Aprobado**, **Archivado** o **No traducido**.
 - **Nombre**: Nombre del contenido.
 - **Tipo**: [Tipo](/es/platform/content/types) de contenido.
-- **Actualizado**: Fecha de la última actualización guardada del contenido.
+- **Actualizado en**: Fecha de la última actualización guardada del contenido. Es la única columna por la que puedes ordenar la lista.
 - **Autor**: Nombre del autor del contenido.
 
 También puedes filtrar la vista con filtros predeterminados:
 
 - **Tipo**: [Tipo](/es/platform/content/types) de contenido.
-- **Estado**: Borrador, publicado, programado y archivado.
+- **Estado**: **Publicado**, **No publicado**, **Programado** y **Archivado**. Puedes elegir más de un estado.
 - **Categoría**: Categoría asignada a las entradas. El resultado incluye también las entradas asignadas a las subcategorías de la categoría que elijas.
 - **Idioma**: Idioma del contenido.
 - **Traducción**: Estado de traducción de la entrada. Si una entrada no tiene versión en el idioma seleccionado, se considera "no traducida".
-- **Tags**: Etiquetas disponibles en la cuenta.
+- **Tags**: Tags asignados a las entradas del espacio.
 - **Autor**: Administrador que creó la entrada. La lista solo ofrece a los usuarios que tienen al menos una entrada en el espacio.
 - **Segmentos**: Segmentos asignados a las entradas. Este filtro aparece solo cuando el espacio está asociado a un reino de usuarios.
-- **Barra de búsqueda**: Filtra por el contenido del título de las entradas.
+- **Barra de búsqueda**: Muestra las entradas cuyo nombre o identificador contiene el texto que escribes.
 
 :::tip Tip
 Da click en el menú de Filters en la parte superior derecha de la lista de entradas para agregar o eliminar cualquiera de las opciones de filtrado del encabezado.
@@ -67,7 +67,9 @@ Selecciona una o más entradas y da click en el recuadro de Acciones masivas par
 La opción de editar masivamente entradas solo esta disponible para entradas del mismo tipo y solo es visible si filtras las entradas por tipo.
 :::
 
-Puedes hacer cambios en todos los campos del tipo. Una vez hechos los cambios, da click en **Siguiente** en la parte superior de la pantalla para ver el resumen de tus cambios. Da click en "Guardar" confirmar los cambios.
+Puedes cambiar la **Categoría**, la **Privacidad** y todos los campos del tipo, excepto los de tipo **Grupo**. **Privacidad** solo aparece si el espacio está asociado a un reino de usuarios y te permite marcar las entradas como **Privado** y asignarles segmentos. Para editar masivamente necesitas el permiso **Edición Masiva de Entradas**.
+
+Una vez hechos los cambios, da click en **Siguiente** en la parte superior de la pantalla para ver el resumen de tus cambios. Da click en "Guardar" confirmar los cambios.
 
 Estas entradas ahora tendrán cambios pendientes y debes publicarlas. Para ello, puedes hacer uso de la acción masiva "Publicar".
 
@@ -79,8 +81,8 @@ Para recuperar un valor específico de una entrada, accede a la vista de edició
 :::
 
 - **Agregar o quitar tags**: Abre una ventana para modificar los tags de toda la selección. En **Añadir nuevos tags** escribes o eliges los tags que quieres sumar, y bajo **Tags en los elementos seleccionados** ves los tags que ya tienen esas entradas, con la cantidad de entradas que usa cada uno: **Aplicar a todas** suma ese tag al resto de la selección y el ícono de eliminar lo quita de todas. Da click en **Guardar** y confirma para aplicar los cambios.
-- **Publicar**:  Publica las entradas seleccionadas que tengan cambios pendientes o estén en estado borrador.
-- **Forzar publicación**: Si está habilitada la revisión en equipo, los administradores del espacio pueden usar esta acción para forzar la publicación de entradas que tienen cambios pendientes o estén en estado borrador, sin necesidad de pasar por el proceso de revisión.
+- **Publicar**:  Publica las entradas seleccionadas que tengan cambios pendientes o estén en estado borrador. Las entradas con valores que no pasan las validaciones, por ejemplo un campo requerido vacío, no se publican. Revisa el estado de las entradas en el listado para confirmar cuáles se publicaron.
+- **Forzar publicación**: Si está habilitada la revisión en equipo, los administradores del espacio ven esta acción en lugar de **Publicar**. Publica las entradas seleccionadas que tengan cambios pendientes o estén en estado borrador, sin necesidad de pasar por el proceso de revisión.
 - **Despublicar**
 - **Archivar**: Archivar en masa solo tiene efecto en las entradas seleccionadas que no estén publicadas. Si intentas archivar una entrada publicada, la acción no tendrá efecto.
 - **Restaurar**: Saca del archivo las entradas seleccionadas y las devuelve al estado borrador. Solo alcanza a las entradas archivadas, así que conviene filtrar el listado por el estado **Archivado** antes de usarla.
@@ -137,7 +139,7 @@ Para crear una entrada, sigue estos pasos:
 1. En el menú lateral selecciona Content.
 1. Selecciona tu espacio.
 1. Haz click en Entradas
-1. Haz click en **Nueva Entrada**.
+1. Haz click en **Nueva entrada**.
 1. Selecciona el tipo de contenido, nombre e identificador.
 1. Haz click en **Crear**.
 1. Una vez creada la entrada, puedes incluir el contenido que requieras. La entrada tendrá la estructura definida en el tipo de contenido que seleccionaste.
@@ -145,8 +147,8 @@ Para crear una entrada, sigue estos pasos:
 1. Haz click en **Publicar**.
 
 
-:::warning Atención
-Si el campo de nombre queda vacío, el identificador por defecto será el UUID de la entrada.
+:::tip Tip
+El nombre y el identificador son obligatorios: el botón **Crear** se habilita cuando eliges el tipo de contenido y completas ambos campos. Al escribir el nombre, Modyo propone un identificador a partir de él, que puedes editar antes de crear la entrada.
 :::
 
 ## Traducir una entrada
@@ -232,14 +234,21 @@ El comportamiento completo de la versión programada, incluida la notificación 
 
 ### Eliminar entradas
 
+Solo puedes borrar entradas archivadas, y **Archivar** no está disponible mientras la entrada esté publicada. Si la entrada está publicada, primero [despublícala](#despublicar-una-entrada).
+
 Para eliminar una entrada:
 
 1. En el menú lateral, selecciona Content.
 1. Haz click en tu espacio.
 1. Selecciona Entradas.
 1. Del listado de entradas, da click en la entrada que quieres eliminar.
-1. Haz click en el botón de más acciones (...) y selecciona **Borrar**. Si la entrada no está archivada, esta opción no estará activa, selecciona primero **Archivar** y posteriormente selecciona **Borrar**.
+1. Si la entrada aún no está archivada, haz click en el botón de más acciones (...) y selecciona **Archivar**.
+1. Haz click en el botón de más acciones (...) y selecciona **Borrar**.
 1. Da click en **Ok** para confirmar.
+
+:::danger Peligro
+**Borrar** elimina la entrada solo en el idioma que tienes seleccionado, junto con todos sus respaldos, y no se puede deshacer. Las traducciones de la entrada a otros idiomas se conservan. La acción requiere el permiso **Eliminar Entradas**.
+:::
 
 ### Vista previa
 
@@ -257,7 +266,9 @@ Para previsualizar tu contenido:
 1. Haz click en tu espacio.
 1. Selecciona Entradas.
 1. Del listado de entradas, da click en la entrada que quieres previsualizar.
-1. Da click en el ícono de vista previa en la parte superior derecha.
+1. Da click en el ícono de vista previa en la parte superior derecha. Se abre la ventana **Vista previa** con el JSON de la entrada.
+1. En el selector **Aplicación**, elige el sitio donde quieres ver la entrada.
+1. En el selector **Página de contenido**, elige la página de contenido que muestra la entrada. La vista previa se abre en una nueva pestaña del navegador.
 
 :::warning Atención
 Te recomendamos tener en cuenta:
@@ -323,9 +334,9 @@ Para crear una categoría:
 1. Haz click en el botón **Nueva categoría**.
 1. En la ventana emergente, ingresa el nombre, la ruta y, opcionalmente, una categoría padre.
 
-Cuando asignas una entrada a una categoría y la página de contenido que la despliega tiene activada la opción **Usar categorías** (revisa [URLs con categorías](/es/platform/channels/pages.html#urls-con-categorias)), Modyo agrega la ruta de la categoría como prefijo a la URL de la entrada, por ejemplo:
+Cuando asignas una entrada a una categoría, Modyo agrega la ruta completa de la categoría, incluidas sus categorías padre, entre la ruta de la [página de contenido](/es/platform/channels/pages#pagina-de-contenido) y el identificador de la entrada. Esto solo ocurre si la página de contenido tiene activa la opción **Usar categorías**, que viene desactivada (revisa [URLs con categorías](/es/platform/channels/pages.html#urls-con-categorias)). Por ejemplo:
 
-Una entrada con URL: test.modyo.com/visita-chile y categoría ‘travel’, ahora sería test.modyo.com/travel/visita-chile.
+Una entrada con URL: test.modyo.com/blog/visita-chile y categoría ‘travel’, ahora sería test.modyo.com/blog/travel/visita-chile.
 
 :::tip Tip
 Al ingresar el nombre de la categoría, la ruta se establece automáticamente como identificador. Para cambiarla, haz click en la ruta.
@@ -370,7 +381,7 @@ A diferencia de los campos, el extracto no se define en el tipo de contenido: es
 El identificador es un valor único que se usa para generar la URL de una entrada.
 Cuando crees una entrada, la plataforma le asigna un identificador. Si deseas crear un enlace más amigable, puedes modificarlo al momento de crear la entrada o posteriormente al editarla.
 
-Forzosamente, el identificador debe ser un valor único para las entradas del mismo tipo. Si tratas de guardar dos entradas con el mismo identificador, la plataforma modificará la última, al publicar la entrada.
+El identificador debe ser único entre las entradas del mismo tipo de contenido y del mismo idioma. Si intentas guardar una entrada con un identificador que ya usa otra entrada de ese tipo en ese idioma, Modyo no guarda los cambios y te avisa que el identificador ya está en uso.
 
 
 :::warning Importante
@@ -382,6 +393,8 @@ Si deseas modificar el identificador de tu entrada posterior a su creación, deb
 ### Contenido privado
 
 Habilita la opción de contenido privado para que tu contenido sea exclusivo para usuarios que tengan una sesión en la plataforma.
+
+La opción **Privado** está en el bloque **Privacidad** del panel **Propiedades** y solo aparece si el espacio está asociado a un reino de usuarios. Para asociarlo, ve a la sección [General](/es/platform/content/spaces#general) de la configuración del espacio.
 
 Dependiendo de como estés consumiendo el contenido, es posible que debas seguir algunos pasos adicionales para acceder a él:
 
@@ -395,8 +408,8 @@ El contenido segmentado es fundamental para cualquier entidad o empresa que dese
 
 Para habilitar que una entrada sea visible para un grupo determinado de usuarios:
 
-1. Marca la opción de contenido privado
-1. Habilita la segmentación
+1. En el bloque **Privacidad**, marca **Privado**.
+1. Marca **Habilitar segmentación**.
 1. Selecciona el segmento de usuarios al que se dirige la entrada.
 1. Da click en **Guardar**.
 
@@ -448,5 +461,9 @@ URL: `https://test.modyo.com/api/content/spaces/test-space/types/nuevo/entries/4
   }
 }
 ```
+
+:::tip Tip
+**Link de la API** está deshabilitado mientras la entrada está en estado borrador. Si la entrada es privada, la API de contenido solo entrega su contenido con un delivery token. Revisa [Contenido privado](/es/platform/content/public-api-reference#contenido-privado) en la referencia de la API.
+:::
 
 Para más información de nuestra API y las diferentes acciones que puedes realizar, ve [API de administración](/es/platform/core/api).

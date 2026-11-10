@@ -38,7 +38,7 @@ Para crear una variable global, sigue estos pasos:
 3. Rellena el **Nombre** y el **Valor** de la variable.
 4. Haz clic en **Guardar**.
 
-El texto que escribes en **Nombre** se normaliza mientras escribes: pasa a minúsculas y los espacios se reemplazan por guiones. Ese resultado es el identificador con el que consumes la variable desde Liquid, no hay un título aparte. El valor que guardas queda asociado al idioma de la aplicación y marcado como valor por defecto.
+El texto que escribes en **Nombre** se normaliza mientras escribes: pasa a minúsculas, los espacios se reemplazan por guiones, las letras con tilde pierden el acento y se eliminan los demás símbolos, incluido el guion bajo; el guion sí se conserva. Ese resultado es el identificador con el que consumes la variable desde Liquid, no hay un título aparte. El valor que guardas queda asociado al idioma de la aplicación y marcado como valor por defecto.
 
 ## Valores por idioma
 
@@ -60,12 +60,14 @@ El **Nombre** solo se puede editar desde el valor marcado como por defecto. Si a
 
 ## Activar y desactivar una variable
 
-Puedes desactivar una variable sin borrarla. Selecciona una o más variables en el listado y usa la acción masiva **Desactivar**. Para revertirlo, cambia el filtro **Activo** a **No**, selecciona las variables y usa **Activar**.
+Puedes desactivar una variable. Selecciona una o más variables en el listado y usa la acción masiva **Desactivar**. Para revertirlo, cambia el filtro **Activo** a **No**, selecciona las variables y usa **Activar**.
+
+Las variables de cuenta y de aplicación no se pueden eliminar, solo desactivar. Las variables de un widget, en cambio, sí se pueden eliminar desde la pestaña **Variables** de la definición del widget.
 
 Mientras una variable está desactivada:
 
 - No se puede editar. Al abrirla verás el aviso "Esta variable está desactivada. Si quieres modificarla, debes activarla primero" y el botón de guardar pasa a ser **Activar**.
-- Deja de estar disponible en Liquid: las plantillas que la usan pasan a recibir una cadena vacía.
+- Deja de aportar su valor en su alcance. Si la variable sigue activa en otro alcance, Liquid usa ese valor: por ejemplo, al desactivar la sobrescritura de una aplicación, vuelve a usarse el valor de la cuenta. Las plantillas solo reciben una cadena vacía cuando ningún alcance tiene la variable activa.
 
 ## El listado de variables
 
@@ -94,7 +96,7 @@ Al renderizar, Modyo superpone tres capas de valores y gana la última:
 Sobre ese resultado se aplica la herencia entre alcances: cuenta, luego aplicación y por último widget.
 
 :::tip Tip
-Si el identificador no existe en ningún alcance, o si la variable está desactivada, <code v-pre>vars.identificador</code> devuelve una cadena vacía y el render continúa: no se levanta un error ni se interrumpe la página. Tenlo presente cuando el valor de una variable desaparece de una plantilla sin dar señales.
+Si el identificador no existe en ningún alcance, o si la variable está desactivada en todos los alcances donde existe, <code v-pre>vars.identificador</code> devuelve una cadena vacía y el render continúa: no se levanta un error ni se interrumpe la página. Tenlo presente cuando el valor de una variable desaparece de una plantilla sin dar señales.
 :::
 
 ## Cambiar el identificador de una variable
@@ -102,7 +104,7 @@ Si el identificador no existe en ningún alcance, o si la variable está desacti
 El **Nombre** de una variable ya creada está bloqueado. Para editarlo tienes que desbloquear el campo con **Habilitar campo identificador** y confirmar el aviso.
 
 :::warning Atención
-Cambiar el identificador rompe todas las referencias que ya usan esa variable: plantillas, widgets, contenidos, la API y los SDK dejan de encontrarla y pasan a recibir una cadena vacía. Si necesitas otro identificador, crea una variable nueva, actualiza las referencias y recién entonces elimina la anterior.
+Cambiar el identificador rompe todas las referencias que ya usan esa variable: plantillas, widgets, contenidos, la API y los SDK dejan de encontrarla y pasan a recibir una cadena vacía. Si necesitas otro identificador, crea una variable nueva, actualiza las referencias y recién entonces desactiva la anterior.
 :::
 
 :::danger Peligro

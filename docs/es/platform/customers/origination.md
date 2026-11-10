@@ -233,25 +233,50 @@ En los detalles de una respuesta, la pestaña **Verificación de Identidad** mue
 
 #### Verificación con Incode
 
-Con el proveedor **Incode**, la verificación completa ocurre en una página de Incode, fuera del sitio, y el usuario vuelve al mismo paso del flujo al terminar, abandonar o fallar. Los módulos que se ejecutan (validación del documento con OCR, prueba de vida, face match y validación contra bases de gobierno) los define el flow que configures en el Dashboard de Incode, no la tarea.
+Con el proveedor **Incode**, la verificación ocurre en una página de Incode o dentro del mismo paso del flujo, según la modalidad. Los módulos que se ejecutan (validación del documento con OCR, prueba de vida, face match y validación contra bases de gobierno) los define el flow que configures en el Dashboard de Incode, no la tarea.
 
 Antes de usarlo debes [instalar la integración de Incode](/es/platform/customers/settings.html#incode) en el reino. Luego, en **Configuración de Incode** defines:
 
-- **Modalidad**: Cómo se integra la verificación en el flujo. Hoy la única opción es **Hosted URL**, en la que el usuario completa la verificación en una página de Incode y vuelve al mismo paso del flujo.
+- **Modalidad**: Cómo se integra la verificación en el flujo:
+  - **Hosted URL**: El usuario completa la verificación en una página de Incode, fuera del sitio, y vuelve al mismo paso del flujo al terminar, abandonar o fallar.
+  - **Drop-in**: El usuario completa la verificación en el mismo paso, con la interfaz del Web SDK de Incode embebida en la página. Requiere ajustar la política de seguridad de contenido del sitio, como se explica en [Requisitos de Drop-in](#requisitos-de-drop-in).
 - **ID del flow de Incode**: El identificador del flow que se ejecutará, de 24 caracteres hexadecimales. Lo obtienes en el Dashboard de Incode, en **Flows** → **...** → **Copy ID**, o en **Workflows** → **...** → **Copy ID** si tu organización usa workflows.
 
-Ambos campos son obligatorios: la originación no se guarda si la modalidad no es válida o si el ID no tiene 24 caracteres hexadecimales. Si configuras la tarea por la API de administración, los campos son `incode_modality` (solo admite `hosted_url`) e `incode_workflow_id`, dentro de la configuración de verificación de identidad de la tarea.
+Ambos campos son obligatorios: la originación no se guarda si la modalidad no es válida o si el ID no tiene 24 caracteres hexadecimales. Si configuras la tarea por la API de administración, los campos son `incode_modality` (admite `hosted_url` o `drop_in`) e `incode_workflow_id`, dentro de la configuración de verificación de identidad de la tarea.
 
 ##### Qué ve el usuario
 
-La tarea muestra el estado de la verificación y el botón **Iniciar verificación**, que lleva al usuario a la página de Incode. Al volver, la tarea refleja el estado de la verificación:
+La tarea muestra el estado de la verificación y el botón **Iniciar verificación**. Con Hosted URL, el botón lleva al usuario a la página de Incode; con Drop-in, abre la verificación en el mismo paso. Si el navegador no es compatible con el Web SDK de Incode, la tarea lo indica en lugar de mostrar el botón. Al terminar, la tarea refleja el estado de la verificación:
 
 - **Verificado**: La tarea se completa automáticamente y el usuario continúa con el flujo.
 - **Revisión pendiente**: Incode dejó la verificación en revisión manual. El usuario no puede reiniciarla y debe volver más tarde para conocer el resultado.
 - **Rechazado**, **Expired** o **Error**: El usuario puede intentarlo de nuevo con **Iniciar la verificación nuevamente**.
 - **En progreso**: Modyo todavía no tiene el resultado. La pantalla se actualiza sola cuando llega y, si el usuario no completó el proceso en Incode, puede iniciarlo de nuevo.
+- **Procesando el resultado**: El usuario terminó el proceso en Incode y Modyo espera el resultado. Durante las dos horas siguientes el usuario no puede reiniciar la verificación, para no descartar un intento terminado. Si en ese plazo el resultado no llega, puede iniciarla de nuevo.
 
 Cada intento nuevo descarta las imágenes y los resultados del anterior. Si Incode devuelve un error al iniciar la verificación, el usuario ve un mensaje de servicio no disponible y la respuesta registra el log **Error de Incode en verificación de identidad**, que sugiere revisar la API key de la integración y el ID del flow de la tarea.
+
+##### Requisitos de Drop-in
+
+Con Drop-in, el Web SDK de Incode se ejecuta dentro de la página del sitio, así que la [política de seguridad de contenido (CSP)](/es/platform/channels/sites.html#content-security-policy-csp) del sitio debe permitir sus recursos. Si el sitio define su propia política, agrega a las directivas existentes:
+
+```bash
+script-src 'wasm-unsafe-eval' 'unsafe-eval'
+connect-src https://*.incodesmile.com https://*.s3.amazonaws.com https://featureassets.org https://prodregistryv2.org https://api.ipify.org
+img-src blob: https://*.s3.amazonaws.com
+worker-src blob:
+media-src blob:
+```
+
+`'wasm-unsafe-eval'` permite cargar el módulo WebAssembly del SDK y `'unsafe-eval'` lo exige el kit de procesamiento de imágenes que el SDK descarga desde Incode.
+
+::: warning Costo de 'unsafe-eval'
+`'unsafe-eval'` aplica a todo el sitio, no solo al paso de verificación: permite ejecutar código a partir de texto y debilita la protección del sitio contra _cross site scripting_. Agrégalo solo si necesitas Drop-in; Hosted URL no lo requiere.
+:::
+
+Si la plataforma aplica una política por defecto a los sitios, esa política no permite el SDK. Para usar Drop-in, habilita [Security headers](/es/platform/channels/sites.html#security-headers) en el sitio y define en **Content-Security-Policy (CSP)** una política propia que incluya las directivas anteriores: la política del sitio reemplaza a la de la plataforma.
+
+Con una política basada en nonce, el SDK usa su tema por defecto en lugar del tema configurado en el Dashboard de Incode, porque Incode inserta ese tema sin nonce.
 
 ##### Cómo se decide el resultado
 
@@ -366,13 +391,13 @@ Para almacenar información, los datos deben utilizar formato JSON válido, los 
 
 La petición POST a la URL de `getUrl()` guarda los datos y también puede cambiar el estado de la tarea, según el parámetro `completed`:
 
-- **Sin `completed`**: guarda los datos y marca la tarea como completada.
+- **Sin `completed`**: guarda los datos sin cambiar el estado de la tarea. La tarea se completa cuando el usuario presiona **Siguiente**.
 - **`completed: true`**: guarda los datos y marca la tarea como completada.
 - **`completed: false`**: guarda los datos sin completar la tarea. Si la tarea ya estaba completada, vuelve a quedar en curso.
 
 Usa solo `true` o `false` en `completed`. Cualquier otro valor se interpreta como `false`.
 
-`completed` va al mismo nivel que `content`, no dentro de él. Por ejemplo, para guardar datos sin completar la tarea:
+`completed` va al mismo nivel que `content`, no dentro de él. Por ejemplo, para guardar los datos y completar la tarea:
 
 ```js
 await fetch(getUrl(), {
@@ -382,7 +407,7 @@ await fetch(getUrl(), {
     'Accept': 'application/json',
     'Content-Type': 'application/json'
   },
-  body: JSON.stringify({ content: { plan: 'basic' }, completed: false })
+  body: JSON.stringify({ content: { plan: 'basic' }, completed: true })
 });
 ```
 
@@ -398,6 +423,10 @@ Para que una integración sepa que el usuario terminó un code snippet, suscribe
 :::
 
 Si la tarea tiene activada la opción **Bloquear las respuestas al completar**, el POST que la completa también registra **Tarea de respuesta de originación enviada**, porque después de eso el botón **Siguiente** ya no vuelve a enviar la tarea.
+
+Un POST sin `completed` no completa ni bloquea la tarea: el code snippet puede guardar datos varias veces y se conserva el último contenido, hasta que el usuario presiona **Siguiente** o el code snippet envía `completed: true`.
+
+Si una tarea de validación rechaza la respuesta del code snippet, el usuario puede corregirla aunque la tarea tenga **Bloquear las respuestas al completar**. Mientras corrige, un POST sin `completed: true` solo guarda los datos: el rechazo y su comentario siguen visibles y no se avisa a los validadores. La corrección se envía cuando el usuario presiona **Siguiente** o el code snippet envía `completed: true`. En ese momento se avisa a los validadores y, si la tarea tiene esa opción, vuelve a quedar bloqueada.
 
 #### Uso de Liquid en code snippets
 

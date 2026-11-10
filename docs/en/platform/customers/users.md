@@ -101,6 +101,10 @@ In this section, you can view a log of all actions performed by the user on the 
 These records cannot be deleted or edited.
 :::
 
+:::tip Tip
+If a user reports that they asked to recover their password and the email never arrived, check this activity: the requests the platform processes are recorded here, and the ones it discards for exceeding the limits leave no trace at all. The detail of those limits is in [Request limits and lockouts](/en/platform/customers/settings.html#request-limits-and-lockouts).
+:::
+
 ### Answers to forms
 
 This section contains a list of forms filled out by the user. Click on a form to view their responses. For more information, see the [Forms](/en/platform/customers/forms) section.
