@@ -19,6 +19,8 @@ version: 9.2
 ### Funcionalidades principales
 
 - **[Espacios](/es/platform/content/spaces)**: Organiza contenidos y equipos que los administren.
+- **[Entradas](/es/platform/content/entries)**: Crea y publica el contenido de un espacio, segmentado por tipos de contenido.
 - **[Tipos de contenido](/es/platform/content/types)**: Define estructuras personalizadas.
-- **[Gestor de archivos](/es/platform/content/asset-manager)**: Organiza los archivos usados en los contenidos como imágenes o videos.
+- **[Categorías](/es/platform/content/categories)**: Ordena las entradas en categorías anidadas.
+- **[Multimedia](/es/platform/content/asset-manager)**: Organiza los archivos usados en los contenidos como imágenes o videos.
 - **[API y SDKs](/es/platform/content/public-api-reference)**: Accede a los repositorios de contenidos, dentro y fuera de la plataforma.

@@ -2,7 +2,7 @@
 search: true
 ---
 
-# Media
+# Multimedia
 
 :::tip Tip
 - En `Modyo 9` este espacio se llama **Gestor de archivos**. Si migras de Modyo 9 a Modyo 10 todos los assets se conservan y se mueven al espacio **default media**.
@@ -10,7 +10,7 @@ search: true
 
 Este espacio te permite cargar, organizar y gestionar tus archivos de forma simple y eficiente.
 
-En Media puedes asignar permisos de edición y eliminación de imágenes a través de grupos. De esta manera, un grupo puede tener permisos para ver y usar assets, pero no podrá modificarlos o eliminarlos.
+En Multimedia puedes asignar permisos de edición y eliminación de imágenes a través de grupos. De esta manera, un grupo puede tener permisos para ver y usar assets, pero no podrá modificarlos o eliminarlos.
 Puedes cargar diversos tipos de media a este espacio, considerando las siguientes restricciones de tamaño por archivo:
 
 
@@ -35,27 +35,35 @@ Modyo también revisa el nombre del archivo: no puede contener más de un punto,
 Desde Modyo 10.2, además de la extensión y del tamaño, se comprueba que el tipo de contenido real del archivo corresponda a su extensión. Si no coinciden, la subida falla y el panel muestra el nombre del archivo junto al mensaje _el tipo de contenido no coincide con la extensión del archivo_. La comprobación se aplica a los cuatro tipos de media, tanto en el panel como en la API de administración, así que un PNG renombrado a `.jpg` o un CSV renombrado a `.xlsx` dejan de subirse. Si te encuentras con este error, renombra el archivo con su extensión real o vuelve a exportarlo en el formato que necesitas.
 :::
 
+## Bibliotecas de archivos
+
+Los archivos no se guardan en una biblioteca única. Cada espacio, sitio y reino tiene su propia biblioteca, y la cuenta tiene una más. La sección **Multimedia** de un espacio administra solo la biblioteca de ese espacio, aunque el porcentaje de espacio utilizado que muestra considera los archivos de toda la cuenta.
+
+Cuando insertas o adjuntas un archivo desde un editor, el selector de archivos abre la biblioteca del lugar donde estás trabajando: en una entrada, la del espacio; en las plantillas, páginas y widgets de un sitio, la del sitio, y en los formularios, originaciones y plantillas de correo de un reino, la del reino. Lo que subes desde el selector queda en esa biblioteca: un archivo que subes desde un sitio o un reino no aparece en la sección **Multimedia** de ningún espacio.
+
+Para usar un archivo de otra biblioteca, elige en el filtro **Contexto** del selector el tipo de biblioteca (espacio, sitio, reino o cuenta) y, salvo para la cuenta, elige la biblioteca en el filtro que aparece junto a él. El filtro solo ofrece los tipos de biblioteca de los módulos a los que tienes acceso, además de la cuenta, que siempre está disponible.
+
 ## Acerca de la Interfaz
 
-La interfaz te muestra una lista de todos los archivos que existen dentro de la plataforma.
+La interfaz te muestra una lista de los archivos de la biblioteca del espacio en el que estás.
 
 En la parte superior derecha de la pantalla puedes ver el porcentaje de espacio utilizado correspondiente al total asignado para la cuenta y el botón para subir archivos nuevos.
 
-Modyo muestra 30 archivos por página. En la parte inferior puedes navegar entre las páginas de archivos.
+Modyo muestra 30 archivos por página. En la parte inferior puedes navegar entre las páginas de archivos y, cuando hay más de 30, mostrar 60 o 100 por página.
 
 Puedes filtrar el contenido por:
-- **Extensiones**: Filtra por tipo de archivo.
+- **Tipo de archivo**: Filtra por **Imágenes**, **Vídeo**, **Documentos** o **Audio**.
 - **Autor**: Filtra por nombre de usuario que subió el contenido.
 - **Tags**: Muestra todos los archivos asociados a una etiqueta.
-- **Barra de búsqueda**: Escribe una palabra para desplegar los archivos que contengan esa palabra en su nombre o metadata.
+- **Barra de búsqueda**: Escribe una palabra para desplegar los archivos cuyo nombre, o el nombre de quien los subió, contenga esa palabra. No busca en el título, la descripción, el texto alternativo ni los tags; para los tags usa el filtro **Tags**.
 
-Las etiquetas te permiten organizar y agrupar tus archivos. Para modificar las etiquetas de más de un archivo, selecciona los archivos que desees y da click en el botón **Agregar o quitar etiquetas** que aparece en la parte inferior del listado.
+Las etiquetas te permiten organizar y agrupar tus archivos. Para modificar las etiquetas de más de un archivo, selecciona los archivos que desees y da click en el botón **Agregar o quitar tags** que aparece en la parte inferior del listado.
 
 En esta vista, las columnas son:
 - **Previsualizar**: Si la plataforma identifica que el archivo es una imagen, puedes ver una imagen en miniatura del archivo. Si no lo es, el espacio aparece en blanco.
 - **Nombre**: Nombre del archivo y su extensión. El ordenamiento es alfabético.
 - **Tipo**: Tipo y extensión del archivo. El ordenamiento es alfabético, primero por tipo y después por el nombre de la extensión.
-- **Tamaño**: Tamaño en kilobytes del archivo.
+- **Tamaño**: Tamaño del archivo, en la unidad que corresponda (Bytes, KB, MB, etc.).
 - **Creado el**: Fecha de subida o creación dentro de la plataforma, sin considerar si el archivo fue creado en una fecha distinta en otro servicio.
 - **Autor**: Nombre del usuario que subió el archivo, solo cuando el usuario tiene asignado un nombre.
 
@@ -67,15 +75,17 @@ Para cargar un archivo en Modyo, elige una de las siguientes opciones:
 1. Abre el editor de texto,
 1. En la barra superior, selecciona **insertar imagen** para abrir un modal donde podrás arrastar o subir un archivo.
 
+El archivo queda en la biblioteca de esa sección. Revisa [Bibliotecas de archivos](#bibliotecas-de-archivos).
+
 #### En la sección dedicada para administrar archivos.
 
 1. En el menú lateral da click en el ícono de **Content**.
 1. Selecciona un espacio.
-1. En el menú lateral da click en **Media**.
+1. En el menú lateral da click en **Multimedia**.
 1. Da click en el botón **Nuevo Asset**.
 1. Arrastra el archivo o haz clic en el recuadro de carga para abrir una ventana de búsqueda.
 1. Agrega etiquetas al archivo si lo deseas.
-1. Da click en **Upload** para confirmar.
+1. Da click en **Subir archivo** para confirmar.
 
 ::: tip Tip
 Modyo permite subir 10 archivos a la vez. Si necesitas subir más elementos, repite el proceso.
@@ -84,12 +94,12 @@ Modyo permite subir 10 archivos a la vez. Si necesitas subir más elementos, rep
 ## Editar un archivo
 En la interfaz de archivos, da click en el nombre de un archivo para abrir la interfaz de edición de las propiedades del archivo y ver:
 
-- **URL del Archivo**: Muestra la URL pública del archivo. Da click en el ícono junto a la URL para copiarla. No es modificable.
+- **URL del archivo**: Muestra la URL pública del archivo. Da click en el ícono junto a la URL para copiarla. No es modificable.
 - **Tag de liquid**: Muestra el tag de liquid del archivo, da click en el ícono para copiar y usarlo en los contenidos de la plataforma. No es modificable.
-- **Título**: Muestra el título del archivo. Esta sección es distinta al nombre del archivo, el cual no se puede cambiar.
-- **Texto alternativo**: Muestra el alt text del elemento. Solo para imágenes y videos.
+- **Título**: Muestra el título de la imagen, de hasta 255 caracteres. Es distinto al nombre del archivo, el cual no se puede cambiar. Solo para imágenes.
+- **Texto alternativo**: Muestra el alt text de la imagen, de hasta 255 caracteres. Solo para imágenes.
 - **Descripción**: Descripción del elemento, recomendamos escribir un texto corto referente a la imagen.
-- **Etiquetas**: Muestra las etiquetas asociadas al archivo. Puedes buscar y agregar más etiquetas, así como eliminar etiquetas existentes.
+- **Tags**: Muestra las etiquetas asociadas al archivo. Puedes buscar y agregar más etiquetas, así como eliminar etiquetas existentes.
 
 Da click en **Actualizar información** para confirmar los cambios o en **Cerrar** para cancelarlos.
 
@@ -101,7 +111,14 @@ Para cargar un archivo nuevo manteniendo el nombre y el enlace originales, sigue
 2. Haz click en el botón de carga sobre la imagen.
 3. Selecciona un archivo nuevo.
 4. Confirma que deseas reemplazar el archivo anterior.
-5. Haz click en **Actualizar información** para confirmar los cambios
+
+El reemplazo se aplica en cuanto confirmas: la ventana se cierra y la página se recarga, sin pasar por **Actualizar información**. Si habías cambiado otros campos de la ventana sin guardarlos, esos cambios se pierden.
+
+:::warning Atención
+El archivo nuevo conserva el nombre y la extensión del original, así que debe tener su mismo formato. Si no lo tiene, por ejemplo un PNG que reemplaza a un `.jpg`, el reemplazo se rechaza con un error que indica que _el tipo de contenido no coincide con la extensión del archivo_ y se mantiene el archivo anterior.
+:::
+
+Una imagen que editaste con el editor de imágenes no se puede reemplazar: el botón de carga no aparece hasta que restauras el original.
 
 
 ## Editar una imagen
@@ -116,6 +133,8 @@ El editor de imágenes de Modyo te permite realizar pequeños cambios a las imá
     - Libre: Edita la imagen a un tamaño personalizado en píxeles, ajustable en la parte inferior de la pantalla.
 4. Da click en **Aplicar**.
 
+El editor no está disponible para imágenes SVG ni ICO. Tampoco puedes volver a editar una imagen ya editada: el ícono de edición queda deshabilitado hasta que restauras el original.
+
 :::tip Tip
 Puedes cambiar la vista y el recorte de la imagen de dos maneras:
 
@@ -123,7 +142,7 @@ Puedes cambiar la vista y el recorte de la imagen de dos maneras:
 - Mover fondo: Haz doble click fuera de la zona de recorte y arrastra el fondo.
 :::
 
-Para restaurar el archivo, abre nuevamente la ventana de edición de propiedades y da click en **Restore Original**, esto elimina permanentemente las modificaciones realizadas.
+Para restaurar el archivo, abre nuevamente la ventana de edición de propiedades y da click en **Restaurar original**, que solo aparece en las imágenes editadas. Esto elimina permanentemente las modificaciones realizadas.
 
 
 ## Redimensionar una imagen
@@ -140,7 +159,7 @@ Para redimensionar una imagen debes primero copiar el código Liquid para render
 
 1. Haz click en content.
 1. Selecciona el espacio donde está la imagen que quieres modificar.
-1. Haz click en media.
+1. Haz click en **Multimedia**.
 1. Haz click sobre la imagen.
 1. Haz click en el ícono de copiar, junto al tag de Liquid de la imagen.
 
