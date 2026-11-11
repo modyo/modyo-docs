@@ -4,17 +4,17 @@ search: true
 
 # WebHooks
 
-La plataforma también permite el uso de Webhooks para ciertos eventos específicos dentro de tu cuenta. Para ello, se deben habilitar y configurar desde la sección Webhooks en la configuración de la cuenta.
+La plataforma también permite el uso de Webhooks para ciertos eventos específicos dentro de tu cuenta. Para ello, configúralos desde la sección **Webhooks** de la configuración de la cuenta.
 
 Un webhook es una acción _POST_ automática a una URL determinada con información determinada.
 
-Para habilitarlos, debes checkear la parte superior de la página y después proceder a crear todos los webhooks que quieras.
+No hay una opción general para activar los webhooks: cada uno tiene su propio switch **Habilitado**, que viene activo al crearlo. Revisa [Habilitar o deshabilitar un webhook](#habilitar-o-deshabilitar-un-webhook).
 
 Los webhooks se pueden crear a partir de acciones de aplicaciones, espacios o reinos. El **Tipo de contexto** que elijas define qué disparadores te ofrece el selector **Tipo de log**: cada contexto tiene su propio catálogo y ningún disparador está en todos.
 
 Al crear un webhook, debes tener la URL a la que quieres enviar la información, elegir el **Tipo de contexto**, acotar el **Contexto** a una aplicación, un espacio o un reino en particular, o dejar **Todos** para escuchar a todos los de ese tipo, seleccionar en **Tipo de log** uno o más disparadores, porque el selector es múltiple, y luego guardar los cambios.
 
-Luego de esto, podrás ver en la lista todos los webhooks que estén activos.
+Luego de esto, verás el webhook en el listado, que muestra todos los webhooks, estén habilitados o no.
 
 :::warning Attention
 En la versión 10.1.0 se agregan los Webhooks de reinos para los eventos de usuarios finales. Esos Webhooks tienen que volver a ser creados en el reino en caso de ser usados desde versiones anteriores.
@@ -119,9 +119,9 @@ Estos cinco disparadores son los únicos que ofrece el tipo de contexto **Reino*
 {
    "id":1552,
    "account_id":2,
+   "automated":false,
    "site_id":null,
    "user_id":2,
-   "type":null,
    "value_1":"6111a767-71dc-485c-bea3-80229edf7450",
    "value_2":"the-new-type",
    "value_3":"space-test",
@@ -133,7 +133,6 @@ Estos cinco disparadores son los únicos que ofrece el tipo de contexto **Reino*
       "title":"test entries (6111a767-71dc-485c-bea3-80229edf7450)"
    },
    "created_at":"2021-08-13T17:08:46.000Z",
-   "user_type":"AdminUser",
    "space_id":1,
    "log_type_id":262,
    "realm_id":null,
@@ -391,12 +390,16 @@ En la columna **Estado** del listado de webhooks ves si cada uno está **Activo*
 
 ### Probar un webhook
 
-En las acciones del webhook, en el listado, haz click en **Enviar notificación de prueba**. La plataforma envía un único POST a la URL del webhook con datos ficticios del primer disparador configurado y con los mismos headers que una entrega real, y te muestra el resultado:
+En las acciones del webhook, en el listado, haz click en **Enviar notificación de prueba**. La plataforma envía un único POST a la URL del webhook con datos ficticios del primer disparador configurado que siga disponible y con los mismos headers que una entrega real, y te muestra el resultado:
 
 - Si tu endpoint responde con un código 2xx, ves **Notificación de prueba enviada**.
 - Si responde con otro código, ves **El endpoint respondió con el estado HTTP** seguido del código, y si la comunicación falla, el motivo, por ejemplo **El endpoint no respondió a tiempo**.
 
 La notificación de prueba no queda en el [registro de entregas](#registro-de-entregas), lleva un `webhook-id` distinto en cada prueba y se envía aunque el webhook esté deshabilitado.
+
+La prueba siempre llega con la forma de log completo del [ejemplo de payload](#ejemplo-de-payload) y con valores ficticios, por ejemplo `id`, `account_id` y `user_id` en `0`, y `value_1`, `value_2` y `value_3` con esos mismos textos. Esto incluye los disparadores de eventos de usuario final, que en las entregas reales pueden llegar con el payload compacto, así que la prueba no sirve para validar cómo tu endpoint procesa esa forma.
+
+Si ninguno de los disparadores del webhook sigue disponible, la prueba no se envía y ves **Ninguno de los gatilladores del webhook sigue disponible, así que no se envió la notificación de prueba**.
 
 ### Entrega de las notificaciones
 
@@ -466,10 +469,10 @@ Para ver las entregas necesitas permiso para ver los webhooks, y para re-dispara
 
 - **Pendiente**: La entrega espera su envío.
 - **En curso**: Modyo está enviando la notificación.
-- **Programada**: Un intento falló y la entrega espera su siguiente reintento. La columna **Próximo intento** indica cuándo.
+- **Programada**: Un intento falló y la entrega espera su siguiente reintento. La columna **Próximo intento** indica cuándo. Si un intento se corta antes de terminar, la entrega también vuelve a este estado, con el motivo **El intento se interrumpió antes de terminar**.
 - **Entregada**: Tu endpoint respondió con un código 2xx.
 - **Fallida**: Tu endpoint respondió con un error que no se reintenta, o la URL o un header del webhook no son válidos.
-- **Agotada**: Se hicieron todos los intentos sin éxito.
+- **Agotada**: Se hicieron todos los intentos sin éxito, o su siguiente intento quedó atrasado más de unas 18 horas, por defecto, sin llegar a hacerse. En ese caso, **Último resultado** muestra **La entrega expiró antes de poder enviarse** y esa entrega no cuenta para que el webhook quede [**Degradado**](#webhooks-degradados).
 - **Irrecuperable**: El evento o su payload ya no existen, así que la entrega no se puede re-disparar.
 - **Cancelada**: El webhook se deshabilitó o se eliminó antes de completar la entrega.
 
