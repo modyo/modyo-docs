@@ -35,7 +35,10 @@ For more information on versioning, see the section on [versioning](/en/platform
 
 **View activity**: Displays a sidebar that shows the activity history and where you can read and write comments. Click on **view detail** to show the full information of any activity log.
 
-**More actions**: This icon allows you to **archive** or **delete** a template.
+**More actions**: This icon allows you to **Archive** or **Delete** the open template. These actions are only available on templates that can be deleted, such as the ones you create or the **Home** layout. The other templates the site comes with, such as the **Base** and **Error** layouts, cannot be archived, unpublished, or deleted.
+
+- **Archive**: Available when the template has no published version; if it has one, unpublish it first. An archived template cannot be edited and disappears from the list. To see it, turn on **Show archived** at the bottom of the side panel and, if you want to use it again, click **Restore**.
+- **Delete**: Available when the template is archived and has no published or scheduled version. This action is irreversible.
 
 The last option in the top bar shows the main actions you can perform:
 
@@ -44,6 +47,7 @@ The last option in the top bar shows the main actions you can perform:
 - **Force publication**: Only available to site administrators, allows you to immediately publish a template, even if it is awaiting review.
 - **Reject**: Returns to "In Edit" status and notifies reviewers that the item was rejected.
 - **Publish**: Once the template has been approved, you can send it to publish.
+- **Unpublish**: Available on published templates that can be deleted. Choose **Unpublish now**, or **Unpublish on** to schedule it for a date. Published templates that reference the unpublished template can no longer render it.
 
 In the main work area, there are two sections:
 
@@ -101,10 +105,14 @@ The path of the snippet that registers the service worker is `shared/service_wor
 :::
 
 To apply a new layout to a page, follow these steps:
-1. Go to the **Pages** section
-2. Select the **Properties** tab.
-3. Choose the layout you want to use on your page.
-4. Submit for review or publish your layout, as required.
+1. Publish the layout. Only published layouts appear in the pages' **Layout** selector.
+2. Go to the **Pages** section and open the page.
+3. Choose the layout in the **Layout** field. On a widget page, it is in the **Properties** tab. On a [content page](/en/platform/channels/pages#content-page), you choose it separately for the **Index** and the **Show**, in the **Edit** tab.
+4. Submit the page for review or publish it, as required.
+
+:::warning Attention
+If you unpublish or delete a layout, the pages that use it are displayed with the **Base** layout. Before you unpublish it, if there are published widget pages that use it, Modyo tells you how many. When you delete it, the editable version of the widget pages it was assigned to also switches to the **Base** layout, and that change stays pending until you publish them.
+:::
 
 ### Inserting an Image with Liquid
 
@@ -262,7 +270,7 @@ Subversions are specific to each template, so some may have changes and others m
 If you restore a previous version to the editable version, you can access the sub-versions of each template in that version. You can learn more about [versioning](/en/platform/core/#versioning) here.
 :::
 
-To restore all templates to their original version, click on the secondary action in the top bar **Restore All**. For the changes to take effect, you must publish the templates.
+Each template is versioned separately. To return a template to a previous version, open it, click **Differences**, and use **Reset to this version**, which brings that version into the editable version, or **Rollback to this version**, which publishes it directly. For more details, see [Revert a Change](/en/platform/core/#revert-a-change).
 
 ## SEO
 
@@ -270,31 +278,69 @@ SEO [(Search Engine Optimization)](/en/platform/channels/sites#seo) is essential
 
 In Modyo, you can control how search engines read your site and content, by dynamically adding meta tags, depending on the attributes you add to your pages and content.
 
-To add meta tags in Modyo, use this code snippet in Templates and then call it from the head of your site:
+Among the templates the site is created with is the `shared/general/seo` snippet, which the `shared/general/head` snippet loads in the head of the **Home**, **Base**, and **Error** layouts. You can find it in the **Snippets** tab, and its initial content is the following:
 
 ```html
 <!-- Site SEO -->
-<meta name="keywords" content="{{ site.keywords }}"/>
 <meta name="author" content="{{ site.name }}"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 {{ site.meta_tags }}
 
 {% if page %}
-<!-- Page SEO -->
-{{ page.meta_tags }}
-<meta name="description" content="{{ page.excerpt }}"/>
-<meta property="og:title" content="{{ page.title }}"/>
-<meta property="og:type" content="website"/>
-<meta property="og:url" content="{{ page.url }}"/>
-<meta property="og:image" content="{{ site.logo | asset_url : 'original' }}"/>
-<meta property="og:site_name" content="{{ site.name }}"/>
-<meta property="og:description" content="{{ page.excerpt }}"/>
+    <!-- Page SEO -->
+    {{ page.meta_tags }}
 {% endif %}
+
 <!-- END SEO -->
+
+{% if page_scope == 'show' %}
+    <!-- Content Page: Show -->
+    <meta name="description" content="{{ entry.meta.excerpt }}"/>
+    <meta property="og:title" content="{{ entry.title }} | {{ site.name }}"/>
+    <meta property="og:description" content="{{ entry.meta.excerpt }}"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content="{{ entry.url }}"/>
+    {% if site.logo %}
+        <meta property="og:image" content="{{ site.logo | asset_url: 'original' }}"/>
+    {% endif %}
+    <meta property="og:site_name" content="{{ site.name }}"/>
+    <link rel="canonical" href="{{ entry.url }}"/>
+
+{% elsif page_scope == 'index' %}
+    <!-- Content Page: Index -->
+    <meta property="og:title" content="{{ page.title }} | {{ site.name }}"/>
+    <meta name="description" content="{{ page.excerpt }}"/>
+    <meta property="og:description" content="{{ page.excerpt }}"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content="{{ page.url }}"/>
+    {% if site.logo %}
+        <meta property="og:image" content="{{ site.logo | asset_url : 'original' }}"/>
+    {% endif %}
+    <meta property="og:site_name" content="{{ site.name }}"/>
+    <link rel="canonical" href="{{ page.url }}"/>
+
+{% else %}
+    <!-- Widget Page -->
+    <meta property="og:title" content="{{ page.title }} - {{ site.name }}"/>
+    <meta name="description" content="{{ page.excerpt }}"/>
+    <meta property="og:description" content="{{ page.excerpt }}"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="{{page.url}}"/>
+    {% if site.logo %}
+        <meta property="og:image" content="{{ site.logo | asset_url : 'original' }}"/>
+    {% endif %}
+    <meta property="og:site_name" content="{{ site.name }}"/>
+    <link rel="canonical" href="{{page.url}}"/>
+{% endif %}
 ```
 
-This snippet uses Liquid to add site-level meta tags. It also adds specific meta tags when the user navigates to a widget or content page.
+The snippet first adds the site meta tags and the page's [custom meta tags](/en/platform/channels/pages#meta-tags). Then it uses the `page_scope` variable to generate the meta tags for each view:
+
+- `show`: The detail of an entry on a content page. It uses the entry's title, excerpt, and URL, with `og:type` set to `article`.
+- `index`: The entry list on a content page. It uses the page's title, excerpt, and URL, with `og:type` set to `article`.
+- In any other case, such as on widget pages, it uses the page's title, excerpt, and URL, with `og:type` set to `website`.
+
+In all cases, it adds the canonical URL and, if the site has a logo, uses it as `og:image`.
 
 You can customize this snippet and define what meta tags you want for specific URLs or types.
 
@@ -313,14 +359,14 @@ Use this code to use specific meta tags when a user visits an entry:
 <!-- Content SEO -->
 <meta name="description" content="{{ entry.meta.excerpt }}" />
 <meta property="og:title" content="{{ entry.meta.title }}" />
-<meta property="og:url" content="{{site.url}}/{{entry.meta.type_uid}}/{{entry.meta.slug}}" />
+<meta property="og:url" content="{{ entry.meta.url }}" />
 <meta property="og:image" content="{{ entry.fields.covers.first | asset_url : 'original' }}" />
 <meta property="og:site_name" content="{{ site.name }}" />
 <meta property="og:description" content="{{ entry.meta.excerpt }}" />
-{% if entry.type_uid = 'posts'%}
+{% if entry.meta.type_uid == 'posts' %}
 <meta property="og:type" content="article" />
-{endif}
-{% if entry.type_uid = 'place'%}
+{% endif %}
+{% if entry.meta.type_uid == 'place' %}
 <meta property="og:type" content="place" />
 <meta property="place:latitude" content="{{ entry.location.first.latitude }}" />
 <meta property="place:longitude" content="{{ entry.location.first.longitude }}" />
@@ -329,7 +375,7 @@ Use this code to use specific meta tags when a user visits an entry:
 ...
 ```
 
-In this case, the `posts` and `place` entry types share the _title_, _excerpt_, and _covers_ attributes and differ in the _locations_ object. In addition, it defines a different document type for each one.
+In this case, the `posts` and `place` entry types share the _title_, _excerpt_, and _covers_ attributes and differ in the _location_ field. In addition, it defines a different document type for each one.
 
 ### Category-specific meta tags on the Content Page
 
@@ -355,8 +401,9 @@ For specific meta tags when displaying entries from a category, copy the followi
 <meta property="og:image" content="https://d1dzq2r60kxox4.cloudfront.net/uploads/c82bdfea-3622-4c11-9a20-bea227cbdc60/original/og_image.jpg"/>
 <meta property="og:site_name" content="{{ site.name }}"/>
 <meta property="og:description" content="{{ category_description }}"/>
+{% endif %}
 ```
 
-In this code, a `category_name` variable is created that contains the name of the category taken from the URL. Then, an `{% if category_path.size > 0 %}` is used to add relevant metadata to the category.
+In this code, a `category_name` variable is created that contains the name of the category taken from the URL. Then, an `if` on `category_path.size > 0` adds the category metadata only when the URL includes one.
 
 Liquid allows you to create dynamic content for your site. To learn more about Liquid and how to use Liquid Objects, visit [Liquid Markup](/en/platform/channels/liquid-markup).
