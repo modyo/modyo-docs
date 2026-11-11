@@ -13,7 +13,7 @@ Este perfil está disponible para los usuarios al autenticarse o acceder a la se
 
 ## Actividad
 
-En esta sección, puedes ver un registro de todas las acciones realizadas por el usuario en la plataforma.
+En esta sección, el usuario ve sus 20 acciones más recientes en la plataforma, sin las que hizo un administrador mientras lo [impersonaba](/es/platform/customers/users.html#impersonado). Para recorrer el historial completo, usa [Eventos del usuario](/es/platform/customers/api.html#eventos-del-usuario) de la API de Customers.
 
 :::warning Atención
 Estos registros no se pueden borrar ni editar.

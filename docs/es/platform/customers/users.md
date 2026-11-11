@@ -14,7 +14,7 @@ Puedes utilizar los filtros en la parte superior de la tabla para encontrar grup
 - **Verificación**: Usuarios que han confirmado sus datos en la plataforma.
 - **Segmentos**: Usuarios que pertenecen a un [segmento](/es/platform/customers/segments) específico.
 - **Etiquetas**: Usuarios asignados a etiquetas específicas en la plataforma.
-- **Búsqueda**: Filtra usuarios por nombre, apellido, email o nombre de usuario.
+- **Búsqueda**: Busca usuarios por nombre, apellido, email, nombre de usuario, teléfono, tags o el valor de los custom fields marcados como **Buscable por administradores** (revisa [Custom fields](/es/platform/customers/settings.html#custom-fields)). No necesitas escribir la palabra completa: basta con su comienzo.
 
 Puedes ordenar los usuarios en la tabla por nombre, fecha de inscripción, último ingreso o cantidad de sesiones iniciadas haciendo clic en las cabeceras de las columnas.
 
@@ -24,12 +24,12 @@ Si tu acceso al reino está restringido por segmentos, este listado solo muestra
 
 ### Acciones masivas
 
-Marca la casilla junto al nombre de uno o más usuarios y haz clic en el botón **Bulk Actions** debajo del listado para realizar las siguientes acciones:
+Marca la casilla junto al nombre de uno o más usuarios y haz clic en el botón **Acciones masivas** debajo del listado para realizar las siguientes acciones:
 
 - **Desactivar**: Desactiva a los usuarios seleccionados.
 - **Activar**: Activa a los usuarios seleccionados.
 - **Exportar**: Exporta la lista de usuarios en formato Excel o CSV.
-- **Agregar o eliminar etiquetas**: Crea nuevas etiquetas y asigna o elimina etiquetas existentes para los usuarios seleccionados.
+- **Agregar o quitar tags**: Crea nuevas etiquetas y asigna o elimina etiquetas existentes para los usuarios seleccionados.
 
 ## Añadir un Usuario
 
@@ -37,15 +37,17 @@ Para agregar un nuevo usuario, haz clic en el botón **Nuevo Usuario** y complet
 
 - **Nombre**: **[Requerido]**. Nombre legal del usuario.
 - **Apellido**
-- **Apellido materno**
-- **Nombre de usuario**: **[Requerido]**. Identificador único en la plataforma. Solo puede contener letras de la A a la Z (mayúsculas o minúsculas), números y los símbolos `| # @ % . _ - ' + /`; no se permiten espacios.
+- **Segundo apellido**: Solo aparece si el reino tiene marcada la opción **Habilitar segundo apellido** del **Formulario de registro**, en la [Configuración de reino](/es/platform/customers/settings.html#general).
+- **Nombre de usuario**: **[Requerido]**. Identificador único en la plataforma. Solo puede contener letras de la A a la Z (mayúsculas o minúsculas), números y los símbolos `| # @ % . _ - ' + /`; no se permiten espacios. Junto a la etiqueta, entre paréntesis, el panel muestra cómo identifica el reino a sus usuarios: **Email** si usa el correo como nombre de usuario, que es la opción por defecto, o la etiqueta de nombre de usuario que tenga configurada.
 - **Email**: **[Requerido]**
-- **Contraseña**: **[Requerido]**. Debe contener al menos 8 caracteres.
-- **Confirmación de contraseña**: **[Requerido]**
+- **Contraseña**: **[Requerido]**. Debe cumplir la [Política de Contraseña](/es/platform/customers/settings.html#politica-de-contrasena) del reino: el largo mínimo que esta fije, que nunca baja de 12 caracteres, un máximo de 128 y las minúsculas, mayúsculas y símbolos que exija. En un reino nuevo, la política pide 16 caracteres y los tres tipos.
+- **Confirmación de la contraseña**: **[Requerido]**
 - **Tags**: Etiquetas para identificar al usuario.
 
+Debajo de los campos de contraseña, **Mostrar contraseña** deja ver lo que escribes y **Generar una contraseña segura** completa ambos campos con una contraseña aleatoria.
+
 :::tip Tip
-Para enviar la contraseña al correo del usuario, marca la casilla debajo del campo de correo electrónico.
+Al guardar, el usuario queda activo y recibe el correo **Agregado por el Admin**, siempre que ese correo esté habilitado en [Correos](/es/platform/customers/settings.html#correos) de la configuración del reino, como viene por defecto. La casilla **Incluir contraseña en correo electrónico enviado al usuario**, marcada por defecto, solo decide si el correo incluye la contraseña.
 :::
 
 Los usuarios que creas desde el administrador quedan con el cambio de contraseña pendiente: la primera vez que inicien sesión, la plataforma los lleva a la pantalla de cambio de contraseña y no los deja continuar hasta que definan una nueva. Lo mismo ocurre cuando un administrador les fija una contraseña desde **Editar**.
@@ -80,6 +82,8 @@ La funcionalidad de impersonación permite a los administradores del reino, con 
 
 Esta funcionalidad se puede usar desde la Ficha de Usuario: encontrarás el botón "Impersonar" en el menú de acciones (identificado con tres puntos).
 
+Para usarla necesitas el permiso **Suplantar Usuarios** en el reino, que también viene incluido en **Administrar Usuarios**. La opción **Impersonar** solo aparece cuando el usuario está activo.
+
 ### Proceso de impersonación
 Al hacer clic en el botón "Impersonar", se abrirá una nueva pestaña del navegador que lo llevará directamente al perfil del usuario en el front end con su sesión activa.
 
@@ -107,6 +111,10 @@ Si un usuario reporta que pidió recuperar su contraseña y el correo nunca le l
 ### Respuestas a formularios
 
 Esta sección contiene una lista de formularios rellenados por el usuario. Haz clic en un formulario para ver sus respuestas. Para más información, consulta la sección [Formularios](/es/platform/customers/forms).
+
+### Originación
+
+Lista las respuestas del usuario a las originaciones del reino, con las columnas **Flujo de originación**, **Estado**, **Progreso** y **Comenzó el**. Haz clic en el nombre del flujo para abrir el detalle de la respuesta, que se explica en [Gestión de Respuestas](/es/platform/customers/origination.html#gestion-de-respuestas). Esta pestaña solo aparece si el plan de tu cuenta incluye Originación y tu rol tiene acceso a las originaciones del reino.
 
 ### Notas
 
