@@ -246,14 +246,14 @@ A continuación, se explica como utilizar cada uno de estos métodos
 
 Lo primero que debes realizar, es registrar la aplicación para consumir la API. Sigue estos pasos para crear un nuevo Bearer Token:
 
-1. Desde la plataforma Modyo, en el menú lateral, expande **Configuración** y haz click en **Acceso al API**.
+1. Desde la plataforma Modyo, en el menú lateral, expande **Configuración** y haz click en **Acceso a la API**.
 2. Haz click en el botón **Nuevo Acceso al API**.
 3. Llena el nombre, descripción, y URI de redirección del acceso.
 
-Al guardar la información de la aplicación, Modyo mostrará una vista donde verás el _callback URL_ (el que corresponde al campo Redirect URI ingresado en el paso anterior) y además los campos _Application ID_ y _Secret_ que puedes utilizar posteriormente.
+Al hacer click en **Crear**, Modyo muestra el cuadro de diálogo **Se ha generado un nuevo token secreto** con el secreto de la aplicación. Cópialo en ese momento con el botón que está junto a él: es la única vez que se muestra y no podrás recuperarlo después de cerrar el cuadro. Luego, la aplicación aparece en el listado con su **Callback URL**, que es la URI de redirección que ingresaste, y su **Id de la aplicación**.
 
-:::warning Atención
-Ten en consideración que cuando se cierra sesión en alguno de tus sitios, se hará un _GET_ a todas las URL de cierre de sesión de tus aplicaciones de acceso a la API, lo que podría generar algunas redirecciones no deseadas si es que se usa una URL sin cuidado en ese campo.
+:::tip Tip
+El secreto solo hace falta para el flujo descrito en [El cliente OAuth2 del Acceso a la API](/es/platform/core/api.html#el-cliente-oauth2-del-acceso-a-la-api) y para revocar un token desde tu integración, como se explica en [Ciclo de vida del token de acceso](/es/platform/core/api.html#ciclo-de-vida-del-token-de-acceso). Para generar tokens desde la consola, como en los pasos siguientes, no lo necesitas. Si lo perdiste y lo necesitas, crea otra aplicación.
 :::
 
 4. Una vez registrada la aplicación, asigna la aplicación los usuarios que harán uso de la API. Para esto, en el menú lateral, expande **Configuración** y haz click en **Equipo**.
@@ -261,9 +261,9 @@ Ten en consideración que cuando se cierra sesión en alguno de tus sitios, se h
 
 Para más detalles, ve a [Usuarios y Roles](/es/platform/core/roles)
 
-6. En la vista de edición del usuario administrador, haz click en _API Access_ y selecciona la opción **Nuevo Acceso al API**.
+6. En la vista del usuario administrador, abre la pestaña **Acceso a la API** y haz click en **Nuevo Token de Acceso**.
 
-7. En el _popup_ que se muestra a continuación, selecciona el nombre de la aplicación que acabas de crear y luego haz click en **Nuevo Token de Acceso**.
+7. En el _popup_ **Generar un Token de Acceso**, elige la aplicación que acabas de crear en **Selecciona una aplicación para generar el token de acceso** y haz click en **Crear token**.
 
 :::warning Atención
 Debes tener en cuenta que los usuarios administrativos solo podrán ejecutar acciones a través de la API administrativa de Modyo si es que cuentan con los permisos necesarios para realizar cada acción. Por ejemplo, un administrador con el rol de "Developer" en un sitio, no podrá ejecutar la acción "Publicar" en ese sitio.
@@ -312,14 +312,17 @@ La respuesta obtenida desde el servicio es un `HTTP 200 OK`, y contiene la infor
 
 #### El cliente OAuth2 del Acceso a la API
 
-Los tres datos que te muestra **Acceso a la API** al guardar la aplicación no son propios de Modyo: son las credenciales de un cliente OAuth2. **Application ID** es el `client_id`, **Secret** es el `client_secret` y la URI de redirección es el `redirect_uri` al que la plataforma devuelve el código de autorización.
+Los datos de una aplicación de **Acceso a la API** no son propios de Modyo: son las credenciales de un cliente OAuth2. El **Id de la aplicación** es el `client_id`, el secreto que se muestra una sola vez al crearla es el `client_secret` y la URI de redirección es el `redirect_uri` al que la plataforma devuelve el código de autorización.
 
-Modyo monta los dos extremos del flujo bajo `/admin/oauth`:
+Modyo monta los extremos del flujo bajo `/admin/oauth`:
 
 ```http request
 GET  https://[account_host]/admin/oauth/authorize
 POST https://[account_host]/admin/oauth/token
+POST https://[account_host]/admin/oauth/revoke
 ```
+
+El último sirve para revocar un token, como se explica en [Ciclo de vida del token de acceso](/es/platform/core/api.html#ciclo-de-vida-del-token-de-acceso).
 
 El único flujo habilitado es `authorization_code`, en dos pasos:
 
@@ -351,15 +354,23 @@ No necesitas implementar este flujo para usar la API. El camino descrito más ar
 
 El _access token_ que copias desde **Administrar Tokens de Acceso** no caduca. Modyo emite los tokens de la API de administración sin fecha de expiración, así que siguen siendo válidos indefinidamente mientras existan, sin importar cuánto tiempo pase desde que se generaron ni si el administrador cerró sus sesiones del navegador.
 
-De ahí que un token deje de servir solo cuando alguien lo elimina. Tienes dos formas de hacerlo:
+De ahí que un token deje de servir solo cuando alguien lo elimina o lo revoca. Tienes tres formas de hacerlo:
 
 - **Eliminar el token**, desde la pestaña **Acceso a la API** del miembro del equipo, en la sección **Administrar Tokens de Acceso**. Afecta únicamente a ese token.
 - **Eliminar la aplicación**, desde **Configuración** > **Acceso a la API**. Elimina de una vez todos los tokens emitidos con esa aplicación, de todos los administradores, así que cualquier integración que la use deja de autenticar.
+- **Revocar el token** desde tu integración, sin pasar por la consola, con un `POST` a `/admin/oauth/revoke` que incluya el `token` junto con el `client_id` y el `client_secret` de la aplicación con la que se emitió. Afecta únicamente a ese token.
+
+```shell script
+curl -X POST https://test.modyo.com/admin/oauth/revoke \
+  -d token=EL_ACCESS_TOKEN \
+  -d client_id=EL_APPLICATION_ID \
+  -d client_secret=EL_SECRET
+```
 
 Desactivar al administrador dueño del token también corta el acceso: la plataforma resuelve el token solo si el usuario sigue activo.
 
 :::warning Atención
-La plataforma no rota ni renueva los tokens por sí sola. No hay caducidad automática ni _refresh token_, de modo que cualquier política de rotación queda en manos de quien opera la integración: genera el token nuevo, cámbialo en el cliente y recién entonces elimina el anterior. Y trata el _access token_ como una credencial permanente, porque lo es: si se filtra, seguirá funcionando hasta que alguien lo elimine desde la consola.
+La plataforma no rota ni renueva los tokens por sí sola. No hay caducidad automática ni _refresh token_, de modo que cualquier política de rotación queda en manos de quien opera la integración: genera el token nuevo, cámbialo en el cliente y recién entonces elimina o revoca el anterior. Y trata el _access token_ como una credencial permanente, porque lo es: si se filtra, seguirá funcionando hasta que alguien lo elimine desde la consola o lo revoque.
 :::
 
 #### Requests no autenticados
@@ -453,6 +464,7 @@ El estado por omisión de una operación que falla en la API de administración 
 | `401 Unauthorized` | Vacío | La credencial es válida, pero el usuario no tiene el permiso que exige la operación. |
 | `401 Unauthorized` | <code v-pre>{"error": {"grant_expired": "..."}}</code> | La sesión de la cookie de administrador expiró o fue revocada. |
 | `403 Forbidden` | Vacío | Falló la verificación del token CSRF en una escritura autenticada con cookie de sesión. |
+| `403 Forbidden` | <code v-pre>{"error": {"pending_password_reset": "..."}}</code> | El usuario dueño de la credencial tiene pendiente el cambio de contraseña: un administrador lo creó desde la consola o le asignó una contraseña, y todavía no la cambia. Toda llamada, con Bearer token o con cookie, responde así hasta que ese usuario inicia sesión en la consola con su nombre de usuario y contraseña y define una nueva. |
 | `404 Not Found` | <code v-pre>{}</code> o <code v-pre>{"errors": [...]}</code> | El recurso o el sitio de la ruta no existen, o el usuario no alcanza a verlos. |
 | `409 Conflict` | <code v-pre>{"errors": [...]}</code> | Estado por omisión de una operación fallida. |
 | `422 Unprocessable Entity` | <code v-pre>{"errors": [...]}</code> o vacío | Los parámetros de la llamada no son válidos. |
@@ -461,7 +473,7 @@ El estado por omisión de una operación que falla en la API de administración 
 Tres de estas respuestas llegan sin cuerpo y sin ningún mensaje que explique el motivo: el `403` de CSRF, el `401` por permisos insuficientes y parte de los `422`. Y como el `401` cubre tanto "no estás autenticado" como "no tienes permiso", la única señal para distinguirlos es el cuerpo: <code v-pre>{}</code> apunta a la credencial y el cuerpo vacío apunta a los permisos. Registra el estado y la ruta en tu integración, porque la respuesta no te va a dar más pistas.
 :::
 
-Ninguno de estos errores mejora al reintentarlo: un `401`, un `403` o un `409` vuelven a fallar igual mientras no cambies la credencial, el token CSRF o los datos de la llamada.
+Ninguno de estos errores mejora al reintentarlo: un `401`, un `403` o un `409` vuelven a fallar igual mientras no cambies la credencial, el token CSRF o los datos de la llamada. El `403` por contraseña pendiente se resuelve solo cuando el usuario define su nueva contraseña.
 
 ## Paginación
 
@@ -715,11 +727,15 @@ La consulta devuelve los registros que alcanzas a ver, del más reciente al más
     {
       "id": 26826,
       "account_id": 4,
-      "site_id": 0,
-      "space_id": 0,
-      "site_host": "string",
-      "site_name": "string",
+      "site_id": null,
+      "space_id": 12,
+      "site_host": null,
+      "site_name": null,
+      "space_name": "Mi espacio",
+      "realm_id": null,
+      "realm_name": null,
       "user": {
+        "uuid": "930d2b95-e34e-49b0-b5e9-6c6b90d66447",
         "avatar": {
           "id": 100,
           "file_name": "user_avatar.png",
@@ -727,34 +743,35 @@ La consulta devuelve los registros que alcanzas a ver, del más reciente al más
           "url_small": "https://test.modyo.com:3000/assets/avatar/user_avatar_small.png",
           "url_medium": "https://test.modyo.com:3000/assets/avatar/user_avatar_medium.png"
         },
-        "id": 344,
         "name": "Sam Johnson",
-        "first_name": "Johnson",
-        "last_name": "Sam",
+        "first_name": "Sam",
+        "last_name": "Johnson",
         "email": "sam.johnson@modyo.com",
-        "url": "https://test.modyo.com/admin/settings/admin_users/930d2b95-e34e-..."
+        "url": "https://test.modyo.com/admin/settings/admin_users/930d2b95-e34e-49b0-b5e9-6c6b90d66447"
       },
-      "type": "Logs::TargetDeletedLog",
-      "value_1": "string",
-      "value_2": "string",
-      "value_3": "string",
+      "type": "entry_unpublished_log",
+      "value_1": "5f1c2d3e-8a4b-4c6d-9e0f-1a2b3c4d5e6f",
+      "value_2": "post",
+      "value_3": "mi-espacio",
       "request_ip": "127.0.0.1",
       "request_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36",
-      "title": "admin.logs.target_deleted_log.title",
-      "description": "admin.logs.target_deleted_log.description",
+      "title": "Entrada despublicada",
+      "description": "<a href=\"https://test.modyo.com/admin/content/spaces/mi-espacio/entries/5f1c2d3e-8a4b-4c6d-9e0f-1a2b3c4d5e6f?target_locale=es\">Entrada</a> despublicada por <a href=\"https://test.modyo.com/admin/settings/admin_users/930d2b95-e34e-49b0-b5e9-6c6b90d66447\">Sam Johnson</a> en <a href=\"https://test.modyo.com/admin/content/spaces/mi-espacio\">Mi espacio</a>",
       "loggeable_id": 15,
-      "loggeable_type": "Targets::Target",
-      "log_origin": "admin.loggeable_types.targets.target",
-      "created_at": "2020-02-06T12:20:29.000-03:00",
-      "options": "{\\\"title\\\":\\\"\\\"}",
-      "log_key_user_action": "admin.logs.target_deleted_log.activity",
+      "loggeable_type": "Content::Entry",
+      "log_origin": "admin.loggeable_types.content.entry",
+      "created_at": "2026-07-15T12:20:29.000-03:00",
+      "options": "{\"element_url\":\"https://test.modyo.com/admin/content/spaces/mi-espacio/entries/5f1c2d3e-8a4b-4c6d-9e0f-1a2b3c4d5e6f?target_locale=es\",\"title\":\"Mi entrada (5f1c2d3e-8a4b-4c6d-9e0f-1a2b3c4d5e6f)\"}",
+      "automated": false,
+      "log_key_user_action": "admin.logs.entry_unpublished_log.activity",
       "defaults": {
-        "site_or_account": "<a href=\\\"https://test.modyo.com\\\">My Modyo</a>",
-        "user": "<a href=\\\"https://test.modyo.com/admin/settings/admin_users/830d2b95-e74e-49b0-b5e9-6c6b90d66447\\\">Sam J.</a>",
-        "loggeable": "string",
-        "value_1": "string",
-        "value_2": "string",
-        "value_3": "string"
+        "site_or_account": "<a href=\"https://test.modyo.com/admin/content/spaces/mi-espacio\">Mi espacio</a>",
+        "user": "<a href=\"https://test.modyo.com/admin/settings/admin_users/930d2b95-e34e-49b0-b5e9-6c6b90d66447\">Sam Johnson</a>",
+        "loggeable": "Mi entrada (5f1c2d3e-8a4b-4c6d-9e0f-1a2b3c4d5e6f)",
+        "value_1": "5f1c2d3e-8a4b-4c6d-9e0f-1a2b3c4d5e6f",
+        "value_2": "post",
+        "value_3": "mi-espacio",
+        "element_url": "<a href=\"https://test.modyo.com/admin/content/spaces/mi-espacio/entries/5f1c2d3e-8a4b-4c6d-9e0f-1a2b3c4d5e6f?target_locale=es\">Entrada</a>"
       }
     }
   ],
@@ -766,6 +783,8 @@ La consulta devuelve los registros que alcanzas a ver, del más reciente al más
   }
 }
 ```
+
+`type` es el identificador del tipo de registro, el mismo valor que aceptan los filtros `type`, `types` y `not_in_type`. `title` y `description` llegan como texto, ya traducido al idioma del usuario dueño de la credencial, y `description` puede incluir enlaces HTML. `user` identifica al administrador por su `uuid`, y `automated` vale `true` cuando la acción no la ejecutó un administrador. Además de `site_id` y `space_id`, el contexto llega con `realm_id` y con los nombres `site_name`, `space_name` y `realm_name`.
 
 ### Qué registros ves
 
@@ -792,7 +811,7 @@ Hasta 10.1, los usuarios con el rol **Default admin** a nivel de cuenta también
 - `realm_id`, `site_id` y `space_id`: acotan los registros al realm, sitio o espacio indicado, y definen el alcance de la consulta.
 - `user_uuid`: registros de un administrador puntual, por su `uuid`. Con el valor literal `system` obtienes solo los registros automáticos, es decir, los que no tienen un administrador detrás.
 - `loggeable_type` y `loggeable_id`: el objeto afectado por la acción, por ejemplo `loggeable_type=Content::Entry`.
-- `application`: con el valor `core` acota a los objetos del núcleo de la plataforma, como sitios, espacios, entradas, roles, formularios y webhooks.
+- `application`: con el valor `core` acota a los objetos del núcleo de la plataforma, como sitios, entradas, roles, formularios y webhooks. No incluye los registros cuyo objeto afectado es un espacio (`loggeable_type=Content::Space`). `core` es el único valor admitido, así que no envíes otro.
 - `query`: texto libre. Busca por prefijo en el título del registro y en el nombre y el correo de su autor.
 - `admin_actions`: con `true` deja fuera la actividad de los usuarios finales.
 - `sort_by` y `order`: orden del listado.
@@ -877,7 +896,7 @@ Ten en cuenta que:
 - Si `current_password` es incorrecta o viene vacía, la respuesta es `HTTP 422 Unprocessable Entity` y nada se actualiza.
 
 :::danger Peligro
-Los intentos fallidos con contraseña incorrecta se acumulan. Al alcanzar el límite configurado para tu cuenta, la plataforma revoca todas las sesiones activas del usuario, así que quien esté trabajando en el panel de administración queda con la sesión cerrada. Controla el `HTTP 422` en tu integración y no reintentes en bucle.
+Los intentos fallidos con contraseña incorrecta se acumulan mientras no pasen más de 15 minutos entre uno y otro. El límite no es un ajuste de tu cuenta: con la configuración predeterminada de la plataforma, los tres primeros intentos fallidos responden `HTTP 422` con un mensaje que pide revisar la contraseña actual. Desde el cuarto, la respuesta sigue siendo `HTTP 422`, pero con un mensaje que avisa que alcanzaste el límite de intentos, y la plataforma revoca todas las sesiones activas del usuario, así que quien esté trabajando en el panel de administración queda con la sesión cerrada. Esto se repite con cada intento fallido hasta que pasan 15 minutos desde el tercero, y ahí el conteo vuelve a empezar. Controla el `HTTP 422` en tu integración y no reintentes en bucle.
 :::
 
 ### Segundo factor

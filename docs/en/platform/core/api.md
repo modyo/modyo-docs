@@ -248,14 +248,14 @@ Below, we explain how to use each of these methods.
 
 The first thing you must do is register the application to consume the API. Follow these steps to create a new Bearer Token:
 
-1. From the Modyo platform, in the side menu, expand **Settings** and click on **API Access**.
+1. From the Modyo platform, in the side menu, expand **Settings** and click on **API access**.
 2. Click the **New API Access** button.
 3. Fill in the name, description, and redirect URI of the access.
 
-When saving the application information, Modyo will show a view where you will see the _callback URL_ (which corresponds to the Redirect URI field entered in the previous step) and also the _Application ID_ and _Secret_ fields that you can use later.
+When you click **Create**, Modyo shows the **A new secret token has been generated** dialog with the application's secret. Copy it right away with the button next to it: this is the only time it is shown, and you cannot retrieve it after you close the dialog. The application then appears in the list with its **Callback URL**, which is the redirect URI you entered, and its **Application Id**.
 
-:::warning Attention
-Keep in mind that when you log out of any of your sites, a _GET_ will be made to all logout URLs of your API access applications, which could generate some unwanted redirects if a URL is used carelessly in that field.
+:::tip Tip
+You only need the secret for the flow described in [The OAuth2 client behind API access](/en/platform/core/api.html#the-oauth2-client-behind-api-access) and to revoke a token from your integration, as explained in [Access token lifecycle](/en/platform/core/api.html#access-token-lifecycle). To generate tokens from the console, as in the following steps, you do not need it. If you lost it and you need it, create another application.
 :::
 
 4. Once the application is registered, assign the users who will use the API to the application. To do this, in the side menu, expand **Settings** and click on **Team**.
@@ -263,9 +263,9 @@ Keep in mind that when you log out of any of your sites, a _GET_ will be made to
 
 For more details, go to [Users and Roles](/en/platform/core/roles.html)
 
-6. In the administrator user's edit view, click on _API Access_ and select the **New API Access** option.
+6. In the administrator user's view, open the **API access** tab and click **New Access Token**.
 
-7. In the _popup_ that appears next, select the name of the application you just created and then click **New Access Token**.
+7. In the **Generate Access Token** _popup_, choose the application you just created in **Choose an application to generate an access token** and click **Create Token**.
 
 :::warning Attention
 Keep in mind that administrative users will only be able to execute actions through the Modyo administrative API if they have the necessary permissions to perform each action. For example, an administrator with the "Developer" role on a site will not be able to execute the "Publish" action on that site.
@@ -314,14 +314,17 @@ The response obtained from the service is an `HTTP 200 OK`, and contains the rol
 
 #### The OAuth2 client behind API access
 
-The three values that **API access** shows you when you save the application are not Modyo-specific: they are the credentials of an OAuth2 client. **Application ID** is the `client_id`, **Secret** is the `client_secret`, and the redirect URI is the `redirect_uri` that the platform sends the authorization code back to.
+The values of an **API access** application are not Modyo-specific: they are the credentials of an OAuth2 client. The **Application Id** is the `client_id`, the secret shown only once when you create the application is the `client_secret`, and the redirect URI is the `redirect_uri` that the platform sends the authorization code back to.
 
-Modyo mounts both ends of the flow under `/admin/oauth`:
+Modyo mounts the endpoints of the flow under `/admin/oauth`:
 
 ```http request
 GET  https://[account_host]/admin/oauth/authorize
 POST https://[account_host]/admin/oauth/token
+POST https://[account_host]/admin/oauth/revoke
 ```
+
+The last one revokes a token, as explained in [Access token lifecycle](/en/platform/core/api.html#access-token-lifecycle).
 
 The only enabled flow is `authorization_code`, in two steps:
 
@@ -353,15 +356,23 @@ You do not need to implement this flow to use the API. The path described above,
 
 The _access token_ you copy from **Manage Access Tokens** never expires. Modyo issues admin API tokens with no expiration date, so they stay valid indefinitely as long as they exist, no matter how much time has passed since they were generated or whether the administrator closed their browser sessions.
 
-That means a token stops working only when someone deletes it. You have two ways to do that:
+That means a token stops working only when someone deletes or revokes it. You have three ways to do that:
 
 - **Delete the token**, from the **API access** tab of the team member, in the **Manage Access Tokens** section. This affects only that token.
 - **Delete the application**, from **Settings** > **API access**. This deletes every token issued with that application at once, across all administrators, so any integration using it stops authenticating.
+- **Revoke the token** from your integration, without going through the console, with a `POST` to `/admin/oauth/revoke` that includes the `token` along with the `client_id` and `client_secret` of the application that issued it. This affects only that token.
+
+```shell script
+curl -X POST https://test.modyo.com/admin/oauth/revoke \
+  -d token=THE_ACCESS_TOKEN \
+  -d client_id=THE_APPLICATION_ID \
+  -d client_secret=THE_SECRET
+```
 
 Deactivating the administrator who owns the token also cuts off access: the platform resolves the token only if the user is still active.
 
 :::warning Attention
-The platform does not rotate or renew tokens on its own. There is no automatic expiration and no _refresh token_, so any rotation policy is up to whoever operates the integration: generate the new token, swap it in the client, and only then delete the old one. And treat the _access token_ as a permanent credential, because that is what it is: if it leaks, it keeps working until someone deletes it from the console.
+The platform does not rotate or renew tokens on its own. There is no automatic expiration and no _refresh token_, so any rotation policy is up to whoever operates the integration: generate the new token, swap it in the client, and only then delete or revoke the old one. And treat the _access token_ as a permanent credential, because that is what it is: if it leaks, it keeps working until someone deletes it from the console or revokes it.
 :::
 
 #### Unauthenticated requests
@@ -455,6 +466,7 @@ The default status of a failed operation in the admin API is `409 Conflict`. Whe
 | `401 Unauthorized` | Empty | The credential is valid, but the user lacks the permission the operation requires. |
 | `401 Unauthorized` | <code v-pre>{"error": {"grant_expired": "..."}}</code> | The administrator cookie session expired or was revoked. |
 | `403 Forbidden` | Empty | CSRF token verification failed on a write authenticated with a session cookie. |
+| `403 Forbidden` | <code v-pre>{"error": {"pending_password_reset": "..."}}</code> | The user who owns the credential has a pending password change: an administrator created them from the console or set their password, and they have not changed it yet. Every call, with a Bearer token or with the cookie, gets this response until that user logs in to the console with their username and password and sets a new one. |
 | `404 Not Found` | <code v-pre>{}</code> or <code v-pre>{"errors": [...]}</code> | The resource or the site in the path does not exist, or the user cannot see them. |
 | `409 Conflict` | <code v-pre>{"errors": [...]}</code> | Default status of a failed operation. |
 | `422 Unprocessable Entity` | <code v-pre>{"errors": [...]}</code> or empty | The parameters of the call are not valid. |
@@ -463,7 +475,7 @@ The default status of a failed operation in the admin API is `409 Conflict`. Whe
 Three of these responses arrive with no body and no message explaining the reason: the CSRF `403`, the `401` for insufficient permissions, and some of the `422`s. And since `401` covers both "you are not authenticated" and "you do not have permission", the only signal that tells them apart is the body: <code v-pre>{}</code> points to the credential and an empty body points to permissions. Log the status and the path in your integration, because the response will not give you more clues.
 :::
 
-None of these errors gets better on a retry: a `401`, a `403` or a `409` will fail the same way until you change the credential, the CSRF token, or the data of the call.
+None of these errors gets better on a retry: a `401`, a `403` or a `409` will fail the same way until you change the credential, the CSRF token, or the data of the call. The pending password `403` clears only once the user sets their new password.
 
 ## Pagination
 
@@ -719,11 +731,15 @@ The query returns the records you are allowed to see, from the most recent to th
     {
       "id": 26826,
       "account_id": 4,
-      "site_id": 0,
-      "space_id": 0,
-      "site_host": "string",
-      "site_name": "string",
+      "site_id": null,
+      "space_id": 12,
+      "site_host": null,
+      "site_name": null,
+      "space_name": "My space",
+      "realm_id": null,
+      "realm_name": null,
       "user": {
+        "uuid": "930d2b95-e34e-49b0-b5e9-6c6b90d66447",
         "avatar": {
           "id": 100,
           "file_name": "user_avatar.png",
@@ -731,34 +747,35 @@ The query returns the records you are allowed to see, from the most recent to th
           "url_small": "https://test.modyo.com:3000/assets/avatar/user_avatar_small.png",
           "url_medium": "https://test.modyo.com:3000/assets/avatar/user_avatar_medium.png"
         },
-        "id": 344,
         "name": "Sam Johnson",
-        "first_name": "Johnson",
-        "last_name": "Sam",
+        "first_name": "Sam",
+        "last_name": "Johnson",
         "email": "sam.johnson@modyo.com",
-        "url": "https://test.modyo.com/admin/settings/admin_users/930d2b95-e34e-..."
+        "url": "https://test.modyo.com/admin/settings/admin_users/930d2b95-e34e-49b0-b5e9-6c6b90d66447"
       },
-      "type": "Logs::TargetDeletedLog",
-      "value_1": "string",
-      "value_2": "string",
-      "value_3": "string",
+      "type": "entry_unpublished_log",
+      "value_1": "5f1c2d3e-8a4b-4c6d-9e0f-1a2b3c4d5e6f",
+      "value_2": "post",
+      "value_3": "my-space",
       "request_ip": "127.0.0.1",
       "request_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36",
-      "title": "admin.logs.target_deleted_log.title",
-      "description": "admin.logs.target_deleted_log.description",
+      "title": "Entry unpublished",
+      "description": "<a href=\"https://test.modyo.com/admin/content/spaces/my-space/entries/5f1c2d3e-8a4b-4c6d-9e0f-1a2b3c4d5e6f?target_locale=en\">Entry</a> unpublished by <a href=\"https://test.modyo.com/admin/settings/admin_users/930d2b95-e34e-49b0-b5e9-6c6b90d66447\">Sam Johnson</a> in <a href=\"https://test.modyo.com/admin/content/spaces/my-space\">My space</a>",
       "loggeable_id": 15,
-      "loggeable_type": "Targets::Target",
-      "log_origin": "admin.loggeable_types.targets.target",
-      "created_at": "2020-02-06T12:20:29.000-03:00",
-      "options": "{\\\"title\\\":\\\"\\\"}",
-      "log_key_user_action": "admin.logs.target_deleted_log.activity",
+      "loggeable_type": "Content::Entry",
+      "log_origin": "admin.loggeable_types.content.entry",
+      "created_at": "2026-07-15T12:20:29.000-03:00",
+      "options": "{\"element_url\":\"https://test.modyo.com/admin/content/spaces/my-space/entries/5f1c2d3e-8a4b-4c6d-9e0f-1a2b3c4d5e6f?target_locale=en\",\"title\":\"My entry (5f1c2d3e-8a4b-4c6d-9e0f-1a2b3c4d5e6f)\"}",
+      "automated": false,
+      "log_key_user_action": "admin.logs.entry_unpublished_log.activity",
       "defaults": {
-        "site_or_account": "<a href=\\\"https://test.modyo.com\\\">My Modyo</a>",
-        "user": "<a href=\\\"https://test.modyo.com/admin/settings/admin_users/830d2b95-e74e-49b0-b5e9-6c6b90d66447\\\">Sam J.</a>",
-        "loggeable": "string",
-        "value_1": "string",
-        "value_2": "string",
-        "value_3": "string"
+        "site_or_account": "<a href=\"https://test.modyo.com/admin/content/spaces/my-space\">My space</a>",
+        "user": "<a href=\"https://test.modyo.com/admin/settings/admin_users/930d2b95-e34e-49b0-b5e9-6c6b90d66447\">Sam Johnson</a>",
+        "loggeable": "My entry (5f1c2d3e-8a4b-4c6d-9e0f-1a2b3c4d5e6f)",
+        "value_1": "5f1c2d3e-8a4b-4c6d-9e0f-1a2b3c4d5e6f",
+        "value_2": "post",
+        "value_3": "my-space",
+        "element_url": "<a href=\"https://test.modyo.com/admin/content/spaces/my-space/entries/5f1c2d3e-8a4b-4c6d-9e0f-1a2b3c4d5e6f?target_locale=en\">Entry</a>"
       }
     }
   ],
@@ -770,6 +787,8 @@ The query returns the records you are allowed to see, from the most recent to th
   }
 }
 ```
+
+`type` is the identifier of the record type, the same value that the `type`, `types`, and `not_in_type` filters accept. `title` and `description` arrive as text, already translated into the language of the user who owns the credential, and `description` can include HTML links. `user` identifies the administrator by their `uuid`, and `automated` is `true` when the action was not performed by an administrator. Besides `site_id` and `space_id`, the context comes with `realm_id` and with the names `site_name`, `space_name`, and `realm_name`.
 
 ### What logs you see
 
@@ -796,7 +815,7 @@ Up to 10.1, users with the **Default admin** role at the account level also got 
 - `realm_id`, `site_id`, and `space_id`: narrow the records down to the given realm, site, or space, and define the scope of the query.
 - `user_uuid`: records of one specific administrator, by their `uuid`. With the literal value `system` you get only the automated records, that is, the ones without an administrator behind them.
 - `loggeable_type` and `loggeable_id`: the object affected by the action, for example `loggeable_type=Content::Entry`.
-- `application`: with the value `core` it narrows the results down to the platform core objects, such as sites, spaces, entries, roles, forms, and webhooks.
+- `application`: with the value `core` it narrows the results down to the platform core objects, such as sites, entries, roles, forms, and webhooks. It leaves out the records whose affected object is a space (`loggeable_type=Content::Space`). `core` is the only accepted value, so do not send any other.
 - `query`: free text. It searches by prefix in the record title and in the name and email of its author.
 - `admin_actions`: with `true` it leaves end user activity out.
 - `sort_by` and `order`: sorting of the list.
@@ -881,7 +900,7 @@ Keep in mind that:
 - If `current_password` is wrong or empty, the response is `HTTP 422 Unprocessable Entity` and nothing is updated.
 
 :::danger Danger
-Failed attempts with a wrong password add up. When the limit configured for your account is reached, the platform revokes every active session of the user, so anyone working in the administration panel is logged out. Handle the `HTTP 422` in your integration and do not retry in a loop.
+Failed attempts with a wrong password add up as long as no more than 15 minutes go by between one and the next. The limit is not a setting of your account: with the platform's default configuration, the first three failed attempts respond `HTTP 422` with a message asking you to check the current password. From the fourth one on, the response is still `HTTP 422`, but with a message saying that you reached the attempt limit, and the platform revokes every active session of the user, so anyone working in the administration panel is logged out. This repeats with every failed attempt until 15 minutes have passed since the third one, and then the count starts over. Handle the `HTTP 422` in your integration and do not retry in a loop.
 :::
 
 ### Two-factor authentication
