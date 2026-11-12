@@ -380,10 +380,10 @@ The GET request returns:
 ```
 
 :::warning Attention
-On the origination page, `content` must be a JSON object, either directly or serialized as text. An array, a number, or text that does not contain a JSON object is rejected, even if it is valid JSON. If `content` does not meet this, or the request has neither `content` nor `completed`, the request responds with status code 422, does not save the data, and includes one of these messages in `errors`:
+On the origination page, `content` must be a JSON object, either directly or serialized as text. An array, a number, or text that does not contain a JSON object is rejected, even if it is valid JSON. If `content` does not meet this, or the request has neither `completed` nor a `content` with data, the request responds with status code 422, does not save the data, and includes one of these messages in `errors`:
 
 - **Content parameter needs to be a valid json**: `content` is not a JSON object.
-- **Content or completed parameter is required**: the request has neither `content` nor `completed`.
+- **Content or completed parameter is required**: the request has no `completed` and `content` is missing or empty. An empty object (`{}`) sent as an object in the JSON body counts as empty; serialized as text (`"{}"`) it is accepted.
 :::
 
 #### Completing the task from the code snippet

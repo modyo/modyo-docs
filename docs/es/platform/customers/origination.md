@@ -380,10 +380,10 @@ La petición GET devuelve:
 ```
 
 :::warning Atención
-En la página de originación, `content` tiene que ser un objeto JSON, ya sea directo o serializado como texto. Un arreglo, un número o un texto que no contenga un objeto JSON se rechazan, aunque sean JSON válido. Si `content` no cumple esto o la petición no trae `content` ni `completed`, la petición responde con el código 422, no guarda los datos e incluye en `errors` uno de estos mensajes:
+En la página de originación, `content` tiene que ser un objeto JSON, ya sea directo o serializado como texto. Un arreglo, un número o un texto que no contenga un objeto JSON se rechazan, aunque sean JSON válido. Si `content` no cumple esto o la petición no trae `completed` ni un `content` con datos, la petición responde con el código 422, no guarda los datos e incluye en `errors` uno de estos mensajes:
 
 - **El parámetro content debe ser un json válido**: `content` no es un objeto JSON.
-- **El parámetro content es obligatorio**: la petición no trae `content` ni `completed`.
+- **El parámetro content es obligatorio**: la petición no trae `completed` y `content` falta o está vacío. Un objeto vacío (`{}`) enviado como objeto en el cuerpo JSON cuenta como vacío; serializado como texto (`"{}"`) sí se acepta.
 :::
 
 #### Completar la tarea desde el code snippet
