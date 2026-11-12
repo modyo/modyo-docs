@@ -323,10 +323,10 @@ The response includes the name (`name`), the identifier (`slug`) and the root it
 
 - It only responds for production sites and published menus. Otherwise, it responds with a 404 error.
 - If the site is private, a call without a session on the site responds with a 401 error.
-- **Private** and segmented items follow the same rules as in the [menu tag](/en/platform/channels/navigation#items-that-are-displayed), based on the session the user has started on the site. The API does not use access tokens, so a call without that session, for example from a server, only receives the items that are not private.
+- **Private** and segmented items follow the same rules as in the [menu tag](/en/platform/channels/navigation#items-that-are-displayed), based on the session the user has started on the account domain. The API does not use access tokens, so a call without that session, for example from a server, only receives the items that are not private.
 - If an item URL includes global variables, they come resolved.
 - URLs starting with `http://`, `https://`, `tel:`, `mailto:` or `sms:` are returned as they are. Anchors (`#section`) and URLs starting with `?` are also returned as they are, so they point to the page the visitor is on, unlike in the menu tag. The rest are returned as absolute over the site's base URL.
-- You can call it from the browser on the site's custom domain or on the origins allowed by the account [CORS](/en/platform/core/security#http-access-control-cross-origin-resource-sharing-cors) configuration.
+- You can call it from the browser on the site's custom domain or on the origins allowed by the account [CORS](/en/platform/core/security#http-access-control-cross-origin-resource-sharing-cors) configuration. The API responds on the account domain (`account_host`) and only takes the user's session into account when the call carries the session cookie for that domain, for example, from a site page served on the account domain. A session started on the site's custom domain does not apply to the API, and the call receives the same response as one without a session.
 - Responses to calls without a session are public and can be cached, and that cache is renewed when you publish or unpublish the menu. Those that carry a user session are marked as private, so that neither the browser nor intermediate caches store them.
 
 The details of the response and the errors are in the OpenAPI documentation of this API, at `https://[account_host]/api/channels/docs`. See [General Information](/en/platform/core/api#general-information).
