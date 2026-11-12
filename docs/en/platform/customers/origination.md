@@ -75,7 +75,7 @@ In this section, you can edit the values of the selected task. You can find thes
 
 - **Name**: The name of the task that will be visible to the user.
 - **Identifier**: A unique identifier that will be included in the origination URL.
-- **Description**: A brief explanatory text about the task, which will be visible to the user.
+- **Description**: An explanatory text about the task. It supports HTML formatting and Liquid, with the submission (`submission`) and the task (`task`). The user sees it on the origination page when the page has the **Show task details** and **Show task description** options enabled. It also appears in the task detail within the submission, in the admin, where the origination's primary site (`site`), the flow user (`user`), and the administrator viewing it (`agent`) are also available.
 - **Show this task to the main user**: Appears only when the task is selected as a target task of an [invitation task](/en/platform/customers/origination.html#invitation). It comes enabled and defines whether the submission's main user also sees and can answer that task, or whether it is reserved for the invitee it was delegated to.
 
 :::warning Editing identifiers
@@ -316,6 +316,10 @@ With Incode, the **Identity Verification** tab of the submission shows:
 - Deploy real-time data from the submission.
 - Store and consume information relevant to the process.
 
+:::warning No form tags
+The snippet code is inserted inside the task form, so it cannot include `<form>` tags. If it does, the origination is not saved and an error with the text **contains invalid html tags: form** appears. To save data, use the [JSON API](#json-api-for-code-snippets) instead of your own form. The same restriction applies to the **Pending review page content** of Pending review tasks and to the **Waiting message shown to the user** of agent tasks.
+:::
+
 #### Insert a Code Snippet
 
 To add a **code snippet** to an origination task, follow these steps:
@@ -326,64 +330,60 @@ To add a **code snippet** to an origination task, follow these steps:
 
 #### Code Snippet Properties
 
-- **Task ID**: Unique identifier for the task. It is generated automatically when you save the task and allows you to access the data from the API.
+The task has an editor where you write the snippet code, and these properties:
+
 - **Name**: Name of the task, visible to the user.
 - **Identifier**: Unique value included in the origination URL.
 - **Description**: Short explanatory text describing the task.
-- **Complete the task using the API**: If checked, the continue action will be disabled by default for this task and will require the developer to report the completion status using the JavaScript API.
+- **Complete the task using the submission API**: If checked, the continue button appears disabled and your code must enable it with `enableButton()` or [complete the task](#completing-the-task-from-the-code-snippet) with a POST request.
 
 
 #### JavaScript API for Code Snippets
 
-Modyo provides a JavaScript API for interacting with code snippets at run time.
+<a id="code-snippets"></a>Modyo provides a JavaScript API for interacting with code snippets at run time.
 
 #### Available methods
 
-- **`getUrl()`**: Returns the URL of the current origination flow.
+- **`getUrl()`**: Returns the URL of this task's data in the current submission. A GET request to that URL reads the data the snippet saved, and a POST request saves it. When an agent answers the task, it returns the data URL of the agent form.
+- **`getAssertionUrl()`**: Only available when an agent answers the task. Returns the URL to obtain the agent credential described in [Agent verification for external services](#agent-verification-for-external-services).
 - **`enableButton()`**: Enables the task's action button and allows the user to continue with the flow.
 
 #### JSON API for Code Snippets
 
 Code Snippets can communicate with the origination API using data in **JSON** format.
 
-To get data stored in the current submission, use the `getUrl()` method to build the request. To save information, a **POST request** must be made to the same URL.
+To read the data the snippet saved in this task, make a **GET request** to the URL returned by `getUrl()`. To save information, make a **POST request** to the same URL with the data in the `content` parameter.
 
 
 #### JSON structure example
 
-When you consume data from the JSON API, you will get an object with all the data stored in the current submission.
+The GET request returns the latest `content` the snippet saved in this task for the current user, with the same structure it was sent with. If the snippet has not saved data yet, the GET request returns no saved data, so check the result before reading it. It does not include the answers of other tasks.
+
+For example, if the snippet sent this POST request:
 
 ```json
 {
-  "submission": {
-    "sequence_id": "12345",
-    "fields": [
-      {
-        "answers": [
-          {
-            "question": {
-              "label": "What's your name?"
-            },
-            "text_field": "Jorge Regula"
-          }
-        ]
-      }
-    ]
-  },
-  "task": {
-    "task_id": "67890",
-    "step": {
-      "uid": "abcd1234"
-    }
-  },
-  "page": {
-    "name": "Origin Page"
+  "content": {
+    "plan": "basic",
+    "term": 12
   }
 }
 ```
 
+The GET request returns:
+
+```json
+{
+  "plan": "basic",
+  "term": 12
+}
+```
+
 :::warning Attention
-To store information, the data must use valid JSON format; format errors will not be processed.
+On the origination page, `content` must be a JSON object, either directly or serialized as text. An array, a number, or text that does not contain a JSON object is rejected, even if it is valid JSON. If `content` does not meet this, or the request has neither `content` nor `completed`, the request responds with status code 422, does not save the data, and includes one of these messages in `errors`:
+
+- **Content parameter needs to be a valid json**: `content` is not a JSON object.
+- **Content or completed parameter is required**: the request has neither `content` nor `completed`.
 :::
 
 #### Completing the task from the code snippet
@@ -409,6 +409,8 @@ await fetch(getUrl(), {
   body: JSON.stringify({ content: { plan: 'basic' }, completed: true })
 });
 ```
+
+`completed` only applies when the user answers the task. When an agent answers it, the POST only saves `content`, and the task is completed when the agent clicks **Submit**.
 
 Completing the task from the code snippet is not the same as clicking **Next**. Each path records different events:
 
@@ -437,7 +439,7 @@ In an origination flow, each response represents the ongoing process of a specif
 
 You can learn more about [Liquid Objects](/en/platform/channels/liquid-markup/objects) in our documentation.
 
-In this example, you can find the use of data access by Liquid Objects and interaction with JavaScript and JSON APIs. Remember to replace the `QUESTION_ID` value with the corresponding one in your submission.
+In this example, you can see the interaction with the JavaScript and JSON APIs: when the task is submitted, the snippet saves the selections with a POST request to `getUrl()` and, when the user comes back to the task, it retrieves them with a GET request to preselect the dropdowns.
 
 ``` html
 <div class="form-group">
@@ -503,12 +505,9 @@ In this example, you can find the use of data access by Liquid Objects and inter
         let selectedProductValue = null;
         let selectedColorValue = null;
 
-        if (savedData?.application?.fields?.[0]?.answers) {
-            const productAnswer = savedData.application.fields[0].answers.find(answer => answer.question.label === 'PRODUCT');
-            selectedProductValue = productAnswer?.text_field;
-
-            const colorAnswer = savedData.application.fields[0].answers.find(answer => answer.question.label === 'COLOR');
-            selectedColorValue = colorAnswer?.text_field;
+        if (savedData?.submission?.fields) {
+            selectedProductValue = savedData.submission.fields.car;
+            selectedColorValue = savedData.submission.fields.color;
         }
 
         let productOptionsHtml = '<option value="">Select ...</option>';
@@ -616,9 +615,6 @@ In this example, you can find the use of data access by Liquid Objects and inter
     });
 </script>
 ```
-:::tip Valid JSON
-The content parameter that is sent must be valid JSON. If it has to be empty, {} must be sent.
-:::
 
 ### Origination Process
 
@@ -709,7 +705,7 @@ Each task in the flow has the **Assigned to** option, which defines who answers 
 
 When the flow reaches an agent task, the assigned administrators receive an email with a direct link to the task and also see it in the [**My tasks**](/en/platform/core/my-tasks.html) view. The effective assignee is resolved in this order: the assignee of the task response, the assignee configured on the task and, failing that, the assignee of the submission; you can reassign a specific task from the submission view, which notifies the new assignee.
 
-From the submission view, the agent opens the task and answers the form with the same experience as the site: live conditional logic, file uploads, repeatable groups, and code snippets. While the task awaits the agent's action, the user sees on the origination page the text configured in **Waiting message shown to the user**.
+From the submission view, the agent opens the task and answers the form with the same experience as the site: live conditional logic, file uploads, repeatable groups, and code snippets. If the task has a **Description**, the agent sees it above the form. While the task awaits the agent's action, the user sees on the origination page the text configured in **Waiting message shown to the user**.
 
 Additional options depending on the task type:
 
@@ -720,10 +716,12 @@ You can also assign an agent task to an agent or a group based on the user's ans
 
 #### Agent verification for external services
 
-When an agent answers a Code snippet task, your code can obtain a short-lived credential (5 minutes) so an external service can verify that the caller is an agent authorized for that task and submission:
+When an agent answers a Code snippet or Pending review task, your code can obtain a short-lived credential (5 minutes) so an external service can verify that the caller is an agent authorized for that task and submission:
 
-1. From the task iframe, request the credential at `GET /admin/customers/{realm_uid}/originations/{origination_id}/submissions/{submission_id}/agent_task_forms/{step_task_id}/assertion` (same admin base where the iframe runs; accepts the optional `audience` parameter with the target service identifier) and send it to the external service.
-2. The external service validates it at `POST /api/admin/customers/{realm_uid}/originations/agent_assertions/introspect` (requires API Access with a permission that includes viewing submissions: **View All Submissions** or **View Assigned Submissions**). The response indicates `active: true` with the identifiers of the agent, submission, task, and acted user, or `active: false` if the credential expired or the authorization was revoked — validation always checks the current state, not just the signature.
+1. From the task iframe, request the credential with a GET request to the URL returned by `getAssertionUrl()` in a code snippet, or to the `assertion_url` Liquid variable in the **Pending review page content**. The URL has the form `/admin/customers/{realm_uid}/originations/{origination_id}/submissions/{submission_id}/agent_task_forms/{step_task_id}/assertion` and accepts the optional `audience` parameter with the target service identifier. Make the request with `fetch` or `XMLHttpRequest`: the iframe adds the agent authentication to requests to its own origin. The response includes the credential in `token` and its expiration in `expires_at`. Send `token` to the external service.
+2. The external service validates it at `POST /api/admin/customers/{realm_uid}/originations/agent_assertions/introspect` (requires API Access with the **View Submission Tasks** permission in the realm, or a permission that includes it, such as **View Full Submission**). The response indicates `active: true` with the identifiers of the agent, submission, task, and acted user, or `active: false` if the credential expired or the authorization was revoked — validation always checks the current state, not just the signature.
+
+When an agent answers a code snippet, the code also receives the `agent` Liquid variable, with the administrator answering the task, and `assertion_url`, with the same URL returned by `getAssertionUrl()`.
 
 You can find the endpoint details in the [API](/en/platform/core/api.html) Swagger documentation.
 
