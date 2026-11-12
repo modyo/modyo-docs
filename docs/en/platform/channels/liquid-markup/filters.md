@@ -323,17 +323,19 @@ Returns the tags of a video using its uuid from the File Manager. *e.g.*
 
 ### By category
 
-Returns a list of Entries that belong to the selected Category. *e.g.*
+Returns a list of Entries that belong to any of the selected Categories or to their subcategories. *e.g.*
 <span v-pre>`{% assign filtered_entries = entries | by_category: 'category2,category1,category3' %}`</span>
 
 **Parameters**:
 - entries (ArrayEntry) — array with entries
-- list (String) (default: '') — String with comma-separated categories.
+- list (String | Array) (default: '') — category slugs or paths (`parent/child`), comma-separated or as an array.
+
+Each value is compared against the segments of the path of the entry's category, not against the category name. That is why a parent category also brings the entries of its subcategories, and a bare slug matches every category with that slug, at any level of the tree. To tell apart categories that share a slug in different branches, pass the path, such as `news/sports`. With several values, the result includes the entries that match any of them.
 
 ### By lang
 
 Returns a list of Entries in the given language. The filter is called `by_lang`: `locale` is the name of the parameter, not the name of the filter. *e.g.*
-<span v-pre>`{% assign entries = widget.entries | by_lang: 'es' %} => entries`</span>
+<span v-pre>`{% assign entries = spaces['blog'].types['post'].entries | by_lang: 'es' %} => entries`</span>
 
 **Parameters**:
 - entries (ArrayEntry) — array with entries
@@ -358,12 +360,14 @@ Returns a list of Entries that belong to a selected slug. *e.g.*
 
 ### By tag
 
-Returns a list of Entries that belong to a selected tag. *e.g.*
-<span v-pre>`{% assign entries = widget.entries | by_tag: 'tag2,tag1,tag3' %} => entries`</span>
+Returns a list of Entries that have all the given tags. *e.g.*
+<span v-pre>`{% assign entries = spaces['blog'].types['post'].entries | by_tag: 'tag2,tag1,tag3' %} => entries`</span>
 
 **Parameters**:
 - entries (ArrayEntry) — array with entries
 - list (String) (default: '') — String with comma-separated tags.
+
+With several tags, the result includes only the entries that have all of them, not the ones that have any of them. That sets it apart from `by_category`, `by_slug`, `by_type` and `by_uuid`, which return the entries that match any of the values. The comparison is case-insensitive.
 
 ### By type
 
@@ -382,7 +386,7 @@ Filters an array of entries by one or more UUIDs.
 - entries (ArrayEntry) — collection (object before the pipe)
 - uuid_list (String) — comma-separated list of UUIDs
 
-Defaults: If `uuid_list` is blank returns the original collection.
+If `uuid_list` is empty, the result is an empty collection, just like with `by_slug`, `by_type` and `by_tag`.
 
 *e.g.* <span v-pre>`{% assign filtered = entries | by_uuid: 'uuid2,uuid1,uuid3' %}`</span>
 
@@ -390,13 +394,13 @@ Defaults: If `uuid_list` is blank returns the original collection.
 
 Applies multiple entry filters in one call. Supported option keys (all optional):
 - types: comma-separated type slugs (applies `by_type`)
-- categories: comma-separated category slugs (applies `by_category`)
-- tags: comma-separated tags (applies `by_tag`)
+- categories: comma-separated category slugs or paths; includes subcategories (applies `by_category`)
+- tags: comma-separated tags; the entry must have all of them (applies `by_tag`)
 - slugs: comma-separated entry slugs (applies `by_slug`)
 - uuids: comma-separated UUIDs (applies `by_uuid`)
 - locale: a single locale code (applies `by_lang`; a comma-separated list is not supported)
-- from_published_date: date string (>= `published_at`)
-- to_published_date: date string (<= `published_at`)
+- from_published_date: string with the start date, from 00:00 on that day (applies `from_published_date`)
+- to_published_date: string with the end date, up to the end of that day (applies `to_published_date`)
 - sort_by: field name (default: `created_at`). Accepts `name`, `slug`, `created_at`, `updated_at` and `published_at`, or a field with its prefix (`fields.<name>` or `meta.<attribute>`); see [Sort By](/en/platform/channels/liquid-markup/filters.html#sort-by)
 - order: `asc` | `desc` (default: `desc`)
 - per_page: integer results per page (enables pagination if provided; default: 10)
@@ -404,7 +408,7 @@ Applies multiple entry filters in one call. Supported option keys (all optional)
 
 *e.g.* <span v-pre>`{% assign entries = spaces['testing'].entries | by: types: 'promo,basic', locale: 'es', categories: 'starred,favorites', tags: 'test,test2', slugs: 'slug2,slug1', uuids: 'uuid2,uuid1', sort_by: 'name', order: 'asc', per_page: 10, page: 2 %}`</span>
 
-`sort_by` and `order` are optional in the call, but not in effect: `by` always applies `sort_by`, using `created_at` and `desc` as defaults. A collection that already came sorted by another criterion, such as a widget with its own order, comes out re-sorted by creation date descending even if the template requests no ordering at all, and there is no way to tell `by` not to sort. If you need to preserve the original order, chain the simple filters (`by_type`, `by_category`, `by_tag`, `by_slug`…) instead of using `by`.
+`sort_by` and `order` are optional in the call, but not in effect: `by` always applies `sort_by`, using `created_at` and `desc` as defaults. That order is added after whatever order the collection already has, it doesn't replace it: if the collection comes sorted by an earlier `sort_by`, that criterion still wins and the one from `by` only breaks ties. The same holds for any chain of sorts, where the first one wins, so a `sort_by` chained after `by` only breaks ties and the listing stays sorted by creation date. To sort by another criterion, pass it in the `sort_by` and `order` keys of `by` or sort the collection before applying it.
 
 Pagination, on the other hand, is optional: it is applied only if you pass `per_page` or `page`. The defaults of those two keys are what the filter uses when you set one and omit the other, and they are subject to the URL parameter precedence described in [Paginated](/en/platform/channels/liquid-markup/filters.html#paginated).
 
@@ -414,8 +418,7 @@ Keys that `by` does not recognize are ignored silently, with no error or warning
 
 ### Filter By
 
-Returns a list of Entries that match a filter. *e.g.*
-<span v-pre>`{% assign entries = widget.entries | filter_by: field: 'meta.name', eq: 'entry3Cat3' %}`</span>
+Returns a list of Entries that match a filter.
 
 **Parameters**:
 - entries (ArrayEntry) — array with entries
@@ -424,14 +427,14 @@ Returns a list of Entries that match a filter. *e.g.*
 The value of `field` is always written with its prefix:
 
 - `fields.<name>` for the content type's fields.
-- `meta.<attribute>` for metadata, with these attributes available: `meta.uuid`, `meta.name`, `meta.slug`, `meta.category`, `meta.category_slug`, `meta.category_name`, `meta.created_at`, `meta.updated_at`, `meta.published_at` and `meta.unpublished_at`. To filter by tags use `by_tag`.
+- `meta.<attribute>` for metadata, with these attributes available: `meta.uuid`, `meta.name`, `meta.slug`, `meta.category`, `meta.category_slug`, `meta.category_name`, `meta.created_at`, `meta.updated_at` and `meta.published_at`. To filter by tags use `by_tag`.
 
 :::warning Attention
 A field name without a prefix is silently discarded: the filter raises no error and returns the whole collection, unfiltered. If a listing shows you every entry, check first that the value of `field` starts with `fields.` or with `meta.`.
 :::
 
 **Supported Operators** (use as keys in `opts`):
-- `eq` — equals (implicit when only `field` and value provided)
+- `eq` — equals. Always write it explicitly, as in `eq: 'value'`, and don't combine it with the others: if you include it, `filter_by` applies only `eq` and ignores the rest of the operators
 - `not` — not equal to. With `nil` as the value it returns the entries that do have a value in the field
 - `gt`, `lt` — greater than / less than
 - `in` — field value must be one of the comma-separated values
@@ -440,9 +443,12 @@ A field name without a prefix is silently discarded: the filter raises no error 
 - `search` — searches the text in the attributes of the entry's locations; requires a location field
 - `geohash` — searches by proximity with a base 32 geohash; requires a location field
 
-Only `in`, `nin` and `has` take a comma-separated string; the rest take a single value. `search` and `geohash` behave just like in the [Content public API](/en/platform/content/public-api-reference.html#operators). The `all` operator, which appears in the Filter By Query String list, is not available in `filter_by`.
+Only `in`, `nin` and `has` take a comma-separated string; the rest take a single value. `search` and `geohash` behave just like in the [Content public API](/en/platform/content/public-api-reference.html#operators). If you pass `field` with no operator, or only with operators that aren't on the list, such as `all`, the filter returns the whole collection, unfiltered.
 
 **Examples**:
+
+Filter entries where the `status` field is 'published':
+<span v-pre>`{% assign entries = entries | filter_by: field: 'fields.status', eq: 'published' %}`</span>
 
 Filter entries where the `status` field is either 'published' or 'featured':
 <span v-pre>`{% assign entries = entries | filter_by: field: 'fields.status', in: 'published,featured' %}`</span>
@@ -460,42 +466,61 @@ Filter entries published after a date:
 <span v-pre>`{% assign entries = entries | filter_by: field: 'meta.published_at', gt: '2026-01-01' %}`</span>
 
 :::warning Attention
-There are two cases where `filter_by` aborts and the published HTML keeps the comment `<!-- Liquid Error -->` in place of the block: when you call it without `field`, and when you apply it to a collection whose content type can't be resolved, such as <span v-pre>`spaces['blog'].entries`</span>. Always start from a collection scoped to a single type, such as <span v-pre>`spaces['blog'].types['post'].entries`</span> or <span v-pre>`widget.entries`</span>.
+There are two cases where `filter_by` aborts and the published HTML keeps the comment `<!-- Liquid Error -->` in place of the block: when you call it without `field`, and when you apply it to a collection whose content type can't be resolved, such as <span v-pre>`spaces['blog'].entries`</span>. Always start from a collection scoped to a single type, such as <span v-pre>`spaces['blog'].types['post'].entries`</span>.
 :::
 
 ### Filter By Query String
 
-Returns a list of Entries that match a query. You can use logical operators, various meta fields, URLs, or Liquid tags.
+Returns a list of Entries filtered with the parameters in the page URL. The filter takes no arguments: each visit applies the filters in its query string. *e.g.*
+<span v-pre>`{% assign entries = spaces['blog'].types['post'].entries | filter_by_query_string %}`</span>
+
+**Parameters**:
+- entries (ArrayEntry) — entry collection scoped to a content type
+
+**Fields**:
+- `meta.uuid`, `meta.name`, `meta.slug`, `meta.category`, `meta.category_slug`, `meta.category_name`, `meta.created_at`, `meta.updated_at` and `meta.published_at`
+- `fields.<name>`, for any field of the content type
+
+`meta.category` takes the full path of the category, such as `news/sports`, and includes the entries of its subcategories. To filter by tags use `by_tag`.
 
 **Operators**:
 
-- gt, lt, in, all, nin
+Without an operator, the parameter filters by equality. Operators are written in brackets after the field:
 
-**Fields**:
-- meta.category meta.category_slug meta.category_name meta.uuid meta.name meta.created_at
- meta.updated_at meta.published_at meta.unpublished_at meta.slug meta.tag
+- `gt`, `lt` and `not` take a single value, as in `?meta.published_at[gt]=2026-01-01`.
+- `in`, `nin` and `has` take a list: repeat the parameter with `[]`, even if you pass a single value, as in `?fields.color[in][]=red&fields.color[in][]=blue`.
+- `search` and `geohash` search location fields, just like in the [Content public API](/en/platform/content/public-api-reference.html#operators).
+
+Besides filtering by field, the URL accepts:
+
+- `sort_by` and `order` to sort the result. `sort_by` always takes the `fields.` or `meta.` prefix, and `order` is `asc` or `desc`, with `asc` as the default.
+- `search` to search for a text in the type's [Single-line text](/en/platform/content/types.html#single-line-text), [Multiline text](/en/platform/content/types.html#multiline-text) and [Rich text](/en/platform/content/types.html#rich-text) fields, and in the entry's name, slug, excerpt and category.
 
 **URL Examples**:
 
 - https://company.site.com/testsite?meta.category_slug=category3
-- https://company.site.com/testsite?meta.tag=tag_name
-- https://company.site.com/testsite?meta.tag[in][]=tag1_name&meta.tag[in][]=tag2_name
 - https://company.site.com/testsite?meta.created_at=1987-11-19T13:13:13
+- https://company.site.com/testsite?fields.color[in][]=red&fields.color[in][]=blue
+- https://company.site.com/testsite?search=modyo&sort_by=meta.published_at&order=desc
 
-*e.g.*
-<span v-pre>`{% assign entries = widget.entries | filter_by_query_string %}`</span>
-
-**Parameters**:
-- entries (ArrayEntry) — array with entries
+:::warning Attention
+The filter reads every parameter in the URL, not just the filter ones, and silently ignores the ones it doesn't recognize. Always apply it to a collection scoped to a type, such as <span v-pre>`spaces['blog'].types['post'].entries`</span>. On a whole-space collection, such as <span v-pre>`spaces['blog'].entries`</span>, the page works while the URL has no parameters, but any single parameter, even one that isn't a filter, such as `utm_source` or `page`, makes the filter abort and the published HTML keeps the comment `<!-- Liquid Error -->` in place of the block.
+:::
 
 ### From Published Date
 
-Returns a list of Entries that have a publication date more recent than the limit. *e.g.*
-<span v-pre>`{% assign entries = widgets.entries | from_published_date: date %}`</span>
+Returns a list of Entries published from the given date, including that day. *e.g.*
+<span v-pre>`{% assign entries = spaces['blog'].types['post'].entries | from_published_date: '2024-01-31' %}`</span>
 
 **Parameters**:
 - entries (ArrayEntry) — array with entries
-- date (Datetime)(default: Time.zone.now) — limit date
+- date (String) — limit date, required, such as `'2024-01-31'` or, with the day first, `'31/01/2024'`
+
+The filter takes only the day of the date, without the time: it includes the entries published from 00:00 on that day.
+
+:::warning Attention
+The date must arrive as a string. If you pass a date object, such as `entry.meta.published_at`, the filter aborts and the published HTML keeps the comment `<!-- Liquid Error -->` in place of the block. Convert it first with the `date` filter, as in `entry.meta.published_at | date: '%Y-%m-%d'`.
+:::
 
 ### Limit
 
@@ -503,8 +528,12 @@ Limits the number of results. *e.g.*
 <span v-pre>`{{ entries | limit: 1 }}`</span>
 
 **Parameters**:
-- object(Array) — array
+- entries (ArrayEntry) — entry collection (object before the pipe)
 - limit (Integer)(default: 1) — result limit
+
+:::warning Attention
+`limit` only works on an entry collection. Applied to an array, such as the result of `sort`, `map` or `split`, the filter aborts and the published HTML keeps the comment `<!-- Liquid Error -->` in place of the block. To trim an array use the `limit` parameter of the `for` tag, as in <span v-pre>`{% for item in items limit: 3 %}`</span>.
+:::
 
 ### Paginated
 
@@ -527,7 +556,7 @@ Applied to something that is not an entry collection, for example an array alrea
 ### Sort By
 
 Returns an array with entries sorted by a field *e.g.*
-<span v-pre>`{% assign entries = widgets.entries | sort_by: 'name', 'asc' %}`</span>
+<span v-pre>`{% assign entries = spaces['blog'].types['post'].entries | sort_by: 'name', 'asc' %}`</span>
 
 **Parameters**:
 - collection (ArrayEntry | ArrayCategory) — collection to sort (object before the pipe)
@@ -544,19 +573,21 @@ The accepted fields depend on the collection the filter receives:
 :::warning Attention
 On a category collection, a field outside `name`, `slug` and `uuid` returns an empty collection with no error at all: the listing looks blank and seems to have no data.
 
-On an entry collection, a name without a prefix, such as `'price'` instead of `'fields.price'`, does not sort by the field you expect. Also, sorting by `fields.<name>` requires, just like `filter_by`, a collection scoped to a content type: on something like <span v-pre>`spaces['blog'].entries`</span> the filter aborts and the published HTML keeps the `<!-- Liquid Error -->` comment in place of the block. Start from <span v-pre>`spaces['blog'].types['post'].entries`</span> or from <span v-pre>`widget.entries`</span>.
+On an entry collection, a name without a prefix, such as `'price'` instead of `'fields.price'`, does not sort by the field you expect. Also, sorting by `fields.<name>` requires, just like `filter_by`, a collection scoped to a content type: on something like <span v-pre>`spaces['blog'].entries`</span> the filter aborts and the published HTML keeps the `<!-- Liquid Error -->` comment in place of the block. Start from <span v-pre>`spaces['blog'].types['post'].entries`</span>.
 
 The filter also aborts, with the same comment in the output, if the field or the order do not arrive as strings, for example <span v-pre>`| sort_by: 'name', 1`</span>.
 :::
 
 ### To Published Date
 
-Returns a list of Entries that have a publication date older than the limit. *e.g.*
-<span v-pre>`{% assign entries = widgets.entries | to_published_date: date %}`</span>
+Returns a list of Entries published up to the given date, including that day. *e.g.*
+<span v-pre>`{% assign entries = spaces['blog'].types['post'].entries | to_published_date: '2024-12-31' %}`</span>
 
 **Parameters**:
 - entries (ArrayEntry) — array with entries
-- date (Datetime)(default: Time.zone.now) — limit date
+- date (String) — limit date, required, in the same format as in [From Published Date](/en/platform/channels/liquid-markup/filters.html#from-published-date)
+
+The filter takes only the day of the date: it includes the entries published up to the end of that day. Just like `from_published_date`, it aborts if the date doesn't arrive as a string.
 
 ## Crypto
 
