@@ -52,15 +52,16 @@ All filters must receive an array of Entries and it's possible to concatenate mu
 
 ### Filter
 
-In the following example, we filter Entries of type `post` with category `news`. Then, we show all Entries of type `news`:
+In the following example, we filter Entries of type `post` with category `news`. Then, we show a link to each one:
 
 ```liquid
 {% assign entries = spaces['my-bank'].types['post'].entries | by_category: 'news' %}
 <p>News:</p>
 <ul>
 {% for entry in entries %}
-<li><a href="entry.url">{{ entry.meta.title }}</a></li>
-{% endfor %}    
+<li><a href="{{ entry.meta.url }}">{{ entry.meta.title }}</a></li>
+{% endfor %}
+</ul>
 ```
 
 ### Concatenated filter
@@ -72,25 +73,28 @@ In the following example, we filter Entries of type `post` with category `news` 
 <p>News for you!</p>
 <ul>
 {% for entry in entries %}
-<li><a href="entry.url">{{ entry.meta.title }}</a></li>
-{% endfor %}    
+<li><a href="{{ entry.meta.url }}">{{ entry.meta.title }}</a></li>
+{% endfor %}
+</ul>
 ```
 
 ### Filter_by
 
-The `filter_by` filter is used for meta attributes or custom fields of the Content Type, for example:
+The `filter_by` filter is used for meta attributes or custom fields of the Content Type. Write the field with its prefix, `fields.` for a custom field or `meta.` for a meta attribute, along with an operator, such as `eq`. Without the prefix, the filter is not applied and returns all entries. See the available operators in [Filter By](/en/platform/channels/liquid-markup/filters#filter-by).
+
+In this example, entries are filtered by the value of a custom field, sorted by the `date` field, and the first 8 are shown:
 
 ```liquid
-{% assign entries = spaces['space_uid'].types['type_uid'].entries | filter_by: field: 'field_name' | sort_by: 'fields.date' , 'desc' | limit 8 %}
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | filter_by: field: 'fields.field_uid', eq: 'value_to_filter' | sort_by: 'fields.date', 'desc' | limit: 8 %}
 {% for entry in entries %}
   entry: {{ entry.meta.uuid }} -- {{ entry.meta.title }}<br />
 {% endfor %}
 ```
 
-If you want to negate a value within the field filter, you can use `not` within the filter:
+If you want to negate a value within the field filter, you can use `not` within the filter. With `nil` as the value, as in this example, you get the entries that have any value in the field:
 
 ```liquid
-{% assign entries = spaces['space_uid'].types['type_uid'].entries | filter_by: field: 'field_name', not: nil %}
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | filter_by: field: 'fields.field_uid', not: nil %}
 {% for entry in entries %}
   entry: {{ entry.meta.uuid }} -- {{ entry.meta.title }}<br />
 {% endfor %}
@@ -127,19 +131,19 @@ To use pagination in a custom widget, you must change the filter associated with
 
 ## Entry Sorting
 
-In the same way that you can filter by category (`by_category`), tags (`by_tags`) and by UUID (`by_uuid`), you can create a filter to sort the results by the "meta" attributes (`name`, `slug`, `created_at`, `updated_at`, `published_at`) of the entries using the `sort_by` filters, as follows:
+In the same way that you can filter by category (`by_category`), tags (`by_tag`) and by UUID (`by_uuid`), you can create a filter to sort the results by the "meta" attributes (`name`, `slug`, `created_at`, `updated_at`, `published_at`) of the entries using the `sort_by` filters, as follows:
 
 ```liquid
 {% assign entries = spaces['space_uid'].types['type_uid'].entries | sort_by: 'published_at','asc' %}
 ```
 
 The possible values for the order are `asc` and `desc`. By default, if the parameter is not specified, `desc` is used.
-The possible values for `sort_by` are: `name`, `published_at`, `created_at`, `updated_at`, `slug` and `field`.
+The possible values for `sort_by` are `name`, `published_at`, `created_at`, `updated_at`, `slug`, or a custom field. See all the options in [Sort By](/en/platform/channels/liquid-markup/filters#sort-by).
 
 To sort by a custom field, you must use the field's `fields.uid` as parameter:
 
 ```liquid
-{% assign entries = spaces['space_uid'].types['type_uid'].entries | filter_by: field: 'field_name', eq: 'value_to_filter' | sort_by: 'fields.date' , 'desc' | limit 8 %}
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | filter_by: field: 'fields.field_uid', eq: 'value_to_filter' | sort_by: 'fields.date', 'desc' | limit: 8 %}
 {% for entry in entries %}
   entry: {{ entry.meta.uuid }} -- {{ entry.meta.title }}<br />
 {% endfor %}
