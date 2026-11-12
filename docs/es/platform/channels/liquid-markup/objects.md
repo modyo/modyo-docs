@@ -331,6 +331,7 @@ Objeto de tipo ubicación. Contiene la información relevante de un punto de geo
 | **location.location_street**             | Nombre de la ubicación en Google Maps.    | ```Main street 3883```                 |
 | **location.latitude**                    | Latitud del punto en Google Maps.         | ```-33.3982607```                      |
 | **location.longitude**                   | Longitud del punto en Google Maps.        | ```-70.6003616```                      |
+| **location.location**                    | Hash con la latitud del punto en `lat` y la longitud en `lon`, por ejemplo `location.location.lat`. |                                        |
 | **location.country**                     | Nombre/código del país.                   | ```Chile```                            |
 | **location.administrative_area_level_1** | División administrativa de primer nivel.  | ```Región Metropolitana de Santiago``` |
 | **location.administrative_area_level_2** | División administrativa de segundo nivel. | ```Santiago```                         |
@@ -378,7 +379,7 @@ Estos objetos permiten obtener información a través de Liquid para las órdene
 | Objeto                       | Descripción                                                | Ejemplo                   |
 |------------------------------|------------------------------------------------------------|---------------------------|
 | **order.created_at**         | String con la fecha de creación de la orden.               |                           |
-| **order.current_state**      | String con el estado actual de la orden.                   | ```2012-11-16 00:46:40``` |
+| **order.current_state**      | String con el estado actual de la orden: `paying`, `paid`, `rejected`, `confirming`, `completed` o `confirmation_failed`. | ```completed```           |
 | **order.id**                 | ID de la orden.                                            |                           |
 | **order.order_items**        | Array de objetos de tipo `order_item`.                     |                           |
 | **order.payment_info**       | Hash con la información de pago de la orden.               |                           |
@@ -389,10 +390,11 @@ Estos objetos permiten obtener información a través de Liquid para las órdene
 | **order.url**                | String con el url de la orden.                             |                           |
 | **order.uuid**               | String con el UUID completo de la orden.                   |                           |
 | **order.confirmation_code**  | String con el código de confirmación de la orden.          |                           |
+| **order.document_id**        | String con el ID del documento del comprobante que entrega la confirmación de la orden. Vacío si no existe. |                           |
 | **order.customer_email**     | String con el email del cliente asociado a esta orden.     |                           |
 | **order.customer_name**      | String con el nombre completo del cliente asociado.        |                           |
 | **order.order_description**  | String con la descripción de la orden.                     |                           |
-| **order.order.reference_id** | String con el ID de referencia para esta orden.            |                           |
+| **order.reference_id**       | String con el ID de referencia para esta orden.            |                           |
 | **order.reference_order**    | Identificador de una orden relacionada/de referencia.      | ```REF-2025-01```         |
 
 ### order_item
@@ -445,7 +447,7 @@ Estos objetos son de gran utilidad para crear páginas dinámicas usando Liquid.
 | **page.description**  | Descripción de la página.                                                             | ```Este es la descripcion de una página muy cool```                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | **page.excerpt**      | Extracto asociado a la página.                                                        | ```Este es el excerpt de una página muy cool```                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | **page.grid**         | Objeto de tipo grilla asociado a la página.                                           |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| **page.meta_tags**    | Array de strings con las meta etiquetas asociadas a la página.                        | ```My, Test, Metatag```                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| **page.meta_tags**    | String con el HTML de los [meta tags](/es/platform/channels/pages.html#meta-tags) de la página, una etiqueta por línea, listo para imprimir dentro de `<head>`. El valor de cada meta tag se procesa como Liquid y se escapa. En una página de contenido entrega los meta tags del **Index** o del **Show**, según cuál se esté mostrando. | ```<meta name='author' content='Modyo'>```                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | **page.title**        | Título asociado a la página.                                                          | ```Home```                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 
 ## realm
@@ -504,14 +506,14 @@ Los objetos de Sitio se utilizan para obtener toda la información de un sitio. 
 | **site.use_pwa_manifest**       | Booleano que determina si el sitio usa el manifiesto PWA.                                                                   |                        |
 | **site.uuid**                   | String con el UUID del sitio.                                                                                               |                        |
 | **site.account_url**            | String con la URL de la cuenta asociada al sitio.                                                                           |                        |
-| **site.breadcrumb**             | String con la clase CSS del div de breadcrumb.                                                                              |                        |
+| **site.breadcrumb**             | String con el HTML del breadcrumb de la página actual, listo para imprimir: un `<div class='breadcrumb'>` con las migas desde el inicio del sitio, pasando por las páginas padre, hasta la página actual (en una página de contenido, también sus categorías y la entrada), separadas por `/`. |                        |
 | **site.cache_version**          | String con la clave de caché de esta versión del sitio.                                                                     |                        |
 | **site.css_path**               | String con la ubicación del archivo CSS del sitio.                                                                          |                        |
 | **site.current_year**           | String con el año actual del sitio.                                                                                         |                        |
 | **site.js_path**                | String con la ubicación del archivo JS del sitio.                                                                           |                        |
 | **site.login_enabled**          | Booleano que determina si el sitio usa login.                                                                               |                        |
 | **site.manifest_url**           | String con la URL del manifiesto para el sitio.                                                                             |                        |
-| **site.meta_tags**              | String con las meta etiquetas del sitio separadas por coma.                                                                 |                        |
+| **site.meta_tags**              | String con el HTML de los meta tags personalizados del sitio, una etiqueta por línea, listo para imprimir dentro de `<head>`. El valor se escapa pero, a diferencia de `page.meta_tags`, no se procesa como Liquid. |                        |
 | **site.originations**           | Array de objetos de originación que contiene todas las originaciones con página de originación asociada en el sitio actual. |                        |
 | **site.root_path**              | String con la ubicación raíz del sitio.                                                                                     |                        |
 | **site.service_worker_enabled** | Booleano que determina si el service worker de nivel superior está activado (alias: `sw_enabled`).                          |                        |
@@ -692,7 +694,7 @@ Usa los objetos de user para obtener información de tus usuarios del módulo Cu
 | **user.external_user_id**            | ID externo del usuario si existe.                              | ```ext-12345```                                      |
 | **user.female_sex_value**            | Valor constante para género femenino.                          | ```1```                                              |
 | **user.first_name**                  | Primer nombre del usuario.                                     | ```Ivan```                                           |
-| **user.genders**                     | Géneros presentes en la plataforma.                            | ```{:id=>0,:name=>"Male"}{:id=>1,:name=>"Female"}``` |
+| **user.genders**                     | Lista de los cinco géneros de la plataforma, cada uno con su valor (de `0` a `4`) y su nombre en el idioma del sitio. | ```{:id=>0, :name=>"Masculino"}{:id=>1, :name=>"Femenino"}{:id=>2, :name=>"No binario"}{:id=>3, :name=>"Otros (no listados)"}{:id=>4, :name=>"Prefiero no decir"}``` |
 | **user.generated_password**          | Password auto-generado (true) o creado por el usuario (false). | ```false```                                          |
 | **user.id**                          | ID del usuario.                                                | ```16```                                             |
 | **user.initials**                    | Iniciales del usuario.                                         | ```IM```                                             |
@@ -700,32 +702,33 @@ Usa los objetos de user para obtener información de tus usuarios del módulo Cu
 | **user.male_sex_value**              | Valor constante para género masculino.                         | ```0```                                              |
 | **user.member_since**                | Fecha desde la cual el usuario es miembro.                     | ```2021-11-23 18:25:07 UTC```                        |
 | **user.name**                        | Nombre completo del usuario.                                   | ```Ivan Modyo Gonzalez```                            |
-| **user.notifications**               | Array de objetos notification.                                 |                                                      |
+| **user.notifications**               | Array con las últimas 20 notificaciones del usuario (objetos notification), de la más reciente a la más antigua. |                                                      |
 | **user.profile_url**                 | URL del perfil del usuario.                                    | ```https://test.modyo.com/realms/default/profile```  |
 | **user.sex**                         | Valor del género configurado para el usuario.                  | ```0```                                              |
 | **user.submissions**                 | Array de objetos submission.                                   |                                                      |
 | **user.segments**                    | Array de objetos segment.                                      |                                                      |
 | **user.phone**                       | Número telefónico del usuario.                                 | ```+56 9 5555 5555```                                |
-| **user.responses**                   | Colección de objetos form_response.                            | ```[{"name":"Onboarding"}]```                        |
+| **user.responses**                   | Colección con las últimas 100 respuestas del usuario a formularios (objetos form_response), de la más reciente a la más antigua. | ```[{"name":"Onboarding"}]```                        |
 | **user.segment_names**               | Array de nombres de segmentos.                                 | ```["vip","beta"]```                                 |
 | **user.target_names**                | Array de nombres de audiencias objetivo.                       | ```["retail","premium"]```                           |
 | **user.targets**                     | Array de objetos de audiencia objetivo.                        | ```[{"name":"retail"}]```                            |
 | **user.realm_base_url**              | URL base pública del reino del usuario: su [dominio personalizado](/es/platform/customers/settings.html#dominios) si está activo y, si no, la URL de la cuenta. Úsala para llamar a la API de Customers del reino. | ```https://login.mibanco.com``` |
-| **user.realm_default_avatar**        | Avatar por defecto del realm (asset).                          |                                                      |
-| **user.non_binary_sex_value**        | Valor constante para género no binario.                        | ```4```                                              |
-| **user.other_sex_value**             | Valor constante para género otro.                              | ```5```                                              |
-| **user.prefer_not_to_say_sex_value** | Valor constante para género "prefiere no decir".               | ```6```                                              |
+| **user.realm_default_avatar**        | String con la URL del avatar por defecto del reino. Vacío si el reino no tiene uno. |                                                      |
+| **user.non_binary_sex_value**        | Valor constante para género no binario.                        | ```2```                                              |
+| **user.other_sex_value**             | Valor constante para género otro.                              | ```3```                                              |
+| **user.prefer_not_to_say_sex_value** | Valor constante para género "prefiere no decir".               | ```4```                                              |
 | **user.current_login_at**            | Timestamp del login actual.                                    | ```2025-10-21 11:00:00 UTC```                        |
 | **user.current_login_ip**            | IP utilizada en el login actual.                               | ```203.0.113.10```                                   |
 | **user.last_login_at**               | Timestamp del login previo.                                    | ```2025-10-19 09:30:01 UTC```                        |
 | **user.last_login_ip**               | IP del login previo.                                           | ```198.51.100.7```                                   |
-| **user.unread_notifications**        | Array de objetos notification no leídas.                       |                                                      |
+| **user.unread_notifications**        | Array con hasta 20 notificaciones no leídas del usuario (objetos notification). Para el total, usa `user.unread_notifications_count`. |                                                      |
 | **user.unread_notifications_count**  | Conteo de notificaciones no leídas.                            | ```2```                                              |
 | **user.username**                    | Username del usuario.                                          | ```ivan@modyo.com```                                 |
 | **user.uuid**                        | UUID del usuario.                                              | ```cdc7f0e2-b5c3-4b92-aa34-962ffa0bi572```           |
 | **user.realm_uid**                   | Realm del usuario.                                             | ```my-realm```                                       |
 | **user.invited_submissions**         | Colección de respuestas a las que el usuario fue invitado mediante una invitación activa. Se excluyen las invitaciones canceladas y el orden va de la más reciente a la más antigua. |                     |
 | **user.unsubscribe_link**            | Enlace de baja del usuario, para plantillas de mensajería.     | ```https://test.modyo.com/realms/default/mailing/unsubscribe?unsubscribe_token=ab12cd34``` |
+| **user.url**                         | URL del usuario en el administrador de Modyo.                  | ```https://test.modyo.com/admin/customers/default/users/cdc7f0e2-b5c3-4b92-aa34-962ffa0bi572``` |
 
 `user.invited_submissions` entrega una colección, así que se compone con el filtro [by_origination](/es/platform/channels/liquid-markup/filters.html) para quedarte con las respuestas de una originación puntual:
 
@@ -743,12 +746,12 @@ No aplica para sitios públicos, ya que en estos casos las respuestas del servid
 
 | Objeto                          | Descripción                                                                            | Ejemplo      |
 |---------------------------------|----------------------------------------------------------------------------------------|--------------|
-| **user_agent.agent**            | Un string con el tipo de agente que está corriendo.                                    |              |
+| **user_agent.agent**            | Tipo de agente: `mobile` (teléfono o tablet), `desktop` o `modyo-shell` (aplicación de Modyo).          | ```mobile``` |
 | **user_agent.as_json**          | Un string en formato JSON con toda la configuración del agente corriendo.              |              |
 | **user_agent.browser**          | Un string con el nombre del navegador para el agente.                                  |              |
 | **user_agent.browser_version**  | Un string con la versión del navegador para el agente.                                 |              |
 | **user_agent.is_modyo_shell**   | Boolean que determina si el agente está siendo gestionado por una aplicación de Modyo. |              |
-| **user_agent.platform**         | Un string con la versión del sistema operativo del agente.                             |              |
+| **user_agent.platform**         | Nombre del sistema operativo del agente, o `modyo-shell` dentro de una aplicación de Modyo. La versión está en `user_agent.platform_version`. | ```macOS```  |
 | **user_agent.platform_version** | Versión del sistema operativo/plataforma del usuario.                                  | ```"14.7"``` |
 
 ## widget
@@ -802,18 +805,18 @@ Cuando una plantilla invoca un atributo que ya no existe, Liquid lo resuelve com
 
 | Atributo                                         | Reemplazo                     | Notas                                               |
 |--------------------------------------------------|-------------------------------|-----------------------------------------------------|
-| entry.meta.created_at (directo)                  | entry.meta.created_at         | Usa propiedad anidada en lugar de acceso directo.   |
-| entry.meta.updated_at (directo)                  | entry.meta.updated_at         | Usa propiedad anidada en lugar de acceso directo.   |
-| entry.meta.published_at (directo)                | entry.meta.published_at       | Usa propiedad anidada en lugar de acceso directo.   |
-| entry.meta.unpublished_at (directo)              | entry.meta.unpublished_at     | Usa propiedad anidada en lugar de acceso directo.   |
-| entry.meta.slug (directo)                        | entry.meta.slug               | Usa propiedad anidada en lugar de acceso directo.   |
-| entry.meta.uuid (directo)                        | entry.meta.uuid               | Usa propiedad anidada en lugar de acceso directo.   |
-| entry.meta.private (directo)                     | entry.meta.private            | Usa propiedad anidada en lugar de acceso directo.   |
-| location.location                                | location.location_street      | `location` deprecado; usar `location_street`.       |
-| widget.uuid                                      | widget.wid                    | `uuid` deprecado; usar `wid`.                       |
-| match_path_url                                   | (eliminar)                    | Helper de routing legado eliminado.                 |
-| without_category_url                             | entry.url                     | URL sin categoría eliminada.                        |
-| location.latitude / longitude (flags deprecadas) | location.latitude / longitude | Flags antiguas reemplazadas por los mismos nombres. |
+| entry.created_at                                 | entry.meta.created_at         | Acceso directo deprecado; sigue funcionando.        |
+| entry.updated_at                                 | entry.meta.updated_at         | Acceso directo deprecado; sigue funcionando.        |
+| entry.published_at                               | entry.meta.published_at       | Acceso directo deprecado; sigue funcionando.        |
+| entry.unpublished_at                             | entry.meta.unpublished_at     | Acceso directo deprecado; sigue funcionando.        |
+| entry.slug                                       | entry.meta.slug               | Acceso directo deprecado; sigue funcionando.        |
+| entry.uuid                                       | entry.meta.uuid               | Acceso directo deprecado; sigue funcionando.        |
+| entry.private                                    | entry.meta.private            | Acceso directo deprecado; sigue funcionando.        |
+| entry.locale                                     | entry.meta.locale             | Acceso directo deprecado; sigue funcionando.        |
+| widget.uuid                                      | widget.wid                    | Deprecado. Devuelve el ID numérico del widget, igual que `widget.id`; el UUID está en `widget.wid`. |
+| entry.match_path_url                             | entry.meta.url                | Alias deprecado: sigue funcionando y devuelve lo mismo que `entry.meta.url`. |
+| entry.without_category_url                       | entry.meta.url                | Alias deprecado: sigue funcionando y devuelve lo mismo que `entry.meta.url`. |
+| location.latitude / location.longitude           | location.location             | Deprecados; siguen funcionando. `location.location` entrega ambos valores en `lat` y `lon`. |
 | request.comments_url                             | (eliminar)                    | Eliminado en 10.2; hoy se resuelve como vacío.      |
 | request.interact_url                             | (eliminar)                    | Eliminado en 10.2; hoy se resuelve como vacío.      |
 | request.refresh_url                              | (eliminar)                    | Eliminado en 10.2; hoy se resuelve como vacío.      |
