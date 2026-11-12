@@ -247,6 +247,10 @@ Cada elemento de `tasks` trae `task`, con el `uid`, `name`, `type` y `step_name`
 Las tareas de revisión pendiente dejaron de entregar la clave booleana `completed` en 10.2. Para saber si la revisión terminó, compara `status` con `completed`.
 :::
 
+:::warning Atención
+En `fields`, la respuesta a una pregunta [Fecha](/es/platform/customers/forms.html#fecha) sin la opción **Mostrar hora** representa solo un día y llega como las 12:00 UTC de esa fecha, no como la medianoche. Para obtener el día, toma la parte de fecha del valor expresado en UTC: si lo conviertes a otra zona horaria, la fecha puede cambiar.
+:::
+
 ## Verificación de código OTP
 
 `POST ACCOUNT_URL/api/customers/realms/{realm_uid}/verify_otp_code`

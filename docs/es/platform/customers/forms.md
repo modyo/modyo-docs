@@ -81,10 +81,10 @@ Los tipos de campos del grupo **Campos de input** son:
 - **Texto simple**: Permite ingresar hasta 256 caracteres.
 - **Párrafo**: Permite ingresar texto en múltiples líneas de hasta 65,535 caracteres.
 - **Número**: Permite ingresar números.
-- **Dropdown**: Agrega opciones para que la persona usuaria seleccione una en formato _dropdown_.
-- **Checkbox**: Agrega opciones que permiten seleccionar múltiples valores en formato _checkbox_.
+- **Lista desplegable**: Agrega opciones para que la persona usuaria seleccione una desde una lista desplegable.
+- **Casillas de verificación**: Agrega opciones que permiten seleccionar múltiples valores con casillas de verificación.
 - **Elección**: Agrega opciones para seleccionar una opción en formato _radio button_.
-- **Fecha**: Permite seleccionar una fecha dentro de un rango permitido
+- **Fecha**: Permite seleccionar una fecha dentro de un rango permitido. Revisa [Fecha](/es/platform/customers/forms.html#fecha).
 - **Preguntas anidadas**: Permite agregar opciones dentro de otras opciones. El usuario selecciona una opción principal y, según su elección, puede elegir entre las opciones relacionadas que se despliegan.
 - **Archivo**: Permite cargar archivos.
 - **Correo electrónico**: Campo para ingresar una dirección de correo electrónico.
@@ -92,6 +92,7 @@ Los tipos de campos del grupo **Campos de input** son:
 - **País**: Selector de países.
 - **Teléfono**: Campo para ingresar números telefónicos.
 - **Dirección**: Campo estructurado para capturar direcciones.
+- **Campo oculto**: Guarda un valor junto con la respuesta sin mostrarlo a la persona usuaria. Revisa [Campo oculto](/es/platform/customers/forms.html#campo-oculto).
 
 Puedes eliminar uno de los campos del formulario haciendo click en el icono de basurero a la derecha de cada campo en la sección principal. La eliminación será efectiva una vez que guardes los cambios.
 
@@ -120,11 +121,49 @@ Ten en cuenta lo siguiente:
 - No aparece en las respuestas: no se ve en el detalle de una respuesta ni en el correo de notificación de nuevas respuestas, no se incluye en la exportación ni en las estadísticas del formulario, y no está disponible para filtrar segmentos por respuestas.
 - Si una respuesta trae un valor para este campo, por ejemplo desde la API, la plataforma lo descarta.
 
+#### Fecha
+
+El campo **Fecha** captura un día, sin hora. Para que ese día no cambie según la zona horaria desde la que se lee, la respuesta se guarda como las 12:00 UTC de la fecha elegida. Por eso, si lees la respuesta por API o en Liquid, el valor trae una hora que corresponde a las 12:00 UTC y no a la medianoche. Para obtener el día, toma la parte de fecha del valor expresado en UTC. Las respuestas guardadas antes de que la plataforma adoptara este formato también se ajustaron a él.
+
+Si envías la respuesta desde tu propio código, usa el formato `yyyy-MM-dd`, que se toma tal cual como ese día. Un valor con hora se lleva a la zona horaria de la cuenta y se guarda el día que resulta.
+
+La **Fecha mínima** y la **Fecha máxima** se comparan por día, sin considerar la hora.
+
+#### Campo oculto
+
+El **Campo oculto** guarda un valor junto con la respuesta sin mostrarlo a la persona usuaria, por ejemplo el origen de una campaña o un dato del sitio. El valor se guarda como texto y aparece como el de cualquier otro campo: en el detalle de la respuesta, en la exportación, en el correo de notificación y en los filtros de segmentos por respuestas.
+
+Al seleccionarlo, eliges en **Origen del valor** de dónde sale ese valor:
+
+- **Valor fijo o Liquid**: La plataforma calcula el valor al guardar la respuesta a partir de lo que escribas en **Valor**, sin considerar lo que envíe el navegador. Admite hasta 1.000 caracteres y [Liquid](/es/platform/channels/liquid-markup/) con acceso a la persona usuaria a la que queda asociada la respuesta (`user.name`, `user.first_name`, `user.last_name`, `user.email` y `user.username`), al sitio del formulario (`site.name`, `site.uuid` y `site.url`) y a las variables del sitio (`vars`). En los formularios abiertos a usuarios sin sesión, los datos de la persona usuaria dependen de lo que ingresa quien responde. Puedes usar los filtros estándar y los tags `assign`, `capture`, `case`, `comment`, `echo`, `if`, `unless` y `raw`, pero no ciclos ni `include`.
+- **Parámetro de URL**: El valor se toma del parámetro indicado en **Nombre del parámetro**, desde la URL de la página donde se abre el formulario. Por ejemplo, con `utm_source` como nombre, una URL que termina en `?utm_source=newsletter` guarda `newsletter`. El nombre debe empezar con una letra o un número, solo admite letras, números, punto (`.`), guion (`-`) y guion bajo (`_`), y tiene un máximo de 100 caracteres.
+
+Por ejemplo, este **Valor** guarda el correo de la persona usuaria:
+
+```liquid
+{{ user.email }}
+```
+
+Ten en cuenta lo siguiente:
+
+- No tiene la opción de campo requerido ni instrucciones.
+- Solo está disponible en formularios. No aparece en las tareas Input de las originaciones.
+- Con **Valor fijo o Liquid**, el **Valor** es obligatorio y, si su Liquid tiene un error de sintaxis, el campo no se guarda y la plataforma muestra el error.
+- Se guardan hasta 255 caracteres del valor y el resto se descarta.
+- Si el valor queda vacío, por ejemplo porque la URL no trae el parámetro o porque el Liquid falla al calcularse, la respuesta no incluye este campo.
+- El valor se calcula de nuevo cada vez que se guarda la respuesta. Si la persona usuaria vuelve a responder un formulario que no acepta múltiples respuestas, el valor anterior no se conserva: con **Parámetro de URL**, el campo queda vacío si la URL ya no trae el parámetro.
+
+:::warning Atención
+El valor de un **Parámetro de URL** viene del navegador y cualquiera puede cambiarlo editando la URL. No lo uses para datos sensibles ni para tomar decisiones que requieran un valor confiable.
+:::
+
 ### Propiedades del campo
 
 Esta sección te permitirá modificar las opciones para cada una de las preguntas de tu formulario, deberás seleccionar un campo de la sección principal para poder hacer uso de esta sección.
 
-Todos los campos de input cuentan con un título, que será la pregunta asociada a la respuesta, la opción de hacer ese campo requerido para enviar el formulario, y una breve descripción en caso de que para responder el campo sean necesarias instrucciones.
+Todos los campos de input cuentan con un título, que será la pregunta asociada a la respuesta, la opción de hacer ese campo requerido para enviar el formulario, y una breve descripción en caso de que para responder el campo sean necesarias instrucciones. El [Campo oculto](/es/platform/customers/forms.html#campo-oculto) es la excepción: no tiene la opción de campo requerido ni instrucciones.
+
+Los campos **Lista desplegable** y **Preguntas Anidadas** tienen la casilla **Habilitar buscador**, desactivada por defecto, también cuando sus alternativas vienen de un [data set](/es/platform/customers/settings.html#data-sets). Con la casilla activa, la persona usuaria ve un buscador en lugar de la lista del navegador: al escribir, encuentra las alternativas que contienen el texto, sin distinguir mayúsculas ni tildes, las muestra en el orden en que las definiste y presenta hasta 100 coincidencias. En las preguntas anidadas, el buscador aparece en cada nivel. La misma casilla está disponible en las tareas [Input](/es/platform/customers/origination.html#input) de las originaciones. El campo **País** y el selector de país del campo **Dirección** siempre muestran este buscador, que además encuentra cada país por su código ISO de dos letras.
 
 Algunos campos cuentan con validaciones, para asegurar que el usuario cumpla con ciertos requisitos para rellenar el campo, algunas de esas restricciones son:
 
@@ -140,7 +179,9 @@ De la misma forma en que algunos campos cuentan con validaciones, la mayoría de
 
 ### Expresiones regulares
 
-Para los campos de texto simple y parrafo, podrás agregar validaciones a través de expresiones regulares. Haciendo el click en el botón de funciones, puedes ver las diferentes validaciones predeterminadas:
+Para los campos de texto simple y parrafo, podrás agregar validaciones a través de expresiones regulares. Al guardar, la plataforma comprueba que la expresión sea válida según la sintaxis de expresiones regulares de Ruby, tanto en los formularios como en las tareas Input de las originaciones. Si no lo es, los cambios no se guardan y aparece un error que indica que la expresión regular no es válida. El editor marca en rojo las expresiones que el navegador no puede interpretar, pero esa marca no garantiza que la plataforma las acepte. Como la respuesta se valida tanto en el navegador como en la plataforma, usa una expresión que el editor no marque en rojo y que se guarde sin errores.
+
+Haciendo el click en el botón de funciones, puedes ver las diferentes validaciones predeterminadas:
 
 - Email
 - URL
