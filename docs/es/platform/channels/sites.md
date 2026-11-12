@@ -241,7 +241,7 @@ Los cambios en el nombre y la descripción se reflejan de inmediato Modyo. La ac
 
 
 :::warning Atención
-La hora en el contenido se gestiona en la sección [general](/es/platform/core/configuration#configuracion-general) de configuración de la cuenta.
+La hora en el contenido se gestiona en la sección [general](/es/platform/core/configuration.html#configuracion-general) de configuración de la cuenta.
 :::
 
 - **ID de Google Tag Manager**: Agrega un identificador de Google Tag Manager para insertar scripts para el seguimiento y medición de eventos.
@@ -705,7 +705,7 @@ La jerarquía de ubicaciones en los sitios de Modyo sigue este orden:
 1. [Vistas por defecto (Home, search)](/es/platform/channels/templates)
 1. [Páginas](/es/platform/channels/pages)
 1. Redirecciones personalizadas
-1. [Configuración de error 404 del sitio](/es/platform/channels/sites#general)
+1. [Configuración de error 404 del sitio](/es/platform/channels/sites.html#general)
 
 :::warning Condiciones para una redirección
 Para que una redirección sea exitosa, la ruta de origen no puede existir o tiene que estar despublicada. Si el origen es una página publicada con subpáginas, tienes que despublicar las subpáginas antes de despublicar la página principal.
@@ -768,7 +768,7 @@ Controla qué recursos puede cargar el navegador en el sitio para mitigar ataque
 Especifica libremente tu política de seguridad de contenido en el área de texto. Para obtener una guía completa sobre cómo escribir tu política, consulta [Content Security Policy (CSP) de Mozilla Developer Network.](https://developer.mozilla.org/es/docs/Web/HTTP/CSP)
 
 :::warning Atención
-Un valor muy estricto puede interferir con algunas características como [Google tag manager](/es/platform/channels/sites#general), [PWA](/es/platform/channels/sites#pwa), [Widgets](/es/platform/channels/widgets), [Asset Manager](/es/platform/content/asset-manager) y la [modalidad Drop-in de Incode](/es/platform/customers/origination.html#requisitos-de-drop-in).
+Un valor muy estricto puede interferir con algunas características como [Google tag manager](/es/platform/channels/sites.html#general), [PWA](/es/platform/channels/sites#pwa), [Widgets](/es/platform/channels/widgets), [Asset Manager](/es/platform/content/asset-manager) y la [modalidad Drop-in de Incode](/es/platform/customers/origination.html#requisitos-de-drop-in).
 :::
 
 Una política apta para producción debe asegurar que todos los recursos, como imágenes y hojas de estilo, se carguen desde fuentes confiables y requiere que todos los scripts sean seguros y confiables para la aplicación. Por ejemplo, una política estricta para el _template minimal_ se vería así:

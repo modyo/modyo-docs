@@ -241,7 +241,7 @@ Changes to the name and description are immediately reflected in Modyo. The upda
 
 
 :::warning Attention
-Time in content is managed in the [general](/en/platform/core/configuration#general-configuration) section of the account settings.
+Time in content is managed in the [general](/en/platform/core/configuration.html#general-configuration) section of the account settings.
 :::
 
 - **Google Tag Manager ID**: Adds a Google Tag Manager identifier to insert scripts for tracking and measuring events.
@@ -705,7 +705,7 @@ The hierarchy of locations on Modyo sites follows this order:
 1. [Default views (Home, search)](/en/platform/channels/templates)
 1. [Pages](/en/platform/channels/pages)
 1. Custom Redirects
-1. [Site 404 error settings](/en/platform/channels/sites#general)
+1. [Site 404 error settings](/en/platform/channels/sites.html#general)
 
 :::warning Conditions for a redirect
 For a redirect to be successful, the source path cannot exist or must be unpublished. If the source is a published page with subpages, you must unpublish the subpages before unpublishing the main page.
@@ -768,7 +768,7 @@ Controls which resources the browser can load on the site to mitigate data injec
 Freely specify your content security policy in the text area. For a complete guide on how to write your policy, see [Content Security Policy (CSP) from Mozilla Developer Network.](https://developer.mozilla.org/es/docs/Web/HTTP/CSP)
 
 :::warning Attention
-A very strict value can interfere with some features like [Google Tag Manager](/en/platform/channels/sites#general), [PWA](/en/platform/channels/sites#pwa), [Widgets](/en/platform/channels/widgets), [Asset Manager](/en/platform/content/asset-manager), and the [Incode Drop-in modality](/en/platform/customers/origination.html#drop-in-requirements).
+A very strict value can interfere with some features like [Google Tag Manager](/en/platform/channels/sites.html#general), [PWA](/en/platform/channels/sites#pwa), [Widgets](/en/platform/channels/widgets), [Asset Manager](/en/platform/content/asset-manager), and the [Incode Drop-in modality](/en/platform/customers/origination.html#drop-in-requirements).
 :::
 
 A production-ready policy must ensure that all resources, such as images and stylesheets, are loaded from trusted sources and requires that all scripts are secure and reliable for the application. For example, a strict policy for the _minimal template_ would look like this:
