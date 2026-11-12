@@ -123,7 +123,7 @@ Ten en cuenta lo siguiente:
 
 #### Fecha
 
-El campo **Fecha** captura un día, sin hora. Para que ese día no cambie según la zona horaria desde la que se lee, la respuesta se guarda como las 12:00 UTC de la fecha elegida. Por eso, si lees la respuesta por API o en Liquid, el valor trae una hora que corresponde a las 12:00 UTC y no a la medianoche. Para obtener el día, toma la parte de fecha del valor expresado en UTC. Las respuestas guardadas antes de que la plataforma adoptara este formato también se ajustaron a él.
+El campo **Fecha** captura un día, sin hora. La respuesta se guarda como las 12:00 UTC de la fecha elegida. Por eso, si lees la respuesta por API o en Liquid, el valor trae una hora que corresponde a las 12:00 UTC y no a la medianoche. Para obtener el día, toma la parte de fecha del valor expresado en UTC: si lo conviertes a otra zona horaria, la fecha puede cambiar. Las respuestas guardadas antes de que la plataforma adoptara este formato también se ajustaron a él.
 
 Si envías la respuesta desde tu propio código, usa el formato `yyyy-MM-dd`, que se toma tal cual como ese día. Un valor con hora se lleva a la zona horaria de la cuenta y se guarda el día que resulta.
 

@@ -123,7 +123,7 @@ Keep the following in mind:
 
 #### Date
 
-The **Date** field captures a day, without a time. So that the day doesn't change depending on the time zone it is read from, the answer is stored as 12:00 UTC of the selected date. That's why, if you read the answer through the API or in Liquid, the value carries a time that corresponds to 12:00 UTC, not to midnight. To get the day, take the date part of the value expressed in UTC. Answers saved before the platform adopted this format were also adjusted to it.
+The **Date** field captures a day, without a time. The answer is stored as 12:00 UTC of the selected date. That's why, if you read the answer through the API or in Liquid, the value carries a time that corresponds to 12:00 UTC, not to midnight. To get the day, take the date part of the value expressed in UTC: if you convert it to another time zone, the date may change. Answers saved before the platform adopted this format were also adjusted to it.
 
 If you send the answer from your own code, use the `yyyy-MM-dd` format, which is taken as that exact day. A value with a time is converted to the account time zone, and the resulting day is stored.
 
