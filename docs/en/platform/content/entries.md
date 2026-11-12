@@ -188,7 +188,7 @@ To publish an entry in Modyo, follow these steps:
 1. At the top of the screen, click **Save**.
 1. If you have administrator permissions, the **Save** button changes to **Publish** and you can proceed to publish your entry. Otherwise, another user with Administrator permissions can do so. If team review is active, it will go through that process before it is published.
 
-You can find more information on team review in the [Key Concepts](https://docs.modyo.com/en/platform/core/key-concepts) section of our documentation.
+You can find more information on team review in the [Team Review](/en/platform/core/#team-review) section.
 
 
 ### Unpublish an Entry
@@ -257,7 +257,7 @@ Modyo allows you to see what your entry will look like published on multiple sit
 In addition, you can preview the content as a user without a session or as a user with a Modyo session. We recommend starting or closing the Modyo session on the site before entering preview mode to avoid security errors such as x-frame-options or mixed-content.
 
 :::tip Tip
-You will need to pre-configure the content page in the application to activate the preview option. For more details on how to configure it, see the [content](https://docs.modyo.com/es/platform/content) section of the documentation.
+You will need to pre-configure the content page in the application to activate the preview option. For more details on how to configure it, see the [content](/en/platform/content/) section of the documentation.
 :::
 
 To preview your content:
