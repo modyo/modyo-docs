@@ -40,7 +40,8 @@ Encodes a string to Base64 *e.g.*
 
 ### Capitalize
 
-Capitalizes the first letter of each word in the input string.
+Capitalizes the first character of the string and converts the rest to lowercase *e.g.*
+<span v-pre>`{{ 'hello WORLD' | capitalize }} #=> 'Hello world'`</span>
 
 ### Ceiling
 

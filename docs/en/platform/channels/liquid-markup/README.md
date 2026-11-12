@@ -26,13 +26,13 @@ In Modyo, Liquid allows you to:
 ### What does Liquid look like?
 
 ```liquid
-<ul id="products">
-  {% for product in products %}
+<ul id="posts">
+  {% for entry in spaces['blog'].types['post'].entries %}
     <li>
-      <h2>{{ product.name }}</h2>
-      Only {{ product.price | price }}
+      <h2>{{ entry.meta.name }}</h2>
+      {{ entry.meta.published_at | format_date: '%d/%m/%Y' }}
 
-      {{ product.description | prettyprint | paragraph }}
+      {{ entry.meta.excerpt | truncate: 120 }}
     </li>
   {% endfor %}
 </ul>
@@ -42,9 +42,9 @@ In Modyo, Liquid allows you to:
 From version 9.0.8 onwards, entry attributes will be called according to their meta information or their custom fields, such that:
 
 - Entry meta-information fields that were previously used as <span v-pre>`{{ entry.slug }}`</span>, should now be used as <span v-pre>`{{ entry.meta.slug }}`</span>, or <span v-pre>`{{ entry.meta['slug'] }}`</span>.
-- Custom fields that were previously used as <span v-pre>`{{ entry.title }}`</span>, should now be used as <span v-pre>`{{ entry.fields.title }}`</span>, or <span v-pre>`{{ entry.fields['title'] }}`</span>.
+- Custom fields that were previously used as <span v-pre>`{{ entry.description }}`</span>, should now be used as <span v-pre>`{{ entry.fields.description }}`</span>, or <span v-pre>`{{ entry.fields['description'] }}`</span>.
 
-Both forms will be available until Modyo version 9.2.
+The direct form is still accepted for backward compatibility, but it's deprecated: use `entry.meta` and `entry.fields` in new templates. If a custom field has the same name as a meta attribute, such as `name`, `title`, or `slug`, the direct form returns the meta attribute: `entry.title` returns the entry name, not the `title` field. To read that field, use `entry.fields.title`.
 :::
 
 ## Getting Started with Liquid

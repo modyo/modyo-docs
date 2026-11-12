@@ -25,13 +25,13 @@ Liquid is designed with very specific requirements:
 ### How does Liquid look?
 
 ```liquid
-<ul id="products">
-  {% for product in products %}
+<ul id="posts">
+  {% for entry in spaces['blog'].types['post'].entries %}
     <li>
-      <h2>{{ product.name }}</h2>
-      Only {{ product.price | price }}
+      <h2>{{ entry.meta.name }}</h2>
+      {{ entry.meta.published_at | format_date: '%d/%m/%Y' }}
 
-      {{ product.description | prettyprint | paragraph }}
+      {{ entry.meta.excerpt | truncate: 120 }}
     </li>
   {% endfor %}
 </ul>
@@ -56,7 +56,7 @@ To display the entry name on your page, use:
 With Tags, you can add flow and iteration control to your pages. You need to encapsulate the language with square brackets and percentage `{% %}` to use Tags, for example:
 
 ```liquid
-{% if product.name == "Banca Electrónica" %}
+{% if entry.meta.name == "Banca Electrónica" %}
  ¡Download our electronic banking to your cell phone!
 {% endif %}
 ```
@@ -101,7 +101,7 @@ Filters can also be chained by adding additional filter statements (starting wit
 ```liquid
 Hello {{ 'tobi' | upcase }}
 Hello tobi has {{ 'tobi' | size }} letters!
-Hello {{ '*tobi*' | textilize | upcase }}
+Hello {{ '  tobi  ' | strip | upcase }}
 Hello {{ 'now' | date: "%Y %h" }}
 ```
 
@@ -111,9 +111,9 @@ A filter is a Ruby method that takes one or more parameters and returns a value.
 
 - `append`: Adds a string (e.g., <span v-pre>`{{ 'foo' | append:'bar' }}`</span>).
 - `asset_url`: Generates the URL of an Asset object with a specific size (e.g., <span v-pre>`{{ asset_obj | asset_url: '640x480' }}`</span>). It can also generate the URL of a CSS or JavaScript template (e.g., <span v-pre>`{{ 'my-css' | asset_url: 'css' }}`</span> or <span v-pre>`{{ 'my-js' | asset_url: 'js' }}`</span>).
-- `base64_decode`: Returns the Base64-decoded value of a string (e.g., <span v-pre> `{% 'Hello world' | base64_encode %} # => 'SGVsbG8gd29ybGQ='`</span>).
-- `base64_encode`: Returns the Base64-encoded value of a string (e.g., <span v-pre>`{% 'SGVsbG8gd29ybGQ=' | base64_decode %} # => 'Hello world'`</span>).
-- `capitalize`: Capitalizes the first letter of each word in the input sentence.
+- `base64_decode`: Returns the Base64-decoded value of a string (e.g., <span v-pre>`{{ 'SGVsbG8gd29ybGQ=' | base64_decode }} #=> 'Hello world'`</span>).
+- `base64_encode`: Returns the Base64-encoded value of a string (e.g., <span v-pre>`{{ 'Hello world' | base64_encode }} #=> 'SGVsbG8gd29ybGQ='`</span>).
+- `capitalize`: Capitalizes the first character of the string and converts the rest to lowercase (e.g., <span v-pre>`{{ 'hello WORLD' | capitalize }} #=> 'Hello world'`</span>).
 - `ceil`: Rounds a decimal number up to the nearest integer (e.g., <span v-pre>`{{ 4.6 | ceil }} #=> 5`</span>).
 - `date`: Formats a date ([syntax reference](https://shopify.dev/api/liquid/filters#date)).
 - `default`: Returns the given variable, unless it is null or an empty string; in that case, it returns the specified value (e.g., <span v-pre>`{{ undefined_variable | default: "Default value" }} #=> "Default value"`</span>).
@@ -124,13 +124,11 @@ A filter is a Ruby method that takes one or more parameters and returns a value.
 - `first`: Gets the first element of the array.
 - `floor`: Rounds a decimal number down to the nearest integer (e.g., <span v-pre>`{{ 4.6 | floor }} #=> 4`</span>).
 - `format_date`: Formats a date with the site's localization, using the same syntax as `date`.
-- `hmac_sha1`: Returns the SHA-1 hash using a message authentication code (HMAC) of a string (e.g., <span v-pre>`{% 'Hello world' | hmac_sha1: 'key' %} # => '2a73959742baf046e6e2e27e5ee94bcff0af31b1'`</span>).
-- `hmac_sha256`: Returns the SHA-256 hash using a message authentication code (HMAC) of a string (e.g., <span v-pre>`{% 'Hello world' | hmac_sha256: 'key' %} # => 'a82b2e160edaf92a6589dc11160d2a10c04449840a58717db308c1ee3512b039'`</span>).
+- `hmac_sha256`: Returns the SHA-256 hash using a message authentication code (HMAC) of a string (e.g., <span v-pre>`{{ 'Hello world' | hmac_sha256: 'key' }} #=> 'a82b2e160edaf92a6589dc11160d2a10c04449840a58717db308c1ee3512b039'`</span>).
 - `join`: Joins array elements with a specific character between them.
 - `last`: Gets the last element of the array.
 - `lstrip`: Removes all white spaces from the beginning of a string.
 - `map`: Maps/collects an array on a given property.
-- `md5`: Returns the MD5 hash of a string (e.g., <span v-pre>`{% 'Hello world' | md5 %} # => '3e25960a79dbc69b674cd4ec67a72c62'`</span>).
 - `minus`: Subtracts (e.g., <span v-pre>`{{ 4 | minus:2 }} #=> 2`</span>).
 - `modulo`: Returns the remainder (e.g., <span v-pre>`{{ 3 | modulo:2 }} #=> 1`</span>).
 - `newline_to_br`: Replaces each new line (`\n`) with an HTML line break (`<br>`).
@@ -144,8 +142,7 @@ A filter is a Ruby method that takes one or more parameters and returns a value.
 - `round`: Rounds to the nearest integer or to the specified number of decimals (e.g., <span v-pre>`{{ 4.5612 | round: 2 }} #=> 4.56`</span>).
 - `rstrip`: Removes all white spaces from the end of a string.
 - `script_tag`: Generates the HTML `<script>` tag for a JavaScript template, taking the URL and attributes as parameters (e.g., `attr: 'value'`, <span v-pre>`{{ 'my-js-url' | script_tag: async: 'async', defer: 'defer' }}`</span> => `<script src='my-js-url' type='text/javascript' async='async' defer='defer'></script>`).
-- `sha1`: Returns the SHA-1 hash of a string (e.g., <span v-pre>`{% 'Hello world' | sha1 %} # => '7b502c3a1f48c8609ae212cdfb639dee39673f5e'`</span>).
-- `sha256`: Returns the SHA-256 hash of a string (e.g., <span v-pre>`{% 'Hello world' | sha256 %} # => '64ec88ca00b268e5ba1a35678a1b5316d212f4f366b2477232534a8aeca37f3c'`</span>).
+- `sha256`: Returns the SHA-256 hash of a string (e.g., <span v-pre>`{{ 'Hello world' | sha256 }} #=> '64ec88ca00b268e5ba1a35678a1b5316d212f4f366b2477232534a8aeca37f3c'`</span>).
 - `size`: Returns the size of an array or string.
 - `slice`: Divides a string. Takes an offset and a length (e.g., <span v-pre>`{{ "hello" | slice: -3, 3 }} #=> llo`</span>).
 - `sort`: Sorts array elements.
@@ -160,6 +157,10 @@ A filter is a Ruby method that takes one or more parameters and returns a value.
 - `uniq`: Removes duplicate elements from an array, optionally using a property to check for uniqueness.
 - `upcase`: Converts an input string to uppercase.
 - `url_encode`: Encodes a string to URL.
+
+:::warning Warning
+The only hash filters in Modyo Platform are `hmac_sha256` and `sha256`. `md5`, `sha1` and `hmac_sha1` do not exist and, because an unknown filter doesn't interrupt rendering, Liquid returns the input value untransformed. Review your templates if you use them.
+:::
 
 ## Tags
 
@@ -328,12 +329,12 @@ hit 2 or 3
 *Example:*
 
 ```liquid
-{% case template %}
+{% case page_context %}
 
-{% when 'label' %}
-     // {{ label.title }}
-{% when 'product' %}
-     // {{ product.vendor | link_to_vendor }} / {{ product.title }}
+{% when 'context-home' %}
+     // {{ site.name }}
+{% when 'context-search' %}
+     // {{ page_title }}: {{ params_query }}
 {% else %}
      // {{page_title}}
 {% endcase %}
@@ -499,7 +500,7 @@ You can store data in your own variables to use them in output tags or other tag
 ```liquid
 {% assign name = 'freestyle' %}
 
-{% for t in collections.tags %}{% if t == name %}
+{% for post in spaces['blog'].types['post'].entries %}{% if post.meta.category_slug == name %}
   <p>Freestyle!</p>
 {% endif %}{% endfor %}
 ```
@@ -509,7 +510,7 @@ Another way to do this would be to assign `true/false` values to the variable:
 ```liquid
 {% assign freestyle = false %}
 
-{% for t in collections.tags %}{% if t == 'freestyle' %}
+{% for post in spaces['blog'].types['post'].entries %}{% if post.meta.category_slug == 'freestyle' %}
   {% assign freestyle = true %}
 {% endif %}{% endfor %}
 
@@ -521,7 +522,7 @@ Another way to do this would be to assign `true/false` values to the variable:
 If you want to combine several strings into one and save it in a variable, you can do it with the `capture` tag, which "captures" what is displayed inside and then assigns the captured value to the given variable instead of displaying it on the screen.
 
 ```liquid
-  {% capture attribute_name %}{{ item.title | handleize }}-{{ i }}-color{% endcapture %}
+  {% capture attribute_name %}{{ item.title | downcase | replace: ' ', '-' }}-{{ i }}-color{% endcapture %}
 
   <label for="{{ attribute_name }}">Color:</label>
   <select name="attributes[{{ attribute_name }}]" id="{{ attribute_name }}">

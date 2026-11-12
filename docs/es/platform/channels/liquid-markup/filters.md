@@ -40,7 +40,8 @@ Codifica un string en Base64 *e.g.*
 
 ### Capitalize
 
-Poner palabra en mayúscula en la frase de entrada.
+Pone en mayúscula el primer carácter del string y el resto en minúsculas *e.g.*
+<span v-pre>`{{ 'hola MUNDO' | capitalize }} #=> 'Hola mundo'`</span>
 
 ### Ceiling
 

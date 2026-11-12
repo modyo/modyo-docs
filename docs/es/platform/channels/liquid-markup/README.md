@@ -26,13 +26,13 @@ En Modyo, Liquid te permite:
 ### ¿Cómo se ve Liquid?
 
 ```liquid
-<ul id="products">
-  {% for product in products %}
+<ul id="posts">
+  {% for entry in spaces['blog'].types['post'].entries %}
     <li>
-      <h2>{{ product.name }}</h2>
-      Only {{ product.price | price }}
+      <h2>{{ entry.meta.name }}</h2>
+      {{ entry.meta.published_at | format_date: '%d/%m/%Y' }}
 
-      {{ product.description | prettyprint | paragraph }}
+      {{ entry.meta.excerpt | truncate: 120 }}
     </li>
   {% endfor %}
 </ul>
@@ -42,9 +42,9 @@ En Modyo, Liquid te permite:
 Desde la versión 9.0.8 en adelante, los atributos de las entradas se llamarán según su meta información o sus campos personalizados, de tal forma que:
 
 - Los campos de meta-información de la entrada que antes se usaban como <span v-pre>`{{ entry.slug }}`</span>, ahora deben usarse como <span v-pre>`{{ entry.meta.slug }}`</span>, o bien <span v-pre>`{{ entry.meta['slug'] }}`</span>.
-- Los campos personalizados que antes se usaban como <span v-pre>`{{ entry.title }}`</span>, ahora deben usarse como <span v-pre>`{{ entry.fields.title }}`</span>, o bien <span v-pre>`{{ entry.fields['title'] }}`</span>.
+- Los campos personalizados que antes se usaban como <span v-pre>`{{ entry.description }}`</span>, ahora deben usarse como <span v-pre>`{{ entry.fields.description }}`</span>, o bien <span v-pre>`{{ entry.fields['description'] }}`</span>.
 
-Ambas formas estarán disponibles hasta la versión 9.2 de Modyo.
+La forma directa se sigue aceptando por compatibilidad, pero está obsoleta: en plantillas nuevas usa `entry.meta` y `entry.fields`. Si un campo personalizado se llama igual que un atributo de meta, como `name`, `title` o `slug`, la forma directa devuelve el atributo de meta: `entry.title` entrega el nombre de la entrada y no el campo `title`. Para leer ese campo, usa `entry.fields.title`.
 :::
 
 ## Empezando con Liquid
