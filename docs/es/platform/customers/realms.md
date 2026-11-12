@@ -38,15 +38,15 @@ Puedes cambiar el **Identificador** más adelante desde la [Configuración de re
 
 La sección **Resumen** proporciona una visión general de los elementos clave del reino, que incluyen:
 
-- **Usuarios registrados**: Cantidad total de usuarios registrados en el reino.
+- **Usuarios**: Cantidad total de usuarios registrados en el reino.
 - **Segmentos**: Número de segmentos creados.
-- **Formularios**: Todos los formularios activos del reino.
-- **Campañas activas**: Todas las campañas de comunicación en curso.
+- **Formularios**: Cantidad total de formularios del reino, sin importar su estado.
+- **Campañas**: Cantidad total de campañas del reino, sin importar su estado.
 
 También encontrarás un registro cronológico de todas las actividades realizadas dentro del reino, lo que facilita el monitoreo y análisis de las interacciones.
 
 
-En esta sección, también encontrarás información relevante, como las configuraciones principales del reino, los sitios donde se utiliza, los proveedores de identidad integrados y sus identificadores correspondientes.
+En la columna lateral encontrarás las **Aplicaciones** que usan el reino, el modo de **Activación de la cuenta** y, si el reino tiene proveedores de identidad, sus nombres en **Proveedores de identidad**.
 
 Si el reino tiene [stages](#stages) y tienes el permiso **Ver Sincronizaciones**, la columna lateral muestra además el bloque **Etapa**, con el nombre del stage en el que estás y el botón para [sincronizarlo](#sincronizar-un-stage).
 
@@ -114,7 +114,7 @@ El modal de creación te recuerda que el stage nuevo no tiene proveedores de ide
 
 Al crear un stage se copia la configuración que tiene el stage de origen en ese momento:
 
-- La configuración del reino: la de la sección [General](/es/platform/customers/settings.html#general), los correos, la [política de contraseña](/es/platform/customers/settings.html#politica-de-contrasena), los headers de seguridad, CORS y la apariencia (logo, favicon e imagen de avatar por defecto).
+- La configuración del reino: la de la sección [General](/es/platform/customers/settings.html#general), los correos, la [política de contraseña](/es/platform/customers/settings.html#politica-de-contrasena), la **Política de expiración de sesiones**, los headers de seguridad, CORS y la apariencia (logo, favicon e imagen de avatar por defecto).
 - Los [custom fields](/es/platform/customers/settings.html#custom-fields) y sus opciones.
 - Los [data sets](/es/platform/customers/settings.html#data-sets) y sus alternativas.
 - Los [formularios](/es/platform/customers/forms.html), sin la web app asignada. Asígnala en el stage: mientras no la tenga, el listado de formularios muestra junto al nombre un ícono con el aviso **Este formulario no tiene una web app asignada**.
@@ -129,6 +129,7 @@ No se copian:
 - Los proveedores de identidad, las integraciones, los clientes OAuth ni los webhooks, porque guardan credenciales o apuntan a sistemas externos.
 - La biblioteca de archivos del reino. Solo se copian el logo, el favicon y la imagen de avatar por defecto. Las campañas y plantillas que usan imágenes de la biblioteca siguen apuntando a los archivos del stage de origen.
 - Los [dominios](/es/platform/customers/settings.html#dominios) personalizados.
+- El **ID de Google Tag Manager** de la sección [General](/es/platform/customers/settings.html#general): el stage nace con ese campo vacío.
 - Los usuarios y sus datos.
 
 Como el stage nace sin proveedores de identidad ni integraciones, la plataforma también deja desactivadas estas opciones:
@@ -164,7 +165,7 @@ Ten en cuenta estas reglas:
 
 - Cada elemento se actualiza en su lugar en el destino y conserva su identidad, así que las referencias que otros elementos tienen hacia él siguen funcionando.
 - Un elemento que eliminaste en el origen no aparece en la vista y no se elimina en el destino. En cambio, si dentro de un elemento quitaste una parte, como una pregunta de un formulario o una opción de un custom field, la sincronización también la quita en el destino, salvo que esté en uso, por ejemplo en un segmento.
-- **Configuración**: incluye lo mismo que se copia al crear el stage. Las opciones que se desactivan al crearlo (inicio de sesión directo, canal del OTP, redirecciones al iniciar sesión, captcha y credenciales de la plataforma) no se sincronizan: cada stage conserva las suyas.
+- **Configuración**: incluye lo mismo que se copia al crear el stage. Las opciones que se desactivan al crearlo (inicio de sesión directo, canal del OTP, redirecciones al iniciar sesión, captcha y credenciales de la plataforma) y el **ID de Google Tag Manager** no se sincronizan: cada stage conserva los suyos.
 - **Originaciones**: se sincroniza la versión publicada del origen, que llega al destino como cambios pendientes de publicar, igual que las páginas en las aplicaciones web. Publícala en el destino para que tome efecto. Si la originación tenía cambios sin publicar en el destino, la sincronización los reemplaza.
 - **Formularios**: conservan la web app que tienen asignada en el destino, y un formulario nuevo llega sin web app. Si cambiaste el identificador del formulario en el origen, al sincronizarlo también cambia su URL pública en el destino. Los formularios con preguntas de grupo no se pueden sincronizar.
 - **Campañas**: se sincronizan su contenido y su segmentación. Una campaña nueva llega en estado **Inactiva**. Una campaña que ya existía en el destino conserva su estado, sus fechas y sus estadísticas, y no se sincroniza si en el destino está **Pendiente**, **Enviando** o **Completada**.
@@ -186,15 +187,17 @@ Para eliminar un stage, sigue estos pasos:
 1. En el selector de reino, entra al stage que quieres eliminar.
 2. Haz click en **Configuración de reino** > **General**.
 3. Haz click en **Eliminar stage**.
-4. Escribe en **Nombre del stage** el nombre del stage, por ejemplo `qa`, no el nombre completo que muestra el listado de reinos.
+4. En **Nombre**, escribe el nombre completo del stage tal como aparece en el campo **Nombre** de la sección **General**, por ejemplo **qa Clientes**. Si escribes solo `qa`, el botón **Borrar** no se habilita.
 5. Haz click en **Borrar**.
 
-Un stage cuyo clonado falló también se puede eliminar desde el listado de **Stages**, con la acción **Borrar**.
+Un stage cuyo clonado falló también se puede eliminar desde el listado de **Stages**, con la acción **Borrar**. Para confirmar, escribe también su nombre completo, por ejemplo **qa Clientes**, aunque el listado muestre solo `qa`.
 
 La eliminación corre en segundo plano y no afecta a los demás stages del reino. Borra los usuarios del stage y todo su contenido, incluidos sus proveedores de identidad, integraciones, clientes OAuth y webhooks. El nombre y el identificador del stage quedan libres de inmediato para usarlos en un stage nuevo.
 
 :::warning Atención
 No puedes eliminar un stage mientras alguna aplicación web o espacio lo tenga seleccionado como reino: la plataforma lo indica con el nombre de cada uno. Tampoco mientras se está clonando un stage creado a partir de él.
+
+Si el stage tiene órdenes de [Pagos](/es/platform/customers/payments.html), la eliminación no se completa y el stage vuelve a estar disponible.
 :::
 
 ### Permisos de los stages
@@ -269,10 +272,12 @@ Para eliminar un reino, entra a su [Configuración de reino](/es/platform/custom
 
 El botón solo aparece si tienes el permiso **Administración General** en el reino.
 
-La eliminación corre en segundo plano, así que es posible que el reino siga apareciendo en el listado un rato después de confirmarla.
+Al confirmar, el reino y sus stages desaparecen del listado, y sus nombres e identificadores quedan libres de inmediato. El borrado de sus datos continúa en segundo plano.
 
 No puedes eliminar el reino mientras alguna aplicación web o espacio lo tenga seleccionado, a él o a alguno de sus [stages](#stages): la plataforma lo indica con el nombre de cada uno. Cambia antes el reino de esas aplicaciones y espacios. Tampoco puedes eliminarlo mientras se está clonando o eliminando alguno de sus stages.
 
+Si el reino o alguno de sus stages tiene órdenes de [Pagos](/es/platform/customers/payments.html), la eliminación no se completa y el reino vuelve a aparecer en el listado.
+
 :::danger Peligro
-Eliminar un reino borra toda su información: usuarios, formularios, campañas de mensajes y segmentos. Si el reino tiene stages, también los elimina a todos, y el modal de confirmación indica cuáles. Esta acción es irreversible.
+Eliminar un reino borra toda su información: usuarios, formularios, campañas de mensajes, segmentos, proveedores de identidad, integraciones, clientes OAuth y webhooks. Los tokens emitidos con esos clientes OAuth dejan de ser válidos. Si el reino tiene stages, también los elimina a todos, y el modal de confirmación indica cuáles. Esta acción es irreversible.
 :::
