@@ -8,7 +8,7 @@ search: true
 
 In this tutorial we will integrate Salesforce, a customer relationship management (CRM) platform, with Modyo's Customers module where the platform's end users are managed. For example, when the <b>Premium Customer</b> field of a contact changes in Salesforce, a Salesforce flow updates the matching custom field of the user in Modyo, so your sales or marketing teams don't have to leave Salesforce.
 
-This tutorial doesn't use the [Salesforce integration](/en/platform/customers/settings#salesforce) that you set up in the realm integrations: the flow calls the Modyo Administration API directly. If you need to sync Salesforce contacts with the realm users, use that integration instead.
+This tutorial doesn't use the [Salesforce integration](/en/platform/customers/settings.html#salesforce) that you set up in the realm integrations: the flow calls the Modyo Administration API directly. If you need to sync Salesforce contacts with the realm users, use that integration instead.
 
 ## Prerequisites
 
