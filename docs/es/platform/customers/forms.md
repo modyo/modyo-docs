@@ -44,7 +44,7 @@ Los formularios que se copian a un [stage del reino](/es/platform/customers/real
 Luego de una división podrás ver las opciones para modificar la redirección luego de que un usuario responda el formulario.
 
 - **Opciones por defecto**: Luego de responder el formulario el usuario es redireccionado al home del sitio asociado al formulario.
-- **URL de redirección**: Te permite ingresar una URL a la que se redireccionará al usuario luego de haber respondido el formulario. Puedes escribir una URL completa (e.g. https://test.modyo.com/home) o una ruta del sitio asociado al formulario que empiece con `/` (e.g. `/home`). Si escribes una dirección sin `http://` ni `https://`, la plataforma le antepone `http://`.
+- **URL de redirección**: Te permite ingresar una URL a la que se redireccionará al usuario luego de haber respondido el formulario. Puedes escribir una URL completa (e.g. https://test.modyo.com/home) o una ruta del sitio asociado al formulario que empiece con `/` (e.g. `/home`). Si escribes una dirección que no empieza con `/`, `http://` ni `https://`, la plataforma le antepone `http://`.
 - **Página de agradecimiento**: Te permite añadir un mensaje de agradecimiento personalizado luego de que un usuario responde el formulario, junto a un botón que lo llevará a la dirección de **Enlace de Redirección**, que acepta los mismos valores que la **URL de redirección**. Si marcas **Habilitar Auto Redirección**, el usuario es redireccionado automáticamente a esa dirección después de los segundos indicados en **Tiempo de redirección**, o de 10 segundos si lo dejas vacío.
 
 

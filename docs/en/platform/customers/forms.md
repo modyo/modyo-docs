@@ -44,7 +44,7 @@ Forms copied to a [realm stage](/en/platform/customers/realms.html#what-is-copie
 After a division, you will be able to see the options to modify the redirect after a user answers the form.
 
 - **Default options**: After answering the form, the user is redirected to the home of the site associated with the form.
-- **Custom Re-direct URL**: Allows you to enter a URL to which the user will be redirected after completing the form. You can type a full URL (e.g. https://test.modyo.com/home) or a path of the site associated with the form that starts with `/` (e.g. `/home`). If you type an address without `http://` or `https://`, the platform adds `http://` to it.
+- **Custom Re-direct URL**: Allows you to enter a URL to which the user will be redirected after completing the form. You can type a full URL (e.g. https://test.modyo.com/home) or a path of the site associated with the form that starts with `/` (e.g. `/home`). If you type an address that doesn't start with `/`, `http://`, or `https://`, the platform adds `http://` to it.
 - **Thank you page**: Allows you to add a personalized thank you message after a user answers the form, along with a button that will take them to the address in **Re-direct Link**, which accepts the same values as the **Custom Re-direct URL**. If you check **Enable Auto Redirect**, the user is automatically redirected to that address after the seconds set in **Re-direction Time**, or after 10 seconds if you leave it empty.
 
 
