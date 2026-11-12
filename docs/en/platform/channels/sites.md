@@ -260,7 +260,7 @@ To access these snippets:
 
 **For the _head_**:
 
-1. Use this code. The `nonce` attribute lets the browser run the _script_ when the app uses a nonce-based content security policy, such as the one preloaded when you enable [Security Headers](/en/platform/channels/sites.html#security-headers):
+1. Use this code. The `nonce` attribute lets the browser run the _script_ when the app uses a nonce-based content security policy, such as the one preloaded when you enable [Security Headers](/en/platform/channels/sites.html#security-headers). The code also assigns the nonce to the _script_ that loads `gtm.js`, so the browser accepts it even if your policy does not include `'strict-dynamic'`:
 
 ```liquid
 {% if site.tag_manager_id != '' %}
@@ -269,7 +269,7 @@ To access these snippets:
 <script nonce="{{csp_nonce}}">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;j.setAttribute('nonce','{{csp_nonce}}');f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','{{site.tag_manager_id}}');</script>
 <!-- End Google Tag Manager -->
 
