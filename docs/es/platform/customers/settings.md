@@ -491,7 +491,7 @@ Los campos personalizables pueden estar habilitados o deshabilitados. Si están 
 
 Cuando un campo personalizable está deshabilitado, no aparece en ningún formulario, sin embargo, sus valores se mantienen guardados.
 
-No puedes deshabilitar un campo que se usa en un filtro de [segmentos](/es/platform/customers/segments): al intentarlo verás el mensaje **No se puede desactivar un User Custom Field con filtros de Segmentos asociados**. Quita antes ese filtro de los segmentos que lo usan. Tampoco puedes eliminar un campo mientras lo use un filtro de segmento.
+No puedes deshabilitar un campo que se usa en un filtro de [segmentos](/es/platform/customers/segments.html): al intentarlo verás el mensaje **No se puede desactivar un User Custom Field con filtros de Segmentos asociados**. Quita antes ese filtro de los segmentos que lo usan. Tampoco puedes eliminar un campo mientras lo use un filtro de segmento.
 
 
 :::danger Peligro

@@ -491,7 +491,7 @@ Customizable fields can be enabled or disabled. If they are enabled, an administ
 
 When a customizable field is disabled, it doesn't appear on any form, however, its values are still saved.
 
-You can't disable a field that is used in a [segments](/en/platform/customers/segments) filter: if you try, you'll see the message **You can't deactivate a User Custom Field with associated Segment filters**. First remove that filter from the segments that use it. You also can't delete a field while a segment filter uses it.
+You can't disable a field that is used in a [segments](/en/platform/customers/segments.html) filter: if you try, you'll see the message **You can't deactivate a User Custom Field with associated Segment filters**. First remove that filter from the segments that use it. You also can't delete a field while a segment filter uses it.
 
 
 :::danger Danger
