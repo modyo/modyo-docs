@@ -128,14 +128,18 @@ Crea contenido dinámico en tus espacios usando Entradas. En este objeto tienes 
 | **entry.meta.category_slug** | Slug de la categoría de esta entrada.                                                                                                 | ```category-2```                                                          |
 | **entry.meta.type**          | Tipo de la entrada.                                                                                                                   | ``type2``                                                                 |
 | **entry.meta.type_uid**      | ID único del tipo de la entrada.                                                                                                      | ``type2``                                                                 |
-| **entry.meta.tags**          | Array de strings con los tags de esta entrada.                                                                                        | ```tag1, tag2```                                                          |
+| **entry.meta.tags**          | String con los tags de la entrada separados por coma y espacio, no un array. Para recorrerlos, conviértelos en array con el filtro `split` y el separador `', '`. | ```tag1, tag2``` |
 | **entry.meta.excerpt**       | Extracto asociado a la entrada.                                                                                                       | ```Este es el excerpt de una entry muy cool```                            |
 | **entry.meta.account_url**   | URL de la cuenta.                                                                                                                     | ```https://test.modyo.com```                                              |
-| **entry.meta.url**           | URL canónica de la entrada.                                                                                                           | ```https://test.modyo.com/entry```                                        |
-| **entry.meta.author**        | Objeto del usuario autor de la entrada.                                                                                               |                                                                           |
+| **entry.meta.url**           | URL canónica de la entrada: la URL de la página de contenido de su tipo en el sitio, seguida del slug. Si la página tiene activa la opción **Usar categorías** y la entrada tiene categoría, la ruta de la categoría va antes del slug. Si el sitio no tiene una página de contenido publicada para el tipo de la entrada, queda vacía. | ```https://test.modyo.com/mi-sitio/blog/mi-entrada``` |
+| **entry.meta.author**        | Objeto [adminuser](/es/platform/channels/liquid-markup/objects.html#adminuser) del autor de la entrada. Queda vacío si el espacio no tiene activa la opción **Ver autor de entradas** en su [configuración general](/es/platform/content/spaces.html#general). | |
 | **entry.meta**          | Objeto con los siguientes atributos de metadatos: uuid, published_at, locale, slug, created_at, updated_at, unpublished_at y private. |
-| **entry.fields**        | Array de objetos con los campos de la entrada.                                                                                        |                                                                           |
-| **entry.as_json**       | Representación JSON (meta + fields).                                                                                                  | ```{"meta":{"uuid":"abc"},"fields":[{"name":"title","value":"Hello"}]}``` |
+| **entry.fields**        | Objeto con los campos de la entrada, al que accedes por el nombre de cada campo: `entry.fields.titulo` o, si el nombre tiene espacios, `entry.fields['nombre del campo']`. No distingue mayúsculas de minúsculas y no se puede recorrer con `for`. También puedes leer un campo directamente desde la entrada, como `entry.titulo`, pero si el nombre coincide con un atributo de la entrada, como `title`, `slug` o `url`, obtienes el atributo y no el campo. | |
+| **entry.as_json**       | Representación de la entrada con `meta` y `fields`. En `fields` hay una clave por campo, y un campo booleano sin valor aparece como `false`. No se lee como atributo: para obtenerla en formato JSON, aplica el filtro `json` a la entrada. | ```{"meta":{"uuid":"abc","tags":["tag1","tag2"]},"fields":{"title":"Hello","destacado":false}}``` |
+
+:::warning Atención
+Al leer un campo desde `entry.fields` o directamente desde `entry`, Modyo evalúa su valor como Liquid, con las mismas variables de la página. Esto aplica a los campos de texto ([Texto de una línea](/es/platform/content/types.html#texto-de-una-linea), [Texto de múltiples líneas](/es/platform/content/types.html#texto-de-multiples-lineas) y [Texto enriquecido](/es/platform/content/types.html#texto-enriquecido)) y a las opciones seleccionadas en los [campos de elección](/es/platform/content/types.html#valores-permitidos), también dentro de un [Grupo](/es/platform/content/types.html#grupo): las variables y los tags de Liquid que contenga el valor se ejecutan al mostrar la entrada en el sitio. Si necesitas mostrar ese código como texto, escríbelo en el campo dentro del tag [raw](/es/platform/channels/liquid-markup/tags.html#raw).
+:::
 
 ## field
 
@@ -144,14 +148,14 @@ Muestra toda la información de los campos de una entrada.
 | Objeto                                    | Descripción                                                | Ejemplo                               |
 |-------------------------------------------|------------------------------------------------------------|---------------------------------------|
 | **field.name**                            | Nombre del campo personalizado.                            | ```Field1```                          |
-| **field.type**                            | Nombre del tipo asociado al campo.                         | ```Type1```                           |
+| **field.type**                            | Clase del campo, como nombre legible en inglés: `String` en un campo de texto de una línea, `Text` en uno de múltiples líneas o `Rich text` en uno de texto enriquecido. No corresponde al tipo de contenido. | ```Rich text``` |
 | **repeatable_group_field.fields_schema**  | Esquema de los campos en un grupo repetible.               | ```[{"name":"item","type":"text"}]``` |
-| **repeatable_group_field.json_format**    | Valor del grupo como string JSON.                          | ```"[{\"item\":\"Value\"}]"```        |
+| **repeatable_group_field.json_format**    | Hash con los valores de esta repetición del grupo, con una clave por cada campo del grupo. | ```{"item"=>"Value"}``` |
 | **repeatable_group_field.locale**         | Locale del contenido del grupo.                            | ```"es"```                            |
-| **repeatable_group_field.space**          | Identificador del espacio para el grupo.                   | ```"marketing"```                     |
-| **repeatable_group_field.as_json**        | Representación JSON del grupo.                             | ```{"fields":[{"item":"Value"}]}```   |
-| **asset_field.pdf_thumbnail_url**         | Thumbnail del PDF cuando el campo referencia un asset PDF. | ```/uploads/.../pdf-thumb.png```      |
-| **asset_field.temp_url**                  | URL efímera del asset referenciado.                        | ```https://cdn.example.com/tmp/xyz``` |
+| **repeatable_group_field.space**          | Objeto [space](/es/platform/channels/liquid-markup/objects.html#space) del espacio de la entrada. | |
+| **repeatable_group_field.as_json**        | Valores de esta repetición, los mismos de `json_format`. No se lee como atributo: para obtenerlos en formato JSON, aplica el filtro `json` a la repetición. | ```{"item":"Value"}``` |
+| **asset_field.pdf_thumbnail_url**         | Siempre vacío. | |
+| **asset_field.temp_url**                  | La misma URL del asset referenciado. No es efímera ni expira. | ```/uploads/7b1b3f82-c9f5-4c51-87dc-b93fc9918c9c/original/foto.jpg``` |
 | **asset_field.special_image?**            | Indica si es una variante especial de imagen.              | ```false```                           |
 
 ## form
@@ -543,9 +547,12 @@ Muestra contenido dinámico creado en tus espacios desde cualquier parte de tu s
 
 | Objeto                                      | Descripción                                                                       | Ejemplo             |
 |---------------------------------------------|-----------------------------------------------------------------------------------|---------------------|
-| **spaces['nombre_del_espacio'].categories** | Array de objetos de tipo categoría que contiene todas las categorías del espacio. |                     |
-| **spaces['nombre_del_espacio'].entries**    | Array de objetos de tipo Entry que cumplen con los parámetros de búsqueda.        |                     |
-| **spaces['nombre_del_espacio'].name**       | Nombre del espacio.                                                               | ```Espacio Nuevo``` |
+| **spaces['identificador_del_espacio'].categories** | Array de objetos de tipo [category](/es/platform/channels/liquid-markup/objects.html#category) con las categorías de primer nivel del espacio. Las subcategorías se leen con `category.children`. | |
+| **spaces['identificador_del_espacio'].entries** | Array de objetos de tipo [entry](/es/platform/channels/liquid-markup/objects.html#entry) con las entradas del espacio en su idioma por defecto. Sin un usuario con sesión iniciada, excluye las entradas privadas; con sesión, incluye también las privadas sin segmentos y las dirigidas a alguno de los segmentos del usuario. | |
+| **spaces['identificador_del_espacio'].name** | Nombre del espacio. | ```Espacio Nuevo``` |
+| **spaces['identificador_del_espacio'].types['identificador_del_tipo']** | Objeto de tipo [type](/es/platform/channels/liquid-markup/objects.html#type) con el tipo de contenido que tiene ese identificador. | |
+
+Indexa `spaces` con el **Identificador** del espacio, el mismo que entrega `entry.meta.space_uid`, y `types` con el **Identificador** del tipo, no con sus nombres. Si en la cuenta no existe un espacio con ese identificador, o en el espacio no existe el tipo, en el HTML publicado queda el comentario `<!-- Liquid Error -->` en lugar de la expresión o el tag que lo usa.
 
 ## submission
 

@@ -128,14 +128,18 @@ Create dynamic content in your spaces using Entries. In this object you have acc
 | **entry.meta.category_slug** | This entry's category slug.                                                                  | ```category-2```                                                          |
 | **entry.meta.type**          | Entry type.                                                                                  | ``type2``                                                                 |
 | **entry.meta.type_uid**      | Unique ID of the entry type.                                                                 | ``type2``                                                                 |
-| **entry.meta.tags**          | Array of strings with the tags for this entry.                                               | ```tag1, tag2```                                                          |
+| **entry.meta.tags**          | String with the entry's tags separated by a comma and a space, not an array. To loop through them, turn them into an array with the `split` filter and the `', '` separator. | ```tag1, tag2``` |
 | **entry.meta.excerpt**       | Excerpt associated with the entry.                                                           | ```This is the excerpt of a very cool entry```                            |
 | **entry.meta.account_url**   | Account URL.                                                                                 | ```https://test.modyo.com```                                              |
-| **entry.meta.url**           | Canonical URL of the entry.                                                                  | ```https://test.modyo.com/entry```                                        |
-| **entry.meta.author**        | User object who wrote the entry.                                                             |                                                                           |
+| **entry.meta.url**           | Canonical URL of the entry: the URL of the content page for its type on the site, followed by the slug. If the page has the **Use categories** option enabled and the entry has a category, the category path goes before the slug. If the site has no published content page for the entry's type, it's empty. | ```https://test.modyo.com/my-site/blog/my-entry``` |
+| **entry.meta.author**        | [adminuser](/en/platform/channels/liquid-markup/objects.html#adminuser) object for the entry's author. It's empty if the space doesn't have the **Show entries author** option enabled in its [general settings](/en/platform/content/spaces.html#general). | |
 | **entry.meta**          | Metadata: uuid, published_at, locale, slug, created_at, updated_at, unpublished_at, private. |                                                                           |
-| **entry.fields**        | Array of objects with the entry's fields.                                                    |                                                                           |
-| **entry.as_json**       | JSON representation (meta + fields).                                                         | ```{"meta":{"uuid":"abc"},"fields":[{"name":"title","value":"Hello"}]}``` |
+| **entry.fields**        | Object with the entry's fields, which you access by each field's name: `entry.fields.headline` or, if the name has spaces, `entry.fields['field name']`. It's case-insensitive and can't be looped through with `for`. You can also read a field directly from the entry, such as `entry.headline`, but if the name matches an entry attribute, such as `title`, `slug`, or `url`, you get the attribute and not the field. | |
+| **entry.as_json**       | Representation of the entry with `meta` and `fields`. `fields` has one key per field, and a Boolean field with no value appears as `false`. It can't be read as an attribute: to get it in JSON format, apply the `json` filter to the entry. | ```{"meta":{"uuid":"abc","tags":["tag1","tag2"]},"fields":{"title":"Hello","featured":false}}``` |
+
+:::warning Warning
+When you read a field from `entry.fields` or directly from `entry`, Modyo evaluates its value as Liquid, with the same variables as the page. This applies to text fields ([Single-line text](/en/platform/content/types.html#single-line-text), [Multiline text](/en/platform/content/types.html#multiline-text), and [Rich text](/en/platform/content/types.html#rich-text)) and to the selected options of [choice fields](/en/platform/content/types.html#allowed-values), also inside a [Group](/en/platform/content/types.html#group): the Liquid variables and tags in the value run when the entry is displayed on the site. If you need to display that code as text, write it in the field inside the [raw](/en/platform/channels/liquid-markup/tags.html#raw) tag.
+:::
 
 ## field
 
@@ -144,14 +148,14 @@ Displays all information about an entry's fields.
 | Object                                    | Description                                    | Example                               |
 |-------------------------------------------|------------------------------------------------|---------------------------------------|
 | **field.name**                            | Custom field name.                             | ```Field1```                          |
-| **field.type**                            | Name of the type associated with the field.    | ```Type1```                           |
+| **field.type**                            | Field class, as a readable name: `String` for a single-line text field, `Text` for a multiline one, or `Rich text` for a rich text one. It isn't the content type. | ```Rich text``` |
 | **repeatable_group_field.fields_schema**  | Schema for fields in a repeatable group.       | ```[{"name":"item","type":"text"}]``` |
-| **repeatable_group_field.json_format**    | Group value as JSON string.                    | ```"[{\"item\":\"Value\"}]"```        |
+| **repeatable_group_field.json_format**    | Hash with the values of this group repetition, with one key per group field. | ```{"item"=>"Value"}``` |
 | **repeatable_group_field.locale**         | Locale of the group's content.                 | ```"en"```                            |
-| **repeatable_group_field.space**          | Space identifier for the group.                | ```"marketing"```                     |
-| **repeatable_group_field.as_json**        | JSON representation of the group.              | ```{"fields":[{"item":"Value"}]}```   |
-| **asset_field.pdf_thumbnail_url**         | PDF thumbnail when field references PDF asset. | ```/uploads/.../pdf-thumb.png```      |
-| **asset_field.temp_url**                  | Ephemeral URL of referenced asset.             | ```https://cdn.example.com/tmp/xyz``` |
+| **repeatable_group_field.space**          | [space](/en/platform/channels/liquid-markup/objects.html#space) object for the entry's space. | |
+| **repeatable_group_field.as_json**        | Values of this repetition, the same as `json_format`. It can't be read as an attribute: to get them in JSON format, apply the `json` filter to the repetition. | ```{"item":"Value"}``` |
+| **asset_field.pdf_thumbnail_url**         | Always empty. | |
+| **asset_field.temp_url**                  | The same URL of the referenced asset. It isn't ephemeral and doesn't expire. | ```/uploads/7b1b3f82-c9f5-4c51-87dc-b93fc9918c9c/original/photo.jpg``` |
 | **asset_field.special_image?**            | Indicates special image variant.               | ```false```                           |
 
 ## form
@@ -536,9 +540,12 @@ Displays dynamic content created in your spaces from anywhere on your site. In t
 
 | Object                              | Description                                                            | Example         |
 |-------------------------------------|------------------------------------------------------------------------|-----------------|
-| **spaces['space_name'].categories** | Array of category type objects containing all categories in the space. |                 |
-| **spaces['space_name'].entries**    | Page type objects that meet the search parameters.                     |                 |
-| **spaces['space_name'].name**       | Space name.                                                            | ```New Space``` |
+| **spaces['space_identifier'].categories** | Array of [category](/en/platform/channels/liquid-markup/objects.html#category) objects with the space's top-level categories. Subcategories are read with `category.children`. | |
+| **spaces['space_identifier'].entries** | Array of [entry](/en/platform/channels/liquid-markup/objects.html#entry) objects with the space's entries in its default language. Without a signed-in user, it excludes private entries; with a signed-in user, it also includes private entries without segments and those targeted to any of the user's segments. | |
+| **spaces['space_identifier'].name** | Space name. | ```New Space``` |
+| **spaces['space_identifier'].types['type_identifier']** | [type](/en/platform/channels/liquid-markup/objects.html#type) object for the content type with that identifier. | |
+
+Index `spaces` with the space's **Identifier**, the same one `entry.meta.space_uid` returns, and `types` with the type's **Identifier**, not with their names. If the account has no space with that identifier, or the space has no such type, the published HTML contains the `<!-- Liquid Error -->` comment instead of the expression or tag that uses it.
 
 ## submission
 
