@@ -6,7 +6,9 @@ search: true
 
 ## Introduction
 
-In this tutorial we will integrate Salesforce, a customer relationship management (CRM) platform, with Modyo's Customers module where the platform's end users are managed. This integration allows us to manage all users from one place and thus centralize the workflow of our sales, marketing, and organization teams.
+In this tutorial we will integrate Salesforce, a customer relationship management (CRM) platform, with Modyo's Customers module where the platform's end users are managed. For example, when the <b>Premium Customer</b> field of a contact changes in Salesforce, a Salesforce flow updates the matching custom field of the user in Modyo, so your sales or marketing teams don't have to leave Salesforce.
+
+This tutorial doesn't use the [Salesforce integration](/en/platform/customers/settings#salesforce) that you set up in the realm integrations: the flow calls the Modyo Administration API directly. If you need to sync Salesforce contacts with the realm users, use that integration instead.
 
 ## Prerequisites
 
@@ -226,9 +228,13 @@ Click <b>Save</b> and on the settings of <b>Custom Metadata Types
 
 Once the Apex Class configuration and Custom Metadata Types are ready, you need to generate an authentication provider, which will use the newly defined Apex class.
 
-In order to generate an authenticator, from the Modyo platform, within **Configuration**, click on <b> Access to the API </b>. Generate a new API access in the button on the right above and fill in the fields as follows, where the Callback URL is our Salesforce URL by adding <b> services/AuthCallback/Modyo </b> 
+In order to generate an authenticator, from the Modyo platform, within **Settings**, click **API access**. Click **New API Access** at the top right and fill in the fields as follows. In **Redirect URI**, enter your Salesforce URL followed by <b>services/authcallback/Modyo</b>.
 
 <img src="/assets/img/tutorials/salesforce/api-access.png" style="border: 1px solid rgb(238, 238, 238);max-width: 500px;margin: auto 0;" alt="Image with New Application for API Access in Modyo Platform"/> 
+
+:::warning Copy the secret when you create the application
+Modyo shows the application secret only once, in the **A new secret token has been generated** dialog. Copy it before closing the dialog: you need it for the **Secret** field of the Authentication Provider, and you can't retrieve it afterward.
+:::
 
 Then, in **Settings**, <b>Team</b>, click your username. In the section of <b>API access</b> click <b>+ New Access Token</b> and create one with the one we already configured <b>SF Dynamic</b> to have an Access Token for your user.
 
@@ -302,7 +308,7 @@ Fill in the following data:
    Secret   
   </td>
   <td>
-   [ API access - Callback URL ]
+   [ API access - Secret ]
   </td>
  </tr>
  <tr>
@@ -429,7 +435,9 @@ External services allow us to connect Salesforce to third-party services, sharin
 
 To generate the integration, create a new External Service by clicking on the <b>New External Service</b> button on the top right of the screen.
 
-Enter a name, select the Named Credential you created and at the bottom we paste the following code, selecting <b>Service Schema Complete JSON</b> 
+Enter <b>DynamicModyo</b> as the name, select the Named Credential you created, and at the bottom paste the following code, selecting <b>Service Schema Complete JSON</b>. Step 8 uses the types that Salesforce generates with that name, such as <b>ExternalService__DynamicModyo_UserInput</b>.
+
+The schema describes a single operation, the one that updates a realm user. Its paths are relative to the Named Credential URL, so the final call is `PUT [account.url]/api/admin/customers/{realm_uid}/users/{user_id}`. It's adapted from the Administration API documentation, available at `[account.url]/api/admin/docs`: `operationId` sets the name of the action you'll use in Step 8, and `user_id` is declared as text so that it accepts the <b>ModyoID</b> text variable, which holds the user's `id`.
 
 
 ```json
@@ -465,240 +473,83 @@ Enter a name, select the Named Credential you created and at the bottom we paste
     "application/json; charset=utf-8"
   ],
   "paths": {
-    "/account": {
+    "/customers/{realm_uid}/users/{user_id}": {
       "put": {
-        "summary": "Update an Account",
+        "summary": "Update a User",
+        "operationId": "putUsersByUser_id",
         "tags": [
-          "Accounts"
+          "Users"
         ],
         "parameters": [{
-          "name": "account",
+          "name": "realm_uid",
+          "in": "path",
+          "description": "Realm UID",
+          "required": true,
+          "type": "string"
+        }, {
+          "name": "user_id",
+          "in": "path",
+          "description": "User id",
+          "required": true,
+          "type": "string"
+        }, {
+          "name": "user",
           "in": "body",
           "required": true,
           "schema": {
-            "$ref": "#/definitions/AccountInput"
+            "$ref": "#/definitions/UserInput"
           }
         }],
         "responses": {
           "200": {
-            "description": "Successful updated",
-            "schema": {
-              "$ref": "#/definitions/Account"
-            }
+            "description": "Successfully updated user"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "User not found"
           },
           "409": {
-            "description": "Conflict"
+            "description": "The user is locked by another admin"
+          },
+          "422": {
+            "description": "The user could not be saved"
           }
         }
       }
     }
   },
   "definitions": {
-    "AccountInput": {
+    "UserInput": {
       "properties": {
-        "favicon_id": {
-          "type": "integer",
-          "description": "Favicon ID"
-        },
-        "dismiss_home_steps": {
-          "type": "boolean"
-        },
-        "logo_id": {
-          "type": "integer",
-          "description": "Logo ID"
-        },
-        "cors_enabled": {
-          "type": "boolean"
-        },
-        "cors_allow_all": {
-          "type": "boolean"
-        },
-        "cors_allowed_origins": {
+        "email": {
           "type": "string",
-          "description": "By default, site custom domains are included once CORS is enabled. To grant external domains access, input them in a comma-separated list. Wildcards are not allowed.",
-          "example": "http://sub.mydomain.com, http://spa.mydomain.com"
+          "format": "email"
         },
-        "delivery_token_expiration": {
-          "type": "integer"
-        },
-        "name": {
+        "first_name": {
           "type": "string"
         },
-        "time_zone": {
+        "last_name": {
           "type": "string"
         },
-        "host": {
-          "type": "string"
-        },
-        "default_site_id": {
-          "type": "integer"
-        },
-        "default_site_permanent_redirect": {
-          "type": "boolean"
-        },
-        "robots_enabled": {
-          "type": "boolean"
-        },
-        "sitemap_enabled": {
-          "type": "boolean"
-        },
-        "google_key": {
-          "type": "string"
-        },
-        "lang": {
-          "type": "string"
-        },
-        "min_length_value": {
-          "type": "integer",
-          "example": 8,
-          "minimum": 8,
-          "maximum": 128
-        },
-        "require_lowercase_enabled": {
-          "type": "boolean"
-        },
-        "require_uppercase_enabled": {
-          "type": "boolean"
-        },
-        "require_symbols_enabled": {
-          "type": "boolean"
-        },
-        "expire_after": {
-          "type": "integer",
-          "example": 300,
-          "enum": [
-            300,
-            600,
-            900,
-            1200,
-            1500,
-            1800,
-            2700,
-            3600,
-            5400,
-            7200,
-            14400,
-            28800,
-            57600,
-            86400,
-            172800,
-            259200,
-            345600,
-            432000,
-            518400,
-            604800,
-            1209600
-          ],
-          "description": "Time in minutes"
-        },
-        "otp_required": {
-          "type": "boolean",
-          "example": false
+        "custom_fields": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UserCustomField"
+          }
         }
       }
     },
-    "Account": {
+    "UserCustomField": {
       "properties": {
-        "id": {
-          "type": "integer",
-          "example": 1
-        },
-        "name": {
+        "key": {
           "type": "string",
-          "example": "Modyo Cloud"
+          "example": "_ucf_premium_customer"
         },
-        "host": {
+        "value": {
           "type": "string",
-          "example": "company"
-        },
-        "time_zone": {
-          "type": "string",
-          "example": "Santiago"
-        },
-        "lang": {
-          "type": "string",
-          "example": "en"
-        },
-        "uuid": {
-          "type": "string",
-          "example": "a24f87bd-3abd-4b9d-973e-3e4e9676c345"
-        },
-        "google_key": {
-          "type": "string",
-          "example": "AIzaSyDmuYmbFpzTdIxHy"
-        },
-        "options": {
-          "type": "string"
-        },
-        "cors_allowed_origins": {
-          "type": "string",
-          "example": "http://sub.mydomain.com, http://spa.mydomain.com"
-        },
-        "delivery_token_private_key": {
-          "type": "string",
-          "description": "Delivery token private key as hexdigest"
-        },
-        "close_scheduled": {
-          "type": "boolean",
-          "example": true,
-          "enum": [
-            false,
-            true
-          ]
-        },
-        "cors_enabled": {
-          "type": "boolean",
-          "example": true,
-          "enum": [
-            false,
-            true
-          ]
-        },
-        "cors_allow_all": {
-          "type": "boolean",
-          "example": true,
-          "enum": [
-            false,
-            true
-          ]
-        },
-        "owner_id": {
-          "type": "integer",
-          "example": 1
-        },
-        "status": {
-          "type": "integer",
-          "example": 1
-        },
-        "subscription_id": {
-          "type": "integer",
-          "example": 1
-        },
-        "default_site_id": {
-          "type": "integer",
-          "example": 1
-        },
-        "logo_id": {
-          "type": "integer",
-          "example": 1
-        },
-        "favicon_id": {
-          "type": "integer",
-          "example": 1
-        },
-        "delivery_token_expiration": {
-          "type": "integer",
-          "example": 1
-        },
-        "created_at": {
-          "type": "string",
-          "format": "date-time",
-          "example": "2019-10-08T16:08:55.000-03:00"
-        },
-        "updated_at": {
-          "type": "string",
-          "format": "date-time",
-          "example": "2019-10-08T16:08:55.000-03:00"
+          "example": "true"
         }
       }
     }
@@ -773,7 +624,7 @@ For this, go to Setup -> Flows and click <b>New Flow</b>. Select <b>Autolaunched
 
 To get started, go to the <b>Manager</b> tab and create new resources.
 
-Creates a new variable named <b>isPremiumCustomer</b> of the Boolean Type and of default value <b>{!$GlobalConstant.False}</b>, enable the two fields below and click <b>Done</b>.
+Creates a new variable named <b>IsPremiumCustomer</b> of the Boolean Type and of default value <b>{!$GlobalConstant.False}</b>, enable the two fields below and click <b>Done</b>.
 
 <img src="/assets/img/tutorials/salesforce/IsPremiumCustomer.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image showing the new variable called IsPremiumCustomer in the New Resource window."/>
 
@@ -930,7 +781,7 @@ Now that the input is true or false, let's generate a new Assignment with the fo
 
 To end the flow, add a last item <b>Interaction</b>, specifically an <b>Action</b> named <b>Update_Dynamic_User</b>.
 
-In the action finder, click <b> PutUsersByUser_ID </b>:
+In the action finder, click <b>putUsersByUser_id</b>:
 
 <img src="/assets/img/tutorials/salesforce/New_Action.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image creating a new Action called put Users by User Id."/>
 
@@ -959,6 +810,14 @@ Complete the following information:
   </td>
   <td>
    {!ModyoID}
+  </td>
+ </tr>
+ <tr>
+  <td style="font-weight: bold;">
+   realm_uid
+  </td>
+  <td>
+   [ Realm Identifier ]
   </td>
  </tr>
 </table>
@@ -1135,4 +994,4 @@ Click on <b>Activate</b>.
 
 Congratulations! You have finished the tutorial, in order to test that everything is OK, we need to create a user by filling in the required fields (First Name, Last Name, Email and Modyo ID).
 
-To find out the user ID in Modyo we can do it through the Customers API at the following {acount.url}/customers/{realm_uid}/users or on the Modyo platform, by clicking the user within Realms. The Modyo ID will be located as part of the URL and looks something like: `987eb795-9476-49f7-b511-efb5ba3f07de`.
+To find a user's Modyo ID, query the realm's users API at `[account.url]/api/admin/customers/{realm_uid}/users` and copy the user's `id` field, an integer such as `2332`. You can search for the user by email with the `query` parameter. Don't confuse it with the identifier shown in the user's URL in the Modyo admin: that's the user's `uuid`, something like `987eb795-9476-49f7-b511-efb5ba3f07de`, not their `id`.
