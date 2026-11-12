@@ -788,7 +788,7 @@ The query returns the records you are allowed to see, from the most recent to th
 }
 ```
 
-`type` is the identifier of the record type, the same value that the `type`, `types`, and `not_in_type` filters accept. `title` and `description` arrive as text, already translated into the language of the user who owns the credential, and `description` can include HTML links. `user` identifies the administrator by their `uuid`, and `automated` is `true` when the action was not performed by an administrator. Besides `site_id` and `space_id`, the context comes with `realm_id` and with the names `site_name`, `space_name`, and `realm_name`.
+`type` is the identifier of the record type, the same value that the `type`, `types`, and `not_in_type` filters accept. `title` and `description` arrive as text, already translated into the language of the user who owns the credential, and `description` can include HTML links. `user` identifies the administrator by their `uuid` and comes as `null` when the record has no associated administrator. `automated` is `true` only when the record corresponds to an automatic action of the platform; in that case `user` always comes as `null`. Besides `site_id` and `space_id`, the context comes with `realm_id` and with the names `site_name`, `space_name`, and `realm_name`.
 
 ### What logs you see
 
@@ -900,7 +900,7 @@ Keep in mind that:
 - If `current_password` is wrong or empty, the response is `HTTP 422 Unprocessable Entity` and nothing is updated.
 
 :::danger Danger
-Failed attempts with a wrong password add up as long as no more than 15 minutes go by between one and the next. The limit is not a setting of your account: with the platform's default configuration, the first three failed attempts respond `HTTP 422` with a message asking you to check the current password. From the fourth one on, the response is still `HTTP 422`, but with a message saying that you reached the attempt limit, and the platform revokes every active session of the user, so anyone working in the administration panel is logged out. This repeats with every failed attempt until 15 minutes have passed since the third one, and then the count starts over. Handle the `HTTP 422` in your integration and do not retry in a loop.
+Each failed attempt with a wrong password adds one to the count and keeps it active for another 15 minutes; if more than 15 minutes go by since the last counted failure, the count starts over. The limit is not a setting of your account: with the platform's default configuration, the first three failed attempts respond `HTTP 422` with a message asking you to check the current password. From the fourth one on, the response is still `HTTP 422`, but with a message saying that you reached the attempt limit, and the platform revokes every active session of the user, so anyone working in the administration panel is logged out. These rejections no longer add to the count or extend its window: every failed attempt keeps revoking the sessions until 15 minutes have passed since the third failure, and then the count starts over. Handle the `HTTP 422` in your integration and do not retry in a loop.
 :::
 
 ### Two-factor authentication

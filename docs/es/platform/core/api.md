@@ -784,7 +784,7 @@ La consulta devuelve los registros que alcanzas a ver, del más reciente al más
 }
 ```
 
-`type` es el identificador del tipo de registro, el mismo valor que aceptan los filtros `type`, `types` y `not_in_type`. `title` y `description` llegan como texto, ya traducido al idioma del usuario dueño de la credencial, y `description` puede incluir enlaces HTML. `user` identifica al administrador por su `uuid`, y `automated` vale `true` cuando la acción no la ejecutó un administrador. Además de `site_id` y `space_id`, el contexto llega con `realm_id` y con los nombres `site_name`, `space_name` y `realm_name`.
+`type` es el identificador del tipo de registro, el mismo valor que aceptan los filtros `type`, `types` y `not_in_type`. `title` y `description` llegan como texto, ya traducido al idioma del usuario dueño de la credencial, y `description` puede incluir enlaces HTML. `user` identifica al administrador por su `uuid` y llega en `null` cuando el registro no tiene un administrador asociado. `automated` vale `true` solo cuando el registro corresponde a una acción automática de la plataforma; en ese caso `user` siempre llega en `null`. Además de `site_id` y `space_id`, el contexto llega con `realm_id` y con los nombres `site_name`, `space_name` y `realm_name`.
 
 ### Qué registros ves
 
@@ -896,7 +896,7 @@ Ten en cuenta que:
 - Si `current_password` es incorrecta o viene vacía, la respuesta es `HTTP 422 Unprocessable Entity` y nada se actualiza.
 
 :::danger Peligro
-Los intentos fallidos con contraseña incorrecta se acumulan mientras no pasen más de 15 minutos entre uno y otro. El límite no es un ajuste de tu cuenta: con la configuración predeterminada de la plataforma, los tres primeros intentos fallidos responden `HTTP 422` con un mensaje que pide revisar la contraseña actual. Desde el cuarto, la respuesta sigue siendo `HTTP 422`, pero con un mensaje que avisa que alcanzaste el límite de intentos, y la plataforma revoca todas las sesiones activas del usuario, así que quien esté trabajando en el panel de administración queda con la sesión cerrada. Esto se repite con cada intento fallido hasta que pasan 15 minutos desde el tercero, y ahí el conteo vuelve a empezar. Controla el `HTTP 422` en tu integración y no reintentes en bucle.
+Cada intento fallido con contraseña incorrecta suma uno al conteo y lo mantiene vigente por 15 minutos más; si pasan más de 15 minutos desde el último fallo contado, el conteo vuelve a empezar. El límite no es un ajuste de tu cuenta: con la configuración predeterminada de la plataforma, los tres primeros intentos fallidos responden `HTTP 422` con un mensaje que pide revisar la contraseña actual. Desde el cuarto, la respuesta sigue siendo `HTTP 422`, pero con un mensaje que avisa que alcanzaste el límite de intentos, y la plataforma revoca todas las sesiones activas del usuario, así que quien esté trabajando en el panel de administración queda con la sesión cerrada. Estos rechazos ya no suman al conteo ni extienden su plazo: cada intento fallido sigue revocando las sesiones hasta que pasan 15 minutos desde el tercer fallo, y ahí el conteo vuelve a empezar. Controla el `HTTP 422` en tu integración y no reintentes en bucle.
 :::
 
 ### Segundo factor
