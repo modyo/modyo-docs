@@ -37,6 +37,8 @@ Liquid is designed with very specific requirements:
 </ul>
 ```
 
+In the example, `blog` and `post` are sample identifiers: replace them with those of a space and a content type in your account. If they don't exist, the example renders `<!-- Liquid Error -->` instead of the list.
+
 ### How to use Liquid?
 
 Below, we will see several examples of the most common uses when writing with Liquid.

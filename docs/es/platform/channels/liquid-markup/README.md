@@ -38,6 +38,8 @@ En Modyo, Liquid te permite:
 </ul>
 ```
 
+En el ejemplo, `blog` y `post` son identificadores de muestra: reemplázalos por los de un espacio y un tipo de contenido de tu cuenta. Si no existen, el ejemplo muestra `<!-- Liquid Error -->` en lugar de la lista.
+
 :::warning Atención
 Desde la versión 9.0.8 en adelante, los atributos de las entradas se llamarán según su meta información o sus campos personalizados, de tal forma que:
 

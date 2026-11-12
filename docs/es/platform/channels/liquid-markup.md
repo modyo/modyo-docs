@@ -37,6 +37,8 @@ Liquid está diseñado con requisitos muy específicos:
 </ul>
 ```
 
+En el ejemplo, `blog` y `post` son identificadores de muestra: reemplázalos por los de un espacio y un tipo de contenido de tu cuenta. Si no existen, el ejemplo muestra `<!-- Liquid Error -->` en lugar de la lista.
+
 ### ¿Cómo usar Liquid?
 
 A continuación, veremos varios ejemplos de los usos más comunes al escribir con Liquid.
