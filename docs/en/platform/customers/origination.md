@@ -686,6 +686,8 @@ The available actions depend on the status: **Resend invitation** and **Cancel i
 
 When the last active invitation of the task is completed, the invitation task response completes on its own and the flow continues. From that moment on, no new invitations can be sent from that task.
 
+The link in the invitation email works for a single sign-in and expires after 7 days. In addition, every time the platform sends that person a new link, for example when the invitation is resent, when they are invited to another task, or when they request a password recovery, the previous links stop working. If the link no longer works and the invitation is still `pending`, the main user can resend it so the invitee gets a new link; if it was already accepted, the invitee has to sign in to the realm to return to the submission.
+
 :::tip Wait between resends
 You must wait a few minutes between one resend and the next. If you press **Resend invitation** too soon, the platform tells you how many minutes are left instead of sending the email.
 :::
@@ -851,8 +853,12 @@ You can edit or delete roles from the same section. Since each role can only be 
 
 If you need to permanently delete an origination:
 
-1. Select the **Delete origination** option.
-2. Confirm that you do not need the origination data before proceeding.
+1. If the origination is published, unpublish it.
+2. In the actions menu (⋮) of the origination, select **Archive**.
+3. In the same menu, select **Delete**. The option is only enabled when the origination is archived.
+4. In the **Delete origination** modal, type the name of the origination in **Origination name** and press **Delete**.
+
+The origination cannot have submissions in **Pending** or **Completed** status: if it has any, the platform rejects the deletion with the message **You can't delete an origination with submissions**. Before that, [cancel them](/en/platform/customers/origination.html#cancel-submission) or [delete them](/en/platform/customers/origination.html#delete-submission). **Not started** and **Canceled** submissions are deleted along with the origination.
 
 :::danger Danger
 This process is irreversible.
@@ -955,7 +961,7 @@ In the details view, you will find the following main sections:
 
 This structure provides you with a comprehensive and detailed view of each submission, allowing you to effectively manage all aspects related to the submissions.
 
-In multi-user submissions, the **Tasks**, **Reviews**, and **Validations** tabs include the **Viewing tasks for** selector, which allows you to switch between the **Main User** and each invited user to review the individual progress of their tasks.
+In multi-user submissions, the **Tasks**, **Fields**, and **Validations** tabs include a selector, **Viewing tasks for** in the first two and **Viewing validations for** in the last one, which allows you to switch between the **Main User** and each invited user to review the individual progress of their tasks.
 
 :::tip Tip
 From the submission view in the actions menu (identified with ...), you can [impersonate](/en/platform/customers/users) the user to help them answer the origination. This depends on the user's roles.
@@ -990,11 +996,13 @@ The roles you already had keep the access they had: those that saw the full deta
 
 The submission list includes a search box that allows you to find submissions by the user's data, the values of their custom fields, the answers entered in the flow fields, and the content of the tasks.
 
+The answers in the flow fields and the content of the tasks are only searched if your role has **View Submission Tasks** or a permission that includes it, such as **View Full Submission**. Without that permission, the search only finds submissions by the user's data, their identifiers, and the values of their custom fields, and the flow question keys don't search the answers.
+
 The search requires a minimum of 3 characters, is case- and accent-insensitive, and finds partial matches. For example, `lau` finds "Claudio" and `perez` finds "Pérez". The `id` and `uuid` keys are the exception and are explained below.
 
 You can search in two ways, which you can also combine in the same query:
 
-- **Free text**: Type one or more terms and the search will find them in the user's data, the values of their custom fields, the answers entered in the flow fields, and the content of the tasks.
+- **Free text**: Type one or more terms and the search will find them in the user's data, the values of their custom fields, the answers entered in the flow fields, and the content of the tasks. If you type several terms, a match on any one of them is enough for the submission to show up, and the best matches are listed first.
 - **Key=value pairs**: Type the key of a field followed by `=` and the value to search for, to narrow the search down to that specific field.
 
 The available keys for `key=value` pairs are:
@@ -1007,8 +1015,8 @@ The available keys for `key=value` pairs are:
 When using `key=value` pairs, keep the following in mind:
 
 - The key must be written in full, while the value does allow partial matches. The `id` and `uuid` keys are the exception: they do not allow partial matches.
-- To search for values or phrases with spaces, use double quotes. For example, `first_name="Jean Pierre"` or `"crédito hipotecario"`.
-- All conditions are combined together, so a submission must satisfy every term and pair in the query to appear in the results.
+- To search for a value with spaces, wrap it in double quotes. For example, `first_name="Jean Pierre"`. Quotes only work inside a pair: in free text they don't build a phrase, so `"crédito hipotecario"` is searched the same as `crédito hipotecario`, and a match on either word is enough.
+- Pairs are combined with each other and with the free text: to appear in the results, a submission must satisfy every pair in the query and, if you also type free text, match at least one of its terms.
 - If the key does not exist or the value is empty, the term is searched as free text without generating errors.
 
 Some search examples:
@@ -1062,7 +1070,7 @@ When assigning to a whole group, all its members can view and manage the submiss
 
 #### Cancel submission
 
-To cancel a submission, open it and press the **Cancel** button in the submission view. In the modal, you can optionally enter a **Cancellation reason** and then confirm the action. Canceling permanently changes the status of the submission to **Canceled**.
+To cancel a submission, open it, expand the actions menu (⋮) of the submission view, and select **Cancel**. The option requires the **Complete Submissions** permission, which enables both completing and canceling submissions, and it doesn't appear on submissions that are already canceled. In the modal, you can optionally enter a **Cancellation reason** and then confirm the action. Canceling permanently changes the status of the submission to **Canceled**.
 
 You can cancel submissions in **Not started**, **Pending**, or **Completed** status.
 
@@ -1070,9 +1078,11 @@ The details of a canceled submission show the cancellation date in the **Cancele
 
 #### Delete submission
 
-To delete an individual submission, select the menu in the actions column and press the delete option. This will delete the submission.
+To delete an individual submission, in the submission list expand the menu in the **Actions** column and press **Delete**. You also have the **Delete** option in the actions menu (⋮) of the submission view, except on canceled submissions. In both cases, the platform asks you to confirm before deleting it permanently.
 
-To delete several submissions at the same time, select each entry by checking the corresponding box and press the delete button.
+To delete several submissions at the same time, check the box of each one and use the **Delete** bulk action.
+
+These options are only shown if your role has the **Delete Submissions** permission.
 
 #### Reopen tasks of a submission
 
@@ -1083,25 +1093,38 @@ Consider the following:
 - Changing the status of a task response requires the **Change Status of Task Response** permission; deleting task responses requires the **Delete Submissions** permission.
 - These operations are only available while the submission is in **Not started** or **Pending** status.
 - All operations are recorded in the platform activity.
+- If the reopened task had an approved validation, the approval is kept. The user can change their answers, but when the task is completed again it is validated and locked for editing once more, without a new review by the agent. For the corrected data to be reviewed again, the user must use **Modify data** in the task, an option available when the origination's **Validation rules** allow modifying previously validated responses.
 
 #### Invite users
 
-You can invite users to enter information in an origination. When inviting a user, you will need to enter their basic information:
+You can invite users to enter information in an origination with the **Invite** button. When inviting a user, you will need to enter their information:
 
 - **Name**: The first name of the user who will use the origination.
-- **Last name**: The last name of the user.
+- **Last Name**: The last name of the user.
 - **Email**: The user's email address, where they will receive the invitation to access the origination.
-- **Assign the submission**: In the drop-down list, select an administrator who will manage this particular origination. If an administrator is not selected, the submission will remain unassigned.
+- The fields that depend on the realm's sign-up settings: **Second last name**, **Phone number**, **Birthday**, and **Gender**, when the realm has them enabled, and the username, with the label the realm defines, when the realm doesn't use the email as the username. The username is always mandatory; the others, when the realm requires them at sign-up.
+- The user's active [custom fields](/en/platform/customers/settings.html#custom-fields). The required ones are mandatory.
+- **Assign submission to**: The administrator, the whole group of administrators, or the administrator within a group who will manage this submission. If you leave it empty, the origination's **Default submission assignee** applies and, if it has none, the submission remains unassigned.
 
-To invite users from the panel, the realm's **Account Activation** cannot be set to **Disabled**: with that option the **Invite** button appears disabled and, on hover, shows the message _Invitations are unavailable because sign up is disabled for this realm_.
+The button to send the invitation is enabled once you fill in all the mandatory fields.
 
-On the origination page the restriction is narrower: with **Disabled**, the form used to invite new users is blocked, but from there you can still invite users who already exist in the realm.
+The **Invite** button appears disabled and, on hover, shows a message with the reason in these cases:
+
+- The origination is not published: _Invitations are unavailable because the origination is not published_.
+- The origination has no associated page: _Invitations are unavailable because the origination has no associated page_.
+- The realm's **Account Activation** is set to **Disabled**: _Invitations are unavailable because sign up is disabled for this realm_.
+
+In addition, the button requires the **Start Submissions** permission: without it, the button appears disabled and shows no message.
+
+On the origination page, with **Account Activation** set to **Disabled**, the main user can't invite anyone through the name and email form, even if the email already belongs to a user of the realm. They can only pick from the list the people they already invited in another invitation task of the same submission or, if the [role](#roles) has the **Can be assumed by main user** option enabled, take the role themselves (**You**).
 
 If **Account Activation** is set to **Invitation only**, the new user you invite is created active and can complete the flow right away, with no activation email and no waiting. A user who already existed and was deactivated is not reactivated when invited: they keep their status. Review the options in the [realm settings](/en/platform/customers/settings.html#general).
 
 ### Assignee Management
 
-In the assignees view, you can monitor and manage the administrators responsible for the submissions within a realm. This view facilitates the tracking of performance and workload of administrators. You can filter the assigned submissions by date ranges.
+In the assignees view, you can monitor the administrators responsible for the submissions of this origination. This view facilitates the tracking of performance and workload of administrators.
+
+Only administrators who are individually assigned at least one submission of this origination appear: a submission assigned to a whole group, without a specific administrator, doesn't make the group members appear. The **Creation date** filter only shows the administrators who are assigned a submission of this origination created within that range.
 
 By selecting an administrator, you will be able to see all the submissions assigned to them and their corresponding status.
 
