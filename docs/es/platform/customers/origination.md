@@ -206,6 +206,8 @@ En una respuesta específica, puedes reasignar la validación desde la pestaña 
 
 La tarea de firma permite una firma simple con un checkbox o una avanzada cuando hay algun proveedor de firma digital instalado en las integraciones del reino.
 
+En la tarea escribes, con un editor de texto enriquecido, el documento que se muestra al usuario. Ese documento admite HTML con las mismas restricciones que el [Texto enriquecido de los formularios](/es/platform/customers/forms.html#texto-enriquecido): el editor quita lo que no está permitido y la plataforma no guarda un documento que traiga HTML fuera de la lista permitida.
+
 ### Revisión pendiente
 
 La tarea de revisión pendiente pausa el proceso de originación. Se usa para gatillar procesos asíncronos, generalmente en sistemas externos.

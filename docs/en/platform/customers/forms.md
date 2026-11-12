@@ -10,9 +10,13 @@ When you access the tool, you can see a list of all the forms currently active i
 
 In each row of the forms table, the columns are ordered by the name of the form, the date it was created, and the number of responses that were submitted for that form.
 
-From this list you can also access the individual analysis view, by clicking on the title of the form, also you can access the list of responses of the form, by clicking on the number of responses on the form.
+From this list, clicking the name of a form or its number of responses takes you to the form's [Answers](/en/platform/customers/forms.html#answers) view.
 
-To enable or disable forms and allow users to send their answers, you must go to the analysis view and select the respective action from the options displayed in the upper right section.
+In that view, the options menu in the upper right section lets you open the form on the site (**View**), if it is enabled; edit it (**Edit**); enable or disable it (**Enable** or **Disable**) to allow users to send their answers or not; and delete it (**Delete**). Editing, enabling, disabling, and deleting require the **Admin Forms** permission; without it, the menu shows **Show** instead of **Edit**, to see the form's settings.
+
+:::danger Danger
+To delete a form, you must disable it first. When you confirm, all its data is permanently deleted, including its answers. You also can't delete a form that is used in a [segment](/en/platform/customers/segments).
+:::
 
 ## Create a form
 
@@ -36,19 +40,18 @@ Forms copied to a [realm stage](/en/platform/customers/realms.html#what-is-copie
 - **Enabled**: Select if the form will start in an enabled state or not.
 - **Accept multiple answers**: If this option is enabled, each time a user answers the form, it will be recorded as a new response. If this option is disabled, each time the same user answers the form, they will be overwriting their previous response.
 - **Only for registered users**: Allows you to determine if the form will only be visible to registered Modyo users. If this option is enabled, an unsigned user will not be able to view the form. If this option is disabled, any user can answer the form.
-- **Request to answer automatically**: If the form is private (only registered users can answer it), this option will appear, allowing you to automatically redirect users who log in to the site associated with the form to answer it.
 
 After a division, you will be able to see the options to modify the redirect after a user answers the form.
 
 - **Default options**: After answering the form, the user is redirected to the home of the site associated with the form.
-- **Redirect URL**: Allows you to enter a URL to which the user will be redirected after completing the form. It is necessary to type the entire URL (e.g. https://test.modyo.com/home).
-- **Thank you page**: Allows you to add a personalized thank you message after a user answers the form, along with a button that will take them to a page on the site. The button URL is a relative URL of the site associated with the form. You can also determine if you want the user to be automatically redirected to that page after a certain amount of time.
+- **Custom Re-direct URL**: Allows you to enter a URL to which the user will be redirected after completing the form. You can type a full URL (e.g. https://test.modyo.com/home) or a path of the site associated with the form that starts with `/` (e.g. `/home`). If you type an address without `http://` or `https://`, the platform adds `http://` to it.
+- **Thank you page**: Allows you to add a personalized thank you message after a user answers the form, along with a button that will take them to the address in **Re-direct Link**, which accepts the same values as the **Custom Re-direct URL**. If you check **Enable Auto Redirect**, the user is automatically redirected to that address after the seconds set in **Re-direction Time**, or after 10 seconds if you leave it empty.
 
 
 - **Enable segmentation**: If the form is private (only registered users can answer it), you can select a set of users who can answer the form using segments. To learn more, go to [Segments](/en/platform/customers/segments)
 
 :::warning Attention
-In case of a public form, users who do not have an active session in Modyo, will see three required fields at the top of the form: First Name, Last Name, and Email. Once they submit the form, a user will be created with those values, and then the response will be associated with that user.
+In case of a public form, users who do not have an active session in Modyo, will see three required fields at the top of the form: First Name, Last Name, and Email. If the realm doesn't use the email as the username, they will also see a fourth required field for the username, with the label the realm has configured. While any of these fields is empty or the email is not valid, the submit button stays disabled. Once they submit the form, a user will be created with those values, and then the response will be associated with that user.
 :::
 
 :::warning Attention
@@ -78,7 +81,7 @@ The **Content fields** group has one option:
 
 These are the field types of the **Input fields** group:
 
-- **Simple Text**: Allows the user to enter text up to 256 characters.
+- **Simple Text**: Allows the user to enter a single line of text. To limit its length, set **Min** and **Max** in the field properties. If you don't set a **Max**, it accepts the same length as the **Paragraph Text** field.
 - **Paragraph**: Allows the user to enter multiline text up to 65535 characters.
 - **Number**: Allows the user to enter numbers.
 - **Dropdown**: Allows you to add options from which the user can choose one in _dropdown_ format.
@@ -117,6 +120,11 @@ Keep the following in mind:
 
 - If the Liquid has a syntax error, the field is not saved and the platform shows the error.
 - The content of each field accepts up to about 64 KB of HTML.
+- The accepted HTML is limited. By default, the allowed tags are `a`, `abbr`, `acronym`, `address`, `b`, `big`, `blockquote`, `br`, `caption`, `cite`, `code`, `col`, `colgroup`, `dd`, `del`, `dfn`, `div`, `dl`, `dt`, `em`, `h1` to `h6`, `hr`, `i`, `img`, `ins`, `kbd`, `li`, `mark`, `ol`, `p`, `pre`, `s`, `samp`, `small`, `span`, `strike`, `strong`, `sub`, `sup`, `table`, `tbody`, `td`, `tfoot`, `th`, `thead`, `time`, `tr`, `tt`, `u`, `ul`, and `var`, and the allowed attributes are `abbr`, `alt`, `cite`, `class`, `colspan`, `datetime`, `height`, `href`, `lang`, `name`, `rel`, `rowspan`, `src`, `style`, `target`, `title`, `width`, and `xml:lang`.
+- Link and image addresses only accept `http`, `https`, `mailto`, and `tel`, or relative paths. If you insert a link with another scheme, the editor shows a warning.
+- The editor removes what is not allowed. If the content has HTML outside that list when you save it, including when it comes through the API, the field is not saved and the error states what is not accepted, for example `<iframe>`, `id`, or `href="javascript:"`.
+- When the form is displayed, the platform filters the content again, including the output of the Liquid: it removes the tags and attributes that are not allowed, keeps their text, and removes `script` and `style` along with their content.
+- These rules also apply to the Rich Text of the Input tasks of [originations](/en/platform/customers/origination), to the instructions of **Add a Field Pop-up instructions** in their fields, and to the document of the [Signature](/en/platform/customers/origination.html#signature) task.
 - It does not appear in the answers: it is not shown in the detail of an answer or in the new answer notification email, it is not included in the export or in the form statistics, and it is not available to filter segments by answers.
 - If an answer carries a value for this field, for example through the API, the platform discards it.
 
@@ -136,7 +144,7 @@ Some fields have validations, to ensure that the user meets certain requirements
 - **Minimum Date**: The date entered cannot be earlier than this value
 - **Maximum Date**: The date entered cannot be later than this value.
 
-Just as some fields have validations, most input fields have a default value that is pre-selected when loading the form. The only ones that don't have a default value are nested questions. Since [Rich Text](/en/platform/customers/forms.html#rich-text) does not capture an answer, it only has a title, an identifier, and content.
+Just as some fields have validations, some input fields let you set a default value that is preselected when the form loads: **Single Text Line**, **Paragraph Text**, and **Number**, in **Default answer**; **Date**, with the **Default** checkbox; and **Checkboxes** and **Choice**, by checking one of their options. **Country**, **Phone**, and **Address** only let you use the user's current location as the default country, or country code. In the builder, **Dropdown**, **Nested Questions**, **File**, **Email**, and **URL** don't let you set a default value. Since [Rich Text](/en/platform/customers/forms.html#rich-text) does not capture an answer, it only has a title, an identifier, and content.
 
 ### Regular expressions
 
