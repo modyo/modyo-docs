@@ -186,7 +186,7 @@ Agrega formato de divisa a un valor. *e.g.*
 <span v-pre>`{{ 1890.5123 | format_currency: unit: '¥', separator: ',', delimiter: '.', precision: 3 }} = ¥1.890,512`</span>
 
 :::warning Importante
-Este filtro determina el formato de la moneda y tiene prioridad sobre cualquier otra configuración de divisa.
+Los parámetros que pasas al filtro tienen prioridad sobre cualquier otra configuración de divisa, pero no se combinan con ella: si pasas al menos uno, Modyo usa solo los que indicas y toma los que faltan del formato predefinido del idioma del sitio, no del reino. Por ejemplo, con solo `unit: 'US$'` se pierden el separador, el delimitador y la precisión del reino, así que pasa los cuatro parámetros cuando necesites un formato completo.
 
 Si no especificas parámetros de divisa con el filtro de currency, Modyo utiliza la configuración de [payment](/es/platform/customers/settings.html#configuracion-de-payment) del reino.
 
@@ -199,6 +199,8 @@ En caso de que el sitio no tenga un reino asociado y no especifiques parámetros
 - separator - separador de decimales.
 - delimiter - separador de miles.
 - precision - cantidad de dígitos decimales.
+
+Cualquier otra clave se ignora, aunque igual hace que el filtro deje de usar la configuración del reino. Escribe `unit` como texto y `precision` como número: con otro tipo de valor, como `unit: 123` o `precision: 'dos'`, el filtro aborta y en el HTML publicado queda el comentario `<!-- Liquid Error -->` en lugar del monto.
 
 
 ## Common
@@ -587,15 +589,15 @@ Todos los filtros de color abortan si el valor de entrada no es un color válido
 
 ### Brighten
 
-Agrega brillo a un color (ej. <span v-pre>`{{ '#00ff00' | brighten: 15 }} #=> '#26ff26'`</span>).
+Agrega brillo a un color (ej. <span v-pre>`{{ '#00ff00' | brighten: 15 }} #=> '#26ff26'`</span>). Si omites la cantidad, usa `10`.
 
 ### Darken
 
-Reduce el brillo de un color (ej. <span v-pre>`{{ '#00ff00' | darken: 15 }} #=> '#00b300'`</span>).
+Reduce el brillo de un color (ej. <span v-pre>`{{ '#00ff00' | darken: 15 }} #=> '#00b300'`</span>). Si omites la cantidad, usa `10`.
 
 ### Desaturate
 
-Desatura un color (ej. <span v-pre>`{{ '#00ff00' | desaturate: 15 }} #=> '#13ec13'`</span>).
+Desatura un color (ej. <span v-pre>`{{ '#00ff00' | desaturate: 15 }} #=> '#13ec13'`</span>). Si omites la cantidad, usa `10`.
 
 ### Grayscale
 
@@ -611,11 +613,11 @@ Convierte un color a escala de grises, con el mismo resultado que `grayscale`, p
 
 ### Lighten
 
-Aligera un color (ej. <span v-pre>`{{ '#00ff00' | lighten: 15 }} #=> '#4dff4d'`</span>).
+Aligera un color (ej. <span v-pre>`{{ '#00ff00' | lighten: 15 }} #=> '#4dff4d'`</span>). Si omites la cantidad, usa `10`.
 
 ### Opacity
 
-Modifica la opacidad de un color (ej. <span v-pre>`{{ '#00ff00' | opacity: 0.5 }} #=> 'rgba(0, 255, 0, 0.5)'`</span>).
+Modifica la opacidad de un color (ej. <span v-pre>`{{ '#00ff00' | opacity: 0.5 }} #=> 'rgba(0, 255, 0, 0.5)'`</span>). Si omites el valor, usa `0.3`.
 
 ### RGB
 
@@ -623,15 +625,17 @@ Transforma un color a su equivalente RGB (ej. <span v-pre>`{{ '#00ff00' | rgb }}
 
 ### Saturate
 
-Satura un color (ej. <span v-pre>`{{ '#00ff00' | saturate: 15 }} #=> '#00ff00'`</span>).
+Satura un color (ej. <span v-pre>`{{ '#00ff00' | saturate: 15 }} #=> '#00ff00'`</span>). Si omites la cantidad, usa `20`.
 
 ### Spin
 
-Gira un color en grados a favor de las manecillas del reloj (ej. <span v-pre>`{{ '#00ff00' | spin: 15 }} #=> 'rgba(0, 255, 0, 0.5)'`</span>).
+Gira un color en grados a favor de las manecillas del reloj (ej. <span v-pre>`{{ '#00ff00' | spin: 15 }} #=> '#00ff40'`</span>). Si omites los grados, usa `30`.
 
 ## Location
 
 Estos filtros Liquid alteran valores relacionados con la Geolocalización en Modyo Platform.
+
+Los dos filtros reciben el valor de un campo **Ubicación** de una entrada, por ejemplo `entry.fields.sucursales`; el formato de ese valor está descrito en [Tipos de contenido](/es/platform/content/types.html#ubicacion). El mapa se pide a Google Maps con la **API key de Google** de la [configuración de la cuenta](/es/platform/core/configuration.html#visualizacion): configúrala antes de usar estos filtros, porque sin ella Google rechaza la solicitud y el mapa no se muestra.
 
 ### Dynamic Map
 
@@ -639,12 +643,18 @@ Devuelve un mapa dinámico de Google Maps (ej. <span v-pre>`{{ locations | dynam
 
 **Parametros**
 
-- `locations` (ArrayHash) — Array de hashes con los puntos de latitud y longitud.
+- `locations` (ArrayLocation) — Valor de un campo **Ubicación**. De cada ubicación se usan las coordenadas `location.lat` y `location.lon` y, como título del marcador, la dirección `location_street`.
 - `size` (String) (default: '600x300') — Tamaño en píxeles del mapa.
 - `zoom` (Integer) (default: 10) — Nivel de zoom para el mapa.
 - `type` (String) (default: 'roadmap') — Tipo de mapa.
 - `icon` (String) (default: '') — Icono para el mapa.
 - `controls` (Boolean) (default: true) — Controles de navegación para el mapa.
+
+El mapa se centra en la primera ubicación de la lista, así que el campo necesita al menos una: si está vacío, el filtro aborta y en el HTML publicado queda el comentario `<!-- Liquid Error -->` en lugar del mapa.
+
+:::warning Atención
+Usa un solo `dynamic_map` por página. Todos los mapas dinámicos se dibujan en el mismo contenedor, así que con dos o más solo se ve uno y los demás espacios quedan en blanco.
+:::
 
 ### Static Map
 
@@ -652,7 +662,7 @@ Devuelve un mapa estático de Google Maps (ej. <span v-pre>`{{ locations | stati
 
 **Parametros**
 
-- `locations` (ArrayHash) — Array de hashes con los puntos de latitud y longitud.
+- `locations` (ArrayLocation) — Valor de un campo **Ubicación**. De cada ubicación se usan las coordenadas `location.lat` y `location.lon`.
 - `size` (String) (default: '600x300') — Tamaño en píxeles del mapa.
 - `zoom` (String) (default: '') — Nivel de zoom para el mapa. Sin valor, la URL de Google Maps se arma con `zoom=` vacío y el encuadre queda a criterio de Google; pásalo siempre que necesites un encuadre fijo.
 - `type` (String) (default: 'roadmap') — Tipo de mapa.
@@ -1034,15 +1044,17 @@ Para listar los estados que el filtro no cubre, recorre una colección sin acota
 
 ### Completed
 
-Verifica si un elemento (wrapper de step/task) está completado para un submission dado.
+Verifica si un step o una task ya se completó en una respuesta.
 
 *ej.* <span v-pre>`{{ submission | completed: step }}`</span>
 
 **Parámetros:**
 - submission (Submission) — submission actual (objeto antes de la barra)
-- element (Step|TaskResponse wrapper) — elemento a evaluar
+- element (Step|Task) — el step o la task a evaluar, por ejemplo uno de `origination.steps` o de `step.tasks`
 
 Retorna: Boolean (true/false)
+
+No acepta los elementos de `submission.steps` ni las respuestas de `submission.tasks`: con ellos, el filtro aborta y en el HTML publicado queda el comentario `<!-- Liquid Error -->` en lugar del bloque. Esos objetos ya traen su estado, en `is_completed` y en `status`, respectivamente.
 
 Desde Modyo 10.2 el filtro resuelve el estado contra el usuario presente en el contexto de render y no contra el titular de la respuesta: un step cuenta como completado solo si ese usuario tiene una respuesta completada en cada una de las tareas que ve. En un flujo con usuarios invitados, la misma plantilla entrega resultados distintos según quién la mire, y un step que en 10.1 aparecía completado puede aparecer incompleto.
 
@@ -1140,7 +1152,7 @@ Retorna respuestas de formulario del usuario filtradas por un slug específico.
 
 ### By Response Date Range
 
-Retorna respuestas de formulario creadas dentro de un rango de fechas (inclusivo).
+Retorna respuestas de formulario creadas dentro de un rango de fechas.
 
 *ej.* <span v-pre>`{% assign responses = user.responses | by_response_date_range: '2025-03-10', '2025-03-20' %}`</span>
 
@@ -1148,6 +1160,8 @@ Retorna respuestas de formulario creadas dentro de un rango de fechas (inclusivo
 - responses (Array&lt;FormResponse&gt;) — user.responses
 - date_from (String/Date) — fecha inicial (recomendado YYYY-MM-DD)
 - date_to (String/Date) — fecha final (recomendado YYYY-MM-DD)
+
+`date_from` incluye su día completo, pero `date_to` se toma como el inicio de ese día (00:00), aunque indiques una hora, así que el día final queda fuera: en el ejemplo no aparecen las respuestas creadas el 20 de marzo. Para incluirlo, pasa el día siguiente como `date_to`, en este caso `'2025-03-21'`. Los dos límites se comparan con la hora de creación en UTC.
 
 ### By Answer Text
 
@@ -1158,28 +1172,3 @@ Retorna respuestas de formulario que contienen una respuesta cuyo `answers.text_
 **Parámetros:**
 - responses (Array&lt;FormResponse&gt;) — user.responses
 - answer_text (String) — texto exacto a coincidir
-
-## Widget
-
-Estos filtros Liquid alteran valores relacionados con los Widgets.
-
-### Entry Limit
-
-Determina el límite de entradas para un widget (ej. <span v-pre>`{{ widget1 | entry_limit }}`</span>).
-
-### Resolve Home Widget List
-
-Devuelve una lista de todos los widgets que pertenecen a un Sitio (ej. <span v-pre>`{{ site | resolve_home_widget_list }}`</span>).
-
-### Resolve Me Widget List
-
-Devuelve una lista de todos los widgets que pertenecen a una página "me" (ej. <span v-pre>`{{ site | resolve_me_widget_list }}`</span>).
-
-### Resolve Widget List
-
-Devuelve una lista de todos los widgets que pertenecen a una página (ej. <span v-pre>`{{ site | resolve_widget_list: page }}`</span>).
-
-**Parámetros**
-
-- `site` (Site) — Objeto de tipo Sitio.
-- `page` (Page) — Objeto de tipo Página.
