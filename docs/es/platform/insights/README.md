@@ -16,6 +16,8 @@ Modyo Insights es el centro de inteligencia de negocio de la plataforma, donde c
 - [Payments](/es/platform/insights/payments.html): órdenes, medios de pago e ingresos de un reino
 - [Origination](/es/platform/insights/origination.html): respuestas de originación, embudo de conversión y abandono
 
+Si el plan de la cuenta incluye el módulo de [Consentimiento](/es/platform/customers/consent.html), se agrega el dashboard [Consentimiento](/es/platform/insights/consent.html): consentimientos otorgados y revocados, cumplimiento por definición y solicitudes de derechos. Usa el mismo selector de rango de fechas y su propio permiso, **Ver Dashboards de Consentimiento**, incluido en **Administrar Insights**.
+
 Cada dashboard es una pantalla independiente, con sus propios filtros y su propio período. Insights no correlaciona datos entre módulos, no genera reportes descargables y no permite crear ni personalizar dashboards. Además, cada miembro ve solo los dashboards que su rol le permite.
 
 ### Fuentes de datos
