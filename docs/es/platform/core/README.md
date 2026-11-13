@@ -23,18 +23,17 @@ Para usuarios nuevos en Modyo Platform, te sugerimos seguir este flujo de trabaj
 3. **Seguridad**: Implementa las [políticas de seguridad](/es/platform/core/security) recomendadas
 4. **Integraciones**: Conecta tus [sistemas externos](/es/platform/core/integrations) si es necesario
 
-Modyo ofrece a todos sus usuarios administradores una sección de aprendizaje llamada ¡Empieza! con enlaces y contenido especializado desde nuestra comunidad para acelerar la adopción de la plataforma. Esta sección incluye temas cómo:
+Modyo ofrece a todos sus usuarios administradores una sección de aprendizaje llamada ¡Empieza!, a la que accedes desde el ícono de cohete de la barra lateral principal. La página tiene dos bloques:
 
-- **Guías de inicio rápido**: Tutoriales paso a paso para configurar tu primera aplicación
-- **Casos de uso comunes**: Ejemplos prácticos de implementaciones exitosas
-- **Mejores prácticas**: Recomendaciones del equipo de Modyo para optimizar tu experiencia
-- **Recursos de la comunidad**: Enlaces directos a documentación, videos y foros especializados
-- **Actualizaciones de plataforma**: Información sobre nuevas funcionalidades y mejoras
+- **Rutas de aprendizaje**: Tarjetas con los cursos de formación de Modyo. Cada tarjeta abre su curso en una pestaña nueva.
+- **Sigue aprendiendo sobre Modyo**: Accesos a **Explora la comunidad**, **Revisa la documentación** y **Webinars más recientes**.
+
+En la cabecera, el enlace **¿Qué hay de nuevo?** abre el roadmap de Modyo con las funcionalidades lanzadas.
 
 La sección ¡Empieza! es un excelente punto de partida para nuevos usuarios que se están sumando a la organización.
 
 :::tip Activación opcional
-La sección ¡Empieza! puede ser desactivada desde las opciones generales de la cuenta según las necesidades de tu organización.
+Puedes ocultar la sección ¡Empieza! con la opción **No mostrar la página de "Primeros Pasos"** de [Visualización](/es/platform/core/configuration#visualizacion), en la configuración general de la cuenta. Al activarla, el ícono desaparece de la barra lateral para todos los usuarios y la pantalla que se abre por defecto al iniciar sesión pasa a ser **Inicio**.
 :::
 
 ## Sobre la Interfaz
@@ -72,15 +71,15 @@ Como mecanismo de respaldo, al momento de publicar un elemento, Modyo genera y m
 | **Editable** | La versión Editable conserva los cambios realizados en el elemento desde su última publicación o desde su creación si nunca ha sido publicado. Esta versión es la que pasa por el proceso de revisión en equipo cuando está activado. En el momento de la publicación, las versiones "Editable" y "Publicada" contienen el mismo contenido.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | **Publicado** | Esta versión guarda el contenido visible en el sitio y está disponible para todos los usuarios. En este estado, los recursos internos como Widgets y Plantillas ya pueden utilizarse en la creación de cualquier sitio o página. La versión publicada no necesariamente tiene el mismo contenido que la versión editable, excepto en el momento exacto de la publicación, ya que puede contener cambios que aún estén en proceso de prueba o revisión.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | **Respaldos** | Los respaldos son versiones previamente publicadas de los elementos. Cada vez que se publica un elemento, Modyo guarda la versión previamente publicada como un respaldo.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| **Programado** | Cuando programas una publicación, la versión editable pasa a un estado programado. Cuando llega el momento de la publicación, esa versión programada toma el lugar de la versión que está publicada en ese momento. De esta forma, puedes programar un cambio en el futuro en los elementos, y seguir trabajando en la versión editable.<br/><br/>Modyo solo permite tener una versión programada de cada elemento. Si programas una segunda modificación al elemento, sobreescribes la programación anterior.<br/><br/>Además de la programación de la publicación, también puedes programar la despublicación. Llegado el momento, la versión que está publicada pasará a ser un respaldo, dejando el elemento en cuestión sin una versión publicada.<br/><br/>Cuando se ejecutan las acciones programadas, Modyo puede tardar unos minutos en completarlas. Modyo te enviará una notificación por correo electrónico cuando la acción se haya completado.<br/><br/>Hay elementos (home, navegación, y plantillas) que **no pueden ser despublicados**. Si se programa una despublicación en conjunto con otros elementos, no tendrá efecto sobre estos elementos en específico. |
+| **Programado** | Cuando programas una publicación, la versión editable pasa a un estado programado. Cuando llega el momento de la publicación, esa versión programada toma el lugar de la versión que está publicada en ese momento. De esta forma, puedes programar un cambio en el futuro en los elementos, y seguir trabajando en la versión editable.<br/><br/>Modyo solo permite tener una versión programada de cada elemento. Si programas una segunda modificación al elemento, sobreescribes la programación anterior.<br/><br/>Además de la programación de la publicación, también puedes programar la despublicación. Llegado el momento, la versión que está publicada pasará a ser un respaldo, dejando el elemento en cuestión sin una versión publicada.<br/><br/>Cuando se ejecutan las acciones programadas, Modyo puede tardar unos minutos en completarlas. Modyo te enviará una notificación por correo electrónico cuando la acción se haya completado.<br/><br/>La página home y las plantillas que no se pueden eliminar **no pueden ser despublicadas**. Si se programa una despublicación en conjunto con otros elementos, no tendrá efecto sobre la página home. |
 | **Aprobado** | Este estado aparece cuando se habilita la revisión en equipo y significa que un elemento en este estado está listo para ser publicado. Cualquier cambio que se le haga a un elemento en este estado, llevará al elemento a un estado editable y deberá pasar nuevamente por el proceso de revisión para poder ser publicado.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 
 Si deseas revisar una versión específica de un elemento, puedes acceder a las "Diferencias entre versiones" para ver los cambios realizados y revertirlos si es necesario.
 
 :::tip Versiones
-Por defecto, Modyo guarda las últimas 20 versiones publicadas de cada elemento, por lo que al hacer la vigesimoprimera publicación, estarás borrando el respaldo de la primera publicación del elemento.
+Por defecto, Modyo conserva hasta 20 respaldos de cada elemento, además de la versión publicada. Cuando un elemento ya tiene 20 respaldos, cada nueva publicación borra el más antiguo: por ejemplo, al hacer la publicación número 22 se borra el respaldo de la primera publicación del elemento.
 
-Este valor se puede modificar mediante variables de entorno y es aplicable para todas las cuentas de este.
+Este límite se define para toda la instalación de Modyo y aplica a todas sus cuentas.
 :::
 
 ### Revertir un Cambio
@@ -122,8 +121,11 @@ Uso: Ideal para correcciones de emergencia en el sitio en vivo sin perder el pro
 | Rollback |La Versión Publicada | Inmediato | El sitio web se actualiza | Revertir un error en producción usando una versión previa |
 
 
-:::tip Permisos de administración
-Dado que esta es una acción potencialmente riesgosa, solo los administradores de sitios o espacios tienen el permiso para ejecutar esta acción.
+:::tip Permisos
+- Para resetear, basta con el permiso de edición del elemento, por ejemplo **Editar Páginas** o **Editar Entradas**.
+- Para hacer rollback, en Channels necesitas el permiso de edición o de revisión del tipo de elemento (**Editar Páginas** o **Revisar Páginas**, **Editar Menús** o **Revisar Menús**, **Editar Widgets** o **Revisar Widgets**, **Editar Plantillas** o **Revisar Plantillas**). En Content necesitas **Revisar Entradas**.
+- En la pantalla de [Revisión y publicación conjunta](/es/platform/channels/sites#revision-y-publicacion-conjunta) de una aplicación web, el rollback solo está disponible con **Administrar Sincronizaciones** o **Gestionar Canales**.
+- En los snippets globales, resetear y hacer rollback requieren **Administrar Snippets Globales** o **Gestionar Canales**.
 :::
 
 ### Locks
@@ -151,13 +153,18 @@ Los modos de vista previa te permiten previsualizar los cambios realizados a ele
 La barra de vista previa contiene los siguientes elementos interactivos:
 
 - **Selector de plantillas**: Permite cambiar entre la versión publicada y editable de los elementos pertenecientes al template builder.
+- **Snippets globales**: Permite cambiar entre la versión publicada y editable de los snippets globales de la cuenta.
 - **Selector de contenido**: Permite alternar entre la versión publicada y editable de los elementos pertenecientes a la aplicación de contenidos y que se estén usando en el sitio mediante el SDK de Liquid de contenido.
 - **Selector de navegación**: Permite cambiar entre la versión publicada y editable de los elementos pertenecientes al navigation builder.
 - **Selector de páginas**: Permite alternar entre la versión publicada y editable de los elementos pertenecientes al page builder.
-- **Selector de vista de contenido**: Permite cambiar entre la versión publicada y editable de la entrada de contenido que se está previsualizando en las vistas personalizadas de contenido. Esta vista no usa directamente el SDK de Liquid de contenido, por lo que el contenido en estas vistas no se verá afectado por el selector del SDK de contenido.
+- **Mostrar**: Si en la ruta que previsualizas hay una página de widgets y una página de contenido, permite elegir cuál mostrar (**Página de Widget** o **Página de contenido**). Si la página de contenido coincidente tiene el index deshabilitado, en su lugar aparece un ícono de advertencia con el mensaje "Existe una página de contenido coincidente, pero el index está deshabilitado".
 - **Selector de widgets**: Si se están previsualizando páginas que contienen widgets personalizados, se mostrará una lista de los widgets presentes en la página, permitiendo seleccionar si se desea visualizar la versión editable o publicada de cada uno de ellos. Una vez realizada la selección, debes hacer click en el botón "refrescar" para que la configuración de los widgets surta efecto.
+- **Originación**: En páginas de originación, permite cambiar entre la versión publicada y editable de la originación.
+- **Layout**: Al previsualizar un widget, permite elegir el layout del sitio con el que se muestra.
+- **Ingresa** y **Cerrar sesión**: Al previsualizar un widget en un sitio con reino, permiten iniciar o cerrar sesión como usuario final para probar el widget con o sin sesión.
 - **Pestaña para minimizar**: Permite ocultar la barra de previsualización para evitar interferencias con los elementos ubicados en la parte superior del sitio. Una vez minimizada, la pestaña seguirá visible para restaurar la barra en el modo vista previa.
 - **Editar elemento**: Al hacer click, se accedes a la vista de edición del elemento que se está visualizando, ya sea una entrada, una página, un widget o una plantilla predeterminada del sitio.
+- **Editar respuesta**: Si la página de originación que previsualizas corresponde a una respuesta, abre esa respuesta en el administrador.
 - **Compartir link**: Permite copiar un enlace que se puede compartir con otros usuarios. Al abrir el enlace, se accede directamente al modo vista previa con la configuración que se tenía al momento de copiar el enlace. Para acceder al modo vista previa, es necesario tener una sesión iniciada en la cuenta de administradora.
 - **Salir del modo vista previa**: Cierra el modo vista previa, eliminando la barra y manteniendo la pestaña en la URL actual del sitio.
 
@@ -185,15 +192,16 @@ Para activar la revisión de equipo, sigue estos pasos:
 Las opciones disponibles son:
 
 - **Habilitar revisión en equipo**: Activa o desactiva por completo la revisión en equipo en este contexto (sitio o espacio).
-- **Número de aprobaciones**: Determina la cantidad de usuarios que deben aprobar el elemento para que esté listo para su publicación. Cuando se alcanza el número requerido de aprobaciones, el estado del elemento cambiará de "Esperando revisión" a "Aprobado".
+- **Número de aprobaciones**: Determina la cantidad de usuarios que deben aprobar el elemento para que esté listo para su publicación. Cuando se alcanza el número requerido de aprobaciones, el estado del elemento cambiará de **En revisión** a **Aprobado**.
 - **Restringir la selección de revisores**: Por defecto, cualquier usuario con los permisos necesarios puede aprobar elementos en espera de revisión. Sin embargo, al habilitar esta opción, solo los revisores seleccionados por el editor podrán llevar a cabo la aprobación.
-- **Forzar revisión**: Esta opción te permite seleccionar una lista de usuarios, de los cuales se requiere al menos una aprobación para que el elemento pueda cambiar a estado "Aprobado". Esto es independiente del número de aprobaciones configurado anteriormente. Incluso si un elemento tiene la cantidad de aprobaciones necesarias, permanecerá en estado "Esperando aprobación" si ningún usuario de la lista lo ha aprobado.
-- **Requerir todos**: Esta opción extiende la restricción anterior a todos los usuarios seleccionados. En este caso, se requerirá la aprobación de todos los usuarios de la lista para que el elemento pueda cambiar a estado "Aprobado".
+- **Forzar revisión**: Esta opción te permite seleccionar una lista de usuarios, de los cuales se requiere al menos una aprobación para que el elemento pueda cambiar a estado **Aprobado**. Esto es independiente del número de aprobaciones configurado anteriormente. Incluso si un elemento tiene la cantidad de aprobaciones necesarias, permanecerá en estado **En revisión** si ningún usuario de la lista lo ha aprobado.
+- **Requerir todos**: Esta opción extiende la restricción anterior a todos los usuarios seleccionados. En este caso, se requerirá la aprobación de todos los usuarios de la lista para que el elemento pueda cambiar a estado **Aprobado**.
 
 :::tip Atención
 - Si bien la aprobación se podría encontrar limitada, cualquier usuario con permisos puede hacer comentarios sobre el elemento.
-- Cuando haces cambios en la configuración de revisión en equipo, los elementos que ya estaban esperando revisión seguirán rigiéndose por las reglas anteriores a los cambios.
-- Para que esos elementos se ajusten a la nueva configuración, es necesario que sean rechazados y enviados a revisión nuevamente.
+- Al activar o desactivar la revisión en equipo, los elementos que estaban **En revisión** o **Aprobado** vuelven a **Borrador**.
+- Los cambios en **Número de aprobaciones**, **Restringir la selección de revisores** y **Requerir todos** se aplican también a los elementos que ya están **En revisión**.
+- Los usuarios de **Forzar revisión** se asignan al elemento cuando se envía a revisión. Para que un elemento que ya está **En revisión** tome los cambios en esa opción, es necesario rechazarlo y enviarlo a revisión nuevamente.
   :::
 
 
