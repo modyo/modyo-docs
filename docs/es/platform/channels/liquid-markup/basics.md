@@ -131,8 +131,8 @@ Hola Juan!
 ```
 
 Los guiones eliminan espacios:
-- `{{-` o `{%-` elimina espacios a la izquierda
-- `-}}` o `-%}` elimina espacios a la derecha
+- <span v-pre>`{{-`</span> o <span v-pre>`{%-`</span> elimina espacios a la izquierda
+- <span v-pre>`-}}`</span> o <span v-pre>`-%}`</span> elimina espacios a la derecha
 
 ## Operadores
 

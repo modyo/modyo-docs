@@ -234,7 +234,7 @@ Este patrón asegura:
 
 Los widgets se despliegan en Modyo usando el Modyo CLI. La plataforma maneja el hosting de bundles, versionado e inyección en páginas automáticamente.
 
-La configuración puede pasarse a los widgets mediante variables Liquid (ver [Patrón de Configuración con Liquid](development/widgets.html#patron-de-configuracion-con-liquid)).
+La configuración puede pasarse a los widgets mediante variables Liquid (ver [Patrón de Configuración con Liquid](development/api-integration.html#patron-de-configuracion-con-liquid-despliegue-en-modyo)).
 
 ### Cuándo Usar Code Splitting Interno
 

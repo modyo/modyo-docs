@@ -14,3 +14,4 @@ docs/.vuepress/dist/
 .vscode/
 .idea/
 bun.lockb
+docs/.vitepress/cache/
