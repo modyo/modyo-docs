@@ -206,6 +206,8 @@ In a specific submission, you can reassign the validation from the **Validations
 
 The signature task allows for a simple signature with a checkbox or an advanced one when a digital signature provider is installed in the realm integrations.
 
+In the task, you write the document shown to the user with a rich text editor. That document accepts HTML with the same restrictions as the [Rich Text of forms](/en/platform/customers/forms.html#rich-text): the editor removes what is not allowed, and the platform doesn't save a document that has HTML outside the allowed list.
+
 ### Pending Review
 
 The pending review task pauses the origination process. It is used to trigger asynchronous processes, usually in external systems.

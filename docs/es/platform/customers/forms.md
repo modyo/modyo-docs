@@ -10,9 +10,13 @@ Al entrar a la herramienta, podrás ver un listado de todos los formularios que 
 
 En cada fila de la tabla de formularios, verás en la primera columna el nombre del formulario, a continuación la fecha de creación, y la cantidad de respuestas que se han enviado para ese formulario.
 
-Desde este listado también puedes acceder a la vista de análisis individual, haciendo click en el título del formulario, asimismo al listado de respuestas del formulario, haciendo click en el número de respuestas del formulario.
+Desde este listado, al hacer click en el nombre de un formulario o en su número de respuestas, llegas a la vista de [Respuestas](/es/platform/customers/forms.html#respuestas) del formulario.
 
-Para habilitar o deshabilitar los formularios y permitir que usuario puedan o no enviar sus respuestas, debes ir a la vista de análisis y seleccionar la acción respectiva entre las opciones desplegadas en la sección superior derecha.
+En esa vista, el menú de opciones de la sección superior derecha te permite abrir el formulario en el sitio (**Ver**), si está habilitado; editarlo (**Editar**); habilitarlo o deshabilitarlo (**Habilitar** o **Deshabilitar**) para permitir o no que los usuarios envíen sus respuestas, y eliminarlo (**Borrar**). Editar, habilitar, deshabilitar y borrar requieren el permiso **Administrar Formularios**; sin él, el menú muestra **Mostrar** en lugar de **Editar**, para ver la configuración del formulario.
+
+:::danger Peligro
+Para borrar un formulario, primero debes deshabilitarlo. Al confirmar, se eliminan permanentemente todos sus datos, incluidas sus respuestas. Tampoco puedes borrar un formulario que esté en uso en un [segmento](/es/platform/customers/segments).
+:::
 
 ## Crear Formulario
 
@@ -36,19 +40,18 @@ Los formularios que se copian a un [stage del reino](/es/platform/customers/real
 - **Habilitado**: Selecciona si el formulario va a comenzar en estado habilitado o no.
 - **Aceptar múltiples respuestas**: Si esta opción está habilitada, cada vez que un usuario responda el formulario, se registrará como una nueva respuesta. Si esta opción está deshabilitada, cada vez que un mismo usuario responda el formulario, estará sobrescribiendo su respuesta anterior.
 - **Solo para usuarios registrados**: Te permite determinar si el formulario solo será visible para usuario registrados en Modyo. Si esta opción está habilitada, un usuario sin sesión no podrá ver el formulario. Si esta opción está deshabilitada, cualquier usuario podrá responder el formulario.
-- **Solicitar contestar automáticamente**: Si el formulario es privado (solo usuarios registrados lo pueden contestar), aparecerá esta opción que te permitirá redireccionar automáticamente a los usuarios que inicien sesión en el sitio asociado al formulario para que lo contesten.
 
 Luego de una división podrás ver las opciones para modificar la redirección luego de que un usuario responda el formulario.
 
 - **Opciones por defecto**: Luego de responder el formulario el usuario es redireccionado al home del sitio asociado al formulario.
-- **URL de redirección**: Te permite ingresar una URL a la que se redireccionará al usuario luego de haber respondido el formulario. Es necesario escribir el URL entero (e.g. https://test.modyo.com/home).
-- **Página de agradecimiento**: Te permite añadir un mensaje de agradecimiento personalizado luego de que un usuario responde el formulario, junto a un botón que lo llevará a una página del sitio. La URL del botón es una URL relativa del sitio asociado al formulario. También podrás determinar si quieres que el usuario sea redireccionado automáticamente a esa página luego de un tiempo determinado.
+- **URL de redirección**: Te permite ingresar una URL a la que se redireccionará al usuario luego de haber respondido el formulario. Puedes escribir una URL completa (e.g. https://test.modyo.com/home) o una ruta del sitio asociado al formulario que empiece con `/` (e.g. `/home`). Si escribes una dirección que no empieza con `/`, `http://` ni `https://`, la plataforma le antepone `http://`.
+- **Página de agradecimiento**: Te permite añadir un mensaje de agradecimiento personalizado luego de que un usuario responde el formulario, junto a un botón que lo llevará a la dirección de **Enlace de Redirección**, que acepta los mismos valores que la **URL de redirección**. Si marcas **Habilitar Auto Redirección**, el usuario es redireccionado automáticamente a esa dirección después de los segundos indicados en **Tiempo de redirección**, o de 10 segundos si lo dejas vacío.
 
 
 - **Habilitar segmentación**: Si el formulario es privado (solo usuarios registrados lo pueden contestar), podrás seleccionar un conjunto de usuarios que puedan contestar el formulario haciendo uso de los segmentos. Para aprender más dirígete a [Segmentos](/es/platform/customers/segments)
 
 :::warning Atención
-En caso de ser un formulario público, los usuarios que no tienen una sesión activa en Modyo, verás tres campos obligatorios en la parte superior del formulario: Nombre, Apellido, y Correo. Una vez que envíen el formulario, se creará un usuario con esos valores y luego la respuesta será asociada a ese usuario.
+En caso de ser un formulario público, los usuarios que no tienen una sesión activa en Modyo verán tres campos obligatorios en la parte superior del formulario: Nombre, Apellido y Correo. Si el reino no usa el correo electrónico como nombre de usuario, verán además un cuarto campo obligatorio para el nombre de usuario, con la etiqueta que el reino tenga configurada. Mientras alguno de estos campos esté vacío o el correo no sea válido, el botón de envío queda deshabilitado. Una vez que envíen el formulario, se creará un usuario con esos valores y luego la respuesta será asociada a ese usuario.
 :::
 
 :::warning Atención
@@ -78,7 +81,7 @@ El grupo **Campos de contenido** tiene una opción:
 
 Los tipos de campos del grupo **Campos de input** son:
 
-- **Texto simple**: Permite ingresar hasta 256 caracteres.
+- **Texto simple**: Permite ingresar texto en una sola línea. Para limitar su largo, configura **Mínimo** y **Máximo** en las propiedades del campo. Si no configuras un **Máximo**, admite el mismo largo que el campo **Párrafo**.
 - **Párrafo**: Permite ingresar texto en múltiples líneas de hasta 65,535 caracteres.
 - **Número**: Permite ingresar números.
 - **Dropdown**: Agrega opciones para que la persona usuaria seleccione una en formato _dropdown_.
@@ -117,6 +120,11 @@ Ten en cuenta lo siguiente:
 
 - Si el Liquid tiene un error de sintaxis, el campo no se guarda y la plataforma muestra el error.
 - El contenido de cada campo admite hasta unos 64 KB de HTML.
+- El HTML admitido es acotado. Por defecto, se permiten las etiquetas `a`, `abbr`, `acronym`, `address`, `b`, `big`, `blockquote`, `br`, `caption`, `cite`, `code`, `col`, `colgroup`, `dd`, `del`, `dfn`, `div`, `dl`, `dt`, `em`, `h1` a `h6`, `hr`, `i`, `img`, `ins`, `kbd`, `li`, `mark`, `ol`, `p`, `pre`, `s`, `samp`, `small`, `span`, `strike`, `strong`, `sub`, `sup`, `table`, `tbody`, `td`, `tfoot`, `th`, `thead`, `time`, `tr`, `tt`, `u`, `ul` y `var`, y los atributos `abbr`, `alt`, `cite`, `class`, `colspan`, `datetime`, `height`, `href`, `lang`, `name`, `rel`, `rowspan`, `src`, `style`, `target`, `title`, `width` y `xml:lang`.
+- Las direcciones de enlaces e imágenes solo admiten `http`, `https`, `mailto` y `tel`, o rutas relativas. Si insertas un enlace con otro esquema, el editor muestra un aviso.
+- El editor quita lo que no está permitido. Si al guardar el contenido trae HTML fuera de esa lista, también cuando llega por la API, el campo no se guarda y el error indica qué no se admite, por ejemplo `<iframe>`, `id` o `href="javascript:"`.
+- Al mostrar el formulario, la plataforma vuelve a filtrar el contenido, incluido el que genera el Liquid: quita las etiquetas y atributos no permitidos, conserva su texto y elimina `script` y `style` junto con su contenido.
+- Estas reglas también aplican al Texto enriquecido de las tareas Input de las [originaciones](/es/platform/customers/origination), a las instrucciones de **Agregar campo Pop-up de instruciones** de sus campos y al documento de la tarea de [Firma](/es/platform/customers/origination.html#firma).
 - No aparece en las respuestas: no se ve en el detalle de una respuesta ni en el correo de notificación de nuevas respuestas, no se incluye en la exportación ni en las estadísticas del formulario, y no está disponible para filtrar segmentos por respuestas.
 - Si una respuesta trae un valor para este campo, por ejemplo desde la API, la plataforma lo descarta.
 
@@ -136,7 +144,7 @@ Algunos campos cuentan con validaciones, para asegurar que el usuario cumpla con
 - **Fecha mínima**: La fecha ingresada no puede ser anterior a este valor
 - **Fecha máxima**: La fecha ingresada no puede ser posterior a este valor.
 
-De la misma forma en que algunos campos cuentan con validaciones, la mayoría de los campos de input cuentan con un valor por defecto que venga preseleccionado al momento de cargar el formulario. Los únicos que no cuentan con un valor por defecto son las preguntas anidadas. El [Texto enriquecido](/es/platform/customers/forms.html#texto-enriquecido), como no captura una respuesta, solo tiene título, identificador y contenido.
+De la misma forma en que algunos campos cuentan con validaciones, algunos campos de input permiten definir un valor por defecto que viene preseleccionado al cargar el formulario: **Texto simple**, **Párrafo** y **Número**, en **Respuesta por defecto**; **Fecha**, con la casilla **Default**; y **Casillas de verificación** y **Elección**, marcando una de sus opciones. **País**, **Teléfono** y **Dirección** solo permiten usar la ubicación actual del usuario como país, o código de país, predeterminado. En el constructor, **Lista desplegable**, **Preguntas Anidadas**, **Archivo**, **Correo electrónico** y **URL** no permiten definir un valor por defecto. El [Texto enriquecido](/es/platform/customers/forms.html#texto-enriquecido), como no captura una respuesta, solo tiene título, identificador y contenido.
 
 ### Expresiones regulares
 
