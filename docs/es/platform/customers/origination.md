@@ -20,6 +20,7 @@ Para crear una nueva originación, sigue estos pasos:
 - Dirígete a la opción **Origination**.
 - Haz clic en el botón **+ Nueva originación**.
 - Asigna un nombre a la originación.
+- Revisa el **Identificador**: se completa a partir del nombre y puedes ajustarlo, pero si después cambias el nombre se vuelve a generar. Debe ser único en el reino, admite hasta 100 caracteres y forma parte de la URL de la originación.
 - Haz clic en **Crear** para finalizar y comenzar a configurar los pasos del nuevo flujo de originación.
 
 
@@ -196,7 +197,9 @@ Los tres campos se pueden usar en la lógica condicional de la originación, per
 La tarea de validación requiere una revisión manual del agente asignado. Este debe validar los datos entregados por el usuario para desbloquear la siguiente tarea del flujo. 
 Se hace un refresco de la tarea cada 5 segundos para que el usuario final sepa si la tarea fue validada.
 
-Al configurar la tarea, puedes definir un **Asignado**: un administrador o un grupo de administradores responsable de las validaciones. Al seleccionar un grupo, puedes asignar a todo el grupo o a un usuario específico dentro de él. Si no defines un asignado, las validaciones se asignan de forma predeterminada al asignado de la respuesta.
+Al configurar la tarea, en **Selecciona las tareas que deseas validar** marcas las tareas cuyas respuestas revisará el agente. Solo puedes validar tareas **Input** y **Snippet de código**, y solo las que están antes de la tarea de validación en el flujo: las posteriores aparecen deshabilitadas y, si estaban marcadas, se desmarcan. Las tareas se listan en el orden del flujo; las de tipo **Snippet de código** aparecen bajo el encabezado **Tareas de código**, y las tareas Input que marcaste como no visibles en la [lógica condicional](#configurar-logica-condicional), bajo **Tareas ocultas**.
+
+También puedes definir un **Asignado**: un administrador o un grupo de administradores responsable de las validaciones. Al seleccionar un grupo, puedes asignar a todo el grupo o a un usuario específico dentro de él. Si no defines un asignado, las validaciones se asignan de forma predeterminada al asignado de la respuesta.
 
 Los administradores asignados reciben un correo cuando una validación queda pendiente y también pueden revisarla desde la vista [**Mis tareas**](/es/platform/core/my-tasks.html) del menú principal, filtrando por el tipo de tarea **Revisión de validación**. El usuario recibe una notificación interna cuando su tarea es aprobada o rechazada.
 
@@ -210,6 +213,24 @@ La tarea de firma permite una firma simple con un checkbox o una avanzada cuando
 
 La tarea de revisión pendiente pausa el proceso de originación. Se usa para gatillar procesos asíncronos, generalmente en sistemas externos.
 Se hace un refresco de la tarea cada 5 segundos para que el usuario final sepa si la tarea fue revisada.
+
+En **Página de contenido pendiente de revisión** escribes lo que ve el usuario en la página de originación mientras la tarea espera la revisión. En esta tarea, ese campo cumple el papel del **Mensaje de espera que ve el usuario** de las demás [tareas de agente](#tareas-respondidas-por-agentes). El agente también ve este contenido al abrir la tarea desde la respuesta. Si lo dejas vacío, el usuario ve un mensaje predeterminado que le indica que el paso está siendo procesado.
+
+El contenido admite HTML y Liquid, hasta 65.535 caracteres, y en la página de originación puedes usar, entre otras, estas variables:
+
+- `submission`: La respuesta.
+- `task`: La tarea de revisión pendiente.
+- `task_response`: La respuesta a esta tarea.
+- `assignee_label`: El nombre del administrador o del grupo a cargo de la tarea, según el asignado efectivo. Queda vacía si nadie la tiene asignada.
+
+Por ejemplo:
+
+```liquid
+<p>Estamos revisando tu solicitud. Podrás continuar cuando terminemos.</p>
+{% if assignee_label %}
+  <p>Está a cargo de {{ assignee_label }}.</p>
+{% endif %}
+```
 
 Al igual que en las tareas de validación, puedes definir un **Asignado** para la tarea: un administrador o un grupo de administradores. Si no defines uno, la revisión se asigna de forma predeterminada al asignado de la respuesta.
 
@@ -699,7 +720,7 @@ Al configurar la tarea, en **Seleccionar ítems a confirmar** eliges las tareas 
 
 El usuario ve cada tarea seleccionada con sus respuestas y un enlace **Editar** que lo lleva directamente a esa tarea para corregirla. Al presionar **Confirmar**, la tarea se completa y el flujo continúa. Para completar la tarea, todos los ítems configurados deben estar confirmados.
 
-En los detalles de una respuesta, las tareas de confirmación completadas muestran el listado de **Tareas confirmadas**.
+En la pestaña **Campos** de una respuesta, cada tarea de confirmación completada muestra el listado de **Tareas confirmadas**.
 
 ### Tareas respondidas por agentes
 
@@ -798,6 +819,7 @@ Si consumes la API de administración de originaciones, ten en cuenta que cada r
 Al seleccionar la opción **Editar** en el menú contextual de tu originación puedes editar sus propiedades.
 
 - **Nombre**: Define el nombre de la originación, visible para los usuarios en la interfaz.
+- **Identificador**: Aparece bloqueado con un candado. Para modificarlo, presiona el candado y confirma la advertencia **Desbloquear campo identificador**: cambiar el identificador cambia la URL de la originación y rompe las referencias a ella desde sistemas externos o mediante el SDK de Liquid. Cambiar el **Nombre** no lo modifica.
 - **Descripción**: Incluye un breve texto explicativo sobre el propósito de la originación.
 - **Mensaje de completado**: Es el mensaje que aparecerá al usuario al finalizar el proceso de originación.
 - **Asignado por defecto de la respuesta**: Especifica el administrador o grupo de administradores que será asignado automáticamente a cada nueva respuesta. Al seleccionar un grupo, puedes usar la opción **Asignar a todo el grupo** o elegir un usuario específico dentro de él.
@@ -935,7 +957,7 @@ La vista resumen de una originación te ofrece un resumen de las métricas clave
 
 El **Total** cuenta también las respuestas **No Iniciada**, que no tienen tarjeta propia: si la suma de las otras tres no cuadra con el total, la diferencia son las respuestas que se crearon y nunca se iniciaron.
 
-Debajo de las tarjetas, un gráfico de distribución reparte las respuestas en cinco categorías que combinan el [estado de la respuesta](/es/platform/customers/origination.html#ciclo-de-vida-de-una-respuesta) con su [estado de vencimiento](/es/platform/customers/origination.html#vencimiento-de-las-respuestas): **No Iniciada**, **A tiempo**, **Vence pronto**, **Vencido** y **Completada**. Las respuestas **Pendiente** se reparten entre **A tiempo**, **Vence pronto** y **Vencido**; si la originación no tiene **Vence en** configurado, todas quedan en **A tiempo**. Las **Cancelada** no aparecen en el gráfico.
+Debajo de las tarjetas, un gráfico de distribución reparte las respuestas en cinco categorías que combinan el [estado de la respuesta](/es/platform/customers/origination.html#ciclo-de-vida-de-una-respuesta) con su [estado de vencimiento](/es/platform/customers/origination.html#vencimiento-de-las-respuestas): **No iniciado**, **A tiempo**, **Vence pronto**, **Vencido** y **Completada**. **No iniciado** agrupa las respuestas **No Iniciada**, y las **Pendiente** se reparten entre **A tiempo**, **Vence pronto** y **Vencido**; si la originación no tiene **Vence en** configurado, todas quedan en **A tiempo**. Las **Cancelada** no aparecen en el gráfico.
 
 Junto al gráfico, el **Tiempo promedio de completado** muestra cuánto tardan en promedio las respuestas completadas de esta originación.
 

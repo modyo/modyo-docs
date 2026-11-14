@@ -20,6 +20,7 @@ To create a new origination, follow these steps:
 - Go to the **Origination** option.
 - Click the **+ New origination** button.
 - Assign a name to the origination.
+- Review the **Identifier**: it's filled in from the name and you can adjust it, but if you change the name afterward, it's generated again. It must be unique in the realm, accepts up to 100 characters, and is part of the origination URL.
 - Click **Create** to finish and begin configuring the steps of the new origination flow.
 
 
@@ -196,7 +197,9 @@ All three fields can be used in the conditional logic of the origination, but on
 The validation task requires manual review by the assigned agent. They must validate the data provided by the user to unlock the next task in the flow.
 The task is refreshed every 5 seconds so that the end user knows if the task has been validated.
 
-When configuring the task, you can define an **Assignee**: an administrator or a group of administrators responsible for the validations. When selecting a group, you can assign the whole group or a specific user within it. If you do not define an assignee, validations are assigned by default to the submission assignee.
+When configuring the task, in **Select the tasks to validate**, you check the tasks whose answers the agent will review. You can only validate **Input** and **Code snippet** tasks, and only those that come before the validation task in the flow: later tasks appear disabled and, if they were checked, they're unchecked. Tasks are listed in flow order; **Code snippet** tasks appear under the **Code tasks** heading, and Input tasks that you marked as not visible in the [conditional logic](#configure-conditional-logic) appear under **Hidden tasks**.
+
+You can also define an **Assignee**: an administrator or a group of administrators responsible for the validations. When selecting a group, you can assign the whole group or a specific user within it. If you do not define an assignee, validations are assigned by default to the submission assignee.
 
 Assigned administrators receive an email when a validation is pending and can also review it from the [**My tasks**](/en/platform/core/my-tasks.html) view in the main menu, filtering by the **Validation review** task type. The user receives an internal notification when their task is approved or rejected.
 
@@ -210,6 +213,24 @@ The signature task allows for a simple signature with a checkbox or an advanced 
 
 The pending review task pauses the origination process. It is used to trigger asynchronous processes, usually in external systems.
 The task is refreshed every 5 seconds so that the end user knows if the task has been reviewed.
+
+In **Pending review page content**, you write what the user sees on the origination page while the task awaits review. In this task, that field plays the role of the **Waiting message shown to the user** of the other [agent tasks](#tasks-answered-by-agents). The agent also sees this content when opening the task from the submission. If you leave it empty, the user sees a default message telling them that the step is being processed.
+
+The content accepts HTML and Liquid, up to 65,535 characters, and on the origination page you can use these variables, among others:
+
+- `submission`: The submission.
+- `task`: The pending review task.
+- `task_response`: The response to this task.
+- `assignee_label`: The name of the administrator or group in charge of the task, based on the effective assignee. It's empty if no one is assigned.
+
+For example:
+
+```liquid
+<p>We're reviewing your request. You'll be able to continue once we're done.</p>
+{% if assignee_label %}
+  <p>It's being handled by {{ assignee_label }}.</p>
+{% endif %}
+```
 
 As with validation tasks, you can define an **Assignee** for the task: an administrator or a group of administrators. If you do not define one, the review is assigned by default to the submission assignee.
 
@@ -698,7 +719,7 @@ When configuring the task, in **Select items to confirm** you choose the tasks w
 
 The user sees each selected task with its answers and an **Edit** link that takes them directly to that task to correct it. Pressing **Confirm** completes the task and the flow continues. To complete the task, all configured items must be confirmed.
 
-In the details of a submission, completed confirmation tasks show the list of **Confirmed Tasks**.
+In the **Fields** tab of a submission, each completed confirmation task shows the list of **Confirmed Tasks**.
 
 ### Tasks answered by agents
 
@@ -797,6 +818,7 @@ If you consume the originations admin API, keep in mind that each rule now has `
 By selecting the **Edit** option in the context menu of your origination, you can edit its properties.
 
 - **Name**: Defines the name of the origination, visible to users in the interface.
+- **Identifier**: Appears locked with a padlock. To modify it, press the padlock and confirm the **Unlock Identifier field** warning: changing the identifier changes the origination URL and breaks references to it from external systems or through the Liquid SDK. Changing the **Name** doesn't modify it.
 - **Description**: Includes a brief explanatory text about the purpose of the origination.
 - **Completed message**: This is the message that will appear to the user at the end of the origination process.
 - **Default submission assignee**: Specifies the administrator or group of administrators that will be automatically assigned to each new submission. When selecting a group, you can use the **Assign to whole group** option or choose a specific user within it.
