@@ -13,7 +13,7 @@ Here you can modify both the user's visual experience and the settings related t
 
 In this section, you can configure general aspects of the realm, such as:
 
-- **Title**
+- **Name**: The name of the realm or stage. It's the text you have to type to confirm its deletion.
 - **Identifier**: The URL of the realm's profile, login, registration, and password recovery views. See the full list in [Realm routes](/en/platform/customers/profile.html#realm-routes). If the realm has a [custom domain](/en/platform/customers/settings.html#domains), its routes on that domain don't include the identifier.
 - **Disable platform credentials**: By checking this box, you deactivate Modyo credentials in the realm and only allow access via SSO.
 
@@ -34,7 +34,7 @@ Before enabling the option to disable Modyo credentials in the realm, make sure 
 - **Default Avatar Image**: Image shown on the avatar of users who do not have a custom image.
 - **Soft login**: Enables logging in with a one-time code (OTP) instead of a password, and defines its validity, the wait time to resend it, and the channels used to send it. See the details in [Soft login](#soft-login).
 - **Signup form**: Here you can enable or disable different attributes in the registration form, such as the second surname, email confirmation, user avatar, date of birth, gender, and phone number.
-- **Delete realm**: Deletes the realm and all its stages. This process is performed in the background, so you may not see the realm disappear immediately after executing the action. To confirm the deletion, you must enter the full name of the realm. It only shows up if you have the **Admin General** permission, and you can't use it while a web app or space has the realm or any of its stages selected. In a stage, the button is called **Delete stage** and asks for the stage's name. See the details in [Delete a Realm](/en/platform/customers/realms.html#delete-a-realm) and [Delete a stage](/en/platform/customers/realms.html#delete-a-stage).
+- **Delete realm**: Deletes the realm and all its stages. The realm disappears from the list when you confirm, and the deletion of its data continues in the background. To confirm the deletion, you must enter the full name of the realm. It only shows up if you have the **Admin General** permission, and you can't use it while a web app or space has the realm or any of its stages selected. In a stage, the button is called **Delete stage** and asks for the stage's full **Name**, for example **qa Customers**. See the details in [Delete a Realm](/en/platform/customers/realms.html#delete-a-realm) and [Delete a stage](/en/platform/customers/realms.html#delete-a-stage).
 
 
 ### Soft login
