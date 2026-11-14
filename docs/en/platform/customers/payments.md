@@ -25,7 +25,7 @@ In this section we can configure the most general data that gives life to the co
 
 Additionally, you can enable automatic email sending when the user pays for their order, in the form of a receipt.
 
-For this receipt, it is essential to adapt it to the commerce, so it is fundamental that the code implemented as a template is correctly aligned with the user's order data that the platform will automatically write.
+The body of this receipt is written with Liquid and uses the order data, which the platform fills in when sending it. See the available variables and an example in [Email body variables](/en/platform/customers/settings.html#email-body-variables).
 
 ## Payment Methods
 

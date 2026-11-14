@@ -21,8 +21,8 @@ En esta sección, puedes configurar aspectos generales del reino, como:
 Antes de habilitar la opción de deshabilitar las credenciales de Modyo en el reino, asegúrate de tener configurado un proveedor de identidad SSO para el reino. De lo contrario, los usuarios no podrán iniciar sesión.
 :::
 
-- **Después de iniciar sesión, redirigir a**: Te permite elegir una URL específica a la cual dirigir al usuario, una vez que haya ingresado al reino. Si no activas la opción de "Forzar redirección", el usuario será redirigido a la URL ingresada solo si no es posible volver a la URL desde la que inició sesión.
-- **Forzar la redirección a**: Al activar esta opción, el usuario siempre será redirigido a la URL especificada en el campo de redirección del inicio de sesión, sin importar desde dónde inició la sesión.
+- **Después de iniciar sesión, redirigir a**: Te permite elegir una URL específica a la cual dirigir al usuario, una vez que haya ingresado al reino. Si no activas **Forzar la redirección a**, el usuario será redirigido a la URL ingresada solo si no es posible volver a la URL desde la que inició sesión. Tiene que ser una URL absoluta, con protocolo y dominio, en el dominio de tu cuenta, en el de una de tus aplicaciones web o en el [dominio personalizado](#dominios) del reino, y no puede apuntar a las páginas de inicio de sesión del reino (inicio de sesión, ingreso con código o pantalla del código), porque el usuario volvería a la pantalla de ingreso. Si no cumple estas condiciones, la configuración no se guarda.
+- **Forzar la redirección a**: Al activar esta opción, el usuario siempre será redirigido a la URL especificada en el campo de redirección del inicio de sesión, sin importar desde dónde inició la sesión. La excepción es un enlace de inicio de sesión con el parámetro `redirect_to`, descrito en [Redireccionar Login](#redireccionar-login): si apunta a una página válida, tiene prioridad sobre esta opción.
 - **Cuando se requiere iniciar sesión, redirigir a**: Define a dónde se redirige a un visitante sin sesión cuando intenta acceder a contenido que requiere autenticación: a la **Página de inicio de sesión** (opción por defecto) o a la **Página de registro** del reino. En ambos casos, tras autenticarse, el usuario vuelve a la URL a la que intentaba acceder.
 - **Activación de la cuenta**:
   - Directa: Los usuarios que se registren pueden iniciar sesión directamente.
@@ -305,7 +305,7 @@ Utiliza un cliente de autenticación para enviar los tokens de acceso de tu inte
 - URI de cierre de sesión: URI al que el servidor de autenticación redirigirá al usuario después de cerrar la sesión.
 - Descripción
 - Confidencial: Existen dos tipos de clientes OAuth, confidencial o públicos. Selecciona la opción confidencial si tu aplicación puede autenticarse de manera segura con el servidor de autenticación. Los clientes públicos suelen ser aplicaciones que se ejecutan en dispositivos móviles o navegadores.
-- Scopes: Si tu servicio de autenticación OAuth2 usa múltiples espacios o ambientes para separar a los usuarios y quieres usar uno en específico en esta integración, defínelo en este campo.
+- Scopes: Scopes que este cliente puede solicitar al autorizar, separados por coma. Usa `public`, el scope por defecto del servidor de autorización del reino y el que pide la URL de autorización que muestra el panel; un scope que el servidor no reconoce hace que la autorización falle. Si completas el campo, el cliente solo puede pedir los scopes de la lista.
 
 Al hacer click en el nombre del cliente, el panel muestra su **UID** y su **Secreto**, y además dos bloques listos para copiar: **Cliente web**, con la URL de autorización ya armada, y **Cliente móvil**, con los endpoints de autorización, token, revocación y cierre de sesión del reino. Con esos valores tu aplicación completa el flujo `authorization_code` del reino y obtiene el access token con el que llama a la API pública de Customers en nombre del usuario. El paso a paso está en [Autenticación](/es/platform/customers/api.html#autenticacion).
 
@@ -361,7 +361,7 @@ En la sección **Credenciales** completa:
 
 - **API Key**: API Key de Auronix para autenticación.
 - **Canal WhatsApp**: Número de la línea de salida de WhatsApp. Debe ser un número de teléfono mexicano válido.
-- **URL Base**: Déjala en blanco para usar el valor por defecto de la plataforma; úsala solo para sandbox o ambientes a medida.
+- **URL Base**: Obligatoria. Al crear la integración puede venir precargada con la URL de Auronix de la plataforma; cámbiala solo para sandbox o ambientes a medida. Debe ser una URL HTTPS del dominio `auronix.com` o de uno de sus subdominios, y cumplir las mismas reglas que la URL del endpoint de [Custom SMS](#custom-sms). Al editar la integración, si dejas el campo en blanco se mantiene la URL guardada.
 
 En la sección **Configuración OTP** completa:
 
@@ -383,8 +383,8 @@ Para habilitarla, el formulario de registro del reino debe tener el campo de tel
 
 En la sección **Credenciales** completa:
 
-- **URL del endpoint**: El código OTP se envía como una petición POST a esta URL, con un cuerpo JSON que contiene `phone` y `code`.
-- **Token de autenticación**: Se envía en el header `Authorization` como Bearer token.
+- **URL del endpoint**: El código OTP se envía como una petición POST a esta URL, con un cuerpo JSON que contiene `phone` y `code`. Debe ser una URL HTTPS en el puerto 443 u 8443, con un dominio completo o una IP pública como host y sin usuario ni contraseña incluidos en la URL. Estas reglas se comprueban cada vez que guardas una URL nueva o modificada. Además, si al momento del envío el dominio apunta a una dirección de red interna, el envío se bloquea y el código no llega por este canal.
+- **Token de autenticación**: Se envía en el header `X-API-Key` de cada petición, junto con `Content-Type: application/json`. Modyo no envía el header `Authorization`, así que tu endpoint debe validar el token en `X-API-Key`.
 
 Una vez habilitada la integración, selecciona **Phone** en el **Canal de envío del OTP** de la configuración General. Custom SMS puede convivir con otras integraciones de OTP por teléfono, como Auronix: ambas envían el código en cada inicio de sesión de forma independiente, y el fallo de una no interrumpe a la otra.
 
@@ -490,6 +490,9 @@ Los campos personalizados tienen propiedades estándar que debes tener en cuenta
 Los campos personalizables pueden estar habilitados o deshabilitados. Si están habilitados, un administrador puede usarlos y, dependiendo de su configuración, pueden también estar disponibles para los usuarios.
 
 Cuando un campo personalizable está deshabilitado, no aparece en ningún formulario, sin embargo, sus valores se mantienen guardados.
+
+No puedes deshabilitar un campo que se usa en un filtro de [segmentos](/es/platform/customers/segments.html): al intentarlo verás el mensaje **No se puede desactivar un User Custom Field con filtros de Segmentos asociados**. Quita antes ese filtro de los segmentos que lo usan. Tampoco puedes eliminar un campo mientras lo use un filtro de segmento.
+
 
 :::danger Peligro
 Cuando un campo personalizable está deshabilitado, puede ser eliminado.
@@ -597,7 +600,11 @@ Las opciones disponibles para establecer una política de contraseña en la plat
 - Valor mínimo de longitud de contraseña:  Establece el número mínimo de caracteres que una contraseña debe tener, entre 12 y 128 caracteres.
 - Requerir por lo menos una letra minúscula (a - z)
 - Requerir por lo menos una letra mayúscula (A - Z)
-- Requerir por lo menos un caracter no alfanumérico (! @ # $ % ^ & * () _ + - = [] {} |)
+- **Se requiere al menos uno de estos caracteres especiales**: Exige que la contraseña contenga al menos uno de los símbolos que la casilla enumera entre paréntesis. El conjunto predeterminado es `! @ # $ % ^ & * ( ) _ + º - = [ ] { } | " . ' ¿ / ¡ : ;`, y el listado que ves en pantalla es siempre el que valida tu instalación.
+
+:::warning Atención
+Al activar **Se requiere al menos uno de estos caracteres especiales**, la contraseña de los usuarios del reino también queda limitada a ese alfabeto: solo se aceptan letras de la `a` a la `z`, en mayúscula o minúscula, dígitos y los símbolos del listado. Cualquier otro carácter hace que la contraseña se rechace, aunque cumpla el resto de las condiciones. Esto incluye los espacios, las vocales acentuadas, la `ñ` y símbolos como `~`, `<` o `>`.
+:::
 
 #### reCAPTCHA
 
@@ -610,6 +617,8 @@ Puedes habilitar o no reCAPTCHA en el reino, una vez habilitado ingresa:
 :::tip Tip
 Modyo soporta la versión V3 de reCAPTCHA básico, no soporta el enterprise.
 :::
+
+Además del registro, el envío de formularios, el inicio de sesión y la recuperación de contraseña, el captcha del reino protege el envío y la confirmación de las tareas de las [originaciones](/es/platform/customers/origination.html) en el sitio. Si la verificación falla, la respuesta de la tarea no se guarda, la tarea muestra el error y el usuario puede volver a intentarlo.
 
 #### Límites de solicitudes y bloqueos
 
@@ -648,13 +657,43 @@ Desde **Headers de seguridad** controlas la política de seguridad de las págin
 
 ### Configuración de payment
 
-Al habilitar la función de pago en tu reino, tienes acceso a las siguientes opciones:
+Si el plan de tu cuenta incluye Payments, la sección **Configuración de Payment** aparece en la configuración del reino para quienes tienen el permiso **Administrar Configuración de Payment**. Tiene las siguientes opciones:
 
-- **Formato de moneda**: Modifica el tipo de puntuación usado.
-- **Configuración de pago**: Selecciona la unidad monetaria que deseas mostrar. Esta unidad se refleja en las órdenes y reportes. Si no indicas una unidad monetaria, Modyo utiliza la moneda predeterminada según el idioma configurado para el sitio.
-- **Activar el envío de correo electrónico**: Cuando esta opción está seleccionada, el usuario recibe un correo al pagar una orden.
-- **Asunto del correo**: Encabezado del correo enviado a los usuarios.
-- **Cuerpo del correo**: Contenido del mensaje enviado a los usuarios.
+- **Formato de moneda**: Define el separador de miles, el separador decimal y la cantidad de decimales (0, 1 o 2) con que se muestran los montos. Puedes elegir entre seis formatos, como `$123.457`, que es el predeterminado, o `$123,456.79`.
+- **Unidad monetaria**: Texto libre con el símbolo que se antepone a los montos. Esta unidad se refleja en las órdenes y reportes. Si la dejas vacía, Modyo usa `$`.
+- **Activar el envío de correo electrónico**: Cuando esta opción está seleccionada, el usuario recibe un correo cuando su orden pagada se completa. Desde el detalle de una orden completada también puedes reenviarlo con **Reenviar correo**.
+- **Asunto del correo**: Encabezado del correo enviado a los usuarios. Es texto plano: no admite Liquid.
+- **Cuerpo del correo**: Contenido del mensaje enviado a los usuarios. Admite Liquid con los datos de la orden que se describen a continuación.
+
+#### Variables del cuerpo del correo
+
+Las variables del cuerpo del correo van en el nivel raíz, sin prefijo, por ejemplo `customer_name` o `total`:
+
+| Variable | Contenido |
+| --- | --- |
+| `id`, `uuid` y `short_uuid` | Identificadores de la orden. |
+| `created_at` y `updated_at` | Fechas de creación y de última actualización de la orden. |
+| `current_state` | Estado de la orden. |
+| `customer_name` y `customer_email` | Nombre y correo del usuario de la orden. |
+| `order_description` | Descripción de la orden. |
+| `order_items` | Colección con los ítems de la orden. Cada ítem tiene `id`, `name`, `quantity`, `price`, `created_at` y `updated_at`. |
+| `total` y `tax_total` | Total de la orden y total de impuestos. |
+| `payment_info` | Datos del pago aceptado que entrega el medio de pago. |
+| `confirmation_code` y `document_id` | Código de confirmación e ID del documento del comprobante, cuando el medio de pago los entrega. |
+| `reference_id` y `reference_order` | Valores de referencia indicados al crear la orden. |
+| `url` | URL de redirección indicada al crear la orden. |
+
+Por ejemplo:
+
+```liquid
+<p>Hola {{ customer_name }}, recibimos el pago de tu orden {{ short_uuid }}.</p>
+<ul>
+  {% for item in order_items %}
+    <li>{{ item.name }} x {{ item.quantity }}: {{ item.price }}</li>
+  {% endfor %}
+</ul>
+<p>Total: {{ total }}</p>
+```
 
 ### Dominios
 
@@ -667,7 +706,7 @@ Para ver esta sección necesitas el permiso agrupado **Ver Dominios**, y para mo
 Activa la casilla **Activar dominios personalizados** y completa los campos:
 
 - **Dominio primario**: Dominio en el que se sirve el reino. Escribe solo el dominio, sin ruta ni puerto: la pantalla ya agrega `https://`.
-- **Dominio alternativo 1 (opcional)** y **Dominio alternativo 2 (opcional)**: Dominios adicionales que redirigen siempre al dominio primario con un 301, conservando la ruta y los parámetros. La única excepción es la [API de Customers](/es/platform/customers/api.html), que en estos dominios responde 404, sin redirigir. A diferencia de las [aplicaciones web](/es/platform/channels/sites.html#dominios), no puedes elegir el tipo de redirección.
+- **Dominio alternativo 1 (opcional)** y **Dominio alternativo 2 (opcional)**: Dominios adicionales que redirigen siempre al dominio primario, conservando la ruta y los parámetros: con un 301 en las peticiones GET y HEAD, y con un 308 en las demás, como el POST de un callback SAML, para conservar el método y el cuerpo. La única excepción es la [API de Customers](/es/platform/customers/api.html), que en estos dominios responde 404, sin redirigir. A diferencia de las [aplicaciones web](/es/platform/channels/sites.html#dominios), no puedes elegir el tipo de redirección.
 
 Bajo la casilla, la pantalla indica a qué destino debe apuntar el registro CNAME del dominio en tu DNS. Al terminar, haz click en **Guardar**.
 
@@ -688,11 +727,11 @@ Ten en cuenta estas reglas:
 
 #### Qué cambia al activar el dominio
 
-- Las rutas del reino en el dominio de tu cuenta redirigen al dominio personalizado, sin el identificador y conservando los parámetros, como `site` o `return_to`.
+- Las rutas del reino en el dominio de tu cuenta redirigen al dominio personalizado, sin el identificador y conservando los parámetros, como `site` o `return_to`. Usan los mismos códigos que los dominios alternativos: 301 en GET y HEAD, y 308 en las demás peticiones.
 - En el dominio personalizado, una ruta `/realms` o `/api/customers/realms` que no corresponde a ninguna vista ni endpoint del reino responde 404, aunque el dominio también sirva una aplicación web.
 - Los correos del reino (activación, recuperación de contraseña, confirmación, invitaciones, campañas y desuscripción), las URLs de los [objetos Liquid](/es/platform/channels/liquid-markup/objects.html) del reino y del usuario, **Ir al reino**, la impersonación y los endpoints que muestra **Cliente OAuth** usan el dominio del reino. Los enlaces de desuscripción enviados antes del cambio siguen funcionando.
 - El inicio de sesión desde tus aplicaciones web, y el cierre de sesión, el perfil y el registro que se abren desde ellas, se hacen en el dominio del reino.
-- La [API de Customers](/es/platform/customers/api.html) también responde en el dominio personalizado, con el identificador del reino en la ruta, por ejemplo `https://login.mibanco.com/api/customers/realms/my_realm/me`. En el dominio de tu cuenta sigue respondiendo igual, sin redirigir, y los endpoints de token y revocación de OAuth siguen funcionando ahí.
+- La [API de Customers](/es/platform/customers/api.html) también responde en el dominio personalizado, con el identificador del reino en la ruta, por ejemplo `https://login.mibanco.com/api/customers/realms/my_realm/me`. En el dominio de tu cuenta sigue respondiendo igual, sin redirigir, y los endpoints de token, revocación e introspección de OAuth siguen funcionando ahí.
 
 :::tip Notificaciones en tus aplicaciones web
 El template base de las aplicaciones web marca las notificaciones como leídas llamando a la API de Customers en el dominio del reino. Si la aplicación web está en otro dominio, por ejemplo el de tu cuenta, activa **Habilitar CORS** en la sección **Cross Origin Resource Sharing** de [Seguridad](#seguridad): las aplicaciones web asociadas al reino quedan permitidas sin que tengas que agregarlas como orígenes.

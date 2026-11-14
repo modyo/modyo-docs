@@ -21,8 +21,8 @@ In this section, you can configure general aspects of the realm, such as:
 Before enabling the option to disable Modyo credentials in the realm, make sure that you have configured an SSO identity provider for the realm. Otherwise, users won't be able to sign in.
 :::
 
-- **After logging in, redirect to**: Allows you to choose a specific URL to direct the user to, once they have entered the realm. If you don't activate the “Force Redirect” option, the user will be redirected to the URL entered only if it is not possible to return to the URL from which they logged in.
-- **Force redirection to**: By activating this option, the user will always be redirected to the URL specified in the login redirect field, regardless of where they started the session.
+- **After login redirect to**: Allows you to choose a specific URL to direct the user to, once they have entered the realm. If you don't activate **Force redirect to**, the user will be redirected to the URL entered only if it is not possible to return to the URL from which they logged in. It must be an absolute URL, with protocol and domain, on your account's domain, on the domain of one of your web apps, or on the realm's [custom domain](#domains), and it can't point to the realm's login pages (login, login with code, or code screen), because the user would land back on the login screen. If it doesn't meet these conditions, the settings aren't saved.
+- **Force redirect to**: By activating this option, the user will always be redirected to the URL specified in the login redirect field, regardless of where they started the session. The exception is a login link with the `redirect_to` parameter, described in [Redirect Login](#redirect-login): if it points to a valid page, it takes precedence over this option.
 - **On session required redirect to**: Defines where a visitor without a session is sent when trying to access content that requires authentication: to the **Login page** (default option) or to the realm's **Signup page**. In both cases, after authenticating, the user returns to the URL they were trying to access.
 - **Account Activation**:
   - Direct: Users who register can log in directly.
@@ -305,7 +305,7 @@ Use an authentication client to send your integration access tokens to your reso
 - Logout URI: URI to which the authentication server will redirect the user after closing the session.
 - Description
 - Confidential: There are two types of OAuth clients, confidential or public. Select the confidential option if your application can securely authenticate with the authentication server. Public clients are usually applications that run on mobile devices or browsers.
-- Scopes: If your OAuth2 authentication service uses multiple spaces or environments to separate users, and you want to use a specific one in this integration, define it in this field.
+- Scopes: Scopes this client can request when authorizing, comma-separated. Use `public`, the default scope of the realm's authorization server and the one requested by the authorization URL shown in the panel; a scope the server doesn't recognize makes the authorization fail. If you fill in the field, the client can only request the scopes on the list.
 
 Clicking the client name shows its **UID** and its **Secret**, plus two blocks ready to copy: **Client Web**, with the ready-made authorization URL, and **Client Mobile**, with the authorization, token, revocation and logout endpoints of the realm. With those values your application completes the realm `authorization_code` flow and gets the access token it uses to call the public Customers API on behalf of the user. The step by step is in [Authentication](/en/platform/customers/api.html#authentication).
 
@@ -361,7 +361,7 @@ In the **Credentials** section, fill in the following fields:
 
 - **API Key**: Auronix API Key for authentication.
 - **WhatsApp Channel**: WhatsApp outgoing line number. It must be a valid Mexican phone number.
-- **Base URL**: Leave it blank to use the platform default; only override it for sandbox or custom environments.
+- **Base URL**: Required. When you create the integration, it may come prefilled with the platform's Auronix URL; only change it for sandbox or custom environments. It must be an HTTPS URL on the `auronix.com` domain or one of its subdomains, and meet the same rules as the endpoint URL of [Custom SMS](#custom-sms). When editing the integration, if you leave the field blank, the saved URL is kept.
 
 In the **OTP Configuration** section, fill in the following fields:
 
@@ -383,8 +383,8 @@ To enable it, the realm's registration form must have the phone field **enabled 
 
 In the **Credentials** section, fill in the following fields:
 
-- **Endpoint URL**: The OTP code is sent as a POST request to this URL, with a JSON body containing `phone` and `code`.
-- **Auth Token**: Sent in the `Authorization` header as a Bearer token.
+- **Endpoint URL**: The OTP code is sent as a POST request to this URL, with a JSON body containing `phone` and `code`. It must be an HTTPS URL on port 443 or 8443, with a fully qualified domain name or a public IP as host, and without a username or password embedded in the URL. These rules are checked every time you save a new or modified URL. Also, if at sending time the domain points to an internal network address, the request is blocked and the code isn't delivered through this channel.
+- **Auth Token**: Sent in the `X-API-Key` header of each request, along with `Content-Type: application/json`. Modyo doesn't send the `Authorization` header, so your endpoint must validate the token in `X-API-Key`.
 
 Once the integration is enabled, select **Phone** in the **OTP delivery channel** of the General settings. Custom SMS can coexist with other phone OTP integrations, such as Auronix: both send the code on each login independently, and the failure of one does not interrupt the other.
 
@@ -490,6 +490,9 @@ Custom fields have standard properties that you should consider:
 Customizable fields can be enabled or disabled. If they are enabled, an administrator can use them and, depending on their configuration, they can also be available to users.
 
 When a customizable field is disabled, it doesn't appear on any form, however, its values are still saved.
+
+You can't disable a field that is used in a [segments](/en/platform/customers/segments.html) filter: if you try, you'll see the message **You can't deactivate a User Custom Field with associated Segment filters**. First remove that filter from the segments that use it. You also can't delete a field while a segment filter uses it.
+
 
 :::danger Danger
 When a customizable field is disabled, it can be deleted.
@@ -597,7 +600,11 @@ The options available to set a password policy on the Modyo platform are:
 - Minimum password length value: Sets the minimum number of characters a password must have, between 12 and 128 characters.
 - Require at least one lowercase letter (a - z)
 - Require at least one capital letter (A - Z)
-- Require at least one non-alphanumeric character (! @ # $% ^ & * () _ + - = [] {} |)
+- **Require at least one of these special characters**: Requires the password to contain at least one of the symbols that the checkbox itself lists in parentheses. The default set is `! @ # $ % ^ & * ( ) _ + º - = [ ] { } | " . ' ¿ / ¡ : ;`, and the list you see on screen is always the one your installation validates.
+
+:::warning Attention
+When you enable **Require at least one of these special characters**, the password of the realm's users is also limited to that alphabet: only letters from `a` to `z`, uppercase or lowercase, digits, and the symbols on the list are accepted. Any other character causes the password to be rejected, even if it meets all the other conditions. This includes spaces, accented vowels, `ñ`, and symbols such as `~`, `<`, or `>`.
+:::
 
 #### reCAPTCHA
 
@@ -606,6 +613,8 @@ You can enable reCAPTCHA in the realm or not, once enabled, enter:
 - **Site Key**
 - **Secret**
 - **Threshold**
+
+In addition to registration, form submission, sign in, and password recovery, the realm's captcha protects the submission and confirmation of [origination](/en/platform/customers/origination.html) tasks on the site. If the verification fails, the task response isn't saved, the task shows the error, and the user can try again.
 
 #### Request limits and lockouts
 
@@ -644,13 +653,43 @@ From **Security headers** you control the security policy of the realm's own pag
 
 ### Payment settings
 
-By enabling the payment feature in your realm, you have access to the following options:
+If your account's plan includes Payments, the **Payment settings** section shows up in the realm settings for those with the **Admin Payment Settings** permission. It has the following options:
 
-- **Currency format**: Modifies how the currency values are displayed.
-- **Payment settings**: Select the currency unit you want to display. This unit is reflected in orders and reports. If you don't indicate a currency unit, Modyo uses the default currency according to the language configured for the site.
-- **Activate email delivery**: When this option is selected, the user receives an email when paying for an order.
-- **Email subject**: Header of the email sent to users.
-- **Body of the mail**: Content of the message sent to users.
+- **Currency format**: Defines the thousands separator, the decimal separator, and the number of decimals (0, 1, or 2) used to display amounts. You can choose between six formats, such as `$123.457`, which is the default, or `$123,456.79`.
+- **Currency unit**: Free text with the symbol placed before amounts. This unit is reflected in orders and reports. If you leave it empty, Modyo uses `$`.
+- **Enable email notification**: When this option is selected, the user receives an email when their paid order is completed. You can also resend it from the detail of a completed order with **Resend Email**.
+- **Email subject**: Header of the email sent to users. It's plain text: it doesn't support Liquid.
+- **Email body**: Content of the message sent to users. It supports Liquid with the order data described below.
+
+#### Email body variables
+
+The email body variables are at the root level, without a prefix, for example `customer_name` or `total`:
+
+| Variable | Content |
+| --- | --- |
+| `id`, `uuid`, and `short_uuid` | Order identifiers. |
+| `created_at` and `updated_at` | Order creation and last update dates. |
+| `current_state` | Order state. |
+| `customer_name` and `customer_email` | Name and email of the order's user. |
+| `order_description` | Order description. |
+| `order_items` | Collection with the order items. Each item has `id`, `name`, `quantity`, `price`, `created_at`, and `updated_at`. |
+| `total` and `tax_total` | Order total and tax total. |
+| `payment_info` | Data of the accepted payment provided by the payment method. |
+| `confirmation_code` and `document_id` | Confirmation code and document ID of the receipt, when the payment method provides them. |
+| `reference_id` and `reference_order` | Reference values set when creating the order. |
+| `url` | Redirect URL set when creating the order. |
+
+For example:
+
+```liquid
+<p>Hi {{ customer_name }}, we received the payment for your order {{ short_uuid }}.</p>
+<ul>
+  {% for item in order_items %}
+    <li>{{ item.name }} x {{ item.quantity }}: {{ item.price }}</li>
+  {% endfor %}
+</ul>
+<p>Total: {{ total }}</p>
+```
 
 ### Domains
 
@@ -663,7 +702,7 @@ To view this section you need the **View Domains** grouped permission, and to mo
 Check **Enable custom domains** and fill in the fields:
 
 - **Primary domain**: Domain the realm is served on. Write only the domain, without path or port: the screen already adds `https://`.
-- **Alternative domain 1 (optional)** and **Alternative domain 2 (optional)**: Additional domains that always redirect to the primary domain with a 301, keeping the path and parameters. The only exception is the [Customers API](/en/platform/customers/api.html), which answers 404 on these domains, without redirecting. Unlike [web apps](/en/platform/channels/sites.html#domains), you can't choose the redirection type.
+- **Alternative domain 1 (optional)** and **Alternative domain 2 (optional)**: Additional domains that always redirect to the primary domain, keeping the path and parameters: with a 301 on GET and HEAD requests, and with a 308 on the rest, such as the POST of a SAML callback, to keep the method and body. The only exception is the [Customers API](/en/platform/customers/api.html), which answers 404 on these domains, without redirecting. Unlike [web apps](/en/platform/channels/sites.html#domains), you can't choose the redirection type.
 
 Below the checkbox, the screen shows the target the domain's CNAME record in your DNS must point to. When you're done, click **Save**.
 
@@ -684,11 +723,11 @@ Keep these rules in mind:
 
 #### What changes when you activate the domain
 
-- The realm routes on your account's domain redirect to the custom domain, without the identifier and keeping the parameters, such as `site` or `return_to`.
+- The realm routes on your account's domain redirect to the custom domain, without the identifier and keeping the parameters, such as `site` or `return_to`. They use the same codes as the alternative domains: 301 on GET and HEAD, and 308 on the rest of the requests.
 - On the custom domain, a `/realms` or `/api/customers/realms` route that doesn't match any realm view or endpoint answers 404, even if the domain also serves a web app.
 - The realm's emails (activation, password recovery, confirmation, invitations, campaigns, and unsubscription), the URLs of the realm and user [Liquid objects](/en/platform/channels/liquid-markup/objects.html), **Go to realm**, impersonation, and the endpoints shown by **OAuth Client** use the realm's domain. Unsubscription links sent before the change keep working.
 - Sign in from your web apps, and the sign out, profile, and signup opened from them, happen on the realm's domain.
-- The [Customers API](/en/platform/customers/api.html) also answers on the custom domain, with the realm identifier in the path, for example `https://login.mybank.com/api/customers/realms/my_realm/me`. On your account's domain it keeps answering the same way, without redirecting, and the OAuth token and revocation endpoints keep working there.
+- The [Customers API](/en/platform/customers/api.html) also answers on the custom domain, with the realm identifier in the path, for example `https://login.mybank.com/api/customers/realms/my_realm/me`. On your account's domain it keeps answering the same way, without redirecting, and the OAuth token, revocation, and introspection endpoints keep working there.
 
 :::tip Notifications in your web apps
 The base template of web apps marks notifications as read by calling the Customers API on the realm's domain. If the web app is on another domain, such as your account's, turn on **Enable CORS** in the **Cross Origin Resource Sharing** section of [Security](#security): the web apps associated with the realm are allowed without adding them as origins.
