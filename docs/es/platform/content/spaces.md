@@ -95,7 +95,7 @@ Una vez que hayas añadido un idioma secundario, al modificar una entrada verás
 Para más información de cómo traducir una entrada a un idioma secundario, revisa la sección [Traducir una entrada](https://docs.modyo.com/es/platform/content/entries#traducir-una-entrada).
 
 :::tip Tip
-Para seleccionar uno de los idiomas disponibles de una entrada en sus secciones correspondientes, revisa la documentación de [API pública](/es/platform/content/public-api-reference#filtros), [SDK de Javascript](/es/platform/content/public-api-reference#sdk-de-javascript) y  en [SDK de Liquid](/es/platform/content/public-api-reference#filtrar-entradas)
+Para seleccionar uno de los idiomas disponibles de una entrada en sus secciones correspondientes, revisa la documentación de [API pública](/es/platform/content/public-api-reference#filtro-de-idiomas), [SDK de Javascript](/es/platform/tools/sdk#uso) y [SDK de Liquid](/es/platform/channels/liquid-markup/filters#by-lang).
 :::
 
 

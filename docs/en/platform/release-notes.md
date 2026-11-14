@@ -516,51 +516,7 @@ September 06, 2024
 | **Content** | • Adds exact filter by `full_path` and `uuid` to the content API categories endpoint |
 | **Customers** | • Fixes synchronous segment calculation at login when enabled |
 
-:::info Release date
-November 04, 2024
-:::
-
-| Module | Improvements |
-|--------|---------|
-| **Core** | • Security improvements<br>• All administrator sessions are invalidated when they change their password |
-| **Channels** | • Fixes issues when rendering pages with segmented content<br>• Fixes issues when rendering very large content pages<br>• Fixes the author of a synchronization in the activity shown on pages, widgets, templates, and menus<br>• Option to enable webpush in application settings has been added |
-| **Customers** | • Adds the ability to map an object-type claim attribute to a specific custom field<br>• Adds webpush sending capability in notification campaigns when enabled on the site related to the realm |
-
-### 10.0.9
-
-:::info Release date
-October 14, 2024
-:::
-
-| Module | Improvements |
-|--------|---------|
-| **Core** | • Security improvements<br>• Fixes session expiration based on inactivity time |
-| **Content** | • Fixes issue when publishing entries with asset lists, now the defined order in the list is respected<br>• Fixes issue when publishing entries containing rich text in code mode<br>• Fixes parameter duplication issue when using the administrative content API |
-
-### 10.0.8
-
-:::info Release date
-September 16, 2024
-:::
-
-| Module | Improvements |
-|--------|---------|
-| **Core** | • Fixes issue with link preloading when hovering |
-
-### 10.0.7
-
-:::info Release date
-September 06, 2024
-:::
-
-| Module | Improvements |
-|--------|---------|
-| **Core** | • Security improvements |
-| **Channels** | • Fixes the search pager on sites to show the number of pages based on the maximum number of results |
-| **Content** | • Adds exact filter by `full_path` and `uuid` to the content API categories endpoint |
-| **Customers** | • Fixes synchronous segment calculation at login when enabled |
-
-### 10.0.6
+### Modyo 10.0.6
 
 :::info Release date
 August 14, 2024
@@ -572,7 +528,7 @@ August 14, 2024
 | **Channels** | • Fixes Liquid SDK issue when displaying JSON of a repeatable group |
 | **Content** | • Adds `search` query param to perform text search using the content API |
 
-### 10.0.5
+### Modyo 10.0.5
 
 :::info Release date
 August 02, 2024
@@ -582,7 +538,7 @@ August 02, 2024
 |--------|---------|
 | **Core** | • Fixes SEO configuration error |
 
-### 10.0.4
+### Modyo 10.0.4
 
 :::info Release date
 July 30, 2024
@@ -593,7 +549,7 @@ July 30, 2024
 | **Core** | • Security improvements<br>• Webhooks improvements, now stages respond to hooks associated with a site, adds hooks when creating or updating an asset |
 | **Channels** | • Fixes issue when publishing a page with variable configuration and backup deletion |
 
-### 10.0.3
+### Modyo 10.0.3
 
 :::info Release date
 July 12, 2024
@@ -604,7 +560,7 @@ July 12, 2024
 | **Core** | • Security improvements<br>• Performance enhancements<br>• SEO configuration improvements added, it is now possible to edit the sitemap and robots from the organization's settings and automatically include sites that depend on the base URL<br>• Active sessions list added to the administrator's profile, it is also possible to close them from this view |
 | **Content** | • Fixes issue when cloning content entries with multiple languages |
 
-### 10.0.2
+### Modyo 10.0.2
 
 :::info Release date
 July 08, 2024
@@ -617,7 +573,7 @@ July 08, 2024
 | **Channels** | • Fixes a performance issue when using the `by_tag` filter in Liquid templates<br>• Improves template loading experience when returning to the template builder |
 | **Content** | • Adds the ability to clone spaces and content types |
 
-### 10.0.1
+### Modyo 10.0.1
 
 :::info Release date
 May 31, 2024
@@ -629,3 +585,16 @@ May 31, 2024
 | **Customers** | • Soft login, now possible to log in via an OTP code sent to email<br>• Improvements to registration and profile forms |
 | **Channels** | • Improvements in site variable access, now accessible for viewing by any role<br>• Adds the ability to use global and site variables in menu item URLs<br>• Adds page ordering by path in table view |
 | **Content** | • Adds the ability to specify a description for spaces, which is displayed in the overview<br>• Adds the ability to add a description to content types |
+
+### Modyo 10.0.0
+
+:::info Release date
+April 03, 2024
+:::
+
+| Module | Improvements |
+|--------|---------|
+| **Core** | • Security improvements<br>• Performance enhancements<br>• Dependency update<br>• New design of the administrative interface<br>• Adds support for cache invalidation when Cloudflare is used for this purpose, which allows more aggressive caching that is invalidated when pages, content, and Media Library assets are modified<br>• Adds a new sign-in alert for platform administrators: an email notification is now sent when they sign in on a new device |
+| **Customers** | • Adds the Salesforce integration: Salesforce contacts and realm users can now stay in sync, and they can be configured to receive and/or send changes to user information<br>• Visual improvements to the registration and sign-in forms<br>• Improvements to email campaign creation: campaigns can now be cloned to make new sends, and the main view is simplified<br>• Removes the none role: all users are now account users by default |
+| **Channels** | • Adds the option to add the search bar as an item when building menus<br>• Improved template for new sites, simpler and referencing the framework from the start<br>• Adds global snippets: you can now define a code snippet and use it in the different sites of the account, and the preview includes a draft or published selector<br>• Improves the widget preview: you can now select the site layout used to preview the widget<br>• Adds local widget preview. When working with the Modyo CLI, you can now run a preview of the widget under development and see it directly in the browser, with the option to mount it in the different layouts of the target site<br>• Adds support for chunks in CLI widgets: the platform now accepts a zip with the widget data plus its associated chunks<br>• Improvements to the widget interface when widgets come from the CLI<br>• Adds image processing when Cloudflare is used: through the asset filter you can specify the size and quality of the image to display, or a set of sizes as srcset, which benefits the performance of the sites you build<br>• Moves the global variables settings to the Channels context<br>• BREAKING CHANGE: Removes the Content List and Content Featured content widgets, which can be replaced with an HTML widget and the Liquid SDK |
+| **Content** | • Adds repeatable groups in content: content type definitions now have the repeatable group option, which defines multiple fields as a group that can be instantiated many times when creating an entry<br>• Adds Media Library: the asset manager becomes Media Library, which exists within a space instead of at the global level. This allows better permission management and organization of the assets uploaded to the platform. It can also be used in Channels through the Media Library modal, leaving the specific context of the assets to the application in use |
