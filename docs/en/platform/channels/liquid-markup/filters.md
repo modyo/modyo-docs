@@ -186,9 +186,9 @@ Adds currency format to a value. *e.g.*
 <span v-pre>`{{ 1890.5123 | format_currency: unit: '¥', separator: ',', delimiter: '.', precision: 3 }} = ¥1.890,512`</span>
 
 :::warning Important
-This filter determines the currency format and takes precedence over any other currency configuration.
+The parameters you pass to the filter take precedence over any other currency configuration, but they aren't merged with it: if you pass at least one, Modyo uses only the ones you set and takes the missing ones from the predefined format of the site's language, not from the realm. For example, with only `unit: 'US$'` you lose the realm's separator, delimiter, and precision, so pass all four parameters when you need a complete format.
 
-If you don't specify currency parameters with the currency filter, Modyo uses the realm's [payment](/en/platform/customers/settings.html#payment-configuration) configuration.
+If you don't specify currency parameters with the currency filter, Modyo uses the realm's [payment](/en/platform/customers/settings.html#payment-settings) configuration.
 
 If the site doesn't have an associated realm and you don't specify parameters, the predefined format of the site's language will be applied.
 :::
@@ -199,6 +199,8 @@ If the site doesn't have an associated realm and you don't specify parameters, t
 - separator - decimal separator.
 - delimiter - thousands separator.
 - precision - number of decimal digits.
+
+Any other key is ignored, although it still makes the filter stop using the realm's configuration. Write `unit` as text and `precision` as a number: with another type of value, such as `unit: 123` or `precision: 'two'`, the filter aborts and the published HTML keeps the comment `<!-- Liquid Error -->` in place of the amount.
 
 
 ## Common
@@ -412,7 +414,7 @@ Pagination, on the other hand, is optional: it is applied only if you pass `per_
 Keys that `by` does not recognize are ignored silently, with no error or warning: a singular `type:` or a misspelled `tag:` filters nothing and the listing comes out complete. Check the key names against the list above before giving up on a filter that seems to do nothing.
 :::
 
-### Filter By
+### Filter By (Extended Operators)
 
 Returns a list of Entries that match a filter. *e.g.*
 <span v-pre>`{% assign entries = widget.entries | filter_by: field: 'meta.name', eq: 'entry3Cat3' %}`</span>
@@ -539,7 +541,7 @@ The default order is descending and any value that is not exactly `asc` is treat
 The accepted fields depend on the collection the filter receives:
 
 - **Category collection**: only `name`, `slug` and `uuid`.
-- **Entry collection**: the five meta attributes `name`, `slug`, `created_at`, `updated_at` and `published_at` are sorted directly. Any other name is resolved by the search layer, which requires the container prefix, just like [Filter By](/en/platform/channels/liquid-markup/filters.html#filter-by): `fields.<name>` for a content type field and `meta.<attribute>` for the remaining metadata.
+- **Entry collection**: the five meta attributes `name`, `slug`, `created_at`, `updated_at` and `published_at` are sorted directly. Any other name is resolved by the search layer, which requires the container prefix, just like [Filter By](/en/platform/channels/liquid-markup/filters.html#filter-by-extended-operators): `fields.<name>` for a content type field and `meta.<attribute>` for the remaining metadata.
 
 :::warning Attention
 On a category collection, a field outside `name`, `slug` and `uuid` returns an empty collection with no error at all: the listing looks blank and seems to have no data.
@@ -584,15 +586,15 @@ Every color filter aborts if the input value isn't a valid color, for example a 
 
 ### Brighten
 
-Adds brightness to a color (e.g. <span v-pre>`{{ '#00ff00' | brighten: 15 }} #=> '#26ff26'`</span>).
+Adds brightness to a color (e.g. <span v-pre>`{{ '#00ff00' | brighten: 15 }} #=> '#26ff26'`</span>). If you omit the amount, it uses `10`.
 
 ### Darken
 
-Reduces the brightness of a color (e.g. <span v-pre>`{{ '#00ff00' | darken: 15 }} #=> '#00b300'`</span>).
+Reduces the brightness of a color (e.g. <span v-pre>`{{ '#00ff00' | darken: 15 }} #=> '#00b300'`</span>). If you omit the amount, it uses `10`.
 
 ### Desaturate
 
-Desaturates a color (e.g. <span v-pre>`{{ '#00ff00' | desaturate: 15 }} #=> '#13ec13'`</span>).
+Desaturates a color (e.g. <span v-pre>`{{ '#00ff00' | desaturate: 15 }} #=> '#13ec13'`</span>). If you omit the amount, it uses `10`.
 
 ### Grayscale
 
@@ -608,11 +610,11 @@ Converts a color to grayscale, with the same output as `grayscale`, but it only 
 
 ### Lighten
 
-Lightens a color (e.g. <span v-pre>`{{ '#00ff00' | lighten: 15 }} #=> '#4dff4d'`</span>).
+Lightens a color (e.g. <span v-pre>`{{ '#00ff00' | lighten: 15 }} #=> '#4dff4d'`</span>). If you omit the amount, it uses `10`.
 
 ### Opacity
 
-Modifies the opacity of a color (e.g. <span v-pre>`{{ '#00ff00' | opacity: 0.5 }} #=> 'rgba(0, 255, 0, 0.5)'`</span>).
+Modifies the opacity of a color (e.g. <span v-pre>`{{ '#00ff00' | opacity: 0.5 }} #=> 'rgba(0, 255, 0, 0.5)'`</span>). If you omit the value, it uses `0.3`.
 
 ### RGB
 
@@ -620,15 +622,17 @@ Transforms a color to its RGB equivalent (e.g. <span v-pre>`{{ '#00ff00' | rgb }
 
 ### Saturate
 
-Saturates a color (e.g. <span v-pre>`{{ '#00ff00' | saturate: 15 }} #=> '#00ff00'`</span>).
+Saturates a color (e.g. <span v-pre>`{{ '#00ff00' | saturate: 15 }} #=> '#00ff00'`</span>). If you omit the amount, it uses `20`.
 
 ### Spin
 
-Rotates a color in degrees clockwise (e.g. <span v-pre>`{{ '#00ff00' | spin: 15 }} #=> 'rgba(0, 255, 0, 0.5)'`</span>).
+Rotates a color in degrees clockwise (e.g. <span v-pre>`{{ '#00ff00' | spin: 15 }} #=> '#00ff40'`</span>). If you omit the degrees, it uses `30`.
 
 ## Location
 
 These Liquid filters alter values related to Geolocation in Modyo Platform.
+
+Both filters take the value of an entry's **Locations** field, for example `entry.fields.branches`; the format of that value is described in [Content types](/en/platform/content/types.html#location). The map is requested from Google Maps with the **Google API Key** from the [account settings](/en/platform/core/configuration.html#visualization): set it up before using these filters, because without it Google rejects the request and the map isn't displayed.
 
 ### Dynamic Map
 
@@ -636,12 +640,18 @@ Returns a dynamic Google Maps map (e.g. <span v-pre>`{{ locations | dynamic_map:
 
 **Parameters**
 
-- `locations` (ArrayHash) — Array of hashes with latitude and longitude points.
+- `locations` (ArrayLocation) — Value of a **Locations** field. From each location the filter uses the `location.lat` and `location.lon` coordinates and, as the marker title, the `location_street` address.
 - `size` (String) (default: '600x300') — Map size in pixels.
 - `zoom` (Integer) (default: 10) — Zoom level for the map.
 - `type` (String) (default: 'roadmap') — Map type.
 - `icon` (String) (default: '') — Map icon.
 - `controls` (Boolean) (default: true) — Navigation controls for the map.
+
+The map is centered on the first location in the list, so the field needs at least one: if it's empty, the filter aborts and the published HTML keeps the comment `<!-- Liquid Error -->` in place of the map.
+
+:::warning Attention
+Use a single `dynamic_map` per page. Every dynamic map is drawn in the same container, so with two or more only one is displayed and the other spaces stay blank.
+:::
 
 ### Static Map
 
@@ -649,7 +659,7 @@ Returns a static Google Maps map (e.g. <span v-pre>`{{ locations | static_map: '
 
 **Parameters**
 
-- `locations` (ArrayHash) — Array of hashes with latitude and longitude points.
+- `locations` (ArrayLocation) — Value of a **Locations** field. From each location the filter uses the `location.lat` and `location.lon` coordinates.
 - `size` (String) (default: '600x300') — Map size in pixels.
 - `zoom` (String) (default: '') — Zoom level for the map. With no value, the Google Maps URL is built with an empty `zoom=` and the framing is left to Google; always pass it when you need a fixed framing.
 - `type` (String) (default: 'roadmap') — Map type.
@@ -1031,15 +1041,17 @@ To list the statuses the filter doesn't cover, loop over an unscoped collection,
 
 ### Completed
 
-Checks whether an element (step/task wrapper) is completed for a given submission.
+Checks whether a step or a task has been completed in a submission.
 
 *e.g.* <span v-pre>`{{ submission | completed: step }}`</span>
 
 **Parameters:**
 - submission (Submission) — the current submission (object before pipe)
-- element (Step|TaskResponse wrapper) — element to test
+- element (Step|Task) — the step or task to test, for example one from `origination.steps` or from `step.tasks`
 
 Returns: Boolean (true/false)
+
+It doesn't accept the items of `submission.steps` or the responses of `submission.tasks`: with them, the filter aborts and the published HTML keeps the comment `<!-- Liquid Error -->` in place of the block. Those objects already carry their status, in `is_completed` and in `status`, respectively.
 
 As of Modyo 10.2 the filter resolves the status against the user present in the render context, not against the submission owner: a step counts as completed only if that user has a completed response for every task they can see. In a flow with invited users, the same template delivers different results depending on who is looking, and a step that showed up as completed in 10.1 may now show up as incomplete.
 
@@ -1092,10 +1104,6 @@ Returns the Task with the selected UID. *e.g.*
 
 This is the same `by_uid` filter from the Origination module, which also accepts the `fields` collection of a user input task to take one of its questions by UID: <span v-pre>`{% assign my_question = my_task.fields | by_uid: 'question-01' %}`</span>. The full reference is in [By UID](/en/platform/channels/liquid-markup/filters.html#by-uid).
 
-### Navigation / Completion Helpers
-
-The filters `completed`, `url`, and `resume_link` (documented under Submission) also apply when piping a Step or Task in the context of a submission navigation flow.
-
 ## User
 
 These Liquid filters alter values related to Users.
@@ -1141,7 +1149,7 @@ Returns user form responses filtered by a specific form slug.
 
 ### By Response Date Range
 
-Returns form responses created within a date range (inclusive).
+Returns form responses created within a date range.
 
 *e.g.* <span v-pre>`{% assign responses = user.responses | by_response_date_range: '2025-03-10', '2025-03-20' %}`</span>
 
@@ -1149,6 +1157,8 @@ Returns form responses created within a date range (inclusive).
 - responses (Array&lt;FormResponse&gt;) — user.responses
 - date_from (String/Date) — start date (YYYY-MM-DD recommended)
 - date_to (String/Date) — end date (YYYY-MM-DD recommended)
+
+`date_from` includes its whole day, but `date_to` is taken as the start of that day (00:00), even if you include a time, so the last day is left out: in the example, the responses created on March 20 don't appear. To include it, pass the following day as `date_to`, in this case `'2025-03-21'`. Both limits are compared against the creation time in UTC.
 
 ### By Answer Text
 
@@ -1159,32 +1169,3 @@ Returns form responses containing an answer whose `answers.text_field` matches e
 **Parameters:**
 - responses (Array&lt;FormResponse&gt;) — user.responses
 - answer_text (String) — exact text to match
-
-## Widget
-
-These Liquid filters alter values related to Widgets.
-
-### Entry Limit
-
-Determines the entry limit for a widget (e.g. <span v-pre>`{{ widget1 | entry_limit }}`</span>).
-
-### Resolve Home Widget List
-
-Returns a list of all widgets that belong to a Site (e.g. <span v-pre>`{{ site | resolve_home_widget_list }}`</span>).
-
-### Resolve Me Widget List
-
-Returns a list of all widgets that belong to a "me" page (e.g. <span v-pre>`{{ site | resolve_me_widget_list }}`</span>).
-
-### Resolve Widget List
-
-Returns a list of all widgets that belong to a page (e.g. <span v-pre>`{{ site | resolve_widget_list: page }}`</span>).
-
-**Parameters**
-
-- `site` (Site) — Site-type object.
-- `page` (Page) — Page-type object.
-
----
-
-NOTE: Composite and submission-related filters depend on internal preview/origination logic; behavior may vary in preview mode versus published mode.
