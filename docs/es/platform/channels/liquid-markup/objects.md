@@ -190,6 +190,8 @@ Estos objetos permiten obtener información a través de Liquid para un formular
 | **form_response.name**        | Nombre del formulario.                  | ```El nuevo formulario```                                                                                   |
 | **form_response.questions**   | Array con las preguntas del formulario que capturan una respuesta. Los campos de contenido, como **Texto enriquecido**, no se incluyen. | ```[{"title"=>"¿Cual es tu puesto de trabajo?", "type"=>"textquestion", "answer"=>"Software developer"}]``` |
 
+Cada elemento de `form_response.questions` trae `title`, `type` y `answer`. `title` y `answer` llegan con escape HTML (salvo las fechas), y `answer` además viene formateado según el tipo de pregunta: las fechas y los rangos de fechas usan el formato configurado en la pregunta, el país se entrega por su nombre, y en los párrafos y las direcciones cada línea se separa con `<br/>` (una dirección se arma como líneas `Etiqueta: valor`). Si la pregunta no tiene respuesta, `answer` queda vacío. Si la pregunta tiene varias respuestas, como una pregunta de tipo **Casillas de verificación** con varias opciones marcadas, aparece una vez por cada respuesta.
+
 ### question
 
 Estos objetos permiten obtener información a través de Liquid para las preguntas de un formulario del módulo Customers.
@@ -421,13 +423,13 @@ Estos objetos obtienen la información relevante de los flujos de originación.
 | **origination.uid**                | Identificador único (UID) del flujo de originación.                  | ```mi-originacion```                                                                                                                    |
 | **origination.url**                | URL de la página del flujo de originación.                           | ```https://test.modyo.com/new-site/myorigination```                                                                                     |
 | **origination.steps**              | Lista de objetos step | [ver documentación del step](/es/platform/channels/liquid-markup/objects.html#step) |
-| **origination.can_begin**          | Indica si el usuario puede iniciar el flujo de originación.          | ```true```                                                                                                                              |
+| **origination.can_begin**          | `true` si el flujo tiene al menos una tarea. No evalúa al usuario: para saber si puede crear una nueva respuesta, usa `origination.can_create`. | ```true``` |
 | **origination.can_create**         | Indica si el usuario puede crear una nueva submission para el flujo. | ```true```                                                                                                                              |
-| **origination.can_resume**         | Indica si el usuario puede reanudar una submission del flujo.        | ```true```                                                                                                                              |
-| **origination.begin_message**      | Mensaje inicial del flujo de originación.                            | ```"¡Bienvenido!"```                                                                                                                    |
+| **origination.can_resume**         | `true` si hay una respuesta (`submission`) en el contexto de la página y el flujo tiene al menos una tarea. Sin una respuesta en el contexto es `false`. | ```true``` |
+| **origination.begin_message**      | Descripción del flujo de originación, renderizada con Liquid. Si la descripción está vacía, entrega el texto por defecto «Para iniciar el proceso, haz clic en el siguiente botón.». | ```"¡Bienvenido!"``` |
 | **origination.completion_message** | Mensaje al completar el flujo de originación.                        | ```"Todo listo"```                                                                                                                      |
 | **origination.ordered_steps**      | Indica si los steps del flujo de originación están ordenados.        | ```true```                                                                                                                              |
-| **origination.new_submission_url** | URL para crear una nueva submission del flujo.                       | ```/originations/mi-originacion/new```                                                                                                  |
+| **origination.new_submission_url** | URL para crear una nueva respuesta del flujo, con el UUID de la página de originación. Queda vacía si el flujo no tiene página de originación. | ```https://test.modyo.com/new-site/origination/0f8e2c1a-5b7d-4e3f-9a6c-2d4b8e1f7a90/new``` |
 | **origination.cancel_overdue**     | Indica si la originación cancela automáticamente las respuestas que superan su fecha de vencimiento.                 | ```false```                                                                                                                             |
 
 ## page
@@ -565,9 +567,13 @@ Estos objetos obtienen la información relevante a las Submissions.
 | **submission.url**                             | URL de la página de la submission.                             | ```https://test.modyo.com/new-site/myorigination```        |
 | **submission.uuid**                            | Identificador único (UUID) de la submission.                   | ```abcd-1234-5678-0000```                                  |
 | **submission.tasks['identificador_del_task']** | Respuestas de tareas para la submission. Se debe proveer el uid de la task | [ver documentación de tipo de respuesta de tareas](/es/platform/channels/liquid-markup/objects.html#tipos-de-respuesta-de-tareas)                                   |
-| **submission.resume_url**                      | URL para reanudar la submission.                               | ```/originations/mi-originacion/submissions/uuid/resume``` |
-| **submission.start_info**                      | Información sobre el inicio de la submission.                  | ```{"started_by":"user","at":"2025-02-15"}```              |
+| **submission.resume_url**                      | URL para reanudar la respuesta. Solo acepta envíos POST, así que no funciona como enlace. Queda vacía si el flujo no tiene página de originación. | ```https://test.modyo.com/new-site/origination/0f8e2c1a-5b7d-4e3f-9a6c-2d4b8e1f7a90/abcd-1234-5678-0000/begin``` |
+| **submission.start_info**                      | Texto traducido, listo para mostrar, con el UUID de la respuesta y su fecha de inicio, o la indicación de que todavía no se inicia. | ```#abcd-1234-5678-0000 - Iniciada en 15 de Febrero de 2025 a las 15:14``` |
 | **submission.steps**                           | Steps de la submission.                                        | ```[{"uid"=>"step-1", "name"=>"step 1", "is_completed"=>true, "link"=>"step 1"}{"uid"=>"step-2", "name"=>"step 2", "is_completed"=>false, "link"=>"step 2"}]```                                  |
+
+::: tip Formularios de originación
+`origination.new_submission_url` y `submission.resume_url` reciben envíos de formulario: úsalas como `action` de un `<form>` con `method="post"` e incluye el tag [csrf_param](/es/platform/channels/liquid-markup/tags.html#tags-de-csrf) dentro del formulario, como hacen las plantillas por defecto de la página de originación.
+:::
 
 ### step
 
@@ -584,8 +590,10 @@ Estos objetos obtienen la información relevante a las Submissions.
 | **task.uid**         | Identificador de la task.      | ```task-01```                         |
 | **task.step**        | Step al que pertenece la task. |                                       |
 | **task.name**        | Nombre de la task.             | ```Ingresa tu información personal``` |
-| **task.type**        | Tipo de la task.               | ```user_input```                      |
+| **task.type**        | Tipo de la task, como nombre de clase. | ```Origination::UserInputTask``` |
 | **task.description** | Descripción de la task.        | ```Recolecta datos personales```      |
+
+Los valores de `task.type` corresponden a los [tipos de tareas](/es/platform/customers/origination.html#tipos-de-tareas): `Origination::UserInputTask`, `Origination::ValidationTask`, `Origination::DigitalSignatureTask`, `Origination::PendingReviewTask`, `Origination::CodeSnippetTask`, `Origination::OriginationFlowTask`, `Origination::InvitationTask`, `Origination::IdentityVerificationTask` y `Origination::ConfirmationTask`. Compáralos con el nombre completo, por ejemplo `task.type == 'Origination::UserInputTask'`.
 
 Adicionalmente según el tipo de tarea pueden haber atributos adicionales.
 
@@ -615,10 +623,10 @@ Toda respuesta de tarea comparte los atributos que hereda de la respuesta base: 
 | **code_snippet_task_response.data**           | Contenido del snippet de código (alias de `content`).   | ```{"submission"=>{"fields"=>{"car"=>"fiat", "year"=>1999, "color"=>"black", "extras"=>["ac", "gps", "sunroof"], "expiration"=>"2026-02-01"}}}``` |
 | **code_snippet_task_response.completed**      | Indica si la tarea de snippet fue completada.           | ```false```                                   |
 | **code_snippet_task_response.content**        | Contenido del snippet de código.                        | ```{"submission"=>{"fields"=>{"car"=>"fiat", "year"=>1999, "color"=>"black", "extras"=>["ac", "gps", "sunroof"], "expiration"=>"2026-02-01"}}}```                               |
-| **validation_task_response.validated**        | Indica si la tarea fue validada.                        | ```true```                                    |
+| **validation_task_response.validated**        | Es `true` siempre que exista la respuesta a la tarea, aunque siga pendiente de validación. Para saber si la tarea terminó, compara `status` con `completed`. | ```true``` |
 | **digital_signature_task_response.signed**    | Indica si la tarea fue firmada digitalmente.            | ```false```                                   |
 | **origination_flow_task_response.submission** | Submission asociada a la tarea de flujo de originación. | [ver documentación de submission](/es/platform/channels/liquid-markup/objects.html#submission)                                              |
-| **invitation_task_response.completed** | Indica si la tarea de invitación fue completada. | ```true```                                             |
+| **invitation_task_response.completed** | Es `true` siempre que exista la respuesta a la tarea, aunque siga pendiente. Para saber si la tarea terminó, compara `status` con `completed`. | ```true``` |
 | **identity_verification_task_response.verification_details** | Hash con el detalle de la verificación: `document_type`, `document_status`, `biometric_status`, `verification_date`, `face_match_score` y `liveness_score`. | ```{:document_type=>"national_id", :document_status=>"document_verified", :biometric_status=>"biometric_verified", :verification_date=>"2026-02-11T09:26:49.257-03:00", :face_match_score=>95.93251037597656, :liveness_score=>98.41004943847656}``` |
 | **identity_verification_task_response.ocr_data** | Accesor unificado e independiente del proveedor: entrega `ocr` y, cuando viene vacío, cae a `extracted_information`. Úsalo para recorrer los campos del documento sin condicionar por proveedor. | ```{"nombre"=>"Ivan Modyo", "numero_documento"=>"12.345.678-9"}``` |
 | **identity_verification_task_response.ocr** | Hash con los pares campo/valor que el proveedor extrajo del documento. Vacío si el proveedor no entrega esa estructura. | ```{"nombre"=>"Ivan Modyo", "numero_documento"=>"12.345.678-9"}``` |
@@ -657,7 +665,7 @@ No confundas este objeto con `repeatable_group_field`, que aparece en la ficha d
 
 ## target
 
-Estos drops permiten obtener información de Targets. Los atributos disponibles son:
+Estos drops permiten obtener información de Targets. Un target es el mismo objeto que [segment](/es/platform/channels/liquid-markup/objects.html#segment): `user.targets` entrega los segmentos del usuario y `user.target_names`, sus nombres. Los atributos disponibles son:
 
 | Objeto          | Descripción                              | Ejemplo |
 |-----------------|------------------------------------------|---------|
