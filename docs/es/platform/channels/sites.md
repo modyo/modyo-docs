@@ -9,7 +9,7 @@ Una aplicación web (web app) despliega el contenido creado en Content y Channel
 Una aplicación web puede estar en uno de estos tres estados, que eliges en **Configuración de la aplicación** > [General](/es/platform/channels/sites.html#general) > **Cambiar estado**:
 
 - **Habilitado**: La aplicación web es editable y visible para el público.
-- **Editable**: La aplicación web es modificable, pero no visible para el público: requiere iniciar sesión para acceder. Es el estado con el que nace toda aplicación web recién creada.
+- **Editable**: La aplicación web es modificable, pero no visible para el público: solo pueden verla los administradores de la cuenta con una sesión iniciada en Modyo Platform. Es el estado con el que nace toda aplicación web recién creada.
 - **Deshabilitado**: La aplicación web no es editable ni accesible.
 
 :::tip Estados transitorios
@@ -30,7 +30,9 @@ Para crear una nueva web app, sigue estos pasos:
 Una vez creada, la aplicación web queda en estado **Editable** y el sistema te lleva a la pantalla de [Resumen](/es/platform/channels/sites.html#resumen-de-la-aplicacion). Para que sea visible al público, cambia su estado a **Habilitado** en **Configuración de la aplicación** > [General](/es/platform/channels/sites.html#general) > **Cambiar estado**.
 
 :::warning Atención
-En el índice de web apps, solo verás aquellas apps en las cuales tienes algún rol y eres parte del equipo de trabajo.
+En el listado de aplicaciones solo ves aquellas en cuyo equipo de trabajo tienes algún rol. Si eres el dueño de la cuenta, o tu rol de cuenta incluye el permiso **Gestionar Canales**, **Administrar SEO** o **Administrar Webhooks**, ves todas las aplicaciones de la cuenta.
+
+Quien crea una aplicación queda en su equipo de trabajo con el rol **Site Admin**.
 :::
 
 ### Tema
@@ -239,7 +241,7 @@ Los cambios en el nombre y la descripción se reflejan de inmediato Modyo. La ac
 
 
 :::warning Atención
-La hora en el contenido se gestiona en la sección [general](https://docs.modyo.com/es/platform/core/configuration#configuracion) de configuración de la cuenta.
+La hora en el contenido se gestiona en la sección [general](/es/platform/core/configuration.html#configuracion-general) de configuración de la cuenta.
 :::
 
 - **ID de Google Tag Manager**: Agrega un identificador de Google Tag Manager para insertar scripts para el seguimiento y medición de eventos.
@@ -297,26 +299,13 @@ style="display:none;visibility:hidden">
 Con esta configuración completada, cuando exista un valor asociado al campo **ID de Google Tag Manager**, los scripts se inyectarán automáticamente. Esto te permitirá crear eventos en Google Tag Manager para registrar las acciones de tus usuarios.
 
 
-
-- **Favicon**: Imagen que aparece al costado de la barra de dirección.
-- **Icono de Apple**: Imagen que se ve en los dispositivos móviles al usar el sitio como aplicación.
-- **Borrar**: Eliminar definitivamente un sitio y todo sus elementos.
-
-:::danger Peligro
-Borrar es irreversible, por lo que debes estar completamente seguro al ejecutar esta acción.
-
-Al presionar el botón de eliminado, el sistema te pedirá que ingreses el nombre textual del sitio que deseas eliminar para confirmar la acción. Una vez confirmada, no podrás volver a acceder al sitio ni a sus elementos.
-:::
-
-
-
 **Visualización**
 - **Favicon**: Imagen que se muestra junto a la barra de dirección.
 - **Icono de Apple**: Imagen que se visualiza en dispositivos móviles iOS al marcar la aplicación como favorita.
 
 **Privacidad**
 - **Público**: Todos los visitantes pueden ver la web app y su contenido sin necesidad de iniciar sesión.
-- **Privado**: Solo los usuarios con una sesión iniciada de Modyo pueden ver la web app.
+- **Privado**: Solo los usuarios del reino de la aplicación con una sesión iniciada pueden ver la web app. Para guardar esta opción, la aplicación tiene que tener un reino asignado con **Cambiar reino**; si no lo tiene, Modyo no guarda el cambio y te pide configurar un reino primero.
 - **Mostrar home a visitas públicas**: La página de inicio de la web app se muestra a todos los visitantes, incluso aquellos que no hayan iniciado sesión. Al navegar a cualquier otra página, se solicita registro o inicio de sesión.
 - **Redireccionar al home cuando una URL no se encuentra**: Por defecto, la aplicación web muestra un error 404 cuando el usuario accede a una URL inexistente. Si marcas esta opción, el usuario será redirigido a la página de inicio de la web app en lugar del 404.
 - **Habilitar búsqueda**: Activa la función de búsqueda en la web app.
@@ -334,12 +323,12 @@ Procede con cautela al modificar estas opciones, ya que pueden afectar el acceso
 :::
 
 - **Cambiar host**: Esta acción modifica la visibilidad y accesibilidad de la aplicación. Realizar un cambio de host puede impactar la visibilidad y disponibilidad de la aplicación web.
-- **Cambiar reino**: Despliega el reino de la aplicación. Al cambiar de reino pierdes toda la configuración de privacidad en tus web apps, páginas y navegación, y las páginas de originación del sitio pierden la referencia a su originación actual. Puedes elegir un reino o uno de sus [stages](/es/platform/customers/realms.html#stages). Mientras la aplicación tenga seleccionado un reino o uno de sus stages, ese reino no se puede eliminar.
+- **Cambiar reino**: Despliega el reino de la aplicación. Al cambiar de reino pierdes toda la configuración de privacidad en tus web apps, páginas y navegación, y las páginas de originación del sitio pierden la referencia a su originación actual. Puedes elegir un reino o uno de sus [stages](/es/platform/customers/realms.html#stages). Mientras la aplicación tenga seleccionado un reino o uno de sus stages, ese reino no se puede eliminar. Si eliges **Ninguno**, la privacidad de la aplicación vuelve a **Público**.
 - **Cambiar estado**: Cambia el estado de la aplicación, las opciones son:
 	* Habilitado: Editable y visible al público.
-	* Editable: Modificable pero no visible al público. Requiere inicio de sesión para acceder. Es el estado con el que nace toda aplicación web recién creada. Robots.txt, PWAs y el manifiesto están deshabilitados en este estado.
+	* Editable: Modificable pero no visible al público. Solo pueden verla los administradores de la cuenta con una sesión iniciada en Modyo Platform. Es el estado con el que nace toda aplicación web recién creada. Robots.txt, PWAs y el manifiesto están deshabilitados en este estado.
 	* Deshabilitado: No editable ni visible. En este estado, no es accesible ni visible para los usuarios.
-- **Eliminar aplicación**: Inicia la eliminación asíncrona de la aplicación y de todos sus elementos, como páginas y widgets.
+- **Eliminar aplicación**: Inicia la eliminación asíncrona de la aplicación y de todos sus elementos, como páginas y widgets, y también de todos sus stages.
 
 ::: danger Peligro
 Es irreversible la eliminación de una aplicación web.
@@ -483,7 +472,7 @@ En la sección de dominios puedes ver y modificar la ubicación pública de tu a
 Es esencial informar a todos los miembros de la plataforma sobre cualquier cambio que realices en esta sección.
 :::
 
-El **Host** es la ubicación de la aplicación web dentro del dominio de la plataforma y se cambia desde **Configuración del sitio > General**, en la sección **Zona peligrosa**.
+El **Host** es la ubicación de la aplicación web dentro del dominio de la plataforma y se cambia desde **Configuración de la aplicación** > **General**, en la sección **Zona peligrosa**.
 
 Activa la casilla **Activar dominios personalizados** para habilitar los campos de esta sección:
 - **Dominio primario**: Dirección principal de la aplicación web. Los dominios alternativos serán redirigidos a este dominio.
@@ -495,29 +484,9 @@ Los navegadores guardan en caché las redirecciones 301 de forma agresiva: si lu
 :::
 
 
-:::warning Atención
-Estos dominios están reservados por Modyo. No están disponibles como dominios personalizados:
-<table style="border: none;"><tr style="border: none;">
-<td style="border: none;"><ul>
-<li>education.modyo.com</li>
-<li>elearning.modyo.com</li>
-<li>training.modyo.com</li>
-<li>capacitacion.modyo.com</li>
-</ul></td>
-<td style="border: none;"><ul>
-<li>support.modyo.com</li>
-<li>soporte.modyo.com</li>
-<li>developers.modyo.com</li>
-<li>desarrolladores.modyo.com</li>
-</ul></td>
-<td style="border: none;"><ul>
-<li>www.modyo.com</li>
-<li>es.modyo.com</li>
-<li>pt.modyo.com</li>
-<li>global.modyo.com</li>
-</ul></td>
-</tr></table>
-:::
+Para que el dominio personalizado funcione, el registro CNAME del dominio en tu DNS debe apuntar al destino que indica la pantalla bajo la casilla **Activar dominios personalizados**. Los dominios personalizados no están disponibles en las cuentas de prueba: la casilla aparece deshabilitada y la pantalla muestra el aviso "No puedes usar esta opción en una cuenta de prueba".
+
+Con los dominios personalizados activados, quien entra a la aplicación web por su URL en el dominio de la plataforma, la que incluye el **Host**, es redirigido al dominio primario, conservando la ruta solicitada.
 
 :::warning Atención
 Estos hosts están reservados por Modyo. No están disponibles como hosts para tus web apps:
@@ -529,6 +498,7 @@ Estos hosts están reservados por Modyo. No están disponibles como hosts para t
 <li>activate</li>
 <li>admin</li>
 <li>api</li>
+<li>assets</li>
 </ul></td>
 <td style="border: none;"><ul>
 <li>auth</li>
@@ -555,6 +525,7 @@ Estos hosts están reservados por Modyo. No están disponibles como hosts para t
 <li>status</li>
 </ul></td>
 <td style="border: none;  vertical-align: top;"><ul>
+<li>try</li>
 <li>uploads</li>
 <li>users</li>
 <li>welcome</li>
@@ -656,6 +627,10 @@ Una vez que hayas habilitado la revisión en equipo, puedes realizar las siguien
 - **Requerir todos** - Con esta opción activa, exiges que todos los usuarios designados como revisores aprueben el elemento antes de que este pueda ser publicado.
 
 
+:::warning Atención
+Al marcar o desmarcar **Habilitar revisión en equipo** y guardar, todos los elementos de la aplicación que estaban **En revisión** o **Aprobado** vuelven a **Borrador**. Si la revisión en equipo queda habilitada, vuelve a enviarlos a revisión.
+:::
+
 ### Miembros del equipo
 
 Para organizar y gestionar eficientemente el trabajo en Modyo, puedes seleccionar los miembros del equipo que participarán en la elaboración de cada sitio, dándoles acceso a las tareas de escritura, revisión y/o publicación.
@@ -699,7 +674,7 @@ Modyo cuenta con un sistema de redirecciones personalizadas que te permitirá to
 
 En esta vista encuentras una tabla con todas las redirecciones que existen actualmente en el sitio. Puedes buscar por path o descripción.
 
-Para crear una nueva redirección, haz click en el botón **Nuevo** en la esquina superior derecha de la vista. Completa los campos **_URL_ de Origen** y **_URL_ de destino** y código de redirección y luego guarda los cambios.
+Para crear una nueva redirección, haz click en el botón **Nueva redirección**. En la ventana, completa **Ruta de origen**, **Ruta de destino** y **Código HTTP de redirección** y, si quieres, una **Descripción**; luego haz click en **Agregar redirección**. La ruta de origen se escribe a continuación de la URL de la aplicación, sin la barra inicial.
 
 #### Activar y desactivar redirecciones
 
@@ -713,7 +688,7 @@ Las redirecciones nuevas, incluidas las importadas por CSV, se crean activadas.
 La tabla de redirecciones es la penúltima en precedencia, de tal forma que si existe una URL en el sitio que apunta a una [página](/es/platform/channels/pages) o una vista por defecto, verás esa vista en vez de ser redirigido mediante la tabla de redirecciones personalizadas.
 :::
 
-Además de crear redirecciones una por una, puedes importar un [archivo CSV](/assets/examples/custom-redirections.csv) con hasta 1000 redirecciones.
+Además de crear redirecciones una por una, puedes importar un [archivo CSV](/assets/examples/custom-redirections.csv) con hasta 1000 redirecciones (sin contar la fila de encabezado, si marcas **La primera fila es la cabecera**) y un tamaño máximo de 2 MB.
 
 :::warning Atención
 Las columnas requeridas para importar redirecciones son origen y destino.
@@ -721,6 +696,8 @@ Las columnas requeridas para importar redirecciones son origen y destino.
 Puedes seleccionar un código de respuesta 301 o 302 para todos los elementos sin necesidad de tener una columna para ellos.
 
 Si estás importando una redirección con un origen que ya está registrado, no podrás iniciar el proceso de importación. Ajusta tu archivo CSV eliminando la fila con el origen existente o elimina el registro de redirecciones personalizadas del sitio en el que intentas importar el origen.
+
+Las rutas reservadas de la plataforma no se pueden usar como ruta de origen, ni al crear una redirección ni al importarla: `404`, `422`, `500`, `admin`, `auth`, `crossdomain`, `dist`, `forms`, `javascript`, `login`, `logout`, `manifest`, `ping`, `preview`, `profile`, `realms`, `robots`, `search`, `serviceworker`, `session`, `site_logout`, `sitemap`, `stylesheets`, `uploads` y `widget_manager`. La restricción aplica cuando la ruta de origen es exactamente una de ellas. Si el archivo incluye alguna, la importación falla y no se importa ninguna redirección del archivo.
 :::
 
 La jerarquía de ubicaciones en los sitios de Modyo sigue este orden:
@@ -728,7 +705,7 @@ La jerarquía de ubicaciones en los sitios de Modyo sigue este orden:
 1. [Vistas por defecto (Home, search)](/es/platform/channels/templates)
 1. [Páginas](/es/platform/channels/pages)
 1. Redirecciones personalizadas
-1. [Configuración de error 404 del sitio](/es/platform/channels/sites#privacidad)
+1. [Configuración de error 404 del sitio](/es/platform/channels/sites.html#general)
 
 :::warning Condiciones para una redirección
 Para que una redirección sea exitosa, la ruta de origen no puede existir o tiene que estar despublicada. Si el origen es una página publicada con subpáginas, tienes que despublicar las subpáginas antes de despublicar la página principal.
@@ -791,7 +768,7 @@ Controla qué recursos puede cargar el navegador en el sitio para mitigar ataque
 Especifica libremente tu política de seguridad de contenido en el área de texto. Para obtener una guía completa sobre cómo escribir tu política, consulta [Content Security Policy (CSP) de Mozilla Developer Network.](https://developer.mozilla.org/es/docs/Web/HTTP/CSP)
 
 :::warning Atención
-Un valor muy estricto puede interferir con algunas características como [Google tag manager](/es/platform/channels/sites#google-tag-manager), [PWA](/es/platform/channels/sites#pwa), [Widgets](/es/platform/channels/widgets), [Asset Manager](/es/platform/content/asset-manager) y la [modalidad Drop-in de Incode](/es/platform/customers/origination.html#requisitos-de-drop-in).
+Un valor muy estricto puede interferir con algunas características como [Google tag manager](/es/platform/channels/sites.html#general), [PWA](/es/platform/channels/sites#pwa), [Widgets](/es/platform/channels/widgets), [Asset Manager](/es/platform/content/asset-manager) y la [modalidad Drop-in de Incode](/es/platform/customers/origination.html#requisitos-de-drop-in).
 :::
 
 Una política apta para producción debe asegurar que todos los recursos, como imágenes y hojas de estilo, se carguen desde fuentes confiables y requiere que todos los scripts sean seguros y confiables para la aplicación. Por ejemplo, una política estricta para el _template minimal_ se vería así:
@@ -877,7 +854,13 @@ Usar variables te permite reutilizar código HTML, JS, CSS o texto a través de 
 :::tip Tip
 En las variables globales puedes utilizar texto plano, HTML, JavaScript y CSS. Sin embargo, es importante tener en cuenta que no puedes utilizar código Liquid dentro de estas variables. Asimismo, es importante recordar que el contenido de las variables globales tiene un límite máximo de 65.535 caracteres.
 
-Para obtener el valor de la variable en cualquier lugar que acepte Liquid markup, usa:<span v-pre>`{{vars.Nombre}}`</span>
+Para obtener el valor de la variable en cualquier lugar que acepte Liquid markup, usa su identificador, que es el texto del campo **Nombre** normalizado a minúsculas y guiones:
+
+```liquid
+{{ vars.identificador }}
+```
+
+Revisa cómo se forma el identificador en [Variables Globales](/es/platform/channels/global-variables.html#crear-una-variable-global).
 :::
 
 #### Crear una variable en sitios
@@ -886,7 +869,7 @@ Para crear una variable en sitios, sigue estos pasos:
 
 1. Desde el menú lateral principal, haz click en **Channels**.
 1. Selecciona tu **Sitio**.
-1. En **Configuración del sitio**, haz click en **Variables del Sitio**. Aquí puedes ver el listado de todas las variables globales y las variables del sitio, su información general y un botón para copiar su código en Liquid markup.
+1. En **Configuración de la aplicación**, haz click en **Variables de la aplicación**. Aquí puedes ver el listado de todas las variables globales y las variables del sitio, su información general y un botón para copiar su código en Liquid markup.
 1. Haz click en **Nueva Variable**.
 1. Completa los campos **Nombre** y **Valor** de la variable.
 1. Haz click en **Guardar**.

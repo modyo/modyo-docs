@@ -9,7 +9,7 @@ A web application or web app displays the content created in Content and Channel
 A web application can be in one of these three states, which you choose in **Application settings** > [General](/en/platform/channels/sites.html#general) > **Change status**:
 
 - **Enabled**: The web application is editable and visible to the public.
-- **Draft**: The web application is modifiable but not visible to the public: it requires logging in to access. This is the state in which every newly created web application starts.
+- **Draft**: The web application is modifiable but not visible to the public: only account administrators with an active Modyo Platform session can view it. This is the state in which every newly created web application starts.
 - **Disabled**: The web application is neither editable nor accessible.
 
 :::tip Transient states
@@ -30,7 +30,9 @@ To create a new web app, follow these steps:
 Once created, the web application is in **Draft** status and the system takes you to the [Overview](/en/platform/channels/sites.html#application-overview) screen. To make it visible to the public, change its status to **Enabled** in **Application settings** > [General](/en/platform/channels/sites.html#general) > **Change status**.
 
 :::warning Attention
-In the web apps index, you will only see those apps in which you have a role and are part of the team.
+In the applications list, you only see the ones where you have a role on the team. If you are the account owner, or your account role includes the **Manage Channels**, **Admin SEO**, or **Admin Webhooks** permission, you see every application in the account.
+
+Whoever creates an application joins its team with the **Site Admin** role.
 :::
 
 ### Theme
@@ -239,7 +241,7 @@ Changes to the name and description are immediately reflected in Modyo. The upda
 
 
 :::warning Attention
-Time in content is managed in the [general](https://https://docs.modyo.com/en/platform/core/configuration#configuration) section of the account settings.
+Time in content is managed in the [general](/en/platform/core/configuration.html#general-configuration) section of the account settings.
 :::
 
 - **Google Tag Manager ID**: Adds a Google Tag Manager identifier to insert scripts for tracking and measuring events.
@@ -297,26 +299,13 @@ style="display:none;visibility:hidden">
 With this configuration complete, when there is a value associated with the **Google Tag Manager ID** field, the scripts will be automatically injected. This will allow you to create events in Google Tag Manager to record your users' actions.
 
 
-
-- **Favicon**: Image that appears next to the address bar.
-- **Apple icon**: Image displayed on iOS mobile devices when marking the application as a favorite.
-- **Delete**: Permanently delete a site and all its elements.
-
-:::danger Danger
-Deletion is irreversible, so you must be completely sure when executing this action.
-
-When you press the delete button, the system will ask you to enter the textual name of the site you want to delete to confirm the action. Once confirmed, you will not be able to access the site or its elements again.
-:::
-
-
-
 **Visualization**
 - **Favicon**: Image displayed next to the address bar.
 - **Apple icon**: An image that is displayed on iOS mobile devices when you mark the application as a favorite.
 
 **Privacy**
 - **Public**: All visitors can view the web app and its content without logging in.
-- **Private**: Only users with an active Modyo session can view the web app.
+- **Private**: Only users of the application's realm with an active session can view the web app. To save this option, the application must have a realm assigned with **Change Realm**; otherwise, Modyo doesn't save the change and asks you to configure a realm first.
 - **Show home to public visitors**: The web app's home page is shown to all visitors, even those who are not logged in. When navigating to any other page, registration or login is required.
 - **Redirect to home when a URL is not found**: By default, the web application shows a 404 error when the user accesses a non-existent URL. If you check this option, the user will be redirected to the web app's home page instead of the 404.
 - **Enable search**: Activates the search function in the web app.
@@ -334,12 +323,12 @@ Proceed with caution when modifying these options, as they can affect access to 
 :::
 
 - **Change host**: This action modifies the visibility and accessibility of the application. Changing the host can impact the visibility and availability of the web application.
-- **Change realm**: Displays the application's realm. When you change the realm, you lose all privacy settings in your web apps, pages, and navigation, and the site's origination pages lose the reference to their current origination. You can choose a realm or one of its [stages](/en/platform/customers/realms.html#stages). While the application has a realm or one of its stages selected, that realm can't be deleted.
+- **Change realm**: Displays the application's realm. When you change the realm, you lose all privacy settings in your web apps, pages, and navigation, and the site's origination pages lose the reference to their current origination. You can choose a realm or one of its [stages](/en/platform/customers/realms.html#stages). While the application has a realm or one of its stages selected, that realm can't be deleted. If you choose **None**, the application's privacy goes back to **Public**.
 - **Change status**: Changes the application's status. Options are:
 	* Enabled: Editable and visible to the public.
-	* Draft: Modifiable but not visible to the public. Requires login to access. This is the state in which every newly created web application starts. Robots.txt, PWAs, and the manifest are disabled in this state.
+	* Draft: Modifiable but not visible to the public. Only account administrators with an active Modyo Platform session can view it. This is the state in which every newly created web application starts. Robots.txt, PWAs, and the manifest are disabled in this state.
 	* Disabled: Not editable or visible. In this state, it is not accessible or visible to users.
-- **Delete application**: Initiates the asynchronous deletion of the application and all its elements, such as pages and widgets.
+- **Delete App**: Initiates the asynchronous deletion of the application and all its elements, such as pages and widgets, as well as all its stages.
 
 ::: danger Danger
 Deleting a web application is irreversible.
@@ -483,7 +472,7 @@ In the domains section, you can view and modify the public location of your web 
 It is essential to inform all platform members about any changes you make in this section.
 :::
 
-The **Host** is the location of the web application within the platform domain, and you can change it in **Site settings > General**, in the **Danger zone** section.
+The **Host** is the location of the web application within the platform domain, and you can change it in **App settings** > **General**, in the **Danger zone** section.
 
 Activate the **Enable custom domains** checkbox to enable the fields in this section:
 - **Primary domain**: Main address of the web application. Alternative domains will be redirected to this domain.
@@ -495,29 +484,9 @@ Browsers cache 301 redirects aggressively: if you later switch to 302, visitors 
 :::
 
 
-:::warning Attention
-These domains are reserved by Modyo. They are not available as custom domains:
-<table style="border: none;"><tr style="border: none;">
-<td style="border: none;"><ul>
-<li>education.modyo.com</li>
-<li>elearning.modyo.com</li>
-<li>training.modyo.com</li>
-<li>capacitacion.modyo.com</li>
-</ul></td>
-<td style="border: none;"><ul>
-<li>support.modyo.com</li>
-<li>soporte.modyo.com</li>
-<li>developers.modyo.com</li>
-<li>desarrolladores.modyo.com</li>
-</ul></td>
-<td style="border: none;"><ul>
-<li>www.modyo.com</li>
-<li>es.modyo.com</li>
-<li>pt.modyo.com</li>
-<li>global.modyo.com</li>
-</ul></td>
-</tr></table>
-:::
+For the custom domain to work, the domain's CNAME record in your DNS must point to the target shown on screen under the **Enable custom domains** checkbox. Custom domains are not available in trial accounts: the checkbox is disabled and the screen shows the notice "You can’t use this option in a trial account".
+
+With custom domains enabled, anyone who reaches the web application through its URL in the platform domain, the one that includes the **Host**, is redirected to the primary domain, preserving the requested path.
 
 :::warning Attention
 These hosts are reserved by Modyo. They are not available as hosts for your web apps:
@@ -529,6 +498,7 @@ These hosts are reserved by Modyo. They are not available as hosts for your web 
 <li>activate</li>
 <li>admin</li>
 <li>api</li>
+<li>assets</li>
 </ul></td>
 <td style="border: none;"><ul>
 <li>auth</li>
@@ -555,6 +525,7 @@ These hosts are reserved by Modyo. They are not available as hosts for your web 
 <li>status</li>
 </ul></td>
 <td style="border: none;  vertical-align: top;"><ul>
+<li>try</li>
 <li>uploads</li>
 <li>users</li>
 <li>welcome</li>
@@ -656,6 +627,10 @@ Once you have enabled team review, you can perform the following actions:
 - **Require all** - With this option active, you require that all users designated as reviewers approve the item before it can be published.
 
 
+:::warning Attention
+When you check or uncheck **Enable team review** and save, every item in the application that was **In review** or **Approved** goes back to **Draft**. If team review stays enabled, send them to review again.
+:::
+
 ### Team Members
 
 To efficiently organize and manage work in Modyo, you can select the team members who will participate in the development of each site, granting them access to writing, reviewing, and/or publishing tasks.
@@ -699,7 +674,7 @@ Modyo has a custom redirect system that will allow you to take a URL from your s
 
 In this view, you will find a table with all the redirects that currently exist on the site. You can search by path or description.
 
-To create a new redirect, click on the **New** button in the upper right corner of the view. Fill in the **_Source URL_** and **_Destination URL_** fields and the redirection code, then save the changes.
+To create a new redirect, click the **New redirection** button. In the window, fill in **Source path**, **Destination path**, and **HTTP Redirection Code** and, optionally, a **Description**; then click **Add redirection**. The source path is written after the application URL, without the leading slash.
 
 #### Enable and disable redirects
 
@@ -713,7 +688,7 @@ New redirects, including those imported via CSV, are created enabled.
 The redirects table is the second to last in precedence, so if there is a URL on the site that points to a [page](/en/platform/channels/pages) or a default view, you will see that view instead of being redirected through the custom redirects table.
 :::
 
-In addition to creating redirects one by one, you can import a [CSV file](/assets/examples/custom-redirections.csv) with up to 1000 redirects.
+In addition to creating redirects one by one, you can import a [CSV file](/assets/examples/custom-redirections.csv) with up to 1000 redirects (not counting the header row, if you check **The first row is the header**) and a maximum size of 2 MB.
 
 :::warning Warning
 The required columns to import redirects are origin and destination.
@@ -721,6 +696,8 @@ The required columns to import redirects are origin and destination.
 You can select a 301 or 302 response code for all elements without having to add an additional column.
 
 If you are importing a redirect with an already registered origin, you will not be able to start the import process. Adjust your CSV file by deleting the row with the existing origin, or delete the custom redirect record from the site where you are trying to import the origin.
+
+Platform reserved paths can't be used as a source path, either when you create a redirect or when you import it: `404`, `422`, `500`, `admin`, `auth`, `crossdomain`, `dist`, `forms`, `javascript`, `login`, `logout`, `manifest`, `ping`, `preview`, `profile`, `realms`, `robots`, `search`, `serviceworker`, `session`, `site_logout`, `sitemap`, `stylesheets`, `uploads`, and `widget_manager`. The restriction applies when the source path is exactly one of them. If the file includes any of them, the import fails and none of the file's redirects are imported.
 :::
 
 The hierarchy of locations on Modyo sites follows this order:
@@ -728,7 +705,7 @@ The hierarchy of locations on Modyo sites follows this order:
 1. [Default views (Home, search)](/en/platform/channels/templates)
 1. [Pages](/en/platform/channels/pages)
 1. Custom Redirects
-1. [Site 404 error settings](/en/platform/channels/sites#privacy)
+1. [Site 404 error settings](/en/platform/channels/sites.html#general)
 
 :::warning Conditions for a redirect
 For a redirect to be successful, the source path cannot exist or must be unpublished. If the source is a published page with subpages, you must unpublish the subpages before unpublishing the main page.
@@ -791,7 +768,7 @@ Controls which resources the browser can load on the site to mitigate data injec
 Freely specify your content security policy in the text area. For a complete guide on how to write your policy, see [Content Security Policy (CSP) from Mozilla Developer Network.](https://developer.mozilla.org/es/docs/Web/HTTP/CSP)
 
 :::warning Attention
-A very strict value can interfere with some features like [Google Tag Manager](/en/platform/channels/sites#google-tag-manager), [PWA](/en/platform/channels/sites#pwa), [Widgets](/en/platform/channels/widgets), [Asset Manager](/en/platform/content/asset-manager), and the [Incode Drop-in modality](/en/platform/customers/origination.html#drop-in-requirements).
+A very strict value can interfere with some features like [Google Tag Manager](/en/platform/channels/sites.html#general), [PWA](/en/platform/channels/sites#pwa), [Widgets](/en/platform/channels/widgets), [Asset Manager](/en/platform/content/asset-manager), and the [Incode Drop-in modality](/en/platform/customers/origination.html#drop-in-requirements).
 :::
 
 A production-ready policy must ensure that all resources, such as images and stylesheets, are loaded from trusted sources and requires that all scripts are secure and reliable for the application. For example, a strict policy for the _minimal template_ would look like this:
@@ -877,7 +854,13 @@ Using variables allows you to reuse HTML, JS, CSS, or text code across different
 :::tip Tip
 In global variables, you can use plain text, HTML, JavaScript, and CSS. However, it is important to note that you cannot use Liquid code within these variables. It is also important to remember that the content of global variables has a maximum limit of 65,535 characters.
 
-To get the variable's value anywhere that accepts Liquid markup, use:<span v-pre>`{{vars.Name}}`</span>
+To get the variable's value anywhere that accepts Liquid markup, use its identifier, which is the text of the **Name** field normalized to lowercase and hyphens:
+
+```liquid
+{{ vars.identifier }}
+```
+
+See how the identifier is built in [Global Variables](/en/platform/channels/global-variables.html#create-a-global-variable).
 :::
 
 #### Create a Variable in Sites
@@ -886,7 +869,7 @@ To create a variable in sites, follow these steps:
 
 1. From the main side menu, click **Channels**.
 1. Select your **Site**.
-1. Under **Site Settings**, click **Site Variables**. Here you can see the list of all global variables and site variables, their general information, and a button to copy their code into Liquid markup.
+1. Under **App settings**, click **App variables**. Here you can see the list of all global variables and site variables, their general information, and a button to copy their code into Liquid markup.
 1. Click on **+ New Variable**.
 1. Complete the **Name** and **Value** fields of the variable.
 1. Click **Save**.
