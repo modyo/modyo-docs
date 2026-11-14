@@ -248,16 +248,10 @@ Puedes además vincular otros campos. Toma en consideración que:
 - Puedes vincular campos personalizados o custom de Modyo. Para ello, primero debes crear el campo custom en Modyo y el campo tiene que estar habilitado para ser utilizado en la sincronización.
 
 Una vez que hayas vinculado los campos, selecciona el tipo de sincronización:
-- **Siempre usar Salesforce**: Esta opción usa los datos desde Salesforce para actualizar (crear, actualizar, borrar) los usuarios de Modyo. En este caso, no se envía información de usuario de Modyo a Salesforce. La sincronización es unidireccional, y la información fluye únicamente desde Salesforce hacia Modyo.
-- **Siempre usar Modyo**: Al seleccionar esta opción se envían datos de usuarios de Modyo a Salesforce para actualizar contactos en Salesforce. No se actualizan usuarios de Modyo con información de Salesforce. La sincronización es unidireccional y la información fluye únicamente desde Modyo hacia Salesforce.
+- **Usa siempre Salesforce**: Esta opción usa los datos desde Salesforce para actualizar (crear, actualizar, borrar) los usuarios de Modyo. En este caso, no se envía información de usuario de Modyo a Salesforce. La sincronización es unidireccional, y la información fluye únicamente desde Salesforce hacia Modyo.
+- **Usa siempre Modyo**: Al seleccionar esta opción se envían datos de usuarios de Modyo a Salesforce para actualizar contactos en Salesforce. No se actualizan usuarios de Modyo con información de Salesforce. La sincronización es unidireccional y la información fluye únicamente desde Modyo hacia Salesforce.
 - **Bidireccional**: Esta opción envía información de Modyo a Salesforce y se usa información de Salesforce en Modyo, lo que permite actualizar contactos y usuarios respectivamente. En este caso, los usuarios y contactos se mantienen actualizados con la información más reciente disponible.
 - **No sincronizar**: Al seleccionar esta opción, desactivas la integración, evitando que se sincronicen usuarios y contactos entre Modyo y Salesforce. Esta opción puede ser útil si necesitas pausar la sincronización por alguna razón.
-
-:::warning Attention
-Si seleccionas la modalidad de vinculación **Siempre usar Modyo** o **bidireccional**, pero no completas el segundo paso que se explica a continuación, los usuarios de Modyo no se enviarán a Salesforce.
-:::
-
-Para completar el segundo punto y habilitar el uso de la API de Modyo desde las clases Apex de Salesforce, sigue esta [guía](https://sites.google.com/modyo.com/platform/recursos/salesforce-external-services).
 
 Una vez que hayas completado los dos pasos, al hacer un cambio a un usuario de Modyo la modificación se ve reflejada en Salesforce y lo mismo de Salesforce a Modyo, según la configuración de vinculación seleccionada.
 
@@ -290,10 +284,40 @@ Para asegurar la correcta sincronización de datos entre Modyo y Salesforce y ma
 - Los campos no incluidos en la lista, por ejemplo, referencias o campos compuestos, están deshabilitados en la vista de vinculación de campos. Esto indica que no están disponibles para vinculación.
 
 #### Habilitar la API de Modyo en Salesforce.
-Para llevar a cabo este proceso, revisa la guía de desarrollador de [Connect REST API de Salesforce](https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/intro_what_is_chatter_connect.htm)
+Para que los cambios de los contactos de Salesforce lleguen a Modyo, configura Salesforce para que avise a Modyo cada vez que se crea, modifica, elimina o restaura un contacto. Cada aviso es una petición `POST` a la API de administración del reino, donde `{realm_uid}` es el **Identificador** del reino:
+
+```
+POST [account.url]/api/admin/customers/{realm_uid}/salesforce/event_callback
+```
+
+El cuerpo sigue el formato del encabezado de los eventos de cambio de Salesforce (Change Data Capture), así que puedes reenviar el `ChangeEventHeader` de cada evento de Contact, por ejemplo desde un trigger de Apex. Los campos obligatorios son `changeType` y `recordIds`:
+
+```json
+{
+  "entityName": "Contact",
+  "changeType": "UPDATE",
+  "recordIds": ["0035w00001XYZAb"]
+}
+```
+
+Modyo procesa cada ID de `recordIds` según el valor de `changeType`:
+
+- `CREATE`, `UPDATE`, `UNDELETE` y sus variantes `GAP_CREATE`, `GAP_UPDATE` y `GAP_UNDELETE` crean o actualizan el usuario según las especificaciones de más arriba, con los campos vinculados que Modyo lee del contacto en Salesforce usando las credenciales del primer paso.
+- `DELETE` y `GAP_DELETE` eliminan de Modyo al usuario vinculado al contacto.
+- Cualquier otro valor se ignora.
+
+La petición se autentica con un [Bearer token](/es/platform/core/api.html#bearer-token) del dueño de la cuenta o de un administrador con el permiso **Gestionar Clientes**. Los pasos 2 a 5 de [Integración con Salesforce](/es/platform/core/integrations/connect-modyo-salesforce.html) muestran cómo configurar en Salesforce una Named Credential autenticada contra la API de administración de Modyo.
+
+Modyo responde:
+
+- `200` cuando recibe el evento. Los usuarios se actualizan unos instantes después, así que esta respuesta no confirma que la sincronización haya terminado.
+- `401` si el token no es válido o su administrador no tiene permiso.
+- `403` si el tipo de sincronización no es **Usa siempre Salesforce** ni **Bidireccional**.
+- `404` si el reino no existe o no tiene una integración de Salesforce.
+- `409` si el mapeo de campos no vincula Email, First name y Last name con sus equivalentes de Salesforce.
 
 :::warning Importante
-En caso de no llevar a cabo este segundo paso, la información y cambios que lleves a cabo en Salesforce no los verás reflejados en Modyo.
+Si elegiste **Usa siempre Salesforce** o **Bidireccional** y no completas este segundo paso, los cambios que hagas en Salesforce no se reflejan en Modyo.
 :::
 
 ### Cliente OAuth
