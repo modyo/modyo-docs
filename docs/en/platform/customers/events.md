@@ -212,7 +212,8 @@ The endpoint accepts a closed set of parameters. Any other one you send is silen
 | `au_mt` | Authentication method. |
 | `au_err` | Detail of the authentication error. |
 | `pf_net`, `pf_srv`, `pf_tfr`, `pf_dm1`, `pf_dm2` and `pf_onl` | Network, server, transfer, DOM processing, DOM completion and page load times. |
-| `idsite`, `uid`, `ua` and `_id` | Site, user, browser and visitor. Modyo fills them in from the request context, so you do not need to send them. |
+| `_id` | Visitor identifier. |
+| `idsite`, `uid` and `ua` | Site, user and browser. Modyo fills them in from the request context, so do not send them. |
 
 Besides what you send, Modyo stores the user realm, the request IP and, if an admin is impersonating the user, who they are.
 
