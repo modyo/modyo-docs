@@ -36,7 +36,7 @@ _Se superó el límite de inicios de sesión fallidos. Tu cuenta ha sido deshabi
 Esta protección aplica tanto a los miembros del equipo que entran al panel de administración como a los usuarios finales que inician sesión en un reino. El bloqueo se libera solo por tiempo: no hay una acción de desbloqueo manual en el panel, hay que esperar a que se cumpla el plazo.
 
 :::tip Tip
-Este bloqueo temporal es distinto del estado _inactivo_ de la [Política de Periodo de Inactividad de los Usuarios](#politica-de-periodo-de-inactividad-de-los-usuarios). Si un miembro del equipo reporta que no puede entrar, revisa cuál de los dos casos aplica: el bloqueo por intentos fallidos se levanta por sí solo a los 15 minutos, mientras que el estado inactivo se mantiene hasta que el usuario reactiva su cuenta o un dueño de la cuenta lo vuelve a activar.
+Este bloqueo temporal es distinto del estado _inactivo_ de la [Política de Periodo de Inactividad de los Usuarios](#politica-de-periodo-de-inactividad-de-los-usuarios). Si un miembro del equipo reporta que no puede entrar, revisa cuál de los dos casos aplica: el bloqueo por intentos fallidos se levanta por sí solo a los 15 minutos, mientras que el estado inactivo se mantiene hasta que el usuario reactiva su cuenta o un miembro del equipo con el permiso **Administrar Equipo** lo vuelve a activar.
 :::
 
 ## Vigencia de los Enlaces y Códigos del Panel
@@ -91,7 +91,7 @@ Este bloqueo es distinto del [Bloqueo por Intentos Fallidos de Inicio de Sesión
 
 En esta sección puedes configurar el tiempo que permanecerá activa una sesión. Los dos campos son listas de opciones fijas: eliges uno de los valores disponibles, no escribes un tiempo libre.
 
-**Expiración de sesión**: Al concluirse el tiempo seleccionado, Modyo cierra la sesión del usuario automáticamente. Las opciones son 15 minutos, 30 minutos, 1 hora, 2 horas, 12 horas, 1 día, 1 semana, 2 semanas, 1 mes y 3 meses. Si la duración definida en tu instalación no coincide con ninguna de ellas, aparece además como una opción más de la lista.
+**Expiración de sesión**: Al concluirse el tiempo seleccionado, Modyo cierra la sesión del usuario automáticamente. Las opciones van desde 15 minutos hasta la duración máxima de sesión que admite tu instalación, que por defecto es 1 semana: 15 minutos, 30 minutos, 1 hora, 2 horas, 12 horas, 1 día y 1 semana. Las de 2 semanas, 1 mes y 3 meses solo aparecen cuando el máximo de tu instalación llega hasta ellas, y si ese máximo no coincide con ninguna opción, aparece además como la última de la lista. Si el máximo de tu instalación baja, las sesiones duran como mucho ese máximo, aunque la cuenta tenga guardado un valor mayor.
 
 **Período de inactividad del usuario**: Cuando un usuario está inactivo se cierra la sesión automáticamente, una vez transcurrido el tiempo seleccionado. Se consideran las acciones de navegación, teclado y mouse como actividades de usuario. Esta opción protege al usuario en caso de dejar su estación de trabajo desatendida. Para poder elegir un valor, primero marca la casilla **Activar el periodo de inactividad del usuario**; las opciones son 5 minutos, 15 minutos, 30 minutos, 1 hora y 6 horas.
 
@@ -111,21 +111,30 @@ Recibir este correo no significa por sí solo que alguien más haya entrado a la
 
 ## Política de Periodo de Inactividad de los Usuarios
 
-Al activar esta opción, y una vez transcurrido el tiempo seleccionad sin interacción del usuario en la plataforma, Modyo realizará automáticamente un cambio en el estado del usuario a _inactivo_.
+Con la casilla **Activar la política de inactividad del usuario** marcada, que es el valor por defecto, Modyo cambia a _inactivo_ el estado de los miembros del equipo que pasan más tiempo que el **Periodo de inactividad** seleccionado sin interactuar con la plataforma. El cambio no ocurre en el instante en que se cumple el plazo, sino en el primero de estos dos momentos:
 
-Una vez que el usuario es marcado como inactivo, no puede iniciar sesión. El periodo de inactividad predeterminado es de 90 días y puedes modificarlo a:
+- En la revisión automática que Modyo hace una vez por semana. Esta revisión también cierra las sesiones abiertas del miembro del equipo.
+- Cuando el miembro del equipo intenta iniciar sesión con el plazo ya cumplido y sus credenciales son correctas.
+
+El dueño de la cuenta nunca queda inactivo, aunque supere el período.
+
+Una vez que el usuario es marcado como inactivo, no puede iniciar sesión mientras la política siga activa. El periodo de inactividad predeterminado es de 90 días y puedes modificarlo a:
 
 - 30 días
 - 90 días
 - 180 días
 - 360 días
 
-Si marcas la casilla para reenviar un correo al usuario al considerarlo inactivo, el usuario recibirá una notificación por correo electrónico. Desde este correo, tendrá la capacidad de reactivar su cuenta.
+Si marcas la casilla **Enviar email de reactivación por desactivación del usuario por inactividad**, que viene activada por defecto, el usuario recibe un correo cada vez que intenta iniciar sesión estando inactivo, y desde ese correo puede reactivar su cuenta. La revisión semanal no envía este correo.
+
+:::warning Atención
+Al guardar la configuración después de activar o desactivar la política, todos los miembros del equipo marcados como inactivos vuelven a quedar activos, incluidos los que marcaste a mano. Si la política queda activa, quienes sigan superando el período vuelven a quedar inactivos en la siguiente revisión semanal o al intentar iniciar sesión.
+:::
 
 :::tip Tip
-Los **dueños de las cuentas** pueden cambiar el estado de un usuario entre inactivo y activo utilizando la casilla de verificación "Inicio de sesión desactivado por inactividad".
+Cualquier miembro del equipo con el permiso **Administrar Equipo** puede cambiar el estado de un usuario entre inactivo y activo con la casilla **Inicio de sesión suspendido por inactividad**.
 
-Puedes localizar esta opción al editar un usuario en la sección **Equipo**, en la pestaña de **Editar**. Si seleccionas la casilla, el usuario es marcado como inactivo y al desactivarla el usuario estará activo.
+Puedes localizar esta opción al editar un usuario en la sección **Equipo**, en la pestaña de **Editar**. Si seleccionas la casilla, el usuario es marcado como inactivo y se cierran sus sesiones abiertas. Al desmarcarla, el usuario vuelve a estar activo y el período de inactividad empieza a contar de nuevo desde ese momento. En el listado de **Equipo**, el filtro **Suspendido** te permite ver qué usuarios están inactivos.
 :::
 
 ## Control de Acceso HTTP (Cross-Origin Resource Sharing CORS)
@@ -138,6 +147,8 @@ La sección **Cross Origin Resource Sharing** define desde qué dominios se pued
 
 Cuando termines, haz clic en **Guardar**.
 
+Los orígenes de esta sección aplican a la API de administración, a la API de menús de Channels y a la API de pagos. Las demás APIs tienen su propio CORS: la API de contenido usa el de cada espacio, en la sección [Seguridad](/es/platform/content/spaces.html#seguridad) de su configuración, y la API de Customers usa el de cada reino, en la sección [Seguridad](/es/platform/customers/settings.html#seguridad) de su configuración. Además, la API de menús de una aplicación con dominio personalizado activo siempre acepta llamadas desde ese dominio, aunque CORS esté desactivado.
+
 :::warning Atención
 **Permitir todos los orígenes** se activa desde esta misma pantalla, sin necesidad de abrir un ticket de soporte ni de hacer ningún otro cambio en tu instalación. Como deja la información pública de tu cuenta al alcance de cualquier dominio, resérvala para ambientes de desarrollo o pruebas y, en producción, enumera los dominios en **Orígenes alternativos**.
 :::
@@ -148,13 +159,13 @@ La inclusión automática cubre el dominio principal de cada aplicación. Si pub
 
 ## Token de Entrega de Contenido (JWT - JSON Web Token)
 
-Esta clave o _secret_ es usada por Modyo para firmar los JWT de los usuarios y así poder acceder al [contenido privado a través de la API](/es/platform/content/public-api-reference#contenido-privado).
+Modyo firma los JWT de los usuarios con la **Clave de firma de contenido privado via JSON (JWS)** para que puedan acceder al [contenido privado a través de la API](/es/platform/content/public-api-reference#contenido-privado). No es un _secret_ compartido, sino un par de claves de curva elíptica con el que Modyo firma los tokens usando el algoritmo ES256. La clave se crea junto con la cuenta, no vence y solo cambia cuando haces clic en **Generar nueva clave JWS**.
 
 :::warning Atención
 Si generas una nueva clave, todas las solicitudes de contenido privado deberán pasar por Modyo. Esto se debe a que los JWT firmados por Modyo con la clave anterior ya no serán válidos.
 :::
 
-La clave o _secret_ tiene un tiempo determinado de duración en segundos. Puedes configurar este tiempo en el campo proporcionado; por defecto, la duración es una hora (3600 segundos). Se recomienda evitar un período de duración muy corto, ya que puede afectar el rendimiento de la plataforma.
+El campo **Tiempo de vida del token de entrega de contenido (en segundos)** define cuánto dura cada JWT que Modyo emite, no la clave. Por defecto es una hora (3600 segundos) y el mínimo es 10 segundos. Mientras un token sigue vigente, Modyo puede volver a entregarlo con el mismo vencimiento, así que el que recibe tu aplicación puede durar menos que ese tiempo; cuando vence, la API de contenido lo rechaza y tienes que pedir uno nuevo. Se recomienda evitar un período de duración muy corto, ya que puede afectar el rendimiento de la plataforma.
 
 ## Autenticación de Dos Pasos 2FA
 
