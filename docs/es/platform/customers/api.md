@@ -77,6 +77,7 @@ Todos los endpoints de la API de Customers comparten estos cuerpos de error:
 |--------|--------|---------------|
 | `401` | <code v-pre>{"error":{"user_session":"user not found"}}</code> | La petición no trae credenciales utilizables, el access token no corresponde a un usuario del reino o el usuario está inactivo. |
 | `401` | <code v-pre>{"error":{"grant_expired":"session expired"}}</code> | La credencial identifica a un usuario, pero la sesión que la respalda venció o fue revocada. |
+| `403` | <code v-pre>{"error":{"pending_password_reset":"..."}}</code> | El usuario tiene pendiente el cambio de contraseña porque un administrador lo creó o le asignó una contraseña. Toda llamada responde así hasta que el usuario inicia sesión en el reino con su nombre de usuario y contraseña y define una nueva. Crear un usuario en un reino con [Soft login](/es/platform/customers/settings.html#soft-login) activo no deja su contraseña pendiente. |
 | `404` | <code v-pre>{}</code> | El `realm_uid` de la URL no corresponde a ningún reino activo de la cuenta o, en un dominio personalizado, no corresponde al reino de ese dominio. |
 
 :::tip Tip
