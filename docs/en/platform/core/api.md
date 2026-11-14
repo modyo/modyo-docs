@@ -16,7 +16,7 @@ The API Key generated for a user will inherit the same permissions that the user
 
 To start taking advantage of the Modyo API, it is first important to know the available services, the operations that can be invoked, and how to use them.
 
-Modyo facilitates this task by providing the description of its _headless_ API through the use of Swagger (also known as OpenAPI specification) in lists of services grouped according to their function: administrative, public content, and user profile.
+Modyo facilitates this task by providing the description of its _headless_ API through the use of Swagger (also known as OpenAPI specification) in lists of services grouped according to their function: administrative, public content, user profile, and [published site menus](/en/platform/channels/navigation.html#consume-a-menu-through-the-api).
 
 You can access the OpenAPI documentation through the following URLs:
 
@@ -24,6 +24,7 @@ You can access the OpenAPI documentation through the following URLs:
 https://[account_host]/api/admin/docs
 https://[account_host]/api/content/docs
 https://[account_host]/api/customers/docs
+https://[account_host]/api/channels/docs
 ```
 
 For example, you will find the public Content API details at the following path:

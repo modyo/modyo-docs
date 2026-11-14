@@ -19,7 +19,7 @@ En la parte superior de la vista, encontrarás el estado de publicación del men
 
 En la parte superior derecha, encuentras la última fecha de publicación y las acciones disponibles:
 
-**Vista previa**: Al hacer clic en este icono, se abre una nueva pestaña con el modo vista previa del menú, donde puedes visualizar todos los cambios.
+El editor de menús no tiene un botón de vista previa. Para revisar la versión editable del menú, abre la [vista previa](/es/platform/core/#modos-de-vista-previa) del sitio o de una página y deja el selector **Navegación** en **Editable**.
 
 :::warning Atención
 Puedes previsualizar los cambios como usuario sin sesión o usuario con sesión de Modyo. Para esto, es recomendable iniciar o cerrar la sesión de Modyo en el sitio antes de entrar al modo vista previa. Esto debido a que iniciar o cerrar sesión dentro del modo de vista previa puede generar errores de seguridad como _x-frame-options_ o _mixed-content_, dependiendo de la configuración de dominios personalizados y SSL del sitio.
@@ -41,9 +41,16 @@ Por defecto, se guardan hasta 20 respaldos, de tal forma que los veinte respaldo
 Para más información sobre el versionamiento, revisa la sección de [Versionado](/es/platform/core/#versionado).
 :::
 
-**Actividad/Comentarios**: Solo aparece habilitada si tienes activada la [revisión en equipo](/es/platform/core/#revision-en-equipo). Al hacer clic, despliega una barra lateral con el historial de actividad y comentarios del menú.
+**Ver actividad**: Al hacer clic en este icono, se despliega una barra lateral con el historial de actividad y comentarios del menú, tengas o no activada la [revisión en equipo](/es/platform/core/#revision-en-equipo).
 
 Al final de la barra lateral, ves una caja de texto donde puedes escribir un comentario. Junto a cada actividad, puedes hacer clic en _ver detalle_ para mostrar la información completa de ese registro de actividad.
+
+Desde el menú de tres puntos accedes, según tus permisos, a estas otras acciones:
+
+- **Archivar**: Archiva el menú. Solo está disponible si el menú no está publicado; para archivar un menú publicado, primero despublícalo.
+- **Clonar**: Crea una copia del menú con el nombre "Copy of" seguido del nombre original y la abre en el editor.
+- **Copiar liquid markup**: Copia al portapapeles un marcado Liquid de ejemplo que imprime el menú como una lista de dos niveles, listo para pegar en una plantilla.
+- **Borrar**: Elimina el menú junto con sus respaldos. Solo se habilita cuando el menú está archivado.
 
 ## Crear un Menú
 Para crear un Menú, sigue estos pasos:
@@ -66,6 +73,12 @@ Tu menú en este momento ya es público, pero no se manda a llamar. Se necesita 
 - **Enviar a revisión**: Cambia el estado del menú a "Esperando revisión". En este estado sigues haciendo cambios, pero cada cambio será notificado vía correo a los revisores asignados.
 - **Rechazar**: Vuelve al estado "En edición", notificando a los revisores que el elemento fue rechazado.
 - **Publicar**: Una vez que el menú fue aprobado, podrás ir a la vista de [publicación conjunta](/es/platform/channels/sites#revision-y-publicacion-conjunta) para publicar tu navegación.
+- **Despublicar**: Aparece entre las opciones desplegables de la acción principal cuando el menú está publicado y tienes permiso para publicar. Puedes despublicarlo de inmediato con **Despublicar ahora** o programarlo con **Despublicar en**.
+- **Restaurar**: Reemplaza a la acción principal cuando el menú está archivado y lo devuelve al estado "En edición".
+
+:::warning Atención
+Si despublicas un menú, las plantillas que lo invocan dejan de encontrarlo, como si su identificador no existiera. Revisa [Cómo se invoca](/es/platform/channels/navigation#como-se-invoca).
+:::
 
 En la sección lateral derecha, puedes ver una barra que cambia de acuerdo al ítem seleccionado en el área principal. En esta sección, puedes ver las opciones:
 
@@ -90,6 +103,7 @@ En la sección lateral derecha, puedes ver una barra que cambia de acuerdo al í
 		- sms:+569-123-45678,9-123-45678?body=hello%20there&param1=a%20value
 	- Email: Genera un enlace con el URI `mailto`. Ejemplos:
 		- mailto:info@example.com?subject=subject&cc=cc@example.com
+	- Variable global: Inserta el valor de una [variable global](/es/platform/channels/global-variables). Escribe `vars.identificador` entre llaves dobles, igual que en una plantilla, solo o como parte de la dirección. No admite otras expresiones Liquid. El valor se resuelve cuando recorres el menú con Liquid, como en los [ejemplos de menú](/es/platform/channels/navigation#ejemplos-de-menu), y en la [API de Channels](/es/platform/channels/navigation#consumir-un-menu-por-api).
 - **Abrir en una pestaña nueva**: Solo aparece cuando el destino es una **URL**. Añade los atributos `target="_blank"` y `rel="noopener noreferrer"` al enlace del ítem, para que al hacer clic se abra en una pestaña nueva.
 - **Privado**: Hace que el elemento seleccionado sea visible solo cuando hay una sesión de usuario activa en el sitio.
 - **Segmentos**: Si hay segmentos creados, también podrás segmentar este elemento para que los usuarios puedan ver este ítem de menú solo cuando tengan una sesión activa y que además se encuentren dentro de los segmentos seleccionados.
@@ -294,3 +308,25 @@ El snippet general ya despliega el tercer nivel como enlaces indentados dentro d
 	{% endfor %}
 </ul>
 ```
+
+## Consumir un menú por API
+
+Además de imprimirlo con Liquid, puedes obtener la versión publicada de un menú en formato JSON con la API de Channels, por ejemplo, para armar la navegación desde una aplicación que no usa las plantillas del sitio:
+
+```http
+GET https://[account_host]/api/channels/sites/[site_host]/menus/[menu_slug]
+```
+
+Donde `site_host` es el [Host](/es/platform/channels/sites#dominios) del sitio y `menu_slug` es el identificador del menú.
+
+La respuesta trae el nombre (`name`), el identificador (`slug`) y los ítems raíz (`items`) del menú, ordenados por posición. Cada ítem incluye `label`, `url`, `parameterized_label`, `target` (`_self` o `_blank`), `description`, `classes` (estos dos, `null` si están vacíos), `position` y sus hijos en `children`.
+
+- Solo responde para sitios en producción y menús publicados. En otro caso, responde con un error 404.
+- Si el sitio es privado, una llamada sin sesión en el sitio responde con un error 401.
+- Los ítems **Privado** y los segmentados siguen las mismas reglas que en el [tag menu](/es/platform/channels/navigation#items-que-se-muestran), según la sesión que el usuario tiene iniciada en el dominio de la cuenta. La API no usa tokens de acceso, así que una llamada sin esa sesión, por ejemplo desde un servidor, recibe solo los ítems que no son privados.
+- Si la URL de un ítem incluye variables globales, llegan resueltas.
+- Las URLs que empiezan con `http://`, `https://`, `tel:`, `mailto:` o `sms:` se entregan tal cual. Las anclas (`#seccion`) y las URLs que empiezan con `?` también se entregan tal cual, de modo que apuntan a la página en la que está el visitante, a diferencia del tag menu. Las demás se entregan como absolutas sobre la URL base del sitio.
+- Puedes llamarla desde el navegador en el dominio personalizado del sitio o en los orígenes que permita la configuración [CORS](/es/platform/core/security#control-de-acceso-http-cross-origin-resource-sharing-cors) de la cuenta. La API responde en el dominio de la cuenta (`account_host`) y solo considera la sesión del usuario cuando la llamada lleva la cookie de sesión de ese dominio, por ejemplo, desde una página del sitio servida en el dominio de la cuenta. Una sesión iniciada en el dominio personalizado del sitio no aplica a la API, y la llamada recibe la misma respuesta que una sin sesión.
+- Las respuestas a llamadas sin sesión son públicas y pueden quedar en caché, que se renueva cuando publicas o despublicas el menú. Las que llevan la sesión de un usuario se marcan como privadas, para que ni el navegador ni las cachés intermedias las guarden.
+
+El detalle de la respuesta y de los errores está en la documentación OpenAPI de esta API, en `https://[account_host]/api/channels/docs`. Revisa [Información General](/es/platform/core/api#informacion-general).
