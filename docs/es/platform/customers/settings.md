@@ -421,10 +421,11 @@ Para modificar el rol de un miembro del equipo:
 2. Asigna el rol deseado al usuario.
 3. Da click en **Actualizar**.
 
-Puedes elegir entre dos roles:
+Puedes asignar cualquier rol de reino, incluidos los [roles a medida](/es/platform/core/roles.html#roles-a-medida) de scope **Customers**. Los roles predeterminados son:
 
-- **Realm User**: Puede añadir usuarios, crear, modificar y enviar a revisión campañas, formularios y segmentos.
+- **Realm User**: Ve los usuarios del reino, pero no puede crearlos, editarlos ni eliminarlos. Administra campañas, plantillas de campañas, formularios y segmentos, y ve las órdenes de pago.
 - **Realm Admin**:  Tiene acceso a todas las configuraciones y secciones del reino, puede añadir y eliminar usuarios y miembros del equipo.  Puede también eliminar el reino, y crear y sincronizar sus [stages](/es/platform/customers/realms.html#stages).
+- **Realm Viewer**: Es un rol de solo lectura: ve la información del reino, pero no puede crear ni modificar nada. Revisa sus permisos en [Roles por reino](/es/platform/core/roles.html#roles-por-reino).
 
 Para eliminar a un administrador del reino, selecciona la casilla a la izquierda de su nombre y haz click en el botón **Borrar** en la parte inferior.
 
