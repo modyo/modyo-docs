@@ -152,6 +152,8 @@ The field accepts `jpg`, `jpeg`, and `png` images, and that format is not config
 
 When answering, the user chooses between **Use camera** and **Upload file**. With an ID card, the flow has two steps: first the **Front side** and then the **Back side**, with a framing guide for each. When the first side is done, the screen returns to the start with the title of the remaining side, and the user has to press **Use camera** or **Upload file** again; the camera does not open on its own. With a passport, a single photo of the data page is requested. The **Redo front** and **Redo back** options delete the image already uploaded, not just the preview.
 
+When the camera is used, the rear camera opens if the device has one. If the front camera or a webcam is used instead, the preview is shown mirrored to make framing easier. In both cases, the photo is saved with its real orientation, not mirrored.
+
 The country has a concrete effect on extraction: it is used to interpret the dates on the document. If the country is not set and a date is ambiguous — for example `03/04/1990`, where both numbers could be month or day — the date is stored exactly as it came, without normalizing. So when you know your users' country in advance, it is worth fixing it.
 
 Extraction goes through the **Pending**, **Processing**, **Completed**, and **Failed** statuses.
@@ -162,7 +164,7 @@ Captures a photo of the user's face. It has a single specific option:
 
 - **Face liveness check**: Adds a challenge that confirms there is a real person in front of the camera. It is off by default.
 
-The field accepts `jpg`, `jpeg`, and `png` images, and that format is not configurable. The user can take the photo with the camera or upload a file; there is no way to restrict it to one path. The front camera is shown mirrored, and the image is saved exactly as it looks in the preview.
+The field accepts `jpg`, `jpeg`, and `png` images, and that format is not configurable. The user can take the photo with the camera or upload a file; there is no way to restrict it to one path. The camera preview is shown mirrored to make framing easier, but the photo is saved with its real orientation, not mirrored, and that is how it is shown when the user confirms it.
 
 When the liveness check is enabled, its block appears **after** the user has captured or uploaded the selfie, with the **Start liveness check** button. Completing it is never mandatory: even if you mark the field as required, the only mandatory part is the photo.
 
@@ -176,15 +178,21 @@ If the user captures the selfie again, the previous check is discarded and they 
 
 ##### Where the result is shown
 
-The extraction status and the liveness check status **are not shown today on any administration screen**. The **Documents** tab of the submission lists the files of all three fields with their name, size, and thumbnail, and in the task detail the Identity document field shows the document type, the country, and the links to **Front side** and **Back side**; the Document and Selfie fields look the same as a File field.
+In the **Fields** tab of the submission, each field shows its file and, depending on the type, the processing result:
 
-The results are available for integration:
+- **Selfie**: Shows **Liveness check** with the check status, the reason when there is one, and the **Confidence** as a percentage. It does not appear if the field did not have the liveness check enabled when the user answered.
+- **Identity document**: With an ID card, it shows the **Front side** and the **Back side** separately. If the field has **Extract document data (OCR)** enabled, it also shows **Data extraction (OCR)**, with the extraction status and the reason if it failed, and the **Extracted fields** of the document, such as the full name, the document number, and its dates.
+- **Document**: It looks the same as a **File** field, without the extraction status.
+
+The **Documents** tab of the submission lists the files of all three fields with their name, size, and thumbnail, including the back side of the ID card, and shows the **Liveness check** of each selfie. In the task detail, the Identity document field shows the document type, the country, and the links to **Front side** and **Back side**.
+
+The results are also available for integration:
 
 - In **Liquid templates**, the answer of a Document field returns the file, the extraction status, and the extracted text; the answer of a Selfie field returns the file, the liveness status, and the confidence level.
 - In the **Admin API**, in addition to the above, the error code is exposed when extraction or the check fails.
 
 :::tip Liveness check rejected with no reason
-A **Rejected** check with no associated error code means the confidence level fell below the **Confidence Threshold (%)** configured in the integration. It is the most frequent case and does not indicate a technical failure.
+A **Rejected** check with no reason in the **Fields** tab, or with no error code in the API, means the confidence level fell below the **Confidence Threshold (%)** configured in the integration. It is the most frequent case and does not indicate a technical failure.
 :::
 
 ##### Use in conditional logic
@@ -711,6 +719,14 @@ When the flow reaches an agent task, the assigned administrators receive an emai
 
 From the submission view, the agent opens the task and answers the form with the same experience as the site: live conditional logic, file uploads, repeatable groups, and code snippets. While the task awaits the agent's action, the user sees on the origination page the text configured in **Waiting message shown to the user**.
 
+:::tip Agent form styles
+The form of an agent task first loads the admin styles and then the published version of the `base` CSS view of the origination page's site, so the agent sees it with the site's look and feel. If the site does not have that view published, the form uses only the admin styles. The site's JavaScript is not loaded.
+
+The form content is placed inside the `#agent-task-content` container. Use that selector so a rule applies only in the agent view, for example `#agent-task-content .form-control`.
+
+Resources that the stylesheet pulls from other domains, such as an `@import`, fonts, or images, may not load in the agent form, so do not rely on them for its look. If the site has the [Cross Origin Resource Policy](/en/platform/channels/sites.html#cross-origin-resource-policy) header enabled, the browser may block the whole stylesheet and the form is shown with the admin styles only.
+:::
+
 Additional options depending on the task type:
 
 - **Disable manual completion** (Pending review): Hides the **Complete** button so the task cannot be completed manually from the admin. Administrators with the **Change Status of Task Response** permission can still complete it.
@@ -790,6 +806,19 @@ This is how the assignment is applied:
 
 :::warning Attention
 If you consume the originations admin API, keep in mind that each rule now has `targets`, an ordered list of actions, instead of `target`. When saving, the API still accepts `target`, but it always responds with `targets`, and an origination without rules responds `rules: []`. The **Assign** action is sent as a target with `action: assign`. See the details in the [API](/en/platform/core/api.html) Swagger documentation.
+:::
+
+### Test the origination in preview
+
+With the **Preview** button (eye icon) in the origination header, you can go through the flow as a user would. The button opens the origination page in the site preview with the version of the origination you are editing, so you can test your changes before publishing them. It is available when the origination has a linked page.
+
+The submissions you create in the preview are test submissions and are kept apart from the real ones:
+
+- They do not appear in the origination's **Submissions** list.
+- They do not count in [Insights](/en/platform/insights/origination.html) or in the [origination filters](/en/platform/customers/segments.html#origination-filters) of segments.
+
+:::warning Deletion of test submissions
+Test submissions are deleted without notice in two cases: when you publish the origination and, once a week, those that have gone more than 7 days without changes.
 :::
 
 ### Edit Origination Settings
@@ -951,7 +980,9 @@ In the details view, you will find the following main sections:
 - **Signatures**: Tracking of the digital signatures collected during the flow.
 - **Identity Verification**: Result of the user's identity verification when the flow includes it.
 - **Validations**: Validations carried out by administrators to authorize progress.
-- **Activity**: Record of activities and changes made to the submission, useful for monitoring and auditing.
+- **Activity**: Record of activities and changes made to the submission, useful for monitoring and auditing. It has two views:
+  - **Admin**: The activity logs of the submission, which you can narrow down with the **Type** filter. The filter only offers the types present in that submission. If the flow uses an Identity Verification task with the **NAAT.TECH** integration, the errors the provider returns in the browser during document capture or the liveness check are logged here with the type **NAAT.TECH error in identity verification**. They help you diagnose why the user could not complete the verification.
+  - **User**: The events the end user generates while progressing through the submission.
 
 This structure provides you with a comprehensive and detailed view of each submission, allowing you to effectively manage all aspects related to the submissions.
 
@@ -1126,10 +1157,11 @@ The origination you link must belong to the same realm as the site where you cre
 
 An origination page can be left without a linked origination. While it is in that state, the page responds to end users with a 404 error, so you must link an origination to deploy the flow again.
 
-This happens in three situations:
+This happens in four situations:
 
 - **You delete the origination**: the page remains on the site, but without a linked origination.
 - **You change the site's realm**: all origination pages on that site lose the reference, because each origination belongs to a realm. The application settings form warns you about this before you confirm the change.
 - **You create a stage**: origination pages are copied to the stage without their linked origination. Since each origination allows only one page, in the stage you must link a different origination from the same realm.
+- **You synchronize a new page from a stage**: if the page did not exist on the destination site, it arrives without a linked origination and you must link an origination from that site's realm. If the page already existed, it keeps the origination it had.
 
 For more details on how stages behave, review the [stages](/en/platform/channels/sites.html#stages) section of web applications.
