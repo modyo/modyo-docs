@@ -17,7 +17,7 @@ Los filtros también se pueden unir entre sí añadiendo sentencias de filtro ad
 ```liquid
 Hello {{ 'tobi' | upcase }}
 Hello tobi has {{ 'tobi' | size }} letters!
-Hello {{ '*tobi*' | textilize | upcase }}
+Hello {{ '  tobi  ' | strip | upcase }}
 Hello {{ 'now' | date: "%Y %h" }}
 ```
 
@@ -113,7 +113,7 @@ Modulo *e.g.*
 <span v-pre>`{{ 3 | modulo:2 }} #=> 1`</span>
 
 ### Newline to br
-Reemplaza cada linea nueva (\n) con espacio HTML.
+Inserta un salto de línea HTML (`<br />`) antes de cada salto de línea (\n) del texto.
 
 ### Plus
 Suma *e.g.*
@@ -669,7 +669,13 @@ Estos filtros Liquid alteran valores relacionados con los ítems de menús en Mo
 
 ### Active Page
 
-Determina si un ítem URL está activo. Devuelve 'active' cuando está activo (ej. <span v-pre>`{{ 'company.modyo.com/jobs' | active_page: 'company.modyo.com/jobs' }} #=> 'active'`</span>).
+Determina si la URL de un ítem coincide con la URL que recibe como parámetro, normalmente la de la página actual. Devuelve `' active'`, con un espacio inicial para concatenarlo a las clases del ítem, o una cadena vacía si no coinciden o si alguna de las dos está vacía.
+
+```liquid
+{{ 'company.modyo.com/jobs' | active_page: 'company.modyo.com/jobs' }} #=> ' active'
+```
+
+La comparación considera solo el host y la ruta: ignora el protocolo, los parámetros de consulta y la barra final. Una subruta no cuenta como activa, así que `company.modyo.com/jobs/ventas` no coincide con `company.modyo.com/jobs`.
 
 ### Item Rel
 
@@ -681,7 +687,9 @@ Resuelve la URL de un path y URL base (ej. <span v-pre>`{{ 'dynamic_bank' | reso
 
 ### Visible Items
 
-Devuelve una lista de ítems visibles en una lista de ítems (ej. <span v-pre>`{{ items | visible_items }}`</span>).
+Devuelve solo los ítems de la lista que puede ver el usuario actual (ej. <span v-pre>`{{ items | visible_items }}`</span>).
+
+Aplica los mismos criterios que el tag `menu`, descritos en [Ítems que se muestran](/es/platform/channels/navigation.html#items-que-se-muestran).
 
 ## Origination
 
@@ -839,15 +847,32 @@ La URL que se genera para una vista de plantilla incluye una versión que se act
 
 ### Button To
 
-Genera un botón (ej. <span v-pre>`{{ 'Hello World' | button_to: 'http://www.google.com' }}`</span>).
+Genera un enlace con apariencia de botón: un elemento `<a>` con la clase `btn`, no un `<button>`. La URL se resuelve igual que en [Link To](#link-to) (ej. <span v-pre>`{{ 'Hello World' | button_to: 'http://www.google.com' }}`</span>).
 
 ### Cookie Value
 
-Devuelve el valor de una cookie (ej. <span v-pre>`{{ 32 | cookie_value }}`</span>).
+Devuelve el valor de la cookie cuyo nombre recibe como entrada, o una cadena vacía si la solicitud no la incluye.
+
+```liquid
+{{ 'my_cookie' | cookie_value }}
+```
 
 ### Escape JS
 
-Evita interpretar código JavaScript (ej. <span v-pre>`{{ '<script>alert("hello world");</script>' | escape_js }}`</span>).
+Escapa un texto para insertarlo dentro de una cadena de JavaScript: escapa las comillas, las barras invertidas, los saltos de línea y la secuencia `</`, para que el valor no cierre la cadena ni el bloque `<script>`.
+
+```liquid
+{% assign mensaje = "It's done" %}
+<script>
+  var mensaje = '{{ mensaje | escape_js }}';
+</script>
+```
+
+El resultado es `var mensaje = 'It\'s done';`.
+
+:::warning Atención
+`escape_js` no codifica HTML: no impide que se ejecute un `<script>` ni otro código insertado en el HTML de la página. Para mostrar un texto dentro del HTML usa [Escape](#escape).
+:::
 
 ### Format Date
 
@@ -856,15 +881,19 @@ Traduce una fecha a otro formato (ej. <span v-pre>`{{ time | format_date: '%e %b
 **Parametros**
 
 - `time` (DateTime) — Fecha.
-- `format_date` (String) (default: '') — El nuevo formato para la fecha.
+- `format` (String) (default: '%e %b, %Y') — El formato de la fecha, con la misma sintaxis que `date`. Los nombres de meses y días salen en el idioma del sitio.
+
+Si la fecha es nula, el filtro devuelve una cadena vacía.
 
 ### Format DateTime
 
-Traduce una fecha a formato DateTime (ej. <span v-pre>`{{ time | format_datetime }}`</span>).
+Da formato a una fecha y hora con el formato fijo `'%e %b, %Y %H:%M'`, igual que Format Date con ese formato (ej. <span v-pre>`{{ time | format_datetime }}`</span> devuelve `15 Ene, 2025 10:30` en un sitio en español).
 
 ### Format Short Date
 
-Traduce una fecha a un formato reducido (dd-mm-yyyy) (ej. <span v-pre>`{{ time | format_short_date }}`</span>).
+Traduce una fecha al formato corto del idioma del sitio, que no incluye el año (ej. <span v-pre>`{{ time | format_short_date }}`</span>).
+
+Por ejemplo, para el 15 de enero de 2025 a las 10:30 el resultado es `15 de Ene, 10:30` en español, `15 Jan 10:30` en inglés y `15/01, 10:30 hs` en portugués. Si la fecha no tiene hora, es `15 de Enero`, `Jan 15` y `15 de Janeiro`, respectivamente. Si necesitas el formato dd-mm-yyyy, usa Format Date con `'%d-%m-%Y'`.
 
 ### Get Session ID
 
@@ -885,8 +914,8 @@ Agrega una etiqueta de enlace (anchor link) (ej. <span v-pre>`{{ 'Hello World' |
 **Parametros**
 
 - `text` (String) (default: '') — Texto para el enlace.
-- `link` (String) (default: '/') — URL para el enlace.
-- `alt` (String) (default: '') — Texto alternativo para el enlace.
+- `link` (String) (default: '/') — URL para el enlace. Si no empieza con `http`, se resuelve contra la URL base del sitio, comience o no con `/`.
+- `alt` (String) (default: '') — Texto que se emite en el atributo `title` del enlace.
 - `class` (String) (default: '') — Clase CSS para el enlace.
 - `target` (String) (default: '') — Target para el enlace.
 
@@ -896,7 +925,7 @@ Muestra la variable de mensaje flash (ej. <span v-pre>`{{ 'alert-error' | notifi
 
 ### Primary button to
 
-Genera un botón de tipo primario (ej. <span v-pre>`{{ 'Hello World' | primary_button_to: 'http://www.google.com', 'large' }}`</span>).
+Genera un enlace con apariencia de botón primario: un elemento `<a>` con las clases `btn`, `btn-primary` y `btn-` seguida del tamaño. La URL se resuelve igual que en [Link To](#link-to) (ej. <span v-pre>`{{ 'Hello World' | primary_button_to: 'http://www.google.com', 'large' }}`</span>).
 
 **Parametros**
 
@@ -924,7 +953,11 @@ Convierte un datetime a formato String (ej. <span v-pre>`{{ time | strftime: '%m
 
 ### Strip tag
 
-Elimina todas las etiquetas HTML y su contenido de un String (ej. <span v-pre>`{{ '<script>Hello World</script>' | strip_tags }} #=> ""`</span>).
+Quita las etiquetas HTML de un String y conserva su texto. Los bloques `<script>` se eliminan completos, con su contenido (ej. <span v-pre>`{{ '<script>Hello World</script>' | strip_tags }} #=> ""`</span>).
+
+```liquid
+{{ '<script>alert("hola");</script><p>Hola mundo</p>' | strip_tags }} #=> 'Hola mundo'
+```
 
 ### Stylesheet Tag
 
@@ -958,7 +991,9 @@ Convierte una fecha en String a palabras (ej. <span v-pre>`{{ '01-02-2019' | tim
 
 ### Translate
 
-Resuelve el texto de traducción para claves de Sitios. Se devolverán valores personalizados si existen (ej. <span v-pre>`{{ 'admin.logs.errors.no_logs_yet' | translate }}`</span>).
+Resuelve una clave de las traducciones de la plataforma en el idioma del sitio (ej. <span v-pre>`{{ 'admin.logs.errors.no_logs_yet' | translate }}`</span>).
+
+Las claves y sus textos son los de la plataforma: no puedes agregar claves nuevas ni personalizar sus textos. Si la clave no existe, el filtro imprime un aviso de traducción faltante en lugar del texto.
 
 **Parámetros**
 
@@ -967,7 +1002,13 @@ Resuelve el texto de traducción para claves de Sitios. Se devolverán valores p
 
 `t` es el alias corto del filtro y hace exactamente lo mismo: <span v-pre>`{{ 'admin.logs.errors.no_logs_yet' | t }}`</span>.
 
-El segundo parámetro pluraliza la clave y solo se aplica cuando llega como entero (ej. <span v-pre>`{{ 'site.results.count' | t: total }}`</span>). Si llega como cadena, por ejemplo `'3'`, el filtro lo descarta sin avisar y resuelve la clave sin pluralizar.
+El segundo parámetro pluraliza la clave y solo se aplica cuando llega como entero, por ejemplo con una clave de la plataforma que tiene formas en singular y plural:
+
+```liquid
+{{ 'datetime.distance_in_words.x_days' | t: 3 }} #=> '3 días'
+```
+
+Si llega como cadena, por ejemplo `'3'`, el filtro lo descarta sin avisar y resuelve la clave sin pluralizar.
 
 ### Truncate HTML
 
