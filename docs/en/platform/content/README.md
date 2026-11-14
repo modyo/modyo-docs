@@ -19,6 +19,8 @@ version: 9.2
 ### Main functionalities
 
 - **[Spaces](/en/platform/content/spaces)**: Organize content and teams that manage them.
+- **[Entries](/en/platform/content/entries)**: Create and publish the content of a space, segmented by content types.
 - **[Content Types](/en/platform/content/types)**: Define custom structures.
-- **[File Manager](/en/platform/content/asset-manager)**: Organize the files used in contents, such as images or videos.
+- **[Categories](/en/platform/content/categories)**: Organize entries into nested categories.
+- **[Media](/en/platform/content/asset-manager)**: Organize the files used in contents, such as images or videos.
 - **[API and SDKs](/en/platform/content/public-api-reference)**: Access content repositories, on and off, the platform.

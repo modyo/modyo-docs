@@ -35,28 +35,36 @@ Modyo also checks the file name: it cannot contain more than one dot, so a name 
 Since Modyo 10.2, in addition to the extension and the size, Modyo checks that the file's actual content type matches its extension. If they do not match, the upload fails and the panel shows the file name next to the message _content type does not match the file's extension_. The check applies to the four media types, both in the panel and through the admin API, so a PNG renamed to `.jpg` or a CSV renamed to `.xlsx` can no longer be uploaded. If you run into this error, rename the file with its real extension or export it again in the format you need.
 :::
 
+## File libraries
+
+Files aren't stored in a single library. Each space, site, and realm has its own library, and the account has one more. A space's **Media** section only manages that space's library, although the percentage of used space it shows takes into account the files of the whole account.
+
+When you insert or attach a file from an editor, the file selector opens the library of the place where you're working: in an entry, the space's library; in a site's templates, pages, and widgets, the site's library; and in a realm's forms, originations, and email templates, the realm's library. Whatever you upload from the selector stays in that library: a file you upload from a site or a realm doesn't show up in the **Media** section of any space.
+
+To use a file from another library, choose the type of library (space, site, realm, or account) in the selector's **Context** filter and, except for the account, choose the library in the filter that appears next to it. The filter only offers the library types of the modules you have access to, plus the account, which is always available.
+
 ## About the Interface
 
-The interface shows you a list of all the files that exist within the platform.
+The interface shows you a list of the files in the library of the space you are in.
 
 In the upper right part of the screen, you can see the percentage of used space corresponding to the total allocated for the account and the button to upload new files.
 
-Modyo displays 30 files per page. At the bottom, you can navigate between the file pages.
+Modyo displays 30 files per page. At the bottom, you can navigate between the file pages and, when there are more than 30, show 60 or 100 per page.
 
 You can filter the content by:
-- **Extensions**: Filter by file type.
+- **Asset Type**: Filter by **Images**, **Video**, **Documents**, or **Audio**.
 - **Author**: Filter by the name of the user who uploaded the content.
 - **Tags**: Shows all files associated with a tag.
-- **Search bar**: Type a word to display files that contain that word in their name or metadata.
+- **Search bar**: Type a word to display the files whose name, or the name of the user who uploaded them, contains that word. It doesn't search the title, description, alt text, or tags; for tags, use the **Tags** filter.
 
-Tags allow you to organize and group your files. To modify the tags of more than one file, select the files you want and click on the **Add or Remove Tags** button that appears at the bottom of the list.
+Tags allow you to organize and group your files. To modify the tags of more than one file, select the files you want and click on the **Add or remove tags** button that appears at the bottom of the list.
 
 In this view, the columns are:
 - **Preview**: If the platform identifies that the file is an image, you can view a thumbnail image of the file. If it is not, the space appears blank.
-- **Name**: Name of the file and its extension. The sorting is alphabetical.
+- **File name**: Name of the file and its extension. The sorting is alphabetical.
 - **Type**: File type and extension. The sorting is alphabetical, first by type and then by the name of the extension.
-- **Size**: Size in kilobytes of the file.
-- **Created on**: Date of upload or creation within the platform, regardless of whether the file was created on a different date on another service.
+- **Size**: Size of the file, in the appropriate unit (Bytes, KB, MB, etc.).
+- **Created at**: Date of upload or creation within the platform, regardless of whether the file was created on a different date on another service.
 - **Author**: Name of the user who uploaded the file, only when the user has a name assigned.
 
 
@@ -66,6 +74,8 @@ To upload a file to Modyo, choose one of the following options:
 #### From the section where you're working, templates, pages, realms, or sites:
 1. Open the text editor,
 1. In the top bar, select **insert image** to open a modal where you can drag or upload a file.
+
+The file stays in that section's library. See [File libraries](#file-libraries).
 
 #### In the dedicated section for managing files.
 
@@ -84,14 +94,14 @@ Modyo allows you to upload 10 files at a time. If you need to upload more items,
 ## Edit a File
 In the file interface, click on the name of a file to open the file properties editing interface and see:
 
-- **File URL**: Shows the public URL of the file. Click on the icon next to the URL to copy it. It is not modifiable.
+- **Asset URL**: Shows the public URL of the file. Click on the icon next to the URL to copy it. It is not modifiable.
 - **Liquid tag**: Shows the liquid tag of the file. Click on the icon to copy and use it in the platform's content. It is not modifiable.
-- **Title**: Shows the title of the file. This section is different from the file name, which cannot be changed.
-- **Alternative text**: Shows the alt text of the element. Only for images and videos.
+- **Title**: Shows the title of the image, up to 255 characters. It is different from the file name, which cannot be changed. Only for images.
+- **Alt text**: Shows the alt text of the image, up to 255 characters. Only for images.
 - **Description**: Description of the element. We recommend writing a short text referring to the image.
 - **Tags**: Shows the tags associated with the file. You can search for and add more tags, as well as delete existing tags.
 
-Click **Update Information** to confirm the changes or **Close** to cancel them.
+Click **Update information** to confirm the changes or **Close** to cancel them.
 
 ## Re-upload an Image
 
@@ -101,7 +111,14 @@ To upload a new file while keeping the original name and link, follow these step
 2. Click on the upload button above the image.
 3. Select a new file.
 4. Confirm that you want to replace the old file.
-5. Click **Update Information** to confirm the changes
+
+The replacement is applied as soon as you confirm: the window closes and the page reloads, without going through **Update information**. If you had changed other fields in the window without saving them, those changes are lost.
+
+:::warning Attention
+The new file keeps the original's name and extension, so it must have the same format. If it doesn't, for example a PNG replacing a `.jpg`, the replacement is rejected with an error stating that the _content type does not match the file's extension_, and the previous file is kept.
+:::
+
+You can't replace an image you edited with the image editor: the upload button doesn't appear until you restore the original.
 
 
 ## Edit an Image
@@ -116,6 +133,8 @@ The Modyo image editor allows you to make small changes to images to facilitate 
     - Free: Edit the image to a custom size in pixels, adjustable at the bottom of the screen.
 4. Click **Apply**.
 
+The editor isn't available for SVG or ICO images. You also can't edit an image that was already edited: the edit icon stays disabled until you restore the original.
+
 :::tip Tip
 You can change the view and crop of the image in two ways:
 
@@ -123,7 +142,7 @@ You can change the view and crop of the image in two ways:
 - Move background: Double-click outside the cropping area and drag the background.
 :::
 
-To restore the file, open the property editing window again and click on **Restore Original**. This permanently removes the modifications made.
+To restore the file, open the property editing window again and click on **Restore Original**, which only appears on edited images. This permanently removes the modifications made.
 
 
 ## Resize an image
@@ -140,7 +159,7 @@ To resize an image, you must first copy the Liquid code to render the image. To 
 
 1. Click on content.
 1. Select the space where the image you want to modify is located.
-1. Click on media.
+1. Click on **Media**.
 1. Click on the image.
 1. Click on the copy icon, next to the Liquid tag of the image.
 
