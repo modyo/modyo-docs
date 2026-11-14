@@ -687,6 +687,8 @@ Las acciones disponibles dependen del estado: **Reenviar invitación** y **Cance
 
 Cuando se completa la última invitación activa de la tarea, la respuesta a la tarea de invitación se completa sola y el flujo continúa. A partir de ese momento ya no se pueden enviar invitaciones nuevas desde esa tarea.
 
+El enlace del correo de invitación sirve para un solo ingreso y vence a los 7 días. Además, cada vez que la plataforma le envía a esa persona un enlace nuevo, por ejemplo al reenviar la invitación, al invitarla a otra tarea o al pedir la recuperación de su contraseña, los enlaces anteriores dejan de funcionar. Si el enlace ya no funciona y la invitación sigue en `pending`, el usuario principal puede reenviarla para que el invitado reciba un enlace nuevo; si ya fue aceptada, el invitado tiene que iniciar sesión en el reino para volver a la respuesta.
+
 :::tip Espera entre reenvíos
 Entre un reenvío y el siguiente hay que esperar unos minutos. Si presionas **Reenviar invitación** antes de tiempo, la plataforma te indica cuántos minutos faltan en lugar de enviar el correo.
 :::
@@ -852,8 +854,12 @@ Puedes editar o eliminar los roles desde la misma sección. Como cada rol solo p
 
 Si necesitas eliminar una originación de forma permanente:
 
-1. Selecciona la opción **Eliminar originación**.
-2. Confirma que no necesitas los datos de la originación antes de proceder.
+1. Si la originación está publicada, despublícala.
+2. En el menú de acciones (⋮) de la originación, selecciona **Archivar**.
+3. En el mismo menú, selecciona **Borrar**. La opción solo se habilita cuando la originación está archivada.
+4. En el modal **Eliminar originación**, escribe el nombre de la originación en **Nombre de la originación** y presiona **Borrar**.
+
+La originación no puede tener respuestas en estado **Pendiente** ni **Completada**: si las tiene, la plataforma rechaza la eliminación con el mensaje **No puedes eliminar una originación con respuestas**. Antes, [cancélalas](/es/platform/customers/origination.html#cancelar-respuesta) o [elimínalas](/es/platform/customers/origination.html#eliminar-respuesta). Las respuestas **No Iniciada** y **Cancelada** se eliminan junto con la originación.
 
 :::danger Peligro
 Este proceso es irreversible.
@@ -956,7 +962,7 @@ En la vista de detalles, encontrarás las siguientes secciones principales:
 
 Esta estructura te brinda una visión integral y detallada de cada respuesta, permitiéndote gestionar de manera efectiva todos los aspectos relacionados con las respuestas.
 
-En las respuestas multiusuario, las pestañas **Tareas**, **Revisiones** y **Validaciones** incluyen el selector **Viendo tareas de**, que te permite alternar entre el **Usuario Principal** y cada usuario invitado para revisar el avance individual de sus tareas.
+En las respuestas multiusuario, las pestañas **Tareas**, **Campos** y **Validaciones** incluyen un selector, **Viendo tareas de** en las dos primeras y **Viendo validaciones de** en la última, que te permite alternar entre el **Usuario Principal** y cada usuario invitado para revisar el avance individual de sus tareas.
 
 :::tip Tip
 Desde la vista de una respuesta en el menú de acciones (identificado con …) se puede [impersonar](/es/platform/customers/users) al usuario para ayudarlo a contestar la originación. Esto depende de los roles del usuario
@@ -991,11 +997,13 @@ Los roles que ya tenías conservan el acceso que tenían: los que veían el deta
 
 El listado de respuestas incluye una caja de búsqueda que te permite encontrar respuestas por los datos del usuario, los valores de sus campos personalizados, las respuestas ingresadas en los campos del flujo y el contenido de las tareas.
 
+Las respuestas de los campos del flujo y el contenido de las tareas solo se buscan si tu rol tiene **Ver Tareas de la Respuesta** o un permiso que lo incluya, como **Ver Respuesta Completa**. Sin ese permiso, la búsqueda encuentra respuestas solo por los datos del usuario, sus identificadores y los valores de sus campos personalizados, y las claves de preguntas del flujo no buscan en las respuestas.
+
 La búsqueda requiere un mínimo de 3 caracteres, no distingue mayúsculas ni acentos y encuentra coincidencias parciales. Por ejemplo, `lau` encuentra a "Claudio" y `perez` encuentra a "Pérez". Las claves `id` y `uuid` son la excepción y se explican más abajo.
 
 Puedes buscar de dos formas, que además puedes combinar en una misma consulta:
 
-- **Texto libre**: Escribe uno o más términos y la búsqueda los encontrará en los datos del usuario, los valores de sus campos personalizados, las respuestas ingresadas en los campos del flujo y el contenido de las tareas.
+- **Texto libre**: Escribe uno o más términos y la búsqueda los encontrará en los datos del usuario, los valores de sus campos personalizados, las respuestas ingresadas en los campos del flujo y el contenido de las tareas. Si escribes varios términos, basta que coincida uno para que la respuesta aparezca, y primero se muestran las que mejor coinciden.
 - **Pares clave=valor**: Escribe la clave de un campo seguida de `=` y el valor a buscar para acotar la búsqueda a ese campo específico.
 
 Las claves disponibles para los pares `clave=valor` son:
@@ -1008,8 +1016,8 @@ Las claves disponibles para los pares `clave=valor` son:
 Al usar pares `clave=valor` ten en cuenta lo siguiente:
 
 - La clave debe escribirse completa, mientras que el valor sí admite coincidencias parciales. Las claves `id` y `uuid` son la excepción: no admiten coincidencias parciales.
-- Para buscar valores o frases con espacios usa comillas dobles. Por ejemplo, `first_name="Jean Pierre"` o `"crédito hipotecario"`.
-- Todas las condiciones se combinan entre sí, por lo que una respuesta debe cumplir todos los términos y pares de la consulta para aparecer en los resultados.
+- Para buscar un valor con espacios, enciérralo entre comillas dobles. Por ejemplo, `first_name="Jean Pierre"`. Las comillas solo sirven dentro de un par: en el texto libre no arman una frase, así que `"crédito hipotecario"` se busca igual que `crédito hipotecario` y basta que coincida una de las dos palabras.
+- Los pares se combinan entre sí y con el texto libre: para aparecer en los resultados, una respuesta debe cumplir todos los pares de la consulta y, si además escribes texto libre, coincidir con al menos uno de sus términos.
 - Si la clave no existe o el valor está vacío, el término se busca como texto libre sin generar errores.
 
 Algunos ejemplos de búsquedas:
@@ -1063,7 +1071,7 @@ Al asignar a todo un grupo, todos sus miembros pueden ver y gestionar la respues
 
 #### Cancelar respuesta
 
-Para cancelar una respuesta, ábrela y presiona el botón **Cancelar** en la vista de la respuesta. En el modal puedes ingresar de manera opcional una **Razón de cancelación** y luego confirmar la acción. La cancelación modifica permanentemente el estado de la respuesta a **Cancelada**.
+Para cancelar una respuesta, ábrela, despliega el menú de acciones (⋮) de la vista de la respuesta y selecciona **Cancelar**. La opción requiere el permiso **Completar Respuestas**, que habilita tanto completar como cancelar respuestas, y no aparece en las respuestas que ya están canceladas. En el modal puedes ingresar de manera opcional una **Razón de cancelación** y luego confirmar la acción. La cancelación modifica permanentemente el estado de la respuesta a **Cancelada**.
 
 Puedes cancelar respuestas en estado **No Iniciada**, **Pendiente** o **Completada**.
 
@@ -1071,9 +1079,11 @@ En los detalles de una respuesta cancelada se muestra la fecha de cancelación e
 
 #### Eliminar respuesta
 
-Para eliminar una respuesta individual, selecciona el menú en la columna actions y presiona la opción delete. Esto eliminará la respuesta.
+Para eliminar una respuesta individual, en el listado de respuestas despliega el menú de la columna **Acciones** y presiona **Borrar**. También tienes la opción **Borrar** en el menú de acciones (⋮) de la vista de la respuesta, salvo en las respuestas canceladas. En ambos casos, la plataforma te pide confirmar antes de eliminarla de forma permanente.
 
-Para eliminar varias respuestas al mismo tiempo, selecciona cada entrada marcando la casilla correspondiente y presiona el botón eliminar.
+Para eliminar varias respuestas al mismo tiempo, marca la casilla de cada una y usa la acción masiva **Borrar**.
+
+Estas opciones solo se muestran si tu rol tiene el permiso **Eliminar Respuestas**.
 
 #### Reabrir tareas de una respuesta
 
@@ -1084,25 +1094,38 @@ Considera lo siguiente:
 - Cambiar el estado de una respuesta a tarea requiere el permiso **Cambiar estado de la Respuesta de una Tarea**; eliminar respuestas a tareas requiere el permiso **Eliminar Respuestas**.
 - Estas operaciones solo están disponibles mientras la respuesta está en estado **No Iniciada** o **Pendiente**.
 - Todas las operaciones quedan registradas en la actividad de la plataforma.
+- Si la tarea reabierta tenía una validación aprobada, la aprobación se conserva. El usuario puede cambiar sus respuestas, pero al completar otra vez la tarea esta vuelve a quedar validada y sin posibilidad de edición, sin una nueva revisión del agente. Para que los datos corregidos se revisen de nuevo, el usuario debe usar **Modificar datos** en la tarea, opción disponible cuando las **Reglas de validación** de la originación permiten modificar las respuestas previamente validadas.
 
 #### Invitar usuarios
 
-Puedes invitar a usuarios para que ingresen información en una originación. Al invitar a un usuario, deberás ingresar su información básica
+Puedes invitar a usuarios para que ingresen información en una originación con el botón **Invitar**. Al invitar a un usuario, deberás ingresar su información:
 
 - **Nombre**: El primer nombre del usuario que utilizará la originación.
 - **Apellido**: El apellido del usuario.
-- **Email**: La dirección de correo electrónico del usuario, donde recibirá la invitación para acceder a la originación.
-- **Asignar la respuesta**: En la lista desplegable, selecciona un administrador que gestionará esta originación en particular. Si no se selecciona un administrador, la respuesta quedará sin asignar.
+- **Correo electrónico**: La dirección de correo electrónico del usuario, donde recibirá la invitación para acceder a la originación.
+- Los campos que dependen de la configuración de registro del reino: **Segundo apellido**, **Número de teléfono**, **Fecha de nacimiento** y **Género**, cuando el reino los tiene habilitados, y el nombre de usuario, con la etiqueta que define el reino, cuando el reino no usa el correo electrónico como nombre de usuario. El nombre de usuario siempre es obligatorio; los demás, cuando el reino los exige en el registro.
+- Los [campos personalizados](/es/platform/customers/settings.html#custom-fields) activos del usuario. Los requeridos son obligatorios.
+- **Asignar la respuesta a**: El administrador, el grupo completo de administradores o el administrador dentro de un grupo que gestionará esta respuesta. Si lo dejas vacío, se aplica el **Asignado por defecto de la respuesta** de la originación y, si no tiene uno, la respuesta queda sin asignar.
 
-Para invitar usuarios desde el panel, la **Activación de la cuenta** del reino no puede estar en **Deshabilitada**: con esa opción el botón **Invitar** aparece deshabilitado y, al pasar el cursor, muestra el mensaje _Las invitaciones no están disponibles porque el registro está deshabilitado en este realm_.
+El botón para enviar la invitación se habilita cuando completas todos los campos obligatorios.
 
-En la página de originación la restricción es más acotada: con **Deshabilitada** se bloquea el formulario de invitación a usuarios nuevos, pero desde ahí se puede seguir invitando a usuarios que ya existen en el reino.
+El botón **Invitar** aparece deshabilitado y, al pasar el cursor, muestra un mensaje con el motivo en estos casos:
+
+- La originación no está publicada: _Las invitaciones no están disponibles porque la originación no está publicada_.
+- La originación no tiene una página asociada: _Las invitaciones no están disponibles porque la originación no tiene una página asociada_.
+- La **Activación de la cuenta** del reino está en **Deshabilitada**: _Las invitaciones no están disponibles porque el registro está deshabilitado en este realm_.
+
+Además, el botón requiere el permiso **Iniciar Respuestas**: sin él aparece deshabilitado y sin mensaje.
+
+En la página de originación, con la **Activación de la cuenta** en **Deshabilitada**, el usuario principal no puede invitar a nadie con el formulario de nombre y correo electrónico, aunque el correo ya pertenezca a un usuario del reino. Solo puede elegir de la lista a las personas que ya invitó en otra tarea de invitación de la misma respuesta o, si el [rol](#roles) tiene activa la opción **Puede ser asumido por el usuario principal**, tomar el rol él mismo (**Tú**).
 
 Si la **Activación de la cuenta** está en **Solo por invitación**, el usuario nuevo que invites queda activo y puede completar el flujo de inmediato, sin correo de activación ni espera. Un usuario que ya existía y estaba desactivado no se reactiva al invitarlo: mantiene su estado. Revisa las opciones en la [configuración del reino](/es/platform/customers/settings.html#general).
 
 ### Gestión de Asignados
 
-En la vista de asignados,  puedes  monitorear y administrar a los administradores responsables de las respuestas dentro de un reino. Esta vista facilita el seguimiento del desempeño y la carga de trabajo de los administradores. Puedes filtrar las respuestas asignadas por rangos de fecha
+En la vista de asignados puedes monitorear a los administradores responsables de las respuestas de esta originación. Esta vista facilita el seguimiento del desempeño y la carga de trabajo de los administradores.
+
+Solo aparecen los administradores que tienen asignada individualmente al menos una respuesta de esta originación: una respuesta asignada a un grupo completo, sin un administrador específico, no hace aparecer a los miembros del grupo. El filtro **Fecha de creación** muestra solo a los administradores que tienen asignada alguna respuesta de esta originación creada en ese rango.
 
 Al seleccionar un administrador, podrás ver todas las respuestas que tiene asignadas y su correspondiente status
 
