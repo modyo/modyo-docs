@@ -152,6 +152,8 @@ El campo acepta imágenes `jpg`, `jpeg` y `png`, y ese formato no es configurabl
 
 Al responder, el usuario elige entre **Usar cámara** y **Subir archivo**. Con una cédula, el flujo es en dos pasos: primero el **Frente** y luego el **Reverso**, con una guía de encuadre en cada uno. Al terminar el primer lado la pantalla vuelve al inicio con el título del lado que falta, y el usuario debe pulsar de nuevo **Usar cámara** o **Subir archivo**; la cámara no se abre sola. Con un pasaporte se pide una sola foto de la página de datos. Las opciones **Rehacer frente** y **Rehacer reverso** eliminan la imagen ya subida, no solo la vista previa.
 
+Al usar la cámara, se abre la trasera si el dispositivo la tiene. Si en su lugar se usa la cámara frontal o una webcam, la vista previa se muestra en espejo para facilitar el encuadre. En ambos casos, la foto se guarda con su orientación real, sin espejar.
+
 El país tiene un efecto concreto sobre la extracción: se usa para interpretar las fechas del documento. Si el país no está definido y una fecha es ambigua —por ejemplo `03/04/1990`, donde ambos números pueden ser mes o día—, la fecha se guarda tal como venía, sin normalizar. Por eso, cuando sabes de antemano el país de tus usuarios, conviene fijarlo.
 
 La extracción pasa por los estados **Pendiente**, **Procesando**, **Completada** y **Falló**.
@@ -162,7 +164,7 @@ Captura una foto del rostro del usuario. Tiene una sola opción propia:
 
 - **Verificación de vida (liveness)**: Agrega un desafío que confirma que hay una persona real frente a la cámara. Viene desactivada.
 
-El campo acepta imágenes `jpg`, `jpeg` y `png`, y ese formato no es configurable. El usuario puede tomarse la foto con la cámara o subir un archivo; no hay forma de restringirlo a una sola vía. La cámara frontal se muestra en espejo, y la imagen se guarda tal como se ve en la vista previa.
+El campo acepta imágenes `jpg`, `jpeg` y `png`, y ese formato no es configurable. El usuario puede tomarse la foto con la cámara o subir un archivo; no hay forma de restringirlo a una sola vía. La vista previa de la cámara se muestra en espejo para facilitar el encuadre, pero la foto se guarda con su orientación real, sin espejar, y así se muestra al confirmarla.
 
 Cuando la verificación de vida está activa, el bloque correspondiente aparece **después** de que el usuario haya capturado o subido la selfie, con el botón **Iniciar verificación de vida**. Completarla nunca es obligatorio: aunque marques el campo como requerido, lo único obligatorio es la foto.
 
@@ -176,15 +178,21 @@ Si el usuario vuelve a capturar la selfie, la verificación anterior se descarta
 
 ##### Dónde se ve el resultado
 
-El estado de la extracción y el de la verificación de vida **no se muestran hoy en las pantallas de administración**. La pestaña **Documentos** de la respuesta lista los archivos de los tres campos con su nombre, tamaño y miniatura, y en el detalle de la tarea el campo Documento de identidad muestra el tipo de documento, el país y los enlaces a **Frente** y **Reverso**; los campos Documento y Selfie se ven igual que un campo Archivo.
+En la pestaña **Campos** de la respuesta, cada campo muestra su archivo y, según el tipo, el resultado del procesamiento:
 
-Los resultados sí quedan disponibles para integrar:
+- **Selfie**: Muestra **Verificación de vida** con el estado de la verificación, el motivo cuando lo hay y la **Confianza** en porcentaje. No aparece si el campo no tenía la verificación de vida activa cuando el usuario respondió.
+- **Documento de identidad**: Con una cédula, muestra el **Frente** y el **Reverso** por separado. Si el campo tiene activa **Extraer datos del documento (OCR)**, muestra además **Extracción de datos (OCR)**, con el estado de la extracción y el motivo si falló, y los **Campos extraídos** del documento, como el nombre completo, el número de documento y sus fechas.
+- **Documento**: Se ve igual que un campo **Archivo**, sin el estado de la extracción.
+
+La pestaña **Documentos** de la respuesta lista los archivos de los tres campos con su nombre, tamaño y miniatura, incluido el reverso de la cédula, y muestra la **Verificación de vida** de cada selfie. En el detalle de la tarea, el campo Documento de identidad muestra el tipo de documento, el país y los enlaces a **Frente** y **Reverso**.
+
+Los resultados también quedan disponibles para integrar:
 
 - En **plantillas Liquid**, la respuesta de un campo Documento entrega el archivo, el estado de la extracción y el texto extraído; la de un campo Selfie entrega el archivo, el estado de la verificación de vida y el nivel de confianza.
 - En la **API de administración**, además de lo anterior, se expone el código de error cuando la extracción o la verificación fallan.
 
 :::tip Verificación de vida rechazada sin motivo
-Una verificación **Rechazada** sin código de error asociado significa que el nivel de confianza quedó por debajo del **Umbral de confianza (%)** configurado en la integración. Es el caso más frecuente y no indica una falla técnica.
+Una verificación **Rechazada** sin motivo en la pestaña **Campos**, o sin código de error en la API, significa que el nivel de confianza quedó por debajo del **Umbral de confianza (%)** configurado en la integración. Es el caso más frecuente y no indica una falla técnica.
 :::
 
 ##### Uso en la lógica condicional
@@ -712,6 +720,14 @@ Cuando el flujo llega a una tarea de agente, los administradores asignados recib
 
 Desde la vista de la respuesta, el agente abre la tarea y responde el formulario con la misma experiencia del sitio: lógica condicional en vivo, carga de archivos, grupos repetibles y snippets de código. Mientras la tarea espera la acción del agente, el usuario ve en la página de originación el texto configurado en **Mensaje de espera que ve el usuario**.
 
+:::tip Estilos del formulario del agente
+El formulario de una tarea de agente carga primero los estilos del admin y después la versión publicada de la vista CSS `base` del sitio de la página de originación, así que el agente lo ve con la apariencia del sitio. Si el sitio no tiene esa vista publicada, el formulario usa solo los estilos del admin. El JavaScript del sitio no se carga.
+
+El contenido del formulario va dentro del contenedor `#agent-task-content`. Usa ese selector para que una regla aplique solo en la vista del agente, por ejemplo `#agent-task-content .form-control`.
+
+Los recursos que la hoja trae desde otros dominios, como un `@import`, fuentes o imágenes, pueden no cargarse en el formulario del agente, así que no dependas de ellos para su apariencia. Si el sitio tiene habilitado el encabezado [Cross Origin Resource Policy](/es/platform/channels/sites.html#cross-origin-resource-policy), el navegador puede bloquear la hoja completa y el formulario se muestra solo con los estilos del admin.
+:::
+
 Opciones adicionales según el tipo de tarea:
 
 - **Desactivar el completado manual** (Revisión pendiente): Oculta el botón **Completar** para que la tarea no pueda completarse manualmente desde el admin. Los administradores con el permiso **Cambiar estado de la Respuesta de una Tarea** pueden completarla de todas formas.
@@ -791,6 +807,19 @@ Así se aplica la asignación:
 
 :::warning Atención
 Si consumes la API de administración de originaciones, ten en cuenta que cada regla ahora tiene `targets`, una lista ordenada de acciones, en lugar de `target`. Al guardar, la API sigue aceptando `target`, pero siempre responde con `targets`, y una originación sin reglas responde `rules: []`. La acción **Asignar** se envía como un target con `action: assign`. Revisa el detalle en la documentación Swagger de la [API](/es/platform/core/api.html).
+:::
+
+### Probar la originación en vista previa
+
+Con el botón **Vista previa** (ícono de ojo) del encabezado de la originación puedes recorrer el flujo como lo haría un usuario. El botón abre la página de originación en la vista previa del sitio con la versión en edición de la originación, así que puedes probar tus cambios antes de publicarlos. Está disponible cuando la originación tiene una página vinculada.
+
+Las respuestas que creas en la vista previa son de prueba y quedan aparte de las reales:
+
+- No aparecen en el listado de **Respuestas** de la originación.
+- No cuentan en [Insights](/es/platform/insights/origination.html) ni en los [filtros de originación](/es/platform/customers/segments.html#filtros-de-originacion) de los segmentos.
+
+:::warning Eliminación de las respuestas de prueba
+Las respuestas de prueba se eliminan sin aviso en dos casos: al publicar la originación y, una vez por semana, las que llevan más de 7 días sin cambios.
 :::
 
 ### Editar configuración de la originación
@@ -952,7 +981,9 @@ En la vista de detalles, encontrarás las siguientes secciones principales:
 - **Firmas**: Seguimiento de las firmas digitales recolectadas durante el flujo.
 - **Verificación de Identidad**: Resultado de la verificación de identidad del usuario cuando el flujo la incluye.
 - **Validaciones**: Validaciones realizadas por los administradores para autorizar el progreso.
-- **Actividad**: Registro de actividades y cambios realizados en la respuesta, útil para seguimiento y auditoría.
+- **Actividad**: Registro de actividades y cambios realizados en la respuesta, útil para seguimiento y auditoría. Tiene dos vistas:
+  - **Administrador**: Los registros de actividad de la respuesta, que puedes acotar con el filtro **Tipo**. El filtro ofrece solo los tipos presentes en esa respuesta. Si el flujo usa una tarea de Verificación de Identidad con la integración **NAAT.TECH**, los errores que el proveedor devuelve en el navegador durante la captura del documento o la verificación de vida quedan registrados aquí con el tipo **Error de NAAT.TECH en verificación de identidad**. Te sirven para diagnosticar por qué el usuario no pudo completar la verificación.
+  - **Usuario**: Los eventos que genera el usuario final al avanzar en la respuesta.
 
 Esta estructura te brinda una visión integral y detallada de cada respuesta, permitiéndote gestionar de manera efectiva todos los aspectos relacionados con las respuestas.
 
@@ -1127,10 +1158,11 @@ La originación que vincules debe pertenecer al mismo reino que el sitio donde c
 
 Una página de originación puede quedar sin originación vinculada. Mientras esté en ese estado, la página responde a los usuarios finales con un error 404, por lo que debes vincularle una originación para volver a desplegar el flujo.
 
-Esto ocurre en tres situaciones:
+Esto ocurre en cuatro situaciones:
 
 - **Eliminas la originación**: la página se mantiene en el sitio, pero sin originación vinculada.
 - **Cambias el reino del sitio**: todas las páginas de originación de ese sitio pierden la referencia, porque cada originación pertenece a un reino. El formulario de configuración de la aplicación te advierte de esto antes de que confirmes el cambio.
 - **Creas un stage**: las páginas de originación se copian al stage sin la originación vinculada. Como cada originación admite una sola página, en el stage debes vincular una originación distinta del mismo reino.
+- **Sincronizas una página nueva desde un stage**: si la página no existía en el sitio de destino, llega sin originación vinculada y debes vincularle una originación del reino de ese sitio. Si la página ya existía, conserva la originación que tenía.
 
 Para más detalles sobre el comportamiento de los stages, revisa la sección [stages](/es/platform/channels/sites.html#stages) de las aplicaciones web.
