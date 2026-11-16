@@ -70,6 +70,8 @@ In addition, from the **Groups** block of the **Access** tab in each team member
 All users who belong to a group will have the group's role. If they also have an individually assigned role, or belong to several groups, in each context they get the sum of the permissions of all those roles, minus those of the [applications](#access-to-applications) they don't have enabled.
 :::
 
+In Customers, groups also define work teams: with the **List Group Submissions** permission, a supervisor sees the origination submissions assigned to the members of their groups. See [View the work of a team](/en/platform/customers/origination.html#view-the-work-of-a-team).
+
 ### Create a group
 
 To create a group, follow these steps:
