@@ -421,10 +421,11 @@ To modify the role of a team member:
 2. Assign the desired role to the user.
 3. Click **Update**.
 
-You can choose between two roles:
+You can assign any realm role, including [custom roles](/en/platform/core/roles.html#custom-roles) with the **Customers** scope. The default roles are:
 
-- **Realm User**: Can add users, create, modify, and review campaigns, forms, and segments.
+- **Realm User**: Can view the realm's users, but cannot create, edit, or delete them. Manages campaigns, campaign templates, forms, and segments, and can view payment orders.
 - **Realm Admin**: Has access to all the settings and sections of the realms, can add and remove users and team members. Can also delete the realm, and create and sync its [stages](/en/platform/customers/realms.html#stages).
+- **Realm Viewer**: A read-only role: can view the realm's information, but cannot create or modify anything. See its permissions in [Roles by realm](/en/platform/core/roles.html#roles-by-realm).
 
 To remove an administrator from the realm, check the box to the left of their name and click the **Delete** button at the bottom.
 
