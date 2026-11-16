@@ -13,7 +13,7 @@ Aquí puedes modificar tanto la experiencia visual del usuario como la configura
 
 En esta sección, puedes configurar aspectos generales del reino, como:
 
-- **Título**.
+- **Nombre**: Nombre del reino o del stage. Es el texto que tienes que escribir para confirmar su eliminación.
 - **Identificador**: La URL de las vistas de perfil, inicio de sesión, registro y recuperación de contraseña del reino. Revisa el listado completo en [Rutas del reino](/es/platform/customers/profile.html#rutas-del-reino). Si el reino tiene un [dominio personalizado](/es/platform/customers/settings.html#dominios), sus rutas en ese dominio no incluyen el identificador.
 - **Deshabilitar credenciales de la plataforma**: Al marcar esta casilla, desactivas las credenciales de Modyo en el reino y permites únicamente el acceso a través de SSO.
 
@@ -34,7 +34,7 @@ Antes de habilitar la opción de deshabilitar las credenciales de Modyo en el re
 - **Imagen de Avatar por defecto**: Imagen que se muestra en el avatar de los usuarios que no tienen una imagen personalizada.
 - **Soft login**: Habilita el ingreso con un código de un solo uso (OTP) en lugar de contraseña, y define su validez, el tiempo de espera para reenviarlo y los canales por los que se envía. Revisa el detalle en [Soft login](#soft-login).
 - **Formulario de registro**: Aquí puedes habilitar o deshabilitar diferentes atributos en el formulario de registro, como el segundo apellido, confirmación de correo electrónico, avatar de usuario, fecha de nacimiento, género y número de teléfono.
-- **Eliminar reino**: Elimina el reino y todos sus stages. Este proceso se realiza en segundo plano y es posible que no veas el reino desaparecer inmediatamente después de ejecutar la acción. Para confirmar la eliminación, debes ingresar el nombre completo del reino. Solo aparece si tienes el permiso **Administración General**, y no puedes usarlo mientras alguna aplicación web o espacio tenga seleccionado el reino o alguno de sus stages. En un stage, el botón se llama **Eliminar stage** y pide el nombre del stage. Revisa el detalle en [Eliminar un Reino](/es/platform/customers/realms.html#eliminar-un-reino) y [Eliminar un stage](/es/platform/customers/realms.html#eliminar-un-stage).
+- **Eliminar reino**: Elimina el reino y todos sus stages. El reino desaparece del listado al confirmar y el borrado de sus datos continúa en segundo plano. Para confirmar la eliminación, debes ingresar el nombre completo del reino. Solo aparece si tienes el permiso **Administración General**, y no puedes usarlo mientras alguna aplicación web o espacio tenga seleccionado el reino o alguno de sus stages. En un stage, el botón se llama **Eliminar stage** y pide el **Nombre** completo del stage, por ejemplo **qa Clientes**. Revisa el detalle en [Eliminar un Reino](/es/platform/customers/realms.html#eliminar-un-reino) y [Eliminar un stage](/es/platform/customers/realms.html#eliminar-un-stage).
 
 
 ### Soft login
