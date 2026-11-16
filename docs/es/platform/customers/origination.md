@@ -435,184 +435,165 @@ Los code snippets pueden utilizar objetos de liquid para acceder a datos interno
 
 En un flujo de originación, cada respuesta representa el proceso en curso de un usuario específico.
 
-Puedes aprender más sobre [Objetos Liquid](/es/platform/channels/liquid-markup/objects) en nuestra documentación.
+Puedes aprender más sobre [Objetos Liquid](/es/platform/channels/liquid-markup/objects.html) en nuestra documentación.
 
 #### Ejemplo de Code Snippets
 
-En este ejemplo puedes ver la interacción con las APIs de JavaScript y JSON: al enviar la tarea, el snippet guarda las selecciones con una petición POST a `getUrl()` y, cuando el usuario vuelve a la tarea, las recupera con una petición GET para preseleccionar los menús.
+Este ejemplo es un simulador de crédito. El usuario ingresa un monto y elige un plazo, y el snippet calcula la cuota mensual y guarda la simulación a medida que el usuario cambia los datos. Si el usuario vuelve a la tarea, el snippet recupera lo que guardó. Para usarlo, marca **Completar la tarea utilizando la API de respuestas** en las propiedades de la tarea.
 
-``` html
-<div class="form-group">
-    <div class="form-group">
-        <label for="productDropdown" class="form-label">Select a car <span class="req">*</span></label>
-        <select class="form-select" id="productDropdown" disabled>
-            <option value="" selected>Loading...</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <label for="colorDropdown" class="form-label">Select your favorite color <span class="req">*</span></label>
-        <select class="form-select" id="colorDropdown" disabled>
-            <option value="" selected>Loading...</option>
-        </select>
-    </div>
-	  <div class="form-group">
-        <label for="yearInput" class="form-label">Year <span class="req">*</span></label>
-        <input type="number" class="form-control" id="yearInput" placeholder="e.g., 2023">
-    </div>
-	  <div class="form-group">
-        <label for="dateInput" class="form-label">Driver license expiration<span class="req">*</span></label>
-        <input type="date" class="form-control" id="dateInput">
-    </div>
-	 <div class="form-group">
-     <label for="extrasSelect" class="form-label">Select extras (multi-select)</label>
-       <select class="form-select" id="extrasSelect" multiple>
-         <option value="ac">Air Conditioning</option>
-         <option value="gps">GPS</option>
-         <option value="sunroof">Sunroof</option>
-         <option value="leather_seats">Leather Seats</option>
-       </select>
-   </div>
+El ejemplo sigue estas prácticas, recomendadas para que el snippet funcione de forma confiable en la página de originación:
+
+- **`nonce` en el `<script>`**: <code v-pre>nonce="{{ csp_nonce }}"</code> permite que el script se ejecute en los sitios cuya [política de seguridad de contenido](/es/platform/channels/sites.html#content-security-policy-csp) usa nonce. Sin él, el navegador bloquea el script y el botón **Siguiente** nunca se habilita.
+- **Sin variables globales**: el código va dentro de una función que se ejecuta de inmediato. Al presionar **Siguiente**, la tarea siguiente se carga sin recargar la ventana, así que si dos snippets declaran la misma variable global con `const` o `let`, el segundo falla.
+- **`getUrl()` y `enableButton()` dentro de `DOMContentLoaded`**: la página define estas funciones después del código del snippet y las vuelve a definir en cada tarea. Por eso el ejemplo las llama recién en `DOMContentLoaded` y guarda la URL y la función en variables propias, para que un guardado que quedó pendiente no apunte a la tarea siguiente.
+- **Identificadores únicos**: los `id` incluyen <code v-pre>{{ task.uid }}</code>, el identificador de la tarea, para no chocar con otros elementos de la página.
+- **`content` en el cuerpo de la petición**: el POST envía `content` como JSON en el cuerpo, con el token de la etiqueta `<meta name="csrf-token">` de la página en la cabecera `X-CSRF-Token`. Sin ese token, la plataforma rechaza la petición.
+- **El objeto completo en cada POST**: cada petición reemplaza lo que se guardó antes, así que el snippet envía siempre todos los datos. Los valores numéricos van como números, no como texto.
+- **Habilitar Siguiente después de guardar**: el snippet llama a `enableButton()` cuando el POST responde correctamente, y es el usuario quien presiona **Siguiente** para completar la tarea. Como la API no tiene una función para volver a deshabilitar el botón, los campos usan la validación del navegador (`required`, `min` y `max`), que impide avanzar si el usuario cambia un dato por uno inválido.
+- **Guardar antes de avanzar**: si el usuario presiona **Siguiente** o Enter con cambios que todavía no se guardan, el snippet detiene el envío del formulario, termina de guardar y lo vuelve a enviar con `requestSubmit()`. Así, la tarea se completa con los datos que el usuario ve.
+
+```html
+<div id="loan-{{ task.uid }}">
+  <div class="form-group">
+    <label for="loan-amount-{{ task.uid }}" class="form-label">Monto a solicitar <span class="req">*</span></label>
+    <input type="number" class="form-control" id="loan-amount-{{ task.uid }}" data-field="amount" min="100000" max="50000000" step="1" required>
+  </div>
+  <div class="form-group">
+    <label for="loan-term-{{ task.uid }}" class="form-label">Plazo <span class="req">*</span></label>
+    <select class="form-select" id="loan-term-{{ task.uid }}" data-field="term" required>
+      <option value="12">12 meses</option>
+      <option value="24" selected>24 meses</option>
+      <option value="36">36 meses</option>
+      <option value="48">48 meses</option>
+    </select>
+  </div>
+  <p>Cuota mensual estimada: <strong data-field="payment">-</strong></p>
+  <p data-field="status" role="status"></p>
 </div>
-<script>
-    const staticProducts = [
-        { id: 'ferrari', title: 'Ferrari' },
-        { id: 'lamborghini', title: 'Lamborghini' },
-        { id: 'maserati', title: 'Maserati' },
-        { id: 'alfa_romeo', title: 'Alfa Romeo' },
-        { id: 'fiat', title: 'Fiat' },
-        { id: 'lancia', title: 'Lancia' },
-        { id: 'pagani', title: 'Pagani' }
-    ];
+<script nonce="{{ csp_nonce }}">
+  (function () {
+    const MONTHLY_RATE = 0.015;
+    const root = document.getElementById('loan-{{ task.uid }}');
+    const form = root.closest('form');
+    const amountInput = root.querySelector('[data-field="amount"]');
+    const termSelect = root.querySelector('[data-field="term"]');
+    const paymentOutput = root.querySelector('[data-field="payment"]');
+    const statusOutput = root.querySelector('[data-field="status"]');
+    let dataUrl;
+    let enableNext;
+    let saveTimer;
+    let unsavedChanges = false;
+    let pendingSaves = 0;
+    let lastSave = Promise.resolve();
 
-    const staticColors = [
-	 { id: 'white', name: 'White' },  
-	{ id: 'red', name: 'Red' },
-        { id: 'blue', name: 'Blue' },
-        { id: 'black', name: 'Black' },    
-        { id: 'silver', name: 'Silver' },
-        { id: 'green', name: 'Green' },
-        { id: 'yellow', name: 'Yellow' }
-    ];
-
-    const productDropdown = document.getElementById('productDropdown');
-    const colorDropdown = document.getElementById('colorDropdown');
-	  const yearInput = document.getElementById('yearInput');
-	  const dateInput = document.getElementById('dateInput');
-	  const extrasSelect = document.getElementById('extrasSelect'); 
-
-    async function initializeDropdowns() {
-        const savedData = await getRequestJson();
-        let selectedProductValue = null;
-        let selectedColorValue = null;
-
-        if (savedData?.submission?.fields) {
-            selectedProductValue = savedData.submission.fields.car;
-            selectedColorValue = savedData.submission.fields.color;
-        }
-
-        let productOptionsHtml = '<option value="">Seleccionar ...</option>';
-        staticProducts.forEach(product => {
-            productOptionsHtml += `<option value="${product.id}" ${selectedProductValue && product.id === selectedProductValue ? 'selected' : ''}>${product.title}</option>`;
-        });
-        productDropdown.innerHTML = productOptionsHtml;
-        productDropdown.disabled = false;
-        if (productDropdown.value) enableButton();
-
-        let colorOptionsHtml = '<option value="">Seleccionar ...</option>';
-        staticColors.forEach(color => {
-            colorOptionsHtml += `<option value="${color.id}" ${selectedColorValue && color.id === selectedColorValue ? 'selected' : ''}>${color.name}</option>`;
-        });
-        colorDropdown.innerHTML = colorOptionsHtml;
-        colorDropdown.disabled = false;
-        if (colorDropdown.value && productDropdown.value) enableButton();
+    function monthlyPayment(amount, months) {
+      return Math.round(amount * MONTHLY_RATE / (1 - Math.pow(1 + MONTHLY_RATE, -months)));
     }
 
-    productDropdown.addEventListener('change', () => {
-        if (productDropdown.value && colorDropdown.value) enableButton();
+    function currentData() {
+      const amount = Number(amountInput.value);
+      const termMonths = Number(termSelect.value);
+      return { amount: amount, term_months: termMonths, monthly_payment: monthlyPayment(amount, termMonths) };
+    }
+
+    function renderPayment() {
+      paymentOutput.textContent = amountInput.checkValidity() && termSelect.checkValidity()
+        ? currentData().monthly_payment.toLocaleString()
+        : '-';
+    }
+
+    async function request(options) {
+      const response = await fetch(dataUrl, options);
+      if (!response.ok || response.redirected) {
+        throw new Error('HTTP ' + response.status);
+      }
+      return response.json();
+    }
+
+    function loadData() {
+      return request({ headers: { 'Accept': 'application/json' } });
+    }
+
+    function saveData(content) {
+      return request({
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]')?.content
+        },
+        body: JSON.stringify({ content: content })
+      });
+    }
+
+    function saveNow() {
+      clearTimeout(saveTimer);
+      if (!unsavedChanges) {
+        return lastSave;
+      }
+      unsavedChanges = false;
+      pendingSaves += 1;
+      statusOutput.textContent = 'Guardando...';
+      lastSave = lastSave
+        .catch(function () {})
+        .then(function () { return saveData(currentData()); })
+        .then(function () {
+          statusOutput.textContent = 'Simulación guardada.';
+          enableNext();
+        }, function (error) {
+          unsavedChanges = true;
+          statusOutput.textContent = 'No pudimos guardar la simulación. Inténtalo de nuevo.';
+          throw error;
+        })
+        .finally(function () { pendingSaves -= 1; });
+      return lastSave;
+    }
+
+    function scheduleSave() {
+      renderPayment();
+      clearTimeout(saveTimer);
+      if (!amountInput.checkValidity()) {
+        statusOutput.textContent = amountInput.validationMessage;
+        return;
+      }
+      unsavedChanges = true;
+      saveTimer = setTimeout(function () {
+        saveNow().catch(console.error);
+      }, 400);
+    }
+
+    form.addEventListener('submit', function (event) {
+      if (!unsavedChanges && pendingSaves === 0) {
+        return;
+      }
+      event.preventDefault();
+      saveNow().then(function () {
+        form.requestSubmit();
+      }, function (error) {
+        console.error(error);
+        enableNext();
+      });
     });
 
-    colorDropdown.addEventListener('change', () => {
-        if (productDropdown.value && colorDropdown.value) enableButton();
+    document.addEventListener('DOMContentLoaded', async function () {
+      dataUrl = getUrl();
+      enableNext = enableButton;
+      try {
+        const saved = await loadData();
+        if (saved && saved.amount) {
+          amountInput.value = saved.amount;
+          termSelect.value = String(saved.term_months);
+          renderPayment();
+          enableNext();
+        }
+      } catch (error) {
+        statusOutput.textContent = 'No pudimos recuperar tu simulación.';
+        console.error(error);
+      }
+      amountInput.addEventListener('input', scheduleSave);
+      termSelect.addEventListener('change', scheduleSave);
     });
-
-    async function getRequestJson() {
-        try {
-            const url = getUrl();
-            const response = await fetch(url);
-            if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
-            return await response.json();
-        } catch (error) {
-            console.error("Error in getRequestJson:", error);
-            return null;
-        }
-    }
-
-    async function sendData() {
-			  const selectedExtras = Array.from(extrasSelect.selectedOptions).map(option => option.value);
-			
-        const jsonData = {
-            "submission": {
-                "fields": {
-                    "car": productDropdown.value,
-                    "color": colorDropdown.value,
-		   "year": yearInput.value ? parseInt(yearInput.value, 10) : null,
-		   "expiration": dateInput.value,
-		   "extras": selectedExtras
-                }
-            }
-        };
-        return await postRequestJson(jsonData);
-    }
-    
-    async function postRequestJson(content) {
-        try {
-            const response = await fetch(getUrl().concat(`?content=${encodeURIComponent(JSON.stringify(content))}`), {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json', 'X-CSRF-Token': document.querySelector('meta[name=csrf-token]').content }
-            });
-            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-            await response.json();
-        } catch (error) {
-                console.error('Error:', error);
-        }
-    }
-
-    async function postRequestJson2(content) {
-        try {
-            const response = await fetch(getUrl(), {
-                method: "POST",
-                headers: {
-                    'X-CSRF-TOKEN': document.querySelector('meta[name=csrf-token]').content,
-                    'Accept': 'application/json',
-            'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({content: content}),
-            });
-            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-            await response.json();
-        } catch (error) {
-            console.error('Error:', error);
-        }
-    }
-
-    document.addEventListener('DOMContentLoaded', async function() {
-        await initializeDropdowns();
-	   const mainForm = document.querySelector('form');
-	    mainForm.addEventListener("submit", async function(event) {
-            event.preventDefault();
-            const submitHandler = async (e) => {
-                e.preventDefault(); 
-                try {
-                    const responseData = await sendData(); 
-                    mainForm.removeEventListener("submit", submitHandler);
-                    mainForm.submit(); 
-                } catch (error) {
-                    console.error("Error durante el envío de datos:", error);
-                }
-            };
-	   submitHandler(event);
-        });
-    });
+  })();
 </script>
 ```
 
