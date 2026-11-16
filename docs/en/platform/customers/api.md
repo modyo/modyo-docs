@@ -77,6 +77,7 @@ Every Customers API endpoint shares these error bodies:
 |------|------|-----------------|
 | `401` | <code v-pre>{"error":{"user_session":"user not found"}}</code> | The request carries no usable credentials, the access token does not match a user of the realm, or the user is inactive. |
 | `401` | <code v-pre>{"error":{"grant_expired":"session expired"}}</code> | The credential identifies a user, but the session behind it expired or was revoked. |
+| `403` | <code v-pre>{"error":{"pending_password_reset":"..."}}</code> | The user has a pending password change because an administrator created them or set their password. Every call gets this response until the user logs in to the realm with their username and password and sets a new one. Creating a user in a realm with [Soft login](/en/platform/customers/settings.html#soft-login) turned on does not leave their password pending. |
 | `404` | <code v-pre>{}</code> | The `realm_uid` in the URL does not match any active realm of the account or, on a custom domain, does not match the realm of that domain. |
 
 :::tip Tip
