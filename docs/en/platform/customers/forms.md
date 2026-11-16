@@ -82,9 +82,9 @@ These are the field types of the **Input fields** group:
 - **Paragraph**: Allows the user to enter multiline text up to 65535 characters.
 - **Number**: Allows the user to enter numbers.
 - **Dropdown**: Allows you to add options from which the user can choose one in _dropdown_ format.
-- **Checkbox**: Allows you to add options from which the user can choose multiple options in a _checkbox_ format.
+- **Checkboxes**: Allows you to add options from which the user can choose multiple options with checkboxes.
 - **Choice**: Allows you to add options from which the user can choose one in _radio button_ format.
-- **Date**: Allows you to add a date field where the user can select one within the allowed range.
+- **Date**: Allows you to add a date field where the user can select one within the allowed range. See [Date](/en/platform/customers/forms.html#date).
 - **Nested questions**: Allows you to add a series of alternatives that can be nested, so that the user is asked to select one of the possible nested options within the option they selected.
 - **File**: Allows you to upload files.
 - **Email**: Field for entering an email address.
@@ -92,6 +92,7 @@ These are the field types of the **Input fields** group:
 - **Country**: Country selector.
 - **Phone**: Field for entering phone numbers.
 - **Address**: Structured field for capturing addresses.
+- **Hidden Field**: Stores a value with the answer without showing it to the user. See [Hidden Field](/en/platform/customers/forms.html#hidden-field).
 
 You can delete one of the fields from the form by clicking on the trash can icon to the right of each field in the main section. The deletion will be effective once you save the changes.
 
@@ -120,11 +121,49 @@ Keep the following in mind:
 - It does not appear in the answers: it is not shown in the detail of an answer or in the new answer notification email, it is not included in the export or in the form statistics, and it is not available to filter segments by answers.
 - If an answer carries a value for this field, for example through the API, the platform discards it.
 
+#### Date
+
+The **Date** field captures a day, without a time. The answer is stored as 12:00 UTC of the selected date. That's why, if you read the answer through the API or in Liquid, the value carries a time that corresponds to 12:00 UTC, not to midnight. To get the day, take the date part of the value expressed in UTC: if you convert it to another time zone, the date may change. Answers saved before the platform adopted this format were also adjusted to it.
+
+If you send the answer from your own code, use the `yyyy-MM-dd` format, which is taken as that exact day. A value with a time is converted to the account time zone, and the resulting day is stored.
+
+The **Min date** and **Max date** are compared by day, without considering the time.
+
+#### Hidden Field
+
+The **Hidden Field** stores a value with the answer without showing it to the user, such as the source of a campaign or a site value. The value is stored as text and appears like the value of any other field: in the answer detail, in the export, in the notification email, and in the segment filters by answers.
+
+When you select it, choose in **Value source** where that value comes from:
+
+- **Fixed value or Liquid**: The platform computes the value when the answer is saved, from what you write in **Value**, regardless of what the browser sends. It accepts up to 1,000 characters and [Liquid](/en/platform/channels/liquid-markup/) with access to the user the answer is linked to (`user.name`, `user.first_name`, `user.last_name`, `user.email`, and `user.username`), to the form site (`site.name`, `site.uuid`, and `site.url`), and to the site variables (`vars`). In forms open to users without a session, the user data depends on what the respondent enters. You can use the standard filters and the `assign`, `capture`, `case`, `comment`, `echo`, `if`, `unless`, and `raw` tags, but not loops or `include`.
+- **URL parameter**: The value is taken from the parameter set in **Parameter name**, from the URL of the page where the form opens. For example, with `utm_source` as the name, a URL ending in `?utm_source=newsletter` stores `newsletter`. The name must start with a letter or a digit, only accepts letters, digits, dot (`.`), hyphen (`-`), and underscore (`_`), and has a maximum of 100 characters.
+
+For example, this **Value** stores the user's email:
+
+```liquid
+{{ user.email }}
+```
+
+Keep the following in mind:
+
+- It has no required option and no instructions.
+- It is only available in forms. It does not appear in the Input tasks of originations.
+- With **Fixed value or Liquid**, the **Value** is required, and if its Liquid has a syntax error, the field is not saved and the platform shows the error.
+- Up to 255 characters of the value are stored, and the rest is discarded.
+- If the value is empty, for example because the URL doesn't carry the parameter or because the Liquid fails when it is computed, the answer doesn't include this field.
+- The value is computed again every time the answer is saved. If the user answers a form that doesn't accept multiple answers again, the previous value is not kept: with **URL parameter**, the field is left empty if the URL no longer carries the parameter.
+
+:::warning Attention
+The value of a **URL parameter** comes from the browser, and anyone can change it by editing the URL. Don't use it for sensitive data or for decisions that require a trusted value.
+:::
+
 ### Field properties
 
 This section will allow you to modify the options for each of the questions on your form, you must select a field from the main section in order to make use of this section.
 
-All input fields have a title, which will be the question associated with the answer, the option to make it a required field in order to submit the form, and a brief description, if instructions are needed, to answer the field.
+All input fields have a title, which will be the question associated with the answer, the option to make it a required field in order to submit the form, and a brief description, if instructions are needed, to answer the field. The [Hidden Field](/en/platform/customers/forms.html#hidden-field) is the exception: it has no required option and no instructions.
+
+The **Dropdown** and **Nested Questions** fields have the **Enable search** checkbox, unchecked by default, also when their alternatives come from a [data set](/en/platform/customers/settings.html#data-sets). With the checkbox checked, the user sees a search box instead of the browser list: as they type, it finds the alternatives that contain the text, ignoring case and accents, shows them in the order you defined, and displays up to 100 matches. In nested questions, the search box appears at every level. The same checkbox is available in the [Input](/en/platform/customers/origination.html#input) tasks of originations. The **Country** field and the country selector of the **Address** field always show this search box, which also finds each country by its two-letter ISO code.
 
 Some fields have validations, to ensure that the user meets certain requirements to fill in the field, some of these restrictions are:
 
@@ -140,7 +179,9 @@ Just as some fields have validations, most input fields have a default value tha
 
 ### Regular expressions
 
-For simple text and paragraph fields, you can add validations through regular expressions. By clicking on the functions button, you can see the different default validations:
+For simple text and paragraph fields, you can add validations through regular expressions. On save, the platform checks that the expression is valid according to Ruby regular expression syntax, both in forms and in the Input tasks of originations. If it is not, the changes are not saved and an error shows that the regular expression is not valid. The editor marks in red the expressions the browser can't interpret, but that mark doesn't guarantee that the platform accepts them. Since the answer is validated both in the browser and on the platform, use an expression that the editor doesn't mark in red and that saves without errors.
+
+By clicking on the functions button, you can see the different default validations:
 
 - Email
 - URL

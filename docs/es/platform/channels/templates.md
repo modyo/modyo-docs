@@ -35,7 +35,10 @@ Para más información sobre el versionamiento, consulta la sección de [version
 
 **Ver actividad**: Despliega una barra lateral que muestra el historial de actividad y donde puedes leer y escribir comentarios. Haz click en **ver detalle** para mostrar la información completa de cualquier registro de actividad.
 
-**Más acciones**: Este ícono te permite **archivar** o **borrar** una plantilla.
+**Más acciones**: Este ícono te permite **Archivar** o **Borrar** la plantilla abierta. Estas acciones solo están disponibles en las plantillas que se pueden eliminar, como las que creas tú o el layout **Home**. Las demás plantillas que trae el sitio, como los layouts **Base** y **Error**, no se pueden archivar, despublicar ni borrar.
+
+- **Archivar**: Disponible cuando la plantilla no tiene una versión publicada; si la tiene, despublícala primero. Una plantilla archivada no se puede editar y desaparece del listado. Para verla, activa **Mostrar archivados** al pie del panel lateral y, si quieres volver a usarla, haz click en **Restaurar**.
+- **Borrar**: Disponible cuando la plantilla está archivada y no tiene una versión publicada ni programada. Esta acción es irreversible.
 
 La última opción en la bara superior muestra las acciones principales que puedes llevar a cabo:
 
@@ -44,6 +47,7 @@ La última opción en la bara superior muestra las acciones principales que pued
 - **Forzar publicación**: Solo disponible para administradores del sitio, permite publicar inmediatamente una plantilla, incluso si está esperando revisión
 - **Rechazar**: Vuelve al estado "En edición" y notifica a los revisores que el elemento fue rechazado.
 - **Publicar**: Una vez que la plantilla ha sido aprobada, puedes enviarla a publicar.
+- **Despublicar**: Disponible en las plantillas publicadas que se pueden eliminar. Elige **Despublicar ahora**, o **Despublicar en** para programarlo en una fecha. Las plantillas publicadas que hacen referencia a la plantilla despublicada ya no pueden renderizarla.
 
 En el área de trabajo principal, hay dos secciones:
 
@@ -101,10 +105,14 @@ La ruta del snippet que registra el service worker es `shared/service_worker/reg
 :::
 
 Para aplicar un layout nuevo a una página, sigue estos pasos:
-1. Ve a la sección **Páginas**
-2. Selecciona la pestaña **Propiedades**.
-3. Elige el layout que deseas usar en tu página.
-4. Envía a revisión o publica tu layout, según el caso.
+1. Publica el layout. Solo los layouts publicados aparecen en el selector **Layout** de las páginas.
+2. Ve a la sección **Páginas** y abre la página.
+3. Elige el layout en el campo **Layout**. En una página de widget, está en la pestaña **Propiedades**. En una [página de contenido](/es/platform/channels/pages#pagina-de-contenido), lo eliges por separado para el **Index** y el **Show**, en la pestaña **Editar**.
+4. Envía a revisión o publica la página, según el caso.
+
+:::warning Atención
+Si despublicas o borras un layout, las páginas que lo usan se muestran con el layout **Base**. Antes de despublicarlo, si hay páginas de widget publicadas que lo usan, Modyo te avisa cuántas son. Al borrarlo, además, la versión editable de las páginas de widget que lo tenían asignado pasa al layout **Base**, y ese cambio queda pendiente hasta que las publiques.
+:::
 
 ### Insertar una imagen con Liquid
 
@@ -222,7 +230,7 @@ Escribir el CSS o el JavaScript directamente en la plantilla, dentro de una etiq
 
 Los snippets son fragmentos reutilizables de código HTML, JS o CSS para tus sitios. Para usar un snippet:
 
-1. Copia la ruta de referencia del snippet personalizado. El código Liquid será similar a: &lt;span v-pre&gt;`{% snippet "nombre-del-snippet" %}` &lt;/span&gt;.
+1. Copia la ruta de referencia del snippet personalizado. El código Liquid será similar a: <span v-pre>`{% snippet "nombre-del-snippet" %}`</span>.
 1. Pega el código donde quieras llamar a este Snippet.
 
 Para añadir un snippet personalizado:
@@ -262,7 +270,7 @@ Las sub-versiones son específicas a cada plantilla, por lo que algunos pueden t
 Si restableces una versión anterior a la versión editable, puedes acceder a las sub-versiones de cada template de esa versión. Puedes aprender más sobre [versionado](/es/platform/core/#versionado) aquí.
 :::
 
-Para restaurar todas las plantillas a su versión original, haz click en la acción secundaria de la barra superior **Restaurar todo**. Para que los cambios tengan efecto, debes publicar las plantillas.
+Cada plantilla se versiona por separado. Para devolver una plantilla a una versión anterior, ábrela, haz click en **Diferencias** y usa **Resetear a esta versión**, que lleva esa versión a la versión editable, o **Rollback a esta versión**, que la publica directamente. Para más detalles, consulta [Revertir un cambio](/es/platform/core/#revertir-un-cambio).
 
 ## SEO
 
@@ -270,31 +278,69 @@ El SEO [(Search Engine Optimization)](/es/platform/channels/sites#seo) es fundam
 
 En Modyo puedes controlar la forma en que los motores de búsqueda leen tu sitio y contenido, agregando meta tags de forma dinámica, según los atributos que añadas a tus páginas y contenidos.
 
-Para añadir las meta tags en Modyo, usa este snippet de código en Plantillas y luego llámalo desde el head de tu sitio:
+Entre las plantillas con las que se crea el sitio está el snippet `shared/general/seo`, que el snippet `shared/general/head` carga en el head de los layouts **Home**, **Base** y **Error**. Lo encuentras en la pestaña **Snippets** y su contenido inicial es el siguiente:
 
 ```html
 <!-- Site SEO -->
-<meta name="keywords" content="{{ site.keywords }}"/>
 <meta name="author" content="{{ site.name }}"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 {{ site.meta_tags }}
 
 {% if page %}
-<!-- Page SEO -->
-{{ page.meta_tags }}
-<meta name="description" content="{{ page.excerpt }}"/>
-<meta property="og:title" content="{{ page.title }}"/>
-<meta property="og:type" content="website"/>
-<meta property="og:url" content="{{ page.url }}"/>
-<meta property="og:image" content="{{ site.logo | asset_url : 'original' }}"/>
-<meta property="og:site_name" content="{{ site.name }}"/>
-<meta property="og:description" content="{{ page.excerpt }}"/>
+    <!-- Page SEO -->
+    {{ page.meta_tags }}
 {% endif %}
+
 <!-- END SEO -->
+
+{% if page_scope == 'show' %}
+    <!-- Content Page: Show -->
+    <meta name="description" content="{{ entry.meta.excerpt }}"/>
+    <meta property="og:title" content="{{ entry.title }} | {{ site.name }}"/>
+    <meta property="og:description" content="{{ entry.meta.excerpt }}"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content="{{ entry.url }}"/>
+    {% if site.logo %}
+        <meta property="og:image" content="{{ site.logo | asset_url: 'original' }}"/>
+    {% endif %}
+    <meta property="og:site_name" content="{{ site.name }}"/>
+    <link rel="canonical" href="{{ entry.url }}"/>
+
+{% elsif page_scope == 'index' %}
+    <!-- Content Page: Index -->
+    <meta property="og:title" content="{{ page.title }} | {{ site.name }}"/>
+    <meta name="description" content="{{ page.excerpt }}"/>
+    <meta property="og:description" content="{{ page.excerpt }}"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content="{{ page.url }}"/>
+    {% if site.logo %}
+        <meta property="og:image" content="{{ site.logo | asset_url : 'original' }}"/>
+    {% endif %}
+    <meta property="og:site_name" content="{{ site.name }}"/>
+    <link rel="canonical" href="{{ page.url }}"/>
+
+{% else %}
+    <!-- Widget Page -->
+    <meta property="og:title" content="{{ page.title }} - {{ site.name }}"/>
+    <meta name="description" content="{{ page.excerpt }}"/>
+    <meta property="og:description" content="{{ page.excerpt }}"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="{{page.url}}"/>
+    {% if site.logo %}
+        <meta property="og:image" content="{{ site.logo | asset_url : 'original' }}"/>
+    {% endif %}
+    <meta property="og:site_name" content="{{ site.name }}"/>
+    <link rel="canonical" href="{{page.url}}"/>
+{% endif %}
 ```
 
-Este snippet usa Liquid para agregar meta tags a nivel de sitio. También agrega meta tags específicas cuando el usuario navega a una página de widget o de contenido.
+El snippet agrega primero las meta tags del sitio y las [meta tags personalizadas](/es/platform/channels/pages#meta-tags) de la página. Después usa la variable `page_scope` para generar las meta tags según la vista:
+
+- `show`: El detalle de una entrada en una página de contenido. Usa el título, el extracto y la URL de la entrada, con `og:type` igual a `article`.
+- `index`: El listado de entradas de una página de contenido. Usa el título, el extracto y la URL de la página, con `og:type` igual a `article`.
+- En cualquier otro caso, como en las páginas de widget, usa el título, el extracto y la URL de la página, con `og:type` igual a `website`.
+
+En todos los casos agrega la URL canónica y, si el sitio tiene un logo, lo usa como `og:image`.
 
 Puedes personalizar este snippet y definir qué meta tags deseas para URLs o tipos específicos.
 
@@ -313,14 +359,14 @@ Emplea este código para usar meta tags específicas cuando un usuario visita un
 <!-- Content SEO -->
 <meta name="description" content="{{ entry.meta.excerpt }}" />
 <meta property="og:title" content="{{ entry.meta.title }}" />
-<meta property="og:url" content="{{site.url}}/{{entry.meta.type_uid}}/{{entry.meta.slug}}" />
+<meta property="og:url" content="{{ entry.meta.url }}" />
 <meta property="og:image" content="{{ entry.fields.covers.first | asset_url : 'original' }}" />
 <meta property="og:site_name" content="{{ site.name }}" />
 <meta property="og:description" content="{{ entry.meta.excerpt }}" />
-{% if entry.type_uid = 'posts'%}
+{% if entry.meta.type_uid == 'posts' %}
 <meta property="og:type" content="article" />
-{endif}
-{% if entry.type_uid = 'place'%}
+{% endif %}
+{% if entry.meta.type_uid == 'place' %}
 <meta property="og:type" content="place" />
 <meta property="place:latitude" content="{{ entry.location.first.latitude }}" />
 <meta property="place:longitude" content="{{ entry.location.first.longitude }}" />
@@ -329,7 +375,7 @@ Emplea este código para usar meta tags específicas cuando un usuario visita un
 ...
 ```
 
-En este caso, los tipos de entrada `posts` y `place` comparten los atributos _title_, _excerpt_ y _covers_ y difieren en el objeto _locations_. Además, define un tipo de documento diferente para cada uno.
+En este caso, los tipos de entrada `posts` y `place` comparten los atributos _title_, _excerpt_ y _covers_ y difieren en el campo _location_. Además, define un tipo de documento diferente para cada uno.
 
 ### Meta tags específicos para Categoría en Página de Contenido
 
@@ -355,8 +401,9 @@ Para meta tags específicos al mostrar entradas de una categoría, copia el sigu
 <meta property="og:image" content="https://d1dzq2r60kxox4.cloudfront.net/uploads/c82bdfea-3622-4c11-9a20-bea227cbdc60/original/og_image.jpg"/>
 <meta property="og:site_name" content="{{ site.name }}"/>
 <meta property="og:description" content="{{ category_description }}"/>
+{% endif %}
 ```
 
-En este código, se crea una variable `category_name` que contiene el nombre de la categoría tomado del URL, después se utiliza un `{% if category_path.size > 0 %}` para añadir metadata pertinente a la categoría.
+En este código, se crea una variable `category_name` que contiene el nombre de la categoría tomado del URL, después un `if` sobre `category_path.size > 0` agrega la metadata de la categoría solo cuando la URL incluye una.
 
 Liquid te permite crear contenido dinámico para tu sitio. Para conocer más acerca de Liquid y como usar Liquid Objetos, visita [Liquid Markup](/es/platform/channels/liquid-markup).

@@ -38,15 +38,15 @@ You can change the **Identifier** later from the [Realm Settings](/en/platform/c
 
 The **Overview** section provides a general summary of the key elements of the realm, including:
 
-- **Registered users**: Total number of users registered in the realm.
+- **Users**: Total number of users registered in the realm.
 - **Segments**: Number of created segments.
-- **Forms**: All active forms in the realm.
-- **Active campaigns**: All ongoing communication campaigns.
+- **Forms**: Total number of forms in the realm, regardless of their status.
+- **Campaigns**: Total number of campaigns in the realm, regardless of their status.
 
 You will also find a chronological log of all activities carried out within the realm, making it easier to monitor and analyze interactions.
 
 
-This section also includes relevant information such as the main configurations of the realm, the sites where it is used, the integrated identity providers, and their corresponding identifiers.
+The side column shows the **Apps** that use the realm, the **Account activation** mode and, if the realm has identity providers, their names under **Identity providers**.
 
 If the realm has [stages](#stages) and you have the **View Synchronizations** permission, the side column also shows the **Stage** block, with the name of the stage you're in and the button to [sync it](#sync-a-stage).
 
@@ -114,7 +114,7 @@ The creation modal reminds you that the new stage has no identity providers, int
 
 Creating a stage copies the configuration the source stage has at that moment:
 
-- The realm configuration: the [General](/en/platform/customers/settings.html#general) section, the emails, the [password policy](/en/platform/customers/settings.html#password-policy), the security headers, CORS, and the appearance (logo, favicon, and default avatar image).
+- The realm configuration: the [General](/en/platform/customers/settings.html#general) section, the emails, the [password policy](/en/platform/customers/settings.html#password-policy), the **Session expiration policy**, the security headers, CORS, and the appearance (logo, favicon, and default avatar image).
 - The [custom fields](/en/platform/customers/settings.html#custom-fields) and their options.
 - The [data sets](/en/platform/customers/settings.html#data-sets) and their alternatives.
 - The [forms](/en/platform/customers/forms.html), without their assigned web app. Assign it in the stage: until it has one, the forms list shows an icon next to the name with the notice **This form has no web app assigned**.
@@ -129,6 +129,7 @@ The following are not copied:
 - Identity providers, integrations, OAuth clients, and webhooks, because they store credentials or point to external systems.
 - The realm's file library. Only the logo, the favicon, and the default avatar image are copied. Campaigns and templates that use images from the library keep pointing to the source stage's files.
 - Custom [domains](/en/platform/customers/settings.html#domains).
+- The **Google Tag Manager ID** of the [General](/en/platform/customers/settings.html#general) section: the stage starts with that field empty.
 - Users and their data.
 
 Since the stage starts without identity providers or integrations, the platform also leaves these options turned off:
@@ -164,7 +165,7 @@ Keep these rules in mind:
 
 - Each element is updated in place in the target and keeps its identity, so the references other elements have to it keep working.
 - An element you deleted in the source doesn't show up in the view and isn't deleted in the target. On the other hand, if you removed a part inside an element, such as a question of a form or an option of a custom field, syncing removes it in the target too, unless it's in use, for example in a segment.
-- **Configuration**: includes the same as what is copied when creating the stage. The options turned off when creating it (direct login, OTP channel, login redirects, captcha, and platform credentials) aren't synced: each stage keeps its own.
+- **Configuration**: includes the same as what is copied when creating the stage. The options turned off when creating it (direct login, OTP channel, login redirects, captcha, and platform credentials) and the **Google Tag Manager ID** aren't synced: each stage keeps its own.
 - **Originations**: the source's published version is synced, and it arrives in the target as changes pending publication, just like pages in web apps. Publish it in the target for it to take effect. If the origination had unpublished changes in the target, syncing replaces them.
 - **Forms**: they keep the web app assigned to them in the target, and a new form arrives without a web app. If you changed the form's identifier in the source, syncing it also changes its public URL in the target. Forms with group questions can't be synced.
 - **Campaigns**: their content and segmentation are synced. A new campaign arrives with the **Inactive** status. A campaign that already existed in the target keeps its status, dates, and statistics, and isn't synced if in the target it's **Pending**, **Sending**, or **Completed**.
@@ -186,15 +187,17 @@ To delete a stage, follow these steps:
 1. In the realm selector, enter the stage you want to delete.
 2. Click **Realm settings** > **General**.
 3. Click **Delete stage**.
-4. In **Stage name**, type the stage's name, for example `qa`, not the full name the realms list shows.
+4. In **Name**, type the stage's full name as it appears in the **Name** field of the **General** section, for example **qa Customers**. If you type only `qa`, the **Delete** button isn't enabled.
 5. Click **Delete**.
 
-A stage whose cloning failed can also be deleted from the **Stages** list, with the **Delete** action.
+A stage whose cloning failed can also be deleted from the **Stages** list, with the **Delete** action. To confirm, type its full name as well, for example **qa Customers**, even though the list only shows `qa`.
 
 Deletion runs in the background and doesn't affect the realm's other stages. It erases the stage's users and all its content, including its identity providers, integrations, OAuth clients, and webhooks. The stage's name and identifier are freed right away so you can use them in a new stage.
 
 :::warning Attention
 You can't delete a stage while a web app or space has it selected as its realm: the platform points this out with the name of each one. Nor while a stage created from it is being cloned.
+
+If the stage has [Payments](/en/platform/customers/payments.html) orders, the deletion isn't completed and the stage becomes available again.
 :::
 
 ### Stage permissions
@@ -269,10 +272,12 @@ To delete a realm, go to its [Realm Settings](/en/platform/customers/settings.ht
 
 The button only shows up if you have the **Admin General** permission in the realm.
 
-Deletion runs in the background, so the realm may still show up in the list for a while after you confirm it.
+When you confirm, the realm and its stages disappear from the list, and their names and identifiers are freed right away. The deletion of their data continues in the background.
 
 You can't delete the realm while a web app or space has it, or any of its [stages](#stages), selected: the platform points this out with the name of each one. Change the realm of those apps and spaces first. Nor can you delete it while any of its stages is being cloned or deleted.
 
+If the realm or any of its stages has [Payments](/en/platform/customers/payments.html) orders, the deletion isn't completed and the realm shows up in the list again.
+
 :::danger Danger
-Deleting a realm erases all its information: users, forms, message campaigns, and segments. If the realm has stages, it deletes all of them too, and the confirmation modal tells you which ones. This action is irreversible.
+Deleting a realm erases all its information: users, forms, message campaigns, segments, identity providers, integrations, OAuth clients, and webhooks. The tokens issued with those OAuth clients are no longer valid. If the realm has stages, it deletes all of them too, and the confirmation modal tells you which ones. This action is irreversible.
 :::

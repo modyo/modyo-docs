@@ -8,7 +8,7 @@ search: true
 
 All internal users of the platform make up the team, and each member can have a specific role to make the most of the system.
 
-In this section, you can create, edit, and deactivate users of the platform.
+In this section, you can create, edit, and disable users of the platform.
 
 ### Create user
 
@@ -17,13 +17,13 @@ To create an internal user, follow these steps:
 1. From the main menu, click on **Settings**.
 1. Select **Team**.
 1. Click on **New Team Member**.
-1. Fill in the first name, last name, username, email, and password fields.
+1. Fill in the first name, last name, username, email, password, and password confirmation fields. With **Generate strong password**, the platform fills in both password fields for you.
 1. Click **Save**.
 
 The username can only contain letters A to Z (uppercase or lowercase), numbers, and the symbols `| # @ % . _ - ' + /`. Spaces and other characters are not allowed.
 
 :::tip Tip
-If you want the new member to receive an email with their account details on the platform, check the box “Send password to the user's email”.
+The new member always receives an email with their email address, their username, and the link to access the platform. The **Include password in user email** checkbox is checked by default and adds the password to that email; uncheck it if you'll give it to them through another channel.
 :::
 
 ### Edit user
@@ -31,10 +31,9 @@ If you want the new member to receive an email with their account details on the
 Within the user edit screen, platform administrators have access to the following windows:
 
 - Activity: Shows the history of all actions performed by the user.
-- Access: Shows the permissions granted to the user in the different Modyo modules. Here you can also select the user's role.
-- API access: Generate new access tokens to use your APIs. You must generate a token for each site.
+- Access: Defines which applications the user can access and their account role. It also shows the groups they belong to: **Add group** adds them to another group and **Remove group** removes them from one.
+- API access: Generate access tokens to use the Modyo administrative API. Each token is created for one of the applications registered in **Settings** > **API access**; if there are none, you have to create one first. See [Bearer token](/en/platform/core/api.html#bearer-token).
 - Edit: Modify user data such as name, email, and password.
-- Groups: Shows a list of all the groups to which the user belongs.
 - Devices: Shows a list of all devices where the user has an active session. It displays data such as browser, operating system, last login, and IP address. Here, in addition, you can remotely log out for each device. When a team member signs in from a device they had not used before, Modyo sends them a notice by email; see [Sign-in notice from a new device](/en/platform/core/security.html#sign-in-notice-from-a-new-device).
 
 :::warning Attention
@@ -45,14 +44,30 @@ When you set or change another team member's password from **Edit**, the platfor
 Users created before the character validation existed may have usernames that are no longer allowed (for example, containing spaces). While the username does not meet the validation, any update to that user will fail — including administrative actions such as removing their authenticator (2FA), which may show a success message without actually taking effect. Before performing actions on one of these users, correct their username first.
 :::
 
+### Disable or enable user
+
+Disabling a team member removes their access to the platform without deleting them. To do so, follow these steps:
+
+1. From the main menu, click on **Settings**.
+1. Select **Team**.
+1. In the member's row, in the **Actions** column, click **Disable** and confirm.
+
+You can also disable them from their profile, in the three-dot menu next to their name.
+
+When you disable them, the platform immediately closes all their active sessions. While they are disabled, they can't sign in or use their API access tokens.
+
+To give them access back, use **Enable** from the same places. In the **Team** list, disabled members appear when you choose **Disabled** in the **Status** filter.
+
+To disable or enable a member you need the **Admin Team** permission. The account owner can't be disabled.
+
 ## Groups
 
 Groups allow you to streamline access control to the different Modyo contexts. You can assign a default role to a context (account, space, realm, or site) for multiple users at the same time and then that group of users to different contexts. This allows all users to obtain the group role in the corresponding context.
 
-In addition, from the “Groups” section in each team member's profile, you can add or remove the user from an existing group.
+In addition, from the **Groups** block of the **Access** tab in each team member's profile, you can add the user to an existing group or remove them from one.
 
 :::tip Tip
-All users who belong to a group will have the roles of the group. In case a particular role is individually assigned to a team member, the role with the most privileges takes precedence.
+All users who belong to a group will have the group's role. If they also have an individually assigned role, or belong to several groups, in each context they get the sum of the permissions of all those roles, minus those of the [applications](#access-to-applications) they don't have enabled.
 :::
 
 ### Create a group
@@ -85,30 +100,28 @@ The default roles that exist, depending on the context, are:
 
 #### Account-level roles
 
-- **Default user** (`account_user`): Has all existing permissions, except for editing the configuration of each context. Must be invited to each context to access its functionalities.
-- **Default admin** (`account_admin`): Has all existing permissions, but must be invited to each context to access its functions. At the Modyo Platform account level, this role can only view global variables and activity.
+- **Default user** (`account_user`): It carries the **View Global Variables** and **Admin Insights** permissions. To work in a site, space, or realm, the member must be invited to that context with one of its roles.
+- **Default admin** (`account_admin`): It carries the **Manage Channels**, **Manage Content**, and **Manage Customers** permissions, which let it administer every site, space, and realm without being invited to them, and create new ones. It also carries **Admin Global Variables**, **Admin Global Snippets**, **Admin Locks**, **View Activity Logs**, and **Admin Insights**. It doesn't have **Admin Settings**: in **Settings** it only accesses **Activity logs**.
 - **Full admin** (`account_owner`): Has all existing permissions and can access all contexts without needing to be invited to them.
 
 #### Site-level roles
 
-- **Site Viewer** (`site_viewer`): You can view entries, see differences between versions, and leave comments. You can also access the synchronization view and see pending changes to synchronize. However, this role is not authorized to perform any action that implies a change in the platform.
-- **Site Developer** (`site_developer`): Can only edit resources. Cannot publish, delete, rollback, or edit the configuration.
+- **Site Viewer** (`site_viewer`): Can view the site's pages, menus, templates, and widgets and the global variables, see differences between versions, and leave comments. Can also access the synchronization view and see pending changes to synchronize. However, this role is not authorized to perform any action that implies a change in the platform.
+- **Site Developer** (`site_developer`): Creates and edits pages, menus, widgets, and templates, and can restore a previous version of them (rollback). It can only view global variables. Cannot publish, delete, or edit the configuration.
 - **Site Developer CLI** (`site_developer_cli`): Has the same permissions as Site Developer; in addition, can interact with modyo-cli.
-- **Site Reviewer** (`site_reviewer`): Has all the permissions of the Site Admin role, except for permissions to edit the site settings.
+- **Site Reviewer** (`site_reviewer`): Has all the permissions of the Site Admin role, except **Admin Settings Web App** and **Admin Synchronizations**: cannot edit the site settings or access its synchronizations.
 - **Site Admin** (`site_admin`): Has all the permissions at the level of a site, but cannot create new sites.
 
 #### Space-level roles
 
 - **Space Viewer** (`space_viewer`): This role allows you to view the contents of a space, see differences between versions, and leave comments. Access is limited to viewing and participating through comments; you cannot make modifications to the content or take actions that affect the configuration.
-- **Space Writer** (`space_writer`): This role can only edit content in a space. You do not have permissions to publish, delete, perform rollback, or edit the configuration.
-- **Space Editor** (`space_editor`): Has all the permissions of a Space Admin, except for permissions to edit the space configuration. Has no permissions over assets and cannot create types.
+- **Space Writer** (`space_writer`): Creates and edits entries, and manages the space's assets and categories, including deleting them. Cannot publish or delete entries, perform rollback, or edit the configuration.
+- **Space Editor** (`space_editor`): Creates, edits, publishes, and reviews entries, can perform rollback, and manages the space's types, categories, and assets. Unlike Space Admin, cannot delete, clone, or bulk edit entries, or edit the space configuration.
 - **Space Admin** (`space_admin`): This role has all the permissions at the space level, but it cannot create new spaces. Can create and delete assets.
-
-The most important user will have the Default Admin or Administrator role. This role has all the features enabled to manage the platform and sites.
 
 #### Roles by realm
 
-- **Realm User** (`realm_user`): This role can add users, create, modify, and submit campaigns, forms, and segments for review.
+- **Realm User** (`realm_user`): It carries the **View User**, **Admin Campaigns**, **Admin Campaign Templates**, **Admin Forms**, **Admin Segments**, and **View Payment Orders** permissions. It can view the realm's users, but cannot create, edit, or delete them.
 - **Realm Admin** (`realm_admin`): Can access all the configurations and sections of the realm. In addition, can add and remove users and team members, delete the realm, and create and sync its [stages](/en/platform/customers/realms.html#stages) with the **Admin Stages** and **Admin Synchronizations** permissions.
 - **Realm Viewer** (`realm_viewer`): A read-only role over Customers. It carries the **View User**, **View Segments**, **View Events**, **View Payment Orders**, **View Campaign Templates**, **View Forms**, **View Campaign Deliveries**, and **View Synchronizations** permissions. It cannot create or modify anything inside the realm.
 
@@ -140,7 +153,7 @@ To create a custom role, select the **New Role** button and define its **scope**
 
 - **Organization**: the role will have access to all Modyo modules and its scope will be global.
 - **Channels**: the role will have access only to the [Channels](/en/platform/channels/) module.
-- **Customer**: the role will have access only to the [Customers](/en/platform/customers/) module.
+- **Customers**: the role will have access only to the [Customers](/en/platform/customers/) module.
 - **Content**: the role will have access only to the [Content](/en/platform/content/) module.
 
 When you create a new role or select an existing one, you will be able to view and modify all its associated permissions and accesses. If you select the **All** option, you will automatically assign all permissions to the role.
@@ -173,5 +186,5 @@ To assign a role in the account context, follow these steps:
 1. Go to the “Team” section on the Modyo platform.
 2. Click on the profile of the user whose role you want to change.
 3. Go to the “Access” tab.
-4. Select the role you want to assign to the user and in what space.
+4. Under **Role**, select the account role you want to assign to the user. Site, space, and realm roles are assigned from the team of each one.
 5. Click the **Save** button to confirm the changes.

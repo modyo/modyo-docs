@@ -23,18 +23,17 @@ For users new to Modyo Platform, we suggest following this initial workflow:
 3. **Security**: Implement the recommended [security policies](/en/platform/core/security)
 4. **Integrations**: Connect your [external systems](/en/platform/core/integrations) if necessary
 
-Modyo provides all its administrator users with a learning section called Get Started! with specialized links and content from our community to accelerate platform adoption. This section includes topics such as:
+Modyo provides all its administrator users with a learning section called Get Started!, which you access from the rocket icon in the main sidebar. The page has two blocks:
 
-- **Quick start guides**: Step-by-step tutorials to set up your first application
-- **Common use cases**: Practical examples of successful implementations
-- **Best practices**: Recommendations from the Modyo team to optimize your experience
-- **Community resources**: Direct links to documentation, videos, and specialized forums
-- **Platform updates**: Information about new features and improvements
+- **Learning paths**: Cards with Modyo's training courses. Each card opens its course in a new tab.
+- **Continue learning about Modyo**: Shortcuts to **Explore the community**, **Read the docs**, and **Latest webinars**.
+
+In the header, the **What's new?** link opens the Modyo roadmap with the released features.
 
 The Get Started! section is an excellent starting point for new users joining the organization.
 
 :::tip Optional activation
-The Get Started! section can be disabled from the account's general options according to your organization's needs.
+You can hide the Get Started! section with the **Don't show the "Get started" page** option in [Visualization](/en/platform/core/configuration#visualization), in the account's general settings. When you enable it, the icon disappears from the sidebar for all users, and the screen that opens by default when you log in becomes **Home**.
 :::
 
 
@@ -73,15 +72,15 @@ As a backup mechanism, when publishing an element, Modyo automatically generates
 | **Editable** | The Editable version preserves changes made to the element since its last publication or since its creation if it has never been published. This version goes through the team review process when activated. At the time of publication, the "Editable" and "Published" versions contain the same content.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | **Published** | This version saves the content visible on the site and is available to all users. In this state, internal resources like Widgets and Templates can already be used in creating any site or page. The published version doesn't necessarily have the same content as the editable version, except at the exact moment of publication, as it may contain changes that are still in the testing or review process.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | **Backups** | Backups are previously published versions of elements. Each time an element is published, Modyo saves the previously published version as a backup.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| **Scheduled** | When you schedule a publication, the editable version goes into a scheduled state. When the time comes for publication, that scheduled version takes the place of the version that is published at that time. This way, you can schedule a future change to elements and continue working on the editable version.<br/><br/>Modyo only allows one scheduled version of each element. If you schedule a second modification to the element, you overwrite the previous schedule.<br/><br/>In addition to scheduling publication, you can also schedule unpublishing. When the time comes, the published version will become a backup, leaving the element in question without a published version.<br/><br/>When scheduled actions are executed, Modyo may take a few minutes to complete them. Modyo will send you an email notification when the action has been completed.<br/><br/>There are elements (home, navigation, and templates) that **cannot be unpublished**. If unpublishing is scheduled together with other elements, it will have no effect on these specific elements. |
+| **Scheduled** | When you schedule a publication, the editable version goes into a scheduled state. When the time comes for publication, that scheduled version takes the place of the version that is published at that time. This way, you can schedule a future change to elements and continue working on the editable version.<br/><br/>Modyo only allows one scheduled version of each element. If you schedule a second modification to the element, you overwrite the previous schedule.<br/><br/>In addition to scheduling publication, you can also schedule unpublishing. When the time comes, the published version will become a backup, leaving the element in question without a published version.<br/><br/>When scheduled actions are executed, Modyo may take a few minutes to complete them. Modyo will send you an email notification when the action has been completed.<br/><br/>The home page and templates that cannot be deleted **cannot be unpublished**. If unpublishing is scheduled together with other elements, it will have no effect on the home page. |
 | **Approved** | This state appears when team review is enabled and means that an element in this state is ready to be published. Any change made to an element in this state will take the element to an editable state and must go through the review process again to be published.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 
 If you want to review a specific version of an element, you can access "Version Differences" to see the changes made and revert them if necessary.
 
-:::warning Versions
-By default, Modyo saves the last 20 published versions of each element, so when making the twenty-first publication, you will be deleting the backup of the element's first publication.
+:::tip Versions
+By default, Modyo keeps up to 20 backups of each element, in addition to the published version. Once an element has 20 backups, each new publication deletes the oldest one: for example, the 22nd publication deletes the backup of the element's first publication.
 
-This value can be modified through environment variables and is applicable to all accounts on it.
+This limit is set for the entire Modyo installation and applies to all of its accounts.
 :::
 
 ### Revert a Change
@@ -123,8 +122,11 @@ Use: Ideal for emergency fixes on the live site without losing the progress of y
 | Rollback | The Published Version | Immediate | The website is updated | Revert a production error using a previous version |
 
 
-:::tip Administration Permissions
-Since this is a potentially risky action, only site or space administrators have permission to execute this action.
+:::tip Permissions
+- To reset, the edit permission for the element is enough, for example **Edit Pages** or **Edit Entries**.
+- To roll back, in Channels you need the edit or review permission for the element type (**Edit Pages** or **Review Pages**, **Edit Menus** or **Review Menus**, **Edit Widgets** or **Review Widgets**, **Edit Templates** or **Review Templates**). In Content you need **Review Entries**.
+- On the [Review and Joint Publication](/en/platform/channels/sites#review-and-joint-publication) screen of a web app, rollback is only available with **Admin Synchronizations** or **Manage Channels**.
+- For global snippets, reset and rollback require **Admin Global Snippets** or **Manage Channels**.
 :::
 
 ### Locks
@@ -152,13 +154,18 @@ Preview modes allow you to preview changes made to publishable elements such as 
 The preview bar contains the following interactive elements:
 
 - **Template selector**: Allows you to switch between the published and editable version of elements belonging to the template builder.
+- **Global Snippets**: Allows you to switch between the published and editable version of the account's global snippets.
 - **Content selector**: Allows you to toggle between the published and editable version of elements belonging to the content application that are being used on the site through the Liquid content SDK.
 - **Navigation selector**: Allows you to switch between the published and editable version of elements belonging to the navigation builder.
 - **Page selector**: Allows you to toggle between the published and editable version of elements belonging to the page builder.
-- **Content view selector**: Allows you to switch between the published and editable version of the content entry being previewed in custom content views. This view doesn't directly use the Liquid content SDK, so content in these views won't be affected by the content SDK selector.
+- **Show**: If the path you are previewing has both a widget page and a content page, allows you to choose which one to display (**Widget page** or **Content page**). If the matching content page has its index disabled, a warning icon appears instead with the message "A matching content page exists but the index is disabled".
 - **Widget selector**: If pages containing custom widgets are being previewed, a list of widgets present on the page will be displayed, allowing you to select whether to view the editable or published version of each. Once selected, you must click the "refresh" button for the widget configuration to take effect.
+- **Origination**: On origination pages, allows you to switch between the published and editable version of the origination.
+- **Layout**: When previewing a widget, allows you to choose the site layout used to display it.
+- **Log in** and **Log out**: When previewing a widget on a site with a realm, allow you to log in or out as an end user to test the widget with or without a session.
 - **Minimize tab**: Allows you to hide the preview bar to avoid interference with elements located at the top of the site. Once minimized, the tab will remain visible to restore the bar in preview mode.
 - **Edit element**: When clicked, you access the edit view of the element being viewed, whether it's an entry, a page, a widget, or a default site template.
+- **Edit submission**: If the origination page you are previewing belongs to a submission, opens that submission in the admin.
 - **Share link**: Allows you to copy a link that can be shared with other users. Opening the link provides direct access to preview mode with the configuration that was in place when the link was copied. To access preview mode, you must have an active session in the administrator account.
 - **Exit preview mode**: Closes preview mode, removing the bar and keeping the tab at the site's current URL.
 
@@ -184,16 +191,17 @@ To activate team review, follow these steps:
 The available options are:
 
 - **Enable team review**: Activates or completely deactivates team review in this context (site or space).
-- **Number of approvals**: Determines the number of users who must approve the element for it to be ready for publication. When the required number of approvals is reached, the element's status will change from "Awaiting review" to "Approved".
+- **Number of approvals**: Determines the number of users who must approve the element for it to be ready for publication. When the required number of approvals is reached, the element's status will change from **In review** to **Approved**.
 - **Restrict reviewer selection**: By default, any user with the necessary permissions can approve elements awaiting review. However, when this option is enabled, only reviewers selected by the editor can perform the approval.
 
-- **Force review**: This option allows you to select a list of users, from which at least one approval is required for the element to change to "Approved" status. This is independent of the number of approvals configured previously. Even if an element has the necessary number of approvals, it will remain in "Awaiting approval" status if no user from the list has approved it.
-- **Require all**: This option extends the previous restriction to all selected users. In this case, approval from all users on the list will be required for the element to change to "Approved" status.
+- **Enforced review**: This option allows you to select a list of users, from which at least one approval is required for the element to change to **Approved** status. This is independent of the number of approvals configured previously. Even if an element has the necessary number of approvals, it will remain in **In review** status if no user from the list has approved it.
+- **Require all**: This option extends the previous restriction to all selected users. In this case, approval from all users on the list will be required for the element to change to **Approved** status.
 
 :::tip Attention
 - While approval may be limited, any user with permissions can comment on the element.
-- When you make changes to the team review configuration, elements that were already awaiting review will continue to be governed by the rules prior to the changes.
-- For those elements to adjust to the new configuration, they need to be rejected and submitted for review again.
+- When you enable or disable team review, elements that were **In review** or **Approved** go back to **Draft**.
+- Changes to **Number of approvals**, **Restrict reviewer selection**, and **Require all** also apply to elements that are already **In review**.
+- The **Enforced review** users are assigned to the element when it is submitted for review. For an element that is already **In review** to pick up changes to that option, it needs to be rejected and submitted for review again.
 :::
 
 ### Review Process
