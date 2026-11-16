@@ -695,6 +695,7 @@ Usa los objetos de user para obtener información de tus usuarios del módulo Cu
 | **user.genders**                     | Géneros presentes en la plataforma.                            | ```{:id=>0,:name=>"Male"}{:id=>1,:name=>"Female"}``` |
 | **user.generated_password**          | Password auto-generado (true) o creado por el usuario (false). | ```false```                                          |
 | **user.id**                          | ID del usuario.                                                | ```16```                                             |
+| **user.impersonated**                | `true` si quien navega es un administrador que impersona al usuario y `false` si es el propio usuario. No entrega ningún dato de quién impersona. | ```false``` |
 | **user.initials**                    | Iniciales del usuario.                                         | ```IM```                                             |
 | **user.last_name**                   | Apellido del usuario.                                          | ```Modyo```                                          |
 | **user.male_sex_value**              | Valor constante para género masculino.                         | ```0```                                              |
@@ -732,6 +733,16 @@ Usa los objetos de user para obtener información de tus usuarios del módulo Cu
 ```liquid
 {% assign source = user.invited_submissions | by_origination: origination.uid | first %}
 ```
+
+`user.impersonated` permite que el contenido se comporte de forma distinta cuando un administrador impersona al usuario; por ejemplo, para ocultar una acción que solo debe realizar el propio usuario:
+
+```liquid
+{% unless user.impersonated %}
+  <a href="/firmar">Firmar contrato</a>
+{% endunless %}
+```
+
+En las plantillas de mensajería siempre vale `false`, porque no hay una sesión de navegación.
 
 ## user_agent
 

@@ -679,6 +679,7 @@ Use user objects to get information about your users from the Customers module.
 | **user.genders**                     | The genders present on the platform.                    | ```{:id=>0,:name=>"Male"}{:id=>1,:name=>"Female"}``` |
 | **user.generated_password**          | Password auto-generated (true) or user-created (false). | ```false```                                          |
 | **user.id**                          | The user's id.                                          | ```16```                                             |
+| **user.impersonated**                | `true` if an administrator impersonating the user is browsing, `false` if it is the user themselves. It gives no information about who is impersonating. | ```false``` |
 | **user.initials**                    | The initials of the username.                           | ```IM```                                             |
 | **user.last_name**                   | The last name of the user.                              | ```Modyo```                                          |
 | **user.male_sex_value**              | Constant value for male gender.                         | ```0```                                              |
@@ -716,6 +717,16 @@ Use user objects to get information about your users from the Customers module.
 ```liquid
 {% assign source = user.invited_submissions | by_origination: origination.uid | first %}
 ```
+
+`user.impersonated` lets content behave differently when an administrator is impersonating the user; for example, to hide an action that only the user should perform:
+
+```liquid
+{% unless user.impersonated %}
+  <a href="/sign">Sign contract</a>
+{% endunless %}
+```
+
+In messaging templates it is always `false`, since there is no browsing session.
 
 ## user_agent
 
