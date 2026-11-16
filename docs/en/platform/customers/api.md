@@ -263,6 +263,10 @@ Depending on the task type, each element adds these attributes:
 Pending review tasks stopped returning the boolean `completed` key in 10.2. To know whether the review is finished, compare `status` with `completed`.
 :::
 
+:::warning Attention
+In `fields`, the answer to a [Date](/en/platform/customers/forms.html#date) question without the **Show time** option represents a single day and arrives as 12:00 UTC of that date, not as midnight. To get the day, take the date part of the value expressed in UTC: if you convert it to another time zone, the date may change.
+:::
+
 ## OTP code verification
 
 `POST ACCOUNT_URL/api/customers/realms/{realm_uid}/verify_otp_code`
