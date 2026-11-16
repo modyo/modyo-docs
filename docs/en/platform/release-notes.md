@@ -6,7 +6,7 @@ search: true
 
 ## 10.2
 
-### 10.2.2
+### Modyo 10.2.2
 
 :::info Release date
 November 16, 2026
@@ -18,7 +18,7 @@ November 16, 2026
 | **Channels** | • Adds the public Channels API, with a read-only endpoint that returns a site's published menu as JSON, with its items' hierarchy and attributes. Private and segmented items are filtered according to the user's session on the site, with the same rule as the menu in Liquid, and the account's CORS origins also enable this API<br>• Fixes site cloning and stage creation, which kept purging the CDN cache when copying widgets with global variables and could exceed Cloudflare's rate limit. The CDN cache of newly created widgets is no longer purged<br>• Fixes deleting a web app stage, which did not validate the confirmation text on the server. Now the API requires the stage's application name, the same one the modal asks for, as with a main web app (Breaking change, a call to `DELETE /api/admin/sites/{id}` on a stage without `validation` or with a different name now responds 401 and does not delete the stage) |
 | **Customers** | • Adds stages to realms, with the same experience as Channels stages:<br>&nbsp;&nbsp;- Up to 4 stages per realm including the main one, created in the background from another stage<br>&nbsp;&nbsp;- Manual and selective synchronization between stages of the same realm for the settings, custom fields, forms, published originations, segments, data sets, messaging, and transactional emails<br>&nbsp;&nbsp;- A site or a space can use any stage of the realm, and each stage has its own login, profile, and API URL<br>&nbsp;&nbsp;- A new stage does not include identity providers, integrations, OAuth clients, or webhooks<br>&nbsp;&nbsp;- New permissions to manage stages, view their differences, and synchronize them<br>• Adds a custom domain for the realm's public profile, with a canonical domain and two alternative ones, as in sites:<br>&nbsp;&nbsp;- Login, sign up, password recovery, OTP, logout, and identity provider callbacks respond on the custom domain, with `/realms/...` paths without the realm identifier<br>&nbsp;&nbsp;- Profile pages on the alternative domains and on the account domain redirect with a 301 to the canonical domain<br>&nbsp;&nbsp;- A realm can share its host with a site from the same account<br>&nbsp;&nbsp;- The Customers API also responds on the realm's canonical domain<br>&nbsp;&nbsp;- Enabling or changing the domain ends the sessions open on the previous domain, and the callback URLs must be updated in the identity providers<br>&nbsp;&nbsp;- New permission group for the realm's domain settings<br>• Adds Incode as an identity verification provider, with document validation and OCR, selfie with liveness detection, face match, and government database validation, in two modes chosen in each task:<br>&nbsp;&nbsp;- Hosted URL, where the user completes the verification on an Incode page and returns to the same step of the flow<br>&nbsp;&nbsp;- Drop-in, where the verification happens in the same step with the Incode Web SDK, and which requires adjusting the site's content security policy (CSP)<br>&nbsp;&nbsp;- The results are saved in the submission step and shown in the "Identity Verification" tab<br>• Adds the Assign action to origination conditional logic, which assigns an Input, Code snippet, Pending review, or Validation task to an agent or a group when the rule is met, and allows adding several actions to the same rule (Breaking change, the originations API now returns each rule's actions in `targets` instead of `target`)<br>• Adds the "Hidden field" question type to forms, which is not shown to the end user and saves as its answer a fixed value, a value calculated with Liquid, or the value of a URL parameter<br>• Adds the "Rich Text" content field to forms, the same one from Input tasks, to show instructions or notices without generating an answer<br>• Adds support for file questions in forms for users without a session, the file is uploaded when the form is submitted and is only saved if the submission is valid<br>• Adds the "Enable search" option to Dropdown and Nested questions, including their data set variants, which allows filtering the alternatives by typing, in forms and Input tasks<br>• Adds predictable identifiers to forms to customize them with custom JS and CSS, with `data-question` and `data-field` attributes based on each question's identifier and the `forms:rendered` event once the form is on the page. A saved question's identifier can only be edited after confirming it<br>• Adds the "List Group Submissions" permission, with which a supervisor also sees the submissions assigned to the agents of their groups. No existing role has it by default (Breaking change, the admin API now applies the list's visibility rules to a submission's detail, tasks, and invitations, so a token with only "List Assigned Submissions" receives a 404 when querying submissions not assigned to it)<br>• Adds the "Assign Tasks" permission, required to assign, reassign, or unassign a submission task from the admin and the admin API. "View Submission Tasks" no longer allows assigning tasks and, except for Realm Admin, existing roles that need it must add it manually (Breaking change, an integration that assigns tasks with the token of a user without the permission now receives an error)<br>• Adds to the origination submissions admin API the submission's completion and cancellation dates, and each task's completion and last modification dates<br>• Adds an admin log for each error returned by the naat services, including retries, visible in the submission's activity and in the activity logs<br>• Improves the expiration of origination submissions:<br>&nbsp;&nbsp;- The term can start from the beginning of the submission, from the completion of a specific task, or from the value of a Date field, configurable from the admin<br>&nbsp;&nbsp;- The duration combines months, days, and hours, and months are now counted as calendar months instead of 30 days, so the expiration of ongoing submissions may move by one or two days<br>&nbsp;&nbsp;- Automatic cancellation happens at most one hour after expiration<br>&nbsp;&nbsp;- Submissions whose term has not started yet show "No expiration"<br>&nbsp;&nbsp;- Date answers without time keep their calendar date regardless of where they were saved<br>&nbsp;&nbsp;- `due_value` and `due_unit` are replaced by `due_months`, `due_days`, and `due_hours` in the admin API and in Liquid (Breaking change)<br>• Improves the texts of the single photo mode of the Identity document field, which now refer to a document instead of a passport, so it can be used with the front of an ID card or another document<br>• Fixes saving data from the snippet of a Code snippet task, which completed the task even when `completed` was not sent and, in a rejected task, submitted the correction on the first save. Now the task is completed by pressing "Next" or by sending `completed: true` (Breaking change, a snippet that completed the task by saving data without `completed` must now send `completed: true`)<br>• Fixes the activity log of origination tasks:<br>&nbsp;&nbsp;- Code snippet tasks with locking now log their submission and trigger their webhook<br>&nbsp;&nbsp;- The Confirmation task logs its start and completion<br>&nbsp;&nbsp;- The invitation task logs its automatic completion when the last invitation closes<br>&nbsp;&nbsp;- Completing a task with `tasks[]` in the admin API now assigns the next task to the agent and sends them the email, the same as the status endpoint<br>• Fixes closing invitations in multi-user originations, which stayed open if the invited user completed their last task without pressing "Next", from a snippet, the admin, or the API, and prevented completing the invitation task and the submission<br>• Fixes the "Next" button of origination tasks in realms with Google reCAPTCHA v3 or reCAPTCHA Enterprise, which did not submit the task<br>• Fixes login with an identity provider when the browser had a previous session already closed by the provider, the user authenticated but the site logged them out on return or a few minutes later<br>• Fixes the required fields message on sites in Spanish, which mixed English texts such as "Answers", "text field", and "alternative"<br>• Fixes the message deliveries list in realms with many deliveries, which failed in the admin and the API because it did not apply the default order by send date<br>• Fixes removing the file of a file question, now the admin API removes it when sending a null or empty value, and removing a non-image file, such as a PDF, from the admin no longer leaves it attached to the submission<br>• Fixes images uploaded in base64 to a file question through the admin API, which could end up without a thumbnail in the submission's documents |
 
-### 10.2.1
+### Modyo 10.2.1
 
 :::info Release date
 September 17, 2026
@@ -31,7 +31,7 @@ September 17, 2026
 | **Content** | • Improves the content API preview, now preview mode travels in a signed token in the URL, which allows draft content to be viewed also on sites with their own domain that consume the API cross-origin, without additional CDN configuration<br>• Fixes space copying, which lost asset metadata and the order of content list fields, and left entries inaccessible from global snippets until each type was manually reindexed<br>• Fixes updating an asset used in an entry, now the new title, alternative text, or file name is reflected in snippets without republishing the entry |
 | **Customers** | • Adds field masking in forms and Input tasks, now single line text and number fields support a configurable mask that prevents typing characters outside the expected format and formats the value while typing, and URL and email fields come with a built-in mask<br>• Adds new specialized field types for file uploads:<br>&nbsp;&nbsp;- Identity document, with front and back capture or passport, and optional country to improve OCR<br>&nbsp;&nbsp;- Selfie, with centered camera capture<br>&nbsp;&nbsp;- General documents, with text extraction through OCR<br>&nbsp;&nbsp;- In Selfie and Identity document, camera capture is the default method, and allowing a file upload is an independent option per field<br>&nbsp;&nbsp;- The Identity document OCR result is shown in the backend Fields view<br>• Adds the "Rich text" content field in Input tasks, a display-only block that generates no answer, edited with Froala and supporting HTML and Liquid with access to the submission and user context<br>• Adds external ids to simple and nested datasets, now each alternative can carry an identifier owned by the integrator, distinct from the value shown to the user, and exposed in the API and in the submission's Liquid drops<br>• Adds configurable security headers at the realm level, with their own Content-Security-Policy, Content-Security-Policy-Report-Only, Reporting-Endpoints, and Referrer-Policy for the login, signup, OTP, password recovery, and profile pages:<br>&nbsp;&nbsp;- New permission to manage them<br>&nbsp;&nbsp;- Headers start disabled and enabling them is irreversible, from that moment the realm is no longer governed by the global platform configuration<br>• Adds the property to block modifications to a task after it is completed, available in the properties of any task type and unchecked by default<br>• Adds link support in form and origination labels and hints, now HTML anchors can be written, with target support<br>• Adds a due date filter to the submission list, with the due soon, overdue, and on track options<br>• Adds the cross-cutting identifiers of the origination, the submission, and the task to the admin logs and business events in the origination scope, making correlation with external integrations easier, the new fields appear in events generated from this version onward<br>• Adds the username and email of whoever created the submission to the "created by" block in the admin API detail<br>• Improves agent tasks, which now inherit the CSS of the base template of the site connected to the origination and display the description configured in the task, with HTML and Liquid support<br>• Fixes the agent task iframe sandbox, which prevented opening or downloading the files submitted in the submission<br>• Fixes Pending review tasks worked from the agent iframe, which did not create the task response and caused a 404 when an integration updated its status<br>• Fixes the agent task of a canceled submission, which showed a loading error instead of a message stating the submission is no longer available<br>• Fixes the Fields view of a submission, which did not display the data of repeatable groups<br>• Fixes the display of Identity Verification task files, which opened a blank tab when clicking the image<br>• Fixes the origination builder when there are two Identity Verification tasks, the SDK configuration displayed the one from the other task and could be saved over the wrong one<br>• Fixes the deep link to a submission step without an active session, which returned a 404 instead of redirecting to login and returning to that step after authenticating<br>• Fixes the assignee selector search, which did not find individual members of a group<br>• Fixes the "Assign the submission to" dropdown in the invitation modal, which was cut off when there was not enough space below<br>• Fixes the OTP resend counter in soft login, which intermittently showed 1 hour instead of the time configured in minutes<br>• Fixes the language of the maximum size exceeded error message in file upload fields |
 
-### 10.2.0
+### Modyo 10.2.0
 
 :::info Release date
 August 11, 2026
@@ -47,7 +47,7 @@ August 11, 2026
 
 ## 10.1
 
-### 10.1.20
+### Modyo 10.1.20
 
 :::info Release date
 October 14, 2026
@@ -59,7 +59,7 @@ October 14, 2026
 | **Channels** | • Fixes site cloning and stage creation on large sites, which were interrupted when the background process ran out of memory, leaving the resulting site or stage incomplete<br>• Fixes site cloning and stage creation, which still purged the CDN cache when copying widgets with global variables and could again exceed the Cloudflare rate limit. The CDN cache is now also not purged for newly created widgets |
 
 
-### 10.1.19
+### Modyo 10.1.19
 
 :::info Release date
 October 6, 2026
@@ -70,7 +70,7 @@ October 6, 2026
 | **Channels** | • Improves stage creation, elements are now cloned in the background to avoid timeouts on large sites. If an element fails, the process continues, and the creation modal shows the elements that could not be cloned, with the details in the stage creation log<br>• Fixes site cloning and stage creation on large sites, which stopped halfway when exceeding the Cloudflare rate limit. The CDN cache is no longer purged for newly created elements |
 
 
-### 10.1.18
+### Modyo 10.1.18
 
 :::info Release date
 August 24, 2026
@@ -84,7 +84,7 @@ August 24, 2026
 | **Customers** | • Fixes an error when entering the backend of an origination that has questions created without a type via MCP |
 
 
-### 10.1.17
+### Modyo 10.1.17
 
 :::info Release date
 July 17, 2026
@@ -97,7 +97,7 @@ July 17, 2026
 | **Customers** | • Fixes OpenSearch reindexing when only a user's custom fields are updated<br>• Fixes duplicate indexing of the same user<br>• Fixes error when indexing login-error type user events<br>• Adds option to hide the cancel link on the origination page via configuration |
 
 
-### 10.1.16
+### Modyo 10.1.16
 
 :::info Release date
 June 2, 2026
@@ -110,7 +110,7 @@ June 2, 2026
 | **Customers** | • Fixes user events export |
 
 
-### 10.1.15
+### Modyo 10.1.15
 
 :::info Release date
 April 30, 2026
@@ -122,7 +122,7 @@ April 30, 2026
 | **Customers** | • Fixes permissions issue when changing the status of a submission through the API |
 
 
-### 10.1.14
+### Modyo 10.1.14
 
 :::info Release date
 April 16, 2026
@@ -135,7 +135,7 @@ April 16, 2026
 | **Content** | • Fixes issue that left scheduled versions of content after being published<br>• Fixes visual issue when displaying the datepicker in a richtext field |
 
 
-### 10.1.13
+### Modyo 10.1.13
 
 :::info Release date
 February 25, 2026
@@ -148,7 +148,7 @@ February 25, 2026
 | **Content** | • Fixes a visual overlap issue when having a date field and a paragraph field in entry editing<br>• Fixes an issue that caused scheduled unpublications of entries to be lost<br>• Fixes click issue on labels in checkbox fields |
 
 
-### 10.1.12
+### Modyo 10.1.12
 
 :::info Release date
 January 26, 2026
@@ -161,7 +161,7 @@ January 26, 2026
 | **Content** | • Fixes the order in which multiple selection element values are delivered in content, now displayed according to the order defined in the type |
 
 
-### 10.1.11
+### Modyo 10.1.11
 
 :::info Release date
 January 15, 2026
@@ -170,11 +170,11 @@ January 15, 2026
 | Module | Improvements |
 |--------|---------|
 | **Core** | • Adds TTL to Redis objects when the session cookie is configured as "Session" |
-| **Channels** | • Improves performance of user custom fields loading in me API calls<br>• Fixes 404 page cache, now generated per session user<br>• Fixes nonce issue in forms, now by default includes the hash of the involved asset |
+| **Channels** | • Improves performance of user custom fields loading in calls to the /me endpoint<br>• Fixes 404 page cache, now generated per session user<br>• Fixes nonce issue in forms, now by default includes the hash of the involved asset |
 | **Customers** | • Fixes selection issue in conditional logic selectors<br>• Fixes permission issue when unpublishing an origination by a Realm admin |
 
 
-### 10.1.10
+### Modyo 10.1.10
 
 :::info Release date
 December 29, 2025
@@ -186,7 +186,7 @@ December 29, 2025
 | **Content** | • Fixes issue with scheduled publications, now when publishing an entry directly, the previous scheduled publication is removed |
 
 
-### 10.1.9
+### Modyo 10.1.9
 
 :::info Release date
 December 3, 2025
@@ -198,7 +198,7 @@ December 3, 2025
 | **Insights** | • Adds selection of all realms to the Customers dashboard, now you can view all active users across all realms |
 
 
-### 10.1.8
+### Modyo 10.1.8
 
 :::info Release date
 December 1, 2025
@@ -210,7 +210,7 @@ December 1, 2025
 | **Content** | • Adds reviewer permission to the default Space Editor role |
 
 
-### 10.1.7
+### Modyo 10.1.7
 
 :::info Release date
 November 25, 2025
@@ -224,7 +224,7 @@ November 25, 2025
 | **Core** | • Improves role construction through more granular permissions for site and content settings |
 
 
-### 10.1.6
+### Modyo 10.1.6
 
 :::info Release date
 October 29, 2025
@@ -238,7 +238,7 @@ October 29, 2025
 | **Content** | • Fixes clone link permission |
 
 
-### 10.1.5
+### Modyo 10.1.5
 
 :::info Release date
 October 10, 2025
@@ -250,7 +250,7 @@ October 10, 2025
 | **Customers** | • Fixes error when indexing some BusinessEvents |
 
 
-### 10.1.4
+### Modyo 10.1.4
 
 :::info Release date
 October 2, 2025
@@ -263,7 +263,7 @@ October 2, 2025
 | **Content** | • Fixes error where hint was not shown in multiple choice fields |
 
 
-### 10.1.3
+### Modyo 10.1.3
 
 :::info Release date
 September 4, 2025
@@ -274,7 +274,7 @@ September 4, 2025
 | **Channels** | • Fixes stepper in mobile mode, now correctly indicates the step number in relation to total steps |
 
 
-### 10.1.2
+### Modyo 10.1.2
 
 :::info Release date
 September 2, 2025
@@ -430,10 +430,9 @@ December 23, 2024
 
 | Module | Improvements |
 |--------|---------|
-| **Core** | • Fixes issue with link preloading when hovering<br>• Fixes SEO configuration error |
-| **Content** | • Adds ordering within a content field of type content list<br>• Fixes rich text issues where they become blank when moving elements within a repeatable group<br>• Fixes error when copying content from another language when a repeatable group is present<br>• Fixes error when editing content in bulk<br>• Fixes errors in image selector and search in Rich Texts |
-| **Channels** | • Fixes issues when previewing global snippets<br>• Fixes redirection issue to a site's custom domain |
+| **Content** | • Adds ordering within a content field of type content list<br>• Fixes rich text issues where they become blank when moving elements within a repeatable group<br>• Fixes error when copying content from another language when a repeatable group is present |
 | **Customers** | • Performance improvement in user segment calculation at login |
+| **Channels** | • Fixes issues when previewing global snippets |
 ### Modyo 10.0.15
 
 :::info Release date
