@@ -19,7 +19,7 @@ At the top of the view, you will find the publication status of the menu:
 
 In the upper right, you will find the last publication date and the available actions:
 
-**Preview**: Clicking on this icon opens a new tab with the menu's preview mode, where you can view all changes.
+The menu editor does not have a preview button. To review the draft version of the menu, open the [preview](/en/platform/core/#preview-modes) of the site or of a page and set the **Navigation** selector to **Draft**.
 
 :::warning Attention
 You can preview the changes as a user without a session or a user with a Modyo session. For this, it is recommended to start or close the Modyo session on the site before entering preview mode. This is because starting or closing a session within preview mode can generate security errors such as _x-frame-options_ or _mixed-content_, depending on the configuration of custom domains and SSL of the site.
@@ -41,9 +41,16 @@ By default, up to 20 backups are saved so that the twenty most recent backups ca
 For more information on versioning, see the [Versioning](/en/platform/core/#versioning) section.
 :::
 
-**Activity/Comments**: Only enabled if you have [team review](/en/platform/core/#team-review) enabled. Clicking it opens a sidebar with the activity history and menu comments.
+**Show activity**: Clicking this icon opens a sidebar with the activity history and menu comments, whether or not you have [team review](/en/platform/core/#team-review) enabled.
 
 At the end of the sidebar, you will see a text box where you can type a comment. Next to each activity, you can click _view detail_ to show the full information for that activity log.
+
+From the three-dot menu you can also access these actions, depending on your permissions:
+
+- **Archive**: Archives the menu. It is only available if the menu is not published; to archive a published menu, unpublish it first.
+- **Clone**: Creates a copy of the menu named "Copy of" followed by the original name and opens it in the editor.
+- **Copy liquid markup**: Copies to the clipboard sample Liquid markup that prints the menu as a two-level list, ready to paste into a template.
+- **Delete**: Deletes the menu along with its backups. It is only enabled when the menu is archived.
 
 ## Create a Menu
 To create a Menu, follow these steps:
@@ -66,6 +73,12 @@ Your menu is now public, but it is not being called. You need to use a template 
 - **Send to review**: Changes the menu status to "Pending review". In this state, you can continue making changes, but each change will be notified via email to the assigned reviewers.
 - **Reject**: Returns to the "In editing" state, notifying reviewers that the item was rejected.
 - **Publish**: Once the menu has been approved, you can go to the [joint publication](/en/platform/channels/sites#review-and-joint-publication) view to publish your navigation.
+- **Unpublish**: Appears among the dropdown options of the main action when the menu is published and you have permission to publish. You can unpublish it right away with **Unpublish now** or schedule it with **Unpublish on**.
+- **Restore**: Replaces the main action when the menu is archived and returns the menu to the "In editing" state.
+
+:::warning Attention
+If you unpublish a menu, the templates that call it stop finding it, as if its identifier did not exist. See [How to call it](/en/platform/channels/navigation#how-to-call-it).
+:::
 
 In the right sidebar, you will see a bar that changes according to the item selected in the main area. In this section, you can see the options:
 
@@ -90,6 +103,7 @@ In the right sidebar, you will see a bar that changes according to the item sele
 		- sms:+569-123-45678,9-123-45678?body=hello%20there&param1=a%20value
 	- Email: Generates a link with the `mailto` URI. Examples:
 		- mailto:info@example.com?subject=subject&cc=cc@example.com
+	- Global variable: Inserts the value of a [global variable](/en/platform/channels/global-variables). Write `vars.identifier` between double curly braces, just like in a template, on its own or as part of the address. Other Liquid expressions are not supported. The value is resolved when you go through the menu with Liquid, as in the [menu examples](/en/platform/channels/navigation#menu-examples), and in the [Channels API](/en/platform/channels/navigation#consume-a-menu-through-the-api).
 - **Open in a new tab**: Only appears when the destination is a **URL**. Adds the `target="_blank"` and `rel="noopener noreferrer"` attributes to the item's link, so that when clicked, it opens in a new tab.
 - **Private**: Makes the selected element visible only when there is an active user session on the site.
 - **Segments**: If segments are created, you can also segment this element so that users can see this menu item only when they have an active session and are also within the selected segments.
@@ -294,3 +308,26 @@ The general snippet already displays the third level as indented links inside th
 	{% endfor %}
 </ul>
 ```
+
+## Consume a menu through the API
+
+Besides printing it with Liquid, you can get the published version of a menu in JSON format with the Channels API, for example, to build the navigation from an application that does not use the site templates:
+
+```http
+GET https://[account_host]/api/channels/sites/[site_host]/menus/[menu_slug]
+```
+
+Where `site_host` is the site [Host](/en/platform/channels/sites#domains) and `menu_slug` is the menu identifier.
+
+The response includes the name (`name`), the identifier (`slug`) and the root items (`items`) of the menu, sorted by position. Each item includes `label`, `url`, `parameterized_label`, `target` (`_self` or `_blank`), `description`, `classes` (these two are `null` when empty), `position` and its children in `children`.
+
+- It only responds for production sites and published menus. Otherwise, it responds with a 404 error.
+- If the site is private, a call without a session on the site responds with a 401 error.
+- **Private** and segmented items follow the same rules as in the [menu tag](/en/platform/channels/navigation#items-that-are-displayed), based on the session the user has started on the account domain. The API does not use access tokens, so a call without that session, for example from a server, only receives the items that are not private.
+- If an item URL includes global variables, they come resolved.
+- URLs starting with `http://`, `https://`, `tel:`, `mailto:` or `sms:` are returned as they are. Anchors (`#section`) and URLs starting with `?` are also returned as they are, so they point to the page the visitor is on, unlike in the menu tag. The rest are returned as absolute over the site's base URL.
+- You can call it from the browser on the site's custom domain or on the origins allowed by the account [CORS](/en/platform/core/security#http-access-control-cross-origin-resource-sharing-cors) configuration. The API responds on the account domain (`account_host`) and only takes the user's session into account when the call carries the session cookie for that domain, for example, from a site page served on the account domain. A session started on the site's custom domain does not apply to the API, and the call receives the same response as one without a session.
+- Responses to calls without a session are public and can be cached, and that cache is renewed when you publish or unpublish the menu. Those that carry a user session are marked as private, so that neither the browser nor intermediate caches store them.
+
+The details of the response and the errors are in the OpenAPI documentation of this API, at `https://[account_host]/api/channels/docs`. See [General Information](/en/platform/core/api#general-information).
+

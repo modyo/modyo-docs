@@ -16,7 +16,7 @@ La API Key generada para un usuario, heredará los mismos permisos que tenga él
 
 Para comenzar a sacar provecho de la API de Modyo, primero es importante conocer los servicios de los que dispone, las operaciones que es posible invocar y la manera de utilizarlas.
 
-Modyo facilita esta tarea, disponiendo la descripción de su API _headless_ mediante el uso de Swagger (también conocido como especificación de OpenAPI) en listas de servicios agrupadas según su función: administrativa, contenido público, y perfil de usuario.
+Modyo facilita esta tarea, disponiendo la descripción de su API _headless_ mediante el uso de Swagger (también conocido como especificación de OpenAPI) en listas de servicios agrupadas según su función: administrativa, contenido público, perfil de usuario y [menús publicados](/es/platform/channels/navigation.html#consumir-un-menu-por-api) de los sitios.
 
 Puedes acceder a la documentación OpenAPI a través de los siguientes URLs:
 
@@ -24,6 +24,7 @@ Puedes acceder a la documentación OpenAPI a través de los siguientes URLs:
 https://[account_host]/api/admin/docs
 https://[account_host]/api/content/docs
 https://[account_host]/api/customers/docs
+https://[account_host]/api/channels/docs
 ```
 
 Por ejemplo, el detalle de la API pública de Content la encontrarás en la siguiente ruta:
