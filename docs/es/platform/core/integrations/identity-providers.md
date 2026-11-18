@@ -116,14 +116,29 @@ La API para obtener access tokens delegados vía `/auth/openidc/access_token` fu
 
 ### Configuración de la integración
 
-1. Agrega la integración **OpenID Connect** y completa **ID de cliente** y **Secreto** con el nombre del cliente y sus credenciales:
+1. Agrega la integración **OpenID Connect**, escribe un **Nombre** y completa **ID de cliente** y **Secreto** con el nombre del cliente y sus credenciales:
    * Para usuarios de equipo, sigue los pasos de [Agregar un Proveedor de Identidad](#agregar-un-proveedor-de-identidad).
    * Para usuarios de un reino, en **Customers > Reinos** haz click en el reino y luego en **Configuración de reino > Integraciones**. En la categoría **Proveedores de identidad**, haz click en **Instalar** en **OpenID Connect**. Una vez instalada, la encuentras en **Instalado**, donde puedes editarla con **Configurar**.
-2. En Issuer, rellena con la URL del realm, por ejemplo, para el realm `my-realm` la URL es `https://test.example.com/auth/realms/my-realm`.
-3. Haz click en **Ejecutar servicio de detección**. Así se completará la mayoría de las configuraciones.
-4. Configura los **Scopes** con los scopes requeridos para la aplicación. Usa `openid,email,profile` en caso de que no cuentes con scopes personalizados.
+2. En **Issuer**, ingresa la URL del emisor de tu proveedor: el valor `issuer` que el proveedor publica en su documento de configuración. Modyo obtiene ese documento agregando `/.well-known/openid-configuration` a la URL que ingresas. Según el proveedor, tiene la forma `https://<dominio-del-proveedor>` o `https://<dominio-del-proveedor>/<ruta-del-tenant>`; revisa los ejemplos de [Keycloak](#keycloak) y [Azure Entra ID](#azure-entra-id). Copia el valor exacto, porque Modyo lo compara con el emisor de los tokens que entrega el proveedor.
+3. Haz click en **Ejecutar servicio de detección**. Modyo completa **JWKS URI**, **Scopes**, **Endpoint de autorización**, **Endpoint de token**, **Endpoint de User Info** y **Endpoint de cierre de sesión** con los datos que publica el proveedor. **Endpoint de revocación de tokens** no se completa: si vas a activar **Habilitar revocación de tokens**, ingrésalo a mano. Si el proveedor lo publica, lo encuentras como `revocation_endpoint` en su documento de configuración.
+4. Revisa **Scopes**. El servicio de detección lo llena con todos los scopes que admite el proveedor, así que deja solo los que necesita la aplicación, separados por coma. Usa `openid,email,profile` en caso de que no cuentes con scopes personalizados.
+
+Para guardar la integración, deben tener valor **Nombre**, **ID de cliente**, **Issuer**, **JWKS URI**, **Scopes**, **Endpoint de autorización**, **Endpoint de token** y **Método de autenticación**. **Secreto** también es obligatorio, salvo que elijas **Deshabilitado, client secret no es enviado** en **Método de autenticación**. Además, mientras estén activas, **Habilitar User Info** (activa por defecto) exige **Endpoint de User Info**, **Habilitar revocación de tokens** exige **Endpoint de revocación de tokens** y **Habilitar proof key for code exchange (PKCE)** exige **Método de proof key for code exchange**.
 
 <img src="/assets/img/platform/keycloak-new-idp.png" alt="Modyo's new identity provider page." width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
+
+#### URLs que debes registrar en el proveedor
+
+El formulario de OpenID Connect no muestra las URLs de Modyo. Regístralas en tu proveedor, reemplazando `<cuenta>` por el dominio de tu cuenta, por ejemplo `test.modyo.com`, y `<uid-del-reino>` por el **Identificador** del reino:
+
+| Integración | URL de callback | URL de retorno al cerrar sesión |
+|:--|:--|:--|
+| Equipo | `https://<cuenta>/admin/auth/openidc/callback` | `https://<cuenta>/admin/logout` |
+| Reino | `https://<cuenta>/realms/<uid-del-reino>/auth/openidc/callback` | `https://<cuenta>/realms/<uid-del-reino>/logout` |
+
+- Registra la URL de callback como URL de redirección (redirect URI) del cliente. El proveedor envía ahí al usuario después de que inicia sesión.
+- La URL de retorno al cerrar sesión solo se usa si activas **Habilitar cierre de sesión remoto**: Modyo se la indica al proveedor para que el usuario vuelva a Modyo después de cerrar sesión. Regístrala como URL de redirección posterior al cierre de sesión (post-logout redirect URI).
+- En un reino, después de habilitar el proveedor, también ves la URL de callback en **Configuración de reino** > **Dominios**. Si el reino tiene un dominio personalizado, ambas URLs cambian; revísalas en [URLs de los proveedores de identidad](/es/platform/customers/settings.html#urls-de-los-proveedores-de-identidad).
 
 ### Método de autenticación y PKCE
 
@@ -157,7 +172,7 @@ Al momento de realizar una integración específica, Modyo te permite habilitar 
 | **Tiempo en segundos para la anticipación preventiva del refresh token** | Número en segundos que será usado como margen de tolerancia para obtener un access token utilizando el refresh token. Admite valores entre 0 y 100. |
 | **Habilitar revocación de tokens**                                  | Al cerrar sesión en Modyo, la plataforma revoca en el proveedor el refresh token de la sesión o, si no hay refresh token, el access token. Al habilitarla, **Endpoint de revocación de tokens** pasa a ser obligatorio. |
 | **Mostrar información de delegación**                               | Habilita más información en la [API de perfil de usuario](/es/platform/customers/api#api-de-customers) con respecto a tokens delegados. Esto es útil cuando se necesita el access token que emite el proveedor de identidad para conseguir acceso a algún otro servicio (e.g. una API externa).                           |
-| **Habilitar la sincronización de claims al iniciar sesión**         | Habilita la sincronización de claims OpenID Connect con custom fields en Modyo. Más información en  [Sincronización de claims](#sincronizacion-de-claims).                                                                                                                                                                      |
+| **Habilitar la sincronización de claims al iniciar sesión**         | En un reino, habilita la sincronización de claims OpenID Connect con los datos y los custom fields del usuario. Más información en [Sincronización de claims](#sincronizacion-de-claims). En el equipo, actualiza solo el nombre, el apellido y el correo del miembro con `given_name`, `family_name` y `email`. |
 | **Habilitar User Info** | Permite que Modyo consulte el endpoint de User Info del proveedor para completar los datos del usuario. Viene habilitada por defecto y, mientras esté activa, **Endpoint de User Info** es obligatorio; el servicio de descubrimiento lo completa por ti. Si la desactivas, Modyo usa solo los claims que vienen en el id_token. |
 | **Incluir id_token_hint al cerrar sesión** | Agrega el parámetro `id_token_hint`, con el id_token de la sesión, a la URL de cierre de sesión remoto. Muchos proveedores lo usan para identificar la sesión que se cierra y omitir la pantalla de confirmación. Solo tiene efecto si el cierre de sesión remoto está habilitado. |
 
@@ -166,6 +181,10 @@ Al momento de realizar una integración específica, Modyo te permite habilitar 
 ### Sincronización de _claims_
 
 Modyo permite sincronizar atributos y otras propiedades de los usuarios de Customers a través de _claims_ estándar y adicionales de OpenID Connect.
+
+:::tip Integración del equipo
+La integración de OpenID Connect del equipo no tiene **Mapeo de claims**. Con la sincronización activa, Modyo actualiza solo el nombre, el apellido y el correo del miembro del equipo, con `given_name`, `family_name` y `email`.
+:::
 
 1. En **Clients > Mappers** crea un nuevo **Protocol Mapper** con el atributo o propiedad del usuario. Asegúrate de que **Add to userinfo** esté habilitado.
 2. En **Customers > Reinos >  Configuración de reino > Custom fields** agrega un nuevo **Custom Field** con un tipo de datos equivalente al claim.
@@ -200,7 +219,9 @@ Keycloak es un identity provider certificado de OpenID Connect que implementa la
 <img src="/assets/img/platform/keycloak-add-client.png" alt="Keycloak add a client page." width="500px" style="margin-top: 40px; border: 1px solid #EEE;" />
 
 3. Configura **Access Type** `confidential` y deja habilitado solo el **Standard Flow**.
-4. Configura las **Valid Redirect URIs** con las URLs de callback y logout de la cuenta Modyo, usando las URLs a la cuenta, agregando `/realms/mi-realm` en caso de estar usando uno. Por ejemplo: `test.modyo.com/realms/mi-realm/auth/openidc/callback` y `test.modyo.com/realms/mi-realm/logout*`.
+4. Configura las **Valid Redirect URIs** con la URL de callback y la URL de retorno al cerrar sesión de [URLs que debes registrar en el proveedor](#urls-que-debes-registrar-en-el-proveedor), con un `*` al final de la de cierre de sesión. Por ejemplo:
+   * Para el equipo: `https://test.modyo.com/admin/auth/openidc/callback` y `https://test.modyo.com/admin/logout*`.
+   * Para un reino: `https://test.modyo.com/realms/<uid-del-reino>/auth/openidc/callback` y `https://test.modyo.com/realms/<uid-del-reino>/logout*`, donde `<uid-del-reino>` es el **Identificador** del reino en Modyo.
 
 ### Configurar Keycloak en Modyo Platform
 
@@ -227,7 +248,8 @@ Azure Entra ID es un servicio de identidad cloud de Microsoft Azure que permite 
    * **Name**: Usa un nombre significativo, por ejemplo, `modyo-production`.
    * **Supported account types**: Usa **"Accounts in any organizational directory and personal Microsoft accounts"** para incluir cuentas personales de Microsoft. Puedes encontrar más información al respecto [aquí](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps).
    * **Redirect URI**: Para la cuenta admin usa: `test.modyo.com/admin/auth/openidc/callback`.
-      * Para los realms usa: `test.modyo.com/realms/<nombre-realm>/auth/openidc/callback`.
+      * Para los reinos usa: `test.modyo.com/realms/<uid-del-reino>/auth/openidc/callback`, donde `<uid-del-reino>` es el **Identificador** del reino.
+      * Si vas a activar **Habilitar cierre de sesión remoto**, agrega también la URL de retorno al cerrar sesión de [URLs que debes registrar en el proveedor](#urls-que-debes-registrar-en-el-proveedor).
       * Substituye `test.modyo.com` por la URL de tu cuenta.
 4. Una vez creada la aplicación, ve a **App registrations > modyo-production** y obtiene el **Id de aplicación (cliente)** y **Id de directorio (inquilino)**.
 
@@ -254,4 +276,4 @@ La siguiente configuración es válida tanto para las integraciones de usuarios 
    | **Habilitar cierre de sesión remoto** | Habilita el cierre de sesión en el provider al cerrar la sesión en Modyo. Esto permite cerrar efectivamente la sesión, obligando al usuario a identificarse nuevamente en Entra ID, y deshabilitando la experiencia SSO. |
    | **Habilitar revocación de tokens** | No soportado por Entra ID |
    | **Mostrar información de delegación** | Habilita más información en la [API de perfil de usuario](/es/platform/customers/api#api-de-customers) con respecto a tokens delegados. Esto es útil cuando se necesita el access token que emite el proveedor de identidad para conseguir acceso a algún otro servicio (e.g. una API externa). |
-   | **Habilitar la sincronización de claims al iniciar sesión** | Habilita la sincronización de claims OpenID Connect con custom fields en Modyo. Más información en [Sincronización de claims](#sincronizacion-de-claims). |
+   | **Habilitar la sincronización de claims al iniciar sesión** | En un reino, habilita la sincronización de claims OpenID Connect con los datos y los custom fields del usuario. Más información en [Sincronización de claims](#sincronizacion-de-claims). En el equipo, actualiza solo el nombre, el apellido y el correo del miembro. |

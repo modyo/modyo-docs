@@ -4,7 +4,7 @@ search: true
 
 # Gestionar sesiones privadas usando OpenID Connect (OIDC)
 
-Interactúa con una API privada usando la sesión privada de Modyo con una integración OIDC. Esta integración consiste en dos pasos: **hacer el sitio privado** y **habilitar la integración a nivel de cuenta**.
+Interactúa con una API privada usando la sesión privada de Modyo con una integración OIDC. Esta integración consiste en dos pasos: **hacer el sitio privado** y **habilitar la integración a nivel de reino**. La integración de OpenID Connect del equipo, en **Configuración** > **Proveedores de Identidad**, solo sirve para iniciar sesión en el administrador y no da sesión a los usuarios de tus sitios.
 
 ## 1. Hacer el sitio privado
 
@@ -27,7 +27,7 @@ Además activa **Mostrar home a visitas públicas** para poder redireccionar usu
   * **ID de cliente**
   * **Secreto**
   * **Issuer**
-5. Haz click en **Ejecutar servicio de detección** para asegurar que se logró una conexión.
+5. Haz click en **Ejecutar servicio de detección** para completar los endpoints y los scopes del proveedor. Revisa los campos obligatorios y reduce los scopes como se indica en [Configuración de la integración](/es/platform/core/integrations/identity-providers.html#configuracion-de-la-integracion).
 6. Habilita las siguientes opciones si son necesarias:
     * **Activar refresh token**
     * **Habilitar cierre de sesión remoto**
@@ -103,7 +103,7 @@ axios_auth.interceptors.request.use(resetIdleTime);
 axios_api.interceptors.request.use(appendTokenToRequest ,errorRequest);
 ```
 
-5. Cambia el nombre `URL DE API` por la URL donde se localice la API de Modyo Platform.
+5. Cambia `URL DE API` por la URL de la API externa a la que quieres llamar con el access token de tu proveedor. Esa API debe aceptar los tokens que emite tu proveedor de identidad: no es la API de Modyo Platform.
 
 ::: tip Token delegado
 El interceptor obtiene el access token que emitió tu proveedor desde la [API de Customers](/es/platform/customers/api.html#tokens-delegados), en el campo `delegated_token.access_token`. Este campo solo trae datos si activaste **Mostrar información de delegación** en la integración; si no, viene vacío (`null`). Las llamadas van a `user.realm_base_url`, que es el [dominio personalizado](/es/platform/customers/settings.html#dominios) del reino si está activo y, si no, la URL de tu cuenta: ahí vive la sesión del usuario. Si tu sitio usa otro dominio, este debe compartir el dominio principal con el del reino (por ejemplo, `www.mibanco.com` y `login.mibanco.com`), porque el navegador no envía la cookie de sesión entre dominios distintos. Además, activa **Habilitar CORS** en la sección **Cross Origin Resource Sharing** de [Seguridad](/es/platform/customers/settings.html#seguridad) del reino.
