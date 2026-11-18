@@ -216,16 +216,12 @@ La sección **General** agrega dos opciones:
 La sección **Snippet**, que sólo aparecerá si el formulario es público, te permitirá copiar un código _HTML_ que podrás usar en cualquier lugar para cargar dinámicamente el formulario, incluso fuera de Modyo.
 
 :::warning Atención
-Para poder hacer uso adecuado del snippet del formulario, debes tener en cuenta la configuración _CORS_ de tu cuenta en Modyo y los _headers_ de seguridad de donde estés insertando el snippet.
+El snippet carga el formulario como un script, así que no depende de la configuración _CORS_ de tu cuenta. Para poder hacer uso adecuado del snippet, debes tener en cuenta los _headers_ de seguridad de donde estés insertando el snippet.
 
 Para hacer uso del snippet dentro de una página en la plataforma Modyo, debes copiar el código Javascript dentro de la sección Javascript y el div en la sección HTML. El apartado de HTML en [Pages](/es/platform/channels/pages) no puede correr Javascript, es obligatorio el uso del apartado Javascript para correr el código correctamente.
 :::
 
 Las secciónes **Opciones** y **Notificaciones** no agregan nada diferente a lo que se encuentra en **Nuevo Formulario**
-
-:::warning Atención
-Si usas un sitio de Modyo con un dominio personalizado, deberás activar la opción para compartir orígenes de recursos [CORS](/es/platform/core/security) en la configuración de la plataforma.
-:::
 
 ### Notificaciones
 
