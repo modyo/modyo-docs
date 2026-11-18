@@ -1026,8 +1026,31 @@ Returns the Submissions filtered by Origination UID. *e.g.*
 <span v-pre>`{% assign filtered_submissions = user.submissions | by_origination: 'my-origination' %}`</span>
 
 **Parameters:**
-- submissions (ArraySubmission) - array with user submissions
-- uid (String) - Origination UID
+- submissions (ArraySubmission) - collection of submissions: `user.submissions`, `user.invited_submissions`, or the result of another Submission filter, such as `by_status`
+- uid (String) - Origination UID. Pass the UID text, for example `origination.uid`, not the `origination` object
+
+The filter keeps the order of the input collection, so on [`user.submissions`](/en/platform/channels/liquid-markup/objects.html#user) it returns the submissions from newest to oldest and `first` takes the latest one. If the input isn't a collection of submissions, the filter aborts. This also happens when the visitor has no session, because `user` doesn't exist, so guard the block with <code v-pre>{% if user %}</code>:
+
+```liquid
+{% if user %}
+  {% assign submission = user.submissions | by_origination: origination.uid | first %}
+  {% if submission %}
+    <p>{{ submission.status }}</p>
+  {% endif %}
+{% endif %}
+```
+
+It can be combined with `by_status` to keep, for example, the latest **Completed** submission of the flow:
+
+```liquid
+{% if user %}
+  {% assign submission = user.submissions | by_origination: origination.uid | by_status: 'completed' | first %}
+{% endif %}
+```
+
+`origination` only exists on [Origination pages](/en/platform/channels/liquid-markup/variables.html#from-origination-pages). On other pages or in widgets, pass the UID as text, for example `by_origination: 'my-origination'`.
+
+The flow's start template has no `submission` in its context, and the platform redirects a user who has a submission in progress to that submission instead of showing the template. That's why, in that template, the result is typically a **Completed** submission or none.
 
 ### By Status
 
@@ -1055,10 +1078,15 @@ To list the statuses the filter doesn't cover, loop over an unscoped collection,
 {% assign invited = user.invited_submissions | by_origination: 'my-origination' %}
 {% for invited_submission in invited %}
   {% if invited_submission.status == 'not_started' %}
-    <a href="{{ invited_submission.resume_url }}">{{ invited_submission.origination.name }}</a>
+    <form action="{{ invited_submission.resume_url }}" method="post">
+      {% csrf_param %}
+      <button type="submit">{{ invited_submission.origination.name }}</button>
+    </form>
   {% endif %}
 {% endfor %}
 ```
+
+`submission.resume_url` only accepts POST requests, which is why it's used as the `action` of a form that includes the [csrf_param](/en/platform/channels/liquid-markup/tags.html#csrf-tags) tag. If you'd rather use a link, use `submission.url`, which opens the submission page.
 
 ### Completed
 
@@ -1087,7 +1115,7 @@ Generates a navigable URL for a step within a submission (first visible task). O
 Just like `completed`, it resolves the completed step and the first visible task against the user in the render context, with the same consequences in flows with invited users and the same behavior when `user` is missing from the context.
 
 :::warning Attention
-A newly created submission is **Not started**, not **Pending**, so the filter returns no value in the most common case of a template meant to resume a submission. The submission moves to **Pending** when the first response to one of its tasks is saved; until then, take the user to the start of the flow with [`submission.resume_url`](/en/platform/channels/liquid-markup/objects.html#submission), which doesn't depend on the status.
+A newly created submission is **Not started**, not **Pending**, so the filter returns no value in the most common case of a template meant to resume a submission. The submission moves to **Pending** when the first response to one of its tasks is saved; until then, offer a POST form to [`submission.resume_url`](/en/platform/channels/liquid-markup/objects.html#submission), which takes the user to the start of the flow regardless of the status, or a link to `submission.url`, which opens the submission page.
 :::
 
 ### Resume Link
@@ -1099,7 +1127,7 @@ Returns an HTML anchor tag to resume a pending step for a submission, or the ste
 The link is built by `url`, so it inherits all of its conditions: when `url` returns no value, `resume_link` prints the step name as plain text.
 
 :::warning Attention
-On a **Not started** submission the filter prints the step name as plain text and the page shows no error: the template looks complete, but the user has no way in. The same happens when `url` returns no link for that step with the context user. Check the submission status before rendering the listing and offer [`submission.resume_url`](/en/platform/channels/liquid-markup/objects.html#submission) while it isn't **Pending** yet.
+On a **Not started** submission the filter prints the step name as plain text and the page shows no error: the template looks complete, but the user has no way in. The same happens when `url` returns no link for that step with the context user. Check the submission status before rendering the listing and, while it isn't **Pending** yet, offer a POST form to [`submission.resume_url`](/en/platform/channels/liquid-markup/objects.html#submission) or a link to `submission.url`.
 :::
 
 ### Submissions Selector
