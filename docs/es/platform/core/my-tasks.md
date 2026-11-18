@@ -56,12 +56,17 @@ Las tareas de **Revisión pendiente** que tienen activada la opción **Desactiva
 Las tareas no se marcan a mano: pasan a **Completada** cuando termina el trabajo que representan.
 
 - Una tarea de **Revisión de validación** se completa cuando se completa la respuesta a la tarea asociada o cuando apruebas o rechazas la validación.
-- Una tarea de **Revisión del flujo de trabajo** se completa cuando el elemento queda aprobado, cuando se archiva o cuando vuelve al estado editable tras un rechazo.
+- Una tarea de **Revisión del flujo de trabajo** se completa cuando el elemento queda aprobado o cuando se archiva.
 
-Si el trabajo se reabre, por ejemplo cuando una validación rechazada se vuelve a asignar, la tarea se reactiva y aparece otra vez como **Pendiente** con su nueva fecha de asignación.
+Cuando una respuesta de originación se cierra, sus tareas de **Revisión de validación** se cierran con ella:
+
+- Si la respuesta se completa, sus tareas pendientes pasan a **Completada**.
+- Si la respuesta se cancela por cualquier vía, incluida la [cancelación automática por vencimiento](/es/platform/customers/origination.html#editar-configuracion-de-la-originacion), sus tareas pendientes se eliminan de la bandeja y no aparecen con ningún valor del filtro **Estado**. Las que ya estaban en **Completada** se conservan.
+
+Si el trabajo se reabre, por ejemplo cuando una validación rechazada se vuelve a asignar, la tarea se reactiva y aparece otra vez como **Pendiente** con su nueva fecha de asignación. Esto solo ocurre mientras la respuesta sigue abierta: si la respuesta ya se completó o se canceló, no se crean tareas nuevas, no se reactivan las cerradas y no se envía el correo de aviso.
 
 Para revisar lo que ya cerraste, cambia el filtro **Estado** a **Completada** o a **Todos**.
 
 ## Quién ve la bandeja
 
-El ítem **Mis tareas** aparece en el menú lateral solo si puedes recibir alguno de los dos tipos de tarea: si tienes permisos para editar o revisar elementos en algún espacio o sitio, o para acceder a las respuestas de originación de algún reino, con **Listar Respuestas Asignadas** o **Listar Todas las Respuestas**. Revisa [Roles](/es/platform/core/roles.html#roles) para el detalle de los permisos agrupados.
+El ítem **Mis tareas** aparece en el menú lateral solo si puedes recibir alguno de los dos tipos de tarea: si tienes permisos para editar o revisar elementos en algún espacio o sitio, o para acceder a las respuestas de originación de algún reino. En originaciones, eso significa tener en algún reino **Listar Respuestas Asignadas** o **Construir Originaciones**, o un permiso que incluya alguno de ellos, como **Listar Todas las Respuestas** o **Administrar Originaciones**. El permiso de organización **Gestionar Clientes** también muestra el ítem. Revisa [Roles](/es/platform/core/roles.html#roles) para el detalle de los permisos agrupados.
