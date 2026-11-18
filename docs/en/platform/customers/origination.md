@@ -202,7 +202,7 @@ All three fields can be used in the conditional logic of the origination, but on
 
 #### Customize fields with CSS and JavaScript
 
-The fields of Input tasks carry the same `data-*` attributes as forms, built from the **Identifier** of each field, both on the site and in the form of [tasks answered by agents](/en/platform/customers/origination.html#tasks-answered-by-agents). You can use them as selectors in the site's CSS and JavaScript: see [Identify questions and fields](/en/platform/customers/forms.html#identify-questions-and-fields).
+The fields of Input tasks carry the same `data-*` attributes as forms, built from the **Identifier** of each field, both on the origination page of the site and in the form of [tasks answered by agents](/en/platform/customers/origination.html#tasks-answered-by-agents). On the origination page, you can use them as selectors in the site's CSS and JavaScript. The agent form loads the published `base` CSS view of the site, but not its JavaScript, so there they only work for style rules. The details of each attribute are in [Identify questions and fields](/en/platform/customers/forms.html#identify-questions-and-fields).
 
 In addition, in Input tasks:
 

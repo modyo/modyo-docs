@@ -202,7 +202,7 @@ Los tres campos se pueden usar en la lógica condicional de la originación, per
 
 #### Personalizar los campos con CSS y JavaScript
 
-Los campos de las tareas Input llevan los mismos atributos `data-*` que los formularios, construidos con el **Identificador** de cada campo, tanto en el sitio como en el formulario de las [tareas respondidas por agentes](/es/platform/customers/origination.html#tareas-respondidas-por-agentes). Puedes usarlos como selectores en el CSS y el JavaScript del sitio: revisa [Identificar preguntas y campos](/es/platform/customers/forms.html#identificar-preguntas-y-campos).
+Los campos de las tareas Input llevan los mismos atributos `data-*` que los formularios, construidos con el **Identificador** de cada campo, tanto en la página de originación del sitio como en el formulario de las [tareas respondidas por agentes](/es/platform/customers/origination.html#tareas-respondidas-por-agentes). En la página de originación puedes usarlos como selectores en el CSS y el JavaScript del sitio. El formulario del agente carga la vista CSS `base` publicada del sitio, pero no su JavaScript, así que ahí solo sirven para las reglas de estilo. El detalle de cada atributo está en [Identificar preguntas y campos](/es/platform/customers/forms.html#identificar-preguntas-y-campos).
 
 Además, en las tareas Input:
 
