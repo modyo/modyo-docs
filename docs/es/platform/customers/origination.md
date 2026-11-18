@@ -200,6 +200,21 @@ Una verificación **Rechazada** sin motivo en la pestaña **Campos**, o sin cód
 
 Los tres campos se pueden usar en la lógica condicional de la originación, pero solo con los operadores **está vacío** y **tiene algún valor**. No es posible condicionar por el contenido del documento, por el país ni por el resultado de la verificación de vida.
 
+#### Personalizar los campos con CSS y JavaScript
+
+Los campos de las tareas Input llevan los mismos atributos `data-*` que los formularios, construidos con el **Identificador** de cada campo, tanto en el sitio como en el formulario de las [tareas respondidas por agentes](/es/platform/customers/origination.html#tareas-respondidas-por-agentes). Puedes usarlos como selectores en el CSS y el JavaScript del sitio: revisa [Identificar preguntas y campos](/es/platform/customers/forms.html#identificar-preguntas-y-campos).
+
+Además, en las tareas Input:
+
+- El campo **Documento de identidad** marca sus partes con `data-field-part`: `document_type`, `country`, `file_id` y `back_file_id`.
+- Cada instancia de un grupo repetible lleva `data-group-item` con su posición, desde 1. La numeración se actualiza al agregar o quitar instancias.
+- Al agregar una instancia con el botón **Añadir** de un grupo repetible, la plataforma emite el evento `forms:group-item-added` desde la nueva instancia, y el evento se propaga hacia arriba. No se emite para las instancias que ya están al cargar la tarea.
+- El evento `forms:rendered` es exclusivo de los formularios: las tareas Input no lo emiten.
+
+:::warning Atención
+Cuando una regla de la [lógica condicional](/es/platform/customers/origination.html#logica-condicional) muestra u oculta un campo, la plataforma vuelve a dibujar los campos de la tarea y se pierden los cambios que hiciste sobre ellos con JavaScript. Volver a aplicarlos queda a tu cargo.
+:::
+
 ### Validación
 
 La tarea de validación requiere una revisión manual del agente asignado. Este debe validar los datos entregados por el usuario para desbloquear la siguiente tarea del flujo. 
