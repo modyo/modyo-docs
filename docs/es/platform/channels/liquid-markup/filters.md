@@ -1,5 +1,6 @@
 ---
 search: true
+sidebarDepth: 2
 ---
 
 # Filtros
