@@ -334,7 +334,7 @@ To create a category:
 1. Click on the **New Category** button.
 1. In the pop-up window, enter the name, path, and, optionally, a parent category.
 
-When you assign an entry to a category, Modyo adds the full path of the category, including its parent categories, between the path of the [content page](/en/platform/channels/pages#content-page) and the identifier of the entry. This only happens if the content page has the **Use categories** option turned on, which is off by default. For example:
+When you assign an entry to a category, Modyo adds the full path of the category, including its parent categories, between the path of the [content page](/en/platform/channels/pages#content-page) and the identifier of the entry. This only happens if the content page has the **Use categories** option turned on, which is off by default (see [URLs with categories](/en/platform/channels/pages.html#urls-with-categories)). For example:
 
 An entry with URL: test.modyo.com/blog/visita-chile and category 'travel' would now be test.modyo.com/blog/travel/visita-chile.
 

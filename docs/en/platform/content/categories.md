@@ -48,7 +48,7 @@ Changing a category identifier changes the URL of every entry that hangs from it
 
 ## Effect on entries
 
-An entry belongs to a single category. When you assign it, the full path of the category is prepended to the entry identifier: an entry that responds at `my_account.modyo.com/visita-chile` and that you assign to the `travel` category now responds at `my_account.modyo.com/travel/visita-chile`.
+An entry belongs to a single category. If the content page that displays the entry has the **Use categories** option enabled (see [URLs with categories](/en/platform/channels/pages.html#urls-with-categories)), when you assign it, the full path of the category is prepended to the entry identifier: an entry that responds at `my_account.modyo.com/visita-chile` and that you assign to the `travel` category now responds at `my_account.modyo.com/travel/visita-chile`.
 
 When you filter the entries list with the **Category** filter, the result also includes the entries of the subcategories of the one you chose, so filtering by a root category returns its whole branch. The public content API applies the same criterion with the `meta.category` parameter; see [Filter](/en/platform/content/public-api-reference.html#filter) in the public API reference.
 

@@ -334,7 +334,7 @@ Para crear una categoría:
 1. Haz click en el botón **Nueva categoría**.
 1. En la ventana emergente, ingresa el nombre, la ruta y, opcionalmente, una categoría padre.
 
-Cuando asignas una entrada a una categoría, Modyo agrega la ruta completa de la categoría, incluidas sus categorías padre, entre la ruta de la [página de contenido](/es/platform/channels/pages#pagina-de-contenido) y el identificador de la entrada. Esto solo ocurre si la página de contenido tiene activa la opción **Usar categorías**, que viene desactivada. Por ejemplo:
+Cuando asignas una entrada a una categoría, Modyo agrega la ruta completa de la categoría, incluidas sus categorías padre, entre la ruta de la [página de contenido](/es/platform/channels/pages#pagina-de-contenido) y el identificador de la entrada. Esto solo ocurre si la página de contenido tiene activa la opción **Usar categorías**, que viene desactivada (revisa [URLs con categorías](/es/platform/channels/pages.html#urls-con-categorias)). Por ejemplo:
 
 Una entrada con URL: test.modyo.com/blog/visita-chile y categoría ‘travel’, ahora sería test.modyo.com/blog/travel/visita-chile.
 
