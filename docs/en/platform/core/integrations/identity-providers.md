@@ -13,7 +13,7 @@ The platform is currently compatible with:
 - [OAuth2](#oauth2)
 - [OpenID Connect](#openid-connect)
 - [Keycloak](#keycloak)
-- [Azure Entra ID](#azure-active-directory)
+- [Azure Entra ID](#azure-entra-id)
 
 Remember to have all the required data and certificates at hand before changing them or integrating a service, to avoid any potential issues with user access.
 
@@ -23,9 +23,20 @@ The callback URLs on this page use the form `https://my_account.modyo.com/realms
 
 ## Add an Identity Provider
 
-To add a new identity provider, follow these steps:
+Where you set up a provider and which types you can use depends on who signs in with it:
 
-1. From the main menu, expand **Settings** and click **Identity Providers**.
+| Users | Where to set it up | Available providers |
+|:--|:--|:--|
+| Team | **Settings** > **Identity providers** | OpenID Connect and SAML |
+| Realm | **Realm settings** > **Integrations**, **Identity Providers** category | Google, OAuth2, OpenID Connect, and SAML |
+
+Google is available in every realm; the other types depend on your account's plan. You can have only one provider of each type: for the team, the selector only offers the types you haven't added yet, and in a realm each integration is installed once. Keycloak and Azure Entra ID are set up as OpenID Connect providers.
+
+In a realm, click **Install** on the provider and fill in its details. Once installed, you find it in **Installed**, where you can edit it with **Configure**.
+
+To add an identity provider for team users, follow these steps:
+
+1. From the main menu, expand **Settings** and click **Identity providers**.
 1. Click **Add**.
 1. On the dropdown, select the integration you want to add.
 1. Add the information needed for the integration (Name, ID, Secret, etc.).
@@ -33,21 +44,35 @@ To add a new identity provider, follow these steps:
 
 <img src="/assets/img/platform/nuevo-idp.png" alt="Add a new Identity Provider page." width="500px" style="margin-top: 40px; border: 1px solid #EEE;"/>
 
+### Direct login
+
+With direct login, Modyo redirects users to the identity provider as soon as they go to sign in, without showing the Modyo sign-in screen. Where you turn it on depends on the users:
+
+- **Team**: turn on **Direct authentication** in **Settings** > **Identity providers**, below the list of providers. The switch is only enabled when there is a single enabled provider.
+- **Realm**: in **Realm settings** > **Integrations**, turn on **Direct login** on the card of the installed provider. The switch is disabled while the provider is disabled.
+
+Keep the following in mind:
+
+- You can only turn it on when there is a single enabled identity provider. In a realm, if there is more than one, you see the error "You can only activate direct authentication when there is a single enabled identity provider".
+- If you later enable another provider, or disable or delete the only enabled one, direct login turns off automatically.
+- It only redirects with Google and OpenID Connect. With SAML or OAuth2 you can turn the option on, but users still sign in through the Modyo sign-in screen.
+- On the team sign-in, if authentication with the provider fails, Modyo shows an error page instead of going back to the sign-in screen.
+
 ## Google
 
 In order to integrate Google login with Modyo, you must have:
 
-- Application ID
-- Key
+- **Client ID**: It must have the format `CLIENT_ID.apps.googleusercontent.com`.
+- **Client Secret**: It only accepts unaccented letters, numbers, `.`, `-`, and `_`.
 
 These values can be obtained after creating a Google app with login permissions. You can learn more about how to create and configure a Google app in their [official documentation](https://developers.google.com/identity/sign-in/web/sign-in).
 
-You should keep in mind that the callback URL (_Callback URI_) is available at the end of the form. You need to use that URL in the application or project that you create in Google to be able to complete the login flow correctly.
+You should keep in mind that the **Callback URI** is available at the end of the form. You need to use that URI in the application or project that you create in Google to be able to complete the login flow correctly.
 
-In addition to the necessary values, you can configure additional data to control the Google login experience. If you enable the _Restrict domains_ option, you can use two extra fields:
+In addition to the necessary values, you can control which Google accounts can sign in:
 
-- **Domain example**: These will be the domains that are shown as a suggestion when you are signing in to Google.
-- **Supported domains**: If the email domain that the user uses when signing in with Google is not in this list, then the login will not be valid and the user will be redirected to the Modyo login view without an active session.
+- **Restrict domains** and **Example domain to show in google login**: If you turn on **Restrict domains**, Modyo sends the example domain, which is a single one, to Google so it suggests it when signing in.
+- **Allowed domain list**: If the email domain the user signs in with on Google is not in this list, the login is not valid and the user is redirected to the Modyo login view without an active session. The list applies whenever it has domains, even if **Restrict domains** is turned off. The domain must match exactly: `modyo.com` doesn't accept emails from `mail.modyo.com`.
 
 ## SAML
 
@@ -57,40 +82,51 @@ To achieve a successful connection between SAML and Modyo, configure the followi
 
 - **givenName** or (from version 9.2.22 onwards can also be `givenname`). Corresponds to the user name.
 - **sn** (from version 9.2.22 onwards can also be `surname`). Corresponds to the last name of the user.
+- **email** or **mail**. Corresponds to the user's email address.
 
-To integrate SAML login with Modyo, you need the following data from your identity provider:
+:::warning Warning
+The attribute names must match the ones on this list exactly. If the assertion doesn't include the first name or the email, Modyo can't create the user on their first sign-in and the sign-in fails.
+:::
 
-- **Service Name**: The name that will be displayed on the login button.
+To integrate SAML login with Modyo, fill in the following fields. All of them are required, except **IDP SSO Target URL Runtime Params**:
+
+- **Service name**: The name that will be displayed on the login button.
 - **Issuer**: Identifier of the IDP application. Some services require adding the `spn` prefix:
 (For example: `spn:13e4ff44-b0c9-4618-b305-2171a24b07f5`).
-- **SSO IDP of the destination URL**: The URL to which the authentication request is sent. You can find this in the identity provider.
-- **SSO IDP runtime parameters of the destination URL**: Optional parameters to complete the flow.
-- **IDP Cert**: The identity provider certificate in PEM format. This takes precedence over the fingerprint option.
-- **IDP certificate fingerprint**: The SHA1 fingerprint of the identity provider's public certificate.
-- **Name identifier format**: Used during service provider-initiated SSO (SP-Initiated SSO). Describes the username format required by the application. See section 8.3 of http://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf for other options. The identity provider may not allow all options; if not specified, the provider can choose the name identifier format used in the response; commonly email, such as: `urn:oasis:names:tc.saml:1.1:nameid-format:emailAddress`
+- **IDP SSO Target URL**: The URL to which the authentication request is sent. You can find this in the identity provider.
+- **IDP SSO Target URL Runtime Params**: If you fill it in, write one `key=value` pair per line, using only letters, numbers, or underscores.
+- **IDP Cert**: The identity provider certificate in PEM format. You must fill in this field and the fingerprint as well.
+- **IDP certificate fingerprint**: The SHA1 fingerprint of the identity provider's public certificate, in hexadecimal without colons, up to 40 characters.
+- **Name identifier format**: The NameID format Modyo requests from the provider during service provider-initiated SSO (SP-initiated SSO). For email, use `urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress`. See section 8.3 of http://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf for other options; the identity provider may not support all of them.
+
+Also, set up the following Modyo URLs in your identity provider:
+
 - **Entity ID URL**: URL provided by Modyo where the application identifier is located:
    * Admin: `test.modyo.com/admin/auth/saml/metadata`.
    * Realms: for settings with realms use: `test.modyo.com/realms/<tu_uid_del_realm>/auth/saml/metadata`.
-- **URL of the consumer service assertion**: The URL provided by Modyo to which the identity provider redirects the flow.
+- **Assertion consumer service URL**: The URL provided by Modyo to which the identity provider redirects the flow. It appears at the end of the form and can't be edited.
    * Admin: `test.modyo.com/admin/auth/saml/callback`.
-   * Realms: for configurations with realms use: `test.modyo.com/realms/<tu_uid_del_realm>/auth/saml/callback `
-- ** (Optional) IDP single sign-on destination URL**: The login URL of the identity provider.
+   * Realms: for configurations with realms use: `test.modyo.com/realms/<tu_uid_del_realm>/auth/saml/callback`.
 
 ## OAuth2
 
-In order to integrate a login with OAuth2 in Modyo, you will need the following information from your identity provider:
+OAuth2 is only available for realm users. Users type their identifier and password on the Modyo sign-in screen, and Modyo validates them against your provider with the Resource Owner Password Credentials flow: it sends a `POST` to **Authorization Token URL**, as an `application/x-www-form-urlencoded` form, with `grant_type=password`, `client_id`, `client_secret`, `scope`, `username`, and `password`. The login is only valid if the provider responds `200`.
 
-- **Name of the service**
-- **Service description**
-- **Authentication URL**: URL of OAuth2 authentication service
+In order to integrate a login with OAuth2 in Modyo, you will need the following information from your identity provider. All of it is required, except **Service Description**, **Login Field Placeholder**, and **Use SSL**:
+
+- **Name**
+- **Service Description**
+- **Authorization Token URL**: Your provider's token endpoint. It must accept `grant_type=password`.
 - **Client ID**
 - **Secret**
 - **Scope**: If your OAuth2 authentication service uses multiple spaces or environments to separate users and you want to use a specific one in this integration, you must define it in this field.
-- **Login field**: You can choose to use either the Modyo users' email address or their username. This option is useful if your OAuth2 authentication provider uses, for example, a numeric field and not an email as identifier.
-- **Placeholder for login**: Text to be displayed in the identification field as placeholder if the user has not filled in the field.
-- **Use SSL**: Enable this option if your OAuth2 authentication service uses a secure socket layer (SSL: _Secure Sockets Layer_).
+- **Login Field**: The type of identifier your users sign in with:
+   * **Email**: The identifier is an email address, and Modyo uses it as the user's email.
+   * **Secondary user ID**: The identifier is not an email address. When it creates the user, Modyo assigns them an automatically generated email that doesn't belong to a real mailbox, and stores the identifier as their secondary user ID.
+- **Login Field Placeholder**: Text to be displayed in the identification field as placeholder if the user has not filled in the field.
+- **Use SSL**: Turn it on if **Authorization Token URL** uses HTTPS.
 
-To create an OAuth client, go to [OAuth Client] (/en/platform/customers/settings #oauth-client).
+To create an OAuth client, go to [OAuth Client](/en/platform/customers/settings#oauth-client).
 
 
 ## OpenID Connect
