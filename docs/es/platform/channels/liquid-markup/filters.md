@@ -998,8 +998,31 @@ Devuelve los Submissions filtrados por UID de Origination. *ej.*
 <span v-pre>`{% assign filtered_submissions = user.submissions | by_origination: 'my-origination' %}`</span>
 
 **Parámetros:**
-- submissions (ArraySubmission) - array con submissions del usuario
-- uid (String) - UID del Origination
+- submissions (ArraySubmission) - colección de respuestas: `user.submissions`, `user.invited_submissions` o el resultado de otro filtro de Submission, como `by_status`
+- uid (String) - UID del Origination. Pasa el texto del UID, por ejemplo `origination.uid`, y no el objeto `origination`
+
+El filtro conserva el orden de la colección de entrada, así que sobre [`user.submissions`](/es/platform/channels/liquid-markup/objects.html#user) entrega las respuestas de la más reciente a la más antigua y `first` toma la más reciente. Si la entrada no es una colección de respuestas, el filtro aborta. Eso pasa también cuando el visitante no tiene sesión, porque `user` no existe, así que protege el bloque con <code v-pre>{% if user %}</code>:
+
+```liquid
+{% if user %}
+  {% assign submission = user.submissions | by_origination: origination.uid | first %}
+  {% if submission %}
+    <p>{{ submission.status }}</p>
+  {% endif %}
+{% endif %}
+```
+
+Puedes combinarlo con `by_status` para quedarte, por ejemplo, con la respuesta **Completada** más reciente del flujo:
+
+```liquid
+{% if user %}
+  {% assign submission = user.submissions | by_origination: origination.uid | by_status: 'completed' | first %}
+{% endif %}
+```
+
+`origination` solo existe en las [páginas de Origination](/es/platform/channels/liquid-markup/variables.html#de-las-paginas-de-origination). En otras páginas o en widgets, pasa el UID como texto, por ejemplo `by_origination: 'my-origination'`.
+
+En la plantilla de inicio del flujo no hay `submission` en el contexto, y la plataforma redirige al usuario que tiene una respuesta en curso hacia esa respuesta en lugar de mostrar la plantilla. Por eso, en esa plantilla el resultado es típicamente una respuesta **Completada** o ninguna.
 
 ### By Status
 
@@ -1027,10 +1050,15 @@ Para listar los estados que el filtro no cubre, recorre una colección sin acota
 {% assign invited = user.invited_submissions | by_origination: 'my-origination' %}
 {% for invited_submission in invited %}
   {% if invited_submission.status == 'not_started' %}
-    <a href="{{ invited_submission.resume_url }}">{{ invited_submission.origination.name }}</a>
+    <form action="{{ invited_submission.resume_url }}" method="post">
+      {% csrf_param %}
+      <button type="submit">{{ invited_submission.origination.name }}</button>
+    </form>
   {% endif %}
 {% endfor %}
 ```
+
+`submission.resume_url` solo acepta envíos POST, por eso se usa como `action` de un formulario que incluye el tag [csrf_param](/es/platform/channels/liquid-markup/tags.html#tags-de-csrf). Si prefieres un enlace, usa `submission.url`, que abre la página de la respuesta.
 
 ### Completed
 
@@ -1059,7 +1087,7 @@ Genera una URL navegable para un step dentro de un submission (primer task visib
 Igual que `completed`, resuelve el step completado y la primera task visible contra el usuario del contexto de render, con las mismas consecuencias en flujos con usuarios invitados y el mismo comportamiento si falta `user` en el contexto.
 
 :::warning Atención
-Una respuesta recién creada está **No Iniciada**, no **Pendiente**, así que el filtro no devuelve valor justo en el caso más frecuente de una plantilla para retomar una respuesta. La respuesta pasa a **Pendiente** cuando se guarda la primera respuesta a una de sus tareas; hasta entonces, lleva al usuario al inicio del flujo con [`submission.resume_url`](/es/platform/channels/liquid-markup/objects.html#submission), que no depende del estado.
+Una respuesta recién creada está **No Iniciada**, no **Pendiente**, así que el filtro no devuelve valor justo en el caso más frecuente de una plantilla para retomar una respuesta. La respuesta pasa a **Pendiente** cuando se guarda la primera respuesta a una de sus tareas; hasta entonces, ofrece un formulario POST hacia [`submission.resume_url`](/es/platform/channels/liquid-markup/objects.html#submission), que lleva al usuario al inicio del flujo sin depender del estado, o un enlace a `submission.url`, que abre la página de la respuesta.
 :::
 
 ### Resume Link
@@ -1071,7 +1099,7 @@ Retorna un tag HTML de enlace para retomar un step pendiente dentro de un submis
 El enlace lo arma `url`, así que hereda todas sus condiciones: cuando `url` no devuelve valor, `resume_link` imprime el nombre del step como texto plano.
 
 :::warning Atención
-Sobre una respuesta **No Iniciada** el filtro imprime el nombre del step como texto plano y la página no muestra ningún error: la plantilla se ve completa, pero el usuario no tiene por dónde entrar. Lo mismo pasa cuando `url` no entrega enlace para ese step con el usuario del contexto. Revisa el estado de la respuesta antes de renderizar el listado y ofrece [`submission.resume_url`](/es/platform/channels/liquid-markup/objects.html#submission) mientras no esté **Pendiente**.
+Sobre una respuesta **No Iniciada** el filtro imprime el nombre del step como texto plano y la página no muestra ningún error: la plantilla se ve completa, pero el usuario no tiene por dónde entrar. Lo mismo pasa cuando `url` no entrega enlace para ese step con el usuario del contexto. Revisa el estado de la respuesta antes de renderizar el listado y, mientras no esté **Pendiente**, ofrece un formulario POST hacia [`submission.resume_url`](/es/platform/channels/liquid-markup/objects.html#submission) o un enlace a `submission.url`.
 :::
 
 ### Submissions Selector
