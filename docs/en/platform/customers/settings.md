@@ -640,7 +640,7 @@ The changes you save in this section apply immediately. However, if you associat
 
 When you enable CORS:
 - When a call is made to the API from an allowed origin, the `Access-Control-Allow-Origin` header with that origin and `Access-Control-Allow-Credentials: true` are added to the response.
-- The response to the browser's preliminary request (preflight, with the `OPTIONS` method) allows the `GET`, `OPTIONS`, `PUT`, `POST`, and `DELETE` methods, and the `Content-Type` and `Authorization` headers. If the call includes another header, for example a custom one, the browser blocks it.
+- The response to the browser's preliminary request (preflight, with the `OPTIONS` method) allows the `GET`, `OPTIONS`, `PUT`, `POST`, and `DELETE` methods, and the `Content-Type` and `Authorization` headers. If the call includes a header that isn't in that list or among the ones the browser always allows, such as `Accept` or `Accept-Language`, for example a custom header, the browser blocks it.
 - If the origin isn't allowed, the response doesn't include CORS headers and the browser blocks the call.
 
 To authenticate calls from another origin, use the access token in the `Authorization` header, as explained in [Authentication](/en/platform/customers/api.html#authentication).
