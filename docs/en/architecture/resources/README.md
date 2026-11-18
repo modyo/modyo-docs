@@ -16,7 +16,7 @@ Join the [Modyo Community](https://www.modyo.com/community) to access learning r
 
 ### Official documentation
 
-Explore our [official documentation](/en/platform) to deepen your understanding of our product and its core functionalities.
+Explore our [official documentation](/en/platform/) to deepen your understanding of our product and its core functionalities.
 
 ### Modyo expert
 

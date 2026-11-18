@@ -1,61 +1,4 @@
 module.exports = {
-  title: "Modyo Docs",
-  description: "Welcome to the Modyo Support Center",
-  locales: {
-      // The key is the path for the locale to be nested under.
-      // As a special case, the default locale can use '/' as its path.
-      "/en/": {
-          lang: "en",
-          title: "Modyo Docs",
-          description: "Welcome to the official Modyo documentation.",
-      },
-      "/es/": {
-          lang: "es",
-          title: "Modyo Docs",
-          description: "Bienvenido a la documentación oficial de Modyo.",
-      },
-  },
-  plugins: [
-    ['container', {
-      type: 'info',
-      defaultTitle: {
-        '/es/': 'INFORMACIÓN',
-        '/en/': 'INFO',
-        '/': 'INFO'
-      }
-    }]
-  ],
-  head: [
-      ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
-      ['link', { rel: 'preconnect', href: 'https://cloud.modyocdn.com' }],
-      ['link', { rel: 'dns-prefetch', href: 'https://www.googletagmanager.com' }],
-      ['meta', { name: 'theme-color', content: '#00D4AA' }],
-      ['meta', { property: 'og:type', content: 'website' }],
-      ['meta', { property: 'og:site_name', content: 'Modyo Docs' }],
-      ['meta', { property: 'twitter:card', content: 'summary_large_image' }],
-      [
-          "script",
-          {},
-          `
-  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MW9VKMC');
-  `,
-      ]
-  ],
-  themeConfig: {
-      logo: "/assets/img/modyo.png",
-      docsDir: "docs",
-      sidebarDepth: 1,
-      activeHeaderLinks: false,
-      smoothScroll: true,
-      algolia: {
-          apiKey: '0830ca92d68cf8e7626a6eaa2d2e083b',
-          indexName: 'modyo_docs_index',
-          appId: 'TEEU706UKD'
-      },
       locales: {
           "/en/": {
               selectText: "Languages",
@@ -664,5 +607,4 @@ module.exports = {
               },
           },
       },
-  },
 };

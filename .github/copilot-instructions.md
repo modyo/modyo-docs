@@ -1,22 +1,23 @@
 # Contexto para Copilot Agent
 
-Este proyecto es la documentación técnica oficial de Modyo y está construido con VuePress v1.9.10.
+Este proyecto es la documentación técnica oficial de Modyo y está construido con VitePress 1.x.
 
 Por favor, ten en cuenta este flujo de trabajo y contexto al sugerir cambios, traducciones o automatizaciones para la documentación.
 
 ## Comandos de Desarrollo y Build
 
 ```bash
-# Instalar dependencias
-yarn install
-# o para Node 17+ en macOS:
-export NODE_OPTIONS=--openssl-legacy-provider && yarn install
+# Requiere Node.js 24 (ver .nvmrc)
+npm install
 
 # Iniciar servidor de desarrollo (http://localhost:8080)
-yarn docs:dev
+npm run docs:dev
 
-# Construir el sitio de documentación
-yarn docs:build
+# Construir el sitio de documentación (falla si hay enlaces internos rotos)
+npm run docs:build
+
+# Ejecutar los tests de la configuración de VitePress
+npm test
 ```
 
 ## Estructura del Repositorio
@@ -24,8 +25,10 @@ yarn docs:build
 ### Organización del Contenido
 - **Español (Principal)**: `/docs/es/` - Toda la documentación original se escribe primero en español
 - **Inglés (Secundario)**: `/docs/en/` - Las traducciones deben generarse cada vez que cambie un archivo en español (los cambios se sobrescribirán)
-- **Configuración**: `/docs/.vuepress/config.js` - Controla navegación, sidebar y configuración del sitio
-- **Assets Públicos**: `/docs/.vuepress/public/` - Assets estáticos
+- **Configuración del sitio**: `/docs/.vitepress/config.mts` - Idiomas, búsqueda, sitemap y opciones de markdown
+- **Navegación**: `/docs/.vitepress/navigation.cjs` - Navbar y sidebar de cada idioma
+- **Tema**: `/docs/.vitepress/theme/` - Tema por defecto de VitePress extendido con estilos de Modyo y el layout del home
+- **Assets Públicos**: `/docs/public/` - Assets estáticos
 
 ### Áreas Clave de Documentación
 - **Platform**: Documentación del core de la plataforma Modyo (`/platform/`)
@@ -50,11 +53,13 @@ Los archivos siguen la estructura del sistema de archivos más el prefijo de idi
 - Español: `/es/platform/foo/`
 - Inglés: `/en/platform/foo/`
 
-### Configuración VuePress
-- Navegación principal y sidebar controlados por `/docs/.vuepress/config.js`
-- Soporta integración de búsqueda Algolia
+### Configuración VitePress
+- Navbar y sidebar se definen en `/docs/.vitepress/navigation.cjs` y se convierten al formato de VitePress durante el build
+- Una entrada del sidebar indicada solo con su ruta toma el texto del `title` del frontmatter o del H1 de la página
+- Los archivos `README.md` se publican como índice de su carpeta (`/es/platform/` muestra `docs/es/platform/README.md`)
+- Soporta Algolia DocSearch; los selectores del crawler están en `/algolia.json`
 - Usa Google Tag Manager para analytics
-- Profundidad del sidebar configurada a 1 por defecto
+- El índice de la página muestra los títulos H2 y H3
 
 ### Reglas de Formato
 - Los títulos H1, H2 y H3 nunca pueden terminar con ":"
@@ -78,7 +83,7 @@ Los archivos siguen la estructura del sistema de archivos más el prefijo de idi
 
 ## Validación de Cambios
 
-1. Iniciar el servidor de desarrollo: `yarn docs:dev`
+1. Iniciar el servidor de desarrollo: `npm run docs:dev`
 2. Navegar a `http://localhost:8080/es/` para español o `http://localhost:8080/en/` para inglés
 3. Verificar que los enlaces internos funcionen correctamente (deben terminar en `.html`)
 4. Verificar que los enlaces de anchor correspondan a headers de sección reales

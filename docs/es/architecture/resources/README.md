@@ -16,7 +16,7 @@ Desde conceptos básicos hasta funcionalidades avanzadas, los Learning Paths est
 
 ### Documentación Oficial
 
-Explora nuestra [documentación oficial](/es/platform) para profundizar en el conocimiento del producto y sus principales funcionalidades.
+Explora nuestra [documentación oficial](/es/platform/) para profundizar en el conocimiento del producto y sus principales funcionalidades.
 
 ### Modyo Expert
 

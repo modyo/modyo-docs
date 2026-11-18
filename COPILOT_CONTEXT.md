@@ -1,6 +1,6 @@
 # Contexto para Copilot Agent
 
-Este proyecto es la documentación técnica oficial de Modyo y está construido con VuePress.
+Este proyecto es la documentación técnica oficial de Modyo y está construido con VitePress.
 
 - Toda la documentación original se escribe primero en español, ubicada en `docs/es/`.
 - Las traducciones y el mantenimiento de la versión en inglés se realizan en `docs/en/`.
