@@ -76,7 +76,7 @@ In this section, you can edit the values of the selected task. You can find thes
 
 - **Name**: The name of the task that will be visible to the user.
 - **Identifier**: A unique identifier that will be included in the origination URL.
-- **Description**: A brief explanatory text about the task, which will be visible to the user.
+- **Description**: An explanatory text about the task. It supports HTML formatting and Liquid, with the submission (`submission`) and the task (`task`). The user sees it on the origination page when the page has the **Show task details** and **Show task description** options enabled. It also appears in the task detail within the submission, in the admin, where the origination's primary site (`site`), the flow user (`user`), and the administrator viewing it (`agent`) are also available.
 - **Show this task to the main user**: Appears only when the task is selected as a target task of an [invitation task](/en/platform/customers/origination.html#invitation). It comes enabled and defines whether the submission's main user also sees and can answer that task, or whether it is reserved for the invitee it was delegated to.
 
 :::warning Editing identifiers
@@ -345,6 +345,10 @@ With Incode, the **Identity Verification** tab of the submission shows:
 - Deploy real-time data from the submission.
 - Store and consume information relevant to the process.
 
+:::warning No form tags
+The snippet code is inserted inside the task form, so it cannot include `<form>` tags. If it does, the origination is not saved and an error with the text **contains invalid html tags: form** appears. To save data, use the [JSON API](#json-api-for-code-snippets) instead of your own form. The same restriction applies to the **Pending review page content** of Pending review tasks and to the **Waiting message shown to the user** of agent tasks.
+:::
+
 #### Insert a Code Snippet
 
 To add a **code snippet** to an origination task, follow these steps:
@@ -355,75 +359,73 @@ To add a **code snippet** to an origination task, follow these steps:
 
 #### Code Snippet Properties
 
-- **Task ID**: Unique identifier for the task. It is generated automatically when you save the task and allows you to access the data from the API.
+The task has an editor where you write the snippet code, and these properties:
+
 - **Name**: Name of the task, visible to the user.
 - **Identifier**: Unique value included in the origination URL.
 - **Description**: Short explanatory text describing the task.
-- **Complete the task using the API**: If checked, the continue action will be disabled by default for this task and will require the developer to report the completion status using the JavaScript API.
+- **Complete the task using the submission API**: If checked, the **Next** button appears disabled every time the user enters the task, even if it is already completed, and your code must enable it with `enableButton()` so the user can move on. This also applies when the code [completes the task](/en/platform/customers/origination.html#completing-the-task-from-the-code-snippet) with a POST request, because completing it does not enable the button.
 
 
 #### JavaScript API for Code Snippets
 
-Modyo provides a JavaScript API for interacting with code snippets at run time.
+<a id="code-snippets"></a>Modyo provides a JavaScript API for interacting with code snippets at run time.
 
 #### Available methods
 
-- **`getUrl()`**: Returns the URL of the current origination flow.
+- **`getUrl()`**: Returns the URL of this task's data in the current submission. A GET request to that URL reads the data the snippet saved, and a POST request saves it. When an agent answers the task, it returns the data URL of the agent form.
+- **`getAssertionUrl()`**: Only available when an agent answers the task. Returns the URL to obtain the agent credential described in [Agent verification for external services](#agent-verification-for-external-services).
 - **`enableButton()`**: Enables the task's action button and allows the user to continue with the flow.
 
 #### JSON API for Code Snippets
 
 Code Snippets can communicate with the origination API using data in **JSON** format.
 
-To get data stored in the current submission, use the `getUrl()` method to build the request. To save information, a **POST request** must be made to the same URL.
+To read the data the snippet saved in this task, make a **GET request** to the URL returned by `getUrl()`. To save information, make a **POST request** to the same URL with the data in the `content` parameter.
 
 
 #### JSON structure example
 
-When you consume data from the JSON API, you will get an object with all the data stored in the current submission.
+The GET request returns the latest `content` the snippet saved in this task for the current user, with the same structure it was sent with. If the snippet has not saved data yet, the GET request returns no saved data, so check the result before reading it. It does not include the answers of other tasks.
+
+For example, if the snippet sent this POST request:
 
 ```json
 {
-  "submission": {
-    "sequence_id": "12345",
-    "fields": [
-      {
-        "answers": [
-          {
-            "question": {
-              "label": "What's your name?"
-            },
-            "text_field": "Jorge Regula"
-          }
-        ]
-      }
-    ]
-  },
-  "task": {
-    "task_id": "67890",
-    "step": {
-      "uid": "abcd1234"
-    }
-  },
-  "page": {
-    "name": "Origin Page"
+  "content": {
+    "plan": "basic",
+    "term": 12
   }
 }
 ```
 
+The GET request returns:
+
+```json
+{
+  "plan": "basic",
+  "term": 12
+}
+```
+
 :::warning Attention
-To store information, the data must use valid JSON format; format errors will not be processed.
+On the origination page, `content` must be a JSON object, either directly or serialized as text. An array, a number, or text that does not contain a JSON object is rejected, even if it is valid JSON. If `content` does not meet this, or the request has neither `completed` nor a `content` with data, the request responds with status code 422, does not save the data, and includes one of these messages in `errors`:
+
+- **Content parameter needs to be a valid json**: `content` is not a JSON object.
+- **Content or completed parameter is required**: the request has no `completed` and `content` is missing or empty. An empty object (`{}`) sent as an object in the JSON body counts as empty; serialized as text (`"{}"`) it is accepted.
 :::
 
 #### Completing the task from the code snippet
 
 The POST request to the `getUrl()` URL saves the data and can also change the task status, depending on the `completed` parameter:
 
-- **Without `completed`**: saves the data without changing the task status. The task is completed when the user clicks **Next**.
-- **`completed: true`**: saves the data and marks the task as completed.
-- **`completed: false`**: saves the data without completing the task. If the task was already completed, it goes back to in progress.
+- **Without `completed`**: only saves `content`, without changing the task status. The task is completed when the user clicks **Next**.
+- **`completed: true`**: saves the data and marks the task as completed. It does not enable the **Next** button: if the task has **Complete the task using the submission API** checked, call `enableButton()` when the POST succeeds.
+- **`completed: false`**: saves the data without completing the task. If the task was already completed, it goes back to in progress, except in the locked cases described below.
 
-Use only `true` or `false` in `completed`. Any other value is read as `false`.
+Use `true` or `false` in `completed`. The values `1`, `"1"`, `"true"`, and `"TRUE"` are also read as `true`. Any other value, including `null`, is read as `false`.
+
+If the task is already completed and also has **Lock responses once completed** or was approved by a validation task, the POST does not save the data or reopen the task, even if it sends `completed: false`. In that case it responds with a redirect instead of the JSON data, so check `response.redirected` before reading the response.
 
 `completed` goes at the same level as `content`, not inside it. For example, to save the data and complete the task:
 
@@ -438,6 +440,8 @@ await fetch(getUrl(), {
   body: JSON.stringify({ content: { plan: 'basic' }, completed: true })
 });
 ```
+
+`completed` only applies when the user answers the task. When an agent answers it, the POST only saves `content`, and the task is completed when the agent clicks **Submit**.
 
 Completing the task from the code snippet is not the same as clicking **Next**. Each path records different events:
 
@@ -460,194 +464,276 @@ If a validation task rejects the code snippet response, the user can correct it 
 
 Code snippets can use Liquid objects to access internal submission data and personalize the user experience.
 
-#### Code Snippets Example
-
 In an origination flow, each response represents the ongoing process of a specific user.
 
-You can learn more about [Liquid Objects](/en/platform/channels/liquid-markup/objects) in our documentation.
+You can learn more about [Liquid Objects](/en/platform/channels/liquid-markup/objects.html) in our documentation.
 
-In this example, you can find the use of data access by Liquid Objects and interaction with JavaScript and JSON APIs. Remember to replace the `QUESTION_ID` value with the corresponding one in your submission.
+#### Code Snippets Example
 
-``` html
-<div class="form-group">
-    <div class="form-group">
-        <label for="productDropdown" class="form-label">Select a car <span class="req">*</span></label>
-        <select class="form-select" id="productDropdown" disabled>
-            <option value="" selected>Loading...</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <label for="colorDropdown" class="form-label">Select your favorite color <span class="req">*</span></label>
-        <select class="form-select" id="colorDropdown" disabled>
-            <option value="" selected>Loading...</option>
-        </select>
-    </div>
-	  <div class="form-group">
-        <label for="yearInput" class="form-label">Year <span class="req">*</span></label>
-        <input type="number" class="form-control" id="yearInput" placeholder="e.g., 2023">
-    </div>
-	  <div class="form-group">
-        <label for="dateInput" class="form-label">Driver license expiration<span class="req">*</span></label>
-        <input type="date" class="form-control" id="dateInput">
-    </div>
-	 <div class="form-group">
-     <label for="extrasSelect" class="form-label">Select extras (multi-select)</label>
-       <select class="form-select" id="extrasSelect" multiple>
-         <option value="ac">Air Conditioning</option>
-         <option value="gps">GPS</option>
-         <option value="sunroof">Sunroof</option>
-         <option value="leather_seats">Leather Seats</option>
-       </select>
-   </div>
+This example is a loan simulator. The user enters an amount and chooses a term, and the snippet calculates the monthly payment and saves the simulation as the user changes the data. If the user comes back to the task, the snippet retrieves what it saved. To use it, check **Complete the task using the submission API** in the task properties.
+
+The example follows these practices, recommended so the snippet works reliably on the origination page:
+
+- **`nonce` on the `<script>`**: <code v-pre>nonce="{{ csp_nonce }}"</code> lets the script run on sites whose [Content Security Policy](/en/platform/channels/sites.html#content-security-policy-csp) uses a nonce. Without it, the browser blocks the script and the **Next** button is never enabled.
+- **No global variables**: the code runs inside a function that is executed immediately. When the user clicks **Next**, the next task loads without reloading the window, so if two snippets declare the same global variable with `const` or `let`, the second one fails.
+- **`getUrl()` and `enableButton()` inside `DOMContentLoaded`**: the page defines these functions after the snippet code and defines them again in every task. That is why the example calls them only in `DOMContentLoaded` and keeps the URL and the function in its own variables, so that a save left pending does not point to the next task.
+- **Unique identifiers**: the `id` attributes include <code v-pre>{{ task.uid }}</code>, the task identifier, so they do not clash with other elements on the page.
+- **`content` in the request body**: the POST sends `content` as JSON in the body, with the token from the page's `<meta name="csrf-token">` tag in the `X-CSRF-Token` header. Without that token, the platform rejects the request.
+- **The whole object in every POST**: each request replaces what was saved before, so the snippet always sends all the data. Numeric values go as numbers, not as text.
+- **Enable Next after saving**: the snippet calls `enableButton()` when the POST succeeds, and the user clicks **Next** to complete the task. Since the API has no function to disable the button again, the fields use browser validation (`required`, `min`, and `max`), which prevents moving on if the user changes a value to an invalid one.
+- **Fields disabled while loading**: the fields start disabled and the snippet enables them after it retrieves the saved data, also if loading fails. This way, an edit the user makes before that is neither lost nor left unsaved.
+- **Save before moving on**: if the user clicks **Next** or presses Enter with changes that are not saved yet, the snippet stops the form submission, finishes saving, and submits it again with `requestSubmit()`. This way, the task is completed with the data the user sees.
+
+```html
+<div id="loan-{{ task.uid }}">
+  <div class="form-group">
+    <label for="loan-amount-{{ task.uid }}" class="form-label">Loan amount <span class="req">*</span></label>
+    <input type="number" class="form-control" id="loan-amount-{{ task.uid }}" data-field="amount" min="100000" max="50000000" step="1" required disabled>
+  </div>
+  <div class="form-group">
+    <label for="loan-term-{{ task.uid }}" class="form-label">Term <span class="req">*</span></label>
+    <select class="form-select" id="loan-term-{{ task.uid }}" data-field="term" required disabled>
+      <option value="12">12 months</option>
+      <option value="24" selected>24 months</option>
+      <option value="36">36 months</option>
+      <option value="48">48 months</option>
+    </select>
+  </div>
+  <p>Estimated monthly payment: <strong data-field="payment">-</strong></p>
+  <p data-field="status" role="status"></p>
 </div>
-<script>
-    const staticProducts = [
-        { id: 'ferrari', title: 'Ferrari' },
-        { id: 'lamborghini', title: 'Lamborghini' },
-        { id: 'maserati', title: 'Maserati' },
-        { id: 'alfa_romeo', title: 'Alfa Romeo' },
-        { id: 'fiat', title: 'Fiat' },
-        { id: 'lancia', title: 'Lancia' },
-        { id: 'pagani', title: 'Pagani' }
-    ];
+<script nonce="{{ csp_nonce }}">
+  (function () {
+    const MONTHLY_RATE = 0.015;
+    const root = document.getElementById('loan-{{ task.uid }}');
+    const form = root.closest('form');
+    const amountInput = root.querySelector('[data-field="amount"]');
+    const termSelect = root.querySelector('[data-field="term"]');
+    const paymentOutput = root.querySelector('[data-field="payment"]');
+    const statusOutput = root.querySelector('[data-field="status"]');
+    let dataUrl;
+    let enableNext;
+    let saveTimer;
+    let unsavedChanges = false;
+    let pendingSaves = 0;
+    let lastSave = Promise.resolve();
 
-    const staticColors = [
-	 { id: 'white', name: 'White' },
-	{ id: 'red', name: 'Red' },
-        { id: 'blue', name: 'Blue' },
-        { id: 'black', name: 'Black' },
-        { id: 'silver', name: 'Silver' },
-        { id: 'green', name: 'Green' },
-        { id: 'yellow', name: 'Yellow' }
-    ];
-
-    const productDropdown = document.getElementById('productDropdown');
-    const colorDropdown = document.getElementById('colorDropdown');
-	  const yearInput = document.getElementById('yearInput');
-	  const dateInput = document.getElementById('dateInput');
-	  const extrasSelect = document.getElementById('extrasSelect');
-
-    async function initializeDropdowns() {
-        const savedData = await getRequestJson();
-        let selectedProductValue = null;
-        let selectedColorValue = null;
-
-        if (savedData?.application?.fields?.[0]?.answers) {
-            const productAnswer = savedData.application.fields[0].answers.find(answer => answer.question.label === 'PRODUCT');
-            selectedProductValue = productAnswer?.text_field;
-
-            const colorAnswer = savedData.application.fields[0].answers.find(answer => answer.question.label === 'COLOR');
-            selectedColorValue = colorAnswer?.text_field;
-        }
-
-        let productOptionsHtml = '<option value="">Select ...</option>';
-        staticProducts.forEach(product => {
-            productOptionsHtml += `<option value="${product.id}" ${selectedProductValue && product.id === selectedProductValue ? 'selected' : ''}>${product.title}</option>`;
-        });
-        productDropdown.innerHTML = productOptionsHtml;
-        productDropdown.disabled = false;
-        if (productDropdown.value) enableButton();
-
-        let colorOptionsHtml = '<option value="">Select ...</option>';
-        staticColors.forEach(color => {
-            colorOptionsHtml += `<option value="${color.id}" ${selectedColorValue && color.id === selectedColorValue ? 'selected' : ''}>${color.name}</option>`;
-        });
-        colorDropdown.innerHTML = colorOptionsHtml;
-        colorDropdown.disabled = false;
-        if (colorDropdown.value && productDropdown.value) enableButton();
+    function monthlyPayment(amount, months) {
+      return Math.round(amount * MONTHLY_RATE / (1 - Math.pow(1 + MONTHLY_RATE, -months)));
     }
 
-    productDropdown.addEventListener('change', () => {
-        if (productDropdown.value && colorDropdown.value) enableButton();
+    function currentData() {
+      const amount = Number(amountInput.value);
+      const termMonths = Number(termSelect.value);
+      return { amount: amount, term_months: termMonths, monthly_payment: monthlyPayment(amount, termMonths) };
+    }
+
+    function renderPayment() {
+      paymentOutput.textContent = amountInput.checkValidity() && termSelect.checkValidity()
+        ? currentData().monthly_payment.toLocaleString()
+        : '-';
+    }
+
+    async function request(options) {
+      const response = await fetch(dataUrl, options);
+      if (!response.ok || response.redirected) {
+        throw new Error('HTTP ' + response.status);
+      }
+      return response.json();
+    }
+
+    function loadData() {
+      return request({ headers: { 'Accept': 'application/json' } });
+    }
+
+    function saveData(content) {
+      return request({
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]')?.content
+        },
+        body: JSON.stringify({ content: content })
+      });
+    }
+
+    function saveNow() {
+      clearTimeout(saveTimer);
+      if (!unsavedChanges) {
+        return lastSave;
+      }
+      unsavedChanges = false;
+      pendingSaves += 1;
+      statusOutput.textContent = 'Saving...';
+      lastSave = lastSave
+        .catch(function () {})
+        .then(function () { return saveData(currentData()); })
+        .then(function () {
+          statusOutput.textContent = 'Simulation saved.';
+          enableNext();
+        }, function (error) {
+          unsavedChanges = true;
+          statusOutput.textContent = 'We could not save the simulation. Please try again.';
+          throw error;
+        })
+        .finally(function () { pendingSaves -= 1; });
+      return lastSave;
+    }
+
+    function scheduleSave() {
+      renderPayment();
+      clearTimeout(saveTimer);
+      if (!amountInput.checkValidity()) {
+        statusOutput.textContent = amountInput.validationMessage;
+        return;
+      }
+      unsavedChanges = true;
+      saveTimer = setTimeout(function () {
+        saveNow().catch(console.error);
+      }, 400);
+    }
+
+    form.addEventListener('submit', function (event) {
+      if (!unsavedChanges && pendingSaves === 0) {
+        return;
+      }
+      event.preventDefault();
+      saveNow().then(function () {
+        form.requestSubmit();
+      }, function (error) {
+        console.error(error);
+        enableNext();
+      });
     });
 
-    colorDropdown.addEventListener('change', () => {
-        if (productDropdown.value && colorDropdown.value) enableButton();
+    document.addEventListener('DOMContentLoaded', async function () {
+      dataUrl = getUrl();
+      enableNext = enableButton;
+      try {
+        const saved = await loadData();
+        if (saved && saved.amount) {
+          amountInput.value = saved.amount;
+          termSelect.value = String(saved.term_months);
+          renderPayment();
+          enableNext();
+        }
+      } catch (error) {
+        statusOutput.textContent = 'We could not retrieve your simulation.';
+        console.error(error);
+      }
+      amountInput.addEventListener('input', scheduleSave);
+      termSelect.addEventListener('change', scheduleSave);
+      amountInput.disabled = false;
+      termSelect.disabled = false;
     });
-
-    async function getRequestJson() {
-        try {
-            const url = getUrl();
-            const response = await fetch(url);
-            if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
-            return await response.json();
-        } catch (error) {
-            console.error("Error in getRequestJson:", error);
-            return null;
-        }
-    }
-
-    async function sendData() {
-			  const selectedExtras = Array.from(extrasSelect.selectedOptions).map(option => option.value);
-
-        const jsonData = {
-            "submission": {
-                "fields": {
-                    "car": productDropdown.value,
-                    "color": colorDropdown.value,
-		   "year": yearInput.value ? parseInt(yearInput.value, 10) : null,
-		   "expiration": dateInput.value,
-		   "extras": selectedExtras
-                }
-            }
-        };
-        return await postRequestJson(jsonData);
-    }
-
-    async function postRequestJson(content) {
-        try {
-            const response = await fetch(getUrl().concat(`?content=${encodeURIComponent(JSON.stringify(content))}`), {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json', 'X-CSRF-Token': document.querySelector('meta[name=csrf-token]').content }
-            });
-            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-            await response.json();
-        } catch (error) {
-                console.error('Error:', error);
-        }
-    }
-
-    async function postRequestJson2(content) {
-        try {
-            const response = await fetch(getUrl(), {
-                method: "POST",
-                headers: {
-                    'X-CSRF-TOKEN': document.querySelector('meta[name=csrf-token]').content,
-                    'Accept': 'application/json',
-            'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({content: content}),
-            });
-            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-            await response.json();
-        } catch (error) {
-            console.error('Error:', error);
-        }
-    }
-
-    document.addEventListener('DOMContentLoaded', async function() {
-        await initializeDropdowns();
-	   const mainForm = document.querySelector('form');
-	    mainForm.addEventListener("submit", async function(event) {
-            event.preventDefault();
-            const submitHandler = async (e) => {
-                e.preventDefault();
-                try {
-                    const responseData = await sendData();
-                    mainForm.removeEventListener("submit", submitHandler);
-                    mainForm.submit();
-                } catch (error) {
-                    console.error("Error during data submission:", error);
-                }
-            };
-	   submitHandler(event);
-        });
-    });
+  })();
 </script>
 ```
-:::tip Valid JSON
-The content parameter that is sent must be valid JSON. If it has to be empty, {} must be sent.
-:::
+
+#### Code Snippet example that completes the task
+
+This example completes the task with the API, without waiting for the user to click **Next**. The user checks a box to accept the terms and conditions, and the snippet saves the acceptance and completes the task in the same POST, with `completed: true`. To use it, check **Complete the task using the submission API** in the task properties, so that the user cannot move on without accepting.
+
+Choose the approach based on who decides that the task is finished:
+
+- **Save and complete with Next**, as in the [loan simulator](/en/platform/customers/origination.html#code-snippets-example): the snippet saves the data without `completed` as many times as it needs, and the task is completed when the user clicks **Next**. Use it when the user can keep changing the data until they decide to move on.
+- **Complete through the API**, as in this example: the snippet sends `completed: true` when it determines that the task is finished, for example when it records an acceptance or receives the result of an external service. The task is completed even if the user does not click **Next**.
+
+In both approaches, check **Complete the task using the submission API** if the user must not move on before the snippet finishes. That property only makes the **Next** button appear disabled: it does not complete the task or change what the POST does. With it checked, the snippet always has to call `enableButton()`, also after completing the task through the API.
+
+If it is the last task left for the user and the origination's **Completion rules** do not require manual completion, the POST with `completed: true` also sets the submission to **Completed**, before the user clicks **Next**. See the details in [Submission lifecycle](/en/platform/customers/origination.html#submission-lifecycle).
+
+The example follows the same practices as the loan simulator, and also:
+
+- **`completed` next to `content`**: a single POST sends `{ content, completed: true }` in the JSON body, so it saves the acceptance and completes the task at once.
+- **Check `response.ok` and `response.redirected`**: if the POST does not succeed or the API responds with a redirect, the snippet does not treat the acceptance as recorded and asks the user to try again.
+- **Enable Next after completing**: the snippet calls `enableButton()` when the POST succeeds. It also calls it on load if the user had already accepted, because the button appears disabled every time the user enters the task.
+- **Checkbox locked after accepting**: since the API has no function to disable the button again, the checkbox stays disabled once the task is completed, and also while the snippet loads the data or sends the POST.
+
+```html
+<div id="terms-{{ task.uid }}">
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="terms-accept-{{ task.uid }}" data-field="accept" required disabled>
+    <label for="terms-accept-{{ task.uid }}" class="form-check-label">I have read and accept the terms and conditions</label>
+  </div>
+  <p data-field="status" role="status"></p>
+</div>
+<script nonce="{{ csp_nonce }}">
+  (function () {
+    const root = document.getElementById('terms-{{ task.uid }}');
+    const acceptInput = root.querySelector('[data-field="accept"]');
+    const statusOutput = root.querySelector('[data-field="status"]');
+    let dataUrl;
+    let enableNext;
+
+    async function request(options) {
+      const response = await fetch(dataUrl, options);
+      if (!response.ok || response.redirected) {
+        throw new Error('HTTP ' + response.status);
+      }
+      return response.json();
+    }
+
+    function loadData() {
+      return request({ headers: { 'Accept': 'application/json' } });
+    }
+
+    function completeTask(content) {
+      return request({
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]')?.content
+        },
+        body: JSON.stringify({ content: content, completed: true })
+      });
+    }
+
+    function showAccepted() {
+      acceptInput.checked = true;
+      acceptInput.disabled = true;
+      statusOutput.textContent = 'You accepted the terms and conditions. Click Next to continue.';
+      enableNext();
+    }
+
+    async function acceptTerms() {
+      acceptInput.disabled = true;
+      statusOutput.textContent = 'Saving...';
+      try {
+        await completeTask({ terms_accepted: true });
+        showAccepted();
+      } catch (error) {
+        acceptInput.checked = false;
+        acceptInput.disabled = false;
+        statusOutput.textContent = 'We could not record your acceptance. Please try again.';
+        console.error(error);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', async function () {
+      dataUrl = getUrl();
+      enableNext = enableButton;
+      try {
+        const saved = await loadData();
+        if (saved && saved.terms_accepted) {
+          showAccepted();
+          return;
+        }
+      } catch (error) {
+        console.error(error);
+      }
+      acceptInput.disabled = false;
+      acceptInput.addEventListener('change', function () {
+        if (acceptInput.checked) {
+          acceptTerms();
+        }
+      });
+    });
+  })();
+</script>
+```
 
 ### Origination Process
 
@@ -740,7 +826,7 @@ Each task in the flow has the **Assigned to** option, which defines who answers 
 
 When the flow reaches an agent task, the assigned administrators receive an email with a direct link to the task and also see it in the [**My tasks**](/en/platform/core/my-tasks.html) view. The effective assignee is resolved in this order: the assignee of the task response, the assignee configured on the task and, failing that, the assignee of the submission; you can reassign a specific task from the submission view, which notifies the new assignee.
 
-From the submission view, the agent opens the task and answers the form with the same experience as the site: live conditional logic, file uploads, repeatable groups, and code snippets. While the task awaits the agent's action, the user sees on the origination page the text configured in **Waiting message shown to the user**.
+From the submission view, the agent opens the task and answers the form with the same experience as the site: live conditional logic, file uploads, repeatable groups, and code snippets. If the task has a **Description**, the agent sees it above the form. While the task awaits the agent's action, the user sees on the origination page the text configured in **Waiting message shown to the user**.
 
 :::tip Agent form styles
 The form of an agent task first loads the admin styles and then the published version of the `base` CSS view of the origination page's site, so the agent sees it with the site's look and feel. If the site does not have that view published, the form uses only the admin styles. The site's JavaScript is not loaded.
@@ -759,10 +845,12 @@ You can also assign an agent task to an agent or a group based on the user's ans
 
 #### Agent verification for external services
 
-When an agent answers a Code snippet task, your code can obtain a short-lived credential (5 minutes) so an external service can verify that the caller is an agent authorized for that task and submission:
+When an agent answers a Code snippet or Pending review task, your code can obtain a short-lived credential (5 minutes) so an external service can verify that the caller is an agent authorized for that task and submission:
 
-1. From the task iframe, request the credential at `GET /admin/customers/{realm_uid}/originations/{origination_id}/submissions/{submission_id}/agent_task_forms/{step_task_id}/assertion` (same admin base where the iframe runs; accepts the optional `audience` parameter with the target service identifier) and send it to the external service.
-2. The external service validates it at `POST /api/admin/customers/{realm_uid}/originations/agent_assertions/introspect` (requires API Access with a permission that includes viewing submissions: **View All Submissions** or **View Assigned Submissions**). The response indicates `active: true` with the identifiers of the agent, submission, task, and acted user, or `active: false` if the credential expired or the authorization was revoked — validation always checks the current state, not just the signature.
+1. From the task iframe, request the credential with a GET request to the URL returned by `getAssertionUrl()` in a code snippet, or to the `assertion_url` Liquid variable in the **Pending review page content**. The URL has the form `/admin/customers/{realm_uid}/originations/{origination_id}/submissions/{submission_id}/agent_task_forms/{step_task_id}/assertion` and accepts the optional `audience` parameter with the target service identifier. Make the request with `fetch` or `XMLHttpRequest`: the iframe adds the agent authentication to requests to its own origin. The response includes the credential in `token` and its expiration in `expires_at`. Send `token` to the external service.
+2. The external service validates it at `POST /api/admin/customers/{realm_uid}/originations/agent_assertions/introspect` (requires API Access with the **View Submission Tasks** permission in the realm, or a permission that includes it, such as **View Full Submission**). The response indicates `active: true` with the identifiers of the agent, submission, task, and acted user, or `active: false` if the credential expired or the authorization was revoked — validation always checks the current state, not just the signature.
+
+When an agent answers a code snippet, the code also receives the `agent` Liquid variable, with the administrator answering the task, and `assertion_url`, with the same URL returned by `getAssertionUrl()`.
 
 You can find the endpoint details in the [API](/en/platform/core/api.html) Swagger documentation.
 
