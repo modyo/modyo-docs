@@ -335,7 +335,7 @@ La tarea tiene un editor donde escribes el código del snippet y estas propiedad
 - **Nombre**: Nombre de la tarea, visible para el usuario.
 - **Identificador**: Valor único que se incluye en la URL de originación.
 - **Descripción**: Breve texto explicativo que describe la tarea.
-- **Completar la tarea utilizando la API de respuestas**: Si se marca, el botón para continuar aparece deshabilitado y tu código debe habilitarlo con `enableButton()` o [completar la tarea](#completar-la-tarea-desde-el-code-snippet) con una petición POST.
+- **Completar la tarea utilizando la API de respuestas**: Si se marca, el botón **Siguiente** aparece deshabilitado cada vez que el usuario entra a la tarea, aunque ya esté completada, y tu código debe habilitarlo con `enableButton()` para que el usuario pueda avanzar. Esto también aplica cuando el código [completa la tarea](/es/platform/customers/origination.html#completar-la-tarea-desde-el-code-snippet) con una petición POST, porque completarla no habilita el botón.
 
 
 #### API de JavaScript para Code Snippets
@@ -390,11 +390,13 @@ En la página de originación, `content` tiene que ser un objeto JSON, ya sea di
 
 La petición POST a la URL de `getUrl()` guarda los datos y también puede cambiar el estado de la tarea, según el parámetro `completed`:
 
-- **Sin `completed`**: guarda los datos sin cambiar el estado de la tarea. La tarea se completa cuando el usuario presiona **Siguiente**.
-- **`completed: true`**: guarda los datos y marca la tarea como completada.
-- **`completed: false`**: guarda los datos sin completar la tarea. Si la tarea ya estaba completada, vuelve a quedar en curso.
+- **Sin `completed`**: solo guarda `content`, sin cambiar el estado de la tarea. La tarea se completa cuando el usuario presiona **Siguiente**.
+- **`completed: true`**: guarda los datos y marca la tarea como completada. No habilita el botón **Siguiente**: si la tarea tiene marcada **Completar la tarea utilizando la API de respuestas**, llama a `enableButton()` cuando el POST responda correctamente.
+- **`completed: false`**: guarda los datos sin completar la tarea. Si la tarea ya estaba completada, vuelve a quedar en curso, salvo en los casos de bloqueo que se describen más abajo.
 
-Usa solo `true` o `false` en `completed`. Cualquier otro valor se interpreta como `false`.
+Usa `true` o `false` en `completed`. También se interpretan como `true` los valores `1`, `"1"`, `"true"` y `"TRUE"`. Cualquier otro valor, incluido `null`, se interpreta como `false`.
+
+Si la tarea ya está completada y además tiene **Bloquear las respuestas al completar** o la aprobó una tarea de validación, el POST no guarda los datos ni reabre la tarea, aunque envíe `completed: false`. En ese caso responde con una redirección en lugar de los datos en JSON, así que revisa `response.redirected` antes de leer la respuesta.
 
 `completed` va al mismo nivel que `content`, no dentro de él. Por ejemplo, para guardar los datos y completar la tarea:
 
@@ -592,6 +594,110 @@ El ejemplo sigue estas prácticas, recomendadas para que el snippet funcione de 
       }
       amountInput.addEventListener('input', scheduleSave);
       termSelect.addEventListener('change', scheduleSave);
+    });
+  })();
+</script>
+```
+
+#### Ejemplo de Code Snippet que completa la tarea
+
+Este ejemplo completa la tarea con la API, sin esperar a que el usuario presione **Siguiente**. El usuario marca una casilla para aceptar los términos y condiciones, y el snippet guarda la aceptación y completa la tarea en el mismo POST, con `completed: true`. Para usarlo, marca **Completar la tarea utilizando la API de respuestas** en las propiedades de la tarea, para que el usuario no pueda avanzar sin aceptar.
+
+Elige el enfoque según quién decide que la tarea terminó:
+
+- **Guardar y completar con Siguiente**, como en el [simulador de crédito](/es/platform/customers/origination.html#ejemplo-de-code-snippets): el snippet guarda los datos sin `completed` las veces que necesite y la tarea se completa cuando el usuario presiona **Siguiente**. Úsalo cuando el usuario puede seguir cambiando los datos hasta que decide avanzar.
+- **Completar por la API**, como en este ejemplo: el snippet envía `completed: true` cuando él determina que la tarea terminó, por ejemplo al registrar una aceptación o al recibir el resultado de un servicio externo. La tarea queda completada aunque el usuario no presione **Siguiente**.
+
+En los dos enfoques, marca **Completar la tarea utilizando la API de respuestas** si el usuario no debe avanzar antes de que el snippet termine. Esa propiedad solo hace que el botón **Siguiente** aparezca deshabilitado: no completa la tarea ni cambia lo que hace el POST. Con ella marcada, el snippet siempre tiene que llamar a `enableButton()`, también después de completar la tarea con la API.
+
+Si es la última tarea que le queda al usuario y las **Reglas de completado** de la originación no piden completado manual, el POST con `completed: true` también deja la respuesta en estado **Completada**, antes de que el usuario presione **Siguiente**. Revisa el detalle en [Ciclo de vida de una respuesta](/es/platform/customers/origination.html#ciclo-de-vida-de-una-respuesta).
+
+El ejemplo sigue las mismas prácticas del simulador de crédito y, además:
+
+- **`completed` junto a `content`**: un único POST envía `{ content, completed: true }` en el cuerpo JSON, así que guarda la aceptación y completa la tarea a la vez.
+- **Revisar `response.ok` y `response.redirected`**: si el POST no responde correctamente o la API responde con una redirección, el snippet no da la aceptación por registrada y le pide al usuario que lo intente de nuevo.
+- **Habilitar Siguiente después de completar**: el snippet llama a `enableButton()` cuando el POST responde correctamente. También lo llama al cargar si el usuario ya había aceptado, porque el botón aparece deshabilitado cada vez que el usuario entra a la tarea.
+- **Casilla bloqueada después de aceptar**: como la API no tiene una función para volver a deshabilitar el botón, la casilla queda deshabilitada una vez que la tarea se completa, y también mientras el snippet carga los datos o envía el POST.
+
+```html
+<div id="terms-{{ task.uid }}">
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="terms-accept-{{ task.uid }}" data-field="accept" required disabled>
+    <label for="terms-accept-{{ task.uid }}" class="form-check-label">Leí y acepto los términos y condiciones</label>
+  </div>
+  <p data-field="status" role="status"></p>
+</div>
+<script nonce="{{ csp_nonce }}">
+  (function () {
+    const root = document.getElementById('terms-{{ task.uid }}');
+    const acceptInput = root.querySelector('[data-field="accept"]');
+    const statusOutput = root.querySelector('[data-field="status"]');
+    let dataUrl;
+    let enableNext;
+
+    async function request(options) {
+      const response = await fetch(dataUrl, options);
+      if (!response.ok || response.redirected) {
+        throw new Error('HTTP ' + response.status);
+      }
+      return response.json();
+    }
+
+    function loadData() {
+      return request({ headers: { 'Accept': 'application/json' } });
+    }
+
+    function completeTask(content) {
+      return request({
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]')?.content
+        },
+        body: JSON.stringify({ content: content, completed: true })
+      });
+    }
+
+    function showAccepted() {
+      acceptInput.checked = true;
+      acceptInput.disabled = true;
+      statusOutput.textContent = 'Aceptaste los términos y condiciones. Presiona Siguiente para continuar.';
+      enableNext();
+    }
+
+    async function acceptTerms() {
+      acceptInput.disabled = true;
+      statusOutput.textContent = 'Guardando...';
+      try {
+        await completeTask({ terms_accepted: true });
+        showAccepted();
+      } catch (error) {
+        acceptInput.checked = false;
+        acceptInput.disabled = false;
+        statusOutput.textContent = 'No pudimos registrar tu aceptación. Inténtalo de nuevo.';
+        console.error(error);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', async function () {
+      dataUrl = getUrl();
+      enableNext = enableButton;
+      try {
+        const saved = await loadData();
+        if (saved && saved.terms_accepted) {
+          showAccepted();
+          return;
+        }
+      } catch (error) {
+        console.error(error);
+      }
+      acceptInput.disabled = false;
+      acceptInput.addEventListener('change', function () {
+        if (acceptInput.checked) {
+          acceptTerms();
+        }
+      });
     });
   })();
 </script>

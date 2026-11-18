@@ -335,7 +335,7 @@ The task has an editor where you write the snippet code, and these properties:
 - **Name**: Name of the task, visible to the user.
 - **Identifier**: Unique value included in the origination URL.
 - **Description**: Short explanatory text describing the task.
-- **Complete the task using the submission API**: If checked, the continue button appears disabled and your code must enable it with `enableButton()` or [complete the task](#completing-the-task-from-the-code-snippet) with a POST request.
+- **Complete the task using the submission API**: If checked, the **Next** button appears disabled every time the user enters the task, even if it is already completed, and your code must enable it with `enableButton()` so the user can move on. This also applies when the code [completes the task](/en/platform/customers/origination.html#completing-the-task-from-the-code-snippet) with a POST request, because completing it does not enable the button.
 
 
 #### JavaScript API for Code Snippets
@@ -390,11 +390,13 @@ On the origination page, `content` must be a JSON object, either directly or ser
 
 The POST request to the `getUrl()` URL saves the data and can also change the task status, depending on the `completed` parameter:
 
-- **Without `completed`**: saves the data without changing the task status. The task is completed when the user clicks **Next**.
-- **`completed: true`**: saves the data and marks the task as completed.
-- **`completed: false`**: saves the data without completing the task. If the task was already completed, it goes back to in progress.
+- **Without `completed`**: only saves `content`, without changing the task status. The task is completed when the user clicks **Next**.
+- **`completed: true`**: saves the data and marks the task as completed. It does not enable the **Next** button: if the task has **Complete the task using the submission API** checked, call `enableButton()` when the POST succeeds.
+- **`completed: false`**: saves the data without completing the task. If the task was already completed, it goes back to in progress, except in the locked cases described below.
 
-Use only `true` or `false` in `completed`. Any other value is read as `false`.
+Use `true` or `false` in `completed`. The values `1`, `"1"`, `"true"`, and `"TRUE"` are also read as `true`. Any other value, including `null`, is read as `false`.
+
+If the task is already completed and also has **Lock responses once completed** or was approved by a validation task, the POST does not save the data or reopen the task, even if it sends `completed: false`. In that case it responds with a redirect instead of the JSON data, so check `response.redirected` before reading the response.
 
 `completed` goes at the same level as `content`, not inside it. For example, to save the data and complete the task:
 
@@ -592,6 +594,110 @@ The example follows these practices, recommended so the snippet works reliably o
       }
       amountInput.addEventListener('input', scheduleSave);
       termSelect.addEventListener('change', scheduleSave);
+    });
+  })();
+</script>
+```
+
+#### Code Snippet example that completes the task
+
+This example completes the task with the API, without waiting for the user to click **Next**. The user checks a box to accept the terms and conditions, and the snippet saves the acceptance and completes the task in the same POST, with `completed: true`. To use it, check **Complete the task using the submission API** in the task properties, so that the user cannot move on without accepting.
+
+Choose the approach based on who decides that the task is finished:
+
+- **Save and complete with Next**, as in the [loan simulator](/en/platform/customers/origination.html#code-snippets-example): the snippet saves the data without `completed` as many times as it needs, and the task is completed when the user clicks **Next**. Use it when the user can keep changing the data until they decide to move on.
+- **Complete through the API**, as in this example: the snippet sends `completed: true` when it determines that the task is finished, for example when it records an acceptance or receives the result of an external service. The task is completed even if the user does not click **Next**.
+
+In both approaches, check **Complete the task using the submission API** if the user must not move on before the snippet finishes. That property only makes the **Next** button appear disabled: it does not complete the task or change what the POST does. With it checked, the snippet always has to call `enableButton()`, also after completing the task through the API.
+
+If it is the last task left for the user and the origination's **Completion rules** do not require manual completion, the POST with `completed: true` also sets the submission to **Completed**, before the user clicks **Next**. See the details in [Submission lifecycle](/en/platform/customers/origination.html#submission-lifecycle).
+
+The example follows the same practices as the loan simulator, and also:
+
+- **`completed` next to `content`**: a single POST sends `{ content, completed: true }` in the JSON body, so it saves the acceptance and completes the task at once.
+- **Check `response.ok` and `response.redirected`**: if the POST does not succeed or the API responds with a redirect, the snippet does not treat the acceptance as recorded and asks the user to try again.
+- **Enable Next after completing**: the snippet calls `enableButton()` when the POST succeeds. It also calls it on load if the user had already accepted, because the button appears disabled every time the user enters the task.
+- **Checkbox locked after accepting**: since the API has no function to disable the button again, the checkbox stays disabled once the task is completed, and also while the snippet loads the data or sends the POST.
+
+```html
+<div id="terms-{{ task.uid }}">
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="terms-accept-{{ task.uid }}" data-field="accept" required disabled>
+    <label for="terms-accept-{{ task.uid }}" class="form-check-label">I have read and accept the terms and conditions</label>
+  </div>
+  <p data-field="status" role="status"></p>
+</div>
+<script nonce="{{ csp_nonce }}">
+  (function () {
+    const root = document.getElementById('terms-{{ task.uid }}');
+    const acceptInput = root.querySelector('[data-field="accept"]');
+    const statusOutput = root.querySelector('[data-field="status"]');
+    let dataUrl;
+    let enableNext;
+
+    async function request(options) {
+      const response = await fetch(dataUrl, options);
+      if (!response.ok || response.redirected) {
+        throw new Error('HTTP ' + response.status);
+      }
+      return response.json();
+    }
+
+    function loadData() {
+      return request({ headers: { 'Accept': 'application/json' } });
+    }
+
+    function completeTask(content) {
+      return request({
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]')?.content
+        },
+        body: JSON.stringify({ content: content, completed: true })
+      });
+    }
+
+    function showAccepted() {
+      acceptInput.checked = true;
+      acceptInput.disabled = true;
+      statusOutput.textContent = 'You accepted the terms and conditions. Click Next to continue.';
+      enableNext();
+    }
+
+    async function acceptTerms() {
+      acceptInput.disabled = true;
+      statusOutput.textContent = 'Saving...';
+      try {
+        await completeTask({ terms_accepted: true });
+        showAccepted();
+      } catch (error) {
+        acceptInput.checked = false;
+        acceptInput.disabled = false;
+        statusOutput.textContent = 'We could not record your acceptance. Please try again.';
+        console.error(error);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', async function () {
+      dataUrl = getUrl();
+      enableNext = enableButton;
+      try {
+        const saved = await loadData();
+        if (saved && saved.terms_accepted) {
+          showAccepted();
+          return;
+        }
+      } catch (error) {
+        console.error(error);
+      }
+      acceptInput.disabled = false;
+      acceptInput.addEventListener('change', function () {
+        if (acceptInput.checked) {
+          acceptTerms();
+        }
+      });
     });
   })();
 </script>
