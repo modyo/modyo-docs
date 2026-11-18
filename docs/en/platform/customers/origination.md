@@ -244,10 +244,12 @@ If the platform applies a default policy to sites, that policy does not include 
 It applies to this task and to [Selfie](/en/platform/customers/origination.html#selfie) fields with **Face liveness check**. Replace `<region>` with the **AWS Region** configured in the integration, for example `us-east-1`. In `cognito-identity`, the region is the identity pool's region, the one at the start of the **Cognito Identity Pool ID** (for example, `us-east-1` in `us-east-1:…`); it is usually the same.
 
 ```bash
-script-src 'wasm-unsafe-eval'
-connect-src https://cognito-identity.<region>.amazonaws.com wss://streaming-rekognition.<region>.amazonaws.com https://cdn.liveness.rekognition.amazonaws.com
+script-src 'wasm-unsafe-eval';
+connect-src https://cognito-identity.<region>.amazonaws.com wss://streaming-rekognition.<region>.amazonaws.com https://cdn.liveness.rekognition.amazonaws.com;
 img-src data: blob:
 ```
+
+In the policy, separate each directive with `;`. If your policy already has any of these directives, add these sources to the existing directive, next to the ones the site already uses, instead of repeating it.
 
 - `cognito-identity` provides the temporary credentials the browser uses to start the challenge, based on the integration's **Cognito Identity Pool ID**.
 - `streaming-rekognition` receives the video of the liveness challenge.
@@ -268,7 +270,9 @@ With the **NAAT.TECH** provider, the resources that are loaded depend on the tas
 The liveness check iframe requests access to the camera, microphone, geolocation, and full screen. If the site defines [Permissions-Policy](/en/platform/channels/sites.html#permissions-policy), it must delegate those permissions to the origin of the **iFrame URL**, for example `camera=(self "https://<iframe-url-origin>")`, and the same for `microphone`, `geolocation`, and `fullscreen`.
 
 ::: tip Test the policy before enforcing it
-The resources these providers' SDKs load can change when they are updated. Before enforcing the policy, set it in [Content-Security-Policy-Report-Only](/en/platform/channels/sites.html#content-security-policy-report-only), complete the verification end to end, and check in the browser console which resources or permissions would be blocked. With NAAT.TECH, this is how you identify the domains of the document capture.
+The resources these providers' SDKs load can change when they are updated. Before enforcing the policy, test it in a test environment whose enforced CSP allows the flow to be completed: set it in [Content-Security-Policy-Report-Only](/en/platform/channels/sites.html#content-security-policy-report-only), complete the verification end to end, and check in the browser console which resources would be blocked. Report-Only doesn't relax the enforced CSP: if it blocks the SDK, the flow doesn't move forward and you don't see the resources of the later steps. With NAAT.TECH, this is how you identify the domains of the document capture.
+
+Report-Only doesn't evaluate [Permissions-Policy](/en/platform/channels/sites.html#permissions-policy) either. Check the permissions separately, by completing the verification with the Permissions-Policy you are going to enforce.
 :::
 
 #### Verification with Incode

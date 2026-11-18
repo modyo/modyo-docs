@@ -244,10 +244,12 @@ Si la plataforma aplica una política por defecto a los sitios, esa política no
 Aplica a esta tarea y a los campos [Selfie](/es/platform/customers/origination.html#selfie) con **Verificación de vida (liveness)**. Reemplaza `<region>` por la **Región AWS** configurada en la integración, por ejemplo `us-east-1`. En `cognito-identity`, la región es la del pool de identidad, la que aparece al inicio del **ID de Pool de Identidad de Cognito** (por ejemplo, `us-east-1` en `us-east-1:…`); normalmente es la misma.
 
 ```bash
-script-src 'wasm-unsafe-eval'
-connect-src https://cognito-identity.<region>.amazonaws.com wss://streaming-rekognition.<region>.amazonaws.com https://cdn.liveness.rekognition.amazonaws.com
+script-src 'wasm-unsafe-eval';
+connect-src https://cognito-identity.<region>.amazonaws.com wss://streaming-rekognition.<region>.amazonaws.com https://cdn.liveness.rekognition.amazonaws.com;
 img-src data: blob:
 ```
+
+En la política, separa cada directiva con `;`. Si tu política ya tiene alguna de estas directivas, agrega estas fuentes a la directiva existente, junto a las que ya usa el sitio, en lugar de repetirla.
 
 - `cognito-identity` entrega las credenciales temporales con las que el navegador inicia el desafío, a partir del **ID de Pool de Identidad de Cognito** de la integración.
 - `streaming-rekognition` recibe el video del desafío de verificación de vida.
@@ -268,7 +270,9 @@ Con el proveedor **NAAT.TECH**, los recursos que se cargan dependen de las **Car
 El iframe de la prueba de vida solicita acceso a la cámara, el micrófono, la geolocalización y la pantalla completa. Si el sitio define [Permissions-Policy](/es/platform/channels/sites.html#permissions-policy), debe delegar esos permisos al origen de la **URL del iFrame**, por ejemplo `camera=(self "https://<origen-de-la-url-del-iframe>")`, y lo mismo con `microphone`, `geolocation` y `fullscreen`.
 
 ::: tip Prueba la política antes de aplicarla
-Los recursos que cargan los SDK de estos proveedores pueden cambiar cuando se actualizan. Antes de aplicar la política, configúrala en [Content-Security-Policy-Report-Only](/es/platform/channels/sites.html#content-security-policy-report-only), completa la verificación de punta a punta y revisa en la consola del navegador qué recursos o permisos quedarían bloqueados. Con NAAT.TECH, es la forma de identificar los dominios de la captura del documento.
+Los recursos que cargan los SDK de estos proveedores pueden cambiar cuando se actualizan. Antes de aplicar la política, pruébala en un entorno de pruebas cuyo CSP aplicado permita completar el flujo: configúrala en [Content-Security-Policy-Report-Only](/es/platform/channels/sites.html#content-security-policy-report-only), completa la verificación de punta a punta y revisa en la consola del navegador qué recursos quedarían bloqueados. Report-Only no relaja el CSP aplicado: si este bloquea el SDK, el flujo no avanza y no ves los recursos de los pasos siguientes. Con NAAT.TECH, es la forma de identificar los dominios de la captura del documento.
+
+Report-Only tampoco evalúa [Permissions-Policy](/es/platform/channels/sites.html#permissions-policy). Comprueba los permisos por separado, completando la verificación con la Permissions-Policy que vas a aplicar.
 :::
 
 #### Verificación con Incode
