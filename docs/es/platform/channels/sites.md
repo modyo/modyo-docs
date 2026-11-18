@@ -821,7 +821,7 @@ En esta política:
 - `default-src 'none'` sirve de _fallback_ para cualquier tipo de recurso que no tenga su propia directiva y lo bloquea, así que solo se carga lo que permites de forma explícita.
 - `script-src` solo ejecuta los _scripts_ que llevan el nonce de la página. Con `'strict-dynamic'`, los _scripts_ que cargan esos _scripts_ también se ejecutan, y los navegadores compatibles ignoran cualquier origen o `'self'` que agregues a la directiva, por lo que todo _script_ de tus plantillas necesita el atributo `nonce`, aunque se cargue desde el propio sitio o desde el CDN.
 - `style-src` permite las hojas de estilo del sitio y de los orígenes listados, y los _tags_ `style` _inline_ solo si llevan el nonce. También bloquea los atributos `style` de los elementos; si tus plantillas los usan, agrega `style-src-attr 'unsafe-inline'`, como hace la política que precarga Modyo.
-- `base-uri 'self'` impide que un _tag_ `base` inyectado cambie la URL base de los enlaces y _scripts_ relativos.
+- `base-uri 'self'` impide que un _tag_ `base` inyectado apunte a otro origen. Solo admite una URL base del propio sitio, así que no evita que se cambie la ruta base dentro del mismo origen.
 - `object-src 'none'` bloquea los _plugins_ del navegador, como los _tags_ `object` y `embed`.
 - `frame-ancestors 'self'` indica qué páginas pueden mostrar el sitio en un _frame_: `'self'` equivale a `SAMEORIGIN` en [X-Frame-Options](/es/platform/channels/sites.html#x-frame-options) y `'none'`, a `DENY`.
 - `form-action 'self'` limita a dónde pueden enviar datos los formularios del sitio.
@@ -937,7 +937,7 @@ Esta es una línea base sugerida para un sitio en producción. Ajústala según 
 | Cross-Origin-Resource-Policy (CORP) | `same-site` | Impide que sitios de otros dominios carguen los recursos del sitio, pero permite hacerlo desde tus subdominios. |
 | Cross-Origin-Embedder-Policy (COEP) | Desactivado, salvo que necesites aislamiento entre orígenes, por ejemplo para usar `SharedArrayBuffer`. | Con `require-corp`, el navegador bloquea cualquier recurso de otro origen que no lo autorice explícitamente, como imágenes de un CDN, _tags_ de analítica o _widgets_ externos. El aislamiento completo exige además COOP `same-origin`. |
 
-Para activar el CSP sin romper el sitio, despliégalo de forma gradual:
+Para activar el CSP sin romper el sitio, despliégalo de forma gradual. Ten en cuenta que Report-Only no desactiva el CSP aplicado: lo que bloquea la política de **Habilitar Content-Security-Policy** sigue bloqueado durante la prueba. Antes de empezar, revisa si ese _header_ quedó activo con la política precargada al habilitar el módulo. Si ya tienes en producción una política aplicada y validada, consérvala mientras pruebas la nueva.
 
 1. Activa **Habilitar Reporting-Endpoints** y declara un destino que reciba los reportes, por ejemplo `csp-endpoint="https://example.com/csp"`.
 1. Activa **Habilitar Content-Security-Policy-Report-Only** con la política que quieres aplicar, que puede partir de la que precarga Modyo, y agrégale `report-to csp-endpoint`.

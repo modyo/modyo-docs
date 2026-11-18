@@ -821,7 +821,7 @@ In this policy:
 - `default-src 'none'` serves as a _fallback_ for any type of resource that has no directive of its own and blocks it, so only what you explicitly allow is loaded.
 - `script-src` only runs the _scripts_ that carry the page nonce. With `'strict-dynamic'`, the _scripts_ loaded by those _scripts_ also run, and compatible browsers ignore any origin or `'self'` you add to the directive, so every _script_ in your templates needs the `nonce` attribute, even if it loads from the site itself or from the CDN.
 - `style-src` allows the stylesheets from the site and from the listed origins, and _inline_ `style` _tags_ only if they carry the nonce. It also blocks the `style` attributes of elements; if your templates use them, add `style-src-attr 'unsafe-inline'`, as the policy Modyo prefills does.
-- `base-uri 'self'` prevents an injected `base` _tag_ from changing the base URL of relative links and _scripts_.
+- `base-uri 'self'` prevents an injected `base` _tag_ from pointing to another origin. It only allows a base URL from the site itself, so it doesn't prevent changing the base path within the same origin.
 - `object-src 'none'` blocks browser _plugins_, such as `object` and `embed` _tags_.
 - `frame-ancestors 'self'` sets which pages can display the site in a _frame_: `'self'` is equivalent to `SAMEORIGIN` in [X-Frame-Options](/en/platform/channels/sites.html#x-frame-options), and `'none'` to `DENY`.
 - `form-action 'self'` limits where the site forms can send data.
@@ -937,7 +937,7 @@ This is a suggested baseline for a production site. Adjust it to the external se
 | Cross-Origin-Resource-Policy (CORP) | `same-site` | Prevents sites on other domains from loading the site resources, but allows your subdomains to do so. |
 | Cross-Origin-Embedder-Policy (COEP) | Off, unless you need cross-origin isolation, for example to use `SharedArrayBuffer`. | With `require-corp`, the browser blocks any resource from another origin that does not explicitly allow it, such as images from a CDN, analytics _tags_, or external _widgets_. Full isolation also requires COOP `same-origin`. |
 
-To turn on the CSP without breaking the site, roll it out gradually:
+To turn on the CSP without breaking the site, roll it out gradually. Keep in mind that Report-Only doesn't turn off the enforced CSP: what the **Enable Content-Security-Policy** policy blocks stays blocked during the test. Before you start, check whether that _header_ was left active with the preloaded policy when you enabled the module. If you already have an enforced and validated policy in production, keep it while you test the new one.
 
 1. Turn on **Enable Reporting-Endpoints** and declare a destination that receives the reports, for example `csp-endpoint="https://example.com/csp"`.
 1. Turn on **Enable Content-Security-Policy-Report-Only** with the policy you want to enforce, which can start from the one Modyo prefills, and add `report-to csp-endpoint` to it.
