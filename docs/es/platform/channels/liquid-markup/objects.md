@@ -645,7 +645,7 @@ Adicionalmente según el tipo de tarea pueden haber atributos adicionales.
 |--------|-------------|---------|
 | **code_snippet_task.snippet** | Configuración del snippet de código. | |
 | **code_snippet_task.snippet.code** | Código HTML, JavaScript y CSS del snippet, tal como se configuró. | ```<div id="simulador"></div>``` |
-| **code_snippet_task.snippet.next_disabled** | Es `true` si está activada **Completar la tarea utilizando la API de respuestas**: la acción de continuar queda desactivada hasta que el snippet [complete la tarea](/es/platform/customers/origination.html#completar-la-tarea-desde-el-code-snippet). | ```false``` |
+| **code_snippet_task.snippet.next_disabled** | Es `true` si está activada **Completar la tarea utilizando la API de respuestas**: el botón para continuar aparece deshabilitado hasta que el snippet lo habilita con `enableButton()`. Revisa [Completar la tarea desde el code snippet](/es/platform/customers/origination.html#completar-la-tarea-desde-el-code-snippet). | ```false``` |
 
 #### origination_flow_task
 

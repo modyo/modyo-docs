@@ -638,7 +638,7 @@ Additionally, depending on the task type, there may be further attributes.
 |--------|-------------|---------|
 | **code_snippet_task.snippet** | Code snippet settings. | |
 | **code_snippet_task.snippet.code** | The snippet's HTML, JavaScript, and CSS code, as configured. | ```<div id="simulator"></div>``` |
-| **code_snippet_task.snippet.next_disabled** | It is `true` when **Complete the task using the submission API** is enabled: the continue action stays disabled until the snippet [completes the task](/en/platform/customers/origination.html#completing-the-task-from-the-code-snippet). | ```false``` |
+| **code_snippet_task.snippet.next_disabled** | It is `true` when **Complete the task using the submission API** is enabled: the continue button appears disabled until the snippet enables it with `enableButton()`. See [Completing the task from the code snippet](/en/platform/customers/origination.html#completing-the-task-from-the-code-snippet). | ```false``` |
 
 #### origination_flow_task
 
