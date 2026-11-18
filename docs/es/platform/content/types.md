@@ -22,9 +22,9 @@ La tabla debajo de la barra de búsqueda muestra los Tipos ya creados, ordenados
 Para reordenar la tabla, haz click en los símbolos al costado de cada categoría. Las categorías por las cuales puedes reordenar son:
 
 - **Nombre**
-- **Identificador (UID)**
-- **Fecha de Creación**
-- **Fecha de Actualización**
+- **Identificador**
+- **Cardinalidad**
+- **Actualizado en**
 
 Haz click en el nombre de un Tipo para abrir el editor correspondiente.
 
@@ -88,13 +88,13 @@ Este campo te permite ingresar textos de una sola línea, con un tope de 255 car
 
 - **Largo mínimo**: Permite exigir un mínimo de caracteres para el texto ingresado.
 - **Largo máximo**: Permite  limitar la cantidad máxima de caracteres para el texto ingresado.
-- **Validación por expresión regular**: Te permite añadir una expresión regular para validar que el texto ingresado, al crear o modificar una entrada, cumpla con un formato determinado.
+- **Validación por expresión regular**: Te permite añadir una expresión regular para validar que el texto ingresado, al crear o modificar una entrada, cumpla con un formato determinado. Basta con que una parte del texto coincida: `\d{3}` acepta `abc123`. Para exigir que todo el texto cumpla el formato, ancla la expresión con `^` al inicio y `$` al final, por ejemplo `^\d{3}$`. Si el texto no cumple, la entrada no se guarda y el campo muestra "El valor no coincide con la expresión". Si la expresión no es válida, el tipo no se guarda y el error indica "Expresión inválida".
 - **Único**: Exige que el valor no se repita en otras entradas del mismo tipo. Es la única validación de unicidad de la plataforma, y Texto de una línea es el único campo que la ofrece. Si el valor ya está en uso, la entrada no se guarda y el campo muestra "Debe ser único".
 
-El alcance de **Único** es el tipo completo: la comparación recorre todas las entradas del tipo, incluidas las que están en borrador o programadas y las traducciones a otros idiomas. Quedan fuera las versiones de respaldo y la propia entrada que estás editando, así que volver a publicar una entrada no choca consigo misma. Un campo vacío no se considera repetido.
+El alcance de **Único** es el tipo completo: la comparación recorre todas las entradas del tipo en todos sus idiomas, incluidas las que están en borrador o programadas. Quedan fuera las versiones de respaldo y la propia entrada que estás editando, también en sus otros idiomas: volver a publicar una entrada no choca consigo misma, y sus traducciones pueden repetir el valor. Un campo vacío no se considera repetido.
 
 :::warning Atención
-**Único** no tiene efecto sobre un campo que está dentro de un **Grupo**. La casilla se sigue mostrando al configurar el campo, pero la validación no se evalúa y los valores repetidos se guardan sin error. Si necesitas garantizar unicidad, deja el campo fuera del grupo.
+Dentro de un **Grupo**, **Único** no compara el valor con otras entradas del tipo: solo impide repetirlo entre las repeticiones del grupo en la misma entrada. Si dos repeticiones tienen el mismo valor, la entrada no se guarda y el campo muestra "Debe ser único". Si necesitas que el valor no se repita en otras entradas, deja el campo fuera del grupo.
 :::
 
 ### Texto de múltiples líneas
@@ -103,7 +103,7 @@ Este campo te permite ingresar texto en varias líneas, sin opciones de formato 
 
 - **Largo mínimo**: Permite exigir un mínimo de caracteres para el texto ingresado.
 - **Largo máximo**: Permite limitar la cantidad máxima de caracteres para el texto ingresado.
-- **Validación por expresión regular**: Te permite añadir una expresión regular para validar que el texto ingresado, al crear o modificar una entrada, cumpla con un formato determinado.
+- **Validación por expresión regular**: Te permite añadir una expresión regular para validar que el texto ingresado, al crear o modificar una entrada, cumpla con un formato determinado. Como en [Texto de una línea](#texto-de-una-linea), basta con que una parte del texto coincida. Aquí, además, `^` y `$` marcan el inicio y el fin de cada línea, así que una expresión anclada con ellos se cumple apenas una línea coincida. Para exigir que todo el texto lo cumpla, ancla la expresión con `\A` al inicio y `\z` al final.
 
 Este campo no ofrece la validación **Único**: la unicidad solo está disponible en [Texto de una línea](#texto-de-una-linea).
 
@@ -149,6 +149,8 @@ Este campo se traduce en un editor WYSIWYG de texto de múltiples líneas que ta
 - **Largo mínimo**: Establece el mínimo de caracteres para el texto ingresado.
 - **Largo máximo**: Limita la cantidad máxima de caracteres para el texto ingresado.
 
+Ambos largos se miden sobre el HTML que guarda el editor, no sobre el texto visible: las etiquetas y sus atributos también cuentan. Por ejemplo, `<p><strong>Hola</strong></p>` suma 28 caracteres, no 4.
+
 ### Dropdown
 
 Este campo te permite agregar una lista desplegable donde solo se puede seleccionar una opción.
@@ -165,13 +167,21 @@ Este campo te permite agregar una lista de la cual puedes seleccionar más de un
 
 Este campo te permite elegir uno o más valores desde un buscador que filtra a medida que escribes. El buscador solo ofrece los valores definidos en el tipo: al editar una entrada no puedes proponer un valor nuevo desde el campo. Los valores se administran en **Valores permitidos**, al configurar el campo.
 
-:::warning Atención
-Si cargas este campo por la API, envía las etiquetas exactas de los valores permitidos o los identificadores que devuelve la API. Un texto que no coincide con ninguna etiqueta se descarta en silencio: la entrada se guarda sin ese valor y sin mensaje de error. Un identificador numérico que no pertenece al campo, en cambio, impide guardar la entrada.
-:::
-
 ### Valores permitidos
 
 En los campos de elección (Dropdown, Radio, Checkbox y Opciones múltiples), las opciones se gestionan en la sección **Valores permitidos** del campo: usa **Agregar valor** y **Eliminar valor** para administrarlas, y el selector para marcar el **Valor predeterminado**. Antes de guardar, la interfaz marca las opciones como **Nueva** o **Modificada** para que revises tus cambios.
+
+Para que el tipo se guarde, cada campo de elección debe cumplir estas reglas:
+
+- Tener al menos un valor activo.
+- No repetir etiquetas entre sus valores activos.
+- En Dropdown y Radio, tener un solo **Valor predeterminado**: al marcar otro, el anterior se desmarca. En Checkbox y Opciones múltiples puedes marcar varios.
+
+Si alguna no se cumple, el tipo no se guarda y el error indica el nombre del campo.
+
+:::warning Atención
+Si cargas un campo de elección por la API, envía las etiquetas exactas de los valores permitidos o los identificadores que devuelve la API. Un texto que no coincide con ninguna etiqueta se descarta en silencio: la entrada se guarda sin ese valor y sin mensaje de error, salvo que el campo sea **Requerido** y quede vacío. Un identificador numérico que no pertenece al campo, en cambio, impide guardar la entrada.
+:::
 
 El **Valor predeterminado** se aplica automáticamente al crear una entrada nueva, y solo cuando el campo aún no trae un valor: no se aplica al editar una entrada que ya existe ni reemplaza lo que hayas cargado.
 
@@ -190,7 +200,11 @@ El nombre de un valor activo no admite saltos de línea ni comenzar con el cará
 
 ### Booleano
 
-Este campo te permite agregar una pregunta o afirmación (Verdadero/True o Falso/False).
+Este campo te permite agregar una pregunta o afirmación (Verdadero/True o Falso/False). En el editor de la entrada se muestra como una casilla: marcada vale Verdadero y sin marcar, Falso.
+
+:::warning Atención
+Si marcas el campo como **Requerido**, solo podrás guardar la entrada con la casilla marcada: un valor Falso se rechaza con el mensaje "Es requerido". Úsalo para exigir una confirmación, como la aceptación de un aviso, y no para obligar a elegir entre Verdadero y Falso.
+:::
 
 ### Entero
 
@@ -199,7 +213,13 @@ Este campo te permite agregar un número entero entre `-2147483648` y `214748364
 - **Valor mínimo**: Rechaza los valores menores al número que indiques.
 - **Valor máximo**: Rechaza los valores mayores al número que indiques.
 
-Ambas restricciones acotan el valor del número, no la cantidad de dígitos. Déjalas vacías para no aplicar ese límite. Si el número queda fuera del rango, la entrada no se guarda y el campo muestra "Número inválido. Debe ser mayor o igual que 18" o "Número inválido. Debe ser menor o igual que 120", con los límites que hayas configurado.
+Ambas restricciones acotan el valor del número, no la cantidad de dígitos. Déjalas vacías para no aplicar ese límite. Si el número queda fuera del rango, la entrada no se guarda y el campo muestra un mensaje con los límites que hayas configurado:
+
+- Solo con **Valor mínimo**: "Número inválido. Debe ser mayor o igual que 18".
+- Solo con **Valor máximo**: "Número inválido. Debe ser menor o igual que 120".
+- Con ambos: "Número inválido. debe estar entre 18 y 120".
+
+El **Valor mínimo** no puede ser mayor que el **Valor máximo**: si lo es, el tipo no se guarda y el error antepone el nombre del campo, por ejemplo "Edad: El valor mínimo debe ser menor o igual que 120" en un campo llamado Edad.
 
 ### Decimal
 
@@ -208,11 +228,11 @@ Utiliza este campo para ingresar un número con decimales. Admite hasta dos deci
 - **Valor mínimo**: Rechaza los valores menores al número que indiques.
 - **Valor máximo**: Rechaza los valores mayores al número que indiques.
 
-Ambas restricciones acotan el valor del número, no la cantidad de dígitos, y solo aceptan números enteros: para exigir un monto positivo, por ejemplo, usa `0` como **Valor mínimo**. Si el número queda fuera del rango, la entrada no se guarda y el campo muestra "Número inválido. Debe ser menor o igual que", con el límite que hayas configurado.
+Ambas restricciones acotan el valor del número, no la cantidad de dígitos, y solo aceptan números enteros: para exigir un monto positivo, por ejemplo, usa `0` como **Valor mínimo**. Si el número queda fuera del rango, la entrada no se guarda y el campo muestra los mismos mensajes que en [Entero](#entero). También aquí el **Valor mínimo** no puede ser mayor que el **Valor máximo**.
 
 ### Fecha
 
-Utiliza este campo para agregar un selector de fechas. Limita las fechas seleccionables aplicando las siguientes restricciones:
+Utiliza este campo para agregar un selector de fecha y hora. El valor se guarda con ambas, así que la API, los SDK y Liquid entregan la fecha junto con la hora, aunque solo te interese el día. Limita las fechas seleccionables aplicando las siguientes restricciones:
 
 - **Desde**: Establece la fecha más temprana que se puede elegir.
 - **Hasta**: Establece la fecha más tardía que se puede elegir.
@@ -286,7 +306,7 @@ En una entrada, el grupo se comporta como una lista repetible: el mismo conjunto
 
 El orden en que dejes las repeticiones se conserva y es el que se entrega en la API y en los SDK.
 
-Por eso el valor de un campo Grupo es siempre un arreglo de objetos, incluso cuando tiene una sola repetición: cada objeto trae los campos hijos con el nombre que les diste.
+En la API y en los SDK, el valor de un campo Grupo es un objeto cuya clave `fields` contiene un arreglo con un objeto por repetición, incluso cuando hay una sola: cada objeto trae los campos hijos con el nombre que les diste.
 
 ```json
 {
@@ -314,7 +334,7 @@ Puedes validar el contenido de los campos de la siguiente forma:
 - **Requerido**: Marca la casilla **Requerido** para obligar a que se complete el grupo o campo.
   - Si marcas el grupo como requerido, al menos un elemento dentro del grupo deberá ser completado. 
   - Si marcas un elemento como requerido, ese elemento tiene que tener contenido.
-- **Único**: No aplica dentro de un grupo. La casilla aparece al configurar un campo de [Texto de una línea](#texto-de-una-linea) que esté dentro del grupo, pero la validación no se evalúa y los valores repetidos se guardan sin error.
+- **Único**: En un campo de [Texto de una línea](#texto-de-una-linea) dentro del grupo, impide repetir el valor entre las repeticiones de la misma entrada, pero no lo compara con otras entradas del tipo.
 
 :::tip Tip
 Un grupo puede albergar cualquier tipo de campo, menos otro grupo. 
@@ -350,6 +370,19 @@ Al reindexar uno de tus tipos, el modelo previamente indexado seguirá disponibl
 :::warning Atención
 Ten en cuenta que, según la configuración de caché entre tu navegador y la plataforma, es posible que no veas los cambios inmediatamente después de haber terminado la reindexación.
 :::
+
+## Eliminar un tipo
+
+Para eliminar un tipo necesitas el permiso **Administrar Tipos**, y el tipo no puede tener entradas: si tiene alguna, en cualquier idioma o estado, la eliminación se rechaza con el mensaje "No se puede eliminar porque hay entradas dependientes". Elimina primero sus entradas y luego sigue estos pasos:
+
+1. Desde el menú principal, haz click en **Contenido**.
+2. Selecciona el espacio donde está el tipo.
+3. Haz click en **Tipos**.
+4. Haz click en el nombre del tipo para abrir su editor.
+5. En la pestaña **Configuración** del panel derecho, haz click en **Eliminar tipo**.
+6. Confirma en el mensaje "¿Estás seguro que quieres eliminar este elemento?".
+
+Las [páginas de contenido](/es/platform/channels/pages#pagina-de-contenido) que usaban el tipo quedan sin tipo asociado, y debes asignarles otro.
 
 ## Clonar un tipo
 
