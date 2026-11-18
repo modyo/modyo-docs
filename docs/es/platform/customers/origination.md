@@ -450,17 +450,18 @@ El ejemplo sigue estas prácticas, recomendadas para que el snippet funcione de 
 - **`content` en el cuerpo de la petición**: el POST envía `content` como JSON en el cuerpo, con el token de la etiqueta `<meta name="csrf-token">` de la página en la cabecera `X-CSRF-Token`. Sin ese token, la plataforma rechaza la petición.
 - **El objeto completo en cada POST**: cada petición reemplaza lo que se guardó antes, así que el snippet envía siempre todos los datos. Los valores numéricos van como números, no como texto.
 - **Habilitar Siguiente después de guardar**: el snippet llama a `enableButton()` cuando el POST responde correctamente, y es el usuario quien presiona **Siguiente** para completar la tarea. Como la API no tiene una función para volver a deshabilitar el botón, los campos usan la validación del navegador (`required`, `min` y `max`), que impide avanzar si el usuario cambia un dato por uno inválido.
+- **Campos deshabilitados mientras carga**: los campos empiezan deshabilitados y el snippet los habilita después de recuperar los datos guardados, también si la carga falla. Así, una edición que el usuario haga antes no se pierde ni queda sin guardar.
 - **Guardar antes de avanzar**: si el usuario presiona **Siguiente** o Enter con cambios que todavía no se guardan, el snippet detiene el envío del formulario, termina de guardar y lo vuelve a enviar con `requestSubmit()`. Así, la tarea se completa con los datos que el usuario ve.
 
 ```html
 <div id="loan-{{ task.uid }}">
   <div class="form-group">
     <label for="loan-amount-{{ task.uid }}" class="form-label">Monto a solicitar <span class="req">*</span></label>
-    <input type="number" class="form-control" id="loan-amount-{{ task.uid }}" data-field="amount" min="100000" max="50000000" step="1" required>
+    <input type="number" class="form-control" id="loan-amount-{{ task.uid }}" data-field="amount" min="100000" max="50000000" step="1" required disabled>
   </div>
   <div class="form-group">
     <label for="loan-term-{{ task.uid }}" class="form-label">Plazo <span class="req">*</span></label>
-    <select class="form-select" id="loan-term-{{ task.uid }}" data-field="term" required>
+    <select class="form-select" id="loan-term-{{ task.uid }}" data-field="term" required disabled>
       <option value="12">12 meses</option>
       <option value="24" selected>24 meses</option>
       <option value="36">36 meses</option>
@@ -592,6 +593,8 @@ El ejemplo sigue estas prácticas, recomendadas para que el snippet funcione de 
       }
       amountInput.addEventListener('input', scheduleSave);
       termSelect.addEventListener('change', scheduleSave);
+      amountInput.disabled = false;
+      termSelect.disabled = false;
     });
   })();
 </script>
