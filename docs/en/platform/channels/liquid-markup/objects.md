@@ -190,6 +190,8 @@ These objects allow you to get information via Liquid for a form in the Customer
 | **form_response.name**        | Form name.                     | ```The new form```                                                                                   |
 | **form_response.questions**   | Array with the form questions that capture an answer. Content fields, such as **Rich Text**, are not included. | ```[{"title"=>"What is your job title?", "type"=>"textquestion", "answer"=>"Software developer"}]``` |
 
+Each element of `form_response.questions` has `title`, `type`, and `answer`. `title` and `answer` come HTML-escaped (except dates), and `answer` is also formatted according to the question type: dates and date ranges use the format configured in the question, the country is returned by its name, and in paragraphs and addresses each line is separated with `<br/>` (an address is built as `Label: value` lines). If the question has no answer, `answer` is empty. If a question has several answers, such as a **Checkboxes** question with several options selected, it appears once per answer.
+
 ### question
 
 These objects allow you to get information via Liquid for questions on a form in the Customers module.
@@ -415,13 +417,13 @@ These objects obtain the information relevant to originations.
 | **origination.uid**                | The unique identifier of the origination flow.                             | ```my-origination```                                                                                    |
 | **origination.url**                | The URL of the origination flow page.                                      | ```https://test.modyo.com/new-site/myorigination```                                                     |
 | **origination.steps**              | List of step objects.                                                      | [view step documentation](/en/platform/channels/liquid-markup/objects.html#step)                        |
-| **origination.can_begin**          | Whether the user can begin the origination flow.                           | ```true```                                                                                              |
+| **origination.can_begin**          | `true` when the flow has at least one task. It does not evaluate the user: to know whether they can create a new submission, use `origination.can_create`. | ```true``` |
 | **origination.can_create**         | Whether the user can create a new submission for the origination flow.     | ```true```                                                                                              |
-| **origination.can_resume**         | Whether the user can resume a submission for the origination flow.         | ```true```                                                                                              |
-| **origination.begin_message**      | The beginning message for the origination flow.                            | ```"Welcome!"```                                                                                        |
+| **origination.can_resume**         | `true` when there is a submission in the page context and the flow has at least one task. Without a submission in the context it is `false`. | ```true``` |
+| **origination.begin_message**      | The origination flow description, rendered with Liquid. When the description is empty, it returns the default text "To start the process, click on the following button." | ```"Welcome!"``` |
 | **origination.completion_message** | The message to display upon completion of the origination flow.            | ```"All done"```                                                                                        |
 | **origination.ordered_steps**      | Whether the steps of the origination flow are ordered.                     | ```true```                                                                                              |
-| **origination.new_submission_url** | The URL to create a new submission for the origination flow.               | ```/originations/my-origination/new```                                                                  |
+| **origination.new_submission_url** | The URL to create a new submission for the flow, with the UUID of the origination page. It is empty when the flow has no origination page. | ```https://test.modyo.com/new-site/origination/0f8e2c1a-5b7d-4e3f-9a6c-2d4b8e1f7a90/new``` |
 | **origination.cancel_overdue**     | Whether the origination automatically cancels the submissions that exceed their due date.  | ```false```                                                                                             |
 
 ## page
@@ -558,9 +560,13 @@ These objects obtain the information relevant to the Submissions.
 | **submission.url**                      | The URL of the submission page.                                  | ```https://test.modyo.com/new-site/myorigination```                                                            |
 | **submission.uuid**                     | The unique identifier of the submission.                         | ```abcd-1234-5678-0000```                                                                                      |
 | **submission.tasks['task_identifier']** | The task responses for the submission. Task uid must be provided | [view task response types documentation](/en/platform/channels/liquid-markup/objects.html#task-response-types) |
-| **submission.resume_url**               | The URL to resume the submission.                                | ```/originations/my-origination/submissions/uuid/resume```                                                     |
-| **submission.start_info**               | Information about the start of the submission.                   | ```{"started_by":"user","at":"2025-02-15"}```                                                                  |
+| **submission.resume_url**               | The URL to resume the submission. It only accepts POST requests, so it does not work as a link. It is empty when the flow has no origination page. | ```https://test.modyo.com/new-site/origination/0f8e2c1a-5b7d-4e3f-9a6c-2d4b8e1f7a90/abcd-1234-5678-0000/begin``` |
+| **submission.start_info**               | Translated text, ready to display, with the submission UUID and its start date, or a notice that it has not started yet. | ```#abcd-1234-5678-0000 - Started at February 15, 2025 15:14``` |
 | **submission.steps**                    | The steps of the submission.                                     | ```[{"uid"=>"step-1", "name"=>"step 1", "is_completed"=>true, "link"=>"step 1"}{"uid"=>"step-2", "name"=>"step 2", "is_completed"=>false, "link"=>"step 2"}]```                                                                                     |
+
+::: tip Origination forms
+`origination.new_submission_url` and `submission.resume_url` receive form submissions: use them as the `action` of a `<form>` with `method="post"` and include the [csrf_param](/en/platform/channels/liquid-markup/tags.html#csrf-tags) tag inside the form, as the default origination page templates do.
+:::
 
 ### step
 
@@ -577,12 +583,14 @@ These objects obtain the information relevant to the Submissions.
 | **task.uid**         | Identifier of the task.         | ```task-01```                          |
 | **task.step**        | Step to which the task belongs. |                                        |
 | **task.name**        | Name of the task.               | ```Enter your personal information:``` |
-| **task.type**        | Task type.                      | ```user_input```                       |
+| **task.type**        | Task type, as a class name.     | ```Origination::UserInputTask```       |
 | **task.description** | Task description.               | ```Collect user data```                |
+
+The values of `task.type` match the [task types](/en/platform/customers/origination.html#task-types): `Origination::UserInputTask`, `Origination::ValidationTask`, `Origination::DigitalSignatureTask`, `Origination::PendingReviewTask`, `Origination::CodeSnippetTask`, `Origination::OriginationFlowTask`, `Origination::InvitationTask`, `Origination::IdentityVerificationTask`, and `Origination::ConfirmationTask`. Compare them against the full name, for example `task.type == 'Origination::UserInputTask'`.
 
 Additionally, depending on the task type, there may be further attributes.
 
-### user_input_task
+#### user_input_task
 
 | Object                     | Description           | Example                                                                                  |
 |----------------------------|-----------------------|------------------------------------------------------------------------------------------|
@@ -608,10 +616,10 @@ Every task response shares the attributes it inherits from the base response: `t
 | **code_snippet_task_response.data**           | The content of the code snippet. Alias for the `content` attribute. | ```{"submission"=>{"fields"=>{"car"=>"fiat", "year"=>1999, "color"=>"black", "extras"=>["ac", "gps", "sunroof"], "expiration"=>"2026-02-01"}}}``` |
 | **code_snippet_task_response.completed**      | Whether the task has been completed.                                | ```false```                                                                                                                                       |
 | **code_snippet_task_response.content**        | The content of the code snippet.                                    | ```{"submission"=>{"fields"=>{"car"=>"fiat", "year"=>1999, "color"=>"black", "extras"=>["ac", "gps", "sunroof"], "expiration"=>"2026-02-01"}}}``` |
-| **validation_task_response.validated**        | Whether the task has been validated.                                | ```true```                                                                                                                                        |
+| **validation_task_response.validated**        | It is `true` whenever the task response exists, even if it is still pending validation. To know whether the task is finished, compare `status` with `completed`. | ```true``` |
 | **digital_signature_task_response.signed**    | Whether the task has been signed.                                   | ```false```                                                                                                                                       |
 | **origination_flow_task_response.submission** | The submission of the origination flow task.                        | [view submission documentation](/en/platform/channels/liquid-markup/objects.html#submission)                                                      |
-| **invitation_task_response.completed** | Whether the task has been completed.                                | ```true```                                                                                                                                        |
+| **invitation_task_response.completed** | It is `true` whenever the task response exists, even if it is still pending. To know whether the task is finished, compare `status` with `completed`. | ```true``` |
 | **identity_verification_task_response.verification_details** | Hash with the verification detail: `document_type`, `document_status`, `biometric_status`, `verification_date`, `face_match_score`, and `liveness_score`. | ```{:document_type=>"national_id", :document_status=>"document_verified", :biometric_status=>"biometric_verified", :verification_date=>"2026-02-11T09:26:49.257-03:00", :face_match_score=>95.93251037597656, :liveness_score=>98.41004943847656}``` |
 | **identity_verification_task_response.ocr_data** | Unified, provider-agnostic accessor: it returns `ocr` and falls back to `extracted_information` when `ocr` is empty. Use it to iterate the document fields without branching per provider. | ```{"nombre"=>"Ivan Modyo", "numero_documento"=>"12.345.678-9"}``` |
 | **identity_verification_task_response.ocr** | Hash with the field/value pairs the provider extracted from the document. Empty when the provider does not return that structure. | ```{"nombre"=>"Ivan Modyo", "numero_documento"=>"12.345.678-9"}``` |
@@ -647,6 +655,15 @@ A repeatable group brings together several questions the user can answer more th
 :::warning Attention
 Do not confuse this object with `repeatable_group_field`, which appears in the [field](/en/platform/channels/liquid-markup/objects.html#field) reference. That one is a content field from the Content module; `repeatable_group` holds the answers to a form from the Customers module. They share the name and are unrelated.
 :::
+
+## target
+
+These drops allow you to obtain information from Targets. A target is the same object as [segment](/en/platform/channels/liquid-markup/objects.html#segment): `user.targets` returns the user's segments and `user.target_names`, their names. The available attributes are:
+
+| Object          | Description                                        | Example |
+|-----------------|----------------------------------------------------|---------|
+| **target.id**   | A string with the ID associated with the target.   |         |
+| **target.name** | A string with the name associated with the target. |         |
 
 ## type
 
