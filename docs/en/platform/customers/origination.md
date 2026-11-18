@@ -166,6 +166,8 @@ The field accepts `jpg`, `jpeg`, and `png` images, and that format is not config
 
 When the liveness check is enabled, its block appears **after** the user has captured or uploaded the selfie, with the **Start liveness check** button. Completing it is never mandatory: even if you mark the field as required, the only mandatory part is the photo.
 
+The liveness challenge runs inside the site page with Amazon Rekognition, so the site's content security policy (CSP) must allow its resources, as explained in [Identity verification CSP requirements](/en/platform/customers/origination.html#identity-verification-csp-requirements).
+
 When the challenge finishes, the user only sees that it was completed. The verdict is calculated after the submission is sent and is not shown to them. The possible statuses are **Pending**, **Processing**, **Verified**, **Rejected**, **Failed**, and **Skipped**.
 
 :::warning What the selfie is compared against
@@ -217,7 +219,7 @@ As with validation tasks, you can define an **Assignee** for the task: an admini
 
 The Identity Verification task asks the user to verify their identity by capturing a selfie, their identity document, and liveness detection, through a verification provider.
 
-To use this task, you must first enable an integration of the **Identity Verification** category in the [realm integrations](/en/platform/customers/settings.html#integrations), such as **Amazon Rekognition** or **Incode**.
+To use this task, you must first enable an integration of the **Identity Verification** category in the [realm integrations](/en/platform/customers/settings.html#integrations), such as **Amazon Rekognition** or **Incode**. If the site defines its own content security policy (CSP), also check the [Identity verification CSP requirements](/en/platform/customers/origination.html#identity-verification-csp-requirements).
 
 When configuring the task, you define:
 
@@ -230,6 +232,44 @@ If the provider is **Incode**, the task does not show **Features** or **Liveness
 During the flow, the user captures their selfie and document guided by the interface; the platform validates the quality of the images, extracts the document data, and compares the face on the document with the selfie.
 
 In the details of a submission, the **Identity Verification** tab shows the verification status, the **Face Match Score** and **Liveness Score**, the data extracted from the document, and the captured images.
+
+#### Identity verification CSP requirements
+
+With **Amazon Rekognition** and **NAAT.TECH**, the verification runs inside the site page, so the site's [content security policy (CSP)](/en/platform/channels/sites.html#content-security-policy-csp) must allow their resources. The platform does not add these sources to the site policy: if the site defines its own policy, add them to the existing directives. The Incode requirements are in [Drop-in requirements](/en/platform/customers/origination.html#drop-in-requirements).
+
+If the platform applies a default policy to sites, that policy does not include these sources. To use these providers, enable [Security headers](/en/platform/channels/sites.html#security-headers) on the site and define in **Content-Security-Policy (CSP)** a policy of its own that includes them: the site policy replaces the platform one.
+
+##### Amazon Rekognition
+
+It applies to this task and to [Selfie](/en/platform/customers/origination.html#selfie) fields with **Face liveness check**. Replace `<region>` with the **AWS Region** configured in the integration, for example `us-east-1`. In `cognito-identity`, the region is the identity pool's region, the one at the start of the **Cognito Identity Pool ID** (for example, `us-east-1` in `us-east-1:…`); it is usually the same.
+
+```bash
+script-src 'wasm-unsafe-eval'
+connect-src https://cognito-identity.<region>.amazonaws.com wss://streaming-rekognition.<region>.amazonaws.com https://cdn.liveness.rekognition.amazonaws.com
+img-src data: blob:
+```
+
+- `cognito-identity` provides the temporary credentials the browser uses to start the challenge, based on the integration's **Cognito Identity Pool ID**.
+- `streaming-rekognition` receives the video of the liveness challenge.
+- `cdn.liveness.rekognition.amazonaws.com` serves the face detection model and the WebAssembly module that runs it. `'wasm-unsafe-eval'` allows loading that module: without it, the challenge cannot start in browsers that support WebAssembly.
+- `data:` and `blob:` in `img-src` allow showing the photo previews: the task uses `data:`, and the **Selfie** and **Identity document** fields use `blob:` when capturing with the camera, even if the liveness check is not enabled.
+
+If the site is cross-origin isolated, with [Cross Origin Opener Policy (COOP)](/en/platform/channels/sites.html#cross-origin-opener-policy-coop) set to `same-origin` and [Cross Origin Embedder Policy (COEP)](/en/platform/channels/sites.html#cross-origin-embedder-policy-coep) set to `require-corp` or `credentialless`, also add `worker-src blob:`: in that case the WebAssembly module uses threads created from `blob:`.
+
+If the site defines [Permissions-Policy](/en/platform/channels/sites.html#permissions-policy), it must allow the camera on the site itself, for example `camera=(self)`.
+
+##### NAAT.TECH
+
+With the **NAAT.TECH** provider, the resources that are loaded depend on the task **Features**:
+
+- **Liveness**: The liveness check is shown in an iframe loaded from the **iFrame URL** configured in the integration. Add its origin to `frame-src`, for example `frame-src https://<iframe-url-origin>`.
+- **Document**: The document capture is done by the NAAT.TECH SDK inside the page, with the user's camera, and the domains it loads its resources from depend on the environment selected in **Environment** in the integration. Those domains are not listed here: ask NAAT.TECH for them or identify them with a test, as described below.
+
+The liveness check iframe requests access to the camera, microphone, geolocation, and full screen. If the site defines [Permissions-Policy](/en/platform/channels/sites.html#permissions-policy), it must delegate those permissions to the origin of the **iFrame URL**, for example `camera=(self "https://<iframe-url-origin>")`, and the same for `microphone`, `geolocation`, and `fullscreen`.
+
+::: tip Test the policy before enforcing it
+The resources these providers' SDKs load can change when they are updated. Before enforcing the policy, set it in [Content-Security-Policy-Report-Only](/en/platform/channels/sites.html#content-security-policy-report-only), complete the verification end to end, and check in the browser console which resources or permissions would be blocked. With NAAT.TECH, this is how you identify the domains of the document capture.
+:::
 
 #### Verification with Incode
 

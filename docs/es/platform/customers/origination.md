@@ -166,6 +166,8 @@ El campo acepta imágenes `jpg`, `jpeg` y `png`, y ese formato no es configurabl
 
 Cuando la verificación de vida está activa, el bloque correspondiente aparece **después** de que el usuario haya capturado o subido la selfie, con el botón **Iniciar verificación de vida**. Completarla nunca es obligatorio: aunque marques el campo como requerido, lo único obligatorio es la foto.
 
+El desafío de verificación de vida se ejecuta dentro de la página del sitio con Amazon Rekognition, así que la política de seguridad de contenido (CSP) del sitio debe permitir sus recursos, como se explica en [Requisitos de CSP de la verificación de identidad](/es/platform/customers/origination.html#requisitos-de-csp-de-la-verificacion-de-identidad).
+
 Al terminar el desafío, el usuario solo ve que se completó. El veredicto se calcula después de enviar la respuesta y no se le muestra. Los estados posibles son **Pendiente**, **Procesando**, **Verificada**, **Rechazada**, **Falló** y **Omitida**.
 
 :::warning Contra qué se compara la selfie
@@ -217,7 +219,7 @@ Al igual que en las tareas de validación, puedes definir un **Asignado** para l
 
 La tarea de Verificación de Identidad solicita al usuario verificar su identidad mediante la captura de una selfie, su documento de identidad y detección de vida (liveness), a través de un proveedor de verificación.
 
-Para usar esta tarea, primero debes habilitar una integración de la categoría **Verificación de Identidad** en las [integraciones del reino](/es/platform/customers/settings.html#integraciones), como **Amazon Rekognition** o **Incode**.
+Para usar esta tarea, primero debes habilitar una integración de la categoría **Verificación de Identidad** en las [integraciones del reino](/es/platform/customers/settings.html#integraciones), como **Amazon Rekognition** o **Incode**. Si el sitio define su propia política de seguridad de contenido (CSP), revisa también los [Requisitos de CSP de la verificación de identidad](/es/platform/customers/origination.html#requisitos-de-csp-de-la-verificacion-de-identidad).
 
 Al configurar la tarea defines:
 
@@ -230,6 +232,44 @@ Si el proveedor es **Incode**, la tarea no muestra **Características** ni **Aju
 Durante el flujo, el usuario captura su selfie y su documento guiado por la interfaz; la plataforma valida la calidad de las imágenes, extrae los datos del documento y compara el rostro del documento con la selfie.
 
 En los detalles de una respuesta, la pestaña **Verificación de Identidad** muestra el estado de la verificación, los puntajes de coincidencia facial (**Face Match Score**) y de detección de vida (**Liveness Score**), los datos extraídos del documento y las imágenes capturadas.
+
+#### Requisitos de CSP de la verificación de identidad
+
+Con **Amazon Rekognition** y **NAAT.TECH**, la verificación se ejecuta dentro de la página del sitio, así que la [política de seguridad de contenido (CSP)](/es/platform/channels/sites.html#content-security-policy-csp) del sitio debe permitir sus recursos. La plataforma no agrega estas fuentes a la política del sitio: si el sitio define su propia política, agrégalas a las directivas existentes. Los requisitos de Incode están en [Requisitos de Drop-in](/es/platform/customers/origination.html#requisitos-de-drop-in).
+
+Si la plataforma aplica una política por defecto a los sitios, esa política no incluye estas fuentes. Para usar estos proveedores, habilita [Security headers](/es/platform/channels/sites.html#security-headers) en el sitio y define en **Content-Security-Policy (CSP)** una política propia que las incluya: la política del sitio reemplaza a la de la plataforma.
+
+##### Amazon Rekognition
+
+Aplica a esta tarea y a los campos [Selfie](/es/platform/customers/origination.html#selfie) con **Verificación de vida (liveness)**. Reemplaza `<region>` por la **Región AWS** configurada en la integración, por ejemplo `us-east-1`. En `cognito-identity`, la región es la del pool de identidad, la que aparece al inicio del **ID de Pool de Identidad de Cognito** (por ejemplo, `us-east-1` en `us-east-1:…`); normalmente es la misma.
+
+```bash
+script-src 'wasm-unsafe-eval'
+connect-src https://cognito-identity.<region>.amazonaws.com wss://streaming-rekognition.<region>.amazonaws.com https://cdn.liveness.rekognition.amazonaws.com
+img-src data: blob:
+```
+
+- `cognito-identity` entrega las credenciales temporales con las que el navegador inicia el desafío, a partir del **ID de Pool de Identidad de Cognito** de la integración.
+- `streaming-rekognition` recibe el video del desafío de verificación de vida.
+- `cdn.liveness.rekognition.amazonaws.com` entrega el modelo de detección de rostro y el módulo WebAssembly que lo ejecuta. `'wasm-unsafe-eval'` permite cargar ese módulo: sin él, el desafío no puede iniciarse en los navegadores compatibles con WebAssembly.
+- `data:` y `blob:` en `img-src` permiten mostrar la vista previa de las fotos: la tarea usa `data:`, y los campos **Selfie** y **Documento de identidad** usan `blob:` al capturar con la cámara, aunque no tengan activa la verificación de vida.
+
+Si el sitio queda aislado de origen cruzado, con [Cross Origin Opener Policy (COOP)](/es/platform/channels/sites.html#cross-origin-opener-policy-coop) en `same-origin` y [Cross Origin Embedder Policy (COEP)](/es/platform/channels/sites.html#cross-origin-embedder-policy-coep) en `require-corp` o `credentialless`, agrega también `worker-src blob:`: en ese caso el módulo WebAssembly usa hilos que se crean desde `blob:`.
+
+Si el sitio define [Permissions-Policy](/es/platform/channels/sites.html#permissions-policy), debe permitir la cámara en el propio sitio, por ejemplo `camera=(self)`.
+
+##### NAAT.TECH
+
+Con el proveedor **NAAT.TECH**, los recursos que se cargan dependen de las **Características** de la tarea:
+
+- **Liveness**: La prueba de vida se muestra en un iframe que se carga desde la **URL del iFrame** configurada en la integración. Agrega su origen a `frame-src`, por ejemplo `frame-src https://<origen-de-la-url-del-iframe>`.
+- **Documento**: La captura del documento la hace el SDK de NAAT.TECH dentro de la página, con la cámara del usuario, y los dominios desde los que carga sus recursos dependen del ambiente elegido en **Environment** en la integración. Esos dominios no se listan aquí: pídelos a NAAT.TECH o identifícalos con una prueba, como se indica más abajo.
+
+El iframe de la prueba de vida solicita acceso a la cámara, el micrófono, la geolocalización y la pantalla completa. Si el sitio define [Permissions-Policy](/es/platform/channels/sites.html#permissions-policy), debe delegar esos permisos al origen de la **URL del iFrame**, por ejemplo `camera=(self "https://<origen-de-la-url-del-iframe>")`, y lo mismo con `microphone`, `geolocation` y `fullscreen`.
+
+::: tip Prueba la política antes de aplicarla
+Los recursos que cargan los SDK de estos proveedores pueden cambiar cuando se actualizan. Antes de aplicar la política, configúrala en [Content-Security-Policy-Report-Only](/es/platform/channels/sites.html#content-security-policy-report-only), completa la verificación de punta a punta y revisa en la consola del navegador qué recursos o permisos quedarían bloqueados. Con NAAT.TECH, es la forma de identificar los dominios de la captura del documento.
+:::
 
 #### Verificación con Incode
 

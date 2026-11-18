@@ -324,7 +324,7 @@ To configure it, you need:
 - **Enable Audit Images**: Stores audit images of each liveness detection session.
 - **Enable Photosensitivity Check**: Enables the color challenge during liveness detection and includes a photosensitivity warning for the user.
 
-Once enabled, the provider becomes available in the [Identity Verification](/en/platform/customers/origination.html#identity-verification) tasks of the realm's originations.
+Once enabled, the provider becomes available in the [Identity Verification](/en/platform/customers/origination.html#identity-verification) tasks of the realm's originations. If the site defines its own content security policy (CSP), it must include the sources listed in [Identity verification CSP requirements](/en/platform/customers/origination.html#identity-verification-csp-requirements).
 
 ### Incode
 
