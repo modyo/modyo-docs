@@ -8,7 +8,7 @@ En cualquier parte de Channels (Sitios, Widgets y Plantillas), puedes usar Liqui
 
 ## Desplegar Listado de Entradas de un Tipo
 
-En [Páginas de Contenido](/es/platform/channels/pages#pagina-de-contenido), puedes generar un listado de todas las Entradas de un Tipo. En este ejemplo, se obtienen todas las Entradas del Tipo `product` en el Espacio `My Bank`. La variable `entries` de la línea 1 obtiene un array del objeto [Entry](/es/platform/channels/liquid-markup/objects#entrada). Este array se itera para mostrar el `meta.uuid` y `meta.title` de cada Entrada por fila. 
+En [Páginas de Contenido](/es/platform/channels/pages#pagina-de-contenido), puedes generar un listado de todas las Entradas de un Tipo. En este ejemplo, se obtienen todas las Entradas del Tipo `product` en el Espacio `My Bank`. La variable `entries` de la línea 1 obtiene un array del objeto [Entry](/es/platform/channels/liquid-markup/objects#entry). Este array se itera para mostrar el `meta.uuid` y `meta.title` de cada Entrada por fila. 
 
 ```liquid
 {% assign entries = spaces['my-bank'].types['product'].entries %}
@@ -52,15 +52,16 @@ Todos los filtros deben recibir un array de Entries y es posible concatenar múl
 
 ### Filtro
 
-En el siguiente ejemplo, filtramos las Entradas de tipo `post` con categoría `news`. Luego, mostramos todas las Entradas de tipo `news`:
+En el siguiente ejemplo, filtramos las Entradas de tipo `post` con categoría `news`. Luego, mostramos un enlace a cada una:
 
 ```liquid
 {% assign entries = spaces['my-bank'].types['post'].entries | by_category: 'news' %}
 <p>News:</p>
 <ul>
 {% for entry in entries %}
-<li><a href="entry.url">{{ entry.meta.title }}</a></li>
-{% endfor %}    
+<li><a href="{{ entry.meta.url }}">{{ entry.meta.title }}</a></li>
+{% endfor %}
+</ul>
 ```
 
 ### Filtro concatenado
@@ -72,25 +73,28 @@ En el siguiente ejemplo, filtramos las Entradas de tipo `post` con categoría `n
 <p>News for you!</p>
 <ul>
 {% for entry in entries %}
-<li><a href="entry.url">{{ entry.meta.title }}</a></li>
-{% endfor %}    
+<li><a href="{{ entry.meta.url }}">{{ entry.meta.title }}</a></li>
+{% endfor %}
+</ul>
 ```
 
 ### Filter_by
 
-El filtro `filter_by` se utiliza para atributos meta o campos personalizados del Tipo de Contenido, por ejemplo:
+El filtro `filter_by` se utiliza para atributos meta o campos personalizados del Tipo de Contenido. Escribe el campo con su prefijo, `fields.` para un campo personalizado o `meta.` para un atributo meta, junto con un operador, como `eq`. Sin el prefijo, el filtro no se aplica y devuelve todas las entradas. Revisa los operadores disponibles en [Filter By](/es/platform/channels/liquid-markup/filters#filter-by-operadores-extendidos).
+
+En este ejemplo, se filtran las entradas por el valor de un campo personalizado, se ordenan por el campo `date` y se muestran las primeras 8:
 
 ```liquid
-{% assign entries = spaces['space_uid'].types['type_uid'].entries | filter_by: field: 'field_name' | sort_by: 'fields.date' , 'desc' | limit 8 %}
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | filter_by: field: 'fields.field_uid', eq: 'value_to_filter' | sort_by: 'fields.date', 'desc' | limit: 8 %}
 {% for entry in entries %}
   entry: {{ entry.meta.uuid }} -- {{ entry.meta.title }}<br />
 {% endfor %}
 ```
 
-Si quieres negar un valor dentro del filtro de campos, puedes usar `not` dentro del filtro:
+Si quieres negar un valor dentro del filtro de campos, puedes usar `not` dentro del filtro. Con `nil` como valor, como en este ejemplo, obtienes las entradas que tienen algún valor en el campo:
 
 ```liquid
-{% assign entries = spaces['space_uid'].types['type_uid'].entries | filter_by: field: 'field_name', not: nil %}
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | filter_by: field: 'fields.field_uid', not: nil %}
 {% for entry in entries %}
   entry: {{ entry.meta.uuid }} -- {{ entry.meta.title }}<br />
 {% endfor %}
@@ -127,19 +131,19 @@ Para usar la paginación en un widget personalizado, se debe cambiar el filtro a
 
 ## Ordenamiento de Entradas
 
-De la misma forma en que se puede filtrar por categoría (`by_category`), tags (`by_tags`) y por UUID (`by_uuid`), se puede crear un filtro para ordenar los resultados por los atributos "meta" (`name`, `slug`, `created_at`, `updated_at`, `published_at`) de las entradas usando los filtros `sort_by`, de la siguiente forma:
+De la misma forma en que se puede filtrar por categoría (`by_category`), tags (`by_tag`) y por UUID (`by_uuid`), se puede crear un filtro para ordenar los resultados por los atributos "meta" (`name`, `slug`, `created_at`, `updated_at`, `published_at`) de las entradas usando los filtros `sort_by`, de la siguiente forma:
 
 ```liquid
 {% assign entries = spaces['space_uid'].types['type_uid'].entries | sort_by: 'published_at','asc' %}
 ```
 
 Los valores posibles para el orden son `asc` y `desc`. Por defecto, si el parámetro no se especifica, se usa `desc`.
-Los valores posibles para `sort_by` son: `name`, `published_at`, `created_at`, `updated_at`, `slug` y `field`.
+Los valores posibles para `sort_by` son `name`, `published_at`, `created_at`, `updated_at`, `slug` o un campo personalizado. Revisa todas las opciones en [Sort By](/es/platform/channels/liquid-markup/filters#sort-by).
 
 Para ordenar por un campo personalizado, debes usar como parámetro el `fields.uid` del campo:
 
 ```liquid
-{% assign entries = spaces['space_uid'].types['type_uid'].entries | filter_by: field: 'field_name', eq: 'value_to_filter' | sort_by: 'fields.date' , 'desc' | limit 8 %}
+{% assign entries = spaces['space_uid'].types['type_uid'].entries | filter_by: field: 'fields.field_uid', eq: 'value_to_filter' | sort_by: 'fields.date', 'desc' | limit: 8 %}
 {% for entry in entries %}
   entry: {{ entry.meta.uuid }} -- {{ entry.meta.title }}<br />
 {% endfor %}
