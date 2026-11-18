@@ -4,7 +4,7 @@ search: true
 
 # Managing private sessions using OpenID Connect (OIDC)
 
-Interact with a private API using Modyo's private session with an OIDC integration. This integration consists of two steps: **making the site private** and **enabling the integration at the account level**.
+Interact with a private API using Modyo's private session with an OIDC integration. This integration consists of two steps: **making the site private** and **enabling the integration at the realm level**. The team's OpenID Connect integration, in **Settings** > **Identity Providers**, only lets you log in to the administrator and does not give a session to your sites' users.
 
 ## 1. Make the site private
 
@@ -15,7 +15,7 @@ A private site allows only registered users of Modyo Platform to access this sit
 1. In the `Site Settings` section, click **General**.
 1. In the **Privacy** tab, select the **Private** option. 
 
-Also enable **Show home to public visitors** to be able to redirect users without a session.
+Also enable **Show home page to public visitors** to be able to redirect users without a session.
 
 #### Enable integration at the Realm level (for all users and sites that belong to the realm)
 
@@ -27,7 +27,7 @@ Also enable **Show home to public visitors** to be able to redirect users withou
   * **Client ID**
   * **Secret**
   * **Issuer**
-5. Click **Run discovery service** to ensure that a connection was achieved.
+5. Click **Run discovery service** to fill in the provider's endpoints and scopes. Check the required fields and reduce the scopes as described in [Integration settings](/en/platform/core/integrations/identity-providers.html#integration-settings).
 6. Enable the following options if needed:
     * **Enable refresh token**
     * **Enable remote logout**
@@ -103,7 +103,7 @@ axios_auth.interceptors.request.use(resetIdleTime);
 axios_api.interceptors.request.use(appendTokenToRequest ,errorRequest);
 ```
 
-5. Change the name `API URL` to the URL where the Modyo Platform API is located.
+5. Replace `URL DE API` with the URL of the external API you want to call with your provider's access token. That API must accept the tokens issued by your identity provider: it is not the Modyo Platform API.
 
 ::: tip Delegated token
 The interceptor gets the access token issued by your provider from the [Customers API](/en/platform/customers/api.html#delegated-tokens), in the `delegated_token.access_token` field. This field only has data if you turned on **Display delegation info** in the integration; otherwise, it comes empty (`null`). The calls go to `user.realm_base_url`, which is the realm's [custom domain](/en/platform/customers/settings.html#domains) when it is active and, otherwise, your account URL: that is where the user's session lives. If your site uses a different domain, it must share the main domain with the realm's (for example, `www.mybank.com` and `login.mybank.com`), because the browser does not send the session cookie across different domains. Also, turn on **Enable CORS** in the **Cross Origin Resource Sharing** section of the realm's [Security](/en/platform/customers/settings.html#security).
