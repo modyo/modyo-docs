@@ -450,17 +450,18 @@ The example follows these practices, recommended so the snippet works reliably o
 - **`content` in the request body**: the POST sends `content` as JSON in the body, with the token from the page's `<meta name="csrf-token">` tag in the `X-CSRF-Token` header. Without that token, the platform rejects the request.
 - **The whole object in every POST**: each request replaces what was saved before, so the snippet always sends all the data. Numeric values go as numbers, not as text.
 - **Enable Next after saving**: the snippet calls `enableButton()` when the POST succeeds, and the user clicks **Next** to complete the task. Since the API has no function to disable the button again, the fields use browser validation (`required`, `min`, and `max`), which prevents moving on if the user changes a value to an invalid one.
+- **Fields disabled while loading**: the fields start disabled and the snippet enables them after it retrieves the saved data, also if loading fails. This way, an edit the user makes before that is neither lost nor left unsaved.
 - **Save before moving on**: if the user clicks **Next** or presses Enter with changes that are not saved yet, the snippet stops the form submission, finishes saving, and submits it again with `requestSubmit()`. This way, the task is completed with the data the user sees.
 
 ```html
 <div id="loan-{{ task.uid }}">
   <div class="form-group">
     <label for="loan-amount-{{ task.uid }}" class="form-label">Loan amount <span class="req">*</span></label>
-    <input type="number" class="form-control" id="loan-amount-{{ task.uid }}" data-field="amount" min="100000" max="50000000" step="1" required>
+    <input type="number" class="form-control" id="loan-amount-{{ task.uid }}" data-field="amount" min="100000" max="50000000" step="1" required disabled>
   </div>
   <div class="form-group">
     <label for="loan-term-{{ task.uid }}" class="form-label">Term <span class="req">*</span></label>
-    <select class="form-select" id="loan-term-{{ task.uid }}" data-field="term" required>
+    <select class="form-select" id="loan-term-{{ task.uid }}" data-field="term" required disabled>
       <option value="12">12 months</option>
       <option value="24" selected>24 months</option>
       <option value="36">36 months</option>
@@ -592,6 +593,8 @@ The example follows these practices, recommended so the snippet works reliably o
       }
       amountInput.addEventListener('input', scheduleSave);
       termSelect.addEventListener('change', scheduleSave);
+      amountInput.disabled = false;
+      termSelect.disabled = false;
     });
   })();
 </script>
