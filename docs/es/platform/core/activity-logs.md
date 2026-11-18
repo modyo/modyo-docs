@@ -8,7 +8,7 @@ Esta sección muestra un registro cronológico detallado de las actividades real
 
 Para entrar a esta sección necesitas el permiso agrupado **Ver Logs de Actividad**. Lo que alcanzas a ver dentro de ella depende además de tus roles, con las mismas reglas de alcance que describe [Qué registros ves](/es/platform/core/api.html#que-registros-ves).
 
-La auditabilidad que te ofrece Modyo en este espacio, garantiza la posibilidad de examinar todas las acciones realizadas por cualquier administrador. Esto es fundamental para determinar de manera precisa las responsabilidades que corresponden en cada operación.
+Si eres el dueño de la cuenta o tienes el rol **Full admin**, ves las acciones de todos los administradores y las acciones automáticas de la plataforma, lo que te permite determinar con precisión a quién corresponde cada operación. Cualquier otro administrador ve en esta pantalla solo sus propias acciones, aunque tenga roles en reinos, sitios o espacios, y el filtro **Tipo** le ofrece solo los tipos de esos registros.
 
 
 ## Sobre la Interfaz
@@ -18,8 +18,8 @@ En la interfaz de logs de actividad puedes ver quién realizó cada acción, de 
 Puedes filtrar los eventos por:
 
 - **Fecha**: Filtra por un período específico o selecciona una fecha de inicio y finalización.
-- **Tipo**: Filtra por tipo de eventos, como creación, actualización o eliminación de una campaña, creación o actualización de una entrada, actualización o borrado de un sitio, habilitación de usuario, entre otros. El desplegable no lista el catálogo completo: solo ofrece los tipos de los que ya existe al menos un registro en tu cuenta, hasta un máximo de 100.
-- **Administrador**: Selecciona un administrador en específico para ver solo sus actividades, elige **Sistema** para aislar las acciones automáticas de la plataforma, o deja el filtro sin selección para ver todas las actividades. Este filtro aparece solo si tu rol incluye el permiso agrupado **Administrar Equipo**.
+- **Tipo**: Filtra por tipo de eventos, como creación, actualización o eliminación de una campaña, creación o actualización de una entrada, actualización o borrado de un sitio, habilitación de usuario, entre otros. El desplegable no lista el catálogo completo: solo ofrece los tipos de los que ya existe al menos un registro en tu cuenta.
+- **Administrador**: Selecciona un administrador en específico para ver solo sus actividades, elige **Sistema** para aislar las acciones automáticas de la plataforma, o deja el filtro sin selección para ver todas las actividades. Este filtro aparece solo si eres el dueño de la cuenta o tienes el rol **Full admin**.
 
 :::tip Tip
 Los registros se incorporan al listado y al desplegable del filtro **Tipo** unos segundos después de que ocurre la acción. Si acabas de ejecutar algo y todavía no lo ves, recarga la pantalla.
@@ -59,7 +59,7 @@ Entre las acciones que la plataforma registra por su cuenta están:
 
 ## Qué queda auditado
 
-El catálogo de tipos de evento es cerrado: la plataforma define 291 tipos y no puedes crear tipos nuevos ni editar los existentes. Cada tipo tiene un nombre visible, que es el que aparece en el filtro **Tipo** y en la columna **Tipo**, y un identificador estable, que es el valor del campo `type` en el [API de Logs](/es/platform/core/api.html#registros-logs) y el que llega como `trigger_uid` en los [Webhooks](/es/platform/core/webhooks.html). Para conocer el identificador de un evento concreto, abre su detalle.
+El catálogo de tipos de evento es cerrado: lo define la plataforma y no puedes crear tipos nuevos ni editar los existentes. Cada tipo tiene un nombre visible, que es el que aparece en el filtro **Tipo** y en la columna **Tipo**, y un identificador estable, que es el valor del campo `type` en el [API de Logs](/es/platform/core/api.html#registros-logs) y el que llega como `trigger_uid` en los [Webhooks](/es/platform/core/webhooks.html). Para conocer el identificador de un evento concreto, abre su detalle.
 
 Estos son los dominios que quedan auditados:
 
@@ -74,9 +74,9 @@ Estos son los dominios que quedan auditados:
 | Clientes y usuarios finales | Reinos; usuarios finales, con su alta por formulario, invitación, proveedor de identidad, SCIM, registro o compra, y con su verificación, habilitación, deshabilitación, etiquetas, suplantación y actualizaciones masivas; notas de miembro; campos personalizados de usuario y sus opciones; segmentos. |
 | Mensajería | Campañas y sus bloqueos; envíos iniciados y detenidos; plantillas de correo; eventos de entrega de correo, con envío, entrega, apertura, click, rebote, reporte de spam y baja; notificaciones abiertas. |
 | Formularios | Creación, edición, habilitación, deshabilitación y borrado de formularios; sus bloqueos; respuestas creadas, actualizadas, eliminadas y borradas en lote. |
-| Origination | Originaciones, con su creación, actualización, publicación y borrado; invitaciones enviadas, reenviadas y canceladas; respuestas, con su inicio, asignación, actualización, cancelación, término, suplantación y borrado; respuestas a tareas, con su inicio, término, revisión, reapertura y validación. |
+| Origination | Originaciones, con su creación, actualización, publicación y borrado; invitaciones enviadas, reenviadas y canceladas; respuestas, con su inicio, asignación, actualización, cancelación, término, suplantación y borrado; respuestas a tareas, con su inicio, término, revisión, reapertura y validación; errores de NAAT.TECH en la verificación de identidad. |
 | Pagos | Órdenes, con su creación, confirmación, pago, rechazo y seguimiento, y los errores de cada uno de esos pasos; tarjetas tokenizadas, con su inscripción, activación, baja y fallos. |
-| Integraciones y automatización | Integraciones y sus sincronizaciones, exitosas y fallidas; webhooks; tareas de proceso; desinstalación de aplicaciones. |
+| Integraciones y automatización | Integraciones y sus sincronizaciones, exitosas y fallidas; webhooks y el re-disparo de sus entregas; tareas de proceso; desinstalación de aplicaciones. |
 
 ## Identificadores de trazabilidad de originación
 
@@ -109,9 +109,9 @@ Los eventos del flujo de revisión quedan fuera de esta pantalla a propósito: c
 
 ## Exportar el listado
 
-Marca la casilla al lado de uno o varios registros y haz click en el botón **Exportar**, ubicado debajo del listado, para elegir el formato (Excel o CSV) y generar el archivo. Si en lugar de marcar registros sueltos seleccionas todos los resultados, la exportación toma los filtros que tengas aplicados.
+Marca la casilla al lado de uno o varios registros y haz click en el botón **Exportar**, ubicado debajo del listado, para elegir el formato (Excel o CSV) y generar el archivo. Si en lugar de marcar registros sueltos extiendes la selección a todos los resultados, la exportación aplica los filtros **Fecha** y **Tipo** que tengas puestos.
 
-El archivo trae una fila por registro con cinco columnas: **Tipo**, **Origen**, **Aplicación**, **Creado el** y **Usuario**. Los registros de acciones automáticas salen con **Sistema** en la columna **Usuario**.
+El archivo trae una fila por registro con cinco columnas: **Tipo**, **Origen**, **Aplicación**, **Creado el** y **Usuario**. Los registros de acciones automáticas salen con **Sistema** en la columna **Usuario**. Los registros sin un administrador asociado, que el listado muestra como **Usuario no registrado**, no se incluyen en el archivo.
 
 :::tip Tip
 En el archivo, **Tipo** y **Origen** traen los valores internos del registro, por ejemplo `Entry published log` y `Content::Entry`, y no las etiquetas traducidas que ves en el listado.

@@ -8,7 +8,7 @@ This section shows a detailed chronological record of the activities carried out
 
 To enter this section you need the **View Activity Logs** grouped permission. What you can see inside it also depends on your roles, following the same scope rules described in [What logs you see](/en/platform/core/api.html#what-logs-you-see).
 
-The auditability offered by Modyo in this space guarantees the possibility of examining all actions carried out by any administrator. This is essential to accurately determine the responsibilities that correspond to each operation.
+If you are the account owner or hold the **Full admin** role, you see the actions of every administrator and the platform's automated actions, which lets you accurately determine who is responsible for each operation. Any other administrator sees only their own actions on this screen, even if they have roles in realms, sites, or spaces, and the **Type** filter only offers them the types of those records.
 
 
 ## About the Interface
@@ -18,8 +18,8 @@ In the activity logs interface, you can see who performed each action, what type
 You can filter events by:
 
 - **Date**: Filter by a specific period or select a start and end date.
-- **Type**: Filter by type of events, such as creating, updating or deleting a campaign, creating or updating a post, updating or deleting a site, user enablement, and others. The dropdown does not list the full catalog: it only offers the types that already have at least one record in your account, up to a maximum of 100.
-- **Admin**: Select a specific administrator to see only their activities, choose **System** to isolate the platform's automated actions, or leave the filter unselected to see every activity. This filter only appears if your role includes the **Admin Team** grouped permission.
+- **Type**: Filter by type of events, such as creating, updating or deleting a campaign, creating or updating a post, updating or deleting a site, user enablement, and others. The dropdown does not list the full catalog: it only offers the types that already have at least one record in your account.
+- **Admin**: Select a specific administrator to see only their activities, choose **System** to isolate the platform's automated actions, or leave the filter unselected to see every activity. This filter only appears if you are the account owner or hold the **Full admin** role.
 
 :::tip Tip
 Records are added to the list and to the **Type** filter dropdown a few seconds after the action happens. If you just did something and still don't see it, reload the screen.
@@ -59,7 +59,7 @@ Among the actions the platform records on its own are:
 
 ## What gets audited
 
-The catalog of event types is closed: the platform defines 291 types, and you cannot create new types or edit the existing ones. Each type has a visible name, the one shown in the **Type** filter and in the **Type** column, and a stable identifier, which is the value of the `type` field in the [Logs API](/en/platform/core/api.html#logs) and the one that arrives as `trigger_uid` in [Webhooks](/en/platform/core/webhooks.html). To find the identifier of a specific event, open its detail.
+The catalog of event types is closed: the platform defines it, and you cannot create new types or edit the existing ones. Each type has a visible name, the one shown in the **Type** filter and in the **Type** column, and a stable identifier, which is the value of the `type` field in the [Logs API](/en/platform/core/api.html#logs) and the one that arrives as `trigger_uid` in [Webhooks](/en/platform/core/webhooks.html). To find the identifier of a specific event, open its detail.
 
 These are the domains that get audited:
 
@@ -74,9 +74,9 @@ These are the domains that get audited:
 | Customers and end users | Realms; end users, with their creation through a form, invitation, identity provider, SCIM, signup, or purchase, and with their verification, enabling, disabling, tags, impersonation, and bulk updates; member notes; user custom fields and their options; segments. |
 | Messaging | Campaigns and their locks; deliveries started and stopped; mail templates; mail delivery events, with sent, delivered, opened, click, bounce, spam report, and unsubscribe; opened notifications. |
 | Forms | Creation, editing, enabling, disabling, and deletion of forms; their locks; responses created, updated, deleted, and bulk deleted. |
-| Origination | Originations, with their creation, update, publication, and deletion; invitations sent, resent, and cancelled; submissions, with their start, assignment, update, cancellation, completion, impersonation, and deletion; task responses, with their start, completion, review, reopening, and validation. |
+| Origination | Originations, with their creation, update, publication, and deletion; invitations sent, resent, and cancelled; submissions, with their start, assignment, update, cancellation, completion, impersonation, and deletion; task responses, with their start, completion, review, reopening, and validation; NAAT.TECH errors in identity verification. |
 | Payments | Orders, with their creation, confirmation, payment, rejection, and tracking, plus the errors of each of those steps; tokenized cards, with their enrollment, activation, removal, and failures. |
-| Integrations and automation | Integrations and their synchronizations, both successful and failed; webhooks; process tasks; app uninstallation. |
+| Integrations and automation | Integrations and their synchronizations, both successful and failed; webhooks and the redelivery of their deliveries; process tasks; app uninstallation. |
 
 ## Origination traceability identifiers
 
@@ -109,9 +109,9 @@ Review workflow events are deliberately left out of this screen: creation, editi
 
 ## Export the list
 
-Check the box next to one or more records and click on the **Export** button, located below the list, to choose the format (Excel or CSV) and generate the file. If instead of checking individual records you select all results, the export uses the filters you have applied.
+Check the box next to one or more records and click on the **Export** button, located below the list, to choose the format (Excel or CSV) and generate the file. If instead of checking individual records you extend the selection to all results, the export applies the **Date** and **Type** filters you have set.
 
-The file carries one row per record with five columns: **Type**, **Origin**, **App**, **Created at**, and **User**. Records of automated actions come out with **System** in the **User** column.
+The file carries one row per record with five columns: **Type**, **Origin**, **App**, **Created at**, and **User**. Records of automated actions come out with **System** in the **User** column. Records without an associated administrator, which the list shows as **Unregistered User**, are left out of the file.
 
 :::tip Tip
 In the file, **Type** and **Origin** carry the record's internal values, for example `Entry published log` and `Content::Entry`, and not the translated labels you see in the list.
