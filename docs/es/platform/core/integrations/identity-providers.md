@@ -130,7 +130,7 @@ Para poder integrar un inicio de sesión con OAuth2 en Modyo, necesitarás los s
 - **Marcador de campo de login**: Texto que se mostrará en el campo de identificación como placeholder si el usuario no ha rellenado el campo.
 - **Usar SSL**: Actívalo si **URL del token de autorización** usa HTTPS.
 
-Para crear un cliente OAuth, ve [Cliente OAuth](/es/platform/customers/settings#cliente-oauth).
+Para crear un cliente OAuth, ve [Cliente OAuth](/es/platform/customers/settings.html#cliente-oauth).
 
 
 ## OpenID Connect

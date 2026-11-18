@@ -130,7 +130,7 @@ In order to integrate a login with OAuth2 in Modyo, you will need the following 
 - **Login Field Placeholder**: Text to be displayed in the identification field as placeholder if the user has not filled in the field.
 - **Use SSL**: Turn it on if **Authorization Token URL** uses HTTPS.
 
-To create an OAuth client, go to [OAuth Client](/en/platform/customers/settings#oauth-client).
+To create an OAuth client, go to [OAuth Client](/en/platform/customers/settings.html#oauth-client).
 
 
 ## OpenID Connect
