@@ -68,6 +68,8 @@ Every session and profile view of a realm hangs from the same prefix, built with
 | `/profile/change_email` | Email change request. The user confirms their current password and the new address stays pending until they verify it. |
 | `/confirm_email/:activation_code` | Confirms the new address from the verification link. The link expires after 5 minutes. |
 | `/profile/delete_user` | Permanent deletion of the user's account. |
+| `/profile/privacy` | [Privacy center](/en/platform/customers/consent.html#privacy-center), where the user reviews and changes their consents. Available when the plan includes the Consent module. |
+| `/profile/rights_requests` | The user's rights requests and the form to submit a new one. Available when the plan includes the Consent module. |
 | `/otp_login` | Login view with a one-time code, available when the realm has Soft login enabled: it asks for the user's identifier instead of the password. |
 | `/otp_signup` | Sends the one-time code of a Soft login registration and takes the user to the code screen. |
 | `/otp_code` | Screen where the user types the 6-digit code they received. |
