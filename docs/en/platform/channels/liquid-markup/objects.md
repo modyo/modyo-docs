@@ -559,7 +559,7 @@ These objects obtain the information relevant to the Submissions.
 | **submission.origination**              | Origination object.                                              | [view origination documentation](/en/platform/channels/liquid-markup/objects.html#origination)                 |
 | **submission.url**                      | The URL of the submission page.                                  | ```https://test.modyo.com/new-site/myorigination```                                                            |
 | **submission.uuid**                     | The unique identifier of the submission.                         | ```abcd-1234-5678-0000```                                                                                      |
-| **submission.tasks['task_identifier']** | The task responses for the submission. Task uid must be provided | [view task response types documentation](/en/platform/channels/liquid-markup/objects.html#task-response-types) |
+| **submission.tasks['task_identifier']** | The response of the user viewing the page to the task with that uid. It returns `nil` when there is no signed-in user or that user does not have a response to that task yet. In a multi-user origination, each participant only gets their own responses. | [view task response types documentation](/en/platform/channels/liquid-markup/objects.html#task-response-types) |
 | **submission.resume_url**               | The URL to resume the submission. It only accepts POST requests, so it does not work as a link. It is empty when the flow has no origination page. | ```https://test.modyo.com/new-site/origination/0f8e2c1a-5b7d-4e3f-9a6c-2d4b8e1f7a90/abcd-1234-5678-0000/begin``` |
 | **submission.start_info**               | Translated text, ready to display, with the submission UUID and its start date, or a notice that it has not started yet. | ```#abcd-1234-5678-0000 - Started at February 15, 2025 15:14``` |
 | **submission.steps**                    | The steps of the submission.                                     | ```[{"uid"=>"step-1", "name"=>"step 1", "is_completed"=>true, "link"=>"step 1"}{"uid"=>"step-2", "name"=>"step 2", "is_completed"=>false, "link"=>"step 2"}]```                                                                                     |
@@ -603,13 +603,78 @@ Additionally, depending on the task type, there may be further attributes.
 | **invitation_task.target_tasks**    | Lists the task objects the guest has to complete. Empty when the task has no invitation configured. | [view task documentation](/en/platform/channels/liquid-markup/objects.html#task) |
 | **invitation_task.max_invitations** | Maximum number of invitations you can send from this task.                                          | ```12```                                                                         |
 
+#### validation_task
+
+| Object | Description | Example |
+|--------|-------------|---------|
+| **validation_task.validation** | Validation settings. | |
+| **validation_task.validation.assignee** | Administrator set as the task **Assignee**. Returns an adminuser object. Empty when the task has no administrator assigned. | [view adminuser documentation](/en/platform/channels/liquid-markup/objects.html#adminuser) |
+| **validation_task.validation.assignee_group** | Administrator group set as the task **Assignee**. Returns a group object. Empty when the task is not assigned to a group. | [view group documentation](/en/platform/channels/liquid-markup/objects.html#group) |
+| **validation_task.validation.assignee_context_group** | Group within which the assigned administrator was chosen, when you assign the task to a specific user of a group. Returns a group object. | [view group documentation](/en/platform/channels/liquid-markup/objects.html#group) |
+| **validation_task.validation.validation_task_items** | Lists the task objects whose responses are validated in this task. | [view task documentation](/en/platform/channels/liquid-markup/objects.html#task) |
+
+#### digital_signature_task
+
+| Object | Description | Example |
+|--------|-------------|---------|
+| **digital_signature_task.signature** | Signature settings. | |
+| **digital_signature_task.signature.document** | Document the user signs, in HTML. | ```<p>Product terms and conditions</p>``` |
+| **digital_signature_task.signature.acceptance_label** | **Acceptance text**: the text of the checkbox the user must accept. | ```I declare that I have read and agree with the above text.``` |
+| **digital_signature_task.signature.acceptance_action** | **Acceptance action**: the text of the sign button. | ```Sign and continue``` |
+
+#### pending_review_task
+
+| Object | Description | Example |
+|--------|-------------|---------|
+| **pending_review_task.review** | Review settings. | |
+| **pending_review_task.review.message** | Content of **Pending review page content**, as configured. It is what the user sees while waiting for the review. | ```<p>We are reviewing your request.</p>``` |
+| **pending_review_task.review.assignee** | Administrator set as **Agent** in the task. Returns an adminuser object. Empty when the task has no administrator assigned. | [view adminuser documentation](/en/platform/channels/liquid-markup/objects.html#adminuser) |
+| **pending_review_task.review.assignee_group** | Administrator group set as **Agent** in the task. Returns a group object. Empty when the task is not assigned to a group. | [view group documentation](/en/platform/channels/liquid-markup/objects.html#group) |
+| **pending_review_task.review.assignee_context_group** | Group within which the assigned administrator was chosen, when you assign the task to a specific user of a group. Returns a group object. | [view group documentation](/en/platform/channels/liquid-markup/objects.html#group) |
+
+#### code_snippet_task
+
+| Object | Description | Example |
+|--------|-------------|---------|
+| **code_snippet_task.snippet** | Code snippet settings. | |
+| **code_snippet_task.snippet.code** | The snippet's HTML, JavaScript, and CSS code, as configured. | ```<div id="simulator"></div>``` |
+| **code_snippet_task.snippet.next_disabled** | It is `true` when **Complete the task using the submission API** is enabled: the continue action stays disabled until the snippet [completes the task](/en/platform/customers/origination.html#completing-the-task-from-the-code-snippet). | ```false``` |
+
+#### origination_flow_task
+
+| Object | Description | Example |
+|--------|-------------|---------|
+| **origination_flow_task.flow** | Origination process settings. | |
+| **origination_flow_task.flow.origination_uuid** | UUID of the origination chosen in **Origination Flow**. | ```0f8e2c1a-5b7d-4e3f-9a6c-2d4b8e1f7a90``` |
+| **origination_flow_task.flow.allow_previously_completed_submissions** | It is `true` when **Allow the selection of previously completed submission if they exist.** is enabled. | ```true``` |
+| **origination_flow_task.flow.no_longer_than_value** | Amount set in **Completed no longer than**: the maximum age of the completed submissions the user can reuse. Empty when it is not configured. | ```30``` |
+| **origination_flow_task.flow.no_longer_than_unit** | Unit of that amount: `days`, `weeks`, or `months`. | ```days``` |
+
+#### identity_verification_task
+
+| Object | Description | Example |
+|--------|-------------|---------|
+| **identity_verification_task.identity_verification_config** | Hash with the task settings: the provider (`provider`), the enabled checks (`features`), and the provider-specific settings. | ```{"provider"=>"amazon_rekognition", "features"=>{"document_verification"=>true, "selfie_verification"=>true, "liveness_detection"=>true}}``` |
+| **identity_verification_task.verification_required** | It is always `true`. | ```true``` |
+| **identity_verification_task.verification_status** | Verification status in the submission: `not_started`, `in_progress`, `pending_review`, `verified`, `rejected`, `expired`, or `error`. It depends on the template's `submission` object: when it is not available or the task has no response yet, it returns `not_started`. | ```verified``` |
+| **identity_verification_task.requires_manual_review** | It is `true` when the verification was left in manual review, that is, with status `pending_review`. It depends on the template's `submission` object: when it is not available or the task has no response yet, it returns `false`. | ```false``` |
+
 ### Task Response Types
+
+To get the response to a task, use `submission.tasks` with the task uid. It returns the response of the user viewing the page, or `nil` when there is no signed-in user or that user does not have a response to that task yet, so check it before reading its attributes:
+
+```liquid
+{% assign response = submission.tasks['personal-data'] %}
+{% if response %}
+  <p>Status of your response: {{ response.status }}</p>
+{% endif %}
+```
 
 Every task response shares the attributes it inherits from the base response: `task`, `user`, `created_at`, `updated_at`, `started_at`, `completed_at`, and `status`. In `status` you get `not_started`, `pending`, or `completed`, according to the [task response status](/en/platform/customers/origination.html#task-response-statuses); if you only compare against `completed`, your template cannot tell a task nobody opened from one that was left half answered. The table below lists only the attributes specific to each response type.
 
 | Object                                        | Description                                                         | Example                                                                                                                                           |
 |-----------------------------------------------|---------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
-| **pending_review_task_response.approved**     | Whether the task has been approved.                                 | ```true```                                                                                                                                        |
+| **pending_review_task_response.approved**     | It is `true` when the response to the review task is completed, that is, when `status` is `completed`. | ```true```                                                                                                                                        |
 | **pending_review_task_response.content**      | The content of the review.                                          | ```This is the content of the review```                                                                                                           |
 | **pending_review_task_response.assignee**     | Administrator assigned to the review. Returns an adminuser object.  |                                                                                                                                                   |
 | **pending_review_task_response.assignee_group** | Administrator group assigned to the review. Returns a group object. |                                                                                                                                                 |
@@ -620,6 +685,8 @@ Every task response shares the attributes it inherits from the base response: `t
 | **digital_signature_task_response.signed**    | Whether the task has been signed.                                   | ```false```                                                                                                                                       |
 | **origination_flow_task_response.submission** | The submission of the origination flow task.                        | [view submission documentation](/en/platform/channels/liquid-markup/objects.html#submission)                                                      |
 | **invitation_task_response.completed** | It is `true` whenever the task response exists, even if it is still pending. To know whether the task is finished, compare `status` with `completed`. | ```true``` |
+| **confirmation_task_response.confirmed_items** | Array with the uids of the user input tasks that were confirmed. It only includes those whose response was completed at the time of confirming; before confirming, it is empty. | ```["personal-data", "employment-data"]``` |
+| **confirmation_task_response.confirmation_metadata** | Hash with confirmation metadata. Confirmations made from the origination page leave it empty. | ```{}``` |
 | **identity_verification_task_response.verification_details** | Hash with the verification detail: `document_type`, `document_status`, `biometric_status`, `verification_date`, `face_match_score`, and `liveness_score`. | ```{:document_type=>"national_id", :document_status=>"document_verified", :biometric_status=>"biometric_verified", :verification_date=>"2026-02-11T09:26:49.257-03:00", :face_match_score=>95.93251037597656, :liveness_score=>98.41004943847656}``` |
 | **identity_verification_task_response.ocr_data** | Unified, provider-agnostic accessor: it returns `ocr` and falls back to `extracted_information` when `ocr` is empty. Use it to iterate the document fields without branching per provider. | ```{"nombre"=>"Ivan Modyo", "numero_documento"=>"12.345.678-9"}``` |
 | **identity_verification_task_response.ocr** | Hash with the field/value pairs the provider extracted from the document. Empty when the provider does not return that structure. | ```{"nombre"=>"Ivan Modyo", "numero_documento"=>"12.345.678-9"}``` |
