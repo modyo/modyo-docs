@@ -157,6 +157,7 @@ Para habilitar o deshabilitar la funcionalidad de búsqueda, sigue estos pasos:
 1. En la sección privacidad, habilita o deshabilita la casilla de **habilitar búsqueda**, según requieras.
 1. Haz click en **guardar**.
 
+Con **Habilitar búsqueda** desmarcada, las rutas `/search` y `/search.json` de la web app responden con un error 404.
 
 ### Plantilla de búsqueda
 
@@ -189,10 +190,12 @@ Personaliza tus consultas de la siguiente manera:
 
 | Parámetro | Descripción |
 |-----------|-------------|
-| **query** | El término que quieres buscar. La consulta recorre todas las páginas publicadas de tu web app y todas las entradas públicas de los espacios vinculados a la web app. El buscador solo considera sus primeros 15 caracteres. |
+| **query** | El término que quieres buscar. La consulta recorre las páginas publicadas de tu web app. En las [páginas de contenido](/es/platform/channels/pages.html#pagina-de-contenido) recorre, en lugar de la página, las entradas publicadas de su tipo de contenido, y cada resultado enlaza a la entrada dentro de esa página. Las entradas de un tipo de contenido que no tiene una página de contenido en la web app no aparecen. El buscador solo considera sus primeros 15 caracteres. |
 | **page** | La página de resultados que quieres obtener. Por omisión, 1. |
 | **per_page** | Cuántos resultados trae cada página. Por omisión, 15. |
 | **more** | Valor libre que el buscador no usa para filtrar: solo queda disponible en la plantilla de búsqueda como la variable `params_more`. |
+
+Si el visitante no inició sesión, la búsqueda solo devuelve páginas y entradas públicas. Si inició sesión, devuelve además las privadas que no tienen segmentos asignados o que comparten al menos un segmento con él.
 
 Cada resultado trae cuatro campos: `title`, `description`, `url` y `site_name`. La respuesta incluye además un objeto `meta` con `total_entries`, `per_page`, `current_page` y `total_pages`, que viene vacío cuando la consulta no encuentra nada.
 
@@ -257,16 +260,16 @@ Para acceder a estos snippets:
 
 **Para el _head_**:
 
-1. Utiliza este código:
+1. Utiliza este código. El atributo `nonce` permite que el navegador ejecute el _script_ cuando la aplicación usa una política de seguridad de contenido basada en nonce, como la que se precarga al habilitar los [Security headers](/es/platform/channels/sites.html#security-headers). El código también asigna el nonce al _script_ que carga `gtm.js`, para que el navegador lo acepte aunque tu política no incluya `'strict-dynamic'`:
 
 ```liquid
 {% if site.tag_manager_id != '' %}
 
 <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+<script nonce="{{csp_nonce}}">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;j.setAttribute('nonce','{{csp_nonce}}');f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','{{site.tag_manager_id}}');</script>
 <!-- End Google Tag Manager -->
 
@@ -751,11 +754,22 @@ A partir de la versión 10.1 se pueden hacer redirecciones hacia sitios fuera de
 
 Habilita este módulo para tu sitio para configurar los encabezados de seguridad HTTP. Ten en cuenta que esta acción no se puede deshacer. Una vez habilitado, tendrás control total sobre los encabezados que deseas utilizar.
 
+Al hacer click en **Habilitar los headers de seguridad para esta aplicación**, la configuración de la aplicación reemplaza la configuración global de headers de seguridad de la plataforma y Modyo carga estos valores iniciales:
+
+- **Habilitar Strict-Transport-Security (HSTS)** activo, con **Duración (max age)** de 1 año e **Incluir subdominios** marcada.
+- **Habilitar Referrer-Policy** activo, con la directiva `strict-origin-when-cross-origin`, salvo que la configuración global de la plataforma defina otra.
+- **Habilitar X-Frame-Options** activo, con la directiva `DENY`, salvo que la configuración global de la plataforma defina otra.
+- Las áreas de texto de Content-Security-Policy y Content-Security-Policy-Report-Only prellenadas con una [política estricta](/es/platform/channels/sites.html#content-security-policy-csp).
+- **Habilitar Content-Security-Policy**, **Habilitar Content-Security-Policy-Report-Only**, **Habilitar X-Content-Type-Options** y **Habilitar Permissions-Policy** activos solo si la plataforma define un valor por defecto para los sitios en esos _headers_.
+- **Habilitar Cross-Origin-Embedder-Policy**, **Habilitar Cross-Origin-Opener-Policy** y **Habilitar Cross-Origin-Resource-Policy** desactivados.
+
+Revisa estos valores antes de publicar el sitio. En [Valores recomendados](/es/platform/channels/sites.html#valores-recomendados) encontrarás una línea base sugerida para cada _header_.
+
 #### HTTP Strict Transport Security (HSTS)
 
 Indica al navegador que solo puede acceder al sitio mediante HTTPS.
-- **Duración**: Establece el tiempo que el navegador accede al sitio solamente mediante HTTPS.
-- **Precarga**: Incluye la directiva de precarga. Para más información, consulta [HSTS Preload List Submission](https://hstspreload.org/).
+- **Duración (max age)**: Establece el tiempo que el navegador accede al sitio solamente mediante HTTPS. Puedes elegir **6 meses**, **1 año** o **2 años**.
+- **Preload**: Incluye la directiva de precarga. Para más información, consulta [HSTS Preload List Submission](https://hstspreload.org/).
 - **Incluir subdominios**: Aplica la regla HSTS a todos los subdominios del sitio.
 
 #### Referrer-Policy
@@ -795,21 +809,33 @@ Después referencia el nombre del destino desde tu política, por ejemplo `repor
 
 #### Content-Security-Policy (CSP)
 
-Controla qué recursos puede cargar el navegador en el sitio para mitigar ataques de inyección de datos y _cross site scripting_. El valor predeterminado *permite cargar recursos desde cualquier lugar*, por lo que es importante diseñar una política de seguridad de contenido adecuada para tu sitio.
+Controla qué recursos puede cargar el navegador en el sitio para mitigar ataques de inyección de datos y _cross site scripting_. Mientras **Habilitar Content-Security-Policy** está desactivado, la aplicación no envía este _header_ y el navegador carga recursos desde cualquier lugar.
+
+Al habilitar el módulo, el área de texto se prellena con una política estricta: parte de `default-src 'none'` y exige el nonce de la página, interpolado con la variable `csp_nonce`, en los _tags_ `script` y `style`. Si el CSP queda activo con ese valor sin adaptarlo, el navegador bloquea los _scripts_ de tus plantillas que no llevan el atributo `nonce`, aunque se carguen desde el propio sitio, y los recursos de orígenes que la política no lista, por lo que es importante diseñar una política adecuada para tu sitio.
 
 Especifica libremente tu política de seguridad de contenido en el área de texto. Para obtener una guía completa sobre cómo escribir tu política, consulta [Content Security Policy (CSP) de Mozilla Developer Network.](https://developer.mozilla.org/es/docs/Web/HTTP/CSP)
 
 :::warning Atención
-Un valor muy estricto puede interferir con algunas características como [Google tag manager](/es/platform/channels/sites#google-tag-manager), [PWA](/es/platform/channels/sites#pwa), [Widgets](/es/platform/channels/widgets), [Asset Manager](/es/platform/content/asset-manager) y la [modalidad Drop-in de Incode](/es/platform/customers/origination.html#requisitos-de-drop-in).
+Un valor muy estricto puede interferir con algunas características como [Google tag manager](/es/platform/channels/sites#google-tag-manager), [PWA](/es/platform/channels/sites#pwa), [Widgets](/es/platform/channels/widgets), [Asset Manager](/es/platform/content/asset-manager), la [modalidad Drop-in de Incode](/es/platform/customers/origination.html#requisitos-de-drop-in) y la [verificación de identidad](/es/platform/customers/origination.html#verificacion-de-identidad) con Amazon Rekognition, incluida la [selfie con verificación de vida](/es/platform/customers/origination.html#selfie), o con NAAT.TECH. Estas integraciones cargan recursos de cada proveedor que tienes que agregar a tu política.
 :::
 
-Una política apta para producción debe asegurar que todos los recursos, como imágenes y hojas de estilo, se carguen desde fuentes confiables y requiere que todos los scripts sean seguros y confiables para la aplicación. Por ejemplo, una política estricta para el _template minimal_ se vería así:
+Una política apta para producción debe asegurar que todos los recursos, como imágenes y hojas de estilo, se carguen desde fuentes confiables y requiere que todos los scripts sean seguros y confiables para la aplicación. Por ejemplo, una política estricta para el _template minimal_, que usa el nonce de la página como en la política que precarga Modyo, se vería así:
 
 ```bash
-default-src 'self'; img-src 'self' https://cloud.modyocdn.com; font-src 'self' https://cloud.modyocdn.com http://cdn.materialdesignicons.com; style-src 'self' http://cdn.materialdesignicons.com; script-src 'self'
+default-src 'none'; script-src 'nonce-{{csp_nonce}}' 'strict-dynamic'; style-src 'self' 'nonce-{{csp_nonce}}' https://cdn.materialdesignicons.com; img-src 'self' https://cloud.modyocdn.com data:; font-src 'self' https://cloud.modyocdn.com https://cdn.materialdesignicons.com; connect-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; form-action 'self'
 ```
 
-La política debe incluir una directiva `default-src 'self'`, que sirve de _fallback_ para cualquier otro tipo de recurso. También debe incluir directivas `script-src` y `style-src` para evitar la evaluación de tags _inline_ `style` y `script`.
+En esta política:
+
+- `default-src 'none'` sirve de _fallback_ para cualquier tipo de recurso que no tenga su propia directiva y lo bloquea, así que solo se carga lo que permites de forma explícita.
+- `script-src` solo ejecuta los _scripts_ que llevan el nonce de la página. Con `'strict-dynamic'`, los _scripts_ que cargan esos _scripts_ también se ejecutan, y los navegadores compatibles ignoran cualquier origen o `'self'` que agregues a la directiva, por lo que todo _script_ de tus plantillas necesita el atributo `nonce`, aunque se cargue desde el propio sitio o desde el CDN.
+- `style-src` permite las hojas de estilo del sitio y de los orígenes listados, y los _tags_ `style` _inline_ solo si llevan el nonce. También bloquea los atributos `style` de los elementos; si tus plantillas los usan, agrega `style-src-attr 'unsafe-inline'`, como hace la política que precarga Modyo.
+- `base-uri 'self'` impide que un _tag_ `base` inyectado apunte a otro origen. Solo admite una URL base del propio sitio, así que no evita que se cambie la ruta base dentro del mismo origen.
+- `object-src 'none'` bloquea los _plugins_ del navegador, como los _tags_ `object` y `embed`.
+- `frame-ancestors 'self'` indica qué páginas pueden mostrar el sitio en un _frame_: `'self'` equivale a `SAMEORIGIN` en [X-Frame-Options](/es/platform/channels/sites.html#x-frame-options) y `'none'`, a `DENY`.
+- `form-action 'self'` limita a dónde pueden enviar datos los formularios del sitio.
+
+Usa siempre orígenes con `https://` y agrega los de los servicios externos que use tu sitio en la directiva que corresponda, por ejemplo las pasarelas de pago en `form-action`.
 
 La forma vigente de trabajar con nonce es interpolar la variable <code v-pre>{{csp_nonce}}</code> directamente en tu política. Modyo genera un nonce nuevo en cada _request_ y reemplaza la variable tanto en el _header_ como en las plantillas del sitio:
 
@@ -844,11 +870,25 @@ El área de texto acepta la misma sintaxis que el CSP, incluida la variable <cod
 
 Permite o niega el uso de funciones y APIs del navegador para el sitio; por ejemplo, puedes restringir las APIs sensibles a la privacidad como la cámara o el micrófono y la reproducción automática de videos.
 
-Para obtener una lista completa de las funciones compatibles con los navegadores, consulta la [Feature Policy de MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Feature_Policy).
+En el área de texto escribe una lista de funciones separadas por coma con la forma `función=(orígenes)`. Una lista vacía `()` bloquea la función, `self` la permite al propio sitio y un origen entre comillas la delega a un _iframe_ de ese origen. Por ejemplo, para bloquear la cámara, el micrófono y la geolocalización:
+
+```bash
+camera=(), microphone=(), geolocation=()
+```
+
+Si el sitio usa la [verificación de identidad](/es/platform/customers/origination.html#verificacion-de-identidad) o los campos [Documento de identidad](/es/platform/customers/origination.html#documento-de-identidad) o [Selfie](/es/platform/customers/origination.html#selfie) de una originación, el usuario necesita la cámara. En esos campos, con Amazon Rekognition y con la modalidad Drop-in de Incode, la captura ocurre en la página del sitio, así que permite la cámara al propio sitio con `camera=(self)`. Con NAAT.TECH, parte de la captura ocurre en _iframes_ del proveedor, como el que se carga desde la **URL del iFrame** de la integración, así que además tienes que delegar el permiso a esos orígenes, por ejemplo `camera=(self "https://verificacion.example.com")`, y hacer lo mismo con las demás funciones que restrinjas y que el proveedor necesite.
+
+Para obtener una lista completa de las funciones compatibles con los navegadores, consulta la [Permissions-Policy de MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Permissions-Policy).
 
 #### Cross Origin Embedder Policy (COEP)
 
 Configura la inserción de recursos de origen cruzado en el documento. Por ejemplo, si tu documento tiene un encabezado COEP con un valor de require-corp o credentialless, solo puedes acceder a ciertas funciones, como objetos SharedArrayBuffer o Performance.now(), con temporizadores sin restricciones.
+
+En **Directiva** puedes elegir:
+
+- **unsafe-none**: El documento carga recursos de origen cruzado aunque estos no lo autoricen. Es el comportamiento por defecto del navegador.
+- **require-corp**: El documento solo carga recursos de origen cruzado que lo autorizan explícitamente mediante CORS o el _header_ `Cross-Origin-Resource-Policy`.
+- **credentialless**: El documento carga recursos de origen cruzado sin que lo autoricen, pero las solicitudes sin CORS se envían sin credenciales, como las _cookies_.
 
 Para mas información, consulta la [Cross-Origin-Embedder-Policy de MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy).
 
@@ -858,11 +898,23 @@ Te permite garantizar que un documento de nivel superior no comparta un grupo de
 
 COOP aisla el procesamiento de tu documento, por lo que atacantes potenciales no podrán acceder a tu objeto global si lo abren en un popup, lo que previene un conjunto de ataques de origen cruzado.
 
+En **Directiva** puedes elegir:
+
+- **unsafe-none**: El documento puede compartir su grupo de contexto de navegación con documentos de origen cruzado, como los _popups_ que abre. Es el comportamiento por defecto del navegador.
+- **same-origin-allow-popups**: Aísla el documento de los de origen cruzado, pero conserva la referencia a los _popups_ que abre si estos no definen COOP o usan `unsafe-none`.
+- **same-origin**: El documento solo comparte su grupo de contexto de navegación con documentos del mismo origen que también usan `same-origin`.
+
 Para mas información, revisa la [Cross-Origin-Opener-Policy de MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy).
 
 #### Cross Origin Resource Policy
 
 Transmite el deseo de bloquear las solicitudes de origen cruzado/sitio cruzado sin-cors al recurso especificado por parte del navegador.
+
+En **Directiva** puedes elegir:
+
+- **same-site**: Solo las solicitudes del mismo sitio, es decir, del mismo esquema y dominio registrable, incluidos sus subdominios, pueden cargar el recurso.
+- **same-origin**: Solo las solicitudes del mismo origen, es decir, del mismo esquema, host y puerto, pueden cargar el recurso.
+- **cross-origin**: Las solicitudes de cualquier origen pueden cargar el recurso.
 
 Para mas información, consulta la [Cross-Origin-Resource-Policy de MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Resource-Policy).
 
@@ -874,8 +926,32 @@ Amplía el alcance (_scope_) máximo que puede registrar un _service worker_. Po
 - **Directiva**: La ruta que quieres autorizar como alcance, por ejemplo `/`.
 
 :::tip Sitios sin dominio personalizado
-En los sitios que no tienen los dominios personalizados activados, Modyo ya envía el _header_ `Service-Worker-Allowed` apuntando a la ruta del sitio cuando entrega el _service worker_ de la [PWA](/es/platform/channels/sites.html#pwa), por lo que no necesitas configurarlo para ese caso.
+En los sitios que no tienen los dominios personalizados activados, Modyo envía el _header_ `Service-Worker-Allowed` apuntando a la ruta del sitio cuando entrega el _service worker_ de la [PWA](/es/platform/channels/sites.html#pwa), pero solo mientras el módulo de headers de seguridad está deshabilitado. Al habilitar el módulo, ese _header_ automático deja de enviarse: si tu PWA lo necesita, activa **Habilitar Service-Worker-Allowed** y escribe en **Directiva** la ruta del sitio, por ejemplo `/miSitio`.
 :::
+
+#### Valores recomendados
+
+Esta es una línea base sugerida para un sitio en producción. Ajústala según los servicios externos que use tu sitio y pruébala antes de aplicarla.
+
+| _Header_ | Valor sugerido | Por qué |
+|----------|----------------|---------|
+| Strict-Transport-Security (HSTS) | **Duración (max age)** de **1 año** o **2 años**, con **Incluir subdominios** marcada. | Obliga a usar HTTPS en el sitio y en sus subdominios durante todo ese tiempo. Marca **Preload** solo si todos los subdominios del dominio sirven HTTPS: la lista de precarga exige una duración de al menos 1 año e incluir los subdominios, por lo que **6 meses** no sirve para precarga, y salir de la lista toma meses. |
+| Referrer-Policy | `strict-origin-when-cross-origin` | Envía la URL completa solo dentro del mismo origen. A otros sitios envía solo el origen, sin rutas ni parámetros, y no envía nada al pasar de HTTPS a HTTP. |
+| X-Frame-Options | `DENY` si el sitio no se muestra en _frames_, o `SAMEORIGIN` si lo embebes en páginas de tu propio dominio. | Evita que otros sitios lo muestren dentro de un _frame_ para engañar al usuario (_clickjacking_). Define lo mismo en la directiva `frame-ancestors` del CSP, porque los navegadores que la soportan la priorizan sobre este _header_. |
+| X-Content-Type-Options | Activo (`nosniff`) | Impide que el navegador interprete un archivo con un tipo distinto al que declara el servidor, por ejemplo un archivo subido como si fuera un _script_. |
+| Content-Security-Policy (CSP) | Una política con nonce y `'strict-dynamic'` que incluya `base-uri`, `object-src 'none'` y `frame-ancestors`, como el [ejemplo de política estricta](/es/platform/channels/sites.html#content-security-policy-csp). | Es la principal defensa del navegador contra la inyección de _scripts_ (_cross site scripting_). |
+| Content-Security-Policy-Report-Only y Reporting-Endpoints | La política que quieres aplicar, con una directiva `report-to` que apunte a un destino tuyo. | Te permite ver qué bloquearía la política antes de aplicarla. |
+| Permissions-Policy | Bloquea las funciones que el sitio no usa, por ejemplo `camera=(), microphone=(), geolocation=()`. | Reduce lo que puede hacer un _script_ de terceros o un _iframe_ embebido. Si usas verificación de identidad con cámara, revisa las excepciones en [Permissions-Policy](/es/platform/channels/sites.html#permissions-policy). |
+| Cross-Origin-Opener-Policy (COOP) | `same-origin-allow-popups`, o `same-origin` si el sitio no abre ventanas de otros orígenes, como pasarelas de pago o inicios de sesión externos. | Aísla la ventana del sitio de las ventanas de otros orígenes. Con `same-origin`, las ventanas emergentes de otros orígenes pierden la referencia al sitio y pueden romper esos flujos. |
+| Cross-Origin-Resource-Policy (CORP) | `same-site` | Impide que sitios de otros dominios carguen los recursos del sitio, pero permite hacerlo desde tus subdominios. |
+| Cross-Origin-Embedder-Policy (COEP) | Desactivado, salvo que necesites aislamiento entre orígenes, por ejemplo para usar `SharedArrayBuffer`. | Con `require-corp`, el navegador bloquea cualquier recurso de otro origen que no lo autorice explícitamente, como imágenes de un CDN, _tags_ de analítica o _widgets_ externos. El aislamiento completo exige además COOP `same-origin`. |
+
+Para activar el CSP sin romper el sitio, despliégalo de forma gradual. Ten en cuenta que Report-Only no desactiva el CSP aplicado: lo que bloquea la política de **Habilitar Content-Security-Policy** sigue bloqueado durante la prueba. Antes de empezar, revisa si ese _header_ quedó activo con la política precargada al habilitar el módulo. Si ya tienes en producción una política aplicada y validada, consérvala mientras pruebas la nueva.
+
+1. Activa **Habilitar Reporting-Endpoints** y declara un destino que reciba los reportes, por ejemplo `csp-endpoint="https://example.com/csp"`.
+1. Activa **Habilitar Content-Security-Policy-Report-Only** con la política que quieres aplicar, que puede partir de la que precarga Modyo, y agrégale `report-to csp-endpoint`.
+1. Navega el sitio, incluidas las páginas con _widgets_, formularios y originaciones, y revisa los reportes. Ajusta la política hasta que los reportes solo muestren recursos que de verdad quieres bloquear.
+1. Copia la política en el área de texto de Content-Security-Policy y activa **Habilitar Content-Security-Policy**. Puedes dejar activo **Habilitar Content-Security-Policy-Report-Only** para probar cambios futuros antes de aplicarlos.
 
 ### Variables del sitio
 
