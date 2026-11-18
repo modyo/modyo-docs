@@ -63,6 +63,8 @@ Esta interfaz te permite crear cada uno de los tipos y darles el formato necesar
 :::tip Tip
 El nombre del campo es de suma importancia, ya que será utilizado para acceder a su valor en los SDK de Liquid y JS. Para acceder al valor de un campo de una entrada puedes utilizar la sintaxis <span v-pre>`{{entry["nombre del campo"]}}`</span>. 
 
+Al imprimir un campo de texto o de elección con Liquid, su valor también se evalúa como Liquid, con las mismas variables de la página: las variables y los tags que contenga se ejecutan al mostrar la entrada en el sitio. Revisa el detalle en el objeto [entry](/es/platform/channels/liquid-markup/objects.html#entry).
+
 Para más información ve a la [referencia de la API](/es/platform/content/public-api-reference)
 :::
 

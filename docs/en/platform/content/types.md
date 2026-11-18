@@ -63,6 +63,8 @@ This interface allows you to create each of the types and format them as needed,
 :::tip Tip
 The name of the field is of utmost importance, as it will be used to access its value in the Liquid and JS SDKs. To access the value of a field in an entry, you can use the syntax <span v-pre>`{{entry["field name"]}}`</span>.
 
+When you print a text or choice field with Liquid, its value is also evaluated as Liquid, with the same variables as the page: the variables and tags it contains run when the entry is displayed on the site. See the details in the [entry](/en/platform/channels/liquid-markup/objects.html#entry) object.
+
 For more information, go to the [API reference](/en/platform/content/public-api-reference)
 :::
 
