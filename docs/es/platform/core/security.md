@@ -172,13 +172,12 @@ La opción **Establecer zona horaria automáticamente** tiene que estar activa c
 
 Para habilitar la autenticación de dos factores para un usuario y neutralizar el riesgo de contraseñas comprometidas, sigue estos pasos:
 
-1. En Modyo Platform, en el menú del usuario, haz click en **Perfil**.
-2. Dentro de la configuración de perfil de un usuario, en el menú superior, selecciona los 3 puntos y haz click en **Configurar Autenticador**.
-3. Escanea el código que aparece en la pantalla con tu dispositivo móvil para enlazar tu autenticador con Modyo Platform.
-Esto agrega un campo nuevo con el nombre del dominio, tu nivel de usuario y tu nombre de usuario.
-4. Ingresa los números que aparecen en tu móvil en el campo de la contraseña y haz click en **Guardar**.
+1. Haz click en tu avatar, en la parte inferior del menú lateral, y selecciona **Perfil**.
+2. En la columna derecha de tu Perfil, en **Configurar autenticador**, haz click en el botón **Configurar autenticador**.
+3. Escanea el código que aparece en la pantalla con tu dispositivo móvil para enlazar tu autenticador con Modyo Platform. Esto agrega en la app una entrada con el dominio de tu cuenta y tu nombre de usuario.
+4. Ingresa el código de 6 dígitos que muestra la app en el campo **Código actual** y haz click en **Guardar**.
 
-Una vez que ya tengas la autenticación de dos factores habilitada, el botón dirá **Eliminar autenticador**.
+Una vez que ya tengas la autenticación de dos factores habilitada, el botón dirá **Eliminar autenticador**. Al hacer click en él, el autenticador se elimina de inmediato, sin pedir confirmación.
 
 
 ### Eliminar autenticador para un usuario

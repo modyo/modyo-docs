@@ -172,13 +172,12 @@ The **Set Time Zone Automatically Option** must be active when using two-factor 
 
 To enable two-factor authentication for a user and neutralize the risk of compromised passwords, follow these steps:
 
-1. In Modyo Platform, in the user menu, click **Profile**.
-2. In profile settings, in the top menu, click the 3 dots and click **Configure Authenticator**.
-3. Scan the code that appears on the screen with your mobile device to link your authenticator with Modyo Platform.
-This adds a new field with the domain name, your user level, and your username.
-4. Enter the numbers that appear on your mobile phone in the password field and click **Save**.
+1. Click your avatar at the bottom of the side menu and select **Profile**.
+2. In the right column of your Profile, under **Setup authenticator**, click the **Setup authenticator** button.
+3. Scan the code that appears on the screen with your mobile device to link your authenticator with Modyo Platform. This adds an entry in the app with your account domain and your username.
+4. Enter the 6-digit code shown by the app in the **Current code** field and click **Save**.
 
-Once you have two-factor authentication enabled, the button will say **Remove authenticator**.
+Once you have two-factor authentication enabled, the button will say **Remove authenticator**. When you click it, the authenticator is removed immediately, without asking for confirmation.
 
 
 ### Delete authenticator for a user
