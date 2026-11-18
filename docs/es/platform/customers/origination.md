@@ -725,7 +725,8 @@ Para configurar la lógica condicional, sigue estos pasos:
    1. **Agrega una regla**: Presiona el botón **Añadir**.
    2. **Define las condiciones:** Las condiciones pueden estar basadas en:
       * **Respuestas a campos Input:** Compara la respuesta proporcionada por el usuario en un campo específico con un valor determinado. Puedes utilizar operadores como "es igual a", "no es igual a", "contiene", "es mayor que", "es menor que", etc.
-      * **Completitud de un Paso o Tarea:** Evalúa si un paso o tarea fue completada.
+      * **Completitud de un Paso o Tarea:** Evalúa si un paso o tarea fue completada. No aplica a las tareas de **Snippet de código**, que se evalúan por sus datos.
+      * **Datos de un code snippet:** Compara un valor que guardó una tarea de **Snippet de código** con un valor determinado. Revisa el detalle en [Datos de un code snippet](/es/platform/customers/origination.html#datos-de-un-code-snippet).
    3. **Define las acciones:** En **Entonces**, selecciona la acción y el elemento sobre el cual se ejecutará cuando la regla se cumpla. Las acciones disponibles son **Mostrar**, **Ocultar** y **Asignar**. Para agregar otra acción a la misma regla, presiona **+ Agregar acción**. Usa los íconos **Subir** y **Bajar** para cambiar el orden de una acción y **Quitar acción** para eliminarla.
 4. **Guarda los cambios:** Una vez que hayas definido tus reglas, guarda los cambios.
 
@@ -738,6 +739,54 @@ Como prevalece la última acción, cambiar el orden de las reglas o de sus accio
 :::tip Experiencia de usuario
 Considera cómo la lógica condicional puede afectar la experiencia del usuario y asegúrate de que el flujo pueda ser completado con facilidad. 
 :::
+
+#### Datos de un code snippet
+
+Una condición puede evaluar los datos que una tarea de **Snippet de código** guardó en la respuesta con la [API JSON para Code Snippets](/es/platform/customers/origination.html#api-json-para-code-snippets). Para armarla:
+
+1. En la condición, elige la tarea de **Snippet de código**.
+2. En el campo de texto que aparece junto a la tarea, escribe la clave del dato dentro de `content`, sin incluir `content`. Para un dato anidado, usa notación de puntos: `customer.monthly_income` lee `monthly_income` dentro de `customer`.
+3. Elige el tipo de dato: **Texto**, **Fecha**, **Número** o **Arreglo**. Los operadores aparecen después de elegir el tipo.
+4. Elige el operador y, si corresponde, indica el valor con que se compara. En **Fecha**, el valor se elige en un calendario.
+
+Los operadores disponibles dependen del tipo:
+
+| Tipo | Operadores |
+| --- | --- |
+| **Texto** | **está vacío**, **tiene algún valor**, **es igual a**, **no es igual a**, **contiene**, **no contiene**, **comienza con**, **termina con** |
+| **Número** | **está vacío**, **tiene algún valor**, **es igual a**, **no es igual a**, **es menor que**, **es mayor que** |
+| **Fecha** | **es igual a**, **no es igual a**, **antes de**, **después de** |
+| **Arreglo** | **está vacío**, **tiene algún valor** |
+
+Así se evalúa la condición:
+
+- Usa el último `content` que guardó el snippet, aunque la tarea todavía no esté completada. Basta con una petición POST sin `completed`. En los flujos multiusuario, cada participante se evalúa con los datos que el snippet guardó para ese participante.
+- La clave solo recorre objetos. No puedes leer un elemento de un arreglo por su posición, como `products.0`.
+- El tipo tiene que coincidir con el valor guardado. **Número** solo considera números JSON, así que `"5"` guardado como texto no cuenta. **Texto** solo considera textos y **Fecha**, textos con una fecha, por ejemplo `"2026-11-17"`.
+- Las comparaciones de **Texto** distinguen mayúsculas y minúsculas.
+- Si la clave no existe o el valor no es del tipo elegido, la condición no se cumple con ningún operador, incluidos **está vacío**, **no es igual a** y **no contiene**. Esto es distinto de los campos Input, donde una respuesta vacía sí cumple esos operadores. Si necesitas evaluar que un dato falta, haz que el snippet guarde un valor explícito, por ejemplo un texto vacío, y usa **está vacío**.
+
+Las condiciones se evalúan en distintos momentos según la acción:
+
+- **Mostrar** y **Ocultar**: la visibilidad se calcula cuando el usuario avanza en el flujo o carga una tarea, con los datos que el snippet guardó hasta ese momento. Por eso, usa los datos del snippet para mostrar u ocultar los pasos y tareas que vienen después de él. Estas acciones no se aplican al paso que contiene el snippet, pero sí a las demás tareas de ese paso.
+- **Asignar**: la regla se vuelve a evaluar cada vez que se guarda la respuesta del snippet, aunque la petición no complete la tarea. Como la tarea conserva la asignación aunque después las condiciones dejen de cumplirse, si el snippet guarda datos varias veces mientras el usuario responde, un valor intermedio puede disparar la asignación. Guarda valores definitivos o basa la regla en datos que no cambien mientras el usuario responde. Revisa el detalle en [Asignar tareas con lógica condicional](/es/platform/customers/origination.html#asignar-tareas-con-logica-condicional).
+
+Además de usar sus datos en las condiciones, puedes mostrar u ocultar una tarea de **Snippet de código** con las acciones **Mostrar** y **Ocultar**, como cualquier otra tarea.
+
+Por ejemplo, un snippet que simula planes guarda el plan que eligió el usuario con esta petición POST:
+
+```json
+{
+  "content": {
+    "plan": "premium",
+    "customer": {
+      "monthly_income": 2500000
+    }
+  }
+}
+```
+
+Para mostrar un paso de beneficios solo a quienes eligen ese plan, márcalo como no visible en **Estructura** y crea una regla con esta condición: la tarea del snippet, la clave `plan`, el tipo **Texto**, el operador **es igual a** y el valor `premium`. En **Entonces**, elige **Mostrar** y el paso. Del mismo modo, la clave `customer.monthly_income` con el tipo **Número** y el operador **es mayor que** evalúa el dato anidado.
 
 #### Asignar tareas con lógica condicional
 

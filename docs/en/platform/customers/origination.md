@@ -725,7 +725,8 @@ To set up conditional logic, follow these steps:
    1. **Add a rule**: Press the **Add** button.
    2. **Define the conditions:** Conditions can be based on:
       * **Responses to Input fields:** Compares the response provided by the user in a specific field with a given value. You can use operators such as "is equal to", "is not equal to", "contains", "is greater than", "is less than", etc.
-      * **Completeness of a Step or Task:** Evaluates if a step or task was completed.
+      * **Completeness of a Step or Task:** Evaluates if a step or task was completed. It doesn't apply to **Code snippet** tasks, which are evaluated by their data.
+      * **Code snippet data:** Compares a value saved by a **Code snippet** task with a given value. See the details in [Code snippet data](/en/platform/customers/origination.html#code-snippet-data).
    3. **Define the actions:** In **Then**, select the action and the element on which it will be executed when the rule is met. The available actions are **Show**, **Hide**, and **Assign**. To add another action to the same rule, press **+ Add action**. Use the **Move up** and **Move down** icons to change the order of an action and **Remove action** to delete it.
 4. **Save the changes:** Once you have defined your rules, save the changes.
 
@@ -738,6 +739,54 @@ Since the last action prevails, changing the order of the rules or of their acti
 :::tip User experience
 Consider how conditional logic can affect the user experience and ensure that the flow can be completed easily.
 :::
+
+#### Code snippet data
+
+A condition can evaluate the data that a **Code snippet** task saved in the submission with the [JSON API for Code Snippets](/en/platform/customers/origination.html#json-api-for-code-snippets). To build it:
+
+1. In the condition, choose the **Code snippet** task.
+2. In the text field that shows up next to the task, type the key of the value inside `content`, without including `content`. For a nested value, use dot notation: `customer.monthly_income` reads `monthly_income` inside `customer`.
+3. Choose the data type: **Text**, **Date**, **Number**, or **Array**. The operators show up after you choose the type.
+4. Choose the operator and, when applicable, enter the value to compare against. For **Date**, you pick the value from a calendar.
+
+The available operators depend on the type:
+
+| Type | Operators |
+| --- | --- |
+| **Text** | **has no value**, **has any value**, **is equal to**, **is not equal to**, **contains**, **does not contain**, **starts with**, **ends with** |
+| **Number** | **has no value**, **has any value**, **is equal to**, **is not equal to**, **is less than**, **is greater than** |
+| **Date** | **is equal to**, **is not equal to**, **is before**, **is after** |
+| **Array** | **has no value**, **has any value** |
+
+This is how the condition is evaluated:
+
+- It uses the last `content` the snippet saved, even if the task isn't completed yet. A POST request without `completed` is enough. In multi-user flows, each participant is evaluated with the data the snippet saved for that participant.
+- The key only goes through objects. You can't read an array element by its position, such as `products.0`.
+- The type must match the saved value. **Number** only considers JSON numbers, so `"5"` saved as text doesn't count. **Text** only considers text values, and **Date**, text values that contain a date, for example `"2026-11-17"`.
+- **Text** comparisons are case-sensitive.
+- If the key doesn't exist or the value isn't of the chosen type, the condition isn't met with any operator, including **has no value**, **is not equal to**, and **does not contain**. This is different from Input fields, where an empty answer does meet those operators. If you need to check that a value is missing, have the snippet save an explicit value, for example an empty text, and use **has no value**.
+
+Conditions are evaluated at different moments depending on the action:
+
+- **Show** and **Hide**: visibility is calculated when the user moves forward in the flow or loads a task, with the data the snippet saved up to that moment. That's why you should use the snippet's data to show or hide the steps and tasks that come after it. These actions don't apply to the step that contains the snippet, but they do apply to the other tasks in that step.
+- **Assign**: the rule is evaluated again every time the snippet's response is saved, even if the request doesn't complete the task. Since the task keeps the assignment even if the conditions later stop being met, if the snippet saves data several times while the user answers, an intermediate value can trigger the assignment. Save final values or base the rule on data that doesn't change while the user answers. See the details in [Assign tasks with conditional logic](/en/platform/customers/origination.html#assign-tasks-with-conditional-logic).
+
+Besides using its data in conditions, you can show or hide a **Code snippet** task with the **Show** and **Hide** actions, like any other task.
+
+For example, a snippet that simulates plans saves the plan the user chose with this POST request:
+
+```json
+{
+  "content": {
+    "plan": "premium",
+    "customer": {
+      "monthly_income": 2500000
+    }
+  }
+}
+```
+
+To show a benefits step only to those who choose that plan, mark it as not visible in **Structure** and create a rule with this condition: the snippet task, the key `plan`, the type **Text**, the operator **is equal to**, and the value `premium`. In **Then**, choose **Show** and the step. Likewise, the key `customer.monthly_income` with the type **Number** and the operator **is greater than** evaluates the nested value.
 
 #### Assign tasks with conditional logic
 
