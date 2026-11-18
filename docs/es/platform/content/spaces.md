@@ -14,10 +14,10 @@ Puedes utilizar este contenido dentro y fuera de la plataforma Modyo, mediante l
 
 En la interfaz de espacios puedes ver una lista de todos tus espacios, la cantidad de tipos de contenido y de entradas que hay en cada espacio y la fecha en la que fue creado.
 
-Puedes ordenar las columnas alfabéticamente por nombre de espacio o identificador, o por fecha de creación, y filtrar mediante el buscador.
+Puedes ordenar las columnas alfabéticamente por nombre de espacio o identificador, o por fecha de creación, y filtrar por nombre o identificador mediante el buscador.
 
 :::warning Atención
-Solamente puedes ver aquellos espacios en los cuales eres parte del equipo de trabajo con algún rol.
+Ves los espacios en los que eres miembro del equipo, ya sea directamente o a través de un grupo. El dueño de la cuenta y los usuarios con el permiso **Gestionar Contenido** ven todos los espacios.
 :::
 
 ## Crear un Espacio
@@ -26,8 +26,16 @@ Para crear un espacio, sigue estos pasos:
 
 1. En el menú lateral selecciona Content
 1. Da click en **Nuevo Espacio**
-1. Llena los campos del formulario.
+1. Completa los campos del formulario:
+   - **Nombre**: el nombre del espacio.
+   - **Identificador**: se completa a partir del nombre y puedes editarlo. Te permite acceder al contenido del espacio desde la API y los SDK.
+   - **Idioma por defecto**: viene seleccionado el idioma de la cuenta. No puedes cambiarlo después de crear el espacio.
+   - **Reino del espacio**: el reino de usuarios para el contenido privado y segmentado. Es opcional: si no lo necesitas, deja **Ninguno**.
 1. Haz click en **Crear**
+
+Quien crea el espacio queda como miembro de su equipo con el rol **Space Admin**.
+
+Si tu cuenta ya alcanzó el número máximo de espacios de su plan, el espacio no se crea y verás el mensaje "Has alcanzado el número máximo de espacios para el plan actual".
 
 
 :::tip Tip
@@ -68,7 +76,8 @@ En esta sección puedes personalizar y ajustar las opciones disponibles para tu 
 
 En esta sección puedes:
 - **Cambiar el nombre del espacio**
-- **Mostrar el autor de las entradas**: Habilitar esta opción permite que el autor del contenido este visible en la API pública y en el SDK de Liquid. Si está deshabilitada, el autor se verá en blanco.
+- **Descripción**: Texto libre de hasta 4095 caracteres para describir el espacio.
+- **Ver autor de entradas**: Habilitar esta opción permite que el autor del contenido este visible en la API pública y en el SDK de Liquid. Si está deshabilitada, el autor se verá en blanco.
 
 :::warning Atención
 Al guardar esta opción, se reindexan todas las entradas del espacio. Los cambios se reflejarán una vez el proceso haya concluido.
@@ -90,6 +99,12 @@ Para añadir un idioma:
 1. Selecciona un idioma de menú desplegable
 1. Da click en **Añadir idioma**
 
+Para quitar un idioma secundario:
+1. Haz click en el ícono de eliminar junto al idioma.
+1. Confirma en el mensaje "Eliminando idioma. ¿Deseas continuar?".
+
+No puedes quitar el idioma por defecto, que aparece como **Por defecto**, ni un idioma que ya usan entradas del espacio. En ese caso, en lugar del ícono verás **Idioma en uso (no se puede eliminar)**.
+
 Una vez que hayas añadido un idioma secundario, al modificar una entrada verás un selector de idioma junto al título de la entrada.
 
 Para más información de cómo traducir una entrada a un idioma secundario, revisa la sección [Traducir una entrada](https://docs.modyo.com/es/platform/content/entries#traducir-una-entrada).
@@ -101,27 +116,25 @@ Para seleccionar uno de los idiomas disponibles de una entrada en sus secciones 
 
 ### Seguridad
 
-Modyo te permite habilitar CORS para que la API pueda accederse desde cualquier microservicio en un dominio externo; garantizando una transmisión segura de datos.
+Modyo te permite habilitar CORS para que la API de contenido del espacio pueda consumirse desde el navegador en dominios externos, garantizando una transmisión segura de datos.
 
-Para habilitar CORS debes especificar el dominio desde dónde se accederá a la información. Puedes también permitir todos los orígenes; sin embargo, no recomendamos hacerlo.
+Para habilitar CORS, marca **Habilitar CORS para las entradas de este espacio** y escribe en **Orígenes alternativos** los orígenes desde donde se accederá a la información. También puedes marcar **Permitir todos los orígenes**; sin embargo, no recomendamos hacerlo.
+
+Al escribir los orígenes, considera lo siguiente:
+- Escribe cada origen completo, con su esquema, su dominio y, si no es el estándar, su puerto (por ejemplo, `https://app.midominio.com`). Separa los orígenes con comas.
+- No se permiten wildcards: si algún origen incluye `*`, la configuración no se guarda.
+- Al guardar, se quitan la ruta y los parámetros de consulta de cada URL.
+- Los dominios de tus sitios no se incluyen automáticamente. Si un sitio consume la API de contenido desde el navegador, agrega su dominio a la lista.
 
 Al habilitar CORS:
-- Se configuran las URLs permitidas para acceder al contenido a nivel de espacios, permitiendo automáticamente dominios personalizados de sitios.
-- Cuando se realiza una solicitud a la API, se agrega el header Access-Control-Allow-Origin con valor request.origin a la respuesta y Access-Control-Allow-Credentials' = true, si el origen pertenece a los dominios mencionados.
-- Las URLs permitidas se cachean a nivel de aplicación.
+- Cuando se realiza una solicitud a la API desde un origen que coincide exactamente con uno de la lista, se agregan a la respuesta los headers `Access-Control-Allow-Origin` con ese origen y `Access-Control-Allow-Credentials: true`.
+- Si marcaste **Permitir todos los orígenes**, a un origen que no está en la lista se le responde `Access-Control-Allow-Origin: *`. Los navegadores no aceptan ese valor en solicitudes con credenciales, así que si tu integración las envía, agrega su origen a la lista.
 - En caso de usar caché intermedio, considera el origen en la clave de caché para manejarlo por separado en cada origen:
 
 ```javascript
 Varnish: sub vcl_hash {  if (req.http.Origin) { hash_data(req.http.Origin);  } }
 Nginx: set $cache_key "$http_x_forwarded_proto://$host$request_uri-$http_accept-$http_x_requested_with";
 ```
-:::tip Tip
-Al decidir el uso de SSL, considera:
--  **SSL**: No se permiten certificados wildcards.
-- **NO SSL**: Si se permiten wildcards en estos entornos, pero debes habilitarlos manualmente a través de un ticket enviado al área de [soporte de Modyo](https://support.modyo.com/hc/en-us). Por defecto, Modyo utiliza SSL.
-
-Para más información, revisa la sección de [Seguridad](https://docs.modyo.com/es/platform/channels/sites#security-headers)  de la documentación de Modyo.
-:::
 
 
 ### Revisión en equipo
@@ -130,9 +143,13 @@ La revisión en equipo es una herramienta que permite a varios usuarios confirma
 Las opciones de configuración de la revisión en equipo son las siguientes:
 - **Habilitar revisión en equipo**: Activa o desactiva la revisión en equipo. Si está activada, todos los elementos que se envíen a través de la API requerirán la aprobación de uno o más revisores.
 - **Número de aprobaciones**: Especifica el número de aprobaciones que se requieren para que un elemento se publique.
-- **Restringir la selección de revisores**: Permite especificar qué usuarios pueden revisar el contenido. Solo quien envía a revisión puede seleccionar revisores.
+- **Restringir la selección de revisores**: Solo quien envía a revisión puede seleccionar revisores, y solo los revisores seleccionados pueden aprobar.
 - **Forzar revisión**: Obliga a que al menos un usuario específico revise el contenido.
 - **Requerir todos**: Obliga a que todos los usuarios seleccionados aprueben el elemento antes de que se publique.
+
+:::warning Atención
+Al activar o desactivar **Habilitar revisión en equipo** y guardar, todas las entradas del espacio que estaban en revisión o aprobadas vuelven a borrador. Las versiones ya publicadas no cambian. Si la revisión en equipo queda activa, debes enviarlas a revisión de nuevo para publicarlas.
+:::
 
 Para más información sobre cómo configurar esta opción, revisa la sección de [Revisión en Equipo](/es/platform/core/#revision-en-equipo).
 
@@ -143,13 +160,13 @@ Los miembros del equipo son los usuarios que tienen acceso a un espacio para esc
 #### Agregar usuario ####
 Para añadir un usuario al espacio:
 1. Da click en **Agregar miembro**.
-1. En el modal selecciona un usuario y asígnale un rol.
+1. En **Usuario**, selecciona un usuario o un grupo de la cuenta y, en **Rol**, asígnale un rol. La lista muestra los usuarios activos y los grupos que aún no tienen un rol en el espacio. Si eliges un grupo, todos sus miembros acceden al espacio con ese rol.
 1. Da click en **Añadir**.
 
 
 #### Modificar rol ####
 Para modificar el rol un usuario:
-1. Haz en el nombre del usuario.
+1. Haz click en el nombre del usuario.
 1. En el modal selecciona el nuevo rol.
 1. Presiona **Actualizar**.
 

@@ -14,10 +14,10 @@ You can use this content inside and outside the Modyo platform, through the publ
 
 In the spaces interface, you can see a list of all your spaces, the number of content types and entries in each space, and the date it was created.
 
-You can sort the columns alphabetically, by space name or identifier, or by creation date; and filter using the search engine.
+You can sort the columns alphabetically, by space name or identifier, or by creation date; and filter by name or identifier using the search engine.
 
 :::warning Attention
-You can only see those spaces in which you are part of the team, with a role.
+You see the spaces where you're a team member, either directly or through a group. The account owner and users with the **Manage Content** permission see all spaces.
 :::
 
 ## Create a space
@@ -26,8 +26,16 @@ To create a space, follow these steps:
 
 1. In the side menu, select Content
 1. Click on **New Space**
-1. Fill out the fields in the form.
+1. Fill out the fields in the form:
+   - **Name**: the name of the space.
+   - **Identifier**: it's filled in from the name and you can edit it. It lets you access the space content from the API and the SDKs.
+   - **Default locale**: the account language is selected by default. You can't change it after creating the space.
+   - **Space realm**: the user realm used for private and segmented content. It's optional: if you don't need it, leave **None**.
 1. Click **Create**
+
+Whoever creates the space becomes a member of its team with the **Space Admin** role.
+
+If your account has already reached the maximum number of spaces for its plan, the space isn't created and you'll see the message "You've reached the maximum number of spaces for your current plan".
 
 
 :::tip Tip
@@ -68,7 +76,8 @@ In this section, you can customize and adjust the options available for your spa
 
 In this section, you can:
 - **Change the name of the space**
-- **Show the author of the posts**: Enabling this option allows the author of the content to be visible in the public API and in the Liquid SDK. If disabled, the author will be blank.
+- **Description**: Free text of up to 4095 characters to describe the space.
+- **Show entries author**: Enabling this option allows the author of the content to be visible in the public API and in the Liquid SDK. If disabled, the author will be blank.
 
 :::warning Attention
 Saving this option reindexes all entries in the space. The changes will be reflected once the process is completed.
@@ -88,7 +97,13 @@ The default language of a space is defined when creating the space and you canno
 
 To add a language:
 1. Select a language from the drop-down menu
-1. Click on **Add language**
+1. Click on **Add locale**
+
+To remove a secondary language:
+1. Click the delete icon next to the language.
+1. Confirm in the message "Removing locale. Are you sure?".
+
+You can't remove the default language, which shows as **Default**, or a language that entries in the space already use. In that case, instead of the icon you'll see **Locale in use (can't be deleted)**.
 
 Once you have added a secondary language, when you modify an entry, you will see a language selector next to the title of the entry.
 
@@ -101,27 +116,25 @@ To select one of the available languages from an entry in its corresponding sect
 
 ### Security
 
-Modyo allows you to enable CORS so that the API can be accessed from any microservice in an external domain; ensuring secure data transmission.
+Modyo allows you to enable CORS so that the space's content API can be consumed from the browser on external domains, ensuring secure data transmission.
 
-To enable CORS, you must specify the domain from which the information will be accessed. You can also allow all sources; however, we do not recommend doing so.
+To enable CORS, check **Enable CORS for this space's entries** and enter the origins from which the information will be accessed in **Alternative origins**. You can also check **Allow all origins**; however, we do not recommend doing so.
+
+When entering the origins, keep the following in mind:
+- Enter each origin in full, with its scheme, its domain, and, if it isn't the standard one, its port (for example, `https://app.mydomain.com`). Separate the origins with commas.
+- Wildcards aren't allowed: if any origin includes `*`, the settings aren't saved.
+- When you save, the path and query parameters of each URL are removed.
+- Your sites' domains aren't included automatically. If a site consumes the content API from the browser, add its domain to the list.
 
 When you enable CORS:
-- The URLs allowed to access content are configured at the space level, automatically allowing custom site domains.
-- When a request is made to the API, the Access-Control-Allow-Origin header with a value request.origin is added to the response and Access-Control-Allow-Credentials' = true, if the origin belongs to the mentioned domains.
-- Allowed URLs are cached at the application level.
+- When a request is made to the API from an origin that exactly matches one in the list, the `Access-Control-Allow-Origin` header with that origin and `Access-Control-Allow-Credentials: true` are added to the response.
+- If you checked **Allow all origins**, an origin that isn't in the list gets `Access-Control-Allow-Origin: *` in the response. Browsers don't accept that value on requests with credentials, so if your integration sends them, add its origin to the list.
 - If using intermediate cache, consider the origin in the cache key to handle it separately in each origin:
 
 ```javascript
 Varnish: sub vcl_hash {  if (req.http.Origin) { hash_data(req.http.Origin);  } }
 Nginx: set $cache_key "$http_x_forwarded_proto://$host$request_uri-$http_accept-$http_x_requested_with";
 ```
-:::tip Tip
-When deciding to use SSL, consider:
--  **SSL**: Wildcard certificates are not allowed.
-- **NO SSL**: Wildcards are allowed in these environments, but you must enable them manually by sending a ticket to [Modyo support](https://support.modyo.com/hc/en-us). By default, Modyo uses SSL.
-
-For more information, review the [Security](https://docs.modyo.com/es/platform/channels/sites#security-headers) section of the Modyo documentation.
-:::
 
 
 ### Team Review
@@ -130,9 +143,13 @@ Team review is a tool that allows multiple users to confirm and correct content 
 The configuration options for team review are as follows:
 - **Enable team review**: Activates or deactivates team review. If enabled, all items submitted through the API will require approval from one or more reviewers.
 - **Number of Approvals**: Specifies the number of approvals required for an item to be published.
-- **Restrict the selection of reviewers**: Allows you to specify which users can review the content. Only those who submit for review can select reviewers.
+- **Restrict reviewer selection**: Only users who request a review can select the reviewers, and only selected reviewers can approve the element.
 - **Force review**: Requires at least one specific user to review the content.
 - **Require all**: Requires all selected users to approve the item before it is published.
+
+:::warning Attention
+When you turn **Enable team review** on or off and save, every entry in the space that was in review or approved goes back to draft. Already published versions don't change. If team review stays on, you need to send them to review again to publish them.
+:::
 
 For more information on how to configure this option, go to [Team Review](/en/platform/core/#team-review).
 
@@ -142,8 +159,8 @@ Team members are users who have access to a space to write, review, and publish 
 
 #### Add User ####
 To add a user to the space:
-1. Click **Add Member**.
-1. In the modal, select a user and assign them a role.
+1. Click **Add member**.
+1. In **User**, select a user or a group from the account and, in **Role**, assign them a role. The list shows the active users and the groups that don't have a role in the space yet. If you choose a group, all its members access the space with that role.
 1. Click **Add**.
 
 
