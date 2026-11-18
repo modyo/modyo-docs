@@ -20,6 +20,8 @@ The realm accepts two credentials:
 
 Both resolve to the same user and grant access to the same endpoints. Choose the access token when your application lives outside the account domains, for example a mobile application or a front end on another domain.
 
+To call the API from the browser on an origin other than the API's, enable CORS in the realm, as explained in [Cross Origin Resource Sharing (CORS)](/en/platform/customers/settings.html#cross-origin-resource-sharing-cors).
+
 ### Get an access token
 
 Each realm exposes its own OAuth2 server:

@@ -620,6 +620,39 @@ Modyo soporta la versión V3 de reCAPTCHA básico, no soporta el enterprise.
 
 Además del registro, el envío de formularios, el inicio de sesión y la recuperación de contraseña, el captcha del reino protege el envío y la confirmación de las tareas de las [originaciones](/es/platform/customers/origination.html) en el sitio. Si la verificación falla, la respuesta de la tarea no se guarda, la tarea muestra el error y el usuario puede volver a intentarlo.
 
+#### Cross Origin Resource Sharing (CORS)
+
+En **Cross Origin Resource Sharing** defines qué orígenes pueden llamar desde el navegador a la [API de Customers](/es/platform/customers/api.html) del reino, es decir, a los endpoints bajo `/api/customers/realms/{realm_uid}/`, tanto en el dominio de tu cuenta como en el [dominio personalizado](/es/platform/customers/settings.html#dominios) del reino. Desde la versión 10.1.7, la API de Customers usa esta configuración y no la del [CORS de la cuenta](/es/platform/core/security.html#control-de-acceso-http-cross-origin-resource-sharing-cors), así que los cambios que hagas en la cuenta no la afectan.
+
+La sección tiene tres controles:
+
+- **Habilitar CORS**: activa CORS para la API de Customers del reino. Mientras no esté marcada, la API no agrega headers CORS a sus respuestas y el navegador bloquea las llamadas desde otros orígenes.
+- **Permitir todos los orígenes**: permite las llamadas desde cualquier origen. Al marcarla o desmarcarla, Modyo pide confirmación. No recomendamos usarla en producción; en su lugar, enumera los orígenes en **Orígenes alternativos**.
+- **Orígenes alternativos**: los orígenes desde donde se llamará a la API, además de los que se incluyen automáticamente.
+
+Cuando termines, haz click en **Guardar**.
+
+Al escribir los orígenes, considera lo siguiente:
+- Escribe cada origen completo, con su esquema, su dominio y, si no es el estándar, su puerto (por ejemplo, `https://app.midominio.com`). Separa los orígenes con comas.
+- La comparación con el origen de la llamada es exacta, así que escribe el dominio en minúsculas y usa el mismo esquema y puerto que el front que hace las llamadas.
+- No se permiten wildcards: si algún origen incluye `*`, la configuración no se guarda.
+- Al guardar, se quitan la ruta y los parámetros de consulta de cada URL.
+
+Con CORS habilitado, el reino también permite, sin que tengas que agregarlo, el origen con el que se publica cada aplicación web asociada al reino: su dominio personalizado, si lo tiene habilitado, o el dominio de tu cuenta, si no. Los dominios alternativos de las aplicaciones web no se incluyen. Cualquier otro origen, como un front fuera de Modyo, agrégalo en **Orígenes alternativos**.
+
+Los cambios que guardas en esta sección se aplican de inmediato. En cambio, si asocias una aplicación web al reino, la quitas de él o cambias su dominio, el cambio puede tardar hasta 15 minutos en reflejarse en los orígenes permitidos.
+
+Al habilitar CORS:
+- Cuando se realiza una llamada a la API desde un origen permitido, se agregan a la respuesta los headers `Access-Control-Allow-Origin` con ese origen y `Access-Control-Allow-Credentials: true`.
+- La respuesta a la solicitud previa del navegador (preflight, con el método `OPTIONS`) permite los métodos `GET`, `OPTIONS`, `PUT`, `POST` y `DELETE`, y los headers `Content-Type` y `Authorization`. Si la llamada incluye otro header, por ejemplo uno personalizado, el navegador la bloquea.
+- Si el origen no está permitido, la respuesta no incluye headers CORS y el navegador bloquea la llamada.
+
+Para autenticar las llamadas desde otro origen, usa el access token en el header `Authorization`, como se explica en [Autenticación](/es/platform/customers/api.html#autenticacion).
+
+:::tip Tip
+La configuración CORS se copia al [crear un stage](/es/platform/customers/realms.html#que-se-copia-a-un-stage) del reino, y puedes llevarla de un stage a otro al [sincronizar](/es/platform/customers/realms.html#sincronizar-un-stage) la **Configuración**. Cada stage usa su propia configuración y permite automáticamente las aplicaciones web asociadas a ese stage.
+:::
+
 #### Límites de solicitudes y bloqueos
 
 Las pantallas del reino que envían un correo o piden la contraseña actual están protegidas contra el abuso, tanto las que se usan sin sesión como las del perfil del usuario. Estos límites son fijos y no se configuran desde el panel.
@@ -734,7 +767,7 @@ Ten en cuenta estas reglas:
 - La [API de Customers](/es/platform/customers/api.html) también responde en el dominio personalizado, con el identificador del reino en la ruta, por ejemplo `https://login.mibanco.com/api/customers/realms/my_realm/me`. En el dominio de tu cuenta sigue respondiendo igual, sin redirigir, y los endpoints de token, revocación e introspección de OAuth siguen funcionando ahí.
 
 :::tip Notificaciones en tus aplicaciones web
-El template base de las aplicaciones web marca las notificaciones como leídas llamando a la API de Customers en el dominio del reino. Si la aplicación web está en otro dominio, por ejemplo el de tu cuenta, activa **Habilitar CORS** en la sección **Cross Origin Resource Sharing** de [Seguridad](#seguridad): las aplicaciones web asociadas al reino quedan permitidas sin que tengas que agregarlas como orígenes.
+El template base de las aplicaciones web marca las notificaciones como leídas llamando a la API de Customers en el dominio del reino. Si la aplicación web está en otro dominio, por ejemplo el de tu cuenta, activa **Habilitar CORS** en la sección [Cross Origin Resource Sharing](/es/platform/customers/settings.html#cross-origin-resource-sharing-cors) de **Seguridad**: las aplicaciones web asociadas al reino quedan permitidas sin que tengas que agregarlas como orígenes.
 
 Las aplicaciones web que ya existían conservan la llamada al dominio de tu cuenta, que sigue funcionando. Toman el cambio al restaurar sus [plantillas](/es/platform/channels/templates.html) con **Restaurar todo**.
 :::

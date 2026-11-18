@@ -20,6 +20,8 @@ El reino acepta dos credenciales:
 
 Las dos resuelven al mismo usuario y dan acceso a los mismos endpoints. Elige el access token cuando tu aplicación vive fuera de los dominios de la cuenta, por ejemplo una aplicación móvil o un front en otro dominio.
 
+Para llamar a la API desde el navegador en un origen distinto al de la API, habilita CORS en el reino, como se explica en [Cross Origin Resource Sharing (CORS)](/es/platform/customers/settings.html#cross-origin-resource-sharing-cors).
+
 ### Obtener un access token
 
 Cada reino expone su propio servidor OAuth2:

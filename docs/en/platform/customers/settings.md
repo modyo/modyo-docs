@@ -616,6 +616,39 @@ You can enable reCAPTCHA in the realm or not, once enabled, enter:
 
 In addition to registration, form submission, sign in, and password recovery, the realm's captcha protects the submission and confirmation of [origination](/en/platform/customers/origination.html) tasks on the site. If the verification fails, the task response isn't saved, the task shows the error, and the user can try again.
 
+#### Cross Origin Resource Sharing (CORS)
+
+In **Cross Origin Resource Sharing** you define which origins can call the realm's [Customers API](/en/platform/customers/api.html) from the browser, that is, the endpoints under `/api/customers/realms/{realm_uid}/`, both on your account's domain and on the realm's [custom domain](/en/platform/customers/settings.html#domains). Since version 10.1.7, the Customers API uses this configuration instead of the [account's CORS](/en/platform/core/security.html#http-access-control-cross-origin-resource-sharing-cors), so changes you make in the account don't affect it.
+
+The section has three controls:
+
+- **Enable CORS**: turns on CORS for the realm's Customers API. While it's unchecked, the API doesn't add CORS headers to its responses and the browser blocks calls from other origins.
+- **Allow all origins**: allows calls from any origin. When you check or uncheck it, Modyo asks for confirmation. We don't recommend using it in production; instead, list the origins in **Alternative origins**.
+- **Alternative origins**: the origins from which the API will be called, in addition to the ones included automatically.
+
+When you're done, click **Save**.
+
+When entering the origins, keep the following in mind:
+- Enter each origin in full, with its scheme, its domain, and, if it isn't the standard one, its port (for example, `https://app.mydomain.com`). Separate the origins with commas.
+- The match against the calling origin is exact, so write the domain in lowercase and use the same scheme and port as the front end that makes the calls.
+- Wildcards aren't allowed: if any origin includes `*`, the settings aren't saved.
+- When you save, the path and query parameters of each URL are removed.
+
+With CORS enabled, the realm also allows, without you having to add it, the origin each web app associated with the realm is published on: its custom domain, if it has one enabled, or your account's domain, if not. The web apps' alternative domains aren't included. Add any other origin, such as a front end outside Modyo, in **Alternative origins**.
+
+The changes you save in this section apply immediately. However, if you associate a web app with the realm, remove it from the realm, or change its domain, the change can take up to 15 minutes to be reflected in the allowed origins.
+
+When you enable CORS:
+- When a call is made to the API from an allowed origin, the `Access-Control-Allow-Origin` header with that origin and `Access-Control-Allow-Credentials: true` are added to the response.
+- The response to the browser's preliminary request (preflight, with the `OPTIONS` method) allows the `GET`, `OPTIONS`, `PUT`, `POST`, and `DELETE` methods, and the `Content-Type` and `Authorization` headers. If the call includes another header, for example a custom one, the browser blocks it.
+- If the origin isn't allowed, the response doesn't include CORS headers and the browser blocks the call.
+
+To authenticate calls from another origin, use the access token in the `Authorization` header, as explained in [Authentication](/en/platform/customers/api.html#authentication).
+
+:::tip Tip
+The CORS configuration is copied when you [create a stage](/en/platform/customers/realms.html#what-is-copied-to-a-stage) of the realm, and you can carry it from one stage to another when you [sync](/en/platform/customers/realms.html#sync-a-stage) the **Configuration**. Each stage uses its own configuration and automatically allows the web apps associated with that stage.
+:::
+
 #### Request limits and lockouts
 
 The realm screens that send an email or ask for the current password are protected against abuse, both the ones used without a session and the ones in the user's profile. These limits are fixed and are not configured from the panel.
@@ -730,7 +763,7 @@ Keep these rules in mind:
 - The [Customers API](/en/platform/customers/api.html) also answers on the custom domain, with the realm identifier in the path, for example `https://login.mybank.com/api/customers/realms/my_realm/me`. On your account's domain it keeps answering the same way, without redirecting, and the OAuth token, revocation, and introspection endpoints keep working there.
 
 :::tip Notifications in your web apps
-The base template of web apps marks notifications as read by calling the Customers API on the realm's domain. If the web app is on another domain, such as your account's, turn on **Enable CORS** in the **Cross Origin Resource Sharing** section of [Security](#security): the web apps associated with the realm are allowed without adding them as origins.
+The base template of web apps marks notifications as read by calling the Customers API on the realm's domain. If the web app is on another domain, such as your account's, turn on **Enable CORS** in the [Cross Origin Resource Sharing](/en/platform/customers/settings.html#cross-origin-resource-sharing-cors) section of **Security**: the web apps associated with the realm are allowed without adding them as origins.
 
 Existing web apps keep the call to your account's domain, which still works. They pick up the change when you restore their [templates](/en/platform/channels/templates.html) with **Restore All**.
 :::
