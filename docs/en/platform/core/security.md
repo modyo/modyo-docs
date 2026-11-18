@@ -36,7 +36,7 @@ _Consecutive failed logins limit exceeded. Your account has been temporarily dis
 This protection applies both to team members signing in to the admin panel and to end users signing in to a realm. The lockout is released only by waiting: there is no manual unlock action in the panel, you have to wait for the time to elapse.
 
 :::tip Tip
-This temporary lockout is different from the _inactive_ status of the [User inactivity period policy](#user-inactivity-period-policy). If a team member reports being unable to sign in, check which of the two cases applies: the failed attempts lockout clears on its own after 15 minutes, whereas the inactive status remains until the user reactivates their account or an account owner activates it again.
+This temporary lockout is different from the _inactive_ status of the [User inactivity period policy](#user-inactivity-period-policy). If a team member reports being unable to sign in, check which of the two cases applies: the failed attempts lockout clears on its own after 15 minutes, whereas the inactive status remains until the user reactivates their account or a team member with the **Admin Team** permission activates it again.
 :::
 
 ## Expiration of panel links and codes
@@ -91,7 +91,7 @@ This lockout is different from the [Lockout after failed login attempts](#lockou
 
 In this section, you can configure how long a session will remain active. Both fields are fixed option lists: you choose one of the available values, you do not type a free-form time.
 
-**Session expiration**: At the end of the selected time, Modyo automatically closes the user's session. The options are 15 minutes, 30 minutes, 1 hour, 2 hours, 12 hours, 1 day, 1 week, 2 weeks, 1 month, and 3 months. If the duration defined in your installation does not match any of them, it also appears as one more option on the list.
+**Session expiration**: At the end of the selected time, Modyo automatically closes the user's session. The options range from 15 minutes up to the maximum session duration your installation allows, which is 1 week by default: 15 minutes, 30 minutes, 1 hour, 2 hours, 12 hours, 1 day, and 1 week. The 2 weeks, 1 month, and 3 months options only appear when your installation's maximum reaches them, and if that maximum does not match any option, it also appears as the last one on the list. If your installation's maximum is lowered, sessions last at most that maximum, even if the account has a higher value saved.
 
 **User idle period**: When a user is inactive, the session is automatically closed after the selected time has elapsed. Navigation, keyboard, and mouse actions are considered user activities. This option protects the user if they leave their workstation unattended. To be able to choose a value, first check the **Enable user idle period** box; the options are 5 minutes, 15 minutes, 30 minutes, 1 hour, and 6 hours.
 
@@ -111,21 +111,30 @@ Getting this email does not by itself mean that someone else entered the account
 
 ## User inactivity period policy
 
-When this option is activated, and once the selected time has elapsed without user interaction on the platform, Modyo will automatically change the user's status to _inactive_.
+With the **Enable user inactivity policy** box checked, which is the default, Modyo changes to _inactive_ the status of team members who go longer than the selected **Inactivity period** without interacting with the platform. The change does not happen at the exact moment the period is reached, but at whichever of these two moments comes first:
 
-Once the user is marked as inactive, they cannot log in. The default inactivity period is 90 days, and you can change it to:
+- In the automatic review that Modyo runs once a week. This review also closes the team member's open sessions.
+- When the team member tries to sign in after the period has been reached and their credentials are valid.
+
+The account owner never becomes inactive, even if they exceed the period.
+
+Once the user is marked as inactive, they cannot log in while the policy remains enabled. The default inactivity period is 90 days, and you can change it to:
 
 - 30 days
 - 90 days
 - 180 days
 - 360 days
 
-If you check the box to resend an email to the user when they are considered inactive, the user will receive an email notification. From this email, they will be able to reactivate their account.
+If you check the **Send reactivation email on user deactivation by inactivity** box, which is enabled by default, the user receives an email every time they try to sign in while inactive, and from that email they can reactivate their account. The weekly review does not send this email.
+
+:::warning Attention
+When you save the settings after enabling or disabling the policy, all team members marked as inactive become active again, including the ones you marked manually. If the policy remains enabled, those who still exceed the period become inactive again in the next weekly review or when they try to sign in.
+:::
 
 :::tip Tip
-**Account owners** can change a user's status between inactive and active using the "Login disabled due to inactivity" checkbox.
+Any team member with the **Admin Team** permission can change a user's status between inactive and active using the **Login suspended for inactivity** checkbox.
 
-You can locate this option when editing a user in the **Team** section, in the **Edit** tab. If you select the checkbox, the user is marked as inactive, and when deactivated, the user will be active.
+You can locate this option when editing a user in the **Team** section, in the **Edit** tab. If you select the checkbox, the user is marked as inactive and their open sessions are closed. When you clear it, the user is active again and the inactivity period starts counting again from that moment. In the **Team** list, the **Suspended** filter lets you see which users are inactive.
 :::
 
 ## HTTP access control (Cross-Origin Resource Sharing CORS)
@@ -138,6 +147,8 @@ The **Cross Origin Resource Sharing** section defines which domains can access M
 
 When you are done, click **Save**.
 
+The origins in this section apply to the administration API, the Channels menus API, and the payments API. The other APIs have their own CORS: the content API uses each space's, in the [Security](/en/platform/content/spaces.html#security) section of its settings, and the Customers API uses each realm's, in the [Security](/en/platform/customers/settings.html#security) section of its settings. In addition, the menus API of an app with an active custom domain always accepts calls from that domain, even if CORS is disabled.
+
 :::warning Attention
 **Allow all origins** is enabled from this same screen, with no need to open a support ticket or make any other change to your installation. Because it puts your account's public information within reach of any domain, reserve it for development or testing environments and, in production, list the domains in **Alternative origins**.
 :::
@@ -148,13 +159,13 @@ The automatic inclusion covers the primary domain of each app. If you publish an
 
 ## Content Delivery Token (JWT - JSON Web Token)
 
-This key or _secret_ is used by Modyo to sign user JWTs to access [private content through the API](/en/platform/content/public-api-reference#private-content).
+Modyo signs user JWTs with the **Private content JSON Web Signature (JWS) key** so they can access [private content through the API](/en/platform/content/public-api-reference#private-content). It is not a shared _secret_, but an elliptic curve key pair that Modyo uses to sign tokens with the ES256 algorithm. The key is created along with the account, does not expire, and only changes when you click **Generate new JWS key**.
 
 :::warning Attention
 If you generate a new key, all requests for private content must go through Modyo. This is because JWTs signed by Modyo with the old key will no longer be valid.
 :::
 
-The key or _secret_ has a specified duration in seconds. You can set this time in the provided field; by default, the duration is one hour (3600 seconds). It is recommended to avoid a very short duration, as it may affect the platform's performance.
+The **Content delivery token TTL (in seconds)** field defines how long each JWT that Modyo issues lasts, not the key. The default is one hour (3600 seconds) and the minimum is 10 seconds. While a token is still valid, Modyo can hand it out again with the same expiration, so the one your app receives may last less than that time; when it expires, the content API rejects it and you have to request a new one. It is recommended to avoid a very short duration, as it may affect the platform's performance.
 
 ## Two-factor authentication (2FA)
 
