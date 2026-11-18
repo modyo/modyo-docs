@@ -200,6 +200,21 @@ A **Rejected** check with no reason in the **Fields** tab, or with no error code
 
 All three fields can be used in the conditional logic of the origination, but only with the **has no value** and **has any value** operators. It is not possible to set conditions based on the content of the document, the country, or the result of the liveness check.
 
+#### Customize fields with CSS and JavaScript
+
+The fields of Input tasks carry the same `data-*` attributes as forms, built from the **Identifier** of each field, both on the origination page of the site and in the form of [tasks answered by agents](/en/platform/customers/origination.html#tasks-answered-by-agents). On the origination page, you can use them as selectors in the site's CSS and JavaScript. The agent form loads the published `base` CSS view of the site, but not its JavaScript, so there they only work for style rules. The details of each attribute are in [Identify questions and fields](/en/platform/customers/forms.html#identify-questions-and-fields).
+
+In addition, in Input tasks:
+
+- The **Identity document** field marks its parts with `data-field-part`: `document_type`, `country`, `file_id` and `back_file_id`.
+- Each instance of a repeatable group carries `data-group-item` with its position, starting at 1. The numbering is updated when instances are added or removed.
+- When an instance is added with the **Add** button of a repeatable group, the platform dispatches the `forms:group-item-added` event from the new instance, and the event bubbles up. It's not dispatched for the instances that are already there when the task loads.
+- The `forms:rendered` event is exclusive to forms: Input tasks don't dispatch it.
+
+:::warning Attention
+When a [conditional logic](/en/platform/customers/origination.html#conditional-logic) rule shows or hides a field, the platform redraws the fields of the task and the changes you made to them with JavaScript are lost. Reapplying them is up to you.
+:::
+
 ### Validation
 
 The validation task requires manual review by the assigned agent. They must validate the data provided by the user to unlock the next task in the flow.

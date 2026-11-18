@@ -163,6 +163,8 @@ This section will allow you to modify the options for each of the questions on y
 
 All input fields have a title, which will be the question associated with the answer, the option to make it a required field in order to submit the form, and a brief description, if instructions are needed, to answer the field. The [Hidden Field](/en/platform/customers/forms.html#hidden-field) is the exception: it has no required option and no instructions.
 
+Each field also has an **Identifier** that distinguishes it within the form. When you create a field, the identifier is generated from the title as you type it. Once the field is saved, the identifier appears locked with a padlock, and changing the title no longer modifies it. To modify it, click the padlock and confirm the **Unlock identifier field** warning with **Unlock**: changing the identifier breaks the references to the field from the custom JavaScript, the CSS and Liquid. See [Identify questions and fields](/en/platform/customers/forms.html#identify-questions-and-fields).
+
 The **Dropdown** and **Nested Questions** fields have the **Enable search** checkbox, unchecked by default, also when their alternatives come from a [data set](/en/platform/customers/settings.html#data-sets). With the checkbox checked, the user sees a search box instead of the browser list: as they type, it finds the alternatives that contain the text, ignoring case and accents, shows them in the order you defined, and displays up to 100 matches. In nested questions, the search box appears at every level. The same checkbox is available in the [Input](/en/platform/customers/origination.html#input) tasks of originations. The **Country** field and the country selector of the **Address** field always show this search box, which also finds each country by its two-letter ISO code.
 
 Some fields have validations, to ensure that the user meets certain requirements to fill in the field, some of these restrictions are:
@@ -214,6 +216,8 @@ The **General** section adds two options:
 
 #### Snippet
 The **Snippet** section, which will only appear if the form is public, will allow you to copy an _HTML_ code that you can use anywhere to dynamically load the form, even outside of Modyo.
+
+If you customize the form with [Custom JS](/en/platform/customers/forms.html#custom-js), keep in mind that in the snippet this code runs before the questions are on the page. To modify them, wait for the `forms:rendered` event, described in [Wait for the form to be on the page](/en/platform/customers/forms.html#wait-for-the-form-to-be-on-the-page).
 
 :::warning Attention
 In order to make proper use of the form snippet, you must take into account the _CORS_ configuration of your Modyo account and the security _headers_ where you are inserting the snippet.
@@ -284,14 +288,70 @@ Message Sent: {{ 'now' | date: "%b %d, %y" }}
 
 ### Custom JS
 
-Add functionality, such as custom validation, to your form using Javascript by following these steps:
+Add functionality to your form using Javascript, such as custom validation or a new arrangement of its questions, by following these steps:
 
 1. On the Modyo platform, within your realm, click on your form.
-1. Click on more options and click on **View**.
-1. Open the developer tools and inspect the element you want to modify.
-1. Note the id of the element to be validated. (e.g. `answers_3684_value`)
+1. Note the **Identifier** of the questions you want to use. You can see it in the [field properties](/en/platform/customers/forms.html#field-properties) and, on the published form, in their `data-question` and `data-field` attributes.
 1. In the Custom JS section you can add validations or extra functionality using Javascript.
 1. Click **Save**.
+
+To target a question or a field, use the attributes described in [Identify questions and fields](/en/platform/customers/forms.html#identify-questions-and-fields) instead of the `id` of the elements. The `id` values are built from internal identifiers that change from one environment to another and, in some questions, on every page load.
+
+#### Identify questions and fields
+
+Each question and each of its fields carry `data-*` attributes whose value is the question's **Identifier**, both on the form page of the site and in the [snippet](/en/platform/customers/forms.html#snippet). You can use them as selectors in the custom JS and in the CSS of the site associated with the form.
+
+| Attribute | Where it is |
+|---|---|
+| `data-form` | The element that contains the questions of the form. Its value is the form identifier in its URL: in `/forms/my-form`, it's `my-form`. It lets you tell one form from another when there is more than one on the same page. |
+| `data-question` | The element that wraps each question, with its title, its field, its instructions and its error messages. The **Hidden Field** has no wrapping element, so its own field carries it. |
+| `data-field` | The field the user interacts with: the text box, the list, each option of **Choice** and **Checkboxes**, or the file upload area. In **Nested questions**, the list of each level carries it. |
+| `data-field-control` | The visible control of the lists with a search box: **Dropdown** and **Nested questions** with **Enable search**, **Country** and the country of **Address**. The search box hides the original list, which keeps `data-field` and `data-field-value`. |
+| `data-field-value` | The field that holds the value that is submitted. In **Phone**, **Date** and the fields with an input mask, it's a hidden field with the unformatted value; in the rest, it's the same field that carries `data-field`. |
+| `data-field-part` | Each part of a compound question: `address_line_1`, `address_line_2`, `city_town`, `state_region_province`, `zip_code` and `country` in **Address**, and `other` in the text of the **Other** option of **Choice** and **Checkboxes**. |
+| `data-field-option` | Each option of **Choice** and **Checkboxes**, with the plain text of its label. The **Other** option carries its own text. |
+
+Keep the following in mind:
+
+- The `id` values and classes of the elements don't change, so the customizations that already use them keep working.
+- To use `data-field-option` as a selector, the options of a question must be distinguishable by their visible text, and the text of the **Other** option must not repeat the text of another option.
+- Style rules go in the CSS of the site associated with the form, because forms don't have their own CSS.
+
+#### Wait for the form to be on the page
+
+When the questions of the form are on the page and ready to use, including the search boxes, the date calendar and the masked fields, the platform dispatches the `forms:rendered` event from the `data-form` element. The event bubbles up, so you can listen to it on `document` and tell which form it belongs to with `event.target.dataset.form`.
+
+It's dispatched on the form page and in the snippet, always after the custom JS runs, so the same code works in both cases. For example, this code groups three questions in a section and validates one of them when the user leaves the field:
+
+```js
+(function () {
+  document.addEventListener('forms:rendered', function (event) {
+    var form = event.target;
+    if (form.dataset.form !== 'my-form') return;
+
+    var section = document.createElement('fieldset');
+    var legend = document.createElement('legend');
+    legend.textContent = 'Personal information';
+    section.append(legend);
+    ['first-name', 'last-name', 'rut'].forEach(function (uid) {
+      var question = form.querySelector('[data-question="' + uid + '"]');
+      if (question) section.append(question);
+    });
+    form.prepend(section);
+
+    var rut = form.querySelector('[data-field="rut"]');
+    rut.addEventListener('blur', function () {
+      var valid = /^[0-9]{7,8}-[0-9kK]$/.test(rut.value.trim());
+      rut.classList.toggle('is-invalid', !valid);
+    });
+  });
+})();
+```
+
+Keep the following in mind:
+
+- Write this code in the custom JS of the form and not in the site's JavaScript, which could load after the event is dispatched.
+- The questions you move must stay inside the `data-form` element. If they end up outside it, their answers are not submitted.
 
 :::tip Tip
 This script will run after the div containing the form, so it's important to keep in mind that it can be affected by the rest of the site's configuration. For example, if this form is embedded in another external site that cannot run Javascript.
