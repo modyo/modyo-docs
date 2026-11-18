@@ -30,7 +30,7 @@ Account objects are mainly used in the context of account authentication, which 
 |------------------------|------------------------------------------------------------------------------------------------------------|-----------------------------------------------|
 | **account.url**        | The Modyo Platform URL, including the protocol and sub-domain.                                             | ```https://test.modyo.com```                  |
 | **account.host**       | The name of the Modyo Platform sub-domain.                                                                 | ```test```                                    |
-| **account.google_key** | If there is authentication with Google, it returns the credential key; otherwise, it returns empty (void). | ```AIzaSyDmrYmbFpzqdIxHycHbgtJrs9lhKOfggEE``` |
+| **account.google_key** | The account's [Google API Key](/en/platform/core/configuration.html#visualization), which location fields and the `static_map` and `dynamic_map` filters use to connect to Google Maps. It isn't a Google sign-in credential. If it isn't set, it returns empty. | ```AIzaSyDmrYmbFpzqdIxHycHbgtJrs9lhKOfggEE``` |
 | **account.name**       | The name of the account.                                                                                   | ```Modyo```                                   |
 
 ## adminuser

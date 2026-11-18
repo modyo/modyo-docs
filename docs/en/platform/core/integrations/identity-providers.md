@@ -60,6 +60,10 @@ Keep the following in mind:
 
 ## Google
 
+:::tip Google in the admin
+The Google integration is available only for realm users. To let your team members sign in to the admin with their Google accounts, set up Google as an OpenID Connect provider, as explained in [Google with OpenID Connect for the team](/en/platform/core/integrations/identity-providers.html#google-with-openid-connect-for-the-team).
+:::
+
 In order to integrate Google login with Modyo, you must have:
 
 - **Client ID**: It must have the format `CLIENT_ID.apps.googleusercontent.com`.
@@ -291,3 +295,31 @@ The following configuration applies to both Team and Customer user integrations.
    | **Enable token revocation** | Not supported by Entra ID |
    | **Display delegation info** | Enables more information in the [User Profile API](/en/platform/customers/api) regarding delegated tokens. This is useful when the access token issued by the identity provider is needed to gain access to another service (e.g., an external API). |
    | **Enable claims synchronization on login** | Enables OpenID Connect claim synchronization with custom fields in Modyo. More information in [Claim Synchronization](#claims-synchronization). |
+
+## Google with OpenID Connect for the team
+
+To let your team members sign in to the admin with their Google accounts, set up Google as the team's OpenID Connect provider. Since the team supports only one provider of each type, you can't use Google together with another OpenID Connect provider, such as Keycloak or Azure Entra ID.
+
+### Create the OAuth client in Google Cloud
+
+1. Sign in to [Google Cloud Console](https://console.cloud.google.com/) and select your Google Workspace organization's project.
+1. Configure the **OAuth consent screen** and choose **Internal** as the user type, to limit access to your organization's accounts.
+1. Create an **OAuth client ID** with the **Web application** application type.
+1. In **Authorized redirect URIs**, add `https://test.modyo.com/admin/auth/openidc/callback`. Replace `test.modyo.com` with your account's URL.
+1. Copy the client's **Client ID** and **Client secret**.
+
+You can learn more in [Google's official OpenID Connect documentation](https://developers.google.com/identity/openid-connect/openid-connect).
+
+### Configure Google in Modyo Platform
+
+1. From the main menu, expand **Settings** and click **Identity providers**.
+1. Click **Add** and, on the dropdown, select **OpenID Connect**.
+1. In **Name**, type the button text your team sees on the sign-in screen, for example `Google`.
+1. Fill in **Client ID** with Google's **Client ID** and **Secret** with Google's **Client secret**.
+1. In **Issuer**, type `https://accounts.google.com` and click **Run discovery service**. Modyo fills in **JWKS URI**, **Scopes**, **Authorization endpoint**, **Token endpoint**, and **Userinfo endpoint**.
+1. Check that **Scopes** is `openid,email,profile`.
+1. Leave **Authentication Method** as **Client secret sent as basic authentication header**.
+1. Click **Add**.
+1. In the list of providers, open the provider's menu and click **Enable**.
+
+Google doesn't publish a logout endpoint, so leave **Enable remote logout** turned off.

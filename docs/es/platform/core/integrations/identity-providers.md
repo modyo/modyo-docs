@@ -60,6 +60,10 @@ Ten en cuenta lo siguiente:
 
 ## Google
 
+:::tip Google en el administrador
+La integración de Google está disponible solo para los usuarios de un reino. Para que los miembros de tu equipo inicien sesión en el administrador con sus cuentas de Google, configura Google como proveedor OpenID Connect, como se explica en [Google con OpenID Connect para el equipo](/es/platform/core/integrations/identity-providers.html#google-con-openid-connect-para-el-equipo).
+:::
+
 Para poder integrar el inicio de sesión de Google con Modyo, deberás contar con:
 
 - **Client ID**: Debe tener el formato `CLIENT_ID.apps.googleusercontent.com`.
@@ -291,3 +295,31 @@ La siguiente configuración es válida tanto para las integraciones de usuarios 
    | **Habilitar revocación de tokens** | No soportado por Entra ID |
    | **Mostrar información de delegación** | Habilita más información en la [API de perfil de usuario](/es/platform/customers/api#api-de-customers) con respecto a tokens delegados. Esto es útil cuando se necesita el access token que emite el proveedor de identidad para conseguir acceso a algún otro servicio (e.g. una API externa). |
    | **Habilitar la sincronización de claims al iniciar sesión** | Habilita la sincronización de claims OpenID Connect con custom fields en Modyo. Más información en [Sincronización de claims](#sincronizacion-de-claims). |
+
+## Google con OpenID Connect para el equipo
+
+Para que los miembros de tu equipo inicien sesión en el administrador con sus cuentas de Google, configura Google como proveedor OpenID Connect del equipo. Como el equipo admite un solo proveedor de cada tipo, no puedes usar Google junto con otro proveedor OpenID Connect, como Keycloak o Azure Entra ID.
+
+### Crear el cliente OAuth en Google Cloud
+
+1. Inicia sesión en [Google Cloud Console](https://console.cloud.google.com/) y selecciona el proyecto de tu organización de Google Workspace.
+1. Configura la pantalla de consentimiento de OAuth (**OAuth consent screen**) y elige **Internal** como tipo de usuario, para limitar el acceso a las cuentas de tu organización.
+1. Crea un cliente OAuth (**OAuth client ID**) con el tipo de aplicación **Web application**.
+1. En **Authorized redirect URIs**, agrega `https://test.modyo.com/admin/auth/openidc/callback`. Sustituye `test.modyo.com` por la URL de tu cuenta.
+1. Copia el **Client ID** y el **Client secret** del cliente.
+
+Puedes aprender más en la [documentación oficial de Google sobre OpenID Connect](https://developers.google.com/identity/openid-connect/openid-connect).
+
+### Configurar Google en Modyo Platform
+
+1. Desde el menú principal, expande **Configuración** y haz click en **Proveedores de identidad**.
+1. Haz click en **Añadir** y, en el dropdown, selecciona **OpenID Connect**.
+1. En **Nombre**, escribe el texto del botón que verá tu equipo en la pantalla de inicio de sesión, por ejemplo `Google`.
+1. Completa **ID de cliente** con el **Client ID** y **Secreto** con el **Client secret** de Google.
+1. En **Issuer**, escribe `https://accounts.google.com` y haz click en **Ejecutar servicio de detección**. Modyo completa **JWKS URI**, **Scopes**, **Endpoint de autorización**, **Endpoint de token** y **Endpoint de User Info**.
+1. Revisa que **Scopes** sea `openid,email,profile`.
+1. Deja **Método de autenticación** en **Client secret enviado como cabecera de autenticación básica**.
+1. Haz click en **Añadir**.
+1. En la lista de proveedores, abre el menú del proveedor y haz click en **Habilitar**.
+
+Google no publica un endpoint de cierre de sesión, así que deja desactivado **Habilitar cierre de sesión remoto**.
