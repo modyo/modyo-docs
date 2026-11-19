@@ -74,17 +74,17 @@ Underneath, two limits apply:
 
 In both cases the person sees the success message and the email never arrives. This is the most frequent cause of the "I asked for the recovery and nothing arrived" report.
 
-### Password, email, and username changes from the profile
+### Sensitive data changes from the profile
 
-The **Profile** screen asks for the current password before changing the password, the email address, or the username. Two more limits apply there:
+The **Profile** screen asks for the current password before changing the password, the email address, or the username, and before removing the authenticator. Two more limits apply there:
 
 - **One password change every 24 hours**: once a team member changes their password, they cannot change it again from their profile for the next 24 hours. If they try, the platform sends them back to the profile with the message _The number of password change request has exceeded the maximum permitted_. The clock also starts when the password was set from a recovery link.
-- **Three failed attempts and a 15-minute lockout**: when three failed attempts to change the password, the email, or the username pile up, the next one is rejected with the message _You've reached the limit tries to change sensitive data on your profile. Your session will be closed for safety reasons_ and the platform closes the session. When the email or the username is being changed, it also revokes all of the team member's active sessions, so they are logged out on every device.
+- **Three failed attempts and a 15-minute lockout**: changing the password, changing the email or the username, and removing the authenticator share the same attempt limit. Only an attempt with a wrong or empty current password counts as failed. When three failed attempts pile up, the next one is rejected even if the password is correct, with the message _You've reached the limit tries to change sensitive data on your profile. Your session will be closed for safety reasons_. The platform closes the team member's session, and it may also log them out on all of their devices.
 
-The lockout lasts 15 minutes and clears only by waiting: there is no action in the panel to release it earlier. Once the time is up, the team member gets their attempts back.
+The lockout lasts 15 minutes and clears only by waiting: there is no action in the panel to release it earlier. While it lasts, any attempt to change this data or to remove the authenticator is rejected, even with the correct password, and the session is closed again. The lockout does not prevent signing in again. Once the time is up, the team member gets their attempts back.
 
 :::tip Tip
-This lockout is different from the [Lockout after failed login attempts](#lockout-after-failed-login-attempts), which triggers after 10 attempts on the login screen. The profile one triggers after 3 attempts, with the session already open, and its visible effect is that the person is thrown out of the platform right after mistyping their current password. If someone reports that "the panel kicked me out while I was changing my email", this is why.
+This lockout is different from the [Lockout after failed login attempts](#lockout-after-failed-login-attempts), which triggers after 10 attempts on the login screen. The profile one triggers after 3 failed attempts, with the session already open, and its visible effect is that the person is thrown out of the platform on the next attempt, even if this time they type their current password correctly. If someone reports that "the panel kicked me out while I was changing my email" or "while I was removing my authenticator", this is why.
 :::
 
 ## Session expiration policy
@@ -188,16 +188,18 @@ To enable two-factor authentication for a user and neutralize the risk of compro
 3. Scan the code that appears on the screen with your mobile device to link your authenticator with Modyo Platform. This adds an entry in the app with your account domain and your username.
 4. Enter the 6-digit code shown by the app in the **Current code** field and click **Save**.
 
-Once you have two-factor authentication enabled, the button will say **Remove authenticator**. When you click it, the authenticator is removed immediately, without asking for confirmation.
+Once you have two-factor authentication enabled, the button will say **Remove authenticator**. To remove the authenticator, click that button, type your password in the **Current password** field of the window that opens, and click **Remove authenticator**. If the password is wrong, you see the message _The authenticator could not be removed. Please check your current password._ and the authenticator stays in place. Failed attempts count toward the [profile attempt limit](#sensitive-data-changes-from-the-profile).
 
 
 ### Delete authenticator for a user
 
 If the authenticator is lost or stolen, it will not be possible to access the account. In this case, a Modyo Platform administrator can help by removing the authenticator linked to the user by following these steps:
 
-1. In the side menu, expand **Settings** and click **Teams**.
+1. In the side menu, expand **Settings** and click **Team**.
 1. Click on the member's name.
 1. In the top bar, click on the more options button, represented by three dots, and select **Remove authenticator**.
+
+To see this option you need the **Admin Team** permission, which **Admin Settings** also includes. The option is only available when the member has an authenticator set up, and it cannot be used on your own user: you remove your own authenticator from your Profile, where your current password is required. When it finishes, you see the message _Authenticator removed successfully._ and the action is recorded in the [Activity logs](/en/platform/core/activity-logs.html) as **User updated**.
 
 :::warning Attention
 If you have activated the option to force authentication, the next time the user tries to log in, they will need to initialize the authenticator first. Once the authenticator is active, the user can proceed with the login process.

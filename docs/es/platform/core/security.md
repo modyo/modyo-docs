@@ -74,17 +74,17 @@ Por dentro se aplican dos límites:
 
 En ambos casos la persona ve el mensaje de éxito y el correo nunca llega. Es la causa más frecuente del reporte "pedí la recuperación y no me llegó nada".
 
-### Cambios de contraseña, correo y nombre de usuario desde el perfil
+### Cambios de datos sensibles desde el perfil
 
-La pantalla de **Perfil** pide la contraseña actual antes de cambiar la contraseña, el correo electrónico o el nombre de usuario. Ahí se aplican dos límites más:
+La pantalla de **Perfil** pide la contraseña actual antes de cambiar la contraseña, el correo electrónico o el nombre de usuario, y antes de eliminar el autenticador. Ahí se aplican dos límites más:
 
 - **Un cambio de contraseña cada 24 horas**: una vez que un miembro del equipo cambia su contraseña, no puede volver a cambiarla desde su perfil durante las 24 horas siguientes. Si lo intenta, la plataforma lo devuelve al perfil con el mensaje _El número de solicitudes de cambio de contraseña ha superado el máximo permitido_. El plazo empieza a contar también cuando la contraseña se definió desde un enlace de recuperación.
-- **Tres intentos fallidos y bloqueo de 15 minutos**: cuando se acumulan tres intentos fallidos de cambiar la contraseña, el correo o el nombre de usuario, el siguiente se rechaza con el mensaje _Has alcanzado el límite de intentos para modificar datos sensibles en tu perfil. Tu sesión ha sido cerrada por seguridad_ y la plataforma cierra la sesión. Al cambiar el correo o el nombre de usuario, además, revoca todas las sesiones activas del miembro del equipo, así que queda desconectado en todos sus dispositivos.
+- **Tres intentos fallidos y bloqueo de 15 minutos**: cambiar la contraseña, cambiar el correo o el nombre de usuario y eliminar el autenticador comparten un mismo límite de intentos. Solo cuenta como fallido el intento con la contraseña actual incorrecta o vacía. Cuando se acumulan tres intentos fallidos, el siguiente se rechaza aunque la contraseña sea correcta, con el mensaje _Has alcanzado el límite de intentos para modificar datos sensibles en tu perfil. Tu sesión ha sido cerrada por seguridad_. La plataforma cierra la sesión del miembro del equipo y puede desconectarlo también en todos sus dispositivos.
 
-El bloqueo dura 15 minutos y se levanta solo por tiempo: no hay una acción en el panel para liberarlo antes. Cumplido el plazo, el miembro del equipo vuelve a disponer de sus intentos.
+El bloqueo dura 15 minutos y se levanta solo por tiempo: no hay una acción en el panel para liberarlo antes. Mientras dura, se rechaza cualquier intento de cambiar estos datos o de eliminar el autenticador, aunque la contraseña sea correcta, y la sesión vuelve a cerrarse. El bloqueo no impide volver a iniciar sesión. Cumplido el plazo, el miembro del equipo vuelve a disponer de sus intentos.
 
 :::tip Tip
-Este bloqueo es distinto del [Bloqueo por Intentos Fallidos de Inicio de Sesión](#bloqueo-por-intentos-fallidos-de-inicio-de-sesion), que se dispara con 10 intentos en la pantalla de acceso. El del perfil se dispara con 3 intentos, ya con la sesión iniciada, y su efecto visible es que a la persona la sacan de la plataforma justo después de escribir mal su contraseña actual. Si alguien reporta que "el panel me echó mientras cambiaba mi correo", este es el motivo.
+Este bloqueo es distinto del [Bloqueo por Intentos Fallidos de Inicio de Sesión](#bloqueo-por-intentos-fallidos-de-inicio-de-sesion), que se dispara con 10 intentos en la pantalla de acceso. El del perfil se dispara con 3 intentos fallidos, ya con la sesión iniciada, y su efecto visible es que a la persona la sacan de la plataforma en el intento siguiente, aunque esta vez escriba bien su contraseña actual. Si alguien reporta que "el panel me echó mientras cambiaba mi correo" o "mientras eliminaba mi autenticador", este es el motivo.
 :::
 
 ## Política de Expiración de Sesiones
@@ -188,7 +188,7 @@ Para habilitar la autenticación de dos factores para un usuario y neutralizar e
 3. Escanea el código que aparece en la pantalla con tu dispositivo móvil para enlazar tu autenticador con Modyo Platform. Esto agrega en la app una entrada con el dominio de tu cuenta y tu nombre de usuario.
 4. Ingresa el código de 6 dígitos que muestra la app en el campo **Código actual** y haz click en **Guardar**.
 
-Una vez que ya tengas la autenticación de dos factores habilitada, el botón dirá **Eliminar autenticador**. Al hacer click en él, el autenticador se elimina de inmediato, sin pedir confirmación.
+Una vez que ya tengas la autenticación de dos factores habilitada, el botón dirá **Eliminar autenticador**. Para eliminar el autenticador, haz click en ese botón, escribe tu contraseña en el campo **Contraseña actual** de la ventana que se abre y haz click en **Eliminar autenticador**. Si la contraseña es incorrecta, verás el mensaje _No se pudo eliminar el autenticador. Comprueba tu contraseña actual._ y el autenticador se mantiene. Los intentos fallidos cuentan para el [límite de intentos del perfil](#cambios-de-datos-sensibles-desde-el-perfil).
 
 
 ### Eliminar autenticador para un usuario
@@ -198,6 +198,10 @@ En caso de extravío o robo del autenticador, no será posible entrar a la cuent
 1. En el menú lateral, expande **Configuración** y haz click en **Equipo**.
 1. Haz click en el nombre del miembro.
 1. En la barra superior, haz click en el botón de más opciones, representado por tres puntos, y selecciona **Eliminar autenticador**.
+
+Para ver esta opción necesitas el permiso **Administrar Equipo**, que también viene incluido en **Administrar Configuración**. La opción solo está disponible cuando el miembro tiene un autenticador configurado, y no se puede usar sobre tu propio usuario: tu autenticador lo eliminas desde tu Perfil, donde se pide tu contraseña actual. Cuando la eliminación se aplica correctamente, verás el mensaje _Autenticador eliminado exitosamente._ y la acción queda registrada en los [Logs de actividad](/es/platform/core/activity-logs.html) como **Usuario actualizado**.
+
+Si el miembro tiene un nombre de usuario antiguo con caracteres hoy no permitidos, corrígelo primero: la eliminación puede mostrar un mensaje de éxito sin aplicarse realmente. Revisa la advertencia en [Editar usuario](/es/platform/core/roles.html#editar-usuario).
 
 :::warning Atención
 Si has activado la opción de forzar autenticación, la próxima vez que el usuario intente iniciar sesión, será necesario que primero inicialice el autenticador. Una vez que el autenticador esté activo, el usuario puede proceder con el proceso de inicio de sesión.
