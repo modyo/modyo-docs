@@ -199,7 +199,9 @@ En caso de extravío o robo del autenticador, no será posible entrar a la cuent
 1. Haz click en el nombre del miembro.
 1. En la barra superior, haz click en el botón de más opciones, representado por tres puntos, y selecciona **Eliminar autenticador**.
 
-Para ver esta opción necesitas el permiso **Administrar Equipo**, que también viene incluido en **Administrar Configuración**. La opción solo está disponible cuando el miembro tiene un autenticador configurado, y no se puede usar sobre tu propio usuario: tu autenticador lo eliminas desde tu Perfil, donde se pide tu contraseña actual. Al terminar verás el mensaje _Autenticador eliminado exitosamente._ y la acción queda registrada en los [Logs de actividad](/es/platform/core/activity-logs.html) como **Usuario actualizado**.
+Para ver esta opción necesitas el permiso **Administrar Equipo**, que también viene incluido en **Administrar Configuración**. La opción solo está disponible cuando el miembro tiene un autenticador configurado, y no se puede usar sobre tu propio usuario: tu autenticador lo eliminas desde tu Perfil, donde se pide tu contraseña actual. Cuando la eliminación se aplica correctamente, verás el mensaje _Autenticador eliminado exitosamente._ y la acción queda registrada en los [Logs de actividad](/es/platform/core/activity-logs.html) como **Usuario actualizado**.
+
+Si el miembro tiene un nombre de usuario antiguo con caracteres hoy no permitidos, corrígelo primero: la eliminación puede mostrar un mensaje de éxito sin aplicarse realmente. Revisa la advertencia en [Editar usuario](/es/platform/core/roles.html#editar-usuario).
 
 :::warning Atención
 Si has activado la opción de forzar autenticación, la próxima vez que el usuario intente iniciar sesión, será necesario que primero inicialice el autenticador. Una vez que el autenticador esté activo, el usuario puede proceder con el proceso de inicio de sesión.
