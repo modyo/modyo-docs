@@ -94,7 +94,7 @@ El nombre de usuario y el email están en el bloque **Zona peligrosa**, que pide
 El nombre de usuario cambia en cuanto guardas. El email, en cambio, no se reemplaza de inmediato: Modyo envía un enlace de verificación a la nueva dirección y el cambio se aplica cuando haces click en ese enlace. Hasta entonces, tu cuenta sigue usando el correo anterior. El enlace vence a los 5 minutos; si no lo usas a tiempo, vuelve a guardar el cambio para recibir uno nuevo.
 
 :::warning Atención
-Si escribes mal tu contraseña actual más de tres veces, Modyo cierra tu sesión en todos tus dispositivos por seguridad. Revisa los límites que se aplican en [Cambios de contraseña, correo y nombre de usuario desde el perfil](/es/platform/core/security#cambios-de-contrasena-correo-y-nombre-de-usuario-desde-el-perfil).
+Si escribes mal tu contraseña actual tres veces, el siguiente intento se rechaza aunque esta vez la escribas bien, y Modyo cierra tu sesión en todos tus dispositivos por seguridad. Los intentos fallidos al cambiar tu contraseña o al eliminar tu autenticador cuentan para este mismo límite. Revisa los límites que se aplican en [Cambios de datos sensibles desde el perfil](/es/platform/core/security.html#cambios-de-datos-sensibles-desde-el-perfil).
 :::
 
 ### Cambio de contraseña
@@ -118,7 +118,15 @@ Para configurar tu autenticador, sigue estos pasos:
 
 La pantalla de configuración vence a los 5 minutos de abrirla. Si se cumple el plazo antes de guardar, vuelve a empezar desde tu Perfil.
 
-Con el autenticador activo, en lugar de ese botón aparece **Eliminar autenticador**. Al hacer click, el autenticador se elimina de inmediato, sin pedir confirmación. Para más detalles, revisa [Autenticación de Dos Pasos 2FA](/es/platform/core/security#autenticacion-de-dos-pasos-2fa).
+Con el autenticador activo, en lugar de ese botón aparece **Eliminar autenticador**. Para eliminar el autenticador, sigue estos pasos:
+
+1. Haz click en **Eliminar autenticador**.
+2. En la ventana que se abre, escribe tu contraseña en el campo **Contraseña actual**.
+3. Haz click en **Eliminar autenticador**. El botón se habilita cuando escribes la contraseña.
+
+Si la contraseña es correcta, verás el mensaje _Autenticador eliminado exitosamente._ y volverá a aparecer el botón **Configurar autenticador**. Si es incorrecta, verás el mensaje _No se pudo eliminar el autenticador. Comprueba tu contraseña actual._, el autenticador se mantiene y tienes que volver a abrir la ventana. Los intentos fallidos cuentan para el mismo límite que los cambios de contraseña, correo y nombre de usuario. **Cancelar** cierra la ventana sin cambios.
+
+Si tu cuenta exige la autenticación de dos pasos a todo el equipo, en tu próximo inicio de sesión tendrás que configurar el autenticador de nuevo. Para más detalles, revisa [Autenticación de Dos Pasos 2FA](/es/platform/core/security.html#autenticacion-de-dos-pasos-2fa).
 
 ### Sesiones activas
 

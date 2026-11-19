@@ -894,19 +894,25 @@ Ten en cuenta que:
 
 - El cambio de `username` se aplica de inmediato y responde `HTTP 200 OK`.
 - El cambio de `email` no se aplica de inmediato: la plataforma envía un correo de confirmación a la nueva dirección y la mantiene pendiente hasta que el usuario la confirma.
-- Si `current_password` es incorrecta o viene vacía, la respuesta es `HTTP 422 Unprocessable Entity` y nada se actualiza.
+- Si `current_password` es incorrecta o viene vacía, la respuesta es `HTTP 422 Unprocessable Entity`, nada se actualiza y la llamada cuenta como intento fallido.
 
 :::danger Peligro
-Cada intento fallido con contraseña incorrecta suma uno al conteo y lo mantiene vigente por 15 minutos más; si pasan más de 15 minutos desde el último fallo contado, el conteo vuelve a empezar. El límite no es un ajuste de tu cuenta: con la configuración predeterminada de la plataforma, los tres primeros intentos fallidos responden `HTTP 422` con un mensaje que pide revisar la contraseña actual. Desde el cuarto, la respuesta sigue siendo `HTTP 422`, pero con un mensaje que avisa que alcanzaste el límite de intentos, y la plataforma revoca todas las sesiones activas del usuario, así que quien esté trabajando en el panel de administración queda con la sesión cerrada. Estos rechazos ya no suman al conteo ni extienden su plazo: cada intento fallido sigue revocando las sesiones hasta que pasan 15 minutos desde el tercer fallo, y ahí el conteo vuelve a empezar. Controla el `HTTP 422` en tu integración y no reintentes en bucle.
+Los intentos fallidos en esta llamada, en `DELETE /api/admin/profile/remove_otp` y en el cambio de contraseña desde el panel cuentan para un mismo límite. Tras tres intentos fallidos, la llamada siguiente responde `HTTP 422` con un mensaje que avisa que alcanzaste el límite de intentos, aunque `current_password` sea correcta: no actualiza nada y la plataforma revoca todas las sesiones activas del usuario, así que quien esté trabajando en el panel de administración queda con la sesión cerrada. El bloqueo dura 15 minutos y no se puede liberar antes. Controla el `HTTP 422` en tu integración y no reintentes en bucle.
 :::
 
 ### Segundo factor
 
-`DELETE /api/admin/profile/remove_otp` elimina la configuración de segundo factor del usuario autenticado y responde `HTTP 200 OK`, incluso si el usuario no tenía segundo factor configurado.
+`DELETE /api/admin/profile/remove_otp` elimina la configuración de segundo factor del usuario autenticado. La llamada debe incluir `current_password` con la contraseña actual del usuario.
 
-:::warning Atención
-Esta llamada no pide la contraseña actual, así que cualquier token válido del usuario alcanza para desactivar su segundo factor. Trata los tokens de la API de administración con el mismo cuidado que una contraseña.
-:::
+```shell script
+curl -X DELETE https://test.modyo.com/api/admin/profile/remove_otp -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56' -H 'Content-Type: application/json' -d '{"current_password":"tu-contrasena-actual"}'
+```
+
+Ten en cuenta que:
+
+- Si `current_password` es correcta, la respuesta es `HTTP 200 OK`, incluso si el usuario no tenía segundo factor configurado, y la eliminación queda registrada en los [Logs de actividad](/es/platform/core/activity-logs.html) como **Perfil actualizado**.
+- Si `current_password` es incorrecta o viene vacía, la respuesta es `HTTP 422 Unprocessable Entity` y el segundo factor se mantiene.
+- Los intentos fallidos cuentan para el mismo límite que el cambio de nombre de usuario o correo, con el mismo bloqueo y la misma revocación de sesiones.
 
 ### Sesiones activas
 

@@ -66,7 +66,7 @@ These are the domains that get audited:
 | Domain | What is recorded |
 | --- | --- |
 | Account and settings | Creation, update, and deletion of the account; global snippets; global variables; language; plan changes; payment settings; restoration of the default roles and log types. |
-| Team, roles, and access | Roles and their assignments; groups; team members, with their creation, update, enabling, disabling, and impersonation; sign-ins and sign-outs, failed attempts, temporary password login, and password reset; updates to your own profile; identity providers; API OAuth applications. |
+| Team, roles, and access | Roles and their assignments; groups; team members, with their creation, update (including removing their authenticator), enabling, disabling, and impersonation; sign-ins and sign-outs, failed attempts, temporary password login, and password reset; updates to your own profile, including removing your own authenticator; identity providers; API OAuth applications. |
 | Apps | Creation, cloning, update, enabling, disabling, and deletion of apps; switching to draft state; synchronization of the app and of its elements; templates; reviewers and approvers; review stages; releases and scheduled publications; version rollbacks. |
 | Pages, layouts, and navigation | Layouts and layout pages, with their creation, editing, cloning, forking, publication, unpublication, rollback, submission for review, and approval; remote layouts and their deployments; navigations. |
 | Widgets | Creation, editing, cloning, publication, unpublication, restoration, and deletion; associated assets; users with access. |

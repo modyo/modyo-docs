@@ -94,7 +94,7 @@ The username and email are in the **Danger zone** block, which asks for your pas
 The username changes as soon as you save. The email, however, isn't replaced right away: Modyo sends a verification link to the new address, and the change is applied when you click that link. Until then, your account keeps using the previous email. The link expires after 5 minutes; if you don't use it in time, save the change again to receive a new one.
 
 :::warning Attention
-If you mistype your current password more than three times, Modyo signs you out on all your devices for security. See the limits that apply in [Password, email, and username changes from the profile](/en/platform/core/security#password-email-and-username-changes-from-the-profile).
+If you mistype your current password three times, the next attempt is rejected even if this time you type it correctly, and Modyo signs you out on all your devices for security. Failed attempts when changing your password or removing your authenticator count toward this same limit. See the limits that apply in [Sensitive data changes from the profile](/en/platform/core/security.html#sensitive-data-changes-from-the-profile).
 :::
 
 ### Change password
@@ -118,7 +118,15 @@ To set up your authenticator, follow these steps:
 
 The setup screen expires 5 minutes after you open it. If the time runs out before you save, start again from your Profile.
 
-With the authenticator active, the **Remove authenticator** button appears instead. When you click it, the authenticator is removed immediately, without asking for confirmation. For more details, see [Two-factor authentication (2FA)](/en/platform/core/security#two-factor-authentication-2fa).
+With the authenticator active, the **Remove authenticator** button appears instead. To remove the authenticator, follow these steps:
+
+1. Click **Remove authenticator**.
+2. In the window that opens, type your password in the **Current password** field.
+3. Click **Remove authenticator**. The button is enabled once you type the password.
+
+If the password is correct, you see the message _Authenticator removed successfully._ and the **Setup authenticator** button appears again. If it is wrong, you see the message _The authenticator could not be removed. Please check your current password._, the authenticator stays in place, and you have to open the window again. Failed attempts count toward the same limit as password, email, and username changes. **Cancel** closes the window without changes.
+
+If your account requires two-factor authentication for the whole team, you will have to set up the authenticator again the next time you sign in. For more details, see [Two-factor authentication (2FA)](/en/platform/core/security.html#two-factor-authentication-2fa).
 
 ### Active sessions
 
