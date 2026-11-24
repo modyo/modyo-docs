@@ -783,7 +783,7 @@ Cuando completas una tarea de agente desde el admin, la plataforma te lleva a la
 - Presionar **Completar** en una tarea de **Revisión pendiente**.
 - Aprobar el último ítem pendiente de una tarea de **Validación**. Si aprobar o rechazar un ítem no deja completada la validación, te quedas en la tarea con el mensaje "Tarea revisada correctamente".
 
-La siguiente tarea es la primera tarea pendiente del flujo, en el orden en que aparece, sin contar las que la [lógica condicional](#logica-condicional) oculta para ese usuario. Si estás trabajando las tareas de un usuario invitado, se busca entre las tareas de ese invitado y el listado se abre con ese mismo invitado seleccionado.
+La siguiente tarea es la primera tarea pendiente del flujo, en el orden en que aparece, sin contar las que la [lógica condicional](#logica-condicional) oculta para ese usuario. Si estás trabajando las tareas de un usuario invitado, se busca entre las tareas de ese invitado y, si el invitado conserva alguna invitación que no esté cancelada, el listado se abre con ese mismo invitado seleccionado.
 
 Llegas a la siguiente tarea en estos casos:
 

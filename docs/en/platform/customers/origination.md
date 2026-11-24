@@ -782,7 +782,7 @@ When you complete an agent task from the admin, the platform takes you to the su
 - Clicking **Complete** on a **Pending review** task.
 - Approving the last pending item of a **Validation** task. If approving or rejecting an item doesn't complete the validation, you stay on the task with the message "Task successfully reviewed".
 
-The next task is the first pending task of the flow, in the order in which it appears, not counting the ones that [conditional logic](#conditional-logic) hides for that user. If you are working on the tasks of an invited user, the next task is searched among that invitee's tasks and the task list opens with that same invitee selected.
+The next task is the first pending task of the flow, in the order in which it appears, not counting the ones that [conditional logic](#conditional-logic) hides for that user. If you are working on the tasks of an invited user, the next task is searched among that invitee's tasks and, if the invitee still has an invitation that isn't canceled, the task list opens with that same invitee selected.
 
 You go to the next task in these cases:
 
