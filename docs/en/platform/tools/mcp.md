@@ -8,7 +8,7 @@ search: true
 
 The [Model Context Protocol (MCP)](https://modelcontextprotocol.io) is an open standard for connecting AI assistants to tools and data sources. The **Modyo MCP Server** connects an AI assistant to the Modyo Admin API so you can manage the platform (content, sites, widgets, customers, and administration) and build widgets with Dynamic Framework through natural-language conversation.
 
-It is distributed as the npm package [`@modyo/mcp`](https://www.npmjs.com/package/@modyo/mcp) and runs as a local process that the AI client launches over stdio. This page describes version 0.5.11.
+It is distributed as the npm package [`@modyo/mcp`](https://www.npmjs.com/package/@modyo/mcp) and runs as a local process that the AI client launches over stdio. This page describes version 0.5.12.
 
 To build a widget end to end with the MCP, see [Develop widgets with the MCP](/en/platform/tools/mcp-widgets.html).
 
@@ -272,7 +272,7 @@ The two variables can be combined. To audit a site with no risk of modifying it,
 }
 ```
 
-Tools the client lists for each configuration, in version 0.5.11:
+Tools the client lists for each configuration, in version 0.5.12:
 
 | Configuration | Tools |
 |---|---|
@@ -313,7 +313,7 @@ Archiving a widget definition also asks for confirmation, because it removes its
 
 ### Edit locks
 
-Reading the code of a template makes the platform take an edit lock in the name of the token user. The tools that read templates (`channels-templates-search`, `channels-templates-replace`, `channels-templates-manage`, `channels-templates-copy`, and `channels-download`) release that lock before responding, and never touch one held by another user. If they cannot release it, they report it in `lockReleaseErrors`, with the lock id, the template, and the step that failed. Release it with `channels-locks-manage`, action `release` and the `lockId`, also in read-only mode.
+Reading the code of a template makes the platform take an edit lock in the name of the token user, and so does saving it. The tools that read or write templates (`channels-templates-search`, `channels-templates-replace`, `channels-templates-manage`, `channels-templates-copy`, `channels-templates-upsert`, `channels-account-templates-manage`, and `channels-download`) release that lock before responding, and never touch one held by another user. The ones that save templates (`channels-templates-manage` on create or update, `channels-templates-upsert`, and `channels-account-templates-manage`) keep it if asked with `keepLock`. If they cannot release it, they report it in `lockReleaseErrors`, with the lock id, the template, and the step that failed. Release it with `channels-locks-manage`, action `release` and the `lockId`, also in read-only mode.
 
 ## What it can do
 
@@ -558,7 +558,7 @@ The server is running with `MODYO_READ_ONLY=true` and the requested action write
 
 In clients without interactive confirmation, a deletion without `confirmed: true` is not executed: the response carries in `control.aborted` what would have been deleted. Review the list and ask the agent to repeat the operation with confirmation.
 
-### A template stayed locked after the agent read it
+### A template stayed locked after the agent read or saved it
 
 Check `lockReleaseErrors` in the tool response: it carries the `lockId` and the step that failed. Ask the agent to release the lock with `channels-locks-manage` (`release` and the `lockId`); it also works in read-only mode. You can also release it from Modyo Admin.
 

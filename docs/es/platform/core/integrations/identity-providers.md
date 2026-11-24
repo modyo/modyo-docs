@@ -13,7 +13,7 @@ Actualmente la plataforma es compatible con:
 - [OAuth2](#oauth2)
 - [OpenID Connect](#openid-connect)
 - [Keycloak](#keycloak)
-- [Azure Entra ID](#azure-active-directory)
+- [Azure Entra ID](#azure-entra-id)
 
 Recuerda tener a mano todos los datos y certificados que se te exigen antes de cambiarlos o integrar algún servicio, para que no se produzcan problemas con el ingreso general de los usuarios.
 
@@ -23,9 +23,20 @@ Las URLs de callback de esta página usan la forma `https://my_account.modyo.com
 
 ## Agregar un Proveedor de Identidad
 
-Para agregar un nuevo proveedor de identidad, sigue estos pasos:
+Dónde configuras un proveedor y qué tipos puedes usar depende de quién inicia sesión con él:
 
-1. Desde el menú principal, expande **Configuración** y haz click en **Proveedores de Identidad**.
+| Usuarios | Dónde se configura | Proveedores disponibles |
+|:--|:--|:--|
+| Equipo | **Configuración** > **Proveedores de identidad** | OpenID Connect y SAML |
+| Reino | **Configuración de reino** > **Integraciones**, categoría **Proveedores de identidad** | Google, OAuth2, OpenID Connect y SAML |
+
+Google está disponible en todos los reinos; los demás tipos dependen del plan de tu cuenta. Puedes tener un solo proveedor de cada tipo: en el equipo, el selector solo ofrece los tipos que aún no agregaste, y en el reino cada integración se instala una vez. Keycloak y Azure Entra ID se configuran como proveedores OpenID Connect.
+
+En un reino, haz click en **Instalar** en el proveedor y completa sus datos. Una vez instalado, lo encuentras en **Instalado**, donde puedes editarlo con **Configurar**.
+
+Para agregar un proveedor de identidad para los usuarios de equipo, sigue estos pasos:
+
+1. Desde el menú principal, expande **Configuración** y haz click en **Proveedores de identidad**.
 1. Haz click en **Añadir**.
 1. En el dropdown, selecciona la integración que quieres añadir.
 1. Agrega la información necesaria para la integración (Nombre, ID, Secreto, etc).
@@ -33,21 +44,39 @@ Para agregar un nuevo proveedor de identidad, sigue estos pasos:
 
 <img src="/assets/img/platform/nuevo-idp.png" alt="Add a new Identity Provider page." width="500px" style="margin-top: 40px; border: 1px solid #EEE;"/>
 
+### Inicio de sesión directo
+
+Con el inicio de sesión directo, Modyo redirige al usuario al proveedor de identidad en cuanto entra a iniciar sesión, sin mostrar la pantalla de inicio de sesión de Modyo. Se activa en un lugar distinto según los usuarios:
+
+- **Equipo**: activa **Autenticación directa** en **Configuración** > **Proveedores de identidad**, debajo de la lista de proveedores. El switch solo se habilita cuando hay un único proveedor habilitado.
+- **Reino**: en **Configuración de reino** > **Integraciones**, activa **Inicio de sesión directo** en la tarjeta del proveedor instalado. El switch está deshabilitado mientras el proveedor esté deshabilitado.
+
+Ten en cuenta lo siguiente:
+
+- Solo puedes activarlo cuando hay un único proveedor de identidad habilitado. En el reino, si hay más de uno, verás el error «Solo puede activar la autenticación directa cuando hay un único proveedor de identidades habilitado».
+- Si después habilitas otro proveedor, o deshabilitas o eliminas el único habilitado, el inicio de sesión directo se desactiva solo.
+- Solo redirige con Google y OpenID Connect. Con SAML u OAuth2 la opción se puede activar, pero los usuarios siguen entrando por la pantalla de inicio de sesión de Modyo.
+- En el inicio de sesión de equipo, si la autenticación con el proveedor falla, Modyo muestra una página de error en lugar de volver a la pantalla de inicio de sesión.
+
 ## Google
+
+:::tip Google en el administrador
+La integración de Google está disponible solo para los usuarios de un reino. Para que los miembros de tu equipo inicien sesión en el administrador con sus cuentas de Google, configura Google como proveedor OpenID Connect, como se explica en [Google con OpenID Connect para el equipo](/es/platform/core/integrations/identity-providers.html#google-con-openid-connect-para-el-equipo).
+:::
 
 Para poder integrar el inicio de sesión de Google con Modyo, deberás contar con:
 
-- ID de aplicación
-- Clave
+- **Client ID**: Debe tener el formato `CLIENT_ID.apps.googleusercontent.com`.
+- **Client secret**: Solo admite letras sin tildes, números, `.`, `-` y `_`.
 
 Estos valores los podrás obtener luego de crear una aplicación en Google con permisos para inicio de sesión. Puedes aprender más sobre como crear y configurar una aplicación de Google en su [documentación oficial](https://developers.google.com/identity/sign-in/web/sign-in).
 
-Debes tener en cuenta que al final del formulario se encuentra disponible la URL de callback (_Callback  URI_). Es necesario usar esa URL en la aplicación o proyecto que crees en Google para poder completar el flujo de inicio de sesión correctamente.
+Debes tener en cuenta que al final del formulario se encuentra disponible la **URI de devolución de llamada**. Es necesario usar esa URI en la aplicación o proyecto que crees en Google para poder completar el flujo de inicio de sesión correctamente.
 
-Además de los valores necesarios, puedes configurar algunos datos extra para controlar el comportamiento del inicio de sesión con Google. Si habilitas la opción _Restringir dominios_, podrás usar dos campos extra:
+Además de los valores necesarios, puedes controlar qué cuentas de Google pueden iniciar sesión:
 
-- **Ejemplo de dominio**: Serán los dominios que se muestren como sugerencia al momento de estar iniciando sesión en Google.
-- **Dominios admitidos**: Si el dominio del correo que el usuario ingresó al momento de iniciar sesión en Google no está dentro de este listado, entonces el inicio de sesión no será válido y el usuario será redirigido a la vista de inicio de sesión de Modyo sin una sesión activa.
+- **Restringir dominios** y **Ejemplo de dominio para mostrar en el inicio de sesión de Google**: Si activas **Restringir dominios**, Modyo envía a Google el dominio de ejemplo, que es uno solo, para que lo sugiera al iniciar sesión.
+- **Lista de dominios permitidos**: Si el dominio del correo con el que el usuario inicia sesión en Google no está en la lista, el inicio de sesión no es válido y el usuario vuelve a la vista de inicio de sesión de Modyo sin una sesión activa. La lista se aplica siempre que tenga dominios, aunque **Restringir dominios** esté desactivado. El dominio debe coincidir exactamente: `modyo.com` no admite correos de `mail.modyo.com`.
 
 ## SAML
 
@@ -57,40 +86,51 @@ Para lograr una conexión exitosa entre SAML y Modyo, configura los siguientes a
 
 - **givenName** o (En la versión 9.2.22 en adelante también puede ser `givenname`). Corresponde al nombre del usuario.
 - **sn** (En la versión 9.2.22 en adelante también puede ser `surname`). Corresponde al apellido del usuario.
+- **email** o **mail**. Corresponde al correo del usuario.
 
-Para integrar el inicio de sesión con SAML en Modyo, necesitas los siguientes datos de tu proveedor de identidad:
+:::warning Atención
+Los nombres de los atributos deben coincidir exactamente con los de esta lista. Si la aserción no trae el nombre o el correo, Modyo no puede crear al usuario en su primer inicio de sesión y el inicio de sesión falla.
+:::
+
+Para integrar el inicio de sesión con SAML en Modyo, completa los siguientes campos. Todos son obligatorios, salvo **Parámetros de tiempo de ejecución del IDP SSO del URL destino**:
 
 - **Nombre del servicio**: El nombre que se mostrará en el botón de inicio de sesión.
 - **Issuer**: Identificador de la aplicación del IDP. En algunos servicios es requerido agregar el prefijo `spn`:
 (Por ejemplo: `spn:13e4ff44-b0c9-4618-b305-2171a24b07f5`).
-- **IDP SSO del URL destino**: La URL a la cual se envía la solicitud de autenticación. Esto lo puedes encontrar en el proveedor de identidad.
-- **Parámetros de tiempo de ejecución del IDP SSO del URL destino**: Parámetros opcionales para completar el flujo.
-- **IDP Cert**: El certificado del proveedor de identidad en formato PEM. Esto tiene prioridad sobre la opción de huella digital.
-- **Huella dactilar del certificado IDP**: La huella digital SHA1 del certificado público del proveedor de identidad.
-- **Formato del identificador de nombre**: Se utiliza durante el SSO iniciado por el proveedor de servicio (SP-initiated SSO). Describe el formato del nombre de usuario requerido por la aplicación. Consulta la sección 8.3 de http://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf para otras opciones. Es posible que el proveedor de identidades no permita todas las opciones; si no se especifica, el proveedor puede elegir el formato de identificador de nombre utilizado en la respuesta; comúnmente el correo electrónico, como por ejemplo: `urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress`
+- **URL de destino de inicio de sesión único de IDP**: La URL a la cual se envía la solicitud de autenticación. Esto lo puedes encontrar en el proveedor de identidad.
+- **Parámetros de tiempo de ejecución del IDP SSO del URL destino**: Si lo completas, escribe un par `clave=valor` por línea, solo con letras, números o guion bajo.
+- **IDP Cert**: El certificado del proveedor de identidad en formato PEM. Debes completar este campo y también la huella digital.
+- **Huella digital del certificado IDP**: La huella digital SHA1 del certificado público del proveedor de identidad, en hexadecimal y sin dos puntos, de hasta 40 caracteres.
+- **Formato de identificador de nombre**: El formato de NameID que Modyo pide al proveedor durante el SSO iniciado por el proveedor de servicio (SP-initiated SSO). Para el correo electrónico, usa `urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress`. Consulta la sección 8.3 de http://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf para otras opciones; es posible que el proveedor de identidad no las admita todas.
+
+Además, configura en tu proveedor de identidad las siguientes URLs de Modyo:
+
 - **URL de Entity ID**: URL provisto por Modyo donde se encuentra el identificador de la aplicación:
    * Admin: `test.modyo.com/admin/auth/saml/metadata`
    * Realms: para configuraciones con realms usa: `test.modyo.com/realms/<tu_uid_del_realm>/auth/saml/metadata`
-- **URL de la aserción de servicio de consumidor**: La URL proporcionada por Modyo a la que el proveedor de identidad redirige el flujo.
+- **URL de la aserción del servicio de consumidor**: La URL proporcionada por Modyo a la que el proveedor de identidad redirige el flujo. Aparece al final del formulario y no se puede editar.
    * Admin: `test.modyo.com/admin/auth/saml/callback`
    * Realms: para configuraciones con reinos utiliza: `test.modyo.com/realms/<tu_uid_del_realm>/auth/saml/callback`
-- **(Opcional) URL de destino de inicio de sesión único de IDP**: La URL de inicio de sesión del proveedor de identidad.
 
 ## OAuth2
 
-Para poder integrar un inicio de sesión con OAuth2 en Modyo, necesitarás los siguientes datos de tu proveedor de identidad:
+OAuth2 está disponible solo para los usuarios de un reino. El usuario escribe su identificador y su contraseña en la pantalla de inicio de sesión de Modyo, y Modyo los valida contra tu proveedor con el flujo de credenciales de contraseña del propietario del recurso (_Resource Owner Password Credentials_): envía un `POST` a **URL del token de autorización**, como formulario `application/x-www-form-urlencoded`, con `grant_type=password`, `client_id`, `client_secret`, `scope`, `username` y `password`. El inicio de sesión solo es válido si el proveedor responde `200`.
 
-- **Nombre del servicio**
+Para poder integrar un inicio de sesión con OAuth2 en Modyo, necesitarás los siguientes datos de tu proveedor de identidad. Todos son obligatorios, salvo **Descripción del servicio**, **Marcador de campo de login** y **Usar SSL**:
+
+- **Nombre**
 - **Descripción del servicio**
-- **URL de autenticación**: URL del servicio de autenticación OAuth2
-- **ID de cliente**
-- **Clave (secret)**
+- **URL del token de autorización**: El endpoint de token de tu proveedor. Debe aceptar `grant_type=password`.
+- **Client ID**
+- **Secreto**
 - **Scope**: Si tu servicio de autenticación OAuth2 usa múltiples espacios o ambientes para separar a los usuarios y quieres usar uno en específico en esta integración, deberás definirlo en este campo.
-- **Campo para inicio de sesión**: Podrás elegir entre usar el correo de los usuarios de Modyo, o su nombre de usuario. Esta opción es útil si tu proveedor de autenticación OAuth2 utiliza, por ejemplo, un campo numérico y no un email como identificador.
-- **Placeholder para el inicio de sesión**: Texto que se mostrará en el campo de identificación como placeholder si el usuario no ha rellenado el campo
-- **Usar SSL**: Habilitar esta opción si tu servicio de autenticación OAuth2 usa una capa de sockets segura (SSL: _Secure Sockets Layer_)
+- **Campo Login**: El tipo de identificador con el que tus usuarios inician sesión:
+   * **Email**: El identificador es un correo, y Modyo lo usa como correo del usuario.
+   * **ID de usuario secundario**: El identificador no es un correo. Al crear el usuario, Modyo le asigna un correo generado automáticamente, que no corresponde a un buzón real, y guarda el identificador como su ID de usuario secundario.
+- **Marcador de campo de login**: Texto que se mostrará en el campo de identificación como placeholder si el usuario no ha rellenado el campo.
+- **Usar SSL**: Actívalo si **URL del token de autorización** usa HTTPS.
 
-Para crear un cliente OAuth, ve [Cliente OAuth](/es/platform/customers/settings#cliente-oauth).
+Para crear un cliente OAuth, ve [Cliente OAuth](/es/platform/customers/settings.html#cliente-oauth).
 
 
 ## OpenID Connect
@@ -277,3 +317,31 @@ La siguiente configuración es válida tanto para las integraciones de usuarios 
    | **Habilitar revocación de tokens** | No soportado por Entra ID |
    | **Mostrar información de delegación** | Habilita más información en la [API de perfil de usuario](/es/platform/customers/api#api-de-customers) con respecto a tokens delegados. Esto es útil cuando se necesita el access token que emite el proveedor de identidad para conseguir acceso a algún otro servicio (e.g. una API externa). |
    | **Habilitar la sincronización de claims al iniciar sesión** | En un reino, habilita la sincronización de claims OpenID Connect con los datos y los custom fields del usuario. Más información en [Sincronización de claims](#sincronizacion-de-claims). En el equipo, actualiza solo el nombre, el apellido y el correo del miembro. |
+
+## Google con OpenID Connect para el equipo
+
+Para que los miembros de tu equipo inicien sesión en el administrador con sus cuentas de Google, configura Google como proveedor OpenID Connect del equipo. Como el equipo admite un solo proveedor de cada tipo, no puedes usar Google junto con otro proveedor OpenID Connect, como Keycloak o Azure Entra ID.
+
+### Crear el cliente OAuth en Google Cloud
+
+1. Inicia sesión en [Google Cloud Console](https://console.cloud.google.com/) y selecciona el proyecto de tu organización de Google Workspace.
+1. Configura la pantalla de consentimiento de OAuth (**OAuth consent screen**) y elige **Internal** como tipo de usuario, para limitar el acceso a las cuentas de tu organización.
+1. Crea un cliente OAuth (**OAuth client ID**) con el tipo de aplicación **Web application**.
+1. En **Authorized redirect URIs**, agrega `https://test.modyo.com/admin/auth/openidc/callback`. Sustituye `test.modyo.com` por la URL de tu cuenta.
+1. Copia el **Client ID** y el **Client secret** del cliente.
+
+Puedes aprender más en la [documentación oficial de Google sobre OpenID Connect](https://developers.google.com/identity/openid-connect/openid-connect).
+
+### Configurar Google en Modyo Platform
+
+1. Desde el menú principal, expande **Configuración** y haz click en **Proveedores de identidad**.
+1. Haz click en **Añadir** y, en el dropdown, selecciona **OpenID Connect**.
+1. En **Nombre**, escribe el texto del botón que verá tu equipo en la pantalla de inicio de sesión, por ejemplo `Google`.
+1. Completa **ID de cliente** con el **Client ID** y **Secreto** con el **Client secret** de Google.
+1. En **Issuer**, escribe `https://accounts.google.com` y haz click en **Ejecutar servicio de detección**. Modyo completa **JWKS URI**, **Scopes**, **Endpoint de autorización**, **Endpoint de token** y **Endpoint de User Info**.
+1. Revisa que **Scopes** sea `openid,email,profile`.
+1. Deja **Método de autenticación** en **Client secret enviado como cabecera de autenticación básica**.
+1. Haz click en **Añadir**.
+1. En la lista de proveedores, abre el menú del proveedor y haz click en **Habilitar**.
+
+Google no publica un endpoint de cierre de sesión, así que deja desactivado **Habilitar cierre de sesión remoto**.

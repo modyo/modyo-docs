@@ -10,9 +10,13 @@ Al entrar a la herramienta, podrás ver un listado de todos los formularios que 
 
 En cada fila de la tabla de formularios, verás en la primera columna el nombre del formulario, a continuación la fecha de creación, y la cantidad de respuestas que se han enviado para ese formulario.
 
-Desde este listado también puedes acceder a la vista de análisis individual, haciendo click en el título del formulario, asimismo al listado de respuestas del formulario, haciendo click en el número de respuestas del formulario.
+Desde este listado, al hacer click en el nombre de un formulario o en su número de respuestas, llegas a la vista de [Respuestas](/es/platform/customers/forms.html#respuestas) del formulario.
 
-Para habilitar o deshabilitar los formularios y permitir que usuario puedan o no enviar sus respuestas, debes ir a la vista de análisis y seleccionar la acción respectiva entre las opciones desplegadas en la sección superior derecha.
+En esa vista, el menú de opciones de la sección superior derecha te permite abrir el formulario en el sitio (**Ver**), si está habilitado; editarlo (**Editar**); habilitarlo o deshabilitarlo (**Habilitar** o **Deshabilitar**) para permitir o no que los usuarios envíen sus respuestas, y eliminarlo (**Borrar**). Editar, habilitar, deshabilitar y borrar requieren el permiso **Administrar Formularios**; sin él, el menú muestra **Mostrar** en lugar de **Editar**, para ver la configuración del formulario.
+
+:::danger Peligro
+Para borrar un formulario, primero debes deshabilitarlo. Al confirmar, se eliminan permanentemente todos sus datos, incluidas sus respuestas. Tampoco puedes borrar un formulario que esté en uso en un [segmento](/es/platform/customers/segments).
+:::
 
 ## Crear Formulario
 
@@ -36,19 +40,18 @@ Los formularios que se copian a un [stage del reino](/es/platform/customers/real
 - **Habilitado**: Selecciona si el formulario va a comenzar en estado habilitado o no.
 - **Aceptar múltiples respuestas**: Si esta opción está habilitada, cada vez que un usuario responda el formulario, se registrará como una nueva respuesta. Si esta opción está deshabilitada, cada vez que un mismo usuario responda el formulario, estará sobrescribiendo su respuesta anterior.
 - **Solo para usuarios registrados**: Te permite determinar si el formulario solo será visible para usuario registrados en Modyo. Si esta opción está habilitada, un usuario sin sesión no podrá ver el formulario. Si esta opción está deshabilitada, cualquier usuario podrá responder el formulario.
-- **Solicitar contestar automáticamente**: Si el formulario es privado (solo usuarios registrados lo pueden contestar), aparecerá esta opción que te permitirá redireccionar automáticamente a los usuarios que inicien sesión en el sitio asociado al formulario para que lo contesten.
 
 Luego de una división podrás ver las opciones para modificar la redirección luego de que un usuario responda el formulario.
 
 - **Opciones por defecto**: Luego de responder el formulario el usuario es redireccionado al home del sitio asociado al formulario.
-- **URL de redirección**: Te permite ingresar una URL a la que se redireccionará al usuario luego de haber respondido el formulario. Es necesario escribir el URL entero (e.g. https://test.modyo.com/home).
-- **Página de agradecimiento**: Te permite añadir un mensaje de agradecimiento personalizado luego de que un usuario responde el formulario, junto a un botón que lo llevará a una página del sitio. La URL del botón es una URL relativa del sitio asociado al formulario. También podrás determinar si quieres que el usuario sea redireccionado automáticamente a esa página luego de un tiempo determinado.
+- **URL de redirección**: Te permite ingresar una URL a la que se redireccionará al usuario luego de haber respondido el formulario. Puedes escribir una URL completa (e.g. https://test.modyo.com/home) o una ruta del sitio asociado al formulario que empiece con `/` (e.g. `/home`). Si escribes una dirección que no empieza con `/`, `http://` ni `https://`, la plataforma le antepone `http://`.
+- **Página de agradecimiento**: Te permite añadir un mensaje de agradecimiento personalizado luego de que un usuario responde el formulario, junto a un botón que lo llevará a la dirección de **Enlace de Redirección**, que acepta los mismos valores que la **URL de redirección**. Si marcas **Habilitar Auto Redirección**, el usuario es redireccionado automáticamente a esa dirección después de los segundos indicados en **Tiempo de redirección**, o de 10 segundos si lo dejas vacío.
 
 
 - **Habilitar segmentación**: Si el formulario es privado (solo usuarios registrados lo pueden contestar), podrás seleccionar un conjunto de usuarios que puedan contestar el formulario haciendo uso de los segmentos. Para aprender más dirígete a [Segmentos](/es/platform/customers/segments)
 
 :::warning Atención
-En caso de ser un formulario público, los usuarios que no tienen una sesión activa en Modyo, verás tres campos obligatorios en la parte superior del formulario: Nombre, Apellido, y Correo. Una vez que envíen el formulario, se creará un usuario con esos valores y luego la respuesta será asociada a ese usuario.
+En caso de ser un formulario público, los usuarios que no tienen una sesión activa en Modyo verán tres campos obligatorios en la parte superior del formulario: Nombre, Apellido y Correo. Si el reino no usa el correo electrónico como nombre de usuario, verán además un cuarto campo obligatorio para el nombre de usuario, con la etiqueta que el reino tenga configurada. Mientras alguno de estos campos esté vacío o el correo no sea válido, el botón de envío queda deshabilitado. Una vez que envíen el formulario, se creará un usuario con esos valores y luego la respuesta será asociada a ese usuario.
 :::
 
 :::warning Atención
@@ -78,7 +81,7 @@ El grupo **Campos de contenido** tiene una opción:
 
 Los tipos de campos del grupo **Campos de input** son:
 
-- **Texto simple**: Permite ingresar hasta 256 caracteres.
+- **Texto simple**: Permite ingresar texto en una sola línea. Para limitar su largo, configura **Mínimo** y **Máximo** en las propiedades del campo. Si no configuras un **Máximo**, admite el mismo largo que el campo **Párrafo**.
 - **Párrafo**: Permite ingresar texto en múltiples líneas de hasta 65,535 caracteres.
 - **Número**: Permite ingresar números.
 - **Lista desplegable**: Agrega opciones para que la persona usuaria seleccione una desde una lista desplegable.
@@ -118,6 +121,11 @@ Ten en cuenta lo siguiente:
 
 - Si el Liquid tiene un error de sintaxis, el campo no se guarda y la plataforma muestra el error.
 - El contenido de cada campo admite hasta unos 64 KB de HTML.
+- El HTML admitido es acotado. Por defecto, se permiten las etiquetas `a`, `abbr`, `acronym`, `address`, `b`, `big`, `blockquote`, `br`, `caption`, `cite`, `code`, `col`, `colgroup`, `dd`, `del`, `dfn`, `div`, `dl`, `dt`, `em`, `h1` a `h6`, `hr`, `i`, `img`, `ins`, `kbd`, `li`, `mark`, `ol`, `p`, `pre`, `s`, `samp`, `small`, `span`, `strike`, `strong`, `sub`, `sup`, `table`, `tbody`, `td`, `tfoot`, `th`, `thead`, `time`, `tr`, `tt`, `u`, `ul` y `var`, y los atributos `abbr`, `alt`, `cite`, `class`, `colspan`, `datetime`, `height`, `href`, `lang`, `name`, `rel`, `rowspan`, `src`, `style`, `target`, `title`, `width` y `xml:lang`.
+- Las direcciones de enlaces e imágenes solo admiten `http`, `https`, `mailto` y `tel`, o rutas relativas. Si insertas un enlace con otro esquema, el editor muestra un aviso.
+- El editor quita lo que no está permitido. Si al guardar el contenido trae HTML fuera de esa lista, también cuando llega por la API, el campo no se guarda y el error indica qué no se admite, por ejemplo `<iframe>`, `id` o `href="javascript:"`.
+- Al mostrar el formulario, la plataforma vuelve a filtrar el contenido, incluido el que genera el Liquid: quita las etiquetas y atributos no permitidos, conserva su texto y elimina `script` y `style` junto con su contenido.
+- Estas reglas también aplican al Texto enriquecido de las tareas Input de las [originaciones](/es/platform/customers/origination), a las instrucciones de **Agregar campo Pop-up de instruciones** de sus campos y al documento de la tarea de [Firma](/es/platform/customers/origination.html#firma).
 - No aparece en las respuestas: no se ve en el detalle de una respuesta ni en el correo de notificación de nuevas respuestas, no se incluye en la exportación ni en las estadísticas del formulario, y no está disponible para filtrar segmentos por respuestas.
 - Si una respuesta trae un valor para este campo, por ejemplo desde la API, la plataforma lo descarta.
 
@@ -163,6 +171,8 @@ Esta sección te permitirá modificar las opciones para cada una de las pregunta
 
 Todos los campos de input cuentan con un título, que será la pregunta asociada a la respuesta, la opción de hacer ese campo requerido para enviar el formulario, y una breve descripción en caso de que para responder el campo sean necesarias instrucciones. El [Campo oculto](/es/platform/customers/forms.html#campo-oculto) es la excepción: no tiene la opción de campo requerido ni instrucciones.
 
+Cada campo tiene también un **Identificador**, que lo distingue dentro del formulario. Al crear un campo, el identificador se genera a partir del título mientras lo escribes. Una vez guardado el campo, el identificador aparece bloqueado con un candado y cambiar el título ya no lo modifica. Para modificarlo, presiona el candado y confirma la advertencia **Desbloquear campo identificador** con **Desbloquear**: cambiar el identificador rompe las referencias al campo desde el JavaScript personalizado, el CSS y Liquid. Revisa [Identificar preguntas y campos](/es/platform/customers/forms.html#identificar-preguntas-y-campos).
+
 Los campos **Lista desplegable** y **Preguntas Anidadas** tienen la casilla **Habilitar buscador**, desactivada por defecto, también cuando sus alternativas vienen de un [data set](/es/platform/customers/settings.html#data-sets). Con la casilla activa, la persona usuaria ve un buscador en lugar de la lista del navegador: al escribir, encuentra las alternativas que contienen el texto, sin distinguir mayúsculas ni tildes, las muestra en el orden en que las definiste y presenta hasta 100 coincidencias. En las preguntas anidadas, el buscador aparece en cada nivel. La misma casilla está disponible en las tareas [Input](/es/platform/customers/origination.html#input) de las originaciones. El campo **País** y el selector de país del campo **Dirección** siempre muestran este buscador, que además encuentra cada país por su código ISO de dos letras.
 
 Algunos campos cuentan con validaciones, para asegurar que el usuario cumpla con ciertos requisitos para rellenar el campo, algunas de esas restricciones son:
@@ -175,7 +185,7 @@ Algunos campos cuentan con validaciones, para asegurar que el usuario cumpla con
 - **Fecha mínima**: La fecha ingresada no puede ser anterior a este valor
 - **Fecha máxima**: La fecha ingresada no puede ser posterior a este valor.
 
-De la misma forma en que algunos campos cuentan con validaciones, la mayoría de los campos de input cuentan con un valor por defecto que venga preseleccionado al momento de cargar el formulario. Los únicos que no cuentan con un valor por defecto son las preguntas anidadas. El [Texto enriquecido](/es/platform/customers/forms.html#texto-enriquecido), como no captura una respuesta, solo tiene título, identificador y contenido.
+De la misma forma en que algunos campos cuentan con validaciones, algunos campos de input permiten definir un valor por defecto que viene preseleccionado al cargar el formulario: **Texto simple**, **Párrafo** y **Número**, en **Respuesta por defecto**; **Fecha**, con la casilla **Default**; y **Casillas de verificación** y **Elección**, marcando una de sus opciones. **País**, **Teléfono** y **Dirección** solo permiten usar la ubicación actual del usuario como país, o código de país, predeterminado. En el constructor, **Lista desplegable**, **Preguntas Anidadas**, **Archivo**, **Correo electrónico** y **URL** no permiten definir un valor por defecto. El [Texto enriquecido](/es/platform/customers/forms.html#texto-enriquecido), como no captura una respuesta, solo tiene título, identificador y contenido.
 
 ### Expresiones regulares
 
@@ -215,17 +225,15 @@ La sección **General** agrega dos opciones:
 #### Snippet
 La sección **Snippet**, que sólo aparecerá si el formulario es público, te permitirá copiar un código _HTML_ que podrás usar en cualquier lugar para cargar dinámicamente el formulario, incluso fuera de Modyo.
 
+Si personalizas el formulario con [JS Personalizado](/es/platform/customers/forms.html#js-personalizado), ten en cuenta que en el snippet ese código se ejecuta antes de que las preguntas estén en la página. Para modificarlas, espera el evento `forms:rendered`, descrito en [Esperar a que el formulario esté en la página](/es/platform/customers/forms.html#esperar-a-que-el-formulario-este-en-la-pagina).
+
 :::warning Atención
-Para poder hacer uso adecuado del snippet del formulario, debes tener en cuenta la configuración _CORS_ de tu cuenta en Modyo y los _headers_ de seguridad de donde estés insertando el snippet.
+El snippet carga el formulario como un script, así que no depende de la configuración _CORS_ de tu cuenta. Para poder hacer uso adecuado del snippet, debes tener en cuenta los _headers_ de seguridad de donde estés insertando el snippet.
 
 Para hacer uso del snippet dentro de una página en la plataforma Modyo, debes copiar el código Javascript dentro de la sección Javascript y el div en la sección HTML. El apartado de HTML en [Pages](/es/platform/channels/pages) no puede correr Javascript, es obligatorio el uso del apartado Javascript para correr el código correctamente.
 :::
 
 Las secciónes **Opciones** y **Notificaciones** no agregan nada diferente a lo que se encuentra en **Nuevo Formulario**
-
-:::warning Atención
-Si usas un sitio de Modyo con un dominio personalizado, deberás activar la opción para compartir orígenes de recursos [CORS](/es/platform/core/security) en la configuración de la plataforma.
-:::
 
 ### Notificaciones
 
@@ -233,7 +241,7 @@ En la sección **Notificaciones** podrás configurar los distintos correos que s
 
 La notificación por correo envía un correo del tipo "administrativo" en el cual se notifica vía ese canal de que alguien respondió el formulario. Puedes asignar un asunto y un listado de correos a los que quieras notificar.
 
-El correo de agradecimiento te permite personalizar un correo que será enviado al usuario que respondió el formulario. Puedes personalizar tanto el asunto como el cuerpo del mensaje haciendo uso de [Liquid](/es/platform/channels/liquid-markup). Debajo del campo para personalizar el mensaje, podrás ver un listado de variables que puedes usar para personalizar el correo.
+El correo de agradecimiento te permite personalizar un correo que será enviado al usuario que respondió el formulario. Puedes personalizar tanto el asunto como el cuerpo del mensaje haciendo uso de [Liquid](/es/platform/channels/liquid-markup/). Debajo del campo para personalizar el mensaje, podrás ver un listado de variables que puedes usar para personalizar el correo.
 
 A continuación, tienes un ejemplo de código que podrás usar como base para personalizar el correo de agradecimiento.
 
@@ -284,14 +292,70 @@ Message Sent: {{ 'now' | date: "%b %d, %y" }}
 
 ### JS Personalizado
 
-Añade funcionalidad como una validación personalizada a tu formulario usando Javascript siguiendo estos pasos:
+Añade funcionalidad a tu formulario usando Javascript, como una validación personalizada o una nueva organización de sus preguntas, siguiendo estos pasos:
 
 1. En la plataforma Modyo, dentro de tu realm, haz click en tu formulario.
-1. Haz click en más opciones y haz click en **Ver**.
-1. Abre las herramientas de desarrollador e inspecciona el elemento que quieres modificar.
-1. Anota el id del elemento a validar. (e.g. `answers_3684_value`)
+1. Anota el **Identificador** de las preguntas que quieres usar. Lo ves en las [propiedades del campo](/es/platform/customers/forms.html#propiedades-del-campo) y, en el formulario publicado, en sus atributos `data-question` y `data-field`.
 1. En el apartado de JS Personalizado podrás agregar validaciones o funcionalidad extra usando Javascript.
 1. Haz click en **Guardar**.
+
+Para apuntar a una pregunta o a un campo, usa los atributos que se describen en [Identificar preguntas y campos](/es/platform/customers/forms.html#identificar-preguntas-y-campos) en lugar del `id` de los elementos. Los `id` se forman con identificadores internos que cambian de un ambiente a otro y, en algunas preguntas, en cada carga de la página.
+
+#### Identificar preguntas y campos
+
+Cada pregunta y cada uno de sus campos llevan atributos `data-*` cuyo valor es el **Identificador** de la pregunta, tanto en la página del formulario en el sitio como en el [snippet](/es/platform/customers/forms.html#snippet). Puedes usarlos como selectores en el JS personalizado y en el CSS del sitio asociado al formulario.
+
+| Atributo | Dónde está |
+|---|---|
+| `data-form` | El elemento que contiene las preguntas del formulario. Su valor es el identificador del formulario en su URL: en `/forms/mi-formulario`, es `mi-formulario`. Te sirve para distinguir un formulario de otro cuando hay más de uno en la misma página. |
+| `data-question` | El elemento que envuelve cada pregunta, con su título, su campo, sus instrucciones y sus mensajes de error. El **Campo oculto** no tiene un elemento que lo envuelva, así que lo lleva su propio campo. |
+| `data-field` | El campo con el que interactúa la persona usuaria: la caja de texto, la lista, cada opción de **Elección** y de **Casillas de verificación**, o la zona para subir el archivo. En **Preguntas anidadas**, lo lleva la lista de cada nivel. |
+| `data-field-control` | El control visible de las listas con buscador: **Lista desplegable** y **Preguntas anidadas** con **Habilitar buscador**, **País** y el país de **Dirección**. El buscador oculta la lista original, que conserva `data-field` y `data-field-value`. |
+| `data-field-value` | El campo que guarda el valor que se envía. En **Teléfono**, **Fecha** y los campos con máscara de entrada es un campo oculto con el valor sin formato; en el resto es el mismo campo que lleva `data-field`. |
+| `data-field-part` | Cada parte de una pregunta compuesta: `address_line_1`, `address_line_2`, `city_town`, `state_region_province`, `zip_code` y `country` en **Dirección**, y `other` en el texto de la opción **Otro** de **Elección** y **Casillas de verificación**. |
+| `data-field-option` | Cada opción de **Elección** y de **Casillas de verificación**, con el texto de su etiqueta sin formato. La opción **Otro** lleva su propio texto. |
+
+Ten en cuenta lo siguiente:
+
+- Los `id` y las clases de los elementos no cambian, así que las personalizaciones que ya los usan siguen funcionando.
+- Para usar `data-field-option` como selector, las opciones de una pregunta deben distinguirse por su texto visible, y el texto de la opción **Otro** no debe repetir el de otra opción.
+- Las reglas de estilo van en el CSS del sitio asociado al formulario, porque los formularios no tienen un CSS propio.
+
+#### Esperar a que el formulario esté en la página
+
+Cuando las preguntas del formulario ya están en la página y listas para usar, incluidos los buscadores, el calendario de las fechas y los campos con máscara, la plataforma emite el evento `forms:rendered` desde el elemento `data-form`. El evento se propaga hacia arriba, así que puedes escucharlo en `document` y saber de qué formulario se trata con `event.target.dataset.form`.
+
+Se emite en la página del formulario y en el snippet, siempre después de ejecutar el JS personalizado, así que el mismo código funciona en los dos casos. Por ejemplo, este código agrupa tres preguntas en una sección y valida una de ellas al salir del campo:
+
+```js
+(function () {
+  document.addEventListener('forms:rendered', function (event) {
+    var form = event.target;
+    if (form.dataset.form !== 'mi-formulario') return;
+
+    var section = document.createElement('fieldset');
+    var legend = document.createElement('legend');
+    legend.textContent = 'Datos personales';
+    section.append(legend);
+    ['nombre', 'apellido', 'rut'].forEach(function (uid) {
+      var question = form.querySelector('[data-question="' + uid + '"]');
+      if (question) section.append(question);
+    });
+    form.prepend(section);
+
+    var rut = form.querySelector('[data-field="rut"]');
+    rut.addEventListener('blur', function () {
+      var valid = /^[0-9]{7,8}-[0-9kK]$/.test(rut.value.trim());
+      rut.classList.toggle('is-invalid', !valid);
+    });
+  });
+})();
+```
+
+Ten en cuenta lo siguiente:
+
+- Escribe este código en el JS personalizado del formulario y no en el JavaScript del sitio, que podría cargarse después de que se emita el evento.
+- Las preguntas que muevas deben quedar dentro del elemento `data-form`. Si quedan fuera, sus respuestas no se envían.
 
 :::tip Tip
 Este script va a correr en seguida del div que contiene el formulario, por lo que es importante tomar en cuenta que puede ser afectado por el resto de la configuración del sitio. Por ejemplo si este formulario es embebido en otro sitio externo que no puede correr Javascript.

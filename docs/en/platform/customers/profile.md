@@ -13,7 +13,7 @@ This profile is available to users upon authentication or when accessing the sec
 
 ## Activity
 
-In this section, you can view a log of all actions performed by the user on the platform.
+In this section, the user sees their 20 most recent actions on the platform, without the ones an administrator performed while [impersonating](/en/platform/customers/users.html#impersonation) them. To go through the full history, use [User events](/en/platform/customers/api.html#user-events) of the Customers API.
 
 :::warning Attention
 These records cannot be deleted or edited.

@@ -22,9 +22,9 @@ The table below the search bar shows the Types already created, ordered by defau
 To reorder the table, click on the symbols next to each category. The categories by which you can reorder are:
 
 - **Name**
-- **Identifier (UID)**
-- **Creation Date**
-- **Update Date**
+- **Identifier**
+- **Cardinality**
+- **Updated on**
 
 Click on the name of a Type to open the corresponding editor.
 
@@ -88,13 +88,13 @@ This field allows you to enter single-line texts, with a hard limit of 255 chara
 
 - **Minimum length**: Allows you to require a minimum number of characters for the entered text.
 - **Maximum length**: Allows you to limit the maximum number of characters for the entered text.
-- **Validation by regular expression**: Allows you to add a regular expression to validate that the entered text, when creating or modifying an entry, complies with a certain format.
+- **Validation by regular expression**: Allows you to add a regular expression to validate that the entered text, when creating or modifying an entry, complies with a certain format. A match on part of the text is enough: `\d{3}` accepts `abc123`. To require the whole text to match the format, anchor the expression with `^` at the start and `$` at the end, for example `^\d{3}$`. If the text doesn't match, the entry isn't saved and the field shows "The value does not match the expression". If the expression isn't valid, the type isn't saved and the error shows "Invalid expression".
 - **Unique**: Requires that the value isn't repeated in other entries of the same type. This is the platform's only uniqueness validation, and Single-line text is the only field that offers it. If the value is already in use, the entry isn't saved and the field shows "Must be unique".
 
-The scope of **Unique** is the whole type: the comparison goes through every entry of the type, including drafts, scheduled entries, and translations into other languages. Backup versions and the entry you are editing are left out, so republishing an entry never collides with itself. An empty field is never considered repeated.
+The scope of **Unique** is the whole type: the comparison goes through every entry of the type in all its languages, including drafts and scheduled entries. Backup versions and the entry you are editing, in any of its languages, are left out: republishing an entry never collides with itself, and its translations can repeat the value. An empty field is never considered repeated.
 
 :::warning Attention
-**Unique** has no effect on a field that lives inside a **Group**. The checkbox is still displayed when you configure the field, but the validation isn't evaluated and repeated values are saved without an error. If you need to guarantee uniqueness, keep the field outside the group.
+Inside a **Group**, **Unique** doesn't compare the value with other entries of the type: it only prevents repeating it across the group's repetitions within the same entry. If two repetitions have the same value, the entry isn't saved and the field shows "Must be unique". If you need the value not to be repeated in other entries, keep the field outside the group.
 :::
 
 ### Multiline text
@@ -103,7 +103,7 @@ This field allows you to enter text on several lines, with no formatting options
 
 - **Minimum length**: Allows you to require a minimum number of characters for the entered text.
 - **Maximum length**: Allows you to limit the maximum number of characters for the entered text.
-- **Validation by regular expression**: Allows you to add a regular expression to validate that the entered text, when creating or modifying an entry, complies with a certain format.
+- **Validation by regular expression**: Allows you to add a regular expression to validate that the entered text, when creating or modifying an entry, complies with a certain format. As in [Single-line text](#single-line-text), a match on part of the text is enough. Here, in addition, `^` and `$` mark the start and end of each line, so an expression anchored with them passes as soon as one line matches. To require the whole text to match, anchor the expression with `\A` at the start and `\z` at the end.
 
 This field doesn't offer the **Unique** validation: uniqueness is only available in [Single-line text](#single-line-text).
 
@@ -149,6 +149,8 @@ This field results in a multi-line WYSIWYG text editor that also allows you to m
 - **Minimum length**: Sets the minimum number of characters for the entered text.
 - **Maximum length**: Limits the maximum number of characters for the entered text.
 
+Both lengths are measured on the HTML the editor stores, not on the visible text: tags and their attributes count too. For example, `<p><strong>Hello</strong></p>` adds up to 29 characters, not 5.
+
 ### Dropdown
 
 This field allows you to add a drop-down list where only one option can be selected.
@@ -165,13 +167,21 @@ This field allows you to add a list from which you can select more than one opti
 
 This field allows you to pick one or more values from a search box that filters as you type. The search box only offers the values defined in the type: when you edit an entry, you can't propose a new value from the field. Values are managed in **Allowed values**, when you configure the field.
 
-:::warning Attention
-If you load this field through the API, send the exact labels of the allowed values or the identifiers the API returns. Text that doesn't match any label is silently discarded: the entry is saved without that value and without an error message. A numeric identifier that doesn't belong to the field, on the other hand, prevents the entry from being saved.
-:::
-
 ### Allowed values
 
 In choice fields (Dropdown, Radio, Checkbox, and Multiple choice), the options are managed in the field's **Allowed values** section: use **Add value** and **Delete value** to manage them, and the selector to mark the **Default value**. Before saving, the interface marks the values as **New** or **Edited** so you can review your changes.
+
+For the type to be saved, each choice field must follow these rules:
+
+- Have at least one active value.
+- Have no repeated labels among its active values.
+- In Dropdown and Radio, have a single **Default value**: when you mark another one, the previous one is unmarked. In Checkbox and Multiple choice you can mark several.
+
+If any of them isn't met, the type isn't saved and the error names the field.
+
+:::warning Attention
+If you load a choice field through the API, send the exact labels of the allowed values or the identifiers the API returns. Text that doesn't match any label is silently discarded: the entry is saved without that value and without an error message, unless the field is **Required** and ends up empty. A numeric identifier that doesn't belong to the field, on the other hand, prevents the entry from being saved.
+:::
 
 The **Default value** is applied automatically when you create a new entry, and only when the field doesn't already carry a value: it isn't applied when you edit an existing entry and it never replaces what you loaded.
 
@@ -190,7 +200,11 @@ The name of an active value does not allow line breaks or starting with the `*` 
 
 ### Boolean
 
-This field allows you to add a question or statement (True or False).
+This field allows you to add a question or statement (True or False). In the entry editor it's shown as a checkbox: checked means True and unchecked means False.
+
+:::warning Attention
+If you mark the field as **Required**, you can only save the entry with the box checked: a False value is rejected with the message "Is required". Use it to require a confirmation, such as acknowledging a notice, not to force a choice between True and False.
+:::
 
 ### Integer
 
@@ -199,7 +213,13 @@ This field allows you to add an integer between `-2147483648` and `2147483647`. 
 - **Min value**: Rejects values lower than the number you set.
 - **Max value**: Rejects values higher than the number you set.
 
-Both restrictions bound the value of the number, not the number of digits. Leave them empty to apply no such limit. If the number falls outside the range, the entry isn't saved and the field shows "Invalid number. Must be greater than or equal to 18" or "Invalid number. Must be less than or equal to 120", with the limits you configured.
+Both restrictions bound the value of the number, not the number of digits. Leave them empty to apply no such limit. If the number falls outside the range, the entry isn't saved and the field shows a message with the limits you configured:
+
+- With only **Min value**: "Invalid number. Must be greater than or equal to 18".
+- With only **Max value**: "Invalid number. Must be less than or equal to 120".
+- With both: "Invalid number. Must be between 18 and 120".
+
+The **Min value** can't be greater than the **Max value**: if it is, the type isn't saved and the error starts with the field name, for example "Age: Min value must be less than or equal to 120" on a field named Age.
 
 ### Decimal
 
@@ -208,11 +228,11 @@ Use this field to enter a number with decimals. It supports up to two decimal pl
 - **Min value**: Rejects values lower than the number you set.
 - **Max value**: Rejects values higher than the number you set.
 
-Both restrictions bound the value of the number, not the number of digits, and they only accept whole numbers: to require a positive amount, for example, use `0` as **Min value**. If the number falls outside the range, the entry isn't saved and the field shows "Invalid number. Must be less than or equal to", with the limit you configured.
+Both restrictions bound the value of the number, not the number of digits, and they only accept whole numbers: to require a positive amount, for example, use `0` as **Min value**. If the number falls outside the range, the entry isn't saved and the field shows the same messages as in [Integer](#integer). Here too, the **Min value** can't be greater than the **Max value**.
 
 ### Date
 
-Use this field to add a date picker. Limit the selectable dates by applying the following restrictions:
+Use this field to add a date and time picker. The value is stored with both, so the API, the SDKs, and Liquid deliver the date together with the time, even if you only care about the day. Limit the selectable dates by applying the following restrictions:
 
 - **From**: Set the earliest date you can choose.
 - **Till**: Set the latest date you can choose.
@@ -286,7 +306,7 @@ In an entry, the group behaves as a repeatable list: the same set of child field
 
 The order you leave the repetitions in is preserved and is the order delivered by the API and the SDKs.
 
-That is why the value of a Group field is always an array of objects, even when it has a single repetition: each object carries the child fields under the name you gave them.
+In the API and the SDKs, the value of a Group field is an object whose `fields` key holds an array with one object per repetition, even when there's only one: each object carries the child fields under the name you gave them.
 
 ```json
 {
@@ -314,7 +334,7 @@ You can validate the contents of the fields as follows:
 - **Required**: Check the **Required** box to force the group or field to be completed.
   - If you mark the group as required, at least one item within the group must be completed.
   - If you mark an item as required, that item must have content.
-- **Unique**: Doesn't apply inside a group. The checkbox does appear when you configure a [Single-line text](#single-line-text) field that lives inside the group, but the validation isn't evaluated and repeated values are saved without an error.
+- **Unique**: On a [Single-line text](#single-line-text) field inside the group, it prevents repeating the value across the repetitions of the same entry, but it doesn't compare it with other entries of the type.
 
 :::tip Tip
 A group can host any type of field, except another group.
@@ -350,6 +370,19 @@ When you reindex one of your types, the previously indexed model will remain ava
 :::warning Attention
 Note that, depending on the cache settings between your browser and the platform, you may not see the changes immediately after you have finished reindexing.
 :::
+
+## Delete a type
+
+To delete a type you need the **Admin Types** permission, and the type can't have entries: if it has any, in any language or status, the deletion is rejected with the message "Cannot delete record because dependent entries exist". Delete its entries first and then follow these steps:
+
+1. From the main menu, click **Content**.
+2. Select the space where the type lives.
+3. Click on **Types**.
+4. Click the name of the type to open its editor.
+5. In the **Settings** tab of the right-hand panel, click **Delete type**.
+6. Confirm in the message "Are you sure you want to delete this element?".
+
+The [content pages](/en/platform/channels/pages#content-page) that used the type are left without an associated type, and you have to assign them another one.
 
 ## Clone a type
 

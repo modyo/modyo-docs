@@ -10,9 +10,13 @@ When you access the tool, you can see a list of all the forms currently active i
 
 In each row of the forms table, the columns are ordered by the name of the form, the date it was created, and the number of responses that were submitted for that form.
 
-From this list you can also access the individual analysis view, by clicking on the title of the form, also you can access the list of responses of the form, by clicking on the number of responses on the form.
+From this list, clicking the name of a form or its number of responses takes you to the form's [Answers](/en/platform/customers/forms.html#answers) view.
 
-To enable or disable forms and allow users to send their answers, you must go to the analysis view and select the respective action from the options displayed in the upper right section.
+In that view, the options menu in the upper right section lets you open the form on the site (**View**), if it is enabled; edit it (**Edit**); enable or disable it (**Enable** or **Disable**) to allow users to send their answers or not; and delete it (**Delete**). Editing, enabling, disabling, and deleting require the **Admin Forms** permission; without it, the menu shows **Show** instead of **Edit**, to see the form's settings.
+
+:::danger Danger
+To delete a form, you must disable it first. When you confirm, all its data is permanently deleted, including its answers. You also can't delete a form that is used in a [segment](/en/platform/customers/segments).
+:::
 
 ## Create a form
 
@@ -36,19 +40,18 @@ Forms copied to a [realm stage](/en/platform/customers/realms.html#what-is-copie
 - **Enabled**: Select if the form will start in an enabled state or not.
 - **Accept multiple answers**: If this option is enabled, each time a user answers the form, it will be recorded as a new response. If this option is disabled, each time the same user answers the form, they will be overwriting their previous response.
 - **Only for registered users**: Allows you to determine if the form will only be visible to registered Modyo users. If this option is enabled, an unsigned user will not be able to view the form. If this option is disabled, any user can answer the form.
-- **Request to answer automatically**: If the form is private (only registered users can answer it), this option will appear, allowing you to automatically redirect users who log in to the site associated with the form to answer it.
 
 After a division, you will be able to see the options to modify the redirect after a user answers the form.
 
 - **Default options**: After answering the form, the user is redirected to the home of the site associated with the form.
-- **Redirect URL**: Allows you to enter a URL to which the user will be redirected after completing the form. It is necessary to type the entire URL (e.g. https://test.modyo.com/home).
-- **Thank you page**: Allows you to add a personalized thank you message after a user answers the form, along with a button that will take them to a page on the site. The button URL is a relative URL of the site associated with the form. You can also determine if you want the user to be automatically redirected to that page after a certain amount of time.
+- **Custom Re-direct URL**: Allows you to enter a URL to which the user will be redirected after completing the form. You can type a full URL (e.g. https://test.modyo.com/home) or a path of the site associated with the form that starts with `/` (e.g. `/home`). If you type an address that doesn't start with `/`, `http://`, or `https://`, the platform adds `http://` to it.
+- **Thank you page**: Allows you to add a personalized thank you message after a user answers the form, along with a button that will take them to the address in **Re-direct Link**, which accepts the same values as the **Custom Re-direct URL**. If you check **Enable Auto Redirect**, the user is automatically redirected to that address after the seconds set in **Re-direction Time**, or after 10 seconds if you leave it empty.
 
 
 - **Enable segmentation**: If the form is private (only registered users can answer it), you can select a set of users who can answer the form using segments. To learn more, go to [Segments](/en/platform/customers/segments)
 
 :::warning Attention
-In case of a public form, users who do not have an active session in Modyo, will see three required fields at the top of the form: First Name, Last Name, and Email. Once they submit the form, a user will be created with those values, and then the response will be associated with that user.
+In case of a public form, users who do not have an active session in Modyo, will see three required fields at the top of the form: First Name, Last Name, and Email. If the realm doesn't use the email as the username, they will also see a fourth required field for the username, with the label the realm has configured. While any of these fields is empty or the email is not valid, the submit button stays disabled. Once they submit the form, a user will be created with those values, and then the response will be associated with that user.
 :::
 
 :::warning Attention
@@ -78,7 +81,7 @@ The **Content fields** group has one option:
 
 These are the field types of the **Input fields** group:
 
-- **Simple Text**: Allows the user to enter text up to 256 characters.
+- **Simple Text**: Allows the user to enter a single line of text. To limit its length, set **Min** and **Max** in the field properties. If you don't set a **Max**, it accepts the same length as the **Paragraph Text** field.
 - **Paragraph**: Allows the user to enter multiline text up to 65535 characters.
 - **Number**: Allows the user to enter numbers.
 - **Dropdown**: Allows you to add options from which the user can choose one in _dropdown_ format.
@@ -118,6 +121,11 @@ Keep the following in mind:
 
 - If the Liquid has a syntax error, the field is not saved and the platform shows the error.
 - The content of each field accepts up to about 64 KB of HTML.
+- The accepted HTML is limited. By default, the allowed tags are `a`, `abbr`, `acronym`, `address`, `b`, `big`, `blockquote`, `br`, `caption`, `cite`, `code`, `col`, `colgroup`, `dd`, `del`, `dfn`, `div`, `dl`, `dt`, `em`, `h1` to `h6`, `hr`, `i`, `img`, `ins`, `kbd`, `li`, `mark`, `ol`, `p`, `pre`, `s`, `samp`, `small`, `span`, `strike`, `strong`, `sub`, `sup`, `table`, `tbody`, `td`, `tfoot`, `th`, `thead`, `time`, `tr`, `tt`, `u`, `ul`, and `var`, and the allowed attributes are `abbr`, `alt`, `cite`, `class`, `colspan`, `datetime`, `height`, `href`, `lang`, `name`, `rel`, `rowspan`, `src`, `style`, `target`, `title`, `width`, and `xml:lang`.
+- Link and image addresses only accept `http`, `https`, `mailto`, and `tel`, or relative paths. If you insert a link with another scheme, the editor shows a warning.
+- The editor removes what is not allowed. If the content has HTML outside that list when you save it, including when it comes through the API, the field is not saved and the error states what is not accepted, for example `<iframe>`, `id`, or `href="javascript:"`.
+- When the form is displayed, the platform filters the content again, including the output of the Liquid: it removes the tags and attributes that are not allowed, keeps their text, and removes `script` and `style` along with their content.
+- These rules also apply to the Rich Text of the Input tasks of [originations](/en/platform/customers/origination), to the instructions of **Add a Field Pop-up instructions** in their fields, and to the document of the [Signature](/en/platform/customers/origination.html#signature) task.
 - It does not appear in the answers: it is not shown in the detail of an answer or in the new answer notification email, it is not included in the export or in the form statistics, and it is not available to filter segments by answers.
 - If an answer carries a value for this field, for example through the API, the platform discards it.
 
@@ -163,6 +171,8 @@ This section will allow you to modify the options for each of the questions on y
 
 All input fields have a title, which will be the question associated with the answer, the option to make it a required field in order to submit the form, and a brief description, if instructions are needed, to answer the field. The [Hidden Field](/en/platform/customers/forms.html#hidden-field) is the exception: it has no required option and no instructions.
 
+Each field also has an **Identifier** that distinguishes it within the form. When you create a field, the identifier is generated from the title as you type it. Once the field is saved, the identifier appears locked with a padlock, and changing the title no longer modifies it. To modify it, click the padlock and confirm the **Unlock identifier field** warning with **Unlock**: changing the identifier breaks the references to the field from the custom JavaScript, the CSS and Liquid. See [Identify questions and fields](/en/platform/customers/forms.html#identify-questions-and-fields).
+
 The **Dropdown** and **Nested Questions** fields have the **Enable search** checkbox, unchecked by default, also when their alternatives come from a [data set](/en/platform/customers/settings.html#data-sets). With the checkbox checked, the user sees a search box instead of the browser list: as they type, it finds the alternatives that contain the text, ignoring case and accents, shows them in the order you defined, and displays up to 100 matches. In nested questions, the search box appears at every level. The same checkbox is available in the [Input](/en/platform/customers/origination.html#input) tasks of originations. The **Country** field and the country selector of the **Address** field always show this search box, which also finds each country by its two-letter ISO code.
 
 Some fields have validations, to ensure that the user meets certain requirements to fill in the field, some of these restrictions are:
@@ -175,7 +185,7 @@ Some fields have validations, to ensure that the user meets certain requirements
 - **Minimum Date**: The date entered cannot be earlier than this value
 - **Maximum Date**: The date entered cannot be later than this value.
 
-Just as some fields have validations, most input fields have a default value that is pre-selected when loading the form. The only ones that don't have a default value are nested questions. Since [Rich Text](/en/platform/customers/forms.html#rich-text) does not capture an answer, it only has a title, an identifier, and content.
+Just as some fields have validations, some input fields let you set a default value that is preselected when the form loads: **Single Text Line**, **Paragraph Text**, and **Number**, in **Default answer**; **Date**, with the **Default** checkbox; and **Checkboxes** and **Choice**, by checking one of their options. **Country**, **Phone**, and **Address** only let you use the user's current location as the default country, or country code. In the builder, **Dropdown**, **Nested Questions**, **File**, **Email**, and **URL** don't let you set a default value. Since [Rich Text](/en/platform/customers/forms.html#rich-text) does not capture an answer, it only has a title, an identifier, and content.
 
 ### Regular expressions
 
@@ -215,17 +225,15 @@ The **General** section adds two options:
 #### Snippet
 The **Snippet** section, which will only appear if the form is public, will allow you to copy an _HTML_ code that you can use anywhere to dynamically load the form, even outside of Modyo.
 
+If you customize the form with [Custom JS](/en/platform/customers/forms.html#custom-js), keep in mind that in the snippet this code runs before the questions are on the page. To modify them, wait for the `forms:rendered` event, described in [Wait for the form to be on the page](/en/platform/customers/forms.html#wait-for-the-form-to-be-on-the-page).
+
 :::warning Attention
-In order to make proper use of the form snippet, you must take into account the _CORS_ configuration of your Modyo account and the security _headers_ where you are inserting the snippet.
+The snippet loads the form as a script, so it doesn't depend on the _CORS_ configuration of your account. In order to make proper use of the snippet, you must take into account the security _headers_ where you are inserting the snippet.
 
 To make use of the snippet within a page on the Modyo platform, you must copy the Javascript code inside the Javascript section and the div in the HTML section. The HTML section in [Pages](/en/platform/channels/pages) cannot run Javascript, the use of the Javascript section is mandatory to run the code correctly.
 :::
 
 The **Options** and **Notifications** sections don't add anything other than what's found in **New Form**
-
-:::warning Attention
-If you're using a Modyo site with a custom domain, you'll need to enable the option to share resource sources [CORS](/en/platform/core/security) in the platform settings.
-:::
 
 ### Notifications
 
@@ -233,7 +241,7 @@ In the **Notifications** section you can configure the different emails that are
 
 The email notification sends an “administrative” email notifying you via that channel that someone has answered the form. You can assign a subject and a list of emails to which you want to notify.
 
-The thank you email allows you to customize an email that will be sent to the user who answered the form. You can customize both the subject and the body of the message using [Liquid](/es/platform/channels/liquid-markup). Below the field for customizing the message, you can see a list of variables that you can use to personalize the email.
+The thank you email allows you to customize an email that will be sent to the user who answered the form. You can customize both the subject and the body of the message using [Liquid](/en/platform/channels/liquid-markup/). Below the field for customizing the message, you can see a list of variables that you can use to personalize the email.
 
 Below is an example of code that you can use as a basis for customizing the thank you email.
 
@@ -284,14 +292,70 @@ Message Sent: {{ 'now' | date: "%b %d, %y" }}
 
 ### Custom JS
 
-Add functionality, such as custom validation, to your form using Javascript by following these steps:
+Add functionality to your form using Javascript, such as custom validation or a new arrangement of its questions, by following these steps:
 
 1. On the Modyo platform, within your realm, click on your form.
-1. Click on more options and click on **View**.
-1. Open the developer tools and inspect the element you want to modify.
-1. Note the id of the element to be validated. (e.g. `answers_3684_value`)
+1. Note the **Identifier** of the questions you want to use. You can see it in the [field properties](/en/platform/customers/forms.html#field-properties) and, on the published form, in their `data-question` and `data-field` attributes.
 1. In the Custom JS section you can add validations or extra functionality using Javascript.
 1. Click **Save**.
+
+To target a question or a field, use the attributes described in [Identify questions and fields](/en/platform/customers/forms.html#identify-questions-and-fields) instead of the `id` of the elements. The `id` values are built from internal identifiers that change from one environment to another and, in some questions, on every page load.
+
+#### Identify questions and fields
+
+Each question and each of its fields carry `data-*` attributes whose value is the question's **Identifier**, both on the form page of the site and in the [snippet](/en/platform/customers/forms.html#snippet). You can use them as selectors in the custom JS and in the CSS of the site associated with the form.
+
+| Attribute | Where it is |
+|---|---|
+| `data-form` | The element that contains the questions of the form. Its value is the form identifier in its URL: in `/forms/my-form`, it's `my-form`. It lets you tell one form from another when there is more than one on the same page. |
+| `data-question` | The element that wraps each question, with its title, its field, its instructions and its error messages. The **Hidden Field** has no wrapping element, so its own field carries it. |
+| `data-field` | The field the user interacts with: the text box, the list, each option of **Choice** and **Checkboxes**, or the file upload area. In **Nested questions**, the list of each level carries it. |
+| `data-field-control` | The visible control of the lists with a search box: **Dropdown** and **Nested questions** with **Enable search**, **Country** and the country of **Address**. The search box hides the original list, which keeps `data-field` and `data-field-value`. |
+| `data-field-value` | The field that holds the value that is submitted. In **Phone**, **Date** and the fields with an input mask, it's a hidden field with the unformatted value; in the rest, it's the same field that carries `data-field`. |
+| `data-field-part` | Each part of a compound question: `address_line_1`, `address_line_2`, `city_town`, `state_region_province`, `zip_code` and `country` in **Address**, and `other` in the text of the **Other** option of **Choice** and **Checkboxes**. |
+| `data-field-option` | Each option of **Choice** and **Checkboxes**, with the plain text of its label. The **Other** option carries its own text. |
+
+Keep the following in mind:
+
+- The `id` values and classes of the elements don't change, so the customizations that already use them keep working.
+- To use `data-field-option` as a selector, the options of a question must be distinguishable by their visible text, and the text of the **Other** option must not repeat the text of another option.
+- Style rules go in the CSS of the site associated with the form, because forms don't have their own CSS.
+
+#### Wait for the form to be on the page
+
+When the questions of the form are on the page and ready to use, including the search boxes, the date calendar and the masked fields, the platform dispatches the `forms:rendered` event from the `data-form` element. The event bubbles up, so you can listen to it on `document` and tell which form it belongs to with `event.target.dataset.form`.
+
+It's dispatched on the form page and in the snippet, always after the custom JS runs, so the same code works in both cases. For example, this code groups three questions in a section and validates one of them when the user leaves the field:
+
+```js
+(function () {
+  document.addEventListener('forms:rendered', function (event) {
+    var form = event.target;
+    if (form.dataset.form !== 'my-form') return;
+
+    var section = document.createElement('fieldset');
+    var legend = document.createElement('legend');
+    legend.textContent = 'Personal information';
+    section.append(legend);
+    ['first-name', 'last-name', 'rut'].forEach(function (uid) {
+      var question = form.querySelector('[data-question="' + uid + '"]');
+      if (question) section.append(question);
+    });
+    form.prepend(section);
+
+    var rut = form.querySelector('[data-field="rut"]');
+    rut.addEventListener('blur', function () {
+      var valid = /^[0-9]{7,8}-[0-9kK]$/.test(rut.value.trim());
+      rut.classList.toggle('is-invalid', !valid);
+    });
+  });
+})();
+```
+
+Keep the following in mind:
+
+- Write this code in the custom JS of the form and not in the site's JavaScript, which could load after the event is dispatched.
+- The questions you move must stay inside the `data-form` element. If they end up outside it, their answers are not submitted.
 
 :::tip Tip
 This script will run after the div containing the form, so it's important to keep in mind that it can be affected by the rest of the site's configuration. For example, if this form is embedded in another external site that cannot run Javascript.
