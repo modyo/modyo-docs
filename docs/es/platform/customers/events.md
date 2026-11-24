@@ -212,7 +212,8 @@ El endpoint acepta un conjunto cerrado de parámetros. Cualquier otro que envíe
 | `au_mt` | Método de autenticación. |
 | `au_err` | Detalle del error de autenticación. |
 | `pf_net`, `pf_srv`, `pf_tfr`, `pf_dm1`, `pf_dm2` y `pf_onl` | Tiempos de red, de servidor, de transferencia, de procesamiento del DOM, de DOM completo y de carga de la página. |
-| `idsite`, `uid`, `ua` y `_id` | Sitio, usuario, navegador y visitante. Modyo los completa con el contexto de la petición, así que no necesitas enviarlos. |
+| `_id` | Identificador del visitante. |
+| `idsite`, `uid` y `ua` | Sitio, usuario y navegador. Modyo los completa con el contexto de la petición, así que no los envíes. |
 
 Además de lo que envíes, Modyo guarda el reino del usuario, la IP de la petición y, si un administrador está impersonando al usuario, quién es.
 

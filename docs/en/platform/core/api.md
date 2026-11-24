@@ -898,19 +898,25 @@ Keep in mind that:
 
 - The `username` change applies immediately and responds `HTTP 200 OK`.
 - The `email` change does not apply immediately: the platform sends a confirmation email to the new address and keeps it pending until the user confirms it.
-- If `current_password` is wrong or empty, the response is `HTTP 422 Unprocessable Entity` and nothing is updated.
+- If `current_password` is wrong or empty, the response is `HTTP 422 Unprocessable Entity`, nothing is updated, and the call counts as a failed attempt.
 
 :::danger Danger
-Each failed attempt with a wrong password adds one to the count and keeps it active for another 15 minutes; if more than 15 minutes go by since the last counted failure, the count starts over. The limit is not a setting of your account: with the platform's default configuration, the first three failed attempts respond `HTTP 422` with a message asking you to check the current password. From the fourth one on, the response is still `HTTP 422`, but with a message saying that you reached the attempt limit, and the platform revokes every active session of the user, so anyone working in the administration panel is logged out. These rejections no longer add to the count or extend its window: every failed attempt keeps revoking the sessions until 15 minutes have passed since the third failure, and then the count starts over. Handle the `HTTP 422` in your integration and do not retry in a loop.
+Failed attempts in this call, in `DELETE /api/admin/profile/remove_otp`, and in the password change from the panel count toward the same limit. After three failed attempts, the next call responds `HTTP 422` with a message saying that you reached the attempt limit, even if `current_password` is correct: nothing is updated, and the platform revokes every active session of the user, so anyone working in the administration panel is logged out. The lockout lasts 15 minutes and cannot be released earlier. Handle the `HTTP 422` in your integration and do not retry in a loop.
 :::
 
 ### Two-factor authentication
 
-`DELETE /api/admin/profile/remove_otp` removes the two-factor authentication settings of the authenticated user and responds `HTTP 200 OK`, even if the user had no two-factor authentication configured.
+`DELETE /api/admin/profile/remove_otp` removes the two-factor authentication settings of the authenticated user. The call must include `current_password` with the current password of the user.
 
-:::warning Attention
-This call does not ask for the current password, so any valid token of the user is enough to disable their two-factor authentication. Treat administration API tokens with the same care as a password.
-:::
+```shell script
+curl -X DELETE https://test.modyo.com/api/admin/profile/remove_otp -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56' -H 'Content-Type: application/json' -d '{"current_password":"your-current-password"}'
+```
+
+Keep in mind that:
+
+- If `current_password` is correct, the response is `HTTP 200 OK`, even if the user had no two-factor authentication configured, and the removal is recorded in the [Activity logs](/en/platform/core/activity-logs.html) as **Profile updated**.
+- If `current_password` is wrong or empty, the response is `HTTP 422 Unprocessable Entity` and two-factor authentication stays in place.
+- Failed attempts count toward the same limit as the username or email change, with the same lockout and session revocation.
 
 ### Active sessions
 

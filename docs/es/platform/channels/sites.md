@@ -72,7 +72,7 @@ La copia toma el nombre y el host de la original precedidos de **Copia de**. Si 
 - Los stages de la aplicación original.
 - El estado: la copia siempre nace en estado **Editable**, aunque la original esté **Habilitado**.
 
-Todo el contenido de la copia nace sin publicar, así que debes publicarlo antes de que sea visible.
+La copia conserva el estado de publicación de la original: lo que está publicado en la original queda publicado en la copia, y los cambios sin publicar quedan como cambios pendientes. Como la copia nace en estado **Editable**, no es visible al público hasta que cambies su estado a **Habilitado**.
 
 :::tip Tip
 El clonado toma un tiempo y ocurre en segundo plano. Mientras dura, la ventana muestra el mensaje "Esto demorará un tiempo, la aplicación está siendo clonada" y la copia todavía no aparece en el listado de aplicaciones.
@@ -115,12 +115,12 @@ Cuando la aplicación tiene la [revisión en equipo](/es/platform/channels/sites
 
 ### Acceso a la sincronización
 
-El bloque **Etapa** solo aparece si tu rol tiene alguno de los permisos de sincronización, y el botón cambia según cuál sea:
+El bloque **Etapa** solo aparece si tu rol tiene el permiso **Administrar Sincronizaciones**, **Ver Sincronizaciones** o **Gestionar Canales**, y el botón cambia según cuál sea:
 
-- Con **Administrar Sincronizaciones** ves **Sincronizar** y puedes [sincronizar el stage](/es/platform/channels/sites.html#sincronizar-un-stage).
+- Con **Administrar Sincronizaciones** o **Gestionar Canales** ves **Sincronizar** y puedes [sincronizar el stage](/es/platform/channels/sites.html#sincronizar-un-stage). Si estás en el stage `main` y la aplicación no tiene otros stages en estado **Habilitado** o **Editable**, ves **Sincronizar (solo lectura)** aunque tengas estos permisos.
 - Con **Ver Sincronizaciones** ves **Sincronizar (solo lectura)**: entras a la vista de sincronización y revisas las diferencias, pero no puedes aplicarlas.
 
-Si la aplicación tiene cambios sin publicar, junto al nombre del stage aparece un ícono de advertencia con el mensaje "Tienes que publicar todos los cambios antes de sincronizar", y al hacer click en **Sincronizar** Modyo te pide confirmación antes de continuar.
+Si puedes sincronizar y la aplicación tiene cambios sin publicar, junto al nombre del stage aparece un ícono de advertencia con el mensaje "Tienes que publicar todos los cambios antes de sincronizar", y al hacer click en **Sincronizar** Modyo te pide confirmación antes de continuar.
 
 ## Revisión y publicación conjunta
 
@@ -157,6 +157,7 @@ Para habilitar o deshabilitar la funcionalidad de búsqueda, sigue estos pasos:
 1. En la sección privacidad, habilita o deshabilita la casilla de **habilitar búsqueda**, según requieras.
 1. Haz click en **guardar**.
 
+Con **Habilitar búsqueda** desmarcada, las rutas `/search` y `/search.json` de la web app responden con un error 404.
 
 ### Plantilla de búsqueda
 
@@ -189,10 +190,12 @@ Personaliza tus consultas de la siguiente manera:
 
 | Parámetro | Descripción |
 |-----------|-------------|
-| **query** | El término que quieres buscar. La consulta recorre todas las páginas publicadas de tu web app y todas las entradas públicas de los espacios vinculados a la web app. El buscador solo considera sus primeros 15 caracteres. |
+| **query** | El término que quieres buscar. La consulta recorre las páginas publicadas de tu web app. En las [páginas de contenido](/es/platform/channels/pages.html#pagina-de-contenido) recorre, en lugar de la página, las entradas publicadas de su tipo de contenido, y cada resultado enlaza a la entrada dentro de esa página. Las entradas de un tipo de contenido que no tiene una página de contenido en la web app no aparecen. El buscador solo considera sus primeros 15 caracteres. |
 | **page** | La página de resultados que quieres obtener. Por omisión, 1. |
 | **per_page** | Cuántos resultados trae cada página. Por omisión, 15. |
 | **more** | Valor libre que el buscador no usa para filtrar: solo queda disponible en la plantilla de búsqueda como la variable `params_more`. |
+
+Si el visitante no inició sesión, la búsqueda solo devuelve páginas y entradas públicas. Si inició sesión, devuelve además las privadas que no tienen segmentos asignados o que comparten al menos un segmento con él.
 
 Cada resultado trae cuatro campos: `title`, `description`, `url` y `site_name`. La respuesta incluye además un objeto `meta` con `total_entries`, `per_page`, `current_page` y `total_pages`, que viene vacío cuando la consulta no encuentra nada.
 
@@ -257,16 +260,16 @@ Para acceder a estos snippets:
 
 **Para el _head_**:
 
-1. Utiliza este código:
+1. Utiliza este código. El atributo `nonce` permite que el navegador ejecute el _script_ cuando la aplicación usa una política de seguridad de contenido basada en nonce, como la que se precarga al habilitar los [Security headers](/es/platform/channels/sites.html#security-headers). El código también asigna el nonce al _script_ que carga `gtm.js`, para que el navegador lo acepte aunque tu política no incluya `'strict-dynamic'`:
 
 ```liquid
 {% if site.tag_manager_id != '' %}
 
 <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+<script nonce="{{csp_nonce}}">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;j.setAttribute('nonce','{{csp_nonce}}');f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','{{site.tag_manager_id}}');</script>
 <!-- End Google Tag Manager -->
 
@@ -579,13 +582,16 @@ Las principales ventajas de tener distintas etapas en tus web apps son:
 - Un web app puede tener un máximo de cuatro stages.
 - Los cambios que realices en un stage solo se reflejan en ese stage.
 - Los reinos también tienen sus propios stages, independientes de los de las aplicaciones web. Revisa [Stages](/es/platform/customers/realms.html#stages) en Reinos.
-- Las PWAs y redirecciones personalizadas se deshabilitan en los stages. Solo se pueden usar en el stage `main`.
+- Las redirecciones personalizadas se deshabilitan en los stages. Solo se pueden usar en el stage `main`.
+- Al crearse, cada stage copia la configuración de PWA de su stage de origen. Después puedes modificarla en cada stage por separado.
 - La sección de miembros del equipos es independiente en cada stage `main`. Agrega miembros para habilitar la revisión de equipo.
 - Puedes tener los mismos miembros con diferentes roles y permisos para cada stage.
 - Las páginas de originación se copian al nuevo stage sin la originación vinculada. Como cada originación admite una sola página, para usarlas en el stage debes vincular una originación distinta del mismo reino.
 :::
 
 #### Agregar un nuevo stage
+
+Antes de crear un stage, publica los cambios pendientes del stage de origen. Si tiene cambios sin publicar, la ventana te avisa y el botón **Crear** queda deshabilitado. Publica los cambios y vuelve a abrir la ventana.
 
 Para agregar un nuevo stage a tu web app, sigue estos pasos:
 
@@ -595,7 +601,13 @@ Para agregar un nuevo stage a tu web app, sigue estos pasos:
 1. Haz click en stages.
 1. Da click en **nuevo stage**.
 1. Selecciona el stage de origen y nombra tu nuevo stage.
-1. Haz click en **crear**.
+1. Haz click en **Crear**.
+
+La creación del stage continúa en segundo plano, así que puedes cerrar la ventana. Mientras dura, el nuevo stage no aparece en el listado de stages. Si mantienes la ventana abierta, al terminar verás uno de estos resultados:
+
+- Si se clonaron todos los elementos, aparece el mensaje "Stage creado exitosamente" y el listado se actualiza.
+- Si algunos elementos no pudieron clonarse, el stage se crea igual y la ventana muestra la lista de esos elementos y el motivo de cada uno, junto al mensaje "El stage se creó, pero algunos elementos no pudieron clonarse. El detalle queda en el log de creación del stage."
+- Si la creación no pudo completarse, la ventana muestra el mensaje "No se pudo completar la creación del stage".
 
 
 :::tip Tip
@@ -620,7 +632,7 @@ Para sincronizar un stage sigue estos pasos:
 
 
 :::warning Atención
-- Los elementos de un stage asociados a un segmento no se sincronizan. Deberás repetir el proceso manualmente en el nuevo stage, una vez concluida la sincronización.
+- Las páginas y los ítems de menú asociados a segmentos también se sincronizan. Si el elemento ya existe en el stage de destino con segmentos asignados, conserva esos segmentos y no toma los del stage de origen; si no los tiene, recibe los del origen.
 - La originación vinculada a una página de originación tampoco se sincroniza: cada stage conserva la suya y esa diferencia no aparece en el listado de elementos por sincronizar.
 :::
 
@@ -632,7 +644,7 @@ Para eliminar un stage, sigue estos pasos:
 1. Haz click en configuración de la aplicación.
 1. Haz click en General.
 1. En la sección zona peligrosa haz click en **eliminar stage**.
-1. Ingresa el nombre de tu stage.
+1. En **Nombre de la aplicación**, escribe el nombre completo del stage tal como aparece en el campo **Nombre de la aplicación** de la sección General (por ejemplo, `qa Mi sitio`, no solo `qa`).
 1. Haz click en **borrar**.
 
 
@@ -742,10 +754,19 @@ A partir de la versión 10.1 se pueden hacer redirecciones hacia sitios fuera de
 
 Habilita este módulo para tu sitio para configurar los encabezados de seguridad HTTP. Ten en cuenta que esta acción no se puede deshacer. Una vez habilitado, tendrás control total sobre los encabezados que deseas utilizar.
 
+Al hacer click en **Habilitar los headers de seguridad para esta aplicación**, la configuración de la aplicación reemplaza la configuración global de headers de seguridad de la plataforma y Modyo carga estos valores iniciales:
+
+- **Habilitar Strict-Transport-Security (HSTS)** activo, con **Duración (max age)** de 1 año e **Incluir subdominios** marcada.
+- **Habilitar Referrer-Policy** activo, con la directiva `strict-origin-when-cross-origin`, salvo que la configuración global de la plataforma defina otra.
+- **Habilitar X-Frame-Options** activo, con la directiva `DENY`, salvo que la configuración global de la plataforma defina otra.
+- Las áreas de texto de Content-Security-Policy y Content-Security-Policy-Report-Only prellenadas con una [política estricta](/es/platform/channels/sites.html#content-security-policy-csp).
+- **Habilitar Content-Security-Policy**, **Habilitar Content-Security-Policy-Report-Only**, **Habilitar X-Content-Type-Options** y **Habilitar Permissions-Policy** activos solo si la configuración global de la plataforma tiene activos esos _headers_.
+- **Habilitar Cross-Origin-Embedder-Policy**, **Habilitar Cross-Origin-Opener-Policy** y **Habilitar Cross-Origin-Resource-Policy** desactivados.
+
 #### HTTP Strict Transport Security (HSTS)
 
 Indica al navegador que solo puede acceder al sitio mediante HTTPS.
-- **Duración**: Establece el tiempo que el navegador accede al sitio solamente mediante HTTPS.
+- **Duración (max age)**: Establece el tiempo que el navegador accede al sitio solamente mediante HTTPS. Puedes elegir **6 meses**, **1 año** o **2 años**.
 - **Precarga**: Incluye la directiva de precarga. Para más información, consulta [HSTS Preload List Submission](https://hstspreload.org/).
 - **Incluir subdominios**: Aplica la regla HSTS a todos los subdominios del sitio.
 
@@ -786,7 +807,9 @@ Después referencia el nombre del destino desde tu política, por ejemplo `repor
 
 #### Content-Security-Policy (CSP)
 
-Controla qué recursos puede cargar el navegador en el sitio para mitigar ataques de inyección de datos y _cross site scripting_. El valor predeterminado *permite cargar recursos desde cualquier lugar*, por lo que es importante diseñar una política de seguridad de contenido adecuada para tu sitio.
+Controla qué recursos puede cargar el navegador en el sitio para mitigar ataques de inyección de datos y _cross site scripting_. Mientras **Habilitar Content-Security-Policy** está desactivado, la aplicación no envía este _header_ y el navegador carga recursos desde cualquier lugar.
+
+Al habilitar el módulo, el área de texto se prellena con una política estricta: parte de `default-src 'none'` y exige el nonce de la página, interpolado con la variable `csp_nonce`, en los _tags_ `script` y `style`. Si el CSP queda activo con ese valor sin adaptarlo, el navegador bloquea los _scripts_ de tus plantillas que no llevan el atributo `nonce`, aunque se carguen desde el propio sitio, y los recursos de orígenes que la política no lista, por lo que es importante diseñar una política adecuada para tu sitio.
 
 Especifica libremente tu política de seguridad de contenido en el área de texto. Para obtener una guía completa sobre cómo escribir tu política, consulta [Content Security Policy (CSP) de Mozilla Developer Network.](https://developer.mozilla.org/es/docs/Web/HTTP/CSP)
 
@@ -841,6 +864,12 @@ Para obtener una lista completa de las funciones compatibles con los navegadores
 
 Configura la inserción de recursos de origen cruzado en el documento. Por ejemplo, si tu documento tiene un encabezado COEP con un valor de require-corp o credentialless, solo puedes acceder a ciertas funciones, como objetos SharedArrayBuffer o Performance.now(), con temporizadores sin restricciones.
 
+En **Directiva** puedes elegir:
+
+- **unsafe-none**: El documento carga recursos de origen cruzado aunque estos no lo autoricen. Es el comportamiento por defecto del navegador.
+- **require-corp**: El documento solo carga recursos de origen cruzado que lo autorizan explícitamente mediante CORS o el _header_ `Cross-Origin-Resource-Policy`.
+- **credentialless**: El documento carga recursos de origen cruzado sin que lo autoricen, pero las solicitudes sin CORS se envían sin credenciales, como las _cookies_.
+
 Para mas información, consulta la [Cross-Origin-Embedder-Policy de MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy).
 
 #### Cross Origin Opener Policy (COOP)
@@ -849,11 +878,23 @@ Te permite garantizar que un documento de nivel superior no comparta un grupo de
 
 COOP aisla el procesamiento de tu documento, por lo que atacantes potenciales no podrán acceder a tu objeto global si lo abren en un popup, lo que previene un conjunto de ataques de origen cruzado.
 
+En **Directiva** puedes elegir:
+
+- **unsafe-none**: El documento puede compartir su grupo de contexto de navegación con documentos de origen cruzado, como los _popups_ que abre. Es el comportamiento por defecto del navegador.
+- **same-origin-allow-popups**: Aísla el documento de los de origen cruzado, pero conserva la referencia a los _popups_ que abre si estos no definen COOP o usan `unsafe-none`.
+- **same-origin**: El documento solo comparte su grupo de contexto de navegación con documentos del mismo origen que también usan `same-origin`.
+
 Para mas información, revisa la [Cross-Origin-Opener-Policy de MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy).
 
 #### Cross Origin Resource Policy
 
 Transmite el deseo de bloquear las solicitudes de origen cruzado/sitio cruzado sin-cors al recurso especificado por parte del navegador.
+
+En **Directiva** puedes elegir:
+
+- **same-site**: Solo las solicitudes del mismo sitio, es decir, del mismo esquema y dominio registrable, incluidos sus subdominios, pueden cargar el recurso.
+- **same-origin**: Solo las solicitudes del mismo origen, es decir, del mismo esquema, host y puerto, pueden cargar el recurso.
+- **cross-origin**: Las solicitudes de cualquier origen pueden cargar el recurso.
 
 Para mas información, consulta la [Cross-Origin-Resource-Policy de MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Resource-Policy).
 
@@ -865,7 +906,7 @@ Amplía el alcance (_scope_) máximo que puede registrar un _service worker_. Po
 - **Directiva**: La ruta que quieres autorizar como alcance, por ejemplo `/`.
 
 :::tip Sitios sin dominio personalizado
-En los sitios que no tienen los dominios personalizados activados, Modyo ya envía el _header_ `Service-Worker-Allowed` apuntando a la ruta del sitio cuando entrega el _service worker_ de la [PWA](/es/platform/channels/sites.html#pwa), por lo que no necesitas configurarlo para ese caso.
+En los sitios que no tienen los dominios personalizados activados, Modyo envía el _header_ `Service-Worker-Allowed` apuntando a la ruta del sitio cuando entrega el _service worker_ de la [PWA](/es/platform/channels/sites.html#pwa), pero solo mientras el módulo de headers de seguridad está deshabilitado. Al habilitar el módulo, ese _header_ automático deja de enviarse: si tu PWA lo necesita, activa **Habilitar Service-Worker-Allowed** y escribe en **Directiva** la ruta del sitio, por ejemplo `/miSitio`.
 :::
 
 ### Variables del sitio

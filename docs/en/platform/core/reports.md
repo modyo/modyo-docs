@@ -11,6 +11,7 @@ Several screens in the administration panel let you take their data to a file, s
 | Report | Where you request it |
 | --- | --- |
 | [Activity logs](/en/platform/core/activity-logs.html) | **Settings** > **Activity logs** |
+| Realm [events](/en/platform/customers/events.html) | **Events**, inside the realm |
 | Team members | **Settings** > [**Team**](/en/platform/core/roles.html) |
 | Realm [users](/en/platform/customers/users.html) | **Users**, inside the realm |
 | [Form](/en/platform/customers/forms.html) responses | **Forms**, on the form's responses screen |
@@ -20,13 +21,13 @@ The team members export is available as of Modyo 10.2.
 
 ## Generate a report
 
-1. Open the list you want to export and apply the filters you need. The report respects the filters you have set on screen.
+1. Open the list you want to export and apply the filters you need to find the rows.
 2. Check the box on the rows you want to include. Checking the box in the header selects the rows on the page; to include every result of the filter, use the link that appears above the table to extend the selection to the total.
 3. Click **Export**, below the list. On screens with more than one bulk action, the option is inside **Bulk Actions**.
 4. In the **Export Data** window, choose the format: **Excel** (XLSX file, preselected) or **CSV**.
 5. Click **Export**.
 
-When you export form responses, the window also includes the **Start date** field, in yyyy-mm-dd format. If you fill it in, the file only brings the responses created after that date.
+When you export form responses, the window also includes the **Start date** field, in yyyy-mm-dd format. If you fill it in, the file only brings the responses created after that date. If you extend the selection to all results, the list's search does not apply to the file, so use this field to narrow down the responses.
 
 :::tip Tip
 If your access to the realm is restricted by segments, the users report only includes the users within your scope. Learn more in [Restrict scope with segments](/en/platform/customers/settings.html#restrict-scope-with-segments).
@@ -50,6 +51,8 @@ A report goes through these statuses:
 
 There can only be one report of the same type at a time. If you request a new one while another is pending, or while there is a canceled one that the platform has not closed yet, the request is rejected with the message "There is already a report in progress". The cancellation button, in turn, shows the notice "There is currently a report in progress. Please wait for it to finish".
 
+The block is per report type, not per administrator. If another team member is generating a report of the same type in the account or in the realm, when you open the **Export Data** window you only see the **Cancel reports in progress** button. The responses export counts as the same type for all the forms in the realm.
+
 :::warning Attention
 If you don't see an immediate result, do not launch the export again. The file is being generated in the background and a second attempt of the same type will be rejected until the first one finishes or is canceled.
 :::
@@ -66,7 +69,7 @@ As of Modyo 10.2 you can stop an export that is already running:
 If the cancellation is not confirmed within the following 15 minutes, the platform archives the report anyway and releases the block. If there is no export running when you request the cancellation, the answer is "There are no reports to cancel".
 
 :::warning Attention
-A canceled report leaves no downloadable file. If you still need the data, launch the export again from the list.
+The cancellation stops every report of that type in progress, including the ones other administrators requested. A canceled report leaves no downloadable file. If you still need the data, launch the export again from the list.
 :::
 
 ## Download the file

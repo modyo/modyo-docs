@@ -36,7 +36,7 @@ _Consecutive failed logins limit exceeded. Your account has been temporarily dis
 This protection applies both to team members signing in to the admin panel and to end users signing in to a realm. The lockout is released only by waiting: there is no manual unlock action in the panel, you have to wait for the time to elapse.
 
 :::tip Tip
-This temporary lockout is different from the _inactive_ status of the [User inactivity period policy](#user-inactivity-period-policy). If a team member reports being unable to sign in, check which of the two cases applies: the failed attempts lockout clears on its own after 15 minutes, whereas the inactive status remains until the user reactivates their account or an account owner activates it again.
+This temporary lockout is different from the _inactive_ status of the [User inactivity period policy](#user-inactivity-period-policy). If a team member reports being unable to sign in, check which of the two cases applies: the failed attempts lockout clears on its own after 15 minutes, whereas the inactive status remains until the user reactivates their account or a team member with the **Admin Team** permission activates it again.
 :::
 
 ## Expiration of panel links and codes
@@ -74,24 +74,24 @@ Underneath, two limits apply:
 
 In both cases the person sees the success message and the email never arrives. This is the most frequent cause of the "I asked for the recovery and nothing arrived" report.
 
-### Password, email, and username changes from the profile
+### Sensitive data changes from the profile
 
-The **Profile** screen asks for the current password before changing the password, the email address, or the username. Two more limits apply there:
+The **Profile** screen asks for the current password before changing the password, the email address, or the username, and before removing the authenticator. Two more limits apply there:
 
 - **One password change every 24 hours**: once a team member changes their password, they cannot change it again from their profile for the next 24 hours. If they try, the platform sends them back to the profile with the message _The number of password change request has exceeded the maximum permitted_. The clock also starts when the password was set from a recovery link.
-- **Three failed attempts and a 15-minute lockout**: when three failed attempts to change the password, the email, or the username pile up, the next one is rejected with the message _You've reached the limit tries to change sensitive data on your profile. Your session will be closed for safety reasons_ and the platform closes the session. When the email or the username is being changed, it also revokes all of the team member's active sessions, so they are logged out on every device.
+- **Three failed attempts and a 15-minute lockout**: changing the password, changing the email or the username, and removing the authenticator share the same attempt limit. Only an attempt with a wrong or empty current password counts as failed. When three failed attempts pile up, the next one is rejected even if the password is correct, with the message _You've reached the limit tries to change sensitive data on your profile. Your session will be closed for safety reasons_. The platform closes the team member's session, and it may also log them out on all of their devices.
 
-The lockout lasts 15 minutes and clears only by waiting: there is no action in the panel to release it earlier. Once the time is up, the team member gets their attempts back.
+The lockout lasts 15 minutes and clears only by waiting: there is no action in the panel to release it earlier. While it lasts, any attempt to change this data or to remove the authenticator is rejected, even with the correct password, and the session is closed again. The lockout does not prevent signing in again. Once the time is up, the team member gets their attempts back.
 
 :::tip Tip
-This lockout is different from the [Lockout after failed login attempts](#lockout-after-failed-login-attempts), which triggers after 10 attempts on the login screen. The profile one triggers after 3 attempts, with the session already open, and its visible effect is that the person is thrown out of the platform right after mistyping their current password. If someone reports that "the panel kicked me out while I was changing my email", this is why.
+This lockout is different from the [Lockout after failed login attempts](#lockout-after-failed-login-attempts), which triggers after 10 attempts on the login screen. The profile one triggers after 3 failed attempts, with the session already open, and its visible effect is that the person is thrown out of the platform on the next attempt, even if this time they type their current password correctly. If someone reports that "the panel kicked me out while I was changing my email" or "while I was removing my authenticator", this is why.
 :::
 
 ## Session expiration policy
 
 In this section, you can configure how long a session will remain active. Both fields are fixed option lists: you choose one of the available values, you do not type a free-form time.
 
-**Session expiration**: At the end of the selected time, Modyo automatically closes the user's session. The options are 15 minutes, 30 minutes, 1 hour, 2 hours, 12 hours, 1 day, 1 week, 2 weeks, 1 month, and 3 months. If the duration defined in your installation does not match any of them, it also appears as one more option on the list.
+**Session expiration**: At the end of the selected time, Modyo automatically closes the user's session. The options range from 15 minutes up to the maximum session duration your installation allows, which is 1 week by default: 15 minutes, 30 minutes, 1 hour, 2 hours, 12 hours, 1 day, and 1 week. The 2 weeks, 1 month, and 3 months options only appear when your installation's maximum reaches them, and if that maximum does not match any option, it also appears as the last one on the list. If your installation's maximum is lowered, sessions last at most that maximum, even if the account has a higher value saved.
 
 **User idle period**: When a user is inactive, the session is automatically closed after the selected time has elapsed. Navigation, keyboard, and mouse actions are considered user activities. This option protects the user if they leave their workstation unattended. To be able to choose a value, first check the **Enable user idle period** box; the options are 5 minutes, 15 minutes, 30 minutes, 1 hour, and 6 hours.
 
@@ -111,21 +111,30 @@ Getting this email does not by itself mean that someone else entered the account
 
 ## User inactivity period policy
 
-When this option is activated, and once the selected time has elapsed without user interaction on the platform, Modyo will automatically change the user's status to _inactive_.
+With the **Enable user inactivity policy** box checked, which is the default, Modyo changes to _inactive_ the status of team members who go longer than the selected **Inactivity period** without interacting with the platform. The change does not happen at the exact moment the period is reached, but at whichever of these two moments comes first:
 
-Once the user is marked as inactive, they cannot log in. The default inactivity period is 90 days, and you can change it to:
+- In the automatic review that Modyo runs once a week. This review also closes the team member's open sessions.
+- When the team member tries to sign in after the period has been reached and their credentials are valid.
+
+The account owner never becomes inactive, even if they exceed the period.
+
+Once the user is marked as inactive, they cannot log in while the policy remains enabled. The default inactivity period is 90 days, and you can change it to:
 
 - 30 days
 - 90 days
 - 180 days
 - 360 days
 
-If you check the box to resend an email to the user when they are considered inactive, the user will receive an email notification. From this email, they will be able to reactivate their account.
+If you check the **Send reactivation email on user deactivation by inactivity** box, which is enabled by default, the user receives an email every time they try to sign in while inactive, and from that email they can reactivate their account. The weekly review does not send this email.
+
+:::warning Attention
+When you save the settings after enabling or disabling the policy, all team members marked as inactive become active again, including the ones you marked manually. If the policy remains enabled, those who still exceed the period become inactive again in the next weekly review or when they try to sign in.
+:::
 
 :::tip Tip
-**Account owners** can change a user's status between inactive and active using the "Login disabled due to inactivity" checkbox.
+Any team member with the **Admin Team** permission can change a user's status between inactive and active using the **Login suspended for inactivity** checkbox.
 
-You can locate this option when editing a user in the **Team** section, in the **Edit** tab. If you select the checkbox, the user is marked as inactive, and when deactivated, the user will be active.
+You can locate this option when editing a user in the **Team** section, in the **Edit** tab. If you select the checkbox, the user is marked as inactive and their open sessions are closed. When you clear it, the user is active again and the inactivity period starts counting again from that moment. In the **Team** list, the **Suspended** filter lets you see which users are inactive.
 :::
 
 ## HTTP access control (Cross-Origin Resource Sharing CORS)
@@ -138,6 +147,8 @@ The **Cross Origin Resource Sharing** section defines which domains can access M
 
 When you are done, click **Save**.
 
+The origins in this section apply to the administration API, the Channels menus API, and the payments API. The other APIs have their own CORS: the content API uses each space's, in the [Security](/en/platform/content/spaces.html#security) section of its settings, and the Customers API uses each realm's, in the [Security](/en/platform/customers/settings.html#security) section of its settings. In addition, the menus API of an app with an active custom domain always accepts calls from that domain, even if CORS is disabled.
+
 :::warning Attention
 **Allow all origins** is enabled from this same screen, with no need to open a support ticket or make any other change to your installation. Because it puts your account's public information within reach of any domain, reserve it for development or testing environments and, in production, list the domains in **Alternative origins**.
 :::
@@ -148,13 +159,13 @@ The automatic inclusion covers the primary domain of each app. If you publish an
 
 ## Content Delivery Token (JWT - JSON Web Token)
 
-This key or _secret_ is used by Modyo to sign user JWTs to access [private content through the API](/en/platform/content/public-api-reference#private-content).
+Modyo signs user JWTs with the **Private content JSON Web Signature (JWS) key** so they can access [private content through the API](/en/platform/content/public-api-reference#private-content). It is not a shared _secret_, but an elliptic curve key pair that Modyo uses to sign tokens with the ES256 algorithm. The key is created along with the account, does not expire, and only changes when you click **Generate new JWS key**.
 
 :::warning Attention
 If you generate a new key, all requests for private content must go through Modyo. This is because JWTs signed by Modyo with the old key will no longer be valid.
 :::
 
-The key or _secret_ has a specified duration in seconds. You can set this time in the provided field; by default, the duration is one hour (3600 seconds). It is recommended to avoid a very short duration, as it may affect the platform's performance.
+The **Content delivery token TTL (in seconds)** field defines how long each JWT that Modyo issues lasts, not the key. The default is one hour (3600 seconds) and the minimum is 10 seconds. While a token is still valid, Modyo can hand it out again with the same expiration, so the one your app receives may last less than that time; when it expires, the content API rejects it and you have to request a new one. It is recommended to avoid a very short duration, as it may affect the platform's performance.
 
 ## Two-factor authentication (2FA)
 
@@ -172,22 +183,23 @@ The **Set Time Zone Automatically Option** must be active when using two-factor 
 
 To enable two-factor authentication for a user and neutralize the risk of compromised passwords, follow these steps:
 
-1. In Modyo Platform, in the user menu, click **Profile**.
-2. In profile settings, in the top menu, click the 3 dots and click **Configure Authenticator**.
-3. Scan the code that appears on the screen with your mobile device to link your authenticator with Modyo Platform.
-This adds a new field with the domain name, your user level, and your username.
-4. Enter the numbers that appear on your mobile phone in the password field and click **Save**.
+1. Click your avatar at the bottom of the side menu and select **Profile**.
+2. In the right column of your Profile, under **Setup authenticator**, click the **Setup authenticator** button.
+3. Scan the code that appears on the screen with your mobile device to link your authenticator with Modyo Platform. This adds an entry in the app with your account domain and your username.
+4. Enter the 6-digit code shown by the app in the **Current code** field and click **Save**.
 
-Once you have two-factor authentication enabled, the button will say **Remove authenticator**.
+Once you have two-factor authentication enabled, the button will say **Remove authenticator**. To remove the authenticator, click that button, type your password in the **Current password** field of the window that opens, and click **Remove authenticator**. If the password is wrong, you see the message _The authenticator could not be removed. Please check your current password._ and the authenticator stays in place. Failed attempts count toward the [profile attempt limit](#sensitive-data-changes-from-the-profile).
 
 
 ### Delete authenticator for a user
 
 If the authenticator is lost or stolen, it will not be possible to access the account. In this case, a Modyo Platform administrator can help by removing the authenticator linked to the user by following these steps:
 
-1. In the side menu, expand **Settings** and click **Teams**.
+1. In the side menu, expand **Settings** and click **Team**.
 1. Click on the member's name.
 1. In the top bar, click on the more options button, represented by three dots, and select **Remove authenticator**.
+
+To see this option you need the **Admin Team** permission, which **Admin Settings** also includes. The option is only available when the member has an authenticator set up, and it cannot be used on your own user: you remove your own authenticator from your Profile, where your current password is required. When it finishes, you see the message _Authenticator removed successfully._ and the action is recorded in the [Activity logs](/en/platform/core/activity-logs.html) as **User updated**.
 
 :::warning Attention
 If you have activated the option to force authentication, the next time the user tries to log in, they will need to initialize the authenticator first. Once the authenticator is active, the user can proceed with the login process.

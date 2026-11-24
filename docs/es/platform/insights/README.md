@@ -6,7 +6,7 @@ search: true
 
 Modyo Insights es el centro de inteligencia de negocio de la plataforma, donde convergen y se analizan todos los datos generados por los diferentes módulos de Modyo, permitiéndote obtener una visión integral y tomar decisiones estratégicas basadas en información consolidada.
 
-### ¿Qué es Modyo Insights?
+## ¿Qué es Modyo Insights?
 
 **Modyo Insights** centraliza y procesa la información proveniente de los módulos de Modyo y la presenta en cinco dashboards fijos. Cada uno reúne los contadores, gráficos y filtros de un módulo:
 
@@ -18,42 +18,42 @@ Modyo Insights es el centro de inteligencia de negocio de la plataforma, donde c
 
 Cada dashboard es una pantalla independiente, con sus propios filtros y su propio período. Insights no correlaciona datos entre módulos, no genera reportes descargables y no permite crear ni personalizar dashboards. Además, cada miembro ve solo los dashboards que su rol le permite.
 
-### Fuentes de datos
+## Fuentes de datos
 
 Modyo Insights recopila y procesa información de múltiples fuentes dentro de la plataforma:
 
-#### Desde Channels
-- Tráfico y visitas a sitios
-- Interacciones con widgets y páginas
-- Rendimiento de navegación
-- Patrones de uso por dispositivo
+### Desde Channels
+- Vistas, vistas únicas, visitantes únicos y usuarios únicos de cada aplicación
+- Evolución diaria de las visitas
+- Páginas más vistas
 
-#### Desde Content
-- Publicaciones y actualizaciones
-- Rendimiento del contenido
-- Actividad editorial del equipo
-- Uso de assets y recursos
+El dashboard de Apps solo registra la navegación de los usuarios que iniciaron sesión en la aplicación: las visitas anónimas no se cuentan.
 
-#### Desde Customers
-- Registros y actividad de usuarios
-- Segmentación y comportamiento
-- Conversiones en formularios
-- Engagement con campañas
+### Desde Content
+- Elementos creados, editados, enviados a revisión, aprobados y publicados
+- Actividad por tipo de recurso: entradas, páginas, widgets y plantillas
+- Actividad de cada administrador en el flujo editorial
 
-#### Desde Origination
-- Flujos de onboarding completados
-- Tasas de conversión por etapa
-- Tiempo promedio de completación
-- Abandono de formularios
-- Documentos y verificaciones procesadas
+### Desde Customers
+- Usuarios activos, inicios de sesión y nuevos registros
+- Actividad de los usuarios en el tiempo
+- Alcance y aperturas de las campañas recientes
+- Respuestas de los formularios recientes
 
-#### Desde Payments
-- Transacciones y órdenes
-- Métodos de pago utilizados
-- Tendencias de compra
-- Estados de procesamiento
+### Desde Payments
+- Órdenes, ítems e ingresos totales
+- Evolución en el tiempo de los eventos de las órdenes, como creación, pago o finalización
+- Órdenes por medio de pago
+- Órdenes por estado
 
-### Tipos de visualizaciones
+### Desde Origination
+- Respuestas totales y completadas
+- Respuestas por estado y su evolución en el tiempo
+- Embudo de conversión y usuarios por paso
+- Tiempo promedio de finalización
+- Tasa de abandono
+
+## Tipos de visualizaciones
 
 Modyo Insights ofrece diferentes formatos de presentación de datos según el tipo de información:
 
@@ -63,16 +63,16 @@ Modyo Insights ofrece diferentes formatos de presentación de datos según el ti
 - **Mapas de calor**: Representación visual de patrones de actividad, como **Actividad por Usuario** en el dashboard de Digital Factory
 - **Gráficos de torta y de embudo**: Visualizaciones de proporción sobre el total, como **Engagement** en el dashboard de Customers o el **Embudo de conversión** en el de Origination
 
-### Capacidades de análisis
+## Capacidades de análisis
 
 Los datos pueden ser analizados y segmentados mediante:
 
 - **Filtros temporales**: El selector de rango de fechas, común a los cinco dashboards
-- **Segmentación contextual**: Los filtros propios de cada dashboard, como sitio, espacio, reino, segmento, originación, estado de la orden o medio de pago
+- **Segmentación contextual**: Los filtros propios de cada dashboard, como aplicación, espacio, reino, originación, estado de la orden o medio de pago
 - **Comparativas**: El porcentaje de variación de cada contador respecto del período anterior
 - **Enlace al detalle**: En los paneles **Campañas Recientes** y **Formularios Recientes** del dashboard de Customers, cada fila lleva a la ficha de esa campaña o a las respuestas de ese formulario
 
-### Rango de fechas y comparación de períodos
+## Rango de fechas y comparación de períodos
 
 Los cinco dashboards comparten el mismo selector de rango de fechas en la barra de filtros, con un conjunto cerrado de opciones:
 
@@ -92,7 +92,7 @@ Los contadores que muestran un porcentaje y una flecha comparan el rango selecci
 Cuando el período anterior no registró ningún dato, el contador se muestra sin porcentaje ni flecha, porque no hay base sobre la cual calcular la variación.
 :::
 
-### Acceso y permisos
+## Acceso y permisos
 
 El acceso a Insights se otorga en roles con scope **Organización**, dentro del grupo de permisos **Insights**. El permiso agrupado **Administrar Insights** habilita el módulo completo y reúne cinco permisos que también puedes otorgar por separado:
 
@@ -109,5 +109,7 @@ El comportamiento que vas a observar es el siguiente:
 3. Cada dashboard exige su propio permiso, así que un miembro puede ver unos y no otros.
 
 Los roles predeterminados **Default user** y **Default admin** ya incluyen **Administrar Insights**. En cambio, los roles con scope Channels, Content o Customers no otorgan acceso a Insights: un miembro que solo tenga roles de sitio, espacio o reino no ve el módulo.
+
+Además del permiso, el miembro necesita tener habilitada la aplicación **Insights** en el bloque **Acceso a aplicaciones**, ya sea en su ficha o en alguno de sus grupos. Si esa casilla está apagada, la plataforma le descuenta los permisos de Insights y el módulo no se muestra, aunque su rol los incluya. En la pestaña **Acceso** del miembro, ni **Default user** ni **Default admin** marcan esta casilla de forma automática, así que tienes que marcarla tú. Revisa [acceso a las aplicaciones](/es/platform/core/roles.html#acceso-a-las-aplicaciones).
 
 Para habilitar únicamente algunos dashboards, crea un [rol a medida](/es/platform/core/roles.html#roles-a-medida) con scope **Organización** y marca solo los permisos que necesitas.

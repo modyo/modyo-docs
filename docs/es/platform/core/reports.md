@@ -11,6 +11,7 @@ Varias pantallas del panel de administración te permiten sacar sus datos a un a
 | Reporte | Dónde se pide |
 | --- | --- |
 | [Logs de actividad](/es/platform/core/activity-logs.html) | **Configuración** > **Logs de actividad** |
+| [Eventos](/es/platform/customers/events.html) de un reino | **Eventos**, dentro del reino |
 | Miembros del equipo | **Configuración** > [**Equipo**](/es/platform/core/roles.html) |
 | [Usuarios](/es/platform/customers/users.html) de un reino | **Usuarios**, dentro del reino |
 | Respuestas de un [formulario](/es/platform/customers/forms.html) | **Formularios**, en la pantalla de respuestas del formulario |
@@ -20,13 +21,13 @@ La exportación de miembros del equipo está disponible desde Modyo 10.2.
 
 ## Generar un reporte
 
-1. Abre el listado que quieres exportar y aplica los filtros que necesites. El reporte respeta los filtros que tengas puestos en pantalla.
+1. Abre el listado que quieres exportar y aplica los filtros que necesites para encontrar las filas.
 2. Marca la casilla de las filas que quieres incluir. Si marcas la casilla de la cabecera se seleccionan las filas de la página; para incluir todos los resultados del filtro, usa el enlace que aparece sobre la tabla para extender la selección al total.
 3. Haz click en **Exportar**, debajo del listado. En las pantallas con más de una acción masiva, la opción está dentro de **Acciones masivas**.
 4. En la ventana **Exportar datos**, elige el formato: **Excel** (archivo XLSX, preseleccionado) o **CSV**.
 5. Haz click en **Exportar**.
 
-En la exportación de respuestas de un formulario, la ventana incluye además el campo **Fecha de Inicio**, con formato yyyy-mm-dd. Si lo completas, el archivo solo trae las respuestas posteriores a esa fecha.
+En la exportación de respuestas de un formulario, la ventana incluye además el campo **Fecha de Inicio**, con formato yyyy-mm-dd. Si lo completas, el archivo solo trae las respuestas posteriores a esa fecha. Si extiendes la selección a todos los resultados, la búsqueda del listado no se aplica al archivo, así que usa este campo para acotar las respuestas.
 
 :::tip Tip
 Si tu acceso al reino está restringido por segmentos, el reporte de usuarios solo incluye los usuarios que están dentro de tu alcance. Conoce más en [Restringir el alcance con segmentos](/es/platform/customers/settings.html#restringir-el-alcance-con-segmentos).
@@ -50,6 +51,8 @@ Un reporte pasa por estos estados:
 
 Solo puede haber un reporte del mismo tipo a la vez. Si pides uno nuevo mientras hay otro pendiente, o mientras hay uno cancelado que la plataforma todavía no da por cerrado, la solicitud se rechaza con el mensaje "Ya hay un reporte en progreso". El botón de cancelación, por su parte, muestra el aviso "Hay un reporte en progreso. Por favor, espera a que termine".
 
+El bloqueo es por tipo de reporte y no por administrador. Si otro miembro del equipo está generando un reporte del mismo tipo en la cuenta o en el reino, al abrir la ventana **Exportar datos** solo verás el botón **Cancelar reportes en progreso**. La exportación de respuestas cuenta como un mismo tipo para todos los formularios del reino.
+
 :::warning Atención
 Si no ves resultado inmediato, no vuelvas a lanzar la exportación. El archivo se está generando en segundo plano y un segundo intento del mismo tipo será rechazado hasta que el primero termine o se cancele.
 :::
@@ -66,7 +69,7 @@ Desde Modyo 10.2 puedes detener una exportación que ya está corriendo:
 Si la cancelación no alcanza a confirmarse dentro de los 15 minutos siguientes, la plataforma archiva el reporte de todas formas y libera el bloqueo. Si no hay ninguna exportación corriendo cuando pides la cancelación, la respuesta es "No hay reportes para cancelar".
 
 :::warning Atención
-Un reporte cancelado no deja archivo descargable. Si igual necesitas los datos, vuelve a lanzar la exportación desde el listado.
+La cancelación detiene todos los reportes en curso de ese tipo, incluidos los que pidieron otros administradores. Un reporte cancelado no deja archivo descargable. Si igual necesitas los datos, vuelve a lanzar la exportación desde el listado.
 :::
 
 ## Descargar el archivo

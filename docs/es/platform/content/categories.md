@@ -48,7 +48,7 @@ Cambiar el identificador de una categoría cambia la URL de todas las entradas q
 
 ## Efecto sobre las entradas
 
-Una entrada pertenece a una sola categoría. Al asignársela, la ruta completa de la categoría se antepone al identificador de la entrada: una entrada que responde en `my_account.modyo.com/visita-chile` y que asignas a la categoría `travel` pasa a responder en `my_account.modyo.com/travel/visita-chile`.
+Una entrada pertenece a una sola categoría. Si la página de contenido que despliega la entrada tiene activada la opción **Usar categorías** (revisa [URLs con categorías](/es/platform/channels/pages.html#urls-con-categorias)), al asignársela, la ruta completa de la categoría se antepone al identificador de la entrada: una entrada que responde en `my_account.modyo.com/visita-chile` y que asignas a la categoría `travel` pasa a responder en `my_account.modyo.com/travel/visita-chile`.
 
 Cuando filtras el listado de entradas con el filtro **Categoría**, el resultado incluye también las entradas de las subcategorías de la que elegiste, así que filtrar por una categoría raíz te devuelve toda su rama. La API pública de contenidos aplica el mismo criterio con el parámetro `meta.category`; revisa [Filtrar](/es/platform/content/public-api-reference.html#filtrar) en la referencia de la API pública.
 

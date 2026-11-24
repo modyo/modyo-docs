@@ -46,4 +46,4 @@ List of most recent forms with:
 
 ### Engagement
 
-Pie chart showing the percentage of active versus inactive users in the selected period.
+Pie chart showing a percentage calculated only over the users who logged in during the selected period. It does not compare against the realm's total users or the users who did not log in. If nobody logged in during that period, the chart shows no data.
