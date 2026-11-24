@@ -164,7 +164,7 @@ La **Ruta** solo admite letras sin acentos ni ñ, números, guion (`-`) y guion 
 Páginas de distinto tipo pueden compartir la misma ruta. En ese caso, el sitio muestra la página de widget antes que la de contenido, y la de contenido antes que la de originación.
 
 Modyo cuenta con rutas reservadas, por lo que no podrás usarlas como ruta de una página de primer nivel, es decir, una página sin **Página padre**:
-<table style="border: none;"><tr style="border: none;">
+<table style="border: none;"><tbody><tr style="border: none;">
 <td style="border: none;"><ul>
 <li>404</li>
 <li>422</li>
@@ -200,7 +200,7 @@ Modyo cuenta con rutas reservadas, por lo que no podrás usarlas como ruta de un
 <li>uploads</li>
 <li>widget_manager</li>
 </ul></td>
-</tr></table>
+</tr></tbody></table>
 :::
 
 ### Grillas

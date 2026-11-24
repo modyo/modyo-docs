@@ -500,7 +500,7 @@ Los navegadores guardan en caché las redirecciones 301 de forma agresiva: si lu
 
 :::warning Atención
 Estos dominios están reservados por Modyo. No están disponibles como dominios personalizados:
-<table style="border: none;"><tr style="border: none;">
+<table style="border: none;"><tbody><tr style="border: none;">
 <td style="border: none;"><ul>
 <li>education.modyo.com</li>
 <li>elearning.modyo.com</li>
@@ -519,12 +519,12 @@ Estos dominios están reservados por Modyo. No están disponibles como dominios 
 <li>pt.modyo.com</li>
 <li>global.modyo.com</li>
 </ul></td>
-</tr></table>
+</tr></tbody></table>
 :::
 
 :::warning Atención
 Estos hosts están reservados por Modyo. No están disponibles como hosts para tus web apps:
-<table style="border: none;"><tr style="border: none;">
+<table style="border: none;"><tbody><tr style="border: none;">
 <td style="border: none;"><ul>
 <li>404</li>
 <li>422</li>
@@ -563,7 +563,7 @@ Estos hosts están reservados por Modyo. No están disponibles como hosts para t
 <li>welcome</li>
 <li>widgets</li>
 </ul></td>
-</tr></table>
+</tr></tbody></table>
 :::
 
 Un [reino](/es/platform/customers/settings.html#dominios) de tu misma cuenta puede usar el mismo dominio personalizado que tu aplicación web: las rutas `/realms` y `/api/customers/realms` las responde el reino y el resto, la aplicación web. En un dominio personalizado, esas rutas están reservadas para los reinos: si ningún reino usa ese dominio, la plataforma responde 404 y la aplicación web no las atiende.

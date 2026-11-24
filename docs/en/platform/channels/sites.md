@@ -500,7 +500,7 @@ Browsers cache 301 redirects aggressively: if you later switch to 302, visitors 
 
 :::warning Attention
 These domains are reserved by Modyo. They are not available as custom domains:
-<table style="border: none;"><tr style="border: none;">
+<table style="border: none;"><tbody><tr style="border: none;">
 <td style="border: none;"><ul>
 <li>education.modyo.com</li>
 <li>elearning.modyo.com</li>
@@ -519,12 +519,12 @@ These domains are reserved by Modyo. They are not available as custom domains:
 <li>pt.modyo.com</li>
 <li>global.modyo.com</li>
 </ul></td>
-</tr></table>
+</tr></tbody></table>
 :::
 
 :::warning Attention
 These hosts are reserved by Modyo. They are not available as hosts for your web apps:
-<table style="border: none;"><tr style="border: none;">
+<table style="border: none;"><tbody><tr style="border: none;">
 <td style="border: none;"><ul>
 <li>404</li>
 <li>422</li>
@@ -563,7 +563,7 @@ These hosts are reserved by Modyo. They are not available as hosts for your web 
 <li>welcome</li>
 <li>widgets</li>
 </ul></td>
-</tr></table>
+</tr></tbody></table>
 :::
 
 A [realm](/en/platform/customers/settings.html#domains) of your own account can use the same custom domain as your web app: the `/realms` and `/api/customers/realms` routes are answered by the realm and the rest by the web app. On a custom domain, those paths are reserved for realms: if no realm uses that domain, the platform answers 404 and the web app doesn't handle them.

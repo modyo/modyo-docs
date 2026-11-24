@@ -64,7 +64,7 @@ To create a Menu, follow these steps:
 7. Once finished, click **Publish**.
 
 :::tip Tip
-Your menu is now public, but it is not being called. You need to use a template to display it on the screen. Modyo offers a general-purpose snippet in **Snippets, General, menu**, which the **header** snippet calls twice (once for the desktop bar and once for the mobile side panel) and which reaches your pages because the `base` template includes <pre v-pre>`{% snippet 'shared/general/header' %}`</pre>.
+Your menu is now public, but it is not being called. You need to use a template to display it on the screen. Modyo offers a general-purpose snippet in **Snippets, General, menu**, which the **header** snippet calls twice (once for the desktop bar and once for the mobile side panel) and which reaches your pages because the `base` template includes <span v-pre>`{% snippet 'shared/general/header' %}`</span>.
 :::
 
 **Main Action**
