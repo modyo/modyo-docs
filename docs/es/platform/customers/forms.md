@@ -171,6 +171,8 @@ Esta sección te permitirá modificar las opciones para cada una de las pregunta
 
 Todos los campos de input cuentan con un título, que será la pregunta asociada a la respuesta, la opción de hacer ese campo requerido para enviar el formulario, y una breve descripción en caso de que para responder el campo sean necesarias instrucciones. El [Campo oculto](/es/platform/customers/forms.html#campo-oculto) es la excepción: no tiene la opción de campo requerido ni instrucciones.
 
+Cada campo tiene también un **Identificador**, que lo distingue dentro del formulario. Al crear un campo, el identificador se genera a partir del título mientras lo escribes. Una vez guardado el campo, el identificador aparece bloqueado con un candado y cambiar el título ya no lo modifica. Para modificarlo, presiona el candado y confirma la advertencia **Desbloquear campo identificador** con **Desbloquear**: cambiar el identificador rompe las referencias al campo desde el JavaScript personalizado, el CSS y Liquid. Revisa [Identificar preguntas y campos](/es/platform/customers/forms.html#identificar-preguntas-y-campos).
+
 Los campos **Lista desplegable** y **Preguntas Anidadas** tienen la casilla **Habilitar buscador**, desactivada por defecto, también cuando sus alternativas vienen de un [data set](/es/platform/customers/settings.html#data-sets). Con la casilla activa, la persona usuaria ve un buscador en lugar de la lista del navegador: al escribir, encuentra las alternativas que contienen el texto, sin distinguir mayúsculas ni tildes, las muestra en el orden en que las definiste y presenta hasta 100 coincidencias. En las preguntas anidadas, el buscador aparece en cada nivel. La misma casilla está disponible en las tareas [Input](/es/platform/customers/origination.html#input) de las originaciones. El campo **País** y el selector de país del campo **Dirección** siempre muestran este buscador, que además encuentra cada país por su código ISO de dos letras.
 
 Algunos campos cuentan con validaciones, para asegurar que el usuario cumpla con ciertos requisitos para rellenar el campo, algunas de esas restricciones son:
@@ -222,6 +224,8 @@ La sección **General** agrega dos opciones:
 
 #### Snippet
 La sección **Snippet**, que sólo aparecerá si el formulario es público, te permitirá copiar un código _HTML_ que podrás usar en cualquier lugar para cargar dinámicamente el formulario, incluso fuera de Modyo.
+
+Si personalizas el formulario con [JS Personalizado](/es/platform/customers/forms.html#js-personalizado), ten en cuenta que en el snippet ese código se ejecuta antes de que las preguntas estén en la página. Para modificarlas, espera el evento `forms:rendered`, descrito en [Esperar a que el formulario esté en la página](/es/platform/customers/forms.html#esperar-a-que-el-formulario-este-en-la-pagina).
 
 :::warning Atención
 Para poder hacer uso adecuado del snippet del formulario, debes tener en cuenta la configuración _CORS_ de tu cuenta en Modyo y los _headers_ de seguridad de donde estés insertando el snippet.
@@ -292,14 +296,70 @@ Message Sent: {{ 'now' | date: "%b %d, %y" }}
 
 ### JS Personalizado
 
-Añade funcionalidad como una validación personalizada a tu formulario usando Javascript siguiendo estos pasos:
+Añade funcionalidad a tu formulario usando Javascript, como una validación personalizada o una nueva organización de sus preguntas, siguiendo estos pasos:
 
 1. En la plataforma Modyo, dentro de tu realm, haz click en tu formulario.
-1. Haz click en más opciones y haz click en **Ver**.
-1. Abre las herramientas de desarrollador e inspecciona el elemento que quieres modificar.
-1. Anota el id del elemento a validar. (e.g. `answers_3684_value`)
+1. Anota el **Identificador** de las preguntas que quieres usar. Lo ves en las [propiedades del campo](/es/platform/customers/forms.html#propiedades-del-campo) y, en el formulario publicado, en sus atributos `data-question` y `data-field`.
 1. En el apartado de JS Personalizado podrás agregar validaciones o funcionalidad extra usando Javascript.
 1. Haz click en **Guardar**.
+
+Para apuntar a una pregunta o a un campo, usa los atributos que se describen en [Identificar preguntas y campos](/es/platform/customers/forms.html#identificar-preguntas-y-campos) en lugar del `id` de los elementos. Los `id` se forman con identificadores internos que cambian de un ambiente a otro y, en algunas preguntas, en cada carga de la página.
+
+#### Identificar preguntas y campos
+
+Cada pregunta y cada uno de sus campos llevan atributos `data-*` cuyo valor es el **Identificador** de la pregunta, tanto en la página del formulario en el sitio como en el [snippet](/es/platform/customers/forms.html#snippet). Puedes usarlos como selectores en el JS personalizado y en el CSS del sitio asociado al formulario.
+
+| Atributo | Dónde está |
+|---|---|
+| `data-form` | El elemento que contiene las preguntas del formulario. Su valor es el identificador del formulario en su URL: en `/forms/mi-formulario`, es `mi-formulario`. Te sirve para distinguir un formulario de otro cuando hay más de uno en la misma página. |
+| `data-question` | El elemento que envuelve cada pregunta, con su título, su campo, sus instrucciones y sus mensajes de error. El **Campo oculto** no tiene un elemento que lo envuelva, así que lo lleva su propio campo. |
+| `data-field` | El campo con el que interactúa la persona usuaria: la caja de texto, la lista, cada opción de **Elección** y de **Casillas de verificación**, o la zona para subir el archivo. En **Preguntas anidadas**, lo lleva la lista de cada nivel. |
+| `data-field-control` | El control visible de las listas con buscador: **Lista desplegable** y **Preguntas anidadas** con **Habilitar buscador**, **País** y el país de **Dirección**. El buscador oculta la lista original, que conserva `data-field` y `data-field-value`. |
+| `data-field-value` | El campo que guarda el valor que se envía. En **Teléfono**, **Fecha** y los campos con máscara de entrada es un campo oculto con el valor sin formato; en el resto es el mismo campo que lleva `data-field`. |
+| `data-field-part` | Cada parte de una pregunta compuesta: `address_line_1`, `address_line_2`, `city_town`, `state_region_province`, `zip_code` y `country` en **Dirección**, y `other` en el texto de la opción **Otro** de **Elección** y **Casillas de verificación**. |
+| `data-field-option` | Cada opción de **Elección** y de **Casillas de verificación**, con el texto de su etiqueta sin formato. La opción **Otro** lleva su propio texto. |
+
+Ten en cuenta lo siguiente:
+
+- Los `id` y las clases de los elementos no cambian, así que las personalizaciones que ya los usan siguen funcionando.
+- Para usar `data-field-option` como selector, las opciones de una pregunta deben distinguirse por su texto visible, y el texto de la opción **Otro** no debe repetir el de otra opción.
+- Las reglas de estilo van en el CSS del sitio asociado al formulario, porque los formularios no tienen un CSS propio.
+
+#### Esperar a que el formulario esté en la página
+
+Cuando las preguntas del formulario ya están en la página y listas para usar, incluidos los buscadores, el calendario de las fechas y los campos con máscara, la plataforma emite el evento `forms:rendered` desde el elemento `data-form`. El evento se propaga hacia arriba, así que puedes escucharlo en `document` y saber de qué formulario se trata con `event.target.dataset.form`.
+
+Se emite en la página del formulario y en el snippet, siempre después de ejecutar el JS personalizado, así que el mismo código funciona en los dos casos. Por ejemplo, este código agrupa tres preguntas en una sección y valida una de ellas al salir del campo:
+
+```js
+(function () {
+  document.addEventListener('forms:rendered', function (event) {
+    var form = event.target;
+    if (form.dataset.form !== 'mi-formulario') return;
+
+    var section = document.createElement('fieldset');
+    var legend = document.createElement('legend');
+    legend.textContent = 'Datos personales';
+    section.append(legend);
+    ['nombre', 'apellido', 'rut'].forEach(function (uid) {
+      var question = form.querySelector('[data-question="' + uid + '"]');
+      if (question) section.append(question);
+    });
+    form.prepend(section);
+
+    var rut = form.querySelector('[data-field="rut"]');
+    rut.addEventListener('blur', function () {
+      var valid = /^[0-9]{7,8}-[0-9kK]$/.test(rut.value.trim());
+      rut.classList.toggle('is-invalid', !valid);
+    });
+  });
+})();
+```
+
+Ten en cuenta lo siguiente:
+
+- Escribe este código en el JS personalizado del formulario y no en el JavaScript del sitio, que podría cargarse después de que se emita el evento.
+- Las preguntas que muevas deben quedar dentro del elemento `data-form`. Si quedan fuera, sus respuestas no se envían.
 
 :::tip Tip
 Este script va a correr en seguida del div que contiene el formulario, por lo que es importante tomar en cuenta que puede ser afectado por el resto de la configuración del sitio. Por ejemplo si este formulario es embebido en otro sitio externo que no puede correr Javascript.
