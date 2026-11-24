@@ -56,12 +56,17 @@ You don't have to do anything to feed the inbox: tasks are created on their own.
 Tasks are not marked by hand: they move to **Completed** when the work they represent finishes.
 
 - A **Validation review** task is completed when the response to the associated task is completed or when you approve or reject the validation.
-- A **Workflow review** task is completed when the element is approved, when it is archived, or when it goes back to the editable state after a rejection.
+- A **Workflow review** task is completed when the element is approved or when it is archived.
 
-If the work is reopened, for example when a rejected validation is assigned again, the task is reactivated and appears as **Pending** again with its new assignment date.
+When an origination submission is closed, its **Validation review** tasks are closed with it:
+
+- If the submission is completed, its pending tasks move to **Completed**.
+- If the submission is canceled by any means, including the [automatic cancellation by due date](/en/platform/customers/origination.html#edit-origination-settings), its pending tasks are removed from the inbox and don't appear with any value of the **Status** filter. The ones that were already **Completed** are kept.
+
+If the work is reopened, for example when a rejected validation is assigned again, the task is reactivated and appears as **Pending** again with its new assignment date. This only happens while the submission is still open: once the submission is completed or canceled, no new tasks are created, closed ones aren't reactivated, and the notification email isn't sent.
 
 To review what you already closed, change the **Status** filter to **Completed** or to **All**.
 
 ## Who sees the inbox
 
-The **My tasks** item only appears in the side menu if you can receive one of the two task types: if you have permissions to edit or review elements in some space or site, or to access the origination submissions of some realm, with **List Assigned Submissions** or **List All Submissions**. Check [Roles](/en/platform/core/roles.html#roles) for the detail of the grouped permissions.
+The **My tasks** item only appears in the side menu if you can receive one of the two task types: if you have permissions to edit or review elements in some space or site, or to access the origination submissions of some realm. In originations, that means having **List Assigned Submissions** or **Build Originations** in some realm, or a permission that includes either of them, such as **List All Submissions** or **Admin Originations**. The organization permission **Manage Customers** also shows the item. Check [Roles](/en/platform/core/roles.html#roles) for the detail of the grouped permissions.

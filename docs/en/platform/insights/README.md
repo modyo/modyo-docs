@@ -23,35 +23,35 @@ Each dashboard is an independent screen, with its own filters and its own period
 Modyo Insights collects and processes information from multiple sources within the platform:
 
 ### From channels
-- Site traffic and visits
-- Widget and page interactions
-- Navigation performance
-- Usage patterns by device
+- Views, unique views, unique visitors, and unique users of each app
+- Daily evolution of visits
+- Most viewed pages
+
+The Apps dashboard only records the browsing of users who signed in to the app: anonymous visits are not counted.
 
 ### From content
-- Publications and updates
-- Content performance
-- Team editorial activity
-- Asset and resource usage
+- Items created, edited, sent to review, approved, and published
+- Activity by resource type: entries, pages, widgets, and templates
+- Activity of each administrator in the editorial flow
 
 ### From customers
-- User registrations and activity
-- Segmentation and behavior
-- Form conversions
-- Campaign engagement
+- Active users, logins, and new signups
+- User activity over time
+- Reach and opens of recent campaigns
+- Responses to recent forms
 
 ### From payments
-- Transactions and orders
-- Payment methods used
-- Purchase trends
-- Processing statuses
+- Total orders, items, and income
+- Order events over time, such as creation, payment, or completion
+- Orders by payment method
+- Orders by state
 
 ### From origination
-- Completed onboarding flows
-- Conversion rates by stage
+- Total and completed submissions
+- Submissions by status and their evolution over time
+- Conversion funnel and users by step
 - Average completion time
-- Form abandonment
-- Processed documents and verifications
+- Abandonment rate
 
 ## Visualization Types
 
@@ -68,7 +68,7 @@ Modyo Insights offers different data presentation formats depending on the type 
 Data can be analyzed and segmented using:
 
 - **Time filters**: The date range selector, shared by the five dashboards
-- **Contextual segmentation**: The filters specific to each dashboard, such as site, space, realm, segment, origination, order state, or payment method
+- **Contextual segmentation**: The filters specific to each dashboard, such as app, space, realm, origination, order state, or payment method
 - **Comparisons**: The variation percentage of each counter against the previous period
 - **Link to detail**: In the **Recent Campaigns** and **Recent Forms** panels of the Customers dashboard, each row links to that campaign's record or to that form's responses
 
@@ -109,5 +109,7 @@ The behavior you will observe is the following:
 3. Each dashboard requires its own permission, so a member can see some and not others.
 
 The **Default user** and **Default admin** default roles already include **Admin Insights**. In contrast, roles with the Channels, Content, or Customers scope do not grant access to Insights: a member who only has site, space, or realm roles does not see the module.
+
+Besides the permission, the member needs the **Insights** application enabled in the **Applications access** block, either in their own settings or in one of their groups. If that checkbox is off, the platform subtracts the Insights permissions and the module is not shown, even if their role includes them. In the member's **Access** tab, neither **Default user** nor **Default admin** ticks this checkbox automatically, so you have to tick it yourself. See [access to applications](/en/platform/core/roles.html#access-to-applications).
 
 To enable only some dashboards, create a [custom role](/en/platform/core/roles.html#custom-roles) with the **Organization** scope and check only the permissions you need.

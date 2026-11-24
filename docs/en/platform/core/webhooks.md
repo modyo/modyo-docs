@@ -4,17 +4,17 @@ search: true
 
 # WebHooks
 
-The platform also allows the use of Webhooks for certain specific events within your account. To do this, they must be enabled and configured from the Webhooks section in the account settings.
+The platform also allows the use of Webhooks for certain specific events within your account. To do this, configure them from the **Webhooks** section of the account settings.
 
 A webhook is an automatic _POST_ action to a given URL with certain information.
 
-To enable them, you must check the top of the page and then proceed to create all the webhooks you want.
+There's no general option to turn webhooks on: each one has its own **Enabled** switch, which is on when you create it. See [Enable or disable a webhook](#enable-or-disable-a-webhook).
 
 Webhooks can be created from actions of apps, spaces, or realms. The **Context type** you pick defines which triggers the **Trigger (Log types)** selector offers you: every context has its own catalog and no trigger is available in all of them.
 
 When creating a webhook, you must have the URL to which you want to send the information, pick the **Context type**, narrow the **Context** down to one app, space, or realm, or leave **All** to listen to every one of that type, select one or more triggers in **Trigger (Log types)**, since the selector accepts several, and then save the changes.
 
-After this, you will be able to see all active webhooks in the list.
+After this, you will see the webhook in the list, which shows all webhooks, whether they're enabled or not.
 
 :::warning Warning 
 In the version 10.1.0, realm webhooks are added for end-user events. If you were using these in previous versions, these Webhooks must be recreated within the realm.
@@ -118,9 +118,9 @@ These five triggers are the only ones the **Realm** context type offers from **S
 {
    "id":1552,
    "account_id":2,
+   "automated":false,
    "site_id":null,
    "user_id":2,
-   "type":null,
    "value_1":"6111a767-71dc-485c-bea3-80229edf7450",
    "value_2":"the-new-type",
    "value_3":"space-test",
@@ -132,7 +132,6 @@ These five triggers are the only ones the **Realm** context type offers from **S
       "title":"test entries (6111a767-71dc-485c-bea3-80229edf7450)"
    },
    "created_at":"2021-08-13T17:08:46.000Z",
-   "user_type":"AdminUser",
    "space_id":1,
    "log_type_id":262,
    "realm_id":null,
@@ -390,12 +389,16 @@ The **Status** column of the webhook list shows whether each one is **Active**, 
 
 ### Test a webhook
 
-In the webhook actions, in the list, click **Send test notification**. The platform sends a single POST to the webhook URL with dummy data of the first configured trigger and with the same headers as a real delivery, and shows you the result:
+In the webhook actions, in the list, click **Send test notification**. The platform sends a single POST to the webhook URL with dummy data of the first configured trigger that's still available and with the same headers as a real delivery, and shows you the result:
 
 - If your endpoint answers with a 2xx code, you see **Test notification sent**.
 - If it answers with another code, you see **The endpoint answered with HTTP status** followed by the code, and if the communication fails, the reason, for example **The endpoint did not answer in time**.
 
 The test notification isn't recorded in the [delivery log](#delivery-log), carries a different `webhook-id` on each test, and is sent even if the webhook is disabled.
+
+The test always arrives with the full log shape of the [payload example](#payload-example) and with dummy values, for example `id`, `account_id`, and `user_id` set to `0`, and `value_1`, `value_2`, and `value_3` holding those same texts. This includes end-user event triggers, which can arrive with the compact payload in real deliveries, so the test doesn't help you validate how your endpoint processes that shape.
+
+If none of the webhook triggers is still available, the test isn't sent and you see **None of the webhook triggers is available anymore, so no test notification was sent**.
 
 ### Notification delivery
 
@@ -465,10 +468,10 @@ To see deliveries you need permission to view webhooks, and to redeliver them, t
 
 - **Pending**: The delivery is waiting to be sent.
 - **In flight**: Modyo is sending the notification.
-- **Scheduled**: An attempt failed and the delivery is waiting for its next retry. The **Next attempt** column shows when.
+- **Scheduled**: An attempt failed and the delivery is waiting for its next retry. The **Next attempt** column shows when. If an attempt is cut off before it finishes, the delivery also goes back to this status, with the reason **The attempt was interrupted before it finished**.
 - **Delivered**: Your endpoint answered with a 2xx code.
 - **Failed**: Your endpoint answered with an error that isn't retried, or the webhook URL or one of its headers isn't valid.
-- **Exhausted**: All attempts were made without success.
+- **Exhausted**: All attempts were made without success, or its next attempt fell more than about 18 hours behind schedule, by default, without being made. In that case, **Last result** shows **The delivery expired before it could be sent** and that delivery doesn't count toward the webhook becoming [**Degraded**](#degraded-webhooks).
 - **Unrecoverable**: The event or its payload no longer exists, so the delivery can't be redelivered.
 - **Canceled**: The webhook was disabled or deleted before the delivery was completed.
 

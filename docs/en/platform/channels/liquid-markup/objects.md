@@ -30,7 +30,7 @@ Account objects are mainly used in the context of account authentication, which 
 |------------------------|------------------------------------------------------------------------------------------------------------|-----------------------------------------------|
 | **account.url**        | The Modyo Platform URL, including the protocol and sub-domain.                                             | ```https://test.modyo.com```                  |
 | **account.host**       | The name of the Modyo Platform sub-domain.                                                                 | ```test```                                    |
-| **account.google_key** | If there is authentication with Google, it returns the credential key; otherwise, it returns empty (void). | ```AIzaSyDmrYmbFpzqdIxHycHbgtJrs9lhKOfggEE``` |
+| **account.google_key** | The account's [Google API Key](/en/platform/core/configuration.html#visualization), which location fields and the `static_map` and `dynamic_map` filters use to connect to Google Maps. It isn't a Google sign-in credential. If it isn't set, it returns empty. | ```AIzaSyDmrYmbFpzqdIxHycHbgtJrs9lhKOfggEE``` |
 | **account.name**       | The name of the account.                                                                                   | ```Modyo```                                   |
 
 ## adminuser
@@ -190,6 +190,8 @@ These objects allow you to get information via Liquid for a form in the Customer
 | **form_response.name**        | Form name.                     | ```The new form```                                                                                   |
 | **form_response.questions**   | Array with the form questions that capture an answer. Content fields, such as **Rich Text**, are not included. | ```[{"title"=>"What is your job title?", "type"=>"textquestion", "answer"=>"Software developer"}]``` |
 
+Each element of `form_response.questions` has `title`, `type`, and `answer`. `title` and `answer` come HTML-escaped (except dates), and `answer` is also formatted according to the question type: dates and date ranges use the format configured in the question, the country is returned by its name, and in paragraphs and addresses each line is separated with `<br/>` (an address is built as `Label: value` lines). If the question has no answer, `answer` is empty. If a question has several answers, such as a **Checkboxes** question with several options selected, it appears once per answer.
+
 ### question
 
 These objects allow you to get information via Liquid for questions on a form in the Customers module.
@@ -326,6 +328,7 @@ Location type object. Contains relevant information about a geolocation point.
 | **location.location_street**             | Location name in Google Maps.          | ```Main street 3883```      |
 | **location.latitude**                    | Latitude of the point in Google Maps.  | ```-33.3982607```           |
 | **location.longitude**                   | Longitude of the point in Google Maps. | ```-70.6003616```           |
+| **location.location**                    | Hash with the point's latitude in `lat` and longitude in `lon`, for example `location.location.lat`. |                             |
 | **location.country**                     | Country name/code.                     | ```Chile```                 |
 | **location.administrative_area_level_1** | First-level administrative division.   | ```Santiago Metropolitan``` |
 | **location.administrative_area_level_2** | Second-level administrative division.  | ```Santiago```              |
@@ -373,7 +376,7 @@ These objects allow you to get information via Liquid for Commerce module orders
 | Object                       | Description                                                  | Example                   |
 |------------------------------|--------------------------------------------------------------|---------------------------|
 | **order.created_at**         | String with the order creation date.                         |                           |
-| **order.current_state**      | String with the current order status.                        | ```2012-11-16 00:46:40``` |
+| **order.current_state**      | String with the current order status: `paying`, `paid`, `rejected`, `confirming`, `completed`, or `confirmation_failed`. | ```completed```           |
 | **order.id**                 | Order ID.                                                    |                           |
 | **order.order_items**        | Array of `order_item` type objects.                          |                           |
 | **order.payment_info**       | Hash with the order payment information.                     |                           |
@@ -384,10 +387,11 @@ These objects allow you to get information via Liquid for Commerce module orders
 | **order.url**                | String with the order URL.                                   |                           |
 | **order.uuid**               | String with the full UUID of the order.                      |                           |
 | **order.confirmation_code**  | String with the order confirmation code.                     |                           |
+| **order.document_id**        | String with the document ID of the receipt returned by the order confirmation. Empty if there is none. |                           |
 | **order.customer_email**     | String with the customer's email associated with this order. |                           |
 | **order.customer_name**      | String with the full name of the associated customer.        |                           |
 | **order.order_description**  | String with the order description.                           |                           |
-| **order.order.reference_id** | String with the reference ID for this order.                 |                           |
+| **order.reference_id**       | String with the reference ID for this order.                 |                           |
 | **order.reference_order**    | Identifier for a related/reference order.                    | ```REF-2025-01```         |
 
 ### order_item
@@ -415,13 +419,13 @@ These objects obtain the information relevant to originations.
 | **origination.uid**                | The unique identifier of the origination flow.                             | ```my-origination```                                                                                    |
 | **origination.url**                | The URL of the origination flow page.                                      | ```https://test.modyo.com/new-site/myorigination```                                                     |
 | **origination.steps**              | List of step objects.                                                      | [view step documentation](/en/platform/channels/liquid-markup/objects.html#step)                        |
-| **origination.can_begin**          | Whether the user can begin the origination flow.                           | ```true```                                                                                              |
+| **origination.can_begin**          | `true` when the flow has at least one task. It does not evaluate the user: to know whether they can create a new submission, use `origination.can_create`. | ```true``` |
 | **origination.can_create**         | Whether the user can create a new submission for the origination flow.     | ```true```                                                                                              |
-| **origination.can_resume**         | Whether the user can resume a submission for the origination flow.         | ```true```                                                                                              |
-| **origination.begin_message**      | The beginning message for the origination flow.                            | ```"Welcome!"```                                                                                        |
+| **origination.can_resume**         | `true` when there is a submission in the page context and the flow has at least one task. Without a submission in the context it is `false`. | ```true``` |
+| **origination.begin_message**      | The origination flow description, rendered with Liquid. When the description is empty, it returns the default text "To start the process, click on the following button." | ```"Welcome!"``` |
 | **origination.completion_message** | The message to display upon completion of the origination flow.            | ```"All done"```                                                                                        |
 | **origination.ordered_steps**      | Whether the steps of the origination flow are ordered.                     | ```true```                                                                                              |
-| **origination.new_submission_url** | The URL to create a new submission for the origination flow.               | ```/originations/my-origination/new```                                                                  |
+| **origination.new_submission_url** | The URL to create a new submission for the flow, with the UUID of the origination page. It is empty when the flow has no origination page. | ```https://test.modyo.com/new-site/origination/0f8e2c1a-5b7d-4e3f-9a6c-2d4b8e1f7a90/new``` |
 | **origination.cancel_overdue**     | Whether the origination automatically cancels the submissions that exceed their due date.  | ```false```                                                                                             |
 
 ## page
@@ -438,7 +442,7 @@ These objects are very useful for creating dynamic pages using Liquid.
 | **page.description**  | Page description.                                                                               | ```This is the description of a very cool page```          |
 | **page.excerpt**      | Excerpt associated with the page.                                                               | ```This is the excerpt of a very cool page```              |
 | **page.grid**         | Grid type object associated with the page.                                                      |                                                            |
-| **page.meta_tags**    | Array of strings with the meta tags associated with the page.                                   | ```My, Test, Metatag```                                    |
+| **page.meta_tags**    | String with the HTML of the page's [meta tags](/en/platform/channels/pages.html#meta-tags), one tag per line, ready to print inside `<head>`. Each meta tag value is processed as Liquid and escaped. On a content page, it returns the meta tags of the **Index** or the **Show**, depending on which one is being displayed. | ```<meta name='author' content='Modyo'>``` |
 | **page.title**        | Title associated with the page.                                                                 | ```Home```                                                 |
 
 ## realm
@@ -497,14 +501,14 @@ Site objects are used to get all the information about a site. The available att
 | **site.use_pwa_manifest**       | Boolean that determines if the site uses PWA manifest.                                                 |                        |
 | **site.uuid**                   | A string with the UUID of the site.                                                                    |                        |
 | **site.account_url**            | A string with the URL of the account associated with the site.                                         |                        |
-| **site.breadcrumb**             | A string with the CSS class of the breadcrumb div.                                                     |                        |
+| **site.breadcrumb**             | A string with the HTML of the current page's breadcrumb, ready to print: a `<div class='breadcrumb'>` with the crumbs from the site home, through the parent pages, to the current page (on a content page, also its categories and the entry), separated by `/`. |                        |
 | **site.cache_version**          | A string with the cache key for this version of the site.                                              |                        |
 | **site.css_path**               | A string with the location of the site's CSS file.                                                     |                        |
 | **site.current_year**           | A string with the current year of the site.                                                            |                        |
 | **site.js_path**                | A string with the location of the site's JS file.                                                      |                        |
 | **site.login_enabled**          | Boolean that determines if the site uses login.                                                        |                        |
 | **site.manifest_url**           | A string with the URL of the manifest for the site.                                                    |                        |
-| **site.meta_tags**              | A string with the site's meta tags separated by commas.                                                |                        |
+| **site.meta_tags**              | A string with the HTML of the site's custom meta tags, one tag per line, ready to print inside `<head>`. The value is escaped but, unlike `page.meta_tags`, it is not processed as Liquid. |                        |
 | **site.originations**           | Origination object array containing all originations with associated origination page on current site. |                        |
 | **site.root_path**              | A string with the root location of the site.                                                           |                        |
 | **site.service_worker_enabled** | Boolean that determines if the top-level service worker is activated (alias: sw_enabled)               |                        |
@@ -558,9 +562,13 @@ These objects obtain the information relevant to the Submissions.
 | **submission.url**                      | The URL of the submission page.                                  | ```https://test.modyo.com/new-site/myorigination```                                                            |
 | **submission.uuid**                     | The unique identifier of the submission.                         | ```abcd-1234-5678-0000```                                                                                      |
 | **submission.tasks['task_identifier']** | The task responses for the submission. Task uid must be provided | [view task response types documentation](/en/platform/channels/liquid-markup/objects.html#task-response-types) |
-| **submission.resume_url**               | The URL to resume the submission.                                | ```/originations/my-origination/submissions/uuid/resume```                                                     |
-| **submission.start_info**               | Information about the start of the submission.                   | ```{"started_by":"user","at":"2025-02-15"}```                                                                  |
+| **submission.resume_url**               | The URL to resume the submission. It only accepts POST requests, so it does not work as a link. It is empty when the flow has no origination page. | ```https://test.modyo.com/new-site/origination/0f8e2c1a-5b7d-4e3f-9a6c-2d4b8e1f7a90/abcd-1234-5678-0000/begin``` |
+| **submission.start_info**               | Translated text, ready to display, with the submission UUID and its start date, or a notice that it has not started yet. | ```#abcd-1234-5678-0000 - Started at February 15, 2025 15:14``` |
 | **submission.steps**                    | The steps of the submission.                                     | ```[{"uid"=>"step-1", "name"=>"step 1", "is_completed"=>true, "link"=>"step 1"}{"uid"=>"step-2", "name"=>"step 2", "is_completed"=>false, "link"=>"step 2"}]```                                                                                     |
+
+::: tip Origination forms
+`origination.new_submission_url` and `submission.resume_url` receive form submissions: use them as the `action` of a `<form>` with `method="post"` and include the [csrf_param](/en/platform/channels/liquid-markup/tags.html#csrf-tags) tag inside the form, as the default origination page templates do.
+:::
 
 ### step
 
@@ -577,12 +585,14 @@ These objects obtain the information relevant to the Submissions.
 | **task.uid**         | Identifier of the task.         | ```task-01```                          |
 | **task.step**        | Step to which the task belongs. |                                        |
 | **task.name**        | Name of the task.               | ```Enter your personal information:``` |
-| **task.type**        | Task type.                      | ```user_input```                       |
+| **task.type**        | Task type, as a class name.     | ```Origination::UserInputTask```       |
 | **task.description** | Task description.               | ```Collect user data```                |
+
+The values of `task.type` match the [task types](/en/platform/customers/origination.html#task-types): `Origination::UserInputTask`, `Origination::ValidationTask`, `Origination::DigitalSignatureTask`, `Origination::PendingReviewTask`, `Origination::CodeSnippetTask`, `Origination::OriginationFlowTask`, `Origination::InvitationTask`, `Origination::IdentityVerificationTask`, and `Origination::ConfirmationTask`. Compare them against the full name, for example `task.type == 'Origination::UserInputTask'`.
 
 Additionally, depending on the task type, there may be further attributes.
 
-### user_input_task
+#### user_input_task
 
 | Object                     | Description           | Example                                                                                  |
 |----------------------------|-----------------------|------------------------------------------------------------------------------------------|
@@ -608,10 +618,10 @@ Every task response shares the attributes it inherits from the base response: `t
 | **code_snippet_task_response.data**           | The content of the code snippet. Alias for the `content` attribute. | ```{"submission"=>{"fields"=>{"car"=>"fiat", "year"=>1999, "color"=>"black", "extras"=>["ac", "gps", "sunroof"], "expiration"=>"2026-02-01"}}}``` |
 | **code_snippet_task_response.completed**      | Whether the task has been completed.                                | ```false```                                                                                                                                       |
 | **code_snippet_task_response.content**        | The content of the code snippet.                                    | ```{"submission"=>{"fields"=>{"car"=>"fiat", "year"=>1999, "color"=>"black", "extras"=>["ac", "gps", "sunroof"], "expiration"=>"2026-02-01"}}}``` |
-| **validation_task_response.validated**        | Whether the task has been validated.                                | ```true```                                                                                                                                        |
+| **validation_task_response.validated**        | It is `true` whenever the task response exists, even if it is still pending validation. To know whether the task is finished, compare `status` with `completed`. | ```true``` |
 | **digital_signature_task_response.signed**    | Whether the task has been signed.                                   | ```false```                                                                                                                                       |
 | **origination_flow_task_response.submission** | The submission of the origination flow task.                        | [view submission documentation](/en/platform/channels/liquid-markup/objects.html#submission)                                                      |
-| **invitation_task_response.completed** | Whether the task has been completed.                                | ```true```                                                                                                                                        |
+| **invitation_task_response.completed** | It is `true` whenever the task response exists, even if it is still pending. To know whether the task is finished, compare `status` with `completed`. | ```true``` |
 | **identity_verification_task_response.verification_details** | Hash with the verification detail: `document_type`, `document_status`, `biometric_status`, `verification_date`, `face_match_score`, and `liveness_score`. | ```{:document_type=>"national_id", :document_status=>"document_verified", :biometric_status=>"biometric_verified", :verification_date=>"2026-02-11T09:26:49.257-03:00", :face_match_score=>95.93251037597656, :liveness_score=>98.41004943847656}``` |
 | **identity_verification_task_response.ocr_data** | Unified, provider-agnostic accessor: it returns `ocr` and falls back to `extracted_information` when `ocr` is empty. Use it to iterate the document fields without branching per provider. | ```{"nombre"=>"Ivan Modyo", "numero_documento"=>"12.345.678-9"}``` |
 | **identity_verification_task_response.ocr** | Hash with the field/value pairs the provider extracted from the document. Empty when the provider does not return that structure. | ```{"nombre"=>"Ivan Modyo", "numero_documento"=>"12.345.678-9"}``` |
@@ -648,6 +658,15 @@ A repeatable group brings together several questions the user can answer more th
 Do not confuse this object with `repeatable_group_field`, which appears in the [field](/en/platform/channels/liquid-markup/objects.html#field) reference. That one is a content field from the Content module; `repeatable_group` holds the answers to a form from the Customers module. They share the name and are unrelated.
 :::
 
+## target
+
+These drops allow you to obtain information from Targets. A target is the same object as [segment](/en/platform/channels/liquid-markup/objects.html#segment): `user.targets` returns the user's segments and `user.target_names`, their names. The available attributes are:
+
+| Object          | Description                                        | Example |
+|-----------------|----------------------------------------------------|---------|
+| **target.id**   | A string with the ID associated with the target.   |         |
+| **target.name** | A string with the name associated with the target. |         |
+
 ## type
 
 Use Content Type objects to get information about your content types from the Content module.
@@ -676,7 +695,7 @@ Use user objects to get information about your users from the Customers module.
 | **user.external_user_id**            | The user's external user id if they have one.           | ```ext-12345```                                      |
 | **user.female_sex_value**            | Constant value for female gender.                       | ```1```                                              |
 | **user.first_name**                  | Returns the user's first name.                          | ```Ivan```                                           |
-| **user.genders**                     | The genders present on the platform.                    | ```{:id=>0,:name=>"Male"}{:id=>1,:name=>"Female"}``` |
+| **user.genders**                     | The list of the platform's five genders, each with its value (from `0` to `4`) and its name in the site language. | ```{:id=>0, :name=>"Male"}{:id=>1, :name=>"Female"}{:id=>2, :name=>"Non binary"}{:id=>3, :name=>"Other (not listed)"}{:id=>4, :name=>"Prefer not to say"}``` |
 | **user.generated_password**          | Password auto-generated (true) or user-created (false). | ```false```                                          |
 | **user.id**                          | The user's id.                                          | ```16```                                             |
 | **user.initials**                    | The initials of the username.                           | ```IM```                                             |
@@ -684,32 +703,33 @@ Use user objects to get information about your users from the Customers module.
 | **user.male_sex_value**              | Constant value for male gender.                         | ```0```                                              |
 | **user.member_since**                | Date since user has been a member.                      | ```2021-11-23 18:25:07 UTC```                        |
 | **user.name**                        | The user's full name.                                   | ```Ivan Modyo Gonzalez```                            |
-| **user.notifications**               | Array of notification type objects.                     |                                                      |
+| **user.notifications**               | Array with the user's latest 20 notifications (notification objects), from newest to oldest. |                                                      |
 | **user.profile_url**                 | The URL of the user's profile.                          | ```https://test.modyo.com/realms/default/profile```  |
 | **user.sex**                         | Current gender value configured for user.               | ```0```                                              |
 | **user.submissions**                 | Array of submission type objects.                       |                                                      |
 | **user.segments**                    | Array of segment objects.                               |                                                      |
-| **user.unread_notifications**        | Array of notification-type objects.                     |                                                      |
+| **user.unread_notifications**        | Array with up to 20 of the user's unread notifications (notification objects). For the total, use `user.unread_notifications_count`. |                                                      |
 | **user.unread_notifications_count**  | Count of unread notifications.                          | ```2```                                              |
 | **user.username**                    | The user's username.                                    | ```ivan@modyo.com```                                 |
 | **user.uuid**                        | The uuid of the user.                                   | ```cdc7f0e2-b5c3-4b92-aa34-962ffa0bi572```           |
 | **user.realm_uid**                   | The user's realm.                                       | ```my-realm```                                       |
 | **user.invited_submissions**         | Collection of submissions the user was invited to through an active invitation. Cancelled invitations are excluded and the order goes from the most recent to the oldest. |                     |
 | **user.unsubscribe_link**            | The user's unsubscribe link, for messaging templates.   | ```https://test.modyo.com/realms/default/mailing/unsubscribe?unsubscribe_token=ab12cd34``` |
+| **user.url**                         | The user's URL in the Modyo admin.                      | ```https://test.modyo.com/admin/customers/default/users/cdc7f0e2-b5c3-4b92-aa34-962ffa0bi572``` |
 | **user.current_login_at**            | Timestamp of current login.                             | ```2025-10-21 11:00:00 UTC```                        |
 | **user.current_login_ip**            | IP used for current login.                              | ```203.0.113.10```                                   |
 | **user.last_login_at**               | Timestamp of previous login.                            | ```2025-10-19 09:30:01 UTC```                        |
 | **user.last_login_ip**               | IP of previous login.                                   | ```198.51.100.7```                                   |
 | **user.phone**                       | User phone number.                                      | ```+1 555 123 4567```                                |
-| **user.responses**                   | Collection of form_response objects.                    | ```[{"name":"Onboarding"}]```                        |
+| **user.responses**                   | Collection with the user's latest 100 form responses (form_response objects), from newest to oldest. | ```[{"name":"Onboarding"}]```                        |
 | **user.segment_names**               | Array of segment names.                                 | ```["vip","beta"]```                                 |
 | **user.target_names**                | Array of target audience names.                         | ```["retail","premium"]```                           |
 | **user.targets**                     | Array of target audience group objects.                 | ```[{"name":"retail"}]```                            |
 | **user.realm_base_url**              | Public base URL of the user's realm: its [custom domain](/en/platform/customers/settings.html#domains) if active, otherwise the account URL. Use it to call the realm's Customers API. | ```https://login.mybank.com``` |
-| **user.realm_default_avatar**        | Default realm avatar (asset).                           |                                                      |
-| **user.non_binary_sex_value**        | Constant value for non-binary gender.                   | ```4```                                              |
-| **user.other_sex_value**             | Constant value for other gender.                        | ```5```                                              |
-| **user.prefer_not_to_say_sex_value** | Constant for prefer-not-to-say gender.                  | ```6```                                              |
+| **user.realm_default_avatar**        | String with the URL of the realm's default avatar. Empty if the realm has none. |                                                      |
+| **user.non_binary_sex_value**        | Constant value for non-binary gender.                   | ```2```                                              |
+| **user.other_sex_value**             | Constant value for other gender.                        | ```3```                                              |
+| **user.prefer_not_to_say_sex_value** | Constant for prefer-not-to-say gender.                  | ```4```                                              |
 
 `user.invited_submissions` returns a collection, so it composes with the [by_origination](/en/platform/channels/liquid-markup/filters.html) filter to keep only the submissions of a given origination:
 
@@ -727,12 +747,12 @@ Does not apply to public sites, as in these cases server responses are served fr
 
 | Object                          | Description                                                                  | Example      |
 |---------------------------------|------------------------------------------------------------------------------|--------------|
-| **user_agent.agent**            | A string with the type of agent that is running.                             |              |
+| **user_agent.agent**            | Type of agent: `mobile` (phone or tablet), `desktop`, or `modyo-shell` (Modyo app).                 | ```mobile``` |
 | **user_agent.as_json**          | A string in JSON format with all the agent configuration running.            |              |
 | **user_agent.browser**          | A string with the browser name for the agent.                                |              |
 | **user_agent.browser_version**  | A string with the browser version for the agent.                             |              |
 | **user_agent.is_modyo_shell**   | Boolean that determines if the agent is being managed by a Modyo application |              |
-| **user_agent.platform**         | A string with the agent's operating system version.                          |              |
+| **user_agent.platform**         | Name of the agent's operating system, or `modyo-shell` inside a Modyo app. The version is in `user_agent.platform_version`. | ```macOS```  |
 | **user_agent.platform_version** | Version of user's OS/platform.                                               | ```"14.7"``` |
 
 ## widget
@@ -786,18 +806,18 @@ When a template calls an attribute that no longer exists, Liquid resolves it as 
 
 | Attribute                                        | Replacement                   | Notes                                           |
 |--------------------------------------------------|-------------------------------|-------------------------------------------------|
-| entry.meta.created_at (direct)                   | entry.meta.created_at         | Use nested property instead of direct accessor. |
-| entry.meta.updated_at (direct)                   | entry.meta.updated_at         | Use nested property instead of direct accessor. |
-| entry.meta.published_at (direct)                 | entry.meta.published_at       | Use nested property instead of direct accessor. |
-| entry.meta.unpublished_at (direct)               | entry.meta.unpublished_at     | Use nested property instead of direct accessor. |
-| entry.meta.slug (direct)                         | entry.meta.slug               | Use nested property instead of direct accessor. |
-| entry.meta.uuid (direct)                         | entry.meta.uuid               | Use nested property instead of direct accessor. |
-| entry.meta.private (direct)                      | entry.meta.private            | Use nested property instead of direct accessor. |
-| location.location                                | location.location_street      | `location` deprecated; use `location_street`.   |
-| widget.uuid                                      | widget.wid                    | `uuid` deprecated; use `wid`.                   |
-| match_path_url                                   | (remove)                      | Legacy routing helper removed.                  |
-| without_category_url                             | entry.url                     | Category-less URL removed.                      |
-| location.latitude / longitude (deprecated flags) | location.latitude / longitude | Old flags replaced by same names.               |
+| entry.created_at                                 | entry.meta.created_at         | Direct accessor deprecated; it still works.         |
+| entry.updated_at                                 | entry.meta.updated_at         | Direct accessor deprecated; it still works.         |
+| entry.published_at                               | entry.meta.published_at       | Direct accessor deprecated; it still works.         |
+| entry.unpublished_at                             | entry.meta.unpublished_at     | Direct accessor deprecated; it still works.         |
+| entry.slug                                       | entry.meta.slug               | Direct accessor deprecated; it still works.         |
+| entry.uuid                                       | entry.meta.uuid               | Direct accessor deprecated; it still works.         |
+| entry.private                                    | entry.meta.private            | Direct accessor deprecated; it still works.         |
+| entry.locale                                     | entry.meta.locale             | Direct accessor deprecated; it still works.         |
+| widget.uuid                                      | widget.wid                    | Deprecated. Returns the widget's numeric ID, same as `widget.id`; the UUID is in `widget.wid`. |
+| entry.match_path_url                             | entry.meta.url                | Deprecated alias: it still works and returns the same as `entry.meta.url`. |
+| entry.without_category_url                       | entry.meta.url                | Deprecated alias: it still works and returns the same as `entry.meta.url`. |
+| location.latitude / location.longitude           | location.location             | Deprecated; they still work. `location.location` returns both values in `lat` and `lon`. |
 | request.comments_url                             | (remove)                      | Removed in 10.2; now resolves as empty.         |
 | request.interact_url                             | (remove)                      | Removed in 10.2; now resolves as empty.         |
 | request.refresh_url                              | (remove)                      | Removed in 10.2; now resolves as empty.         |

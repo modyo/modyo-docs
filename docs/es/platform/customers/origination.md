@@ -20,6 +20,7 @@ Para crear una nueva originación, sigue estos pasos:
 - Dirígete a la opción **Origination**.
 - Haz clic en el botón **+ Nueva originación**.
 - Asigna un nombre a la originación.
+- Revisa el **Identificador**: se completa a partir del nombre y puedes ajustarlo, pero si después cambias el nombre se vuelve a generar. Debe ser único en el reino, admite hasta 100 caracteres y forma parte de la URL de la originación.
 - Haz clic en **Crear** para finalizar y comenzar a configurar los pasos del nuevo flujo de originación.
 
 
@@ -152,6 +153,8 @@ El campo acepta imágenes `jpg`, `jpeg` y `png`, y ese formato no es configurabl
 
 Al responder, el usuario elige entre **Usar cámara** y **Subir archivo**. Con una cédula, el flujo es en dos pasos: primero el **Frente** y luego el **Reverso**, con una guía de encuadre en cada uno. Al terminar el primer lado la pantalla vuelve al inicio con el título del lado que falta, y el usuario debe pulsar de nuevo **Usar cámara** o **Subir archivo**; la cámara no se abre sola. Con un pasaporte se pide una sola foto de la página de datos. Las opciones **Rehacer frente** y **Rehacer reverso** eliminan la imagen ya subida, no solo la vista previa.
 
+Al usar la cámara, se abre la trasera si el dispositivo la tiene. Si en su lugar se usa la cámara frontal o una webcam, la vista previa se muestra en espejo para facilitar el encuadre. En ambos casos, la foto se guarda con su orientación real, sin espejar.
+
 El país tiene un efecto concreto sobre la extracción: se usa para interpretar las fechas del documento. Si el país no está definido y una fecha es ambigua —por ejemplo `03/04/1990`, donde ambos números pueden ser mes o día—, la fecha se guarda tal como venía, sin normalizar. Por eso, cuando sabes de antemano el país de tus usuarios, conviene fijarlo.
 
 La extracción pasa por los estados **Pendiente**, **Procesando**, **Completada** y **Falló**.
@@ -162,7 +165,7 @@ Captura una foto del rostro del usuario. Tiene una sola opción propia:
 
 - **Verificación de vida (liveness)**: Agrega un desafío que confirma que hay una persona real frente a la cámara. Viene desactivada.
 
-El campo acepta imágenes `jpg`, `jpeg` y `png`, y ese formato no es configurable. El usuario puede tomarse la foto con la cámara o subir un archivo; no hay forma de restringirlo a una sola vía. La cámara frontal se muestra en espejo, y la imagen se guarda tal como se ve en la vista previa.
+El campo acepta imágenes `jpg`, `jpeg` y `png`, y ese formato no es configurable. El usuario puede tomarse la foto con la cámara o subir un archivo; no hay forma de restringirlo a una sola vía. La vista previa de la cámara se muestra en espejo para facilitar el encuadre, pero la foto se guarda con su orientación real, sin espejar, y así se muestra al confirmarla.
 
 Cuando la verificación de vida está activa, el bloque correspondiente aparece **después** de que el usuario haya capturado o subido la selfie, con el botón **Iniciar verificación de vida**. Completarla nunca es obligatorio: aunque marques el campo como requerido, lo único obligatorio es la foto.
 
@@ -176,27 +179,50 @@ Si el usuario vuelve a capturar la selfie, la verificación anterior se descarta
 
 ##### Dónde se ve el resultado
 
-El estado de la extracción y el de la verificación de vida **no se muestran hoy en las pantallas de administración**. La pestaña **Documentos** de la respuesta lista los archivos de los tres campos con su nombre, tamaño y miniatura, y en el detalle de la tarea el campo Documento de identidad muestra el tipo de documento, el país y los enlaces a **Frente** y **Reverso**; los campos Documento y Selfie se ven igual que un campo Archivo.
+En la pestaña **Campos** de la respuesta, cada campo muestra su archivo y, según el tipo, el resultado del procesamiento:
 
-Los resultados sí quedan disponibles para integrar:
+- **Selfie**: Muestra **Verificación de vida** con el estado de la verificación, el motivo cuando lo hay y la **Confianza** en porcentaje. No aparece si el campo no tenía la verificación de vida activa cuando el usuario respondió.
+- **Documento de identidad**: Con una cédula, muestra el **Frente** y el **Reverso** por separado. Si el campo tiene activa **Extraer datos del documento (OCR)**, muestra además **Extracción de datos (OCR)**, con el estado de la extracción y el motivo si falló, y los **Campos extraídos** del documento, como el nombre completo, el número de documento y sus fechas.
+- **Documento**: Se ve igual que un campo **Archivo**, sin el estado de la extracción.
+
+La pestaña **Documentos** de la respuesta lista los archivos de los tres campos con su nombre, tamaño y miniatura, incluido el reverso de la cédula, y muestra la **Verificación de vida** de cada selfie. En el detalle de la tarea, el campo Documento de identidad muestra el tipo de documento, el país y los enlaces a **Frente** y **Reverso**.
+
+Los resultados también quedan disponibles para integrar:
 
 - En **plantillas Liquid**, la respuesta de un campo Documento entrega el archivo, el estado de la extracción y el texto extraído; la de un campo Selfie entrega el archivo, el estado de la verificación de vida y el nivel de confianza.
 - En la **API de administración**, además de lo anterior, se expone el código de error cuando la extracción o la verificación fallan.
 
 :::tip Verificación de vida rechazada sin motivo
-Una verificación **Rechazada** sin código de error asociado significa que el nivel de confianza quedó por debajo del **Umbral de confianza (%)** configurado en la integración. Es el caso más frecuente y no indica una falla técnica.
+Una verificación **Rechazada** sin motivo en la pestaña **Campos**, o sin código de error en la API, significa que el nivel de confianza quedó por debajo del **Umbral de confianza (%)** configurado en la integración. Es el caso más frecuente y no indica una falla técnica.
 :::
 
 ##### Uso en la lógica condicional
 
 Los tres campos se pueden usar en la lógica condicional de la originación, pero solo con los operadores **está vacío** y **tiene algún valor**. No es posible condicionar por el contenido del documento, por el país ni por el resultado de la verificación de vida.
 
+#### Personalizar los campos con CSS y JavaScript
+
+Los campos de las tareas Input llevan los mismos atributos `data-*` que los formularios, construidos con el **Identificador** de cada campo, tanto en la página de originación del sitio como en el formulario de las [tareas respondidas por agentes](/es/platform/customers/origination.html#tareas-respondidas-por-agentes). En la página de originación puedes usarlos como selectores en el CSS y el JavaScript del sitio. El formulario del agente carga la vista CSS `base` publicada del sitio, pero no su JavaScript, así que ahí solo sirven para las reglas de estilo. El detalle de cada atributo está en [Identificar preguntas y campos](/es/platform/customers/forms.html#identificar-preguntas-y-campos).
+
+Además, en las tareas Input:
+
+- El campo **Documento de identidad** marca sus partes con `data-field-part`: `document_type`, `country`, `file_id` y `back_file_id`.
+- Cada instancia de un grupo repetible lleva `data-group-item` con su posición, desde 1. La numeración se actualiza al agregar o quitar instancias.
+- Al agregar una instancia con el botón **Añadir** de un grupo repetible, la plataforma emite el evento `forms:group-item-added` desde la nueva instancia, y el evento se propaga hacia arriba. No se emite para las instancias que ya están al cargar la tarea.
+- El evento `forms:rendered` es exclusivo de los formularios: las tareas Input no lo emiten.
+
+:::warning Atención
+Cuando una regla de la [lógica condicional](/es/platform/customers/origination.html#logica-condicional) muestra u oculta un campo, la plataforma vuelve a dibujar los campos de la tarea y se pierden los cambios que hiciste sobre ellos con JavaScript. Volver a aplicarlos queda a tu cargo.
+:::
+
 ### Validación
 
 La tarea de validación requiere una revisión manual del agente asignado. Este debe validar los datos entregados por el usuario para desbloquear la siguiente tarea del flujo. 
 Se hace un refresco de la tarea cada 5 segundos para que el usuario final sepa si la tarea fue validada.
 
-Al configurar la tarea, puedes definir un **Asignado**: un administrador o un grupo de administradores responsable de las validaciones. Al seleccionar un grupo, puedes asignar a todo el grupo o a un usuario específico dentro de él. Si no defines un asignado, las validaciones se asignan de forma predeterminada al asignado de la respuesta.
+Al configurar la tarea, en **Selecciona las tareas que deseas validar** marcas las tareas cuyas respuestas revisará el agente. Solo puedes validar tareas **Input** y **Snippet de código**, y solo las que están antes de la tarea de validación en el flujo: las posteriores aparecen deshabilitadas y, si estaban marcadas, se desmarcan. Las tareas se listan en el orden del flujo; las de tipo **Snippet de código** aparecen bajo el encabezado **Tareas de código**, y las tareas Input que marcaste como no visibles en la [lógica condicional](#configurar-logica-condicional), bajo **Tareas ocultas**.
+
+También puedes definir un **Asignado**: un administrador o un grupo de administradores responsable de las validaciones. Al seleccionar un grupo, puedes asignar a todo el grupo o a un usuario específico dentro de él. Si no defines un asignado, las validaciones se asignan de forma predeterminada al asignado de la respuesta.
 
 Los administradores asignados reciben un correo cuando una validación queda pendiente y también pueden revisarla desde la vista [**Mis tareas**](/es/platform/core/my-tasks.html) del menú principal, filtrando por el tipo de tarea **Revisión de validación**. El usuario recibe una notificación interna cuando su tarea es aprobada o rechazada.
 
@@ -206,10 +232,30 @@ En una respuesta específica, puedes reasignar la validación desde la pestaña 
 
 La tarea de firma permite una firma simple con un checkbox o una avanzada cuando hay algun proveedor de firma digital instalado en las integraciones del reino.
 
+En la tarea escribes, con un editor de texto enriquecido, el documento que se muestra al usuario. Ese documento admite HTML con las mismas restricciones que el [Texto enriquecido de los formularios](/es/platform/customers/forms.html#texto-enriquecido): el editor quita lo que no está permitido y la plataforma no guarda un documento que traiga HTML fuera de la lista permitida.
+
 ### Revisión pendiente
 
 La tarea de revisión pendiente pausa el proceso de originación. Se usa para gatillar procesos asíncronos, generalmente en sistemas externos.
 Se hace un refresco de la tarea cada 5 segundos para que el usuario final sepa si la tarea fue revisada.
+
+En **Página de contenido pendiente de revisión** escribes lo que ve el usuario en la página de originación mientras la tarea espera la revisión. En esta tarea, ese campo cumple el papel del **Mensaje de espera que ve el usuario** de las demás [tareas de agente](#tareas-respondidas-por-agentes). El agente también ve este contenido al abrir la tarea desde la respuesta. Si lo dejas vacío, el usuario ve un mensaje predeterminado que le indica que el paso está siendo procesado.
+
+El contenido admite HTML y Liquid, hasta 65.535 caracteres, y en la página de originación puedes usar, entre otras, estas variables:
+
+- `submission`: La respuesta.
+- `task`: La tarea de revisión pendiente.
+- `task_response`: La respuesta a esta tarea.
+- `assignee_label`: El nombre del administrador o del grupo a cargo de la tarea, según el asignado efectivo. Queda vacía si nadie la tiene asignada.
+
+Por ejemplo:
+
+```liquid
+<p>Estamos revisando tu solicitud. Podrás continuar cuando terminemos.</p>
+{% if assignee_label %}
+  <p>Está a cargo de {{ assignee_label }}.</p>
+{% endif %}
+```
 
 Al igual que en las tareas de validación, puedes definir un **Asignado** para la tarea: un administrador o un grupo de administradores. Si no defines uno, la revisión se asigna de forma predeterminada al asignado de la respuesta.
 
@@ -687,6 +733,8 @@ Las acciones disponibles dependen del estado: **Reenviar invitación** y **Cance
 
 Cuando se completa la última invitación activa de la tarea, la respuesta a la tarea de invitación se completa sola y el flujo continúa. A partir de ese momento ya no se pueden enviar invitaciones nuevas desde esa tarea.
 
+El enlace del correo de invitación sirve para un solo ingreso y vence a los 7 días. Además, cada vez que la plataforma le envía a esa persona un enlace nuevo, por ejemplo al reenviar la invitación, al invitarla a otra tarea o al pedir la recuperación de su contraseña, los enlaces anteriores dejan de funcionar. Si el enlace ya no funciona y la invitación sigue en `pending`, el usuario principal puede reenviarla para que el invitado reciba un enlace nuevo; si ya fue aceptada, el invitado tiene que iniciar sesión en el reino para volver a la respuesta.
+
 :::tip Espera entre reenvíos
 Entre un reenvío y el siguiente hay que esperar unos minutos. Si presionas **Reenviar invitación** antes de tiempo, la plataforma te indica cuántos minutos faltan en lugar de enviar el correo.
 :::
@@ -699,7 +747,7 @@ Al configurar la tarea, en **Seleccionar ítems a confirmar** eliges las tareas 
 
 El usuario ve cada tarea seleccionada con sus respuestas y un enlace **Editar** que lo lleva directamente a esa tarea para corregirla. Al presionar **Confirmar**, la tarea se completa y el flujo continúa. Para completar la tarea, todos los ítems configurados deben estar confirmados.
 
-En los detalles de una respuesta, las tareas de confirmación completadas muestran el listado de **Tareas confirmadas**.
+En la pestaña **Campos** de una respuesta, cada tarea de confirmación completada muestra el listado de **Tareas confirmadas**.
 
 ### Tareas respondidas por agentes
 
@@ -711,6 +759,14 @@ Cada tarea del flujo tiene la opción **Asignado a**, que define quién la respo
 Cuando el flujo llega a una tarea de agente, los administradores asignados reciben un correo con el enlace directo a la tarea y también la ven en la vista [**Mis tareas**](/es/platform/core/my-tasks.html). El asignado efectivo se resuelve en este orden: el asignado de la respuesta a la tarea, el asignado configurado en la tarea y, en su defecto, el asignado general de la respuesta; puedes reasignar una tarea específica desde la vista de la respuesta, lo que notifica al nuevo asignado.
 
 Desde la vista de la respuesta, el agente abre la tarea y responde el formulario con la misma experiencia del sitio: lógica condicional en vivo, carga de archivos, grupos repetibles y snippets de código. Mientras la tarea espera la acción del agente, el usuario ve en la página de originación el texto configurado en **Mensaje de espera que ve el usuario**.
+
+:::tip Estilos del formulario del agente
+El formulario de una tarea de agente carga primero los estilos del admin y después la versión publicada de la vista CSS `base` del sitio de la página de originación, así que el agente lo ve con la apariencia del sitio. Si el sitio no tiene esa vista publicada, el formulario usa solo los estilos del admin. El JavaScript del sitio no se carga.
+
+El contenido del formulario va dentro del contenedor `#agent-task-content`. Usa ese selector para que una regla aplique solo en la vista del agente, por ejemplo `#agent-task-content .form-control`.
+
+Los recursos que la hoja trae desde otros dominios, como un `@import`, fuentes o imágenes, pueden no cargarse en el formulario del agente, así que no dependas de ellos para su apariencia. Si el sitio tiene habilitado el encabezado [Cross Origin Resource Policy](/es/platform/channels/sites.html#cross-origin-resource-policy), el navegador puede bloquear la hoja completa y el formulario se muestra solo con los estilos del admin.
+:::
 
 Opciones adicionales según el tipo de tarea:
 
@@ -793,11 +849,25 @@ Así se aplica la asignación:
 Si consumes la API de administración de originaciones, ten en cuenta que cada regla ahora tiene `targets`, una lista ordenada de acciones, en lugar de `target`. Al guardar, la API sigue aceptando `target`, pero siempre responde con `targets`, y una originación sin reglas responde `rules: []`. La acción **Asignar** se envía como un target con `action: assign`. Revisa el detalle en la documentación Swagger de la [API](/es/platform/core/api.html).
 :::
 
+### Probar la originación en vista previa
+
+Con el botón **Vista previa** (ícono de ojo) del encabezado de la originación puedes recorrer el flujo como lo haría un usuario. El botón abre la página de originación en la vista previa del sitio con la versión en edición de la originación, así que puedes probar tus cambios antes de publicarlos. Está disponible cuando la originación tiene una página vinculada.
+
+Las respuestas que creas en la vista previa son de prueba y quedan aparte de las reales:
+
+- No aparecen en el listado de **Respuestas** de la originación.
+- No cuentan en [Insights](/es/platform/insights/origination.html) ni en los [filtros de originación](/es/platform/customers/segments.html#filtros-de-originacion) de los segmentos.
+
+:::warning Eliminación de las respuestas de prueba
+Las respuestas de prueba se eliminan sin aviso en dos casos: al publicar la originación y, una vez por semana, las que llevan más de 7 días sin cambios.
+:::
+
 ### Editar configuración de la originación
 
 Al seleccionar la opción **Editar** en el menú contextual de tu originación puedes editar sus propiedades.
 
 - **Nombre**: Define el nombre de la originación, visible para los usuarios en la interfaz.
+- **Identificador**: Aparece bloqueado con un candado. Para modificarlo, presiona el candado y confirma la advertencia **Desbloquear campo identificador**: cambiar el identificador cambia la URL de la originación y rompe las referencias a ella desde sistemas externos o mediante el SDK de Liquid. Cambiar el **Nombre** no lo modifica.
 - **Descripción**: Incluye un breve texto explicativo sobre el propósito de la originación.
 - **Mensaje de completado**: Es el mensaje que aparecerá al usuario al finalizar el proceso de originación.
 - **Asignado por defecto de la respuesta**: Especifica el administrador o grupo de administradores que será asignado automáticamente a cada nueva respuesta. Al seleccionar un grupo, puedes usar la opción **Asignar a todo el grupo** o elegir un usuario específico dentro de él.
@@ -852,8 +922,12 @@ Puedes editar o eliminar los roles desde la misma sección. Como cada rol solo p
 
 Si necesitas eliminar una originación de forma permanente:
 
-1. Selecciona la opción **Eliminar originación**.
-2. Confirma que no necesitas los datos de la originación antes de proceder.
+1. Si la originación está publicada, despublícala.
+2. En el menú de acciones (⋮) de la originación, selecciona **Archivar**.
+3. En el mismo menú, selecciona **Borrar**. La opción solo se habilita cuando la originación está archivada.
+4. En el modal **Eliminar originación**, escribe el nombre de la originación en **Nombre de la originación** y presiona **Borrar**.
+
+La originación no puede tener respuestas en estado **Pendiente** ni **Completada**: si las tiene, la plataforma rechaza la eliminación con el mensaje **No puedes eliminar una originación con respuestas**. Antes, [cancélalas](/es/platform/customers/origination.html#cancelar-respuesta) o [elimínalas](/es/platform/customers/origination.html#eliminar-respuesta). Las respuestas **No Iniciada** y **Cancelada** se eliminan junto con la originación.
 
 :::danger Peligro
 Este proceso es irreversible.
@@ -935,7 +1009,7 @@ La vista resumen de una originación te ofrece un resumen de las métricas clave
 
 El **Total** cuenta también las respuestas **No Iniciada**, que no tienen tarjeta propia: si la suma de las otras tres no cuadra con el total, la diferencia son las respuestas que se crearon y nunca se iniciaron.
 
-Debajo de las tarjetas, un gráfico de distribución reparte las respuestas en cinco categorías que combinan el [estado de la respuesta](/es/platform/customers/origination.html#ciclo-de-vida-de-una-respuesta) con su [estado de vencimiento](/es/platform/customers/origination.html#vencimiento-de-las-respuestas): **No Iniciada**, **A tiempo**, **Vence pronto**, **Vencido** y **Completada**. Las respuestas **Pendiente** se reparten entre **A tiempo**, **Vence pronto** y **Vencido**; si la originación no tiene **Vence en** configurado, todas quedan en **A tiempo**. Las **Cancelada** no aparecen en el gráfico.
+Debajo de las tarjetas, un gráfico de distribución reparte las respuestas en cinco categorías que combinan el [estado de la respuesta](/es/platform/customers/origination.html#ciclo-de-vida-de-una-respuesta) con su [estado de vencimiento](/es/platform/customers/origination.html#vencimiento-de-las-respuestas): **No iniciado**, **A tiempo**, **Vence pronto**, **Vencido** y **Completada**. **No iniciado** agrupa las respuestas **No Iniciada**, y las **Pendiente** se reparten entre **A tiempo**, **Vence pronto** y **Vencido**; si la originación no tiene **Vence en** configurado, todas quedan en **A tiempo**. Las **Cancelada** no aparecen en el gráfico.
 
 Junto al gráfico, el **Tiempo promedio de completado** muestra cuánto tardan en promedio las respuestas completadas de esta originación.
 
@@ -952,11 +1026,13 @@ En la vista de detalles, encontrarás las siguientes secciones principales:
 - **Firmas**: Seguimiento de las firmas digitales recolectadas durante el flujo.
 - **Verificación de Identidad**: Resultado de la verificación de identidad del usuario cuando el flujo la incluye.
 - **Validaciones**: Validaciones realizadas por los administradores para autorizar el progreso.
-- **Actividad**: Registro de actividades y cambios realizados en la respuesta, útil para seguimiento y auditoría.
+- **Actividad**: Registro de actividades y cambios realizados en la respuesta, útil para seguimiento y auditoría. Tiene dos vistas:
+  - **Administrador**: Los registros de actividad de la respuesta, que puedes acotar con el filtro **Tipo**. El filtro ofrece solo los tipos presentes en esa respuesta. Si el flujo usa una tarea de Verificación de Identidad con la integración **NAAT.TECH**, los errores que el proveedor devuelve en el navegador durante la captura del documento o la verificación de vida quedan registrados aquí con el tipo **Error de NAAT.TECH en verificación de identidad**. Te sirven para diagnosticar por qué el usuario no pudo completar la verificación.
+  - **Usuario**: Los eventos que genera el usuario final al avanzar en la respuesta.
 
 Esta estructura te brinda una visión integral y detallada de cada respuesta, permitiéndote gestionar de manera efectiva todos los aspectos relacionados con las respuestas.
 
-En las respuestas multiusuario, las pestañas **Tareas**, **Revisiones** y **Validaciones** incluyen el selector **Viendo tareas de**, que te permite alternar entre el **Usuario Principal** y cada usuario invitado para revisar el avance individual de sus tareas.
+En las respuestas multiusuario, las pestañas **Tareas**, **Campos** y **Validaciones** incluyen un selector, **Viendo tareas de** en las dos primeras y **Viendo validaciones de** en la última, que te permite alternar entre el **Usuario Principal** y cada usuario invitado para revisar el avance individual de sus tareas.
 
 :::tip Tip
 Desde la vista de una respuesta en el menú de acciones (identificado con …) se puede [impersonar](/es/platform/customers/users) al usuario para ayudarlo a contestar la originación. Esto depende de los roles del usuario
@@ -991,11 +1067,13 @@ Los roles que ya tenías conservan el acceso que tenían: los que veían el deta
 
 El listado de respuestas incluye una caja de búsqueda que te permite encontrar respuestas por los datos del usuario, los valores de sus campos personalizados, las respuestas ingresadas en los campos del flujo y el contenido de las tareas.
 
+Las respuestas de los campos del flujo y el contenido de las tareas solo se buscan si tu rol tiene **Ver Tareas de la Respuesta** o un permiso que lo incluya, como **Ver Respuesta Completa**. Sin ese permiso, la búsqueda encuentra respuestas solo por los datos del usuario, sus identificadores y los valores de sus campos personalizados, y las claves de preguntas del flujo no buscan en las respuestas.
+
 La búsqueda requiere un mínimo de 3 caracteres, no distingue mayúsculas ni acentos y encuentra coincidencias parciales. Por ejemplo, `lau` encuentra a "Claudio" y `perez` encuentra a "Pérez". Las claves `id` y `uuid` son la excepción y se explican más abajo.
 
 Puedes buscar de dos formas, que además puedes combinar en una misma consulta:
 
-- **Texto libre**: Escribe uno o más términos y la búsqueda los encontrará en los datos del usuario, los valores de sus campos personalizados, las respuestas ingresadas en los campos del flujo y el contenido de las tareas.
+- **Texto libre**: Escribe uno o más términos y la búsqueda los encontrará en los datos del usuario, los valores de sus campos personalizados, las respuestas ingresadas en los campos del flujo y el contenido de las tareas. Si escribes varios términos, basta que coincida uno para que la respuesta aparezca, y primero se muestran las que mejor coinciden.
 - **Pares clave=valor**: Escribe la clave de un campo seguida de `=` y el valor a buscar para acotar la búsqueda a ese campo específico.
 
 Las claves disponibles para los pares `clave=valor` son:
@@ -1008,8 +1086,8 @@ Las claves disponibles para los pares `clave=valor` son:
 Al usar pares `clave=valor` ten en cuenta lo siguiente:
 
 - La clave debe escribirse completa, mientras que el valor sí admite coincidencias parciales. Las claves `id` y `uuid` son la excepción: no admiten coincidencias parciales.
-- Para buscar valores o frases con espacios usa comillas dobles. Por ejemplo, `first_name="Jean Pierre"` o `"crédito hipotecario"`.
-- Todas las condiciones se combinan entre sí, por lo que una respuesta debe cumplir todos los términos y pares de la consulta para aparecer en los resultados.
+- Para buscar un valor con espacios, enciérralo entre comillas dobles. Por ejemplo, `first_name="Jean Pierre"`. Las comillas solo sirven dentro de un par: en el texto libre no arman una frase, así que `"crédito hipotecario"` se busca igual que `crédito hipotecario` y basta que coincida una de las dos palabras.
+- Los pares se combinan entre sí y con el texto libre: para aparecer en los resultados, una respuesta debe cumplir todos los pares de la consulta y, si además escribes texto libre, coincidir con al menos uno de sus términos.
 - Si la clave no existe o el valor está vacío, el término se busca como texto libre sin generar errores.
 
 Algunos ejemplos de búsquedas:
@@ -1063,7 +1141,7 @@ Al asignar a todo un grupo, todos sus miembros pueden ver y gestionar la respues
 
 #### Cancelar respuesta
 
-Para cancelar una respuesta, ábrela y presiona el botón **Cancelar** en la vista de la respuesta. En el modal puedes ingresar de manera opcional una **Razón de cancelación** y luego confirmar la acción. La cancelación modifica permanentemente el estado de la respuesta a **Cancelada**.
+Para cancelar una respuesta, ábrela, despliega el menú de acciones (⋮) de la vista de la respuesta y selecciona **Cancelar**. La opción requiere el permiso **Completar Respuestas**, que habilita tanto completar como cancelar respuestas, y no aparece en las respuestas que ya están canceladas. En el modal puedes ingresar de manera opcional una **Razón de cancelación** y luego confirmar la acción. La cancelación modifica permanentemente el estado de la respuesta a **Cancelada**.
 
 Puedes cancelar respuestas en estado **No Iniciada**, **Pendiente** o **Completada**.
 
@@ -1071,9 +1149,11 @@ En los detalles de una respuesta cancelada se muestra la fecha de cancelación e
 
 #### Eliminar respuesta
 
-Para eliminar una respuesta individual, selecciona el menú en la columna actions y presiona la opción delete. Esto eliminará la respuesta.
+Para eliminar una respuesta individual, en el listado de respuestas despliega el menú de la columna **Acciones** y presiona **Borrar**. También tienes la opción **Borrar** en el menú de acciones (⋮) de la vista de la respuesta, salvo en las respuestas canceladas. En ambos casos, la plataforma te pide confirmar antes de eliminarla de forma permanente.
 
-Para eliminar varias respuestas al mismo tiempo, selecciona cada entrada marcando la casilla correspondiente y presiona el botón eliminar.
+Para eliminar varias respuestas al mismo tiempo, marca la casilla de cada una y usa la acción masiva **Borrar**.
+
+Estas opciones solo se muestran si tu rol tiene el permiso **Eliminar Respuestas**.
 
 #### Reabrir tareas de una respuesta
 
@@ -1084,25 +1164,38 @@ Considera lo siguiente:
 - Cambiar el estado de una respuesta a tarea requiere el permiso **Cambiar estado de la Respuesta de una Tarea**; eliminar respuestas a tareas requiere el permiso **Eliminar Respuestas**.
 - Estas operaciones solo están disponibles mientras la respuesta está en estado **No Iniciada** o **Pendiente**.
 - Todas las operaciones quedan registradas en la actividad de la plataforma.
+- Si la tarea reabierta tenía una validación aprobada, la aprobación se conserva. El usuario puede cambiar sus respuestas, pero al completar otra vez la tarea esta vuelve a quedar validada y sin posibilidad de edición, sin una nueva revisión del agente. Para que los datos corregidos se revisen de nuevo, el usuario debe usar **Modificar datos** en la tarea, opción disponible cuando las **Reglas de validación** de la originación permiten modificar las respuestas previamente validadas.
 
 #### Invitar usuarios
 
-Puedes invitar a usuarios para que ingresen información en una originación. Al invitar a un usuario, deberás ingresar su información básica
+Puedes invitar a usuarios para que ingresen información en una originación con el botón **Invitar**. Al invitar a un usuario, deberás ingresar su información:
 
 - **Nombre**: El primer nombre del usuario que utilizará la originación.
 - **Apellido**: El apellido del usuario.
-- **Email**: La dirección de correo electrónico del usuario, donde recibirá la invitación para acceder a la originación.
-- **Asignar la respuesta**: En la lista desplegable, selecciona un administrador que gestionará esta originación en particular. Si no se selecciona un administrador, la respuesta quedará sin asignar.
+- **Correo electrónico**: La dirección de correo electrónico del usuario, donde recibirá la invitación para acceder a la originación.
+- Los campos que dependen de la configuración de registro del reino: **Segundo apellido**, **Número de teléfono**, **Fecha de nacimiento** y **Género**, cuando el reino los tiene habilitados, y el nombre de usuario, con la etiqueta que define el reino, cuando el reino no usa el correo electrónico como nombre de usuario. El nombre de usuario siempre es obligatorio; los demás, cuando el reino los exige en el registro.
+- Los [campos personalizados](/es/platform/customers/settings.html#custom-fields) activos del usuario. Los requeridos son obligatorios.
+- **Asignar la respuesta a**: El administrador, el grupo completo de administradores o el administrador dentro de un grupo que gestionará esta respuesta. Si lo dejas vacío, se aplica el **Asignado por defecto de la respuesta** de la originación y, si no tiene uno, la respuesta queda sin asignar.
 
-Para invitar usuarios desde el panel, la **Activación de la cuenta** del reino no puede estar en **Deshabilitada**: con esa opción el botón **Invitar** aparece deshabilitado y, al pasar el cursor, muestra el mensaje _Las invitaciones no están disponibles porque el registro está deshabilitado en este realm_.
+El botón para enviar la invitación se habilita cuando completas todos los campos obligatorios.
 
-En la página de originación la restricción es más acotada: con **Deshabilitada** se bloquea el formulario de invitación a usuarios nuevos, pero desde ahí se puede seguir invitando a usuarios que ya existen en el reino.
+El botón **Invitar** aparece deshabilitado y, al pasar el cursor, muestra un mensaje con el motivo en estos casos:
+
+- La originación no está publicada: _Las invitaciones no están disponibles porque la originación no está publicada_.
+- La originación no tiene una página asociada: _Las invitaciones no están disponibles porque la originación no tiene una página asociada_.
+- La **Activación de la cuenta** del reino está en **Deshabilitada**: _Las invitaciones no están disponibles porque el registro está deshabilitado en este realm_.
+
+Además, el botón requiere el permiso **Iniciar Respuestas**: sin él aparece deshabilitado y sin mensaje.
+
+En la página de originación, con la **Activación de la cuenta** en **Deshabilitada**, el usuario principal no puede invitar a nadie con el formulario de nombre y correo electrónico, aunque el correo ya pertenezca a un usuario del reino. Solo puede elegir de la lista a las personas que ya invitó en otra tarea de invitación de la misma respuesta o, si el [rol](#roles) tiene activa la opción **Puede ser asumido por el usuario principal**, tomar el rol él mismo (**Tú**).
 
 Si la **Activación de la cuenta** está en **Solo por invitación**, el usuario nuevo que invites queda activo y puede completar el flujo de inmediato, sin correo de activación ni espera. Un usuario que ya existía y estaba desactivado no se reactiva al invitarlo: mantiene su estado. Revisa las opciones en la [configuración del reino](/es/platform/customers/settings.html#general).
 
 ### Gestión de Asignados
 
-En la vista de asignados,  puedes  monitorear y administrar a los administradores responsables de las respuestas dentro de un reino. Esta vista facilita el seguimiento del desempeño y la carga de trabajo de los administradores. Puedes filtrar las respuestas asignadas por rangos de fecha
+En la vista de asignados puedes monitorear a los administradores responsables de las respuestas de esta originación. Esta vista facilita el seguimiento del desempeño y la carga de trabajo de los administradores.
+
+Solo aparecen los administradores que tienen asignada individualmente al menos una respuesta de esta originación: una respuesta asignada a un grupo completo, sin un administrador específico, no hace aparecer a los miembros del grupo. El filtro **Fecha de creación** muestra solo a los administradores que tienen asignada alguna respuesta de esta originación creada en ese rango.
 
 Al seleccionar un administrador, podrás ver todas las respuestas que tiene asignadas y su correspondiente status
 
@@ -1127,10 +1220,11 @@ La originación que vincules debe pertenecer al mismo reino que el sitio donde c
 
 Una página de originación puede quedar sin originación vinculada. Mientras esté en ese estado, la página responde a los usuarios finales con un error 404, por lo que debes vincularle una originación para volver a desplegar el flujo.
 
-Esto ocurre en tres situaciones:
+Esto ocurre en cuatro situaciones:
 
 - **Eliminas la originación**: la página se mantiene en el sitio, pero sin originación vinculada.
 - **Cambias el reino del sitio**: todas las páginas de originación de ese sitio pierden la referencia, porque cada originación pertenece a un reino. El formulario de configuración de la aplicación te advierte de esto antes de que confirmes el cambio.
 - **Creas un stage**: las páginas de originación se copian al stage sin la originación vinculada. Como cada originación admite una sola página, en el stage debes vincular una originación distinta del mismo reino.
+- **Sincronizas una página nueva desde un stage**: si la página no existía en el sitio de destino, llega sin originación vinculada y debes vincularle una originación del reino de ese sitio. Si la página ya existía, conserva la originación que tenía.
 
 Para más detalles sobre el comportamiento de los stages, revisa la sección [stages](/es/platform/channels/sites.html#stages) de las aplicaciones web.

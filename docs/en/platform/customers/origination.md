@@ -20,6 +20,7 @@ To create a new origination, follow these steps:
 - Go to the **Origination** option.
 - Click the **+ New origination** button.
 - Assign a name to the origination.
+- Review the **Identifier**: it's filled in from the name and you can adjust it, but if you change the name afterward, it's generated again. It must be unique in the realm, accepts up to 100 characters, and is part of the origination URL.
 - Click **Create** to finish and begin configuring the steps of the new origination flow.
 
 
@@ -152,6 +153,8 @@ The field accepts `jpg`, `jpeg`, and `png` images, and that format is not config
 
 When answering, the user chooses between **Use camera** and **Upload file**. With an ID card, the flow has two steps: first the **Front side** and then the **Back side**, with a framing guide for each. When the first side is done, the screen returns to the start with the title of the remaining side, and the user has to press **Use camera** or **Upload file** again; the camera does not open on its own. With a passport, a single photo of the data page is requested. The **Redo front** and **Redo back** options delete the image already uploaded, not just the preview.
 
+When the camera is used, the rear camera opens if the device has one. If the front camera or a webcam is used instead, the preview is shown mirrored to make framing easier. In both cases, the photo is saved with its real orientation, not mirrored.
+
 The country has a concrete effect on extraction: it is used to interpret the dates on the document. If the country is not set and a date is ambiguous — for example `03/04/1990`, where both numbers could be month or day — the date is stored exactly as it came, without normalizing. So when you know your users' country in advance, it is worth fixing it.
 
 Extraction goes through the **Pending**, **Processing**, **Completed**, and **Failed** statuses.
@@ -162,7 +165,7 @@ Captures a photo of the user's face. It has a single specific option:
 
 - **Face liveness check**: Adds a challenge that confirms there is a real person in front of the camera. It is off by default.
 
-The field accepts `jpg`, `jpeg`, and `png` images, and that format is not configurable. The user can take the photo with the camera or upload a file; there is no way to restrict it to one path. The front camera is shown mirrored, and the image is saved exactly as it looks in the preview.
+The field accepts `jpg`, `jpeg`, and `png` images, and that format is not configurable. The user can take the photo with the camera or upload a file; there is no way to restrict it to one path. The camera preview is shown mirrored to make framing easier, but the photo is saved with its real orientation, not mirrored, and that is how it is shown when the user confirms it.
 
 When the liveness check is enabled, its block appears **after** the user has captured or uploaded the selfie, with the **Start liveness check** button. Completing it is never mandatory: even if you mark the field as required, the only mandatory part is the photo.
 
@@ -176,27 +179,50 @@ If the user captures the selfie again, the previous check is discarded and they 
 
 ##### Where the result is shown
 
-The extraction status and the liveness check status **are not shown today on any administration screen**. The **Documents** tab of the submission lists the files of all three fields with their name, size, and thumbnail, and in the task detail the Identity document field shows the document type, the country, and the links to **Front side** and **Back side**; the Document and Selfie fields look the same as a File field.
+In the **Fields** tab of the submission, each field shows its file and, depending on the type, the processing result:
 
-The results are available for integration:
+- **Selfie**: Shows **Liveness check** with the check status, the reason when there is one, and the **Confidence** as a percentage. It does not appear if the field did not have the liveness check enabled when the user answered.
+- **Identity document**: With an ID card, it shows the **Front side** and the **Back side** separately. If the field has **Extract document data (OCR)** enabled, it also shows **Data extraction (OCR)**, with the extraction status and the reason if it failed, and the **Extracted fields** of the document, such as the full name, the document number, and its dates.
+- **Document**: It looks the same as a **File** field, without the extraction status.
+
+The **Documents** tab of the submission lists the files of all three fields with their name, size, and thumbnail, including the back side of the ID card, and shows the **Liveness check** of each selfie. In the task detail, the Identity document field shows the document type, the country, and the links to **Front side** and **Back side**.
+
+The results are also available for integration:
 
 - In **Liquid templates**, the answer of a Document field returns the file, the extraction status, and the extracted text; the answer of a Selfie field returns the file, the liveness status, and the confidence level.
 - In the **Admin API**, in addition to the above, the error code is exposed when extraction or the check fails.
 
 :::tip Liveness check rejected with no reason
-A **Rejected** check with no associated error code means the confidence level fell below the **Confidence Threshold (%)** configured in the integration. It is the most frequent case and does not indicate a technical failure.
+A **Rejected** check with no reason in the **Fields** tab, or with no error code in the API, means the confidence level fell below the **Confidence Threshold (%)** configured in the integration. It is the most frequent case and does not indicate a technical failure.
 :::
 
 ##### Use in conditional logic
 
 All three fields can be used in the conditional logic of the origination, but only with the **has no value** and **has any value** operators. It is not possible to set conditions based on the content of the document, the country, or the result of the liveness check.
 
+#### Customize fields with CSS and JavaScript
+
+The fields of Input tasks carry the same `data-*` attributes as forms, built from the **Identifier** of each field, both on the origination page of the site and in the form of [tasks answered by agents](/en/platform/customers/origination.html#tasks-answered-by-agents). On the origination page, you can use them as selectors in the site's CSS and JavaScript. The agent form loads the published `base` CSS view of the site, but not its JavaScript, so there they only work for style rules. The details of each attribute are in [Identify questions and fields](/en/platform/customers/forms.html#identify-questions-and-fields).
+
+In addition, in Input tasks:
+
+- The **Identity document** field marks its parts with `data-field-part`: `document_type`, `country`, `file_id` and `back_file_id`.
+- Each instance of a repeatable group carries `data-group-item` with its position, starting at 1. The numbering is updated when instances are added or removed.
+- When an instance is added with the **Add** button of a repeatable group, the platform dispatches the `forms:group-item-added` event from the new instance, and the event bubbles up. It's not dispatched for the instances that are already there when the task loads.
+- The `forms:rendered` event is exclusive to forms: Input tasks don't dispatch it.
+
+:::warning Attention
+When a [conditional logic](/en/platform/customers/origination.html#conditional-logic) rule shows or hides a field, the platform redraws the fields of the task and the changes you made to them with JavaScript are lost. Reapplying them is up to you.
+:::
+
 ### Validation
 
 The validation task requires manual review by the assigned agent. They must validate the data provided by the user to unlock the next task in the flow.
 The task is refreshed every 5 seconds so that the end user knows if the task has been validated.
 
-When configuring the task, you can define an **Assignee**: an administrator or a group of administrators responsible for the validations. When selecting a group, you can assign the whole group or a specific user within it. If you do not define an assignee, validations are assigned by default to the submission assignee.
+When configuring the task, in **Select the tasks to validate**, you check the tasks whose answers the agent will review. You can only validate **Input** and **Code snippet** tasks, and only those that come before the validation task in the flow: later tasks appear disabled and, if they were checked, they're unchecked. Tasks are listed in flow order; **Code snippet** tasks appear under the **Code tasks** heading, and Input tasks that you marked as not visible in the [conditional logic](#configure-conditional-logic) appear under **Hidden tasks**.
+
+You can also define an **Assignee**: an administrator or a group of administrators responsible for the validations. When selecting a group, you can assign the whole group or a specific user within it. If you do not define an assignee, validations are assigned by default to the submission assignee.
 
 Assigned administrators receive an email when a validation is pending and can also review it from the [**My tasks**](/en/platform/core/my-tasks.html) view in the main menu, filtering by the **Validation review** task type. The user receives an internal notification when their task is approved or rejected.
 
@@ -206,10 +232,30 @@ In a specific submission, you can reassign the validation from the **Validations
 
 The signature task allows for a simple signature with a checkbox or an advanced one when a digital signature provider is installed in the realm integrations.
 
+In the task, you write the document shown to the user with a rich text editor. That document accepts HTML with the same restrictions as the [Rich Text of forms](/en/platform/customers/forms.html#rich-text): the editor removes what is not allowed, and the platform doesn't save a document that has HTML outside the allowed list.
+
 ### Pending Review
 
 The pending review task pauses the origination process. It is used to trigger asynchronous processes, usually in external systems.
 The task is refreshed every 5 seconds so that the end user knows if the task has been reviewed.
+
+In **Pending review page content**, you write what the user sees on the origination page while the task awaits review. In this task, that field plays the role of the **Waiting message shown to the user** of the other [agent tasks](#tasks-answered-by-agents). The agent also sees this content when opening the task from the submission. If you leave it empty, the user sees a default message telling them that the step is being processed.
+
+The content accepts HTML and Liquid, up to 65,535 characters, and on the origination page you can use these variables, among others:
+
+- `submission`: The submission.
+- `task`: The pending review task.
+- `task_response`: The response to this task.
+- `assignee_label`: The name of the administrator or group in charge of the task, based on the effective assignee. It's empty if no one is assigned.
+
+For example:
+
+```liquid
+<p>We're reviewing your request. You'll be able to continue once we're done.</p>
+{% if assignee_label %}
+  <p>It's being handled by {{ assignee_label }}.</p>
+{% endif %}
+```
 
 As with validation tasks, you can define an **Assignee** for the task: an administrator or a group of administrators. If you do not define one, the review is assigned by default to the submission assignee.
 
@@ -686,6 +732,8 @@ The available actions depend on the status: **Resend invitation** and **Cancel i
 
 When the last active invitation of the task is completed, the invitation task response completes on its own and the flow continues. From that moment on, no new invitations can be sent from that task.
 
+The link in the invitation email works for a single sign-in and expires after 7 days. In addition, every time the platform sends that person a new link, for example when the invitation is resent, when they are invited to another task, or when they request a password recovery, the previous links stop working. If the link no longer works and the invitation is still `pending`, the main user can resend it so the invitee gets a new link; if it was already accepted, the invitee has to sign in to the realm to return to the submission.
+
 :::tip Wait between resends
 You must wait a few minutes between one resend and the next. If you press **Resend invitation** too soon, the platform tells you how many minutes are left instead of sending the email.
 :::
@@ -698,7 +746,7 @@ When configuring the task, in **Select items to confirm** you choose the tasks w
 
 The user sees each selected task with its answers and an **Edit** link that takes them directly to that task to correct it. Pressing **Confirm** completes the task and the flow continues. To complete the task, all configured items must be confirmed.
 
-In the details of a submission, completed confirmation tasks show the list of **Confirmed Tasks**.
+In the **Fields** tab of a submission, each completed confirmation task shows the list of **Confirmed Tasks**.
 
 ### Tasks answered by agents
 
@@ -710,6 +758,14 @@ Each task in the flow has the **Assigned to** option, which defines who answers 
 When the flow reaches an agent task, the assigned administrators receive an email with a direct link to the task and also see it in the [**My tasks**](/en/platform/core/my-tasks.html) view. The effective assignee is resolved in this order: the assignee of the task response, the assignee configured on the task and, failing that, the assignee of the submission; you can reassign a specific task from the submission view, which notifies the new assignee.
 
 From the submission view, the agent opens the task and answers the form with the same experience as the site: live conditional logic, file uploads, repeatable groups, and code snippets. While the task awaits the agent's action, the user sees on the origination page the text configured in **Waiting message shown to the user**.
+
+:::tip Agent form styles
+The form of an agent task first loads the admin styles and then the published version of the `base` CSS view of the origination page's site, so the agent sees it with the site's look and feel. If the site does not have that view published, the form uses only the admin styles. The site's JavaScript is not loaded.
+
+The form content is placed inside the `#agent-task-content` container. Use that selector so a rule applies only in the agent view, for example `#agent-task-content .form-control`.
+
+Resources that the stylesheet pulls from other domains, such as an `@import`, fonts, or images, may not load in the agent form, so do not rely on them for its look. If the site has the [Cross Origin Resource Policy](/en/platform/channels/sites.html#cross-origin-resource-policy) header enabled, the browser may block the whole stylesheet and the form is shown with the admin styles only.
+:::
 
 Additional options depending on the task type:
 
@@ -792,11 +848,25 @@ This is how the assignment is applied:
 If you consume the originations admin API, keep in mind that each rule now has `targets`, an ordered list of actions, instead of `target`. When saving, the API still accepts `target`, but it always responds with `targets`, and an origination without rules responds `rules: []`. The **Assign** action is sent as a target with `action: assign`. See the details in the [API](/en/platform/core/api.html) Swagger documentation.
 :::
 
+### Test the origination in preview
+
+With the **Preview** button (eye icon) in the origination header, you can go through the flow as a user would. The button opens the origination page in the site preview with the version of the origination you are editing, so you can test your changes before publishing them. It is available when the origination has a linked page.
+
+The submissions you create in the preview are test submissions and are kept apart from the real ones:
+
+- They do not appear in the origination's **Submissions** list.
+- They do not count in [Insights](/en/platform/insights/origination.html) or in the [origination filters](/en/platform/customers/segments.html#origination-filters) of segments.
+
+:::warning Deletion of test submissions
+Test submissions are deleted without notice in two cases: when you publish the origination and, once a week, those that have gone more than 7 days without changes.
+:::
+
 ### Edit Origination Settings
 
 By selecting the **Edit** option in the context menu of your origination, you can edit its properties.
 
 - **Name**: Defines the name of the origination, visible to users in the interface.
+- **Identifier**: Appears locked with a padlock. To modify it, press the padlock and confirm the **Unlock Identifier field** warning: changing the identifier changes the origination URL and breaks references to it from external systems or through the Liquid SDK. Changing the **Name** doesn't modify it.
 - **Description**: Includes a brief explanatory text about the purpose of the origination.
 - **Completed message**: This is the message that will appear to the user at the end of the origination process.
 - **Default submission assignee**: Specifies the administrator or group of administrators that will be automatically assigned to each new submission. When selecting a group, you can use the **Assign to whole group** option or choose a specific user within it.
@@ -851,8 +921,12 @@ You can edit or delete roles from the same section. Since each role can only be 
 
 If you need to permanently delete an origination:
 
-1. Select the **Delete origination** option.
-2. Confirm that you do not need the origination data before proceeding.
+1. If the origination is published, unpublish it.
+2. In the actions menu (⋮) of the origination, select **Archive**.
+3. In the same menu, select **Delete**. The option is only enabled when the origination is archived.
+4. In the **Delete origination** modal, type the name of the origination in **Origination name** and press **Delete**.
+
+The origination cannot have submissions in **Pending** or **Completed** status: if it has any, the platform rejects the deletion with the message **You can't delete an origination with submissions**. Before that, [cancel them](/en/platform/customers/origination.html#cancel-submission) or [delete them](/en/platform/customers/origination.html#delete-submission). **Not started** and **Canceled** submissions are deleted along with the origination.
 
 :::danger Danger
 This process is irreversible.
@@ -951,11 +1025,13 @@ In the details view, you will find the following main sections:
 - **Signatures**: Tracking of the digital signatures collected during the flow.
 - **Identity Verification**: Result of the user's identity verification when the flow includes it.
 - **Validations**: Validations carried out by administrators to authorize progress.
-- **Activity**: Record of activities and changes made to the submission, useful for monitoring and auditing.
+- **Activity**: Record of activities and changes made to the submission, useful for monitoring and auditing. It has two views:
+  - **Admin**: The activity logs of the submission, which you can narrow down with the **Type** filter. The filter only offers the types present in that submission. If the flow uses an Identity Verification task with the **NAAT.TECH** integration, the errors the provider returns in the browser during document capture or the liveness check are logged here with the type **NAAT.TECH error in identity verification**. They help you diagnose why the user could not complete the verification.
+  - **User**: The events the end user generates while progressing through the submission.
 
 This structure provides you with a comprehensive and detailed view of each submission, allowing you to effectively manage all aspects related to the submissions.
 
-In multi-user submissions, the **Tasks**, **Reviews**, and **Validations** tabs include the **Viewing tasks for** selector, which allows you to switch between the **Main User** and each invited user to review the individual progress of their tasks.
+In multi-user submissions, the **Tasks**, **Fields**, and **Validations** tabs include a selector, **Viewing tasks for** in the first two and **Viewing validations for** in the last one, which allows you to switch between the **Main User** and each invited user to review the individual progress of their tasks.
 
 :::tip Tip
 From the submission view in the actions menu (identified with ...), you can [impersonate](/en/platform/customers/users) the user to help them answer the origination. This depends on the user's roles.
@@ -990,11 +1066,13 @@ The roles you already had keep the access they had: those that saw the full deta
 
 The submission list includes a search box that allows you to find submissions by the user's data, the values of their custom fields, the answers entered in the flow fields, and the content of the tasks.
 
+The answers in the flow fields and the content of the tasks are only searched if your role has **View Submission Tasks** or a permission that includes it, such as **View Full Submission**. Without that permission, the search only finds submissions by the user's data, their identifiers, and the values of their custom fields, and the flow question keys don't search the answers.
+
 The search requires a minimum of 3 characters, is case- and accent-insensitive, and finds partial matches. For example, `lau` finds "Claudio" and `perez` finds "Pérez". The `id` and `uuid` keys are the exception and are explained below.
 
 You can search in two ways, which you can also combine in the same query:
 
-- **Free text**: Type one or more terms and the search will find them in the user's data, the values of their custom fields, the answers entered in the flow fields, and the content of the tasks.
+- **Free text**: Type one or more terms and the search will find them in the user's data, the values of their custom fields, the answers entered in the flow fields, and the content of the tasks. If you type several terms, a match on any one of them is enough for the submission to show up, and the best matches are listed first.
 - **Key=value pairs**: Type the key of a field followed by `=` and the value to search for, to narrow the search down to that specific field.
 
 The available keys for `key=value` pairs are:
@@ -1007,8 +1085,8 @@ The available keys for `key=value` pairs are:
 When using `key=value` pairs, keep the following in mind:
 
 - The key must be written in full, while the value does allow partial matches. The `id` and `uuid` keys are the exception: they do not allow partial matches.
-- To search for values or phrases with spaces, use double quotes. For example, `first_name="Jean Pierre"` or `"crédito hipotecario"`.
-- All conditions are combined together, so a submission must satisfy every term and pair in the query to appear in the results.
+- To search for a value with spaces, wrap it in double quotes. For example, `first_name="Jean Pierre"`. Quotes only work inside a pair: in free text they don't build a phrase, so `"crédito hipotecario"` is searched the same as `crédito hipotecario`, and a match on either word is enough.
+- Pairs are combined with each other and with the free text: to appear in the results, a submission must satisfy every pair in the query and, if you also type free text, match at least one of its terms.
 - If the key does not exist or the value is empty, the term is searched as free text without generating errors.
 
 Some search examples:
@@ -1062,7 +1140,7 @@ When assigning to a whole group, all its members can view and manage the submiss
 
 #### Cancel submission
 
-To cancel a submission, open it and press the **Cancel** button in the submission view. In the modal, you can optionally enter a **Cancellation reason** and then confirm the action. Canceling permanently changes the status of the submission to **Canceled**.
+To cancel a submission, open it, expand the actions menu (⋮) of the submission view, and select **Cancel**. The option requires the **Complete Submissions** permission, which enables both completing and canceling submissions, and it doesn't appear on submissions that are already canceled. In the modal, you can optionally enter a **Cancellation reason** and then confirm the action. Canceling permanently changes the status of the submission to **Canceled**.
 
 You can cancel submissions in **Not started**, **Pending**, or **Completed** status.
 
@@ -1070,9 +1148,11 @@ The details of a canceled submission show the cancellation date in the **Cancele
 
 #### Delete submission
 
-To delete an individual submission, select the menu in the actions column and press the delete option. This will delete the submission.
+To delete an individual submission, in the submission list expand the menu in the **Actions** column and press **Delete**. You also have the **Delete** option in the actions menu (⋮) of the submission view, except on canceled submissions. In both cases, the platform asks you to confirm before deleting it permanently.
 
-To delete several submissions at the same time, select each entry by checking the corresponding box and press the delete button.
+To delete several submissions at the same time, check the box of each one and use the **Delete** bulk action.
+
+These options are only shown if your role has the **Delete Submissions** permission.
 
 #### Reopen tasks of a submission
 
@@ -1083,25 +1163,38 @@ Consider the following:
 - Changing the status of a task response requires the **Change Status of Task Response** permission; deleting task responses requires the **Delete Submissions** permission.
 - These operations are only available while the submission is in **Not started** or **Pending** status.
 - All operations are recorded in the platform activity.
+- If the reopened task had an approved validation, the approval is kept. The user can change their answers, but when the task is completed again it is validated and locked for editing once more, without a new review by the agent. For the corrected data to be reviewed again, the user must use **Modify data** in the task, an option available when the origination's **Validation rules** allow modifying previously validated responses.
 
 #### Invite users
 
-You can invite users to enter information in an origination. When inviting a user, you will need to enter their basic information:
+You can invite users to enter information in an origination with the **Invite** button. When inviting a user, you will need to enter their information:
 
 - **Name**: The first name of the user who will use the origination.
-- **Last name**: The last name of the user.
+- **Last Name**: The last name of the user.
 - **Email**: The user's email address, where they will receive the invitation to access the origination.
-- **Assign the submission**: In the drop-down list, select an administrator who will manage this particular origination. If an administrator is not selected, the submission will remain unassigned.
+- The fields that depend on the realm's sign-up settings: **Second last name**, **Phone number**, **Birthday**, and **Gender**, when the realm has them enabled, and the username, with the label the realm defines, when the realm doesn't use the email as the username. The username is always mandatory; the others, when the realm requires them at sign-up.
+- The user's active [custom fields](/en/platform/customers/settings.html#custom-fields). The required ones are mandatory.
+- **Assign submission to**: The administrator, the whole group of administrators, or the administrator within a group who will manage this submission. If you leave it empty, the origination's **Default submission assignee** applies and, if it has none, the submission remains unassigned.
 
-To invite users from the panel, the realm's **Account Activation** cannot be set to **Disabled**: with that option the **Invite** button appears disabled and, on hover, shows the message _Invitations are unavailable because sign up is disabled for this realm_.
+The button to send the invitation is enabled once you fill in all the mandatory fields.
 
-On the origination page the restriction is narrower: with **Disabled**, the form used to invite new users is blocked, but from there you can still invite users who already exist in the realm.
+The **Invite** button appears disabled and, on hover, shows a message with the reason in these cases:
+
+- The origination is not published: _Invitations are unavailable because the origination is not published_.
+- The origination has no associated page: _Invitations are unavailable because the origination has no associated page_.
+- The realm's **Account Activation** is set to **Disabled**: _Invitations are unavailable because sign up is disabled for this realm_.
+
+In addition, the button requires the **Start Submissions** permission: without it, the button appears disabled and shows no message.
+
+On the origination page, with **Account Activation** set to **Disabled**, the main user can't invite anyone through the name and email form, even if the email already belongs to a user of the realm. They can only pick from the list the people they already invited in another invitation task of the same submission or, if the [role](#roles) has the **Can be assumed by main user** option enabled, take the role themselves (**You**).
 
 If **Account Activation** is set to **Invitation only**, the new user you invite is created active and can complete the flow right away, with no activation email and no waiting. A user who already existed and was deactivated is not reactivated when invited: they keep their status. Review the options in the [realm settings](/en/platform/customers/settings.html#general).
 
 ### Assignee Management
 
-In the assignees view, you can monitor and manage the administrators responsible for the submissions within a realm. This view facilitates the tracking of performance and workload of administrators. You can filter the assigned submissions by date ranges.
+In the assignees view, you can monitor the administrators responsible for the submissions of this origination. This view facilitates the tracking of performance and workload of administrators.
+
+Only administrators who are individually assigned at least one submission of this origination appear: a submission assigned to a whole group, without a specific administrator, doesn't make the group members appear. The **Creation date** filter only shows the administrators who are assigned a submission of this origination created within that range.
 
 By selecting an administrator, you will be able to see all the submissions assigned to them and their corresponding status.
 
@@ -1126,10 +1219,11 @@ The origination you link must belong to the same realm as the site where you cre
 
 An origination page can be left without a linked origination. While it is in that state, the page responds to end users with a 404 error, so you must link an origination to deploy the flow again.
 
-This happens in three situations:
+This happens in four situations:
 
 - **You delete the origination**: the page remains on the site, but without a linked origination.
 - **You change the site's realm**: all origination pages on that site lose the reference, because each origination belongs to a realm. The application settings form warns you about this before you confirm the change.
 - **You create a stage**: origination pages are copied to the stage without their linked origination. Since each origination allows only one page, in the stage you must link a different origination from the same realm.
+- **You synchronize a new page from a stage**: if the page did not exist on the destination site, it arrives without a linked origination and you must link an origination from that site's realm. If the page already existed, it keeps the origination it had.
 
 For more details on how stages behave, review the [stages](/en/platform/channels/sites.html#stages) section of web applications.

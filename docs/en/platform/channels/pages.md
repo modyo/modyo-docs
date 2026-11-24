@@ -81,7 +81,7 @@ To learn more about origination pages, see [Create an Origination Page](/en/plat
 - Publish: If the page is approved, you can go to the [joint publication view](/en/platform/channels/sites.html#review-and-joint-publication) using this action.
 
 :::tip Tip
-- If a page has a parent, you can only publish it if it is published.
+- If a page has a parent, you can only publish it if the parent is already published or if you select it in the same [joint publication](/en/platform/channels/sites.html#review-and-joint-publication).
 - If a page has children, you can only unpublish it if all of them are unpublished.
 - If a page has children, you can only archive it if all of them are archived.
 :::
@@ -130,8 +130,8 @@ It is necessary that your account's CDN is in the cloud for changes to be reflec
 
 In the sidebar's **Add** tab you will find two groups. Under **Blocks** are the preset widgets that Modyo ships:
 
-- **HTML**: Allows you to enter HTML and CSS code without validations. It will not allow you to enter Javascript code.
-- **Rich text**: Allows you to use a rich text editor, in which you can format text and switch between code view and rich text.
+- **HTML**: Allows you to enter HTML, CSS, and Liquid code. If the code includes a `<script>` tag, Modyo does not save the page and warns you that scripts are not allowed.
+- **Rich text**: Allows you to use a rich text editor, in which you can format text and switch between code view and rich text. Like the **HTML** block, it renders Liquid.
 :::warning Attention
 The rich text widget has an automatic formatter, so the code you write in the code view may be affected.
 :::
@@ -146,7 +146,7 @@ Once a widget is selected in the central section, the focus will shift to the si
 
 ### Properties
 
-In this tab you will find the widget page controls, in the same order they appear in the panel. **Grid** and **Delegate child routes to this page** only exist here and on the home page: content and origination pages do not have those controls.
+In this tab you will find the widget page controls, in the same order they appear in the panel. **Grid** is also on the home page, and **Delegate child routes to this page** only exists here: content and origination pages have neither of those controls.
 
 - **Name**: The name of the page.
 - **Parent page**: The page under which this one is nested. You can only choose widget pages of the site that are published, scheduled, or unpublished.
@@ -159,7 +159,11 @@ In this tab you will find the widget page controls, in the same order they appea
 - **Custom meta tags**: See [Meta tags](/en/platform/channels/pages.html#meta-tags).
 
 :::warning Attention
-Modyo has reserved paths for pages, so you cannot use them as paths for your custom pages:
+The **Path** only accepts unaccented letters, numbers, hyphens (`-`), and underscores (`_`). The full path of the page, which includes the paths of its parent pages, cannot exceed 255 characters. If you change the path of a parent page and the full path of any of its children goes over that length, the change is not saved.
+
+Pages of different types can share the same path. In that case, the site shows the widget page before the content page, and the content page before the origination page.
+
+Modyo has reserved paths, so you cannot use them as the path of a top-level page, that is, a page without a **Parent page**:
 <table style="border: none;"><tr style="border: none;">
 <td style="border: none;"><ul>
 <li>404</li>
@@ -219,7 +223,7 @@ To iterate over the widgets of each zone from your templates, see the [grid](/en
 
 ### Route delegation
 
-When you enable **Delegate child routes to this page**, Modyo serves this same page for any sub-route that does not match another page of the site, and your JavaScript router takes absolute control of those sub-routes.
+When you enable **Delegate child routes to this page**, Modyo serves this same page for any sub-route that does not match another widget page of the site, and your JavaScript router takes absolute control of those sub-routes. This includes the content and origination pages you nest under it: their URLs show the delegating page.
 
 :::tip Tip
 On content pages you do not need to delegate routes: the **Index** resolves the list route and the **Show** resolves the sub-route of each entry.
@@ -248,7 +252,7 @@ The index page contains the list of all entries of the content type. Here you ca
 
 #### Edit
 
-- **Enable Entry Index**: Disabled by default. The path it takes is the name given to the page when it was created. If this option is disabled, only **Show** pages will be accessible, and if access is attempted, a 404 error will be displayed.
+- **Enable Entries Index**: Enabled by default. The index responds at the page's **Path**, which includes the paths of its parent pages, not at its name. If you disable this option, only the URL of each entry (**Show**) is accessible, and the index path responds with a 404 error.
 - **Layout**: The Layout template that will load for the Index.
 - **Custom Meta Tag**: Adds custom meta tags to optimize the SEO of the index. This meta tag will only be loaded for the Index, not for the Show. You can also use Liquid to load dynamic meta tags.
 
@@ -290,7 +294,7 @@ It can be complemented with the use of [Content Filters](/en/platform/channels/l
 
 #### Properties
 
-Displays the content type and the space to which this page belongs. You will also have options to change the name, parent page, path, and an excerpt.
+Displays the content type and the space to which this page belongs. You will also have options to change the name, parent page, path, excerpt, the **Use categories** option, and [privacy](/en/platform/channels/pages.html#privacy). To learn how **Use categories** changes the page URLs, see [URLs with categories](/en/platform/channels/pages.html#urls-with-categories).
 
 :::tip Tip
 If the custom domain is enabled, to find the URL format, you must go to ``Site Settings > Domains``.
@@ -304,9 +308,23 @@ The excerpt is added as part of the meta tags to improve SEO. This is possible f
 <meta name="description" content="{{ page.excerpt }}"/>
 ```
 
+#### URLs with categories
+
+With the **Use categories** option enabled, the full path of each entry's [category](/en/platform/content/categories.html) becomes part of its URLs. For example, for a content page with the path `blog`, a `travel` category, and an entry with the slug `visit-chile`:
+
+- The index responds at `blog` with all entries and at `blog/travel` with the entries of the `travel` category and its subcategories.
+- If the entry belongs to `travel`, it responds at `blog/travel/visit-chile`. If it has no category, it responds at `blog/visit-chile`.
+- The entry URL returned by the `entry` object in Liquid includes the path of its category.
+
+With the option disabled, each entry responds at `blog/<slug>` regardless of its category (the one in the example, at `blog/visit-chile`), and the index only responds at `blog`. To read the category that comes in the URL from your templates, use the `category_path` and `category` variables [from content pages](/en/platform/channels/liquid-markup/variables.html#from-content-pages).
+
 ## Privacy
 
-If you enable privacy on a page, a session will be required to view this page. Along with privacy, you can also associate [Segments](/en/platform/customers/segments), so that only users belonging to those segments will be able to access this page. Those who are not part of the selected segment group will be redirected to the previous page or the site's home page.
+If you enable privacy on a page, a session will be required to view this page. Along with privacy, you can also associate [Segments](/en/platform/customers/segments), so that only users belonging to those segments will be able to access this page. Visitors without a session are redirected to sign in to the site. Signed-in users who do not belong to the selected segments see the site's [404 view](/en/platform/channels/templates.html#errors-in-views), or go to the home page if the **Redirect to home when a URL is not found** option is enabled.
+
+Privacy is only available if the site is connected to a [realm](/en/platform/channels/sites.html#general). Without a realm, the **Private** checkbox is disabled and you cannot associate segments. The segments you can choose are those of the site's realm.
+
+When you create a widget or content page with a **Parent page**, the new page takes the privacy and segments of that parent. You can change them afterwards in its **Properties** without affecting the parent.
 
 ## Meta tags
 

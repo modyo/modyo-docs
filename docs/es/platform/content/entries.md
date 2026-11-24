@@ -188,7 +188,7 @@ Para publicar una entrada en Modyo, sigue estos pasos:
 1. En la parte superior de la pantalla, haz click en **Guardar**.
 1. Si tienes permisos de administrador, el botón de **Guardar** cambia a **Publicar** y puedes proceder a publicar tu entrada. De lo contrario, otro usuario con permisos de Administrador puede hacerlo. Si está activa la revisión en equipo, pasará por ese proceso antes de publicarse.
 
-Puedes encontrar más información de revisión en equipo en la sección de [Conceptos Clave](https://docs.modyo.com/es/platform/core/key-concepts) de nuestra documentación.
+Puedes encontrar más información de revisión en equipo en la sección [Revisión en Equipo](/es/platform/core/#revision-en-equipo).
 
 
 ### Despublicar una entrada
@@ -334,7 +334,7 @@ Para crear una categoría:
 1. Haz click en el botón **Nueva categoría**.
 1. En la ventana emergente, ingresa el nombre, la ruta y, opcionalmente, una categoría padre.
 
-Cuando asignas una entrada a una categoría, Modyo agrega la ruta completa de la categoría, incluidas sus categorías padre, entre la ruta de la [página de contenido](/es/platform/channels/pages#pagina-de-contenido) y el identificador de la entrada. Esto solo ocurre si la página de contenido tiene activa la opción **Usar categorías**, que viene desactivada. Por ejemplo:
+Cuando asignas una entrada a una categoría, Modyo agrega la ruta completa de la categoría, incluidas sus categorías padre, entre la ruta de la [página de contenido](/es/platform/channels/pages#pagina-de-contenido) y el identificador de la entrada. Esto solo ocurre si la página de contenido tiene activa la opción **Usar categorías**, que viene desactivada (revisa [URLs con categorías](/es/platform/channels/pages.html#urls-con-categorias)). Por ejemplo:
 
 Una entrada con URL: test.modyo.com/blog/visita-chile y categoría ‘travel’, ahora sería test.modyo.com/blog/travel/visita-chile.
 

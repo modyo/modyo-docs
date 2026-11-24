@@ -8,7 +8,7 @@ search: true
 
 El [Model Context Protocol (MCP)](https://modelcontextprotocol.io) es un estándar abierto para conectar asistentes de inteligencia artificial con herramientas y fuentes de datos. El **Modyo MCP Server** conecta un asistente de IA con la API de administración de Modyo, para gestionar la plataforma (contenido, sitios, widgets, customers y administración) y para construir widgets con Dynamic Framework, conversando en lenguaje natural.
 
-Se distribuye como el paquete npm [`@modyo/mcp`](https://www.npmjs.com/package/@modyo/mcp) y corre como un proceso local que el cliente de IA lanza por stdio. Esta página describe la versión 0.5.11.
+Se distribuye como el paquete npm [`@modyo/mcp`](https://www.npmjs.com/package/@modyo/mcp) y corre como un proceso local que el cliente de IA lanza por stdio. Esta página describe la versión 0.5.12.
 
 Para construir un widget de punta a punta con el MCP, ve [Desarrollar widgets con el MCP](/es/platform/tools/mcp-widgets.html).
 
@@ -272,7 +272,7 @@ Las dos variables se combinan. Para auditar un sitio sin riesgo de modificarlo, 
 }
 ```
 
-Tools que lista el cliente según la configuración, en la versión 0.5.11:
+Tools que lista el cliente según la configuración, en la versión 0.5.12:
 
 | Configuración | Tools |
 |---|---|
@@ -313,7 +313,7 @@ Archivar una definición de widget también pide confirmación, porque elimina s
 
 ### Bloqueos de edición
 
-Leer el código de un template hace que la plataforma tome un bloqueo de edición a nombre del usuario del token. Las tools que leen templates (`channels-templates-search`, `channels-templates-replace`, `channels-templates-manage`, `channels-templates-copy` y `channels-download`) liberan ese bloqueo antes de responder, y nunca tocan uno de otro usuario. Si no pueden liberarlo, lo informan en `lockReleaseErrors`, con el id del bloqueo, el template y el paso que falló. Se libera con `channels-locks-manage`, acción `release` y el `lockId`, también en modo de solo lectura.
+Leer el código de un template hace que la plataforma tome un bloqueo de edición a nombre del usuario del token, y guardarlo también. Las tools que leen o escriben templates (`channels-templates-search`, `channels-templates-replace`, `channels-templates-manage`, `channels-templates-copy`, `channels-templates-upsert`, `channels-account-templates-manage` y `channels-download`) liberan ese bloqueo antes de responder, y nunca tocan uno de otro usuario. Las que guardan templates (`channels-templates-manage` al crear o actualizar, `channels-templates-upsert` y `channels-account-templates-manage`) lo conservan si se les pide con `keepLock`. Si no pueden liberarlo, lo informan en `lockReleaseErrors`, con el id del bloqueo, el template y el paso que falló. Se libera con `channels-locks-manage`, acción `release` y el `lockId`, también en modo de solo lectura.
 
 ## Qué puede hacer
 
@@ -558,7 +558,7 @@ El server corre con `MODYO_READ_ONLY=true` y la acción pedida escribe en la pla
 
 En clientes sin confirmación interactiva, un borrado sin `confirmed: true` no se ejecuta: la respuesta trae en `control.aborted` lo que se habría borrado. Revisa la lista y pide al agente que repita la operación con la confirmación.
 
-### Un template quedó bloqueado después de que el agente lo leyó
+### Un template quedó bloqueado después de que el agente lo leyó o lo guardó
 
 Revisa `lockReleaseErrors` en la respuesta de la tool: trae el `lockId` y el paso que falló. Pide al agente que libere el bloqueo con `channels-locks-manage` (`release` y el `lockId`); funciona también en modo de solo lectura. También puedes liberarlo desde Modyo Admin.
 

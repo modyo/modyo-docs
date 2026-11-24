@@ -17,7 +17,7 @@ Filters can also be chained together by adding additional filter statements (sta
 ```liquid
 Hello {{ 'tobi' | upcase }}
 Hello tobi has {{ 'tobi' | size }} letters!
-Hello {{ '*tobi*' | textilize | upcase }}
+Hello {{ '  tobi  ' | strip | upcase }}
 Hello {{ 'now' | date: "%Y %h" }}
 ```
 
@@ -40,7 +40,8 @@ Encodes a string to Base64 *e.g.*
 
 ### Capitalize
 
-Capitalizes the first letter of each word in the input string.
+Capitalizes the first character of the string and converts the rest to lowercase *e.g.*
+<span v-pre>`{{ 'hello WORLD' | capitalize }} #=> 'Hello world'`</span>
 
 ### Ceiling
 
@@ -113,7 +114,7 @@ Modulo *e.g.*
 <span v-pre>`{{ 3 | modulo:2 }} #=> 1`</span>
 
 ### Newline to br
-Replaces each newline (\n) with HTML break tag.
+Inserts an HTML line break (`<br />`) before each newline (\n) in the text.
 
 ### Plus
 Performs addition *e.g.*
@@ -186,9 +187,9 @@ Adds currency format to a value. *e.g.*
 <span v-pre>`{{ 1890.5123 | format_currency: unit: '¥', separator: ',', delimiter: '.', precision: 3 }} = ¥1.890,512`</span>
 
 :::warning Important
-This filter determines the currency format and takes precedence over any other currency configuration.
+The parameters you pass to the filter take precedence over any other currency configuration, but they aren't merged with it: if you pass at least one, Modyo uses only the ones you set and takes the missing ones from the predefined format of the site's language, not from the realm. For example, with only `unit: 'US$'` you lose the realm's separator, delimiter, and precision, so pass all four parameters when you need a complete format.
 
-If you don't specify currency parameters with the currency filter, Modyo uses the realm's [payment](/en/platform/customers/settings.html#payment-configuration) configuration.
+If you don't specify currency parameters with the currency filter, Modyo uses the realm's [payment](/en/platform/customers/settings.html#payment-settings) configuration.
 
 If the site doesn't have an associated realm and you don't specify parameters, the predefined format of the site's language will be applied.
 :::
@@ -199,6 +200,8 @@ If the site doesn't have an associated realm and you don't specify parameters, t
 - separator - decimal separator.
 - delimiter - thousands separator.
 - precision - number of decimal digits.
+
+Any other key is ignored, although it still makes the filter stop using the realm's configuration. Write `unit` as text and `precision` as a number: with another type of value, such as `unit: 123` or `precision: 'two'`, the filter aborts and the published HTML keeps the comment `<!-- Liquid Error -->` in place of the amount.
 
 
 ## Common
@@ -323,17 +326,19 @@ Returns the tags of a video using its uuid from the File Manager. *e.g.*
 
 ### By category
 
-Returns a list of Entries that belong to the selected Category. *e.g.*
+Returns a list of Entries that belong to any of the selected Categories or to their subcategories. *e.g.*
 <span v-pre>`{% assign filtered_entries = entries | by_category: 'category2,category1,category3' %}`</span>
 
 **Parameters**:
 - entries (ArrayEntry) — array with entries
-- list (String) (default: '') — String with comma-separated categories.
+- list (String | Array) (default: '') — category slugs or paths (`parent/child`), comma-separated or as an array.
+
+Each value is compared against the segments of the path of the entry's category, not against the category name. That is why a parent category also brings the entries of its subcategories, and a bare slug matches every category with that slug, at any level of the tree. To tell apart categories that share a slug in different branches, pass the path, such as `news/sports`. With several values, the result includes the entries that match any of them.
 
 ### By lang
 
 Returns a list of Entries in the given language. The filter is called `by_lang`: `locale` is the name of the parameter, not the name of the filter. *e.g.*
-<span v-pre>`{% assign entries = widget.entries | by_lang: 'es' %} => entries`</span>
+<span v-pre>`{% assign entries = spaces['blog'].types['post'].entries | by_lang: 'es' %} => entries`</span>
 
 **Parameters**:
 - entries (ArrayEntry) — array with entries
@@ -358,12 +363,14 @@ Returns a list of Entries that belong to a selected slug. *e.g.*
 
 ### By tag
 
-Returns a list of Entries that belong to a selected tag. *e.g.*
-<span v-pre>`{% assign entries = widget.entries | by_tag: 'tag2,tag1,tag3' %} => entries`</span>
+Returns a list of Entries that have all the given tags. *e.g.*
+<span v-pre>`{% assign entries = spaces['blog'].types['post'].entries | by_tag: 'tag2,tag1,tag3' %} => entries`</span>
 
 **Parameters**:
 - entries (ArrayEntry) — array with entries
 - list (String) (default: '') — String with comma-separated tags.
+
+With several tags, the result includes only the entries that have all of them, not the ones that have any of them. That sets it apart from `by_category`, `by_slug`, `by_type` and `by_uuid`, which return the entries that match any of the values. The comparison is case-insensitive.
 
 ### By type
 
@@ -382,7 +389,7 @@ Filters an array of entries by one or more UUIDs.
 - entries (ArrayEntry) — collection (object before the pipe)
 - uuid_list (String) — comma-separated list of UUIDs
 
-Defaults: If `uuid_list` is blank returns the original collection.
+If `uuid_list` is empty, the result is an empty collection, just like with `by_slug`, `by_type` and `by_tag`.
 
 *e.g.* <span v-pre>`{% assign filtered = entries | by_uuid: 'uuid2,uuid1,uuid3' %}`</span>
 
@@ -390,13 +397,13 @@ Defaults: If `uuid_list` is blank returns the original collection.
 
 Applies multiple entry filters in one call. Supported option keys (all optional):
 - types: comma-separated type slugs (applies `by_type`)
-- categories: comma-separated category slugs (applies `by_category`)
-- tags: comma-separated tags (applies `by_tag`)
+- categories: comma-separated category slugs or paths; includes subcategories (applies `by_category`)
+- tags: comma-separated tags; the entry must have all of them (applies `by_tag`)
 - slugs: comma-separated entry slugs (applies `by_slug`)
 - uuids: comma-separated UUIDs (applies `by_uuid`)
 - locale: a single locale code (applies `by_lang`; a comma-separated list is not supported)
-- from_published_date: date string (>= `published_at`)
-- to_published_date: date string (<= `published_at`)
+- from_published_date: string with the start date, from 00:00 on that day (applies `from_published_date`)
+- to_published_date: string with the end date, up to the end of that day (applies `to_published_date`)
 - sort_by: field name (default: `created_at`). Accepts `name`, `slug`, `created_at`, `updated_at` and `published_at`, or a field with its prefix (`fields.<name>` or `meta.<attribute>`); see [Sort By](/en/platform/channels/liquid-markup/filters.html#sort-by)
 - order: `asc` | `desc` (default: `desc`)
 - per_page: integer results per page (enables pagination if provided; default: 10)
@@ -404,7 +411,7 @@ Applies multiple entry filters in one call. Supported option keys (all optional)
 
 *e.g.* <span v-pre>`{% assign entries = spaces['testing'].entries | by: types: 'promo,basic', locale: 'es', categories: 'starred,favorites', tags: 'test,test2', slugs: 'slug2,slug1', uuids: 'uuid2,uuid1', sort_by: 'name', order: 'asc', per_page: 10, page: 2 %}`</span>
 
-`sort_by` and `order` are optional in the call, but not in effect: `by` always applies `sort_by`, using `created_at` and `desc` as defaults. A collection that already came sorted by another criterion, such as a widget with its own order, comes out re-sorted by creation date descending even if the template requests no ordering at all, and there is no way to tell `by` not to sort. If you need to preserve the original order, chain the simple filters (`by_type`, `by_category`, `by_tag`, `by_slug`…) instead of using `by`.
+`sort_by` and `order` are optional in the call, but not in effect: `by` always applies `sort_by`, using `created_at` and `desc` as defaults. That order is added after whatever order the collection already has, it doesn't replace it: if the collection comes sorted by an earlier `sort_by`, that criterion still wins and the one from `by` only breaks ties. The same holds for any chain of sorts, where the first one wins, so a `sort_by` chained after `by` only breaks ties and the listing stays sorted by creation date. To sort by another criterion, pass it in the `sort_by` and `order` keys of `by` or sort the collection before applying it.
 
 Pagination, on the other hand, is optional: it is applied only if you pass `per_page` or `page`. The defaults of those two keys are what the filter uses when you set one and omit the other, and they are subject to the URL parameter precedence described in [Paginated](/en/platform/channels/liquid-markup/filters.html#paginated).
 
@@ -412,10 +419,9 @@ Pagination, on the other hand, is optional: it is applied only if you pass `per_
 Keys that `by` does not recognize are ignored silently, with no error or warning: a singular `type:` or a misspelled `tag:` filters nothing and the listing comes out complete. Check the key names against the list above before giving up on a filter that seems to do nothing.
 :::
 
-### Filter By
+### Filter By (Extended Operators)
 
-Returns a list of Entries that match a filter. *e.g.*
-<span v-pre>`{% assign entries = widget.entries | filter_by: field: 'meta.name', eq: 'entry3Cat3' %}`</span>
+Returns a list of Entries that match a filter.
 
 **Parameters**:
 - entries (ArrayEntry) — array with entries
@@ -424,14 +430,14 @@ Returns a list of Entries that match a filter. *e.g.*
 The value of `field` is always written with its prefix:
 
 - `fields.<name>` for the content type's fields.
-- `meta.<attribute>` for metadata, with these attributes available: `meta.uuid`, `meta.name`, `meta.slug`, `meta.category`, `meta.category_slug`, `meta.category_name`, `meta.created_at`, `meta.updated_at`, `meta.published_at` and `meta.unpublished_at`. To filter by tags use `by_tag`.
+- `meta.<attribute>` for metadata, with these attributes available: `meta.uuid`, `meta.name`, `meta.slug`, `meta.category`, `meta.category_slug`, `meta.category_name`, `meta.created_at`, `meta.updated_at` and `meta.published_at`. To filter by tags use `by_tag`.
 
 :::warning Attention
 A field name without a prefix is silently discarded: the filter raises no error and returns the whole collection, unfiltered. If a listing shows you every entry, check first that the value of `field` starts with `fields.` or with `meta.`.
 :::
 
 **Supported Operators** (use as keys in `opts`):
-- `eq` — equals (implicit when only `field` and value provided)
+- `eq` — equals. Always write it explicitly, as in `eq: 'value'`, and don't combine it with the others: if you include it, `filter_by` applies only `eq` and ignores the rest of the operators
 - `not` — not equal to. With `nil` as the value it returns the entries that do have a value in the field
 - `gt`, `lt` — greater than / less than
 - `in` — field value must be one of the comma-separated values
@@ -440,9 +446,12 @@ A field name without a prefix is silently discarded: the filter raises no error 
 - `search` — searches the text in the attributes of the entry's locations; requires a location field
 - `geohash` — searches by proximity with a base 32 geohash; requires a location field
 
-Only `in`, `nin` and `has` take a comma-separated string; the rest take a single value. `search` and `geohash` behave just like in the [Content public API](/en/platform/content/public-api-reference.html#operators). The `all` operator, which appears in the Filter By Query String list, is not available in `filter_by`.
+Only `in`, `nin` and `has` take a comma-separated string; the rest take a single value. `search` and `geohash` behave just like in the [Content public API](/en/platform/content/public-api-reference.html#operators). If you pass `field` with no operator, or only with operators that aren't on the list, such as `all`, the filter returns the whole collection, unfiltered.
 
 **Examples**:
+
+Filter entries where the `status` field is 'published':
+<span v-pre>`{% assign entries = entries | filter_by: field: 'fields.status', eq: 'published' %}`</span>
 
 Filter entries where the `status` field is either 'published' or 'featured':
 <span v-pre>`{% assign entries = entries | filter_by: field: 'fields.status', in: 'published,featured' %}`</span>
@@ -460,42 +469,61 @@ Filter entries published after a date:
 <span v-pre>`{% assign entries = entries | filter_by: field: 'meta.published_at', gt: '2026-01-01' %}`</span>
 
 :::warning Attention
-There are two cases where `filter_by` aborts and the published HTML keeps the comment `<!-- Liquid Error -->` in place of the block: when you call it without `field`, and when you apply it to a collection whose content type can't be resolved, such as <span v-pre>`spaces['blog'].entries`</span>. Always start from a collection scoped to a single type, such as <span v-pre>`spaces['blog'].types['post'].entries`</span> or <span v-pre>`widget.entries`</span>.
+There are two cases where `filter_by` aborts and the published HTML keeps the comment `<!-- Liquid Error -->` in place of the block: when you call it without `field`, and when you apply it to a collection whose content type can't be resolved, such as <span v-pre>`spaces['blog'].entries`</span>. Always start from a collection scoped to a single type, such as <span v-pre>`spaces['blog'].types['post'].entries`</span>.
 :::
 
 ### Filter By Query String
 
-Returns a list of Entries that match a query. You can use logical operators, various meta fields, URLs, or Liquid tags.
+Returns a list of Entries filtered with the parameters in the page URL. The filter takes no arguments: each visit applies the filters in its query string. *e.g.*
+<span v-pre>`{% assign entries = spaces['blog'].types['post'].entries | filter_by_query_string %}`</span>
+
+**Parameters**:
+- entries (ArrayEntry) — entry collection scoped to a content type
+
+**Fields**:
+- `meta.uuid`, `meta.name`, `meta.slug`, `meta.category`, `meta.category_slug`, `meta.category_name`, `meta.created_at`, `meta.updated_at` and `meta.published_at`
+- `fields.<name>`, for any field of the content type
+
+`meta.category` takes the full path of the category, such as `news/sports`, and includes the entries of its subcategories. To filter by tags use `by_tag`.
 
 **Operators**:
 
-- gt, lt, in, all, nin
+Without an operator, the parameter filters by equality. Operators are written in brackets after the field:
 
-**Fields**:
-- meta.category meta.category_slug meta.category_name meta.uuid meta.name meta.created_at
- meta.updated_at meta.published_at meta.unpublished_at meta.slug meta.tag
+- `gt`, `lt` and `not` take a single value, as in `?meta.published_at[gt]=2026-01-01`.
+- `in`, `nin` and `has` take a list: repeat the parameter with `[]`, even if you pass a single value, as in `?fields.color[in][]=red&fields.color[in][]=blue`.
+- `search` and `geohash` search location fields, just like in the [Content public API](/en/platform/content/public-api-reference.html#operators).
+
+Besides filtering by field, the URL accepts:
+
+- `sort_by` and `order` to sort the result. `sort_by` always takes the `fields.` or `meta.` prefix, and `order` is `asc` or `desc`, with `asc` as the default.
+- `search` to search for a text in the type's [Single-line text](/en/platform/content/types.html#single-line-text), [Multiline text](/en/platform/content/types.html#multiline-text) and [Rich text](/en/platform/content/types.html#rich-text) fields, and in the entry's name, slug, excerpt and category.
 
 **URL Examples**:
 
 - https://company.site.com/testsite?meta.category_slug=category3
-- https://company.site.com/testsite?meta.tag=tag_name
-- https://company.site.com/testsite?meta.tag[in][]=tag1_name&meta.tag[in][]=tag2_name
 - https://company.site.com/testsite?meta.created_at=1987-11-19T13:13:13
+- https://company.site.com/testsite?fields.color[in][]=red&fields.color[in][]=blue
+- https://company.site.com/testsite?search=modyo&sort_by=meta.published_at&order=desc
 
-*e.g.*
-<span v-pre>`{% assign entries = widget.entries | filter_by_query_string %}`</span>
-
-**Parameters**:
-- entries (ArrayEntry) — array with entries
+:::warning Attention
+The filter reads every parameter in the URL, not just the filter ones, and silently ignores the ones it doesn't recognize. Always apply it to a collection scoped to a type, such as <span v-pre>`spaces['blog'].types['post'].entries`</span>. On a whole-space collection, such as <span v-pre>`spaces['blog'].entries`</span>, the page works while the URL has no parameters, but any single parameter, even one that isn't a filter, such as `utm_source` or `page`, makes the filter abort and the published HTML keeps the comment `<!-- Liquid Error -->` in place of the block.
+:::
 
 ### From Published Date
 
-Returns a list of Entries that have a publication date more recent than the limit. *e.g.*
-<span v-pre>`{% assign entries = widgets.entries | from_published_date: date %}`</span>
+Returns a list of Entries published from the given date, including that day. *e.g.*
+<span v-pre>`{% assign entries = spaces['blog'].types['post'].entries | from_published_date: '2024-01-31' %}`</span>
 
 **Parameters**:
 - entries (ArrayEntry) — array with entries
-- date (Datetime)(default: Time.zone.now) — limit date
+- date (String) — limit date, required, such as `'2024-01-31'` or, with the day first, `'31/01/2024'`
+
+The filter takes only the day of the date, without the time: it includes the entries published from 00:00 on that day.
+
+:::warning Attention
+The date must arrive as a string. If you pass a date object, such as `entry.meta.published_at`, the filter aborts and the published HTML keeps the comment `<!-- Liquid Error -->` in place of the block. Convert it first with the `date` filter, as in `entry.meta.published_at | date: '%Y-%m-%d'`.
+:::
 
 ### Limit
 
@@ -503,8 +531,12 @@ Limits the number of results. *e.g.*
 <span v-pre>`{{ entries | limit: 1 }}`</span>
 
 **Parameters**:
-- object(Array) — array
+- entries (ArrayEntry) — entry collection (object before the pipe)
 - limit (Integer)(default: 1) — result limit
+
+:::warning Attention
+`limit` only works on an entry collection. Applied to an array, such as the result of `sort`, `map` or `split`, the filter aborts and the published HTML keeps the comment `<!-- Liquid Error -->` in place of the block. To trim an array use the `limit` parameter of the `for` tag, as in <span v-pre>`{% for item in items limit: 3 %}`</span>.
+:::
 
 ### Paginated
 
@@ -527,7 +559,7 @@ Applied to something that is not an entry collection, for example an array alrea
 ### Sort By
 
 Returns an array with entries sorted by a field *e.g.*
-<span v-pre>`{% assign entries = widgets.entries | sort_by: 'name', 'asc' %}`</span>
+<span v-pre>`{% assign entries = spaces['blog'].types['post'].entries | sort_by: 'name', 'asc' %}`</span>
 
 **Parameters**:
 - collection (ArrayEntry | ArrayCategory) — collection to sort (object before the pipe)
@@ -539,24 +571,26 @@ The default order is descending and any value that is not exactly `asc` is treat
 The accepted fields depend on the collection the filter receives:
 
 - **Category collection**: only `name`, `slug` and `uuid`.
-- **Entry collection**: the five meta attributes `name`, `slug`, `created_at`, `updated_at` and `published_at` are sorted directly. Any other name is resolved by the search layer, which requires the container prefix, just like [Filter By](/en/platform/channels/liquid-markup/filters.html#filter-by): `fields.<name>` for a content type field and `meta.<attribute>` for the remaining metadata.
+- **Entry collection**: the five meta attributes `name`, `slug`, `created_at`, `updated_at` and `published_at` are sorted directly. Any other name is resolved by the search layer, which requires the container prefix, just like [Filter By](/en/platform/channels/liquid-markup/filters.html#filter-by-extended-operators): `fields.<name>` for a content type field and `meta.<attribute>` for the remaining metadata.
 
 :::warning Attention
 On a category collection, a field outside `name`, `slug` and `uuid` returns an empty collection with no error at all: the listing looks blank and seems to have no data.
 
-On an entry collection, a name without a prefix, such as `'price'` instead of `'fields.price'`, does not sort by the field you expect. Also, sorting by `fields.<name>` requires, just like `filter_by`, a collection scoped to a content type: on something like <span v-pre>`spaces['blog'].entries`</span> the filter aborts and the published HTML keeps the `<!-- Liquid Error -->` comment in place of the block. Start from <span v-pre>`spaces['blog'].types['post'].entries`</span> or from <span v-pre>`widget.entries`</span>.
+On an entry collection, a name without a prefix, such as `'price'` instead of `'fields.price'`, does not sort by the field you expect. Also, sorting by `fields.<name>` requires, just like `filter_by`, a collection scoped to a content type: on something like <span v-pre>`spaces['blog'].entries`</span> the filter aborts and the published HTML keeps the `<!-- Liquid Error -->` comment in place of the block. Start from <span v-pre>`spaces['blog'].types['post'].entries`</span>.
 
 The filter also aborts, with the same comment in the output, if the field or the order do not arrive as strings, for example <span v-pre>`| sort_by: 'name', 1`</span>.
 :::
 
 ### To Published Date
 
-Returns a list of Entries that have a publication date older than the limit. *e.g.*
-<span v-pre>`{% assign entries = widgets.entries | to_published_date: date %}`</span>
+Returns a list of Entries published up to the given date, including that day. *e.g.*
+<span v-pre>`{% assign entries = spaces['blog'].types['post'].entries | to_published_date: '2024-12-31' %}`</span>
 
 **Parameters**:
 - entries (ArrayEntry) — array with entries
-- date (Datetime)(default: Time.zone.now) — limit date
+- date (String) — limit date, required, in the same format as in [From Published Date](/en/platform/channels/liquid-markup/filters.html#from-published-date)
+
+The filter takes only the day of the date: it includes the entries published up to the end of that day. Just like `from_published_date`, it aborts if the date doesn't arrive as a string.
 
 ## Crypto
 
@@ -584,15 +618,15 @@ Every color filter aborts if the input value isn't a valid color, for example a 
 
 ### Brighten
 
-Adds brightness to a color (e.g. <span v-pre>`{{ '#00ff00' | brighten: 15 }} #=> '#26ff26'`</span>).
+Adds brightness to a color (e.g. <span v-pre>`{{ '#00ff00' | brighten: 15 }} #=> '#26ff26'`</span>). If you omit the amount, it uses `10`.
 
 ### Darken
 
-Reduces the brightness of a color (e.g. <span v-pre>`{{ '#00ff00' | darken: 15 }} #=> '#00b300'`</span>).
+Reduces the brightness of a color (e.g. <span v-pre>`{{ '#00ff00' | darken: 15 }} #=> '#00b300'`</span>). If you omit the amount, it uses `10`.
 
 ### Desaturate
 
-Desaturates a color (e.g. <span v-pre>`{{ '#00ff00' | desaturate: 15 }} #=> '#13ec13'`</span>).
+Desaturates a color (e.g. <span v-pre>`{{ '#00ff00' | desaturate: 15 }} #=> '#13ec13'`</span>). If you omit the amount, it uses `10`.
 
 ### Grayscale
 
@@ -608,11 +642,11 @@ Converts a color to grayscale, with the same output as `grayscale`, but it only 
 
 ### Lighten
 
-Lightens a color (e.g. <span v-pre>`{{ '#00ff00' | lighten: 15 }} #=> '#4dff4d'`</span>).
+Lightens a color (e.g. <span v-pre>`{{ '#00ff00' | lighten: 15 }} #=> '#4dff4d'`</span>). If you omit the amount, it uses `10`.
 
 ### Opacity
 
-Modifies the opacity of a color (e.g. <span v-pre>`{{ '#00ff00' | opacity: 0.5 }} #=> 'rgba(0, 255, 0, 0.5)'`</span>).
+Modifies the opacity of a color (e.g. <span v-pre>`{{ '#00ff00' | opacity: 0.5 }} #=> 'rgba(0, 255, 0, 0.5)'`</span>). If you omit the value, it uses `0.3`.
 
 ### RGB
 
@@ -620,15 +654,17 @@ Transforms a color to its RGB equivalent (e.g. <span v-pre>`{{ '#00ff00' | rgb }
 
 ### Saturate
 
-Saturates a color (e.g. <span v-pre>`{{ '#00ff00' | saturate: 15 }} #=> '#00ff00'`</span>).
+Saturates a color (e.g. <span v-pre>`{{ '#00ff00' | saturate: 15 }} #=> '#00ff00'`</span>). If you omit the amount, it uses `20`.
 
 ### Spin
 
-Rotates a color in degrees clockwise (e.g. <span v-pre>`{{ '#00ff00' | spin: 15 }} #=> 'rgba(0, 255, 0, 0.5)'`</span>).
+Rotates a color in degrees clockwise (e.g. <span v-pre>`{{ '#00ff00' | spin: 15 }} #=> '#00ff40'`</span>). If you omit the degrees, it uses `30`.
 
 ## Location
 
 These Liquid filters alter values related to Geolocation in Modyo Platform.
+
+Both filters take the value of an entry's **Locations** field, for example `entry.fields.branches`; the format of that value is described in [Content types](/en/platform/content/types.html#location). The map is requested from Google Maps with the **Google API Key** from the [account settings](/en/platform/core/configuration.html#visualization): set it up before using these filters, because without it Google rejects the request and the map isn't displayed.
 
 ### Dynamic Map
 
@@ -636,12 +672,18 @@ Returns a dynamic Google Maps map (e.g. <span v-pre>`{{ locations | dynamic_map:
 
 **Parameters**
 
-- `locations` (ArrayHash) — Array of hashes with latitude and longitude points.
+- `locations` (ArrayLocation) — Value of a **Locations** field. From each location the filter uses the `location.lat` and `location.lon` coordinates and, as the marker title, the `location_street` address.
 - `size` (String) (default: '600x300') — Map size in pixels.
 - `zoom` (Integer) (default: 10) — Zoom level for the map.
 - `type` (String) (default: 'roadmap') — Map type.
 - `icon` (String) (default: '') — Map icon.
 - `controls` (Boolean) (default: true) — Navigation controls for the map.
+
+The map is centered on the first location in the list, so the field needs at least one: if it's empty, the filter aborts and the published HTML keeps the comment `<!-- Liquid Error -->` in place of the map.
+
+:::warning Attention
+Use a single `dynamic_map` per page. Every dynamic map is drawn in the same container, so with two or more only one is displayed and the other spaces stay blank.
+:::
 
 ### Static Map
 
@@ -649,7 +691,7 @@ Returns a static Google Maps map (e.g. <span v-pre>`{{ locations | static_map: '
 
 **Parameters**
 
-- `locations` (ArrayHash) — Array of hashes with latitude and longitude points.
+- `locations` (ArrayLocation) — Value of a **Locations** field. From each location the filter uses the `location.lat` and `location.lon` coordinates.
 - `size` (String) (default: '600x300') — Map size in pixels.
 - `zoom` (String) (default: '') — Zoom level for the map. With no value, the Google Maps URL is built with an empty `zoom=` and the framing is left to Google; always pass it when you need a fixed framing.
 - `type` (String) (default: 'roadmap') — Map type.
@@ -666,7 +708,13 @@ These Liquid filters alter values related to menu items in Modyo Platform.
 
 ### Active Page
 
-Determines if a URL item is active. Returns 'active' when active (e.g. <span v-pre>`{{ 'company.modyo.com/jobs' | active_page: 'company.modyo.com/jobs' }} #=> 'active'`</span>).
+Determines whether an item's URL matches the URL it receives as a parameter, usually the URL of the current page. Returns `' active'`, with a leading space so you can append it to the item's classes, or an empty string if they don't match or either one is empty.
+
+```liquid
+{{ 'company.modyo.com/jobs' | active_page: 'company.modyo.com/jobs' }} #=> ' active'
+```
+
+The comparison considers only the host and the path: it ignores the protocol, the query parameters, and the trailing slash. A subpath doesn't count as active, so `company.modyo.com/jobs/sales` doesn't match `company.modyo.com/jobs`.
 
 ### Item Rel
 
@@ -678,7 +726,9 @@ Resolves the URL from a path and base URL (e.g. <span v-pre>`{{ 'dynamic_bank' |
 
 ### Visible Items
 
-Returns a list of visible items in a list of items (e.g. <span v-pre>`{{ items | visible_items }}`</span>).
+Returns only the items in the list that the current user can see (e.g. <span v-pre>`{{ items | visible_items }}`</span>).
+
+It applies the same criteria as the `menu` tag, described in [Items that are displayed](/en/platform/channels/navigation.html#items-that-are-displayed).
 
 ## Origination
 
@@ -836,15 +886,32 @@ The URL generated for a template asset path includes a version that updates when
 
 ### Button To
 
-Generates a button (e.g. <span v-pre>`{{ 'Hello World' | button_to: 'http://www.google.com' }}`</span>).
+Generates a link styled as a button: an `<a>` element with the `btn` class, not a `<button>`. The URL is resolved the same way as in [Link To](#link-to) (e.g. <span v-pre>`{{ 'Hello World' | button_to: 'http://www.google.com' }}`</span>).
 
 ### Cookie Value
 
-Returns the value of a cookie (e.g. <span v-pre>`{{ 32 | cookie_value }}`</span>).
+Returns the value of the cookie whose name it receives as input, or an empty string if the request doesn't include it.
+
+```liquid
+{{ 'my_cookie' | cookie_value }}
+```
 
 ### Escape JS
 
-Prevents JavaScript code interpretation (e.g. <span v-pre>`{{ '<script>alert("hello world");</script>' | escape_js }}`</span>).
+Escapes a text so you can insert it inside a JavaScript string: it escapes quotes, backslashes, line breaks, and the `</` sequence, so the value can't close the string or the `<script>` block.
+
+```liquid
+{% assign message = "It's done" %}
+<script>
+  var message = '{{ message | escape_js }}';
+</script>
+```
+
+The result is `var message = 'It\'s done';`.
+
+:::warning Attention
+`escape_js` doesn't encode HTML: it doesn't prevent a `<script>` or any other code inserted in the page's HTML from running. To display a text inside the HTML, use [Escape](#escape).
+:::
 
 ### Format Date
 
@@ -853,15 +920,19 @@ Translates a date to another format (e.g. <span v-pre>`{{ time | format_date: '%
 **Parameters**
 
 - `time` (DateTime) — Date.
-- `format_date` (String) (default: '') — The new format for the date.
+- `format` (String) (default: '%e %b, %Y') — The date format, with the same syntax as `date`. Month and day names are in the site's language.
+
+If the date is null, the filter returns an empty string.
 
 ### Format DateTime
 
-Translates a date to DateTime format (e.g. <span v-pre>`{{ time | format_datetime }}`</span>).
+Formats a date and time with the fixed format `'%e %b, %Y %H:%M'`, the same as Format Date with that format (e.g. <span v-pre>`{{ time | format_datetime }}`</span> returns `15 Jan, 2025 10:30` on an English site).
 
 ### Format Short Date
 
-Translates a date to a reduced format (dd-mm-yyyy) (e.g. <span v-pre>`{{ time | format_short_date }}`</span>).
+Translates a date to the short format of the site's language, which doesn't include the year (e.g. <span v-pre>`{{ time | format_short_date }}`</span>).
+
+For example, for January 15, 2025 at 10:30, the result is `15 Jan 10:30` in English, `15 de Ene, 10:30` in Spanish, and `15/01, 10:30 hs` in Portuguese. If the date has no time, it's `Jan 15`, `15 de Enero`, and `15 de Janeiro`, respectively. If you need the dd-mm-yyyy format, use Format Date with `'%d-%m-%Y'`.
 
 ### Get Session ID
 
@@ -882,8 +953,8 @@ Adds an anchor link tag (e.g. <span v-pre>`{{ 'Hello World' | link_to: 'http://w
 **Parameters**
 
 - `text` (String) (default: '') — Link text.
-- `link` (String) (default: '/') — Link URL.
-- `alt` (String) (default: '') — Alternative text for the link.
+- `link` (String) (default: '/') — Link URL. If it doesn't start with `http`, it's resolved against the site's base URL, whether or not it starts with `/`.
+- `alt` (String) (default: '') — Text emitted in the link's `title` attribute.
 - `class` (String) (default: '') — CSS class for the link.
 - `target` (String) (default: '') — Target for the link.
 
@@ -893,7 +964,7 @@ Shows the flash message variable (e.g. <span v-pre>`{{ 'alert-error' | notificat
 
 ### Primary button to
 
-Generates a primary type button (e.g. <span v-pre>`{{ 'Hello World' | primary_button_to: 'http://www.google.com', 'large' }}`</span>).
+Generates a link styled as a primary button: an `<a>` element with the classes `btn`, `btn-primary`, and `btn-` followed by the size. The URL is resolved the same way as in [Link To](#link-to) (e.g. <span v-pre>`{{ 'Hello World' | primary_button_to: 'http://www.google.com', 'large' }}`</span>).
 
 **Parameters**
 
@@ -921,7 +992,11 @@ Converts a datetime to String format (e.g. <span v-pre>`{{ time | strftime: '%m/
 
 ### Strip tag
 
-Removes all HTML tags and their content from a String (e.g. <span v-pre>`{{ '<script>Hello World</script>' | strip_tags }} #=> ""`</span>).
+Removes the HTML tags from a String and keeps their text. `<script>` blocks are removed entirely, along with their content (e.g. <span v-pre>`{{ '<script>Hello World</script>' | strip_tags }} #=> ""`</span>).
+
+```liquid
+{{ '<script>alert("hello");</script><p>Hello World</p>' | strip_tags }} #=> 'Hello World'
+```
 
 ### Stylesheet Tag
 
@@ -955,7 +1030,9 @@ Converts a date in String to words (e.g. <span v-pre>`{{ '01-02-2019' | time_ago
 
 ### Translate
 
-Resolves the translation text for Site keys. Custom values will be returned if they exist (e.g. <span v-pre>`{{ 'admin.logs.errors.no_logs_yet' | translate }}`</span>).
+Resolves a key from the platform translations in the site's language (e.g. <span v-pre>`{{ 'admin.logs.errors.no_logs_yet' | translate }}`</span>).
+
+The keys and their texts are the platform's: you can't add new keys or customize their texts. If the key doesn't exist, the filter prints a missing translation notice instead of the text.
 
 **Parameters**
 
@@ -964,7 +1041,13 @@ Resolves the translation text for Site keys. Custom values will be returned if t
 
 `t` is the short alias of the filter and does exactly the same: <span v-pre>`{{ 'admin.logs.errors.no_logs_yet' | t }}`</span>.
 
-The second parameter pluralizes the key and is applied only when it arrives as an integer (e.g. <span v-pre>`{{ 'site.results.count' | t: total }}`</span>). If it arrives as a string, for example `'3'`, the filter discards it without warning and resolves the key without pluralizing.
+The second parameter pluralizes the key and is applied only when it arrives as an integer, for example with a platform key that has singular and plural forms:
+
+```liquid
+{{ 'datetime.distance_in_words.x_days' | t: 3 }} #=> '3 days'
+```
+
+If it arrives as a string, for example `'3'`, the filter discards it without warning and resolves the key without pluralizing.
 
 ### Truncate HTML
 
@@ -1031,15 +1114,17 @@ To list the statuses the filter doesn't cover, loop over an unscoped collection,
 
 ### Completed
 
-Checks whether an element (step/task wrapper) is completed for a given submission.
+Checks whether a step or a task has been completed in a submission.
 
 *e.g.* <span v-pre>`{{ submission | completed: step }}`</span>
 
 **Parameters:**
 - submission (Submission) — the current submission (object before pipe)
-- element (Step|TaskResponse wrapper) — element to test
+- element (Step|Task) — the step or task to test, for example one from `origination.steps` or from `step.tasks`
 
 Returns: Boolean (true/false)
+
+It doesn't accept the items of `submission.steps` or the responses of `submission.tasks`: with them, the filter aborts and the published HTML keeps the comment `<!-- Liquid Error -->` in place of the block. Those objects already carry their status, in `is_completed` and in `status`, respectively.
 
 As of Modyo 10.2 the filter resolves the status against the user present in the render context, not against the submission owner: a step counts as completed only if that user has a completed response for every task they can see. In a flow with invited users, the same template delivers different results depending on who is looking, and a step that showed up as completed in 10.1 may now show up as incomplete.
 
@@ -1092,10 +1177,6 @@ Returns the Task with the selected UID. *e.g.*
 
 This is the same `by_uid` filter from the Origination module, which also accepts the `fields` collection of a user input task to take one of its questions by UID: <span v-pre>`{% assign my_question = my_task.fields | by_uid: 'question-01' %}`</span>. The full reference is in [By UID](/en/platform/channels/liquid-markup/filters.html#by-uid).
 
-### Navigation / Completion Helpers
-
-The filters `completed`, `url`, and `resume_link` (documented under Submission) also apply when piping a Step or Task in the context of a submission navigation flow.
-
 ## User
 
 These Liquid filters alter values related to Users.
@@ -1141,7 +1222,7 @@ Returns user form responses filtered by a specific form slug.
 
 ### By Response Date Range
 
-Returns form responses created within a date range (inclusive).
+Returns form responses created within a date range.
 
 *e.g.* <span v-pre>`{% assign responses = user.responses | by_response_date_range: '2025-03-10', '2025-03-20' %}`</span>
 
@@ -1149,6 +1230,8 @@ Returns form responses created within a date range (inclusive).
 - responses (Array&lt;FormResponse&gt;) — user.responses
 - date_from (String/Date) — start date (YYYY-MM-DD recommended)
 - date_to (String/Date) — end date (YYYY-MM-DD recommended)
+
+`date_from` includes its whole day, but `date_to` is taken as the start of that day (00:00), even if you include a time, so the last day is left out: in the example, the responses created on March 20 don't appear. To include it, pass the following day as `date_to`, in this case `'2025-03-21'`. Both limits are compared against the creation time in UTC.
 
 ### By Answer Text
 
@@ -1159,32 +1242,3 @@ Returns form responses containing an answer whose `answers.text_field` matches e
 **Parameters:**
 - responses (Array&lt;FormResponse&gt;) — user.responses
 - answer_text (String) — exact text to match
-
-## Widget
-
-These Liquid filters alter values related to Widgets.
-
-### Entry Limit
-
-Determines the entry limit for a widget (e.g. <span v-pre>`{{ widget1 | entry_limit }}`</span>).
-
-### Resolve Home Widget List
-
-Returns a list of all widgets that belong to a Site (e.g. <span v-pre>`{{ site | resolve_home_widget_list }}`</span>).
-
-### Resolve Me Widget List
-
-Returns a list of all widgets that belong to a "me" page (e.g. <span v-pre>`{{ site | resolve_me_widget_list }}`</span>).
-
-### Resolve Widget List
-
-Returns a list of all widgets that belong to a page (e.g. <span v-pre>`{{ site | resolve_widget_list: page }}`</span>).
-
-**Parameters**
-
-- `site` (Site) — Site-type object.
-- `page` (Page) — Page-type object.
-
----
-
-NOTE: Composite and submission-related filters depend on internal preview/origination logic; behavior may vary in preview mode versus published mode.

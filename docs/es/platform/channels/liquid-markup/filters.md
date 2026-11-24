@@ -17,7 +17,7 @@ Los filtros también se pueden unir entre sí añadiendo sentencias de filtro ad
 ```liquid
 Hello {{ 'tobi' | upcase }}
 Hello tobi has {{ 'tobi' | size }} letters!
-Hello {{ '*tobi*' | textilize | upcase }}
+Hello {{ '  tobi  ' | strip | upcase }}
 Hello {{ 'now' | date: "%Y %h" }}
 ```
 
@@ -40,7 +40,8 @@ Codifica un string en Base64 *e.g.*
 
 ### Capitalize
 
-Poner palabra en mayúscula en la frase de entrada.
+Pone en mayúscula el primer carácter del string y el resto en minúsculas *e.g.*
+<span v-pre>`{{ 'hola MUNDO' | capitalize }} #=> 'Hola mundo'`</span>
 
 ### Ceiling
 
@@ -113,7 +114,7 @@ Modulo *e.g.*
 <span v-pre>`{{ 3 | modulo:2 }} #=> 1`</span>
 
 ### Newline to br
-Reemplaza cada linea nueva (\n) con espacio HTML.
+Inserta un salto de línea HTML (`<br />`) antes de cada salto de línea (\n) del texto.
 
 ### Plus
 Suma *e.g.*
@@ -186,7 +187,7 @@ Agrega formato de divisa a un valor. *e.g.*
 <span v-pre>`{{ 1890.5123 | format_currency: unit: '¥', separator: ',', delimiter: '.', precision: 3 }} = ¥1.890,512`</span>
 
 :::warning Importante
-Este filtro determina el formato de la moneda y tiene prioridad sobre cualquier otra configuración de divisa.
+Los parámetros que pasas al filtro tienen prioridad sobre cualquier otra configuración de divisa, pero no se combinan con ella: si pasas al menos uno, Modyo usa solo los que indicas y toma los que faltan del formato predefinido del idioma del sitio, no del reino. Por ejemplo, con solo `unit: 'US$'` se pierden el separador, el delimitador y la precisión del reino, así que pasa los cuatro parámetros cuando necesites un formato completo.
 
 Si no especificas parámetros de divisa con el filtro de currency, Modyo utiliza la configuración de [payment](/es/platform/customers/settings.html#configuracion-de-payment) del reino.
 
@@ -199,6 +200,8 @@ En caso de que el sitio no tenga un reino asociado y no especifiques parámetros
 - separator - separador de decimales.
 - delimiter - separador de miles.
 - precision - cantidad de dígitos decimales.
+
+Cualquier otra clave se ignora, aunque igual hace que el filtro deje de usar la configuración del reino. Escribe `unit` como texto y `precision` como número: con otro tipo de valor, como `unit: 123` o `precision: 'dos'`, el filtro aborta y en el HTML publicado queda el comentario `<!-- Liquid Error -->` en lugar del monto.
 
 
 ## Common
@@ -323,17 +326,19 @@ Retorna los tags de un video usando su uuid del Gestor de Archivos. *e.g.*
 
 ### By category
 
-Retorna una lista de Entradas que pertenecen a la Categoría seleccionada. *e.g.*
+Retorna una lista de Entradas que pertenecen a alguna de las Categorías seleccionadas o a sus subcategorías. *e.g.*
 <span v-pre>`{% assign filtered_entries = entries | by_category: 'category2,category1,category3' %}`</span>
 
 **Parametros**:
 - entries (ArrayEntry) — array con entradas
-- list (String) (default: '') — String con categorías separadas por coma.
+- list (String | Array) (default: '') — slugs o rutas de categorías (`padre/hija`), separados por coma o como array.
+
+Cada valor se compara con los tramos de la ruta de la categoría de la entrada, no con el nombre de la categoría. Por eso una categoría padre trae también las entradas de sus subcategorías, y un slug suelto coincide con todas las categorías que tengan ese slug, en cualquier nivel del árbol. Para distinguir categorías que comparten slug en ramas distintas, pasa la ruta, como `noticias/deportes`. Con varios valores, el resultado incluye las entradas que coinciden con cualquiera de ellos.
 
 ### By lang
 
 Retorna una lista de Entradas en el idioma indicado. El filtro se llama `by_lang`: `locale` es el nombre del parámetro, no el del filtro. *e.g.*
-<span v-pre>`{% assign entries = widget.entries | by_lang: 'es' %} => entries`</span>
+<span v-pre>`{% assign entries = spaces['blog'].types['post'].entries | by_lang: 'es' %} => entries`</span>
 
 **Parametros**:
 - entries (ArrayEntry) — array con entradas
@@ -358,12 +363,14 @@ Retorna una lista de Entradas que pertenecen a un slug seleccionado. *e.g.*
 
 ### By tag
 
-Retorna una lista de Entradas que pertenecen a un tag seleccionado. *e.g.*
-<span v-pre>`{% assign entries = widget.entries | by_tag: 'tag2,tag1,tag3' %} => entries`</span>
+Retorna una lista de Entradas que tienen todos los tags indicados. *e.g.*
+<span v-pre>`{% assign entries = spaces['blog'].types['post'].entries | by_tag: 'tag2,tag1,tag3' %} => entries`</span>
 
 **Parametros**:
 - entries (ArrayEntry) — array con entradas
 - list (String) (default: '') — String con tags separados por coma.
+
+Con varios tags, el resultado incluye solo las entradas que los tienen todos, no las que tienen alguno de ellos. En eso se diferencia de `by_category`, `by_slug`, `by_type` y `by_uuid`, que devuelven las entradas que coinciden con cualquiera de los valores. La comparación no distingue mayúsculas de minúsculas.
 
 ### By type
 
@@ -382,7 +389,7 @@ Filtra un arreglo de entradas por uno o más UUIDs.
 - entries (ArrayEntry) — colección (objeto antes de la barra)
 - uuid_list (String) — lista de UUIDs separada por comas
 
-Predeterminado: Si `uuid_list` está en blanco retorna la colección original.
+Si `uuid_list` está vacío, el resultado es una colección vacía, igual que con `by_slug`, `by_type` y `by_tag`.
 
 *ej.* <span v-pre>`{% assign filtradas = entries | by_uuid: 'uuid2,uuid1,uuid3' %}`</span>
 
@@ -390,13 +397,13 @@ Predeterminado: Si `uuid_list` está en blanco retorna la colección original.
 
 Aplica múltiples filtros de entradas en una sola llamada. Claves soportadas (todas opcionales):
 - types: slugs de tipos separados por comas (aplica `by_type`)
-- categories: slugs de categorías separados por comas (aplica `by_category`)
-- tags: tags separados por comas (aplica `by_tag`)
+- categories: slugs o rutas de categorías separados por comas; incluye las subcategorías (aplica `by_category`)
+- tags: tags separados por comas; la entrada tiene que tenerlos todos (aplica `by_tag`)
 - slugs: slugs de entradas separados por comas (aplica `by_slug`)
 - uuids: UUIDs separados por comas (aplica `by_uuid`)
 - locale: un único código de idioma (aplica `by_lang`; no acepta lista separada por comas)
-- from_published_date: fecha límite inicial (>= `published_at`)
-- to_published_date: fecha límite final (<= `published_at`)
+- from_published_date: cadena con la fecha límite inicial, desde las 00:00 de ese día (aplica `from_published_date`)
+- to_published_date: cadena con la fecha límite final, hasta el final de ese día (aplica `to_published_date`)
 - sort_by: nombre de campo (default: `created_at`). Admite `name`, `slug`, `created_at`, `updated_at` y `published_at`, o un campo con su prefijo (`fields.<nombre>` o `meta.<atributo>`); ver [Sort By](/es/platform/channels/liquid-markup/filters.html#sort-by)
 - order: `asc` | `desc` (default: `desc`)
 - per_page: cantidad de resultados por página (habilita paginación; default: 10)
@@ -404,7 +411,7 @@ Aplica múltiples filtros de entradas en una sola llamada. Claves soportadas (to
 
 *ej.* <span v-pre>`{% assign entries = spaces['testing'].entries | by: types: 'promo,basic', locale: 'es', categories: 'destacadas,favoritas', tags: 'test,test2', slugs: 'slug2,slug1', uuids: 'uuid2,uuid1', sort_by: 'name', order: 'asc', per_page: 10, page: 2 %}`</span>
 
-`sort_by` y `order` son opcionales en la invocación, pero no en el efecto: `by` aplica siempre `sort_by`, con `created_at` y `desc` como valores por defecto. Una colección que ya venía ordenada por otro criterio, como la de un widget con su propio orden, sale reordenada por fecha de creación descendente aunque la plantilla no pida ningún ordenamiento, y no hay forma de pedirle a `by` que no ordene. Si necesitas conservar el orden de origen, encadena los filtros simples (`by_type`, `by_category`, `by_tag`, `by_slug`…) en lugar de usar `by`.
+`sort_by` y `order` son opcionales en la invocación, pero no en el efecto: `by` aplica siempre `sort_by`, con `created_at` y `desc` como valores por defecto. Ese orden se agrega después del que ya tenga la colección, no lo reemplaza: si la colección viene ordenada por un `sort_by` anterior, ese criterio sigue mandando y el de `by` solo desempata. Lo mismo vale para cualquier cadena de ordenamientos, en la que manda el primero, así que un `sort_by` encadenado después de `by` solo desempata y el listado sigue ordenado por fecha de creación. Para ordenar por otro criterio, pásalo en las claves `sort_by` y `order` de `by` u ordena la colección antes de aplicarlo.
 
 La paginación, en cambio, sí es opcional: solo se aplica si pasas `per_page` o `page`. Los valores por defecto de esas dos claves son los que toma el filtro cuando indicas una y omites la otra, y quedan sujetos a la precedencia de los parámetros de la URL descrita en [Paginated](/es/platform/channels/liquid-markup/filters.html#paginated).
 
@@ -423,14 +430,14 @@ Retorna una lista de Entradas que cumplen con un filtro.
 El valor de `field` se escribe siempre con su prefijo:
 
 - `fields.<nombre>` para los campos del tipo de contenido.
-- `meta.<atributo>` para los metadatos, con estos atributos disponibles: `meta.uuid`, `meta.name`, `meta.slug`, `meta.category`, `meta.category_slug`, `meta.category_name`, `meta.created_at`, `meta.updated_at`, `meta.published_at` y `meta.unpublished_at`. Para filtrar por tags usa `by_tag`.
+- `meta.<atributo>` para los metadatos, con estos atributos disponibles: `meta.uuid`, `meta.name`, `meta.slug`, `meta.category`, `meta.category_slug`, `meta.category_name`, `meta.created_at`, `meta.updated_at` y `meta.published_at`. Para filtrar por tags usa `by_tag`.
 
 :::warning Atención
 Un nombre de campo sin prefijo se descarta en silencio: el filtro no lanza error y devuelve la colección completa, sin filtrar. Si un listado te muestra todas las entradas, revisa primero que el valor de `field` empiece por `fields.` o por `meta.`.
 :::
 
 **Operadores soportados** (usar como llaves dentro de `opts`):
-- `eq` — igual a (implícito cuando solo se provee `field` y valor)
+- `eq` — igual a. Escríbelo siempre de forma explícita, como `eq: 'valor'`, y no lo combines con los demás: si lo incluyes, `filter_by` aplica solo `eq` e ignora el resto de los operadores
 - `not` — distinto de. Con `nil` como valor devuelve las entradas que tienen algún valor en el campo
 - `gt`, `lt` — mayor que / menor que
 - `in` — el valor del campo debe estar dentro de los valores separados por comas
@@ -439,9 +446,12 @@ Un nombre de campo sin prefijo se descarta en silencio: el filtro no lanza error
 - `search` — busca el texto en los atributos de las ubicaciones de la entrada; necesita un campo de tipo ubicación
 - `geohash` — busca por proximidad con un geohash en base 32; necesita un campo de tipo ubicación
 
-Solo `in`, `nin` y `has` aceptan un string separado por comas; el resto toma un valor único. `search` y `geohash` se comportan igual que en la [API pública de Content](/es/platform/content/public-api-reference.html#operadores). El operador `all`, que aparece en la lista de Filter By Query String, no está disponible en `filter_by`.
+Solo `in`, `nin` y `has` aceptan un string separado por comas; el resto toma un valor único. `search` y `geohash` se comportan igual que en la [API pública de Content](/es/platform/content/public-api-reference.html#operadores). Si pasas `field` sin ningún operador, o solo con operadores que no están en la lista, como `all`, el filtro devuelve la colección completa, sin filtrar.
 
 **Ejemplos**:
+
+Filtrar entradas donde el campo `status` sea 'published':
+<span v-pre>`{% assign entries = entries | filter_by: field: 'fields.status', eq: 'published' %}`</span>
 
 Filtrar entradas donde el campo `status` sea 'published' o 'featured':
 <span v-pre>`{% assign entries = entries | filter_by: field: 'fields.status', in: 'published,featured' %}`</span>
@@ -459,43 +469,61 @@ Filtrar entradas publicadas después de una fecha:
 <span v-pre>`{% assign entries = entries | filter_by: field: 'meta.published_at', gt: '2026-01-01' %}`</span>
 
 :::warning Atención
-En dos casos `filter_by` aborta y en el HTML publicado queda el comentario `<!-- Liquid Error -->` en lugar del bloque: cuando lo llamas sin `field` y cuando lo aplicas sobre una colección de la que no se puede resolver el tipo de contenido, como <span v-pre>`spaces['blog'].entries`</span>. Parte siempre de una colección acotada a un tipo, como <span v-pre>`spaces['blog'].types['post'].entries`</span> o <span v-pre>`widget.entries`</span>.
+En dos casos `filter_by` aborta y en el HTML publicado queda el comentario `<!-- Liquid Error -->` en lugar del bloque: cuando lo llamas sin `field` y cuando lo aplicas sobre una colección de la que no se puede resolver el tipo de contenido, como <span v-pre>`spaces['blog'].entries`</span>. Parte siempre de una colección acotada a un tipo, como <span v-pre>`spaces['blog'].types['post'].entries`</span>.
 :::
 
 ### Filter By Query String
 
-Retorna una lista de Entradas que cumplen con un query. Se pueden usar operadores lógicos, varios campos meta, URLs, o tags de Liquid.
-
-**Operators**:
-
-- gt, lt, in, all, nin
-
-**Fields**:
-- meta.category meta.category_slug meta.category_name meta.uuid meta.name meta.created_at
- meta.updated_at meta.published_at meta.unpublished_at meta.slug meta.tag
-
-**Url examples**:
-
-- https://company.site.com/testsite?meta.category_slug=category3
-- https://company.site.com/testsite?meta.tag=tag_name
-- https://company.site.com/testsite?meta.tag[in][]=tag1_name&meta.tag[in][]=tag2_name
-- https://company.site.com/testsite?meta.created_at=1987-11-19T13:13:13
-
-*e.g.*
-<span v-pre>`{% assign entries = widget.entries | filter_by_query_string %}`</span>
+Retorna una lista de Entradas filtrada con los parámetros de la URL de la página. El filtro no recibe argumentos: cada visita aplica los filtros que trae su query string. *e.g.*
+<span v-pre>`{% assign entries = spaces['blog'].types['post'].entries | filter_by_query_string %}`</span>
 
 **Parametros**:
-- entries (ArrayEntry) — array con entradas
+- entries (ArrayEntry) — colección de entradas acotada a un tipo de contenido
+
+**Campos**:
+- `meta.uuid`, `meta.name`, `meta.slug`, `meta.category`, `meta.category_slug`, `meta.category_name`, `meta.created_at`, `meta.updated_at` y `meta.published_at`
+- `fields.<nombre>`, para cualquier campo del tipo de contenido
+
+`meta.category` recibe la ruta completa de la categoría, como `noticias/deportes`, e incluye las entradas de sus subcategorías. Para filtrar por tags usa `by_tag`.
+
+**Operadores**:
+
+Sin operador, el parámetro filtra por igualdad. Los operadores se escriben entre corchetes después del campo:
+
+- `gt`, `lt` y `not` toman un valor único, como en `?meta.published_at[gt]=2026-01-01`.
+- `in`, `nin` y `has` toman una lista: repite el parámetro con `[]`, aunque pases un solo valor, como en `?fields.color[in][]=rojo&fields.color[in][]=azul`.
+- `search` y `geohash` buscan en los campos de ubicación, igual que en la [API pública de Content](/es/platform/content/public-api-reference.html#operadores).
+
+Además del filtro por campos, la URL acepta:
+
+- `sort_by` y `order` para ordenar el resultado. `sort_by` lleva siempre el prefijo `fields.` o `meta.`, y `order` es `asc` o `desc`, con `asc` por defecto.
+- `search` para buscar un texto en los campos [Texto de una línea](/es/platform/content/types.html#texto-de-una-linea), [Texto de múltiples líneas](/es/platform/content/types.html#texto-de-multiples-lineas) y [Texto enriquecido](/es/platform/content/types.html#texto-enriquecido) del tipo, y en el nombre, el slug, el extracto y la categoría de la entrada.
+
+**Ejemplos de URL**:
+
+- https://company.site.com/testsite?meta.category_slug=category3
+- https://company.site.com/testsite?meta.created_at=1987-11-19T13:13:13
+- https://company.site.com/testsite?fields.color[in][]=red&fields.color[in][]=blue
+- https://company.site.com/testsite?search=modyo&sort_by=meta.published_at&order=desc
+
+:::warning Atención
+El filtro lee todos los parámetros de la URL, no solo los de filtro, e ignora en silencio los que no reconoce. Aplícalo siempre sobre una colección acotada a un tipo, como <span v-pre>`spaces['blog'].types['post'].entries`</span>. Sobre una colección de todo el espacio, como <span v-pre>`spaces['blog'].entries`</span>, la página funciona mientras la URL no trae parámetros, pero basta uno cualquiera, aunque no sea de filtro, como `utm_source` o `page`, para que el filtro aborte y en el HTML publicado quede el comentario `<!-- Liquid Error -->` en lugar del bloque.
+:::
 
 ### From Published Date
 
-Retorna una lista de Entradas que tengan una fecha de publicación más reciente que el límite. *e.g.*
-<span v-pre>`{% assign entries = widgets.entries | from_published_date: date %}
-`</span>
+Retorna una lista de Entradas publicadas desde la fecha indicada, incluido ese día. *e.g.*
+<span v-pre>`{% assign entries = spaces['blog'].types['post'].entries | from_published_date: '2024-01-31' %}`</span>
 
 **Parametros**:
 - entries (ArrayEntry) — array con entradas
-- date (Datetime)(default: Time.zone.now) — fecha límite
+- date (String) — fecha límite, obligatoria, como `'2024-01-31'` o, con el día primero, `'31/01/2024'`
+
+El filtro toma solo el día de la fecha, sin la hora: incluye las entradas publicadas desde las 00:00 de ese día.
+
+:::warning Atención
+La fecha tiene que llegar como cadena. Si pasas un objeto fecha, como `entry.meta.published_at`, el filtro aborta y en el HTML publicado queda el comentario `<!-- Liquid Error -->` en lugar del bloque. Conviértelo antes con el filtro `date`, como en `entry.meta.published_at | date: '%Y-%m-%d'`.
+:::
 
 ### Limit
 
@@ -503,8 +531,12 @@ Límita el número de resultados. *e.g.*
 <span v-pre>`{{ entries | limit: 1 }}`</span>
 
 **Parametros**:
-- objeto(Array) — array
+- entries (ArrayEntry) — colección de entradas (objeto antes de la barra)
 - limit (Integer)(default: 1) — límite de resultados
+
+:::warning Atención
+`limit` solo funciona sobre una colección de entradas. Aplicado sobre un array, como el resultado de `sort`, `map` o `split`, el filtro aborta y en el HTML publicado queda el comentario `<!-- Liquid Error -->` en lugar del bloque. Para recortar un array usa el parámetro `limit` del tag `for`, como en <span v-pre>`{% for item in items limit: 3 %}`</span>.
+:::
 
 ### Paginated
 
@@ -527,7 +559,7 @@ Aplicado sobre algo que no sea una colección de entradas, por ejemplo un array 
 ### Sort By
 
 Retorna un array con las entradas ordenadas por un campo *e.g.*
-<span v-pre>`{% assign entries = widgets.entries | sort_by: 'name', 'asc' %}`</span>
+<span v-pre>`{% assign entries = spaces['blog'].types['post'].entries | sort_by: 'name', 'asc' %}`</span>
 
 **Parametros**:
 - coleccion (ArrayEntry | ArrayCategory) — colección a ordenar (objeto antes de la barra)
@@ -544,7 +576,7 @@ Los campos admitidos dependen de la colección que recibe el filtro:
 :::warning Atención
 Sobre una colección de categorías, un campo fuera de `name`, `slug` y `uuid` devuelve una colección vacía sin ningún error: el listado se ve en blanco y parece que no hay datos.
 
-Sobre una colección de entradas, un nombre sin prefijo, como `'precio'` en lugar de `'fields.precio'`, no ordena por el campo que esperas. Además, ordenar por `fields.<nombre>` necesita, igual que `filter_by`, una colección acotada a un tipo de contenido: sobre algo como <span v-pre>`spaces['blog'].entries`</span> el filtro aborta y en el HTML publicado queda el comentario `<!-- Liquid Error -->` en lugar del bloque. Parte de <span v-pre>`spaces['blog'].types['post'].entries`</span> o de <span v-pre>`widget.entries`</span>.
+Sobre una colección de entradas, un nombre sin prefijo, como `'precio'` en lugar de `'fields.precio'`, no ordena por el campo que esperas. Además, ordenar por `fields.<nombre>` necesita, igual que `filter_by`, una colección acotada a un tipo de contenido: sobre algo como <span v-pre>`spaces['blog'].entries`</span> el filtro aborta y en el HTML publicado queda el comentario `<!-- Liquid Error -->` en lugar del bloque. Parte de <span v-pre>`spaces['blog'].types['post'].entries`</span>.
 
 El filtro aborta también, con el mismo comentario en la salida, si el campo o el orden no llegan como cadena, por ejemplo <span v-pre>`| sort_by: 'name', 1`</span>.
 :::
@@ -552,13 +584,14 @@ El filtro aborta también, con el mismo comentario en la salida, si el campo o e
 
 ### To Published Date
 
-Retorna una lista de Entradas que tengan una fecha de publicación más vieja que el límite. *e.g.*
-<span v-pre>`{% assign entries = widgets.entries | to_published_date: date %}
-`</span>
+Retorna una lista de Entradas publicadas hasta la fecha indicada, incluido ese día. *e.g.*
+<span v-pre>`{% assign entries = spaces['blog'].types['post'].entries | to_published_date: '2024-12-31' %}`</span>
 
 **Parametros**:
 - entries (ArrayEntry) — array con entradas
-- date (Datetime)(default: Time.zone.now) — fecha límite
+- date (String) — fecha límite, obligatoria, con el mismo formato que en [From Published Date](/es/platform/channels/liquid-markup/filters.html#from-published-date)
+
+El filtro toma solo el día de la fecha: incluye las entradas publicadas hasta el final de ese día. Igual que `from_published_date`, aborta si la fecha no llega como cadena.
 
 
 ## Crypto
@@ -587,15 +620,15 @@ Todos los filtros de color abortan si el valor de entrada no es un color válido
 
 ### Brighten
 
-Agrega brillo a un color (ej. <span v-pre>`{{ '#00ff00' | brighten: 15 }} #=> '#26ff26'`</span>).
+Agrega brillo a un color (ej. <span v-pre>`{{ '#00ff00' | brighten: 15 }} #=> '#26ff26'`</span>). Si omites la cantidad, usa `10`.
 
 ### Darken
 
-Reduce el brillo de un color (ej. <span v-pre>`{{ '#00ff00' | darken: 15 }} #=> '#00b300'`</span>).
+Reduce el brillo de un color (ej. <span v-pre>`{{ '#00ff00' | darken: 15 }} #=> '#00b300'`</span>). Si omites la cantidad, usa `10`.
 
 ### Desaturate
 
-Desatura un color (ej. <span v-pre>`{{ '#00ff00' | desaturate: 15 }} #=> '#13ec13'`</span>).
+Desatura un color (ej. <span v-pre>`{{ '#00ff00' | desaturate: 15 }} #=> '#13ec13'`</span>). Si omites la cantidad, usa `10`.
 
 ### Grayscale
 
@@ -611,11 +644,11 @@ Convierte un color a escala de grises, con el mismo resultado que `grayscale`, p
 
 ### Lighten
 
-Aligera un color (ej. <span v-pre>`{{ '#00ff00' | lighten: 15 }} #=> '#4dff4d'`</span>).
+Aligera un color (ej. <span v-pre>`{{ '#00ff00' | lighten: 15 }} #=> '#4dff4d'`</span>). Si omites la cantidad, usa `10`.
 
 ### Opacity
 
-Modifica la opacidad de un color (ej. <span v-pre>`{{ '#00ff00' | opacity: 0.5 }} #=> 'rgba(0, 255, 0, 0.5)'`</span>).
+Modifica la opacidad de un color (ej. <span v-pre>`{{ '#00ff00' | opacity: 0.5 }} #=> 'rgba(0, 255, 0, 0.5)'`</span>). Si omites el valor, usa `0.3`.
 
 ### RGB
 
@@ -623,15 +656,17 @@ Transforma un color a su equivalente RGB (ej. <span v-pre>`{{ '#00ff00' | rgb }}
 
 ### Saturate
 
-Satura un color (ej. <span v-pre>`{{ '#00ff00' | saturate: 15 }} #=> '#00ff00'`</span>).
+Satura un color (ej. <span v-pre>`{{ '#00ff00' | saturate: 15 }} #=> '#00ff00'`</span>). Si omites la cantidad, usa `20`.
 
 ### Spin
 
-Gira un color en grados a favor de las manecillas del reloj (ej. <span v-pre>`{{ '#00ff00' | spin: 15 }} #=> 'rgba(0, 255, 0, 0.5)'`</span>).
+Gira un color en grados a favor de las manecillas del reloj (ej. <span v-pre>`{{ '#00ff00' | spin: 15 }} #=> '#00ff40'`</span>). Si omites los grados, usa `30`.
 
 ## Location
 
 Estos filtros Liquid alteran valores relacionados con la Geolocalización en Modyo Platform.
+
+Los dos filtros reciben el valor de un campo **Ubicación** de una entrada, por ejemplo `entry.fields.sucursales`; el formato de ese valor está descrito en [Tipos de contenido](/es/platform/content/types.html#ubicacion). El mapa se pide a Google Maps con la **API key de Google** de la [configuración de la cuenta](/es/platform/core/configuration.html#visualizacion): configúrala antes de usar estos filtros, porque sin ella Google rechaza la solicitud y el mapa no se muestra.
 
 ### Dynamic Map
 
@@ -639,12 +674,18 @@ Devuelve un mapa dinámico de Google Maps (ej. <span v-pre>`{{ locations | dynam
 
 **Parametros**
 
-- `locations` (ArrayHash) — Array de hashes con los puntos de latitud y longitud.
+- `locations` (ArrayLocation) — Valor de un campo **Ubicación**. De cada ubicación se usan las coordenadas `location.lat` y `location.lon` y, como título del marcador, la dirección `location_street`.
 - `size` (String) (default: '600x300') — Tamaño en píxeles del mapa.
 - `zoom` (Integer) (default: 10) — Nivel de zoom para el mapa.
 - `type` (String) (default: 'roadmap') — Tipo de mapa.
 - `icon` (String) (default: '') — Icono para el mapa.
 - `controls` (Boolean) (default: true) — Controles de navegación para el mapa.
+
+El mapa se centra en la primera ubicación de la lista, así que el campo necesita al menos una: si está vacío, el filtro aborta y en el HTML publicado queda el comentario `<!-- Liquid Error -->` en lugar del mapa.
+
+:::warning Atención
+Usa un solo `dynamic_map` por página. Todos los mapas dinámicos se dibujan en el mismo contenedor, así que con dos o más solo se ve uno y los demás espacios quedan en blanco.
+:::
 
 ### Static Map
 
@@ -652,7 +693,7 @@ Devuelve un mapa estático de Google Maps (ej. <span v-pre>`{{ locations | stati
 
 **Parametros**
 
-- `locations` (ArrayHash) — Array de hashes con los puntos de latitud y longitud.
+- `locations` (ArrayLocation) — Valor de un campo **Ubicación**. De cada ubicación se usan las coordenadas `location.lat` y `location.lon`.
 - `size` (String) (default: '600x300') — Tamaño en píxeles del mapa.
 - `zoom` (String) (default: '') — Nivel de zoom para el mapa. Sin valor, la URL de Google Maps se arma con `zoom=` vacío y el encuadre queda a criterio de Google; pásalo siempre que necesites un encuadre fijo.
 - `type` (String) (default: 'roadmap') — Tipo de mapa.
@@ -669,7 +710,13 @@ Estos filtros Liquid alteran valores relacionados con los ítems de menús en Mo
 
 ### Active Page
 
-Determina si un ítem URL está activo. Devuelve 'active' cuando está activo (ej. <span v-pre>`{{ 'company.modyo.com/jobs' | active_page: 'company.modyo.com/jobs' }} #=> 'active'`</span>).
+Determina si la URL de un ítem coincide con la URL que recibe como parámetro, normalmente la de la página actual. Devuelve `' active'`, con un espacio inicial para concatenarlo a las clases del ítem, o una cadena vacía si no coinciden o si alguna de las dos está vacía.
+
+```liquid
+{{ 'company.modyo.com/jobs' | active_page: 'company.modyo.com/jobs' }} #=> ' active'
+```
+
+La comparación considera solo el host y la ruta: ignora el protocolo, los parámetros de consulta y la barra final. Una subruta no cuenta como activa, así que `company.modyo.com/jobs/ventas` no coincide con `company.modyo.com/jobs`.
 
 ### Item Rel
 
@@ -681,7 +728,9 @@ Resuelve la URL de un path y URL base (ej. <span v-pre>`{{ 'dynamic_bank' | reso
 
 ### Visible Items
 
-Devuelve una lista de ítems visibles en una lista de ítems (ej. <span v-pre>`{{ items | visible_items }}`</span>).
+Devuelve solo los ítems de la lista que puede ver el usuario actual (ej. <span v-pre>`{{ items | visible_items }}`</span>).
+
+Aplica los mismos criterios que el tag `menu`, descritos en [Ítems que se muestran](/es/platform/channels/navigation.html#items-que-se-muestran).
 
 ## Origination
 
@@ -839,15 +888,32 @@ La URL que se genera para una vista de plantilla incluye una versión que se act
 
 ### Button To
 
-Genera un botón (ej. <span v-pre>`{{ 'Hello World' | button_to: 'http://www.google.com' }}`</span>).
+Genera un enlace con apariencia de botón: un elemento `<a>` con la clase `btn`, no un `<button>`. La URL se resuelve igual que en [Link To](#link-to) (ej. <span v-pre>`{{ 'Hello World' | button_to: 'http://www.google.com' }}`</span>).
 
 ### Cookie Value
 
-Devuelve el valor de una cookie (ej. <span v-pre>`{{ 32 | cookie_value }}`</span>).
+Devuelve el valor de la cookie cuyo nombre recibe como entrada, o una cadena vacía si la solicitud no la incluye.
+
+```liquid
+{{ 'my_cookie' | cookie_value }}
+```
 
 ### Escape JS
 
-Evita interpretar código JavaScript (ej. <span v-pre>`{{ '<script>alert("hello world");</script>' | escape_js }}`</span>).
+Escapa un texto para insertarlo dentro de una cadena de JavaScript: escapa las comillas, las barras invertidas, los saltos de línea y la secuencia `</`, para que el valor no cierre la cadena ni el bloque `<script>`.
+
+```liquid
+{% assign mensaje = "It's done" %}
+<script>
+  var mensaje = '{{ mensaje | escape_js }}';
+</script>
+```
+
+El resultado es `var mensaje = 'It\'s done';`.
+
+:::warning Atención
+`escape_js` no codifica HTML: no impide que se ejecute un `<script>` ni otro código insertado en el HTML de la página. Para mostrar un texto dentro del HTML usa [Escape](#escape).
+:::
 
 ### Format Date
 
@@ -856,15 +922,19 @@ Traduce una fecha a otro formato (ej. <span v-pre>`{{ time | format_date: '%e %b
 **Parametros**
 
 - `time` (DateTime) — Fecha.
-- `format_date` (String) (default: '') — El nuevo formato para la fecha.
+- `format` (String) (default: '%e %b, %Y') — El formato de la fecha, con la misma sintaxis que `date`. Los nombres de meses y días salen en el idioma del sitio.
+
+Si la fecha es nula, el filtro devuelve una cadena vacía.
 
 ### Format DateTime
 
-Traduce una fecha a formato DateTime (ej. <span v-pre>`{{ time | format_datetime }}`</span>).
+Da formato a una fecha y hora con el formato fijo `'%e %b, %Y %H:%M'`, igual que Format Date con ese formato (ej. <span v-pre>`{{ time | format_datetime }}`</span> devuelve `15 Ene, 2025 10:30` en un sitio en español).
 
 ### Format Short Date
 
-Traduce una fecha a un formato reducido (dd-mm-yyyy) (ej. <span v-pre>`{{ time | format_short_date }}`</span>).
+Traduce una fecha al formato corto del idioma del sitio, que no incluye el año (ej. <span v-pre>`{{ time | format_short_date }}`</span>).
+
+Por ejemplo, para el 15 de enero de 2025 a las 10:30 el resultado es `15 de Ene, 10:30` en español, `15 Jan 10:30` en inglés y `15/01, 10:30 hs` en portugués. Si la fecha no tiene hora, es `15 de Enero`, `Jan 15` y `15 de Janeiro`, respectivamente. Si necesitas el formato dd-mm-yyyy, usa Format Date con `'%d-%m-%Y'`.
 
 ### Get Session ID
 
@@ -885,8 +955,8 @@ Agrega una etiqueta de enlace (anchor link) (ej. <span v-pre>`{{ 'Hello World' |
 **Parametros**
 
 - `text` (String) (default: '') — Texto para el enlace.
-- `link` (String) (default: '/') — URL para el enlace.
-- `alt` (String) (default: '') — Texto alternativo para el enlace.
+- `link` (String) (default: '/') — URL para el enlace. Si no empieza con `http`, se resuelve contra la URL base del sitio, comience o no con `/`.
+- `alt` (String) (default: '') — Texto que se emite en el atributo `title` del enlace.
 - `class` (String) (default: '') — Clase CSS para el enlace.
 - `target` (String) (default: '') — Target para el enlace.
 
@@ -896,7 +966,7 @@ Muestra la variable de mensaje flash (ej. <span v-pre>`{{ 'alert-error' | notifi
 
 ### Primary button to
 
-Genera un botón de tipo primario (ej. <span v-pre>`{{ 'Hello World' | primary_button_to: 'http://www.google.com', 'large' }}`</span>).
+Genera un enlace con apariencia de botón primario: un elemento `<a>` con las clases `btn`, `btn-primary` y `btn-` seguida del tamaño. La URL se resuelve igual que en [Link To](#link-to) (ej. <span v-pre>`{{ 'Hello World' | primary_button_to: 'http://www.google.com', 'large' }}`</span>).
 
 **Parametros**
 
@@ -924,7 +994,11 @@ Convierte un datetime a formato String (ej. <span v-pre>`{{ time | strftime: '%m
 
 ### Strip tag
 
-Elimina todas las etiquetas HTML y su contenido de un String (ej. <span v-pre>`{{ '<script>Hello World</script>' | strip_tags }} #=> ""`</span>).
+Quita las etiquetas HTML de un String y conserva su texto. Los bloques `<script>` se eliminan completos, con su contenido (ej. <span v-pre>`{{ '<script>Hello World</script>' | strip_tags }} #=> ""`</span>).
+
+```liquid
+{{ '<script>alert("hola");</script><p>Hola mundo</p>' | strip_tags }} #=> 'Hola mundo'
+```
 
 ### Stylesheet Tag
 
@@ -958,7 +1032,9 @@ Convierte una fecha en String a palabras (ej. <span v-pre>`{{ '01-02-2019' | tim
 
 ### Translate
 
-Resuelve el texto de traducción para claves de Sitios. Se devolverán valores personalizados si existen (ej. <span v-pre>`{{ 'admin.logs.errors.no_logs_yet' | translate }}`</span>).
+Resuelve una clave de las traducciones de la plataforma en el idioma del sitio (ej. <span v-pre>`{{ 'admin.logs.errors.no_logs_yet' | translate }}`</span>).
+
+Las claves y sus textos son los de la plataforma: no puedes agregar claves nuevas ni personalizar sus textos. Si la clave no existe, el filtro imprime un aviso de traducción faltante en lugar del texto.
 
 **Parámetros**
 
@@ -967,7 +1043,13 @@ Resuelve el texto de traducción para claves de Sitios. Se devolverán valores p
 
 `t` es el alias corto del filtro y hace exactamente lo mismo: <span v-pre>`{{ 'admin.logs.errors.no_logs_yet' | t }}`</span>.
 
-El segundo parámetro pluraliza la clave y solo se aplica cuando llega como entero (ej. <span v-pre>`{{ 'site.results.count' | t: total }}`</span>). Si llega como cadena, por ejemplo `'3'`, el filtro lo descarta sin avisar y resuelve la clave sin pluralizar.
+El segundo parámetro pluraliza la clave y solo se aplica cuando llega como entero, por ejemplo con una clave de la plataforma que tiene formas en singular y plural:
+
+```liquid
+{{ 'datetime.distance_in_words.x_days' | t: 3 }} #=> '3 días'
+```
+
+Si llega como cadena, por ejemplo `'3'`, el filtro lo descarta sin avisar y resuelve la clave sin pluralizar.
 
 ### Truncate HTML
 
@@ -1034,15 +1116,17 @@ Para listar los estados que el filtro no cubre, recorre una colección sin acota
 
 ### Completed
 
-Verifica si un elemento (wrapper de step/task) está completado para un submission dado.
+Verifica si un step o una task ya se completó en una respuesta.
 
 *ej.* <span v-pre>`{{ submission | completed: step }}`</span>
 
 **Parámetros:**
 - submission (Submission) — submission actual (objeto antes de la barra)
-- element (Step|TaskResponse wrapper) — elemento a evaluar
+- element (Step|Task) — el step o la task a evaluar, por ejemplo uno de `origination.steps` o de `step.tasks`
 
 Retorna: Boolean (true/false)
+
+No acepta los elementos de `submission.steps` ni las respuestas de `submission.tasks`: con ellos, el filtro aborta y en el HTML publicado queda el comentario `<!-- Liquid Error -->` en lugar del bloque. Esos objetos ya traen su estado, en `is_completed` y en `status`, respectivamente.
 
 Desde Modyo 10.2 el filtro resuelve el estado contra el usuario presente en el contexto de render y no contra el titular de la respuesta: un step cuenta como completado solo si ese usuario tiene una respuesta completada en cada una de las tareas que ve. En un flujo con usuarios invitados, la misma plantilla entrega resultados distintos según quién la mire, y un step que en 10.1 aparecía completado puede aparecer incompleto.
 
@@ -1140,7 +1224,7 @@ Retorna respuestas de formulario del usuario filtradas por un slug específico.
 
 ### By Response Date Range
 
-Retorna respuestas de formulario creadas dentro de un rango de fechas (inclusivo).
+Retorna respuestas de formulario creadas dentro de un rango de fechas.
 
 *ej.* <span v-pre>`{% assign responses = user.responses | by_response_date_range: '2025-03-10', '2025-03-20' %}`</span>
 
@@ -1148,6 +1232,8 @@ Retorna respuestas de formulario creadas dentro de un rango de fechas (inclusivo
 - responses (Array&lt;FormResponse&gt;) — user.responses
 - date_from (String/Date) — fecha inicial (recomendado YYYY-MM-DD)
 - date_to (String/Date) — fecha final (recomendado YYYY-MM-DD)
+
+`date_from` incluye su día completo, pero `date_to` se toma como el inicio de ese día (00:00), aunque indiques una hora, así que el día final queda fuera: en el ejemplo no aparecen las respuestas creadas el 20 de marzo. Para incluirlo, pasa el día siguiente como `date_to`, en este caso `'2025-03-21'`. Los dos límites se comparan con la hora de creación en UTC.
 
 ### By Answer Text
 
@@ -1158,28 +1244,3 @@ Retorna respuestas de formulario que contienen una respuesta cuyo `answers.text_
 **Parámetros:**
 - responses (Array&lt;FormResponse&gt;) — user.responses
 - answer_text (String) — texto exacto a coincidir
-
-## Widget
-
-Estos filtros Liquid alteran valores relacionados con los Widgets.
-
-### Entry Limit
-
-Determina el límite de entradas para un widget (ej. <span v-pre>`{{ widget1 | entry_limit }}`</span>).
-
-### Resolve Home Widget List
-
-Devuelve una lista de todos los widgets que pertenecen a un Sitio (ej. <span v-pre>`{{ site | resolve_home_widget_list }}`</span>).
-
-### Resolve Me Widget List
-
-Devuelve una lista de todos los widgets que pertenecen a una página "me" (ej. <span v-pre>`{{ site | resolve_me_widget_list }}`</span>).
-
-### Resolve Widget List
-
-Devuelve una lista de todos los widgets que pertenecen a una página (ej. <span v-pre>`{{ site | resolve_widget_list: page }}`</span>).
-
-**Parámetros**
-
-- `site` (Site) — Objeto de tipo Sitio.
-- `page` (Page) — Objeto de tipo Página.
