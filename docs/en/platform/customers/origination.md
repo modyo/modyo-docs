@@ -774,6 +774,36 @@ Additional options depending on the task type:
 
 You can also assign an agent task to an agent or a group based on the user's answers, with the **Assign** action of [conditional logic](#assign-tasks-with-conditional-logic).
 
+#### Continue to the next task
+
+When you complete an agent task from the admin, the platform takes you to the submission's next task if it is yours to work on, or to the submission's task list if it is not. This applies to every way of completing a task:
+
+- Clicking **Submit** on the form of an **Input** or **Code snippet** task.
+- Clicking **Complete** on a **Pending review** task.
+- Approving the last pending item of a **Validation** task. If approving or rejecting an item doesn't complete the validation, you stay on the task with the message "Task successfully reviewed".
+
+The next task is the first pending task of the flow, in the order in which it appears, not counting the ones that [conditional logic](#conditional-logic) hides for that user. If you are working on the tasks of an invited user, the next task is searched among that invitee's tasks and the task list opens with that same invitee selected.
+
+You go to the next task in these cases:
+
+- It is assigned to you or to a group you belong to. If it is assigned to a person within a group, it only counts as that person's task.
+- Nobody is assigned to it and you can work on it:
+  - **Input** and **Code snippet**: you can assign it to yourself, with the **Assign Tasks** permission. Going to the task doesn't assign it to you; you assign it to yourself from the task view.
+  - **Validation**: you can review it, with a permission that allows approving or rejecting validations, such as **View Submission Tasks**. If the origination has a **Default submission assignee**, only that person goes to the validation.
+  - **Pending review**: you can complete it, that is, you see the **Complete** button.
+
+In every other case you go to the task list: when the next task is answered by the user, when it is assigned to another agent or to a group you don't belong to, when there are no pending tasks left, and when the submission is already completed or canceled. Assignment takes precedence: if the next task belongs to another agent, you go to the task list even if your permissions let you complete it, for example with **Change Status of Task Response**.
+
+At the destination you see the message "Task successfully completed". If completing the task fails, you stay on it and see the error.
+
+When you click **Submit**, the button shows "Sending…". When the submission finishes, the form is disabled with the notice "Form submitted." and the page shows "Looking for the next task…" while it works out the destination. If the platform can't confirm that the task was completed, you go back to the task with the error "The task could not be confirmed as completed." and the page no longer moves forward on its own: continue from the task list.
+
+:::tip Expected behavior
+- If the next task is yours, you go to it even if you can't act on it yet, for example a validation that is waiting for the user's answers or a pending review with **Disable manual completion**.
+- The destination doesn't take into account the site's navigation options, such as returning to the summary page when a step is completed: those options only define the user's experience.
+- If another person or an external system completes the task you have open, the view is updated, but you aren't taken anywhere else.
+:::
+
 #### Agent verification for external services
 
 When an agent answers a Code snippet task, your code can obtain a short-lived credential (5 minutes) so an external service can verify that the caller is an agent authorized for that task and submission:
