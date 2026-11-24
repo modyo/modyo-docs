@@ -29,11 +29,25 @@ Understand the organization of a Dynamic project:
 - Best practices
 - Conventions
 
+### [Migrate to v2.0](migration-v2.html)
+Step-by-step guide to upgrade from Dynamic UI 1.36.x:
+- New requirements and dependencies
+- Bootstrap to Lucide icons migration
+- API changes and removed components
+- Migration checklist
+
+### [Production Checklist](production-checklist.html)
+Comprehensive checklist before deploying to production:
+- Performance optimization
+- Security best practices
+- Accessibility compliance (WCAG 2.1 AA)
+- Error handling and monitoring
+
 ## Prerequisites
 
 Before starting, make sure you have:
 
-- **Node.js** v20 or higher
+- **Node.js** >=22.0.0
 - **NPM** 10.x or higher
 - **Git** for version control
 - **Modyo Account** with access to Dynamic Framework
@@ -44,7 +58,7 @@ If you already meet the prerequisites, you can start immediately:
 
 ```bash
 # 1. Create project with Dynamic template
-npx @modyo/cli@latest get dynamic-react-base-template my-bank
+npx @modyo/cli@latest get dynamic-react-vite-base-template my-bank
 
 # 2. Install dependencies
 cd my-bank && npm install
@@ -59,7 +73,7 @@ Your application will be available at `http://localhost:8080` 🎉
 
 ### For Developers New to Dynamic
 
-1. Read about [What is Dynamic?](../what-is-dynamic.html)
+1. Read about [What is Dynamic?](../overview.html)
 2. Follow the [Installation](installation.html) guide
 3. Complete the [First Application](first-app.html) tutorial
 4. Explore the [Components](../development/components.html)
@@ -67,9 +81,8 @@ Your application will be available at `http://localhost:8080` 🎉
 ### For Experienced Developers
 
 1. Review the [Project Structure](project-structure.html)
-2. Explore [Pre-designed Experiences](../development/experiences.html)
-3. Learn about [Customization](../customization/)
-4. Implement [API Integrations](../development/api-integration.html)
+2. Learn about [Customization](../customization/)
+3. Implement [API Integrations](../development/api-integration.html)
 
 ## Support Resources
 

@@ -14,9 +14,13 @@ You can use the filters at the top of the table to quickly find user groups. The
 - **Verification**: Users who have confirmed their data on the platform.
 - **Segments:** Users who belong to a specific [segment](/en/platform/customers/segments).
 - **Tags**: Users assigned to specific tags on the platform.
-- **Search**: Filter users by name, last name, email or username.
+- **Search**: Finds users by name, last name, email, username, phone, tags, or the value of the custom fields marked as **Searchable by admins** (see [Custom fields](/en/platform/customers/settings.html#custom-fields)). You don't need to type the whole word: its beginning is enough.
 
 You can sort the users in the table by name, registration date, last login, or number of sessions started by clicking on the column headers.
+
+:::tip Segment scope
+If your access to the realm is restricted by segments, this list only shows the users that belong to the segments within your scope. Learn more in [Restrict scope with segments](/en/platform/customers/settings.html#restrict-scope-with-segments).
+:::
 
 ### Bulk actions
 
@@ -31,17 +35,25 @@ Check the box next to one or more users' names and click the **Bulk Actions** bu
 
 To add a new user, click the **New User** button and complete the following fields:
 
-- **First Name**: **[Required]**. The user's legal first name.
-- **Surname**
-- **Maternal surname**
-- **Username**: **[Required]**. Unique identifier on the platform.
+- **First name**: **[Required]**. The user's legal first name.
+- **Last Name**
+- **Second last name**: Only shows up if the realm has the **Enable second last name** option checked in the **Signup form**, in the [Realm Settings](/en/platform/customers/settings.html#general).
+- **Username**: **[Required]**. Unique identifier on the platform. It can only contain letters A to Z (uppercase or lowercase), numbers, and the symbols `| # @ % . _ - ' + /`; spaces are not allowed. Next to the label, in parentheses, the panel shows how the realm identifies its users: **Email** if it uses the email as the username, which is the default option, or the username label it has configured.
 - **Email**: **[Required]**
-- **Password**: **[Required]**. Must be at least 8 characters long.
-- **Password Confirmation**: **[Required]**
+- **Password**: **[Required]**. Must meet the realm's [Password Policy](/en/platform/customers/settings.html#password-policy): the minimum length it sets, which is never below 12 characters, a maximum of 128, and the lowercase letters, uppercase letters, and symbols it requires. In a new realm, the policy asks for 16 characters and all three types.
+- **Password confirmation**: **[Required]**
 - **Tags**: Labels to identify the user.
 
+Below the password fields, **Show password** lets you see what you type and **Generate strong password** fills both fields with a random password.
+
 :::tip Tip
-To send the password to the user's email, check the box below the email field. The user can change the password once they access the platform.
+When you save, the user is activated and receives the **Added by Admin** email, as long as that email is enabled in [Mails](/en/platform/customers/settings.html#mails) of the realm settings, as it is by default. The **Include password in user email** checkbox, checked by default, only decides whether the email includes the password.
+:::
+
+Users you create from the admin are left with a pending password change: the first time they log in, the platform takes them to the password change screen and doesn't let them continue until they set a new one. The same happens when an administrator sets a password for them from **Edit**.
+
+:::tip Tip
+If the realm has [Soft login](/en/platform/customers/settings.html#soft-login) enabled, users aren't asked for a password to log in, so this forced change doesn't apply.
 :::
 
 If you need to add additional fields to the form or select a default avatar for users without one, go to the **Sign Up** section in the [Realm Settings](/en/platform/customers/settings).
@@ -65,6 +77,25 @@ General user information:
 - **Segments**: List of segments the user belongs to, if applicable.
 - **Tags**: List of tags assigned to the user, if applicable.
 
+### Impersonation
+The impersonation feature allows realm administrators with the appropriate roles to temporarily assume the identity of an end-user and navigate the website as if they were that user. This is an invaluable tool for support, debugging, and verifying the customer experience.
+
+This functionality can be accessed from the User Profile: you'll find the "Impersonate" button in the actions menu (identified with three dots).
+
+To use it you need the **Impersonate Users** permission on the realm, which is also included in **Admin User**. The **Impersonate** option only shows up when the user is active.
+
+### Impersonation process
+When you click the "Impersonate" button, a new browser tab will open, taking you directly to the user's profile in the front end with that active session.
+
+Purpose: Once inside, you can navigate the web app exactly as the user would, viewing their segmented content, user experience, and the status of their originations.
+
+:::tip Tip
+All activity performed while impersonating the user will be recorded in the logs and marked as impersonated.
+:::
+
+:::warning Warning
+The impersonation session is temporary and must be ended to avoid confusion. To close the session, you must click the "Exit" button in the impersonation bar or simply loging out.
+:::
 
 ### Activity
 
@@ -74,9 +105,17 @@ In this section, you can view a log of all actions performed by the user on the 
 These records cannot be deleted or edited.
 :::
 
+:::tip Tip
+If a user reports that they asked to recover their password and the email never arrived, check this activity: the requests the platform processes are recorded here, and the ones it discards for exceeding the limits leave no trace at all. The detail of those limits is in [Request limits and lockouts](/en/platform/customers/settings.html#request-limits-and-lockouts).
+:::
+
 ### Answers to forms
 
 This section contains a list of forms filled out by the user. Click on a form to view their responses. For more information, see the [Forms](/en/platform/customers/forms) section.
+
+### Origination
+
+Lists the user's submissions to the realm's originations, with the **Origination flow**, **Status**, **Progress**, and **Started at** columns. Click the flow name to open the submission detail, explained in [Submission Management](/en/platform/customers/origination.html#submission-management). This tab only shows up if your account's plan includes Origination and your role has access to the realm's originations.
 
 ### Notes
 
@@ -84,15 +123,20 @@ Here, you can add custom notes about users. Only administrators can view, add, o
 
 #### Devices
 
-Displays the user's devices with active sessions. An administrator can remotely end sessions.
+Displays the user's devices with active sessions, including the browser and operating system, the start date, and the **IP Address** of each one. An administrator can remotely end those sessions:
+
+- To end a single session, click **Log out** next to the device.
+- To end all of them at once, click **Log out all devices**, above the list. This option shows up when there is more than one active session.
+
+When you revoke a session, the device loses access and the user has to authenticate again to get back in.
 
 ### Additional options
 
 In the contextual menu, you can perform the following actions:
 
-- **Edit**: Opens the user editing modal.
-- **Deactivate**: Deactivates a user, preventing them from logging in.
-- **Delete**: Removes the user from the platform. Only administrators can perform this action.
+- **Edit**: Opens the user editing modal. If you assign them a new password, the user must change it the next time they log in.
+- **Deactivate**: Deactivates a user, prevents them from logging in again, and revokes all their active sessions, which also signs them out of any session they had open at that moment.
+- **Delete**: Removes the user from the platform. Only administrators can perform this action. The platform deactivates them immediately and the final deletion runs in a background process, so their record may still show up in the list for a while.
 
 :::tip Tip
 - Modifying a user may result in changes to the list of segments they belong to.

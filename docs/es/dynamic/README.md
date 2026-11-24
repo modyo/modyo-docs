@@ -6,6 +6,12 @@ search: true
 
 Framework de componentes React especializado para aplicaciones financieras, construido sobre Bootstrap 5 y optimizado para micro frontends con la plataforma Modyo.
 
+:::tip Versión 2.0 disponible
+Dynamic UI 2.0 trae un nuevo lenguaje visual, iconos Lucide, y 8 nuevos componentes.
+- [Ver novedades en v2.0](https://github.com/dynamic-framework/dynamic-ui/releases)
+- [Guía de migración](getting-started/migration-v2.html)
+:::
+
 ## Documentación Técnica
 
 ### Arquitectura
@@ -21,38 +27,34 @@ Todo lo necesario para comenzar a desarrollar con Dynamic.
 ### [Desarrollo](development/)
 Guías técnicas para construir aplicaciones con Dynamic.
 
-- **[Componentes](development/components.html)** - Catálogo de 30+ componentes especializados
-- **[Experiencias y Plantillas](development/experiences.html)** - Soluciones prediseñadas por industria
-- **[Integración con React](development/react-integration.html)** - Desarrollo avanzado con React
-- **[Widgets](development/widgets.html)** - Creación de widgets modulares
+- **[Componentes](development/components.html)** - Catálogo de más de 46 componentes especializados
 - **[Integración con APIs](development/api-integration.html)** - Conexión con servicios backend
 
 ### [Personalización](customization/)
 Adapta Dynamic a tu identidad y necesidades específicas.
 
 - **[Sistema de Temas](customization/theming.html)** - Personalización visual completa
-- **[Estilos y CSS](customization/styling.html)** - Técnicas avanzadas de estilizado
 - **[Extender Componentes](customization/extending.html)** - Crea y modifica componentes
 
 ## Instalación Rápida
 
 ```bash
 # Crear proyecto con Dynamic Framework
-npx @modyo/cli@latest get dynamic-react-base-template my-app
+npx @modyo/cli@latest get dynamic-react-vite-base-template my-app
 
 # Instalar dependencias
 cd my-app && npm install
 
 # Iniciar servidor de desarrollo
-npm start
+npm run dev
 ```
 
-Aplicación disponible en `http://localhost:8080`
+Aplicación disponible en `http://localhost:5173`
 
 ## Características Técnicas
 
 ### Componentes
-- **30+ componentes React** especializados para banca
+- **Más de 46 componentes React** especializados para banca
 - **Sistema de diseño** basado en Bootstrap 5
 - **TypeScript** support completo
 - **Accesibilidad WCAG 2.1** integrada
@@ -61,16 +63,16 @@ Aplicación disponible en `http://localhost:8080`
 - **Micro Frontends** con Module Federation
 - **API-first** design
 - **Lazy loading** y code splitting
-- **State management** con Context API
+- **State management**: Zustand (UI) + TanStack Query (server)
 
 ## Stack Tecnológico
 
-- **React**: 18+ con Hooks y Suspense
+- **React**: 18.x / 19.x compatible
 - **TypeScript**: Tipado estático completo
-- **Bootstrap**: 5.3+ customizable
-- **Build Tools**: Webpack 5, Vite support
-- **Testing**: Jest, React Testing Library
-- **Linting**: ESLint, Prettier
+- **Bootstrap**: 5.3.x customizable
+- **Build Tools**: Vite (widgets), Rollup (design system)
+- **Testing**: Vitest (widgets), Jest (design system), React Testing Library
+- **Linting**: ESLint
 
 ## Guías de Desarrollo
 
@@ -81,28 +83,20 @@ Aplicación disponible en `http://localhost:8080`
 
 ### Desarrollo Avanzado
 1. [Componentes](development/components.html) - Catálogo y APIs
-2. [React Patterns](development/react-integration.html) - Hooks y patterns
-3. [API Integration](development/api-integration.html) - Backend connectivity
-4. [Widgets](development/widgets.html) - Componentes modulares
+2. [API Integration](development/api-integration.html) - Backend connectivity
 
 ### Personalización
 1. [Theming](customization/theming.html) - Variables y temas
-2. [Styling](customization/styling.html) - CSS y SCSS
-3. [Extending](customization/extending.html) - Componentes custom
+2. [Extending](customization/extending.html) - Componentes custom
 
 ## Recursos Técnicos
 
 ### Documentación
 - [Storybook Components](https://react.dynamicframework.dev) - Catálogo interactivo
-- [API Reference](https://dynamic.modyo.com/docs/api) - Documentación de APIs
-- [GitHub](https://github.com/modyo/dynamic-framework) - Código fuente
+- [NPM Package](https://www.npmjs.com/package/@dynamic-framework/ui-react) - Registro de paquetes
 
 ### Herramientas de Desarrollo
 - [Modyo CLI](https://www.npmjs.com/package/@modyo/cli) - Herramienta de línea de comandos
-- [Figma UI Kit](https://figma.com/@modyo) - Recursos de diseño
-- [CodeSandbox Templates](https://codesandbox.io/s/dynamic-framework) - Plantillas de inicio
 
 ### Soporte Técnico
-- [Issues](https://github.com/modyo/dynamic-framework/issues) - Reportar problemas
-- [Stack Overflow](https://stackoverflow.com/questions/tagged/dynamic-framework) - Preguntas técnicas
-- [Comunidad](https://community.modyo.com) - Foro de desarrolladores
+- [Soporte](https://support.modyo.com) - Soporte técnico

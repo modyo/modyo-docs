@@ -4,9 +4,266 @@ search: true
 
 # Notas de Versión
 
+## 10.2
+
+### Modyo 10.2.2
+
+:::info Fecha del release
+16 de noviembre de 2026
+:::
+
+| Módulo | Mejoras |
+|--------|---------|
+| **Core** | • Agrega la entrega confiable de webhooks, ahora cada notificación se envía al menos una vez:<br>&nbsp;&nbsp;- Registro de entregas con su estado, intentos y último resultado, consultable desde el admin y la API administrativa<br>&nbsp;&nbsp;- Reintentos automáticos con espera creciente ante errores de comunicación y respuestas 5xx, 408 o 429<br>&nbsp;&nbsp;- Nuevos headers `webhook-id`, `webhook-timestamp`, `modyo-event-type` y `modyo-attempt` en cada envío, con un `webhook-id` que se mantiene entre reintentos para que el receptor procese cada entrega una sola vez. El body del payload no cambia<br>&nbsp;&nbsp;- Re-disparo manual de entregas, individual o masivo<br>&nbsp;&nbsp;- Estado Degradado para los webhooks con fallos sostenidos, que reduce el ritmo de reintentos sin deshabilitarlos<br>&nbsp;&nbsp;- La notificación de prueba muestra el resultado real del endpoint<br>&nbsp;&nbsp;- Un webhook deshabilitado ahora deja de enviar notificaciones y cancela sus entregas pendientes |
+| **Channels** | • Agrega la API pública de Channels, con un endpoint de solo lectura que entrega en JSON un menú publicado de un sitio, con la jerarquía y los atributos de sus ítems. Los ítems privados y segmentados se filtran según la sesión del usuario en el sitio, con la misma regla del menú en Liquid, y los orígenes CORS de la cuenta también habilitan esta API<br>• Corrige el clonado de sitios y la creación de stages, que seguían purgando la caché de CDN al copiar widgets con variables globales y podían superar el rate limit de Cloudflare. Ahora no se purga la caché de CDN de los widgets recién creados<br>• Corrige la eliminación de un stage de web app, que no validaba en el servidor el texto de confirmación. Ahora la API exige el nombre de la aplicación del stage, el mismo que pide el modal, igual que para una web app principal (Breaking change, una llamada a `DELETE /api/admin/sites/{id}` sobre un stage sin `validation` o con otro nombre ahora responde 401 y no elimina el stage) |
+| **Customers** | • Agrega stages en los reinos, con la misma experiencia de los stages de Channels:<br>&nbsp;&nbsp;- Hasta 4 stages por reino contando el principal, que se crean en segundo plano a partir de otro stage<br>&nbsp;&nbsp;- Sincronización manual y selectiva entre stages del mismo reino de la configuración, los custom fields, los formularios, las originaciones publicadas, los segmentos, los data sets, la mensajería y los correos transaccionales<br>&nbsp;&nbsp;- Un sitio o un espacio puede usar cualquier stage del reino, y cada stage tiene su propia URL de login, perfil y API<br>&nbsp;&nbsp;- Un stage nuevo no incluye identity providers, integraciones, clientes OAuth ni webhooks<br>&nbsp;&nbsp;- Nuevos permisos para administrar stages, ver sus diferencias y sincronizarlos<br>• Agrega dominio propio para el perfil público de los reinos, con un dominio canónico y dos alternativos, como en los sitios:<br>&nbsp;&nbsp;- Login, registro, recuperación de contraseña, OTP, logout y los callbacks de los proveedores de identidad responden en el dominio propio, con rutas `/realms/...` sin el identificador del reino<br>&nbsp;&nbsp;- Las páginas del perfil en los dominios alternativos y en el dominio de la cuenta redirigen con 301 al dominio canónico<br>&nbsp;&nbsp;- Un reino puede compartir host con un sitio de la misma cuenta<br>&nbsp;&nbsp;- La API de Customers también responde en el dominio canónico del reino<br>&nbsp;&nbsp;- Al activar o cambiar el dominio se pierden las sesiones abiertas en el dominio anterior, y hay que actualizar las URLs de callback en los proveedores de identidad<br>&nbsp;&nbsp;- Nuevo grupo de permisos para la configuración de dominios del reino<br>• Agrega Incode como proveedor de verificación de identidad, con validación del documento y OCR, selfie con prueba de vida, comparación de rostro y validación contra bases de gobierno, en dos modalidades a elegir en cada tarea:<br>&nbsp;&nbsp;- Hosted URL, donde el usuario completa la verificación en una página de Incode y vuelve al mismo paso del flujo<br>&nbsp;&nbsp;- Drop-in, donde la verificación ocurre en el mismo paso con el Web SDK de Incode, y que requiere ajustar la política de seguridad de contenido (CSP) del sitio<br>&nbsp;&nbsp;- Los resultados se guardan en el paso de la respuesta y se muestran en la pestaña "Verificación de Identidad"<br>• Agrega la acción Asignar a la lógica condicional de las originaciones, que asigna una tarea Input, Snippet de código, Revisión pendiente o Validación a un agente o a un grupo cuando se cumple la regla, y permite agregar varias acciones a una misma regla (Breaking change, la API de originaciones ahora entrega las acciones de cada regla en `targets` en lugar de `target`)<br>• Agrega el tipo de pregunta "Campo oculto" en los formularios, que no se muestra al usuario final y guarda como respuesta un valor fijo, un valor calculado con Liquid o el valor de un parámetro de la URL<br>• Agrega el campo de contenido "Texto enriquecido" en los formularios, el mismo de las tareas Input, para mostrar instrucciones o avisos sin generar respuesta<br>• Agrega soporte de preguntas de tipo archivo en los formularios para usuarios sin sesión, el archivo se sube al enviar el formulario y solo se guarda si la respuesta es válida<br>• Agrega la opción "Habilitar buscador" en las preguntas Lista desplegable y Preguntas anidadas, también en sus variantes de data set, que permite filtrar las alternativas escribiendo, en formularios y tareas Input<br>• Agrega identificadores predecibles en los formularios para personalizarlos con custom JS y CSS, con atributos `data-question` y `data-field` basados en el identificador de cada pregunta y el evento `forms:rendered` cuando el formulario ya está en la página. El identificador de una pregunta guardada solo se edita tras confirmarlo<br>• Agrega el permiso "Listar Respuestas del Grupo", con el que un supervisor ve también las respuestas asignadas a los agentes de sus grupos. Ningún rol existente lo tiene por defecto (Breaking change, la API administrativa ahora aplica las reglas de visibilidad del listado al detalle, las tareas y las invitaciones de una respuesta, así que un token con solo "Listar Respuestas Asignadas" recibe un 404 al consultar respuestas que no tiene asignadas)<br>• Agrega el permiso "Asignar Tareas", necesario para asignar, reasignar o quitar la asignación de una tarea de una respuesta desde el admin y la API administrativa. "Ver Tareas de la Respuesta" ya no permite asignar tareas y, salvo Realm Admin, los roles existentes que lo necesiten deben agregarlo a mano (Breaking change, una integración que asigna tareas con el token de un usuario sin el permiso ahora recibe un error)<br>• Agrega a la API administrativa de respuestas de originación la fecha de completado y de cancelación de la respuesta, y la fecha de completado y de última modificación de cada tarea<br>• Agrega un log de administración por cada error que devuelven los servicios de naat, incluidos los reintentos, visible en la actividad de la respuesta y en los logs de actividad<br>• Mejora el vencimiento de las respuestas de originación:<br>&nbsp;&nbsp;- El plazo puede contarse desde el inicio de la respuesta, desde que se completa una tarea específica o desde el valor de un campo de tipo Fecha, configurable desde el admin<br>&nbsp;&nbsp;- La duración combina meses, días y horas, y los meses pasan a contarse como meses calendario en lugar de 30 días, por lo que el vencimiento de las respuestas en curso puede moverse uno o dos días<br>&nbsp;&nbsp;- La cancelación automática ocurre a más tardar una hora después del vencimiento<br>&nbsp;&nbsp;- Las respuestas cuyo plazo aún no comienza muestran "Sin vencimiento"<br>&nbsp;&nbsp;- Las respuestas de fecha sin hora conservan su fecha de calendario sin importar desde dónde se guardaron<br>&nbsp;&nbsp;- `due_value` y `due_unit` se reemplazan por `due_months`, `due_days` y `due_hours` en la API administrativa y en Liquid (Breaking change)<br>• Mejora los textos del modo de una sola foto del campo Documento de identidad, que ahora hablan de documento en lugar de pasaporte, para usarlo con el frente de una cédula u otro documento<br>• Corrige el guardado de datos desde el snippet de una tarea Snippet de código, que completaba la tarea aunque no se enviara `completed` y, en una tarea rechazada, enviaba la corrección con el primer guardado. Ahora la tarea se completa al presionar "Siguiente" o al enviar `completed: true` (Breaking change, un snippet que completaba la tarea guardando datos sin `completed` ahora debe enviar `completed: true`)<br>• Corrige el registro de actividad de las tareas de originación:<br>&nbsp;&nbsp;- Las tareas Snippet de código con bloqueo ahora registran su envío y disparan su webhook<br>&nbsp;&nbsp;- La tarea de Confirmación registra su inicio y su completado<br>&nbsp;&nbsp;- La tarea de invitación registra su completado automático al cerrarse la última invitación<br>&nbsp;&nbsp;- Completar una tarea con `tasks[]` en la API administrativa ahora asigna la tarea siguiente al agente y le envía el correo, igual que el endpoint de estado<br>• Corrige el cierre de las invitaciones de las originaciones multiusuario, que quedaban abiertas si el invitado completaba su última tarea sin presionar "Siguiente", desde un snippet, el admin o la API, e impedían completar la tarea de invitación y la respuesta<br>• Corrige el botón "Siguiente" de las tareas de originación en reinos con Google reCAPTCHA v3 o reCAPTCHA Enterprise, que no enviaba la tarea<br>• Corrige el login con un proveedor de identidad cuando el navegador tenía una sesión anterior ya cerrada por el proveedor, el usuario se autenticaba pero el sitio lo deslogueaba al volver o a los pocos minutos<br>• Corrige el mensaje de campos obligatorios en sitios en español, que mezclaba textos en inglés como "Answers", "text field" y "alternative"<br>• Corrige el listado de entregas de mensajes en reinos con muchas entregas, que fallaba en el admin y en la API porque no aplicaba el orden por defecto por fecha de envío<br>• Corrige la eliminación del archivo de una pregunta de tipo archivo, ahora la API administrativa lo quita al enviar un valor nulo o vacío, y quitar desde el admin un archivo que no es imagen, como un PDF, ya no lo deja asociado a la respuesta<br>• Corrige las imágenes subidas en base64 a una pregunta de tipo archivo mediante la API administrativa, que podían quedar sin miniatura en los documentos de la respuesta |
+
+### Modyo 10.2.1
+
+:::info Fecha del release
+17 de septiembre de 2026
+:::
+
+| Módulo | Mejoras |
+|--------|---------|
+| **Core** | • Agrega un contador de tareas pendientes junto a "Mis tareas" en el menú lateral, que se actualiza en tiempo real y respeta los colores del tema de la cuenta<br>• Corrige la creación de usuarios administradores sin idioma, que dejaba en blanco la vista de perfil, ahora se asigna el idioma de la cuenta cuando no se especifica uno |
+| **Channels** | • Corrige las URLs de las redirecciones, que no quedaban codificadas y por eso no hacían match cuando el path incluía tildes u otros caracteres especiales<br>• Corrige el guardado de un sitio con configuración de host inválida, ahora la validación de dominios se aplica solo cuando el cambio afecta al host, al dominio principal o a los dominios alternativos<br>• Elimina el endpoint de actualización de templates de la API administrativa junto al soporte legado de content views (Breaking change, un cliente que lo llame ahora recibe un 404). El path de un template pasa a ser inmutable, se asigna al crear y no puede renombrarse, y la edición sigue disponible mediante el endpoint que usa el Template Builder |
+| **Content** | • Mejora el preview de la API de contenido, ahora el modo preview viaja en un token firmado en la URL, lo que permite ver el contenido en edición también en sitios con dominio propio que consumen la API cross-origin, sin configuración adicional en la CDN<br>• Corrige la copia de espacios, que perdía los metadatos de los assets y el orden de los campos de listado de contenido, y dejaba las entradas inaccesibles desde los snippets globales hasta reindexar manualmente cada type<br>• Corrige la actualización de un asset usado en una entrada, ahora el nuevo título, texto alternativo o nombre de archivo se refleja en los snippets sin necesidad de republicar la entrada |
+| **Customers** | • Agrega enmascaramiento de campos en los formularios y en las tareas Input, ahora los campos de texto simple y número admiten una máscara configurable que impide teclear caracteres fuera del formato esperado y da formato al valor mientras se escribe, y los campos de URL y correo traen una máscara de fábrica<br>• Agrega nuevos tipos de campo especializados para la subida de archivos:<br>&nbsp;&nbsp;- Documento de identidad, con captura de frente y reverso o pasaporte, y país opcional para mejorar el OCR<br>&nbsp;&nbsp;- Selfie, con captura centrada por cámara<br>&nbsp;&nbsp;- Documentos generales, con extracción de texto mediante OCR<br>&nbsp;&nbsp;- En Selfie y Documento de identidad la captura por cámara es el método por defecto, y permitir la subida de un archivo es una opción independiente por campo<br>&nbsp;&nbsp;- El resultado del OCR del Documento de identidad se muestra en la vista de Campos del backend<br>• Agrega el campo de contenido "Texto enriquecido" en las tareas Input, un bloque de solo visualización que no genera respuesta, se edita con Froala y admite HTML y Liquid con acceso al contexto de la respuesta y del usuario<br>• Agrega external ids a los datasets simples y anidados, ahora cada alternativa puede llevar un identificador propio del integrador, distinto del valor que se muestra al usuario, y se expone en la API y en los drops de Liquid de la respuesta<br>• Agrega headers de seguridad configurables a nivel de reino, con Content-Security-Policy, Content-Security-Policy-Report-Only, Reporting-Endpoints y Referrer-Policy propios para las páginas de login, registro, OTP, recuperación de contraseña y perfil:<br>&nbsp;&nbsp;- Nuevo permiso para administrarlos<br>&nbsp;&nbsp;- Los headers parten deshabilitados y habilitarlos es irreversible, desde ese momento el reino deja de regirse por la configuración global de plataforma<br>• Agrega la propiedad para impedir modificaciones a una tarea después de completada, disponible en las propiedades de cualquier tipo de tarea y desmarcada por defecto<br>• Agrega soporte de links en los labels y hints de los formularios y las originaciones, ahora se pueden escribir anchors en HTML, con soporte de target<br>• Agrega el filtro por fecha de vencimiento en el listado de respuestas, con las opciones próxima a vencer, vencida y en plazo<br>• Agrega los identificadores transversales de la originación, la respuesta y la tarea a los logs de administración y business events del scope de originación, facilitando la correlación con integraciones externas, los campos nuevos aparecen en los eventos generados desde esta versión<br>• Agrega el username y el correo de quien creó la respuesta al bloque "creado por" del detalle de la API administrativa<br>• Mejora las tareas de agente, ahora heredan el CSS del template base del sitio conectado a la originación y muestran la descripción configurada en la tarea, con soporte de HTML y Liquid<br>• Corrige el sandbox del iframe de las tareas de agente, que impedía abrir o descargar los archivos entregados en la respuesta<br>• Corrige las tareas de Revisión pendiente trabajadas desde el iframe del agente, que no creaban la respuesta de la tarea y provocaban un error 404 al actualizar su estado desde una integración<br>• Corrige la tarea de agente de una respuesta cancelada, que mostraba un error de carga en lugar de un mensaje indicando que la respuesta ya no está disponible<br>• Corrige la vista de Campos de una respuesta, que no mostraba los datos de los grupos repetibles<br>• Corrige la visualización de los archivos de las tareas de Verificación de Identidad, que abrían una pestaña en blanco al hacer click sobre la imagen<br>• Corrige el builder de originaciones cuando hay dos tareas de Verificación de Identidad, la configuración del SDK mostraba la de la otra tarea y podía guardarse sobre la equivocada<br>• Corrige el deep link a un paso de una respuesta sin sesión iniciada, que devolvía 404 en lugar de redirigir al login y volver a ese paso tras autenticarse<br>• Corrige la búsqueda del selector de asignados, que no encontraba a los miembros individuales de un grupo<br>• Corrige el dropdown "Asignar la respuesta a" del modal de invitación, que se cortaba cuando no había espacio suficiente hacia abajo<br>• Corrige el contador de reenvío del OTP en soft login, que de forma intermitente mostraba 1 hora en lugar del tiempo configurado en minutos<br>• Corrige el idioma del mensaje de error por tamaño máximo excedido en los campos de carga de archivos |
+
+### Modyo 10.2.0
+
+:::info Fecha del release
+11 de agosto de 2026
+:::
+
+| Módulo | Mejoras |
+|--------|---------|
+| **Core** | • Agrega branding a nivel de cuenta, ahora es posible reemplazar los logos de la interfaz administrativa y ajustar la paleta de colores de las acciones básicas para que el panel se sienta propio de cada organización<br>• Agrega bookmarks en el admin para crear accesos directos a páginas, espacios y paneles de respuestas<br>• Agrega soporte de usuario de sistema en los logs administrativos, las acciones automáticas se registran como "Sistema" en lugar de asociarse a una persona<br>• Agrega la opción de visualizar el mapping de los índices de OpenSearch desde el menú contextual de cada índice en el Panel<br>• Corrige la restauración de los grupos de permisos de admin_teams y admin_groups<br>• Corrige la recuperación de contraseña de los usuarios administradores<br>• Corrige las URLs generadas por el CSP automático del admin<br>• Corrige el token de usuario al impersonar sobre una sesión ya impersonada<br>• Corrige la visibilidad de Web Applications para administradores sin el check de Channels<br>• Corrige el linter de Liquid de los editores del admin, ahora acepta control de espacios en blanco y tags escritos en múltiples líneas<br>• Corrige la validación de tipo de archivo que impedía subir archivos con extensiones como xlsx<br>• Corrige el error 404 en la vista Mis tareas<br>• Corrige la migración desde 10.1 y actualiza el job de limpieza de datos inconsistentes |
+| **Channels** | • Agrega endpoints individuales de widgets y variables de las layout pages en la API administrativa, permitiendo modificar un widget o una variable sin reemplazar el resto de la página<br>• Agrega soporte para el estándar llms.txt, disponible junto a sitemap y robots en la sección de SEO del sitio<br>• Agrega nuevas plantillas Minimal alineadas al framework, para sitio público, sitio privado y landing de originación<br>• Mejora la gestión de redirecciones:<br>&nbsp;&nbsp;- Agrega la opción de activar y desactivar una redirección, también de forma masiva<br>&nbsp;&nbsp;- Las redirecciones ahora se resuelven antes que cualquier otra ruta del dispatcher<br>&nbsp;&nbsp;- Permite elegir el tipo de redirección de los dominios alternativos, agregando 301 además de 302<br>• Mejora el buscador de sitios, ahora entrega resultados cuando el término buscado forma parte de una palabra compuesta<br>• Corrige la actualización parcial de una página, que reseteaba los campos no enviados en el body<br>• Corrige la creación de páginas, que aceptaba silenciosamente valores desconocidos de page_type<br>• Corrige el estilo del dropdown de preview de widgets<br>• Corrige la publicación pendiente al alterar un layout usado por la página de una originación<br>• Corrige el borrado de caché al copiar un sitio y al crear un stage<br>• Restringe a 1-1 la asociación entre una originación y su página, y corrige el clonado y la sincronización entre stages |
+| **Content** | • Agrega preview de la API de contenido, ahora el check de contenido en edición o publicado también aplica a la API cuando existe una sesión administrativa, sin cachear esas respuestas<br>• Agrega la acción bulk create en el endpoint de entradas, permitiendo crear múltiples entradas en una sola llamada<br>• Agrega el slug del espacio en el drop de la entrada<br>• Mejora la gestión de alternativas en los types de contenido, ahora se distingue entre renombrar, eliminar y agregar una alternativa, y los cambios pueden propagarse a las entradas publicadas y programadas<br>• Corrige el uso de los filtros de assets sobre un asset proveniente de una entrada |
+| **Customers** | • Agrega originación multiusuario, ahora quien inicia el flujo puede invitar a otros usuarios en roles definidos previamente:<br>&nbsp;&nbsp;- Roles asignables a una o más tareas del flujo<br>&nbsp;&nbsp;- Roles compuestos por uno o más usuarios, con límite máximo configurable<br>&nbsp;&nbsp;- El usuario principal puede asumir un rol o delegarlo completamente en los invitados<br>&nbsp;&nbsp;- El flujo se completa una vez que todos los participantes responden lo que les corresponde<br>• Agrega asignación de tareas a agentes en las originaciones:<br>&nbsp;&nbsp;- Tareas resueltas exclusivamente por el agente, con mensaje de espera configurable para el usuario final<br>&nbsp;&nbsp;- Nueva vista de tareas dentro de la respuesta, que renderiza las vistas del sitio con sandbox por iframe<br>&nbsp;&nbsp;- Asignación a un usuario, a un grupo o a un usuario dentro de un grupo, con balanceo por grupo o segmento<br>&nbsp;&nbsp;- Nuevo endpoint para reasignar una tarea específica a otro agente<br>&nbsp;&nbsp;- Feedback visual al completar las tareas del agente<br>• Agrega la tarea de Confirmación, que muestra al usuario un resumen de lo entregado en tareas Input anteriores para revisarlo y corregirlo antes de continuar<br>• Agrega control del ciclo de vida de las respuestas:<br>&nbsp;&nbsp;- Cancelación por vencimiento y cancelación manual con comentario<br>&nbsp;&nbsp;- Log de sistema con tipo propio para las cancelaciones por vencimiento<br>&nbsp;&nbsp;- Fecha de vencimiento con disparador por una pregunta de tipo Fecha<br>&nbsp;&nbsp;- Flujo de reintentos para volver a gatillar una tarea ya completada desde la API administrativa<br>• Agrega OTP multicanal y mejoras al soft login:<br>&nbsp;&nbsp;- Envío del mismo código por más de un canal a la vez entre correo, WhatsApp y SMS<br>&nbsp;&nbsp;- Uso del teléfono móvil como identificador del OTP cuando el reino tiene WhatsApp o SMS habilitados<br>&nbsp;&nbsp;- Solicitud de OTP al momento del registro<br>&nbsp;&nbsp;- Tiempo configurable de reenvío del correo y de duración del token<br>&nbsp;&nbsp;- Nueva opción "Invitation only" en la activación de cuentas<br>&nbsp;&nbsp;- Acción por defecto del reino configurable entre login y signup<br>• Agrega nuevas integraciones a nivel de reino:<br>&nbsp;&nbsp;- Auronix como proveedor de WhatsApp para OTP y campañas masivas<br>&nbsp;&nbsp;- Envío de SMS mediante un endpoint genérico configurable<br>&nbsp;&nbsp;- Biometría con AWS Rekognition usando Face & Liveness detection<br>&nbsp;&nbsp;- Mejoras a la integración Naat en móvil<br>• Agrega segmentos a los grupos y administradores de un reino, ahora un grupo con rol en un reino puede quedar acotado a los usuarios de uno o más segmentos<br>• Agrega el estado de las respuestas de una originación y el avance de sus tareas como filtros para construir segmentos<br>• Mejora el buscador de respuestas, ahora se indexan en OpenSearch permitiendo buscar sobre los datos entregados por los usuarios, y agrega filtro por fecha de modificación<br>• Agrega permisos granulares para las respuestas, desacoplando creación y asignación, listado y detalle<br>• Expone en la API administrativa quién creó una respuesta, tanto en el listado como en el detalle<br>• Mejora la documentación swagger de la API de originación y mantiene el soporte de la API 10.1 para clientes con originaciones en producción<br>• Agrega la opción de ocultar el link de cancelar en la página de originación y muestra el siguiente paso en el stepper móvil<br>• Permite editar las integraciones sin necesidad de deshabilitarlas<br>• Corrige la lógica condicional de los formularios en campos requeridos, preguntas anidadas, opciones de tipo choice y condiciones entre pasos<br>• Corrige la repetición de alternativas en preguntas de tipo dropdown y similares<br>• Corrige la validación de expresiones regulares en las tareas Input cuando contienen backslashes<br>• Corrige el campo de teléfono internacional cuando existe más de un campo de este tipo en el formulario<br>• Corrige los mensajes de error en los campos de fecha con valores mínimo y máximo<br>• Corrige el error 422 al subir archivos grandes a una respuesta mediante la API administrativa<br>• Impide seleccionar preguntas de tipo archivo en los formularios públicos<br>• Corrige las tareas de Validación, deshabilita los botones de aprobar y rechazar mientras se procesa, permite aprobar sin asignado configurado y evita que una tarea condicional oculta bloquee la validación<br>• Corrige las tareas de Snippet de código respondidas por agentes, el error 500 al responder, los tokens que no cumplían el RFC 6750 y los llamados Liquid a snippets propios en stages distintos de Main<br>• Corrige las invitaciones de originación, ahora considera el valor por defecto de los custom fields requeridos, incorpora los datos de registro requeridos, y corrige la plantilla de reanudar invitación, la duplicación de la descripción y la recarga completa del sitio al actualizar el avance<br>• Corrige la vista de documentos de una respuesta con archivos grandes y con assets de tipo incorrecto<br>• Corrige la URL entregada por el drop de assets cuando proviene de una pregunta de tipo archivo<br>• Corrige la visualización de los resultados de una tarea de Verificación de Identidad de un usuario invitado<br>• Corrige la redirección posterior al registro cuando el signup incluye redirect_uri<br>• Corrige el mensaje de error del OTP en soft login, que revelaba la existencia de cuentas y no distinguía entre código incorrecto y vencido<br>• Corrige la UX de ingreso del OTP en móvil, ahora el borrado no obliga a eliminar dígito por dígito<br>• Corrige el error 500 al guardar una originación que combina una tarea de Firma con otras tareas<br>• Corrige la creación de preguntas sin tipo desde MCP, que provocaba un error 500 al entrar al backend de la originación<br>• Corrige los pasos ocultos que se mostraban en la tarea de Confirmación<br>• Corrige la redirección entre stages de una originación<br>• Corrige el idioma de los mensajes de error mostrados al usuario |
+
+
 ## 10.1
 
-### 10.1.3
+### Modyo 10.1.20
+
+:::info Fecha del release
+14 de octubre de 2026
+:::
+
+| Módulo | Mejoras |
+|--------|---------|
+| **Core** | • Actualizaciones de seguridad de dependencias |
+| **Channels** | • Corrige el clonado de sitios y la creación de stages en sitios grandes, que se interrumpía cuando el proceso en segundo plano se quedaba sin memoria y dejaba el sitio o stage resultante incompleto<br>• Corrige el clonado de sitios y la creación de stages, que seguían purgando la caché de CDN al copiar widgets con variables globales y podían volver a superar el rate limit de Cloudflare. Ahora tampoco se purga la caché de CDN de los widgets recién creados |
+
+
+### Modyo 10.1.19
+
+:::info Fecha del release
+6 de octubre de 2026
+:::
+
+| Módulo | Mejoras |
+|--------|---------|
+| **Channels** | • Mejora la creación de stages, ahora sus elementos se clonan en segundo plano para evitar el timeout en sitios grandes. Si falla un elemento, el proceso sigue igual, y el modal de creación muestra los elementos que no se pudieron clonar, con el detalle en el log de creación del stage<br>• Corrige el clonado de sitios y la creación de stages en sitios grandes, que se cortaba a la mitad al superar el rate limit de Cloudflare. Ahora no se purga la caché de CDN de los elementos recién creados |
+
+
+### Modyo 10.1.18
+
+:::info Fecha del release
+24 de agosto de 2026
+:::
+
+| Módulo | Mejoras |
+|--------|---------|
+| **Core** | • Restablece el borrado automático de los session grants revocados, que no se había traído a la versión 10.1<br>• Mejora el job de limpieza de datos huérfanos para que borre por lotes y deje de bloquear tablas por períodos prolongados |
+| **Channels** | • Corrige el timeout al publicar widgets, páginas y plantillas de sitio en instalaciones con un alto volumen de versiones acumuladas<br>• Mejora el rendimiento del render de páginas con índices adicionales y evitando consultas repetidas de snippets dentro de un mismo render |
+| **Content** | • Corrige la pérdida de tags inline vacíos usados como íconos, por ejemplo `<i>` y `<span>`, al cambiar entre la vista WYSIWYG y la vista de código |
+| **Customers** | • Corrige error al ingresar al backend de una originación que tiene preguntas creadas sin tipo mediante MCP |
+
+
+### Modyo 10.1.17
+
+:::info Fecha del release
+17 de julio de 2026
+:::
+
+| Módulo | Mejoras |
+|--------|---------|
+| **Core** | • Habilita jemalloc en los contenedores para mitigar el riesgo de falta de memoria (OOM) bajo alta concurrencia<br>• Corrige problema de performance al validar permisos<br>• Actualiza nokogiri para corregir bugs de memoria de baja severidad<br>• Corrige error al consultar el endpoint `me` del admin user con sesión vía SAML<br>• Corrige activación de CORS en los reinos<br>• Corrige visualización del ícono de channel en el menú lateral para usuarios con permisos heredados de grupos |
+| **Content** | • Corrige tags autorizados en rich text para que funcionen con wildcard |
+| **Customers** | • Corrige reindexación en OpenSearch al actualizar solo los custom fields de un usuario<br>• Corrige indexaciones múltiples de un mismo usuario<br>• Corrige error al indexar eventos de usuario de tipo error de inicio de sesión<br>• Agrega opción para ocultar el link de cancelar en la página de originación mediante configuración |
+
+
+### Modyo 10.1.16
+
+:::info Fecha del release
+2 de junio de 2026
+:::
+
+| Módulo | Mejoras |
+|--------|---------|
+| **Core** | • Actualizaciones de seguridad de dependencias |
+| **Content** | • Corrige problema de alternación de formato al ingresar manualmente una fecha en los datepickers |
+| **Customers** | • Corrige exportación de eventos de usuarios |
+
+
+### Modyo 10.1.15
+
+:::info Fecha del release
+30 de abril de 2026
+:::
+
+| Módulo | Mejoras |
+|--------|---------|
+| **Core** | • Soporte de credenciales vía form al actualizar el refresh_token<br>• Corrige carga de tags y atributos custom con wildcards en froala |
+| **Customers** | • Corrige problema de permisos al cambiar el estado de una submission mediante el API |
+
+
+### Modyo 10.1.14
+
+:::info Fecha del release
+16 de abril de 2026
+:::
+
+| Módulo | Mejoras |
+|--------|---------|
+| **Core** | • Mejora obtención de la IP del usuario final |
+| **Customers** | • Corrige problema de rendimiento en vista de edición de segmentos cuando existen muchos elementos |
+| **Content** | • Corrige problema que dejaba versiones programadas de los contenidos después de publicados<br>• Corrige problema visual al mostrar el datepicker en un richtext |
+
+
+### Modyo 10.1.13
+
+:::info Fecha del release
+25 de febrero de 2026
+:::
+
+| Módulo | Mejoras |
+|--------|---------|
+| **Customers** | • Corrige error al publicar originaciones tras un error en una publicación anterior. Ahora la actualización de las submissions pendientes se controla correctamente<br>• Mejora el control de errores en los formularios<br>• Corrige business events que generaban errores al indexarse<br>• Corrige descarga de formularios que contemplan datasets |
+| **Channels** | • Agrega soporte para un parámetro type al preview local de widgets desde el CLI, de esta forma podemos cargar el JavaScript del widget con type=module para el caso de uso de módulos en los widgets |
+| **Content** | • Corrige un error visual de superposición de elementos al tener un campo de tipo fecha y un campo de párrafo en la edición de entradas<br>• Corrige problema que provocaba que la programación de despublicaciones de entries se perdiera<br>• Corrige problema de click en label en campos de tipo checkbox |
+
+
+### Modyo 10.1.12
+
+:::info Fecha del release
+26 de enero de 2026
+:::
+
+| Módulo | Mejoras |
+|--------|---------|
+| **Channels** | • Agrega soporte para la directiva report-to en el header CSP y el header Reporting-Endpoints requerido para esta directiva |
+| **Customers** | • Corrige problema de evaluación de completitud de las pending review tasks |
+| **Content** | • Corrige el orden en que se entregan los valores de los elementos de selección múltiple en los contenidos, ahora se muestran según el orden definido en el type |
+
+
+### Modyo 10.1.11
+
+:::info Fecha del release
+15 de enero de 2026
+:::
+
+| Módulo | Mejoras |
+|--------|---------|
+| **Core** | • Agrega TTL a los objetos Redis cuando se configura en "Session" la cookie de sesión |
+| **Channels** | • Mejora el rendimiento de carga de custom fields de usuario en las llamadas al endpoint /me<br>• Corrige el caché de páginas 404, ahora se genera por usuario en sesión<br>• Corrige problema de nonce en formularios, ahora por defecto se incluye el hash del asset involucrado |
+| **Customers** | • Corrige problema de selección en los selectores del conditional logic<br>• Corrige problema de permiso al despublicar una originación por un Realm admin |
+
+
+### Modyo 10.1.10
+
+:::info Fecha del release
+29 de diciembre de 2025
+:::
+
+| Módulo | Mejoras |
+|--------|---------|
+| **Customers** | • Agrega el parámetro redirect_uri para especificar la URL de redirección post login. La URL se valida contra los dominios registrados de la cuenta<br>• Mejora de rendimiento al obtener las respuestas de formularios mediante la API de formularios |
+| **Content** | • Corrige problema con las publicaciones programadas, ahora al publicar directamente una entrada, la publicación programada previa se elimina |
+
+
+### Modyo 10.1.9
+
+:::info Fecha del release
+3 de diciembre de 2025
+:::
+
+| Módulo | Mejoras |
+|--------|---------|
+| **Customers** | • Homologa CORS configurados en la cuenta en los nuevos CORS de Customers para mantener comportamiento previo a la adición de estos CORS |
+| **Insights** | • Agrega selección de todos los reinos al dashboard de Customers, ahora se puede ver todos los usuarios activos en la totalidad de los reinos |
+
+
+### Modyo 10.1.8
+
+:::info Fecha del release
+1 de diciembre de 2025
+:::
+
+| Módulo | Mejoras |
+|--------|---------|
+| **Channels** | • Corrige error en filtros liquid de contenido al aplicar múltiples filtros<br>• Aumenta el largo de las urls en las redirecciones<br>• Agrega flag para cargar como módulo los widgets en las páginas |
+| **Content** | • Agrega el permiso de revisor al rol por defecto de Space Editor |
+
+
+### Modyo 10.1.7
+
+:::info Fecha del release
+25 de noviembre de 2025
+:::
+
+| Módulo | Mejoras |
+|--------|---------|
+| **Channels** | • Corrige permisos para las acciones de sincronización<br>• Corrige filtros de contenidos para contenidos relacionados<br>• Corrige buscador de templates |
+| **Customers** | • Aumenta el tamaño de almacenamiento para urls en los webhooks<br>• Agrega CORS para la API de customers<br>• Mejora reCAPTCHA en formularios<br>• Mejora de experiencia en selección de fechas |
+| **Content** | • Corrige detección de content types en archivos subidos mediante el modal de archivos |
+| **Core** | • Mejora construcción de roles mediante permisos más granulares de las settings de sitios y contenidos |
+
+
+### Modyo 10.1.6
+
+:::info Fecha del release
+29 de octubre de 2025
+:::
+
+| Módulo | Mejoras |
+|--------|---------|
+| **Core** | • Mejoras al swagger |
+| **Channels** | • Agrega fit y format a las opciones soportadas por la optimización de imágenes mediante cloudflare<br>• Agrega nuevo filtro liquid handle o handleize<br>• Elimina templates content_view funcionalidad obsoleta desde 9.2.0 |
+| **Customers** | • Mejora date picker mostrado en las originaciones<br>• Restaura soporte opcional de kid en integraciones de openid<br>• Agrega API administrativa para la obtención del perishable token |
+| **Content** | • Corrige permiso de link de clonado |
+
+
+### Modyo 10.1.5
+
+:::info Fecha del release
+10 de octubre de 2025
+:::
+
+| Módulo | Mejoras |
+|--------|---------|
+| **Channels** | • Corrige filtro asset_url ahora entrega correctamente la url con optimizaciones de cloudflare cuando está disponible<br>• Corrige problemas de encoding al procesar widgets desde el cli cuando se envían comprimidos en un archivo zip |
+| **Customers** | • Corrige error al indexar algunos BusinessEvents |
+
+
+### Modyo 10.1.4
+
+:::info Fecha del release
+2 de octubre de 2025
+:::
+
+| Módulo | Mejoras |
+|--------|---------|
+| **Customers** | • Corrige listado de datasets en opciones del builder de originación y formularios, ahora se muestran todos los datasets disponibles<br>• Corrige vista de formularios para que se muestren correctamente cuando existe un header de content security policy<br>• Agrega configuración de google tag manager para las páginas de profile y login en reinos |
+| **Channels** | • Corrige búsqueda multi-sitio con stages, ahora la búsqueda se limita a los sitios principales y no a sus stages<br>• Corrige traducción de resend code en el soft login |
+| **Content** | • Corrige error donde no se mostraba el hint en los campos de múltiples opciones |
+
+
+### Modyo 10.1.3
 
 :::info Fecha del release
 4 de septiembre de 2025
@@ -17,7 +274,7 @@ search: true
 | **Channels** | • Corrige stepper en modo mobile, ahora indica correctamente el número de paso en relación a los pasos totales |
 
 
-### 10.1.2
+### Modyo 10.1.2
 
 :::info Fecha del release
 2 de septiembre de 2025
@@ -52,7 +309,7 @@ search: true
 |--------|---------|
 | **Core** | • Agrega opción de creación de roles personalizables<br>• Mejoras en seguridad, performance y dependencias |
 | **Channels** | • Check de draft/publicado de páginas en el preview ahora es persistente en la navegación |
-| **Customers** | • Agrega nuevo módulo de originación activable mediante el plan con las siguientes características:<br>&nbsp;&nbsp;- Flujos condicionales<br>&nbsp;&nbsp;- Versionamiento<br>&nbsp;&nbsp;- Formularios<br>&nbsp;&nbsp;- Snippets de código<br>&nbsp;&nbsp;- Validaciones<br>&nbsp;&nbsp;- Vista de agentes<br>&nbsp;&nbsp;- Invitaciones a flujos<br>&nbsp;&nbsp;- Personalización de los flujos<br>&nbsp;&nbsp;- Api de originación<br>&nbsp;&nbsp;- Drops liquid para acceso desde vistas de los sitios<br>• Webhooks para eventos de usuarios (Breaking change, este cambio requiere revisión previa a la subida de versión)<br>• Agrega session expiration policy a nivel de reino<br>• Agrega la opción de poder customizar el input de username para el login<br>• Agrega nuevos tipos de campos para los formularios<br>• Agrega datasets a nivel de reino que se pueden usar en formularios y originaciones<br>• Transforma los eventos de usuarios (Breaking change, este cambio requiere revisión previa a la subida de versión)<br>• Unifica los identity providers con las integraciones en un solo módulo llamado integraciones |
+| **Customers** | • Agrega nuevo módulo de originación activable mediante el plan con las siguientes características:<br>&nbsp;&nbsp;- Flujos condicionales<br>&nbsp;&nbsp;- Versionamiento<br>&nbsp;&nbsp;- Formularios (Breaking change, este cambio requiere revisión previa a la subida de versión)<br>&nbsp;&nbsp;- Snippets de código<br>&nbsp;&nbsp;- Validaciones<br>&nbsp;&nbsp;- Vista de agentes<br>&nbsp;&nbsp;- Invitaciones a flujos<br>&nbsp;&nbsp;- Personalización de los flujos<br>&nbsp;&nbsp;- Api de originación<br>&nbsp;&nbsp;- Drops liquid para acceso desde vistas de los sitios<br>• Webhooks para eventos de usuarios (Breaking change, este cambio requiere revisión previa a la subida de versión)<br>• Agrega session expiration policy a nivel de reino<br>• Agrega la opción de poder customizar el input de username para el login<br>• Agrega nuevos tipos de campos para los formularios<br>• Agrega datasets a nivel de reino que se pueden usar en formularios y originaciones<br>• Transforma los eventos de usuarios (Breaking change, este cambio requiere revisión previa a la subida de versión)<br>• Unifica los identity providers con las integraciones en un solo módulo llamado integraciones |
 
 
 ## 10.0
@@ -113,7 +370,7 @@ search: true
 | Módulo | Mejoras |
 |--------|---------|
 | **Core** | • Agrega nuevos caracteres soportados para el username de un usuario |
-| **Channels** | • Mejora en la sincronización de menus, ahora identifica correctamente los segmentos iniciales si ambos stages comparten un mismo reino |
+| **Channels** | • Mejora en la sincronización de menús, ahora identifica correctamente los segmentos iniciales si ambos stages comparten un mismo reino |
 ### Modyo 10.0.21
 
 :::info Fecha del release
@@ -122,7 +379,7 @@ search: true
 
 | Módulo | Mejoras |
 |--------|---------|
-| **Core** | • Agrega opción de flujo Auhtorization code + PKCE en la integración con un open id identity provider<br>• Agrega opción de envío de parámetros de autenticación via url params |
+| **Core** | • Agrega opción de flujo Authorization code + PKCE en la integración con un open id identity provider<br>• Agrega opción de envío de parámetros de autenticación vía url params |
 | **Channels** | • Mejora de performance al obtener los templates |
 ### Modyo 10.0.20
 
@@ -132,7 +389,7 @@ search: true
 
 | Módulo | Mejoras |
 |--------|---------|
-| **Channels** | • Agrega soporte de archivos web assembly como chunks en paquetes zip porvenientes desde Modyo CLI<br>• Agrega nuevo header Service-Worker-Allowed en los security headers de un sitio<br>• Corrige un error en el modal de assets<br>• Corrige problema de diferencias de csp nonce entre header y vista<br>• Agrega filtros liquid para manipular respuestas de formularios para un usuario en la construcción de un sitio |
+| **Channels** | • Agrega soporte de archivos web assembly como chunks en paquetes zip provenientes desde Modyo CLI<br>• Agrega nuevo header Service-Worker-Allowed en los security headers de un sitio<br>• Corrige un error en el modal de assets<br>• Corrige problema de diferencias de csp nonce entre header y vista<br>• Agrega filtros liquid para manipular respuestas de formularios para un usuario en la construcción de un sitio |
 ### Modyo 10.0.19
 
 :::info Fecha del release
@@ -153,7 +410,7 @@ search: true
 |--------|---------|
 | **Core** | • Mejoras de seguridad<br>• Corrige error al publicar cuando se alcanza el límite de backups |
 | **Content** | • Agrega edición en bulk de segmentos<br>• Restaura bordes de las tablas insertadas en froala |
-| **Customers** | • Agrega buscador en el lisado de campañas |
+| **Customers** | • Agrega buscador en el listado de campañas |
 ### Modyo 10.0.17
 
 :::info Fecha del release
@@ -164,8 +421,8 @@ search: true
 |--------|---------|
 | **Core** | • Corrige autor al momento de clonar un elemento de contenido, página, menú, widget, template, ahora el autor del nuevo elemento es el que ejecuta la acción<br>• Corrige problema del listado de sitios, spaces y reinos del listado de webhooks |
 | **Content** | • Corrige permiso para obtener entries relacionadas en la edición de un contenido<br>• Corrige problemas en la indexación de contenido, ahora se indexa el contenido para las búsquedas en páginas de contenido, se indexa el contenido al publicar y se quita el índice al despublicar, solo las páginas de widgets se reindexan en el job de reindexado, esto por si incluyen contenido mediante el sdk<br>• Mejora en performance de la indexación de contenido |
-| **Customers** | • Corrige el encolado de multiples jobs de cálculo de segmentos para un usuario<br>• Corrige vista usuario para que muestre todos los usuarios cuando se solicita desde el listado de segmentos |
-| **Channels** | • Corrige problemas con el uso del parametro search en las búsquedas usando el filtro filter_by_query_string |
+| **Customers** | • Corrige el encolado de múltiples jobs de cálculo de segmentos para un usuario<br>• Corrige vista usuario para que muestre todos los usuarios cuando se solicita desde el listado de segmentos |
+| **Channels** | • Corrige problemas con el uso del parámetro search en las búsquedas usando el filtro filter_by_query_string |
 ### Modyo 10.0.16
 
 :::info Fecha del release
@@ -175,7 +432,7 @@ search: true
 | Módulo | Mejoras |
 |--------|---------|
 | **Content** | • Agrega ordenamiento dentro de un campo de contenido de tipo lista de contenidos<br>• Corrige problema de richtexts quedan en blanco al mover elementos dentro de un grupo repetible<br>• Corrige error en copia de contenido desde otro idioma cuando se tiene un grupo repetible |
-| **Customers** | • Mejora de performance en el calculo de segmentos de usuarios al iniciar sesión |
+| **Customers** | • Mejora de performance en el cálculo de segmentos de usuarios al iniciar sesión |
 | **Channels** | • Corrige problemas al previsualizar snippets globales |
 ### Modyo 10.0.15
 
@@ -195,7 +452,7 @@ search: true
 | Módulo | Mejoras |
 |--------|---------|
 | **Content** | • Corrige error al editar contenido en bulk |
-| **Customers** | • Corrige llamados multiples al endpoint de count_matches |
+| **Customers** | • Corrige llamados múltiples al endpoint de count_matches |
 ### Modyo 10.0.13
 
 :::info Fecha del release
@@ -205,7 +462,7 @@ search: true
 | Módulo | Mejoras |
 |--------|---------|
 | **Channels** | • Corrige problema de redirección al custom domain de un sitio |
-| **Customers** | • Corrige recalculo de segmentos<br>• Corrige campo from de la campaña de correo, vuelve a ser el nombre del sender |
+| **Customers** | • Corrige recálculo de segmentos<br>• Corrige campo from de la campaña de correo, vuelve a ser el nombre del sender |
 ### Modyo 10.0.12
 
 :::info Fecha del release
@@ -215,9 +472,9 @@ search: true
 | Módulo | Mejoras |
 |--------|---------|
 | **Core** | • Mejoras de seguridad |
-| **Channels** | • Mejoras en la programación de la indexación de páginas<br>• Corrige resultados de búsqueda que contenian contenido privado |
-| **Content** | • Corrige errores en selector de imagenes y buscador en los Richtexts<br>• Mejora de performance en la publicación masiva de contenidos<br>• Corrige error al mostrar diferencias en contenidos muy extensos |
-| **Customers** | • Corrige duplicación de segmentos de usuarios<br>• Corrige edición de custom fields recien agregados al editar un usuario |
+| **Channels** | • Mejoras en la programación de la indexación de páginas<br>• Corrige resultados de búsqueda que contenían contenido privado |
+| **Content** | • Corrige errores en selector de imágenes y buscador en los Richtexts<br>• Mejora de performance en la publicación masiva de contenidos<br>• Corrige error al mostrar diferencias en contenidos muy extensos |
+| **Customers** | • Corrige duplicación de segmentos de usuarios<br>• Corrige edición de custom fields recién agregados al editar un usuario |
 ### Modyo 10.0.11
 
 :::info Fecha del release
@@ -237,8 +494,8 @@ search: true
 | Módulo | Mejoras |
 |--------|---------|
 | **Core** | • Mejoras de seguridad<br>• Se agrega la invalidación de todas las sesiones de un administrador cuando este cambia su contraseña |
-| **Channels** | • Corrige problemas al renderizar páginas con contenido segmentado<br>• Corrige problemas al renderizar páginas con contenidos muy grandes<br>• Corrige el author de una sincronización en la actividad mostrada en paginas, widgets, templates y menus<br>• Se agrega la opción de habilitar el webpush en las configuraciones de una aplicación |
-| **Customers** | • Se agrega la posibilidad de mapear un atributo de un claim de tipo objeto a un custom field especifico<br>• Se agrega la capacidad de envio de webpush en las campañas de notificaciones cuando este es activado en el sitio relacionado al reino |
+| **Channels** | • Corrige problemas al renderizar páginas con contenido segmentado<br>• Corrige problemas al renderizar páginas con contenidos muy grandes<br>• Corrige el autor de una sincronización en la actividad mostrada en páginas, widgets, templates y menús<br>• Se agrega la opción de habilitar el webpush en las configuraciones de una aplicación |
+| **Customers** | • Se agrega la posibilidad de mapear un atributo de un claim de tipo objeto a un custom field específico<br>• Se agrega la capacidad de envío de webpush en las campañas de notificaciones cuando este es activado en el sitio relacionado al reino |
 ### Modyo 10.0.9
 
 :::info Fecha del release
@@ -248,7 +505,7 @@ search: true
 | Módulo | Mejoras |
 |--------|---------|
 | **Core** | • Mejoras de seguridad<br>• Corrige expiración de la sesión según tiempo de inactividad |
-| **Content** | • Corrige problema al publicar entries con listas de assets, ahora se respeta el orden definido en el listado<br>• Corrige problema al publicar entries que contienen richtext en modo código<br>• Corrige problema de duplicación de parametros al usar el api administrativa de contenido |
+| **Content** | • Corrige problema al publicar entries con listas de assets, ahora se respeta el orden definido en el listado<br>• Corrige problema al publicar entries que contienen richtext en modo código<br>• Corrige problema de duplicación de parámetros al usar el api administrativa de contenido |
 ### Modyo 10.0.8
 
 :::info Fecha del release
@@ -268,7 +525,7 @@ search: true
 |--------|---------|
 | **Core** | • Mejoras de seguridad |
 | **Channels** | • Corrige el paginador de la búsqueda en sitios para mostrar la cantidad de páginas según la cantidad máxima de resultados |
-| **Content** | • Agrega filtro exacto por full_path y uuid al endpoint de categorias del api de contenido |
+| **Content** | • Agrega filtro exacto por full_path y uuid al endpoint de categorías del api de contenido |
 | **Customers** | • Corrige cálculo sincrónico de segmentos al iniciar sesión cuando está habilitado |
 ### Modyo 10.0.6
 
@@ -299,7 +556,7 @@ search: true
 | Módulo | Mejoras |
 |--------|---------|
 | **Core** | • Mejoras de seguridad<br>• Mejoras en los webhooks, ahora los stages responden a los hooks asociados a un sitio, agrega hooks al crear o actualizar un asset |
-| **Channels** | • Corrige problema al publicar una page cuando se tienen una configuración de variables y borrado de backups |
+| **Channels** | • Corrige problema al publicar una page cuando se tiene una configuración de variables y borrado de backups |
 ### Modyo 10.0.3
 
 :::info Fecha del release
@@ -309,7 +566,7 @@ search: true
 | Módulo | Mejoras |
 |--------|---------|
 | **Core** | • Mejoras de seguridad<br>• Mejoras de rendimiento<br>• Se agregan mejoras en la configuración de SEO, ahora es posible editar el sitemap y robots desde la configuración de la organización e incluir automáticamente sitios que dependan de la url base<br>• Se agrega listado de sesiones activas en el profile del administrador, también es posible cerrarlas desde esa vista |
-| **Content** | • Corrige problema al clonar entradas de contenido con multiples idiomas |
+| **Content** | • Corrige problema al clonar entradas de contenido con múltiples idiomas |
 ### Modyo 10.0.2
 
 :::info Fecha del release
@@ -344,5 +601,5 @@ search: true
 |--------|---------|
 | **Core** | • Mejoras de seguridad<br>• Mejoras de rendimiento<br>• Actualización de dependencias<br>• Nuevo diseño de la interfaz administrativa<br>• Agrega soporte para la invalidación de caché cuando se utiliza cloudflare para este fin, esto permite usar cachés más agresivos y que sean invalidados cuando modificamos las páginas, el contenido y las modificaciones a los assets del media library<br>• Agrega alerta de nuevo ingreso para usuarios administradores de la plataforma, ahora cuando se inicia sesión en un nuevo dispositivo se envía una notificación por correo electrónico |
 | **Customers** | • Agrega integración con salesforce, ahora los contactos en salesforce y los usuarios de un reino pueden mantenerse sincronizados, pueden ser configurados para recibir y/o enviar cambios en la información de los usuarios<br>• Mejoras visuales en los formularios de registro e inicio de sesión<br>• Mejoras en la creación de campañas de correos, ahora se pueden clonar para realizar nuevos envíos y se simplifica la vista principal<br>• Elimina el rol none, ahora todos los usuarios por defecto serán account users |
-| **Channels** | • Agrega a la construcción de menús la opción de agregar el buscador como item<br>• Plantilla mejorada para nuevos sitios, más simple y con referencia al framework desde el inicio<br>• Agrega snippets globales, ahora es posible definir un snippet de código y utilizarlo en los distintos sitios de la cuenta, también se incluye un selector de draft o publicado en el preview<br>• Mejora el preview de widgets, ahora se puede seleccionar el layout del sitio con el cual previsualizar el widget<br>• Agrega la posibilidad de previsualizar los widgets de forma local. Al trabajar con el CLI de Modyo ahora puedes ejecutar un preview del widget en desarrollo y verlo directamente en el navegador con la posibilidad de montarlo en los distintos layouts que contiene el sitio de destino<br>• Incluye soporte para chunks en los widgets del CLI, ahora la plataforma acepta un zip con los datos del widget más los chunks asociados<br>• Mejoras en la interfaz de widgets cuando estos provienen desde el CLI<br>• Agrega procesamiento de imágenes cuando se utiliza cloudflare, a través del filtro de assets se puede especificar tamaño y calidad de la imagen a mostrar o un conjunto de tamaños como srcset, esto beneficia el rendimiento de los sitios que se construyen<br>• Mueve las configuración de variables globales al contexto de channels<br>• BREAKING CHANGE: Se eliminan los widgets de contenido: Content List y Content Featured, pueden ser reemplazados mediante un widget html y el uso del sdk de liquid |
+| **Channels** | • Agrega a la construcción de menús la opción de agregar el buscador como item<br>• Plantilla mejorada para nuevos sitios, más simple y con referencia al framework desde el inicio<br>• Agrega snippets globales, ahora es posible definir un snippet de código y utilizarlo en los distintos sitios de la cuenta, también se incluye un selector de draft o publicado en el preview<br>• Mejora el preview de widgets, ahora se puede seleccionar el layout del sitio con el cual previsualizar el widget<br>• Agrega la posibilidad de previsualizar los widgets de forma local. Al trabajar con el CLI de Modyo ahora puedes ejecutar un preview del widget en desarrollo y verlo directamente en el navegador con la posibilidad de montarlo en los distintos layouts que contiene el sitio de destino<br>• Incluye soporte para chunks en los widgets del CLI, ahora la plataforma acepta un zip con los datos del widget más los chunks asociados<br>• Mejoras en la interfaz de widgets cuando estos provienen desde el CLI<br>• Agrega procesamiento de imágenes cuando se utiliza cloudflare, a través del filtro de assets se puede especificar tamaño y calidad de la imagen a mostrar o un conjunto de tamaños como srcset, esto beneficia el rendimiento de los sitios que se construyen<br>• Mueve la configuración de variables globales al contexto de channels<br>• BREAKING CHANGE: Se eliminan los widgets de contenido: Content List y Content Featured, pueden ser reemplazados mediante un widget html y el uso del sdk de liquid |
 | **Content** | • Agrega grupos repetibles en contenido, ahora en la definición de types de contenido está la opción de grupo repetible el cual puede definir múltiples campos como un grupo que puede ser instanciado muchas veces en la creación de una entrada<br>• Agrega Media Library, ahora el asset manager pasa a ser media library el cual existe dentro de un space y no a nivel global, esto permite tener un mejor manejo de permisos y organización de los assets subidos a la plataforma, también puede ser usado en channels mediante el modal de media library y dejar el contexto específico de los assets a la aplicación en uso |

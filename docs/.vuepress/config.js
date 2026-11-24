@@ -70,7 +70,7 @@ module.exports = {
                   },
                   {
                       text: "Dynamic",
-                      link: "https://dynamicframework.dev"
+                      link: "/en/dynamic/"
                   },
                   {
                       text: "Modyo",
@@ -100,6 +100,7 @@ module.exports = {
                           collapsable: true,
                           children: [
                               ["/en/platform/core/", "Introduction"],
+                              "/en/platform/core/my-tasks",
                               "/en/platform/core/configuration",
                               {
                                   title: "Integrations",
@@ -114,6 +115,7 @@ module.exports = {
                               "/en/platform/core/webhooks",
                               "/en/platform/core/api",
                               "/en/platform/core/activity-logs",
+                              "/en/platform/core/reports",
                               "/en/platform/core/roles",
                               "/en/platform/core/security",
                           ],
@@ -128,6 +130,7 @@ module.exports = {
                             "/en/platform/channels/pages",
                             "/en/platform/channels/navigation",
                             "/en/platform/channels/widgets",
+                            ["/en/platform/channels/cli", "CLI"],
                             "/en/platform/channels/templates",
                             "/en/platform/channels/global-variables",
                             "/en/platform/channels/global-snippets",
@@ -152,7 +155,7 @@ module.exports = {
                         collapsable: true,
                         children: [
                             ["/en/platform/customers/", "Introduction"],
-                            "/en/platform/customers/overview",
+                            "/en/platform/customers/realms",
                             "/en/platform/customers/users",
                             "/en/platform/customers/events",
                             "/en/platform/customers/segments",
@@ -174,6 +177,7 @@ module.exports = {
                               "/en/platform/content/spaces",
                               "/en/platform/content/types",
                               "/en/platform/content/entries",
+                              "/en/platform/content/categories",
                               "/en/platform/content/asset-manager",
                               "/en/platform/content/public-api-reference",
                               "/en/platform/content/javascript",
@@ -201,6 +205,7 @@ module.exports = {
                           "/en/platform/tools/cli",
                           "/en/platform/tools/sdk",
                           "/en/platform/tools/mcp",
+                          "/en/platform/tools/mcp-widgets",
                         ],
                       },
                   ],
@@ -285,6 +290,8 @@ module.exports = {
                           "/en/dynamic/getting-started/installation",
                           "/en/dynamic/getting-started/first-app",
                           "/en/dynamic/getting-started/project-structure",
+                          "/en/dynamic/getting-started/migration-v2",
+                          "/en/dynamic/getting-started/production-checklist",
                       ],
                   },
                   {
@@ -293,10 +300,9 @@ module.exports = {
                       collapsable: true,
                       children: [
                           "/en/dynamic/development/components",
-                          "/en/dynamic/development/experiences",
-                          "/en/dynamic/development/react-integration",
-                          "/en/dynamic/development/widgets",
                           "/en/dynamic/development/api-integration",
+                          "/en/dynamic/development/i18n",
+                          "/en/dynamic/development/agent-artifacts",
                       ],
                   },
                   {
@@ -305,7 +311,7 @@ module.exports = {
                       collapsable: true,
                       children: [
                           "/en/dynamic/customization/theming",
-                          "/en/dynamic/customization/styling",
+                          "/en/dynamic/customization/theme-tools",
                           "/en/dynamic/customization/extending",
                       ],
                   },
@@ -366,7 +372,7 @@ module.exports = {
                   },
                   {
                       text: "Dynamic",
-                      link: "https://dynamicframework.dev"
+                      link: "/es/dynamic/"
                   },
                   {
                       text: "Modyo",
@@ -397,6 +403,7 @@ module.exports = {
                         collapsable: true,
                         children: [
                             ["/es/platform/core/", "Introducción"],
+                            "/es/platform/core/my-tasks",
                             "/es/platform/core/configuration",
                             {
                                 title: "Integraciones",
@@ -411,6 +418,7 @@ module.exports = {
                             "/es/platform/core/webhooks",
                             "/es/platform/core/api",
                             "/es/platform/core/activity-logs",
+                            "/es/platform/core/reports",
                             "/es/platform/core/roles",
                             "/es/platform/core/security",
                         ],
@@ -425,6 +433,7 @@ module.exports = {
                             "/es/platform/channels/pages",
                             "/es/platform/channels/navigation",
                             "/es/platform/channels/widgets",
+                            ["/es/platform/channels/cli", "CLI"],
                             "/es/platform/channels/templates",
                             "/es/platform/channels/global-variables",
                             "/es/platform/channels/global-snippets",
@@ -449,7 +458,7 @@ module.exports = {
                           collapsable: true,
                           children: [
                               ["/es/platform/customers/", "Introducción"],
-                              "/es/platform/customers/overview",
+                              "/es/platform/customers/realms",
                               "/es/platform/customers/users",
                               "/es/platform/customers/events",
                               "/es/platform/customers/segments",
@@ -471,6 +480,7 @@ module.exports = {
                               "/es/platform/content/spaces",
                               "/es/platform/content/types",
                               "/es/platform/content/entries",
+                              "/es/platform/content/categories",
                               "/es/platform/content/asset-manager",
                               "/es/platform/content/public-api-reference",
                               "/es/platform/content/javascript",
@@ -498,6 +508,7 @@ module.exports = {
                           "/es/platform/tools/cli",
                           "/es/platform/tools/sdk",
                           "/es/platform/tools/mcp",
+                          "/es/platform/tools/mcp-widgets",
                         ],
                       },
                   ],
@@ -583,6 +594,8 @@ module.exports = {
                           "/es/dynamic/getting-started/installation",
                           "/es/dynamic/getting-started/first-app",
                           "/es/dynamic/getting-started/project-structure",
+                          "/es/dynamic/getting-started/migration-v2",
+                          "/es/dynamic/getting-started/production-checklist",
                       ],
                   },
                   {
@@ -591,10 +604,9 @@ module.exports = {
                       collapsable: true,
                       children: [
                           "/es/dynamic/development/components",
-                          "/es/dynamic/development/experiences",
-                          "/es/dynamic/development/react-integration",
-                          "/es/dynamic/development/widgets",
                           "/es/dynamic/development/api-integration",
+                          "/es/dynamic/development/i18n",
+                          "/es/dynamic/development/agent-artifacts",
                       ],
                   },
                   {
@@ -603,7 +615,7 @@ module.exports = {
                       collapsable: true,
                       children: [
                           "/es/dynamic/customization/theming",
-                          "/es/dynamic/customization/styling",
+                          "/es/dynamic/customization/theme-tools",
                           "/es/dynamic/customization/extending",
                       ],
                   },

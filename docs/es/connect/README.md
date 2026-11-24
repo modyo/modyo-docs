@@ -41,15 +41,15 @@ El servicio gestionado de Modyo Connect contempla las siguientes capacidades:
 - Monitoreo continuo y soporte de infraestructura.
 - Alertas en tiempo real.
 
-Modyo Connect se implementa en modalidad de alta disponibilidad y es operado por un equipo de Site Reliability Engineers (SREs) de Modyo en la nube de [Amazon AWS](architecture.md). El servicio cumple con los mismos estándares de calidad, seguridad y operación que se ofrecen en Modyo Enterprise Cloud.
+Modyo Connect se implementa en modalidad de alta disponibilidad y es operado por un equipo de Site Reliability Engineers (SREs) de Modyo en la nube de [Amazon AWS](/es/connect/architecture.html). El servicio cumple con los mismos estándares de calidad, seguridad y operación que se ofrecen en Modyo Enterprise Cloud.
 
 ## Componentes
 
 Modyo Connect cuenta con una variedad de servicios o componentes que se agrupan en tres categorías:
 
-- [Desarrollo](development/README.md)
-- [Infraestructura](infrastructure/README.md)
-- [Monitoreo](monitoring/README.md)
+- [Desarrollo](/es/connect/development/)
+- [Infraestructura](/es/connect/infrastructure/)
+- [Monitoreo](/es/connect/monitoring/)
 
 Para activar un componente, se requiere un ticket de requerimiento. Se recomienda tener una cuenta activa en el [Centro de Soporte de Modyo](https://support.modyo.com) antes de utilizar el servicio. Para dudas sobre cómo activar cuentas en el Centro de Soporte, contactar al ejecutivo de cuentas asignado.
 
@@ -59,4 +59,4 @@ La activación de los componentes podría tener costos recurrentes asociados. Ca
 
 ## Ambientes
 
-Modyo Connect considera ambientes productivos y pre-productivos, desplegados en redes privadas virtuales totalmente separadas. Los clientes pueden solicitar hasta dos ambientes pre-productivos por despliegue. Cada ambiente genera costos recurrentes adicionales, medidos en [Modyo Resource Units (MRUs)](resources/mrus.md).
+Modyo Connect considera ambientes productivos y pre-productivos, desplegados en redes privadas virtuales totalmente separadas. Los clientes pueden solicitar hasta dos ambientes pre-productivos por despliegue. Cada ambiente genera costos recurrentes adicionales, medidos en [Modyo Resource Units (MRUs)](/es/connect/resources/mrus.html).

@@ -39,7 +39,7 @@ Each service is designed to handle specific business capabilities, focusing on a
 
 ### Implementation of microservices with Modyo
 
-[Modyo Connect](/en/connect) enables the development and deployment of microservices in the cloud on its [containers](/en/connect/components/infrastructure#containers) platform. This requires a [code repository](/en/connect/components/development#code-repository) and active [continuous integration](/en/connect/components/development#continuous-integration) processes.
+[Modyo Connect](/en/connect) enables the development and deployment of microservices in the cloud on its [containers](/en/connect/infrastructure/containers.html) platform. This requires a [code repository](/en/connect/development/code-repository.html) and active [continuous integration](/en/connect/development/continuous-integration.html) processes.
 
 Microservices developed in Modyo Connect scale horizontally, allowing for the automatic increase of instances based on demand and the replacement of problematic ones. Additionally, they can be deployed in multiple regions and availability zones to ensure their resilience to infrastructure failures.
 
@@ -94,7 +94,7 @@ The microservices of Dynamic Framework are developed following the principles of
 
 #### Other considerations
 
-- **Heavy tasks**: For slow services or those sensitive to traffic fluctuations, background processing through [messaging queues](/en/connect/components/infrastructure#messaging-queues) is recommended.
+- **Heavy tasks**: For slow services or those sensitive to traffic fluctuations, background processing through [message queues](/en/connect/infrastructure/message-queues.html) is recommended.
 - **Task scheduling**: For microservices that require scheduling of programmed tasks, it is recommended to use [ShedLock](https://www.baeldung.com/shedlock-spring).
 - **Workflows and state machine**: The use of [state machines](https://www.baeldung.com/spring-state-machine) is recommended for the orchestration of complex processes, and to integrate workflow technologies with Spring Boot.
 - **Hexagonal architecture**: This software design pattern separates the business logic of an application from its external services, facilitating more flexible and domain-focused development, testing, and maintenance.

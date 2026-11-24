@@ -22,9 +22,9 @@ La tabla debajo de la barra de búsqueda muestra los Tipos ya creados, ordenados
 Para reordenar la tabla, haz click en los símbolos al costado de cada categoría. Las categorías por las cuales puedes reordenar son:
 
 - **Nombre**
-- **Identificador (UID)**
-- **Fecha de Creación**
-- **Fecha de Actualización**
+- **Identificador**
+- **Cardinalidad**
+- **Actualizado en**
 
 Haz click en el nombre de un Tipo para abrir el editor correspondiente.
 
@@ -47,13 +47,13 @@ La cardinalidad se refiere al número de entradas que pueden existir para ese ti
 :::
 
 :::warning Atención
-Es importante tener en cuenta que existe un límite de 50 Tipos de Contenido por Espacio.
+El número de tipos de contenido que puedes crear por espacio lo define el plan de tu cuenta, y por defecto es 50. Al intentar crear uno más allá del cupo, la creación falla con el mensaje "Has alcanzado el número máximo de tipos de contenido para el plan actual". Si necesitas un cupo mayor, conversa con tu ejecutivo de cuenta en Modyo.
 :::
 
 En la interfaz de creación, encontrarás una plantilla vacía en el centro de la pantalla y al lado derecho, una tabla con tres pestañas: 
 
-- **Añadir campos**
-- **Configuración del campo**
+- **Añadir**
+- **Campo**
 - **Configuración**
 
 Esta interfaz te permite crear cada uno de los tipos y darles el formato necesario, según tus requisitos.
@@ -66,17 +66,81 @@ El nombre del campo es de suma importancia, ya que será utilizado para acceder 
 Para más información ve a la [referencia de la API](/es/platform/content/public-api-reference)
 :::
 
-Todos los campos que se pueden añadir en un tipo, tienen un nombre, y la posibilidad de ser requeridos.
+Todos los campos que puedes añadir a un tipo comparten tres propiedades, que se configuran en la pestaña **Campo** del panel derecho:
 
-Cuando un campo es marcado como requerido, al crear o modificar una entrada, se debes proporcionar un valor para ese campo. De lo contrario, no podrás guardar los cambios realizados.
+- **Nombre**: Identifica al campo y es la clave con la que accedes a su valor desde Liquid, los SDK y la API. Es obligatorio, admite hasta 255 caracteres, y no puede empezar con guion bajo (`_`) ni contener puntos. Si escribes un carácter no permitido, el panel descarta lo que escribiste y muestra el aviso "Los nombres de campos no pueden empezar con guión ni contener puntos". Ese aviso dice "guión", pero lo que la plataforma rechaza es el guion bajo inicial: un nombre que empiece con guion medio se guarda sin problema.
+- **Indicación**: Texto de ayuda opcional. Se muestra bajo el campo al crear o modificar una entrada, para orientar a quien la completa.
+- **Requerido**: Al crear o modificar una entrada, se debe proporcionar un valor para ese campo. De lo contrario, no podrás guardar los cambios realizados.
+
+Dentro de un mismo tipo, dos campos no pueden llamarse igual: si repites un nombre, el tipo no se guarda y verás el mensaje "No se puede guardar el tipo porque hay nombres repetidos en sus campos".
+
+:::warning Atención
+Renombrar un campo cambia la clave con la que lees su valor desde Liquid, los SDK y la API. Antes de renombrar un campo que ya está en uso, revisa las plantillas y las integraciones que lo consumen.
+:::
+
+:::danger Peligro
+Eliminar un campo de un tipo borra el valor de ese campo en todas las entradas del tipo, y no se puede deshacer. Al quitarlo, el panel te pide confirmar con el mensaje "¿Estás seguro que quieres eliminar este campo? Una vez guardes, esta acción eliminará este campo de todas las entradas de este tipo y no se podrá deshacer." y vuelve a advertirte al guardar. Mientras no guardes, el campo y sus valores siguen intactos: si te equivocaste, sal de la pantalla sin guardar.
+:::
 
 ### Texto de una línea
 
-Este campo te permite ingresar textos de una sola linea. Cuenta con las siguientes restricciones:
+Este campo te permite ingresar textos de una sola línea, con un tope de 255 caracteres. Si necesitas guardar un texto más largo, usa [Texto de múltiples líneas](#texto-de-multiples-lineas). Cuenta con las siguientes restricciones:
 
 - **Largo mínimo**: Permite exigir un mínimo de caracteres para el texto ingresado.
 - **Largo máximo**: Permite  limitar la cantidad máxima de caracteres para el texto ingresado.
-- **Validación por expresión regular**: Te permite añadir una expresión regular para validar que el texto ingresado, al crear o modificar una entrada, cumpla con un formato determinado.
+- **Validación por expresión regular**: Te permite añadir una expresión regular para validar que el texto ingresado, al crear o modificar una entrada, cumpla con un formato determinado. Basta con que una parte del texto coincida: `\d{3}` acepta `abc123`. Para exigir que todo el texto cumpla el formato, ancla la expresión con `^` al inicio y `$` al final, por ejemplo `^\d{3}$`. Si el texto no cumple, la entrada no se guarda y el campo muestra "El valor no coincide con la expresión". Si la expresión no es válida, el tipo no se guarda y el error indica "Expresión inválida".
+- **Único**: Exige que el valor no se repita en otras entradas del mismo tipo. Es la única validación de unicidad de la plataforma, y Texto de una línea es el único campo que la ofrece. Si el valor ya está en uso, la entrada no se guarda y el campo muestra "Debe ser único".
+
+El alcance de **Único** es el tipo completo: la comparación recorre todas las entradas del tipo en todos sus idiomas, incluidas las que están en borrador o programadas. Quedan fuera las versiones de respaldo y la propia entrada que estás editando, también en sus otros idiomas: volver a publicar una entrada no choca consigo misma, y sus traducciones pueden repetir el valor. Un campo vacío no se considera repetido.
+
+:::warning Atención
+Dentro de un **Grupo**, **Único** no compara el valor con otras entradas del tipo: solo impide repetirlo entre las repeticiones del grupo en la misma entrada. Si dos repeticiones tienen el mismo valor, la entrada no se guarda y el campo muestra "Debe ser único". Si necesitas que el valor no se repita en otras entradas, deja el campo fuera del grupo.
+:::
+
+### Texto de múltiples líneas
+
+Este campo te permite ingresar texto en varias líneas, sin opciones de formato en el editor. A diferencia de **Texto de una línea**, que admite hasta 255 caracteres, aquí puedes guardar textos largos. Cuenta con las siguientes restricciones:
+
+- **Largo mínimo**: Permite exigir un mínimo de caracteres para el texto ingresado.
+- **Largo máximo**: Permite limitar la cantidad máxima de caracteres para el texto ingresado.
+- **Validación por expresión regular**: Te permite añadir una expresión regular para validar que el texto ingresado, al crear o modificar una entrada, cumpla con un formato determinado. Como en [Texto de una línea](#texto-de-una-linea), basta con que una parte del texto coincida. Aquí, además, `^` y `$` marcan el inicio y el fin de cada línea, así que una expresión anclada con ellos se cumple apenas una línea coincida. Para exigir que todo el texto lo cumpla, ancla la expresión con `\A` al inicio y `\z` al final.
+
+Este campo no ofrece la validación **Único**: la unicidad solo está disponible en [Texto de una línea](#texto-de-una-linea).
+
+:::warning Atención
+Desde la versión 10.2.2, el valor de este campo se publica como HTML, limitado a una lista de etiquetas y atributos permitidos:
+
+- **Al publicar**: el Liquid escrito en el campo se evalúa primero, también dentro de etiquetas y atributos (por ejemplo <span v-pre>`<a href="{{ site.url }}/contacto">`</span>). Después se eliminan las etiquetas, los atributos y los esquemas de URI que no están en la lista.
+- **Al guardar**: si el campo contiene elementos fuera de la lista, la entrada no se guarda y el error indica el campo y los elementos, por ejemplo `cuerpo: style, <iframe>`. Lo mismo vale al editar, publicar, programar o restaurar una versión, y por la API de administración.
+- **Copiar, clonar y acciones masivas**: copiar una entrada se rechaza si alguno de sus idiomas no cumple. Clonar un espacio y las acciones masivas de publicar, editar y etiquetar omiten las entradas que no cumplen e informan cada una con el campo y los elementos.
+- **Contenido existente**: lo guardado antes no se modifica, y las APIs de contenido lo devuelven tal como está. Una entrada con contenido fuera de la lista se puede despublicar, archivar y eliminar, pero no editar ni publicar hasta corregirla.
+:::
+
+#### HTML permitido
+
+Por defecto, el campo admite estas etiquetas:
+
+`a abbr acronym address b big blockquote br cite code dd del dfn div dl dt em h1 h2 h3 h4 h5 h6 hr i img ins kbd li mark ol p pre samp small span strong sub sup time tt ul var table caption colgroup col thead tbody tfoot tr th td u s strike bdi bdo wbr ruby rt rp article aside section header footer nav main figure figcaption hgroup`
+
+Y estos atributos:
+
+`abbr alt cite class datetime height href lang name src title width xml:lang colspan rowspan scope dir span`
+
+Los atributos `href` y `src` solo admiten los esquemas `http`, `https`, `mailto` y `tel`, además de rutas relativas. Se eliminan, entre otros, `script`, `style`, `iframe`, `form`, `input`, `svg`, los atributos `on*` y el atributo `style`.
+
+Cada instalación puede reemplazar estas listas con las variables de entorno `MODYO_CONTENT_MULTILINE_HTML_ALLOWED_TAGS` y `MODYO_CONTENT_MULTILINE_HTML_ALLOWED_ATTRS`. Si una entrada usa un elemento que la lista ya no permite, deja de poder editarse y publicarse hasta corregirla.
+
+#### Texto que incluye el carácter <
+
+El campo se interpreta como HTML, así que un `<` seguido de una letra abre una etiqueta. Por ejemplo, `Hola <nombre>` o `if (a<b && c>d)` se rechazan al guardar, y `x<y` sin un `>` posterior pierde el texto que sigue. Para mostrar el carácter, escríbelo como `&lt;`. Cuando lo rechazado parece texto y no HTML, el error lo indica.
+
+Si una plantilla imprime el campo como texto plano, por ejemplo con <span v-pre>`{{ entry.fields.cuerpo | escape }}`</span>, `&lt;` se muestra literal. En ese caso, usa un campo [Texto de una línea](#texto-de-una-linea) o ajusta la plantilla.
+
+El Liquid que completa el nivel de un encabezado, como <span v-pre>`<h{{ nivel }}>`</span>, se acepta mientras `h1` a `h6` estén en la lista.
+
+#### Valores JSON
+
+<span v-pre>`{{ entry | json }}`</span> entrega el valor guardado con `<`, `>` y `&` escapados como `\u003c`, `\u003e` y `\u0026`. Úsalo solo dentro de `<script type="application/json">`, nunca como valor de un atributo, y lee el valor con `JSON.parse`.
 
 ### Texto enriquecido
 
@@ -84,6 +148,8 @@ Este campo se traduce en un editor WYSIWYG de texto de múltiples líneas que ta
 
 - **Largo mínimo**: Establece el mínimo de caracteres para el texto ingresado.
 - **Largo máximo**: Limita la cantidad máxima de caracteres para el texto ingresado.
+
+Ambos largos se miden sobre el HTML que guarda el editor, no sobre el texto visible: las etiquetas y sus atributos también cuentan. Por ejemplo, `<p><strong>Hola</strong></p>` suma 28 caracteres, no 4.
 
 ### Dropdown
 
@@ -99,36 +165,90 @@ Este campo te permite agregar una lista de la cual puedes seleccionar más de un
 
 ### Opciones múltiples
 
-Este campo te permite agregar un campo de texto en el cual puedes escribir para seleccionar una opción; puede ser predeterminada o propuesta.
+Este campo te permite elegir uno o más valores desde un buscador que filtra a medida que escribes. El buscador solo ofrece los valores definidos en el tipo: al editar una entrada no puedes proponer un valor nuevo desde el campo. Los valores se administran en **Valores permitidos**, al configurar el campo.
+
+### Valores permitidos
+
+En los campos de elección (Dropdown, Radio, Checkbox y Opciones múltiples), las opciones se gestionan en la sección **Valores permitidos** del campo: usa **Agregar valor** y **Eliminar valor** para administrarlas, y el selector para marcar el **Valor predeterminado**. Antes de guardar, la interfaz marca las opciones como **Nueva** o **Modificada** para que revises tus cambios.
+
+Para que el tipo se guarde, cada campo de elección debe cumplir estas reglas:
+
+- Tener al menos un valor activo.
+- No repetir etiquetas entre sus valores activos.
+- En Dropdown y Radio, tener un solo **Valor predeterminado**: al marcar otro, el anterior se desmarca. En Checkbox y Opciones múltiples puedes marcar varios.
+
+Si alguna no se cumple, el tipo no se guarda y el error indica el nombre del campo.
+
+:::warning Atención
+Si cargas un campo de elección por la API, envía las etiquetas exactas de los valores permitidos o los identificadores que devuelve la API. Un texto que no coincide con ninguna etiqueta se descarta en silencio: la entrada se guarda sin ese valor y sin mensaje de error, salvo que el campo sea **Requerido** y quede vacío. Un identificador numérico que no pertenece al campo, en cambio, impide guardar la entrada.
+:::
+
+El **Valor predeterminado** se aplica automáticamente al crear una entrada nueva, y solo cuando el campo aún no trae un valor: no se aplica al editar una entrada que ya existe ni reemplaza lo que hayas cargado.
+
+:::warning Atención
+Esa aplicación automática solo alcanza a los campos de elección que están en el primer nivel del tipo. Si marcas un **Valor predeterminado** en un campo de elección que está dentro de un **Grupo**, el valor no se aplica a las entradas nuevas y la interfaz no te lo advierte. Deja el campo fuera del grupo si necesitas ese comportamiento.
+:::
+
+Cada valor es un elemento individual del tipo de contenido:
+
+- Al **renombrar un valor**, las entradas que lo tenían seleccionado conservan su selección con el nuevo nombre, en todas sus versiones. El texto nuevo se propaga a las entradas en segundo plano, así que la API pública puede tardar un momento en devolverlo.
+- Al **eliminar un valor en uso**, este se archiva: deja de ofrecerse para nuevas selecciones, pero las entradas que ya lo tenían seleccionado lo siguen mostrando, sin pérdida de datos históricos.
+
+:::tip Tip
+El nombre de un valor activo no admite saltos de línea ni comenzar con el carácter `*`.
+:::
 
 ### Booleano
 
-Este campo te permite agregar una pregunta o afirmación (Verdadero/True o Falso/False).
+Este campo te permite agregar una pregunta o afirmación (Verdadero/True o Falso/False). En el editor de la entrada se muestra como una casilla: marcada vale Verdadero y sin marcar, Falso.
+
+:::warning Atención
+Si marcas el campo como **Requerido**, solo podrás guardar la entrada con la casilla marcada: un valor Falso se rechaza con el mensaje "Es requerido". Úsalo para exigir una confirmación, como la aceptación de un aviso, y no para obligar a elegir entre Verdadero y Falso.
+:::
 
 ### Entero
 
-Este campo te permite agregar un número entero.  Por defecto, el valor debe estar en el rango de `-65325`a `+65325`. Sin embargo, puedes ajustar estos límites aplicando las siguientes restricciones:
+Este campo te permite agregar un número entero entre `-2147483648` y `2147483647`. Puedes acotar ese rango con las siguientes restricciones:
 
-- **Largo mínimo**: Establece el número mínimo de caracteres para el texto ingresado.
-- **Largo máximo**: Establece el número máximo de caracteres para el texto ingresado.
+- **Valor mínimo**: Rechaza los valores menores al número que indiques.
+- **Valor máximo**: Rechaza los valores mayores al número que indiques.
+
+Ambas restricciones acotan el valor del número, no la cantidad de dígitos. Déjalas vacías para no aplicar ese límite. Si el número queda fuera del rango, la entrada no se guarda y el campo muestra un mensaje con los límites que hayas configurado:
+
+- Solo con **Valor mínimo**: "Número inválido. Debe ser mayor o igual que 18".
+- Solo con **Valor máximo**: "Número inválido. Debe ser menor o igual que 120".
+- Con ambos: "Número inválido. debe estar entre 18 y 120".
+
+El **Valor mínimo** no puede ser mayor que el **Valor máximo**: si lo es, el tipo no se guarda y el error antepone el nombre del campo, por ejemplo "Edad: El valor mínimo debe ser menor o igual que 120" en un campo llamado Edad.
 
 ### Decimal
 
-Utiliza este campo para ingresar un número decimal. El número debe ser, obligatoriamente, entre `-65325` y `+65325`. Sin embargo, se puede acotar haciendo uso de las restricciones:
+Utiliza este campo para ingresar un número con decimales. Admite hasta dos decimales y valores entre `-9999999999999.99` y `9999999999999.99`. Si guardas más de dos decimales, el valor se redondea sin avisarte: `10.567` queda almacenado como `10.57`. Puedes acotar el rango con las siguientes restricciones:
 
-- **Largo mínimo**: Permite establecer un mínimo de caracteres para el texto ingresado.
-- **Largo máximo**: Permite limitar la cantidad máxima de caracteres para el texto ingresado.
+- **Valor mínimo**: Rechaza los valores menores al número que indiques.
+- **Valor máximo**: Rechaza los valores mayores al número que indiques.
+
+Ambas restricciones acotan el valor del número, no la cantidad de dígitos, y solo aceptan números enteros: para exigir un monto positivo, por ejemplo, usa `0` como **Valor mínimo**. Si el número queda fuera del rango, la entrada no se guarda y el campo muestra los mismos mensajes que en [Entero](#entero). También aquí el **Valor mínimo** no puede ser mayor que el **Valor máximo**.
 
 ### Fecha
 
-Utiliza este campo para agregar un selector de fechas. Limita las fechas seleccionables aplicando las siguientes restricciones:
+Utiliza este campo para agregar un selector de fecha y hora. El valor se guarda con ambas, así que la API, los SDK y Liquid entregan la fecha junto con la hora, aunque solo te interese el día. Limita las fechas seleccionables aplicando las siguientes restricciones:
 
 - **Desde**: Establece la fecha más temprana que se puede elegir.
 - **Hasta**: Establece la fecha más tardía que se puede elegir.
 
 ### Ubicación
 
-Utiliza este campo para seleccionar una dirección geográfica, según los campos de Google Maps. En caso de que no dispongas de una clave de API de Google, puedes ingresar manualmente el nombre, la latitud, la longitud y las divisiones políticas de la ubicación. Estas divisiones administrativas no son estándar y varían según cada país. En el caso de Chile, las divisiones son: Región, Provincia, Comuna y Ciudad.
+Utiliza este campo para seleccionar una o más direcciones geográficas, según los campos de Google Maps. Un mismo campo Ubicación guarda una lista ordenada de ubicaciones: agrega las que necesites y usa **Eliminar ubicación** para quitar una de la lista. El orden en que las dejes es el que se entrega en la API y en los SDK.
+
+En caso de que no dispongas de una clave de API de Google, puedes ingresar manualmente la **Dirección**, la **Latitud**, la **Longitud** y las divisiones políticas de la ubicación. La **Latitud** acepta valores entre -90 y 90, y la **Longitud** entre -180 y 180; fuera de ese rango la entrada no se guarda. Estas divisiones administrativas no son estándar y varían según cada país. En el caso de Chile, las divisiones son: Región, Provincia, Comuna y Ciudad.
+
+En la API pública y en los SDK, el valor del campo es un arreglo con un objeto por ubicación, y cada objeto trae siempre las mismas ocho claves:
+
+- `location_street`: la dirección escrita en el campo **Dirección**.
+- `location`: objeto con las coordenadas `lat` y `lon`.
+- `country`: el país de la ubicación.
+- `administrative_area_level_1` a `administrative_area_level_5`: los cinco niveles de división administrativa, del mayor al menor. Los niveles que el país no usa llegan sin dato.
 
 :::warning Atención
 Para garantizar el correcto funcionamiento de los mapas de ubicación con la clave de API de Google configurada en tu cuenta, la clave tiene que tener permisos para acceder a:
@@ -140,49 +260,107 @@ Para garantizar el correcto funcionamiento de los mapas de ubicación con la cla
 
 ### Archivo
 
-Este campo te permite adjuntar un solo archivo a la entrada, utilizando el gestor de archivos.
+Este campo te permite adjuntar un solo archivo a la entrada, utilizando el gestor de archivos. Cuenta con la siguiente restricción:
+
+- **Tipos permitidos**: Limita el tipo de archivo que se puede adjuntar. Puedes elegir uno o varios valores entre **Imágenes**, **Vídeo**, **Audio** y **Documentos**; si no eliges ninguno, se acepta cualquier archivo. Si el archivo adjunto es de otro tipo, la entrada no se guarda y el campo muestra "No coincide con los tipos permitidos", seguido de los tipos que configuraste.
+
+La comprobación se hace sobre el tipo con el que el gestor de archivos clasificó el archivo al subirlo, no sobre su extensión.
 
 ### Listado de Archivos
 
-Este campo te permite adjuntar múltiples archivos a la entrada, usando el gestor de archivos.
+Este campo te permite adjuntar múltiples archivos a la entrada, usando el gestor de archivos. Cuenta con la siguiente restricción:
+
+- **Tipos permitidos**: Limita el tipo de los archivos que se pueden adjuntar, con las mismas opciones y el mismo comportamiento que en [Archivo](#archivo). Basta con que uno de los archivos adjuntos sea de otro tipo para que la entrada no se guarde.
 
 ### Contenido (enlace a una)
 
 Utiliza este campo para vincular una Entrada a otra Entrada existente y publicada dentro del Espacio. Este campo tiene las siguientes restricciones:
 
-- **Restringir tipo**: Te permite seleccionar un tipo predeterminado para que solo se puedan seleccionar, como enlace, entradas del tipo especificado.
+- **Tipos de contenido permitidos**: Limita el enlace a las entradas de un tipo. Pese al plural del nombre, seleccionas un único tipo; el valor por defecto es **Todos**, que no restringe nada. Si la entrada enlazada no es del tipo elegido, la entrada no se guarda y el campo muestra "No calza con los valores permitidos", seguido del nombre del tipo exigido.
 
 ### Listado de Contenido (enlace a varias)
 
 Este campo te permite vincular más de una Entrada existente dentro del Espacio a otra Entrada. Este campo tiene las siguientes restricciones:
 
-- **Restringir tipo**: Te permite seleccionar un tipo predeterminado para solo se puedan seleccionar, como enlace, entradas del tipo seleccionado.
+- **Tipos de contenido permitidos**: Limita los enlaces a las entradas de un tipo. Pese al plural del nombre, seleccionas un único tipo, que aplica a todas las entradas que enlaces; el valor por defecto es **Todos**, que no restringe nada. Si cualquiera de las entradas enlazadas no es del tipo elegido, la entrada no se guarda y el campo muestra "No calza con los valores permitidos", seguido del nombre del tipo exigido.
+
+:::tip Tip
+Cada entrada puede enlazar hasta 10 entradas en un mismo campo Listado de Contenido. Si seleccionas más, el panel muestra "Se ha alcanzado el máximo de referencias (10), se excluirán los elementos adicionales" y conserva solo las 10 primeras. Ese tope se define por instalación: si necesitas más referencias, conversa con tu ejecutivo de cuenta en Modyo.
+:::
 
 ### Grupo
 
-Utiliza el campo Grupo para albergar otro campo dentro él. Puedes asignar un nombre al grupo según tus necesidades, así como nombrar los campos dentro del grupo. En casilla pista, incluye el texto que deseas mostrar para ayudar a tus usuarios a completar correctamente el campo. 
+Utiliza el campo Grupo para albergar otro campo dentro él. Puedes asignar un nombre al grupo según tus necesidades, así como nombrar los campos dentro del grupo y usar la **Indicación** de cada uno para orientar a quien completa la entrada. 
 
 Una vez que tengas más de un tipo de campo dentro de un grupo, puedes arrastrarlos y ordenarlos según requieras. 
 
 No hay límite en la cantidad de campos que puedes incluir dentro de un grupo. 
 
+En una entrada, el grupo se comporta como una lista repetible: el mismo conjunto de campos hijos se puede completar varias veces. Para trabajar con las repeticiones:
+
+1. Abre la entrada y ubica el grupo.
+2. Haz click en **Añadir un nuevo elemento** para agregar una repetición con los mismos campos.
+3. Completa los campos de esa repetición.
+4. Arrastra las repeticiones para cambiar su orden.
+5. Para borrar una repetición, haz click en su ícono de eliminar y confirma.
+
+El orden en que dejes las repeticiones se conserva y es el que se entrega en la API y en los SDK.
+
+En la API y en los SDK, el valor de un campo Grupo es un objeto cuya clave `fields` contiene un arreglo con un objeto por repetición, incluso cuando hay una sola: cada objeto trae los campos hijos con el nombre que les diste.
+
+```json
+{
+  "fields": {
+    "my_group": {
+      "fields": [
+        { "my_field": "Primer elemento" },
+        { "my_field": "Segundo elemento" }
+      ]
+    }
+  }
+}
+```
+
+Desde Liquid, recorre las repeticiones con un ciclo y lee los campos hijos dentro de él. Cada repetición se expone como un objeto [repeatable_group_field](/es/platform/channels/liquid-markup/objects.html#field):
+
+```liquid
+{% for item in entry["my_group"] %}
+  {{ item["my_field"] }}
+{% endfor %}
+```
+
 Puedes validar el contenido de los campos de la siguiente forma: 
 
-- **Requerido**: Marca la casilla **Requirido** para obligar a que se complete el grupo o campo.
+- **Requerido**: Marca la casilla **Requerido** para obligar a que se complete el grupo o campo.
   - Si marcas el grupo como requerido, al menos un elemento dentro del grupo deberá ser completado. 
   - Si marcas un elemento como requerido, ese elemento tiene que tener contenido.
-- **Unique**: Cuando marcas una entrada como única, no puede repetirse su contenido dentro del mismo grupo. 
+- **Único**: En un campo de [Texto de una línea](#texto-de-una-linea) dentro del grupo, impide repetir el valor entre las repeticiones de la misma entrada, pero no lo compara con otras entradas del tipo.
 
 :::tip Tip
 Un grupo puede albergar cualquier tipo de campo, menos otro grupo. 
 :::
 
 
+## Guardar los cambios de un tipo
+
+Los cambios que haces en un tipo (añadir, renombrar, reordenar o eliminar campos) solo se aplican cuando haces click en **Guardar**.
+
+:::warning Atención
+Si el tipo ya tiene entradas, al guardar el panel te pide confirmar con el mensaje "Actualizar el tipo de contenido reindexará todas las entradas y afectará todo el contenido publicado de este tipo. Ten en cuenta que este proceso puede tomar un tiempo y mientras tanto, las entradas de este tipo no reflejarán los cambios hasta que el proceso de reindexación termine.". Mientras ese proceso está en curso, el botón muestra "Reindexando..." y no puedes volver a guardar el tipo: al pasar el cursor sobre él verás "Hay un proceso de reindexación activo para este tipo de contenido. Puedes guardar cuando termine.".
+:::
+
 ## Propiedades
 
-En esta pestaña, puedes ver el nombre y UID del tipo. El UID es importante, ya que se utiliza para referirse al tipo desde los SDK de Liquid, JavaScript y la API. A continuación, verás un botón que puede estar en 2 estados:
+En la pestaña **Configuración** del panel derecho puedes revisar y editar los datos generales del tipo:
 
-- **Reindexar**: Te permite volver a indexar el modelo en caso de problemas con la API pública.
+- **Nombre**: El nombre con el que aparece el tipo en el listado.
+- **Identificador**: El UID del tipo. Es importante, ya que se utiliza para referirse al tipo desde los SDK de Liquid, JavaScript y la API.
+- **Descripción**: Texto libre de hasta 4.095 caracteres. Úsalo para dejar documentado, para el resto del equipo, cuál es el propósito de este tipo.
+- **Cardinalidad**: Cambia entre **Múltiple** e **Individual**. No puedes cambiarla a **Individual** si el tipo ya tiene más de una entrada.
+
+En el menú de acciones del encabezado del editor del tipo encontrarás además una opción que puede estar en 2 estados:
+
+- **Reindexar este contenido**: Te permite volver a indexar el modelo en caso de problemas con la API pública.
 - **Cancelar reindexación**: Si hay una reindexación en curso, puedes cancelar el proceso haciendo click en este botón. 
 
 :::warning Atención
@@ -190,5 +368,34 @@ Al reindexar uno de tus tipos, el modelo previamente indexado seguirá disponibl
 :::
 
 :::warning Atención
-Ten en cuenta que dependiendo de la [configuración de caché que tengas en tu espacio](/es/platform/content/spaces#cache), es posible que no veas los cambios inmediatamente después de haber terminado la reindexación.
+Ten en cuenta que, según la configuración de caché entre tu navegador y la plataforma, es posible que no veas los cambios inmediatamente después de haber terminado la reindexación.
+:::
+
+## Eliminar un tipo
+
+Para eliminar un tipo necesitas el permiso **Administrar Tipos**, y el tipo no puede tener entradas: si tiene alguna, en cualquier idioma o estado, la eliminación se rechaza con el mensaje "No se puede eliminar porque hay entradas dependientes". Elimina primero sus entradas y luego sigue estos pasos:
+
+1. Desde el menú principal, haz click en **Contenido**.
+2. Selecciona el espacio donde está el tipo.
+3. Haz click en **Tipos**.
+4. Haz click en el nombre del tipo para abrir su editor.
+5. En la pestaña **Configuración** del panel derecho, haz click en **Eliminar tipo**.
+6. Confirma en el mensaje "¿Estás seguro que quieres eliminar este elemento?".
+
+Las [páginas de contenido](/es/platform/channels/pages#pagina-de-contenido) que usaban el tipo quedan sin tipo asociado, y debes asignarles otro.
+
+## Clonar un tipo
+
+Clonar un tipo crea, dentro del mismo espacio, una copia con todos sus campos y sus validaciones. Es útil para partir de una estructura ya probada sin rehacerla campo por campo. Para clonar un tipo:
+
+1. Desde el menú principal, haz click en **Contenido**.
+2. Selecciona el espacio donde está el tipo.
+3. Haz click en **Tipos**.
+4. En la columna **Acciones** de la fila del tipo, haz click en **Clonar**.
+5. En la ventana **Clonar tipo**, confirma haciendo click en **Clonar tipo**.
+
+El clon toma el nombre del original precedido de "Copia de" y el identificador precedido de "copia-de-". Si ya existe un tipo con ese nombre o identificador, se le añade un número al final para no repetirlo. Solo se copia la estructura: las entradas del tipo original no se duplican.
+
+:::tip Tip
+El clonado se ejecuta en segundo plano y puede tardar: mientras se completa, la ventana muestra "Esto demorará un tiempo, el tipo está siendo clonado.". Al terminar verás "Tipo clonado correctamente" y el nuevo tipo aparecerá en el listado.
 :::

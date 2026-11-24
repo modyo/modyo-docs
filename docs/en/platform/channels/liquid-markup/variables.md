@@ -108,16 +108,17 @@ Ordered collections of elements:
 
 ### Hashes (objects/dictionaries)
 
-Collections of key-value pairs:
+Collections of key-value pairs. For example, `user.custom_fields` is a hash with the user's custom fields, indexed by each field's key:
 
 ```liquid
-{% assign config = site.metadata %}
+{% assign fields = user.custom_fields %}
+{% assign key = '_ucf_job' %}
 
-{{ config.theme }}                  → Dot notation
-{{ config['theme'] }}               → Bracket notation
-{{ config['color-primary'] }}       → Necessary with hyphens
+{{ fields._ucf_job }}               → Dot notation
+{{ fields['_ucf_job'] }}            → Bracket notation
+{{ fields[key] }}                   → Dynamic access with a variable
 
-{% for item in config %}
+{% for item in fields %}
   {{ item[0] }}: {{ item[1] }}     → Key: Value
 {% endfor %}
 ```
@@ -162,4 +163,66 @@ Modyo provides predefined objects that contain system information:
 - `spaces`: Access to content spaces
 - `account`: Account information
 
-For a complete and detailed list of all available objects, see the [Objects](/en/platform/channels/liquid-markup/objects) section.
+For a complete and detailed list of all available objects, see the [Objects](/en/platform/channels/liquid-markup/objects.html) section.
+
+## Context Variables
+
+Beyond those objects, on every render the platform injects a set of variables that describe the page being resolved. They aren't content: they are the context the template works with, and they determine what you can write in each view.
+
+Not all of them exist everywhere. Outside the context where it's injected, a variable simply doesn't exist and Liquid prints it empty, with no warning at all, so a misspelled name and a variable used outside its context look exactly the same on the page. See [Render Error Behavior](/en/platform/channels/liquid-markup/basics.html#render-error-behavior).
+
+### Always available
+
+These four collections are injected on every render, no matter the page type and no matter whether you are in a layout, a view, a snippet or a widget template:
+
+| Variable | What it holds |
+|----------|---------------|
+| `assets` | The account's asset manager. Indexed by the file UUID, as in <code v-pre>assets['uuid']</code>. |
+| `spaces` | The account's content spaces. Indexed by the space identifier, as in <code v-pre>spaces['blog']</code>. |
+| `menus` | The site's menus. Indexed by the menu slug, as in <code v-pre>menus['main']</code>. See [Navigation](/en/platform/channels/navigation.html). |
+| `vars` | The site's global variables or, in a widget template, that widget's variables. See [Global Variables](/en/platform/channels/global-variables.html). |
+
+On top of that, site pages have `csp_nonce`, the response's nonce, which goes in the `nonce` attribute of your inline `<script>` and `<style>` tags. See [Content-Security-Policy (CSP)](/en/platform/channels/sites.html#content-security-policy-csp).
+
+### From the page context
+
+| Variable | What it holds | Where it exists |
+|----------|---------------|-----------------|
+| `content_for_layout` | The already rendered HTML of the view. Marks the spot in the layout where the page is inserted. | Layouts only |
+| `page` | The current page. See [page](/en/platform/channels/liquid-markup/objects.html#page). | All but the search results page, forms and the widget preview |
+| `page_context` | The page type that was resolved, for example `context-home`, `context-custom` or `context-content`. See the full list in [The body block](/en/platform/channels/liquid-markup/tags.html#the-body-block). | All |
+| `page_name` | The context identifier with a suffix that indicates the view, almost always `-show`, for example `context-content-show`. | All but the widget preview |
+| `page_title` | The page name. On the home page and on search it is the platform's translated text. | All but the widget preview |
+| `page_id` | `page_name` followed by the page path, for example `context-custom-show-contact`. On the home page it is just `context-home-show`. | All but the search results page and the widget preview. It also doesn't exist when a form is shown again with validation errors |
+| `url` | The page URL. Only on content pages does it also include the category path or the entry slug. On every other page it doesn't include the sub-route being resolved, such as that of a page with [Route delegation](/en/platform/channels/pages.html#route-delegation) or that of an Origination step. `request.url` and `request.path` are computed from this variable. | All but the search results page, forms and the widget preview |
+| `current_layout_page` | The page the layout in use comes from. | All but the home page, the search results page, forms and the widget preview |
+| `page_grid` | The page's grid, the one passed to <code v-pre>{% snippet page_grid %}</code>. See [grid](/en/platform/channels/liquid-markup/objects.html#grid). | Home page and custom pages |
+
+The site's error pages, such as the 404, don't receive `page_context`, `page_name`, `page_id`, `url` or `current_layout_page`.
+
+:::tip Tip
+The <code v-pre>{% body %}</code> tag writes `page_context`, `page_name` and `page_id` into the `class` attribute of the `body` element. Looking at a published page's source tells you which context it resolved in, without printing anything in the template.
+:::
+
+### From content pages
+
+| Variable | What it holds |
+|----------|---------------|
+| `page_scope` | `index` when the listing was resolved and `show` when a single entry was resolved. |
+| `entries` | The listing's entries. Only when `page_scope` is `index`. |
+| `entry` | The entry matching the slug in the URL. Only when `page_scope` is `show`. |
+| `category_path` | The category path taken from the URL, without the entry slug. Empty when the URL carries no category. |
+| `category` | The category matching `category_path`. |
+| `space_id` | The id of the content space the page's content type belongs to. |
+
+### From the search results page
+
+| Variable | What it holds |
+|----------|---------------|
+| `site_search` | The resolved search, with its results. See [site_search](/en/platform/channels/liquid-markup/objects.html#site-search). |
+| `params_query` | The search term, sanitized and escaped, ready to print. Only exists if the URL carries the parameter. |
+| `params_more` | The value of the URL's `more` parameter, sanitized and escaped. The search engine does not use it to filter: it is just made available in case your template needs it. Only exists if the URL carries it. |
+
+### From Origination pages
+
+Origination pages also inject `origination`, the page's flow; `pending_submissions`, the user's pending responses in that flow; `submission`, the response being resolved; and, while that response is in progress, `current_step` and `current_task`.

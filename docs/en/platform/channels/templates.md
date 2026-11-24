@@ -12,8 +12,8 @@ In the templates section, the main menu is hidden to optimize the work area. At 
 
 - **Published**: There is a published version and the editable version is identical.
 - **Pending changes**: There is a published version, but there are changes pending publication in your editable version.
-- **Under review**: [Team review](/en/platform/core/key-concepts) is active, and the editable version has been submitted for review.
-- **Approved**: [Team review](/en/platform/core/key-concepts) is active and the item's review conditions have been met. In this state, the template is ready to be published.
+- **Under review**: [Team review](/en/platform/core/#team-review) is active, and the editable version has been submitted for review.
+- **Approved**: [Team review](/en/platform/core/#team-review) is active and the item's review conditions have been met. In this state, the template is ready to be published.
 
 At the top right, you can see the last date of publication and icons with the available actions:
 
@@ -28,14 +28,17 @@ You can preview the changes as a non-session user or a user with an active Modyo
 :::tip Tip
 Every time you publish a version, the version that was published becomes a backup version. By default, up to 20 backups are saved, allowing you to compare, restore, and roll back to the last 20 versions
 
-For more information on versioning, see the section on [versioning](/en/platform/core/key-concepts#versioning).
+For more information on versioning, see the section on [versioning](/en/platform/core/#versioning).
 :::
 
 **Search in templates**: Displays a sidebar with a text search engine that explores all editable templates.
 
 **View activity**: Displays a sidebar that shows the activity history and where you can read and write comments. Click on **view detail** to show the full information of any activity log.
 
-**More actions**: This icon allows you to **archive** or **delete** a template.
+**More actions**: This icon allows you to **Archive** or **Delete** the open template. These actions are only available on templates that can be deleted, such as the ones you create or the **Home** layout. The other templates the site comes with, such as the **Base** and **Error** layouts, cannot be archived, unpublished, or deleted.
+
+- **Archive**: Available when the template has no published version; if it has one, unpublish it first. An archived template cannot be edited and disappears from the list. To see it, turn on **Show archived** at the bottom of the side panel and, if you want to use it again, click **Restore**.
+- **Delete**: Available when the template is archived and has no published or scheduled version. This action is irreversible.
 
 The last option in the top bar shows the main actions you can perform:
 
@@ -44,6 +47,7 @@ The last option in the top bar shows the main actions you can perform:
 - **Force publication**: Only available to site administrators, allows you to immediately publish a template, even if it is awaiting review.
 - **Reject**: Returns to "In Edit" status and notifies reviewers that the item was rejected.
 - **Publish**: Once the template has been approved, you can send it to publish.
+- **Unpublish**: Available on published templates that can be deleted. Choose **Unpublish now**, or **Unpublish on** to schedule it for a date. Published templates that reference the unpublished template can no longer render it.
 
 In the main work area, there are two sections:
 
@@ -56,7 +60,7 @@ Modyo offers three predefined layouts:
 
 - **Home**: Exclusively for the main page of the site.
 - **Base**: All pages, except the home page, use this layout.
-- **Error**: Used in error views (404, 401), showcasing a clean design.
+- **Error**: Used in the site's three error views (**404**, **disabled**, and **template**), showcasing a clean design.
 
 To create a new layout:
 1. In the **Templates** section, click on the **Views** tab
@@ -65,36 +69,50 @@ To create a new layout:
 
 This allows you to define a new base structure for use on pages.
 
-You can use this code as a base that contains everything necessary for your pages to use the elements of the site, such as the header, footer, service worker, and Google Tag Manager configuration. You can also modify the code as needed.
-
+When you create a layout, Modyo initializes it with a minimal structure. If you want your pages to use every element of the site, such as the header, the footer, the service worker, and the Google Tag Manager configuration, replace that content with the same code that ships in the **Base** layout and adjust it as needed:
 
 ```liquid
-{% html5 %}
+{% html5 %} <!-- HTML header with browser directives -->
 <head>
   {% snippet 'shared/general/head' %}
 </head>
-
-{% body %}
+{% body %} <!-- Body with automatic context classes -->
 {% snippet 'shared/general/body_tag_manager' %}
+<div id="modyo-site-alert-wrapper"></div>
 {% snippet 'shared/general/header' %}
-
-{{ site.breadcrumb }}
-<div id="main-layout">
-{{ content_for_layout }}
-</div>
-
-<script>{% snippet "shared/serviceworker/register_js" %}</script>
+<main id="content">
+  <div id="breadcrumb" class="mt-8">
+    <div class="container breadcrumb-inner">
+      {{ site.breadcrumb }}
+    </div>
+  </div>
+  {{ content_for_layout }}
+</main>
+<script nonce="{{csp_nonce}}">{% snippet "shared/service_worker/register_js" %}</script>
 {% snippet 'shared/general/footer' %}
-
 {% endbody %}
 {% endhtml5 %}
 ```
 
+If you write your own layout, watch out for these three details:
+
+- `<div id="modyo-site-alert-wrapper"></div>` is the container where the site injects its alerts. If you leave it out, the alerts are not displayed.
+- `<main id="content">` wraps the page content and is the anchor used by the theme and by the site's error views.
+- The <span v-pre>`nonce="{{csp_nonce}}"`</span> attribute is required on every inline `<script>` or `<style>` tag when your web app's [Content-Security-Policy](/en/platform/channels/sites#content-security-policy-csp) includes the nonce directive. Without it, the browser blocks the script and the service worker is never registered.
+
+:::warning Attention
+The path of the snippet that registers the service worker is `shared/service_worker/register_js`, with an underscore between `service` and `worker`. If you write it any other way, the snippet does not resolve and the registration is not injected into the page.
+:::
+
 To apply a new layout to a page, follow these steps:
-1. Go to the **Pages** section
-2. Select the **Properties** tab.
-3. Choose the layout you want to use on your page.
-4. Submit for review or publish your layout, as required.
+1. Publish the layout. Only published layouts appear in the pages' **Layout** selector.
+2. Go to the **Pages** section and open the page.
+3. Choose the layout in the **Layout** field. On a widget page, it is in the **Properties** tab. On a [content page](/en/platform/channels/pages#content-page), you choose it separately for the **Index** and the **Show**, in the **Edit** tab.
+4. Submit the page for review or publish it, as required.
+
+:::warning Attention
+If you unpublish or delete a layout, the pages that use it are displayed with the **Base** layout. Before you unpublish it, if there are published widget pages that use it, Modyo tells you how many. When you delete it, the editable version of the widget pages it was assigned to also switches to the **Base** layout, and that change stays pending until you publish them.
+:::
 
 ### Inserting an Image with Liquid
 
@@ -125,12 +143,17 @@ It is necessary that your account's CDN is in the cloud for changes to be reflec
 
 ## Errors in Views
 
-In the views section, you can customize four types of errors:
+In the **Views** tab, inside the **errors** group, you can customize the three error views that the site ships with. All of them are rendered with the **Error** layout:
 
-- **Disabled**: Displayed when the site you are trying to access is [disabled](/en/platform/channels/sites).
-- **404**: If in the [site restrictions](/en/platform/channels/sites#privacy) configuration you decide to show 404 instead of redirecting to the home page, this error appears when entering an undefined URL.
-- **Privacy**: Shown when you do not have permissions to access the [site](/en/platform/channels/sites#privacy) or one of its [pages](/en/platform/channels/pages#privacy).
-- **Template**: Visible when the loaded page has a Liquid syntax error. It is unlikely that you will see this view, as from Modyo 8.1 onwards, the platform performs a syntax check before saving and publishing changes to Templates.
+- **disabled**: Displayed when the site you are trying to access is [disabled](/en/platform/channels/sites).
+- **404**: Displayed when you enter a URL that does not resolve, and also when a signed-in user opens a private page whose [segments](/en/platform/customers/segments) do not apply to them. If you enable **Redirect to home when a URL is not found** in the web app settings, the visitor goes to the home page instead of seeing this view.
+- **template**: Visible when the loaded page has a Liquid syntax error. It is unlikely that you will see this view, as from Modyo 8.1 onwards, the platform performs a syntax check before saving and publishing changes to Templates.
+
+There is no error view for privacy. When a visitor without a session requests a private site or page, the platform does not render any error view: it redirects them to the site's login page, or to the signup page if the web app is configured that way, and returns them to the URL they requested once they sign in.
+
+:::tip Tip
+As of Modyo 10.2, origination pages also respond with the **404** view and the site's styles when the URL does not resolve. They previously returned an empty body, so any customization you make to this view is also reflected on those URLs.
+:::
 
 ## CSS and JavaScript
 
@@ -143,8 +166,8 @@ Create custom CSS and JavaScript views to import your libraries to Modyo Platfor
 1. Once you have finished editing the Style Sheet or Javascript, you must include it in your layout. To do this, you can use the following Liquid filters:
 
 - `asset_url`: To define the file type
-- `stylesheet_tag`: Generates a <link> tag to include the CSS view.
-- `script_tag`: Generates a <script> tag to include the Javascript view.
+- `stylesheet_tag`: Generates a `<link>` tag to include the CSS view.
+- `script_tag`: Generates a `<script>` tag to include the Javascript view.
 
 ### Examples
 - A custom CSS view with media: screen
@@ -165,8 +188,43 @@ Once saved and published, it translates into the following HTML code:
 <script src='my-js' type='text/javascript' async='async' defer='defer'></script>
 ```
 
-To obtain detailed information and learn about the parameters supported by these filters, refer to the [Liquid filters section](/en/platform/channels/liquid-markup#standard-filters).
+To obtain detailed information and learn about the parameters supported by these filters, refer to the [Asset URL](/en/platform/channels/liquid-markup/filters.html#asset-url), [Script tag](/en/platform/channels/liquid-markup/filters.html#script-tag), [Stylesheet Tag](/en/platform/channels/liquid-markup/filters.html#stylesheet-tag), [Theme Javascript](/en/platform/channels/liquid-markup/filters.html#theme-javascript) and [Theme Stylesheet](/en/platform/channels/liquid-markup/filters.html#theme-stylesheet) entries.
 
+
+### How site CSS and JavaScript are served
+
+Every CSS or JavaScript view you create in Templates is published as a file with its own URL, which the Liquid filters resolve for you. That URL includes a version that updates when you publish the site, which means that:
+
+- Visitors get the new file as soon as you publish, without you having to rename the view or ask for any cache to be cleared.
+- As long as the version does not change, the browser can reuse the file across the different pages of the site instead of downloading it again on each one.
+- In preview mode the file is never served from cache, so you see your changes right away.
+
+### Controlling how the file loads
+
+By default, a stylesheet blocks the page from painting until it finishes downloading, and a script blocks HTML parsing. The `script_tag` and `stylesheet_tag` filters accept any attribute, so you can adjust that behavior while still using the versioned URL:
+
+```html
+<head>
+  {{ 'base'      | asset_url: 'css' | stylesheet_tag: media: 'screen' }}
+  {{ 'print'     | asset_url: 'css' | stylesheet_tag: media: 'print' }}
+  {{ 'main'      | asset_url: 'js'  | script_tag: defer: 'defer' }}
+  {{ 'analytics' | asset_url: 'js'  | script_tag: async: 'async' }}
+</head>
+```
+
+- `defer` downloads the script in parallel and runs it once the document has finished parsing, preserving the order in which you declared the scripts.
+- `async` runs it as soon as it is available, with no guaranteed order. Use it only for scripts that are independent of each other.
+- `media` limits a stylesheet to a specific context, such as printing.
+
+The `theme_javascript` and `theme_stylesheet` filters produce the same versioned URL, but do not accept attributes. If you need any, use the combination above.
+
+### Theme view or inline code
+
+Writing the CSS or JavaScript directly in the template, inside a `<style>` or `<script>` tag, saves one network request, but moves those bytes into the HTML document, which is downloaded in full on every page the user visits and is not reused between them. As a general rule:
+
+- Publish as a theme view all the CSS and JavaScript shared by several pages. It is downloaded once and reused across the rest of the site.
+- Reserve inline code for small fragments specific to one page, or for the minimum styles the first visible screen needs.
+- Keep in mind that an inline `<style>` block also blocks the page from painting: writing it in the template does not make it free.
 
 ## Snippets
 
@@ -209,10 +267,10 @@ Subversions are specific to each template, so some may have changes and others m
 :::
 
 :::tip Tip
-If you restore a previous version to the editable version, you can access the sub-versions of each template in that version. You can learn more about [versioning](/en/platform/core/key-concepts#versioning) here.
+If you restore a previous version to the editable version, you can access the sub-versions of each template in that version. You can learn more about [versioning](/en/platform/core/#versioning) here.
 :::
 
-To restore all templates to their original version, click on the secondary action in the top bar **Restore All**. For the changes to take effect, you must publish the templates.
+Each template is versioned separately. To return a template to a previous version, open it, click **Differences**, and use **Reset to this version**, which brings that version into the editable version, or **Rollback to this version**, which publishes it directly. For more details, see [Revert a Change](/en/platform/core/#revert-a-change).
 
 ## SEO
 
@@ -220,31 +278,69 @@ SEO [(Search Engine Optimization)](/en/platform/channels/sites#seo) is essential
 
 In Modyo, you can control how search engines read your site and content, by dynamically adding meta tags, depending on the attributes you add to your pages and content.
 
-To add meta tags in Modyo, use this code snippet in Templates and then call it from the head of your site:
+Among the templates the site is created with is the `shared/general/seo` snippet, which the `shared/general/head` snippet loads in the head of the **Home**, **Base**, and **Error** layouts. You can find it in the **Snippets** tab, and its initial content is the following:
 
 ```html
 <!-- Site SEO -->
-<meta name="keywords" content="{{ site.keywords }}"/>
 <meta name="author" content="{{ site.name }}"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 {{ site.meta_tags }}
 
 {% if page %}
-<!-- Page SEO -->
-{{ page.meta_tags }}
-<meta name="description" content="{{ page.excerpt }}"/>
-<meta property="og:title" content="{{ page.title }}"/>
-<meta property="og:type" content="website"/>
-<meta property="og:url" content="{{ page.url }}"/>
-<meta property="og:image" content="{{ site.logo | asset_url : 'original' }}"/>
-<meta property="og:site_name" content="{{ site.name }}"/>
-<meta property="og:description" content="{{ page.excerpt }}"/>
+    <!-- Page SEO -->
+    {{ page.meta_tags }}
 {% endif %}
+
 <!-- END SEO -->
+
+{% if page_scope == 'show' %}
+    <!-- Content Page: Show -->
+    <meta name="description" content="{{ entry.meta.excerpt }}"/>
+    <meta property="og:title" content="{{ entry.title }} | {{ site.name }}"/>
+    <meta property="og:description" content="{{ entry.meta.excerpt }}"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content="{{ entry.url }}"/>
+    {% if site.logo %}
+        <meta property="og:image" content="{{ site.logo | asset_url: 'original' }}"/>
+    {% endif %}
+    <meta property="og:site_name" content="{{ site.name }}"/>
+    <link rel="canonical" href="{{ entry.url }}"/>
+
+{% elsif page_scope == 'index' %}
+    <!-- Content Page: Index -->
+    <meta property="og:title" content="{{ page.title }} | {{ site.name }}"/>
+    <meta name="description" content="{{ page.excerpt }}"/>
+    <meta property="og:description" content="{{ page.excerpt }}"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content="{{ page.url }}"/>
+    {% if site.logo %}
+        <meta property="og:image" content="{{ site.logo | asset_url : 'original' }}"/>
+    {% endif %}
+    <meta property="og:site_name" content="{{ site.name }}"/>
+    <link rel="canonical" href="{{ page.url }}"/>
+
+{% else %}
+    <!-- Widget Page -->
+    <meta property="og:title" content="{{ page.title }} - {{ site.name }}"/>
+    <meta name="description" content="{{ page.excerpt }}"/>
+    <meta property="og:description" content="{{ page.excerpt }}"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="{{page.url}}"/>
+    {% if site.logo %}
+        <meta property="og:image" content="{{ site.logo | asset_url : 'original' }}"/>
+    {% endif %}
+    <meta property="og:site_name" content="{{ site.name }}"/>
+    <link rel="canonical" href="{{page.url}}"/>
+{% endif %}
 ```
 
-This snippet uses Liquid to add site-level meta tags. It also adds specific meta tags when the user navigates to a widget or content page.
+The snippet first adds the site meta tags and the page's [custom meta tags](/en/platform/channels/pages#meta-tags). Then it uses the `page_scope` variable to generate the meta tags for each view:
+
+- `show`: The detail of an entry on a content page. It uses the entry's title, excerpt, and URL, with `og:type` set to `article`.
+- `index`: The entry list on a content page. It uses the page's title, excerpt, and URL, with `og:type` set to `article`.
+- In any other case, such as on widget pages, it uses the page's title, excerpt, and URL, with `og:type` set to `website`.
+
+In all cases, it adds the canonical URL and, if the site has a logo, uses it as `og:image`.
 
 You can customize this snippet and define what meta tags you want for specific URLs or types.
 
@@ -263,14 +359,14 @@ Use this code to use specific meta tags when a user visits an entry:
 <!-- Content SEO -->
 <meta name="description" content="{{ entry.meta.excerpt }}" />
 <meta property="og:title" content="{{ entry.meta.title }}" />
-<meta property="og:url" content="{{site.url}}/{{entry.meta.type_uid}}/{{entry.meta.slug}}" />
+<meta property="og:url" content="{{ entry.meta.url }}" />
 <meta property="og:image" content="{{ entry.fields.covers.first | asset_url : 'original' }}" />
 <meta property="og:site_name" content="{{ site.name }}" />
 <meta property="og:description" content="{{ entry.meta.excerpt }}" />
-{% if entry.type_uid = 'posts'%}
+{% if entry.meta.type_uid == 'posts' %}
 <meta property="og:type" content="article" />
-{endif}
-{% if entry.type_uid = 'place'%}
+{% endif %}
+{% if entry.meta.type_uid == 'place' %}
 <meta property="og:type" content="place" />
 <meta property="place:latitude" content="{{ entry.location.first.latitude }}" />
 <meta property="place:longitude" content="{{ entry.location.first.longitude }}" />
@@ -279,7 +375,7 @@ Use this code to use specific meta tags when a user visits an entry:
 ...
 ```
 
-In this case, the `posts` and `place` entry types share the _title_, _excerpt_, and _covers_ attributes and differ in the _locations_ object. In addition, it defines a different document type for each one.
+In this case, the `posts` and `place` entry types share the _title_, _excerpt_, and _covers_ attributes and differ in the _location_ field. In addition, it defines a different document type for each one.
 
 ### Category-specific meta tags on the Content Page
 
@@ -305,8 +401,9 @@ For specific meta tags when displaying entries from a category, copy the followi
 <meta property="og:image" content="https://d1dzq2r60kxox4.cloudfront.net/uploads/c82bdfea-3622-4c11-9a20-bea227cbdc60/original/og_image.jpg"/>
 <meta property="og:site_name" content="{{ site.name }}"/>
 <meta property="og:description" content="{{ category_description }}"/>
+{% endif %}
 ```
 
-In this code, a `category_name` variable is created that contains the name of the category taken from the URL. Then, an `{% if category_path.size > 0 %}` is used to add relevant metadata to the category.
+In this code, a `category_name` variable is created that contains the name of the category taken from the URL. Then, an `if` on `category_path.size > 0` adds the category metadata only when the URL includes one.
 
 Liquid allows you to create dynamic content for your site. To learn more about Liquid and how to use Liquid Objects, visit [Liquid Markup](/en/platform/channels/liquid-markup).

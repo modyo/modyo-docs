@@ -15,26 +15,45 @@ Additionally, by using the Channels and Customers modules, you can create sites 
 
 In the entry interface, you can see a list of all user-generated content, ordered by the date of the last update.
 
-The columns for sorting the list of entries are:
+The columns of the list of entries are:
 
-- **Status**: Draft, Published, Scheduled, or Archived.
+- **Status**: Status of the entry: **Published**, **Scheduled**, **Draft**, **Pending changes**, **In review**, **Approved**, **Archived**, or **Not translated**.
 - **Name**: Content title.
 - **Type**: Content [type](/en/platform/content/types).
-- **Updated on**: Date of the last saved content update.
+- **Updated on**: Date of the last saved content update. It is the only column you can sort the list by.
 - **Author**: Content author's name.
 
 You can also filter the view with predefined filters:
 
 - **Type**: Content [type](/en/platform/content/types).
-- **Status**: Draft, Published, Scheduled, or Archived.
-- **Category**: Category assigned to entries.
+- **Status**: **Published**, **Not published**, **Scheduled**, and **Archived**. You can choose more than one status.
+- **Category**: Category assigned to entries. The result also includes the entries assigned to the subcategories of the category you choose.
 - **Language**: Content language.
 - **Translation**: Entry translation status. If an entry has no version in the selected language, it is considered "not translated".
-- **Tags**: Labels available in the account.
-- **Search bar**: Type a word to display entries that contain that word in their name or metadata.
+- **Tags**: Tags assigned to the entries of the space.
+- **Author**: Administrator who created the entry. The list only offers the users who have at least one entry in the space.
+- **Segments**: Segments assigned to the entries. This filter only appears when the space is associated with a user realm.
+- **Search bar**: Displays the entries whose name or identifier contains the text you type.
 
 :::tip Tip
 Click on the Filters menu in the upper right of the entry list to add or remove any of the filtering options in the header.
+:::
+
+### Type field filters
+
+When you filter the list by **Type**, a **Type fields filters** block appears below the common filters, with one filter for each filterable field of the type you chose. With them you narrow the list down to the entries that hold a given value in one of their fields.
+
+Only eight field types can be used as a filter: **Boolean**, **Checkbox**, **Date**, **Decimal**, **Dropdown**, **Integer**, **Multiple options**, and **Radio**. The remaining field types of the content type do not appear in the block.
+
+Each filter adapts to the field it represents:
+
+- **Date**: filters by a date range.
+- **Integer** and **Decimal**: filter by a numeric comparison.
+- **Boolean**: filters by True or False.
+- **Checkbox**, **Dropdown**, **Multiple options**, and **Radio**: filter by the **Allowed values** you defined in the field. In **Checkbox** and in **Multiple options** you can select more than one value at a time.
+
+:::tip Tip
+The block only exists while the **Type** filter is active, because each content type defines its own fields. If you change or remove the **Type** filter, the field filters are discarded.
 :::
 
 
@@ -48,7 +67,9 @@ Select one or more entries and click on the Bulk Actions box to:
 The option to bulk edit entries is only available for entries of the same type and is only visible if you filter entries by type.
 :::
 
-You can make changes to all fields of the type. Once the changes are made, click **Next** at the top of the screen to see the summary of your changes. Click "Save" to confirm the changes.
+You can change the **Category**, the **Privacy**, and all fields of the type, except the **Group** fields. **Privacy** only appears if the space is associated with a user realm, and it lets you mark the entries as **Private** and assign segments to them. To bulk edit, you need the **Bulk Edit Entries** permission.
+
+Once the changes are made, click **Next** at the top of the screen to see the summary of your changes. Click "Save" to confirm the changes.
 
 These entries will now have pending changes and must be published. To do this, you can use the "Publish" bulk action.
 
@@ -59,14 +80,55 @@ By using bulk editing of entries, you are overwriting the values for the selecte
 To retrieve a specific value from an entry, access the entry editing view and select the **Differences** option to review the previous values of an entry.
 :::
 
-- **Publish**: Publishes selected entries that have pending changes or are in draft status.
-- **Force publication**: If team review is enabled, space administrators can use this action to force the publication of entries that have pending changes or are in draft status, without having to go through the review process.
+- **Add or remove tags**: Opens a window to change the tags of the whole selection. In **Add new tags** you type or pick the tags you want to add, and under **Tags among selected elements** you see the tags those entries already have, with the number of entries that use each one: **Apply to all** adds that tag to the rest of the selection and the delete icon removes it from all of them. Click **Save** and confirm to apply the changes.
+- **Publish**: Publishes selected entries that have pending changes or are in draft status. Entries with values that fail validation, for example an empty required field, are not published. Check the status of the entries in the list to confirm which ones were published.
+- **Force publish**: If team review is enabled, space administrators see this action instead of **Publish**. It publishes the selected entries that have pending changes or are in draft status, without having to go through the review process.
 - **Unpublish**
 - **Archive**: Bulk archiving only affects selected entries that are not published. If you try to archive a published entry, the action will have no effect.
+- **Restore**: Takes the selected entries out of the archive and returns them to draft status. It only reaches archived entries, so it is worth filtering the list by the **Archived** status before using it.
+- **Delete**: Deletes the archived entries in the selection. It requires the **Delete Entries** permission.
+
+:::danger Danger
+**Delete** removes the selected entries along with all their backups, and it cannot be undone. The deletion only reaches the language you have selected in the list: the translations of those entries into other languages are kept.
+:::
 
 :::tip Tip
 Bulk actions run in the background, and you may not see the changes immediately. You will need to wait a moment and refresh your view after executing a bulk action.
 :::
+
+### Bulk creation via API
+
+Through the [administration API](/en/platform/core/api.html), you can create up to **100 entries** in a single request, for example, to feed a space from an external source:
+
+```
+POST /api/admin/content/spaces/{space_id}/entries/bulk?bulk_action=create
+Content-Type: application/json
+```
+
+```json
+{
+  "target_locale": "es-cl",
+  "entries": [
+    {
+      "content_type_id": 123,
+      "name": "My first entry",
+      "slug": "my-first-entry",
+      "tags": ["alpha"],
+      "field_values": [
+        { "field_id": 10, "type": "string", "value": "hello" }
+      ]
+    }
+  ]
+}
+```
+
+Consider the following:
+
+- Creation is **asynchronous**: the endpoint responds `202` with a `job_id`, which is the background job UUID and the value to use in `GET /api/admin/background_jobs/{uuid}` to check the progress and results. The result includes the `uuid` of the created entries and the validation errors per index.
+- Invalid entries are reported in the results without aborting the rest of the batch.
+- Entries are created as **drafts**: to publish them, use the bulk publish action with the created `uuid`s.
+- If you omit `target_locale`, the space's default locale is used. To create the **translation** of an existing entry, send its `uuid` along with a different `target_locale`.
+- The `field_values` support the same field types as individual entry creation.
 
 
 
@@ -85,8 +147,8 @@ To create an entry, follow these steps:
 1. Click **Publish**.
 
 
-:::warning Attention
-If the name field is empty, the default identifier will be the UUID of the entry.
+:::tip Tip
+The name and the identifier are required: the **Create** button is enabled once you choose the content type and fill in both fields. As you type the name, Modyo suggests an identifier based on it, which you can edit before creating the entry.
 :::
 
 ## Translate an Entry
@@ -126,7 +188,7 @@ To publish an entry in Modyo, follow these steps:
 1. At the top of the screen, click **Save**.
 1. If you have administrator permissions, the **Save** button changes to **Publish** and you can proceed to publish your entry. Otherwise, another user with Administrator permissions can do so. If team review is active, it will go through that process before it is published.
 
-You can find more information on team review in the [Key Concepts](https://docs.modyo.com/en/platform/core/key-concepts) section of our documentation.
+You can find more information on team review in the [Team Review](/en/platform/core/#team-review) section.
 
 
 ### Unpublish an Entry
@@ -142,7 +204,37 @@ To unpublish:
 1. Click **Unpublish**.
 
 
+### Schedule the publication of an entry
+
+Instead of publishing right away, you can set the date and time when the entry shows up on your sites and, in the same window, the date when it stops being visible.
+
+1. In the side menu, select Content.
+1. Click on your space.
+1. Select Entries.
+1. From the list of entries, click on the entry you want to schedule.
+1. At the top of the screen, click **Publish** to open the **Publish Options** window.
+1. Check **Publish on** and choose the date and time in **Select a date**.
+1. If you also want the entry to stop being visible on a given date, check **Unpublish on** and choose the date and time.
+1. Click **Schedule publication**.
+
+Once you confirm, the entry keeps a scheduled version and shows up in the list with the **Scheduled** status. You can keep working on its editable version without altering what was scheduled.
+
+Consider the following:
+
+- Each entry allows a single scheduled publication per language. If you schedule a second publication, the window warns you with "You are going to override the current scheduled publication" and the new one replaces the previous one.
+- If you choose **Publish now** when there is already a scheduled publication, the window warns you with "The scheduled publication will be cancelled": once you confirm, the entry is published immediately and the schedule is discarded.
+- If you choose a publication date that has already passed, the entry is published immediately instead of being scheduled.
+- The unpublish date cannot be in the past. If you try, Modyo rejects the operation with the message "The scheduled unpublish date can't be in the past".
+
+To schedule only the unpublishing of an entry that is already published, click **Unpublish** at the top of the screen, check **Unpublish on** in the **Unpublish Options** window, choose the date and time, and confirm with **Schedule unpublish**.
+
+:::tip Tip
+The full behavior of the scheduled version, including the notification you get when the action runs, is in the [versioning](/en/platform/core/#versioning) section.
+:::
+
 ### Delete entries
+
+You can only delete archived entries, and **Archive** is not available while the entry is published. If the entry is published, [unpublish it](#unpublish-an-entry) first.
 
 To delete an entry:
 
@@ -150,8 +242,13 @@ To delete an entry:
 1. Click on your space.
 1. Select Entries.
 1. From the list of entries, click on the entry you want to delete.
-1. Click on the more actions button (...) and select **Delete**. If the entry is not archived, this option will not be active; first select **Archive** and then select **Delete**.
+1. If the entry is not archived yet, click on the more actions button (...) and select **Archive**.
+1. Click on the more actions button (...) and select **Delete**.
 1. Click **Ok** to confirm.
+
+:::danger Danger
+**Delete** removes the entry only in the language you have selected, along with all its backups, and it cannot be undone. The translations of the entry into other languages are kept. The action requires the **Delete Entries** permission.
+:::
 
 ### Preview
 
@@ -160,7 +257,7 @@ Modyo allows you to see what your entry will look like published on multiple sit
 In addition, you can preview the content as a user without a session or as a user with a Modyo session. We recommend starting or closing the Modyo session on the site before entering preview mode to avoid security errors such as x-frame-options or mixed-content.
 
 :::tip Tip
-You will need to pre-configure the content page in the application to activate the preview option. For more details on how to configure it, see the [content](https://docs.modyo.com/es/platform/content) section of the documentation.
+You will need to pre-configure the content page in the application to activate the preview option. For more details on how to configure it, see the [content](/en/platform/content/) section of the documentation.
 :::
 
 To preview your content:
@@ -169,7 +266,9 @@ To preview your content:
 1. Click on your space.
 1. Select Entries.
 1. From the list of entries, click on the entry you want to preview.
-1. Click on the preview icon in the upper right.
+1. Click on the preview icon in the upper right. The **Preview** window opens with the JSON of the entry.
+1. In the **App** selector, choose the site where you want to see the entry.
+1. In the **Content page** selector, choose the content page that displays the entry. The preview opens in a new browser tab.
 
 :::warning Attention
 We recommend that you consider:
@@ -191,6 +290,32 @@ To edit an entry, follow these steps:
 1. Click **Publish**. If the entry is undergoing team review, reviewers should update their view to note the changes.
 
 
+### Clone an Entry
+
+**Clone** creates a new entry from the one you are viewing, with the same values in all of its fields, its tags, and its segments, and it also replicates the translations that already exist.
+
+1. In the side menu, select Content.
+1. Click on your space.
+1. Select Entries.
+1. From the list of entries, click on the entry you want to clone.
+1. Click on the more actions button (...) and select **Clone**.
+
+When the copy is done, Modyo takes you to the new entry. Consider the following:
+
+- The copy is born in draft status: to make it show up on your sites you have to publish it.
+- The copy is an independent entry. Its name becomes "Copy of" followed by the original name, and its identifier is generated with the `copy-of-` prefix, so the references to the original entry from the API or the SDKs keep pointing to the original.
+- The author of the copy is the user who runs the action, not the author of the original entry.
+- The action requires the **Clone Entries** permission.
+
+:::warning Attention
+When you clone, you are redirected to the new entry, so save the pending changes of the current entry before using this action.
+:::
+
+:::tip Tip
+Do not confuse **Clone** with **Copy from Language**: **Copy from Language** brings the content of another translation into the entry you are editing and does not create a new entry.
+:::
+
+
 ## Categories
 
 Categories are a fundamental tool in Modyo for organizing your Entries.
@@ -209,9 +334,9 @@ To create a category:
 1. Click on the **New Category** button.
 1. In the pop-up window, enter the name, path, and, optionally, a parent category.
 
-When you assign an entry to a category, Modyo adds the identifier as a prefix to the URL of the entry, for example:
+When you assign an entry to a category, Modyo adds the full path of the category, including its parent categories, between the path of the [content page](/en/platform/channels/pages#content-page) and the identifier of the entry. This only happens if the content page has the **Use categories** option turned on, which is off by default (see [URLs with categories](/en/platform/channels/pages.html#urls-with-categories)). For example:
 
-An entry with URL: test.modyo.com/visita-chile and category 'travel' would now be test.modyo.com/travel/visita-chile.
+An entry with URL: test.modyo.com/blog/visita-chile and category 'travel' would now be test.modyo.com/blog/travel/visita-chile.
 
 :::tip Tip
 When you enter the category name, the path is automatically set as an identifier. To change it, click on the path.
@@ -244,12 +369,19 @@ Tags allow you to add more detail to your entries by combining them with Liquid 
 When creating entries, you can add a tag that will appear both in the source code and in our content API, allowing you to add specific functionality to that tag.
 
 
+### Excerpt
+
+The excerpt is a short summary of the entry. You edit it in the **Properties** panel of the editing view, next to the category and the tags, and it allows up to 255 characters.
+
+Unlike fields, the excerpt is not defined in the content type: it is available in every entry without you having to create it. It is published along with the entry, and you retrieve it in `meta.excerpt` in the content API, or with `entry.meta.excerpt` in Liquid.
+
+
 ### Identifier
 
 The identifier is a unique value used to generate the URL of an entry.
 When you create an entry, the platform assigns an identifier to it. If you want to create a more friendly link, you can modify it when creating the entry or later when editing it.
 
-By force, the identifier must be a unique value for entries of the same type. If you try to save two entries with the same identifier, the platform will modify the last one when you publish the entry.
+The identifier must be unique among the entries of the same content type and the same language. If you try to save an entry with an identifier that another entry of that type already uses in that language, Modyo does not save the changes and warns you that the identifier has already been taken.
 
 
 :::warning Important
@@ -261,6 +393,8 @@ If you want to modify the identifier of your entry after its creation, you must 
 ### Private content
 
 Enable the private content option so that your content is exclusive to users who have a session on the platform.
+
+The **Private** option is in the **Privacy** block of the **Properties** panel, and it only appears if the space is associated with a user realm. To associate one, go to the [General](/en/platform/content/spaces#general) section of the space settings.
 
 Depending on how you are consuming the content, you may need to follow some additional steps to access it:
 
@@ -274,8 +408,8 @@ Segmented content is essential for any entity or company that wants to send spec
 
 To enable an entry to be visible to a specific group of users:
 
-1. Check the private content option
-1. Enable segmentation
+1. In the **Privacy** block, check **Private**.
+1. Check **Enable segmenting**.
 1. Select the user segment that the entry is aimed at.
 1. Click **Save**.
 
@@ -327,5 +461,9 @@ URL: `https://test.modyo.com/api/content/spaces/test-space/types/nuevo/entries/4
   }
 }
 ```
+
+:::tip Tip
+**API Link** is disabled while the entry is in draft status. If the entry is private, the content API only returns its content with a delivery token. See [Private content](/en/platform/content/public-api-reference#private-content) in the API reference.
+:::
 
 For more information about our API and the different actions you can perform, see [Management API](/en/platform/core/api).

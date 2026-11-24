@@ -4,18 +4,21 @@ search: true
 
 # WebHooks
 
-The platform also allows the use of Webhooks for certain specific events within your account. To do this, they must be enabled and configured from the Webhooks section in the account settings.
+The platform also allows the use of Webhooks for certain specific events within your account. To do this, configure them from the **Webhooks** section of the account settings.
 
 A webhook is an automatic _POST_ action to a given URL with certain information.
 
-To enable them, you must check the top of the page and then proceed to create all the webhooks you want.
+There's no general option to turn webhooks on: each one has its own **Enabled** switch, which is on when you create it. See [Enable or disable a webhook](#enable-or-disable-a-webhook).
 
-Webhooks can be created from actions of sites or spaces.
+Webhooks can be created from actions of apps, spaces, or realms. The **Context type** you pick defines which triggers the **Trigger (Log types)** selector offers you: every context has its own catalog and no trigger is available in all of them.
 
-When creating a webhook, you must have the URL to which you want to send the information, select the type of log and site (if necessary) that will trigger the webhook, and then save the changes.
+When creating a webhook, you must have the URL to which you want to send the information, pick the **Context type**, narrow the **Context** down to one app, space, or realm, or leave **All** to listen to every one of that type, select one or more triggers in **Trigger (Log types)**, since the selector accepts several, and then save the changes.
 
-After this, you will be able to see all active webhooks in the list.
+After this, you will see the webhook in the list, which shows all webhooks, whether they're enabled or not.
 
+:::warning Warning 
+In the version 10.1.0, realm webhooks are added for end-user events. If you were using these in previous versions, these Webhooks must be recreated within the realm.
+:::
 
 ### Create an Administrative Webhook
 
@@ -26,66 +29,88 @@ To create a webhook, follow these steps:
 1. From the administration page, click **Settings**, then select **Webhooks**.
 2. Click **+ New Webhook**.
 3. Type the name and the URL you want to call.
-4. Select the sites or spaces you want to activate the webhook.
-5. Select the log type that will activate the webhook.
-6. Add the necessary headers for the call.
-7. Click **Save**.
+4. In **Context type**, pick **App**, **Space**, or **Realm**.
+5. In **Context**, pick the app, space, or realm that will trigger the webhook, or leave **All**.
+6. In **Trigger (Log types)**, select one or more triggers from the catalog of the context you picked.
+7. Add the necessary headers for the call.
+8. Click **Save**.
 
 
-Site webhooks are:
+:::tip Tip
+The value in the `trigger_uid` column is what travels in the payload's `trigger_uid` field, so it is the data your endpoint uses to tell one trigger from another.
+:::
 
-- Page created
-- Page deleted
-- Page published
-- Page unpublished
-- Page updated
-- Login
-- Logout
-- Navigation approved
-- Navigation published
-- Navigation sent for review
-- Navigation updated
-- Profile updated
-- Site created
-- Site deleted
-- Site disabled
-- Site enabled
-- Site hidden
-- Site staged
-- Site visible
-- Site updated
-- Templates approved
-- Templates sent for review
-- Templates updated
-- Theme installed
-- Theme restored
-- Theme updated
-- Widget approved
-- Widget cloned
-- Widget created
-- Widget published
-- Widget restored
-- Widget sent for review
-- Widget unpublished
-- Widget updated
+The triggers of the **App** context type are:
 
-Space webhooks are:
+| Trigger | `trigger_uid` |
+| --- | --- |
+| Page created | `layout_page_created_log` |
+| Page deleted | `layout_page_deleted_log` |
+| Page published | `layout_page_published_log` |
+| Page unpublished | `layout_page_unpublished_log` |
+| Page updated | `layout_page_updated_log` |
+| Menu approved | `menu_approved_log` |
+| Menu published | `menu_published_log` |
+| Menu sent to review | `menu_sent_to_review_log` |
+| Menu updated | `menu_updated_log` |
+| App created | `site_created_log` |
+| App deleted | `site_deleted_log` |
+| App disabled | `site_disabled_log` |
+| App enabled | `site_enabled_log` |
+| App draft | `site_draft_log` |
+| App updated | `site_updated_log` |
+| Template approved | `site_template_approved_log` |
+| Templates sent to review | `site_template_sent_to_review_log` |
+| Template updated | `site_template_updated_log` |
+| Template published | `site_template_published_log` |
+| Widget approved | `widget_definition_approved_log` |
+| Widget Cloned | `widget_definition_cloned_log` |
+| Widget Created | `widget_definition_created_log` |
+| Widget Published | `widget_definition_published_log` |
+| Widget Restored | `widget_definition_restored_log` |
+| Widget sent to review | `widget_definition_sent_to_review_log` |
+| Widget unpublished | `widget_definition_unpublished_log` |
+| Widget Updated | `widget_definition_updated_log` |
 
-- Category created
-- Category deleted
-- Category updated
-- Entry approved
-- Entry created
-- Entry published
-- Entry sent for review
-- Entry unpublished
-- Entry updated
-- Space created
-- Space updated
-- Type created
-- Type deleted
-- Type updated
+Signing in, signing out, and profile updates are recorded in the activity, but they are not triggers of this context. If you need your end users' session events, create the webhook from the realm.
 
+The triggers of the **Space** context type are:
+
+| Trigger | `trigger_uid` |
+| --- | --- |
+| Category created | `category_created_log` |
+| Category deleted | `category_deleted_log` |
+| Category updated | `category_updated_log` |
+| Entry approved | `entry_approved_log` |
+| Entry created | `entry_created_log` |
+| Entry published | `entry_published_log` |
+| Entry sent to review | `entry_sent_to_review_log` |
+| Entry unpublished | `entry_unpublished_log` |
+| Entry updated | `entry_updated_log` |
+| Space created | `space_created_log` |
+| Space updated | `space_updated_log` |
+| Type created | `type_created_log` |
+| Type deleted | `type_deleted_log` |
+| Type updated | `type_updated_log` |
+| Type sent to reindex | `type_reindex_log` |
+| Reindex of type canceled | `type_cancel_reindex_log` |
+| Asset created | `asset_created_log` |
+| Asset updated | `asset_updated_log` |
+
+
+The triggers of the **Realm** context type are:
+
+| Trigger | `trigger_uid` |
+| --- | --- |
+| User created | `user_created_log` |
+| User updated | `user_updated_log` |
+| User enabled | `user_enabled_log` |
+| User disabled | `user_disabled_log` |
+| User deleted | `user_deleted_log` |
+
+:::warning Attention
+These five triggers are the only ones the **Realm** context type offers from **Settings** > **Webhooks**, and they cover the user management your team does. They are not the same ones you see in **Realm Settings** > **Webhooks**, which listens to the realm's end-user events and does not include **User disabled**. If you need both groups of events, create one webhook in each place.
+:::
 
 ### Payload example
 
@@ -93,9 +118,9 @@ Space webhooks are:
 {
    "id":1552,
    "account_id":2,
+   "automated":false,
    "site_id":null,
    "user_id":2,
-   "type":null,
    "value_1":"6111a767-71dc-485c-bea3-80229edf7450",
    "value_2":"the-new-type",
    "value_3":"space-test",
@@ -107,7 +132,6 @@ Space webhooks are:
       "title":"test entries (6111a767-71dc-485c-bea3-80229edf7450)"
    },
    "created_at":"2021-08-13T17:08:46.000Z",
-   "user_type":"AdminUser",
    "space_id":1,
    "log_type_id":262,
    "realm_id":null,
@@ -120,6 +144,7 @@ Space webhooks are:
    "trigger_entry_space_uid":"space-test"
 }
 ```
+
 ### Create a Realm Webhook
 
 Call your management channels through a webhook.
@@ -129,15 +154,58 @@ To create a webhook, follow these steps:
 1. From a realm, click **Realm Settings**, then select **Webhooks**.
 2. Click **+ New Webhook**.
 3. Type the name and the URL you want to call.
-4. Select the type of log that will activate the webhook.
+4. In **Trigger (Log types)**, select one or more triggers from the end-user event catalog.
 5. Add the necessary headers for the call.
 6. Click **Save**.
 
-Realm webhooks with their respective payloads:
+The available triggers are the realm's 24 end-user events:
 
-- Form response created
-- Form response updated
-- Origination response created
+| Trigger | `trigger_uid` | Fires when |
+| --- | --- | --- |
+| Form response created | `form_response_created_log` | An end user submits a form response. |
+| Form response updated | `form_response_updated_log` | An already submitted form response is updated. |
+| Origination submission created | `origination_submission_created_log` | An origination submission is created. |
+| Origination submission started | `origination_submission_started_log` | The end user enters the first task and the submission becomes started. |
+| Origination submission task submitted | `origination_submission_task_submitted_log` | The end user submits a task of the submission with the **Next** button. In a code snippet with **Lock responses once completed**, it is also recorded when the code snippet completes the task with its POST, and in that case **Next** does not record it again. |
+| Origination submission completed | `origination_submission_completed_log` | The submission becomes completed. |
+| Origination submission canceled | `origination_submission_canceled_log` | Someone cancels the submission. |
+| Origination submission canceled due to expiration | `origination_submission_canceled_overdue_log` | The platform cancels an overdue submission on its own. New in 10.2. |
+| Origination submission task updated | `origination_submission_task_updated_log` | The data of a task of the submission is updated. |
+| Origination task response started | `origination_task_response_started_log` | A task of the submission becomes in progress. New in 10.2. |
+| Origination task response completed | `origination_task_response_completed_log` | A task of the submission becomes completed. New in 10.2. |
+| Origination task response reopened | `origination_task_response_reopened_log` | An already completed task goes back to in progress. New in 10.2. |
+| Origination task response assigned | `origination_task_response_assigned_log` | The assignee of a task of the submission changes. New in 10.2. |
+| Login | `user_login_log` | An end user signs in. |
+| Login with code | `user_otp_login_log` | An end user's code is verified successfully. |
+| Logout | `user_logout_log` | An end user signs out. |
+| Login attempt failed | `user_login_attempt_failed_log` | A sign-in attempt fails. |
+| Login with code attempt failed | `user_otp_login_attempt_failed_log` | The submitted code cannot be verified. |
+| User created | `user_created_log` | An end user is created. |
+| User updated | `user_updated_log` | An end user is updated. |
+| User enabled | `user_enabled_log` | An end user is enabled. |
+| User signup | `user_signup_log` | An end user signs up. |
+| User password reset | `user_password_reset_log` | A password reset is requested. |
+| User deleted | `user_deleted_log` | An end user is deleted. |
+
+:::warning Attention
+This form has no **Context type** or **Context** selectors: the webhook is always scoped to the realm you create it from. **User disabled** is not on this list, because it only exists in the **Realm** context type webhooks you create from **Settings** > **Webhooks**.
+:::
+
+:::tip Tip
+The same trigger can reach you in two shapes. When the end user performs the action from the site, the payload is compact and carries the event in `e_c` and `e_a`. When an administrator performs it from the admin panel, or the platform performs it on its own, the payload carries the full log, with `trigger_uid`, `trigger_entity`, and the event detail inside the `options` block. Keep your endpoint ready for both.
+:::
+
+:::tip Origination identifiers in the payload
+When the webhook reports a fact in the origination scope, the payload includes the `origination_uuid`, `origination_uid`, `submission_uuid`, and `task_uid` identifiers at its root, as they apply to the fact. In the compact payload they are top-level fields, like `e_c` and `e_a`. In the full log payload they come inside the `options` block and are also copied to the root, so you read them in the same place regardless of the shape the notice arrives in. If you validate the payload against a closed schema, update it to accept these fields. See [Origination traceability identifiers](/en/platform/core/activity-logs.html#origination-traceability-identifiers) for the detail of each one.
+:::
+
+:::tip Tip
+To know when a code snippet becomes completed, use **Origination task response completed**: it is recorded whether the task is completed with the code snippet POST or with the **Next** button. **Origination submission task submitted** is recorded when the user clicks **Next**, and a code snippet can complete its task without going through that button. The exception is code snippets with **Lock responses once completed**: if the code snippet completes the task with its POST, the event is recorded at that moment and **Next** does not record it again. See [Completing the task from the code snippet](/en/platform/customers/origination.html#completing-the-task-from-the-code-snippet).
+:::
+
+These are the payload examples of the origination triggers:
+
+- Origination submission created
 ``` javascript
 {
    "ip":"172.71.194.146",
@@ -150,10 +218,11 @@ Realm webhooks with their respective payloads:
    "realm_uid":"jordana",
    "account_id":381,
    "origination_uid":"ori",
-   "submission_uuid":"4c23599f-2aa6-4a8c-b2ae-66be46b7b938"
+   "submission_uuid":"4c23599f-2aa6-4a8c-b2ae-66be46b7b938",
+   "origination_uuid":"8d3f6b2e-1c4a-4f7e-9b5d-2a6c8e0f4b13"
 }
 ```
-- Origination response started
+- Origination submission started
 ``` javascript
 {
    "ip":"172.71.194.146",
@@ -166,10 +235,11 @@ Realm webhooks with their respective payloads:
    "realm_uid":"jordana",
    "account_id":381,
    "origination_uid":"ori",
-   "submission_uuid":"4c23599f-2aa6-4a8c-b2ae-66be46b7b938"
+   "submission_uuid":"4c23599f-2aa6-4a8c-b2ae-66be46b7b938",
+   "origination_uuid":"8d3f6b2e-1c4a-4f7e-9b5d-2a6c8e0f4b13"
 }
 ```
-- Origination response task submitted
+- Origination submission task submitted
 ``` javascript
 {
    "ip":"172.71.195.36",
@@ -178,19 +248,23 @@ Realm webhooks with their respective payloads:
    "e_c":"origination_submission",
    "uid":2300345,
    "idsite":4521,
-   "task_id":157,
+   "changes":{"nombre":[null,"Ana"]},
    "realm_id":681,
+   "task_uid":"datos-personales",
    "realm_uid":"jordana",
+   "task_uuid":"b7e1c9a2-5d3f-4a8b-9c6e-1f2d3a4b5c6d",
    "account_id":381,
    "origination_uid":"ori",
-   "submission_uuid":"4c23599f-2aa6-4a8c-b2ae-66be46b7b938"
+   "submission_uuid":"4c23599f-2aa6-4a8c-b2ae-66be46b7b938",
+   "origination_uuid":"8d3f6b2e-1c4a-4f7e-9b5d-2a6c8e0f4b13"
 }
 ```
-- Origination response completed
+- Origination submission completed
 ``` javascript
 {
    "id":35914440,
    "account_id":381,
+   "automated":false,
    "site_id":null,
    "user_id":1177351,
    "value_1":null,
@@ -200,7 +274,12 @@ Realm webhooks with their respective payloads:
    "request_user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
    "loggeable_id":419,
    "loggeable_type":"Origination::Submission",
-   "options":{"title":null},
+   "options":{
+      "origination_uuid":"8d3f6b2e-1c4a-4f7e-9b5d-2a6c8e0f4b13",
+      "origination_uid":"ori",
+      "submission_uuid":"4c23599f-2aa6-4a8c-b2ae-66be46b7b938",
+      "title":null
+   },
    "created_at":"2025-06-16T10:50:22.000-04:00",
    "space_id":null,
    "log_type_id":415405,
@@ -211,10 +290,13 @@ Realm webhooks with their respective payloads:
    "trigger_entity_id":419,
    "trigger_entry_uuid":null,
    "trigger_content_uuid":null,
-   "trigger_entry_space_uid":null
+   "trigger_entry_space_uid":null,
+   "origination_uuid":"8d3f6b2e-1c4a-4f7e-9b5d-2a6c8e0f4b13",
+   "origination_uid":"ori",
+   "submission_uuid":"4c23599f-2aa6-4a8c-b2ae-66be46b7b938"
 }
 ```
-- Origination response canceled
+- Origination submission canceled
 ``` javascript
 {
    "ip":"172.71.195.41",
@@ -227,19 +309,183 @@ Realm webhooks with their respective payloads:
    "realm_uid":"jordana",
    "account_id":381,
    "origination_uid":"ori",
-   "submission_uuid":"04bf572a-9e00-4474-ae8a-6a0bc17d4c1a"
+   "submission_uuid":"04bf572a-9e00-4474-ae8a-6a0bc17d4c1a",
+   "origination_uuid":"8d3f6b2e-1c4a-4f7e-9b5d-2a6c8e0f4b13"
 }
 ```
-- Login
-- Login with code
-- Logout
-- Error trying to log in
-- Error trying to log in with code
-- User created
-- User updated
-- User enabled
-- User registration
-- Restore password
-- User deleted
+- Origination submission canceled due to expiration
+``` javascript
+{
+   "id":35914462,
+   "account_id":381,
+   "automated":true,
+   "site_id":null,
+   "space_id":null,
+   "user_id":null,
+   "value_1":null,
+   "value_2":null,
+   "value_3":null,
+   "request_ip":null,
+   "request_user_agent":null,
+   "loggeable_id":419,
+   "loggeable_type":"Origination::Submission",
+   "options":{
+      "origination_uuid":"8d3f6b2e-1c4a-4f7e-9b5d-2a6c8e0f4b13",
+      "origination_uid":"ori",
+      "submission_uuid":"4c23599f-2aa6-4a8c-b2ae-66be46b7b938"
+   },
+   "created_at":"2026-07-02T09:15:04.000-04:00",
+   "log_type_id":415412,
+   "realm_id":681,
+   "trigger_uid":"origination_submission_canceled_overdue_log",
+   "trigger_name":"Origination submission canceled overdue log",
+   "trigger_entity":"Origination::Submission",
+   "trigger_entity_id":419,
+   "trigger_entry_uuid":null,
+   "trigger_content_uuid":null,
+   "trigger_entry_space_uid":null,
+   "origination_uuid":"8d3f6b2e-1c4a-4f7e-9b5d-2a6c8e0f4b13",
+   "origination_uid":"ori",
+   "submission_uuid":"4c23599f-2aa6-4a8c-b2ae-66be46b7b938"
+}
+```
+This is the only trigger on the list that nobody performs: it arrives with `automated` set to `true` and without `user_id`, because the platform is the one canceling the overdue submission.
 
-Note: The webhook is called via a POST when the selected log type is generated. Once the webhook is created, you can send a test notification with false information to test that your URL is correctly receiving POSTs from Modyo.
+- Origination task response completed
+``` javascript
+{
+   "e_c":"origination_task_response",
+   "e_a":"completed_log",
+   "account_id":381,
+   "uid":2300345,
+   "idsite":4521,
+   "submission_uuid":"4c23599f-2aa6-4a8c-b2ae-66be46b7b938",
+   "origination_uid":"ori",
+   "origination_uuid":"8d3f6b2e-1c4a-4f7e-9b5d-2a6c8e0f4b13",
+   "realm_uid":"jordana",
+   "realm_id":681,
+   "task_uid":"datos-personales",
+   "task_response_id":9871,
+   "task_response_type":"Origination::UserInputTaskResponse",
+   "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+   "ip":"172.71.194.146"
+}
+```
+The origination task response started and reopened triggers use the same shape, with `e_a` set to `started_log` or `reopened_log`, and `task_uid` tells you which task of the origination the event belongs to.
+
+**Origination task response assigned** has no compact shape: the assignment is always made by an administrator, so it arrives as a full log, with `trigger_uid` set to `origination_task_response_assigned_log` and the new assignee in `value_3`. The `options` block carries `task_response_id`, `task_response_type`, `target_user_id`, `previous_assignee_id`, `previous_assignee_group_id`, and `title`, along with the origination identifiers.
+
+### Enable or disable a webhook
+
+Each webhook has the **Enabled** switch in its form. A disabled webhook stops sending notifications:
+
+- Its deliveries in **Pending** or **Scheduled** status become **Canceled**, with the reason **The webhook was disabled**.
+- Events that happen while it's disabled don't generate deliveries, so they can't be redelivered later.
+- Its deliveries can't be redelivered until you enable it again.
+
+When you enable it again, the canceled deliveries aren't sent on their own: if you need them, [redeliver them](#redeliver-deliveries).
+
+The **Status** column of the webhook list shows whether each one is **Active**, **Disabled**, or [**Degraded**](#degraded-webhooks).
+
+### Test a webhook
+
+In the webhook actions, in the list, click **Send test notification**. The platform sends a single POST to the webhook URL with dummy data of the first configured trigger that's still available and with the same headers as a real delivery, and shows you the result:
+
+- If your endpoint answers with a 2xx code, you see **Test notification sent**.
+- If it answers with another code, you see **The endpoint answered with HTTP status** followed by the code, and if the communication fails, the reason, for example **The endpoint did not answer in time**.
+
+The test notification isn't recorded in the [delivery log](#delivery-log), carries a different `webhook-id` on each test, and is sent even if the webhook is disabled.
+
+The test always arrives with the full log shape of the [payload example](#payload-example) and with dummy values, for example `id`, `account_id`, and `user_id` set to `0`, and `value_1`, `value_2`, and `value_3` holding those same texts. This includes end-user event triggers, which can arrive with the compact payload in real deliveries, so the test doesn't help you validate how your endpoint processes that shape.
+
+If none of the webhook triggers is still available, the test isn't sent and you see **None of the webhook triggers is available anymore, so no test notification was sent**.
+
+### Notification delivery
+
+Modyo sends each notification at least once: if your endpoint doesn't receive it, Modyo retries it, so the same notification can reach you more than once. Each delivery carries a stable identifier so your endpoint processes it only once.
+
+#### Headers of each delivery
+
+Besides the headers you configured in the webhook, each POST carries these headers:
+
+| Header | Value |
+| --- | --- |
+| `webhook-id` | Unique identifier of the delivery. It's the same across all its retries and when it's redelivered, and it's different for each webhook subscribed to the same event. |
+| `webhook-timestamp` | Time of the attempt, in Unix seconds. It isn't the date of the event. |
+| `modyo-event-type` | The `trigger_uid` of the trigger, for example `entry_published_log`. |
+| `modyo-attempt` | Attempt number. It doesn't go back to 1 when a delivery is redelivered: it keeps counting from the attempts already made. |
+| `content-type` | Always `application/json`. |
+| `user-agent` | `Modyo-Webhooks/1.0`, unless you configure your own `User-Agent` in the webhook. |
+
+```
+webhook-id: 4f9c2b1e-7d3a-4b8e-9a61-2c5e8f0d1a7b
+webhook-timestamp: 1760620800
+modyo-event-type: entry_published_log
+modyo-attempt: 1
+content-type: application/json
+user-agent: Modyo-Webhooks/1.0
+```
+
+The `webhook-` and `modyo-` prefixes are reserved for these headers, so you can't use them in the names of the headers you add to the webhook. If the webhook URL includes a user and password, for example `https://user:password@my-domain.com/webhooks`, Modyo sends them in the `Authorization` header with basic authentication.
+
+Notifications aren't signed. To have your endpoint reject calls that don't come from Modyo, add a header with a secret value to the webhook and validate it on every call.
+
+#### Your endpoint's response and retries
+
+Your endpoint has about 5 seconds to answer. The delivery succeeds with any 2xx code, and the result of each attempt defines what happens next:
+
+- **It's retried**: if the endpoint answers with a 5xx, `408`, or `429` code, if it doesn't answer in time, or if the connection, the host resolution, or the secure connection fails.
+- **It isn't retried**: if the endpoint answers with a 3xx code, because redirects aren't followed, or with any other 4xx code. Nor if the webhook URL or one of its headers isn't valid. The delivery becomes **Failed**.
+
+By default, Modyo makes up to 7 attempts: the first one as soon as the event happens, and the retries after waits of about 5 seconds, 5 minutes, 30 minutes, 2 hours, 5 hours, and 10 hours, with a small random variation. If your endpoint answers `408` or `429` with the `Retry-After` header, Modyo waits as indicated, up to 10 hours. If the attempts run out, the delivery becomes **Exhausted** and you can [redeliver it](#redeliver-deliveries).
+
+Each attempt uses the current URL and headers of the webhook, so if you fix them, the pending retries already go out with the new configuration. The notification body is built again on each attempt from the event and keeps the same shape as the [payload examples](#payload-example).
+
+#### Process each delivery only once
+
+To avoid processing the same notification twice:
+
+- Store the `webhook-id` of each notification you process with a unique index and discard the ones you already have.
+- Don't use `modyo-attempt` or `webhook-timestamp` as part of that key, because they change on each attempt.
+- Don't compare the full body: the same delivery can arrive with different bytes between attempts if the way the event is serialized changed.
+- Store the notification and its `webhook-id` durably, for example in your database or in a durable queue, answer with a 2xx code, and process it afterwards. That way you don't exceed the timeout or cause unnecessary retries. If you couldn't store it, answer with a 5xx code so Modyo retries it: once you answer 2xx, the delivery becomes **Delivered** and isn't sent again.
+
+#### Event order
+
+Modyo doesn't guarantee the order of notifications: a retry can arrive after a notification of a more recent event. If order matters and the payload carries the full log, use its `created_at`. The compact payload of end-user events, with `e_c` and `e_a`, doesn't carry the event date, so your endpoint must tolerate those events arriving out of order. `webhook-timestamp` doesn't help with ordering either, because it indicates the time of the attempt, not of the event.
+
+### Delivery log
+
+Each time an event triggers an enabled webhook, a delivery is recorded. In the webhook list, click **View deliveries** in the webhook actions to open the **Deliveries** page, with the **Status**, **Event**, **Attempts**, **Last result**, **Created**, and **Next attempt** columns. You can filter by **Status** and by creation date, which shows the last week by default.
+
+With **Delivery detail** you see the `webhook-id`, with a button to copy it, the event, the attempts, the last HTTP status, the last error, the duration of the attempt, the response body of your endpoint, and the payload sent.
+
+Finished deliveries are kept for 30 days from their last change by default, and the response body of your endpoint, for 7 days.
+
+To see deliveries you need permission to view webhooks, and to redeliver them, the **Admin Webhooks** grouped permission. Deliveries are also available in the [administration API](/en/platform/core/api.html), under `/api/admin/webhooks/{webhook_id}/deliveries` for account webhooks and `/api/admin/customers/{realm_uid}/webhooks/{webhook_id}/deliveries` for realm webhooks.
+
+#### Delivery statuses
+
+- **Pending**: The delivery is waiting to be sent.
+- **In flight**: Modyo is sending the notification.
+- **Scheduled**: An attempt failed and the delivery is waiting for its next retry. The **Next attempt** column shows when. If an attempt is cut off before it finishes, the delivery also goes back to this status, with the reason **The attempt was interrupted before it finished**.
+- **Delivered**: Your endpoint answered with a 2xx code.
+- **Failed**: Your endpoint answered with an error that isn't retried, or the webhook URL or one of its headers isn't valid.
+- **Exhausted**: All attempts were made without success, or its next attempt fell more than about 18 hours behind schedule, by default, without being made. In that case, **Last result** shows **The delivery expired before it could be sent** and that delivery doesn't count toward the webhook becoming [**Degraded**](#degraded-webhooks).
+- **Unrecoverable**: The event or its payload no longer exists, so the delivery can't be redelivered.
+- **Canceled**: The webhook was disabled or deleted before the delivery was completed.
+
+#### Redeliver deliveries
+
+Redelivering a delivery sends it again to the current URL of the webhook, with the same `webhook-id`, and gives it the full retry schedule again. The webhook must be enabled.
+
+- **One delivery**: Click **Redeliver** on a **Delivered**, **Failed**, **Exhausted**, or **Canceled** delivery and confirm.
+- **Several deliveries**: Select them, or select all the ones that match the filters, and use **Redeliver in bulk**. Only **Failed**, **Exhausted**, or **Canceled** deliveries are redelivered, up to 1000 at a time by default and at a rate of 60 per minute.
+
+Each redelivery is recorded in the activity as **Webhook redelivered**, and the delivery detail shows when and who redelivered it.
+
+### Degraded webhooks
+
+If a webhook accumulates 5 **Exhausted** deliveries without any successful delivery in between, it becomes **Degraded**. The webhook list shows it with that label and the date since it's been degraded, and the **Deliveries** page shows a notice.
+
+A degraded webhook still sends the first attempt of each event, but retries only once, about 10 hours later. It goes back to normal as soon as a delivery succeeds or when you make a bulk redelivery. Modyo never disables a webhook because of its failures: fix the endpoint and redeliver the failed deliveries.

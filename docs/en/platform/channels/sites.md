@@ -6,11 +6,15 @@ search: true
 
 A web application or web app displays the content created in Content and Channels to create your personalized digital channel. All the development, design, and navigation flow is carried out in the web application.
 
-A web app can be in one of these three states:
+A web application can be in one of these three states, which you choose in **Application settings** > [General](/en/platform/channels/sites.html#general) > **Change status**:
 
-- **Enabled**: Default status of newly created web applications and those that are enabled for use.
-- **Pending changes**: There are pending changes in the web application. An administrator can verify the changes and publish the web application.
-- **Disabled**: The web application cannot be accessed.
+- **Enabled**: The web application is editable and visible to the public.
+- **Draft**: The web application is modifiable but not visible to the public: it requires logging in to access. This is the state in which every newly created web application starts.
+- **Disabled**: The web application is neither editable nor accessible.
+
+:::tip Transient states
+In addition to these three, the platform uses two states that it assigns on its own and that you cannot choose in the selector: one for a copy while it is being cloned, and another for an application while it is being deleted. In both cases, the application does not appear in the applications list while the process lasts.
+:::
 
 ## Create a Web Application
 
@@ -19,14 +23,104 @@ To create a new web app, follow these steps:
 1. In the side menu, click on **channels**.
 1. Click on **+ new application**.
 1. Type the name and host (main path of the web application).
+1. In **Theme**, select the theme the web application starts from.
 1. If necessary, select which realm it belongs to.
 1. Click **create**.
 
-Once created, the web application is automatically enabled and the system takes you to the summary screen.
+Once created, the web application is in **Draft** status and the system takes you to the [Overview](/en/platform/channels/sites.html#application-overview) screen. To make it visible to the public, change its status to **Enabled** in **Application settings** > [General](/en/platform/channels/sites.html#general) > **Change status**.
 
 :::warning Attention
 In the web apps index, you will only see those apps in which you have a role and are part of the team.
 :::
+
+### Theme
+
+The theme is the set of templates, snippets, CSS, and JavaScript the web application is born with. It determines its starting point and nothing else: it is an initial mold, not a permanent dependency.
+
+- The list of available themes depends on the plan contracted for the account.
+- If only one theme is available, the selector is disabled and the application is created with the default theme.
+- Once the application is created, its [templates](/en/platform/channels/templates.html) can be edited freely, and there is no option to change the theme.
+
+## Clone a Web Application
+
+Cloning creates an independent copy of a web application within the same account. It is useful for starting from an application that is already built, with its pages, templates, and widgets, without redoing it from scratch.
+
+To clone a web application, follow these steps:
+
+1. In the side menu, click on **channels**.
+1. In the applications list, find the one you want to copy and, in the **Actions** column, click **Clone**.
+1. In the **Clone app** window, click the **Clone app** button.
+1. Wait for the process to finish. When it does, the list refreshes with the copy already created.
+
+The copy takes the name and host of the original, preceded by **Copy of**. If that name or host already exists in the account, Modyo appends a number.
+
+**What is copied**:
+
+- Templates and snippets.
+- Widgets and pages, with their hierarchy.
+- Navigation.
+- App variables.
+- Custom meta tags, custom redirects, and forced reviewers.
+- Team members with their roles.
+- The logo, the favicon, and the Apple icon.
+
+**What is not copied**:
+
+- The custom domain and the alternative domains: the copy is reachable only through its host.
+- The Google Tag Manager ID.
+- Origination pages.
+- The stages of the original application.
+- The status: the copy always starts in **Draft**, even if the original is **Enabled**.
+
+The copy keeps the publication state of the original: what is published in the original is published in the copy, and unpublished changes remain as pending changes. Since the copy starts in **Draft**, it is not visible to the public until you change its status to **Enabled**.
+
+:::tip Tip
+Cloning takes some time and runs in the background. While it lasts, the window shows the message "This will take some time, the app is being cloned" and the copy does not appear in the applications list yet.
+:::
+
+:::warning Attention
+Cloning is subject to your plan's maximum number of applications. If you have already reached that maximum, the operation fails with the message "You've reached the maximum number of apps for your current plan".
+:::
+
+:::tip Cloning is not the same as creating a stage
+[Adding a stage](/en/platform/channels/sites.html#add-a-new-stage) also copies a web application, but the result is another stage of the same application, meant for developing and then synchronizing the changes back. Cloning, on the other hand, produces an independent application that does not synchronize with the original.
+:::
+
+## Application Overview
+
+**Overview** is the entry screen of every web application: it is where you land when you select it in the applications list, and where you return with the **Overview** option in the side menu.
+
+In the main column you find:
+
+- Direct access to **Pages**, **Navigation**, **Widgets**, and **Templates**, each with the number of elements in the application.
+- **Activity**: the log of the actions administrators have performed on the application.
+
+In the side column you find the application's identification data:
+
+- **Stage**: the stage you are working on, next to the access to the synchronization view.
+- **Status**: **Pending changes** if there are unpublished elements, or **Published** if there are none.
+- **Realm**: the realm the application is linked to, or **None**.
+- **Privacy**: **Public** or **Private**.
+- **Time zone**, **Language**, **Description**, and **ID** of the application.
+
+In the header you see the date of the last release, the access to the application's **Preview**, and the **Publish** button, which opens the [Review and Joint Publication](/en/platform/channels/sites.html#review-and-joint-publication) screen. **Publish** is only available to those with the **Admin Synchronizations** or **Manage Channels** permission, and it is disabled when there are no pending changes.
+
+### Pending changes to publish
+
+When the application has [team review](/en/platform/channels/sites.html#team-review) enabled, one of these three messages appears under the **Pending changes** status:
+
+- **All changes are approved**: the review conditions are met and you can publish.
+- **Changes need review**: there are no approvals yet, and the **Publish** button remains disabled.
+- **Some changes are not approved and need review**: there are partial approvals.
+
+### Access to synchronization
+
+The **Stage** block only appears if your role has the **Admin Synchronizations**, **View Synchronizations**, or **Manage Channels** permission, and the button changes depending on which one:
+
+- With **Admin Synchronizations** or **Manage Channels** you see **Synchronize** and you can [synchronize the stage](/en/platform/channels/sites.html#synchronize-a-stage). If you are in the `main` stage and the application has no other stages in **Enabled** or **Draft** status, you see **Synchronize (read only)** even if you have these permissions.
+- With **View Synchronizations** you see **Synchronize (read only)**: you enter the synchronization view and review the differences, but you cannot apply them.
+
+If you can synchronize and the application has unpublished changes, a warning icon appears next to the stage name with the message "Before sync you have to publish all your changes", and when you click **Synchronize**, Modyo asks for confirmation before continuing.
 
 ## Review and Joint Publication
 
@@ -51,6 +145,8 @@ If you click **publish** on a particular article (e.g., publish a page), the Rev
 
 When you create a web application with Modyo, your users can search your web apps and all their content using the search function. This can be done using the `/search` URL or by accessing the dedicated search page.
 
+The search engine also finds partial matches within words, starting at 3 characters: for example, a page named `Sunflower` appears when searching for `sun` or `flower`. Exact matches are still shown first in the results.
+
 ### Enable or disable search
 
 To enable or disable the search functionality, follow these steps:
@@ -61,10 +157,11 @@ To enable or disable the search functionality, follow these steps:
 1. In the privacy section, enable or disable the **enable search** box, as required.
 1. Click **save**.
 
+With **Enable search** unchecked, the web app's `/search` and `/search.json` paths respond with a 404 error.
 
 ### Search template
 
-You can control the appearance and search functionalities in your web app using the _search_ [template](/en/platform/channels/sites#search-template/).
+You can control the appearance and search functionalities in your web app using the _search_ [template](/en/platform/channels/sites.html#search-template).
 
 This template is available by default in the templates section and contains all the Liquid code needed to carry out queries in your web app. By default, when making a query, the records are displayed in list form, with their title, description, and a link to their address. You can modify the template to adapt it to your needs.
 
@@ -91,13 +188,36 @@ To access this API, add "search.json" to your web app's URL along with your quer
 Customize your queries as follows:
 
 
-|  Parameter       |       Description    |
-|------------------|----------------------|
-| **query** | Performs queries to the search API. This search engine queries all published pages of your web app and all public entries in the spaces linked to the web app. |
-| **per_page** | Divides the total number of records by the number of selected pages. |
-| **page** | Selects the specific page you want to query, in case there are multiple pages of records to query. |
-| **multi=true** | Allows you to search in all web applications in the account that have the search function enabled. |
+| Parameter | Description |
+|-----------|-------------|
+| **query** | The term you want to search for. The query goes through the published pages of your web app. For [content pages](/en/platform/channels/pages.html#content-page), it goes through the published entries of their content type instead of the page itself, and each result links to the entry within that page. Entries of a content type that has no content page in the web app do not appear. The search engine only takes its first 15 characters into account. |
+| **page** | The results page you want to get. Defaults to 1. |
+| **per_page** | How many results each page carries. Defaults to 15. |
+| **more** | A free value the search engine does not use to filter: it is only made available to the search template as the `params_more` variable. |
 
+If the visitor is not logged in, the search only returns public pages and entries. If they are logged in, it also returns private ones that have no segments assigned or that share at least one segment with them.
+
+Each result carries four fields: `title`, `description`, `url` and `site_name`. The response also includes a `meta` object with `total_entries`, `per_page`, `current_page` and `total_pages`, which comes back empty when the query finds nothing.
+
+:::warning Warning
+`multi=true` is not a parameter of this API and adding it to the URL has no effect at all. Searching across several web apps is resolved solely from the settings of the web app you are querying from.
+:::
+
+:::tip Tip
+The total number of results is capped at 100, no matter the `per_page` you ask for: from there on the following pages come back empty and you need to refine the query. In the search template, [site_search.have_less_relevant_results](/en/platform/channels/liquid-markup/objects.html#site-search) tells you when results were left out of that cap.
+:::
+
+### Searching across several web apps
+
+A search can span several web apps in the same account. That mode is not turned on from the URL: it depends on two checkboxes in the **Privacy** section of the settings of the web app the search runs from, **Enable search** and **Enable search on multiple sites**. The second one can only be checked if the first one is checked.
+
+With both checked, the search goes through the originating web app and every web app in the account that meets these three conditions:
+
+- It has **Enable search** checked.
+- It is not a stage of another web app.
+- It has the same language as the web app the search runs from.
+
+In this mode each result states which web app it comes from in its `site_name` field, and in the search template [site_search.multi](/en/platform/channels/liquid-markup/objects.html#site-search) lets you show it only when the search spans several web apps.
 
 ## Web Application Settings
 
@@ -140,16 +260,16 @@ To access these snippets:
 
 **For the _head_**:
 
-1. Use this code:
+1. Use this code. The `nonce` attribute lets the browser run the _script_ when the app uses a nonce-based content security policy, such as the one preloaded when you enable [Security Headers](/en/platform/channels/sites.html#security-headers). The code also assigns the nonce to the _script_ that loads `gtm.js`, so the browser accepts it even if your policy does not include `'strict-dynamic'`:
 
 ```liquid
 {% if site.tag_manager_id != '' %}
 
 <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+<script nonce="{{csp_nonce}}">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;j.setAttribute('nonce','{{csp_nonce}}');f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','{{site.tag_manager_id}}');</script>
 <!-- End Google Tag Manager -->
 
@@ -203,10 +323,10 @@ When you press the delete button, the system will ask you to enter the textual n
 - **Show home to public visitors**: The web app's home page is shown to all visitors, even those who are not logged in. When navigating to any other page, registration or login is required.
 - **Redirect to home when a URL is not found**: By default, the web application shows a 404 error when the user accesses a non-existent URL. If you check this option, the user will be redirected to the web app's home page instead of the 404.
 - **Enable search**: Activates the search function in the web app.
-- **Enable multi-application search**
+- **Enable search on multiple sites**: Extends this web app's search to the rest of the web apps in the account. The checkbox stays disabled while **Enable search** is unchecked.
 
 :::tip Tip
-If you enable search in your web app and use the `multi=true` parameter from another web app, you can also search in your current app.
+This mode is not requested from the query URL: `multi=true` in `search.json` has no effect at all. Check which web apps take part in the search in [Searching across several web apps](/en/platform/channels/sites.html#searching-across-several-web-apps).
 :::
 
 
@@ -217,10 +337,10 @@ Proceed with caution when modifying these options, as they can affect access to 
 :::
 
 - **Change host**: This action modifies the visibility and accessibility of the application. Changing the host can impact the visibility and availability of the web application.
-- **Change realm**: Displays the application's realm. When you change the realm, you lose all privacy settings in your web apps, pages, and navigation.
+- **Change realm**: Displays the application's realm. When you change the realm, you lose all privacy settings in your web apps, pages, and navigation, and the site's origination pages lose the reference to their current origination. You can choose a realm or one of its [stages](/en/platform/customers/realms.html#stages). While the application has a realm or one of its stages selected, that realm can't be deleted.
 - **Change status**: Changes the application's status. Options are:
-	* Enabled: Editable and visible to the public. This is the default state of a web app.
-	* Editable: Modifiable but not visible to the public. Requires login to access. Robots.txt, PWAs, and the manifest are disabled in this state.
+	* Enabled: Editable and visible to the public.
+	* Draft: Modifiable but not visible to the public. Requires login to access. This is the state in which every newly created web application starts. Robots.txt, PWAs, and the manifest are disabled in this state.
 	* Disabled: Not editable or visible. In this state, it is not accessible or visible to users.
 - **Delete application**: Initiates the asynchronous deletion of the application and all its elements, such as pages and widgets.
 
@@ -237,14 +357,17 @@ SEO (Search Engine Optimization) is fundamental for search engine positioning. U
 You can configure:
 
 - **Tagline**: Description in search engines, below the web application name.
-- **Automatically update the sitemap.xml file for me**: Allows Modyo to automatically create and maintain the sitemap.xml. Disable this option to use a custom sitemap.
-- **Sitemap**: This XML file allows search engines to index the site's content.
-- **Custom sitemap.xml file**: File that allows search engines to index the web app's content.
-- **Automatically update the robots.txt file for me**: Allows Modyo to automatically create and maintain robots.txt. Disable this option to provide custom instructions to web app crawlers.
-- **Custom robots.txt file**: File that tells web crawlers which parts of the application they may or may not index.
+- **Enable sitemap.xml from this site**: Publishes the web application's `sitemap.xml` file, available for all public sites. If you disable it, or if the site is not public, the file URL responds with a 404 error.
+- **Automatically update the sitemap.xml file for me**: Allows Modyo to automatically create and maintain the sitemap.xml; the generated file does not include private pages. Disable this option to edit the custom file.
+- **Custom sitemap.xml file**: Sitemap content that allows search engines to index the web app's content. Editable when the automatic update is disabled.
+- **Enable robots.txt from this site**: Publishes the site's `robots.txt` file and enables its editing. This option is only available for sites with a custom domain enabled; if it is disabled, the file URL responds with a 404 error.
+- **Custom robots.txt file**: Content of the robots.txt, which tells web crawlers which parts of the application they may or may not index.
+- **Enable llms.txt from this site**: Publishes the web application's `llms.txt` file at the `/llms.txt` path. It is a Markdown file that helps large language models (LLMs) understand the site's content, and it is available for all public sites. This option is disabled by default; if it is disabled, or if the site is not public, the file URL responds with a 404 error.
+- **Automatically update the llms.txt file for me**: Allows Modyo to automatically create and maintain the llms.txt with the web application's name, tagline, and description, plus links to its pages grouped into the **Pages** and **Content** sections. Private pages are never included. Disable this option to edit the custom file.
+- **Custom llms.txt file**: Content of the llms.txt when automatic updates are disabled.
 
 :::tip Tip
-Robots.txt and sitemap.xml files are only visible with custom domains. Otherwise, they are only found at the platform level, have default values, and cannot be customized.
+There are also sitemap.xml, robots.txt, and llms.txt file configurations at the account level. The account's llms.txt is enabled by default, is generated from the public production sites without a custom domain that you add to its list, and also supports a custom file.
 :::
 
 - **Custom meta tags**: Allows you to configure meta tags for all pages and their default values. Click **+ new meta tag** to create a new one.
@@ -363,10 +486,16 @@ In the domains section, you can view and modify the public location of your web 
 It is essential to inform all platform members about any changes you make in this section.
 :::
 
-Activate the checkbox to make changes. The variables you can modify are:
-- **Host**: Location of the web application on the server.
-- **Primary domain**: Main address of the web application.
-- **Alternative domain**: Secondary address to redirect in case of failure in the primary.
+The **Host** is the location of the web application within the platform domain, and you can change it in **Site settings > General**, in the **Danger zone** section.
+
+Activate the **Enable custom domains** checkbox to enable the fields in this section:
+- **Primary domain**: Main address of the web application. Alternative domains will be redirected to this domain.
+- **Alternative domain 1 (optional)** and **Alternative domain 2 (optional)**: Additional addresses that can also be used to reach the web application. They are not a fallback for the primary domain: every visit that comes in through one of these domains is always redirected to the primary domain, preserving the requested path.
+- **Redirect type for alternative domains**: The HTTP code with which alternative domains redirect to the primary domain: **301 Moved Permanently**, which signals search engines to transfer SEO ranking to the primary domain, or **302 Found (Temporary)**. New configurations use 301 by default; sites that already had alternative domains configured keep 302 until you choose to change it.
+
+:::tip Permanent redirects
+Browsers cache 301 redirects aggressively: if you later switch to 302, visitors who already received the permanent redirect may take a while to see the change.
+:::
 
 
 :::warning Attention
@@ -437,6 +566,8 @@ These hosts are reserved by Modyo. They are not available as hosts for your web 
 </tr></table>
 :::
 
+A [realm](/en/platform/customers/settings.html#domains) of your own account can use the same custom domain as your web app: the `/realms` and `/api/customers/realms` routes are answered by the realm and the rest by the web app. On a custom domain, those paths are reserved for realms: if no realm uses that domain, the platform answers 404 and the web app doesn't handle them.
+
 ### Stages
 
 Using stages in your web application allows you to implement a continuous integration and deployment (CI/CD) approach to add new functionality without affecting what is already published.
@@ -450,13 +581,17 @@ The main advantages of having different stages in your web apps are:
 :::warning Warning
 - A web app can have a maximum of four stages.
 - Changes you make to a stage are only reflected in that stage.
-- Stages are only available for web applications.
-- Custom PWAs and redirections are disabled in stages. They can only be used in the `main` stage.
+- Realms also have their own stages, independent from web app stages. See [Stages](/en/platform/customers/realms.html#stages) in Realms.
+- Custom redirections are disabled in stages. They can only be used in the `main` stage.
+- When it is created, each stage copies the PWA settings of its source stage. You can then change them in each stage separately.
 - The team members section is separate in each `main` stage. Add members to enable team review.
 - You can have the same members with different roles and permissions for each stage.
+- Origination pages are copied to the new stage without their linked origination. Since each origination allows only one page, to use them in the stage you must link a different origination from the same realm.
 :::
 
 #### Add a New Stage
+
+Before you create a stage, publish the pending changes of the source stage. If it has unpublished changes, the window warns you and the **Create** button stays disabled. Publish the changes and open the window again.
 
 To add a new stage to your web app, follow these steps:
 
@@ -466,7 +601,13 @@ To add a new stage to your web app, follow these steps:
 1. Click on stages.
 1. Click on **+ new stage**.
 1. Select the source stage and name your new stage.
-1. Click **create**.
+1. Click **Create**.
+
+The stage creation continues in the background, so you can close the window. While it lasts, the new stage does not appear in the stages list. If you keep the window open, when it finishes you see one of these results:
+
+- If all the elements were cloned, the message "Environment successfully created" appears and the list refreshes.
+- If some elements could not be cloned, the stage is created anyway and the window shows the list of those elements and the reason for each one, along with the message "The stage was created, but some elements could not be cloned. The details are in the stage creation log."
+- If the creation could not be completed, the window shows the message "The stage creation could not be completed".
 
 
 :::tip Tip
@@ -476,7 +617,8 @@ In the summary section of your web application, you can see the details of the c
 #### Synchronize a Stage
 
 :::warning Attention
-The platform does not allow you to synchronize changes that have not yet been published. Make sure you don't have any pending changes to publish before starting the synchronization.
+- It is not possible to synchronize elements that were created manually and separately in different stages prior to synchronization. In these cases, the manually created elements must first be deleted, and they will then be automatically recreated through the synchronization process.
+- The platform only allows the synchronization of published changes. Ensure that you do not have any pending changes to be published before starting the synchronization.
 :::
 
 To synchronize a stage, follow these steps:
@@ -490,7 +632,8 @@ To synchronize a stage, follow these steps:
 
 
 :::warning Attention
-Elements of a stage associated with a segment are not synchronized. You must repeat the process manually in the new stage, once the synchronization is complete.
+- Pages and menu items associated with segments are also synchronized. If the element already exists in the destination stage with assigned segments, it keeps those segments and does not take the ones from the source stage; if it has none, it receives the ones from the source.
+- The origination linked to an origination page is not synchronized either: each stage keeps its own, and that difference does not appear in the list of elements to synchronize.
 :::
 
 #### Delete a Stage
@@ -501,7 +644,7 @@ To delete a stage, follow these steps:
 1. Click on application settings.
 1. Click on General.
 1. In the danger zone section, click **delete stage**.
-1. Enter the name of your stage.
+1. In **App name**, enter the full name of the stage exactly as it appears in the **App Name** field of the General section (for example, `qa My site`, not just `qa`).
 1. Click **delete**.
 
 
@@ -549,10 +692,10 @@ To modify an administrator's role, follow these steps:
 1. In the modal that opens, select the new role.
 1. Press **Update** to confirm the change.
 
-Available roles are:
+Available roles are listed below. For the details of each one, see [Site-level roles](/en/platform/core/roles.html#site-level-roles):
 
-- **Viewer**: This user can view entries, view differences between versions, and leave comments. They can also access the synchronization view and view pending changes to synchronize. This role is not authorized to perform any action that implies a change in the platform.
-- **Developer**: This user is in charge of the structural resource development. They can create, modify, and submit pages, widgets, menus, and templates for review. All actions performed by a Developer must go through a review process before publication. This role does not have permissions to publish, delete, or _rollback_ to previous versions of the resources, nor to modify the site's configuration. There is a variant of this role called Developer CLI, which in addition to the permissions of a Developer, allows updating widgets from external applications, such as the [modyo-cli](/en/platform/channels/widgets#modyo-cli).
+- **Viewer**: This user can view the site's pages, menus, templates, and widgets and the global variables, view differences between versions, and leave comments. They can also access the synchronization view and view pending changes to synchronize. This role is not authorized to perform any action that implies a change in the platform.
+- **Developer**: This user is in charge of the structural resource development. They can create, modify, and submit pages, widgets, menus, and templates for review. All actions performed by a Developer must go through a review process before publication. They can restore a previous version of these resources (_rollback_), but do not have permissions to publish or delete them, nor to modify the site's configuration. There is a variant of this role called Developer CLI, which in addition to the permissions of a Developer, allows updating widgets from external applications, such as the [modyo-cli](/en/platform/channels/cli.html).
 - **Developer CLI**: Can create, modify, and submit pages, widgets, the menu, and templates for review. In addition, they can push widgets from external applications.
 - **Reviewer**: This role allows for the correction, approval, or discarding of the work done by Developers. They can create, modify, submit for review, and approve pages, widgets, menus, and templates. They can also publish when review conditions are met. They cannot edit the site settings.
 - **Admin**: The Site Administrator has the same privileges as the previous roles and has the ability to configure the entire site. This includes the creation, modification, submission for review, and approval of pages, widgets, menus, and templates. In addition, they can publish without requiring team review validation.
@@ -569,6 +712,14 @@ Modyo has a custom redirect system that will allow you to take a URL from your s
 In this view, you will find a table with all the redirects that currently exist on the site. You can search by path or description.
 
 To create a new redirect, click on the **New** button in the upper right corner of the view. Fill in the **_Source URL_** and **_Destination URL_** fields and the redirection code, then save the changes.
+
+#### Enable and disable redirects
+
+Each redirect has a switch in the **Enabled** column that allows you to temporarily disable it without deleting it, and re-enable it when you need it. You can also enable or disable several redirects at once by selecting them and using the **Enable** and **Disable** bulk actions.
+
+A disabled redirect stops applying immediately: its source URL resolves again as a normal site resource (an existing page or a 404 error). When re-enabled, it redirects again immediately, preserving the configured 301 or 302 code.
+
+New redirects, including those imported via CSV, are created enabled.
 
 :::warning Attention
 The redirects table is the second to last in precedence, so if there is a URL on the site that points to a [page](/en/platform/channels/pages) or a default view, you will see that view instead of being redirected through the custom redirects table.
@@ -595,14 +746,27 @@ The hierarchy of locations on Modyo sites follows this order:
 For a redirect to be successful, the source path cannot exist or must be unpublished. If the source is a published page with subpages, you must unpublish the subpages before unpublishing the main page.
 :::
 
+:::tip Tip
+Starting in version 10.1, redirections to sites outside the Modyo account are possible.
+:::
+
 ### Security Headers
 
 Enable this module for your site to configure HTTP security headers. Please note that this action cannot be undone. Once enabled, you will have full control over the headers you want to use.
 
+When you click **Enable security headers for this app**, the app settings replace the platform's global security headers configuration and Modyo loads these initial values:
+
+- **Enable Strict-Transport-Security (HSTS)** on, with a **Duration (max age)** of 1 year and **Include subdomains** checked.
+- **Enable Referrer-Policy** on, with the `strict-origin-when-cross-origin` directive, unless the platform's global configuration defines another one.
+- **Enable X-Frame-Options** on, with the `DENY` directive, unless the platform's global configuration defines another one.
+- The Content-Security-Policy and Content-Security-Policy-Report-Only text areas prefilled with a [strict policy](/en/platform/channels/sites.html#content-security-policy-csp).
+- **Enable Content-Security-Policy**, **Enable Content-Security-Policy-Report-Only**, **Enable X-Content-Type-Options** and **Enable Permissions-Policy** on only if the platform's global configuration has those _headers_ on.
+- **Enable Cross-Origin-Embedder-Policy**, **Enable Cross-Origin-Opener-Policy** and **Enable Cross-Origin-Resource-Policy** off.
+
 #### HTTP Strict Transport Security (HSTS)
 
 Indicates to the browser that it can only access the site via HTTPS.
-- **Duration**: Sets the time the browser accesses the site only via HTTPS.
+- **Duration (max age)**: Sets the time the browser accesses the site only via HTTPS. You can choose **6 months**, **1 year**, or **2 years**.
 - **Preload**: Includes the preload directive. For more information, see [HSTS Preload List Submission](https://hstspreload.org/).
 - **Include subdomains**: Applies the HSTS rule to all subdomains on the site.
 
@@ -629,14 +793,28 @@ Indicates whether your site can be included in a `frame`, `iframe`, `embed`, or 
 
 Indicates that the _MIME types_ announced in the _header_ `Content-Type` must be followed to avoid _MIME type sniffing_.
 
+#### Reporting-Endpoints
+
+Declares the destinations the browser sends the reports generated by other _headers_ to, such as content security policy violations. This is the _header_ you need to enable in order to use the `report-to` directive inside your CSP.
+
+In the text area, write one or more destinations in the form `name="URL"`, separated by commas:
+
+```bash
+default="https://example.com/reports", csp-endpoint="https://example.com/csp"
+```
+
+Then reference the destination name from your policy, for example `report-to csp-endpoint`.
+
 #### Content-Security-Policy (CSP)
 
-Controls which resources the browser can load on the site to mitigate data injection attacks and _cross-site scripting_. The default value *allows loading resources from anywhere*, so it is important to design a content security policy appropriate for your site.
+Controls which resources the browser can load on the site to mitigate data injection attacks and _cross-site scripting_. While **Enable Content-Security-Policy** is off, the app does not send this _header_ and the browser loads resources from anywhere.
+
+When you enable the module, the text area is prefilled with a strict policy: it starts from `default-src 'none'` and requires the page nonce, interpolated with the `csp_nonce` variable, on `script` and `style` _tags_. If the CSP is on with that value and you do not adapt it, the browser blocks the _scripts_ in your templates that do not carry the `nonce` attribute, even if they load from the site itself, as well as resources from origins the policy does not list, so it is important to design a policy appropriate for your site.
 
 Freely specify your content security policy in the text area. For a complete guide on how to write your policy, see [Content Security Policy (CSP) from Mozilla Developer Network.](https://developer.mozilla.org/es/docs/Web/HTTP/CSP)
 
 :::warning Attention
-A very strict value can interfere with some features like [Google Tag Manager](/en/platform/channels/sites#google-tag-manager), [PWA](/en/platform/channels/sites#pwa), [Widgets](/en/platform/channels/widgets), and [Asset Manager](/en/platform/content/asset-manager).
+A very strict value can interfere with some features like [Google Tag Manager](/en/platform/channels/sites#google-tag-manager), [PWA](/en/platform/channels/sites#pwa), [Widgets](/en/platform/channels/widgets), [Asset Manager](/en/platform/content/asset-manager), and the [Incode Drop-in modality](/en/platform/customers/origination.html#drop-in-requirements).
 :::
 
 A production-ready policy must ensure that all resources, such as images and stylesheets, are loaded from trusted sources and requires that all scripts are secure and reliable for the application. For example, a strict policy for the _minimal template_ would look like this:
@@ -647,9 +825,17 @@ default-src 'self'; img-src 'self' https://cloud.modyocdn.com; font-src 'self' h
 
 The policy must include a `default-src 'self'` directive, which serves as a _fallback_ for any other type of resource. It must also include `script-src` and `style-src` directives to avoid evaluating _inline_ `style` and `script` tags.
 
-- **Nonce**: A CSP nonce will be automatically added by the server to the `script-src` and `style-src` directives if present.
+The current way to work with a nonce is to interpolate the <code v-pre>{{csp_nonce}}</code> variable directly in your policy. Modyo generates a new nonce on every _request_ and replaces the variable both in the _header_ and in the site templates:
 
-If you have the nonce present in your policy, you can add the `script` and `style` _tags_ to the allowed list in your _templates_ using the `csp_nonce` variable.
+```bash
+script-src 'self' 'nonce-{{csp_nonce}}'; style-src 'self' 'nonce-{{csp_nonce}}'
+```
+
+:::warning The Enable nonce checkbox is deprecated
+**Enable nonce** automatically adds the nonce to the `script-src` and `style-src` directives when they are present, but it is marked as deprecated in the product. For new configurations, interpolate <code v-pre>{{csp_nonce}}</code> in the policy so you decide exactly which directives it applies to. Keep in mind that if the nonce in the _header_ does not match the one in the `script` and `style` _tags_ of your templates, the browser blocks those resources and the site renders incompletely.
+:::
+
+With the nonce present in your policy, add the `script` and `style` _tags_ of your _templates_ to the allowed list using the same variable:
 
 ```liquid
 <script nonce="{{csp_nonce}}">
@@ -662,6 +848,12 @@ These tools can help you design a strong security policy:
 - [ReportURI](https://report-uri.com/home/analyse)
 - [CSP validator](https://cspvalidator.org)
 
+#### Content-Security-Policy-Report-Only
+
+Evaluates a content security policy without enforcing it. The browser blocks nothing: it only reports what the policy would have blocked, which lets you test a strict policy on the site before moving it to the `Content-Security-Policy` _header_.
+
+The text area accepts the same syntax as the CSP, including the <code v-pre>{{csp_nonce}}</code> variable, and it has its own **Enable nonce** checkbox, equally deprecated. To receive the reports, the policy must include a `report-to` directive pointing to a destination declared in [Reporting-Endpoints](/en/platform/channels/sites.html#reporting-endpoints).
+
 #### Permissions-Policy
 
 Allows or denies the use of browser features and APIs for the site; for example, you can restrict privacy-sensitive APIs such as the camera or microphone and automatic video playback.
@@ -672,6 +864,12 @@ For a complete list of browser-compatible features, see the [MDN Feature Policy]
 
 Configures the embedding of cross-origin resources into the document. For example, if your document has a COEP header with a value of require-corp or credentialless, you can only access certain functions, such as SharedArrayBuffer or Performance.now(), with unrestricted timers.
 
+In **Directive** you can choose:
+
+- **unsafe-none**: The document loads cross-origin resources even if they do not allow it. This is the browser's default behavior.
+- **require-corp**: The document only loads cross-origin resources that explicitly allow it through CORS or the `Cross-Origin-Resource-Policy` _header_.
+- **credentialless**: The document loads cross-origin resources without their permission, but requests without CORS are sent without credentials, such as _cookies_.
+
 For more information, see the [MDN Cross-Origin-Embedder-Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy).
 
 #### Cross Origin Opener Policy (COOP)
@@ -680,18 +878,40 @@ Allows you to ensure that a top-level document does not share a browsing context
 
 COOP isolates the processing of your document, so potential attackers will not be able to access your global object if they open it in a popup, preventing a set of cross-origin attacks.
 
+In **Directive** you can choose:
+
+- **unsafe-none**: The document can share its browsing context group with cross-origin documents, such as the _popups_ it opens. This is the browser's default behavior.
+- **same-origin-allow-popups**: Isolates the document from cross-origin documents, but keeps the reference to the _popups_ it opens if they do not set COOP or use `unsafe-none`.
+- **same-origin**: The document only shares its browsing context group with same-origin documents that also use `same-origin`.
+
 For more information, review the [MDN Cross-Origin-Opener-Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy).
 
 #### Cross Origin Resource Policy
 
 Conveys the desire to block cross-origin/cross-site requests without CORS to the specified resource by the browser.
 
+In **Directive** you can choose:
+
+- **same-site**: Only requests from the same site, that is, the same scheme and registrable domain, including its subdomains, can load the resource.
+- **same-origin**: Only requests from the same origin, that is, the same scheme, host and port, can load the resource.
+- **cross-origin**: Requests from any origin can load the resource.
+
 For more information, see the [MDN Cross-Origin-Resource-Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Resource-Policy).
 
 
+#### Service-Worker-Allowed
+
+Widens the maximum _scope_ a _service worker_ can register. By default a _service worker_ only controls the paths under its own location; with this _header_ you can serve it from one path and give it scope over another.
+
+- **Directive**: The path you want to authorize as the scope, for example `/`.
+
+:::tip Sites without a custom domain
+On sites that do not have custom domains enabled, Modyo sends the `Service-Worker-Allowed` _header_ pointing to the site path when it serves the [PWA](/en/platform/channels/sites.html#pwa) _service worker_, but only while the security headers module is disabled. Once you enable the module, that automatic _header_ is no longer sent: if your PWA needs it, turn on **Enable Service-Worker-Allowed** and enter the site path in **Directive**, for example `/mySite`.
+:::
+
 ### Site Variables
 
-Modyo has [global variables](/en/platform/core/key-concepts#global-variables) that you can use on multiple sites. However, you can also create specific variables for a particular site or overwrite the value of an existing global variable with a value specific to that particular site.
+Modyo has [global variables](/en/platform/channels/global-variables.html) that you can use on multiple sites. However, you can also create specific variables for a particular site or overwrite the value of an existing global variable with a value specific to that particular site.
 
 Using variables allows you to reuse HTML, JS, CSS, or text code across different sites, widgets, or templates. If you have code that is repeated in several parts of your account, you can assign that value to a variable to simplify your processes, and if you edit the variable's value, the change will be reflected wherever the variable is in use.
 

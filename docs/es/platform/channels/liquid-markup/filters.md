@@ -17,7 +17,7 @@ Los filtros también se pueden unir entre sí añadiendo sentencias de filtro ad
 ```liquid
 Hello {{ 'tobi' | upcase }}
 Hello tobi has {{ 'tobi' | size }} letters!
-Hello {{ '*tobi*' | textilize | upcase }}
+Hello {{ '  tobi  ' | strip | upcase }}
 Hello {{ 'now' | date: "%Y %h" }}
 ```
 
@@ -28,9 +28,20 @@ Hello {{ 'now' | date: "%Y %h" }}
 Añade un string *e.g.*
 <span v-pre>`{{ 'foo' | append:'bar' }} #=> 'foobar'`</span>
 
+### Base64 decode
+
+Decodifica un string codificado en Base64 *e.g.*
+<span v-pre>`{{ 'SGVsbG8gd29ybGQ=' | base64_decode }} #=> 'Hello world'`</span>
+
+### Base64 encode
+
+Codifica un string en Base64 *e.g.*
+<span v-pre>`{{ 'Hello world' | base64_encode }} #=> 'SGVsbG8gd29ybGQ='`</span>
+
 ### Capitalize
 
-Poner palabra en mayúscula en la frase de entrada.
+Pone en mayúscula el primer carácter del string y el resto en minúsculas *e.g.*
+<span v-pre>`{{ 'hola MUNDO' | capitalize }} #=> 'Hola mundo'`</span>
 
 ### Ceiling
 
@@ -103,7 +114,7 @@ Modulo *e.g.*
 <span v-pre>`{{ 3 | modulo:2 }} #=> 1`</span>
 
 ### Newline to br
-Reemplaza cada linea nueva (\n) con espacio HTML.
+Inserta un salto de línea HTML (`<br />`) antes de cada salto de línea (\n) del texto.
 
 ### Plus
 Suma *e.g.*
@@ -133,9 +144,6 @@ Redondea al número entero más cercano o al número especificado de decimales *
 
 ### Rstrip
 Elimina todos los espacios en blanco del final de un string
-
-### Script tag
-Genera el tag HTML `<script>` para un template JavaScript, tomando como parámetros la URL y atributos de la forma `attr: 'value'`, *e.g.* <span v-pre>`{{ 'my-js-url' | script_tag: async: 'async', defer: 'defer' }}`</span> => `<script src='my-js-url' type='text/javascript' async='async' defer='defer'></script>`
 
 ### Size
 Devolver el tamaño de un array o string
@@ -179,7 +187,7 @@ Agrega formato de divisa a un valor. *e.g.*
 <span v-pre>`{{ 1890.5123 | format_currency: unit: '¥', separator: ',', delimiter: '.', precision: 3 }} = ¥1.890,512`</span>
 
 :::warning Importante
-Este filtro determina el formato de la moneda y tiene prioridad sobre cualquier otra configuración de divisa.
+Los parámetros que pasas al filtro tienen prioridad sobre cualquier otra configuración de divisa, pero no se combinan con ella: si pasas al menos uno, Modyo usa solo los que indicas y toma los que faltan del formato predefinido del idioma del sitio, no del reino. Por ejemplo, con solo `unit: 'US$'` se pierden el separador, el delimitador y la precisión del reino, así que pasa los cuatro parámetros cuando necesites un formato completo.
 
 Si no especificas parámetros de divisa con el filtro de currency, Modyo utiliza la configuración de [payment](/es/platform/customers/settings.html#configuracion-de-payment) del reino.
 
@@ -193,20 +201,113 @@ En caso de que el sitio no tenga un reino asociado y no especifiques parámetros
 - delimiter - separador de miles.
 - precision - cantidad de dígitos decimales.
 
+Cualquier otra clave se ignora, aunque igual hace que el filtro deje de usar la configuración del reino. Escribe `unit` como texto y `precision` como número: con otro tipo de valor, como `unit: 123` o `precision: 'dos'`, el filtro aborta y en el HTML publicado queda el comentario `<!-- Liquid Error -->` en lugar del monto.
+
+
+## Common
+
+Estos filtros Liquid están disponibles en cualquier plantilla y no dependen de un módulo.
+
+### Handle
+
+Convierte un texto en un identificador apto para una URL, *e.g.*
+<span v-pre>`{{ ' A s.?%$!' | handle }} #=> 'a-s'`</span>
+
+**Parámetros**
+
+- `string` (String) — texto a convertir (objeto antes de la barra).
+- `separator` (String) (default: '-') — carácter con el que se reemplazan los espacios y los caracteres especiales.
+- `preserve_case` (Boolean) (default: false) — con `true` conserva las mayúsculas y minúsculas del texto original.
+
+Las reglas que aplica son:
+
+- Pasa todo a minúsculas, salvo que `preserve_case` sea `true`.
+- Translitera los caracteres acentuados a su equivalente sin acento antes de reemplazar: `ñ` pasa a `n` y `á` a `a`.
+- Reemplaza los espacios y los caracteres especiales por el separador.
+- Conserva los guiones (`-`) y los guiones bajos (`_`) del texto original, aunque uses otro separador.
+- Colapsa una secuencia de espacios o caracteres especiales consecutivos en un solo separador.
+- Elimina los separadores del comienzo y del final.
+- Con un texto vacío devuelve un texto vacío.
+
+*ej.*
+
+<span v-pre>`{{ 'Hello   World!!!' | handle }} #=> 'hello-world'`</span>
+
+<span v-pre>`{{ '---Hello---World---' | handle }} #=> 'hello-world'`</span>
+
+<span v-pre>`{{ 'CamelCase Words' | handle: '-', true }} #=> 'CamelCase-Words'`</span>
+
+<span v-pre>`{{ ' A s.?%$!' | handle: '.', true }} #=> 'A.s'`</span>
+
+<span v-pre>`{{ 'Año Nuevo' | handle }} #=> 'ano-nuevo'`</span>
+
+<span v-pre>`{{ 'mi_archivo final' | handle }} #=> 'mi_archivo-final'`</span>
+
+<span v-pre>`{{ 'a-b c' | handle: '.' }} #=> 'a-b.c'`</span>
+
+### Handleize
+
+Alias de `handle`, con la misma firma y el mismo resultado (ej. <span v-pre>`{{ ' A s.?%$!' | handleize }} #=> 'a-s'`</span>). Existe para las plantillas que vienen de Shopify; en plantillas nuevas usa `handle`.
 
 ## Content
 
 Estos son los filtros liquid que alteran valores relacionados al módulo de Content en Modyo Platform.
 
+### Búsqueda de assets por UUID
+
+Los filtros `asset_image`, `asset_link`, `asset_url_by_uuid` y `asset_video` buscan el archivo por su UUID en el ámbito de la cuenta, no del sitio.
+
+:::warning Atención
+Si el UUID no corresponde a ningún archivo de la cuenta, ninguno de los cuatro falla ni devuelve vacío: imprimen el mensaje `Error de liquid: No existe el archivo con UUID 'el-uuid-pedido'`, que queda publicado en la página. Revisa los UUID cuando muevas plantillas o contenido entre cuentas.
+:::
+
 ### Asset image
 
-Retorna los tags de una imagen usando su uuid del Gestor de Archivos. *e.g.*
-<span v-pre>`{{ uuid | asset_image }}`</span>
+Retorna los tags de una imagen usando su uuid del Gestor de Archivos. Con el procesamiento de imágenes por CDN activo, puedes usar estos parámetros adicionales: width, height, blur, quality, format, fit, widths, sizes y style *e.g.*
+<span v-pre>`{{ uuid | asset_image: width: 40, format: 'auto', fit: 'cover' }}`</span>
+
+**Parámetros**:
+- uuid (String) — asset uuid
+- width (Integer) — ancho en píxeles
+- height (Integer) — alto en píxeles
+- quality (Integer) — porcentaje de calidad
+- blur (Integer) — nivel de desenfoque
+- fit (String) — modo de ajuste al recuadro
+- format (String) — formato de salida
+- widths (String) — lista de anchos separados por coma; emite un atributo `srcset` con un descriptor `Nw` por cada ancho
+- sizes (String) — se emite tal cual como atributo `sizes`
+- style (String) — se emite tal cual como atributo `style`
+
+El `alt` de la imagen sale del **Texto alternativo** del archivo, el que se edita en [Media](/es/platform/content/asset-manager.html#editar-un-archivo).
+
+El filtro tiene tres salidas posibles:
+
+- **Sin opciones, o con el procesamiento de imágenes por CDN desactivado**: un `<img>` con la URL original del archivo. Las opciones se ignoran todas.
+- **Con opciones y el procesamiento activo**: un `<img>` con la URL transformada.
+- **Con `widths`**: además de la URL transformada en el `src`, un `srcset` con una variante por cada ancho de la lista, más los atributos `sizes` y `style` si los pasaste.
+
+*ej.* <span v-pre>`{{ uuid | asset_image: width: 800, quality: 80, widths: '300, 600, 900', sizes: '(min-width: 400px) 298px, 78.75vw' }}`</span>
+
+:::warning Atención
+`sizes` y `style` solo se emiten cuando pasas también `widths`: sin él, el filtro devuelve un `<img>` con `src` y `alt` y nada más. Y de cada variante del `srcset` solo se propagan `width`, `quality`, `blur` y `height`, no `fit` ni `format`, así que si necesitas el mismo recorte o el mismo formato en todas las resoluciones arma el `srcset` a mano con varias llamadas al filtro.
+:::
+
+:::tip Tip
+El procesamiento de imágenes por CDN se habilita para toda la plataforma, no por cuenta, así que no es algo que puedas activar desde la administración de tu cuenta. Mientras no esté activo, las nueve opciones se ignoran sin error y la página publica la imagen en su tamaño original. Con el procesamiento activo, las opciones que llegan a la URL transformada son por defecto `width`, `height`, `quality`, `blur`, `fit` y `format`, pero la plataforma puede tener configurada otra lista.
+:::
 
 ### Asset link
 
-Retorna el URL de una imagen usando su uuid del Gestor de Archivos. *e.g.*
-<span v-pre>`{{ uuid | asset_link: 'Este es una liga para el asset' }}`</span>
+Emite una etiqueta de enlace HTML que apunta al archivo del Gestor de Archivos identificado por su UUID. El argumento es el texto visible del enlace y, si lo omites, se usa el nombre de archivo del asset. *e.g.*
+<span v-pre>`{{ uuid | asset_link: 'Descarga el instructivo' }}`</span> => `<a href='https://midominio.com/uploads/instructivo.pdf'>Descarga el instructivo</a>`
+
+**Parámetros**:
+- uuid (String) — asset uuid
+- label (String) (default: nombre de archivo del asset) — texto visible del enlace
+
+:::tip Tip
+Si lo que necesitas es solo la dirección del archivo, para armar tu propio markup, usa `asset_url_by_uuid`.
+:::
 
 ### Asset URL by UUID
 
@@ -225,21 +326,31 @@ Retorna los tags de un video usando su uuid del Gestor de Archivos. *e.g.*
 
 ### By category
 
-Retorna una lista de Entradas que pertenecen a la Categoría seleccionada. *e.g.*
+Retorna una lista de Entradas que pertenecen a alguna de las Categorías seleccionadas o a sus subcategorías. *e.g.*
 <span v-pre>`{% assign filtered_entries = entries | by_category: 'category2,category1,category3' %}`</span>
 
 **Parametros**:
 - entries (ArrayEntry) — array con entradas
-- list (String) (default: '') — String con categorías separadas por coma.
+- list (String | Array) (default: '') — slugs o rutas de categorías (`padre/hija`), separados por coma o como array.
+
+Cada valor se compara con los tramos de la ruta de la categoría de la entrada, no con el nombre de la categoría. Por eso una categoría padre trae también las entradas de sus subcategorías, y un slug suelto coincide con todas las categorías que tengan ese slug, en cualquier nivel del árbol. Para distinguir categorías que comparten slug en ramas distintas, pasa la ruta, como `noticias/deportes`. Con varios valores, el resultado incluye las entradas que coinciden con cualquiera de ellos.
 
 ### By lang
 
-Retorna una lista de Entradas que pertenecen a un lenguaje seleccionado. *e.g.*
-<span v-pre>`{% assign entries = widget.entries | locale: 'es,en,pt' %} => entries`</span>
+Retorna una lista de Entradas en el idioma indicado. El filtro se llama `by_lang`: `locale` es el nombre del parámetro, no el del filtro. *e.g.*
+<span v-pre>`{% assign entries = spaces['blog'].types['post'].entries | by_lang: 'es' %} => entries`</span>
 
 **Parametros**:
 - entries (ArrayEntry) — array con entradas
-- locale (String) (default: '') — String con lenguajes separadas por coma.
+- locale (String) (default: '') — un único código de idioma
+
+`by_lang` reemplaza la condición de idioma que la colección ya tuviera, no la acumula: el último `by_lang` de la cadena es el que manda.
+
+:::warning Atención
+No acepta una lista separada por comas. Un valor como `'es,en,pt'` se compara tal cual contra el idioma de cada entrada, así que el resultado es una colección vacía en lugar de la unión de los tres idiomas. Si necesitas varios idiomas, resuelve una colección por idioma y recórrelas por separado.
+
+Aplicado sobre algo que no sea una colección de entradas, el filtro aborta y en el HTML publicado queda el comentario `<!-- Liquid Error -->` en lugar del bloque.
+:::
 
 ### By slug
 
@@ -252,12 +363,14 @@ Retorna una lista de Entradas que pertenecen a un slug seleccionado. *e.g.*
 
 ### By tag
 
-Retorna una lista de Entradas que pertenecen a un tag seleccionado. *e.g.*
-<span v-pre>`{% assign entries = widget.entries | by_tag: 'tag2,tag1,tag3' %} => entries`</span>
+Retorna una lista de Entradas que tienen todos los tags indicados. *e.g.*
+<span v-pre>`{% assign entries = spaces['blog'].types['post'].entries | by_tag: 'tag2,tag1,tag3' %} => entries`</span>
 
 **Parametros**:
 - entries (ArrayEntry) — array con entradas
-- locale (String) (default: '') — String con tags separadas por coma.
+- list (String) (default: '') — String con tags separados por coma.
+
+Con varios tags, el resultado incluye solo las entradas que los tienen todos, no las que tienen alguno de ellos. En eso se diferencia de `by_category`, `by_slug`, `by_type` y `by_uuid`, que devuelven las entradas que coinciden con cualquiera de los valores. La comparación no distingue mayúsculas de minúsculas.
 
 ### By type
 
@@ -266,7 +379,7 @@ Retorna una lista de Entradas que pertenecen a un Tipo de Contenido seleccionado
 
 **Parametros**:
 - entries (ArrayEntry) — array con entradas
-- locale (String) (default: '') — String con tipos de contenido separados por coma.
+- list (String) (default: '') — String con tipos de contenido separados por coma.
 
 ### By UUID
 
@@ -276,7 +389,7 @@ Filtra un arreglo de entradas por uno o más UUIDs.
 - entries (ArrayEntry) — colección (objeto antes de la barra)
 - uuid_list (String) — lista de UUIDs separada por comas
 
-Predeterminado: Si `uuid_list` está en blanco retorna la colección original.
+Si `uuid_list` está vacío, el resultado es una colección vacía, igual que con `by_slug`, `by_type` y `by_tag`.
 
 *ej.* <span v-pre>`{% assign filtradas = entries | by_uuid: 'uuid2,uuid1,uuid3' %}`</span>
 
@@ -284,19 +397,27 @@ Predeterminado: Si `uuid_list` está en blanco retorna la colección original.
 
 Aplica múltiples filtros de entradas en una sola llamada. Claves soportadas (todas opcionales):
 - types: slugs de tipos separados por comas (aplica `by_type`)
-- categories: slugs de categorías separados por comas (aplica `by_category`)
-- tags: tags separados por comas (aplica `by_tag`)
+- categories: slugs o rutas de categorías separados por comas; incluye las subcategorías (aplica `by_category`)
+- tags: tags separados por comas; la entrada tiene que tenerlos todos (aplica `by_tag`)
 - slugs: slugs de entradas separados por comas (aplica `by_slug`)
 - uuids: UUIDs separados por comas (aplica `by_uuid`)
-- locale: código de idioma (aplica `by_lang`)
-- from_published_date: fecha límite inicial (>= `published_at`)
-- to_published_date: fecha límite final (<= `published_at`)
-- sort_by: nombre de campo (`name`, `slug`, `created_at`, `updated_at`, `published_at` u otro path de campo)
+- locale: un único código de idioma (aplica `by_lang`; no acepta lista separada por comas)
+- from_published_date: cadena con la fecha límite inicial, desde las 00:00 de ese día (aplica `from_published_date`)
+- to_published_date: cadena con la fecha límite final, hasta el final de ese día (aplica `to_published_date`)
+- sort_by: nombre de campo (default: `created_at`). Admite `name`, `slug`, `created_at`, `updated_at` y `published_at`, o un campo con su prefijo (`fields.<nombre>` o `meta.<atributo>`); ver [Sort By](/es/platform/channels/liquid-markup/filters.html#sort-by)
 - order: `asc` | `desc` (default: `desc`)
 - per_page: cantidad de resultados por página (habilita paginación; default: 10)
-- page: número de página (default: 1)
+- page: número de página (habilita paginación; default: 1)
 
 *ej.* <span v-pre>`{% assign entries = spaces['testing'].entries | by: types: 'promo,basic', locale: 'es', categories: 'destacadas,favoritas', tags: 'test,test2', slugs: 'slug2,slug1', uuids: 'uuid2,uuid1', sort_by: 'name', order: 'asc', per_page: 10, page: 2 %}`</span>
+
+`sort_by` y `order` son opcionales en la invocación, pero no en el efecto: `by` aplica siempre `sort_by`, con `created_at` y `desc` como valores por defecto. Ese orden se agrega después del que ya tenga la colección, no lo reemplaza: si la colección viene ordenada por un `sort_by` anterior, ese criterio sigue mandando y el de `by` solo desempata. Lo mismo vale para cualquier cadena de ordenamientos, en la que manda el primero, así que un `sort_by` encadenado después de `by` solo desempata y el listado sigue ordenado por fecha de creación. Para ordenar por otro criterio, pásalo en las claves `sort_by` y `order` de `by` u ordena la colección antes de aplicarlo.
+
+La paginación, en cambio, sí es opcional: solo se aplica si pasas `per_page` o `page`. Los valores por defecto de esas dos claves son los que toma el filtro cuando indicas una y omites la otra, y quedan sujetos a la precedencia de los parámetros de la URL descrita en [Paginated](/es/platform/channels/liquid-markup/filters.html#paginated).
+
+:::warning Atención
+Las claves que `by` no reconoce se ignoran en silencio, sin error ni aviso: un `type:` en singular o un `tag:` mal escrito no filtran nada y el listado sale completo. Revisa los nombres contra la lista de arriba antes de dar por perdido un filtro que no parece hacer nada.
+:::
 
 ### Filter By (Operadores Extendidos)
 
@@ -306,60 +427,103 @@ Retorna una lista de Entradas que cumplen con un filtro.
 - entries (ArrayEntry) — array con entradas
 - opts (Hash) (default: {}) — hash con campo y pares operador/valor
 
+El valor de `field` se escribe siempre con su prefijo:
+
+- `fields.<nombre>` para los campos del tipo de contenido.
+- `meta.<atributo>` para los metadatos, con estos atributos disponibles: `meta.uuid`, `meta.name`, `meta.slug`, `meta.category`, `meta.category_slug`, `meta.category_name`, `meta.created_at`, `meta.updated_at` y `meta.published_at`. Para filtrar por tags usa `by_tag`.
+
+:::warning Atención
+Un nombre de campo sin prefijo se descarta en silencio: el filtro no lanza error y devuelve la colección completa, sin filtrar. Si un listado te muestra todas las entradas, revisa primero que el valor de `field` empiece por `fields.` o por `meta.`.
+:::
+
 **Operadores soportados** (usar como llaves dentro de `opts`):
-- `eq` — igual a (implícito cuando solo se provee `field` y valor)
+- `eq` — igual a. Escríbelo siempre de forma explícita, como `eq: 'valor'`, y no lo combines con los demás: si lo incluyes, `filter_by` aplica solo `eq` e ignora el resto de los operadores
+- `not` — distinto de. Con `nil` como valor devuelve las entradas que tienen algún valor en el campo
 - `gt`, `lt` — mayor que / menor que
 - `in` — el valor del campo debe estar dentro de los valores separados por comas
 - `nin` — el valor del campo NO debe estar dentro de los valores separados por comas
 - `has` — el campo (tipo array) debe contener todos los valores separados por comas
+- `search` — busca el texto en los atributos de las ubicaciones de la entrada; necesita un campo de tipo ubicación
+- `geohash` — busca por proximidad con un geohash en base 32; necesita un campo de tipo ubicación
 
-Todos los operadores multi-valor aceptan un string separado por comas.
+Solo `in`, `nin` y `has` aceptan un string separado por comas; el resto toma un valor único. `search` y `geohash` se comportan igual que en la [API pública de Content](/es/platform/content/public-api-reference.html#operadores). Si pasas `field` sin ningún operador, o solo con operadores que no están en la lista, como `all`, el filtro devuelve la colección completa, sin filtrar.
 
 **Ejemplos**:
 
+Filtrar entradas donde el campo `status` sea 'published':
+<span v-pre>`{% assign entries = entries | filter_by: field: 'fields.status', eq: 'published' %}`</span>
+
 Filtrar entradas donde el campo `status` sea 'published' o 'featured':
-<span v-pre>`{% assign entries = entries | filter_by: field: 'status', in: 'published,featured' %}`</span>
+<span v-pre>`{% assign entries = entries | filter_by: field: 'fields.status', in: 'published,featured' %}`</span>
 
 Filtrar entradas donde `author_id` no sea 1 ni 5:
-<span v-pre>`{% assign entries = entries | filter_by: field: 'author_id', nin: '1,5' %}`</span>
+<span v-pre>`{% assign entries = entries | filter_by: field: 'fields.author_id', nin: '1,5' %}`</span>
 
 Filtrar entradas que tengan ambos 'tech' y 'news' en su campo array `categories`:
-<span v-pre>`{% assign entries = entries | filter_by: field: 'categories', has: 'tech,news' %}`</span>
+<span v-pre>`{% assign entries = entries | filter_by: field: 'fields.categories', has: 'tech,news' %}`</span>
+
+Filtrar entradas cuyo campo `subtitle` tenga algún valor:
+<span v-pre>`{% assign entries = entries | filter_by: field: 'fields.subtitle', not: nil %}`</span>
+
+Filtrar entradas publicadas después de una fecha:
+<span v-pre>`{% assign entries = entries | filter_by: field: 'meta.published_at', gt: '2026-01-01' %}`</span>
+
+:::warning Atención
+En dos casos `filter_by` aborta y en el HTML publicado queda el comentario `<!-- Liquid Error -->` en lugar del bloque: cuando lo llamas sin `field` y cuando lo aplicas sobre una colección de la que no se puede resolver el tipo de contenido, como <span v-pre>`spaces['blog'].entries`</span>. Parte siempre de una colección acotada a un tipo, como <span v-pre>`spaces['blog'].types['post'].entries`</span>.
+:::
 
 ### Filter By Query String
 
-Retorna una lista de Entradas que cumplen con un query. Se pueden usar operadores lógicos, varios campos meta, URLs, o tags de Liquid.
-
-**Operators**:
-
-- gt, lt, in, all, nin
-
-**Fields**:
-- meta.category meta.category_slug meta.category_name meta.uuid meta.name meta.created_at
- meta.updated_at meta.published_at meta.unpublished_at meta.slug meta.tag
-
-**Url examples**:
-
-- https://company.site.com/testsite?meta.category_slug=category3
-- https://company.site.com/testsite?meta.tag=tag_name
-- https://company.site.com/testsite?meta.tag[in][]=tag1_name&meta.tag[in][]=tag2_name
-- https://company.site.com/testsite?meta.created_at=1987-11-19T13:13:13
-
-*e.g.*
-<span v-pre>`{% assign entries = widget.entries | filter_by_query_string %}`</span>
+Retorna una lista de Entradas filtrada con los parámetros de la URL de la página. El filtro no recibe argumentos: cada visita aplica los filtros que trae su query string. *e.g.*
+<span v-pre>`{% assign entries = spaces['blog'].types['post'].entries | filter_by_query_string %}`</span>
 
 **Parametros**:
-- entries (ArrayEntry) — array con entradas
+- entries (ArrayEntry) — colección de entradas acotada a un tipo de contenido
+
+**Campos**:
+- `meta.uuid`, `meta.name`, `meta.slug`, `meta.category`, `meta.category_slug`, `meta.category_name`, `meta.created_at`, `meta.updated_at` y `meta.published_at`
+- `fields.<nombre>`, para cualquier campo del tipo de contenido
+
+`meta.category` recibe la ruta completa de la categoría, como `noticias/deportes`, e incluye las entradas de sus subcategorías. Para filtrar por tags usa `by_tag`.
+
+**Operadores**:
+
+Sin operador, el parámetro filtra por igualdad. Los operadores se escriben entre corchetes después del campo:
+
+- `gt`, `lt` y `not` toman un valor único, como en `?meta.published_at[gt]=2026-01-01`.
+- `in`, `nin` y `has` toman una lista: repite el parámetro con `[]`, aunque pases un solo valor, como en `?fields.color[in][]=rojo&fields.color[in][]=azul`.
+- `search` y `geohash` buscan en los campos de ubicación, igual que en la [API pública de Content](/es/platform/content/public-api-reference.html#operadores).
+
+Además del filtro por campos, la URL acepta:
+
+- `sort_by` y `order` para ordenar el resultado. `sort_by` lleva siempre el prefijo `fields.` o `meta.`, y `order` es `asc` o `desc`, con `asc` por defecto.
+- `search` para buscar un texto en los campos [Texto de una línea](/es/platform/content/types.html#texto-de-una-linea), [Texto de múltiples líneas](/es/platform/content/types.html#texto-de-multiples-lineas) y [Texto enriquecido](/es/platform/content/types.html#texto-enriquecido) del tipo, y en el nombre, el slug, el extracto y la categoría de la entrada.
+
+**Ejemplos de URL**:
+
+- https://company.site.com/testsite?meta.category_slug=category3
+- https://company.site.com/testsite?meta.created_at=1987-11-19T13:13:13
+- https://company.site.com/testsite?fields.color[in][]=red&fields.color[in][]=blue
+- https://company.site.com/testsite?search=modyo&sort_by=meta.published_at&order=desc
+
+:::warning Atención
+El filtro lee todos los parámetros de la URL, no solo los de filtro, e ignora en silencio los que no reconoce. Aplícalo siempre sobre una colección acotada a un tipo, como <span v-pre>`spaces['blog'].types['post'].entries`</span>. Sobre una colección de todo el espacio, como <span v-pre>`spaces['blog'].entries`</span>, la página funciona mientras la URL no trae parámetros, pero basta uno cualquiera, aunque no sea de filtro, como `utm_source` o `page`, para que el filtro aborte y en el HTML publicado quede el comentario `<!-- Liquid Error -->` en lugar del bloque.
+:::
 
 ### From Published Date
 
-Retorna una lista de Entradas que tengan una fecha de publicación más reciente que el límite. *e.g.*
-<span v-pre>`{% assign entries = widgets.entries | from_published_date: date %}
-`</span>
+Retorna una lista de Entradas publicadas desde la fecha indicada, incluido ese día. *e.g.*
+<span v-pre>`{% assign entries = spaces['blog'].types['post'].entries | from_published_date: '2024-01-31' %}`</span>
 
 **Parametros**:
 - entries (ArrayEntry) — array con entradas
-- date (Datetime)(default: Time.zone.now) — fecha límite
+- date (String) — fecha límite, obligatoria, como `'2024-01-31'` o, con el día primero, `'31/01/2024'`
+
+El filtro toma solo el día de la fecha, sin la hora: incluye las entradas publicadas desde las 00:00 de ese día.
+
+:::warning Atención
+La fecha tiene que llegar como cadena. Si pasas un objeto fecha, como `entry.meta.published_at`, el filtro aborta y en el HTML publicado queda el comentario `<!-- Liquid Error -->` en lugar del bloque. Conviértelo antes con el filtro `date`, como en `entry.meta.published_at | date: '%Y-%m-%d'`.
+:::
 
 ### Limit
 
@@ -367,8 +531,12 @@ Límita el número de resultados. *e.g.*
 <span v-pre>`{{ entries | limit: 1 }}`</span>
 
 **Parametros**:
-- objeto(Array) — array
+- entries (ArrayEntry) — colección de entradas (objeto antes de la barra)
 - limit (Integer)(default: 1) — límite de resultados
+
+:::warning Atención
+`limit` solo funciona sobre una colección de entradas. Aplicado sobre un array, como el resultado de `sort`, `map` o `split`, el filtro aborta y en el HTML publicado queda el comentario `<!-- Liquid Error -->` en lugar del bloque. Para recortar un array usa el parámetro `limit` del tag `for`, como en <span v-pre>`{% for item in items limit: 3 %}`</span>.
+:::
 
 ### Paginated
 
@@ -376,88 +544,111 @@ Separa los resultados en páginas. *e.g.*
 <span v-pre>`{{ objects | paginated: 10, 2 }}`</span>
 
 **Parametros**:
-- objeto(Array) — array
+- objeto(Array) — colección de entradas (objeto antes de la barra)
 - per_page (Integer) (default: 10) — objetos por página
 - page (Integer) (default: 1) — número de página a mostrar
+
+Los parámetros `page` y `per_page` de la URL tienen precedencia sobre los argumentos escritos en la plantilla. Con el ejemplo de arriba, una visita a `mi-pagina.com/landing?page=5` muestra la página 5 y no la 2: los argumentos actúan como valores iniciales, para la primera visita sin parámetros en la URL. Y como esos parámetros son globales para la página, alcanzan a la vez a todos los listados paginados que haya en ella.
+
+El filtro acota los dos valores, vengan del argumento o de la URL: `per_page` se limita a un mínimo de 1 y a un máximo de 100, y `page` a un mínimo de 1. Un `per_page` de 500 entrega 100 resultados por página.
+
+:::warning Atención
+Aplicado sobre algo que no sea una colección de entradas, por ejemplo un array ya materializado por `sort`, por `map` o definido en la propia plantilla, el filtro devuelve la entrada intacta: no pagina y tampoco falla. El listado se ve completo, los enlaces de paginación no aparecen y no queda ninguna pista del motivo. Encadena `paginated` directamente sobre la colección de entradas.
+:::
 
 ### Sort By
 
 Retorna un array con las entradas ordenadas por un campo *e.g.*
-<span v-pre>`{% assign entries = widgets.entries | sort_by: 'name', 'asc' %}`</span>
+<span v-pre>`{% assign entries = spaces['blog'].types['post'].entries | sort_by: 'name', 'asc' %}`</span>
 
 **Parametros**:
-- entries (ArrayEntry) — array con entradas
-- atributo (String) — campo por el cual se quiere ordenar
-- orden (String) - asc (asecendente) o desc (desciendiente)
+- coleccion (ArrayEntry | ArrayCategory) — colección a ordenar (objeto antes de la barra)
+- field (String) — campo por el cual se quiere ordenar
+- order (String) (default: 'desc') — `asc` o `desc`
+
+El orden por defecto es descendente y cualquier valor que no sea exactamente `asc` se trata como `desc`: un `'ascending'` o un `'asc '` con un espacio de más ordenan al revés de lo pedido, sin ningún aviso.
+
+Los campos admitidos dependen de la colección que recibe el filtro:
+
+- **Colección de categorías**: solo `name`, `slug` y `uuid`.
+- **Colección de entradas**: los cinco atributos meta `name`, `slug`, `created_at`, `updated_at` y `published_at` se ordenan de forma directa. Cualquier otro nombre lo resuelve la capa de búsqueda, que exige el prefijo del contenedor, igual que [Filter By](/es/platform/channels/liquid-markup/filters.html#filter-by-operadores-extendidos): `fields.<nombre>` para un campo del tipo de contenido y `meta.<atributo>` para el resto de los metadatos.
+
+:::warning Atención
+Sobre una colección de categorías, un campo fuera de `name`, `slug` y `uuid` devuelve una colección vacía sin ningún error: el listado se ve en blanco y parece que no hay datos.
+
+Sobre una colección de entradas, un nombre sin prefijo, como `'precio'` en lugar de `'fields.precio'`, no ordena por el campo que esperas. Además, ordenar por `fields.<nombre>` necesita, igual que `filter_by`, una colección acotada a un tipo de contenido: sobre algo como <span v-pre>`spaces['blog'].entries`</span> el filtro aborta y en el HTML publicado queda el comentario `<!-- Liquid Error -->` en lugar del bloque. Parte de <span v-pre>`spaces['blog'].types['post'].entries`</span>.
+
+El filtro aborta también, con el mismo comentario en la salida, si el campo o el orden no llegan como cadena, por ejemplo <span v-pre>`| sort_by: 'name', 1`</span>.
+:::
 
 
 ### To Published Date
 
-Retorna una lista de Entradas que tengan una fecha de publicación más vieja que el límite. *e.g.*
-<span v-pre>`{% assign entries = widgets.entries | to_published_date: date %}
-`</span>
+Retorna una lista de Entradas publicadas hasta la fecha indicada, incluido ese día. *e.g.*
+<span v-pre>`{% assign entries = spaces['blog'].types['post'].entries | to_published_date: '2024-12-31' %}`</span>
 
 **Parametros**:
 - entries (ArrayEntry) — array con entradas
-- date (Datetime)(default: Time.zone.now) — fecha límite
+- date (String) — fecha límite, obligatoria, con el mismo formato que en [From Published Date](/es/platform/channels/liquid-markup/filters.html#from-published-date)
+
+El filtro toma solo el día de la fecha: incluye las entradas publicadas hasta el final de ese día. Igual que `from_published_date`, aborta si la fecha no llega como cadena.
 
 
 ## Crypto
 
 Estos filtros Liquid alteran valores relacionados con la Criptografía.
 
-### Base64 Decode
-
-Devuelve el valor Base64-decoded de un string (ej. <span v-pre> `{% 'Hello world' | base64_encode %} # => 'SGVsbG8gd29ybGQ='`</span>).
-
-### Base64 Encode
-
-Devuelve el valor Base64-encoded de un string (ej. <span v-pre>`{% 'SGVsbG8gd29ybGQ=' | base64_decode %} # => 'Hello world'`</span>).
-
-### HMAC SHA1
-
-Devuelve el hash SHA-1 usando un código de autenticación de mensajes (HMAC) de un string (ej. <span v-pre>`{% 'Hello world' | hmac_sha1: 'key' %} # => '2a73959742baf046e6e2e27e5ee94bcff0af31b1'`</span>).
+:::warning Atención
+Los únicos filtros de hash de Modyo Platform son `hmac_sha256` y `sha256`. `md5`, `sha1` y `hmac_sha1` no existen y, como un filtro desconocido no interrumpe el renderizado, Liquid devuelve el valor de entrada sin transformar: la página publica el dato en claro donde esperabas un hash. Revisa tus plantillas antes de firmar una integración con ellos.
+:::
 
 ### HMAC SHA256
-Devuelve el hash SHA-256 usando un código de autenticación de mensajes (HMAC) de un string (ej. <span v-pre>`{% 'Hello world' | hmac_sha256: 'key' %} # => 'a82b2e160edaf92a6589dc11160d2a10c04449840a58717db308c1ee3512b039'`</span>).
 
-### MD5
-
-Devuelve el hash MD5 de un string (ej. <span v-pre>`{% 'Hello world' | md5 %} # => '3e25960a79dbc69b674cd4ec67a72c62'`</span>).
-
-### SHA1
-Devuelve el hash SHA-1 de un string (ej. <span v-pre>`{% 'Hello world' | sha1 %} # => '7b502c3a1f48c8609ae212cdfb639dee39673f5e'`</span>).
+Devuelve el hash SHA-256 de un string usando un código de autenticación de mensajes (HMAC), con la clave como argumento (ej. <span v-pre>`{{ 'Hello world' | hmac_sha256: 'key' }} #=> 'a82b2e160edaf92a6589dc11160d2a10c04449840a58717db308c1ee3512b039'`</span>).
 
 ### SHA 256
-Devuelve el hash SHA-256 de un string (ej. <span v-pre>`{% 'Hello world' | sha256 %} # => '64ec88ca00b268e5ba1a35678a1b5316d212f4f366b2477232534a8aeca37f3c'`</span>).
+
+Devuelve el hash SHA-256 de un string (ej. <span v-pre>`{{ 'Hello world' | sha256 }} #=> '64ec88ca00b268e5ba1a35678a1b5316d212f4f366b2477232534a8aeca37f3c'`</span>).
 
 ## CSS
 
 Estos filtros Liquid alteran valores relacionados con CSS en Modyo Platform.
 
+:::warning Atención
+Todos los filtros de color abortan si el valor de entrada no es un color válido, por ejemplo una variable que no existe en el contexto. Cuando eso pasa, en el HTML publicado queda el comentario `<!-- Liquid Error -->` en lugar del color y la regla CSS que lo usaba se pierde.
+:::
+
 ### Brighten
 
-Agrega brillo a un color (ej. <span v-pre>`{{ '#00ff00' | brighten: 15 }} #=> '#26ff26'`</span>).
+Agrega brillo a un color (ej. <span v-pre>`{{ '#00ff00' | brighten: 15 }} #=> '#26ff26'`</span>). Si omites la cantidad, usa `10`.
 
 ### Darken
 
-Reduce el brillo de un color (ej. <span v-pre>`{{ '#00ff00' | darken: 15 }} #=> '#00b300'`</span>).
+Reduce el brillo de un color (ej. <span v-pre>`{{ '#00ff00' | darken: 15 }} #=> '#00b300'`</span>). Si omites la cantidad, usa `10`.
 
 ### Desaturate
 
-Desatura un color (ej. <span v-pre>`{{ '#00ff00' | desaturate: 15 }} #=> '#13ec13'`</span>).
+Desatura un color (ej. <span v-pre>`{{ '#00ff00' | desaturate: 15 }} #=> '#13ec13'`</span>). Si omites la cantidad, usa `10`.
 
 ### Grayscale
 
-Convierte un color a escala de grises (ej. <span v-pre>`{{ '#00ff00' | grayscale }} #=> '#808080'`</span>). Alias: `greyscale` (mismo resultado).
+Convierte un color a escala de grises (ej. <span v-pre>`{{ '#00ff00' | grayscale }} #=> '#808080'`</span>). Acepta un segundo argumento, pero no altera el resultado porque la conversión a escala de grises no lo usa.
+
+### Greyscale
+
+Convierte un color a escala de grises, con el mismo resultado que `grayscale`, pero recibe solo el color (ej. <span v-pre>`{{ '#00ff00' | greyscale }} #=> '#808080'`</span>).
+
+:::warning Atención
+`greyscale` y `grayscale` no son intercambiables: `greyscale` no admite un segundo argumento. Una plantilla que pase intensidad, como <span v-pre>`{{ color | greyscale: 15 }}`</span>, aborta por el número de argumentos y en el HTML publicado queda el comentario `<!-- Liquid Error -->`. La misma plantilla con `grayscale` funciona.
+:::
 
 ### Lighten
 
-Aligera un color (ej. <span v-pre>`{{ '#00ff00' | lighten: 15 }} #=> '#4dff4d'`</span>).
+Aligera un color (ej. <span v-pre>`{{ '#00ff00' | lighten: 15 }} #=> '#4dff4d'`</span>). Si omites la cantidad, usa `10`.
 
 ### Opacity
 
-Modifica la opacidad de un color (ej. <span v-pre>`{{ '#00ff00' | opacity: 0.5 }} #=> 'rgba(0, 255, 0, 0.5)'`</span>).
+Modifica la opacidad de un color (ej. <span v-pre>`{{ '#00ff00' | opacity: 0.5 }} #=> 'rgba(0, 255, 0, 0.5)'`</span>). Si omites el valor, usa `0.3`.
 
 ### RGB
 
@@ -465,40 +656,52 @@ Transforma un color a su equivalente RGB (ej. <span v-pre>`{{ '#00ff00' | rgb }}
 
 ### Saturate
 
-Satura un color (ej. <span v-pre>`{{ '#00ff00' | saturate: 15 }} #=> '#00ff00'`</span>).
+Satura un color (ej. <span v-pre>`{{ '#00ff00' | saturate: 15 }} #=> '#00ff00'`</span>). Si omites la cantidad, usa `20`.
 
 ### Spin
 
-Gira un color en grados a favor de las manecillas del reloj (ej. <span v-pre>`{{ '#00ff00' | spin: 15 }} #=> 'rgba(0, 255, 0, 0.5)'`</span>).
+Gira un color en grados a favor de las manecillas del reloj (ej. <span v-pre>`{{ '#00ff00' | spin: 15 }} #=> '#00ff40'`</span>). Si omites los grados, usa `30`.
 
 ## Location
 
 Estos filtros Liquid alteran valores relacionados con la Geolocalización en Modyo Platform.
 
+Los dos filtros reciben el valor de un campo **Ubicación** de una entrada, por ejemplo `entry.fields.sucursales`; el formato de ese valor está descrito en [Tipos de contenido](/es/platform/content/types.html#ubicacion). El mapa se pide a Google Maps con la **API key de Google** de la [configuración de la cuenta](/es/platform/core/configuration.html#visualizacion): configúrala antes de usar estos filtros, porque sin ella Google rechaza la solicitud y el mapa no se muestra.
+
 ### Dynamic Map
 
-Devuelve un mapa dinámico de Google Maps (ej. <span v-pre>`{{ locations | dynamic_map: '600x300', 'true', 'roadmap', true}}`</span>).
+Devuelve un mapa dinámico de Google Maps (ej. <span v-pre>`{{ locations | dynamic_map: '600x300', 10, 'roadmap', '', true }}`</span>).
 
 **Parametros**
 
-- `locations` (ArrayHash) — Array de hashes con los puntos de latitud y longitud.
+- `locations` (ArrayLocation) — Valor de un campo **Ubicación**. De cada ubicación se usan las coordenadas `location.lat` y `location.lon` y, como título del marcador, la dirección `location_street`.
 - `size` (String) (default: '600x300') — Tamaño en píxeles del mapa.
-- `zoom` (String) (default: 10) — Nivel de zoom para el mapa.
+- `zoom` (Integer) (default: 10) — Nivel de zoom para el mapa.
 - `type` (String) (default: 'roadmap') — Tipo de mapa.
 - `icon` (String) (default: '') — Icono para el mapa.
-- `controls` (String) (default: true) — Controles de navegación para el mapa.
+- `controls` (Boolean) (default: true) — Controles de navegación para el mapa.
+
+El mapa se centra en la primera ubicación de la lista, así que el campo necesita al menos una: si está vacío, el filtro aborta y en el HTML publicado queda el comentario `<!-- Liquid Error -->` en lugar del mapa.
+
+:::warning Atención
+Usa un solo `dynamic_map` por página. Todos los mapas dinámicos se dibujan en el mismo contenedor, así que con dos o más solo se ve uno y los demás espacios quedan en blanco.
+:::
 
 ### Static Map
 
-Devuelve un mapa estático de Google Maps (ej. <span v-pre>`{{ locations | static_map: '600x300', 'true', 'roadmap'}}`</span>).
+Devuelve un mapa estático de Google Maps (ej. <span v-pre>`{{ locations | static_map: '600x300', 15, 'roadmap' }}`</span>).
 
 **Parametros**
 
-- `locations` (ArrayHash) — Array de hashes con los puntos de latitud y longitud.
+- `locations` (ArrayLocation) — Valor de un campo **Ubicación**. De cada ubicación se usan las coordenadas `location.lat` y `location.lon`.
 - `size` (String) (default: '600x300') — Tamaño en píxeles del mapa.
-- `zoom` (String) (default: 10) — Nivel de zoom para el mapa.
+- `zoom` (String) (default: '') — Nivel de zoom para el mapa. Sin valor, la URL de Google Maps se arma con `zoom=` vacío y el encuadre queda a criterio de Google; pásalo siempre que necesites un encuadre fijo.
 - `type` (String) (default: 'roadmap') — Tipo de mapa.
 - `icon` (String) (default: '') — Icono para el mapa.
+
+:::warning Atención
+En los dos filtros el argumento que sigue a `size` es `zoom`, no `controls`. Un ejemplo del tipo <span v-pre>`{{ locations | static_map: '600x300', 'true', 'roadmap' }}`</span> arma la URL de Google Maps con `zoom=true` y el mapa no se encuadra como esperas. En `dynamic_map` el orden es `size`, `zoom`, `type`, `icon`, `controls`, así que para llegar a `controls` hay que pasar los cuatro argumentos anteriores.
+:::
 
 
 ## Menu Items
@@ -507,7 +710,13 @@ Estos filtros Liquid alteran valores relacionados con los ítems de menús en Mo
 
 ### Active Page
 
-Determina si un ítem URL está activo. Devuelve 'active' cuando está activo (ej. <span v-pre>`{{ 'company.modyo.com/jobs' | active_page: 'company.modyo.com/jobs' }} #=> 'active'`</span>).
+Determina si la URL de un ítem coincide con la URL que recibe como parámetro, normalmente la de la página actual. Devuelve `' active'`, con un espacio inicial para concatenarlo a las clases del ítem, o una cadena vacía si no coinciden o si alguna de las dos está vacía.
+
+```liquid
+{{ 'company.modyo.com/jobs' | active_page: 'company.modyo.com/jobs' }} #=> ' active'
+```
+
+La comparación considera solo el host y la ruta: ignora el protocolo, los parámetros de consulta y la barra final. Una subruta no cuenta como activa, así que `company.modyo.com/jobs/ventas` no coincide con `company.modyo.com/jobs`.
 
 ### Item Rel
 
@@ -519,7 +728,9 @@ Resuelve la URL de un path y URL base (ej. <span v-pre>`{{ 'dynamic_bank' | reso
 
 ### Visible Items
 
-Devuelve una lista de ítems visibles en una lista de ítems (ej. <span v-pre>`{{ items | visible_items }}`</span>).
+Devuelve solo los ítems de la lista que puede ver el usuario actual (ej. <span v-pre>`{{ items | visible_items }}`</span>).
+
+Aplica los mismos criterios que el tag `menu`, descritos en [Ítems que se muestran](/es/platform/channels/navigation.html#items-que-se-muestran).
 
 ## Origination
 
@@ -527,64 +738,182 @@ Estos son los filtros liquid que alteran valores relacionados con originations e
 
 ### By UID
 
-Devuelve el Origination con el UID seleccionado. *ej.*
-<span v-pre>`{% assign my_origination = site.originations | by_uid: 'my-origination' %}`</span>
+Devuelve el objeto con el UID indicado dentro de una colección del módulo Origination. Es un único filtro, `by_uid`, que admite cuatro clases de colección:
+
+- `site.originations` — los originations del sitio.
+- `origination.steps` — los steps de un origination.
+- `step.tasks` — las tareas de un step.
+- `task.fields` — las preguntas de una tarea de entrada de usuario. Es la única forma de tomar una pregunta concreta por su UID; los objetos que devuelve son [question](/es/platform/channels/liquid-markup/objects.html#question).
 
 **Parámetros:**
-- originations (ArrayOrigination) - array con originations
-- uid (String) - UID del Origination
+- coleccion (ArrayOrigination | ArrayStep | ArrayTask | ArrayQuestion) - colección sobre la que se busca
+- uid (String) - UID del objeto buscado
+
+El filtro devuelve un único objeto, no una colección: su resultado se usa directamente y no se recorre con un ciclo. Si ningún elemento de la colección tiene ese UID, no devuelve nada.
+
+*ej.*
+
+```liquid
+{% assign my_origination = site.originations | by_uid: 'my-origination' %}
+{% assign my_step = my_origination.steps | by_uid: 'step-01' %}
+{% assign my_task = my_step.tasks | by_uid: 'task-01' %}
+{% assign my_question = my_task.fields | by_uid: 'question-01' %}
+```
+
+:::warning Atención
+En dos casos el filtro aborta y en el HTML publicado queda el comentario `<!-- Liquid Error -->` en lugar del bloque: cuando se aplica sobre algo que no es una colección y cuando se aplica sobre una colección de una clase no admitida. En el segundo caso el mensaje incluye el nombre de la clase recibida, lo que permite identificar qué se pasó por error.
+:::
+
+## Paginación
+
+Estos filtros Liquid arman la navegación de un listado ya paginado con [Paginated](/es/platform/channels/liquid-markup/filters.html#paginated). Aplícalos sobre la colección paginada, no sobre la colección original.
+
+Los parámetros `page` y `per_page` de la URL son globales de la página, así que alcanzan a la vez a todos los listados paginados que haya en ella.
+
+### Pagination links
+
+Devuelve la barra de navegación completa de un listado paginado. *ej.*
+<span v-pre>`{{ paginated_entries | pagination_links }}`</span>
+
+**Parámetros**
+
+- `coleccion` (ArrayEntry) — colección ya paginada (objeto antes de la barra).
+
+La salida es un `<nav aria-label="Pagination">` con un `<ul class="pagination">` dentro, con las clases de paginación de Bootstrap:
+
+- La página actual sale como `<li class="page-item active" aria-current="page">`.
+- Las demás páginas salen como `<li class="page-item">` con un `<a class="page-link">`.
+- El salto entre bloques de páginas sale como `<li class="page-item disabled" aria-hidden="true">` con `&hellip;`.
+- Las flechas de anterior y siguiente salen como `<li class="page-item">` con `aria-label="Previous"` y `aria-label="Next"`. Cuando no hay página a la que ir, el `<li>` lleva además la clase `disabled`.
+
+Las etiquetas de las flechas son fijas, `&laquo;` y `&raquo;`. El filtro declara tres parámetros opcionales más, un ancla y las dos etiquetas, pero ninguno llega a la salida: para cambiar los símbolos, el idioma o la estructura de la barra tienes que armar tu propio markup con enlaces `?page=N`.
+
+Cuando el listado cabe en una sola página, el filtro no imprime nada.
+
+:::warning Atención
+La flecha deshabilitada se emite igual como enlace, con `href="false"`. Los estilos de Bootstrap anulan el clic con la regla `.page-item.disabled .page-link`; si escribes tus propios estilos de paginación, replícala o el usuario podrá hacer clic en una flecha que no lleva a ninguna parte.
+:::
+
+:::warning Atención
+Si la plantilla se renderiza fuera del ciclo de una página del sitio, el filtro no puede armar las direcciones de las páginas y publica en su lugar un párrafo de error en rojo que empieza con `(Will Paginate Liquidized) Error:`. Si te encuentras con ese texto en una página, revisa desde dónde se está renderizando la plantilla.
+:::
+
+### Pagination links remote
+
+Hace lo mismo que `pagination_links` y además agrega `data-remote="true"` a cada enlace de la barra. *ej.*
+<span v-pre>`{{ paginated_entries | pagination_links_remote }}`</span>
+
+Es la versión que corresponde usar en los widgets personalizados, que se cargan de forma asíncrona, y depende de dos condiciones:
+
+- El sitio tiene que cargar jQuery antes de que terminen de cargarse los widgets. Sin jQuery, los enlaces de la barra no se resuelven de forma remota y nada avisa del problema.
+- Al cambiar de página solo se reemplaza el HTML del widget: su JavaScript no se vuelve a ejecutar, así que lo que ese JavaScript inicializa no se aplica al contenido nuevo.
+
+El ejemplo completo está en [Ejemplos](/es/platform/channels/liquid-markup/examples.html#filter-by).
+
+### Total entries
+
+Devuelve la cantidad total de elementos de la colección, no los de la página actual. *ej.*
+<span v-pre>`{{ paginated_entries | total_entries }}`</span>
+
+**Parámetros**
+
+- `coleccion` (ArrayEntry) — colección (objeto antes de la barra).
+
+Es la contraparte de `paginated`: sobre una colección ya paginada, `size` devuelve los elementos de la página y `total_entries` el total del listado. Sobre una colección vacía o sobre un arreglo devuelve su tamaño, sin error.
+
+```liquid
+{% assign paginated_entries = entries | paginated: 10 %}
+<ul>
+  {% for entry in paginated_entries %}
+  <li>{{ entry.meta.name }}</li>
+  {% endfor %}
+</ul>
+<p>Mostrando {{ paginated_entries.size }} de {{ paginated_entries | total_entries }} resultados</p>
+{{ paginated_entries | pagination_links }}
+```
+
+### Page entries info liquid
+
+Devuelve una leyenda de texto con el rango de resultados de la página actual y el total de la colección. *ej.*
+<span v-pre>`{{ paginated_entries | page_entries_info_liquid }}`</span>
+
+**Parámetros**
+
+- `coleccion` (ArrayEntry) — colección ya paginada (objeto antes de la barra).
+- `model_name` (String) (default: nulo) — nombre de la entidad que se lista, para nombrarla dentro de la leyenda.
+
+La leyenda se arma en inglés y no pasa por las traducciones del sitio. Si la necesitas en el idioma del sitio, o con otro formato, ármala con `total_entries` como en el ejemplo de arriba.
 
 ## Site
 
 Estos filtros Liquid alteran valores relacionados con los Sitios en Modyo Platform.
 
+### Filtros retirados
+
+Desde la versión 10.2 los filtros `video_player`, `audio_player`, `embedded_video` y `asset_thumbnail_link_tag` ya no existen. Los filtros `bar_code` y `qr_code` nunca existieron en Modyo Platform.
+
+:::warning Atención
+Un filtro desconocido no interrumpe el renderizado: Liquid devuelve el valor de entrada sin transformar. Una plantilla que todavía invoque estos filtros sobre un asset ya no muestra el reproductor ni el enlace y publica en su lugar el nombre interno del objeto que recibió, por ejemplo `Liquid::Drops::Assets::VideoAssetDrop`. No hay mensaje de error ni pista visible de la causa en la página, así que revisa tus plantillas antes de actualizar.
+:::
+
+Para reemplazar `video_player` y `audio_player`, arma el markup con la dirección del archivo, disponible en `url`:
+
+```liquid
+{% assign video = assets['uuid-del-video'] %}
+<video src="{{ video.url }}" width="320" height="320" controls="controls"></video>
+
+{% assign audio = assets['uuid-del-audio'] %}
+<audio src="{{ audio.url }}" controls="controls"></audio>
+```
+
+Para reemplazar `asset_thumbnail_link_tag`, envuelve la miniatura, disponible en `thumbnail_url`, en un enlace al archivo:
+
+```liquid
+{% assign image = assets['uuid-de-la-imagen'] %}
+<a href="{{ image.url }}" class="thumbnail"><img src="{{ image.thumbnail_url }}" alt="{{ image.alt_text }}"></a>
+```
+
+`embedded_video`, `bar_code` y `qr_code` no tienen reemplazo: la plataforma no ofrece hoy un filtro equivalente.
+
 ### Asset image Tag
 
 Genera la etiqueta HTML de una imagen (ej. <span v-pre>`{{ asset | asset_image_tag: 'original' }}`</span>).
 
-### Asset Thumbnail Link Tag
-
-Genera la etiqueta HTML del thumbnail de una imagen (ej. <span v-pre>`{{ asset | asset_thumbnail_link_tag: 'class', 'target' }}`</span>).
-
-**Parametros**
-
-- `asset` (Asset) — Objeto de tipo Asset.
-- `classes` (String) (default: '') — Clases HTML adicionales (opcional).
-- `target` (String) (default: '') — Targets HTML adicionales (opcional).
-
 ### Asset URL
 
-Genera la URL de un objeto tipo Asset (ej. <span v-pre>`{{ asset | asset_url: 'original' }}`</span>).
+Genera la URL de un objeto **Asset** o una ruta de activo de plantilla. Para los objetos Asset que utilizan Cloudflare para la optimización de imágenes, puedes usar los siguientes parámetros adicionales: width, height, blur, quality, format y fit. (ej. <span v-pre>{{ assets['asset_uuid'] | asset_url: blur: 40, format: 'auto', fit: 'cover' }}</span>).
+Para las rutas de assets de plantilla (template asset paths) desde el template builder, especifica el tipo de asset como el segundo argumento (ej. <span v-pre>{{ 'base' | asset_url: 'js' }}</span>). También puedes usar los filtros `script_tag` o `stylesheet_tag` para generar automáticamente la etiqueta HTML `<script>` o `<link>` completa (ej. <span v-pre>{{ 'base' | asset_url: 'css' | stylesheet_tag: media: 'screen' }}</span>).
 
-### Audio Player
-
-Genera la URL de un objeto tipo Audio (ej. <span v-pre>`{{ audio1 | audio_player }}`</span>).
-
-### Bar Code
-
-Genera la URL de un código de barras (ej. <span v-pre>`{{ value | bar_code: 320, 320 }}`</span>).
-
-**Parametros**
-
-- `value` (String) — Valor del código de barras.
-- `width` (Integer) (default: 100) — Ancho.
-- `height` (Integer) (default: 100) — Alto.
+La URL que se genera para una vista de plantilla incluye una versión que se actualiza al publicar el sitio, así que los visitantes reciben siempre el archivo vigente sin que tengas que renombrarlo. En el modo de vista previa el archivo nunca se sirve desde la caché. Para conocer en detalle cómo se sirven estas vistas y cómo controlar su carga, consulta [Cómo se sirven las vistas de CSS y JavaScript](/es/platform/channels/templates.html#como-se-sirven-las-vistas-de-css-y-javascript).
 
 ### Button To
 
-Genera un botón (ej. <span v-pre>`{{ 'Hello World' | button_to: 'http://www.google.com' }}`</span>).
+Genera un enlace con apariencia de botón: un elemento `<a>` con la clase `btn`, no un `<button>`. La URL se resuelve igual que en [Link To](#link-to) (ej. <span v-pre>`{{ 'Hello World' | button_to: 'http://www.google.com' }}`</span>).
 
 ### Cookie Value
 
-Devuelve el valor de una cookie (ej. <span v-pre>`{{ 32 | cookie_value }}`</span>).
+Devuelve el valor de la cookie cuyo nombre recibe como entrada, o una cadena vacía si la solicitud no la incluye.
 
-### Embedded Video
-
-Devuelve la URL de un video integrado (ej. <span v-pre>`{{ movie2 | embedded_video }}`</span>).
+```liquid
+{{ 'my_cookie' | cookie_value }}
+```
 
 ### Escape JS
 
-Evita interpretar código JavaScript (ej. <span v-pre>`{{ '<script>alert("hello world");</script>' | escape_js }}`</span>).
+Escapa un texto para insertarlo dentro de una cadena de JavaScript: escapa las comillas, las barras invertidas, los saltos de línea y la secuencia `</`, para que el valor no cierre la cadena ni el bloque `<script>`.
+
+```liquid
+{% assign mensaje = "It's done" %}
+<script>
+  var mensaje = '{{ mensaje | escape_js }}';
+</script>
+```
+
+El resultado es `var mensaje = 'It\'s done';`.
+
+:::warning Atención
+`escape_js` no codifica HTML: no impide que se ejecute un `<script>` ni otro código insertado en el HTML de la página. Para mostrar un texto dentro del HTML usa [Escape](#escape).
+:::
 
 ### Format Date
 
@@ -593,15 +922,19 @@ Traduce una fecha a otro formato (ej. <span v-pre>`{{ time | format_date: '%e %b
 **Parametros**
 
 - `time` (DateTime) — Fecha.
-- `format_date` (String) (default: '') — El nuevo formato para la fecha.
+- `format` (String) (default: '%e %b, %Y') — El formato de la fecha, con la misma sintaxis que `date`. Los nombres de meses y días salen en el idioma del sitio.
+
+Si la fecha es nula, el filtro devuelve una cadena vacía.
 
 ### Format DateTime
 
-Traduce una fecha a formato DateTime (ej. <span v-pre>`{{ time | format_datetime }}`</span>).
+Da formato a una fecha y hora con el formato fijo `'%e %b, %Y %H:%M'`, igual que Format Date con ese formato (ej. <span v-pre>`{{ time | format_datetime }}`</span> devuelve `15 Ene, 2025 10:30` en un sitio en español).
 
 ### Format Short Date
 
-Traduce una fecha a un formato reducido (dd-mm-yyyy) (ej. <span v-pre>`{{ time | format_short_date }}`</span>).
+Traduce una fecha al formato corto del idioma del sitio, que no incluye el año (ej. <span v-pre>`{{ time | format_short_date }}`</span>).
+
+Por ejemplo, para el 15 de enero de 2025 a las 10:30 el resultado es `15 de Ene, 10:30` en español, `15 Jan 10:30` en inglés y `15/01, 10:30 hs` en portugués. Si la fecha no tiene hora, es `15 de Enero`, `Jan 15` y `15 de Janeiro`, respectivamente. Si necesitas el formato dd-mm-yyyy, usa Format Date con `'%d-%m-%Y'`.
 
 ### Get Session ID
 
@@ -622,8 +955,8 @@ Agrega una etiqueta de enlace (anchor link) (ej. <span v-pre>`{{ 'Hello World' |
 **Parametros**
 
 - `text` (String) (default: '') — Texto para el enlace.
-- `link` (String) (default: '/') — URL para el enlace.
-- `alt` (String) (default: '') — Texto alternativo para el enlace.
+- `link` (String) (default: '/') — URL para el enlace. Si no empieza con `http`, se resuelve contra la URL base del sitio, comience o no con `/`.
+- `alt` (String) (default: '') — Texto que se emite en el atributo `title` del enlace.
 - `class` (String) (default: '') — Clase CSS para el enlace.
 - `target` (String) (default: '') — Target para el enlace.
 
@@ -633,7 +966,7 @@ Muestra la variable de mensaje flash (ej. <span v-pre>`{{ 'alert-error' | notifi
 
 ### Primary button to
 
-Genera un botón de tipo primario (ej. <span v-pre>`{{ 'Hello World' | primary_button_to: 'http://www.google.com', 'large' }}`</span>).
+Genera un enlace con apariencia de botón primario: un elemento `<a>` con las clases `btn`, `btn-primary` y `btn-` seguida del tamaño. La URL se resuelve igual que en [Link To](#link-to) (ej. <span v-pre>`{{ 'Hello World' | primary_button_to: 'http://www.google.com', 'large' }}`</span>).
 
 **Parametros**
 
@@ -641,24 +974,15 @@ Genera un botón de tipo primario (ej. <span v-pre>`{{ 'Hello World' | primary_b
 - `link` (String) (default: '/') — URL para el enlace.
 - `size` (String) (default: 'large') — Tamaño para el enlace.
 
-### QR Code
-
-Genera un código QR (ej. <span v-pre>`{{ value | qr_code: 4, 320, 320 }}`</span>).
-
-**Parametros**
-
-- `value` (String) (default: '') — Valor para el QR.
-- `qr_size` (Integer) (default: 4) — Tamaño del QR.
-- `width` (Integer) (default: 100) — Ancho del QR.
-- `height` (Integer) (default: 100) — Alto del QR.
-
 ### Sanitize HTML
 
 Sanitiza las etiquetas HTML de un String (ej. <span v-pre>`{{ '<script>Hello World</script>' | sanitize }} #=> 'Hello World'`</span>).
 
 ### Script tag
 
-Agrega una etiqueta de script (ej. <span v-pre>`{{ 'test-script' | script_tag }}`</span>).
+Genera la etiqueta HTML `<script>` a partir de una URL, tomando como parámetros adicionales atributos de la forma `attr: 'value'` (ej. <span v-pre>`{{ 'my-js-url' | script_tag: async: 'async', defer: 'defer' }}`</span> => `<script src='my-js-url' type='text/javascript' async='async' defer='defer'></script>`).
+
+Encádenalo con [Asset URL](#asset-url) para incluir una vista de JavaScript del sitio y agregarle los atributos que necesites (ej. <span v-pre>`{{ 'base' | asset_url: 'js' | script_tag: defer: 'defer' }}`</span>). A diferencia de [Theme Javascript](#theme-javascript), esta combinación admite cualquier atributo.
 
 ### Search Box
 
@@ -670,18 +994,37 @@ Convierte un datetime a formato String (ej. <span v-pre>`{{ time | strftime: '%m
 
 ### Strip tag
 
-Elimina todas las etiquetas HTML y su contenido de un String (ej. <span v-pre>`{{ '<script>Hello World</script>' | strip_tags }} #=> ""`</span>).
+Quita las etiquetas HTML de un String y conserva su texto. Los bloques `<script>` se eliminan completos, con su contenido (ej. <span v-pre>`{{ '<script>Hello World</script>' | strip_tags }} #=> ""`</span>).
+
+```liquid
+{{ '<script>alert("hola");</script><p>Hola mundo</p>' | strip_tags }} #=> 'Hola mundo'
+```
 
 ### Stylesheet Tag
+
 Genera la etiqueta HTML `<link>` para un template CSS, tomando como parámetros la URL y atributos (ej. `attr: 'value'`, <span v-pre>`{{ 'my-css-url' | stylesheet_tag: media: 'screen', title: 'color style' }}`</span> => `<link href='my-css-url' rel='stylesheet' type='text/css' media='screen' title='color style' />`).
+
+Encádenalo con [Asset URL](#asset-url) para incluir una vista de CSS del sitio y agregarle los atributos que necesites (ej. <span v-pre>`{{ 'base' | asset_url: 'css' | stylesheet_tag: media: 'screen' }}`</span>). A diferencia de [Theme Stylesheet](#theme-stylesheet), esta combinación admite cualquier atributo.
 
 ### Theme Javascript
 
-Agrega una etiqueta de tema en Javascript (ej. <span v-pre>`{{ 'home-page-javascript' | theme_javascript }}`</span>).
+Genera la etiqueta HTML `<script>` que incluye una vista de JavaScript del sitio. Toma como parámetro la ruta de la vista creada en **Plantillas**, no una URL (ej. <span v-pre>`{{ 'home-page-javascript' | theme_javascript }}`</span> => `<script src='https://tu-sitio.com/javascript/site-home-page-javascript-VERSION.js' type='text/javascript'></script>`).
+
+La URL que genera incluye una versión que se actualiza al publicar el sitio, de modo que los visitantes reciben el archivo vigente sin que tengas que renombrar la vista ni modificar la plantilla. En el modo de vista previa el archivo nunca se sirve desde la caché, para que veas tus cambios de inmediato.
+
+:::warning Atención
+`theme_javascript` no admite atributos adicionales: siempre emite la misma etiqueta. Si necesitas `defer`, `async` u otro atributo, usa [Asset URL](#asset-url) encadenado con [Script tag](#script-tag) (ej. <span v-pre>`{{ 'home-page-javascript' | asset_url: 'js' | script_tag: defer: 'defer' }}`</span>), que produce la misma URL versionada.
+:::
 
 ### Theme Stylesheet
 
-Agrega una etiqueta de tema en CSS (ej. <span v-pre>`{{ 'home-page-stylesheet' | theme_stylesheet }}`</span>).
+Genera la etiqueta HTML `<link>` que incluye una vista de CSS del sitio. Toma como parámetro la ruta de la vista creada en **Plantillas**, no una URL (ej. <span v-pre>`{{ 'home-page-stylesheet' | theme_stylesheet }}`</span> => `<link href='https://tu-sitio.com/stylesheets/site-home-page-stylesheet-VERSION.css' media='screen' rel='stylesheet' type='text/css' />`).
+
+Igual que [Theme Javascript](#theme-javascript), la URL incluye una versión que se actualiza al publicar el sitio, y en el modo de vista previa el archivo nunca se sirve desde la caché.
+
+:::warning Atención
+`theme_stylesheet` no admite atributos adicionales y siempre emite `media='screen'`. Si necesitas otro valor de `media` o atributos como `title`, usa [Asset URL](#asset-url) encadenado con [Stylesheet Tag](#stylesheet-tag) (ej. <span v-pre>`{{ 'home-page-stylesheet' | asset_url: 'css' | stylesheet_tag: media: 'print' }}`</span>), que produce la misma URL versionada.
+:::
 
 ### Time Ago in Words
 
@@ -689,21 +1032,28 @@ Convierte una fecha en String a palabras (ej. <span v-pre>`{{ '01-02-2019' | tim
 
 ### Translate
 
-Resuelve el texto de traducción para claves de Sitios. Se devolverán valores personalizados si existen (ej. <span v-pre>`{{ 'admin.logs.errors.no_logs_yet' | translate }}`</span>).
+Resuelve una clave de las traducciones de la plataforma en el idioma del sitio (ej. <span v-pre>`{{ 'admin.logs.errors.no_logs_yet' | translate }}`</span>).
+
+Las claves y sus textos son los de la plataforma: no puedes agregar claves nuevas ni personalizar sus textos. Si la clave no existe, el filtro imprime un aviso de traducción faltante en lugar del texto.
+
+**Parámetros**
+
+- `value` (String) — clave de la traducción (objeto antes de la barra).
+- `count` (Integer) (default: nil) — cantidad con la que se pluraliza la clave.
+
+`t` es el alias corto del filtro y hace exactamente lo mismo: <span v-pre>`{{ 'admin.logs.errors.no_logs_yet' | t }}`</span>.
+
+El segundo parámetro pluraliza la clave y solo se aplica cuando llega como entero, por ejemplo con una clave de la plataforma que tiene formas en singular y plural:
+
+```liquid
+{{ 'datetime.distance_in_words.x_days' | t: 3 }} #=> '3 días'
+```
+
+Si llega como cadena, por ejemplo `'3'`, el filtro lo descarta sin avisar y resuelve la clave sin pluralizar.
 
 ### Truncate HTML
 
 Devuelve un String después de truncarlo (ej. <span v-pre>`{{ html | truncate_html: 10 }}`</span>).
-
-### Video Player
-
-Agrega un reproductor de video en código HTML usando un asset del Gestor de Archivos (ej. <span v-pre>`{{ movie1 | video_player: 320, 320 }}`</span>).
-
-**Parámetros**
-
-- `video` (Asset) — Objeto de tipo Video del Gestor de Archivos.
-- `width` (Integer) — Ancho para el video.
-- `height` (Integer) — Alto para el video.
 
 ## Step
 
@@ -717,6 +1067,8 @@ Devuelve el Step con el UID seleccionado. *ej.*
 **Parámetros:**
 - steps (ArrayStep) - array con steps
 - uid (String) - UID del Step
+
+Es el mismo filtro `by_uid` del módulo Origination. La referencia completa, con las cuatro clases de colección admitidas y los errores que aborta, está en [By UID](/es/platform/channels/liquid-markup/filters.html#by-uid).
 
 ## Submission
 
@@ -738,19 +1090,49 @@ Devuelve los Submissions con el estado seleccionado. *ej.*
 
 **Parámetros:**
 - submissions (ArraySubmission) - array con submissions del usuario
-- status (String) - Estado de los Originations. Los valores soportados son 'pending', 'completed' y 'all'
+- status (String) - Estado de la respuesta. Los valores soportados son 'pending', 'completed' y 'all'
+
+En Modyo 10.2 una respuesta puede estar en cuatro estados: **No Iniciada**, **Pendiente**, **Completada** y **Cancelada**. El filtro reconoce solo tres valores y no hay correspondencia directa con esos estados:
+
+- `'pending'` devuelve las respuestas **Pendiente**.
+- `'completed'` devuelve las respuestas **Completada**.
+- `'all'` no devuelve todas: entrega las **Pendiente** más las **Completada**, y deja fuera las **No Iniciada** y las **Cancelada**.
+- `'not_started'` y `'canceled'` no están soportados. El filtro no falla ni deja rastro en la página: devuelve una colección vacía, así que el listado que los use se ve en blanco.
+
+:::warning Atención
+Una respuesta nace **No Iniciada** y pasa a **Pendiente** recién cuando se guarda la primera respuesta a una de sus tareas, así que las recién creadas no aparecen en los listados construidos con este filtro. Además, `user.submissions` ya viene acotado a las respuestas **Pendiente** y **Completada**, de modo que ninguna combinación de `by_status` alcanza a las **No Iniciada** ni a las **Cancelada** de esa colección.
+:::
+
+Para listar los estados que el filtro no cubre, recorre una colección sin acotar, como `user.invited_submissions`, sin pasar por `by_status`, y compara [`submission.status`](/es/platform/channels/liquid-markup/objects.html#submission) dentro del ciclo:
+
+```liquid
+{% assign invited = user.invited_submissions | by_origination: 'my-origination' %}
+{% for invited_submission in invited %}
+  {% if invited_submission.status == 'not_started' %}
+    <a href="{{ invited_submission.resume_url }}">{{ invited_submission.origination.name }}</a>
+  {% endif %}
+{% endfor %}
+```
 
 ### Completed
 
-Verifica si un elemento (wrapper de step/task) está completado para un submission dado.
+Verifica si un step o una task ya se completó en una respuesta.
 
 *ej.* <span v-pre>`{{ submission | completed: step }}`</span>
 
 **Parámetros:**
 - submission (Submission) — submission actual (objeto antes de la barra)
-- element (Step|TaskResponse wrapper) — elemento a evaluar
+- element (Step|Task) — el step o la task a evaluar, por ejemplo uno de `origination.steps` o de `step.tasks`
 
 Retorna: Boolean (true/false)
+
+No acepta los elementos de `submission.steps` ni las respuestas de `submission.tasks`: con ellos, el filtro aborta y en el HTML publicado queda el comentario `<!-- Liquid Error -->` en lugar del bloque. Esos objetos ya traen su estado, en `is_completed` y en `status`, respectivamente.
+
+Desde Modyo 10.2 el filtro resuelve el estado contra el usuario presente en el contexto de render y no contra el titular de la respuesta: un step cuenta como completado solo si ese usuario tiene una respuesta completada en cada una de las tareas que ve. En un flujo con usuarios invitados, la misma plantilla entrega resultados distintos según quién la mire, y un step que en 10.1 aparecía completado puede aparecer incompleto.
+
+:::warning Atención
+El filtro necesita el objeto `user` en el contexto de la plantilla. Si no está, la evaluación aborta apenas la respuesta tiene al menos una tarea completada, y en el HTML publicado queda el comentario `<!-- Liquid Error -->` en lugar del bloque, sin ningún aviso para quien navega. Protege el bloque con <span v-pre>`{% if user %}`</span> y asegúrate de que la plantilla reciba el usuario.
+:::
 
 ### URL (URL del Step para Submission)
 
@@ -758,11 +1140,23 @@ Genera una URL navegable para un step dentro de un submission (primer task visib
 
 *ej.* <span v-pre>`{{ step | url: submission }}`</span>
 
+Igual que `completed`, resuelve el step completado y la primera task visible contra el usuario del contexto de render, con las mismas consecuencias en flujos con usuarios invitados y el mismo comportamiento si falta `user` en el contexto.
+
+:::warning Atención
+Una respuesta recién creada está **No Iniciada**, no **Pendiente**, así que el filtro no devuelve valor justo en el caso más frecuente de una plantilla para retomar una respuesta. La respuesta pasa a **Pendiente** cuando se guarda la primera respuesta a una de sus tareas; hasta entonces, lleva al usuario al inicio del flujo con [`submission.resume_url`](/es/platform/channels/liquid-markup/objects.html#submission), que no depende del estado.
+:::
+
 ### Resume Link
 
 Retorna un tag HTML de enlace para retomar un step pendiente dentro de un submission, o el nombre del step si no hay URL disponible.
 
 *ej.* <span v-pre>`{{ step | resume_link: submission }}`</span>
+
+El enlace lo arma `url`, así que hereda todas sus condiciones: cuando `url` no devuelve valor, `resume_link` imprime el nombre del step como texto plano.
+
+:::warning Atención
+Sobre una respuesta **No Iniciada** el filtro imprime el nombre del step como texto plano y la página no muestra ningún error: la plantilla se ve completa, pero el usuario no tiene por dónde entrar. Lo mismo pasa cuando `url` no entrega enlace para ese step con el usuario del contexto. Revisa el estado de la respuesta antes de renderizar el listado y ofrece [`submission.resume_url`](/es/platform/channels/liquid-markup/objects.html#submission) mientras no esté **Pendiente**.
+:::
 
 ### Submissions Selector
 
@@ -783,28 +1177,40 @@ Devuelve el Task con el UID seleccionado. *ej.*
 - tasks (ArrayTask) - array con tasks
 - uid (String) - UID del Task
 
+Es el mismo filtro `by_uid` del módulo Origination, que también acepta la colección `fields` de una tarea de entrada de usuario para tomar una de sus preguntas por UID: <span v-pre>`{% assign my_question = my_task.fields | by_uid: 'question-01' %}`</span>. La referencia completa está en [By UID](/es/platform/channels/liquid-markup/filters.html#by-uid).
+
 ## User
 
 Estos filtros Liquid alteran valores relacionados con los Usuarios.
 
+### Avatar For
+
+Muestra el código HTML de la imagen de un usuario. Si el usuario no tiene avatar propio, entrega el avatar por defecto (ej. <span v-pre>`{{ user | avatar_for: 'C50x50', true }}`</span>).
+
+**Parámetros**
+
+- `user` (User) — Objeto User.
+- `size` (String) (default: 'C50x50') — Tamaño para la imagen.
+- `link` (Boolean) (default: true) — `true` agrega un enlace hacia el perfil del usuario.
+
 ### Default Avatar Image
 
-Muestra la imagen por defecto del avatar (ej. <span v-pre>`{{ user | avatar_for: 'C50x50' }}`</span>).
+Muestra el código HTML del avatar por defecto. La firma es al revés de lo que sugiere el nombre: el valor que va antes de la barra es el **tamaño**, y el usuario es el primer argumento, opcional (ej. <span v-pre>`{{ 'C50x50' | default_avatar_image: user }}`</span>).
 
 **Parámetros**
 
-- `user` (User) — Objeto User.
-- `size` (Integer) (default: 'C50x50') — Tamaño para la imagen.
+- `size` (String) — Tamaño para la imagen, con el formato de las versiones de avatar: `C25x25`, `C50x50`, `C75x75`, `C100x100`, `C125x125`, `C160x160`, `C200x200` o `C250x250`.
+- `user` (User) (default: nulo) — Objeto User del contexto Liquid. Tiene que ser el objeto, no un id ni un correo.
 
-### Image For
+Devuelve una de tres imágenes, según lo que reciba:
 
-Muestra el código HTML para la imagen de un usuario (ej. <span v-pre>`{{ user | avatar_for: 'C50x50', true }}`</span>).
+- Con un usuario cuyo reino tiene configurada la **Imagen de avatar por defecto** en [Configuración de reino](/es/platform/customers/settings.html#general), la imagen del reino en el tamaño pedido.
+- Con un usuario cuyo reino no la tiene configurada, la imagen de marcador de posición en el tamaño pedido.
+- Sin usuario, la imagen de marcador de posición en el tamaño pedido.
 
-**Parámetros**
-
-- `user` (User) — Objeto User.
-- `size` (Integer) (default: 'C50x50') — Tamaño para la imagen.
-- `link` (Boolean) (default: true) — `true` agrega un enlace hacia el perfil del usuario.
+:::tip Tip
+Para el caso habitual no necesitas llamarlo: `avatar_for` ya recurre a `default_avatar_image` cuando el usuario no tiene avatar propio. Llámalo directo solo cuando quieras el avatar por defecto sin consultar el del usuario.
+:::
 
 ### By Form Slug
 
@@ -818,7 +1224,7 @@ Retorna respuestas de formulario del usuario filtradas por un slug específico.
 
 ### By Response Date Range
 
-Retorna respuestas de formulario creadas dentro de un rango de fechas (inclusivo).
+Retorna respuestas de formulario creadas dentro de un rango de fechas.
 
 *ej.* <span v-pre>`{% assign responses = user.responses | by_response_date_range: '2025-03-10', '2025-03-20' %}`</span>
 
@@ -826,6 +1232,8 @@ Retorna respuestas de formulario creadas dentro de un rango de fechas (inclusivo
 - responses (Array&lt;FormResponse&gt;) — user.responses
 - date_from (String/Date) — fecha inicial (recomendado YYYY-MM-DD)
 - date_to (String/Date) — fecha final (recomendado YYYY-MM-DD)
+
+`date_from` incluye su día completo, pero `date_to` se toma como el inicio de ese día (00:00), aunque indiques una hora, así que el día final queda fuera: en el ejemplo no aparecen las respuestas creadas el 20 de marzo. Para incluirlo, pasa el día siguiente como `date_to`, en este caso `'2025-03-21'`. Los dos límites se comparan con la hora de creación en UTC.
 
 ### By Answer Text
 
@@ -836,28 +1244,3 @@ Retorna respuestas de formulario que contienen una respuesta cuyo `answers.text_
 **Parámetros:**
 - responses (Array&lt;FormResponse&gt;) — user.responses
 - answer_text (String) — texto exacto a coincidir
-
-## Widget
-
-Estos filtros Liquid alteran valores relacionados con los Widgets.
-
-### Entry Limit
-
-Determina el límite de entradas para un widget (ej. <span v-pre>`{{ widget1 | entry_limit }}`</span>).
-
-### Resolve Home Widget List
-
-Devuelve una lista de todos los widgets que pertenecen a un Sitio (ej. <span v-pre>`{{ site | resolve_home_widget_list }}`</span>).
-
-### Resolve Me Widget List
-
-Devuelve una lista de todos los widgets que pertenecen a una página "me" (ej. <span v-pre>`{{ site | resolve_me_widget_list }}`</span>).
-
-### Resolve Widget List
-
-Devuelve una lista de todos los widgets que pertenecen a una página (ej. <span v-pre>`{{ site | resolve_widget_list: page }}`</span>).
-
-**Parámetros**
-
-- `site` (Site) — Objeto de tipo Sitio.
-- `page` (Page) — Objeto de tipo Página.

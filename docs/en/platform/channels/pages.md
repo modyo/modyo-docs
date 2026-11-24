@@ -6,9 +6,14 @@ search: true
 
 Pages allow you to create a structure for your site, add unstructured content, and customize the routes where that content is displayed.
 
-You can create two types of pages: widget or content. Widget pages are based on a modular scheme that allows you to create your custom site using HTML, JS, and CSS. You can drag and drop different predefined or custom widgets created by your team.
+You can create three types of pages: **Widget page**, **Content page**, and **Origination page**. You choose the type when you create the page and you cannot change it afterwards.
+
+Widget pages are based on a modular scheme that allows you to create your custom site using HTML, JS, and CSS. You can drag and drop different predefined or custom widgets created by your team.
 
 Content pages connect the Content modules with Channels. Here you can create the index that contains the entries and the structure for all of them using HTML, JS, CSS, and Liquid.
+
+Origination pages display an [Origination](/en/platform/customers/origination.html) flow to end users. You can only create them if your plan includes Origination and the site is connected to a [realm](/en/platform/customers/realms.html). Each origination can be linked to a single page, and the page is always private: its segment restriction is configured in the origination, not in the page.
+
 
 To edit a page, click on the edit icon or on the page name to go to the edit view.
 
@@ -16,7 +21,7 @@ In the edit view, you will find a top bar with actions, a central grid, and a si
 
 In the top bar, you will find different actions and information:
 
-**Title**: Located in the upper left, it indicates the name of the page you are modifying. To the right of the name, you will find the current status of the page: "Draft", "Under review", "Approved", "Pending changes", or "Published". To learn more about these statuses, you can review the [Versioning and Team Review](/en/platform/core/key-concepts) section.
+**Title**: Located in the upper left, it indicates the name of the page you are modifying. To the right of the name, you will find the current status of the page: "Draft", "Under review", "Approved", "Pending changes", or "Published". To learn more about these statuses, you can review the [Versioning](/en/platform/core/#versioning) section.
 
 **Publication date**: If the page has been published, it will indicate the date of the last publication.
 
@@ -26,10 +31,10 @@ In the top bar, you will find different actions and information:
 You can preview the pages as a user without a session or with a Modyo session. For this, it is recommended to start or close the Modyo session on the site before entering preview mode, as doing so within this mode can generate security errors such as _x-frame-options_ or _mixed-content_, depending on the custom domain and SSL configuration of the site.
 :::
 
-**Differences**: By clicking on the differences icon, you access the page's differences view, where you can select two versions to compare, allowing you to execute the actions [reset and rollback](/en/platform/core/key-concepts#revert-a-change).
+**Differences**: By clicking on the differences icon, you access the page's differences view, where you can select two versions to compare, allowing you to execute the actions [reset and rollback](/en/platform/core/#revert-a-change).
 
 :::tip Tip
-If your page is in _draft_ status, the differences icon will not appear, as there is nothing to compare the current editable version with. To learn more about differences and backups, see the [versioning](/en/platform/core/key-concepts#versioning) section.
+If your page is in _draft_ status, the differences icon will not appear, as there is nothing to compare the current editable version with. To learn more about differences and backups, see the [versioning](/en/platform/core/#versioning) section.
 :::
 
 **Activity**: Displays a sidebar that shows the activity associated with the page, such as modifications, publications, and comments. At the bottom of this bar, you can type comments. If the page is under review, all assigned reviewers will receive a notification with the comment.
@@ -50,23 +55,33 @@ To create a new page, follow these steps:
 2. Select the site you want to add a new page.
 3. Click **Pages**.
 4. Click **New Page**.
-5. Select the type of page (**Widget** or **Content**) you want to create.
-6. Enter the Layout Name, Path, and if necessary, select the parent layout, then press **Create**.
-7. Customize the page according to the type: adding or editing widgets for Widget Page, or editing the Index and Show for Content Page.
-8. Once finished, click **Publish**.
+5. In **Type**, select the type of page you want to create: **Widget page**, **Content page**, or **Origination page**.
+6. Fill in the fields required by the chosen type:
+   - **Content page**: select the **Space** and the content **Type** that the page will display.
+   - **Origination page**: select the **Origination** you want to display. Only published originations from the site's realm that do not have an associated page yet are listed.
+   - **Widget page**: it does not require additional fields.
+7. Enter the **Name**, the **Path**, and if necessary, select the **Parent page**, then press **Create**.
+8. Customize the page according to the type: adding or editing widgets on the widget page, editing the **Index** and the **Show** on the content page, or editing the flow views on the origination page.
+9. Once finished, click **Publish**.
 
-To learn about the types of widgets you can add, see [Widgets](/en/platform/channels/pages#widget-page).
+:::warning Attention
+If your plan does not include Origination, that type is not shown in the selector. If it is shown but you cannot select it, a prerequisite is missing: the origination page requires the site to be connected to a realm.
+:::
 
-To learn more about content pages, see [Content Page](/en/platform/channels/pages#content-page).
+To learn about the types of widgets you can add, see [Widget Page](/en/platform/channels/pages.html#widget-page).
+
+To learn more about content pages, see [Content Page](/en/platform/channels/pages.html#content-page).
+
+To learn more about origination pages, see [Create an Origination Page](/en/platform/customers/origination.html#create-an-origination-page).
 
 **Main action**: It is the green button in the upper right that can take different forms:
 
 - Save: Allows you to save the changes made to the page.
 - Send to review: If team review is enabled and there are no pending changes, this action allows you to submit the page for review and assign reviewers.
-- Publish: If the page is approved, you can go to the [joint publication view](/en/platform/core/key-concepts) using this action.
+- Publish: If the page is approved, you can go to the [joint publication view](/en/platform/channels/sites.html#review-and-joint-publication) using this action.
 
 :::tip Tip
-- If a page has a parent, you can only publish it if it is published.
+- If a page has a parent, you can only publish it if the parent is already published or if you select it in the same [joint publication](/en/platform/channels/sites.html#review-and-joint-publication).
 - If a page has children, you can only unpublish it if all of them are unpublished.
 - If a page has children, you can only archive it if all of them are archived.
 :::
@@ -79,9 +94,9 @@ The central grid is where you can position your widgets. You can move them using
 
 In the right sidebar, there are three tabs:
 
-- Add widgets: Allows you to select widgets from a list to add them to the grid.
-- Edit widget: Allows you to change properties and filters for each widget.
-- Properties: Allows you to modify the name, excerpt, path, parent, privacy, page grid, and meta tags.
+- **Add**: Allows you to select widgets from a list to add them to the grid.
+- **Edit**: Allows you to change the configuration options of the selected widget.
+- **Properties**: Allows you to modify the page's name, parent page, layout, path, excerpt, route delegation, grid, privacy, and custom meta tags.
 
 
 ### Inserting an image with Liquid
@@ -113,34 +128,42 @@ It is necessary that your account's CDN is in the cloud for changes to be reflec
 
 ## Widget Page
 
-Here you can customize your page using preset widgets from the following list:
+In the sidebar's **Add** tab you will find two groups. Under **Blocks** are the preset widgets that Modyo ships:
 
-
-- **HTML**: Allows you to enter HTML and CSS code without validations. It will not allow you to enter Javascript code.
-- **Rich text**: Allows you to use a rich text editor, in which you can format text and switch between code view and rich text.
+- **HTML**: Allows you to enter HTML, CSS, and Liquid code. If the code includes a `<script>` tag, Modyo does not save the page and warns you that scripts are not allowed.
+- **Rich text**: Allows you to use a rich text editor, in which you can format text and switch between code view and rich text. Like the **HTML** block, it renders Liquid.
 :::warning Attention
 The rich text widget has an automatic formatter, so the code you write in the code view may be affected.
 :::
-- **Content list**: Displays content lists using filters by space, type, language, tags, and category. To modify how these widgets look, you must do so in the Widgets section in [Templates](/en/platform/channels/templates).
-- **Featured content**: Displays a list of entries as "hero" images in a carousel.
-- **Custom**: You will find a list of all the widgets you have created and published in the widget builder.
+
+Under **Widgets** are your custom widgets, that is, the ones you created and published in the [widget builder](/en/platform/channels/widgets.html). There you have a shortcut to five of them, and with **View all widgets** you open the site's complete list.
+
+:::tip Tip
+The **Content list** and **Featured content** widgets no longer exist in the product. To display entry lists and their detail, use a [Content Page](/en/platform/channels/pages.html#content-page), and to build carousels or custom highlights, create a [custom widget](/en/platform/channels/widgets.html).
+:::
 
 Once a widget is selected in the central section, the focus will shift to the side tab, where you can find different configuration options for the widget. If you select a custom widget, you will find a link to go directly to its editing view in [widget builder](/en/platform/channels/widgets) and the list of variables the widget is using. If you want to overwrite the value of a particular variable for that instance of the widget on that page, you must select the checkbox to the left of the variable and change the value it takes.
 
 ### Properties
 
-In this tab you will find common properties options for all pages:
+In this tab you will find the widget page controls, in the same order they appear in the panel. **Grid** is also on the home page, and **Delegate child routes to this page** only exists here: content and origination pages have neither of those controls.
 
-- Name
-- Parent
-- Path
-- Excerpt
-- Grid
-- Privacy
-- Custom meta tags
+- **Name**: The name of the page.
+- **Parent page**: The page under which this one is nested. You can only choose widget pages of the site that are published, scheduled, or unpublished.
+- **Layout**: The site's published layout template that wraps the page. You manage them in [Templates](/en/platform/channels/templates.html).
+- **Path**: The relative path of the page, for example `my-awesome-page`.
+- **Excerpt**: A summary of up to 255 characters that is used in the page's meta tags.
+- **Delegate child routes to this page**: See [Route delegation](/en/platform/channels/pages.html#route-delegation).
+- **Grid**: See [Grids](/en/platform/channels/pages.html#grids).
+- **Privacy**: See [Privacy](/en/platform/channels/pages.html#privacy).
+- **Custom meta tags**: See [Meta tags](/en/platform/channels/pages.html#meta-tags).
 
 :::warning Attention
-Modyo has reserved paths for pages, so you cannot use them as paths for your custom pages:
+The **Path** only accepts unaccented letters, numbers, hyphens (`-`), and underscores (`_`). The full path of the page, which includes the paths of its parent pages, cannot exceed 255 characters. If you change the path of a parent page and the full path of any of its children goes over that length, the change is not saved.
+
+Pages of different types can share the same path. In that case, the site shows the widget page before the content page, and the content page before the origination page.
+
+Modyo has reserved paths, so you cannot use them as the path of a top-level page, that is, a page without a **Parent page**:
 <table style="border: none;"><tr style="border: none;">
 <td style="border: none;"><ul>
 <li>404</li>
@@ -162,6 +185,7 @@ Modyo has reserved paths for pages, so you cannot use them as paths for your cus
 <li>ping</li>
 <li>preview</li>
 <li>profile</li>
+<li>realms</li>
 </ul></td>
 <td style="border: none;"><ul>
 <li>robots</li>
@@ -177,6 +201,32 @@ Modyo has reserved paths for pages, so you cannot use them as paths for your cus
 <li>widget_manager</li>
 </ul></td>
 </tr></table>
+:::
+
+### Grids
+
+The grid defines the zones of the page where you can drop widgets. When you change the grid, widgets are rearranged into the zones of the new grid. In the selector you choose among nine grids, identified by the same value that `grid.resolve_type` returns in Liquid:
+
+| Grid                         | Zones                                             |
+|------------------------------|---------------------------------------------------|
+| `full_grid`                  | A single full-width main zone.                    |
+| `full_two_cols_grid`         | Full-width main zone plus two columns.            |
+| `full_three_cols_grid`       | Full-width main zone plus three columns.          |
+| `side_left_grid`             | Main zone plus a left sidebar.                    |
+| `side_right_grid`            | Main zone plus a right sidebar.                   |
+| `side_left_one_col_grid`     | Main zone, left sidebar, and a full-width zone.   |
+| `side_right_one_col_grid`    | Main zone, right sidebar, and a full-width zone.  |
+| `side_left_three_cols_grid`  | Main zone, left sidebar, and three columns.       |
+| `side_right_three_cols_grid` | Main zone, right sidebar, and three columns.      |
+
+To iterate over the widgets of each zone from your templates, see the [grid](/en/platform/channels/liquid-markup/objects.html#grid) objects.
+
+### Route delegation
+
+When you enable **Delegate child routes to this page**, Modyo serves this same page for any sub-route that does not match another widget page of the site, and your JavaScript router takes absolute control of those sub-routes. This includes the content and origination pages you nest under it: their URLs show the delegating page.
+
+:::tip Tip
+On content pages you do not need to delegate routes: the **Index** resolves the list route and the **Show** resolves the sub-route of each entry.
 :::
 
 ## Content Page
@@ -202,7 +252,7 @@ The index page contains the list of all entries of the content type. Here you ca
 
 #### Edit
 
-- **Enable Entry Index**: Disabled by default. The path it takes is the name given to the page when it was created. If this option is disabled, only **Show** pages will be accessible, and if access is attempted, a 404 error will be displayed.
+- **Enable Entries Index**: Enabled by default. The index responds at the page's **Path**, which includes the paths of its parent pages, not at its name. If you disable this option, only the URL of each entry (**Show**) is accessible, and the index path responds with a 404 error.
 - **Layout**: The Layout template that will load for the Index.
 - **Custom Meta Tag**: Adds custom meta tags to optimize the SEO of the index. This meta tag will only be loaded for the Index, not for the Show. You can also use Liquid to load dynamic meta tags.
 
@@ -244,7 +294,7 @@ It can be complemented with the use of [Content Filters](/en/platform/channels/l
 
 #### Properties
 
-Displays the content type and the space to which this page belongs. You will also have options to change the name, parent page, path, and an excerpt.
+Displays the content type and the space to which this page belongs. You will also have options to change the name, parent page, path, excerpt, the **Use categories** option, and [privacy](/en/platform/channels/pages.html#privacy). To learn how **Use categories** changes the page URLs, see [URLs with categories](/en/platform/channels/pages.html#urls-with-categories).
 
 :::tip Tip
 If the custom domain is enabled, to find the URL format, you must go to ``Site Settings > Domains``.
@@ -258,13 +308,23 @@ The excerpt is added as part of the meta tags to improve SEO. This is possible f
 <meta name="description" content="{{ page.excerpt }}"/>
 ```
 
-#### Route delegation
+#### URLs with categories
 
-Enables route delegation to allow absolute control over the page's sub-routes through the JavaScript router.
+With the **Use categories** option enabled, the full path of each entry's [category](/en/platform/content/categories.html) becomes part of its URLs. For example, for a content page with the path `blog`, a `travel` category, and an entry with the slug `visit-chile`:
+
+- The index responds at `blog` with all entries and at `blog/travel` with the entries of the `travel` category and its subcategories.
+- If the entry belongs to `travel`, it responds at `blog/travel/visit-chile`. If it has no category, it responds at `blog/visit-chile`.
+- The entry URL returned by the `entry` object in Liquid includes the path of its category.
+
+With the option disabled, each entry responds at `blog/<slug>` regardless of its category (the one in the example, at `blog/visit-chile`), and the index only responds at `blog`. To read the category that comes in the URL from your templates, use the `category_path` and `category` variables [from content pages](/en/platform/channels/liquid-markup/variables.html#from-content-pages).
 
 ## Privacy
 
-If you enable privacy on a page, a session will be required to view this page. Along with privacy, you can also associate [Segments](/en/platform/customers/segments), so that only users belonging to those segments will be able to access this page. Those who are not part of the selected segment group will be redirected to the previous page or the site's home page.
+If you enable privacy on a page, a session will be required to view this page. Along with privacy, you can also associate [Segments](/en/platform/customers/segments), so that only users belonging to those segments will be able to access this page. Visitors without a session are redirected to sign in to the site. Signed-in users who do not belong to the selected segments see the site's [404 view](/en/platform/channels/templates.html#errors-in-views), or go to the home page if the **Redirect to home when a URL is not found** option is enabled.
+
+Privacy is only available if the site is connected to a [realm](/en/platform/channels/sites.html#general). Without a realm, the **Private** checkbox is disabled and you cannot associate segments. The segments you can choose are those of the site's realm.
+
+When you create a widget or content page with a **Parent page**, the new page takes the privacy and segments of that parent. You can change them afterwards in its **Properties** without affecting the parent.
 
 ## Meta tags
 

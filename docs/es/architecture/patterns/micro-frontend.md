@@ -8,7 +8,7 @@ El desarrollo de experiencias de usuario modernas presenta desafíos debido a la
 
 ### Definición de micro frontend
 
-Según la [definición oficial](https://micro-frontends.org), un micro frontend es la extensión del concepto de [microservicios](microservice.md) al frontend. Su objetivo es crear una arquitectura modular en escenarios que, de otro modo, se convertirían en monolitos de frontend, como las Single-Page Applications (SPAs).
+Según la [definición oficial](https://micro-frontends.org), un micro frontend es la extensión del concepto de [microservicios](/es/architecture/patterns/microservice.html) al frontend. Su objetivo es crear una arquitectura modular en escenarios que, de otro modo, se convertirían en monolitos de frontend, como las Single-Page Applications (SPAs).
 
 Los micro frontends permiten a los equipos trabajar con mayor autonomía, ya que su responsabilidad se limita a su contexto. Esto los obliga a definir contratos de operación entre ellos, sin requerir que se implementen con la misma tecnología.
 
@@ -32,7 +32,7 @@ Los micro frontends permiten a los equipos trabajar con mayor autonomía, ya que
 El desarrollo de micro frontends se realiza utilizando herramientas y frameworks abiertos. Una vez creado el componente, se despliega directamente en la Plataforma Modyo mediante el Modyo Command Line Interface (CLI).
 
 :::tip Plataforma Modyo
-Modyo Connect no es un requisito para el desarrollo y despliegue de micro frontends en la Plataforma Modyo, pero facilita la gestión de [repositorios de código](/es/connect/components/development.md#repositorio-de-codigo) y automatizaciones de [integración continua](/es/connect/components/development.md#integracion-continua) para un flujo de trabajo eficiente.
+Modyo Connect no es un requisito para el desarrollo y despliegue de micro frontends en la Plataforma Modyo, pero facilita la gestión de [repositorios de código](/es/connect/development/code-repository.html) y automatizaciones de [integración continua](/es/connect/development/continuous-integration.html) para un flujo de trabajo eficiente.
 :::
 
 #### Consideraciones generales

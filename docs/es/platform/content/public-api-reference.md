@@ -46,7 +46,7 @@ Entries JSON:
         "uuid": "9b0a24a6-d84f-4851-8750-a86244947510",
         "space": "myspace",
         "name": "Lorem Ipsum dolor",
-        "slug": "lorem-ipsum-dolor"
+        "slug": "lorem-ipsum-dolor",
         "type": "Post",
         "private": false,
         "targets": [],
@@ -74,7 +74,7 @@ Entries JSON:
         "uuid": "1c9b24a6-d84f-4851-8750-a86244963589",
         "space": "myspace",
         "name": "Lorem Ipsum",
-        "slug": "lorem-ipsum"
+        "slug": "lorem-ipsum",
         "type": "Post",
         "private": false,
         "targets": [],
@@ -98,6 +98,7 @@ Entries JSON:
       }
     }
   ]
+}
 ```
 
 Entries JSON Schema:
@@ -309,7 +310,7 @@ Entry JSON:
       "uuid":"9b0a24a6-d84f-4851-8750-a86244947510",
       "space": "myspace",
       "name": "Lorem Ipsum dolor",
-      "slug": "lorem-ipsum-dolor"
+      "slug": "lorem-ipsum-dolor",
       "type": "Post",
       "private": false,
       "targets": [],
@@ -331,6 +332,7 @@ Entry JSON:
       "excerpt":"Lorem Ipsum dolor",
       "body":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
    }
+}
 ```
 
 Entry JSON Schema:
@@ -514,60 +516,71 @@ curl -X GET "https://test.modyo.com/api/content/spaces/{my_space}/types/{type}/e
 
 ### Desplegar cantidad total de Entradas
 
-Para acceder a la cantidad total de entradas que retorna un filtro de contenido, puedes usar el filtro de liquid `total_entries`, por ejemplo:
+Todo listado de entradas incluye en la raíz de la respuesta un objeto `meta` con el total de entradas que coinciden con la consulta, en el campo `total_entries`. Ese total corresponde a la consulta completa, no a la página que estás viendo.
 
+Si sólo necesitas el conteo, pide una página de un elemento con `per_page=1` y lee `meta.total_entries`:
 
 ```shell
-curl -X GET "https://test.modyo.com/api/content/spaces/{my_space}/entries?category_id=25"
+curl -X GET "https://my_account.modyo.com/api/content/spaces/my_space/types/my_type/entries?meta.category=my_category&per_page=1"
 ```
 
-La respuesta contiene el objeto `meta` que incluye un campo que te ayudará a navegarlo. La forma del objeto retornado será algo como esto:
+La forma del objeto retornado será algo como esto:
 
 ```json
 "meta": {
     "total_entries": 4,
-    "per_page": 10,
+    "per_page": 1,
     "current_page": 1,
-    "total_pages": 1
+    "total_pages": 4
   },
 ```
 
+:::warning Atención
+Las entradas siempre se consultan bajo un tipo de contenido: la única ruta disponible es `/spaces/:space_uid/types/:type_uid/entries` y no existe `/spaces/:space_uid/entries`. Para filtrar por categoría usa `meta.category` con la ruta completa de la categoría, ya que `category_id` no es un parámetro válido y la petición responde `400` con <code v-pre>{"error":{"query":{"category_id":["Unknown parameter"]}}}</code>.
+:::
+
 ### Filtrar
 
-En la búsqueda de contentTypes con filtros, se hará una distinción a nivel de app dependiendo de los filtros solicitados:
-
-Metadata (ej: Tags, Category, Fechas): Búsquedas por SQL, serán consultables mediante parámetros `meta.param_name`. Esto mientras sólo sea la Metadata lo que se esté consultando.
+Puedes filtrar las entradas por sus atributos de metadata, con parámetros `meta.nombre_atributo`, y por los campos del tipo de contenido, con parámetros `fields.nombre_campo`. Puedes combinar ambos tipos de filtro en la misma petición.
 
 - Tags: consultables de dos maneras
   - `meta.tags=tag_name`
   - `meta.tags[in][]=tag1_name&meta.tags[in][]=tag2_name`
-- Categories, consultable de una sola manera: `meta.category=category_full_path` considerará categorías hijas de la consultada
-- Fechas de creación/actualización/publicación/despublicación: consultables usando especificación ISO-8601 y con posibilidad de búsqueda por rangos (lt, gt):
+- Categorías: se consultan con la ruta completa de la categoría y siempre consideran sus categorías hijas. Puedes usarlas de tres maneras:
+  - `meta.category=category_full_path` entrega las entradas de esa categoría y de sus hijas.
+  - `meta.category[in][]=category1_full_path&meta.category[in][]=category2_full_path` entrega las entradas de cualquiera de esas categorías o de sus hijas.
+  - `meta.category[nin][]=category_full_path` excluye las entradas de esa categoría y de sus hijas.
+
+  `meta.category` no admite otros operadores.
+- Fechas de creación/actualización/publicación: consultables usando especificación ISO-8601 y con posibilidad de búsqueda por rangos (lt, gt):
   - `.../entries?meta.created_at=1987-11-19T13:13:13`
   - `.../entries?meta.updated_at[lt]=1987-11-19`
   - `.../entries?meta.published_at[gt]=1987-11-19`
-- Fields: Búsquedas por medio de ElasticSearch, por ejemplo:
-  - Ubicación: la búsqueda será por queryString (y se buscará en los campos street_name, country, admin_area_levels) o por geohash. En ambos casos debes cambiar <span v-pre>`{{field_name}}`</span> por el nombre del campo de ubicación del tipo de contenido
-    - <span v-pre>`.../?fields.{{field_name}}[search]=chile`</span>. Con el campo llamado `location` quedaría: `.../?fields.location[search]=chile` Esta búsqueda no toma en cuenta mayúsculas ni minúsculas, pero sí toma en cuenta los espacios, tildes y caracteres especiales.
+- Campos del tipo de contenido, por ejemplo:
+  - Ubicación: la búsqueda será por queryString (y se buscará en la dirección, el país y las áreas administrativas) o por geohash. En ambos casos debes cambiar <span v-pre>`{{field_name}}`</span> por el nombre de un campo de ubicación del tipo de contenido. Ese nombre sólo habilita el operador: la búsqueda considera todos los campos de ubicación del tipo de contenido, así que si el tipo tiene más de uno, el resultado incluye las entradas que coinciden en cualquiera de ellos.
+    - <span v-pre>`.../?fields.{{field_name}}[search]=chile`</span>. Con el campo llamado `location` quedaría: `.../?fields.location[search]=chile` En la dirección, esta búsqueda no toma en cuenta mayúsculas ni minúsculas, pero sí los espacios, tildes y caracteres especiales. En el país y las áreas administrativas la coincidencia es exacta, así que escribe el valor tal como está guardado, incluidas las mayúsculas.
     - <span v-pre>`.../?fields.{{field_name}}[geohash]=66j`</span>. Con el campo llamado `location` quedaría: `.../?fields.location[geohash]=66j`
   - `.../entries?fields.color=black`
 
-###### Filtro de idiomas
+##### Filtro de idiomas
 
-La API de Modyo entrega entries en el idioma por defecto del Espacio, a menos que se pida explícitamente otro idioma a través del parámetro de query string locale o el Accept-Language header.
+La API de contenido entrega las entradas en el idioma por defecto del Espacio. Para pedir otro idioma usa el parámetro de query string `locale`, que es la única vía disponible: la API de contenido no lee la cabecera `Accept-Language`.
 
-Por ejemplo, para obtener entries en el idioma Español-Chile (es-cl):
+Por ejemplo, para obtener entradas en el idioma Español (es):
 
-```plain
-Query string: GET .../posts/entries?locale=es-cl
-Header: Setear Accept-Language es-cl
+```shell
+curl -X GET "https://my_account.modyo.com/api/content/spaces/my_space/types/my_type/entries?locale=es"
 ```
+
+:::warning Atención
+El idioma que pidas tiene que estar habilitado en el Espacio. Si no lo está, la petición no cae al idioma por defecto: responde `400` con <code v-pre>{"error":"Locale not available for this space"}</code>.
+:::
 
 ##### Operadores
 
 Las principales operaciones sobre campos son:
 
-- [gt],[lt] = greater/less than, aplicable en enteros y fechas
+- [gt],[lt] = greater/less than, aplicable en campos Booleano, Decimal, Entero y Fecha, y en `meta.created_at`, `meta.updated_at` y `meta.published_at`. Si combinas [gt] y [lt] sobre un mismo campo numérico o de fecha, el valor de [lt] tiene que ser mayor que el de [gt]; si no, la petición responde `400`.
 - [in] = permite incluir varios valores que entran en una consulta tipo OR
 - [has] = permite incluir varios valores, que entran en una consulta tipo AND, sólo funciona en campos múltiples y de texto.
 - [nin] = permite incluir varios valores, que entran en una consulta NOT IN
@@ -576,18 +589,18 @@ Las principales operaciones sobre campos son:
 
 Ejemplo:
 
-- `../entries?meta.created_at[in][]=1987-11-19T13:13:13&meta.created_at[in][]=1987-11-19T14:14:14` buscará entries creadas el 11 de noviembre, tanto a las 13:13 como 14:14
+- `../entries?meta.created_at[in][]=1987-11-19T13:13:13&meta.created_at[in][]=1987-11-19T14:14:14` buscará entries creadas el 19 de noviembre de 1987, exactamente a las 13:13:13 o a las 14:14:14
 
 ##### Campos retornados
 
-Mediante el parámetro fields se puede escoger qué parámetros se devuelven en el documento:
-
-Los campos de metadata se referencian como: meta.attr_name (ej meta.tags)
-Los campos de las entries como: field.attr_name
-Se usa una expresiónJsonPath por ejemplo:
+Mediante el parámetro `fields` puedes escoger qué valores se devuelven, con una expresión JSONPath que se aplica sobre la respuesta completa. En el listado, los atributos de metadata se referencian como `$.entries[*].meta.attr_name` (ej: `$.entries[*].meta.tags`) y los campos de las entradas como `$.entries[*].fields.attr_name`. En una entrada puntual, las rutas son `$.meta.attr_name` y `$.fields.attr_name`. Por ejemplo:
 
 `.../entries?fields=$.entries[*].meta.uuid` para obtener sólo los uuid de la meta-data de los entries.
 `.../entries?fields=$..description` para obtener todos los campos _description_ en los entries.
+
+:::warning Atención
+Cuando usas `fields`, la respuesta deja de ser el objeto original (en el listado, el que tiene `entries` y `meta`) y pasa a ser un arreglo con los valores que coinciden con la expresión, sin `meta.total_entries` ni los datos de paginación. Si la expresión no es válida, la petición responde `400`.
+:::
 
 ##### Igualdades/Desigualdades en arrays
 
@@ -602,16 +615,69 @@ Los campos que buscan en elementos múltiples (checkboxes, multiple) pueden usar
 
 ### Ordenar
 
-De la misma forma en que se puede filtrar por categoría `by_category`, tags `by_tags` y por uuid `by_uuid`, se puede crear un filtro para ordenar los resultados por los atributos "meta" `name`, `slug`, `created_at`, `updated_at`, `published_at` de las entradas usando los filtros `sort_by`, de la siguiente forma:
+El orden de los resultados se especifica con los parámetros `sort_by` y `order`:
 
-El orden de los resultados se debe especificar con los parámetros `sort_by` y `order`:
+- `sort_by`: nombre del atributo por el que quieres ordenar, siempre con el prefijo `meta.` o `fields.`. Un nombre sin prefijo, o un atributo que no sea ordenable, responde `400` con <code v-pre>{"error":{"query":{"sort_by":["Key not sortable"]}}}</code>.
+- `order`: `asc` o `desc`. Es opcional y su valor por defecto es `asc`. Si envías `sort_by` con un `order` distinto, la petición responde `400` con <code v-pre>{"error":{"query":{"order":["Supported values: asc, desc. asc is selected when no order is specified"]}}}</code>.
 
-- `sort_by`: indicando el nombre del atributo (ej: meta.tags, o fields.name)
-- `order`: ['asc','desc'] (opcional, asc por default)
+Los atributos de metadata que puedes usar en `sort_by` son:
+
+- `meta.uuid`
+- `meta.name`
+- `meta.slug`
+- `meta.created_at`
+- `meta.updated_at`
+- `meta.published_at`
+- `meta.unpublished_at`
+- `meta.category`
+- `meta.category_slug`
+- `meta.category_name`
 
 ```shell
-curl -X GET "https://test.modyo.com/api/content/spaces/{my_space}/types/{type}/entries?sort_by=id&order=desc"
+curl -X GET "https://my_account.modyo.com/api/content/spaces/my_space/types/my_type/entries?sort_by=meta.published_at&order=desc"
 ```
+
+También puedes ordenar por un campo propio del tipo de contenido usando el prefijo `fields.`, siempre que el campo sea de tipo Booleano, Checkbox, Decimal, Dropdown, Entero, Fecha, Radio o Texto de una línea. El resto de los [tipos de campo](/es/platform/content/types.html), como Texto enriquecido, Opciones múltiples, Ubicación, Archivo o Grupo, no son ordenables.
+
+Por ejemplo, para ordenar por un campo llamado `priority` de tipo Entero:
+
+```shell
+curl -X GET "https://my_account.modyo.com/api/content/spaces/my_space/types/my_type/entries?sort_by=fields.priority&order=asc"
+```
+
+:::warning Atención
+`meta.tags` no es ordenable, sólo sirve como filtro.
+:::
+
+### Vista previa
+
+Por defecto, la API de contenido entrega sólo las versiones publicadas de las entradas. Cuando abres una página del sitio en [modo vista previa](/es/platform/core/#modos-de-vista-previa) con el selector **SDK de contenido** de la barra de vista previa en **Editable**, la plataforma agrega a esa página un token de vista previa. Las llamadas que la página hace a la API de contenido con `fetch` o `XMLHttpRequest`, ya sea a su mismo dominio o al dominio de la cuenta, viajan con ese token, y la API entrega las versiones editables de las entradas en lugar de las publicadas. En esas respuestas, `meta.version_type` llega con el valor `editable`.
+
+Esto aplica tanto al listado de entradas como a una entrada puntual:
+
+```bash
+https://www.example.com/api/content/spaces/:space_uid/types/:type_uid/entries
+
+https://www.example.com/api/content/spaces/:space_uid/types/:type_uid/entries/:entry_uuid
+```
+
+Sólo los endpoints de entradas cambian de versión. El esquema del tipo de contenido, las categorías y las ubicaciones no se ven afectados por el selector.
+
+Cuando la petición trae un token de vista previa válido, la respuesta deja de ser cacheable: la cabecera `cache-control` pasa de `public, no-cache` a `no-store, must-revalidate, private, max-age=0`, para que ni el navegador ni la CDN guarden una versión editable. Con el selector en **Publicada**, la página no recibe el token y las respuestas mantienen `public, no-cache`.
+
+La plataforma agrega el token a la URL de cada llamada con los parámetros `preview_token` y `preview_nonce`, que la API no considera como filtros.
+
+La API vuelve a entregar contenido publicado cuando se cumple cualquiera de estas condiciones:
+
+- La petición no lleva el token de vista previa, por ejemplo porque se hace directamente a la API desde otra pestaña, desde un servidor, con `curl` o desde un front-end local, aunque sea en el mismo navegador. Tampoco lo llevan las peticiones que no usan el `fetch` o el `XMLHttpRequest` de la propia página, como las de un web worker.
+- El token venció. Dura 60 minutos desde que se cargó la página: si la mantienes abierta más tiempo, recárgala.
+- La sesión de administrador está impersonando a un usuario.
+- La sesión perdió su autorización, por ejemplo porque se cerró sesión o un administrador revocó el acceso.
+- La cuenta valida la huella del navegador y la petición no coincide con el navegador que abrió la sesión.
+
+:::warning Atención
+La vista previa de la API depende del token que la plataforma agrega a la página abierta en vista previa, así que un usuario final anónimo o un consumo desde servidor siempre recibe contenido publicado. Para revisar lo que verá tu aplicación en producción, basta con llamar a la API directamente, fuera de esa página, por ejemplo desde otra pestaña.
+:::
 
 ### Contenido privado
 
@@ -630,28 +696,28 @@ El token de acceso al contenido es un token público en formato [JWT](https://to
 
 El token de acceso a contenido (content delivery token) contiene los siguientes atributos:
 
-- **iss**: URL base de la API de customers
-- **aud**: URL base de la API de contenido
-- **sub**: Nombre del space
-- **exp**: Tiempo de expiración del token
-- **access_type**: delivery,
-- **segmentos**: Array de segmentos
+- **iss**: URL con la que Modyo identifica al emisor del token. Es informativa y trae un segmento `/profile/` que no corresponde a ninguna ruta real, así que no la uses como la dirección a la que llamar.
+- **aud**: URL base de la API de contenido.
+- **sub**: UUID de la cuenta, no el nombre del space. La API de contenido compara este valor con el UUID de la cuenta que atiende la petición y sólo habilita el contenido privado cuando coinciden.
+- **exp**: Momento de expiración del token, calculado con el tiempo de vida configurado en la cuenta. Revisa [Token de Entrega de Contenido (JWT - JSON Web Token)](/es/platform/core/security.html#token-de-entrega-de-contenido-jwt-json-web-token) para cambiarlo.
+- **access_type**: Siempre `delivery`.
+- **segments**: Arreglo con los UUID de los segmentos a los que pertenece el usuario.
 
 Por ejemplo:
 
 ```javascript
 {
-  "iss": "http://my-account.modyo.me/api/customers",
-  "aud": "http://my-account.modyo.me/api/content",
-  "sub": "account_uuid",
+  "iss": "https://my_account.modyo.com/api/customers/realms/my_realm/profile/delivery_token",
+  "aud": "https://my_account.modyo.com/api/content",
+  "sub": "0f3d1b6c-5a2e-4c81-9b7f-2d84a6e05c19",
   "exp": 1516242622,
   "access_type": "delivery",
-  "segments": ["segment1", "segment2"]
+  "segments": ["7a41c9d2-3e58-4b60-8f13-95c2d7ae61b0", "c86b0f45-19da-4e27-b3a8-6f04d5217e9c"]
 }
 ```
 
 :::warning Atención
-Para poder acceder a la URL de obtención del token, debes asegurarte de tener una sesión iniciada con un usuario en la cuenta o al menos en un sitio de la misma, de lo contrario recibirás un error `404 - Not found`.
+Para pedir el token necesitas la credencial de un usuario con sesión iniciada en el reino. Sin ella el endpoint responde `401` con <code v-pre>{"error":{"user_session":"user not found"}}</code>, no `404`. El `404` es otra cosa: aparece cuando el `realm_uid` de la URL no corresponde a ningún reino activo de la cuenta. Si el usuario tiene pendiente restablecer su contraseña, el endpoint responde `403` hasta que inicie sesión con su nombre de usuario y contraseña para completar el proceso. Las credenciales que acepta la API de Customers están en [Autenticación](/es/platform/customers/api.html#autenticacion).
 :::
 
 :::warning Atención

@@ -17,7 +17,7 @@ Filters can also be chained together by adding additional filter statements (sta
 ```liquid
 Hello {{ 'tobi' | upcase }}
 Hello tobi has {{ 'tobi' | size }} letters!
-Hello {{ '*tobi*' | textilize | upcase }}
+Hello {{ '  tobi  ' | strip | upcase }}
 Hello {{ 'now' | date: "%Y %h" }}
 ```
 
@@ -28,9 +28,20 @@ Hello {{ 'now' | date: "%Y %h" }}
 Adds a string *e.g.*
 <span v-pre>`{{ 'foo' | append:'bar' }} #=> 'foobar'`</span>
 
+### Base64 decode
+
+Decodes a Base64-encoded string *e.g.*
+<span v-pre>`{{ 'SGVsbG8gd29ybGQ=' | base64_decode }} #=> 'Hello world'`</span>
+
+### Base64 encode
+
+Encodes a string to Base64 *e.g.*
+<span v-pre>`{{ 'Hello world' | base64_encode }} #=> 'SGVsbG8gd29ybGQ='`</span>
+
 ### Capitalize
 
-Capitalizes the first letter of each word in the input string.
+Capitalizes the first character of the string and converts the rest to lowercase *e.g.*
+<span v-pre>`{{ 'hello WORLD' | capitalize }} #=> 'Hello world'`</span>
 
 ### Ceiling
 
@@ -103,7 +114,7 @@ Modulo *e.g.*
 <span v-pre>`{{ 3 | modulo:2 }} #=> 1`</span>
 
 ### Newline to br
-Replaces each newline (\n) with HTML break tag.
+Inserts an HTML line break (`<br />`) before each newline (\n) in the text.
 
 ### Plus
 Performs addition *e.g.*
@@ -133,9 +144,6 @@ Rounds to the nearest integer or to the specified number of decimals *e.g.* <spa
 
 ### Rstrip
 Removes all whitespace from the end of a string
-
-### Script tag
-Generates the HTML `<script>` tag for JavaScript, taking as parameters the URL and attributes of the form `attr: 'value'`, *e.g.* <span v-pre>`{{ 'my-js-url' | script_tag: async: 'async', defer: 'defer' }}`</span> => `<script src='my-js-url' type='text/javascript' async='async' defer='defer'></script>`
 
 ### Size
 Returns the size of an array or string
@@ -179,9 +187,9 @@ Adds currency format to a value. *e.g.*
 <span v-pre>`{{ 1890.5123 | format_currency: unit: '¥', separator: ',', delimiter: '.', precision: 3 }} = ¥1.890,512`</span>
 
 :::warning Important
-This filter determines the currency format and takes precedence over any other currency configuration.
+The parameters you pass to the filter take precedence over any other currency configuration, but they aren't merged with it: if you pass at least one, Modyo uses only the ones you set and takes the missing ones from the predefined format of the site's language, not from the realm. For example, with only `unit: 'US$'` you lose the realm's separator, delimiter, and precision, so pass all four parameters when you need a complete format.
 
-If you don't specify currency parameters with the currency filter, Modyo uses the realm's [payment](/en/platform/customers/settings.html#payment-configuration) configuration.
+If you don't specify currency parameters with the currency filter, Modyo uses the realm's [payment](/en/platform/customers/settings.html#payment-settings) configuration.
 
 If the site doesn't have an associated realm and you don't specify parameters, the predefined format of the site's language will be applied.
 :::
@@ -193,20 +201,113 @@ If the site doesn't have an associated realm and you don't specify parameters, t
 - delimiter - thousands separator.
 - precision - number of decimal digits.
 
+Any other key is ignored, although it still makes the filter stop using the realm's configuration. Write `unit` as text and `precision` as a number: with another type of value, such as `unit: 123` or `precision: 'two'`, the filter aborts and the published HTML keeps the comment `<!-- Liquid Error -->` in place of the amount.
+
+
+## Common
+
+These Liquid filters are available in any template and don't depend on a module.
+
+### Handle
+
+Turns a text into a URL-friendly identifier, *e.g.*
+<span v-pre>`{{ ' A s.?%$!' | handle }} #=> 'a-s'`</span>
+
+**Parameters**
+
+- `string` (String) — text to convert (object before the pipe).
+- `separator` (String) (default: '-') — character that replaces whitespace and special characters.
+- `preserve_case` (Boolean) (default: false) — with `true` it keeps the original text's casing.
+
+The rules it applies are:
+
+- It lowercases everything, unless `preserve_case` is `true`.
+- It transliterates accented characters to their unaccented equivalent before replacing: `ñ` becomes `n` and `á` becomes `a`.
+- It replaces whitespace and special characters with the separator.
+- It keeps the hyphens (`-`) and underscores (`_`) of the original text, even if you use another separator.
+- It collapses a sequence of consecutive whitespace or special characters into a single separator.
+- It removes the separators at the beginning and at the end.
+- With an empty text it returns an empty text.
+
+*e.g.*
+
+<span v-pre>`{{ 'Hello   World!!!' | handle }} #=> 'hello-world'`</span>
+
+<span v-pre>`{{ '---Hello---World---' | handle }} #=> 'hello-world'`</span>
+
+<span v-pre>`{{ 'CamelCase Words' | handle: '-', true }} #=> 'CamelCase-Words'`</span>
+
+<span v-pre>`{{ ' A s.?%$!' | handle: '.', true }} #=> 'A.s'`</span>
+
+<span v-pre>`{{ 'Año Nuevo' | handle }} #=> 'ano-nuevo'`</span>
+
+<span v-pre>`{{ 'my_file final' | handle }} #=> 'my_file-final'`</span>
+
+<span v-pre>`{{ 'a-b c' | handle: '.' }} #=> 'a-b.c'`</span>
+
+### Handleize
+
+Alias of `handle`, with the same signature and the same result (e.g. <span v-pre>`{{ ' A s.?%$!' | handleize }} #=> 'a-s'`</span>). It exists for templates coming from Shopify; in new templates use `handle`.
 
 ## Content
 
 These are the liquid filters that alter values related to the Content module in Modyo Platform.
 
+### Asset lookup by UUID
+
+The `asset_image`, `asset_link`, `asset_url_by_uuid` and `asset_video` filters look the file up by its UUID within the account, not within the site.
+
+:::warning Attention
+If the UUID doesn't match any file in the account, none of the four fails or returns empty: they print the message `Liquid error: Asset with uuid 'the-requested-uuid' does not exist`, which ends up published on the page. Check the UUIDs whenever you move templates or content across accounts.
+:::
+
 ### Asset image
 
-Returns the tags of an image using its uuid from the File Manager. *e.g.*
-<span v-pre>`{{ uuid | asset_image }}`</span>
+Returns the tags of an image using its uuid from the File Manager. With CDN image processing active, you can use these additional parameters: width, height, blur, quality, format, fit, widths, sizes and style. *e.g.*
+<span v-pre>`{{ uuid | asset_image: width: 40, format: 'auto', fit: 'cover' }}`</span>
+
+**Parameters**:
+- uuid (String) — asset uuid
+- width (Integer) — width in pixels
+- height (Integer) — height in pixels
+- quality (Integer) — quality percentage
+- blur (Integer) — blur level
+- fit (String) — how the image fits its box
+- format (String) — output format
+- widths (String) — comma-separated list of widths; emits a `srcset` attribute with an `Nw` descriptor for each width
+- sizes (String) — emitted as is, as the `sizes` attribute
+- style (String) — emitted as is, as the `style` attribute
+
+The image's `alt` comes from the file's **Alt text**, edited in [Media](/en/platform/content/asset-manager.html#edit-a-file).
+
+The filter has three possible outputs:
+
+- **Without options, or with CDN image processing disabled**: an `<img>` with the file's original URL. All the options are ignored.
+- **With options and processing enabled**: an `<img>` with the transformed URL.
+- **With `widths`**: on top of the transformed URL in `src`, a `srcset` with one variant per width in the list, plus the `sizes` and `style` attributes if you passed them.
+
+*e.g.* <span v-pre>`{{ uuid | asset_image: width: 800, quality: 80, widths: '300, 600, 900', sizes: '(min-width: 400px) 298px, 78.75vw' }}`</span>
+
+:::warning Attention
+`sizes` and `style` are only emitted when you also pass `widths`: without it, the filter returns an `<img>` with `src` and `alt` and nothing else. And only `width`, `quality`, `blur` and `height` are propagated to each `srcset` variant, not `fit` or `format`, so if you need the same crop or the same format at every resolution, build the `srcset` by hand with several calls to the filter.
+:::
+
+:::tip Tip
+CDN image processing is enabled for the whole platform, not per account, so it isn't something you can turn on from your account's administration. While it isn't enabled, all nine options are ignored without an error and the page publishes the image at its original size. With processing enabled, the options that reach the transformed URL are `width`, `height`, `quality`, `blur`, `fit` and `format` by default, but the platform may have a different list configured.
+:::
 
 ### Asset link
 
-Returns the URL of an image using its uuid from the File Manager. *e.g.*
-<span v-pre>`{{ uuid | asset_link: 'This is a link for the asset' }}`</span>
+Emits an HTML anchor tag pointing to the File Manager file identified by its UUID. The argument is the visible link text and, if you omit it, the asset's file name is used instead. *e.g.*
+<span v-pre>`{{ uuid | asset_link: 'Download the guide' }}`</span> => `<a href='https://mydomain.com/uploads/guide.pdf'>Download the guide</a>`
+
+**Parameters**:
+- uuid (String) — asset uuid
+- label (String) (default: the asset's file name) — visible link text
+
+:::tip Tip
+If all you need is the file's address, to build your own markup, use `asset_url_by_uuid`.
+:::
 
 ### Asset URL by UUID
 
@@ -225,21 +326,31 @@ Returns the tags of a video using its uuid from the File Manager. *e.g.*
 
 ### By category
 
-Returns a list of Entries that belong to the selected Category. *e.g.*
+Returns a list of Entries that belong to any of the selected Categories or to their subcategories. *e.g.*
 <span v-pre>`{% assign filtered_entries = entries | by_category: 'category2,category1,category3' %}`</span>
 
 **Parameters**:
 - entries (ArrayEntry) — array with entries
-- list (String) (default: '') — String with comma-separated categories.
+- list (String | Array) (default: '') — category slugs or paths (`parent/child`), comma-separated or as an array.
+
+Each value is compared against the segments of the path of the entry's category, not against the category name. That is why a parent category also brings the entries of its subcategories, and a bare slug matches every category with that slug, at any level of the tree. To tell apart categories that share a slug in different branches, pass the path, such as `news/sports`. With several values, the result includes the entries that match any of them.
 
 ### By lang
 
-Returns a list of Entries that belong to a selected language. *e.g.*
-<span v-pre>`{% assign entries = widget.entries | locale: 'es,en,pt' %} => entries`</span>
+Returns a list of Entries in the given language. The filter is called `by_lang`: `locale` is the name of the parameter, not the name of the filter. *e.g.*
+<span v-pre>`{% assign entries = spaces['blog'].types['post'].entries | by_lang: 'es' %} => entries`</span>
 
 **Parameters**:
 - entries (ArrayEntry) — array with entries
-- locale (String) (default: '') — String with comma-separated languages.
+- locale (String) (default: '') — a single locale code
+
+`by_lang` replaces any language condition the collection already had, it doesn't add to it: the last `by_lang` in the chain wins.
+
+:::warning Attention
+It doesn't take a comma-separated list. A value such as `'es,en,pt'` is compared as-is against each entry's language, so the result is an empty collection instead of the union of the three languages. If you need several languages, resolve one collection per language and iterate them separately.
+
+Applied to anything that isn't a collection of entries, the filter aborts and the published HTML keeps the comment `<!-- Liquid Error -->` in place of the block.
+:::
 
 ### By slug
 
@@ -252,12 +363,14 @@ Returns a list of Entries that belong to a selected slug. *e.g.*
 
 ### By tag
 
-Returns a list of Entries that belong to a selected tag. *e.g.*
-<span v-pre>`{% assign entries = widget.entries | by_tag: 'tag2,tag1,tag3' %} => entries`</span>
+Returns a list of Entries that have all the given tags. *e.g.*
+<span v-pre>`{% assign entries = spaces['blog'].types['post'].entries | by_tag: 'tag2,tag1,tag3' %} => entries`</span>
 
 **Parameters**:
 - entries (ArrayEntry) — array with entries
-- locale (String) (default: '') — String with comma-separated tags.
+- list (String) (default: '') — String with comma-separated tags.
+
+With several tags, the result includes only the entries that have all of them, not the ones that have any of them. That sets it apart from `by_category`, `by_slug`, `by_type` and `by_uuid`, which return the entries that match any of the values. The comparison is case-insensitive.
 
 ### By type
 
@@ -266,7 +379,7 @@ Returns a list of Entries that belong to a selected Content Type. *e.g.*
 
 **Parameters**:
 - entries (ArrayEntry) — array with entries
-- locale (String) (default: '') — String with comma-separated content types.
+- list (String) (default: '') — String with comma-separated content types.
 
 ### By UUID
 
@@ -276,7 +389,7 @@ Filters an array of entries by one or more UUIDs.
 - entries (ArrayEntry) — collection (object before the pipe)
 - uuid_list (String) — comma-separated list of UUIDs
 
-Defaults: If `uuid_list` is blank returns the original collection.
+If `uuid_list` is empty, the result is an empty collection, just like with `by_slug`, `by_type` and `by_tag`.
 
 *e.g.* <span v-pre>`{% assign filtered = entries | by_uuid: 'uuid2,uuid1,uuid3' %}`</span>
 
@@ -284,82 +397,133 @@ Defaults: If `uuid_list` is blank returns the original collection.
 
 Applies multiple entry filters in one call. Supported option keys (all optional):
 - types: comma-separated type slugs (applies `by_type`)
-- categories: comma-separated category slugs (applies `by_category`)
-- tags: comma-separated tags (applies `by_tag`)
+- categories: comma-separated category slugs or paths; includes subcategories (applies `by_category`)
+- tags: comma-separated tags; the entry must have all of them (applies `by_tag`)
 - slugs: comma-separated entry slugs (applies `by_slug`)
 - uuids: comma-separated UUIDs (applies `by_uuid`)
-- locale: locale code (applies `by_lang`)
-- from_published_date: date string (>= `published_at`)
-- to_published_date: date string (<= `published_at`)
-- sort_by: field name (`name`, `slug`, `created_at`, `updated_at`, `published_at`, or a field path)
+- locale: a single locale code (applies `by_lang`; a comma-separated list is not supported)
+- from_published_date: string with the start date, from 00:00 on that day (applies `from_published_date`)
+- to_published_date: string with the end date, up to the end of that day (applies `to_published_date`)
+- sort_by: field name (default: `created_at`). Accepts `name`, `slug`, `created_at`, `updated_at` and `published_at`, or a field with its prefix (`fields.<name>` or `meta.<attribute>`); see [Sort By](/en/platform/channels/liquid-markup/filters.html#sort-by)
 - order: `asc` | `desc` (default: `desc`)
 - per_page: integer results per page (enables pagination if provided; default: 10)
-- page: integer page number (default: 1)
+- page: integer page number (enables pagination if provided; default: 1)
 
 *e.g.* <span v-pre>`{% assign entries = spaces['testing'].entries | by: types: 'promo,basic', locale: 'es', categories: 'starred,favorites', tags: 'test,test2', slugs: 'slug2,slug1', uuids: 'uuid2,uuid1', sort_by: 'name', order: 'asc', per_page: 10, page: 2 %}`</span>
 
-### Filter By
+`sort_by` and `order` are optional in the call, but not in effect: `by` always applies `sort_by`, using `created_at` and `desc` as defaults. That order is added after whatever order the collection already has, it doesn't replace it: if the collection comes sorted by an earlier `sort_by`, that criterion still wins and the one from `by` only breaks ties. The same holds for any chain of sorts, where the first one wins, so a `sort_by` chained after `by` only breaks ties and the listing stays sorted by creation date. To sort by another criterion, pass it in the `sort_by` and `order` keys of `by` or sort the collection before applying it.
 
-Returns a list of Entries that match a filter. *e.g.*
-<span v-pre>`{% assign entries = widget.entries | filter_by: field: 'name', eq: 'entry3Cat3' %}`</span>
+Pagination, on the other hand, is optional: it is applied only if you pass `per_page` or `page`. The defaults of those two keys are what the filter uses when you set one and omit the other, and they are subject to the URL parameter precedence described in [Paginated](/en/platform/channels/liquid-markup/filters.html#paginated).
+
+:::warning Attention
+Keys that `by` does not recognize are ignored silently, with no error or warning: a singular `type:` or a misspelled `tag:` filters nothing and the listing comes out complete. Check the key names against the list above before giving up on a filter that seems to do nothing.
+:::
+
+### Filter By (Extended Operators)
+
+Returns a list of Entries that match a filter.
 
 **Parameters**:
 - entries (ArrayEntry) — array with entries
 - opts (Hash) (default: {}) — hash with field and operator/value pairs
 
+The value of `field` is always written with its prefix:
+
+- `fields.<name>` for the content type's fields.
+- `meta.<attribute>` for metadata, with these attributes available: `meta.uuid`, `meta.name`, `meta.slug`, `meta.category`, `meta.category_slug`, `meta.category_name`, `meta.created_at`, `meta.updated_at` and `meta.published_at`. To filter by tags use `by_tag`.
+
+:::warning Attention
+A field name without a prefix is silently discarded: the filter raises no error and returns the whole collection, unfiltered. If a listing shows you every entry, check first that the value of `field` starts with `fields.` or with `meta.`.
+:::
+
 **Supported Operators** (use as keys in `opts`):
-- `eq` — equals (implicit when only `field` and value provided)
+- `eq` — equals. Always write it explicitly, as in `eq: 'value'`, and don't combine it with the others: if you include it, `filter_by` applies only `eq` and ignores the rest of the operators
+- `not` — not equal to. With `nil` as the value it returns the entries that do have a value in the field
 - `gt`, `lt` — greater than / less than
 - `in` — field value must be one of the comma-separated values
 - `nin` — field value must NOT be one of the comma-separated values
 - `has` — array-type field must contain all of the comma-separated values
+- `search` — searches the text in the attributes of the entry's locations; requires a location field
+- `geohash` — searches by proximity with a base 32 geohash; requires a location field
 
-All multi-value operators take a comma-separated string.
+Only `in`, `nin` and `has` take a comma-separated string; the rest take a single value. `search` and `geohash` behave just like in the [Content public API](/en/platform/content/public-api-reference.html#operators). If you pass `field` with no operator, or only with operators that aren't on the list, such as `all`, the filter returns the whole collection, unfiltered.
 
 **Examples**:
 
+Filter entries where the `status` field is 'published':
+<span v-pre>`{% assign entries = entries | filter_by: field: 'fields.status', eq: 'published' %}`</span>
+
 Filter entries where the `status` field is either 'published' or 'featured':
-<span v-pre>`{% assign entries = entries | filter_by: field: 'status', in: 'published,featured' %}`</span>
+<span v-pre>`{% assign entries = entries | filter_by: field: 'fields.status', in: 'published,featured' %}`</span>
 
 Filter entries where the `author_id` is not 1 or 5:
-<span v-pre>`{% assign entries = entries | filter_by: field: 'author_id', nin: '1,5' %}`</span>
+<span v-pre>`{% assign entries = entries | filter_by: field: 'fields.author_id', nin: '1,5' %}`</span>
 
 Filter entries that have both 'tech' and 'news' in their `categories` array field:
-<span v-pre>`{% assign entries = entries | filter_by: field: 'categories', has: 'tech,news' %}`</span>
+<span v-pre>`{% assign entries = entries | filter_by: field: 'fields.categories', has: 'tech,news' %}`</span>
+
+Filter entries whose `subtitle` field has any value:
+<span v-pre>`{% assign entries = entries | filter_by: field: 'fields.subtitle', not: nil %}`</span>
+
+Filter entries published after a date:
+<span v-pre>`{% assign entries = entries | filter_by: field: 'meta.published_at', gt: '2026-01-01' %}`</span>
+
+:::warning Attention
+There are two cases where `filter_by` aborts and the published HTML keeps the comment `<!-- Liquid Error -->` in place of the block: when you call it without `field`, and when you apply it to a collection whose content type can't be resolved, such as <span v-pre>`spaces['blog'].entries`</span>. Always start from a collection scoped to a single type, such as <span v-pre>`spaces['blog'].types['post'].entries`</span>.
+:::
 
 ### Filter By Query String
 
-Returns a list of Entries that match a query. You can use logical operators, various meta fields, URLs, or Liquid tags.
+Returns a list of Entries filtered with the parameters in the page URL. The filter takes no arguments: each visit applies the filters in its query string. *e.g.*
+<span v-pre>`{% assign entries = spaces['blog'].types['post'].entries | filter_by_query_string %}`</span>
+
+**Parameters**:
+- entries (ArrayEntry) — entry collection scoped to a content type
+
+**Fields**:
+- `meta.uuid`, `meta.name`, `meta.slug`, `meta.category`, `meta.category_slug`, `meta.category_name`, `meta.created_at`, `meta.updated_at` and `meta.published_at`
+- `fields.<name>`, for any field of the content type
+
+`meta.category` takes the full path of the category, such as `news/sports`, and includes the entries of its subcategories. To filter by tags use `by_tag`.
 
 **Operators**:
 
-- gt, lt, in, all, nin
+Without an operator, the parameter filters by equality. Operators are written in brackets after the field:
 
-**Fields**:
-- meta.category meta.category_slug meta.category_name meta.uuid meta.name meta.created_at
- meta.updated_at meta.published_at meta.unpublished_at meta.slug meta.tag
+- `gt`, `lt` and `not` take a single value, as in `?meta.published_at[gt]=2026-01-01`.
+- `in`, `nin` and `has` take a list: repeat the parameter with `[]`, even if you pass a single value, as in `?fields.color[in][]=red&fields.color[in][]=blue`.
+- `search` and `geohash` search location fields, just like in the [Content public API](/en/platform/content/public-api-reference.html#operators).
+
+Besides filtering by field, the URL accepts:
+
+- `sort_by` and `order` to sort the result. `sort_by` always takes the `fields.` or `meta.` prefix, and `order` is `asc` or `desc`, with `asc` as the default.
+- `search` to search for a text in the type's [Single-line text](/en/platform/content/types.html#single-line-text), [Multiline text](/en/platform/content/types.html#multiline-text) and [Rich text](/en/platform/content/types.html#rich-text) fields, and in the entry's name, slug, excerpt and category.
 
 **URL Examples**:
 
 - https://company.site.com/testsite?meta.category_slug=category3
-- https://company.site.com/testsite?meta.tag=tag_name
-- https://company.site.com/testsite?meta.tag[in][]=tag1_name&meta.tag[in][]=tag2_name
 - https://company.site.com/testsite?meta.created_at=1987-11-19T13:13:13
+- https://company.site.com/testsite?fields.color[in][]=red&fields.color[in][]=blue
+- https://company.site.com/testsite?search=modyo&sort_by=meta.published_at&order=desc
 
-*e.g.*
-<span v-pre>`{% assign entries = widget.entries | filter_by_query_string %}`</span>
-
-**Parameters**:
-- entries (ArrayEntry) — array with entries
+:::warning Attention
+The filter reads every parameter in the URL, not just the filter ones, and silently ignores the ones it doesn't recognize. Always apply it to a collection scoped to a type, such as <span v-pre>`spaces['blog'].types['post'].entries`</span>. On a whole-space collection, such as <span v-pre>`spaces['blog'].entries`</span>, the page works while the URL has no parameters, but any single parameter, even one that isn't a filter, such as `utm_source` or `page`, makes the filter abort and the published HTML keeps the comment `<!-- Liquid Error -->` in place of the block.
+:::
 
 ### From Published Date
 
-Returns a list of Entries that have a publication date more recent than the limit. *e.g.*
-<span v-pre>`{% assign entries = widgets.entries | from_published_date: date %}`</span>
+Returns a list of Entries published from the given date, including that day. *e.g.*
+<span v-pre>`{% assign entries = spaces['blog'].types['post'].entries | from_published_date: '2024-01-31' %}`</span>
 
 **Parameters**:
 - entries (ArrayEntry) — array with entries
-- date (Datetime)(default: Time.zone.now) — limit date
+- date (String) — limit date, required, such as `'2024-01-31'` or, with the day first, `'31/01/2024'`
+
+The filter takes only the day of the date, without the time: it includes the entries published from 00:00 on that day.
+
+:::warning Attention
+The date must arrive as a string. If you pass a date object, such as `entry.meta.published_at`, the filter aborts and the published HTML keeps the comment `<!-- Liquid Error -->` in place of the block. Convert it first with the `date` filter, as in `entry.meta.published_at | date: '%Y-%m-%d'`.
+:::
 
 ### Limit
 
@@ -367,8 +531,12 @@ Limits the number of results. *e.g.*
 <span v-pre>`{{ entries | limit: 1 }}`</span>
 
 **Parameters**:
-- object(Array) — array
+- entries (ArrayEntry) — entry collection (object before the pipe)
 - limit (Integer)(default: 1) — result limit
+
+:::warning Attention
+`limit` only works on an entry collection. Applied to an array, such as the result of `sort`, `map` or `split`, the filter aborts and the published HTML keeps the comment `<!-- Liquid Error -->` in place of the block. To trim an array use the `limit` parameter of the `for` tag, as in <span v-pre>`{% for item in items limit: 3 %}`</span>.
+:::
 
 ### Paginated
 
@@ -376,85 +544,109 @@ Separates the results into pages. *e.g.*
 <span v-pre>`{{ objects | paginated: 10, 2 }}`</span>
 
 **Parameters**:
-- object(Array) — array
+- object(Array) — entry collection (object before the pipe)
 - per_page (Integer) (default: 10) — objects per page
 - page (Integer) (default: 1) — page number to display
+
+The `page` and `per_page` URL parameters take precedence over the arguments written in the template. With the example above, a visit to `my-page.com/landing?page=5` shows page 5 and not page 2: the arguments act as initial values, for the first visit without parameters in the URL. And because those parameters are global to the page, they reach every paginated listing on it at once.
+
+The filter clamps both values, whether they come from the argument or from the URL: `per_page` is limited to a minimum of 1 and a maximum of 100, and `page` to a minimum of 1. A `per_page` of 500 returns 100 results per page.
+
+:::warning Attention
+Applied to something that is not an entry collection, for example an array already materialized by `sort`, by `map` or defined in the template itself, the filter returns the input untouched: it does not paginate and it does not fail either. The listing looks complete, the pagination links do not appear and no clue is left as to why. Chain `paginated` directly onto the entry collection.
+:::
 
 ### Sort By
 
 Returns an array with entries sorted by a field *e.g.*
-<span v-pre>`{% assign entries = widgets.entries | sort_by: 'name', 'asc' %}`</span>
+<span v-pre>`{% assign entries = spaces['blog'].types['post'].entries | sort_by: 'name', 'asc' %}`</span>
 
 **Parameters**:
-- entries (ArrayEntry) — array with entries
-- attribute (String) — field by which you want to sort
-- order (String) - asc (ascending) or desc (descending)
+- collection (ArrayEntry | ArrayCategory) — collection to sort (object before the pipe)
+- field (String) — field by which you want to sort
+- order (String) (default: 'desc') — `asc` or `desc`
+
+The default order is descending and any value that is not exactly `asc` is treated as `desc`: an `'ascending'` or an `'asc '` with an extra space sort the opposite way from what you asked, with no warning at all.
+
+The accepted fields depend on the collection the filter receives:
+
+- **Category collection**: only `name`, `slug` and `uuid`.
+- **Entry collection**: the five meta attributes `name`, `slug`, `created_at`, `updated_at` and `published_at` are sorted directly. Any other name is resolved by the search layer, which requires the container prefix, just like [Filter By](/en/platform/channels/liquid-markup/filters.html#filter-by-extended-operators): `fields.<name>` for a content type field and `meta.<attribute>` for the remaining metadata.
+
+:::warning Attention
+On a category collection, a field outside `name`, `slug` and `uuid` returns an empty collection with no error at all: the listing looks blank and seems to have no data.
+
+On an entry collection, a name without a prefix, such as `'price'` instead of `'fields.price'`, does not sort by the field you expect. Also, sorting by `fields.<name>` requires, just like `filter_by`, a collection scoped to a content type: on something like <span v-pre>`spaces['blog'].entries`</span> the filter aborts and the published HTML keeps the `<!-- Liquid Error -->` comment in place of the block. Start from <span v-pre>`spaces['blog'].types['post'].entries`</span>.
+
+The filter also aborts, with the same comment in the output, if the field or the order do not arrive as strings, for example <span v-pre>`| sort_by: 'name', 1`</span>.
+:::
 
 ### To Published Date
 
-Returns a list of Entries that have a publication date older than the limit. *e.g.*
-<span v-pre>`{% assign entries = widgets.entries | to_published_date: date %}`</span>
+Returns a list of Entries published up to the given date, including that day. *e.g.*
+<span v-pre>`{% assign entries = spaces['blog'].types['post'].entries | to_published_date: '2024-12-31' %}`</span>
 
 **Parameters**:
 - entries (ArrayEntry) — array with entries
-- date (Datetime)(default: Time.zone.now) — limit date
+- date (String) — limit date, required, in the same format as in [From Published Date](/en/platform/channels/liquid-markup/filters.html#from-published-date)
+
+The filter takes only the day of the date: it includes the entries published up to the end of that day. Just like `from_published_date`, it aborts if the date doesn't arrive as a string.
 
 ## Crypto
 
 These Liquid filters alter values related to Cryptography.
 
-### Base64 Decode
-
-Returns the Base64-decoded value of a string (e.g. <span v-pre> `{% 'Hello world' | base64_encode %} # => 'SGVsbG8gd29ybGQ='`</span>).
-
-### Base64 Encode
-
-Returns the Base64-encoded value of a string (e.g. <span v-pre>`{% 'SGVsbG8gd29ybGQ=' | base64_decode %} # => 'Hello world'`</span>).
-
-### HMAC SHA1
-
-Returns the SHA-1 hash using a message authentication code (HMAC) of a string (e.g. <span v-pre>`{% 'Hello world' | hmac_sha1: 'key' %} # => '2a73959742baf046e6e2e27e5ee94bcff0af31b1'`</span>).
+:::warning Attention
+The only hash filters in Modyo Platform are `hmac_sha256` and `sha256`. `md5`, `sha1` and `hmac_sha1` do not exist and, because an unknown filter doesn't interrupt rendering, Liquid returns the input value untransformed: the page publishes the data in the clear where you expected a hash. Review your templates before signing an integration with them.
+:::
 
 ### HMAC SHA256
-Returns the SHA-256 hash using a message authentication code (HMAC) of a string (e.g. <span v-pre>`{% 'Hello world' | hmac_sha256: 'key' %} # => 'a82b2e160edaf92a6589dc11160d2a10c04449840a58717db308c1ee3512b039'`</span>).
 
-### MD5
-
-Returns the MD5 hash of a string (e.g. <span v-pre>`{% 'Hello world' | md5 %} # => '3e25960a79dbc69b674cd4ec67a72c62'`</span>).
-
-### SHA1
-Returns the SHA-1 hash of a string (e.g. <span v-pre>`{% 'Hello world' | sha1 %} # => '7b502c3a1f48c8609ae212cdfb639dee39673f5e'`</span>).
+Returns the SHA-256 hash of a string using a message authentication code (HMAC), with the key as the argument (e.g. <span v-pre>`{{ 'Hello world' | hmac_sha256: 'key' }} #=> 'a82b2e160edaf92a6589dc11160d2a10c04449840a58717db308c1ee3512b039'`</span>).
 
 ### SHA 256
-Returns the SHA-256 hash of a string (e.g. <span v-pre>`{% 'Hello world' | sha256 %} # => '64ec88ca00b268e5ba1a35678a1b5316d212f4f366b2477232534a8aeca37f3c'`</span>).
+
+Returns the SHA-256 hash of a string (e.g. <span v-pre>`{{ 'Hello world' | sha256 }} #=> '64ec88ca00b268e5ba1a35678a1b5316d212f4f366b2477232534a8aeca37f3c'`</span>).
 
 ## CSS
 
 These Liquid filters alter CSS-related values in Modyo Platform.
 
+:::warning Attention
+Every color filter aborts if the input value isn't a valid color, for example a variable that doesn't exist in the context. When that happens, the published HTML keeps the comment `<!-- Liquid Error -->` in place of the color and the CSS rule that used it is lost.
+:::
+
 ### Brighten
 
-Adds brightness to a color (e.g. <span v-pre>`{{ '#00ff00' | brighten: 15 }} #=> '#26ff26'`</span>).
+Adds brightness to a color (e.g. <span v-pre>`{{ '#00ff00' | brighten: 15 }} #=> '#26ff26'`</span>). If you omit the amount, it uses `10`.
 
 ### Darken
 
-Reduces the brightness of a color (e.g. <span v-pre>`{{ '#00ff00' | darken: 15 }} #=> '#00b300'`</span>).
+Reduces the brightness of a color (e.g. <span v-pre>`{{ '#00ff00' | darken: 15 }} #=> '#00b300'`</span>). If you omit the amount, it uses `10`.
 
 ### Desaturate
 
-Desaturates a color (e.g. <span v-pre>`{{ '#00ff00' | desaturate: 15 }} #=> '#13ec13'`</span>).
+Desaturates a color (e.g. <span v-pre>`{{ '#00ff00' | desaturate: 15 }} #=> '#13ec13'`</span>). If you omit the amount, it uses `10`.
 
 ### Grayscale
 
-Converts a color to grayscale (e.g. <span v-pre>`{{ '#00ff00' | grayscale }} #=> '#808080'`</span>). Alias: `greyscale` (same output).
+Converts a color to grayscale (e.g. <span v-pre>`{{ '#00ff00' | grayscale }} #=> '#808080'`</span>). It accepts a second argument, but that argument doesn't change the result because the grayscale conversion never uses it.
+
+### Greyscale
+
+Converts a color to grayscale, with the same output as `grayscale`, but it only takes the color (e.g. <span v-pre>`{{ '#00ff00' | greyscale }} #=> '#808080'`</span>).
+
+:::warning Attention
+`greyscale` and `grayscale` are not interchangeable: `greyscale` doesn't accept a second argument. A template that passes an amount, such as <span v-pre>`{{ color | greyscale: 15 }}`</span>, aborts because of the number of arguments and the published HTML keeps the comment `<!-- Liquid Error -->`. The same template with `grayscale` works.
+:::
 
 ### Lighten
 
-Lightens a color (e.g. <span v-pre>`{{ '#00ff00' | lighten: 15 }} #=> '#4dff4d'`</span>).
+Lightens a color (e.g. <span v-pre>`{{ '#00ff00' | lighten: 15 }} #=> '#4dff4d'`</span>). If you omit the amount, it uses `10`.
 
 ### Opacity
 
-Modifies the opacity of a color (e.g. <span v-pre>`{{ '#00ff00' | opacity: 0.5 }} #=> 'rgba(0, 255, 0, 0.5)'`</span>).
+Modifies the opacity of a color (e.g. <span v-pre>`{{ '#00ff00' | opacity: 0.5 }} #=> 'rgba(0, 255, 0, 0.5)'`</span>). If you omit the value, it uses `0.3`.
 
 ### RGB
 
@@ -462,40 +654,52 @@ Transforms a color to its RGB equivalent (e.g. <span v-pre>`{{ '#00ff00' | rgb }
 
 ### Saturate
 
-Saturates a color (e.g. <span v-pre>`{{ '#00ff00' | saturate: 15 }} #=> '#00ff00'`</span>).
+Saturates a color (e.g. <span v-pre>`{{ '#00ff00' | saturate: 15 }} #=> '#00ff00'`</span>). If you omit the amount, it uses `20`.
 
 ### Spin
 
-Rotates a color in degrees clockwise (e.g. <span v-pre>`{{ '#00ff00' | spin: 15 }} #=> 'rgba(0, 255, 0, 0.5)'`</span>).
+Rotates a color in degrees clockwise (e.g. <span v-pre>`{{ '#00ff00' | spin: 15 }} #=> '#00ff40'`</span>). If you omit the degrees, it uses `30`.
 
 ## Location
 
 These Liquid filters alter values related to Geolocation in Modyo Platform.
 
+Both filters take the value of an entry's **Locations** field, for example `entry.fields.branches`; the format of that value is described in [Content types](/en/platform/content/types.html#location). The map is requested from Google Maps with the **Google API Key** from the [account settings](/en/platform/core/configuration.html#visualization): set it up before using these filters, because without it Google rejects the request and the map isn't displayed.
+
 ### Dynamic Map
 
-Returns a dynamic Google Maps map (e.g. <span v-pre>`{{ locations | dynamic_map: '600x300', 'true', 'roadmap', true}}`</span>).
+Returns a dynamic Google Maps map (e.g. <span v-pre>`{{ locations | dynamic_map: '600x300', 10, 'roadmap', '', true }}`</span>).
 
 **Parameters**
 
-- `locations` (ArrayHash) — Array of hashes with latitude and longitude points.
+- `locations` (ArrayLocation) — Value of a **Locations** field. From each location the filter uses the `location.lat` and `location.lon` coordinates and, as the marker title, the `location_street` address.
 - `size` (String) (default: '600x300') — Map size in pixels.
-- `zoom` (String) (default: 10) — Zoom level for the map.
+- `zoom` (Integer) (default: 10) — Zoom level for the map.
 - `type` (String) (default: 'roadmap') — Map type.
 - `icon` (String) (default: '') — Map icon.
-- `controls` (String) (default: true) — Navigation controls for the map.
+- `controls` (Boolean) (default: true) — Navigation controls for the map.
+
+The map is centered on the first location in the list, so the field needs at least one: if it's empty, the filter aborts and the published HTML keeps the comment `<!-- Liquid Error -->` in place of the map.
+
+:::warning Attention
+Use a single `dynamic_map` per page. Every dynamic map is drawn in the same container, so with two or more only one is displayed and the other spaces stay blank.
+:::
 
 ### Static Map
 
-Returns a static Google Maps map (e.g. <span v-pre>`{{ locations | static_map: '600x300', 'true', 'roadmap'}}`</span>).
+Returns a static Google Maps map (e.g. <span v-pre>`{{ locations | static_map: '600x300', 15, 'roadmap' }}`</span>).
 
 **Parameters**
 
-- `locations` (ArrayHash) — Array of hashes with latitude and longitude points.
+- `locations` (ArrayLocation) — Value of a **Locations** field. From each location the filter uses the `location.lat` and `location.lon` coordinates.
 - `size` (String) (default: '600x300') — Map size in pixels.
-- `zoom` (String) (default: 10) — Zoom level for the map.
+- `zoom` (String) (default: '') — Zoom level for the map. With no value, the Google Maps URL is built with an empty `zoom=` and the framing is left to Google; always pass it when you need a fixed framing.
 - `type` (String) (default: 'roadmap') — Map type.
 - `icon` (String) (default: '') — Map icon.
+
+:::warning Attention
+In both filters the argument that follows `size` is `zoom`, not `controls`. An example such as <span v-pre>`{{ locations | static_map: '600x300', 'true', 'roadmap' }}`</span> builds the Google Maps URL with `zoom=true` and the map is not framed as you expect. In `dynamic_map` the order is `size`, `zoom`, `type`, `icon`, `controls`, so reaching `controls` means passing the four preceding arguments.
+:::
 
 
 ## Menu Items
@@ -504,7 +708,13 @@ These Liquid filters alter values related to menu items in Modyo Platform.
 
 ### Active Page
 
-Determines if a URL item is active. Returns 'active' when active (e.g. <span v-pre>`{{ 'company.modyo.com/jobs' | active_page: 'company.modyo.com/jobs' }} #=> 'active'`</span>).
+Determines whether an item's URL matches the URL it receives as a parameter, usually the URL of the current page. Returns `' active'`, with a leading space so you can append it to the item's classes, or an empty string if they don't match or either one is empty.
+
+```liquid
+{{ 'company.modyo.com/jobs' | active_page: 'company.modyo.com/jobs' }} #=> ' active'
+```
+
+The comparison considers only the host and the path: it ignores the protocol, the query parameters, and the trailing slash. A subpath doesn't count as active, so `company.modyo.com/jobs/sales` doesn't match `company.modyo.com/jobs`.
 
 ### Item Rel
 
@@ -516,7 +726,9 @@ Resolves the URL from a path and base URL (e.g. <span v-pre>`{{ 'dynamic_bank' |
 
 ### Visible Items
 
-Returns a list of visible items in a list of items (e.g. <span v-pre>`{{ items | visible_items }}`</span>).
+Returns only the items in the list that the current user can see (e.g. <span v-pre>`{{ items | visible_items }}`</span>).
+
+It applies the same criteria as the `menu` tag, described in [Items that are displayed](/en/platform/channels/navigation.html#items-that-are-displayed).
 
 ## Origination
 
@@ -524,64 +736,182 @@ These are the liquid filters that alter values related to originations in Modyo 
 
 ### By UID
 
-Returns the Origination with the selected UID. *e.g.*
-<span v-pre>`{% assign my_origination = site.originations | by_uid: 'my-origination' %}`</span>
+Returns the object with the given UID inside an Origination module collection. It is a single filter, `by_uid`, that accepts four collection classes:
+
+- `site.originations` — the originations of the site.
+- `origination.steps` — the steps of an origination.
+- `step.tasks` — the tasks of a step.
+- `task.fields` — the questions of a user input task. This is the only way to take a specific question by its UID; the objects it returns are [question](/en/platform/channels/liquid-markup/objects.html#question).
 
 **Parameters:**
-- originations (ArrayOrigination) - array with originations
-- uid (String) - Origination UID
+- collection (ArrayOrigination | ArrayStep | ArrayTask | ArrayQuestion) - collection to search in
+- uid (String) - UID of the object to find
+
+The filter returns a single object, not a collection: its result is used directly and is not traversed with a loop. If no element in the collection has that UID, it returns nothing.
+
+*e.g.*
+
+```liquid
+{% assign my_origination = site.originations | by_uid: 'my-origination' %}
+{% assign my_step = my_origination.steps | by_uid: 'step-01' %}
+{% assign my_task = my_step.tasks | by_uid: 'task-01' %}
+{% assign my_question = my_task.fields | by_uid: 'question-01' %}
+```
+
+:::warning Attention
+In two cases the filter aborts and the published HTML keeps the `<!-- Liquid Error -->` comment in place of the block: when it is applied to something that is not a collection, and when it is applied to a collection of an unsupported class. In the second case the message includes the name of the class received, which makes it possible to identify what was passed by mistake.
+:::
+
+## Pagination
+
+These Liquid filters build the navigation of a listing already paginated with [Paginated](/en/platform/channels/liquid-markup/filters.html#paginated). Apply them to the paginated collection, not to the original one.
+
+The `page` and `per_page` URL parameters are global to the page, so they reach every paginated listing on it at once.
+
+### Pagination links
+
+Returns the complete navigation bar of a paginated listing. *e.g.*
+<span v-pre>`{{ paginated_entries | pagination_links }}`</span>
+
+**Parameters**
+
+- `collection` (ArrayEntry) — collection already paginated (object before the pipe).
+
+The output is a `<nav aria-label="Pagination">` with a `<ul class="pagination">` inside, using Bootstrap's pagination classes:
+
+- The current page comes out as `<li class="page-item active" aria-current="page">`.
+- The other pages come out as `<li class="page-item">` with an `<a class="page-link">`.
+- The gap between blocks of pages comes out as `<li class="page-item disabled" aria-hidden="true">` with `&hellip;`.
+- The previous and next arrows come out as `<li class="page-item">` with `aria-label="Previous"` and `aria-label="Next"`. When there is no page to go to, the `<li>` also carries the `disabled` class.
+
+The arrow labels are fixed, `&laquo;` and `&raquo;`. The filter declares three more optional parameters, an anchor and the two labels, but none of them reaches the output: to change the symbols, the language or the structure of the bar you have to build your own markup with `?page=N` links.
+
+When the listing fits in a single page, the filter prints nothing.
+
+:::warning Attention
+The disabled arrow is still emitted as a link, with `href="false"`. Bootstrap's styles cancel the click with the `.page-item.disabled .page-link` rule; if you write your own pagination styles, replicate it or the user will be able to click an arrow that leads nowhere.
+:::
+
+:::warning Attention
+If the template is rendered outside the lifecycle of a site page, the filter can't build the page addresses and publishes a red error paragraph instead, starting with `(Will Paginate Liquidized) Error:`. If you find that text on a page, check where the template is being rendered from.
+:::
+
+### Pagination links remote
+
+Does the same as `pagination_links` and additionally adds `data-remote="true"` to every link in the bar. *e.g.*
+<span v-pre>`{{ paginated_entries | pagination_links_remote }}`</span>
+
+This is the version to use in custom widgets, which are loaded asynchronously, and it depends on two conditions:
+
+- The site must load jQuery before the widgets finish loading. Without jQuery, the bar's links aren't resolved remotely and nothing warns you about it.
+- Changing pages only replaces the widget's HTML: its JavaScript isn't executed again, so whatever that JavaScript initializes isn't applied to the new content.
+
+The full example is in [Examples](/en/platform/channels/liquid-markup/examples.html#filter-by).
+
+### Total entries
+
+Returns the total number of items in the collection, not the ones on the current page. *e.g.*
+<span v-pre>`{{ paginated_entries | total_entries }}`</span>
+
+**Parameters**
+
+- `collection` (ArrayEntry) — collection (object before the pipe).
+
+It is the counterpart of `paginated`: on a collection that is already paginated, `size` returns the items on the page and `total_entries` the total of the listing. On an empty collection or on an array it returns its size, without an error.
+
+```liquid
+{% assign paginated_entries = entries | paginated: 10 %}
+<ul>
+  {% for entry in paginated_entries %}
+  <li>{{ entry.meta.name }}</li>
+  {% endfor %}
+</ul>
+<p>Showing {{ paginated_entries.size }} of {{ paginated_entries | total_entries }} results</p>
+{{ paginated_entries | pagination_links }}
+```
+
+### Page entries info liquid
+
+Returns a text legend with the range of results on the current page and the total of the collection. *e.g.*
+<span v-pre>`{{ paginated_entries | page_entries_info_liquid }}`</span>
+
+**Parameters**
+
+- `collection` (ArrayEntry) — collection already paginated (object before the pipe).
+- `model_name` (String) (default: null) — name of the entity being listed, to name it inside the legend.
+
+The legend is built in English and doesn't go through the site translations. If you need it in the site's language, or with another format, build it with `total_entries` as in the example above.
 
 ## Site
 
 These Liquid filters alter values related to Sites in Modyo Platform.
 
+### Removed filters
+
+As of version 10.2 the `video_player`, `audio_player`, `embedded_video` and `asset_thumbnail_link_tag` filters no longer exist. The `bar_code` and `qr_code` filters never existed in Modyo Platform.
+
+:::warning Attention
+An unknown filter doesn't interrupt rendering: Liquid returns the input value untransformed. A template that still invokes these filters on an asset no longer shows the player or the link, and publishes the internal name of the object it received instead, for example `Liquid::Drops::Assets::VideoAssetDrop`. There is no error message or visible hint of the cause on the page, so review your templates before upgrading.
+:::
+
+To replace `video_player` and `audio_player`, build the markup with the file's address, available in `url`:
+
+```liquid
+{% assign video = assets['video-uuid'] %}
+<video src="{{ video.url }}" width="320" height="320" controls="controls"></video>
+
+{% assign audio = assets['audio-uuid'] %}
+<audio src="{{ audio.url }}" controls="controls"></audio>
+```
+
+To replace `asset_thumbnail_link_tag`, wrap the thumbnail, available in `thumbnail_url`, in a link to the file:
+
+```liquid
+{% assign image = assets['image-uuid'] %}
+<a href="{{ image.url }}" class="thumbnail"><img src="{{ image.thumbnail_url }}" alt="{{ image.alt_text }}"></a>
+```
+
+`embedded_video`, `bar_code` and `qr_code` have no replacement: the platform doesn't currently offer an equivalent filter.
+
 ### Asset image Tag
 
 Generates the HTML tag of an image (e.g. <span v-pre>`{{ asset | asset_image_tag: 'original' }}`</span>).
 
-### Asset Thumbnail Link Tag
-
-Generates the HTML thumbnail tag of an image (e.g. <span v-pre>`{{ asset | asset_thumbnail_link_tag: 'class', 'target' }}`</span>).
-
-**Parameters**
-
-- `asset` (Asset) — Asset-type object.
-- `classes` (String) (default: '') — Additional HTML classes (optional).
-- `target` (String) (default: '') — Additional HTML targets (optional).
-
 ### Asset URL
 
-Generates the URL of an Asset-type object (e.g. <span v-pre>`{{ asset | asset_url: 'original' }}`</span>).
+Generates the URL of an Asset object or a template asset path. For Asset objects using Cloudflare for image optimization, you can use the following additional parameters: width, height, blur, quality, format and fit. (e.g. <span v-pre>`{{ assets['asset_uuid'] | asset_url: blur: 40, format: 'auto', fit: 'cover'  }}`</span>).
+For template asset paths from the template builder, specify the asset type as the second argument (e.g. <span v-pre>`{{ 'base' | asset_url: 'js'  }}`</span>). You can also use the script_tag or stylesheet_tag filters to automatically generate the complete HTML `<script>` or `<link>` tag (e.g. <span v-pre>`{{ 'base' | asset_url: 'css' | stylesheet_tag: media: 'screen' }}`</span>).
 
-### Audio Player
-
-Generates the URL of an Audio-type object (e.g. <span v-pre>`{{ audio1 | audio_player }}`</span>).
-
-### Bar Code
-
-Generates the URL of a barcode (e.g. <span v-pre>`{{ value | bar_code: 320, 320 }}`</span>).
-
-**Parameters**
-
-- `value` (String) — Barcode value.
-- `width` (Integer) (default: 100) — Width.
-- `height` (Integer) (default: 100) — Height.
+The URL generated for a template asset path includes a version that updates when you publish the site, so visitors always get the current file without you having to rename it. In preview mode the file is never served from cache. For details on how these views are served and how to control the way they load, see [How site CSS and JavaScript are served](/en/platform/channels/templates.html#how-site-css-and-javascript-are-served).
 
 ### Button To
 
-Generates a button (e.g. <span v-pre>`{{ 'Hello World' | button_to: 'http://www.google.com' }}`</span>).
+Generates a link styled as a button: an `<a>` element with the `btn` class, not a `<button>`. The URL is resolved the same way as in [Link To](#link-to) (e.g. <span v-pre>`{{ 'Hello World' | button_to: 'http://www.google.com' }}`</span>).
 
 ### Cookie Value
 
-Returns the value of a cookie (e.g. <span v-pre>`{{ 32 | cookie_value }}`</span>).
+Returns the value of the cookie whose name it receives as input, or an empty string if the request doesn't include it.
 
-### Embedded Video
-
-Returns the URL of an embedded video (e.g. <span v-pre>`{{ movie2 | embedded_video }}`</span>).
+```liquid
+{{ 'my_cookie' | cookie_value }}
+```
 
 ### Escape JS
 
-Prevents JavaScript code interpretation (e.g. <span v-pre>`{{ '<script>alert("hello world");</script>' | escape_js }}`</span>).
+Escapes a text so you can insert it inside a JavaScript string: it escapes quotes, backslashes, line breaks, and the `</` sequence, so the value can't close the string or the `<script>` block.
+
+```liquid
+{% assign message = "It's done" %}
+<script>
+  var message = '{{ message | escape_js }}';
+</script>
+```
+
+The result is `var message = 'It\'s done';`.
+
+:::warning Attention
+`escape_js` doesn't encode HTML: it doesn't prevent a `<script>` or any other code inserted in the page's HTML from running. To display a text inside the HTML, use [Escape](#escape).
+:::
 
 ### Format Date
 
@@ -590,15 +920,19 @@ Translates a date to another format (e.g. <span v-pre>`{{ time | format_date: '%
 **Parameters**
 
 - `time` (DateTime) — Date.
-- `format_date` (String) (default: '') — The new format for the date.
+- `format` (String) (default: '%e %b, %Y') — The date format, with the same syntax as `date`. Month and day names are in the site's language.
+
+If the date is null, the filter returns an empty string.
 
 ### Format DateTime
 
-Translates a date to DateTime format (e.g. <span v-pre>`{{ time | format_datetime }}`</span>).
+Formats a date and time with the fixed format `'%e %b, %Y %H:%M'`, the same as Format Date with that format (e.g. <span v-pre>`{{ time | format_datetime }}`</span> returns `15 Jan, 2025 10:30` on an English site).
 
 ### Format Short Date
 
-Translates a date to a reduced format (dd-mm-yyyy) (e.g. <span v-pre>`{{ time | format_short_date }}`</span>).
+Translates a date to the short format of the site's language, which doesn't include the year (e.g. <span v-pre>`{{ time | format_short_date }}`</span>).
+
+For example, for January 15, 2025 at 10:30, the result is `15 Jan 10:30` in English, `15 de Ene, 10:30` in Spanish, and `15/01, 10:30 hs` in Portuguese. If the date has no time, it's `Jan 15`, `15 de Enero`, and `15 de Janeiro`, respectively. If you need the dd-mm-yyyy format, use Format Date with `'%d-%m-%Y'`.
 
 ### Get Session ID
 
@@ -619,8 +953,8 @@ Adds an anchor link tag (e.g. <span v-pre>`{{ 'Hello World' | link_to: 'http://w
 **Parameters**
 
 - `text` (String) (default: '') — Link text.
-- `link` (String) (default: '/') — Link URL.
-- `alt` (String) (default: '') — Alternative text for the link.
+- `link` (String) (default: '/') — Link URL. If it doesn't start with `http`, it's resolved against the site's base URL, whether or not it starts with `/`.
+- `alt` (String) (default: '') — Text emitted in the link's `title` attribute.
 - `class` (String) (default: '') — CSS class for the link.
 - `target` (String) (default: '') — Target for the link.
 
@@ -630,7 +964,7 @@ Shows the flash message variable (e.g. <span v-pre>`{{ 'alert-error' | notificat
 
 ### Primary button to
 
-Generates a primary type button (e.g. <span v-pre>`{{ 'Hello World' | primary_button_to: 'http://www.google.com', 'large' }}`</span>).
+Generates a link styled as a primary button: an `<a>` element with the classes `btn`, `btn-primary`, and `btn-` followed by the size. The URL is resolved the same way as in [Link To](#link-to) (e.g. <span v-pre>`{{ 'Hello World' | primary_button_to: 'http://www.google.com', 'large' }}`</span>).
 
 **Parameters**
 
@@ -638,24 +972,15 @@ Generates a primary type button (e.g. <span v-pre>`{{ 'Hello World' | primary_bu
 - `link` (String) (default: '/') — Link URL.
 - `size` (String) (default: 'large') — Size for the link.
 
-### QR Code
-
-Generates a QR code (e.g. <span v-pre>`{{ value | qr_code: 4, 320, 320 }}`</span>).
-
-**Parameters**
-
-- `value` (String) (default: '') — QR value.
-- `qr_size` (Integer) (default: 4) — QR size.
-- `width` (Integer) (default: 100) — QR width.
-- `height` (Integer) (default: 100) — QR height.
-
 ### Sanitize HTML
 
 Sanitizes HTML tags from a String (e.g. <span v-pre>`{{ '<script>Hello World</script>' | sanitize }} #=> 'Hello World'`</span>).
 
 ### Script tag
 
-Adds a script tag (e.g. <span v-pre>`{{ 'test-script' | script_tag }}`</span>).
+Generates the HTML `<script>` tag from a URL, taking additional attributes of the form `attr: 'value'` (e.g. <span v-pre>`{{ 'my-js-url' | script_tag: async: 'async', defer: 'defer' }}`</span> => `<script src='my-js-url' type='text/javascript' async='async' defer='defer'></script>`).
+
+Chain it with [Asset URL](#asset-url) to include a site JavaScript view and add the attributes you need (e.g. <span v-pre>`{{ 'base' | asset_url: 'js' | script_tag: defer: 'defer' }}`</span>). Unlike [Theme Javascript](#theme-javascript), this combination accepts any attribute.
 
 ### Search Box
 
@@ -667,18 +992,37 @@ Converts a datetime to String format (e.g. <span v-pre>`{{ time | strftime: '%m/
 
 ### Strip tag
 
-Removes all HTML tags and their content from a String (e.g. <span v-pre>`{{ '<script>Hello World</script>' | strip_tags }} #=> ""`</span>).
+Removes the HTML tags from a String and keeps their text. `<script>` blocks are removed entirely, along with their content (e.g. <span v-pre>`{{ '<script>Hello World</script>' | strip_tags }} #=> ""`</span>).
+
+```liquid
+{{ '<script>alert("hello");</script><p>Hello World</p>' | strip_tags }} #=> 'Hello World'
+```
 
 ### Stylesheet Tag
+
 Generates the HTML `<link>` tag for a CSS template, taking as parameters the URL and attributes (e.g. `attr: 'value'`, <span v-pre>`{{ 'my-css-url' | stylesheet_tag: media: 'screen', title: 'color style' }}`</span> => `<link href='my-css-url' rel='stylesheet' type='text/css' media='screen' title='color style' />`).
+
+Chain it with [Asset URL](#asset-url) to include a site CSS view and add the attributes you need (e.g. <span v-pre>`{{ 'base' | asset_url: 'css' | stylesheet_tag: media: 'screen' }}`</span>). Unlike [Theme Stylesheet](#theme-stylesheet), this combination accepts any attribute.
 
 ### Theme Javascript
 
-Adds a theme tag in Javascript (e.g. <span v-pre>`{{ 'home-page-javascript' | theme_javascript }}`</span>).
+Generates the HTML `<script>` tag that includes a site JavaScript view. It takes the path of the view created in **Templates**, not a URL (e.g. <span v-pre>`{{ 'home-page-javascript' | theme_javascript }}`</span> => `<script src='https://your-site.com/javascript/site-home-page-javascript-VERSION.js' type='text/javascript'></script>`).
+
+The URL it generates includes a version that updates when you publish the site, so visitors always get the current file without you having to rename the view or edit the template. In preview mode the file is never served from cache, so you see your changes right away.
+
+:::warning Attention
+`theme_javascript` does not accept additional attributes: it always emits the same tag. If you need `defer`, `async` or any other attribute, use [Asset URL](#asset-url) chained with [Script tag](#script-tag) (e.g. <span v-pre>`{{ 'home-page-javascript' | asset_url: 'js' | script_tag: defer: 'defer' }}`</span>), which produces the same versioned URL.
+:::
 
 ### Theme Stylesheet
 
-Adds a theme tag in CSS (e.g. <span v-pre>`{{ 'home-page-stylesheet' | theme_stylesheet }}`</span>).
+Generates the HTML `<link>` tag that includes a site CSS view. It takes the path of the view created in **Templates**, not a URL (e.g. <span v-pre>`{{ 'home-page-stylesheet' | theme_stylesheet }}`</span> => `<link href='https://your-site.com/stylesheets/site-home-page-stylesheet-VERSION.css' media='screen' rel='stylesheet' type='text/css' />`).
+
+As with [Theme Javascript](#theme-javascript), the URL includes a version that updates when you publish the site, and in preview mode the file is never served from cache.
+
+:::warning Attention
+`theme_stylesheet` does not accept additional attributes and always emits `media='screen'`. If you need a different `media` value or attributes such as `title`, use [Asset URL](#asset-url) chained with [Stylesheet Tag](#stylesheet-tag) (e.g. <span v-pre>`{{ 'home-page-stylesheet' | asset_url: 'css' | stylesheet_tag: media: 'print' }}`</span>), which produces the same versioned URL.
+:::
 
 ### Time Ago in Words
 
@@ -686,21 +1030,28 @@ Converts a date in String to words (e.g. <span v-pre>`{{ '01-02-2019' | time_ago
 
 ### Translate
 
-Resolves the translation text for Site keys. Custom values will be returned if they exist (e.g. <span v-pre>`{{ 'admin.logs.errors.no_logs_yet' | translate }}`</span>).
+Resolves a key from the platform translations in the site's language (e.g. <span v-pre>`{{ 'admin.logs.errors.no_logs_yet' | translate }}`</span>).
+
+The keys and their texts are the platform's: you can't add new keys or customize their texts. If the key doesn't exist, the filter prints a missing translation notice instead of the text.
+
+**Parameters**
+
+- `value` (String) — translation key (object before the pipe).
+- `count` (Integer) (default: nil) — count used to pluralize the key.
+
+`t` is the short alias of the filter and does exactly the same: <span v-pre>`{{ 'admin.logs.errors.no_logs_yet' | t }}`</span>.
+
+The second parameter pluralizes the key and is applied only when it arrives as an integer, for example with a platform key that has singular and plural forms:
+
+```liquid
+{{ 'datetime.distance_in_words.x_days' | t: 3 }} #=> '3 days'
+```
+
+If it arrives as a string, for example `'3'`, the filter discards it without warning and resolves the key without pluralizing.
 
 ### Truncate HTML
 
 Returns a String after truncating it (e.g. <span v-pre>`{{ html | truncate_html: 10 }}`</span>).
-
-### Video Player
-
-Adds a video player in HTML code using a File Manager asset (e.g. <span v-pre>`{{ movie1 | video_player: 320, 320 }}`</span>).
-
-**Parameters**
-
-- `video` (Asset) — Video-type object from the File Manager.
-- `width` (Integer) — Video width.
-- `height` (Integer) — Video height.
 
 ## Step
 
@@ -714,6 +1065,8 @@ Returns the Step with the selected UID. *e.g.*
 **Parameters:**
 - steps (ArrayStep) - array with steps
 - uid (String) - Step UID
+
+This is the same `by_uid` filter from the Origination module. The full reference, with the four supported collection classes and the errors it aborts with, is in [By UID](/en/platform/channels/liquid-markup/filters.html#by-uid).
 
 ## Submission
 
@@ -735,19 +1088,49 @@ Returns the Submissions with the selected status. *e.g.*
 
 **Parameters:**
 - submissions (ArraySubmission) - array with user submissions
-- status (String) - Originations status. Supported values are 'pending', 'completed' and 'all'
+- status (String) - Submission status. Supported values are 'pending', 'completed' and 'all'
+
+In Modyo 10.2 a submission can be in one of four statuses: **Not started**, **Pending**, **Completed**, and **Canceled**. The filter recognizes only three values, and they don't map directly onto those statuses:
+
+- `'pending'` returns the **Pending** submissions.
+- `'completed'` returns the **Completed** ones.
+- `'all'` doesn't return all of them: it delivers the **Pending** ones plus the **Completed** ones, and leaves out the **Not started** and the **Canceled** ones.
+- `'not_started'` and `'canceled'` aren't supported. The filter doesn't fail and leaves no trace on the page: it returns an empty collection, so any listing that uses them shows up blank.
+
+:::warning Attention
+A submission is born **Not started** and only moves to **Pending** when the first response to one of its tasks is saved, so newly created ones don't show up in listings built with this filter. On top of that, `user.submissions` is already scoped to the **Pending** and **Completed** submissions, so no combination of `by_status` can reach the **Not started** or **Canceled** ones in that collection.
+:::
+
+To list the statuses the filter doesn't cover, loop over an unscoped collection, such as `user.invited_submissions`, without going through `by_status`, and compare [`submission.status`](/en/platform/channels/liquid-markup/objects.html#submission) inside the loop:
+
+```liquid
+{% assign invited = user.invited_submissions | by_origination: 'my-origination' %}
+{% for invited_submission in invited %}
+  {% if invited_submission.status == 'not_started' %}
+    <a href="{{ invited_submission.resume_url }}">{{ invited_submission.origination.name }}</a>
+  {% endif %}
+{% endfor %}
+```
 
 ### Completed
 
-Checks whether an element (step/task wrapper) is completed for a given submission.
+Checks whether a step or a task has been completed in a submission.
 
 *e.g.* <span v-pre>`{{ submission | completed: step }}`</span>
 
 **Parameters:**
 - submission (Submission) — the current submission (object before pipe)
-- element (Step|TaskResponse wrapper) — element to test
+- element (Step|Task) — the step or task to test, for example one from `origination.steps` or from `step.tasks`
 
 Returns: Boolean (true/false)
+
+It doesn't accept the items of `submission.steps` or the responses of `submission.tasks`: with them, the filter aborts and the published HTML keeps the comment `<!-- Liquid Error -->` in place of the block. Those objects already carry their status, in `is_completed` and in `status`, respectively.
+
+As of Modyo 10.2 the filter resolves the status against the user present in the render context, not against the submission owner: a step counts as completed only if that user has a completed response for every task they can see. In a flow with invited users, the same template delivers different results depending on who is looking, and a step that showed up as completed in 10.1 may now show up as incomplete.
+
+:::warning Attention
+The filter needs the `user` object in the template context. If it isn't there, evaluation aborts as soon as the submission has at least one completed task, and the published HTML shows the `<!-- Liquid Error -->` comment instead of the block, with no warning for whoever is browsing. Guard the block with <span v-pre>`{% if user %}`</span> and make sure the template receives the user.
+:::
 
 ### URL (Step URL for Submission)
 
@@ -755,11 +1138,23 @@ Generates a navigable URL for a step within a submission (first visible task). O
 
 *e.g.* <span v-pre>`{{ step | url: submission }}`</span>
 
+Just like `completed`, it resolves the completed step and the first visible task against the user in the render context, with the same consequences in flows with invited users and the same behavior when `user` is missing from the context.
+
+:::warning Attention
+A newly created submission is **Not started**, not **Pending**, so the filter returns no value in the most common case of a template meant to resume a submission. The submission moves to **Pending** when the first response to one of its tasks is saved; until then, take the user to the start of the flow with [`submission.resume_url`](/en/platform/channels/liquid-markup/objects.html#submission), which doesn't depend on the status.
+:::
+
 ### Resume Link
 
 Returns an HTML anchor tag to resume a pending step for a submission, or the step name if no URL is available.
 
 *e.g.* <span v-pre>`{{ step | resume_link: submission }}`</span>
+
+The link is built by `url`, so it inherits all of its conditions: when `url` returns no value, `resume_link` prints the step name as plain text.
+
+:::warning Attention
+On a **Not started** submission the filter prints the step name as plain text and the page shows no error: the template looks complete, but the user has no way in. The same happens when `url` returns no link for that step with the context user. Check the submission status before rendering the listing and offer [`submission.resume_url`](/en/platform/channels/liquid-markup/objects.html#submission) while it isn't **Pending** yet.
+:::
 
 ### Submissions Selector
 
@@ -780,32 +1175,40 @@ Returns the Task with the selected UID. *e.g.*
 - tasks (ArrayTask) - array with tasks
 - uid (String) - Task UID
 
-### Navigation / Completion Helpers
-
-The filters `completed`, `url`, and `resume_link` (documented under Submission) also apply when piping a Step or Task in the context of a submission navigation flow.
+This is the same `by_uid` filter from the Origination module, which also accepts the `fields` collection of a user input task to take one of its questions by UID: <span v-pre>`{% assign my_question = my_task.fields | by_uid: 'question-01' %}`</span>. The full reference is in [By UID](/en/platform/channels/liquid-markup/filters.html#by-uid).
 
 ## User
 
 These Liquid filters alter values related to Users.
 
+### Avatar For
+
+Shows the HTML code for a user's image. If the user has no avatar of their own, it returns the default avatar (e.g. <span v-pre>`{{ user | avatar_for: 'C50x50', true }}`</span>).
+
+**Parameters**
+
+- `user` (User) — User object.
+- `size` (String) (default: 'C50x50') — Image size.
+- `link` (Boolean) (default: true) — `true` adds a link to the user's profile.
+
 ### Default Avatar Image
 
-Shows the default avatar image (e.g. <span v-pre>`{{ user | avatar_for: 'C50x50' }}`</span>).
+Shows the HTML code of the default avatar. The signature is the reverse of what the name suggests: the value before the pipe is the **size**, and the user is the first, optional argument (e.g. <span v-pre>`{{ 'C50x50' | default_avatar_image: user }}`</span>).
 
 **Parameters**
 
-- `user` (User) — User object.
-- `size` (Integer) (default: 'C50x50') — Image size.
+- `size` (String) — Image size, using the avatar version format: `C25x25`, `C50x50`, `C75x75`, `C100x100`, `C125x125`, `C160x160`, `C200x200` or `C250x250`.
+- `user` (User) (default: nil) — User object from the Liquid context. It has to be the object, not an id or an email.
 
-### Image For
+It returns one of three images, depending on what it receives:
 
-Shows the HTML code for a user's image (e.g. <span v-pre>`{{ user | avatar_for: 'C50x50', true }}`</span>).
+- With a user whose realm has a **Default avatar image** configured in [Realm Settings](/en/platform/customers/settings.html#general), the realm's image in the requested size.
+- With a user whose realm doesn't have it configured, the placeholder image in the requested size.
+- With no user, the placeholder image in the requested size.
 
-**Parameters**
-
-- `user` (User) — User object.
-- `size` (Integer) (default: 'C50x50') — Image size.
-- `link` (Boolean) (default: true) — `true` adds a link to the user's profile.
+:::tip Tip
+For the usual case you don't need to call it: `avatar_for` already falls back to `default_avatar_image` when the user has no avatar of their own. Call it directly only when you want the default avatar without looking at the user's own.
+:::
 
 ### By Form Slug
 
@@ -819,7 +1222,7 @@ Returns user form responses filtered by a specific form slug.
 
 ### By Response Date Range
 
-Returns form responses created within a date range (inclusive).
+Returns form responses created within a date range.
 
 *e.g.* <span v-pre>`{% assign responses = user.responses | by_response_date_range: '2025-03-10', '2025-03-20' %}`</span>
 
@@ -827,6 +1230,8 @@ Returns form responses created within a date range (inclusive).
 - responses (Array&lt;FormResponse&gt;) — user.responses
 - date_from (String/Date) — start date (YYYY-MM-DD recommended)
 - date_to (String/Date) — end date (YYYY-MM-DD recommended)
+
+`date_from` includes its whole day, but `date_to` is taken as the start of that day (00:00), even if you include a time, so the last day is left out: in the example, the responses created on March 20 don't appear. To include it, pass the following day as `date_to`, in this case `'2025-03-21'`. Both limits are compared against the creation time in UTC.
 
 ### By Answer Text
 
@@ -837,32 +1242,3 @@ Returns form responses containing an answer whose `answers.text_field` matches e
 **Parameters:**
 - responses (Array&lt;FormResponse&gt;) — user.responses
 - answer_text (String) — exact text to match
-
-## Widget
-
-These Liquid filters alter values related to Widgets.
-
-### Entry Limit
-
-Determines the entry limit for a widget (e.g. <span v-pre>`{{ widget1 | entry_limit }}`</span>).
-
-### Resolve Home Widget List
-
-Returns a list of all widgets that belong to a Site (e.g. <span v-pre>`{{ site | resolve_home_widget_list }}`</span>).
-
-### Resolve Me Widget List
-
-Returns a list of all widgets that belong to a "me" page (e.g. <span v-pre>`{{ site | resolve_me_widget_list }}`</span>).
-
-### Resolve Widget List
-
-Returns a list of all widgets that belong to a page (e.g. <span v-pre>`{{ site | resolve_widget_list: page }}`</span>).
-
-**Parameters**
-
-- `site` (Site) — Site-type object.
-- `page` (Page) — Page-type object.
-
----
-
-NOTE: Composite and submission-related filters depend on internal preview/origination logic; behavior may vary in preview mode versus published mode.

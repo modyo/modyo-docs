@@ -8,7 +8,7 @@ Developing modern user experiences presents challenges due to the heterogeneity 
 
 ### Definition of micro frontend
 
-According to the [official definition](https://micro-frontends.org), a micro frontend extends the concept of [microservices](microservice.md) to the frontend. Its objective is to create a modular architecture in scenarios that would otherwise become frontend monoliths, such as Single-Page Applications (SPAs).
+According to the [official definition](https://micro-frontends.org), a micro frontend extends the concept of [microservices](/en/architecture/patterns/microservice.html) to the frontend. Its objective is to create a modular architecture in scenarios that would otherwise become frontend monoliths, such as Single-Page Applications (SPAs).
 
 Micro frontends enable teams to work with greater autonomy, as their responsibility is limited to their specific context. This necessitates defining clear operating contracts between them, without requiring them to be implemented with the same technology.
 
@@ -32,7 +32,7 @@ Micro frontends enable teams to work with greater autonomy, as their responsibil
 Micro frontends are developed using open tools and frameworks. Once a component is created, it is deployed directly to the Modyo Platform using the Modyo Command Line Interface (CLI).
 
 :::tip Modyo Platform
-Modyo Connect is not a prerequisite for the development and deployment of micro frontends on the Modyo Platform, but it does facilitate the management of [code repositories](/en/connect/components/development#code-repository) and [continuous integration](/en/connect/components/development#continuous-integration) automations for an efficient workflow.
+Modyo Connect is not a prerequisite for the development and deployment of micro frontends on the Modyo Platform, but it does facilitate the management of [code repositories](/en/connect/development/code-repository.html) and [continuous integration](/en/connect/development/continuous-integration.html) automations for an efficient workflow.
 :::
 
 #### General considerations

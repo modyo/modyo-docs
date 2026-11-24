@@ -6,43 +6,42 @@ search: true
 
 **Origination** is a tool designed to optimize and automate complex processes in various sectors, such as managing requests, approvals, or records requiring multiple parties' interaction. This feature allows users to create and manage collaborative workflows in which different actors can actively participate. Through **Origination**, it is possible to request and collect documentation and information between parties, facilitating the validation and progress of the process based on the requirements met.
 
-One of Origination's main advantages is its ability to manage workflows in multiple steps. Each step is verified before proceeding, ensuring the accuracy and compliance of each stage. In addition, Origination offers a secure and efficient environment, preventing the exchange of confidential information by insecure means, reducing the risk of errors, and ensuring data protection.
+One of Origination's main advantages is its ability to manage workflows in multiple steps, allowing each step to be verified before proceeding, ensuring the accuracy and compliance of each stage. In addition, Origination offers a secure and efficient environment, preventing the exchange of confidential information by insecure means, reducing the risk of errors, and ensuring data protection.
 
 This functionality is not included by default in all Modyo plans. To activate it, it is necessary to contact the Modyo team to request its implementation.
 
 Origination is designed for any organization that seeks to streamline complex processes, improve collaboration among those involved, and ensure that the workflow is managed in a structured and secure manner.
 
-## Create a new origination
+## Create a New Origination
 
 To create a new origination, follow these steps:
 
 - In the side menu, navigate to **Customers** > **Realms** and select the Realm you want to work in.
 - Go to the **Origination** option.
-- Click the **New Origination** button.
-- Choose a name and select the type of origination you want to create.
+- Click the **+ New origination** button.
+- Assign a name to the origination.
+- Review the **Identifier**: it's filled in from the name and you can adjust it, but if you change the name afterward, it's generated again. It must be unique in the realm, accepts up to 100 characters, and is part of the origination URL.
 - Click **Create** to finish and begin configuring the steps of the new origination flow.
 
-### Origination types
 
-The origination types determine the purpose and specific functionality of the flows you want to implement. When creating a new origination, you can choose between the following types:
+## Origination Flows
 
-- **Person**: Allows your origination to collect data from natural persons such as an identity document or electronic signature.
-- **Organization**: Collects information from institutions such as legal registrations or multiple shareholders.
-
-## Origination flows
-
-The flows are composed of **Steps** and **Tasks**, which define the structure and actions needed to complete the flow.
+Origination flows are composed of **Steps** and **Tasks**, which structure and define the actions needed to complete the process.
 
 ### Steps
 
-The steps group tasks that are presented on the same screen. To proceed to the next step, the user must complete all assigned tasks.
+Steps group tasks that are presented on the same screen. To proceed to the next step, the user must complete all assigned tasks.
 
 #### Add steps
 
-To add a step, press the **Add** button and choose the values
+To add a step, press the **Add** button and designate the values:
 
 - **Name**: The name that will be displayed in the user interface to identify the Step.
 - **Identifier**: A unique value that will be included in the URL of the origination flow.
+
+:::warning Attention
+Each step must include at least one valid task to be saved.
+:::
 
 ### Tasks
 
@@ -50,45 +49,328 @@ Tasks are the individual actions within each step. These tasks collect informati
 
 #### Add tasks
 
-To add a new Task, press the **Add Task** button and a new task will be created. When creating a task, you must include its values
+To add a new Task, press the **+ Add task** button, which will create a new task container. When creating a task, you must include its values:
 
 - **Name**: The name of the task that will be visible to the user.
 - **Identifier**: A unique identifier that will be included in the origination URL.
-- **Description**: A short explanatory text about the task, it will be visible to the user.
+- **Description**: A short explanatory text about the task, which will be visible to the user.
 - **Type**: Select the type of task based on the objectives of the flow.
 
-#### Tasks types
+#### Task types
 
 The available task types are:
 
-- **Input**: Requests information or data entry from the user.
+- **Input**: Request information or data entry from the user.
 - **Validation**: Requires an administrator to validate the task before proceeding to the next step.
 - **Signature**: Asks the user for a digital signature.
-- **Pending Review**: Pauses the process until an administrator authorizes progress to the next step.
+- **Pending review**: Pauses the process until an administrator authorizes progress to the next step.
+- **Code snippet**: Allows adding custom code.
+- **Origination process**: Calls another origination flow within this one.
+- **Invitation**: Allows inviting other users to fill in necessary data in the flow.
+- **Identity Verification**: Asks the user to verify their identity with document capture and biometrics through a provider.
+- **Confirmation**: Asks the user to confirm the answers provided in previous Input tasks.
 
-:::warning Warning
- Each step must include at least one valid task to be saved.
+##### Task properties
+
+In this section, you can edit the values of the selected task. You can find these values:
+
+- **Name**: The name of the task that will be visible to the user.
+- **Identifier**: A unique identifier that will be included in the origination URL.
+- **Description**: A brief explanatory text about the task, which will be visible to the user.
+- **Show this task to the main user**: Appears only when the task is selected as a target task of an [invitation task](/en/platform/customers/origination.html#invitation). It comes enabled and defines whether the submission's main user also sees and can answer that task, or whether it is reserved for the invitee it was delegated to.
+
+:::warning Editing identifiers
+When editing an already saved step, task, or field, the **Identifier** field appears locked with a padlock. To modify it, you must press the padlock and confirm the **Unlock Identifier field** warning: changing an identifier breaks references to it from external systems or through the Liquid SDK and, in the case of fields, submissions can no longer be searched by that field. The identifier is only generated automatically from the name during creation; when editing, changing the name doesn't modify it.
 :::
 
-## Code Snippets
+### Input
+
+In Input tasks, you can incorporate a wide variety of fields in your forms to customize the collection of data from your users.
+
+#### Add fields
+
+To include a new field, you must select a task and select the **Add** tab.
+
+Origination supports all types of input available in forms. You can see the full list of types in the [forms documentation](https://docs.modyo.com/en/platform/customers/forms#add)
+
+In addition, Input tasks offer three field types that **exist only in Origination** and are not available in forms: **Document**, **Identity document**, and **Selfie**. All three are described in [Specialized file upload fields](/en/platform/customers/origination.html#specialized-file-upload-fields).
+
+
+#### Edit fields
+
+When selecting a field, you can modify its properties by going to the **Edit** tab. There you will find different properties depending on the characteristics of the selected field. The main properties are:
+
+- **Field title**: This is the name of the field that will be displayed in the user interface. This should be clear and descriptive to facilitate interaction.
+- **Required**: Determines if the field is mandatory or not. If activated, the user must complete it before continuing with the flow.
+- **Field instructions**: Provides additional guidance for the user to understand how to complete the field. These instructions are displayed directly on the interface, below the field.
+- **Add instructions pop-up field**: Adds a help icon next to the field. When you click on this icon, a message appears with additional information or useful tips related to the field.
+- **Options**: Additional properties according to the type of field selected.
+
+#### Specialized file upload fields
+
+Input tasks include three field types designed to collect documents and images with automatic processing. All three are available only inside an Input task of an origination.
+
+| Field | What it is for |
+|---|---|
+| **Document** | Uploads a file and, optionally, extracts its text. |
+| **Identity document** | Captures an ID card on both sides or a passport, and extracts its data. |
+| **Selfie** | Captures a photo of the face and, optionally, runs a liveness check. |
+
+All three are added from the **Add** tab of the builder, like any other field, and share the common properties described in [Edit fields](/en/platform/customers/origination.html#edit-fields).
+
+##### The identity verification integration
+
+Data extraction and the liveness check depend on the **Amazon Rekognition Face Liveness** integration, in the **Identity Verification** category. It is installed and enabled per realm, in **Realm settings** → **Integrations**.
+
+If the integration is not enabled, the three fields still appear in the builder and still work for the end user as a regular file upload. The only difference is that the extraction and liveness checkboxes appear disabled, with the message **To enable this option, set up the Amazon Rekognition identity verification integration for this realm.** Any value you had already saved is not lost.
+
+:::tip Integration setup
+To edit an integration you first have to disable it: while it is enabled, editing is not available. Two integration settings change how these fields behave: the **Confidence Threshold (%)**, which decides when a liveness check passes or is rejected (90% by default), and the **Cognito Identity Pool ID**, without which the liveness challenge cannot start.
+:::
+
+##### Document
+
+Uploads a file and, if you enable it, extracts its text automatically. It has two specific options:
+
+- **Allowed Extensions**: A comma-separated list of the extensions you accept in this field, for example `pdf, doc, txt`. If you leave it empty, any extension allowed by the platform is accepted. The extensions you type must be allowed at the platform level; otherwise the field is not saved and the message **These extensions are not allowed** appears.
+- **Extract document data (OCR)**: Enables text extraction from the file. It is off by default.
+
+The field accepts a single file, with the maximum size defined in the platform (10 MB by default). The end user sees the same upload area as in the **File** field, with the list of allowed formats and the maximum size hint.
+
+Extraction works with `jpg`, `jpeg`, `png`, `tiff`, `tif`, `pdf`, and `docx` files. Any other extension can still be uploaded, but it ends up with the **Unsupported file type** status: no text is extracted from it. This is worth keeping in mind with formats that look obvious and are not, such as `doc`, `txt`, or `csv`.
+
+Extraction goes through the **Pending**, **Processing**, **Completed**, **Failed**, and **Unsupported file type** statuses. If the user replaces the file, extraction restarts and the previous result is discarded.
+
+##### Identity document
+
+Captures an identity document and extracts its data. It has three specific options:
+
+- **Accepted document types**: Checkboxes for **ID card (front and back photos)** and **Passport (single photo)**. You cannot leave both unchecked. A field created from the builder starts with only the ID card checked; one created through the API without specifying types accepts both.
+- **Default country**: Sets the country of the document. If you leave it as **The user selects the country**, the user picks the country when answering; if you choose one, the selector is not shown to them and the country is fixed.
+- **Extract document data (OCR)**: Enables extraction of the document data. It is off by default.
+
+The field accepts `jpg`, `jpeg`, and `png` images, and that format is not configurable.
+
+When answering, the user chooses between **Use camera** and **Upload file**. With an ID card, the flow has two steps: first the **Front side** and then the **Back side**, with a framing guide for each. When the first side is done, the screen returns to the start with the title of the remaining side, and the user has to press **Use camera** or **Upload file** again; the camera does not open on its own. With a passport, a single photo of the data page is requested. The **Redo front** and **Redo back** options delete the image already uploaded, not just the preview.
+
+When the camera is used, the rear camera opens if the device has one. If the front camera or a webcam is used instead, the preview is shown mirrored to make framing easier. In both cases, the photo is saved with its real orientation, not mirrored.
+
+The country has a concrete effect on extraction: it is used to interpret the dates on the document. If the country is not set and a date is ambiguous — for example `03/04/1990`, where both numbers could be month or day — the date is stored exactly as it came, without normalizing. So when you know your users' country in advance, it is worth fixing it.
+
+Extraction goes through the **Pending**, **Processing**, **Completed**, and **Failed** statuses.
+
+##### Selfie
+
+Captures a photo of the user's face. It has a single specific option:
+
+- **Face liveness check**: Adds a challenge that confirms there is a real person in front of the camera. It is off by default.
+
+The field accepts `jpg`, `jpeg`, and `png` images, and that format is not configurable. The user can take the photo with the camera or upload a file; there is no way to restrict it to one path. The camera preview is shown mirrored to make framing easier, but the photo is saved with its real orientation, not mirrored, and that is how it is shown when the user confirms it.
+
+When the liveness check is enabled, its block appears **after** the user has captured or uploaded the selfie, with the **Start liveness check** button. Completing it is never mandatory: even if you mark the field as required, the only mandatory part is the photo.
+
+When the challenge finishes, the user only sees that it was completed. The verdict is calculated after the submission is sent and is not shown to them. The possible statuses are **Pending**, **Processing**, **Verified**, **Rejected**, **Failed**, and **Skipped**.
+
+:::warning What the selfie is compared against
+The face comparison is made against the image captured by the liveness challenge itself, **not** against the identity document. It confirms that whoever submits the selfie is the same person who took the challenge, not that the selfie matches the holder of the document.
+:::
+
+If the user captures the selfie again, the previous check is discarded and they have to take it again.
+
+##### Where the result is shown
+
+In the **Fields** tab of the submission, each field shows its file and, depending on the type, the processing result:
+
+- **Selfie**: Shows **Liveness check** with the check status, the reason when there is one, and the **Confidence** as a percentage. It does not appear if the field did not have the liveness check enabled when the user answered.
+- **Identity document**: With an ID card, it shows the **Front side** and the **Back side** separately. If the field has **Extract document data (OCR)** enabled, it also shows **Data extraction (OCR)**, with the extraction status and the reason if it failed, and the **Extracted fields** of the document, such as the full name, the document number, and its dates.
+- **Document**: It looks the same as a **File** field, without the extraction status.
+
+The **Documents** tab of the submission lists the files of all three fields with their name, size, and thumbnail, including the back side of the ID card, and shows the **Liveness check** of each selfie. In the task detail, the Identity document field shows the document type, the country, and the links to **Front side** and **Back side**.
+
+The results are also available for integration:
+
+- In **Liquid templates**, the answer of a Document field returns the file, the extraction status, and the extracted text; the answer of a Selfie field returns the file, the liveness status, and the confidence level.
+- In the **Admin API**, in addition to the above, the error code is exposed when extraction or the check fails.
+
+:::tip Liveness check rejected with no reason
+A **Rejected** check with no reason in the **Fields** tab, or with no error code in the API, means the confidence level fell below the **Confidence Threshold (%)** configured in the integration. It is the most frequent case and does not indicate a technical failure.
+:::
+
+##### Use in conditional logic
+
+All three fields can be used in the conditional logic of the origination, but only with the **has no value** and **has any value** operators. It is not possible to set conditions based on the content of the document, the country, or the result of the liveness check.
+
+#### Customize fields with CSS and JavaScript
+
+The fields of Input tasks carry the same `data-*` attributes as forms, built from the **Identifier** of each field, both on the origination page of the site and in the form of [tasks answered by agents](/en/platform/customers/origination.html#tasks-answered-by-agents). On the origination page, you can use them as selectors in the site's CSS and JavaScript. The agent form loads the published `base` CSS view of the site, but not its JavaScript, so there they only work for style rules. The details of each attribute are in [Identify questions and fields](/en/platform/customers/forms.html#identify-questions-and-fields).
+
+In addition, in Input tasks:
+
+- The **Identity document** field marks its parts with `data-field-part`: `document_type`, `country`, `file_id` and `back_file_id`.
+- Each instance of a repeatable group carries `data-group-item` with its position, starting at 1. The numbering is updated when instances are added or removed.
+- When an instance is added with the **Add** button of a repeatable group, the platform dispatches the `forms:group-item-added` event from the new instance, and the event bubbles up. It's not dispatched for the instances that are already there when the task loads.
+- The `forms:rendered` event is exclusive to forms: Input tasks don't dispatch it.
+
+:::warning Attention
+When a [conditional logic](/en/platform/customers/origination.html#conditional-logic) rule shows or hides a field, the platform redraws the fields of the task and the changes you made to them with JavaScript are lost. Reapplying them is up to you.
+:::
+
+### Validation
+
+The validation task requires manual review by the assigned agent. They must validate the data provided by the user to unlock the next task in the flow.
+The task is refreshed every 5 seconds so that the end user knows if the task has been validated.
+
+When configuring the task, in **Select the tasks to validate**, you check the tasks whose answers the agent will review. You can only validate **Input** and **Code snippet** tasks, and only those that come before the validation task in the flow: later tasks appear disabled and, if they were checked, they're unchecked. Tasks are listed in flow order; **Code snippet** tasks appear under the **Code tasks** heading, and Input tasks that you marked as not visible in the [conditional logic](#configure-conditional-logic) appear under **Hidden tasks**.
+
+You can also define an **Assignee**: an administrator or a group of administrators responsible for the validations. When selecting a group, you can assign the whole group or a specific user within it. If you do not define an assignee, validations are assigned by default to the submission assignee.
+
+Assigned administrators receive an email when a validation is pending and can also review it from the [**My tasks**](/en/platform/core/my-tasks.html) view in the main menu, filtering by the **Validation review** task type. The user receives an internal notification when their task is approved or rejected.
+
+In a specific submission, you can reassign the validation from the **Validations** tab, once the user has completed the tasks to validate.
+
+### Signature
+
+The signature task allows for a simple signature with a checkbox or an advanced one when a digital signature provider is installed in the realm integrations.
+
+In the task, you write the document shown to the user with a rich text editor. That document accepts HTML with the same restrictions as the [Rich Text of forms](/en/platform/customers/forms.html#rich-text): the editor removes what is not allowed, and the platform doesn't save a document that has HTML outside the allowed list.
+
+### Pending Review
+
+The pending review task pauses the origination process. It is used to trigger asynchronous processes, usually in external systems.
+The task is refreshed every 5 seconds so that the end user knows if the task has been reviewed.
+
+In **Pending review page content**, you write what the user sees on the origination page while the task awaits review. In this task, that field plays the role of the **Waiting message shown to the user** of the other [agent tasks](#tasks-answered-by-agents). The agent also sees this content when opening the task from the submission. If you leave it empty, the user sees a default message telling them that the step is being processed.
+
+The content accepts HTML and Liquid, up to 65,535 characters, and on the origination page you can use these variables, among others:
+
+- `submission`: The submission.
+- `task`: The pending review task.
+- `task_response`: The response to this task.
+- `assignee_label`: The name of the administrator or group in charge of the task, based on the effective assignee. It's empty if no one is assigned.
+
+For example:
+
+```liquid
+<p>We're reviewing your request. You'll be able to continue once we're done.</p>
+{% if assignee_label %}
+  <p>It's being handled by {{ assignee_label }}.</p>
+{% endif %}
+```
+
+As with validation tasks, you can define an **Assignee** for the task: an administrator or a group of administrators. If you do not define one, the review is assigned by default to the submission assignee.
+
+### Identity Verification
+
+The Identity Verification task asks the user to verify their identity by capturing a selfie, their identity document, and liveness detection, through a verification provider.
+
+To use this task, you must first enable an integration of the **Identity Verification** category in the [realm integrations](/en/platform/customers/settings.html#integrations), such as **Amazon Rekognition** or **Incode**.
+
+When configuring the task, you define:
+
+- **Provider**: The identity verification integration that will process the verification.
+- **Features**: The verifications included in the task: **Selfie** (always required), **Document** (capture of the front and back of the identity document with data extraction), and **Liveness** (liveness detection).
+- **Liveness Settings**: If you enabled Liveness, you can define the **Confidence Threshold** (from **Lenient** to **Strict**) and **Enable color challenge**, which displays colored lights during the verification and includes a photosensitivity warning for the user.
+
+If the provider is **Incode**, the task does not show **Features** or **Liveness Settings**: **Incode settings** appears instead, because the verifications that run are defined in Incode. See [Verification with Incode](#verification-with-incode) for details.
+
+During the flow, the user captures their selfie and document guided by the interface; the platform validates the quality of the images, extracts the document data, and compares the face on the document with the selfie.
+
+In the details of a submission, the **Identity Verification** tab shows the verification status, the **Face Match Score** and **Liveness Score**, the data extracted from the document, and the captured images.
+
+#### Verification with Incode
+
+With the **Incode** provider, the verification takes place on an Incode page or within the same step of the flow, depending on the modality. The modules that run (document validation with OCR, liveness, face match, and government database validation) are defined by the flow you configure in the Incode Dashboard, not by the task.
+
+Before using it, you must [install the Incode integration](/en/platform/customers/settings.html#incode) in the realm. Then, in **Incode settings** you define:
+
+- **Modality**: How the verification is integrated into the flow:
+  - **Hosted URL**: The user completes the verification on an Incode page, outside the site, and returns to the same step of the flow when they finish, abandon, or fail.
+  - **Drop-in**: The user completes the verification in the same step, with the Incode Web SDK interface embedded in the page. It requires adjusting the site's content security policy, as explained in [Drop-in requirements](#drop-in-requirements).
+- **Incode flow ID**: The identifier of the flow to run, 24 hexadecimal characters long. You get it in the Incode Dashboard, under **Flows** → **...** → **Copy ID**, or under **Workflows** → **...** → **Copy ID** if your organization uses workflows.
+
+Both fields are required: the origination is not saved if the modality is not valid or if the ID does not have 24 hexadecimal characters. If you configure the task through the administration API, the fields are `incode_modality` (accepts `hosted_url` or `drop_in`) and `incode_workflow_id`, inside the task's identity verification configuration.
+
+##### What the user sees
+
+The task shows the verification status and the **Start verification** button. With Hosted URL, the button takes the user to the Incode page; with Drop-in, it opens the verification in the same step. If the browser is not compatible with the Incode Web SDK, the task says so instead of showing the button. When the user finishes, the task reflects the verification status:
+
+- **Verified**: The task is completed automatically and the user continues with the flow.
+- **Pending Review**: Incode left the verification in manual review. The user cannot restart it and must come back later to see the result.
+- **Rejected**, **Expired**, or **Error**: The user can try again with **Start the verification again**.
+- **In Progress**: Modyo does not have the result yet. The screen updates by itself when it arrives and, if the user did not complete the process in Incode, they can start it again.
+- **Processing the result**: The user finished the process in Incode and Modyo is waiting for the result. For the next two hours the user cannot restart the verification, so a finished attempt is not discarded. If the result does not arrive within that time, they can start it again.
+
+Each new attempt discards the images and results of the previous one. If Incode returns an error when starting the verification, the user sees a service unavailable message and the submission records the **Incode error in identity verification** log, which suggests checking the integration API key and the task flow ID.
+
+##### Drop-in requirements
+
+With Drop-in, the Incode Web SDK runs inside the site page, so the site's [content security policy (CSP)](/en/platform/channels/sites.html#content-security-policy-csp) must allow its resources. If the site defines its own policy, add to the existing directives:
+
+```bash
+script-src 'wasm-unsafe-eval' 'unsafe-eval'
+connect-src https://*.incodesmile.com https://*.s3.amazonaws.com https://featureassets.org https://prodregistryv2.org https://api.ipify.org
+img-src blob: https://*.s3.amazonaws.com
+worker-src blob:
+media-src blob:
+```
+
+`'wasm-unsafe-eval'` allows loading the SDK's WebAssembly module, and `'unsafe-eval'` is required by the image processing kit that the SDK downloads from Incode.
+
+::: warning Cost of 'unsafe-eval'
+`'unsafe-eval'` applies to the whole site, not only to the verification step: it allows running code from text and weakens the site's protection against _cross site scripting_. Add it only if you need Drop-in; Hosted URL does not require it.
+:::
+
+If the platform applies a default policy to sites, that policy does not allow the SDK. To use Drop-in, enable [Security headers](/en/platform/channels/sites.html#security-headers) on the site and define in **Content-Security-Policy (CSP)** a policy of its own that includes the directives above: the site policy replaces the platform one.
+
+With a nonce-based policy, the SDK uses its default theme instead of the theme configured in the Incode Dashboard, because Incode inserts that theme without a nonce.
+
+##### How the result is decided
+
+Modyo maps the overall status returned by Incode:
+
+- **OK** or **MANUAL_OK**: **Verified**.
+- **FAIL**, **MANUAL_FAIL**, or **WARN**: **Rejected**.
+- **MANUAL** or **MANUAL_PENDING**: **Pending Review**.
+
+If a reviewer approves or rejects the verification manually in Incode, that decision prevails over the overall status. If the session expires in Incode before it finishes, the status becomes **Expired**.
+
+::: tip The result may take some time
+Modyo checks the result in Incode when the user returns to the step, when Incode notifies it through the [webhook](/en/platform/customers/settings.html#incode-webhook), and periodically during the first 24 hours after the verification started. A manual review decision made after that period only reaches Modyo through the webhook.
+:::
+
+::: warning Rejection after approval
+If Incode rejects in manual review a verification that had already been approved, the task remains completed: Modyo does not roll back the progress of the flow. In that case, the submission records the **Incode rejection after approving the identity verification** log, so you can review it.
+:::
+
+##### Results in the submission
+
+With Incode, the **Identity Verification** tab of the submission shows:
+
+- **Verification Status**: The status, the **Incode session ID**, and the **Verification Date**.
+- **Verification modules**: The status returned by Incode for **Document validation**, **Liveness**, **Face match**, and **Government database validation**, only for the modules included in the flow, along with the **Face Match Score** and the **Liveness Score**.
+- **OCR Results**: The document data returned by Incode: **Full name**, **Document type**, **Document number**, **Personal number**, **Birth date**, **Gender**, **Nationality**, **Issuing country**, **Expiration**, and **Address**.
+- **Verification Images**: The **Selfie**, the **Document Front**, and the **Document Back**.
+- **Rejection Reasons**: The modules that failed and the reason reported by Incode, when the verification was not approved.
+
+### Code Snippet
 
 **Code snippets** allow you to add custom blocks of code to origination flows. These blocks support **HTML, JavaScript, and CSS**, making it easy to create interactive components or customize the flow according to the user's needs.
 
 **Code snippets** can:
 
 - Adjust to any scenario within the origination flow.
-- Deploy real-time data from the submissions.
+- Deploy real-time data from the submission.
 - Store and consume information relevant to the process.
 
-### Insert a Code Snippet
+#### Insert a Code Snippet
 
 To add a **code snippet** to an origination task, follow these steps:
 
 1. Create a new **Task** within a flow step.
-2. Select the **Code Snippet** task type.
+2. Select the **Code snippet** task type.
 3. Configure the properties of the task.
 
-### Code Snippet Properties
+#### Code Snippet Properties
 
 - **Task ID**: Unique identifier for the task. It is generated automatically when you save the task and allows you to access the data from the API.
 - **Name**: Name of the task, visible to the user.
@@ -97,7 +379,7 @@ To add a **code snippet** to an origination task, follow these steps:
 - **Complete the task using the API**: If checked, the continue action will be disabled by default for this task and will require the developer to report the completion status using the JavaScript API.
 
 
-### JavaScript API for Code Snippets
+#### JavaScript API for Code Snippets
 
 Modyo provides a JavaScript API for interacting with code snippets at run time.
 
@@ -106,7 +388,7 @@ Modyo provides a JavaScript API for interacting with code snippets at run time.
 - **`getUrl()`**: Returns the URL of the current origination flow.
 - **`enableButton()`**: Enables the task's action button and allows the user to continue with the flow.
 
-### JSON API for code snippets
+#### JSON API for Code Snippets
 
 Code Snippets can communicate with the origination API using data in **JSON** format.
 
@@ -150,221 +432,564 @@ When you consume data from the JSON API, you will get an object with all the dat
 To store information, the data must use valid JSON format; format errors will not be processed.
 :::
 
-### Using Liquid in code snippets
+#### Completing the task from the code snippet
 
-Code snippets can use liquid objects to access internal submission data and personalize the user experience.
+The POST request to the `getUrl()` URL saves the data and can also change the task status, depending on the `completed` parameter:
 
+- **Without `completed`**: saves the data without changing the task status. The task is completed when the user clicks **Next**.
+- **`completed: true`**: saves the data and marks the task as completed.
+- **`completed: false`**: saves the data without completing the task. If the task was already completed, it goes back to in progress.
 
-#### Submission Objects
+Use only `true` or `false` in `completed`. Any other value is read as `false`.
 
-In an origination flow, each submission represents the ongoing process of a specific user. Here are some of the main attributes available through Liquid:
+`completed` goes at the same level as `content`, not inside it. For example, to save the data and complete the task:
 
-| Description  | Example  |
-|---|---|
-| **submission.sequence_id** Sequence number of the current submission.  | ``` 77 ``` |
-| **submission.assignee.name** Name of the assigned person.  | ```John``` |
-| **submission.fields** Array with answers stored within the current submission. | ```[{"question": {"label": "What's your name?"},"text_field": "Jorge Regula"}]``` |
-| **submission.QUESTION_ID** By using the ID of a specific question (e.g., submission.123456), its information is directly accessed | ```{"question": {"label": "What's your name?"},"text_field": "John Doe"}``` |
-| **submission.origination.name** Name of the origination. | ```My Origination``` |
-| **submission.origination.steps** Array with the names of the steps in the origination | ```[ {"uid": "step 1"}, {"uid": "step 2"}]``` |
-| **submission.origination.tasks** Array with all the tasks in the origination and the step they correspond to | ```[{"task_id": "67890","name": "Task 1", description: "step 1": { "uid": "abcd1234" } }]``` |
+```js
+await fetch(getUrl(), {
+  method: 'POST',
+  headers: {
+    'X-CSRF-TOKEN': document.querySelector('meta[name=csrf-token]').content,
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({ content: { plan: 'basic' }, completed: true })
+});
+```
 
-You can learn more about [Liquid Objects](/en/platform/channels/liquid-markup/objects.html) in our documentation.
+Completing the task from the code snippet is not the same as clicking **Next**. Each path records different events:
 
-### Code snippets example
+- **POST that completes the task**: records **Origination task response completed** (`origination_task_response_completed_log`) and **Origination submission task updated** (`origination_submission_task_updated_log`).
+- **Next button**: records **Origination submission task submitted** (`origination_submission_task_submitted_log`). In tasks with **Lock responses once completed**, this event is recorded by the POST that completes the task, as explained below.
+
+If the task does not have that option enabled and the user completes it with the POST, but leaves the flow without clicking **Next** (for example, because the code snippet navigates with `window.location`, or the user comes back later through the link to resume the submission), the task is completed, but **Origination submission task submitted** is not recorded.
+
+:::tip Tip
+For an integration to know that the user finished a code snippet, subscribe your [webhook](/en/platform/core/webhooks.html) to **Origination task response completed** (`origination_task_response_completed_log`). In a code snippet, that event is recorded when the task becomes completed, either with the POST or with the **Next** button. If you need the code snippet to move on to the next step by itself, enable the button with `enableButton()` and let the user click **Next**, instead of redirecting with `window.location`.
+:::
+
+If the task has the **Lock responses once completed** option enabled, the POST that completes it also records **Origination submission task submitted**, because after that the **Next** button no longer submits the task again.
+
+A POST without `completed` neither completes nor locks the task: the code snippet can save data several times and the latest content is kept, until the user clicks **Next** or the code snippet sends `completed: true`.
+
+If a validation task rejects the code snippet response, the user can correct it even when the task has **Lock responses once completed**. While correcting, a POST without `completed: true` only saves the data: the rejection and its comment stay visible and the validators are not notified. The correction is submitted when the user clicks **Next** or the code snippet sends `completed: true`. At that point the validators are notified and, if the task has that option, it is locked again.
+
+#### Using Liquid in code snippets
+
+Code snippets can use Liquid objects to access internal submission data and personalize the user experience.
+
+#### Code Snippets Example
+
+In an origination flow, each response represents the ongoing process of a specific user.
+
+You can learn more about [Liquid Objects](/en/platform/channels/liquid-markup/objects) in our documentation.
 
 In this example, you can find the use of data access by Liquid Objects and interaction with JavaScript and JSON APIs. Remember to replace the `QUESTION_ID` value with the corresponding one in your submission.
 
 ``` html
 <div class="form-group">
-	<h5>Hello, {{ user.name }}!</h5>
-	<p class="mb-6">You are in the origination {{ submission.origination.name }}</p>
-	<div class="form-group">
-		<label for="productDropdown" class="form-label">Select the brand of your favorite products <span class="req">*</span></label>
-		<select class="form-select" id="productDropdown" disabled>
-			<option value="" selected>Loading...</option>
-		</select>
-	</div>
+    <div class="form-group">
+        <label for="productDropdown" class="form-label">Select a car <span class="req">*</span></label>
+        <select class="form-select" id="productDropdown" disabled>
+            <option value="" selected>Loading...</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="colorDropdown" class="form-label">Select your favorite color <span class="req">*</span></label>
+        <select class="form-select" id="colorDropdown" disabled>
+            <option value="" selected>Loading...</option>
+        </select>
+    </div>
+	  <div class="form-group">
+        <label for="yearInput" class="form-label">Year <span class="req">*</span></label>
+        <input type="number" class="form-control" id="yearInput" placeholder="e.g., 2023">
+    </div>
+	  <div class="form-group">
+        <label for="dateInput" class="form-label">Driver license expiration<span class="req">*</span></label>
+        <input type="date" class="form-control" id="dateInput">
+    </div>
+	 <div class="form-group">
+     <label for="extrasSelect" class="form-label">Select extras (multi-select)</label>
+       <select class="form-select" id="extrasSelect" multiple>
+         <option value="ac">Air Conditioning</option>
+         <option value="gps">GPS</option>
+         <option value="sunroof">Sunroof</option>
+         <option value="leather_seats">Leather Seats</option>
+       </select>
+   </div>
 </div>
-
 <script>
-	const dropdown = document.getElementById('productDropdown');
+    const staticProducts = [
+        { id: 'ferrari', title: 'Ferrari' },
+        { id: 'lamborghini', title: 'Lamborghini' },
+        { id: 'maserati', title: 'Maserati' },
+        { id: 'alfa_romeo', title: 'Alfa Romeo' },
+        { id: 'fiat', title: 'Fiat' },
+        { id: 'lancia', title: 'Lancia' },
+        { id: 'pagani', title: 'Pagani' }
+    ];
 
-	async function initializeDropdown() {
-		const savedData = await getRequestJson();
-		let selectedValue = null;
-		if (savedData?.submission?.fields?.[0]?.answers) {
-			const productAnswer = savedData.submission.fields[0].answers.find(answer => answer.question.label === 'PRODUCT');
-			selectedValue = productAnswer?.text_field;
-		}
+    const staticColors = [
+	 { id: 'white', name: 'White' },
+	{ id: 'red', name: 'Red' },
+        { id: 'blue', name: 'Blue' },
+        { id: 'black', name: 'Black' },
+        { id: 'silver', name: 'Silver' },
+        { id: 'green', name: 'Green' },
+        { id: 'yellow', name: 'Yellow' }
+    ];
 
-		try {
-			const response = await fetch('https://dummyjson.com/products');
-			if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-			const data = await response.json();
+    const productDropdown = document.getElementById('productDropdown');
+    const colorDropdown = document.getElementById('colorDropdown');
+	  const yearInput = document.getElementById('yearInput');
+	  const dateInput = document.getElementById('dateInput');
+	  const extrasSelect = document.getElementById('extrasSelect');
 
-			let optionsHtml = '<option value="">Select ...</option>';
-			data.products.forEach(product => {
-				optionsHtml += `<option value="${product.id}" ${selectedValue && product.id.toString() === selectedValue ? 'selected' : ''}>${product.title}</option>`;
-			});
-			dropdown.innerHTML = optionsHtml;
-			dropdown.disabled = false;
-			if (dropdown.value) enableButton();
+    async function initializeDropdowns() {
+        const savedData = await getRequestJson();
+        let selectedProductValue = null;
+        let selectedColorValue = null;
 
-		} catch (error) {
-			console.error("Error fetching product data:", error);
-			dropdown.innerHTML = '<option value="">Error loading</option>';
-		}
-	}
+        if (savedData?.application?.fields?.[0]?.answers) {
+            const productAnswer = savedData.application.fields[0].answers.find(answer => answer.question.label === 'PRODUCT');
+            selectedProductValue = productAnswer?.text_field;
 
-	dropdown.addEventListener('change', () => {
-		if (dropdown.value) enableButton();
-	});
+            const colorAnswer = savedData.application.fields[0].answers.find(answer => answer.question.label === 'COLOR');
+            selectedColorValue = colorAnswer?.text_field;
+        }
 
-	async function getRequestJson() {
-		try {
-			const url = getUrl();
-			const response = await fetch(url);
-			if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
-			return await response.json();
-		} catch (error) {
-			console.error("Error in getRequestJson:", error);
-			return null;
-		}
-	}
+        let productOptionsHtml = '<option value="">Select ...</option>';
+        staticProducts.forEach(product => {
+            productOptionsHtml += `<option value="${product.id}" ${selectedProductValue && product.id === selectedProductValue ? 'selected' : ''}>${product.title}</option>`;
+        });
+        productDropdown.innerHTML = productOptionsHtml;
+        productDropdown.disabled = false;
+        if (productDropdown.value) enableButton();
 
-	async function sendData() {
-		const jsonData = {
-			"submission": {
-				"sequence_id": "{{submission.sequence_id}}",
-				"fields": [{ "answers": [{ "question": { "label": "PRODUCT" }, "text_field": dropdown.value }] }]
-			},
-			"task": { "task_id": "{{task.task_id}}", "step": { "uid": "{{task.step.uid}}" } },
-			"page": { "name": "{{submission.origination.name}}" }
-		};
-		await postRequestJson(jsonData);
-	}
+        let colorOptionsHtml = '<option value="">Select ...</option>';
+        staticColors.forEach(color => {
+            colorOptionsHtml += `<option value="${color.id}" ${selectedColorValue && color.id === selectedColorValue ? 'selected' : ''}>${color.name}</option>`;
+        });
+        colorDropdown.innerHTML = colorOptionsHtml;
+        colorDropdown.disabled = false;
+        if (colorDropdown.value && productDropdown.value) enableButton();
+    }
 
-	async function postRequestJson(content) {
-		try {
-			const response = await fetch(getUrl().concat(`?content=${encodeURIComponent(JSON.stringify(content))}`), {
-				method: 'POST',
-				headers: { 'Content-Type': 'application/json', 'Accept': 'application/json', 'X-CSRF-Token': document.querySelector('meta[name=csrf-token]').content }
-			});
-			if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-			await response.json();
-		} catch (error) {
-			console.error('Error:', error);
-		}
-	}
-	async function postRequestJson2(content) {
-		try {
-			const response = await fetch(getUrl(), {
-				method: "POST",
-				headers: {
-					'X-CSRF-TOKEN': document.querySelector('meta[name=csrf-token]').content,
-					'Accept': 'application/json',
-      		'Content-Type': 'application/json'
-				},
-				body: JSON.stringify({content: content}),
-			});
-			if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-			await response.json();
-		} catch (error) {
-			console.error('Error:', error);
-		}
-	}
+    productDropdown.addEventListener('change', () => {
+        if (productDropdown.value && colorDropdown.value) enableButton();
+    });
 
-	document.addEventListener('DOMContentLoaded', async function() {
-		await initializeDropdown();
-		document.querySelector('form')?.addEventListener("submit", function(event) {
-			sendData();
-		});
-	});
+    colorDropdown.addEventListener('change', () => {
+        if (productDropdown.value && colorDropdown.value) enableButton();
+    });
+
+    async function getRequestJson() {
+        try {
+            const url = getUrl();
+            const response = await fetch(url);
+            if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
+            return await response.json();
+        } catch (error) {
+            console.error("Error in getRequestJson:", error);
+            return null;
+        }
+    }
+
+    async function sendData() {
+			  const selectedExtras = Array.from(extrasSelect.selectedOptions).map(option => option.value);
+
+        const jsonData = {
+            "submission": {
+                "fields": {
+                    "car": productDropdown.value,
+                    "color": colorDropdown.value,
+		   "year": yearInput.value ? parseInt(yearInput.value, 10) : null,
+		   "expiration": dateInput.value,
+		   "extras": selectedExtras
+                }
+            }
+        };
+        return await postRequestJson(jsonData);
+    }
+
+    async function postRequestJson(content) {
+        try {
+            const response = await fetch(getUrl().concat(`?content=${encodeURIComponent(JSON.stringify(content))}`), {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json', 'X-CSRF-Token': document.querySelector('meta[name=csrf-token]').content }
+            });
+            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+            await response.json();
+        } catch (error) {
+                console.error('Error:', error);
+        }
+    }
+
+    async function postRequestJson2(content) {
+        try {
+            const response = await fetch(getUrl(), {
+                method: "POST",
+                headers: {
+                    'X-CSRF-TOKEN': document.querySelector('meta[name=csrf-token]').content,
+                    'Accept': 'application/json',
+            'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({content: content}),
+            });
+            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+            await response.json();
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', async function() {
+        await initializeDropdowns();
+	   const mainForm = document.querySelector('form');
+	    mainForm.addEventListener("submit", async function(event) {
+            event.preventDefault();
+            const submitHandler = async (e) => {
+                e.preventDefault();
+                try {
+                    const responseData = await sendData();
+                    mainForm.removeEventListener("submit", submitHandler);
+                    mainForm.submit();
+                } catch (error) {
+                    console.error("Error during data submission:", error);
+                }
+            };
+	   submitHandler(event);
+        });
+    });
 </script>
 ```
-
 :::tip Valid JSON
-The content parameter that is sent must be a valid json. If it has to be empty, {} must be sent.
+The content parameter that is sent must be valid JSON. If it has to be empty, {} must be sent.
 :::
-### Fields
 
-You can incorporate a wide variety of fields in your forms to customize the collection of data from your users.
+### Origination Process
 
-#### Add fields
+The origination process task type allows you to insert another origination into the flow.
+This is because many flows share certain steps or data that are required from the user.
+When using an origination process task, if the user already has previous responses, they could use them instead of providing the same data over and over again.
+Whether or not to allow the use of previous data is defined when adding the origination process task.
 
-To include a new field, you must select a task and select the **Add** tab.
+### Invitation
 
-Origination supports all types of input available in forms. You can see the full list of types in the [forms documentation](https://docs.modyo.com/en/platform/customers/forms#add)
+The Invitation task enables **multi-user** origination flows: the main user of the submission invites other people to complete specific tasks in the flow.
 
+To create an invitation task, you must first create at least one [role](#roles) in the origination editing. Each role can be used in only one invitation task of the origination.
 
-#### Edit fields
+When configuring the task, you define:
 
-When selecting a field, you can modify its properties by going to the **Edit** tab. There you will find different properties depending on the characteristics of the selected field. The main properties are:
+- **Role**: The role that invited users will assume.
+- **Email template**: The HTML/Liquid code of the email each invitee receives, with the invitation's [Liquid variables](#invitation-email-template).
+- **Target tasks**: The tasks that invited users will be able to complete, grouped by step. You can select tasks from any step of the origination; other invitation tasks and origination process tasks are not selectable.
 
-- **Field Title**: This is the name of the field that will be displayed in the user interface. This should be clear and descriptive to facilitate interaction.
-- **Required**: Determines if the field is mandatory or not. If activated, the user must complete it before continuing with the flow.
-- **Field Instructions**: Provides additional guidance for the user to understand how to complete the field. These instructions are displayed directly on the interface, below the field.
-- **Add a Field Pop-up instructions**: Adds a help icon next to the field. When you click on this icon, a message appears with additional information or useful tips related to the field.
-- **Options**: Additional properties according to the type of field selected.
+In addition, the properties of each task selected as a target show the **Show this task to the main user** option, enabled by default. When you disable it, the task stops appearing in the main user's flow and is reserved for the invitee who resolves it. If you later remove that task from the **Target tasks**, the option is enabled again on its own so it doesn't remain hidden with nobody to answer it.
 
-##### Task properties
+On the origination page, the main user can invite new people (first name, last name, and email address) or users already invited in other tasks, and can resend or cancel pending invitations. Each invitee receives an email with an access link and, upon entering, only sees the tasks assigned to them; if they have more than one role, they see the union of the tasks of all their roles. The invited user cannot cancel the submission.
 
-In this section, you can edit the values of the selected task. You can find these values:
+The invitation task is completed when all invitees finish their tasks. If the role does not require invitations and the main user does not invite anyone, the task is automatically completed when continuing. The number of active invitations is limited by the role's **Maximum number of users**.
 
-- **Name**: The name of the task that will be visible to the user.
-- **Identifier**: A unique identifier that will be included in the origination URL.
-- **Description**: A brief explanatory text about the task, which will be visible to the user.
+:::tip Template for invited users
+The origination page includes the **Resume (Invited)** template, which is the view invited users see when they return to the submission. You can customize it like the rest of the page templates.
+:::
+
+#### Invitation email template
+
+Each invitation task has its own email template. When the task is created, the **Email template** editor is preloaded with a working example that already includes the acceptance button, and you can replace it entirely. The subject is not configurable: the platform uses the origination name and the task name.
+
+Inside the template, these Liquid variables are available:
+
+| Variable | Content |
+|---|---|
+| <code v-pre>{{ invitation_url }}</code> | The invitee's personal access link. It is the only essential variable of the template. |
+| <code v-pre>{{ invitation.first_name }}</code>, <code v-pre>{{ invitation.last_name }}</code>, <code v-pre>{{ invitation.email }}</code> | The data the invitation was sent with. |
+| <code v-pre>{{ invitation.status }}</code>, <code v-pre>{{ invitation.token }}</code>, <code v-pre>{{ invitation.created_at }}</code>, <code v-pre>{{ invitation.accepted_at }}</code> | The invitation status, its token, and its dates. |
+| <code v-pre>{{ user }}</code> | The invited user. |
+| <code v-pre>{{ submission }}</code>, <code v-pre>{{ task }}</code>, <code v-pre>{{ origination }}</code>, <code v-pre>{{ site }}</code> | The submission, the invitation task, the origination, and the site. |
+
+The minimum acceptance link is written like this:
+
+```liquid
+<a href="{{ invitation_url }}">Click here to accept the invitation</a>
+```
+
+:::warning No template means no email
+If you leave the **Email template** empty, the invitation is still created and appears in the task's list, but the invitee never receives the message with their access link. Always check that the template includes the acceptance link.
+:::
+
+#### Invitation lifecycle
+
+In the invitation task, the main user sees the list of the people they invited with their name, email, role, a progress bar of the tasks delegated to them, and a badge with the invitation status:
+
+- `pending`: The invitation was sent and the invitee hasn't entered the flow yet.
+- `accepted`: The invitee opened their link and entered the submission.
+- `completed`: The invitee finished all the target tasks of their role.
+- `cancelled`: The main user canceled the invitation before it was accepted.
+
+The available actions depend on the status: **Resend invitation** and **Cancel invitation** are only shown while the invitation is `pending`. Once accepted, it can no longer be canceled or resent. A canceled invitation doesn't take up a slot in the role's **Maximum number of users**, so you can invite the same person again.
+
+When the last active invitation of the task is completed, the invitation task response completes on its own and the flow continues. From that moment on, no new invitations can be sent from that task.
+
+The link in the invitation email works for a single sign-in and expires after 7 days. In addition, every time the platform sends that person a new link, for example when the invitation is resent, when they are invited to another task, or when they request a password recovery, the previous links stop working. If the link no longer works and the invitation is still `pending`, the main user can resend it so the invitee gets a new link; if it was already accepted, the invitee has to sign in to the realm to return to the submission.
+
+:::tip Wait between resends
+You must wait a few minutes between one resend and the next. If you press **Resend invitation** too soon, the platform tells you how many minutes are left instead of sending the email.
+:::
+
+### Confirmation
+
+The Confirmation task shows the user a summary of the answers they provided in previous Input tasks, so they can review and confirm them before continuing with the flow.
+
+When configuring the task, in **Select items to confirm** you choose the tasks whose answers will be included in the summary, grouped by step. You can only select **Input** tasks prior to the confirmation task.
+
+The user sees each selected task with its answers and an **Edit** link that takes them directly to that task to correct it. Pressing **Confirm** completes the task and the flow continues. To complete the task, all configured items must be confirmed.
+
+In the **Fields** tab of a submission, each completed confirmation task shows the list of **Confirmed Tasks**.
+
+### Tasks answered by agents
+
+Each task in the flow has the **Assigned to** option, which defines who answers it:
+
+- **User**: The task is answered by the end user on the origination page.
+- **Agent**: The task is answered by an administrator from the admin. **Validation** and **Pending review** tasks are always agent tasks; **Input** and **Code snippet** tasks can be configured in either mode.
+
+When the flow reaches an agent task, the assigned administrators receive an email with a direct link to the task and also see it in the [**My tasks**](/en/platform/core/my-tasks.html) view. The effective assignee is resolved in this order: the assignee of the task response, the assignee configured on the task and, failing that, the assignee of the submission; you can reassign a specific task from the submission view, which notifies the new assignee.
+
+From the submission view, the agent opens the task and answers the form with the same experience as the site: live conditional logic, file uploads, repeatable groups, and code snippets. While the task awaits the agent's action, the user sees on the origination page the text configured in **Waiting message shown to the user**.
+
+:::tip Agent form styles
+The form of an agent task first loads the admin styles and then the published version of the `base` CSS view of the origination page's site, so the agent sees it with the site's look and feel. If the site does not have that view published, the form uses only the admin styles. The site's JavaScript is not loaded.
+
+The form content is placed inside the `#agent-task-content` container. Use that selector so a rule applies only in the agent view, for example `#agent-task-content .form-control`.
+
+Resources that the stylesheet pulls from other domains, such as an `@import`, fonts, or images, may not load in the agent form, so do not rely on them for its look. If the site has the [Cross Origin Resource Policy](/en/platform/channels/sites.html#cross-origin-resource-policy) header enabled, the browser may block the whole stylesheet and the form is shown with the admin styles only.
+:::
+
+Additional options depending on the task type:
+
+- **Disable manual completion** (Pending review): Hides the **Complete** button so the task cannot be completed manually from the admin. Administrators with the **Change Status of Task Response** permission can still complete it.
+- **Allow same-origin** (Code snippet): Grants the task iframe access to the admin origin (session and cookies), disabling the sandbox isolation. Enable it only for trusted snippets.
+
+You can also assign an agent task to an agent or a group based on the user's answers, with the **Assign** action of [conditional logic](#assign-tasks-with-conditional-logic).
+
+#### Agent verification for external services
+
+When an agent answers a Code snippet task, your code can obtain a short-lived credential (5 minutes) so an external service can verify that the caller is an agent authorized for that task and submission:
+
+1. From the task iframe, request the credential at `GET /admin/customers/{realm_uid}/originations/{origination_id}/submissions/{submission_id}/agent_task_forms/{step_task_id}/assertion` (same admin base where the iframe runs; accepts the optional `audience` parameter with the target service identifier) and send it to the external service.
+2. The external service validates it at `POST /api/admin/customers/{realm_uid}/originations/agent_assertions/introspect` (requires API Access with a permission that includes viewing submissions: **View All Submissions** or **View Assigned Submissions**). The response indicates `active: true` with the identifiers of the agent, submission, task, and acted user, or `active: false` if the credential expired or the authorization was revoked — validation always checks the current state, not just the signature.
+
+You can find the endpoint details in the [API](/en/platform/core/api.html) Swagger documentation.
+
 ### Conditional Logic
 
-Conditional logic allows you to create more dynamic and intelligent workflows. With this functionality, you can define rules for showing or hiding **Steps**, **Tasks**, and **Input task fields** based on answers provided by users or on existing data within the submission. This allows you to personalize the user experience, presenting only relevant information at each stage of the process and simplifying or bifurcating the interaction. Conditional logic gives you the flexibility to:
+Conditional logic allows you to create more dynamic and intelligent workflows. With this functionality, you can define rules for showing or hiding **Steps**, **Tasks**, and **Input task fields**, and for assigning agent tasks, based on answers provided by users or on existing data within the submission. This allows you to personalize the user experience, presenting only relevant information at each stage of the process and simplifying or bifurcating the interaction. Conditional logic gives you the flexibility to:
 
 - **Hide or show complete steps:** Guides users through different paths within the origination flow based on their previous answers.
 - **Hide or show individual tasks:** Within a step, you can show or hide specific tasks. This is useful for requesting additional information only when needed.
 - **Hide or show Input task fields:** Within an Input task, you can show or hide specific fields. This allows you to omit or request data based on the answers provided by the user.
+- **Assign agent tasks:** Based on the user's answers, assign an agent task to a specific agent or group. See the details in [Assign tasks with conditional logic](#assign-tasks-with-conditional-logic).
 
 #### Configure Conditional Logic
 
 To set up conditional logic, follow these steps:
 
-1. **Enter the editor:** In the Build view of an origination, press the **Conditional Logic** button.
-2. **Edit the visibility of items:** By default, all steps, tasks, and fields will be visible. In the **Structure** section, you can mark as invisible the elements you want by pressing the eye icon.
-3. **Define rules:** In the **Rules** section, you can define the conditions that will determine if an element is shown or hidden. The rules are composed of: (1) one or more conditions evaluated using **AND** and **OR** operators and (2) an action to be executed when the conditions are met.
+1. **Enter the editor:** In the Build view of an origination, press the **Conditional logic** button.
+2. **Edit the visibility of items:** By default, all steps, tasks, and fields will be visible. In the **Structure** section, you can mark as not visible the elements you want by pressing the eye icon.
+3. **Define rules:** In the **Rules** section, you can define the conditions that will determine if an element is shown or hidden. The rules are composed of: (1) one or more conditions evaluated using **AND** and **OR** operators and (2) one or more actions to be executed when the conditions are met.
    1. **Add a rule**: Press the **Add** button.
    2. **Define the conditions:** Conditions can be based on:
-      * **Responses to Input fields:** Compares the response provided by the user in a specific field with a given value. You can use operators such as "is equal to", "not equal to", "contains", "is greater than", "is less than", etc.
+      * **Responses to Input fields:** Compares the response provided by the user in a specific field with a given value. You can use operators such as "is equal to", "is not equal to", "contains", "is greater than", "is less than", etc.
       * **Completeness of a Step or Task:** Evaluates if a step or task was completed.
-   3. **Define the action:** Select the action and the element on which it will be executed when the rule is met. The available actions are **Show** and **Hide**.
+   3. **Define the actions:** In **Then**, select the action and the element on which it will be executed when the rule is met. The available actions are **Show**, **Hide**, and **Assign**. To add another action to the same rule, press **+ Add action**. Use the **Move up** and **Move down** icons to change the order of an action and **Remove action** to delete it.
 4. **Save the changes:** Once you have defined your rules, save the changes.
 
-:::tip User experience
-Consider how conditional logic can affect the user experience and ensure that the flow can be completed.
+When a rule's conditions are met, all its actions run, in order. If two actions contradict each other, for example **Show** and **Hide** on the same element, the last one prevails, both within the same rule and across different rules. The rules you already had, with a single action, keep working the same way.
+
+:::warning Attention
+Since the last action prevails, changing the order of the rules or of their actions can change which elements the user sees or who a task is assigned to.
 :::
 
-### Edit origination settings
+:::tip User experience
+Consider how conditional logic can affect the user experience and ensure that the flow can be completed easily.
+:::
+
+#### Assign tasks with conditional logic
+
+The **Assign** action assigns an agent task to an agent or a group when the rule's conditions are met. It's useful, for example, to route a task to a different team depending on the product the user chose.
+
+To set it up in a rule:
+
+1. In **Then**, choose **Assign**.
+2. Choose the task. You can only choose tasks in agent mode: **Validation** and **Pending review** tasks, and the **Input** and **Code snippet** tasks whose **Assigned to** is set to **Agent**. The others show up disabled.
+3. In **Select an agent or group**, choose an agent, a group, or an agent within a group.
+
+You can only choose active agents who can view the realm's submission tasks, for example with the **View Submission Tasks** permission. If you choose an agent within a group, they also have to belong to that group. You can't save an **Assign** action without a task or without an agent or group: the editor shows the notice "Select a task and an agent or group to save this action."
+
+If you later set the task to **User** mode, the action shows the notice "This task is not in agent mode. This action has no effect until the task is set to agent mode." and the platform ignores it while the task stays in that mode.
+
+This is how the assignment is applied:
+
+- The rule assigns the task when its conditions go from not met to met. If they later stop being met, the task keeps the assignment, and if they're met again, the rule assigns it again.
+- If several **Assign** actions point to the same task, the last one prevails.
+- If the action's agent or group is no longer valid, because the agent is inactive or suspended, lost the permission, no longer belongs to the group, or was deleted, the platform ignores that action and applies the previous valid **Assign** action. If none is left, the task goes back to the default assignment described in [Tasks answered by agents](#tasks-answered-by-agents).
+- A manual reassignment made after the rule assigned the task is kept. If the rule fires again, its assignment replaces the manual one.
+- The rule can assign a task the user hasn't reached yet. The submission becomes visible to the agent or group as soon as the rule fires, and the assignment is kept when the flow reaches the task.
+- The email to the assignee is sent when the flow reaches the task, not when the rule fires. If the task was already in progress and the rule reassigns it, the new assignee gets the email just like in a manual reassignment.
+- A task assigned by a rule behaves like any other agent task: the user can't move forward until the agent completes it. If the user resumes the flow, they go back to the first task they didn't complete.
+- The rule doesn't change tasks that are already completed or tasks that conditional logic hides from the user. In multi-user flows, the rule is evaluated with each participant's answers and only assigns the tasks that belong to that participant.
+- Editing a rule doesn't change the submissions where it already ran: they keep the assignment it made, and the new configuration applies the next time the rule fires.
+- The automatic assignment that happens when the flow reaches the task doesn't replace the one made by a rule.
+- The assignments a rule makes aren't recorded in the activity logs.
+
+:::warning Attention
+If you consume the originations admin API, keep in mind that each rule now has `targets`, an ordered list of actions, instead of `target`. When saving, the API still accepts `target`, but it always responds with `targets`, and an origination without rules responds `rules: []`. The **Assign** action is sent as a target with `action: assign`. See the details in the [API](/en/platform/core/api.html) Swagger documentation.
+:::
+
+### Test the origination in preview
+
+With the **Preview** button (eye icon) in the origination header, you can go through the flow as a user would. The button opens the origination page in the site preview with the version of the origination you are editing, so you can test your changes before publishing them. It is available when the origination has a linked page.
+
+The submissions you create in the preview are test submissions and are kept apart from the real ones:
+
+- They do not appear in the origination's **Submissions** list.
+- They do not count in [Insights](/en/platform/insights/origination.html) or in the [origination filters](/en/platform/customers/segments.html#origination-filters) of segments.
+
+:::warning Deletion of test submissions
+Test submissions are deleted without notice in two cases: when you publish the origination and, once a week, those that have gone more than 7 days without changes.
+:::
+
+### Edit Origination Settings
 
 By selecting the **Edit** option in the context menu of your origination, you can edit its properties.
 
 - **Name**: Defines the name of the origination, visible to users in the interface.
+- **Identifier**: Appears locked with a padlock. To modify it, press the padlock and confirm the **Unlock Identifier field** warning: changing the identifier changes the origination URL and breaks references to it from external systems or through the Liquid SDK. Changing the **Name** doesn't modify it.
 - **Description**: Includes a brief explanatory text about the purpose of the origination.
 - **Completed message**: This is the message that will appear to the user at the end of the origination process.
-- **Default submission assignee**: specifies the person who will be automatically assigned when receiving a new origination.
-- **Due In**: Sets a maximum deadline for completing origination.
-- **Completion Rules**: Defines the completion behavior for each submission.
+- **Default submission assignee**: Specifies the administrator or group of administrators that will be automatically assigned to each new submission. When selecting a group, you can use the **Assign to whole group** option or choose a specific user within it.
+- **Due in**: Sets the due period of each submission and when it starts counting. See the details in [Configure the due date](#configure-the-due-date).
+- **Automatically cancel submissions that exceed the due date**: Available only if you have configured a due date. When this option is enabled, submissions in **Pending** status that exceed their due date are automatically canceled.
+- **Completion rules**: Defines the completion behavior for each submission.
+- **Cancellation rules**: Defines who can cancel a submission from the origination page:
+  - **Everyone can cancel the submission**: Default option.
+  - **Only administrators can cancel the submission**: The **Cancel** button is no longer shown to the user on the origination page, and cancellation remains available only to administrators.
 - **Privacy**: Allows you to restrict access to the origination flow to certain predefined user segments.
+
+:::tip Automatic cancellation by due date
+Automatic cancellation runs in a background process, so the submission is canceled up to one hour after its due date. It works the same with any of the due date triggers, only cancels submissions in **Pending** status, and records **Auto-Cancelled Overdue** as the cancellation reason, visible in the submission details.
+:::
+
+#### Configure the due date
+
+In the **Due in** section, check **Mark a submission as due after** and fill in:
+
+- **Months**, **Days**, and **Hours**: The length of the period. You can combine the three, for example 1 month, 3 days, and 2 hours, and the total must be greater than 0. A month is a calendar month, not a block of 30 days.
+- **Count the due date from**: The trigger the period is counted from:
+  - **The start of the submission**: Default option. The period starts when the submission becomes **Pending**, that is, on its **Started at** date.
+  - **The completion of a task**: The period starts when the main user completes the task you choose in **Task**. The selector shows every task of the flow as `Step › Task`. If the task is reopened and completed again, the period is counted from the last time it was completed. If you choose a task that isn't shown to the main user, the screen warns you that, if that task is never completed, the submission has no due date.
+  - **The value of a date field**: The period starts on the date answered in the field you choose in **Date field**. The selector shows, as `Task › Question`, the top-level date questions of the input tasks; the ones inside a group don't appear. If the field has no time, the period starts at 00:00 of that date in the account time zone. If several participants answer the field, the main user's answer prevails, and if the answer changes, the due date is recalculated.
+
+If the period includes hours, the due date is shown with its time in the list and in the submission details.
+
+While the trigger hasn't happened, the submission has **No due date**: it has no deadline and isn't canceled automatically. There's no fallback trigger, so if you choose a task or a field that's never answered, for example because [conditional logic](#conditional-logic) hides it, that submission never becomes due.
+
+The task or question you use as the trigger can't be deleted, and neither can the step that contains them. The question can't be moved into a group or changed to another type either. If you try, when you save the flow the platform tells you to change the due date rule first.
+
+When you publish a version that changes the period or the trigger, or that turns the due date on or off, the platform recalculates in the background the due date of the **Pending** submissions, without changing their status. If only the period changed, it keeps counting from the same moment; if the trigger changed, it's looked up again in each submission. If you turn the due date off, the submissions are left without a deadline.
+
+If automatic cancellation is on and the change leaves pending submissions already overdue, before publishing the platform tells you how many will be canceled and asks you to confirm with **Publish anyway?**. The submissions are canceled in the next run of the automatic cancellation. If you schedule the publication, the count refers to the submissions that would be overdue today, and the ones overdue at the time of publication are canceled.
+
+:::warning Due dates in weeks and months
+Originations that had their due date in weeks now have it in days, at 7 days per week. The ones that had it in months now count calendar months instead of 30 days, so the due date of their submissions can move by several days: the difference depends on the trigger date and the number of months. For example, 12 months from January 1, 2026 used to be due on December 27, 2026 and are now due on January 1, 2027.
+:::
+
+#### Roles
+
+In the origination editing, you will find the **Roles** section, where you define the roles used by the [invitation tasks](#invitation) of multi-user flows. To create a role, press the **Add Role** button and complete:
+
+- **Name**: The name of the role, unique within the origination.
+- **Require invitations**: If enabled, the main user must invite at least one person to complete the invitation task that uses this role.
+- **Can be assumed by main user**: If enabled, the main user themselves appears in the task's list of people to invite, identified as **You**, and can take the role. That invitation doesn't send an email: it is accepted instantly and completes as soon as they finish the target tasks. If it is disabled and someone tries to invite the submission owner, the platform responds **You cannot invite the submission owner**.
+- **Maximum number of users**: The maximum number of users that can have this role in the same submission. It starts at 1 and accepts up to 100. It is the value that limits how many active invitations the invitation task using the role accepts; when the limit is reached, the invitation form is blocked with the message **Cannot send more invitations, this task is completed or has reached the maximum number of allowed invitations**.
+
+You can edit or delete roles from the same section. Since each role can only be used in one invitation task, if all the origination's roles are already taken, the **Invitation** type appears disabled when adding a task, with the notice **No roles available to assign to this task.** To create another invitation task, you must first add a new role.
 
 #### Delete origination
 
 If you need to permanently delete an origination:
 
-1. Select the **Delete Origination** option.
-2. Confirm that you do not need the origination details before proceeding.
+1. If the origination is published, unpublish it.
+2. In the actions menu (⋮) of the origination, select **Archive**.
+3. In the same menu, select **Delete**. The option is only enabled when the origination is archived.
+4. In the **Delete origination** modal, type the name of the origination in **Origination name** and press **Delete**.
+
+The origination cannot have submissions in **Pending** or **Completed** status: if it has any, the platform rejects the deletion with the message **You can't delete an origination with submissions**. Before that, [cancel them](/en/platform/customers/origination.html#cancel-submission) or [delete them](/en/platform/customers/origination.html#delete-submission). **Not started** and **Canceled** submissions are deleted along with the origination.
 
 :::danger Danger
 This process is irreversible.
 :::
 
-### View details of an origination
+### Submission lifecycle
+
+Every submission to an origination has a status that reflects its progress through the flow. You see it in the **Status** column of the submission list, in the [status filter](/en/platform/customers/origination.html#filter-submissions), and in the **Details** section of the submission.
+
+- **Not started**: The submission already exists, but no response to any of its tasks has been saved yet, and it has no start date.
+- **Pending**: The submission is in progress. This is the only status in which the flow can still be answered.
+- **Completed**: The flow is finished. The date is recorded in **Completed at**.
+- **Canceled**: The submission was stopped for good. The date is recorded in **Canceled at**, along with the **Cancellation reason**.
+
+The transitions between statuses are the following:
+
+| Transition | When it happens |
+|---|---|
+| Not started → Pending | When the first response to one of its tasks is saved. At that moment the start date is recorded in **Started at**. |
+| Pending → Completed | Automatically, when there are no visible tasks left to answer, or manually with the **Complete** button when the **Completion rules** of the origination require manual completion. |
+| Not started, Pending, or Completed → Canceled | When you [cancel the submission](/en/platform/customers/origination.html#cancel-submission) or when it is automatically canceled because it is overdue. |
+
+**Canceled** is a final status with no way back. **Completed** does not return to **Pending** either, not even when you [reopen one of its tasks](/en/platform/customers/origination.html#reopen-tasks-of-a-submission): while the submission is **Completed** or **Canceled**, the platform rejects any change to its tasks and its invitations.
+
+:::warning Watch out for Not started submissions
+A submission is born **Not started** and only moves to **Pending** when someone saves its first task, so submissions created from the admin or by invitation stay there until the user enters the flow. The **Pending**, **Completed**, and **Canceled** cards of the summary don't count them, and in Liquid the [`by_status`](/en/platform/channels/liquid-markup/filters.html#by-status) filter doesn't reach them either. To find them, use the **Status** filter of the submission list.
+:::
+
+#### Task response statuses
+
+Beyond the status of the whole submission, each task response carries its own status, with its own start and completion dates:
+
+- **Not started**: The task has no saved response yet.
+- **Pending**: The task was opened and has a saved response, but it isn't finished.
+- **Completed**: The task was finished, either by the user, by the assigned agent, or automatically.
+
+A **Completed** task can go back to **Pending** when you [reopen it](/en/platform/customers/origination.html#reopen-tasks-of-a-submission), which clears its completion date and leaves the corresponding record in the **Activity** tab of the submission. Reopening a task does not change the status of the whole submission.
+
+In the **Tasks** tab of the submission, the platform shows each task as **Completed** or **Pending**, without distinguishing the **Not started** ones. You get the exact status from `task_response.status` in [Liquid](/en/platform/channels/liquid-markup/objects.html#task-response-types) and from the [administration API](/en/platform/core/api.html).
+
+:::tip Tip
+A template or a report that only checks for `completed` cannot tell a task nobody opened from one that was left half answered. If you need that distinction, compare against the three values `not_started`, `pending`, and `completed`.
+:::
+
+### Submission due dates
+
+When the origination has **Due in** configured, each submission also carries a due status, independent from its [status in the flow](/en/platform/customers/origination.html#submission-lifecycle):
+
+- **On track**: Less than 75% of the period has elapsed.
+- **Due soon**: 75% of the period has elapsed, but the deadline hasn't passed yet.
+- **Overdue**: The deadline has already passed.
+
+The period is counted from the trigger configured in the origination: the start of the submission, the completion of a task, or the date answered in a date field of the flow. See how to configure it in [Configure the due date](#configure-the-due-date). The due status only applies to **Pending** submissions: once completed or canceled, the submission stops showing it.
+
+In the submission list, the **Due in** column shows the deadline followed by the label in parentheses, for example `02/22/2026 (Due soon)`. If the submission hasn't started yet, it shows **Not started**; if it has started but the trigger hasn't happened yet, it shows **No due date**, and when no deadline applies it shows `--`. The **Due in** field in the **Details** tab of the submission shows the same. A submission with **No due date** counts as **On track** in the filter and in the origination overview.
+
+You can extend the period of a specific submission by adding extra days with the `due_extension_days` parameter of the submission update endpoint of the [administration API](/en/platform/core/api.html). Those days are added to the calculated due date and shift both the deadline and the **Due soon** threshold, and the change is recorded in the submission activity.
+
+:::tip Due status updates
+The due status is recalculated in a background process that runs every hour, so a submission can take up to one hour to show up as **Due soon** or **Overdue**. Extending the period of a submission does recalculate its status right away. If you change the account time zone, the platform recalculates the due date of the pending submissions whose trigger is a date field without time.
+:::
+
+### View Details of an Origination
 
 By accessing a specific origination, you can view relevant metrics and data based on the view you select. These views allow you to efficiently analyze and manage the information associated with the origination.
 
@@ -372,18 +997,24 @@ By accessing a specific origination, you can view relevant metrics and data base
 - **Submissions**: Shows a detailed list of all submissions made within this origination. It is ideal for reviewing the history and status of each request.
 - **Assignees**: Provides a list of the people assigned to this origination, along with their management metrics, making it easier to track performance and workload.
 
-### Origination Overview
+### Origination Summary
 
-The overview of an origination gives you a summary of key metrics related to the performance and status of requests in the flow. This information is useful for understanding overall progress and for effective monitoring.
+The summary view of an origination gives you a summary of key metrics related to the performance and status of requests in the flow. This information is useful for understanding overall progress and for effective monitoring.
 
 - **Pending**: Shows the total number of submitted requests that have not yet been completed.
 - **Completed**: Indicates the number of requests that have successfully completed the origination flow.
 - **Canceled**: Reflects requests that have been canceled by the user or administrator.
 - **Total**: Represents the total number of requests, including pending, completed, and canceled.
 
-### Submission management
+The **Total** also counts the **Not started** submissions, which have no card of their own: if the sum of the other three doesn't match the total, the difference is the submissions that were created and never started.
 
-The submission view allows you to individually review and manage the status and information of each submission at this origin. You can select a specific submission to access its details and manage its key elements.
+Below the cards, a distribution chart splits the submissions into five categories that combine the [submission status](/en/platform/customers/origination.html#submission-lifecycle) with its [due status](/en/platform/customers/origination.html#submission-due-dates): **Not started**, **On track**, **Due soon**, **Overdue**, and **Completed**. The **Pending** submissions are split among **On track**, **Due soon**, and **Overdue**; if the origination has no **Due in** configured, they all land in **On track**. The **Canceled** ones don't appear in the chart.
+
+Next to the chart, **Average Time to Complete** shows how long the completed submissions of this origination take on average.
+
+### Submission Management
+
+The submissions view allows you to individually review and manage the status and information of each submission to this origination. You can select a specific submission to access its details and manage its key elements.
 
 In the details view, you will find the following main sections:
 
@@ -392,51 +1023,207 @@ In the details view, you will find the following main sections:
 - **Fields**: Fields configured in the flow to collect user information.
 - **Documents**: Files uploaded by users or required for the origination process.
 - **Signatures**: Tracking of the digital signatures collected during the flow.
+- **Identity Verification**: Result of the user's identity verification when the flow includes it.
 - **Validations**: Validations carried out by administrators to authorize progress.
-- **Activity**: Record of activities and changes made to the submission, useful for monitoring and auditing.
+- **Activity**: Record of activities and changes made to the submission, useful for monitoring and auditing. It has two views:
+  - **Admin**: The activity logs of the submission, which you can narrow down with the **Type** filter. The filter only offers the types present in that submission. If the flow uses an Identity Verification task with the **NAAT.TECH** integration, the errors the provider returns in the browser during document capture or the liveness check are logged here with the type **NAAT.TECH error in identity verification**. They help you diagnose why the user could not complete the verification.
+  - **User**: The events the end user generates while progressing through the submission.
 
 This structure provides you with a comprehensive and detailed view of each submission, allowing you to effectively manage all aspects related to the submissions.
 
+In multi-user submissions, the **Tasks**, **Fields**, and **Validations** tabs include a selector, **Viewing tasks for** in the first two and **Viewing validations for** in the last one, which allows you to switch between the **Main User** and each invited user to review the individual progress of their tasks.
+
+:::tip Tip
+From the submission view in the actions menu (identified with ...), you can [impersonate](/en/platform/customers/users) the user to help them answer the origination. This depends on the user's roles.
+:::
+
+:::tip Segment scope
+If your access to the realm is [restricted by segments](/en/platform/customers/settings.html#restrict-scope-with-segments), you will only see the submissions of the users within your scope. Submissions assigned to you remain visible and operable even if the user belongs to segments outside your scope.
+:::
+
+#### Submission visibility permissions
+
+The role's permissions decide which submissions a team member sees and how much of each one. In the role's Customers permissions there are four that work in tiers:
+
+- **List Assigned Submissions**: in the list they only see the submissions assigned to them and, when opening one, only the **Details** section.
+- **List All Submissions**: they see every submission, not only the ones assigned to them. It includes **List Assigned Submissions**.
+- **View Submission Tasks**: adds the **Tasks** section, with the ability to assign and complete tasks and to approve or reject validations. It includes **List Assigned Submissions**.
+- **View Full Submission**: adds the remaining sections, **Fields**, **Documents**, **Signatures**, **Identity Verification**, **Validations** and **Activity**. It includes **View Submission Tasks**.
+
+When you check a permission, the platform also checks the ones that permission includes. The sections a role cannot see do not appear in the submission menu.
+
+The action permissions build on those tiers: **Edit Submissions** requires **View Full Submission**; **Assign Submissions** requires **List All Submissions**; **Delete Submissions** and **Complete Submissions** require **List Assigned Submissions**.
+
+:::tip Tip
+**Start Submissions** is independent from the visibility permissions: a role can create submissions on behalf of a user without seeing the full list or the detail.
+:::
+
+:::warning Attention
+The roles you already had keep the access they had: those that saw the full detail keep **View Full Submission**, and those that had **Start Submissions** also keep **Assign Submissions** and **List All Submissions**. The separate tiers apply when you edit the role.
+:::
+
+#### Search submissions
+
+The submission list includes a search box that allows you to find submissions by the user's data, the values of their custom fields, the answers entered in the flow fields, and the content of the tasks.
+
+The answers in the flow fields and the content of the tasks are only searched if your role has **View Submission Tasks** or a permission that includes it, such as **View Full Submission**. Without that permission, the search only finds submissions by the user's data, their identifiers, and the values of their custom fields, and the flow question keys don't search the answers.
+
+The search requires a minimum of 3 characters, is case- and accent-insensitive, and finds partial matches. For example, `lau` finds "Claudio" and `perez` finds "Pérez". The `id` and `uuid` keys are the exception and are explained below.
+
+You can search in two ways, which you can also combine in the same query:
+
+- **Free text**: Type one or more terms and the search will find them in the user's data, the values of their custom fields, the answers entered in the flow fields, and the content of the tasks. If you type several terms, a match on any one of them is enough for the submission to show up, and the best matches are listed first.
+- **Key=value pairs**: Type the key of a field followed by `=` and the value to search for, to narrow the search down to that specific field.
+
+The available keys for `key=value` pairs are:
+
+- **User data**: `first_name`, `last_name`, `second_last_name`, `email`, and `username`.
+- **Identifiers**: `id` and `uuid`. These two do not behave like the rest: each one searches two places at once and does not allow partial matches. They are explained in [Search by identifier](/en/platform/customers/origination.html#search-by-identifier).
+- **User custom fields**: The custom field key, with or without the `_ucf_` prefix. For example, `pais=Chile` and `_ucf_pais=Chile` are equivalent.
+- **Flow questions**: The question identifier defined in the origination flow. For example, `rut=18301757`.
+
+When using `key=value` pairs, keep the following in mind:
+
+- The key must be written in full, while the value does allow partial matches. The `id` and `uuid` keys are the exception: they do not allow partial matches.
+- To search for a value with spaces, wrap it in double quotes. For example, `first_name="Jean Pierre"`. Quotes only work inside a pair: in free text they don't build a phrase, so `"crédito hipotecario"` is searched the same as `crédito hipotecario`, and a match on either word is enough.
+- Pairs are combined with each other and with the free text: to appear in the results, a submission must satisfy every pair in the query and, if you also type free text, match at least one of its terms.
+- If the key does not exist or the value is empty, the term is searched as free text without generating errors.
+
+Some search examples:
+
+| Search | Result |
+|---|---|
+| `Claudio` | Submissions whose user or content includes "Claudio". |
+| `first_name=Claudio` | Submissions whose user contains "Claudio" in their name. |
+| `pais=Chile` | Submissions whose user has "Chile" in the `pais` custom field. |
+| `rut=18301757` | Submissions where the question with identifier `rut` contains "18301757". |
+| `first_name="Jean Pierre"` | Submissions whose user contains "Jean Pierre" in their name. |
+| `pais=Chile rut=18301757 hipotecario` | Submissions that meet all three conditions at once. |
+| `id=42` | The submission whose id is 42 and, in addition, every submission of the user whose id is 42. |
+
+##### Search by identifier
+
+The `id` and `uuid` keys are different from the rest: each one searches **two places at once**, and a match in either one is enough for the submission to show up in the results.
+
+| Key    | Where it searches                                      |
+|--------|--------------------------------------------------------|
+| `id`   | The user's id **or** the submission's id.              |
+| `uuid` | The user's uuid **or** the submission's uuid.          |
+
+The practical consequence is that a single value can bring results from two different sources. For example, `id=42` returns the submission whose id is 42 and, in addition, every submission of the user whose id is 42, even though they are unrelated. If you are after one specific submission, check the user column to rule out the ones that came in through the other path.
+
+Neither key allows partial matches, unlike the rest of the search:
+
+- `uuid` is also case-sensitive. Copy the full identifier exactly as it appears in the platform: half a uuid returns nothing.
+- `id` is read as a whole number and only keeps the leading digits of the value. Type digits only: `id=18.301.757` searches for the submission with id `18`, and `id=abc` returns no results. Neither case shows any warning.
+
+If you paste a uuid into the box without the key, the search treats it as free text and only finds the submission with that uuid, not the submissions of the user with that uuid. For the latter you have to type `uuid=`.
+
+:::tip Results update
+Recent changes to a submission may take a few seconds to be reflected in the search results. Changes to the user's data, the values of their custom fields, and segments are reflected in a deferred manner.
+:::
+
+#### Filter submissions
+
+In addition to the search, you can narrow down the submission list with the following filters, which can be combined with each other and with the search:
+
+- **Date range**: Filters by the creation date of the submission.
+- **Status**: Filters by the current status of the submission: **Not started**, **Pending**, **Completed**, or **Canceled**.
+- **Assigned**: Shows the submissions assigned to the selected administrator.
+- **Segment**: Shows the submissions of users who belong to the selected [segment](/en/platform/customers/segments.html).
+
 #### Assign submission
 
-In the list of submissions, select the actions menu and press the **Assign** option. In the context menu, select an administrator for this submission.
+In the list of submissions, select the actions menu and press the **Assign** option. In the modal, you can assign the submission to an administrator, to a whole group of administrators, or to a specific user within a group. You can also use the **Assign to me** option to assign the submission directly to yourself.
+
+When assigning to a whole group, all its members can view and manage the submission. The **Assigned** column of the list shows the assigned group or administrator; if the administrator was chosen from a group, the group name is also displayed.
 
 #### Cancel submission
 
-Select a submission and press the context menu. By selecting the **Cancel** option to permanently change the status of a submission to canceled.
+To cancel a submission, open it, expand the actions menu (⋮) of the submission view, and select **Cancel**. The option requires the **Complete Submissions** permission, which enables both completing and canceling submissions, and it doesn't appear on submissions that are already canceled. In the modal, you can optionally enter a **Cancellation reason** and then confirm the action. Canceling permanently changes the status of the submission to **Canceled**.
+
+You can cancel submissions in **Not started**, **Pending**, or **Completed** status.
+
+The details of a canceled submission show the cancellation date in the **Canceled at** field and the **Cancellation reason** entered. If no reason was entered, the field shows `--`.
 
 #### Delete submission
 
-To delete an individual submission, select the menu in the actions column and press the delete option. This will delete the submission.
+To delete an individual submission, in the submission list expand the menu in the **Actions** column and press **Delete**. You also have the **Delete** option in the actions menu (⋮) of the submission view, except on canceled submissions. In both cases, the platform asks you to confirm before deleting it permanently.
 
-To delete several submissions at the same time, select each entry by checking the corresponding box and press the delete button.
+To delete several submissions at the same time, check the box of each one and use the **Delete** bulk action.
+
+These options are only shown if your role has the **Delete Submissions** permission.
+
+#### Reopen tasks of a submission
+
+Through the [administration API](/en/platform/core/api.html), you can individually manage the task responses of a submission: view them, transition their status (start, complete, or **reopen** an already completed task so the user can answer it again), and delete them individually or in bulk.
+
+Consider the following:
+
+- Changing the status of a task response requires the **Change Status of Task Response** permission; deleting task responses requires the **Delete Submissions** permission.
+- These operations are only available while the submission is in **Not started** or **Pending** status.
+- All operations are recorded in the platform activity.
+- If the reopened task had an approved validation, the approval is kept. The user can change their answers, but when the task is completed again it is validated and locked for editing once more, without a new review by the agent. For the corrected data to be reviewed again, the user must use **Modify data** in the task, an option available when the origination's **Validation rules** allow modifying previously validated responses.
 
 #### Invite users
 
-You can invite users to enter information in an origination. When inviting a user, you will need to enter their basic information:
+You can invite users to enter information in an origination with the **Invite** button. When inviting a user, you will need to enter their information:
 
 - **Name**: The first name of the user who will use the origination.
-- **Surname**: The last name of the user.
+- **Last Name**: The last name of the user.
 - **Email**: The user's email address, where they will receive the invitation to access the origination.
-- **Assign the submission**: In the drop-down list, select an administrator who will manage this particular origination. If an administrator is not selected, the submission will remain unassigned.
+- The fields that depend on the realm's sign-up settings: **Second last name**, **Phone number**, **Birthday**, and **Gender**, when the realm has them enabled, and the username, with the label the realm defines, when the realm doesn't use the email as the username. The username is always mandatory; the others, when the realm requires them at sign-up.
+- The user's active [custom fields](/en/platform/customers/settings.html#custom-fields). The required ones are mandatory.
+- **Assign submission to**: The administrator, the whole group of administrators, or the administrator within a group who will manage this submission. If you leave it empty, the origination's **Default submission assignee** applies and, if it has none, the submission remains unassigned.
 
-### Assignee management
+The button to send the invitation is enabled once you fill in all the mandatory fields.
 
-In the assignee view, you can monitor and manage the administrators responsible for the submissions within a realm. This view facilitates the tracking of performance and workload of administrators. You can filter the assigned submissions by date ranges.
+The **Invite** button appears disabled and, on hover, shows a message with the reason in these cases:
+
+- The origination is not published: _Invitations are unavailable because the origination is not published_.
+- The origination has no associated page: _Invitations are unavailable because the origination has no associated page_.
+- The realm's **Account Activation** is set to **Disabled**: _Invitations are unavailable because sign up is disabled for this realm_.
+
+In addition, the button requires the **Start Submissions** permission: without it, the button appears disabled and shows no message.
+
+On the origination page, with **Account Activation** set to **Disabled**, the main user can't invite anyone through the name and email form, even if the email already belongs to a user of the realm. They can only pick from the list the people they already invited in another invitation task of the same submission or, if the [role](#roles) has the **Can be assumed by main user** option enabled, take the role themselves (**You**).
+
+If **Account Activation** is set to **Invitation only**, the new user you invite is created active and can complete the flow right away, with no activation email and no waiting. A user who already existed and was deactivated is not reactivated when invited: they keep their status. Review the options in the [realm settings](/en/platform/customers/settings.html#general).
+
+### Assignee Management
+
+In the assignees view, you can monitor the administrators responsible for the submissions of this origination. This view facilitates the tracking of performance and workload of administrators.
+
+Only administrators who are individually assigned at least one submission of this origination appear: a submission assigned to a whole group, without a specific administrator, doesn't make the group members appear. The **Creation date** filter only shows the administrators who are assigned a submission of this origination created within that range.
 
 By selecting an administrator, you will be able to see all the submissions assigned to them and their corresponding status.
 
-## Create an origination page
+## Create an Origination Page
 
 To display an origination page to users, follow the steps below. This will allow you to enable direct and functional access to your flows.
 
-- **Check Connection to Realm**: Access the Channels module, select the desired site and confirm that you are connected to the Realm where the origination is configured.
+- **Check Connection to Realm**: Access the Channels module, select the desired site and confirm that it is connected to the Realm where the origination is configured.
 - **Create an origination page**: From the selected site, create a new page and define its type as origination.
-- **Select origination**: Associate the page with the origination you want to deploy.
+- **Select the origination**: Associate the page with the origination you want to deploy.
 - **Configure Name and Path**: Define a clear name and a specific path for the page, and press Create to finish.
 
 Users will be able to access the origination page to perform the configured flow. It is essential to ensure that all settings are properly defined to guarantee access to end users.
 
 Access to this page will be restricted depending on the privacy and segmentation settings established in the origination. This ensures that only authorized segments can interact with the flow, maintaining control and security of the information.
 
-It is important to note that each origination can only be linked to one page. If you need to create a new origination page, you will first need to unlink or delete the existing page to avoid conflicts and ensure proper configuration.
+It is important to note that each origination can only be linked to one page across your entire organization. This includes pages on other sites and pages on the stages of the same site: if the origination is already linked to another page, the platform does not let you save the new one. If you need to create a new origination page, you will first need to unlink or delete the existing page to avoid conflicts and ensure proper configuration.
+
+The origination you link must belong to the same realm as the site where you create the page. If the site is connected to a different realm, the platform rejects the link and indicates that the origination must belong to the site's realm.
+
+### Pages without a linked origination
+
+An origination page can be left without a linked origination. While it is in that state, the page responds to end users with a 404 error, so you must link an origination to deploy the flow again.
+
+This happens in four situations:
+
+- **You delete the origination**: the page remains on the site, but without a linked origination.
+- **You change the site's realm**: all origination pages on that site lose the reference, because each origination belongs to a realm. The application settings form warns you about this before you confirm the change.
+- **You create a stage**: origination pages are copied to the stage without their linked origination. Since each origination allows only one page, in the stage you must link a different origination from the same realm.
+- **You synchronize a new page from a stage**: if the page did not exist on the destination site, it arrives without a linked origination and you must link an origination from that site's realm. If the page already existed, it keeps the origination it had.
+
+For more details on how stages behave, review the [stages](/en/platform/channels/sites.html#stages) section of web applications.

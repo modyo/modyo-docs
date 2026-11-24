@@ -171,23 +171,33 @@ Checks if a string contains another or if an array contains an element:
 
 ## Order of Operations
 
-Liquid doesn't follow traditional mathematical order. Operations are executed from right to left:
+Filters are applied from left to right, in the order you write them, and each one receives the result of the previous one:
 
 ```liquid
 {{ 10 | plus: 5 | times: 2 }}
 ```
 
 Executes as:
-1. `5 | times: 2` = 10
-2. `10 | plus: 10` = 20
+1. `10 | plus: 5` = 15
+2. `15 | times: 2` = 30
 
-To control order, use parentheses or intermediate variables:
+Parentheses don't group operations; in Liquid they only define ranges, such as `(1..5)`. To control order, use intermediate variables:
 
 ```liquid
-{% assign temp = 10 | plus: 5 %}
-{{ temp | times: 2 }}
+{% assign temp = 5 | times: 2 %}
+{{ 10 | plus: temp }}
 ```
-Result: 30
+Result: 20
+
+In conditions, the `and` and `or` operators are evaluated from right to left:
+
+```liquid
+{% if false and false or true %}
+  This text isn't displayed
+{% endif %}
+```
+
+Liquid first evaluates `false or true` and then applies `false and` to that result, so the condition is false. If you need a different order, use nested `if` statements; see [If / else](/en/platform/channels/liquid-markup/tags.html#if-else).
 
 ## Working with Variables
 
@@ -270,10 +280,10 @@ Or use HTML entities:
 ### 1. Undefined variables
 
 ```liquid
-<!-- Wrong: will cause error if user doesn't exist -->
+<!-- Ambiguous: if user doesn't exist, this prints empty with no warning -->
 {{ user.name.first }}
 
-<!-- Right: validate first -->
+<!-- Better: validate first and handle the empty case -->
 {% if user %}
   {{ user.name.first }}
 {% endif %}
@@ -308,6 +318,67 @@ Or use HTML entities:
 <!-- Right: with pipe -->
 {{ text | upcase }}
 ```
+
+## Render Error Behavior
+
+Modyo checks your Liquid syntax when you save a template, but that check only covers parsing: it catches an unclosed tag or an invalid argument and stops you from saving. Anything that fails during rendering passes that check and reaches the published page.
+
+At render time the platform runs in non-strict mode: rendering never breaks the page, it degrades it silently. These are the five symptoms you will run into and what each one means.
+
+### A variable or attribute that doesn't exist prints empty
+
+Variables aren't strict. A variable that isn't in the context, or an attribute the object doesn't have, raises no error: it prints as an empty string.
+
+```liquid
+{{ page_titles }}
+{{ page.made_up_title }}
+```
+
+Both lines produce exactly the same output as a legitimately empty value, so a misspelled name, data that hasn't loaded yet and a variable used outside its context are indistinguishable on the published page. When something doesn't show up, check the spelling first and then that the variable exists on that page type; see [Context Variables](/en/platform/channels/liquid-markup/variables.html#context-variables).
+
+### A filter that doesn't exist returns the value untransformed
+
+Filters aren't strict either. If you write a filter the platform doesn't have, Liquid neither fails nor skips it: it returns the input value exactly as it arrived.
+
+```liquid
+{{ "text" | filter_that_does_not_exist }}
+```
+
+That line prints `text`. The serious case is when the input value is a Modyo object instead of a string: since nothing transforms it, the page publishes the object's internal name, for example `Liquid::Drops::Assets::VideoAssetDrop`. There is no exception, no message and no visible hint of the cause. It is the symptom shared by misspelled filters and by filters that were removed from the platform; check the catalog in [Filters](/en/platform/channels/liquid-markup/filters.html).
+
+### A render error leaves a comment in the HTML
+
+When rendering does fail, Modyo catches the error, logs it server side and leaves the comment `<!-- Liquid Error -->` in the published HTML, right where it failed. The visitor sees no message: they see a gap.
+
+Searching for `Liquid Error` in the published page source is the fastest way to locate the exact spot in the template that failed.
+
+#### The exception: indexing an identifier that doesn't exist
+
+Some accesses don't render empty, they abort rendering. They are the ones that look an element up by its identifier:
+
+- <code v-pre>spaces['uid']</code> and <code v-pre>spaces['uid'].types['uid']</code>
+- <code v-pre>menus['slug']</code>
+- <code v-pre>fields['uid']</code> on an Origination task response
+
+If the identifier matches nothing, you don't get an empty value: you get a render error and the comment in its place. There is no way to check beforehand, because any check goes through indexing. What you can do is contain the damage: group the access and its use inside the same <code v-pre>{% if %}</code>, so the error takes that whole block instead of leaving the comment in the middle of an HTML attribute and breaking the markup.
+
+### A snippet that doesn't exist prints nothing
+
+If the name you use in <code v-pre>{% snippet %}</code> doesn't match any snippet available to the site, the tag doesn't fail: it prints an empty string and leaves no `<!-- Liquid Error -->` comment. A misspelled name makes the snippet's content disappear from the page without a trace.
+
+A name with characters that the tag doesn't accept, such as a hyphen, a period or a space, is different: in that case you do get a render error and the `<!-- Liquid Error -->` comment in its place. For the tag to include it, the name can only contain letters, numbers and underscores, plus `/` to indicate the path, as in `shared/general/header`.
+
+### Snippets can nest up to 99 levels
+
+Snippet chains have a ceiling. You can nest up to 99 levels; the attempt to open level 100 doesn't run and the page publishes the literal text `[Liquid Internal Error] Nesting too deep` instead.
+
+Seeing that text on a page almost always means a snippet includes itself, directly or indirectly. Review the <code v-pre>{% snippet %}</code> chain from the point where the message appears.
+
+That ceiling isn't exclusive to snippets: every running <code v-pre>{% for %}</code> (and every running <code v-pre>{% tablerow %}</code>) also adds a nesting level, and together they can't go past 99. That's why a recursive snippet called inside a `for`, like one that walks a category tree or a menu, stops around level 50. In that case the cutoff can show up as the text `[Liquid Internal Error] Nesting too deep` or as the `<!-- Liquid Error -->` comment, depending on whether the snippet or the `for` reaches the ceiling.
+
+:::warning Attention
+None of these five behaviors is caught when you save the template, because they all happen at render time. A template can be saved and published without a single warning and still print blanks, error comments or an object's internal name. See [Errors in Views](/en/platform/channels/templates.html#errors-in-views).
+:::
 
 ## Conventions and Best Practices
 
@@ -351,7 +422,9 @@ Liquid is a language designed to be safe. You cannot:
 - Access the file system directly
 - Execute arbitrary code
 - Modify data (only read and display)
-- Create infinite loops (there are iteration limits)
+- Create infinite loops, because loops always iterate over a finite collection or range
+
+Even so, there is no iteration cap: a `for` over a very large range or collection runs to completion and slows down page rendering.
 :::
 
 :::warning Server-Side Execution

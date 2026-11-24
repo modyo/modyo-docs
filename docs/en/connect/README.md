@@ -40,15 +40,15 @@ The managed service of Modyo Connect includes the following capabilities:
 - Continuous monitoring and infrastructure support.
 - Real-time alerts.
 
-Modyo Connect is implemented in high availability mode and is operated by a team of Modyo Site Reliability Engineers (SREs) in the [Amazon AWS](architecture.md) cloud. The service meets the same quality, security, and operation standards offered in Modyo Enterprise Cloud.
+Modyo Connect is implemented in high availability mode and is operated by a team of Modyo Site Reliability Engineers (SREs) in the [Amazon AWS](/en/connect/architecture.html) cloud. The service meets the same quality, security, and operation standards offered in Modyo Enterprise Cloud.
 
 ## Components
 
 Modyo Connect features a variety of services or components categorized into three groups:
 
-- [Development](development/README.md)
-- [Infrastructure](infrastructure/README.md)
-- [Monitoring](monitoring/README.md)
+- [Development](/en/connect/development/)
+- [Infrastructure](/en/connect/infrastructure/)
+- [Monitoring](/en/connect/monitoring/)
 
 To activate a component, a requirement ticket is necessary. It is recommended to have an active account in the [Modyo Support Center](https://support.modyo.com) before using the service. For questions on how to activate accounts in the Support Center, contact the assigned account executive.
 
@@ -58,4 +58,4 @@ The activation of components may incur recurring costs. Each request must be app
 
 ## Environments
 
-Modyo Connect supports productive and pre-productive environments, deployed in completely separate virtual private networks. Customers can request up to two pre-productive environments per deployment. Each environment generates additional recurring costs, measured in [Modyo Resource Units (MRUs)](resources/mrus.md).
+Modyo Connect supports productive and pre-productive environments, deployed in completely separate virtual private networks. Customers can request up to two pre-productive environments per deployment. Each environment generates additional recurring costs, measured in [Modyo Resource Units (MRUs)](/en/connect/resources/mrus.html).

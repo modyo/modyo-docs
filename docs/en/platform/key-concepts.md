@@ -40,7 +40,7 @@ Modyo is widget-based and tracks every change in a version control system, strea
 
 The Modyo widget generator is a robust tool that simplifies frontend development, publishing, and auditing. With this tool, you can create personalized, high-quality digital experiences, quickly and easily.
 
-With the widget generator, you can create any type of widget, including HTML, CSS and JavaScript components connected to APIs, and you can save the widgets in your library for reuse on other sites.
+With the widget generator, you can create any type of widget, including HTML, CSS and JavaScript components connected to APIs. If you develop your widgets with the [Modyo CLI](/en/platform/channels/cli), you can deploy the same code to other sites.
 
 ### Prefabricated widgets for financial services
 
@@ -70,18 +70,18 @@ Here are some key terms in Modyo and their definitions:
 
 #### General
 
-- [**CORS**:](/en/platform/core/security#access-control-cross-origin-resource-sharing-cors) Cross Origin Resource Sharing - Allows you to share resources in different domains.
+- [**CORS**:](/en/platform/core/security.html#http-access-control-cross-origin-resource-sharing-cors) Cross Origin Resource Sharing - Allows you to share resources in different domains.
 - **Account**: Access point to all Modyo features.
 - [**Team**:](/en/platform/core/roles#team) All users with access to the Modyo admin. They can be assigned roles and permissions.
-- [**Integrations**:](/en/platform/core/integrations) Way to delegate or federate the process of initiating authentication of users or team members.
+- [**Integrations**:](/en/platform/core/integrations) Connections to external services, such as identity providers, CRM, payments, messaging, digital signature, identity verification, or security, that you configure in the account or in a realm.
 - [**Password Policy**:](/en/platform/core/security#password-policy) Allows you to define rules for creating or modifying passwords.
-- [**Team review**:](en/platform/core/key-concepts.html#team-review) Review flow for versioned items. Approval can be requested from multiple team members.
-- [**Site**:](/en/platform/channels/sites) Tool for creating digital channels within Modyo. Site operation encompasses the development, design and flow of navigation.
-- [**Editable version**:](/en/platform/core/key-concepts#editable) The version that you can modify and preview of the versioned elements.
-- [**Global variables**:](en/platform/core/key-concepts.html#global-variables) Elements that you can define globally and reuse in different places.
-- [**Scheduled version**:](en/platform/core/key-concepts.html#scheduled) Version that will be published at a certain date and time.
-- [**Published version**:](en/platform/core/key-concepts.html#published) Visible or productive version of the versioned elements. This version cannot be modified.
-- [**Backup version**:](en/platform/core/key-concepts.html#backups) Previously released versions.
+- [**Team review**:](/en/platform/core/#team-review) Review flow for versioned items. Approval can be requested from multiple team members.
+- [**Site**:](/en/platform/channels/sites.html) Tool for creating digital channels within Modyo. Site operation encompasses the development, design and flow of navigation.
+- [**Editable version**:](/en/platform/core/#version-types) The version that you can modify and preview of the versioned elements.
+- [**Global variables**:](/en/platform/channels/global-variables.html) Elements that you can define globally and reuse in different places.
+- [**Scheduled version**:](/en/platform/core/#version-types) Version that will be published at a certain date and time.
+- [**Published version**:](/en/platform/core/#version-types) Visible or productive version of the versioned elements. This version cannot be modified.
+- [**Backup version**:](/en/platform/core/#version-types) Previously released versions.
 - [**Webhook**:](/en/platform/core/webhooks) Automatically sends information to an external system when a certain event occurs.
 
 
@@ -98,7 +98,7 @@ Here are some key terms in Modyo and their definitions:
 
 #### Modyo Channels
 
-- [**Domains**:](/en/platform/channels/sites#domains) You can modify the URL of your site, as can the security certificates of your site.
+- [**Domains**:](/en/platform/channels/sites#domains) The URL of your site. You can change it or use custom domains.
 - [**Meta tags**:](/en/platform/channels/pages#meta-tags) Customize your meta tags to improve search engine indexing.
 - [**Navigation**:](/en/platform/channels/navigation) Allows you to modify the main menu of your site through a simple interface.
 - [**Page**:](/en/platform/channels/pages) They allow you to create a structure for your site. You can add unstructured content and customize the routes where the content is displayed.

@@ -7,6 +7,85 @@ search: true
 Modyo Customers contains a variety of APIs with which you can obtain information about Realms, notifications, and users.
 
 
+## Authentication
+
+Every endpoint under `ACCOUNT_URL/api/customers/realms/{realm_uid}/` answers on behalf of an end user of the realm, so each call needs a credential for that user. The only exception is [OTP code verification](#otp-code-verification).
+
+If the realm has a [custom domain](/en/platform/customers/settings.html#domains), the Customers API also answers on `https://<your-domain>/api/customers/realms/{realm_uid}/`, with the same realm identifier in the path and the same responses as on `ACCOUNT_URL`, where it keeps answering without redirecting. On the custom domain, a `realm_uid` of another realm answers 404, and on the realm's alternative domains the API answers 404, without redirecting. OAuth authorization happens at `https://<your-domain>/realms/oauth/authorize`, and `ACCOUNT_URL/realms/{realm_uid}/oauth/authorize` redirects there. The token and revocation endpoints keep answering on `ACCOUNT_URL`.
+
+The realm accepts two credentials:
+
+- **OAuth2 access token**, in the `Authorization: Bearer` header. It takes precedence: when the request carries a recognized access token, the session cookie is not evaluated.
+- **Session cookie** of the user in the realm. It is used when the request does not carry a recognized access token. It is the natural option when your application runs inside a Modyo site, because the browser sends it on its own.
+
+Both resolve to the same user and grant access to the same endpoints. Choose the access token when your application lives outside the account domains, for example a mobile application or a front end on another domain.
+
+To call the API from the browser on an origin other than the API's, enable CORS in the realm, as explained in [Cross Origin Resource Sharing (CORS)](/en/platform/customers/settings.html#cross-origin-resource-sharing-cors).
+
+### Get an access token
+
+Each realm exposes its own OAuth2 server:
+
+| Endpoint | What it is for |
+|----------|----------------|
+| `ACCOUNT_URL/realms/{realm_uid}/oauth/authorize` | Authorizes the user and returns the code. |
+| `ACCOUNT_URL/realms/{realm_uid}/oauth/token` | Exchanges the code for the access token. |
+| `ACCOUNT_URL/realms/{realm_uid}/oauth/revoke` | Invalidates an already issued token. |
+
+The only supported flow is `authorization_code`. The realm does not issue tokens with `client_credentials`, `password` or `implicit`, and it does not deliver refresh tokens either.
+
+To start you need an OAuth client of the realm, created as described in [OAuth client](/en/platform/customers/settings.html#oauth-client). Clicking the client name shows its **UID** and its **Secret**, which are the `client_id` and the `client_secret` of the flow, together with the ready-made authorization URL in **Client Web** and the realm endpoints ready to copy in **Client Mobile**.
+
+1. Send the user to `ACCOUNT_URL/realms/{realm_uid}/oauth/authorize` with the `response_type=code`, `client_id` and `redirect_uri` parameters and, if you need them, `scope` and `state`.
+2. If the user does not have a session in the realm yet, Modyo sends them to the login screen. When they finish, Modyo does not resume the authorization: the user lands on the URL set in **After login redirect to** in the [realm settings](/en/platform/customers/settings.html#general) or, if there is none, on their profile. Your application has to send them to the authorization URL again, which now returns the code right away. There is no consent screen: as soon as there is a session, Modyo redirects to your **Redirect URI** with the `code` parameter.
+3. Exchange the code at the token endpoint. The code lives ten minutes and works only once.
+4. Use the `access_token` from the response in the `Authorization` header of your calls.
+
+The code exchange looks like this:
+
+```shell
+curl -X POST "ACCOUNT_URL/realms/{realm_uid}/oauth/token" \
+  -d "grant_type=authorization_code" \
+  -d "code=THE_CODE" \
+  -d "client_id=THE_CLIENT_UID" \
+  -d "client_secret=THE_CLIENT_SECRET" \
+  -d "redirect_uri=YOUR_REDIRECT_URI"
+```
+
+And an already authenticated call, like this:
+
+```shell
+curl -X GET "ACCOUNT_URL/api/customers/realms/{realm_uid}/me" \
+  -H "Authorization: Bearer THE_ACCESS_TOKEN"
+```
+
+The realm recognizes `public` as the default scope and `admin` as the only optional scope. The `scope` you request must be among those values and, if the OAuth client defines **Scopes**, within its own as well; otherwise the authorization fails before delivering the code.
+
+Public clients, such as a mobile application or a front end without a backend, can use PKCE: if you send `code_challenge` and `code_challenge_method` in the authorization step, you must send the matching `code_verifier` when exchanging the code.
+
+:::warning Attention
+The OAuth client belongs to the realm where you created it and can only authorize users of that same realm. If your account has several realms, you need one client for each one.
+:::
+
+:::warning Attention
+The access token does not carry an expiration of its own, but that does not make it eternal: it is tied to the session of the user who authorized the flow. When that session expires because of the realm session expiration policy, when the user logs out, or when their sessions are revoked from the panel, the token stops working. While it keeps being used, the session renews itself before expiring, so a token in continuous use does not fall on its own.
+:::
+
+### Authentication errors
+
+Every Customers API endpoint shares these error bodies:
+
+| Code | Body | When it happens |
+|------|------|-----------------|
+| `401` | <code v-pre>{"error":{"user_session":"user not found"}}</code> | The request carries no usable credentials, the access token does not match a user of the realm, or the user is inactive. |
+| `401` | <code v-pre>{"error":{"grant_expired":"session expired"}}</code> | The credential identifies a user, but the session behind it expired or was revoked. |
+| `403` | <code v-pre>{"error":{"pending_password_reset":"..."}}</code> | The user has a pending password change because an administrator created them or set their password. Every call gets this response until the user logs in to the realm with their username and password and sets a new one. Creating a user in a realm with [Soft login](/en/platform/customers/settings.html#soft-login) turned on does not leave their password pending. |
+| `404` | <code v-pre>{}</code> | The `realm_uid` in the URL does not match any active realm of the account or, on a custom domain, does not match the realm of that domain. |
+
+:::tip Tip
+Telling the two `401` apart saves you debugging time. `user_session` means that no usable credential ever arrived, so check the `Authorization` header or the cookie. `grant_expired` means that the credential was correct and what ran out was the session, so what you need is to authenticate the user again instead of retrying.
+:::
+
 ## Customer APIs
 
 Access the Customers API to manage realms and users through the URL `ACCOUNT_URL/api/customers/docs`. Examples of endpoints:
@@ -18,9 +97,7 @@ Access the Customers API to manage realms and users through the URL `ACCOUNT_URL
 
 ### Delegated tokens
 
-By enabling the [**Show delegation information**](/en/platform/core/integrations/identity-providers) option in your identity providers, using the API `account_url/api/customers/realms/{realm_uid}/me`, you'll get a JSON with added information about delegated tokens similar to this:
-
-If you enable the [**Show delegation information**](/en/platform/core/integrations/identity-providers) option in identity providers, the `account_url/api/customers/realms/{realm_uid}/me` endpoint will include a JSON with information about delegated tokens:
+If you enable the [**Display delegation info**](/en/platform/core/integrations/identity-providers.html#optional-integration-settings) option in an OpenID Connect identity provider, the `account_url/api/customers/realms/{realm_uid}/me` endpoint will include a JSON with information about delegated tokens:
 
 
 ``curl -X GET test.modyo.com/api/customers/realms/miRealm/me``
@@ -48,12 +125,233 @@ If you enable the [**Show delegation information**](/en/platform/core/integratio
       "uuid":"af57d947-69dc-4ed7-b5af-418c957d827f",
       "access_token":"TOKEN",
       "access_token_expires_in":300,
-      "access_token_expires_in_datetime":"2021-04-15T21:42:55.995+00:00"
+      "access_token_expires_in_datetime":"2021-04-15T21:42:55.995+00:00",
+      "revalidate_in":280
    }
 ```
 
+`revalidate_in` tells how many seconds are left before the delegated access token must be renewed. If the provider has **Enable refresh token** turned on, the period discounts the margin set in **Time in seconds for the anticipation of the preventive refresh token**. Once the period is over, it is `0`.
+
 :::tip Tip
-If you do not have the **Show delegation information** option enabled, null (void) will be displayed.
+`delegated_token` only carries data when the user started the current session with an OpenID Connect provider that has **Display delegation info** turned on. In any other case it is `null`, even when the user logged in with their Modyo credentials, with SAML, Google or OAuth2, and even if another provider of the realm has the option turned on.
+:::
+
+### Update user information
+
+With `PUT ACCOUNT_URL/api/customers/realms/{realm_uid}/me` the session user updates their own data. Besides the profile attributes, the body accepts `custom_fields` as an array of `key` and `value` pairs.
+
+:::warning Attention
+Custom fields that do not have **Visible to front end users** and **Editable by front end users** checked in the [realm settings](/en/platform/customers/settings.html#custom-fields) are silently discarded: the response is `200`, the rest of the attributes are saved and those fields keep their previous value, with no error to signal it.
+:::
+
+## User events
+
+`GET ACCOUNT_URL/api/customers/realms/{realm_uid}/events`
+
+Returns the [business events](/en/platform/customers/events.html) of the session user, from the most recent to the oldest. It is the same log an admin sees in **Customers > Realms > Events**, narrowed down to that user. It is also described in the interactive reference at `ACCOUNT_URL/api/customers/docs`.
+
+It accepts these parameters, all optional:
+
+| Parameter | Description |
+|-----------|-------------|
+| `sort_by` | Field to sort by: `created_at`, which is the default, or `type` to sort by the event type. |
+| `order` | `asc` or `desc`. Defaults to `desc`. Any other value is treated as `desc`. |
+| `page` | Page to return. Defaults to `1`. |
+| `per_page` | Items per page. Defaults to `10` and caps at `100`. |
+| `not_impersonated` | With any value present, it leaves out the events generated while an admin was [impersonating the user](/en/platform/customers/users.html#impersonation). |
+
+The events arrive under the `events` root and the pagination under `meta`:
+
+```json
+{
+  "events": [
+    {
+      "title": "Login",
+      "description": "Realm: Personal Banking",
+      "created_at": "2026-05-12T14:03:21.000+00:00"
+    }
+  ],
+  "meta": {
+    "total_entries": 128,
+    "per_page": 10,
+    "current_page": 1,
+    "total_pages": 13
+  }
+}
+```
+
+`title` is the name of the event type and `description` the realm where it happened. Both arrive as already translated texts, ready to display. The full catalog of types is in [Event types](/en/platform/customers/events.html#event-types).
+
+:::warning Attention
+The response includes neither an event identifier nor its technical type: only `title`, `description` and `created_at`. Since `title` is a translated text, it is not fit to tell events apart in your code, and events of your own types arrive with it empty because they have no label. Use this endpoint to display a history, not to make decisions based on the event type.
+:::
+
+## Origination submissions
+
+### Get a submission
+
+`GET ACCOUNT_URL/api/customers/realms/{realm_uid}/submissions/{uuid}`
+
+Returns the [origination submission](/en/platform/customers/origination.html#submission-management) identified by `uuid`, as long as it belongs to the session user. If the identifier does not exist or the submission belongs to another user, the endpoint returns `404`.
+
+The body carries the following attributes:
+
+| Attribute | Description |
+|-----------|-------------|
+| `id`, `uuid` | Submission identifiers. |
+| `status` | `not_started`, `pending`, `completed` or `canceled`. |
+| `progress` | Percentage of completed tasks, as text. For example, `25%`. |
+| `due` | Ready-to-display text with the deadline and its status. |
+| `due_deadline_at` | Raw deadline date and time, including the extension days. It is `null` when the origination has no deadline configured, when the deadline trigger hasn't happened yet, or when the submission has not started, is completed or is canceled. |
+| `due_label` | Label that replaces the date when there is no deadline, such as `Not started`, `No due date` or `--`. It is `null` when `due_deadline_at` carries a value. |
+| `due_with_time` | `true` if the deadline period of the origination includes hours, so the deadline should be shown with its time. |
+| `due_status_label` | Deadline status label in parentheses, such as `(On track)`, `(Due soon)` or `(Overdue)`. It is `null` when the submission is not pending. |
+| `due_extension_days` | Extension days granted to the deadline, or `null` if the origination has no deadline configured. |
+| `created_at`, `updated_at`, `started_at` | Creation, last update and start dates of the submission. |
+| `completed_at`, `canceled_at` | Dates when the submission was completed and canceled, or `null` if that has not happened. A submission that was completed and later canceled carries both. |
+| `origination_name`, `origination_uuid` | Name and identifier of the origination. |
+| `cancellation_reason` | Cancellation reason entered when the submission was canceled, or `null`. |
+| `user` | Owner of the submission, with `id`, `uuid`, `name`, `first_name` and `last_name`. |
+| `assignee` | Assigned admin or group, or `null` if the submission is not assigned. |
+| `tasks` | Array with the responses to the origination tasks. |
+
+:::tip Tip
+`due`, `due_label` and `due_status_label` are texts meant to be displayed as they arrive. To make decisions in your code use `status` and `due_deadline_at`.
+:::
+
+#### The assignee object
+
+Up to version 10.1, `assignee` was a flat object with the assigned admin data: `id`, `uuid`, `name`, `first_name` and `last_name`. From 10.2 a submission can be assigned to a whole group or to an admin picked inside a group, as described in [Assign submission](/en/platform/customers/origination.html#assign-submission), so `assignee` adds the `type` attribute and the rest of its content changes according to that value:
+
+| `type` | Attributes |
+|--------|------------|
+| `group` | `id` and `name` of the assigned group, and `label` with the group name. It does not carry `uuid`, `first_name` or `last_name`. |
+| `user_in_group` | `id`, `uuid`, `name`, `first_name` and `last_name` of the admin, `group_id` and `group_name` of the group they were picked from, and `label` with the format `Admin name (Group name)`. |
+| `user` | `id`, `uuid`, `name`, `first_name` and `last_name` of the admin, and `label` with their name. |
+
+```json
+{
+  "assignee": {
+    "type": "group",
+    "id": 14,
+    "name": "Account managers",
+    "label": "Account managers"
+  }
+}
+```
+
+:::warning Attention
+If your application reads `assignee.uuid` without checking `type`, it breaks when the submission is assigned to a group: that variant does not include `uuid` and its `id` belongs to the group, not to an admin. Always check `assignee.type` before reading the rest of the attributes, and use `assignee.label` when you only need to display the assignee.
+:::
+
+#### The task responses
+
+Each element of `tasks` carries `task`, with the `uid`, `name`, `type` and `step_name` of the task; `status`, with `not_started`, `pending` or `completed`; `user_id`; the assignee data of that task in `assignee_id`, `assignee_group_id`, `assignee_context_group_id` and `assignee_label`; `completed_at`, with the date the task was completed, which goes back to `null` if the task is reopened, and `updated_at`. Task responses whose task no longer exists in the origination are not included in the array. Neither are the tasks that a [conditional logic](/en/platform/customers/origination.html#assign-tasks-with-conditional-logic) rule assigned before the flow reached them, as long as they have not started.
+
+Depending on the task type, each element adds these attributes:
+
+| Task type | Additional attributes |
+|-----------|-----------------------|
+| [Input](/en/platform/customers/origination.html#input) | `fields`, with the user answers. |
+| [Pending Review](/en/platform/customers/origination.html#pending-review) | `content`. |
+| [Validation](/en/platform/customers/origination.html#validation) | `reviews`, with one element per task to validate: `task_uid`, `task_name`, `task_type`, `is_hidden` and `review`, with the latest review of that task or `null`. |
+| [Signature](/en/platform/customers/origination.html#signature) | `signature_response`. |
+| [Identity Verification](/en/platform/customers/origination.html#identity-verification) | `verification_status`, `document_status`, `biometric_status` and `verification_data`. |
+| [Code Snippet](/en/platform/customers/origination.html#code-snippet) | `data`, with the JSON saved by the snippet, or an empty object. |
+| [Origination Process](/en/platform/customers/origination.html#origination-process) | `flow_response`. |
+| [Invitation](/en/platform/customers/origination.html#invitation) | `invitations`, with the invitations of the task. |
+| [Confirmation](/en/platform/customers/origination.html#confirmation) | `confirmed`, `confirmed_items` and `confirmation_metadata`. |
+
+:::warning Attention
+Pending review tasks stopped returning the boolean `completed` key in 10.2. To know whether the review is finished, compare `status` with `completed`.
+:::
+
+:::warning Attention
+In `fields`, the answer to a [Date](/en/platform/customers/forms.html#date) question without the **Show time** option represents a single day and arrives as 12:00 UTC of that date, not as midnight. To get the day, take the date part of the value expressed in UTC: if you convert it to another time zone, the date may change.
+:::
+
+## OTP code verification
+
+`POST ACCOUNT_URL/api/customers/realms/{realm_uid}/verify_otp_code`
+
+Verifies the one-time code of [Soft login](/en/platform/customers/settings.html#soft-login). It is the only Customers API endpoint that does not require an active session. The body carries `identifier`, with the username, and `code`, with the received code.
+
+| Code | Meaning |
+|------|---------|
+| `200` | The code is valid. The body arrives as an empty object. |
+| `409` | The code is not valid or already expired. |
+| `429` | The maximum of five failed attempts was exceeded. New in 10.2. |
+
+Both `409` and `429` carry the `errors` array with a ready-to-display text:
+
+```json
+{
+  "errors": ["You have exceeded the maximum number of attempts."]
+}
+```
+
+:::warning Attention
+After five failed attempts the endpoint responds `429` even when the code sent is the correct one, because the validation stops at the attempt count before comparing the code. Treat `429` as a case apart from `409`: the user cannot keep retrying and the only way out is to request a new code, which resets the counter.
+:::
+
+The code stops being valid once the time set in **OTP validity duration (in minutes)** of the realm goes by, five minutes by default. Check [Soft login](/en/platform/customers/settings.html#soft-login) for the details of that setting.
+
+## Submission attachments
+
+File questions of an origination receive their attachments through these two endpoints. Both require an active session, always work on the files of the session user, and are also described in the interactive reference at `ACCOUNT_URL/api/customers/docs`.
+
+### Upload a file
+
+`POST ACCOUNT_URL/api/customers/realms/{realm_uid}/private_upload/answer`
+
+Send a `multipart/form-data` request with these parameters:
+
+- `file`: the file to upload. It is required.
+- `question_id`: identifier of the file question the attachment belongs to. It is optional.
+- `locale`: language of the error messages, for example `en`. It is optional. If you do not send it, the messages use the user language or, if they have none, the account language.
+
+With `200`, the body describes the stored file:
+
+```json
+{
+  "id": 431,
+  "uuid": "586e591c-1f07-4f6d-b886-a66fea953afe",
+  "name": "receipt.pdf",
+  "size": 60548,
+  "url": "/uploads/586e591c-1f07-4f6d-b886-a66fea953afe/original/receipt.pdf",
+  "expiring_url": "https://files.example.com/586e591c-1f07-4f6d-b886-a66fea953afe/original/receipt.pdf?signature=..."
+}
+```
+
+The file is stored as private and associated with the session user, so `url` is not publicly readable. To display or link the file use `expiring_url`, a signed URL that stops working after five minutes by default.
+
+Use the `id` as the value of the answer to the file question, sent as text, for example `"431"`. The `uuid` only serves to delete the attachment.
+
+:::warning Attention
+If you send the `id` as a number or use the `uuid` as the value of the answer, the answer is saved without a file and with no error to signal it.
+:::
+
+| Code | Meaning |
+|------|---------|
+| `401` | There is no active session. |
+| `404` | The `question_id` sent does not match any file question. |
+| `422` | The file did not pass the validations. |
+
+The `422` body carries the `errors` array with one text per rejection reason, prefixed with the file name. A file is rejected when it is missing, when its extension is not allowed on the platform, when you sent `question_id` and its extension is not among the ones allowed by that question, when its name has more than one dot, when its content does not match the declared extension, or when it exceeds the maximum size per file, 10 MB by default.
+
+### Delete a file
+
+`DELETE ACCOUNT_URL/api/customers/realms/{realm_uid}/private_upload/answer/{uuid}`
+
+Deletes the attachment identified by `uuid`. With `200` the body arrives empty.
+
+| Code | Meaning |
+|------|---------|
+| `401` | There is no active session. |
+| `404` | There is no attachment with that `uuid` among the files of the session user. |
+
+:::warning Attention
+The deletion is immediate and cannot be undone. If the attachment was already associated with the answer to a question, that answer is left without a file.
 :::
 
 ## Zendesk API

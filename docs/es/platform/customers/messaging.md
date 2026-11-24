@@ -32,6 +32,10 @@ En cada fila de campaña, encontrarás un menú con las siguientes acciones:
 Si borras una campaña, no podrás recuperarla, y su registro se eliminará del sistema.
 :::
 
+:::tip Alcance por segmentos
+Si tu acceso al reino está [restringido por segmentos](/es/platform/customers/settings.html#restringir-el-alcance-con-segmentos), solo puedes dirigir campañas a segmentos dentro de tu alcance. Las campañas dirigidas a segmentos fuera de tu alcance se muestran en modo **Solo lectura**: puedes ver sus metadatos, pero no sus métricas ni destinatarios, y no puedes editarlas, enviarlas, duplicarlas ni borrarlas.
+:::
+
 ## Crear una campaña
 Las campañas te permiten contactar directamente a tus usuarios mediante correo electrónico o notificaciones directas, incluyendo soporte para notificaciones WebPush. Para generar una nueva campaña haz click en el botón **Nueva Campaña**
 
@@ -42,11 +46,12 @@ Las campañas de correo te permiten contactar a los usuarios a través de email.
 - **Nombre**: Identificador de la campaña.
 - **Tipo**: Selecciona **Correo** para activar esta opción.
 - **Asunto**: Texto que aparecerá en la línea de asunto del mensaje.
-- **Responder a**: Dirección de correo electrónico para las respuestas de los usuarios.
-- **Plantilla**: Selecciona una [plantilla](/es/platform/customers/messaging#plantillas). Si no seleccionas una, se enviará una plantilla en blanco.
-- **Habilitar segmentación**: Selecciona un segmento específico o deja esta opción desmarcada para enviar el mensaje a todos los usuarios.
+- **Nombre del remitente**: Nombre que aparece en el campo «De» del correo. Es obligatorio.
+- **Responder a**: Dirección de correo desde la que se envía la campaña y a la que llegan las respuestas de los usuarios. Si este campo se deja en blanco se usará el correo por defecto del reino.
+- **Plantilla**: Selecciona una [plantilla](/es/platform/customers/messaging.html#plantillas). Si no seleccionas una, se enviará una plantilla en blanco.
+- **Habilitar segmentación**: Selecciona uno o más segmentos, o deja esta opción desmarcada para enviar el mensaje a todos los usuarios. Si tu acceso está [restringido por segmentos](/es/platform/customers/settings.html#restringir-el-alcance-con-segmentos) y no eliges ninguno, la campaña se dirige a todos los segmentos de tu alcance.
 
-Haz clic en **Guardar y continuar** para abrir el editor WYSIWYG, donde puedes personalizar el contenido de la plantilla seleccionada. Una vez editado, selecciona **Guardar** para confirmar los cambios y acceder a la vista **Estado de envío**.
+Haz clic en **Guardar y continuar** para abrir el editor WYSIWYG, donde puedes personalizar el contenido de la plantilla seleccionada y usar [variables de personalización](/es/platform/customers/messaging.html#variables-de-personalizacion). Una vez editado, selecciona **Guardar** para confirmar los cambios y acceder a la vista **Estado de envío**.
 
 
 ### Campañas de Notificaciones
@@ -55,6 +60,7 @@ Las campañas de notificaciones permiten enviar mensajes directos a los usuarios
 - **Nombre**: Identificador de la campaña.
 - **Tipo**: Selecciona **Notificación** para activar esta opción.
 - **Asunto**: Texto que aparecerá en el mensaje enviado.
+- **Habilitar segmentación**: Funciona igual que en las [campañas de correo](/es/platform/customers/messaging.html#campanas-de-correo).
 
 #### Habilitar soporte para WebPush
 
@@ -79,20 +85,35 @@ Antes de enviar una campaña, utiliza el botón de **Vista previa** para verific
 El botón contextual te permite realizar estas acciones:
 
 - **Editor de Mensajes**: Modifica el contenido antes de enviarlo.
-- **Enviar prueba**: Envía un mensaje de prueba a una dirección específica (Únicamente puede a enviarse a usuarios con acceso al backend de Modyo).
+- **Enviar prueba**: Envía un mensaje de prueba a los destinatarios que indiques, uno por línea. En las campañas de correo, cada línea sigue el formato `nombre; correo` y el correo debe pertenecer a un administrador de la cuenta. En las campañas de notificación, el formato es `nombre; nombre de usuario` y el destinatario debe ser un usuario del reino, que recibe la notificación de prueba entre sus notificaciones. El botón **Enviar** se deshabilita mientras alguna línea no siga ese formato.
 - **Editar**: Cambia las propiedades de la campaña, como el segmento objetivo o la dirección de respuesta.
 - **Clonar la campaña**: Crea una copia con todo el contenido de una campaña.
 - **Borrar la campaña**: Elimina una campaña.
 
-Una vez que hayas enviado una campaña, no puedes enviarla nuevamente. Si deseas enviar de nuevo la misma campaña, selecciona la opción de clonar. Esto  crea una una nueva campaña con los mismos datos de nombre, segmentos y contenido, mientras que la información estadística parte de cero.
+Una vez que una campaña queda **Completada**, no puedes enviarla nuevamente. Si deseas enviar de nuevo la misma campaña, selecciona la opción de clonar. Esto crea una nueva campaña con los mismos datos de nombre, segmentos y contenido, mientras que la información estadística parte de cero.
 
 Puedes cancelar el envío de una campaña cuando la campaña está en cola o en proceso de envío.
 
 :::warning Atención
-Una campaña puede reenviarse únicamente si fue cancelado previamente el envío de la campaña cuando estaba en cola o proceso de envío.
+Una campaña puede volver a enviarse mientras no esté **Completada**: el botón **Enviar** reaparece tanto si el envío fue cancelado como si falló.
 
-Debes indicar si deseas enviar nuevamente los mensajes a todos los usuarios o solo a aquellos que no los recibieron anteriormente. En este caso, el número de entregas de mensajes puede ser mayor que el alcance total de usuarios de la campaña.
+Al enviar, la casilla **No enviar esta campaña a las personas que ya la recibieron.** deja fuera a quienes ya recibieron un mensaje de esta campaña. Si la dejas sin marcar, el envío recorre de nuevo a todos los usuarios del alcance y el número de entregas de mensajes puede ser mayor que el alcance total de usuarios de la campaña.
 :::
+
+### Estados de una campaña
+
+Esta vista muestra el estado actual de la campaña junto a sus métricas. Los estados posibles son:
+
+- **Inactiva**: La campaña está creada y todavía no se ha enviado.
+- **Pendiente**: El envío ya se solicitó y está en cola, pero aún no comienza a procesarse.
+- **Enviando**: El envío está en curso y las entregas se van generando por grupos de usuarios.
+- **Completada**: El envío terminó de recorrer a todos los destinatarios.
+- **Cancelada**: Alguien detuvo el envío mientras estaba **Pendiente** o **Enviando**. Las entregas generadas hasta ese momento no se revierten.
+- **Fallida**: El envío se interrumpió por un error antes de terminar. La campaña conserva las entregas que alcanzó a generar.
+
+El botón principal de la vista cambia según el estado: en **Inactiva**, **Cancelada** y **Fallida** aparece **Enviar**; en **Pendiente** y **Enviando** aparece **Cancelar**. En **Completada** no aparece ninguno de los dos y, además, las acciones **Editor de Mensajes** y **Editar** desaparecen del menú contextual: una campaña completada ya no se puede modificar ni reenviar, solo clonar.
+
+### Resultados del envío
 
 En campañas enviadas por correo puedes visualizar:
 
@@ -109,6 +130,10 @@ Si enviaste la campaña por notificación puedes visualizar:
 - **Alcance**: Personas a las que les llegó la campaña.
 - **Enviados**: Número de notificaciones enviadas.
 - **Abiertos**: Número de notificaciones abiertas.
+
+:::tip Actualización de las métricas
+Las métricas de aperturas, clics y spam se recalculan cada 15 minutos y no en tiempo real: aunque recargues la página, una nueva apertura o un nuevo clic no aparece hasta el siguiente recálculo.
+:::
 
 Si envías una campaña por [segmentos](/es/platform/customers/segments) puedes ver a cuál grupo de usuarios le llegó la campaña. Si esta sección no aparece, es debido a que la campaña fue enviada a todos los contactos.
 
@@ -128,24 +153,37 @@ Hacer click en el nombre de una campaña te lleva a la sección Entregas de Mens
 
 En la sección Entregas de mensajes, encuentras la lista de usuarios a los cuales les ha llegado un mensaje desde la plataforma. Aquí puedes ver una lista de todos los usuarios que han recibido un correo o notificación única, denominados "Sin Campaña".
 
-"Sin Campaña" se refiere a un correo o notificación enviado específicamente a un usuario en una fecha determinada. Estos mensajes no se consideran Campañas, ya que están personalizados y contienen información que no se envía a otros usuarios. Para obtener más información sobre cómo funcionan estos mensajes, consulta la [API de Administración](/es/platform/core/api).
+"Sin Campaña" se refiere a un correo o notificación enviado específicamente a un usuario en una fecha determinada. Estos mensajes no se consideran Campañas, ya que están personalizados y contienen información que no se envía a otros usuarios.
+
+Estos mensajes no se crean desde el panel, sino desde la API de administración:
+
+- `POST /api/admin/customers/{realm_uid}/messaging/mailer` envía un correo a un usuario del reino.
+- `POST /api/admin/customers/{realm_uid}/messaging/notifications` envía una notificación a un usuario del reino.
+
+En ambos casos el destinatario se identifica por su nombre de usuario, no por su correo, y tiene que estar dentro de tu [alcance por segmentos](/es/platform/customers/settings.html#restringir-el-alcance-con-segmentos): si no lo está, el correo responde `409` y la notificación `404`. El detalle de los campos de cada llamada está en el catálogo de servicios, bajo los recursos **Mailer** y **Notifications**; para abrirlo, sigue [Llama usando el portal Swagger](/es/platform/core/api.html#llama-usando-el-portal-swagger).
+
+El correo queda encolado, así que una respuesta correcta confirma que la llamada fue aceptada, no que el mensaje ya se entregó. Su cuerpo admite `%{name}`, `%{first_name}`, `%{last_name}`, `%{email}` y `%{unsubscribe_link}`, un subconjunto de las [variables de personalización](/es/platform/customers/messaging.html#variables-de-personalizacion) de las campañas: `%{show_link}` y `%{show_url}` no están disponibles. Si el cuerpo usa otra variable, la llamada responde `409` con el error `Body content is not valid`. También responde `409` si `from` no es una dirección de correo válida, con el error `Email '…' is not valid`.
+
+La notificación, en cambio, no admite variables, aunque las campañas de notificación sí las tengan: cualquier `%{…}` en su cuerpo hace que la llamada responda `409` con el cuerpo `null`, sin detalle del error, y la notificación no se crea.
+
+:::warning Atención
+Existe además una ruta heredada, `POST /api/admin/mailer`, que llega a la misma acción pero no aparece en el catálogo de servicios y no lleva el reino en la URL: hay que pasarle `realm_uid` como parámetro o la llamada responde `404`. Se mantiene por compatibilidad; en integraciones nuevas usa la ruta del reino.
+:::
 
 En la vista inicial los mensajes se ordenan en estas categorías:
 
-- **Nombre**: Nombre del usuario al que se le envía el mensaje. Se incluye el mail del usuario, independientemente de si fue enviado por correo o notificación.
+- **Usuario**: Nombre del usuario al que se le envía el mensaje. Se incluye el mail del usuario, independientemente de si fue enviado por correo o notificación.
 - **Campaña**: Campaña bajo la cual el mensaje fue enviado.
 - **Tipo**: Vía por la cual se envió el mensaje, ya sea correo o notificación.
-- **Envío**: Fecha en la cual se inició la campaña.
 - **Enviado**: Fecha en la que se envió el mensaje.
-- **Leído**: Alerta si el usuario leyó o vio el mensaje.
+- **Leídos**: Alerta si el usuario leyó o vio el mensaje.
 
 Además, puedes filtrar los datos bajo los siguientes filtros:
 
-- **Tipo de Campaña**: Todos, correo o notificación.
-- **Nombre de la Campaña**: Nombre que se le dio a la campaña en general.
-- **Envío**: Fecha en la cual se envió la campaña.
+- **Tipo**: Correo o notificación.
+- **Campaña**: Campaña bajo la cual se envió el mensaje. Incluye la opción **Sin campaña**.
 
-La barra de búsqueda te permite buscar por algún término en específico.
+La barra de búsqueda te permite buscar por el nombre o el correo del destinatario.
 
 ## Plantillas
 
@@ -157,6 +195,8 @@ En la sección **Plantillas**, puedes crear y administrar diseños de correo par
 - Haz clic en **Nueva Plantilla**.
 - Asigna un nombre descriptivo a la plantilla.
 - Utiliza el editor WYSIWYG para personalizar el diseño.
+
+Si el reino todavía no tiene plantillas, junto a **Nueva Plantilla** aparece **Cargar plantillas por defecto**, que crea tres plantillas base (Example 1, Example 2 y Example 3) que puedes editar a tu gusto.
 
 ### Editar plantillas
 
@@ -173,13 +213,49 @@ Cuando haces una campaña, recuerda agregar en el footer toda la información le
 Para automatizar la inserción del Footer, lee [Configuración de Realms](/es/platform/customers/settings#correos)
 :::
 
+## Variables de personalización
+
+El editor de mensajes de una campaña y el editor de plantillas admiten variables que la plataforma reemplaza por los datos de cada destinatario al momento del envío. Ambos editores las listan bajo el rótulo **Atributos permitidos (serán reemplazados de forma dinámica con datos)**.
+
+La sintaxis es `%{variable}` y la lista es cerrada: no puedes inventar variables ni usar drops de Liquid. Los [correos automáticos del reino](/es/platform/customers/settings.html#personalizar-correos) sí usan Liquid, pero las campañas y las plantillas de mensajería, no.
+
+En las plantillas y en las campañas de correo dispones de siete variables:
+
+| Variable | Se reemplaza por |
+| --- | --- |
+| `%{name}` | El nombre completo del destinatario. |
+| `%{first_name}` | El nombre del destinatario. |
+| `%{last_name}` | El apellido del destinatario. |
+| `%{email}` | El correo electrónico del destinatario. |
+| `%{show_link}` | Un enlace HTML listo para insertar, con el texto "El correo electrónico no se muestra correctamente? Velo en tu navegador.", que abre la versión web del mensaje. |
+| `%{show_url}` | La dirección de esa versión web, sin formato, para que armes tu propio enlace. |
+| `%{unsubscribe_link}` | La dirección con la que el destinatario se da de baja de los envíos del reino. |
+
+En las campañas de notificación solo están disponibles `%{name}`, `%{first_name}` y `%{last_name}`.
+
+Incluir `%{unsubscribe_link}` en el pie del mensaje es lo que permite al destinatario darse de baja, y esas bajas son las que aparecen en [Desinscripciones](/es/platform/customers/messaging.html#desinscripciones).
+
+El enlace de baja que llega en cada correo sirve durante tres meses desde el envío. Si el destinatario lo abre después de ese plazo, no se da de baja: ve el aviso **Algo salió mal. Puedes cambiar tus preferencias de notificaciones desde tu perfil.** y, para darse de baja, debe desmarcar **Inscribirse en campañas de correo** al [editar su perfil](/es/platform/customers/profile.html#editar-informacion).
+
+:::warning Atención
+Si escribes una variable que no está en la lista del canal, la plataforma no guarda el mensaje y muestra el error **Los atributos especificados no son válidos**.
+
+El editor de plantillas no hace esa comprobación: una plantilla puede guardarse con una variable inválida, y el error recién aparece cuando una campaña de correo la usa. Si la eliges al crear la campaña, **Guardar y continuar** no la crea y muestra **No se pudo crear la campaña.** con el detalle en el formulario. Si la cargas después desde el editor de mensajes con **Cambiar plantilla**, la plantilla no se aplica y el aviso es **Hubo un error cargando la plantilla. Intenta nuevamente en unos minutos**, que no menciona la variable.
+:::
+
+:::tip Datos incompletos
+Si un destinatario no tiene cargado el dato de una variable, el resultado depende de dónde lea el mensaje. En el correo, la variable se reemplaza por un texto vacío. En la versión web del correo, la que abren `%{show_link}` y `%{show_url}`, y en las notificaciones, la variable no se reemplaza: si un usuario no tiene apellido cargado, por ejemplo, ve el texto `%{last_name}`. Antes de usar variables de campos opcionales, revisa que estén completos en el segmento al que apuntas.
+:::
+
+La **Vista previa** de una campaña resuelve estas variables con los datos de tu propia cuenta de administrador y con un enlace de baja de ejemplo, así que sirve para revisar el diseño, no para comprobar qué datos verá cada destinatario.
+
 ## Desinscripciones
 
 En esta sección, encuentras una lista de los usuarios que se han dado de baja de las campañas de correos o notificaciones a través de su perfil web.
 
 Usa la barra de búsqueda para encontrar un usuario específico. Puedes ingresar su nombre o correo electrónico.
 
-Cuando haces click en el nombre del usuario, puedes ver la [ficha de usuario](/es/platform/customers/users#ficha-de-usuarios) con todas las actividades que ha hecho en la plataforma.
+Cuando haces click en el nombre del usuario, puedes ver la [ficha de usuario](/es/platform/customers/users.html#ficha-de-usuario) con todas las actividades que ha hecho en la plataforma.
 
 Al final de cada nombre de usuario hay un botón que te permite reinscribir al usuario a cualquier campaña del sitio.
 

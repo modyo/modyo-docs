@@ -23,7 +23,7 @@ It is important to note that, if not implemented correctly, SSO can present secu
 
 SSO in Modyo delegates authentication to a central system, facilitating user management and the application of centralized security policies. It can be implemented in two ways:
 
-1. Through the [SSO component](/en/connect/components/infrastructure#single-sign-on-sso) of [Modyo Connect](/en/connect).
+1. Through the [SSO component](/en/connect/infrastructure/single-sign-on.html) of [Modyo Connect](/en/connect/).
 2. Through integration with a client's existing SSO system.
 
 Both options benefit from the platform's ability to integrate with standards such as OpenID Connect (OIDC), SAML, Entra ID, Google, and OAuth2, among others.
@@ -33,7 +33,7 @@ By activating SSO in Modyo, user authentication is delegated to the selected sys
 The Modyo platform supports delegation to SSO systems in two main ways:
 
 1. For administrator users with access to the web console.
-2. For end users through the configurations in the [user realms](/en/platform/customers/overview).
+2. For end users through the configurations in the [user realms](/en/platform/customers/realms.html).
 
 Both forms of integration are independent, allowing for the definition of specific topologies for each client (e.g., Entra ID (SAML) for administrators, KeyCloak (OIDC) for users with access to the transactional application, Entra ID (OIDC) for agents with access to the internal sales application).
 

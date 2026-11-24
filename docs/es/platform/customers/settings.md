@@ -13,25 +13,52 @@ Aquí puedes modificar tanto la experiencia visual del usuario como la configura
 
 En esta sección, puedes configurar aspectos generales del reino, como:
 
-- **Título**.
-- **Identificador**: La URL de las vistas de perfil, inicio de sesión, registro y recuperación de contraseña del reino.
-- **Deshabilitar credenciales**: Al marcar esta casilla, desactivas las credenciales de Modyo en el reino y permites únicamente el acceso a través de SSO.
+- **Nombre**: Nombre del reino o del stage. Es el texto que tienes que escribir para confirmar su eliminación.
+- **Identificador**: La URL de las vistas de perfil, inicio de sesión, registro y recuperación de contraseña del reino. Revisa el listado completo en [Rutas del reino](/es/platform/customers/profile.html#rutas-del-reino). Si el reino tiene un [dominio personalizado](/es/platform/customers/settings.html#dominios), sus rutas en ese dominio no incluyen el identificador.
+- **Deshabilitar credenciales de la plataforma**: Al marcar esta casilla, desactivas las credenciales de Modyo en el reino y permites únicamente el acceso a través de SSO.
 
 :::danger Peligro
 Antes de habilitar la opción de deshabilitar las credenciales de Modyo en el reino, asegúrate de tener configurado un proveedor de identidad SSO para el reino. De lo contrario, los usuarios no podrán iniciar sesión.
 :::
 
-- **Después de iniciar sesión, redirigir a**: Te permite elegir una URL específica a la cual dirigir al usuario, una vez que haya ingresado al reino. Si no activas la opción de "Forzar redirección", el usuario será redirigido a la URL ingresada solo si no es posible volver a la URL desde la que inició sesión.
-- **Forzar la redirección a**: Al activar esta opción, el usuario siempre será redirigido a la URL especificada en el campo de redirección del inicio de sesión, sin importar desde dónde inició la sesión.
+- **Después de iniciar sesión, redirigir a**: Te permite elegir una URL específica a la cual dirigir al usuario, una vez que haya ingresado al reino. Si no activas **Forzar la redirección a**, el usuario será redirigido a la URL ingresada solo si no es posible volver a la URL desde la que inició sesión. Tiene que ser una URL absoluta, con protocolo y dominio, en el dominio de tu cuenta, en el de una de tus aplicaciones web o en el [dominio personalizado](#dominios) del reino, y no puede apuntar a las páginas de inicio de sesión del reino (inicio de sesión, ingreso con código o pantalla del código), porque el usuario volvería a la pantalla de ingreso. Si no cumple estas condiciones, la configuración no se guarda.
+- **Forzar la redirección a**: Al activar esta opción, el usuario siempre será redirigido a la URL especificada en el campo de redirección del inicio de sesión, sin importar desde dónde inició la sesión. La excepción es un enlace de inicio de sesión con el parámetro `redirect_to`, descrito en [Redireccionar Login](#redireccionar-login): si apunta a una página válida, tiene prioridad sobre esta opción.
+- **Cuando se requiere iniciar sesión, redirigir a**: Define a dónde se redirige a un visitante sin sesión cuando intenta acceder a contenido que requiere autenticación: a la **Página de inicio de sesión** (opción por defecto) o a la **Página de registro** del reino. En ambos casos, tras autenticarse, el usuario vuelve a la URL a la que intentaba acceder.
 - **Activación de la cuenta**:
   - Directa: Los usuarios que se registren pueden iniciar sesión directamente.
+  - Activación por OTP: Los usuarios que se registren no pasan por un correo de activación: reciben un código de un solo uso y su cuenta queda activa cuando lo ingresan correctamente. Solo puedes seleccionar esta opción si el reino tiene activo **Habilitar Soft login**; si no lo está, aparece deshabilitada. Revisa el detalle en [Soft login](#soft-login).
   - E-mail de activación: Los usuarios que se registren deben activar su cuenta mediante un enlace enviado a su correo electrónico previo a poder iniciar sesión.
   - Moderada: Los usuarios que se registren deberán esperar a que un administrador del reino active su cuenta para poder iniciar sesión.
+  - Solo por invitación: No se pueden registrar nuevos usuarios desde el sitio, igual que con **Deshabilitada**, pero los usuarios nuevos que invites desde una originación quedan activos y pueden completar el flujo de inmediato. Un usuario que ya existía y estaba desactivado no se reactiva al invitarlo. Revisa el detalle en [invitar usuarios](/es/platform/customers/origination.html#invitar-usuarios).
   - Deshabilitada: No se pueden registrar nuevos usuarios en el reino. Los usuarios ya registrados y activados aún pueden iniciar sesión.
 - **Imagen de Avatar por defecto**: Imagen que se muestra en el avatar de los usuarios que no tienen una imagen personalizada.
-- **Habilitar Soft login**: Activando esta opción puedes acceder a tu cuenta sin introducir tus credenciales cada vez. Recibirás un código de seguridad en tu email para ingresar fácilmente sin necesidad de contraseñas.
+- **Soft login**: Habilita el ingreso con un código de un solo uso (OTP) en lugar de contraseña, y define su validez, el tiempo de espera para reenviarlo y los canales por los que se envía. Revisa el detalle en [Soft login](#soft-login).
 - **Formulario de registro**: Aquí puedes habilitar o deshabilitar diferentes atributos en el formulario de registro, como el segundo apellido, confirmación de correo electrónico, avatar de usuario, fecha de nacimiento, género y número de teléfono.
-- **Eliminar reino**: Elimina el reino. Este proceso se realiza en segundo plano y es posible que no veas el reino desaparecer inmediatamente después de ejecutar la acción. Para confirmar la eliminación, debes ingresar el nombre completo del reino.
+- **Eliminar reino**: Elimina el reino y todos sus stages. El reino desaparece del listado al confirmar y el borrado de sus datos continúa en segundo plano. Para confirmar la eliminación, debes ingresar el nombre completo del reino. Solo aparece si tienes el permiso **Administración General**, y no puedes usarlo mientras alguna aplicación web o espacio tenga seleccionado el reino o alguno de sus stages. En un stage, el botón se llama **Eliminar stage** y pide el **Nombre** completo del stage, por ejemplo **qa Clientes**. Revisa el detalle en [Eliminar un Reino](/es/platform/customers/realms.html#eliminar-un-reino) y [Eliminar un stage](/es/platform/customers/realms.html#eliminar-un-stage).
+
+
+### Soft login
+
+El Soft login permite que tus usuarios inicien sesión con un código de un solo uso (OTP) de 6 dígitos en lugar de una contraseña. Al activar **Habilitar Soft login**:
+
+- La vista de inicio de sesión del reino pide el identificador del usuario y le envía el código, en lugar de pedirle una contraseña.
+- El formulario de registro del reino deja de pedir contraseña y confirmación de contraseña.
+- La casilla **Deshabilitar credenciales de la plataforma** queda bloqueada, porque el ingreso con código usa las credenciales de la plataforma.
+- Queda disponible la opción **Activación por OTP** de **Activación de la cuenta**.
+
+Junto al interruptor puedes configurar estos campos, que solo se pueden editar con el Soft login activo:
+
+- **Validez de duración de OTP (en minutos)**: Minutos que el código sigue siendo válido desde que se envía, entre 1 y 30. Por defecto son 5. Cuando expira, el usuario tiene que pedir uno nuevo.
+- **Tiempo de espera para reenvío de OTP (en minutos)**: Minutos que el usuario espera en la pantalla del código antes de que aparezca el enlace **Reenviar código**, entre 1 y 5. Por defecto son 5.
+- **Canal de envío del OTP**: Canales por los que se envía el código. **Email** lo envía al correo del usuario y **Phone** lo envía por las integraciones de mensajería habilitadas en el reino: [Auronix](#auronix) por WhatsApp y [Custom SMS](#custom-sms) por SMS. Puedes marcar los dos canales a la vez y, con el Soft login activo, tienes que dejar al menos uno marcado. **Phone** solo está disponible si el reino tiene habilitada una integración de OTP por teléfono, y si tienes habilitadas Auronix y Custom SMS el código se envía por las dos. Si el reino no tiene ninguna integración de OTP por teléfono, **Email** queda marcado y bloqueado como único canal.
+
+:::warning Atención
+El usuario tiene 5 intentos para ingresar el código. Al superarlos, el código queda invalidado: aunque después escriba el correcto, no podrá iniciar sesión y tendrá que pedir uno nuevo.
+:::
+
+:::warning Atención
+Si desactivas **Habilitar Soft login** mientras **Activación de la cuenta** está en **Activación por OTP**, al guardar el reino vuelve a **E-mail de activación** sin avisarte.
+:::
 
 
 ## Redireccionar Login ##
@@ -124,6 +151,12 @@ Para ello, inserta en el código los atributos que están debajo del editor y p�
 :::
 
 Cada vez que hagas un cambio en el código, debes hacer click en el botón **Guardar** ubicado en la parte superior de la pantalla.
+
+Puedes usar [drops de liquid](/es/platform/channels/liquid-markup/objects.html) en el correo para acceder a la siguiente información: user, site, account, origination, submission y assignee.
+
+:::tip Tip
+El drop de liquid de assignee se refiere al drop de adminuser.
+:::
 
 ### Proveedores de identidad
 
@@ -272,11 +305,110 @@ Utiliza un cliente de autenticación para enviar los tokens de acceso de tu inte
 - URI de cierre de sesión: URI al que el servidor de autenticación redirigirá al usuario después de cerrar la sesión.
 - Descripción
 - Confidencial: Existen dos tipos de clientes OAuth, confidencial o públicos. Selecciona la opción confidencial si tu aplicación puede autenticarse de manera segura con el servidor de autenticación. Los clientes públicos suelen ser aplicaciones que se ejecutan en dispositivos móviles o navegadores.
-- Scopes: Si tu servicio de autenticación OAuth2 usa múltiples espacios o ambientes para separar a los usuarios y quieres usar uno en específico en esta integración, defínelo en este campo.
+- Scopes: Scopes que este cliente puede solicitar al autorizar, separados por coma. Usa `public`, el scope por defecto del servidor de autorización del reino y el que pide la URL de autorización que muestra el panel; un scope que el servidor no reconoce hace que la autorización falle. Si completas el campo, el cliente solo puede pedir los scopes de la lista.
+
+Al hacer click en el nombre del cliente, el panel muestra su **UID** y su **Secreto**, y además dos bloques listos para copiar: **Cliente web**, con la URL de autorización ya armada, y **Cliente móvil**, con los endpoints de autorización, token, revocación y cierre de sesión del reino. Con esos valores tu aplicación completa el flujo `authorization_code` del reino y obtiene el access token con el que llama a la API pública de Customers en nombre del usuario. El paso a paso está en [Autenticación](/es/platform/customers/api.html#autenticacion).
+
+### Amazon Rekognition
+
+La integración de Amazon Rekognition, de la categoría **Verificación de Identidad**, habilita la verificación biométrica en las originaciones del reino: captura de documento de identidad, comparación facial y detección de vida (liveness).
+
+Para configurarla necesitas:
+
+- **Región AWS**: La región donde operan los servicios de AWS.
+- **ID de clave de acceso AWS** y **Clave de acceso secreta AWS**: Credenciales IAM con permisos de Rekognition.
+- **ID de Pool de Identidad de Cognito**: Requerido para la detección de vida en el navegador.
+- **Nombre del Bucket S3**: Bucket donde se almacenan los resultados de las sesiones y las imágenes.
+- **ARN del tópico SNS**: Opcional.
+- **Umbral de confianza (%)**: Puntaje mínimo para aprobar la verificación. Por defecto es 90.
+- **Habilitar imágenes de auditoría**: Guarda imágenes de auditoría de cada sesión de detección de vida.
+- **Habilitar verificación de fotosensibilidad**: Activa el desafío de colores durante la detección de vida e incluye una advertencia de fotosensibilidad para el usuario.
+
+Una vez habilitada, el proveedor queda disponible en las tareas de [Verificación de Identidad](/es/platform/customers/origination.html#verificacion-de-identidad) de las originaciones del reino.
+
+### Incode
+
+La integración de Incode, de la categoría **Verificación de Identidad**, permite verificar la identidad del usuario en las originaciones del reino con validación del documento y OCR, prueba de vida, face match y validación contra bases de gobierno. Puede estar habilitada al mismo tiempo que las demás integraciones de verificación de identidad del reino.
+
+Para configurarla necesitas:
+
+- **URL de la API**: URL base de la API del ambiente de Incode, por ejemplo `https://demo-api.incodesmile.com`. Debe usar HTTPS y pertenecer a un dominio de Incode (`incodesmile.com`).
+- **API key**: La API key de Incode.
+- **Email del usuario administrador** y **Contraseña del usuario administrador**: Las credenciales de un usuario con rol Admin en el Dashboard de Incode. Incode solo permite leer los resultados de una verificación con el token de un usuario con ese rol.
+
+Cuando cambias alguna credencial o habilitas la integración, Modyo valida las credenciales contra Incode y no guarda los cambios si Incode las rechaza o no responde. La contraseña se guarda cifrada y no se vuelve a mostrar: al editar la integración, deja el campo en blanco para mantenerla.
+
+::: warning Usa un usuario administrador dedicado
+Si el usuario administrador se elimina o cambia su contraseña en Incode, Modyo deja de obtener los resultados de las verificaciones. Usa un usuario dedicado a esta integración y actualiza la contraseña en Modyo cuando cambie.
+:::
+
+#### Webhook de Incode
+
+Después de guardar la integración, la sección **Webhook de Incode** muestra la **URL del webhook**, el **Nombre del header** y el **Valor del header**, en campos de solo lectura con un botón para copiarlos. En el Dashboard de Incode, configura el webhook de estado de onboarding con esa URL y agrega un header personalizado con ese nombre y ese valor.
+
+- El webhook es de la cuenta: es el mismo para todos sus reinos y se configura una sola vez en cada organización de Incode que uses.
+- Es obligatorio: una decisión de revisión manual tomada en Incode más de 24 horas después de iniciar la verificación solo llega a Modyo por este webhook.
+
+Una vez habilitada, Incode queda disponible como proveedor en las tareas de Verificación de Identidad de las originaciones del reino. La configuración de la tarea está en [Verificación con Incode](/es/platform/customers/origination.html#verificacion-con-incode).
+
+### Auronix
+
+La integración de Auronix, de la categoría de mensajería, permite el envío de mensajes de WhatsApp mediante plantillas preaprobadas por Meta. Se utiliza para enviar el código OTP del soft login por WhatsApp.
+
+Para habilitarla, el formulario de registro del reino debe tener el campo de teléfono **habilitado y requerido**. Mientras la integración esté habilitada, esas opciones del formulario de registro quedan bloqueadas.
+
+En la sección **Credenciales** completa:
+
+- **API Key**: API Key de Auronix para autenticación.
+- **Canal WhatsApp**: Número de la línea de salida de WhatsApp. Debe ser un número de teléfono mexicano válido.
+- **URL Base**: Obligatoria. Al crear la integración puede venir precargada con la URL de Auronix de la plataforma; cámbiala solo para sandbox o ambientes a medida. Debe ser una URL HTTPS del dominio `auronix.com` o de uno de sus subdominios, y cumplir las mismas reglas que la URL del endpoint de [Custom SMS](#custom-sms). Al editar la integración, si dejas el campo en blanco se mantiene la URL guardada.
+
+En la sección **Configuración OTP** completa:
+
+- **Template OTP ID**: ID del template para mensajes OTP en Auronix.
+- **Locale OTP**: Código de locale del template. Por ejemplo: `es_MX`, `en_US`, `pt_BR`.
+- **Variables del Template OTP**: Variables separadas por coma. Las disponibles son `otp_code`, `realm_name`, `user_name` y `user_first_name`.
+
+Una vez habilitada la integración, selecciona **Phone** en el **Canal de envío del OTP** de la configuración General para que los códigos del soft login se envíen por WhatsApp. Si el envío por WhatsApp falla, el usuario puede solicitar el código a su correo con la opción **Enviar código al correo**.
+
+:::warning Atención
+No puedes deshabilitar ni eliminar la última integración de OTP por teléfono habilitada mientras el canal de envío del OTP del reino esté configurado como Phone.
+:::
+
+### Custom SMS
+
+La integración de Custom SMS, de la categoría de mensajería, permite enviar el código OTP del soft login por SMS mediante tu propio servicio, a través de un endpoint HTTP genérico.
+
+Para habilitarla, el formulario de registro del reino debe tener el campo de teléfono **habilitado y requerido**. Mientras exista una integración de OTP por teléfono activa, esas opciones del formulario de registro quedan bloqueadas.
+
+En la sección **Credenciales** completa:
+
+- **URL del endpoint**: El código OTP se envía como una petición POST a esta URL, con un cuerpo JSON que contiene `phone` y `code`. Debe ser una URL HTTPS en el puerto 443 u 8443, con un dominio completo o una IP pública como host y sin usuario ni contraseña incluidos en la URL. Estas reglas se comprueban cada vez que guardas una URL nueva o modificada. Además, si al momento del envío el dominio apunta a una dirección de red interna, el envío se bloquea y el código no llega por este canal.
+- **Token de autenticación**: Se envía en el header `X-API-Key` de cada petición, junto con `Content-Type: application/json`. Modyo no envía el header `Authorization`, así que tu endpoint debe validar el token en `X-API-Key`.
+
+Una vez habilitada la integración, selecciona **Phone** en el **Canal de envío del OTP** de la configuración General. Custom SMS puede convivir con otras integraciones de OTP por teléfono, como Auronix: ambas envían el código en cada inicio de sesión de forma independiente, y el fallo de una no interrumpe a la otra.
+
+:::warning Atención
+No puedes deshabilitar ni eliminar la última integración de OTP por teléfono habilitada mientras el canal de envío del OTP del reino esté configurado como Phone.
+:::
+
+### Webhooks
+
+La plataforma permite la creación de Webhooks para ciertos eventos específicos de los usuarios del reino.
+
+Para más información sobre cuáles eventos y la creación de los webhooks de reino dirigirse a [Webhooks](/es/platform/core/webhooks.html).
+
+### Stages
+
+En esta sección creas los stages del reino: copias de su configuración en las que puedes probar cambios sin afectar a sus usuarios y que después sincronizas con otro stage del mismo reino. El listado muestra cada stage con su **Stage original** y su fecha de creación, y marca con **Clonando** o **Falló** los que todavía se están creando o cuyo clonado falló.
+
+Para ver esta sección necesitas el permiso **Administrar Stages**. Revisa cómo crear, sincronizar y eliminar stages en [Stages](/es/platform/customers/realms.html#stages).
 
 ### Miembros del equipo
 
 Modyo permite seleccionar los miembros del equipo que trabajan en cada reino y así controlar el acceso a los distintos aspectos del reino.
+
+Para agregar, modificar o quitar miembros necesitas el permiso **Administrar Miembros del Equipo**. Si el reino tiene [stages](/es/platform/customers/realms.html#stages), cada stage tiene su propio equipo: al crear un stage se copian los miembros del stage de origen y, desde ahí, los cambios en un stage no afectan a los demás.
 
 Para añadir un miembro al reino, sigue estos pasos:
 1. Haz click en el botón **Agregar miembro** en la parte superior derecha.
@@ -289,12 +421,42 @@ Para modificar el rol de un miembro del equipo:
 2. Asigna el rol deseado al usuario.
 3. Da click en **Actualizar**.
 
-Puedes elegir entre dos roles:
+Puedes asignar cualquier rol de reino, incluidos los [roles a medida](/es/platform/core/roles.html#roles-a-medida) de scope **Customers**. Los roles predeterminados son:
 
-- **Realm User**: Puede añadir usuarios, crear, modificar y enviar a revisión campañas, formularios y segmentos.
-- **Realm Admin**:  Tiene acceso a todas las configuraciones y secciones del reino, puede añadir y eliminar usuarios y miembros del equipo.  Puede también eliminar el reino.
+- **Realm User**: Ve los usuarios del reino, pero no puede crearlos, editarlos ni eliminarlos. Administra campañas, plantillas de campañas, formularios y segmentos, y ve las órdenes de pago.
+- **Realm Admin**:  Tiene acceso a todas las configuraciones y secciones del reino, puede añadir y eliminar usuarios y miembros del equipo.  Puede también eliminar el reino, y crear y sincronizar sus [stages](/es/platform/customers/realms.html#stages).
+- **Realm Viewer**: Es un rol de solo lectura: ve la información del reino, pero no puede crear ni modificar nada. Revisa sus permisos en [Roles por reino](/es/platform/core/roles.html#roles-por-reino).
 
 Para eliminar a un administrador del reino, selecciona la casilla a la izquierda de su nombre y haz click en el botón **Borrar** en la parte inferior.
+
+#### Restringir el alcance con segmentos
+
+Al agregar o editar un miembro del equipo del reino, puedes asignar uno o más [segmentos](/es/platform/customers/segments.html) a su rol mediante el campo **Segmentos**. El rol define qué acciones puede ejecutar el miembro, mientras que los segmentos acotan sobre qué usuarios del reino puede aplicarlas:
+
+- **Sin segmentos**: El rol da acceso a todos los usuarios del reino.
+- **Con segmentos**: El miembro solo ve y opera los usuarios que pertenecen a esos segmentos.
+
+Esto aplica tanto a los roles asignados directamente a un miembro como a los asignados a través de sus [grupos](/es/platform/core/roles.html#grupos). En el listado de miembros del equipo, la columna **Segmentos** muestra los segmentos asignados a cada miembro o grupo.
+
+El alcance efectivo de un miembro considera todos los roles que tiene en el reino:
+
+- Los roles a nivel de cuenta con acceso total a los reinos (como **Owner** o **Full Admin**) no se restringen por segmentos.
+- Si alguno de sus roles en el reino no tiene segmentos asignados, el miembro tiene acceso a todos los usuarios del reino.
+- Si todos sus roles en el reino tienen segmentos asignados, su alcance es la unión de los segmentos de todos ellos.
+
+El alcance se aplica en todas las secciones del reino que muestran u operan sobre usuarios: el listado de usuarios y sus fichas, las acciones masivas y exportaciones, las respuestas de formularios, las respuestas de originación, las órdenes de pago, los eventos de negocio, las notas, la mensajería directa y las campañas.
+
+Un miembro restringido por segmentos tiene además las siguientes consideraciones:
+
+- **Usuarios**: No puede acceder a la ficha de un usuario fuera de su alcance.
+- **Segmentos**: No puede crear segmentos nuevos, ya que estos parten del universo total de usuarios del reino. Sí puede editar y borrar los segmentos de su alcance.
+- **Campañas**: Solo puede dirigir campañas a segmentos dentro de su alcance. Las campañas dirigidas a segmentos fuera de su alcance se muestran en modo **Solo lectura**: puede ver sus metadatos (nombre, estado, autor, fechas y segmentos), pero no sus métricas ni destinatarios, y no puede editarlas, enviarlas, duplicarlas ni borrarlas.
+- **Respuestas de originación**: Las respuestas que tenga asignadas siguen visibles y operables aunque el usuario pertenezca a segmentos fuera de su alcance.
+- **Miembros del equipo**: Solo puede asignar segmentos dentro de su alcance y no puede dejar roles del reino sin segmentos. Los miembros cuyos segmentos están fuera de su alcance se muestran con la etiqueta **Fuera de tu alcance** y no puede editarlos.
+
+:::tip Actualización del alcance
+La pertenencia de los usuarios a los segmentos se actualiza en un proceso en segundo plano, por lo que los cambios en los segmentos pueden tardar unos minutos en reflejarse en el alcance de los miembros. Puedes conocer más en la sección de [Segmentos](/es/platform/customers/segments.html#filtros).
+:::
 
 ### Custom fields
 
@@ -330,6 +492,9 @@ Los campos personalizables pueden estar habilitados o deshabilitados. Si están 
 
 Cuando un campo personalizable está deshabilitado, no aparece en ningún formulario, sin embargo, sus valores se mantienen guardados.
 
+No puedes deshabilitar un campo que se usa en un filtro de [segmentos](/es/platform/customers/segments.html): al intentarlo verás el mensaje **No se puede desactivar un User Custom Field con filtros de Segmentos asociados**. Quita antes ese filtro de los segmentos que lo usan. Tampoco puedes eliminar un campo mientras lo use un filtro de segmento.
+
+
 :::danger Peligro
 Cuando un campo personalizable está deshabilitado, puede ser eliminado.
 
@@ -340,6 +505,93 @@ Al eliminar un campo personalizable, eliminas permanentemente todos los valores 
 Además de guardar valores específicos de los usuarios, puedes utilizar los valores de los campos personalizables para crear filtros de [segmentos](/es/platform/customers/segments) lo que te permite separar a los usuarios según sus valores personalizados.
 :::
 
+### Data Sets
+
+Un data set es una lista de alternativas reutilizable que vive dentro del reino. En vez de repetir las mismas opciones en cada formulario, las defines una vez y las usas en **formularios**, en **originaciones** y en **campos personalizados de usuario** de tipo lista desplegable.
+
+Los encuentras en el menú lateral del reino, en **Configuración de reino** → **Data Set**. Para administrarlos necesitas el permiso agrupado **Administrar Data Sets**.
+
+#### Tipos de data set
+
+Al crear un data set eliges su tipo, y esa elección no se puede cambiar después:
+
+- **Simple**: Una lista plana de alternativas. Alimenta campos de tipo **Lista desplegable** y campos personalizados de usuario de tipo lista desplegable.
+- **Anidado**: Un árbol de alternativas, donde cada opción puede tener opciones hijas. Alimenta campos de tipo **Preguntas Anidadas**. Admite hasta 5 niveles de profundidad de manera predeterminada; si te pasas, el guardado falla indicando la alternativa que excede el límite.
+
+Las etiquetas de las alternativas no se pueden repetir, sin distinguir mayúsculas. En un data set simple la restricción alcanza a toda la lista; en uno anidado se aplica **entre alternativas hermanas**, así que dos ramas distintas sí pueden tener una opción con el mismo nombre.
+
+#### Usar un data set en un campo
+
+En el editor del campo, marca **Usar data set** y elige el data set en el selector. La casilla solo está disponible mientras el campo es nuevo: una vez guardado, un campo normal no se puede convertir en campo de data set ni al revés.
+
+El editor del data set muestra un panel **Uso del data set** con los formularios, las originaciones y los campos personalizados que lo usan. Un data set en uso no se puede eliminar.
+
+#### Carga masiva de alternativas
+
+Para cargar muchas alternativas de una vez, marca **Utilizar ingreso masivo de alternativas** y pega el listado. La casilla solo está disponible mientras el data set no tenga alternativas: sirve para poblarlo, no para agregar a lo que ya existe.
+
+- En un data set **simple**, una alternativa por línea.
+- En un data set **anidado**, una rama completa por línea, con los niveles separados por punto y coma o por tabulación. Esto último permite pegar directamente desde una planilla.
+
+Las líneas en blanco se descartan y las repetidas se ignoran. En los anidados, las ramas que comparten los primeros niveles se fusionan: `Chile;Región Metropolitana;Providencia` y `Chile;Región Metropolitana;Las Condes` producen un solo `Chile` con una sola `Región Metropolitana`.
+
+#### Identificadores externos
+
+Una alternativa se identifica por su etiqueta, que es un texto pensado para el usuario final: puede llevar tildes y espacios, y cambia con el tiempo. Si un sistema externo necesita reconocer la opción elegida, atarse a ese texto es frágil. Para eso están los identificadores externos: un código estable por alternativa, que tú defines y que los integradores reciben junto con la respuesta.
+
+Para activarlos, marca **Usar external ids** en el editor del data set. Aparece una columna **EXTERNAL ID** con un campo por alternativa; en los data sets anidados, en todos los niveles del árbol.
+
+##### Reglas del identificador externo
+
+- **Es obligatorio en todas las alternativas.** Con la casilla marcada no puedes guardar si alguna quedó vacía. Esto incluye activarla sobre un data set que ya tenía alternativas: hay que completarlas todas antes de poder guardar.
+- **Solo admite letras, números, guion medio y guion bajo.** Nada de espacios, puntos ni tildes. El editor normaliza lo que escribes mientras tecleas, así que no puedes ingresar caracteres inválidos a mano.
+- **Se guarda siempre en minúsculas**, sin espacios al principio ni al final.
+- **Es único en todo el data set.** A diferencia de las etiquetas, la unicidad no se limita a las alternativas hermanas: un código usado en una rama no se puede repetir en otra ni en otro nivel. La comparación ignora mayúsculas.
+
+Al **desactivar** la casilla se borran los identificadores externos de todas las alternativas del data set. La plataforma te pide confirmación antes de aplicarlo, con el mensaje **Al desactivar los external ids se borrará el external id de todas las alternativas de este data set. ¿Deseas continuar?**
+
+##### Carga masiva con identificadores externos
+
+Con la casilla marcada, el formato de la carga masiva cambia: cada alternativa se escribe como `etiqueta:identificador`.
+
+- En un data set **simple**, una alternativa por línea:
+
+```text
+Cuenta Corriente:001
+Cuenta Vista:002
+Cuenta de Ahorro:003
+```
+
+- En un data set **anidado**, una rama por línea, con cada nivel en el mismo formato:
+
+```text
+Chile:cl; Región Metropolitana:rm; Providencia:prov
+Chile:cl; Región Metropolitana:rm; Las Condes:lcd
+Perú:pe; Lima:lim; Miraflores:mir
+```
+
+Si una sola línea está mal formada, **no se importa ninguna alternativa**: la carga se rechaza completa y el mensaje indica la línea y el texto que causaron el problema. Se rechaza una línea sin `:`, una sin identificador, una sin etiqueta, y una con un identificador que no cumple el formato. También se rechaza que una misma etiqueta llegue con dos identificadores distintos.
+
+:::warning Atención
+En los data sets anidados el ejemplo de ayuda menciona solo el punto y coma como separador de niveles, pero la tabulación también funciona, igual que en la carga masiva sin identificadores.
+:::
+
+##### Cómo se consumen
+
+Una vez configurados, los identificadores externos quedan disponibles donde los integradores los necesitan:
+
+- Al consultar el data set por la **API de administración**, cada alternativa incluye su `external_id`, y el data set informa si tiene la opción activada mediante `use_external_ids`.
+- Al consultar la respuesta de un usuario por la **API de administración**, se incluye el `external_id` de la alternativa elegida.
+- En **plantillas Liquid**, la respuesta expone `answer.external_id`.
+
+En un data set anidado, el identificador que se entrega es el de la **hoja** seleccionada, no el de la rama completa: la respuesta apunta a una sola alternativa, la del último nivel.
+
+:::tip Data sets sin identificadores externos
+Leer `external_id` de un data set que no tiene la opción activada nunca produce un error. En Liquid devuelve una cadena vacía, y lo mismo ocurre al leerlo desde una respuesta que no es de data set. Puedes agregar la lectura a tus plantillas antes de terminar de configurar los data sets sin romper nada.
+:::
+
+Activar los identificadores externos no cambia cómo se elige ni cómo se guarda una respuesta, ni afecta la lógica condicional de las originaciones. Los data sets que ya tenías siguen funcionando igual mientras no marques la casilla.
+
 ### Seguridad
 
 #### Política de Contraseña
@@ -349,7 +601,11 @@ Las opciones disponibles para establecer una política de contraseña en la plat
 - Valor mínimo de longitud de contraseña:  Establece el número mínimo de caracteres que una contraseña debe tener, entre 12 y 128 caracteres.
 - Requerir por lo menos una letra minúscula (a - z)
 - Requerir por lo menos una letra mayúscula (A - Z)
-- Requerir por lo menos un caracter no alfanumérico (! @ # $ % ^ & * () _ + - = [] {} |)
+- **Se requiere al menos uno de estos caracteres especiales**: Exige que la contraseña contenga al menos uno de los símbolos que la casilla enumera entre paréntesis. El conjunto predeterminado es `! @ # $ % ^ & * ( ) _ + º - = [ ] { } | " . ' ¿ / ¡ : ;`, y el listado que ves en pantalla es siempre el que valida tu instalación.
+
+:::warning Atención
+Al activar **Se requiere al menos uno de estos caracteres especiales**, la contraseña de los usuarios del reino también queda limitada a ese alfabeto: solo se aceptan letras de la `a` a la `z`, en mayúscula o minúscula, dígitos y los símbolos del listado. Cualquier otro carácter hace que la contraseña se rechace, aunque cumpla el resto de las condiciones. Esto incluye los espacios, las vocales acentuadas, la `ñ` y símbolos como `~`, `<` o `>`.
+:::
 
 #### reCAPTCHA
 
@@ -358,18 +614,174 @@ Puedes habilitar o no reCAPTCHA en el reino, una vez habilitado ingresa:
 - **Clave de sitio**
 - **Secreto**
 - **Umbral**
-- 
+
 :::tip Tip
 Modyo soporta la versión V3 de reCAPTCHA básico, no soporta el enterprise.
 :::
 
+Además del registro, el envío de formularios, el inicio de sesión y la recuperación de contraseña, el captcha del reino protege el envío y la confirmación de las tareas de las [originaciones](/es/platform/customers/origination.html) en el sitio. Si la verificación falla, la respuesta de la tarea no se guarda, la tarea muestra el error y el usuario puede volver a intentarlo.
+
+#### Cross Origin Resource Sharing (CORS)
+
+En **Cross Origin Resource Sharing** defines qué orígenes pueden llamar desde el navegador a la [API de Customers](/es/platform/customers/api.html) del reino, es decir, a los endpoints bajo `/api/customers/realms/{realm_uid}/`, tanto en el dominio de tu cuenta como en el [dominio personalizado](/es/platform/customers/settings.html#dominios) del reino. Desde la versión 10.1.7, la API de Customers usa esta configuración y no la del [CORS de la cuenta](/es/platform/core/security.html#control-de-acceso-http-cross-origin-resource-sharing-cors), así que los cambios que hagas en la cuenta no la afectan.
+
+La sección tiene tres controles:
+
+- **Habilitar CORS**: activa CORS para la API de Customers del reino. Mientras no esté marcada, la API no agrega headers CORS a sus respuestas y el navegador bloquea las llamadas desde otros orígenes.
+- **Permitir todos los orígenes**: permite las llamadas desde cualquier origen. Al marcarla o desmarcarla, Modyo pide confirmación. No recomendamos usarla en producción; en su lugar, enumera los orígenes en **Orígenes alternativos**.
+- **Orígenes alternativos**: los orígenes desde donde se llamará a la API, además de los que se incluyen automáticamente.
+
+Cuando termines, haz click en **Guardar**.
+
+Al escribir los orígenes, considera lo siguiente:
+- Escribe cada origen completo, con su esquema, su dominio y, si no es el estándar, su puerto (por ejemplo, `https://app.midominio.com`). Separa los orígenes con comas.
+- La comparación con el origen de la llamada es exacta, así que escribe el dominio en minúsculas y usa el mismo esquema y puerto que el front que hace las llamadas.
+- No se permiten wildcards: si algún origen incluye `*`, la configuración no se guarda.
+- Al guardar, se quitan la ruta y los parámetros de consulta de cada URL.
+
+Con CORS habilitado, el reino también permite, sin que tengas que agregarlo, el origen con el que se publica cada aplicación web asociada al reino: su dominio personalizado, si lo tiene habilitado, o el dominio de tu cuenta, si no. Los dominios alternativos de las aplicaciones web no se incluyen. Cualquier otro origen, como un front fuera de Modyo, agrégalo en **Orígenes alternativos**.
+
+Los cambios que guardas en esta sección se aplican de inmediato. En cambio, si asocias una aplicación web al reino, la quitas de él o cambias su dominio, el cambio puede tardar hasta 15 minutos en reflejarse en los orígenes permitidos.
+
+Al habilitar CORS:
+- Cuando se realiza una llamada a la API desde un origen permitido, se agregan a la respuesta los headers `Access-Control-Allow-Origin` con ese origen y `Access-Control-Allow-Credentials: true`.
+- La respuesta a la solicitud previa del navegador (preflight, con el método `OPTIONS`) permite los métodos `GET`, `OPTIONS`, `PUT`, `POST` y `DELETE`, y los headers `Content-Type` y `Authorization`. Si la llamada incluye un header que no está en esa lista ni entre los que el navegador permite siempre, como `Accept` o `Accept-Language`, por ejemplo un header personalizado, el navegador la bloquea.
+- Si el origen no está permitido, la respuesta no incluye headers CORS y el navegador bloquea la llamada.
+
+Para autenticar las llamadas desde otro origen, usa el access token en el header `Authorization`, como se explica en [Autenticación](/es/platform/customers/api.html#autenticacion).
+
+:::tip Tip
+La configuración CORS se copia al [crear un stage](/es/platform/customers/realms.html#que-se-copia-a-un-stage) del reino, y puedes llevarla de un stage a otro al [sincronizar](/es/platform/customers/realms.html#sincronizar-un-stage) la **Configuración**. Cada stage usa su propia configuración y permite automáticamente las aplicaciones web asociadas a ese stage.
+:::
+
+#### Límites de solicitudes y bloqueos
+
+Las pantallas del reino que envían un correo o piden la contraseña actual están protegidas contra el abuso, tanto las que se usan sin sesión como las del perfil del usuario. Estos límites son fijos y no se configuran desde el panel.
+
+**Recuperación de contraseña**
+
+La pantalla de recuperación responde siempre con el mismo mensaje, exista o no el usuario y se envíe o se descarte el correo:
+
+_Si has introducido un nombre de usuario válido, recibirás una contraseña temporal en tu correo electrónico._
+
+Por dentro se aplican dos límites:
+
+- Dos solicitudes seguidas para el mismo usuario, con menos de 10 segundos entre una y otra, hacen que la segunda se descarte y no se envíe ningún correo.
+- Cuando se acumulan más de tres solicitudes para el mismo usuario, las siguientes se descartan durante 24 horas, contadas desde la última solicitud aceptada.
+
+En ambos casos el usuario ve el mensaje de éxito y el correo nunca llega. Es la causa más frecuente del reporte "pedí la recuperación y no me llegó nada".
+
+**Cambio de contraseña desde el perfil**
+
+Una vez que un usuario cambia su contraseña, no puede volver a cambiarla desde su perfil durante las 24 horas siguientes. Si lo intenta, vuelve al perfil con el mensaje _El número de solicitudes de cambio de contraseña ha superado el máximo permitido_. El plazo empieza a contar también cuando la contraseña se definió desde un enlace de recuperación.
+
+**Cambio de correo desde el perfil**
+
+Para cambiar su dirección de correo, el usuario tiene que escribir su contraseña actual. Si se equivoca, ve el mensaje _La contraseña proporcionada es incorrecta_ y puede volver a intentarlo. Al superar el límite de intentos, en cambio, ve _Has superado el número de intentos posibles_ y la plataforma le cierra la sesión de inmediato y lo lleva a la pantalla de salida.
+
+Cuando la contraseña sí es correcta, la dirección nueva queda pendiente y el usuario recibe un correo de verificación, con el aviso _Si has facilitado una dirección de correo electrónico válida, recibirás un correo de verificación._ La dirección no se reemplaza hasta que el usuario abre ese enlace.
+
+:::tip Tip
+Los intentos de recuperación de contraseña y los intentos de cambio de correo comparten el mismo contador, así que las solicitudes de un flujo cuentan para el bloqueo del otro. Y estos bloqueos se levantan solo por tiempo: no hay una acción en la ficha del usuario ni en el panel para liberarlos antes de plazo.
+:::
+
+### Headers de seguridad
+
+Desde **Headers de seguridad** controlas la política de seguridad de las páginas propias del reino, independiente de la del web app. Revisa cómo habilitarla y qué headers puedes configurar en [Headers de seguridad](/es/platform/customers/realms.html#security-headers).
+
 ### Configuración de payment
 
-Al habilitar la función de pago en tu reino, tienes acceso a las siguientes opciones:
+Si el plan de tu cuenta incluye Payments, la sección **Configuración de Payment** aparece en la configuración del reino para quienes tienen el permiso **Administrar Configuración de Payment**. Tiene las siguientes opciones:
 
-- **Formato de moneda**: Modifica el tipo de puntuación usado.
-- **Configuración de pago**: Selecciona la unidad monetaria que deseas mostrar. Esta unidad se refleja en las órdenes y reportes. Si no indicas una unidad monetaria, Modyo utiliza la moneda predeterminada según el idioma configurado para el sitio.
-- **Activar el envío de correo electrónico**: Cuando esta opción está seleccionada, el usuario recibe un correo al pagar una orden.
-- **Asunto del correo**: Encabezado del correo enviado a los usuarios.
-- **Cuerpo del correo**: Contenido del mensaje enviado a los usuarios.
+- **Formato de moneda**: Define el separador de miles, el separador decimal y la cantidad de decimales (0, 1 o 2) con que se muestran los montos. Puedes elegir entre seis formatos, como `$123.457`, que es el predeterminado, o `$123,456.79`.
+- **Unidad monetaria**: Texto libre con el símbolo que se antepone a los montos. Esta unidad se refleja en las órdenes y reportes. Si la dejas vacía, Modyo usa `$`.
+- **Activar el envío de correo electrónico**: Cuando esta opción está seleccionada, el usuario recibe un correo cuando su orden pagada se completa. Desde el detalle de una orden completada también puedes reenviarlo con **Reenviar correo**.
+- **Asunto del correo**: Encabezado del correo enviado a los usuarios. Es texto plano: no admite Liquid.
+- **Cuerpo del correo**: Contenido del mensaje enviado a los usuarios. Admite Liquid con los datos de la orden que se describen a continuación.
 
+#### Variables del cuerpo del correo
+
+Las variables del cuerpo del correo van en el nivel raíz, sin prefijo, por ejemplo `customer_name` o `total`:
+
+| Variable | Contenido |
+| --- | --- |
+| `id`, `uuid` y `short_uuid` | Identificadores de la orden. |
+| `created_at` y `updated_at` | Fechas de creación y de última actualización de la orden. |
+| `current_state` | Estado de la orden. |
+| `customer_name` y `customer_email` | Nombre y correo del usuario de la orden. |
+| `order_description` | Descripción de la orden. |
+| `order_items` | Colección con los ítems de la orden. Cada ítem tiene `id`, `name`, `quantity`, `price`, `created_at` y `updated_at`. |
+| `total` y `tax_total` | Total de la orden y total de impuestos. |
+| `payment_info` | Datos del pago aceptado que entrega el medio de pago. |
+| `confirmation_code` y `document_id` | Código de confirmación e ID del documento del comprobante, cuando el medio de pago los entrega. |
+| `reference_id` y `reference_order` | Valores de referencia indicados al crear la orden. |
+| `url` | URL de redirección indicada al crear la orden. |
+
+Por ejemplo:
+
+```liquid
+<p>Hola {{ customer_name }}, recibimos el pago de tu orden {{ short_uuid }}.</p>
+<ul>
+  {% for item in order_items %}
+    <li>{{ item.name }} x {{ item.quantity }}: {{ item.price }}</li>
+  {% endfor %}
+</ul>
+<p>Total: {{ total }}</p>
+```
+
+### Dominios
+
+Desde **Dominios** sirves las páginas de inicio de sesión, registro, recuperación de contraseña y perfil del reino en un dominio propio, por ejemplo `login.mibanco.com`, en lugar del dominio de tu cuenta. En ese dominio las rutas del reino van bajo `/realms` y sin el identificador del reino: `https://login.mibanco.com/realms/login` en lugar de `https://my_account.modyo.com/realms/my_realm/login`.
+
+Para ver esta sección necesitas el permiso agrupado **Ver Dominios**, y para modificarla, **Administrar Dominios**.
+
+#### Configurar el dominio
+
+Activa la casilla **Activar dominios personalizados** y completa los campos:
+
+- **Dominio primario**: Dominio en el que se sirve el reino. Escribe solo el dominio, sin ruta ni puerto: la pantalla ya agrega `https://`.
+- **Dominio alternativo 1 (opcional)** y **Dominio alternativo 2 (opcional)**: Dominios adicionales que redirigen siempre al dominio primario, conservando la ruta y los parámetros: con un 301 en las peticiones GET y HEAD, y con un 308 en las demás, como el POST de un callback SAML, para conservar el método y el cuerpo. La única excepción es la [API de Customers](/es/platform/customers/api.html), que en estos dominios responde 404, sin redirigir. A diferencia de las [aplicaciones web](/es/platform/channels/sites.html#dominios), no puedes elegir el tipo de redirección.
+
+Bajo la casilla, la pantalla indica a qué destino debe apuntar el registro CNAME del dominio en tu DNS. Al terminar, haz click en **Guardar**.
+
+:::warning Atención
+Al activar o cambiar el dominio, se cierra la sesión de todos los usuarios con una sesión abierta en el dominio anterior. Por eso, al guardar, la plataforma te pide confirmación. Cambiar solo los dominios alternativos no cierra sesiones.
+:::
+
+:::tip Tip
+Modyo habilita el dominio en su infraestructura. Coordina ese paso con el [Centro de Soporte de Modyo](https://support.modyo.com) antes de activar el dominio: si lo activas antes, los enlaces de los correos del reino apuntarán a un dominio que todavía no responde.
+:::
+
+Ten en cuenta estas reglas:
+
+- Ningún otro reino de la plataforma puede usar el mismo dominio, y los tres dominios de un reino deben ser distintos entre sí.
+- No puede ser el dominio de la plataforma ni el de una cuenta.
+- Puede ser el mismo dominio de una aplicación web de tu cuenta: las rutas `/realms` y `/api/customers/realms` las responde el reino y el resto, la aplicación web. No puede ser el dominio de una aplicación web de otra cuenta. Por eso `realms` es una [ruta reservada](/es/platform/channels/pages.html) para las páginas.
+- No está disponible en cuentas de prueba, y en entornos no productivos se guarda pero no se aplica: la pantalla lo indica con un aviso.
+
+#### Qué cambia al activar el dominio
+
+- Las rutas del reino en el dominio de tu cuenta redirigen al dominio personalizado, sin el identificador y conservando los parámetros, como `site` o `return_to`. Usan los mismos códigos que los dominios alternativos: 301 en GET y HEAD, y 308 en las demás peticiones.
+- En el dominio personalizado, una ruta `/realms` o `/api/customers/realms` que no corresponde a ninguna vista ni endpoint del reino responde 404, aunque el dominio también sirva una aplicación web.
+- Los correos del reino (activación, recuperación de contraseña, confirmación, invitaciones, campañas y desuscripción), las URLs de los [objetos Liquid](/es/platform/channels/liquid-markup/objects.html) del reino y del usuario, **Ir al reino**, la impersonación y los endpoints que muestra **Cliente OAuth** usan el dominio del reino. Los enlaces de desuscripción enviados antes del cambio siguen funcionando.
+- El inicio de sesión desde tus aplicaciones web, y el cierre de sesión, el perfil y el registro que se abren desde ellas, se hacen en el dominio del reino.
+- La [API de Customers](/es/platform/customers/api.html) también responde en el dominio personalizado, con el identificador del reino en la ruta, por ejemplo `https://login.mibanco.com/api/customers/realms/my_realm/me`. En el dominio de tu cuenta sigue respondiendo igual, sin redirigir, y los endpoints de token, revocación e introspección de OAuth siguen funcionando ahí.
+
+:::tip Notificaciones en tus aplicaciones web
+El template base de las aplicaciones web marca las notificaciones como leídas llamando a la API de Customers en el dominio del reino. Si la aplicación web está en otro dominio, por ejemplo el de tu cuenta, activa **Habilitar CORS** en la sección [Cross Origin Resource Sharing](/es/platform/customers/settings.html#cross-origin-resource-sharing-cors) de **Seguridad**: las aplicaciones web asociadas al reino quedan permitidas sin que tengas que agregarlas como orígenes.
+
+Las aplicaciones web que ya existían conservan la llamada al dominio de tu cuenta, que sigue funcionando. Toman el cambio al restaurar sus [plantillas](/es/platform/channels/templates.html) con **Restaurar todo**.
+:::
+
+#### URLs de los proveedores de identidad
+
+En **URL del perfil público** ves la dirección base del reino, y en **URLs de los proveedores de identidad**, la URL de callback de cada [proveedor de identidad](/es/platform/core/integrations/identity-providers.html) habilitado en el reino. Después de guardar, actualízalas en cada proveedor; si no, el inicio de sesión con ese proveedor fallará.
+
+| Proveedor | URL con dominio personalizado |
+| --- | --- |
+| SAML | `https://<tu-dominio>/realms/auth/saml/callback` |
+| OpenID Connect, Keycloak y Azure Entra ID | `https://<tu-dominio>/realms/auth/openidc/callback` |
+| Google | `https://<tu-dominio>/realms/auth/google_oauth2/callback` |
+| OAuth2 | `https://<tu-dominio>/realms/auth/oauth2/authorize` |
+
+En OpenID Connect, la URL a la que vuelve el usuario después de cerrar sesión pasa a ser `https://<tu-dominio>/realms/logout`.

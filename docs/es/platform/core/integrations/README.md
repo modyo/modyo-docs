@@ -48,7 +48,7 @@ Los microservicios de integración también pueden enviar notificaciones a los u
 ### Integración mediante WebHooks
 La integración mediante WebHooks posibilita que, en reacción a determinados eventos, la plataforma envíe un mensaje hacia un endpoint definido por el usuario en un formato JSON utilizando el protocolo HTTP y un POST simple que contiene la información relevante al evento que acaba de ocurrir.
 
-Este tipo de integración se encuentra sólo disponible para eventos ocurridos dentro de la consola de administración de Modyo. Los eventos de negocio quedan excluidos.
+Puedes crear webhooks para dos tipos de eventos: los ocurridos dentro de la consola de administración de Modyo, desde **Configuración** > **Webhooks**, y los eventos de usuario final de cada reino, desde **Configuración de reino** > **Webhooks**. Para más información, consulta [WebHooks](/es/platform/core/webhooks.html).
 
 
 ### Integración con medios de pago

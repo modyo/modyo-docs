@@ -30,7 +30,7 @@ The synchronization is unidirectional, meaning that data changed in Modyo will n
 4. Select **Automatic Provisioning**
 5. In the admin credentials, add the following:
     - Tenant URL: The URL of your SCIM-compatible web server, for example: https://yourdomain.modyo.cloud/api/admin/scim
-    - Secret Token: The Modyo administrative user's access token generated for the authentication credential. Detailed token information can be found in the [Management API] section (https://docs.modyo.com/en/platform/core/api#bearer-token)
+    - Secret Token: The access token of the account owner or of a Modyo administrative user with the **Full admin** role, assigned directly or through a group. With any other role, Modyo rejects requests on users with a `401` error. Detailed token information can be found in the [Management API] section (https://docs.modyo.com/en/platform/core/api#bearer-token)
 6. In the Settings section, you can customize notification delivery and select the accidental deletion threshold. For more information about these configurations, review the [Azure] documentation (https://learn.microsoft.com/en-us/azure/active-directory/app-provisioning/user-provisioning)
 7. Click **Test Settings** to verify the connection
 8. Once the configuration is confirmed, click on **Save**
@@ -82,6 +82,24 @@ Once properly configured, you can add users to Active Directory. At the same tim
 Username and email are required fields to generate users. Without them, user provisioning will fail.
 :::
 
+
+### SCIM server contract
+
+Besides Entra ID, you can connect any SCIM 2.0 client to the Modyo server. The base URL is `https://[account_host]/api/admin/scim` and calls are authenticated with a token, just like in the rest of the [Administration API](/en/platform/core/api.html#bearer-token). The token must belong to the account owner or to a user with the **Full admin** role, assigned directly or through a group; with any other role, the `/Users` and `/Schemas` endpoints, and group `DELETE`, respond `401`. The users this server manages are the **Team** ones, not the Customers ones.
+
+| Resource | Methods | Description |
+|:--|:--|:--|
+| `/Users` | `GET`, `POST` | Lists and creates users. The listing supports pagination with `startIndex` and `count`, and the `userName eq "value"` filter; filtering by `externalId` is not supported. Any other operator, or an attribute other than `userName` and `externalId`, responds `400`. |
+| `/Users/:id` | `GET`, `PATCH`, `PUT` | Gets and updates a user. `PATCH` accepts operations on `userName`, `name`, `emails`, and `active`. `PUT` is an alias of `PATCH` and expects the same body. |
+| `/Groups` | `GET`, `POST` | Lists and creates groups. |
+| `/Groups/:id` | `GET`, `PATCH`, `PUT`, `DELETE` | Gets, updates, and deletes a group. `PUT` is an alias of `PATCH` and expects the same body. |
+| `/Schemas` | `GET` | Returns the definition of the `urn:ietf:params:scim:schemas:core:2.0:User` and `urn:ietf:params:scim:schemas:core:2.0:Group` schemas with all their attributes. Use it if your client discovers the schema before provisioning. Like the rest of the SCIM endpoints, it is listed in the Administration API [Swagger portal](/en/platform/core/api.html#call-using-the-swagger-portal). |
+
+Resource responses and their SCIM errors (`400`, `404`, `409`, `422`, and `500`) use the `application/scim+json` content type and not the `application/json` declared by the rest of the Administration API. Make sure your client accepts it. `401` errors, caused by a missing or invalid token or by missing permissions, do not carry a SCIM body.
+
+:::warning Attention
+User deprovisioning is not done with `DELETE`. The `DELETE /api/admin/scim/Users/:id` route exists, but it has no implementation: the request ends in a generic error, with no SCIM response, and the user is not changed. To deprovision, send a `PATCH` to `/Users/:id` with the `active` property set to `false`. For groups, `DELETE` is implemented.
+:::
 
 ### References
 - To build a SCIM API compatible with Entra ID, follow this guide from Microsoft. [Use SCIM to Provision Users and Groups](https://docs.microsoft.com/en-us/azure/active-directory/app-provisioning/use-scim-to-provision-users-and-groups)

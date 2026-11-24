@@ -13,25 +13,52 @@ Here you can modify both the user's visual experience and the settings related t
 
 In this section, you can configure general aspects of the realm, such as:
 
-- **Title**
-- **Identifier**: The URL of the realm's profile, login, registration, and password recovery views.
-- **Disable credentials**: By checking this box, you deactivate Modyo credentials in the realm and only allow access via SSO.
+- **Name**: The name of the realm or stage. It's the text you have to type to confirm its deletion.
+- **Identifier**: The URL of the realm's profile, login, registration, and password recovery views. See the full list in [Realm routes](/en/platform/customers/profile.html#realm-routes). If the realm has a [custom domain](/en/platform/customers/settings.html#domains), its routes on that domain don't include the identifier.
+- **Disable platform credentials**: By checking this box, you deactivate Modyo credentials in the realm and only allow access via SSO.
 
 :::danger Danger
 Before enabling the option to disable Modyo credentials in the realm, make sure that you have configured an SSO identity provider for the realm. Otherwise, users won't be able to sign in.
 :::
 
-- **After logging in, redirect to**: Allows you to choose a specific URL to direct the user to, once they have entered the realm. If you don't activate the “Force Redirect” option, the user will be redirected to the URL entered only if it is not possible to return to the URL from which they logged in.
-- **Force redirection to**: By activating this option, the user will always be redirected to the URL specified in the login redirect field, regardless of where they started the session.
+- **After login redirect to**: Allows you to choose a specific URL to direct the user to, once they have entered the realm. If you don't activate **Force redirect to**, the user will be redirected to the URL entered only if it is not possible to return to the URL from which they logged in. It must be an absolute URL, with protocol and domain, on your account's domain, on the domain of one of your web apps, or on the realm's [custom domain](#domains), and it can't point to the realm's login pages (login, login with code, or code screen), because the user would land back on the login screen. If it doesn't meet these conditions, the settings aren't saved.
+- **Force redirect to**: By activating this option, the user will always be redirected to the URL specified in the login redirect field, regardless of where they started the session. The exception is a login link with the `redirect_to` parameter, described in [Redirect Login](#redirect-login): if it points to a valid page, it takes precedence over this option.
+- **On session required redirect to**: Defines where a visitor without a session is sent when trying to access content that requires authentication: to the **Login page** (default option) or to the realm's **Signup page**. In both cases, after authenticating, the user returns to the URL they were trying to access.
 - **Account Activation**:
   - Direct: Users who register can log in directly.
+  - OTP activation: Users who register don't go through an activation email: they receive a one-time code and their account becomes active as soon as they enter it correctly. You can only select this option if the realm has **Enable soft login** active; if it isn't, the option appears disabled. See the details in [Soft login](#soft-login).
   - Activation email: Users who register must activate their account by clicking on a link sent to their email before being able to log in.
   - Moderate: Users who register must wait for a realm administrator to activate their account before they can log in.
+  - Invitation only: New users cannot register from the site, same as with **Disabled**, but the new users you invite from an origination are created active and can complete the flow right away. A user who already existed and was deactivated is not reactivated when invited. See the details in [invite users](/en/platform/customers/origination.html#invite-users).
   - Disabled: New users cannot be registered in the realm. Already registered and activated users can still log in.
 - **Default Avatar Image**: Image shown on the avatar of users who do not have a custom image.
-- **Enable Soft Login**: By activating this option you can access your account without entering your credentials each time. You will receive a security code in your email for easy login without the need for passwords.
-- **Registration form**: Here you can enable or disable different attributes in the registration form, such as the second surname, email confirmation, user avatar, date of birth, gender, and phone number.
-- **Delete realm**: Deletes the realm. This process is performed in the background, so you may not see the realm disappear immediately after executing the action. To confirm the deletion, you must enter the full name of the realm.
+- **Soft login**: Enables logging in with a one-time code (OTP) instead of a password, and defines its validity, the wait time to resend it, and the channels used to send it. See the details in [Soft login](#soft-login).
+- **Signup form**: Here you can enable or disable different attributes in the registration form, such as the second surname, email confirmation, user avatar, date of birth, gender, and phone number.
+- **Delete realm**: Deletes the realm and all its stages. The realm disappears from the list when you confirm, and the deletion of its data continues in the background. To confirm the deletion, you must enter the full name of the realm. It only shows up if you have the **Admin General** permission, and you can't use it while a web app or space has the realm or any of its stages selected. In a stage, the button is called **Delete stage** and asks for the stage's full **Name**, for example **qa Customers**. See the details in [Delete a Realm](/en/platform/customers/realms.html#delete-a-realm) and [Delete a stage](/en/platform/customers/realms.html#delete-a-stage).
+
+
+### Soft login
+
+Soft login lets your users log in with a 6-digit one-time code (OTP) instead of a password. When you turn on **Enable soft login**:
+
+- The realm's login view asks for the user's identifier and sends them the code, instead of asking for a password.
+- The realm's registration form stops asking for a password and its confirmation.
+- The **Disable platform credentials** checkbox is locked, because logging in with a code uses the platform credentials.
+- The **OTP activation** option of **Account Activation** becomes available.
+
+Next to the switch you can configure these fields, which can only be edited with soft login active:
+
+- **OTP validity duration (in minutes)**: Minutes the code stays valid after it is sent, between 1 and 30. It defaults to 5. Once it expires, the user has to request a new one.
+- **OTP resend wait time (in minutes)**: Minutes the user waits on the code screen before the **Resend code** link appears, between 1 and 5. It defaults to 5.
+- **OTP delivery channel**: Channels used to send the code. **Email** sends it to the user's address and **Phone** sends it through the messaging integrations enabled in the realm: [Auronix](#auronix) via WhatsApp and [Custom SMS](#custom-sms) via SMS. You can check both channels at the same time and, with soft login active, you must leave at least one checked. **Phone** is only available if the realm has an enabled phone OTP integration, and if you have both Auronix and Custom SMS enabled, the code is sent through both. If the realm has no phone OTP integration, **Email** stays checked and locked as the only channel.
+
+:::warning Attention
+The user has 5 attempts to enter the code. Once they are exceeded, the code is invalidated: even if they later type the right one, they won't be able to log in and will have to request a new code.
+:::
+
+:::warning Attention
+If you turn off **Enable soft login** while **Account Activation** is set to **OTP activation**, the realm goes back to **Activation email** when you save, without warning you.
+:::
 
 
 ## Redirect Login ##
@@ -124,6 +151,12 @@ To do this, insert the attributes below the editor into the code and paste them 
 :::
 
 Every time you make a change to the code, you must click on the **Save** button located at the top of the screen.
+
+You can use [liquid drops](/en/platform/channels/liquid-markup/objects.html) in the email to access the following information: user, site, account, origination, submission and assignee.
+
+:::tip Tip
+The assignee liquid drop refers to the adminuser drop.
+:::
 
 ### Identity Providers
 
@@ -272,11 +305,110 @@ Use an authentication client to send your integration access tokens to your reso
 - Logout URI: URI to which the authentication server will redirect the user after closing the session.
 - Description
 - Confidential: There are two types of OAuth clients, confidential or public. Select the confidential option if your application can securely authenticate with the authentication server. Public clients are usually applications that run on mobile devices or browsers.
-- Scopes: If your OAuth2 authentication service uses multiple spaces or environments to separate users, and you want to use a specific one in this integration, define it in this field.
+- Scopes: Scopes this client can request when authorizing, comma-separated. Use `public`, the default scope of the realm's authorization server and the one requested by the authorization URL shown in the panel; a scope the server doesn't recognize makes the authorization fail. If you fill in the field, the client can only request the scopes on the list.
+
+Clicking the client name shows its **UID** and its **Secret**, plus two blocks ready to copy: **Client Web**, with the ready-made authorization URL, and **Client Mobile**, with the authorization, token, revocation and logout endpoints of the realm. With those values your application completes the realm `authorization_code` flow and gets the access token it uses to call the public Customers API on behalf of the user. The step by step is in [Authentication](/en/platform/customers/api.html#authentication).
+
+### Amazon Rekognition
+
+The Amazon Rekognition integration, of the **Identity Verification** category, enables biometric verification in the realm's originations: identity document capture, face comparison, and liveness detection.
+
+To configure it, you need:
+
+- **AWS Region**: The region where the AWS services operate.
+- **AWS Access Key ID** and **AWS Secret Access Key**: IAM credentials with Rekognition permissions.
+- **Cognito Identity Pool ID**: Required for liveness detection in the browser.
+- **S3 Bucket Name**: Bucket where session results and images are stored.
+- **SNS Topic ARN**: Optional.
+- **Confidence Threshold (%)**: Minimum score to approve the verification. Defaults to 90.
+- **Enable Audit Images**: Stores audit images of each liveness detection session.
+- **Enable Photosensitivity Check**: Enables the color challenge during liveness detection and includes a photosensitivity warning for the user.
+
+Once enabled, the provider becomes available in the [Identity Verification](/en/platform/customers/origination.html#identity-verification) tasks of the realm's originations.
+
+### Incode
+
+The Incode integration, of the **Identity Verification** category, lets you verify the user's identity in the realm's originations with document validation and OCR, liveness, face match, and government database validation. It can be enabled at the same time as the realm's other identity verification integrations.
+
+To configure it, you need:
+
+- **API URL**: Base URL of the Incode environment API, for example `https://demo-api.incodesmile.com`. It must use HTTPS and belong to an Incode domain (`incodesmile.com`).
+- **API key**: The Incode API key.
+- **Administrator user email** and **Administrator user password**: The credentials of a user with the Admin role in the Incode Dashboard. Incode only allows reading verification results with the token of a user with that role.
+
+When you change a credential or enable the integration, Modyo validates the credentials against Incode and does not save the changes if Incode rejects them or does not respond. The password is stored encrypted and is never shown again: when editing the integration, leave the field blank to keep it.
+
+::: warning Use a dedicated administrator user
+If the administrator user is deleted or its password changes in Incode, Modyo stops getting verification results. Use a user dedicated to this integration and update the password in Modyo when it changes.
+:::
+
+#### Incode webhook
+
+After you save the integration, the **Incode webhook** section shows the **Webhook URL**, the **Header name**, and the **Header value**, in read-only fields with a button to copy them. In the Incode Dashboard, configure the onboarding status webhook with that URL and add a custom header with that name and value.
+
+- The webhook belongs to the account: it is the same for all its realms and is configured once in each Incode organization you use.
+- It is required: a manual review decision made in Incode more than 24 hours after the verification started only reaches Modyo through this webhook.
+
+Once enabled, Incode becomes available as a provider in the Identity Verification tasks of the realm's originations. The task configuration is described in [Verification with Incode](/en/platform/customers/origination.html#verification-with-incode).
+
+### Auronix
+
+The Auronix integration, of the messaging category, allows sending WhatsApp messages using Meta-approved templates. It is used to send the soft login OTP code via WhatsApp.
+
+To enable it, the realm's registration form must have the phone field **enabled and required**. While the integration is enabled, those registration form options remain locked.
+
+In the **Credentials** section, fill in the following fields:
+
+- **API Key**: Auronix API Key for authentication.
+- **WhatsApp Channel**: WhatsApp outgoing line number. It must be a valid Mexican phone number.
+- **Base URL**: Required. When you create the integration, it may come prefilled with the platform's Auronix URL; only change it for sandbox or custom environments. It must be an HTTPS URL on the `auronix.com` domain or one of its subdomains, and meet the same rules as the endpoint URL of [Custom SMS](#custom-sms). When editing the integration, if you leave the field blank, the saved URL is kept.
+
+In the **OTP Configuration** section, fill in the following fields:
+
+- **OTP Template ID**: Template ID for OTP messages in Auronix.
+- **OTP Locale**: Locale code for the template. For example: `es_MX`, `en_US`, `pt_BR`.
+- **OTP Template Variables**: Comma-separated variables. The available ones are `otp_code`, `realm_name`, `user_name`, and `user_first_name`.
+
+Once the integration is enabled, select **Phone** in the **OTP delivery channel** of the General settings so that soft login codes are sent via WhatsApp. If WhatsApp delivery fails, the user can request the code by email with the **Send code by email instead** option.
+
+:::warning Attention
+You cannot disable or remove the last enabled phone OTP integration while the realm's OTP delivery channel is set to Phone.
+:::
+
+### Custom SMS
+
+The Custom SMS integration, of the messaging category, allows sending the soft login OTP code via SMS through your own service, using a generic HTTP endpoint.
+
+To enable it, the realm's registration form must have the phone field **enabled and required**. While a phone OTP integration is enabled, those registration form options remain locked.
+
+In the **Credentials** section, fill in the following fields:
+
+- **Endpoint URL**: The OTP code is sent as a POST request to this URL, with a JSON body containing `phone` and `code`. It must be an HTTPS URL on port 443 or 8443, with a fully qualified domain name or a public IP as host, and without a username or password embedded in the URL. These rules are checked every time you save a new or modified URL. Also, if at sending time the domain points to an internal network address, the request is blocked and the code isn't delivered through this channel.
+- **Auth Token**: Sent in the `X-API-Key` header of each request, along with `Content-Type: application/json`. Modyo doesn't send the `Authorization` header, so your endpoint must validate the token in `X-API-Key`.
+
+Once the integration is enabled, select **Phone** in the **OTP delivery channel** of the General settings. Custom SMS can coexist with other phone OTP integrations, such as Auronix: both send the code on each login independently, and the failure of one does not interrupt the other.
+
+:::warning Attention
+You cannot disable or remove the last enabled phone OTP integration while the realm's OTP delivery channel is set to Phone.
+:::
+
+### Webhooks
+
+The platform allows the creation of Webhooks for specific events related to realm users.
+
+For more information on which events are available and how to create realm webhooks, please go to [Webhooks](/en/platform/core/webhooks.html).
+
+### Stages
+
+In this section you create the realm's stages: copies of its configuration where you can try out changes without affecting its users, and that you later sync with another stage of the same realm. The list shows each stage with its **Original stage** and its creation date, and marks with **Cloning** or **Failed** the ones that are still being created or whose cloning failed.
+
+To see this section you need the **Admin Stages** permission. See how to create, sync, and delete stages in [Stages](/en/platform/customers/realms.html#stages).
 
 ### Team Members
 
 Modyo allows you to select the team members that work in each realm, and thus control access to the different aspects of the realms.
+
+To add, modify, or remove members you need the **Admin Team Members** permission. If the realm has [stages](/en/platform/customers/realms.html#stages), each stage has its own team: creating a stage copies the members of the source stage and, from then on, the changes in one stage don't affect the others.
 
 To add a member to a realm, follow these steps:
 1. Click the **Add Member** button at the top right.
@@ -289,12 +421,42 @@ To modify the role of a team member:
 2. Assign the desired role to the user.
 3. Click **Update**.
 
-You can choose between two roles:
+You can assign any realm role, including [custom roles](/en/platform/core/roles.html#custom-roles) with the **Customers** scope. The default roles are:
 
-- **Realm User**: Can add users, create, modify, and review campaigns, forms, and segments.
-- **Realm Admin**: Has access to all the settings and sections of the realms, can add and remove users and team members. Can also delete the realm.
+- **Realm User**: Can view the realm's users, but cannot create, edit, or delete them. Manages campaigns, campaign templates, forms, and segments, and can view payment orders.
+- **Realm Admin**: Has access to all the settings and sections of the realms, can add and remove users and team members. Can also delete the realm, and create and sync its [stages](/en/platform/customers/realms.html#stages).
+- **Realm Viewer**: A read-only role: can view the realm's information, but cannot create or modify anything. See its permissions in [Roles by realm](/en/platform/core/roles.html#roles-by-realm).
 
 To remove an administrator from the realm, check the box to the left of their name and click the **Delete** button at the bottom.
+
+#### Restrict scope with segments
+
+When adding or editing a realm team member, you can assign one or more [segments](/en/platform/customers/segments.html) to their role using the **Segments** field. The role defines which actions the member can perform, while the segments limit which realm users they can apply them to:
+
+- **Without segments**: The role grants access to all users in the realm.
+- **With segments**: The member only sees and operates on the users that belong to those segments.
+
+This applies both to roles assigned directly to a member and to those assigned through their [groups](/en/platform/core/roles.html#groups). In the team members list, the **Segments** column shows the segments assigned to each member or group.
+
+The effective scope of a member considers all the roles they have in the realm:
+
+- Account-level roles with full access to realms (such as **Owner** or **Full Admin**) are not restricted by segments.
+- If any of their roles in the realm has no segments assigned, the member has access to all users in the realm.
+- If all of their roles in the realm have segments assigned, their scope is the union of the segments of all of them.
+
+The scope is enforced in every realm section that displays or operates on users: the user list and their profiles, bulk actions and exports, form responses, origination submissions, payment orders, business events, notes, direct messaging, and campaigns.
+
+A member restricted by segments also has the following considerations:
+
+- **Users**: They cannot access the profile of a user outside their scope.
+- **Segments**: They cannot create new segments, since these start from the realm's entire universe of users. They can edit and delete the segments within their scope.
+- **Campaigns**: They can only target campaigns to segments within their scope. Campaigns targeting segments outside their scope are displayed in **Read only** mode: they can see their metadata (name, status, author, dates, and segments), but not their metrics or recipients, and they cannot edit, send, duplicate, or delete them.
+- **Origination submissions**: Submissions assigned to them remain visible and operable even if the user belongs to segments outside their scope.
+- **Team members**: They can only assign segments within their scope and cannot leave realm roles without segments. Members whose segments are outside their scope are displayed with the **Out of your scope** label and cannot be edited.
+
+:::tip Scope updates
+User membership in segments is updated in a background process, so segment changes may take a few minutes to be reflected in the members' scope. You can learn more in the [Segments](/en/platform/customers/segments.html#filters) section.
+:::
 
 ### Custom fields
 
@@ -330,6 +492,9 @@ Customizable fields can be enabled or disabled. If they are enabled, an administ
 
 When a customizable field is disabled, it doesn't appear on any form, however, its values are still saved.
 
+You can't disable a field that is used in a [segments](/en/platform/customers/segments.html) filter: if you try, you'll see the message **You can't deactivate a User Custom Field with associated Segment filters**. First remove that filter from the segments that use it. You also can't delete a field while a segment filter uses it.
+
+
 :::danger Danger
 When a customizable field is disabled, it can be deleted.
 
@@ -340,6 +505,93 @@ Deleting a customizable field permanently deletes all user values associated wit
 In addition to saving user-specific values, you can use customizable field values to create [segments](/en/platform/customers/segments) filters, allowing you to separate users based on their custom values.
 :::
 
+### Data Sets
+
+A data set is a reusable list of alternatives that lives inside the realm. Instead of repeating the same options in every form, you define them once and use them in **forms**, in **originations**, and in **user custom fields** of the dropdown type.
+
+You will find them in the realm side menu, under **Realm settings** → **Data Set**. To manage them you need the **Admin Data Sets** grouped permission.
+
+#### Data set types
+
+When you create a data set you choose its type, and that choice cannot be changed later:
+
+- **Simple**: A flat list of alternatives. It feeds **Dropdown** fields and user custom fields of the dropdown type.
+- **Nested**: A tree of alternatives, where each option can have child options. It feeds **Nested Questions** fields. It supports up to 5 levels of depth by default; if you go beyond that, saving fails and points to the alternative that exceeds the limit.
+
+Alternative labels cannot be repeated, regardless of case. In a simple data set the restriction covers the whole list; in a nested one it applies **between sibling alternatives**, so two different branches can each have an option with the same name.
+
+#### Using a data set in a field
+
+In the field editor, check **Use data set** and pick the data set from the selector. The checkbox is only available while the field is new: once saved, a regular field cannot be turned into a data set field, nor the other way around.
+
+The data set editor shows a **Data set usage** panel with the forms, originations, and custom fields that use it. A data set in use cannot be deleted.
+
+#### Bulk load of alternatives
+
+To load many alternatives at once, check **Use bulk alternatives** and paste the list. The checkbox is only available while the data set has no alternatives: it is meant to populate it, not to add to what is already there.
+
+- In a **simple** data set, one alternative per line.
+- In a **nested** data set, one full branch per line, with levels separated by a semicolon or a tab. The latter lets you paste straight from a spreadsheet.
+
+Blank lines are discarded and repeated ones are ignored. In nested data sets, branches that share their first levels are merged: `Chile;Región Metropolitana;Providencia` and `Chile;Región Metropolitana;Las Condes` produce a single `Chile` with a single `Región Metropolitana`.
+
+#### External identifiers
+
+An alternative is identified by its label, which is a text meant for the end user: it can carry accents and spaces, and it changes over time. If an external system needs to recognize the chosen option, tying itself to that text is fragile. That is what external identifiers are for: a stable code per alternative, which you define and integrators receive along with the answer.
+
+To turn them on, check **Use external ids** in the data set editor. An **EXTERNAL ID** column appears with one field per alternative; in nested data sets, at every level of the tree.
+
+##### External identifier rules
+
+- **It is mandatory on every alternative.** With the checkbox on, you cannot save if any one is empty. That includes turning it on for a data set that already had alternatives: you have to fill them all in before you can save.
+- **It only accepts letters, numbers, hyphens, and underscores.** No spaces, dots, or accents. The editor normalizes what you type as you type it, so you cannot enter invalid characters by hand.
+- **It is always stored in lowercase**, with no leading or trailing spaces.
+- **It is unique across the whole data set.** Unlike labels, uniqueness is not limited to sibling alternatives: a code used in one branch cannot be repeated in another one or at another level. The comparison ignores case.
+
+Turning the checkbox **off** deletes the external identifiers of every alternative in the data set. The platform asks for confirmation before applying it, with the message **Disabling external ids will delete the external id of every alternative in this data set. Do you want to continue?**
+
+##### Bulk load with external identifiers
+
+With the checkbox on, the bulk load format changes: each alternative is written as `label:identifier`.
+
+- In a **simple** data set, one alternative per line:
+
+```text
+Checking Account:001
+Sight Account:002
+Savings Account:003
+```
+
+- In a **nested** data set, one branch per line, with each level in the same format:
+
+```text
+Chile:cl; Región Metropolitana:rm; Providencia:prov
+Chile:cl; Región Metropolitana:rm; Las Condes:lcd
+Perú:pe; Lima:lim; Miraflores:mir
+```
+
+If a single line is malformed, **no alternative is imported**: the whole load is rejected and the message points to the line and the text that caused the problem. A line with no `:`, one with no identifier, one with no label, and one whose identifier does not match the format are all rejected. The same label arriving with two different identifiers is rejected too.
+
+:::warning Attention
+In nested data sets the help example mentions only the semicolon as the level separator, but a tab works as well, just like in the bulk load without identifiers.
+:::
+
+##### How they are consumed
+
+Once configured, external identifiers are available where integrators need them:
+
+- When you query the data set through the **Admin API**, each alternative includes its `external_id`, and the data set reports whether the option is on through `use_external_ids`.
+- When you query a user's answer through the **Admin API**, the `external_id` of the chosen alternative is included.
+- In **Liquid templates**, the answer exposes `answer.external_id`.
+
+In a nested data set, the identifier delivered is the one of the selected **leaf**, not the one of the whole branch: the answer points to a single alternative, the one at the last level.
+
+:::tip Data sets without external identifiers
+Reading `external_id` from a data set that does not have the option enabled never raises an error. In Liquid it returns an empty string, and the same happens when reading it from an answer that is not a data set answer. You can add the read to your templates before you finish configuring the data sets without breaking anything.
+:::
+
+Turning external identifiers on does not change how an answer is chosen or stored, and it does not affect the conditional logic of originations. The data sets you already had keep working the same way as long as you do not check the box.
+
 ### Security
 
 #### Password Policy
@@ -349,7 +601,11 @@ The options available to set a password policy on the Modyo platform are:
 - Minimum password length value: Sets the minimum number of characters a password must have, between 12 and 128 characters.
 - Require at least one lowercase letter (a - z)
 - Require at least one capital letter (A - Z)
-- Require at least one non-alphanumeric character (! @ # $% ^ & * () _ + - = [] {} |)
+- **Require at least one of these special characters**: Requires the password to contain at least one of the symbols that the checkbox itself lists in parentheses. The default set is `! @ # $ % ^ & * ( ) _ + º - = [ ] { } | " . ' ¿ / ¡ : ;`, and the list you see on screen is always the one your installation validates.
+
+:::warning Attention
+When you enable **Require at least one of these special characters**, the password of the realm's users is also limited to that alphabet: only letters from `a` to `z`, uppercase or lowercase, digits, and the symbols on the list are accepted. Any other character causes the password to be rejected, even if it meets all the other conditions. This includes spaces, accented vowels, `ñ`, and symbols such as `~`, `<`, or `>`.
+:::
 
 #### reCAPTCHA
 
@@ -359,13 +615,169 @@ You can enable reCAPTCHA in the realm or not, once enabled, enter:
 - **Secret**
 - **Threshold**
 
+In addition to registration, form submission, sign in, and password recovery, the realm's captcha protects the submission and confirmation of [origination](/en/platform/customers/origination.html) tasks on the site. If the verification fails, the task response isn't saved, the task shows the error, and the user can try again.
+
+#### Cross Origin Resource Sharing (CORS)
+
+In **Cross Origin Resource Sharing** you define which origins can call the realm's [Customers API](/en/platform/customers/api.html) from the browser, that is, the endpoints under `/api/customers/realms/{realm_uid}/`, both on your account's domain and on the realm's [custom domain](/en/platform/customers/settings.html#domains). Since version 10.1.7, the Customers API uses this configuration instead of the [account's CORS](/en/platform/core/security.html#http-access-control-cross-origin-resource-sharing-cors), so changes you make in the account don't affect it.
+
+The section has three controls:
+
+- **Enable CORS**: turns on CORS for the realm's Customers API. While it's unchecked, the API doesn't add CORS headers to its responses and the browser blocks calls from other origins.
+- **Allow all origins**: allows calls from any origin. When you check or uncheck it, Modyo asks for confirmation. We don't recommend using it in production; instead, list the origins in **Alternative origins**.
+- **Alternative origins**: the origins from which the API will be called, in addition to the ones included automatically.
+
+When you're done, click **Save**.
+
+When entering the origins, keep the following in mind:
+- Enter each origin in full, with its scheme, its domain, and, if it isn't the standard one, its port (for example, `https://app.mydomain.com`). Separate the origins with commas.
+- The match against the calling origin is exact, so write the domain in lowercase and use the same scheme and port as the front end that makes the calls.
+- Wildcards aren't allowed: if any origin includes `*`, the settings aren't saved.
+- When you save, the path and query parameters of each URL are removed.
+
+With CORS enabled, the realm also allows, without you having to add it, the origin each web app associated with the realm is published on: its custom domain, if it has one enabled, or your account's domain, if not. The web apps' alternative domains aren't included. Add any other origin, such as a front end outside Modyo, in **Alternative origins**.
+
+The changes you save in this section apply immediately. However, if you associate a web app with the realm, remove it from the realm, or change its domain, the change can take up to 15 minutes to be reflected in the allowed origins.
+
+When you enable CORS:
+- When a call is made to the API from an allowed origin, the `Access-Control-Allow-Origin` header with that origin and `Access-Control-Allow-Credentials: true` are added to the response.
+- The response to the browser's preliminary request (preflight, with the `OPTIONS` method) allows the `GET`, `OPTIONS`, `PUT`, `POST`, and `DELETE` methods, and the `Content-Type` and `Authorization` headers. If the call includes a header that isn't in that list or among the ones the browser always allows, such as `Accept` or `Accept-Language`, for example a custom header, the browser blocks it.
+- If the origin isn't allowed, the response doesn't include CORS headers and the browser blocks the call.
+
+To authenticate calls from another origin, use the access token in the `Authorization` header, as explained in [Authentication](/en/platform/customers/api.html#authentication).
+
+:::tip Tip
+The CORS configuration is copied when you [create a stage](/en/platform/customers/realms.html#what-is-copied-to-a-stage) of the realm, and you can carry it from one stage to another when you [sync](/en/platform/customers/realms.html#sync-a-stage) the **Configuration**. Each stage uses its own configuration and automatically allows the web apps associated with that stage.
+:::
+
+#### Request limits and lockouts
+
+The realm screens that send an email or ask for the current password are protected against abuse, both the ones used without a session and the ones in the user's profile. These limits are fixed and are not configured from the panel.
+
+**Password recovery**
+
+The recovery screen always answers with the same message, whether the user exists or not and whether the email is sent or discarded:
+
+_If a valid username has been entered, you will receive a temporary password to your email._
+
+Underneath, two limits apply:
+
+- Two requests in a row for the same user, less than 10 seconds apart, cause the second one to be discarded and no email to be sent.
+- When more than three requests pile up for the same user, the following ones are discarded for 24 hours, counted from the last accepted request.
+
+In both cases the user sees the success message and the email never arrives. This is the most frequent cause of the "I asked for the recovery and nothing arrived" report.
+
+**Password change from the profile**
+
+Once a user changes their password, they cannot change it again from their profile for the next 24 hours. If they try, they are sent back to the profile with the message _The number of password change request has exceeded the maximum permitted_. The clock also starts when the password was set from a recovery link.
+
+**Email change from the profile**
+
+To change their email address, the user has to type their current password. If they get it wrong, they see the message _The password you provided is incorrect_ and can try again. When they exceed the attempt limit, however, they see _You exceeded the amount of possible tries_ and the platform closes their session right away and takes them to the logout screen.
+
+When the password is correct, the new address stays pending and the user receives a verification email, with the notice _If you provided a valid email address you will receive a verification email._ The address is not replaced until the user opens that link.
+
+:::tip Tip
+Password recovery attempts and email change attempts share the same counter, so requests from one flow count towards the lockout of the other. And these lockouts clear only by waiting: there is no action in the user's record or in the panel to release them ahead of time.
+:::
+
+### Security headers
+
+From **Security headers** you control the security policy of the realm's own pages, independent from the web app. See how to enable it and which headers you can configure in [Security headers](/en/platform/customers/realms.html#security-headers).
+
 ### Payment settings
 
-By enabling the payment feature in your realm, you have access to the following options:
+If your account's plan includes Payments, the **Payment settings** section shows up in the realm settings for those with the **Admin Payment Settings** permission. It has the following options:
 
-- **Currency format**: Modifies how the currency values are displayed.
-- **Payment settings**: Select the currency unit you want to display. This unit is reflected in orders and reports. If you don't indicate a currency unit, Modyo uses the default currency according to the language configured for the site.
-- **Activate email delivery**: When this option is selected, the user receives an email when paying for an order.
-- **Email subject**: Header of the email sent to users.
-- **Body of the mail**: Content of the message sent to users.
+- **Currency format**: Defines the thousands separator, the decimal separator, and the number of decimals (0, 1, or 2) used to display amounts. You can choose between six formats, such as `$123.457`, which is the default, or `$123,456.79`.
+- **Currency unit**: Free text with the symbol placed before amounts. This unit is reflected in orders and reports. If you leave it empty, Modyo uses `$`.
+- **Enable email notification**: When this option is selected, the user receives an email when their paid order is completed. You can also resend it from the detail of a completed order with **Resend Email**.
+- **Email subject**: Header of the email sent to users. It's plain text: it doesn't support Liquid.
+- **Email body**: Content of the message sent to users. It supports Liquid with the order data described below.
 
+#### Email body variables
+
+The email body variables are at the root level, without a prefix, for example `customer_name` or `total`:
+
+| Variable | Content |
+| --- | --- |
+| `id`, `uuid`, and `short_uuid` | Order identifiers. |
+| `created_at` and `updated_at` | Order creation and last update dates. |
+| `current_state` | Order state. |
+| `customer_name` and `customer_email` | Name and email of the order's user. |
+| `order_description` | Order description. |
+| `order_items` | Collection with the order items. Each item has `id`, `name`, `quantity`, `price`, `created_at`, and `updated_at`. |
+| `total` and `tax_total` | Order total and tax total. |
+| `payment_info` | Data of the accepted payment provided by the payment method. |
+| `confirmation_code` and `document_id` | Confirmation code and document ID of the receipt, when the payment method provides them. |
+| `reference_id` and `reference_order` | Reference values set when creating the order. |
+| `url` | Redirect URL set when creating the order. |
+
+For example:
+
+```liquid
+<p>Hi {{ customer_name }}, we received the payment for your order {{ short_uuid }}.</p>
+<ul>
+  {% for item in order_items %}
+    <li>{{ item.name }} x {{ item.quantity }}: {{ item.price }}</li>
+  {% endfor %}
+</ul>
+<p>Total: {{ total }}</p>
+```
+
+### Domains
+
+From **Domains** you serve the realm's login, signup, password recovery, and profile pages on your own domain, for example `login.mybank.com`, instead of your account's domain. On that domain the realm routes go under `/realms` and without the realm identifier: `https://login.mybank.com/realms/login` instead of `https://my_account.modyo.com/realms/my_realm/login`.
+
+To view this section you need the **View Domains** grouped permission, and to modify it, **Admin Domains**.
+
+#### Configure the domain
+
+Check **Enable custom domains** and fill in the fields:
+
+- **Primary domain**: Domain the realm is served on. Write only the domain, without path or port: the screen already adds `https://`.
+- **Alternative domain 1 (optional)** and **Alternative domain 2 (optional)**: Additional domains that always redirect to the primary domain, keeping the path and parameters: with a 301 on GET and HEAD requests, and with a 308 on the rest, such as the POST of a SAML callback, to keep the method and body. The only exception is the [Customers API](/en/platform/customers/api.html), which answers 404 on these domains, without redirecting. Unlike [web apps](/en/platform/channels/sites.html#domains), you can't choose the redirection type.
+
+Below the checkbox, the screen shows the target the domain's CNAME record in your DNS must point to. When you're done, click **Save**.
+
+:::warning Attention
+Activating or changing the domain signs out every user with an open session on the previous domain. That's why the platform asks for confirmation when you save. Changing only the alternative domains doesn't sign anyone out.
+:::
+
+:::tip Tip
+Modyo enables the domain on its infrastructure. Coordinate that step with the [Modyo Support Center](https://support.modyo.com) before activating the domain: if you activate it earlier, the links in the realm's emails will point to a domain that doesn't respond yet.
+:::
+
+Keep these rules in mind:
+
+- No other realm on the platform can use the same domain, and the three domains of a realm must be different from each other.
+- It can't be the platform domain or the domain of an account.
+- It can be the same domain as a web app of your account: the `/realms` and `/api/customers/realms` routes are answered by the realm and the rest by the web app. It can't be the domain of a web app of another account. That's why `realms` is a [reserved path](/en/platform/channels/pages.html) for pages.
+- It isn't available in trial accounts, and in non-production environments it's saved but not applied: the screen shows a notice about it.
+
+#### What changes when you activate the domain
+
+- The realm routes on your account's domain redirect to the custom domain, without the identifier and keeping the parameters, such as `site` or `return_to`. They use the same codes as the alternative domains: 301 on GET and HEAD, and 308 on the rest of the requests.
+- On the custom domain, a `/realms` or `/api/customers/realms` route that doesn't match any realm view or endpoint answers 404, even if the domain also serves a web app.
+- The realm's emails (activation, password recovery, confirmation, invitations, campaigns, and unsubscription), the URLs of the realm and user [Liquid objects](/en/platform/channels/liquid-markup/objects.html), **Go to realm**, impersonation, and the endpoints shown by **OAuth Client** use the realm's domain. Unsubscription links sent before the change keep working.
+- Sign in from your web apps, and the sign out, profile, and signup opened from them, happen on the realm's domain.
+- The [Customers API](/en/platform/customers/api.html) also answers on the custom domain, with the realm identifier in the path, for example `https://login.mybank.com/api/customers/realms/my_realm/me`. On your account's domain it keeps answering the same way, without redirecting, and the OAuth token, revocation, and introspection endpoints keep working there.
+
+:::tip Notifications in your web apps
+The base template of web apps marks notifications as read by calling the Customers API on the realm's domain. If the web app is on another domain, such as your account's, turn on **Enable CORS** in the [Cross Origin Resource Sharing](/en/platform/customers/settings.html#cross-origin-resource-sharing-cors) section of **Security**: the web apps associated with the realm are allowed without adding them as origins.
+
+Existing web apps keep the call to your account's domain, which still works. They pick up the change when you restore their [templates](/en/platform/channels/templates.html) with **Restore All**.
+:::
+
+#### Identity provider URLs
+
+In **Public profile URL** you see the realm's base address, and in **Identity provider URLs**, the callback URL of each [identity provider](/en/platform/core/integrations/identity-providers.html) enabled in the realm. After saving, update them on each provider; otherwise, signing in with that provider will fail.
+
+| Provider | URL with custom domain |
+| --- | --- |
+| SAML | `https://<your-domain>/realms/auth/saml/callback` |
+| OpenID Connect, Keycloak, and Azure Entra ID | `https://<your-domain>/realms/auth/openidc/callback` |
+| Google | `https://<your-domain>/realms/auth/google_oauth2/callback` |
+| OAuth2 | `https://<your-domain>/realms/auth/oauth2/authorize` |
+
+In OpenID Connect, the URL the user returns to after signing out becomes `https://<your-domain>/realms/logout`.

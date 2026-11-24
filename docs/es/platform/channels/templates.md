@@ -12,8 +12,8 @@ En la sección de plantillas, el menú principal se oculta para optimizar el ár
 
 - **Publicado**: Hay una versión publicada y que la versión editable es idéntica.
 - **Cambios pendientes**: Existe una versión publicada, pero hay modificaciones pendientes de publicar en tu versión editable.
-- **En revisión**: La [revisión en equipo](/es/platform/core/key-concepts) está activada y se ha enviado a revisión la versión editable.
-- **Aprobado**: La [revisión en equipo](/es/platform/core/key-concepts) está activada y las condiciones de revisión del elemento se han cumplido. En este estado, la plantilla está lista para ser publicada.
+- **En revisión**: La [revisión en equipo](/es/platform/core/#revision-en-equipo) está activada y se ha enviado a revisión la versión editable.
+- **Aprobado**: La [revisión en equipo](/es/platform/core/#revision-en-equipo) está activada y las condiciones de revisión del elemento se han cumplido. En este estado, la plantilla está lista para ser publicada.
 
 En la parte superior derecha, puedes ver la última fecha de publicación e íconos con las acciones disponibles:
 
@@ -28,14 +28,17 @@ Puedes previsualizar los cambios como usuario sin sesión o usuario con sesión 
 :::tip Tip
 Cada vez que publicas una versión, la versión que estaba publicada pasa a ser una versión de respaldo. Por defecto, se guardan hasta 20 respaldos, permitiéndote comparar, restaurar y hacer rollback a las últimas 20 versiones
 
-Para más información sobre el versionamiento, consulta la sección de [versionado](/es/platform/core/key-concepts#versionado).
+Para más información sobre el versionamiento, consulta la sección de [versionado](/es/platform/core/#versionado).
 :::
 
 **Buscar en plantillas**: Despliega una barra lateral con un buscador de texto que explora todas las plantillas editables.
 
 **Ver actividad**: Despliega una barra lateral que muestra el historial de actividad y donde puedes leer y escribir comentarios. Haz click en **ver detalle** para mostrar la información completa de cualquier registro de actividad.
 
-**Más acciones**: Este ícono te permite **archivar** o **borrar** una plantilla.
+**Más acciones**: Este ícono te permite **Archivar** o **Borrar** la plantilla abierta. Estas acciones solo están disponibles en las plantillas que se pueden eliminar, como las que creas tú o el layout **Home**. Las demás plantillas que trae el sitio, como los layouts **Base** y **Error**, no se pueden archivar, despublicar ni borrar.
+
+- **Archivar**: Disponible cuando la plantilla no tiene una versión publicada; si la tiene, despublícala primero. Una plantilla archivada no se puede editar y desaparece del listado. Para verla, activa **Mostrar archivados** al pie del panel lateral y, si quieres volver a usarla, haz click en **Restaurar**.
+- **Borrar**: Disponible cuando la plantilla está archivada y no tiene una versión publicada ni programada. Esta acción es irreversible.
 
 La última opción en la bara superior muestra las acciones principales que puedes llevar a cabo:
 
@@ -44,6 +47,7 @@ La última opción en la bara superior muestra las acciones principales que pued
 - **Forzar publicación**: Solo disponible para administradores del sitio, permite publicar inmediatamente una plantilla, incluso si está esperando revisión
 - **Rechazar**: Vuelve al estado "En edición" y notifica a los revisores que el elemento fue rechazado.
 - **Publicar**: Una vez que la plantilla ha sido aprobada, puedes enviarla a publicar.
+- **Despublicar**: Disponible en las plantillas publicadas que se pueden eliminar. Elige **Despublicar ahora**, o **Despublicar en** para programarlo en una fecha. Las plantillas publicadas que hacen referencia a la plantilla despublicada ya no pueden renderizarla.
 
 En el área de trabajo principal, hay dos secciones:
 
@@ -56,7 +60,7 @@ Modyo ofrece tres layouts predefinidos:
 
 - **Home**: Exclusivamente para la página principal del sitio.
 - **Base**: Todas las páginas, excepto la de inicio, usan este layout.
-- **Error**: Empleado en las vistas de error (404, 401), presentando un diseño limpio.
+- **Error**: Empleado en las tres vistas de error del sitio (**404**, **disabled** y **template**), presentando un diseño limpio.
 
 Para crear un nuevo layout:
 1. En la sección de **Plantillas** da click en la pestaña **Vistas**
@@ -65,36 +69,50 @@ Para crear un nuevo layout:
 
 Esto te permite definir una nueva estructura base para usar en las páginas.
 
-Puedes usar como base este código que contiene todo lo necesario para que tus páginas usen los elementos del sitio, como el encabezado, pie de página, service worker y la configuración de Google Tag Manager. También puedes modificar el código, según requieras.
-
+Al crear un layout, Modyo lo inicializa con una estructura mínima. Si quieres que tus páginas usen todos los elementos del sitio, como el encabezado, el pie de página, el service worker y la configuración de Google Tag Manager, reemplaza ese contenido por el mismo código que trae el layout **Base** y ajústalo según requieras:
 
 ```liquid
-{% html5 %}
+{% html5 %} <!-- HTML header with browser directives -->
 <head>
   {% snippet 'shared/general/head' %}
 </head>
-
-{% body %}
+{% body %} <!-- Body with automatic context classes -->
 {% snippet 'shared/general/body_tag_manager' %}
+<div id="modyo-site-alert-wrapper"></div>
 {% snippet 'shared/general/header' %}
-
-{{ site.breadcrumb }}
-<div id="main-layout">
-{{ content_for_layout }}
-</div>
-
-<script>{% snippet "shared/serviceworker/register_js" %}</script>
+<main id="content">
+  <div id="breadcrumb" class="mt-8">
+    <div class="container breadcrumb-inner">
+      {{ site.breadcrumb }}
+    </div>
+  </div>
+  {{ content_for_layout }}
+</main>
+<script nonce="{{csp_nonce}}">{% snippet "shared/service_worker/register_js" %}</script>
 {% snippet 'shared/general/footer' %}
-
 {% endbody %}
 {% endhtml5 %}
 ```
 
+Si escribes tu propio layout, cuida estos tres detalles:
+
+- `<div id="modyo-site-alert-wrapper"></div>` es el contenedor donde el sitio inyecta sus alertas. Si lo omites, las alertas no se muestran.
+- `<main id="content">` envuelve el contenido de la página y es el ancla que usan el tema y las vistas de error del sitio.
+- El atributo <span v-pre>`nonce="{{csp_nonce}}"`</span> es obligatorio en cada tag `<script>` o `<style>` inline cuando la política de [Content-Security-Policy](/es/platform/channels/sites#content-security-policy-csp) de tu aplicación web incluye la directiva nonce. Sin él, el navegador bloquea el script y el service worker nunca se registra.
+
+:::warning Atención
+La ruta del snippet que registra el service worker es `shared/service_worker/register_js`, con guión bajo entre `service` y `worker`. Si la escribes de otra forma, el snippet no se resuelve y el registro no se inyecta en la página.
+:::
+
 Para aplicar un layout nuevo a una página, sigue estos pasos:
-1. Ve a la sección **Páginas**
-2. Selecciona la pestaña **Propiedades**.
-3. Elige el layout que deseas usar en tu página.
-4. Envía a revisión o publica tu layout, según el caso.
+1. Publica el layout. Solo los layouts publicados aparecen en el selector **Layout** de las páginas.
+2. Ve a la sección **Páginas** y abre la página.
+3. Elige el layout en el campo **Layout**. En una página de widget, está en la pestaña **Propiedades**. En una [página de contenido](/es/platform/channels/pages#pagina-de-contenido), lo eliges por separado para el **Index** y el **Show**, en la pestaña **Editar**.
+4. Envía a revisión o publica la página, según el caso.
+
+:::warning Atención
+Si despublicas o borras un layout, las páginas que lo usan se muestran con el layout **Base**. Antes de despublicarlo, si hay páginas de widget publicadas que lo usan, Modyo te avisa cuántas son. Al borrarlo, además, la versión editable de las páginas de widget que lo tenían asignado pasa al layout **Base**, y ese cambio queda pendiente hasta que las publiques.
+:::
 
 ### Insertar una imagen con Liquid
 
@@ -125,12 +143,17 @@ Es necesario que el CDN de tu cuenta esté en la nube para que los cambios se re
 
 ## Errores en Vistas
 
-En la sección de vistas puedes personalizar cuatro tipos de errores:
+En la pestaña **Vistas**, dentro del grupo **errors**, puedes personalizar las tres vistas de error que trae el sitio. Todas se renderizan con el layout **Error**:
 
-- **Deshabilitado**: Se muestra cuando el sitio al que intentas acceder está [deshabilitado](/es/platform/channels/sites).
-- **404**: Si en la configuración de [restricciones del sitio](/es/platform/channels/sites#privacidad) decides mostrar el 404 en lugar de redireccionar a la página de inicio, se muestra este error al ingresar a una URL no definida.
-- **Privacy**: Se muestra cuando no tienes permisos para acceder al [sitio](/es/platform/channels/sites#privacidad) o a una de sus [páginas](/es/platform/channels/pages#privacidad).
-- **Template**: Visible cuando la página cargada tiene un error de sintaxis de Liquid. Es poco probable que veas esta vista, debido a que a partir de Modyo 8.1 la plataforma realiza una verificación de la sintaxis antes de guardar y publicar cambios en Plantillas.
+- **disabled**: Se muestra cuando el sitio al que intentas acceder está [deshabilitado](/es/platform/channels/sites).
+- **404**: Se muestra al entrar a una URL que no resuelve y también cuando un usuario con sesión iniciada abre una página privada cuyos [segmentos](/es/platform/customers/segments) no le corresponden. Si en la configuración de la aplicación web activas **Redireccionar al home cuando una URL no se encuentra**, el visitante va a la página de inicio en lugar de ver esta vista.
+- **template**: Visible cuando la página cargada tiene un error de sintaxis de Liquid. Es poco probable que veas esta vista, debido a que a partir de Modyo 8.1 la plataforma realiza una verificación de la sintaxis antes de guardar y publicar cambios en Plantillas.
+
+No existe una vista de error para la privacidad. Cuando un visitante sin sesión pide un sitio o una página privada, la plataforma no renderiza ninguna vista de error: lo redirige a la página de inicio de sesión del sitio, o a la de registro si así está configurada la aplicación web, y lo devuelve a la URL que pedía una vez que inicia sesión.
+
+:::tip Tip
+Desde Modyo 10.2, las páginas de originación también responden con la vista **404** y los estilos del sitio cuando la URL no resuelve. Antes devolvían un cuerpo vacío, así que cualquier personalización que hagas a esta vista se refleja también en esas URLs.
+:::
 
 ## CSS y JavaScript
 
@@ -165,14 +188,49 @@ Una vez guardado y publicado, se traduce al siguiente código HTML:
 <script src='my-js' type='text/javascript' async='async' defer='defer'></script>
 ```
 
-Para obtener información detallada y conocer los parámetros admitidos por estos filtros, consulta la sección de [filtros de Liquid](/es/platform/channels/liquid-markup#filtros-estandar).
+Para obtener información detallada y conocer los parámetros admitidos por estos filtros, consulta las fichas de [Asset URL](/es/platform/channels/liquid-markup/filters.html#asset-url), [Script tag](/es/platform/channels/liquid-markup/filters.html#script-tag), [Stylesheet Tag](/es/platform/channels/liquid-markup/filters.html#stylesheet-tag), [Theme Javascript](/es/platform/channels/liquid-markup/filters.html#theme-javascript) y [Theme Stylesheet](/es/platform/channels/liquid-markup/filters.html#theme-stylesheet).
 
+
+### Cómo se sirven las vistas de CSS y JavaScript
+
+Cada vista de CSS o JavaScript que creas en Plantillas se publica como un archivo con URL propia, que los filtros de Liquid resuelven por ti. Esa URL incluye una versión que se actualiza al publicar el sitio, lo que significa que:
+
+- Los visitantes reciben el archivo nuevo apenas publicas, sin que tengas que renombrar la vista ni pedir que se limpie ninguna caché.
+- Mientras la versión no cambie, el navegador puede reutilizar el archivo entre las distintas páginas del sitio en lugar de descargarlo de nuevo en cada una.
+- En el modo de vista previa el archivo nunca se sirve desde la caché, para que veas tus cambios de inmediato.
+
+### Controlar cómo se carga el archivo
+
+Por omisión, una hoja de estilos bloquea el pintado de la página hasta que termina de descargarse, y un script bloquea el análisis del HTML. Los filtros `script_tag` y `stylesheet_tag` aceptan cualquier atributo, así que puedes ajustar ese comportamiento sin dejar de usar la URL versionada:
+
+```html
+<head>
+  {{ 'base'      | asset_url: 'css' | stylesheet_tag: media: 'screen' }}
+  {{ 'print'     | asset_url: 'css' | stylesheet_tag: media: 'print' }}
+  {{ 'main'      | asset_url: 'js'  | script_tag: defer: 'defer' }}
+  {{ 'analytics' | asset_url: 'js'  | script_tag: async: 'async' }}
+</head>
+```
+
+- `defer` descarga el script en paralelo y lo ejecuta cuando el documento terminó de analizarse, respetando el orden en que declaraste los scripts.
+- `async` lo ejecuta apenas está disponible, sin garantizar el orden. Úsalo solo para scripts independientes entre sí.
+- `media` limita una hoja de estilos a un contexto determinado, como la impresión.
+
+Los filtros `theme_javascript` y `theme_stylesheet` producen la misma URL versionada, pero no admiten atributos. Si necesitas alguno, usa la combinación de arriba.
+
+### Vista del tema o código inline
+
+Escribir el CSS o el JavaScript directamente en la plantilla, dentro de una etiqueta `<style>` o `<script>`, ahorra una petición de red, pero traslada esos bytes al documento HTML, que se descarga completo en cada página que visita el usuario y no se reutiliza entre ellas. Como criterio general:
+
+- Publica como vista del tema todo el CSS y el JavaScript que compartan varias páginas. Se descarga una vez y se reutiliza en el resto del sitio.
+- Reserva el código inline para fragmentos pequeños y específicos de una página, o para el mínimo de estilos que necesita la primera pantalla visible.
+- Ten presente que un bloque `<style>` inline también bloquea el pintado de la página: escribirlo en la plantilla no lo vuelve gratuito.
 
 ## Snippets
 
 Los snippets son fragmentos reutilizables de código HTML, JS o CSS para tus sitios. Para usar un snippet:
 
-1. Copia la ruta de referencia del snippet personalizado. El código Liquid será similar a: &lt;span v-pre&gt;`{% snippet "nombre-del-snippet" %}` &lt;/span&gt;.
+1. Copia la ruta de referencia del snippet personalizado. El código Liquid será similar a: <span v-pre>`{% snippet "nombre-del-snippet" %}`</span>.
 1. Pega el código donde quieras llamar a este Snippet.
 
 Para añadir un snippet personalizado:
@@ -209,10 +267,10 @@ Las sub-versiones son específicas a cada plantilla, por lo que algunos pueden t
 :::
 
 :::tip Tip
-Si restableces una versión anterior a la versión editable, puedes acceder a las sub-versiones de cada template de esa versión. Puedes aprender más sobre [versionado](/platform/core/key-concepts.html#versionado) aquí.
+Si restableces una versión anterior a la versión editable, puedes acceder a las sub-versiones de cada template de esa versión. Puedes aprender más sobre [versionado](/es/platform/core/#versionado) aquí.
 :::
 
-Para restaurar todas las plantillas a su versión original, haz click en la acción secundaria de la barra superior **Restaurar todo**. Para que los cambios tengan efecto, debes publicar las plantillas.
+Cada plantilla se versiona por separado. Para devolver una plantilla a una versión anterior, ábrela, haz click en **Diferencias** y usa **Resetear a esta versión**, que lleva esa versión a la versión editable, o **Rollback a esta versión**, que la publica directamente. Para más detalles, consulta [Revertir un cambio](/es/platform/core/#revertir-un-cambio).
 
 ## SEO
 
@@ -220,31 +278,69 @@ El SEO [(Search Engine Optimization)](/es/platform/channels/sites#seo) es fundam
 
 En Modyo puedes controlar la forma en que los motores de búsqueda leen tu sitio y contenido, agregando meta tags de forma dinámica, según los atributos que añadas a tus páginas y contenidos.
 
-Para añadir las meta tags en Modyo, usa este snippet de código en Plantillas y luego llámalo desde el head de tu sitio:
+Entre las plantillas con las que se crea el sitio está el snippet `shared/general/seo`, que el snippet `shared/general/head` carga en el head de los layouts **Home**, **Base** y **Error**. Lo encuentras en la pestaña **Snippets** y su contenido inicial es el siguiente:
 
 ```html
 <!-- Site SEO -->
-<meta name="keywords" content="{{ site.keywords }}"/>
 <meta name="author" content="{{ site.name }}"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 {{ site.meta_tags }}
 
 {% if page %}
-<!-- Page SEO -->
-{{ page.meta_tags }}
-<meta name="description" content="{{ page.excerpt }}"/>
-<meta property="og:title" content="{{ page.title }}"/>
-<meta property="og:type" content="website"/>
-<meta property="og:url" content="{{ page.url }}"/>
-<meta property="og:image" content="{{ site.logo | asset_url : 'original' }}"/>
-<meta property="og:site_name" content="{{ site.name }}"/>
-<meta property="og:description" content="{{ page.excerpt }}"/>
+    <!-- Page SEO -->
+    {{ page.meta_tags }}
 {% endif %}
+
 <!-- END SEO -->
+
+{% if page_scope == 'show' %}
+    <!-- Content Page: Show -->
+    <meta name="description" content="{{ entry.meta.excerpt }}"/>
+    <meta property="og:title" content="{{ entry.title }} | {{ site.name }}"/>
+    <meta property="og:description" content="{{ entry.meta.excerpt }}"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content="{{ entry.url }}"/>
+    {% if site.logo %}
+        <meta property="og:image" content="{{ site.logo | asset_url: 'original' }}"/>
+    {% endif %}
+    <meta property="og:site_name" content="{{ site.name }}"/>
+    <link rel="canonical" href="{{ entry.url }}"/>
+
+{% elsif page_scope == 'index' %}
+    <!-- Content Page: Index -->
+    <meta property="og:title" content="{{ page.title }} | {{ site.name }}"/>
+    <meta name="description" content="{{ page.excerpt }}"/>
+    <meta property="og:description" content="{{ page.excerpt }}"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content="{{ page.url }}"/>
+    {% if site.logo %}
+        <meta property="og:image" content="{{ site.logo | asset_url : 'original' }}"/>
+    {% endif %}
+    <meta property="og:site_name" content="{{ site.name }}"/>
+    <link rel="canonical" href="{{ page.url }}"/>
+
+{% else %}
+    <!-- Widget Page -->
+    <meta property="og:title" content="{{ page.title }} - {{ site.name }}"/>
+    <meta name="description" content="{{ page.excerpt }}"/>
+    <meta property="og:description" content="{{ page.excerpt }}"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="{{page.url}}"/>
+    {% if site.logo %}
+        <meta property="og:image" content="{{ site.logo | asset_url : 'original' }}"/>
+    {% endif %}
+    <meta property="og:site_name" content="{{ site.name }}"/>
+    <link rel="canonical" href="{{page.url}}"/>
+{% endif %}
 ```
 
-Este snippet usa Liquid para agregar meta tags a nivel de sitio. También agrega meta tags específicas cuando el usuario navega a una página de widget o de contenido.
+El snippet agrega primero las meta tags del sitio y las [meta tags personalizadas](/es/platform/channels/pages#meta-tags) de la página. Después usa la variable `page_scope` para generar las meta tags según la vista:
+
+- `show`: El detalle de una entrada en una página de contenido. Usa el título, el extracto y la URL de la entrada, con `og:type` igual a `article`.
+- `index`: El listado de entradas de una página de contenido. Usa el título, el extracto y la URL de la página, con `og:type` igual a `article`.
+- En cualquier otro caso, como en las páginas de widget, usa el título, el extracto y la URL de la página, con `og:type` igual a `website`.
+
+En todos los casos agrega la URL canónica y, si el sitio tiene un logo, lo usa como `og:image`.
 
 Puedes personalizar este snippet y definir qué meta tags deseas para URLs o tipos específicos.
 
@@ -263,14 +359,14 @@ Emplea este código para usar meta tags específicas cuando un usuario visita un
 <!-- Content SEO -->
 <meta name="description" content="{{ entry.meta.excerpt }}" />
 <meta property="og:title" content="{{ entry.meta.title }}" />
-<meta property="og:url" content="{{site.url}}/{{entry.meta.type_uid}}/{{entry.meta.slug}}" />
+<meta property="og:url" content="{{ entry.meta.url }}" />
 <meta property="og:image" content="{{ entry.fields.covers.first | asset_url : 'original' }}" />
 <meta property="og:site_name" content="{{ site.name }}" />
 <meta property="og:description" content="{{ entry.meta.excerpt }}" />
-{% if entry.type_uid = 'posts'%}
+{% if entry.meta.type_uid == 'posts' %}
 <meta property="og:type" content="article" />
-{endif}
-{% if entry.type_uid = 'place'%}
+{% endif %}
+{% if entry.meta.type_uid == 'place' %}
 <meta property="og:type" content="place" />
 <meta property="place:latitude" content="{{ entry.location.first.latitude }}" />
 <meta property="place:longitude" content="{{ entry.location.first.longitude }}" />
@@ -279,7 +375,7 @@ Emplea este código para usar meta tags específicas cuando un usuario visita un
 ...
 ```
 
-En este caso, los tipos de entrada `posts` y `place` comparten los atributos _title_, _excerpt_ y _covers_ y difieren en el objeto _locations_. Además, define un tipo de documento diferente para cada uno.
+En este caso, los tipos de entrada `posts` y `place` comparten los atributos _title_, _excerpt_ y _covers_ y difieren en el campo _location_. Además, define un tipo de documento diferente para cada uno.
 
 ### Meta tags específicos para Categoría en Página de Contenido
 
@@ -305,8 +401,9 @@ Para meta tags específicos al mostrar entradas de una categoría, copia el sigu
 <meta property="og:image" content="https://d1dzq2r60kxox4.cloudfront.net/uploads/c82bdfea-3622-4c11-9a20-bea227cbdc60/original/og_image.jpg"/>
 <meta property="og:site_name" content="{{ site.name }}"/>
 <meta property="og:description" content="{{ category_description }}"/>
+{% endif %}
 ```
 
-En este código, se crea una variable `category_name` que contiene el nombre de la categoría tomado del URL, después se utiliza un `{% if category_path.size > 0 %}` para añadir metadata pertinente a la categoría.
+En este código, se crea una variable `category_name` que contiene el nombre de la categoría tomado del URL, después un `if` sobre `category_path.size > 0` agrega la metadata de la categoría solo cuando la URL incluye una.
 
 Liquid te permite crear contenido dinámico para tu sitio. Para conocer más acerca de Liquid y como usar Liquid Objetos, visita [Liquid Markup](/es/platform/channels/liquid-markup).

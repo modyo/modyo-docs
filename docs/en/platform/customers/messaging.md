@@ -32,6 +32,10 @@ Each campaign row includes a menu with the following actions:
 If you delete a campaign, you will not be able to recover it, and its record will be deleted from the system.
 :::
 
+:::tip Segment scope
+If your access to the realm is [restricted by segments](/en/platform/customers/settings.html#restrict-scope-with-segments), you can only target campaigns to segments within your scope. Campaigns targeting segments outside your scope are displayed in **Read only** mode: you can see their metadata, but not their metrics or recipients, and you cannot edit, send, duplicate, or delete them.
+:::
+
 ## Create a campaign
 Campaigns allow you to contact your users directly via email or direct notifications, including support for WebPush notifications. To create a new campaign, click the **New Campaign** button.
 
@@ -42,11 +46,12 @@ Email campaigns allow you to contact users via email. To set up an email campaig
 - **Name**: The identifier for the campaign.
 - **Type**: Select **Email** to enable this option.
 - **Subject**: The text that will appear in the message's subject line.
-- **Reply To**: The email address for user responses.
-- **Template**: Select a [template](/en/platform/customers/messaging#templates). If no template is selected, a blank one will be used.
-- **Enable Segmentation**: Select a specific segment or leave this option unchecked to send the message to all users.
+- **Sender name**: The name that appears in the email's "From" field. It is required.
+- **Reply to email**: The email address the campaign is sent from and where user replies arrive. If this field is left blank, the realm's default email will be used.
+- **Template**: Select a [template](/en/platform/customers/messaging.html#templates). If no template is selected, a blank one will be used.
+- **Enable segmenting**: Select one or more segments, or leave this option unchecked to send the message to all users. If your access is [restricted by segments](/en/platform/customers/settings.html#restrict-scope-with-segments) and you do not choose any, the campaign targets every segment in your scope.
 
-Click **Save and Continue** to open the WYSIWYG editor, where you can customize the selected template's content. Once edited, select **Save** to confirm the changes and access the **Send Status** view.
+Click **Save and continue** to open the WYSIWYG editor, where you can customize the selected template's content and use [personalization variables](/en/platform/customers/messaging.html#personalization-variables). Once edited, select **Save** to confirm the changes and access the **Send Status** view.
 
 
 ### Notification Campaigns
@@ -55,6 +60,7 @@ Notification campaigns allow you to send direct messages to users. To set up a n
 - **Name**: The identifier for the campaign.
 - **Type**: Select **Notification** to activate this option.
 - **Subject**: The text that will appear in the sent message.
+- **Enable segmenting**: Works the same as in [mailing campaigns](/en/platform/customers/messaging.html#mailing-campaigns).
 
 #### Enable WebPush support
 
@@ -79,20 +85,35 @@ Before sending a campaign, use the **Preview** button to verify the content. Onc
 The contextual button allows you to perform these actions:
 
 - **Message Editor**: Modify the content before sending.
-- **Send test**: Sends a test message to a specific address (It can only be sent to users with access to the Modyo backend).
+- **Send test**: Sends a test message to the recipients you enter, one per line. In mailing campaigns, each line follows the format `name; email` and the email must belong to an administrator of the account. In notification campaigns, the format is `name; username` and the recipient must be a realm user, who gets the test notification among their notifications. The **Send** button stays disabled while any line does not follow that format.
 - **Edit**: Change campaign properties, such as the target segment or reply address.
 - **Clone Campaign**: Create a copy with all the campaign's content.
 - **Delete campaign**: Deletes a campaign.
 
-Once you have sent a campaign, you cannot send it again. If you want to send the same campaign again, select the clone option. This creates a new campaign with the same name data, segments, and content, while the statistical information starts from scratch.
+Once a campaign is **Completed**, you cannot send it again. If you want to send the same campaign again, select the clone option. This creates a new campaign with the same name data, segments, and content, while the statistical information starts from scratch.
 
 You can cancel a campaign when it is in queue or while it is being sent.
 
 :::warning Attention
-A campaign can only be resent if its sending was previously canceled when it was queued or in progress.
+A campaign can be sent again as long as it is not **Completed**: the **Send** button comes back both when the delivery was canceled and when it failed.
 
-You must indicate whether you want to send messages again to all users or only to those who did not receive them previously. In this case, the number of message deliveries may be greater than the total reach of users of the campaign.
+When you send it, the **Do not send this campaign to people who have previously received it.** checkbox leaves out anyone who already received a message from this campaign. If you leave it unchecked, the delivery goes through every user in scope again and the number of message deliveries may be greater than the total reach of users of the campaign.
 :::
+
+### Campaign statuses
+
+This view shows the campaign's current status next to its metrics. The possible statuses are:
+
+- **Inactive**: The campaign is created and has not been sent yet.
+- **Pending**: The delivery was already requested and is queued, but has not started processing.
+- **Sending**: The delivery is in progress and deliveries are generated in groups of users.
+- **Completed**: The delivery finished going through every recipient.
+- **Canceled**: Someone stopped the delivery while it was **Pending** or **Sending**. The deliveries generated up to that point are not reverted.
+- **Failed**: The delivery was interrupted by an error before finishing. The campaign keeps the deliveries it managed to generate.
+
+The view's main button changes with the status: **Inactive**, **Canceled**, and **Failed** show **Send**; **Pending** and **Sending** show **Cancel**. **Completed** shows neither, and the **Message Editor** and **Edit** actions also disappear from the contextual menu: a completed campaign can no longer be modified or resent, only cloned.
+
+### Delivery results
 
 In campaigns sent by email, you can view:
 
@@ -109,6 +130,10 @@ If you sent the campaign by notification, you can view:
 - **Reach**: People who received the campaign.
 - **Sent**: Number of notifications sent.
 - **Opened**: Number of notifications opened.
+
+:::tip Metrics refresh
+Open, click, and spam metrics are recalculated every 15 minutes, not in real time: even if you reload the page, a new open or click does not show up until the next recalculation.
+:::
 
 If you send a campaign through [segments](/en/platform/customers/segments), you can see which group of users the campaign reached. If this section does not appear, it is because the campaign was sent to all contacts.
 
@@ -128,24 +153,37 @@ Clicking on the name of a campaign takes you to the Message Deliveries section.
 
 In the Message Deliveries section, you will find the list of users who have received a message from the platform. Here, you can see a list of all users who have received a unique email or notification, referred to as “No Campaign”.
 
-"No Campaign" refers to an email or notification sent specifically to a user on a certain date. These messages are not considered campaigns, as they are personalized and contain information not sent to other users. For more information on how these messages work, see the [Management API](/en/platform/core/api).
+"No Campaign" refers to an email or notification sent specifically to a user on a certain date. These messages are not considered campaigns, as they are personalized and contain information not sent to other users.
+
+These messages are not created from the admin, but from the management API:
+
+- `POST /api/admin/customers/{realm_uid}/messaging/mailer` sends an email to a realm user.
+- `POST /api/admin/customers/{realm_uid}/messaging/notifications` sends a notification to a realm user.
+
+In both cases the recipient is identified by username, not by email, and must be within your [segment scope](/en/platform/customers/settings.html#restrict-scope-with-segments): if it is not, the email call answers `409` and the notification call `404`. The field-by-field detail of each call is in the service catalog, under the **Mailer** and **Notifications** resources; to open it, follow [Call using the Swagger Portal](/en/platform/core/api.html#call-using-the-swagger-portal).
+
+The email is queued, so a successful response confirms that the call was accepted, not that the message was already delivered. Its body accepts `%{name}`, `%{first_name}`, `%{last_name}`, `%{email}`, and `%{unsubscribe_link}`, a subset of the campaign [personalization variables](/en/platform/customers/messaging.html#personalization-variables): `%{show_link}` and `%{show_url}` are not available. If the body uses any other variable, the call answers `409` with the error `Body content is not valid`. It also answers `409` when `from` is not a valid email address, with the error `Email '…' is not valid`.
+
+Notifications, on the other hand, do not accept variables, even though notification campaigns do: any `%{…}` in the body makes the call answer `409` with a `null` body, without error details, and the notification is not created.
+
+:::warning Attention
+There is also a legacy route, `POST /api/admin/mailer`, which reaches the same action but does not appear in the service catalog and does not carry the realm in the URL: you have to pass `realm_uid` as a parameter or the call answers `404`. It is kept for compatibility; use the realm route in new integrations.
+:::
 
 In the initial view, the messages are ordered in these categories:
 
-- **Name**: Name of the user to whom the message was sent. The user's email is included, regardless of whether it was sent by email or notification.
+- **User**: Name of the user to whom the message was sent. The user's email is included, regardless of whether it was sent by email or notification.
 - **Campaign**: Campaign under which the message was sent.
 - **Type**: The route through which the message was sent, either email or notification.
-- **Delivery**: Date on which the campaign started.
 - **Sent**: Date the message was sent.
 - **Read**: Alert if the user read or saw the message.
 
 In addition, you can filter the data using the following filters:
 
-- **Campaign Type**: All, mail, or notification.
-- **Campaign Name**: Name given to the campaign in general.
-- **Shipment**: Date on which the campaign was sent.
+- **Type**: Mail or notification.
+- **Campaign**: Campaign under which the message was sent. It includes the **No campaign** option.
 
-The search bar allows you to search for a specific term.
+The search bar allows you to search by the recipient's name or email.
 
 ## Templates
 
@@ -157,6 +195,8 @@ In the **Templates** section, you can create and manage email designs for your c
 - Click **New Template**.
 - Give the template a descriptive name.
 - Use the WYSIWYG editor to customize the design.
+
+If the realm has no templates yet, **Load default templates** appears next to **New Template** and creates three base templates (Example 1, Example 2, and Example 3) that you can edit as you like.
 
 ### Edit Templates
 
@@ -172,6 +212,42 @@ When you create a campaign, remember to add in the footer all the legal informat
 
 To automate footer insertion, read [Realm Configuration](/en/platform/customers/settings#emails)
 :::
+
+## Personalization variables
+
+The campaign message editor and the template editor accept variables that the platform replaces with each recipient's data at delivery time. Both editors list them under the label **Allowed attributes (will be dynamically replaced with data)**.
+
+The syntax is `%{variable}` and the list is closed: you cannot invent variables or use Liquid drops. The realm's [automated emails](/en/platform/customers/settings.html#personalize-emails) do use Liquid, but messaging campaigns and templates do not.
+
+Templates and email campaigns give you seven variables:
+
+| Variable | Replaced with |
+| --- | --- |
+| `%{name}` | The recipient's full name. |
+| `%{first_name}` | The recipient's first name. |
+| `%{last_name}` | The recipient's last name. |
+| `%{email}` | The recipient's email address. |
+| `%{show_link}` | A ready-to-paste HTML link, with the text "Email not displaying correctly? View it in your browser.", that opens the web version of the message. |
+| `%{show_url}` | The address of that web version, unformatted, so you can build your own link. |
+| `%{unsubscribe_link}` | The address the recipient uses to unsubscribe from the realm's deliveries. |
+
+Notification campaigns only have `%{name}`, `%{first_name}`, and `%{last_name}`.
+
+Including `%{unsubscribe_link}` in the message footer is what lets the recipient unsubscribe, and those opt-outs are the ones that show up in [Unsubscriptions](/en/platform/customers/messaging.html#unsubscriptions).
+
+The unsubscribe link in each email works for three months after the delivery. If the recipient opens it after that period, they are not unsubscribed: they see the notice **Something went wrong. You can change your notifications preferences from your profile.** and, to unsubscribe, they must uncheck **Subscribe to mail campaigns** when [editing their profile](/en/platform/customers/profile.html#edit-information).
+
+:::warning Attention
+If you write a variable that is not on the channel's list, the platform does not save the message and shows the error **The attributes specified are not valid**.
+
+The template editor does not run that check: a template can be saved with an invalid variable, and the error only shows up when an email campaign uses it. If you pick it when creating the campaign, **Save and continue** does not create it and shows **The campaign could not be created.** with the detail in the form. If you load it later from the message editor with **Change Template**, the template is not applied and the notice is **There was an error loading the template, try again in a few minutes**, which does not mention the variable.
+:::
+
+:::tip Incomplete data
+If a recipient has no data for a variable, the result depends on where they read the message. In the email, the variable is replaced with empty text. In the email's web version, the one that `%{show_link}` and `%{show_url}` open, and in notifications, the variable is not replaced: if a user has no last name on file, for example, they see the text `%{last_name}`. Before using variables from optional fields, check that they are filled in for the segment you are targeting.
+:::
+
+A campaign's **Preview** resolves these variables with your own administrator account data and with a sample unsubscribe link, so it is useful to review the design, not to check what data each recipient will see.
 
 ## Unsubscriptions
 

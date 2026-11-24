@@ -7,6 +7,85 @@ search: true
 Modyo Customers contiene una variedad de APIs con las que podrás obtener la información de Reinos, las notificaciones y sus usuarios.
 
 
+## Autenticación
+
+Todos los endpoints bajo `ACCOUNT_URL/api/customers/realms/{realm_uid}/` responden en nombre de un usuario final del reino, así que cada llamada necesita una credencial de ese usuario. La única excepción es [Verificación de código OTP](#verificacion-de-codigo-otp).
+
+Si el reino tiene un [dominio personalizado](/es/platform/customers/settings.html#dominios), la API de Customers también responde en `https://<tu-dominio>/api/customers/realms/{realm_uid}/`, con el mismo identificador del reino en la ruta y las mismas respuestas que en `ACCOUNT_URL`, donde sigue respondiendo sin redirigir. En el dominio personalizado, un `realm_uid` de otro reino responde 404, y en los dominios alternativos del reino la API responde 404, sin redirigir. La autorización de OAuth se hace en `https://<tu-dominio>/realms/oauth/authorize`, y `ACCOUNT_URL/realms/{realm_uid}/oauth/authorize` redirige allí. Los endpoints de token y revocación siguen respondiendo en `ACCOUNT_URL`.
+
+El reino acepta dos credenciales:
+
+- **Access token de OAuth2**, en la cabecera `Authorization: Bearer`. Tiene precedencia: cuando la petición trae un access token reconocido, la cookie de sesión no se evalúa.
+- **Cookie de sesión** del usuario en el reino. Se usa cuando la petición no trae un access token reconocido. Es la opción natural cuando tu aplicación corre dentro de un sitio de Modyo, porque el navegador la envía sola.
+
+Las dos resuelven al mismo usuario y dan acceso a los mismos endpoints. Elige el access token cuando tu aplicación vive fuera de los dominios de la cuenta, por ejemplo una aplicación móvil o un front en otro dominio.
+
+Para llamar a la API desde el navegador en un origen distinto al de la API, habilita CORS en el reino, como se explica en [Cross Origin Resource Sharing (CORS)](/es/platform/customers/settings.html#cross-origin-resource-sharing-cors).
+
+### Obtener un access token
+
+Cada reino expone su propio servidor OAuth2:
+
+| Endpoint | Para qué sirve |
+|----------|----------------|
+| `ACCOUNT_URL/realms/{realm_uid}/oauth/authorize` | Autoriza al usuario y entrega el código. |
+| `ACCOUNT_URL/realms/{realm_uid}/oauth/token` | Canjea el código por el access token. |
+| `ACCOUNT_URL/realms/{realm_uid}/oauth/revoke` | Invalida un token ya emitido. |
+
+El único flujo soportado es `authorization_code`. El reino no emite tokens con `client_credentials`, `password` ni `implicit`, y tampoco entrega refresh tokens.
+
+Para empezar necesitas un cliente OAuth del reino, creado como se describe en [Cliente OAuth](/es/platform/customers/settings.html#cliente-oauth). Al hacer click en el nombre del cliente, el panel muestra su **UID** y su **Secreto**, que son el `client_id` y el `client_secret` del flujo, junto con la URL de autorización ya armada en **Cliente web** y los endpoints del reino listos para copiar en **Cliente móvil**.
+
+1. Lleva al usuario a `ACCOUNT_URL/realms/{realm_uid}/oauth/authorize` con los parámetros `response_type=code`, `client_id`, `redirect_uri` y, si los necesitas, `scope` y `state`.
+2. Si el usuario todavía no tiene sesión en el reino, Modyo lo manda al inicio de sesión. Al terminar, Modyo no retoma la autorización: el usuario llega a la URL de **Después de iniciar sesión, redirigir a** definida en la [configuración del reino](/es/platform/customers/settings.html#general) o, si no hay una, a su perfil. Tu aplicación tiene que llevarlo otra vez a la URL de autorización, que ahora entrega el código de inmediato. No hay pantalla de consentimiento: apenas hay sesión, Modyo redirige a tu **URI de redirección** con el parámetro `code`.
+3. Canjea el código en el endpoint de token. El código vive diez minutos y sirve una sola vez.
+4. Usa el `access_token` de la respuesta en la cabecera `Authorization` de tus llamadas.
+
+El canje del código se ve así:
+
+```shell
+curl -X POST "ACCOUNT_URL/realms/{realm_uid}/oauth/token" \
+  -d "grant_type=authorization_code" \
+  -d "code=EL_CODIGO" \
+  -d "client_id=EL_UID_DEL_CLIENTE" \
+  -d "client_secret=EL_SECRETO_DEL_CLIENTE" \
+  -d "redirect_uri=TU_URI_DE_REDIRECCION"
+```
+
+Y una llamada ya autenticada, así:
+
+```shell
+curl -X GET "ACCOUNT_URL/api/customers/realms/{realm_uid}/me" \
+  -H "Authorization: Bearer EL_ACCESS_TOKEN"
+```
+
+El reino reconoce `public` como scope por defecto y `admin` como único scope opcional. El `scope` que pidas tiene que estar entre esos valores y, si el cliente OAuth define **Scopes**, también dentro de los suyos; si no, la autorización falla antes de entregar el código.
+
+Los clientes públicos, como una aplicación móvil o un front sin backend, pueden usar PKCE: si envías `code_challenge` y `code_challenge_method` en el paso de autorización, tienes que enviar el `code_verifier` correspondiente al canjear el código.
+
+:::warning Atención
+El cliente OAuth pertenece al reino donde lo creaste y sólo puede autorizar usuarios de ese mismo reino. Si tu cuenta tiene varios reinos, necesitas un cliente por cada uno.
+:::
+
+:::warning Atención
+El access token no lleva vencimiento propio, pero eso no lo hace eterno: queda amarrado a la sesión del usuario que autorizó el flujo. Cuando esa sesión caduca por la política de expiración de sesiones del reino, cuando el usuario cierra sesión o cuando sus sesiones se revocan desde el panel, el token deja de servir. Mientras se sigue usando, la sesión se renueva sola antes de vencer, así que un token en uso continuo no se cae por sí solo.
+:::
+
+### Errores de autenticación
+
+Todos los endpoints de la API de Customers comparten estos cuerpos de error:
+
+| Código | Cuerpo | Cuándo ocurre |
+|--------|--------|---------------|
+| `401` | <code v-pre>{"error":{"user_session":"user not found"}}</code> | La petición no trae credenciales utilizables, el access token no corresponde a un usuario del reino o el usuario está inactivo. |
+| `401` | <code v-pre>{"error":{"grant_expired":"session expired"}}</code> | La credencial identifica a un usuario, pero la sesión que la respalda venció o fue revocada. |
+| `403` | <code v-pre>{"error":{"pending_password_reset":"..."}}</code> | El usuario tiene pendiente el cambio de contraseña porque un administrador lo creó o le asignó una contraseña. Toda llamada responde así hasta que el usuario inicia sesión en el reino con su nombre de usuario y contraseña y define una nueva. Crear un usuario en un reino con [Soft login](/es/platform/customers/settings.html#soft-login) activo no deja su contraseña pendiente. |
+| `404` | <code v-pre>{}</code> | El `realm_uid` de la URL no corresponde a ningún reino activo de la cuenta o, en un dominio personalizado, no corresponde al reino de ese dominio. |
+
+:::tip Tip
+Separar los dos `401` te ahorra tiempo de depuración. `user_session` significa que nunca llegó una credencial utilizable, así que revisa la cabecera `Authorization` o la cookie. `grant_expired` significa que la credencial era correcta y lo que se acabó fue la sesión, así que corresponde volver a autenticar al usuario en vez de reintentar.
+:::
+
 ## API de Customers
 
 Accede a la API de Customers para gestionar reinos y usuarios a través de la URL `ACCOUNT_URL/api/customers/docs`. Ejemplos de endpoints:
@@ -18,9 +97,7 @@ Accede a la API de Customers para gestionar reinos y usuarios a través de la UR
 
 ### Tokens delegados
 
-Al habilitar la opción de [**Mostrar información de delegación**](/es/platform/core/integrations/identity-providers) en tus proveedores de identidad, al hacer uso de la API `account_url/api/customers/realms/{realm_uid}/me`, obtendrás un JSON adicionado con información de tokens delegados parecido a este:
-
-Si habilitas la opción de [**Mostrar información de delegación**](/es/platform/core/integrations/identity-providers) en los proveedores de identidad, el endpoint `account_url/api/customers/realms/{realm_uid}/me` incluirá un JSON con información de tokens delegados:
+Si habilitas la opción de [**Mostrar información de delegación**](/es/platform/core/integrations/identity-providers.html#configuraciones-opcionales-de-la-integracion) en un proveedor de identidad OpenID Connect, el endpoint `account_url/api/customers/realms/{realm_uid}/me` incluirá un JSON con información de tokens delegados:
 
 
 ``curl -X GET test.modyo.com/api/customers/realms/miRealm/me``
@@ -48,12 +125,233 @@ Si habilitas la opción de [**Mostrar información de delegación**](/es/platfor
       "uuid":"af57d947-69dc-4ed7-b5af-418c957d827f",
       "access_token":"TOKEN",
       "access_token_expires_in":300,
-      "access_token_expires_in_datetime":"2021-04-15T21:42:55.995+00:00"
+      "access_token_expires_in_datetime":"2021-04-15T21:42:55.995+00:00",
+      "revalidate_in":280
    }
 ```
 
+`revalidate_in` indica cuántos segundos faltan para que el access token delegado deba renovarse. Si el proveedor tiene marcada la opción **Activar refresh token**, el plazo descuenta el margen de **Tiempo en segundos para la anticipación preventiva del refresh token**. Cuando el plazo ya se cumplió, vale `0`.
+
 :::tip Tip
-En caso de no tener habilitada la opción **Mostrar información de delegación**, se mostrará null (vacío).
+`delegated_token` solo trae datos cuando el usuario inició la sesión actual con un proveedor OpenID Connect que tiene marcada la opción **Mostrar información de delegación**. En cualquier otro caso es `null`, incluso cuando el usuario entró con sus credenciales de Modyo, con SAML, Google u OAuth2, aunque otro proveedor del reino tenga la opción activa.
+:::
+
+### Actualizar la información del usuario
+
+Con `PUT ACCOUNT_URL/api/customers/realms/{realm_uid}/me` el usuario de la sesión actualiza sus propios datos. Además de los atributos del perfil, el cuerpo acepta `custom_fields` como un arreglo de pares `key` y `value`.
+
+:::warning Atención
+Los custom fields que no tengan marcadas **Visible para usuarios de los sitios** y **Editable por usuarios de los sitios** en la [configuración del reino](/es/platform/customers/settings.html#custom-fields) se descartan en silencio: la respuesta es `200`, el resto de los atributos se guarda y esos campos conservan su valor anterior, sin ningún error que lo indique.
+:::
+
+## Eventos del usuario
+
+`GET ACCOUNT_URL/api/customers/realms/{realm_uid}/events`
+
+Devuelve los [eventos de negocio](/es/platform/customers/events.html) del usuario de la sesión, del más reciente al más antiguo. Es el mismo registro que un administrador ve en **Customers > Reinos > Eventos**, acotado a ese usuario. También está descrito en la referencia interactiva de `ACCOUNT_URL/api/customers/docs`.
+
+Acepta estos parámetros, todos opcionales:
+
+| Parámetro | Descripción |
+|-----------|-------------|
+| `sort_by` | Campo por el que ordenar: `created_at`, que es el valor por defecto, o `type` para ordenar por el tipo del evento. |
+| `order` | `asc` o `desc`. Por defecto `desc`. Cualquier otro valor se trata como `desc`. |
+| `page` | Página a devolver. Por defecto `1`. |
+| `per_page` | Elementos por página. Por defecto `10` y como máximo `100`. |
+| `not_impersonated` | Con cualquier valor presente, deja fuera los eventos generados mientras un administrador estaba [impersonando al usuario](/es/platform/customers/users.html#impersonado). |
+
+Los eventos llegan bajo la raíz `events` y la paginación en `meta`:
+
+```json
+{
+  "events": [
+    {
+      "title": "Inicio de sesión",
+      "description": "Reino: Banca Personal",
+      "created_at": "2026-05-12T14:03:21.000+00:00"
+    }
+  ],
+  "meta": {
+    "total_entries": 128,
+    "per_page": 10,
+    "current_page": 1,
+    "total_pages": 13
+  }
+}
+```
+
+`title` es el nombre del tipo de evento y `description` el reino donde ocurrió. Los dos llegan como textos ya traducidos, listos para mostrar. El catálogo completo de tipos está en [Tipos de evento](/es/platform/customers/events.html#tipos-de-evento).
+
+:::warning Atención
+La respuesta no incluye un identificador del evento ni su tipo técnico: sólo `title`, `description` y `created_at`. Como `title` es un texto traducido, no sirve para distinguir eventos en tu código, y los eventos de tipos propios lo traen vacío porque no tienen etiqueta. Usa este endpoint para mostrar un historial, no para tomar decisiones sobre el tipo de evento.
+:::
+
+## Respuestas de originación
+
+### Consultar una respuesta
+
+`GET ACCOUNT_URL/api/customers/realms/{realm_uid}/submissions/{uuid}`
+
+Devuelve la [respuesta de originación](/es/platform/customers/origination.html#gestion-de-respuestas) identificada por `uuid`, siempre que pertenezca al usuario de la sesión. Si el identificador no existe o la respuesta es de otro usuario, el endpoint devuelve `404`.
+
+El cuerpo trae los siguientes atributos:
+
+| Atributo | Descripción |
+|----------|-------------|
+| `id`, `uuid` | Identificadores de la respuesta. |
+| `status` | `not_started`, `pending`, `completed` o `canceled`. |
+| `progress` | Porcentaje de tareas completadas, como texto. Por ejemplo, `25%`. |
+| `due` | Texto ya armado con la fecha límite y su estado, listo para mostrar. |
+| `due_deadline_at` | Fecha y hora límite sin formatear, con los días de extensión incluidos. Es `null` cuando la originación no tiene plazo configurado, cuando el disparador del plazo todavía no ocurre o cuando la respuesta no ha comenzado, está completada o está cancelada. |
+| `due_label` | Etiqueta que reemplaza a la fecha cuando no hay fecha límite, como `No iniciado`, `Sin vencimiento` o `--`. Es `null` cuando `due_deadline_at` trae un valor. |
+| `due_with_time` | `true` si la duración del plazo de la originación incluye horas, así que la fecha límite debe mostrarse con su hora. |
+| `due_status_label` | Etiqueta del estado del plazo entre paréntesis, como `(A tiempo)`, `(Vence pronto)` o `(Vencido)`. Es `null` cuando la respuesta no está pendiente. |
+| `due_extension_days` | Días de extensión otorgados al plazo, o `null` si la originación no tiene plazo configurado. |
+| `created_at`, `updated_at`, `started_at` | Fechas de creación, de última actualización y de inicio de la respuesta. |
+| `completed_at`, `canceled_at` | Fechas en que se completó y en que se canceló la respuesta, o `null` si eso no ha ocurrido. Una respuesta completada y después cancelada trae las dos. |
+| `origination_name`, `origination_uuid` | Nombre e identificador de la originación. |
+| `cancellation_reason` | Razón de cancelación ingresada al cancelar la respuesta, o `null`. |
+| `user` | Usuario dueño de la respuesta, con `id`, `uuid`, `name`, `first_name` y `last_name`. |
+| `assignee` | Administrador o grupo asignado, o `null` si la respuesta no está asignada. |
+| `tasks` | Arreglo con las respuestas a las tareas de la originación. |
+
+:::tip Tip
+`due`, `due_label` y `due_status_label` son textos pensados para mostrarse tal cual. Para tomar decisiones en tu código usa `status` y `due_deadline_at`.
+:::
+
+#### El objeto assignee
+
+Hasta la versión 10.1, `assignee` era un objeto plano con los datos del administrador asignado: `id`, `uuid`, `name`, `first_name` y `last_name`. Desde 10.2 una respuesta puede quedar asignada a un grupo completo o a un administrador elegido dentro de un grupo, como se describe en [Asignar respuesta](/es/platform/customers/origination.html#asignar-respuesta), así que `assignee` incorpora el atributo `type` y el resto de su contenido cambia según ese valor:
+
+| `type` | Atributos |
+|--------|-----------|
+| `group` | `id` y `name` del grupo asignado, y `label` con el nombre del grupo. No trae `uuid`, `first_name` ni `last_name`. |
+| `user_in_group` | `id`, `uuid`, `name`, `first_name` y `last_name` del administrador, `group_id` y `group_name` del grupo desde el que fue elegido, y `label` con el formato `Nombre del administrador (Nombre del grupo)`. |
+| `user` | `id`, `uuid`, `name`, `first_name` y `last_name` del administrador, y `label` con su nombre. |
+
+```json
+{
+  "assignee": {
+    "type": "group",
+    "id": 14,
+    "name": "Ejecutivos",
+    "label": "Ejecutivos"
+  }
+}
+```
+
+:::warning Atención
+Si tu aplicación lee `assignee.uuid` sin revisar `type`, deja de funcionar cuando la respuesta está asignada a un grupo: esa variante no incluye `uuid` y su `id` corresponde al grupo, no a un administrador. Revisa siempre `assignee.type` antes de leer el resto de los atributos y usa `assignee.label` cuando solo necesites mostrar el asignado.
+:::
+
+#### Las respuestas a las tareas
+
+Cada elemento de `tasks` trae `task`, con el `uid`, `name`, `type` y `step_name` de la tarea; `status`, con `not_started`, `pending` o `completed`; `user_id`; los datos del asignado de esa tarea en `assignee_id`, `assignee_group_id`, `assignee_context_group_id` y `assignee_label`; `completed_at`, con la fecha en que se completó la tarea, que vuelve a `null` si la tarea se reabre, y `updated_at`. Las respuestas a tareas cuya tarea ya no existe en la originación no se incluyen en el arreglo. Tampoco se incluyen las tareas que una regla de [lógica condicional](/es/platform/customers/origination.html#asignar-tareas-con-logica-condicional) asignó antes de que el flujo llegara a ellas, mientras no comienzan.
+
+Según el tipo de tarea, cada elemento agrega estos atributos:
+
+| Tipo de tarea | Atributos adicionales |
+|---------------|-----------------------|
+| [Input](/es/platform/customers/origination.html#input) | `fields`, con las respuestas del usuario. |
+| [Revisión pendiente](/es/platform/customers/origination.html#revision-pendiente) | `content`. |
+| [Validación](/es/platform/customers/origination.html#validacion) | `reviews`, con un elemento por cada tarea a validar: `task_uid`, `task_name`, `task_type`, `is_hidden` y `review`, con la última revisión de esa tarea o `null`. |
+| [Firma](/es/platform/customers/origination.html#firma) | `signature_response`. |
+| [Verificación de Identidad](/es/platform/customers/origination.html#verificacion-de-identidad) | `verification_status`, `document_status`, `biometric_status` y `verification_data`. |
+| [Snippet de código](/es/platform/customers/origination.html#snippet-de-codigo) | `data`, con el JSON que guardó el snippet, o un objeto vacío. |
+| [Proceso de originación](/es/platform/customers/origination.html#proceso-de-originacion) | `flow_response`. |
+| [Invitación](/es/platform/customers/origination.html#invitacion) | `invitations`, con las invitaciones de la tarea. |
+| [Confirmación](/es/platform/customers/origination.html#confirmacion) | `confirmed`, `confirmed_items` y `confirmation_metadata`. |
+
+:::warning Atención
+Las tareas de revisión pendiente dejaron de entregar la clave booleana `completed` en 10.2. Para saber si la revisión terminó, compara `status` con `completed`.
+:::
+
+:::warning Atención
+En `fields`, la respuesta a una pregunta [Fecha](/es/platform/customers/forms.html#fecha) sin la opción **Mostrar hora** representa solo un día y llega como las 12:00 UTC de esa fecha, no como la medianoche. Para obtener el día, toma la parte de fecha del valor expresado en UTC: si lo conviertes a otra zona horaria, la fecha puede cambiar.
+:::
+
+## Verificación de código OTP
+
+`POST ACCOUNT_URL/api/customers/realms/{realm_uid}/verify_otp_code`
+
+Verifica el código de un solo uso del [Soft login](/es/platform/customers/settings.html#soft-login). Es el único endpoint de la API de Customers que no requiere una sesión iniciada. El cuerpo lleva `identifier`, con el nombre de usuario, y `code`, con el código recibido.
+
+| Código | Significado |
+|--------|-------------|
+| `200` | El código es válido. El cuerpo llega como un objeto vacío. |
+| `409` | El código no es válido o ya expiró. |
+| `429` | Se superó el máximo de cinco intentos fallidos. Nuevo en 10.2. |
+
+Tanto el `409` como el `429` traen el arreglo `errors` con un texto listo para mostrar:
+
+```json
+{
+  "errors": ["Has excedido el número máximo de intentos."]
+}
+```
+
+:::warning Atención
+Después de cinco intentos fallidos, el endpoint responde `429` incluso cuando el código enviado es el correcto, porque la validación corta en el conteo de intentos antes de comparar el código. Trata el `429` como un caso distinto del `409`: el usuario no puede seguir reintentando y la única salida es pedir un código nuevo, que reinicia el contador.
+:::
+
+El código deja de ser válido cuando pasa el tiempo definido en **Validez de duración de OTP (en minutos)** del reino, cinco minutos por defecto. Revisa [Soft login](/es/platform/customers/settings.html#soft-login) para el detalle de esa configuración.
+
+## Adjuntos de las respuestas
+
+Las preguntas de tipo archivo de una originación reciben sus adjuntos por estos dos endpoints. Ambos requieren una sesión iniciada, trabajan siempre sobre los archivos del usuario de la sesión y también están descritos en la referencia interactiva de `ACCOUNT_URL/api/customers/docs`.
+
+### Subir un archivo
+
+`POST ACCOUNT_URL/api/customers/realms/{realm_uid}/private_upload/answer`
+
+Envía una petición `multipart/form-data` con estos parámetros:
+
+- `file`: el archivo a subir. Es obligatorio.
+- `question_id`: identificador de la pregunta de tipo archivo a la que corresponde el adjunto. Es opcional.
+- `locale`: idioma de los mensajes de error, por ejemplo `es`. Es opcional. Si no lo envías, los mensajes usan el idioma del usuario o, si no tiene uno, el de la cuenta.
+
+Con `200`, el cuerpo describe el archivo guardado:
+
+```json
+{
+  "id": 431,
+  "uuid": "586e591c-1f07-4f6d-b886-a66fea953afe",
+  "name": "comprobante.pdf",
+  "size": 60548,
+  "url": "/uploads/586e591c-1f07-4f6d-b886-a66fea953afe/original/comprobante.pdf",
+  "expiring_url": "https://archivos.ejemplo.com/586e591c-1f07-4f6d-b886-a66fea953afe/original/comprobante.pdf?signature=..."
+}
+```
+
+El archivo queda guardado como privado y asociado al usuario de la sesión, así que `url` no es de acceso público. Para mostrar o enlazar el archivo usa `expiring_url`, una URL firmada que deja de servir a los cinco minutos por defecto.
+
+Usa el `id` como valor de la respuesta a la pregunta de tipo archivo, enviado como texto, por ejemplo `"431"`. El `uuid` solo sirve para eliminar el adjunto.
+
+:::warning Atención
+Si envías el `id` como número o usas el `uuid` como valor de la respuesta, la respuesta se guarda sin archivo y sin ningún error que lo indique.
+:::
+
+| Código | Significado |
+|--------|-------------|
+| `401` | No hay una sesión iniciada. |
+| `404` | El `question_id` enviado no corresponde a ninguna pregunta de tipo archivo. |
+| `422` | El archivo no pasó las validaciones. |
+
+El cuerpo del `422` trae el arreglo `errors` con un texto por cada motivo de rechazo, prefijado con el nombre del archivo. Un archivo se rechaza cuando falta, cuando su extensión no está permitida en la plataforma, cuando enviaste `question_id` y su extensión no está entre las permitidas por esa pregunta, cuando su nombre tiene más de un punto, cuando su contenido no corresponde a la extensión declarada o cuando supera el tamaño máximo por archivo, de 10 MB por defecto.
+
+### Eliminar un archivo
+
+`DELETE ACCOUNT_URL/api/customers/realms/{realm_uid}/private_upload/answer/{uuid}`
+
+Elimina el adjunto identificado por `uuid`. Con `200` el cuerpo llega vacío.
+
+| Código | Significado |
+|--------|-------------|
+| `401` | No hay una sesión iniciada. |
+| `404` | No existe un adjunto con ese `uuid` entre los archivos del usuario de la sesión. |
+
+:::warning Atención
+La eliminación es inmediata y no se puede deshacer. Si el adjunto ya estaba asociado a la respuesta de una pregunta, esa respuesta queda sin archivo.
 :::
 
 ## API de Zendesk

@@ -13,22 +13,22 @@ Dynamic Framework is a React component framework specialized for financial appli
 ```
 @dynamic-framework/
 ├── ui-react/           # React components
-│   ├── components/     # 30+ UI components
+│   ├── components/     # more than 46 UI components
 │   ├── hooks/         # Custom React hooks
 │   └── utils/         # Utilities
-├── styles/            # Design system
+├── styles/            # Design system (Bootstrap 5.3)
 │   ├── theme/         # Variables and themes
 │   └── components/    # Per-component styles
-└── widgets/           # Standalone widgets
+└── contexts/          # React contexts
 ```
 
 ### Technology Stack
 
-- **React 18+**: With Hooks, Suspense and Concurrent Features
+- **React 19.x**: With Hooks, Suspense and Concurrent Features (requires ~19.2.1)
 - **TypeScript**: Full static typing
-- **Bootstrap 5.3+**: Design system foundation
-- **Webpack 5**: Module Federation for micro frontends
-- **CSS Modules**: Encapsulated styles
+- **Bootstrap 5.3.8**: Design system foundation
+- **Vite**: Fast builds and HMR for development
+- **SCSS/Bootstrap**: Component styles with Bootstrap 5 variables
 - **PostCSS**: Advanced CSS processing
 
 ## Core Components
@@ -36,38 +36,35 @@ Dynamic Framework is a React component framework specialized for financial appli
 ### Component Categories
 
 1. **Layout Components**
-   - Container, Grid, Row, Col
+   - DBox, DCard, DLayout, DCollapse
    - Flexbox utilities
    - Spacing system
 
-2. **Data Display**
-   - Tables with sorting and filtering
-   - Cards with multiple variants
-   - Lists and ListGroups
+2. **Navigation Components**
+   - DTabs for tab navigation
+   - DStepper for multi-step flows
+   - DPaginator for pagination
 
-3. **Forms & Inputs**
-   - Input with integrated validation
-   - Select, Checkbox, Radio
-   - DatePicker, TimePicker
-   - Form validation hooks
+3. **Form Components**
+   - DInput, DInputPassword, DInputCurrency
+   - DSelect, DInputSelect, DDatePicker
+   - DInputCheck, DInputSwitch, DPasswordStrengthMeter
 
-4. **Navigation**
-   - Responsive Navbar
-   - Sidebar with sub-menus
-   - Breadcrumbs
-   - Pagination
+4. **Data Display Components**
+   - DListGroup, DTimeline, DCarousel
+   - DCurrencyText, DProgress
 
-5. **Feedback**
-   - Alerts and Toasts
-   - Modals and Dialogs
-   - Progress indicators
-   - Spinners and Skeletons
+5. **Feedback Components**
+   - DAlert, DToast, DModal, DOffcanvas
+   - DPopover, DTooltip, DDropdown
 
-6. **Financial Components**
-   - AccountCard
-   - TransactionList
-   - BalanceDisplay
-   - CurrencyInput
+6. **Visual Components**
+   - DAvatar, DBadge, DChip
+   - DButton, DButtonIcon, DIcon
+
+7. **Financial Components**
+   - DCreditCard, DVoucher
+   - DOtp
 
 ## Implementation Patterns
 
@@ -75,138 +72,197 @@ Dynamic Framework is a React component framework specialized for financial appli
 
 ```jsx
 // Flexible composition
-<Card>
-  <Card.Header>
-    <Card.Title>Title</Card.Title>
-  </Card.Header>
-  <Card.Body>
+<DCard>
+  <DCard.Header>
+    <h5 className="card-title mb-0">Title</h5>
+  </DCard.Header>
+  <DCard.Body>
     Content
-  </Card.Body>
-  <Card.Footer>
-    <Button>Action</Button>
-  </Card.Footer>
-</Card>
-```
-
-### Hook Pattern
-
-```jsx
-// Custom hooks for reusable logic
-const { 
-  data, 
-  loading, 
-  error, 
-  refetch 
-} = useApiData('/api/accounts');
-```
-
-### Theme Provider Pattern
-
-```jsx
-// Centralized theming
-<ThemeProvider theme={customTheme}>
-  <App />
-</ThemeProvider>
+  </DCard.Body>
+  <DCard.Footer>
+    <DButton text="Action" />
+  </DCard.Footer>
+</DCard>
 ```
 
 ## Design System
 
 ### Design Tokens
 
-```scss
-// Customizable CSS variables
-:root {
-  // Colors
-  --df-primary: #0066ff;
-  --df-secondary: #6c757d;
-  
-  // Spacing
-  --df-spacing-xs: 0.25rem;
-  --df-spacing-sm: 0.5rem;
-  --df-spacing-md: 1rem;
-  
-  // Typography
-  --df-font-family: 'Inter', sans-serif;
-  --df-font-size-base: 1rem;
-  
-  // Borders
-  --df-border-radius: 0.375rem;
-  --df-border-width: 1px;
+Dynamic UI exposes its design system as `--bs-*` custom properties on the `:root, [data-bs-theme="dynamic"]` selector. A theme is a stylesheet loaded after the Dynamic CSS that overrides those variables with the same selector. Colors are overridden on their `R, G, B` triplet (`--bs-body-bg-rgb`), never on the wrapper (`--bs-body-bg`). Changing the color of a role, such as `primary`, also includes its full ramp: the contract, with ramps, typography and zones, is in [Theming](customization/theming.html).
+
+```css
+:root,
+[data-bs-theme="dynamic"] {
+  --bs-body-bg-rgb: 255, 255, 255;
+  --bs-border-radius: 0.75rem;
 }
 ```
 
 ### Responsive Breakpoints
 
+Dynamic Framework uses Bootstrap 5's standard breakpoints:
+
+| Breakpoint | Class infix | Dimensions |
+|------------|-------------|------------|
+| Extra small | None | <576px |
+| Small | `sm` | ≥576px |
+| Medium | `md` | ≥768px |
+| Large | `lg` | ≥992px |
+| Extra large | `xl` | ≥1200px |
+| Extra extra large | `xxl` | ≥1400px |
+
+#### Using Breakpoints in CSS
+
 ```scss
-// Bootstrap 5 breakpoints
-$breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-  xxl: 1400px
-);
+// SCSS with Dynamic Framework abstracts (includes Bootstrap mixins)
+@use "@dynamic-framework/ui-react/src/style/abstracts/_+import" as *;
+
+.my-component {
+  padding: 1rem;
+
+  @include media-breakpoint-up(md) {
+    padding: 2rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding: 3rem;
+  }
+}
 ```
+
+#### Using Breakpoints in React
+
+Dynamic exports responsive hooks that match Bootstrap 5 breakpoints:
+
+```tsx
+import {
+  useMediaBreakpointUpSm,
+  useMediaBreakpointUpMd,
+  useMediaBreakpointUpLg,
+} from '@dynamic-framework/ui-react';
+
+function ResponsiveComponent() {
+  const isSmUp = useMediaBreakpointUpSm();
+  const isMdUp = useMediaBreakpointUpMd();
+  const isLgUp = useMediaBreakpointUpLg();
+
+  return (
+    <div>
+      {!isSmUp && <MobileLayout />}
+      {isSmUp && !isLgUp && <TabletLayout />}
+      {isLgUp && <DesktopLayout />}
+    </div>
+  );
+}
+```
+
+Available hooks: `useMediaBreakpointUpSm`, `useMediaBreakpointUpMd`, `useMediaBreakpointUpLg`, `useMediaBreakpointUpXl`, `useMediaBreakpointUpXxl`, and `useMediaQuery` for custom queries.
 
 ## Micro Frontends
 
-### Module Federation Config
+Dynamic Framework widgets are self-contained micro frontends that deploy as independent bundles to the Modyo platform.
 
-```javascript
-// webpack.config.js
-module.exports = {
-  plugins: [
-    new ModuleFederationPlugin({
-      name: 'app',
-      filename: 'remoteEntry.js',
-      exposes: {
-        './Component': './src/Component'
-      },
-      shared: {
-        react: { singleton: true },
-        'react-dom': { singleton: true },
-        '@dynamic-framework/ui-react': { singleton: true }
-      }
-    })
-  ]
-};
+### Widget Architecture
+
+Each widget is a standalone React application with its own entry point:
+
+```
+my-widget/
+├── src/
+│   ├── main.tsx         # Entry point
+│   ├── App.tsx          # Root component
+│   ├── components/      # Widget components
+│   ├── providers/       # React providers
+│   ├── services/        # API services
+│   └── store/           # Zustand stores
+├── index.html           # Development template (Vite entry)
+└── vite.config.ts       # Build configuration
 ```
 
-### Lazy Loading
+### Entry Point Pattern
 
-```jsx
-// Automatic code splitting
-const Dashboard = lazy(() => import('./Dashboard'));
+Widgets use a provider-based architecture with `main.tsx` as the entry point:
+
+```tsx
+// src/main.tsx
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { DContextProvider } from '@dynamic-framework/ui-react';
+
+import '@dynamic-framework/ui-react/dist/css/dynamic-ui.css';
+import App from './App';
+import './config/i18nConfig';
+import './styles/base.scss';
+
+const container = document.getElementById('root');
+if (container) {
+  createRoot(container).render(
+    <StrictMode>
+      <DContextProvider>
+        <App />
+      </DContextProvider>
+    </StrictMode>
+  );
+}
+```
+
+```tsx
+// src/App.tsx
+import { QueryProvider } from './providers/QueryProvider';
+import { ErrorBoundary } from './components';
 
 function App() {
   return (
-    <Suspense fallback={<Spinner />}>
-      <Dashboard />
+    <QueryProvider>
+      <ErrorBoundary>
+        {/* Widget content */}
+      </ErrorBoundary>
+    </QueryProvider>
+  );
+}
+
+export default App;
+```
+
+This pattern ensures:
+- Proper provider composition (Dynamic Context, React Query, Error Boundary)
+- Configuration initialization on import
+- Strict mode for development checks
+
+### Modyo Integration
+
+Widgets are deployed to Modyo using the Modyo CLI. The platform handles bundle hosting, versioning, and injection into pages automatically.
+
+Configuration can be passed to widgets via Liquid variables (see [Liquid Environment Pattern](development/widgets.html#liquid-environment-pattern)).
+
+### When to Use Internal Code Splitting
+
+For larger widgets with multiple views, use React.lazy for internal routes:
+
+```tsx
+// Only for widgets with multiple internal routes
+import { lazy, Suspense } from 'react';
+import { DProgress } from '@dynamic-framework/ui-react';
+
+const AccountDetails = lazy(() => import('./views/AccountDetails'));
+const TransferForm = lazy(() => import('./views/TransferForm'));
+
+function App() {
+  return (
+    <Suspense fallback={<DProgress />}>
+      <Routes>
+        <Route path="/" element={<AccountDetails />} />
+        <Route path="/transfer" element={<TransferForm />} />
+      </Routes>
     </Suspense>
   );
 }
 ```
 
-## Performance
-
-### Built-in Optimizations
-
-- **Tree Shaking**: Import only what's needed
-- **Code Splitting**: On-demand loading
-- **Memoization**: React.memo on components
-- **Virtual Scrolling**: For long lists
-- **Image Optimization**: Lazy loading images
-- **CSS-in-JS**: Critical styles inline
-
-### Bundle Size
-
-```
-@dynamic-framework/ui-react: ~150KB gzipped
-├── react: 42KB
-├── components: 85KB
-└── styles: 23KB
-```
+:::tip When to Split
+Use internal code splitting only when your widget has multiple distinct views. For simple, single-view widgets, the overhead isn't worth it.
+:::
 
 ## Testing
 
@@ -214,35 +270,35 @@ function App() {
 
 ```json
 {
-  "jest": "^29.0.0",
-  "@testing-library/react": "^14.0.0",
-  "@testing-library/jest-dom": "^6.0.0",
-  "cypress": "^13.0.0"
+  "vitest": "^3.0.0",
+  "@testing-library/react": "^16.3.0",
+  "@testing-library/jest-dom": "^6.0.0"
 }
 ```
 
 ### Testing Patterns
 
 ```jsx
+import { describe, it, expect, vi } from 'vitest';
+
 // Unit testing
 describe('Button', () => {
   it('renders correctly', () => {
-    render(<Button>Click me</Button>);
+    render(<Button text="Click me" />);
     expect(screen.getByText('Click me')).toBeInTheDocument();
   });
 });
 
 // Integration testing
-describe('TransferForm', () => {
-  it('submits transfer data', async () => {
-    const onSubmit = jest.fn();
-    render(<TransferForm onSubmit={onSubmit} />);
-    
-    // Fill form...
-    fireEvent.click(screen.getByText('Submit'));
-    
+describe('DInput', () => {
+  it('validates input correctly', async () => {
+    const onChange = vi.fn();
+    render(<DInput id="test" onChange={onChange} />);
+
+    fireEvent.change(screen.getByRole('textbox'), { target: { value: 'test' } });
+
     await waitFor(() => {
-      expect(onSubmit).toHaveBeenCalled();
+      expect(onChange).toHaveBeenCalled();
     });
   });
 });
@@ -253,9 +309,9 @@ describe('TransferForm', () => {
 ### Development Server
 
 ```bash
-# Webpack Dev Server with HMR
-npm start
-# Available at http://localhost:8080
+# Vite dev server with HMR
+npm run dev
+# Available at http://localhost:5173
 ```
 
 ### Production Build
@@ -266,62 +322,34 @@ npm run build
 # Output in dist/
 ```
 
-### Bundle Analysis
-
-```bash
-# Bundle analyzer
-npm run analyze
-```
-
 ## Modyo Integration
 
 ### Modyo CLI
 
 ```bash
-# Initialize project
-npx @modyo/cli init
-
-# Push to Modyo
+# Push widget to Modyo
 npx @modyo/cli push
-
-# Pull from Modyo
-npx @modyo/cli pull
 ```
 
-### Widget Registration
-
-```javascript
-// Widget registration in Modyo
-window.registerWidget({
-  name: 'MyWidget',
-  component: MyWidget,
-  props: {
-    // Widget props
-  }
-});
-```
+See the [Modyo CLI documentation](/en/platform/tools/cli.html) for all available commands and options.
 
 ## Versioning
 
 ### Semantic Versioning
 
 ```
-@dynamic-framework/ui-react@1.27.0
+@dynamic-framework/ui-react@2.1.1
 │                           │ │ │
 │                           │ │ └─ Patch: Bug fixes
 │                           │ └─── Minor: New features
 │                           └───── Major: Breaking changes
 ```
 
-### Release Cycle
+## CDN Distribution
 
-- **Patch releases**: Weekly
-- **Minor releases**: Monthly
-- **Major releases**: Annually
+In addition to npm, Dynamic UI and its assets are available through a versioned CDN at `https://cdn.dynamicframework.dev/assets/{version}/ui-react`, useful as an alternative when you'd rather not install the library from npm. The files each version publishes for tools and agents are described in [Artifacts for tools and agents](development/agent-artifacts.html).
 
 ## Technical Resources
 
-- [API Reference](https://dynamic.modyo.com/docs/api)
 - [Storybook](https://react.dynamicframework.dev)
-- [GitHub](https://github.com/modyo/dynamic-framework)
 - [NPM Package](https://www.npmjs.com/package/@dynamic-framework/ui-react)

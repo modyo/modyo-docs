@@ -8,47 +8,50 @@ Modyo Insights is the platform's business intelligence center, where all data ge
 
 ## What is Modyo Insights?
 
-**Modyo Insights** centralizes and processes information from all Modyo modules to provide you with:
+**Modyo Insights** centralizes and processes information from Modyo modules and presents it in five fixed dashboards. Each one gathers the counters, charts, and filters of one module:
 
-- **Unified dashboards**: Consolidated visualization of metrics from Channels, Content, Customers, Payments, and Origination in one place
-- **Cross-analysis**: Data correlation between different modules to identify patterns and opportunities
-- **Integrated metrics**: KPIs that combine published content information, user behavior, transactions, and team activity
-- **Holistic reports**: 360° view of your digital ecosystem performance
+- [Apps](/en/platform/insights/apps.html): traffic and navigation of your web applications
+- [Customers](/en/platform/insights/customers.html): user activity, campaigns, and forms of a realm
+- [Digital Factory](/en/platform/insights/digital-factory.html): team activity on content, widgets, and pages
+- [Payments](/en/platform/insights/payments.html): orders, payment methods, and income of a realm
+- [Origination](/en/platform/insights/origination.html): origination submissions, conversion funnel, and abandonment
+
+Each dashboard is an independent screen, with its own filters and its own period. Insights does not correlate data across modules, does not generate downloadable reports, and does not allow you to create or customize dashboards. In addition, each member sees only the dashboards their role allows.
 
 ## Data Sources
 
 Modyo Insights collects and processes information from multiple sources within the platform:
 
 ### From channels
-- Site traffic and visits
-- Widget and page interactions
-- Navigation performance
-- Usage patterns by device
+- Views, unique views, unique visitors, and unique users of each app
+- Daily evolution of visits
+- Most viewed pages
+
+The Apps dashboard only records the browsing of users who signed in to the app: anonymous visits are not counted.
 
 ### From content
-- Publications and updates
-- Content performance
-- Team editorial activity
-- Asset and resource usage
+- Items created, edited, sent to review, approved, and published
+- Activity by resource type: entries, pages, widgets, and templates
+- Activity of each administrator in the editorial flow
 
 ### From customers
-- User registrations and activity
-- Segmentation and behavior
-- Form conversions
-- Campaign engagement
+- Active users, logins, and new signups
+- User activity over time
+- Reach and opens of recent campaigns
+- Responses to recent forms
 
 ### From payments
-- Transactions and orders
-- Payment methods used
-- Purchase trends
-- Processing statuses
+- Total orders, items, and income
+- Order events over time, such as creation, payment, or completion
+- Orders by payment method
+- Orders by state
 
 ### From origination
-- Completed onboarding flows
-- Conversion rates by stage
+- Total and completed submissions
+- Submissions by status and their evolution over time
+- Conversion funnel and users by step
 - Average completion time
-- Form abandonment
-- Processed documents and verifications
+- Abandonment rate
 
 ## Visualization Types
 
@@ -56,16 +59,57 @@ Modyo Insights offers different data presentation formats depending on the type 
 
 - **Key Performance Indicators (KPIs)**: Main metrics and counters showing current status in summary form
 - **Time-series charts**: Line and bar visualizations to analyze trends and evolution over time
-- **Data tables**: Detailed information with sorting and filtering capabilities for specific analysis
-- **Heat maps**: Visual representation of activity patterns and event concentration
-- **Comparative charts**: Visualizations that allow contrasting metrics between different periods or segments
+- **Lists**: Name and value panels, such as **Recent Campaigns** and **Recent Forms** in the Customers dashboard. They are not tables: they show up to five rows and cannot be sorted or filtered
+- **Heat maps**: Visual representation of activity patterns, such as **Activity by User** in the Digital Factory dashboard
+- **Pie and funnel charts**: Visualizations of proportion over the total, such as **Engagement** in the Customers dashboard or the **Conversion Funnel** in the Origination dashboard
 
 ## Analysis Capabilities
 
 Data can be analyzed and segmented using:
 
-- **Time filters**: Predefined or custom date ranges for historical analysis
-- **Contextual segmentation**: Specific filters based on the type of data being viewed
-- **Comparisons**: Period-over-period analysis to measure evolution and growth
-- **Drill-down**: Navigation from general metrics to specific details
-- **Custom views**: Dashboard configuration according to your business needs
+- **Time filters**: The date range selector, shared by the five dashboards
+- **Contextual segmentation**: The filters specific to each dashboard, such as app, space, realm, origination, order state, or payment method
+- **Comparisons**: The variation percentage of each counter against the previous period
+- **Link to detail**: In the **Recent Campaigns** and **Recent Forms** panels of the Customers dashboard, each row links to that campaign's record or to that form's responses
+
+## Date Range and Period Comparison
+
+The five dashboards share the same date range selector in the filter bar, with a closed set of options:
+
+- **Last 7 days**
+- **Last 30 days**
+- **Month to date**: from the first day of the current month until today
+- **Last 3 months**
+- **Last 6 months**
+- **Last 12 months**
+- **Custom Range**: you choose the start and end dates, and confirm with **Select**
+
+When you open a dashboard, the preselected range is **Last 7 days** in Apps and **Last 3 months** in Customers, Digital Factory, Payments, and Origination.
+
+Counters that show a percentage and an arrow compare the selected range against a period of the same length immediately before it. If you choose **Last 30 days**, the comparison is against the 30 days prior to that stretch.
+
+:::tip Tip
+When the previous period recorded no data, the counter is shown without a percentage or arrow, because there is no baseline on which to calculate the variation.
+:::
+
+## Access and Permissions
+
+Access to Insights is granted in roles with the **Organization** scope, within the **Insights** permission group. The grouped permission **Admin Insights** enables the whole module and gathers five permissions that you can also grant separately:
+
+- **View Apps Dashboards**
+- **View Customers Dashboards**
+- **View Digital Factory Dashboards**
+- **View Payments Dashboards**
+- **View Originations Dashboards**
+
+The behavior you will observe is the following:
+
+1. The **Insights** icon in the side menu appears only if the member has at least one of the five permissions. If they have none, the module is not shown.
+2. When entering from the icon, the member lands on the first dashboard they are allowed to see, in the order **Apps**, **Customers**, **Digital factory**, **Payments**, **Originations**.
+3. Each dashboard requires its own permission, so a member can see some and not others.
+
+The **Default user** and **Default admin** default roles already include **Admin Insights**. In contrast, roles with the Channels, Content, or Customers scope do not grant access to Insights: a member who only has site, space, or realm roles does not see the module.
+
+Besides the permission, the member needs the **Insights** application enabled in the **Applications access** block, either in their own settings or in one of their groups. If that checkbox is off, the platform subtracts the Insights permissions and the module is not shown, even if their role includes them. In the member's **Access** tab, neither **Default user** nor **Default admin** ticks this checkbox automatically, so you have to tick it yourself. See [access to applications](/en/platform/core/roles.html#access-to-applications).
+
+To enable only some dashboards, create a [custom role](/en/platform/core/roles.html#custom-roles) with the **Organization** scope and check only the permissions you need.

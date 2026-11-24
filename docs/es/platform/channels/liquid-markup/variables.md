@@ -108,16 +108,17 @@ Colecciones ordenadas de elementos:
 
 ### Hashes (objetos/diccionarios)
 
-Colecciones de pares clave-valor:
+Colecciones de pares clave-valor. Por ejemplo, `user.custom_fields` es un hash con los campos personalizados del usuario, indexado por la clave de cada campo:
 
 ```liquid
-{% assign config = site.metadata %}
+{% assign campos = user.custom_fields %}
+{% assign clave = '_ucf_cargo' %}
 
-{{ config.theme }}                  → Notación de punto
-{{ config['theme'] }}               → Notación de corchetes
-{{ config['color-primary'] }}       → Necesario con guiones
+{{ campos._ucf_cargo }}             → Notación de punto
+{{ campos['_ucf_cargo'] }}          → Notación de corchetes
+{{ campos[clave] }}                 → Acceso dinámico con variable
 
-{% for item in config %}
+{% for item in campos %}
   {{ item[0] }}: {{ item[1] }}     → Clave: Valor
 {% endfor %}
 ```
@@ -162,4 +163,66 @@ Modyo proporciona objetos predefinidos que contienen información del sistema:
 - `spaces`: Acceso a espacios de contenido
 - `account`: Información de la cuenta
 
-Para una lista completa y detallada de todos los objetos disponibles, consulta la sección [Objetos](/es/platform/channels/liquid-markup/objects).
+Para una lista completa y detallada de todos los objetos disponibles, consulta la sección [Objetos](/es/platform/channels/liquid-markup/objects.html).
+
+## Variables de Contexto
+
+Además de esos objetos, en cada renderizado la plataforma inyecta un conjunto de variables que describen la página que se está resolviendo. No son contenido: son el contexto con el que trabaja la plantilla, y determinan qué puedes escribir en cada vista.
+
+No todas existen en todos lados. Fuera del contexto donde se inyecta, una variable simplemente no existe y Liquid la imprime vacía, sin ningún aviso, así que un nombre mal escrito y una variable usada fuera de su contexto se ven exactamente igual en la página. Consulta [Comportamiento ante Errores de Renderizado](/es/platform/channels/liquid-markup/basics.html#comportamiento-ante-errores-de-renderizado).
+
+### Siempre disponibles
+
+Estas cuatro colecciones se inyectan en todos los renderizados, sin importar el tipo de página ni si estás en un layout, una vista, un snippet o la plantilla de un widget:
+
+| Variable | Qué contiene |
+|----------|--------------|
+| `assets` | El gestor de archivos de la cuenta. Se indexa por el UUID del archivo, como en <code v-pre>assets['uuid']</code>. |
+| `spaces` | Los espacios de contenido de la cuenta. Se indexa por el identificador del espacio, como en <code v-pre>spaces['blog']</code>. |
+| `menus` | Los menús del sitio. Se indexa por el slug del menú, como en <code v-pre>menus['main']</code>. Consulta [Navegación](/es/platform/channels/navigation.html). |
+| `vars` | Las variables globales del sitio o, en la plantilla de un widget, las de ese widget. Consulta [Variables globales](/es/platform/channels/global-variables.html). |
+
+Además, en las páginas del sitio existe `csp_nonce`, el nonce de la respuesta, que va en el atributo `nonce` de tus tags `<script>` y `<style>` inline. Consulta [Content-Security-Policy (CSP)](/es/platform/channels/sites.html#content-security-policy-csp).
+
+### Del contexto de la página
+
+| Variable | Qué contiene | Dónde existe |
+|----------|--------------|--------------|
+| `content_for_layout` | El HTML ya renderizado de la vista. Marca el punto del layout donde se inserta la página. | Solo en los layouts |
+| `page` | La página actual. Consulta [page](/es/platform/channels/liquid-markup/objects.html#page). | Todas menos la de resultados de búsqueda, los formularios y la vista previa de un widget |
+| `page_context` | El tipo de página que se resolvió, por ejemplo `context-home`, `context-custom` o `context-content`. Consulta la lista completa en [Bloque body](/es/platform/channels/liquid-markup/tags.html#bloque-body). | Todas |
+| `page_name` | El identificador del contexto con un sufijo que indica la vista, casi siempre `-show`, por ejemplo `context-content-show`. | Todas menos la vista previa de un widget |
+| `page_title` | El nombre de la página. En la portada y en la búsqueda es el texto traducido de la plataforma. | Todas menos la vista previa de un widget |
+| `page_id` | `page_name` seguido de la ruta de la página, por ejemplo `context-custom-show-contacto`. En la portada es solo `context-home-show`. | Todas menos la de resultados de búsqueda y la vista previa de un widget. Tampoco existe cuando un formulario se vuelve a mostrar con errores de validación |
+| `url` | La URL de la página. Solo en las páginas de contenido incluye además la ruta de la categoría o el slug de la entrada. En las demás no incluye la sub-ruta que se está resolviendo, como la de una página con [Delegación de rutas](/es/platform/channels/pages.html#delegacion-de-rutas) o la de un paso de Origination. `request.url` y `request.path` se calculan a partir de esta variable. | Todas menos la de resultados de búsqueda, los formularios y la vista previa de un widget |
+| `current_layout_page` | La página de la que sale el layout en uso. | Todas menos la portada, la de resultados de búsqueda, los formularios y la vista previa de un widget |
+| `page_grid` | La grilla de la página, la que se pasa a <code v-pre>{% snippet page_grid %}</code>. Consulta [grid](/es/platform/channels/liquid-markup/objects.html#grid). | Portada y páginas personalizadas |
+
+Las páginas de error del sitio, como la 404, no reciben `page_context`, `page_name`, `page_id`, `url` ni `current_layout_page`.
+
+:::tip Tip
+El tag <code v-pre>{% body %}</code> escribe `page_context`, `page_name` y `page_id` en el atributo `class` de la etiqueta `body`. Mirar el código fuente de una página publicada te dice en qué contexto se resolvió, sin tener que imprimir nada en la plantilla.
+:::
+
+### De las páginas de contenido
+
+| Variable | Qué contiene |
+|----------|--------------|
+| `page_scope` | `index` cuando se resolvió el listado y `show` cuando se resolvió una entrada. |
+| `entries` | Las entradas del listado. Solo cuando `page_scope` es `index`. |
+| `entry` | La entrada que corresponde al slug de la URL. Solo cuando `page_scope` es `show`. |
+| `category_path` | La ruta de categoría tomada de la URL, sin el slug de la entrada. Queda vacía cuando la URL no trae categoría. |
+| `category` | La categoría que corresponde a `category_path`. |
+| `space_id` | El id del espacio de contenido al que pertenece el tipo de contenido de la página. |
+
+### De la página de resultados de búsqueda
+
+| Variable | Qué contiene |
+|----------|--------------|
+| `site_search` | La búsqueda ya resuelta, con sus resultados. Consulta [site_search](/es/platform/channels/liquid-markup/objects.html#site-search). |
+| `params_query` | El término buscado, saneado y escapado, listo para imprimirse. Solo existe si la URL trae el parámetro. |
+| `params_more` | El valor del parámetro `more` de la URL, saneado y escapado. El buscador no lo usa para filtrar: queda disponible por si tu plantilla lo necesita. Solo existe si la URL lo trae. |
+
+### De las páginas de Origination
+
+En las páginas de Origination se inyectan además `origination`, el flujo de la página; `pending_submissions`, las respuestas pendientes del usuario en ese flujo; `submission`, la respuesta que se está resolviendo; y, mientras esa respuesta está en curso, `current_step` y `current_task`.

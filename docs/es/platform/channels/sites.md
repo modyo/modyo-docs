@@ -6,11 +6,15 @@ search: true
 
 Una aplicación web (web app) despliega el contenido creado en Content y Channels para crear tu canal digital personalizado. En la aplicación web se lleva a cabo todo el desarrollo, diseño y flujo de navegación.
 
-Una web app puede estar en uno de estos tres estados:
+Una aplicación web puede estar en uno de estos tres estados, que eliges en **Configuración de la aplicación** > [General](/es/platform/channels/sites.html#general) > **Cambiar estado**:
 
-- **Habilitado**: Estado por defecto de las aplicaciones web recién creadas y aquellas que están habilitadas para uso.
-- **Cambios pendientes**: Existen modificaciones pendientes en la aplicación web. Un administrador puede verificar los cambios y publicar la aplicación web.
-- **Deshabilitado**: No es posible acceder a la aplicación web.
+- **Habilitado**: La aplicación web es editable y visible para el público.
+- **Editable**: La aplicación web es modificable, pero no visible para el público: requiere iniciar sesión para acceder. Es el estado con el que nace toda aplicación web recién creada.
+- **Deshabilitado**: La aplicación web no es editable ni accesible.
+
+:::tip Estados transitorios
+Además de estos tres, la plataforma usa dos estados que asigna por su cuenta y que no puedes elegir en el selector: el de una copia mientras se está clonando y el de una aplicación mientras se está eliminando. En ambos casos la aplicación no aparece en el listado de aplicaciones mientras dura el proceso.
+:::
 
 ## Crear una Aplicación Web
 
@@ -19,14 +23,104 @@ Para crear una nueva web app, sigue estos pasos:
 1. En el menú lateral, haz click en **channels**.
 1. Haz click en **nueva aplicación**.
 1. Escribe el nombre y el host (ruta principal de la aplicación web).
+1. En **Tema**, selecciona el tema con el que parte la aplicación web.
 1. Si es necesario, selecciona a qué reino pertenece.
 1. Haz click en **crear**.
 
-Una vez creada, la aplicación web se habilita automáticamente y el sistema te lleva a la pantalla de resumen.
+Una vez creada, la aplicación web queda en estado **Editable** y el sistema te lleva a la pantalla de [Resumen](/es/platform/channels/sites.html#resumen-de-la-aplicacion). Para que sea visible al público, cambia su estado a **Habilitado** en **Configuración de la aplicación** > [General](/es/platform/channels/sites.html#general) > **Cambiar estado**.
 
 :::warning Atención
 En el índice de web apps, solo verás aquellas apps en las cuales tienes algún rol y eres parte del equipo de trabajo.
 :::
+
+### Tema
+
+El tema es el conjunto de plantillas, snippets, CSS y JavaScript con el que nace la aplicación web. Determina su punto de partida y nada más: es un molde inicial, no una dependencia permanente.
+
+- La lista de temas disponibles depende del plan contratado en la cuenta.
+- Si solo hay un tema disponible, el selector queda deshabilitado y la aplicación se crea con el tema por defecto.
+- Una vez creada la aplicación, sus [plantillas](/es/platform/channels/templates.html) se editan libremente y no existe una opción para cambiar de tema.
+
+## Clonar una aplicación web
+
+Clonar crea una copia independiente de una aplicación web dentro de la misma cuenta. Es útil para partir de una aplicación ya construida, con sus páginas, plantillas y widgets, sin rehacerla desde cero.
+
+Para clonar una aplicación web, sigue estos pasos:
+
+1. En el menú lateral, haz click en **channels**.
+1. En el listado de aplicaciones, ubica la que quieres copiar y, en la columna **Acciones**, haz click en **Clonar**.
+1. En la ventana **Clonar aplicación**, haz click en el botón **Clonar aplicación**.
+1. Espera a que el proceso termine. Al finalizar, el listado se actualiza con la copia ya creada.
+
+La copia toma el nombre y el host de la original precedidos de **Copia de**. Si ese nombre o ese host ya existen en la cuenta, Modyo agrega un número al final.
+
+**Qué se copia**:
+
+- Las plantillas y los snippets.
+- Los widgets y las páginas, con su jerarquía.
+- La navegación.
+- Las variables de la aplicación.
+- Los meta tags personalizados, las redirecciones personalizadas y los revisores forzados.
+- Los miembros del equipo con sus roles.
+- El logo, el favicon y el icono de Apple.
+
+**Qué no se copia**:
+
+- El dominio personalizado y los dominios alternativos: la copia queda accesible solo por su host.
+- El ID de Google Tag Manager.
+- Las páginas de originación.
+- Los stages de la aplicación original.
+- El estado: la copia siempre nace en estado **Editable**, aunque la original esté **Habilitado**.
+
+La copia conserva el estado de publicación de la original: lo que está publicado en la original queda publicado en la copia, y los cambios sin publicar quedan como cambios pendientes. Como la copia nace en estado **Editable**, no es visible al público hasta que cambies su estado a **Habilitado**.
+
+:::tip Tip
+El clonado toma un tiempo y ocurre en segundo plano. Mientras dura, la ventana muestra el mensaje "Esto demorará un tiempo, la aplicación está siendo clonada" y la copia todavía no aparece en el listado de aplicaciones.
+:::
+
+:::warning Atención
+El clonado está sujeto al máximo de aplicaciones de tu plan. Si ya alcanzaste ese máximo, la operación falla con el mensaje "Has alcanzado el número máximo de aplicaciones para el plan actual".
+:::
+
+:::tip Clonar no es lo mismo que crear un stage
+[Agregar un stage](/es/platform/channels/sites.html#agregar-un-nuevo-stage) también copia una aplicación web, pero el resultado es otra etapa de la misma aplicación, pensada para desarrollar y luego sincronizar los cambios de vuelta. Clonar, en cambio, produce una aplicación independiente que no se sincroniza con la original.
+:::
+
+## Resumen de la aplicación
+
+**Resumen** es la pantalla de entrada de toda aplicación web: es a donde llegas al seleccionarla en el listado de aplicaciones, y a donde vuelves con la opción **Resumen** del menú lateral.
+
+En la columna principal encuentras:
+
+- Accesos directos a **Páginas**, **Navegación**, **Widgets** y **Plantillas**, cada uno con la cantidad de elementos de la aplicación.
+- **Actividad**: la bitácora de las acciones que los administradores han realizado sobre la aplicación.
+
+En la columna lateral encuentras los datos de identificación de la aplicación:
+
+- **Etapa**: el stage en el que estás trabajando, junto al acceso a la vista de sincronización.
+- **Estado**: **Cambios pendientes** si hay elementos sin publicar, o **Publicado** si no los hay.
+- **Reino**: el reino al que está vinculada la aplicación, o **Ninguno**.
+- **Privacidad**: **Público** o **Privado**.
+- **Zona horaria**, **Lenguaje**, **Descripción** e **ID** de la aplicación.
+
+En el encabezado ves la fecha del último release, el acceso a la **Vista previa** de la aplicación y el botón **Publicar**, que abre la pantalla de [Revisión y publicación conjunta](/es/platform/channels/sites.html#revision-y-publicacion-conjunta). **Publicar** solo está disponible para quienes tienen el permiso **Administrar Sincronizaciones** o **Gestionar Canales**, y se deshabilita cuando no hay cambios pendientes.
+
+### Cambios pendientes por publicar
+
+Cuando la aplicación tiene la [revisión en equipo](/es/platform/channels/sites.html#revision-en-equipo) activada, bajo el estado **Cambios pendientes** aparece uno de estos tres mensajes:
+
+- **Todos los cambios están aprobados**: se cumplen las condiciones de revisión y puedes publicar.
+- **Los cambios requieren revisión**: todavía no hay ninguna aprobación, y el botón **Publicar** permanece deshabilitado.
+- **Algunos cambios no se han aprobado y necesitan revisión**: hay aprobaciones parciales.
+
+### Acceso a la sincronización
+
+El bloque **Etapa** solo aparece si tu rol tiene el permiso **Administrar Sincronizaciones**, **Ver Sincronizaciones** o **Gestionar Canales**, y el botón cambia según cuál sea:
+
+- Con **Administrar Sincronizaciones** o **Gestionar Canales** ves **Sincronizar** y puedes [sincronizar el stage](/es/platform/channels/sites.html#sincronizar-un-stage). Si estás en el stage `main` y la aplicación no tiene otros stages en estado **Habilitado** o **Editable**, ves **Sincronizar (solo lectura)** aunque tengas estos permisos.
+- Con **Ver Sincronizaciones** ves **Sincronizar (solo lectura)**: entras a la vista de sincronización y revisas las diferencias, pero no puedes aplicarlas.
+
+Si puedes sincronizar y la aplicación tiene cambios sin publicar, junto al nombre del stage aparece un ícono de advertencia con el mensaje "Tienes que publicar todos los cambios antes de sincronizar", y al hacer click en **Sincronizar** Modyo te pide confirmación antes de continuar.
 
 ## Revisión y publicación conjunta
 
@@ -51,6 +145,8 @@ Si haces click en **publicar** en un artículo en particular (e.g. publicar una 
 
 Cuando creas una aplicación web con Modyo, tus usuarios pueden realizar búsquedas en tus web apps y en todo su contenido mediante la función de búsqueda. Esto puede hacerse utilizando la URL `/search` o accediendo a la página de búsqueda dedicada.
 
+El buscador encuentra también coincidencias parciales dentro de las palabras, a partir de 3 caracteres: por ejemplo, una página llamada `Sunflower` aparece al buscar `sun` o `flower`. Las coincidencias exactas siguen mostrándose primero en los resultados.
+
 ### Habilitar o deshabilitar búsqueda
 
 Para habilitar o deshabilitar la funcionalidad de búsqueda, sigue estos pasos:
@@ -61,10 +157,11 @@ Para habilitar o deshabilitar la funcionalidad de búsqueda, sigue estos pasos:
 1. En la sección privacidad, habilita o deshabilita la casilla de **habilitar búsqueda**, según requieras.
 1. Haz click en **guardar**.
 
+Con **Habilitar búsqueda** desmarcada, las rutas `/search` y `/search.json` de la web app responden con un error 404.
 
 ### Plantilla de búsqueda
 
-Puedes controlar la apariencia y funcionalidades de búsqueda en tu web app utilizando la [plantilla](/es/platform/channels/sites#plantilla-de-busqueda/) _search_.
+Puedes controlar la apariencia y funcionalidades de búsqueda en tu web app utilizando la [plantilla](/es/platform/channels/sites.html#plantilla-de-busqueda) _search_.
 
 Esta plantilla está disponible de forma predeterminada en la sección de plantillas y contiene todo el código Liquid necesario para realizar cabo consultas en tu web app. Por defecto, al realizar una consulta, los registros se muestran en forma de lista con su título, descripción y un enlace hacia su dirección. Puedes modificar la plantilla para adaptarla a tus necesidades.
 
@@ -91,13 +188,36 @@ Para acceder a esta API, agrega "search.json" a la URL de tu web app junto con t
 Personaliza tus consultas de la siguiente manera:
 
 
-|  Parámetro       |       Descripción    |
-|------------------|----------------------|
-| **query** | Realiza consultas a la API de búsqueda. Este buscador lleva a cabo consultas en todas las páginas publicadas de tu web app y en todas las entradas públicas de los espacios vinculados a la web app. |
-| **per_page** | Divide el número total de registros en el número de páginas seleccionadas. |
-| **page** | Selecciona la página específica que deseas consultar, en caso de que existan múltiples páginas de registros para la consulta. |
-| **multi=true** | Permite realizar búsquedas en todos las aplicaciones web de la cuenta que tengan habilitada la función de búsqueda. |
+| Parámetro | Descripción |
+|-----------|-------------|
+| **query** | El término que quieres buscar. La consulta recorre las páginas publicadas de tu web app. En las [páginas de contenido](/es/platform/channels/pages.html#pagina-de-contenido) recorre, en lugar de la página, las entradas publicadas de su tipo de contenido, y cada resultado enlaza a la entrada dentro de esa página. Las entradas de un tipo de contenido que no tiene una página de contenido en la web app no aparecen. El buscador solo considera sus primeros 15 caracteres. |
+| **page** | La página de resultados que quieres obtener. Por omisión, 1. |
+| **per_page** | Cuántos resultados trae cada página. Por omisión, 15. |
+| **more** | Valor libre que el buscador no usa para filtrar: solo queda disponible en la plantilla de búsqueda como la variable `params_more`. |
 
+Si el visitante no inició sesión, la búsqueda solo devuelve páginas y entradas públicas. Si inició sesión, devuelve además las privadas que no tienen segmentos asignados o que comparten al menos un segmento con él.
+
+Cada resultado trae cuatro campos: `title`, `description`, `url` y `site_name`. La respuesta incluye además un objeto `meta` con `total_entries`, `per_page`, `current_page` y `total_pages`, que viene vacío cuando la consulta no encuentra nada.
+
+:::warning Atención
+`multi=true` no es un parámetro de esta API y agregarlo a la URL no tiene ningún efecto. La búsqueda en varias aplicaciones se resuelve solo desde la configuración de la web app desde la que consultas.
+:::
+
+:::tip Tip
+El total de resultados está topado en 100, sin importar el `per_page` que pidas: de ahí en adelante las páginas siguientes vienen vacías y hay que refinar la consulta. En la plantilla de búsqueda, [site_search.have_less_relevant_results](/es/platform/channels/liquid-markup/objects.html#site-search) te avisa cuando quedaron resultados fuera de ese tope.
+:::
+
+### Buscar en varias aplicaciones web
+
+Una búsqueda puede abarcar varias aplicaciones web de la misma cuenta. Ese modo no se activa desde la URL: depende de dos casillas de la sección **Privacidad** de la configuración de la aplicación desde la que se busca, **Habilitar búsqueda** y **Habilitar la búsqueda en múltiples sitios**. La segunda solo se puede marcar si la primera está marcada.
+
+Con las dos marcadas, la búsqueda recorre la aplicación de origen y todas las aplicaciones web de la cuenta que cumplan estas tres condiciones:
+
+- Tienen **Habilitar búsqueda** marcada.
+- No son un stage de otra aplicación.
+- Tienen el mismo idioma que la aplicación desde la que se busca.
+
+En este modo cada resultado indica de qué aplicación proviene en su campo `site_name`, y en la plantilla de búsqueda [site_search.multi](/es/platform/channels/liquid-markup/objects.html#site-search) te permite mostrarlo solo cuando la búsqueda abarca varias aplicaciones.
 
 ## Configuración de Aplicaciones Web
 
@@ -140,16 +260,16 @@ Para acceder a estos snippets:
 
 **Para el _head_**:
 
-1. Utiliza este código:
+1. Utiliza este código. El atributo `nonce` permite que el navegador ejecute el _script_ cuando la aplicación usa una política de seguridad de contenido basada en nonce, como la que se precarga al habilitar los [Security headers](/es/platform/channels/sites.html#security-headers). El código también asigna el nonce al _script_ que carga `gtm.js`, para que el navegador lo acepte aunque tu política no incluya `'strict-dynamic'`:
 
 ```liquid
 {% if site.tag_manager_id != '' %}
 
 <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+<script nonce="{{csp_nonce}}">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;j.setAttribute('nonce','{{csp_nonce}}');f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','{{site.tag_manager_id}}');</script>
 <!-- End Google Tag Manager -->
 
@@ -203,10 +323,10 @@ Al presionar el botón de eliminado, el sistema te pedirá que ingreses el nombr
 - **Mostrar home a visitas públicas**: La página de inicio de la web app se muestra a todos los visitantes, incluso aquellos que no hayan iniciado sesión. Al navegar a cualquier otra página, se solicita registro o inicio de sesión.
 - **Redireccionar al home cuando una URL no se encuentra**: Por defecto, la aplicación web muestra un error 404 cuando el usuario accede a una URL inexistente. Si marcas esta opción, el usuario será redirigido a la página de inicio de la web app en lugar del 404.
 - **Habilitar búsqueda**: Activa la función de búsqueda en la web app.
-- **Habilitar la búsqueda en múltiples aplicaciones**
+- **Habilitar la búsqueda en múltiples sitios**: Extiende la búsqueda de esta web app al resto de las aplicaciones web de la cuenta. La casilla queda deshabilitada mientras **Habilitar búsqueda** esté desmarcada.
 
 :::tip Tip
-Si habilitas la búsqueda en tu web app y usas el parámetro `multi=true` desde otra web app, también puedes buscar en tu app actual.
+Este modo no se pide desde la URL de la consulta: `multi=true` en `search.json` no tiene ningún efecto. Revisa qué aplicaciones entran en la búsqueda en [Buscar en varias aplicaciones web](/es/platform/channels/sites.html#buscar-en-varias-aplicaciones-web).
 :::
 
 
@@ -217,10 +337,10 @@ Procede con cautela al modificar estas opciones, ya que pueden afectar el acceso
 :::
 
 - **Cambiar host**: Esta acción modifica la visibilidad y accesibilidad de la aplicación. Realizar un cambio de host puede impactar la visibilidad y disponibilidad de la aplicación web.
-- **Cambiar reino**: Despliega el reino de la aplicación. Al cambiar de reino pierdes toda la configuración de privacidad en tus web apps, páginas y navegación.
+- **Cambiar reino**: Despliega el reino de la aplicación. Al cambiar de reino pierdes toda la configuración de privacidad en tus web apps, páginas y navegación, y las páginas de originación del sitio pierden la referencia a su originación actual. Puedes elegir un reino o uno de sus [stages](/es/platform/customers/realms.html#stages). Mientras la aplicación tenga seleccionado un reino o uno de sus stages, ese reino no se puede eliminar.
 - **Cambiar estado**: Cambia el estado de la aplicación, las opciones son:
-	* Habilitado: Editable y visible al público. Este es el estado por defecto de una web app.
-	* Editable: Modificable pero no visible al público. Requiere inicio de sesión para acceder. Robots.txt, PWAs y el manifiesto están deshabilitados en este estado.
+	* Habilitado: Editable y visible al público.
+	* Editable: Modificable pero no visible al público. Requiere inicio de sesión para acceder. Es el estado con el que nace toda aplicación web recién creada. Robots.txt, PWAs y el manifiesto están deshabilitados en este estado.
 	* Deshabilitado: No editable ni visible. En este estado, no es accesible ni visible para los usuarios.
 - **Eliminar aplicación**: Inicia la eliminación asíncrona de la aplicación y de todos sus elementos, como páginas y widgets.
 
@@ -237,14 +357,17 @@ El SEO (Search Engine Optimization) es fundamental para el posicionamiento en mo
 Puedes configurar:
 
 - **Tagline**: Descripción en los motores de búsqueda, debajo del nombre de la aplicación web.
-- **Actualizar automáticamente el archivo sitemap.xml para mí**: Permite a Modyo crear y mantener el sitemap.xml automáticamente. Desactiva esta opción para usar un mapa de sitio personalizado.
-- **Sitemap**: Este archivo XML permite a los motores de búsqueda indexar el contenido del sitio.
-- **Archivo sitemap.xml personalizado**: Archivo que permite a los motores de búsqueda indexar el contenido de la web app.
-- **Actualizar automáticamente el archivo robots.xml para mí**: Permite a Modyo crear y mantener robots.txt automáticamente. Desactiva esta opción para proporcionar instrucciones personalizadas a los rastreadores de web apps.
-- **Archivo robots.txt personalizado**: Archivo que indica a los robots rastreadores las partes de la aplicación pueden o no indexar.
+- **Habilitar sitemap.xml de este sitio**: Publica el archivo `sitemap.xml` de la aplicación web, disponible para todos los sitios públicos. Si lo deshabilitas, o si el sitio no es público, la URL del archivo responde con un error 404.
+- **Actualizar automáticamente el archivo sitemap.xml para mí**: Permite a Modyo crear y mantener el sitemap.xml automáticamente; el archivo generado no incluye páginas privadas. Desactiva esta opción para editar el archivo personalizado.
+- **Archivo sitemap.xml personalizado**: Contenido del sitemap que permite a los motores de búsqueda indexar el contenido de la web app. Editable cuando la actualización automática está desactivada.
+- **Habilitar robots.txt de este sitio**: Publica el archivo `robots.txt` del sitio y habilita su edición. Esta opción solo está disponible para sitios con dominio personalizado habilitado; si está deshabilitada, la URL del archivo responde con un error 404.
+- **Archivo robots.txt personalizado**: Contenido del robots.txt, que indica a los robots rastreadores qué partes de la aplicación pueden o no indexar.
+- **Habilitar llms.txt de este sitio**: Publica el archivo `llms.txt` de la aplicación web en la ruta `/llms.txt`. Es un archivo en formato Markdown que ayuda a los modelos de lenguaje (LLMs) a entender el contenido del sitio, y está disponible para todos los sitios públicos. Esta opción viene deshabilitada por defecto; si está deshabilitada, o si el sitio no es público, la URL del archivo responde con un error 404.
+- **Actualizar automáticamente el archivo llms.txt para mí**: Permite a Modyo crear y mantener el llms.txt automáticamente con el nombre, el tagline y la descripción de la aplicación web, más los enlaces a sus páginas agrupados en las secciones **Pages** y **Content**. Las páginas privadas nunca se incluyen. Desactiva esta opción para editar el archivo personalizado.
+- **Archivo llms.txt personalizado**: Contenido del llms.txt cuando la actualización automática está desactivada.
 
 :::tip Tip
-Los archivos robots.txt y sitemap.xml solo son visibles con dominios personalizados. De lo contrario, se encuentran solo a nivel de plataforma, tienen sus valores por defecto y no se pueden personalizar.
+También existen configuraciones de archivos sitemap.xml, robots.txt y llms.txt a nivel de la cuenta. El llms.txt de la cuenta está habilitado por defecto, se genera con los sitios públicos en producción y sin dominio personalizado que agregues a su lista, y también admite un archivo personalizado.
 :::
 
 - **Meta tags personalizados**: Te permite configurar meta tags para todas las páginas y sus valores por defecto. Da click en **nuevo meta tag** para crear uno nuevo.
@@ -363,10 +486,16 @@ En la sección de dominios puedes ver y modificar la ubicación pública de tu a
 Es esencial informar a todos los miembros de la plataforma sobre cualquier cambio que realices en esta sección.
 :::
 
-Activa la casilla para realizar modificaciones. Las variables que puedes modificar son:
-- **Host**: Ubicación de la aplicación web en del servidor.
-- **Dominio primario**: Dirección principal de la aplicación web.
-- **Dominio alternativo**: Dirección secundaria para redireccionar en caso de fallo en el primario.
+El **Host** es la ubicación de la aplicación web dentro del dominio de la plataforma y se cambia desde **Configuración del sitio > General**, en la sección **Zona peligrosa**.
+
+Activa la casilla **Activar dominios personalizados** para habilitar los campos de esta sección:
+- **Dominio primario**: Dirección principal de la aplicación web. Los dominios alternativos serán redirigidos a este dominio.
+- **Dominio alternativo 1 (opcional)** y **Dominio alternativo 2 (opcional)**: Direcciones adicionales desde las que también se puede llegar a la aplicación web. No son un respaldo del dominio primario: cada visita que entra por uno de estos dominios se redirige siempre al dominio primario, conservando la ruta solicitada.
+- **Tipo de redirección para los dominios alternativos**: El código HTTP con el que los dominios alternativos redirigen al dominio primario: **301 Moved Permanently (permanente)**, que indica a los buscadores traspasar el posicionamiento SEO al dominio primario, o **302 Found (temporal)**. Las configuraciones nuevas usan 301 por defecto; los sitios que ya tenían dominios alternativos configurados conservan 302 hasta que elijas cambiarlo.
+
+:::tip Redirecciones permanentes
+Los navegadores guardan en caché las redirecciones 301 de forma agresiva: si luego cambias a 302, los visitantes que ya recibieron la redirección permanente pueden tardar en ver el cambio.
+:::
 
 
 :::warning Atención
@@ -437,6 +566,8 @@ Estos hosts están reservados por Modyo. No están disponibles como hosts para t
 </tr></table>
 :::
 
+Un [reino](/es/platform/customers/settings.html#dominios) de tu misma cuenta puede usar el mismo dominio personalizado que tu aplicación web: las rutas `/realms` y `/api/customers/realms` las responde el reino y el resto, la aplicación web. En un dominio personalizado, esas rutas están reservadas para los reinos: si ningún reino usa ese dominio, la plataforma responde 404 y la aplicación web no las atiende.
+
 ### Stages
 
 Usar stages en tu aplicación web te permite implementar un enfoque de integración y despliegue continuo (CI/CD) para añadir nuevas funcionalidades sin afectar lo que ya está publicado.
@@ -450,13 +581,17 @@ Las principales ventajas de tener distintas etapas en tus web apps son:
 :::warning Atención
 - Un web app puede tener un máximo de cuatro stages.
 - Los cambios que realices en un stage solo se reflejan en ese stage.
-- Los stages solo están disponible para aplicaciones web.
-- Las PWAs y redirecciones personalizadas se deshabilitan en los stages. Solo se pueden usar en el stage `main`.
+- Los reinos también tienen sus propios stages, independientes de los de las aplicaciones web. Revisa [Stages](/es/platform/customers/realms.html#stages) en Reinos.
+- Las redirecciones personalizadas se deshabilitan en los stages. Solo se pueden usar en el stage `main`.
+- Al crearse, cada stage copia la configuración de PWA de su stage de origen. Después puedes modificarla en cada stage por separado.
 - La sección de miembros del equipos es independiente en cada stage `main`. Agrega miembros para habilitar la revisión de equipo.
 - Puedes tener los mismos miembros con diferentes roles y permisos para cada stage.
+- Las páginas de originación se copian al nuevo stage sin la originación vinculada. Como cada originación admite una sola página, para usarlas en el stage debes vincular una originación distinta del mismo reino.
 :::
 
 #### Agregar un nuevo stage
+
+Antes de crear un stage, publica los cambios pendientes del stage de origen. Si tiene cambios sin publicar, la ventana te avisa y el botón **Crear** queda deshabilitado. Publica los cambios y vuelve a abrir la ventana.
 
 Para agregar un nuevo stage a tu web app, sigue estos pasos:
 
@@ -466,7 +601,13 @@ Para agregar un nuevo stage a tu web app, sigue estos pasos:
 1. Haz click en stages.
 1. Da click en **nuevo stage**.
 1. Selecciona el stage de origen y nombra tu nuevo stage.
-1. Haz click en **crear**.
+1. Haz click en **Crear**.
+
+La creación del stage continúa en segundo plano, así que puedes cerrar la ventana. Mientras dura, el nuevo stage no aparece en el listado de stages. Si mantienes la ventana abierta, al terminar verás uno de estos resultados:
+
+- Si se clonaron todos los elementos, aparece el mensaje "Stage creado exitosamente" y el listado se actualiza.
+- Si algunos elementos no pudieron clonarse, el stage se crea igual y la ventana muestra la lista de esos elementos y el motivo de cada uno, junto al mensaje "El stage se creó, pero algunos elementos no pudieron clonarse. El detalle queda en el log de creación del stage."
+- Si la creación no pudo completarse, la ventana muestra el mensaje "No se pudo completar la creación del stage".
 
 
 :::tip Tip
@@ -476,7 +617,8 @@ En la sección de resumen de tu aplicación web puedes ver los detalles del stag
 #### Sincronizar un stage
 
 :::warning Atención
-La plataforma no permite sincronizar cambios que todavía no están publicados. Asegúrate de no tener cambios pendientes por publicar antes de iniciar la sincronización.
+- No es posible sincronizar elementos que hayan sido creados manualmente de manera separa en diferentes stages antes de la sincronización. En estos casos, los elementos creados a mano deben ser eliminados primero y luego serán recreados automáticamente a través del proceso de sincronización.
+- La plataforma solo permite sincronizar cambios publicados. Asegúrate de no tener cambios pendientes por publicar antes de iniciar la sincronización.
 :::
 
 Para sincronizar un stage sigue estos pasos:
@@ -490,7 +632,8 @@ Para sincronizar un stage sigue estos pasos:
 
 
 :::warning Atención
-Los elementos de un stage asociados a un segmento no se sincronizan. Deberás repetir el proceso manualmente en el nuevo stage, una vez concluida la sincronización.
+- Las páginas y los ítems de menú asociados a segmentos también se sincronizan. Si el elemento ya existe en el stage de destino con segmentos asignados, conserva esos segmentos y no toma los del stage de origen; si no los tiene, recibe los del origen.
+- La originación vinculada a una página de originación tampoco se sincroniza: cada stage conserva la suya y esa diferencia no aparece en el listado de elementos por sincronizar.
 :::
 
 #### Eliminar un stage
@@ -501,7 +644,7 @@ Para eliminar un stage, sigue estos pasos:
 1. Haz click en configuración de la aplicación.
 1. Haz click en General.
 1. En la sección zona peligrosa haz click en **eliminar stage**.
-1. Ingresa el nombre de tu stage.
+1. En **Nombre de la aplicación**, escribe el nombre completo del stage tal como aparece en el campo **Nombre de la aplicación** de la sección General (por ejemplo, `qa Mi sitio`, no solo `qa`).
 1. Haz click en **borrar**.
 
 
@@ -549,10 +692,10 @@ Para modificar el rol de un administrador, sigue estos pasos:
 1. En el modal que se abre, selecciona el nuevo rol.
 1. Presiona **Actualizar** para confirmar el cambio.
 
-Los roles disponibles son:
+Los roles disponibles son los siguientes. Para ver el detalle de cada uno, revisa [Roles por sitio](/es/platform/core/roles.html#roles-por-sitio):
 
-- **Viewer**: Este usuario puede ver entradas, ver diferencias entre versiones y dejar comentarios. También puede acceder a la vista de sincronización y ver los cambios pendientes de sincronizar. Este rol no tiene autorización para realizar ninguna acción que implique un cambio en la plataforma.
-- **Developer**: Este usuario está a cargo del desarrollo estructural de los recursos. Puede crear, modificar y enviar a revisión páginas, widgets, menús y plantillas. Todas las acciones realizadas por un Developer deben pasar por un proceso de revisión antes de su publicación. Este rol no tiene permisos para publicar, eliminar o realizar un _rollback_ a versiones anteriores de los recursos, ni tampoco para modificar la configuración del sitio. Existe una variante de este rol llamada Developer CLI, que además de los permisos de un Developer, permite actualizar widgets desde aplicaciones externas, como el [modyo-cli](/es/platform/channels/widgets#modyo-cli).
+- **Viewer**: Este usuario puede ver las páginas, menús, plantillas y widgets del sitio y las variables globales, ver diferencias entre versiones y dejar comentarios. También puede acceder a la vista de sincronización y ver los cambios pendientes de sincronizar. Este rol no tiene autorización para realizar ninguna acción que implique un cambio en la plataforma.
+- **Developer**: Este usuario está a cargo del desarrollo estructural de los recursos. Puede crear, modificar y enviar a revisión páginas, widgets, menús y plantillas. Todas las acciones realizadas por un Developer deben pasar por un proceso de revisión antes de su publicación. Puede restaurar una versión anterior de estos recursos (_rollback_), pero no tiene permisos para publicarlos ni eliminarlos, ni tampoco para modificar la configuración del sitio. Existe una variante de este rol llamada Developer CLI, que además de los permisos de un Developer, permite actualizar widgets desde aplicaciones externas, como el [modyo-cli](/es/platform/channels/cli.html).
 - **Developer CLI**: Puede crear, modificar y enviar a revisión páginas, widgets, el menú y los templates. Además, puede empujar widgets desde aplicaciones externas.
 - **Reviewer**: Este rol permite corregir, aprobar o desechar el trabajo realizado por los Developers. Puede crear, modificar, enviar a revisión y aprobar páginas, widgets, menús y plantillas. También puede publicar cuando se cumplen las condiciones de revisión. No puede editar la configuración del sitio.
 - **Admin**: El Administrador del sitio posee los mismos privilegios que los roles anteriores y tiene la capacidad de configurar todo el sitio. Esto incluye la creación, modificación, envío a revisión y aprobación de páginas, widgets, menús y plantillas. Además, puede publicar sin requerir la validación de revisión en equipo.
@@ -569,6 +712,14 @@ Modyo cuenta con un sistema de redirecciones personalizadas que te permitirá to
 En esta vista encuentras una tabla con todas las redirecciones que existen actualmente en el sitio. Puedes buscar por path o descripción.
 
 Para crear una nueva redirección, haz click en el botón **Nuevo** en la esquina superior derecha de la vista. Completa los campos **_URL_ de Origen** y **_URL_ de destino** y código de redirección y luego guarda los cambios.
+
+#### Activar y desactivar redirecciones
+
+Cada redirección cuenta con un interruptor en la columna **Activa** que te permite desactivarla temporalmente sin borrarla, y volver a activarla cuando la necesites. También puedes activar o desactivar varias redirecciones a la vez seleccionándolas y usando las acciones masivas **Activar** y **Desactivar**.
+
+Una redirección desactivada deja de aplicarse de inmediato: su URL de origen vuelve a resolverse como un recurso normal del sitio (una página existente o un error 404). Al reactivarla, vuelve a redirigir de inmediato conservando el código 301 o 302 configurado.
+
+Las redirecciones nuevas, incluidas las importadas por CSV, se crean activadas.
 
 :::warning Atención
 La tabla de redirecciones es la penúltima en precedencia, de tal forma que si existe una URL en el sitio que apunta a una [página](/es/platform/channels/pages) o una vista por defecto, verás esa vista en vez de ser redirigido mediante la tabla de redirecciones personalizadas.
@@ -595,14 +746,27 @@ La jerarquía de ubicaciones en los sitios de Modyo sigue este orden:
 Para que una redirección sea exitosa, la ruta de origen no puede existir o tiene que estar despublicada. Si el origen es una página publicada con subpáginas, tienes que despublicar las subpáginas antes de despublicar la página principal.
 :::
 
+:::tip Tip
+A partir de la versión 10.1 se pueden hacer redirecciones hacia sitios fuera de la cuenta de Modyo.
+:::
+
 ### Security headers
 
 Habilita este módulo para tu sitio para configurar los encabezados de seguridad HTTP. Ten en cuenta que esta acción no se puede deshacer. Una vez habilitado, tendrás control total sobre los encabezados que deseas utilizar.
 
+Al hacer click en **Habilitar los headers de seguridad para esta aplicación**, la configuración de la aplicación reemplaza la configuración global de headers de seguridad de la plataforma y Modyo carga estos valores iniciales:
+
+- **Habilitar Strict-Transport-Security (HSTS)** activo, con **Duración (max age)** de 1 año e **Incluir subdominios** marcada.
+- **Habilitar Referrer-Policy** activo, con la directiva `strict-origin-when-cross-origin`, salvo que la configuración global de la plataforma defina otra.
+- **Habilitar X-Frame-Options** activo, con la directiva `DENY`, salvo que la configuración global de la plataforma defina otra.
+- Las áreas de texto de Content-Security-Policy y Content-Security-Policy-Report-Only prellenadas con una [política estricta](/es/platform/channels/sites.html#content-security-policy-csp).
+- **Habilitar Content-Security-Policy**, **Habilitar Content-Security-Policy-Report-Only**, **Habilitar X-Content-Type-Options** y **Habilitar Permissions-Policy** activos solo si la configuración global de la plataforma tiene activos esos _headers_.
+- **Habilitar Cross-Origin-Embedder-Policy**, **Habilitar Cross-Origin-Opener-Policy** y **Habilitar Cross-Origin-Resource-Policy** desactivados.
+
 #### HTTP Strict Transport Security (HSTS)
 
 Indica al navegador que solo puede acceder al sitio mediante HTTPS.
-- **Duración**: Establece el tiempo que el navegador accede al sitio solamente mediante HTTPS.
+- **Duración (max age)**: Establece el tiempo que el navegador accede al sitio solamente mediante HTTPS. Puedes elegir **6 meses**, **1 año** o **2 años**.
 - **Precarga**: Incluye la directiva de precarga. Para más información, consulta [HSTS Preload List Submission](https://hstspreload.org/).
 - **Incluir subdominios**: Aplica la regla HSTS a todos los subdominios del sitio.
 
@@ -629,14 +793,28 @@ Indica si tu sitio puede ser incluido en un `frame`, `iframe`, `embed`, or `obje
 
 Indica que se deben seguir los _MIME types_ anunciados en el _header_ `Content-Type` para evitar _MIME type sniffing_.
 
+#### Reporting-Endpoints
+
+Declara los destinos a los que el navegador envía los reportes que generan otros _headers_, como las violaciones de la política de seguridad de contenido. Es el _header_ que necesitas habilitar para poder usar la directiva `report-to` dentro de tu CSP.
+
+En el área de texto escribe uno o más destinos con la forma `nombre="URL"`, separados por coma:
+
+```bash
+default="https://example.com/reports", csp-endpoint="https://example.com/csp"
+```
+
+Después referencia el nombre del destino desde tu política, por ejemplo `report-to csp-endpoint`.
+
 #### Content-Security-Policy (CSP)
 
-Controla qué recursos puede cargar el navegador en el sitio para mitigar ataques de inyección de datos y _cross site scripting_. El valor predeterminado *permite cargar recursos desde cualquier lugar*, por lo que es importante diseñar una política de seguridad de contenido adecuada para tu sitio.
+Controla qué recursos puede cargar el navegador en el sitio para mitigar ataques de inyección de datos y _cross site scripting_. Mientras **Habilitar Content-Security-Policy** está desactivado, la aplicación no envía este _header_ y el navegador carga recursos desde cualquier lugar.
+
+Al habilitar el módulo, el área de texto se prellena con una política estricta: parte de `default-src 'none'` y exige el nonce de la página, interpolado con la variable `csp_nonce`, en los _tags_ `script` y `style`. Si el CSP queda activo con ese valor sin adaptarlo, el navegador bloquea los _scripts_ de tus plantillas que no llevan el atributo `nonce`, aunque se carguen desde el propio sitio, y los recursos de orígenes que la política no lista, por lo que es importante diseñar una política adecuada para tu sitio.
 
 Especifica libremente tu política de seguridad de contenido en el área de texto. Para obtener una guía completa sobre cómo escribir tu política, consulta [Content Security Policy (CSP) de Mozilla Developer Network.](https://developer.mozilla.org/es/docs/Web/HTTP/CSP)
 
 :::warning Atención
-Un valor muy estricto puede interferir con algunas características como [Google tag manager](/es/platform/channels/sites#google-tag-manager), [PWA](/es/platform/channels/sites#pwa), [Widgets](/es/platform/channels/widgets) y [Asset Manager](/es/platform/content/asset-manager).
+Un valor muy estricto puede interferir con algunas características como [Google tag manager](/es/platform/channels/sites#google-tag-manager), [PWA](/es/platform/channels/sites#pwa), [Widgets](/es/platform/channels/widgets), [Asset Manager](/es/platform/content/asset-manager) y la [modalidad Drop-in de Incode](/es/platform/customers/origination.html#requisitos-de-drop-in).
 :::
 
 Una política apta para producción debe asegurar que todos los recursos, como imágenes y hojas de estilo, se carguen desde fuentes confiables y requiere que todos los scripts sean seguros y confiables para la aplicación. Por ejemplo, una política estricta para el _template minimal_ se vería así:
@@ -647,9 +825,17 @@ default-src 'self'; img-src 'self' https://cloud.modyocdn.com; font-src 'self' h
 
 La política debe incluir una directiva `default-src 'self'`, que sirve de _fallback_ para cualquier otro tipo de recurso. También debe incluir directivas `script-src` y `style-src` para evitar la evaluación de tags _inline_ `style` y `script`.
 
-- **Nonce**: El servidor agregará un CSP nonce a las directivas `script-src` y `style-src` si están presentes.
+La forma vigente de trabajar con nonce es interpolar la variable <code v-pre>{{csp_nonce}}</code> directamente en tu política. Modyo genera un nonce nuevo en cada _request_ y reemplaza la variable tanto en el _header_ como en las plantillas del sitio:
 
-Si tienes el nonce presente en tu política, puedes agregar a la lista permitida los _tags_ `script` y `style` en tus _templates_ usando la variable `csp_nonce`.
+```bash
+script-src 'self' 'nonce-{{csp_nonce}}'; style-src 'self' 'nonce-{{csp_nonce}}'
+```
+
+:::warning La casilla Habilitar nonce está obsoleta
+**Habilitar nonce** agrega el nonce automáticamente a las directivas `script-src` y `style-src` cuando están presentes, pero está marcada como obsoleta en el producto. En configuraciones nuevas interpola <code v-pre>{{csp_nonce}}</code> en la política, así decides exactamente en qué directivas se aplica. Ten en cuenta que si el nonce del _header_ no coincide con el de los _tags_ `script` y `style` de tus plantillas, el navegador bloquea esos recursos y el sitio se renderiza incompleto.
+:::
+
+Con el nonce presente en tu política, agrega a la lista permitida los _tags_ `script` y `style` de tus _templates_ usando la misma variable:
 
 ```liquid
 <script nonce="{{csp_nonce}}">
@@ -662,6 +848,12 @@ Estas herramientas te pueden ayudar a diseñar una política de seguridad sólid
 - [ReportURI](https://report-uri.com/home/analyse)
 - [CSP validator](https://cspvalidator.org)
 
+#### Content-Security-Policy-Report-Only
+
+Evalúa una política de seguridad de contenido sin aplicarla. El navegador no bloquea nada: solo reporta lo que la política habría bloqueado, lo que te permite probar una política estricta sobre el sitio antes de moverla al _header_ `Content-Security-Policy`.
+
+El área de texto acepta la misma sintaxis que el CSP, incluida la variable <code v-pre>{{csp_nonce}}</code>, y tiene su propia casilla **Habilitar nonce**, igualmente obsoleta. Para recibir los reportes, la política tiene que incluir una directiva `report-to` que apunte a un destino declarado en [Reporting-Endpoints](/es/platform/channels/sites.html#reporting-endpoints).
+
 #### Permissions-Policy
 
 Permite o niega el uso de funciones y APIs del navegador para el sitio; por ejemplo, puedes restringir las APIs sensibles a la privacidad como la cámara o el micrófono y la reproducción automática de videos.
@@ -672,6 +864,12 @@ Para obtener una lista completa de las funciones compatibles con los navegadores
 
 Configura la inserción de recursos de origen cruzado en el documento. Por ejemplo, si tu documento tiene un encabezado COEP con un valor de require-corp o credentialless, solo puedes acceder a ciertas funciones, como objetos SharedArrayBuffer o Performance.now(), con temporizadores sin restricciones.
 
+En **Directiva** puedes elegir:
+
+- **unsafe-none**: El documento carga recursos de origen cruzado aunque estos no lo autoricen. Es el comportamiento por defecto del navegador.
+- **require-corp**: El documento solo carga recursos de origen cruzado que lo autorizan explícitamente mediante CORS o el _header_ `Cross-Origin-Resource-Policy`.
+- **credentialless**: El documento carga recursos de origen cruzado sin que lo autoricen, pero las solicitudes sin CORS se envían sin credenciales, como las _cookies_.
+
 Para mas información, consulta la [Cross-Origin-Embedder-Policy de MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy).
 
 #### Cross Origin Opener Policy (COOP)
@@ -680,18 +878,40 @@ Te permite garantizar que un documento de nivel superior no comparta un grupo de
 
 COOP aisla el procesamiento de tu documento, por lo que atacantes potenciales no podrán acceder a tu objeto global si lo abren en un popup, lo que previene un conjunto de ataques de origen cruzado.
 
+En **Directiva** puedes elegir:
+
+- **unsafe-none**: El documento puede compartir su grupo de contexto de navegación con documentos de origen cruzado, como los _popups_ que abre. Es el comportamiento por defecto del navegador.
+- **same-origin-allow-popups**: Aísla el documento de los de origen cruzado, pero conserva la referencia a los _popups_ que abre si estos no definen COOP o usan `unsafe-none`.
+- **same-origin**: El documento solo comparte su grupo de contexto de navegación con documentos del mismo origen que también usan `same-origin`.
+
 Para mas información, revisa la [Cross-Origin-Opener-Policy de MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy).
 
 #### Cross Origin Resource Policy
 
 Transmite el deseo de bloquear las solicitudes de origen cruzado/sitio cruzado sin-cors al recurso especificado por parte del navegador.
 
+En **Directiva** puedes elegir:
+
+- **same-site**: Solo las solicitudes del mismo sitio, es decir, del mismo esquema y dominio registrable, incluidos sus subdominios, pueden cargar el recurso.
+- **same-origin**: Solo las solicitudes del mismo origen, es decir, del mismo esquema, host y puerto, pueden cargar el recurso.
+- **cross-origin**: Las solicitudes de cualquier origen pueden cargar el recurso.
+
 Para mas información, consulta la [Cross-Origin-Resource-Policy de MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Resource-Policy).
 
 
+#### Service-Worker-Allowed
+
+Amplía el alcance (_scope_) máximo que puede registrar un _service worker_. Por defecto un _service worker_ solo controla las rutas que cuelgan de su propia ubicación; con este _header_ puedes servirlo desde una ruta y darle alcance sobre otra.
+
+- **Directiva**: La ruta que quieres autorizar como alcance, por ejemplo `/`.
+
+:::tip Sitios sin dominio personalizado
+En los sitios que no tienen los dominios personalizados activados, Modyo envía el _header_ `Service-Worker-Allowed` apuntando a la ruta del sitio cuando entrega el _service worker_ de la [PWA](/es/platform/channels/sites.html#pwa), pero solo mientras el módulo de headers de seguridad está deshabilitado. Al habilitar el módulo, ese _header_ automático deja de enviarse: si tu PWA lo necesita, activa **Habilitar Service-Worker-Allowed** y escribe en **Directiva** la ruta del sitio, por ejemplo `/miSitio`.
+:::
+
 ### Variables del sitio
 
-Modyo cuenta con [variables globales](/es/platform/core/key-concepts#variables-globales) que puedes utilizar en múltiples sitios. Sin embargo, también puedes crear variables específicas para un sitio en particular o sobreescribir el valor de una variable global existente, con un valor específico para el sitio en particular.
+Modyo cuenta con [variables globales](/es/platform/channels/global-variables.html) que puedes utilizar en múltiples sitios. Sin embargo, también puedes crear variables específicas para un sitio en particular o sobreescribir el valor de una variable global existente, con un valor específico para el sitio en particular.
 
 Usar variables te permite reutilizar código HTML, JS, CSS o texto a través de distintos sitios, widgets o plantillas. Si tienes código que se repite en varias partes de tu cuenta, puedes asignar ese valor a una variable para simplificar tus procesos y en caso de que edites el valor de la variable, el cambio se verá reflejado en todos los lugares donde esté en uso la variable.
 

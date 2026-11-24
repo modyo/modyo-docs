@@ -19,6 +19,8 @@ Los tags (etiquetas) se utilizan para la lógica de la plantilla. Aquí hay una 
 - **raw**: Desactiva temporalmente el procesamiento de tags para evitar conflictos de sintaxis.
 - **unless**: Copia de la sentencia `if`.
 
+Además de estos, Modyo registra tags propios de la plataforma que no existen en Liquid estándar: consulta [Tags propios de Modyo](/es/platform/channels/liquid-markup/tags.html#tags-propios-de-modyo).
+
 ### Comentarios
 
 Cualquier contenido escrito entre los tags `{% comment %}` y `{% endcomment %}` se convertirá en un comentario.
@@ -51,7 +53,7 @@ La condición de un tag `if`, `elsif` o `unless` debe ser una expresión de Liqu
 Los operadores relacionales disponibles son:
 
 - `==, !=,` y `<>`: Igual y desigual (los dos últimos son sinónimos).
-    * Hay un valor especial "empty" (sin comillas) con el que se pueden comparar los arrays; la comparación es verdadera si el array no tiene miembros.
+    * Hay dos valores especiales, sin comillas, para comparar: `empty` es verdadero si el string, array o hash no tiene elementos, y `blank` lo es en esos mismos casos y además para `nil`, `false` y los strings que solo tienen espacios. Un valor nulo no es `empty`, pero sí `blank`.
 - `<, <=, >, >=`: Menor/mayor que.
 - `contains`: Un _wrapper_ alrededor del método `include?` de Ruby, implementado en strings, arrays y hashes. Si el argumento izquierdo es un string y el derecho no, convierte a string el derecho.
 
@@ -168,12 +170,12 @@ hit 2 or 3
 *Ejemplo:*
 
 ```liquid
-{% case template %}
+{% case page_context %}
 
-{% when 'label' %}
-     // {{ label.title }}
-{% when 'product' %}
-     // {{ product.vendor | link_to_vendor }} / {{ product.title }}
+{% when 'context-home' %}
+     // {{ site.name }}
+{% when 'context-search' %}
+     // {{ page_title }}: {{ params_query }}
 {% else %}
      // {{page_title}}
 {% endcase %}
@@ -295,6 +297,8 @@ forloop.rindex      # => how many items are still left?
 forloop.rindex0     # => how many items are still left? (zero based)
 forloop.first       # => is this the first iteration?
 forloop.last        # => is this the last iteration?
+forloop.parentloop  # => forloop of the outer loop (nil if the loop is not nested)
+forloop.name        # => name of the loop: variable and collection, e.g. item-array
 ```
 
 #### Argumentos opcionales
@@ -303,6 +307,7 @@ Hay varios argumentos opcionales en la etiqueta `for` que pueden influir en los 
 
 - `limit:<INTEGER>` te permite restringir la cantidad de objetos a obtener.
 - `offset:<INTEGER>` permite empezar la colección con el enésimo ítem.
+- `offset:continue` retoma la colección donde terminó el bucle anterior que usó la misma variable sobre la misma colección.
 - `reversed` itera sobre la colección desde el último hasta el primero.
 
 Elementos de restricción:
@@ -313,6 +318,19 @@ Elementos de restricción:
   {{ item }}
 {% endfor %}
 # results in 3,4
+```
+
+Continuación de un bucle anterior:
+
+```liquid
+# array = [1,2,3,4,5,6]
+{% for item in array limit:3 %}
+  {{ item }}
+{% endfor %}
+{% for item in array offset:continue %}
+  {{ item }}
+{% endfor %}
+# results in 1,2,3 and then 4,5,6
 ```
 
 Inversión del bucle:
@@ -339,7 +357,7 @@ Puede almacenar datos en sus propias variables, para utilizarlos en los tags de 
 ```liquid
 {% assign name = 'freestyle' %}
 
-{% for t in collections.tags %}{% if t == name %}
+{% for post in spaces['blog'].types['post'].entries %}{% if post.meta.category_slug == name %}
   <p>Freestyle!</p>
 {% endif %}{% endfor %}
 ```
@@ -349,7 +367,7 @@ Otra forma de hacer esto sería asignar valores `true/false` a la variable:
 ```liquid
 {% assign freestyle = false %}
 
-{% for t in collections.tags %}{% if t == 'freestyle' %}
+{% for post in spaces['blog'].types['post'].entries %}{% if post.meta.category_slug == 'freestyle' %}
   {% assign freestyle = true %}
 {% endif %}{% endfor %}
 
@@ -361,7 +379,7 @@ Otra forma de hacer esto sería asignar valores `true/false` a la variable:
 Si quieres combinar varios strings en uno solo y guardarlo en una variable, puedes hacerlo con el tag `capture`, que "captura" lo que sea que se muestre en su interior, y luego asigna el valor capturado a la variable dada en lugar de mostrarlo en la pantalla.
 
 ```liquid
-  {% capture attribute_name %}{{ item.title | handleize }}-{{ i }}-color{% endcapture %}
+  {% capture attribute_name %}{{ item.title | downcase | replace: ' ', '-' }}-{{ i }}-color{% endcapture %}
 
   <label for="{{ attribute_name }}">Color:</label>
   <select name="attributes[{{ attribute_name }}]" id="{{ attribute_name }}">
@@ -370,3 +388,100 @@ Si quieres combinar varios strings en uno solo y guardarlo en una variable, pued
     <option value="blue">Blue</option>
   </select>
 ```
+
+## Tags propios de Modyo
+
+Además de los tags estándar de Liquid, la plataforma registra tags propios. La mayoría viene en los layouts y plantillas por defecto de todo sitio nuevo, así que conviene saber qué emiten antes de modificarlos.
+
+### Bloque html5
+
+<code v-pre>{% html5 %}</code> es un bloque, no un tag simple: necesita su cierre <code v-pre>{% endhtml5 %}</code> y todo lo que escribas entre ambos se renderiza dentro del documento que genera.
+
+El bloque emite la declaración `<!DOCTYPE html>` y la etiqueta `<html>` con la clase `no-js` y el atributo `lang` tomado del idioma configurado del sitio, luego el contenido del bloque, y el cierre `</html>`:
+
+```html
+<!DOCTYPE html>
+<html class="no-js" lang='es'>
+  <!-- contenido del bloque -->
+</html>
+```
+
+Si el sitio no tiene idioma configurado, el atributo `lang` se omite por completo. Por eso un layout de Modyo no lleva escritas a mano las etiquetas `<!DOCTYPE html>` ni `<html>`: las escribe este bloque, y el layout **Base** de todo sitio nuevo ya viene envuelto en él. Consulta [Layouts](/es/platform/channels/templates.html#layouts).
+
+### Bloque body
+
+<code v-pre>{% body %}</code> también es un bloque y necesita su cierre <code v-pre>{% endbody %}</code>. Genera la etiqueta `<body>` completa, con un `id` y tres clases que la plataforma deriva del contexto en el que se resolvió la página:
+
+```html
+<body id="<id del contexto>" class="<page_context> <page_name> <page_id>">
+  <!-- contenido del bloque -->
+</body>
+```
+
+Esas clases son el gancho para escribir CSS o JavaScript por tipo de página sin imprimir nada en la plantilla. Estos son los valores que asigna la plataforma:
+
+| `page_context` | Dónde se resuelve | `id` del body | `page_name` | `page_id` |
+|----------------|-------------------|---------------|-------------|-----------|
+| `context-home` | Portada del sitio | `home` | `context-home-show` | `context-home-show` |
+| `context-custom` | Páginas personalizadas | `custom` | `context-custom-show` | `context-custom-show-<ruta de la página>` |
+| `context-content` | Páginas de contenido | `content` | `context-content-show` | `context-content-show-<ruta de la página>` |
+| `context-search` | Vista de resultados de búsqueda | `search` | `context-search-show` | (vacío) |
+| `context-origination` | Páginas de originación | `base` | `context-origination-show` | `context-origination-show-<ruta de la página>` |
+| `context-support` | Páginas de soporte | `base` | `context-support-show` | `context-support-show-<ruta de la página>` |
+| `context-forms` | Formularios, vista del formulario | `base` | `context-forms-form_response` | `context-forms-show-<slug del formulario>` |
+| `context-forms` | Formularios, página de agradecimiento | `base` | `context-forms-thank_you` | `context-forms-thank_you-<slug del formulario>` |
+| `context-people` | Vista previa de un widget desde el administrador | `base` | (vacío) | (vacío) |
+| (ninguno) | Páginas de error del sitio, como la 404 | `base` | (vacío) | (vacío) |
+
+La vista previa de una página desde el administrador conserva el contexto de esa página: `context-people` solo aparece en la vista previa de un widget.
+
+:::tip Tip
+El `id` solo distingue portada, páginas personalizadas, páginas de contenido y búsqueda. Todos los demás contextos comparten `id="base"`, así que para estilarlos usa la clase de `page_context`. Las páginas de error no tienen esa clase.
+:::
+
+Consulta [Variables de Contexto](/es/platform/channels/liquid-markup/variables.html#variables-de-contexto) para ver qué contiene cada una de estas variables.
+
+### Tag de búsqueda
+
+<code v-pre>{% search %}</code> emite un formulario `GET` hacia `site.search_url`, con un campo de texto llamado `query` y un botón de envío. El campo lleva `pattern=".{3,}"`, así que el navegador impide enviar menos de tres caracteres, pero **no es obligatorio**: con el campo vacío el formulario se envía igual y la página de resultados aparece sin resultados.
+
+```html
+<form action="<url de búsqueda del sitio>" method="get" checked="1">
+  <input class="search" id="query" name="query" type="text" pattern=".{3,}">
+  <input type="hidden" name="pages" value="true">
+  <input type="hidden" name="resources" value="true">
+  <input type="hidden" name="people" value="true">
+  <input type="hidden" name="pages_and_resources" value="true">
+  <button type="submit" name="commit"><i class="icon-search"></i></button>
+</form>
+```
+
+El marcado quedó de una versión anterior del tema. Los cuatro campos ocultos vienen de cuando la búsqueda se acotaba por tipo de recurso y hoy ninguno se lee: el único parámetro que el buscador toma de este formulario es `query`. El botón, además, se apoya en la clase `icon-search`, que el tema actual no incluye, así que se ve vacío.
+
+Por eso conviene escribir el formulario a mano apuntando a `site.search_url`, que es lo que hace la plantilla **search** de la plataforma y lo que te deja controlar clases, textos y accesibilidad:
+
+```liquid
+<form action="{{ site.search_url }}" method="get">
+  <input type="text" class="form-control" name="query" placeholder="Buscar" aria-label="Buscar" value="{{ params_query }}">
+  <input class="btn btn-primary" title="Buscar" type="submit" name="commit" value="Buscar">
+</form>
+```
+
+Consulta [Buscador](/es/platform/channels/sites.html#buscador) para ver cómo se habilita la búsqueda y qué parámetros acepta la consulta.
+
+### Tags de CSRF
+
+Modyo registra dos tags que emiten el token CSRF de la sesión:
+
+| Tag | Qué emite |
+|-----|-----------|
+| `{% csrf_meta %}` | Las etiquetas `<meta name="csrf-param">` y `<meta name="csrf-token">`, para leer el token desde JavaScript. |
+| `{% csrf_param %}` | Un `<input type="hidden">` con el nombre del parámetro y el token, para enviarlo dentro de un formulario. |
+
+Ambos vienen incluidos en las plantillas por defecto: <code v-pre>{% csrf_meta %}</code> en el snippet `shared/general/head` del tema, y <code v-pre>{% csrf_param %}</code> dentro de los formularios de las plantillas de originación.
+
+:::warning Atención
+Los dos tags rinden una cadena vacía cuando el visitante no tiene sesión iniciada en el sitio. Un formulario propio que dependa de ellos se envía sin token para visitantes anónimos, y en el HTML no queda ninguna marca de que el tag estuvo ahí. Úsalos en vistas que ya requieren sesión.
+:::
+
+El atributo `site.csrf_meta_tag` no es un equivalente de <code v-pre>{% csrf_meta %}</code>: siempre se resuelve como vacío. Consulta [Deprecated Attributes](/es/platform/channels/liquid-markup/objects.html#deprecated-attributes).

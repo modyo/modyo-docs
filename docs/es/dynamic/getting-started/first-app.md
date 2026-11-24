@@ -12,7 +12,7 @@ Al finalizar esta guía, habrás creado una aplicación bancaria funcional con:
 - Dashboard de cuentas
 - Vista de transacciones
 - Transferencias básicas
-- Integración con APIs
+- Integración con APIs usando TanStack Query
 
 ## Prerequisitos
 
@@ -22,7 +22,7 @@ Asegúrate de haber completado la [instalación](installation.html) de Dynamic F
 
 ```bash
 # Crear proyecto con plantilla Dynamic
-npx @modyo/cli@latest get dynamic-react-base-template mi-primera-app
+npx @modyo/cli@latest get dynamic-react-vite-base-template mi-primera-app
 
 # Entrar al directorio
 cd mi-primera-app
@@ -38,401 +38,444 @@ Tu proyecto tendrá esta estructura:
 ```
 mi-primera-app/
 ├── src/
-│   ├── App.jsx         # Componente principal
-│   ├── index.js        # Punto de entrada
-│   └── styles/         # Estilos personalizados
+│   ├── App.tsx              # Componente principal
+│   ├── main.tsx             # Punto de entrada
+│   ├── components/          # Componentes UI
+│   ├── services/
+│   │   ├── api/             # Cliente API
+│   │   ├── repositories/    # Repositorios de datos
+│   │   └── hooks/           # Hooks de TanStack Query
+│   └── styles/              # Estilos personalizados
 ├── public/
-│   └── index.html      # HTML template
-└── package.json        # Configuración
+│   └── index.html           # HTML template
+├── .env                     # Variables de entorno
+└── package.json             # Configuración
 ```
 
-## Paso 3: Crear el Dashboard
+## Paso 3: Configurar Cliente API
 
-### Dashboard Component
+### Cliente API con Axios
 
-```jsx
-// src/components/Dashboard.jsx
-import React from 'react';
-import { 
-  Container, 
-  Row, 
-  Col, 
-  Card,
-  Typography 
-} from '@dynamic-framework/ui-react';
+```typescript
+// src/services/api/client.ts
+import axios from 'axios';
 
-const Dashboard = ({ user }) => {
+export const api = axios.create({
+  baseURL: import.meta.env.VITE_API_BASE_URL || '/api',
+  timeout: 30000,
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
+```
+
+## Paso 4: Crear Repositorios
+
+### Repositorio de Usuario
+
+```typescript
+// src/services/repositories/userRepository.ts
+import { api } from '../api/client';
+import type { User } from '../../types';
+
+export async function getUser(signal?: AbortSignal): Promise<User> {
+  const response = await api.get('/user', { signal });
+  return response.data;
+}
+```
+
+### Repositorio de Cuentas
+
+```typescript
+// src/services/repositories/accountRepository.ts
+import { api } from '../api/client';
+import type { Account } from '../../types';
+
+export async function getAccounts(signal?: AbortSignal): Promise<Account[]> {
+  const response = await api.get('/accounts', { signal });
+  return response.data;
+}
+```
+
+### Repositorio de Transacciones
+
+```typescript
+// src/services/repositories/transactionRepository.ts
+import { api } from '../api/client';
+import type { Transaction } from '../../types';
+
+export async function getTransactions(signal?: AbortSignal): Promise<Transaction[]> {
+  const response = await api.get('/transactions', { signal });
+  return response.data;
+}
+```
+
+### Repositorio de Transferencias
+
+```typescript
+// src/services/repositories/transferRepository.ts
+import { api } from '../api/client';
+import type { TransferData, TransferResult } from '../../types';
+
+export async function createTransfer(data: TransferData): Promise<TransferResult> {
+  const response = await api.post('/transfers', data);
+  return response.data;
+}
+```
+
+## Paso 5: Crear Hooks de TanStack Query
+
+### Hook de Usuario
+
+```typescript
+// src/services/hooks/useUser.ts
+import { useQuery } from '@tanstack/react-query';
+import { getUser } from '../repositories/userRepository';
+
+export function useUser() {
+  return useQuery({
+    queryKey: ['user'],
+    queryFn: ({ signal }) => getUser(signal),
+  });
+}
+```
+
+### Hook de Cuentas
+
+```typescript
+// src/services/hooks/useAccounts.ts
+import { useQuery } from '@tanstack/react-query';
+import { getAccounts } from '../repositories/accountRepository';
+
+export function useAccounts() {
+  return useQuery({
+    queryKey: ['accounts'],
+    queryFn: ({ signal }) => getAccounts(signal),
+  });
+}
+```
+
+### Hook de Transacciones
+
+```typescript
+// src/services/hooks/useTransactions.ts
+import { useQuery } from '@tanstack/react-query';
+import { getTransactions } from '../repositories/transactionRepository';
+
+export function useTransactions() {
+  return useQuery({
+    queryKey: ['transactions'],
+    queryFn: ({ signal }) => getTransactions(signal),
+  });
+}
+```
+
+### Hook de Mutación para Transferencias
+
+```typescript
+// src/services/hooks/useCreateTransfer.ts
+import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { createTransfer } from '../repositories/transferRepository';
+
+export function useCreateTransfer() {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: createTransfer,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['accounts'] });
+      queryClient.invalidateQueries({ queryKey: ['transactions'] });
+    },
+  });
+}
+```
+
+## Paso 6: Crear el Dashboard
+
+### Componente Dashboard
+
+```tsx
+// src/components/Dashboard.tsx
+import { DCard, DCurrencyText, DAlert } from '@dynamic-framework/ui-react';
+import { useUser, useAccounts } from '../services/hooks';
+
+export default function Dashboard() {
+  const { data: user, isLoading: userLoading, error: userError } = useUser();
+  const { data: accounts, isLoading: accountsLoading, error: accountsError } = useAccounts();
+
+  if (userLoading || accountsLoading) {
+    return (
+      <div className="placeholder-glow">
+        <span className="placeholder col-6 mb-4"></span>
+        <div className="row">
+          <div className="col-md-6 mb-3"><span className="placeholder col-12" style={{ height: '120px' }}></span></div>
+          <div className="col-md-6 mb-3"><span className="placeholder col-12" style={{ height: '120px' }}></span></div>
+        </div>
+      </div>
+    );
+  }
+
+  if (userError || accountsError) {
+    return <DAlert color="danger">Error al cargar los datos</DAlert>;
+  }
+
   return (
-    <Container>
-      <Row className="mb-4">
-        <Col>
-          <Typography variant="h1">
-            Bienvenido, {user.name}
-          </Typography>
-        </Col>
-      </Row>
-      
-      <Row>
-        <Col md={6}>
-          <Card>
-            <Card.Header>
-              <Typography variant="h3">Cuenta Corriente</Typography>
-            </Card.Header>
-            <Card.Body>
-              <Typography variant="h2" className="text-primary">
-                $125,430.00
-              </Typography>
-              <Typography variant="body2" className="text-muted">
-                Disponible
-              </Typography>
-            </Card.Body>
-          </Card>
-        </Col>
-        
-        <Col md={6}>
-          <Card>
-            <Card.Header>
-              <Typography variant="h3">Cuenta de Ahorros</Typography>
-            </Card.Header>
-            <Card.Body>
-              <Typography variant="h2" className="text-success">
-                $45,200.00
-              </Typography>
-              <Typography variant="body2" className="text-muted">
-                Disponible
-              </Typography>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-    </Container>
-  );
-};
+    <div className="container">
+      <div className="row mb-4">
+        <div className="col">
+          <h1>Bienvenido, {user?.name}</h1>
+        </div>
+      </div>
 
-export default Dashboard;
+      <div className="row">
+        {accounts?.map((account) => (
+          <div key={account.id} className="col-md-6 mb-3">
+            <DCard>
+              <DCard.Header>
+                <h5 className="mb-0">{account.name}</h5>
+              </DCard.Header>
+              <DCard.Body>
+                <DCurrencyText value={account.balance} className="fs-2 text-primary" />
+                <p className="text-muted mb-0">Disponible</p>
+              </DCard.Body>
+            </DCard>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 ```
 
-## Paso 4: Lista de Transacciones
+## Paso 7: Lista de Transacciones
 
-### TransactionList Component
+### Componente TransactionList
 
-```jsx
-// src/components/TransactionList.jsx
-import React from 'react';
-import { 
-  Table,
-  Badge,
-  Typography 
-} from '@dynamic-framework/ui-react';
+```tsx
+// src/components/TransactionList.tsx
+import { DListGroup, DBadge, DCurrencyText, DAlert } from '@dynamic-framework/ui-react';
+import { useTransactions } from '../services/hooks';
 
-const TransactionList = ({ transactions }) => {
-  const getStatusBadge = (status) => {
-    const variants = {
+export default function TransactionList() {
+  const { data: transactions, isLoading, error } = useTransactions();
+
+  const getStatusColor = (status: string) => {
+    const colors: Record<string, string> = {
       completed: 'success',
       pending: 'warning',
       failed: 'danger'
     };
-    return variants[status] || 'secondary';
+    return colors[status] || 'secondary';
   };
+
+  if (isLoading) {
+    return (
+      <div className="placeholder-glow">
+        <span className="placeholder col-4 mb-3"></span>
+        <span className="placeholder col-12 mb-2"></span>
+        <span className="placeholder col-12 mb-2"></span>
+        <span className="placeholder col-12"></span>
+      </div>
+    );
+  }
+  if (error) return <DAlert color="danger">Error al cargar transacciones</DAlert>;
+  if (!transactions?.length) return <DAlert color="info">No hay transacciones</DAlert>;
 
   return (
     <div className="transaction-list">
-      <Typography variant="h2" className="mb-3">
-        Últimas Transacciones
-      </Typography>
-      
-      <Table responsive hover>
-        <thead>
-          <tr>
-            <th>Fecha</th>
-            <th>Descripción</th>
-            <th>Monto</th>
-            <th>Estado</th>
-          </tr>
-        </thead>
-        <tbody>
-          {transactions.map((transaction) => (
-            <tr key={transaction.id}>
-              <td>{transaction.date}</td>
-              <td>{transaction.description}</td>
-              <td className={transaction.amount > 0 ? 'text-success' : 'text-danger'}>
-                ${Math.abs(transaction.amount).toFixed(2)}
-              </td>
-              <td>
-                <Badge variant={getStatusBadge(transaction.status)}>
-                  {transaction.status}
-                </Badge>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </Table>
+      <h2 className="mb-3">Últimas Transacciones</h2>
+
+      <DListGroup>
+        {transactions.map((transaction) => (
+          <DListGroup.Item key={transaction.id} className="d-flex justify-content-between align-items-center">
+            <div>
+              <strong>{transaction.description}</strong>
+              <small className="d-block text-muted">{transaction.date}</small>
+            </div>
+            <div className="text-end">
+              <DCurrencyText
+                value={Math.abs(transaction.amount)}
+                className={transaction.amount > 0 ? 'text-success' : 'text-danger'}
+              />
+              <DBadge color={getStatusColor(transaction.status)} className="ms-2">
+                {transaction.status}
+              </DBadge>
+            </div>
+          </DListGroup.Item>
+        ))}
+      </DListGroup>
     </div>
   );
-};
-
-export default TransactionList;
+}
 ```
 
-## Paso 5: Formulario de Transferencia
+## Paso 8: Formulario de Transferencia
 
-### TransferForm Component
+### Componente TransferForm
 
-```jsx
-// src/components/TransferForm.jsx
-import React, { useState } from 'react';
-import { 
-  Form,
-  Input,
-  Select,
-  Button,
-  Alert 
+```tsx
+// src/components/TransferForm.tsx
+import { useState } from 'react';
+import {
+  DCard,
+  DInput,
+  DInputSelect,
+  DInputCurrency,
+  DButton,
+  DAlert
 } from '@dynamic-framework/ui-react';
+import { useAccounts, useCreateTransfer } from '../services/hooks';
 
-const TransferForm = ({ accounts, onTransfer }) => {
+export default function TransferForm() {
+  const { data: accounts } = useAccounts();
+  const { mutate: createTransfer, isPending, isSuccess, isError, error, reset } = useCreateTransfer();
+
   const [formData, setFormData] = useState({
     fromAccount: '',
     toAccount: '',
-    amount: '',
+    amount: 0,
     description: ''
   });
-  const [error, setError] = useState('');
-  const [success, setSuccess] = useState(false);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setError('');
-    setSuccess(false);
-
-    try {
-      await onTransfer(formData);
-      setSuccess(true);
-      setFormData({
-        fromAccount: '',
-        toAccount: '',
-        amount: '',
-        description: ''
-      });
-    } catch (err) {
-      setError(err.message);
-    }
-  };
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
+    reset();
+    createTransfer(formData, {
+      onSuccess: () => {
+        setFormData({ fromAccount: '', toAccount: '', amount: 0, description: '' });
+      }
     });
   };
 
+  const accountOptions = accounts?.map(account => ({
+    value: account.id,
+    label: `${account.name} - $${account.balance}`
+  })) || [];
+
   return (
-    <Form onSubmit={handleSubmit}>
-      {error && <Alert variant="danger">{error}</Alert>}
-      {success && <Alert variant="success">Transferencia exitosa</Alert>}
-      
-      <Form.Group>
-        <Form.Label>Cuenta Origen</Form.Label>
-        <Select
-          name="fromAccount"
-          value={formData.fromAccount}
-          onChange={handleChange}
-          required
-        >
-          <option value="">Seleccionar cuenta</option>
-          {accounts.map(account => (
-            <option key={account.id} value={account.id}>
-              {account.name} - ${account.balance}
-            </option>
-          ))}
-        </Select>
-      </Form.Group>
+    <DCard>
+      <DCard.Body>
+        <h2 className="mb-3">Nueva Transferencia</h2>
+        <form onSubmit={handleSubmit}>
+          {isError && <DAlert color="danger">{error?.message || 'Error en la transferencia'}</DAlert>}
+          {isSuccess && <DAlert color="success">Transferencia realizada con éxito</DAlert>}
 
-      <Form.Group>
-        <Form.Label>Cuenta Destino</Form.Label>
-        <Input
-          type="text"
-          name="toAccount"
-          value={formData.toAccount}
-          onChange={handleChange}
-          placeholder="Número de cuenta"
-          required
-        />
-      </Form.Group>
+          <DInputSelect
+            id="fromAccount"
+            label="Cuenta Origen"
+            options={accountOptions}
+            value={formData.fromAccount}
+            onChange={(option) => setFormData({ ...formData, fromAccount: String(option.value) })}
+          />
 
-      <Form.Group>
-        <Form.Label>Monto</Form.Label>
-        <Input
-          type="number"
-          name="amount"
-          value={formData.amount}
-          onChange={handleChange}
-          placeholder="0.00"
-          min="0.01"
-          step="0.01"
-          required
-        />
-      </Form.Group>
+          <DInput
+            id="toAccount"
+            label="Cuenta Destino"
+            value={formData.toAccount}
+            onChange={(e) => setFormData({ ...formData, toAccount: e.target.value })}
+            placeholder="Número de cuenta"
+          />
 
-      <Form.Group>
-        <Form.Label>Descripción</Form.Label>
-        <Input
-          type="text"
-          name="description"
-          value={formData.description}
-          onChange={handleChange}
-          placeholder="Concepto de la transferencia"
-        />
-      </Form.Group>
+          <DInputCurrency
+            id="amount"
+            label="Monto"
+            value={formData.amount}
+            onChange={(value) => setFormData({ ...formData, amount: value || 0 })}
+          />
 
-      <Button type="submit" variant="primary" block>
-        Realizar Transferencia
-      </Button>
-    </Form>
+          <DInput
+            id="description"
+            label="Descripción"
+            value={formData.description}
+            onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+            placeholder="Concepto de la transferencia"
+          />
+
+          <DButton
+            type="submit"
+            text={isPending ? 'Procesando...' : 'Realizar Transferencia'}
+            color="primary"
+            className="w-100 mt-3"
+            loading={isPending}
+          />
+        </form>
+      </DCard.Body>
+    </DCard>
   );
-};
-
-export default TransferForm;
+}
 ```
 
-## Paso 6: Integrar Todo en App
+## Paso 9: Integrar Todo en App
 
-### App Component Principal
+### Componente App Principal
 
-```jsx
-// src/App.jsx
-import React, { useState, useEffect } from 'react';
-import { ThemeProvider, Tabs, Tab } from '@dynamic-framework/ui-react';
+```tsx
+// src/App.tsx
+import { useState } from 'react';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { DContextProvider, DTabs } from '@dynamic-framework/ui-react';
 import Dashboard from './components/Dashboard';
 import TransactionList from './components/TransactionList';
 import TransferForm from './components/TransferForm';
-import { fetchUser, fetchAccounts, fetchTransactions, createTransfer } from './services/api';
 
-function App() {
-  const [user, setUser] = useState(null);
-  const [accounts, setAccounts] = useState([]);
-  const [transactions, setTransactions] = useState([]);
+import '@dynamic-framework/ui-react/dist/css/dynamic-ui.css';
+
+const queryClient = new QueryClient();
+
+const tabs = [
+  { label: 'Dashboard', tab: 'dashboard' },
+  { label: 'Transacciones', tab: 'transactions' },
+  { label: 'Transferir', tab: 'transfer' },
+];
+
+function AppContent() {
   const [activeTab, setActiveTab] = useState('dashboard');
 
-  useEffect(() => {
-    // Cargar datos iniciales
-    loadData();
-  }, []);
-
-  const loadData = async () => {
-    try {
-      const userData = await fetchUser();
-      const accountsData = await fetchAccounts();
-      const transactionsData = await fetchTransactions();
-      
-      setUser(userData);
-      setAccounts(accountsData);
-      setTransactions(transactionsData);
-    } catch (error) {
-      console.error('Error loading data:', error);
-    }
-  };
-
-  const handleTransfer = async (transferData) => {
-    await createTransfer(transferData);
-    // Recargar datos después de la transferencia
-    await loadData();
-  };
-
-  if (!user) {
-    return <div>Cargando...</div>;
-  }
-
   return (
-    <ThemeProvider>
-      <div className="app">
-        <Tabs activeKey={activeTab} onSelect={setActiveTab}>
-          <Tab eventKey="dashboard" title="Dashboard">
-            <Dashboard user={user} />
-          </Tab>
-          <Tab eventKey="transactions" title="Transacciones">
-            <TransactionList transactions={transactions} />
-          </Tab>
-          <Tab eventKey="transfer" title="Transferir">
-            <TransferForm accounts={accounts} onTransfer={handleTransfer} />
-          </Tab>
-        </Tabs>
+    <div className="app">
+      <DTabs
+        options={tabs}
+        defaultSelected={activeTab}
+        onChange={(option) => setActiveTab(option.tab)}
+      />
+      <div className="tab-content mt-3">
+        {activeTab === 'dashboard' && <Dashboard />}
+        {activeTab === 'transactions' && <TransactionList />}
+        {activeTab === 'transfer' && <TransferForm />}
       </div>
-    </ThemeProvider>
+    </div>
   );
 }
 
-export default App;
+export default function App() {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <DContextProvider>
+        <AppContent />
+      </DContextProvider>
+    </QueryClientProvider>
+  );
+}
 ```
 
-## Paso 7: Servicios API
-
-### API Service
-
-```javascript
-// src/services/api.js
-const API_BASE = process.env.REACT_APP_API_URL || 'http://localhost:3001';
-
-export const fetchUser = async () => {
-  const response = await fetch(`${API_BASE}/user`);
-  return response.json();
-};
-
-export const fetchAccounts = async () => {
-  const response = await fetch(`${API_BASE}/accounts`);
-  return response.json();
-};
-
-export const fetchTransactions = async () => {
-  const response = await fetch(`${API_BASE}/transactions`);
-  return response.json();
-};
-
-export const createTransfer = async (data) => {
-  const response = await fetch(`${API_BASE}/transfers`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(data),
-  });
-  
-  if (!response.ok) {
-    throw new Error('Error en la transferencia');
-  }
-  
-  return response.json();
-};
-```
-
-## Paso 8: Ejecutar la Aplicación
+## Paso 10: Ejecutar la Aplicación
 
 ```bash
 # Iniciar el servidor de desarrollo
-npm start
+npm run dev
 
-# La aplicación estará disponible en http://localhost:8080
+# La aplicación estará disponible en http://localhost:5173
 ```
 
-## Paso 9: Personalización
+## Paso 11: Personalización
 
 ### Agregar Estilos Personalizados
 
-```scss
-// src/styles/custom.scss
+```css
+/* src/styles/custom.css */
 .app {
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   padding: 20px;
-}
-
-.card {
-  border-radius: 12px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
-  
-  &:hover {
-    transform: translateY(-5px);
-  }
 }
 
 .transaction-list {
@@ -442,17 +485,26 @@ npm start
 }
 ```
 
-## Paso 10: Desplegar a Modyo
+## Paso 12: Desplegar a Modyo
+
+### 1. Configurar Entorno
+
+Crea un archivo `.env` con tus credenciales de Modyo:
 
 ```bash
-# Construir para producción
-npm run build
+# .env
+MODYO_ACCOUNT_URL=https://tu-cuenta.modyo.cloud
+MODYO_TOKEN=tu-api-token
+# Usa MODYO_SITE_HOST o MODYO_SITE_ID (no ambos)
+MODYO_SITE_HOST=tu-site-host
+# MODYO_SITE_ID=123  # Preferido: funciona con stages del sitio
+```
 
-# Configurar Modyo CLI
-npx @modyo/cli init
+### 2. Construir y Desplegar
 
-# Desplegar a Modyo
-npx @modyo/cli push
+```bash
+# Construir y push a Modyo
+npm run build && npx @modyo/cli@latest push
 ```
 
 ## Resultado Final
@@ -460,29 +512,20 @@ npx @modyo/cli push
 ¡Felicitaciones! Has creado tu primera aplicación bancaria con Dynamic Framework que incluye:
 
 - Dashboard con resumen de cuentas
-- Lista de transacciones recientes
-- Formulario de transferencias
-- Integración con APIs
-- Diseño responsive y moderno
+- Lista de transacciones con estados de carga y error
+- Formulario de transferencias con mutaciones de TanStack Query
+- Integración con APIs usando repositorios y hooks
 - Listo para desplegar en Modyo
 
 ## Próximos Pasos
 
 - Explora más [componentes](../development/components.html)
-- Implementa [autenticación](../development/api-integration.html#autenticacion)
-- Agrega [validaciones avanzadas](../development/components.html#validacion)
+- Aprende sobre [patrones de integración con APIs](../development/api-integration.html)
 - Personaliza el [tema](../customization/theming.html)
-
-## Recursos
-
-- [Código completo en GitHub](https://github.com/modyo/dynamic-first-app)
-- [Demo en vivo](https://demo.dynamic.modyo.com/first-app)
-- [Video tutorial](https://youtube.com/watch?v=...)
 
 ## ¿Necesitas Ayuda?
 
 Si encuentras problemas:
 1. Revisa la [documentación de componentes](../development/components.html)
-2. Busca en los [FAQs](https://support.modyo.com/hc/es)
-3. Pregunta en la [comunidad](https://community.modyo.com)
-4. Contacta [soporte](https://support.modyo.com)
+2. Consulta el [Storybook](https://react.dynamicframework.dev) para ejemplos interactivos
+3. Contacta [Soporte](https://support.modyo.com)

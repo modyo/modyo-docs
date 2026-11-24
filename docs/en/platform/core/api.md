@@ -16,7 +16,7 @@ The API Key generated for a user will inherit the same permissions that the user
 
 To start taking advantage of the Modyo API, it is first important to know the available services, the operations that can be invoked, and how to use them.
 
-Modyo facilitates this task by providing the description of its _headless_ API through the use of Swagger (also known as OpenAPI specification) in lists of services grouped according to their function: administrative, public content, and user profile.
+Modyo facilitates this task by providing the description of its _headless_ API through the use of Swagger (also known as OpenAPI specification) in lists of services grouped according to their function: administrative, public content, user profile, and [published site menus](/en/platform/channels/navigation.html#consume-a-menu-through-the-api).
 
 You can access the OpenAPI documentation through the following URLs:
 
@@ -24,6 +24,7 @@ You can access the OpenAPI documentation through the following URLs:
 https://[account_host]/api/admin/docs
 https://[account_host]/api/content/docs
 https://[account_host]/api/customers/docs
+https://[account_host]/api/channels/docs
 ```
 
 For example, you will find the public Content API details at the following path:
@@ -36,13 +37,13 @@ This way, the public Swagger documentation for the Content API of the account ht
 
 In each documentation view, you will find the details of the different resources that Modyo provides and the operations you can perform on them.
 
-For example, in the Administrative API (/api/admin/docs) different sections are shown, such as "Locks", "Layout pages", "Email templates" or "Content". If you focus on the latter, you can see that it has a list of operations it performs on the Modyo Content module. We will focus on just some calls to Spaces:
+For example, in the Administrative API (/api/admin/docs) different sections are shown, such as "Locks", "Layout Pages", "Email templates" or "Content Spaces". If you focus on the latter, you can see that it has a list of operations it performs on the spaces of the Modyo Content module. We will focus on just some of them:
 
 ```http
-Content
+Content Spaces
 
 ...
-GET    /content/spaces   Spaces List
+GET    /content/spaces   List spaces
 POST   /content/spaces   Create a space
 ...
 ```
@@ -89,8 +90,9 @@ Within the __Response__ section, in **Example Value** you get an example of a li
       "enforced_review": false,
       "enforce_all_review": false,
       "enforced_reviewers_attributes": [],
-      "cache_max_age": 300,
-      "cache_enabled": false
+      "description": "Space for product content",
+      "show_author": true,
+      "realm_id": 3
     }
   ],
   "meta": {
@@ -116,36 +118,38 @@ The following code is part of the model for the **User** object:
 
 ```shell
 User{
-schemas	    [...]
-id	        string example: 2441309d85324e7793ae
-externalId	string example: 2441309d85324e7793ae
-meta	      string example: OrderedMap { "resourceType": "User", "created": "2018-03-27T19:59:26.000Z", "lastModified": "2018-03-27T19:59:26.000Z" }
-userName	  string example: Test_User_dfeef4c5-5681-4387-b016-bdf221e82081
-name	      string example: OrderedMap { "familyName": "familyName", "givenName": "givenName" }
-active	    string
-example:    true
-emails	    [...]
+avatar        Avatar{...}
+id            integer example: 2332
+uuid          string example: 5379068f-4bc2-4858-8c37-6f59858e0a5b
+external_id   string example: 11111111-1
+name          string example: Clifton Feil
+first_name    string example: Clifton
+last_name     string example: Feil
+second_last_name string example: Smith
+email         string example: test.user@modyo.com
+username      string example: test.user
+...
 }
 ```
 
 ## Calling the API
 
-Once you know the service you will query according to [Exploring the API](/en/platform/core/api.html#exploring-the-api) and an [Authentication](/en/platform/core/api.html#authentication) method, you can make a _request_ to the URL of the required resource.
+Once you know the service you will query according to [General Information](/en/platform/core/api.html#general-information) and an [Authentication](/en/platform/core/api.html#authentication) method, you can make a _request_ to the URL of the required resource.
 
-For this example, we will obtain the list of all email campaigns that were created on the platform. According to the documentation in Swagger _(test.modyo.com/api/admin/docs)_, you need to call the following URL:
+For this example, we will obtain the list of all email campaigns that were created in a realm. According to the documentation in Swagger _(test.modyo.com/api/admin/docs)_, you need to call the following URL, where `{realm_uid}` is the realm **Identifier**:
 
 ```http request
-GET https://[account_host]/api/admin/messaging/campaigns
+GET https://[account_host]/api/admin/customers/{realm_uid}/messaging/campaigns
 ```
 
-This service accepts URL parameters to filter by types (`mailing` and `notification`) through the `type` parameter. It allows you to include only campaigns that have _deliveries_ (parameter `filtered`) or request only a reduced list of attributes to be included in the _response_ (parameter `only`).
+This service accepts URL parameters to filter by types (`mailing` and `notification`) through the `type` parameter. It allows you to search campaigns by name (parameter `query`) or request only a reduced list of attributes to be included in the _response_ (parameter `only`).
 
 #### Call using cURL
 
-For the example, we only want to include campaigns of type `mailing` (`type=mailing`), so the _request_, after adding the necessary authentication headers, would look like this:
+For the example, we only want to include campaigns of type `mailing` (`type=mailing`) from the realm with identifier `my-realm`, so the _request_, after adding the necessary authentication headers, would look like this:
 
 ```shell script
-curl -X GET https://test.modyo.com/api/admin/messaging/campaigns?type=mailing -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
+curl -X GET https://test.modyo.com/api/admin/customers/my-realm/messaging/campaigns?type=mailing -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
 ```
 
 When invoking the service, you get an `HTTP 200 OK` and the _response_ that contains a JSON object that looks like this:
@@ -158,40 +162,44 @@ When invoking the service, you get an `HTTP 200 OK` and the _response_ that cont
 		"uuid": "52dc64c2-8c31-4de1-b10c-0313ae6486f6",
 		"type": "mailing",
 		"sent_count": 1078,
-		"last_sent": "2019-07-15T17:05:12.000-03:00",
+		"starts_at": "2019-07-15T17:05:12.000-03:00",
 		"segments_enabled": false,
-		"segment_list": "--",
-		"created_at": "2019-07-15T16:58:43.000-03:00"
+		"segments_list": "--",
+		"created_at": "2019-07-15T16:58:43.000-03:00",
+		"read_only_for_admin": false
 	}, {
 		"id": 11,
 		"name": "Test campaing 02 Mar8 1546",
 		"uuid": "2c210b2c-af4e-4f9c-b2c5-b768dde622a2",
 		"type": "mailing",
 		"sent_count": 6,
-		"last_sent": "2019-03-11T15:17:20.000-03:00",
+		"starts_at": "2019-03-11T15:17:20.000-03:00",
 		"segments_enabled": true,
-		"segment_list": "Test Mailing Mar08",
-		"created_at": "2019-03-08T15:46:52.000-03:00"
+		"segments_list": "Test Mailing Mar08",
+		"created_at": "2019-03-08T15:46:52.000-03:00",
+		"read_only_for_admin": false
 	}, {
 		"id": 6,
 		"name": "campaign jan7 1210",
 		"uuid": "7dc46be9-ec5e-4468-b74e-a5ba4b88ecb4",
 		"type": "mailing",
 		"sent_count": 327,
-		"last_sent": "2019-01-07T16:53:33.000-03:00",
+		"starts_at": "2019-01-07T16:53:33.000-03:00",
 		"segments_enabled": true,
-		"segment_list": "--",
-		"created_at": "2019-01-07T12:10:22.000-03:00"
+		"segments_list": "--",
+		"created_at": "2019-01-07T12:10:22.000-03:00",
+		"read_only_for_admin": false
 	}, {
 		"id": 5,
 		"name": "Spanish Campaign",
 		"uuid": "4b13358e-f2b7-48ef-a720-26b55e4f2502",
 		"type": "mailing",
 		"sent_count": 0,
-		"last_sent": null,
+		"starts_at": null,
 		"segments_enabled": false,
-		"segment_list": "--",
-		"created_at": "2019-01-02T15:59:06.000-03:00"
+		"segments_list": "--",
+		"created_at": "2019-01-02T15:59:06.000-03:00",
+		"read_only_for_admin": false
 	}],
 	"meta": {
 		"total_entries": 4,
@@ -206,53 +214,23 @@ When invoking the service, you get an `HTTP 200 OK` and the _response_ that cont
 
 1. Open your API portal in your browser. (e.g. https://un.modyo.test/api/admin/docs)
 2. In the Campaigns section, expand the **Campaign List** call.
-3. Here you can refine the search using the call parameters. Click **Execute**.
+3. Enter the realm identifier in `realm_uid` and, if you want, refine the search using the other call parameters. Click **Execute**.
 4. In the **Response** section, you can see the following:
 - How to execute the same command using cURL
 - The Request URL
 - The response from the Modyo platform.
 
-The JSON response corresponds to a list (or collection) of email campaigns (`campaigns`) and the attributes of each object in the collection contain information relevant to the queried resource. In the example, the campaign name (`name`), the last date it was sent (`last_sent`), or whether this campaign was segmented or not (`segments_enabled`).
+The JSON response corresponds to a list (or collection) of email campaigns (`campaigns`) and the attributes of each object in the collection contain information relevant to the queried resource. In the example, the campaign name (`name`), the date its sending started (`starts_at`), or whether this campaign was segmented or not (`segments_enabled`).
 
 Apart from the collection, you can see an object called `meta` that contains information about the pagination of this resource.
 
-Continuing with the exercise, it is possible to use the data obtained in the previous query to get more information. For example, we may be interested in knowing the number of times a particular campaign was executed (Campaign Deliveries) with the ID of that campaign. For this, you can review the service catalog again, and you will find the following _endpoint_:
+Continuing with the exercise, it is possible to use the data obtained in the previous query to get more information. For example, we may be interested in knowing who a particular campaign was sent to. For this, you can review the service catalog again, and in the Message Deliveries section you will find the following _endpoint_:
 
 ```http request
-GET /messaging/campaigns/{campaign_id}/deliveries   Campaign deliveries list
+GET /customers/{realm_uid}/messaging/message_deliveries   List message deliveries
 ```
 
-This way, you can make a _request_ to see the specific information of the _campaign deliveries_ of the campaign called "Test campaign 01", passing the corresponding campaign ID in the `campaign_id` parameter (in this case it is `15`):
-
-```shell script
-curl -X GET https://test.modyo.com/api/admin/messaging/campaigns/15/deliveries  -H 'Authorization: Bearer 8c280cc01fc13361aabb1183bb41b4b82faab23e990148c91406bbf5e452ab56'
-```
-
-Similar to the previous example, the _response_ will look like this:
-
-```json
-{
-	"deliveries": [{
-		"id": 29,
-		"uuid": "b728b957-78e5-4e2d-b28d-8e699a665a2c",
-		"campaign_id": 15,
-		"starts_at": "2019-07-15T17:05:12.000-03:00",
-		"ends_at": "2019-07-15T17:05:20.000-03:00",
-		"sent_count": 1078,
-		"reach": -1,
-		"status": "completed",
-		"segment_list": "--"
-	}],
-	"meta": {
-		"total_entries": 1,
-		"per_page": 10,
-		"current_page": 1,
-		"total_pages": 1
-	}
-}
-```
-
-As you can see, the _response_ is nothing more than a JSON object containing a list of email campaign _deliveries_ (`deliveries`). In the example, we verify that the campaign with ID `15` was executed only once, it has already completed successfully (its `status` is `completed`) and was received by 1078 people (`sent_count` attribute).
+This list takes the campaign ID in the `campaign_id` parameter (for "Test campaign 01" it is `15`) and returns one delivery for each message sent. In [Pagination](/en/platform/core/api.html#pagination) you will see this call and how to walk through its response.
 
 Following this example, you can use Modyo's extensive catalog of services and build your application in the way that best suits your needs.
 
@@ -271,14 +249,14 @@ Below, we explain how to use each of these methods.
 
 The first thing you must do is register the application to consume the API. Follow these steps to create a new Bearer Token:
 
-1. From the Modyo platform, in the side menu, expand **Settings** and click on **API Access**.
+1. From the Modyo platform, in the side menu, expand **Settings** and click on **API access**.
 2. Click the **New API Access** button.
 3. Fill in the name, description, and redirect URI of the access.
 
-When saving the application information, Modyo will show a view where you will see the _callback URL_ (which corresponds to the Redirect URI field entered in the previous step) and also the _Application ID_ and _Secret_ fields that you can use later.
+When you click **Create**, Modyo shows the **A new secret token has been generated** dialog with the application's secret. Copy it right away with the button next to it: this is the only time it is shown, and you cannot retrieve it after you close the dialog. The application then appears in the list with its **Callback URL**, which is the redirect URI you entered, and its **Application Id**.
 
-:::warning Attention
-Keep in mind that when you log out of any of your sites, a _GET_ will be made to all logout URLs of your API access applications, which could generate some unwanted redirects if a URL is used carelessly in that field.
+:::tip Tip
+You only need the secret for the flow described in [The OAuth2 client behind API access](/en/platform/core/api.html#the-oauth2-client-behind-api-access) and to revoke a token from your integration, as explained in [Access token lifecycle](/en/platform/core/api.html#access-token-lifecycle). To generate tokens from the console, as in the following steps, you do not need it. If you lost it and you need it, create another application.
 :::
 
 4. Once the application is registered, assign the users who will use the API to the application. To do this, in the side menu, expand **Settings** and click on **Team**.
@@ -286,9 +264,9 @@ Keep in mind that when you log out of any of your sites, a _GET_ will be made to
 
 For more details, go to [Users and Roles](/en/platform/core/roles.html)
 
-6. In the administrator user's edit view, click on _API Access_ and select the **New API Access** option.
+6. In the administrator user's view, open the **API access** tab and click **New Access Token**.
 
-7. In the _popup_ that appears next, select the name of the application you just created and then click **New Access Token**.
+7. In the **Generate Access Token** _popup_, choose the application you just created in **Choose an application to generate an access token** and click **Create Token**.
 
 :::warning Attention
 Keep in mind that administrative users will only be able to execute actions through the Modyo administrative API if they have the necessary permissions to perform each action. For example, an administrator with the "Developer" role on a site will not be able to execute the "Publish" action on that site.
@@ -335,6 +313,69 @@ The response obtained from the service is an `HTTP 200 OK`, and contains the rol
 }
 ```
 
+#### The OAuth2 client behind API access
+
+The values of an **API access** application are not Modyo-specific: they are the credentials of an OAuth2 client. The **Application Id** is the `client_id`, the secret shown only once when you create the application is the `client_secret`, and the redirect URI is the `redirect_uri` that the platform sends the authorization code back to.
+
+Modyo mounts the endpoints of the flow under `/admin/oauth`:
+
+```http request
+GET  https://[account_host]/admin/oauth/authorize
+POST https://[account_host]/admin/oauth/token
+POST https://[account_host]/admin/oauth/revoke
+```
+
+The last one revokes a token, as explained in [Access token lifecycle](/en/platform/core/api.html#access-token-lifecycle).
+
+The only enabled flow is `authorization_code`, in two steps:
+
+1. Send the administrator to `/admin/oauth/authorize` with `client_id`, `redirect_uri`, `response_type=code` and, if you need it, `state`. This step requires an open administrator session in that browser: if there is none, the platform redirects to the login screen and returns to the authorization once the user is in. There is no consent screen, so with an open session the redirect to `redirect_uri` with the `code` parameter is immediate.
+2. Exchange the `code` for a token at `/admin/oauth/token`:
+
+```shell script
+curl -X POST https://test.modyo.com/admin/oauth/token \
+  -d grant_type=authorization_code \
+  -d code=THE_RECEIVED_CODE \
+  -d redirect_uri=https://my-integration.example.com/callback \
+  -d client_id=THE_APPLICATION_ID \
+  -d client_secret=THE_SECRET
+```
+
+The limits of the flow matter when you design your integration:
+
+- `authorization_code` is the only enabled `grant_type`. There is no `client_credentials`, so there is no way to get a token without an administrator behind it: every token belongs to a person and inherits their permissions.
+- The platform does not issue _refresh tokens_. The `/admin/oauth/token` response returns `access_token` but no `refresh_token`, and there is no `grant_type=refresh_token` to fall back on.
+- The authorization code expires after 10 minutes and is good for a single exchange.
+- The application must belong to the account of the administrator granting access. Authorizing an application from another account fails.
+- The token's default scope is `public`, with `admin` as an optional scope, but the admin API does not require either one: what the token can do is decided by the permissions of the user who owns it.
+
+:::tip Tip
+You do not need to implement this flow to use the API. The path described above, creating the application and generating the token from the console, yields the same `access_token` and is enough for most integrations. The full OAuth2 flow makes sense when an external application has to obtain tokens on behalf of different administrators.
+:::
+
+#### Access token lifecycle
+
+The _access token_ you copy from **Manage Access Tokens** never expires. Modyo issues admin API tokens with no expiration date, so they stay valid indefinitely as long as they exist, no matter how much time has passed since they were generated or whether the administrator closed their browser sessions.
+
+That means a token stops working only when someone deletes or revokes it. You have three ways to do that:
+
+- **Delete the token**, from the **API access** tab of the team member, in the **Manage Access Tokens** section. This affects only that token.
+- **Delete the application**, from **Settings** > **API access**. This deletes every token issued with that application at once, across all administrators, so any integration using it stops authenticating.
+- **Revoke the token** from your integration, without going through the console, with a `POST` to `/admin/oauth/revoke` that includes the `token` along with the `client_id` and `client_secret` of the application that issued it. This affects only that token.
+
+```shell script
+curl -X POST https://test.modyo.com/admin/oauth/revoke \
+  -d token=THE_ACCESS_TOKEN \
+  -d client_id=THE_APPLICATION_ID \
+  -d client_secret=THE_SECRET
+```
+
+Deactivating the administrator who owns the token also cuts off access: the platform resolves the token only if the user is still active.
+
+:::warning Attention
+The platform does not rotate or renew tokens on its own. There is no automatic expiration and no _refresh token_, so any rotation policy is up to whoever operates the integration: generate the new token, swap it in the client, and only then delete or revoke the old one. And treat the _access token_ as a permanent credential, because that is what it is: if it leaks, it keeps working until someone deletes it from the console or revokes it.
+:::
+
 #### Unauthenticated requests
 
 What happens if someone tries to make a _request_ to the API without having a valid token? If you try to make a call without authentication or with an invalid token, the system will respond with an `HTTP 401 Unauthorized` error:
@@ -357,14 +398,94 @@ If you are using Modyo from a web browser and have a session started as an admin
 
 Remember that you will only be able to access the same sections of the API that you are allowed to access from the Modyo interface.
 
+This method is meant for exploring the read side of the API from the browser, and it has two limits:
+
+- **With the cookie alone, only `GET` requests work.** When the platform resolves the credential from the cookie it turns on cross-site request forgery protection, so a `POST`, `PUT`, `PATCH` or `DELETE` without a CSRF token gets an `HTTP 403 Forbidden` with an empty body and no message explaining why. To write using the cookie you also have to send the page's CSRF token in the `X-CSRF-Token` header. With a Bearer token that protection does not apply.
+- **Session validity is checked.** Unlike the Bearer token, the cookie carries the browser session along with it. If that session expired or was revoked, the response is an `HTTP 401 Unauthorized` with this body:
+
+```json
+{
+  "error": {
+    "grant_expired": "Session expired"
+  }
+}
+```
+
+:::tip Tip
+For automation, use a Bearer token: it does not depend on a browser session, does not require a CSRF token, and does not expire. Leave the session cookie for exploring the API while you work in the console.
+:::
+
+## Error handling
+
+The whole admin API shares the same way of reporting failures. It is worth coding your error handling against this cross-cutting contract instead of against the response list of a single call.
+
+### The error envelope
+
+When there is something to explain, the response carries an object with a single `errors` key whose value is a list. The simple form is a list of strings, already translated into the language of the user who owns the credential:
+
+```json
+{
+  "errors": [
+    "This element cannot be deleted"
+  ]
+}
+```
+
+Resource validation errors and publishing errors use a structured form, where each element identifies the field that failed:
+
+```json
+{
+  "errors": [
+    {
+      "field": "name",
+      "messages": [
+        "Name can't be blank"
+      ],
+      "details": [
+        {
+          "error": "blank"
+        }
+      ]
+    }
+  ]
+}
+```
+
+- `field` is the affected attribute. Nested attributes arrive with the full path, in the form `parent[child]`, and collection items include their position, `parent[0][child]`.
+- `messages` carries the text you can show to a person.
+- `details` carries the error code, so you can branch without depending on the translated text.
+
+Treat `errors` as a list that can arrive in either form: check whether the element is a string or an object before reading `field`.
+
+### Status codes
+
+The default status of a failed operation in the admin API is `409 Conflict`. When the controller does not set another one, any business error or resource validation error comes back as `409` with the `errors` envelope, not as the `400` or `422` you would expect from other APIs. If your client treats `409` as a concurrency conflict and retries, it will retry in vain.
+
+| Status | Body | When you get it |
+| --- | --- | --- |
+| `401 Unauthorized` | <code v-pre>{}</code> | There is no valid credential: the `Authorization` header is missing, the token does not exist, or the administrator who owns the token is deactivated. |
+| `401 Unauthorized` | Empty | The credential is valid, but the user lacks the permission the operation requires. |
+| `401 Unauthorized` | <code v-pre>{"error": {"grant_expired": "..."}}</code> | The administrator cookie session expired or was revoked. |
+| `403 Forbidden` | Empty | CSRF token verification failed on a write authenticated with a session cookie. |
+| `403 Forbidden` | <code v-pre>{"error": {"pending_password_reset": "..."}}</code> | The user who owns the credential has a pending password change: an administrator created them from the console or set their password, and they have not changed it yet. Every call, with a Bearer token or with the cookie, gets this response until that user logs in to the console with their username and password and sets a new one. |
+| `404 Not Found` | <code v-pre>{}</code> or <code v-pre>{"errors": [...]}</code> | The resource or the site in the path does not exist, or the user cannot see them. |
+| `409 Conflict` | <code v-pre>{"errors": [...]}</code> | Default status of a failed operation. |
+| `422 Unprocessable Entity` | <code v-pre>{"errors": [...]}</code> or empty | The parameters of the call are not valid. |
+
+:::warning Attention
+Three of these responses arrive with no body and no message explaining the reason: the CSRF `403`, the `401` for insufficient permissions, and some of the `422`s. And since `401` covers both "you are not authenticated" and "you do not have permission", the only signal that tells them apart is the body: <code v-pre>{}</code> points to the credential and an empty body points to permissions. Log the status and the path in your integration, because the response will not give you more clues.
+:::
+
+None of these errors gets better on a retry: a `401`, a `403` or a `409` will fail the same way until you change the credential, the CSRF token, or the data of the call. The pending password `403` clears only once the user sets their new password.
+
 ## Pagination
 
 When it comes to APIs, sometimes the amount of results from a query is too high to be efficient and organized. To improve the understanding of this data by a person, you can make use of **pagination**.
 
-If you want to review the complete list of customer mail deliveries (`message deliveries`) from a given mail campaign (`campaign`) and a given campaign send execution (`campaign delivery`). With the data obtained in the _requests_ from the previous sections, you can use the _endpoint_ that lists the _message deliveries_, passing as parameters the corresponding `campaign_id` and `delivery_id`:
+For example, if you want to review the complete list of customer mail deliveries (`message deliveries`) from a given mail campaign (`campaign`), you can use the _endpoint_ that lists the _message deliveries_ with the campaign ID you got in [Calling the API](/en/platform/core/api.html#calling-the-api), passing it in the `campaign_id` parameter:
 
 ```shell script
-curl -X GET https://test.modyo.com/api/admin/messaging/message_deliveries?campaign_id=15&delivery_id=29  -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
+curl -X GET "https://test.modyo.com/api/admin/customers/my-realm/messaging/message_deliveries?campaign_id=15" -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
 ```
 
 For example, when viewing the corresponding _response_ of this call:
@@ -378,9 +499,7 @@ For example, when viewing the corresponding _response_ of this call:
 		"type": "admin.messaging.mail",
 		"sent_at": "2019-07-15T17:05:20.000-03:00",
 		"opened": false,
-		"delivery_id": 29,
-		"campaign_name": "Test campaign 01",
-		"delivery_start_date": "2019-07-15T17:05:12.000-03:00"
+		"campaign_name": "Test campaign 01"
 	}, {
 		"id": 1505,
 		"user_name": "John Travolta",
@@ -388,9 +507,7 @@ For example, when viewing the corresponding _response_ of this call:
 		"type": "admin.messaging.mail",
 		"sent_at": "2019-07-15T17:05:20.000-03:00",
 		"opened": false,
-		"delivery_id": 29,
-		"campaign_name": "Test campaign 01",
-		"delivery_start_date": "2019-07-15T17:05:12.000-03:00"
+		"campaign_name": "Test campaign 01"
 	}, {
 		"id": 1504,
 		"user_name": "Al Pacino",
@@ -398,9 +515,7 @@ For example, when viewing the corresponding _response_ of this call:
 		"type": "admin.messaging.mail",
 		"sent_at": "2019-07-15T17:05:20.000-03:00",
 		"opened": false,
-		"delivery_id": 29,
-		"campaign_name": "Test campaign 01",
-		"delivery_start_date": "2019-07-15T17:05:12.000-03:00"
+		"campaign_name": "Test campaign 01"
 	}, {
 		"id": 1503,
 		"user_name": "Silvester Stallone",
@@ -408,9 +523,7 @@ For example, when viewing the corresponding _response_ of this call:
 		"type": "admin.messaging.mail",
 		"sent_at": "2019-07-15T17:05:20.000-03:00",
 		"opened": false,
-		"delivery_id": 29,
-		"campaign_name": "Test campaign 01",
-		"delivery_start_date": "2019-07-15T17:05:12.000-03:00"
+		"campaign_name": "Test campaign 01"
 	}, {
 		"id": 1502,
 		"user_name": "Linda Hamilton",
@@ -418,9 +531,7 @@ For example, when viewing the corresponding _response_ of this call:
 		"type": "admin.messaging.mail",
 		"sent_at": "2019-07-15T17:05:20.000-03:00",
 		"opened": false,
-		"delivery_id": 29,
-		"campaign_name": "Test campaign 01",
-		"delivery_start_date": "2019-07-15T17:05:12.000-03:00"
+		"campaign_name": "Test campaign 01"
 	}, {
 		"id": 1501,
 		"user_name": "Sigourney Weaver",
@@ -428,9 +539,7 @@ For example, when viewing the corresponding _response_ of this call:
 		"type": "admin.messaging.mail",
 		"sent_at": "2019-07-15T17:05:20.000-03:00",
 		"opened": false,
-		"delivery_id": 29,
-		"campaign_name": "Test campaign 01",
-		"delivery_start_date": "2019-07-15T17:05:12.000-03:00"
+		"campaign_name": "Test campaign 01"
 	}, {
 		"id": 1500,
 		"user_name": "Mark Hamill",
@@ -438,9 +547,7 @@ For example, when viewing the corresponding _response_ of this call:
 		"type": "admin.messaging.mail",
 		"sent_at": "2019-07-15T17:05:20.000-03:00",
 		"opened": false,
-		"delivery_id": 29,
-		"campaign_name": "Test campaign 01",
-		"delivery_start_date": "2019-07-15T17:05:12.000-03:00"
+		"campaign_name": "Test campaign 01"
 	}, {
 		"id": 1499,
 		"user_name": "Anthony Daniels",
@@ -448,9 +555,7 @@ For example, when viewing the corresponding _response_ of this call:
 		"type": "admin.messaging.mail",
 		"sent_at": "2019-07-15T17:05:20.000-03:00",
 		"opened": false,
-		"delivery_id": 29,
-		"campaign_name": "Test campaign 01",
-		"delivery_start_date": "2019-07-15T17:05:12.000-03:00"
+		"campaign_name": "Test campaign 01"
 	}, {
 		"id": 1498,
 		"user_name": "Harrison Ford",
@@ -458,9 +563,7 @@ For example, when viewing the corresponding _response_ of this call:
 		"type": "admin.messaging.mail",
 		"sent_at": "2019-07-15T17:05:20.000-03:00",
 		"opened": false,
-		"delivery_id": 29,
-		"campaign_name": "Test campaign 01",
-		"delivery_start_date": "2019-07-15T17:05:12.000-03:00"
+		"campaign_name": "Test campaign 01"
 	}, {
 		"id": 1497,
 		"user_name": "Meryl Streep",
@@ -468,9 +571,7 @@ For example, when viewing the corresponding _response_ of this call:
 		"type": "admin.messaging.mail",
 		"sent_at": "2019-07-15T17:05:20.000-03:00",
 		"opened": false,
-		"delivery_id": 29,
-		"campaign_name": "Test campaign 01",
-		"delivery_start_date": "2019-07-15T17:05:12.000-03:00"
+		"campaign_name": "Test campaign 01"
 	}],
 	"meta": {
 		"total_entries": 1078,
@@ -497,7 +598,7 @@ In the previous example, apart from having the first 10 records, there are a tot
 For example, if you want to get page 30, but this time with the _message deliveries_ grouped in pages of 5 elements:
 
 ```shell script
-curl -X GET https://test.modyo.com/api/admin/messaging/message_deliveries?campaign_id=15&delivery_id=29&page=30&per_page=5  -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
+curl -X GET "https://test.modyo.com/api/admin/customers/my-realm/messaging/message_deliveries?campaign_id=15&page=30&per_page=5" -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
 ```
 
 Which returns a response like the following:
@@ -536,15 +637,94 @@ Which returns a response like the following:
 
 Finally, the API will always return the first page (`current_page: 1`) of resources grouped by pages of 10 elements (`per_page: 10`) by default.
 
-## Logs
+### Records per page limit
 
-With the Logs API you can get all the records that happen within Modyo Platform, you can choose between User or Administrator logs. If you want to query User logs, use:
+`per_page` has a cap of 100 records. If you ask for a larger value, the API trims it silently: it responds `HTTP 200 OK` with 100 records, with no error and no warning in the body. The only place where you see how many records each page actually carries is `meta.per_page`, so read it instead of assuming the value you sent.
+
+Out-of-range values do not fail either; they silently fall back to a default:
+
+- `per_page=0`, a negative value, or a non-numeric value do not bring "everything": the page stays at the default 10 records.
+- `page=0`, a negative value, or a non-numeric value return the first page.
+- There is a third parameter, `paginate`, which does not disable pagination either. With `paginate=false` or `paginate=0` the page moves to 100 records, exactly the same as `per_page=100`.
+
+There is no combination of parameters that returns a complete collection in a single call. To take all the records of a resource, walk the pages up to `meta.total_pages`.
+
+:::warning Attention
+`GET /api/admin/business_events` does not follow these rules. Its `per_page` is not capped at 100: it accepts up to 10000 events per page, and a larger value makes the call fail. With `paginate=false` and no `per_page`, the response carries up to 1000 events. However, `meta.per_page` and `meta.total_pages` are calculated as if the cap were 100: with `per_page=500` you receive 500 events, but `meta.per_page` is 100 and `meta.total_pages` counts pages of 100. `meta.total_entries` is accurate, so compute the number of pages by dividing it by the `per_page` you sent.
+
+It does not apply the default values either: with `per_page=0` you receive a single event, and `page=0` makes the call fail. Also, this resource only reaches the first 10000 events of the query: if `page` times `per_page` exceeds that number, the response returns the last reachable page again, with `HTTP 200 OK`. To reach the rest of the events, narrow the query with `from_date` and `to_date`.
+:::
+
+## Common collection parameters
+
+The lists of the administration API share a group of query parameters that behave the same across every resource, even though the Swagger catalog does not declare them in every operation. They also share the same failure mode: a value the platform does not understand does not return an error, it is ignored and the query responds with its default behavior.
+
+### Selecting attributes with only
+
+`only` trims the attributes the response carries and is available in most lists and detail calls of the administration API. It is sent as an array, repeating the parameter once per attribute:
 
 ```shell script
-curl -X GET https://test.modyo.com/api/admin/logs?user_type=User"   -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
+curl -X GET "https://test.modyo.com/api/admin/customers/my-realm/messaging/campaigns?only[]=id&only[]=name" -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
 ```
 
-This query obtained all the records and displays them in a JSON:
+An attribute that does not exist in the resource simply does not appear in the response and does not raise an error.
+
+:::warning Attention
+Do not use `only` as a comma-separated list. The platform does not split the value by commas: it takes `id,name` as the name of a single attribute, finds none with that name, and returns the collection with all of its objects empty, with `HTTP 200 OK`.
+:::
+
+:::tip Tip
+In `GET /api/admin/versions`, `only` means something else: it does not trim attributes, it filters versions by type with a comma-separated list of `editable`, `current`, `backup`, and `scheduled`, for example `only=editable,current`. It is the only resource where `only` is interpreted this way.
+:::
+
+### Sorting with sort_by and order
+
+`sort_by` chooses the attribute the collection is sorted by and `order` chooses the direction, with the values `ASC` and `DESC`. `order` is case-insensitive, so `asc` and `desc` work as well.
+
+Unless the resource states otherwise, the default sorting is `updated_at` in `DESC`, from the most recently modified record to the oldest one.
+
+Both parameters silently fall back to that default sorting when the value is not usable:
+
+- `order` with any value other than `ASC` or `DESC` is ignored entirely.
+- `sort_by` is only honored if it names a real attribute of the resource and, when the resource publishes a list of sortable attributes in the Swagger catalog, if it belongs to that list. A misspelled attribute or one outside the list is ignored.
+
+A list sorted by an invalid `sort_by` looks exactly like a correctly sorted one, so check the order of the records in the response before considering the query good.
+
+### Date ranges
+
+`date_range` narrows a collection by the creation date of its records and `updated_date_range` by the last modification date. Both take the two dates as an array:
+
+```shell script
+curl -X GET "https://test.modyo.com/api/admin/logs?date_range[]=2026-07-01&date_range[]=2026-07-15" -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
+```
+
+The platform expands each date to the whole day: the first value moves to the beginning of that day and the second one to its end. The time you send changes nothing, `date_range[]=2026-07-15T18:00:00` still covers the whole of July 15, and a range with the same date in both values covers that entire day. Internally the range is translated into the `from_date` and `to_date` parameters (or `updated_from_date` and `updated_to_date`), and it takes precedence over them when you send both in the same call.
+
+:::warning Attention
+If either of the two dates cannot be parsed, or if you send the array with a single value, the platform drops the whole range and responds with the collection without any date filter, with `HTTP 200 OK` and no error message. In that same call, any `from_date` and `to_date` you sent separately are dropped as well. Instead of a `4xx` you receive many more records than you asked for, so validate the dates before building the call and compare `meta.total_entries` against what you expected.
+:::
+
+The resources that accept `date_range` are:
+
+- `GET /api/admin/logs`
+- `GET /api/admin/business_events`
+- `GET /api/admin/customers/{realm_uid}/payments/orders`
+- `GET /api/admin/customers/{realm_uid}/originations/{id}/submissions`, the only one that also accepts `updated_date_range`
+- `GET /api/admin/customers/{realm_uid}/originations/{id}/assignees`
+
+In the submissions of an origination and in its assignees, the filter is only applied when the range arrives with both dates; in any other case the collection is returned unfiltered.
+
+## Logs
+
+With the Logs API you get the activity records that happen within Modyo Platform. Each record stores the type of action (`type`), the administrator who performed it (`user`, empty when the action is automated), the affected object (`loggeable_type` and `loggeable_id`), and the context where it happened (`site_id`, `space_id`). End user activity arrives with its own record types, such as `user_login_log` or `form_response_created_log`.
+
+To get the list, call the resource without parameters:
+
+```shell script
+curl -X GET https://test.modyo.com/api/admin/logs -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
+```
+
+The query returns the records you are allowed to see, from the most recent to the oldest, and displays them in a JSON:
 
 ```json
 {
@@ -552,11 +732,15 @@ This query obtained all the records and displays them in a JSON:
     {
       "id": 26826,
       "account_id": 4,
-      "site_id": 0,
-      "space_id": 0,
-      "site_host": "string",
-      "site_name": "string",
+      "site_id": null,
+      "space_id": 12,
+      "site_host": null,
+      "site_name": null,
+      "space_name": "My space",
+      "realm_id": null,
+      "realm_name": null,
       "user": {
+        "uuid": "930d2b95-e34e-49b0-b5e9-6c6b90d66447",
         "avatar": {
           "id": 100,
           "file_name": "user_avatar.png",
@@ -564,34 +748,35 @@ This query obtained all the records and displays them in a JSON:
           "url_small": "https://test.modyo.com:3000/assets/avatar/user_avatar_small.png",
           "url_medium": "https://test.modyo.com:3000/assets/avatar/user_avatar_medium.png"
         },
-        "id": 344,
         "name": "Sam Johnson",
-        "first_name": "Johnson",
-        "last_name": "Sam",
+        "first_name": "Sam",
+        "last_name": "Johnson",
         "email": "sam.johnson@modyo.com",
-        "url": "https://test.modyo.com/admin/settings/admin_users/930d2b95-e34e-..."
+        "url": "https://test.modyo.com/admin/settings/admin_users/930d2b95-e34e-49b0-b5e9-6c6b90d66447"
       },
-      "type": "Logs::TargetDeletedLog",
-      "value_1": "string",
-      "value_2": "string",
-      "value_3": "string",
+      "type": "entry_unpublished_log",
+      "value_1": "5f1c2d3e-8a4b-4c6d-9e0f-1a2b3c4d5e6f",
+      "value_2": "post",
+      "value_3": "my-space",
       "request_ip": "127.0.0.1",
       "request_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36",
-      "title": "admin.logs.target_deleted_log.title",
-      "description": "admin.logs.target_deleted_log.description",
+      "title": "Entry unpublished",
+      "description": "<a href=\"https://test.modyo.com/admin/content/spaces/my-space/entries/5f1c2d3e-8a4b-4c6d-9e0f-1a2b3c4d5e6f?target_locale=en\">Entry</a> unpublished by <a href=\"https://test.modyo.com/admin/settings/admin_users/930d2b95-e34e-49b0-b5e9-6c6b90d66447\">Sam Johnson</a> in <a href=\"https://test.modyo.com/admin/content/spaces/my-space\">My space</a>",
       "loggeable_id": 15,
-      "loggeable_type": "Targets::Target",
-      "log_origin": "admin.loggeable_types.targets.target",
-      "created_at": "2020-02-06T12:20:29.000-03:00",
-      "options": "{\\\"title\\\":\\\"\\\"}",
-      "log_key_user_action": "admin.logs.target_deleted_log.activity",
+      "loggeable_type": "Content::Entry",
+      "log_origin": "admin.loggeable_types.content.entry",
+      "created_at": "2026-07-15T12:20:29.000-03:00",
+      "options": "{\"element_url\":\"https://test.modyo.com/admin/content/spaces/my-space/entries/5f1c2d3e-8a4b-4c6d-9e0f-1a2b3c4d5e6f?target_locale=en\",\"title\":\"My entry (5f1c2d3e-8a4b-4c6d-9e0f-1a2b3c4d5e6f)\"}",
+      "automated": false,
+      "log_key_user_action": "admin.logs.entry_unpublished_log.activity",
       "defaults": {
-        "site_or_account": "<a href=\\\"https://test.modyo.com\\\">My Modyo</a>",
-        "user": "<a href=\\\"https://test.modyo.com/admin/settings/admin_users/830d2b95-e74e-49b0-b5e9-6c6b90d66447\\\">Sam J.</a>",
-        "loggeable": "string",
-        "value_1": "string",
-        "value_2": "string",
-        "value_3": "string"
+        "site_or_account": "<a href=\"https://test.modyo.com/admin/content/spaces/my-space\">My space</a>",
+        "user": "<a href=\"https://test.modyo.com/admin/settings/admin_users/930d2b95-e34e-49b0-b5e9-6c6b90d66447\">Sam Johnson</a>",
+        "loggeable": "My entry (5f1c2d3e-8a4b-4c6d-9e0f-1a2b3c4d5e6f)",
+        "value_1": "5f1c2d3e-8a4b-4c6d-9e0f-1a2b3c4d5e6f",
+        "value_2": "post",
+        "value_3": "my-space",
+        "element_url": "<a href=\"https://test.modyo.com/admin/content/spaces/my-space/entries/5f1c2d3e-8a4b-4c6d-9e0f-1a2b3c4d5e6f?target_locale=en\">Entry</a>"
       }
     }
   ],
@@ -604,6 +789,147 @@ This query obtained all the records and displays them in a JSON:
 }
 ```
 
-If you want to know the administrator logs, change the user type to: `user_type=AdminUser`
+`type` is the identifier of the record type, the same value that the `type`, `types`, and `not_in_type` filters accept. `title` and `description` arrive as text, already translated into the language of the user who owns the credential, and `description` can include HTML links. `user` identifies the administrator by their `uuid` and comes as `null` when the record has no associated administrator. `automated` is `true` only when the record corresponds to an automatic action of the platform; in that case `user` always comes as `null`. Besides `site_id` and `space_id`, the context comes with `realm_id` and with the names `site_name`, `space_name`, and `realm_name`.
+
+### What logs you see
+
+The scope of the response depends on the user who owns the token:
+
+- If the token belongs to the account owner, to a user with the **Full admin** role at the account level, or to a user in a group with that role, the response includes every record in the account.
+- Any other administrator gets only their own records when the query is not narrowed down, with `HTTP 200 OK` and without any warning in the response.
+- To see the activity of a whole context, add `realm_id`, `site_id`, or `space_id` with the identifier of a context where the user has a role assigned, or where the user has full scope through the **Manage Customers**, **Manage Channels**, or **Manage Content** grouped permissions. If you send more than one, the scope validation runs on the first one present in this order: `realm_id`, `site_id`, and `space_id`.
+- If you narrow the query down to a context where the user has no role, you get only their own records for that context, which is usually an empty list.
+
+:::warning Attention
+Up to 10.1, users with the **Default admin** role at the account level also got every record. As of 10.2, only the account owner and the **Full admin** role keep that scope. If your integration queries `/api/admin/logs` with a token that does not hold that role, add `realm_id`, `site_id`, or `space_id` to the call: otherwise the records you used to get stop showing up, with no error to warn you.
+:::
+
+### Query filters
+
+`GET /api/admin/logs` accepts these parameters:
+
+- `type`: one record type, for example `entry_published_log`.
+- `types`: several types in a single value, separated by comma and space, with the space encoded as `%20`. If you send `type` and `types` in the same call, `types` wins.
+- `not_in_type`: excludes record types, with the same format as `types`.
+- `from_date` and `to_date`: creation range in ISO 8601 format, for example `2026-07-01T00:00:00-03:00`. If you omit them, the query covers the whole history up to the end of the current day. A date that cannot be parsed returns `HTTP 409 Conflict`.
+- `date_range`: a shortcut for the range above. It takes two dates as an array (`date_range[]=2026-07-01&date_range[]=2026-07-15`) and expands them to the beginning of the first day and the end of the second one. It takes precedence over `from_date` and `to_date`, and if either date cannot be parsed the platform silently drops the whole range and responds with the history unfiltered by date.
+- `realm_id`, `site_id`, and `space_id`: narrow the records down to the given realm, site, or space, and define the scope of the query.
+- `user_uuid`: records of one specific administrator, by their `uuid`. With the literal value `system` you get only the automated records, that is, the ones without an administrator behind them.
+- `loggeable_type` and `loggeable_id`: the object affected by the action, for example `loggeable_type=Content::Entry`.
+- `application`: with the value `core` it narrows the results down to the platform core objects, such as sites, entries, roles, forms, and webhooks. It leaves out the records whose affected object is a space (`loggeable_type=Content::Space`). `core` is the only accepted value, so do not send any other.
+- `query`: free text. It searches by prefix in the record title and in the name and email of its author.
+- `admin_actions`: with `true` it leaves end user activity out.
+- `sort_by` and `order`: sorting of the list.
+- `page` and `per_page`: pagination, as described in [Pagination](/en/platform/core/api.html#pagination).
+
+:::warning Attention
+`user_type` and `user_id` do not filter anything. The list ignores them: a call with `user_type=User` or with `user_type=AdminUser` returns the same result as the call without parameters. If you use them to separate administrator activity from end user activity, you are actually getting the complete list.
+:::
+
+### Isolating administration activity
+
+`admin_actions=true` is the filter that does tell both activities apart: it excludes the records of type `email_delivered_log`, `email_opened_log`, `email_spam_report_log`, `form_response_created_log`, `notification_opened_log`, and `user_login_log`.
+
+```shell script
+curl -X GET "https://test.modyo.com/api/admin/logs?admin_actions=true" -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
+```
+
+If the user who owns the token is not the account owner and has no role at the account level, `admin_actions=true` also limits the response to the sites where they have a role assigned, and ignores the `site_id` you sent.
+
+There is no inverse filter. To keep only end user activity, list the types you care about in `types`:
+
+```shell script
+curl -X GET "https://test.modyo.com/api/admin/logs?types=user_login_log,%20form_response_created_log" -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
+```
+
+### Sorting the results
+
+`sort_by` accepts these fields of the record: `created_at`, `type`, `loggeable_type`, `loggeable_id`, `site_id`, `space_id`, `realm_id`, `user_id`, `user_uuid`, or `automated`, and `order` accepts `asc` and `desc`. By default the list arrives sorted by `created_at` in `desc`, from the newest record to the oldest one.
+
+### Log detail and log types
+
+- `GET /api/admin/logs/{id}` returns one specific record.
+- `GET /api/admin/logs/types` returns the record types that exist in the account and how many records there are of each one. This is how you find out the valid values for `type`, `types`, and `not_in_type`.
+
+Both calls are governed by the **View Activity Logs** grouped permission. The `GET /api/admin/logs` list does not require a specific permission: what changes from one user to another is the scope of the response.
+
+## Authenticated user profile
+
+The `/api/admin/profile` resource always works on the user who owns the token, without taking identifiers, and it requires no permissions: being authenticated is enough. It is the resource that replaces `GET /api/admin/admin_users/me`, which no longer exists.
+
+The Swagger catalog in `/api/admin/docs` documents this resource in the "Admin Profile" section. These are its calls:
+
+```http request
+GET    /api/admin/profile                              Authenticated user profile
+PUT    /api/admin/profile                              Updates first name, last name, language, and avatar
+PUT    /api/admin/profile/update_protected_attributes  Updates username and email
+DELETE /api/admin/profile/remove_otp                   Removes two-factor authentication
+GET    /api/admin/profile/sessions                     Lists active sessions
+DELETE /api/admin/profile/revoke_session               Revokes active sessions
+```
+
+### Reading and updating the profile
+
+`GET /api/admin/profile` returns the data of the token user: `id`, `uuid`, `name`, `first_name`, `last_name`, `email`, `username`, `avatar`, `lang`, `time_zone`, `active`, `created_at`, `updated_at`, `last_login_at`, `last_login_ip`, the assigned roles (`roles`), and the applications the user has access to (`application_access`).
+
+```shell script
+curl -X GET https://test.modyo.com/api/admin/profile -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
+```
+
+`PUT /api/admin/profile` updates only `first_name`, `last_name`, `lang`, and `avatar_id`. `lang` accepts `en`, `es`, and `pt`, and `avatar_id` is the identifier of an avatar created with `/api/admin/profile_avatar`.
+
+```shell script
+curl -X PUT https://test.modyo.com/api/admin/profile -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56' -H 'Content-Type: application/json' -d '{"first_name":"Sam","last_name":"Johnson","lang":"es"}'
+```
+
+:::tip Tip
+If you include `username` or `email` in this call, the platform discards them and responds `HTTP 200 OK` with those fields unchanged. To modify them, use the protected attributes call.
+:::
+
+### Changing the username or the email
+
+`username` and `email` are protected attributes: they are updated only with `PUT /api/admin/profile/update_protected_attributes`, and the call must include `current_password` with the current password of the user.
+
+```shell script
+curl -X PUT https://test.modyo.com/api/admin/profile/update_protected_attributes -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56' -H 'Content-Type: application/json' -d '{"email":"sam.johnson@modyo.com","current_password":"your-current-password"}'
+```
+
+Keep in mind that:
+
+- The `username` change applies immediately and responds `HTTP 200 OK`.
+- The `email` change does not apply immediately: the platform sends a confirmation email to the new address and keeps it pending until the user confirms it.
+- If `current_password` is wrong or empty, the response is `HTTP 422 Unprocessable Entity`, nothing is updated, and the call counts as a failed attempt.
+
+:::danger Danger
+Failed attempts in this call, in `DELETE /api/admin/profile/remove_otp`, and in the password change from the panel count toward the same limit. After three failed attempts, the next call responds `HTTP 422` with a message saying that you reached the attempt limit, even if `current_password` is correct: nothing is updated, and the platform revokes every active session of the user, so anyone working in the administration panel is logged out. The lockout lasts 15 minutes and cannot be released earlier. Handle the `HTTP 422` in your integration and do not retry in a loop.
+:::
+
+### Two-factor authentication
+
+`DELETE /api/admin/profile/remove_otp` removes the two-factor authentication settings of the authenticated user. The call must include `current_password` with the current password of the user.
+
+```shell script
+curl -X DELETE https://test.modyo.com/api/admin/profile/remove_otp -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56' -H 'Content-Type: application/json' -d '{"current_password":"your-current-password"}'
+```
+
+Keep in mind that:
+
+- If `current_password` is correct, the response is `HTTP 200 OK`, even if the user had no two-factor authentication configured, and the removal is recorded in the [Activity logs](/en/platform/core/activity-logs.html) as **Profile updated**.
+- If `current_password` is wrong or empty, the response is `HTTP 422 Unprocessable Entity` and two-factor authentication stays in place.
+- Failed attempts count toward the same limit as the username or email change, with the same lockout and session revocation.
+
+### Active sessions
+
+`GET /api/admin/profile/sessions` lists the current sessions of the user, from the most recent to the oldest. Each session comes with its `uuid`, the date it was opened (`created_at`), the IP it was opened from (`request_ip`), the browser (`device_name`), the operating system (`device_os`), the device type (`device_type`, with value `Desktop` or `Mobile`), and, where applicable, the name of the administrator who opened it through impersonation (`impersonator`).
+
+`DELETE /api/admin/profile/revoke_session` revokes sessions: with `grant_uuid` you revoke one specific session and with `all=true` you revoke every active session. The response is `HTTP 204 No Content`, and `HTTP 404 Not Found` if the session was already revoked.
+
+```shell script
+curl -X DELETE "https://test.modyo.com/api/admin/profile/revoke_session?all=true" -H 'Authorization: Bearer 8c280d601fc1b361aabb20836841b4b82faab23e990148c91406bbf5e452ab56'
+```
+
+:::tip Tip
+The session tied to the call is left out of the revocation, even if you send its own `grant_uuid`: the response is `HTTP 204 No Content` and the session stays active.
+:::
 
 To learn more about how to query Content information via API, see our guide and examples in [API](/en/platform/content/public-api-reference.html).

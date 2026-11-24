@@ -6,7 +6,7 @@ search: true
 
 Los widgets te permiten crear _micro frontends_ para tus sitios y aplicaciones. Su uso extiende las capacidades de tus sitios y te permite tener mayor control, ya que puedes agregar más funcionalidades manteniendo cada widget como una entidad separada de tu sitio.
 
-Al entrar en la sección Widgets del sitio, se puede ver un listado de todos los widgets que se han creado. En la barra superior se puede filtrar el listado de widgets por estado, autor, tags, o hacer una búsqueda de texto por el nombre del widget.
+Al entrar en la sección Widgets del sitio, se puede ver un listado de todos los widgets que se han creado. En la barra superior se puede filtrar el listado de widgets por estado (**Publicado**, **No publicado**, **Programado** o **Archivado**), autor, tags, o hacer una búsqueda de texto por el nombre del widget. Los widgets que ninguna página usa muestran un ícono de información junto a su nombre.
 
 
 En la vista de edición del widget, se puede ver la barra superior de acciones, el área de trabajo y la columna de propiedades.
@@ -16,8 +16,10 @@ En la barra superior se encuentran las siguientes secciones:
 - **Borrador**: Este estado aparece cuando recién se haya creado un widget o cuando se haya despublicado.
 - **Publicado**: Este estado aparece luego de haber hecho una publicación y cuando las versiones editable y publicada son iguales.
 - **Cambios pendientes**: Este estado aparece si ya hay una versión publicada, pero hay cambios pendientes de publicar en versión editable.
-- **En revisión**: Este estado aparece cuando esté habilitada la [revisión en equipo](/es/platform/core/key-concepts) y se haya enviado a revisión la versión editable.
-- **Aprobado**: Este estado aparece cuando esté habilitada la [revisión en equipo](/es/platform/core/key-concepts) y se cumplen las condiciones de revisión del elemento. Si está en este estado, las plantillas están listas para ser publicadas.
+- **En revisión**: Este estado aparece cuando esté habilitada la [revisión en equipo](/es/platform/core/#revision-en-equipo) y se haya enviado a revisión la versión editable.
+- **Aprobado**: Este estado aparece cuando esté habilitada la [revisión en equipo](/es/platform/core/#revision-en-equipo) y se cumplen las condiciones de revisión del elemento. Si está en este estado, las plantillas están listas para ser publicadas.
+- **Programado**: Este estado aparece cuando el widget aún no está publicado y tiene una publicación programada.
+- **Archivado**: Este estado aparece cuando el widget está archivado.
 
 A la derecha, encuentras las siguientes acciones:
 **Vista previa**: Abre en una nueva pestaña la vista previa de la versión editable del widget.
@@ -26,24 +28,28 @@ A la derecha, encuentras las siguientes acciones:
 Puedes previsualizar los widgets como usuario sin sesión o usuario con sesión de Modyo. Para esto, es recomendable iniciar o cerrar la sesión de Modyo en el sitio antes de entrar al modo vista previa. Esto se debe a que iniciar o cerrar sesión dentro del modo de vista previa puede generar errores de seguridad como _x-frame-options_ o _mixed-content_, dependiendo de la configuración de dominios personalizados y SSL del sitio.
 :::
 
-**Diferencias**: Te lleva a la [vista de diferencias](/es/platform/core/key-concepts), en la cual puedes comparar los cambios que hay entre múltiples versiones del widget.
+**Diferencias**: Te lleva a la [vista de diferencias](/es/platform/core/#revertir-un-cambio), en la cual puedes comparar los cambios que hay entre múltiples versiones del widget.
 
 Por defecto comienzas comparando la versión publicada con la versión editable. Usa los selectores de versiones para comparar con versiones de respaldo. Si el ícono no aparece, significa que no hay versión publicada de este widget.
 
+:::tip Tip
+Si algún archivo del widget supera el límite de tamaño permitido, la vista de diferencias no muestra el detalle de sus cambios, sino el mensaje "El archivo tiene diferencias, pero su tamaño supera el límite permitido y no se puede mostrar".
+:::
+
 **Actividad**: Te permite desplegar una pestaña lateral que muestra la actividad y comentarios del widget.
 
-**Otras opciones**: Permite archivar y crear una copia del widget actual.
+**Otras opciones**: Agrupa las acciones **Archivar**, **Borrar** y **Clonar** del widget actual. **Clonar** crea una copia del widget con el nombre que indiques. **Borrar** solo aparece si tu rol incluye el permiso **Eliminar Widgets** y solo se habilita en widgets archivados: elimina el widget junto con sus copias de seguridad y no se puede deshacer.
 
 **Botón principal**:
 
 - **Guardar**: Guarda los cambios actuales.
 - **Enviar a revisión**: Si está habilitada la revisión en equipo, puedes enviar el widget a revisión y notificar a los revisores que el widget está listo para ser revisado.
-- **Publicar**: Te lleva a la vista de [publicación conjunta](/es/platform/core/key-concepts#revision-y-publicacion-conjunta) donde puedes publicar tus widgets.
+- **Publicar**: Te lleva a la vista de [publicación conjunta](/es/platform/channels/sites.html#revision-y-publicacion-conjunta) donde puedes publicar tus widgets.
 
 **Otras acciones principales**:
 
-- **Despublicar**: Si el widget está publicado, puedes sacarlo de producción usando esta opción.
-- **Forzar publicación**: Si eres administrador del sitio, puedes utilizar esta opción para publicar inmediatamente un widget, incluso si está habilitada la Revisión en Equipo.
+- **Despublicar**: Si el widget está publicado, puedes sacarlo de producción usando esta opción. Puedes despublicarlo de inmediato con **Despublicar ahora** o programar la despublicación con **Despublicar en**. Para más información, revisa [Tipos de versión](/es/platform/core/#tipos-de-version).
+- **Forzar publicación**: Si tu rol incluye el permiso **Administrar Widgets** en el sitio o el permiso **Gestionar Canales** en la organización, puedes utilizar esta opción para publicar inmediatamente un widget, incluso si está habilitada la Revisión en Equipo.
 
 :::tip Tip
 Sólo se pueden archivar los widgets que han sido despublicados previamente.
@@ -56,7 +62,7 @@ Los widgets archivados no aparecerán en el listado inicial ni tampoco en el mod
 Una vez que un widget está publicado, este será visible en el modal de selección de widgets personalizados en el [Page Builder.](/es/platform/channels/pages)
 
 :::tip Tip
-Para aprender más sobre el flujo de publicación, revise la sección de [Versionado.](/es/platform/core/key-concepts#versionado)
+Para aprender más sobre el flujo de publicación, revise la sección de [Versionado.](/es/platform/core/#versionado)
 :::
 
 En el área de trabajo se puede ver:
@@ -79,12 +85,12 @@ En las tres pestañas del widget se puede hacer uso de Liquid. Para más informa
 
 En la columna de propiedades se pueden ver:
 
-- **Nombre**: Permite cambiar el nombre del widget
+- **Nombre**: Muestra el nombre del widget en modo de solo lectura. Se define al crear el widget y no se puede modificar, porque se usa como identificador.
 - **Tags**: Permite añadir tags a un widget. Los tag son de uso administrativo y sirven para buscar y filtrar los widgets y así poder encontrarlos rápidamente.
-- **Páginas que usan este widget**: Verás un listado de páginas que están usando este widget. Mientras veas páginas en este listado, no podrás despublicar ni archivar el widget.
+- **Páginas que usan este widget**: Verás un listado de páginas que están usando este widget.
 
 :::warning Atención
-Si eliminas un widget de una página y publicas, seguirás viendo esa página en este listado dado que el widget sigue referenciado en los respaldos de esa página. Desde la versión 9.1.10 en adelante, puedes despublicar cualquier widget publicado, incluso si está en uso. Las referencias activas en las páginas quedarán inactivas, por lo que no verás el widget en el sitio si lo despublicaste. Además, podrás archivar cualquier widget que no esté publicado, de tal forma que si aun existen referencias en algunas páginas del widget que quieres archivar, estas se eliminarán al momento de archivar el widget.
+Si eliminas un widget de una página y publicas, seguirás viendo esa página en este listado dado que el widget sigue referenciado en los respaldos de esa página. Puedes despublicar cualquier widget publicado, incluso si está en uso. Las referencias en las páginas quedarán inactivas, por lo que no verás el widget en el sitio hasta que lo vuelvas a publicar. Además, puedes archivar cualquier widget que no esté publicado: si aún tiene referencias en algunas páginas, la plataforma te pide confirmar y estas se eliminan al archivar el widget.
 :::
 
 ## Crear un Widget
@@ -92,13 +98,13 @@ Para crear un nuevo Widget y tener un _micro frontend_ para tus sitios y publica
 1. Dentro del menú principal de Modyo Platform, expande Channels y haz click en tu sitio.
 1. Haz click en Widgets.
 1. Haz click en el botón **Nuevo Widget**.
-1. Escribe el nombre de tu widget y haz click en **Crear**.
+1. Escribe el nombre de tu widget y haz click en **Crear**. El nombre se usa como identificador y no podrás cambiarlo después; si necesitas otro nombre, usa **Clonar** para crear una copia con el nombre nuevo.
 1. Personaliza tu widget usando HTML, CSS, JavaScript, o Liquid.
 1. Una vez terminado, haz click en **Publicar**.
 
 :::tip Tip
 
-Modyo te permite previsualizar un widget localmente y verlo con el estilo de tu sitio antes de publicarlo. Para ello revisa la [documentación](https://docs.modyo.com/en/platform/channels/cli#quick-guide) relacionada.
+Modyo te permite previsualizar un widget localmente y verlo con el estilo de tu sitio antes de publicarlo. Para ello revisa la [documentación](/es/platform/channels/cli.html#previsualizar-un-widget-local-en-tu-sitio) relacionada.
 :::
 
 ## Variables del Widget
@@ -109,7 +115,7 @@ En la pestaña de variables puedes ver el listado de variables creadas en el wid
 - **Modificar** la variable
 - **Eliminar** la variable.
 
-Junto al nombre de cada variable verás un indicador "sobreescrita" si la variable también existe a nivel de cuenta o sitio en las [variables globales](/es/platform/core/key-concepts#variables-globales).
+Junto al nombre de cada variable verás un indicador "sobreescrita" si la variable también existe a nivel de cuenta o sitio en las [variables globales](/es/platform/channels/global-variables.html).
 
 Al modificar una variable, podrás decidir el nombre y valor por defecto que tomará esa variable en el widget. Además, podrás decidir si quieres disponibilizar un listado de valores para que al momento de instanciar el widget en una página, se pueda elegir entre estos distintos valores.
 
@@ -133,6 +139,72 @@ Para cambiar la forma en que se carga cada widget, debes ir a la vista de edici�
 
 :::warning Atención
 Debes tener en consideración que usar widgets muy pesados de forma sincrónica puede hacer que se vea disminuido el rendimiento de tu página, por lo que debes decidir con cuidado cuáles widgets se cargarán de forma síncrona y cuáles de forma asíncrona.
+:::
+
+:::warning Atención
+En la carga asíncrona, el HTML del widget se inserta en la página después de que esta termina de cargar, y el navegador no ejecuta las etiquetas `<script>` que llegan de esa forma. Esto incluye los scripts de un snippet que incluyas en el HTML del widget: su marcado se muestra, pero su código no se ejecuta y el navegador no muestra ningún error.
+
+El código de la pestaña de JavaScript del widget no tiene esta limitación, porque la plataforma lo carga por separado. Si el widget necesita ejecutar un script que hoy está en su HTML, tienes dos alternativas:
+
+- Mover ese código a la pestaña de JavaScript del widget.
+- Marcar la opción "Carga síncrona" en el widget, para que su HTML se renderice junto con la página y sus scripts se ejecuten.
+:::
+
+## Carga como ES Module
+
+:::warning Atención
+Esta es una funcionalidad experimental y puede estar sujeta a cambios.
+:::
+
+Puedes cargar tus widgets como ES Modules en lugar de scripts tradicionales. Esto habilita características modernas de JavaScript como la sintaxis nativa de `import`/`export` y proporciona mejor aislamiento de scope, evitando conflictos con variables globales.
+
+Para habilitar la carga como ES Module, ve a la vista de edición de la página que contiene el widget, selecciona el widget y marca la opción **Cargar como Módulo ES (Experimental)** en el panel de Propiedades.
+
+Cuando está habilitado, el JavaScript del widget se cargará con `type="module"`:
+
+- **Modo asíncrono** (por defecto): La etiqueta script del widget incluirá `type="module"` cuando se cargue dinámicamente.
+- **Modo síncrono**: El script inline se renderizará con `type="module"`, pero el código del widget queda dentro de una función. Por eso no puedes usar `import` ni `export` estáticos, ya que el navegador lanza un error de sintaxis; solo puedes usar `import()` dinámico. Si tu widget necesita la sintaxis completa de módulos, usa la carga asíncrona.
+
+:::tip Tip
+La carga como ES Module es especialmente útil para widgets construidos con frameworks modernos que usan sintaxis nativa de ES modules, como los basados en [Dynamic Framework](https://dynamicframework.dev).
+:::
+
+:::warning Atención
+Los ES Modules tienen requisitos estrictos de CORS y siempre se cargan en modo estricto. Asegúrate de que el código de tu widget sea compatible con la semántica de ES modules antes de habilitar esta opción.
+:::
+
+## Widgets CLI
+
+Los widgets **creados** en el sitio con `modyo-cli push` quedan marcados como widgets de solo lectura, porque su código fuente vive en tu repositorio y no en Modyo. En el listado de widgets del sitio los reconoces por la etiqueta **CLI** junto a su nombre.
+
+Al abrir uno de estos widgets no verás las pestañas de código, sino la pantalla **Resumen del widget**, con su **Nombre**, **Tipo**, **Tamaño**, **Chunks**, **Actualizado por última vez en** y **Actualizado por última vez por**, encabezada por el aviso "Los widgets CLI no se pueden editar en Modyo. Descárgalo para revisar su contenido." y el botón **Descargar**.
+
+El resto del ciclo de vida es el de cualquier widget: conserva versión editable y publicada, admite [variables](#variables-del-widget), pasa por [revisión en equipo](/es/platform/core/#revision-en-equipo) y se instancia en las páginas desde el [Page Builder](/es/platform/channels/pages.html). Los cambios de código, en cambio, nunca se muestran como diferencias: en la vista de **Diferencias**, en la [revisión y publicación conjunta](/es/platform/channels/sites.html#revision-y-publicacion-conjunta) y en la [sincronización entre stages](/es/platform/channels/sites.html#stages) aparece el mensaje "El archivo tiene diferencias, pero los widgets CLI no se pueden mostrar". Tampoco puedes usar **Resetear a esta versión** para devolver el widget a una versión anterior: la vuelta atrás se hace volviendo a desplegar desde tu repositorio.
+
+:::warning Atención
+El ZIP que entrega **Descargar** se arma desde las plantillas guardadas en la plataforma y no es el bundle que subiste: los archivos de entrada salen renombrados y los chunks aplanados. Sirve para inspeccionar el código publicado, no como respaldo. Revisa [Widgets CLI en el panel](/es/platform/tools/cli.html#widgets-cli-en-el-panel) para el detalle completo.
+:::
+
+## Code splitting
+
+Los widgets que despliegas mediante el [CLI de Modyo](/es/platform/tools/cli.html) pueden dividirse en múltiples archivos (*chunks*) además de sus archivos de entrada. La plataforma almacena y sirve cada chunk individualmente, y el widget los carga de forma dinámica solo cuando los necesita, con lo que la carga inicial de widgets grandes es más liviana.
+
+Para desplegar un widget con code splitting, habilita el despliegue ZIP en el CLI con las variables `MODYO_ZIP`, `MODYO_ZIP_ENTRY_JS` y `MODYO_ZIP_ENTRY_CSS`. Los archivos del build adicionales a los de entrada (`js`, `css`, `map`, `wasm`) se suben como chunks del widget.
+
+### Requisito de la plantilla en sitios existentes
+
+La carga dinámica de los chunks utiliza una variable global que define la plantilla del custom widget de cada sitio. Los sitios creados desde que existe esta funcionalidad ya la incluyen; los sitios creados antes conservan su plantilla original y requieren agregarla manualmente.
+
+Para habilitarla en un sitio existente, ve a **Channels**, selecciona tu sitio y haz click en **Plantillas**; en la sección de vistas, bajo la categoría widgets, edita la plantilla **custom_widget** agregando al inicio este bloque, y luego publica la plantilla:
+
+```liquid
+<script nonce="{{csp_nonce}}">
+  window['resourceBasePath-{{widget.wid}}'] = "{{site.url}}/widget_manager/{{widget.wid}}/{{widget.version}}/";
+</script>
+```
+
+:::warning Atención
+Sin este bloque, los widgets desplegados con code splitting no pueden resolver la URL de sus chunks en ese sitio y su carga dinámica falla.
 :::
 
 ## Usar Internacionalización (i18n)
@@ -248,9 +320,7 @@ function loadLocaleMessages() {
 
 ## Usar Liquid en Widgets
 
-Crea un objeto javascript en Snippets para poder hacer uso de Liquid en tus Widgets.
-
-Los Widgets, al estar desacoplados de la plataforma, tienen la desventaja de no poder usar Liquid directamente y no tenemos acceso a [liquid objetos](/es/platform/channels/liquid-markup/objects), para poder trabajar con ellos los tendremos que hacer disponibles mediante javascript desde la plataforma. [**Liquid Markup**](/es/platform/channels/liquid-markup) es una parte importante de la plataforma, de como construimos las vistas, y accedemos al contenido en ella. También nos da acceso a [**objetos**](/es/platform/channels/liquid-markup/objects), variables de contexto que nos permiten interactuar con nuestras vistas de manera más dinámica. Por ejemplo, se puede determinar que contenido mostrar al usuario según el segmento al que pertenece, ocultar un menú según la página que se este visitando, etc.
+Los widgets que creas en el panel pueden usar Liquid directamente en sus tres pestañas. En cambio, cuando desarrollas un widget en tu entorno local con la [CLI](/es/platform/channels/cli.html), su código no pasa por Liquid y no tiene acceso a los [objetos de Liquid](/es/platform/channels/liquid-markup/objects). Para trabajar con ellos, crea un objeto JavaScript en un snippet que los haga disponibles desde la plataforma. [**Liquid Markup**](/es/platform/channels/liquid-markup) es una parte importante de la plataforma, de como construimos las vistas, y accedemos al contenido en ella. También nos da acceso a [**objetos**](/es/platform/channels/liquid-markup/objects), variables de contexto que nos permiten interactuar con nuestras vistas de manera más dinámica. Por ejemplo, se puede determinar que contenido mostrar al usuario según el segmento al que pertenece, ocultar un menú según la página que se este visitando, etc.
 
 
 Sigue estos pasos para crear un snippet con variables de Liquid:
@@ -281,14 +351,14 @@ En modo de desarrollo no tendremos acceso a este objeto ya que estamos trabajand
 En el siguiente ejemplo, const lang toma el valor de window.liquid.lang, si no existe el objeto, asigna el valor "es-CL" por defecto:
 
 ```js
-const lang = window.liquid !== "undefined" ? window.liquid.lang : "es-CL";
+const lang = typeof window.liquid !== "undefined" ? window.liquid.lang : "es-CL";
 ```
 
 ### Insertar una imagen con Liquid
 
 Modyo recomienda usar el tag de Liquid y no el asset URL para insertar imágenes en tu contenido. Esto te permite redimensionar o sustituir una imagen en todos los lugares donde esté en uso y asegurarte que cualquier cambio se refleje de inmediato.
 
-Además, Modyo convierte la imagen a formato webp con calidad lossless de compresión. Lo que genera imágenes más livianas, con tiempos de carga menores y sin perder calidad.
+Modyo no convierte el formato de la imagen por sí solo: al usar Cloudflare para la optimización de imágenes, puedes pedir otro formato, por ejemplo webp, con el parámetro `format` del filtro `asset_image`. Revisa los parámetros disponibles en [Asset image](/es/platform/channels/liquid-markup/filters.html#asset-image).
 
 
 #### Para obtener el código Liquid de una imagen:
