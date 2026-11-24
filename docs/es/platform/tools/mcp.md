@@ -8,7 +8,7 @@ search: true
 
 El [Model Context Protocol (MCP)](https://modelcontextprotocol.io) es un estándar abierto para conectar asistentes de inteligencia artificial con herramientas y fuentes de datos. El **Modyo MCP Server** conecta un asistente de IA con la API de administración de Modyo, para gestionar la plataforma (contenido, sitios, widgets, customers y administración) y para construir widgets con Dynamic Framework, conversando en lenguaje natural.
 
-Se distribuye como el paquete npm [`@modyo/mcp`](https://www.npmjs.com/package/@modyo/mcp) y corre como un proceso local que el cliente de IA lanza por stdio. Esta página describe la versión 0.5.12.
+Se distribuye como el paquete npm [`@modyo/mcp`](https://www.npmjs.com/package/@modyo/mcp) y corre como un proceso local que el cliente de IA lanza por stdio. Esta página describe la versión 0.6.0.
 
 Para construir un widget de punta a punta con el MCP, ve [Desarrollar widgets con el MCP](/es/platform/tools/mcp-widgets.html).
 
@@ -228,7 +228,7 @@ Sirve para auditar o explorar un sitio en producción sin riesgo de modificarlo.
 Funciona en dos capas:
 
 1. Las tools que solo escriben o eliminan no se registran: el cliente no las ve.
-2. Las tools que agrupan varias acciones (por ejemplo, las `*-manage`) siguen disponibles, pero solo ejecutan las acciones de lectura: `list`, `get`, `search`, `find` y `status`. La acción `manage` sin campos que cambien algo actúa como una lectura.
+2. Las tools que agrupan varias acciones (por ejemplo, las `*-manage`) siguen disponibles, pero solo ejecutan las acciones de lectura: `list`, `get`, `search`, `find` y `status`. La acción `manage` sin campos que cambien algo actúa como una lectura. En algunas tools, un parámetro que en otras solo identifica se trata como escritura, porque esa tool lo escribe: `slug` en `channels-menus-manage` y en `content-categories-manage`, y `realm_id` en `channels-sites-manage` y en `content-spaces-manage`. Para leer un menú en modo de solo lectura se usa `identifier`.
 
 Una excepción: `channels-locks-manage` acepta `release` con `lockId`, para liberar un bloqueo del usuario del token, como el que queda al leer un template. `take_over`, `acquire` y `release` por `lockable_type` + `lockable_id` se rechazan.
 
@@ -272,7 +272,7 @@ Las dos variables se combinan. Para auditar un sitio sin riesgo de modificarlo, 
 }
 ```
 
-Tools que lista el cliente según la configuración, en la versión 0.5.12:
+Tools que lista el cliente según la configuración, en la versión 0.6.0:
 
 | Configuración | Tools |
 |---|---|

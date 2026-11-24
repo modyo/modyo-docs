@@ -8,7 +8,7 @@ search: true
 
 The [Model Context Protocol (MCP)](https://modelcontextprotocol.io) is an open standard for connecting AI assistants to tools and data sources. The **Modyo MCP Server** connects an AI assistant to the Modyo Admin API so you can manage the platform (content, sites, widgets, customers, and administration) and build widgets with Dynamic Framework through natural-language conversation.
 
-It is distributed as the npm package [`@modyo/mcp`](https://www.npmjs.com/package/@modyo/mcp) and runs as a local process that the AI client launches over stdio. This page describes version 0.5.12.
+It is distributed as the npm package [`@modyo/mcp`](https://www.npmjs.com/package/@modyo/mcp) and runs as a local process that the AI client launches over stdio. This page describes version 0.6.0.
 
 To build a widget end to end with the MCP, see [Develop widgets with the MCP](/en/platform/tools/mcp-widgets.html).
 
@@ -228,7 +228,7 @@ It is useful for auditing or exploring a production site with no risk of modifyi
 It works in two layers:
 
 1. Tools that only write or delete are not registered: the client does not see them.
-2. Tools that group several actions (for example, the `*-manage` tools) remain available, but only run read actions: `list`, `get`, `search`, `find`, and `status`. The `manage` action with no fields that change anything acts as a read.
+2. Tools that group several actions (for example, the `*-manage` tools) remain available, but only run read actions: `list`, `get`, `search`, `find`, and `status`. The `manage` action with no fields that change anything acts as a read. In some tools, a parameter that only identifies in others is treated as a write, because that tool writes it: `slug` in `channels-menus-manage` and `content-categories-manage`, and `realm_id` in `channels-sites-manage` and `content-spaces-manage`. To read a menu in read-only mode, use `identifier`.
 
 One exception: `channels-locks-manage` accepts `release` with `lockId`, to release a lock held by the token user, such as the one left behind when reading a template. `take_over`, `acquire`, and `release` by `lockable_type` + `lockable_id` are rejected.
 
@@ -272,7 +272,7 @@ The two variables can be combined. To audit a site with no risk of modifying it,
 }
 ```
 
-Tools the client lists for each configuration, in version 0.5.12:
+Tools the client lists for each configuration, in version 0.6.0:
 
 | Configuration | Tools |
 |---|---|
