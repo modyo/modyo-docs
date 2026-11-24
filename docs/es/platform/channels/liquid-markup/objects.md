@@ -30,7 +30,7 @@ Los objetos de Cuenta se utilizan principalmente en el contexto de autenticació
 |------------------------|-----------------------------------------------------------------------------------------------------------|-----------------------------------------------|
 | **account.url**        | La URL de Modyo Platform, incluido el protocolo y el subdominio.                                          | ```https://test.modyo.com```                  |
 | **account.host**       | El nombre del subdominio de Modyo Platform.                                                               | ```test```                                    |
-| **account.google_key** | Si hay autenticación con Google, devuelve la clave de credencial; de lo contrario, devuelve vacío (void). | ```AIzaSyDmrYmbFpzqdIxHycHbgtJrs9lhKOfggEE``` |
+| **account.google_key** | La [API key de Google](/es/platform/core/configuration.html#visualizacion) de la cuenta, que usan los campos de tipo ubicación y los filtros `static_map` y `dynamic_map` para conectarse con Google Maps. No es una credencial de inicio de sesión con Google. Si no está configurada, devuelve vacío. | ```AIzaSyDmrYmbFpzqdIxHycHbgtJrs9lhKOfggEE``` |
 | **account.name**       | El nombre de la cuenta.                                                                                   | ```Modyo```                                   |
 
 ## adminuser
