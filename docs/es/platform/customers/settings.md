@@ -324,7 +324,7 @@ Para configurarla necesitas:
 - **Habilitar imágenes de auditoría**: Guarda imágenes de auditoría de cada sesión de detección de vida.
 - **Habilitar verificación de fotosensibilidad**: Activa el desafío de colores durante la detección de vida e incluye una advertencia de fotosensibilidad para el usuario.
 
-Una vez habilitada, el proveedor queda disponible en las tareas de [Verificación de Identidad](/es/platform/customers/origination.html#verificacion-de-identidad) de las originaciones del reino.
+Una vez habilitada, el proveedor queda disponible en las tareas de [Verificación de Identidad](/es/platform/customers/origination.html#verificacion-de-identidad) de las originaciones del reino. Si el sitio define su propia política de seguridad de contenido (CSP), debe incluir las fuentes que se indican en [Requisitos de CSP de la verificación de identidad](/es/platform/customers/origination.html#requisitos-de-csp-de-la-verificacion-de-identidad).
 
 ### Incode
 
