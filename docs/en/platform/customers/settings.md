@@ -250,14 +250,8 @@ You can also link other fields. Take into consideration that:
 Once you've linked the fields, select the type of synchronization:
 - **Always use Salesforce**: This option uses data from Salesforce to update (create, update, delete) Modyo users. In this case, no user information is sent from Modyo to Salesforce. The synchronization is unidirectional, and information flows only from Salesforce to Modyo.
 - **Always use Modyo**: Selecting this option sends Modyo user data to Salesforce to update contacts in Salesforce. Modyo users are not updated with Salesforce information. The synchronization is unidirectional and information flows only from Modyo to Salesforce.
-- **Bidirectional**: This option sends information from Modyo to Salesforce and information from Salesforce is used in Modyo, allowing contacts and users to be updated respectively. In this case, users and contacts are kept up to date with the most recent information available.
-- **Don't sync**: By selecting this option, you turn off the integration, preventing users and contacts from being synchronized between Modyo and Salesforce. This option can be useful if you need to pause syncing for any reason.
-
-:::warning Attention
-If you select the **Always use Modyo** or **bidirectional** link mode, but don't complete the second step explained below, Modyo users will not be sent to Salesforce.
-:::
-
-To complete the second point and enable the use of the Modyo API from the Salesforce Apex classes, follow this [guide](https://sites.google.com/modyo.com/platform/recursos/salesforce-external-services).
+- **Two-way**: This option sends information from Modyo to Salesforce and information from Salesforce is used in Modyo, allowing contacts and users to be updated respectively. In this case, users and contacts are kept up to date with the most recent information available.
+- **Don't Sync**: By selecting this option, you turn off the integration, preventing users and contacts from being synchronized between Modyo and Salesforce. This option can be useful if you need to pause syncing for any reason.
 
 Once you have completed both steps, when you make a change to a Modyo user, the modification is reflected in Salesforce and the same is reflected from Salesforce to Modyo, depending on the selected link configuration.
 
@@ -290,10 +284,40 @@ To ensure proper data synchronization between Modyo and Salesforce and maintain 
 - Fields not included in the list, such as references or composite fields, are disabled in the field linking view. This indicates that they are not available for linking.
 
 #### Enable the Modyo API in Salesforce.
-To carry out this process, review the [Salesforce Connect REST API](https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/intro_what_is_chatter_connect.htm) developer guide
+For changes to Salesforce contacts to reach Modyo, set up Salesforce to notify Modyo every time a contact is created, modified, deleted, or restored. Each notification is a `POST` request to the realm's Administration API, where `{realm_uid}` is the realm **Identifier**:
+
+```
+POST [account.url]/api/admin/customers/{realm_uid}/salesforce/event_callback
+```
+
+The body follows the format of the Salesforce change event header (Change Data Capture), so you can forward the `ChangeEventHeader` of each Contact event, for example from an Apex trigger. The required fields are `changeType` and `recordIds`:
+
+```json
+{
+  "entityName": "Contact",
+  "changeType": "UPDATE",
+  "recordIds": ["0035w00001XYZAb"]
+}
+```
+
+Modyo processes each ID in `recordIds` according to the value of `changeType`:
+
+- `CREATE`, `UPDATE`, `UNDELETE`, and their `GAP_CREATE`, `GAP_UPDATE`, and `GAP_UNDELETE` variants create or update the user following the specifications above, with the linked fields that Modyo reads from the contact in Salesforce using the credentials from the first step.
+- `DELETE` and `GAP_DELETE` delete the user linked to the contact from Modyo.
+- Any other value is ignored.
+
+The request is authenticated with a [Bearer token](/en/platform/core/api.html#bearer-token) of the account owner or of an administrator with the **Manage Customers** permission. Steps 2 to 5 of [Integration with Salesforce](/en/platform/core/integrations/connect-modyo-salesforce.html) show how to set up in Salesforce a Named Credential authenticated against the Modyo Administration API.
+
+Modyo responds with:
+
+- `200` when it receives the event. Users are updated a few moments later, so this response doesn't confirm that the synchronization has finished.
+- `401` if the token isn't valid or its administrator doesn't have permission.
+- `403` if the synchronization type is neither **Always use Salesforce** nor **Two-way**.
+- `404` if the realm doesn't exist or doesn't have a Salesforce integration.
+- `409` if the field mapping doesn't link Email, First name, and Last name to their Salesforce equivalents.
 
 :::warning Important
-If you don't carry out this second step, the information and changes you make in Salesforce will not be reflected in Modyo.
+If you chose **Always use Salesforce** or **Two-way** and don't complete this second step, the changes you make in Salesforce aren't reflected in Modyo.
 :::
 
 ### OAuth client
