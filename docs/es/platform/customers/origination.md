@@ -775,6 +775,36 @@ Opciones adicionales según el tipo de tarea:
 
 También puedes asignar una tarea de agente a un agente o a un grupo según las respuestas del usuario, con la acción **Asignar** de la [lógica condicional](#asignar-tareas-con-logica-condicional).
 
+#### Continuar con la siguiente tarea
+
+Cuando completas una tarea de agente desde el admin, la plataforma te lleva a la siguiente tarea de la respuesta si te corresponde trabajarla, o al listado de tareas de la respuesta si no. Esto aplica a todas las formas de completar una tarea:
+
+- Presionar **Enviar** en el formulario de una tarea **Input** o **Snippet de código**.
+- Presionar **Completar** en una tarea de **Revisión pendiente**.
+- Aprobar el último ítem pendiente de una tarea de **Validación**. Si aprobar o rechazar un ítem no deja completada la validación, te quedas en la tarea con el mensaje "Tarea revisada correctamente".
+
+La siguiente tarea es la primera tarea pendiente del flujo, en el orden en que aparece, sin contar las que la [lógica condicional](#logica-condicional) oculta para ese usuario. Si estás trabajando las tareas de un usuario invitado, se busca entre las tareas de ese invitado y, si el invitado conserva alguna invitación que no esté cancelada, el listado se abre con ese mismo invitado seleccionado.
+
+Llegas a la siguiente tarea en estos casos:
+
+- Está asignada a ti o a un grupo al que perteneces. Si está asignada a una persona dentro de un grupo, solo cuenta como de esa persona.
+- Nadie la tiene asignada y puedes trabajarla:
+  - **Input** y **Snippet de código**: puedes asignártela, con el permiso **Asignar Tareas**. Al llegar no quedas asignado; te asignas la tarea desde su vista.
+  - **Validación**: puedes revisarla, con un permiso que permita aprobar o rechazar validaciones, como **Ver Tareas de la Respuesta**. Si la originación tiene un **Asignado por defecto de la respuesta**, solo esa persona llega a la validación.
+  - **Revisión pendiente**: puedes completarla, es decir, ves el botón **Completar**.
+
+En los demás casos llegas al listado de tareas: cuando la siguiente tarea la responde el usuario, cuando está asignada a otro agente o a un grupo al que no perteneces, cuando no quedan tareas pendientes y cuando la respuesta ya está completada o cancelada. Manda la asignación: si la siguiente tarea es de otro agente, llegas al listado aunque tus permisos te permitan completarla, por ejemplo con **Cambiar estado de la Respuesta de una Tarea**.
+
+En el destino ves el mensaje "La tarea se completó correctamente". Si completar la tarea falla, te quedas en ella y ves el error.
+
+Al presionar **Enviar**, el botón muestra "Enviando…". Cuando el envío termina, el formulario queda deshabilitado con el aviso "Formulario enviado." y la página muestra "Buscando la siguiente tarea…" mientras calcula el destino. Si la plataforma no puede confirmar que la tarea quedó completada, vuelves a la tarea con el error "No se pudo confirmar que la tarea esté completada." y la página ya no avanza sola: sigue desde el listado de tareas.
+
+:::tip Comportamientos esperados
+- Si la siguiente tarea es tuya, llegas a ella aunque todavía no puedas actuar, por ejemplo una validación que espera las respuestas del usuario o una revisión pendiente con **Desactivar el completado manual**.
+- El destino no considera las opciones de navegación del sitio, como volver a la página de resumen al completar un paso: esas opciones definen solo la experiencia del usuario.
+- Si otra persona o un sistema externo completa la tarea que tienes abierta, la vista se actualiza, pero no te lleva a otro lugar.
+:::
+
 #### Verificación de agentes para servicios externos
 
 Cuando un agente responde una tarea de Snippet de código, tu código puede obtener una credencial de corta vida (5 minutos) para que un servicio externo verifique que quien lo invoca es un agente autorizado sobre esa tarea y respuesta:
