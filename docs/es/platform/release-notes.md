@@ -47,6 +47,17 @@ search: true
 
 ## 10.1
 
+### Modyo 10.1.21
+
+:::info Fecha del release
+26 de noviembre de 2026
+:::
+
+| Módulo | Mejoras |
+|--------|---------|
+| **Core** | • Mejoras de seguridad |
+
+
 ### Modyo 10.1.20
 
 :::info Fecha del release
