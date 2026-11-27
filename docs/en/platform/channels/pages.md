@@ -164,7 +164,7 @@ The **Path** only accepts unaccented letters, numbers, hyphens (`-`), and unders
 Pages of different types can share the same path. In that case, the site shows the widget page before the content page, and the content page before the origination page.
 
 Modyo has reserved paths, so you cannot use them as the path of a top-level page, that is, a page without a **Parent page**:
-<table style="border: none;"><tr style="border: none;">
+<table style="border: none;"><tbody><tr style="border: none;">
 <td style="border: none;"><ul>
 <li>404</li>
 <li>422</li>
@@ -200,7 +200,7 @@ Modyo has reserved paths, so you cannot use them as the path of a top-level page
 <li>uploads</li>
 <li>widget_manager</li>
 </ul></td>
-</tr></table>
+</tr></tbody></table>
 :::
 
 ### Grids

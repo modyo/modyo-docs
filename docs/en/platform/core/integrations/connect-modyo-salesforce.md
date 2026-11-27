@@ -156,6 +156,7 @@ Click <b>Save</b> and on the settings of <b>Custom Metadata Types
 </b>, fill in the Custom Fields table with the following:
 
 <table>
+ <tbody>
  <tr>
   <td style="font-weight: bold;">
    Field Label
@@ -220,6 +221,7 @@ Click <b>Save</b> and on the settings of <b>Custom Metadata Types
    Text(255)    
   </td>
  </tr>
+ </tbody>
 </table>
 
 ## Step 4 Authentication providers
@@ -241,6 +243,7 @@ To create a new one, click <b>New</b> and within the list we select <b>Modyo_Con
 Fill in the following data:
 
 <table>
+ <tbody>
  <tr>
   <td style="font-weight: bold;">
    Name
@@ -329,6 +332,7 @@ Fill in the following data:
    [ Modyo User ]
   </td>
  </tr>
+ </tbody>
 </table>
 
 :::tip Tip
@@ -343,6 +347,7 @@ Named Credentials allow users to authenticate to an external service provider. T
 To generate one, we are going to search for <b>Named Credentials</b> inside Setup, and click on <b>New Named Credential</b>. We fill in the fields as follows:
 
 <table>
+ <tbody>
  <tr>
   <td style="font-weight: bold;">
    Label
@@ -415,6 +420,7 @@ To generate one, we are going to search for <b>Named Credentials</b> inside Setu
    Check
   </td>
  </tr>
+ </tbody>
 </table>
 
 <img src="/assets/img/tutorials/salesforce/named_credentials.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image with Named Credentials flow in Salesforce"/>
@@ -716,6 +722,7 @@ So the sync can identify each user and carry the custom attribute, create the fi
 Within <b>Setup</b>, click on <b> Contact </b> to create the fields we'll need.
 
 <table>
+ <tbody>
  <tr>
   <td style="font-weight: bold;">
    Modyo ID
@@ -732,6 +739,7 @@ Within <b>Setup</b>, click on <b> Contact </b> to create the fields we'll need.
    Checkbox
   </td>
  </tr>
+ </tbody>
 </table>
 
 Mark everything in <b>Visible</b> and save.
@@ -739,6 +747,7 @@ Mark everything in <b>Visible</b> and save.
 Then in Modyo Platform, select <b>Customers</b> and click **Realms**. Select your Realm and in <b>Realm Settings</b> click <b>Custom Fields</b>. Click <b>New Custom Field</b> and fill in the following fields:
 
 <table>
+ <tbody>
  <tr>
   <td style="font-weight: bold;">
    Field type
@@ -755,6 +764,7 @@ Then in Modyo Platform, select <b>Customers</b> and click **Realms**. Select you
    Premium Customer
   </td>
  </tr>
+ </tbody>
 </table>
 
 <img src="/assets/img/tutorials/salesforce/custom_field.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image adding a New Custom Field in Modyo."/>
@@ -800,6 +810,7 @@ Now the dots have to be joined.
 Add an <b>Decision</b> to the flow, named <b>Is Premium Customer</b>, and fill it with the following fields:
 
 <table>
+ <tbody>
  <tr>
   <td style="font-weight: bold;">
    Label
@@ -872,6 +883,7 @@ Add an <b>Decision</b> to the flow, named <b>Is Premium Customer</b>, and fill i
    {!$GlobalConstant.True}
   </td>
  </tr>
+ </tbody>
 </table>
 
 <img src="/assets/img/tutorials/salesforce/decision.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image with the Is Premium Customer Decision in the New Decision window in Salesforce."/>
@@ -900,6 +912,7 @@ After creating the Assignments, they are connected as follows:
 Now that the input is true or false, let's generate a new Assignment with the following fields:
 
 <table>
+ <tbody>
  <tr>
   <td style="font-weight: bold;">
    Variable
@@ -924,6 +937,7 @@ Now that the input is true or false, let's generate a new Assignment with the fo
    {!DynamicCustomField}
   </td>
  </tr>
+ </tbody>
 </table>
 
 <img src="/assets/img/tutorials/salesforce/Assign_User_Input.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image with the Assignment Assign User Input."/>
@@ -937,6 +951,7 @@ In the action finder, click <b> PutUsersByUser_ID </b>:
 Complete the following information:
 
 <table>
+ <tbody>
  <tr>
   <td style="font-weight: bold;">
    Label
@@ -961,6 +976,7 @@ Complete the following information:
    {!ModyoID}
   </td>
  </tr>
+ </tbody>
 </table>
 
 And connect all the dots so that the Flow looks like this:
@@ -986,6 +1002,7 @@ Then in Object click <b>Add Object</b>, add a <b>Contact</b>, select <b>when a r
 Then click on <b>Add Criteria</b> and fill in the following fields:
 
 <table>
+ <tbody>
  <tr>
   <td style="font-weight: bold;">
    Criteria Name
@@ -1010,11 +1027,13 @@ Then click on <b>Add Criteria</b> and fill in the following fields:
    All of the conditions are met (AND)
   </td>
  </tr>
+ </tbody>
 </table>
 
 In the table of <b>Set Conditions</b> 
 
 <table>
+ <tbody>
  <tr>
   <td style="font-weight: bold;">
    Field
@@ -1057,12 +1076,14 @@ In the table of <b>Set Conditions</b>
    False
   </td>
  </tr> 
+ </tbody>
 </table>
 
 With this we ensure that the contact has Modyo ID, click <b>Save</b> and on <b>IMMEDIATE ACTIONS
 </b> click on <b>Add Action</b> with the following data:
 
 <table>
+ <tbody>
  <tr>
   <td style="font-weight: bold;">
    Action Type
@@ -1087,11 +1108,13 @@ With this we ensure that the contact has Modyo ID, click <b>Save</b> and on <b>I
    Premium Customer Flow
   </td>
  </tr>
+ </tbody>
 </table>
 
 In Set Flow Variables add two lines with the following:
 
 <table>
+ <tbody>
  <tr>
   <td style="font-weight: bold;">
    Flow Variable
@@ -1125,6 +1148,7 @@ In Set Flow Variables add two lines with the following:
    Modyo ID
   </td>
  </tr> 
+ </tbody>
 </table>
 
 <img src="/assets/img/tutorials/salesforce/action.png" style="border: 1px solid rgb(238, 238, 238);max-width: 650px;margin: auto 0;" alt="Image showing the select and define action window."/>

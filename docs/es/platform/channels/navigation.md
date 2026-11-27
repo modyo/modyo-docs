@@ -64,7 +64,7 @@ Para crear un Menú, sigue estos pasos:
 7. Una vez terminado, haz clic en **Publicar**.
 
 :::tip Tip
-Tu menú en este momento ya es público, pero no se manda a llamar. Se necesita usar una plantilla para que se despliegue en pantalla. Modyo ofrece un snippet de uso general en **Snippets, General, menu**, que el snippet **header** invoca dos veces (una para la barra de escritorio y otra para el panel lateral en móvil) y que llega a tus páginas porque la plantilla `base` incluye <pre v-pre>`{% snippet 'shared/general/header' %}`</pre>.
+Tu menú en este momento ya es público, pero no se manda a llamar. Se necesita usar una plantilla para que se despliegue en pantalla. Modyo ofrece un snippet de uso general en **Snippets, General, menu**, que el snippet **header** invoca dos veces (una para la barra de escritorio y otra para el panel lateral en móvil) y que llega a tus páginas porque la plantilla `base` incluye <span v-pre>`{% snippet 'shared/general/header' %}`</span>.
 :::
 
 **Acción principal**

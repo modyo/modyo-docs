@@ -29,7 +29,7 @@ Es crucial evaluar cuidadosamente las necesidades y requisitos del proyecto ante
 
 ### Implementación de una SPA con Modyo
 
-Para implementar una SPA con Modyo, se deben usar las capacidades de [Modyo Connect](/en/connect), que permiten configurar repositorios de objetos y redes de distribución de contenidos (CDNs) para el despliegue y mantenimiento de la SPA.
+Para implementar una SPA con Modyo, se deben usar las capacidades de [Modyo Connect](/es/connect/), que permiten configurar repositorios de objetos y redes de distribución de contenidos (CDNs) para el despliegue y mantenimiento de la SPA.
 
 Los cambios se gestionan directamente desde el repositorio de código del servicio. Mediante automatizaciones, se pueden realizar despliegues e invalidaciones de caché al incorporar o mezclar los cambios.
 

@@ -131,8 +131,8 @@ Hello John!
 ```
 
 Hyphens remove whitespace:
-- `{{-` or `{%-` removes whitespace to the left
-- `-}}` or `-%}` removes whitespace to the right
+- <span v-pre>`{{-`</span> or <span v-pre>`{%-`</span> removes whitespace to the left
+- <span v-pre>`-}}`</span> or <span v-pre>`-%}`</span> removes whitespace to the right
 
 ## Operators
 

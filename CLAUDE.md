@@ -5,27 +5,30 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Build and Development Commands
 
 ```bash
-# Install dependencies
-yarn install
-# or for Node 17+ on macOS:
-export NODE_OPTIONS=--openssl-legacy-provider && yarn install
+# Requires Node.js 24 (see .nvmrc)
+npm install
 
 # Start development server (runs on http://localhost:8080)
-yarn docs:dev
+npm run docs:dev
 
-# Build the documentation site
-yarn docs:build
+# Build the documentation site (fails on dead internal links)
+npm run docs:build
+
+# Run the unit tests of the VitePress configuration helpers
+npm test
 ```
 
 ## Repository Structure
 
-This is the official Modyo technical documentation built with VuePress v1.9.10.
+This is the official Modyo technical documentation built with VitePress 1.x.
 
 ### Content Organization
 - **Spanish (Primary)**: `/docs/es/` - All original documentation is written in Spanish first (Spanish default)
 - **English (Secondary)**: `/docs/en/` - Translated by hand from `/docs/es/` in the same PR that changes the Spanish file, keeping the same heading structure
-- **Configuration**: `/docs/.vuepress/config.js` - Controls navigation, sidebar, and site settings
-- **Public Assets**: `/docs/.vuepress/public/` - Static assets
+- **Site configuration**: `/docs/.vitepress/config.mts` - Site settings, locales, search, sitemap and markdown options
+- **Navigation**: `/docs/.vitepress/navigation.cjs` - Navbar and sidebar of each language
+- **Theme**: `/docs/.vitepress/theme/` - VitePress default theme extended with Modyo styles and the home layout
+- **Public Assets**: `/docs/public/` - Static assets
 
 ### Key Documentation Areas
 - **Platform**: Core Modyo platform documentation (`/platform/`)
@@ -50,15 +53,17 @@ Files follow the filesystem structure plus language prefix:
 - Spanish: `/es/platform/foo/`
 - English: `/en/platform/foo/`
 
-### VuePress Configuration
-- Main navigation and sidebar controlled by `/docs/.vuepress/config.js`
-- Supports Algolia search integration
+### VitePress Configuration
+- Navbar and sidebar are defined in `/docs/.vitepress/navigation.cjs` and converted to the VitePress format at build time
+- A sidebar entry given only as a path takes its text from the page frontmatter `title` or its H1
+- `README.md` files are served as the index of their folder (`/es/platform/` renders `docs/es/platform/README.md`)
+- Supports Algolia DocSearch; the crawler selectors live in `/algolia.json`
 - Uses Google Tag Manager for analytics
-- Sidebar depth set to 1 by default
+- The page outline shows H2 and H3 headings
 
 ## Testing Documentation Changes
 
-1. Start the development server: `yarn docs:dev`
+1. Start the development server: `npm run docs:dev`
 2. Navigate to `http://localhost:8080/es/` for Spanish or `http://localhost:8080/en/` for English
 3. Verify internal links work correctly (should end in `.html`)
 4. Check that anchor links correspond to actual section headers
@@ -66,7 +71,7 @@ Files follow the filesystem structure plus language prefix:
 ## CI/CD Pipeline
 
 GitHub Actions workflow (`/.github/workflows/main.yml`) runs on pull requests to master:
-- Uses Node.js 20
-- Runs `npm ci` followed by `npm run docs:build`
+- Uses Node.js 24
+- Runs `npm ci`, `npm test` and `npm run docs:build`
 - Ensures documentation builds successfully before merging
 - Los títulos H1, H2 y H3 nunca pueden terminar con ":"

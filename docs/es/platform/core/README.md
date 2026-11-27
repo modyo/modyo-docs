@@ -21,7 +21,7 @@ Para usuarios nuevos en Modyo Platform, te sugerimos seguir este flujo de trabaj
 1. **Configuración inicial**: Revisa las [configuraciones generales](/es/platform/core/configuration) de la cuenta
 2. **Gestión de usuarios**: Configura [roles y permisos](/es/platform/core/roles) para tu equipo
 3. **Seguridad**: Implementa las [políticas de seguridad](/es/platform/core/security) recomendadas
-4. **Integraciones**: Conecta tus [sistemas externos](/es/platform/core/integrations) si es necesario
+4. **Integraciones**: Conecta tus [sistemas externos](/es/platform/core/integrations/) si es necesario
 
 Modyo ofrece a todos sus usuarios administradores una sección de aprendizaje llamada ¡Empieza!, a la que accedes desde el ícono de cohete de la barra lateral principal. La página tiene dos bloques:
 

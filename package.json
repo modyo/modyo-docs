@@ -3,22 +3,19 @@
   "version": "9.0.0",
   "description": "Modyo Documentation",
   "main": "index.js",
+  "type": "module",
   "license": "Modyo Copyright",
   "private": true,
   "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:dev": "vitepress dev docs --port 8080",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs --port 8080",
+    "test": "node --test \"docs/.vitepress/**/*.test.ts\""
   },
   "devDependencies": {
-    "@vuepress/plugin-back-to-top": "^1.9.10",
-    "@vuepress/plugin-medium-zoom": "^1.9.10",
-    "@vuepress/plugin-pwa": "^1.9.10",
-    "vuepress": "^1.9.10",
-    "vuepress-plugin-code-switcher": "^1.1.0",
-    "vuepress-plugin-container": "^2.1.5"
+    "vitepress": "1.6.4"
   },
   "dependencies": {
-    "vuepress-plugin-sitemap": "^2.3.1",
     "yarn": "^1.22.19"
   }
 }

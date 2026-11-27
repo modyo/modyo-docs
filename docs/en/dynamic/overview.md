@@ -234,7 +234,7 @@ This pattern ensures:
 
 Widgets are deployed to Modyo using the Modyo CLI. The platform handles bundle hosting, versioning, and injection into pages automatically.
 
-Configuration can be passed to widgets via Liquid variables (see [Liquid Environment Pattern](development/widgets.html#liquid-environment-pattern)).
+Configuration can be passed to widgets via Liquid variables (see [Liquid Environment Pattern](development/api-integration.html#liquid-environment-pattern-modyo-deployment)).
 
 ### When to Use Internal Code Splitting
 
