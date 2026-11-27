@@ -68,6 +68,8 @@ Todas las vistas de sesión y de perfil de un reino cuelgan del mismo prefijo, f
 | `/profile/change_email` | Solicitud de cambio de correo. El usuario confirma su contraseña actual y la dirección nueva queda pendiente hasta que la verifica. |
 | `/confirm_email/:activation_code` | Confirma la dirección nueva desde el enlace de verificación. El enlace caduca a los 5 minutos. |
 | `/profile/delete_user` | Baja definitiva de la cuenta del usuario. |
+| `/profile/privacy` | [Centro de privacidad](/es/platform/customers/consent.html#centro-de-privacidad), donde el usuario revisa y cambia sus consentimientos. Disponible cuando el plan incluye el módulo de Consentimiento. |
+| `/profile/rights_requests` | Solicitudes de derechos del usuario y formulario para ingresar una nueva. Disponible cuando el plan incluye el módulo de Consentimiento. |
 | `/otp_login` | Vista de ingreso con código de un solo uso, disponible cuando el reino tiene el Soft login habilitado: pide el identificador del usuario en lugar de la contraseña. |
 | `/otp_signup` | Envía el código de un solo uso de un registro con Soft login y lleva al usuario a la pantalla del código. |
 | `/otp_code` | Pantalla donde el usuario escribe el código de 6 dígitos que recibió. |
