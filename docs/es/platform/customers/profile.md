@@ -78,13 +78,36 @@ Puedes conocer el detalle del ingreso con código en [Soft login](/es/platform/c
 Las rutas de recuperación de contraseña y de cambio de correo tienen además límites antiabuso que pueden hacer que un correo no se envíe o que la sesión del usuario se cierre, sin que la pantalla muestre ningún error. Revisa [Límites de solicitudes y bloqueos](/es/platform/customers/settings.html#limites-de-solicitudes-y-bloqueos).
 
 :::tip Tip
-No existe un drop de Liquid que entregue la URL de registro: ármala con el identificador del reino. Para el inicio y el cierre de sesión y para el perfil sí tienes **site.login_url**, **site.logout_url** y **site.profile_url**, que puedes revisar en [Objetos](/es/platform/channels/liquid-markup/objects.html#site).
+No existe un drop de Liquid que entregue la URL de registro: ármala con el identificador del reino, que tienes en **site.realm_slug**, como se muestra en [Registrarse y volver a una página](/es/platform/customers/profile.html#registrarse-y-volver-a-una-pagina). Para el inicio y el cierre de sesión y para el perfil sí tienes **site.login_url**, **site.logout_url** y **site.profile_url**, que puedes revisar en [Objetos](/es/platform/channels/liquid-markup/objects.html#site).
 :::
 
 ### Parámetros de redirección
 
 - `site`: Identificador del sitio desde el que llegó el usuario. La plataforma lo agrega automáticamente cuando el usuario entra desde un sitio y lo usa para devolverlo ahí al terminar.
-- `redirect_uri`: URL a la que se envía al usuario después de iniciar sesión. Las rutas del reino que lo aceptan son `/login`, `/otp_login`, `/activate/:activation_code` y `/session/access/:token`.
+- `redirect_uri`: URL a la que se envía al usuario después de iniciar sesión. Las rutas del reino que lo aceptan son `/login`, `/signup`, `/otp_login`, `/activate/:activation_code` y `/session/access/:token`.
 - `redirect_to`: URL a la que se envía al usuario después de cerrar sesión en `/logout`. Es también el parámetro que usa la ruta `/login` de un sitio, como se explica en [Redireccionar Login](/es/platform/customers/settings.html#redireccionar-login).
 
 La URL de destino tiene que ser una ruta relativa, apuntar a un sitio de tu misma cuenta o a uno de los dominios personalizados del reino. Si no lo es, la plataforma la descarta y aplica la redirección definida en **Después de iniciar sesión, redirigir a** de la [Configuración de reino](/es/platform/customers/settings.html#general).
+
+### Registrarse y volver a una página
+
+En `/signup`, el momento en que el usuario llega a la URL de `redirect_uri` depende de la opción **Activación de la cuenta** de la [Configuración de reino](/es/platform/customers/settings.html#general):
+
+- **Directa**: al crear la cuenta, porque queda con la sesión iniciada.
+- **Activación por OTP**: al ingresar el código de un solo uso que recibe.
+- **E-mail de activación**: al activar la cuenta desde el enlace del correo, siempre que lo abra en el mismo navegador en que se registró. Mientras tanto, ve la pantalla que confirma el registro.
+- **Moderada**: no vuelve al terminar el registro, porque no puede iniciar sesión hasta que un administrador active su cuenta. Para llevarlo a la página en ese momento, usa `redirect_uri` en el enlace de inicio de sesión.
+
+Si el usuario ya tiene la sesión iniciada, `/signup` lo envía directamente a la URL de `redirect_uri`.
+
+Por ejemplo, para invitar a un visitante sin sesión a registrarse desde una página de originación y devolverlo a ella:
+
+```liquid
+{% unless user %}
+  <a href="{{ account.url }}/realms/{{ site.realm_slug }}/signup?redirect_uri={{ origination.url | url_encode }}">Regístrate para continuar</a>
+{% endunless %}
+```
+
+`origination.url` entrega la URL absoluta de la página de originación, y el filtro `url_encode` la codifica para que viaje completa como valor del parámetro. Si el reino tiene un dominio personalizado, usa el prefijo de ese dominio, como se indica en [Rutas del reino](/es/platform/customers/profile.html#rutas-del-reino).
+
+Si no necesitas armar el enlace, elige **Página de registro** en **Cuando se requiere iniciar sesión, redirigir a** de la [Configuración de reino](/es/platform/customers/settings.html#general). Así, el visitante sin sesión que intenta acceder a contenido que requiere autenticación llega al registro y, tras autenticarse, vuelve a la URL a la que intentaba acceder.
