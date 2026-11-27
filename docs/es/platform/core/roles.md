@@ -70,6 +70,8 @@ Además, desde el bloque **Grupos** de la pestaña **Acceso** en el perfil de ca
 Todos los usuarios que pertenecen a un grupo tendrán el rol del grupo. Si además tienen un rol asignado individualmente, o pertenecen a varios grupos, en cada contexto reciben la suma de los permisos de todos esos roles, menos los de las [aplicaciones](#acceso-a-las-aplicaciones) que no tengan habilitadas.
 :::
 
+En Customers, los grupos también definen equipos de trabajo: con el permiso **Listar Respuestas del Grupo**, un supervisor ve las respuestas de originación asignadas a los miembros de sus grupos. Revisa [Ver el trabajo de un equipo](/es/platform/customers/origination.html#ver-el-trabajo-de-un-equipo).
+
 ### Crear un grupo
 
 Para crear un grupo, sigue estos pasos:
