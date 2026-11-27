@@ -568,7 +568,7 @@ Estos objetos obtienen la información relevante a las Submissions.
 | **submission.origination**                     | Objeto de la originación.                | [ver documentación de origination](/es/platform/channels/liquid-markup/objects.html#origination)                                                           |
 | **submission.url**                             | URL de la página de la submission.                             | ```https://test.modyo.com/new-site/myorigination```        |
 | **submission.uuid**                            | Identificador único (UUID) de la submission.                   | ```abcd-1234-5678-0000```                                  |
-| **submission.tasks['identificador_del_task']** | Respuestas de tareas para la submission. Se debe proveer el uid de la task | [ver documentación de tipo de respuesta de tareas](/es/platform/channels/liquid-markup/objects.html#tipos-de-respuesta-de-tareas)                                   |
+| **submission.tasks['identificador_del_task']** | Respuesta del usuario que está viendo la página a la tarea con ese uid. Devuelve `nil` si no hay un usuario con sesión o si ese usuario todavía no tiene una respuesta a esa tarea. En una originación multiusuario, cada participante obtiene solo sus propias respuestas. | [ver documentación de tipo de respuesta de tareas](/es/platform/channels/liquid-markup/objects.html#tipos-de-respuesta-de-tareas)                                   |
 | **submission.resume_url**                      | URL para reanudar la respuesta. Solo acepta envíos POST, así que no funciona como enlace. Queda vacía si el flujo no tiene página de originación. | ```https://test.modyo.com/new-site/origination/0f8e2c1a-5b7d-4e3f-9a6c-2d4b8e1f7a90/abcd-1234-5678-0000/begin``` |
 | **submission.start_info**                      | Texto traducido, listo para mostrar, con el UUID de la respuesta y su fecha de inicio, o la indicación de que todavía no se inicia. | ```#abcd-1234-5678-0000 - Iniciada en 15 de Febrero de 2025 a las 15:14``` |
 | **submission.steps**                           | Steps de la submission.                                        | ```[{"uid"=>"step-1", "name"=>"step 1", "is_completed"=>true, "link"=>"step 1"}{"uid"=>"step-2", "name"=>"step 2", "is_completed"=>false, "link"=>"step 2"}]```                                  |
@@ -612,13 +612,78 @@ Adicionalmente según el tipo de tarea pueden haber atributos adicionales.
 | **invitation_task.target_tasks**    | Lista los objetos de tipo task que debe completar el invitado. Vacía si la tarea no tiene una invitación configurada. | [ver documentación de task](/es/platform/channels/liquid-markup/objects.html#task) |
 | **invitation_task.max_invitations** | Número máximo de invitaciones que puedes enviar desde esta tarea.                                                     | ```12```                                                                           |
 
+#### validation_task
+
+| Objeto | Descripción | Ejemplo |
+|--------|-------------|---------|
+| **validation_task.validation** | Configuración de la validación. | |
+| **validation_task.validation.assignee** | Administrador definido como **Asignado** de la tarea. Devuelve un objeto adminuser. Vacío si la tarea no tiene un administrador asignado. | [ver documentación de adminuser](/es/platform/channels/liquid-markup/objects.html#adminuser) |
+| **validation_task.validation.assignee_group** | Grupo de administradores definido como **Asignado** de la tarea. Devuelve un objeto group. Vacío si la tarea no está asignada a un grupo. | [ver documentación de group](/es/platform/channels/liquid-markup/objects.html#group) |
+| **validation_task.validation.assignee_context_group** | Grupo dentro del cual se eligió al administrador asignado, cuando asignas la tarea a un usuario específico de un grupo. Devuelve un objeto group. | [ver documentación de group](/es/platform/channels/liquid-markup/objects.html#group) |
+| **validation_task.validation.validation_task_items** | Lista los objetos de tipo task cuyas respuestas se validan en esta tarea. | [ver documentación de task](/es/platform/channels/liquid-markup/objects.html#task) |
+
+#### digital_signature_task
+
+| Objeto | Descripción | Ejemplo |
+|--------|-------------|---------|
+| **digital_signature_task.signature** | Configuración de la firma. | |
+| **digital_signature_task.signature.document** | Documento que el usuario firma, en HTML. | ```<p>Términos y condiciones del producto</p>``` |
+| **digital_signature_task.signature.acceptance_label** | **Texto de aceptación**: el texto de la casilla de verificación que el usuario debe aceptar. | ```Declaro que he leído y estoy de acuerdo con el texto anterior.``` |
+| **digital_signature_task.signature.acceptance_action** | **Acción de aceptación**: el texto del botón de firma. | ```Firmar y continuar``` |
+
+#### pending_review_task
+
+| Objeto | Descripción | Ejemplo |
+|--------|-------------|---------|
+| **pending_review_task.review** | Configuración de la revisión. | |
+| **pending_review_task.review.message** | Contenido de **Página de contenido pendiente de revisión**, tal como se configuró. Es lo que ve el usuario mientras espera la revisión. | ```<p>Estamos revisando tu solicitud.</p>``` |
+| **pending_review_task.review.assignee** | Administrador definido como **Agente** en la tarea. Devuelve un objeto adminuser. Vacío si la tarea no tiene un administrador asignado. | [ver documentación de adminuser](/es/platform/channels/liquid-markup/objects.html#adminuser) |
+| **pending_review_task.review.assignee_group** | Grupo de administradores definido como **Agente** en la tarea. Devuelve un objeto group. Vacío si la tarea no está asignada a un grupo. | [ver documentación de group](/es/platform/channels/liquid-markup/objects.html#group) |
+| **pending_review_task.review.assignee_context_group** | Grupo dentro del cual se eligió al administrador asignado, cuando asignas la tarea a un usuario específico de un grupo. Devuelve un objeto group. | [ver documentación de group](/es/platform/channels/liquid-markup/objects.html#group) |
+
+#### code_snippet_task
+
+| Objeto | Descripción | Ejemplo |
+|--------|-------------|---------|
+| **code_snippet_task.snippet** | Configuración del snippet de código. | |
+| **code_snippet_task.snippet.code** | Código HTML, JavaScript y CSS del snippet, tal como se configuró. | ```<div id="simulador"></div>``` |
+| **code_snippet_task.snippet.next_disabled** | Es `true` si está activada **Completar la tarea utilizando la API de respuestas**: el botón para continuar aparece deshabilitado hasta que el snippet lo habilita con `enableButton()`. Revisa [Completar la tarea desde el code snippet](/es/platform/customers/origination.html#completar-la-tarea-desde-el-code-snippet). | ```false``` |
+
+#### origination_flow_task
+
+| Objeto | Descripción | Ejemplo |
+|--------|-------------|---------|
+| **origination_flow_task.flow** | Configuración del proceso de originación. | |
+| **origination_flow_task.flow.origination_uuid** | UUID de la originación elegida en **Proceso de originación**. | ```0f8e2c1a-5b7d-4e3f-9a6c-2d4b8e1f7a90``` |
+| **origination_flow_task.flow.allow_previously_completed_submissions** | Es `true` si está activada **Permitir la selección de respuestas previamente completadas si existen.** | ```true``` |
+| **origination_flow_task.flow.no_longer_than_value** | Cantidad definida en **Completada hace no más de**: la antigüedad máxima de las respuestas completadas que el usuario puede reutilizar. Vacío si no se configuró. | ```30``` |
+| **origination_flow_task.flow.no_longer_than_unit** | Unidad de esa cantidad: `days`, `weeks` o `months`. | ```days``` |
+
+#### identity_verification_task
+
+| Objeto | Descripción | Ejemplo |
+|--------|-------------|---------|
+| **identity_verification_task.identity_verification_config** | Hash con la configuración de la tarea: el proveedor (`provider`), las verificaciones activadas (`features`) y los ajustes propios del proveedor. | ```{"provider"=>"amazon_rekognition", "features"=>{"document_verification"=>true, "selfie_verification"=>true, "liveness_detection"=>true}}``` |
+| **identity_verification_task.verification_required** | Siempre es `true`. | ```true``` |
+| **identity_verification_task.verification_status** | Estado de la verificación en la respuesta: `not_started`, `in_progress`, `pending_review`, `verified`, `rejected`, `expired` o `error`. Depende del objeto `submission` de la plantilla: si no está disponible o la tarea todavía no tiene respuesta, entrega `not_started`. | ```verified``` |
+| **identity_verification_task.requires_manual_review** | Es `true` cuando la verificación quedó en revisión manual, es decir, con estado `pending_review`. Depende del objeto `submission` de la plantilla: si no está disponible o la tarea todavía no tiene respuesta, entrega `false`. | ```false``` |
+
 ### Tipos de Respuesta de Tareas
+
+Para obtener la respuesta a una tarea usa `submission.tasks` con el uid de la tarea. Entrega la respuesta del usuario que está viendo la página, o `nil` si no hay un usuario con sesión o si ese usuario todavía no tiene una respuesta a esa tarea, así que compruébala antes de leer sus atributos:
+
+```liquid
+{% assign respuesta = submission.tasks['datos-personales'] %}
+{% if respuesta %}
+  <p>Estado de tu respuesta: {{ respuesta.status }}</p>
+{% endif %}
+```
 
 Toda respuesta de tarea comparte los atributos que hereda de la respuesta base: `task`, `user`, `created_at`, `updated_at`, `started_at`, `completed_at` y `status`. En `status` obtienes `not_started`, `pending` o `completed`, según el [estado de la respuesta a la tarea](/es/platform/customers/origination.html#estados-de-las-respuestas-a-tareas); si solo comparas contra `completed`, tu plantilla no distingue una tarea que nadie abrió de una que quedó a medio responder. La tabla siguiente lista únicamente los atributos propios de cada tipo de respuesta.
 
 | Objeto                                        | Descripción                                             | Ejemplo                                       |
 |-----------------------------------------------|---------------------------------------------------------|-----------------------------------------------|
-| **pending_review_task_response.approved**     | Indica si la tarea de revisión fue aprobada.            | ```true```                                    |
+| **pending_review_task_response.approved**     | Es `true` cuando la respuesta a la tarea de revisión está completada, es decir, cuando `status` es `completed`. | ```true```                                    |
 | **pending_review_task_response.content**      | Contenido de la revisión.                               | ```Este es el contenido de la revisión```     |
 | **pending_review_task_response.assignee**     | Administrador asignado a la revisión. Devuelve un objeto adminuser. |                                   |
 | **pending_review_task_response.assignee_group** | Grupo de administradores asignado a la revisión. Devuelve un objeto group. |                          |
@@ -629,6 +694,8 @@ Toda respuesta de tarea comparte los atributos que hereda de la respuesta base: 
 | **digital_signature_task_response.signed**    | Indica si la tarea fue firmada digitalmente.            | ```false```                                   |
 | **origination_flow_task_response.submission** | Submission asociada a la tarea de flujo de originación. | [ver documentación de submission](/es/platform/channels/liquid-markup/objects.html#submission)                                              |
 | **invitation_task_response.completed** | Es `true` siempre que exista la respuesta a la tarea, aunque siga pendiente. Para saber si la tarea terminó, compara `status` con `completed`. | ```true``` |
+| **confirmation_task_response.confirmed_items** | Array con los uid de las tareas de entrada de usuario que se confirmaron. Solo incluye las que tenían su respuesta completada al momento de confirmar; antes de confirmar está vacío. | ```["datos-personales", "datos-laborales"]``` |
+| **confirmation_task_response.confirmation_metadata** | Hash con metadatos de la confirmación. Las confirmaciones hechas desde la página de originación lo dejan vacío. | ```{}``` |
 | **identity_verification_task_response.verification_details** | Hash con el detalle de la verificación: `document_type`, `document_status`, `biometric_status`, `verification_date`, `face_match_score` y `liveness_score`. | ```{:document_type=>"national_id", :document_status=>"document_verified", :biometric_status=>"biometric_verified", :verification_date=>"2026-02-11T09:26:49.257-03:00", :face_match_score=>95.93251037597656, :liveness_score=>98.41004943847656}``` |
 | **identity_verification_task_response.ocr_data** | Accesor unificado e independiente del proveedor: entrega `ocr` y, cuando viene vacío, cae a `extracted_information`. Úsalo para recorrer los campos del documento sin condicionar por proveedor. | ```{"nombre"=>"Ivan Modyo", "numero_documento"=>"12.345.678-9"}``` |
 | **identity_verification_task_response.ocr** | Hash con los pares campo/valor que el proveedor extrajo del documento. Vacío si el proveedor no entrega esa estructura. | ```{"nombre"=>"Ivan Modyo", "numero_documento"=>"12.345.678-9"}``` |
