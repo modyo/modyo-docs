@@ -869,7 +869,8 @@ By selecting the **Edit** option in the context menu of your origination, you ca
 - **Identifier**: Appears locked with a padlock. To modify it, press the padlock and confirm the **Unlock Identifier field** warning: changing the identifier changes the origination URL and breaks references to it from external systems or through the Liquid SDK. Changing the **Name** doesn't modify it.
 - **Description**: Includes a brief explanatory text about the purpose of the origination.
 - **Completed message**: This is the message that will appear to the user at the end of the origination process.
-- **Default submission assignee**: Specifies the administrator or group of administrators that will be automatically assigned to each new submission. When selecting a group, you can use the **Assign to whole group** option or choose a specific user within it.
+- **Assign each submission to the person who creates its invitation**: Disabled by default. When you enable it, each submission created through an invitation, from the [**Invite**](#invite-users) button or through the API, is assigned to the administrator who creates the invitation, unless they pick someone else or leave it unassigned. It takes precedence over the **Default submission assignee**. See the details in [Assign the submission to the inviter](#assign-the-submission-to-the-inviter).
+- **Default submission assignee**: Specifies the administrator or group of administrators that will be automatically assigned to each new submission. When selecting a group, you can use the **Assign to whole group** option or choose a specific user within it. If you enable **Assign each submission to the person who creates its invitation**, it only applies to submissions that don't come from an invitation, for example the ones the user starts from the site.
 - **Due in**: Sets the due period of each submission and when it starts counting. See the details in [Configure the due date](#configure-the-due-date).
 - **Automatically cancel submissions that exceed the due date**: Available only if you have configured a due date. When this option is enabled, submissions in **Pending** status that exceed their due date are automatically canceled.
 - **Completion rules**: Defines the completion behavior for each submission.
@@ -1174,7 +1175,7 @@ You can invite users to enter information in an origination with the **Invite** 
 - **Email**: The user's email address, where they will receive the invitation to access the origination.
 - The fields that depend on the realm's sign-up settings: **Second last name**, **Phone number**, **Birthday**, and **Gender**, when the realm has them enabled, and the username, with the label the realm defines, when the realm doesn't use the email as the username. The username is always mandatory; the others, when the realm requires them at sign-up.
 - The user's active [custom fields](/en/platform/customers/settings.html#custom-fields). The required ones are mandatory.
-- **Assign submission to**: The administrator, the whole group of administrators, or the administrator within a group who will manage this submission. If you leave it empty, the origination's **Default submission assignee** applies and, if it has none, the submission remains unassigned.
+- **Assign submission to**: The administrator, the whole group of administrators, or the administrator within a group who will manage this submission. If you leave it empty, the origination's **Default submission assignee** applies and, if it has none, the submission remains unassigned. If the origination has the **Assign each submission to the person who creates its invitation** option enabled, the field behaves differently: see [Assign the submission to the inviter](#assign-the-submission-to-the-inviter).
 
 The button to send the invitation is enabled once you fill in all the mandatory fields.
 
@@ -1189,6 +1190,26 @@ In addition, the button requires the **Start Submissions** permission: without i
 On the origination page, with **Account Activation** set to **Disabled**, the main user can't invite anyone through the name and email form, even if the email already belongs to a user of the realm. They can only pick from the list the people they already invited in another invitation task of the same submission or, if the [role](#roles) has the **Can be assumed by main user** option enabled, take the role themselves (**You**).
 
 If **Account Activation** is set to **Invitation only**, the new user you invite is created active and can complete the flow right away, with no activation email and no waiting. A user who already existed and was deactivated is not reactivated when invited: they keep their status. Review the options in the [realm settings](/en/platform/customers/settings.html#general).
+
+##### Assign the submission to the inviter
+
+When the published version of the origination has the **Assign each submission to the person who creates its invitation** option enabled, the invitation form works like this:
+
+- The **Assign submission to** field shows your name. If you don't change it, the submission is assigned to you.
+- You can pick another administrator, a whole group, or an administrator within a group, and the submission is assigned to whoever you pick.
+- If you clear the field, the submission remains unassigned. In this case the **Default submission assignee** doesn't apply either.
+- The assignment to the inviter applies even if you don't have the **Assign Submissions** permission.
+
+The option applies in the same way to invitations created through the admin API with `POST /api/admin/customers/{realm_uid}/originations/{id}/submissions`. If the request doesn't name an assignee, the submission is assigned to the administrator who owns the request credentials. To create the submission unassigned, send `unassigned: true`:
+
+- It leaves the submission unassigned whether the option is enabled or not, without applying the **Default submission assignee**.
+- It can't be combined with `assignee_id`, `assignee_group_id`, or `assignee_context_group_id`. If you combine them, the request responds `422` with the error _An invitation cannot be left unassigned and have an assignee at the same time_.
+
+Submissions that don't come from an invitation, such as the ones the user starts from the site, get the **Default submission assignee**, if the origination has one.
+
+:::tip The option applies on publishing
+Enabling or disabling the option leaves the origination with unpublished changes. Until you publish it, invitations follow the settings of the published version.
+:::
 
 ### Assignee Management
 
