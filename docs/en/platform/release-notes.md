@@ -47,6 +47,17 @@ August 11, 2026
 
 ## 10.1
 
+### Modyo 10.1.21
+
+:::info Release date
+November 26, 2026
+:::
+
+| Module | Improvements |
+|--------|---------|
+| **Core** | • Security improvements |
+
+
 ### Modyo 10.1.20
 
 :::info Release date
