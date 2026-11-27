@@ -288,7 +288,7 @@ This snippet takes `entry.name`, `entry.published_at`, `request.url`, and `entry
 :::tip Tip
 To learn more about how to use Liquid, go to [Liquid markup](/en/platform/channels/liquid-markup).
 
-To learn what fields you can use with the `entry` object, see [Content Objects](/en/platform/channels/liquid-markup/objects#entry).
+To learn what fields you can use with the `entry` object, see [Content Objects](/en/platform/channels/liquid-markup/objects.html#entry).
 It can be complemented with the use of [Content Filters](/en/platform/channels/liquid-markup/filters#content).
 :::
 
