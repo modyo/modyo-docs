@@ -870,7 +870,8 @@ Al seleccionar la opción **Editar** en el menú contextual de tu originación p
 - **Identificador**: Aparece bloqueado con un candado. Para modificarlo, presiona el candado y confirma la advertencia **Desbloquear campo identificador**: cambiar el identificador cambia la URL de la originación y rompe las referencias a ella desde sistemas externos o mediante el SDK de Liquid. Cambiar el **Nombre** no lo modifica.
 - **Descripción**: Incluye un breve texto explicativo sobre el propósito de la originación.
 - **Mensaje de completado**: Es el mensaje que aparecerá al usuario al finalizar el proceso de originación.
-- **Asignado por defecto de la respuesta**: Especifica el administrador o grupo de administradores que será asignado automáticamente a cada nueva respuesta. Al seleccionar un grupo, puedes usar la opción **Asignar a todo el grupo** o elegir un usuario específico dentro de él.
+- **Asignar cada respuesta a quien crea su invitación**: Viene desactivada. Al activarla, cada respuesta que se crea con una invitación, desde el botón [**Invitar**](#invitar-usuarios) o por la API, queda asignada al administrador que crea la invitación, salvo que este elija a otra persona o la deje sin asignar. Tiene prioridad sobre el **Asignado por defecto de la respuesta**. Revisa el detalle en [Asignar la respuesta a quien invita](#asignar-la-respuesta-a-quien-invita).
+- **Asignado por defecto de la respuesta**: Especifica el administrador o grupo de administradores que será asignado automáticamente a cada nueva respuesta. Al seleccionar un grupo, puedes usar la opción **Asignar a todo el grupo** o elegir un usuario específico dentro de él. Si activas **Asignar cada respuesta a quien crea su invitación**, solo se usa para las respuestas que no vienen de una invitación, por ejemplo las que el usuario inicia desde el sitio.
 - **Vence en**: Establece el plazo de vencimiento de cada respuesta y desde cuándo se cuenta. Revisa el detalle en [Configurar el vencimiento](#configurar-el-vencimiento).
 - **Cancelar automáticamente las respuestas que excedan la fecha de vencimiento**: Disponible solo si configuraste un vencimiento. Al activar esta opción, las respuestas en estado **Pendiente** que superen su fecha de vencimiento se cancelan automáticamente.
 - **Reglas de completado**:  Define el comportamiento de completado para cada respuesta.
@@ -1175,7 +1176,7 @@ Puedes invitar a usuarios para que ingresen información en una originación con
 - **Correo electrónico**: La dirección de correo electrónico del usuario, donde recibirá la invitación para acceder a la originación.
 - Los campos que dependen de la configuración de registro del reino: **Segundo apellido**, **Número de teléfono**, **Fecha de nacimiento** y **Género**, cuando el reino los tiene habilitados, y el nombre de usuario, con la etiqueta que define el reino, cuando el reino no usa el correo electrónico como nombre de usuario. El nombre de usuario siempre es obligatorio; los demás, cuando el reino los exige en el registro.
 - Los [campos personalizados](/es/platform/customers/settings.html#custom-fields) activos del usuario. Los requeridos son obligatorios.
-- **Asignar la respuesta a**: El administrador, el grupo completo de administradores o el administrador dentro de un grupo que gestionará esta respuesta. Si lo dejas vacío, se aplica el **Asignado por defecto de la respuesta** de la originación y, si no tiene uno, la respuesta queda sin asignar.
+- **Asignar la respuesta a**: El administrador, el grupo completo de administradores o el administrador dentro de un grupo que gestionará esta respuesta. Si lo dejas vacío, se aplica el **Asignado por defecto de la respuesta** de la originación y, si no tiene uno, la respuesta queda sin asignar. Si la originación tiene activa la opción **Asignar cada respuesta a quien crea su invitación**, el campo se comporta distinto: revisa [Asignar la respuesta a quien invita](#asignar-la-respuesta-a-quien-invita).
 
 El botón para enviar la invitación se habilita cuando completas todos los campos obligatorios.
 
@@ -1190,6 +1191,26 @@ Además, el botón requiere el permiso **Iniciar Respuestas**: sin él aparece d
 En la página de originación, con la **Activación de la cuenta** en **Deshabilitada**, el usuario principal no puede invitar a nadie con el formulario de nombre y correo electrónico, aunque el correo ya pertenezca a un usuario del reino. Solo puede elegir de la lista a las personas que ya invitó en otra tarea de invitación de la misma respuesta o, si el [rol](#roles) tiene activa la opción **Puede ser asumido por el usuario principal**, tomar el rol él mismo (**Tú**).
 
 Si la **Activación de la cuenta** está en **Solo por invitación**, el usuario nuevo que invites queda activo y puede completar el flujo de inmediato, sin correo de activación ni espera. Un usuario que ya existía y estaba desactivado no se reactiva al invitarlo: mantiene su estado. Revisa las opciones en la [configuración del reino](/es/platform/customers/settings.html#general).
+
+##### Asignar la respuesta a quien invita
+
+Cuando la versión publicada de la originación tiene activa la opción **Asignar cada respuesta a quien crea su invitación**, el formulario de invitación funciona así:
+
+- El campo **Asignar la respuesta a** aparece con tu nombre. Si no lo cambias, la respuesta queda asignada a ti.
+- Puedes elegir a otro administrador, a un grupo completo o a un administrador dentro de un grupo, y la respuesta queda asignada a quien elijas.
+- Si vacías el campo, la respuesta queda sin asignar. En este caso tampoco se aplica el **Asignado por defecto de la respuesta**.
+- La asignación a quien invita se aplica aunque no tengas el permiso **Asignar Respuestas**.
+
+La opción aplica igual a las invitaciones creadas por la API de administración con `POST /api/admin/customers/{realm_uid}/originations/{id}/submissions`. Si la solicitud no indica un asignado, la respuesta queda asignada al administrador dueño de las credenciales de la solicitud. Para crear la respuesta sin asignar, envía `unassigned: true`:
+
+- Deja la respuesta sin asignar con la opción activa o desactivada, sin aplicar el **Asignado por defecto de la respuesta**.
+- No se puede combinar con `assignee_id`, `assignee_group_id` ni `assignee_context_group_id`. Si los combinas, la solicitud responde `422` con el error _Una invitación no puede quedar sin asignar y tener un asignado al mismo tiempo_.
+
+Las respuestas que no vienen de una invitación, como las que el usuario inicia desde el sitio, reciben el **Asignado por defecto de la respuesta**, si la originación tiene uno.
+
+:::tip La opción se aplica al publicar
+Activar o desactivar la opción deja la originación con cambios sin publicar. Hasta que la publiques, las invitaciones siguen la configuración de la versión publicada.
+:::
 
 ### Gestión de Asignados
 
